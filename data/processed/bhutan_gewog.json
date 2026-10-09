@@ -33,10 +33,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Bumthang: Table 2.2 was not found under its title, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 96.9,
+        "count": 17262
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 3.1,
+        "count": 558
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -55,13 +63,22 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
     "aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. Of these, 6,636 are counted in Bumthang Town, Chhumig Town, which the boundary file does not draw, so the gewogs below come to that much less than this row.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.6: the median of the single years of age of all 17,820 people in the dzongkhag, towns included, interpolated within the year that holds the middle person."
+    "median_age_note": "2017 census, Table A2.6: the median of the single years of age of all 17,820 people in the dzongkhag, towns included, interpolated within the year that holds the middle person.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 17,820 people Table 2.1 of the dzongkhag's 2017 report counts here, 17,262 are Bhutanese (its Table 2.2) and 558 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-bumthang-chhoekhor",
@@ -97,10 +114,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Bumthang: Table 2.2 was not found under its title, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 98.1,
+        "count": 3871
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 1.9,
+        "count": 76
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -119,6 +144,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -127,7 +158,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,947 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,947 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,947 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,871 are Bhutanese (its Table 2.2) and 76 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-bumthang-chhumig",
@@ -163,10 +197,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Bumthang: Table 2.2 was not found under its title, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 95.7,
+        "count": 3057
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 4.3,
+        "count": 138
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -185,6 +227,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -195,7 +243,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,195 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,195 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,195 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,057 are Bhutanese (its Table 2.2) and 138 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-bumthang-tang",
@@ -231,10 +282,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Bumthang: Table 2.2 was not found under its title, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 98.3,
+        "count": 2278
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 1.7,
+        "count": 40
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -253,6 +312,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -261,7 +326,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 2,318 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 2,318 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 2,318 people Table 2.1 of the dzongkhag's 2017 report counts here, 2,278 are Bhutanese (its Table 2.2) and 40 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-bumthang-ura",
@@ -297,10 +365,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Bumthang: Table 2.2 was not found under its title, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 97.4,
+        "count": 1679
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 2.6,
+        "count": 45
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -319,6 +395,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -327,7 +409,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,724 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,724 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 1,724 people Table 2.1 of the dzongkhag's 2017 report counts here, 1,679 are Bhutanese (its Table 2.2) and 45 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-chhukha",
@@ -2641,10 +2726,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Gasa: Table 2.2's rows come to 5,173 against the 0 it prints beside them, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 97.8,
+        "count": 3865
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 2.2,
+        "count": 87
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2663,13 +2756,22 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
     "aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. Of these, 1,366 are counted in Damji Town, Gasa Town, which the boundary file does not draw, so the gewogs below come to that much less than this row.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.6: the median of the single years of age of all 3,952 people in the dzongkhag, towns included, interpolated within the year that holds the middle person."
+    "median_age_note": "2017 census, Table A2.6: the median of the single years of age of all 3,952 people in the dzongkhag, towns included, interpolated within the year that holds the middle person.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,952 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,865 are Bhutanese (its Table 2.2) and 87 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-gasa-khamaed",
@@ -2705,10 +2807,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Gasa: Table 2.2's rows come to 5,173 against the 0 it prints beside them, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 95.4,
+        "count": 473
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 4.6,
+        "count": 23
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2727,6 +2837,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -2737,7 +2853,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 496 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 496 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 496 people Table 2.1 of the dzongkhag's 2017 report counts here, 473 are Bhutanese (its Table 2.2) and 23 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-gasa-khatoed",
@@ -2773,10 +2892,13 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Gasa: Table 2.2's rows come to 5,173 against the 0 it prints beside them, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 100.0,
+        "count": 316
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2795,6 +2917,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -2805,7 +2933,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 316 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 316 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 316 people Table 2.1 of the dzongkhag's 2017 report counts here, 316 are Bhutanese (its Table 2.2) and 0 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-gasa-laya",
@@ -2841,10 +2972,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Gasa: Table 2.2's rows come to 5,173 against the 0 it prints beside them, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 99.4,
+        "count": 1069
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 0.6,
+        "count": 6
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2863,6 +3002,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -2871,7 +3016,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,075 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,075 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 1,075 people Table 2.1 of the dzongkhag's 2017 report counts here, 1,069 are Bhutanese (its Table 2.2) and 6 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-gasa-lunana",
@@ -2907,10 +3055,13 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Gasa: Table 2.2's rows come to 5,173 against the 0 it prints beside them, so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 100.0,
+        "count": 699
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -2929,6 +3080,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -2937,7 +3094,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 699 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 699 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 699 people Table 2.1 of the dzongkhag's 2017 report counts here, 699 are Bhutanese (its Table 2.2) and 0 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-haa",
@@ -8934,10 +9094,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 97.5,
+        "count": 61023
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 2.5,
+        "count": 1567
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -8956,13 +9124,22 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
     "aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. Of these, 9,674 are counted in Gomtu Town, Samtse Town, Sipsu Town, which the boundary file does not draw, so the gewogs below come to that much less than this row.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.6: the median of the single years of age of all 62,590 people in the dzongkhag, towns included, interpolated within the year that holds the middle person."
+    "median_age_note": "2017 census, Table A2.6: the median of the single years of age of all 62,590 people in the dzongkhag, towns included, interpolated within the year that holds the middle person.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 62,590 people Table 2.1 of the dzongkhag's 2017 report counts here, 61,023 are Bhutanese (its Table 2.2) and 1,567 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-doomtoed",
@@ -8998,10 +9175,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 99.0,
+        "count": 1419
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 1.0,
+        "count": 14
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9020,6 +9205,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9030,7 +9221,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Dungtoe. This gewog has no reference point to place it with, so the polygon was identified by elimination: every other gewog of Samtse is matched, and this is the one polygon and the one gewog left.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,433 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,433 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 1,433 people Table 2.1 of the dzongkhag's 2017 report counts here, 1,419 are Bhutanese (its Table 2.2) and 14 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-dophuchen",
@@ -9066,10 +9260,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 99.8,
+        "count": 5409
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 0.2,
+        "count": 10
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9088,6 +9290,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9098,7 +9306,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Dorokha. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 5,419 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 5,419 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 5,419 people Table 2.1 of the dzongkhag's 2017 report counts here, 5,409 are Bhutanese (its Table 2.2) and 10 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-duenchhukha",
@@ -9134,10 +9345,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 99.1,
+        "count": 2139
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 0.9,
+        "count": 20
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9156,6 +9375,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9166,7 +9391,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 2,159 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 2,159 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 2,159 people Table 2.1 of the dzongkhag's 2017 report counts here, 2,139 are Bhutanese (its Table 2.2) and 20 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-namgyalchhoeling",
@@ -9202,10 +9430,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 94.9,
+        "count": 2982
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 5.1,
+        "count": 159
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9224,6 +9460,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9234,7 +9476,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,141 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,141 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,141 people Table 2.1 of the dzongkhag's 2017 report counts here, 2,982 are Bhutanese (its Table 2.2) and 159 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-norboogang",
@@ -9270,10 +9515,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 96.8,
+        "count": 3944
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 3.2,
+        "count": 131
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9292,6 +9545,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9302,7 +9561,10 @@
     "match_by": "shape_id",
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Chengmari. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 4,075 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 4,075 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 4,075 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,944 are Bhutanese (its Table 2.2) and 131 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-norgaygang",
@@ -9338,10 +9600,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 98.0,
+        "count": 3670
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 2.0,
+        "count": 73
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9360,6 +9630,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9370,7 +9646,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Bara. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,743 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,743 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,743 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,670 are Bhutanese (its Table 2.2) and 73 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-pemaling",
@@ -9406,10 +9685,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 98.9,
+        "count": 3227
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 1.1,
+        "count": 35
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9428,6 +9715,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9438,7 +9731,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Biru. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,262 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,262 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,262 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,227 are Bhutanese (its Table 2.2) and 35 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-phuentshogpelri",
@@ -9474,10 +9770,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 98.3,
+        "count": 4006
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 1.7,
+        "count": 68
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9496,6 +9800,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9506,7 +9816,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Pagli. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 4,074 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 4,074 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 4,074 people Table 2.1 of the dzongkhag's 2017 report counts here, 4,006 are Bhutanese (its Table 2.2) and 68 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-samtse",
@@ -9542,10 +9855,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 96.1,
+        "count": 3466
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 3.9,
+        "count": 140
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9564,6 +9885,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9572,7 +9899,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,606 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,606 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,606 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,466 are Bhutanese (its Table 2.2) and 140 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-sang-ngag-",
@@ -9608,10 +9938,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 97.2,
+        "count": 2974
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 2.8,
+        "count": 87
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9630,6 +9968,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9640,7 +9984,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Chargharay. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,061 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,061 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,061 people Table 2.1 of the dzongkhag's 2017 report counts here, 2,974 are Bhutanese (its Table 2.2) and 87 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-tading",
@@ -9676,10 +10023,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 99.0,
+        "count": 4673
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 1.0,
+        "count": 46
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9698,6 +10053,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9706,7 +10067,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 4,719 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 4,719 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 4,719 people Table 2.1 of the dzongkhag's 2017 report counts here, 4,673 are Bhutanese (its Table 2.2) and 46 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-tashichhoeling",
@@ -9742,10 +10106,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 96.8,
+        "count": 3834
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 3.2,
+        "count": 126
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9764,6 +10136,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9774,7 +10152,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Sipsu. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,960 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,960 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 3,960 people Table 2.1 of the dzongkhag's 2017 report counts here, 3,834 are Bhutanese (its Table 2.2) and 126 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-tendruk",
@@ -9810,10 +10191,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 96.9,
+        "count": 6048
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 3.1,
+        "count": 194
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9832,6 +10221,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9842,7 +10237,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 6,242 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 6,242 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 6,242 people Table 2.1 of the dzongkhag's 2017 report counts here, 6,048 are Bhutanese (its Table 2.2) and 194 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-ugyentse",
@@ -9878,10 +10276,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 96.2,
+        "count": 1337
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 3.8,
+        "count": 53
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9900,6 +10306,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9910,7 +10322,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,390 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 1,390 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 1,390 people Table 2.1 of the dzongkhag's 2017 report counts here, 1,337 are Bhutanese (its Table 2.2) and 53 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-samtse-yoeseltse",
@@ -9946,10 +10361,18 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Citizenship is not written for Samtse: Table 2.2 does not name Table 2.1's gewogs: ['Sang-Ngag-', 'Sang-Ngag-Chhoeling'], so the report's count of Bhutanese by gewog could not be held to its Table 2.1. Bhutan's census does not ask ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Bhutanese",
+        "pct": 94.0,
+        "count": 2474
+      },
+      {
+        "group": "Non-Bhutanese",
+        "pct": 6.0,
+        "count": 158
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -9968,6 +10391,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables 2.1 and 2.2: population and Bhutanese population by gewog and town",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -9976,7 +10405,10 @@
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity: religion and language are declared rather than left empty, and the ethnicity field carries citizenship, the one count of identity the census publishes. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
     "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. Beside sex, the one count of identity the census publishes is citizenship, which is on the ethnicity field.",
-    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 2,632 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 2,632 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart.",
+    "ethnicity_year": 2017,
+    "ethnicity_basis": "citizenship",
+    "ethnicity_note": "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of the 2,632 people Table 2.1 of the dzongkhag's 2017 report counts here, 2,474 are Bhutanese (its Table 2.2) and 158 are not -- Table 2.1 counts everyone found on census day whatever their nationality, so the difference between the two tables is everyone else. Written by the map owner's decision of 19 September 2026 that a census's count of citizenship may stand on this field under its basis."
   },
   {
     "id": "BTN-sarpang",
