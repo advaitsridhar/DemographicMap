@@ -1,436 +1,58 @@
-  https://api.siat.stat.uz/sdmx/246/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.json (103.9 KB, updated 2026-04-22T15:18:14.751731+05:00)
-  https://api.siat.stat.uz/sdmx/3132/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3132.json (97.0 KB, updated 2026-06-29T18:02:51.199019+05:00)
-  https://api.siat.stat.uz/sdmx/3146/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3146.json (97.1 KB, updated 2026-06-29T18:25:25.117738+05:00)
-  https://api.siat.stat.uz/sdmx/3133/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3133.json (96.9 KB, updated 2026-06-29T18:03:58.049957+05:00)
-  https://api.siat.stat.uz/sdmx/3147/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3147.json (97.0 KB, updated 2026-06-29T18:26:42.818969+05:00)
-  https://api.siat.stat.uz/sdmx/3134/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3134.json (96.6 KB, updated 2026-06-29T18:05:13.946840+05:00)
-  https://api.siat.stat.uz/sdmx/3148/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3148.json (96.6 KB, updated 2026-06-29T18:27:43.765571+05:00)
-  https://api.siat.stat.uz/sdmx/3135/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3135.json (98.5 KB, updated 2026-06-29T18:06:10.216103+05:00)
-  https://api.siat.stat.uz/sdmx/3149/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3149.json (98.7 KB, updated 2026-06-29T18:28:46.573078+05:00)
-  https://api.siat.stat.uz/sdmx/3136/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3136.json (96.5 KB, updated 2026-06-29T18:07:10.964918+05:00)
-  https://api.siat.stat.uz/sdmx/3150/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3150.json (96.5 KB, updated 2026-06-29T18:29:47.319736+05:00)
-  https://api.siat.stat.uz/sdmx/3137/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3137.json (96.5 KB, updated 2026-06-29T18:08:16.817205+05:00)
-  https://api.siat.stat.uz/sdmx/3151/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3151.json (96.5 KB, updated 2026-06-29T18:30:47.351304+05:00)
-  https://api.siat.stat.uz/sdmx/3138/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3138.json (97.4 KB, updated 2026-06-29T18:09:13.092760+05:00)
-  https://api.siat.stat.uz/sdmx/3152/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3152.json (97.5 KB, updated 2026-06-29T18:32:18.493582+05:00)
-  https://api.siat.stat.uz/sdmx/3139/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3139.json (97.5 KB, updated 2026-06-29T18:12:07.706966+05:00)
-  https://api.siat.stat.uz/sdmx/3153/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3153.json (97.6 KB, updated 2026-06-29T18:33:31.611146+05:00)
-  https://api.siat.stat.uz/sdmx/3140/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3140.json (97.4 KB, updated 2026-06-29T18:13:08.423402+05:00)
-  https://api.siat.stat.uz/sdmx/3154/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3154.json (97.5 KB, updated 2026-06-29T18:34:34.436329+05:00)
-  https://api.siat.stat.uz/sdmx/3141/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3141.json (97.2 KB, updated 2026-06-29T18:14:04.820052+05:00)
-  https://api.siat.stat.uz/sdmx/3155/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3155.json (97.2 KB, updated 2026-06-29T18:35:45.856657+05:00)
-  https://api.siat.stat.uz/sdmx/3142/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3142.json (98.6 KB, updated 2026-06-29T18:15:33.058945+05:00)
-  https://api.siat.stat.uz/sdmx/3156/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3156.json (98.2 KB, updated 2026-06-29T18:36:41.855098+05:00)
-  https://api.siat.stat.uz/sdmx/3143/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3143.json (97.6 KB, updated 2026-06-29T18:16:37.601152+05:00)
-  https://api.siat.stat.uz/sdmx/3157/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3157.json (97.5 KB, updated 2026-06-29T18:37:33.992018+05:00)
-  https://api.siat.stat.uz/sdmx/3144/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3144.json (96.8 KB, updated 2026-06-29T18:22:22.047518+05:00)
-  https://api.siat.stat.uz/sdmx/3158/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3158.json (96.4 KB, updated 2026-06-29T18:38:33.657423+05:00)
-  https://api.siat.stat.uz/sdmx/3145/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3145.json (97.1 KB, updated 2026-06-29T18:23:44.259156+05:00)
-  https://api.siat.stat.uz/sdmx/3159/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3159.json (96.9 KB, updated 2026-06-29T18:39:32.923609+05:00)
-  age groups by sex for 221 units, 1 January 2026
-    Republic of Karakalpakstan: age groups 2,057,404 against population 2,053,200 (+0.20%)
-    Andijan region: age groups 3,529,183 against population 3,521,800 (+0.21%)
-    Bukhara region: age groups 2,111,716 against population 2,107,000 (+0.22%)
-    Jizzakh region: age groups 1,570,860 against population 1,566,900 (+0.25%)
-    Kashkadarya region: age groups 3,729,568 against population 3,717,000 (+0.34%)
-    Navoi region: age groups 1,114,038 against population 1,111,900 (+0.19%)
-    Namangan region: age groups 3,199,283 against population 3,190,800 (+0.27%)
-    Samarkand region: age groups 4,391,000 against population 4,379,800 (+0.26%)
-    Surkhandarya region: age groups 3,019,382 against population 3,011,000 (+0.28%)
-    Syrdarya region: age groups 948,578 against population 946,300 (+0.24%)
-    Tashkent region: age groups 3,166,952 against population 3,160,700 (+0.20%)
-    Fergana region: age groups 4,233,070 against population 4,223,000 (+0.24%)
-    Khorezm region: age groups 2,074,236 against population 2,069,200 (+0.24%)
-    Tashkent city: age groups 3,184,351 against population 3,178,100 (+0.20%)
-    Nukus city: age groups 350,127 against population 349,400 (+0.21%)
-    Amudarya: age groups 219,119 against population 218,700 (+0.19%)
-    Beruniy: age groups 213,067 against population 212,600 (+0.22%)
-    Karauzyak: age groups 54,968 against population 54,800 (+0.31%)
-    Kungrad: age groups 138,722 against population 138,400 (+0.23%)
-    Muynak: age groups 34,186 against population 34,100 (+0.25%)
-    Takhtakupir: age groups 38,977 against population 38,900 (+0.20%)
-    Turtkul: age groups 236,571 against population 236,100 (+0.20%)
-    Khojeyli: age groups 209,394 against population 209,100 (+0.14%)
-    Shumanay: age groups 58,892 against population 58,700 (+0.33%)
-    Ellikkala: age groups 177,265 against population 176,900 (+0.21%)
-    Andijan city: age groups 505,355 against population 503,500 (+0.37%)
-    Altinkul: age groups 196,771 against population 196,500 (+0.14%)
-    Andijan: age groups 299,177 against population 298,600 (+0.19%)
-    Balikchi: age groups 224,630 against population 224,100 (+0.24%)
-    Boz: age groups 81,501 against population 81,300 (+0.25%)
-    Bulakbashi: age groups 158,866 against population 158,600 (+0.17%)
-    Djalalkuduk: age groups 205,280 against population 205,100 (+0.09%)
-    Izboskan: age groups 265,594 against population 264,800 (+0.30%)
-    Kurgantepa: age groups 238,566 against population 238,100 (+0.20%)
-    Asaka: age groups 369,080 against population 368,200 (+0.24%)
-    Markhamat: age groups 193,538 against population 193,300 (+0.12%)
-    Shakhrixan: age groups 337,984 against population 337,400 (+0.17%)
-    Paxtaabad: age groups 216,542 against population 216,100 (+0.20%)
-    Bukhara city: age groups 305,440 against population 304,700 (+0.24%)
-    Kagan city: age groups 66,296 against population 66,100 (+0.30%)
-    Alat: age groups 107,644 against population 107,300 (+0.32%)
-    Bukhara: age groups 185,119 against population 185,000 (+0.06%)
-    Vabkent: age groups 154,398 against population 154,000 (+0.26%)
-    Gijduvan: age groups 332,569 against population 331,900 (+0.20%)
-    Kagan: age groups 88,138 against population 88,000 (+0.16%)
-    Karakul: age groups 176,904 against population 176,400 (+0.29%)
-    Peshku: age groups 136,131 against population 135,800 (+0.24%)
-    Rаmitan: age groups 155,737 against population 155,300 (+0.28%)
-    Jondor: age groups 192,405 against population 191,900 (+0.26%)
-    Shafirkan: age groups 190,184 against population 189,900 (+0.15%)
-    Dzhizak city: age groups 203,638 against population 203,300 (+0.17%)
-    Arnasay: age groups 50,290 against population 50,200 (+0.18%)
-    Bakhmal: age groups 178,241 against population 177,900 (+0.19%)
-    Gallyaaral: age groups 194,697 against population 194,300 (+0.20%)
-    Sharof Rashidov: age groups 256,005 against population 255,100 (+0.35%)
-    Dustlik: age groups 72,148 against population 71,900 (+0.34%)
-    Zaаmin: age groups 188,638 against population 188,100 (+0.29%)
-    Zarbdar: age groups 98,615 against population 98,300 (+0.32%)
-    Mirzachul: age groups 57,176 against population 57,100 (+0.13%)
-    Paxtakor: age groups 84,084 against population 83,800 (+0.34%)
-    Farish: age groups 101,324 against population 101,000 (+0.32%)
-    Yangiabad: age groups 30,565 against population 30,500 (+0.21%)
-    Karshi city: age groups 306,996 against population 306,300 (+0.23%)
-    Shakhrisabz city: age groups 153,082 against population 152,700 (+0.25%)
-    Guzar: age groups 232,360 against population 232,000 (+0.16%)
-    Dehkanabad: age groups 166,817 against population 166,200 (+0.37%)
-    Kamashi: age groups 308,237 against population 306,900 (+0.44%)
-    Karshi: age groups 287,384 against population 286,500 (+0.31%)
-    Kasan: age groups 327,871 against population 326,700 (+0.36%)
-    Kitab: age groups 294,589 against population 293,400 (+0.41%)
-    Mirishkar: age groups 135,354 against population 134,900 (+0.34%)
-    Mubarek: age groups 97,481 against population 97,000 (+0.50%)
-    Nishan: age groups 175,250 against population 174,600 (+0.37%)
-    Kasbi: age groups 223,059 against population 222,300 (+0.34%)
-    Chirakchi: age groups 482,817 against population 480,900 (+0.40%)
-    Shakhrisabz: age groups 243,415 against population 242,800 (+0.25%)
-    Yakkabag: age groups 294,856 against population 293,800 (+0.36%)
-    Navoi city: age groups 171,637 against population 171,300 (+0.20%)
-    Zarafshan city: age groups 92,279 against population 92,100 (+0.19%)
-    Kiziltepa: age groups 167,441 against population 167,100 (+0.20%)
-    Navbakhor: age groups 124,462 against population 124,100 (+0.29%)
-    Uchkuduk: age groups 39,993 against population 39,900 (+0.23%)
-    Khatirchi: age groups 219,593 against population 219,200 (+0.18%)
-    Namangan city: age groups 729,656 against population 728,000 (+0.23%)
-    Mingbulak: age groups 142,782 against population 142,300 (+0.34%)
-    Kasansay: age groups 238,148 against population 237,600 (+0.23%)
-    Namangan: age groups 201,721 against population 201,100 (+0.31%)
-    Narin: age groups 182,789 against population 182,200 (+0.32%)
-    Pap: age groups 244,201 against population 243,500 (+0.29%)
-    Turakurgan: age groups 256,358 against population 255,600 (+0.30%)
-    Uychi: age groups 242,911 against population 242,400 (+0.21%)
-    Uchkurgan: age groups 192,198 against population 191,800 (+0.21%)
-    Chartak: age groups 224,026 against population 223,300 (+0.33%)
-    Chust: age groups 297,665 against population 296,700 (+0.33%)
-    Yangikurgan: age groups 246,828 against population 246,300 (+0.21%)
-    Samarkand city: age groups 606,749 against population 605,800 (+0.16%)
-    Kattakurgan city: age groups 97,122 against population 97,000 (+0.13%)
-    Akdarya: age groups 181,362 against population 180,900 (+0.26%)
-    Bulungur: age groups 211,436 against population 211,000 (+0.21%)
-    Dzhambay: age groups 198,921 against population 198,400 (+0.26%)
-    Ishtikhan: age groups 288,909 against population 288,100 (+0.28%)
-    Kattakurgan: age groups 306,298 against population 305,400 (+0.29%)
-    Koshrabad: age groups 147,227 against population 146,900 (+0.22%)
-    Narpay: age groups 236,108 against population 235,400 (+0.30%)
-    Payarik: age groups 285,964 against population 285,000 (+0.34%)
-    Pastdargom: age groups 401,297 against population 400,000 (+0.32%)
-    Pakhtachi: age groups 157,076 against population 156,700 (+0.24%)
-    Samarkand: age groups 284,284 against population 283,600 (+0.24%)
-    Nurabad: age groups 169,226 against population 168,700 (+0.31%)
-    Urgut: age groups 587,467 against population 585,800 (+0.28%)
-    Taylak: age groups 231,554 against population 231,100 (+0.20%)
-    Termez city: age groups 213,484 against population 213,000 (+0.23%)
-    Altinsay: age groups 202,293 against population 201,800 (+0.24%)
-    Angor: age groups 150,675 against population 150,100 (+0.38%)
-    Baysun: age groups 129,684 against population 129,400 (+0.22%)
-    Muzrabad: age groups 160,316 against population 159,900 (+0.26%)
-    Denau: age groups 441,840 against population 440,500 (+0.30%)
-    Dzharkurgan: age groups 250,091 against population 249,000 (+0.44%)
-    Sariasiya: age groups 238,268 against population 238,000 (+0.11%)
-    Uzun: age groups 197,376 against population 196,700 (+0.34%)
-    Sherabad: age groups 219,354 against population 218,900 (+0.21%)
-    Shurchi: age groups 240,456 against population 239,600 (+0.36%)
-    Gulistan city: age groups 104,921 against population 104,600 (+0.31%)
-    Yangiyer city: age groups 50,394 against population 50,200 (+0.39%)
-    Akaltin: age groups 57,598 against population 57,500 (+0.17%)
-    Bayaut: age groups 144,375 against population 144,100 (+0.19%)
-    Gulistan: age groups 82,426 against population 82,200 (+0.27%)
-    Sardoba: age groups 72,500 against population 72,300 (+0.28%)
-    Mirzaabad: age groups 84,079 against population 83,900 (+0.21%)
-    Sirdarya: age groups 141,514 against population 141,100 (+0.29%)
-    Nurafshon city: age groups 58,893 against population 58,800 (+0.16%)
-    Almalik city: age groups 151,371 against population 151,000 (+0.25%)
-    Angren city: age groups 188,519 against population 188,300 (+0.12%)
-    Bekabad city: age groups 107,576 against population 107,300 (+0.26%)
-    Chirchik city: age groups 178,554 against population 178,300 (+0.14%)
-    Akhangaran city: age groups 42,805 against population 42,700 (+0.25%)
-    Yangiyul city: age groups 89,150 against population 88,900 (+0.28%)
-    Akkurgan: age groups 115,797 against population 115,500 (+0.26%)
-    Akhangaran: age groups 114,919 against population 114,600 (+0.28%)
-    Bostanlik: age groups 179,419 against population 179,100 (+0.18%)
-    Buka: age groups 138,972 against population 138,700 (+0.20%)
-    Kuyichirchik: age groups 119,724 against population 119,400 (+0.27%)
-    Zangiata: age groups 180,795 against population 180,500 (+0.16%)
-    Yukarichirchik: age groups 144,441 against population 144,000 (+0.31%)
-    Kibray: age groups 182,057 against population 181,700 (+0.20%)
-    Parkent: age groups 185,385 against population 185,100 (+0.15%)
-    Pskent: age groups 105,217 against population 104,900 (+0.30%)
-    Urtachirchik: age groups 143,254 against population 143,000 (+0.18%)
-    Chinaz: age groups 150,853 against population 150,500 (+0.23%)
-    Yangiyul: age groups 207,871 against population 207,700 (+0.08%)
-    Tashkent: age groups 210,121 against population 209,800 (+0.15%)
-    Fergana city: age groups 335,659 against population 335,100 (+0.17%)
-    Kokand city: age groups 320,063 against population 319,600 (+0.14%)
-    Kuvasay city: age groups 104,957 against population 104,800 (+0.15%)
-    Margilan city: age groups 262,584 against population 261,900 (+0.26%)
-    Altiarik: age groups 237,766 against population 237,300 (+0.20%)
-    Kushtepa: age groups 218,193 against population 217,800 (+0.18%)
-    Bagdad: age groups 243,848 against population 243,000 (+0.35%)
-    Buvayda: age groups 259,248 against population 258,200 (+0.41%)
-    Besharik: age groups 251,974 against population 251,300 (+0.27%)
-    Kuva: age groups 286,068 against population 285,400 (+0.23%)
-    Uchkuprik: age groups 252,552 against population 252,100 (+0.18%)
-    Rishtan: age groups 225,829 against population 225,200 (+0.28%)
-    Sokh: age groups 88,904 against population 88,600 (+0.34%)
-    Tashlak: age groups 226,890 against population 226,200 (+0.31%)
-    Uzbekistan: age groups 245,569 against population 245,000 (+0.23%)
-    Fergana: age groups 230,684 against population 230,200 (+0.21%)
-    Dangara: age groups 185,200 against population 184,700 (+0.27%)
-    Furkat: age groups 132,449 against population 132,200 (+0.19%)
-    Yazyavan: age groups 124,633 against population 124,400 (+0.19%)
-    Urgench city: age groups 158,376 against population 157,900 (+0.30%)
-    Khiva city: age groups 101,853 against population 101,600 (+0.25%)
-    Bagat: age groups 183,590 against population 183,000 (+0.32%)
-    Gurlen: age groups 163,112 against population 162,700 (+0.25%)
-    Koshkupir: age groups 188,867 against population 188,600 (+0.14%)
-    Urgench: age groups 224,301 against population 223,700 (+0.27%)
-    Khazarasp: age groups 274,371 against population 275,800 (-0.52%)
-    Khanka: age groups 205,785 against population 205,300 (+0.24%)
-    Khiva: age groups 161,652 against population 161,200 (+0.28%)
-    Shavat: age groups 187,091 against population 186,700 (+0.21%)
-    Yangiarik: age groups 127,361 against population 127,300 (+0.05%)
-    Yangibazar: age groups 95,608 against population 95,400 (+0.22%)
-    Uchtepa: age groups 304,713 against population 304,400 (+0.10%)
-    Bektemir: age groups 71,531 against population 71,300 (+0.32%)
-    Yunusabad: age groups 394,113 against population 393,000 (+0.28%)
-    Mirzo Ulugbek: age groups 342,971 against population 342,200 (+0.23%)
-    Mirabad: age groups 156,716 against population 156,500 (+0.14%)
-    Shaykhantokhur: age groups 374,312 against population 373,700 (+0.16%)
-    Almazar: age groups 419,027 against population 418,300 (+0.17%)
-    Sergeli: age groups 380,041 against population 379,200 (+0.22%)
-    Yakkasaray: age groups 145,472 against population 144,800 (+0.46%)
-    Yashnobod: age groups 317,570 against population 317,200 (+0.12%)
-    Chilanzar: age groups 277,885 against population 277,500 (+0.14%)
-  age groups checked: districts against regions, regions against the country (2026)
-  Bozatau district: carved from ['Kegeyli district', 'Chimbay district'] in 2020; those shapes left blank
-  Takhiatash district: carved from Khojeyli district in 2018
-  Kukdala district: carved from Chirakchi district in 2023
-  Gazgan city: carved from ['Karmana district', 'Nurota district'] in 2020; those shapes left blank
-  Bandykhan district: carved from ['Kumkurgan district', 'Kizirik district', 'Termiz district'] in 2020; those shapes left blank
-  Tuprakkala district: carved from Khazarasp district in 2021
-  Yangikhayot district: carved from Sergeli district in 2021
-  14 regions, 198 districts (189 with a figure, 9 left blank with the reason); 203 with a median age and sex ratio
-    admin1 Republic of Karakalpakstan: median 28.7, ratio 100.5
-    admin1 Andijan Region: median 28.3, ratio 102.3
-    admin1 Bukhara Region: median 30.5, ratio 100.1
-    admin1 Jizzakh Region: median 26.8, ratio 101.4
-    admin1 Qashqadaryo Region: median 26.1, ratio 102.2
-    admin1 Navoiy Region: median 29.6, ratio 102.2
-    admin1 Namangan Region: median 27.9, ratio 102.9
-    admin1 Samarqand Region: median 26.8, ratio 101.1
-    admin1 Surxondaryo Region: median 25.7, ratio 102.0
-    admin1 Sirdaryo Region: median 28.0, ratio 100.5
-    admin1 Tashkent Region: median 30.2, ratio 100.4
-    admin1 Fergana Region: median 29.0, ratio 101.5
-    admin1 Xorazm Region: median 28.5, ratio 100.0
-    admin1 Tashkent: median 32.2, ratio 96.2
-    admin2 Nukus city: median 30.9, ratio 97.3
-    admin2 Amudarya: median 27.1, ratio 102.7
-    admin2 Beruniy: median 27.6, ratio 100.6
-    admin2 Karauzyak: median 29.2, ratio 104.4
-    admin2 Kungrad: median 28.6, ratio 105.0
-    admin2 Kanlikul: median 28.8, ratio 102.3
-    admin2 Muynak: median 29.3, ratio 102.6
-    admin2 Nukus: median 27.9, ratio 102.9
-    admin2 Takhtakupir: median 28.3, ratio 103.6
-    admin2 Turtkul: median 28.0, ratio 98.1
-    admin2 Khojeyli: median 29.7, ratio 99.2
-    admin2 Shumanay: median 30.2, ratio 100.1
-    admin2 Ellikkala: median 27.4, ratio 98.9
-    admin2 Andijan city: median 28.9, ratio 101.0
-    admin2 Khanabad city: median 31.5, ratio 99.3
-    admin2 Altinkul: median 28.2, ratio 101.9
-    admin2 Andijan: median 28.1, ratio 99.5
-    admin2 Balikchi: median 28.2, ratio 103.7
-    admin2 Boz: median 28.2, ratio 101.6
-    admin2 Bulakbashi: median 29.0, ratio 103.5
-    admin2 Djalalkuduk: median 29.2, ratio 104.0
-    admin2 Izboskan: median 27.7, ratio 103.7
-    admin2 Ulugnar: median 29.7, ratio 100.4
-    admin2 Kurgantepa: median 29.5, ratio 101.1
-    admin2 Asaka: median 28.2, ratio 102.0
-    admin2 Markhamat: median 28.1, ratio 103.8
-    admin2 Shakhrixan: median 26.7, ratio 104.1
-    admin2 Paxtaabad: median 27.3, ratio 102.5
-    admin2 Khadjaabad: median 28.4, ratio 102.9
-    admin2 Bukhara city: median 32.5, ratio 97.6
-    admin2 Kagan city: median 31.3, ratio 94.2
-    admin2 Alat: median 29.5, ratio 99.9
-    admin2 Bukhara: median 31.4, ratio 100.1
-    admin2 Vabkent: median 30.0, ratio 101.2
-    admin2 Gijduvan: median 29.4, ratio 104.2
-    admin2 Kagan: median 29.7, ratio 98.6
-    admin2 Karakul: median 28.8, ratio 97.9
-    admin2 Karaulbazar: median 31.7, ratio 98.5
-    admin2 Peshku: median 30.2, ratio 100.3
-    admin2 Rаmitan: median 30.6, ratio 102.5
-    admin2 Jondor: median 29.9, ratio 98.3
-    admin2 Shafirkan: median 31.1, ratio 101.6
-    admin2 Dzhizak city: median 29.5, ratio 99.2
-    admin2 Arnasay: median 28.0, ratio 102.8
-    admin2 Bakhmal: median 24.4, ratio 103.9
-    admin2 Gallyaaral: median 26.0, ratio 101.4
-    admin2 Sharof Rashidov: median 25.8, ratio 102.1
-    admin2 Dustlik: median 27.7, ratio 96.6
-    admin2 Zaаmin: median 25.6, ratio 102.1
-    admin2 Zarbdar: median 25.4, ratio 102.3
-    admin2 Mirzachul: median 29.6, ratio 97.0
-    admin2 Zafarabad: median 28.2, ratio 101.9
-    admin2 Paxtakor: median 27.5, ratio 101.2
-    admin2 Farish: median 28.2, ratio 102.9
-    admin2 Yangiabad: median 27.7, ratio 102.1
-    admin2 Karshi city: median 29.6, ratio 99.3
-    admin2 Shakhrisabz city: median 29.7, ratio 102.5
-    admin2 Guzar: median 25.6, ratio 102.9
-    admin2 Dehkanabad: median 24.4, ratio 103.4
-    admin2 Kamashi: median 25.0, ratio 103.0
-    admin2 Karshi: median 28.5, ratio 98.9
-    admin2 Kasan: median 25.8, ratio 102.9
-    admin2 Kitab: median 27.1, ratio 103.2
-    admin2 Mirishkar: median 27.0, ratio 103.9
-    admin2 Mubarek: median 26.1, ratio 101.6
-    admin2 Nishan: median 25.4, ratio 99.6
-    admin2 Kasbi: median 26.5, ratio 103.8
-    admin2 Chirakchi: median 22.1, ratio 103.2
-    admin2 Shakhrisabz: median 26.4, ratio 103.2
-    admin2 Yakkabag: median 25.2, ratio 102.4
-    admin2 Navoi city: median 29.8, ratio 97.7
-    admin2 Zarafshan city: median 29.1, ratio 108.7
-    admin2 Kanimekh: median 29.8, ratio 111.0
-    admin2 Kiziltepa: median 30.4, ratio 102.3
-    admin2 Navbakhor: median 30.9, ratio 103.0
-    admin2 Tamdi: median 32.7, ratio 104.1
-    admin2 Uchkuduk: median 25.2, ratio 96.0
-    admin2 Khatirchi: median 28.7, ratio 102.8
-    admin2 Namangan city: median 25.8, ratio 105.3
-    admin2 Mingbulak: median 27.7, ratio 103.4
-    admin2 Kasansay: median 27.3, ratio 103.6
-    admin2 Namangan: median 27.9, ratio 104.0
-    admin2 Narin: median 29.4, ratio 103.1
-    admin2 Pap: median 29.9, ratio 100.6
-    admin2 Turakurgan: median 28.6, ratio 101.9
-    admin2 Uychi: median 26.6, ratio 99.8
-    admin2 Uchkurgan: median 28.9, ratio 100.4
-    admin2 Chartak: median 28.8, ratio 100.6
-    admin2 Chust: median 30.1, ratio 104.1
-    admin2 Yangikurgan: median 28.3, ratio 102.9
-    admin2 Samarkand city: median 31.3, ratio 93.9
-    admin2 Kattakurgan city: median 28.0, ratio 98.9
-    admin2 Akdarya: median 26.3, ratio 101.8
-    admin2 Bulungur: median 25.4, ratio 103.7
-    admin2 Dzhambay: median 26.2, ratio 101.5
-    admin2 Ishtikhan: median 25.6, ratio 101.2
-    admin2 Kattakurgan: median 26.8, ratio 102.7
-    admin2 Koshrabad: median 24.5, ratio 104.0
-    admin2 Narpay: median 27.4, ratio 103.1
-    admin2 Payarik: median 24.6, ratio 106.8
-    admin2 Pastdargom: median 26.8, ratio 100.8
-    admin2 Pakhtachi: median 27.3, ratio 99.0
-    admin2 Samarkand: median 28.0, ratio 102.0
-    admin2 Nurabad: median 25.3, ratio 101.6
-    admin2 Urgut: median 23.8, ratio 102.8
-    admin2 Taylak: median 27.1, ratio 101.5
-    admin2 Termez city: median 27.3, ratio 95.4
-    admin2 Altinsay: median 25.8, ratio 105.4
-    admin2 Angor: median 27.0, ratio 99.8
-    admin2 Baysun: median 24.9, ratio 104.8
-    admin2 Muzrabad: median 26.7, ratio 98.6
-    admin2 Denau: median 24.7, ratio 104.1
-    admin2 Dzharkurgan: median 25.2, ratio 105.3
-    admin2 Sariasiya: median 26.2, ratio 99.8
-    admin2 Uzun: median 24.0, ratio 104.0
-    admin2 Sherabad: median 26.7, ratio 102.6
-    admin2 Shurchi: median 25.3, ratio 103.7
-    admin2 Gulistan city: median 29.1, ratio 98.6
-    admin2 Yangiyer city: median 29.3, ratio 97.7
-    admin2 Akaltin: median 26.7, ratio 100.8
-    admin2 Bayaut: median 28.0, ratio 102.3
-    admin2 Saykhunabad: median 27.2, ratio 100.5
-    admin2 Gulistan: median 27.2, ratio 98.1
-    admin2 Sardoba: median 26.9, ratio 102.1
-    admin2 Mirzaabad: median 26.2, ratio 107.3
-    admin2 Sirdarya: median 29.4, ratio 98.6
-    admin2 Nurafshon city: median 32.1, ratio 98.5
-    admin2 Almalik city: median 28.7, ratio 93.9
-    admin2 Angren city: median 29.3, ratio 99.6
-    admin2 Bekabad city: median 30.5, ratio 96.1
-    admin2 Chirchik city: median 34.9, ratio 97.0
-    admin2 Akhangaran city: median 33.3, ratio 99.2
-    admin2 Yangiyul city: median 31.1, ratio 94.6
-    admin2 Akkurgan: median 28.4, ratio 98.4
-    admin2 Akhangaran: median 28.4, ratio 102.1
-    admin2 Bostanlik: median 31.9, ratio 102.5
-    admin2 Buka: median 29.1, ratio 102.9
-    admin2 Kuyichirchik: median 28.6, ratio 103.8
-    admin2 Zangiata: median 31.3, ratio 107.1
-    admin2 Yukarichirchik: median 29.1, ratio 99.9
-    admin2 Kibray: median 31.2, ratio 98.8
-    admin2 Parkent: median 28.4, ratio 102.1
-    admin2 Pskent: median 30.6, ratio 103.6
-    admin2 Urtachirchik: median 29.2, ratio 99.0
-    admin2 Chinaz: median 28.9, ratio 100.1
-    admin2 Yangiyul: median 30.4, ratio 99.4
-    admin2 Tashkent: median 30.9, ratio 102.5
-    admin2 Fergana city: median 31.4, ratio 96.4
-    admin2 Kokand city: median 29.2, ratio 96.3
-    admin2 Kuvasay city: median 30.4, ratio 100.5
-    admin2 Margilan city: median 28.5, ratio 101.3
-    admin2 Altiarik: median 29.6, ratio 104.1
-    admin2 Kushtepa: median 27.9, ratio 104.7
-    admin2 Bagdad: median 28.7, ratio 99.3
-    admin2 Buvayda: median 27.3, ratio 103.9
-    admin2 Besharik: median 28.1, ratio 102.5
-    admin2 Kuva: median 29.5, ratio 102.3
-    admin2 Uchkuprik: median 27.7, ratio 99.1
-    admin2 Rishtan: median 29.3, ratio 103.0
-    admin2 Sokh: median 27.0, ratio 104.2
-    admin2 Tashlak: median 28.9, ratio 103.8
-    admin2 Uzbekistan: median 29.9, ratio 102.0
-    admin2 Fergana: median 28.9, ratio 104.0
-    admin2 Dangara: median 28.5, ratio 101.5
-    admin2 Furkat: median 29.7, ratio 102.5
-    admin2 Yazyavan: median 27.7, ratio 103.4
-    admin2 Urgench city: median 29.1, ratio 99.3
-    admin2 Khiva city: median 29.0, ratio 98.3
-    admin2 Bagat: median 28.6, ratio 98.3
-    admin2 Gurlen: median 28.0, ratio 102.7
-    admin2 Koshkupir: median 28.2, ratio 101.7
-    admin2 Urgench: median 30.3, ratio 98.5
-    admin2 Khazarasp: median 28.2, ratio 100.6
-    admin2 Khanka: median 27.9, ratio 102.2
-    admin2 Khiva: median 26.3, ratio 99.0
-    admin2 Shavat: median 28.4, ratio 99.7
-    admin2 Yangiarik: median 29.4, ratio 101.3
-    admin2 Yangibazar: median 28.8, ratio 99.8
-    admin2 Uchtepa: median 29.3, ratio 98.9
-    admin2 Bektemir: median 26.4, ratio 95.5
-    admin2 Yunusabad: median 33.1, ratio 94.2
-    admin2 Mirzo Ulugbek: median 35.6, ratio 98.8
-    admin2 Mirabad: median 35.1, ratio 94.5
-    admin2 Shaykhantokhur: median 31.9, ratio 95.7
-    admin2 Almazar: median 29.8, ratio 94.4
-    admin2 Sergeli: median 31.2, ratio 96.4
-    admin2 Yakkasaray: median 35.3, ratio 96.2
-    admin2 Yashnobod: median 34.0, ratio 95.8
-    admin2 Chilanzar: median 32.8, ratio 97.6
-  wrote data/processed/uzbekistan_siat.json (908 kB)
+== https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Punakha.pdf
+  200 application/pdf 1034583 https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Punakha.pdf
+    73 pages
+  -- page 13: 54 rows
+    y=  45.7 2017@57-78 POPULATION@81-130 AND@133-150 HOUSING@153-190 CENSUS@193-226 OF@229-239 BHUTAN@242-274 (PHCB)@277-304
+    y=  70.9 The@79-95 2017@103-126 PHCB@134-161 was@168-185 conducted@193-240 Table@257-276 2.1@278-290 Population@294-331 by@334-341 Gewog/Town@344-389 and@391-404 Sex,@406-421
+    y=  81.4 Punakha@257-287 2017@290-308
+    y=  85.9 based@57-82 on@85-96 the@99-114 de-facto@116-150 method@152-187 of@190-199 enumer-@201-240
+    y=  99.4 ation,@57-83 meaning@89-128 that@135-154 the@160-175 enumeration@181-240 Persons@369-397
+    y= 110.5 Gewog@261-283 /Town@286-307 Male@344-361 Female@372-398 Total@418-434
+    y= 115.9 was@57-74 done@78-100 on@105-116 the@121-136 basis@140-162 of@167-176 where@180-208 a@212-217 per-@221-240
+    y= 121.7 Urban@261-281
+    y= 130.9 son@57-73 was@78-95 found@100-127 at@132-141 the@146-161 moment@167-205 of@210-219 the@225-240 Punakha@265-295 Town@298-315 3,440@339-361 2,822@376-398 6,262@413-434
+    y= 144.0 Census),@57-95 though@99-131 in@135-144 some@147-171 isolated@175-210 cases,@214-240 Lobaysa@265-294 Town@296-313 406@346-361 378@383-398 784@420-434
+    y= 155.2 Rural@261-279
+    y= 160.9 a@57-62 combination@64-121 of@124-133 the@136-151 de-facto@154-188 and@191-207 de-jure@210-240
+    y= 166.3 Barp@265-281 2,531@339-361 2,411@376-398 4,942@413-434
+    y= 175.9 methods@57-96 was@99-116 also@118-136 adopted.@138-177 Guma@265-286 1,454@339-361 1,298@376-398 2,752@413-434
+    y= 188.6 Goenshari@265-301 413@346-361 281@383-398 694@420-434
+    y= 198.0 2.2@57-74 Population@81-142 of@145-156 Punakha@159-208 Kabisa@265-289 1,296@339-361 1,246@376-398 2,542@413-434
+    y= 211.0 Talog@265-283 628@346-361 577@383-398 1,205@413-434
+    y= 220.9 The@57-73 total@85-106 population@118-167 of@179-188 Punakha@200-240 Toedpaisa@265-300 1,282@339-361 1,145@376-398 2,427@413-434
+    y= 233.3 Chhubu@265-292 916@346-361 735@383-398 1,651@413-434
+    y= 235.9 Dzongkhag@57-108 as@109-119 of@120-130 30@131-143 May@144-164 2017@165-188 was@190-207 29,391@208-240
+    y= 244.4 Dzomi@265-286 1,036@339-361 1,111@376-398 2,147@413-434
+    y= 250.9 persons@57-92 (Annex@96-128 Table@132-156 A2.1).@160-187 This@191-210 is@214-221 the@225-240
+    y= 255.6 Lingmukha@265-303 535@346-361 483@383-398 1,018@413-434
+    y= 265.9 total@57-78 number@81-116 of@119-128 people@131-160 found@163-190 within@193-222 the@225-240 Shelnga-Bjemi@265-314 522@346-361 481@383-398 1,003@413-434
+    y= 277.9 Toedwang@265-299 620@346-361 693@383-398 1,313@413-434
+    y= 280.9 territory@57-96 of@99-109 Punakha@112-152 Dzongkhag@155-206 on@210-221 the@225-240
+    y= 289.1 Total@261-277 15,079@334-361 13,661@371-398 28,740@408-434
+    y= 295.9 census@57-87 reference@89-131 day@133-149 irrespective@151-204 of@206-215 their@218-240
+    y= 305.1 Note:@257-271 *Excludes@272-299 651@301-312 tourists/non-Bhutanese@314-376 found@378-392 in@394-399 hotels@401-417 on@419-425
+    y= 310.9 nationality.@57-108 It@113-120 includes@125-162 651@166-183 non-Bhuta-@188-240 census@257-275 day@277-286
+    y= 325.9 nese/tourist@57-112 staying@116-148 in@151-161 hotels@164-192 and@195-212 a@215-220 few@224-240 due@257-273 to@278-287 the@292-307 delimitation@312-367 process@372-406 of@410-420 the@425-439
+    y= 340.9 on@57-68 the@71-85 move@88-112 on@114-126 the@128-143 census@145-176 reference@178-219 day.@222-240 parliamentary@257-321 and@329-346 local@355-376 government@384-439
+    y= 355.9 The@79-95 analysis@98-134 in@137-146 this@149-166 Report@169-201 is@204-211 based@214-240 constituencies@257-321 in@330-339 2008@348-371 where@380-407 some@416-439
+    y= 370.9 on@57-68 28,740@75-107 persons@113-149 since@156-178 no@185-197 detailed@204-240 gewogs@257-287 from@291-313 Thimphu@318-358 Dzongkhag@363-414 were@418-439
+    y= 385.9 information@57-112 was@115-132 collected@135-175 from@178-200 the@204-219 651@222-240 merged@257-290 with@295-316 Punakha@320-360 Dzongkhag.@365-418 The@423-439
+    y= 400.9 non-Bhutanese/tourists.@57-168 population@257-306 of@312-321 Punakha@327-367 Dzongkhag@373-424 in@430-439
+    y= 415.9 Table@79-103 2.1@108-122 presents@127-166 the@171-185 population@190-240 2005@257-280 was@282-299 17,715@301-333 persons.@335-373
+    y= 430.9 by@57-67 sex,@71-88 and@91-108 by@112-122 gewog/town.@126-182 Of@185-197 the@200-215 total@218-240 Punakha@279-319 Dzongkhag@325-376 ranks@383-408 tenth@415-439
+    y= 445.9 population,@57-109 52.5%@111-139 were@141-162 males@164-190 and@192-209 47.5%@211-240 highest@257-290 in@296-306 population@312-361 size@368-385 among@391-422 all@429-439
+    y= 460.9 were@57-78 females.@84-121 The@127-143 total@148-170 population@175-225 of@230-240 Dzongkhags@257-308 in@311-320 the@322-337 country.@339-377
+    y= 475.9 Punakha@57-96 Dzongkhag@99-151 represents@154-201 4.0%@204-227 of@230-240
+    y= 483.0 2.4@257-274 Population@281-341 by@344-358 Area@360-386
+    y= 490.9 the@57-72 total@74-95 population@98-147 of@149-159 Bhutan.@161-197
+    y= 505.9 In@257-266 2017,@271-297 for@301-315 every@319-344 100@349-366 persons@371-406 in@411-420 the@425-439
+    y= 513.0 2.3@57-74 Size@81-103 and@106-127 Change@130-172 of@174-186
+    y= 520.9 Dzongkhag,@257-307 75@313-325 persons@332-367 lived@374-395 in@402-411 rural@417-439
+    y= 528.0 Population@57-118
+    y= 535.9 areas@257-280 while@285-309 25@314-326 persons@331-366 lived@372-393 in@398-407 urban@413-439
+    y= 550.9 Punakha@57-96 Dzongkhag@105-156 experienced@165-219 an@228-240 areas@257-280 (Figure@283-316 2.1).@319-340 At@343-354 the@357-372 national@375-413 level,@416-439
+    y= 565.9 increase@57-93 in@99-108 population@114-163 size@169-186 by@192-202 11,676@208-240 62.2%@257-285 of@291-300 the@306-321 total@327-348 population@354-403 live@409-424 in@430-439
+    y= 580.9 persons@57-92 during@97-127 the@133-148 intercensal@153-202 period,@208-240 rural@257-278 areas@281-304 and@306-323 37.8%@325-353 live@355-371 in@373-382 urban@385-411 areas.@413-439
+    y= 595.9 an@57-68 increase@71-108 of@111-120 65.9%@124-152 between@155-193 2005@196-219 and@223-239 The@257-273 proportion@277-327 of@331-341 urban@345-372 population@376-426 in@430-439
+    y= 610.9 2017.@57-82 This@89-107 growth@113-146 in@152-161 population@167-216 was@223-240 Punakha@257-296 Dzongkhag@300-351 is@355-362 24.5%,@366-397 which@401-428 is@432-439
+    y= 640.1 4@57-63
