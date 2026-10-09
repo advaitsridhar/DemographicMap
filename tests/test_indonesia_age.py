@@ -85,6 +85,9 @@ class BuildTest(unittest.TestCase):
         self.assertIn("Kepulauan Seribu", recs[JAK]["median_age_note"])
         # A renamed regency binds the polygon of its earlier name.
         self.assertEqual(recs["T"]["name"], "Toba Samosir")
+        # Every regency says why it has no ethnicity (a gap never displaces a value).
+        self.assertIn("suku bangsa", recs["M"]["ethnicity"]["note"])
+        self.assertEqual(recs["M"]["religion"]["status"], "not_available")
 
     def test_a_province_its_regencies_do_not_make_refuses(self):
         with self.assertRaises(SystemExit):

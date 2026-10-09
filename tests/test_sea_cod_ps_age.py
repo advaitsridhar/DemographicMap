@@ -144,5 +144,15 @@ class RecordsTest(unittest.TestCase):
         self.assertEqual(recs[0]["sources"], [])
 
 
+class CompositionGapsTest(unittest.TestCase):
+    def test_thailand_says_why_its_districts_have_no_composition(self):
+        gaps = s.composition_gaps("THA", "admin2")
+        self.assertEqual(set(gaps), {"religion", "language", "ethnicity"})
+        self.assertTrue(all(g["status"] == "not_available" and "Ranong" in g["note"]
+                            for g in gaps.values()))
+        self.assertEqual(set(s.composition_gaps("THA", "admin1")), {"language"})
+        self.assertEqual(s.composition_gaps("LAO", "admin2"), {})
+
+
 if __name__ == "__main__":
     unittest.main()

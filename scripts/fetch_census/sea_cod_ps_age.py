@@ -107,6 +107,51 @@ UNREAD = {
 }
 
 
+# Why Thailand's districts (and its provinces' languages) carry no composition,
+# said on the units this reader already binds. Measured on the 2000 census's
+# provincial tables, the one census whose district tables an archive keeps:
+# Ranong's workbook (tables 1-4 and the key indicators) gives a district its
+# people by sex, household type and age group only, and the province its
+# religion and minority languages only as shares among its key indicators.
+RANONG_2000 = ("web.archive.org/web/20110615044445/http://web.nso.go.th/pop2000/finalrep/"
+               "tables/ranong/ranong1.xls")
+COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
+    ("THA", "admin2"): {
+        "religion": (
+            "Thailand's censuses publish religion by province, not by district. The 2000 "
+            "census's provincial final reports give a district (amphoe) only its population by "
+            "sex, household type and five-year age group (tables 1 and 2) and put religion only "
+            f"among the province's key indicators (Ranong's tables, {RANONG_2000}); the "
+            "National Statistical Office's later census hosts refuse this project's reader."),
+        "language": (
+            "Thailand's 2000 census asked the language spoken at home, and its provincial final "
+            "reports give only the province's largest minority languages, as shares among its "
+            "key indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0%); no table gives a "
+            f"district's languages (Ranong's tables, {RANONG_2000}). The National Statistical "
+            "Office's later census hosts refuse this project's reader."),
+        "ethnicity": (
+            "Thailand's census does not ask ethnicity; it asks nationality, religion and the "
+            "language spoken at home, and the 2000 census published those for the province "
+            "only (key indicators of each provincial final report; a district gets its people "
+            f"by sex, household type and age: Ranong's tables, {RANONG_2000})."),
+    },
+    ("THA", "admin1"): {
+        "language": (
+            "Thailand's 2000 census asked the language spoken at home, but each province's final "
+            "report gives only its largest minority languages, as shares among the key "
+            "indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0% in 2000), never the whole "
+            "distribution, so no province has a language composition that adds up "
+            f"({RANONG_2000}). The National Statistical Office's later census hosts refuse this "
+            "project's reader."),
+    },
+}
+
+
+def composition_gaps(iso3: str, level: str) -> dict[str, Any]:
+    return {field: gap(NOT_AVAILABLE, note)
+            for field, note in COMPOSITION_GAPS.get((iso3, level), {}).items()}
+
+
 def key(name: Any) -> str:
     return fold(KIND.sub(" ", str(name or "")))
 
@@ -256,7 +301,8 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
                 f"{iso3}-CODPSAGE-{level}-{fold(unit['name'])}-{unit['id'][-6:]}",
                 unit["name"], level=level, parent=iso3, country=iso3, match_by="shape_id",
                 shape_id=unit["id"], aliases=[name] if key(name) != key(unit["name"]) else None,
-                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
+                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                **composition_gaps(iso3, level)))
             continue
         # The twins placed by their seats are the two polygons the dataset's
         # population reached nowhere else (its own reader matches by name), so
@@ -290,7 +336,8 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
             sources=[{"field": ("population/median_age/sex_ratio" if twin
                                 else "median_age/sex_ratio"), "name": source,
                       "url": cod_ps.DATASET_PAGE.format(stub=stub), "year": year,
-                      "license": licence}]))
+                      "license": licence}],
+            **composition_gaps(iso3, level)))
     log(f"  {iso3} {level}: {len(out)} units from {table['label']} ({year}); {refused} "
         f"refused by the checks; rows on no polygon ({len(left)}): {'; '.join(left[:40])}; "
         f"polygons with no row ({len(unbound)}): {', '.join(unbound[:40])}")

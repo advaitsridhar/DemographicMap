@@ -59,7 +59,7 @@ from collections import defaultdict
 from typing import Any
 
 from . import indonesia, uscb
-from ._shared import PROCESSED, http_get, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
 from .sea_common import age_sex, check_runs, drawn, fold, grouped
 
 OUT = "indonesia_age.json"
@@ -94,6 +94,22 @@ NO_POLYGON = frozenset({("JAKARTA", "kepulauanseribu")})
 # Drawn second-level shapes that are lakes, reservoirs and a forest; indonesia.py
 # and the build's water declaration say what each is.
 NOT_REGENCIES = frozenset({"danau", "danautoba", "hutan", "wadukcirata", "wadungkedungombo"})
+# Why a regency has no ethnicity, and why one of the few without a religion
+# has none: said on every regency this reader binds, and shown only where no
+# figure stands (a gap never displaces a value).
+ETHNICITY_GAP = (
+    "Indonesia's 2010 census asked ethnicity (suku bangsa) and BPS published it by province, "
+    "which is what the map's provinces carry; no table of it by regency could be read here: "
+    "BPS answers this project's reader HTTP 403 on every bps.go.id host, and its 2010 census "
+    "site (sp2010.bps.go.id) serves one identical page at every address. The 2020 census's "
+    "tables that reach the regencies -- the Long Form's age, household, language, mortality, "
+    "disability and migration tables -- have no ethnicity.")
+RELIGION_GAP = (
+    "No table of this regency's religion could be read. BPS answers this project's reader "
+    "HTTP 403 on every bps.go.id host; the regency's Indonesian Wikipedia infobox cites no "
+    "figure; and neither its own nor its province's open-data portal publishes one "
+    "(docs/SOURCES.md, \"Indonesia: what BPS's refusal left reachable\", lists the 110 portals "
+    "tried). The 2020 census's Long Form tables that reach the regencies have no religion.")
 KIND = re.compile(r"^(?:KABUPATEN|KAB\.?)\s+(?:ADMINISTRASI\s+|ADM\.?\s+)?", re.IGNORECASE)
 CITY = re.compile(r"^KOTA\s+(?:ADMINISTRASI\s+|ADM\.?\s+)?", re.IGNORECASE)
 
@@ -309,6 +325,8 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
         out.append(record(
             f"IDN-LF-{r['code'] or key(r['adm2'])}", shape["name"], level="admin2",
             parent="IDN", country="IDN", match_by="shape_id", shape_id=sid,
+            religion=gap(NOT_AVAILABLE, RELIGION_GAP),
+            ethnicity=gap(NOT_AVAILABLE, ETHNICITY_GAP),
             sources=[cite], **fields(r["groups"], whose)))
     for pid, prov in sorted(regions.items(), key=lambda kv: kv[1]["adm1"]):
         region = next(u for u in admin1 if u["id"] == pid)
