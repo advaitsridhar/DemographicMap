@@ -271,6 +271,20 @@ class Written(unittest.TestCase):
         ids = [r["id"] for r in self.rows]
         self.assertEqual(len(ids), len(set(ids)))
 
+    def test_nepal_s_khas_is_written_khash_and_nothing_else_moved(self):
+        nepal = [r for r in self.rows if r["country"] == "NPL"]
+        groups = {g["group"] for r in nepal for g in r["language"]}
+        self.assertNotIn("Khasi", groups)
+        self.assertIn("Khash", groups)
+        jumla = next(r for r in nepal if r["name"] == "Jumla" and r["level"] == "admin2")
+        self.assertEqual(next(g["pct"] for g in jumla["language"] if g["group"] == "Khash"), 51.2)
+        self.assertIn("Meghalaya", jumla["language_note"])
+        # The relabel is Nepal's alone: no other country's record says it.
+        for r in self.rows:
+            if r["country"] != "NPL":
+                self.assertNotIn("Khash", {g["group"] for g in r["language"]}, r["id"])
+                self.assertNotIn("Karnali", r["language_note"], r["id"])
+
     def test_no_country_says_the_same_thing_in_every_unit(self):
         by_country: dict[str, set] = {}
         for row_ in self.rows:
