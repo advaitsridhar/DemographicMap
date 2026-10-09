@@ -127,8 +127,15 @@ class TheCensus(unittest.TestCase):
         self.assertEqual(g["population"]["value"], 1600)
         self.assertEqual(g["ethnicity_basis"], "nationality")
         shares = {s["group"]: s["count"] for s in g["ethnicity"]}
-        self.assertEqual(shares, {"Yemeni": 1590, "Foreign nationals": 10})
+        self.assertEqual(shares, {"Yemeni citizens": 1590, "Foreign nationals": 10})
         self.assertIn("Nationality, not ethnicity", g["ethnicity_note"])
+        self.assertIn("Mehri", g["ethnicity_note"])
+
+    def test_every_unit_says_why_it_has_no_religion_or_language(self):
+        for r in self.by.values():
+            for field in ("religion", "language"):
+                self.assertEqual(r[field]["status"], "not_available", (r["name"], field))
+                self.assertIn("Table 25", r[field]["note"])
 
     def test_the_split_districts_and_their_outskirts_say_why_they_are_empty(self):
         for sid in ("d2301", "d2305", "d1319", "d1324", "g13", "g23"):

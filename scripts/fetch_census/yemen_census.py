@@ -20,8 +20,16 @@ A drawn governorate is the governorate code its bound districts share.
 * Every bound district: its 2004 population and males per hundred females
   from the census, and -- where the CSO projected the district's own ages --
   its median age in the 2017 projection.
-* Every governorate: the same, plus its people by nationality (Yemeni and
-  foreign nationals) in 2004.
+* Every governorate: the same, plus its people by nationality (Yemeni
+  citizens and foreign nationals) in 2004. The citizens' row is written
+  "Yemeni citizens", a label that names no people and is filed as a
+  nationality: Yemen's citizens include the Mehri of al-Mahrah and the
+  Soqotri, peoples of their own languages, and a row read as "Yemeni" would
+  colour al-Mahrah wholly Arab, which the census never said.
+* Every unit, census-bound or not: why it carries no religion or language.
+  The census tables the Census Bureau reproduces -- dwellings, households,
+  nationality (Table 25), orphanhood (31), disability (35), computer and
+  internet use (23-24) -- include neither.
 
 **A projection is not a count, and a copy is not a projection.** The CSO's
 district projections may give every district of a governorate the
@@ -91,6 +99,16 @@ COUNTS_ALSO = {"19": ("32",)}
 # read from its label, and every code the census lacks must be one of them.
 SPLIT = ("2301", "2305")
 SPLIT_GOVERNORATES = {"13", "23"}
+CITIZENS = "Yemeni citizens"
+# What the census published, measured on the Bureau's workbook: its sheets
+# and the census tables its data dictionary cites.
+PUBLISHED = ("the US Census Bureau's workbook of the census reproduces its tables on "
+             "dwellings and households, nationality (Table 25), orphanhood (Table 31), "
+             "disability (Table 35) and computer and internet use (Tables 23-24), and its data "
+             "dictionary cites no other census table; UNdata's census tables reported to the "
+             "UN Statistics Division hold none for Yemen either")
+RELIGION_WHY = f"Yemen's 2004 census published no religion table: {PUBLISHED}."
+LANGUAGE_WHY = f"Yemen's 2004 census published no language table: {PUBLISHED}."
 
 
 def code_of(row: dict[str, Any]) -> str:
@@ -318,9 +336,19 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                     parent=ISO3, country=ISO3, match_by="shape_id", shape_id=unit["id"],
                     parent_name=parents.get(unit["parent"]) if level == "admin2" else None,
                     population=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
-                    median_age=gap(NOT_AVAILABLE, why)))
+                    median_age=gap(NOT_AVAILABLE, why),
+                    religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+                    language=gap(NOT_AVAILABLE, LANGUAGE_WHY)))
                 continue
             if code is None or code not in cen:
+                # No census row of its own, but the census's tables still say
+                # what they never asked anywhere.
+                rows.append(record(
+                    f"YEM-CEN-unbound-{unit['id'][-8:]}", unit["name"], level=level,
+                    parent=ISO3, country=ISO3, match_by="shape_id", shape_id=unit["id"],
+                    parent_name=parents.get(unit["parent"]) if level == "admin2" else None,
+                    religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+                    language=gap(NOT_AVAILABLE, LANGUAGE_WHY)))
                 continue
             c = cen[code]
             population = measure(c["total"], year=YEAR, source=SOURCE)
@@ -330,15 +358,17 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 made = c["yemeni"] + c["foreign"]
                 if abs(made - c["total"]) <= NAT_TOLERANCE * c["total"]:
                     fields = {
-                        "ethnicity": shares({"Yemeni": c["yemeni"],
+                        "ethnicity": shares({CITIZENS: c["yemeni"],
                                              "Foreign nationals": c["foreign"]}),
                         "ethnicity_year": YEAR, "ethnicity_basis": "nationality",
                         "ethnicity_note": (
                             f"Nationality, not ethnicity: the 2004 census (Table 25) counts "
                             f"Yemeni nationals and others, and Yemen's census asks no ethnic "
                             f"question. Carried on this field under the owner's decision of "
-                            f"{DECISION}. Shares of the {made:,.0f} people the nationality "
-                            f"table counts (the population table counts {c['total']:,.0f})."),
+                            f"{DECISION}. 'Yemeni citizens' is every Yemeni national, of "
+                            f"whatever people -- Arab, Mehri, Soqotri or another. Shares of the "
+                            f"{made:,.0f} people the nationality table counts (the population "
+                            f"table counts {c['total']:,.0f})."),
                     }
                 else:
                     log(f"    {unit['name']}: nationality makes {made:,.0f} against "
@@ -352,6 +382,8 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 sex_ratio=sex_ratio(c["men"], c["women"], year=YEAR, source=SOURCE),
                 sex_ratio_note=(f"Males per 100 females in the 2004 census: {c['men']:,.0f} "
                                 f"men and {c['women']:,.0f} women."),
+                religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+                language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
                 sources=sources + ([{"field": "ethnicity", "name": SOURCE, "url": URL,
                                      "year": YEAR, "license": LICENCE}] if fields else []),
                 **fields))
