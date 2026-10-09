@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Hong Kong: ethnicity and usual spoken language from the 2021 Population Census.
 
-Hong Kong is one first-level shape on this map, drawn under China, and its
-census is not China's: the Census and Statistics Department runs its own
+Hong Kong is one first-level shape on this map, drawn under China -- and drawn
+again at the second level as one polygon, "Xianggang", which gets the same
+shares (``china_census.SAR_COVERAGE`` measures it as the SAR drawn again) --
+and its census is not China's: the Census and Statistics Department runs its own
 count every ten years and asks ethnicity and usual spoken language, which
 the mainland census does not. Religion it does not ask, and the shape's
 religion stays declared not collected under the China policy.
@@ -55,6 +57,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, http_get, log, record, shares, write_json
+from .china_census import SAR_COVERAGE, WHOLE
 
 OUT = "hongkong_census.json"
 YEAR = 2021
@@ -65,6 +68,9 @@ SOURCE = ("Census and Statistics Department, Hong Kong SAR, 2021 Population Cens
           "Main Results (December 2022)")
 LICENCE = ("Hong Kong Government; reproduction permitted with acknowledgement of "
            "the Census and Statistics Department as the source")
+# The second-level polygon the boundary file draws for the SAR ("Xianggang"),
+# by its shape id; china_census.SAR_COVERAGE says how much of the SAR it is.
+SECOND_LEVEL = "17275852B66204891178522"
 ETHNICITY_SHEET = "Table 3.9 (3)"
 LANGUAGE_SHEET = "Table 3.13"
 LANGUAGE_BASIS = "usual spoken language, population aged 5 and over"
@@ -255,32 +261,47 @@ def build(blob: bytes) -> list[dict[str, Any]]:
         {"field": "language", "name": f"{SOURCE}, Table 3.13", "url": URL,
          "license": LICENCE},
     ]
-    return [record(
+    ethnicity_note = (
+        f"{SOURCE}, Table 3.9 (population by sex, ethnicity and age group), both "
+        "sexes, read from the Department's workbook of the report's tables "
+        f"({REPORT} is the report). Ethnicity as reported by the person; the "
+        "census's 'South Asian' is the sum of Indian, Nepalese, Pakistani and "
+        "'Other South Asian' (Bangladeshi and Sri Lankan) and is not repeated; "
+        "'Other ethnic groups' is the census's 'Others', which includes people "
+        "reporting more than one ethnicity. Hong Kong's own census, not China's: "
+        "the mainland census records the 56 official nationalities and is not "
+        "taken in the Special Administrative Region.")
+    language_note = (
+        f"{SOURCE}, Table 3.13 (population aged 5 and over by usual spoken "
+        "language and place of birth), the Total column, read from the "
+        "Department's workbook of the report's tables. Usual spoken language is "
+        "the language a person usually speaks at home, one per person, for the "
+        "population aged 5 and over, excluding mute persons -- not the share "
+        "able to speak a language, which the report's Table 3.12 gives and which "
+        "adds to more than 100. Labels as the census prints them; 'Other "
+        "languages' is its 'Others'.")
+    whole = record(
         f"CHN-{slugify(NAME)}", NAME, level="admin1", parent="CHN", country="CHN",
         aliases=["Hong Kong", "Hong Kong SAR", "Xianggang", "香港"],
         sources=sources,
-        ethnicity=ethnicity, ethnicity_year=YEAR,
-        ethnicity_note=(
-            f"{SOURCE}, Table 3.9 (population by sex, ethnicity and age group), both "
-            "sexes, read from the Department's workbook of the report's tables "
-            f"({REPORT} is the report). Ethnicity as reported by the person; the "
-            "census's 'South Asian' is the sum of Indian, Nepalese, Pakistani and "
-            "'Other South Asian' (Bangladeshi and Sri Lankan) and is not repeated; "
-            "'Other ethnic groups' is the census's 'Others', which includes people "
-            "reporting more than one ethnicity. Hong Kong's own census, not China's: "
-            "the mainland census records the 56 official nationalities and is not "
-            "taken in the Special Administrative Region."),
+        ethnicity=ethnicity, ethnicity_year=YEAR, ethnicity_note=ethnicity_note,
         language=language, language_year=YEAR, language_basis=LANGUAGE_BASIS,
-        language_note=(
-            f"{SOURCE}, Table 3.13 (population aged 5 and over by usual spoken "
-            "language and place of birth), the Total column, read from the "
-            "Department's workbook of the report's tables. Usual spoken language is "
-            "the language a person usually speaks at home, one per person, for the "
-            "population aged 5 and over, excluding mute persons -- not the share "
-            "able to speak a language, which the report's Table 3.12 gives and which "
-            "adds to more than 100. Labels as the census prints them; 'Other "
-            "languages' is its 'Others'."),
-    )]
+        language_note=language_note)
+    # The boundary file draws the SAR again at the second level, as one
+    # polygon ("Xianggang") covering 79% of the first-level one; china_census
+    # measures that (SAR_COVERAGE) and writes the SAR's median age and sex ratio
+    # on it. The shares go on it by the same rule, with the same words.
+    coverage, what = SAR_COVERAGE[SECOND_LEVEL]
+    if coverage < WHOLE:
+        raise SystemExit(f"hongkong_census: {SECOND_LEVEL} covers {coverage:.0%} of the SAR, "
+                         "which is not the SAR drawn again")
+    drawn_again = record(
+        f"CHN-{SECOND_LEVEL}", "Xianggang", level="admin2", parent=f"CHN-{NAME}",
+        country="CHN", match_by="shape_id", shape_id=SECOND_LEVEL, sources=sources,
+        ethnicity=ethnicity, ethnicity_year=YEAR, ethnicity_note=f"{what} {ethnicity_note}",
+        language=language, language_year=YEAR, language_basis=LANGUAGE_BASIS,
+        language_note=f"{what} {language_note}")
+    return [whole, drawn_again]
 
 
 def main() -> int:

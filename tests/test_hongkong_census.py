@@ -165,9 +165,22 @@ class Reading(unittest.TestCase):
         self.assertEqual(sum(counts.values()), 7179127)
         self.assertEqual(printed["Cantonese"], 88.2)
 
+    def test_the_second_level_polygon_is_the_sar_drawn_again(self):
+        whole, drawn = hk.build(workbook())
+        self.assertEqual(drawn["level"], "admin2")
+        self.assertEqual((drawn["match_by"], drawn["shape_id"]),
+                         ("shape_id", "17275852B66204891178522"))
+        self.assertEqual(drawn["parent"], "CHN-Hong Kong Special Administrative Region")
+        self.assertEqual(drawn["ethnicity"], whole["ethnicity"])
+        self.assertEqual(drawn["language"], whole["language"])
+        # It says what the polygon is before what the figures are.
+        self.assertTrue(drawn["ethnicity_note"].startswith("This polygon is Hong Kong"))
+        self.assertTrue(drawn["ethnicity_note"].endswith(whole["ethnicity_note"]))
+        self.assertIn("two-fifths of the SAR's land", drawn["language_note"])
+
     def test_the_record_as_the_report_states_it(self):
         records = hk.build(workbook())
-        self.assertEqual(len(records), 1)
+        self.assertEqual(len(records), 2)
         rec = records[0]
         self.assertEqual(rec["name"], "Hong Kong Special Administrative Region")
         self.assertEqual(rec["id"], "CHN-hong-kong-special-administrative-region")

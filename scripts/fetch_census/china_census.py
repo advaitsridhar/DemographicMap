@@ -143,6 +143,14 @@ SAR_COVERAGE: dict[str, tuple[float, str]] = {
         "the first level.")),
 }
 WHOLE = 0.75            # a polygon covering this much of its SAR is the SAR drawn again
+# Why the SAR drawn again carries the SAR's median, sex ratio and shares
+# (hongkong_census writes those) but not its count.
+SAR_COUNT_NOTE = (
+    "{what} The SAR's own count is on its first-level polygon and is not written on this one: "
+    "a median, a ratio or a share describes the SAR's people, most of whom this polygon "
+    "holds, but a count here would be read as the people inside it, and Hong Kong Island "
+    "and Lantau, which it leaves out, are home to many of them. No census area of Hong Kong "
+    "follows the polygon's edge, so no count of its own exists.")
 
 # Hong Kong and Macau: their own 2021 censuses.
 HK_URL = "https://www.census2021.gov.hk/doc/pub/21c-main-results.xlsx"
@@ -553,6 +561,7 @@ def sar_polygon(unit: dict[str, Any], parent: dict[str, Any], sar: dict[str, Any
                       **{field: gap("not_available", what) for field in
                          ("population", "median_age", "sex_ratio", "ethnicity", "language")})
     return record(f"CHN-{unit['id']}", unit["name"], **common,
+                  population=gap("not_available", SAR_COUNT_NOTE.format(what=what)),
                   median_age=sar["median_age"],
                   median_age_note=f"{what} {sar['median_age_note']}",
                   sex_ratio=sar["sex_ratio"],

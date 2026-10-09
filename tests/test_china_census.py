@@ -212,6 +212,10 @@ class Counties(unittest.TestCase):
         self.assertIn("without Hong Kong Island and Lantau", hk["median_age_note"])
         self.assertEqual(hk["language"], {"status": "not_available"})
         self.assertEqual(hk["parent"], f"CHN-{cc.HK_NAME}")
+        # Its count is a stated gap, not a bare one: the SAR's count would be
+        # read as the polygon's own.
+        self.assertEqual(hk["population"]["status"], "not_available")
+        self.assertIn("is not written on this one", hk["population"]["note"])
 
     def test_the_coloane_fragment_is_not_macau(self):
         sliver = self.records[COLOANE]
