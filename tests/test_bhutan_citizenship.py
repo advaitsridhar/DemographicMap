@@ -187,6 +187,42 @@ class Citizenship(unittest.TestCase):
         self.assertIsNone(found)
         self.assertIn("same total", why)
 
+    def test_a_header_word_broken_at_its_slash_is_still_the_header(self):
+        # Bumthang: "Gewog/" on a line of its own, "Town Male Female ..."
+        # on the next.
+        t22 = table22()
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Gewog/Town")
+        t22[at:at + 1] = [row("Gewog/"),
+                          row("Town", "Male", "Female", "Total", "Male", "Female",
+                              "Total", "Sex", "Ratio")]
+        _, (found, why) = self.read(pages(t22))
+        self.assertEqual(why, "")
+        self.assertEqual(found.gewogs, {"Barshong": 838, "Patshaling": 1151})
+        self.assertEqual(found.towns, {"Tsirang Town": 3193})
+
+    def test_labels_set_left_of_the_header_word_are_read(self):
+        # Gasa: "Gewog/Town" starts ten points right of the labels under it.
+        def shifted(cells, by):
+            return [(x0 + by, x1 + by, t) for x0, x1, t in cells]
+        t22 = table22()
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Gewog/Town")
+        t22[at] = shifted(t22[at], 10.0)
+        _, (found, why) = self.read(pages(t22))
+        self.assertEqual(why, "")
+        self.assertEqual(found.gewogs, {"Barshong": 838, "Patshaling": 1151})
+        self.assertEqual(found.printed, 3193 + 838 + 1151)
+
+    def test_labels_far_left_of_the_header_word_are_still_cut(self):
+        # Past the slack a label is the prose beside the table, and the
+        # table does not reconcile.
+        def shifted(cells, by):
+            return [(x0 + by, x1 + by, t) for x0, x1, t in cells]
+        t22 = table22()
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Gewog/Town")
+        t22[at] = shifted(t22[at], 30.0)
+        _, (found, why) = self.read(pages(t22))
+        self.assertIsNone(found)
+
     def test_no_table_22_at_all_is_said(self):
         _, (found, why) = self.read([contents(), table21()])
         self.assertIsNone(found)

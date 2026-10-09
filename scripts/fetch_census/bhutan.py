@@ -555,7 +555,7 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
 
 
 def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
-         title: tuple[str, ...] | None = None) -> Read:
+         title: tuple[str, ...] | None = None, slack: float = 3.0) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     With ``title``, the same reading of a later table set out the same way --
@@ -618,6 +618,23 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
     A row is exactly three figures with a name before them. Exactly, not at
     least: a line of prose that happens to carry four numbers is not a row of
     this table, and treating it as one is how the first attempt filled up.
+
+    Two things only Table 2.2 has needed, and only there are they allowed:
+
+    * **Its header word can break at the slash.** Bumthang's Table 2.2 sets
+      "Gewog/" on a line of its own and "Town Male Female Total ..." on the
+      next, so neither line carries "Gewog/Town" and the table was "not found
+      under its title". A "Gewog/" line followed by a line holding "Town" and
+      the other header words is the same header, its left edge the leftmost of
+      the two words.
+    * **Its labels can start left of its header word.** Gasa's Table 2.2
+      centres "Gewog/Town" at x=71 over labels set from x=61, and the left
+      edge, three points short of the header word, cut every label off its
+      figures -- "Gasa Town" read as "Town", "Both Areas" as "Areas", and the
+      table as 5,173 people with no closing row. ``slack`` is how far left of
+      the header word a label may start; :func:`citizens` widens it only when
+      the ordinary read does not reconcile, and every check after it still
+      applies.
     """
     gewogs: dict[str, int] = {}
     towns: dict[str, int] = {}
@@ -635,6 +652,11 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
     # Dropping those cost Chhukha 29,793 people -- almost all of them
     # Phuentsholing, the second city of Bhutan.
     pending: list[str] = []
+    # Table 2.2 only: where "Gewog/" stood alone on the line just read, its
+    # left edge, waiting for the line that finishes the header (Bumthang).
+    broken_key: float | None = None
+    key_start, key_end = HEADER_KEY.split("/")
+    key_start += "/"
 
     for rows in words_by_row(blob):
         if printed:
@@ -649,11 +671,25 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
                 titled = all(word in bare for word in title or ())
                 continue
             if margin is None:
+                # The header word broken at its slash: "Gewog/" on this line,
+                # "Town" opening the next. Table 2.2 only -- every Table 2.1
+                # reconciles as it is read already.
+                key_here = HEADER_KEY in texts
+                if (title is not None and broken_key is not None
+                        and key_end in texts):
+                    key_here = True
+                    cells = [(min(x0, broken_key), x1, HEADER_KEY)
+                             if t == key_end else (x0, x1, t)
+                             for x0, x1, t in cells]
+                    texts = [t for _a, _b, t in cells]
+                broken_key = (min(x0 for x0, _x1, t in cells if t == key_start)
+                              if title is not None and key_start in texts
+                              else None)
                 if strict:
                     # All four header words on one baseline. This is how
                     # Tsirang, Bumthang and Chhukha print it, and it is tried
                     # first because it cannot mistake a data row for a header.
-                    if (HEADER_KEY in texts and HEADER_EDGE in texts
+                    if (key_here and HEADER_EDGE in texts
                             and "Male" in texts and "Female" in texts):
                         edge = min(x0 for x0, _x1, t in cells
                                    if t == HEADER_KEY)
@@ -694,7 +730,7 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
                 reading = found_here = True
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells
-                      if x0 >= edge - 3.0 and x1 <= margin + COLUMN]
+                      if x0 >= edge - slack and x1 <= margin + COLUMN]
             if debug and cells:
                 log(f"    [debug] row {[t for _a,_b,t in cells][:9]} "
                     f"-> in span {[t for _a,_b,t in inside][:9]}")
@@ -937,6 +973,11 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
 # asks none, and its citizenship is written here, basis "citizenship", with a
 # note that says what it is and is not.
 CITIZEN_TITLE = ("2.2", "Bhutanese")
+# How far left of the header word "Gewog/Town" a Table 2.2 label may start,
+# when the ordinary three points do not reconcile: Gasa sets its labels ten
+# points left of the word (x=61 against 71). Twelve takes them and stops well
+# short of the gutter between the page's two columns of prose.
+LABEL_SLACK = 12.0
 CITIZEN_SOURCE = ("National Statistics Bureau of Bhutan, Population & Housing "
                   "Census of Bhutan 2017, Tables 2.1 and 2.2: population and "
                   "Bhutanese population by gewog and town")
@@ -965,20 +1006,26 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
         return bool(table22.gewogs) and bool(table22.printed) \
             and counted == table22.printed
 
-    def attempt(strict: bool) -> Read | str:
+    def attempt(strict: bool, slack: float = 3.0) -> Read | str:
         # scan's refusals are written for Table 2.1, where they must stop
         # the run; here they cost the dzongkhag its citizenship and are kept
         # as the reason.
         try:
-            return scan(blob, strict, dzongkhag, debug, title=CITIZEN_TITLE)
+            return scan(blob, strict, dzongkhag, debug, title=CITIZEN_TITLE,
+                        slack=slack)
         except SystemExit as stop:
             return str(stop).replace("Table 2.1", "Table 2.2")
 
     found = attempt(True)
-    if isinstance(found, str) or not whole(found):
-        loose = attempt(False)
-        if not isinstance(loose, str) and whole(loose):
-            found = loose
+    # The ordinary read first; then the relaxed header; then each again with
+    # labels allowed to start a little left of the header word (Gasa). Only a
+    # read that reconciles to its own closing row replaces the first.
+    for strict, slack in ((False, 3.0), (True, LABEL_SLACK), (False, LABEL_SLACK)):
+        if not isinstance(found, str) and whole(found):
+            break
+        other = attempt(strict, slack)
+        if not isinstance(other, str) and whole(other):
+            found = other
     if isinstance(found, str):
         return None, found.removeprefix(f"bhutan: {dzongkhag}: ")
     if not found.gewogs:
