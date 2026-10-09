@@ -191,6 +191,19 @@ class PhilippinesTest(unittest.TestCase):
         self.assertEqual(pct(recs["N4"], "ethnicity"), {"Tagalog": 92.9, "Bisaya/Binisaya": 7.1})
         self.assertIn("Quezon City", recs["N2"]["religion_note"])
 
+    def test_each_field_carries_its_own_question(self):
+        # uscb's Philippine country note is no longer the religion note, so the
+        # ethnicity field states the ethnicity question, here and in uscb's own
+        # province records alike.
+        recs = self.build()
+        self.assertIn("ethnicity", recs["N2"]["ethnicity_note"])
+        self.assertNotIn("church", recs["N2"]["ethnicity_note"])
+        self.assertIn("church or denomination", recs["N2"]["religion_note"])
+        notes = {t.field: s.topic_note(uscb.PHILIPPINES, t) for t in uscb.PHILIPPINES.topics}
+        self.assertEqual(notes["ethnicity"], uscb.PHILIPPINES_ETHNICITY_NOTE)
+        self.assertEqual(notes["religion"], uscb.PHILIPPINES_RELIGION_NOTE)
+        self.assertNotIn("church", uscb.PHILIPPINES.note)
+
     def test_a_place_missing_from_the_districts_refuses(self):
         with self.assertRaises(SystemExit):
             self.build(philippine_sheets(places=NCR_PLACES + ["Somewhere"]))

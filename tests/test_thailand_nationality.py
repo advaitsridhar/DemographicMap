@@ -89,11 +89,29 @@ class BuildTest(unittest.TestCase):
     def test_records(self):
         recs = self.build()
         eth = {g["group"]: g["pct"] for g in recs["R"]["ethnicity"]}
-        self.assertEqual(eth, {"Thai": 93.4, "Foreign nationals": 6.6})
+        self.assertEqual(eth, {"Thai": 93.4, "Foreign, stateless or unknown": 6.6})
         self.assertEqual(recs["R"]["ethnicity_basis"], "nationality")
         self.assertEqual(recs["R"]["ethnicity_year"], 2000)
         self.assertIn("ranongfn.pdf", recs["R"]["sources"][0]["url"])
         self.assertEqual(recs["R"]["match_by"], "shape_id")
+
+    def test_the_residual_says_it_holds_the_people_of_no_nationality(self):
+        note = self.build()["R"]["ethnicity_note"]
+        self.assertIn("people of none", note)
+        self.assertIn("not recorded", note)
+        self.assertNotIn("owner", note)
+
+    def test_the_residual_label_is_placed_among_the_answers_naming_no_ancestry(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        import group_tree
+        chain, label = [], t.LABELS[1]
+        while label:
+            chain.append(label)
+            label = group_tree.parent_of("ethnicity", label)
+        self.assertEqual(chain[-1], "Other or not stated ancestry")
+        self.assertNotIn("Thai", chain[1:])
 
     def test_nong_khai_says_bueng_kan_is_inside_and_bueng_kan_says_why_it_is_empty(self):
         recs = self.build()

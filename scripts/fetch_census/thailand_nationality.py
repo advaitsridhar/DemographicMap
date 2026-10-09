@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Thailand: Thai and foreign nationals by province, 2000 census.
+"""Thailand: people of Thai nationality and everyone else, by province, 2000 census.
 
 Thailand's census does not ask ethnicity; it asks nationality. Under the
 owner's rule of 19 September 2026 a census's nationality count stands where
@@ -15,7 +15,10 @@ and capture). Page 1 of each is "Key indicators of the population and
 households, Population and Housing Census 1990 and 2000", and its row "Thai
 nationality (%)" is the share of the province's people of Thai nationality in
 2000 -- the row's other column is the 1970 census's, as its footnote says, and
-is not read. "Foreign nationals" is the rest, 100 less that share.
+is not read. "Foreign, stateless or unknown" is the rest, 100 less that share:
+people of another nationality, people of none -- in 2000 many hill people of
+the northern provinces, born in Thailand, held no nationality -- and anyone
+whose nationality was not recorded.
 
 **How it was read.** The reports' text layer is font-encoded -- a PDF reader
 gets glyph numbers, not digits (probe 47ef4ad) -- and only three provinces'
@@ -56,7 +59,10 @@ row for it and it says so; **Nong Khai**'s figure is the province as it was in
 
 The labels are "Thai" -- the nationality, which names no one people: the
 Isan, the Malay-speaking south, the Khmer, Kuy and hill peoples who hold it
-are all in it -- and "Foreign nationals", both already in the group tree.
+are all in it -- and "Foreign, stateless or unknown", both placed in the group
+tree (the second beside "Foreign", among the answers that name no ancestry).
+It replaces "Foreign nationals", which said nothing of the people of no
+nationality the residual holds.
 
 Usage:
     python -m scripts.fetch_census.thailand_nationality
@@ -75,7 +81,7 @@ OUT = "thailand_nationality.json"
 YEAR = 2000
 KINGDOM = 60_916_441
 LICENCE = "Open Government Data of Thailand (NSO publication)"
-LABELS = ("Thai", "Foreign nationals")
+LABELS = ("Thai", "Foreign, stateless or unknown")
 REPORTS = "http://web.nso.go.th/pop2000/finalrep/"
 SOURCE = ("National Statistical Office, 2000 Population and Housing Census, {province} "
           "final report: key indicators of the population and households (page 1), "
@@ -177,11 +183,13 @@ TABLE1_NAMES = {"Bangkok Metropolis": "Bangkok", "Lop Buri": "Lopburi",
 
 NOTE = ("Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is "
         "the 2000 census's share of the province's people of Thai nationality, as the "
-        "province's final report prints it in its key indicators, with everyone else "
-        "under 'Foreign nationals'. It stands in for ethnicity under the owner's rule for "
-        "states that count nationality instead. 'Thai' names no one people: the Isan, "
-        "Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in "
-        "it.")
+        "province's final report prints it in its key indicators. 'Foreign, stateless or "
+        "unknown' is everyone else, 100 less that share: people of another nationality, "
+        "people of none -- in 2000 many hill people of the northern provinces, born in "
+        "Thailand, held no nationality -- and anyone whose nationality was not recorded. "
+        "It is shown on this field because the census counts nationality and asks no "
+        "ethnicity. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples "
+        "and Chinese who hold Thai nationality are all in it.")
 GAP_NEW = ("Bueng Kan was carved out of Nong Khai in 2011; the 2000 census has no figure of "
            "its own for it, and Nong Khai's covers both.")
 

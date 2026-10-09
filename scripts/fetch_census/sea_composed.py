@@ -250,14 +250,9 @@ def check_children(units: list[dict[str, Any]], fields: tuple[str, ...]) -> None
         + ", ".join(f"{n} for {f}" for f, n in checked.items()))
 
 
-# uscb.py's Philippine note is about religion and it writes it on both fields;
-# the ethnicity question gets its own here.
-NOTES = {("PHL", "ethnicity"): ("2020 Census of Population and Housing, the census's question "
-                                "on each person's ethnicity, as published.")}
-
-
 def topic_note(country: uscb.Country, topic: uscb.Topic) -> str:
-    return NOTES.get((country.iso3, topic.field)) or topic.note or country.note
+    """The note ``uscb.py`` writes for the same topic: each topic's own, where it has one."""
+    return topic.note or country.note
 
 
 def composition(made: dict[str, Any], relabel: dict[str, str] | None = None
