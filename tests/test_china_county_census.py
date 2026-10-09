@@ -209,7 +209,7 @@ def without_zone(table):
 
 class Binding(unittest.TestCase):
     def build(self, code_shapes=None, seat_names=None, cut=None, tables_=None, ground=None,
-              towns=None, **changes):
+              towns=None, earlier=None, **changes):
         admin1, admin2 = units()
         for unit in admin2:
             unit.update(changes.get(unit["id"], {}))
@@ -221,7 +221,7 @@ class Binding(unittest.TestCase):
             return {r["shape_id"]: r for r in cc.build(
                 "63", tables_ or tables(), NAMES,
                 CODE_SHAPES if code_shapes is None else code_shapes, SEATS, admin1, admin2,
-                seat_names=seat_names, ground=ground, towns=towns)}
+                seat_names=seat_names, ground=ground, towns=towns, earlier=earlier)}
         finally:
             cc.CUT_FROM.clear()
             cc.CUT_FROM.update(saved)
@@ -402,6 +402,31 @@ class Binding(unittest.TestCase):
         self.assertIn("S-DATONG", figures(records))
         self.assertIn("1.12 times the polygon's 2010 figure",
                       records["S-DATONG"]["population_note"])
+
+    def test_a_rerun_compares_with_the_older_figure_not_its_own_count(self):
+        # The built map already carries the county's own 2020 count; the older
+        # figure is the one Wikidata's points file binds to the polygon.
+        own = {"S-DATONG": {"population": {"value": 10_080, "year": 2020,
+                                           "source": "the yearbook"}}}
+        records = self.build(**own)
+        self.assertIn("no older figure", records["S-DATONG"]["population_note"])
+        earlier = cc.earlier_figures([
+            {"id": "CHN-WDP-Q1", "country": "CHN", "shape_id": "S-DATONG",
+             "population": {"value": 9_000, "year": 2010, "source": "Wikidata (CC0)"}},
+            {"id": "CHN-WDP-Q2", "country": "CHN", "shape_id": "S-BAIMA",
+             "population": {"value": 5, "year": 2021}}])
+        self.assertEqual(set(earlier), {"S-DATONG"})
+        records = self.build(earlier=earlier, **own)
+        self.assertIn("1.12 times the polygon's 2010 figure (Wikidata (CC0))",
+                      records["S-DATONG"]["population_note"])
+        # A polygon whose built figure is already older keeps it.
+        unit = {"id": "S-DATONG", "population": {"value": 1, "year": 2015}}
+        self.assertIs(cc.with_earlier(unit, earlier), unit)
+
+    def test_two_older_figures_on_one_polygon_give_none(self):
+        rows = [{"id": f"CHN-WDP-Q{i}", "country": "CHN", "shape_id": "S-DATONG",
+                 "population": {"value": v, "year": 2010}} for i, v in ((1, 9_000), (2, 8_000))]
+        self.assertEqual(cc.earlier_figures(rows), {})
 
     def test_a_polygon_holding_two_seats_is_not_bound(self):
         cut = {"长白山管委会": (("6399",), "elsewhere")}

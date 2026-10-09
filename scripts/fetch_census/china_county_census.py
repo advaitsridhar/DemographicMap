@@ -428,6 +428,39 @@ def code_of(name: str, prefix: str, names: dict[str, list[str]],
     return by_stem[0] if len(by_stem) == 1 else None
 
 
+# Test 5 compares a count with the older figure the built map carries for the
+# polygon. Once a county's own 2020 count has been built onto it, that count is
+# what the map carries, and a re-run found no older figure: Qinghai's eleven
+# bound counties lost their comparison (Tongren's "1.10 times the polygon's
+# 2010 figure") when the province was read again. The figure they were
+# compared with is Wikidata's, bound to the polygon by its item's point
+# (wikidata_points_admin2.json), so a polygon whose built figure is 2020 or
+# later takes its older figure from there.
+EARLIER = PROCESSED / "wikidata_points_admin2.json"
+
+
+def earlier_figures(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Polygon id -> the one pre-2020 figure the Wikidata points file binds to it."""
+    found: dict[str, list[dict[str, Any]]] = {}
+    for r in rows:
+        pop = r.get("population")
+        if ((r.get("country") or str(r.get("id", ""))[:3]) == "CHN" and r.get("shape_id")
+                and isinstance(pop, dict) and isinstance(pop.get("value"), (int, float))
+                and pop["value"] > 0 and (pop.get("year") or YEAR) < YEAR):
+            found.setdefault(r["shape_id"], []).append(pop)
+    return {sid: pops[0] for sid, pops in found.items() if len(pops) == 1}
+
+
+def with_earlier(unit: dict[str, Any], earlier: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """The unit as test 5 reads it: its built figure, unless that is 2020 or later
+    and an older one is bound to the polygon."""
+    pop = unit.get("population")
+    if (isinstance(pop, dict) and (pop.get("year") or 0) >= YEAR
+            and unit.get("id") in earlier):
+        return {**unit, "population": earlier[unit["id"]]}
+    return unit
+
+
 def renumbered(name: str, province: str, names: dict[str, list[str]]) -> str | None:
     """A county's code under a prefecture whose own current code the bridge lacks.
 
@@ -995,10 +1028,13 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
           seat_names: dict[str, dict[str, Any]] | None = None,
           missing: dict[str, str] | None = None,
           ground: dict[str, dict[str, Any]] | None = None,
-          towns: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+          towns: dict[str, dict[str, Any]] | None = None,
+          earlier: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     """The province's county records. ``missing`` is {table: why it could
     not be read} for an OPTIONAL table that was not; ``ground`` is where
-    ``china_zones`` placed the special units' townships."""
+    ``china_zones`` placed the special units' townships; ``earlier`` is the
+    older figure for a polygon the map already carries a 2020 count on
+    (``earlier_figures``)."""
     missing = missing or {}
     areas, a0101, a0104, a0105 = read_province(code, tables, names)
     where = PROVINCES[code]["name"]
@@ -1007,7 +1043,7 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
     if national is not None and a0101[0]["total"] != national:
         raise SystemExit(f"china_county_census: {where}'s yearbook counts {a0101[0]['total']:,.0f}"
                          f" and the National Bureau's {national:,.0f}")
-    units = {u["id"]: u for u in admin2}
+    units = {u["id"]: with_earlier(u, earlier or {}) for u in admin2}
     parents = {u["id"]: f"CHN-{u['name']}" for u in admin1}
     bound, why = bind(code, areas, a0101, code_shapes, seats, units,
                       lone_seats(seat_names or {}), ground, towns)
@@ -1074,6 +1110,8 @@ def main() -> int:
                for r in json.loads(PROVINCE_FILE.read_text(encoding="utf-8"))
                if isinstance(r.get("population"), dict) and "value" in r["population"]}
     admin1, admin2 = drawn("CHN", "admin1"), drawn("CHN", "admin2")
+    earlier = (earlier_figures(json.loads(EARLIER.read_text(encoding="utf-8")))
+               if EARLIER.exists() else {})
     records: list[dict[str, Any]] = []
     only = set(args.only.split(",")) if args.only else None
     add = set(args.add.split(",")) if args.add else None
@@ -1110,7 +1148,7 @@ def main() -> int:
         try:
             records += build(code, tables, names, code_shapes, seats, admin1, admin2,
                              nbs.get(province["name"]), urls, args.explain, seat_names,
-                             missing, ground, towns)
+                             missing, ground, towns, earlier)
         except SystemExit as exc:
             # A yearbook whose tables fail a check is refused whole: none of
             # its counties is written, the province keeps whatever the last
