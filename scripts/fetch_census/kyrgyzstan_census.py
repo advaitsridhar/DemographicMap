@@ -590,19 +590,21 @@ def parse_years(text: str, where: str) -> dict[str, Any] | None:
     """The 2022 single years (both sexes, men, women) from table 2.7, or None.
 
     Rows carry twelve figures: 2009's whole population, then 2022's whole,
-    urban and rural, each as both sexes, men and women.
+    urban and rural, each as both sexes, men and women. Batken's book also
+    prints 1999's whole population first, fifteen figures in all; the last
+    nine are 2022's in every book, and the whole must be urban plus rural.
     """
     ages: dict[int, tuple[int, int, int]] = {}
     total = None
 
     def read(tokens: list[str], what: str) -> tuple[int, int, int]:
         def ok(v: list[int]) -> bool:
-            return v[3:6] == [a + b for a, b in zip(v[6:9], v[9:12])]
-        found = figures(tokens, 12, ok, triples=True)
+            return v[-9:-6] == [a + b for a, b in zip(v[-6:-3], v[-3:])]
+        found = [v for n in (12, 15) for v in figures(tokens, n, ok, triples=True)]
         if len(found) != 1:
             raise SystemExit(f"kyrgyzstan_census: {where} {what}: {len(found)} readings of "
                              f"{' '.join(tokens)!r}")
-        return tuple(found[0][3:6])  # type: ignore[return-value]
+        return tuple(found[0][-9:-6])  # type: ignore[return-value]
 
     for raw in text.splitlines():
         line = " ".join(raw.split())

@@ -392,18 +392,29 @@ def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str) -> N
             log(f"  r{i}: {' | '.join(cells)[:900]}")
 
 
-def cmd_pages(urls: list[str], match: str, most: int) -> None:
+def cmd_pages(urls: list[str], match: str, most: int, nfkc: bool = False,
+              only: str = "") -> None:
     """The text of every page of each PDF whose text matches ``match``.
 
     A census book's tables run over pages whose numbers differ from book to
     book; their titles and "Продолжение табл. N" lines do not. Printing those
     pages whole gives a parser its real layout, wrapped labels and all.
+
+    ``nfkc`` folds the text first (Persian and Arabic PDFs often carry their
+    letters as presentation forms, which no pattern in ordinary letters
+    matches); ``only`` ("3,7-9") prints those pages whatever they hold.
     """
     import logging
+    import unicodedata
 
     from pypdf import PdfReader
     logging.getLogger("pypdf").setLevel(logging.ERROR)
     pattern = re.compile(match)
+    wanted: set[int] = set()
+    for part in only.split(","):
+        if part.strip():
+            low, _, high = part.partition("-")
+            wanted.update(range(int(low), int(high or low) + 1))
     for url in urls:
         status, _, body, _ = fetch(url, timeout=300)
         if status != 200:
@@ -414,7 +425,12 @@ def cmd_pages(urls: list[str], match: str, most: int) -> None:
         log(f"{url}: {len(pages)} pages")
         for number, page in enumerate(pages, start=1):
             text = page.extract_text() or ""
-            if not pattern.search(text):
+            if nfkc:
+                text = unicodedata.normalize("NFKC", text)
+            if wanted:
+                if number not in wanted:
+                    continue
+            elif not pattern.search(text):
                 continue
             hits += 1
             if hits > most:
@@ -433,6 +449,8 @@ def main() -> int:
     pg.add_argument("urls", nargs="+")
     pg.add_argument("--match", required=True)
     pg.add_argument("--most", type=int, default=60)
+    pg.add_argument("--nfkc", action="store_true", help="fold presentation forms first")
+    pg.add_argument("--only", default="", help="print these pages whatever they hold")
     x2 = sub.add_parser("xlsx")
     x2.add_argument("url")
     x2.add_argument("--sheets", default="")
@@ -484,7 +502,7 @@ def main() -> int:
     j.add_argument("--data", default=None)
     args = ap.parse_args()
     if args.cmd == "pages":
-        cmd_pages(args.urls, args.match, args.most)
+        cmd_pages(args.urls, args.match, args.most, args.nfkc, args.only)
     elif args.cmd == "xlsx":
         cmd_xlsx(args.url, [s for s in args.sheets.split(",") if s], args.rows,
                  args.width, args.skip)
