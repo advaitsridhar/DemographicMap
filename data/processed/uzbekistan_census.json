@@ -1,0 +1,1920 @@
+[
+  {
+    "id": "UZB-CENSUS-UZ-QR",
+    "level": "admin1",
+    "name": "Republic of Karakalpakstan",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2149932,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 29.8,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 102.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 48.5,
+        "count": 1042173
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 39.3,
+        "count": 844002
+      },
+      {
+        "group": "Kazakh",
+        "pct": 7.8,
+        "count": 167203
+      },
+      {
+        "group": "Turkmen",
+        "pct": 3.8,
+        "count": 82655
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 11209
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 1645
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 664
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 381
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 47.6,
+        "count": 1024236
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 35.9,
+        "count": 772340
+      },
+      {
+        "group": "Kazakh",
+        "pct": 11.0,
+        "count": 236563
+      },
+      {
+        "group": "Turkmen",
+        "pct": 4.8,
+        "count": 102911
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 7507
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 4771
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 1071
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 533
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B61406292800140",
+    "aliases": [
+      "UZ-QR"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-AN",
+    "level": "admin1",
+    "name": "Andijan Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3531777,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 28.1,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 101.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 98.6,
+        "count": 3481762
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.7,
+        "count": 23233
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 11225
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.2,
+        "count": 7707
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 4402
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 2623
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 664
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 161
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 96.1,
+        "count": 3394043
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 2.2,
+        "count": 76409
+      },
+      {
+        "group": "Tajik",
+        "pct": 1.0,
+        "count": 33753
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 14955
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 7695
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 3694
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 797
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 431
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B10194269353937",
+    "aliases": [
+      "UZ-AN"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-BU",
+    "level": "admin1",
+    "name": "Bukhara Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2104874,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 30.2,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 101.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 97.7,
+        "count": 2057072
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8,
+        "count": 16671
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.7,
+        "count": 14265
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.3,
+        "count": 7094
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2,
+        "count": 3755
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 2961
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.1,
+        "count": 2813
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 243
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 97.5,
+        "count": 2051436
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.7,
+        "count": 14461
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 11928
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 9769
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.3,
+        "count": 7356
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.3,
+        "count": 7167
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 2511
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 246
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B6498512583322",
+    "aliases": [
+      "UZ-BU"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-JI",
+    "level": "admin1",
+    "name": "Jizzakh Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1524055,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 26.0,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 104.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 96.6,
+        "count": 1472604
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 1.3,
+        "count": 19695
+      },
+      {
+        "group": "Tajik",
+        "pct": 1.1,
+        "count": 16218
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 8445
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.2,
+        "count": 3775
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 1990
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 1208
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 120
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 94.3,
+        "count": 1437373
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 2.7,
+        "count": 40720
+      },
+      {
+        "group": "Tajik",
+        "pct": 1.8,
+        "count": 27801
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 6534
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.3,
+        "count": 4509
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 5194
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 1710
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 214
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B95489449998794",
+    "aliases": [
+      "UZ-JI"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-QA",
+    "level": "admin1",
+    "name": "Qashqadaryo Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3692323,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 26.1,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 104.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 97.1,
+        "count": 3583671
+      },
+      {
+        "group": "Tajik",
+        "pct": 2.3,
+        "count": 83486
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 10563
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.2,
+        "count": 6135
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 5238
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 1692
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 344
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.0,
+        "count": 1194
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 95.2,
+        "count": 3513498
+      },
+      {
+        "group": "Tajik",
+        "pct": 3.2,
+        "count": 119545
+      },
+      {
+        "group": "Turkmen",
+        "pct": 1.0,
+        "count": 37910
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 6413
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 7917
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 4700
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.1,
+        "count": 1896
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 444
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B24593429876046",
+    "aliases": [
+      "UZ-QA"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-NW",
+    "level": "admin1",
+    "name": "Navoiy Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1184591,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 30.9,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 103.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 90.8,
+        "count": 1075329
+      },
+      {
+        "group": "Kazakh",
+        "pct": 5.1,
+        "count": 60068
+      },
+      {
+        "group": "Russian",
+        "pct": 2.6,
+        "count": 30873
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.8,
+        "count": 9942
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.5,
+        "count": 6098
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 1657
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 309
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 315
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 90.1,
+        "count": 1067347
+      },
+      {
+        "group": "Kazakh",
+        "pct": 5.0,
+        "count": 59027
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3,
+        "count": 27127
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 1.5,
+        "count": 17776
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.6,
+        "count": 6787
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 5746
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 343
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 438
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B99988496879040",
+    "aliases": [
+      "UZ-NW"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-NG",
+    "level": "admin1",
+    "name": "Namangan Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3149161,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 27.6,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 103.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 96.1,
+        "count": 3025248
+      },
+      {
+        "group": "Tajik",
+        "pct": 3.3,
+        "count": 103319
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 10699
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 3343
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 4323
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 610
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.0,
+        "count": 1507
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 112
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 91.1,
+        "count": 2867556
+      },
+      {
+        "group": "Tajik",
+        "pct": 8.1,
+        "count": 254723
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.3,
+        "count": 9476
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 6423
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 7159
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 2807
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 786
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 231
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B52900409035974",
+    "aliases": [
+      "UZ-NG"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-SA",
+    "level": "admin1",
+    "name": "Samarqand Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4404575,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 26.9,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 103.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 95.1,
+        "count": 4188367
+      },
+      {
+        "group": "Tajik",
+        "pct": 3.6,
+        "count": 159295
+      },
+      {
+        "group": "Russian",
+        "pct": 0.9,
+        "count": 38218
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2,
+        "count": 9620
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 5594
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.1,
+        "count": 2230
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 533
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 718
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 96.0,
+        "count": 4228314
+      },
+      {
+        "group": "Tajik",
+        "pct": 2.6,
+        "count": 112916
+      },
+      {
+        "group": "Other",
+        "pct": 0.6,
+        "count": 26016
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 28266
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 4862
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.1,
+        "count": 2945
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 489
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 767
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B88950770616501",
+    "aliases": [
+      "UZ-SA"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-SU",
+    "level": "admin1",
+    "name": "Surxondaryo Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2984084,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 25.7,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 103.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 92.7,
+        "count": 2767281
+      },
+      {
+        "group": "Tajik",
+        "pct": 6.5,
+        "count": 193382
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 9824
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.2,
+        "count": 6834
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 3318
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.1,
+        "count": 1931
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.0,
+        "count": 1215
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 89.4,
+        "count": 2667209
+      },
+      {
+        "group": "Tajik",
+        "pct": 9.2,
+        "count": 273695
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.8,
+        "count": 24562
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 8196
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 5005
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 2771
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.1,
+        "count": 2253
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 393
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B83157789420886",
+    "aliases": [
+      "UZ-SU"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-SI",
+    "level": "admin1",
+    "name": "Sirdaryo Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 954361,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 28.4,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 101.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 94.1,
+        "count": 897783
+      },
+      {
+        "group": "Tajik",
+        "pct": 3.0,
+        "count": 28320
+      },
+      {
+        "group": "Russian",
+        "pct": 2.0,
+        "count": 18764
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 4410
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.2,
+        "count": 2359
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 1274
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 1159
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 292
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 88.6,
+        "count": 845483
+      },
+      {
+        "group": "Tajik",
+        "pct": 6.3,
+        "count": 60429
+      },
+      {
+        "group": "Russian",
+        "pct": 1.6,
+        "count": 15401
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 1.4,
+        "count": 13838
+      },
+      {
+        "group": "Other",
+        "pct": 1.4,
+        "count": 13783
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.4,
+        "count": 3584
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 1134
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.1,
+        "count": 709
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B28875075161645",
+    "aliases": [
+      "UZ-SI"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-TO",
+    "level": "admin1",
+    "name": "Tashkent Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3763093,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 28.9,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 83.8,
+        "count": 3151648
+      },
+      {
+        "group": "Kazakh",
+        "pct": 7.4,
+        "count": 277236
+      },
+      {
+        "group": "Russian",
+        "pct": 5.0,
+        "count": 187435
+      },
+      {
+        "group": "Tajik",
+        "pct": 2.7,
+        "count": 103444
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 23423
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.3,
+        "count": 10517
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.2,
+        "count": 6635
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.1,
+        "count": 2755
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 80.8,
+        "count": 3041270
+      },
+      {
+        "group": "Kazakh",
+        "pct": 8.9,
+        "count": 335706
+      },
+      {
+        "group": "Russian",
+        "pct": 4.0,
+        "count": 148673
+      },
+      {
+        "group": "Tajik",
+        "pct": 3.7,
+        "count": 139898
+      },
+      {
+        "group": "Other",
+        "pct": 1.9,
+        "count": 72145
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.4,
+        "count": 14714
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.2,
+        "count": 6555
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.1,
+        "count": 4132
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B31052891590801",
+    "aliases": [
+      "UZ-TO"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-FA",
+    "level": "admin1",
+    "name": "Fergana Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4238911,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 29.2,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 102.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 95.8,
+        "count": 4059229
+      },
+      {
+        "group": "Tajik",
+        "pct": 2.9,
+        "count": 121689
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8,
+        "count": 31889
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.4,
+        "count": 15925
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 4619
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 4262
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 1100
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 198
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 92.7,
+        "count": 3928844
+      },
+      {
+        "group": "Tajik",
+        "pct": 5.0,
+        "count": 210203
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 1.4,
+        "count": 57729
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 24913
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 11742
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 3908
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.0,
+        "count": 1242
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.0,
+        "count": 330
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B77081451230863",
+    "aliases": [
+      "UZ-FA"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-XO",
+    "level": "admin1",
+    "name": "Xorazm Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2140746,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 29.2,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 99.0,
+        "count": 2119881
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 7590
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.2,
+        "count": 3746
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.2,
+        "count": 4311
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 3093
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 1829
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 125
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 98.7,
+        "count": 2112789
+      },
+      {
+        "group": "Kazakh",
+        "pct": 0.4,
+        "count": 7573
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.4,
+        "count": 7638
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 5485
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 3734
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.1,
+        "count": 3130
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.0,
+        "count": 196
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.0,
+        "count": 201
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B19700274577063",
+    "aliases": [
+      "UZ-XO"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  },
+  {
+    "id": "UZB-CENSUS-UZ-TK",
+    "level": "admin1",
+    "name": "Tashkent",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3224838,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "median_age": {
+      "value": 33.2,
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "sex_ratio": {
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2026 census's preliminary results (the Statistics Committee's 67-page compendium, https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu) tabulate population, sex, age, place of birth, nationality, native language and housing, and no religion, for the republic or any region; the final results are due by 1 July 2027."
+    },
+    "language": [
+      {
+        "group": "Uzbek",
+        "pct": 84.7,
+        "count": 2732599
+      },
+      {
+        "group": "Russian",
+        "pct": 12.2,
+        "count": 394088
+      },
+      {
+        "group": "Kazakh",
+        "pct": 1.0,
+        "count": 31608
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.9,
+        "count": 29896
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.4,
+        "count": 14051
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.4,
+        "count": 13597
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.2,
+        "count": 6855
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 2144
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 84.4,
+        "count": 2721863
+      },
+      {
+        "group": "Russian",
+        "pct": 9.3,
+        "count": 299725
+      },
+      {
+        "group": "Other",
+        "pct": 3.5,
+        "count": 114323
+      },
+      {
+        "group": "Kazakh",
+        "pct": 1.3,
+        "count": 43092
+      },
+      {
+        "group": "Tajik",
+        "pct": 0.7,
+        "count": 21996
+      },
+      {
+        "group": "Karakalpak",
+        "pct": 0.4,
+        "count": 13499
+      },
+      {
+        "group": "Turkmen",
+        "pct": 0.2,
+        "count": 7317
+      },
+      {
+        "group": "Kyrgyz",
+        "pct": 0.1,
+        "count": 3023
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/ethnicity/language",
+        "name": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026)",
+        "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+        "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan"
+      }
+    ],
+    "country": "UZB",
+    "match_by": "shape_id",
+    "shape_id": "4885205B91155372132343",
+    "aliases": [
+      "UZ-TK"
+    ],
+    "population_note": "The census's permanent population: those living in the region and those of them temporarily away, abroad included. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "sex_ratio_note": "Men per 100 women, from the census's counts. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "median_age_note": "Median interpolated within the five-year age group holding the middle person; the preliminary results publish five-year groups (0-4 to 80-84, 85 and older) by region. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "ethnicity_year": 2026,
+    "ethnicity_note": "Nationality (национальная принадлежность) as each person declared it: the seven the preliminary results tabulate by region, the rest as other. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027.",
+    "language_year": 2026,
+    "language_note": "Native language (родной язык) as each person named it: the seven the preliminary results tabulate by region, the rest as other languages. A preliminary result of the 2026 census (critical moment 15 January 2026), which the Committee may still revise; its final results are due by 1 July 2027."
+  }
+]
