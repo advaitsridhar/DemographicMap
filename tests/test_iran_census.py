@@ -248,8 +248,12 @@ class Split(unittest.TestCase):
         self.assertEqual(urban["men"][7], 30)
         unsettled = ir.parse_ages(sheet, "t", block=3)
         self.assertEqual(unsettled["total"], (3, 2, 1))
+        # A heading written in the middle of its block's columns is found.
+        sheet[1][5], sheet[1][6] = "", "نقاط شهري"
+        self.assertEqual(ir.parse_ages(sheet, "t", block=1)["total"][0],
+                         sum(U_MEN) + sum(U_WOMEN))
         # A block whose heading is not the one expected stops the run.
-        sheet[1][5] = "جمع"
+        sheet[1][6] = "جمع"
         with self.assertRaises(SystemExit):
             ir.parse_ages(sheet, "t", block=1)
 

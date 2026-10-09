@@ -379,7 +379,7 @@ def workbook_rows(body: bytes) -> list[tuple[str, Any]]:
 
 
 def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str,
-             grep: str = "", sheet_match: str = "") -> None:
+             grep: str = "", sheet_match: str = "", cells: int = 0) -> None:
     """A big workbook's structure: the rows whose first cell is a label.
 
     A census workbook that stacks one block per region down a sheet is read
@@ -408,6 +408,15 @@ def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str,
         shown = 0
         for i, row in enumerate(it, start=1):
             row = list(row or [])
+            if cells:
+                # The first rows cell by cell, with each cell's column: where
+                # a merged heading sits is what a block reader depends on.
+                if i > cells:
+                    break
+                log(f"  r{i}: " + " | ".join(f"c{j}={str(c).strip()[:width]!r}"
+                                            for j, c in enumerate(row)
+                                            if c not in (None, "")))
+                continue
             first = "" if not row or row[0] is None else str(row[0]).strip()
             if not pattern and skip and re.fullmatch(skip, first):
                 continue
@@ -537,6 +546,8 @@ def main() -> int:
     x2.add_argument("--skip", default=r"\d+|\d+\D{0,3}", help="first-cell pattern to leave out")
     x2.add_argument("--grep", default="", help="print only rows with a cell matching this")
     x2.add_argument("--sheet-match", default="", help="read only sheets whose name matches")
+    x2.add_argument("--cells", type=int, default=0,
+                    help="print this many first rows cell by cell, with column numbers")
     ab = sub.add_parser("abadi")
     ab.add_argument("url")
     ab.add_argument("--kinds", default="2,3,5", help="record codes to print")
@@ -593,7 +604,7 @@ def main() -> int:
         cmd_pages(args.urls, args.match, args.most, args.nfkc, args.only)
     elif args.cmd == "xlsx":
         cmd_xlsx(args.url, [s for s in args.sheets.split(",") if s], args.rows,
-                 args.width, args.skip, args.grep, args.sheet_match)
+                 args.width, args.skip, args.grep, args.sheet_match, args.cells)
     elif args.cmd == "abadi":
         cmd_abadi(args.url, {k for k in args.kinds.split(",") if k},
                   {c for c in args.counties.split(",") if c}, args.width, args.notes)

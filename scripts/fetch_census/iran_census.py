@@ -393,12 +393,15 @@ def parse_ages(rows: list[list[Any]], label: str, block: int = 0) -> dict[str, A
         raise SystemExit(f"iran_census: {label}: no both/men/women header row")
     both_col = head[1] + 3 * block
     if block:
+        # The heading spans its block's three columns, and a workbook may
+        # write it in any one of them.
         sub = [fa(c) for c in rows[head[0]]]
         above = [fa(c) for c in rows[head[0] - 1]] if head[0] else []
         if (sub[both_col:both_col + 3] != ["مردوزن", "مرد", "زن"]
-                or both_col >= len(above) or above[both_col] != BLOCKS[block]):
+                or BLOCKS[block] not in above[both_col:both_col + 3]):
             raise SystemExit(f"iran_census: {label}: block {block} is not headed "
-                             f"{BLOCKS[block]!r} over both sexes, men and women")
+                             f"{BLOCKS[block]!r} over both sexes, men and women "
+                             f"(the row above reads {above[both_col:both_col + 3]})")
     label_col = None
     out = {"men": Counter(), "women": Counter(), "groups": {}, "unstated": [0, 0, 0]}
     total = None
