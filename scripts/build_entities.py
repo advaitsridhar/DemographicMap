@@ -4988,38 +4988,60 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
     does, the reason quotes the population shown; and where the unit has none,
     the reason says that instead of quoting one.
 
+    A place that is still more than the unit, if less than SPANS times, is
+    named only when no other unit of the country is drawn under its name. The
+    margin is for a town whose GeoNames figure is older or wider than the
+    unit's count; it is not for Dushanbe, whose point GeoNames puts inside
+    Rudaki District's polygon while the map draws the city as a first-level
+    unit of its own, of 948,251 people beside Rudaki's 603,337. The unit
+    itself, the units above it and the units drawn inside it do not count:
+    Pristina is drawn inside the District of Prishtina.
+
     Returns (named, restated).
     """
     named = restated = 0
-    for table in (admin1, admin2):
-        for rows in table.values():
-            for entity in rows:
-                held = entity.get("largest_settlement")
-                if not isinstance(held, dict) or "_spans" not in held:
-                    continue
-                spans = held.pop("_spans")
-                town, people = spans["town"], spans["people"]
-                unit = published(entity.get("population"))
-                if unit is not None and people <= GEONAMES_SPANS * unit:
-                    entity["largest_settlement"] = town
-                    if people <= unit:
-                        entity["largest_settlement_population"] = measure(
-                            people, source="GeoNames (CC BY 4.0)")
-                    entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
-                    named += 1
-                    continue
-                was = held.get("note")
-                if unit is not None:
-                    held["note"] = (f"No GeoNames place is named: {town} ({people:,}) is "
-                                    f"more than the unit ({unit:,.0f}): a city it is part "
-                                    f"of, or across a boundary.")
-                else:
-                    held["note"] = (f"No GeoNames place is named: the most populous place "
-                                    f"GeoNames puts inside it, {town} ({people:,}), cannot "
-                                    f"be weighed against a population for the unit, which "
-                                    f"has none here, so it may be a city the unit is only "
-                                    f"part of, or a place across a boundary.")
-                restated += held["note"] != was
+    for iso3 in sorted(set(admin1) | set(admin2)):
+        units = admin1.get(iso3, []) + admin2.get(iso3, [])
+        drawn: dict[str, set[str]] = defaultdict(set)
+        inside: dict[Any, set[str]] = defaultdict(set)
+        for entity in units:
+            if norm(entity.get("name")):
+                drawn[norm(entity.get("name"))].add(entity["id"])
+            inside[entity.get("parent")].add(entity["id"])
+        for entity in units:
+            held = entity.get("largest_settlement")
+            if not isinstance(held, dict) or "_spans" not in held:
+                continue
+            spans = held.pop("_spans")
+            town, people = spans["town"], spans["people"]
+            unit = published(entity.get("population"))
+            near = {entity["id"], entity.get("parent")} | inside[entity["id"]]
+            apart = bool(drawn.get(norm(town), set()) - near)
+            if unit is not None and people <= GEONAMES_SPANS * unit \
+                    and (people <= unit or not apart):
+                entity["largest_settlement"] = town
+                if people <= unit:
+                    entity["largest_settlement_population"] = measure(
+                        people, source="GeoNames (CC BY 4.0)")
+                entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+                named += 1
+                continue
+            was = held.get("note")
+            if unit is not None and people <= GEONAMES_SPANS * unit:
+                held["note"] = (f"No GeoNames place is named: {town} ({people:,}) is "
+                                f"more than the unit ({unit:,.0f}), and the map draws a "
+                                f"unit of that name apart from this one.")
+            elif unit is not None:
+                held["note"] = (f"No GeoNames place is named: {town} ({people:,}) is "
+                                f"more than the unit ({unit:,.0f}): a city it is part "
+                                f"of, or across a boundary.")
+            else:
+                held["note"] = (f"No GeoNames place is named: the most populous place "
+                                f"GeoNames puts inside it, {town} ({people:,}), cannot "
+                                f"be weighed against a population for the unit, which "
+                                f"has none here, so it may be a city the unit is only "
+                                f"part of, or a place across a boundary.")
+            restated += held["note"] != was
     return named, restated
 
 

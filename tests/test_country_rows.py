@@ -408,6 +408,43 @@ class GeoNamesSpans(unittest.TestCase):
         self.assertEqual(be.settle_geonames_spans({}, {"KAZ": [e]}), (0, 0))
         self.assertEqual(e["largest_settlement"]["note"], before)
 
+    def held(self, town, people):
+        return {"status": "not_available", "note": "No GeoNames place is named.",
+                "_spans": {"town": town, "people": people}}
+
+    def test_a_place_drawn_as_a_unit_of_its_own_is_not_named_for_its_neighbour(self):
+        rudaki = {"id": "R", "name": "Rudaki District", "parent": "DRS",
+                  "population": {"value": 603_337, "year": 2020},
+                  "largest_settlement": self.held("Dushanbe", 679_400)}
+        admin1 = {"TJK": [{"id": "DRS", "name": "Districts of Republican Subordination",
+                           "parent": "TJK"},
+                          {"id": "DU", "name": "Dushanbe", "parent": "TJK",
+                           "population": {"value": 948_251, "year": 2020},
+                           "largest_settlement": "Dushanbe"}]}
+        self.assertEqual(be.settle_geonames_spans(admin1, {"TJK": [rudaki]}), (0, 1))
+        self.assertEqual(rudaki["largest_settlement"]["note"],
+                         "No GeoNames place is named: Dushanbe (679,400) is more than the "
+                         "unit (603,337), and the map draws a unit of that name apart from "
+                         "this one.")
+        self.assertNotIn("largest_settlement_population", rudaki)
+
+    def test_a_place_drawn_inside_the_unit_is_still_named(self):
+        district = {"id": "P", "name": "District of Prishtina", "parent": "XKX",
+                    "population": {"value": 511_307, "year": 2024},
+                    "largest_settlement": self.held("Pristina", 550_000)}
+        town = {"id": "M", "name": "Pristina", "parent": "P"}
+        self.assertEqual(be.settle_geonames_spans({"XKX": [district]}, {"XKX": [town]}),
+                         (1, 0))
+        self.assertEqual(district["largest_settlement"], "Pristina")
+
+    def test_a_place_that_fits_is_named_whatever_else_shares_its_name(self):
+        unit = {"id": "B2", "name": "Brest", "parent": "B1",
+                "population": {"value": 384_542, "year": 2024},
+                "largest_settlement": self.held("Brest", 347_138)}
+        other = {"id": "X", "name": "Brest", "parent": "BLR"}
+        self.assertEqual(be.settle_geonames_spans({"BLR": [other]}, {"BLR": [unit]}), (1, 0))
+        self.assertEqual(unit["largest_settlement_population"]["value"], 347_138)
+
     def test_a_unit_with_no_population_quotes_none(self):
         e = self.entity(None)
         be.settle_geonames_spans({}, {"KAZ": [e]})
