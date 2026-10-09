@@ -406,10 +406,13 @@ def cmd_rows(args: argparse.Namespace) -> None:
 
 
 def cmd_cdx(args: argparse.Namespace) -> None:
-    url = ("https://web.archive.org/cdx/search/cdx?"
-           + urllib.parse.urlencode({"url": args.pattern, "output": "json",
-                                     "limit": args.limit, "fl": "timestamp,original,statuscode,mimetype,length",
-                                     "collapse": "urlkey"}))
+    query = {"url": args.pattern, "output": "json", "limit": args.limit,
+             "fl": "timestamp,original,statuscode,mimetype,length"}
+    if not args.all:
+        # One line per URL unless every capture is asked for: a capture cut
+        # off by its crawler can stand beside a later, whole one.
+        query["collapse"] = "urlkey"
+    url = "https://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(query)
     status, headers, body, _ = fetch(url)
     print(f"== CDX {args.pattern}: {status}" + (f" !! {headers.get('error')}" if headers.get("error") else ""))
     if status != 200:
@@ -561,6 +564,7 @@ def main() -> int:
     c.add_argument("--match", default="")
     c.add_argument("--limit", type=int, default=5000)
     c.add_argument("--rows", type=int, default=80)
+    c.add_argument("--all", action="store_true", help="every capture, not one per URL")
 
     d = sub.add_parser("wd")
     d.add_argument("names", nargs="+")
