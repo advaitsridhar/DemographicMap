@@ -31,6 +31,10 @@ file (``data/raw/boundaries``, not in git and not on the runner):
     python -m scripts.fetch_census.china_zones --place                  # boundaries
         -> data/raw/wikidata_points/CHN_zone_ground.json: each zone township's
            point, the polygon it stands in and the polygons within NEAR of it
+        -> data/raw/wikidata_points/CHN_township_ground.json: the same for every
+           township of every county-level unit of those provinces, which
+           ``china_county_census`` holds a county's polygon to: its own townships
+           in it, and no other unit's township inside it
 
 A township no point can be found for is written without one, and the reader
 treats its zone, and so its prefecture, as one it cannot place.
@@ -53,6 +57,7 @@ from ._shared import PROCESSED, RAW, http_get, log
 
 LISTING = PROCESSED / "china_zone_townships.json"
 GROUND = RAW / "wikidata_points" / "CHN_zone_ground.json"
+TOWNS = RAW / "wikidata_points" / "CHN_township_ground.json"
 POINTS = RAW / "wikidata_points" / "CHN_P442.json"
 UNITS = Path(__file__).resolve().parents[2] / "site" / "data" / "admin2" / "CHN.units.json"
 CDX = "https://web.archive.org/cdx/search/cdx"
@@ -156,6 +161,23 @@ def zones_of(areas: list[dict[str, str]], streets: list[dict[str, str]],
     return out
 
 
+def units_of(areas: list[dict[str, str]], streets: list[dict[str, str]],
+             provinces: list[str]) -> dict[str, dict[str, Any]]:
+    """{county-level code: {name, prefecture, townships: [[nine-figure code,
+    name]]}} for every county-level unit of the provinces asked for, zones and
+    districts included: what ``china_county_census`` holds each county's
+    polygon to (its own townships inside it, nobody else's)."""
+    out: dict[str, dict[str, Any]] = {}
+    for row in areas:
+        code = row["code"]
+        if code[:2] in provinces:
+            out[code] = {"name": row["name"], "prefecture": f"{code[:4]}00", "townships": []}
+    for row in streets:
+        if row["areaCode"] in out:
+            out[row["areaCode"]]["townships"].append([row["code"], row["name"]])
+    return out
+
+
 def check(zones: dict[str, dict[str, Any]], pages: dict[str, str]) -> list[str]:
     """Each kept page of the Bureau's against the transcription's zone of the
     same code: the same townships under the same codes and names, or a
@@ -188,12 +210,15 @@ def fetch(provinces: list[str]) -> int:
         log(f"  checked against the Bureau's own page: {line}")
     for code, zone in sorted(zones.items()):
         log(f"  {code} {zone['name']}: {len(zone['townships'])} townships")
+    units = units_of(areas, streets, provinces)
     listing = {"source": TRANSCRIPTION.format(edition=EDITION),
                "url": MIRROR.format(ref=MIRROR_REF, name="streets.csv"),
-               "edition": EDITION, "checked": checked, "zones": zones}
-    LISTING.write_text(json.dumps(listing, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
-                       encoding="utf-8")
-    log(f"china_zones: {len(zones)} zones in {','.join(provinces)} -> {LISTING.name}")
+               "edition": EDITION, "checked": checked, "zones": zones, "units": units}
+    LISTING.write_text(json.dumps(listing, ensure_ascii=False, separators=(",", ":"),
+                                  sort_keys=True) + "\n", encoding="utf-8")
+    log(f"china_zones: {len(zones)} zones and {len(units)} county-level units "
+        f"({sum(len(u['townships']) for u in units.values())} townships) in "
+        f"{','.join(provinces)} -> {LISTING.name}")
     return 0
 
 
@@ -307,6 +332,27 @@ def place() -> int:
                       encoding="utf-8")
     log(f"china_zones: {len(ground)} zones; {placed} listed townships placed, {unplaced} not; "
         f"{extra} more from Wikidata's items -> {GROUND}")
+    # Every county-level unit's townships, compactly: [code, name, the polygon
+    # its point stands in, the polygons within NEAR of it] or [code, name] for
+    # one with no point.
+    towns: dict[str, list[list[Any]]] = {}
+    placed = unplaced = 0
+    for ucode, unit in sorted((listing.get("units") or {}).items()):
+        rows = []
+        for code, name in unit["townships"]:
+            item, _ = point_for(code, name, by_code, by_prefecture)
+            if item:
+                spot = located(item)
+                rows.append([code, name, spot["shape"], spot["near"]])
+                placed += 1
+            else:
+                rows.append([code, name])
+                unplaced += 1
+        towns[ucode] = rows
+    TOWNS.write_text(json.dumps(towns, ensure_ascii=False, separators=(",", ":"),
+                                sort_keys=True) + "\n", encoding="utf-8")
+    log(f"china_zones: {len(towns)} county-level units; {placed} townships placed, {unplaced} "
+        f"not -> {TOWNS}")
     return 0
 
 

@@ -45,6 +45,11 @@ class Reading(unittest.TestCase):
         self.assertEqual(zones["220172"]["townships"],
                          [["220172001", "永兴街道"], ["220172101", "新湖镇"]])
 
+    def test_every_county_level_unit_of_the_provinces_asked_for(self):
+        units = cz.units_of(AREAS, STREETS, ["22"])
+        self.assertEqual(sorted(units), ["220122", "220172"])
+        self.assertEqual(units["220122"]["townships"], [["220122100", "农安镇"]])
+
     def test_the_bureau_s_own_page_must_agree(self):
         zones = cz.zones_of(AREAS, STREETS, ["22"])
         url = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/22/01/220172.html"
