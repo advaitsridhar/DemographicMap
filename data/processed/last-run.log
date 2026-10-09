@@ -1,11 +1,107 @@
-== https://stats.gov.nr/download/43/2011/157/census2011_summary.xlsx
-  HTTP 200 application/octet-stream 13,818 bytes
-  -- 'summary'
-       1: SUMMARY OF MAIN INDICATORS | ITEMS | TOTAL | MALE | FEMALE
-       2: Total population | Average annual population increase, 2006-2011 (in  | 170 | 79 | 91
-       3: Total population | Average annual population growth rate, 2006-2011 ( | 1.8 | 1.6 | 1.9
-       4: Total population | Population density (number of people/km2) | 478 | na | na
-       5: Households | Number of private households - headed by males/fem | 1647 | 1083 | 564
-       6: Households | Number of people in private households | 9945 | 5031 | 4914
-  -- 'Sheet2'
-  -- 'Sheet3'
+== https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx
+  HTTP 200 application/octet-stream 75,196 bytes
+  -- 'G-1'
+       2: Table G-1: Total
+       3:  | Sex
+       4:  | Total | Male | Female
+       5: TOTAL | 11680 | 5893 | 5787
+       6: District
+       7:      1-Yaren | 803 | 398 | 405
+       8:      2-Boe | 845 | 417 | 428
+       9:      3-Aiwo | 1258 | 655 | 603
+      10:      4-Buada | 969 | 490 | 479
+      11:      5-Denigomod | 348 | 171 | 177
+      12:      6-Nibok | 724 | 368 | 356
+      13:      7-Uaboe | 341 | 174 | 167
+      14:      8-Baitsi | 523 | 259 | 264
+      15:      9-Ewa | 537 | 260 | 277
+      16:      10-Anetan | 795 | 408 | 387
+      17:      11-Anabar | 565 | 283 | 282
+      18:      12-Ijuw | 276 | 136 | 140
+      19:      13-Anibare | 373 | 183 | 190
+      20:      14-Meneng | 1797 | 916 | 881
+      21:      15-Location | 1526 | 775 | 751
+  -- 'G-7'
+       2: Table G-7: Total
+       3:  | Sex
+       4:  | Total | Male | Female
+       5: TOTAL | 11680 | 5893 | 5787
+       6: Religion
+       7:      No Religion | 157 | 87 | 70
+       8:      Nauruan Con | 4001 | 2017 | 1984
+       9:      Catholic | 3959 | 2006 | 1953
+      10:      Assemblies  | 1365 | 670 | 695
+      11:      Nauru Indep | 410 | 211 | 199
+      12:      Pacific Lig | 706 | 364 | 342
+      13:      Seven Day A | 168 | 77 | 91
+      14:      Baptist | 175 | 90 | 85
+      15:      Do not wish | 57 | 35 | 22
+      16:      Protestant | 126 | 66 | 60
+      17:      Shalosh Pen | 186 | 91 | 95
+      18:       Fishers of | 57 | 23 | 34
+      19:      Brethren Ch | 47 | 18 | 29
+      20:      FOM Penteco | 81 | 40 | 41
+      21:      Christ Emba | 48 | 24 | 24
+      22:      Hinduism | 6 | 4 | 2
+      23:      Fundamental | 15 | 10 | 5
+      24:      Methodist C | 18 | 10 | 8
+      25:      Other relig | 98 | 50 | 48
+  -- 'H-1'
+       2: Table H-1: Total
+       3:  | Citizenship
+       4:  | Total | 1 - Citizens | 2 - Non-citizens | 3 - Status unkno
+       5: TOTAL | 11680 | 11215 | 424 | 41
+       6: District
+       7:      1-Yaren | 803 | 787 | 16 | 0
+       8:      2-Boe | 845 | 828 | 15 | 2
+       9:      3-Aiwo | 1258 | 1202 | 53 | 3
+      10:      4-Buada | 969 | 932 | 26 | 11
+      11:      5-Denigomod | 348 | 322 | 17 | 9
+      12:      6-Nibok | 724 | 719 | 4 | 1
+      13:      7-Uaboe | 341 | 337 | 2 | 2
+      14:      8-Baitsi | 523 | 521 | 2 | 0
+      15:      9-Ewa | 537 | 513 | 23 | 1
+      16:      10-Anetan | 795 | 788 | 7 | 0
+      17:      11-Anabar | 565 | 547 | 17 | 1
+      18:      12-Ijuw | 276 | 268 | 8 | 0
+      19:      13-Anibare | 373 | 358 | 13 | 2
+      20:      14-Meneng | 1797 | 1731 | 64 | 2
+      21:      15-Location | 1526 | 1362 | 157 | 7
+  -- 'I-1'
+       2: Table I-1: Total
+       3:  | Ethnicity
+       4:  | Total | Nauruan | Kiribati | Tuvaluan | Australian | New Zealander | Fijian | Solomon Islander | Filipino | Chinese | Taiwanese | Indian | Tongan | Samoan | Vanuatu | Kosraean | Other ethnicity
+       5: TOTAL | 11680 | 11046 | 261 | 68 | 18 | 1 | 153 | 42 | 14 | 10 | 6 | 5 | 19 | 7 | 2 | 4 | 24
+       6: District
+       7:      1-Yaren | 803 | 778 | 10 | 2 | 0 | 0 | 10 | 0 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0
+       8:      2-Boe | 845 | 816 | 13 | 4 | 0 | 0 | 9 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1
+       9:      3-Aiwo | 1258 | 1190 | 7 | 8 | 10 | 0 | 26 | 6 | 3 | 0 | 0 | 2 | 1 | 0 | 0 | 3 | 2
+      10:      4-Buada | 969 | 929 | 10 | 2 | 0 | 1 | 13 | 0 | 1 | 1 | 0 | 0 | 7 | 1 | 0 | 0 | 4
+      11:      5-Denigomod | 348 | 321 | 2 | 5 | 5 | 0 | 5 | 1 | 0 | 0 | 0 | 0 | 8 | 0 | 0 | 0 | 1
+      12:      6-Nibok | 724 | 708 | 4 | 4 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 2 | 0 | 0 | 1
+      13:      7-Uaboe | 341 | 334 | 0 | 0 | 0 | 0 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 2 | 0 | 0
+      14:      8-Baitsi | 523 | 518 | 1 | 1 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+      15:      9-Ewa | 537 | 506 | 11 | 5 | 1 | 0 | 8 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 4
+      16:      10-Anetan | 795 | 782 | 6 | 2 | 1 | 0 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+      17:      11-Anabar | 565 | 546 | 6 | 3 | 0 | 0 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+      18:      12-Ijuw | 276 | 262 | 11 | 0 | 0 | 0 | 0 | 1 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+      19:      13-Anibare | 373 | 352 | 7 | 0 | 0 | 0 | 2 | 9 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0
+      20:      14-Meneng | 1797 | 1721 | 10 | 7 | 0 | 0 | 44 | 3 | 1 | 3 | 4 | 1 | 1 | 0 | 0 | 0 | 2
+      21:      15-Location | 1526 | 1283 | 163 | 25 | 0 | 0 | 17 | 19 | 6 | 2 | 1 | 0 | 0 | 1 | 0 | 1 | 8
+  -- 'M-1'
+       2: Table M-1: Total
+       3:  | District
+       4:  | Total | 1-Yaren | 2-Boe | 3-Aiwo | 4-Buada | 5-Denigomodu | 6-Nibok | 7-Uaboe | 8-Baitsi | 9-Ewa | 10-Anetan | 11-Anabar | 12-Ijuw | 13-Anibare | 14-Meneng | 15-Location
+       5: TOTAL | 7187 | 503 | 537 | 811 | 627 | 216 | 429 | 203 | 328 | 315 | 468 | 337 | 172 | 217 | 1130 | 894
+       6: Age (5-year age 
+       7:      15-19 | 1025 | 71 | 84 | 107 | 98 | 31 | 41 | 25 | 54 | 41 | 73 | 58 | 33 | 25 | 174 | 110
+       8:      20-24 | 983 | 61 | 66 | 114 | 99 | 40 | 49 | 27 | 42 | 47 | 51 | 45 | 22 | 26 | 166 | 128
+       9:      25-29 | 966 | 87 | 70 | 107 | 66 | 28 | 79 | 22 | 46 | 51 | 64 | 32 | 12 | 38 | 132 | 132
+      10:      30-34 | 989 | 47 | 68 | 116 | 88 | 29 | 70 | 34 | 42 | 41 | 57 | 44 | 21 | 31 | 168 | 133
+      11:      35-39 | 890 | 58 | 50 | 93 | 70 | 24 | 59 | 33 | 42 | 35 | 76 | 52 | 23 | 27 | 130 | 118
+      12:      40-44 | 649 | 37 | 57 | 90 | 63 | 17 | 32 | 18 | 22 | 22 | 42 | 37 | 22 | 17 | 103 | 70
+      13:      45-49 | 493 | 39 | 38 | 47 | 41 | 14 | 24 | 8 | 23 | 30 | 37 | 15 | 16 | 16 | 81 | 64
+      14:      50-54 | 372 | 41 | 36 | 46 | 33 | 11 | 13 | 13 | 21 | 21 | 13 | 11 | 6 | 8 | 49 | 50
+      15:      55-59 | 323 | 22 | 31 | 33 | 26 | 9 | 31 | 5 | 9 | 10 | 21 | 14 | 5 | 13 | 50 | 44
+      16:      60-64 | 240 | 21 | 15 | 35 | 20 | 9 | 9 | 10 | 14 | 7 | 15 | 14 | 5 | 7 | 29 | 30
+      17:      65+ | 257 | 19 | 22 | 23 | 23 | 4 | 22 | 8 | 13 | 10 | 19 | 15 | 7 | 9 | 48 | 15
