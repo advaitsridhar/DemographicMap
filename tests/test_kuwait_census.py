@@ -107,19 +107,29 @@ ADMIN2 = [{"id": "a1", "name": "Dasman", "parent": "g0"},
           {"id": "a6", "name": "Mina_Doha", "parent": "g0"}]
 
 
+PLACED = {
+    "DASMAN": {"shares": {"a1": 0.95, "a2": 0.05}},
+    "AL-SHARQ": {"shares": {"a2": 0.97, "a1": 0.03}},
+    "HAWALLI": {"shares": {"a3": 1.0}},
+    "AL-FAHAHEEL": {"shares": {}},
+    "AL-JAHRA": {"shares": {}},
+    "AL-NAHDA": {"shares": {"a4": 0.10, "a5": 0.90}},
+    "KHAITAN": {"shares": {}},
+    "AL-ADAN": {"shares": {}},
+}
+
+
 class TheReader(unittest.TestCase):
     def setUp(self):
-        self.saved = (kc.NATIONAL, kc.AREAS)
-        rows, total = t1()
-        kc.NATIONAL = total
-        kc.AREAS = {"Dasman": "DASMAN", "Sharq": "AL-SHARQ", "Hawalli": "HAWALLI",
-                    "Elnahda_Shark_Elsolybekhat": "AL-NAHDA"}
+        self.saved = kc.NATIONAL
+        kc.NATIONAL = t1()[1]
 
     def tearDown(self):
-        kc.NATIONAL, kc.AREAS = self.saved
+        kc.NATIONAL = self.saved
 
-    def run_it(self, **kw):
-        return kc.build(t1()[0], t2(), t6(), t52(**kw), ADMIN1, ADMIN2, PARENTS)
+    def run_it(self, placed=None, **kw):
+        return kc.build(t1()[0], t2(), t6(), t52(**kw), ADMIN1, ADMIN2, PARENTS,
+                        PLACED if placed is None else placed)
 
     def test_governorates_carry_population_sex_age_and_nationality(self):
         out = {r["shape_id"]: r for r in self.run_it()}
@@ -131,27 +141,106 @@ class TheReader(unittest.TestCase):
         groups = {s["group"]: s["count"] for s in cap["ethnicity"]}
         self.assertEqual(groups["Kuwaiti"], km + kf)
         self.assertEqual(groups["GCC nationals"], 5)
+        self.assertNotIn("Australian", kc.GROUPS.values())
+        self.assertIn("Oceanian nationalities", kc.GROUPS.values())
 
-    def test_areas_are_bound_by_the_declared_table(self):
+    def test_areas_are_bound_by_their_ground(self):
         out = {r["shape_id"]: r for r in self.run_it()}
-        self.assertIn("a1", out)
         self.assertEqual(out["a1"]["ethnicity_basis"], "nationality")
-        self.assertNotIn("a5", out)
-        self.assertIn("counts the area in Jahra", out["a4"]["population"]["note"])
+        self.assertIn("95%", out["a1"]["population"]["note"])
+        # Al-Nahda's ground is a5's, not the sliver a4 drawn under its name;
+        # a5 is drawn in the Capital, the census counts Al-Nahda in Al-Jahra.
+        self.assertEqual(out["a4"]["population"]["status"], "not_available")
+        self.assertIn("Jahra", out["a5"]["population"]["note"])
+        self.assertIn("No census area", out["a4"]["population"]["note"])
+
+    def test_a_polygon_holding_too_many_others_is_refused(self):
+        placed = dict(PLACED, **{"AL-SHARQ": {"shares": {"a2": 0.8, "a1": 0.2}}})
+        out = {r["shape_id"]: r for r in self.run_it(placed)}
+        # Dasman's polygon would also hold a fifth of Al-Sharq's people.
+        self.assertEqual(out["a1"]["population"]["status"], "not_available")
+        self.assertIn("Al-Sharq", out["a1"]["population"]["note"])
+        self.assertEqual(out["a2"]["population"]["status"] if "status" in out["a2"]["population"]
+                         else "value", "value")
+
+    def test_areas_sharing_a_home_are_summed(self):
+        placed = dict(PLACED, **{"DASMAN": {"shares": {"a2": 0.9, "a1": 0.1}}})
+        out = {r["shape_id"]: r for r in self.run_it(placed)}
+        cap = PEOPLE["The Capital"]
+        self.assertEqual(out["a2"]["population"]["value"], sum(cap))
+        self.assertIn("sum of the census's areas", out["a2"]["population"]["note"])
+
+    def test_small_counts_carry_no_ratio_or_share(self):
+        b = {"names": ["X"], "shares": {"X": 1.0}, "stray": 0}
+        areas = {"X": {"total": 3, "men": 1, "women": 2, "kuwaiti": 1, "other": 2,
+                       "other_men": 1, "other_women": 1}}
+        fields = kc.area_fields(["X"], areas, b, 2000, 1000)
+        self.assertEqual(fields["population"]["value"], 3)
+        self.assertEqual(fields["sex_ratio"]["status"], "not_available")
+        self.assertEqual(fields["ethnicity"]["status"], "not_available")
+
+    def test_a_skewed_ratio_says_it_is_the_count(self):
+        b = {"names": ["X"], "shares": {"X": 1.0}, "stray": 0}
+        areas = {"X": {"total": 2600, "men": 2450, "women": 150, "kuwaiti": 0, "other": 2600,
+                       "other_men": 2450, "other_women": 150}}
+        fields = kc.area_fields(["X"], areas, b, 1_941_628, 955_373)
+        self.assertGreater(fields["sex_ratio"]["value"], 1000)
+        self.assertIn("not an error", fields["sex_ratio_note"])
+
+    def test_an_area_with_no_placement_entry_stops_the_run(self):
+        placed = {k: v for k, v in PLACED.items() if k != "HAWALLI"}
+        with self.assertRaises(SystemExit):
+            self.run_it(placed)
 
     def test_an_area_whose_cells_do_not_add_up_stops_the_run(self):
         with self.assertRaises(SystemExit):
             self.run_it(break_sum=True)
 
-    def test_an_area_drawn_in_another_governorate_stops_the_run(self):
-        kc.AREAS = dict(kc.AREAS, Hawalli="AL-FAHAHEEL")
-        with self.assertRaises(SystemExit):
-            self.run_it()
-
     def test_a_national_total_that_does_not_match_stops_the_run(self):
         kc.NATIONAL += 1
         with self.assertRaises(SystemExit):
             self.run_it()
+
+
+def square(x0, y0, x1, y1):
+    return [{"lon": x0, "lat": y0}, {"lon": x1, "lat": y0}, {"lon": x1, "lat": y1},
+            {"lon": x0, "lat": y1}, {"lon": x0, "lat": y0}]
+
+
+class TheGround(unittest.TestCase):
+    def test_shares_are_measured_on_drawn_land(self):
+        from shapely.geometry import box
+        drawn = {"p1": box(0, 0, 1, 1), "p2": box(1, 0, 2, 1)}
+        labels = {"p1": "One", "p2": "Two"}
+        # An area three quarters in p1, a quarter in p2, and as much again at
+        # sea (beyond every drawn polygon), which does not count.
+        elements = [
+            {"type": "way", "id": 1, "tags": {"name": "المسايل", "boundary": "administrative",
+                                              "admin_level": "6"},
+             "geometry": square(0.25, 0, 1.25, 1) + []},
+            {"type": "way", "id": 2, "tags": {"name": "الصليبخات", "place": "suburb"},
+             "geometry": square(0, 0, 0.5, 1)},
+        ]
+        elements[0]["geometry"] = square(0.25, -1, 1.25, 1)
+        index = kc.osm_index(elements)
+        areas = {"AL-MASAYEL": {"ar": "المسايل"}, "AL-SULAIBIKHAT": {"ar": "الصليبيخات"},
+                 "NOWHERE": {"ar": "لا مكان"}}
+        placed = kc.ground(areas, index, drawn, labels)
+        self.assertAlmostEqual(placed["AL-MASAYEL"]["shares"]["p1"], 0.75, places=3)
+        self.assertAlmostEqual(placed["AL-MASAYEL"]["shares"]["p2"], 0.25, places=3)
+        self.assertEqual(placed["AL-MASAYEL"]["osm"], ["w1"])
+        # Spelt otherwise in OSM, found through the declared name.
+        self.assertAlmostEqual(placed["AL-SULAIBIKHAT"]["shares"]["p1"], 1.0, places=3)
+        self.assertEqual(placed["NOWHERE"]["osm"], [])
+        self.assertEqual(kc.osm_url("r18005317"),
+                         "https://www.openstreetmap.org/relation/18005317")
+
+
+class TheArabicNames(unittest.TestCase):
+    def test_spellings_fold_together(self):
+        self.assertEqual(kc.fold_ar("ضاحية عبدالله السالم"), kc.fold_ar("ضاحية عبد الله السالم"))
+        self.assertEqual(kc.fold_ar("أبو حليفة"), kc.fold_ar("ابو حليفة"))
+        self.assertEqual(kc.fold_ar("القرية"), kc.fold_ar("القريه"))
 
 
 if __name__ == "__main__":
