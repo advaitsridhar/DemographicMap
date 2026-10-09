@@ -1,18 +1,14 @@
-uzbekistan_census: 2026 census, preliminary results
-  14 regions make the republic's 39,047,321 in every table
-    Republic of Karakalpakstan: 2,149,932, median 29.8, ratio 102.5, Uzbek 47.6%, Karakalpak 35.9%, Kazakh 11.0%; Uzbek 48.5%, Karakalpak 39.3%, Kazakh 7.8%
-    Andijan Region: 3,531,777, median 28.1, ratio 101.4, Uzbek 96.1%, Kyrgyz 2.2%, Tajik 1.0%; Uzbek 98.6%, Kyrgyz 0.7%, Russian 0.3%
-    Bukhara Region: 2,104,874, median 30.2, ratio 101.9, Uzbek 97.5%, Tajik 0.7%, Russian 0.6%; Uzbek 97.7%, Russian 0.8%, Tajik 0.7%
-    Jizzakh Region: 1,524,055, median 26.0, ratio 104.2, Uzbek 94.3%, Kyrgyz 2.7%, Tajik 1.8%; Uzbek 96.6%, Kyrgyz 1.3%, Tajik 1.1%
-    Qashqadaryo Region: 3,692,323, median 26.1, ratio 104.7, Uzbek 95.2%, Tajik 3.2%, Turkmen 1.0%; Uzbek 97.1%, Tajik 2.3%, Russian 0.3%
-    Navoiy Region: 1,184,591, median 30.9, ratio 103.3, Uzbek 90.1%, Kazakh 5.0%, Russian 2.3%; Uzbek 90.8%, Kazakh 5.1%, Russian 2.6%
-    Namangan Region: 3,149,161, median 27.6, ratio 103.2, Uzbek 91.1%, Tajik 8.1%, Kyrgyz 0.3%; Uzbek 96.1%, Tajik 3.3%, Russian 0.3%
-    Samarqand Region: 4,404,575, median 26.9, ratio 103.2, Uzbek 96.0%, Tajik 2.6%, Other 0.6%; Uzbek 95.1%, Tajik 3.6%, Russian 0.9%
-    Surxondaryo Region: 2,984,084, median 25.7, ratio 103.6, Uzbek 89.4%, Tajik 9.2%, Turkmen 0.8%; Uzbek 92.7%, Tajik 6.5%, Russian 0.3%
-    Sirdaryo Region: 954,361, median 28.4, ratio 101.8, Uzbek 88.6%, Tajik 6.3%, Russian 1.6%; Uzbek 94.1%, Tajik 3.0%, Russian 2.0%
-    Tashkent Region: 3,763,093, median 28.9, ratio 101.7, Uzbek 80.8%, Kazakh 8.9%, Russian 4.0%; Uzbek 83.8%, Kazakh 7.4%, Russian 5.0%
-    Fergana Region: 4,238,911, median 29.2, ratio 102.3, Uzbek 92.7%, Tajik 5.0%, Kyrgyz 1.4%; Uzbek 95.8%, Tajik 2.9%, Russian 0.8%
-    Xorazm Region: 2,140,746, median 29.2, ratio 101.7, Uzbek 98.7%, Kazakh 0.4%, Turkmen 0.4%; Uzbek 99.0%, Russian 0.4%, Kazakh 0.2%
-    Tashkent: 3,224,838, median 33.2, ratio 100.1, Uzbek 84.4%, Russian 9.3%, Other 3.5%; Uzbek 84.7%, Russian 12.2%, Kazakh 1.0%
-  republic: median 28.5, ratio 102.5, Uzbek 89.4%, Tajik 3.3%, Karakalpak 2.2%, Kazakh 1.8%, Russian 1.6%, Other 0.8%, Kyrgyz 0.6%, Turkmen 0.5% | Uzbek 91.3%, Karakalpak 2.3%, Tajik 2.2%, Russian 2.0%, Kazakh 1.4%, Turkmen 0.3%, Kyrgyz 0.2%, Other languages 0.2%
-  wrote data/processed/uzbekistan_census.json (74 kB)
+sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
+  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
+    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
+    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
+  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
+  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  wrote data/processed/sea_cod_ps_age.json (4019 kB)
+  wrote sea_cod_ps_age.json: 1196 records
