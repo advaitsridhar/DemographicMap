@@ -58,6 +58,7 @@ import argparse
 import io
 import json
 import re
+import urllib.error
 from typing import Any
 
 from ._shared import PROCESSED, RAW, http_get, log, measure, record, write_json
@@ -71,7 +72,7 @@ YEAR = 2022
 OUT = "bangladesh_zila_age.json"
 PAGE = "https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220"
 STORE = ("https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/"
-         "b/V2Ministry/o/office-bbs/2024/12/{}.xlsx")
+         "b/V2Ministry/o/office-bbs/{}.xlsx")
 SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
           "Community Series (zila workbook), Table C-02: population by five-year "
           "age group")
@@ -90,74 +91,74 @@ LABELS = [f"{low}-{high}" for low, high in GROUPS[:-1]] + ["80+"]
 # Table P03 below would fail if the columns were not the ages in that order.
 MISPRINTS = {(11, "50-59")}
 # The Community Series as the census page lists it: division, the page's label
-# for the zila, and the workbook's name on the Bureau's object storage, in the
-# page's order. The labels are the page's own, misspellings and all; each must
+# for the zila, and the workbook's folder and name on the Bureau's object
+# storage, in the page's order (Kushtia's was uploaded again in March 2026). The labels are the page's own, misspellings and all; each must
 # name the zila the workbook's first row names (see LABEL_SPELLINGS).
 ZILAS: list[tuple[str, str, str]] = [
-    ("Barishal", "BARISHAL", "c56515ca45314f6586d9d7ffae0e89a7"),
-    ("Barishal", "BHOLA", "45edbfa4a084468ca52ebc3895b77e8f"),
-    ("Barishal", "PIROJPUR", "e157dd0ff3ae4cfcb0f8804fec4c3011"),
-    ("Barishal", "PATUAKHAL", "9b566687c68045ba9dc4a5baf078494b"),
-    ("Barishal", "BARGUNA", "373ae6014cce4bab852b96c2cddaa21e"),
-    ("Barishal", "JHALAKHATI", "187d1669b3fe47ca8e0a07e9bada1252"),
-    ("Chattogram", "CHATTOGRAM", "80e929a76aa14282826502ff159a8aa5"),
-    ("Chattogram", "COX'S BAZAR", "30dc3493153848f2b825adaeec3fe941"),
-    ("Chattogram", "BANDARBAN", "7851f407961e43399592b1b6df4534f7"),
-    ("Chattogram", "RANGAMATI", "0aff8184552d4476b07064b259684f67"),
-    ("Chattogram", "NOAKHALI", "f2357c3b52ee4ba284f7750301b6ecef"),
-    ("Chattogram", "FENI", "2b9c505de31e463582957bc16a96ed2f"),
-    ("Chattogram", "CUMILLA", "4c96db4232fe4ea9b2065c48c992a84d"),
-    ("Chattogram", "CHANDPUR", "18332832c988417c97370153dc7c5714"),
-    ("Chattogram", "BRAHMMANBARIA", "a5a9606aa66a48acb6a4eb93d51fab3c"),
-    ("Chattogram", "KHAGRACHHARI", "c76f262b21804911867771950482c1a8"),
-    ("Chattogram", "LAKSHMIPUR", "7557ac06285f4bf28273e40f491200cc"),
-    ("Dhaka", "DHAKA", "b15f7a7f63ff451e86ce7fd7cca9493d"),
-    ("Dhaka", "NARAYANGANJ", "ecfcd0ae1c0e4702af5d693c64d515d3"),
-    ("Dhaka", "GAZIPUR", "fa819560a3a243e08b6e715f2572141f"),
-    ("Dhaka", "MANIKGANJ", "70930e5767e9432b9076e49c4673d10c"),
-    ("Dhaka", "NARSINGDI", "154c006ad6394203a8f07452f3da6b48"),
-    ("Dhaka", "FARIDPUR", "b5f5926fea1c462eb5618fdefc2e8142"),
-    ("Dhaka", "GOPALGANJ", "3ae267c260a447ebb1e7ff20b248b9f4"),
-    ("Dhaka", "RAJBARI", "2dd354800b8642bd9d2318d6a39095fc"),
-    ("Dhaka", "SHARIATPUR", "27c3b4972ef746e5a20200951efca45d"),
-    ("Dhaka", "KISHOREGANJ", "7366f40e63e74ced8e4b231df246e068"),
-    ("Dhaka", "MUNSHIGANJ", "91d725ef924d4b4f9da8bbef02c3edc7"),
-    ("Dhaka", "MADARIPUR", "f412eb1018b8493a99dec89cdd9e4df7"),
-    ("Dhaka", "TANGAIL", "257941ad3e0449a29c02925138ffcef7"),
-    ("Mymensingh", "MYMENSINGH", "154cbde8cea641cdb85ab83f610b840c"),
-    ("Mymensingh", "JAMALPUR", "89e86f23804e4e119149f252b777c2d6"),
-    ("Mymensingh", "SHERPUR", "54153bc4a5094bc495c732fb9d62369e"),
-    ("Mymensingh", "NETRAKONA", "6e5bb9426ce24d8e99867fe62881edc8"),
-    ("Khulna", "KHULNA", "63c65a7594254c5fb5dbede282f0e67b"),
-    ("Khulna", "BAGERHAT", "9d14b0b0151e46b5b1c5c8e8cd3fce77"),
-    ("Khulna", "SATKHIRA", "4c8712e0f2d145dbabdbfbe95f28088e"),
-    ("Khulna", "JHENAIDAH", "3f288c3f560f49e5afac32bc0bf5b3df"),
-    ("Khulna", "CHUADANGA", "08bcfffe4e294e1d87066183002df3b2"),
-    ("Khulna", "MAGURA", "fde4acaa8d0149c68cb30511f461962f"),
-    ("Khulna", "KUSHTIA", "bd633dab-40c1-4371-87ea-c43c657040d0"),
-    ("Khulna", "MEHERPUR", "ff9cd564464a4df69854146475141764"),
-    ("Khulna", "JASHORE", "fdc7f79d9d064cf6896ad921503496b0"),
-    ("Khulna", "NARAIL", "fd9eddc198e34c10a62fddd1cb9d6be8"),
-    ("Rajshahi", "RAJSHAHI", "3c3b94e632604786bfc0b4a3a4872208"),
-    ("Rajshahi", "NATORE", "e0349f833a4a45baafa46d1bb562b908"),
-    ("Rajshahi", "NAOGAON", "34e059e2210243cbbbbdd3142b882ba1"),
-    ("Rajshahi", "PABNA", "0b82f91e54084e6ab16100f6bf808c19"),
-    ("Rajshahi", "SIRAJGANJ", "b351a354bf3949dab5b3d936c55c60ce"),
-    ("Rajshahi", "BOGURA", "b63c65a7d6c24ee3b854881f0a8d506d"),
-    ("Rajshahi", "CHAPAI NAWABGANJ", "9fd9b896e2da4e1b9fc7d163490ba81d"),
-    ("Rajshahi", "JOYPURHAT", "98d23819d1764f3da7dc257e1f498a34"),
-    ("Rangpur", "RANGPUR", "0b4cdcd23f0c4291808e8724b113ac67"),
-    ("Rangpur", "GAIBANDHA", "8515389ccebf4b1ea5c91659426447ad"),
-    ("Rangpur", "NILPHAMARI", "7fbb45d9940d4cfa9b4a4d9b8bfd34ab"),
-    ("Rangpur", "KURIGRAM", "ec98c2ca2a5a4af28d3e2e2236880a44"),
-    ("Rangpur", "DINAJPUR", "795760b6093542289f70a1d9ccc9cbca"),
-    ("Rangpur", "THAKURGAON", "4de9d3f0253a4529b29f64485b2aa132"),
-    ("Rangpur", "LALMONIRHAT", "fe276d9063bd494f8d635cf8aa39e825"),
-    ("Rangpur", "PANCHAGARH", "e3544f24c67145aeaea80921aaef5f1c"),
-    ("Sylhet", "SYLHET", "3abf605f9ab84a6686ad29688f206160"),
-    ("Sylhet", "HABIGANJ", "5f57f437a3a343d789a71c659732ceb9"),
-    ("Sylhet", "MAULVIBAZAR", "15c2523d9c494f65bd1ec18fa602acf4"),
-    ("Sylhet", "SUNAMGANJ", "952593ea389a4e3ba299fcfa3887c6c2"),
+    ("Barishal", "BARISHAL", "2024/12/c56515ca45314f6586d9d7ffae0e89a7"),
+    ("Barishal", "BHOLA", "2024/12/45edbfa4a084468ca52ebc3895b77e8f"),
+    ("Barishal", "PIROJPUR", "2024/12/e157dd0ff3ae4cfcb0f8804fec4c3011"),
+    ("Barishal", "PATUAKHAL", "2024/12/9b566687c68045ba9dc4a5baf078494b"),
+    ("Barishal", "BARGUNA", "2024/12/373ae6014cce4bab852b96c2cddaa21e"),
+    ("Barishal", "JHALAKHATI", "2024/12/187d1669b3fe47ca8e0a07e9bada1252"),
+    ("Chattogram", "CHATTOGRAM", "2024/12/80e929a76aa14282826502ff159a8aa5"),
+    ("Chattogram", "COX'S BAZAR", "2024/12/30dc3493153848f2b825adaeec3fe941"),
+    ("Chattogram", "BANDARBAN", "2024/12/7851f407961e43399592b1b6df4534f7"),
+    ("Chattogram", "RANGAMATI", "2024/12/0aff8184552d4476b07064b259684f67"),
+    ("Chattogram", "NOAKHALI", "2024/12/f2357c3b52ee4ba284f7750301b6ecef"),
+    ("Chattogram", "FENI", "2024/12/2b9c505de31e463582957bc16a96ed2f"),
+    ("Chattogram", "CUMILLA", "2024/12/4c96db4232fe4ea9b2065c48c992a84d"),
+    ("Chattogram", "CHANDPUR", "2024/12/18332832c988417c97370153dc7c5714"),
+    ("Chattogram", "BRAHMMANBARIA", "2024/12/a5a9606aa66a48acb6a4eb93d51fab3c"),
+    ("Chattogram", "KHAGRACHHARI", "2024/12/c76f262b21804911867771950482c1a8"),
+    ("Chattogram", "LAKSHMIPUR", "2024/12/7557ac06285f4bf28273e40f491200cc"),
+    ("Dhaka", "DHAKA", "2024/12/b15f7a7f63ff451e86ce7fd7cca9493d"),
+    ("Dhaka", "NARAYANGANJ", "2024/12/ecfcd0ae1c0e4702af5d693c64d515d3"),
+    ("Dhaka", "GAZIPUR", "2024/12/fa819560a3a243e08b6e715f2572141f"),
+    ("Dhaka", "MANIKGANJ", "2024/12/70930e5767e9432b9076e49c4673d10c"),
+    ("Dhaka", "NARSINGDI", "2024/12/154c006ad6394203a8f07452f3da6b48"),
+    ("Dhaka", "FARIDPUR", "2024/12/b5f5926fea1c462eb5618fdefc2e8142"),
+    ("Dhaka", "GOPALGANJ", "2024/12/3ae267c260a447ebb1e7ff20b248b9f4"),
+    ("Dhaka", "RAJBARI", "2024/12/2dd354800b8642bd9d2318d6a39095fc"),
+    ("Dhaka", "SHARIATPUR", "2024/12/27c3b4972ef746e5a20200951efca45d"),
+    ("Dhaka", "KISHOREGANJ", "2024/12/7366f40e63e74ced8e4b231df246e068"),
+    ("Dhaka", "MUNSHIGANJ", "2024/12/91d725ef924d4b4f9da8bbef02c3edc7"),
+    ("Dhaka", "MADARIPUR", "2024/12/f412eb1018b8493a99dec89cdd9e4df7"),
+    ("Dhaka", "TANGAIL", "2024/12/257941ad3e0449a29c02925138ffcef7"),
+    ("Mymensingh", "MYMENSINGH", "2024/12/154cbde8cea641cdb85ab83f610b840c"),
+    ("Mymensingh", "JAMALPUR", "2024/12/89e86f23804e4e119149f252b777c2d6"),
+    ("Mymensingh", "SHERPUR", "2024/12/54153bc4a5094bc495c732fb9d62369e"),
+    ("Mymensingh", "NETRAKONA", "2024/12/6e5bb9426ce24d8e99867fe62881edc8"),
+    ("Khulna", "KHULNA", "2024/12/63c65a7594254c5fb5dbede282f0e67b"),
+    ("Khulna", "BAGERHAT", "2024/12/9d14b0b0151e46b5b1c5c8e8cd3fce77"),
+    ("Khulna", "SATKHIRA", "2024/12/4c8712e0f2d145dbabdbfbe95f28088e"),
+    ("Khulna", "JHENAIDAH", "2024/12/3f288c3f560f49e5afac32bc0bf5b3df"),
+    ("Khulna", "CHUADANGA", "2024/12/08bcfffe4e294e1d87066183002df3b2"),
+    ("Khulna", "MAGURA", "2024/12/fde4acaa8d0149c68cb30511f461962f"),
+    ("Khulna", "KUSHTIA", "2026/3/bd633dab-40c1-4371-87ea-c43c657040d0"),
+    ("Khulna", "MEHERPUR", "2024/12/ff9cd564464a4df69854146475141764"),
+    ("Khulna", "JASHORE", "2024/12/fdc7f79d9d064cf6896ad921503496b0"),
+    ("Khulna", "NARAIL", "2024/12/fd9eddc198e34c10a62fddd1cb9d6be8"),
+    ("Rajshahi", "RAJSHAHI", "2024/12/3c3b94e632604786bfc0b4a3a4872208"),
+    ("Rajshahi", "NATORE", "2024/12/e0349f833a4a45baafa46d1bb562b908"),
+    ("Rajshahi", "NAOGAON", "2024/12/34e059e2210243cbbbbdd3142b882ba1"),
+    ("Rajshahi", "PABNA", "2024/12/0b82f91e54084e6ab16100f6bf808c19"),
+    ("Rajshahi", "SIRAJGANJ", "2024/12/b351a354bf3949dab5b3d936c55c60ce"),
+    ("Rajshahi", "BOGURA", "2024/12/b63c65a7d6c24ee3b854881f0a8d506d"),
+    ("Rajshahi", "CHAPAI NAWABGANJ", "2024/12/9fd9b896e2da4e1b9fc7d163490ba81d"),
+    ("Rajshahi", "JOYPURHAT", "2024/12/98d23819d1764f3da7dc257e1f498a34"),
+    ("Rangpur", "RANGPUR", "2024/12/0b4cdcd23f0c4291808e8724b113ac67"),
+    ("Rangpur", "GAIBANDHA", "2024/12/8515389ccebf4b1ea5c91659426447ad"),
+    ("Rangpur", "NILPHAMARI", "2024/12/7fbb45d9940d4cfa9b4a4d9b8bfd34ab"),
+    ("Rangpur", "KURIGRAM", "2024/12/ec98c2ca2a5a4af28d3e2e2236880a44"),
+    ("Rangpur", "DINAJPUR", "2024/12/795760b6093542289f70a1d9ccc9cbca"),
+    ("Rangpur", "THAKURGAON", "2024/12/4de9d3f0253a4529b29f64485b2aa132"),
+    ("Rangpur", "LALMONIRHAT", "2024/12/fe276d9063bd494f8d635cf8aa39e825"),
+    ("Rangpur", "PANCHAGARH", "2024/12/e3544f24c67145aeaea80921aaef5f1c"),
+    ("Sylhet", "SYLHET", "2024/12/3abf605f9ab84a6686ad29688f206160"),
+    ("Sylhet", "HABIGANJ", "2024/12/5f57f437a3a343d789a71c659732ceb9"),
+    ("Sylhet", "MAULVIBAZAR", "2024/12/15c2523d9c494f65bd1ec18fa602acf4"),
+    ("Sylhet", "SUNAMGANJ", "2024/12/952593ea389a4e3ba299fcfa3887c6c2"),
 ]
 # The page's labels that are not the zila's name as the workbook or the
 # boundary file spells it: one cut short, two misspelt, one hyphen dropped.
@@ -529,11 +530,15 @@ def main() -> int:
     zilas, refused = [], []
     for division, label, key in ZILAS:
         url = STORE.format(key)
-        blob = http_get(url, binary=True, cache_dir=RAW / "bangladesh" / "community")
         # Every workbook is read before any is refused, so one run names every
         # problem rather than the first.
         try:
+            blob = http_get(url, binary=True, cache_dir=RAW / "bangladesh" / "community")
             zila = read_workbook(blob, division, label, url)
+        except urllib.error.HTTPError as err:
+            refused.append(f"{label}: {url} answered {err.code}")
+            log(f"    {label:<17} REFUSED: {url} answered {err.code}")
+            continue
         except SystemExit as err:
             refused.append(str(err))
             log(f"    {label:<17} REFUSED: {err}")
