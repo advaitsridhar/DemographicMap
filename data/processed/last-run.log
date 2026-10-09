@@ -1,5 +1,7 @@
-== https://sbs.gov.ws/documents/census/2021/Census-2021-Final-Report_221122_051222.pdf
-  HTTP 200 application/pdf 2,776,136 bytes
-  93 pages
-  page 11: 1700x1203 -> data/processed/page_images/Census-2021-Final-Report-221122-051222-p11.jpg (152,540 bytes)
-  page 17: 1241x1754 -> data/processed/page_images/Census-2021-Final-Report-221122-051222-p17.jpg (228,749 bytes)
+palau_census: 2020 census, Volume I (transcribed) and the National Summary Data Page
+  Volume I: Tables 6, 10, 16 for 16 states and Tables 23, 27, 33 for 13 places in Koror, each adding up
+  https://www.palaugov.pw/wp-content/uploads/Palau-Population.xml: 9,186 bytes
+  Data Page: 17,614 people; every state as in Table 6, Koror with the people from outside Palau or of unknown residence
+  admin1 ethnicity 13, admin1 language 13, admin1 median_age 16, admin1 population 16, admin1 religion 13, admin1 sex_ratio 13, admin2 ethnicity 12, admin2 language 12, admin2 median_age 13, admin2 population 13, admin2 religion 12, admin2 sex_ratio 12
+  wrote data/processed/palau_census.json (346 kB)
+  wrote 93 records

@@ -22,57 +22,21 @@
       "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 6)"
     },
     "sex_ratio": {
-      "value": 115.8,
-      "unit": "males_per_100_females",
-      "year": 2020,
-      "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 6)"
+      "status": "not_available",
+      "note": "The census counts 41 people (22 men and 19 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "Modekngei",
-        "pct": 46.3,
-        "count": 19
-      },
-      {
-        "group": "Catholic",
-        "pct": 29.3,
-        "count": 12
-      },
-      {
-        "group": "Evangelical",
-        "pct": 22.0,
-        "count": 9
-      },
-      {
-        "group": "Other religion",
-        "pct": 2.4,
-        "count": 1
-      }
-    ],
-    "language": [
-      {
-        "group": "Palauan",
-        "pct": 87.8,
-        "count": 36
-      },
-      {
-        "group": "Other languages",
-        "pct": 12.2,
-        "count": 5
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Palauan",
-        "pct": 90.2,
-        "count": 37
-      },
-      {
-        "group": "Asian",
-        "pct": 9.8,
-        "count": 4
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 41 people (22 men and 19 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The census counts 41 people (22 men and 19 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 41 people (22 men and 19 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/median_age/sex_ratio/ethnicity/religion/language",
@@ -92,13 +56,6 @@
     "country": "PLW",
     "match_by": "shape_id",
     "shape_id": "51375826B36601808440460",
-    "sex_ratio_note": "Males per 100 females among Kayangel's usual residents, 2020 census (Table 6).",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity of Kayangel's usual residents, 2020 census (Table 10), in the census's own groups; it does not divide 'Asian' further at this level.",
-    "religion_year": 2020,
-    "religion_note": "Religion of Kayangel's usual residents, 2020 census (Table 10). 'Other religion' is the census's 'Other'; the table has no line for no religion.",
-    "language_year": 2020,
-    "language_note": "Whether each of Kayangel's usual residents speaks Palauan, 2020 census (Table 16): 'Palauan' is the 13 who speak Palauan only and the 23 who speak it and another language; 'Other languages' the 5 who speak another language and not Palauan. The table's lines on which other language is spoken add up to the number who speak Palauan, not to those who do not, so which languages the rest speak is not known here.",
     "median_age_note": "Median age of Kayangel's usual residents as Table 6 of the 2020 census prints it. The volume's summary Table 1 prints lower medians (36.3 for the country, against Table 6's 37.9) that Table 6's age groups do not give."
   },
   {
@@ -1846,57 +1803,21 @@
       "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 6)"
     },
     "sex_ratio": {
-      "value": 140.9,
-      "unit": "males_per_100_females",
-      "year": 2020,
-      "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 6)"
+      "status": "not_available",
+      "note": "The census counts 53 people (31 men and 22 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "Catholic",
-        "pct": 96.2,
-        "count": 51
-      },
-      {
-        "group": "Evangelical",
-        "pct": 1.9,
-        "count": 1
-      },
-      {
-        "group": "Other religion",
-        "pct": 1.9,
-        "count": 1
-      }
-    ],
-    "language": [
-      {
-        "group": "Palauan",
-        "pct": 96.2,
-        "count": 51
-      },
-      {
-        "group": "Other languages",
-        "pct": 3.8,
-        "count": 2
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Palauan",
-        "pct": 79.2,
-        "count": 42
-      },
-      {
-        "group": "Carolinian",
-        "pct": 17.0,
-        "count": 9
-      },
-      {
-        "group": "Asian",
-        "pct": 3.8,
-        "count": 2
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 53 people (31 men and 22 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The census counts 53 people (31 men and 22 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 53 people (31 men and 22 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/median_age/sex_ratio/ethnicity/religion/language",
@@ -1916,13 +1837,6 @@
     "country": "PLW",
     "match_by": "shape_id",
     "shape_id": "51375826B80300454073965",
-    "sex_ratio_note": "Males per 100 females among Sonsorol's usual residents, 2020 census (Table 6).",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity of Sonsorol's usual residents, 2020 census (Table 10), in the census's own groups; it does not divide 'Asian' further at this level.",
-    "religion_year": 2020,
-    "religion_note": "Religion of Sonsorol's usual residents, 2020 census (Table 10). 'Other religion' is the census's 'Other'; the table has no line for no religion.",
-    "language_year": 2020,
-    "language_note": "Whether each of Sonsorol's usual residents speaks Palauan, 2020 census (Table 16): 'Palauan' is the 13 who speak Palauan only and the 38 who speak it and another language; 'Other languages' the 2 who speak another language and not Palauan. The table's lines on which other language is spoken add up to the number who speak Palauan, not to those who do not, so which languages the rest speak is not known here.",
     "median_age_note": "Median age of Sonsorol's usual residents as Table 6 of the 2020 census prints it. The volume's summary Table 1 prints lower medians (36.3 for the country, against Table 6's 37.9) that Table 6's age groups do not give."
   },
   {
@@ -1948,52 +1862,21 @@
       "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 6)"
     },
     "sex_ratio": {
-      "value": 160.0,
-      "unit": "males_per_100_females",
-      "year": 2020,
-      "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 6)"
+      "status": "not_available",
+      "note": "The census counts 39 people (24 men and 15 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "Catholic",
-        "pct": 94.9,
-        "count": 37
-      },
-      {
-        "group": "Evangelical",
-        "pct": 2.6,
-        "count": 1
-      },
-      {
-        "group": "Other religion",
-        "pct": 2.6,
-        "count": 1
-      }
-    ],
-    "language": [
-      {
-        "group": "Palauan",
-        "pct": 97.4,
-        "count": 38
-      },
-      {
-        "group": "Other languages",
-        "pct": 2.6,
-        "count": 1
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Palauan",
-        "pct": 97.4,
-        "count": 38
-      },
-      {
-        "group": "Asian",
-        "pct": 2.6,
-        "count": 1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 39 people (24 men and 15 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The census counts 39 people (24 men and 15 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 39 people (24 men and 15 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/median_age/sex_ratio/ethnicity/religion/language",
@@ -2013,13 +1896,6 @@
     "country": "PLW",
     "match_by": "shape_id",
     "shape_id": "51375826B76455151990264",
-    "sex_ratio_note": "Males per 100 females among Hatohobei's usual residents, 2020 census (Table 6).",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity of Hatohobei's usual residents, 2020 census (Table 10), in the census's own groups; it does not divide 'Asian' further at this level.",
-    "religion_year": 2020,
-    "religion_note": "Religion of Hatohobei's usual residents, 2020 census (Table 10). 'Other religion' is the census's 'Other'; the table has no line for no religion.",
-    "language_year": 2020,
-    "language_note": "Whether each of Hatohobei's usual residents speaks Palauan, 2020 census (Table 16): 'Palauan' is the 23 who speak Palauan only and the 15 who speak it and another language; 'Other languages' the 1 who speak another language and not Palauan. The table's lines on which other language is spoken add up to the number who speak Palauan, not to those who do not, so which languages the rest speak is not known here.",
     "median_age_note": "Median age of Hatohobei's usual residents as Table 6 of the 2020 census prints it. The volume's summary Table 1 prints lower medians (36.3 for the country, against Table 6's 37.9) that Table 6's age groups do not give."
   },
   {
@@ -3786,37 +3662,21 @@
       "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 23)"
     },
     "sex_ratio": {
-      "value": 100.0,
-      "unit": "males_per_100_females",
-      "year": 2020,
-      "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022) (Table 23)"
+      "status": "not_available",
+      "note": "The census counts 4 people (2 men and 2 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "Seventh-day Adventist",
-        "pct": 100.0,
-        "count": 4
-      }
-    ],
-    "language": [
-      {
-        "group": "Palauan",
-        "pct": 100.0,
-        "count": 4
-      }
-    ],
-    "ethnicity": [
-      {
-        "group": "Palauan",
-        "pct": 75.0,
-        "count": 3
-      },
-      {
-        "group": "Other ethnicity",
-        "pct": 25.0,
-        "count": 1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 4 people (2 men and 2 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The census counts 4 people (2 men and 2 women) here; with fewer than 100, a share says nothing about the place."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 4 people (2 men and 2 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/median_age/sex_ratio/ethnicity/religion/language",
@@ -3837,13 +3697,6 @@
     "parent_name": "Koror",
     "match_by": "shape_id",
     "shape_id": "81905179B25065420091435",
-    "sex_ratio_note": "Males per 100 females among Rock Islands's usual residents, 2020 census (Table 23).",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity of Rock Islands's usual residents, 2020 census (Table 27), in the census's own groups; it does not divide 'Asian' further at this level.",
-    "religion_year": 2020,
-    "religion_note": "Religion of Rock Islands's usual residents, 2020 census (Table 27). 'Other religion' is the census's 'Other'; the table has no line for no religion.",
-    "language_year": 2020,
-    "language_note": "Whether each of Rock Islands's usual residents speaks Palauan, 2020 census (Table 33): 'Palauan' is the 0 who speak Palauan only and the 4 who speak it and another language; 'Other languages' the 0 who speak another language and not Palauan. The table's lines on which other language is spoken add up to the number who speak Palauan, not to those who do not, so which languages the rest speak is not known here.",
     "median_age_note": "Median age of Rock Islands's usual residents as Table 23 of the 2020 census prints it, for 4 people. The volume's summary Table 1 prints lower medians (36.3 for the country, against Table 6's 37.9) that Table 6's age groups do not give."
   },
   {
