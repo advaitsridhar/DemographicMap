@@ -561,7 +561,16 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
 
 
 def build(tables: dict[tuple[str, str], list[tuple[dict[str, str], float]]],
-          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          listed: set[str] | None = None) -> list[dict[str, Any]]:
+    """The records for Australia's states and LGAs.
+
+    ``listed`` holds the LGA codes whose language abs.py's file lists. The
+    coarse partition goes only where it does not; without it, the units' own
+    language decides -- but the units are the built map, which carries this
+    file's own coarse partition from the run before, so main() always passes
+    it.
+    """
     people_lga = persons(tables[("G01", "LGA")])
     chars_lga = characteristics(tables[("G01", "LGA")])
     people_top = persons(tables[("G01", "SA2")])
@@ -612,7 +621,9 @@ def build(tables: dict[tuple[str, str], list[tuple[dict[str, str], float]]],
         extra, extra_tables = {}, ()
         # Only where the map has no language: the LGA table's finer listing
         # is what abs.py writes everywhere it adds up.
-        if not isinstance(unit.get("language"), list) and coarse.get(code):
+        has_language = (code in listed if listed is not None
+                        else isinstance(unit.get("language"), list))
+        if not has_language and coarse.get(code):
             parts = coarse[code]
             extra = {"language": shares(parts), "language_year": YEAR,
                      "language_note": (
@@ -653,12 +664,22 @@ def fetch(region: str, table: str) -> list[tuple[dict[str, str], float]]:
     return rows
 
 
+def listed_languages() -> set[str]:
+    """The LGA codes whose language abs.py's file (australia_lga.json) lists."""
+    path = PROCESSED / "australia_lga.json"
+    if not path.exists():
+        raise SystemExit("australia_profile: australia_lga.json is missing; run abs first")
+    rows = json.loads(path.read_text())
+    return {row["id"].removeprefix("AUS-") for row in rows
+            if row.get("level") == "admin2" and isinstance(row.get("language"), list)}
+
+
 def main() -> int:
     argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
     log("australia_profile: ABS 2021 Census G01, G02, G08, G13 and G14")
     tables = {key: fetch(key[1], key[0]) for key in KEYS}
-    records = build(tables, load_units("admin1"), load_units("admin2"))
+    records = build(tables, load_units("admin1"), load_units("admin2"), listed_languages())
     levels = defaultdict(int)
     for rec in records:
         levels[rec["level"]] += 1

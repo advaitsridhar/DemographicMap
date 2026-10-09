@@ -2358,6 +2358,33 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 }
 
 
+# Rows a file spells differently from the boundary file, keyed by file and row
+# id. The alias joins the row's own names, so the matcher reaches the shape by
+# an exact name inside the row's province rather than by a guess. Thailand's
+# districts take the register through Wikidata (SUPERSEDED_ROWS), and three of
+# its romanisations are not the boundary file's: Watthana is CGAZ's 'Vadhana'
+# (Bangkok), Khwao Sinarin its 'Khwao Sin Rin' (Surin) and Thap Khlo its 'Tap
+# Khlo' (Phichit).
+ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
+    "wikidata_admin2.json": {
+        "THA-WD-Q1019417": ("Vadhana",),
+        "THA-WD-Q475772": ("Khwao Sin Rin",),
+        "THA-WD-Q476889": ("Tap Khlo",),
+    },
+}
+
+# Rows that are not a unit of today's map, keyed by file and row id, with the
+# reason. Wikidata files Thonburi Province, merged into Bangkok in 1971, among
+# Bangkok's districts with its 1970 population (920,033); its name reaches the
+# Thon Buri district's polygon, so the district's own row (103,377 in 2020)
+# met a rival and neither was placed.
+DROPPED_ROWS: dict[str, dict[str, str]] = {
+    "wikidata_admin2.json": {
+        "THA-WD-Q6580711": "Thonburi Province, merged into Bangkok in 1971",
+    },
+}
+
+
 def superseded(filename: str) -> set[str]:
     """The countries whose rows in ``filename`` give way to a registered file with rows."""
     return {iso3 for iso3, by in SUPERSEDED_ROWS.get(filename, {}).items()
@@ -2374,10 +2401,14 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
             continue
         log(f"  adapter {filename}: {len(rows)} records")
         dropped = superseded(filename)
+        aliases = ROW_ALIASES.get(filename, {})
+        not_units = DROPPED_ROWS.get(filename, {})
         for row in rows:
             iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
-            if iso3 in dropped:
+            if iso3 in dropped or row.get("id") in not_units:
                 continue
+            if row.get("id") in aliases:
+                row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
             # Which file a row came from decides whether two rows landing on one
             # shape are a conflict. Across files it is normal -- India's C-01 and
             # C-16 both describe Kargil -- and within one file it means one of

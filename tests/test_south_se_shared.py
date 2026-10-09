@@ -78,5 +78,29 @@ class NationalitiesAsNationalities(unittest.TestCase):
                             "Other national identities")
 
 
+class ThaiRegisterRows(unittest.TestCase):
+    """Thailand's districts take the register through Wikidata; three are spelt
+    otherwise in the boundary file, and a 1970 province shadowed Thon Buri."""
+
+    def setUp(self):
+        self.saved = list(be.ADAPTER_FILES)
+        be.ADAPTER_FILES[:] = ["wikidata_admin2.json"]
+
+    def tearDown(self):
+        be.ADAPTER_FILES[:] = self.saved
+
+    def test_aliases_and_dropped_rows(self):
+        if not (be.PROCESSED / "wikidata_admin2.json").exists():
+            self.skipTest("wikidata_admin2.json not in this checkout")
+        rows = {r["id"]: r for r in be.load_adapters()["THA"]}
+        self.assertNotIn("THA-WD-Q6580711", rows)
+        for rid, (name, alias) in {"THA-WD-Q1019417": ("Watthana", "Vadhana"),
+                                   "THA-WD-Q475772": ("Khwao Sinarin", "Khwao Sin Rin"),
+                                   "THA-WD-Q476889": ("Thap Khlo", "Tap Khlo")}.items():
+            self.assertEqual(rows[rid]["name"], name)
+            self.assertIn(alias, rows[rid]["aliases"])
+        self.assertEqual(rows["THA-WD-Q2305621"]["name"], "Thon Buri")
+
+
 if __name__ == "__main__":
     unittest.main()

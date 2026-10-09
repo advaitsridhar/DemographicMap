@@ -319,6 +319,17 @@ class Build(unittest.TestCase):
         # the map has none.
         self.assertEqual(names["Albury"]["language"]["status"], "not_available")
 
+    def test_the_census_file_decides_not_the_built_map(self):
+        # The built map carries this file's own coarse partition from the run
+        # before; read from it, a re-run would see a language and write none.
+        built = dict(ALBURY, language=[{"group": "English only", "pct": 85.6}])
+        records = ap.build(self.tables(), self.admin1(), [built, BAYSIDE], listed={"10000"})
+        albury = {r["name"]: r for r in records}["Albury"]
+        self.assertIn("coarsest level", albury["language_note"])
+        records = ap.build(self.tables(), self.admin1(), [built, BAYSIDE], listed={"10050"})
+        self.assertEqual({r["name"]: r for r in records}["Albury"]["language"]["status"],
+                         "not_available")
+
     def test_an_lga_with_no_language_takes_the_coarse_partition(self):
         mute = dict(ALBURY, language={"status": "not_available"})
         records = ap.build(self.tables(), self.admin1(), [mute, BAYSIDE])
