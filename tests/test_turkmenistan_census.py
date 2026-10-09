@@ -146,6 +146,15 @@ class Records(unittest.TestCase):
         self.assertEqual(ahal["ethnicity"][0], {"group": "Turkmen", "pct": 83.8, "count": 41400})
         self.assertEqual(out["x"]["population"]["status"], "not_available")
         self.assertIn("etrap", out["x"]["population"]["note"])
+        # The velayat's own evidence, and the reason displaces an older
+        # encyclopaedic figure (Wikidata's Ak bugday without Ashgabat).
+        self.assertIn("Ashgabat", out["x"]["population"]["note"])
+        for field in ("population", "median_age", "sex_ratio"):
+            self.assertEqual(out["x"][field]["displaces_before"], 2023)
+        self.assertNotIn("displaces_before", out["x"]["ethnicity"])
+        # A velayat with no reason stops the run rather than going unexplained.
+        with self.assertRaises(SystemExit):
+            tm.etrap_gap("Ashgabat")
 
 
 if __name__ == "__main__":

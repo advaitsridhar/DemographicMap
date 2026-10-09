@@ -28,11 +28,19 @@ age tables and the nationality tables agree on each area's population; and
 the six areas make the country's 7,057,841.
 
 **Second level.** Not written. The census publishes population by etrap and
-city alone (volume 2, tables 2.2-2.7), for the etraps as they stood in
-December 2022; the boundary file draws an older division, with twelve
-polygons unnamed and three names used twice, and binding an etrap's figure
-to a polygon of another vintage would put people on the wrong ground. Every
-drawn district carries that reason instead.
+city alone (volume 1, tables 1.4-1.15; volume 2, tables 2.2-2.7), for the
+etraps as they stood in December 2022, and the boundary file draws another
+division. The two were set side by side velayat by velayat (``ETRAP_GAP``),
+with the census's own towns placed on the drawn polygons by GeoNames' points
+(whose populations are the census's): in no velayat does any drawn polygon
+hold the ground of the etrap the census counts under its name -- even in
+Ahal, where the seven names match, the towns of Babadaýhan and Gaňňaly lie in
+the polygon drawn as Tejen and Berkarar in the one drawn as Kaka, and
+Ashgabat in the one drawn as Ak Bugday. Every drawn district carries its
+velayat's reason, and the reason displaces an older encyclopaedic figure
+(``displaces_before``): Wikidata's 144,119 on Ak Bugday is the etrap without
+Ashgabat, its 123,190 on Balkanabat the city without Gumdag and Jebel, and
+its 44,716 on Hojambaz the count of 1995.
 
 Usage:
     python -m scripts.fetch_census.turkmenistan_census
@@ -97,14 +105,60 @@ RELIGION_GAP = gap(NOT_AVAILABLE, (
     "age and sex; education; national composition and language; fertility; migration and "
     "citizenship; sources of livelihood; households; employment; housing stock; housing "
     f"conditions -- {PAGE}) tabulates religion, for the country or any velayat."))
-DISTRICT_GAP = (
-    "Turkmenistan's 2022 census publishes population by etrap and city alone (volume 2, "
-    "tables 2.2-2.7), for the etraps of December 2022, and the boundary file draws another "
-    "division: in Dashoguz velayat, for one, the census counts Shabat and Ruhubelent etraps "
-    "and Dashoguz city where the file draws Gubadag, Gurbansoltan Eje and S.A. Nyyazow; twelve "
-    "of its 59 polygons have no name and three names are used twice. No etrap's figure can be "
-    "put on a drawn polygon with certainty. Age, nationality and mother tongue are published "
-    "by velayat only (volumes 2 and 4).")
+# Why no drawn etrap takes a 2022 figure, velayat by velayat: the census's
+# etraps and cities of December 2022 (volume 1, tables 1.4-1.15) against the
+# polygons the boundary file draws, with the census's towns placed on those
+# polygons by GeoNames' points, whose populations are the census's own.
+ETRAP_GAP = {
+    "Ahal": (
+        "The census counts Ahal's seven etraps under the names the map draws, but not on the "
+        "same ground: of the census's towns, Babadaýhan (Babadayhan etrap) and Gaňňaly "
+        "(Sarahs etrap) lie in the polygon drawn as Tejen, Berkarar (Ak bugday etrap) in the "
+        "one drawn as Kaka, the new city of Arkadag, counted apart from every etrap, in the "
+        "one drawn as Gokdepe, and Ashgabat, a city with the status of a velayat, in the one "
+        "drawn as Ak Bugday."),
+    "Balkan": (
+        "The census counts Balkanabat and Türkmenbaşy cities and six etraps -- Esenguly, "
+        "Bereket, Magtymguly, Gyzylarbat, Etrek and Türkmenbaşy -- where the map draws "
+        "Avaza, Balkanabat, Bereket, Etrek, Hazar, Magtymguly and Turkmenbasy: the city of "
+        "Gyzylarbat lies in the polygon drawn as Magtymguly, Esenguly in the one drawn as "
+        "Etrek, Türkmenbaşy city in the one drawn as Avaza, and Hazar, which the census "
+        "counts within Balkanabat city, is drawn as a polygon of its own."),
+    "Dasoguz": (
+        "The census counts Daşoguz city and seven etraps -- Boldumsaz, Köneürgenç, Akdepe, "
+        "Saparmyrat Türkmenbaşy, Görogly, Şabat and Ruhubelent -- where the map draws "
+        "Gubadag, Gurbansoltan Eje and S.A. Nyýazow besides five of them: Daşoguz city "
+        "(201,142 people) lies in the polygon drawn as Boldumsaz, and Andalyp (Ylanly), "
+        "which the census counts in Akdepe etrap, in the one drawn as Gurbansoltan Eye."),
+    "Lebap": (
+        "The census counts Türkmenabat city and eight etraps -- Darganata, Danew, Kerki, "
+        "Saýat, Halaç, Hojambaz, Çärjew and Köýtendag -- where the map draws thirteen "
+        "polygons: Dostluk, Döwletli and Farap, which the census counts within Köýtendag, "
+        "Hojambaz and Çärjew etraps, are drawn as polygons of their own, one polygon has no "
+        "name and Saýat is drawn twice; the city of Hojambaz lies in the polygon drawn as "
+        "Halac and Kerki in the one drawn as Dostluk."),
+    "Mary": (
+        "The census counts Mary and Baýramaly cities and nine etraps -- Baýramaly, "
+        "Wekilbazar, Ýolöten, Garagum, Mary, Murgap, Sakarçäge, Tagtabazar and Türkmengala "
+        "-- where the map draws 24 polygons: eleven with no name, Bayramaly and Mary twice "
+        "each, and Oguzhan, Serhetabat and Tedzhen Sovkhoz, which the census does not count "
+        "as etraps (Oguzhan is a town of Murgap etrap, Serhetabat a city of Tagtabazar); "
+        "the city of Türkmengala lies in the polygon drawn as Yoloten."),
+}
+ETRAP_TAIL = (
+    " No etrap's figure describes a drawn polygon, so none is written. The census publishes "
+    "population by etrap and city alone (volume 1, tables 1.4-1.15; volume 2, tables "
+    "2.2-2.7); age, nationality and mother tongue by velayat only (volumes 2 and 4).")
+# An older encyclopaedic figure on a drawn etrap is not this census's either:
+# the reason displaces it (see build_entities.merge_adapter).
+DISPLACES_BEFORE = 2023
+
+
+def etrap_gap(velayat: str | None) -> dict[str, Any]:
+    if velayat not in ETRAP_GAP:
+        raise SystemExit(f"turkmenistan_census: no etrap reason for velayat {velayat!r}")
+    return gap(NOT_AVAILABLE, "Turkmenistan's 2022 census and the boundary file divide "
+               f"{velayat} differently. " + ETRAP_GAP[velayat] + ETRAP_TAIL)
 
 
 def tokens_of(line: str) -> tuple[str, list[str]]:
@@ -365,15 +419,15 @@ def build(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
             sources=src))
     region_name = {u["id"]: u["name"] for u in a1}
     for unit in a2:
+        why = etrap_gap(region_name.get(unit["parent"]))
         out.append(record(
             f"TKM-CENSUS-{unit['id']}", unit["name"], level="admin2",
             parent=f"TKM-CENSUS-{unit['parent']}", parent_name=region_name.get(unit["parent"]),
             country=ISO3, match_by="shape_id", shape_id=unit["id"],
-            population=gap(NOT_AVAILABLE, DISTRICT_GAP),
-            median_age=gap(NOT_AVAILABLE, DISTRICT_GAP),
-            sex_ratio=gap(NOT_AVAILABLE, DISTRICT_GAP),
-            ethnicity=gap(NOT_AVAILABLE, DISTRICT_GAP),
-            language=gap(NOT_AVAILABLE, DISTRICT_GAP),
+            population=dict(why, displaces_before=DISPLACES_BEFORE),
+            median_age=dict(why, displaces_before=DISPLACES_BEFORE),
+            sex_ratio=dict(why, displaces_before=DISPLACES_BEFORE),
+            ethnicity=dict(why), language=dict(why),
             religion=RELIGION_GAP))
     return out
 
