@@ -173,9 +173,9 @@ ETHNIC = {
     "буряты": "Buryat", "японцы": "Japanese", "вьетнамцы": "Vietnamese",
     "ассирийцы": "Assyrian", "румыны": "Romanian", "венгры": "Hungarian",
     "чехи": "Czech", "финны": "Finnish", "американцы": "American",
-    "народы индии и пакистана": "People of India and Pakistan",
-    "пакистанцы и индийцы": "People of India and Pakistan",
-    "пакистанцы и индусы": "People of India and Pakistan",
+    "народы индии и пакистана": "Peoples of India and Pakistan",
+    "пакистанцы и индийцы": "Peoples of India and Pakistan",
+    "пакистанцы и индусы": "Peoples of India and Pakistan",
     "другие": "Other", "другие этнические группы": "Other",
     "другие национальности": "Other",
 }
@@ -201,7 +201,7 @@ OWN_LANGUAGE = {
     "Romanian": "Romanian", "Hungarian": "Hungarian", "Czech": "Czech",
     "Finnish": "Finnish", "American": None,
     "Mordvin": None, "Afghan": None, "Mongol": None, "Jewish": None,
-    "People of India and Pakistan": None, "Other": None,
+    "Peoples of India and Pakistan": None, "Other": None,
 }
 # Table 3.4's language columns, as its heading names them.
 COLUMNS = {"кыргызский": "Kyrgyz", "русский": "Russian", "узбекский": "Uzbek",

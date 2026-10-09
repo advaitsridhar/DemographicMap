@@ -185,7 +185,7 @@ class Tables(unittest.TestCase):
 
     def test_ethnic_groups_and_a_wrapped_name(self):
         ethnic = kg.parse_ethnic(ETHNIC_TEXT, "Chuy")
-        self.assertEqual(ethnic["г.токмок"]["groups"]["People of India and Pakistan"], 50)
+        self.assertEqual(ethnic["г.токмок"]["groups"]["Peoples of India and Pakistan"], 50)
         self.assertEqual(ethnic["чуйская область"]["groups"], Counter(Kyrgyz=900, Russian=100))
         # Alamudun's printed groups miss one person: counted as other.
         self.assertEqual(ethnic["аламудунский район"]["groups"]["Other"], 1)
