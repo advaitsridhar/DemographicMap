@@ -241,19 +241,87 @@ class Records(unittest.TestCase):
         self.assertEqual(len(bands), len(uz.GROUPS))
 
 
+# The map's own labels, which the agency's region names are tied to.
+LABELS_EN = {"UZ-QR": "Republic of Karakalpakstan", "UZ-AN": "Andijan Region",
+             "UZ-BU": "Bukhara Region", "UZ-JI": "Jizzakh Region", "UZ-QA": "Qashqadaryo Region",
+             "UZ-NW": "Navoiy Region", "UZ-NG": "Namangan Region", "UZ-SA": "Samarqand Region",
+             "UZ-SU": "Surxondaryo Region", "UZ-SI": "Sirdaryo Region",
+             "UZ-TO": "Tashkent Region", "UZ-FA": "Fergana Region", "UZ-XO": "Xorazm Region",
+             "UZ-TK": "Tashkent"}
+NAMED = [dict(u, name=LABELS_EN[u["iso_3166_2"]]) for u in A1]
+REGION_ID = next(u["id"] for u in A1 if u["iso_3166_2"] == "UZ-TO")
+A2 = [{"id": f"D{i}", "name": name, "parent": REGION_ID}
+      for i, name in enumerate(("Bektemir", "Sergeli", "Uchtepa", "Zangiata"))]
+
+
+def agency(off=None):
+    """The agency's table: each region at its census count (scaled by ``off``
+    where given), and the city's four districts drawn in the region."""
+    d = data()
+    by_label = {LABELS_EN[code]: d[area]["sexes"][0] for area, code in uz.REGIONS.items()}
+    rows = [{"Code": f"17{i:02d}", "Klassifikator_en": en,
+             "2025": 1.0, "2026": by_label[label] * (off or {}).get(label, 1.0) / 1000}
+            for i, (en, label) in enumerate(uz.SIAT_REGION.items())]
+    rows += [{"Code": code, "Klassifikator_en": f"District {code}", "2025": 1.0, "2026": n}
+             for code, n in (("1726262", 304.4), ("1726264", 71.3), ("1726283", 178.7),
+                             ("1726292", 200.5))]
+    return rows
+
+
+class AgencyNotes(unittest.TestCase):
+    def test_tashkent_and_its_region_say_where_the_city_districts_are(self):
+        d = data()
+        areas = read(compendium(d), d)
+        out = {r["aliases"][0]: r for r in uz.build(areas, NAMED, A2, agency())}
+        self.assertIn("Bektemir, Sergeli and Uchtepa (754,900 people",
+                      out["UZ-TK"]["population_note"])
+        self.assertIn("their people are in this figure", out["UZ-TK"]["population_note"])
+        self.assertIn("in the city's figure, not this one", out["UZ-TO"]["population_note"])
+        # Every region within AGENCY_GAP of the agency: no comparison is written.
+        self.assertFalse(any("estimate" in r["population_note"] for r in out.values()))
+        self.assertTrue(out["UZ-AN"]["population_note"].endswith(uz.PRELIMINARY))
+
+    def test_a_region_far_from_the_agency_says_how_far(self):
+        d = data()
+        areas = read(compendium(d), d)
+        table = agency({"Tashkent Region": 1 / 1.25, "Andijan Region": 1.05})
+        out = {r["aliases"][0]: r for r in uz.build(areas, NAMED, A2, table)}
+        note = out["UZ-TO"]["population_note"]
+        self.assertIn("The census counts 25.0% more people here than the statistics agency's "
+                      "estimate for 1 January 2026", note)
+        self.assertRegex(note, r"between -4[.]8% and [-+]0[.]0% from the agency.s figure")
+        self.assertNotIn("estimate", out["UZ-AN"]["population_note"])
+
+    def test_a_city_district_no_longer_drawn_in_the_region_stops_the_run(self):
+        d = data()
+        areas = read(compendium(d), d)
+        with self.assertRaises(SystemExit):
+            uz.build(areas, NAMED, [u for u in A2 if u["name"] != "Uchtepa"], agency())
+
+    def test_a_district_the_agency_files_elsewhere_stops_the_run(self):
+        d = data()
+        areas = read(compendium(d), d)
+        table = [r for r in agency() if r["Code"] != "1726292"]
+        with self.assertRaises(SystemExit):
+            uz.build(areas, NAMED, A2, table)
+
+
 class Main(unittest.TestCase):
     def test_main_writes_the_regions(self):
         d = data()
         written = {}
         with mock.patch.object(uz, "http_get", return_value=b"pdf"), \
                 mock.patch.object(uz, "pdf_pages", return_value=compendium(d)), \
-                mock.patch.object(uz, "drawn_admin1", return_value=A1), \
+                mock.patch.object(uz, "drawn_admin1", return_value=NAMED), \
+                mock.patch.object(uz, "drawn_admin2", return_value=A2), \
+                mock.patch.object(uz, "agency_table", return_value=agency()), \
                 mock.patch.object(uz, "NATIONAL", d[uz.REPUBLIC]["sexes"][0]), \
                 mock.patch.object(uz, "write_json",
                                   side_effect=lambda p, rows: written.update(rows=rows)), \
                 mock.patch.object(sys, "argv", ["uzbekistan_census"]):
             self.assertEqual(uz.main(), 0)
         self.assertEqual(len(written["rows"]), 14)
+        self.assertTrue(any("Bektemir" in r["population_note"] for r in written["rows"]))
 
 
 if __name__ == "__main__":

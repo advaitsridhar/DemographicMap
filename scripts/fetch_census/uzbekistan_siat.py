@@ -564,8 +564,16 @@ def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]]
                       "the same table and year.")
             fields = with_ages({"sources": list(cite)}, parts, shape["name"],
                                value if age_year == latest else None)
+        drawn_in, own = parents[shape["id"]], unit["_region"]
+        if drawn_in != own and "value" in population:
+            # A city district the boundary file files under the region.
+            population["note"] = " ".join(filter(None, (
+                population.get("note"),
+                f"A district of {region_of[unit['Code'][:4]]}; the boundary file draws it "
+                f"inside {drawn_in}, and its people are in {own}'s figure, not "
+                f"{drawn_in}'s.")))
         rows.append(record(f"UZB-SIAT-{unit['Code']}", shape["name"], level="admin2",
-                           parent="UZB", country="UZB", parent_name=parents[shape["id"]],
+                           parent="UZB", country="UZB", parent_name=drawn_in,
                            aliases=[unit["Klassifikator_en"], unit["Klassifikator"]],
                            match_by="shape_id", shape_id=shape["id"],
                            population=population, **composition_gaps(), **fields))

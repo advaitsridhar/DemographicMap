@@ -33,7 +33,13 @@ fourteen first-level units -- the Republic of Karakalpakstan, twelve regions
 code. The boundary file's second level puts three of Tashkent's districts
 (Bektemir, Sergeli, Uchtepa) under Tashkent Region, because its district
 outlines are drawn south-west of the first level's: the first-level polygon
-drawn as Tashkent is 344 km2, the city's own area, and it is the city.
+drawn as Tashkent is 344 km2, the city's own area, and it is the city. The
+population notes of both say so, with those districts' people by the
+statistics agency's count (SIAT indicator 2.01.02.0001, ``uzbekistan_siat``'s
+table), and the run stops if the second level no longer draws them there.
+A region whose count is more than ``AGENCY_GAP`` from the agency's estimate
+for 1 January 2026 says how far (Tashkent Region, 19.1% above it; the others
+are between -2.7% and +6.5%).
 
 **Not written.** The preliminary results give no table below the region,
 and none of religion; the final results are due by 1 July 2027 (the
@@ -55,8 +61,10 @@ from __future__ import annotations
 
 import argparse
 import io
+import json
 import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -64,6 +72,7 @@ from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, reco
     write_json
 from .cod_ps_age import grouped_median
 from .kyrgyzstan_census import figures
+from .uzbekistan_siat import CODE as SIAT_CODE, DUMP as SIAT_DUMP, REGION as SIAT_REGION
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import as_drawn, read_json, shard_name  # noqa: E402
@@ -83,6 +92,16 @@ LICENCE = "Official statistics of the Statistics Committee of the Republic of Uz
 PRELIMINARY = ("A preliminary result of the 2026 census (critical moment 15 January 2026), "
                "which the Committee may still revise; its final results are due by 1 July "
                "2027.")
+# Tashkent city's districts that the boundary file draws inside Tashkent
+# Region, with the statistics agency's codes for each: the shape called
+# Sergeli holds Yangikhayot district too, which was carved out of it.
+CITY_DISTRICTS = {"Bektemir": ("1726264",), "Sergeli": ("1726283", "1726292"),
+                  "Uchtepa": ("1726262",)}
+# A region whose census count is further than this from the agency's own
+# estimate for 1 January of the census year says so in its note.
+AGENCY_GAP = 0.10
+# The agency's code for Tashkent city; its districts' codes start with it.
+CITY_CODE = "1726"
 
 # The compendium's regions (folded: lower case, letters only) -> ISO 3166-2.
 REPUBLIC = "республикаузбекистан"
@@ -370,11 +389,102 @@ def read_tables(pages: list[str]) -> dict[str, dict[str, Any]]:
     return out
 
 
-def build(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def latest_year(siat: list[dict[str, Any]]) -> str:
+    """The newest year in the statistics agency's table (figures for 1 January)."""
+    return max(k for k in siat[0] if re.fullmatch(r"[0-9]{4}", k))
+
+
+def city_districts(a1: list[dict[str, Any]], a2: list[dict[str, Any]],
+                   siat: list[dict[str, Any]]) -> int:
+    """People in the city's districts that the boundary file draws inside
+    Tashkent Region (``CITY_DISTRICTS``), by the agency's count for its
+    newest year.
+
+    The run stops if the second level no longer draws them there, or the
+    agency's table no longer files them under the city, so that the notes
+    stay true.
+    """
+    region = next((u["id"] for u in a1 if u.get("iso_3166_2") == "UZ-TO"), None)
+    drawn = {u["name"] for u in a2 if region and u.get("parent") == region}
+    if not set(CITY_DISTRICTS) <= drawn:
+        raise SystemExit(f"uzbekistan_census: the boundary file no longer draws "
+                         f"{sorted(set(CITY_DISTRICTS) - drawn)} inside Tashkent Region")
+    by_code = {u["Code"]: u for u in siat}
+    year = latest_year(siat)
+    people = 0.0
+    for label, codes in CITY_DISTRICTS.items():
+        for code in codes:
+            unit = by_code.get(code)
+            if unit is None or not code.startswith(CITY_CODE) or not unit.get(year):
+                raise SystemExit(f"uzbekistan_census: SIAT has no Tashkent city unit {code} "
+                                 f"for {label} in {year}")
+            people += unit[year]
+    return round(people * 1000)
+
+
+def agency_figures(siat: list[dict[str, Any]]) -> dict[str, float]:
+    """The statistics agency's own figure for each region (map label), newest year."""
+    year = latest_year(siat)
+    return {SIAT_REGION[u["Klassifikator_en"]]: u[year] * 1000 for u in siat
+            if len(u["Code"]) == 4 and u["Klassifikator_en"] in SIAT_REGION and u.get(year)}
+
+
+def agency_notes(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
+                 a2: list[dict[str, Any]], siat: list[dict[str, Any]]) -> dict[str, str]:
+    """Sentences for the population notes, by ISO 3166-2 code.
+
+    Tashkent and Tashkent Region say which of the city's districts the
+    boundary file draws in the region, with their people; a region whose
+    count is further than ``AGENCY_GAP`` from the agency's estimate for
+    1 January says how far, and how far the others are.
+    """
+    by_code = {u.get("iso_3166_2"): u for u in a1}
+    year = latest_year(siat)
+    people = city_districts(a1, a2, siat)
+    names = list(CITY_DISTRICTS)
+    listed = ", ".join(names[:-1]) + " and " + names[-1]
+    counted = (f"{people:,} people by the statistics agency's count for 1 January {year}, "
+               f"Sergeli with Yangikhayot")
+    notes: dict[str, str] = defaultdict(str)
+    notes["UZ-TK"] += (f" The boundary file draws three of the city's districts, {listed} "
+                       f"({counted}), inside Tashkent Region; their people are in this "
+                       f"figure.")
+    notes["UZ-TO"] += (f" The boundary file draws three of Tashkent city's districts, {listed} "
+                       f"({counted}), inside this region; their people are in the city's "
+                       f"figure, not this one.")
+    agency = agency_figures(siat)
+    apart: dict[str, float] = {}
+    for area, code in REGIONS.items():
+        label = by_code[code]["name"] if code in by_code else None
+        if agency.get(label):
+            apart[code] = (areas[area]["sexes"][0] - agency[label]) / agency[label]
+    for code, off in apart.items():
+        if abs(off) <= AGENCY_GAP:
+            continue
+        others = [v for c, v in apart.items() if c != code]
+        label = by_code[code]["name"]
+        notes[code] += (
+            f" The census counts {100 * abs(off):.1f}% {'more' if off > 0 else 'fewer'} "
+            f"people here than the statistics agency's estimate for 1 January {year} "
+            f"({agency[label]:,.0f}, SIAT indicator {SIAT_CODE}); in the other regions it "
+            f"is between {100 * min(others):+.1f}% and {100 * max(others):+.1f}% from the "
+            f"agency's figure.")
+    return dict(notes)
+
+
+def build(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
+          a2: list[dict[str, Any]] | None = None,
+          siat: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    """The fourteen regions' records.
+
+    With ``a2`` (the drawn districts) and ``siat`` (the statistics agency's
+    population table), the population notes carry ``agency_notes``.
+    """
     by_code = {u.get("iso_3166_2"): u for u in a1}
     out: list[dict[str, Any]] = []
     src = [{"field": "population/sex_ratio/median_age/ethnicity/language", "name": SOURCE,
             "url": PAGE, "license": LICENCE}]
+    extra = agency_notes(areas, a1, a2, siat) if a2 is not None and siat else {}
     for area, code in REGIONS.items():
         unit = by_code.get(code)
         if unit is None:
@@ -387,7 +497,7 @@ def build(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]]) -> list[di
             population=measure(both, year=YEAR, source=SOURCE),
             population_note=("The census's permanent population: those living in the region "
                              "and those of them temporarily away, abroad included. "
-                             + PRELIMINARY),
+                             + PRELIMINARY + extra.get(code, "")),
             sex_ratio=measure(round(100 * men / women, 1), year=YEAR, source=SOURCE,
                               unit="males_per_100_females"),
             sex_ratio_note=f"Men per 100 women, from the census's counts. {PRELIMINARY}",
@@ -416,6 +526,15 @@ def drawn_admin1() -> list[dict[str, Any]]:
     return as_drawn(read_json(SITE / "admin1" / shard_name(ISO3), []))
 
 
+def drawn_admin2() -> list[dict[str, Any]]:
+    return as_drawn(read_json(SITE / "admin2" / shard_name(ISO3), []))
+
+
+def agency_table() -> list[dict[str, Any]]:
+    """The statistics agency's population table, as uzbekistan_siat keeps it."""
+    return json.loads(SIAT_DUMP.read_bytes())[0]["data"]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -423,7 +542,7 @@ def main() -> int:
     log("uzbekistan_census: 2026 census, preliminary results")
     pages = pdf_pages(http_get(URL, binary=True, timeout=300))  # type: ignore[arg-type]
     areas = read_tables(pages)
-    out = build(areas, drawn_admin1())
+    out = build(areas, drawn_admin1(), drawn_admin2(), agency_table())
     for r in out:
         log(f"    {r['name']}: {r['population']['value']:,}, median "
             f"{r['median_age']['value']}, ratio {r['sex_ratio']['value']}, "

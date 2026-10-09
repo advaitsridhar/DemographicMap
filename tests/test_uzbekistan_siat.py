@@ -25,6 +25,17 @@ class Names(unittest.TestCase):
         self.assertEqual(uz.key("Jalаquduk district"), uz.key("Jalaquduk"))  # Cyrillic а
         self.assertEqual(uz.key("Khatyrchi district"), uz.key("Xatirchi tumani"))
 
+    def test_a_city_district_drawn_in_the_region_says_whose_it_is(self):
+        data = [unit("1726", "Tashkent city", "Toshkent shahri", [3000, 3050, 3100, 3150]),
+                unit("1727", "Tashkent region", "Toshkent viloyati", [2900, 2950, 3000, 3050]),
+                unit("1726264", "Bektemir district", "Bektemir tumani", [60, 62, 65, 71.3])]
+        shapes = {"Tashkent Region": [{"id": "t", "name": "Bektemir"}], "Tashkent": []}
+        rows, _ = uz.build(data, shapes)
+        bektemir = next(r for r in rows if r["level"] == "admin2")
+        self.assertEqual(bektemir["population"]["value"], 71_300)
+        self.assertIn("A district of Tashkent city; the boundary file draws it inside "
+                      "Tashkent Region", bektemir["population"]["note"])
+
     def test_a_city_is_not_its_district(self):
         rows, _ = uz.build([REGION, unit("1710401", "Chirakchi city", "Chiroqchi shahri",
                                          [1, 1, 1, 1])], SHAPES)
