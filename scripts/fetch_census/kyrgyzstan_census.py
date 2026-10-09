@@ -541,6 +541,18 @@ def age_label(line: str) -> tuple[str, list[str]]:
     return "", []
 
 
+# People a city's age block leaves out, which table 3.2 counts with the city:
+# the unit -> (what they are, (both sexes, men, women)). Issyk-Kul's table 2.8
+# prints Karakol "without the urban-type settlement" (77,241, as its table 3.3
+# heads the same rows), while table 3.2 counts the city whole (80,733); the
+# 3,492 between are Pristan-Przhevalsk (1,713 men, 1,779 women in table 2.5,
+# page 24), which no age block prints. The median of the polygon holding
+# Karakol is of its people whose ages are printed, and says so.
+AGE_TABLE_LEAVES_OUT: dict[str, tuple[str, tuple[int, int, int]]] = {
+    "г.каракол": ("Pristan-Przhevalsk, the urban-type settlement under Karakol city",
+                  (3492, 1713, 1779)),
+}
+
 # Age-group rows a book misprints, as printed (both sexes, men, women). Each
 # is replaced by what the block's total leaves once its other rows are
 # counted, and only while it still reads as printed.
@@ -970,8 +982,14 @@ def read_book(name: str, pages: list[str]) -> dict[str, Any]:
             raise SystemExit(f"kyrgyzstan_census: {name}: no age block for {unit}; the age "
                              f"table has {sorted(groups)}")
         if groups[unit]["total"] != ethnic[unit]["total"]:
-            raise SystemExit(f"kyrgyzstan_census: {name} {unit}: the age table has "
-                             f"{groups[unit]['total']}, table 3.2 {ethnic[unit]['total']}")
+            gap_ = tuple(e - g for e, g in zip(ethnic[unit]["total"], groups[unit]["total"]))
+            gone = AGE_TABLE_LEAVES_OUT.get(unit)
+            if not gone or gap_ != gone[1]:
+                raise SystemExit(f"kyrgyzstan_census: {name} {unit}: the age table has "
+                                 f"{groups[unit]['total']}, table 3.2 {ethnic[unit]['total']}")
+            log(f"  {name} {unit}: the age table leaves out {gone[0]} ({gone[1][0]:,} people), "
+                f"which table 3.2 counts with it")
+            groups[unit]["left_out"] = [(gone[0], gone[1][0])]
         if unit not in language:
             raise SystemExit(f"kyrgyzstan_census: {name}: no table 3.4 block for {unit}")
     if region not in PLACE:
@@ -979,6 +997,16 @@ def read_book(name: str, pages: list[str]) -> dict[str, Any]:
     if years and years["total"] != ethnic[region]["total"]:
         raise SystemExit(f"kyrgyzstan_census: {name}: single years make {years['total']}, "
                          f"table 3.2 {ethnic[region]['total']}")
+    if years:
+        # The single years against the region's own age groups (table 2.8),
+        # group by group: Issyk-Kul's table 2.7 sets its rural column for
+        # ages 60-74 out of line, and only the whole is read from it.
+        for (lo, hi), group in zip(GROUPS, groups[region]["groups"]):
+            made = sum(n for a, n in years["both"].items()
+                       if a >= lo and (hi is None or a <= hi))
+            if made != group[0]:
+                raise SystemExit(f"kyrgyzstan_census: {name}: single years {lo}-{hi} make "
+                                 f"{made:,}, the region's age group {group[0]:,}")
     return {"region": region, "units": units, "ethnic": ethnic, "groups": groups,
             "language": language, "years": years}
 
@@ -1001,7 +1029,9 @@ def pooled(parts: list[dict[str, Any]]) -> dict[str, Any]:
     for p in parts:
         ethnic.update(p["ethnic"])
         language.update(p["languages"])
-    return {"total": total, "groups": groups, "ethnic": ethnic, "languages": language}
+    left_out = [x for p in parts for x in p.get("left_out", [])]
+    return {"total": total, "groups": groups, "ethnic": ethnic, "languages": language,
+            "left_out": left_out}
 
 
 def fields(unit: dict[str, Any], years: Counter | None, note: str | None,
@@ -1018,6 +1048,13 @@ def fields(unit: dict[str, Any], years: Counter | None, note: str | None,
         how = ("Median interpolated within the age group holding the middle person, from "
                "the census's five-year groups by territory (0-4 ... 85-89, then 15 and 16-19 "
                "apart, 90-99 and 100+); single years are published for regions only.")
+        left_out = unit.get("left_out") or []
+        aged = sum(g[0] for g in unit["groups"])
+        if aged + sum(n for _, n in left_out) != both:
+            raise SystemExit(f"kyrgyzstan_census: the age groups make {aged:,} of {both:,}")
+        for what, n in left_out:
+            how += (f" The age table leaves out {what} ({n:,} people), whom table 3.2 counts; "
+                    f"the median is of the {aged:,} whose ages it prints.")
     if sum(unit["ethnic"].values()) != both or sum(unit["languages"].values()) != both:
         raise SystemExit(f"kyrgyzstan_census: compositions do not make {both:,}")
     return {
@@ -1063,7 +1100,8 @@ def build(books: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
                 "total": book["ethnic"][unit]["total"],
                 "groups": book["groups"][unit]["groups"],
                 "ethnic": book["ethnic"][unit]["groups"],
-                "languages": languages(book["language"][unit])}))
+                "languages": languages(book["language"][unit]),
+                "left_out": book["groups"][unit].get("left_out", [])}))
     missing = [u["name"] for u in a2 if u["id"] not in units]
     if missing:
         raise SystemExit(f"kyrgyzstan_census: drawn districts with no unit: {missing}")

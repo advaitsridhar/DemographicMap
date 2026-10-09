@@ -387,6 +387,20 @@ class Records(unittest.TestCase):
         with self.assertRaises(SystemExit):
             kg.build(self.books, A1, A2 + [{"id": "x", "name": "Chatkal", "parent": "J"}])
 
+    def test_people_the_age_table_leaves_out_are_named(self):
+        # Karakol: the age table prints the city without Pristan-Przhevalsk.
+        groups = [(0, 0, 0)] * 21
+        groups[6] = (60, 30, 30)
+        unit = {"total": (70, 35, 35), "groups": groups, "ethnic": Counter(Kyrgyz=70),
+                "languages": Counter(Kyrgyz=70), "left_out": [("Pristan-Przhevalsk", 10)]}
+        out = kg.fields(unit, None, None, ["Issyk-Kul"])
+        self.assertEqual(out["population"]["value"], 70)
+        self.assertIn("leaves out Pristan-Przhevalsk (10 people)", out["median_age_note"])
+        # Ages that miss the total by more than what is named stop the run.
+        unit["left_out"] = [("Pristan-Przhevalsk", 9)]
+        with self.assertRaises(SystemExit):
+            kg.fields(unit, None, None, ["Issyk-Kul"])
+
 
 if __name__ == "__main__":
     unittest.main()
