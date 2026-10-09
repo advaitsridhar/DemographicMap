@@ -1,10 +1,26 @@
-philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
-  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
-  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
-  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
-  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
-  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao'); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900)); SULTAN KUDARAT (the boundary file draws no polygon for it)
-  admin1: 17 units, 17 with figures; median 18.5-27.5; sex ratio 99.9-105.8
-  admin2: 86 units, 84 with figures; median 18.4-29.9; sex ratio 97.9-109.8
-  wrote data/processed/philippines_age.json (260 kB)
-  wrote philippines_age.json: 103 records
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=tjj.xinjiang.gov.cn&matchType=domain&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=3000&filter=original%3A.%2AA010%5B145%5D.xls :: <urlopen error [Errno 110] Connection timed out>
+== cdx tjj.hebei.gov.cn
+  20260119135325 application/vnd.ms-excel         16943 http://tjj.hebei.gov.cn/extra/col20/rkpc2010/excel/A0101.xls
+  20260119135436 application/vnd.ms-excel         12420 http://tjj.hebei.gov.cn/extra/col20/rkpc2010/excel/A0104.xls
+  20260119135315 application/vnd.ms-excel         13710 http://tjj.hebei.gov.cn/extra/col20/rkpc2010/excel/A0105.xls
+  20250417010326 application/vnd.ms-excel         20999 http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/A0101.xls
+  20250417010335 application/vnd.ms-excel         10947 http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/A0104.xls
+  20250417010351 application/vnd.ms-excel          9522 http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/A0105.xls
+  6 shown of 6 captured under tjj.hebei.gov.cn
+== cdx tjj.shanxi.gov.cn
+  0 shown of -1 captured under tjj.shanxi.gov.cn
+== cdx tjj.gxzf.gov.cn
+  0 shown of -1 captured under tjj.gxzf.gov.cn
+== cdx stats.hainan.gov.cn
+  0 shown of -1 captured under stats.hainan.gov.cn
+== cdx stats.yn.gov.cn
+  0 shown of -1 captured under stats.yn.gov.cn
+== cdx tj.nx.gov.cn
+  0 shown of -1 captured under tj.nx.gov.cn
+== cdx tjj.xinjiang.gov.cn
+  0 shown of -1 captured under tjj.xinjiang.gov.cn
+== cdx tj.jiangsu.gov.cn
+  20250430050441 application/vnd.ms-excel         16127 http://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0101.xls
+  20250430050725 application/vnd.ms-excel         37877 http://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0104.xls
+  20250430043341 application/vnd.ms-excel         36826 http://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0105.xls
+  3 shown of 3 captured under tj.jiangsu.gov.cn
