@@ -239,6 +239,10 @@ ETHNIC_LABELS: dict[str, str] = {
     "betawi": "Betawi", "minangkabau": "Minangkabau", "bugis": "Buginese",
     "melayu": "Malay", "banten": "Bantenese", "banjar": "Banjar", "bali": "Balinese",
     "aceh": "Acehnese", "dayak": "Dayak", "sasak": "Sasak", "tionghoa": "Chinese Indonesian",
+    # North Kalimantan's row, which the article once printed "Dayak (termasuk
+    # Tidung dan Bulungan)" and now "Gabungan Dayak, Tidung dan Bulungan": the
+    # same census row, which counts the Tidung and Bulungan with the Dayak.
+    "gabungan dayak, tidung dan bulungan": "Dayak",
     "makassar": "Makassarese", "cirebon": "Cirebonese", "nias": "Nias",
     "lampung": "Lampung", "gayo": "Gayo", "aneuk jamee": "Aneuk Jamee",
     "singkil": "Singkil", "devayan": "Devayan", "mentawai": "Mentawai",
