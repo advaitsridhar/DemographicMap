@@ -1,6 +1,6 @@
-solomon_census: 2019 Census Basic Tables (Volume 2)
-  5,094,197 bytes, 318 pages
-  median ages from P3.1 against the summary of main indicators: Solomon Islands 21.4 (21.4), Choiseul 20.4 (20.4), Western 21.7 (21.7), Isabel 22.6 (22.6), Central 20.9 (20.9), Rennell-Bellona 25.3 (25.3), Guadalcanal 20.9 (20.9), Malaita 19.5 (19.5), Makira-Ulawa 18.6 (18.6), Temotu 22.2 (22.2), Honiara 24.2 (24.2)
-  no polygon: Temotu Pele (5,395 people in 6 wards), counted in its province
-  59 records: admin1 ethnicity 10, admin1 median_age 10, admin1 population 10, admin1 religion 10, admin1 sex_ratio 10, admin2 median_age 49, admin2 population 49, admin2 religion 49, admin2 sex_ratio 49
-  wrote data/processed/solomon_census.json (322 kB)
+fiji_census: 2017 ages by province and division; 2007 religion and ethnicity
+  2007 Table P01-3: 15 provinces adding to 837,271; religion unprinted for 895 people
+  2017 ages: 15 provinces adding to 884,887 and to their divisions; fiji_census: Fiji 27.5 (printed 27.5)
+  admin1 ethnicity 4, admin1 median_age 4, admin1 population 1, admin1 religion 4, admin1 sex_ratio 4, admin2 ethnicity 15, admin2 median_age 15, admin2 religion 15, admin2 sex_ratio 15
+  wrote data/processed/fiji_census.json (136 kB)
+  wrote 19 records
