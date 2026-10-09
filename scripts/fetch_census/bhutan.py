@@ -987,15 +987,18 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
     if not found.printed or counted != found.printed:
         return None, (f"Table 2.2's rows come to {counted:,} against the "
                       f"{found.printed:,} it prints beside them")
-    # A gewog's name that wrapped onto a second line arrives cut short --
-    # Samtse's Table 2.2 prints "Sang-Ngag-" over "Chhoeling" -- and is the
-    # one Table 2.1 gewog it begins, where exactly one does.
-    for short in sorted(set(found.gewogs) - set(read.gewogs)):
-        stem = short.rstrip("-")
-        whole_names = [name for name in set(read.gewogs) - set(found.gewogs)
-                       if name.startswith(stem) and len(name) > len(stem)]
-        if len(stem) >= 4 and len(whole_names) == 1:
-            found.gewogs[whole_names[0]] = found.gewogs.pop(short)
+    # A gewog's name that wrapped onto a second line can arrive cut short in
+    # one table and whole in the other: Samtse's Table 2.1 reads
+    # "Sang-Ngag-" (the key the bindings above use) and its Table 2.2
+    # "Sang-Ngag-Chhoeling". One that begins the other, where exactly one
+    # does, is the same gewog, under Table 2.1's spelling.
+    for name in sorted(set(found.gewogs) - set(read.gewogs)):
+        stem = name.rstrip("-")
+        partners = [other for other in set(read.gewogs) - set(found.gewogs)
+                    if min(len(stem), len(other.rstrip("-"))) >= 4
+                    and (other.startswith(stem) or stem.startswith(other.rstrip("-")))]
+        if len(partners) == 1:
+            found.gewogs[partners[0]] = found.gewogs.pop(name)
     # The gewogs must be Table 2.1's own, name for name. The towns reach no
     # shape and are held only through the closing row above: a town whose
     # label wraps differently in the two tables is not a reason to lose the

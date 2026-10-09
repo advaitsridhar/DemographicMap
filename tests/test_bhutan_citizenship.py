@@ -153,6 +153,18 @@ class Citizenship(unittest.TestCase):
         self.assertEqual(why, "")
         self.assertEqual(found.gewogs, {"Barshong": 838, "Patshaling": 1151})
 
+    def test_a_name_whole_in_table_22_and_cut_in_table_21_is_table_21s(self):
+        # Samtse: Table 2.1 reads "Sang-Ngag-", Table 2.2 the whole name.
+        t21 = table21()
+        at = next(i for i, r in enumerate(t21) if r[0][2] == "Patshaling")
+        t21[at] = row("Patsha-", "567", "592", "1,159")
+        t22 = table22()
+        page_list = [contents(), t21, t22]
+        read, (found, why) = self.read(page_list)
+        self.assertIn("Patsha-", read.gewogs)
+        self.assertEqual(why, "")
+        self.assertEqual(found.gewogs, {"Barshong": 838, "Patsha-": 1151})
+
     def test_two_town_rows_this_reader_cannot_name_are_kept_apart(self):
         t22 = table22()
         at = next(i for i, r in enumerate(t22) if r[0][2] == "Tsirang")
