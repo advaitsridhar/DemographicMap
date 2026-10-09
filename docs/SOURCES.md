@@ -4538,8 +4538,12 @@ its province, and the wrong one for Addis Ababa's ten sub-cities -- and the
 difference is a fact about the shape, not a matter of taste.
 
 A highly urbanized city is drawn *inside* something larger that has a row of
-its own: the province's figures already cover the city, so the city's row has
-nowhere to go and `no_shape` says so. Addis Ababa's sub-cities are not inside
+its own, so the city's row has no polygon of its own and `no_shape` says so.
+The province's row does **not** cover the city -- the census tabulates the two
+apart, and the region's row is their sum -- so `sea_composed.py` adds each of
+the seventeen cities outside Metro Manila to its province's figures for the
+polygon that holds both (`HUC_PROVINCES`): Davao del Sur's row alone is 28% of
+its polygon's 2020 count, and with Davao City 99.7%. Addis Ababa's sub-cities are not inside
 anything else at the second order. The ten **are** the second order there:
 geoBoundaries draws exactly one zone-level shape in Addis Ababa, labelled
 "Region 14", and it is the region entire. Declaring the ten absent left that

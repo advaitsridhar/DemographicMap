@@ -4,6 +4,8 @@ No network: the US Census Bureau's sheets are built here in their two-row-header
 """
 
 import unittest
+from dataclasses import replace
+from unittest import mock
 
 from scripts.fetch_census import sea_composed as s
 from scripts.fetch_census import uscb
@@ -306,6 +308,208 @@ class ClearLanguageTest(unittest.TestCase):
                 for r in CLEAR_ROWS]
         with self.assertRaises(SystemExit):
             s.clear_language(CLEAR_SHAPES, rows)
+
+
+# --------------------------------------------------------------------------
+# Myanmar's population from COD-PS: composed districts and states
+# --------------------------------------------------------------------------
+
+def codps(code, name, people):
+    return code, {"code": code, "name": name, "parent": code[:6], "people": float(people)}
+
+
+MMR_ROWS2 = dict([
+    codps("MMR004D002", "Mindat", 72331), codps("MMR004D004", "Matupi", 167630),
+    codps("MMR004D003", "Hakha", 111861),
+    codps("MMR015S002", "Kokang Self-Administered Zone", 178768),
+    codps("MMR016D001", "Kengtung", 507502),
+    codps("MMR010D001", "Mandalay", 1875615), codps("MMR018D001", "Oke Ta Ra", 618392),
+])
+MMR_ROWS1 = dict([
+    codps("MMR004", "Chin", 72331 + 167630 + 111861),
+    codps("MMR015", "Shan (North)", 178768), codps("MMR016", "Shan (East)", 507502),
+    codps("MMR010", "Mandalay", 1875615), codps("MMR018", "Nay Pyi Taw", 618392),
+])
+MMR_A1 = [{"id": "S1", "name": "Chin"}, {"id": "S2", "name": "Shan"},
+          {"id": "S4", "name": "Mandalay"}]
+MMR_A2 = [{"id": "D1", "name": "Mindat", "parent": "S1"},
+          {"id": "D2", "name": "Hakha", "parent": "S1"},
+          {"id": "D3", "name": "Laukkaing", "parent": "S2"},
+          {"id": "D4", "name": "Kengtung", "parent": "S2"},
+          {"id": "D5", "name": "Mandalay", "parent": "S4"},
+          {"id": "D6", "name": "Oke Ta Ra", "parent": "S4"}]
+MMR_CENSUS = {"D1": 212497, "D3": 154912}
+MMR_CITE = {"field": "population", "name": "OCHA COD-PS (cod-ps-mmr-archived), reference year "
+            "2023", "year": 2023}
+
+
+class MyanmarPopulationTest(unittest.TestCase):
+    """Finding: Mindat showed Mindat district's 72,331 beside religion and ages for
+    Mindat and Matupi; Kayah's encyclopaedia figure fell below its own Loikaw."""
+
+    def build(self, rows2=MMR_ROWS2, rows1=MMR_ROWS1, census=MMR_CENSUS):
+        return s.myanmar_population(rows2, rows1, MMR_A1, MMR_A2, census, 2023, MMR_CITE)
+
+    def test_a_composed_polygon_takes_all_its_parts(self):
+        got = self.build()
+        self.assertEqual(got["D1"]["population"], {"value": 239961, "year": 2023,
+                                                   "source": MMR_CITE["name"]})
+        self.assertIn("Mindat district (72,331) and Matupi district (167,630)",
+                      got["D1"]["population_note"])
+        self.assertEqual(got["D1"]["sources"], [MMR_CITE])
+
+    def test_a_zone_drawn_as_a_district_takes_the_zone(self):
+        got = self.build()
+        self.assertEqual(got["D3"]["population"]["value"], 178768)
+        self.assertIn("Kokang Self-Administered Zone", got["D3"]["population_note"])
+
+    def test_a_polygon_that_is_its_own_row_is_left_to_that_row(self):
+        got = self.build()
+        self.assertNotIn("D2", got)
+        self.assertNotIn("D4", got)
+
+    def test_states_take_the_first_level_rows_their_districts_make(self):
+        got = self.build()
+        self.assertEqual(got["S1"]["population"]["value"], 351822)
+        self.assertEqual(got["S2"]["population"]["value"], 178768 + 507502)
+        self.assertIn("Shan (North) and Shan (East)", got["S2"]["population_note"])
+        self.assertEqual(got["S4"]["population"]["value"], 1875615 + 618392)
+        self.assertIn("Nay Pyi Taw", got["S4"]["population_note"])
+        self.assertEqual(got["S1"]["level"], "admin1")
+
+    def test_a_row_on_no_polygon_refuses(self):
+        rows2 = dict(MMR_ROWS2)
+        rows2.update([codps("MMR004D009", "Somewhere", 10)])
+        with self.assertRaises(SystemExit):
+            self.build(rows2=rows2)
+
+    def test_a_polygon_no_row_reaches_refuses(self):
+        rows2 = {k: v for k, v in MMR_ROWS2.items() if k != "MMR015S002"}
+        rows1 = dict(MMR_ROWS1)
+        rows1.pop("MMR015")
+        with self.assertRaises(SystemExit):
+            self.build(rows2=rows2, rows1=rows1)
+
+    def test_a_sum_far_from_the_census_refuses(self):
+        with self.assertRaises(SystemExit):
+            self.build(census={"D1": 72331, "D3": 154912})
+        with self.assertRaises(SystemExit):
+            self.build(census={"D3": 154912})
+
+    def test_a_first_level_row_its_districts_do_not_make_refuses(self):
+        rows1 = dict(MMR_ROWS1)
+        rows1.update([codps("MMR004", "Chin", 351822 + 500)])
+        with self.assertRaises(SystemExit):
+            self.build(rows1=rows1)
+
+    def test_a_part_not_in_the_polygon_s_crosswalk_refuses(self):
+        s.codps_part({"code": "MMR005S001", "name": "Naga Self-Administered Zone"}, "Hkamti")
+        with self.assertRaises(SystemExit):
+            s.codps_part({"code": "X", "name": "Naga Self-Administered Zone"}, "Kyaukme")
+        with self.assertRaises(SystemExit):
+            s.codps_part({"code": "X", "name": "Kawlin"}, "Mindat")
+        with self.assertRaises(SystemExit):     # the Wa division is split in two
+            s.codps_part({"code": "X", "name": "Wa Self-Administered Division"}, "Hopang")
+        with self.assertRaises(SystemExit):     # Hakha is one census district
+            s.codps_part({"code": "X", "name": "Matupi"}, "Hakha")
+
+    def test_every_crosswalk_row_agrees_with_composed(self):
+        for code, polygon in s.MMR_CODPS_INTO.items():
+            name = {"MMR004D004": "Matupi", "MMR005D011": "Kawlin",
+                    "MMR005S001": "Naga Self-Administered Zone",
+                    "MMR014S001": "Danu Self-Administered Zone",
+                    "MMR014S002": "Pa-O Self-Administered Zone",
+                    "MMR015S001": "Pa Laung Self-Administered Zone",
+                    "MMR015S002": "Kokang Self-Administered Zone"}[code]
+            s.codps_part({"code": code, "name": name}, polygon)
+
+    def test_population_joins_the_polygon_s_record_or_stands_alone(self):
+        pops = self.build()
+        records = [{"id": "MMR-COMP-mindat", "shape_id": "D1", "religion": [],
+                    "sources": [{"field": "religion"}]}]
+        out = {r["shape_id"]: r for r in s.with_population(records, pops)}
+        self.assertEqual(out["D1"]["population"]["value"], 239961)
+        self.assertEqual([c["field"] for c in out["D1"]["sources"]], ["religion", "population"])
+        self.assertEqual(out["S2"]["id"], "MMR-POP-R-shan")
+        self.assertEqual(out["D3"]["id"], "MMR-POP-laukkaing")
+        self.assertEqual(len(out), 5)
+
+
+# --------------------------------------------------------------------------
+# The Philippines: provinces drawn with a highly urbanized city inside them
+# --------------------------------------------------------------------------
+
+def phl_unit(level, region, area, religion, ethnicity=None):
+    def field(counts):
+        return {"counts": counts, "published": sum(counts.values())}
+    return {"level": level, "adm1": region.upper(), "adm2": area.upper() if level == 2 else "",
+            "adm3": "", "area": area.upper(), "where": area,
+            "fields": {"religion": field(religion), "ethnicity": field(ethnicity or religion)}}
+
+
+def davao_units(region_extra=0):
+    sur = {"Roman Catholic": 600000, "Islam": 79457}
+    city = {"Roman Catholic": 1500000, "Islam": 270988}
+    norte = {"Roman Catholic": 1000000, "Islam": 115167}
+    region = {k: sur[k] + city[k] + norte[k] for k in sur}
+    region["Islam"] += region_extra
+    return [phl_unit(1, "Davao Region", "Davao Region", region),
+            phl_unit(2, "Davao Region", "Davao Del Sur", sur),
+            phl_unit(2, "Davao Region", "Davao", city),
+            phl_unit(2, "Davao Region", "Davao Del Norte", norte)]
+
+
+PHL_HUC_SHAPES = [{"id": "DS", "name": "Davao del Sur"}, {"id": "DN", "name": "Davao del Norte"}]
+ONE_HUC = {"Davao del Sur": ("Davao Region", "Davao Del Sur", (("Davao", "Davao City"),))}
+
+
+class HighlyUrbanizedCityTest(unittest.TestCase):
+    """Finding: Davao del Sur's shares were the province's 679,457 people alone, while
+    its population, median age and sex ratio counted Davao City's 1.77 million too."""
+
+    def build(self, units=None, counted=None, declared=(("Davao Region", "Davao"),)):
+        country = replace(uscb.PHILIPPINES, no_shape=frozenset(declared))
+        with mock.patch.object(s, "HUC_PROVINCES", ONE_HUC), \
+                mock.patch.object(s.uscb, "PHILIPPINES", country):
+            return s.huc_provinces(units or davao_units(), PHL_HUC_SHAPES,
+                                   counted if counted is not None else {"DS": 2457430})
+
+    def test_the_city_is_added_to_the_province_around_it(self):
+        recs = self.build()
+        self.assertEqual([r["shape_id"] for r in recs], ["DS"])
+        counts = {g["group"]: g["count"] for g in recs[0]["religion"]}
+        self.assertEqual(counts, {"Roman Catholic": 2100000, "Islam": 350445})
+        for field in ("religion", "ethnicity"):
+            note = recs[0][f"{field}_note"]
+            self.assertIn("draws Davao City inside this province's polygon", note)
+            self.assertIn("the city's added together", note)
+
+    def test_every_shapeless_city_must_be_added_somewhere(self):
+        with self.assertRaises(SystemExit):
+            self.build(declared=(("Davao Region", "Davao"), ("Davao Region", "Tagum")))
+
+    def test_the_province_alone_making_the_polygon_refuses(self):
+        # Nothing then shows the city is inside the polygon.
+        with self.assertRaises(SystemExit):
+            self.build(counted={"DS": 679457})
+
+    def test_a_sum_well_short_of_the_polygon_refuses(self):
+        with self.assertRaises(SystemExit):
+            self.build(counted={"DS": 3000000})
+        with self.assertRaises(SystemExit):
+            self.build(counted={})
+
+    def test_a_region_its_provinces_and_cities_do_not_make_refuses(self):
+        with self.assertRaises(SystemExit):
+            self.build(units=davao_units(region_extra=5000))
+
+    def test_the_real_list_covers_every_city_uscb_declares(self):
+        declared = {c for r, c in uscb.PHILIPPINES.no_shape
+                    if r != s.NCR and c not in s.NOT_CITIES}
+        named = {c for _, _, cities in s.HUC_PROVINCES.values() for c, _ in cities}
+        self.assertEqual(declared, named)
+        self.assertEqual(len(named), 17)
+        self.assertEqual(len(s.HUC_PROVINCES), 15)
 
 
 if __name__ == "__main__":

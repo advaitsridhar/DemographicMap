@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Religion and ethnicity on the polygons no one census area is: Myanmar's
-composed districts and Metro Manila's numbered districts.
+composed districts, Metro Manila's numbered districts and the Philippine
+provinces drawn with a highly urbanized city inside them; and the population
+of Myanmar's composed districts and of its states and regions.
 
 Both countries' compositions reach this map through the US Census Bureau's
 subnational tables (``uscb.py``), which give each census area to the polygon
@@ -26,6 +28,17 @@ the sum of their parts, the same parts their ages are built from
 (``myanmar_age.crosswalk``). At the first level the map's Mandalay polygon
 also holds Nay Pyi Taw's districts, so it takes the two regions summed.
 
+**Myanmar's population.** The map's district figures are OCHA's COD-PS for
+2023 (``cod-ps-mmr-archived``), joined by name, so each composed polygon
+showed its namesake's figure alone -- Mindat 72,331 where Mindat and Matupi
+together are 239,961. Here the same table's rows are summed onto the polygon
+they lie in (``MMR_CODPS_INTO``, the parts ``myanmar_age.COMPOSED`` uses),
+every row going to exactly one polygon. The states and regions take the same
+table's first-level figures, which their districts add up to, rather than an
+encyclopaedia's 2024 figures that fell below the districts drawn inside them
+(Kayah 296,903 against Loikaw's 298,758): Mandalay with Nay Pyi Taw, Shan's
+and Bago's parts summed.
+
 **The Philippines** -- the 2020 Census of Population and Housing. The
 boundary file draws Metro Manila as four numbered districts and the census
 counts its seventeen cities and municipality. ``uscb.py`` puts the City of
@@ -34,7 +47,12 @@ Second, Third and Fourth districts carry nothing. Here each takes the sum of
 the places that make it, as the Philippine Statistics Authority defines the
 districts (``NCR_DISTRICTS``). Cotabato City, which the boundary file also
 draws on its own, has no row at all -- its people are inside Maguindanao's --
-and its record says so (``cotabato_city``).
+and its record says so (``cotabato_city``). The seventeen highly urbanized
+cities outside Metro Manila are drawn inside the provinces around them, and
+the census tabulates them apart: ``uscb.py`` put each province's row alone
+on its polygon, a quarter of Davao del Sur's people and half of Benguet's.
+Here each of those fifteen polygons takes its province with its cities
+(``HUC_PROVINCES``), measured against the polygon's own 2020 barangay count.
 
 **Household language** in the Philippines comes from CLEAR Global's
 tabulation of the 2010 census (``clear_global.py``), whose second-level rows
@@ -372,6 +390,244 @@ def myanmar(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
 
 
 # --------------------------------------------------------------------------
+# Myanmar: the population of the composed polygons and of the states
+# --------------------------------------------------------------------------
+
+MMR_CODPS = "cod-ps-mmr-archived"
+# The rows of OCHA's COD-PS for Myanmar that are not the polygon of their own
+# name, and the polygon each lies in: the same parts ``myanmar_age.COMPOSED``
+# builds those polygons from, as COD-PS counts them. Matupi and Kawlin are
+# districts the boundary file draws inside its Mindat and Katha, and each of
+# these self-administered zones lies whole in one polygon (COMPOSED lists every
+# one of its townships under it). COD-PS already splits the Wa division as the
+# boundary file does, into Hopang and Matman, and counts no Mong Hpayak
+# district: its Tachileik row is the polygon of that name.
+MMR_CODPS_INTO = {
+    "MMR004D004": "Mindat",      # Matupi district
+    "MMR005D011": "Katha",       # Kawlin district
+    "MMR005S001": "Hkamti",      # Naga Self-Administered Zone
+    "MMR014S001": "Taunggyi",    # Danu Self-Administered Zone
+    "MMR014S002": "Taunggyi",    # Pa-O Self-Administered Zone
+    "MMR015S001": "Kyaukme",     # Pa Laung Self-Administered Zone
+    "MMR015S002": "Laukkaing",   # Kokang Self-Administered Zone
+}
+# A composed polygon's figure against the 2014 census's count of the same
+# ground (myanmar_age.json): COD-PS's 2023 country total is 1.12 times the
+# census's, and the composed polygons come to 1.05-1.17 times theirs. One
+# district's row alone on these polygons came to 0.34-0.97 of the census.
+MMR_GROWTH = (0.95, 1.30)
+# Rounding: COD-PS prints its figures with decimals, and a first-level row may
+# differ from the sum of its districts by half a person for each.
+MMR_ROUNDING = 0.5
+
+
+def codps_units(table: dict[str, Any], level: str) -> dict[str, dict[str, Any]]:
+    """A COD-PS table's rows by P-code: the name, the first-level P-code and the total."""
+    from . import cod_ps
+    from .cod_ps_age import number
+    columns = table["columns"]
+    name_col = cod_ps.name_column(columns, level)
+    total_col = cod_ps.total_column(columns)
+    code_col = next((c for c in columns if cod_ps.squash(c) == f"adm{level}pcode"), None)
+    parent_col = next((c for c in columns if cod_ps.squash(c) == "adm1pcode"), None)
+    if not (name_col and total_col and code_col and parent_col):
+        raise SystemExit(f"sea_composed: {table['label']} has no name, total or P-code column "
+                         f"for level {level}: {columns[:12]}")
+    out: dict[str, dict[str, Any]] = {}
+    for row in table["rows"]:
+        code = str(row.get(code_col) or "").strip()
+        people = number(row.get(total_col))
+        if not code or not people or people <= 0:
+            raise SystemExit(f"sea_composed: {table['label']}: a row without a P-code or a "
+                             f"total: {row.get(name_col)!r}")
+        if code in out:
+            raise SystemExit(f"sea_composed: {table['label']}: two rows for {code}")
+        out[code] = {"code": code, "name": str(row.get(name_col) or "").strip(),
+                     "parent": str(row.get(parent_col) or "").strip(), "people": people}
+    return out
+
+
+def codps_part(row: dict[str, Any], polygon: str) -> None:
+    """Refuse a row ``MMR_CODPS_INTO`` sends to a polygon COMPOSED does not build from it."""
+    spec = myanmar_age.COMPOSED.get(polygon)
+    if spec is None:
+        raise SystemExit(f"sea_composed: COD-PS's {row['name']} ({row['code']}) is sent to "
+                         f"{polygon}, which is one census district")
+    zone = myanmar_age.zone_of(row["name"])
+    if zone is None:
+        if fold(row["name"]) not in {fold(d) for d in spec["districts"]}:
+            raise SystemExit(f"sea_composed: COD-PS's {row['name']} ({row['code']}) is not one "
+                             f"of {polygon}'s census districts {spec['districts']}")
+        return
+    if zone not in (spec.get("zones") or {}):
+        raise SystemExit(f"sea_composed: COD-PS's {row['name']} ({row['code']}) is not in "
+                         f"{polygon}")
+    shared = [p for p, other in myanmar_age.COMPOSED.items()
+              if p != polygon and zone in (other.get("zones") or {})]
+    if shared:
+        raise SystemExit(f"sea_composed: the {zone.title()} zone's townships are drawn in "
+                         f"{polygon} and {shared}, so its COD-PS row cannot go whole to one")
+
+
+def part_words(row: dict[str, Any]) -> str:
+    name = row["name"]
+    words = (f"the {name}" if myanmar_age.zone_of(name) else f"{name} district")
+    return f"{words} ({row['people']:,.0f})"
+
+
+def myanmar_population(rows2: dict[str, dict[str, Any]], rows1: dict[str, dict[str, Any]],
+                       admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+                       census: dict[str, float], year: int, cite: dict[str, Any]
+                       ) -> dict[str, dict[str, Any]]:
+    """Polygon id -> its population fields, for every polygon that is not one COD-PS
+    row of its own name -- the composed districts -- and for every state and region.
+
+    Every COD-PS district and zone goes to exactly one polygon, every polygon
+    gets one at least, a composed polygon's sum stands within ``MMR_GROWTH`` of
+    the 2014 census's count of the same ground, and a state's polygons make the
+    COD-PS first-level rows they hold, each of those whole in one polygon.
+    """
+    source = cite["name"]
+    by_name: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for s in admin2:
+        by_name[fold(s["name"])].append(s)
+    names2 = {s["id"]: s["name"] for s in admin2}
+    into: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for code, row in sorted(rows2.items()):
+        label = MMR_CODPS_INTO.get(code)
+        if label is not None:
+            codps_part(row, label)
+        shapes = by_name.get(fold(label or row["name"]), [])
+        if len(shapes) != 1:
+            raise SystemExit(f"sea_composed: COD-PS's {row['name']} ({code}) finds "
+                             f"{len(shapes)} polygons named {label or row['name']!r}")
+        into[shapes[0]["id"]].append(row)
+    empty = sorted(s["name"] for s in admin2 if s["id"] not in into)
+    if empty:
+        raise SystemExit(f"sea_composed: polygons no COD-PS row reaches: {empty}")
+    out: dict[str, dict[str, Any]] = {}
+    for sid, rows in sorted(into.items(), key=lambda kv: names2[kv[0]]):
+        if len(rows) == 1 and fold(rows[0]["name"]) == fold(names2[sid]):
+            continue
+        people = sum(r["people"] for r in rows)
+        then = census.get(sid)
+        growth = people / then if then else None
+        if growth is None or not MMR_GROWTH[0] <= growth <= MMR_GROWTH[1]:
+            raise SystemExit(f"sea_composed: {names2[sid]}'s COD-PS parts make {people:,.0f}, "
+                             f"against the 2014 census's {then or 0:,.0f} for the same ground "
+                             f"(outside {MMR_GROWTH})")
+        parts = sorted(rows, key=lambda r: r["code"])
+        if len(parts) == 1:
+            note = (f"OCHA's COD-PS for Myanmar (reference year {year}) has no row named "
+                    f"{names2[sid]}: the boundary file's {names2[sid]} district is "
+                    f"{part_words(parts[0])}, and this is that figure.")
+        else:
+            note = (f"OCHA's COD-PS for Myanmar (reference year {year}) counts "
+                    f"{', '.join(part_words(r) for r in parts[:-1])} and "
+                    f"{part_words(parts[-1])} apart, and the boundary file draws them as one "
+                    f"polygon: this is their sum.")
+        out[sid] = {"level": "admin2", "name": names2[sid],
+                    "population": {"value": int(round(people)), "year": year,
+                                   "source": source},
+                    "population_note": note, "sources": [cite]}
+        log(f"    {names2[sid]}: {' + '.join(r['name'] for r in parts)} = {people:,.0f} "
+            f"({growth:.2f} times the 2014 census's {then:,.0f})")
+    # The states and regions: each polygon holds whole COD-PS first-level units.
+    parent_of = {s["id"]: s["parent"] for s in admin2}
+    held: dict[str, set[str]] = defaultdict(set)
+    for sid, rows in into.items():
+        held[parent_of[sid]] |= {r["parent"] for r in rows}
+    owner: dict[str, str] = {}
+    for aid, codes in held.items():
+        for c in codes:
+            if c in owner:
+                raise SystemExit(f"sea_composed: COD-PS's first-level {c} has districts in two "
+                                 f"states or regions of the map")
+            owner[c] = aid
+    if set(owner) != set(rows1):
+        raise SystemExit(f"sea_composed: COD-PS's first-level rows {sorted(rows1)} against "
+                         f"those its districts name {sorted(owner)}")
+    for c, row in sorted(rows1.items()):
+        kids = [r for r in rows2.values() if r["parent"] == c]
+        made = sum(r["people"] for r in kids)
+        if abs(made - row["people"]) > MMR_ROUNDING * (len(kids) + 1):
+            raise SystemExit(f"sea_composed: COD-PS's {row['name']} ({c}) is {row['people']:,.0f} "
+                             f"and its districts make {made:,.0f}")
+    for region in admin1:
+        codes = sorted(held.get(region["id"], ()))
+        if not codes:
+            continue
+        people = sum(rows1[c]["people"] for c in codes)
+        drawn_sum = sum(r["people"] for sid, rows in into.items()
+                        if parent_of[sid] == region["id"] for r in rows)
+        if abs(people - drawn_sum) > MMR_ROUNDING * (len(rows2) + 1):
+            raise SystemExit(f"sea_composed: {region['name']}: {people:,.0f} against its "
+                             f"districts' {drawn_sum:,.0f}")
+        names = [rows1[c]["name"] for c in codes]
+        if len(names) == 1:
+            note = (f"OCHA's COD-PS for Myanmar (reference year {year}), the same table the "
+                    f"districts drawn inside it take their figures from; they add up to it.")
+        else:
+            note = (f"OCHA's COD-PS for Myanmar (reference year {year}) counts "
+                    f"{', '.join(names[:-1])} and {names[-1]} apart, and the map draws them "
+                    f"as this one polygon: this is their sum, which the districts drawn "
+                    f"inside it add up to.")
+        out[region["id"]] = {"level": "admin1", "name": region["name"],
+                             "population": {"value": int(round(people)), "year": year,
+                                            "source": source},
+                             "population_note": note, "sources": [cite]}
+        log(f"    {region['name']} (first level): {' + '.join(names)} = {people:,.0f}")
+    total = sum(r["people"] for r in rows1.values())
+    log(f"  population: {sum(1 for v in out.values() if v['level'] == 'admin2')} composed "
+        f"districts and {sum(1 for v in out.values() if v['level'] == 'admin1')} states and "
+        f"regions from {len(rows2)} COD-PS districts and zones, {total:,.0f} in all")
+    return out
+
+
+def with_population(records: list[dict[str, Any]], pops: dict[str, dict[str, Any]]
+                    ) -> list[dict[str, Any]]:
+    """The population fields onto the polygon's record, or a record of their own."""
+    out = []
+    left = dict(pops)
+    for r in records:
+        extra = left.pop(r.get("shape_id"), None)
+        if extra:
+            r = {**r, "population": extra["population"],
+                 "population_note": extra["population_note"],
+                 "sources": [*r.get("sources", []), *extra["sources"]]}
+        out.append(r)
+    for sid, extra in sorted(left.items(), key=lambda kv: kv[1]["name"]):
+        tag = "R-" if extra["level"] == "admin1" else ""
+        out.append(record(f"MMR-POP-{tag}{fold(extra['name'])}", extra["name"],
+                          level=extra["level"], parent="MMR", country="MMR",
+                          match_by="shape_id", shape_id=sid,
+                          **{k: v for k, v in extra.items() if k not in ("name", "level")}))
+    return out
+
+
+def myanmar_codps() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], int,
+                            dict[str, Any]]:
+    """COD-PS's Myanmar districts and zones, its first-level rows, the year and the citation."""
+    from . import cod_ps
+    from .sea_cod_ps_age import newest_tables
+    package = cod_ps.get("package_show", id=MMR_CODPS)
+    if not cod_ps.is_usable(package):
+        raise SystemExit(f"sea_composed: {MMR_CODPS}: licence {cod_ps.licence(package)}")
+    newest = newest_tables(package)
+    if "1" not in newest or "2" not in newest or newest["1"][0] != newest["2"][0]:
+        raise SystemExit(f"sea_composed: {MMR_CODPS} has no first- and second-level tables "
+                         f"of one year: {[(k, v[0], v[1]['label']) for k, v in newest.items()]}")
+    year = newest["2"][0]
+    log(f"  {MMR_CODPS}: {newest['1'][1]['label']} and {newest['2'][1]['label']} ({year})")
+    cite = {"field": "population",
+            "name": f"OCHA, Common Operational Dataset -- population statistics ({MMR_CODPS}), "
+                    f"reference year {year}",
+            "url": cod_ps.DATASET_PAGE.format(stub=MMR_CODPS), "year": year,
+            "license": cod_ps.licence(package)}
+    return (codps_units(newest["2"][1], "2"), codps_units(newest["1"][1], "1"), year, cite)
+
+
+# --------------------------------------------------------------------------
 # The Philippines
 # --------------------------------------------------------------------------
 
@@ -414,6 +670,133 @@ def philippines(units: list[dict[str, Any]], admin2: list[dict[str, Any]]
                           shape_id=shapes[0]["id"], sources=cites, **values))
         log(f"    {district}: {listed} -- {described(sums)}")
     return out
+
+
+# The highly urbanized cities outside Metro Manila. The census tabulates each
+# apart from the province around it, and ``uscb.py`` declares each shapeless,
+# but the boundary file draws each inside that province's polygon, and the
+# PSA's own barangay table files its barangays under that province, so the
+# polygon's population, median age and sex ratio (philippines_age.py) count
+# the city's people. Its religion and ethnicity must too: the province's row
+# alone is a quarter of Davao del Sur's polygon. The polygon's label ->
+# (region, the province's row, the cities' rows and the names a note gives
+# them), rows by their names in the US Census Bureau's tables.
+HUC_PROVINCES: dict[str, tuple[str, str, tuple[tuple[str, str], ...]]] = {
+    "Agusan del Norte": ("Caraga Region", "Agusan Del Norte", (("Butuan", "Butuan"),)),
+    "Benguet": ("Cordillera Administrative Region", "Benguet", (("Baguio", "Baguio"),)),
+    "Cebu": ("Central Visayas", "Province Of Cebu",
+             (("Cebu City", "Cebu City"), ("Lapu-Lapu", "Lapu-Lapu"),
+              ("Mandaue", "Mandaue"))),
+    "Davao del Sur": ("Davao Region", "Davao Del Sur", (("Davao", "Davao City"),)),
+    "Iloilo": ("Western Visayas", "Province Of Iloilo", (("Iloilo City", "Iloilo City"),)),
+    "Lanao del Norte": ("Northern Mindanao", "Lanao Del Norte", (("Iligan", "Iligan"),)),
+    "Leyte": ("Eastern Visayas", "Leyte", (("Tacloban", "Tacloban"),)),
+    "Misamis Oriental": ("Northern Mindanao", "Misamis Oriental",
+                         (("Cagayan De Oro", "Cagayan de Oro"),)),
+    "Negros Occidental": ("Western Visayas", "Negros Occidental", (("Bacolod", "Bacolod"),)),
+    "Palawan": ("Mimaropa", "Palawan", (("Puerto Princesa", "Puerto Princesa"),)),
+    "Pampanga": ("Central Luzon", "Pampanga", (("Angeles", "Angeles"),)),
+    "Quezon": ("Calabarzon", "Quezon", (("Lucena", "Lucena"),)),
+    "South Cotabato": ("Soccsksargen", "South Cotabato",
+                       (("General Santos", "General Santos"),)),
+    "Zambales": ("Central Luzon", "Zambales", (("Olongapo", "Olongapo"),)),
+    "Zamboanga del Sur": ("Zamboanga Peninsula", "Zamboanga Del Sur",
+                          (("Zamboanga", "Zamboanga City"),)),
+}
+# The two provinces ``uscb.py`` also declares shapeless: their polygons are not
+# the provinces (philippines_age.EXCLUDE), and they are not cities.
+NOT_CITIES = ("Maguindanao", "Province Of Cotabato")
+# The census's household population against the barangay count of the same
+# polygon (philippines_age.json): the household population leaves out those in
+# institutions, and the 69 provinces with no such city come to 0.987-0.999 of
+# their polygons' counts. A province's row without its city comes to 0.28-0.87.
+HOUSEHOLD_SHARE = (0.985, 1.0)
+
+
+def huc_provinces(units: list[dict[str, Any]], admin2: list[dict[str, Any]],
+                  counted: dict[str, float]) -> list[dict[str, Any]]:
+    """Each province polygon holding a highly urbanized city: the province's
+    religion and ethnicity with the city's added.
+
+    Refused unless: every city ``uscb.py`` declares shapeless outside Metro
+    Manila is added to one polygon; each city's row and its province's are in
+    the same region, and every such region's row is the sum of its provinces'
+    and cities' rows; and, for both fields, the province with its city makes
+    ``HOUSEHOLD_SHARE`` of the polygon's 2020 barangay count while the
+    province alone does not -- the measure that puts the city inside it.
+    """
+    country = uscb.PHILIPPINES
+    fields = tuple(t.field for t in country.topics)
+    declared = {(fold(r), fold(c)) for r, c in country.no_shape
+                if fold(r) != fold(NCR) and c not in NOT_CITIES}
+    named = {(fold(r), fold(c)) for r, _, cities in HUC_PROVINCES.values() for c, _ in cities}
+    if declared != named:
+        raise SystemExit(f"sea_composed: cities declared shapeless and not added to a province: "
+                         f"{sorted(declared - named)}; added and not declared: "
+                         f"{sorted(named - declared)}")
+    rows2: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for u in units:
+        if u["level"] == 2:
+            rows2[(fold(u["adm1"]), fold(u["area"]))].append(u)
+    regions = {fold(u["area"]): u for u in units if u["level"] == 1}
+    for region in sorted({r for r, _, _ in HUC_PROVINCES.values()}):
+        whole = regions.get(fold(region))
+        kids = [u for (r, _), us in rows2.items() if r == fold(region) for u in us]
+        for f in fields:
+            off = (differs(whole["fields"][f], add(kids, f)) if whole and has(whole, f)
+                   else ["no row of its own"])
+            if off:
+                raise SystemExit(f"sea_composed: {region}'s provinces and cities do not make "
+                                 f"its {f}: {'; '.join(off[:6])}")
+    by_label = defaultdict(list)
+    for s in admin2:
+        by_label[s["name"]].append(s)
+    out = []
+    for label, (region, province, cities) in sorted(HUC_PROVINCES.items()):
+        shapes = by_label.get(label, [])
+        parts = []
+        for name in (province, *(c for c, _ in cities)):
+            rows = rows2.get((fold(region), fold(name)), [])
+            if len(rows) != 1:
+                raise SystemExit(f"sea_composed: {len(rows)} rows for {name} in {region}")
+            parts.append(rows[0])
+        if len(shapes) != 1:
+            raise SystemExit(f"sea_composed: {len(shapes)} polygons labelled {label!r}")
+        people = counted.get(shapes[0]["id"])
+        if not people:
+            raise SystemExit(f"sea_composed: no 2020 barangay count for {label}'s polygon")
+        for f in fields:
+            alone, made = add(parts[:1], f), add(parts, f)
+            if made["missing"]:
+                raise SystemExit(f"sea_composed: {label}: a part carries no {f} figures")
+            share, before = made["published"] / people, alone["published"] / people
+            if not HOUSEHOLD_SHARE[0] <= share <= HOUSEHOLD_SHARE[1] \
+                    or HOUSEHOLD_SHARE[0] <= before:
+                raise SystemExit(f"sea_composed: {label}: the province alone makes {before:.3f} "
+                                 f"of the polygon's 2020 count ({people:,.0f}) for {f}, and "
+                                 f"with its cities {share:.3f}, against {HOUSEHOLD_SHARE}")
+        shown = [n for _, n in cities]
+        listed = shown[0] if len(shown) == 1 else f"{', '.join(shown[:-1])} and {shown[-1]}"
+        whose = "the city's" if len(shown) == 1 else "the cities'"
+        said = (f"The boundary file draws {listed} inside this province's polygon, and the "
+                f"census counts {'it' if len(shown) == 1 else 'them'} apart from the "
+                f"province: these are the province's figures and {whose} added together.")
+        values, cites, sums = fields_of(country, parts, said)
+        out.append(record(f"PHL-COMP-{fold(label)}", label, level="admin2", parent="PHL",
+                          country="PHL", match_by="shape_id", shape_id=shapes[0]["id"],
+                          sources=cites, **values))
+        log(f"    {label}: {province} + {', '.join(c for c, _ in cities)} -- {described(sums)}; "
+            f"{sums[fields[0]]['published'] / people:.3f} of the polygon's 2020 count "
+            f"({people:,.0f}), the province alone "
+            f"{add(parts[:1], fields[0])['published'] / people:.3f}")
+    return out
+
+
+def barangay_counts(rows: list[dict[str, Any]]) -> dict[str, float]:
+    """Polygon id -> the 2020 census count philippines_age.json gives it."""
+    return {r["shape_id"]: r["population"]["value"] for r in rows
+            if r.get("country") == "PHL" and r.get("level") == "admin2" and r.get("shape_id")
+            and isinstance(r.get("population"), dict) and r["population"].get("value")}
 
 
 COTABATO_CITY = "Cotabato City"
@@ -572,11 +955,22 @@ def main() -> int:
     argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
     log("sea_composed: religion and ethnicity on the polygons no one census area is")
-    records = myanmar(read_units(workbook(uscb.MYANMAR), uscb.MYANMAR.topics),
-                      drawn("MMR", "admin1"), drawn("MMR", "admin2"))
+    mmr1, mmr2 = drawn("MMR", "admin1"), drawn("MMR", "admin2")
+    records = myanmar(read_units(workbook(uscb.MYANMAR), uscb.MYANMAR.topics), mmr1, mmr2)
+    log(f"  Myanmar's population from {MMR_CODPS}, on the polygons that are not one of its "
+        f"rows and on the states and regions:")
+    census = {r["shape_id"]: r["population"]["value"]
+              for r in read_json(PROCESSED / myanmar_age.OUT, [])
+              if r.get("level") == "admin2" and isinstance(r.get("population"), dict)}
+    rows2, rows1, year, cite = myanmar_codps()
+    records = with_population(records, myanmar_population(rows2, rows1, mmr1, mmr2, census,
+                                                          year, cite))
     admin2 = drawn("PHL", "admin2")
-    records += philippines(read_units(workbook(uscb.PHILIPPINES), uscb.PHILIPPINES.topics),
-                           admin2)
+    units = read_units(workbook(uscb.PHILIPPINES), uscb.PHILIPPINES.topics)
+    records += philippines(units, admin2)
+    log("  the provinces whose polygons hold a highly urbanized city:")
+    counted = barangay_counts(read_json(PROCESSED / "philippines_age.json", []))
+    records += huc_provinces(units, admin2, counted)
     log(f"  household language for the polygons {CLEAR_FILE}'s rows miss:")
     records = with_language(records, clear_language(admin2, read_json(PROCESSED / CLEAR_FILE,
                                                                        [])))
