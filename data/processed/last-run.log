@@ -1,156 +1,46 @@
-cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
-  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-  304 pages
-  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
-  Table 2.1.1 'Tbong Khmum' read as province 25 (Tboung Khmum)
-  Table 2.1.1: 25 provinces making 15,552,211
-  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) is not its communes' sum (24280, 101675, 48956, 52719); the communes' sum makes the province's total, and stands
-  district 801 Kandal Stueng: its row (74303, 332843, 160647, 172196) is not its communes' sum (22649, 100565, 48071, 52494); the communes' sum makes the province's total, and stands
-  province 14 Prey Veng: its total row (266934, 1049361, 492221, 557140) is not its districts' sum (266934, 1056866, 495906, 560960); the households agree and the districts' people fit in its 1,057,720 (Table 2.1.1), so the districts stand
-  province 17 Siemreap: its total row (224672, 994540, 484524, 510016) is not its districts' sum (224672, 989303, 481931, 507372); the households agree and the districts' people fit in its 1,014,234 (Table 2.1.1), so the districts stand
-  district 2202 Banteay Ampil: its row (12534, 54716, 27775, 26941) is not its communes' sum (12534, 51605, 25448, 26157); the communes' sum makes the province's total, and stands
-  Tables P-01..P-25: 202 districts and 1646 communes in 25 provinces, each district's communes and each province's districts making its row; 15,186,779 people in regular households
-  regular households' share of each province's people: lowest Preah Sihanouk 70.9%, Stung Treng 95.6%, Phnom Penh 95.9%, Pailin 96.1%, Otdar Meanchey 97.3%; provinces below 95%, whose district tables are not used: Preah Sihanouk (70.9%)
-  fetched KHM_AdminBoundaries_TabularData.xlsx (0.1 MB)
-  2018 gazetteer: ADM1 25, ADM2 197, ADM3 1633
-  commune 10509 Ou Beichaon read as the 2018 Ou Beichoan (KH010509, 0.90)
-  commune 11001 Nimit read as the 2018 Nimitt (KH011001, 0.91)
-  commune 20301 Tuol Ta Aek read as the 2018 Tuol Ta Ek (KH020301, 0.94)
-  commune 20302 Preaek Preah Sdach read as the 2018 Prek Preah Sdach (KH020302, 0.93)
-  commune 20303 Rotanak read as the 2018 Rottanak (KH020303, 0.93)
-  commune 20304 Chamkar Samraong read as the 2018 Chomkar Somraong (KH020304, 0.87)
-  commune 20305 Sla Kaet read as the 2018 Sla Ket (KH020305, 0.92)
-  commune 20306 Kdol Daun Teav read as the 2018 Kdol Doun Teav (KH020306, 0.92)
-  commune 20307 Ou Mal read as the 2018 Omal (KH020307, 0.89)
-  commune 20310 Svay Pao read as the 2018 Svay Por (KH020310, 0.86)
-  commune 20407 Boeng Pram read as the 2018 Boeung Pram (KH020408, 0.95)
-  commune 20408 Khlang Meas read as the 2018 Khlaeng Meas (KH020407, 0.95)
-  commune 20705 Reakhsmei Sangha read as the 2018 Reaksmei Songha (KH020705, 0.90)
-  commune 20810 Vaot Ta Moem read as the 2018 Vaot Ta Muem (KH020810, 0.90)
-  commune 20903 Ou Samrel read as the 2018 Ou Samril (KH020903, 0.88)
-  commune 21101 Phnom Proek read as the 2018 Phnum Proek (KH021101, 0.90)
-  commune 21202 Boeung Reang read as the 2018 Boeng Reang (KH021202, 0.95)
-  commune 21306 Chhnal Mean read as the 2018 Chhnal Moan (KH021306, 0.90)
-  commune 21403 Mukh Rea read as the 2018 Mukh Reah (KH021403, 0.93)
-  commune 30201 Bos Khnaor read as the 2018 Bos Khnor (KH030201, 0.94)
-  commune 30308 Soutip read as the 2018 Soutib (KH030308, 0.83)
-  commune 30309 Srama read as the 2018 Sramar (KH030309, 0.91)
-  commune 31406 Phteas Kandal read as the 2018 Phteah Kandal (KH031406, 0.92)
-  commune 31413 Svaysach Phnum read as the 2018 Svay Khsach Phnum (KH031413, 0.93)
-  commune 40108 Pech Changva read as the 2018 Pech Changvar (KH040108, 0.96)
-  commune 40608 Prasneb read as the 2018 Prasnoeb (KH040608, 0.93)
-  commune 50114 Svay Rumpea read as the 2018 Svay Rumpear (KH050114, 0.95)
-  commune 50203 Roka Thum read as the 2018 Rokar Thum (KH050203, 0.94)
-  commune 50501 Chant Saen read as the 2018 Chan Saen (KH050501, 0.94)
-  commune 50504 Khsem Khsan read as the 2018 Khsem Khsant (KH050504, 0.95)
-  commune 50515 Phnum Touch read as the 2018 Phnom Touch (KH050515, 0.90)
-  commune 50707 Samraong Tong read as the 2018 Samrong Tong (KH050707, 0.96)
-  commune 50715 Voa Sa read as the 2018 Voa Sar (KH050715, 0.91)
-  commune 50804 Prambei Mom read as the 2018 Prambei Mum (KH050804, 0.90)
-  commune 50808 Yeang Angk read as the 2018 Yea Angk (KH050808, 0.88)
-  commune 60101 Bak Snar read as the 2018 Bak Sna (KH060101, 0.92)
-  commune 60205 Nipechr read as the 2018 Nipech (KH060205, 0.92)
-  commune 60802 Chamnar Kraom read as the 2018 Chamna Kraom (KH060802, 0.96)
-  commune 60803 Chamnar Leu read as the 2018 Chamna Leu (KH060803, 0.95)
-  commune 60806 Msar Krang read as the 2018 Msa Krang (KH060806, 0.94)
-  commune 70312 Satr Pong read as the 2018 Satv Pong (KH070312, 0.88)
-  commune 70509 Angkor Meas read as the 2018 Angk Romeas (KH070509, 0.90)
-  commune 70607 Prasat Phnum Khyang read as the 2018 Prasat Phnom Khyang (KH070607, 0.94)
-  commune 70608 Phnum Prasat read as the 2018 Phnom Prasat (KH070608, 0.91)
-  commune 70609 Angk Sophy read as the 2018 Ang Sophy (KH070609, 0.94)
-  commune 70804 Andoung Khmaer read as the 2018 Andoung Khmer (KH070804, 0.96)
-  commune 80122 Siemreap read as the 2018 Siem Reab (KH080122, 0.88)
-  commune 80306 Preaek Prasab read as the 2018 Preah Prasab (KH080306, 0.87)
-  commune 80412 Sampov Pun read as the 2018 Sampeou Poun (KH080412, 0.80)
-  commune 80504 Pea Reang read as the 2018 Peam Reang (KH080504, 0.94)
-  commune 80601 Akreiy Ksatv read as the 2018 Akreiy Ksatr (KH080601, 0.91)
-  commune 80606 Lvea Sa read as the 2018 Lvea Sar (KH080606, 0.92)
-  commune 80609 Preaek Khmeng read as the 2018 Preaek Kmeng (KH080609, 0.96)
-  commune 80707 Roka Kaong Ti Muoy read as the 2018 Roka Kong Ti Muoy (KH080707, 0.97)
-  commune 80708 Roka Kaong Ti Pir read as the 2018 Roka Kong Ti Pir (KH080708, 0.96)
-  commune 80907 Popnhea Lueu read as the 2018 Ponhea Lueu (KH080907, 0.95)
-  commune 81014 Ta Long read as the 2018 Ta Lon (KH081014, 0.91)
-  commune 81103 Daeum Mien read as the 2018 Doeum Mien (KH081103, 0.89)
-  commune 81104 Ta Khmau read as the 2018 Ta Khmao (KH081104, 0.86)
-  commune 90101 Andaung Tuek read as the 2018 Andoung Tuek (KH090101, 0.91)
-  commune 90501 Bak Khlang read as the 2018 Pak Khlang (KH090501, 0.89)
-  commune 100106 Khsach Andaet read as the 2018 Khsach Andeth (KH100106, 0.92)
-  commune 100301 Chambak read as the 2018 Chamb├ók (KH100301, 0.86)
-  commune 100304 Kaoh Ta Suy read as the 2018 Koh Ta Suy (KH100304, 0.94)
-  commune 100308 Ta Mau read as the 2018 Ta Mao (KH100308, 0.80)
-  commune 110201 Nang Khi Loek read as the 2018 Nang Khi Lik (KH110201, 0.86)
-  commune 110202 Ou Buon Leu read as the 2018 A Buon Leu (KH110202, 0.82)
-  commune 110206 Srae Sangkom read as the 2018 Srae Sangkum (KH110206, 0.91)
-  commune 110402 Pou Chrei read as the 2018 Pu Chrey (KH110402, 0.80)
-  commune 120306 Mittakpheap read as the 2018 Mittapheap (KH120306, 0.95)
-  commune 120308 Boeng Prolit read as the 2018 Boeng Proluet (KH120308, 0.87)
-  commune 120601 Stueng Mean chey TI 1 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
-  commune 120602 Stueng Mean cheyTI 2 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
-  commune 120603 Stueng Mean cheyTI 3 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
-  commune 120604 Boeng Tumpun Ti 1 read as the 2018 Boeng Tumpun (KH120602, 0.88)
-  commune 120605 Boeng Tumpun Ti 2 read as the 2018 Boeng Tumpun (KH120602, 0.88)
-  commune 120701 Tuol Sangkae 1 read as the 2018 Tuol Sangke (KH120702, 0.91)
-  commune 120702 Tuol Sangkae 2 read as the 2018 Tuol Sangke (KH120702, 0.91)
-  commune 120806 Krang Thnoang read as the 2018 Krang Thnong (KH120807, 0.96)
-  commune 120905 Chaom Chau Ti 1 read as the 2018 Chaom Chau (KH120904, 0.86)
-  commune 120906 Chaom Chau Ti 2 read as the 2018 Chaom Chau (KH120904, 0.86)
-  commune 120907 Chaom Chau Ti 3 read as the 2018 Chaom Chau (KH120904, 0.86)
-  commune 121202 Chhbar Ampov Ti Pir read as the 2018 Chbar Ampov Ti Pir (KH121202, 0.97)
-  commune 121301 Boeng Keng Kang Muoy read as the 2018 Boeng Keng Kang Ti Muoy (KH120102, 0.94)
-  commune 121302 Boeng Keng Kang Pir read as the 2018 Boeng Keng Kang Ti Pir (KH120103, 0.94)
-  commune 121303 Boeng Keng Kang Bei read as the 2018 Boeng Keng Kang Ti Bei (KH120104, 0.94)
-  commune 130301 Choam Khsant read as the 2018 Choam Ksant (KH130301, 0.95)
-  commune 130504 Rung Raeung read as the 2018 Rung Roeang (KH130504, 0.80)
-  commune 130506 Ruos Rean read as the 2018 Ruos Roan (KH130506, 0.88)
-  commune 130509 Raksa read as the 2018 Reaksa (KH130509, 0.91)
-  commune 130511 Romtom read as the 2018 Romtum (KH130511, 0.83)
-  commune 130512 Romoniy read as the 2018 Romoneiy (KH130512, 0.93)
-  commune 140805 Mesa Prachan read as the 2018 Mesar Prachan (KH140805, 0.96)
-  commune 150101 Boeng Bat Kandal read as the 2018 Boeng Bat Kandaol (KH150101, 0.97)
-  commune 150301 Anlong Tnot read as the 2018 Anlong Tnaot (KH150301, 0.95)
-  commune 150307 Bkal Trach read as the 2018 Kbal Trach (KH150307, 0.89)
-  commune 150311 Tnot Chum read as the 2018 Tnaot Chum (KH150311, 0.94)
-  commune 150503 Lolork Sa read as the 2018 Lolok Sa (KH150503, 0.93)
-  commune 160305 Saeng read as the 2018 Saeung (KH160305, 0.91)
-  commune 160505 Pa Tang read as the 2018 Ba Tang (KH160505, 0.83)
-  commune 160601 Char Ung read as the 2018 Cha Ung (KH160601, 0.92)
-  commune 170102 Doun Peaeng read as the 2018 Doun Peng (KH170102, 0.89)
-  commune 170105 Norkor Pheas read as the 2018 Nokor Pheas (KH170105, 0.95)
-  commune 170106 Srae Kvav read as the 2018 Srae Khvav (KH170106, 0.94)
-  commune 170412 Spean Thnot read as the 2018 Spean Tnaot (KH170412, 0.90)
-  commune 171003 Kouk Chak read as the 2018 Kok Chak (KH171003, 0.93)
-  commune 171004 Sala Kamraeuk read as the 2018 Sala Kamreuk (KH171004, 0.96)
-  commune 171007 Chong Knies read as the 2018 Chong Khnies (KH171007, 0.95)
-  commune 171101 Chan Sar read as the 2018 Chan Sa (KH171101, 0.92)
-  commune 190104 Samkuoy read as the 2018 Samkhuoy (KH190104, 0.93)
-  commune 200105 Me Sa Thngak read as the 2018 Me Sar Thngak (KH200105, 0.95)
-  commune 200203 Ksetr read as the 2018 Khsaetr (KH200203, 0.83)
-  commune 200212 Tnot read as the 2018 Tnaot (KH200212, 0.89)
-  commune 200702 Kokir Saom read as the 2018 Koki Saom (KH200702, 0.94)
-  commune 200711 Svay Rumpea read as the 2018 Svay Rumpear (KH200711, 0.95)
-  commune 210211 Souphi read as the 2018 Sour Phi (KH210211, 0.92)
-  commune 210802 Roka Khnong read as the 2018 Roka Knong (KH210802, 0.95)
-  commune 210901 Ang Ta Saom read as the 2018 Angk Ta Saom (KH210901, 0.95)
-  commune 210907 Trapeang Kranhung read as the 2018 Trapeang Kranhoung (KH210907, 0.97)
-  commune 210908 Otdam Souriya read as the 2018 Otdam Soriya (KH210908, 0.96)
-  commune 211002 Angk Khnaor read as the 2018 Angk Khnor (KH211002, 0.95)
-  commune 211003 Chi Khnar read as the 2018 Chi Khma (KH211003, 0.80)
-  commune 211005 Prambei Mom read as the 2018 Prambei Mum (KH211005, 0.90)
-  commune 211013 Thlaok read as the 2018 Thlok (KH211013, 0.91)
-  commune 220104 Trapeang Prey read as the 2018 Trapeang Prei (KH220104, 0.92)
-  commune 220505 Tomnop Dach read as the 2018 Tumnob Dach (KH220505, 0.80)
-  commune 220506 Trapeang Prasath read as the 2018 Trapeang Prasat (KH220506, 0.97)
-  commune 250221 Thma Pechr read as the 2018 Thma Pech (KH250713, 0.94)
-  commune 250303 Damrel read as the 2018 Damril (KH250403, 0.83)
-  commune 250308 Tuol Sophi read as the 2018 Tuol Souphi (KH250407, 0.95)
-  commune 250409 Roka Khnaor read as the 2018 Roka Khnor (KH250209, 0.95)
-  commune 250702 Chaom read as the 2018 Choam (KH250302, 0.80)
-  commune 250703 Chaom Kravien read as the 2018 Choam Kravien (KH250303, 0.92)
-  commune 250704 Chaom Ta Mau read as the 2018 Choam Ta Mau (KH250304, 0.90)
-cambodia_census: communes away from their own district: 171008 Sambuor of 1710 Krong Siem Reab (2018 KH1710) found in KH1706; 81102 Preaek Ruessei of 811 Krong Ta Khmau (2018 KH0811) found in KH0806
+== https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Monggar.pdf
+  200 application/pdf 1623906 https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Monggar.pdf
+    96 pages
+  -- page 53: 42 rows
+    y=  45.7 2017@57-78 POPULATION@81-130 AND@133-150 HOUSING@153-190 CENSUS@193-226 OF@229-239 BHUTAN@242-274 (PHCB)@277-304
+    y=  72.2 latoT@85-93 48@107-115 83@118-125 64@129-136 681@140-147 88@150-158 89@161-169 48@172-180 43@183-190 05@194-201 174@205-212 812@215-223 352@226-234 78@237-244 04@248-255 74@259-266 219@269-277 814@280-288 494@291-299 832@313-320 201@323-331 631@334-342 425@345-353 642@356-363 872@367-374 916@378-385 792@388-396 223@399-407 307@410-417 373@421-428 033@432-439
+    y= 114.5 +57@85-93 6@107-115 3@118-125 3@129-136 4@140-147 2@150-158 2@161-169 5@172-180 3@183-190 2@194-201 51@205-212 6@215-223 9@226-234 5@237-244 4@248-255 1@259-266 53@269-277 81@280-288 71@291-299 9@313-320 4@323-331 5@334-342 01@345-353 3@356-363 7@367-374 21@378-385 8@388-396 4@399-407 02@410-417 9@421-428 11@432-439
+    y= 141.6 47-07@85-93 2@107-115 2@118-125 0@129-136 1@140-147 1@150-158 0@161-169 1@172-180 0@183-190 1@194-201 7@205-212 4@215-223 3@226-234 3@237-244 2@248-255 1@259-266 41@269-277 9@280-288 5@291-299 3@313-320 3@323-331 0@334-342 4@345-353 4@356-363 0@367-374 5@378-385 0@388-396 5@399-407 31@410-417 7@421-428 6@432-439
+    y= 168.5 96-56@85-93 2@107-115 2@118-125 0@129-136 6@140-147 4@150-158 2@161-169 0@172-180 0@183-190 0@194-201 51@205-212 8@215-223 7@226-234 6@237-244 4@248-255 2@259-266 92@269-277 81@280-288 11@291-299 4@313-320 4@323-331 0@334-342 31@345-353 5@356-363 8@367-374 0@378-385 0@388-396 0@399-407 32@410-417 8@421-428 51@432-439
+    y= 195.4 46-06@85-93 5@107-115 2@118-125 3@129-136 9@140-147 5@150-158 4@161-169 2@172-180 1@183-190 1@194-201 02@205-212 9@215-223 11@226-234 4@237-244 3@248-255 1@259-266 04@269-277 02@280-288 02@291-299 7@313-320 5@323-331 2@334-342 71@345-353 01@356-363 7@367-374 61@378-385 5@388-396 11@399-407 03@410-417 51@421-428 51@432-439
+    y= 222.4 95-55@85-93 31@107-115 7@118-125 6@129-136 8@140-147 5@150-158 3@161-169 4@172-180 2@183-190 2@194-201 71@205-212 21@215-223 5@226-234 1@237-244 1@248-255 0@259-266 34@269-277 72@280-288 61@291-299 41@313-320 6@323-331 8@334-342 03@345-353 71@356-363 31@367-374 61@378-385 9@388-396 7@399-407 22@410-417 21@421-428 01@432-439
+    y= 249.3 45-05@85-93 5@107-115 2@118-125 3@129-136 91@140-147 7@150-158 21@161-169 7@172-180 3@183-190 4@194-201 02@205-212 11@215-223 9@226-234 01@237-244 4@248-255 6@259-266 16@269-277 72@280-288 43@291-299 21@313-320 4@323-331 8@334-342 22@345-353 31@356-363 9@367-374 41@378-385 8@388-396 6@399-407 62@410-417 01@421-428 61@432-439
+    y= 276.2 94-54@85-93 8@107-115 6@118-125 2@129-136 01@140-147 4@150-158 6@161-169 7@172-180 3@183-190 4@194-201 12@205-212 5@215-223 61@226-234 11@237-244 5@248-255 6@259-266 75@269-277 32@280-288 43@291-299 71@313-320 01@323-331 7@334-342 43@345-353 61@356-363 81@367-374 32@378-385 8@388-396 51@399-407 33@410-417 61@421-428 71@432-439
+    y= 302.4 egA@74-82 44-04@85-93 9@107-115 4@118-125 5@129-136 31@140-147 7@150-158 6@161-169 8@172-180 3@183-190 5@194-201 13@205-212 31@215-223 81@226-234 4@237-244 2@248-255 2@259-266 56@269-277 92@280-288 63@291-299 31@313-320 5@323-331 8@334-342 52@345-353 9@356-363 61@367-374 22@378-385 01@388-396 21@399-407 54@410-417 91@421-428 62@432-439
+    y= 312.8 7102@56-64
+    y= 330.1 93-53@85-93 01@107-115 3@118-125 7@129-136 11@140-147 2@150-158 9@161-169 4@172-180 2@183-190 2@194-201 82@205-212 31@215-223 51@226-234 3@237-244 1@248-255 2@259-266 65@269-277 12@280-288 53@291-299 02@313-320 7@323-331 31@334-342 84@345-353 91@356-363 92@367-374 83@378-385 81@388-396 02@399-407 35@410-417 33@421-428 02@432-439
+    y= 333.9 gahkgnozD@56-64
+    y= 357.0 43-03@85-93 4@107-115 0@118-125 4@129-136 61@140-147 6@150-158 01@161-169 9@172-180 3@183-190 6@194-201 64@205-212 12@215-223 52@226-234 9@237-244 3@248-255 6@259-266 48@269-277 33@280-288 15@291-299 21@313-320 0@323-331 21@334-342 23@345-353 41@356-363 81@367-374 13@378-385 71@388-396 41@399-407 26@410-417 92@421-428 33@432-439
+    y= 374.6 raggnoM@56-64
+    y= 384.0 92-52@85-93 2@107-115 1@118-125 1@129-136 71@140-147 7@150-158 01@161-169 7@172-180 4@183-190 3@194-201 03@205-212 01@215-223 02@226-234 6@237-244 2@248-255 4@259-266 26@269-277 42@280-288 83@291-299 32@313-320 7@323-331 61@334-342 04@345-353 41@356-363 62@367-374 84@378-385 91@388-396 92@399-407 78@410-417 94@421-428 83@432-439
+    y= 407.1 ,nwoT/goweG@56-64
+    y= 410.9 42-02@85-93 7@107-115 2@118-125 5@129-136 9@140-147 3@150-158 6@161-169 4@172-180 1@183-190 3@194-201 72@205-212 5@215-223 22@226-234 6@237-244 3@248-255 3@259-266 35@269-277 41@280-288 93@291-299 21@313-320 6@323-331 6@334-342 34@345-353 71@356-363 62@367-374 44@378-385 91@388-396 52@399-407 05@410-417 03@421-428 02@432-439
+    y= 437.9 91-51@85-93 5@107-115 1@118-125 4@129-136 3@140-147 2@150-158 1@161-169 2@172-180 0@183-190 2@194-201 7@205-212 5@215-223 2@226-234 0@237-244 0@248-255 0@259-266 71@269-277 8@280-288 9@291-299 91@313-320 6@323-331 31@334-342 92@345-353 01@356-363 91@367-374 03@378-385 0@388-396 03@399-407 75@410-417 04@421-428 71@432-439
+    y= 456.4 dna@56-64
+    y= 464.8 41-01@85-93 0@107-115 0@118-125 0@129-136 91@140-147 8@150-158 11@161-169 5@172-180 1@183-190 4@194-201 07@205-212 93@215-223 13@226-234 0@237-244 0@248-255 0@259-266 49@269-277 84@280-288 64@291-299 0@313-320 0@323-331 0@334-342 15@345-353 92@356-363 22@367-374 821@378-385 45@388-396 47@399-407 45@410-417 23@421-428 22@432-439
+    y= 471.7 gowihC@56-64
+    y= 491.7 9-5@85-93 1@107-115 0@118-125 1@129-136 02@140-147 21@150-158 8@161-169 8@172-180 3@183-190 5@194-201 17@205-212 83@215-223 33@226-234 4@237-244 1@248-255 3@259-266 401@269-277 45@280-288 05@291-299 01@313-320 0@323-331 01@334-342 85@345-353 13@356-363 72@367-374 19@378-385 54@388-396 64@399-407 86@410-417 14@421-428 72@432-439
+    y= 498.9 ,xeS@56-64
+    y= 515.5 ,egA@56-64
+    y= 518.6 4-0@85-93 5@107-115 3@118-125 2@129-136 12@140-147 31@150-158 8@161-169 11@172-180 5@183-190 6@194-201 64@205-212 91@215-223 72@226-234 51@237-244 5@248-255 01@259-266 89@269-277 54@280-288 35@291-299 32@313-320 41@323-331 9@334-342 06@345-353 53@356-363 52@367-374 94@378-385 72@388-396 22@399-407 06@410-417 32@421-428 73@432-439
+    y= 533.0 yb@56-64
+    y= 543.1 noitalupoP@56-64
+    y= 546.7 xeS/gowihC/nwoT/goweG@85-93
+    y= 558.6 rahkleS_amnamgnooD@237-244
+    y= 561.3 argnihsehK_gnanrahK@345-353
+    y= 564.2 rahkasgahC_iahproB@378-385
+    y= 568.2 maP_amgnisgnooD@410-417
+    y= 572.0 irabgnaY_gnoodaJ@205-212 gnihsgnoopargnaY@313-320
+    y= 579.2 uhproM_malaB@140-147
+    y= 583.1 7.2A@56-64 RAHKASGAHC@302-309
+    y= 590.8 gnihsibehK@107-115 iahpakhaB@172-180 sgowihC@269-277
+    y= 593.0 elameF@129-136 elameF@161-169 elameF@194-201 elameF@226-234 elameF@259-266 elameF@291-299 elameF@334-342 elameF@367-374 elameF@399-407 elameF@432-439
+    y= 599.5 elaM@118-125 elaM@150-158 elaM@183-190 elaM@215-223 elaM@248-255 elaM@280-288 elaM@323-331 elaM@356-363 elaM@388-396 elaM@421-428
+    y= 602.3 elbaT@56-64 MALAB@96-104
+    y= 615.1 llA@269-277
+    y= 640.1 44@57-70
