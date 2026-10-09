@@ -1,6 +1,107 @@
-indonesia_age: BPS-Statistics Indonesia, The Result of Long Form Population Census 2020 (2023), Table 3.1: Population by Age Group, Urban/Rural Area, and Sex, as the U.S. Census Bureau tabulates it for HDX
-  https://data.humdata.org/dataset/6daa36c4-9ea3-4844-958b-042d2cc3d8b7/resource/2c8fce76-8ad7-4bce-ab02-374318302383/download/indonesia_uscb_202405.xlsx
-  rows with every cell blank, shapes that are no regency: DANAU TOBA
-  514 regencies make their 34 provinces and the provinces the country's 275,773,774, group by group and sex by sex
-    SUMATERA UTARA: rows ['KOTA PADANG SIDEMPUAN [] (0 polygons)']; polygons ['Kota Padangsidimpuan']
-indonesia_age: 1 provinces with rows or polygons left over
+== cod-ps-vnm: licence=cc-by-igo  method=Please see metadata tab in vnm_admpop_2023.xlsx spreadsheet and explanatory technical note
+  - vnm_admgz.xlsx (XLSX, 68060 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/aa7dcdd8-e34b-477a-b365-74640e3678e9/download/vnm_admgz.xlsx
+    sheet 'ADM0': 2 rows x 9 cols
+    | ADM0_EN | ADM0_VI | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | ADM0ALT1_VI | ADM0ALT2_VI | AREA_SQKM
+    | Viet Nam | Việt Nam | VN |  |  |  |  |  | 334558.96875
+    sheet 'ADM1': 64 rows x 12 cols
+    | ADM1_EN | ADM1_VI | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM1ALT1_VI | ADM1ALT2_VI | ADM0_EN | ADM0_VI | ADM0_PCODE | AREA_SQKM
+    | An Giang | An Giang | VN805 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 3535.969970703125
+    | Ba Ria - Vung Tau | Bà Rịa - Vũng Tàu | VN717 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 1973.954467773438
+    | Bac Giang | Bắc Giang | VN221 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 3890.22705078125
+    | Bac Kan | Bắc Kạn | VN207 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 4857.56005859375
+    | Bac Lieu | Bạc Liêu | VN821 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 2479.4169921875
+    sheet 'ADM2': 709 rows x 15 cols
+    | ADM2_EN | ADM2_VI | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM2ALT1_VI | ADM2ALT2_VI | ADM1_EN | ADM1_VI | ADM1_PCODE | ADM0_EN | ADM0_VI | ADM0_PCODE | AREA_SQKM
+    | A Luoi | Huyện A Lưới | VN41115 |  |  |  |  |  | Thua Thien Hue | Thừa Thiên Huế | VN411 | Viet Nam | Việt Nam | VN | 1227.996948242188
+    | An Bien | Huyện An Biên | VN81315 |  |  |  |  |  | Kien Giang | Kiên Giang | VN813 | Viet Nam | Việt Nam | VN | 395.5192565917969
+    | An Duong | Huyện An Dương | VN10313 |  |  |  |  |  | Hai Phong city | TP. Hải Phòng | VN103 | Viet Nam | Việt Nam | VN | 104.3803100585938
+    | An Khe | Thị xã An Khê | VN60311 |  |  |  |  |  | Gia Lai | Gia Lai | VN603 | Viet Nam | Việt Nam | VN | 199.2349548339844
+    | An Lao | Huyện An Lão | VN10315 |  |  |  |  |  | Hai Phong city | TP. Hải Phòng | VN103 | Viet Nam | Việt Nam | VN | 117.872444152832
+  - vnm_admpop_2024.xlsx (XLSX, 42343 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/a12482ef-d07f-45c7-94f7-c10be4e013fc/download/vnm_admpop_2024.xlsx
+    sheet 'Metadata': 15 rows x 2 cols
+    | Item | Metadata
+    | Country | Viet Nam
+    | Source(s) | General Statistics Office Viet Nam
+    | Source(s) Link(s) | https://vietnam.unfpa.org/sites/default/files/pub-pdf/final_population_projection_eng_to_upload.pdf
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2019
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | Cohort component method was applied to the 2019 census results to construct the projections on which this COD-PS is based. 
+    | Baseline Population | 2019 census
+    | Post-enumeration survey (PES) | The post enumeration survey (PES) results showed that the net coverage error of the 2019 census was 0.2%.
+    | Assessment and Adjustment of the Baseline Population | Results of the PES show the 2019 census to be relatively complete. The total population count of the 2019 census was found to be close to both the UN Population Division's mid-2019 population estimate for Viet Nam (WPP 2019 Revision) and the Viet Nam NSO projection for 2019 based on the 2009 census. The quality of age information from the 2019
+    | Fertility (births) | Fertility assumptions were constructed primarily based on the future total fertility rate (TFR) trend assumptions outlined in the WPP 2010 Revision in accordance with the Bi-Logistic Fertility Decline Model. The 2019 TFR's of the whole country (2.09), urban areas (1.83), and rural areas (2.26) were taken as the starting point to extrapolate up to 2069. Under the medium fertili
+    sheet 'vnm_admpop_adm0_2024': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2024 | VNM | Viet Nam | VN | 50434533 | 50334364 | 100768914 | 3518411 | 3711367 | 3972062 | 3477952 | 3148758 | 3251812 | 4136017 | 4102442 | 3779587 | 3290727 | 3085535 | 2829066 | 2617640 | 2063015 | 1380289 | 813141 | 1256714
+    sheet 'vnm_admpop_adm1_2024': 64 rows x 61 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_VI | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69
+    | 2024 | VNM | Viet Nam | VN | An Giang | An Giang | VN805 | 928139 | 910447 | 1838587 | 47372 | 58020 | 78488 | 78147 | 49910 | 36980 | 54624 | 69221 | 74493 | 70586 | 71588 | 67715 | 54170 | 43010
+    | 2024 | VNM | Viet Nam | VN | Ba Ria - Vung Tau | Bà Rịa - Vũng Tàu | VN717 | 589562 | 596946 | 1186511 | 37541 | 42493 | 47134 | 41609 | 33593 | 30465 | 47798 | 54092 | 49497 | 42487 | 39981 | 34761 | 30454 | 23092
+    | 2024 | VNM | Viet Nam | VN | Bac Giang | Bắc Giang | VN221 | 939499 | 951364 | 1890863 | 68833 | 80061 | 77035 | 58985 | 53173 | 56600 | 79621 | 75475 | 68297 | 61286 | 54929 | 51358 | 52596 | 38594
+    | 2024 | VNM | Viet Nam | VN | Bac Kan | Bắc Kạn | VN207 | 153602 | 162614 | 316216 | 9082 | 13238 | 14203 | 10995 | 7203 | 6417 | 11322 | 12694 | 11395 | 11329 | 10341 | 10428 | 9249 | 5762
+    | 2024 | VNM | Viet Nam | VN | Bac Lieu | Bạc Liêu | VN821 | 464304 | 466079 | 930383 | 26676 | 24837 | 34724 | 33413 | 32748 | 29311 | 38752 | 40453 | 40049 | 33587 | 27942 | 26311 | 23818 | 20360
+  - vnm-cod-ps-2024-explanatory-note.pdf (PDF, 1851298 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/450c9781-fdf8-4a00-a2c2-17dda103189c/download/vnm-cod-ps-2024-explanatory-note.pdf
+  - vnm_admpop_adm0_2024.csv (CSV, 914 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/f43cc8cc-1b5f-4bc0-89d3-9ef874310455/download/vnm_admpop_adm0_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74
+    | 2024,VNM,Viet Nam,VN,50434533,50334364,100768914,3518411,3711367,3972062,3477952,3148758,3251812,4136017,4102442,3779587,3290727,3085535,2829066,2617640,2063015,1380289,813141,1256714,3889961,4069403,4341350,3722405,3336556,3399849,4277272,4245246,3849360,3307248,3041626,2657244,2270564,1663703,1026
+    2 lines
+  - vnm_admpop_adm1_2024.csv (CSV, 24523 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/a53504df-3d97-482c-abfa-4488b1ff423b/download/vnm_admpop_adm1_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_VI,ADM1_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55
+    | 2024,VNM,Viet Nam,VN,An Giang,An Giang,VN805,928139,910447,1838587,47372,58020,78488,78147,49910,36980,54624,69221,74493,70586,71588,67715,54170,43010,33395,18435,21987,50480,61743,83713,82528,54053,40394,57273,72538,77708,71786,70367,64253,43964,27222,22504,14633,15288,97852,119763,162201,160674,10
+    | 2024,VNM,Viet Nam,VN,Ba Ria - Vung Tau,Bà Rịa - Vũng Tàu,VN717,589562,596946,1186511,37541,42493,47134,41609,33593,30465,47798,54092,49497,42487,39981,34761,30454,23092,14160,8486,11919,41417,46340,51404,45242,36356,33592,47875,54441,50160,42815,41042,33917,28338,20457,11476,5673,6401,78958,88833,98
+    | 2024,VNM,Viet Nam,VN,Bac Giang,Bắc Giang,VN221,939499,951364,1890863,68833,80061,77035,58985,53173,56600,79621,75475,68297,61286,54929,51358,52596,38594,23994,14593,24069,77423,93953,88619,65055,56422,58157,83131,79485,69610,60691,52913,48008,45661,31858,17906,10008,12464,146256,174014,165654,124040
+    | 2024,VNM,Viet Nam,VN,Bac Kan,Bắc Kạn,VN207,153602,162614,316216,9082,13238,14203,10995,7203,6417,11322,12694,11395,11329,10341,10428,9249,5762,3652,2539,3753,10210,13975,14683,11416,9420,9604,14107,15384,12847,11916,10332,9734,8048,4928,2548,1571,1891,19292,27213,28886,22411,16623,16021,25429,28078,
+    | 2024,VNM,Viet Nam,VN,Bac Lieu,Bạc Liêu,VN821,464304,466079,930383,26676,24837,34724,33413,32748,29311,38752,40453,40049,33587,27942,26311,23818,20360,14630,7338,9355,28422,26703,36765,35322,34746,31219,41543,44639,41895,34063,26401,23465,21327,16340,12344,5428,5457,55098,51540,71489,68735,67494,6053
+    64 lines
+  - vnm_admpop_2023.xlsx (XLSX, 43309 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/90642c40-f854-49a2-bdd2-fdea7db4130d/download/vnm_admpop_2023.xlsx
+    sheet 'Metadata': 15 rows x 2 cols
+    | Item | Metadata
+    | Country | Viet Nam
+    | Source(s) | General Statistics Office Viet Nam
+    | Source(s) Link(s) | https://vietnam.unfpa.org/sites/default/files/pub-pdf/final_population_projection_eng_to_upload.pdf
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2019
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | Cohort component method was applied to the 2019 census results to construct the projections on which this COD-PS is based. 
+    | Baseline Population | 2019 census
+    | Post-enumeration survey (PES) | The post enumeration survey (PES) results showed that the net coverage error of the 2019 census was 0.2%.
+    | Assessment and Adjustment of the Baseline Population | The total population count of the 2019 census was found to be close to the UN Population Division's mid-2019 population estimate for Viet Nam (WPP 2019 Revision) and the Viet Nam NSO projection for 2019 based on the 2009 census. The quality of age information from the 2019 census (age heaping, index of age preference, age-sex accuracy) were fo
+    | Fertility (births) | Fertility assumptions were constructed primarily based on the future total fertility rate (TFR) trend assumptions outlined in the WPP 2010 Revision in accordance with the Bi-Logistic Fertility Decline Model. The 2019 TFR of the whole country (2.09), urban area (1.83), and rural area (2.26) were taken as the starting point to extrapolate up to 2069, with the assumption that by 
+    sheet 'vnm_admpop_adm0_2023': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2023 | VNM | Viet Nam | VN | 50048805 | 49889136 | 99937948 | 3486067 | 3858932 | 3904364 | 3432694 | 3037176 | 3452931 | 4192013 | 4108918 | 3647138 | 3219400 | 3090345 | 2809468 | 2552273 | 1934384 | 1303601 | 746386 | 1272716
+    sheet 'vnm_admpop_adm1_2023': 64 rows x 60 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2023 | VNM | Viet Nam | VN | An Giang | VN805 | 934736 | 918014 | 1852750 | 48672 | 62257 | 81514 | 75334 | 44242 | 42217 | 60368 | 71620 | 75735 | 69274 | 73329 | 66030 | 51945 | 41948 | 31715
+    | 2023 | VNM | Viet Nam | VN | Ba Ria-Vung Tau | VN717 | 587038 | 594074 | 1181117 | 37657 | 44488 | 47022 | 41342 | 30646 | 34455 | 50342 | 54474 | 47801 | 41241 | 39923 | 34182 | 29223 | 21480 | 13025
+    | 2023 | VNM | Viet Nam | VN | Bac Giang | VN221 | 932159 | 943337 | 1875496 | 69979 | 82724 | 72691 | 58359 | 50732 | 61624 | 80181 | 76205 | 64384 | 61406 | 53778 | 52404 | 51427 | 35619 | 22770
+    | 2023 | VNM | Viet Nam | VN | Bac Kan | VN207 | 153556 | 162153 | 315709 | 9651 | 13854 | 13581 | 10764 | 6391 | 7639 | 11944 | 12699 | 11350 | 11139 | 10496 | 10346 | 8836 | 5148 | 3478
+    | 2023 | VNM | Viet Nam | VN | Bac Lieu | VN821 | 461733 | 463364 | 925097 | 25090 | 27697 | 35214 | 33569 | 31003 | 30745 | 39956 | 40863 | 39263 | 31825 | 27871 | 26068 | 23218 | 20007 | 13371
+  - VNM_AdminBoundaries_TabularData.xlsx (XLSX, 63347 B)
+    https://data.humdata.org/dataset/bf6858bf-a5a8-403b-8380-f78cd72c9fee/resource/1d945376-c714-46e3-b9fa-290684c64691/download/vnm_adminboundaries_tabulardata.xlsx
+    sheet 'ADM0': 2 rows x 12 cols
+    | ADM0_EN | ADM0_VI | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | ADM0ALT1_VI | ADM0ALT2_VI | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Viet Nam | Việt Nam | VN |  |  |  |  |  | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 334558.96875
+    sheet 'ADM1': 64 rows x 15 cols
+    | ADM1_EN | ADM1_VI | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM1ALT1_VI | ADM1ALT2_VI | ADM0_EN | ADM0_VI | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | An Giang | An Giang | VN805 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 3535.969970703125
+    | Ba Ria - Vung Tau | Bà Rịa - Vũng Tàu | VN717 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 1973.954467773438
+    | Bac Giang | Bắc Giang | VN221 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 3890.22705078125
+    | Bac Kan | Bắc Kạn | VN207 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 4857.56005859375
+    | Bac Lieu | Bạc Liêu | VN821 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 2479.4169921875
+    sheet 'ADM2': 709 rows x 18 cols
+    | ADM2_EN | ADM2_VI | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM2ALT1_VI | ADM2ALT2_VI | ADM1_EN | ADM1_VI | ADM1_PCODE | ADM0_EN | ADM0_VI | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | A Luoi | Huyện A Lưới | VN41115 |  |  |  |  |  | Thua Thien Hue | Thừa Thiên Huế | VN411 | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 1227.996948242188
+    | An Bien | Huyện An Biên | VN81315 |  |  |  |  |  | Kien Giang | Kiên Giang | VN813 | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 395.5192565917969
+    | An Duong | Huyện An Dương | VN10313 |  |  |  |  |  | Hai Phong city | TP. Hải Phòng | VN103 | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 104.3803100585938
+    | An Khe | Thị xã An Khê | VN60311 |  |  |  |  |  | Gia Lai | Gia Lai | VN603 | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 199.2349548339844
+    | An Lao | Huyện An Lão | VN10315 |  |  |  |  |  | Hai Phong city | TP. Hải Phòng | VN103 | Viet Nam | Việt Nam | VN | 2019-10-01 00:00:00 | 2020-01-03 00:00:00 |  | 117.872444152832
