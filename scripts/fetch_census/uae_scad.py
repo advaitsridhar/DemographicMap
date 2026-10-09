@@ -18,8 +18,17 @@ both levels under one id, so the record is written at both
 
 **What is not, and why.** The census site publishes the emirate's people by
 sex and region only: no age groups (so no median age), no nationality, and
-no religion or language; the other six emirates are not SCAD's and are not
-read here. Each field says so.
+no religion or language. Each field says so.
+
+**The other six emirates** are not SCAD's. Each drawn one gets a record that
+says why it has no median age or sex ratio (``OTHERS``): Dubai's statistics
+centre publishes its population by sex and age group, but its site
+(dsc.gov.ae) answered "The requested URL was rejected", and no such table was
+found among the Internet Archive's copies of its reports; Sharjah's
+statistics department (dscd.sharjah.ae) could not be reached; for the four
+northern emirates, the federal centre's site (fcsc.gov.ae) answered 403 and
+the open-data portal (bayanat.ae) returned no dataset for population. A
+drawn emirate without a reason stops the run.
 
 **Checks** (any failure stops the run and nothing is written): the page
 carries the emirate and its three regions for exactly two years; in each
@@ -67,6 +76,25 @@ NATIONALITY_WHY = (f"{PUBLISHED}: no nationality (citizens or not), so no nation
                    "published for the emirate.")
 RELIGION_WHY = f"{PUBLISHED}: no religion."
 LANGUAGE_WHY = f"{PUBLISHED}: no language."
+# Why each of the other emirates carries no median age or sex ratio.
+FEDERAL = ("the federal statistics centre's site (fcsc.gov.ae) refused the requests made for "
+           "it")
+NORTHERN = ("No table of {name}'s population by age and sex could be read for this map: "
+            f"{FEDERAL}, and the UAE's open-data portal (bayanat.ae) returned no dataset for "
+            "a search for population.")
+OTHERS = {
+    "Dubai": ("No table of Dubai's population by age and sex could be read for this map. The "
+              "Dubai Statistics Center publishes the emirate's population by sex and age "
+              "group, but its site (dsc.gov.ae) refused the requests made for it, and no such "
+              "table was found among the Internet Archive's copies of the Center's reports."),
+    "Sharjah": ("No table of Sharjah's population by age and sex could be read for this map: "
+                "the emirate's Department of Statistics and Community Development, which took "
+                f"its 2015 census, could not be reached (dscd.sharjah.ae), and {FEDERAL}."),
+    "Ajman": NORTHERN.format(name="Ajman"),
+    "Fujairah": NORTHERN.format(name="Fujairah"),
+    "Ras al-Khaimah": NORTHERN.format(name="Ras al-Khaimah"),
+    "Umm al-Quwain": NORTHERN.format(name="Umm al-Quwain"),
+}
 
 
 def read(page: str) -> dict[str, Any]:
@@ -143,9 +171,20 @@ def build(figures: dict[str, Any], admin1: list[dict[str, Any]],
         sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
                   "license": LICENCE}])
     rows = [rec]
+    for other in admin1:
+        if other is unit:
+            continue
+        why = OTHERS.get(other["name"])
+        check(why is not None, f"uae_scad: no reason written for the drawn emirate "
+                               f"{other['name']!r}")
+        rows.append(record(
+            f"ARE-{other['name'].replace(' ', '')}", other["name"], level="admin1",
+            parent=ISO3, country=ISO3, match_by="shape_id", shape_id=other["id"],
+            median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
     rows += second_level_twins(rows, admin2)
     log(f"  {DRAWN}: {now['total']:,} people, {rec['sex_ratio']['value']} men per 100 women; "
-        f"written at {len(rows)} level(s)")
+        f"written at {sum(1 for r in rows if r['name'] == DRAWN)} level(s); the other "
+        f"emirates' reasons at {sum(1 for r in rows if r['name'] != DRAWN)} polygons")
     return rows
 
 

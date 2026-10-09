@@ -43,17 +43,41 @@ class TheReader(unittest.TestCase):
     def test_the_latest_year_is_written_at_both_levels(self):
         rows = us.build(us.read(page()), DRAWN, [{"id": "e1", "name": "Abu Dhabi",
                                                     "parent": "e1"}])
-        self.assertEqual([r["level"] for r in rows], ["admin1", "admin2"])
+        self.assertEqual([(r["name"], r["level"]) for r in rows],
+                         [("Abu Dhabi", "admin1"), ("Dubai", "admin1"), ("Abu Dhabi", "admin2")])
         first = rows[0]
         self.assertEqual(first["shape_id"], "e1")
         self.assertEqual(first["population"]["value"], 4135985)
         self.assertEqual(first["population"]["year"], 2024)
         self.assertEqual(first["sex_ratio"]["value"], round(100 * 2767060 / 1368925, 1))
         self.assertIn("3,847,585", first["population"]["note"])
-        self.assertEqual(rows[1]["population"], first["population"])
+        self.assertEqual(rows[2]["population"], first["population"])
         for field in ("median_age", "ethnicity", "religion", "language"):
             self.assertEqual(first[field]["status"], "not_available", field)
             self.assertIn("census.scad.gov.ae", first[field]["note"], field)
+
+    def test_every_other_emirate_says_why_it_has_no_ages(self):
+        drawn = DRAWN + [{"id": f"e{i}", "name": name, "parent": "ARE"}
+                         for i, name in enumerate(("Sharjah", "Ajman", "Fujairah",
+                                                   "Ras al-Khaimah", "Umm al-Quwain"), 3)]
+        rows = us.build(us.read(page()), drawn, [{"id": u["id"], "name": u["name"],
+                                                   "parent": u["id"]} for u in drawn])
+        others = [r for r in rows if r["name"] != "Abu Dhabi"]
+        self.assertEqual(len(others), 12)
+        for row in others:
+            for field in ("median_age", "sex_ratio"):
+                self.assertEqual(row[field]["status"], "not_available")
+                self.assertIn(row["name"], row[field]["note"])
+            # Nothing else is claimed for them.
+            self.assertNotIn("note", row["population"])
+        dubai = next(r for r in others if r["name"] == "Dubai")
+        self.assertIn("dsc.gov.ae", dubai["median_age"]["note"])
+        ajman = next(r for r in others if r["name"] == "Ajman")
+        self.assertIn("fcsc.gov.ae", ajman["sex_ratio"]["note"])
+
+    def test_an_emirate_without_a_reason_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            us.build(us.read(page()), DRAWN + [{"id": "e9", "name": "Atlantis"}], [])
 
     def test_regions_that_miss_the_emirate_stop_the_run(self):
         regions = dict(REGIONS, AlAin=[(622296, 364615), (597190, 348415)])
