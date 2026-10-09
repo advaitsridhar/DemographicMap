@@ -1,47 +1,153 @@
-== https://census.scad.gov.ae/
-   200 text/html; charset=utf-8 176,679 bytes
-   ~ "Results of Abu Dhabi Census which is Based on Administrative Registers" /> <meta name="keywords" content="Abu Dhabi Census, Abu Dhabi Census 2024, Abu Dhabi Population, Abu Dhabi Labour Force, Abu Dhabi Real Estate"> <!-- <meta name="google-site-verification" content="A
-   ~ Dhabi Labour Force, Abu Dhabi Real Estate"> <!-- <meta name="google-site-verification" content="Abu Dhabi Emirate Population Census 2023"> --> <title>Abu Dhabi Census</title> <link rel="icon" type="image/x-icon" href="https://census.scad.gov.ae/favicon.ico?222">
-   ~ gle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="dropdownLabel"> <span>Compare 2024 with Census 2023 R1</span> <i class="fa-regular fa-calendar fa-xl"></i> </a> <!-- Use a separate <ul> for the dropdown items -->
-   ~ ation" data-activity="71"> <a class="dropdown-item" role="menuitem" href="javascript:void(0);" data-value="2023" > Census 2023 </a> </li> </ul> </li> </ul> </nav> </div> <div class="row"> <div class=" mx-auto"> </
-   ~ art", am4maps.MapChart); map.rtl = "en" == "ar" ? true : false; map.geodata = SCAD_UAE_MAP; // map.geodataSource.url = "/path/to/myCustomMap.json"; map.projection = new am4maps.projections.Mercator(); map.maxZoomLevel = 1; map.seriesContainer.draggable = false; map.seriesContainer.re
-   ~ * Note: The 2024 population statistics are based on Abu Dhabi’s integrated administrative registers. The figures presented for Abu Dhabi Census 2023 on this page reflect the revised data, in line with our revision policy. For more information about the policy and the methodology used in
-   ~ y used in the Abu Dhabi Census, please <a href ='/Home/About?tab=RevisionPolicy&lang=en'>click here.</a> <br/> To request the non-revised Census 2023(R0) results, please contact us via email at <a href ='mailto:info@scad.gov.ae'>info@scad.gov.ae</a> </div> </
-   ~ 23 compared to 1.4 million in 2011.'; var ComparinyTo = 'Comparing to'; var R12023 = '2023 R1*'; var Census2023 = 'Census 2023'; //$(".crnt-year:odd").html(selectedYear) if (selectedYear == 2024) { $("#divPop
-   ~ 1.4 million in 2011.'; var ComparinyTo = 'Comparing to'; var R12023 = '2023 R1*'; var Census2023 = 'Census 2023'; //$(".crnt-year:odd").html(selectedYear) if (selectedYear == 2024) { $("#divPopulationThemeTex
-   ~ ear:even").attr("dir","ltr"); } $(".tagline2.animate__animated.animate__fadeIn.animate__delay-1s").html(Census2023) $(".badge.text-bg-info.text-white.rounded-pill.shadow").removeClass("d-none") } const labe
-   10 matches for '(?i)(?:/api/|[.]json|ajax|url:|getJSON|[.]xlsx|[.]pdf|fetch[(]|Census.{0,3}20[12][0-9])'
-== https://www.scad.gov.ae/web/guest/w/population?repName=Census%20Population&repId=
-   200 text/html;charset=UTF-8 229,147 bytes
-   ~ rowserId=other&languageId=en_US" type="text/javascript"></script><script data-senna-track="permanent" src="/o/frontend-js-jquery-web/jquery/ajax.js?&mac=YIQdGAP55zgAgoIOl9wXrUsUy0o=&browserId=other&languageId=en_US" type="text/javascript"></script><script data-senna-track="permanent"
-   ~ }; Liferay.ThemeDisplay = { getLayoutId: function () { return '518'; }, getLayoutRelativeControlPanelURL: function () { return '/group/guest/~/control_panel/manage'; }, getLayoutRelativeURL: function () { return '/web/guest/w/
-   ~ getLayoutRelativeControlPanelURL: function () { return '/group/guest/~/control_panel/manage'; }, getLayoutRelativeURL: function () { return '/web/guest/w/population'; }, getLayoutURL: function () { return '/web/guest/w/population'; },
-   ~ p/guest/~/control_panel/manage'; }, getLayoutRelativeURL: function () { return '/web/guest/w/population'; }, getLayoutURL: function () { return '/web/guest/w/population'; }, getParentLayoutId: function () { return '0'; }, isControlPanel
-   ~ isVirtualLayout: function () { return false; }, getBCP47LanguageId: function () { return 'en-US'; }, getCanonicalURL: function () { return 'https\x3a\x2f\x2fwww\x2escad\x2egov\x2eae\x2fw\x2fpopulation'; }, getCDNBaseURL: function () { r
-   ~ }, getCanonicalURL: function () { return 'https\x3a\x2f\x2fwww\x2escad\x2egov\x2eae\x2fw\x2fpopulation'; }, getCDNBaseURL: function () { return 'https://www.scad.gov.ae'; }, getCDNDynamicResourcesHost: function () { return ''; }, getCDNHost:
-   ~ '; }, getPathThemeRoot: function () { return '/o/scad-theme'; }, getPlid: function () { return '594'; }, getPortalURL: function () { return 'https://www.scad.gov.ae'; }, getRealUserId: function () { return '20102'; }, getRemoteAddr: funct
-   ~ getScopeGroupIdOrLiveGroupId: function () { return '20122'; }, getSessionId: function () { return ''; }, getSiteAdminURL: function () { return 'https://www.scad.gov.ae/group/guest/~/control_panel/manage?p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view';
-   ~ eturn ''; }, getUserId: function () { return '20102'; }, getUserName: function () { return ''; }, isAddSessionIdToURL: function () { return false; }, isImpersonated: function () { return false; }, isSignedIn: function () { return fals
-   ~ arn', moduleType: 'module', namespace:'Liferay', nonce: '', reportMismatchedAnonymousModules: 'warn', resolvePath: '/o/js_resolve_modules', url: 'https://www.scad.gov.ae', waitTimeout: 60000};</script><script data-senna-track="permanent" src="/o/frontend-js-loader-modules-extender/lo
-   ~ "></script><script data-senna-track="temporary" type="text/javascript">window.Liferay = Liferay || {}; window.Liferay.OAuth2 = {getAuthorizeURL: function() {return 'https://www.scad.gov.ae/o/oauth2/authorize';}, getBuiltInRedirectURL: function() {return 'https://www.scad.gov.ae/o/oau
-   ~ feray || {}; window.Liferay.OAuth2 = {getAuthorizeURL: function() {return 'https://www.scad.gov.ae/o/oauth2/authorize';}, getBuiltInRedirectURL: function() {return 'https://www.scad.gov.ae/o/oauth2/redirect';}, getIntrospectURL: function() { return 'https://www.scad.gov.ae/o/oauth2/i
-   ~ ww.scad.gov.ae/o/oauth2/authorize';}, getBuiltInRedirectURL: function() {return 'https://www.scad.gov.ae/o/oauth2/redirect';}, getIntrospectURL: function() { return 'https://www.scad.gov.ae/o/oauth2/introspect';}, getTokenURL: function() {return 'https://www.scad.gov.ae/o/oauth2/toke
-   ~ ttps://www.scad.gov.ae/o/oauth2/redirect';}, getIntrospectURL: function() { return 'https://www.scad.gov.ae/o/oauth2/introspect';}, getTokenURL: function() {return 'https://www.scad.gov.ae/o/oauth2/token';}, getUserAgentApplication: function(externalReferenceCode) {return Liferay.OAu
-   ~ append(nameSpace_ + "feedbackMessage", feedbackMessage); formData.append(nameSpace_ + "userFeedbackId", userFeedbackId); $.ajax({ url: addFeedbackFormResourceURL, data: formData, processData: false, cache: false, cont
-   ~ + "feedbackMessage", feedbackMessage); formData.append(nameSpace_ + "userFeedbackId", userFeedbackId); $.ajax({ url: addFeedbackFormResourceURL, data: formData, processData: false, cache: false, contentType: false,
-   ~ tics) { Analytics.send('shared', 'SocialBookmarks', { className: data.className, classPK: data.classPK, type: data.type, url: data.url, }); } }; var onDestroyPortlet = function () { Liferay.detach('socialBookmarks:share', onShare); Liferay.detach('destr
-   ~ n () { Liferay.Session = new Liferay.SessionBase( { autoExtend: true, redirectOnExpire: false, redirectUrl: 'https\x3a\x2f\x2fwww\x2escad\x2egov\x2eae\x2fweb\x2fguest', sessionLength: 900, sessionTimeoutOffset: 70, warningL
-   ~ avigationBreadcrumbPortlet_', portletId: 'com_liferay_site_navigation_breadcrumb_web_portlet_SiteNavigationBreadcrumbPortlet', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_breadcrumb_web_portlet_SiteNavigationBreadcrum
-   ~ nMenu_', portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_tutpmainPublicationMenu', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INS
-   ~ INSTANCE_myInstanceresponsive_', portletId: 'com_digitalLab_scad_login_ScadUaePassLoginPortlet_INSTANCE_myInstanceresponsive', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_digitalLab_scad_login_ScadUaePassLoginPortlet_INSTANCE_myInstancerespo
-   ~ rviceMenu_', portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_tutpmainserviceMenu', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INS
-   ~ etId: 'com_digitalLab_scad_statisticts_navigation_ScadStatistictsNavigationPortlet_INSTANCE_ScadStatistictsNavigationPortletRes', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_digitalLab_scad_statisticts_navigation_ScadStatistictsNavigationPortle
-   ~ d_feedback_web_portlet_ScadFeedbackWebPortlet_', portletId: 'com_digitalLab_scad_feedback_web_portlet_ScadFeedbackWebPortlet', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_digitalLab_scad_feedback_web_portlet_ScadFeedbackWebPortlet\x26p_p_lif
-   ~ ationMenu_', portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_tutppublicationMenu', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INS
-   ~ _SiteNavigationLanguagePortlet_', portletId: 'com_liferay_site_navigation_language_web_portlet_SiteNavigationLanguagePortlet', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_language_web_portlet_SiteNavigationLanguagePor
-   ~ _SiteNavigationLanguagePortlet_', portletId: 'com_liferay_site_navigation_language_web_portlet_SiteNavigationLanguagePortlet', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_language_web_portlet_SiteNavigationLanguagePor
-   ~ tlet_', portletId: 'com_liferay_site_navigation_breadcrumb_web_portlet_SiteNavigationBreadcrumbPortlet_INSTANCE_defBcportlet', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_breadcrumb_web_portlet_SiteNavigationBreadcrum
-   ~ UaePassLoginPortlet_INSTANCE_myInstance_', portletId: 'com_digitalLab_scad_login_ScadUaePassLoginPortlet_INSTANCE_myInstance', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_digitalLab_scad_login_ScadUaePassLoginPortlet_INSTANCE_myInstance\x26p
-   ~ ANCE_templateSearch_', portletId: 'com_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet_INSTANCE_templateSearch', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet_INSTANCE
-   ~ serviceMenu2_', portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_tutpserviceMenu2', refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d594\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INS
-   31 matches for '(?i)(?:/api/|[.]json|ajax|url:|getJSON|[.]xlsx|[.]pdf|fetch[(]|Census.{0,3}20[12][0-9])'
+== CDX www.mrrd-nabdp.org/*: 200
+    20231116015246 https://www.mrrd-nabdp.org/attachments/%0Barticle/290/NABDP-fast-fact.pdf 200 text/html 2362
+    20160304202732 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Anaba%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 404 text/html 1056
+    20160304193408 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Bazarak%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 404 text/html 1060
+    20160304203904 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Dara%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 404 text/html 1058
+    20160304193225 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Khenj%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 404 text/html 1058
+    20160304203831 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Paryan%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 404 text/html 1056
+    20160304203812 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Rukha%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 404 text/html 1058
+    20240619214647 http://www.mrrd-nabdp.org/attachments/article/%E0%A5%A7%E0%A5%A8%E0%A5%AB/Shutul%E0%A5%A8%E0%A5%A6DDP%E0%A5%A8%E0%A5%A6English%E0%A5%A8%E0%A5%A6Summary.pdf 301 text/html 490
+    20221208002220 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Anaba%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3040
+    20221207222212 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Bazarak%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3044
+    20221207221940 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Dara%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3043
+    20221208001545 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Khenj%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3045
+    20221207233952 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Paryan%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3045
+    20221207234626 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Rukha%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3046
+    20221207223329 http://www.mrrd-nabdp.org/attachments/article/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/Shutul%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDDDP%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDEnglish%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDSummary.pdf 200 text/html 3047
+    20131008135917 http://www.mrrd-nabdp.org/attachments/article/0/5-Kandahar%20Model%20Brochure%202009.pdf 404 text/html 800
+    20130718015007 http://www.mrrd-nabdp.org:80/attachments/article/0/6-NABDP%20FAQs.pdf 404 text/html 814
+    20150330103058 http://www.mrrd-nabdp.org/attachments/article/0/Balkh%20Provincial%20Profile.pdf 404 text/html 963
+    20131016101302 http://www.mrrd-nabdp.org/attachments/article/122/Anar%20Dara%20DDP%20English%20Summary.pdf 200 application/pdf 87062
+    20131016100222 http://www.mrrd-nabdp.org/attachments/article/122/Farah%20Center%20DDP%20English%20Summary.pdf 200 application/pdf 114600
+    20131016100339 http://www.mrrd-nabdp.org/attachments/article/122/Gulistan%20DDP%20English%20Summary.pdf 200 application/pdf 458967
+    20131016101013 http://www.mrrd-nabdp.org/attachments/article/122/Khaki%20Safid%20DDP%20English%20Summary.pdf 200 application/pdf 125569
+    20131016100926 http://www.mrrd-nabdp.org/attachments/article/122/Lash%20Wa%20Jowani%20DDP%20English%20Summary.pdf 200 application/pdf 353423
+    20131016101223 http://www.mrrd-nabdp.org/attachments/article/122/Poshti%20Koh%20DDP%20English%20Summary.pdf 200 application/pdf 356164
+    20131016101010 http://www.mrrd-nabdp.org/attachments/article/122/Poshti%20Rod%20DDP%20English%20Summary.pdf 200 application/pdf 125484
+    20131016100224 http://www.mrrd-nabdp.org/attachments/article/122/Purchaman%20DDP%20English%20Summary.pdf 200 application/pdf 490120
+    20131016101100 http://www.mrrd-nabdp.org/attachments/article/122/Sheb%20Koh%20DDP%20English%20Summary.pdf 200 application/pdf 434088
+    20131016100342 http://www.mrrd-nabdp.org/attachments/article/122/Summary%20of%20the%20DDP%20in%20English-Bakwa.pdf 200 application/pdf 413409
+    20160304193801 http://www.mrrd-nabdp.org/attachments/article/123/Balkh%20DDP%20English%20Summary.pdf 200 application/pdf 362117
+    20160304192036 http://www.mrrd-nabdp.org/attachments/article/123/Charbolak%20DDP%20English%20Summary.pdf 200 application/pdf 580900
+    20160304193257 http://www.mrrd-nabdp.org/attachments/article/123/Charkent%20DDP%20English%20Summary.pdf 200 application/pdf 586795
+    20160304203846 http://www.mrrd-nabdp.org/attachments/article/123/Chemtal%20DDP%20English%20Summary.pdf 200 application/pdf 611977
+    20160304202838 http://www.mrrd-nabdp.org/attachments/article/123/Dawlat%20Abad%20DDP%20English%20Summary.pdf 200 application/pdf 570950
+    20131102102656 http://www.mrrd-nabdp.org:80/attachments/article/123/Dawlat%20Abad%20Full%20DDP.pdf 200 application/pdf 970878
+    20160304193813 http://www.mrrd-nabdp.org/attachments/article/123/Dehdadi%20DDP%20English%20Summary.pdf 200 application/pdf 584491
+    20220325111801 http://www.mrrd-nabdp.org/attachments/article/123/Kaldar%20DDP%20English%20Summary.pdf 301 unk 741
+    20160304202617 http://www.mrrd-nabdp.org/attachments/article/123/Keshindeh%20DDP%20English%20Summary.pdf 200 application/pdf 588175
+    20160304203242 http://www.mrrd-nabdp.org/attachments/article/123/Khulm%20DDP%20English%20Summary.pdf 200 application/pdf 477221
+    20160304193806 http://www.mrrd-nabdp.org/attachments/article/123/Marmol%20DDP%20English%20Summary.pdf 200 application/pdf 633386
+    20140220103039 http://www.mrrd-nabdp.org/attachments/article/123/Nahri%20Shahi%20DDP%20English%20Summary.pdf 200 application/pdf 575879
+    20160304193520 http://www.mrrd-nabdp.org/attachments/article/123/Shortepa%20DDP%20English%20Summary.pdf 200 application/pdf 616505
+    20160304202503 http://www.mrrd-nabdp.org/attachments/article/123/Shulgara%20DDP%20English%20Summary.pdf 200 application/pdf 159374
+    20160304191825 http://www.mrrd-nabdp.org/attachments/article/123/Zari%20DDP%20English%20Summary.pdf 200 application/pdf 163995
+    20160303235942 http://www.mrrd-nabdp.org/attachments/article/125/Anaba%20DDP%20English%20Summary.pdf 200 application/pdf 584170
+    20230313151344 http://www.mrrd-nabdp.org/attachments/article/125/Anaba+DDP+English+Summary.pdf 200 text/html 3353
+    20160304003539 http://www.mrrd-nabdp.org/attachments/article/125/Bazarak%20DDP%20English%20Summary.pdf 200 application/pdf 622615
+    20230313151343 http://www.mrrd-nabdp.org/attachments/article/125/Bazarak+DDP+English+Summary.pdf 200 text/html 3352
+    20160304191107 http://www.mrrd-nabdp.org/attachments/article/125/Dara%20DDP%20English%20Summary.pdf 200 application/pdf 173930
+    20230313151343 http://www.mrrd-nabdp.org/attachments/article/125/Dara+DDP+English+Summary.pdf 200 text/html 2861
+    20171201035153 http://www.mrrd-nabdp.org/attachments/article/125/Khenj%20DDP%20English%20Summary.pdf 200 text/html 672
+    20160304202826 http://www.mrrd-nabdp.org/attachments/article/125/Paryan%20DDP%20English%20Summary.pdf 200 application/pdf 419310
+    20230313151343 http://www.mrrd-nabdp.org/attachments/article/125/Paryan+DDP+English+Summary.pdf 200 text/html 3350
+    20160303214340 http://www.mrrd-nabdp.org/attachments/article/125/Rukha%20DDP%20English%20Summary.pdf 200 application/pdf 477964
+    20230313151342 http://www.mrrd-nabdp.org/attachments/article/125/Rukha+DDP+English+Summary.pdf 200 text/html 2858
+    20160124191544 http://www.mrrd-nabdp.org/attachments/article/125/Shutul%20DDP%20English%20Summary.pdf 200 application/pdf 457559
+    20230313151341 http://www.mrrd-nabdp.org/attachments/article/125/Shutul+DDP+English+Summary.pdf 200 text/html 2860
+    20130729161110 http://www.mrrd-nabdp.org/attachments/article/126/Arghandab%20DDP%20English%20Summary.pdf 200 application/pdf 426386
+    20130729144447 http://www.mrrd-nabdp.org/attachments/article/126/Arghistan%20DDP%20%20English%20Summary.pdf 200 application/pdf 456360
+    20130729153649 http://www.mrrd-nabdp.org/attachments/article/126/Daman%20DDP%20English%20Summary.pdf 200 application/pdf 583534
+    20130729155627 http://www.mrrd-nabdp.org/attachments/article/126/Ghorak%20DDP%20%20English%20Summary.pdf 200 application/pdf 433505
+    20130729160449 http://www.mrrd-nabdp.org/attachments/article/126/Khakriz%20DDP%20%20English%20Summary.pdf 200 application/pdf 352595
+    20130729160945 http://www.mrrd-nabdp.org/attachments/article/126/Maiwand%20DDP%20%20English%20Summary.pdf 200 application/pdf 355592
+    20130729160714 http://www.mrrd-nabdp.org/attachments/article/126/Maruf-DDP-summary.pdf 200 application/pdf 444603
+    20130729150719 http://www.mrrd-nabdp.org/attachments/article/126/Mianshin%20DDP%20%20English%20Summary.pdf 200 application/pdf 409049
+    20130729140507 http://www.mrrd-nabdp.org/attachments/article/126/Nish%20DDP%20%20English%20Summary.pdf 200 application/pdf 419958
+    20130922064430 http://www.mrrd-nabdp.org/attachments/article/127/Gizab%20District%20Summary.pdf 200 application/pdf 384036
+    20140715015834 http://www.mrrd-nabdp.org/attachments/article/128/Almar%20DDP%20English%20Summary.pdf 200 application/pdf 256152
+    20231227154848 http://www.mrrd-nabdp.org/attachments/article/128/Almar+DDP+English+Summary.pdf 200 text/html 2295
+    20140715020633 http://www.mrrd-nabdp.org/attachments/article/128/Andkhoy%20DDP%20English%20Summary.pdf 200 application/pdf 350378
+    20140715015830 http://www.mrrd-nabdp.org/attachments/article/128/Dawlat%20Abad%20DDP%20English%20Summary.pdf 200 application/pdf 433682
+    20231227154832 http://www.mrrd-nabdp.org/attachments/article/128/Dawlat+Abad+DDP+English+Summary.pdf 200 text/html 2421
+    20140715020336 http://www.mrrd-nabdp.org/attachments/article/128/Gorzinwan%20DDP%20English%20Summary.pdf 200 application/pdf 352855
+    20231227154855 http://www.mrrd-nabdp.org/attachments/article/128/Gorzinwan+DDP+English+Summary.pdf 200 text/html 2426
+    20140715015828 http://www.mrrd-nabdp.org/attachments/article/128/Khanicharbagh%20DDP%20English%20Summary.pdf 200 application/pdf 141687
+    20151022124559 http://www.mrrd-nabdp.org/attachments/article/128/Khowaja%20Sabzposh%20DDP%20English%20Summary.pdf 200 application/pdf 129169
+    20151022140603 http://www.mrrd-nabdp.org/attachments/article/128/Kohistan%20DDP%20English%20Summary.pdf 200 application/pdf 354548
+    20231227154838 http://www.mrrd-nabdp.org/attachments/article/128/Kohistan+DDP+English+Summary.pdf 200 text/html 2384
+    20240324103117 http://www.mrrd-nabdp.org/attachments/article/128/Pashton%20kot%20DDP%20English%20Summary.pd 200 text/html 3362
+    20151022143851 http://www.mrrd-nabdp.org/attachments/article/128/Pashton%20kot%20DDP%20English%20Summary.pdf 200 application/pdf 492239
+    20151022123448 http://www.mrrd-nabdp.org/attachments/article/128/Qaisar%20DDP%20English%20Summary.pdf 200 application/pdf 125297
+    20151022143845 http://www.mrrd-nabdp.org/attachments/article/128/Quramqul%20DDP%20English%20Summary.pdf 200 application/pdf 126957
+    20150402202424 http://www.mrrd-nabdp.org/attachments/article/128/Qurghan%20DDP%20English%20Summary.pdf 200 application/pdf 354581
+    20231227154832 http://www.mrrd-nabdp.org/attachments/article/128/Qurghan+DDP+English+Summary.pdf 200 text/html 2313
+    20140715020428 http://www.mrrd-nabdp.org/attachments/article/128/Shirin%20Tagab%20DDP%20English%20Summary.pdf 200 application/pdf 437596
+    20231227154855 http://www.mrrd-nabdp.org/attachments/article/128/Shirin+Tagab+DDP+English+Summary.pdf 200 text/html 2423
+    20140201163000 http://www.mrrd-nabdp.org/attachments/article/130/Bamyan%20Centre%20DDP%20English%20Summary.pdf 200 application/pdf 416448
+    20130705041456 http://www.mrrd-nabdp.org/attachments/article/131/Baghran%20DDP%20English%20Summary.pdf 200 application/pdf 572163
+    20130705053525 http://www.mrrd-nabdp.org/attachments/article/131/Bost%20DDP%20English%20Summary.pdf 200 application/pdf 115169
+    20130705051153 http://www.mrrd-nabdp.org/attachments/article/131/Disho%20DDP%20English%20Summary.pdf 200 application/pdf 424107
+    20190720193313 http://www.mrrd-nabdp.org/attachments/article/131/Disho%2BDDP%2BEnglish%2BSummary.pdf 200 text/html 768
+    20130729191805 http://www.mrrd-nabdp.org/attachments/article/131/Garmser%20DDP%20English%20Summary.pdf 200 application/pdf 359967
+    20190720193313 http://www.mrrd-nabdp.org/attachments/article/131/Garmser%2BDDP%2BEnglish%2BSummary.pdf 200 text/html 764
+    20130705054109 http://www.mrrd-nabdp.org/attachments/article/131/Kajaki%20DDP%20English%20Summary.pdf 200 application/pdf 416656
+    20130705062831 http://www.mrrd-nabdp.org/attachments/article/131/Khanishin%20DDP%20English%20Summary.pdf 200 application/pdf 428993
+    20190720193310 http://www.mrrd-nabdp.org/attachments/article/131/Khanishin%2BDDP%2BEnglish%2BSummary.pdf 200 text/html 771
+    20130705042927 http://www.mrrd-nabdp.org/attachments/article/131/Marja%20DDP%20English%20Summary.pdf 200 application/pdf 417575
+    20130705064307 http://www.mrrd-nabdp.org/attachments/article/131/Mousa%20Qala%20DDP%20Englihs%20Summary.pdf 200 application/pdf 391034
+    20130705042406 http://www.mrrd-nabdp.org/attachments/article/131/Nad%20Ali%20DDP%20English%20Summary.pdf 200 application/pdf 356124
+    20130705052726 http://www.mrrd-nabdp.org/attachments/article/131/Nahri%20Saraj%20DDP%20English%20Summary.pdf 200 application/pdf 412985
+    20130705063838 http://www.mrrd-nabdp.org/attachments/article/131/Nawa%20DDP%20English%20Summary.pdf 200 application/pdf 112234
+    20130705063323 http://www.mrrd-nabdp.org/attachments/article/131/Nawzad%20DDP%20English%20Summary.pdf 200 application/pdf 516470
+    20130705054546 http://www.mrrd-nabdp.org/attachments/article/131/Sangin%20DDP%20English%20Summary.pdf 200 application/pdf 423924
+    20190720193319 http://www.mrrd-nabdp.org/attachments/article/131/Sangin%2BDDP%2BEnglish%2BSummary.pdf 200 text/html 763
+    20130705033340 http://www.mrrd-nabdp.org/attachments/article/131/Washir%20DDP%20English%20Summary.pdf 200 application/pdf 372667
+    20150609140341 http://www.mrrd-nabdp.org/attachments/article/133/Dari%20Suf%20Payan%20Full%20DDP.pdf 200 application/pdf 674227
+    20140407090157 http://www.mrrd-nabdp.org/attachments/article/133/Khuram%20Sarbagh%20full%20DDP.pdf 200 application/pdf 618336
+    20131101192520 http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Aibak_DDP%20Summary-translated-finalized.pdf 200 application/pdf 410560
+    20140407090152 http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dara-e%20Sufi%20Payan_DDP%20Summary-translated_finalized.pdf 200 application/pdf 400920
+    20140407090159 http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dari%20Suf%20Bala_DDP%20Summary-tanslated_finalized.pdf 200 application/pdf 405459
+    20140407090154 http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Feroz%20Nakhchir_DDP%20Summary-translated_finalized.pdf 200 application/pdf 408514
+    20140407085727 http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Hazrat_DDP%20Summary-translated_finalized.pdf 200 application/pdf 406192
+    20140106032922 http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Ruye%20Du%20Aab_DDP%20Summary_%20translated-%20finalized.pdf 200 application/pdf 405969
+    20150518085723 http://www.mrrd-nabdp.org/attachments/article/134/Daikudi_kijran%20%20DDP%20summary.pdf 200 application/pdf 403874
+    20160304201958 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_%20Miramor_DDP%20Summary-Finalized.pdf 200 application/pdf 408475
+    20160304031351 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Ashterlai_DDP%20Summary-Finalized.pdf 200 application/pdf 409420
+    20260112020507 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Khedir_DDP%20Summary_Finalized.pdf 301 unk 483
+    20160304200452 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Kiti%20%20DDP%20summary-Finalized.pdf 200 application/pdf 336555
+    20160304054329 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Nili%20_DDP%20Summary-Finlized.pdf 200 application/pdf 404718
+    20150330085839 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Sang%20Takht_%20District%20DDP%20summary-Finlized.pdf 200 application/pdf 354630
+    20260112041117 http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Shahristan_DDP%20Summary-Finalized.pdf 301 unk 491
+    20230419192914 http://www.mrrd-nabdp.org/attachments/article/134/Daykundi_Nili%20_DDP%20Summary-Finlized.pdf 200 text/html 2297
+    20230419185957 http://www.mrrd-nabdp.org/attachments/article/134/Daykundi_Nili%20_DDP%20Summary-Finlized.pdfwww.aims.org.af/afg/dist_profiles/unhcr_district_profiles/western/hirat/injil/injil.pdf 200 text/html 2477
+    20151121031556 http://www.mrrd-nabdp.org/attachments/article/135/Pasaband%20DDP%20Summary.pdf 200 application/pdf 408240
+    20151124063104 http://www.mrrd-nabdp.org/attachments/article/135/Saghar%20DDP%20Summary.pdf 200 application/pdf 405157
+    20151125044221 http://www.mrrd-nabdp.org/attachments/article/135/Shahrak%20DDP%20Summary.pdf 200 application/pdf 419955
+    20140407084503 http://www.mrrd-nabdp.org/attachments/article/137/Khost_Tani_Summary_Finalized.pdf 200 application/pdf 127766
+    20130923043553 http://www.mrrd-nabdp.org/attachments/article/138/Kabul_Guldara%20English%20summary%20finalized.pdf 200 application/pdf 406270
+    20150613050133 http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Balkhab_Summary_Finalized.pdf 200 application/pdf 423398
+    20150610212212 http://www.mrrd-nabdp.org/attachments/article/139/SariPul_Gosfandy_Summary_Finalized.pdf 200 application/pdf 416120
+    20160304031741 http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Kohistanat_Summary_Finalized.pdf 200 application/pdf 414355
+    20160304200247 http://www.mrrd-nabdp.org/attachments/article/139/Saripul_San%20Charak_Summary_Finalized.pdf 200 application/pdf 420987
+    20160304200724 http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Saripul%20Center_Summary_Finalized.pdf 200 application/pdf 396346
+    20221005222437 http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Saripul%20Center_Summary_Finalized.pdf.b 200 text/html 1108
+    20160304193727 http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Sozma%20Qala_Summary_Finalized.pdf 200 application/pdf 393420
+    20160505044147 http://www.mrrd-nabdp.org/attachments/article/140/Chardara%20Summery.pdf 200 application/pdf 113799
+    20151222234639 http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Chakhansor_Summary_Finalized.pdf 200 application/pdf 136442
+    20130728162403 http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Charborjak_Summary_Finalized.pdf 200 application/pdf 127652
+    20140407091057 http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Kang_Summary_Finalized.pdf 200 application/pdf 127574
+    20140407091036 http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Khashrod_Summary_Finalized.pdf 200 application/pdf 131726
+    20130728162333 http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Zaranj_Summary_Finalized.pdf 200 application/pdf 143854
+    20240828172251 https://www.mrrd-nabdp.org/attachments/article/142/Khinjan%20DDP%20Summary- 301 text/html 508
+    20240828171006 http://www.mrrd-nabdp.org/attachments/article/142/Khinjan%20DDP%20Summary-%20translated.pdf 301 text/html 401
+    20130728113308 http://www.mrrd-nabdp.org/attachments/article/143/Adraskan%20DDP%20Summary.pdf 200 application/pdf 242741
+    20130728110144 http://www.mrrd-nabdp.org/attachments/article/143/Ghoryan%20DDP%20English%20Summary%20Finalized.pdf 200 application/pdf 557658
+    20130728114214 http://www.mrrd-nabdp.org/attachments/article/143/Herat_Kushk_Robat%20Sangi_DDP%20Summary-translated_Draft.pdf 200 application/pdf 551130
+    20130728124422 http://www.mrrd-nabdp.org/attachments/article/143/Kushk_E_k%20Kohna%20DDP%20Summary.pdf 200 application/pdf 538589
+    20130728120656 http://www.mrrd-nabdp.org/attachments/article/143/Obeh%20DDP%20Summary.pdf 200 application/pdf 537402
+    20130728111726 http://www.mrrd-nabdp.org/attachments/article/143/Pashtun%20Zarghun%20DDP%20Summary%20finalized.pdf 200 application/pdf 243346
+    20131227192824 http://www.mrrd-nabdp.org/attachments/article/144/Argo%20DDP%20Summary.pdf 200 application/pdf 338136
+    20131227193021 http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Baharak_Summary_Finalized%20_Problem%20Tree_.pdf 200 application/pdf 564360
+    ...
+    4272 capture(s), 150 shown
