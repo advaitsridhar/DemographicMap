@@ -290,6 +290,10 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(drawn["population"]["value"], 7018 + 44643 + 18429 + 333 + 41)
         self.assertIn("also draws North and South Tarawa", drawn["population_note"])
         self.assertNotIn("as a whole", drawn["population_note"])
+        # The reason says the figure is a sum; the note does not say it twice.
+        self.assertEqual(drawn["population_note"].count("added up"), 1)
+        self.assertIn("The islands counted: Tarawa Ieta, Tarawa Teinainano, Betio, Banaba, "
+                      "Kanton.", drawn["population_note"])
         self.assertEqual(drawn["sex_ratio"]["unit"], "males_per_100_females")
         self.assertIn("Pacific Community", drawn["median_age"]["source"])
         self.assertIn("I-Kiribati", {g["group"] for g in drawn["ethnicity"]})

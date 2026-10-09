@@ -926,9 +926,11 @@ def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[s
         name, islands, why = DRAWN_GROUPS[label]
         final = sum(counts[i] for i in islands)
         whole = sorted(islands) == sorted(GROUPS.get(label, []))
-        note = (f"{why} " if why else "") + (
-            f"The census counts of its islands added up: {', '.join(islands)}."
-            if len(islands) > 1 else "Kanton, the group's one inhabited island.")
+        # A polygon whose reason already says its figure is a sum names the
+        # islands summed; any other says it is one.
+        note = (f"{why} The islands counted: {', '.join(islands)}." if why else
+                f"The census counts of its islands added up: {', '.join(islands)}."
+                if len(islands) > 1 else "Kanton, the group's one inhabited island.")
         if set(GROUPS.get(label, [])) - set(islands):
             # A polygon that draws only part of its group says how many the
             # whole group counted, so its figure is not read as the group's.

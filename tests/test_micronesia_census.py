@@ -363,6 +363,17 @@ class FirstEthnicity2000(unittest.TestCase):
         with self.assertRaises(SystemExit):
             fm.ethnicity_2000(p1_4_pages(rule=P1_4_RULE.replace("/G3C/G44/G53-", "/G3C/G44-")))
 
+    def test_a_heading_spaced_otherwise_is_the_same_heading(self):
+        # pypdf 6.20 reads the rule with a space between runs of glyphs:
+        # "/G3C/G44/G53 /G47 /G26/G4B/G58/G58/G4E -/G47 /G30..." for "...G53/G47/G26...".
+        spaced = (P1_4_RULE.replace("/G53/G47/G26", "/G53 /G47 /G26").replace("-/G47/G", " -/G47 /G"))
+        self.assertNotEqual(spaced, P1_4_RULE)
+        eth = fm.ethnicity_2000(p1_4_pages(rule=spaced))
+        self.assertEqual(len(eth), 75)
+        # Its spacing is all that is let go: a dropped letter is still refused.
+        with self.assertRaises(SystemExit):
+            fm.ethnicity_2000(p1_4_pages(rule=spaced.replace("/G3C/G44/G53-", "/G3C/G44-")))
+
     def test_chuuk_and_kosrae_take_it_with_its_year_and_why(self):
         eth = fm.ethnicity_2000(p1_4_pages())
         fields = fm.ethnicity_2000_fields("Chuuk", "Piherarh", eth)

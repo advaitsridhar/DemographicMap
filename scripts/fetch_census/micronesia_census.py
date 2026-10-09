@@ -42,7 +42,10 @@ Total, then Yapese, Yap Outer Islanders, Chuukese, Mortlockese, Pohnpeian,
 (Pohnpei) Outer Islanders, Kosraean, Other Pacific Islanders, Filipino,
 Other Asian, USA and Other -- and the order is checked against the figures
 too: each region's own people are its largest column (Yapese in Yap Proper,
-Mortlockese in the Mortlocks, Kosraean in Kosrae, and so on).
+Mortlockese in the Mortlocks, Kosraean in Kosrae, and so on). The lines are
+compared without their spaces: pypdf 6.20 puts a space between runs of glyphs
+that earlier versions ran together ("/G53 /G47 /G26" for "/G53/G47/G26"),
+which says nothing about the heading's words or their order.
 
 **Suppression.** The 2023 tables print ``*`` for a count small enough to
 identify someone. A unit's religion shares are of its whole population, so
@@ -438,6 +441,11 @@ def decoded(line: str) -> str:
                            line).split())
 
 
+def squeezed(text: str) -> str:
+    """``text`` without its whitespace, for comparing lines whose spacing the PDF reader sets."""
+    return "".join(text.split())
+
+
 def as_count(cell: str) -> int:
     return 0 if cell == "-" else int(cell.replace(",", ""))
 
@@ -457,10 +465,13 @@ def ethnicity_2000(pages: list[str]) -> dict[tuple[str, str], dict[str, Any]]:
         if not any(P1_4_TITLE.match(line.strip()) for line in text):
             continue
         titled += 1
-        heading = {decoded(line) for line in text}
-        check(all(h in heading for h in P1_4_HEADING),
+        # A heading line may come out split at a run of glyphs, so the page's
+        # decoded text is searched, unspaced, for each line of the heading.
+        heading = squeezed(" ".join(decoded(line) for line in text))
+        check(all(squeezed(h) in heading for h in P1_4_HEADING),
               "micronesia_census: a page of Table P1-4 is headed otherwise than "
-              f"{P1_4_HEADING}")
+              f"{P1_4_HEADING}: its lines decode to "
+              f"{[decoded(line)[:120] for line in text[:8]]}")
         for line in text:
             if (m := P1_4_ROW.match(line)):
                 lines.append((m.group(1).strip(), [as_count(c) for c in m.group(2).split()]))
