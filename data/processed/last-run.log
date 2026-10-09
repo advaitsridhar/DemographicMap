@@ -1,8 +1,51 @@
-tuvalu_census: 2022 report (islands) and 2017 tables (villages, faiths)
-  2022 report: nine islands making 10,632; Table 3 agrees for Nui, Nukufetau, Vaitupu
-  https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx: 1,310,798 bytes
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  admin1 ethnicity 3, admin1 median_age 3, admin1 population 3, admin1 religion 3, admin1 sex_ratio 3, admin2 population 6, admin2 sex_ratio 4
-  wrote data/processed/tuvalu_census.json (29 kB)
-  wrote 9 records
+australia_profile: ABS 2021 Census G01, G02, G08, G13 and G14
+  C21_G01_LGA [1+2+3.P_1...]: 1,695 observations
+  C21_G02_LGA [1...]: 565 observations
+  C21_G08_LGA [._T...]: 18,645 observations
+  C21_G13_LGA [3._T+1+O_T+8+_N._T...]: 2,825 observations
+  C21_G01_SA2 [1+2+3.P_1..AUS+STE.]: 30 observations
+  C21_G02_SA2 [1..AUS+STE.]: 10 observations
+  C21_G08_SA2 [._T..AUS+STE.]: 330 observations
+  C21_G14_SA2 [.3..AUS+STE.]: 340 observations
+  C21_G13_SA2 [3.._T..AUS+STE.]: 470 observations
+  Australia English ancestry 33.0% (published 33.0%)
+  Australia Australian ancestry 29.9% (published 29.9%)
+  state 1: LGAs sum to 8,072,171, the state's own 8,072,163
+  state 2: LGAs sum to 6,503,503, the state's own 6,503,491
+  state 3: LGAs sum to 5,156,158, the state's own 5,156,138
+  state 4: LGAs sum to 1,781,501, the state's own 1,781,516
+  state 5: LGAs sum to 2,660,019, the state's own 2,660,026
+  state 6: LGAs sum to 557,570, the state's own 557,571
+  state 7: LGAs sum to 232,621, the state's own 232,605
+  state 8: LGAs sum to 454,495, the state's own 454,499
+  state 9: LGAs sum to 4,790, the state's own 4,788
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree for 10 regions
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree less a duplicated parent for 10 regions
+  Australian Indigenous languages taken out of G13's 'Other': 1 5,494, 2 1,143, 3 19,498, 4 4,450, 5 11,493, 6 194, 7 36,077, 8 294, 9 12, AUS 78,656
+  Australia Christianity 43.9% (published 43.9%)
+  Australia English only 72.0% (published 72.0%)
+  East Arnhem (71300): language from G13's coarse partition {'English only': 504, 'Australian Indigenous Languages': 7676, 'Other languages': 127, 'Not stated': 469}
+  West Daly (74680): language from G13's coarse partition {'English only': 355, 'Australian Indigenous Languages': 2477, 'Other languages': 29, 'Not stated': 109}
+  no polygon, counted in its state only: No usual address (NSW) (19499, 11,371 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (NSW) (19799, 0 people)
+  no polygon, counted in its state only: No usual address (Vic.) (29499, 9,089 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (Vic.) (29799, 38 people)
+  no polygon, counted in its state only: No usual address (Qld) (39499, 14,670 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (Qld) (39799, 183 people)
+  no polygon, counted in its state only: No usual address (SA) (49499, 3,377 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (SA) (49799, 12 people)
+  no polygon, counted in its state only: No usual address (WA) (59499, 8,055 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (WA) (59799, 514 people)
+  no polygon, counted in its state only: No usual address (Tas.) (69499, 1,377 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (Tas.) (69799, 19 people)
+  no polygon, counted in its state only: No usual address (NT) (79499, 3,500 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (NT) (79799, 99 people)
+  no polygon, counted in its state only: No usual address (ACT) (89499, 605 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (ACT) (89799, 0 people)
+  no polygon, counted in its state only: No usual address (OT) (99499, 11 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (OT) (99799, 0 people)
+  18 LGA codes have no polygon; 0 of them are not a no-usual-address or migratory code: []
+  {'admin1': 9, 'admin2': 547} records; median age on 556, ancestry on 556
+  wrote data/processed/australia_profile.json (2791 kB)
