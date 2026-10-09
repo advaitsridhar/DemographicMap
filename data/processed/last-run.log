@@ -1,6 +1,14 @@
-korea_survey: Hankook Research, 2025 Religion Perception Survey: religious population and religious activity (Weekly Report No. 358-3, 3 December 2025), religion by residence region
-  https://hrcopinion.co.kr/wp-content/uploads/2025/12/358-3-%E... refused (HTTP Error 403: Forbidden); reading the Internet Archive's copy
-  5,535,370 bytes
-  20 pages
-  17 provinces from 7 residence regions
-  wrote data/processed/korea_province_survey.json (46 kB)
+sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
+  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
+    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
+    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
+  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
+  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  wrote data/processed/sea_cod_ps_age.json (4330 kB)
+  wrote sea_cod_ps_age.json: 1196 records
