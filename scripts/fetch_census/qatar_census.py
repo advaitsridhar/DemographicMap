@@ -45,6 +45,9 @@ YEAR = 2020
 # The 2020 census's count of the whole country (Planning and Statistics
 # Authority, Census 2020 results): the municipalities must make it.
 NATIONAL = 2_846_118
+# Above this many men per woman a municipality's ratio is explained in its
+# note as the census's count (Al Sheehaniya's is over eleven).
+SKEWED = 3
 SOURCE = ("Planning and Statistics Authority (Qatar), Census 2020: population by "
           "municipality, sex and age group")
 URL = f"{BASE}/explore/dataset/{MALES}/"
@@ -109,6 +112,8 @@ def build(male_rows: list[dict[str, Any]], female_rows: list[dict[str, Any]],
     out: list[dict[str, Any]] = []
     bound: set[str] = set()
     made = 0.0
+    all_men = sum(sum(v.values()) for v in men_by.values())
+    all_women = sum(sum(v.values()) for v in women_by.values())
     for where in sorted(men_by):
         check(set(men_by[where]) == set(women_by[where]),
               f"qatar_census: {where}: the sexes' age groups differ")
@@ -131,8 +136,14 @@ def build(male_rows: list[dict[str, Any]], female_rows: list[dict[str, Any]],
             aliases=[where] if where != label else None,
             population=population,
             sex_ratio=sex_ratio(men, women, year=YEAR, source=SOURCE),
-            sex_ratio_note=f"Males per 100 females in the 2020 census: {men:,.0f} men and "
-                           f"{women:,.0f} women.",
+            sex_ratio_note=(f"Males per 100 females in the 2020 census: {men:,.0f} men and "
+                            f"{women:,.0f} women."
+                            + (f" A ratio this high is the census's count, not an error: "
+                               f"Qatar's 2020 census counts {all_men:,.0f} men and "
+                               f"{all_women:,.0f} women in all "
+                               f"({100 * all_men / all_women:.0f} men to every hundred "
+                               f"women)."
+                               if women and men > SKEWED * women else "")),
             median_age=median_age(both, year=YEAR, source=SOURCE),
             median_age_note=("Interpolated within the age group holding the middle person, "
                              "from the 2020 census's count of the municipality by age group "

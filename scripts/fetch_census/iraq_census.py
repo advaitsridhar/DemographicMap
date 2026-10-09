@@ -126,6 +126,14 @@ YEAR = 2024
 NATIONAL = 46_118_793
 SOURCE = ("COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General "
           "Population and Housing Census 2024)")
+# The 2024 census asked religion (its sect was not asked), but what COSIT has
+# published of it -- the Annual Abstract 2024-25's population chapter, by
+# governorate (Tables 10/2, 11/2) and district -- tabulates people, sex and age
+# only, so every unit says why its religion is empty.
+RELIGION_WHY = ("Iraq's 2024 census asked religion (not sect), but COSIT has published no "
+                "religion table from it: the Annual Abstract of Statistics 2024-25 gives the "
+                "census by governorate and district as people, sex and age only "
+                "(https://cosit.gov.iq/documents/AAS2024/02.pdf).")
 
 # COSIT's governorate codes to OCHA's (and the map's) governorate names.
 GOVERNORATE = {
@@ -1171,6 +1179,7 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
             extra.update(age_fields(gov, codes[gov], entry, ages))
         rows.append(record(f"IRQ-CEN-{codes[gov]}", gov, level="admin1", parent="IRQ",
                            country="IRQ", population=population,
+                           religion=gap(NOT_AVAILABLE, RELIGION_WHY),
                            aliases=MAP_NAMES.get(gov),
                            sources=(cite + ([{"field": "median_age", "name": AGE_SOURCE,
                                               "url": URL}] if "median_age" in extra else []))
@@ -1183,7 +1192,8 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
                 entry["district"], level="admin2", parent="IRQ", country="IRQ",
                 parent_name=entry["governorate"],
                 aliases=[a for a in (entry["arabic"],) if a],
-                population=gap(NOT_AVAILABLE, entry["why"])))
+                population=gap(NOT_AVAILABLE, entry["why"]),
+                religion=gap(NOT_AVAILABLE, RELIGION_WHY)))
             continue
         population = measure(entry["value"], year=YEAR, source=SOURCE)
         if len(entry["parts"]) > 1:
@@ -1197,7 +1207,8 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
             entry["district"], level="admin2", parent="IRQ", country="IRQ",
             parent_name=entry["governorate"],
             aliases=[a for a in (entry["arabic"],) if a],
-            population=population, sources=cite, **sex_fields(entry, "district")))
+            population=population, religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+            sources=cite, **sex_fields(entry, "district")))
     written = sum(1 for r in rows if r["level"] == "admin2" and "value" in r["population"])
     log(f"  {written} map districts with a figure, "
         f"{len(mapped) - written} with the reason they have none")

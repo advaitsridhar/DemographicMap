@@ -51,7 +51,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, collection_gap, gap, log, measure,
+                      record, shares, write_json)
 from .west_asia_common import check, key, median_age, sex_ratio, units, workbook
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -110,7 +111,7 @@ SECTIONS = (
 NAMED = {
     "Syria": "Syrian", "Egypt": "Egyptian", "Palestine": "Palestinian", "Iraq": "Iraqi",
     "Yemen": "Yemeni", "Libya": "Libyan", "Sudan": "Sudanese", "Saudi Arabia": "Saudi",
-    "Lebanon": "Lebanese", "Philippines": "Filipino national", "Bangladesh": "Bangladeshi",
+    "Lebanon": "Lebanese", "Philippines": "Filipino", "Bangladesh": "Bangladeshi",
     "India": "Indian", "Pakistan": "Pakistani", "Sri Lanka": "Sri Lankan",
     "Indonesia": "Indonesian",
 }
@@ -437,7 +438,7 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
                 "(chiefly people from Gaza), not Jordanians of Palestinian origin, who are "
                 "Jordanian."),
             religion=gap(NOT_AVAILABLE, NO_RELIGION),
-            language=gap(NOT_AVAILABLE, NO_LANGUAGE),
+            language=collection_gap(ISO3, "language") or gap(NOT_COLLECTED, NO_LANGUAGE),
             sources=sources))
     return rows
 

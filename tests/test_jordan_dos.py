@@ -208,6 +208,7 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(row["religion"]["status"], "not_available")
         self.assertIn("publishes no religion table", row["religion"]["note"])
         self.assertIn("does not ask language", row["language"]["note"])
+        self.assertEqual(row["language"]["status"], "not_collected")
 
     def test_median_from_the_census_groups(self):
         self.assertEqual(self.rows["g4"]["median_age"]["year"], 2015)
