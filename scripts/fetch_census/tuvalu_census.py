@@ -258,11 +258,14 @@ def build(report: dict[str, dict[str, int]], villages: dict[tuple[str, str], tup
           "tuvalu_census: Tables 13 and 14 count different residents")
     island_units = bind_level({i: (i, "") for i in DRAWN_ISLANDS}, admin1, {})
     parents = {u["id"]: u["name"] for u in admin1}
-    village_units = bind_level({f"{i}|{v}": (v, i) for i, v in DRAWN_VILLAGES}, admin2, parents)
+    village_units = bind_level({f"{i}|{v}": (v, i) for i, v in sorted(DRAWN_VILLAGES)}, admin2,
+                               parents)
     records = [unit_record("TUV", island, unit["name"], unit, "admin1", None, SOURCES,
                            **island_fields(island, report, faith, ethnic))
                for island, unit in island_units.items()]
-    for key, unit in village_units.items():
+    # In a fixed order: a set's order changes from run to run, and so did the file.
+    for key in sorted(village_units):
+        unit = village_units[key]
         island, village = key.split("|")
         records.append(unit_record("TUV", key, unit["name"], unit, "admin2", island, SOURCES,
                                    **village_fields(villages[(island, village)])))

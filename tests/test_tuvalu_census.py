@@ -152,6 +152,12 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(sum(r["level"] == "admin1" for r in self.records), 3)
         self.assertEqual(sum(r["level"] == "admin2" for r in self.records), 6)
 
+    def test_the_villages_come_in_a_fixed_order(self):
+        # Island, then village: the file no longer changes from run to run.
+        villages = [r["name"] for r in self.records if r["level"] == "admin2"]
+        self.assertEqual(villages, ["Alamoni", "Aulotu", "Matagi", "Motufoua", "Saniuta",
+                                    "Temotu"])
+
     def test_an_island_carries_2022_ages_and_2017_faiths(self):
         nui = self.named("Nui")
         self.assertEqual(nui["median_age"]["year"], 2022)
