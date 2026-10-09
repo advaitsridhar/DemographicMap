@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Bhutan -- Population & Housing Census 2017, population by gewog.
 
-**This adapter publishes a head count, a sex ratio and a median age and
-nothing else, and the reason is worth stating rather than leaving as an
-empty field.** The median comes from the same reports' annex: Table A2.6's
+**This adapter publishes a head count, a sex ratio, a median age and
+citizenship and nothing else, and the reason is worth stating rather than
+leaving as an empty field.** The median comes from the same reports' annex: Table A2.6's
 single years for the dzongkhag, Table A2.7's five-year groups for each gewog,
 both held to Table 2.1 (see "Median age" below). Bhutan's
 census does not ask religion, language or ethnicity. That is not "does not
@@ -19,14 +19,17 @@ The 2005 round is the same. So the three composition fields are declared
 ``not_collected`` in ``scripts/common.py`` and this file fills what the census
 does count.
 
-**The one identity-adjacent split the census does publish is citizenship**,
-Bhutanese against non-Bhutanese, by dzongkhag and by gewog. It is deliberately
-not read here and must not be used as an ethnicity proxy: citizenship is
-precisely the contested variable in Bhutan, the 1985 Citizenship Act being how
-much of the Lhotshampa population lost its legal standing before leaving.
-Table 2.1, which this reads, is the whole resident population "irrespective of
-their nationality" -- the report's own words -- which is the figure that
-belongs on a map of where people are.
+**The one identity count the census does publish is citizenship**, the
+Bhutanese against everyone else, by dzongkhag and by gewog: each report's
+Table 2.2 counts the Bhutanese in the same rows in which Table 2.1 counts
+everyone found "irrespective of their nationality" -- the report's own words.
+Since the map owner's decision of 19 September 2026 that a census's count of
+nationality or citizenship may stand on the ethnicity field, under an
+``ethnicity_basis`` that names it, Table 2.2 is read and written there, basis
+"citizenship" (see "Citizenship" below). It is a count of citizenship and not
+an ethnic composition, and every note says so. Table 2.1 stays the
+population: everyone found, which is the figure that belongs on a map of
+where people are.
 
 **The sex ratio comes from the same three columns.** Table 2.1 prints Male,
 Female and Total for every gewog, every town and the dzongkhag itself, and the
@@ -87,7 +90,7 @@ import re
 from typing import Any, NamedTuple
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_json,
+    NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
 )
 
 YEAR = 2017
@@ -437,7 +440,9 @@ POPULATION_NOTE = (
     "2017 Population and Housing Census, from the dzongkhag's own report, "
     "counting everyone found there 'irrespective of their nationality' as the "
     "report puts it. Bhutan's census does not ask religion, language or "
-    "ethnicity, so those three are declared rather than left empty. Note that "
+    "ethnicity: religion and language are declared rather than left empty, "
+    "and the ethnicity field carries citizenship, the one count of identity "
+    "the census publishes. Note that "
     "the dzongkhag reports and the national report do not agree everywhere: "
     "the twenty come to 720,837 against the 727,145 the national report "
     "analyses, itself 8,408 short of the 735,553 found in the country once "
@@ -445,9 +450,9 @@ POPULATION_NOTE = (
     "own, which its gewogs add up to exactly.")
 SEX_RATIO_NOTE = (
     "Females per 1,000 males, derived from the Male and Female columns of the "
-    "same Table 2.1 row as the population beside it. The census counts sex "
-    "and nothing else about identity, so this is the whole of what it says "
-    "about who these people are.")
+    "same Table 2.1 row as the population beside it. Beside sex, the one "
+    "count of identity the census publishes is citizenship, which is on the "
+    "ethnicity field.")
 # What is written in place of a ratio where the publisher's own halves do not
 # reach the total it prints next to them. The figures go in the note, because
 # "not available" without them reads as "nobody fetched this", and what
@@ -549,9 +554,16 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             yield [sorted(cells) for _top, cells in rows]
 
 
-def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
-         ) -> Read:
+def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
+         title: tuple[str, ...] | None = None) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
+
+    With ``title``, the same reading of a later table set out the same way --
+    Table 2.2, the Bhutanese population by gewog and town -- whose header is
+    looked for only below a line carrying all of ``title``'s words on the same
+    page. The contents page carries the title too, with no table under it, and
+    Table 2.1's own header comes before Table 2.2's: without the page rule the
+    first header after the contents entry would be Table 2.1's.
 
     Two things bound the read, and the first attempt had only one of them.
 
@@ -628,8 +640,12 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
         if printed:
             break
         found_here = edge is not None and margin is None
+        titled = title is None or margin is not None
         for cells in rows:
             texts = [t for _a, _b, t in cells]
+            if not titled:
+                titled = all(word in texts for word in title or ())
+                continue
             if margin is None:
                 if strict:
                     # All four header words on one baseline. This is how
@@ -884,6 +900,96 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
             + f"\n      towns: " + ", ".join(f"{k} {v:,}"
                                              for k, v in sorted(towns.items())))
     return read
+
+
+# ---------------------------------------------------------------------------
+# Citizenship: Table 2.2
+# ---------------------------------------------------------------------------
+#
+# Every dzongkhag report follows Table 2.1 with Table 2.2, "Distribution of
+# Bhutanese Population by Sex and Gewog/Town": the same rows -- the towns
+# under Urban, the gewogs under Rural, "Both Areas" closing -- counting the
+# Bhutanese citizens among them, beside percentages and a sex ratio. Table 2.1
+# counts everyone found "irrespective of their nationality", so each row of
+# Table 2.1 less the same row of Table 2.2 is the people there who are not
+# Bhutanese, which the report's text states for the dzongkhag ("The total
+# number of non-Bhutanese population in Tsirang Dzongkhag is 862 persons":
+# 22,376 less 21,514).
+#
+# The map's owner decided on 19 September 2026 that a census's count of
+# nationality or citizenship may stand on the ethnicity field, under an
+# ``ethnicity_basis`` naming it, where the census asks no ethnicity. Bhutan's
+# asks none, and its citizenship is written here, basis "citizenship", with a
+# note that says what it is and is not.
+CITIZEN_TITLE = ("2.2", "Bhutanese")
+CITIZEN_SOURCE = ("National Statistics Bureau of Bhutan, Population & Housing "
+                  "Census of Bhutan 2017, Tables 2.1 and 2.2: population and "
+                  "Bhutanese population by gewog and town")
+CITIZEN_NOTE = (
+    "Citizenship, not ethnicity: Bhutan's census does not ask ethnicity. Of "
+    "the {everyone:,} people Table 2.1 of the dzongkhag's 2017 report counts "
+    "here, {bhutanese:,} are Bhutanese (its Table 2.2) and {others:,} are not "
+    "-- Table 2.1 counts everyone found on census day whatever their "
+    "nationality, so the difference between the two tables is everyone else. "
+    "Written by the map owner's decision of 19 September 2026 that a census's "
+    "count of citizenship may stand on this field under its basis.")
+
+
+def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
+             ) -> tuple[Read | None, str]:
+    """Table 2.2, held row by row to Table 2.1, or None and the reason.
+
+    Read the way Table 2.1 is -- the strict header first, the relaxed one
+    only where that reads nothing that reconciles -- and kept only where it
+    reconciles to its own closing row, names exactly Table 2.1's gewogs and
+    towns, and counts no more Bhutanese in any row than Table 2.1 counts
+    people. A report this cannot read loses its citizenship, not the run.
+    """
+    def whole(table22: Read) -> bool:
+        counted = sum(table22.gewogs.values()) + sum(table22.towns.values())
+        return bool(table22.gewogs) and bool(table22.printed) \
+            and counted == table22.printed
+
+    found = scan(blob, True, dzongkhag, debug, title=CITIZEN_TITLE)
+    if not whole(found):
+        loose = scan(blob, False, dzongkhag, debug, title=CITIZEN_TITLE)
+        if whole(loose):
+            found = loose
+    if not found.gewogs:
+        return None, "Table 2.2 was not found under its title"
+    counted = sum(found.gewogs.values()) + sum(found.towns.values())
+    if not found.printed or counted != found.printed:
+        return None, (f"Table 2.2's rows come to {counted:,} against the "
+                      f"{found.printed:,} it prints beside them")
+    # The gewogs must be Table 2.1's own, name for name. The towns reach no
+    # shape and are held only through the closing row above: a town whose
+    # label wraps differently in the two tables is not a reason to lose the
+    # dzongkhag's gewogs.
+    if set(found.gewogs) != set(read.gewogs):
+        return None, (f"Table 2.2 does not name Table 2.1's gewogs: "
+                      f"{sorted(set(read.gewogs) ^ set(found.gewogs))}")
+    over = sorted(name for name, n in found.gewogs.items() if n > read.gewogs[name])
+    if over or found.printed > read.printed:
+        return None, (f"Table 2.2 counts more Bhutanese than Table 2.1 counts "
+                      f"people in {over or ['the dzongkhag']}")
+    return found, ""
+
+
+def citizenship(bhutanese: int, everyone: int) -> dict[str, Any]:
+    """The ethnicity fields for one row: Bhutanese and everyone else."""
+    others = everyone - bhutanese
+    counts = {label: n for label, n in (("Bhutanese", bhutanese),
+                                        ("Non-Bhutanese", others)) if n}
+    return {"ethnicity": shares(counts, total=everyone), "ethnicity_year": YEAR,
+            "ethnicity_basis": "citizenship",
+            "ethnicity_note": CITIZEN_NOTE.format(everyone=everyone,
+                                                  bhutanese=bhutanese,
+                                                  others=others)}
+
+
+def citizen_cite(url: str) -> list[dict[str, Any]]:
+    return [{"field": "ethnicity", "name": CITIZEN_SOURCE, "url": url,
+             "license": LICENCE}]
 
 
 # ---------------------------------------------------------------------------
@@ -1610,9 +1716,10 @@ def main() -> int:
             continue
         read = table(blob, dzongkhag, args.debug)
         annex = annex_ages(words_by_row(blob), read.gewogs)
-        reports.append((dzongkhag, url, read, annex))
+        citizen, why = citizens(blob, dzongkhag, read, args.debug)
+        reports.append((dzongkhag, url, read, annex, citizen, why))
     totals_a26 = [annex["all_ages"][8] if annex["all_ages"] else None
-                  for _d, _u, _r, annex in reports]
+                  for _d, _u, _r, annex, _c, _w in reports]
     national_a26 = (sum(totals_a26) if len(reports) == len(DZONGKHAGS)
                     and None not in totals_a26 else None)
     log("  the twenty reports' Table A2.6 totals come to "
@@ -1620,13 +1727,27 @@ def main() -> int:
         + f", against the national report's {NATIONAL_ANALYSED:,}")
     declined: list[str] = []
     medians = {"dzongkhag": 0, "gewog": 0, "gewogs": 0}
+    bhutanese_total = 0
+    no_citizenship: list[str] = []
 
-    for dzongkhag, url, read, annex in reports:
+    for dzongkhag, url, read, annex, citizen, why in reports:
         gewogs, towns, printed = read.gewogs, read.towns, read.printed
         national += printed
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
             f"{printed:,} people")
+        if citizen is None:
+            no_citizenship.append(f"{dzongkhag}: {why}")
+            gap_note = (f"Citizenship is not written for {dzongkhag}: {why}, so "
+                        f"the report's count of Bhutanese by gewog could not be "
+                        f"held to its Table 2.1. Bhutan's census does not ask "
+                        f"ethnicity.")
+            dzongkhag_eth: dict[str, Any] = {"ethnicity": gap(NOT_AVAILABLE, gap_note)}
+        else:
+            bhutanese_total += citizen.printed
+            log(f"    Table 2.2: {citizen.printed:,} Bhutanese of {printed:,} -- "
+                f"{printed - citizen.printed:,} non-Bhutanese")
+            dzongkhag_eth = citizenship(citizen.printed, printed)
         reason, extra = single_outcome(dzongkhag, annex, read, national_a26)
         if reason:
             declined.append(f"{dzongkhag}: {reason}")
@@ -1709,8 +1830,9 @@ def main() -> int:
             population_note=note,
             sex_ratio=ratio,
             sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-            sources=cite(ratio) + age_cite(dzongkhag_age),
-            **dzongkhag_age))
+            sources=cite(ratio) + age_cite(dzongkhag_age)
+            + (citizen_cite(url) if citizen is not None else []),
+            **dzongkhag_age, **dzongkhag_eth))
         for name, people in sorted(gewogs.items()):
             male, female = read.sexes[name]
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
@@ -1747,9 +1869,16 @@ def main() -> int:
                 population_note=note,
                 sex_ratio=ratio,
                 sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-                sources=cite(ratio) + age_cite(gewog_age),
-                **gewog_age))
+                sources=cite(ratio) + age_cite(gewog_age)
+                + (citizen_cite(url) if citizen is not None else []),
+                **gewog_age,
+                **(citizenship(citizen.gewogs[name], people) if citizen is not None
+                   else {"ethnicity": dzongkhag_eth["ethnicity"]})))
 
+    for line in no_citizenship:
+        log(f"  CITIZENSHIP NOT READ -- {line}")
+    log(f"  Table 2.2 read for {len(reports) - len(no_citizenship)} of {len(reports)} "
+        f"dzongkhags: {bhutanese_total:,} Bhutanese")
     for line in declined:
         log(f"  MEDIAN DECLINED -- {line}")
     log(f"  medians read: {medians['dzongkhag']} of {len(reports)} dzongkhags and "
