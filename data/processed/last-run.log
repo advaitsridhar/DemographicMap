@@ -1,40 +1,237 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-    ARKHABĪL SUQUŢRÁ (32): no 2004 count (a unit made since)
-    governorate 19: drawn as the sum of its districts, 984,428 (the census row counts 1,028,548)
-    governorate 32: drawn as the sum of its districts, 44,120 (no census row)
-  census: 333 districts, 22 governorates, 19,682,162 people
-  projected national median age for 2017: 17.5
-    governorate 11: 20 districts, largest age-share departure from the governorate's 0.0369
-    governorate 12: 11 districts, largest age-share departure from the governorate's 0.0329
-    governorate 13: 10 districts, largest age-share departure from the governorate's 0.0358
-    governorate 14: 20 districts, largest age-share departure from the governorate's 0.0360
-    governorate 15: 23 districts, largest age-share departure from the governorate's 0.0413
-    governorate 16: 12 districts, largest age-share departure from the governorate's 0.1448
-    governorate 17: 31 districts, largest age-share departure from the governorate's 0.0668
-    governorate 18: 26 districts, largest age-share departure from the governorate's 0.0596
-    governorate 19: 28 districts, largest age-share departure from the governorate's 0.0563
-    governorate 20: 12 districts, largest age-share departure from the governorate's 0.0310
-    governorate 21: 17 districts, largest age-share departure from the governorate's 0.0666
-    governorate 22: 15 districts, largest age-share departure from the governorate's 0.0888
-    governorate 23: 16 districts, largest age-share departure from the governorate's 0.0397
-    governorate 24: 8 districts, largest age-share departure from the governorate's 0.0247
-    governorate 25: 15 districts, largest age-share departure from the governorate's 0.0451
-    governorate 26: 14 districts, largest age-share departure from the governorate's 0.0574
-    governorate 27: 9 districts, largest age-share departure from the governorate's 0.0305
-    governorate 28: 9 districts, largest age-share departure from the governorate's 0.0281
-    governorate 29: 20 districts, largest age-share departure from the governorate's 0.0468
-    governorate 30: 9 districts, largest age-share departure from the governorate's 0.0211
-    governorate 31: 6 districts, largest age-share departure from the governorate's 0.0097
-    governorate 32: 2 districts, largest age-share departure from the governorate's 0.0131
-  governorates paired with OCHA's: 22 of 22
-  districts not bound: 0
-  OCHA districts no drawn unit took: 0
-  bound districts the census has no row for: 2: 1319; 1324
-    Sana'a City Outskirts - Hamdan (1319): the outskirts part of HAMDĀN (2301)
-    Sana'a City Outskirts -Sanhan wa Bani Bahlul (1324): the outskirts part of SANḨAN (2305)
-  bound by code, spelt differently: 48: Dhamar City = MADĪNAT DHAMĀR (2008); Qalansiyah wa Abd Al Kuri = QULANSĪYAH WA ‘ABD AL KŪRĪ (3202); Brum Mayf'ah = BURŪM MAYFA‘ (1925); Dhibain = DHĪ BĪN (2909); Al Mutun = AL MATŪN (1606); Sarar = SIRĀR (1207); Melhan = MILḨĀN (2705); Zamakh wa Manwokh = ZAMŪKH WA MANWAKH (1904); Al Qaff = AL QUFF (1903); Eyal Surayh = ‘IYĀL SURAYḨ (2918); Al Mudhaffar = AL MUZ̧AFFAR (1517); Jardan = JIRDĀN (2103); Rassd = RAŞAD (1206); Nu'man = NA‘AMĀN (1401); Thula = THILĀ’ (2917); Barat Al Anan = BARŢ AL ‘ANĀN (1610); Hajjah City = MADĪNAT ḨAJJAH (1728); Saqin = SĀQAYN (2209); Al Khukhah = AL KHAWKHAH (1820); Ar Rujum = AR RUJM (2703); Al Bayda City = MADĪNAT AL BAYḐĀ’ (1409); Al Mukalla City = MADĪNAT AL MUKALLĀ (1927); Al Mahwit City = MADĪNAT AL MAḨWĪT (2708); Radum = RUḐŪM (2117); Mahliyah = MĀHILĪYAH (2610); Halmin = ḨĀLIMAYN (2506); Wald Rabi' = WALAD RABĪ‘ (1415); Al Hasayn = AL ḨUŞAYN (3005); Al Ghaydhah = AL GHAYZ̧AH (2804); Kritar - Sirah = ŞĪRAH (2407); Ad Dohi = AḐ ḐAḨĪ (1809); Al Makha = AL MUKHĀ’ (1505); Al Ma'afer = AL MA‘ĀFIR (1521); Adh Dhihar = AZ̧ Z̧IHĀR (1119); Old City = ŞAN‘Ā’ AL QADĪMAH (1301); Shahin = SHIḨAN (2801); Adh Dhahir = AZ̧ Z̧ĀHIR (2207); Khur Maksar = KHAWR MAKSAR (2408); Hatib = ḨUŢAYB (2111); Al Qatn = AL QAŢAN (1907); Ad Dulay'ah = AḐ ḐALĪ‘AH (1922); Alluhayah = AL LUḨAYYAH (1802); Haridah = ḨURAYḐAH (1928); Al Malah = AL MILĀḨ (2508); Ma'rib City = MADĪNAT MA’RIB (2612); Al Mu'alla = AL MA‘ALLĀ (2406); Maghrib Ans = MAGHIRIB ‘ANS (2004); Dhulaymat Habur = ḨABŪR Z̧ULAYMAH (2908)
-  census: 22 governorates and 335 districts; projection medians: 20 governorates and 331 districts
-  wrote data/processed/yemen_census.json (949 kB)
-  wrote data/processed/yemen_census_age.json (591 kB)
-  wrote yemen_census.json (357) and yemen_census_age.json (351)
+Overpass KW: 87,703 bytes, 235 elements
+235 named elements
+  n1440140895 | village | آبار الرقعي | آبار الرقعي | Abar ar Ruqi | 28.98352,46.58417 | in -
+  n12143388455 | suburb | العباسية |  | Abbasiya | 29.26013,47.93219 | in Jleeb_Al- Shiyoukh
+  n3621660962 | village | العبدلي | العبدلي | Abdali | 30.02319,47.72014 | in Abdali
+  n4602123783 | suburb | ضاحية عبد الله السالم (الضاحية) |  | Abdullah Al-Salem (Dahya) | 29.35360,47.98029 | in Abdulla_Al-Salem
+  n4603691780 | suburb | عبدالله المبارك الصباح | عبدالله المبارك الصباح | Abdullah Mubarak Al-Sabah | 29.24110,47.90455 | in West_Jleedb
+  n12135776171 | town | أبو الحصاني |  | Abu Al-Hasani | 29.19391,48.11257 | in Abo_Elhaseena
+  n4665677912 | suburb | أبو فطيرة | أبو فطيرة | Abu Fatira | 29.19898,48.10097 | in Abu_Fataira
+  n2479310557 | village | أبو فلوس | أبو فلوس | Abu Fulus | 29.93111,48.55361 | in -
+  n4665677903 | suburb | أبو حليفة | أبو حليفة | Abu Halifa | 29.13011,48.12402 | in Abu_Halifa
+  n2487916020 | village | أبو عقاب | أبو عقاب | Abu Iqab | 30.13617,48.40225 | in -
+  n2487916021 | village | أبو خضراوي | أبو خضراوي | Abu Khadrawi | 30.11641,48.43087 | in -
+  n1236349890 | locality | الدبدبة | الدبدبة | Ad Dibdibah | 28.60556,47.07972 | in -
+  n4603691896 | suburb | العديلية | العديلية | Adailiya | 29.32634,47.98147 | in Rawda
+  n13358115910 | state | محافظة الأحمدي | محافظة الأحمدي | Ahmadi | 28.93410,47.96978 | in Bar_Elahmadi
+  n1760623214 | city | الأحمدي | الأحمدي | Ahmadi | 29.08907,48.06102 | in Elahmdi
+  n1441184269 | village | الأبرق |  | Al Abraq | 29.37272,46.95786 | in Bar Jahra
+  n9850501400 | village | مجمع البديل السكني |  | Al Badael Residential Compound | 30.04926,47.89595 | in -
+  n2487924212 | locality | الحليبة | الحليبة | Al Hulaybah | 30.05000,47.26667 | in -
+  n1278188834 | city | الجهراء | الجهراء | Al Jahra | 29.34746,47.67221 | in Waha
+  n1237828458 | village | منفذ الخفجي | منفذ الخفجي | Al Khafji Customs | 28.51861,48.41472 | in -
+  n1441184270 | village | Al Khiran |  | Al Khiran | 28.66143,48.38910 | in El_Kehran_Loloet_Elkheran
+  n4665677916 | suburb | المسايل | المسايل | Al Masayel | 29.23779,48.08930 | in Messila
+  n11871539794 | locality | المسنّاة | المسنّاة | Al Musannah | 29.00877,47.19202 | in -
+  n11870738281 | locality | القرعة | القرعة | Al Qar`ah | 28.63341,47.52466 | in -
+  n2479310587 | village | القشلة | القشلة | Al Qushlah | 29.94222,48.54361 | in -
+  n9876599816 | village | السالمي | السالمي | Al Salmi | 29.09864,46.67878 | in Salmy
+  n1441184271 | village | Al Wafrah |  | Al Wafrah | 28.63959,47.93124 | in Bar_Elahmadi
+  n4491520845 | square | Al-Abdul Razzaq Square |  | Al-Abdul Razzaq Square | 29.37582,47.97729 | in Qibla
+  n1759971873 | suburb | العدان | العدان | Al-Adan | 29.23166,48.07042 | in Al_Adan
+  n9641985372 | town | الفاو | الفاو | Al-Faw | 29.97440,48.47183 | in -
+  n4665677907 | suburb | الفنطاس | الفنطاس | Al-Fintas | 29.17050,48.11790 | in Al_Fantas
+  n4665677914 | suburb | الفنيطيس | الفنيطيس | Al-Funaitees | 29.22034,48.09451 | in Fnaitees
+  n4665677913 | suburb | القرين | القرين | Al-Qurain | 29.20328,48.07618 | in Al_Qurain
+  n4665677915 | suburb | القصور | القصور | Al-Qusour | 29.21606,48.07347 | in Wista
+  n5416931359 | suburb | الوفرة | الوفرة | Al-Wafra | 28.60698,48.02191 | in Bar_Elahmadi
+  n4600587315 | town | علي صباح السالم | علي صباح السالم | Ali Subah Al Salem | 28.95559,48.15080 | in UmAl-Hayman-AliSabahAs-Salem
+  n12114092256 | suburb | الأندلس |  | Andalus | 29.30420,47.88696 | in Andalous
+  n1236349607 | village | الرقعي | الرقعي | Ar Ruqi | 29.07833,46.63750 | in -
+  n4603691771 | suburb | العارضية | العارضية | Ardhiya | 29.28934,47.89467 | in Ardhiya
+  n4603691774 | suburb | العارضية 4 | العارضية 4 | Ardhiya 4 | 29.27861,47.91712 | in Rehab
+  n4603691775 | suburb | العارضية 6 | العارضية 6 | Ardhiya 6 | 29.29450,47.92221 | in Rehab
+  n819610948 | town | اروندکنار | القصبة | Arwandkenar | 29.98431,48.51099 | in -
+  n11871883284 | locality | الصور الجنوبي | الصور الجنوبي | As Sur al Janubi | 28.51699,47.79993 | in -
+  n11871652572 | locality | الشقّ | الشقّ | Ash Shiqq | 28.50278,47.75942 | in -
+  n1441184272 | village | Az Zawr |  | Az Zawr | 28.73543,48.38224 | in El_Zoor
+  n1759552757 | suburb | بيان | بيان | Bayan | 29.29751,48.04785 | in Bayan
+  n11870950506 | locality | بنيّات عيفان | بنيّات عيفان | Biniyat `Ayfan | 28.59493,47.19175 | in -
+  n4602123786 | suburb | بنيد القار | بنيد القار | Bnaid Al Qar | 29.37348,48.00280 | in Bnaid_Al-QR
+  n13358115911 | state | محافظة العاصمة | محافظة العاصمة | Capital | 29.35115,47.88809 | in -
+  n4602123773 | suburb | الدعية | الدعية | Da'iya | 29.35690,48.01177 | in Daiya
+  n4665677910 | suburb | الظهر | الظهر | Dahar | 29.16461,48.06531 | in Wista
+  n4602123785 | suburb | الدسمة | الدسمة | Dasma | 29.36570,48.00066 | in Dasma
+  n4600718142 | suburb | دسمان | دسمان | Dasman | 29.38665,47.99824 | in The_Sea_Front
+  n2479310638 | village | دایر | داير | Dayir | 29.99861,48.45083 | in -
+  n11870275794 | locality | دباية الضبعيّة | دباية الضبعيّة | Dibayat ad Dab`iyah | 28.55145,47.35005 | in -
+  n11166002698 | suburb | الدوحة |  | Doha | 29.31655,47.81798 | in Doha
+  n4588115193 | suburb | شرق الاحمدي | شرق الاحمدي | East Ahmadi | 29.07842,48.08809 | in Elahmdi
+  n5701794902 | square | Electra |  |  | 29.30470,47.94197 | in Rai
+  n4665677908 | suburb | العقيلة | العقيلة | Eqaila | 29.17119,48.10216 | in Egaila
+  n4665677904 | suburb | فهد الأحمد | فهد الأحمد | Fahad Al-Ahmad | 29.12723,48.10435 | in Fahad_Al-Ahmad
+  n1760011686 | suburb | الفحيحيل | الفحيحيل | Fahaheel | 29.08336,48.12753 | in Fahaheel
+  n4602123777 | suburb | الفيحاء | الفيحاء | Faiha | 29.33848,47.97954 | in Faiha
+  n13358115912 | state | محافظة الفروانية | محافظة الفروانية | Farwaniya | 29.22934,47.92053 | in West_Jleedb
+  n4603691782 | suburb | الفروانية | الفروانية | Farwaniya | 29.28141,47.96016 | in Farwaniya
+  n4603691772 | suburb | الفردوس | الفردوس | Firdous | 29.28332,47.87477 | in Ferdous
+  n11870273040 | locality | غميض | غميض | Ghumayd | 28.52134,48.10914 | in -
+  n12143388697 | suburb | غرناطة |  | Granada | 29.31349,47.86559 | in Ghornata
+  n5701794901 | square | Grand Plaza |  |  | 29.30444,47.94316 | in Rai
+  n4665677905 | suburb | هدية | هدية | Hadiya | 29.14858,48.09024 | in Hadiya
+  n13358115913 | state | محافظة حولي | محافظة حولي | Hawalli | 29.29112,48.03785 | in Bayan
+  n4603691895 | suburb | حولي | حولي | Hawally | 29.33787,48.02355 | in Hawalli
+  n4603691786 | suburb | حطين | حطين | Hitteen | 29.28266,48.02065 | in Hitteen
+  n12135506402 | suburb | الصليبية الصناعية |  | Industrial Sulaibiya | 29.28724,47.84752 | in Sulaibiya_Industrial_1
+  n4603691779 | suburb | إشبيلية | إشبيلية | Ishbilya | 29.27406,47.93909 | in Ashbelya
+  n4602123782 | suburb | جابر الأحمد | جابر الأحمد | Jaber Al-Ahmad | 29.34271,47.76394 | in Mina_Doha
+  n4665677909 | suburb | جابر العلي | جابر العلي | Jaber Al-Ali | 29.17000,48.08215 | in Jaber_Al-Ali
+  n4603691892 | suburb | الجابرية | الجابرية | Jabriya | 29.31925,48.03296 | in Jabriya
+  n13358115914 | state | محافظة الجهراء | محافظة الجهراء | Jahra | 29.52052,47.30621 | in Bar Jahra
+  n4603691781 | suburb | جليب الشيوخ | جليب الشيوخ | Jileeb Al-Shiyukh | 29.25960,47.93367 | in Jleeb_Al- Shiyoukh
+  n4602123778 | suburb | كيفان | كيفان | Kaifan | 29.33857,47.96182 | in Kifan
+  n4603691784 | suburb | خيطان | خيطان | Khaitan | 29.28286,47.97582 | in Khaitan
+  n4603691897 | suburb | الخالدية | الخالدية | Khaldiya | 29.32663,47.96309 | in Khaldiya
+  n1237828879 | island | جزيرة كبر | جزيرة كبر | Kubbar Island | 29.07187,48.49261 | in -
+  n2487916036 | village | كوت شنوف | كوت شنوف | Kut Shannuf | 30.12078,48.40556 | in -
+  n2479310680 | village | كوت الحاج شيد | كوت الحاج شيد | Kut al Hajj Shayd | 29.96528,48.49167 | in -
+  n2479310701 | village | كوت الهو باسلو | نهر العشار | Kut al Hau Basluu | 29.95000,48.50000 | in -
+  n424313936 | country | الكويت | الكويت | Kuwait | 29.27340,47.49795 | in Salmy
+  n544060405 | city | مدينة الكويت | مدينة الكويت | Kuwait City | 29.37965,47.97342 | in The_Sea_Front
+  n3892887033 | locality | المنطقة الحرة الكويت | المنطقة الحرة الكويت | Kuwait Free Trade Zone | 29.34903,47.91346 | in -
+  n3621949230 | suburb | المهبولة | المهبولة | Mahboula | 29.14913,48.11904 | in Mahboula
+  n9535528377 | suburb | ميدان حولي | ميدان حولي | Maidan Hawalli | 29.33697,48.04350 | in Salmiya
+  n2487916054 | village | معمير | المعامر | Mamir | 30.03472,48.42750 | in -
+  n4665677901 | suburb | المنقف | المنقف | Mangaf | 29.10743,48.12816 | in Mangaf
+  n4602123784 | suburb | المنصورية | المنصورية | Mansouriya | 29.35877,47.99356 | in Mansouriya
+  n11871539502 | farm | مزارع الوفرة | مزارع الوفرة | Mazari` al Wafrah | 28.53499,48.06366 | in Elwafra
+  n4588154070 | suburb | وسط أحمدي | وسط أحمدي | Middle Ahmadi | 29.08622,48.06815 | in Elahmdi
+  n12146588988 | neighbourhood | منطقة الوزارات |  | Ministries Area | 29.27144,48.01931 | in Shuhada
+  n4588375897 | suburb | المرقاب | المرقاب | Mirqab | 29.36780,47.98424 | in The_Green_Belt
+  n1759971892 | suburb | مشرف | مشرف | Mishrif | 29.27930,48.06984 | in Mishrift
+  n4603691889 | suburb | مبارك العبد الله | مبارك العبد الله | Mubarak Al-Abdullah | 29.27588,48.04632 | in MubarakAlAbdullah_MishriftWest
+  n13358115915 | state | محافظة مبارك الكبير | محافظة مبارك الكبير | Mubarak Al-Kabeer | 29.21737,48.03935 | in Wista
+  n4665677911 | suburb | مبارك الكبير | مبارك الكبير | Mubarak Al-Kabeer | 29.18858,48.08188 | in Mubarak_Al_Kabeer
+  n12143388698 | locality | معسكرات المباركية |  | Mubarkiya Camps | 29.31517,47.90943 | in Mubarakiya_Camps
+  n11196103034 | field | المطلاع |  | Mutlaa | 29.54515,47.49218 | in Bar Jahra
+  n4587861838 | suburb | النعيم | النعيم | Naeem | 29.33304,47.69521 | in South_East_Jahra
+  n12114092260 | suburb | النهضة |  | Nahdha | 29.30288,47.86090 | in Sulaibiya_Industrial_1
+  n2487916080 | locality | نهر أبو علی | نهر أبو علي | Nahr Abu Ali | 30.14583,48.39139 | in -
+  n2479310745 | locality | نهر أبو حميد | نهر أبو حميد | Nahr Abu Hamid | 29.94812,48.49049 | in -
+  n2479310766 | locality | نهر عين الشير | نهر عين الشير | Nahr Ayn ash Shayr | 29.94325,48.50609 | in -
+  n2479310830 | locality | نهر نقشة | نهر نقشة | Nahr Naqshah | 29.94546,48.49325 | in -
+  n2487916085 | locality | نهر یونس | نهر يونس | Nahr Yunus | 30.14861,48.39417 | in -
+  n2479310841 | locality | نهر العيش | نهر العيش | Nahr al Aysh | 29.94151,48.50912 | in -
+  n2479310855 | locality | نهر الحاج أحمد | نهر الحاج أحمد | Nahr al Hajj Ahmad | 29.93930,48.51294 | in -
+  n2487916099 | locality | نهر المعنیة | نهر المعنية | Nahr al Mania | 30.13806,48.38389 | in -
+  n2487916106 | locality | نهر الیاکوف | نهر الياكوف | Nahr al Yaguf | 30.14000,48.38556 | in -
+  n2479310868 | locality | نهر السطر | نهر السطر | Nahr as Satr | 29.93803,48.51540 | in -
+  n2479310875 | locality | نهر الصبيح | نهر الصبيح | Nahr as Subayh | 29.93214,48.52133 | in -
+  n4587927544 | suburb | النسيم | النسيم | Nasseem | 29.32235,47.67133 | in Nasseem
+  n4588166643 | suburb | شمال الاحمدي | شمال الاحمدي | North Ahmadi | 29.10218,48.06625 | in Elahmdi
+  n10840179098 | suburb | شمال غرب الصليبخات |  | North West Sulaibikhat | 29.32817,47.80689 | in Doha
+  n4602123776 | suburb | النزهة | النزهة | Nuzha | 29.34163,47.99151 | in Nuzha
+  n3609387988 | suburb | العمرية | العمرية | Omariya | 29.29596,47.95547 | in Omariya
+  n4587937773 | suburb | العيون | العيون | Oyoun | 29.32986,47.65522 | in Oyoun
+  n4602123775 | suburb | القادسية | القادسية | Qadsiya | 29.34878,48.00307 | in Mansouriya
+  n11866163109 | suburb | القيروان |  | Qairawan | 29.30138,47.80041 | in South Doha
+  n2479310884 | village | القلعة القديمة | القلعة القديمة | Qalat Qadyama | 29.92750,48.51722 | in -
+  n4587847067 | suburb | القصر | القصر | Qasr | 29.34189,47.69364 | in Qasr
+  n4588225929 | suburb | القبلة | القبلة | Qibla | 29.36876,47.96956 | in Qibla
+  n1759971888 | suburb | قرطبة | قرطبة | Qurtuba | 29.31194,47.98727 | in Qortuba
+  n4603691777 | suburb | الرابية | الرابية | Rabiya | 29.29532,47.93791 | in Rabiya
+  n2852960214 | suburb | الري | الري | Rai | 29.30895,47.94356 | in Rai
+  n1759971858 | suburb | الروضة | الروضة | Rawda | 29.32992,47.99842 | in Rawda
+  n4603691776 | suburb | الرقعي | الرقعي | Riggai | 29.30458,47.91660 | in Riggai
+  n4603691778 | suburb | الرحاب | الرحاب | Rihab | 29.28437,47.93872 | in Rehab
+  n4665677906 | suburb | الرقة | الرقة | Riqqa | 29.15041,48.10520 | in Riqqa
+  n4603691891 | suburb | الرميثية | الرميثية | Rumaithiya | 29.31602,48.07117 | in Rumaithiya
+  n3589746727 | suburb | سعد العبد الله | سعد العبد الله | Saad Al-Abdulla | 29.30995,47.72073 | in Sad_Elabdallah
+  n4603691773 | suburb | صباح الناصر | صباح الناصر | Sabah Al Nasser | 29.27095,47.88582 | in Jleeb_Al- Shiyoukh
+  n4665677917 | suburb | صباح السالم | صباح السالم | Sabah Al Salem | 29.25490,48.06491 | in Sabah_Al-Salem
+  n4588169807 | town | صباح الأحمد | صباح الأحمد | Sabah Al-Ahmad | 28.78236,48.06365 | in Saba_Elahmad
+  n4665677902 | suburb | الصباحية | الصباحية | Sabahiya | 29.10802,48.10700 | in Sabahiya
+  n12117992871 | locality | مشروع الصابرية |  | Sabiriya Project | 29.77029,48.02351 | in Abdali
+  n4313051547 | square | ساحة الصفاة | ساحة الصفاة | Safat Square | 29.37145,47.97346 | in Qibla
+  n2487919084 | town | سفوان | سفوان | Safwan | 30.11586,47.71600 | in -
+  n4721453939 | suburb | السلام | السلام | Salam | 29.29703,48.01432 | in Salam
+  n4603691893 | suburb | السالمية | السالمية | Salmiya | 29.33278,48.06849 | in Salmiya
+  n4603691890 | suburb | سلوى | سلوى | Salwa | 29.29626,48.07809 | in Salwa
+  n1759971852 | suburb | الشعب | الشعب | Shaab | 29.35111,48.02467 | in Shaab
+  n12143388660 | locality | الشدادية |  | Shaddadiya | 29.21863,47.87312 | in Sebak_Al_Hegen
+  n4602123780 | suburb | الشامية | الشامية | Shamiya | 29.35416,47.96835 | in Shamiya
+  n4721422409 | suburb | شرق | شرق | Sharq | 29.38168,47.98571 | in Sharq
+  n4603691788 | suburb | الشهداء | الشهداء | Shuhada | 29.27130,48.03063 | in Shuhada
+  n12125798672 | suburb | الشويخ التعليمية |  | Shuwaikh Educational | 29.33502,47.91572 | in Suwaikh_Educational
+  n12133633110 | suburb | الشويخ الصناعية |  | Shuwaikh Industrial | 29.32357,47.93612 | in Sulaibiya_Industrial_1
+  n12125798677 | suburb | الشويخ الصحية |  | Shuwaikh Medical | 29.32582,47.89661 | in Shuwaikh_Health
+  n4602123779 | neighbourhood | الشويخ السكنية | الشويخ السكنية | Shuwaikh Residential | 29.35441,47.95638 | in Suwaikh
+  n4603691785 | suburb | الصدّيق | الصدّيق | Siddeeq | 29.29443,47.99191 | in Siddiq
+  n4588162042 | suburb | جنوب الاحمدي | جنوب الاحمدي | South Ahmadi | 29.07986,48.06704 | in Elahmdi
+  n9570866695 | suburb | جنوب المطلاع | جنوب المطلاع | South Mitla | 29.46261,47.57988 | in Bar Jahra
+  n12117992870 | locality | مشروع جنوب القيروان |  | South Qairawan Project | 29.29194,47.79636 | in Sulaibiya_Agricultural_1
+  n12179598734 | region | جنوب السرة |  | South Surra | 29.28460,48.00413 | in Zahra
+  n11904052475 | island | الجزيرة الجنوبية | الجزيرة الجنوبية | Southern Island | 29.39933,47.93208 | in -
+  n10707750005 | town | الصبية | الصبية | Subiya | 29.44883,47.74365 | in Abdali
+  n11850261210 | suburb | الصليبخات |  | Sulaibikhat | 29.31473,47.84700 | in -
+  n12135506403 | suburb | الصليبية الزراعية |  | Sulaibiya Agricultural | 29.28562,47.80538 | in Sulaibiya_Agricultural_1
+  n12135506439 | suburb | الصليبية الشعبية |  | Sulaibiya Residential | 29.28960,47.82266 | in Sulaibiya
+  n11870950576 | locality | صليعاء الأرانب | صليعاء الأرانب | Sulay`a' al Aranib | 28.69727,47.32981 | in -
+  n1759971859 | suburb | السرة | السرة | Surra | 29.31450,48.00696 | in Surra
+  n4587876130 | suburb | تيماء | تيماء | Taima | 29.32907,47.67997 | in Waha
+  n2487919156 | locality | طريق العبارة أم قصر | طريق العبارة أم قصر | Tariq al Abbarah Umm Qasr | 30.06143,47.91439 | in -
+  n5701794900 | square | The Forum |  |  | 29.30442,47.94062 | in Rai
+  n5203029768 | locality | ام نقاء | ام نقاء | Umm Niqa' | 29.98610,47.79608 | in Abdali
+  n297446410 | city | أم قصر | أم قصر | Umm Qasr | 30.03234,47.92146 | in -
+  n1277024215 | suburb | الواحة | الواحة | Waha | 29.34248,47.65850 | in Waha
+  n4987265386 | suburb | غرب عبدالله المبارك | غرب عبدالله المبارك | West of Abdullah Al Mubarak Al Sabah | 29.23657,47.85196 | in Sebak_Al_Hegen
+  n4603691783 | suburb | اليرموك | اليرموك | Yarmouk | 29.31120,47.96949 | in Wista
+  n4603691787 | suburb | الزهراء | الزهراء | Zahra | 29.27583,48.00179 | in Zahra
+  n11870950408 | locality | عوجة الباطن | عوجة الباطن | `Awjat al Batin | 29.08894,46.55311 | in -
+  n7994401195 | village | أبو دیره |  |  | 30.11300,48.43169 | in -
+  n7994401190 | village | أبو شکر |  |  | 30.13129,48.40927 | in -
+  n7994401196 | village | ألبوحمید |  |  | 30.09704,48.44270 | in -
+  n7994425859 | village | ابطر |  |  | 29.97524,48.58925 | in -
+  n12125798698 | locality | الشويخ الإدارية |  |  | 29.34680,47.94576 | in Wista
+  n9953906517 | locality | المسناه |  |  | 28.76555,46.82945 | in -
+  n3754773021 | village | الهندية الجنوبية | الهندية الجنوبية |  | 30.03072,47.91957 | in -
+  n3754728125 | village | الهندية الشمالية | الهندية الشمالية |  | 30.03760,47.90904 | in -
+  n4126773012 | locality | ايرثلنك عزت لخدمات الانترنت | ايرثلنك عزت لخدمات الانترنت |  | 30.11443,47.72010 | in -
+  n8503155218 | neighbourhood | بلوك ١٣ |  |  | 30.04742,47.89412 | in -
+  n3058990063 | locality | بوابة ام قصر | بوابة ام قصر |  | 30.05888,47.91256 | in -
+  n4126773007 | locality | بوابة صفوان | بوابة صفوان |  | 30.12255,47.71598 | in -
+  n7994425857 | village | بچاچره سفلی |  |  | 29.96687,48.59596 | in -
+  n7994425858 | village | بچاچره علیا |  |  | 29.97392,48.59707 | in -
+  n5266435609 | village | حي الأستقلال | حي الأستقلال |  | 30.05433,47.90140 | in -
+  n4109463598 | village | حي الجاهزة | حي الجاهزة |  | 30.11365,47.71418 | in -
+  n4111757983 | village | حي الجوارين | حي الجوارين |  | 30.11641,47.70995 | in -
+  n3762444777 | village | حي الحرية الاولى | حي الحرية الاولى |  | 30.04189,47.92035 | in -
+  n3762480580 | village | حي الحرية الثالثة | حي الحرية الثالثة |  | 30.03957,47.91258 | in -
+  n3762480581 | village | حي الحرية الثانية | حي الحرية الثانية |  | 30.03288,47.91661 | in -
+  n4118099082 | village | حي الرسالة | حي الرسالة |  | 30.11711,47.72279 | in -
+  n4109463581 | village | حي الزراعة | حي الزراعة |  | 30.11963,47.71428 | in -
+  n4111425868 | village | حي الزهراء | حي الزهراء |  | 30.10981,47.71884 | in -
+  n3751445729 | village | حي الصناعة | حي الصناعة |  | 30.04497,47.91265 | in -
+  n3785296433 | village | حي الضباط | حي الضباط |  | 30.02500,47.93532 | in -
+  n3766346274 | neighbourhood | حي الفاروق | حي الفاروق |  | 30.03796,47.91534 | in -
+  n3762480579 | village | حي المشروع | حي المشروع |  | 30.03684,47.92573 | in -
+  n3760162694 | village | حي المعلمين | حي المعلمين |  | 30.03144,47.93004 | in -
+  n3785296432 | village | حي المهندسين | حي المهندسين |  | 30.02590,47.93551 | in -
+  n3762438357 | village | حي دور الجاهزة | حي دور الجاهزة |  | 30.02667,47.93315 | in -
+  n3760151809 | village | حي دور الخمسين | حي دور الخمسين |  | 30.02787,47.93152 | in -
+  n3754651936 | village | حي دور الشعبي | حي دور الشعبي |  | 30.03510,47.91417 | in -
+  n3785999478 | village | حي دور القاعدة | حي دور القاعدة |  | 30.01579,47.93458 | in -
+  n3750255125 | village | حي دور الموانئ الاولى | حي دور الموانئ الاولى |  | 30.03982,47.91884 | in -
+  n3751509185 | village | حي دور الموانئ الثانية | حي دور الموانئ الثانية |  | 30.03455,47.92453 | in -
+  n3760579309 | village | حي فلسطين | حي فلسطين |  | 30.02953,47.93385 | in -
+  n7994401192 | village | خزعل آباد |  |  | 30.13916,48.41484 | in -
+  n1236345630 | locality | دباية الضبعية | دباية الضبعية |  | 28.95000,47.29389 | in -
+  n1236345906 | locality | دباية العاذرية | دباية العاذرية |  | 28.81750,47.40167 | in -
+  n1236345309 | locality | دباية عصيفيرة | دباية عصيفيرة |  | 28.66482,47.41049 | in -
+  n1236349521 | locality | دباية عصيفيرة | دباية عصيفيرة |  | 28.69667,46.86778 | in -
+  n2487918018 | locality | طريق التعاون رقم ٦ | طريق التعاون رقم ٦ |  | 30.04879,48.30121 | in -
+  n7994401197 | village | عراضه |  |  | 30.07669,48.45555 | in -
+  n7994425863 | village | علم |  |  | 29.97198,48.57014 | in -
+  n7994425862 | village | عوفی |  |  | 29.96919,48.57601 | in -
+  n7994425864 | village | عیاش شنوف |  |  | 29.97174,48.56694 | in -
+  n9805219988 | neighbourhood | قصبة المعمرة | قصبة المعمرة |  | 29.98092,48.52108 | in -
+  n9805219987 | neighbourhood | قصبة النصار | قصبة النصار |  | 29.98940,48.50229 | in -
+  n4110487400 | locality | محل سعيد لصبغ وسمكرة السيارات | محل سعيد لصبغ وسمكرة السيارات |  | 30.11644,47.71982 | in -
+  n9557637168 | neighbourhood | منطقة كبد |  |  | 29.09892,47.71937 | in Kabad
+  n7994425861 | village | ناهی |  |  | 29.97323,48.57408 | in -
+  n7994425865 | village | نشمی |  |  | 29.97037,48.55515 | in -
+  n7994425860 | village | نهر حاجی محمد |  |  | 29.97542,48.58562 | in -
+  n7994401194 | village | نهر سلیم |  |  | 30.11024,48.43315 | in -
+  n7994401193 | village | نهر عفادله |  |  | 30.10312,48.43761 | in -
+  n7994401191 | village | نهر کوت |  |  | 30.13669,48.41483 | in -
+  n4110487396 | locality | ورشة جاسم (ابو امجد) لغسل وتبديل دهن السيارات | ورشة جاسم (ابو امجد) لغسل وتبديل دهن السيارات |  | 30.11467,47.72654 | in -
