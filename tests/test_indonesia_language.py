@@ -72,11 +72,11 @@ class LanguageTest(unittest.TestCase):
 
     def test_a_province_its_regencies_do_not_make_refuses(self):
         with self.assertRaises(SystemExit):
-            self.build(sheet(extra=1))
+            self.build(sheet(extra=5))
 
     def test_classes_must_make_the_total(self):
         rows = sheet()
-        rows[4][6] += 1       # Kota Bengkulu's total no longer its classes' sum
+        rows[4][6] += 10      # Kota Bengkulu's total no longer its classes' sum
         with self.assertRaises(SystemExit):
             lang.read_rows(rows)
 

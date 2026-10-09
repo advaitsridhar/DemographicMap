@@ -36,7 +36,9 @@ Lake Toba's row is blank. A province's composition is its own row.
 **Checks**, each a refusal: in every row the four first-language classes make
 the population aged five and over, and so do the two ability classes; the
 regencies make their province class by class, and the provinces the country,
-whose population aged five and over must be 253,679,348.
+whose population aged five and over must be 253,679,348. Every cell is a
+weighted estimate rounded on its own, so a sum may miss by a person per
+class or per part, and by no more (the log names the widest miss).
 
 Usage:
     python -m scripts.fetch_census.indonesia_language
@@ -104,7 +106,9 @@ def read_rows(rows: list[list[Any]]) -> list[dict[str, Any]]:
         everyone = age.count(row[at[total]], f"{where} {total}")
         first = {label: age.count(row[at[c]], f"{where} {c}") for c, label in FIRST.items()}
         able = sum(age.count(row[at[c]], f"{where} {c}") for c in ABLE)
-        if sum(first.values()) != everyone or able != everyone:
+        # Each cell is a weighted estimate rounded on its own, so the classes
+        # may miss the total by a person per class, and no more.
+        if abs(sum(first.values()) - everyone) > len(FIRST) or abs(able - everyone) > len(ABLE):
             raise SystemExit(f"indonesia_language: {where}: first languages make "
                              f"{sum(first.values()):,} and the ability question {able:,}, "
                              f"against {everyone:,} aged five and over")
@@ -131,15 +135,27 @@ def check_sums(rows: list[dict[str, Any]]) -> None:
             c.update(p["groups"])
         return c
 
+    # Rounded estimates summed: a part may carry half a person's rounding
+    # each way, so a whole may miss its parts' sum by up to one person per
+    # part, and a wider miss is a misread.
+    worst = (0, "")
     for whole, parts, what in (
             [(country[0], provinces, "the provinces")]
             + [(p, [r for r in regencies if fold(r["adm1"]) == fold(p["adm1"])],
                 f"{p['adm1']}'s regencies") for p in provinces]):
-        if not parts or add(parts) != Counter(whole["groups"]):
-            raise SystemExit(f"indonesia_language: {what} do not make "
-                             f"{whole['adm1'] or 'the country'} class by class")
+        if not parts:
+            raise SystemExit(f"indonesia_language: {what}: none")
+        made = add(parts)
+        for label in FIRST.values():
+            miss = abs(made[label] - whole["groups"][label])
+            if miss > len(parts):
+                raise SystemExit(f"indonesia_language: {what} make {made[label]:,} for "
+                                 f"{label}, against {whole['groups'][label]:,} for "
+                                 f"{whole['adm1'] or 'the country'}")
+            worst = max(worst, (miss, f"{label} in {whole['adm1'] or 'the country'}"))
     log(f"  {len(regencies)} regencies make their {len(provinces)} provinces and the provinces "
-        f"the country's {NATIONAL_5PLUS:,} aged five and over, class by class")
+        f"the country's {NATIONAL_5PLUS:,} aged five and over, class by class (the widest "
+        f"rounding miss {worst[0]} people, {worst[1]})")
 
 
 def fields(row: dict[str, Any], whose: str) -> dict[str, Any]:
