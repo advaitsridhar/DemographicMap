@@ -107,6 +107,49 @@ class Wards(unittest.TestCase):
         self.assertEqual(sc.add_up([("01", "01"), ("01", "02")], table), [4, 6])
 
 
+class PublishedMedians(unittest.TestCase):
+    """P3.1's medians against the volume's own summary of main indicators."""
+
+    POPULATIONS = [30775, 94106, 31420, 30318, 4100, 154022, 172740, 51587, 22319, 129569]
+
+    def setUp(self):
+        codes = sorted(sc.PROVINCES)
+        self.people = {"provinces": {c: [p, p // 2, p - p // 2]
+                                     for c, p in zip(codes, self.POPULATIONS)}}
+        # Ten in every five-year group: the middle person is at 45.0 everywhere.
+        self.ages = {"provinces": {c: [10] * 18 for c in codes}}
+
+    def summary(self, medians=None, populations=None):
+        medians = medians or ["45.0"] * 13
+        populations = populations or self.POPULATIONS
+        return ("vii\nSUMMARY OF MAIN INDICATORS\n"
+                "Total Population 720,956 199,138 521,818 "
+                + " ".join(f"{p:,}" for p in populations) + "\n"
+                + "Median age " + " ".join(medians) + "\n")
+
+    def test_every_province_and_the_country_agree_with_the_summary(self):
+        got = sc.check_medians([self.summary()], self.people, self.ages)
+        self.assertEqual(got["Solomon Islands"], (45.0, 45.0))
+        self.assertEqual(got["Honiara"], (45.0, 45.0))
+        self.assertEqual(len(got), 11)
+
+    def test_a_whole_year_printed_without_its_point_is_read(self):
+        medians = ["45.0", "23.9", "45"] + ["45.0"] * 10
+        got = sc.check_medians([self.summary(medians)], self.people, self.ages)
+        self.assertEqual(got["Choiseul"], (45.0, 45.0))
+
+    def test_a_province_off_by_more_than_the_slack_stops_the_run(self):
+        medians = ["45.0"] * 3 + ["45.4"] + ["45.0"] * 9
+        with self.assertRaises(SystemExit) as caught:
+            sc.check_medians([self.summary(medians)], self.people, self.ages)
+        self.assertIn("Choiseul", str(caught.exception))
+
+    def test_columns_out_of_order_stop_the_run(self):
+        swapped = [self.POPULATIONS[1], self.POPULATIONS[0]] + self.POPULATIONS[2:]
+        with self.assertRaises(SystemExit):
+            sc.check_medians([self.summary(populations=swapped)], self.people, self.ages)
+
+
 class Fields(unittest.TestCase):
     def test_a_constituency_has_no_ethnic_group_and_says_where_it_comes_from(self):
         ages = [10] * 18

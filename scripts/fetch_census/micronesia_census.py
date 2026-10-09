@@ -58,8 +58,9 @@ Piherech: the islet of Namonuito Atoll the other spellings call Pisaras.
 every table and add up to their state (within the few people the 2023
 tables' own rows disagree by), so none goes unread; the states add up to the
 country; every
-unit's men and women add up to its total; a published median lies within two
-years of the one its five-year groups give; ethnicity's single groups and its
+unit's men and women add up to its total; a published median lies inside the
+five-year group that holds the unit's middle person, and within a year of
+the one interpolated in its groups; ethnicity's single groups and its
 mixed answers add up to the unit's people, and religion's and language's
 categories to their tables' totals. In Table P1-4 every line's groups make
 its total, each region's municipalities make the region, the regions their
@@ -556,10 +557,40 @@ def check_age(unit: str, got: dict[str, Any], year: int) -> None:
         check(abs(sum(n for _, _, n in groups) - total) <= 2,
               f"micronesia_census: {unit}'s {year} age groups add up to "
               f"{sum(n for _, _, n in groups)}, not {total}")
-        computed = median_from_groups(sorted(groups, key=lambda g: g[0]))
-        check(computed is not None and abs(computed - median) <= 2.0,
+        ordered = sorted(groups, key=lambda g: g[0])
+        computed = median_from_groups(ordered)
+        # The middle person's group bounds the median exactly, whatever the
+        # ages inside it: a printed figure outside it is another row's.
+        low, high = middle_group(ordered)
+        check(low - GROUP_SLACK <= median <= (high + 1 if high is not None else 200) + GROUP_SLACK,
+              f"micronesia_census: {unit}'s {year} median is printed {median}, outside the "
+              f"group {low}-{high} that holds its middle person")
+        check(computed is not None and abs(computed - median) <= MEDIAN_SLACK_GROUPED,
               f"micronesia_census: {unit}'s {year} median is printed {median}, its five-year "
               f"groups give {computed}")
+        SPREAD.append((abs(computed - median), unit, year, median, computed))
+
+
+# A printed median, to a tenth, may sit a rounding's width outside the group
+# that holds the middle person; more is a misread.
+GROUP_SLACK = 0.05
+# How far the office's printed median (from single years) may lie from the one
+# interpolated within its own five-year groups: interpolation within a group
+# runs off in small, young populations by up to about half a year here
+# (measured on every state and municipality; see the run's log).
+MEDIAN_SLACK_GROUPED = 1.0
+# (difference, unit, year, printed, interpolated) for every unit checked, for the log.
+SPREAD: list[tuple[float, str, int, float, float]] = []
+
+
+def middle_group(groups: list[tuple[int, int | None, float]]) -> tuple[int, int | None]:
+    """(low, high) of the group in which the cumulative count reaches half the total."""
+    half, before = sum(n for _, _, n in groups) / 2, 0.0
+    for low, high, n in groups:
+        if before + n >= half:
+            return low, high
+        before += n
+    return groups[-1][0], groups[-1][1]
 
 
 def add_up(state: str, got: dict[str, dict[str, Any]], expected: float, year: int) -> None:
@@ -855,6 +886,11 @@ def main() -> int:
     municipal = {s: municipal_fields(s, n23, books23, books10, eth2000) for s in STATES}
     records = build(n23, r23, eth10, lang10, people10, municipal,
                     load_units("FSM", "admin1"), load_units("FSM", "admin2"))
+    widest = sorted(SPREAD, reverse=True)[:5]
+    log(f"  printed medians against their own five-year groups, {len(SPREAD)} units: within "
+        f"{widest[0][0]:.1f} years at most; the widest "
+        + ", ".join(f"{u} {y} {p} v {c}" for _, u, y, p, c in widest)
+        if SPREAD else "  no printed median had five-year groups to check it against")
     log("  " + summarise(records))
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} records")

@@ -128,5 +128,26 @@ class Language(unittest.TestCase):
         self.assertEqual(fields["language"]["status"], "not_available")
 
 
+class TheOfficesMedians(unittest.TestCase):
+    """Table 4 of the Analytical Report: the office's single-year medians."""
+
+    GROUPED = {"PENAMA": 19.2, "SANMA": 20.1}
+
+    def test_a_province_with_no_town_takes_the_offices_own(self):
+        got = vc.province_median("PENAMA", [], self.GROUPED, "five-year note")
+        self.assertEqual(got["median_age"]["value"], 18.6)
+        self.assertIn("Table 4", got["median_age"]["source"])
+        self.assertIn("19.2", got["median_age_note"])
+
+    def test_a_province_with_a_town_keeps_its_groups_and_quotes_the_rural_figure(self):
+        got = vc.province_median("SANMA", ["Luganville"], self.GROUPED, "five-year note.")
+        self.assertNotIn("median_age", got)
+        self.assertIn("19.8 for the province without Luganville", got["median_age_note"])
+        self.assertTrue(got["median_age_note"].startswith("five-year note."))
+
+    def test_the_table_covers_the_country_and_every_province(self):
+        self.assertEqual(set(vc.TABLE_4), set(vc.PROVINCES) | {"VANUATU"})
+
+
 if __name__ == "__main__":
     unittest.main()

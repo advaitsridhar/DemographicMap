@@ -32,8 +32,10 @@ language (P9.7, P9.8); so language is left with that reason at both levels.
 **Checks**, each refusing the run: the country is 720,956 people; every row's
 males and females make its total; a province's wards make the province;
 every row's age groups and denominations make its total and that total is
-P2.2's; every ward is read from all three tables and found in the ward table
-once; every drawn constituency and province is bound once.
+P2.2's; the medians P3.1 gives the country and each province are within 0.3
+years of the ones the volume's "Summary of main indicators" prints (they
+agree to the tenth); every ward is read from all three tables and found in
+the ward table once; every drawn constituency and province is bound once.
 
 Usage:
     python -m scripts.fetch_census.solomon_census
@@ -295,6 +297,69 @@ def add_up(keys: list[tuple[str, str]], table: dict[tuple[str, str], list[float]
     return [sum(table[k][i] for k in keys) for i in range(len(table[keys[0]]))]
 
 
+# The Basic Tables' "Summary of main indicators" (p. vii) prints, for the
+# country, its urban and rural sectors and the ten provinces in code order,
+# each column's population and median age. The medians computed here from
+# P3.1 must be the office's own to within MEDIAN_SLACK years, the country's
+# included; the population row places the columns, each province's being its
+# P2.2 total.
+SUMMARY = "SUMMARY OF MAIN INDICATORS"
+SUMMARY_ROWS = ("Total Population", "Median age")
+SUMMARY_COLUMNS = 3 + len(PROVINCES)
+MEDIAN_SLACK = 0.3
+SUMMARY_CELL = re.compile(r"\d{1,3}(?:,\d{3})*(?:\.\d)?")
+
+
+def summary_rows(pages: list[str]) -> dict[str, list[float]]:
+    """The summary page's population and median-age rows, a figure a column."""
+    for page in pages:
+        if SUMMARY not in page:
+            continue
+        rows: dict[str, list[float]] = {}
+        for line in page.splitlines():
+            line = " ".join(line.split())
+            for label in SUMMARY_ROWS:
+                if line.startswith(label + " ") and label not in rows:
+                    cells = line[len(label):].split()
+                    if (len(cells) == SUMMARY_COLUMNS
+                            and all(SUMMARY_CELL.fullmatch(c) for c in cells)):
+                        rows[label] = [float(c.replace(",", "")) for c in cells]
+        if set(rows) == set(SUMMARY_ROWS):
+            return rows
+    raise SystemExit("solomon_census: no summary of main indicators with a population and a "
+                     f"median-age row of {SUMMARY_COLUMNS} figures")
+
+
+def grouped(counts: list[float]) -> float | None:
+    return median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, counts)])
+
+
+def check_medians(pages: list[str], people: dict[str, Any], ages: dict[str, Any]
+                  ) -> dict[str, tuple[float | None, float]]:
+    """{column: (computed, printed)} for the country and every province, all within slack."""
+    rows = summary_rows(pages)
+    population, printed = rows["Total Population"], rows["Median age"]
+    check(population[0] == NATIONAL,
+          f"solomon_census: the summary's first column counts {population[0]:,.0f}, not "
+          f"{NATIONAL:,}")
+    national = [sum(v[i] for v in ages["provinces"].values()) for i in range(len(AGE_GROUPS))]
+    out = {"Solomon Islands": (grouped(national), printed[0])}
+    for i, code in enumerate(sorted(PROVINCES)):
+        column = 3 + i
+        check(population[column] == people["provinces"][code][0],
+              f"solomon_census: the summary's column {column + 1} counts "
+              f"{population[column]:,.0f}, and P2.2 {PROVINCES[code]} "
+              f"{people['provinces'][code][0]:,.0f}")
+        out[PROVINCES[code]] = (grouped(ages["provinces"][code]), printed[column])
+    for name, (computed, published) in out.items():
+        check(computed is not None and abs(computed - published) <= MEDIAN_SLACK,
+              f"solomon_census: {name}'s median age is {computed} from P3.1, and the summary "
+              f"of main indicators prints {published}")
+    log("  median ages from P3.1 against the summary of main indicators: "
+        + ", ".join(f"{n} {c} ({p})" for n, (c, p) in out.items()))
+    return out
+
+
 # ---------------------------------------------------------------------------
 # Records
 # ---------------------------------------------------------------------------
@@ -371,9 +436,7 @@ def build(pages: list[str], wards: dict[tuple[str, str], dict[str, str]],
     religion = read_breakdown(pages, "P8.3", people)
     ethnicity = read_ethnicity(pages, people)
     constituency_of = assign_wards(people, wards)
-    national = [sum(v[i] for v in ages["provinces"].values()) for i in range(len(AGE_GROUPS))]
-    log(f"  the country's median age "
-        f"{median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, national)])}")
+    check_medians(pages, people, ages)
 
     members: dict[str, list[tuple[str, str]]] = {}
     for key, code in sorted(constituency_of.items()):

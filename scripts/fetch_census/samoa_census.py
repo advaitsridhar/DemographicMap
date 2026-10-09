@@ -72,7 +72,8 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, write_json
 from .binding import fold
 from .oceania_common import (
-    bind_level, check, load_units, median_from_single_years, number, population, rows_of,
+    bind_level, check, load_units, median_from_single_years, number, population,
+    published_median, rows_of,
     sex_ratio, shares_of, summarise, unit_record, workbook,
 )
 
@@ -91,6 +92,9 @@ CITIZENSHIP_HEADINGS = ("YES BORN IN SAMOA", "YES BORN ABROAD", "YES SAMOA  CITI
                         "NATURALISATION", "NO NOT A CITIZEN")
 CITIZENS_2021, NON_CITIZENS_2021 = 204_339, 1_218
 NATIONAL_2016 = 195_979
+# The Fact Sheet's median age for Samoa (indicator DS.3), which Table 1's single
+# years must give within oceania_common.MEDIAN_SLACK.
+NATIONAL_MEDIAN = 22.0
 REGIONS = ("Apia Urban Area", "North West Upolu", "Rest of Upolu", "Savaii")
 UPOLU = {"Apia Urban Area", "North West Upolu", "Rest of Upolu"}
 
@@ -462,6 +466,9 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
     for (_, village, a), (_, _, c) in zip(people["villages"], citizenship["villages"]):
         check(c[0] == a[0], f"samoa_census: Table 8a counts {c[0]:,.0f} in {village}, Table 1 "
                             f"{a[0]:,.0f}")
+    national = median_from_single_years({age: cell(people["total"], i) for age, i in ages_at})
+    log("  Samoa's median age from Table 1's single years: "
+        + published_median(national, NATIONAL_MEDIAN, "samoa_census: Samoa"))
 
     placed, new_villages = place_villages(old, people["villages"])
     for line in new_villages:

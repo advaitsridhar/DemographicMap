@@ -95,6 +95,25 @@ def check(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
+# How far a median computed from a census's ages may lie from the one its
+# office prints for the same people: 0.3 years. A figure printed in whole years
+# stands for anything that rounds to it, so it allows half a year more.
+MEDIAN_SLACK = 0.3
+
+
+def published_median(computed: float | None, published: float, what: str,
+                     whole_years: bool = False) -> str:
+    """Refuse a computed median the office's own printed one contradicts.
+
+    Returns a short account of the comparison, for the run's log.
+    """
+    allowed = MEDIAN_SLACK + (0.5 if whole_years else 0.0)
+    check(computed is not None and abs(computed - published) <= allowed + 1e-9,
+          f"{what}: the census's ages give a median of {computed}, and the office prints "
+          f"{published}{' (whole years)' if whole_years else ''}, more than {allowed} apart")
+    return f"{what} {computed} (printed {published:g})"
+
+
 FIGURE = re.compile(r"^(?:\d{1,3}(?:,\d{3})*(?:\.\d+)?|-)$")
 
 

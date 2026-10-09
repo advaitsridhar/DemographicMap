@@ -43,7 +43,7 @@ and Western carry their division's.
 Fiji's 884,887 and each division to its provinces; each province is within 1%
 of the Bureau's own 2017 count (Release 1, Table 3) -- the PopGIS tabulation
 places a few dozen people differently -- and Fiji's interpolated median is
-within half a year of the published 27.5; every row's age groups and sexes
+within 0.3 years of the published 27.5; every row's age groups and sexes
 make its total. In Table P01-3 every column's relationship, ethnicity and
 religion totals agree and equal the 2007 count Release 1 prints for the
 province, the eight ethnic groups make the total exactly, the Christian row
@@ -67,8 +67,8 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .binding import fold
 from .oceania_common import (
-    bind_level, check, load_units, median_from_groups, population, sex_ratio, shares_of,
-    summarise, unit_record,
+    bind_level, check, load_units, median_from_groups, population, published_median,
+    sex_ratio, shares_of, summarise, unit_record,
 )
 
 OUT = "fiji_census.json"
@@ -86,6 +86,7 @@ AGES_SOURCE = (f"{OFFICE}, 2017 Population and Housing Census, population by fiv
 P013_ORIGINAL = ("http://www.statsfiji.gov.fj/index.php/document-library/doc_download/"
                  "1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007")
 P013_URL = "http://web.archive.org/web/20150325124401id_/" + P013_ORIGINAL
+P013_CAPTURE = "http://web.archive.org/web/20150325124401/" + P013_ORIGINAL
 P013_SOURCE = (f"{OFFICE}, 2007 Census of Population and Housing, Table P01-3: "
                f"Relationship, Ethnicity, and Religion by Province of Enumeration")
 RELEASE_1_URL = ("https://www.statsfiji.gov.fj/download/121/phc-2017/727/"
@@ -249,10 +250,8 @@ def check_ages(provinces: dict[str, dict[str, Any]],
         for low, high, n in unit["groups"]:
             groups[(low, high)] = groups.get((low, high), 0) + n
     median = median_from_groups([(lo, hi, n) for (lo, hi), n in groups.items()])
-    check(median is not None and abs(median - MEDIAN_2017) <= 0.5,
-          f"fiji_census: Fiji's interpolated median is {median}, the Bureau's {MEDIAN_2017}")
-    log(f"  2017 ages: 15 provinces adding to {total:,} and to their divisions; Fiji's "
-        f"interpolated median {median} against the published {MEDIAN_2017}")
+    compared = published_median(median, MEDIAN_2017, "fiji_census: Fiji")
+    log(f"  2017 ages: 15 provinces adding to {total:,} and to their divisions; {compared}")
 
 
 # ---------------------------------------------------------------------------
@@ -397,8 +396,10 @@ def fields_for(ages: dict[str, Any], composition: dict[str, Any]) -> dict[str, A
 SOURCES = [
     {"field": "median_age/sex_ratio", "name": AGES_SOURCE, "url": COD_PAGE, "year": YEAR,
      "license": "Creative Commons Attribution for Intergovernmental Organisations"},
-    {"field": "religion/ethnicity", "name": P013_SOURCE, "url": P013_ORIGINAL,
-     "archived": P013_URL, "year": YEAR_2007, "license": LICENCE},
+    # The Bureau's own address is gone (404); the Internet Archive's capture of
+    # it is what was read, and what a reader can open.
+    {"field": "religion/ethnicity", "name": P013_SOURCE, "url": P013_CAPTURE,
+     "original_url": P013_ORIGINAL, "year": YEAR_2007, "license": LICENCE},
     {"field": "controls", "name": f"{OFFICE}, 2017 Population and Housing Census, Release 1",
      "url": RELEASE_1_URL, "year": YEAR, "license": LICENCE},
 ]

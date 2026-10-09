@@ -35,7 +35,7 @@ Tabulations, Table 28), never by district.
 district's ethnic groups add up to its people; its five-year groups from 15
 up to no more than its people; each district's religions add up to its
 citizens (Table H-1), and Table 19's districts to the country's 11,215; the
-national median computed the same way is within half a year of the 21.6
+national median computed the same way is within 0.3 years of the 21.6
 the Analytical Report prints.
 
 Usage:
@@ -51,8 +51,8 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
-    bind_level, check, load_units, median_from_groups, number, population, sex_ratio,
-    shares_of, summarise, unit_record, workbook,
+    bind_level, check, load_units, median_from_groups, number, population, published_median,
+    sex_ratio, shares_of, summarise, unit_record, workbook,
 )
 
 OUT = "nauru_census.json"
@@ -343,10 +343,8 @@ def build(tables: dict[str, Any], religion: dict[int, dict[str, float]],
         (lo, hi, sum(tables["ages15"][c][i][2] for c in DISTRICTS))
         for i, (lo, hi, _) in enumerate(tables["ages15"][1])]
     computed = median_from_groups(national)
-    check(computed is not None and abs(computed - NATIONAL_MEDIAN) <= 0.5,
-          f"nauru_census: the national median from these groups is {computed}, the report's "
-          f"{NATIONAL_MEDIAN}")
-    log(f"  national median from the same groups: {computed:.1f} (report: {NATIONAL_MEDIAN})")
+    log("  national median from the same groups: "
+        + published_median(computed, NATIONAL_MEDIAN, "nauru_census: Nauru"))
     records = []
     rows = {DISTRICTS[c]: (DISTRICTS[c], "") for c in DISTRICTS if c != LOCATION}
     codes = {name: c for c, name in DISTRICTS.items()}

@@ -73,8 +73,8 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
-    bind_level, check, load_units, median_from_groups, population, sex_ratio, shares_of,
-    summarise, unit_record,
+    bind_level, check, load_units, median_from_groups, population, published_median,
+    sex_ratio, shares_of, summarise, unit_record,
 )
 
 YEAR = 2020
@@ -86,6 +86,25 @@ URL = ("https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/B
        "2020NPHC_Volume_1_-_Version_2.pdf")
 NATIONAL = 300_019
 PRIVATE = 293_963
+# The office's own medians, from single years of age: the Analytical Report,
+# Volume 2, Table 4, 2020 rows (report pp. 12-13), read off the rendered pages,
+# which have no text layer. Its provinces are their rural parts -- Sanma
+# without Luganville and Shefa without Port Vila: their sex ratios (107, 101)
+# are the rural rows' of Volume 1's key indicators, and Shefa's 22.2 sits
+# inside the rural 22-and-over there and below Port Vila's 24-and-over, so the
+# province with its town would be older -- and for the four provinces with no
+# town it is the province's own.
+REPORT = f"{OFFICE}, 2020 National Population and Housing Census, Analytical Report Volume 2"
+REPORT_URL = ("https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/"
+              "2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_"
+              "Volume_2.pdf")
+TABLE_4 = {"VANUATU": 20.9, "TORBA": 19.9, "SANMA": 19.8, "PENAMA": 18.6, "MALAMPA": 20.8,
+           "SHEFA": 22.2, "TAFEA": 17.4}
+# How far Table 2.1's five-year groups may put a rural province from Table 4's
+# single-year median and still be the same people: interpolating within a
+# five-year group in a population this young runs high, by up to 0.6 years
+# here (Penama, Tafea).
+GROUPED_SLACK = 1.0
 
 # How many figures a row carries in each of a table's panels.
 WIDTHS = {"1.1": (12,), "2.1": (9, 7), "3.1": (9,), "3.5": (9, 6), "6.16": (9, 7),
@@ -464,7 +483,28 @@ def fields_for(people: dict[str, float], groups: list[float], religion: dict[str
 SOURCES = [{"field": "population/median_age/sex_ratio/religion/ethnicity/language",
             "name": SOURCE, "url": URL, "year": YEAR,
             "license": "None stated -- Vanuatu National Statistics Office publication, cited "
+                       "as such"},
+           {"field": "median_age (Torba, Penama, Malampa, Tafea; a control elsewhere)",
+            "name": f"{REPORT}, Table 4", "url": REPORT_URL, "year": YEAR,
+            "license": "None stated -- Vanuatu National Statistics Office publication, cited "
                        "as such"}]
+
+
+def province_median(province: str, towns: list[str], grouped: dict[str, float | None],
+                    note: str) -> dict[str, Any]:
+    """The office's own median for a province with no town; with a town, a word on it."""
+    if towns:
+        return {"median_age_note": note + (
+            f" The office's own median, from single years, is {TABLE_4[province]} for the "
+            f"province without {towns[0]} (Analytical Report, Volume 2, Table 4); it prints "
+            "none for the province with its town.")}
+    return {
+        "median_age": measure(TABLE_4[province], unit="years", year=YEAR,
+                              source=f"{REPORT} (Table 4)"),
+        "median_age_note": (
+            "The office's own median age, from single years of age (Analytical Report, "
+            f"Volume 2, Table 4). Table 2.1's five-year groups give {grouped[province]}."),
+    }
 
 
 def build(pages: list[str], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
@@ -476,10 +516,19 @@ def build(pages: list[str], admin1: list[dict[str, Any]], admin2: list[dict[str,
     language = read_language(pages, order, people)
     aged = aged_three_plus(pages, order, people)
     swapped = settle_towns(aged, language, people)
-    log(f"  Vanuatu's median age "
-        f"{median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, ages['VANUATU'])])}"
-        f"; Table 6.16 counts {language['VANUATU']['total']:,.0f} people aged 3+ of "
+    grouped = {row: median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, ages[row])])
+               for row in TABLE_4}
+    log("  Vanuatu's median age from Table 2.1: "
+        + published_median(grouped["VANUATU"], TABLE_4["VANUATU"], "vanuatu_census: Vanuatu")
+        + f"; Table 6.16 counts {language['VANUATU']['total']:,.0f} people aged 3+ of "
         f"{people['VANUATU']['private']:,.0f} in private households")
+    for province in PROVINCES:
+        check(grouped[province] is not None
+              and abs(grouped[province] - TABLE_4[province]) <= GROUPED_SLACK,
+              f"vanuatu_census: rural {province}'s five-year groups give a median of "
+              f"{grouped[province]}, the Analytical Report's Table 4 {TABLE_4[province]}")
+    log("  rural provinces' medians, Table 2.1's five-year groups against Table 4: "
+        + ", ".join(f"{p} {grouped[p]} ({TABLE_4[p]})" for p in PROVINCES))
 
     parents = {u["id"]: u["name"] for u in admin1}
     province_units = bind_level({p: (PROVINCE_ON_MAP[p], "") for p in PROVINCES}, admin1, {})
@@ -495,6 +544,7 @@ def build(pages: list[str], admin1: list[dict[str, Any]], admin2: list[dict[str,
                             with_town(province, religion), with_town(province, ethnicity),
                             with_town(province, language), with_town(province, aged),
                             swapped=bool(set(towns) & set(swapped)))
+        fields.update(province_median(province, towns, grouped, fields["median_age_note"]))
         if towns:
             fields["population_note"] += (f" The province's rural councils and {towns[0]}, "
                                           "which the tables print under 'Urban'.")

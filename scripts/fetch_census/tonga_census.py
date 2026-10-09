@@ -36,9 +36,13 @@ mostly Niuatoputapu's people and the polygon is Niuafo'ou.
 
 **Checks**, each refusing the run: every row's males and females make its
 total; the districts make their division and the divisions make Tonga
-(100,179); each age distribution makes its row's total; each religion row's
+(100,179); each age distribution makes its row's total; the medians G 6
+gives Tonga and its five divisions are the whole years the Census Report
+(Volume 1, key indicators) prints, within 0.3 years; each religion row's
 denominations make its total; each language row's three answers make its
 total and the divisions make Tonga's 89,254; every drawn unit is bound once.
+Ethnic origin is written with ``ethnicity_basis`` "ethnic origin
+(multi-response)", since a person may give two.
 
 Usage:
     python -m scripts.fetch_census.tonga_census
@@ -53,7 +57,7 @@ from ._shared import PROCESSED, gap, log, measure, write_json, NOT_AVAILABLE
 from .binding import fold
 from .oceania_common import (
     bind_level, check, load_units, median_from_groups, median_from_single_years,
-    number, population, rows_of, sex_ratio, shares_of, summarise,
+    number, population, published_median, rows_of, sex_ratio, shares_of, summarise,
     unit_record, workbook,
 )
 
@@ -70,6 +74,13 @@ URLS = {
 }
 PAGE = "https://tongastats.gov.to/census-2/population-census-3/census-tables/"
 NATIONAL = 100_179
+# The medians the Department prints for the country and its divisions, in whole
+# years: the 2021 Census Report, Volume 1, key indicators (p. 13). G 6's single
+# years must give the same, within oceania_common.MEDIAN_SLACK.
+REPORT_URL = ("https://tongastats.gov.to/download/272/census-report-and-factsheet/7647/"
+              "census-report-vol1-2021.pdf")
+PUBLISHED_MEDIANS = {"TONGA": 22, "Tongatapu": 22, "Vava'u": 22, "Ha'apai": 22, "'Eua": 21,
+                     "Ongo Niua": 23}
 
 DIVISIONS = ("Tongatapu", "Vava'u", "Ha'apai", "'Eua", "Ongo Niua")
 # The census's division name -> the map's first-level label.
@@ -428,6 +439,7 @@ def fields_for(name: str, people: dict[str, float], median: float | None,
         "religion_note": text_notes["religion_note"],
         "ethnicity": shares_of(ethnicity, people["total"]),
         "ethnicity_year": YEAR,
+        "ethnicity_basis": "ethnic origin (multi-response)",
         "ethnicity_note": text_notes["ethnicity_note"],
         **({"language": shares_of(language["counts"], language["total"]),
             "language_year": YEAR, "language_note": LANGUAGE_NOTE}
@@ -446,7 +458,9 @@ def build(population_book, ethnicity_book, religion_book, literacy_book,
     districts = [d for ds in tree.values() for d in ds]
     medians = {**division_medians(rows_of(population_book, "G 6"), people),
                **district_medians(rows_of(population_book, "G 5"), districts, people)}
-    log(f"  Tonga's median age {medians.get('TONGA')}")
+    log("  median ages against the Census Report's key indicators: " + ", ".join(
+        published_median(medians.get(unit), printed, unit, whole_years=True)
+        for unit, printed in PUBLISHED_MEDIANS.items()))
     religion = read_religion(rows_of(religion_book, "G 19"), list(DIVISIONS) + districts)
     ethnicity = read_ethnicity(rows_of(ethnicity_book, "G 12"), list(DIVISIONS), districts,
                                people)

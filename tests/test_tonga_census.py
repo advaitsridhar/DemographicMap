@@ -186,6 +186,33 @@ class Language(unittest.TestCase):
         self.assertEqual(fields["language"]["status"], "not_available")
         self.assertIn("division only", fields["language"]["note"])
 
+    def test_ethnic_origin_says_it_is_multi_response(self):
+        fields = tc.fields_for("Foa", {"total": 100, "male": 50, "female": 50}, 20.0,
+                               {"total": 100, "counts": {"Roman Catholic": 100}},
+                               {"Tongan": 100, "European": 3}, "five-year group",
+                               tc.DISTRICT_LANGUAGE)
+        self.assertEqual(fields["ethnicity_basis"], "ethnic origin (multi-response)")
+        self.assertEqual(sum(r["pct"] for r in fields["ethnicity"]), 103.0)
+
+
+class PublishedMedians(unittest.TestCase):
+    """G 6's medians against the whole years the Census Report prints."""
+
+    def test_the_report_prints_the_country_and_every_division(self):
+        self.assertEqual(set(tc.PUBLISHED_MEDIANS), set(tc.DIVISIONS) | {"TONGA"})
+
+    def test_a_median_that_rounds_to_the_printed_year_passes(self):
+        from scripts.fetch_census.oceania_common import published_median
+        self.assertIn("22.2", published_median(22.2, 22, "TONGA", whole_years=True))
+        self.assertIn("21.1", published_median(21.1, 21, "'Eua", whole_years=True))
+
+    def test_a_median_a_year_off_stops_the_run(self):
+        from scripts.fetch_census.oceania_common import published_median
+        with self.assertRaises(SystemExit):
+            published_median(23.0, 22, "Vava'u", whole_years=True)
+        with self.assertRaises(SystemExit):
+            published_median(22.4, 22.0, "Samoa")
+
 
 if __name__ == "__main__":
     unittest.main()
