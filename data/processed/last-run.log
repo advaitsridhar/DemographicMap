@@ -1,40 +1,483 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-    ARKHABĪL SUQUŢRÁ (32): no 2004 count (a unit made since)
-    governorate 19: drawn as the sum of its districts, 984,428 (the census row counts 1,028,548)
-    governorate 32: drawn as the sum of its districts, 44,120 (no census row)
-  census: 333 districts, 22 governorates, 19,682,162 people
-  projected national median age for 2017: 17.5
-    governorate 11: 20 districts, largest age-share departure from the governorate's 0.0369
-    governorate 12: 11 districts, largest age-share departure from the governorate's 0.0329
-    governorate 13: 10 districts, largest age-share departure from the governorate's 0.0358
-    governorate 14: 20 districts, largest age-share departure from the governorate's 0.0360
-    governorate 15: 23 districts, largest age-share departure from the governorate's 0.0413
-    governorate 16: 12 districts, largest age-share departure from the governorate's 0.1448
-    governorate 17: 31 districts, largest age-share departure from the governorate's 0.0668
-    governorate 18: 26 districts, largest age-share departure from the governorate's 0.0596
-    governorate 19: 28 districts, largest age-share departure from the governorate's 0.0563
-    governorate 20: 12 districts, largest age-share departure from the governorate's 0.0310
-    governorate 21: 17 districts, largest age-share departure from the governorate's 0.0666
-    governorate 22: 15 districts, largest age-share departure from the governorate's 0.0888
-    governorate 23: 16 districts, largest age-share departure from the governorate's 0.0397
-    governorate 24: 8 districts, largest age-share departure from the governorate's 0.0247
-    governorate 25: 15 districts, largest age-share departure from the governorate's 0.0451
-    governorate 26: 14 districts, largest age-share departure from the governorate's 0.0574
-    governorate 27: 9 districts, largest age-share departure from the governorate's 0.0305
-    governorate 28: 9 districts, largest age-share departure from the governorate's 0.0281
-    governorate 29: 20 districts, largest age-share departure from the governorate's 0.0468
-    governorate 30: 9 districts, largest age-share departure from the governorate's 0.0211
-    governorate 31: 6 districts, largest age-share departure from the governorate's 0.0097
-    governorate 32: 2 districts, largest age-share departure from the governorate's 0.0131
-  governorates paired with OCHA's: 22 of 22
-  districts not bound: 0
-  OCHA districts no drawn unit took: 0
-  bound districts the census has no row for: 2: 1319; 1324
-    Sana'a City Outskirts - Hamdan (1319): the outskirts part of HAMDĀN (2301)
-    Sana'a City Outskirts -Sanhan wa Bani Bahlul (1324): the outskirts part of SANḨAN (2305)
-  bound by code, spelt differently: 48: Dhamar City = MADĪNAT DHAMĀR (2008); Qalansiyah wa Abd Al Kuri = QULANSĪYAH WA ‘ABD AL KŪRĪ (3202); Brum Mayf'ah = BURŪM MAYFA‘ (1925); Dhibain = DHĪ BĪN (2909); Al Mutun = AL MATŪN (1606); Sarar = SIRĀR (1207); Melhan = MILḨĀN (2705); Zamakh wa Manwokh = ZAMŪKH WA MANWAKH (1904); Al Qaff = AL QUFF (1903); Eyal Surayh = ‘IYĀL SURAYḨ (2918); Al Mudhaffar = AL MUZ̧AFFAR (1517); Jardan = JIRDĀN (2103); Rassd = RAŞAD (1206); Nu'man = NA‘AMĀN (1401); Thula = THILĀ’ (2917); Barat Al Anan = BARŢ AL ‘ANĀN (1610); Hajjah City = MADĪNAT ḨAJJAH (1728); Saqin = SĀQAYN (2209); Al Khukhah = AL KHAWKHAH (1820); Ar Rujum = AR RUJM (2703); Al Bayda City = MADĪNAT AL BAYḐĀ’ (1409); Al Mukalla City = MADĪNAT AL MUKALLĀ (1927); Al Mahwit City = MADĪNAT AL MAḨWĪT (2708); Radum = RUḐŪM (2117); Mahliyah = MĀHILĪYAH (2610); Halmin = ḨĀLIMAYN (2506); Wald Rabi' = WALAD RABĪ‘ (1415); Al Hasayn = AL ḨUŞAYN (3005); Al Ghaydhah = AL GHAYZ̧AH (2804); Kritar - Sirah = ŞĪRAH (2407); Ad Dohi = AḐ ḐAḨĪ (1809); Al Makha = AL MUKHĀ’ (1505); Al Ma'afer = AL MA‘ĀFIR (1521); Adh Dhihar = AZ̧ Z̧IHĀR (1119); Old City = ŞAN‘Ā’ AL QADĪMAH (1301); Shahin = SHIḨAN (2801); Adh Dhahir = AZ̧ Z̧ĀHIR (2207); Khur Maksar = KHAWR MAKSAR (2408); Hatib = ḨUŢAYB (2111); Al Qatn = AL QAŢAN (1907); Ad Dulay'ah = AḐ ḐALĪ‘AH (1922); Alluhayah = AL LUḨAYYAH (1802); Haridah = ḨURAYḐAH (1928); Al Malah = AL MILĀḨ (2508); Ma'rib City = MADĪNAT MA’RIB (2612); Al Mu'alla = AL MA‘ALLĀ (2406); Maghrib Ans = MAGHIRIB ‘ANS (2004); Dhulaymat Habur = ḨABŪR Z̧ULAYMAH (2908)
-  census: 22 governorates and 335 districts; projection medians: 20 governorates and 331 districts
-  wrote data/processed/yemen_census.json (1042 kB)
-  wrote data/processed/yemen_census_age.json (591 kB)
-  wrote yemen_census.json (357) and yemen_census_age.json (351)
+probe_pdf: http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf
+  4,235,532 bytes
+  374 pages
+probe_pdf: 374 pages, printing [31, 32, 75, 76, 77, 78, 79, 80]
+
+--- page 31 ----------------------------------------------------
+2000 FSM Census of Population and Housing General Tables
+Division of Statistics, Department of Economic Affairs 7
+Table P1-4A. Population in Municipalities by First Ethnicity, Federated States of Micronesia: 2000
+[For definitions of terms and meanings of symbols, see text]
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+                    /G47 /G28/G57/G4B/G51/G4C/G46/G4C/G57/G5C
+                    /G4C/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46
+                    /G47/G47 /G3C/G44/G53-/G47 /G3C/G44/G53/G47/G26/G4B/G58/G58/G4E-/G47/G30/G52/G55/G57-/G47/G33/G52/G4B/G51-/G47/G32/G58/G57/G48/G55/G47/G2E/G52/G56-/G47/G32/G57/G4B/G48/G55/G47/G29/G4C/G4F/G4C-/G47/G32/G57/G4B/G48/G55/G47/G47
+Municipality        /G47/G37/G52/G57/G44/G4F/G47 /G48/G56/G48/G47/G32/G11/G2C/G56/G11/G47 /G48/G56/G48/G47/G4F/G52/G46/G4E/G47/G53/G48/G4C/G44/G51/G47/G2C/G56/G4F/G44/G51/G47/G47/G55/G44/G48/G44/G51/G47/G33/G44/G46/G2C/G56/G47/G53/G4Cno/G47/G24/G56/G4C/G44/G51/G47/G38/G36/G24/G47/G32/G57/G4B/G48/G55
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46
+     Total          107,008  5,992  4,490 46,660  9,693 25,290  4,867  7,657    455    715   625   384   180
+Yap                  11,241  5,711  4,452    215      8     31      2      4    175    157   393    62    31
+  Yap Proper          7,391  5,702    813     21      6     29      2      3    174    157   392    61    31
+    Rumung              126    126      -      -      -      -      -      -      -      -     -     -     -
+    Maap                592    578      1      1      -      -      -      -      2      -     5     5     -
+    Gagil               734    708      3      -      3      3      1      -      -      3     -    10     3
+    Tomil             1,023    895     71      2      2      4      -      1      8     16     9    14     1
+    Fanif               547    529      -      4      1      3      -      -      5      2     2     1     -
+    Weloy             1,197    916    200      6      -      -      -      -     10     39     7     7    12
+    Rull              2,019  1,187    538      4      -     17      1      1    129     93    14    20    15
+    Gilman              233    225      -      -      -      1      -      -      5      -     -     2     -
+    Kanifay             275    273      -      -      -      -      -      -      -      -     -     2     -
+    Dalipebinaw         645    265      -      4      -      1      -      1     15      4   355     -     -
+  Outer Islands       3,850      9  3,639    194      2      2      -      1      1      -     1     1     -
+    Ulithi              773      8    760      3      1      1      -      -      -      -     -     -     -
+    Fais                215      -    214      -      -      -      -      -      -      -     -     1     -
+    Ngulu                26      -     26      -      -      -      -      -      -      -     -     -     -
+    Woleai              975      -    973      2      -      -      -      -      -      -     -     -     -
+    Eauripik            113      -    113      -      -      -      -      -      -      -     -     -     -
+    Ifalik              561      -    560      -      -      -      -      1      -      -     -     -     -
+    Faraulap            221      -    221      -      -      -      -      -      -      -     -     -     -
+    Elato                96      -     95      -      -      1      -      -      -      -     -     -     -
+    Lamotrek            339      -    158    181      -      -      -      -      -      -     -     -     -
+    Satawal             531      1    519      8      1      -      -      -      1      -     1     -     -
+Pohnpei              34,486    225     31    515  2,287 25,074  4,817    347    152    467   211   242   118
+  Pohnpei Island     32,395    224     31    515  2,286 24,440  3,363    347    152    467   211   241   118
+    Madolenihmw       5,420     28      1     43     14  5,205     46     11     42      7     4    15     4
+    U                 2,685      3      -     15     11  2,613     11      2      2      5     2    19     2
+    Nett              6,158     47      -    130    135  4,968    215     91     27    252    78   153    62
+    Sokehs            6,444     70     11    221  1,978  2,271  1,652     97     27     33    56    13    15
+    Kitti             6,007      4      1      9     11  5,928     21      4      6      5     7    10     1
+    Kolonia           5,681     72     18     97    137  3,455  1,418    142     48    165    64    31    34
+  Outer Islands       2,091      1      -      -      1    634  1,454      -      -      -     -     1     -
+    Mwoakilloa          177      -      -      -      -      1    175      -      -      -     -     1     -
+    Pingelap            438      -      -      -      -      -    438      -      -      -     -     -     -
+    Sapwuahfik          640      1      -      -      1    632      6      -      -      -     -     -     -
+    Nukuoro             362      -      -      -      -      1    361      -      -      -     -     -     -
+    Kapingamarangi      474      -      -      -      -      -    474      -      -      -     -     -     -
+Kosrae                7,686     29      -     55     11    100     35  7,281     76     40    13    37     9
+  Lelu                2,591      8      -      7      4     39      4  2,434     33     22     7    29     4
+  Malem               1,571     12      -      9      -     13      7  1,489     26      6     1     4     4
+  Utwe                1,067      2      -      2      -     13      4  1,043      1      2     -     -     -
+  Tafunsak            2,457      7      -     37      7     35     20  2,315     16     10     5     4     1
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+Source: 2000 FSM Census
+
+--- page 32 ----------------------------------------------------
+General Tables 2000 FSM Census of Population and Housing
+8  Division of Statistics, Department of Economic Affairs
+Table P1-4B. Population in Municipalities by First Ethnicity, Federated States of Micronesia: 2000
+[For definitions of terms and meanings of symbols, see text] - continued
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+                    /G47 /G28/G57/G4B/G51/G4C/G46/G4C/G57/G5C
+                    /G4C/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46
+                    /G47/G47 /G3C/G44/G53-/G47 /G3C/G44/G53/G47/G26/G4B/G58/G58/G4E-/G47/G30/G52/G55/G57-/G47/G33/G52/G4B/G51-/G47/G32/G58/G57/G48/G55/G47/G2E/G52/G56-/G47/G32/G57/G4B/G48/G55/G47/G29/G4C/G4F/G4C-/G47/G32/G57/G4B/G48/G55/G47/G47
+Municipality        /G47/G37/G52/G57/G44/G4F/G47 /G48/G56/G48/G47/G32/G11/G2C/G56/G11/G47 /G48/G56/G48/G47/G4F/G52/G46/G4E/G47/G53/G48/G4C/G44/G51/G47/G2C/G56/G4F/G44/G51/G47/G47/G55/G44/G48/G44/G51/G47/G33/G44/G46/G2C/G56/G47/G53/G4C/G51/G52/G47/G24/G56/G4C/G44/G51/G47/G38/G36/G24/G47/G32/G57/G4B/G48/G55
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46
+Chuuk                53,595     27      7 45,875  7,387     85     13     25     52     51     8    43    22
+  Northern Namoneas  14,722     22      4 13,752    693     79      8     17     46     47     7    31    16
+    Weno             13,802     22      4 12,834    691     79      8     17     46     47     7    31    16
+    Piis-Paneu          523      -      -    523      -      -      -      -      -      -     -     -     -
+    Fono                397      -      -    395      2      -      -      -      -      -     -     -     -
+  Southern Namoneas  11,694      3      2 11,675      -      1      1      1      3      4     1     3     -
+    Tonoas            3,910      2      2  3,898      -      -      -      1      2      4     1     -     -
+    Fefen             4,062      1      -  4,059      -      1      -      -      -      -     -     1     -
+    Siis                490      -      -    489      -      -      -      -      -      -     -     1     -
+    Uman              2,847      -      -  2,846      -      -      -      -      -      -     -     1     -
+    Parem               385      -      -    383      -      -      1      -      1      -     -     -     -
+  Faichuk            14,049      2      - 14,026      2      2      -      -      2      -     -     9     6
+    Eot                 382      1      -    381      -      -      -      -      -      -     -     -     -
+    Udot              1,774      -      -  1,773      -      -      -      -      -      -     -     1     -
+    Romanum           1,011      -      -  1,011      -      -      -      -      -      -     -     -     -
+    Fanapanges          681      -      -    681      -      -      -      -      -      -     -     -     -
+    Wonei             1,271      -      -  1,271      -      -      -      -      -      -     -     -     -
+    Paata             1,950      -      -  1,947      1      -      -      -      -      -     -     2     -
+    Tol               5,129      1      -  5,113      1      2      -      -      -      -     -     6     6
+    Polle             1,851      -      -  1,849      -      -      -      -      2      -     -     -     -
+  Mortlocks           6,911      -      -    214  6,692      2      2      -      1      -     -     -     -
+    Nama                995      -      -    130    864      -      1      -      -      -     -     -     -
+    Losap               448      -      -      7    441      -      -      -      -      -     -     -     -
+    Piis-Emwar          427      -      -      1    424      2      -      -      -      -     -     -     -
+    Namoluk             407      -      -      8    399      -      -      -      -      -     -     -     -
+    Ettal               267      -      -      4    263      -      -      -      -      -     -     -     -
+    Lekinioch           927      -      -      2    924      -      1      -      -      -     -     -     -
+    Oneop               505      -      -      2    503      -      -      -      -      -     -     -     -
+    Satowan             955      -      -      2    953      -      -      -      -      -     -     -     -
+    Kuttu               873      -      -     57    816      -      -      -      -      -     -     -     -
+    Moch                854      -      -      1    852      -      -      -      1      -     -     -     -
+    Ta                  253      -      -      -    253      -      -      -      -      -     -     -     -
+  Oksoritod           6,219      -      1  6,208      -      1      2      7      -      -     -     -     -
+    Houk                451      -      1    450      -      -      -      -      -      -     -     -     -
+    Polowat           1,015      -      -  1,015      -      -      -      -      -      -     -     -     -
+    Pollap              905      -      -    904      -      1      -      -      -      -     -     -     -
+    Tamatam             365      -      -    365      -      -      -      -      -      -     -     -     -
+    Makur               156      -      -    155      -      -      1      -      -      -     -     -     -
+    Onoun               598      -      -    597      -      -      1      -      -      -     -     -     -
+    Onou                182      -      -    182      -      -      -      -      -      -     -     -     -
+    Unanu               178      -      -    178      -      -      -      -      -      -     -     -     -
+    Piherarh            227      -      -    227      -      -      -      -      -      -     -     -     -
+    Nomwin              711      -      -    710      -      -      -      1      -      -     -     -     -
+    Fananu              355      -      -    355      -      -      -      -      -      -     -     -     -
+    Ruo                 469      -      -    468      -      -      -      1      -      -     -     -     -
+    Murillo             607      -      -    602      -      -      -      5      -      -     -     -     -
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+Source: 2000 FSM Census
+
+--- page 75 ----------------------------------------------------
+2000 FSM Census of Population and Housing Tabulations by Place of Usual Residence
+Division of Statistics, Department of Economic Affairs 51
+Table P2-9. Ethnicity by Usual Residence, Federated States of Micronesia: 2000
+[For definitions of terms and meanings of symbols, see text]
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+                              /G47/G47 /G3C/G44/G53 /G47 /G26/G4B/G58/G58/G4E
+                              /G47 /G4C/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G50/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46
+                              /G47/G47 /G47 /G3C/G44/G53/G47/G32/G58/G57/G48/G55/G47/G47 /G31/G52/G55/G57/G4B/G48/G55/G51/G47/G36/G52/G58/G57/G4B/G48/G55/G51/G47/G29/G44/G4C-/G47/G30/G52/G55/G57-/G47/G32/G4E/G56/G52/G55-
+Ethnicity                     /G47 /G37/G52/G57/G44/G4F/G47/G37/G52/G57/G44/G4F/G47/G33/G55/G52/G53/G48/G55/G47/G2C/G56/G4F/G44/G51/G47/G56/G47/G37/G52/G57/G44/G4F/G47/G31/G44/G50/G52/G51/G48/G44/G56/G47/G31/G44/G50/G52/G51/G48/G44/G56/G47/G46/G4B/G58/G4E/G47/G4F/G52/G46/G4E/G56/G47/G4C/G57/G52/G47
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46
+     All persons                107,008 11,241  7,391   3,850  53,595   14,722   11,694 14,049  6,911  6,219
+Single ethnic group              98,735 10,594  7,042   3,552  50,578   14,426   11,654 14,027  5,119  5,352
+  Yapese                          5,752  5,515  5,511       4      25       20        3      2      -      -
+  Ulithian                        1,104  1,101    192     909       1        1        -      -      -      -
+  Woleaian                        2,595  2,581    462   2,119       4        2        2      -      -      -
+  Satawalese                        427    415     93     322       1        -        -      -      -      1
+  Chuukese                       45,511    212     20     192  44,831   13,658   11,635 14,008    182  5,348
+  Mortlockese                     6,757      5      4       1   5,476      539        -      1  4,936      -
+  Pohnpeian/Sapwuahfikese        23,378     20     18       2      62       60        1      -      -      1
+  Pingelapese                     1,454      -      -       -       2        2        -      -      -      -
+  Mwoakilloan                     1,023      -      -       -       -        -        -      -      -      -
+  Nukuoroan                         520      -      -       -       5        4        -      -      -      1
+  Kapingamarangian                  964      -      -       -       1        -        1      -      -      -
+  Kosraean                        7,169      3      2       1      12       10        1      -      -      1
+  Palauan                           151    105    105       -      12       12        -      -      -      -
+  Marshallese                        92      -      -       -      13       12        1      -      -      -
+  Other Pacific Islands             111     28     27       1      18       13        2      2      1      -
+  White                             432     67     66       1      52       37        3     12      -      -
+  Asian                           1,265    536    536       -      55       50        5      -      -      -
+    Filipino                        686    152    152       -      49       45        4      -      -      -
+    Chinese/Taiwanese               410    351    351       -       -        -        -      -      -      -
+  Other Single                       30      6      6       -       8        6        -      2      -      -
+Multiple ethnic group             8,273    647    349     298   3,017      296       40     22  1,792    867
+  Yapese and other                1,029    864    428     436      31       13       10      3      4      1
+  Chuukese and other              7,950    176     26     150   5,820      470       47     29  3,559  1,715
+  Pohnpeian and other             5,698     44     43       1      99       50        7     11     20     11
+  Kosraen and other                 833     13     13       -      19       12        -      -      -      7
+  Other Multiple                  1,036    197    188       9      65       47       16      1      1      -
+     Females                     52,817  5,733  3,695   2,038  26,437    7,332    5,684  6,886  3,429  3,106
+Single ethnic group              48,662  5,396  3,519   1,877  24,911    7,196    5,664  6,877  2,528  2,646
+  Yapese                          2,783  2,689  2,688       1       3        1        1      1      -      -
+  Ulithian                          546    545    104     441       -        -        -      -      -      -
+  Woleaian                        1,381  1,377    220   1,157       1        -        1      -      -      -
+  Satawalese                        207    203     45     158       -        -        -      -      -      -
+  Chuukese                       22,456    127     12     115  22,109    6,849    5,655  6,865     95  2,645
+  Mortlockese                     3,357      4      3       1   2,717      284        -      -  2,433      -
+  Pohnpeian/Sapwuahfikese        11,500     15     13       2      16       15        1      -      -      -
+  Pingelapese                       701      -      -       -       -        -        -      -      -      -
+  Mwoakilloan                       536      -      -       -       -        -        -      -      -      -
+  Nukuoroan                         262      -      -       -       -        -        -      -      -      -
+  Kapingamarangian                  445      -      -       -       -        -        -      -      -      -
+  Kosraean                        3,581      3      2       1       4        3        -      -      -      1
+  Palauan                            75     57     57       -       4        4        -      -      -      -
+  Marshallese                        42      -      -       -       4        3        1      -      -      -
+  Other Pacific Islands              58     16     16       -      11        8        2      1      -      -
+  White                             166     29     28       1      23       14        1      8      -      -
+  Asian                             555    330    330       -      16       14        2      -      -      -
+    Filipino                        226     44     44       -      16       14        2      -      -      -
+    Chinese/Taiwanese               272    271    271       -       -        -        -      -      -      -
+  Other Single                       11      1      1       -       3        1        -      2      -      -
+Multiple ethnic group             4,155    337    176     161   1,526      136       20      9    901    460
+  Yapese and other                  536    446    208     238      13        3        7      1      2      -
+  Chuukese and other              3,994     95     13      82   2,950      218       24     11  1,787    910
+  Pohnpeian and other             2,858     29     28       1      46       21        1      5     12      7
+  Kosraen and other                 420      7      7       -       8        5        -      -      -      3
+  Other Multiple                    502     97     96       1      35       25        8      1      1      -
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+Source: 2000 FSM Census
+
+--- page 76 ----------------------------------------------------
+Tabulations by Place of Usual Residence 2000 FSM Census of Population and Housing
+52  Division of Statistics, Department of Economic Affairs
+ Table P2-9. Ethnicity by Usual Residence, Federated States of Micronesia: 2000
+ [For definitions of terms and meanings of symbols, see text] - continued
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46
+                               /G47 /G33/G52/G4B/G51/G53/G48/G4C /G47
+                               /G4C/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4D
+                               /G47/G47 /G30/G44/G47/G52/G4F/G48-/G47 /G47 /G47/G47/G47 /G2E/G52/G4F/G52-/G47/G32/G58/G57/G48/G55/G47
+ Ethnicity                     /G47 /G37/G52/G57/G44/G4F/G47/G51/G4C/G4B/G50/G5A/G47 /G38/G47/G31/G48/G57/G57/G47/G36/G52/G4E/G48/G4B/G56/G47/G2E/G4C/G57/G57/G4C/G47 /G51/G4C/G44/G47/G2C/G56/G4F/G44/G51/G47/G56/G47Kosrae
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46
+      All persons                 34,486   5,420  2,685  6,158   6,444   6,007   5,681   2,091 7,686
+ Single ethnic group              30,365   5,229  2,612  5,746   4,360   5,672   4,736   2,010 7,198
+   Yapese                            193      20      2     44      63       4      59       1    19
+   Ulithian                            2       1      -      -       1       -       -       -     -
+   Woleaian                           10       -      -      -       -       -      10       -     -
+   Satawalese                         11       -      -      -       3       -       8       -     -
+   Chuukese                          432      37     15    115     180       7      78       -    36
+   Mortlockese                     1,273       7      9    121   1,039       7      90       -     3
+   Pohnpeian/Sapwuahfikese        23,232   5,072  2,548  4,723   1,762   5,617   2,937     573    64
+   Pingelapese                     1,447       4      1     69     806       4     128     435     5
+   Mwoakilloan                     1,015       2      5     75     317       5     438     173     8
+   Nukuoroan                         514       -      1      5      16       -     150     342     1
+   Kapingamarangian                  955      11      -      -       9       -     450     485     8
+   Kosraean                          238       7      1     68      55       3     104       - 6,916
+   Palauan                            33      11      -      5       2       1      14       -     1
+   Marshallese                        43      23      -      4       9       3       4       -    36
+   Other Pacific Islands              51       6      2     12      12       2      17       -    14
+   White                             280      16     21    178      11      10      43       1    33
+   Asian                             623      11      7    323      75       8     199       -    51
+     Filipino                        446       7      5    250      23       4     157       -    39
+     Chinese/Taiwanese                59       3      -      3      44       -       9       -     -
+   Other Single                       13       1      -      4       -       1       7       -     3
+ Multiple ethnic group             4,121     191     73    412   2,084     335     945      81   488
+   Yapese and other                  121      12      1      7      54      10      37       -    13
+   Chuukese and other              1,884      73     32    102   1,386     139     144       8    70
+   Pohnpeian and other             5,337     257     91    488   2,494     447   1,407     153   218
+   Kosraen and other                 320      16      5     43     105      18     133       -   481
+   Other Multiple                    580      24     17    184     129      56     169       1   194
+      Females                     16,820   2,535  1,319  2,980   3,212   2,954   2,810   1,010 3,827
+ Single ethnic group              14,772   2,453  1,273  2,778   2,171   2,783   2,343     971 3,583
+   Yapese                             80       1      1     20      27       3      27       1    11
+   Ulithian                            1       -      -      -       1       -       -       -     -
+   Woleaian                            3       -      -      -       -       -       3       -     -
+   Satawalese                          4       -      -      -       1       -       3       -     -
+   Chuukese                          211       4      7     59      99       3      39       -     9
+   Mortlockese                       635       2      5     64     518       2      44       -     1
+   Pohnpeian/Sapwuahfikese        11,433   2,432  1,244  2,323     914   2,756   1,503     261    36
+   Pingelapese                       696       1      -     33     384       1      65     212     5
+   Mwoakilloan                       531       2      2     42     169       4     226      86     5
+   Nukuoroan                         261       -      1      3      10       -      73     174     1
+   Kapingamarangian                  442       2      -      -       6       -     197     237     3
+   Kosraean                          123       1      -     33      28       1      60       - 3,451
+   Palauan                            13       1      -      4       1       -       7       -     1
+   Marshallese                        17       6      -      1       3       3       4       -    21
+   Other Pacific Islands              24       -      1      8       4       2       9       -     7
+   White                             101       -      8     68       2       5      18       -    13
+   Asian                             192       1      4    118       4       2      63       -    17
+     Filipino                        155       1      3    102       3       -      46       -    11
+     Chinese/Taiwanese                 1       -      -      -       1       -       -       -     -
+   Other Single                        5       -      -      2       -       1       2       -     2
+ Multiple ethnic group             2,048      82     46    202   1,041     171     467      39   244
+   Yapese and other                   71       3      1      5      35       7      20       -     6
+   Chuukese and other                922      31     15     47     676      69      78       6    27
+   Pohnpeian and other             2,670     119     58    242   1,263     226     691      71   113
+   Kosraen and other                 163       7      4     23      48      13      68       -   242
+   Other Multiple                    270       4     14     87      60      27      77       1   100
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+ Source: 2000 FSM Census
+
+--- page 77 ----------------------------------------------------
+2000 FSM Census of Population and Housing Tabulations by Place of Usual Residence
+Division of Statistics, Department of Economic Affairs 53
+Table P2-10. Marital Status and Religion by Usual Residence, Federated States of Micronesia: 2000
+[For definitions of terms and meanings of symbols, see text]
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+                              /G47/G47 /G3C/G44/G53 /G47 /G26/G4B/G58/G58/G4E
+                              /G47 /G4C/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G50/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46
+Marital Status                /G47/G47 /G47 /G3C/G44/G53/G47/G32/G58/G57/G48/G55/G47/G47 /G31/G52/G55/G57/G4B/G48/G55/G51/G47/G36/G52/G58/G57/G4B/G48/G55/G51/G47/G29/G44/G4C-/G47/G30/G52/G55/G57-/G47/G32/G4E/G56/G52/G55-
+Religion                      /G47 /G37/G52/G57/G44/G4F/G47/G37/G52/G57/G44/G4F/G47/G33/G55/G52/G53/G48/G55/G47/G2C/G56/G4F/G44/G51/G47/G56/G47/G37/G52/G57/G44l/G47/G31/G44/G50/G52/G51/G48/G44/G56/G47/G31/G44/G50/G52/G51/G48/G44/G56/G47/G46/G4B/G58/G4E/G47/G4F/G52/G46/G4E/G56/G47/G4C/G57/G52/G47
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46
+MARITAL STATUS
+     Males 15 years & over       31,821  3,408  2,404   1,004  15,782    4,586    3,397  3,866  2,110  1,823
+Never married                    13,678  1,372    927     445   7,244    2,122    1,575  1,756    958    833
+Now married, except separated    16,735  1,804  1,279     525   7,882    2,297    1,682  1,922  1,061    920
+Separated                           383     67     64       3     174       54       28     60     21     11
+Widowed                             636     94     63      31     297       71       73     70     47     36
+Divorced                            389     71     71       -     185       42       39     58     23     23
+     Females 15 years & over     32,015  3,745  2,458   1,287  15,805    4,690    3,374  3,864  2,060  1,817
+Never married                    11,555  1,382    848     534   5,981    1,977    1,246  1,409    657    692
+Now married, except separated    16,592  1,776  1,210     566   7,830    2,230    1,674  1,955  1,068    903
+Separated                           732    117     92      25     420      123       92    125     46     34
+Widowed                           2,458    368    214     154   1,195      281      303    215    249    147
+Divorced                            678    102     94       8     379       79       59    160     40     41
+RELIGION
+     All persons                107,008 11,241  7,391   3,850  53,595   14,722   11,694 14,049  6,911  6,219
+Roman Catholic                   56,365  9,363  5,537   3,826  28,422    6,742    7,441  6,638  3,174  4,427
+Congregational                   42,879    378    375       3  23,074    7,197    4,028  6,650  3,594  1,605
+Latter Day Saints (Mormon)        1,123    121    120       1     362      195       97     64      3      3
+Seventh Day Adventist               793     81     80       1     171       67       10     73      -     21
+Baptist                             972     31     31       -     194      135       41      8      4      6
+Other religion                    4,066    618    617       1   1,346      366       74    614    136    156
+Refused                              57     37     36       1       6        4        -      1      -      1
+None                                753    612    595      17      20       16        3      1      -      -
+     Females                     52,817  5,733  3,695   2,038  26,437    7,332    5,684  6,886  3,429  3,106
+Roman Catholic                   27,774  4,726  2,700   2,026  13,986    3,362    3,574  3,259  1,583  2,208
+Congregational                   21,240    205    203       2  11,451    3,610    1,994  3,264  1,788    795
+Latter Day Saints (Mormon)          564     51     50       1     193      108       52     31      -      2
+Seventh Day Adventist               391     39     39       -      77       26        3     38      -     10
+Baptist                             478     15     15       -      87       61       21      2      2      1
+Other religion                    1,968    346    345       1     637      161       39    291     56     90
+Refused                              18     13     13       -       2        2        -      -      -      -
+None                                384    338    330       8       4        2        1      1      -      -
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+Source: 2000 FSM Census
+
+--- page 78 ----------------------------------------------------
+Tabulations by Place of Usual Residence 2000 FSM Census of Population and Housing
+54  Division of Statistics, Department of Economic Affairs
+ Table P2-10. Marital Status and Religion by Usual Residence, Federated States of Micronesia: 2000
+ [For definitions of terms and meanings of symbols, see text] - continued
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46
+                               /G47 /G33/G52/G4B/G51/G53/G48/G4C /G47
+                               /G4C/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4D
+ Marital Status                /G47/G47 /G30/G44/G47/G52/G4F/G48-/G47      /G47 /G47/G47/G47 /G2E/G52/G4F/G52-/G47/G32/G58/G57/G48/G55/G47
+ Religion                      /G47 /G37/G52/G57/G44/G4F/G47/G51/G4C/G4B/G50/G5A/G47 /G38/G47/G31/G48/G57/G57/G47/G36/G52/G4E/G48/G4B/G56/G47/G2E/G4C/G57/G57/G4C/G47 /G51/G4C/G44/G47/G2C/G56/G4F/G44/G51/G47/G56/G47/G2E/G52/G56/G55/G44/G48
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46
+ MARITAL STATUS
+      Males 15 years & over       10,355   1,712    800  1,835   1,976   1,650  1,769     613  2,276
+ Never married                     4,086     716    285    658     811     668    717     231    976
+ Now married, except separated     5,819     927    480  1,071   1,093     915    988     345  1,230
+ Separated                           124      13      7     40      20      14     17      13     18
+ Widowed                             206      35     15     38      26      40     32      20     39
+ Divorced                            120      21     13     28      26      13     15       4     13
+      Females 15 years & over     10,113   1,484    837  1,762   2,000   1,638  1,808     584  2,352
+ Never married                     3,310     420    281    577     683     581    616     152    882
+ Now married, except separated     5,728     918    484  1,020   1,086     912    969     339  1,258
+ Separated                           165      10     12     49      25      20     34      15     30
+ Widowed                             728     100     48     86     178     105    151      60    167
+ Divorced                            182      36     12     30      28      20     38      18     15
+ RELIGION
+      All persons                 34,486   5,420  2,685  6,158   6,444   6,007  5,681   2,091  7,686
+ Roman Catholic                   18,439   2,154  2,008  5,003   2,688   4,004  2,201     381    141
+ Congregational                   12,576   2,799    604    612   2,723   1,894  2,367   1,577  6,851
+ Latter Day Saints (Mormon)          471     129     12     47     160      11    105       7    169
+ Seventh Day Adventist               428      20      -     68      77      40    112     111    113
+ Baptist                             626     136     34     72      74      27    274       9    121
+ Other religion                    1,823     175     16    301     711      26    588       6    279
+ Refused                              11       -      -      6       3       -      2       -      3
+ None                                112       7     11     49       8       5     32       -      9
+      Females                     16,820   2,535  1,319  2,980   3,212   2,954  2,810   1,010  3,827
+ Roman Catholic                    9,004   1,009    984  2,436   1,330   1,971  1,096     178     58
+ Congregational                    6,151   1,320    301    311   1,383     926  1,144     766  3,433
+ Latter Day Saints (Mormon)          237      63      6     23      77       5     60       3     83
+ Seventh Day Adventist               222       9      -     32      47      20     60      54     53
+ Baptist                             314      63     16     39      35      19    137       5     62
+ Other religion                      850      71      6    126     336      10    297       4    135
+ Refused                               2       -      -      1       1       -      -       -      1
+ None                                 40       -      6     12       3       3     16       -      2
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+ Source: 2000 FSM Census
+
+--- page 79 ----------------------------------------------------
+2000 FSM Census of Population and Housing Tabulations by Place of Usual Residence
+Division of Statistics, Department of Economic Affairs 55
+Table P2-11. Languages Spoken and Spoken at Home, by Municipality of Usual Residence:
+             Federated States of Micronesia: 2000
+[For definitions of terms and meanings of symbols, see text]
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+                              /G47/G47 /G3C/G44/G53 /G47   Chuuk
+                              /G47 /G4C/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G50/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46
+                              /G47/G47 /G47 /G3C/G44/G53/G47/G32/G58/G57/G48/G55/G47/G47 /G31/G52/G55/G57/G4B/G48/G55/G51/G47/G36/G52/G58/G57/G4B/G48/G55/G51/G47/G29/G44/G4C-/G47/G30/G52/G55/G57-/G47/G32/G4E/G56/G52/G55-
+Languages                     /G47 /G37/G52/G57/G44/G4F/G47/G37/G52/G57/G44/G4F/G47/G33/G55/G52/G53/G48/G55/G47/G2C/G56/G4F/G44/G51/G47/G56/G47/G37/G52/G57/G44/G4F/G47/G31/G44/G50/G52/G51/G48/G44/G56/G47/G31/G44/G50/G52/G51/G48/G44/G56/G47/G46/G4B/G58/G4E/G47/G4F/G52/G46/G4E/G56/G47/G4C/G57/G52/G47
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46
+ALL LANGUAGES SPOKEN
+     Persons 5 years & over      92,225  9,869  6,557   3,312  46,248   12,993   10,078 11,815  6,077  5,285
+English                          43,682  6,238  4,756   1,482  18,327    6,780    3,131  4,155  2,133  2,128
+Yapese                            5,531  5,261  5,212      49      24       19        2      1      1      1
+Ulithian/Woleaian/Satawalese      4,857  4,800    831   3,969      11        7        3      1      -      -
+Chuukese                         53,140    198     48     150  49,582   12,922   10,077 11,804  9,484  5,295
+Pohnpeian/Mwoakilloan/Pingelap   31,651     60     56       4     311      177       47     19     58     10
+Kosraean                          7,125      9      8       1      32       28        1      -      -      3
+Asian                             2,294    753    733      20     431      176      129    101     18      7
+Other language                    2,570    283    277       6     148       91       20     20     13      4
+FIRST LANGUAGE REPORTED
+     Persons 5 years & over      92,225  9,869  6,557   3,312  46,248   12,993   10,078 11,815  6,077  5,285
+English                           1,713    278    274       4     150      131        4     11      3      1
+Yapese                            5,141  4,962  4,942      20      11        9        1      1      -      -
+Ulithian/Woleaian/Satawalese      4,036  3,992    716   3,276       7        4        2      1      -      -
+Chuukese                         48,227     22     17       5  45,949   12,738   10,064 11,797  6,070  5,280
+Pohnpeian/Mwoakilloan/Pingelap   23,866     19     16       3      45       42        1      1      1      -
+Kosraean                          6,496      2      1       1      12        8        1      -      -      3
+Asian                             1,076    483    483       -      41       37        3      1      -      -
+Other language                    1,670    111    108       3      33       24        2      3      3      1
+SECOND LANGUAGE REPORTED
+  5 years & over with 2nd lang.  49,731  6,735  4,866   1,869  20,649    6,851    3,237  4,226  4,191  2,144
+English                          36,341  5,617  4,329   1,288  16,607    6,506    3,095  4,122    762  2,122
+Yapese                              259    192    178      14      11        9        1      -      -      1
+Ulithian/Woleaian/Satawalese        601    592     60     532       3        2        1      -      -      -
+Chuukese                          4,430     28      9      19   3,559      146        9      5  3,387     12
+Pohnpeian/Mwoakilloan/Pingelap    6,360     20     20       -     139       72       25     10     30      2
+Kosraean                            426      3      3       -      11       11        -      -      -      -
+Asian                               842    204    189      15     269       78       97     81      7      6
+Other language                      472     79     78       1      50       27        9      8      5      1
+LANGUAGE OF PERSONS SPEAKING ONLY ONE LANGUAGE
+  5 years & over with 1 language 42,485  3,129  1,688   1,441  25,598    6,141    6,841  7,589  1,886  3,141
+English                             322     69     68       1      44       39        1      4      -      -
+Yapese                            1,090  1,081  1,073       8       -        -        -      -      -      -
+Ulithian/Woleaian/Satawalese      1,612  1,608    179   1,429       1        1        -      -      -      -
+Chuukese                         25,757      1      1       -  25,549    6,097    6,840  7,585  1,886  3,141
+Pohnpeian/Mwoakilloan/Pingelap   10,561      -      -       -       2        2        -      -      -      -
+Kosraean                          2,156      -      -       -       -        -        -      -      -      -
+Asian                               462    356    356       -       1        1        -      -      -      -
+Other language                      525     14     11       3       1        1        -      -      -      -
+LANGUAGE USUALLY SPOKEN AT HOME
+     Persons 5 years & over      92,225  9,869  6,557   3,312  46,248   12,993   10,078 11,815  6,077  5,285
+English                           1,322    280    276       4     124      106        4     12      1      1
+Yapese                            5,132  5,005  4,986      19      16       14        2      -      -      -
+Ulithian/Woleaian/Satawalese      4,033  3,986    706   3,280      12        6        1      -      5      -
+Chuukese                         48,174     13      8       5  45,981   12,761   10,067 11,801  6,071  5,281
+Pohnpeian/Mwoakilloan/Pingelap   24,321     10     10       -      52       51        -      -      -      1
+Kosraean                          6,622      3      2       1       8        6        -      -      -      2
+Asian                             1,015    479    479       -      29       25        4      -      -      -
+Other language                    1,606     93     90       3      26       24        -      2      -      -
+/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+Source: 2000 FSM Census
+
+--- page 80 ----------------------------------------------------
+Tabulations by Place of Usual Residence 2000 FSM Census of Population and Housing
+56  Division of Statistics, Department of Economic Affairs
+ Table P2-11. Languages Spoken and Spoken at Home, by Municipality of Usual Residence,
+              Federated States of Micronesia: 2000
+ [For definitions of terms and meanings of symbols, see text] - continued
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46
+                               /G47 /G33/G52hnpei                       /G47
+                               /G4C/G46/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G4E/G46/G46/G46/G46/G46/G46/G46/G4D
+                               /G47/G47 /G30/G44/G47/G52/G4F/G48-/G47 /G47 /G47/G47/G47 /G2E/G52/G4F/G52-/G47/G32/G58/G57/G48/G55/G47
+ Languages                     /G47 /G37otal/G47/G51/G4C/G4B/G50/G5A/G47 /G38/G47/G31/G48/G57/G57/G47/G36/G52/G4E/G48/G4B/G56/G47/G2E/G4C/G57/G57/G4C/G47 /G51/G4C/G44/G47/G2C/G56/G4F/G44/G51/G47/G56/G47/G2E/G52/G56/G55/G44/G48
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46/G46/G4F/G46/G46/G46/G46/G46/G46
+ ALL LANGUAGES SPOKEN
+      Persons 5 years & over      29,448   4,603  2,315  5,255   5,537   5,067  4,894   1,777  6,660
+ English                          14,963   1,840  1,362  3,035   2,783   2,064  3,418     461  4,154
+ Yapese                              221      29      2     41      84       4     59       2     25
+ Ulithian/Woleaian/Satawalese         44       1      -      7       9       1     26       -      2
+ Chuukese                          3,260     227     59    314   2,284      71    300       5    100
+ Pohnpeian/Mwoakilloan/Pingelap   30,582   4,829  2,325  4,916   6,369   5,126  5,563   1,454    698
+ Kosraean                            522      29     16    113     104      19    237       4  6,562
+ Asian                               928      64     38    349     120      88    263       6    182
+ Other language                    1,826     122     10    126      75      23    725     745    313
+ FIRST LANGUAGE REPORTED
+      Persons 5 years & over      29,448   4,603  2,315  5,255   5,537   5,067  4,894   1,777  6,660
+ English                           1,122      76    178    376     129      19    340       4    163
+ Yapese                              156      22      1     36      59       3     34       1     12
+ Ulithian/Woleaian/Satawalese         35       1      -      5       8       1     20       -      2
+ Chuukese                          2,211      49     20    176   1,777      15    174       -     45
+ Pohnpeian/Mwoakilloan/Pingelap   23,735   4,361  2,108  4,316   3,381   5,013  3,495   1,061     67
+ Kosraean                            213       6      2     56      58       4     86       1  6,269
+ Asian                               508       8      5    247      72       7    169       -     44
+ Other language                    1,468      80      1     43      53       5    576     710     58
+ SECOND LANGUAGE REPORTED
+   5 years & over with 2nd lang.  17,873   2,145  1,406  3,076   4,330   2,180  4,087     649  4,474
+ English                          10,380   1,518  1,140  2,347   1,096   1,977  2,006     296  3,737
+ Yapese                               46       3      1      2      22       1     17       -     10
+ Ulithian/Woleaian/Satawalese          6       -      -      1       1       -      4       -      -
+ Chuukese                            808     140     21     98     415      35     97       2     35
+ Pohnpeian/Mwoakilloan/Pingelap    5,923     408    202    463   2,742      87  1,700     321    278
+ Kosraean                            195       8     10     33      27      10    106       1    217
+ Asian                               288      40     27     73      17      64     63       4     81
+ Other language                      227      28      5     59      10       6     94      25    116
+ LANGUAGE OF PERSONS SPEAKING ONLY ONE LANGUAGE
+   5 years & over with 1 language 11,572   2,457    909  2,179   1,206   2,887    807   1,127  2,186
+ English                             188      13     10    123      17       2     23       -     21
+ Yapese                                9       -      -      -       5       -      4       -      -
+ Ulithian/Woleaian/Satawalese          3       -      -      1       -       -      2       -      -
+ Chuukese                            203       1      1     12     180       1      8       -      4
+ Pohnpeian/Mwoakilloan/Pingelap   10,551   2,431    898  1,996     957   2,882    644     743      8
+ Kosraean                              9       -      -      1       -       -      7       1  2,147
+ Asian                               104       1      -     45      46       2     10       -      1
+ Other language                      505      11      -      1       1       -    109     383      5
+ LANGUAGE USUALLY SPOKEN AT HOME
+      Persons 5 years & over      29,448   4,603  2,315  5,255   5,537   5,067  4,894   1,777  6,660
+ English                             861      33     28    359     229      18    192       2     57
+ Yapese                               99      19      -     29      25       1     25       -     12
+ Ulithian/Woleaian/Satawalese         31       1      -      -      10       1     18       1      4
+ Chuukese                          2,138      44     10    171   1,754       6    152       1     42
+ Pohnpeian/Mwoakilloan/Pingelap   24,220   4,407  2,272  4,372   3,395   5,036  3,676   1,062     39
+ Kosraean                            167       3      -     43      20       -    100       1  6,444
+ Asian                               471       7      5    243      62       4    150       -     36
+ Other language                    1,461      89      -     38      42       1    581     710     26
+ /G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46/G46
+ Source: 2000 FSM Census
