@@ -1,26 +1,11 @@
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=tjj.xinjiang.gov.cn&matchType=domain&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=3000&filter=original%3A.%2AA010%5B145%5D.xls :: <urlopen error [Errno 110] Connection timed out>
-== cdx tjj.hebei.gov.cn
-  20260119135325 application/vnd.ms-excel         16943 http://tjj.hebei.gov.cn/extra/col20/rkpc2010/excel/A0101.xls
-  20260119135436 application/vnd.ms-excel         12420 http://tjj.hebei.gov.cn/extra/col20/rkpc2010/excel/A0104.xls
-  20260119135315 application/vnd.ms-excel         13710 http://tjj.hebei.gov.cn/extra/col20/rkpc2010/excel/A0105.xls
-  20250417010326 application/vnd.ms-excel         20999 http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/A0101.xls
-  20250417010335 application/vnd.ms-excel         10947 http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/A0104.xls
-  20250417010351 application/vnd.ms-excel          9522 http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/A0105.xls
-  6 shown of 6 captured under tjj.hebei.gov.cn
-== cdx tjj.shanxi.gov.cn
-  0 shown of -1 captured under tjj.shanxi.gov.cn
-== cdx tjj.gxzf.gov.cn
-  0 shown of -1 captured under tjj.gxzf.gov.cn
-== cdx stats.hainan.gov.cn
-  0 shown of -1 captured under stats.hainan.gov.cn
-== cdx stats.yn.gov.cn
-  0 shown of -1 captured under stats.yn.gov.cn
-== cdx tj.nx.gov.cn
-  0 shown of -1 captured under tj.nx.gov.cn
-== cdx tjj.xinjiang.gov.cn
-  0 shown of -1 captured under tjj.xinjiang.gov.cn
-== cdx tj.jiangsu.gov.cn
-  20250430050441 application/vnd.ms-excel         16127 http://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0101.xls
-  20250430050725 application/vnd.ms-excel         37877 http://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0104.xls
-  20250430043341 application/vnd.ms-excel         36826 http://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0105.xls
-  3 shown of 3 captured under tj.jiangsu.gov.cn
+china_county_census: Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020)
+  retry 1/3 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 2/3 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 1/3 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 2/3 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 3/3 after 8s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/3 after 2s :: https://web.archive.org/web/2026id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 2/3 after 4s :: https://web.archive.org/web/2026id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 3/3 after 8s :: https://web.archive.org/web/2026id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+  Inner Mongolia Autonomous Region skipped: china_county_census: https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls could not be read (live: HTTPError: HTTP Error 403: Forbidden; archive: RuntimeError: GET failed after 3 retries: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent; nearest: RuntimeError: GET failed after 3 retries: https://web.archive.org/web/2026id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/)
+  --only: 0 records read, nothing written
