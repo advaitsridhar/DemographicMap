@@ -102,14 +102,32 @@ YEAR = re.compile(r"\b(20(?:0[5-9]|1[0-6]))\b")
 # The archive's captures and one plan's text
 # ---------------------------------------------------------------------------
 
-def captures() -> list[tuple[str, str]]:
-    """(timestamp, original URL) of every archived plan PDF, one per URL."""
-    query = [("url", PATTERN), ("output", "json"),
-             ("fl", "timestamp,original,statuscode,mimetype,length"),
-             ("filter", "statuscode:200"), ("filter", "mimetype:application/pdf"),
-             ("collapse", "urlkey"), ("limit", "100000")]
-    rows = http_json(CDX + "?" + urllib.parse.urlencode(query))
-    return sorted((r[0], r[1]) for r in rows[1:] if re.search(r"(?i)ddp", r[1]))
+def captures(attempts: int = 6, wait: float = 30.0) -> list[tuple[str, str]]:
+    """(timestamp, original URL) of every archived plan PDF, one per URL.
+
+    The archive's index answers 503 ("Temporarily Offline") for minutes at a
+    time; the query is the same either way, so it is simply asked again, as a
+    wildcard and then as a prefix, before the run gives up.
+    """
+    import time                                     # noqa: PLC0415
+    base = [("output", "json"), ("fl", "timestamp,original,statuscode,mimetype,length"),
+            ("filter", "statuscode:200"), ("filter", "mimetype:application/pdf"),
+            ("collapse", "urlkey"), ("limit", "100000")]
+    shapes = [[("url", PATTERN)],
+              [("url", PATTERN.rstrip("*")), ("matchType", "prefix")]]
+    last: Exception | None = None
+    for attempt in range(attempts):
+        for shape in shapes:
+            try:
+                rows = http_json(CDX + "?" + urllib.parse.urlencode(shape + base),
+                                 cache=False, retries=1)
+            except Exception as err:                # noqa: BLE001 -- retried below
+                last = err
+                continue
+            return sorted((r[0], r[1]) for r in rows[1:] if re.search(r"(?i)ddp", r[1]))
+        log(f"  the archive's index did not answer ({last}); asking again in {wait:.0f}s")
+        time.sleep(wait)
+    raise SystemExit(f"afghanistan_ddp: the archive's index never answered: {last}")
 
 
 def file_label(url: str) -> str:
