@@ -118,5 +118,87 @@ class Table(unittest.TestCase):
             kr.region_rows(rows, "Akmola Region")
 
 
+# Table 7.1 of the 2021 brief results, two regions and Shymkent, as pypdf
+# reads the pages (the figures are the book's own).
+ROWS_2021 = {
+    "both": {"Ақмола": "782 995 362 070 287 619 283 202 4 078 339 295 152 1 034 117 247 14 578",
+             "Түркістан": "2 054 021 1 897 485 32 341 32 111 76 154 63 340 389 118 394 5 009",
+             "Шымкент қаласы": "1 112 478 761 055 72 710 72 232 79 399 235 337 653 236 897 "
+                               "40 591"},
+    "men": {"Ақмола": "382 034 178 874 136 417 134 341 1 932 144 162 92 515 58 372 7 602",
+            "Түркістан": "1 040 619 953 073 15 596 15 480 40 76 37 253 185 68 598 2 877",
+            "Шымкент қаласы": "523 744 353 912 33 265 33 050 34 181 93 166 303 115 999 "
+                              "20 006"},
+}
+
+
+def spaced(n):
+    return f"{n:,}".replace(",", " ")
+
+
+def pages_2021(drop=None):
+    """Table 7.1's whole-population pages, the republic being the regions' sum."""
+    parsed = {sex: {k: kr.row_2021(v)[0] for k, v in rows.items()}
+              for sex, rows in ROWS_2021.items()}
+    parsed["women"] = {k: [b - m for b, m in zip(parsed["both"][k], parsed["men"][k])]
+                       for k in parsed["both"]}
+    lines = ["7.1. Өңірлер бөлінісінде діни сенімі бойынша халық",
+             "Население по вероисповеданию в разрезе регионов", "Барлық халық",
+             "Все население", "адам человек", "ислам христиан", "35"]
+    for kaz, rus in (("Екі жыныс та", "Оба пола"), ("Ерлер", "Мужчины"),
+                     ("Әйелдер", "Женщины")):
+        sex = {"Оба пола": "both", "Мужчины": "men", "Женщины": "women"}[rus]
+        rows = parsed[sex]
+        republic = [sum(r[i] for r in rows.values()) for i in range(11)]
+        lines += [kaz, rus, f"{kr.REPUBLIC} " + " ".join(spaced(v) for v in republic)]
+        for label, row in rows.items():
+            if label != drop:
+                lines.append(f"{label} " + " ".join(spaced(v) for v in row))
+    lines += ["пайызбен в процентах", "Ақмола 100 46,24 36,73", "Городское население",
+              "Ақмола 1 2 3"]
+    return ["\n".join(lines)]
+
+
+class Regions2021(unittest.TestCase):
+    def setUp(self):
+        self.saved = (kr.REGIONS_2021, kr.NATIONAL_2021)
+        kr.REGIONS_2021 = {"Ақмола": "Akmola Region", "Түркістан": "South Kazakhstan Region",
+                           "Шымкент қаласы": "South Kazakhstan Region"}
+        kr.NATIONAL_2021 = 782_995 + 2_054_021 + 1_112_478
+
+    def tearDown(self):
+        kr.REGIONS_2021, kr.NATIONAL_2021 = self.saved
+
+    def test_a_row_reads_one_way(self):
+        self.assertEqual(kr.row_2021(ROWS_2021["both"]["Ақмола"]),
+                         [[782995, 362070, 287619, 283202, 4078, 339, 295, 152, 1034,
+                           117247, 14578]])
+        # Digits that make no reading whose parts add up give none.
+        self.assertEqual(kr.row_2021("782 995 362 070 287 619 283 202 4 078 339 295 152 "
+                                     "1 034 117 247 14 579"), [])
+
+    def test_the_table_reads_and_turkestan_takes_shymkent(self):
+        table = kr.table_2021(pages_2021())
+        self.assertEqual(table["both"]["Ақмола"][1], 362070)
+        self.assertEqual(table["women"]["Ақмола"][0], 782995 - 382034)
+        a1 = [{"id": "AK", "name": "Akmola Region"}, {"id": "SK", "name": "South Kazakhstan Region"}]
+        rows = {r["shape_id"]: r for r in kr.records_2021(table["both"], a1)}
+        south = {b["group"]: b["count"] for b in rows["SK"]["religion"]}
+        self.assertEqual(south["Islam"], 1897485 + 761055)
+        self.assertEqual(south["Orthodox"], 32111 + 72232)
+        self.assertNotIn("Christianity", south)
+        self.assertEqual(rows["SK"]["religion_year"], 2021)
+        self.assertIn("Shymkent", rows["SK"]["religion_note"])
+        self.assertEqual(rows["AK"]["level"], "admin1")
+        self.assertEqual(sum(b["count"] for b in rows["AK"]["religion"]), 782995)
+
+    def test_a_missing_region_or_a_wrong_total_stops(self):
+        with self.assertRaises(SystemExit):
+            kr.table_2021(pages_2021(drop="Ақмола"))
+        kr.NATIONAL_2021 += 1
+        with self.assertRaises(SystemExit):
+            kr.table_2021(pages_2021())
+
+
 if __name__ == "__main__":
     unittest.main()

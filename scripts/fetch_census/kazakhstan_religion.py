@@ -1,18 +1,37 @@
 #!/usr/bin/env python3
-"""Kazakhstan: religion by district, from the 2009 census's regional volumes.
+"""Kazakhstan: religion by region (2021 census) and by district (2009 census).
 
-The 2009 National Population Census published three volumes for each region.
-Volume 2 ("Итоги Национальной переписи населения Республики Казахстан 2009
-года", том 2) carries table 1.6, "Население районов по вероисповеданию": every
-district and city akimat of the region by religion -- Islam, Christianity,
-Judaism, Buddhism, other, non-believers, and those who declined to say -- in
-people and in per cent, for both sexes, men and women.
+**By region, 2021.** The Bureau's *Brief results* of the 2021 National
+Population Census (Краткие итоги / Қысқаша қорытындылар, 2022) carry table
+7.1, "Население по вероисповеданию в разрезе регионов": the republic and its
+17 regions of 2021 by religion -- Islam; Christianity, with Orthodoxy,
+Catholicism and Protestantism; Judaism; Buddhism; other; those who declined
+to say; non-believers -- for both sexes, men and women, then the urban and
+rural population. The figures are printed with a space between the
+thousands, so each row is read as the one split of its digit groups whose
+religions make its total and whose three denominations make Christianity
+(``row_2021``); the regions must make the republic's 19,186,015 column by
+column, and men and women must make both sexes. Turkestan Region and the
+city of Shymkent are drawn as one polygon (South Kazakhstan Region) and take
+their sum. This is the table the 'Religion in Kazakhstan' article on
+Wikipedia transcribes; read from the Bureau, it replaces that transcription.
+
+**By district, 2009.** The 2009 National Population Census published three
+volumes for each region. Volume 2 ("Итоги Национальной переписи населения
+Республики Казахстан 2009 года", том 2) carries table 1.6, "Население районов
+по вероисповеданию": every district and city akimat of the region by
+religion -- Islam, Christianity, Judaism, Buddhism, other, non-believers, and
+those who declined to say -- in people and in per cent, for both sexes, men
+and women.
 
 It is the only religion below the region the Bureau has published. The 2021
-census asked the question again, and its national volume (*National
-composition, religion and language proficiency*, 2023) tabulates religion by
-nationality, age and education (tables 12-14, printed pages 391-421) for the
-republic and its urban and rural population only: no region, no district.
+census's brief results stop at the region, and its national volume
+(*National composition, religion and language proficiency*, 2023) tabulates
+religion by nationality, age and education (tables 12-14, printed pages
+391-421) for the republic and its urban and rural population only. The
+Bureau's two 2021 census dashboards (stat.gov.kz/ru/instuments/dashboards/
+28424 and 28478) are Qlik Sense apps on qap.stat.gov.kz that serve no table
+of their own.
 
 **Reading the volumes.** The PDFs set their text in a font without a map to
 characters, so a text extractor returns glyph names ('/g570' for 'А'); the
@@ -82,10 +101,52 @@ GROUPS = ("Islam", "Christianity", "Judaism", "Buddhism", "Other religions", "No
           "Not stated")
 NOTE = ("Religion the person named at the 2009 census: Islam, Christianity, Judaism, "
         "Buddhism, another religion, non-believer, or declined to say. The 2021 census asked "
-        "it again, and its national volume (National composition, religion and language "
-        "proficiency, 2023, tables 12-14) tabulates it for the republic and its urban and "
-        "rural population only, for no district.")
+        "it again and the Bureau publishes it by region (brief results, table 7.1) and for "
+        "the republic by nationality, age and education (National composition, religion "
+        "and language proficiency, 2023, tables 12-14), for no district.")
 CITY_TOTAL = {"Almaty": "г.Алматы"}
+
+# The 2021 census's brief results, from the Bureau's media library; the
+# Internet Archive's capture of the same book under its older address is the
+# fallback.
+BRIEF_URL = (BASE + "e62/b1e0sokkht34a1iyu2qdmu30dayt6sz1/"
+             "%D0%9A%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B5%20%D0%B8%D1%82%D0%BE%D0%B3%D0%B8%20"
+             "%D0%9F%D0%B5%D1%80%D0%B5%D0%BF%D0%B8%D1%81%D0%B8%20%D0%BD%D0%B0%D1%81%D0%B5"
+             "%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.pdf")
+BRIEF_ARCHIVE = ("https://web.archive.org/web/20220902140633id_/"
+                 "https://stat.gov.kz/api/getFile/?docId=ESTAT464825")
+BRIEF_PAGE = "https://stat.gov.kz/ru/national/2021/"
+BRIEF_SOURCE = ("Bureau of National Statistics of Kazakhstan, Brief results of the 2021 National "
+                "Population Census (2022), table 7.1: population by religion by region")
+YEAR_2021 = 2021
+NATIONAL_2021 = 19_186_015
+REPUBLIC = "Қазақстан Республикасы"
+# Table 7.1's regions, as the book names them in Kazakh -> the drawn region.
+REGIONS_2021 = {
+    "Ақмола": "Akmola Region", "Ақтөбе": "Aktobe Region", "Алматы": "Almaty Region",
+    "Атырау": "Atyrau Region", "Батыс Қазақстан": "West Kazakhstan Region",
+    "Жамбыл": "Jambyl Region", "Қарағанды": "Karaganda Region",
+    "Қостанай": "Kostanay Region", "Қызылорда": "Kyzylorda Region",
+    "Маңғыстау": "Mangystau Region", "Павлодар": "Pavlodar Region",
+    "Солтүстік Қазақстан": "North Kazakhstan Region",
+    "Түркістан": "South Kazakhstan Region", "Шығыс Қазақстан": "East Kazakhstan Region",
+    "Нұр-Сұлтан қаласы": "Astana", "Алматы қаласы": "Almaty",
+    "Шымкент қаласы": "South Kazakhstan Region",
+}
+# Table 7.1's columns in the order printed: the total, Islam, Christianity and
+# its three denominations, Judaism, Buddhism, other, declined, non-believers.
+COLUMNS_2021 = ("Total", "Islam", "Christianity", "Orthodox", "Catholic", "Protestant",
+                "Judaism", "Buddhism", "Other religions", "Not stated", "No religion")
+# What a region's bars are: Christianity is shown as its three denominations,
+# which make it to the person.
+BARS_2021 = ("Islam", "Orthodox", "Catholic", "Protestant", "Judaism", "Buddhism",
+             "Other religions", "No religion", "Not stated")
+NOTE_2021 = ("Religion as each person named it at the 2021 census -- Islam; Christianity, "
+             "shown as Orthodoxy, Catholicism and Protestantism; Judaism; Buddhism; another "
+             "religion -- with the non-believers ('No religion') and those who declined to "
+             "say ('Not stated'): every resident, of every age. Table 7.1 of the Bureau's "
+             "brief results of the census, by region; the Bureau publishes no 2021 religion "
+             "by district.")
 
 
 def decode(text: str) -> str:
@@ -317,6 +378,170 @@ def read_region(region: str, text: str, a1: list[dict[str, Any]],
     return records(region, units, a1, a2)
 
 
+# --------------------------------------------------------------------------
+# By region, 2021: table 7.1 of the census's brief results.
+
+def row_2021(figures: str) -> list[list[int]]:
+    """Every reading of a row's digit groups as table 7.1's eleven columns.
+
+    '19 186 015 13 297 775 3 297 550 ...' is a run of groups, each number one
+    group of one to three digits and then any groups of exactly three. A
+    reading is kept when the religions make the total and the three
+    denominations make Christianity.
+    """
+    groups = figures.split()
+    if not groups or not all(g.isdigit() for g in groups):
+        return []
+    found: list[list[int]] = []
+
+    def walk(i: int, acc: list[int]) -> None:
+        if len(acc) == len(COLUMNS_2021):
+            total, islam, christ, orth, cath, prot, jud, bud, other, refused, none = acc
+            if (i == len(groups) and christ == orth + cath + prot
+                    and total == islam + christ + jud + bud + other + refused + none):
+                found.append(list(acc))
+            return
+        if i >= len(groups) or len(groups[i]) > 3 or (len(groups[i]) > 1
+                                                      and groups[i].startswith("0")):
+            return
+        text = groups[i]
+        j = i + 1
+        while True:
+            value = int(text)
+            if acc and value > acc[0]:
+                return
+            walk(j, acc + [value])
+            if j < len(groups) and len(groups[j]) == 3:
+                text += groups[j]
+                j += 1
+            else:
+                return
+
+    walk(0, [])
+    return found
+
+
+LINE_2021 = re.compile(r"^(?P<label>[^\d]+?)\s+(?P<figures>\d[\d ]*)$")
+
+
+def table_2021(pages: list[str]) -> dict[str, dict[str, list[int]]]:
+    """{sex: {region: [eleven columns]}} from table 7.1's whole-population pages.
+
+    The table starts where its title is followed by "Все население" and ends
+    at the urban population ("Городское население") or at the percentages
+    ("в процентах"). Each row must read one way only; where its digit groups
+    allow two, the men's and women's rows decide.
+    """
+    text = "\n".join(pages)
+    starts = [m.end() for m in re.finditer(
+        r"Население по вероисповеданию в разрезе регионов\s*\n\s*Барлық халық\s*\n\s*"
+        r"Все население", text)]
+    if len(starts) != 1:
+        raise SystemExit(f"kazakhstan_religion: table 7.1's whole population found "
+                         f"{len(starts)} times")
+    body = text[starts[0]:]
+    end = re.search(r"в процентах|Городское население", body)
+    body = body[:end.start()] if end else body
+    rows: dict[str, dict[str, str]] = {"both": {}, "men": {}, "women": {}}
+    sex = None
+    for raw in body.splitlines():
+        line = " ".join(raw.split())
+        if line == "Оба пола":
+            sex = "both"
+        elif line == "Мужчины":
+            sex = "men"
+        elif line == "Женщины":
+            sex = "women"
+        m = LINE_2021.match(line)
+        if not m or sex is None:
+            continue
+        label = m.group("label").strip()
+        if label != REPUBLIC and label not in REGIONS_2021:
+            continue
+        if label in rows[sex]:
+            raise SystemExit(f"kazakhstan_religion: table 7.1 has {label} twice ({sex})")
+        rows[sex][label] = m.group("figures")
+    wanted = {REPUBLIC, *REGIONS_2021}
+    for sex, found in rows.items():
+        if set(found) != wanted:
+            raise SystemExit(f"kazakhstan_religion: table 7.1 ({sex}) lacks "
+                             f"{sorted(wanted - set(found))}, has {sorted(set(found) - wanted)}")
+    out: dict[str, dict[str, list[int]]] = {"both": {}, "men": {}, "women": {}}
+    for label in sorted(wanted):
+        options = {sex: row_2021(rows[sex][label]) for sex in rows}
+        pairs = [(b, m, w) for b in options["both"] for m in options["men"]
+                 for w in options["women"]
+                 if all(b[i] == m[i] + w[i] for i in range(len(COLUMNS_2021)))]
+        if len(pairs) != 1:
+            raise SystemExit(f"kazakhstan_religion: table 7.1's {label} reads "
+                             f"{len(pairs)} ways: {rows['both'][label]!r}")
+        for sex, values in zip(("both", "men", "women"), pairs[0]):
+            out[sex][label] = values
+    for sex, found in out.items():
+        made = [sum(found[r][i] for r in REGIONS_2021) for i in range(len(COLUMNS_2021))]
+        if made != found[REPUBLIC]:
+            raise SystemExit(f"kazakhstan_religion: table 7.1's regions make {made} against "
+                             f"the republic's {found[REPUBLIC]} ({sex})")
+    if out["both"][REPUBLIC][0] != NATIONAL_2021:
+        raise SystemExit(f"kazakhstan_religion: table 7.1 counts {out['both'][REPUBLIC][0]:,}, "
+                         f"not the census's {NATIONAL_2021:,}")
+    return out
+
+
+def records_2021(table: dict[str, list[int]], a1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """One religion record per drawn region, Turkestan and Shymkent together."""
+    ids = {u["name"]: u["id"] for u in a1}
+    pooled: dict[str, list[str]] = defaultdict(list)
+    for label, region in REGIONS_2021.items():
+        pooled[region].append(label)
+    if set(pooled) != set(ids):
+        raise SystemExit(f"kazakhstan_religion: drawn regions {sorted(set(ids) ^ set(pooled))} "
+                         f"do not match table 7.1's")
+    src = [{"field": "religion", "name": BRIEF_SOURCE, "url": BRIEF_PAGE,
+            "year": YEAR_2021, "license": LICENCE}]
+    out = []
+    for region, labels in sorted(pooled.items()):
+        row = [sum(table[label][i] for label in labels) for i in range(len(COLUMNS_2021))]
+        counts = dict(zip(COLUMNS_2021, row))
+        bars = shares({k: counts[k] for k in BARS_2021 if counts[k]}, total=row[0])
+        note = NOTE_2021 + (" Turkestan Region and the city of Shymkent, a region of its own "
+                            "since 2018, together: the map draws them as one."
+                            if len(labels) > 1 else "")
+        out.append(record(
+            f"KAZ-REL2021-{ids[region]}", region, level="admin1", parent=ISO3, country=ISO3,
+            match_by="shape_id", shape_id=ids[region], aliases=labels,
+            religion=bars, religion_year=dated(bars, YEAR_2021), religion_note=note,
+            sources=src))
+    return out
+
+
+def read_2021(a1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    import logging
+
+    from pypdf import PdfReader
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
+    blob: bytes | str = b""
+    for url in (BRIEF_URL, BRIEF_ARCHIVE):
+        try:
+            blob = http_get(url, binary=True, timeout=300)
+        except RuntimeError as err:
+            log(f"  brief results: {url} refused ({err}); trying the next copy")
+            continue
+        if isinstance(blob, bytes) and blob[:5] == b"%PDF-":
+            break
+        log(f"  brief results: {url} is not a PDF ({bytes(blob[:40])!r})")
+        blob = b""
+    if not blob:
+        raise SystemExit("kazakhstan_religion: neither copy of the 2021 brief results was read")
+    assert isinstance(blob, bytes)
+    pages = [(p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages]
+    table = table_2021(pages)
+    rows = records_2021(table["both"], a1)
+    log(f"  2021 by region: {len(rows)} drawn regions from {len(REGIONS_2021)} regions, "
+        f"{table['both'][REPUBLIC][0]:,} people")
+    return rows
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -340,6 +565,8 @@ def main() -> int:
             failed.append(region)
     if failed:
         raise SystemExit(f"kazakhstan_religion: {len(failed)} volumes not read: {failed}")
+    if not args.only:
+        out = read_2021(a1) + out
     log(f"kazakhstan_religion: {len(out)} records")
     for r in out:
         bars = r["religion"]
