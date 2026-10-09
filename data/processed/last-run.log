@@ -1,31 +1,34 @@
-== https://census.scad.gov.ae/
-   200 text/html; charset=utf-8 176,679 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_probe.py", line 618, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_probe.py", line 605, in main
-    cmd_get(args.target, args.grep, args.links, args.chars, args.context, max(40, args.rows),
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_probe.py", line 202, in cmd_get
-    for m in re.finditer(grep, text, flags=re.I):
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/__init__.py", line 223, in finditer
-    return _compile(pattern, flags).finditer(string)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/__init__.py", line 294, in _compile
-    p = _compiler.compile(pattern, flags)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_compiler.py", line 745, in compile
-    p = _parser.parse(p, flags)
-        ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_parser.py", line 989, in parse
-    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_parser.py", line 464, in _parse_sub
-    itemsappend(_parse(source, state, verbose, nested + 1,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_parser.py", line 874, in _parse
-    raise source.error("missing ), unterminated subpattern",
-re.error: missing ), unterminated subpattern at position 4
+== https://www.scad.gov.ae/population?ThemeID=227&tab=KSI
+   200 text/html;charset=UTF-8 568,386 bytes
+   - '6.63 MB' -> https://www.scad.gov.ae/documents/20122/2310804/Death%2520Statistics_2019_Annual_Yearly_en.pdf/5c3dfc0e-e5ce-3a95-3fbf-406251b43060
+   - '3.19 MB' -> https://www.scad.gov.ae/documents/20122/2311386/Birth%2520Statistics_2019_Annual_Yearly_en.pdf/09f1282c-3d19-fc8f-72be-d8e6fe621412
+   - '1.82 MB' -> https://www.scad.gov.ae/documents/20122/2310804/Deaths%2520Statistics%25202016%2520English.pdf/58d570d1-d563-b8e6-a0d7-092e3f747c2d
+   - '118.61 KB' -> https://www.scad.gov.ae/documents/20122/2310804/Deaths%2520Publication%2520English%25202016.xlsx/e689b5d3-e5e2-e764-453d-75f345aad51f
+   - '1.82 MB' -> https://www.scad.gov.ae/documents/20122/2311386/PD_BF2016_Publication_Annual_English_v2.pdf/878a7403-6385-192c-8f2c-6c71bc119ecd
+   - '1.48 MB' -> https://www.scad.gov.ae/documents/20122/2311386/Birth%2520Statistics%2520-%2520Cover%2520-%2520EN%25202015.pdf/7d742855-c010-308a-f5a7-d740ce346ffa
+   - '11.83 MB' -> https://www.scad.gov.ae/documents/20122/2311386/Birth%2520Statistics%25202013%2520-%2520En%2520v1.2%252021%252001%25202015.pdf/312de5e0-b054-b5f7-641a-837934b8af98
+   - '1.66 MB' -> https://www.scad.gov.ae/documents/20122/2310801/Marriage%2520and%2520Divorce%2520Rate%2520-%2520enlgish.pdf/d67b9205-9fc3-0851-08ad-4cdd45f5a734
+   - '973.78 KB' -> https://www.scad.gov.ae/documents/20122/2310804/Deaths%2520Statistics%2C%25202012%2520English.pdf/aa6bac64-356d-3ef6-3893-db3156a86a1e
+   - '88.52 KB' -> https://www.scad.gov.ae/documents/20122/2311386/births%2520publication%2520English.xlsx/a3d8b6bf-d606-8db0-5c69-c82cedca5a83
+   - '1.42 MB' -> https://www.scad.gov.ae/documents/20122/2311386/Birth%25202012%2520-%2520english.pdf/7c6c26de-b8e7-c715-abe6-f0bf91d5bff4
+   - '1.24 MB' -> https://www.scad.gov.ae/documents/20122/2355136/Final%2520Population%2520EstimatesPP-2011.pdf/3d6052bc-27f8-2156-dbe5-e7afb5642933
+   - '59.74 KB' -> https://www.scad.gov.ae/documents/20122/2355136/Population%2520Estimates%25202011%2520Tables%2520Eng%2520%25202014%252005%252008.xlsx/e1bcec40-6a46-d008-2bc3-c7a24eb63e36
+   - '687.09 KB' -> https://www.scad.gov.ae/documents/20122/2310804/Deaths%2520Statistics%2C%25202011%2520English.pdf/814da1ca-4c1f-14c4-4a4a-9a533d81ae5f
+   - '1 MB' -> https://www.scad.gov.ae/documents/20122/2310801/Marriage%2520and%2520Divorce%2520Rate%2520English%2520-%25202011.pdf/0e620191-4fb3-e36c-bf3e-2f08f6b1cf39
+   - '945.98 KB' -> https://www.scad.gov.ae/documents/20122/2311386/Birth%2520Statistics%2520English%2C%25202010.pdf/17f5dffd-7015-6ea9-98cb-2bb2ba41befd
+   - '1.3 MB' -> https://www.scad.gov.ae/documents/20122/2311386/Births%2520statistics%2520in%2520Abu%2520Dhabi%25202010.pdf/d22223f0-f777-6878-971e-9e75f925a0e8
+   - '1.38 MB' -> https://www.scad.gov.ae/documents/20122/2310804/Demographic%2520Statistics%2520-%2520Deaths.pdf/941b31c9-bf87-dd44-c6db-e45d5cbd265d
+   - '2 MB' -> https://www.scad.gov.ae/documents/20122/2310801/Marriage%2520and%2520Divorce%2520Rates%2520in%2520the%2520Emirates%2520of%2520Abu%2520Dhabi_116.pdf/c2ad975d-af47-d3f0-5412-82e739a942b1
+   - '1.11 MB' -> https://www.scad.gov.ae/documents/20122/2311386/datatable_22893_17_1_1_2021_EN.xlsx/9b2ce3b8-b301-2dbf-368d-7b722a93a018
+   - '1.12 MB' -> https://www.scad.gov.ae/documents/20122/2310804/datatable_33103_27_1_1_2022_EN.xlsx/fc6a698d-bcf6-da48-2704-16c08ccd81f9
+   - '1.12 MB' -> https://www.scad.gov.ae/documents/20122/2310804/datatable_22783_27_1_1_2021_EN.xlsx/4805ccba-425d-5378-822c-f6eed7ccc1e5
+   - '1.12 MB' -> https://www.scad.gov.ae/documents/20122/2311386/publication_53536_17_1_1_2023_EN.xlsx/e8a701c6-4098-b5c5-fd83-14fc4372dd2d
+   - '1.18 MB' -> https://www.scad.gov.ae/documents/20122/2310804/publication_53537_27_1_1_2023_EN.xlsx/1b3ceb5c-d43e-ddf6-f354-2aba9672b3db
+   - '1.12 MB' -> https://www.scad.gov.ae/documents/20122/0/Publication_both_PID_17_2024_Annual_Yearly_both_v1+%281%29.xlsx/786ebf48-0b38-c3f9-07bb-341d2b1a1584?version=1.0&t=1753956876035
+   - '1.18 MB' -> https://www.scad.gov.ae/documents/20122/0/Publication_both_PID_27_2024_Annual_Yearly_both_v1+%281%29.xlsx/a1cff0ff-cbb6-09ad-db9c-63fe60a24cba?version=1.0&t=1753956920403
+   - '1.1 MB' -> https://www.scad.gov.ae/documents/20122/3422848/publication_64080_17_1_1_2025_EN.xlsx/5c7f95d5-08ff-000e-03c8-39d08b7c4747
+   - '1.15 MB' -> https://www.scad.gov.ae/documents/20122/3422848/publication_64092_27_1_1_2025_EN.xlsx/6c2b4f31-9967-b65a-0fa6-c139f05c75d0
+   - 'View More' -> https://www.scad.gov.ae/web/guest/w/population?repName=Census Population&repId=
+   - 'View More' -> https://www.scad.gov.ae/web/guest/w/real-estate?repName=Census Real Estate&repId=
+   30 matching links
+   0 matches for '(?i)census.{0,60}(?:2023|2024|2025)'
