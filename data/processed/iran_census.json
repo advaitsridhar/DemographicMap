@@ -38139,9 +38139,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 1425819
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1674
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1327
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 384
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 248
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38196,6 +38225,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38211,7 +38247,9 @@
     "sex_ratio_note": "725,751 men and 703,724 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P01",
@@ -38241,9 +38279,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.9,
+        "count": 2527998
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 2210
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 210
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 160
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38293,6 +38360,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38308,7 +38382,9 @@
     "sex_ratio_note": "1,267,597 men and 1,263,099 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P02",
@@ -38338,9 +38414,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 3273724
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 3471
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 3951
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2100
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 304
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38390,6 +38495,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38405,7 +38517,9 @@
     "sex_ratio_note": "1,653,998 men and 1,629,584 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P02-GAZ",
@@ -38436,7 +38550,8 @@
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2016 census's religion is published by province only (Statistical Yearbook 1395, table 3.18). The map draws Bandar-e Gaz county under a first-level polygon of its own, so neither it nor Golestan without it is a unit the table counts, and no share is written for either."
     },
     "language": {
       "status": "not_available"
@@ -38522,9 +38637,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 3897236
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 7319
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 4233
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 362
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 467
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38574,6 +38718,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38589,7 +38740,9 @@
     "sex_ratio_note": "1,989,400 men and 1,920,252 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P04",
@@ -38619,9 +38772,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.5,
+        "count": 3250233
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.2,
+        "count": 7647
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 6207
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 613
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 473
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38676,6 +38858,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38691,7 +38880,9 @@
     "sex_ratio_note": "1,658,319 men and 1,606,900 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P05",
@@ -38721,9 +38912,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 1946809
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 2325
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1313
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1431
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 451
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38773,6 +38993,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38788,7 +39015,9 @@
     "sex_ratio_note": "988,015 men and 964,419 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P06",
@@ -38818,9 +39047,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.4,
+        "count": 4680333
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 21270
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 6796
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1211
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 831
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38875,6 +39133,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38890,7 +39155,9 @@
     "sex_ratio_note": "2,388,674 men and 2,321,835 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P07",
@@ -38920,9 +39187,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 4835082
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 5880
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 2816
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 4649
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 2008
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 839
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -38977,6 +39273,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -38992,7 +39295,9 @@
     "sex_ratio_note": "2,461,251 men and 2,390,023 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P08",
@@ -39022,9 +39327,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.2,
+        "count": 3139968
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 15410
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 4460
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 3540
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 1280
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39079,6 +39413,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39094,7 +39435,9 @@
     "sex_ratio_note": "1,617,688 men and 1,547,030 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P09",
@@ -39124,9 +39467,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.6,
+        "count": 6409180
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 15993
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 7159
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 135
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1073
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 961
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39181,6 +39553,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39196,7 +39575,9 @@
     "sex_ratio_note": "3,245,185 men and 3,189,316 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P10",
@@ -39226,9 +39607,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.6,
+        "count": 5101133
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.2,
+        "count": 8628
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 3137
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 6014
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 1007
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 931
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39283,6 +39693,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39298,7 +39715,9 @@
     "sex_ratio_note": "2,599,477 men and 2,521,373 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P11",
@@ -39328,9 +39747,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 2766139
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 4155
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 3654
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 553
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 473
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39385,6 +39833,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39400,7 +39855,9 @@
     "sex_ratio_note": "1,401,931 men and 1,373,083 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P12",
@@ -39430,9 +39887,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 1600537
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1918
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 117
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 250
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39477,6 +39963,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39492,7 +39985,9 @@
     "sex_ratio_note": "812,776 men and 790,235 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P13",
@@ -39522,9 +40017,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 1732458
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 3036
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 2084
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 295
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 330
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39579,6 +40103,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39594,7 +40125,9 @@
     "sex_ratio_note": "880,318 men and 857,916 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P14",
@@ -39624,9 +40157,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 944990
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1231
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1269
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 185
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39676,6 +40238,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39691,7 +40260,9 @@
     "sex_ratio_note": "482,356 men and 465,407 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P15",
@@ -39721,9 +40292,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 1757509
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 2442
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 262
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 322
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39773,6 +40373,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39788,7 +40395,9 @@
     "sex_ratio_note": "892,889 men and 867,760 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P16",
@@ -39818,9 +40427,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 578654
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 859
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 483
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 137
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39865,6 +40503,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39880,7 +40525,9 @@
     "sex_ratio_note": "295,199 men and 284,959 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P17",
@@ -39910,9 +40557,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 711669
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 922
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 206
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 104
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -39957,6 +40633,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -39972,7 +40655,9 @@
     "sex_ratio_note": "361,386 men and 351,666 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P18",
@@ -40002,9 +40687,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.6,
+        "count": 1158654
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.2,
+        "count": 1833
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 2455
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 140
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40059,6 +40773,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40074,7 +40795,9 @@
     "sex_ratio_note": "620,722 men and 542,678 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P19",
@@ -40104,9 +40827,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 1055435
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1074
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 631
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 147
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 170
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40161,6 +40913,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40176,7 +40935,9 @@
     "sex_ratio_note": "534,849 men and 522,612 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P20",
@@ -40206,9 +40967,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 700674
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 780
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 481
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 310
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 99
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40263,6 +41053,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40278,7 +41075,9 @@
     "sex_ratio_note": "356,656 men and 345,704 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P21",
@@ -40308,9 +41107,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.4,
+        "count": 1131727
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.3,
+        "count": 3600
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1222
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 1153
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 800
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 31
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40365,6 +41193,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40380,7 +41215,9 @@
     "sex_ratio_note": "586,013 men and 552,520 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P22",
@@ -40410,9 +41247,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 1772720
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 2431
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 672
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 357
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 223
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40467,6 +41333,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40482,7 +41355,9 @@
     "sex_ratio_note": "906,814 men and 869,601 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P23",
@@ -40512,9 +41387,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.3,
+        "count": 13179434
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.3,
+        "count": 43987
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 21002
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 9568
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.1,
+        "count": 8579
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 5067
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40569,6 +41473,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40584,7 +41495,9 @@
     "sex_ratio_note": "6,673,672 men and 6,593,965 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P24",
@@ -40614,9 +41527,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.7,
+        "count": 1266598
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 2114
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1455
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 181
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40666,6 +41608,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40681,7 +41630,9 @@
     "sex_ratio_note": "650,255 men and 620,165 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P25",
@@ -40711,9 +41662,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.4,
+        "count": 1284721
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 6221
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1112
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 151
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40768,6 +41748,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40783,7 +41770,9 @@
     "sex_ratio_note": "658,540 men and 633,743 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P26",
@@ -40813,9 +41802,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 1271632
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1253
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 672
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 127
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -40870,6 +41888,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -40885,7 +41910,9 @@
     "sex_ratio_note": "650,499 men and 623,262 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P27",
@@ -40916,7 +41943,8 @@
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2016 census's religion is published by province only (Statistical Yearbook 1395, table 3.18). The map draws Bandar-e Gaz county under a first-level polygon of its own, so neither it nor Golestan without it is a unit the table counts, and no share is written for either."
     },
     "language": {
       "status": "not_available"
@@ -41017,9 +42045,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 861668
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1036
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 187
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 124
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -41069,6 +42126,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -41084,7 +42148,9 @@
     "sex_ratio_note": "433,633 men and 429,459 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P29",
@@ -41114,9 +42180,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.8,
+        "count": 767455
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 1031
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 216
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 170
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -41166,6 +42261,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -41181,7 +42283,9 @@
     "sex_ratio_note": "389,917 men and 378,981 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-P30",
@@ -41211,9 +42315,38 @@
       "year": 2016,
       "source": "Statistical Centre of Iran, National Population and Housing Census 2016 (1395), detailed tables (Table 1: population by age and sex; Table 3: population by sex and citizenship), as the Internet Archive captured them from amar.org.ir"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.6,
+        "count": 2701984
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 3324
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 2334
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 4027
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Zoroastrianism",
+        "pct": 0.0,
+        "count": 671
+      }
+    ],
     "language": {
       "status": "not_available"
     },
@@ -41268,6 +42401,13 @@
         "url": "https://www.amar.org.ir/",
         "year": 2016,
         "license": "Official statistics of the Statistical Centre of Iran"
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+        "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+        "year": 2016,
+        "license": "Official statistics of the Statistical Centre of Iran"
       }
     ],
     "country": "IRN",
@@ -41283,7 +42423,9 @@
     "sex_ratio_note": "1,376,335 men and 1,336,065 women, 2016 census.",
     "ethnicity_year": 2016,
     "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group."
+    "ethnicity_note": "Country of citizenship, from Table 3 of the 2016 census (population by sex and citizenship): Iranian citizens and the citizens of each other country the Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of 19 September 2026 the citizenship it counts is shown in its place, as Japan's and Korea's nationality is. It is citizenship, not ethnic group.",
+    "religion_year": 2016,
+    "religion_note": "Religion as each person declared it in the 2016 census (the Centre's categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's capture of amar.org.ir. The English yearbook prints the Christian and Zoroastrian headings swapped; they are restored from the Centre's Persian results (see the adapter)."
   },
   {
     "id": "IRN-CENSUS-SPLIT-tehran",
