@@ -1,7 +1,10 @@
-palau_census: 2020 census, Volume I (transcribed) and the National Summary Data Page
-  Volume I: Tables 6, 10, 16 for 16 states and Tables 23, 27, 33 for 13 places in Koror, each adding up
-  https://www.palaugov.pw/wp-content/uploads/Palau-Population.xml: 9,186 bytes
-  Data Page: 17,614 people; every state as in Table 6, Koror with the people from outside Palau or of unknown residence
-  admin1 ethnicity 13, admin1 language 13, admin1 median_age 16, admin1 population 16, admin1 religion 13, admin1 sex_ratio 13, admin2 ethnicity 12, admin2 language 12, admin2 median_age 13, admin2 population 13, admin2 religion 12, admin2 sex_ratio 12
-  wrote data/processed/palau_census.json (346 kB)
-  wrote 93 records
+bangladesh_zila_ages: Census 2022 Community Series, Tables C-01 and C-02 by zila
+    10,307,919 bytes of National Report from the Bureau's own storage
+  520 pages
+    Table P03: the nation and 8 divisions; every block's age groups add up to its Total row, the sexes to the persons, the printed sex ratios to the counts, and the divisions to the nation group by group
+    Table P10: every block's single years add up to its Total row, which is Table P03's, and to each of P03's five-year groups; the divisions make the nation year by year
+    BARISHAL          Barishal           2,570,446 people,   75 hijra, median 26.9
+    BHOLA             Bhola              1,932,518 people,   74 hijra, median 24.3
+    PIROJPUR          Pirojpur           1,198,195 people,   41 hijra, median 27.9
+    PATUAKHAL         Patuakhali         1,727,254 people,   36 hijra, median 27.2
+bangladesh_zila_ages: no sheet 'C-01' in ['C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18']
