@@ -1410,7 +1410,8 @@
       "note": "The US Census Bureau's tables of the 2020 census, which carry the Philippines' religion and ethnicity on this map, have no row for Cotabato City: the Bangsamoro region's row is exactly its provinces' (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi), and the census's own barangay table files the city under Maguindanao, so its people are inside Maguindanao's figures and cannot be taken out of them."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "CLEAR Global's tabulation of the 2010 census, which carries household language for the Philippines' provinces on this map, has no row for Cotabato City, which the boundary file draws apart from the province around it."
     },
     "ethnicity": {
       "status": "not_available",
@@ -2088,9 +2089,64 @@
         "count": 609
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Tagalog",
+        "pct": 94.9
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.5
+      },
+      {
+        "group": "Iloko",
+        "pct": 0.8
+      },
+      {
+        "group": "Bikol",
+        "pct": 0.7
+      },
+      {
+        "group": "Waray (Philippines)",
+        "pct": 0.5
+      },
+      {
+        "group": "Hiligaynon",
+        "pct": 0.4
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.2
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 0.2
+      },
+      {
+        "group": "English",
+        "pct": 0.1
+      },
+      {
+        "group": "Ibanag",
+        "pct": 0.1
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.1
+      },
+      {
+        "group": "Pampanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Sinitic",
+        "pct": 0.1
+      },
+      {
+        "group": "Unknown",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Tagalog",
@@ -3487,6 +3543,12 @@
         "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
         "year": 2020,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "language",
+        "name": "CLEAR Global (formerly Translators without Borders), Philippines: Languages",
+        "url": "https://data.humdata.org/dataset/philippines-languages",
+        "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True"
       }
     ],
     "country": "PHL",
@@ -3495,7 +3557,9 @@
     "religion_year": 2020,
     "religion_note": "2020 Census of Population and Housing. The census records religious affiliation as the individual church or denomination a person names, so the groups here are as published rather than collapsed into traditions -- the alternative would decide, on this map's authority rather than the census's, which churches count as one religion. The boundary file draws Metro Manila as four districts, and this one is Mandaluyong, Marikina, Pasig, Quezon City, San Juan, which the census counts apart: this is their sum.",
     "ethnicity_year": 2020,
-    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Mandaluyong, Marikina, Pasig, Quezon City, San Juan, which the census counts apart: this is their sum."
+    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Mandaluyong, Marikina, Pasig, Quezon City, San Juan, which the census counts apart: this is their sum.",
+    "language_year": 2010,
+    "language_note": "The main language spoken in the household, as a share of the population. Tabulated by CLEAR Global (formerly Translators without Borders) from Philippines Census 2010 (IPUMS extract) (IPUMS International), 2010. Methodology as the publisher states it: Census; representivity very_high. Licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True. The table calls this unit \"Metropolitan Manila Second District\", location code PH13074, which is its PSGC code; it is bound to the polygon by that code."
   },
   {
     "id": "PHL-COMP-ncrthirddistrict",
@@ -4164,9 +4228,48 @@
         "count": 383
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Tagalog",
+        "pct": 97.6
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.0
+      },
+      {
+        "group": "Bikol",
+        "pct": 0.3
+      },
+      {
+        "group": "Iloko",
+        "pct": 0.3
+      },
+      {
+        "group": "Waray (Philippines)",
+        "pct": 0.2
+      },
+      {
+        "group": "Hiligaynon",
+        "pct": 0.1
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.1
+      },
+      {
+        "group": "Pampanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 0.1
+      },
+      {
+        "group": "Sinitic",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Tagalog",
@@ -5453,6 +5556,12 @@
         "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
         "year": 2020,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "language",
+        "name": "CLEAR Global (formerly Translators without Borders), Philippines: Languages",
+        "url": "https://data.humdata.org/dataset/philippines-languages",
+        "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True"
       }
     ],
     "country": "PHL",
@@ -5461,7 +5570,9 @@
     "religion_year": 2020,
     "religion_note": "2020 Census of Population and Housing. The census records religious affiliation as the individual church or denomination a person names, so the groups here are as published rather than collapsed into traditions -- the alternative would decide, on this map's authority rather than the census's, which churches count as one religion. The boundary file draws Metro Manila as four districts, and this one is Caloocan, Malabon, Navotas, Valenzuela, which the census counts apart: this is their sum.",
     "ethnicity_year": 2020,
-    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Caloocan, Malabon, Navotas, Valenzuela, which the census counts apart: this is their sum."
+    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Caloocan, Malabon, Navotas, Valenzuela, which the census counts apart: this is their sum.",
+    "language_year": 2010,
+    "language_note": "The main language spoken in the household, as a share of the population. Tabulated by CLEAR Global (formerly Translators without Borders) from Philippines Census 2010 (IPUMS extract) (IPUMS International), 2010. Methodology as the publisher states it: Census; representivity very_high. Licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True. The table calls this unit \"Metropolitan Manila Third District\", location code PH13075, which is its PSGC code; it is bound to the polygon by that code."
   },
   {
     "id": "PHL-COMP-ncrfourthdistrict",
@@ -6130,9 +6241,68 @@
         "count": 411
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Tagalog",
+        "pct": 94.7
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.5
+      },
+      {
+        "group": "Bikol",
+        "pct": 0.7
+      },
+      {
+        "group": "English",
+        "pct": 0.6
+      },
+      {
+        "group": "Hiligaynon",
+        "pct": 0.5
+      },
+      {
+        "group": "Iloko",
+        "pct": 0.4
+      },
+      {
+        "group": "Waray (Philippines)",
+        "pct": 0.4
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.3
+      },
+      {
+        "group": "Casiguran-Nagtipunan Agta",
+        "pct": 0.1
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.1
+      },
+      {
+        "group": "Pampanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 0.1
+      },
+      {
+        "group": "Sinitic",
+        "pct": 0.1
+      },
+      {
+        "group": "Tausug",
+        "pct": 0.1
+      },
+      {
+        "group": "Unknown",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Tagalog",
@@ -7494,6 +7664,12 @@
         "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
         "year": 2020,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "language",
+        "name": "CLEAR Global (formerly Translators without Borders), Philippines: Languages",
+        "url": "https://data.humdata.org/dataset/philippines-languages",
+        "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True"
       }
     ],
     "country": "PHL",
@@ -7502,6 +7678,315 @@
     "religion_year": 2020,
     "religion_note": "2020 Census of Population and Housing. The census records religious affiliation as the individual church or denomination a person names, so the groups here are as published rather than collapsed into traditions -- the alternative would decide, on this map's authority rather than the census's, which churches count as one religion. The boundary file draws Metro Manila as four districts, and this one is Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig, which the census counts apart: this is their sum.",
     "ethnicity_year": 2020,
-    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig, which the census counts apart: this is their sum."
+    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig, which the census counts apart: this is their sum.",
+    "language_year": 2010,
+    "language_note": "The main language spoken in the household, as a share of the population. Tabulated by CLEAR Global (formerly Translators without Borders) from Philippines Census 2010 (IPUMS extract) (IPUMS International), 2010. Methodology as the publisher states it: Census; representivity very_high. Licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True. The table calls this unit \"Metropolitan Manila Fourth District\", location code PH13076, which is its PSGC code; it is bound to the polygon by that code."
+  },
+  {
+    "id": "PHL-LANG-ncrcityofmanilafirstdistrict",
+    "level": "admin2",
+    "name": "NCR, City of Manila, First District",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Tagalog",
+        "pct": 91.6
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.8
+      },
+      {
+        "group": "Maranao",
+        "pct": 1.8
+      },
+      {
+        "group": "Hiligaynon",
+        "pct": 0.9
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.9
+      },
+      {
+        "group": "Waray (Philippines)",
+        "pct": 0.6
+      },
+      {
+        "group": "Tausug",
+        "pct": 0.5
+      },
+      {
+        "group": "Pampanga",
+        "pct": 0.4
+      },
+      {
+        "group": "Bikol",
+        "pct": 0.3
+      },
+      {
+        "group": "Iloko",
+        "pct": 0.3
+      },
+      {
+        "group": "Sinitic",
+        "pct": 0.2
+      },
+      {
+        "group": "Iranun",
+        "pct": 0.1
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 0.1
+      },
+      {
+        "group": "Sama-Bajaw",
+        "pct": 0.1
+      },
+      {
+        "group": "Unknown",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "CLEAR Global (formerly Translators without Borders), Philippines: Languages",
+        "url": "https://data.humdata.org/dataset/philippines-languages",
+        "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B65314213268917",
+    "language_year": 2010,
+    "language_note": "The main language spoken in the household, as a share of the population. Tabulated by CLEAR Global (formerly Translators without Borders) from Philippines Census 2010 (IPUMS extract) (IPUMS International), 2010. Methodology as the publisher states it: Census; representivity very_high. Licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True. The table calls this unit \"Metropolitan Manila First District\", location code PH13039, which is its PSGC code; it is bound to the polygon by that code."
+  },
+  {
+    "id": "PHL-LANG-isabela",
+    "level": "admin2",
+    "name": "Isabela",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Iloko",
+        "pct": 40.8
+      },
+      {
+        "group": "Tagalog",
+        "pct": 24.4
+      },
+      {
+        "group": "Cebuano",
+        "pct": 13.0
+      },
+      {
+        "group": "Ibanag",
+        "pct": 7.8
+      },
+      {
+        "group": "Hiligaynon",
+        "pct": 4.0
+      },
+      {
+        "group": "Boholano",
+        "pct": 1.2
+      },
+      {
+        "group": "Cuyonon",
+        "pct": 1.2
+      },
+      {
+        "group": "Romblomanon",
+        "pct": 0.9
+      },
+      {
+        "group": "Waray (Philippines)",
+        "pct": 0.9
+      },
+      {
+        "group": "Yogad",
+        "pct": 0.9
+      },
+      {
+        "group": "Paranan",
+        "pct": 0.8
+      },
+      {
+        "group": "Nuclear Palawan",
+        "pct": 0.6
+      },
+      {
+        "group": "Ifugaw",
+        "pct": 0.4
+      },
+      {
+        "group": "Gaddang",
+        "pct": 0.3
+      },
+      {
+        "group": "Itawit",
+        "pct": 0.3
+      },
+      {
+        "group": "Tausug",
+        "pct": 0.3
+      },
+      {
+        "group": "Kalinga",
+        "pct": 0.2
+      },
+      {
+        "group": "Manobo",
+        "pct": 0.2
+      },
+      {
+        "group": "Balangingi",
+        "pct": 0.1
+      },
+      {
+        "group": "Bikol",
+        "pct": 0.1
+      },
+      {
+        "group": "Itneg",
+        "pct": 0.1
+      },
+      {
+        "group": "Kagayanen",
+        "pct": 0.1
+      },
+      {
+        "group": "Kankanaey",
+        "pct": 0.1
+      },
+      {
+        "group": "Kinaray-a",
+        "pct": 0.1
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.1
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.1
+      },
+      {
+        "group": "Masbatenyo",
+        "pct": 0.1
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 0.1
+      },
+      {
+        "group": "Subanen",
+        "pct": 0.1
+      },
+      {
+        "group": "Tagbanwa",
+        "pct": 0.1
+      },
+      {
+        "group": "Unknown",
+        "pct": 0.1
+      },
+      {
+        "group": "Zamboangueño",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "CLEAR Global (formerly Translators without Borders), Philippines: Languages",
+        "url": "https://data.humdata.org/dataset/philippines-languages",
+        "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B52568839586340",
+    "language_year": 2010,
+    "language_note": "The main language spoken in the household, as a share of the population. Tabulated by CLEAR Global (formerly Translators without Borders) from Philippines Census 2010 (IPUMS extract) (IPUMS International), 2010. Methodology as the publisher states it: Census; representivity very_high. Licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True. The table calls this unit \"Isabela\", location code PH02031, which is its PSGC code; it is bound to the polygon by that code."
+  },
+  {
+    "id": "PHL-LANG-cityofisabela",
+    "level": "admin2",
+    "name": "City of Isabela",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "CLEAR Global's tabulation of the 2010 census, which carries household language for the Philippines' provinces on this map, has no row for City of Isabela, which the boundary file draws apart from the province around it."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B50898058307541"
   }
 ]
