@@ -1,49 +1,155 @@
-== http://web.archive.org/web/20201115023929id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseK_details.xlsx
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 67,733 bytes
-  -- 'Sheet1'
-       2: Table B01.  Age 
-       3: Age Group | Total | Lelu | Malem | Utwe | Tafunsak
-      23: Median | 21.5 | 22.1 | 20.8 | 21.7 | 21.3
-      44: Median | 21.3 | 22.2 | 20.7 | 20.5 | 21.1
-      65: Median | 21.8 | 22 | 21 | 22.6 | 21.6
-      68: Table B02. House
-     124: Table B03. Perso
-     140: Median | 5.9 | 5.5 | 5.6 | 6.2 | 6.2
-     183: Table B03A. Fert
-     246: Table B03B. Chil
+== http://web.archive.org/web/20201115023753id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseF_details.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 2,324,606 bytes
+  -- 'Cover'
+  -- 'ToC'
+       1: Table of Content
+       2: Table | Page
+       4: Table B01.  Age  | 1
+       5: Table B02. House | 2
+       6: Table B03. House | 3
+       7: Table B03A. Fert | 4
+       8: Table B03B. Chil | 5
+       9: Table B04. Singl | 6
+      10: Table B04A. Male | 7
+      11: Table B04B. Fema | 8
+      12: Table B05. Place | 9
+      13: Table B05A. Male | 10
+      14: Table B05B. Fema | 11
+      15: Table B06. Citiz | 12
+      16: Table B06A. Male | 13
+      17: Table B06B. Fema | 14
+      18: Table B07. Resid | 15
+      19: Table B07A. Male | 16
+      20: Table B07B. Fema | 17
+      21: Table B08. Ethni | 18
+      22: Table B08A. Male | 19
+      23: Table B08B. Fema | 20
+      24: Table B09. Marit | 21
+      25: Table B09A. Male | 22
+      26: Table B09B. Mari | 23
+      27: Table B10. Liter | 24
+      28: Table B10A. Engl | 25
+      29: Table B11. Schoo | 26
+      30: Table B11A. Male | 27
+      31: Table B11B. Fema | 28
+      32: Table B12. Educa | 29
+      33: Table B12A. Educ | 30
+      34: Table B13. Age C | 31
+      35: Table B14. Labor | 32
+      36: Table B15. Home  | 33
+      37: Table B01.  Age  | 34
+      38: Table B17. US La | 35
+      39: Table B18. US La | 36
+      40: Table B19. Major | 37
+      41: Table B20. Major | 38
+      42: Table B21. Class | 39
+      43: Table B22. House | 40
+      44: Table B23. Origi | 41
+      45: Table B24. Perso | 42
+      46: Table B24A. Male | 43
+      47: Table B24B. Fema | 44
+      48: Table B25. Perso | 45
+      49: Table B25A. Male | 46
+      50: Table B25B. Fema | 47
+      52: Table H01. Struc | 48
+      53: Table H02. Utili | 49
+      54: Table H03. Plumb | 50
+      55: Table H04. Cooki | 51
+      56: Table H05. Vehic | 52
+      57: Table H06. House | 53
+      58: Table H07. Commu | 54
+      59: Table H08. Crop  | 55
+      60: Table H09. Lives | 56
+      61: Table H10. Fishi | 57
+      62: Table H11. Tobac | 58
+  -- 'Basic Tables'
+       3: Table B01.  Age 
+       4: Age | Total | Yap | Chuuk | Pohnpei | Kosrae
+      24: Median | 21.5 | 25 | 20.7 | 21.7 | 21.5
+      45: Median | 21.1 | 23.7 | 20.5 | 21.3 | 21.3
+      66: Median | 21.9 | 26.3 | 20.9 | 22 | 21.8
+      72: Table B02. House
+     130: Table B03. House
+     146: Median | 6 | 4.9 | 6.7 | 5.7 | 5.9
+     186: Table B03A. Fert
+     245: Table B03B. Chil
      277: Table B04. Singl
-     278: Single Age | Total | Lelu | Malem | Utwe | Tafunsak
-     347: Table B04A. Male
-     348: Single Age | Total | Lelu | Malem | Utwe | Tafunsak
-     417: Table B04B. Fema
-     418: Single Age | Total | Lelu | Malem | Utwe | Tafunsak
-     487: Table B05. Place
-     534: Table B05A. Male
-     581: Table B05B. Fema
-     629: Table B06. Citiz
-     679: Table 16. Reside
-     725: Table 17. Male -
-     772: Table 18. Female
-     820: Table 13. Citize
-     870: Table 14. Males 
-     921: Table 15. Female
-     972: Table 16. Reside
-    1019: Table 17. Male -
-    1066: Table 18. Female
-    1114: Table 22. Marita
-    1138: Table 23. Males 
-    1163: Table 24. Female
-    1188: Table 25. Marita
-    1249: Table 26. Litera
-    1253: Literacy 5+ year | 5816 | 1900 | 1170 | 863 | 1883
-    1257: Literacy - Only  | 121 | 43 | 29 | 27 | 22
-    1274: Literacy - Engli | 1404 | 456 | 426 | 161 | 361
-    1290: Table 26A. Engli
-    1294: Literacy - Engli | 3835 | 1239 | 633 | 593 | 1370
-    1307: Literacy - 2 oth | 264 | 104 | 38 | 61 | 61
-    1320: Language mainly  | 6122 | 1996 | 1218 | 910 | 1998
-    1337: Table 27. School
-    1380: Table 28. Males 
-    1423: Table 29. Female
-    1467: Table 31. Age by
-    1512: Table H01. Struc
+     278: Single Age | Total | Yap | Chuuk | Pohnpei | Kosrae
+     348: Table B04A. Male
+     349: Single Age | Total | Yap | Chuuk | Pohnpei | Kosrae
+     419: Table B04B. Fema
+     420: Single Age | Total | Yap | Chuuk | Pohnpei | Kosrae
+     490: Table B05. Place
+     537: Table B05A. Male
+     584: Table B05B. Fema
+     631: Table B06. Citiz
+     680: Table B06A. Male
+     729: Table B06B. Fema
+     778: Table B07. Resid
+     825: Table B07A. Male
+     872: Table B07B. Fema
+     919: Table B08. Ethni
+     920: Ethnicity | Total | Yap | Chuuk | Pohnpei | Kosrae
+     923: Single ethnic gr | 88788 | 10457 | 45620 | 30105 | 2606
+     983: Table B08A. Male
+     984: Ethnicity | Total | Yap | Chuuk | Pohnpei | Kosrae
+     987: Single ethnic gr | 45170 | 5198 | 23322 | 15384 | 1266
+    1047: Table B08B. Fema
+    1048: Ethnicity | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1051: Single ethnic gr | 43618 | 5259 | 22298 | 14721 | 1340
+    1111: Table B09. Marit
+    1112: Marital Status & | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1137: Table B09A. Male
+    1138: Marital Status a | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1148: Religion
+    1187: Table B09B. Mari
+    1188: Marital Status a | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1255: Table B10. Liter
+    1256: Literacy | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1258: Literacy 5+ year | 90770 | 10217 | 42656 | 32081 | 5816
+    1262: Literacy - Only  | 13116 | 648 | 8734 | 3613 | 121
+    1279: Literacy - Engli | 56045 | 6855 | 29544 | 18242 | 1404
+    1296: Table B10A. Engl
+    1297: Literacy | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1299: Literacy - Engli | 11792 | 1569 | 636 | 5752 | 3835
+    1312: Literacy - 2 oth | 1091 | 135 | 154 | 538 | 264
+    1325: Language mainly  | 95544 | 10656 | 45081 | 33685 | 6122
+    1343: Table B11. Schoo
+    1386: Table B11A. Male
+    1429: Table B11B. Fema
+    1472: Table B12. Educa
+    1526: Table B12A. Educ
+    1570: Table B13. Age C
+    1571: Age Category and | Total | Yap | Chuuk | Pohnpei | Kosrae
+    1619: Table B14. Labor
+    1665: Table B15. Home 
+    1704: Table B16. Labor
+    1774: Table B17. US La
+    1817: Table B18. US La
+    1856: Table B19. Major
+    1896: Table B20. Major
+    1957: Table B21. Class
+    1964: Municipal govern | 790 | 6 | 463 | 295 | 26
+    1976: Municipal govern | 680 | 5 | 419 | 237 | 19
+    1988: Municipal govern | 110 | 1 | 44 | 58 | 7
+    1997: Table B22. House
+    2051: Table B23. Origi
+    2109: Table B24. Perso
+    2148: Table B24A. Male
+    2187: Table B24B. Fema
+    2226: Table B25. Perso
+    2270: Table B25A. Male
+    2314: Table B25B. Fema
+    2358: Table H01. Struc
+    2413: Table H02. Utili
+    2427: Median  | 3.4 | 3.2 | 3.6 | 3.1 | 4
+    2440: Median  | 6 | 4.9 | 6.7 | 5.7 | 5.9
+    2465: Table H03. Plumb
+    2516: Table H04. Cooki
+    2561: Table H05. Vehic
+    2601: Table H06. House
+    2658: Table H07. Commu
+    2697: Table H08. Crop 
+    2751: Table H09. Lives
+    2791: Table H10. Fishi
+    2837: Table H11. Tobac
