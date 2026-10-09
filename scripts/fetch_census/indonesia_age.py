@@ -21,8 +21,9 @@ record's note says both.
 (``indonesia.PROVINCES`` holds the Indonesian names and spellings). A
 kabupaten binds the polygon of its name inside its province's polygon
 (without the word "Kabupaten"; a kota keeps "Kota", as the boundary file
-writes it). Four regencies were renamed after the boundary file was drawn
-and bind by ``RENAMED``, each the same territory under its new name. Every
+writes it). Four regencies were renamed after the boundary file was drawn,
+and one city is spelled apart; they bind by ``RENAMED``, each the same
+territory under another name. Every
 row binds one polygon and every polygon of the province one row, except the
 Thousand Islands (``NO_POLYGON``: the boundary file draws neither them nor any
 sea north of Jakarta) and the shapes that are lakes, reservoirs and a forest
@@ -71,17 +72,22 @@ LICENCE = "CC BY, published via HDX"
 NATIONAL = 275_773_774
 SEXES = ("B", "M", "F")
 GROUP = re.compile(r"^(?P<sex>[BMF])(?P<lo>\d{2})(?:(?P<hi>\d{2})|PL)$")
-# Regencies renamed after the boundary file was drawn, each the same
-# territory: the census's name (folded, without "Kabupaten") -> the boundary
-# file's. Toba Samosir became Toba in 2020, Mamuju Utara became Pasangkayu in
-# 2017 and Maluku Tenggara Barat became Kepulauan Tanimbar in 2019; Siau
-# Tagulandang Biaro has been "Kepulauan Siau Tagulandang Biaro" since it was
-# formed in 2007, and the boundary file drops the "Kepulauan".
+# Regencies renamed after the boundary file was drawn, or spelled apart, each
+# the same territory: the census's name (folded, without "Kabupaten") -> the
+# boundary file's. Toba Samosir became Toba in 2020, Mamuju Utara became
+# Pasangkayu in 2017 and Maluku Tenggara Barat became Kepulauan Tanimbar in
+# 2019; Siau Tagulandang Biaro has been "Kepulauan Siau Tagulandang Biaro"
+# since it was formed in 2007, and the boundary file drops the "Kepulauan".
+# North Sumatra's city of Padangsidimpuan is "Padang Sidempuan" in the
+# Bureau's table, the older spelling of the same name: it was the province's
+# only row left without a polygon by name, and its polygon the only one left
+# without a row.
 RENAMED: dict[str, str] = {
     "toba": "Toba Samosir",
     "pasangkayu": "Mamuju Utara",
     "kepulauantanimbar": "Maluku Tenggara Barat",
     "kepulauansiautagulandangbiaro": "Siau Tagulandang Biaro",
+    "kotapadangsidempuan": "Kota Padangsidimpuan",
 }
 # Rows with no polygon: (province, regency key).
 NO_POLYGON = frozenset({("JAKARTA", "kepulauanseribu")})
