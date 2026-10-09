@@ -106,7 +106,7 @@ DRIFT = (0.8, 1.25)
 DRIFT_FEW = (0.75, 1.33)
 PEERS = 5
 AGREE = 0.9                   # a lone seat's Chinese name against the polygon's label
-PAUSE = 3                     # seconds between two requests to the Internet Archive
+PAUSE = 5                     # seconds between two requests to the Internet Archive
 LICENCE = "Official statistics of the provincial bureau of statistics, cited as published"
 
 # Polygons whose label misspells the one county whose seat they hold, beyond
@@ -220,7 +220,7 @@ OPTIONAL = {"A0105"}
 def archived(url: str) -> str | None:
     query = urllib.parse.urlencode({"url": url, "output": "json", "filter": "statuscode:200",
                                     "fl": "timestamp", "limit": "-1"})
-    rows = json.loads(http_get(f"{CDX}?{query}", cache=False, retries=3, timeout=120) or "[]")
+    rows = json.loads(http_get(f"{CDX}?{query}", cache=False, retries=5, timeout=90) or "[]")
     return rows[-1][0] if len(rows) > 1 else None
 
 
@@ -262,13 +262,13 @@ def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
                     continue
                 where = REPLAY.format(stamp=stamp, url=url)
                 time.sleep(PAUSE)
-                blob = http_get(where, binary=True, cache=True, retries=3, timeout=90)
+                blob = http_get(where, binary=True, cache=True, retries=5, timeout=90)
             else:
                 if any(t.startswith("no capture") for t in tried):
                     continue
                 where = REPLAY.format(stamp=str(YEAR + 6), url=url)
                 time.sleep(PAUSE)
-                blob = http_get(where, binary=True, cache=True, retries=3, timeout=90)
+                blob = http_get(where, binary=True, cache=True, retries=5, timeout=90)
             assert isinstance(blob, bytes)
             sheet = xlrd.open_workbook(file_contents=blob).sheet_by_index(0)
             return [sheet.row_values(i) for i in range(sheet.nrows)], where
