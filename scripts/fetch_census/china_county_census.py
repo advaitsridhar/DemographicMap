@@ -81,7 +81,7 @@ from ._shared import PROCESSED, RAW, gap, http_get, log, measure, record, write_
 from .china_census import (LANGUAGE_NOTE, LANGUAGE_STATUS, compact, grouped, number, pooled,
                            read_a0101, read_a0104, read_a0105)
 from .china_wiki import RESIDUAL
-from .east_asia_common import drawn, hundred, sex_ratio
+from .east_asia_common import drawn, hundred, sex_ratio, unshown
 
 OUT = "china_county_census.json"
 YEAR = 2020
@@ -655,9 +655,15 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         parts.append(f"the {residual:,} people whose nationality is not identified (未定族称) "
                      "and naturalised citizens (入籍)")
     if small:
-        parts.append(f"the {small_people:,} people of the {small} nationalities too few to "
-                     "show at one decimal")
+        parts.append(f"the {small_people:,} people of the "
+                     f"{'one nationality' if small == 1 else f'{small} nationalities'} too few "
+                     "to show at one decimal")
     other = (" 'Other ethnic groups' is " + " and ".join(parts) + ".") if parts else ""
+    left = unshown(counts)
+    if left:
+        # Only the residual can be too small to show once pool_small is done.
+        other += (f" Together they are {left:,} people, too few to show at one decimal "
+                  "themselves: they are counted in the base but not drawn.")
     sources = [{"field": "population/sex_ratio", "name": f"{book}, {TABLES['A0101']}",
                 "url": urls["A0101"], "year": YEAR, "license": LICENCE},
                {"field": "ethnicity", "name": f"{book}, {TABLES['A0104']}",

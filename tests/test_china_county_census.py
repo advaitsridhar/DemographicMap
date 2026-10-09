@@ -368,6 +368,25 @@ class Kinds(unittest.TestCase):
         self.assertEqual(cc.kind_of("大通回族土族自治县", "630121"), "county")
 
 
+class Residual(unittest.TestCase):
+    def test_a_residual_too_small_to_show_is_said_and_not_drawn(self):
+        # Guinan: 20 people of 9 nationalities, 0.03% even together.
+        from scripts.fetch_census.china_wiki import RESIDUAL
+        groups = {"Han Chinese": 99_980.0, "Hui": 10.0, RESIDUAL: 10.0}
+        row = {"total": 100_000.0, "men": 50_000.0, "women": 50_000.0}
+        area = {"index": 0, "label": "某县", "code": "630121", "how": "test"}
+        r = cc.county_record("63", area, "S-X", {"name": "X", "parent": None}, {},
+                             {0: row}, {0: {**row, "groups": groups}}, None,
+                             {"A0101": "u1", "A0104": "u4"}, "live: HTTP Error 403")
+        self.assertEqual(r["ethnicity"], [{"group": "Han Chinese", "pct": 100.0,
+                                           "count": 99_980}])
+        self.assertIn("the 10 people of the one nationality too few to show",
+                      r["ethnicity_note"])
+        self.assertIn("Together they are 20 people, too few to show at one decimal "
+                      "themselves: they are counted in the base but not drawn.",
+                      r["ethnicity_note"])
+
+
 class Adding(unittest.TestCase):
     def test_a_province_read_replaces_its_records_and_the_others_stay(self):
         def rec(code, tag):
