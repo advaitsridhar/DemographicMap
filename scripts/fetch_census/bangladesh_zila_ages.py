@@ -475,8 +475,13 @@ def build(zilas: list[dict[str, Any]], units2: list[dict[str, Any]],
 SHEET_ROWS = 40          # the headings and the zila's own row are near the top
 
 
+def sheet_key(title: str) -> str:
+    """A sheet's name as the workbooks vary it: "C-01", "C01", "C-11 "."""
+    return re.sub(r"[^a-z0-9]", "", title.lower())
+
+
 def sheet_rows(book, name: str, limit: int = SHEET_ROWS) -> list[list[Any]]:
-    sheet = next((s for s in book.worksheets if s.title.strip() == name), None)
+    sheet = next((s for s in book.worksheets if sheet_key(s.title) == sheet_key(name)), None)
     if sheet is None:
         raise SystemExit(f"bangladesh_zila_ages: no sheet {name!r} in "
                          f"{[s.title for s in book.worksheets]}")
