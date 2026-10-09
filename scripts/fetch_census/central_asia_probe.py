@@ -361,37 +361,58 @@ def cmd_siat(ids: list[str], rows: int) -> None:
             log(f"   {json.dumps(row, ensure_ascii=False)[:300]}")
 
 
-def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str) -> None:
+def workbook_rows(body: bytes) -> list[tuple[str, Any]]:
+    """[(sheet name, row iterator)] for an .xlsx (openpyxl) or a legacy .xls (xlrd)."""
+    if body[:8] == b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1":
+        import xlrd
+        book = xlrd.open_workbook(file_contents=body)
+        return [(s.name, (s.row_values(i) for i in range(s.nrows))) for s in book.sheets()]
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    return [(name, book[name].iter_rows(values_only=True)) for name in book.sheetnames]
+
+
+def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str,
+             grep: str = "", sheet_match: str = "") -> None:
     """A big workbook's structure: the rows whose first cell is a label.
 
     A census workbook that stacks one block per region down a sheet is read
     by where its blocks start; printing every row whose first cell is not a
     plain number (an age, a code) shows that, with each such row's non-empty
     cells, without printing the thousands of figures between them.
+
+    ``grep`` prints instead only the rows one of whose cells matches it (a
+    settlement table's county, district and city rows); ``sheet_match`` reads
+    only the sheets whose name matches. Legacy ``.xls`` is read too.
     """
-    import openpyxl
     status, _, body, _ = fetch(url, timeout=600)
     log(f"{url}: HTTP {status} {len(body):,} B")
     if status != 200:
         return
-    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-    log(f"  sheets: {book.sheetnames}")
-    for name in sheets or book.sheetnames:
-        if name not in book.sheetnames:
-            log(f"  no sheet {name!r}")
+    book = workbook_rows(body)
+    names = [name for name, _ in book]
+    log(f"  sheets ({len(names)}): {names[:60]}")
+    pattern = re.compile(grep) if grep else None
+    for name, it in book:
+        if sheets and name not in sheets:
             continue
-        sheet = book[name]
-        log(f"  -- {name!r}: {sheet.max_row} rows x {sheet.max_column} cols")
+        if sheet_match and not re.search(sheet_match, name):
+            continue
+        log(f"  -- {name!r}")
         shown = 0
-        for i, row in enumerate(sheet.iter_rows(values_only=True), start=1):
+        for i, row in enumerate(it, start=1):
+            row = list(row or [])
             first = "" if not row or row[0] is None else str(row[0]).strip()
-            if skip and re.fullmatch(skip, first):
+            if not pattern and skip and re.fullmatch(skip, first):
                 continue
             cells = [str(c).strip()[:width] for c in row if c not in (None, "")]
             if not cells:
                 continue
+            if pattern and not any(pattern.search(str(c)) for c in row if c not in (None, "")):
+                continue
             shown += 1
             if shown > rows:
+                log(f"  ... more rows; stopped at {rows}")
                 break
             log(f"  r{i}: {' | '.join(cells)[:900]}")
 
@@ -461,6 +482,8 @@ def main() -> int:
     x2.add_argument("--rows", type=int, default=80)
     x2.add_argument("--width", type=int, default=40)
     x2.add_argument("--skip", default=r"\d+|\d+\D{0,3}", help="first-cell pattern to leave out")
+    x2.add_argument("--grep", default="", help="print only rows with a cell matching this")
+    x2.add_argument("--sheet-match", default="", help="read only sheets whose name matches")
     s2 = sub.add_parser("siat")
     s2.add_argument("ids", nargs="+")
     s2.add_argument("--rows", type=int, default=3)
@@ -511,7 +534,7 @@ def main() -> int:
         cmd_pages(args.urls, args.match, args.most, args.nfkc, args.only)
     elif args.cmd == "xlsx":
         cmd_xlsx(args.url, [s for s in args.sheets.split(",") if s], args.rows,
-                 args.width, args.skip)
+                 args.width, args.skip, args.grep, args.sheet_match)
     elif args.cmd == "siat":
         cmd_siat(args.ids, args.rows)
     elif args.cmd == "tree":
