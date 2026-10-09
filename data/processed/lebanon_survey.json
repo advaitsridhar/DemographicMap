@@ -1,0 +1,2190 @@
+[
+  {
+    "id": "LBN-LFHLCS-Beirut",
+    "level": "admin2",
+    "name": "Beirut",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 69.1,
+        "count": 236109
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 30.9,
+        "count": 105615
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Beyrouth",
+    "match_by": "shape_id",
+    "shape_id": "6925839B60872420025543",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 236,109 Lebanese and 105,615 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Baabda",
+    "level": "admin2",
+    "name": "Baabda",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 74.2,
+        "count": 410718
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 25.8,
+        "count": 143083
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Mont-Liban",
+    "match_by": "shape_id",
+    "shape_id": "6925839B63468798885318",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 410,719 Lebanese and 143,083 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-El Metn",
+    "level": "admin2",
+    "name": "El Metn",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 77.5,
+        "count": 395931
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 22.5,
+        "count": 115103
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Mont-Liban",
+    "match_by": "shape_id",
+    "shape_id": "6925839B978992545808",
+    "aliases": [
+      "Matn"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 395,932 Lebanese and 115,103 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Chouf",
+    "level": "admin2",
+    "name": "Chouf",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 74.9,
+        "count": 207481
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 25.1,
+        "count": 69485
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Mont-Liban",
+    "match_by": "shape_id",
+    "shape_id": "6925839B22224450252528",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 207,482 Lebanese and 69,485 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Aley",
+    "level": "admin2",
+    "name": "Aley",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 70.0,
+        "count": 210677
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 30.0,
+        "count": 90101
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Mont-Liban",
+    "match_by": "shape_id",
+    "shape_id": "6925839B64789983329466",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 210,678 Lebanese and 90,101 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Kesrouan",
+    "level": "admin2",
+    "name": "Kesrouan",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 88.5,
+        "count": 230518
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 11.5,
+        "count": 29934
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Keserwan-Jbeil",
+    "match_by": "shape_id",
+    "shape_id": "6925839B71215768953802",
+    "aliases": [
+      "Keserwan"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 230,518 Lebanese and 29,934 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Jbail",
+    "level": "admin2",
+    "name": "Jbail",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 89.3,
+        "count": 115689
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.7,
+        "count": 13847
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Keserwan-Jbeil",
+    "match_by": "shape_id",
+    "shape_id": "6925839B71735997192739",
+    "aliases": [
+      "Jbeil"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 115,690 Lebanese and 13,847 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Tripoli",
+    "level": "admin2",
+    "name": "Tripoli",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 82.6,
+        "count": 201338
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 17.4,
+        "count": 42495
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Nord",
+    "match_by": "shape_id",
+    "shape_id": "6925839B99718329093557",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 201,338 Lebanese and 42,495 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Koura",
+    "level": "admin2",
+    "name": "Koura",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 85.7,
+        "count": 72432
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 14.3,
+        "count": 12130
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Nord",
+    "match_by": "shape_id",
+    "shape_id": "6925839B38007173727278",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 72,433 Lebanese and 12,130 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Zgharta",
+    "level": "admin2",
+    "name": "Zgharta",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 83.3,
+        "count": 73117
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 16.7,
+        "count": 14631
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Nord",
+    "match_by": "shape_id",
+    "shape_id": "6925839B15174750350375",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 73,118 Lebanese and 14,631 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Batroun",
+    "level": "admin2",
+    "name": "Batroun",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 90.6,
+        "count": 53354
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 9.4,
+        "count": 5512
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Nord",
+    "match_by": "shape_id",
+    "shape_id": "6925839B96562179351486",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 53,355 Lebanese and 5,513 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Bcharre",
+    "level": "admin2",
+    "name": "Bcharre",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 94.3,
+        "count": 20836
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 5.7,
+        "count": 1262
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Nord",
+    "match_by": "shape_id",
+    "shape_id": "6925839B40760308631941",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 20,837 Lebanese and 1,262 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. Low precision: CAS marks estimates under 2,500 residents, as the non-Lebanese one is here, as having a relative standard error above 20%."
+  },
+  {
+    "id": "LBN-LFHLCS-Minieh-Dinnieh",
+    "level": "admin2",
+    "name": "Minieh-Dinnieh",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 86.7,
+        "count": 122065
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 13.3,
+        "count": 18731
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Nord",
+    "match_by": "shape_id",
+    "shape_id": "6925839B71643877987616",
+    "aliases": [
+      "Minieh-Danniyeh"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 122,066 Lebanese and 18,731 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Akkar",
+    "level": "admin2",
+    "name": "Akkar",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 91.9,
+        "count": 297886
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 8.1,
+        "count": 26080
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Aakkâr",
+    "match_by": "shape_id",
+    "shape_id": "6925839B28822850251568",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 297,886 Lebanese and 26,080 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Zahle",
+    "level": "admin2",
+    "name": "Zahle",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 78.9,
+        "count": 140006
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 21.1,
+        "count": 37394
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Béqaa",
+    "match_by": "shape_id",
+    "shape_id": "6925839B31149323573129",
+    "aliases": [
+      "Zahleh"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 140,006 Lebanese and 37,395 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-West Bekaa",
+    "level": "admin2",
+    "name": "West Bekaa",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 78.5,
+        "count": 67832
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 21.5,
+        "count": 18584
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Béqaa",
+    "match_by": "shape_id",
+    "shape_id": "6925839B74004510975279",
+    "aliases": [
+      "West Beqaa"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 67,832 Lebanese and 18,584 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Rachaya",
+    "level": "admin2",
+    "name": "Rachaya",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 93.8,
+        "count": 31737
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.2,
+        "count": 2103
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Béqaa",
+    "match_by": "shape_id",
+    "shape_id": "6925839B61839988636559",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 31,738 Lebanese and 2,104 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. Low precision: CAS marks estimates under 2,500 residents, as the non-Lebanese one is here, as having a relative standard error above 20%."
+  },
+  {
+    "id": "LBN-LFHLCS-Baalbek",
+    "level": "admin2",
+    "name": "Baalbek",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 89.9,
+        "count": 192906
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.1,
+        "count": 21718
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Baalbek-Hermel",
+    "match_by": "shape_id",
+    "shape_id": "6925839B96972958912663",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 192,906 Lebanese and 21,718 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Hermel",
+    "level": "admin2",
+    "name": "Hermel",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 94.3,
+        "count": 28732
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 5.7,
+        "count": 1725
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Baalbek-Hermel",
+    "match_by": "shape_id",
+    "shape_id": "6925839B79875972026239",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 28,732 Lebanese and 1,725 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. Low precision: CAS marks estimates under 2,500 residents, as the non-Lebanese one is here, as having a relative standard error above 20%."
+  },
+  {
+    "id": "LBN-LFHLCS-Saida",
+    "level": "admin2",
+    "name": "Saida",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 70.5,
+        "count": 209058
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 29.5,
+        "count": 87559
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Sud",
+    "match_by": "shape_id",
+    "shape_id": "6925839B37776772134920",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 209,059 Lebanese and 87,559 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Sour",
+    "level": "admin2",
+    "name": "Sour",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 77.1,
+        "count": 197068
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 22.9,
+        "count": 58624
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Sud",
+    "match_by": "shape_id",
+    "shape_id": "6925839B77249045158285",
+    "aliases": [
+      "Tyr"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 197,069 Lebanese and 58,624 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Jezzine",
+    "level": "admin2",
+    "name": "Jezzine",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 84.7,
+        "count": 27163
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 15.3,
+        "count": 4895
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Liban-Sud",
+    "match_by": "shape_id",
+    "shape_id": "6925839B23310202718855",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 27,164 Lebanese and 4,896 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Nabatiye",
+    "level": "admin2",
+    "name": "Nabatiye",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 81.3,
+        "count": 146560
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 18.7,
+        "count": 33655
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Nabatîyé",
+    "match_by": "shape_id",
+    "shape_id": "6925839B53479738564512",
+    "aliases": [
+      "Nabatieh"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 146,561 Lebanese and 33,656 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Bent Jbail",
+    "level": "admin2",
+    "name": "Bent Jbail",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 88.1,
+        "count": 84781
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 11.9,
+        "count": 11434
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Nabatîyé",
+    "match_by": "shape_id",
+    "shape_id": "6925839B74640193916916",
+    "aliases": [
+      "Bint Jbeil"
+    ],
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 84,782 Lebanese and 11,434 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Marjaayoun",
+    "level": "admin2",
+    "name": "Marjaayoun",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 87.1,
+        "count": 64527
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 12.9,
+        "count": 9518
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Nabatîyé",
+    "match_by": "shape_id",
+    "shape_id": "6925839B57733890920365",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 64,528 Lebanese and 9,519 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Hasbaya",
+    "level": "admin2",
+    "name": "Hasbaya",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 89.7,
+        "count": 25759
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.3,
+        "count": 2944
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "parent_name": "Nabatîyé",
+    "match_by": "shape_id",
+    "shape_id": "6925839B87816606095601",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 25,759 Lebanese and 2,945 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Aakkâr",
+    "level": "admin1",
+    "name": "Aakkâr",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 91.9,
+        "count": 297886
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 8.1,
+        "count": 26080
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B85296590469481",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 297,886 Lebanese and 26,080 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Baalbek-Hermel",
+    "level": "admin1",
+    "name": "Baalbek-Hermel",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 90.4,
+        "count": 221638
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 9.6,
+        "count": 23443
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B19672163648714",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 221,639 Lebanese and 23,443 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Baalbek, Hermel."
+  },
+  {
+    "id": "LBN-LFHLCS-Beyrouth",
+    "level": "admin1",
+    "name": "Beyrouth",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 69.1,
+        "count": 236109
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 30.9,
+        "count": 105615
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B13555465262434",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 236,109 Lebanese and 105,615 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community."
+  },
+  {
+    "id": "LBN-LFHLCS-Béqaa",
+    "level": "admin1",
+    "name": "Béqaa",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 80.5,
+        "count": 239576
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 19.5,
+        "count": 58082
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B59549752014872",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 239,576 Lebanese and 58,083 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Zahleh, West Beqaa, Rachaya."
+  },
+  {
+    "id": "LBN-LFHLCS-Keserwan-Jbeil",
+    "level": "admin1",
+    "name": "Keserwan-Jbeil",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 88.8,
+        "count": 346208
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 11.2,
+        "count": 43781
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B4671352582534",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 346,208 Lebanese and 43,781 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Keserwan, Jbeil."
+  },
+  {
+    "id": "LBN-LFHLCS-Liban-Nord",
+    "level": "admin1",
+    "name": "Liban-Nord",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 85.1,
+        "count": 543145
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 14.9,
+        "count": 94762
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B65529488220063",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 543,146 Lebanese and 94,763 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Tripoli, Koura, Zgharta, Batroun, Bcharre, Minieh-Danniyeh."
+  },
+  {
+    "id": "LBN-LFHLCS-Liban-Sud",
+    "level": "admin1",
+    "name": "Liban-Sud",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 74.1,
+        "count": 433291
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 25.9,
+        "count": 151079
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B17317068268844",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 433,291 Lebanese and 151,079 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Saida, Tyr, Jezzine."
+  },
+  {
+    "id": "LBN-LFHLCS-Mont-Liban",
+    "level": "admin1",
+    "name": "Mont-Liban",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 74.6,
+        "count": 1224810
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 25.4,
+        "count": 417773
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B78911970066467",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 1,224,810 Lebanese and 417,773 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Baabda, Matn, Chouf, Aley."
+  },
+  {
+    "id": "LBN-LFHLCS-Nabatîyé",
+    "level": "admin1",
+    "name": "Nabatîyé",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Lebanese",
+        "pct": 84.8,
+        "count": 321629
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 15.2,
+        "count": 57553
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Central Administration of Statistics (Lebanon), Labour Force and Household Living Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      },
+      {
+        "field": "ethnicity (design)",
+        "name": "LFHLCS 2018-2019 report, section 7.2: sample design and sampling weights",
+        "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+        "year": 2018,
+        "license": "Central Administration of Statistics (Lebanon), published survey tables"
+      }
+    ],
+    "country": "LBN",
+    "match_by": "shape_id",
+    "shape_id": "68408151B46493486830483",
+    "ethnicity_year": 2018,
+    "ethnicity_basis": "survey estimate: nationality, residents of residential dwellings",
+    "ethnicity_note": "Residents by nationality in the Central Administration of Statistics' Labour Force and Household Living Conditions Survey 2018-2019 (Table HL.6A), weighted to mid-2018 population estimates: an estimated 321,630 Lebanese and 57,553 non-Lebanese residents. Non-Lebanese is everyone without Lebanese citizenship, whatever their nationality, the stateless included. The survey covers residential dwellings only: refugee camps and their adjacent gatherings, informal settlements, army barracks and work sites are left out, so the Palestinians, Syrians and migrant workers living there are not in these figures. CAS publishes no sample size per caza; each caza is one of the design's 26 strata, allocated at least 68 of its about 2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census since 1932. Nationality, not ethnicity: carried on this field under the owner's decision of 19 September 2026; 'Lebanese' is every Lebanese citizen, of whatever community. The sum of the survey's estimates for the cazas Nabatieh, Bint Jbeil, Marjaayoun, Hasbaya."
+  }
+]
