@@ -7,9 +7,7 @@
     "capital": {
       "status": "not_available"
     },
-    "largest_settlement": {
-      "status": "not_available"
-    },
+    "largest_settlement": "Jerusalem",
     "population": {
       "status": "not_available",
       "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here.",
@@ -35,10 +33,19 @@
       "status": "not_available",
       "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "largest settlement",
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/",
+        "license": "CC BY 4.0",
+        "note": "Jerusalem (GeoNames 281184): its point, 35.21633 E 31.76904 N, lies inside this shape."
+      }
+    ],
     "country": "ISR",
     "match_by": "shape_id",
-    "shape_id": "19161824B79530266069959"
+    "shape_id": "19161824B79530266069959",
+    "largest_settlement_note": "The city's population is not shown: published figures for Jerusalem count its whole municipal area, East Jerusalem included, which the map draws within the West Bank, and none is published for the part of the city inside this shape."
   },
   {
     "id": "ISR-CBS-Northern District",
@@ -1924,9 +1931,7 @@
     "capital": {
       "status": "not_available"
     },
-    "largest_settlement": {
-      "status": "not_available"
-    },
+    "largest_settlement": "Jerusalem",
     "population": {
       "status": "not_available",
       "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here.",
@@ -1952,10 +1957,19 @@
       "status": "not_available",
       "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "largest settlement",
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/",
+        "license": "CC BY 4.0",
+        "note": "Jerusalem (GeoNames 281184): its point, 35.21633 E 31.76904 N, lies inside this shape."
+      }
+    ],
     "country": "ISR",
     "parent_name": "Jerusalem District",
     "match_by": "shape_id",
-    "shape_id": "584046B86518607604876"
+    "shape_id": "584046B86518607604876",
+    "largest_settlement_note": "The city's population is not shown: published figures for Jerusalem count its whole municipal area, East Jerusalem included, which the map draws within the West Bank, and none is published for the part of the city inside this shape."
   }
 ]
