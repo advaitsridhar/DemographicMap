@@ -1,4 +1,7 @@
-  Table 2.15: Jews of 6 districts and 13 sub-districts
-  districts make 9,410,100; the country 9,914,700; outside the six districts 504,600
-  wrote data/processed/israel_cbs.json (107 kB)
-  wrote israel_cbs.json (21)
+india_census: Census 2011, level=district
+  validated against published national totals: 640 districts, 1,210,854,977 people
+  national sex ratio 943 females per 1,000 males (623,270,258 males, 587,584,719 females)
+  C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
+  wrote data/processed/india_district.json (2824 kB)
+  735 records, 734 with religion shares, 1 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (31): ADI DHARM, Addi Bassi, Adi, Adim dhamm, Animist, Atheist, Bahai / Bahais, Bidin, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Idu / Idu Mishmi, Intaya, Jews / Judaism, Khasi, Nani Intiya, Niamtre, Nocte, Non Christians, Nyarino, Other religions (not separately named), Pagan, Parsi/Zorastrian, Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Traditional Religion, Tribal Religion, Yumasam
