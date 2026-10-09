@@ -1,25 +1,5 @@
-malaysia: ethnicity, median age and sex ratio by state and district, OpenDOSM
-  states: 16 at 2026-01-01
-  Sabah: DOSM's 2026-01-01 rows name districts the map does not draw (Membakut), so its districts are read at 2024-01-01
-  Sarawak: DOSM's 2026-01-01 rows name districts the map does not draw (Gedong, Lingga, Pantu, Sebuyau, Siburan), so its districts are read at 2024-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2024-01-01
-  1 states' districts each make the state's own figure for 2024-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  districts: 160, read at 2026-01-01 (14 states), 2024-01-01 (2 states)
-  malaysia_state.json: 16 of 16 with a median age (26.6-36.5) and a sex ratio (96.9-117.2)
-  wrote data/processed/malaysia_state.json (46 kB)
-  malaysia_district.json: 160 of 160 with a median age (23.3-38.5) and a sex ratio (91.8-152.4)
-  wrote data/processed/malaysia_district.json (494 kB)
+  https://census.scad.gov.ae/: 176,526 characters
+  2024: 2,767,060 men, 1,368,925 women (4,135,985); 2023 R1: 3,847,585; regions {'AbuDhabi': 2823340, 'AlAin': 986910, 'AlDhafra': 325735}
+  Abu Dhabi: 4,135,985 people, 202.1 men per 100 women; written at 2 level(s)
+  wrote data/processed/uae_scad.json (5 kB)
+  wrote uae_scad.json (2)
