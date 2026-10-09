@@ -529,17 +529,19 @@ def read_workbook(url: str):
 def sheet_rows(book) -> list[list[Any]]:
     """The rows of the workbook's sheet that holds its population tables.
 
-    A contents sheet lists Table B1's title too, so of the sheets that name
-    it the longest is the one with the tables.
+    A contents sheet lists Table B1's title too, and may run on for hundreds
+    of formatted but empty rows, so of the sheets that name it the one with
+    the most figures is the one with the tables.
     """
     found = []
     for sheet in book.worksheets:
         rows = [list(r) for r in sheet.iter_rows(values_only=True)]
         if any(r and isinstance(r[0], str) and re.match(r"Table B0?1\.", r[0].strip())
                for r in rows):
-            found.append(rows)
+            figures = sum(isinstance(c, (int, float)) for r in rows for c in r)
+            found.append((figures, rows))
     check(bool(found), "micronesia_census: no sheet holds Table B1")
-    return max(found, key=len)
+    return max(found, key=lambda f: f[0])[1]
 
 
 def municipal_rows(admin2: list[dict[str, Any]]) -> dict[str, tuple[str, str]]:
