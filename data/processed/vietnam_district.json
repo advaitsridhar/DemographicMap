@@ -39638,7 +39638,7 @@
     "country": "VNM",
     "match_by": "shape_id",
     "shape_id": "63759600B21811289888982",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the province by five-year age group to an open 85+ (Table 5); the volume gives single years for the country and its regions only."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the province by five-year age group to an open 85+ (Table 5); the volume gives single years for the country and its regions only. The count is the whole province's, Côn Đảo district included, which the boundary file draws as a first-level polygon of its own; a median cannot have the district taken out."
   },
   {
     "id": "VNM-AGE-hochiminh",
