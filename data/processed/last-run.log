@@ -1,27 +1,280 @@
-== https://www.sbs.gov.ws/digi/3-2016-Census-Brief-No.2Tables.xlsx
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 109,568 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 444, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 428, in main
-    cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols,
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 276, in cmd_xlsx
-    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 346, in load_workbook
-    reader = ExcelReader(filename, read_only, keep_vba,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 123, in __init__
-    self.archive = _validate_archive(fn)
-                   ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 95, in _validate_archive
-    archive = ZipFile(filename, 'r')
-              ^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/zipfile.py", line 1355, in __init__
-    self._RealGetContents()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/zipfile.py", line 1422, in _RealGetContents
-    raise BadZipFile("File is not a zip file")
-zipfile.BadZipFile: File is not a zip file
+== https://www.sbs.gov.ws/digi/Census%202011_Excel_tables.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 639,877 bytes
+  -- 'Table 1'
+       2:  | Table 1: Total population by 5-year age groups, sex and regions for the census, 2011
+  -- 'Table 2'
+       2:  | Table 2: Total population by region, census year and population density per square kilometer: 1981-2011
+  -- 'Table 3'
+       2:  | Table 3: Population by household type and total population which have been enumerated in private and institution househo
+  -- 'Table 4'
+       1:  | Table 4: Total population by single age, sex, and regions for the census 2011.
+       3:  |  | Total
+  -- 'Table 5'
+       1:  | Table 5: Private household by relationship to head of household and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 6'
+       1:  | Table 6: Male population by relationship to head of household and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 7'
+       1:  | Table 7: Female population by relationship to head of household and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 8'
+       1:  | Table 8: Total population by country of citizenship and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 9'
+       1:  | Table 9: Male population by country of citizenship and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 10'
+       1:  | Table 10: Female population by country of citizenship and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 11'
+       1:  | Table 11: Total population by marital status and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 12'
+       1:  | Table 12: Male population by marital status and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 13'
+       1:  | Table 13: Female population by marital status and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 14'
+       1:  | Table 14: Total population by matai-status and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 15'
+       1:  | Table 15: Male population by matai-status and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 16'
+       1:  | Table 16: Female population by matai-status and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 17'
+       1:  | Table 17: Total population by types of disability and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 18'
+       1:  | Table 18: Male population by types of disability and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 19'
+       1:  | Table 19: Female population by types of disability and urban-rural residence, 2011
+       3:  | Residence
+  -- 'Table 20'
+       1:  | Table 20: Population 5 years and over by sex, Religion by urban-rural residence, 2011
+       3:  | Residence | Religion
+  -- 'Table 21'
+       1: Table 21: Population 5 years and over by sex, highest educational level attended and urban-rural residence, 2011
+       3:  | Highest level Attended
+  -- 'Table 22'
+       1:  | Table 22 : Population  aged 5-24 years old by sex, school attendance and urban-rural residence, 2011
+       3:  |  |  Attending School
+  -- 'Table23'
+       1:  | Table 23: Population 15-24 years old by sex, literacy in reading using the Samoan Language and urban-rural residence, 20
+       3:  |  | Reading Literacy in Samoa
+  -- 'Table24'
+       1:  | Table 24: Population 15-24 years old by sex, literacy in writing using the Samoan Language and urban-rural residence, 20
+       3:  |  | Writing Literacy in Samoa
+  -- 'Table25'
+       1:  | Table 25: Population 15-24 years old by sex, ability to understand using the Samoan Language and urban-rural residence, 
+       3:  |  | Ability to understand simple instruction in Samoan
+  -- 'Table26'
+       1:  | Table 26: Populaton 15-24 years old by sex, who are literate in reading, writing and also understand simple instructions
+       3:  |  | Sex
+  -- 'Table27'
+       1:  | Table 27: Population 15 years and over by sex, highest level of academic qualification obtained and urban-rural residenc
+       3:  |  | Highest Qualification
+  -- 'Table28'
+       1:  | Table 28: Population aged 15+ by sex with skills in traditional tattooing, and urban-rural residence, 2011
+       3:  |  | Skills in tattoing
+  -- 'Table29'
+       1:  | Table 29: Population aged 15+ by sex with skills in traditional carpentary, and urban-rural residence, 2011
+       3:  |  | Skills in carpentary
+  -- 'Table30'
+       1:  | Table 30: Population aged 15+ by sex with skills in traditional carving, and urban-rural residence, 2011
+       3:  |  | Skill in Carving
+  -- 'Table31'
+       1:  | Table 31: Population aged 15+ by sex with skills in traditional weaving, elei-making and sewing, and urban-rural residen
+       3:  |  | Skills in weaving mats
+  -- 'Table32'
+       1:  | Table 32: Population aged 15+ by sex with skills in any forms of fishing and urban-rural residence, 2011
+       3:  |  | Skills in fishing
+  -- 'Table32b'
+       1:  | Table 32b: Population aged 15+ by sex with skills in any forms of traditional healing for well-being and urban-rural res
+       3:  |  | Skills in traditional healing
+  -- 'Table33'
+       1:  | Table 33: Total economically active population aged 15+ by types of activity and urban-rural residence, 2011
+       3:  |  | Types of Activity
+  -- 'Table34'
+       1:  | Table 34: Male economically active population aged 15+ by types of activity and urban-rural residence, 2011
+       3:  |  | Male Types of Activity
+  -- 'Table35'
+       1:  | Table 35: Female economically active population aged 15+ by types of activity and urban-rural residence, 2011
+       3:  |  | Main Activity
+  -- 'Table36'
+       1:  | Table 36: Total employed population aged 15+ by main types of occupation and urban-rural residence, 2011
+       3:  |  | Types of Occupation
+  -- 'Table37'
+       1:  | Table 37: Male employed population aged 15+ by main types of occupation and urban-rural residence, 2011
+       3:  |  | Types of Occupation
+  -- 'Table38'
+       1:  | Table 38: Female employed population aged 15+ by main types of occupation and urban-rural residence, 2011
+       3:  |  | Types of Occupation
+  -- 'Table39'
+       1:  | Table 39: Total employed population aged 15+ by main industry of employment and urban-rural residence, 20111
+       3:  |  |  Industry Type
+  -- 'Table40'
+       1:  | Table 40: Male employed population aged 15+ by main types of occupation and urban-rural residence, 20111
+  -- 'Table41'
+       1:  | Table 41: Female employed population aged 15+ by main types of occupation and urban-rural residence, 2011
+       3:  |  |  Industry Type
+  -- 'Table42'
+       1:  | Table 42: Total unemployed population 15-29 years old by sex and urban-rural residence, 20111
+       3:  |  | Male
+  -- 'Table43'
+       1:  | Table 43: Total non-economically active population aged 15+ by types of activity and urban-rural residence, 2011
+       3:  |  | Types of non-economic activities
+  -- 'Table44'
+       1:  | Table 44: Male non-economically active population aged 15+ by types of activity and urban-rural residence, 2011
+       3:  |  | Types of non-economic activities
+  -- 'Table45'
+       1:  | Table 45: Female non-economically active population aged 15+ by types of activity and urban-rural residence, 2011
+       3:  |  | Types of non-economic activities
+  -- 'Table46'
+       1:  | Table 46: Population of women 15-49 if ever given birth by age and urban-rural residence, 2011
+       3:  | Residence /women 15-49 | Total
+  -- 'Table47'
+       1:  | Table 47 :Total children ever born to women 15-19 years by urban-rural residence, 2011
+       3:  | Residence | Total teenage mothers
+  -- 'Table48'
+       1:  | Table 48 :Number of children ever born to female 15-49 by sex and urban-rural residence, 2011
+       3:  | Residence | Total women
+  -- 'Table49'
+       1:  | Table 49: Number of children ever born who later died by sex, and urban rural residence, 2011
+       3:  | Residence | Total women
+  -- 'Table50'
+       1:  | Table 50: Number of survivng children ever born by sex and urban-rural residence, 2011
+       3:  | Residence | Total women
+  -- 'Table51'
+       1:  | Table 51: Survival status of total  children born in  the last 12 months by sex , age of women and urban-rural residence
+       3:  | Residence | Total
+  -- 'Table52'
+       1:  | Table 52: Total children born in the last 12 months by age of women, place of delivery and urban-rural residence, 2011
+       3:  | Residence | Total
+  -- 'Table53'
+       1:  | Table 53: Total population by 5 year age-group and whether mother is still alive by urban-rural residence, 2011 
+       3:  | Place of residence | Mother Alive
+  -- 'Table54'
+       1:  | Table 54: Male population by 5 year age-group and whether mother is still alive by urban-rural residence, 2011
+       3:  | Place of residence | Mother alive
+  -- 'Table55'
+       1:  | Table 55: Female population by 5 year age-group and whether mother is still alive by urban-rural residence, 2011
+       3:  | Place of residence | Mother alive
+  -- 'Table56'
+       1:  | Table 56: Total population by 5 year age-group and whether father is still alive by urban-rural residence, 2011
+       3:  | Place of residence | Father alive
+  -- 'Table57'
+       1:  | Table 57: Male population by 5 year age-group and whether father is still alive by urban-rural residence, 2011
+       3:  | Place of residence | Father Alive
+  -- 'Table58'
+       1:  | Table 58: Female population by 5 year age-group and whether father is still alive by urban-rural residence, 2011
+       3:  | Place of residence | Father Alive
+  -- 'Table59'
+       1:  | Table 59: Total deceased population by sex and 5 year age-group, 2011
+       3:  | Age group | 2010
+  -- 'Table60'
+       1:  | Table 60: Total population by place of enumeration and place of birth, 2011
+       3:  | Place of residence  | Total Population
+  -- 'Table61'
+       1:  | Table 61: Male  population by place of residence and place of birth, 2011
+       3:  | Place of residence | Total population
+  -- 'Table62'
+       1:  | Table 62:  Female population by place of residence and place of birth, 2011
+       3:  | Place of residence | Total population
+  -- 'Table63'
+       1:  | Table 63:  Population 5 years and over by place  of enumeration and usual residence one year before census, 2011
+       3:  | Place of  residence  | Total population
+  -- 'Table64'
+       1:  | Table 64:  Male population  5 years and over by place  of enumeration and  usual residence one year before census, 2011
+  -- 'Table65'
+       1:  | Table 65:  Female population 5 years and over by place  of enumeration and  usual residence one year before census, 2011
+       3:  | Place of  residence  | Total population
+  -- 'Table66'
+       1:  | Table 66:   Total population  5 years and over by place of enumeration and palce of residence five years before census, 
+       3:  | Place of  residence  | Total population
+  -- 'Table67'
+       1:  | Table 67:   Male population 5 years and over by place  of enumeration and place of residence five years before census, 2
+       3:  | Place of  residence  | Total population
+  -- 'Table68'
+       1:  | Table 68: Female population  5 years and over by place  of enumeration and  place of residence five years before census,
+       3:  | Place of  residence  | Total population
+  -- 'Table69'
+       1:  | Table 69: Dwelling by occupancy status urban-rural residence, 2011
+       3:  | Residence | Occupancy status of buildings
+  -- 'Table70'
+       1:  | Table 70: Dwelling by floor materials urban-rural residence, 2011
+       3:  | Residence | Floor materials
+  -- 'Table71'
+       1:  | Table 71:  Dwelling by roof materials urban-rural residence, 2011
+       3:  | Residence | Roof materials
+  -- 'Table72'
+       1:  | Table 72: Dwelling by wall materials and urban-rural residence, 2011
+       3:  | Residence | Wall materials
+  -- 'Table73'
+       1:  | Table 73: Dwelling by types of dwelling and urban-rural residence, 2001
+       3:  | Residence | Type of Buildings
+  -- 'Table74'
+       1:  | Table 74: Private households by headship sex and urban-rural residence, 2011
+       3:  | Residence | Headship by sex
+  -- 'Table75'
+       1:  | Table 75: Private households by types of land tenure and urban-rural residence, 2011
+       3:  | Residence | Land tenure
+  -- 'Table76'
+       1:  | Table 76: Private households by sources of lighting and urban-rural residence, 2011
+       3:  | Residence | Source of lighting
+  -- 'Table77'
+       1:  | Table 77: Private households by place of cooking and urban-rural residence, 2011
+       3:  | Residence | Cooking facility
+  -- 'Table78'
+       1:  | Table 78: Private households by main source of fuel for cooking urban-rural residence, 2011
+       3:  | Residence | Cooking facility
+  -- 'Table79'
+       1:  | Table 79:  Private households by source of drinking water urban-rural residence, 2011
+       3:  | Residence | Source of drinking water
+  -- 'Table80'
+       1:  | Table 80: Private households by place to fetch drinking water and urban-rural residence, 2011
+       3:  | Residence | Place to fetch  water
+  -- 'Table81'
+       1:  | Table 81: Private households by source of water for other use and rural-urban residence, 2011 
+       3:  | Residence | Source of water for other use
+  -- 'Table82'
+       1:  | Table 82: Private households by place to fetch water for other use and rural-urban residence, 2011 
+       3:  | Residence | Place to fetch water for other use
+  -- 'Table83'
+       1:  | Table 83: Private households by waste water disposal system, urban-rural residence, 2011
+       3:  | Residence | Liquid waste
+  -- 'Table84'
+       1:  | Table 84: Private households by toilet facility, urban-rural residence, 2011
+       3:  | Residence | Toilet facility
+  -- 'Table85'
+       1:  | Table 85: Private households by Electronic appliances and urban-rural residence, 2011
+       3:  | Residence | Mobile phone - Digicel
+  -- 'Table86'
+       1:  | Table 86: Private households by furniture and fittings and urban-rural residence, 2011
+       3:  | Residence | Sewing machine
+  -- 'Table87'
+       1:  | Table 87: Private households by number of returning Regional Seasonal Employment (RSE) workers and urban-rural residence
+       3:  | Residence | RSE 2010
+  -- 'Table88'
+       1:  | Table 88: Private households by other items and urban-rural residence, 2011
+       3:  | Residence | Fishing tools
+  -- 'Table89'
+       1:  | Table 89: Private households by means of transport and urban-rural residence, 2011
+       3:  | Residence | Motor vechicle ownership
+  -- 'Table90'
+       1:  | Table 90: Private households by type of house tenure and urban-rural residence, 2011
+       3:  | Residence | House ownership
+  -- 'Table91'
+       1:  | Table 91: Private households by ownership of land and urban-rural residence, 2011
+       3:  | Residence | Freehold land ownership
+  -- 'Table92'
+       1:  | Table 92: Private households by livestock and urban-rural, 2011
+       3:  | Residence | Poutry
+  -- 'Table93'
+       1:  | Table 93: Total population by district, village, sex and urban-rural residence for the census, 2011
+       3:  |  | Total
+  -- 'Sheet2'
