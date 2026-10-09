@@ -273,13 +273,26 @@ def cmd_xlsx(url: str, sheets: list[str], first: int, last: int, width: int,
     log(f"== {url}\n  HTTP {status} {ctype} {len(body):,} bytes")
     if status != 200:
         return
-    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
     pattern = re.compile(grep, re.I) if grep else None
-    for sheet in book.worksheets:
-        if sheets and sheet.title not in sheets and sheet.title.replace(" ", "_") not in sheets:
+    if body[:4] == b"\xd0\xcf\x11\xe0":
+        # A legacy workbook whatever its name says: Samoa's 2016 briefs are
+        # .xls files served as .xlsx.
+        import xlrd
+        log("  (a legacy .xls workbook, read with xlrd)")
+        book = xlrd.open_workbook(file_contents=body)
+        named = [(s.name, [[s.cell_value(r, c) for c in range(s.ncols)]
+                           for r in range(s.nrows)]) for s in book.sheets()]
+    elif body[:2] != b"PK":
+        log("  not a workbook: " + " ".join(body[:300].decode("utf-8", "replace").split()))
+        return
+    else:
+        book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+        named = [(s.title, s.iter_rows(values_only=True)) for s in book.worksheets]
+    for title, rows in named:
+        if sheets and title not in sheets and title.replace(" ", "_") not in sheets:
             continue
-        log(f"  -- {sheet.title!r}")
-        for n, row in enumerate(sheet.iter_rows(values_only=True), start=1):
+        log(f"  -- {title!r}")
+        for n, row in enumerate(rows, start=1):
             if n < first:
                 continue
             if n > last:
