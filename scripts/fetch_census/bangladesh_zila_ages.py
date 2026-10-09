@@ -65,12 +65,24 @@ GROUPS: list[tuple[int, int | None, str]] = [
 # the eleven years; the widest zila growth is Dhaka's and Gazipur's. Outside
 # these bounds the two figures are not one place counted twice.
 GROWTH = (0.95, 1.6)
+# The six zilas whose BGN romanisation in the workbook and the boundary file's
+# spelling differ by more than diacritics, as the first run listed them (the
+# other 58 matched outright). Declared, not inferred: "Jaipurhat" and
+# "Joypurhat" are one zila, but no rule that bridges them is safe elsewhere.
+SPELLINGS_2011 = {
+    "Jhalakati": ("Jhalokati",),
+    "Khagrachari": ("Khagrachhari",),
+    "Kishorganj": ("Kishoreganj",),
+    "Shariyatpur": ("Shariatpur",),
+    "Jaipurhat": ("Joypurhat",),
+    "Nator": ("Natore",),
+}
 
 
 def zila_names(name: str) -> tuple[str, ...]:
     """The 2011 spelling, then the boundary file's names for a renamed zila."""
     key = fold(name)
-    extra = next((v for k, v in ALIASES.items() if fold(k) == key), ())
+    extra = next((v for k, v in {**ALIASES, **SPELLINGS_2011}.items() if fold(k) == key), ())
     return (name, *extra)
 
 
