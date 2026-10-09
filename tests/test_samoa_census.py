@@ -5,6 +5,7 @@ level -- cut down to a few villages; no network.
 """
 
 import unittest
+from unittest import mock
 
 from scripts.fetch_census import samoa_census as sm
 
@@ -134,43 +135,92 @@ class Citizenship(unittest.TestCase):
             sm.read_citizenship(table_8a(national=national))
 
 
-class NationalMedians(unittest.TestCase):
-    """Table 1's single years against the Bureau's own medians for the sexes."""
+def layout(males, females, top=None):
+    """(sub-header, {place: Table 1's row}, ages_at) in Table 1's layout, to age
+    ``top``: every region ten a year of each sex at the ages given, Samoa the
+    four together."""
+    top = top or max(list(males) + list(females))
+    header = ["Place of residence", "Total", "", ""]
+    sub = ["", "Total", "MALE", "FEMALE"]
+    region = [0.0, 0.0, 0.0]
+    for age in range(top + 1):
+        header += [f"age {age}", "", ""]
+        sub += ["Total", "MALE", "FEMALE"]
+        m = 10.0 if age in males else 0.0
+        f = 10.0 if age in females else 0.0
+        region += [m + f, m, f]
+    region[:3] = [sum(region[3::3]), sum(region[4::3]), sum(region[5::3])]
+    ages_at, _ = sm.age_columns(header)
+    rows = {name: list(region) for name in sm.REGIONS}
+    rows["Samoa"] = [4 * v for v in region]
+    return sub, rows, ages_at
 
-    @staticmethod
-    def table(male_ages, female_ages):
-        """(sub-header, the country's figures, ages_at) in Table 1's layout."""
-        top = max(male_ages + female_ages)
-        header = ["Place of residence", "Total", "", ""]
-        sub = ["", "Total", "MALE", "FEMALE"]
-        nation = [0, 0, 0]
-        for age in range(top + 1):
-            header += [f"age {age}", "", ""]
-            sub += ["Total", "MALE", "FEMALE"]
-            males = 10 if age in male_ages else 0
-            females = 10 if age in female_ages else 0
-            nation += [males + females, males, females]
-        ages_at, _ = sm.age_columns(header)
-        return sub, nation, ages_at
 
-    def test_the_sexes_agree_with_the_bureaus_whole_years(self):
-        # Ten a year: males 0-40 (median 20.5), females 0-42 (median 21.5).
-        sub, nation, ages_at = self.table(list(range(41)), list(range(43)))
-        account = sm.national_medians(sub, nation, ages_at)
-        self.assertIn("males 20.5 (printed 20)", account)
-        self.assertIn("females 21.5 (printed 21)", account)
-        self.assertIn("outside the sexes'", account)
+def printed(samoa, elsewhere):
+    """The key indicators' medians: Samoa's column, and one for every other column."""
+    others = ("Apia Urban Area", "North West Upolu", "Rest of Upolu", "Savaii", "Rural")
+    return {"Samoa": dict(samoa), **{place: dict(elsewhere) for place in others}}
 
-    def test_a_sex_a_year_and_more_away_stops_the_run(self):
-        sub, nation, ages_at = self.table(list(range(41)), list(range(45)))   # females 22.5
-        with self.assertRaises(SystemExit):
-            sm.national_medians(sub, nation, ages_at)
+
+class KeyIndicatorMedians(unittest.TestCase):
+    """Table 1's single years against every median the Final Report prints."""
+
+    # Males 0-39 (median 20.0), females 0-45 (23.0), everyone 21.5: a country
+    # whose women are older than its men, as Samoa's are (20.5 and 22.4).
+    MALES, FEMALES = range(40), range(46)
+    AS_COMPUTED = {"everyone": 22, "males": 20, "females": 23}
+
+    def test_every_column_agrees_as_printed(self):
+        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
+        with mock.patch.object(sm, "PRINTED_MEDIANS", printed(self.AS_COMPUTED, self.AS_COMPUTED)):
+            account = sm.key_indicator_medians(sub, rows, ages_at)
+        self.assertIn("Samoa everyone 21.5 (22), males 20.0 (20), females 23.0 (23)", account)
+        self.assertIn("Rural everyone 21.5 (22)", account)
+        self.assertNotIn("exchanged", account)
+
+    def test_samoas_everyone_and_female_rows_exchanged_are_read_so(self):
+        # As the Final Report prints Samoa: everyone above both sexes.
+        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
+        samoa = {"everyone": 23, "males": 20, "females": 22}
+        with mock.patch.object(sm, "PRINTED_MEDIANS", printed(samoa, self.AS_COMPUTED)):
+            account = sm.key_indicator_medians(sub, rows, ages_at)
+        self.assertIn("exchanged", account)
+        self.assertIn("the country's median is 21.5", account)
+
+    def test_the_exchange_is_not_read_when_anything_else_disagrees(self):
+        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
+        table = printed({"everyone": 23, "males": 20, "females": 22}, self.AS_COMPUTED)
+        table["Savaii"]["males"] = 22
+        with mock.patch.object(sm, "PRINTED_MEDIANS", table):
+            with self.assertRaises(SystemExit) as caught:
+                sm.key_indicator_medians(sub, rows, ages_at)
+        self.assertIn("('Savaii', 'males')", str(caught.exception))
+
+    def test_a_region_a_year_and_more_away_stops_the_run(self):
+        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
+        table = printed(self.AS_COMPUTED, self.AS_COMPUTED)
+        table["Rest of Upolu"]["females"] = 21
+        with mock.patch.object(sm, "PRINTED_MEDIANS", table):
+            with self.assertRaises(SystemExit):
+                sm.key_indicator_medians(sub, rows, ages_at)
+
+    def test_rural_is_samoa_less_the_apia_urban_area(self):
+        sub, rows, ages_at = layout(self.MALES, self.FEMALES, top=55)
+        _, older, _ = layout(range(50), range(56))        # an older capital
+        rows["Apia Urban Area"] = older["Apia Urban Area"]
+        rows["Samoa"] = [sum(rows[r][i] for r in sm.REGIONS) for i in range(len(rows["Samoa"]))]
+        table = printed(self.AS_COMPUTED, self.AS_COMPUTED)
+        table["Apia Urban Area"] = {"everyone": 27, "males": 25, "females": 28}
+        table["Samoa"] = {"everyone": 23, "males": 21, "females": 24}
+        with mock.patch.object(sm, "PRINTED_MEDIANS", table):
+            account = sm.key_indicator_medians(sub, rows, ages_at)
+        self.assertIn("Rural everyone 21.5 (22), males 20.0 (20), females 23.0 (23)", account)
 
     def test_columns_that_are_not_total_male_female_stop_the_run(self):
-        sub, nation, ages_at = self.table(list(range(41)), list(range(43)))
+        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
         sub[5], sub[6] = "FEMALE", "MALE"
         with self.assertRaises(SystemExit):
-            sm.national_medians(sub, nation, ages_at)
+            sm.key_indicator_medians(sub, rows, ages_at)
 
 
 if __name__ == "__main__":
