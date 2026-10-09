@@ -97,6 +97,24 @@ class Settlements(unittest.TestCase):
         self.assertEqual(len(entity["sources"]), 1)
 
 
+class GeoNamesPlacesElsewhere(unittest.TestCase):
+    """A GeoNames place that belongs to the unit beside its polygon is not named."""
+
+    def test_chosica_is_not_named_for_the_region_around_lima(self):
+        lima = {"id": "L", "name": "Lima", "largest_settlement": {"status": "not_available"}}
+        callao = {"id": "C", "name": "Callao", "largest_settlement": {"status": "not_available"}}
+        towns = {"L": {"name": "Chosica", "population": 88_606},
+                 "C": {"name": "Callao", "population": 813_264}}
+        with mock.patch.object(build_entities, "read_json", return_value=towns):
+            filled = build_entities.fill_settlements_from_geonames({"PER": [lima, callao]}, {})
+        self.assertEqual(filled, 1)
+        self.assertEqual(callao["largest_settlement"], "Callao")
+        self.assertEqual(lima["largest_settlement"]["status"], "not_available")
+        self.assertIn("Chosica (88,606), is part of Lima Province (Metropolitan Lima)",
+                      lima["largest_settlement"]["note"])
+        self.assertNotIn("largest_settlement_population", lima)
+
+
 class NaturalEarthPlaces(unittest.TestCase):
     """Natural Earth files a place under a first-level unit by the unit's name;
     the place's point decides whether it is that unit's."""

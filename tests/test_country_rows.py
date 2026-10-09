@@ -476,6 +476,16 @@ class SettlementFigures(unittest.TestCase):
         self.assertEqual(town["largest_settlement"], "Bekasi")
         self.assertEqual(regency["largest_settlement"], "Cikarang")
 
+    def test_a_short_name_is_still_the_unit_s_own(self):
+        # related() reads no name whose last word is under four letters; the
+        # very name is read whatever its length.
+        for name in ("Ono", "Orange Bay"):
+            e = self.unit(name, 31_286, name, 33_640)
+            other = {"id": "X", "name": name, "parent": "Q"}
+            self.assertEqual(be.settle_settlement_figures({}, {"JPN": [e, other]}), (0, 1),
+                             name)
+            self.assertEqual(e["largest_settlement"], name)
+
     def test_a_namesake_elsewhere_still_refuses_a_town_of_another_name(self):
         # The test is of this unit's own name, not of any name: Dushanbe in
         # Rudaki District is refused as before (see the test above).

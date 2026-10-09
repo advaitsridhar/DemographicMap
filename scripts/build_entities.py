@@ -5198,6 +5198,16 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     return filled
 
 
+# GeoNames places put inside a unit's polygon that belong to the unit beside
+# it, where the polygons are simplified at the line: Chosica's point is 300 m
+# outside Metropolitan Lima's outline, and GeoNames' own second-order code for
+# it is Lima Province's (1501). Left unnamed rather than named for the region
+# around Lima. (country, unit, place) -> the unit the place is part of.
+GEONAMES_ELSEWHERE: dict[tuple[str, str, str], str] = {
+    ("PER", "Lima", "Chosica"): "Lima Province (Metropolitan Lima)",
+}
+
+
 def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                                    admin2: dict[str, list[dict[str, Any]]]) -> int:
     """The largest GeoNames place inside each unit, where no source named one.
@@ -5211,11 +5221,20 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
     filled = 0
     for table in (admin1, admin2):
-        for rows in table.values():
+        for iso3, rows in table.items():
             for entity in rows:
                 town = towns.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
+                    continue
+                where = GEONAMES_ELSEWHERE.get((iso3, entity.get("name"), town.get("name")))
+                if where:
+                    entity["largest_settlement"] = gap(NOT_AVAILABLE, (
+                        f"No GeoNames place is named: the most populous place GeoNames "
+                        f"puts inside this outline, {town['name']}"
+                        + (f" ({town['population']:,})" if town.get("population") else "")
+                        + f", is part of {where}, drawn as a unit of its own; its "
+                          f"point lies just outside that unit's simplified outline."))
                     continue
                 if "none" in town:
                     held = entity.get("largest_settlement") or {}
@@ -5362,10 +5381,14 @@ def town_stands(town: str, people: float, unit: float, entity: dict[str, Any],
     the town.
     """
     mine = entity.get("name")
+    same = bool(norm(town)) and norm(town) == norm(mine)
     if people <= GEONAMES_SPANS * unit:
-        return (not apart_from(town, entity)
+        # The very name as well as a related one: related() reads no name
+        # whose last word is shorter than PREFIX_MIN, so it found neither
+        # Ono in Ono nor Orange Bay in Orange Bay.
+        return (not apart_from(town, entity) or same
                 or related(name_forms(town), name_forms(mine)))
-    return bool(norm(town)) and norm(town) == norm(mine) and not apart_from(town, entity)
+    return same and not apart_from(town, entity)
 
 
 GEONAMES_FIGURE = "GeoNames (CC BY 4.0)"
