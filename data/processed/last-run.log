@@ -1,6 +1,238 @@
-kazakhstan: /home/runner/work/DemographicMap/DemographicMap/data/raw/kazakhstan/ethnic-groups-2025.xlsx
-  РКобл: 20 columns, 73 rows
-  admin1: 16 records
-  wrote data/processed/kazakhstan_oblast.json (123 kB)
-  admin2: 174 records
-  wrote data/processed/kazakhstan_district.json (888 kB)
+probe_pdf: https://nso.gov.ki/download/51/2005-census/888/census-2005-report-volume-ii-final.pdf
+  1,718,089 bytes
+  158 pages
+probe_pdf: 158 pages, 1 mention ['anguage']
+=== front matter ===
+ 
+ 
+Kiribati  
+ 
+ 
+2005 Census  
+ 
+ 
+Volume 2: Analytical Report  
+ 
+ 
+ 
+January 2007 
+ 
+
+ i
+CONTENTS 
+ 
+ page
+Foreword vii
+Acknowledgement viii
+Summary of main indicators ix
+Executive summary xi
+ 
+1 INTRODUCTION 1
+ 
+2 POPULATION TREND, COMPOSITION AND STRUCTURE 2
+   2.1 Population trend 2
+   2.2 Population composition 5
+   2.3 Population structure  6
+ 
+3 DEMOGRAPHIC COMPONENTS 12
+   3.1 Fertility 12
+   3.2 Mortality 19
+   3.3 Migration 26
+      3.3.1 Internal migration 26
+      3.3.2 International migration 30
+ 
+4 SOCIAL CHARACTERISTICS 33
+   4.1 Marital status 33
+   4.2 Religion 36
+   4.3 Health 37
+      4.3.1 Smoking tobacco 37
+      4.3.2 Drinking alcohol 38
+   4.4 Educational characteristics 40
+      4.4.1 School enrolment 40
+      4.4.2 Educational attainment 40
+      4.4.3 Educational qualification 42
+   4.5 Labor market activity 43
+      4.5.1 Introduction 43
+      4.5.2 Employed - cash workers and village workers 44
+      4.5.3 Labour force participation rate and Employment-population ratio 
+      4.5.4 Employed cash workers by work status 
+      4.5.5 Employed cash workers by industry group 46
+      4.5.6 Employed cash workers by occupational group 46
+      4.5.7 Unemployed 47
+      4.5.8 Not in the labor force 48
+ 
+5 HOUSEHOLD CHARACTERISTICS 50
+   5.1 Household size 50
+   5.2 Household composition 53
+   5.3 Household amenities and appliances 54
+      5.3.1 Private households by main source of drinking water, Kiribati, 2005 54
+      5.3.2 Private households by type of toilet facility used, Kiribati, 2005 54
+      5.3.3 Private households by source of lighting, Kiribati, 2005 54
+      5.3.4 Private households and availability of capital goods, Kiribati, 2005 58
+ 
+ ii
+CONTENTS (continue) 
+ 
+ page
+6 POPULATION PROJECTIONS 59
+   6.1 Projection Assumptions 59
+   6.2 Projection Results 66
+ 
+7 IMPLICATIONS OF DEMOGRAPHIC TRENDS 73
+   7.1 Population Dynamics 73
+   7.2 Cross-Cutting Issues 76
+ 
+Appendices 81
+Glossary 90
+Island Summary Information 93
+ 
+ 
+ iii
+LIST OF TABLES 
+ 
+ 
+  page
+Table 1:  Population size, growth, distribution a nd density by island/region, Kiribati: 1995 to 2005 3
+Table 2:  Population density (num ber of persons per sqkm) by island/region, Kiribati: 1995, 2000 and 
+2005 
+4
+Table 3:  Distribution of the population by age, de pendency ratio, median age, and sex ratio, Kiribati: 
+2000 and 2005 
+9
+Table 4:  Female population 15 years and older by num ber of children ever born alive, Kiribati: 2005 12
+Table 5:  Reported number of births by age of wo men and year/period of birth of last born child, 
+Kiribati: 2005 
+13
+Table 6:  Reported number of children born duri ng 12 months before the census by age group of 
+mother, Kiribati: 2005 
+13
+Table 7: Number of reported deliveries, number of female family planning users, and 
+estimated contraceptive prevalence rate, Kiribati: 2001-2005 
+16
+Table 8:  Estimated and adjusted Age Specific Fe rtility Rates (ASFR), Total Fertility Rate (TFR), 
+Crude Birth Rate (CBR), and Mean Age at Childbearing (MAC), Kiribati: 2005 
+18
+Table 9:  Female population 15 years and older by number of children ever born, number of children 
+still alive, and number of children dead, Kiribati: 2005 
+19
+Table 10:  Female population 15 years and older by proportion of children ever born still alive, and 
+proportion now dead, Kiribati: 2005 
+20
+Table 11:  Mortality indicators, Kiribati: 2005 21
+Table 12:  Abridged Life Table based on 2005 census data, Kiribati Males: 2005 23
+Table 13  Abridged Life Table based on 2005 census data, Kiribati Females: 2005 23
+Table 14: Reported number of deliveries, number of deaths due to pregnancy or delivery, and maternal 
+mortality rate, Kiribati: 2001-2004 
+25
+Table 15:  Population by place of enumeration and usual residence five years ago (in 2000), Kiribati: 
+2005 
+26
+Table 16:  Interregional migration during 5 years before the 2005 census, Kiribati: 2005 27
+Table 17:  Population by place of enumer ation and place of birth, Kiribati: 2005 27
+Table 18:  Interregional lifetime migration, Kiribati: 2005 28
+Table 19:  Population by secondary or te rtiary qualification, Kiribati: 2005 42
+Table 20:  Population 15 years and older by sex, rura l-urban residence, labour force participation rate, 
+and employment-population ratio, Kiribati: 2005 
+Table 21:  Population 15 years and older and unemp loyment status according to various unemployment 
+concepts, Kiribati: 2005 
+48
+Table 22:  Number of private households, number of occupants, and average household size by 
+island/region, Kiribati: 2000 and 2005 
+50
+Table 23:  Number of private households by hou sehold size and persons per household, Kiribati: 2005 52
+Table 24:  Population by household composition (re lationship to head of household), Kiribati: 2005 53
+Table 25: Population structure and indicators accord ing to three different projections, Kiribati: 2025 69
+ 
+ iv
+LIST OF FIGURES 
+ 
+ 
+  page
+Figure 1:  Population size, Kiribati and South Tarawa: 1931 to 2005 2
+Figure 2:  Annual population growth rate  by island/region, Kiribati: 2000-2005 3
+Figure 3:  Population composition, Kiribati: 2005 5
+Figure 4:  Sex ratio by island/region, Kiribati: 2005 6
+Figure 5:  Population pyramid, Kiribati: 2000 and 2005 7
+Figure 6:  Population pyramid, South Tarawa: 2000 and 2005 8
+Figure 7:  Population pyramid, Rural areas (Outer Islands): 2000 and 2005 8
+Figure 8:  Proportion of population by broad age groups by island/region, Kiribati, 2005 9
+Figure 9:  Median age by island/region, Kiribati: 2005 10
+Figure 10:  Age dependency ratio by island/region, Kiribati: 2005 11
+Figure 11:  Estimates of TFR based on ‘own-children method’, Kiribati: 1968-2005 15
+Figure 12:  Population size 10 years and younger by single years, and (approximate) year of birth, 
+Kiribati: 2005 
+15
+Figure 13:  Reported number of deliveries and numbe r of females of childbearing age using family 
+planning, Kiribati: 2001-2005 
+16
+Figure 14:  Age specific fertility rates (ASFR), Kiribati: 1995-2005 17
+Figure 15:  Proportion of children ever born still alive by age of mother, Kiribati: 2005 20
+Figure 16:  Proportion of population 15 years and older with father/mother still alive, Kiribati,: 
+2005 
+22
+Figure 17: Population 15 years and older by marital status, Kiribati: 2005 33
+Figure 18:  Population 15 years and older by  sex and proportion married, Kiribati: 2005 34
+Figure 19:  Population 15 years and older by sex  and proportion never married (single), Kiribati: 
+2005 
+34
+Figure 20: Population 15 years and older by  sex and proportion widowed, Kiribati: 2005 35
+Figure 21:  Population by religion, Kiribati: 2005 36
+Figure 22:  Proportion of population 10 years a nd older that regularly smokes tobacco, Kiribati: 
+2005 
+37
+Figure 23:  Proportion of population 10 years and olde r that regularly drinks alcohol, Kiribati: 2005 39
+Figure 24:  Proportion of population 10 years and older that occasionally drinks alcohol, Kiribati: 
+2005 
+39
+Figure 25:  Population 5 years and olde r by sex and attending school, Kiribati: 2005 40
+Figure 26:  Population 15 years and older by sex and educational attainment (in percent), Kiribati: 
+2005 
+41
+Figure 27:  Population 15 years and older by sex and educational attainment (in percent), Kiribati: 
+1995 
+42
+Figure 28:  Population 15 years and older by sex and labor market activity, Kiribati: 2005 44
+Figure 29:  Population 15 years and older by ur ban-rural residence and labor market activity, 
+Kiribati: 2005 
+45
+Figure 30:  Employed population 15 years a nd older by age and sex, Kiribati: 2005 45
+Figure 31:  Population 15 years and older by ag e and sex and labour force participation rate, 
+Kiribati: 2005 
+Figure 32:  Population 15 years and older by  age and sex and employment-population ratio, 
+Kiribati: 2005 
+Figure 33:  Employed cash workers by work status and sex, Kiribati: 2005 
+Figure 34:  Employed cash workers by industry, Kiribati: 2005  46
+ v
+
+=== pages mentioning ['anguage'] (first 6) ===
+
+--- page 93 ----------------------------------------------------
+ 78
+Mortality
+Estimates on the level of mortality presented in this profile, suggest that life expectancy
+at birth and infant mortality rates have improved, although slowly during the period
+1995-2005. Females live a longer life than males, and live on average four years longer
+than males.
+Improved mortality rates mean that healthier people live longer lives. In working towards
+this goal, the following efforts should be made:
+• improve infant, child and maternal h ealth by improving primary health care
+programmes;
+• expand programmes of immunization;
+• prevention of HIV/AIDS and STDs by:
+o Increasing awareness and knowledge of safer sexual behaviour and
+practices by using appropriate language;
+o Targeting priority groups (Youth, women and men, particularly aged 10-
+24);
+o Enhancing education programmes to encourage open discussions (between
+partners and their children) on issues of sexual behaviours;
+o Promoting and disseminate information outlining the advantages and
+proper use of condoms by men and women with emphasis on targeting
+male organizations;
+o Reviewing, developing, implementing and evaluating the effectiveness of
+appropriate policies;
+o Delaying the initial sexual activity of young people;
+o Developing a well planned media campaign throughout the year based on
+health promotion with regards to HIV/AIDS;
+o Ensuring protection of the rights of people living with HIV/AIDS;
+o Ensuring that people living with HIV/AIDS have free and unrestricted
+access to medical treatme
