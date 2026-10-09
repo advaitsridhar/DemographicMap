@@ -1,7 +1,8 @@
-palau_census: 2020 census, Volume I (transcribed) and the National Summary Data Page
-  Volume I: Tables 6, 10, 16 for 16 states and Tables 23, 27, 33 for 13 places in Koror, each adding up
-  https://www.palaugov.pw/wp-content/uploads/Palau-Population.xml: 9,186 bytes
-  Data Page: 17,614 people; every state as in Table 6, Koror with the people from outside Palau or of unknown residence
-  admin1 ethnicity 13, admin1 language 13, admin1 median_age 16, admin1 population 16, admin1 religion 13, admin1 sex_ratio 13, admin2 ethnicity 12, admin2 language 12, admin2 median_age 13, admin2 population 13, admin2 religion 12, admin2 sex_ratio 12
-  wrote data/processed/palau_census.json (346 kB)
-  wrote 93 records
+tuvalu_census: 2022 report (islands) and 2017 tables (villages, faiths)
+  2022 report: nine islands making 10,632; Table 3 agrees for Nui, Nukufetau, Vaitupu
+  https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx: 1,310,798 bytes
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  admin1 ethnicity 3, admin1 median_age 3, admin1 population 3, admin1 religion 3, admin1 sex_ratio 3, admin2 population 6, admin2 sex_ratio 4
+  wrote data/processed/tuvalu_census.json (29 kB)
+  wrote 9 records
