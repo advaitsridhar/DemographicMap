@@ -1,16 +1,327 @@
-fetch_factbook: syncing source
-  cloning https://github.com/factbook/factbook.json (shallow)
-  260 Factbook entities
-  no country index; building it from Natural Earth's admin-0 countries
-  fetched ne_10m_admin_0_countries.geojson (13.3 MB)
-  wrote data/raw/codes/country_index.json (77 kB)
-  note: at and as both map to AUS; keeping both, ids suffixed
-  note: cr and as both map to AUS; keeping both, ids suffixed
-  note: wq and um both map to UMI; keeping both, ids suffixed
-  note: bq and um both map to UMI; keeping both, ids suffixed
-  note: sv and jn both map to SJM; keeping both, ids suffixed
-  note: we and gz both map to PSE; keeping both, ids suffixed
-  note: ip and fr both map to FRA; keeping both, ids suffixed
-  10 entities without an ISO3 code (kept with GEC- ids): east-n-southeast-asia/pf, east-n-southeast-asia/pg, europe/ax, europe/dx, europe/ee, oceans/oo, oceans/xo, oceans/xq, oceans/zh, oceans/zn
-  wrote data/processed/admin0.json (898 kB)
-  260 records | 250 ISO3-matched | religion 223 | ethnicity 201 | ethnicity not-collected 9
+https://lao.unfpa.org/sites/default/files/pub-pdf/PHC-ENG-FNAL-WEB_0.pdf: HTTP 200 application/pdf 5346121 B
+  282 pages
+  p5: 31 lines, 9 matching
+    Table 2.3 Number of Districts and Average Population of Districts by Province: 2015 ...................................29
+    Table 3.1 Sex Ratio of the Population: 2005-2015 ...........................................................................................32
+    Table 3.2  Indicators of age structure, 2005-2015 ...........................................................................................33
+    Table 4.1 Births Per 1,000 Women by Age Group and by Type of Residence ..................................................41
+    Table 4.2 Births per 1,000 Women by Age Group and by Highest Education Attainment ...............................43
+    Table 4.3 Proportion of Ever-Married Women by Age Group and Number of Children 
+    Table 4.2 Births per 1,000 Women by Age Group and by Highest Education Attainment ...............................43
+    Table 4.3 Proportion of Ever-Married Women by Age Group and Number of Children 
+                     Ever-Born and Mean Number of Children Ever-Born  ......................................................................44
+    Table 4.3 Proportion of Ever-Married Women by Age Group and Number of Children 
+                     Ever-Born and Mean Number of Children Ever-Born  ......................................................................44
+    Table 4.4 Proportion of Ever-Married Women Aged 45-49 with Indicated Number of Children 
+    Table 5.1 Central Death rates by Sex and by Age Group.................................................................................. 49
+    Table 5.2 Selected Mortality Indicators ...........................................................................................................50
+    Table 5.3 Number of Maternal Deaths and Maternal Mortality Rate by Age Group .......................................51
+    Table 5.3 Number of Maternal Deaths and Maternal Mortality Rate by Age Group .......................................51
+    Table 6.1 Migration in the Past 10 Years among the Population 10 Years and Over by Province ....................56
+    Table 6.2 Number of Migrants by Type of Migration by Sex of Migrant ..........................................................57
+  p6: 34 lines, 7 matching
+                       and by Province .............................................................................................................................
+    Table 9.3 Distribution of the Population 10 Years Old and over by Usual Activity by Education and Sex ....... 76
+    Table 9.4 Persons in the Labour Force, Unemployed Persons and Unemployment Rate by 
+                       by Province, by Urban-Rural ...........................................................................................................87
+    Table 11.2 Percentage Distribution of Households According to the Type of Materials Used 
+                       for Roof, Walls, and Floor of Dwelling Units by Province and by Urban-Rural ...............................89
+                       for Roof, Walls, and Floor of Dwelling Units by Province and by Urban-Rural ...............................89
+    Table 11.3 Percentage Distribution of Households by Floor Area of Occupied Dwelling Unit by 
+    Province and Urban-Rural ...............................................................................................................................90
+                       Unit by Province and Urban-Rural ..................................................................................................91
+    Table 11.5 Percentage Distribution of Households by Source of Electricity by Province and by 
+                       Urban-Rural .................................................................................................................................
+    Table 11.5 Percentage Distribution of Households by Source of Electricity by Province and by 
+                       Urban-Rural .................................................................................................................................
+    Table 11.6 Proportion of Households by Distance in Metres to their Main Source of Drinking Water ...........93
+    Table 11.8 Proportion of Households by Type of Sanitation Facility by Province and Urban-Rural ................96
+    Table 11.9 Proportion of Households by Type of Fuel Used in Cooking by Province and Urban-Rural ...........97
+  p7: 34 lines, 16 matching
+    Figure 2.4 Total Population by Province, 2005 and 2015 ................................................................................ 25
+    Figure 2.5 Population Growth Rate by Province ..............................................................................................25
+    Figure 2.6  Proportion of Urban Population by Province, 2005-2015 ............................................................. 27
+    Figure 2.5 Population Growth Rate by Province ..............................................................................................25
+    Figure 2.6  Proportion of Urban Population by Province, 2005-2015 ............................................................. 27
+    Figure 2.7 Population Density by Province, 2015 ............................................................................................28
+    Figure 2.6  Proportion of Urban Population by Province, 2005-2015 ............................................................. 27
+    Figure 2.7 Population Density by Province, 2015 ............................................................................................28
+    Figure 3.1 Age Pyramid of the Population, 2005-2015 ....................................................................................32
+    Figure 2.7 Population Density by Province, 2015 ............................................................................................28
+    Figure 3.1 Age Pyramid of the Population, 2005-2015 ....................................................................................32
+    Figure 3.2 Sex Ratio by 5-Year Age Group ........................................................................................................34
+    Figure 3.2 Sex Ratio by 5-Year Age Group ........................................................................................................34
+    Figure 3.3 Marital Status by Age Group:  Male and Female ............................................................................35
+    Figure 4.1 Crude Birth Rate* by Province ........................................................................................................40
+    Figure 3.3 Marital Status by Age Group:  Male and Female ............................................................................35
+    Figure 4.1 Crude Birth Rate* by Province ........................................................................................................40
+    Figure 4.2 Age-Specific Fertility Rate among Women Aged 15-49 ..................................................................41
+  p12: 67 lines, 1 matching
+    • The median age at first birth for women aged 
+    15-49 was 21 years..
+    Executive Summary
+  p21: 65 lines, 1 matching
+    level, with disaggregated data by province, ethnicity, 
+    education, geographic areas, age and sex. This main 
+    PHC report consists of 11 chapters. Its first chapter 
+  p22: 34 lines, 1 matching
+    Source:  Table 1.2 (2005 PHC Report) and Table P1.1 (2015 PHC, Appendix 1)
+  p24: 86 lines, 2 matching
+    2.5 shows the growth rates by province, plotted as 
+    deviations from the national average of 1.45 percent 
+    per annum.  Provinces shown on the left side of the 
+    Table P1.1 in Appendix 1 shows the distribution of 
+    the enumerated population according to the type of 
+    village where resided at the time of the 2015 PHC.  At 
+  p26: 5 lines, 3 matching
+    Figure 2.4 Total Population by Province, 2005 and 2015
+    Source:  Table 2.1 (2005 PHC Report) and Table P1.1 (2015 PHC, Appendix 1)
+    Figure 2.5 Population Growth Rate by Province
+    Source:  Table 2.1 (2005 PHC Report) and Table P1.1 (2015 PHC, Appendix 1)
+    Figure 2.5 Population Growth Rate by Province
+    Figure 2.5 Population Growth Rate by Province
+  p27: 77 lines, 1 matching
+    Source:  Table 2.2 (2005 PHC Report) and Table P1.1 (2015 PHC, Appendix 1)
+    As far as provinces are concerned, the most urbanised 
+    area nationwide is Vientiane Capital (78 percent), 
+  p28: 42 lines, 3 matching
+    Figure 2.6  Proportion of Urban Population by Province, 2005-2015
+    Source: Table 2.2 (2005 PHC Report) and Table P1.1 (2015 PHC, Appendix 1)
+    Of the 18 provinces, Saravane is the least urbanised.  
+    Source: Table 2.2 (2005 PHC Report) and Table P1.1 (2015 PHC, Appendix 1)
+    Of the 18 provinces, Saravane is the least urbanised.  
+    The majority of its population (88 percent) are rural 
+    of their respective total populations (Table P1.1 of 
+    Appendix 1).
+    People who live in villages with no road access ought 
+  p29: 33 lines, 5 matching
+    Figure 2.7 Population Density by Province, 2015
+    Source: Table P1.2 (2015 PHC, Appendix 1)
+    Population Density
+    Source: Table P1.2 (2015 PHC, Appendix 1)
+    Population Density
+    Population density refers to the average number 
+    Data on land area by province are relatively more 
+    reliable than by district. Hence, this report presents 
+    data on population densities only by province, shown 
+    data on population densities only by province, shown 
+    in Table P1.2 in Appendix 1 and Figure 2.7.
+    For the country as a whole, population density was 
+    in Table P1.2 in Appendix 1 and Figure 2.7.
+    For the country as a whole, population density was 
+    27 people per square kilometre.  The densest part 
+  p30: 48 lines, 2 matching
+    Table 2.3 Number of Districts and Average Population of Districts by Province: 2015
+    Province Number of 
+    Districts
+    Source: Table P1.2 (2015 PHC, Appendix 1)
+  p32: 70 lines, 1 matching
+    of an age group – separately for males and females 
+    – expressed as a percentage to the total population.     
+    The 2005 age pyramid indicated that a large 
+  p33: 47 lines, 1 matching
+    Source: Table 1.1 (2005 PHC Report) and Table P2.1 (2015 PHC, Appendix 1)
+    Figure 3.1 Age Pyramid of the Population, 2005-2015
+  p34: 70 lines, 5 matching
+    age by five years. The proportion of children aged 
+    less than 15 years had declined significantly from 39 
+    to 32 percent, while the proportion of the elderly 
+    population increased, albeit slightly.  The age group 
+    15-64 years experienced a gain in its share of the 
+    population from 57 percent in 2005 to 64 percent 
+    Proportion in age group
+    0-14 39.4 32
+    15-64 56.7 63.7
+    Median Age 18.5 23.5
+    Economic Dependency Ratios
+    Young-age dependency ratio 70 50
+    Source: Table 1.1 (2005 PHC Report) and Table P2.1 (2015 PHC, Appendix 1)
+  p35: 49 lines, 5 matching
+    sex ratios are high at young ages. For age groups less 
+    than 20 years, the sex ratio hovers at 103 males per 
+    100 females. Up to age 65, the sex balance is more 
+    age group where females significantly outnumber 
+    males (sex ratio of 91).  Beyond the age of 65 years, 
+    the sex ratio declines steeply more likely as a result 
+    Figure 3.2 Sex Ratio by 5-Year Age Group
+    Source: Table P2.1 (2015 PHC, Appendix 1)
+    among men than among women (34 and 25 percent, 
+    Source: Table P2.1 (2015 PHC, Appendix 1)
+    among men than among women (34 and 25 percent, 
+    respectively).   However, a woman aged above 15 
+    population by age group according to marital status. 
+    Figure 3.3 shows such distribution separately for 
+    males and females.
+  p36: 10 lines, 3 matching
+    Source: Table P2.6 (2015 PHC, Appendix 1)
+    Figure 3.3 Marital Status by Age Group:  Male and Female
+    Source: Table P2.6 (2015 PHC, Appendix 1)
+    Figure 3.3 Marital Status by Age Group:  Male and Female
+    Source: Table P2.6 (2015 PHC, Appendix 1)
+    Source: Table P2.6 (2015 PHC, Appendix 1)
+  p37: 74 lines, 1 matching
+    in every age group. For both sexes, the highest 
+    proportion was among those aged 30-34 years.
+    Similarly, the proportions of women who had lost 
+  p38: 24 lines, 2 matching
+    Source: Table P2.7 (2015 PHC, Appendix 1)
+     
+    Table 3.5 Population by Religion
+    Source: Table P2.9 (2015 PHC, Appendix 1)
+  p41: 38 lines, 4 matching
+    or age group by the total number of women in that 
+    age group.  As women at different ages bear children 
+    at different rates, a pattern of age-specific fertility 
+    age group.  As women at different ages bear children 
+    at different rates, a pattern of age-specific fertility 
+    rate emerges when these rates are calculated.
+    during that year. In the next age groups, ages 20-24 
+    Figure 4.1 Crude Birth Rate* by Province
+    * Number of births adjust for underenumeration
+    Figure 4.1 Crude Birth Rate* by Province
+    * Number of births adjust for underenumeration
+  p42: 32 lines, 2 matching
+    Table 4.1 Births Per 1,000 Women by Age Group and by Type of Residence
+    Age Group of Women Lao PDR
+    Type of Residence
+    Age Group of Women Lao PDR
+    Type of Residence
+    Urban Rural with Roads Rural without Roads
+  p44: 30 lines, 3 matching
+    in all age groups.  
+    Among those with at least secondary education, 
+    motherhood is still relatively uncommon among 
+    Table 4.2 Births per 1,000 Women by Age Group and by Highest Education Attainment
+    Age Group Lao PDR
+    Highest Education Attainment
+    Age Group Lao PDR
+    Highest Education Attainment
+    No Schooling Primary Secondary/ Vocational Tertiary
+  p45: 74 lines, 3 matching
+    of a given age or age group have. It is also referred to 
+    as cumulative fertility. Unlike an age-specific fertility 
+    rate which is a measure of current fertility, children 
+    Table 4.3 Proportion of Ever-Married Women by Age Group and Number of Children Ever-Born and Mean 
+    Number of Children Ever-Born 
+    Age of Mother Total
+    Source: Table P3.4a (2015 PHC, Appendix 1)
+  p46: 67 lines, 3 matching
+    fertility levels of women in all age groups, whereas 
+    children ever-born reflects fertility levels that 
+    prevailed during the last 30 years when the current 
+    Source: Table P3.4a and P3.5 (2015 PHC, Appendix 1)
+    Where women reside, urban or rural, also has a 
+    strong influence on the number of births. Women 
+    in the 45-49 age group regardless of background. 
+    Overall, 6 percent of these women have not given 
+    birth during their reproductive period. This implies 
+  p47: 58 lines, 6 matching
+    birthday.  Overall, the median age in Lao PDR for a 
+    first birth is 21 years. 
+    Education is clearly a significant factor that influences 
+    show the median age at first birth among tertiary-
+    educated women was nearly five years later than 
+    that of women with primary or no education.
+    educated women was nearly five years later than 
+    that of women with primary or no education.
+    Urban-rural differentials in the timing of first birth 
+    without roads. The median age at first birth was 
+    about two years earlier for rural than urban women.
+    Table 4.5 Age at First Birth among Women with at Least One Live Birth by Education and by Urban-Rural
+    Median Age at 
+    First BirthLess than 
+    17 17 - 19 20 - 22 23 - 25 26 - 29 30 and over
+    Source: Table P3.7 (2015 PHC, Appendix 1)
+  p48: 68 lines, 1 matching
+    (Table P3.11, Appendix 1), an unlikely scenario in 
+    normal conditions.
+    In this report, an attempt is made to estimate the 
+  p49: 44 lines, 4 matching
+    even further in the few succeeding age groups.  The 
+    death rate was lowest at ages 10-14 years.  Beyond 
+    these ages, the rates were observed to be on an 
+    upward trend until the last age group. Between the 
+    ages 75-79 year, the death rate was as high as during 
+    infancy.  
+    age group, a common observation in most countries.
+    Infant and Child Mortality
+    With 2015 PHC data collected it is possible to make 
+    Figure 5.1 Crude Death Rates by Province
+    * Number of deaths adjusted for underenumeration
+  p50: 25 lines, 3 matching
+    Table 5.1 Central Death rates by Sex and by Age Group
+    Age Group
+    Deaths Per 1,000 Population
+    Age Group
+    Deaths Per 1,000 Population
+    Both Sexes Female Male
+    Figure 5.2 Crude Death Rates by Age group and by Sex
+  p51: 76 lines, 1 matching
+    maternal deaths by given age group by the total 
+  p52: 36 lines, 3 matching
+    number of women in that age group, indicate the 
+    risk of dying from maternal causes was least among 
+    women aged 20-24 years (0.178 deaths per 1,000 
+    women in that age group).  Not surprisingly, the 
+    oldest women (aged 45-49) were most likely to die 
+    as a result of pregnancy or childbirth.
+    Table 5.3 Number of Maternal Deaths and Maternal Mortality Rate by Age Group
+    Age of Women at time of Death Number of Enumerated 
+    Women
+  p55: 42 lines, 2 matching
+    Figure 6.1 Proportion of Population Who are Life-time Migrants by Province
+    Source: Table P4.1 (2015 PHC, Appendix 1)
+    3. The statistic on migration in Xaysomboun may be spurious as a result of the transfer of jurisdiction of certain districts 
+    Source: Table P4.1 (2015 PHC, Appendix 1)
+    3. The statistic on migration in Xaysomboun may be spurious as a result of the transfer of jurisdiction of certain districts 
+    during Xaysomboun’s conversion from a special region to a province.
+  p56: 41 lines, 2 matching
+    Figure 6.2 Proportion of Lifetime Migrants by Age Group and by Sex
+    Source: Table P4.2 (2015 PHC, Appendix 1)
+    Recent Migration
+    Source: Table P4.2 (2015 PHC, Appendix 1)
+    Recent Migration
+    Unlike lifetime migration, recent migration is period-
+  p57: 63 lines, 2 matching
+    Table 6.1 Migration in the Past 10 Years among the Population 10 Years and Over by Province
+    Population 
+    10 and over
+    Source: Table P4.6 (2015 PHC, Appendix 1) 
+  p58: 33 lines, 1 matching
+    Source: Table P4.7 (2015 PHC, Appendix 1)
+    Migration is generally male-dominated as can be 
+    seen in Table 6.2, which shows the volume and sex 
+  p59: 61 lines, 3 matching
+    For example, Table P4.5 shows that 6,269 persons 
+    moved from Luangprabhang to Vientiane Province 
+    during 2005 to 2015, one of the most significant 
+    Table 6.3 Number of In-migrants, Out-migrants, Population Net Gain by Province
+    Province In-migrants Out-migrants Population Net Gain
+    Vientiane Capital 692,062 20,770 50,648
+    Source: Table P4.6 (2015 PHC, Appendix 1)
+  p60: 41 lines, 1 matching
+    Source: Table P4.8 (2015 PHC, Appendix 1)
+    Cambodia
+    China
+  p61: 29 lines, 1 matching
+    Source: Table P4.4 (2015 PHC, Appendix 1)
+  p62: 64 lines, 1 matching
+    public school system in Lao PDR consists of five years 
+    primary school, four years lower secondary school 
+    and three years upper secondary school. A few 
+  p63: 11 lines, 4 matching
+    Source: Table P5.1 (2015 PHC, Appendix 1)
+    Figure 7.1 Literacy Rates by Sex and by Urban-Rural
+    Source: Table P5.1 (2015 PHC, Appendix 1)
+    Source: Table P5.1 (2015 PHC, Appendix 1)
+    Figure 7.2 Literacy Rates by Sex and by Province
+    Source: Table P5.1 (2015 PHC, Appendix 1)
+    Figure 7.2 Literacy Rates by Sex and by Province
+    Source: Table P5.1 (2015 PHC, Appendix 1)
+    Source: Table P5.1 (2015 PHC, Appendix 1)
+  p64: 51 lines, 2 matching
+    those in the age groups 20-24 and 15-19.
+    A narrowing of the gender gap is also in step with a 
+    general increase in literacy levels. Figure 7.3 clearly 
+    Figure 7.3 Literacy Rate by Sex and by Age Group
+  stopped after 40 pages
