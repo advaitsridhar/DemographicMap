@@ -1,30 +1,13 @@
-nordic_origin: SWE
-  FolkmRegFlandKCKM 2025: 290 kommuner, 21 län, 188 countries of birth; Sweden 10,605,529
-  countries against each region's own total: worst 52 people (cell-key noise)
-    län -> Sweden: 21 parts sum to 10,605,535 against 10,605,529
-    kommuner -> Stockholms län: 26 parts sum to 2,486,253 against 2,486,251
-    kommuner -> Uppsala län: 8 parts sum to 410,572 against 410,575
-    kommuner -> Södermanlands län: 9 parts sum to 300,436 against 300,440
-    kommuner -> Östergötlands län: 13 parts sum to 472,530 against 472,529
-    kommuner -> Jönköpings län: 13 parts sum to 369,721 against 369,722
-    kommuner -> Kronobergs län: 8 parts sum to 203,122 against 203,121
-    kommuner -> Kalmar län: 12 parts sum to 245,483 against 245,477
-    kommuner -> Gotlands län: 1 parts sum to 60,852 against 60,852
-    kommuner -> Blekinge län: 5 parts sum to 156,620 against 156,616
-    kommuner -> Skåne län: 33 parts sum to 1,433,082 against 1,433,083
-    kommuner -> Hallands län: 6 parts sum to 346,087 against 346,090
-    kommuner -> Västra Götalands län: 49 parts sum to 1,777,794 against 1,777,803
-    kommuner -> Värmlands län: 16 parts sum to 283,028 against 283,037
-    kommuner -> Örebro län: 12 parts sum to 308,362 against 308,357
-    kommuner -> Västmanlands län: 10 parts sum to 280,762 against 280,756
-    kommuner -> Dalarnas län: 15 parts sum to 286,048 against 286,043
-    kommuner -> Gävleborgs län: 10 parts sum to 283,449 against 283,452
-    kommuner -> Västernorrlands län: 7 parts sum to 240,641 against 240,640
-    kommuner -> Jämtlands län: 8 parts sum to 132,736 against 132,736
-    kommuner -> Västerbottens län: 15 parts sum to 279,024 against 279,028
-    kommuner -> Norrbottens län: 14 parts sum to 248,918 against 248,927
-  named (49): Swedish, Syrian, Iraqi, Finnish, Polish, Iranian, Afghan, Somali, Indian, Yugoslav, Bosnian, German, Turkish, Eritrean, Ukrainian, Thai, Chinese, Norwegian, Danish, Romanian, British, Pakistani, Lebanese, Chilean, Russian, American, Ethiopian, Vietnamese, Greek, Filipino, Dutch, Serbian, Lithuanian, Italian, Hungarian, Bangladeshi, Spanish, French, Colombian, Brazilian, Moroccan, Kosovar, Croatian, Sri Lankan, Korean, Latvian, North Macedonian, Egyptian, Albanian
-  SWE admin2: 290 of 290 office units bound to 290 polygons (0 set aside as pieces)
-  all 290 kommuner bound one to one; pieces set aside: none
-  311 records: admin1 21, admin2 290; labels the group tree cannot place: none
-  wrote data/processed/sweden_origin.json (1547 kB)
+nordic_origin: DNK
+  FOLK1C 2026K3: 101,640 rows, 105 areas
+    FOLK1C regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
+    FOLK1C kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
+    FOLK1C kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
+    FOLK1C kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
+    FOLK1C kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
+    FOLK1C kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
+  named (42): Danish, Turkish, Ukrainian, Polish, Romanian, Syrian, German, Iraqi, Pakistani, Iranian, Lebanese, Indian, Bosnian, Afghan, Somali, Vietnamese, British, Swedish, Chinese, Norwegian, Lithuanian, Nepalese, Filipino, Italian, Thai, Bulgarian, Sri Lankan, Moroccan, American, Yugoslav, Russian, Icelandic, Spanish, Dutch, French, Eritrean, Bangladeshi, Hungarian, North Macedonian, Latvian, Argentine, Brazilian
+  DNK admin2: 98 of 99 office units bound to 98 polygons (0 set aside as pieces)
+    office units with no polygon (1): Christiansø (411)
+  103 records: admin1 5, admin2 98; labels the group tree cannot place: none
+  wrote data/processed/denmark_origin.json (545 kB)
