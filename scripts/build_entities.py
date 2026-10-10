@@ -7550,22 +7550,25 @@ SOLE_CHILD_DECLARED: dict[tuple[str, str], tuple[str, str, bool]] = {
 # Gate 5, row by row: a parent figure a source publishes for other ground
 # than the polygon it sits on. (country, parent) -> {field or "*": why}.
 _SURVEY_FIELDS = ("religion", "language", "ethnicity")
-SOLE_CHILD_NOT_ITS_GROUND: dict[tuple[str, str], dict[str, str]] = {
+SOLE_CHILD_NOT_ITS_GROUND: dict[tuple[str, str], dict[str, Any]] = {
     # Afrobarometer's region "Fogo" is the whole island -- Sao Filipe,
     # Mosteiros and Santa Catarina do Fogo -- joined to one municipality.
     ("CPV", "Santa Catarina do Fogo"): {
         f: "its survey region is the whole island of Fogo, not this municipality"
         for f in _SURVEY_FIELDS},
-    # Wikidata's undated, round 30,000; the 2010 census counted 18,565.
-    ("CPV", "Tarrafal"): {"population": "its 30,000 is not the census's count (18,565 in 2010)"},
+    # Wikidata's undated, round 30,000; the 2010 census counted 18,565. Only
+    # that figure is refused: the 2021 census's own row is the municipality's.
+    ("CPV", "Tarrafal"): {"population": (30000, "its 30,000 is not the census's count "
+                                                "(18,565 in 2010)")},
     # Afrobarometer's North East region leaves out Francistown, its own
     # region in the survey, which lies inside this polygon.
     ("BWA", "North-East District"): {
         f: "its survey region leaves out Francistown, which this polygon holds"
         for f in _SURVEY_FIELDS},
-    # The census's settlement table puts North Abaco at 3,772 in 2010.
-    ("BHS", "North Abaco"): {"population": "its 9,578 is not the census's count of the "
-                                            "district (3,772 in 2010)"},
+    # The census's settlement table puts North Abaco at 3,772 in 2010; only
+    # the 9,578 is refused.
+    ("BHS", "North Abaco"): {"population": (9578, "its 9,578 is not the census's count of "
+                                                  "the district (3,772 in 2010)")},
     # The census's island report "Exuma and Cays" takes in Black Point,
     # which the map draws as its own district.
     ("BHS", "Exuma"): {"*": "the census's Exuma and Cays takes in Black Point"},
@@ -7858,6 +7861,12 @@ def parent_not_its_ground(iso3: str, parent: dict[str, Any], field: str) -> str 
         return "its figure is flagged as another ground's"
     declared = SOLE_CHILD_NOT_ITS_GROUND.get((iso3, parent.get("name"))) or {}
     why = declared.get(field) or declared.get("*")
+    if isinstance(why, tuple):
+        # One figure refused, by its value; another figure for the field is
+        # the parent's own and may pass.
+        refused, why = why
+        if published(value) != refused:
+            why = None
     if why:
         return why
     for name, year, reason in SOLE_CHILD_SOURCES_REFUSED.get(iso3, ()):

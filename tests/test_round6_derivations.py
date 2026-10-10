@@ -188,6 +188,22 @@ class SoleChildren(unittest.TestCase):
         filled, _ = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(filled, [])
 
+    def test_a_refused_figure_is_refused_by_value_not_the_whole_field(self):
+        # Tarrafal's 30,000 is not the municipality's; its 2021 census row is.
+        codes = {"CPV": {be.norm("Tarrafal"): ["Santo Amaro Abade"]}}
+        a1, a2, _, child = self.pair(parent_name="Tarrafal", child_name="Santo Amaro Abade",
+                                     population={"value": 30000,
+                                                 "source": "Wikidata (CC0)"})
+        filled, refused = be.fill_sole_children(a1, a2, {"C": GOOD}, codes)
+        self.assertEqual(filled, [])
+        self.assertIn("its 30,000 is not the census's count", refused[0])
+        a1, a2, _, child = self.pair(parent_name="Tarrafal", child_name="Santo Amaro Abade",
+                                     population={"value": 16620, "year": 2021,
+                                                 "source": "2021 census of Cape Verde"})
+        filled, refused = be.fill_sole_children(a1, a2, {"C": GOOD}, codes)
+        self.assertEqual(filled, ["CPV Tarrafal > Santo Amaro Abade population"])
+        self.assertEqual(child["population"]["value"], 16620)
+
     def test_an_office_count_shows_on_both_only_when_at_least_as_new(self):
         a1, a2, parent, child = self.pair(iso="BHS", parent_name="Long Island",
                                           child_name="Long Island",
