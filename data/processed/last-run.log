@@ -1,4 +1,5 @@
-xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
-usage: r6_probe.py [-h] [--grep GREP] [--pages PAGES] [--aia] [--limit LIMIT]
-                   {pdf,page,xlsx} url [url ...]
-r6_probe.py: error: argument --grep: expected one argument
+page: https://www.ansd.sn/recensement/rgph-5-2023
+  73,426 bytes
+  0 matching link(s)
+page: https://resultats.ansd.sn/
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'resultats.ansd.sn'. (_ssl.c:1016)>
