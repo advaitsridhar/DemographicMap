@@ -1383,10 +1383,19 @@ def one_count(province: str, info: dict[str, Any], known: dict[str, dict[str, An
     read = [n for n in info["all"] if n not in info["gaps"]]
     theirs = {(info.get("comp") or {}).get(n) for n in read}
     if own is None or theirs != {own}:
-        kinds = sorted({f"{EXPLAINED_SHORT.get(k[0], k[0])} {k[1]}" if k else "an undated figure"
-                        for k in {own, *theirs}})
-        return ("its own figure and its other regencies' come from different counts "
-                f"({', '.join(kinds)})")
+        counts = {own, *theirs}
+        offices = sorted({EXPLAINED_SHORT.get(k[0], k[0]) for k in counts if k})
+        years = sorted({k[1] for k in counts if k})
+        said = (f"the province's figure and its other regencies' are {len(counts)} "
+                "different counts")
+        if offices:
+            said += (", from " + (offices[0] if len(offices) == 1 else
+                                  ", ".join(offices[:-1]) + " and " + offices[-1]))
+        if len(years) > 1:
+            said += f", taken between {years[0]} and {years[-1]}"
+        if None in counts:
+            said += ", some of them undated"
+        return said
     weights = info.get("weights", {})
     if any(weights.get(n) != own for n in info["all"]):
         return ("its regencies' populations are not all the same count's, of the same "

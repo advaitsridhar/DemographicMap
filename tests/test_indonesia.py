@@ -759,7 +759,8 @@ class TheProvinceResidual(unittest.TestCase):
         self.assertEqual(len(out), 1)
         religion = out[0]["religion"]
         self.assertEqual(religion["status"], "not_available")
-        self.assertIn("different counts (BPS 2023, the civil registry 2024)", religion["note"])
+        self.assertIn("are 2 different counts, from BPS and the civil registry, taken "
+                      "between 2023 and 2024", religion["note"])
         self.assertEqual(out[0]["sources"], [])
 
     def test_weights_of_another_count_are_withdrawn(self):

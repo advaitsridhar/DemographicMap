@@ -519,30 +519,60 @@ class LacCountsMurtenWhole(unittest.TestCase):
 
 
 class AneityumsCutPanel(unittest.TestCase):
-    def test_the_second_panel_is_the_province_less_its_other_councils(self):
-        first = [100, 50, 50, 10, 5, 5, 2, 1, 1]
-        rows = {"Aneityum": {9: first}}
-        full = {"TAFEA": [0] * 9 + [40, 20, 20, 100, 50, 50, 3],
-                "Tanna": [0] * 9 + [10, 5, 5, 50, 25, 25, 1]}
-        out = vc.completed_panels(rows, full, {"TAFEA": ["Tanna", "Aneityum"]})
-        values, province = out["Aneityum"]
-        self.assertEqual(province, "TAFEA")
-        self.assertEqual(values[9:], [30, 15, 15, 50, 25, 25, 2])
-        # 10 English + 2 French + 30 Bislama + 50 vernacular + 2 not stated = 94, not 100:
-        # read_language would refuse it; here it is only completed.
-        self.assertEqual(values[:9], first)
+    """Table 6.16 prints no row for Aneityum; Tafea's less its other councils' is it."""
 
-    def test_nothing_is_completed_when_two_councils_lack_a_panel(self):
-        rows = {"A": {9: [1] * 9}, "B": {9: [1] * 9}}
+    @staticmethod
+    def row(english, french, bislama, vernacular, stated):
+        def three(v):
+            return [v, v // 2, v - v // 2]
+        total = english + french + bislama + vernacular + stated
+        return three(total) + three(english) + three(french) + three(bislama) \
+            + three(vernacular) + [stated]
+
+    def test_both_panels_are_the_province_less_its_other_councils(self):
+        full = {"TAFEA": self.row(873, 299, 1428, 36506, 10),
+                "Tanna": self.row(845, 293, 1254, 35454, 10)}
+        out = vc.completed_panels({}, full, {"TAFEA": ["Tanna", "Aneityum"]})
+        values, province, made = out["Aneityum"]
+        self.assertEqual((province, made), ("TAFEA", (9, 7)))
+        self.assertEqual([values[i] for i in (0, 3, 6, 9, 12, 15)],
+                         [1260, 28, 6, 174, 1052, 0])
+
+    def test_a_printed_panel_is_kept_and_only_the_other_made(self):
+        full = {"TAFEA": self.row(873, 299, 1428, 36506, 10),
+                "Tanna": self.row(845, 293, 1254, 35454, 10)}
+        mine = self.row(28, 6, 174, 1052, 0)
+        out = vc.completed_panels({"Aneityum": {9: mine[:9]}}, full,
+                                  {"TAFEA": ["Tanna", "Aneityum"]})
+        values, _, made = out["Aneityum"]
+        self.assertEqual(made, (7,))
+        self.assertEqual(values, mine)
+
+    def test_nothing_is_made_when_two_councils_lack_a_row_or_one_goes_negative(self):
         full = {"TAFEA": [0] * 16}
-        self.assertEqual(vc.completed_panels(rows, full, {"TAFEA": ["A", "B"]}), {})
+        self.assertEqual(vc.completed_panels({}, full, {"TAFEA": ["A", "B"]}), {})
+        full = {"TAFEA": self.row(10, 0, 0, 0, 0), "Tanna": self.row(20, 0, 0, 0, 0)}
+        self.assertEqual(vc.completed_panels({}, full, {"TAFEA": ["Tanna", "Aneityum"]}), {})
 
-    def test_the_note_names_what_was_completed(self):
+    def test_a_made_row_may_not_count_more_than_table_6_17s_people(self):
+        language = {"Aneityum": {"total": 1260, "completed_from": "TAFEA", "counts": {}},
+                    "Tanna": {"total": 20000, "counts": {}}}
+        self.assertEqual(vc.settle_made_rows(language, {"Aneityum": 1400, "Tanna": 1}), [])
+        self.assertEqual(vc.settle_made_rows(language, {"Aneityum": 1200}), ["Aneityum"])
+        self.assertNotIn("Aneityum", language)
+        self.assertIn("Tanna", language)
+
+    def test_the_note_says_how_the_row_was_made(self):
+        counts = {"English": 28, "French": 6, "Bislama": 174, vc.VERNACULAR: 1052,
+                  "Not stated": 0}
         note = vc.completed_note({"total": 1260, "completed_from": "TAFEA",
-                                  "counts": {"English": 28, "French": 6, "Bislama": 174,
-                                             vc.VERNACULAR: 1052, "Not stated": 0}})
+                                  "completed_panels": 2, "counts": counts})
+        self.assertIn("Table 6.16 prints no row for this council", note)
         self.assertIn("Tafea's less its other councils'", note)
-        self.assertIn("1,260 people", note)
+        self.assertIn("1,260 people in all", note)
+        note = vc.completed_note({"total": 1260, "completed_from": "TAFEA",
+                                  "completed_panels": 1, "counts": counts})
+        self.assertIn("prints this council's total, English and French", note)
 
 
 if __name__ == "__main__":
