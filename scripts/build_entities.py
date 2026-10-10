@@ -2550,11 +2550,153 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 # its romanisations are not the boundary file's: Watthana is CGAZ's 'Vadhana'
 # (Bangkok), Khwao Sinarin its 'Khwao Sin Rin' (Surin) and Thap Khlo its 'Tap
 # Khlo' (Phichit).
+#
+# OCHA's district tables are the same case, and so is CLEAR Global's: each row
+# below is the one unit the boundary file draws under that label, in the
+# province the row itself names, from the same release as every sibling that
+# did join. Each was checked against the shapes of its province before it was
+# listed; none of the labels is used twice in its country.
+#   * Spellings: Quiculungo/Quiculongo, Nyarusange/Nyanrusang,
+#     Kourittenga/Kouritenga, Komandjari/Komonjdjari, Nangha/Nagha Boguila,
+#     Baraouéli/Baroueli, Ngwa/Nwga, Damban/Dambam, Igueben/Iguegben,
+#     Mbaitoli/Mbatoli, Bagudo/Bagudu, Wamako/Wamakko, Raja/Raga,
+#     Me-Zochi/Mé-zóxi, Harari/Hareri, Tarmua/Tarmuwa, Tivaouane/Tivaoune,
+#     Garoowe/GAROWE, Mohammadia/Mohammédia, Taroudannt/Taroudant,
+#     Rehamna/Rhamna, Fquih Ben Salah/Saleh, Tanger/Tangier.
+#   * Morocco's elided names: OCHA writes "Province d Azilal" and CLEAR
+#     "Azilal", the boundary file "Province d'Azilal" with the Arabic name
+#     after it, so neither the exact key nor a whole-word run reaches it. An
+#     explicit alias was preferred to teaching norm() to split "d'" and "l'":
+#     the alias can only add the join it names.
+#   * "Gambos (ex-Chiange)" is the boundary file's "Gambos(Chiange)"; "Ville
+#     de Tahoua" its "Tahoua Ville", an enclave the department of Tahoua, a
+#     separate OCHA row, surrounds; "ABUJA MUNICIPAL" its "Municipal Area
+#     Council"; "Região Autónoma do Príncipe" its one district on the island,
+#     Pagué.
+#   * Tanzania's town and municipal councils, which OCHA writes "<X>
+#     MUNICIPAL" or "<X> TOWN" and the boundary file "<X> Urban" or "<X>
+#     Township Authority": in each region the councils OCHA lists are the
+#     polygons drawn, one for one, and the rural council of the same name
+#     already joins its own polygon. Aliasing them one by one is narrower than
+#     treating Urban, Municipal and Town as one word.
 ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
     "wikidata_admin2.json": {
         "THA-WD-Q1019417": ("Vadhana",),
         "THA-WD-Q475772": ("Khwao Sin Rin",),
         "THA-WD-Q476889": ("Tap Khlo",),
+    },
+    "cod_ps_admin2.json": {
+        "AGO-CODPS-AO06048": ("Quiculongo",),
+        "AGO-CODPS-AO09073": ("Gambos(Chiange)",),
+        "BDI-CODPS-BDI006011": ("Nyanrusang",),
+        "BDI-CODPS-BDI016006": ("Nyabitsind",),
+        "BFA-CODPS-BF4803": ("Kouritenga",),
+        "BFA-CODPS-BF5203": ("Komonjdjari",),
+        "CAF-CODPS-CF324": ("Nagha Boguila",),
+        "ETH-CODPS-ET1301": ("Hareri",),
+        "MAR-CODPS-MA001001": ("Province d'Azilal إقليم أزيلال",),
+        "MAR-CODPS-MA006005": ("Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة",),
+        "MLI-CODPS-ML0401": ("Baroueli",),
+        "NER-CODPS-NE005013": ("Tahoua Ville",),
+        "NGA-CODPS-NG001009": ("Obi Nwga",),
+        "NGA-CODPS-NG005004": ("Dambam",),
+        "NGA-CODPS-NG012010": ("Iguegben",),
+        "NGA-CODPS-NG015002": ("Municipal Area Council",),
+        "NGA-CODPS-NG017011": ("Mbatoli",),
+        "NGA-CODPS-NG022005": ("Bagudu",),
+        "NGA-CODPS-NG034021": ("Wamakko",),
+        "SSD-CODPS-SS0902": ("Raga",),
+        "STP-CODPS-ST0101": ("Pagué",),
+        "STP-CODPS-ST0206": ("Mé-zóxi",),
+        "TZA-CODPS-TZ0105": ("Dodoma Urban",),
+        "TZA-CODPS-TZ0306": ("Moshi Urban",),
+        "TZA-CODPS-TZ0409": ("Korogwe Township Authority",),
+        "TZA-CODPS-TZ0410": ("Handeni Mji",),
+        "TZA-CODPS-TZ0505": ("Morogoro Urban",),
+        "TZA-CODPS-TZ0607": ("Kibaha Urban",),
+        "TZA-CODPS-TZ0806": ("Lindi Urban",),
+        "TZA-CODPS-TZ0905": ("Mtwara Urban",),
+        "TZA-CODPS-TZ0907": ("Masasi  Township Authority",),
+        "TZA-CODPS-TZ1004": ("Songea Urban",),
+        "TZA-CODPS-TZ1103": ("Iringa Urban",),
+        "TZA-CODPS-TZ1304": ("Singida Urban",),
+        "TZA-CODPS-TZ1406": ("Tabora Urban",),
+        "TZA-CODPS-TZ1504": ("Sumbawanga Urban",),
+        "TZA-CODPS-TZ1604": ("Kigoma  Urban",),
+        "TZA-CODPS-TZ1608": ("Kasulu Township Authority",),
+        "TZA-CODPS-TZ1701": ("Shinyanga Urban",),
+        "TZA-CODPS-TZ1705": ("Kahama Township Authority",),
+        "TZA-CODPS-TZ1806": ("Bukoba Urban",),
+        "TZA-CODPS-TZ2005": ("Musoma Urban",),
+        "TZA-CODPS-TZ2106": ("Babati UrbanBabati Urban",),
+        "TZA-CODPS-TZ2201": ("Njombe Urban",),
+        "TZA-CODPS-TZ2206": ("Makambako Township Authority",),
+        "TZA-CODPS-TZ2301": ("Mpanda Urban",),
+    },
+    "clear_global_language.json": {
+        "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
+        "MAR-CG-MA001003": ("Province de Fquih Ben Saleh إقليم الفقيه بن صالح",),
+        "MAR-CG-MA002006": ("Prefecture of Mohammédia",),
+        "MAR-CG-MA003002": ("Province d'Errachidia إقليم الرشيدية",),
+        "MAR-CG-MA004001": ("Préfecture de Fès عمالة فاس",),
+        "MAR-CG-MA004003": ("Province d'El Hajeb إقليم الحاجب",),
+        "MAR-CG-MA004004": ("Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران",),
+        "MAR-CG-MA006005": ("Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة",),
+        "MAR-CG-MA006008": ("Rhamna Province",),
+        "MAR-CG-MA007001": ("Préfecture d'Oujda-Angad عمالة وجدة - أنجاد",),
+        "MAR-CG-MA009004": ("Taroudant Province",),
+        "MAR-CG-MA010005": ("Préfecture de M'diq-Fnideq عمالة المضيق الفنيدق",),
+        "MAR-CG-MA010006": ("Prefecture of Tangier - Assilah",),
+        "MAR-CG-MA010007": ("Province d'Ouezzane إقليم وزان",),
+        "MLI-CG-ML0401": ("Baroueli",),
+        "NGA-CG-NG034021": ("Wamakko",),
+        "NGA-CG-NG036015": ("Tarmuwa",),
+        "SEN-CG-SN1303": ("Tivaoune",),
+        "SOM-CG-SO1701": ("GAROWE",),
+    },
+}
+
+# Rows whose name is drawn more than once in their country and which do not
+# say which province they are in, keyed by file and row id, with the province
+# the row's own code names. Cambodia draws two Samraongs, Takeo's district and
+# Oddar Meanchey's city, and CLEAR's row KH2107 names neither; its code's
+# first two digits are Takeo's (KH21, the province row CLEAR itself
+# publishes), so it is matched inside Takeo and nowhere else.
+ROW_PARENTS: dict[str, dict[str, str]] = {
+    "clear_global_language.json": {
+        "KHM-CG-KH2107": "Takeo",
+    },
+}
+
+# Rows bound to a polygon by its id, keyed by file and row id, with the polygon
+# and the label it carries. For a row whose own name reaches another polygon
+# first: OCHA's "ARUSHA CITY" and "MBEYA CITY" lose the word "city" to norm()
+# and so are keyed exactly like the district councils "ARUSHA" and "MBEYA"
+# beside them; both pairs met on the district's polygon and neither was kept.
+# The cities are the polygons the boundary file calls "Arusha Urban" (269 km2)
+# and "Mbeya Urban" (254 km2), and the district councils then join their own.
+# The row takes the polygon's label as its name and keeps its own as an alias.
+ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
+    "cod_ps_admin2.json": {
+        "TZA-CODPS-TZ0203": ("72390352B90906351205470", "Arusha Urban"),
+        "TZA-CODPS-TZ1208": ("72390352B25057310038558", "Mbeya Urban"),
+    },
+}
+
+# A sentence a row's figure carries about the polygon it lands on, keyed by
+# file, row id and field. Angola's Huíla has fourteen municipalities in
+# OCHA's table and thirteen polygons: the boundary file draws no Cacula, and
+# Cacula's seat (GeoNames 14.4956S 14.1163E) lies inside the polygon called
+# Lubango. That polygon is 3,680 km2, about 540 km2 more than Lubango
+# municipality's own area, so it is not Lubango and Cacula together and
+# pooling the two would put Cacula's people on ground the map draws in other
+# municipalities; Lubango's figure stands, saying what it leaves out.
+ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
+    "cod_ps_admin2.json": {
+        "AGO-CODPS-AO09077": {"population": (
+            "The boundary file draws no polygon for Cacula, the municipality to the "
+            "north-east whose seat lies inside this polygon; OCHA's table counts "
+            "197,616 people in Cacula in 2024, who are not in this figure.")},
     },
 }
 
@@ -2588,12 +2730,31 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         dropped = superseded(filename)
         aliases = ROW_ALIASES.get(filename, {})
         not_units = DROPPED_ROWS.get(filename, {})
+        parents = ROW_PARENTS.get(filename, {})
+        placed_by_id = ROW_SHAPES.get(filename, {})
+        notes = ROW_NOTES.get(filename, {})
+        # A row a declared union pools stays although its country's rows in
+        # this file give way: the union names it by id, and the office's file
+        # that supersedes the rest says the polygon is not one of its units.
+        pooled = union_row_ids(filename)
         for row in rows:
             iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
-            if iso3 in dropped or row.get("id") in not_units:
+            if (iso3 in dropped and row.get("id") not in pooled) \
+                    or row.get("id") in not_units:
                 continue
             if row.get("id") in aliases:
                 row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
+            if row.get("id") in parents and not row.get("parent_name"):
+                row["parent_name"] = parents[row["id"]]
+            for field, extra in notes.get(row.get("id"), {}).items():
+                value = row.get(field)
+                if isinstance(value, dict) and "value" in value:
+                    row[field] = {**value, "note": " ".join(
+                        n for n in (value.get("note"), extra) if n)}
+            if row.get("id") in placed_by_id:
+                shape_id, label = placed_by_id[row["id"]]
+                row["aliases"] = [*(row.get("aliases") or []), row.get("name")]
+                row.update(name=label, match_by="shape_id", shape_id=shape_id)
             # Which file a row came from decides whether two rows landing on one
             # shape are a conflict. Across files it is normal -- India's C-01 and
             # C-16 both describe Kargil -- and within one file it means one of
@@ -6769,6 +6930,23 @@ def shares_of(rows: Any) -> list[tuple[str, float]]:
             and isinstance(e.get("pct"), (int, float))]
 
 
+def shared_sentences(notes: Sequence[Any]) -> str:
+    """The whole sentences every part's note opens with, to keep on the pool.
+
+    A survey's caveat -- "Regional shares are survey estimates, not census
+    counts ..." -- is true of the pool too, and was being dropped with the
+    parts' notes; the sentence that differs ("This region: 112 respondents")
+    describes one part and is left out.
+    """
+    if not notes or not all(isinstance(n, str) and n for n in notes):
+        return ""
+    prefix = os.path.commonprefix(list(notes))
+    cut = prefix.rfind(". ")
+    if len(set(notes)) == 1:
+        return notes[0].rstrip() + " "
+    return prefix[:cut + 2] if cut > 0 else ""
+
+
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
               filename: str) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
@@ -6791,6 +6969,11 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
                 seen.add(key)
                 pooled["sources"].append(src)
     listed = [p["name"] for p in parts]
+    # Two parts of one name are told apart by the province each is in:
+    # Paraguay's Bella Vista in Amambay and Bella Vista in Itapúa.
+    if len(set(listed)) < len(listed):
+        listed = [f"{p['name']} ({p['parent_name']})" if p.get("parent_name") else p["name"]
+                  for p in parts]
     names = ", ".join(listed[:-1]) + " and " + listed[-1] if len(listed) > 1 else listed[0]
     pops = [published(p.get("population")) for p in parts]
     if all(v is not None for v in pops):
@@ -6833,10 +7016,21 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         else:
             log(f"  union {iso3} {name}: {field} not pooled from {filename} -- "
                 f"the parts carry neither counts nor populations to weigh by")
+            # Said on the record too: a gap that only says no source carries
+            # the field is false here, since one carries it for every part.
+            # Weighing the parts by another file's populations would put one
+            # source's shares on another source's people, often of another
+            # year, so they are not combined.
+            pooled[field] = gap(NOT_AVAILABLE, (
+                f"Shares are published for {names} separately, with no counts "
+                f"or populations from the same source to weigh them by, so they "
+                f"are not combined for this polygon, which draws them as one "
+                f"unit."))
             continue
         pooled[field] = rows
         pooled[f"{field}_note"] = (
-            f"Pooled from the rows published for {names}, weighted by {basis}; "
+            shared_sentences([p.get(f"{field}_note") for p in parts])
+            + f"Pooled from the rows published for {names}, weighted by {basis}; "
             f"the boundary file draws them as one unit.")
         for satellite in ("year", "basis"):
             values = {p.get(f"{field}_{satellite}") for p in parts}
@@ -6884,6 +7078,125 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
                 rows.remove(found[p])
             rows.append(pooled)
             done.append(f"{iso3} {shape_name} from {' + '.join(part_names)} ({filename})")
+    return done
+
+
+# Unions of named rows of one file, pooled onto the polygon given by its id.
+# SHAPE_IS_UNION_OF names its parts, and that cannot reach these: norm() reads
+# "Zomba City" and "Zomba District", "Maputo City" and "Maputo Province", as
+# one name, and Paraguay's two districts are both "Bella Vista". So each part
+# is the row's id, and the pooled row is bound to the polygon by its id and
+# carries the polygon's label. Each entry was measured before it was listed:
+#   MWI  OCHA's 2023 table counts each of Malawi's four cities apart from the
+#        district around it. The boundary file draws no city: Zomba, Lilongwe,
+#        Mzuzu and Blantyre each lie inside the district polygon of their
+#        name (Mzuzu inside Mzimba's), and every other district of the table
+#        is a polygon of its own, so district and city together are each
+#        polygon's ground. Unpooled, Zomba's two rows met on one key and
+#        neither was kept, and Lilongwe, Mzimba and Blantyre carried their
+#        city's or their district's figure alone.
+#   ETH  Dire Dawa's urban and rural rows (OCHA 2022) are the city
+#        administration, which the boundary file draws once at each level.
+#   MOZ  The boundary file draws Maputo City and Maputo Province as one
+#        polygon; Afrobarometer's ninth round surveys each, and its counts of
+#        respondents are summed.
+#   STP  Afrobarometer's ninth round divides São Tomé island into three
+#        strata, Norte Oeste, Centro Este and Sul Este, which together are the
+#        island and so the province; Príncipe is its fourth.
+#   PRY  The polygon is Bella Vista (Amambay) and Bella Vista (Itapúa) drawn
+#        as one, as both were before Cerro Corá was cut from the first in
+#        2020; OCHA's 2023 table has both districts and no Cerro Corá. The
+#        2022 census counts the districts as they are now, so it has no figure
+#        for this ground (paraguay_census says so on the polygon), and OCHA's
+#        rows are kept for this union although the census supersedes the rest.
+ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
+    ("MWI", "Zomba"): {
+        "file": "cod_ps_admin2.json",
+        "rows": ("MWI-CODPS-MW314", "MWI-CODPS-MW303"),
+        "shapes": (("admin2", "42251766B13881881574545"),),
+        "note": "The city has no polygon of its own and lies inside this one."},
+    ("MWI", "Lilongwe"): {
+        "file": "cod_ps_admin2.json",
+        "rows": ("MWI-CODPS-MW210", "MWI-CODPS-MW206"),
+        "shapes": (("admin2", "42251766B26147222520266"),),
+        "note": "The city has no polygon of its own and lies inside this one."},
+    ("MWI", "Mzimba"): {
+        "file": "cod_ps_admin2.json",
+        "rows": ("MWI-CODPS-MW105", "MWI-CODPS-MW107"),
+        "shapes": (("admin2", "42251766B77624810989827"),),
+        "note": "Mzuzu has no polygon of its own and lies inside this one."},
+    ("MWI", "Blantyre"): {
+        "file": "cod_ps_admin2.json",
+        "rows": ("MWI-CODPS-MW315", "MWI-CODPS-MW305"),
+        "shapes": (("admin2", "42251766B636776762176"),),
+        "note": "The city has no polygon of its own and lies inside this one."},
+    ("ETH", "Dire Dawa"): {
+        "file": "cod_ps_admin2.json",
+        "rows": ("ETH-CODPS-ET1501", "ETH-CODPS-ET1502"),
+        "shapes": (("admin1", "75662566B22109266514860"),
+                   ("admin2", "57463737B22109266514860")),
+        "note": "Together they are the Dire Dawa city administration."},
+    ("MOZ", "Maputo"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("MOZ-AB9-540", "MOZ-AB9-541"),
+        "shapes": (("admin1", "27363107B47421408423272"),)},
+    ("STP", "São Tomé Province"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("STP-AB9-1660", "STP-AB9-1661", "STP-AB9-1662"),
+        "shapes": (("admin1", "19237168B40253326356618"),),
+        "note": "The three are the survey's divisions of São Tomé island."},
+    ("PRY", "Bella Vista"): {
+        "file": "cod_ps_admin2.json",
+        "rows": ("PRY-CODPS-PY1302", "PRY-CODPS-PY0702"),
+        "shapes": (("admin2", "47425931B90614418626785"),),
+        "note": ("Both are the districts as they were before Cerro Corá was "
+                 "created in 2020, which is how the boundary file draws them; "
+                 "the figures are projections for 2023.")},
+}
+
+
+def union_row_ids(filename: str) -> set[str]:
+    """Every row id a ROW_UNIONS entry pools from ``filename``."""
+    return {rid for spec in ROW_UNIONS.values() if spec["file"] == filename
+            for rid in spec["rows"]}
+
+
+def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Replace each ROW_UNIONS entry's rows with one pooled row per polygon.
+
+    Every named row must be there: a union missing a part would be one part's
+    figure under the whole's label, so it is left unpooled and the log says
+    which part is missing.
+    """
+    done: list[str] = []
+    for (iso3, shape_name), spec in ROW_UNIONS.items():
+        rows = adapters.get(iso3, [])
+        found = {r.get("id"): r for r in rows
+                 if r.get("_source") == spec["file"] and r.get("id") in spec["rows"]}
+        missing = [rid for rid in spec["rows"] if rid not in found]
+        if missing:
+            log(f"  union {iso3} {shape_name}: {spec['file']} lacks "
+                f"{', '.join(missing)}, not pooled")
+            continue
+        parts = [found[rid] for rid in spec["rows"]]
+        pooled = pool_rows(shape_name, parts, iso3, spec["file"])
+        extra = spec.get("note")
+        if extra:
+            for key in ("population", *ROLLUP_FIELDS):
+                value = pooled.get(key)
+                if isinstance(value, dict) and value.get("note") and "value" in value:
+                    value["note"] = f"{value['note']} {extra}"
+                elif pooled.get(f"{key}_note"):
+                    pooled[f"{key}_note"] = f"{pooled[f'{key}_note']} {extra}"
+        for part in parts:
+            rows.remove(part)
+        for level, shape_id in spec["shapes"]:
+            rows.append({**copy.deepcopy(pooled), "level": level,
+                         "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
+                         "shape_id": shape_id,
+                         "aliases": [p["name"] for p in parts]})
+        done.append(f"{iso3} {shape_name} from {' + '.join(spec['rows'])} "
+                    f"({spec['file']})")
     return done
 
 
@@ -7649,6 +7962,165 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
                             "before the 1995 reform, another unit"),
 }
 
+# Figures that reach the right polygon by name and describe other ground,
+# keyed by country and polygon id: for each field, the file whose figure is
+# refused (None for any file's, where no figure could describe the polygon)
+# and the reason the record states instead. Applied after the join, so it
+# reaches a figure however it arrived, and nothing falls back in its place:
+# the reason is that no figure for this ground has been read. Measured on the
+# CGAZ polygons on 10 October 2026:
+#   MAR  Laâyoune-Sakia El Hamra is drawn as the 7,789 km2 of the region north
+#        of 27°40'N (Tarfaya Province and slivers); Laâyoune, where most of
+#        the region's people live, lies south of that line in Western Sahara,
+#        which the boundary file draws as a disputed area of its own. "Oued
+#        Ed-Dahab Province" is 0.7 km2 of slivers along the same line, and
+#        the province's figure is Dakhla's, 1,700 km to the south.
+#   UKR  "Leninskyi" is a 2.2 km2 polygon in Sevastopol; Wikidata's 2025
+#        figure is the authorities' count for a whole district of the city,
+#        which Ukraine's statistics office has not counted since 2001.
+#   BWA  "Gaborone" at the second level is 1,296 km2 and holds Tlokweng,
+#        Mogoditshane, Ramotswa and Otse besides the city (GeoNames' points);
+#        235,884 is the city's.
+#   GNQ  Wikidata's item for Riaba is a municipality whose one undated figure,
+#        1,071, is the size of the town (GeoNames: 971); the polygon is the
+#        district, 379 km2.
+#   GHA  OCHA's 2021 row is Savelugu-Nanton, the district before Nanton was
+#        made a district of its own in 2018; the map draws Nanton apart, and
+#        Wikidata's 2021 figure for Nanton (50,767) stands on it, so the
+#        old district's 180,507 counted Nanton's people twice.
+#   CHN  "Xianggang", Hong Kong at the second level, is 441 km2 without Hong
+#        Kong Island and Lantau (china_census measures it); the SAR's census
+#        figures describe all of the SAR's people.
+#   BEL  "Brussels Hoofdstedelijk" at the first level is 79.7 km2, of which
+#        70.6 km2 lies in the Brussels-Capital Region; the other 91.6 km2 of
+#        the region (162.2 km2, drawn whole at the second level as
+#        "Brussels") lies inside the polygon drawn for Flanders. The region's
+#        figures stand on the second-level polygon.
+NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
+    ("MAR", "70788906B89532291078161"): {
+        "population": (None, (
+            "The figure published for the Laâyoune-Sakia El Hamra region, 451,028 "
+            "people in 2024, counts mostly the city of Laâyoune, which lies south of "
+            "27°40'N in Western Sahara. The boundary file draws Western Sahara as a "
+            "separate disputed area, and this polygon is only the 7,789 km² of the "
+            "region north of that line, mostly Tarfaya Province, so the region's "
+            "count is not this polygon's and no count is published for this part "
+            "alone.")),
+    },
+    ("MAR", "96644757B78111329468616"): {
+        "population": (None, (
+            "This polygon is 0.7 km² of slivers along 27°40'N. The figure "
+            "published for the province of Oued Ed-Dahab, 195,467 people in 2024, "
+            "most of them in Dakhla, describes ground south of that line in Western "
+            "Sahara, which the boundary file draws as a separate disputed area, so "
+            "it is not this polygon's, and no count describes these slivers.")),
+    },
+    ("UKR", "74538382B30799636343123"): {
+        "population": ("wikidata_admin2.json", (
+            "This polygon is 2.2 km² of Sevastopol. The 137,952 people given for "
+            "the Leninskyi district in 2025 live in a district far larger than "
+            "the polygon, and are counted by the authorities that have controlled "
+            "the city since 2014, not by Ukraine's statistics office, so the "
+            "figure is not this polygon's. The 2001 census counts Sevastopol "
+            "whole; the map cuts it into polygons, and the whole city's figures "
+            "describe none of them.")),
+    },
+    ("BWA", "55941954B98371115502172"): {
+        "population": ("wikidata_admin2.json", (
+            "235,884 (2013) is the city of Gaborone's figure. This polygon is "
+            "1,296 km² around the city and also holds Tlokweng, Mogoditshane, "
+            "Ramotswa and Otse, so the city's count is not this polygon's, and no "
+            "count read describes this ground.")),
+    },
+    ("GNQ", "11065452B69866248222639"): {
+        "population": ("wikidata_admin2.json", (
+            "Wikidata's 1,071 for Riaba carries no date and is the size of the "
+            "town of Riaba (971 people, by GeoNames). This polygon is the district "
+            "of Riaba, 379 km² of southern Bioko, and no figure read describes "
+            "it.")),
+    },
+    ("GHA", "2480657B27215926841583"): {
+        "population": ("cod_ps_admin2.json", (
+            "The 2021 figure of 180,507 is for Savelugu-Nanton, the district as it "
+            "was before Nanton was made a district of its own in 2018. The map "
+            "draws Nanton apart, with its own figure, so the old district's count "
+            "is not this polygon's, and no figure for Savelugu alone has been "
+            "read.")),
+    },
+    ("CHN", "17275852B66204891178522"): {
+        field: (None, (
+            "This polygon is part of Hong Kong as the boundary file's second level "
+            "draws it ('Xianggang'): about 441 km² of the SAR's 1,110 or so km² of "
+            "land, without Hong Kong Island and Lantau. The 2021 census figures "
+            "describe the whole SAR, many of whose people live outside this "
+            "polygon, so they are shown on the first-level polygon only; no census "
+            "area follows this polygon's edge."))
+        for field in ("population", "median_age", "sex_ratio", "language", "ethnicity")
+    },
+    ("BEL", "27649430B17719898407236"): {
+        field: (None, (
+            "This polygon is about half of the Brussels-Capital Region: 70.6 km² "
+            "of the region's 162 km² lie in it, and the rest is drawn inside the "
+            "polygon for Flanders. The region's figures are shown on the "
+            "second-level polygon \"Brussels\", which is the whole region, and "
+            "describe more ground and more people than this polygon holds."))
+        for field in ("population", "religion", "language")
+    },
+}
+
+
+def refuse_not_this_ground(admin1: dict[str, list[dict[str, Any]]],
+                           admin2: dict[str, list[dict[str, Any]]],
+                           fields: Sequence[str]) -> list[str]:
+    """Put NOT_THIS_GROUND's reasons in place of the figures it refuses.
+
+    Run once for the population after the join, while each figure still says
+    which file it came from, and once for the compositions after the
+    collection policy, which would otherwise replace the reason with the
+    country's. A refusal scoped to one file leaves another file's figure
+    standing and lets a figure that file's was held in front of come back
+    (fall_back); a refusal of any file's figure writes the reason whatever
+    was there. A declared polygon that is not drawn stops the build.
+    """
+    done: list[str] = []
+    for (iso3, shape_id), declared in NOT_THIS_GROUND.items():
+        found = [e for table in (admin1, admin2) for e in table.get(iso3, [])
+                 if e.get("id") == shape_id]
+        if not found:
+            raise SystemExit(f"build_entities: NOT_THIS_GROUND names {iso3} shape "
+                             f"{shape_id!r}, which the boundary file does not draw")
+        for entity in found:
+            for field, (source, note) in declared.items():
+                if field not in fields:
+                    continue
+                current = entity.get(field)
+                origin = (entity.get("_from") or {}).get(field)
+                refused = dict(gap(NOT_AVAILABLE, note), not_this_ground=True)
+                if field == "population" and entity.get("level") == "admin1":
+                    # Its divisions do not make the ground the figure was for
+                    # either: no sum of them stands in for it.
+                    refused["no_child_sum"] = True
+                if not is_gap(current) and source is not None and origin != source:
+                    log(f"  not this ground: {iso3} {entity.get('name')} {field} "
+                        f"kept, from {origin}, not {source}")
+                    continue
+                entity[field] = refused
+                for suffix in SATELLITES:
+                    entity.pop(f"{field}{suffix}", None)
+                (entity.get("_from") or {}).pop(field, None)
+                entity["sources"] = [
+                    src for src in entity.get("sources", []) or []
+                    if set(str(src.get("field") or "").split("/")) != {field}]
+                if is_gap(current):
+                    continue
+                # Only where the reason says so: it ends "is left out", and the
+                # figure the refused one stood in front of is shown instead.
+                if source is not None and note.rstrip(".").endswith("left out"):
+                    fall_back(entity, refused, field,
+                              usable=lambda held, source=source: held.get("file") != source)
+                done.append(f"{iso3} {entity.get('name')} {field}")
+    return done
+
 # Countries whose boundary file draws their first level one level down: under
 # two cohesion regions, Slovenia's second level is its 212 municipalities;
 # under five macro-regions, Italy's is its 20 regions; Kosovo's, North
@@ -8030,6 +8502,8 @@ def main() -> int:
     for line in pool_declared_unions(
             adapters, {**SHAPE_IS_UNION_OF, **outline_unions(shapes.get("ADM2", []))}):
         log(f"  union pooled: {line}")
+    for line in pool_row_unions(adapters):
+        log(f"  union pooled by row: {line}")
     for line in split_declared_rows(adapters):
         log(f"  split written as estimates: {line}")
     curated_rows, provenance = load_curated()
@@ -8468,6 +8942,12 @@ def main() -> int:
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
 
+    # -- figures that reached a polygon whose ground they do not describe ----
+    # First, while each figure still says which file it came from.
+    for line in refuse_not_this_ground(admin1_by_country, admin2_by_country,
+                                       ("population", "median_age", "sex_ratio")):
+        log(f"  not this ground: {line}")
+
     # -- a town's figure on a district --------------------------------------
     # After every adapter, so the parent's population is the one it will
     # keep; before anything sums or weighs by these figures.
@@ -8530,6 +9010,11 @@ def main() -> int:
         log(f"  collection policy marked {total} subnational fields with a "
             f"declared gap and its reason: "
             + ", ".join(f"{k} {v}" for k, v in top))
+    # The compositions a polygon must not carry, after the policy so the
+    # polygon's own reason is the one it gives.
+    for line in refuse_not_this_ground(admin1_by_country, admin2_by_country,
+                                       ROLLUP_FIELDS):
+        log(f"  not this ground: {line}")
 
     # -- sum parents from children -------------------------------------------
     # After the policy, so "not collected" still wins: a country that does not

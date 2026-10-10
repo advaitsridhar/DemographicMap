@@ -579,6 +579,18 @@ def km(a: Any, b: Any) -> float:
     return a.distance(b) * 111.32 * math.cos(math.radians(42.0))
 
 
+def displacing(why: dict[str, Any], year: int) -> dict[str, Any]:
+    """A stated gap that an encyclopaedia's figure of before ``year + 1`` gives way to.
+
+    A gap never displaces a figure by itself, so these reasons stood beside
+    the figures they explain away: Wikidata's 2024 figure for Tsqaltubo, the
+    municipality without Kutaisi, on a polygon that may hold the city; and
+    Wikidata's "2,008" for Abkhazia, dated 1996. Geostat's statement is as of
+    its estimate's year, so anything older yields, and an undated figure too.
+    """
+    return {**why, "displaces_before": year + 1, "displaces_undated": True}
+
+
 def city_homes(polys: dict[str, Any], site: dict[str, dict[str, Any]]) -> tuple[dict, dict]:
     """({city key: polygon id}, {polygon id: reason it is refused})."""
     from shapely.geometry import Point
@@ -683,7 +695,7 @@ def main() -> int:
                               sources=cites, **values))
     for name in ("Abkhazia",):
         u = first[name]
-        why = gap(NOT_AVAILABLE, UNCOUNTED_NOTE.format(what="Abkhazia"))
+        why = displacing(gap(NOT_AVAILABLE, UNCOUNTED_NOTE.format(what="Abkhazia")), year)
         records.append(record(f"GEO-GEOSTAT-{u['id']}", name, level="admin1", parent="GEO",
                               country="GEO", match_by="shape_id", shape_id=u["id"],
                               population=why, median_age=why, sex_ratio=why, religion=why,
@@ -810,6 +822,13 @@ def main() -> int:
         if name in UNCOUNTED:
             why = gap(NOT_AVAILABLE, UNCOUNTED_NOTE.format(
                 what="Abkhazia" if where == "Abkhazia" else "the Tskhinvali region"))
+            # Abkhazia's encyclopaedia figures are the de facto authorities' or
+            # a year read as a count (Wikidata's "2,008" for 1996), and give
+            # way. Akhalgori's is the 2002 census's, Georgia's own, taken when
+            # the raion was under the government's control -- the census whose
+            # ethnicity is shown here -- and stands.
+            if where == "Abkhazia":
+                why = displacing(why, year)
             extra = ethnicity_2002_values(sid)
             cites = [extra.pop("_cite")] if extra else []
             records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
@@ -819,7 +838,7 @@ def main() -> int:
                                   **({"ethnicity": why} | extra), sources=cites))
             continue
         if sid in refused:
-            why = gap(NOT_AVAILABLE, refused[sid])
+            why = displacing(gap(NOT_AVAILABLE, refused[sid]), year)
             records.append(record(f"GEO-GEOSTAT-{sid}", name, level="admin2", parent="GEO",
                                   country="GEO", match_by="shape_id", shape_id=sid,
                                   population=why, sex_ratio=why, median_age=why,
