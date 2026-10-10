@@ -1,5 +1,27 @@
-  retry 1/4 after 2s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
-  retry 2/4 after 4s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
-  retry 3/4 after 8s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
-  retry 4/4 after 16s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
-https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf: RuntimeError: GET failed after 4 retries: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf
+  01-population-by-self-governed-unit.px: 91 cells (region, self-governed unit, year)
+  17_Total population by regions and ethnicity.px: 182 cells (Regions, Urban/Rural, ethnicity)
+  ethnicity: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  22_Population by regions and religion.px: 169 cells (Regions, Urban/Rural, Religion)
+  religion: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  20_Population_by_region,_by_native_languages_and_fluently_speak_Georgian....px: 117 cells (Regions, fluently speak Georgian language, native languages)
+  language: 12 areas; every region's categories make its total (less its suppressed cells of ten or fewer)
+  07.px: 684 cells (Age, Regions, Urban/Rural, Sex)
+  02TOTA~1.PX: 246 cells (Self-governed units, Urban/Rural, sex)
+  georgia: the country's 2014 census ages: national median 37.7 from five-year groups, against Eurostat's 37.5 for 1 January 2014 (+0.20 years, bound 0.3)
+  estimate for 1 January 2026: 11 regions make the country's 3,941,100
+  country {"field": "ethnicity", "total": 3713804.0, "hidden": 0, "groups": [{"group": "Georgian", "pct": 86.8, "count": 3224564}, {"group": "Azerbaijani", "pct": 6.3, "count": 233024}, {"group": "Armenian", "pct": 4.5, "count": 168102}, {"group": "Russian", "pct": 0.7, "count": 26453}, {"group": "Ossetian", "pct": 0.4, "count": 14385}, {"group": "Other", "pct": 0.4, "count": 14346}, {"group": "Yazidi", "pct": 0.3, "count": 12174}, {"group": "Kist", "pct": 0.2, "count": 5697}, {"group": "Ukrainian", "pct": 0.2, "count": 6034}, {"group": "Assyrian", "pct": 0.1, "count": 2377}, {"group": "Greek", "pct": 0.1, "count": 5544}, {"group": "Not declared", "pct": 0.0, "count": 591}, {"group": "Not stated", "pct": 0.0, "count": 513}]}
+  country {"field": "religion", "total": 3713804.0, "hidden": 0, "groups": [{"group": "Orthodox", "pct": 83.4, "count": 3097573}, {"group": "Muslim", "pct": 10.7, "count": 398677}, {"group": "Armenian Apostolic", "pct": 2.9, "count": 109041}, {"group": "Not stated", "pct": 1.2, "count": 43886}, {"group": "Catholic", "pct": 0.5, "count": 19195}, {"group": "No religion", "pct": 0.5, "count": 19080}, {"group": "Jehovah's Witnesses", "pct": 0.3, "count": 12395}, {"group": "Yazidi", "pct": 0.2, "count": 8591}, {"group": "Protestant", "pct": 0.1, "count": 2520}, {"group": "Judaism", "pct": 0.0, "count": 1417}, {"group": "Other religion", "pct": 0.0, "count": 1429}]}
+  country {"field": "language", "total": 3713804.0, "hidden": 0, "groups": [{"group": "Georgian", "pct": 87.6, "count": 3254852}, {"group": "Azerbaijani", "pct": 6.2, "count": 231436}, {"group": "Armenian", "pct": 3.9, "count": 144812}, {"group": "Russian", "pct": 1.2, "count": 45920}, {"group": "Other", "pct": 0.8, "count": 30742}, {"group": "Ossetian", "pct": 0.2, "count": 5698}, {"group": "Abkhaz", "pct": 0.0, "count": 272}, {"group": "Not stated", "pct": 0.0, "count": 72}]}
+  fetched ADM2_simplified.geojson (1.3 MB)
+  GEO ADM2: 68 polygons from ADM2_simplified.geojson
+  Batumi's centre lies in 'Khelvachauri'; the nearest other polygon is 8.2 km away
+  Kutaisi: not placed; polygons near its centre: Terjola (0.0 km), Tsqaltubo (0.3 km), Tkibuli (0.6 km)
+  Poti: not placed; polygons near its centre: Lanchkhuti (0.0 km), Khobi (1.1 km), Ozurgeti (7.8 km)
+  Rustavi's centre lies in 'Gardabani'; the nearest other polygon is 1.9 km away
+  geo_admpop_adm2_geostat_2014.csv: 80 units of the 2014 census in five-year groups to 85 and over
+  Tbilisi's 10 districts in the 2014 age table make the city's 1,108,717 and its median of 35.0, as table 07 does
+  222 pages
+  2002 census table 22: 65 raions and cities; every region is its rows and the regions make the country's 4,371,535
+  second level: 54 polygons with a median from the 2014 age table, each one's count the census's own
+  second level: 55 polygons with a count; rows on no polygon: []
+  wrote data/processed/georgia.json (413 kB)
