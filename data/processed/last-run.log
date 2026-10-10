@@ -1,17 +1,5 @@
-transnistria: 2015 ethnic composition
-  mun bender: 91,197
-  mun tiraspol: 129,367
-  or dnestrovsc: 9,744
-  grigoriopol: 39,795
-  dubasari: 31,159
-  camenca: 20,542
-  ribnita: 69,405
-  slobozia: 83,798
-  the left bank: 383,810 of the republic's 475,007
-transnistria: Moldova 2024, ethnicity by religion and by mother tongue
-  Bender religion (modelled): Orthodox 88.7, Old Believer 2.0, Irreligious 1.9, Atheism 1.8
-  Bender language (modelled): Russian 56.7, Moldovan or Romanian 28.5, Ukrainian 9.1, Bulgarian 2.7
-  Transnistria religion (modelled): Orthodox 89.7, Irreligious 1.6, Atheism 1.5, Baptist 1.4
-  Transnistria language (modelled): Russian 46.1, Moldovan or Romanian 35.0, Ukrainian 14.8, Bulgarian 1.9
-  wrote data/processed/transnistria_2015.json (32 kB)
-wrote 4 records to transnistria_2015.json
+  retry 1/4 after 2s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
+  retry 2/4 after 4s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
+  retry 3/4 after 8s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
+  retry 4/4 after 16s :: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ins.ci'. (_ssl.c:1016)>
+https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf: RuntimeError: GET failed after 4 retries: https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf
