@@ -5847,6 +5847,28 @@ class DerivedValues(unittest.TestCase):
         be.residual_child([nation], {"XXX": [*known, blank]})
         self.assertFalse(isinstance(blank["religion"], list))
 
+    def test_a_gap_that_says_no_figure_fits_its_polygon_is_not_subtracted_into(self):
+        # Maguindanao's religion, once the ARMM around it carries a count of
+        # the region's own ground: the arithmetic closes, and the gap stands.
+        for level in ("child", "grandchild"):
+            nation, known, blank = self.same_source_country()
+            why = "No count fits this polygon."
+            blank["religion"] = {**common.gap(common.NOT_AVAILABLE, why),
+                                 "not_this_ground": True}
+            if level == "child":
+                filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+            else:
+                for row in (*known, blank):
+                    row["parent"] = "XXX"
+                filled, refused = be.residual_grandchild({"XXX": [nation]},
+                                                         {"XXX": [*known, blank]})
+            self.assertEqual(filled, [], level)
+            self.assertIn("its own gap says no figure fits this polygon", refused[0])
+            self.assertEqual(blank["religion"]["note"], why)
+            # The flag is the build's, and does not reach the published file.
+            self.assertEqual(be.drop_build_flags(blank), 1)
+            self.assertNotIn("not_this_ground", blank["religion"])
+
 
 class DeclaredSecondNames(unittest.TestCase):
     """ALSO_KNOWN_AS joins a shape under a name that is not its own.

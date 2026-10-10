@@ -383,8 +383,32 @@ window.Dashboard = (function () {
         <a href="${SOURCE_NOTES}" target="_blank" rel="noopener noreferrer">notes on each
         source</a> say what was tried.</p></section>`;
     }
+    // "Nothing gathered yet" is only true of a field whose gap says nothing
+    // else: Algeria's districts said it above three fields that each say the
+    // census never asks them.
+    const unexplained = fields.filter((field) => !gapReason(record, field));
+    if (!unexplained.length) return "";
+    const said = unexplained.length === fields.length
+      ? "No figures for this unit have been gathered yet."
+      : `No ${listed(unexplained.map((f) => FIELD_WORDS[f]))} figure has been gathered ` +
+        `for this unit yet; the other fields say why they are empty.`;
     return `<section class="panel"><div class="panel-head"><h3>Not gathered yet</h3></div>
-      <p class="note">No figures for this unit have been gathered yet.</p></section>`;
+      <p class="note">${esc(said)}</p></section>`;
+  }
+
+  const FIELD_WORDS = { population: "population", religion: "religion", language: "language",
+                        ethnicity: "ethnicity", median_age: "median age" };
+
+  /** Whether an empty field says why it is empty. */
+  function gapReason(record, field) {
+    const value = record[field];
+    return Boolean((value && value.note) || gapStatus(value) === "not_collected" ||
+                   record[`${field}_note`]);
+  }
+
+  function listed(words) {
+    if (words.length < 2) return words.join("");
+    return `${words.slice(0, -1).join(", ")} or ${words[words.length - 1]}`;
   }
 
   function breadcrumb(record) {

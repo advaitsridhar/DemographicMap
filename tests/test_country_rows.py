@@ -392,6 +392,10 @@ class CuratedFile(unittest.TestCase):
         for r in self.rows:
             if r["field"] not in be.FIGURE_ROWS:
                 continue
+            if set(r) <= be.NOTE_ONLY:
+                # Says what the figure shown counts, and leaves it be.
+                self.assertGreater(len(r.get("note", "")), 80, r)
+                continue
             self.assertIsInstance(r.get("value"), (int, float), r)
             self.assertIsInstance(r.get("year"), int, r)
             self.assertTrue(r.get("source") and r.get("url"), r)
@@ -400,7 +404,11 @@ class CuratedFile(unittest.TestCase):
     def test_status_rows_are_gaps(self):
         for r in self.rows:
             if r.get("status"):
-                self.assertIn(r["status"], be.CURATED_GAPS, r)
+                # A figure's note-only row may also say the figure does not
+                # apply (Antarctica's population).
+                allowed = (be.CURATED_GAPS + ("not_applicable",)
+                           if r["field"] in be.FIGURE_ROWS else be.CURATED_GAPS)
+                self.assertIn(r["status"], allowed, r)
                 self.assertNotIn("groups", r, r)
 
     def test_every_group_of_these_census_rows_is_placed_in_the_tree(self):
@@ -457,6 +465,14 @@ class CuratedFile(unittest.TestCase):
         for r in self.rows:
             for word in ("owner's decision", "runner", "the build"):
                 self.assertNotIn(word, r.get("note", ""), (r["country"], r["field"], word))
+
+    def test_notes_name_no_file_of_the_pipeline(self):
+        # "(ess_region_survey.json)", "(cyprus_census.py)": the panel shows
+        # these notes to a reader of the map, who has no such files.
+        import re
+        named = re.compile(r"\b[\w-]+\.(?:json|py|csv|gz)\b")
+        for r in self.rows:
+            self.assertIsNone(named.search(r.get("note", "")), (r["country"], r["field"]))
 
 
 class SettlementFigures(unittest.TestCase):

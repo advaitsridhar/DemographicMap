@@ -1246,9 +1246,18 @@ ADAPTER_HINTS: dict[str, str] = {
 # a script is a promise that running it would fill the panel; for these it would
 # not, and saying so is the point of the map rather than an admission against
 # it. Kept short here; docs/SOURCES.md carries what was actually tried.
+IRAN_LANGUAGE = (
+    "Language: no Iranian census has ever asked it. Some provinces and "
+    "counties carry a figure all the same -- a population-weighted roll-up of "
+    "the settlement estimates in the Atlas of the Languages of Iran, marked as "
+    "the atlas's field estimates and not as anybody's count. The atlas is "
+    "published province by province and has reached twelve of the thirty-one; "
+    "the rest of the country is empty because those modules do not exist yet, "
+    "and Kermanshah is empty because its module reaches five of its fourteen "
+    "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
-    "THA": "The statistical office refuses automated readers on every host "
-           "tried. Religion by province is the 2000 census, read from its "
+    "THA": "The statistical office's own tables could not be read from any of "
+           "its websites. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
            "made public once, for 2000, in a file that is not a composition. "
            "Ethnicity is not asked: the provinces carry the 2000 census's count "
@@ -1262,25 +1271,51 @@ ADAPTER_GAPS: dict[str, str] = {
     # itself still ends the TLS handshake), and every unit it cannot fill --
     # each county, Golestan, the polygon drawn for Bandar-e Gaz -- carries
     # its own stated reason.
-    "IRN": "Language: no Iranian census has ever asked it, so there is "
-           "nothing withheld and nothing to fetch. Eleven provinces "
-           "and 102 counties carry a figure all the same -- a population-"
-           "weighted roll-up of the settlement estimates in the Atlas of the "
-           "Languages of Iran, marked as the atlas's field estimates and not "
-           "as anybody's count. The atlas is published province by province "
-           "and has reached twelve of the thirty-one; the rest of the country "
-           "is empty because those modules do not exist yet, and Kermanshah "
-           "is empty because its module reaches five of its fourteen counties "
-           "and under a fifth of its people. Religion is a different gap: the "
-           "2016 census asked it and the Statistical Centre publishes it by "
-           "province only, so no county carries it.",
-    "EGY": "CAPMAS collected religion in the 2017 census and has not published "
-           "it, nationally or by governorate; the last published figures are "
-           "the 2006 census, national only. The data exists and is withheld. "
-           "17 of the 27 governorates carry a survey estimate instead, from "
-           "Afrobarometer Round 5 (2013), the last round that asked religion "
-           "in Egypt; this one was not among them.",
+    "IRN": IRAN_LANGUAGE + " Religion is a different gap: the 2016 census "
+           "asked it and the Statistical Centre publishes it by province only, "
+           "so no county carries it.",
 }
+# A country-level reason for one field, where ADAPTER_GAPS' one sentence for
+# the whole unit would be wrong about the others. Egypt's said CAPMAS withheld
+# religion, and say_why_empty put that under language and ethnicity too, and
+# on 341 districts whose main empty field is a population nobody has counted
+# for them. Iran's put its religion sentence under language. A reason given
+# by level applies at that level only. Checked by say_why_empty before the
+# unit's gap_reason, and never over a note already there.
+FIELD_GAPS: dict[str, dict[str, str | dict[str, str]]] = {
+    "EGY": {
+        "religion": {
+            "admin1": "CAPMAS collected religion in the 2017 census and has not "
+                      "published it, nationally or by governorate; the last "
+                      "published figures are the 2006 census's, national only. 17 of "
+                      "the 27 governorates carry a survey estimate instead, from "
+                      "Afrobarometer Round 5 (2013), the last round that asked "
+                      "religion in Egypt; this governorate is not among them.",
+            "admin2": "CAPMAS collected religion in the 2017 census and has not "
+                      "published it, nationally, by governorate or by district; the "
+                      "last published figures are the 2006 census's, national only. "
+                      "The survey estimate some governorates carry (Afrobarometer "
+                      "Round 5, 2013) is sampled by governorate and gives no figure "
+                      "for a district.",
+        },
+        "language": "Afrobarometer asked about language in Egypt but coded every "
+                    "one of its 2,388 Egyptian respondents, across both rounds, to a "
+                    "single value, so no composition is built from it, and no census "
+                    "table of language by governorate or district has been read.",
+        "ethnicity": "Afrobarometer did not ask about ethnicity in Egypt in either "
+                     "round that surveyed it, and no census table of ethnicity by "
+                     "governorate or district has been read.",
+    },
+    "IRN": {"language": IRAN_LANGUAGE},
+}
+
+
+def field_gap(country: str | None, field: str, level: str | None) -> str | None:
+    """FIELD_GAPS' reason for this field of a unit of this country and level."""
+    reason = FIELD_GAPS.get(country or "", {}).get(field)
+    if isinstance(reason, dict):
+        return reason.get(level or "")
+    return reason
 
 # Shapes an adapter deliberately will not fill, and why -- a fact about the
 # boundary file rather than about what a country publishes, which is why it
@@ -2309,6 +2344,53 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
 }
 
 
+# First-level units whose own count takes in a second-level unit the boundary
+# file draws no polygon for, so their drawn divisions cannot add up to it.
+# (country, first-level label) -> the undrawn unit. The note says so, with
+# what the drawn divisions add up to and what that leaves.
+UNDRAWN_PARTS: dict[tuple[str, str], str] = {
+    ("KOR", "South Jeolla"): "Yeonggwang-gun",
+    ("SLB", "Temotu"): "Temotu Pele",
+}
+
+
+def note_undrawn_parts(admin1: dict[str, list[dict[str, Any]]],
+                       admin2: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Say where a first-level count takes in a unit the map does not draw.
+
+    DECLARED_PARENTS files every Korean, Samoan and Solomon second-level
+    polygon under the unit that counts it, and each first-level unit then adds
+    up to its own count -- but two: South Jeolla is 52,871 more than its drawn
+    counties, Yeonggwang-gun having no polygon, and Temotu 5,395 more than its
+    drawn constituencies, Temotu Pele having none. That was said only in a
+    comment. Run once the populations are final; a note already there is kept
+    and this follows it, and nothing is said where a division has no
+    population or the drawn ones do not fall short.
+    """
+    said = []
+    for (iso3, name), part in sorted(UNDRAWN_PARTS.items()):
+        units = [e for e in admin1.get(iso3, []) if e.get("name") == name]
+        if len(units) != 1:
+            raise SystemExit(f"UNDRAWN_PARTS: {iso3} draws {len(units)} first-level "
+                             f"units named {name!r}")
+        unit = units[0]
+        own = published(unit.get("population"))
+        kids = [published(e.get("population")) for e in admin2.get(iso3, [])
+                if e.get("parent") == unit["id"]]
+        if own is None or not kids or None in kids:
+            continue
+        drawn = sum(kids)
+        if drawn >= own:
+            continue
+        sentence = (f"This count takes in {part}, which the map does not draw as a "
+                    f"unit of its own: the {len(kids)} divisions drawn here add up to "
+                    f"{drawn:,.0f}, which leaves {own - drawn:,.0f} for {part}.")
+        held = unit.get("population_note")
+        unit["population_note"] = f"{held} {sentence}" if held else sentence
+        said.append(f"{iso3} {name}: {part} {own - drawn:,.0f}")
+    return said
+
+
 def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
                     declared: dict[str, tuple[str, str]] | None = None) -> list[str]:
     """Give the declared second-level polygons the first-level unit they belong to.
@@ -2520,6 +2602,8 @@ COMPOSITION_ROWS = ("religion", "language", "ethnicity")
 FIGURE_ROWS = {"population": None, "median_age": "years",
                "sex_ratio": "males_per_1000_females"}
 CURATED_GAPS = (NOT_AVAILABLE, NOT_COLLECTED)
+# The keys of a curated figure row that only says what the figure counts.
+NOTE_ONLY = frozenset({"country", "field", "note", "status"})
 
 
 def load_country_detail() -> dict[str, list[dict[str, Any]]]:
@@ -2569,7 +2653,13 @@ def apply_country_figures(admin0: list[dict[str, Any]],
     whose population is now a census count, for roll_up_countries.
 
     A row must give a value, a year and a source; one that does not stops the
-    build, as an unmatched country does.
+    build, as an unmatched country does. The one exception is a row that
+    gives a note and nothing else (NOTE_ONLY): it says what the figure
+    already shown counts, and leaves the figure alone -- Israel's Factbook
+    population counts East Jerusalem and the Golan, which the map draws
+    outside its shape. On a field that is a gap, the note is the gap's own
+    reason, with the row's status if it gives one (Antarctica has no
+    permanent population to count).
     """
     by_id = {entity["id"]: entity for entity in admin0}
     counted: set[str] = set()
@@ -2580,6 +2670,19 @@ def apply_country_figures(admin0: list[dict[str, Any]],
             if field not in FIGURE_ROWS:
                 continue
             entity = _curated_country(by_id, iso3)
+            if set(row) <= NOTE_ONLY and row.get("note"):
+                if is_gap(entity.get(field)):
+                    held = entity.get(field)
+                    status = row.get("status") or (held.get("status") if isinstance(held, dict)
+                                                   else None) or NOT_AVAILABLE
+                    if status not in (NOT_AVAILABLE, NOT_COLLECTED, NOT_APPLICABLE):
+                        raise SystemExit(f"admin0_detail: {iso3} {field} gives status "
+                                         f"{status!r}, which is not a gap's")
+                    entity[field] = gap(status, row["note"])
+                else:
+                    entity[f"{field}_note"] = row["note"]
+                applied += 1
+                continue
             if not isinstance(row.get("value"), (int, float)) or not row.get("year") \
                     or not row.get("source"):
                 raise SystemExit(f"admin0_detail: {iso3} {field} needs a value, a year "
@@ -2671,6 +2774,19 @@ def primary_country_profiles(rows: list[dict[str, Any]]) -> dict[str, dict[str, 
         if row["id"] == iso3 or iso3 not in countries:
             countries[iso3] = row
     return countries
+
+
+# Factbook entities without a country outline of their own that the boundary
+# file does draw, as a disputed area: the West Bank (shapeGroup 129), Gaza
+# (118) and the Falklands (117). Their records said the composite has no
+# outline for them and draws them inside the administering state, which is
+# false, and the Jerusalem District's notes rely on the West Bank outline.
+# record id -> the disputed area's name in the boundary file.
+DRAWN_AS_DISPUTED: dict[str, str] = {
+    "PSE-WE": "West Bank",
+    "PSE": "Gaza Strip",
+    "FLK": "Falkland Islands (UK)",
+}
 
 
 def geometryless_profiles(rows: list[dict[str, Any]],
@@ -4873,6 +4989,9 @@ def say_why_empty(entity: dict[str, Any], country: str,
             continue
         if entity.get("disputed"):
             note, case = DISPUTED_NOTE, "disputed"
+        elif field_gap(entity.get("country"), field, entity.get("level")):
+            note = field_gap(entity.get("country"), field, entity.get("level"))
+            case = "country publishes nothing"
         elif entity.get("gap_reason"):
             # The country-level fact already on the record: what the country
             # publishes. True of the field, so it is the field's reason too.
@@ -4943,7 +5062,7 @@ def drop_answered_hint(entity: dict[str, Any]) -> bool:
 # rows are merged and summed, and nothing a reader of the map is told:
 # ``displaces_before`` and ``displaces_undated`` (see merge_adapter) and
 # ``no_child_sum`` (see fill_parent_populations).
-BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum")
+BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum", "not_this_ground")
 
 
 def drop_build_flags(entity: dict[str, Any]) -> int:
@@ -4983,6 +5102,74 @@ def plain_notes(entity: dict[str, Any]) -> int:
             value["note"] = PLAIN_NOTES[value["note"]]
             said += 1
     return said
+
+
+# Pipeline wording in the visitor's text, said as what is or is not published.
+# Adapters wrote these into notes, licences and reasons: the server's answer
+# to this project's reader ("BPS answers automated requests with HTTP 403"),
+# the CKAN registry's own fields beside a licence's name ("license_id='cc-by',
+# isopen=True"), a publisher's coded grade ("representivity very_high"), how a
+# row was joined to its polygon, and a file of this repository. Each is put
+# in plain words, or dropped where the sentence says nothing else.
+PLAIN_PHRASES: tuple[tuple[str, str], ...] = (
+    ("BPS answers automated requests with HTTP 403 on every bps.go.id host",
+     "BPS's own websites could not be read"),
+    ("Statistics Indonesia (BPS) answers this project's reader HTTP 403 on every "
+     "bps.go.id host", "Statistics Indonesia's (BPS's) own websites could not be read"),
+    ("and the government's open-data portal and the National Statistical Office's "
+     "census hosts answer HTTP 403 or 418 to automated requests",
+     "and the government's open-data portal and the National Statistical Office's "
+     "census websites could not be read"),
+    ("and the National Statistical Office's hosts and the government's open-data "
+     "portal answer HTTP 418 or 403 to automated requests",
+     "and the National Statistical Office's and the government's open-data "
+     "websites could not be read"),
+    ("the National Statistical Office's later census hosts refuse automated requests",
+     "the National Statistical Office's later census tables could not be read from "
+     "its websites"),
+    ("The National Statistical Office's later census hosts refuse automated requests",
+     "The National Statistical Office's later census tables could not be read from "
+     "its websites"),
+    (" (docs/SOURCES.md, \"Indonesia: what BPS's refusal left reachable\", lists the "
+     "110 portals tried)", " (110 portals were tried)"),
+    ("Bound to this boundary shape by the shape's own id rather than by its name. ", ""),
+    (" Bound to this boundary shape by the shape's own id rather than by its name.", ""),
+)
+PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
+    (re.compile(r" -- license_id='[^']*', isopen=(?:True|False)"), ""),
+    (re.compile(r"\brepresentivity (very_high|high|moderate|low|very_low)\b"),
+     lambda m: f"representativeness rated {m.group(1).replace('_', ' ')}"),
+)
+# The keys whose text a visitor reads: notes, reasons and licences.
+WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
+
+
+def plain_wording(text: str) -> str:
+    """A visitor's text with PLAIN_PHRASES and PLAIN_PATTERNS applied."""
+    for old, new in PLAIN_PHRASES:
+        if old in text:
+            text = text.replace(old, new)
+    for pattern, new in PLAIN_PATTERNS:
+        text = pattern.sub(new, text)
+    return text
+
+
+def plain_record(value: Any, key: str = "") -> int:
+    """Put every note, reason and licence under a record in plain words; how many changed."""
+    changed = 0
+    if isinstance(value, dict):
+        for k, v in value.items():
+            if isinstance(v, str) and WORDED.search(k):
+                said = plain_wording(v)
+                if said != v:
+                    value[k] = said
+                    changed += 1
+            else:
+                changed += plain_record(v, k)
+    elif isinstance(value, list):
+        for v in value:
+            changed += plain_record(v, key)
+    return changed
 
 
 # A Wikidata item joined to a district by name is sometimes the town of that
@@ -6504,6 +6691,9 @@ def residual_child(admin0: list[dict[str, Any]],
                 continue
             target = blank[0]
             where = f"{iso3} {target['name']} {field}"
+            if target[field].get("not_this_ground"):
+                refused.append(f"{where}: its own gap says no figure fits this polygon")
+                continue
             why, shares = residual(nation, known, target, field)
             if why or not shares:
                 refused.append(f"{where}: {why or 'nothing left over'}")
@@ -6576,6 +6766,12 @@ def residual_grandchild(admin1_by_country: dict[str, list[dict[str, Any]]],
                     continue
                 target = blank[0]
                 where = f"{iso3} {target['name']} {field}"
+                # An adapter's gap can say that no figure, its own or a
+                # difference, fits the polygon: Maguindanao's religion once the
+                # ARMM it sits in carried a count of the region's own ground.
+                if target[field].get("not_this_ground"):
+                    refused.append(f"{where}: its own gap says no figure fits this polygon")
+                    continue
                 why, shares = residual(parent, known, target, field)
                 if why or not shares:
                     refused.append(f"{where}: {why or 'nothing left over'}")
@@ -7519,6 +7715,16 @@ def main() -> int:
         entity["note"] = ("geoBoundaries' global composite has no separate outline for "
                           "this entity -- it is drawn as part of the state that "
                           "administers it. The figures below are still its own.")
+        disputed = DRAWN_AS_DISPUTED.get(entity["id"])
+        if disputed and any(e.get("disputed") for e in admin0):
+            if not any(e.get("disputed") and e.get("name") == disputed for e in admin0):
+                raise SystemExit(f"build_entities: {entity['id']} is declared drawn as the "
+                                 f"disputed area {disputed!r}, which the boundary file "
+                                 f"no longer draws")
+            entity["note"] = (f"The map draws {disputed} as a disputed area of its own, "
+                              f"as geoBoundaries' global composite delimits it, and shows "
+                              f"no figures on that outline. The figures below are this "
+                              f"entity's own, kept here rather than joined to it.")
         entity.setdefault("sources", [])
         admin0.append(entity)
 
@@ -7974,6 +8180,8 @@ def main() -> int:
     if twinned:
         log(f"  {twinned} second-level fields filled from the same polygon "
             f"drawn a level up")
+    for line in note_undrawn_parts(admin1_by_country, admin2_by_country):
+        log(f"  undrawn part of a first-level count: {line}")
     # After every pass that sets a unit's population, so GeoNames' refusals
     # are weighed against the figure each record is written with.
     named, restated = settle_geonames_spans(admin1_by_country, admin2_by_country)
@@ -8064,6 +8272,11 @@ def main() -> int:
                    for rows in table.values() for entity in rows)
     if reworded:
         log(f"  {reworded} coded reasons said in plain words")
+    plain = sum(plain_record(entity) for entity in admin0) + sum(
+        plain_record(entity) for table in (admin1_by_country, admin2_by_country)
+        for rows in table.values() for entity in rows)
+    if plain:
+        log(f"  {plain} notes, reasons and licences put in plain words")
 
     # -- write ---------------------------------------------------------------
     out = args.out

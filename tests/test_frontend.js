@@ -348,6 +348,34 @@ function anEmptyUnitNamesNoCommandOrFile() {
   assert.ok(!/SOURCES\.md|docs\//.test(visible(html)), "no file is named in the text");
   assert.ok(/<a href="https:\/\/github\.com\/[^"]+SOURCES\.md"/.test(html),
             "the source notes are a link");
+
+  // Algeria's districts: the census never asks religion, language or
+  // ethnicity, and each says so. Only population and median age are
+  // ungathered, and the panel must not say nothing at all was gathered.
+  rendered.length = 0;
+  const barred = { status: "not_collected", note: "Algeria's census does not ask this." };
+  context.window.Dashboard.render({
+    id: "DZA-TEST", level: "admin2", name: "Adrar", country: "DZA",
+    population: { status: "not_available" }, median_age: { status: "not_available" },
+    religion: barred, language: barred, ethnicity: barred,
+    adapter_hint: "python scripts/fetch_wikidata.py --countries DZA",
+  }, container);
+  html = visible(container.innerHTML);
+  assert.ok(!html.includes("No figures for this unit have been gathered yet."),
+            "fields that say why they are empty are not called ungathered");
+  assert.ok(html.includes("No population or median age figure has been gathered for this " +
+                          "unit yet; the other fields say why they are empty."), html);
+
+  // Every empty field with its own reason: no "not gathered" panel at all.
+  rendered.length = 0;
+  const why2 = { status: "not_applicable", note: "No permanent population." };
+  context.window.Dashboard.render({
+    id: "ATA-TEST", level: "admin0", name: "Antarctica", country: "ATA",
+    population: why2, median_age: why2, religion: barred, language: barred,
+    ethnicity: barred, adapter_hint: "x",
+  }, container);
+  assert.ok(!visible(container.innerHTML).includes("Not gathered yet"),
+            "no field is left unexplained");
 }
 
 /* A leader is only a leader if nothing missing could beat it.

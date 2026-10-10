@@ -667,12 +667,27 @@ CROSSWALK: dict[str, dict[str, str]] = {
 # out. Nine more districts are linked to another province than the office
 # counts them in, which CROSSWALK itself shows; neither kind of province is
 # given the office's total.
+#
+# A point is only a sign of where a district lies. Measured against the
+# boundary file's own outlines (geoBoundaries CGAZ, area shares, 10 October
+# 2026), Dara lies 50% in Panjshir's first-level polygon and 35% in Kapisa's,
+# Jani Khail 52% in Paktia's and 48% in Khost's, Mosa Khail 56% and 44%, and
+# Spira 51% and 49%: each straddles the line, and the provinces either side
+# are not their districts. Gosfandi was listed too, and is not that case: 71%
+# of it lies in Sar-e Pol's polygon, which holds 95% of the ground of the
+# seven districts the office counts in Sar-e Pol -- the same seven the
+# boundary file links to it, whose figures add up to the office's 578,639.
+# Those seven make 86.5% of the polygon, the rest being slivers of its
+# neighbours' districts (36% of Faryab's Bilchiragh among them); Logar's
+# polygon is 84.8% its own districts and Kunar's 86.7%, and both carry the
+# office's totals. The two levels' outlines disagree there by the margin
+# every province's figure is bound across, so Sar-e Pol carries the office's
+# total, and Balkh, refused for Feroz Nakhchir, the sum of its drawn districts.
 POINT_ELSEWHERE = {
     "0803": ("Panjshir", "Kapisa"),       # Dara
     "1309": ("Paktia", "Khost"),          # Jani Khail
     "1405": ("Khost", "Paktia"),          # Mosa Khail
     "1411": ("Paktika", "Khost"),         # Spira
-    "2206": ("Sar-e Pol", "Balkh"),       # Gosfandi
 }
 
 FIELDS = ("female", "male", "both")

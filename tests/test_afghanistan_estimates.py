@@ -363,11 +363,20 @@ class RealTables(unittest.TestCase):
         units2 = ae.load_units("AFG", "admin2", site)
         self.assertEqual(len(ae.drawn_districts(units1, units2)), len(units2))
         apart, counted_in = ae.drawn_apart(units1, units2)
+        # Sar-e Pol (22) is not among them: its seven drawn districts are the
+        # seven the office counts there (see POINT_ELSEWHERE).
         self.assertEqual(sorted(apart), ["02", "03", "08", "11", "12", "13", "14",
-                                         "20", "21", "22", "26", "27"])
+                                         "20", "21", "26", "27"])
         self.assertEqual(len(counted_in), 9)
         drawn = json.loads((site / "admin2" / "AFG.units.json").read_text(encoding="utf-8"))
         self.assertEqual(len(drawn), 398)
+
+    def test_gosfandi_s_point_does_not_refuse_sar_e_pol(self):
+        # 71% of Gosfandi lies in Sar-e Pol's polygon; its point near the edge
+        # is not the straddle the other four entries are.
+        self.assertNotIn("2206", ae.POINT_ELSEWHERE)
+        self.assertEqual(set(ae.POINT_ELSEWHERE), {"0803", "1309", "1405", "1411"})
+        self.assertNotIn("Sar-e Pol", {p for pair in ae.POINT_ELSEWHERE.values() for p in pair})
 
 
 if __name__ == "__main__":
