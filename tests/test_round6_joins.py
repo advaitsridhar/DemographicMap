@@ -448,6 +448,16 @@ class NotThisGround(unittest.TestCase):
         self.assertTrue(e["population"]["note"].endswith("so it is left out and this figure "
                                                          "is shown instead."))
 
+    def test_north_abacos_supervisory_district_count_is_refused(self):
+        source, note = be.NOT_THIS_GROUND[("BHS", "57655419B79428110843392")]["population"]
+        self.assertEqual(source, "wiki_population_admin1.json")
+        e = unit("57655419B79428110843392", level="admin1",
+                 population={"value": 9578, "year": 2010},
+                 _from={"population": "wiki_population_admin1.json"})
+        self.run_pass(e, {"population": (source, note)}, iso3="BHS")
+        self.assertEqual(e["population"]["status"], be.NOT_AVAILABLE)
+        self.assertIn("17,224", e["population"]["note"])
+
 
 class Georgia(unittest.TestCase):
     def test_a_stated_gap_displaces_an_older_encyclopaedia_figure(self):

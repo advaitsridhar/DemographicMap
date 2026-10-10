@@ -8815,6 +8815,10 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
 #   CPV  Wikidata's undated 30,000 for Tarrafal (Santiago, 115 km2 as drawn)
 #        is nearly twice what the municipality's censuses count; the 2021
 #        census row (wiki_table_population) it stood in front of shows.
+#   BHS  North Abaco's 9,578 (2010) is the census's supervisory district
+#        (North Abaco 9,578 + South Abaco 7,646 = Abaco 17,224, census table
+#        by island and supervisory district); the polygon is the 189 km2
+#        local-government district, and Grand Cay is drawn apart.
 NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
     ("MAR", "70788906B89532291078161"): {
         "population": (None, (
@@ -8890,6 +8894,14 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
             "Wikidata's undated 30,000 for Tarrafal is nearly twice what the "
             "municipality's censuses count (18,565 in 2010, 16,620 in 2021), so it "
             "is left out.")),
+    },
+    ("BHS", "57655419B79428110843392"): {
+        "population": ("wiki_population_admin1.json", (
+            "The 9,578 given for North Abaco is the 2010 census's count of its "
+            "supervisory district of that name, which with South Abaco's 7,646 makes "
+            "up all 17,224 people of Abaco and takes in Grand Cay, drawn apart with "
+            "its own figure. This polygon is the smaller local-government district, "
+            "for which no count has been read, so the figure is left out.")),
     },
 }
 
