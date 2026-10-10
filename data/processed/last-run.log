@@ -1,16 +1,46 @@
-vanuatu_census: 2020 Census Basic Tables, Volume 1
-  14,955,957 bytes, 384 pages
-  Table 6.16 has no [9, 7]-figure row for Aneityum: left out
-  Table 6.17 prints Port Vila's and Luganville's rows under each other's names: exchanged
-  Vanuatu's median age from Table 2.1: vanuatu_census: Vanuatu 21.0 (printed 20.9); Table 6.16 counts 239,839 people aged 3+ of 293,963 in private households
-  rural provinces' medians, Table 2.1's five-year groups against Table 4: TORBA 19.9 (19.9), SANMA 19.8 (19.8), PENAMA 19.2 (18.6), MALAMPA 20.8 (20.8), SHEFA 22.2 (22.2), TAFEA 18.0 (17.4)
-  no polygon: Emau (737 people), counted in its province
-  no polygon: Makimae (1,111 people), counted in its province
-  no polygon: Merelava (647 people), counted in its province
-  no polygon: Mota (597 people), counted in its province
-  no polygon: Nguna (1,790 people), counted in its province
-  no polygon: North Tongoa (1,606 people), counted in its province
-  no polygon: Tongariki (1,054 people), counted in its province
-  no polygon: Torres (1,190 people), counted in its province
-  64 records: admin1 ethnicity 6, admin1 language 6, admin1 median_age 6, admin1 population 6, admin1 religion 6, admin1 sex_ratio 6, admin2 ethnicity 58, admin2 language 57, admin2 median_age 58, admin2 population 58, admin2 religion 58, admin2 sex_ratio 58
-  wrote data/processed/vanuatu_census.json (339 kB)
+https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf: 15,016,674 bytes, starts b'%PDF-1.7'
+  290 pages
+  p137: Household Size by Council, Ruvuma Region; 2022 PHC
+  p137: Region/Council Sex Ratio Household
+  p137: Ruvuma Region 1,848,794 902,298 946,496 95 466,823 4.0
+  p137: 5. Mbinga District 285,582 141,271 144,311 98 69,775 4.1
+  p137: 6. Mbinga Town 158,896 75,882 83,014 91 39,979 4.0
+  p138: 10.1 TUNDURU DISTRICT COUNCIL
+  p138: Household Size by Ward, Tunduru District Council; 2022 PHC
+  p138: Council/Ward Sex Ratio Household
+  p138: Tunduru District Council 412,054 201,668 210,386 96 110,208 3.7
+  p141: 10.4 MADABA DISTRICT COUNCIL
+  p141: Household Size by Ward, Madaba District Council; 2022 PHC
+  p141: Council/Ward Sex Ratio Household
+  p141: Madaba District Council 65,215 33,085 32,130 103 16,725 3.9
+  p142: 10.5 MBINGA DISTRICT COUNCIL
+  p142: Household Size by Ward, Mbinga District Council; 2022 PHC
+  p142: Council/Ward Sex Ratio Household
+  p142: Mbinga District 285,582 141,271 144,311 98 69,775 4.1
+  p143: 10.6 MBINGA TOWN COUNCIL
+  p143: Household Size by Ward, Mbinga Town Council; 2022 PHC
+  p143: Council/Ward Sex Ratio Household
+  p143: Mbinga Town Council 158,896 75,882 83,014 91 39,979 4.0
+  p143: 6. Mbinga Mjini 4,177 1,917 2,260 85 1,381 3.0
+  p143: 18. Mbinga Mjini B 3,160 1,392 1,768 79 949 3.3
+  p162: Household Size by Council, Singida Region; 2022 PHC
+  p162: Region/Council Sex Ratio Household
+  p162: Singida Region 2,008,058 995,703 1,012,355 98 395,855 5.1
+  p162: 6. Ikungi District 411,262 205,429 205,833 100 74,527 5.5
+  p162: 13.1 IRAMBA DISTRICT COUNCIL
+  p162: Household Size by Ward, Iramba District Council; 2022 PHC
+  p162: Council/Ward Sex Ratio Household
+  p162: Iramba District Council 328,912 163,440 165,472 99 64,645 5.1
+  p166: 13.5 ITIGI DISTRICT COUNCIL
+  p166: Household Size by Ward, Itigi District Council; 2022 PHC
+  p166: Council/Ward Sex Ratio Household
+  p166: Itigi District Council 215,947 107,648 108,299 99 38,966 5.5
+  p167: 13.6 IKUNGI DISTRICT COUNCIL
+  p167: Household Size by Ward, Ikungi District Council; 2022 PHC
+  p167: Council/Ward Both Sex Ratio Household
+  p167: Ikungi District Council 411262 205429 205833 100 74527 5.5
+  p167: 21. Ikungi 19,346 9,663 9,683 100 4,229 4.6
+  p168: 13.7 MKALAMA DISTRICT COUNCIL
+  p168: Size by Ward, Mkalama District Council; 2022 PHC
+  p168: Council/Ward Sex Ratio Household
+  p168: Mkalama District Council 255,514 127,508 128,006 100 48,503 5.3
