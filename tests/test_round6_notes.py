@@ -182,5 +182,110 @@ class StatedReasonsTest(unittest.TestCase):
         del other
 
 
+def c01_workbook(rows):
+    """A C-01-shaped workbook: three title rows, then the given rows."""
+    import io
+    import openpyxl
+    book = openpyxl.Workbook()
+    sheet = book.active
+    sheet.append(["C -1 POPULATION BY RELIGIOUS COMMUNITY - 2011"])
+    sheet.append(["Table", "State", "Distt.", "Tehsil", "Town", "Area Name", "Total/"])
+    sheet.append(["Name", "Code", "Code", "Code", "Code", "", "Rural/", "Total", "", "",
+                  "Hindu", "", "", "Muslim", "", "", "Christian", "", "", "Sikh", "", "",
+                  "Buddhist", "", "", "Jain", "", "", "Other religions and persuasions", "",
+                  "", "Religion not stated"])
+    for row in rows:
+        sheet.append(row)
+    out = io.BytesIO()
+    book.save(out)
+    return out.getvalue()
+
+
+def c01_row(district, tehsil, name, pop, hindu, muslim, men=None):
+    men = pop // 2 + 1 if men is None else men
+    women = pop - men
+    groups = [(pop, men, women), (hindu, 0, 0), (muslim, 0, 0)] + [(0, 0, 0)] * 5
+    groups.append((pop - hindu - muslim, 0, 0))
+    cells = [v for g in groups for v in g]
+    return ["C0101", "27", district, tehsil, "000000", name, "Total", *cells]
+
+
+class IndiaTehsilTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import india_census as ic
+        self.ic = ic
+        self.split = dict(ic.TEHSIL_SPLITS[("maharashtra", "palghar")])
+
+    def test_the_workbook_reader_keeps_district_and_tehsil_totals(self):
+        blob = c01_workbook([
+            c01_row("517", "00000", "District - Thane", 1000, 800, 150),
+            c01_row("517", "04157", "Sub-District - Talasari", 300, 280, 10),
+            c01_row("517", "04165", "Sub-District - Thane", 700, 520, 140),
+            ["C0101", "27", "517", "04165", "000000", "Sub-District - Thane", "Rural",
+             *([1] * 27)],
+        ])
+        table = self.ic.read_c01_state(blob)
+        self.assertEqual(table["districts"]["517"]["Population"], 1000)
+        self.assertEqual(table["tehsils"][("517", "Talasari")]["Hindus"], 280)
+        self.assertEqual(set(table["tehsils"]), {("517", "Talasari"), ("517", "Thane")})
+
+    def test_communities_that_do_not_make_the_total_stop_the_run(self):
+        bad = c01_row("517", "04157", "Sub-District - Talasari", 300, 280, 10)
+        bad[7 + 3 * 8] = 99   # "not stated" made wrong
+        with self.assertRaises(SystemExit):
+            self.ic.read_c01_state(c01_workbook([bad]))
+
+    def test_palghar_and_thane_are_their_tehsils(self):
+        import collections
+        ic = self.ic
+        tehsils = {"Talasari": 154818, "Dahanu": 402095, "Vikramgad": 137625,
+                   "Jawhar": 140187, "Mokhada": 83453, "Vada": 178370, "Palghar": 550166,
+                   "Vasai": 1343402, "Thane": 3787036, "Bhiwandi": 1141386,
+                   "Shahapur": 314103, "Kalyan": 1565417, "Ulhasnagar": 506098,
+                   "Ambarnath": 565340, "Murbad": 190652}
+        men = sum(n // 2 + 1 for n in tehsils.values())
+        rows = [c01_row("517", "00000", "District - Thane", 11060148, 11060148, 0, men)]
+        rows += [c01_row("517", f"0{4157 + i}", f"Sub-District - {t}", n, n, 0)
+                 for i, (t, n) in enumerate(tehsils.items())]
+        table = ic.read_c01_state(c01_workbook(rows))
+        whole = table["districts"]["517"]
+        measured = {("maharashtra", "thane"): collections.Counter(whole)}
+        thane = ic.build_record("Thane", collections.Counter(whole), level="admin2",
+                                parent="IND", entity_id="IND-D517",
+                                codes={"census2011_district": "517"})
+        thane["parent_name"] = "Maharashtra"
+        palghar = {"id": "IND-NEW-Maharashtra-Palghar", "name": "Palghar",
+                   "parent_name": "Maharashtra", "language": {"status": "not_available"},
+                   "ethnicity": {"status": "not_collected"},
+                   "sex_ratio": {"value": 886}, "religion": [{"group": "Hindu", "pct": 100.0}]}
+        out = [thane, palghar]
+        original = ic.load_c01_state
+        ic.load_c01_state = lambda split: c01_workbook(rows)
+        try:
+            ic.apply_tehsil_splits(out, measured, {})
+        finally:
+            ic.load_c01_state = original
+        by = {r["id"]: r for r in out}
+        self.assertEqual(by["IND-NEW-Maharashtra-Palghar"]["population"]["value"], 2990116)
+        self.assertEqual(by["IND-D517"]["population"]["value"], 8070032)
+        self.assertIn("eight tehsils", by["IND-NEW-Maharashtra-Palghar"]["religion_note"])
+        self.assertNotIn("religion_estimated", by["IND-NEW-Maharashtra-Palghar"])
+        self.assertEqual(by["IND-NEW-Maharashtra-Palghar"]["scheduled_groups"]["status"],
+                         "not_available")
+
+    def test_without_the_workbook_the_carried_figures_come_off(self):
+        ic = self.ic
+        new = {"id": "n", "sex_ratio": {"value": 886}, "sex_ratio_note": "x",
+               "religion": [{"group": "Hindu", "pct": 78.8}], "religion_estimated": True,
+               "scheduled_groups": [{"group": "Scheduled Tribe", "pct": 13.9}]}
+        old = {"id": "o", "sex_ratio": {"value": 886}, "religion": [{"group": "Hindu"}]}
+        ic.withdraw_carried(new, old, self.split)
+        for r in (new, old):
+            self.assertEqual(r["sex_ratio"]["status"], "not_available")
+            self.assertEqual(r["religion"]["status"], "not_available")
+        self.assertNotIn("religion_estimated", new)
+        self.assertEqual(new["scheduled_groups"]["status"], "not_available")
+
+
 if __name__ == "__main__":
     unittest.main()

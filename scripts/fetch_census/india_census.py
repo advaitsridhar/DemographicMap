@@ -1233,7 +1233,10 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
             # shape is not a district, and a blank sex ratio beside three
             # explained blanks reads as an adapter that stopped halfway.
             sex_ratio=gap(NOT_AVAILABLE, reason),
-            ethnicity=gap(NOT_COLLECTED, "India does not collect ethnicity."),
+            # The shape's own reason first: that it is no district says more
+            # than the country's collection policy does.
+            ethnicity=gap(NOT_COLLECTED, f"{reason} India does not collect ethnicity in any "
+                          "case."),
             sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
         ))
     return out
@@ -1319,7 +1322,8 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
 
 
 def districts(rows: list[dict[str, str]],
-              appendix: dict[str, dict[str, Any]] | None = None
+              appendix: dict[str, dict[str, Any]] | None = None,
+              splits: dict[tuple[str, str], dict[str, Any]] | None = None
               ) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     # The Appendix is a state-level table, so a district's break-up is its
@@ -1430,7 +1434,261 @@ def districts(rows: list[dict[str, str]],
     # rest carry the gap and its reason.
     check_new_districts(rows)
     out.extend(new_districts(measured, detail))
+    apply_tehsil_splits(out, measured, detail, splits or {})
     return out
+
+
+def with_state_detail(record_: dict[str, Any], counts: collections.Counter,
+                      unit: dict[str, Any] | None) -> None:
+    """Put the state's Appendix split inside a record's "Other religions", as
+    districts() does for every district row (see district_detail)."""
+    bucket = counts["Others_Religions"]
+    if not (unit and unit["counts"] and bucket and isinstance(record_["religion"], list)):
+        return
+    scaled = district_detail(unit, bucket)
+    if not names_a_religion(scaled, counts["Population"]):
+        return
+    record_["religion"] = religion_with_detail(counts, scaled)
+    record_["religion_note"] = (
+        record_.get("religion_note", "") + " "
+        + district_residual_note(unit["name"].replace("State - ", "").title(),
+                                 named_residual(scaled["counts"], bucket,
+                                                counts["Population"]),
+                                 bucket, counts["Population"])).strip()
+    record_["religion_estimated"] = True
+
+
+# ---------------------------------------------------------------------------
+# Districts made of whole 2011 tehsils
+# ---------------------------------------------------------------------------
+#
+# C-01 is published to sub-district (tehsil) level in each state's workbook,
+# and a district created after 2011 out of whole tehsils is the sum of their
+# rows: its own 2011 count, sex and religion, measured, not its predecessor's
+# shares carried across. The predecessor's shape that kept the name is then
+# the sum of the tehsils left to it, and the undivided district's figures come
+# off the smaller shape.
+#
+# Palghar (2014) is Thane's eight northern tehsils -- Talasari, Dahanu,
+# Vikramgad, Jawhar, Mokhada, Vada, Palghar and Vasai -- which make 2,990,116
+# people, the figure the district administration gives; Thane's other seven
+# make 8,070,032. Each entry is checked on every run: every tehsil it names
+# must be in the workbook under the predecessor's code, the predecessor's
+# tehsils must add up to its district row, and that row must be the extract's
+# own figures for the district, field by field.
+TEHSIL_SPLITS: dict[tuple[str, str], dict[str, Any]] = {
+    ("maharashtra", "palghar"): {
+        "state": "Maharashtra", "from": "Thane", "year": 2014,
+        "state_code": "27", "district_code": "517",
+        "tehsils": ("Talasari", "Dahanu", "Vikramgad", "Jawhar", "Mokhada", "Vada",
+                    "Palghar", "Vasai"),
+        "url": f"{CATALOG}/11382/download/14495",
+        "file": "DDW27C-01 MDDS.xls",
+        "study": "C-01: Population by religious community, Maharashtra - 2011",
+    },
+}
+
+# C-01's columns after the six that name a row: persons, males and females for
+# the total and then for each community, in this order.
+C01_GROUPS = (("total", "Population"), ("hindu", "Hindus"), ("muslim", "Muslims"),
+              ("christian", "Christians"), ("sikh", "Sikhs"), ("buddhist", "Buddhists"),
+              ("jain", "Jains"), ("other religions", "Others_Religions"),
+              ("religion not stated", "Religion_Not_Stated"))
+
+
+def read_c01_state(blob: bytes) -> dict[str, Any]:
+    """{"districts": {code: counts}, "tehsils": {(district code, name): counts}}
+    from one state's C-01 workbook: the Total rows of its district and
+    sub-district lines (towns and the Rural/Urban halves left out).
+
+    The header is read, not assumed: the communities must come in C01_GROUPS'
+    order, or the run stops.
+    """
+    if blob[:2] == b"PK":
+        import openpyxl                             # noqa: PLC0415
+        book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+        rows = [list(r) for r in book.worksheets[0].iter_rows(values_only=True)]
+    else:
+        import xlrd                                 # noqa: PLC0415
+        book = xlrd.open_workbook(file_contents=blob)
+        sheet = book.sheet_by_index(0)
+        rows = [sheet.row_values(i) for i in range(sheet.nrows)]
+    header = " ".join(str(c or "") for row in rows[:6] for c in row).lower()
+    at = [header.find(word) for word, _ in C01_GROUPS[1:]]
+    if -1 in at or at != sorted(at):
+        raise SystemExit("india_census: the C-01 workbook's communities are not in the "
+                         f"expected order: {header[:400]!r}")
+    out: dict[str, Any] = {"districts": {}, "tehsils": {}}
+    for row in rows:
+        if len(row) < 7 + 3 * len(C01_GROUPS) or str(row[6]).strip() != "Total":
+            continue
+        name = str(row[5]).strip()
+        district = _code(row[2], 3)
+        values = [row[7 + i] for i in range(3 * len(C01_GROUPS))]
+        try:
+            numbers = [int(float(v)) for v in values]
+        except (TypeError, ValueError):
+            continue
+        counts: collections.Counter = collections.Counter()
+        for i, (_, key) in enumerate(C01_GROUPS):
+            counts[key] = numbers[3 * i]
+            if key == "Population":
+                counts["Male"], counts["Female"] = numbers[1], numbers[2]
+        if counts["Population"] != counts["Male"] + counts["Female"]:
+            raise SystemExit(f"india_census: C-01 {name}: males and females do not make "
+                             f"its {counts['Population']:,}")
+        if sum(counts[k] for _, k in C01_GROUPS[1:]) != counts["Population"]:
+            raise SystemExit(f"india_census: C-01 {name}: the communities do not make "
+                             f"its {counts['Population']:,}")
+        if name.startswith("District - "):
+            out["districts"][district] = counts
+        elif name.startswith("Sub-District - "):
+            out["tehsils"][(district, name[len("Sub-District - "):].strip())] = counts
+    return out
+
+
+def load_c01_state(split: dict[str, Any]) -> bytes | None:
+    """The state's C-01 workbook: the copy kept in the repository, else the
+    catalogue's download (kept for the next run), else None with the reason
+    logged."""
+    local = RAW / "india" / "c01" / split["file"]
+    if local.exists():
+        log(f"  C-01 {split['state']}: {local}")
+        return local.read_bytes()
+    try:
+        blob = http_get(split["url"], binary=True, timeout=300, aia=True)
+    except Exception as err:                        # noqa: BLE001 - reported
+        log(f"  C-01 {split['state']} unreachable ({type(err).__name__}: {err})")
+        return None
+    assert isinstance(blob, bytes)
+    if blob[:4] not in (b"\xd0\xcf\x11\xe0", b"PK\x03\x04"):
+        log(f"  C-01 {split['state']}: {len(blob):,} bytes that are not a workbook")
+        return None
+    local.parent.mkdir(parents=True, exist_ok=True)
+    local.write_bytes(blob)
+    log(f"  C-01 {split['state']}: {len(blob):,} bytes, kept at {local}")
+    return blob
+
+
+def tehsil_note(names: tuple[str, ...], what: str) -> str:
+    listed = ", ".join(names[:-1]) + " and " + names[-1]
+    words = ("", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+             "ten", "eleven", "twelve")
+    count = words[len(names)] if len(names) < len(words) else str(len(names))
+    return (f"Census of India 2011 table C-01, summed over the {count} tehsils "
+            f"(sub-districts) that make up {what}: {listed}. The census counted each "
+            "tehsil on its own row of the table, so this is a measured count for this "
+            "ground, not an estimate.")
+
+
+def apply_tehsil_splits(out: list[dict[str, Any]],
+                        measured: dict[tuple[str, str], collections.Counter],
+                        detail: dict[str, dict[str, Any]],
+                        splits: dict[tuple[str, str], dict[str, Any]] | None = None) -> None:
+    """Rewrite each TEHSIL_SPLITS district and its predecessor from C-01's
+    sub-district rows, or withdraw the predecessor's carried figures from both
+    when the workbook cannot be read."""
+    by_id = {r["id"]: r for r in out}
+    for (state_key_, name), split in (TEHSIL_SPLITS if splits is None else splits).items():
+        new_id = f"IND-NEW-{split['state'].replace(' ', '-')}-{name.title()}"
+        old_id = f"IND-D{split['district_code']}"
+        new, old = by_id.get(new_id), by_id.get(old_id)
+        if new is None or old is None:
+            raise SystemExit(f"india_census: {name}: no record {new_id if new is None else old_id}")
+        blob = load_c01_state(split)
+        if blob is None:
+            withdraw_carried(new, old, split)
+            continue
+        table = read_c01_state(blob)
+        code = split["district_code"]
+        whole = table["districts"].get(code)
+        extract = measured.get((state_key_, split["from"].casefold()))
+        if whole is None or extract is None:
+            raise SystemExit(f"india_census: {split['from']} ({code}) is not in both the "
+                             "C-01 workbook and the extract")
+        for key in ("Population", "Male", "Female", *RELIGION_COLUMNS):
+            if whole[key] != extract[key]:
+                raise SystemExit(f"india_census: C-01's {split['from']} has {key} "
+                                 f"{whole[key]:,}, the extract {extract[key]:,}")
+        tehsils = {t: c for (d, t), c in table["tehsils"].items() if d == code}
+        missing = [t for t in split["tehsils"] if t not in tehsils]
+        if missing:
+            raise SystemExit(f"india_census: C-01 has no tehsil {missing} under "
+                             f"{split['from']}; it has {sorted(tehsils)}")
+        summed: collections.Counter = collections.Counter()
+        for c in tehsils.values():
+            summed.update(c)
+        if any(summed[k] != whole[k] for k in whole):
+            raise SystemExit(f"india_census: {split['from']}'s tehsils do not make its "
+                             "district row")
+        part: collections.Counter = collections.Counter()
+        rest: collections.Counter = collections.Counter()
+        for t, c in tehsils.items():
+            (part if t in split["tehsils"] else rest).update(c)
+        kept = tuple(sorted(t for t in tehsils if t not in split["tehsils"]))
+        unit = detail.get(state_key(split["state"]))
+        cite = {"field": "population/sex_ratio/religion", "name": SOURCE + ", sub-district rows",
+                "url": split["url"], "year": 2011,
+                "license": "Government of India open data (GODL-India)",
+                "note": split["study"]}
+
+        fresh = build_record(name.title(), part, level="admin2", parent="IND",
+                             entity_id=new_id, codes={"census2011_tehsils": ",".join(split["tehsils"])})
+        note = tehsil_note(split["tehsils"], f"{name.title()} district, created in "
+                           f"{split['year']} out of {split['from']}")
+        fresh.update(parent_name=new.get("parent_name"), aliases=new.get("aliases"),
+                     language=new["language"], ethnicity=new["ethnicity"],
+                     population_note=note, sex_ratio_note=note, religion_note=note,
+                     scheduled_groups=gap(NOT_AVAILABLE, (
+                         "Scheduled Caste and Scheduled Tribe counts are published by "
+                         "sub-district in the primary census abstract, which is not read "
+                         "here; table C-01, which gives this district's population and "
+                         "religion, does not carry them.")),
+                     sources=[cite])
+        fresh.pop("scheduled_groups_year", None)
+        fresh.pop("scheduled_groups_note", None)
+        with_state_detail(fresh, part, unit)
+        out[out.index(new)] = fresh
+
+        rebuilt = build_record(old["name"], rest, level="admin2", parent="IND",
+                               entity_id=old_id, codes=dict(old.get("codes") or {},
+                                                            census2011_tehsils=",".join(kept)))
+        note = tehsil_note(kept, f"{split['from']} district as it has been since "
+                           f"{name.title()} was carved out of it in {split['year']}")
+        rebuilt.update(parent_name=old.get("parent_name"), population_note=note,
+                       sex_ratio_note=note, religion_note=note,
+                       language=old["language"], ethnicity=old["ethnicity"],
+                       sources=[cite, *[s for s in old.get("sources", [])
+                                        if "population" not in str(s.get("field"))]])
+        for key in ("scheduled_groups", "scheduled_groups_year", "scheduled_groups_note",
+                    "language_note"):
+            if key in old:
+                rebuilt[key] = old[key]
+            else:
+                rebuilt.pop(key, None)
+        with_state_detail(rebuilt, rest, unit)
+        out[out.index(old)] = rebuilt
+        log(f"  {name.title()}: {part['Population']:,} from {len(split['tehsils'])} tehsils; "
+            f"{split['from']}: {rest['Population']:,} from {len(kept)}; together "
+            f"{whole['Population']:,}, the district's own row")
+
+
+def withdraw_carried(new: dict[str, Any], old: dict[str, Any], split: dict[str, Any]) -> None:
+    """Without the sub-district rows, neither shape keeps a figure that is
+    the undivided district's: the new district's carried shares and ratio,
+    and the predecessor's ratio and religion, come off with the reason."""
+    why = (f"Not shown: the 2011 census's figure here is for {split['from']} before "
+           f"{split['tehsils'][0]} and the other tehsils became a district of their own in "
+           f"{split['year']}, and the census's sub-district rows, which would give this "
+           "ground its own figure, could not be read.")
+    for record_ in (new, old):
+        for field in ("sex_ratio", "religion"):
+            record_[field] = gap(NOT_AVAILABLE, why)
+            for suffix in ("_note", "_year", "_estimated"):
+                record_.pop(f"{field}{suffix}", None)
+    for suffix in ("", "_note", "_year"):
+        new.pop(f"scheduled_groups{suffix}", None)
+    new["scheduled_groups"] = gap(NOT_AVAILABLE, why)
 
 
 # ---------------------------------------------------------------------------
@@ -2282,7 +2540,7 @@ def main() -> int:
             # account anyone publishes of what is inside "Other religions and
             # persuasions", and that bucket is the largest group on some
             # districts. Scaled down rather than left out; see district_detail.
-            records = districts(rows, appendix_or_none(args))
+            records = districts(rows, appendix_or_none(args), TEHSIL_SPLITS)
         else:
             # Only at state level, because that is the only level the Appendix
             # is published at. Asking for it while building districts would
