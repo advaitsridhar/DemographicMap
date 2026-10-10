@@ -198,6 +198,8 @@ for _district in ("North Eleuthera", "East Grand Bahama", "West Grand Bahama"):
 # Abaco + Moore's Island" -- which the map draws apart. Their population is a
 # gap, and the gap says why: the row that does hold them, and its figure, read
 # from the table the same way a district printed alone is.
+# The "Exuma + Black Point" row cannot be lined up with its headers, so its
+# figure is not quoted; the gap still names the group.
 GROUPED: dict[tuple[str, str], Term] = {
     ("BHS", _district): Term("Local government in the Bahamas", row=_district,
                              column=r"^Population$", cite=r"Census of The Bahamas 2022")
@@ -215,66 +217,84 @@ def group_parts(label: str) -> list[str]:
 
 
 def grouped_cell(wikitext: str, district: str, column: str, year: int,
-                 cite: str | None = None) -> tuple[str | None, int | None, str]:
+                 cite: str | None = None,
+                 pairs: list[tuple[str, list[list[str]]]] | None = None
+                 ) -> tuple[str | None, int | None, str]:
     """(the grouped row's label, its figure, why not) for a district the table
     prints only together with others. Exactly one row may name it, that row
     must name at least one other district, and the column must be the
-    census's, as ``cell`` requires of a district printed alone."""
+    census's, as ``cell`` requires of a district printed alone. ``pairs``, as
+    for ``cell``, are a rendered page's tables with the page as their body."""
     header = re.compile(column, re.I)
     found: list[tuple[str, int]] = []
-    for _, body in sections(wikitext):
-        for table in tables(body):
-            start = next((n for n, r in enumerate(table[:4])
-                          if sum(1 for c in r if header.search(cell_text(c))) == 1), None)
-            if start is None:
+    if pairs is None:
+        pairs = [(body, table) for _, body in sections(wikitext) for table in tables(body)]
+    for body, table in pairs:
+        start = next((n for n, r in enumerate(table[:4])
+                      if sum(1 for c in r if header.search(cell_text(c))) == 1), None)
+        if start is None:
+            continue
+        heads = [cell_text(c) for c in table[start]]
+        at = [i for i, h in enumerate(heads) if header.search(h)][0]
+        for cells in table[start + 1:]:
+            if not cells:
                 continue
-            heads = [cell_text(c) for c in table[start]]
-            at = [i for i, h in enumerate(heads) if header.search(h)][0]
-            for cells in table[start + 1:]:
-                if not cells:
-                    continue
-                parts = group_parts(cells[0])
-                if district.casefold() not in {p.casefold() for p in parts}:
-                    continue
-                if len(parts) < 2:
-                    return None, None, f"the table prints {district!r} alone"
-                cited = cite and str(year) in cite and re.search(cite, body, re.I)
-                if str(year) not in heads[at] and not cited:
-                    return None, None, f"the column {heads[at]!r} does not name {year}"
-                if len(cells) != len(heads):
-                    return None, None, (f"the {cell_text(cells[0])!r} row cannot be lined "
-                                        f"up with its headers")
-                value = number(cell_text(cells[at]), ".")
-                if value is None or value != int(value):
-                    return None, None, f"the row's cell is {cells[at]!r}, not a count"
-                found.append((" + ".join(parts), int(value)))
+            parts = group_parts(cells[0])
+            if district.casefold() not in {p.casefold() for p in parts}:
+                continue
+            if len(parts) < 2:
+                return None, None, f"the table prints {district!r} alone"
+            cited = cite and str(year) in cite and re.search(cite, body, re.I)
+            if str(year) not in heads[at] and not cited:
+                return None, None, f"the column {heads[at]!r} does not name {year}"
+            # A row that cannot be lined up with its headers still says which
+            # districts the census prints together; its figure is not read.
+            if len(cells) != len(heads):
+                found.append((" + ".join(parts), None))
+                continue
+            value = number(cell_text(cells[at]), ".")
+            if value is None or value != int(value):
+                return None, None, f"the row's cell is {cells[at]!r}, not a count"
+            found.append((" + ".join(parts), int(value)))
     if len(found) != 1:
         return None, None, f"{len(found)} rows name {district!r} in a group; exactly one is read"
-    return found[0][0], found[0][1], ""
+    label, value = found[0]
+    return label, value, ("" if value is not None else
+                          f"the {label!r} row cannot be lined up with its headers")
 
 
 def grouped_row(iso3: str, name: str, term: Term, shape_id: str,
-                fetcher=fetch) -> dict[str, Any] | None:
+                fetcher=fetch, renderer=None) -> dict[str, Any] | None:
     """A stated population gap for a district the table prints only in a group."""
-    wikitext, landed = fetcher(term.title, "en")
+    pairs = None
+    if term.rendered:
+        html, landed = (renderer or rendered)(term.title)
+        parser = Tables()
+        parser.feed(html or "")
+        pairs = [(html, t) for t in parser.tables]
+        wikitext = html
+    else:
+        wikitext, landed = fetcher(term.title, "en")
     if not wikitext:
-        log(f"  {iso3} {name}: {landed} has no wikitext; not written")
+        log(f"  {iso3} {name}: {landed} has no text; not written")
         return None
     label, value, why = grouped_cell(wikitext, term.row or name, term.column or "",
-                                     GROUPED_YEAR, term.cite)
+                                     GROUPED_YEAR, term.cite, pairs=pairs)
     if label is None:
         log(f"  {iso3} {name}: {landed}: {why}; not written")
         return None
     others = [p for p in label.split(" + ") if p.casefold() != name.casefold()]
     listed = others[0] if len(others) == 1 else ", ".join(others[:-1]) + " and " + others[-1]
-    log(f"  {iso3} {name}: printed only in the group {label} ({value:,})")
+    log(f"  {iso3} {name}: printed only in the group {label} "
+        + (f"({value:,})" if value is not None else f"({why}; its figure is not quoted)"))
+    figure = f", {value:,} people" if value is not None else ""
     return record(
         f"{iso3}-WT-{slugify(name)}", name, level="admin1", parent=iso3, country=iso3,
         shape_id=shape_id, match_by="shape_id",
         population=gap(NOT_AVAILABLE, (
             f"The {GROUPED_YEAR} census prints {name} together with {listed} as one "
-            f"figure, {value:,} people; the map draws them apart, and a group's figure "
-            f"is not any one of its districts'.")),
+            f"figure{figure}; the map draws them apart, and a group's figure is not any "
+            f"one of its districts'.")),
         sources=[{"field": "population", "name": "Wikipedia", "url": url(landed),
                   "year": GROUPED_YEAR, "license": LICENCE}])
 
