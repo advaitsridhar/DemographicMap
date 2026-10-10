@@ -1,6 +1,13 @@
-  Guam: 153,836 people in 1 districts; median age 33.7; largest groups Chamorro, Filipino, Two or more races, White
-  United States Virgin Islands: 87,146 people in 3 districts; median age 45.9; largest groups Other Black or African American, African American, White, Two or more races
-  American Samoa: 49,710 people in 5 districts; median age 27.7; largest groups Samoan, Two or more races, Filipino, Other Native Hawaiian and Other Pacific Islander
-  Commonwealth of the Northern Mariana Islands: 47,329 people in 4 districts; median age 34.4; largest groups Filipino, Chamorro, Two or more races, Other Native Hawaiian and Other Pacific Islander
-  17 records, 7 districts pinned to their polygon by FIPS code
-  wrote data/processed/us_island_areas.json (58 kB)
+slovenia: SiStat 05C4003S.px and 05C4010S.px, 2026H1
+  212 municipalities; Slovenia 2,135,107
+  municipalities against Slovenia: parts sum to 2,135,107 = 2,135,107
+  national median 45.8 (1 January 2026) against Eurostat's 45.5 a year earlier (SI); 2026 is not published yet
+  Maribor: 2 polygons of that name; the others are slivers under 1% of its extent
+  slovenia: 0 office units unbound
+  slovenia: 1 polygons without an office unit: Maribor (bbox [15.699, 46.5167, 15.6998, 46.517])
+  Cirkulane: +245 men over women, +82 of them in Cirkulane
+  Rečica ob Savinji: +216 men over women, +50 of them in Nizka
+  Šentrupert: +405 men over women, +358 of them in Slovenska vas
+  Maribor (79292919B38849654156102): a sliver beside the municipality, written with the reason
+  wrote data/processed/slovenia_obcina.json (392 kB)
+  wrote slovenia_obcina.json: 213 records
