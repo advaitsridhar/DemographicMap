@@ -1016,18 +1016,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (1,382,155 settled people, 705,351 males and 676,804 females) is not this polygon's: the boundary file does not draw Balkh as the office counts it -- Feroz Nakhchir, drawn here, is counted by the office in Samangan; the point of Gosfandi, drawn in Sar-e Pol, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 1395915,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was surveyed in December 2015, and the survey's median is written wherever its report gives one for the polygon drawn here."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (1,382,155 settled people, 705,351 males and 676,804 females) is not this polygon's: the boundary file does not draw Balkh as the office counts it -- Feroz Nakhchir, drawn here, is counted by the office in Samangan; the point of Gosfandi, drawn in Sar-e Pol, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 104.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1050,7 +1051,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B32704257785092"
+    "shape_id": "12653393B32704257785092",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 16 districts the boundary file draws in this province (Balkh, Chahar Bolak, Chahar Kint, Chimtal, Dawlatabad, Dihdadi, Feroz Nakhchir, Kaldar, Khulm, Kishindih, Marmul, Mazari Sharif, Nahri Shahi, Sholgara, Shortepa, Zari): 1,395,915 (712,448 males, 683,467 females). The office's own total for the province, 1,382,155, is not this polygon's -- Feroz Nakhchir, drawn here, is counted by the office in Samangan. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 712,448 males against 683,467 females."
   },
   {
     "id": "AFG-EST-22",
@@ -1064,18 +1067,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (578,639 settled people, 297,158 males and 281,481 females) is not this polygon's: the boundary file does not draw Sar-e Pol as the office counts it -- the point of Gosfandi, drawn here, falls inside Balkh's polygon. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 578639,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was not one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (578,639 settled people, 297,158 males and 281,481 females) is not this polygon's: the boundary file does not draw Sar-e Pol as the office counts it -- the point of Gosfandi, drawn here, falls inside Balkh's polygon. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 105.6,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1098,7 +1102,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B88420098597995"
+    "shape_id": "12653393B88420098597995",
+    "population_note": "The statistics office's estimate of the settled population for 1396 (2017-18), projected from the 2003-05 household listing: 578,639 (297,158 males, 281,481 females). Afghanistan has had no census since 1979. The 1,500,000 Kuchi nomads the office counts nationally are allocated to no province and are not in this figure.",
+    "sex_ratio_note": "1396 estimate: 297,158 males against 281,481 females."
   },
   {
     "id": "AFG-EST-23",
