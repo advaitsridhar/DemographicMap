@@ -62,18 +62,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (455,574 settled people, 230,918 males and 224,656 females) is not this polygon's: the boundary file does not draw Kapisa as the office counts it -- Mahmudi Raqi, which the office counts here, is drawn in Parwan; Rukha, drawn here, is counted by the office in Panjshir; Unaba, drawn here, is counted by the office in Panjshir; the point of Dara, drawn in Panjshir, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 430894,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was surveyed in September 2014, and the survey's median is written wherever its report gives one for the polygon drawn here."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (455,574 settled people, 230,918 males and 224,656 females) is not this polygon's: the boundary file does not draw Kapisa as the office counts it -- Mahmudi Raqi, which the office counts here, is drawn in Parwan; Rukha, drawn here, is counted by the office in Panjshir; Unaba, drawn here, is counted by the office in Panjshir; the point of Dara, drawn in Panjshir, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 103.1,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -96,7 +97,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B3541911159736"
+    "shape_id": "12653393B3541911159736",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 8 districts the boundary file draws in this province (Alasay, Hisa-i-Awali Kohistan, Hisa-i-Duwumi Kohistan, Koh Band, Nijrab, Rukha, Tagab, Unaba): 430,894 (218,774 males, 212,120 females). The office's own total for the province, 455,574, is not this polygon's -- Mahmudi Raqi, which the office counts here, is drawn in Parwan; Rukha, drawn here, is counted by the office in Panjshir; Unaba, drawn here, is counted by the office in Panjshir. The boundary file's provinces and districts are drawn from outlines that do not line up exactly: the point of Dara, drawn in Panjshir, falls inside this one. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 218,774 males against 212,120 females."
   },
   {
     "id": "AFG-EST-03",
@@ -365,18 +368,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (158,548 settled people, 81,433 males and 77,115 females) is not this polygon's: the boundary file does not draw Panjshir as the office counts it -- Rukha, which the office counts here, is drawn in Kapisa; Shutul, which the office counts here, is drawn in Parwan; Unaba, which the office counts here, is drawn in Kapisa; the point of Dara, drawn here, falls inside Kapisa's polygon. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 103881,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was not one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (158,548 settled people, 81,433 males and 77,115 females) is not this polygon's: the boundary file does not draw Panjshir as the office counts it -- Rukha, which the office counts here, is drawn in Kapisa; Shutul, which the office counts here, is drawn in Parwan; Unaba, which the office counts here, is drawn in Kapisa; the point of Dara, drawn here, falls inside Kapisa's polygon. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 105.3,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -399,7 +403,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B47875238778335"
+    "shape_id": "12653393B47875238778335",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 4 districts the boundary file draws in this province (Bazarak, Dara, Khenj (Hese- Awal), Paryan): 103,881 (53,293 males, 50,588 females). The office's own total for the province, 158,548, is not this polygon's -- Rukha, which the office counts here, is drawn in Kapisa; Shutul, which the office counts here, is drawn in Parwan; Unaba, which the office counts here, is drawn in Kapisa. The boundary file's provinces and districts are drawn from outlines that do not line up exactly: the point of Dara, drawn here, falls inside Kapisa's polygon. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 53,293 males against 50,588 females."
   },
   {
     "id": "AFG-EST-09",
@@ -566,18 +572,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (449,116 settled people, 231,460 males and 217,656 females) is not this polygon's: the boundary file does not draw Paktika as the office counts it -- Mata Khan, which the office counts here, is drawn in Paktia; Spira, drawn here, is counted by the office in Khost; the point of Spira, drawn here, falls inside Khost's polygon. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 448496,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was not one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (449,116 settled people, 231,460 males and 217,656 females) is not this polygon's: the boundary file does not draw Paktika as the office counts it -- Mata Khan, which the office counts here, is drawn in Paktia; Spira, drawn here, is counted by the office in Khost; the point of Spira, drawn here, falls inside Khost's polygon. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 106.4,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -600,7 +607,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B93572570471663"
+    "shape_id": "12653393B93572570471663",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 19 districts the boundary file draws in this province (Barmal, Dila, Gayan, Gomal, Jani Khel, Nika, Omna, Sar Hawza, Sarobi, Sharan, Spira, Turwo, Urgun, Waza Khwa, Wor Mayi, Yahya Khel, Yosuf Khel, Zarghun Shahr, Ziruk): 448,496 (231,211 males, 217,285 females). The office's own total for the province, 449,116, is not this polygon's -- Mata Khan, which the office counts here, is drawn in Paktia; Spira, drawn here, is counted by the office in Khost. The boundary file's provinces and districts are drawn from outlines that do not line up exactly: the point of Spira, drawn here, falls inside Khost's polygon. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 231,211 males against 217,285 females."
   },
   {
     "id": "AFG-EST-13",
@@ -614,18 +623,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (570,534 settled people, 292,733 males and 277,801 females) is not this polygon's: the boundary file does not draw Paktia as the office counts it -- Mata Khan, drawn here, is counted by the office in Paktika; the point of Jani Khail, drawn here, falls inside Khost's polygon; the point of Mosa Khail, drawn in Khost, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 596814,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was not one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (570,534 settled people, 292,733 males and 277,801 females) is not this polygon's: the boundary file does not draw Paktia as the office counts it -- Mata Khan, drawn here, is counted by the office in Paktika; the point of Jani Khail, drawn here, falls inside Khost's polygon; the point of Mosa Khail, drawn in Khost, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 105.4,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -648,7 +658,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B16859990709200"
+    "shape_id": "12653393B16859990709200",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 12 districts the boundary file draws in this province (Ahmad Abad, Ali Khail (Jaji), Chamkani, Dand Patan, Gardiz, Jani Khail, Laja Ahmad Khail, Mata Khan, Sayed Karam, Shawak, Zadran, Zurmat): 596,814 (306,305 males, 290,509 females). The office's own total for the province, 570,534, is not this polygon's -- Mata Khan, drawn here, is counted by the office in Paktika. The boundary file's provinces and districts are drawn from outlines that do not line up exactly: the point of Jani Khail, drawn here, falls inside Khost's polygon; the point of Mosa Khail, drawn in Khost, falls inside this one. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 306,305 males against 290,509 females."
   },
   {
     "id": "AFG-EST-14",
@@ -662,18 +674,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (593,691 settled people, 305,233 males and 288,458 females) is not this polygon's: the boundary file does not draw Khost as the office counts it -- Spira, which the office counts here, is drawn in Paktika; the point of Jani Khail, drawn in Paktia, falls inside this one; the point of Mosa Khail, drawn here, falls inside Paktia's polygon; the point of Spira, drawn in Paktika, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge.",
-      "displaces_before": 2026,
-      "no_child_sum": true
+      "value": 568031,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "Afghanistan has had no census since 1979, and the statistics office's yearly estimates give age for the whole country only (the 1396 release's age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, urban and nomadic population of Afghanistan and no province or district rows). OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them. Below the national level the office measured age only in its Socio-Demographic and Economic Survey, which listed every household and interviewed half of them in twelve provinces between 2011 and 2016 (Bamyan, Ghor, Daykundi, Kabul, Kapisa, Parwan, Samangan, Balkh, Takhar, Herat, Nimroz and Baghlan); this province was not one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The statistics office's 1396 estimate for the province (593,691 settled people, 305,233 males and 288,458 females) is not this polygon's: the boundary file does not draw Khost as the office counts it -- Spira, which the office counts here, is drawn in Paktika; the point of Jani Khail, drawn in Paktia, falls inside this one; the point of Mosa Khail, drawn here, falls inside Paktia's polygon; the point of Spira, drawn in Paktika, falls inside this one. The districts drawn in it carry their own figures; their sum is not given here either, as a district lies across this polygon's edge."
+      "value": 105.7,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -696,7 +709,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B66876919073955"
+    "shape_id": "12653393B66876919073955",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 12 districts the boundary file draws in this province (Bak, Gurbuz, Jaji Maidan, Khost(Matun), Mando Zayi, Mosa Khail, Nadir Shah Kot, Qalandar, Sabri, Shamal, Tani, Tere Zayi): 568,031 (291,910 males, 276,121 females). The office's own total for the province, 593,691, is not this polygon's -- Spira, which the office counts here, is drawn in Paktika. The boundary file's provinces and districts are drawn from outlines that do not line up exactly: the point of Jani Khail, drawn in Paktia, falls inside this one; the point of Mosa Khail, drawn here, falls inside Paktia's polygon; the point of Spira, drawn in Paktika, falls inside this one. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 291,910 males against 276,121 females."
   },
   {
     "id": "AFG-EST-15",
@@ -11444,8 +11459,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: Khost wa Firing prints 69,568 people against 32,201 females and 34,367 males, 66,568; the province's Total row and the 1388 edition agree with the sexes."
+      "value": 66568,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
@@ -11480,6 +11496,7 @@
     "match_by": "shape_id",
     "shape_id": "17698898B6565197896692",
     "parent_name": "Baghlan",
+    "population_note": "The statistics office's estimate of the settled population for 1396 (2017-18), projected from the 2003-05 household listing; Afghanistan has had no census since 1979. The office's table prints 69,568 people for Khost wa Firing, against its own 32,201 females and 34,367 males, which make 66,568; the province's Total row and the office's 1388 (2009-10) edition agree with the sexes, so the figure shown is their sum.",
     "sex_ratio_note": "1396 estimate: 34,367 males against 32,201 females."
   },
   {
