@@ -328,6 +328,192 @@
     "population_note": "OCHA's COD-PS for Myanmar (reference year 2023) counts Katha district (563,978) and Kawlin district (354,226) apart, and the boundary file draws them as one polygon: this is their sum."
   },
   {
+    "id": "MMR-PART-kengtung",
+    "level": "admin2",
+    "name": "Kengtung",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 64.1,
+        "count": 210064
+      },
+      {
+        "group": "Christian",
+        "pct": 23.5,
+        "count": 76893
+      },
+      {
+        "group": "Other",
+        "pct": 11.6,
+        "count": 37951
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.8,
+        "count": 2548
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 293
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Shan",
+        "pct": 38.1,
+        "count": 123469
+      },
+      {
+        "group": "Lahu",
+        "pct": 29.9,
+        "count": 96885
+      },
+      {
+        "group": "Akha",
+        "pct": 13.7,
+        "count": 44381
+      },
+      {
+        "group": "Wa",
+        "pct": 6.0,
+        "count": 19618
+      },
+      {
+        "group": "Bamar",
+        "pct": 5.4,
+        "count": 17571
+      },
+      {
+        "group": "Palaung",
+        "pct": 2.4,
+        "count": 7863
+      },
+      {
+        "group": "Other",
+        "pct": 1.7,
+        "count": 5444
+      },
+      {
+        "group": "Liz",
+        "pct": 1.6,
+        "count": 5230
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.7,
+        "count": 2329
+      },
+      {
+        "group": "Chin",
+        "pct": 0.1,
+        "count": 169
+      },
+      {
+        "group": "Intha",
+        "pct": 0.1,
+        "count": 178
+      },
+      {
+        "group": "Karen",
+        "pct": 0.1,
+        "count": 294
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 311
+      },
+      {
+        "group": "Danu",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Kayan",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Kokang",
+        "pct": 0.0,
+        "count": 136
+      },
+      {
+        "group": "Lisu",
+        "pct": 0.0,
+        "count": 155
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Mong Wong",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Naga (Myanmar)",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 53
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B37663404803056",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The table has no ethnicity figures for Mongla (a township of Kengtung district), in which the 2014 census counted 43,068 people; these shares are of the rest of Kengtung district.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The table has no religion figures for Mongla (a township of Kengtung district), in which the 2014 census counted 43,068 people; these shares are of the rest of Kengtung district."
+  },
+  {
     "id": "MMR-COMP-kyaukme",
     "level": "admin2",
     "name": "Kyaukme",
@@ -1456,6 +1642,242 @@
     "population_note": "OCHA's COD-PS for Myanmar (reference year 2023) counts Mandalay and Nay Pyi Taw apart, and the map draws them as this one polygon: this is their sum, which the districts drawn inside it add up to."
   },
   {
+    "id": "MMR-PART-R-shan",
+    "level": "admin1",
+    "name": "Shan",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6770919,
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-mmr-archived), reference year 2023"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 85.0,
+        "count": 4180077
+      },
+      {
+        "group": "Christian",
+        "pct": 10.0,
+        "count": 489614
+      },
+      {
+        "group": "Other",
+        "pct": 3.1,
+        "count": 153660
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.7,
+        "count": 36080
+      },
+      {
+        "group": "Nat",
+        "pct": 0.7,
+        "count": 32403
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.5,
+        "count": 23546
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Shan",
+        "pct": 31.5,
+        "count": 1538593
+      },
+      {
+        "group": "Pa'o",
+        "pct": 13.4,
+        "count": 653530
+      },
+      {
+        "group": "Bamar",
+        "pct": 12.2,
+        "count": 597317
+      },
+      {
+        "group": "Palaung",
+        "pct": 8.5,
+        "count": 413282
+      },
+      {
+        "group": "Danu",
+        "pct": 5.9,
+        "count": 288436
+      },
+      {
+        "group": "Lahu",
+        "pct": 3.9,
+        "count": 190010
+      },
+      {
+        "group": "Other",
+        "pct": 3.9,
+        "count": 191376
+      },
+      {
+        "group": "Kokang",
+        "pct": 3.0,
+        "count": 146097
+      },
+      {
+        "group": "Intha",
+        "pct": 2.9,
+        "count": 140168
+      },
+      {
+        "group": "Kachin",
+        "pct": 2.8,
+        "count": 136575
+      },
+      {
+        "group": "Wa",
+        "pct": 2.4,
+        "count": 117483
+      },
+      {
+        "group": "Akha",
+        "pct": 2.0,
+        "count": 98750
+      },
+      {
+        "group": "Kayan",
+        "pct": 1.8,
+        "count": 86793
+      },
+      {
+        "group": "Mong Wong",
+        "pct": 1.7,
+        "count": 81528
+      },
+      {
+        "group": "Taungyo",
+        "pct": 1.0,
+        "count": 48094
+      },
+      {
+        "group": "Lisu",
+        "pct": 0.8,
+        "count": 38954
+      },
+      {
+        "group": "Liz",
+        "pct": 0.6,
+        "count": 27676
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.4,
+        "count": 18355
+      },
+      {
+        "group": "Karen",
+        "pct": 0.2,
+        "count": 11908
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.2,
+        "count": 7765
+      },
+      {
+        "group": "Kho Lone Li Shaw",
+        "pct": 0.2,
+        "count": 9798
+      },
+      {
+        "group": "Yinn",
+        "pct": 0.2,
+        "count": 11362
+      },
+      {
+        "group": "Chin",
+        "pct": 0.1,
+        "count": 5425
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 4650
+      },
+      {
+        "group": "Myaing",
+        "pct": 0.1,
+        "count": 5922
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 4752
+      },
+      {
+        "group": "Htanot",
+        "pct": 0.0,
+        "count": 1261
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 1345
+      },
+      {
+        "group": "Naga (Myanmar)",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-mmr-archived), reference year 2023",
+        "url": "https://data.humdata.org/dataset/cod-ps-mmr-archived",
+        "year": 2023,
+        "license": "Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "20573499B82952573339616",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The table has no ethnicity figures for Mongmao, Pangwaun, Pangsang and Narphan (townships of the Wa Self-Administered Division) or for Mongla (a township of Kengtung district), in which the 2014 census counted 433,000 people; these shares are of the rest of Shan State.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The table has no religion figures for Mongmao, Pangwaun, Pangsang and Narphan (townships of the Wa Self-Administered Division) or for Mongla (a township of Kengtung district), in which the 2014 census counted 433,000 people; these shares are of the rest of Shan State.",
+    "population_note": "OCHA's COD-PS for Myanmar (reference year 2023) counts Shan (South), Shan (North) and Shan (East) apart, and the map draws them as this one polygon: this is their sum, which the districts drawn inside it add up to."
+  },
+  {
     "id": "MMR-POP-R-ayeyarwady",
     "level": "admin1",
     "name": "Ayeyarwady",
@@ -1904,51 +2326,6 @@
     "match_by": "shape_id",
     "shape_id": "20573499B8199738503087",
     "population_note": "OCHA's COD-PS for Myanmar (reference year 2023), the same table the districts drawn inside it take their figures from; they add up to it."
-  },
-  {
-    "id": "MMR-POP-R-shan",
-    "level": "admin1",
-    "name": "Shan",
-    "parent": "MMR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 6770919,
-      "year": 2023,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-mmr-archived), reference year 2023"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-mmr-archived), reference year 2023",
-        "url": "https://data.humdata.org/dataset/cod-ps-mmr-archived",
-        "year": 2023,
-        "license": "Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True"
-      }
-    ],
-    "country": "MMR",
-    "match_by": "shape_id",
-    "shape_id": "20573499B82952573339616",
-    "population_note": "OCHA's COD-PS for Myanmar (reference year 2023) counts Shan (South), Shan (North) and Shan (East) apart, and the map draws them as this one polygon: this is their sum, which the districts drawn inside it add up to."
   },
   {
     "id": "MMR-POP-R-tanintharyi",
