@@ -9807,10 +9807,28 @@
         "count": 1
       }
     ],
-    "language": {
-      "status": "not_available",
-      "note": "Table 6.16 prints no row for this council, so no first language can be given here."
-    },
+    "language": [
+      {
+        "group": "Vanuatu vernacular languages",
+        "pct": 78.6,
+        "count": 1052
+      },
+      {
+        "group": "Bislama",
+        "pct": 13.0,
+        "count": 174
+      },
+      {
+        "group": "English",
+        "pct": 2.1,
+        "count": 28
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Ni-Vanuatu",
@@ -9845,6 +9863,8 @@
     "shape_id": "77236927B63418931336998",
     "religion_year": 2020,
     "ethnicity_year": 2020,
+    "language_year": 2020,
+    "language_note": "First language learned to speak, 2020 Census (Table 6.16), which the census asked only of the people who can speak one of the islands' own languages: 1,261 of the 1,338 people aged three and over in private households here (Table 6.17). Each share is of all of them, so the shares add up to the 94.2% the question reached; the first language of the rest, who speak no vernacular, was not asked. 'Vanuatu vernacular languages' is the census's 'Indigenous (Vernacular)': the islands' own languages, every one of them Oceanic. Table 6.16 prints no row for this council. Its figures are Tafea's less its other councils' in the same table: English 28, French 6, Bislama 174, vernacular 1,052 and not stated 0, 1,261 people in all -- arithmetic on the table's own counts.",
     "population_note": "Total population, all households, 2020 Census (Table 1.1).",
     "sex_ratio_note": "Males per 100 females, 2020 Census (Table 1.1).",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2020 Census's population by five-year age group to an open 70 and over (Table 2.1).",

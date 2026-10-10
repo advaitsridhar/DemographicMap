@@ -2,7 +2,7 @@ vanuatu_census: 2020 Census Basic Tables, Volume 1
   14,955,957 bytes, 384 pages
   Table 6.16 has no [9, 7]-figure row for Aneityum: left out
   Table 6.16 Aneityum: 2 of its panels made from TAFEA less its other councils
-  Table 6.16 Aneityum: the completed row does not make its own total (1,260 against 1,261), so no language is written
+  Table 6.16 Aneityum: the made row counts 1,261 of the 1,338 aged 3+ Table 6.17 gives it
   Table 6.17 prints Port Vila's and Luganville's rows under each other's names: exchanged
   Vanuatu's median age from Table 2.1: vanuatu_census: Vanuatu 21.0 (printed 20.9); Table 6.16 counts 239,839 people aged 3+ of 293,963 in private households
   rural provinces' medians, Table 2.1's five-year groups against Table 4: TORBA 19.9 (19.9), SANMA 19.8 (19.8), PENAMA 19.2 (18.6), MALAMPA 20.8 (20.8), SHEFA 22.2 (22.2), TAFEA 18.0 (17.4)
@@ -14,5 +14,5 @@ vanuatu_census: 2020 Census Basic Tables, Volume 1
   no polygon: North Tongoa (1,606 people), counted in its province
   no polygon: Tongariki (1,054 people), counted in its province
   no polygon: Torres (1,190 people), counted in its province
-  64 records: admin1 ethnicity 6, admin1 language 6, admin1 median_age 6, admin1 population 6, admin1 religion 6, admin1 sex_ratio 6, admin2 ethnicity 58, admin2 language 57, admin2 median_age 58, admin2 population 58, admin2 religion 58, admin2 sex_ratio 58
-  wrote data/processed/vanuatu_census.json (338 kB)
+  64 records: admin1 ethnicity 6, admin1 language 6, admin1 median_age 6, admin1 population 6, admin1 religion 6, admin1 sex_ratio 6, admin2 ethnicity 58, admin2 language 58, admin2 median_age 58, admin2 population 58, admin2 religion 58, admin2 sex_ratio 58
+  wrote data/processed/vanuatu_census.json (339 kB)
