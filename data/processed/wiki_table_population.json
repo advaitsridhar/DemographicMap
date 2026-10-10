@@ -651,10 +651,10 @@
     "match_by": "shape_id"
   },
   {
-    "id": "CIV-WT-district-autonome-de-yamoussoukro",
+    "id": "CPV-WT-tarrafal",
     "level": "admin1",
-    "name": "District Autonome De Yamoussoukro",
-    "parent": "CIV",
+    "name": "Tarrafal",
+    "parent": "CPV",
     "capital": {
       "status": "not_available"
     },
@@ -662,10 +662,11 @@
       "status": "not_available"
     },
     "population": {
-      "value": 355573,
+      "value": 16620,
       "unit": "people",
-      "source": "English Wikipedia, Districts of Ivory Coast; the list gives no year for the figure",
-      "note": "The district's row in the list of districts, which dates none of its figures: 355,573 (the Yamoussoukro row of Districts of Ivory Coast). The city's article gives 422,072 for 2021, over 2,075 km² of the district's 3,500, so that figure is not the district's."
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 16,620 (the Municipality of Tarrafal row of Administrative divisions of Cape Verde)."
     },
     "median_age": {
       "status": "not_available"
@@ -686,8 +687,54 @@
       {
         "field": "population",
         "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
-        "year": null,
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B2594883865860",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WT-district-autonome-de-yamoussoukro",
+    "level": "admin1",
+    "name": "District Autonome De Yamoussoukro",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 422072,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Côte d'Ivoire, as English Wikipedia's Yamoussoukro gives it",
+      "note": "The autonomous district's count in the 2021 census, taking in both of its departments, Yamoussoukro and Attiégouakro: 422,072 (Yamoussoukro's infobox). The 2014 census counted 355,573."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Yamoussoukro",
+        "year": 2021,
         "license": "CC BY-SA 4.0"
       }
     ],
