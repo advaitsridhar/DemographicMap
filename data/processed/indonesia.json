@@ -38786,43 +38786,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 90.6
-        },
-        {
-          "group": "Buddhism",
-          "pct": 4.9
-        },
-        {
-          "group": "Protestantism",
-          "pct": 2.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 1.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.7
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.2
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-bangka-belitung-islands",
-        "IDN-bangka-belitung-islands-bangka-barat",
-        "IDN-bangka-belitung-islands-bangka-selatan",
-        "IDN-bangka-belitung-islands-bangka-tengah",
-        "IDN-bangka-belitung-islands-belitung",
-        "IDN-bangka-belitung-islands-kota-pangkal-pinang"
-      ],
-      "note": "No composition was read for this regency. This is Bangka-Belitung Islands's own published religion figures with the 5 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 2 regencies of Bangka-Belitung Islands have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 460,937 people against 460,920 living in them, a difference of +0.0%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Bangka-Belitung Islands's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (the civil registry 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -38830,14 +38795,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Kepulauan_Bangka_Belitung",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Bangka-Belitung Islands",
     "country": "IDN",
     "aliases": []
@@ -38863,43 +38821,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 90.6
-        },
-        {
-          "group": "Buddhism",
-          "pct": 4.9
-        },
-        {
-          "group": "Protestantism",
-          "pct": 2.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 1.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.7
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.2
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-bangka-belitung-islands",
-        "IDN-bangka-belitung-islands-bangka-barat",
-        "IDN-bangka-belitung-islands-bangka-selatan",
-        "IDN-bangka-belitung-islands-bangka-tengah",
-        "IDN-bangka-belitung-islands-belitung",
-        "IDN-bangka-belitung-islands-kota-pangkal-pinang"
-      ],
-      "note": "No composition was read for this regency. This is Bangka-Belitung Islands's own published religion figures with the 5 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 2 regencies of Bangka-Belitung Islands have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 460,937 people against 460,920 living in them, a difference of +0.0%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Bangka-Belitung Islands's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (the civil registry 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -38907,14 +38830,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Kepulauan_Bangka_Belitung",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Bangka-Belitung Islands",
     "country": "IDN",
     "aliases": []
@@ -38940,68 +38856,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 91.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 4.9
-        },
-        {
-          "group": "Protestantism",
-          "pct": 2.9
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.3
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-central-java",
-        "IDN-central-java-banjarnegara",
-        "IDN-central-java-banyumas",
-        "IDN-central-java-batang",
-        "IDN-central-java-blora",
-        "IDN-central-java-boyolali",
-        "IDN-central-java-brebes",
-        "IDN-central-java-cilacap",
-        "IDN-central-java-demak",
-        "IDN-central-java-grobogan",
-        "IDN-central-java-jepara",
-        "IDN-central-java-karanganyar",
-        "IDN-central-java-kebumen",
-        "IDN-central-java-kendal",
-        "IDN-central-java-klaten",
-        "IDN-central-java-kota-magelang",
-        "IDN-central-java-kota-pekalongan",
-        "IDN-central-java-kota-salatiga",
-        "IDN-central-java-kota-surakarta",
-        "IDN-central-java-kota-tegal",
-        "IDN-central-java-kudus",
-        "IDN-central-java-magelang",
-        "IDN-central-java-pati",
-        "IDN-central-java-pekalongan",
-        "IDN-central-java-pemalang",
-        "IDN-central-java-purbalingga",
-        "IDN-central-java-purworejo",
-        "IDN-central-java-rembang",
-        "IDN-central-java-semarang",
-        "IDN-central-java-sragen",
-        "IDN-central-java-sukoharjo",
-        "IDN-central-java-tegal",
-        "IDN-central-java-temanggung",
-        "IDN-central-java-wonogiri",
-        "IDN-central-java-wonosobo"
-      ],
-      "note": "No composition was read for this regency. This is Central Java's own published religion figures with the 34 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of Central Java with nothing read, so what is left over is this one. The leftover comes to 1,870,630 people against 1,832,753 living in them, a difference of +2.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Central Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2014, BPS 2018, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2025, the 2010 census 2010, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39009,14 +38865,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Tengah",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Central Java",
     "country": "IDN",
     "aliases": []
@@ -39042,47 +38891,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 72.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 26.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.9
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.2
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-central-kalimantan",
-        "IDN-central-kalimantan-barito-selatan",
-        "IDN-central-kalimantan-barito-timur",
-        "IDN-central-kalimantan-barito-utara",
-        "IDN-central-kalimantan-gunung-mas",
-        "IDN-central-kalimantan-kapuas",
-        "IDN-central-kalimantan-katingan",
-        "IDN-central-kalimantan-kotawaringin-barat",
-        "IDN-central-kalimantan-kotawaringin-timur",
-        "IDN-central-kalimantan-lamandau",
-        "IDN-central-kalimantan-murung-raya",
-        "IDN-central-kalimantan-pulang-pisau",
-        "IDN-central-kalimantan-seruyan",
-        "IDN-central-kalimantan-sukamara"
-      ],
-      "note": "No composition was read for this regency. This is Central Kalimantan's own published religion figures with the 13 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of Central Kalimantan with nothing read, so what is left over is this one. The leftover comes to 288,206 people against 286,070 living in them, a difference of +0.7%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Central Kalimantan's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2022, BPS 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39090,14 +38900,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Kalimantan_Tengah",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Central Kalimantan",
     "country": "IDN",
     "aliases": []
@@ -39123,44 +38926,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 63.4
-        },
-        {
-          "group": "Protestantism",
-          "pct": 32.7
-        },
-        {
-          "group": "Hinduism",
-          "pct": 2.9
-        },
-        {
-          "group": "Catholicism",
-          "pct": 1.0
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.0
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.0
-        },
-        {
-          "group": "Other religion",
-          "pct": 0.0
-        }
-      ],
-      "method": "nearest regencies in the province",
-      "inputs": [
-        "IDN-central-sulawesi-poso",
-        "IDN-central-sulawesi-morowali",
-        "IDN-central-sulawesi-sigi"
-      ],
-      "note": "No composition was read for this regency, and Central Sulawesi's own figures cannot supply one: the regencies already published inside it hold more Hinduism than its own figures leave room for (58,616 people). This is instead the average of the 3 regencies of Central Sulawesi whose centroids are nearest to it (Poso, Morowali, Sigi) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Central Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2020, BPS 2021, BPS 2022, the 2010 census 2010, the civil registry 2020, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39168,14 +38935,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Tengah",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Central Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -39201,44 +38961,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 65.7
-        },
-        {
-          "group": "Protestantism",
-          "pct": 26.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 6.5
-        },
-        {
-          "group": "Catholicism",
-          "pct": 1.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.3
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.0
-        },
-        {
-          "group": "Other religion",
-          "pct": 0.0
-        }
-      ],
-      "method": "nearest regencies in the province",
-      "inputs": [
-        "IDN-central-sulawesi-banggai",
-        "IDN-central-sulawesi-poso",
-        "IDN-central-sulawesi-morowali"
-      ],
-      "note": "No composition was read for this regency, and Central Sulawesi's own figures cannot supply one: the regencies already published inside it hold more Hinduism than its own figures leave room for (58,616 people). This is instead the average of the 3 regencies of Central Sulawesi whose centroids are nearest to it (Banggai, Poso, Morowali) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Central Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2020, BPS 2021, BPS 2022, the 2010 census 2010, the civil registry 2020, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39246,14 +38970,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Tengah",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Central Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -39279,50 +38996,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-east-java",
-        "IDN-east-java-bangkalan",
-        "IDN-east-java-banyuwangi",
-        "IDN-east-java-blitar",
-        "IDN-east-java-bojonegoro",
-        "IDN-east-java-bondowoso",
-        "IDN-east-java-gresik",
-        "IDN-east-java-jember",
-        "IDN-east-java-jombang",
-        "IDN-east-java-kediri",
-        "IDN-east-java-kota-batu",
-        "IDN-east-java-kota-blitar",
-        "IDN-east-java-kota-kediri",
-        "IDN-east-java-kota-madiun",
-        "IDN-east-java-kota-malang",
-        "IDN-east-java-kota-mojokerto",
-        "IDN-east-java-kota-pasuruan",
-        "IDN-east-java-kota-probolinggo",
-        "IDN-east-java-kota-surabaya",
-        "IDN-east-java-lamongan",
-        "IDN-east-java-madiun",
-        "IDN-east-java-magetan",
-        "IDN-east-java-malang",
-        "IDN-east-java-mojokerto",
-        "IDN-east-java-nganjuk",
-        "IDN-east-java-pamekasan",
-        "IDN-east-java-pasuruan",
-        "IDN-east-java-ponorogo",
-        "IDN-east-java-situbondo",
-        "IDN-east-java-sumenep",
-        "IDN-east-java-trenggalek",
-        "IDN-east-java-tuban",
-        "IDN-east-java-tulungagung"
-      ],
-      "note": "No composition was read for this regency. This is East Java's own published religion figures with the 32 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of East Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 7,055,706 people against 6,894,501 living in them, a difference of +2.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2018, the civil registry 2020, the civil registry 2021, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39330,14 +39005,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Java",
     "country": "IDN",
     "aliases": []
@@ -39363,50 +39031,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-east-java",
-        "IDN-east-java-bangkalan",
-        "IDN-east-java-banyuwangi",
-        "IDN-east-java-blitar",
-        "IDN-east-java-bojonegoro",
-        "IDN-east-java-bondowoso",
-        "IDN-east-java-gresik",
-        "IDN-east-java-jember",
-        "IDN-east-java-jombang",
-        "IDN-east-java-kediri",
-        "IDN-east-java-kota-batu",
-        "IDN-east-java-kota-blitar",
-        "IDN-east-java-kota-kediri",
-        "IDN-east-java-kota-madiun",
-        "IDN-east-java-kota-malang",
-        "IDN-east-java-kota-mojokerto",
-        "IDN-east-java-kota-pasuruan",
-        "IDN-east-java-kota-probolinggo",
-        "IDN-east-java-kota-surabaya",
-        "IDN-east-java-lamongan",
-        "IDN-east-java-madiun",
-        "IDN-east-java-magetan",
-        "IDN-east-java-malang",
-        "IDN-east-java-mojokerto",
-        "IDN-east-java-nganjuk",
-        "IDN-east-java-pamekasan",
-        "IDN-east-java-pasuruan",
-        "IDN-east-java-ponorogo",
-        "IDN-east-java-situbondo",
-        "IDN-east-java-sumenep",
-        "IDN-east-java-trenggalek",
-        "IDN-east-java-tuban",
-        "IDN-east-java-tulungagung"
-      ],
-      "note": "No composition was read for this regency. This is East Java's own published religion figures with the 32 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of East Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 7,055,706 people against 6,894,501 living in them, a difference of +2.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2018, the civil registry 2020, the civil registry 2021, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39414,14 +39040,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Java",
     "country": "IDN",
     "aliases": []
@@ -39447,50 +39066,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-east-java",
-        "IDN-east-java-bangkalan",
-        "IDN-east-java-banyuwangi",
-        "IDN-east-java-blitar",
-        "IDN-east-java-bojonegoro",
-        "IDN-east-java-bondowoso",
-        "IDN-east-java-gresik",
-        "IDN-east-java-jember",
-        "IDN-east-java-jombang",
-        "IDN-east-java-kediri",
-        "IDN-east-java-kota-batu",
-        "IDN-east-java-kota-blitar",
-        "IDN-east-java-kota-kediri",
-        "IDN-east-java-kota-madiun",
-        "IDN-east-java-kota-malang",
-        "IDN-east-java-kota-mojokerto",
-        "IDN-east-java-kota-pasuruan",
-        "IDN-east-java-kota-probolinggo",
-        "IDN-east-java-kota-surabaya",
-        "IDN-east-java-lamongan",
-        "IDN-east-java-madiun",
-        "IDN-east-java-magetan",
-        "IDN-east-java-malang",
-        "IDN-east-java-mojokerto",
-        "IDN-east-java-nganjuk",
-        "IDN-east-java-pamekasan",
-        "IDN-east-java-pasuruan",
-        "IDN-east-java-ponorogo",
-        "IDN-east-java-situbondo",
-        "IDN-east-java-sumenep",
-        "IDN-east-java-trenggalek",
-        "IDN-east-java-tuban",
-        "IDN-east-java-tulungagung"
-      ],
-      "note": "No composition was read for this regency. This is East Java's own published religion figures with the 32 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of East Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 7,055,706 people against 6,894,501 living in them, a difference of +2.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2018, the civil registry 2020, the civil registry 2021, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39498,14 +39075,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Java",
     "country": "IDN",
     "aliases": []
@@ -39531,50 +39101,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-east-java",
-        "IDN-east-java-bangkalan",
-        "IDN-east-java-banyuwangi",
-        "IDN-east-java-blitar",
-        "IDN-east-java-bojonegoro",
-        "IDN-east-java-bondowoso",
-        "IDN-east-java-gresik",
-        "IDN-east-java-jember",
-        "IDN-east-java-jombang",
-        "IDN-east-java-kediri",
-        "IDN-east-java-kota-batu",
-        "IDN-east-java-kota-blitar",
-        "IDN-east-java-kota-kediri",
-        "IDN-east-java-kota-madiun",
-        "IDN-east-java-kota-malang",
-        "IDN-east-java-kota-mojokerto",
-        "IDN-east-java-kota-pasuruan",
-        "IDN-east-java-kota-probolinggo",
-        "IDN-east-java-kota-surabaya",
-        "IDN-east-java-lamongan",
-        "IDN-east-java-madiun",
-        "IDN-east-java-magetan",
-        "IDN-east-java-malang",
-        "IDN-east-java-mojokerto",
-        "IDN-east-java-nganjuk",
-        "IDN-east-java-pamekasan",
-        "IDN-east-java-pasuruan",
-        "IDN-east-java-ponorogo",
-        "IDN-east-java-situbondo",
-        "IDN-east-java-sumenep",
-        "IDN-east-java-trenggalek",
-        "IDN-east-java-tuban",
-        "IDN-east-java-tulungagung"
-      ],
-      "note": "No composition was read for this regency. This is East Java's own published religion figures with the 32 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of East Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 7,055,706 people against 6,894,501 living in them, a difference of +2.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2018, the civil registry 2020, the civil registry 2021, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39582,14 +39110,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Java",
     "country": "IDN",
     "aliases": []
@@ -39615,50 +39136,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-east-java",
-        "IDN-east-java-bangkalan",
-        "IDN-east-java-banyuwangi",
-        "IDN-east-java-blitar",
-        "IDN-east-java-bojonegoro",
-        "IDN-east-java-bondowoso",
-        "IDN-east-java-gresik",
-        "IDN-east-java-jember",
-        "IDN-east-java-jombang",
-        "IDN-east-java-kediri",
-        "IDN-east-java-kota-batu",
-        "IDN-east-java-kota-blitar",
-        "IDN-east-java-kota-kediri",
-        "IDN-east-java-kota-madiun",
-        "IDN-east-java-kota-malang",
-        "IDN-east-java-kota-mojokerto",
-        "IDN-east-java-kota-pasuruan",
-        "IDN-east-java-kota-probolinggo",
-        "IDN-east-java-kota-surabaya",
-        "IDN-east-java-lamongan",
-        "IDN-east-java-madiun",
-        "IDN-east-java-magetan",
-        "IDN-east-java-malang",
-        "IDN-east-java-mojokerto",
-        "IDN-east-java-nganjuk",
-        "IDN-east-java-pamekasan",
-        "IDN-east-java-pasuruan",
-        "IDN-east-java-ponorogo",
-        "IDN-east-java-situbondo",
-        "IDN-east-java-sumenep",
-        "IDN-east-java-trenggalek",
-        "IDN-east-java-tuban",
-        "IDN-east-java-tulungagung"
-      ],
-      "note": "No composition was read for this regency. This is East Java's own published religion figures with the 32 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of East Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 7,055,706 people against 6,894,501 living in them, a difference of +2.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2018, the civil registry 2020, the civil registry 2021, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39666,14 +39145,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Java",
     "country": "IDN",
     "aliases": []
@@ -39699,50 +39171,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-east-java",
-        "IDN-east-java-bangkalan",
-        "IDN-east-java-banyuwangi",
-        "IDN-east-java-blitar",
-        "IDN-east-java-bojonegoro",
-        "IDN-east-java-bondowoso",
-        "IDN-east-java-gresik",
-        "IDN-east-java-jember",
-        "IDN-east-java-jombang",
-        "IDN-east-java-kediri",
-        "IDN-east-java-kota-batu",
-        "IDN-east-java-kota-blitar",
-        "IDN-east-java-kota-kediri",
-        "IDN-east-java-kota-madiun",
-        "IDN-east-java-kota-malang",
-        "IDN-east-java-kota-mojokerto",
-        "IDN-east-java-kota-pasuruan",
-        "IDN-east-java-kota-probolinggo",
-        "IDN-east-java-kota-surabaya",
-        "IDN-east-java-lamongan",
-        "IDN-east-java-madiun",
-        "IDN-east-java-magetan",
-        "IDN-east-java-malang",
-        "IDN-east-java-mojokerto",
-        "IDN-east-java-nganjuk",
-        "IDN-east-java-pamekasan",
-        "IDN-east-java-pasuruan",
-        "IDN-east-java-ponorogo",
-        "IDN-east-java-situbondo",
-        "IDN-east-java-sumenep",
-        "IDN-east-java-trenggalek",
-        "IDN-east-java-tuban",
-        "IDN-east-java-tulungagung"
-      ],
-      "note": "No composition was read for this regency. This is East Java's own published religion figures with the 32 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of East Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 7,055,706 people against 6,894,501 living in them, a difference of +2.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2018, the civil registry 2020, the civil registry 2021, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39750,14 +39180,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Java",
     "country": "IDN",
     "aliases": []
@@ -39783,36 +39206,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Catholicism",
-          "pct": 76.7
-        },
-        {
-          "group": "Islam",
-          "pct": 21.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 1.7
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.1
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.0
-        }
-      ],
-      "method": "nearest regencies in the province",
-      "inputs": [
-        "IDN-east-nusa-tenggara-lembata",
-        "IDN-east-nusa-tenggara-sikka",
-        "IDN-east-nusa-tenggara-ende"
-      ],
-      "note": "No composition was read for this regency, and East Nusa Tenggara's own figures cannot supply one: what is left over comes to 287,610 people where 257,937 live, 12% out. This is instead the average of the 3 regencies of East Nusa Tenggara whose centroids are nearest to it (Lembata, Sikka, Ende) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. East Nusa Tenggara's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2017, BPS 2020, the Ministry of Religious Affairs 2019, the civil registry 2024, the civil registry 2025, the civil registry 2026), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39820,14 +39215,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
-        "url": "https://id.wikipedia.org/wiki/Nusa_Tenggara_Timur",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "East Nusa Tenggara",
     "country": "IDN",
     "aliases": []
@@ -39853,39 +39241,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 95.8
-        },
-        {
-          "group": "Protestantism",
-          "pct": 3.1
-        },
-        {
-          "group": "Hinduism",
-          "pct": 1.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.1
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-gorontalo",
-        "IDN-gorontalo-boalemo",
-        "IDN-gorontalo-bone-bolango",
-        "IDN-gorontalo-gorontalo",
-        "IDN-gorontalo-gorontalo-utara",
-        "IDN-gorontalo-kota-gorontalo"
-      ],
-      "note": "No composition was read for this regency. This is Gorontalo's own published religion figures with the 5 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of Gorontalo with nothing read, so what is left over is this one. The leftover comes to 158,973 people against 159,740 living in them, a difference of -0.5%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Gorontalo's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2016, BPS 2018, BPS 2021, BPS 2022, the civil registry 2023), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39893,14 +39250,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Gorontalo",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Gorontalo",
     "country": "IDN",
     "aliases": []
@@ -39926,30 +39276,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-lampung",
-        "IDN-lampung-kota-bandar-lampung",
-        "IDN-lampung-kota-metro",
-        "IDN-lampung-lampung-barat",
-        "IDN-lampung-lampung-selatan",
-        "IDN-lampung-lampung-tengah",
-        "IDN-lampung-lampung-timur",
-        "IDN-lampung-mesuji",
-        "IDN-lampung-pringsewu",
-        "IDN-lampung-tanggamus",
-        "IDN-lampung-tulang-bawang-barat",
-        "IDN-lampung-tulangbawang",
-        "IDN-lampung-way-kanan"
-      ],
-      "note": "No composition was read for this regency. This is Lampung's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 3 regencies of Lampung have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,237,378 people against 1,224,795 living in them, a difference of +1.0%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Lampung's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2020, BPS 2021, BPS 2023, BPS 2024, BPS 2026, the 2010 census 2023, the Ministry of Religious Affairs 2025, the civil registry 2023, the civil registry 2024, the civil registry 2026), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -39957,14 +39285,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Lampung",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Lampung",
     "country": "IDN",
     "aliases": []
@@ -39990,30 +39311,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-lampung",
-        "IDN-lampung-kota-bandar-lampung",
-        "IDN-lampung-kota-metro",
-        "IDN-lampung-lampung-barat",
-        "IDN-lampung-lampung-selatan",
-        "IDN-lampung-lampung-tengah",
-        "IDN-lampung-lampung-timur",
-        "IDN-lampung-mesuji",
-        "IDN-lampung-pringsewu",
-        "IDN-lampung-tanggamus",
-        "IDN-lampung-tulang-bawang-barat",
-        "IDN-lampung-tulangbawang",
-        "IDN-lampung-way-kanan"
-      ],
-      "note": "No composition was read for this regency. This is Lampung's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 3 regencies of Lampung have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,237,378 people against 1,224,795 living in them, a difference of +1.0%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Lampung's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2020, BPS 2021, BPS 2023, BPS 2024, BPS 2026, the 2010 census 2023, the Ministry of Religious Affairs 2025, the civil registry 2023, the civil registry 2024, the civil registry 2026), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40021,14 +39320,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Lampung",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Lampung",
     "country": "IDN",
     "aliases": []
@@ -40054,30 +39346,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 100.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-lampung",
-        "IDN-lampung-kota-bandar-lampung",
-        "IDN-lampung-kota-metro",
-        "IDN-lampung-lampung-barat",
-        "IDN-lampung-lampung-selatan",
-        "IDN-lampung-lampung-tengah",
-        "IDN-lampung-lampung-timur",
-        "IDN-lampung-mesuji",
-        "IDN-lampung-pringsewu",
-        "IDN-lampung-tanggamus",
-        "IDN-lampung-tulang-bawang-barat",
-        "IDN-lampung-tulangbawang",
-        "IDN-lampung-way-kanan"
-      ],
-      "note": "No composition was read for this regency. This is Lampung's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 3 regencies of Lampung have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,237,378 people against 1,224,795 living in them, a difference of +1.0%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Lampung's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2020, BPS 2021, BPS 2023, BPS 2024, BPS 2026, the 2010 census 2023, the Ministry of Religious Affairs 2025, the civil registry 2023, the civil registry 2024, the civil registry 2026), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40085,14 +39355,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Lampung",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Lampung",
     "country": "IDN",
     "aliases": []
@@ -40118,39 +39381,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 99.9
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-north-maluku",
-        "IDN-north-maluku-halmahera-barat",
-        "IDN-north-maluku-halmahera-selatan",
-        "IDN-north-maluku-halmahera-tengah",
-        "IDN-north-maluku-halmahera-timur",
-        "IDN-north-maluku-halmahera-utara",
-        "IDN-north-maluku-kepulauan-sula",
-        "IDN-north-maluku-kota-ternate",
-        "IDN-north-maluku-pulau-morotai",
-        "IDN-north-maluku-pulau-taliabu"
-      ],
-      "note": "No composition was read for this regency. This is North Maluku's own published religion figures with the 9 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of North Maluku with nothing read, so what is left over is this one. The leftover comes to 106,249 people against 100,555 living in them, a difference of +5.7%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. North Maluku's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2020, BPS 2021, BPS 2022, BPS 2025, BPS 2026, the 2010 census 2010, the Ministry of Religious Affairs 2019, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40158,14 +39390,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Maluku_Utara",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "North Maluku",
     "country": "IDN",
     "aliases": []
@@ -40191,44 +39416,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 72.6
-        },
-        {
-          "group": "Protestantism",
-          "pct": 21.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.3
-        },
-        {
-          "group": "Buddhism",
-          "pct": 2.7
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        },
-        {
-          "group": "Ugamo Malim",
-          "pct": 0.0
-        }
-      ],
-      "method": "nearest regencies in the province",
-      "inputs": [
-        "IDN-north-sumatra-simalungun",
-        "IDN-north-sumatra-kota-tebing-tinggi",
-        "IDN-north-sumatra-serdang-bedagai"
-      ],
-      "note": "No composition was read for this regency, and North Sumatra's own figures cannot supply one: the regencies already published inside it hold more Islam than its own figures leave room for (312,333 people). This is instead the average of the 3 regencies of North Sumatra whose centroids are nearest to it (Simalungun, Kota Tebing Tinggi, Serdang Bedagai) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. North Sumatra's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2010, BPS 2015, BPS 2019, BPS 2020, BPS 2021, BPS 2022, BPS 2023, the 2010 census 2010, the civil registry 2018, the civil registry 2024, the civil registry 2026), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40236,14 +39425,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
-        "url": "https://id.wikipedia.org/wiki/Sumatera_Utara",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "North Sumatra",
     "country": "IDN",
     "aliases": []
@@ -40269,53 +39451,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 85.5
-        },
-        {
-          "group": "Buddhism",
-          "pct": 11.2
-        },
-        {
-          "group": "Protestantism",
-          "pct": 2.3
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.5
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.4
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.1
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-riau",
-        "IDN-riau-bengkalis",
-        "IDN-riau-indragiri-hilir",
-        "IDN-riau-indragiri-hulu",
-        "IDN-riau-kampar",
-        "IDN-riau-kota-dumai",
-        "IDN-riau-kota-pekanbaru",
-        "IDN-riau-kuantan-singingi",
-        "IDN-riau-pelalawan",
-        "IDN-riau-rokan-hilir",
-        "IDN-riau-rokan-hulu",
-        "IDN-riau-siak"
-      ],
-      "note": "No composition was read for this regency. This is Riau's own published religion figures with the 11 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of Riau with nothing read, so what is left over is this one. The leftover comes to 188,671 people against 188,075 living in them, a difference of +0.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Riau's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (the Ministry of Religious Affairs 2025, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40323,14 +39460,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Riau",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Riau",
     "country": "IDN",
     "aliases": []
@@ -40356,44 +39486,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 80.4
-        },
-        {
-          "group": "Protestantism",
-          "pct": 9.8
-        },
-        {
-          "group": "Buddhism",
-          "pct": 7.1
-        },
-        {
-          "group": "Catholicism",
-          "pct": 2.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.0
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.0
-        }
-      ],
-      "method": "nearest regencies in the province",
-      "inputs": [
-        "IDN-riau-islands-kota-tanjung-pinang",
-        "IDN-riau-islands-bintan",
-        "IDN-riau-islands-kota-batam"
-      ],
-      "note": "No composition was read for this regency, and Riau Islands's own figures cannot supply one: the regencies already published inside it hold more Protestantism than its own figures leave room for (12,056 people). This is instead the average of the 3 regencies of Riau Islands whose centroids are nearest to it (Kota Tanjung Pinang, Bintan, Kota Batam) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Riau Islands's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (a regional government 2025, the Ministry of Religious Affairs 2018), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40401,14 +39495,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
-        "url": "https://id.wikipedia.org/wiki/Kepulauan_Riau",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Riau Islands",
     "country": "IDN",
     "aliases": []
@@ -40434,56 +39521,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 88.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 4.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 3.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sulawesi",
-        "IDN-south-sulawesi-bantaeng",
-        "IDN-south-sulawesi-barru",
-        "IDN-south-sulawesi-bone",
-        "IDN-south-sulawesi-bulukumba",
-        "IDN-south-sulawesi-enrekang",
-        "IDN-south-sulawesi-gowa",
-        "IDN-south-sulawesi-jeneponto",
-        "IDN-south-sulawesi-kepulauan-selayar",
-        "IDN-south-sulawesi-kota-makassar",
-        "IDN-south-sulawesi-kota-palopo",
-        "IDN-south-sulawesi-kota-parepare",
-        "IDN-south-sulawesi-luwu",
-        "IDN-south-sulawesi-luwu-timur",
-        "IDN-south-sulawesi-maros",
-        "IDN-south-sulawesi-pangkajene-dan-kepulauan",
-        "IDN-south-sulawesi-sinjai",
-        "IDN-south-sulawesi-tana-toraja",
-        "IDN-south-sulawesi-toraja-utara"
-      ],
-      "note": "No composition was read for this regency. This is South Sulawesi's own published religion figures with the 18 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of South Sulawesi have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,949,210 people against 1,925,941 living in them, a difference of +1.2%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2015, BPS 2016, BPS 2017, BPS 2020, BPS 2021, BPS 2023, the 2010 census 2010, the 2010 census 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40491,14 +39530,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -40524,56 +39556,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 88.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 4.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 3.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sulawesi",
-        "IDN-south-sulawesi-bantaeng",
-        "IDN-south-sulawesi-barru",
-        "IDN-south-sulawesi-bone",
-        "IDN-south-sulawesi-bulukumba",
-        "IDN-south-sulawesi-enrekang",
-        "IDN-south-sulawesi-gowa",
-        "IDN-south-sulawesi-jeneponto",
-        "IDN-south-sulawesi-kepulauan-selayar",
-        "IDN-south-sulawesi-kota-makassar",
-        "IDN-south-sulawesi-kota-palopo",
-        "IDN-south-sulawesi-kota-parepare",
-        "IDN-south-sulawesi-luwu",
-        "IDN-south-sulawesi-luwu-timur",
-        "IDN-south-sulawesi-maros",
-        "IDN-south-sulawesi-pangkajene-dan-kepulauan",
-        "IDN-south-sulawesi-sinjai",
-        "IDN-south-sulawesi-tana-toraja",
-        "IDN-south-sulawesi-toraja-utara"
-      ],
-      "note": "No composition was read for this regency. This is South Sulawesi's own published religion figures with the 18 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of South Sulawesi have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,949,210 people against 1,925,941 living in them, a difference of +1.2%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2015, BPS 2016, BPS 2017, BPS 2020, BPS 2021, BPS 2023, the 2010 census 2010, the 2010 census 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40581,14 +39565,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -40614,56 +39591,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 88.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 4.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 3.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sulawesi",
-        "IDN-south-sulawesi-bantaeng",
-        "IDN-south-sulawesi-barru",
-        "IDN-south-sulawesi-bone",
-        "IDN-south-sulawesi-bulukumba",
-        "IDN-south-sulawesi-enrekang",
-        "IDN-south-sulawesi-gowa",
-        "IDN-south-sulawesi-jeneponto",
-        "IDN-south-sulawesi-kepulauan-selayar",
-        "IDN-south-sulawesi-kota-makassar",
-        "IDN-south-sulawesi-kota-palopo",
-        "IDN-south-sulawesi-kota-parepare",
-        "IDN-south-sulawesi-luwu",
-        "IDN-south-sulawesi-luwu-timur",
-        "IDN-south-sulawesi-maros",
-        "IDN-south-sulawesi-pangkajene-dan-kepulauan",
-        "IDN-south-sulawesi-sinjai",
-        "IDN-south-sulawesi-tana-toraja",
-        "IDN-south-sulawesi-toraja-utara"
-      ],
-      "note": "No composition was read for this regency. This is South Sulawesi's own published religion figures with the 18 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of South Sulawesi have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,949,210 people against 1,925,941 living in them, a difference of +1.2%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2015, BPS 2016, BPS 2017, BPS 2020, BPS 2021, BPS 2023, the 2010 census 2010, the 2010 census 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40671,14 +39600,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -40704,56 +39626,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 88.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 4.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 3.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sulawesi",
-        "IDN-south-sulawesi-bantaeng",
-        "IDN-south-sulawesi-barru",
-        "IDN-south-sulawesi-bone",
-        "IDN-south-sulawesi-bulukumba",
-        "IDN-south-sulawesi-enrekang",
-        "IDN-south-sulawesi-gowa",
-        "IDN-south-sulawesi-jeneponto",
-        "IDN-south-sulawesi-kepulauan-selayar",
-        "IDN-south-sulawesi-kota-makassar",
-        "IDN-south-sulawesi-kota-palopo",
-        "IDN-south-sulawesi-kota-parepare",
-        "IDN-south-sulawesi-luwu",
-        "IDN-south-sulawesi-luwu-timur",
-        "IDN-south-sulawesi-maros",
-        "IDN-south-sulawesi-pangkajene-dan-kepulauan",
-        "IDN-south-sulawesi-sinjai",
-        "IDN-south-sulawesi-tana-toraja",
-        "IDN-south-sulawesi-toraja-utara"
-      ],
-      "note": "No composition was read for this regency. This is South Sulawesi's own published religion figures with the 18 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of South Sulawesi have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,949,210 people against 1,925,941 living in them, a difference of +1.2%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2015, BPS 2016, BPS 2017, BPS 2020, BPS 2021, BPS 2023, the 2010 census 2010, the 2010 census 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40761,14 +39635,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -40794,56 +39661,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 88.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 4.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 3.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sulawesi",
-        "IDN-south-sulawesi-bantaeng",
-        "IDN-south-sulawesi-barru",
-        "IDN-south-sulawesi-bone",
-        "IDN-south-sulawesi-bulukumba",
-        "IDN-south-sulawesi-enrekang",
-        "IDN-south-sulawesi-gowa",
-        "IDN-south-sulawesi-jeneponto",
-        "IDN-south-sulawesi-kepulauan-selayar",
-        "IDN-south-sulawesi-kota-makassar",
-        "IDN-south-sulawesi-kota-palopo",
-        "IDN-south-sulawesi-kota-parepare",
-        "IDN-south-sulawesi-luwu",
-        "IDN-south-sulawesi-luwu-timur",
-        "IDN-south-sulawesi-maros",
-        "IDN-south-sulawesi-pangkajene-dan-kepulauan",
-        "IDN-south-sulawesi-sinjai",
-        "IDN-south-sulawesi-tana-toraja",
-        "IDN-south-sulawesi-toraja-utara"
-      ],
-      "note": "No composition was read for this regency. This is South Sulawesi's own published religion figures with the 18 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of South Sulawesi have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,949,210 people against 1,925,941 living in them, a difference of +1.2%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2015, BPS 2016, BPS 2017, BPS 2020, BPS 2021, BPS 2023, the 2010 census 2010, the 2010 census 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40851,14 +39670,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -40884,56 +39696,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 88.5
-        },
-        {
-          "group": "Protestantism",
-          "pct": 4.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 3.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 3.5
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.2
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sulawesi",
-        "IDN-south-sulawesi-bantaeng",
-        "IDN-south-sulawesi-barru",
-        "IDN-south-sulawesi-bone",
-        "IDN-south-sulawesi-bulukumba",
-        "IDN-south-sulawesi-enrekang",
-        "IDN-south-sulawesi-gowa",
-        "IDN-south-sulawesi-jeneponto",
-        "IDN-south-sulawesi-kepulauan-selayar",
-        "IDN-south-sulawesi-kota-makassar",
-        "IDN-south-sulawesi-kota-palopo",
-        "IDN-south-sulawesi-kota-parepare",
-        "IDN-south-sulawesi-luwu",
-        "IDN-south-sulawesi-luwu-timur",
-        "IDN-south-sulawesi-maros",
-        "IDN-south-sulawesi-pangkajene-dan-kepulauan",
-        "IDN-south-sulawesi-sinjai",
-        "IDN-south-sulawesi-tana-toraja",
-        "IDN-south-sulawesi-toraja-utara"
-      ],
-      "note": "No composition was read for this regency. This is South Sulawesi's own published religion figures with the 18 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 6 regencies of South Sulawesi have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 1,949,210 people against 1,925,941 living in them, a difference of +1.2%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2015, BPS 2016, BPS 2017, BPS 2020, BPS 2021, BPS 2023, the 2010 census 2010, the 2010 census 2020, the civil registry 2023, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -40941,14 +39705,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -40974,46 +39731,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 98.7
-        },
-        {
-          "group": "Protestantism",
-          "pct": 0.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.3
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sumatra",
-        "IDN-south-sumatra-empat-lawang",
-        "IDN-south-sumatra-kota-lubuklinggau",
-        "IDN-south-sumatra-kota-palembang",
-        "IDN-south-sumatra-lahat",
-        "IDN-south-sumatra-muara-enim",
-        "IDN-south-sumatra-musi-banyuasin",
-        "IDN-south-sumatra-musi-rawas",
-        "IDN-south-sumatra-musi-rawas-utara",
-        "IDN-south-sumatra-ogan-komering-ilir",
-        "IDN-south-sumatra-ogan-komering-ulu-selatan",
-        "IDN-south-sumatra-ogan-komering-ulu-timur",
-        "IDN-south-sumatra-penukal-abab-lematang-ilir"
-      ],
-      "note": "No composition was read for this regency. This is South Sumatra's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of South Sumatra have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 2,004,648 people against 2,006,938 living in them, a difference of -0.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sumatra's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2026, the civil registry 2016, the civil registry 2020, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41021,14 +39740,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sumatera_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sumatra",
     "country": "IDN",
     "aliases": []
@@ -41054,46 +39766,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 98.7
-        },
-        {
-          "group": "Protestantism",
-          "pct": 0.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.3
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sumatra",
-        "IDN-south-sumatra-empat-lawang",
-        "IDN-south-sumatra-kota-lubuklinggau",
-        "IDN-south-sumatra-kota-palembang",
-        "IDN-south-sumatra-lahat",
-        "IDN-south-sumatra-muara-enim",
-        "IDN-south-sumatra-musi-banyuasin",
-        "IDN-south-sumatra-musi-rawas",
-        "IDN-south-sumatra-musi-rawas-utara",
-        "IDN-south-sumatra-ogan-komering-ilir",
-        "IDN-south-sumatra-ogan-komering-ulu-selatan",
-        "IDN-south-sumatra-ogan-komering-ulu-timur",
-        "IDN-south-sumatra-penukal-abab-lematang-ilir"
-      ],
-      "note": "No composition was read for this regency. This is South Sumatra's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of South Sumatra have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 2,004,648 people against 2,006,938 living in them, a difference of -0.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sumatra's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2026, the civil registry 2016, the civil registry 2020, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41101,14 +39775,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sumatera_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sumatra",
     "country": "IDN",
     "aliases": []
@@ -41134,46 +39801,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 98.7
-        },
-        {
-          "group": "Protestantism",
-          "pct": 0.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.3
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sumatra",
-        "IDN-south-sumatra-empat-lawang",
-        "IDN-south-sumatra-kota-lubuklinggau",
-        "IDN-south-sumatra-kota-palembang",
-        "IDN-south-sumatra-lahat",
-        "IDN-south-sumatra-muara-enim",
-        "IDN-south-sumatra-musi-banyuasin",
-        "IDN-south-sumatra-musi-rawas",
-        "IDN-south-sumatra-musi-rawas-utara",
-        "IDN-south-sumatra-ogan-komering-ilir",
-        "IDN-south-sumatra-ogan-komering-ulu-selatan",
-        "IDN-south-sumatra-ogan-komering-ulu-timur",
-        "IDN-south-sumatra-penukal-abab-lematang-ilir"
-      ],
-      "note": "No composition was read for this regency. This is South Sumatra's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of South Sumatra have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 2,004,648 people against 2,006,938 living in them, a difference of -0.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sumatra's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2026, the civil registry 2016, the civil registry 2020, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41181,14 +39810,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sumatera_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sumatra",
     "country": "IDN",
     "aliases": []
@@ -41214,46 +39836,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 98.7
-        },
-        {
-          "group": "Protestantism",
-          "pct": 0.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.3
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sumatra",
-        "IDN-south-sumatra-empat-lawang",
-        "IDN-south-sumatra-kota-lubuklinggau",
-        "IDN-south-sumatra-kota-palembang",
-        "IDN-south-sumatra-lahat",
-        "IDN-south-sumatra-muara-enim",
-        "IDN-south-sumatra-musi-banyuasin",
-        "IDN-south-sumatra-musi-rawas",
-        "IDN-south-sumatra-musi-rawas-utara",
-        "IDN-south-sumatra-ogan-komering-ilir",
-        "IDN-south-sumatra-ogan-komering-ulu-selatan",
-        "IDN-south-sumatra-ogan-komering-ulu-timur",
-        "IDN-south-sumatra-penukal-abab-lematang-ilir"
-      ],
-      "note": "No composition was read for this regency. This is South Sumatra's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of South Sumatra have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 2,004,648 people against 2,006,938 living in them, a difference of -0.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sumatra's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2026, the civil registry 2016, the civil registry 2020, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41261,14 +39845,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sumatera_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sumatra",
     "country": "IDN",
     "aliases": []
@@ -41294,46 +39871,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 98.7
-        },
-        {
-          "group": "Protestantism",
-          "pct": 0.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 0.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.3
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.1
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-south-sumatra",
-        "IDN-south-sumatra-empat-lawang",
-        "IDN-south-sumatra-kota-lubuklinggau",
-        "IDN-south-sumatra-kota-palembang",
-        "IDN-south-sumatra-lahat",
-        "IDN-south-sumatra-muara-enim",
-        "IDN-south-sumatra-musi-banyuasin",
-        "IDN-south-sumatra-musi-rawas",
-        "IDN-south-sumatra-musi-rawas-utara",
-        "IDN-south-sumatra-ogan-komering-ilir",
-        "IDN-south-sumatra-ogan-komering-ulu-selatan",
-        "IDN-south-sumatra-ogan-komering-ulu-timur",
-        "IDN-south-sumatra-penukal-abab-lematang-ilir"
-      ],
-      "note": "No composition was read for this regency. This is South Sumatra's own published religion figures with the 12 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of South Sumatra have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 2,004,648 people against 2,006,938 living in them, a difference of -0.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. South Sumatra's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2026, the civil registry 2016, the civil registry 2020, the civil registry 2023, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41341,14 +39880,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sumatera_Selatan",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "South Sumatra",
     "country": "IDN",
     "aliases": []
@@ -41374,38 +39906,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 95.2
-        },
-        {
-          "group": "Hinduism",
-          "pct": 4.8
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-southeast-sulawesi",
-        "IDN-southeast-sulawesi-bombana",
-        "IDN-southeast-sulawesi-buton",
-        "IDN-southeast-sulawesi-buton-selatan",
-        "IDN-southeast-sulawesi-buton-tengah",
-        "IDN-southeast-sulawesi-buton-utara",
-        "IDN-southeast-sulawesi-kolaka",
-        "IDN-southeast-sulawesi-kolaka-utara",
-        "IDN-southeast-sulawesi-konawe",
-        "IDN-southeast-sulawesi-konawe-kepulauan",
-        "IDN-southeast-sulawesi-konawe-selatan",
-        "IDN-southeast-sulawesi-konawe-utara",
-        "IDN-southeast-sulawesi-kota-baubau",
-        "IDN-southeast-sulawesi-kota-kendari",
-        "IDN-southeast-sulawesi-muna",
-        "IDN-southeast-sulawesi-muna-barat",
-        "IDN-southeast-sulawesi-wakatobi"
-      ],
-      "note": "No composition was read for this regency. This is Southeast Sulawesi's own published religion figures with the 16 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of Southeast Sulawesi with nothing read, so what is left over is this one. The leftover comes to 139,652 people against 137,432 living in them, a difference of +1.6%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Southeast Sulawesi's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2019, the 2010 census 2010, the civil registry 2020, the civil registry 2021, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41413,14 +39915,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Tenggara",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Southeast Sulawesi",
     "country": "IDN",
     "aliases": []
@@ -41446,42 +39941,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 84.6
-        },
-        {
-          "group": "Catholicism",
-          "pct": 9.0
-        },
-        {
-          "group": "Protestantism",
-          "pct": 6.0
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.3
-        },
-        {
-          "group": "Hinduism",
-          "pct": 0.1
-        },
-        {
-          "group": "Other religion",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-special-region-of-yogyakarta",
-        "IDN-special-region-of-yogyakarta-bantul",
-        "IDN-special-region-of-yogyakarta-gunung-kidul",
-        "IDN-special-region-of-yogyakarta-kulon-progo",
-        "IDN-special-region-of-yogyakarta-sleman"
-      ],
-      "note": "No composition was read for this regency. This is Special Region of Yogyakarta's own published religion figures with the 4 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of Special Region of Yogyakarta with nothing read, so what is left over is this one. The leftover comes to 438,994 people against 438,761 living in them, a difference of +0.1%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. Special Region of Yogyakarta's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2024, the 2010 census 2010, the Ministry of Religious Affairs 2025, the civil registry 2024), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41489,14 +39950,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Daerah_Istimewa_Yogyakarta",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "Special Region of Yogyakarta",
     "country": "IDN",
     "aliases": []
@@ -41522,48 +39976,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 99.9
-        },
-        {
-          "group": "Sunda Wiwitan",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-west-java",
-        "IDN-west-java-bandung",
-        "IDN-west-java-bandung-barat",
-        "IDN-west-java-bekasi",
-        "IDN-west-java-bogor",
-        "IDN-west-java-ciamis",
-        "IDN-west-java-cianjur",
-        "IDN-west-java-cirebon",
-        "IDN-west-java-indramayu",
-        "IDN-west-java-karawang",
-        "IDN-west-java-kota-bandung",
-        "IDN-west-java-kota-bekasi",
-        "IDN-west-java-kota-bogor",
-        "IDN-west-java-kota-cirebon",
-        "IDN-west-java-kota-depok",
-        "IDN-west-java-kota-sukabumi",
-        "IDN-west-java-kota-tasikmalaya",
-        "IDN-west-java-kuningan",
-        "IDN-west-java-majalengka",
-        "IDN-west-java-purwakarta",
-        "IDN-west-java-subang",
-        "IDN-west-java-sumedang",
-        "IDN-west-java-tasikmalaya"
-      ],
-      "note": "No composition was read for this regency. This is West Java's own published religion figures with the 22 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of West Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 6,392,390 people against 6,340,101 living in them, a difference of +0.8%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. West Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2021, BPS 2023, the civil registry 2021, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41571,14 +39985,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Barat",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "West Java",
     "country": "IDN",
     "aliases": []
@@ -41604,48 +40011,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 99.9
-        },
-        {
-          "group": "Sunda Wiwitan",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-west-java",
-        "IDN-west-java-bandung",
-        "IDN-west-java-bandung-barat",
-        "IDN-west-java-bekasi",
-        "IDN-west-java-bogor",
-        "IDN-west-java-ciamis",
-        "IDN-west-java-cianjur",
-        "IDN-west-java-cirebon",
-        "IDN-west-java-indramayu",
-        "IDN-west-java-karawang",
-        "IDN-west-java-kota-bandung",
-        "IDN-west-java-kota-bekasi",
-        "IDN-west-java-kota-bogor",
-        "IDN-west-java-kota-cirebon",
-        "IDN-west-java-kota-depok",
-        "IDN-west-java-kota-sukabumi",
-        "IDN-west-java-kota-tasikmalaya",
-        "IDN-west-java-kuningan",
-        "IDN-west-java-majalengka",
-        "IDN-west-java-purwakarta",
-        "IDN-west-java-subang",
-        "IDN-west-java-sumedang",
-        "IDN-west-java-tasikmalaya"
-      ],
-      "note": "No composition was read for this regency. This is West Java's own published religion figures with the 22 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of West Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 6,392,390 people against 6,340,101 living in them, a difference of +0.8%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. West Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2021, BPS 2023, the civil registry 2021, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41653,14 +40020,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Barat",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "West Java",
     "country": "IDN",
     "aliases": []
@@ -41686,48 +40046,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 99.9
-        },
-        {
-          "group": "Sunda Wiwitan",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-west-java",
-        "IDN-west-java-bandung",
-        "IDN-west-java-bandung-barat",
-        "IDN-west-java-bekasi",
-        "IDN-west-java-bogor",
-        "IDN-west-java-ciamis",
-        "IDN-west-java-cianjur",
-        "IDN-west-java-cirebon",
-        "IDN-west-java-indramayu",
-        "IDN-west-java-karawang",
-        "IDN-west-java-kota-bandung",
-        "IDN-west-java-kota-bekasi",
-        "IDN-west-java-kota-bogor",
-        "IDN-west-java-kota-cirebon",
-        "IDN-west-java-kota-depok",
-        "IDN-west-java-kota-sukabumi",
-        "IDN-west-java-kota-tasikmalaya",
-        "IDN-west-java-kuningan",
-        "IDN-west-java-majalengka",
-        "IDN-west-java-purwakarta",
-        "IDN-west-java-subang",
-        "IDN-west-java-sumedang",
-        "IDN-west-java-tasikmalaya"
-      ],
-      "note": "No composition was read for this regency. This is West Java's own published religion figures with the 22 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of West Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 6,392,390 people against 6,340,101 living in them, a difference of +0.8%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. West Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2021, BPS 2023, the civil registry 2021, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41735,14 +40055,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Barat",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "West Java",
     "country": "IDN",
     "aliases": []
@@ -41768,48 +40081,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 99.9
-        },
-        {
-          "group": "Sunda Wiwitan",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-west-java",
-        "IDN-west-java-bandung",
-        "IDN-west-java-bandung-barat",
-        "IDN-west-java-bekasi",
-        "IDN-west-java-bogor",
-        "IDN-west-java-ciamis",
-        "IDN-west-java-cianjur",
-        "IDN-west-java-cirebon",
-        "IDN-west-java-indramayu",
-        "IDN-west-java-karawang",
-        "IDN-west-java-kota-bandung",
-        "IDN-west-java-kota-bekasi",
-        "IDN-west-java-kota-bogor",
-        "IDN-west-java-kota-cirebon",
-        "IDN-west-java-kota-depok",
-        "IDN-west-java-kota-sukabumi",
-        "IDN-west-java-kota-tasikmalaya",
-        "IDN-west-java-kuningan",
-        "IDN-west-java-majalengka",
-        "IDN-west-java-purwakarta",
-        "IDN-west-java-subang",
-        "IDN-west-java-sumedang",
-        "IDN-west-java-tasikmalaya"
-      ],
-      "note": "No composition was read for this regency. This is West Java's own published religion figures with the 22 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of West Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 6,392,390 people against 6,340,101 living in them, a difference of +0.8%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. West Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2021, BPS 2023, the civil registry 2021, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41817,14 +40090,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Barat",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "West Java",
     "country": "IDN",
     "aliases": []
@@ -41850,48 +40116,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "modelled",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 99.9
-        },
-        {
-          "group": "Sunda Wiwitan",
-          "pct": 0.1
-        },
-        {
-          "group": "Confucianism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-west-java",
-        "IDN-west-java-bandung",
-        "IDN-west-java-bandung-barat",
-        "IDN-west-java-bekasi",
-        "IDN-west-java-bogor",
-        "IDN-west-java-ciamis",
-        "IDN-west-java-cianjur",
-        "IDN-west-java-cirebon",
-        "IDN-west-java-indramayu",
-        "IDN-west-java-karawang",
-        "IDN-west-java-kota-bandung",
-        "IDN-west-java-kota-bekasi",
-        "IDN-west-java-kota-bogor",
-        "IDN-west-java-kota-cirebon",
-        "IDN-west-java-kota-depok",
-        "IDN-west-java-kota-sukabumi",
-        "IDN-west-java-kota-tasikmalaya",
-        "IDN-west-java-kuningan",
-        "IDN-west-java-majalengka",
-        "IDN-west-java-purwakarta",
-        "IDN-west-java-subang",
-        "IDN-west-java-sumedang",
-        "IDN-west-java-tasikmalaya"
-      ],
-      "note": "No composition was read for this regency. This is West Java's own published religion figures with the 22 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. 5 regencies of West Java have nothing read, so what is left over is their total and not this one's; each carries the whole leftover, which assumes they do not differ from each other. The leftover comes to 6,392,390 people against 6,340,101 living in them, a difference of +0.8%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. West Java's own figure less its other regencies' is not given in its place: its own figure and its other regencies' come from different counts (BPS 2021, BPS 2023, the civil registry 2021, the civil registry 2024, the civil registry 2025), so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41899,14 +40125,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Jawa_Barat",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "West Java",
     "country": "IDN",
     "aliases": []
@@ -41932,43 +40151,8 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "derived",
-      "estimate": [
-        {
-          "group": "Islam",
-          "pct": 90.5
-        },
-        {
-          "group": "Hinduism",
-          "pct": 4.2
-        },
-        {
-          "group": "Protestantism",
-          "pct": 3.3
-        },
-        {
-          "group": "Catholicism",
-          "pct": 1.9
-        },
-        {
-          "group": "Kepercayaan (traditional belief)",
-          "pct": 0.1
-        },
-        {
-          "group": "Buddhism",
-          "pct": 0.0
-        }
-      ],
-      "method": "province residual",
-      "inputs": [
-        "IDN-west-sulawesi",
-        "IDN-west-sulawesi-majene",
-        "IDN-west-sulawesi-mamasa",
-        "IDN-west-sulawesi-mamuju",
-        "IDN-west-sulawesi-mamuju-tengah",
-        "IDN-west-sulawesi-polewali-mandar"
-      ],
-      "note": "No composition was read for this regency. This is West Sulawesi's own published religion figures with the 5 regencies that were read taken out of them, priced against each regency's population -- arithmetic on published figures, not a measurement of anyone here. It is the only regency of West Sulawesi with nothing read, so what is left over is this one. The leftover comes to 176,165 people against 175,702 living in them, a difference of +0.3%."
+      "status": "not_available",
+      "note": "No religion figure for this regency is published in the sources read. West Sulawesi's own figure less its other regencies' is not given in its place: its regencies' populations are not all the same count's, of the same year, to weigh their shares by, so what is left of the province would not be this regency's."
     },
     "language": {
       "status": "not_available"
@@ -41976,14 +40160,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "religion",
-        "name": "Badan Pusat Statistik and Kementerian Agama province figures, less the regencies published inside them",
-        "url": "https://id.wikipedia.org/wiki/Sulawesi_Barat",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "parent_name": "West Sulawesi",
     "country": "IDN",
     "aliases": []
