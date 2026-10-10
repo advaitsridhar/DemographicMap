@@ -65,9 +65,19 @@ class DisputedOutlines(unittest.TestCase):
             raise unittest.SkipTest("site/data has not been built")
         records = json.loads((SITE / "admin0.json").read_text())
         disputed = {r["name"] for r in records if r.get("disputed")}
-        for iso3, name in be.DRAWN_AS_DISPUTED.items():
+        for iso3, (name, _) in be.DRAWN_AS_DISPUTED.items():
             self.assertIn(name, disputed, iso3)
             self.assertTrue(any(r["id"] == iso3 for r in records), iso3)
+
+    def test_the_west_bank_record_says_the_map_draws_it(self):
+        admin0 = [{"id": "129", "name": "West Bank", "disputed": True}]
+        note = be.disputed_outline_note("PSE-WE", admin0)
+        self.assertTrue(note.startswith("The map draws the West Bank as a disputed area"))
+        self.assertNotIn("no separate outline", note)
+        self.assertIsNone(be.disputed_outline_note("HKG", admin0))
+        self.assertIsNone(be.disputed_outline_note("PSE-WE", []))   # no disputed layer read
+        with self.assertRaises(SystemExit):
+            be.disputed_outline_note("PSE", admin0)                 # Gaza not drawn here
 
 
 class PerFieldReasons(unittest.TestCase):

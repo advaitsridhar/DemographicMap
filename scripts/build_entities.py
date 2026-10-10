@@ -2781,12 +2781,32 @@ def primary_country_profiles(rows: list[dict[str, Any]]) -> dict[str, dict[str, 
 # (118) and the Falklands (117). Their records said the composite has no
 # outline for them and draws them inside the administering state, which is
 # false, and the Jerusalem District's notes rely on the West Bank outline.
-# record id -> the disputed area's name in the boundary file.
-DRAWN_AS_DISPUTED: dict[str, str] = {
-    "PSE-WE": "West Bank",
-    "PSE": "Gaza Strip",
-    "FLK": "Falkland Islands (UK)",
+# record id -> the disputed area's name in the boundary file, and as a
+# sentence says it.
+DRAWN_AS_DISPUTED: dict[str, tuple[str, str]] = {
+    "PSE-WE": ("West Bank", "the West Bank"),
+    "PSE": ("Gaza Strip", "the Gaza Strip"),
+    "FLK": ("Falkland Islands (UK)", "the Falkland Islands"),
 }
+
+
+def disputed_outline_note(record_id: str, admin0: list[dict[str, Any]]) -> str | None:
+    """What a geometry-less record drawn as a disputed area says about its outline.
+
+    None for a record not declared, or where no boundary layer of disputed
+    areas was read; a declaration whose area is no longer drawn stops the
+    build rather than say something false.
+    """
+    declared = DRAWN_AS_DISPUTED.get(record_id)
+    if not declared or not any(e.get("disputed") for e in admin0):
+        return None
+    name, said = declared
+    if not any(e.get("disputed") and e.get("name") == name for e in admin0):
+        raise SystemExit(f"build_entities: {record_id} is declared drawn as the disputed "
+                         f"area {name!r}, which the boundary file no longer draws")
+    return (f"The map draws {said} as a disputed area of its own, as geoBoundaries' "
+            f"global composite delimits it, and shows no figures on that outline. The "
+            f"figures below are this entity's own, kept here rather than joined to it.")
 
 
 def geometryless_profiles(rows: list[dict[str, Any]],
@@ -7717,16 +7737,7 @@ def main() -> int:
         entity["note"] = ("geoBoundaries' global composite has no separate outline for "
                           "this entity -- it is drawn as part of the state that "
                           "administers it. The figures below are still its own.")
-        disputed = DRAWN_AS_DISPUTED.get(entity["id"])
-        if disputed and any(e.get("disputed") for e in admin0):
-            if not any(e.get("disputed") and e.get("name") == disputed for e in admin0):
-                raise SystemExit(f"build_entities: {entity['id']} is declared drawn as the "
-                                 f"disputed area {disputed!r}, which the boundary file "
-                                 f"no longer draws")
-            entity["note"] = (f"The map draws {disputed} as a disputed area of its own, "
-                              f"as geoBoundaries' global composite delimits it, and shows "
-                              f"no figures on that outline. The figures below are this "
-                              f"entity's own, kept here rather than joined to it.")
+        entity["note"] = disputed_outline_note(entity["id"], admin0) or entity["note"]
         entity.setdefault("sources", [])
         admin0.append(entity)
 
