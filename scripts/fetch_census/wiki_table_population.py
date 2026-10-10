@@ -184,17 +184,28 @@ for _shape, _row in (("Ajdabiya", "Ajdabiya"), ("Al Qubbah", "Quba"),
         note="The district's row in the table of the 2001 districts, which gives no year: {terms}.")
 
 # The Bahamas' 2022 census by district, as "Local government in the Bahamas"
-# transcribes it. The table groups some districts the map draws apart --
-# "South Abaco + Central Abaco + Moore's Island" -- and those stay empty: a
-# group's figure is not any one of its members'. These three it prints alone;
-# the grouped ones get a gap that names their group (``GROUPED``, below).
-for _district in ("North Eleuthera", "East Grand Bahama", "West Grand Bahama"):
-    FIGURES[("BHS", _district)] = Figure(
-        year=2022,
-        terms=(Term("Local government in the Bahamas", row=_district,
-                    column=r"^Population$", cite=r"Census of The Bahamas 2022"),),
-        source="2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-        note="The district's row in the 2022 census table: {terms}.")
+# transcribes it, is not read. Its rows are the census's supervisory
+# districts, which are drawn like the parliamentary constituencies and not
+# like the local-government districts the map draws: Grand Bahama's five --
+# Central, East and West Grand Bahama, Marco City and Pineridge -- are
+# constituencies' names, and the table's West Grand Bahama counts 5,960
+# people while Freeport and Lucaya both lie inside the West Grand Bahama the
+# map draws (GeoNames' points, measured on the boundary file). East Grand
+# Bahama's 11,011 sat on a polygon whose only populated place is High Rock.
+# The three rows this read until October 2026 are written instead as gaps
+# saying so; the table's grouped rows ("South Abaco + Central Abaco + Moore's
+# Island") give gaps of their own (``GROUPED``, below). Figures of other
+# routes for these districts are not displaced.
+SUPERVISORY = ("The Bahamas' 2022 census tabulates by its supervisory districts, which are "
+               "drawn like the parliamentary constituencies rather than like the "
+               "local-government districts the map draws. Its {district} ({count:,} "
+               "people) is a supervisory district of that name, not this district, so "
+               "no 2022 figure is given here.")
+REFUSED: dict[tuple[str, str], str] = {
+    ("BHS", district): SUPERVISORY.format(district=district, count=count)
+    for district, count in (("North Eleuthera", 3923), ("East Grand Bahama", 11011),
+                            ("West Grand Bahama", 5960))
+}
 
 
 # Districts the same table prints only inside a group -- "South Abaco + Central
@@ -434,6 +445,15 @@ def figure_row(iso3: str, name: str, figure: Figure, shape_id: str,
         sources=sources)
 
 
+def refused_row(iso3: str, name: str, why: str, shape_id: str) -> dict[str, Any]:
+    """A stated gap for a unit whose table row is another ground's."""
+    return record(
+        f"{iso3}-WT-{slugify(name)}", name, level="admin1", parent=iso3, country=iso3,
+        shape_id=shape_id, match_by="shape_id",
+        population=gap(NOT_AVAILABLE, why),
+        sources=[])
+
+
 def main() -> None:
     rows: list[dict[str, Any]] = []
     for (iso3, name), figure in FIGURES.items():
@@ -454,6 +474,14 @@ def main() -> None:
         row = grouped_row(iso3, name, term, drawn[0]["id"])
         if row:
             rows.append(row)
+    for (iso3, name), why in REFUSED.items():
+        drawn = [u for u in read_json(shard_path("admin1", iso3), [])
+                 if u.get("name") == name]
+        if len(drawn) != 1:
+            log(f"  {iso3} {name}: drawn {len(drawn)} times; no reason written")
+            continue
+        rows.append(refused_row(iso3, name, why, drawn[0]["id"]))
+        log(f"  {iso3} {name}: not read -- {why}")
     write_json(PROCESSED / OUT, rows)
     log(f"wrote {len(rows)} records to {OUT}")
 

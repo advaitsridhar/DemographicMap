@@ -88,7 +88,7 @@ from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json,
                       log, measure, record, shares, write_json)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import DERIVED, MODELLED, estimate, slugify  # noqa: E402
+from common import DERIVED, estimate, slugify  # noqa: E402
 from probe_wikitable import plain, tables  # noqa: E402
 from common import shard_name  # noqa: E402
 
@@ -104,8 +104,6 @@ LICENCE = "Official statistics; compilation CC BY-SA 4.0"
 # remainder of, because that is the only published thing behind it.
 RESIDUAL_SOURCE = ("Badan Pusat Statistik and Kementerian Agama province figures, "
                    "less the regencies published inside them")
-NEIGHBOUR_SOURCE = ("The nearest regencies of the same province, as the "
-                    "Indonesian Wikipedia publishes them")
 NATIONAL_PAGE = "Ethnic groups in Indonesia"
 POPULATION_PAGE = "Demografi Indonesia"
 SUM_TOLERANCE = 0.3          # a province's ethnic shares, against 100
@@ -678,12 +676,7 @@ def religion_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
     if reading.get("remark"):
         sentences.append(reading["remark"])
     note = " ".join(sentences)
-    source = {"census2010": "BPS, 2010 Population Census, population by religion",
-              "bps": "BPS (Statistics Indonesia), population by religion",
-              "dukcapil": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion",
-              "kemenag": "Kementerian Agama, adherents by religion",
-              "jakarta": "Jakarta provincial statistics office, population by religion",
-              "other": "Regional government population-by-religion figure"}[reading["kind"]]
+    source = RELIGION_SOURCES[reading["kind"]]
     if reading["year"]:
         source += f" ({reading['year']})"
     return {
@@ -1346,86 +1339,72 @@ def portal_records(known: dict[str, dict[str, dict[str, float]]],
 
 
 # A residual estimate may not disagree with the arithmetic that produced it.
-# If the province's shares and its regencies' shares came from the same
-# counting, the leftover would equal the leftover population exactly; they
-# come from different sources and vintages, so a few per cent of slack is
-# expected. A third of the gap population is not slack, and a negative group
-# is not slack at all -- it says the regencies already hold more Muslims, or
-# more Hindus, than the province total leaves room for, and there is then no
-# honest residual to take.
+# The province's shares and its regencies' are taken from one count of one
+# year, priced by that count's own populations, so the leftover equals the
+# missing regency's population but for rounding; a few per cent of slack
+# covers that. A negative group is not slack at all -- it says the regencies
+# already hold more Muslims, or more Hindus, than the province total leaves
+# room for, and there is then no honest residual to take.
 RESIDUAL_SLACK = 0.10          # of the missing regencies' own population
 RESIDUAL_NEGATIVE = 0.005      # of the province's population
 
+# What a composition and a head count of each kind of source are called, so a
+# record's citation says which count its figure is.
+RELIGION_SOURCES = {
+    "census2010": "BPS, 2010 Population Census, population by religion",
+    "bps": "BPS (Statistics Indonesia), population by religion",
+    "dukcapil": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion",
+    "kemenag": "Kementerian Agama, adherents by religion",
+    "jakarta": "Jakarta provincial statistics office, population by religion",
+    "other": "Regional government population-by-religion figure",
+}
 
-def neighbour_records(known: dict[str, dict[str, Any]], province: str,
-                      info: dict[str, Any], refused: str) -> list[dict[str, Any]]:
-    """The nearest read regencies of the same province, where the residual
-    contradicts itself.
 
-    Three provinces do contradict themselves: the compositions published for
-    the regencies inside them account for more Muslims, Hindus or Protestants
-    than the province's own figures leave room for, so there is no remainder
-    to take and forcing one would mean writing a regency with no Muslims in
-    North Sumatra. This is the weaker method the residual was chosen over,
-    kept for exactly the case the residual cannot serve. Measured the same
-    way, by leave-one-out against the regencies that are read:
+def source_key(name: Any, year: Any) -> tuple[str, int] | None:
+    """(kind of count, year) for a citation's name: the same for a composition
+    and the head count that goes with it, so the two can be matched."""
+    name = re.sub(r"\s*\(\d{4}\)\s*$", "", str(name or ""))
+    if not isinstance(year, int):
+        return None
+    for kind, label in RELIGION_SOURCES.items():
+        if name == label:
+            return kind, year
+    for kind, label in POPULATION_KINDS.items():
+        if name == label:
+            return kind, year
+    return None
 
-        province residual         median 1.4 points off, dominant group 96.9%
-        three nearest in-province median 4.0 points off, dominant group 92.8%
-        the province itself       median 4.0 points off, dominant group 89.5%
 
-    The three nearest are taken rather than the province as a whole because
-    they are no worse on the median and better on the group a reader actually
-    sees -- the one the map colours the shape by.
+def one_count(province: str, info: dict[str, Any], known: dict[str, dict[str, Any]]
+              ) -> str | None:
+    """Why the province and its read regencies are not one count of one year,
+    weighed by that count's own populations; None when they are."""
+    own = info.get("source")
+    read = [n for n in info["all"] if n not in info["gaps"]]
+    theirs = {(info.get("comp") or {}).get(n) for n in read}
+    if own is None or theirs != {own}:
+        kinds = sorted({f"{EXPLAINED_SHORT.get(k[0], k[0])} {k[1]}" if k else "an undated figure"
+                        for k in {own, *theirs}})
+        return ("its own figure and its other regencies' come from different counts "
+                f"({', '.join(kinds)})")
+    weights = info.get("weights", {})
+    if any(weights.get(n) != own for n in info["all"]):
+        return ("its regencies' populations are not all the same count's, of the same "
+                "year, to weigh their shares by")
+    return None
 
-    Nearest is by the centroid the boundary file gives each shape, inside the
-    province only. It is not adjacency: two regencies either side of a bay
-    are near each other here and do not touch. The note says so, because a
-    reader should not be told this is a neighbour when it is a distance.
-    """
-    points = info.get("points", {})
-    read = [n for n in info["all"] if n not in info["gaps"] and n in known]
-    out: list[dict[str, Any]] = []
-    for name in sorted(info["gaps"]):
-        here = points.get(name)
-        near = [n for n in read if points.get(n)]
-        if here and near:
-            near.sort(key=lambda n: (points[n][0] - here[0]) ** 2
-                                    + (points[n][1] - here[1]) ** 2)
-            near = near[:3]
-        else:
-            near = read[:3]
-        if not near:
-            continue
-        pooled: dict[str, float] = {}
-        for other in near:
-            for row in known[other]["religion"]:
-                pooled[row["group"]] = pooled.get(row["group"], 0.0) + \
-                    row["pct"] / len(near)
-        rows = shares(pooled)
-        if not rows:
-            continue
-        out.append(regency_record(
-            name, province,
-            {"religion": estimate(
-                MODELLED, rows, method="nearest regencies in the province",
-                inputs=[f"{ISO3}-{slugify(province)}-{slugify(n)}" for n in near],
-                note=(f"No composition was read for this regency, and "
-                      f"{province}'s own figures cannot supply one: "
-                      f"{refused}. This is instead the average of the "
-                      f"{len(near)} regencies of {province} whose centroids "
-                      f"are nearest to it ({', '.join(near)}) -- an "
-                      f"assumption that a regency resembles what is around "
-                      f"it, not a measurement of anyone here, and nearest by "
-                      f"distance rather than by sharing a border."))},
-            [{"field": "religion", "name": NEIGHBOUR_SOURCE,
-              "url": "https://id.wikipedia.org/wiki/"
-                     + PROVINCES[province][0].replace(" ", "_"),
-              "license": LICENCE}]))
-    if out:
-        log(f"    {province}: {len(out)} regency(ies) from the nearest read "
-            f"regencies instead (modelled)")
-    return out
+
+EXPLAINED_SHORT = {"census2010": "the 2010 census", "bps": "BPS", "dukcapil": "the civil registry",
+                   "kemenag": "the Ministry of Religious Affairs", "jakarta": "Jakarta's office",
+                   "other": "a regional government", "hapi": "a projection"}
+
+
+def withdrawn(name: str, province: str, why: str) -> dict[str, Any]:
+    """A regency the residual cannot serve, with the reason as its note."""
+    return regency_record(name, province, {"religion": gap(NOT_AVAILABLE, (
+        f"No religion figure for this regency is published in the sources read. "
+        f"{province}'s own figure less its other regencies' is not given in its place: "
+        f"{why}, so what is left of the province would not be this regency's."))}, [])
 
 
 def residual_records(known: dict[str, dict[str, Any]],
@@ -1435,26 +1414,24 @@ def residual_records(known: dict[str, dict[str, Any]],
     """What is left of a province once its read regencies are taken out of it.
 
     The owner asked whether the empty regencies could be modelled from their
-    neighbours, from the province, or from both. Measured by leave-one-out
-    against the regencies that *are* read, the two are not close:
+    neighbours, from the province, or from both; the residual is the one kept,
+    and only where it is arithmetic on one count: a province's published
+    composition minus the compositions published for the regencies inside
+    it, every one of them the same kind of count for the same year, and each
+    weighed by that count's own head count of that year. Everything else is
+    withdrawn with its reason:
 
-        neighbours        median 5.1 points off, dominant group right 90.8%,
-                          worst case 93.8 points
-        province residual median 1.4 points off, dominant group right 96.9%,
-                          worst case 17 points
+    * mixed sources or years. The province residuals built before October
+      2026 priced a BPS 2023 province against Dukcapil 2024 and BPS 2022
+      regencies and HAPI's 2020 projection, and Palangka Raya came out with
+      no Hindus where the registry counts 1.2%;
+    * more than one empty regency: the leftover is their total and nothing
+      says how they differ, so none of them is given it;
+    * a negative group, or a leftover far from the missing population: the
+      inputs contradict each other.
 
-    So it is the residual, and the residual is not a model: a province's
-    published composition minus the compositions published for the regencies
-    inside it is arithmetic on published figures, which is what DERIVED
-    means. It also keeps the province summing to itself, which is what the
-    owner asked for when they said the admin1 numbers should indicate the
-    admin2 splits "so that it remains consistent".
-
-    Where a province has one empty regency the leftover *is* that regency and
-    the status is DERIVED. Where it has several, the leftover is their total
-    and the arithmetic says nothing about how they differ from each other;
-    each then carries the leftover composition as MODELLED, under that
-    assumption stated on the record.
+    The nearest-regencies model the residual once fell back to is gone: an
+    average of other places is not a figure for this one.
     """
     out: list[dict[str, Any]] = []
     for province, info in sorted(provinces.items()):
@@ -1467,71 +1444,64 @@ def residual_records(known: dict[str, dict[str, Any]],
             log(f"    {province}: no residual, {len(absent)} regency without a "
                 f"head count ({', '.join(sorted(absent)[:3])})")
             continue
-        whole = sum(pops.values())
-        target = {g: whole * pct / 100 for g, pct in published.items()}
-        taken: dict[str, float] = {}
-        for name in info["all"]:
-            if name in gaps:
-                continue
-            for row in known[name]["religion"]:
-                taken[row["group"]] = taken.get(row["group"], 0.0) + \
-                    pops[name] * row["pct"] / 100
-        left = {g: target.get(g, 0.0) - taken.get(g, 0.0)
-                for g in set(target) | set(taken)}
-        missing = sum(pops[n] for n in gaps)
-        negative = {g: v for g, v in left.items() if v < -RESIDUAL_NEGATIVE * whole}
-        total = sum(v for v in left.values() if v > 0)
-        drift = total / missing - 1 if missing else 1.0
-        refused = ""
-        if negative:
-            refused = ("the regencies already published inside it hold more "
-                       + " and more ".join(
-                           f"{g} than its own figures leave room for "
-                           f"({-v:,.0f} people)"
-                           for g, v in sorted(negative.items())))
-        elif abs(drift) > RESIDUAL_SLACK:
-            refused = (f"what is left over comes to {total:,.0f} people where "
+        why = one_count(province, info, known)
+        if why is None and len(gaps) > 1:
+            why = (f"{len(gaps)} of its regencies have nothing read, and the province less "
+                   f"the others is their total, not any one's")
+        if why is None:
+            whole = sum(pops.values())
+            target = {g: whole * pct / 100 for g, pct in published.items()}
+            taken: dict[str, float] = {}
+            for name in info["all"]:
+                if name in gaps:
+                    continue
+                for row in known[name]["religion"]:
+                    taken[row["group"]] = taken.get(row["group"], 0.0) + \
+                        pops[name] * row["pct"] / 100
+            left = {g: target.get(g, 0.0) - taken.get(g, 0.0)
+                    for g in set(target) | set(taken)}
+            missing = sum(pops[n] for n in gaps)
+            negative = {g: v for g, v in left.items() if v < -RESIDUAL_NEGATIVE * whole}
+            total = sum(v for v in left.values() if v > 0)
+            drift = total / missing - 1 if missing else 1.0
+            if negative:
+                why = ("its other regencies already hold more "
+                       + " and more ".join(f"{g} than its own figures leave room for "
+                                           f"({-v:,.0f} people)"
+                                           for g, v in sorted(negative.items())))
+            elif abs(drift) > RESIDUAL_SLACK:
+                why = (f"what is left over comes to {total:,.0f} people where "
                        f"{missing:,} live, {abs(drift):.0%} out")
-        if refused:
-            log(f"    {province}: no residual -- {refused}")
-            out += neighbour_records(known, province, info, refused)
+        if why is not None:
+            log(f"    {province}: no residual -- {why}")
+            out += [withdrawn(name, province, why) for name in sorted(gaps)]
             continue
         rows = shares({g: v for g, v in left.items() if v > 0})
         if not rows:
             continue
-        one = len(gaps) == 1
-        status = DERIVED if one else MODELLED
+        name = gaps[0]
         inputs = [f"{ISO3}-{slugify(province)}"] + [
             f"{ISO3}-{slugify(province)}-{slugify(n)}"
             for n in sorted(info["all"]) if n not in gaps]
-        for name in sorted(gaps):
-            note = (
-                f"No composition was read for this regency. This is "
-                f"{province}'s own published religion figures with the "
-                f"{len(info['all']) - len(gaps)} regencies that were read "
-                f"taken out of them, priced against each regency's "
-                f"population -- arithmetic on published figures, not a "
-                f"measurement of anyone here.")
-            if one:
-                note += (f" It is the only regency of {province} with nothing "
-                         f"read, so what is left over is this one.")
-            else:
-                note += (f" {len(gaps)} regencies of {province} have nothing "
-                         f"read, so what is left over is their total and not "
-                         f"this one's; each carries the whole leftover, which "
-                         f"assumes they do not differ from each other.")
-            note += (f" The leftover comes to {total:,.0f} people against "
-                     f"{missing:,} living in them, a difference of {drift:+.1%}.")
-            out.append(regency_record(
-                name, province,
-                {"religion": estimate(status, rows, method="province residual",
-                                      inputs=inputs, note=note)},
-                [{"field": "religion", "name": RESIDUAL_SOURCE,
-                  "url": "https://id.wikipedia.org/wiki/"
-                         + PROVINCES[province][0].replace(" ", "_"),
-                  "license": LICENCE}]))
-        log(f"    {province}: {len(gaps)} regency(ies) from the residual "
-            f"({'derived' if one else 'modelled'}), {drift:+.1%} on the total")
+        kind, year = info["source"]
+        note = (f"No composition was read for this regency. This is {province}'s own "
+                f"published religion figures with the {len(info['all']) - 1} regencies "
+                f"that were read taken out of them, every one of them "
+                f"{EXPLAINED_SHORT.get(kind, kind)}'s count for {year} and weighed by its "
+                f"own head count of that year -- arithmetic on published figures, not a "
+                f"measurement of anyone here. It is the only regency of {province} with "
+                f"nothing read, so what is left over is this one. The leftover comes to "
+                f"{total:,.0f} people against {missing:,} living in it, a difference of "
+                f"{drift:+.1%}.")
+        out.append(regency_record(
+            name, province,
+            {"religion": estimate(DERIVED, rows, method="province residual",
+                                  inputs=inputs, note=note)},
+            [{"field": "religion", "name": RESIDUAL_SOURCE,
+              "url": "https://id.wikipedia.org/wiki/"
+                     + PROVINCES[province][0].replace(" ", "_"),
+              "license": LICENCE}]))
+        log(f"    {province}: {name} from the residual (derived), {drift:+.1%} on the total")
     return out
 
 
@@ -1658,7 +1628,8 @@ def regency_records(fetch_page=fetch,
         if not province or name in NOT_REGENCIES:
             continue
         info = shaped.setdefault(province, {"all": [], "gaps": [], "points": {},
-                                            "population": {}, "shares": {}})
+                                            "population": {}, "shares": {},
+                                            "weights": {}})
         info["all"].append(name)
         spot = shape.get("point")
         if isinstance(spot, dict) and spot.get("lat") is not None:
@@ -1669,8 +1640,15 @@ def regency_records(fetch_page=fetch,
             info["gaps"].append(name)
         found = by_name.get(name)
         weight = None
+        if found:
+            cited = next((src.get("name") for src in found.get("sources") or []
+                          if src.get("field") == "religion"), None)
+            info.setdefault("comp", {})[name] = source_key(cited, found.get("religion_year"))
+        info["weights"][name] = None
         if found and isinstance(found.get("population"), dict):
             weight = found["population"].get("value")
+            info["weights"][name] = source_key(found["population"].get("source"),
+                                               found["population"].get("year"))
         if weight is None:
             row = hapi.get(province, {}).get(name)
             weight = int(row["population"]) if row else None
@@ -1678,13 +1656,22 @@ def regency_records(fetch_page=fetch,
     province_shares = {
         r["name"]: {row["group"]: row["pct"] for row in r["religion"]}
         for r in (province_rows or []) if isinstance(r.get("religion"), list)}
+    province_keys = {
+        r["name"]: source_key(next((src.get("name") for src in r.get("sources") or []
+                                    if src.get("field") == "religion"), None),
+                              r.get("religion_year"))
+        for r in (province_rows or []) if isinstance(r.get("religion"), list)}
     for province, info in shaped.items():
         info["shares"] = province_shares.get(province, {})
+        info["source"] = province_keys.get(province)
     log(f"  the residual: {sum(1 for i in shaped.values() if i['gaps'])} "
         f"province(s) have a regency with nothing read")
     from_residual = residual_records(by_name, shaped, hapi)
     records += from_residual
-    log(f"  {len(from_residual)} regencies carry a residual estimate; "
+    derived = sum(1 for r in from_residual if isinstance(r.get("religion"), dict)
+                  and r["religion"].get("status") == DERIVED)
+    log(f"  {derived} regencies carry a residual estimate and "
+        f"{len(from_residual) - derived} say why they have none; "
         f"{len(records)} records in all")
     return records
 

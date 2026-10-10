@@ -22,7 +22,11 @@ cantons are the sums of today's communes by the canton of their 2009
 predecessors, so Moutier, which left Bern for Jura on 1 January 2026, counts
 in the Bern the map draws. One commune of today crosses a 2009 cantonal line:
 Murten (Fribourg) took in Clavaleyres (Bern) in 2022; it is counted in
-Fribourg, and both cantons' notes say so.
+Fribourg, and both cantons' notes say so. It is counted whole in Fribourg's
+Lac district too, the rest of it lying there, and Lac's note says whose
+people that adds and how many (Clavaleyres' last count on its own, from BFS's
+balance by commune). Fribourg's seven districts then make the canton, which is
+checked. Bern's Laupen, which held Clavaleyres in 2009, keeps its gap.
 
 Usage:
     python -m scripts.fetch_census.switzerland_nationality [--year 2025]
@@ -36,7 +40,7 @@ import time
 from collections import Counter
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
 from .central_ages import check_sum, fold, units
 from .central_nationality import GERMAN, OTHER, composition, label_for, named, note
 from .pxweb import http_json, unstack
@@ -158,9 +162,18 @@ def build(year: int) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     bound, unbound, left = drawn_units(snapshot)
     written = gaps = 0
+    district_totals: dict[str, list[float]] = {}
     for name, canton_name, members, shape in bound:
         todays_here = sorted(t for t, ini in initial_of.items() if ini & members and t not in lakes)
         straddling = [t for t in todays_here if not initial_of[t] <= members]
+        # A commune merged across a cantonal line is counted whole in the
+        # district that holds the rest of it, as its canton counts it whole.
+        across = [t for t in straddling
+                  if crosses_canton_only(initial_of[t], members, canton_of_2009)]
+        straddling = [t for t in straddling if t not in across]
+        extra = ""
+        if across and not straddling:
+            extra = took_in_note(across, initial_of, members, old_communes, todays, name)
         if straddling:
             why = (f"Not written: the map draws this district as it was in 2009, and "
                    f"{', '.join(todays[t] for t in straddling)} -- today's commune(s) -- merged "
@@ -169,7 +182,9 @@ def build(year: int) -> list[dict[str, Any]]:
             unit_fields = {"ethnicity": gap(NOT_AVAILABLE, why)}
             gaps += 1
         else:
-            unit_fields = fields(todays_here, name)
+            unit_fields = fields(todays_here, name, extra)
+            district_totals.setdefault(next(iter(canton_of_2009[c] for c in members)), []).append(
+                sum(counts.get(c, {}).get(TOTAL, 0) for c in todays_here))
             written += 1
         records.append(record(
             f"CHE-2009-{fold(name)}-nat", shape["name"], level="admin2", parent=shape["parent"],
@@ -215,7 +230,74 @@ def build(year: int) -> list[dict[str, Any]]:
             sources=sources, **fields(members, label, extra)))
     if len(used) != len(shapes):
         raise SystemExit(f"switzerland_nationality: {len(used)} cantons bound of {len(shapes)}")
+    # A canton whose every district was written is the sum of them: the
+    # communes counted whole across a cantonal line are counted in the same
+    # canton at both levels.
+    drawn_in: Counter = Counter(next(iter(canton_of_2009[c] for c in members))
+                                for _, _, members, _ in bound)
+    for hist, members in by_canton.items():
+        totals = district_totals.get(hist, [])
+        if drawn_in.get(hist) and len(totals) == drawn_in[hist]:
+            whole = sum(counts.get(c, {}).get(TOTAL, 0) for c in members)
+            check_sum(totals, whole, f"{cantons[hist]['Name']}'s districts against the canton")
     return records
+
+
+def crosses_canton_only(initial: set[str], members: set[str],
+                        canton_of_2009: dict[str, str]) -> bool:
+    """A commune of today whose 2009 predecessors outside this district all lay
+    in another canton, and the rest inside it, so the canton the district
+    belongs to counts it whole: Murten, which took in Clavaleyres (Bern)."""
+    inside, outside = initial & members, initial - members
+    if not inside or not outside:
+        return False
+    here = {canton_of_2009.get(c) for c in members}
+    if len(here) != 1:
+        return False
+    canton = here.pop()
+    homes = Counter(canton_of_2009.get(c) for c in initial)
+    return (all(canton_of_2009.get(c) not in (None, canton) for c in outside)
+            and homes.most_common(1)[0][0] == canton)
+
+
+def took_in_note(across: list[str], initial_of: dict[str, set[str]], members: set[str],
+                 old_communes: dict[str, dict[str, str]], todays: dict[str, str],
+                 district: str) -> str:
+    """What a district counts besides its 2009 ground, and how many people that is."""
+    said = []
+    for t in across:
+        for code in sorted(initial_of[t] - members):
+            name = old_communes.get(code, {}).get("Name", code)
+            when, people = last_count(code)
+            size = (f", which had {people:,.0f} residents on 31 December {when}"
+                    if people is not None else "")
+            said.append(f"{todays[t]} is counted whole: it took in {name}, a commune of "
+                        f"another canton in 2009{size}, so this figure counts them too")
+    return "; ".join(said) + "." if said else ""
+
+
+def last_count(code: str) -> tuple[int | None, float | None]:
+    """A commune's last population on 31 December in BFS's balance by commune,
+    the latest year's sheet that still lists it."""
+    import io as _io
+
+    import openpyxl
+    from .switzerland_ages import BALANCE, FIRST_BALANCE_YEAR, balance_sheet
+    try:
+        book = openpyxl.load_workbook(_io.BytesIO(http_get(BALANCE, binary=True, timeout=300)),
+                                      read_only=True, data_only=True)
+    except Exception as exc:  # noqa: BLE001 -- the note is then said without the count
+        log(f"  the balance by commune could not be read ({exc}); no count for {code}")
+        return None, None
+    key = str(int(code)).zfill(4)
+    years = sorted((int(s) for s in book.sheetnames if s.isdigit()), reverse=True)
+    for when in years:
+        if when < FIRST_BALANCE_YEAR:
+            break
+        sheet, _ = balance_sheet([list(r) for r in book[str(when)].iter_rows(values_only=True)])
+        if key in sheet:
+            return when, sheet[key]
+    return None, None
 
 
 def main() -> int:
