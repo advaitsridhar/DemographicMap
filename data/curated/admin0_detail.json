@@ -5665,6 +5665,141 @@
    "field": "population",
    "status": "not_applicable",
    "note": "Antarctica has no permanent population. The people there staff research stations and come and go with the seasons, so there is no resident population to count."
+  },
+  {
+   "country": "TKM",
+   "field": "population",
+   "value": 7057841,
+   "year": 2022,
+   "source": "State Committee of Turkmenistan on Statistics, Results of the Complete Population and Housing Census of Turkmenistan 2022",
+   "url": "https://stat.gov.tm/en/population-census",
+   "license": "Official statistics of the State Committee of Turkmenistan on Statistics",
+   "note": "The 2022 census's count of Turkmenistan: Ashgabat and the five velayats make 7,057,841 people. It stands in place of the Factbook's estimate of 5,744,151 for 2024, which cannot be the same people as the census the velayats carry."
+  },
+  {
+   "country": "KWT",
+   "field": "population",
+   "value": 4385717,
+   "year": 2021,
+   "source": "Central Statistical Bureau (Kuwait), Register-based Census 2021, Table 1",
+   "url": "https://census.csb.gov.kw/CensusData_EN?id=1",
+   "license": "Central Statistical Bureau of Kuwait, published census tables",
+   "note": "The 2021 register-based census's count of Kuwait: 4,385,717 people, of whom the six governorates hold 4,381,139 and 4,578 are not stated by governorate. It stands in place of the Factbook's estimate of 3,172,511 for 2025."
+  },
+  {
+   "country": "OMN",
+   "field": "population",
+   "value": 5165602,
+   "year": 2023,
+   "source": "National Centre for Statistics and Information (Oman), Statistical Year Book 2024 (Issue 52), Table 7-2, the Sultanate's row",
+   "url": "https://web.archive.org/web/20240801130251id_/https://www.ncsi.gov.om/Elibrary/LibraryContentDoc/bar_Statistical%20Year%20Book%202024%20Issue%2052_469215ea-35ad-4c19-baeb-be858bd6c934.pdf",
+   "license": "National Centre for Statistics and Information (Oman), published yearbook",
+   "note": "The population registered in the Sultanate at the end of 2023, Omanis and expatriates, which its governorates make: 5,165,602 people. It stands in place of the Factbook's estimate of 3,969,824 for 2025."
+  },
+  {
+   "country": "MDV",
+   "field": "population",
+   "value": 515132,
+   "year": 2022,
+   "source": "Maldives Bureau of Statistics, Population and Housing Census 2022, Atoll Level Indicator Sheet - Population, the Republic's row",
+   "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx",
+   "license": "Maldives Bureau of Statistics publication, reuse with attribution",
+   "note": "The 2022 census's count of the Republic: 515,132 people, Malé's 211,908 and the atolls' 303,224, foreign residents included -- 131,223 of the 505,955 people in the second-level units the map draws are foreigners. It stands in place of the Factbook's estimate of 388,858 for 2024. The thirteen atolls the map draws at the first level hold 214,582 of these people; Malé (211,908) and six atolls (79,465) are drawn only at the second level, and Gnaviyani (9,177) at neither."
+  },
+  {
+   "country": "PRY",
+   "field": "population",
+   "value": 6109903,
+   "year": 2022,
+   "source": "INE Paraguay, Censo Nacional de Población y Viviendas 2022",
+   "url": "https://prod.redatam.org/binpry/RpWebEngine.exe/Portal?BASE=CPV2022",
+   "license": "Official statistics of INE Paraguay",
+   "note": "The 2022 census's count of Paraguay, which its departments make: 6,109,903 people. It stands in place of the Factbook's estimate of 7,604,044 for 2025."
+  },
+  {
+   "country": "GTM",
+   "field": "population",
+   "value": 14901286,
+   "year": 2018,
+   "source": "INE Guatemala, XII Censo Nacional de Poblacion y VII de Vivienda 2018",
+   "url": "https://censo2018.ine.gob.gt/",
+   "license": "Official statistics of INE Guatemala",
+   "note": "Everyone INE's 2018 census enumerated in Guatemala, which its departments and municipios make: 14,901,286 people. It stands in place of the Factbook's estimate of 18,255,216 for 2024."
+  },
+  {
+   "country": "XKX",
+   "field": "population",
+   "value": 1602515,
+   "year": 2024,
+   "source": "Kosovo Agency of Statistics, Population and Housing Census 2024",
+   "url": "https://askdata.rks-gov.net/pxweb/en/ASKdata/ASKdata__Census%20population__1_Demographic_Characteristics/",
+   "license": "Kosovo Agency of Statistics (reuse with attribution)",
+   "note": "The 2024 census's count of Kosovo, which its seven districts make: 1,602,515 people. It stands in place of the Factbook's estimate of 1,977,093 for the same year."
+  },
+  {
+   "country": "MCO",
+   "field": "population",
+   "value": 38857,
+   "year": 2025,
+   "source": "Monaco Statistics (IMSEE), 2025 Population census (register-based), report of May 2026",
+   "url": "https://imsee.mc/en/thematics/population/population-census",
+   "license": "Monaco Statistics (IMSEE) publication",
+   "note": "The Principality's 2025 census: 38,857 residents, the count its one unit on the map carries. It stands in place of the Factbook's estimate of 32,047 for 2025."
+  },
+  {
+   "country": "MCO",
+   "field": "median_age",
+   "value": 50.0,
+   "year": 2025,
+   "source": "Monaco Statistics (IMSEE), 2025 Population census (register-based), report of May 2026",
+   "url": "https://imsee.mc/en/thematics/population/population-census",
+   "license": "Monaco Statistics (IMSEE) publication",
+   "note": "Interpolated within the age group holding the middle resident of the 2025 census, which publishes residents by sex in eight age groups. It stands in place of the Factbook's estimate of 57.5."
+  },
+  {
+   "country": "MCO",
+   "field": "sex_ratio",
+   "value": 969,
+   "year": 2025,
+   "source": "Monaco Statistics (IMSEE), 2025 Population census (register-based), report of May 2026",
+   "url": "https://imsee.mc/en/thematics/population/population-census",
+   "license": "Monaco Statistics (IMSEE) publication",
+   "note": "Males per 1,000 females among the residents the 2025 census counted. It stands in place of the Factbook's estimate of 930."
+  },
+  {
+   "country": "MDA",
+   "field": "population",
+   "value": 2409207,
+   "year": 2024,
+   "source": "Biroul Național de Statistică, Recensământul Populației și Locuințelor 2024, final results",
+   "url": "https://statistica.gov.md/ro/rezultatele-finale-ale-recensamantului-populatiei-si-locuintelor-2024-10118.html",
+   "license": "Official statistics of the Republic of Moldova (reuse with attribution)",
+   "note": "The 2024 census's count of the Republic of Moldova on the right bank of the Dniester: 2,409,207 people. The census did not reach the left bank (Transnistria) or the city of Bender, which are not in this figure; the map draws them with older estimates of their own. It stands in place of the Factbook's estimate of 3,578,930 for 2025."
+  },
+  {
+   "country": "GEO",
+   "field": "population",
+   "value": 3941200,
+   "year": 2026,
+   "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units",
+   "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+   "license": "Geostat, open publication",
+   "note": "Geostat's population of Georgia on 1 January 2026, which its regions make: 3,941,200 people. Geostat does not count Abkhazia or the Tskhinvali region, which the government does not control, so they are not in this figure. It stands in place of the Factbook's estimate of 4,900,961 for 2024."
+  },
+  {
+   "country": "BTN",
+   "field": "population",
+   "note": "The Factbook's estimate for 2025. Bhutan last counted its people in the 2017 census: 735,553, of whom 727,145 were enumerated in the twenty dzongkhags and 8,408 were tourists and others in transit; the dzongkhags carry that census and add up to 727,145, 18.6% below this estimate."
+  },
+  {
+   "country": "LAO",
+   "field": "population",
+   "note": "The Factbook's estimate for 2024. Laos's provinces and districts carry the 4th Population and Housing Census of 2015 -- 6,481,625 people in the Lao Statistics Bureau's village table, 6,492,228 as the census published it -- which is also the count behind their ethnicity and religion. Nine years of growth separate the two, so the provinces add up to about four-fifths of this figure; OCHA's common operational dataset (from UNFPA) gives 7,631,798 for 2024."
+  },
+  {
+   "country": "UKR",
+   "field": "population",
+   "note": "The Factbook's estimate for 2024, during the war. The oblasts drawn here carry estimates from before the full-scale invasion of 2022 -- most for 2022, Crimea's for 2014 and Donetsk's and Luhansk's for 2018 -- which include Crimea, Sevastopol and the areas occupied since, and add up to 43,816,492; the raions carry the 2001 census, the last Ukraine has taken."
   }
  ]
 }
