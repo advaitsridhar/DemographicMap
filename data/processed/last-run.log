@@ -1,29 +1,3 @@
-https://statsbank.statsghana.gov.gh/api/v1/en/: 615 characters
-  "dbid":"Annual Household Income and Expenditure Survey (AHIES)"
-  "text":"Annual Household Income and Expenditure Survey (AHIES)"}
-  "dbid":"Education(Admin)"
-  "text":"Education(Admin)"}
-  "dbid":"Ghana Census of Agriculture (GCA)"
-  "text":"Ghana Census of Agriculture (GCA)"}
-  "dbid":"GLSS7"
-  "text":"GLSS7"}
-  "dbid":"Macro Economic Indicators"
-  "text":"Macro Economic Indicators"}
-  "dbid":"Macroeconomic Indicators"
-  "text":"Macroeconomic Indicators"}
-  "dbid":"PHC 2021 StatsBank"
-  "text":"PHC 2021 StatsBank"}
-  "dbid":"PHC2010"
-  "text":"PHC2010"}
-  "dbid":"Search Bar"
-  "text":"Search Bar"}
-  "dbid":"Trade"
-  "text":"Trade"}]
-  20 distinct match(es)
-https://census2021.statsghana.gov.gh/: 70,189 characters
-  fileUpload/events/img/factsheets.jpg)
-  fileUpload/events/img/shareyourstory.jpg)
-  fileUpload/events/img/arrow.jpg)
-  fileUpload/reportthemelist/PRINT_COPY_VERSION_FOUR
-  4 distinct match(es)
-https://census2021.statsghana.gov.gh/reportthemelist.php: HTTPError: HTTP Error 404: Not Found
+usage: r6_probe.py [-h] [--grep GREP] [--pages PAGES] [--aia] [--limit LIMIT]
+                   {pdf,page,xlsx} url [url ...]
+r6_probe.py: error: unrecognized arguments: Massar|TABLEAU|Tableau)
