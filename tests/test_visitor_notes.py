@@ -170,6 +170,18 @@ class PlainWording(unittest.TestCase):
                          "A person answers once. geoBoundaries draws Nepal's map.")
         self.assertIn("isopen", record["url"])     # not a visitor's text
 
+    def test_a_server_s_answer_is_not_quoted(self):
+        self.assertEqual(
+            be.plain_wording("but that workbook could not be read: the bureau's server "
+                             "refused it (HTTP 403)."),
+            "but that workbook could not be read: the bureau's server refused it.")
+        self.assertEqual(
+            be.plain_wording("CELADE's REDATAM server has no Saint Kitts base "
+                             "(prod.redatam.org/binkna/RpWebEngine.exe/Portal answers 404), "
+                             "and the US Census Bureau's HDX series has none."),
+            "CELADE's REDATAM server has no Saint Kitts base, and the US Census "
+            "Bureau's HDX series has none.")
+
     def test_thailand_s_reason_names_no_reader(self):
         self.assertNotIn("automated", be.ADAPTER_GAPS["THA"])
         self.assertIn("modelled", be.ADAPTER_GAPS["THA"])

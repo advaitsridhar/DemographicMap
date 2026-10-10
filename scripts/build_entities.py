@@ -5134,9 +5134,11 @@ PLAIN_PHRASES: tuple[tuple[str, str], ...] = (
      "110 portals tried)", " (110 portals were tried)"),
     ("Bound to this boundary shape by the shape's own id rather than by its name. ", ""),
     (" Bound to this boundary shape by the shape's own id rather than by its name.", ""),
+    (" (prod.redatam.org/binkna/RpWebEngine.exe/Portal answers 404)", ""),
 )
 PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r" -- license_id='[^']*', isopen=(?:True|False)"), ""),
+    (re.compile(r" \(HTTP \d{3}\)"), ""),
     (re.compile(r"\brepresentivity (very_high|high|moderate|low|very_low)\b"),
      lambda m: f"representativeness rated {m.group(1).replace('_', ' ')}"),
 )
