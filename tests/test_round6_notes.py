@@ -287,5 +287,199 @@ class IndiaTehsilTest(unittest.TestCase):
         self.assertEqual(new["scheduled_groups"]["status"], "not_available")
 
 
+def hcp_workbook(rows):
+    """HCP's legal-population sheet: title rows, two header rows, then the rows
+    (name, Moroccans, foreigners, total, households, Arabic name, code)."""
+    import io
+    import openpyxl
+    book = openpyxl.Workbook()
+    sheet = book.active
+    sheet.append(["Population légale du Royaume du Maroc"])
+    sheet.append(["Collectivités territoriales", "المغاربة", "الأجانب", "السكان", "الأسر", "",
+                  "الرمز الجغرافي"])
+    sheet.append(["", "Marocains", "Étrangers", "Population", "Ménages", "",
+                  "Code géographique"])
+    for row in rows:
+        sheet.append(list(row))
+    out = io.BytesIO()
+    book.save(out)
+    return out.getvalue()
+
+
+def hcp(name, moroccans, foreigners, code=None):
+    return (name, moroccans, foreigners, moroccans + foreigners, 1, "", code)
+
+
+HCP_ROWS = [
+    hcp("Ensemble du territoire national", 1150, 50),
+    hcp("Région de l'Oriental", 600, 30, 2),
+    hcp("Région de Laâyoune-Sakia El Hamra", 550, 20, 11),
+    hcp("Ensemble du territoire national (milieu urbain)", 700, 40),
+    hcp("Région de l'Oriental (milieu urbain)", 400, 25, 2),
+    hcp("Ensemble du territoire national", 1150, 50),
+    hcp("Région de l'Oriental", 600, 30, 2),
+    hcp("Préfecture d'Oujda-Angad", 400, 20, 2411),
+    hcp("Province de Taourirt", 200, 10, 2533),
+    hcp("Région de Laâyoune-Sakia El Hamra", 550, 20, 11),
+    hcp("Préfecture de Laâyoune", 500, 18, 11321),
+    hcp("Province d'Es-Semara", 50, 2, 11221),
+    hcp("Commune d'Oujda", 300, 15, 24110123),
+    hcp("Cercle d'Oujda-Banlieue Nord", 100, 5, 241103),
+]
+
+
+class MoroccoCensusTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import morocco_rgph2024 as mr
+        self.mr = mr
+        self.national = mr.NATIONAL
+        mr.NATIONAL = 1200
+
+    def tearDown(self):
+        self.mr.NATIONAL = self.national
+
+    def test_the_reader_takes_regions_and_provinces_and_skips_halves_and_communes(self):
+        table = self.mr.read(hcp_workbook(HCP_ROWS))
+        self.assertEqual(table["national"], 1200)
+        self.assertEqual(sorted(table["regions"]), [2, 11])
+        self.assertEqual(sorted(table["provinces"]), [2411, 2533, 11221, 11321])
+        self.assertEqual(table["provinces"][2411]["total"], 420)
+        self.assertEqual(table["regions"][2]["total"], 630)
+
+    def test_a_unit_printed_twice_with_two_totals_stops_the_run(self):
+        rows = list(HCP_ROWS)
+        rows[6] = hcp("Région de l'Oriental", 601, 30, 2)
+        with self.assertRaises(SystemExit):
+            self.mr.read(hcp_workbook(rows))
+
+    def test_provinces_that_do_not_make_their_region_stop_the_run(self):
+        rows = [r for r in HCP_ROWS if r[0] != "Province de Taourirt"]
+        with self.assertRaises(SystemExit):
+            self.mr.read(hcp_workbook(rows))
+
+    def test_binding_and_the_claim_line(self):
+        table = self.mr.read(hcp_workbook(HCP_ROWS))
+        admin1 = [{"id": "R2", "name": "Oriental"},
+                  {"id": "R11", "name": "Laâyoune-Sakia El Hamra"}]
+        admin2 = [{"id": "a", "name": "Préfecture d'Oujda-Angad عمالة وجدة - أنجاد",
+                   "parent": "R2"},
+                  {"id": "b", "name": "Taourirte Province", "parent": "R2"},
+                  {"id": "c", "name": "Province d'Es-Semara إقليم السمارة", "parent": "R11"},
+                  {"id": "d", "name": "Tarfaya Province", "parent": "R11"}]
+        records, report = self.mr.build(table, admin1, admin2)
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["R2"]["population"]["value"], 630)
+        self.assertEqual(by["a"]["population"]["value"], 420)
+        # A misspelt label is paired only as each other's closest spelling.
+        self.assertEqual(by["b"]["population"]["value"], 210)
+        self.assertTrue(any("by spelling" in line for line in report))
+        for sid in ("R11", "c"):
+            for field in self.mr.FIELDS:
+                cell = by[sid][field]
+                self.assertNotIn("value", cell)
+                self.assertEqual(cell["displaces_before"], 2025)
+                self.assertIn("Western Sahara line", cell["note"])
+        self.assertIn("(52 people)", by["c"]["population"]["note"])
+        self.assertIn("(570)", by["R11"]["population"]["note"])
+        # A polygon of the region the line cuts that is not a declared piece is left alone.
+        self.assertNotIn("d", by)
+
+    def test_aliases_join_the_boundary_files_spellings(self):
+        for label, hcp_name in (("Prefecture of Mohammédia", "Préfecture de Mohammadia"),
+                                ("Province de Fquih Ben Saleh", "Province de Fquih Ben Salah"),
+                                ("Province d'El Kelâat Es-Sraghna",
+                                 "Province d'El Kelâa Des-Sraghna"),
+                                ("Rhamna Province", "Province de Rehamna"),
+                                ("Prefecture of Tangier - Assilah", "Préfecture de Tanger-Assilah"),
+                                ("Fez-Meknes", "Région de Fès-Meknès")):
+            self.assertEqual(self.mr.key(label), self.mr.key(hcp_name), label)
+
+
+ZAMBIA_LINES = [
+    "TABLE 5.2:",
+    "Province/District/",
+    "ZAMBIA TOTAL 300 140 160 180 85 95 120 55 65",
+    "WESTERN PROVINCE 200 95 105 180 85 95 20 10 10",
+    "SHANG'OMBO DISTRICT 120 55 65 100 45 55 20 10 10",
+    "Shangombo Central 60 30 30 50 22 28 10 8 2",
+    "DISTRICT SENANGA 80 40 40 80 40 40 - - -",
+    "CENTRAL PROVINCE 100 45 55 - - - 100 45 55",
+    "KABWE DISTRICT 100 45 55 - - - 100 45 55",
+]
+
+
+class ZambiaCensusTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import zambia_census as zc
+        self.zc = zc
+        self.national = zc.NATIONAL
+        zc.NATIONAL = 300
+
+    def tearDown(self):
+        self.zc.NATIONAL = self.national
+
+    def test_the_table_reads_district_and_province_lines_only(self):
+        table = self.zc.parse(ZAMBIA_LINES)
+        self.assertEqual(sorted(table["districts"]), ["kabwe", "senanga", "shangombo"])
+        self.assertEqual(table["districts"]["shangombo"]["total"], 120)
+        self.assertEqual(table["districts"]["senanga"]["province"], "western")
+        self.assertEqual(table["provinces"]["western"]["total"], 200)
+
+    def test_districts_that_do_not_make_their_province_stop_the_run(self):
+        lines = [line for line in ZAMBIA_LINES if "SENANGA" not in line]
+        with self.assertRaises(SystemExit):
+            self.zc.parse(lines)
+
+    def test_a_line_whose_parts_do_not_add_up_stops_the_run(self):
+        lines = list(ZAMBIA_LINES)
+        lines[4] = "SHANG'OMBO DISTRICT 120 55 64 100 45 55 20 10 10"
+        with self.assertRaises(SystemExit):
+            self.zc.parse(lines)
+
+    def test_a_preliminary_national_total_stops_the_run(self):
+        self.zc.NATIONAL = 299
+        with self.assertRaises(SystemExit):
+            self.zc.parse(ZAMBIA_LINES)
+
+    def test_binding_and_provinces_drawn_differently(self):
+        table = self.zc.parse(ZAMBIA_LINES)
+        admin1 = [{"id": "W", "name": "Western"}, {"id": "C", "name": "Central"}]
+        admin2 = [{"id": "a", "name": "Shangombo", "parent": "W"},
+                  {"id": "b", "name": "Senanga", "parent": "C"},
+                  {"id": "c", "name": "Kabwe", "parent": "C"}]
+        records, _ = self.zc.build(table, admin1, admin2)
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["a"]["population"]["value"], 120)
+        self.assertEqual(by["a"]["sex_ratio"]["value"], round(1000 * 55 / 65))
+        # Each polygon gets what is drawn in it, and says which districts those are.
+        self.assertEqual(by["W"]["population"]["value"], 120)
+        self.assertIn("other than Senanga, which this map draws under Central",
+                      by["W"]["population_note"])
+        self.assertEqual(by["C"]["population"]["value"], 180)
+        self.assertIn("and Senanga, which the census counts under Western Province",
+                      by["C"]["population_note"])
+
+    def test_a_province_whose_districts_are_drawn_whole_gets_its_own_count(self):
+        table = self.zc.parse(ZAMBIA_LINES)
+        admin1 = [{"id": "W", "name": "Western"}, {"id": "C", "name": "Central"}]
+        admin2 = [{"id": "a", "name": "Shangombo", "parent": "W"},
+                  {"id": "b", "name": "Senanga", "parent": "W"},
+                  {"id": "c", "name": "Kabwe", "parent": "C"}]
+        records, _ = self.zc.build(table, admin1, admin2)
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["W"]["population"]["value"], 200)
+        self.assertEqual(by["W"]["population_note"],
+                         "The 2022 census's final count for Western Province.")
+
+    def test_the_boundary_files_spellings_join_the_censuss(self):
+        for label, census in (("Chikankanta", "CHIKANKATA DISTRICT"),
+                              ("Chiengi", "CHIENGE DISTRICT"), ("Milengi", "MILENGE DISTRICT"),
+                              ("Mushindano", "MUSHINDAMO DISTRICT"),
+                              ("Ikelenge", "IKELENG’I DISTRICT"),
+                              ("Itezhi-Tezhi", "ITEZHI TEZHI DISTRICT"),
+                              ("Shiwang'Andu", "SHIWANG'ANDU DISTRICT")):
+            self.assertEqual(self.zc.key(label), self.zc.key(census), label)
+
+
 if __name__ == "__main__":
     unittest.main()
