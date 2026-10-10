@@ -552,5 +552,60 @@ class GuineaBissauCensusTest(unittest.TestCase):
         self.assertNotIn("Bafatá: left out", " ".join(report))
 
 
+SENEGAL_ROWS = [
+    ["PROJECTION DE LA POPULATION - 2023-2050", "RGPH-5 2023", None, None, "2024"],
+    [None, "HOMME", "FEMME", "ENSEMBLE", "HOMME"],
+    ["REGION DAKAR", 60, 40, 100, 61],
+    ["DEPARTEMENT DE DAKAR", 30, 20, 50, 31],
+    ["DEPARTEMENT DE PIKINE", 20, 10, 30, 20],
+    ["DEPARTEMENT DE KEUR MASSAR", 10, 10, 20, 10],
+    ["REGION KOLDA", 40, 60, 100, 41],
+    ["DEPARTEMENT  KOLDA", 20, 30, 50, 21],
+    ["DEPARTEMENT MEDINA YORO FOULAH", 20, 30, 50, 20],
+]
+
+
+class SenegalCensusTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import senegal_rgph5 as sn
+        self.sn = sn
+        self.national = sn.NATIONAL
+        sn.NATIONAL = 200
+
+    def tearDown(self):
+        self.sn.NATIONAL = self.national
+
+    def test_the_2023_columns_by_region_and_department(self):
+        table = self.sn.parse(SENEGAL_ROWS)
+        self.assertEqual(sorted(table["regions"]), ["dakar", "kolda"])
+        self.assertEqual(table["departments"]["medinayorofoulah"]["total"], 50)
+        self.assertEqual(table["departments"]["kolda"]["region"], "kolda")
+
+    def test_departments_that_do_not_make_their_region_stop_the_run(self):
+        rows = [r for r in SENEGAL_ROWS if "KEUR MASSAR" not in str(r[0])]
+        with self.assertRaises(SystemExit):
+            self.sn.parse(rows)
+
+    def test_a_sheet_not_headed_2023_stops_the_run(self):
+        rows = [list(r) for r in SENEGAL_ROWS]
+        rows[0][1] = "2024"
+        with self.assertRaises(SystemExit):
+            self.sn.parse(rows)
+
+    def test_binding_leaves_the_departments_keur_massar_was_made_from(self):
+        table = self.sn.parse(SENEGAL_ROWS)
+        admin1 = [{"id": "D", "name": "Dakar"}, {"id": "K", "name": "Kolda"}]
+        admin2 = [{"id": "d", "name": "Dakar", "parent": "D"},
+                  {"id": "p", "name": "Pikine", "parent": "D"},
+                  {"id": "m", "name": "Medina Yoroufoula", "parent": "K"},
+                  {"id": "k", "name": "Kolda", "parent": "K"}]
+        records, _ = self.sn.build(table, admin1, admin2)
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["D"]["population"]["value"], 100)
+        self.assertEqual(by["m"]["population"]["value"], 50)
+        self.assertEqual(by["m"]["sex_ratio"]["value"], round(1000 * 20 / 30))
+        self.assertNotIn("p", by)
+
+
 if __name__ == "__main__":
     unittest.main()
