@@ -1,21 +1,17 @@
-Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
-  1,759,157 bytes
-  Religion: 851 rows, 6 groups, by sex, no published denominator
-    6 groups reconcile by sex across 5070 cells
-    743 rows skipped: another level, or no area name
-    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
-    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
-    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
-    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
-  Ethnicity: 108 rows, 93 groups, no published denominator
-    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
-    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
-    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
-    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
-  Language: 108 rows, 91 groups, no published denominator
-    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
-    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
-    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
-    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
-  wrote data/processed/ethiopia_region.json (1586 kB)
-  97 areas: 13 admin1, 84 admin2
+transnistria: 2015 ethnic composition
+  mun bender: 91,197
+  mun tiraspol: 129,367
+  or dnestrovsc: 9,744
+  grigoriopol: 39,795
+  dubasari: 31,159
+  camenca: 20,542
+  ribnita: 69,405
+  slobozia: 83,798
+  the left bank: 383,810 of the republic's 475,007
+transnistria: Moldova 2024, ethnicity by religion and by mother tongue
+  Bender religion (modelled): Orthodox 88.7, Old Believer 2.0, Irreligious 1.9, Atheism 1.8
+  Bender language (modelled): Russian 56.7, Moldovan or Romanian 28.5, Ukrainian 9.1, Bulgarian 2.7
+  Transnistria religion (modelled): Orthodox 89.7, Irreligious 1.6, Atheism 1.5, Baptist 1.4
+  Transnistria language (modelled): Russian 46.1, Moldovan or Romanian 35.0, Ukrainian 14.8, Bulgarian 1.9
+  wrote data/processed/transnistria_2015.json (32 kB)
+wrote 4 records to transnistria_2015.json
