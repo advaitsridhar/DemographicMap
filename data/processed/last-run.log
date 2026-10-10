@@ -1,50 +1,43 @@
-  Tombali: region (91089, 44099, 46990); sectors Catió 26,999, Bedanda 24,293, Quebo 15,372, Komo 8,777, Cacine 15,648
-  Quinara: region (60777, 29854, 30923); sectors Quinara 17,123, Tite 14,862, Empada 17,517, Buba 17,123, Fulacunda 11,275
-  Oio: region (215259, 103194, 112065); sectors Mansaba 43,725, Nhacra 20,639, Mansoa 46,046, Bissorã 56,585, Farim 48,264
-  Biombo: region (93039, 43747, 49292); sectors Safim 17,356, Quinhamel 42,659, Prabis 33,024
-  Bolama: region (32424, 15770, 16654); sectors Uno 6,751, Caravela 4,263, Bubaque 11,204, Bolama 10,206
-  Bafatá: region (200884, 97231, 103653); sectors Bambadinca 31,834, Contuboel 44,048, Xitole 16,928, Gã-mamudo 24,564, Cossé 14,554, Bafatá 68,956
-  Gabú: region (205608, 99591, 106017); sectors Pirada 29,837, Boé 10,878, Sonaco 37,804, Gabú 81,495, Pitche 45,594
-  Cacheu: region (185053, 88132, 96921); sectors Bula 29,557, Canchungo 43,709, Caió 12,696, Bigene 51,412, Cacheu 18,563, São Domingos 29,116
-  Bissau: region (365097, 181208, 183889); sectors Sector-8 25,258, Sector-3 49,198, Sector-7 74,167, Sector-2 25,473, Sector-5 41,929, Sector-1 24,326, Sector-4 56,934, Sector-6 67,812
-    Setor de Catie: 35,776 (catio, komo)
-    Setor de Bedanda: 24,293 (bedanda)
-    Setor de Cacine: 15,648 (cacine)
-    Setor de Quebo: 15,372 (quebo)
-    Setor de Buba: 17,123 (buba)
-    Setor de Empada: 17,517 (empada)
-    Setor de Fulacunda: 11,275 (fulacunda)
-    Setor de Tite: 14,862 (tite)
-    Setor de Bissora: 56,585 (bissora)
-    Setor de Farim: 48,264 (farim)
-    Setor de Mansaba: 43,725 (mansaba)
-    Setor de Mansoa: 46,046 (mansoa)
-    Setor de Nhacra: 20,639 (nhacra)
-    Setor de Quinh: 42,659 (quinhamel)
-    Setor de Safim: 17,356 (safim)
-    Setor de Prabis: 33,024 (prabis)
-    Setor de Bolama: 10,206 (bolama)
-    Setor de Bubaque: 11,204 (bubaque)
-    Setor de Caravela: 4,263 (caravela)
-    Setor de Uno: 6,751 (uno)
-    Setor de Bafata: 68,956 (bafata)
-    Setor de Bambadinca: 31,834 (bambadinca)
-    Setor de Galomaro: 14,554 (cosse)
-    Setor de Gamamundo: 24,564 (gamamudo)
-    Setor de Xitole: 16,928 (xitole)
-    Contuboel: 44,048 (contuboel)
-    Setor de Gabv: 81,495 (gabu)
-    Setor de Madina do Bo˒: 10,878 (boe)
-    Setor de Pirada: 29,837 (pirada)
-    Setor de Pitche: 45,594 (pitche)
-    Setor de Sonaco: 37,804 (sonaco)
-    Setor de Bigene: 51,412 (bigene)
-    Setor de Bula: 29,557 (bula)
-    Setor de Cacheu: 18,563 (cacheu)
-    Setor de Canghungo: 43,709 (canchungo)
-    Setor de Sto Domingos: 29,116 (saodomingos)
-    Caió: 12,696 on neither of its two polygons
-    Bissau Autonomous Sector: 365,097 (sector1, sector2, sector3, sector4, sector5, sector6, sector7, sector8)
-  regions read make 1,449,230
-  9 regions and 39 sector polygons written
-  wrote data/processed/guinea_bissau_census.json (83 kB)
+  31 regions and 195 councils, making 61,741,120
+  Chunya: left out -- Songwe district was made from Chunya in 2016 and is drawn on its own
+  Kahama: left out -- Kahama's councils were redrawn as Kahama, Ushetu and Msalala in 2012-2018
+  Kahama Township Authority: left out -- see Kahama
+  Mlele: left out -- see Mpanda
+  Mpanda: left out -- Katavi's districts were split into Mpanda, Nsimbo, Tanganyika and Mpimbwe
+  Mpanda Urban: left out -- see Mpanda
+  Songwe: left out -- see Chunya
+  against the region's ratio: Iramba 0.68, Buhigwe 0.71, Lindi 0.73, Kigoma Urban 0.76, Kaskazini B 0.80, Momba 0.82, Mafia 0.83, Sumbawanga 0.85, Lushoto 0.85, Chato 0.85, Karagwe 0.86, Bagamoyo 0.86, Bukoba Urban 0.86, Gairo 0.86, Kondoa 0.87, Ukerewe 0.87, Micheweni 0.87, Ileje 0.87, Babati 0.88, Urambo 0.88, Mufindi 0.89, Butiam 0.89, Biharamulo 0.89, Nyang'hwale 0.89, Karatu 0.89, Songea Urban 0.90, Uvinza 0.90, Meatu 0.90, Mbulu 0.90, Mbozi 0.90, Iringa Urban 0.91, Kibaha Urban 0.91, Mpwapwa 0.91, Kwimba 0.91, Kibaha 0.91, Mjini 0.91, Longido 0.91, Uyui 0.92, Newala 0.92, Ludewa 0.92, Bunda 0.92, Serengeti 0.92, Musoma Urban 0.93, Korogwe 0.93, Same 0.93, Monduli 0.93, Wanging'ombe 0.94, Nyasa 0.94, Kishapu 0.94, Singida 0.95, Mbinga 0.95, Kongwa 0.95, Kiteto 0.96, Sengerema 0.96, Kyela 0.96, Sumbawanga Urban 0.96, Chamwino 0.96, Chemba 0.96, Kisarawe 0.96, Chake Chake 0.97, Maswa 0.97, Bahi 0.97, Hai 0.97, Mvomero 0.97, Kaliua 0.97, Temeke 0.97, Kusini 0.97, Kigoma 0.98, Geita 0.98, Siha 0.98, Morogoro Urban 0.98, Nachingwea 0.98, Handeni Mji 0.98, Kilosa 0.99, Mtwara 0.99, Itilima 0.99, Meru 0.99, Mkinga 0.99, Rungwe 0.99, Kilolo 0.99, Handeni 0.99, Misungwi 0.99, Igunga 0.99, Muleba 1.00, Masasi 1.00, Rufiji 1.00, Kilombero 1.00, Kinondoni 1.00, Muheza 1.00, Rombo 1.01, Mbeya 1.01, Kati 1.01, Arusha 1.01, Mwanga 1.01, Masasi Township Authority 1.01, Tandahimba 1.02, Rorya 1.02, Makete 1.02, Hanang 1.02, Liwale 1.02, Busega 1.02, Ilala 1.03, Shinyanga Urban 1.03, Magharibi 1.03, Nzega 1.03, Korogwe Township Authority 1.03, Shinyanga 1.03, Kasulu Township Authority 1.04, Mbeya Urban 1.04, Mkoani 1.04, Moshi 1.04, Nkasi 1.04, Nanyumbu 1.04, Nyamagana 1.04, Moshi Urban 1.04, Tunduru 1.05, Kyerwa 1.05, Morogoro 1.05, Makambako Township Authority 1.05, Bukoba 1.05, Missenyi 1.05, Njombe 1.05, Iringa 1.05, Ikungi 1.06, Namtumbo 1.06, Lindi Urban 1.06, Tabora Urban 1.06, Kilindi 1.07, Arusha Urban 1.07, Njombe Urban 1.07, Manyoni 1.08, Musoma 1.08, Ruangwa 1.08, Mtwara Urban 1.08, Bariadi 1.09, Ngorongoro 1.10, Kibondo 1.12, Magu 1.13, Pangani 1.13, Singida Urban 1.13, Ulanga 1.14, Wete 1.14, Kilwa 1.14, Songea 1.16, Mbarali 1.17, Ilemela 1.18, Kaskazini A 1.19, Kakonko 1.19, Tarime 1.20, Dodoma Urban 1.26, Tanga Urban 1.26, Bukombe 1.26, Mbogwe 1.26, Sikonge 1.27, Babati Urban 1.27, Simanjiro 1.32, Tunduma 1.35, Kalambo 1.35, Ngara 1.35, Mkuranga 1.37, Kasulu 1.38, Mkalama 1.48, Mafinga Township Authority 1.57
+  ['Mafinga Township Authority', 'Mufindi']: drawn from one district, at 0.89 and 1.57 of their region's ratio; not written
+  ['Babati', 'Babati Urban']: drawn from one district, at 0.88 and 1.27 of their region's ratio; not written
+  ['Mbozi', 'Momba', 'Tunduma']: drawn from one district, at 0.82 and 1.35 of their region's ratio; not written
+  ['Lindi', 'Lindi Urban']: drawn from one district, at 0.73 and 1.06 of their region's ratio; not written
+  ['Iramba', 'Mkalama']: drawn from one district, at 0.68 and 1.48 of their region's ratio; not written
+  ['Buhigwe', 'Kasulu', 'Kasulu Township Authority']: drawn from one district, at 0.71 and 1.38 of their region's ratio; not written
+  ['Kalambo', 'Sumbawanga', 'Sumbawanga Urban']: drawn from one district, at 0.85 and 1.35 of their region's ratio; not written
+  ['Kaskazini A', 'Kaskazini B']: drawn from one district, at 0.80 and 1.19 of their region's ratio; not written
+  Babati: 375,200 against OCHA's 435066, 0.88 of its region's ratio; not written
+  Babati Urban: 129,572 against OCHA's 103789, 1.27 of its region's ratio; not written
+  Buhigwe: 240,005 against OCHA's 337504, 0.71 of its region's ratio; not written
+  Iramba: 328,912 against OCHA's 433723, 0.68 of its region's ratio; not written
+  Kalambo: 316,783 against OCHA's 215192, 1.35 of its region's ratio; not written
+  Kaskazini A: 157,369 against OCHA's 128663, 1.19 of its region's ratio; not written
+  Kaskazini B: 99,921 against OCHA's 121062, 0.80 of its region's ratio; not written
+  Kasulu: 537,767 against OCHA's 391170, 1.38 of its region's ratio; not written
+  Kasulu Township Authority: 238,321 against OCHA's 230686, 1.04 of its region's ratio; not written
+  Lindi: 166,493 against OCHA's 189871, 0.73 of its region's ratio; not written
+  Lindi Urban: 174,126 against OCHA's 137397, 1.06 of its region's ratio; not written
+  Mafinga Township Authority: 122,329 against OCHA's 70282, 1.57 of its region's ratio; not written
+  Mbozi: 510,599 against OCHA's 572168, 0.90 of its region's ratio; not written
+  Mkalama: 255,514 against OCHA's 156340, 1.48 of its region's ratio; not written
+  Momba: 259,781 against OCHA's 320763, 0.82 of its region's ratio; not written
+  Mufindi: 288,996 against OCHA's 293544, 0.89 of its region's ratio; not written
+  Sumbawanga: 494,330 against OCHA's 532432, 0.85 of its region's ratio; not written
+  Sumbawanga Urban: 303,986 against OCHA's 290863, 0.96 of its region's ratio; not written
+  Tunduma: 219,309 against OCHA's 164868, 1.35 of its region's ratio; not written
+  councils not placed: ['Chunya District Council', 'Kahama Municipal Council', 'Mlele District Council', 'Mpanda Municipal Council', 'Mpimbwe District Council', 'Msalala District Council', 'Nsimbo District Council', 'Songwe District Council', 'Tanganyika District Council', 'Ushetu District Council']
+  Dar es Salaam: 5,383,728
+  Ilala: 1,649,912
+  Kinondoni: 2,069,240
+  Temeke: 1,664,576
+  30 of 30 regions and 144 of 170 districts written
+  wrote data/processed/tanzania_census.json (286 kB)
