@@ -143,14 +143,17 @@ def gap_sentence(summed: dict[str, Any], own: float, own_year: int | None,
     sources = sorted(s for s in summed["sources"] if s)
     years = sorted(y for y in summed["years"] if y is not None)
     undated = None in summed["years"]
-    if len(sources) == 1:
-        what = short_source(sources[0])
+    # Named as a reader knows them: twenty-two Wikipedia articles are one
+    # source here, not twenty-two.
+    named = sorted({short_source(s) for s in sources})
+    if len(named) == 1:
+        what = named[0]
     else:
-        what = f"{len(sources)} sources"
-    if len(years) == 1 and not undated:
-        when = f", {years[0]}"
+        what = f"{len(named)} sources"
+    if len(years) == 1:
+        when = f", {years[0]}" + (" and undated" if undated else "")
     elif years:
-        when = f", {years[0]} to {years[-1]}"
+        when = f", {years[0]} to {years[-1]}" + (" and undated" if undated else "")
     else:
         when = ", undated"
     pct = 100 * (total - own) / own
@@ -166,8 +169,13 @@ def gap_sentence(summed: dict[str, Any], own: float, own_year: int | None,
                  f"{'before' if years[0] < own_year else 'after'} this one")
     elif (len(years) == 1 and not undated and own_year == years[0] and len(sources) == 1
           and own_source is not None and own_source != sources[0]):
-        said += ("; the two are different sources' figures for the same year, which "
-                 "place people differently")
+        said += "; the two are different sources' figures for the same year"
+        # Inside a country, two estimates of one year that differ have put the
+        # same people in different places. Two national totals that differ
+        # have counted different people -- residents only, or everyone -- and
+        # the figures alone cannot say which.
+        if level == "divisions":
+            said += ", which place people differently"
     return said + "."
 
 

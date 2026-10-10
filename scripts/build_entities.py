@@ -4677,8 +4677,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
             parent["population"] = {"value": total, "year": year,
                                     "source": f"summed from {summed['n']} second-level "
                                               f"divisions"}
+            every = "both" if summed["n"] == 2 else f"all {summed['n']}"
             parent["population_note"] = (
-                f"The sum of all {summed['n']} divisions drawn inside it, which all carry "
+                f"The sum of {every} divisions drawn inside it, which all carry "
                 f"figures for {year} from {check_rollups.short_source(source)}. It replaces "
                 f"{own:,.0f}"
                 + (f" for {own_year}, an older figure from {was}." if own_year else

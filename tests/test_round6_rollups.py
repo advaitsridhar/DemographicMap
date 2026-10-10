@@ -307,7 +307,7 @@ class RestateEncyclopaediaParents(unittest.TestCase):
         self.assertEqual(parent["population"], {"value": 1100, "year": 2022,
                                                 "source": "summed from 2 second-level divisions"})
         note = parent["population_note"]
-        self.assertIn("all 2 divisions", note)
+        self.assertIn("The sum of both divisions drawn inside it", note)
         self.assertIn("OCHA's common operational dataset", note)
         self.assertIn("It replaces 800 for 2011, an older figure from Wikidata.", note)
         self.assertEqual([s["field"] for s in parent["sources"]],
@@ -405,6 +405,24 @@ class NotePopulationGaps(unittest.TestCase):
         be.note_population_gaps([country], {"KEN": regions}, {})
         self.assertIn("Its 2 first-level divisions drawn on this map add up to 47,213,282 "
                       "(KNBS, 2019), 15% below this figure", country["population_note"])
+
+    def test_two_national_totals_of_one_year_are_not_said_to_place_people(self):
+        # Singapore: the regions count residents, the country everyone.
+        country = {"id": "SGP", "name": "Singapore",
+                   "population": {"value": 6_100_000, "year": 2025, "source": "CIA"}}
+        regions = [unit("R1", "One", 2_000_000, 2025, "Singapore Department of Statistics",
+                        parent="SGP"),
+                   unit("R2", "Two", 2_204_520, 2025, "Singapore Department of Statistics",
+                        parent="SGP")]
+        be.note_population_gaps([country], {"SGP": regions}, {})
+        note = country["population_note"]
+        self.assertIn("the two are different sources' figures for the same year.", note)
+        self.assertNotIn("place people differently", note)
+        parent = unit("P", "Lagos", 11_000_000, 2020, "Wikidata (CC0)")
+        kids = [unit("K", "Kid", 14_879_754, 2020, "OCHA", parent="P"),
+                unit("K2", "Kid 2", 1, 2020, "OCHA", parent="P")]
+        be.note_population_gaps([], {"NGA": [parent]}, {"NGA": kids})
+        self.assertIn("which place people differently", parent["population_note"])
 
     def test_a_partial_level_is_not_compared(self):
         parent = unit("P", "Tongatapu", 1000, 2021)
@@ -594,6 +612,20 @@ class CheckRollups(unittest.TestCase):
         summed = cr.complete_sum([unit("K", "Kid", 52_871, 2020, "X")])
         sentence = cr.gap_sentence(summed, 1_000, 2020)
         self.assertTrue(cr.explained([sentence], 1_000, summed["total"]))
+
+    def test_sources_are_named_as_a_reader_knows_them_and_undated_ones_are_said(self):
+        # Madagascar's regions: twenty-two Wikipedia articles, one year.
+        kids = [unit(f"K{i}", f"Kid {i}", 100, 2018, f"English Wikipedia, Kid {i} (infobox)")
+                for i in range(22)]
+        sentence = cr.gap_sentence(cr.complete_sum(kids), 3_000, 2025)
+        self.assertIn("(Wikipedia, 2018)", sentence)
+        self.assertNotIn("22 sources", sentence)
+        # Antigua's parishes: one census year, and one figure with no year.
+        kids = [unit("A", "A", 500, 2011, "Statistics Division"),
+                unit("B", "B", 500, None, "Wikidata (CC0)")]
+        sentence = cr.gap_sentence(cr.complete_sum(kids), 2_000, 2024)
+        self.assertIn("(2 sources, 2011 and undated)", sentence)
+        self.assertNotIn("2011 to 2011", sentence)
 
     def test_site_data_has_no_unexplained_gap(self):
         build = SITE / "build.json"
