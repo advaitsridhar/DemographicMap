@@ -1,18 +1,4 @@
-romania_census: RPL 2021, definitive results, through the Internet Archive
-  Tabel-1.03_1.3.1-si-1.03.2.xls: 769,536 bytes, Archive capture 20230601
-  age: 19,053,815 residents, 42 counties, 3,180 UATs; 18 columns
-  Tabel-2.02.1-si-Tabel-2.02.2.xlsx: 408,035 bytes, Archive capture 20230702
-  ethnicity: 19,053,815 residents, 42 counties, 3,180 UATs; 23 columns; the most any row's stars hide is 31.5% of it
-  Tabel-2.03.1-si-Tabel-2.03.2.xlsx: 407,822 bytes, Archive capture 20230701
-  language: 19,053,815 residents, 42 counties, 3,180 UATs; 23 columns; the most any row's stars hide is 13.6% of it
-  Tabel-2.04.1-si-Tabel-2.04.2.xlsx: 463,240 bytes, Archive capture 20230701
-  religion: 19,053,815 residents, 42 counties, 3,180 UATs; 23 columns; the most any row's stars hide is 8.9% of it
-  Tabel-1.22.xlsx: 810,548 bytes, Archive capture 20230601
-  Tabel-1.04.xls: 75,264 bytes, Archive capture 20230606
-  country median: 43.5 from five-year groups, 43.6 from single years
-  POIENARII BURCHII (dambovita): a piece of Prahova's UAT, written with the reason
-  3,187 UATs bound; 0 UATs unbound: []
-  0 polygons with no UAT: []
-  0 UATs drawn as several polygons (figures on the largest):
-  wrote data/processed/romania_census.json (21041 kB)
-  wrote romania_census.json: 3229 records
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+usage: r6_probe.py [-h] [--grep GREP] [--pages PAGES] [--aia] [--limit LIMIT]
+                   {pdf,page,xlsx} url [url ...]
+r6_probe.py: error: argument --grep: expected one argument
