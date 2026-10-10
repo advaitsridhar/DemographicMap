@@ -481,5 +481,76 @@ class ZambiaCensusTest(unittest.TestCase):
             self.assertEqual(self.zc.key(label), self.zc.key(census), label)
 
 
+class GuineaBissauCensusTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import guinea_bissau_census as gb
+        self.gb = gb
+
+    def test_a_line_is_the_one_split_its_digits_and_share_allow(self):
+        split = self.gb.split_line
+        self.assertEqual(split("Região de Tombali 91 089 44 099 46 990 51,6"),
+                         ("Região de Tombali", 91089, 44099, 46990))
+        self.assertEqual(split("Bedanda - Urbano 665 302 3 63 54,6"),
+                         ("Bedanda - Urbano", 665, 302, 363))
+        self.assertEqual(split("Região de Quinara 60 777 29 854 30 923 51"),
+                         ("Região de Quinara", 60777, 29854, 30923))
+        self.assertEqual(split("68956 33431 35525 51,5"), ("", 68956, 33431, 35525))
+        # A locality whose name ends in a number cannot be told apart: not read.
+        self.assertIsNone(split("Sintchã Boi 1 43 19 24 55,8"))
+
+    def test_sectors_from_their_own_lines_or_their_urban_and_rural_parts(self):
+        table = self.gb.parse([
+            "Região de Bafatá 300 140 160 53,3",
+            "68956 33431 35525 51,5",                      # Bafatá's own line, unnamed
+            "Bafatá - Urbano 100 50 50 50,0",
+            "Bafatá - Rural 100 40 60 60,0",
+            "Sector de Cossé 100 50 50 50,0",
+            "Cossé - Rural 100 50 50 50,0",
+            "Galomaro 10 5 5 50,0",
+        ], "Bafatá")
+        self.assertEqual(table["region"], (300, 140, 160))
+        self.assertEqual(table["sectors"]["bafata"]["total"], 200)
+        self.assertEqual(table["sectors"]["cosse"]["women"], 50)
+        self.assertIsNone(self.gb.check(table, "Bafatá", {"bafata", "cosse"}))
+        self.assertIn("make 200", self.gb.check(table, "Bafatá", {"bafata"}))
+
+    def test_a_sector_whose_parts_do_not_make_its_line_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            self.gb.parse(["Sector de Buba 100 50 50 50,0", "Buba - Rural 90 45 45 50,0"],
+                          "Quinara")
+
+    def test_catio_and_komo_pool_and_caio_says_why(self):
+        tables = {
+            "Tombali": self.gb.parse([
+                "Região de Tombali 50 24 26 52,0", "Sector de Catió 20 10 10 50,0",
+                "Sector de Komo 10 4 6 60,0", "Sector de Bedanda 10 5 5 50,0",
+                "Sector de Cacine 5 2 3 60,0", "Sector de Quebo 5 3 2 40,0"], "Tombali"),
+            "Cacheu": self.gb.parse([
+                "REGIÃO DE CACHEU 60 30 30 50,0", "Bigene - Rural 10 5 5 50,0",
+                "Bula - Rural 10 5 5 50,0", "Cacheu - Rural 10 5 5 50,0",
+                "Caió - Rural 10 5 5 50,0", "Canchungo - Rural 10 5 5 50,0",
+                "São Domingos - Rural 10 5 5 50,0"], "Cacheu"),
+        }
+        spec = self.gb.REGIONS
+        admin1 = [{"id": spec["Tombali"]["polygon"], "name": "Tombali"},
+                  {"id": spec["Cacheu"]["polygon"], "name": "Cacheu"}]
+        admin2 = []
+        for region in ("Tombali", "Cacheu"):
+            for sid in set(spec[region]["sectors"].values()) - {None}:
+                admin2.append({"id": sid, "name": sid, "parent": spec[region]["polygon"]})
+        for sid in self.gb.CAIO:
+            admin2.append({"id": sid, "name": sid, "parent": spec["Cacheu"]["polygon"]})
+        records, report = self.gb.build(tables, admin1, admin2)
+        by = {r["shape_id"]: r for r in records}
+        catie = by["13655514B24413703823033"]
+        self.assertEqual(catie["population"]["value"], 30)
+        self.assertIn("Catió and Komo", catie["population_note"])
+        for sid in self.gb.CAIO:
+            self.assertNotIn("value", by[sid]["population"])
+            self.assertIn("Caió sector whole", by[sid]["population"]["note"])
+        self.assertEqual(by[spec["Tombali"]["polygon"]]["population"]["value"], 50)
+        self.assertNotIn("Bafatá: left out", " ".join(report))
+
+
 if __name__ == "__main__":
     unittest.main()
