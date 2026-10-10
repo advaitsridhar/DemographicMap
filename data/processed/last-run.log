@@ -1,24 +1,21 @@
-page: https://en.wikipedia.org/w/index.php?title=Yamoussoukro&action=raw
-  19,907 bytes
-  16 distinct match(es) for '(?:population_[a-z_]{2,20}.{0,120}|area_total_km2.{0,40}|Municipality.of.Tarrafal]].{0,200}|Population.{0,60}Census.{0,60})'
-    area_total_km2     = 2075
-    population_as_of   = 14 Dec. 2021 census
-    population_blank1  = 279977
-    population_blank1_title = City
-    population_density_blank1_km2 = auto
-    population_density_blank1_sq_mi = 
-    population_density_km2 = auto
-    population_density_metro_km2 = auto
-    population_density_metro_sq_mi = 
-    population_density_sq_mi = 
-    population_footnotes = <ref name=census_2021>{{cite web |url=https://www.ins.ci/RGP2021/RGPH2021-RESULTATS%20GLOBAUX_VF.pdf |title=RGPH 2021
-    population_metro   = 
-    population_note    = 
-    population_rank=[[List_of_cities_in_Ivory_Coast|3rd]]
-    population_total   = 422072
-    population_urban   = 361893
-page: https://en.wikipedia.org/w/index.php?title=Administrative_divisions_of_Cape_Verde&action=raw
-  10,479 bytes
-  2 distinct match(es) for '(?:population_[a-z_]{2,20}.{0,120}|area_total_km2.{0,40}|Municipality.of.Tarrafal]].{0,200}|Population.{0,60}Census.{0,60})'
-    Municipality of Tarrafal]] | [[Santiago, Cape Verde|Santiago]] | 120.8 | 18,565 | 16,620 | 137.58 | [[Santo Amaro Abade]]
-    Population<br/>(2010 census)<ref name=resumo/> | Population<br/>(2021 Census)<ref>[http://ine.cv/publicacoes/anuario-estatistico-cabo-ve
+Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
+  1,759,157 bytes
+  Religion: 851 rows, 6 groups, by sex, no published denominator
+    6 groups reconcile by sex across 5070 cells
+    743 rows skipped: another level, or no area name
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Ethnicity: 108 rows, 93 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Language: 108 rows, 91 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  wrote data/processed/ethiopia_region.json (1586 kB)
+  97 areas: 13 admin1, 84 admin2
