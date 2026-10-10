@@ -1,41 +1,37 @@
-https://www.instat.gov.al/media/13667/tab8.xlsx: 12,780 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
-  sheet 'Table 1 - Cross-tabular summary'
-    r1: Tab. 8 Popullsia banuese e femrave 15 vjeç e lart sipas grupmoshës dhe indikatorëve të lidhur me lindshmërinë
-    r2: Resident female population aged 15 years and over by age group and fertility-related indicators
-    r3: 
-    r4: Grupmosha Age group | Statusi i nënës Motherhood status |  |  | Fëmijë të lindur gjallë 
-Live-born children | Fëmijë ende gjallë 
-Children still alive
-    r5: Gjithsej Total | Kanë lindur 
-Gave birth | Nuk kanë lindur 
-Did not give birth
-    r6: Gjithsej Total | 1031981 | 771837 | 260144 | 2221411 | 2136747
-https://www.instat.gov.al/media/13666/tab9.xlsx: 12,937 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
-  sheet 'Table 1 - Cross-tabular summary'
-    r1: Tab. 9 Popullsia banuese e femrave 15 vjec e lart, që kanë lindur ndonjëherë fëmijë të gjallë sipas grupmoshës dhe numrit të fëmijëve të lindur gjallë
-    r2: Resident female population aged 15 years and over ever having children born-alive by age group and number of children ever-born alive
-    r3: 
-    r4: Grupmosha Age group | Gratë sipas numrit të fëmijëve të lindur gjallë Women by number of children ever-born alive |  |  |  |  | Numri gjithsej i fëmijëve të lindur gjallë 
-Total number of children eve
-    r5: Gjithsej Total | 1 | 2 | 3 | 4+
-    r6: Gjithsej Total | 771837 | 92610 | 303687 | 194306 | 84900 | 2221411
-https://www.instat.gov.al/media/13668/tab6.xlsx: 17,846 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
-  sheet 'Table 1 - Cross-tabular summary'
-    r1: Tab. 6 Popullsia banuese sipas gjinisë, grupmoshës dhe qarqeve
-    r2: Resident population by sex, age group and prefecture
-    r3: 
-    r4: Gjinia dhe grupmosha 
-Sex and age group |  | Qarku Prefecture
-    r5: Gjithsej Total | Berat | Dibër | Durrës | Elbasan | Fier | Gjirokastër | Korçë | Kukës | Lezhë | Shkodër | Tiranë | Vlorë
-    r6: Gjithsej Total | Gjithsej Total | 2402113 | 140956 | 107178 | 226863 | 232580 | 240377 | 60013 | 173091 | 61998 | 99384 | 154479 | 758513 | 146681
-    r25: Meshkuj Male | Gjithsej Total | 1190448 | 69842 | 54051 | 113856 | 116575 | 120780 | 30233 | 87295 | 31121 | 49665 | 76392 | 367428 | 73210
-    r44: Femra Female | Gjithsej Total | 1211665 | 71114 | 53127 | 113007 | 116005 | 119597 | 29780 | 85796 | 30877 | 49719 | 78087 | 391085 | 73471
-https://www.instat.gov.al/media/13664/tab10.xlsx: 13,395 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
-  sheet 'Table 1 - Cross-tabular summary'
-    r1: Tab. 10 Popullsia banuese sipas grupmoshës, vendlindjes dhe gjinisë
-    r2: Resident population by age group, country of birth and sex
-    r3: 
-    r4: Grupmosha  Age group | Vendlindja dhe gjinia Country of birth and sex
-    r5: Gjithsej Total |  |  | Shqipëri Albania |  |  | Shtet tjetër Other country
-    r6: Gjithsej Total | Meshkuj Male | Femra Female | Gjithsej Total | Meshkuj Male | Femra Female | Gjithsej Total | Meshkuj Male | Femra Female
-    r7: Gjithsej Total | 2402113 | 1190448 | 1211665 | 2361310 | 1169221 | 1192089 | 40803 | 21227 | 19576
+switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 315, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 308, in main
+    records = build(args.year)
+              ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 109, in build
+    meta, code = variables()
+                 ^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 65, in variables
+    meta = {v["code"]: v for v in http_json(TABLE)["variables"]}
+                                  ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 327, in http_json
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 429: 
