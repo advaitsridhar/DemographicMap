@@ -57680,7 +57680,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 11060148,
+      "value": 8070032,
       "year": 2011,
       "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
     },
@@ -57688,7 +57688,7 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 886,
+      "value": 868,
       "unit": "females_per_1000_males",
       "year": 2011,
       "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
@@ -57696,43 +57696,43 @@
     "religion": [
       {
         "group": "Hindu",
-        "pct": 78.8,
-        "count": 8716055
+        "pct": 75.8,
+        "count": 6113090
       },
       {
         "group": "Muslim",
-        "pct": 12.3,
-        "count": 1355630
+        "pct": 14.7,
+        "count": 1183445
       },
       {
         "group": "Buddhist",
-        "pct": 4.1,
-        "count": 449617
+        "pct": 5.0,
+        "count": 402961
       },
       {
         "group": "Christian",
-        "pct": 2.5,
-        "count": 280700
+        "pct": 2.0,
+        "count": 164357
       },
       {
         "group": "Jain",
-        "pct": 1.6,
-        "count": 172052
+        "pct": 1.7,
+        "count": 141128
       },
       {
         "group": "Sikh",
         "pct": 0.4,
-        "count": 39149
+        "count": 35242
       },
       {
         "group": "Not stated",
         "pct": 0.3,
-        "count": 37083
+        "count": 23190
       },
       {
         "group": "Other religions",
         "pct": 0.1,
-        "count": 9862
+        "count": 6619
       }
     ],
     "language": {
@@ -57745,19 +57745,20 @@
     },
     "sources": [
       {
-        "field": "population/religion/scheduled groups",
-        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "field": "population/sex_ratio/religion",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner), sub-district rows",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11382/download/14495",
         "year": 2011,
         "license": "Government of India open data (GODL-India)",
-        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+        "note": "C-01: Population by religious community, Maharashtra - 2011"
       }
     ],
     "codes": {
       "census2011_district": "517",
-      "state_name": "MAHARASHTRA"
+      "state_name": "MAHARASHTRA",
+      "census2011_tehsils": "Ambarnath,Bhiwandi,Kalyan,Murbad,Shahapur,Thane,Ulhasnagar"
     },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. This figure is for Thane as the 2011 census measured it, before Palghar (2014) was carved out of it. The shape drawn here keeps about 44% of the ground that row counted, so most of the people in it now live outside this boundary. The census never measured the parts separately, so the shares are the undivided district's and the counts are its whole population -- read the percentages as describing this area and the head counts as covering more of it than the map shows.",
+    "religion_note": "Census of India 2011 table C-01, summed over the seven tehsils (sub-districts) that make up Thane district as it has been since Palghar was carved out of it in 2014: Ambarnath, Bhiwandi, Kalyan, Murbad, Shahapur, Thane and Ulhasnagar. The census counted each tehsil on its own row of the table, so this is a measured count for this ground, not an estimate.",
     "religion_year": 2011,
     "scheduled_groups": [
       {
@@ -57774,10 +57775,9 @@
     "scheduled_groups_year": 2011,
     "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap. This figure is for Thane as the 2011 census measured it, before Palghar (2014) was carved out of it. The shape drawn here keeps about 44% of the ground that row counted, so most of the people in it now live outside this boundary. The census never measured the parts separately, so the shares are the undivided district's and the counts are its whole population -- read the percentages as describing this area and the head counts as covering more of it than the map shows.",
     "parent_name": "Maharashtra",
-    "population_note": "This figure is for Thane as the 2011 census measured it, before Palghar (2014) was carved out of it. The shape drawn here keeps about 44% of the ground that row counted, so most of the people in it now live outside this boundary. The census never measured the parts separately, so the shares are the undivided district's and the counts are its whole population -- read the percentages as describing this area and the head counts as covering more of it than the map shows.",
-    "sex_ratio_note": "This figure is for Thane as the 2011 census measured it, before Palghar (2014) was carved out of it. The shape drawn here keeps about 44% of the ground that row counted, so most of the people in it now live outside this boundary. The census never measured the parts separately, so the shares are the undivided district's and the counts are its whole population -- read the percentages as describing this area and the head counts as covering more of it than the map shows.",
-    "language_note": "This figure is for Thane as the 2011 census measured it, before Palghar (2014) was carved out of it. The shape drawn here keeps about 44% of the ground that row counted, so most of the people in it now live outside this boundary. The census never measured the parts separately, so the shares are the undivided district's and the counts are its whole population -- read the percentages as describing this area and the head counts as covering more of it than the map shows.",
-    "lost_territory_pct": 56
+    "population_note": "Census of India 2011 table C-01, summed over the seven tehsils (sub-districts) that make up Thane district as it has been since Palghar was carved out of it in 2014: Ambarnath, Bhiwandi, Kalyan, Murbad, Shahapur, Thane and Ulhasnagar. The census counted each tehsil on its own row of the table, so this is a measured count for this ground, not an estimate.",
+    "sex_ratio_note": "Census of India 2011 table C-01, summed over the seven tehsils (sub-districts) that make up Thane district as it has been since Palghar was carved out of it in 2014: Ambarnath, Bhiwandi, Kalyan, Murbad, Shahapur, Thane and Ulhasnagar. The census counted each tehsil on its own row of the table, so this is a measured count for this ground, not an estimate.",
+    "language_note": "This figure is for Thane as the 2011 census measured it, before Palghar (2014) was carved out of it. The shape drawn here keeps about 44% of the ground that row counted, so most of the people in it now live outside this boundary. The census never measured the parts separately, so the shares are the undivided district's and the counts are its whole population -- read the percentages as describing this area and the head counts as covering more of it than the map shows."
   },
   {
     "id": "IND-D518",
@@ -74559,15 +74559,15 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Estimated, not measured. Palghar was created in 2014 out of Thane and has never been enumerated separately -- India's last census was 2011 and the next was postponed. The shares shown are Thane's own 2011 shares, which assumes this district resembles the ground it was cut out of. No population or head count is shown: the census counted those people as part of Thane, where the count is carried, and repeating it here would count them twice.",
-      "displaces_before": 2026
+      "value": 2990116,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 886,
+      "value": 934,
       "unit": "females_per_1000_males",
       "year": 2011,
       "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
@@ -74575,35 +74575,43 @@
     "religion": [
       {
         "group": "Hindu",
-        "pct": 78.8
+        "pct": 87.1,
+        "count": 2602965
       },
       {
         "group": "Muslim",
-        "pct": 12.3
-      },
-      {
-        "group": "Buddhist",
-        "pct": 4.1
+        "pct": 5.8,
+        "count": 172185
       },
       {
         "group": "Christian",
-        "pct": 2.5
+        "pct": 3.9,
+        "count": 116343
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.6,
+        "count": 46656
       },
       {
         "group": "Jain",
-        "pct": 1.6
-      },
-      {
-        "group": "Sikh",
-        "pct": 0.4
+        "pct": 1.0,
+        "count": 30924
       },
       {
         "group": "Not stated",
-        "pct": 0.3
+        "pct": 0.5,
+        "count": 13893
       },
       {
         "group": "Other religions",
-        "pct": 0.1
+        "pct": 0.1,
+        "count": 3243
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 3907
       }
     ],
     "language": {
@@ -74616,27 +74624,27 @@
     },
     "sources": [
       {
-        "field": "note",
-        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog"
+        "field": "population/sex_ratio/religion",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner), sub-district rows",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/11382/download/14495",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "C-01: Population by religious community, Maharashtra - 2011"
       }
     ],
-    "parent_name": "Maharashtra",
-    "religion_note": "Estimated, not measured. Palghar was created in 2014 out of Thane and has never been enumerated separately -- India's last census was 2011 and the next was postponed. The shares shown are Thane's own 2011 shares, which assumes this district resembles the ground it was cut out of. No population or head count is shown: the census counted those people as part of Thane, where the count is carried, and repeating it here would count them twice.",
+    "codes": {
+      "census2011_tehsils": "Talasari,Dahanu,Vikramgad,Jawhar,Mokhada,Vada,Palghar,Vasai"
+    },
+    "religion_note": "Census of India 2011 table C-01, summed over the eight tehsils (sub-districts) that make up Palghar district, created in 2014 out of Thane: Talasari, Dahanu, Vikramgad, Jawhar, Mokhada, Vada, Palghar and Vasai. The census counted each tehsil on its own row of the table, so this is a measured count for this ground, not an estimate.",
     "religion_year": 2011,
-    "religion_estimated": true,
-    "scheduled_groups": [
-      {
-        "group": "Scheduled Tribe",
-        "pct": 13.9
-      },
-      {
-        "group": "Scheduled Caste",
-        "pct": 6.6
-      }
-    ],
-    "scheduled_groups_note": "Estimated, not measured. Palghar was created in 2014 out of Thane and has never been enumerated separately -- India's last census was 2011 and the next was postponed. The shares shown are Thane's own 2011 shares, which assumes this district resembles the ground it was cut out of. No population or head count is shown: the census counted those people as part of Thane, where the count is carried, and repeating it here would count them twice.",
-    "sex_ratio_note": "Estimated, not measured. Palghar was created in 2014 out of Thane and has never been enumerated separately -- India's last census was 2011 and the next was postponed. The shares shown are Thane's own 2011 shares, which assumes this district resembles the ground it was cut out of. No population or head count is shown: the census counted those people as part of Thane, where the count is carried, and repeating it here would count them twice."
+    "scheduled_groups": {
+      "status": "not_available",
+      "note": "Scheduled Caste and Scheduled Tribe counts are published by sub-district in the primary census abstract, which is not read here; table C-01, which gives this district's population and religion, does not carry them."
+    },
+    "parent_name": "Maharashtra",
+    "aliases": null,
+    "population_note": "Census of India 2011 table C-01, summed over the eight tehsils (sub-districts) that make up Palghar district, created in 2014 out of Thane: Talasari, Dahanu, Vikramgad, Jawhar, Mokhada, Vada, Palghar and Vasai. The census counted each tehsil on its own row of the table, so this is a measured count for this ground, not an estimate.",
+    "sex_ratio_note": "Census of India 2011 table C-01, summed over the eight tehsils (sub-districts) that make up Palghar district, created in 2014 out of Thane: Talasari, Dahanu, Vikramgad, Jawhar, Mokhada, Vada, Palghar and Vasai. The census counted each tehsil on its own row of the table, so this is a measured count for this ground, not an estimate."
   },
   {
     "id": "IND-NEW-Manipur-Jiribam",
@@ -79800,7 +79808,7 @@
     },
     "ethnicity": {
       "status": "not_collected",
-      "note": "India does not collect ethnicity."
+      "note": "This is not a district. geoBoundaries carries one second-level feature in Jammu and Kashmir under this name, made of 268 disjoint fragments totalling about 390 square kilometres -- the slivers left between the district polygons where their edges do not meet. All 22 districts the 2011 census enumerated in the state are drawn separately and do carry figures. India does not collect ethnicity in any case."
     },
     "sources": [
       {
