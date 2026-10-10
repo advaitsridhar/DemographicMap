@@ -2737,11 +2737,22 @@ class RollUpFromChildren(unittest.TestCase):
         self.assertEqual(parent["religion"][0]["pct"], 100.0)
 
     def test_not_collected_is_a_statement_and_stands(self):
+        # It stands unless every division carries a measured composition;
+        # then the divisions are summed and the statement opens the note
+        # (Greece's first level over its surveyed regions).
+        parent = self.parent()
+        parent["religion"] = {"status": "not_collected",
+                              "note": "France records no religion."}
+        kids = self.kids()
+        kids[0]["religion"] = {"status": "not_collected", "note": "Not asked."}
+        self.assertIsNone(be.roll_up_field(parent, kids, "religion"))
+        self.assertEqual(parent["religion"]["status"], "not_collected")
         parent = self.parent()
         parent["religion"] = {"status": "not_collected",
                               "note": "France records no religion."}
         self.assertIsNone(be.roll_up_field(parent, self.kids(), "religion"))
-        self.assertEqual(parent["religion"]["status"], "not_collected")
+        self.assertIsInstance(parent["religion"], list)
+        self.assertTrue(parent["religion_note"].startswith("France records no religion. "))
 
     def test_the_denominator_comes_from_the_shares_not_the_population(self):
         # New Zealand's ethnicity responses outnumber its people, and Mexico

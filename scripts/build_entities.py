@@ -41,6 +41,7 @@ from typing import Any, Callable
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import canonical_groups
+import check_rollups
 import group_tree
 from fetch_geonames import SPANS as GEONAMES_SPANS  # noqa: E402
 from common import (  # noqa: E402
@@ -3628,6 +3629,20 @@ BASIS_SAID = {
         "states, an estimate rather than a count, and so are these."),
 }
 
+
+def basis_sentence(basis: str, field: str) -> str:
+    """What a sum's divisions count, said as a sentence a reader can follow.
+
+    A survey's basis names itself ("survey estimate: self-identification,
+    residents aged 15 and over in private households"), and "every division
+    counts survey estimate: ... rather than religion" was not English.
+    """
+    if basis in BASIS_SAID:
+        return BASIS_SAID[basis]
+    if basis.startswith("survey estimate"):
+        return f"Every division's figure is a {basis}, and so is this one."
+    return f"Every division counts {basis} rather than {field}, so this does too."
+
 # How much the population gate widens per year between the two figures' dates,
 # and the most it will ever widen by. A census and an estimate of the same
 # territory taken years apart are the same people counted at different times,
@@ -3874,8 +3889,21 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     current = parent.get(field)
     if isinstance(current, list) and not over_published:
         return None                                   # already has a real value
+    # A policy statement, not a gap: it stands -- unless every division drawn
+    # inside the unit carries a measured composition, which is then summed
+    # like any other and the statement opens its note. Greece's census has not
+    # asked religion or language since 1951, so its first level says so, but
+    # the thirteen regions drawn below it carry the European Social Survey's
+    # figures the country itself shows: five first-level units whose every
+    # region had them were left saying "not collected" over their children.
+    # A country's statement stands whatever its regions carry: the country
+    # takes its survey figures from its own curated row, not from a sum.
+    policy_note = None
     if isinstance(current, dict) and current.get("status") == NOT_COLLECTED:
-        return None            # a policy statement, not a gap: leave it standing
+        if (over_published or not children
+                or not all(isinstance(c.get(field), list) for c in children)):
+            return None
+        policy_note = current.get("note")
     if not children:
         return None
 
@@ -4252,9 +4280,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         # Korea's provinces count nationality on the ethnicity field, and
         # the country's sum of them does too: without the basis it read as
         # a count of ethnicity.
-        + (f" {BASIS_SAID[usual]}" if usual in BASIS_SAID else
-           f" Every division counts {usual} rather than {field}, so this "
-           "does too." if usual else ""))
+        + (f" {basis_sentence(usual, field)}" if usual else ""))
+    if policy_note:
+        parent[f"{field}_note"] = f"{policy_note} {parent[f'{field}_note']}"
     if usual:
         parent[f"{field}_basis"] = usual
     else:
@@ -4418,6 +4446,276 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
                          + (" " + pop["note"] if pop.get("note") else ""))}
             filled.append(f"{iso3} {parent['name']}")
     return filled
+
+
+# Countries whose first level keeps an encyclopaedia's figure over divisions of
+# a later year, because the divisions' source is the older account. Zimbabwe's
+# provinces carry ZIMSTAT's 2022 census as Wikipedia and Wikidata print it,
+# and its districts OCHA's table for 2023, a projection from the 2012 census
+# that runs 16% above the 2022 count: a later reference year, an older base.
+# The province's note says what its districts add up to instead.
+RESTATE_KEEPS: dict[str, str] = {
+    "ZWE": "the districts' 2023 figures are projected from the 2012 census, and the "
+           "provinces' are the 2022 census's",
+}
+
+
+def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
+                                  admin2_by_country: dict[str, list[dict[str, Any]]]
+                                  ) -> list[str]:
+    """A first-level unit whose population an encyclopaedia gives, over divisions
+    that all carry one source's figures of one later year, takes their sum.
+
+    Burundi's provinces carried Wikidata's 2008 census figures and its 119
+    communes OCHA's 2022 table, so the provinces added up to 12.1 million and
+    the country's provinces to 8.4; Namibia's regions, Benin's departments,
+    Sudan's states and some 120 more sat the same way, the parent a different
+    source a decade older than the divisions drawn inside it. An encyclopaedia
+    never replaces a count, and here it is the other way round: the divisions'
+    own figures, one source and one year, are the better account of the
+    parent, and the figure replaced goes into the note.
+
+    Only where every non-water division carries a figure (a partial sum is not
+    the unit), where all of them share one source that is not itself an
+    encyclopaedia and one year later than the parent's (or the parent gives
+    none), and where there are at least two of them -- a unit drawn as a single
+    division is its own ground or a misfiled one, and is left to the passes
+    that weigh that. A unit whose count takes in ground the map does not draw
+    (``UNDRAWN_PARTS``) keeps its count, since its divisions are not all of it.
+    """
+    done: list[str] = []
+    for iso3, parents in sorted(admin1_by_country.items()):
+        if (iso3, "admin2") in PARTIAL_LEVELS or iso3 in RESTATE_KEEPS:
+            continue
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            if not entity.get("water"):
+                kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            pop = parent.get("population")
+            own = published(pop)
+            if (own is None or parent.get("water") or not check_rollups.is_encyclopaedic(pop)
+                    or (iso3, parent.get("name")) in UNDRAWN_PARTS):
+                continue
+            children = kids.get(parent["id"], [])
+            summed = check_rollups.complete_sum(children)
+            if summed is None or summed["n"] < 2:
+                continue
+            if len(summed["sources"]) != 1 or len(summed["years"]) != 1:
+                continue
+            source, year = next(iter(summed["sources"])), next(iter(summed["years"]))
+            if not source or year is None or check_rollups.is_encyclopaedic({"source": source}):
+                continue
+            own_year = vintage(pop)
+            if own_year is not None and year <= own_year:
+                continue
+            total = int(round(summed["total"]))
+            if total == round(own):
+                continue
+            was = check_rollups.short_source(str(pop.get("source") or ""))
+            parent["population"] = {"value": total, "year": year,
+                                    "source": f"summed from {summed['n']} second-level "
+                                              f"divisions"}
+            parent["population_note"] = (
+                f"The sum of all {summed['n']} divisions drawn inside it, which all carry "
+                f"figures for {year} from {check_rollups.short_source(source)}. It replaces "
+                f"{own:,.0f}"
+                + (f" for {own_year}, an older figure from {was}." if own_year else
+                   f" from {was}, which gives no year for it."))
+            # The source goes with the figure: an entry citing the population
+            # alone goes, one citing other fields too stays for those.
+            parent["sources"] = [src for src in parent.get("sources", [])
+                                 if not set(str(src.get("field") or "").split("/"))
+                                 <= {"population"}]
+            cited = next((dict(src) for child in children
+                          for src in child.get("sources", [])
+                          if "population" in str(src.get("field") or "").split("/")
+                          and src.get("name") == source), None)
+            if cited:
+                parent["sources"].append(dict(cited, field="population"))
+            done.append(f"{iso3} {parent['name']} {own:,.0f} -> {total:,}")
+    return done
+
+
+# Units whose population is a bare gap and whose reason is known: the area
+# Sudan and South Sudan both claim, drawn inside Sudan's first level and again
+# at its second, which no count may cross into. The reason is the disputed
+# areas' own.
+STATED_POPULATION_GAPS: dict[tuple[str, str], str] = {
+    ("SDN", "Abyei PCA"): "disputed",
+    ("SDN", "Abyei PCA area"): "disputed",
+}
+
+
+def state_population_gaps(admin0: list[dict[str, Any]],
+                          *tables: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Say why a population is empty where the reason is known and nothing said it.
+
+    Antarctica has no permanent population, which its country record says;
+    its one drawn unit at each level said only that Wikidata gives it no
+    figure. A country whose population is not applicable passes that down to
+    every unit drawn inside it, with the median age and sex ratio, which have
+    no one to describe either. ``STATED_POPULATION_GAPS`` names the rest.
+    """
+    not_applicable = {c["id"]: c["population"] for c in admin0
+                      if isinstance(c.get("population"), dict)
+                      and c["population"].get("status") == NOT_APPLICABLE}
+    said: list[str] = []
+
+    def bare(value: Any) -> bool:
+        return is_gap(value) and not (isinstance(value, dict) and value.get("note"))
+
+    for table in tables:
+        for iso3, rows in table.items():
+            for entity in rows:
+                reason = None
+                if iso3 in not_applicable:
+                    reason = dict(not_applicable[iso3])
+                elif STATED_POPULATION_GAPS.get((iso3, entity.get("name"))) == "disputed":
+                    reason = gap(NOT_AVAILABLE, DISPUTED_NOTE)
+                if reason is None:
+                    continue
+                changed = False
+                for field in ("population", "median_age", "sex_ratio"):
+                    if bare(entity.get(field)):
+                        entity[field] = dict(reason)
+                        changed = True
+                if changed:
+                    said.append(f"{iso3} {entity.get('name')}")
+    return said
+
+
+def note_population_gaps(admin0: list[dict[str, Any]],
+                         admin1_by_country: dict[str, list[dict[str, Any]]],
+                         admin2_by_country: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Say what a unit's divisions add up to where that is far from its own figure.
+
+    A first-level unit and the second-level divisions drawn inside it, or a
+    country and its first level, are two answers to one question, and where
+    every division carries a figure the two can be compared. Where they differ
+    by more than a sixth (``check_rollups.GAP``) and nothing on the record
+    already names the divisions' total or the difference, the parent's note
+    says what its divisions add up to, from what and for when, and the reason
+    the figures themselves give -- the divisions counted years apart from the
+    parent, or two estimates of one year. 254 first-level units outside Asia
+    and 39 countries disagreed that way with nothing said; scripts/
+    check_rollups.py finds any that a later change leaves unsaid.
+
+    Run last of the passes that set a population, so the sentence describes
+    the figures the reader is shown.
+    """
+    said: list[str] = []
+
+    def judge(iso3: str, parent: dict[str, Any], children: list[dict[str, Any]],
+              level: str) -> None:
+        pop = parent.get("population")
+        own = published(pop)
+        summed = check_rollups.complete_sum(children)
+        if own is None or summed is None or not check_rollups.disagrees(own, summed["total"]):
+            return
+        if check_rollups.explained(check_rollups.notes_of(parent), own, summed["total"]):
+            return
+        sentence = check_rollups.gap_sentence(summed, own, vintage(pop), level,
+                                              own_source=str(pop.get("source") or ""))
+        held = parent.get("population_note") or (pop.get("note") if isinstance(pop, dict)
+                                                 else None)
+        parent["population_note"] = f"{held} {sentence}" if held else sentence
+        said.append(f"{iso3} {parent.get('name')}: {summed['total']:,.0f} against {own:,.0f}")
+
+    for iso3, parents in sorted(admin1_by_country.items()):
+        if (iso3, "admin2") in PARTIAL_LEVELS:
+            continue
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            if not parent.get("water"):
+                judge(iso3, parent, kids.get(parent["id"], []), "divisions")
+    for country in admin0:
+        iso3 = country.get("id")
+        if iso3 in admin1_by_country:
+            judge(iso3, country, admin1_by_country[iso3], "first-level divisions")
+    return said
+
+
+def note_country_not_summed(admin0: list[dict[str, Any]]) -> list[str]:
+    """Write a declared refusal to sum a country into the country's own note.
+
+    ``COUNTRY_NOT_SUMMED`` said why only in the build log, so the country kept
+    its figure and its note never said why the divisions drawn inside it show
+    something else: Suriname's religion, Estonia's three compositions,
+    Norway's membership. Run after the curated notes, which would otherwise
+    replace it.
+    """
+    by_id = {c.get("id"): c for c in admin0}
+    said: list[str] = []
+    for (iso3, field), reason in sorted(COUNTRY_NOT_SUMMED.items()):
+        country = by_id.get(iso3)
+        if country is None or field not in country:
+            continue
+        sentence = (f"Its first-level divisions are not added up into this figure: "
+                    f"{reason}.")
+        value = country.get(field)
+        if is_gap(value) and isinstance(value, dict):
+            note = value.get("note") or ""
+            if sentence not in note:
+                country[field] = {**value, "note": f"{note} {sentence}".strip()}
+        else:
+            note = country.get(f"{field}_note") or ""
+            if sentence in note:
+                continue
+            country[f"{field}_note"] = f"{note} {sentence}".strip()
+        said.append(f"{iso3} {field}")
+    return said
+
+
+# Sex ratios reach the build in three units -- males per 100 females (most
+# censuses), males per 1,000 females (the Factbook, Eurostat, the US Census
+# Bureau, OCHA) and females per 1,000 males (India, Viet Nam, Laos, Bhutan) --
+# and a country could show one at its own level, another for its regions and a
+# third for their districts: Switzerland's cantons read 1,017 and their
+# districts 98.5. Each was right in its own unit, which the panel prints, but a
+# reader moving down a level saw the number jump tenfold or turn over. One
+# unit for all of them, the United Nations' males per 100 females.
+SEX_RATIO_UNIT = "males_per_100_females"
+SEX_RATIO_PHRASES: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"\b([Mm]ales|[Mm]en) per (?:1,000|1000) (females|women)\b"), r"\1 per 100 \2"),
+    (re.compile(r"\b([Mm]ales|[Mm]en) per thousand (females|women)\b"), r"\1 per hundred \2"),
+    (re.compile(r"\bFemales per (?:1,000|1000) males\b"), "Males per 100 females"),
+    (re.compile(r"\bfemales per (?:1,000|1000) males\b"), "males per 100 females"),
+)
+# A note that prints a ratio in its own unit ("706 females per 1,000 males
+# against 943 for India") keeps it: it says which unit it means.
+PRINTED_RATIO = re.compile(r"(?i)\d[\d,.]*\s+(?:males|men|females|women)\s+per\s")
+
+
+def one_sex_ratio_unit(*tables: Any) -> int:
+    """Put every sex ratio in males per 100 females, and its note's unit with it."""
+    done = 0
+    for table in tables:
+        rows = (table if isinstance(table, list)
+                else [e for rows in table.values() for e in rows])
+        for entity in rows:
+            value = entity.get("sex_ratio")
+            ratio = published(value)
+            if ratio is None or value.get("unit") == SEX_RATIO_UNIT:
+                continue
+            unit = value.get("unit")
+            if unit == "males_per_1000_females":
+                converted = round(ratio / 10, 1)
+            elif unit == "females_per_1000_males" and ratio > 0:
+                converted = round(100_000 / ratio, 1)
+            else:
+                raise SystemExit(f"sex ratio of {entity.get('id')} ({entity.get('name')}) "
+                                 f"is in {unit!r}, which this build cannot convert")
+            entity["sex_ratio"] = {**value, "value": converted, "unit": SEX_RATIO_UNIT}
+            note = entity.get("sex_ratio_note")
+            if isinstance(note, str) and note and not PRINTED_RATIO.search(note):
+                for pattern, said in SEX_RATIO_PHRASES:
+                    note = pattern.sub(said, note)
+                entity["sex_ratio_note"] = note
+            done += 1
+    return done
 
 
 def fill_remainders(admin1_by_country: dict[str, list[dict[str, Any]]],
@@ -8244,6 +8542,12 @@ def main() -> int:
         log(f"  {len(summed_up)} first-level populations filled from all their "
             f"divisions: " + ", ".join(summed_up[:12])
             + (" ..." if len(summed_up) > 12 else ""))
+    # Before the country sums, which read the first level's populations.
+    restated = restate_encyclopaedia_parents(admin1_by_country, admin2_by_country)
+    if restated:
+        log(f"  {len(restated)} first-level encyclopaedia populations replaced by "
+            f"their divisions' one-source sum: " + ", ".join(restated[:10])
+            + (" ..." if len(restated) > 10 else ""))
     remaining = fill_remainders(admin1_by_country, admin2_by_country)
     if remaining:
         log(f"  {len(remaining)} remainders given their parent's count less its "
@@ -8277,6 +8581,12 @@ def main() -> int:
 
     # Last, so a curated country row is the last word on the field it names.
     apply_country_detail(admin0, country_detail)
+    # And then the reasons a country was not summed, after the curated notes
+    # that would otherwise replace them.
+    unsummed = note_country_not_summed(admin0)
+    if unsummed:
+        log(f"  {len(unsummed)} country notes say why the first level is not added "
+            f"up: " + ", ".join(unsummed))
 
     # -- derived values ------------------------------------------------------
     # After the country row is final and before the bare fields are explained:
@@ -8304,6 +8614,18 @@ def main() -> int:
     for line in refused2:
         log(f"  not derived -- {line}")
     check_no_estimate_on_policy_field(admin1_by_country, admin2_by_country)
+
+    # -- populations: what an empty one and a disagreeing one mean -----------
+    # After every pass that sets a population, so each sentence describes the
+    # figures the reader is shown.
+    stated = state_population_gaps(admin0, admin1_by_country, admin2_by_country)
+    if stated:
+        log(f"  {len(stated)} empty populations given their reason: " + ", ".join(stated))
+    gaps_said = note_population_gaps(admin0, admin1_by_country, admin2_by_country)
+    if gaps_said:
+        log(f"  {len(gaps_said)} populations far from their divisions' sum say what "
+            f"the divisions add up to: " + "; ".join(gaps_said[:8])
+            + (" ..." if len(gaps_said) > 8 else ""))
 
     # -- every bare field says why -------------------------------------------
     # Last of all, after the policy and the parent sums have had their turn:
@@ -8349,6 +8671,9 @@ def main() -> int:
         for rows in table.values() for entity in rows)
     if plain:
         log(f"  {plain} notes, reasons and licences put in plain words")
+    converted = one_sex_ratio_unit(admin0, admin1_by_country, admin2_by_country)
+    if converted:
+        log(f"  {converted} sex ratios put in males per 100 females")
 
     # -- write ---------------------------------------------------------------
     out = args.out
@@ -8443,7 +8768,11 @@ def main() -> int:
                      "units": entry["units"],
                      "coverage_pct": entry["coverage_pct"]}
                     for (iso3, level), entry in sorted(PARTIAL_LEVELS.items())
-                ]}, compact=True)
+                ],
+                # The disagreement between a parent and its divisions' sum past
+                # which the build wrote a sentence (note_population_gaps), so a
+                # check of site/data knows the data was built to that rule.
+                "rollup_gap": check_rollups.GAP}, compact=True)
 
     log(f"  admin0 {len(admin0)} | admin1 {sum(len(v) for v in admin1_by_country.values())} "
         f"| admin2 {sum(len(v) for v in admin2_by_country.values())} | index {len(index)}")

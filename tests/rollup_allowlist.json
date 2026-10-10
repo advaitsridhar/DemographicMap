@@ -1,0 +1,4 @@
+{
+ "_readme": "Parents (first-level units, or countries against their first level) whose population and the complete sum of their non-water divisions differ by more than 15% with no note naming the divisions' total or the difference, and which are known and cannot be fixed yet. tests/test_round6_rollups.py runs scripts/check_rollups.py on site/data and fails on any such disagreement not listed here. Each row: level (admin0 or admin1), id (the record's id in site/data), name, and the reason it stays. The build writes a sentence on every disagreement it can see (note_population_gaps), so a row belongs here only when a pass after that one changes a population.",
+ "gaps": []
+}
