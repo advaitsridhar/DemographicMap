@@ -609,6 +609,50 @@ class TanzaniaCensusTest(unittest.TestCase):
         self.assertNotIn("m", by)
 
 
+class StatedGapsTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import stated_gaps as sg
+        self.sg = sg
+
+    def test_each_declared_polygon_gets_its_reason_on_its_fields_only(self):
+        declared = self.sg.DECLARED
+        try:
+            self.sg.DECLARED = [
+                ("COD", "admin2", "t", "Tshimbulu", self.sg.ALL, "town reason", None),
+                ("IRQ", "admin2", "a", "Aqra", ("language",), "aqra reason", None)]
+            units = {("COD", "admin2"): {"t": {"id": "t", "name": "Tshimbulu"}},
+                     ("IRQ", "admin2"): {"a": {"id": "a", "name": "Aqra"}}}
+            records, report = self.sg.build(units)
+        finally:
+            self.sg.DECLARED = declared
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["t"]["population"]["note"], "town reason")
+        self.assertEqual(by["a"]["language"]["note"], "aqra reason")
+        self.assertNotIn("note", by["a"]["population"])
+        self.assertEqual(report, [])
+
+    def test_a_reason_whose_premise_or_polygon_is_gone_is_left_out(self):
+        declared = self.sg.DECLARED
+        try:
+            self.sg.DECLARED = [
+                ("COD", "admin2", "k", "Kungu", ("language",), "r", lambda: "CLEAR has a row"),
+                ("COD", "admin2", "x", "Kaoze", ("population",), "r", None)]
+            units = {("COD", "admin2"): {"k": {"id": "k", "name": "Kungu"},
+                                         "x": {"id": "x", "name": "Kaoze II"}}}
+            records, report = self.sg.build(units)
+        finally:
+            self.sg.DECLARED = declared
+        self.assertEqual(records, [])
+        self.assertEqual(len(report), 2)
+
+    def test_the_declared_premises_hold_on_the_files_read(self):
+        for iso3, level, sid, name, fields, reason, premise in self.sg.DECLARED:
+            if premise is not None:
+                self.assertIsNone(premise(), name)
+            for word in ("map's", "adapter", "pipeline", ".py", "build"):
+                self.assertNotIn(word, reason, name)
+
+
 SENEGAL_ROWS = [
     ["PROJECTION DE LA POPULATION - 2023-2050", "RGPH-5 2023", None, None, "2024"],
     [None, "HOMME", "FEMME", "ENSEMBLE", "HOMME"],
