@@ -1,9 +1,115 @@
-india_census: Census 2011, level=district
-  validated against published national totals: 640 districts, 1,210,854,977 people
-  national sex ratio 943 females per 1,000 males (623,270,258 males, 587,584,719 females)
-  C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
-  C-01 Maharashtra: 553,472 bytes, kept at /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW27C-01 MDDS.xls
-  Palghar: 2,990,116 from 8 tehsils; Thane: 8,070,032 from 7; together 11,060,148, the district's own row
-  wrote data/processed/india_district.json (2824 kB)
-  735 records, 734 with religion shares, 1 explicit gaps carrying their reason
-  groups beyond C-01's eight columns (31): ADI DHARM, Addi Bassi, Adi, Adim dhamm, Animist, Atheist, Bahai / Bahais, Bidin, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Idu / Idu Mishmi, Intaya, Jews / Judaism, Khasi, Nani Intiya, Niamtre, Nocte, Non Christians, Nyarino, Other religions (not separately named), Pagan, Parsi/Zorastrian, Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Traditional Religion, Tribal Religion, Yumasam
+https://www.hcp.ma/file/242341/: 166,693 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  sheet 'Population_légale'
+    r1: السكان القانونيون بالمملكة المغربية
+    r2: حسب نتائج الإحصاء العام للسكان والسكنى لسنة 2024
+    r3: Population légale du Royaume du Maroc
+    r4: selon les résultats du Recensement Général de la Population et de l'Habitat de 2024
+    r5: 
+    r6: Collectivités territoriales | المغاربة | الأجانب | السكان | الأسر | الجماعات الترابية | الرمز الجغرافي
+    r7: Marocains | Étrangers | Population | Ménages |  | Code géographique
+    r8: Ensemble du territoire national | 36680178 | 148152 | 36828330 | 9275038 | مجموع التراب الوطني
+    r9: Région de Tanger-Tétouan-Al Hoceima | 4020545 | 9677 | 4030222 | 1048860 | جهة طنجة-تطوان-الحسيمة | 1
+    r10: Région de l'Oriental | 2291040 | 3625 | 2294665 | 575015 | جهة الشرق | 2
+    r11: Région de Fès-Meknès | 4461182 | 6729 | 4467911 | 1135717 | جهة فاس-مكناس | 3
+    r12: Région de Rabat-Salé-Kénitra | 5103406 | 29233 | 5132639 | 1301492 | جهة الرباط-سلا-القنيطرة | 4
+    r13: Région de Béni Mellal-Khénifra | 2524541 | 1260 | 2525801 | 616566 | جهة بني ملال-خنيفرة | 5
+    r14: Région de Casablanca-Settat | 7628065 | 60902 | 7688967 | 2021032 | جهة الدار البيضاء-سطات | 6
+    r15: Région de Marrakech-Safi | 4878500 | 13893 | 4892393 | 1185865 | جهة مراكش-آسفي | 7
+    r16: Région de Drâa-Tafilalet | 1654942 | 681 | 1655623 | 338977 | جهة درعة-تافيلالت | 8
+    r17: Région de Souss-Massa | 3006430 | 14001 | 3020431 | 785208 | جهة سوس-ماسة | 9
+    r18: Région de Guelmim-Oued Noun | 448152 | 533 | 448685 | 105394 | جهة كلميم-واد نون | 10
+    r19: Région de Laâyoune-Sakia El Hamra | 449256 | 1772 | 451028 | 106751 | جهة العيون-الساقية الحمراء | 11
+    r20: Région de Dakhla-Oued Ed-Dahab | 214119 | 5846 | 219965 | 54161 | جهة الداخلة-وادي الذهب | 12
+    r21: Ensemble du territoire national (milieu urbain) | 22969999 | 140109 | 23110108 | 6173930 | مجموع التراب الوطني (الوسط الحضري)
+    r22: Région de Tanger-Tétouan-Al Hoceima (milieu urbain) | 2629418 | 9397 | 2638815 | 728766 | جهة طنجة-تطوان-الحسيمة (الوسط الحضري) | 1
+    r23: Région de l'Oriental (milieu urbain) | 1502501 | 3213 | 1505714 | 390123 | جهة الشرق (الوسط الحضري) | 2
+    r24: Région de Fès-Meknès (milieu urbain) | 2848971 | 6395 | 2855366 | 755719 | جهة فاس-مكناس (الوسط الحضري) | 3
+    r25: Région de Rabat-Salé-Kénitra (milieu urbain) | 3598414 | 28764 | 3627178 | 984650 | جهة الرباط-سلا-القنيطرة (الوسط الحضري) | 4
+    r26: Région de Béni Mellal-Khénifra (milieu urbain) | 1282331 | 1161 | 1283492 | 338559 | جهة بني ملال-خنيفرة (الوسط الحضري) | 5
+    r27: Région de Casablanca-Settat (milieu urbain) | 5573860 | 59888 | 5633748 | 1554705 | جهة الدار البيضاء-سطات (الوسط الحضري) | 6
+    r28: Région de Marrakech-Safi (milieu urbain) | 2237373 | 11581 | 2248954 | 581558 | جهة مراكش-آسفي (الوسط الحضري) | 7
+    r29: Région de Drâa-Tafilalet (milieu urbain) | 607230 | 494 | 607724 | 139655 | جهة درعة-تافيلالت (الوسط الحضري) | 8
+    r30: Région de Souss-Massa (milieu urbain) | 1804381 | 11721 | 1816102 | 476722 | جهة سوس-ماسة (الوسط الحضري) | 9
+    r31: Région de Guelmim-Oued Noun (milieu urbain) | 299132 | 411 | 299543 | 73720 | جهة كلميم-واد نون (الوسط الحضري) | 10
+    r32: Région de Laâyoune-Sakia El Hamra (milieu urbain) | 414934 | 1702 | 416636 | 102853 | جهة العيون-الساقية الحمراء (الوسط الحضري) | 11
+    r33: Région de Dakhla-Oued Ed-Dahab (milieu urbain) | 171454 | 5382 | 176836 | 46900 | جهة الداخلة-وادي الذهب (الوسط الحضري) | 12
+    r34: Ensemble du territoire national (milieu rural) | 13710179 | 8043 | 13718222 | 3101108 | مجموع التراب الوطني (الوسط القروي)
+    r35: Région de Tanger-Tétouan-Al Hoceima (milieu rural) | 1391127 | 280 | 1391407 | 320094 | جهة طنجة-تطوان-الحسيمة (الوسط القروي) | 1
+    r36: Région de l'Oriental (milieu rural) | 788539 | 412 | 788951 | 184892 | جهة الشرق (الوسط القروي) | 2
+    r37: Région de Fès-Meknès (milieu rural) | 1612211 | 334 | 1612545 | 379998 | جهة فاس-مكناس (الوسط القروي) | 3
+    r38: Région de Rabat-Salé-Kénitra (milieu rural) | 1504992 | 469 | 1505461 | 316842 | جهة الرباط-سلا-القنيطرة (الوسط القروي) | 4
+    r39: Région de Béni Mellal-Khénifra (milieu rural) | 1242210 | 99 | 1242309 | 278007 | جهة بني ملال-خنيفرة (الوسط القروي) | 5
+    r40: Région de Casablanca-Settat (milieu rural) | 2054205 | 1014 | 2055219 | 466327 | جهة الدار البيضاء-سطات (الوسط القروي) | 6
+    r41: Région de Marrakech-Safi (milieu rural) | 2641127 | 2312 | 2643439 | 604307 | جهة مراكش-آسفي (الوسط القروي) | 7
+    r42: Région de Drâa-Tafilalet (milieu rural) | 1047712 | 187 | 1047899 | 199322 | جهة درعة-تافيلالت (الوسط القروي) | 8
+    r43: Région de Souss-Massa (milieu rural) | 1202049 | 2280 | 1204329 | 308486 | جهة سوس-ماسة (الوسط القروي) | 9
+    r44: Région de Guelmim-Oued Noun (milieu rural) | 149020 | 122 | 149142 | 31674 | جهة كلميم-واد نون (الوسط القروي) | 10
+    r45: Région de Laâyoune-Sakia El Hamra (milieu rural) | 34322 | 70 | 34392 | 3898 | جهة العيون-الساقية الحمراء (الوسط القروي) | 11
+    r46: Région de Dakhla-Oued Ed-Dahab (milieu rural) | 42665 | 464 | 43129 | 7261 | جهة الداخلة-وادي الذهب (الوسط القروي) | 12
+    r47: Ensemble du territoire national | 36680178 | 148152 | 36828330 | 9275038 | مجموع التراب الوطني
+    r48: Région de Tanger-Tétouan-Al Hoceima | 4020545 | 9677 | 4030222 | 1048860 | جهة طنجة-تطوان-الحسيمة | 1
+    r49: Préfecture de Tanger-Assilah | 1487175 | 7238 | 1494413 | 418844 | عمالة طنجة-أصيلة | 1511
+    r50: Préfecture de M'diq-Fnideq | 253388 | 676 | 254064 | 67797 | عمالة المضيق-الفنيدق | 1573
+    r51: Province de Tétouan | 610757 | 1171 | 611928 | 157384 | إقليم تطوان | 1571
+    r52: Province de Fahs-Anjra | 100700 | 89 | 100789 | 25160 | إقليم الفحص-أنجرة | 1227
+    r53: Province de Larache | 510017 | 194 | 510211 | 124642 | إقليم العرائش | 1331
+    r54: Province d'Al Hoceima | 371391 | 136 | 371527 | 89181 | إقليم الحسيمة | 1051
+    r55: Province de Chefchaouen | 412617 | 96 | 412713 | 90956 | إقليم شفشاون | 1151
+    r56: Province d'Ouezzane | 274500 | 77 | 274577 | 74896 | إقليم وزان | 1405
+    r57: Région de l'Oriental | 2291040 | 3625 | 2294665 | 575015 | جهة الشرق | 2
+    r58: Préfecture d'Oujda-Angad | 570230 | 2224 | 572454 | 148929 | عمالة وجدة-أنجاد | 2411
+    r59: Province de Nador | 565542 | 445 | 565987 | 146090 | إقليم الناضور | 2381
+    r60: Province de Driouch | 188047 | 144 | 188191 | 48849 | إقليم الدريوش | 2167
+    r61: Province de Jerada | 103413 | 114 | 103527 | 23833 | إقليم جرادة | 2275
+    r62: Province de Berkane | 283538 | 523 | 284061 | 75643 | إقليم بركان | 2113
+    r63: Province de Taourirt | 220062 | 95 | 220157 | 50028 | إقليم تاوريرت | 2533
+    r64: Province de Guercif | 215804 | 33 | 215837 | 47538 | إقليم جرسيف | 2265
+    r65: Province de Figuig | 144404 | 47 | 144451 | 34105 | إقليم فجيج | 2251
+    r66: Région de Fès-Meknès | 4461182 | 6729 | 4467911 | 1135717 | جهة فاس-مكناس | 3
+    r67: Préfecture de Fès | 1252340 | 3832 | 1256172 | 329286 | عمالة فاس | 3231
+    r68: Préfecture de Meknès | 940900 | 2045 | 942945 | 248296 | عمالة مكناس | 3061
+    r69: Province d'El Hajeb | 267098 | 58 | 267156 | 66258 | إقليم الحاجب | 3171
+    r70: Province d'Ifrane | 160700 | 204 | 160904 | 42684 | إقليم إفران | 3271
+    r71: Province de Moulay Yacoub | 216789 | 165 | 216954 | 46348 | إقليم مولاي يعقوب | 3591
+    r72: Province de Sefrou | 304552 | 196 | 304748 | 81262 | إقليم صفرو | 3451
+    r73: Province de Boulemane | 205377 | 34 | 205411 | 48509 | إقليم بولمان | 3131
+    r74: Province de Taounate | 612582 | 68 | 612650 | 147051 | إقليم تاونات | 3531
+    r75: Province de Taza | 500844 | 127 | 500971 | 126023 | إقليم تازة | 3561
+    r76: Région de Rabat-Salé-Kénitra | 5103406 | 29233 | 5132639 | 1301492 | جهة الرباط-سلا-القنيطرة | 4
+    r77: Préfecture de Rabat | 501005 | 14614 | 515619 | 157183 | عمالة الرباط | 4421
+    r78: Préfecture de Salé | 1082784 | 6770 | 1089554 | 290311 | عمالة سلا | 4441
+    r79: Préfecture de Skhirate-Témara | 779044 | 4431 | 783475 | 208316 | عمالة الصخيرات-تمارة | 4501
+    r80: Province de Kénitra | 1281256 | 2991 | 1284247 | 300046 | إقليم القنيطرة | 4281
+    r81: Province de Khémisset | 562745 | 291 | 563036 | 146516 | إقليم الخميسات | 4291
+    r82: Province de Sidi Kacem | 545426 | 83 | 545509 | 122538 | إقليم سيدي قاسم | 4481
+    r83: Province de Sidi Slimane | 351146 | 53 | 351199 | 76582 | إقليم سيدي سليمان | 4491
+    r84: Région de Béni Mellal-Khénifra | 2524541 | 1260 | 2525801 | 616566 | جهة بني ملال-خنيفرة | 5
+    r85: Province de Béni Mellal | 579729 | 598 | 580327 | 150397 | إقليم بني ملال | 5091
+    r86: Province d'Azilal | 574051 | 61 | 574112 | 121842 | إقليم أزيلال | 5081
+    r87: Province de Fquih Ben Salah | 475893 | 84 | 475977 | 111668 | إقليم الفقيه بن صالح | 5255
+    r88: Province de Khénifra | 370156 | 84 | 370240 | 100159 | إقليم خنيفرة | 5301
+    r89: Province de Khouribga | 524712 | 433 | 525145 | 132500 | إقليم خريبكة | 5311
+    r90: Région de Casablanca-Settat | 7628065 | 60902 | 7688967 | 2021032 | جهة الدار البيضاء-سطات | 6
+    r91: Préfecture de Casablanca | 3172072 | 45964 | 3218036 | 909829 | عمالة الدار البيضاء | 6141
+    r92: Préfecture de Mohammadia | 510951 | 3106 | 514057 | 137265 | عمالة المحمدية | 6371
+    r93: Province d'El Jadida | 912835 | 1532 | 914367 | 221678 | إقليم الجديدة | 6181
+    r94: Province de Nouaceur | 665135 | 7189 | 672324 | 183539 | إقليم النواصر | 6385
+    r95: Province de Médiouna | 345507 | 280 | 345787 | 88190 | إقليم مديونة | 6355
+    r96: Province de Benslimane | 278768 | 749 | 279517 | 69353 | إقليم بنسليمان | 6111
+    r97: Province de Berrechid | 639618 | 1039 | 640657 | 160957 | إقليم برشيد | 6117
+    r98: Province de Settat | 651327 | 965 | 652292 | 148224 | إقليم سطات | 6461
+    r99: Province de Sidi Bennour | 451852 | 78 | 451930 | 101997 | إقليم سيدي بنور | 6467
+    r100: Région de Marrakech-Safi | 4878500 | 13893 | 4892393 | 1185865 | جهة مراكش-آسفي | 7
+    r101: Préfecture de Marrakech | 1560704 | 10876 | 1571580 | 402389 | عمالة مراكش | 7351
+    r102: Province de Chichaoua | 378932 | 147 | 379079 | 92262 | إقليم شيشاوة | 7161
+    r103: Province d'Al Haouz | 642171 | 644 | 642815 | 147971 | إقليم الحوز | 7041
+    r104: Province d'El Kelâa Des-Sraghna | 560075 | 198 | 560273 | 125161 | إقليم قلعة السراغنة | 7191
+    r105: Province d'Essaouira | 425449 | 1270 | 426719 | 111602 | إقليم الصويرة | 7211
+    r106: Province de Rehamna | 345772 | 336 | 346108 | 76166 | إقليم الرحامنة | 7427
+    r107: Province de Safi | 719299 | 372 | 719671 | 175259 | إقليم آسفي | 7431
+    r108: Province de Youssoufia | 246098 | 50 | 246148 | 55055 | إقليم اليوسفية | 7585
+    r109: Région de Drâa-Tafilalet | 1654942 | 681 | 1655623 | 338977 | جهة درعة-تافيلالت | 8
+    r110: Province d'Errachidia | 427309 | 263 | 427572 | 90107 | إقليم الرشيدية | 8201
+  (limit reached)
