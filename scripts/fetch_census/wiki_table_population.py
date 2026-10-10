@@ -142,9 +142,11 @@ FIGURES[("TZA", "Dar es Salaam")] = Figure(
 # Cape Verde's municipalities by the 2021 census. The list writes each row
 # on one line with single bars, which the wikitext reader cannot split, so
 # the table is read as the page renders it.
+# Tarrafal (Santiago) is one of them: Wikidata's undated 30,000 stood in front
+# of it, and the build refuses that figure (NOT_THIS_GROUND) so this one shows.
 for _name in ("Ribeira Grande de Santiago", "Santa Catarina", "Santa Catarina do Fogo",
               "Santa Cruz", "São Domingos", "São Lourenço dos Órgãos", "São Miguel",
-              "São Salvador do Mundo"):
+              "São Salvador do Mundo", "Tarrafal"):
     FIGURES[("CPV", _name)] = Figure(
         year=2021,
         terms=(Term("Administrative divisions of Cape Verde", row=f"Municipality of {_name}",
@@ -152,19 +154,20 @@ for _name in ("Ribeira Grande de Santiago", "Santa Catarina", "Santa Catarina do
                     rendered=True),),
         source="2021 census of Cape Verde, as the list of its municipalities gives it",
         note="The municipality's row in the list, under its 2021 census column: {terms}.")
-# Yamoussoukro Autonomous District. Its article redirects to the city's,
-# whose 422,072 (2021) covers 2,075 km^2 of the district's 3,500 and so is
-# not the district's. The list of districts gives the district a figure and
-# no year, and is read as that: undated.
+# Yamoussoukro Autonomous District, which is two departments: Yamoussoukro
+# and Attiégouakro. Its article redirects to Yamoussoukro's, whose infobox
+# gives 422,072 for the 2021 census (citing the INS's RGPH 2021 results) --
+# the two departments' 372,559 and 49,513 as citypopulation.de lists them,
+# so the district's count, not the city's. The polygon is 2,082 km² and holds
+# both departments' seats (the infobox gives 2,075 km²). The list of
+# districts prints 355,573 with no year: the 2014 census's count.
 FIGURES[("CIV", "District Autonome De Yamoussoukro")] = Figure(
-    year=None,
-    terms=(Term("Districts of Ivory Coast", row="Yamoussoukro",
-                key=r"^District$", column=r"^Population \(District\)", rendered=True),),
-    source=("English Wikipedia, Districts of Ivory Coast; the list gives no year "
-            "for the figure"),
-    note=("The district's row in the list of districts, which dates none of its "
-          "figures: {terms}. The city's article gives 422,072 for 2021, over 2,075 "
-          "km² of the district's 3,500, so that figure is not the district's."))
+    year=2021,
+    terms=(Term("Yamoussoukro"),),
+    source="2021 census of Côte d'Ivoire, as English Wikipedia's Yamoussoukro gives it",
+    note=("The autonomous district's count in the 2021 census, taking in both of its "
+          "departments, Yamoussoukro and Attiégouakro: {terms}. The 2014 census "
+          "counted 355,573."))
 
 # Five of Libya's shapes are districts of the 2001 scheme, which the 2007
 # scheme merged away. The list of districts keeps the 2001 table, whose

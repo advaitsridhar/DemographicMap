@@ -434,6 +434,20 @@ class NotThisGround(unittest.TestCase):
         self.assertEqual(e["population"]["value"], 18565)
         self.assertIn("shown instead", e["population"]["note"])
 
+    def test_tarrafal_shows_its_2021_census_row_in_place_of_wikidatas_30000(self):
+        source, note = be.NOT_THIS_GROUND[("CPV", "35879248B2594883865860")]["population"]
+        self.assertEqual(source, "wikidata_admin1.json")
+        held = {"value": {"value": 16620, "year": 2021, "source": "2021 census of Cape Verde",
+                          "note": "The municipality's row."},
+                "file": "wiki_table_population.json", "match": "shape_id", "sources": []}
+        e = unit("35879248B2594883865860", level="admin1",
+                 population={"value": 30000, "source": "Wikidata (CC0)"},
+                 _from={"population": "wikidata_admin1.json"}, _held={"population": [held]})
+        self.run_pass(e, {"population": (source, note)}, iso3="CPV")
+        self.assertEqual((e["population"]["value"], e["population"]["year"]), (16620, 2021))
+        self.assertTrue(e["population"]["note"].endswith("so it is left out and this figure "
+                                                         "is shown instead."))
+
 
 class Georgia(unittest.TestCase):
     def test_a_stated_gap_displaces_an_older_encyclopaedia_figure(self):

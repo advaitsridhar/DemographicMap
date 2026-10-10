@@ -7996,6 +7996,9 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
 #        the region (162.2 km2, drawn whole at the second level as
 #        "Brussels") lies inside the polygon drawn for Flanders. The region's
 #        figures stand on the second-level polygon.
+#   CPV  Wikidata's undated 30,000 for Tarrafal (Santiago, 115 km2 as drawn)
+#        is nearly twice what the municipality's censuses count; the 2021
+#        census row (wiki_table_population) it stood in front of shows.
 NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
     ("MAR", "70788906B89532291078161"): {
         "population": (None, (
@@ -8065,6 +8068,12 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
             "second-level polygon \"Brussels\", which is the whole region, and "
             "describe more ground and more people than this polygon holds."))
         for field in ("population", "religion", "language")
+    },
+    ("CPV", "35879248B2594883865860"): {
+        "population": ("wikidata_admin1.json", (
+            "Wikidata's undated 30,000 for Tarrafal is nearly twice what the "
+            "municipality's censuses count (18,565 in 2010, 16,620 in 2021), so it "
+            "is left out.")),
     },
 }
 
