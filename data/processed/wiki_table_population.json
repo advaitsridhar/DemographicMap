@@ -1059,6 +1059,49 @@
     "match_by": "shape_id"
   },
   {
+    "id": "BHS-WT-black-point",
+    "level": "admin1",
+    "name": "Black Point",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2022 census prints Black Point together with Exuma as one figure; the map draws them apart, and a group's figure is not any one of its districts'."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B62023626616016",
+    "match_by": "shape_id"
+  },
+  {
     "id": "BHS-WT-central-abaco",
     "level": "admin1",
     "name": "Central Abaco",
