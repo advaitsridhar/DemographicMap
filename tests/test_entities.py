@@ -5703,10 +5703,15 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual({r["group"]: r["pct"] for r in pooled["religion"]},
                          {"A": 62.5, "B": 37.5})
 
-    def test_a_union_with_neither_counts_nor_populations_leaves_the_field(self):
+    def test_a_union_with_neither_counts_nor_populations_says_why_it_is_empty(self):
+        # No shares are combined; the field is a stated gap naming the parts,
+        # so the polygon does not read as if the source had nothing for it.
         adapters = {"NAM": self.union_parts(counted=False, populations=False)}
         be.pool_declared_unions(adapters)
-        self.assertNotIn("religion", adapters["NAM"][0])
+        religion = adapters["NAM"][0]["religion"]
+        self.assertEqual(religion["status"], be.NOT_AVAILABLE)
+        self.assertIn("Kavango East and Kavango West Region separately", religion["note"])
+        self.assertNotIn("value", religion)
 
     def test_a_union_missing_a_part_in_a_file_is_not_pooled(self):
         parts = self.union_parts()[:1]
