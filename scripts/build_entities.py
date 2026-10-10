@@ -2484,9 +2484,47 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # of them at 2018): filed under the provinces Wikidata gives them, they add up
 # to the provinces' figures within 3% in 71 of 74. The projection's ages and
 # sexes stay, in sea_cod_ps_age.json.
+# Eight more countries are the same case: OCHA's projection stood in front of
+# the statistics office's own census count of every drawn unit by date alone,
+# and the parents, which carry the census, no longer matched their children.
+# Each office's file was checked to give every drawn unit of the country a
+# count or a stated reason before its country was listed here:
+#   LAO  laos_district.json, the 2015 census of all 148 districts (the
+#        projection, 2024, stood on 145); they make each of the 18 provinces
+#        to the person, 6,481,625 in all.
+#   PHL  philippines_age.json, the 2020 census of 84 of the 86 drawn
+#        provinces and a stated reason on the other two, whose polygons are
+#        not the provinces of their names (OCHA's 2022 figure for
+#        Maguindanao, 1,389,643, stood on one of them).
+#   PRY  paraguay_census.json, the 2022 census of 236 of the 247 districts
+#        and a stated reason on the 11 drawn as they were before a district
+#        was cut from them (OCHA's 2023 figures for the new districts stood
+#        on 8 of those pre-split polygons).
+#   NIC  nicaragua_census.json, the 2005 census of all 153 municipios (the
+#        2020 projection stood on 140); every department then matches.
+#   CRI  costa_rica_census.json, the 2011 census of all 83 cantons (the 2021
+#        projection stood on 77).
+#   MEX  mexico_municipality.json, INEGI's 2020 census of the municipios
+#        (the 2024 projection stood on 2,452 of 2,457).
+#   GEO  georgia.json, Geostat's figures for the 55 municipalities it can
+#        place and a stated reason on the 13 it cannot; OCHA's 2014 figures
+#        stood on four of those reasons (Khobi, Lanchkhuti, Terjola, Tkibuli),
+#        whose polygons hold Poti's or Kutaisi's ground or none of it.
+# Myanmar is not listed although its 2014 census file binds all 74
+# districts: its states and the composed districts (sea_composed.json) carry
+# the same OCHA table for 2023, so the projection is one vintage at both
+# levels there, and dropping it from the districts alone would put 2014
+# children under 2023 parents.
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
+                           "CRI": "costa_rica_census.json",
+                           "GEO": "georgia.json",
+                           "LAO": "laos_district.json",
+                           "MEX": "mexico_municipality.json",
+                           "NIC": "nicaragua_census.json",
                            "NPL": "nepal_district.json",
+                           "PHL": "philippines_age.json",
+                           "PRY": "paraguay_census.json",
                            "SLB": "solomon_census.json",
                            "THA": "wikidata_admin2.json"},
     "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
