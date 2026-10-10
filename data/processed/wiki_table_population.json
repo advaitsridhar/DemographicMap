@@ -968,144 +968,6 @@
     "match_by": "shape_id"
   },
   {
-    "id": "BHS-WT-north-eleuthera",
-    "level": "admin1",
-    "name": "North Eleuthera",
-    "parent": "BHS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 3923,
-      "unit": "people",
-      "year": 2022,
-      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-      "note": "The district's row in the 2022 census table: 3,923 (the North Eleuthera row of Local government in the Bahamas)."
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
-        "year": 2022,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "BHS",
-    "shape_id": "57655419B2538538242492",
-    "match_by": "shape_id"
-  },
-  {
-    "id": "BHS-WT-east-grand-bahama",
-    "level": "admin1",
-    "name": "East Grand Bahama",
-    "parent": "BHS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 11011,
-      "unit": "people",
-      "year": 2022,
-      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-      "note": "The district's row in the 2022 census table: 11,011 (the East Grand Bahama row of Local government in the Bahamas)."
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
-        "year": 2022,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "BHS",
-    "shape_id": "57655419B55305756041974",
-    "match_by": "shape_id"
-  },
-  {
-    "id": "BHS-WT-west-grand-bahama",
-    "level": "admin1",
-    "name": "West Grand Bahama",
-    "parent": "BHS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 5960,
-      "unit": "people",
-      "year": 2022,
-      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-      "note": "The district's row in the 2022 census table: 5,960 (the West Grand Bahama row of Local government in the Bahamas)."
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
-        "year": 2022,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "BHS",
-    "shape_id": "57655419B65085412826087",
-    "match_by": "shape_id"
-  },
-  {
     "id": "BHS-WT-black-point",
     "level": "admin1",
     "name": "Black Point",
@@ -1404,6 +1266,111 @@
     ],
     "country": "BHS",
     "shape_id": "57655419B57652232258076",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-north-eleuthera",
+    "level": "admin1",
+    "name": "North Eleuthera",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its North Eleuthera (3,923 people) is a supervisory district of that name, not this district, so no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "BHS",
+    "shape_id": "57655419B2538538242492",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-east-grand-bahama",
+    "level": "admin1",
+    "name": "East Grand Bahama",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its East Grand Bahama (11,011 people) is a supervisory district of that name, not this district, so no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "BHS",
+    "shape_id": "57655419B55305756041974",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-west-grand-bahama",
+    "level": "admin1",
+    "name": "West Grand Bahama",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its West Grand Bahama (5,960 people) is a supervisory district of that name, not this district, so no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "BHS",
+    "shape_id": "57655419B65085412826087",
     "match_by": "shape_id"
   }
 ]

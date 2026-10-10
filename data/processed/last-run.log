@@ -1,37 +1,33 @@
-switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 315, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 308, in main
-    records = build(args.year)
-              ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 109, in build
-    meta, code = variables()
-                 ^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 65, in variables
-    meta = {v["code"]: v for v in http_json(TABLE)["variables"]}
-                                  ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 327, in http_json
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 429: 
+  AZE Contiguous Azerbaijan: 9,492,499 from 9,951,409 (the Total row of Demographics of Azerbaijan) less 458,910 (Nakhchivan Autonomous Republic's infobox)
+  GMB Basse: 261,160 from 261,160 (the Upper River row of Subdivisions of the Gambia)
+  MOZ Maputo: 3,608,268 from 1,101,170 (the Maputo City row of Provinces of Mozambique) plus 2,507,098 (the Maputo row of Provinces of Mozambique)
+  PER Lima: 1,018,876 from 1,018,876 (Department of Lima's infobox)
+  PER Municipalidad Metropolitana de Lima: 9,600,000 from 9,600,000 (Lima's infobox)
+  TZA Dar es Salaam: 5,383,728 from 5,383,728 (the Dar es Salaam Region row of Dar es Salaam Region)
+  CPV Ribeira Grande de Santiago: 7,632 from 7,632 (the Municipality of Ribeira Grande de Santiago row of Administrative divisions of Cape Verde)
+  CPV Santa Catarina: 37,472 from 37,472 (the Municipality of Santa Catarina row of Administrative divisions of Cape Verde)
+  CPV Santa Catarina do Fogo: 4,725 from 4,725 (the Municipality of Santa Catarina do Fogo row of Administrative divisions of Cape Verde)
+  CPV Santa Cruz: 25,004 from 25,004 (the Municipality of Santa Cruz row of Administrative divisions of Cape Verde)
+  CPV São Domingos: 13,958 from 13,958 (the Municipality of São Domingos row of Administrative divisions of Cape Verde)
+  CPV São Lourenço dos Órgãos: 6,317 from 6,317 (the Municipality of São Lourenço dos Órgãos row of Administrative divisions of Cape Verde)
+  CPV São Miguel: 12,906 from 12,906 (the Municipality of São Miguel row of Administrative divisions of Cape Verde)
+  CPV São Salvador do Mundo: 7,452 from 7,452 (the Municipality of São Salvador do Mundo row of Administrative divisions of Cape Verde)
+  CPV Tarrafal: 16,620 from 16,620 (the Municipality of Tarrafal row of Administrative divisions of Cape Verde)
+  CIV District Autonome De Yamoussoukro: 422,072 from 422,072 (Yamoussoukro's infobox)
+  LBY Ajdabiya: 165,839 from 165,839 (the Ajdabiya row of Districts of Libya)
+  LBY Al Qubbah: 93,895 from 93,895 (the Quba row of Districts of Libya)
+  LBY Ghadamis: 19,000 from 19,000 (the Ghadames row of Districts of Libya)
+  LBY Mizdah: 41,476 from 41,476 (the Mizda row of Districts of Libya)
+  LBY Tajura' wa an Nawahi al Arba: 267,031 from 267,031 (the Tajura wa Arba‘ row of Districts of Libya)
+  BHS Black Point: printed only in the group Exuma + Black Point (the 'Exuma + Black Point' row cannot be lined up with its headers; its figure is not quoted)
+  BHS Central Abaco: printed only in the group South Abaco + Central Abaco + Moore's Island (6,530)
+  BHS Central Eleuthera: printed only in the group South Eleuthera + Central Eleuthera (5,324)
+  BHS Mangrove Cay: printed only in the group South Andros + Central Andros + Mangrove Cay (3,711)
+  BHS Moore's Island: printed only in the group South Abaco + Central Abaco + Moore's Island (6,530)
+  BHS South Abaco: printed only in the group South Abaco + Central Abaco + Moore's Island (6,530)
+  BHS South Eleuthera: printed only in the group South Eleuthera + Central Eleuthera (5,324)
+  BHS North Eleuthera: not read -- The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its North Eleuthera (3,923 people) is a supervisory district of that name, not this district, so no 2022 figure is given here.
+  BHS East Grand Bahama: not read -- The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its East Grand Bahama (11,011 people) is a supervisory district of that name, not this district, so no 2022 figure is given here.
+  BHS West Grand Bahama: not read -- The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its West Grand Bahama (5,960 people) is a supervisory district of that name, not this district, so no 2022 figure is given here.
+  wrote data/processed/wiki_table_population.json (37 kB)
+wrote 31 records to wiki_table_population.json
