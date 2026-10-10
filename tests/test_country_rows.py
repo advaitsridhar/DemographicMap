@@ -8,12 +8,14 @@ added up into a province; and a country's curated census figures stand in
 front of an estimate that cannot be the same people. No network.
 """
 
+import copy
 import io
 import json
 import sys
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -223,6 +225,44 @@ class CountriesNotSummed(unittest.TestCase):
         quiet(be.roll_up_countries, [country], {"VNM": kids})
         self.assertEqual(country["religion"], [{"group": "No religion", "pct": 86.3}])
         self.assertEqual(country["religion_year"], 2019)
+
+    def test_myanmar_keeps_its_national_religion_and_ethnicity(self):
+        # The states' COD-PS 2023 populations are within the gate (2.9% under
+        # the Factbook's 2025 figure, against 5%), but their ethnicity is the
+        # Township Profiles' 40 national races without the Rohingya, and their
+        # religion leaves out the people the census did not enumerate.
+        for key in (("MMR", "ethnicity"), ("MMR", "religion")):
+            self.assertIn(key, be.COUNTRY_NOT_SUMMED)
+        religion = [{"group": "Buddhist", "pct": 87.9}, {"group": "Christian", "pct": 6.2},
+                    {"group": "Muslim", "pct": 4.3}]
+        ethnicity = [{"group": "Burman", "pct": 68.0}, {"group": "Shan", "pct": 9.0},
+                     {"group": "Chinese", "pct": 3.0}]
+        country = {"id": "MMR", "codes": {"iso3": "MMR"},
+                   "population": {"value": 2_060, "year": 2025},
+                   "religion": copy.deepcopy(religion), "religion_year": 2014,
+                   "ethnicity": copy.deepcopy(ethnicity)}
+        kids = [kid("Rakhine", 1_000, {"Buddhist": 600, "Islamic": 50}, year=2014, pop_year=2023),
+                kid("Yangon", 1_000, {"Buddhist": 700, "Christian": 30}, year=2014, pop_year=2023)]
+        for k, groups in zip(kids, ({"Rakhine": 600, "Bamar": 10}, {"Bamar": 650, "Chinese": 1})):
+            total = sum(groups.values())
+            k["ethnicity"] = [{"group": g, "pct": round(100 * n / total, 1), "count": n}
+                              for g, n in groups.items()]
+            k["ethnicity_year"] = 2017
+        out = io.StringIO()
+        with redirect_stdout(out), redirect_stderr(out):
+            be.roll_up_countries([country], {"MMR": kids})
+        self.assertEqual(country["religion"], religion)
+        self.assertEqual(country["ethnicity"], ethnicity)
+        self.assertEqual(country["religion_year"], 2014)
+        self.assertNotIn("religion_note", country)
+        self.assertNotIn("ethnicity_note", country)
+        self.assertIn("country not summed -- MMR: religion", out.getvalue())
+        self.assertIn("country not summed -- MMR: ethnicity", out.getvalue())
+        # Without the declaration the same states would be summed over it.
+        bare = {k: v for k, v in be.COUNTRY_NOT_SUMMED.items() if k[0] != "MMR"}
+        with mock.patch.object(be, "COUNTRY_NOT_SUMMED", bare):
+            quiet(be.roll_up_countries, [country], {"MMR": kids})
+        self.assertNotEqual(country["religion"], religion)
 
 
 class CuratedFigures(unittest.TestCase):
@@ -438,8 +478,11 @@ class SettlementFigures(unittest.TestCase):
         self.assertEqual(be.settle_settlement_figures({}, {"YEM": [e]}), (1, 0))
         self.assertEqual(e["largest_settlement"]["status"], "not_available")
         self.assertEqual(e["largest_settlement"]["note"],
-                         "No GeoNames place is named: Aden (1,079,670) is more than the "
-                         "unit (76,723): a city it is part of, or across a boundary.")
+                         "No GeoNames place is named: GeoNames gives Aden 1,079,670 people, "
+                         "more than one and a half times the unit's 76,723, so it is not "
+                         "taken to be the unit's own town. Its figure may be of a city the "
+                         "unit is only part of, of a place across a boundary, or a wider or "
+                         "older count than the unit's.")
         self.assertNotIn("largest_settlement_population", e)
         self.assertEqual([s["name"] for s in e["sources"]], ["Census"])
 
@@ -454,7 +497,7 @@ class SettlementFigures(unittest.TestCase):
         e = self.unit("Rudaki District", 603_337, "Dushanbe", 679_400, parent="DRS")
         city = {"id": "DU", "name": "Dushanbe", "parent": "TJK"}
         self.assertEqual(be.settle_settlement_figures({"TJK": [city]}, {"TJK": [e]}), (1, 0))
-        self.assertIn("the map draws a unit of that name apart from this one",
+        self.assertIn("the map draws a unit named like it elsewhere",
                       e["largest_settlement"]["note"])
 
     def test_a_city_beside_a_namesake_county_keeps_its_own_name(self):
@@ -492,7 +535,7 @@ class SettlementFigures(unittest.TestCase):
         e = self.unit("San Pedro", 34_801, "San Vicente", 38_247)
         other = {"id": "SV", "name": "San Vicente", "parent": "Q"}
         self.assertEqual(be.settle_settlement_figures({}, {"ARG": [e, other]}), (1, 0))
-        self.assertIn("apart from this one", e["largest_settlement"]["note"])
+        self.assertIn("named like it elsewhere", e["largest_settlement"]["note"])
 
     def test_beyond_the_span_the_unit_s_very_name_stands_without_its_figure(self):
         drammen = self.unit("Drammen", 68_933, "Drammen", 106_013)
@@ -503,7 +546,7 @@ class SettlementFigures(unittest.TestCase):
         # still refused it.
         old_town = self.unit("Bratislava I", 47_896, "Bratislava", 423_737)
         self.assertEqual(be.settle_settlement_figures({}, {"SVK": [old_town]}), (1, 0))
-        self.assertIn("a city it is part of", old_town["largest_settlement"]["note"])
+        self.assertIn("a city the unit is only part of", old_town["largest_settlement"]["note"])
         # ...and not where another unit is drawn under that name.
         twin = self.unit("Drammen", 68_933, "Drammen", 106_013)
         other = {"id": "D2", "name": "Drammen", "parent": "Q"}
@@ -562,14 +605,18 @@ class GeoNamesSpans(unittest.TestCase):
     def test_a_place_that_still_outnumbers_the_unit_quotes_the_population_shown(self):
         e = self.entity(60_000)
         self.assertEqual(be.settle_geonames_spans({}, {"KAZ": [e]}), (0, 1))
-        self.assertIn("is more than the unit (60,000)", e["largest_settlement"]["note"])
+        self.assertIn("one and a half times the unit's 60,000", e["largest_settlement"]["note"])
         self.assertNotIn("_spans", e["largest_settlement"])
 
-    def test_an_unchanged_population_leaves_the_reason_as_it_was(self):
+    def test_an_unchanged_population_is_quoted_as_it_was(self):
+        # The reason is put in the build's own words, which do not assert why
+        # the figure is larger (see beyond_unit_note), with the same numbers.
         e = self.entity(52_263)
-        before = e["largest_settlement"]["note"]
-        self.assertEqual(be.settle_geonames_spans({}, {"KAZ": [e]}), (0, 0))
-        self.assertEqual(e["largest_settlement"]["note"], before)
+        self.assertEqual(be.settle_geonames_spans({}, {"KAZ": [e]}), (0, 1))
+        note = e["largest_settlement"]["note"]
+        self.assertIn("Temirtau 170,600 people", note)
+        self.assertIn("the unit's 52,263", note)
+        self.assertNotIn("a city it is part of, or across a boundary", note)
 
     def held(self, town, people):
         return {"status": "not_available", "note": "No GeoNames place is named.",
@@ -587,8 +634,8 @@ class GeoNamesSpans(unittest.TestCase):
         self.assertEqual(be.settle_geonames_spans(admin1, {"TJK": [rudaki]}), (0, 1))
         self.assertEqual(rudaki["largest_settlement"]["note"],
                          "No GeoNames place is named: Dushanbe (679,400) is more than the "
-                         "unit (603,337), and the map draws a unit of that name apart from "
-                         "this one.")
+                         "unit (603,337), and the map draws a unit named like it elsewhere, "
+                         "so it cannot be shown to be this unit's town.")
         self.assertNotIn("largest_settlement_population", rudaki)
 
     def test_a_place_bearing_the_unit_s_own_name_is_named_beside_its_namesake(self):
@@ -612,7 +659,7 @@ class GeoNamesSpans(unittest.TestCase):
                          (1, 1))
         self.assertEqual(commune["largest_settlement"], "Periam")
         self.assertNotIn("largest_settlement_population", commune)
-        self.assertIn("a city it is part of", lea["largest_settlement"]["note"])
+        self.assertIn("a city the unit is only part of", lea["largest_settlement"]["note"])
 
     def test_a_place_drawn_inside_the_unit_is_still_named(self):
         district = {"id": "P", "name": "District of Prishtina", "parent": "XKX",

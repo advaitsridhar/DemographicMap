@@ -1850,6 +1850,7 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
             "The CGAZ boundary files are not in git (they are ~550 MB).\n"
             "Run: python3 scripts/fetch_boundaries.py --cgaz")
     out: list[dict[str, Any]] = []
+    seats = seat_points() if level in ("ADM1", "ADM2") else None
     with fiona.open(path) as src:
         for feat in src:
             props = dict(feat["properties"])
@@ -1858,17 +1859,23 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 continue
             point = geom.representative_point()
             bounds = geom.bounds
-            out.append({
+            name = respell(repair((props.get("shapeName") or "").strip()),
+                           props.get("shapeGroup"))
+            row = {
                 "shape_id": props.get("shapeID") or props.get("shapeGroup"),
-                "name": respell(repair((props.get("shapeName") or "").strip()),
-                                props.get("shapeGroup")),
+                "name": name,
                 "group": props.get("shapeGroup"),
                 "point": [round(point.x, 5), round(point.y, 5)],
                 "bbox": [round(b, 4) for b in bounds],
                 "_geom": (geom if level != "ADM2"
                           or props.get("shapeGroup") in OUTLINE_REFERENCE else None),
                 "area": geom.area,
-            })
+            }
+            # While the polygon is in hand: the second level's is not kept.
+            seat = seat_drawn_for(geom, row["group"], name, seats) if seats else None
+            if seat:
+                row["_seat"] = seat
+            out.append(row)
     log(f"  {level}: {len(out)} shapes")
     if level == "ADM2":
         for iso3, filename in OUTLINE_REFERENCE.items():
@@ -4434,6 +4441,29 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     ("LBN", "ethnicity"): "its governorates' nationality is a survey of residential "
                           "dwellings, which leaves out the refugee camps and informal "
                           "settlements",
+    # Myanmar's 14 drawn states and regions carry the Department of
+    # Population's 2018 Township Profiles, Table 14 (reference date 1 April
+    # 2017), for ethnicity (uscb): 40 of the 135 national races, counting
+    # 47.8 million of the states' 56.2 million people. The Rohingya are not in
+    # it (Rakhine's rows total 2,086,677 of 3,397,770 people), and Chinese and
+    # Indian people hardly are (5,638 and 1,921 in all), so a sum reads Chinese
+    # 0.0% and looks whole. Their religion is the 2014 census's township
+    # columns, 49.0 million people; the census's own Union table, which the
+    # country carries (Buddhist 87.9%, Christian 6.2%, Muslim 4.3%), counts
+    # 51,486,253, with the 1.2 million it did not enumerate, most of them in
+    # Rakhine and counted as Muslim. A sum gives Muslim 3.0%, matching neither
+    # that table nor the enumerated people's 2.3%. The country keeps the
+    # Factbook's ethnicity line and the census's national religion; the
+    # states keep their own figures and caveats. COD-PS 2023 populations
+    # brought the states within the population gate (2.9% under, against 5%),
+    # which is why this has to be said rather than left to the gate.
+    ("MMR", "ethnicity"): "its states' ethnicity is the 2018 Township Profiles' table of "
+                          "40 national races, counting 47.8 million of their 56.2 million "
+                          "people; the Rohingya are not in it and Chinese and Indian "
+                          "people hardly are",
+    ("MMR", "religion"): "its states' religion counts 49.0 million people; the census's "
+                         "national table, which the country carries, counts 51.5 million, "
+                         "with the 1.2 million it did not enumerate",
 }
 
 
@@ -5202,28 +5232,130 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
 # it, where the polygons are simplified at the line: Chosica's point is 300 m
 # outside Metropolitan Lima's outline, and GeoNames' own second-order code for
 # it is Lima Province's (1501). Left unnamed rather than named for the region
-# around Lima. (country, unit, place) -> the unit the place is part of.
+# around Lima. (country, unit, place) -> the unit the place is part of. Where
+# that unit is drawn at the same level under that very name and GeoNames puts
+# no place of its own in it, the place is named there instead.
 GEONAMES_ELSEWHERE: dict[tuple[str, str, str], str] = {
     ("PER", "Lima", "Chosica"): "Lima Province (Metropolitan Lima)",
+    # Hwawŏn-eup is a town of Dalseong-gun, Daegu's one county, and GeoNames
+    # files it there (second-order code 22310, KOSTAT's for Dalseong-gun);
+    # its point is 0.002 degrees inside Dalseo-gu's simplified outline, and
+    # Dalseong-gun's own polygon holds no GeoNames place at all.
+    ("KOR", "Dalseo-gu", "Hwawŏn"): "Dalseong-gun",
 }
 
 
+@lru_cache(maxsize=1)
+def seat_points() -> tuple[Any, list[dict[str, Any]]] | None:
+    """GeoNames' seats down to the second order that have a population, as
+    (STRtree of their points, the places), or None without the places file."""
+    from fetch_geonames import PLACES, SEATS, read_places
+    from shapely import STRtree
+    from shapely.geometry import Point
+
+    if not PLACES.exists():
+        return None
+    rows = [p for p in read_places() if p["code"] in SEATS and p["population"] > 0]
+    return STRtree([Point(p["lon"], p["lat"]) for p in rows]), rows
+
+
+def seat_drawn_for(geom: Any, iso3: str, name: str,
+                   seats: tuple[Any, list[dict[str, Any]]]) -> dict[str, Any] | None:
+    """The GeoNames seat whose point this polygon holds and that the polygon is
+    drawn for, or None.
+
+    scripts/fetch_geonames.py passes over a place whose first- or
+    second-order code is not the one most places inside its polygon carry:
+    it has most likely crossed a simplified line. A seat inside a polygon
+    drawn for it has not, whatever the codes say. Minsk stands inside the
+    Minsk City polygon, coded '04' among places coded '05' (Minsk Region's);
+    Lima inside Metropolitan Lima, coded 'LMA' among places coded '15'; and
+    Yamoussoukro inside its autonomous district. Each unit was given a
+    village or a suburb as its largest settlement instead: Syenitsa,
+    Santa Anita, Zata. The name test is the one that decides whether
+    Natural Earth's place for a region stands in a polygon drawn for it
+    (drawn_for), or the unit's own name in its own spelling (own_key).
+    """
+    tree, rows = seats
+    mine = [rows[int(i)] for i in tree.query(geom, predicate="contains")]
+    mine = [p for p in mine if p["iso3"] == iso3
+            and (drawn_for(p["name"], name)
+                 or (own_key(p["name"]) and own_key(p["name"]) == own_key(name)))]
+    if not mine:
+        return None
+    best = max(mine, key=lambda p: p["population"])
+    return {"name": best["name"], "population": best["population"],
+            "geonameid": best["geonameid"], "feature_code": best["code"],
+            "coordinates": [round(best["lon"], 5), round(best["lat"], 5)],
+            "source": "GeoNames (CC BY 4.0)"}
+
+
+# The reasons fetch_geonames gives for naming nothing where no place, or no
+# place with a population, can be shown to stand in the unit.
+NO_PLACE = ("no place with a population",
+            "GeoNames lists no populated place that can be shown to stand in this unit")
+
+
+def with_own_seat(town: dict[str, Any] | None, seat: dict[str, Any] | None,
+                  taken: set[str]) -> dict[str, Any] | None:
+    """A unit's GeoNames place once its own seat is counted among its places.
+
+    The seat replaces the place fetch_geonames chose only where it is more
+    populous than that place, which is what fetch_geonames would have done
+    had it credited the seat: where the place chosen carries no figure (it
+    was more than the unit), or was refused for being more than the unit and
+    is larger than the seat, it stands. A seat GeoNames already gives to
+    another unit of the same level is that unit's.
+    """
+    if not seat or seat["geonameid"] in taken:
+        return town
+    if not town or town.get("none") in NO_PLACE:
+        return seat
+    if "none" in town:
+        spans = SPANS_REASON.match(town["none"])
+        if spans and seat["population"] > int(spans["people"].replace(",", "")):
+            return seat
+        return town
+    if town.get("geonameid") == seat["geonameid"] or not town.get("population"):
+        return town
+    return seat if seat["population"] > town["population"] else town
+
+
 def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
-                                   admin2: dict[str, list[dict[str, Any]]]) -> int:
+                                   admin2: dict[str, list[dict[str, Any]]],
+                                   own_seats: dict[str, dict[str, Any]] | None = None) -> int:
     """The largest GeoNames place inside each unit, where no source named one.
 
     scripts/fetch_geonames.py places GeoNames' populated places in the map's
-    own polygons and keeps the most populous that belongs; this only reads
-    the result. It never replaces a settlement a national source or Natural
-    Earth named, and a town GeoNames counts larger than the unit it is in
-    carries its name without that figure.
+    own polygons and keeps the most populous that belongs; this reads the
+    result, with a seat in the polygon drawn for it counted among the unit's
+    places (``own_seats``, see seat_drawn_for). It never replaces a
+    settlement a national source or Natural Earth named, and a town GeoNames
+    counts larger than the unit it is in carries its name without that
+    figure.
     """
     towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
+    own_seats = own_seats or {}
     filled = 0
     for table in (admin1, admin2):
+        level_ids = {e["id"] for rows in table.values() for e in rows}
+        # A seat is not counted for a unit where GeoNames gives it to another
+        # unit of the same level.
+        held_by: dict[str, set[str]] = defaultdict(set)
+        for sid in level_ids:
+            town = towns.get(sid) or {}
+            if town.get("geonameid"):
+                held_by[town["geonameid"]].add(sid)
+        placed = {}
+        for sid in level_ids:
+            seat = own_seats.get(sid)
+            taken = ({seat["geonameid"]} if seat and held_by.get(seat["geonameid"], set()) - {sid}
+                     else set())
+            placed[sid] = with_own_seat(towns.get(sid), seat, taken)
+        moved: dict[tuple[str, str], dict[str, Any]] = {}
         for iso3, rows in table.items():
             for entity in rows:
-                town = towns.get(entity["id"])
+                town = placed.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
                     continue
@@ -5235,29 +5367,48 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                         + (f" ({town['population']:,})" if town.get("population") else "")
                         + f", is part of {where}, drawn as a unit of its own; its "
                           f"point lies just outside that unit's simplified outline."))
+                    moved[(iso3, where)] = town
                     continue
-                if "none" in town:
-                    held = entity.get("largest_settlement") or {}
-                    if not held.get("note"):
-                        entity["largest_settlement"] = gap(
-                            held.get("status") or NOT_AVAILABLE,
-                            f"No GeoNames place is named: {town['none']}.")
-                        # The one refusal that turns on the unit's population,
-                        # which is weighed again once the populations are
-                        # final (settle_geonames_spans).
-                        spans = SPANS_REASON.match(town["none"])
-                        if spans:
-                            entity["largest_settlement"]["_spans"] = {
-                                "town": spans["town"],
-                                "people": int(spans["people"].replace(",", ""))}
+                filled += name_geonames_place(entity, town)
+        for iso3, rows in table.items():
+            for entity in rows:
+                town = moved.get((iso3, entity.get("name")))
+                if not town:
                     continue
-                entity["largest_settlement"] = town["name"]
-                if town.get("population"):
-                    entity["largest_settlement_population"] = measure(
-                        town["population"], source="GeoNames (CC BY 4.0)")
-                entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
-                filled += 1
+                held = placed.get(entity["id"]) or {}
+                shown = entity.get("largest_settlement")
+                said = (shown.get("note") if isinstance(shown, dict) else None) or ""
+                if (held.get("none") in NO_PLACE and not entity.get("water")
+                        and is_gap(shown)
+                        and (not said or said.startswith("No GeoNames place is named"))):
+                    entity["largest_settlement"] = gap(NOT_AVAILABLE)
+                    filled += name_geonames_place(entity, town)
     return filled
+
+
+def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
+    """Name a GeoNames place as the unit's largest settlement, or say why none is."""
+    if "none" in town:
+        held = entity.get("largest_settlement") or {}
+        if not held.get("note"):
+            entity["largest_settlement"] = gap(
+                held.get("status") or NOT_AVAILABLE,
+                f"No GeoNames place is named: {town['none']}.")
+            # The one refusal that turns on the unit's population, which is
+            # weighed again once the populations are final
+            # (settle_geonames_spans).
+            spans = SPANS_REASON.match(town["none"])
+            if spans:
+                entity["largest_settlement"]["_spans"] = {
+                    "town": spans["town"],
+                    "people": int(spans["people"].replace(",", ""))}
+        return 0
+    entity["largest_settlement"] = town["name"]
+    if town.get("population"):
+        entity["largest_settlement_population"] = measure(
+            town["population"], source="GeoNames (CC BY 4.0)")
+    entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+    return 1
 
 
 # scripts/fetch_geonames.py names no settlement where the most populous place
@@ -5266,6 +5417,28 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
 # the unit's population as the map showed it when the places were placed.
 SPANS_REASON = re.compile(r"^(?P<town>.+) \((?P<people>\d{1,3}(?:,\d{3})*)\) is more than "
                           r"the unit \((?P<unit>\d{1,3}(?:,\d{3})*)\)")
+
+
+def beyond_unit_note(town: str, people: float, unit: float) -> str:
+    """Why a GeoNames place more than SPANS times its unit is not named.
+
+    Only what was measured: the place is not the unit's own name, and its
+    figure is too large to be the unit's town. Which of the reasons a figure
+    can be that large -- a city the unit is part of, a place across a line,
+    an older or wider count -- is not something the build has checked, so it
+    is not asserted: Kep's 35,990 in Kaeb is the province's 2008 count."""
+    return (f"No GeoNames place is named: GeoNames gives {town} {people:,.0f} people, "
+            f"more than one and a half times the unit's {unit:,.0f}, so it is not taken "
+            f"to be the unit's own town. Its figure may be of a city the unit is only "
+            f"part of, of a place across a boundary, or a wider or older count than "
+            f"the unit's.")
+
+
+def drawn_elsewhere_note(town: str, people: float, unit: float) -> str:
+    """Why a GeoNames place a little more than its unit, named like another unit, is not named."""
+    return (f"No GeoNames place is named: {town} ({people:,.0f}) is more than the unit "
+            f"({unit:,.0f}), and the map draws a unit named like it elsewhere, so it "
+            f"cannot be shown to be this unit's town.")
 
 
 def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
@@ -5319,13 +5492,9 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
                 continue
             was = held.get("note")
             if unit is not None and people <= GEONAMES_SPANS * unit:
-                held["note"] = (f"No GeoNames place is named: {town} ({people:,}) is "
-                                f"more than the unit ({unit:,.0f}), and the map draws a "
-                                f"unit of that name apart from this one.")
+                held["note"] = drawn_elsewhere_note(town, people, unit)
             elif unit is not None:
-                held["note"] = (f"No GeoNames place is named: {town} ({people:,}) is "
-                                f"more than the unit ({unit:,.0f}): a city it is part "
-                                f"of, or across a boundary.")
+                held["note"] = beyond_unit_note(town, people, unit)
             else:
                 held["note"] = (f"No GeoNames place is named: the most populous place "
                                 f"GeoNames puts inside it, {town} ({people:,}), cannot "
@@ -5336,20 +5505,97 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
     return named, restated
 
 
+# Words that make a unit's name the town itself: Russia's urban okrugs and
+# closed towns ("городской округ Радужный", "ЗАТО Заозёрск"), Vietnam's
+# provincial cities and towns ("Thành phố Bà Rịa"), Azerbaijan's cities
+# ("Lənkəran şəhəri") and a name ending "City" ("Al Mukalla City"). Read only
+# to compare a GeoNames place the unit's polygon holds with the unit's own
+# name (see own_key), never in a join.
+TOWN_UNIT = re.compile(
+    r"^(?:городской округ|зато|город|г\.|thành phố|thanh pho|thị xã|thi xa)\s+"
+    r"|\s+(?:şəhəri|seheri|city)$")
+# A leading Arabic article: "Al Mukalla City" against GeoNames' "Mukalla".
+ARTICLE = re.compile(r"^(?:al|el)[\s-]+")
+# Russian Cyrillic in the romanisation GeoNames uses for its own names
+# (Raduzhny, Slobodskoy, Zaozërsk); the doubled letters that leaves are
+# folded away by own_key. And the Azerbaijani schwa, which GeoNames writes
+# "a" (Lankaran) where FOLD makes it "e".
+CYRILLIC = str.maketrans({
+    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "e",
+    "ж": "zh", "з": "z", "и": "i", "й": "y", "к": "k", "л": "l", "м": "m",
+    "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+    "ф": "f", "х": "kh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch", "ъ": "",
+    "ы": "y", "ь": "", "э": "e", "ю": "yu", "я": "ya", "ə": "a",
+})
+# Ho Chi Minh City's numbered districts, which GeoNames writes in words
+# ("Quận Mười Một") and the boundary file in figures ("Quan 11"). Only after
+# "Quận" with its marks, so Hà Giang's Quản Bạ, written "Quan Ba", is not
+# district 3.
+VIET_NUMBER = {"một": "1", "hai": "2", "ba": "3", "bốn": "4", "tư": "4", "năm": "5",
+               "sáu": "6", "bảy": "7", "tám": "8", "chín": "9", "mười": "10",
+               "mười một": "11", "mười hai": "12"}
+VIET_DISTRICT = re.compile(r"\bquận (mười một|mười hai|mười|một|hai|ba|bốn|tư|năm|"
+                           r"sáu|bảy|tám|chín)\b")
+
+
+@lru_cache(maxsize=200_000)
+def own_key(text: str | None) -> str:
+    """A unit's or a place's name as two spellings of one town agree on it.
+
+    norm() keeps a name in its own script and spelling, which is right for a
+    join: a romanisation this code invents is a guess about which place a
+    row means. This is asked something narrower -- whether a GeoNames place
+    whose point the unit's own polygon holds bears the unit's name -- and the
+    place is already located. So here the town words come off ("городской
+    округ", "Thành phố", "şəhəri", "City", a leading "Al"), Cyrillic is
+    romanised as GeoNames romanises it, Ho Chi Minh City's district numbers
+    are read as figures, and the letters spellings of one name trade are
+    folded together: ə and a (Lənkəran, Lankaran), y and i (Quy Nhon, Qui
+    Nhon), x and kh (Yevlax, Yevlakh), a doubled letter and a single one
+    (Khoramshahr, Khorramshahr).
+    """
+    if not text:
+        return ""
+    text = unicodedata.normalize("NFC", text).lower().strip()
+    text = VIET_DISTRICT.sub(lambda m: "quận " + VIET_NUMBER[m.group(1)], text)
+    text = TOWN_UNIT.sub("", text).strip()
+    text = ARTICLE.sub("", text)
+    key = norm(text.translate(CYRILLIC))
+    key = key.replace("x", "kh").replace("y", "i")
+    # Letters only: Quan 11 is not Quan 1.
+    return re.sub(r"([^\W\d_])\1+", r"\1", key)
+
+
+def town_unit(name: str | None) -> bool:
+    """Whether a unit's name says the unit is a town or city itself."""
+    return bool(name) and bool(TOWN_UNIT.search(
+        unicodedata.normalize("NFC", name).lower().strip()))
+
+
 def drawn_apart(units: list[dict[str, Any]]):
     """A test of whether the map draws a unit named like a town somewhere
     other than the unit itself, the units above it and the units drawn inside
-    it, over one country's units (see settle_geonames_spans)."""
+    it, over one country's units (see settle_geonames_spans).
+
+    With ``loose`` it reads names by own_key as well as norm(), for a town
+    that bears the unit's own name in another spelling: Mukalla, in Al
+    Mukalla City, has Al Mukalla drawn beside it under the same name."""
     drawn: dict[str, set[str]] = defaultdict(set)
+    loosely: dict[str, set[str]] = defaultdict(set)
     inside: dict[Any, set[str]] = defaultdict(set)
     for entity in units:
         if norm(entity.get("name")):
             drawn[norm(entity.get("name"))].add(entity["id"])
+        if own_key(entity.get("name")):
+            loosely[own_key(entity.get("name"))].add(entity["id"])
         inside[entity.get("parent")].add(entity["id"])
 
-    def apart(town: str, entity: dict[str, Any]) -> bool:
+    def apart(town: str, entity: dict[str, Any], loose: bool = False) -> bool:
         near = {entity["id"], entity.get("parent")} | inside[entity["id"]]
-        return bool(drawn.get(norm(town), set()) - near)
+        found = set(drawn.get(norm(town), set()))
+        if loose:
+            found |= loosely.get(own_key(town), set())
+        return bool(found - near)
     return apart
 
 
@@ -5372,23 +5618,35 @@ def town_stands(town: str, people: float, unit: float, entity: dict[str, Any],
     one this is. Dushanbe is not Rudaki District's name, and stays unnamed
     there.
 
-    Beyond SPANS times the unit the place is a city the unit is only part of,
-    or a place across a boundary -- Aden in Kritar - Sirah, Ibadan in Ibadan
-    North East, Bratislava in Bratislava I -- unless it is the unit's very
-    name and no other unit is drawn under it: Drammen (106,013) in the
-    municipality of Drammen (68,933), Periam (6,563) in the commune of Periam
-    (4,196), where GeoNames' figure is older than the census or reaches past
-    the town.
+    Beyond SPANS times the unit the place may be a city the unit is only part
+    of, or a place across a boundary -- Aden in Kritar - Sirah, Ibadan in
+    Ibadan North East, Bratislava in Bratislava I -- and it is named only
+    where it bears the unit's own name and no other unit is drawn under that
+    name: Drammen (106,013) in the municipality of Drammen (68,933), Periam
+    (6,563) in the commune of Periam (4,196), where GeoNames' figure is older
+    than the census or reaches past the town.
+
+    The unit's own name is read in its own spelling or script too (own_key):
+    Qui Nhon in Quy Nhon, Lankaran in Lənkəran şəhəri, Raduzhny in городской
+    округ Радужный, Quận Mười in Quan 10. And a unit whose name says it is the
+    town (TOWN_UNIT) keeps its own town beside another unit named for it:
+    Slobodskoy is the urban okrug's town, whatever Slobodskoy District around
+    it is called, and Raduzhny the okrug's in Khanty-Mansi, whatever Vladimir's
+    closed town of the name is. Tirmiz, in Termez District beside Termez city,
+    is not the district's name and is still refused, as is Bukhara in Bukhara
+    District beside Bukhara city.
     """
     mine = entity.get("name")
     same = bool(norm(town)) and norm(town) == norm(mine)
+    loose = bool(own_key(town)) and own_key(town) == own_key(mine)
     if people <= GEONAMES_SPANS * unit:
         # The very name as well as a related one: related() reads no name
         # whose last word is shorter than PREFIX_MIN, so it found neither
         # Ono in Ono nor Orange Bay in Orange Bay.
-        return (not apart_from(town, entity) or same
+        return (not apart_from(town, entity) or same or loose
                 or related(name_forms(town), name_forms(mine)))
-    return same and not apart_from(town, entity)
+    return (same or loose) and (town_unit(mine)
+                                or not apart_from(town, entity, loose=True))
 
 
 GEONAMES_FIGURE = "GeoNames (CC BY 4.0)"
@@ -5434,14 +5692,11 @@ def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                 continue
             if (figure.get("source") == GEONAMES_FIGURE and isinstance(town, str)
                     and not town_stands(town, people, unit, entity, apart_from)):
-                why = ("and the map draws a unit of that name apart from this one"
-                       if people <= GEONAMES_SPANS * unit else
-                       "a city it is part of, or across a boundary")
                 entity["largest_settlement"] = gap(
                     NOT_AVAILABLE,
-                    f"No GeoNames place is named: {town} ({people:,.0f}) is more than "
-                    f"the unit ({unit:,.0f})"
-                    + (f", {why}." if people <= GEONAMES_SPANS * unit else f": {why}."))
+                    drawn_elsewhere_note(town, people, unit)
+                    if people <= GEONAMES_SPANS * unit else
+                    beyond_unit_note(town, people, unit))
                 entity["sources"] = [
                     src for src in entity.get("sources", [])
                     if not (src.get("name") == GEONAMES_SOURCE["name"]
@@ -5451,6 +5706,47 @@ def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                 unfigured += 1
             del entity["largest_settlement_population"]
     return unnamed, unfigured
+
+
+# A Natural Earth figure this much larger than GeoNames' for the same place is
+# said to be the urban area's.
+URBAN_AREA_MARGIN = 1.1
+
+
+def note_urban_area_figures(admin1: dict[str, list[dict[str, Any]]]) -> int:
+    """Say where a first-level unit's settlement figure is Natural Earth's urban area.
+
+    Natural Earth's figure for a populated place is the largest it has, which
+    for a city is its urban area: Haifa District showed Haifa with 1,011,000
+    people, the city's urban area, while the Haifa sub-district beside it
+    showed GeoNames' 285,316 for the same city. The figure stays -- it is
+    Natural Earth's for every first-level unit, and an urban area is a fair
+    reading of a settlement -- and where GeoNames gives the same place a
+    figure smaller by more than URBAN_AREA_MARGIN, the note says which is
+    which. Run after settle_settlement_figures, so only a figure that is
+    still shown is described.
+    """
+    towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
+    noted = 0
+    for rows in admin1.values():
+        for entity in rows:
+            figure = entity.get("largest_settlement_population")
+            town = entity.get("largest_settlement")
+            if (not isinstance(figure, dict) or not isinstance(town, str)
+                    or not str(figure.get("source") or "").startswith("Natural Earth")
+                    or entity.get("largest_settlement_note")):
+                continue
+            place = towns.get(entity["id"]) or {}
+            people = place.get("population")
+            if (not people or norm(place.get("name")) != norm(town)
+                    or figure["value"] <= URBAN_AREA_MARGIN * people):
+                continue
+            entity["largest_settlement_note"] = (
+                f"Natural Earth's figure, for the urban area {town} stands for, which "
+                f"can reach past the city's own limits; GeoNames gives {town} "
+                f"{people:,} people.")
+            noted += 1
+    return noted
 
 
 # How far outside a first-level polygon, in degrees, Natural Earth's point for
@@ -7121,6 +7417,9 @@ def main() -> int:
 
     log("build_entities: reading boundaries")
     shapes = {level: read_shapes(level) for level in args.levels}
+    own_seats = {row["shape_id"]: row.pop("_seat")
+                 for rows in shapes.values() for row in rows if row.get("_seat")}
+    log(f"  {len(own_seats)} polygons hold a GeoNames seat drawn for them")
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
         for line in declare_parents(shapes["ADM1"], shapes["ADM2"]):
@@ -7616,7 +7915,8 @@ def main() -> int:
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "
             f"the district's")
-    placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country)
+    placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country,
+                                                  own_seats)
     if placed_towns:
         log(f"  {placed_towns} largest settlements placed from GeoNames")
     placed_seats = fill_capitals_from_geonames(admin1_by_country, admin2_by_country)
@@ -7685,6 +7985,10 @@ def main() -> int:
     if unnamed or unfigured:
         log(f"  largest settlements larger than their unit: {unnamed} no longer "
             f"named, {unfigured} named without their figure")
+    urban = note_urban_area_figures(admin1_by_country)
+    if urban:
+        log(f"  {urban} first-level settlement figures said to be Natural Earth's "
+            f"urban area")
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
