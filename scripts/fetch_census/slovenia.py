@@ -36,7 +36,7 @@ import unicodedata
 from collections import Counter
 from typing import Any
 
-from ._shared import PROCESSED, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
 from .central_ages import age_sex_fields, fold, check_national_median, check_sum, report_unbound, units
 from .pxweb import http_json, unstack
 from .redatam import median_age
@@ -140,13 +140,17 @@ def area(shape: dict[str, Any]) -> float:
     return (x1 - x0) * (y1 - y0)
 
 
-def bind(names: dict[str, str]) -> dict[str, dict[str, Any]]:
+def bind(names: dict[str, str],
+         slivers: dict[str, tuple[dict[str, Any], dict[str, Any]]] | None = None
+         ) -> dict[str, dict[str, Any]]:
     """SURS code -> polygon: exact names first, then caron wildcards, then cut names.
 
     Each pass binds only what is unique among the polygons not yet taken, so
     Trzin binds to "Trzin" before Tržič is looked for and finds "Trsic".
     One boundary name, Maribor, is drawn twice: the municipality and a
-    sliver some sixty metres across; the sliver is left unbound.
+    sliver some sixty metres across; the sliver is left unbound, and put in
+    ``slivers`` (its id -> (the sliver, the municipality's polygon)) so it
+    can say why it has no figure.
     """
     shapes = units("SVN", "admin2")
     bound: dict[str, dict[str, Any]] = {}
@@ -161,6 +165,8 @@ def bind(names: dict[str, str]) -> dict[str, dict[str, Any]]:
                 if all(area(h) < 0.01 * area(biggest) for h in hits if h is not biggest):
                     log(f"  {name}: {len(hits)} polygons of that name; the others are slivers "
                         f"under 1% of its extent")
+                    if slivers is not None:
+                        slivers.update({h["id"]: (h, biggest) for h in hits if h is not biggest})
                     hits = [biggest]
             if len(hits) == 1:
                 bound[code] = hits[0]
@@ -211,7 +217,8 @@ def build(half: str) -> list[dict[str, Any]]:
     year = int(half[:4])
     # 05C4003S's 2026H1 is the population on 1 January 2026.
     check_national_median(ages["0"], "SI", year if half.endswith("H1") else year + 1)
-    bound = bind({c: names[c] for c in municipalities})
+    slivers: dict[str, tuple[dict[str, Any], dict[str, Any]]] = {}
+    bound = bind({c: names[c] for c in municipalities}, slivers)
     records = []
     for code in municipalities:
         shape = bound.get(code)
@@ -237,8 +244,23 @@ def build(half: str) -> list[dict[str, Any]]:
                       "license": LICENCE, "year": year}],
             **fields))
     explain_outliers(records, ages, year)
-    if len(records) < EXPECTED:
-        log(f"  ! {EXPECTED - len(records)} municipalities left unbound (listed above)")
+    taken = {r["shape_id"] for r in records}
+    for sid, (piece, main) in sorted(slivers.items()):
+        if main["id"] not in taken or sid in taken:
+            continue
+        why = gap(NOT_AVAILABLE, (
+            f"A sliver of the boundary file, under 1% of the extent of {main['name']}'s own "
+            f"polygon beside it, drawn as a polygon of its own with the same name. No "
+            f"statistics unit is this sliver: the municipality of {main['name']} is counted "
+            "whole, and its figures are shown on its own polygon."))
+        records.append(record(
+            f"SVN-sliver-{sid}", piece["name"], level="admin2", parent=piece["parent"],
+            country="SVN", match_by="shape_id", shape_id=sid,
+            population=why, median_age=why, sex_ratio=why))
+        log(f"  {piece['name']} ({sid}): a sliver beside the municipality, written with the reason")
+    if len([r for r in records if "-sliver-" not in r["id"]]) < EXPECTED:
+        log(f"  ! {EXPECTED - len([r for r in records if '-sliver-' not in r['id']])} "
+            "municipalities left unbound (listed above)")
     return records
 
 

@@ -124,5 +124,63 @@ class RussiaOkrugSplitTest(unittest.TestCase):
                          [("г.", "Вышний Волочек", 45830), ("пгт", "Красномайский", 4393)])
 
 
+class StatedReasonsTest(unittest.TestCase):
+    def test_the_dambovita_piece_is_declared_against_prahova(self):
+        from scripts.fetch_census import romania_census as rc
+        why = rc.DETACHED[("dambovita", rc.fold(rc.bare("POIENARII BURCHII")))]
+        self.assertEqual(why["county"], "Prahova")
+        note = why["note"].format(people=4631, total=479404)
+        self.assertIn("4,631", note)
+        self.assertIn("479,404", note)
+        self.assertNotIn("{", note)
+
+    def test_the_maribor_sliver_is_kept_aside_with_its_municipality(self):
+        from scripts.fetch_census import slovenia
+        slivers = {}
+        bound = slovenia.bind({"070": "Maribor"}, slivers)
+        self.assertEqual(bound["070"]["id"], "79292919B61607630754818")
+        self.assertIn("79292919B38849654156102", slivers)
+        piece, main = slivers["79292919B38849654156102"]
+        self.assertEqual(main["id"], "79292919B61607630754818")
+
+    def test_a_unit_with_no_women_says_so(self):
+        from scripts.fetch_census.us_island_areas import no_ratio
+        self.assertIn("7 men and no women", no_ratio(7.0, 7.0, 0.0))
+        self.assertIn("counts no one", no_ratio(0.0, 0.0, 0.0))
+
+    def test_el_salvador_polygons_with_no_district_say_why(self):
+        from scripts.fetch_census import el_salvador_census as es
+        dept = {"id": "D1", "name": "La Paz"}
+        other = {"id": "D2", "name": "Cuscatlán"}
+        sons = {"id": "D3", "name": "Sonsonate"}
+        admin2 = [
+            {"id": "a", "name": "Olocuilta", "parent": "D1", "bbox": [0, 0, 0.1, 0.1]},
+            {"id": "b", "name": "Null", "parent": "D1", "bbox": [0, 0, 0.1, 0.1]},
+            {"id": "c", "name": "Jerusalén", "parent": "D2", "bbox": [0, 0, 0.1, 0.1]},
+            {"id": "d", "name": "Olocuilta", "parent": "D1", "bbox": [0, 0, 0.0005, 0.0003]},
+            {"id": "e", "name": "Sonsonate", "parent": "D3", "bbox": [0, 0, 0.1, 0.1]},
+            {"id": "f", "name": "Null", "parent": "D3", "bbox": [0, 0, 0.1, 0.1]},
+        ]
+        parents = {"D1": "La Paz", "D2": "Cuscatlán", "D3": "Sonsonate"}
+        places = {k: (k[:2], "x", k[2:]) for k in ("0801", "0803", "0315", "0316")}
+        districts = {"0801": (places["0801"], "Olocuilta"), "0803": (places["0803"], "Jerusalén"),
+                     "0315": (places["0315"], "Sonsonate"), "0316": (places["0316"], "Sonzacate")}
+        pop = {places["0801"]: {"people": 30000}, places["0803"]: {"people": 2586},
+               places["0315"]: {"people": 70000}, places["0316"]: {"people": 30459}}
+        bound = {"0801": "a", "0803": "c"}
+        departments = {"08": (("08", "", ""), "La Paz", dept), "03": (("03", "", ""), "Sonsonate", sons)}
+        thin = es.slivers(admin2)
+        self.assertEqual(thin, {"d"})
+        out = {r["shape_id"]: r for r in es.stated_gaps(admin2, parents, thin, bound, districts,
+                                                        departments, pop)}
+        self.assertEqual(set(out), {"b", "d", "e", "f"})
+        self.assertIn("Jerusalén's under Cuscatlán", out["b"]["population"]["note"])
+        self.assertIn("Olocuilta's 30,000 people", out["d"]["ethnicity"]["note"])
+        self.assertIn("100,459", out["e"]["population"]["note"])
+        self.assertEqual(out["e"]["population"]["note"], out["f"]["population"]["note"])
+        self.assertTrue(all(r["population"]["status"] == "not_available" for r in out.values()))
+        del other
+
+
 if __name__ == "__main__":
     unittest.main()
