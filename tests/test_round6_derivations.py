@@ -554,6 +554,27 @@ class AneityumsCutPanel(unittest.TestCase):
         full = {"TAFEA": self.row(10, 0, 0, 0, 0), "Tanna": self.row(20, 0, 0, 0, 0)}
         self.assertEqual(vc.completed_panels({}, full, {"TAFEA": ["Tanna", "Aneityum"]}), {})
 
+    def test_a_made_row_carries_its_rows_rounding(self):
+        # Tafea's figures as printed: each row rounded on its own, so the made
+        # row's languages come to 1,260 against its made total of 1,261 and
+        # its males and females do not make its total by more than two.
+        tafea = self.row(873, 299, 1428, 36506, 10)
+        tafea[0] += 1
+        tafea[1] += 3
+        full = {"TAFEA": tafea, "Tanna": self.row(845, 293, 1254, 35454, 10)}
+        rows = {"TAFEA": {9: tafea[:9], 7: tafea[9:]},
+                "Tanna": {9: full["Tanna"][:9], 7: full["Tanna"][9:]}}
+        people = {"TAFEA": {"private": 45000}, "Tanna": {"private": 42000},
+                  "Aneityum": {"private": 1500}}
+        with mock.patch.object(vc, "read_table", return_value=rows), \
+                mock.patch.object(vc, "NOT_COUNCILS", frozenset({"TAFEA"})), \
+                mock.patch.object(vc, "log"):
+            out = vc.read_language([], ["TAFEA", "Tanna", "Aneityum"], people,
+                                   {"TAFEA": ["Tanna", "Aneityum"]})
+        self.assertEqual(out["Aneityum"]["total"], 1261)
+        self.assertEqual(out["Aneityum"]["counts"][vc.VERNACULAR], 1052)
+        self.assertEqual(out["Aneityum"]["completed_panels"], 2)
+
     def test_a_made_row_may_not_count_more_than_table_6_17s_people(self):
         language = {"Aneityum": {"total": 1260, "completed_from": "TAFEA", "counts": {}},
                     "Tanna": {"total": 20000, "counts": {}}}

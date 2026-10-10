@@ -448,21 +448,29 @@ def read_language(pages: list[str], order: list[str], people: dict[str, dict[str
     for name, (values, province, made) in completed.items():
         log(f"  Table 6.16 {name}: {len(made)} of its panels made from {province} less its "
             f"other councils")
+    # Every row of the table is rounded on its own, so a row made from the
+    # province's and its other councils' carries their rounding in each cell:
+    # up to two people a row. Its males and females are not used and not
+    # checked; its languages must still make its total within that slack.
+    slack: dict[str, float] = {}
     for name, (values, province, made) in list(completed.items()):
-        made = values[3] + values[6] + values[9] + values[12] + values[15]
-        sexes = all(abs(values[i + 1] + values[i + 2] - values[i]) <= 2 for i in (0, 3, 6, 9, 12))
-        if abs(made - values[0]) > 5 or not sexes or values[0] > people[name]["private"]:
-            log(f"  Table 6.16 {name}: the completed row does not make its own total "
-                f"({made:,.0f} against {values[0]:,.0f}), so no language is written")
+        slack[name] = max(5, 2 * len(by_province[province]))
+        spoken = values[3] + values[6] + values[9] + values[12] + values[15]
+        if abs(spoken - values[0]) > slack[name] or values[0] > people[name]["private"]:
+            log(f"  Table 6.16 {name}: the made row's languages make {spoken:,.0f} against "
+                f"its total of {values[0]:,.0f}, or more than its "
+                f"{people[name]['private']:,.0f} people in private households: no language "
+                "written")
             del completed[name]
     for name, values in {**full, **{n: v for n, (v, _, _) in completed.items()}}.items():
         total = values[0]
         counts = {"English": values[3], "French": values[6], "Bislama": values[9],
                   VERNACULAR: values[12], "Not stated": values[15]}
         for first in (0, 3, 6, 9, 12):
-            check(abs(values[first + 1] + values[first + 2] - values[first]) <= 2,
+            check(name in completed
+                  or abs(values[first + 1] + values[first + 2] - values[first]) <= 2,
                   f"vanuatu_census: Table 6.16 {name}: males and females do not make a total")
-        check(abs(sum(counts.values()) - total) <= 5,
+        check(abs(sum(counts.values()) - total) <= slack.get(name, 5),
               f"vanuatu_census: Table 6.16 {name}: languages make {sum(counts.values()):,.0f}"
               f", not {total:,.0f}")
         check(total <= people[name]["private"],
