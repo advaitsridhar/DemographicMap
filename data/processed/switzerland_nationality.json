@@ -10361,10 +10361,98 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Not written: the map draws this district as it was in 2009, and Murten -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes nationality by today's communes only and no split of a merged commune."
-    },
+    "ethnicity": [
+      {
+        "group": "Swiss",
+        "pct": 76.4,
+        "count": 30383
+      },
+      {
+        "group": "Portuguese",
+        "pct": 7.8,
+        "count": 3115
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.8,
+        "count": 1511
+      },
+      {
+        "group": "French",
+        "pct": 2.1,
+        "count": 850
+      },
+      {
+        "group": "German",
+        "pct": 1.8,
+        "count": 722
+      },
+      {
+        "group": "Italian",
+        "pct": 1.6,
+        "count": 623
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.6,
+        "count": 646
+      },
+      {
+        "group": "North Macedonian",
+        "pct": 1.4,
+        "count": 556
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 326
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.8,
+        "count": 321
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.4,
+        "count": 170
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.3,
+        "count": 106
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3,
+        "count": 128
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 102
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 81
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
+        "group": "British",
+        "pct": 0.1,
+        "count": 51
+      },
+      {
+        "group": "Eritrean",
+        "pct": 0.1,
+        "count": 22
+      }
+    ],
     "sources": [
       {
         "field": "ethnicity",
@@ -10379,7 +10467,10 @@
       "bfs_2009": "Bezirk See / District du Lac"
     },
     "match_by": "shape_id",
-    "shape_id": "98125504B14993208713158"
+    "shape_id": "98125504B14993208713158",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent resident population by nationality on 31 December 2025: BFS's STATPOP count from the population registers (px-x-0102010000_104) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Murten is counted whole: it took in Clavaleyres, a commune of another canton in 2009, which had 51 residents on 31 December 2021, so this figure counts them too."
   },
   {
     "id": "CHE-2009-bezirksense-nat",
