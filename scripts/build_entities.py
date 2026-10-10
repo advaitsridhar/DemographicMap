@@ -2484,7 +2484,7 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # of them at 2018): filed under the provinces Wikidata gives them, they add up
 # to the provinces' figures within 3% in 71 of 74. The projection's ages and
 # sexes stay, in sea_cod_ps_age.json.
-# Eight more countries are the same case: OCHA's projection stood in front of
+# Nine more countries are the same case: OCHA's projection stood in front of
 # the statistics office's own census count of every drawn unit by date alone,
 # and the parents, which carry the census, no longer matched their children.
 # Each office's file was checked to give every drawn unit of the country a
@@ -2510,6 +2510,13 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 #        place and a stated reason on the 13 it cannot; OCHA's 2014 figures
 #        stood on four of those reasons (Khobi, Lanchkhuti, Terjola, Tkibuli),
 #        whose polygons hold Poti's or Kutaisi's ground or none of it.
+#   GTM  guatemala_census.json, everyone INE's 2018 census enumerated in each
+#        of the 340 municipios and 22 departments (the person file's rows,
+#        which make INE's published department counts); OCHA's 2024 figures
+#        are a projection from the 2002 census and stood on all 340.
+#   DOM  dominican_census.json, the 2022 census's count of the 32 provinces,
+#        which their municipios make; OCHA's table for the Dominican Republic
+#        is of the provinces (2023), over municipios carrying the census.
 # Myanmar is not listed although its 2014 census file binds all 74
 # districts: its states and the composed districts (sea_composed.json) carry
 # the same OCHA table for 2023, so the projection is one vintage at both
@@ -2518,7 +2525,9 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
                            "CRI": "costa_rica_census.json",
+                           "DOM": "dominican_census.json",
                            "GEO": "georgia.json",
+                           "GTM": "guatemala_census.json",
                            "LAO": "laos_district.json",
                            "MEX": "mexico_municipality.json",
                            "NIC": "nicaragua_census.json",
