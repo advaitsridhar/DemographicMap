@@ -1,24 +1,50 @@
-https://www.statssa.gov.za/?page_id=1854&PPN=03-01-58: 94,040 characters
-  Municipality
-  menu-footer-colum-2-my-municipality-container
-  menu-footer-colum-2-my-municipality
-  Municipal
-  publications/report-50-11-01/report-50-11-012012.pdf
-  5 distinct match(es)
-https://www.statssa.gov.za/?page_id=1854&PPN=P0301.4: 96,594 characters
-  publications/P03014/P030142011.pdf
-  publications/catalogue/Catalogue_of_products_and_publications_Latest.pdf
-  Municipality
-  menu-footer-colum-2-my-municipality-container
-  menu-footer-colum-2-my-municipality
-  Municipal
-  publications/report-50-11-01/report-50-11-012012.pdf
-  7 distinct match(es)
-https://www.statssa.gov.za/?page_id=1854&PPN=03-01-41: 94,039 characters
-  Municipality
-  menu-footer-colum-2-my-municipality-container
-  menu-footer-colum-2-my-municipality
-  Municipal
-  publications/report-50-11-01/report-50-11-012012.pdf
-  5 distinct match(es)
-https://census.statssa.gov.za/assets/js/main.js: HTTPError: HTTP Error 404: Not Found
+  Tombali: region (91089, 44099, 46990); sectors Catió 26,999, Bedanda 24,293, Quebo 15,372, Komo 8,777, Cacine 15,648
+  Quinara: region (60777, 29854, 30923); sectors Quinara 17,123, Tite 14,862, Empada 17,517, Buba 17,123, Fulacunda 11,275
+  Oio: region (215259, 103194, 112065); sectors Mansaba 43,725, Nhacra 20,639, Mansoa 46,046, Bissorã 56,585, Farim 48,264
+  Biombo: region (93039, 43747, 49292); sectors Safim 17,356, Quinhamel 42,659, Prabis 33,024
+  Bolama: region (32424, 15770, 16654); sectors Uno 6,751, Caravela 4,263, Bubaque 11,204, Bolama 10,206
+  Bafatá: region (200884, 97231, 103653); sectors Bambadinca 31,834, Contuboel 44,048, Xitole 16,928, Gã-mamudo 24,564, Cossé 14,554, Bafatá 68,956
+  Gabú: region (205608, 99591, 106017); sectors Pirada 29,837, Boé 10,878, Sonaco 37,804, Gabú 81,495, Pitche 45,594
+  Cacheu: region (185053, 88132, 96921); sectors Bula 29,557, Canchungo 43,709, Caió 12,696, Bigene 51,412, Cacheu 18,563, São Domingos 29,116
+  Bissau: region (365097, 181208, 183889); sectors Sector-8 25,258, Sector-3 49,198, Sector-7 74,167, Sector-2 25,473, Sector-5 41,929, Sector-1 24,326, Sector-4 56,934, Sector-6 67,812
+    Setor de Catie: 35,776 (catio, komo)
+    Setor de Bedanda: 24,293 (bedanda)
+    Setor de Cacine: 15,648 (cacine)
+    Setor de Quebo: 15,372 (quebo)
+    Setor de Buba: 17,123 (buba)
+    Setor de Empada: 17,517 (empada)
+    Setor de Fulacunda: 11,275 (fulacunda)
+    Setor de Tite: 14,862 (tite)
+    Setor de Bissora: 56,585 (bissora)
+    Setor de Farim: 48,264 (farim)
+    Setor de Mansaba: 43,725 (mansaba)
+    Setor de Mansoa: 46,046 (mansoa)
+    Setor de Nhacra: 20,639 (nhacra)
+    Setor de Quinh: 42,659 (quinhamel)
+    Setor de Safim: 17,356 (safim)
+    Setor de Prabis: 33,024 (prabis)
+    Setor de Bolama: 10,206 (bolama)
+    Setor de Bubaque: 11,204 (bubaque)
+    Setor de Caravela: 4,263 (caravela)
+    Setor de Uno: 6,751 (uno)
+    Setor de Bafata: 68,956 (bafata)
+    Setor de Bambadinca: 31,834 (bambadinca)
+    Setor de Galomaro: 14,554 (cosse)
+    Setor de Gamamundo: 24,564 (gamamudo)
+    Setor de Xitole: 16,928 (xitole)
+    Contuboel: 44,048 (contuboel)
+    Setor de Gabv: 81,495 (gabu)
+    Setor de Madina do Bo˒: 10,878 (boe)
+    Setor de Pirada: 29,837 (pirada)
+    Setor de Pitche: 45,594 (pitche)
+    Setor de Sonaco: 37,804 (sonaco)
+    Setor de Bigene: 51,412 (bigene)
+    Setor de Bula: 29,557 (bula)
+    Setor de Cacheu: 18,563 (cacheu)
+    Setor de Canghungo: 43,709 (canchungo)
+    Setor de Sto Domingos: 29,116 (saodomingos)
+    Caió: 12,696 on neither of its two polygons
+    Bissau Autonomous Sector: 365,097 (sector1, sector2, sector3, sector4, sector5, sector6, sector7, sector8)
+  regions read make 1,449,230
+  9 regions and 39 sector polygons written
+  wrote data/processed/guinea_bissau_census.json (83 kB)
