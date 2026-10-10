@@ -529,7 +529,7 @@ class GuineaBissauCensusTest(unittest.TestCase):
                 "REGIÃO DE CACHEU 60 30 30 50,0", "Bigene - Rural 10 5 5 50,0",
                 "Bula - Rural 10 5 5 50,0", "Cacheu - Rural 10 5 5 50,0",
                 "Caió - Rural 10 5 5 50,0", "Canchungo - Rural 10 5 5 50,0",
-                "São Domingos - Rural 10 5 5 50,0"], "Cacheu"),
+                "SDomingos - Urbano 4 2 2 50,0", "São Domingos - Rural 6 3 3 50,0"], "Cacheu"),
         }
         spec = self.gb.REGIONS
         admin1 = [{"id": spec["Tombali"]["polygon"], "name": "Tombali"},
@@ -550,6 +550,63 @@ class GuineaBissauCensusTest(unittest.TestCase):
             self.assertIn("Caió sector whole", by[sid]["population"]["note"])
         self.assertEqual(by[spec["Tombali"]["polygon"]]["population"]["value"], 50)
         self.assertNotIn("Bafatá: left out", " ".join(report))
+
+
+TANZANIA_LINES = [
+    "Table 5.0: Population Distribution by Sex, Sex Ratio, Number of Households and Average",
+    "Household Size by Council, Dar es Salaam Region; 2022 PHC",
+    "Dar es Salaam Region 1,000 480 520 92 300 3.3",
+    "1. Kinondoni Municipal 300 140 160 88 90 3.3",
+    "2. Dar es Salaam City 250 120 130 92 80 3.1",
+    "3. Temeke Municipal 200 100 100 100 60 3.3",
+    "4. Kigamboni Municipal 50 20 30 67 15 3.3",
+    "5. Ubungo Municipal 200 100 100 100 55 3.6",
+    "Table 5.1: Population Distribution by Sex, Sex Ratio, Number of Households and Average",
+    "Household Size by Ward, Kinondoni Municipal Council; 2022 PHC",
+    "Kinondoni Municipal Council 300 140 160 88 90 3.3",
+    "1. Kawe Town 30 14 16 88 9 3.3",
+    "Household Size by Council, Singida Region; 2022 PHC",
+    "Singida Region 500 250 250 100 100 5.0",
+    "1. Iramba District 200 100 100 100 40 5.0",
+    "2. Mkalama District 300 150 150 100 60 5.0",
+]
+
+
+class TanzaniaCensusTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import tanzania_census as tz
+        self.tz = tz
+        self.national = tz.NATIONAL
+        tz.NATIONAL = 1500
+
+    def tearDown(self):
+        self.tz.NATIONAL = self.national
+
+    def test_councils_from_the_regions_tables_and_not_the_wards(self):
+        table = self.tz.parse(TANZANIA_LINES)
+        self.assertEqual(sorted(table["regions"]), ["daressalaam", "singida"])
+        self.assertIn("ubungo municipal", table["councils"])
+        self.assertNotIn("kawe town", table["councils"])
+        self.assertEqual(table["unread"], {})
+
+    def test_the_councils_made_since_are_added_to_the_ones_drawn(self):
+        table = self.tz.parse(TANZANIA_LINES)
+        admin1 = [{"id": "D", "name": "Dar es Salaam"}, {"id": "S", "name": "Singida"}]
+        admin2 = [{"id": "k", "name": "Kinondoni", "parent": "D"},
+                  {"id": "t", "name": "Temeke", "parent": "D"},
+                  {"id": "i", "name": "Ilala", "parent": "D"},
+                  {"id": "r", "name": "Iramba", "parent": "S"},
+                  {"id": "m", "name": "Mkalama", "parent": "S"}]
+        cod = {"KINONDONI": 1000, "TEMEKE": 500, "ILALA": 500, "IRAMBA": 400, "MKALAMA": 100}
+        records, report = self.tz.build(table, admin1, admin2, cod)
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["D"]["population"]["value"], 1000)
+        self.assertEqual(by["k"]["population"]["value"], 500)
+        self.assertEqual(by["t"]["population"]["value"], 250)
+        self.assertIn("Ubungo", by["k"]["population_note"])
+        # Iramba and Mkalama moved apart against the 2012-based projection: both left out.
+        self.assertNotIn("r", by)
+        self.assertNotIn("m", by)
 
 
 SENEGAL_ROWS = [

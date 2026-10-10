@@ -112,6 +112,9 @@ POOLED = {"13655514B24413703823033": ("Catió and Komo sectors together: Komo wa
                                       "polygon.")}
 SEAT = {"13655514B4319146558278": ("Cossé sector, whose seat is Galomaro.")}
 
+# Sector names a table prints short on some lines (São Domingos' urban part).
+SPELLINGS = {"sdomingos": "saodomingos"}
+
 NUMBER = re.compile(r"^\d+$")
 RATIO = re.compile(r"^\d{1,3}(?:,\d+)?$")
 PART = re.compile(r"^(?P<name>.*?\S)\s*-\s*(?P<kind>Urbano|Rural)$", re.I)
@@ -120,7 +123,8 @@ HEAD = re.compile(r"^(?:Sector|Sectoer|Setor)\s+de\s+(?P<name>.+)$", re.I)
 
 def fold(text: str) -> str:
     text = unicodedata.normalize("NFKD", str(text or ""))
-    return "".join(c for c in text.lower() if "a" <= c <= "z" or c.isdigit())
+    key = "".join(c for c in text.lower() if "a" <= c <= "z" or c.isdigit())
+    return SPELLINGS.get(key, key)
 
 
 def split_line(line: str) -> tuple[str, int, int, int] | None:
@@ -188,12 +192,15 @@ def parse(lines: list[str], region: str) -> dict[str, Any]:
             if parts.get(key, nums) != nums:
                 raise SystemExit(f"guinea_bissau_census: {label} is printed two ways")
             parts[key] = nums
-            names.setdefault(fold(name), name)
+            if len(name) > len(names.get(fold(name), "")):
+                names[fold(name)] = name
             continue
         head = HEAD.match(label)
         if head:
-            heads[fold(head.group("name"))] = nums
-            names.setdefault(fold(head.group("name")), head.group("name"))
+            name = head.group("name")
+            heads[fold(name)] = nums
+            if len(name) > len(names.get(fold(name), "")):
+                names[fold(name)] = name
     for key in {k for k, _ in parts} | set(heads):
         pieces = [parts[(key, kind)] for kind in ("urbano", "rural") if (key, kind) in parts]
         summed = tuple(sum(p[i] for p in pieces) for i in range(3)) if pieces else None
