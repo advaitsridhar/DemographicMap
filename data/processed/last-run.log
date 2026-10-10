@@ -1,15 +1,10 @@
-cod_ps: 148 cod-ps dataset(s) on HDX
-  cod-ps-ago (AGO)
-    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    1 byte(s) of ago_admpop_adm2_2024.csv are not UTF-8 and were read as cp1252
-    level: 156 of 161 names match this map's admin2 (against 7 at admin1) (ago_admpop_adm2_2024.csv)
-    161 admin2 unit(s), reference year 2024, 37,205,374 people
-  cod-ps-caf (CAF)
-    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    69 byte(s) of caf_admpop_adm2_2015_v2.csv are not UTF-8 and were read as cp1252
-    1 unit(s) appear twice with different totals and are refused
-    level: 66 of 71 names match this map's admin2 (against 0 at admin1) (caf_admpop_adm2_2015_v2.csv)
-    71 admin2 unit(s), reference year 2015, 4,113,940 people
-  232 districts in 2 countries: AGO:161, CAF:71
-  18757 districts in the file after replacing AGO, CAF
-  wrote data/processed/cod_ps_admin2.json (21744 kB)
+philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
+  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
+  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
+  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
+  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
+  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon is about 5,900 km2 against the province's 9,008, and it holds the municipalities of the 63 barangays that joined the Bangsamoro region in 2019); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon also takes in the ground of Sultan Kudarat, a province it draws no polygon for (about 9,100 km2 against Maguindanao's ~4,900; about 4,200 km2 of it lies inside Soccsksargen's polygon)); SULTAN KUDARAT (the boundary file draws no polygon for it)
+  admin1: 17 units, 17 with figures; median 18.5-27.5; sex ratio 99.9-105.8
+  admin2: 86 units, 84 with figures; median 18.4-29.9; sex ratio 97.9-109.8
+  wrote data/processed/philippines_age.json (263 kB)
+  wrote philippines_age.json: 103 records
