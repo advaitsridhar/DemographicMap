@@ -26,11 +26,15 @@ What this writes, and only this:
   in Parwan, Mata Khan in Paktia rather than Paktika, ...), and the map's own
   province polygons hold the points of five more districts than the ones
   they are linked to (``POINT_ELSEWHERE``). For those 12 the office's total
-  is not the polygon's, and the note says which districts differ. Five of
-  them -- Parwan, Ghazni, Samangan, Zabul and Kandahar -- differ only by the
-  links, every district point inside them being linked to them and no other,
-  so the polygon is the districts drawn in it and takes their summed rows
-  (``drawn_sums``); the seven a point falls across are not written.
+  is not the polygon's, and the note says which districts differ. Each
+  district is filed under exactly one drawn province, so a province is
+  written as the sum of the districts the boundary file draws in it
+  (``drawn_sums``) -- what the map shows one level down, counting every
+  district once nationally -- unless one of them is a district whose own
+  count is refused (``SHIFTED``). A district point that falls across a
+  province's edge is a fact about the boundary file's two levels of
+  outlines, which do not nest anywhere in Afghanistan; it does not change
+  that sum, and the note states it as a caveat.
 
 Ages are published for the nation alone (the same release's "گروپ سنین"
 workbook has no province or district rows). The office measured age below
@@ -70,7 +74,8 @@ Two rows do not reconcile, and both are named rather than smoothed:
 * Baghlan's Khost wa Firing prints 69,568 people, both rural and in total,
   against 32,201 females and 34,367 males -- 66,568. The province's own Total
   row agrees with the sexes, as does the 1388 edition (58,400 x 1.140). The
-  sex ratio stands; the head count of the row is not written.
+  district is written as its sexes add up, 66,568, and the note names the
+  misprint.
 * Jowzjan's Khanaqa and Aqcha: between 1388 and 1396 the office moved about
   17,000 people from the first to the second (Khanaqa x0.674, Aqcha x1.645
   against 1.140 everywhere else), a boundary change the drawn polygons cannot
@@ -169,10 +174,14 @@ TEMPORARY_PARENT = {
 }
 
 # Rows whose printed both-sexes figures contradict their own sex columns; see
-# the module docstring. The sex ratio stands, the head count is not written.
-MISPRINTED = {"0913": ("Khost wa Firing prints 69,568 people against 32,201 females "
-                       "and 34,367 males, 66,568; the province's Total row and the "
-                       "1388 edition agree with the sexes.")}
+# the module docstring. The row is written as its sexes add up -- what the
+# province's Total row and the 1388 edition both agree with -- and the note
+# names the misprinted cell.
+MISPRINTED = {"0913": ("The office's table prints 69,568 people for Khost wa Firing, "
+                       "against its own 32,201 females and 34,367 males, which make "
+                       "66,568; the province's Total row and the office's 1388 "
+                       "(2009-10) edition agree with the sexes, so the figure shown "
+                       "is their sum.")}
 # Districts between which the office moved population after the drawn
 # boundaries were set; see the module docstring.
 SHIFTED = {"2803", "2807"}
@@ -900,33 +909,38 @@ def drawn_apart(units1: list[dict[str, Any]], units2: list[dict[str, Any]]
     return apart, counted_in
 
 
+def is_point(difference: str) -> bool:
+    """Whether one of ``drawn_apart``'s differences is a point across an edge
+    (``POINT_ELSEWHERE``) rather than a district filed elsewhere."""
+    return difference.startswith("the point of ")
+
+
 def drawn_sums(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any]],
                units2: list[dict[str, Any]]) -> dict[str, tuple[int, int, list[str]] | str]:
     """Province code -> the office's females and males summed over the districts
     the boundary file draws in it, with their names; or why that sum is not the
     polygon's.
 
-    The sum stands for a province only where the drawn districts are the
-    polygon: no district point in it is linked elsewhere and none linked to it
-    has its point elsewhere (``POINT_ELSEWHERE``), and no district drawn in it
-    is one whose own count is refused (``SHIFTED``). Each district's figures
-    are its own row's plus its temporary districts', as on its own record;
-    both sexes are taken as females plus males, which is what every province's
-    Total row prints, a misprinted row's head count included (``MISPRINTED``).
+    Each district is filed under exactly one drawn province, so the sum is
+    what the map shows under the province one level down, and every district
+    is counted once nationally. It stands unless a district drawn in the
+    province is one whose own count is refused (``SHIFTED``). A district
+    point that falls inside a neighbouring polygon (``POINT_ELSEWHERE``) does
+    not refuse it: that is the boundary file's two levels of outlines not
+    nesting, which leaves the sum of the drawn districts what it is, and the
+    province's note says so. Each district's figures are its own row's plus
+    its temporary districts', as on its own record; both sexes are taken as
+    females plus males, which is what every province's Total row prints, a
+    misprinted row's head count included (``MISPRINTED``).
     """
     provinces = province_units(units1)
     code_of_label = {u["name"]: c for c, u in provinces.items()}
-    touched = {code_of_label[p] for linked, holding in POINT_ELSEWHERE.values()
-               for p in (linked, holding)}
     children: dict[str, list[str]] = {}
     for temp, parent in TEMPORARY_PARENT.items():
         children.setdefault(parent, []).append(temp)
     out: dict[str, tuple[int, int, list[str]] | str] = {}
     for unit, province, key in drawn_districts(units1, units2):
         code = code_of_label[province]
-        if code in touched:
-            out[code] = "touched"
-            continue
         if key in SHIFTED:
             out[code] = f"refused:{shown(unit)}"
             continue
@@ -957,13 +971,19 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
             # districts that each carry their own row: the polygon is their sum.
             f, m, names = summed
             listed = ", ".join(sorted(names))
+            filed = [d for d in apart[code] if not is_point(d)]
+            points = [d for d in apart[code] if is_point(d)]
             said = (f"The statistics office's 1396 (2017-18) estimates of the settled "
                     f"population summed over the {len(names)} districts the boundary "
                     f"file draws in this province ({listed}): {f + m:,} ({m:,} males, "
                     f"{f:,} females). The office's own total for the province, "
-                    f"{both:,}, is not this polygon's -- {'; '.join(apart[code])}. "
-                    f"Afghanistan has had no census since 1979, and the {NOMADS:,} "
-                    f"Kuchi nomads the office counts nationally are in no province.")
+                    f"{both:,}, is not this polygon's -- {'; '.join(filed or points)}.")
+            if filed and points:
+                said += (f" The boundary file's provinces and districts are drawn from "
+                         f"outlines that do not line up exactly: "
+                         f"{'; '.join(points)}.")
+            said += (f" Afghanistan has had no census since 1979, and the {NOMADS:,} "
+                     f"Kuchi nomads the office counts nationally are in no province.")
             fields = {
                 "population": measure(f + m, year=YEAR, source=SOURCE),
                 "population_note": said,
@@ -978,18 +998,6 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
                       f"office counts it -- {'; '.join(apart[code])}. The districts drawn "
                       f"in it carry their own figures.")
             population = dict(gap(NOT_AVAILABLE, reason), displaces_before=DISPLACES_BEFORE)
-            if summed == "touched":
-                # A district point falls across this polygon's edge
-                # (POINT_ELSEWHERE), so the districts linked to it are not the
-                # polygon either. ``no_child_sum`` tells the build, which
-                # fills a province with no population from the districts
-                # linked to it, not to: that sum is no more this polygon's
-                # than the office's total is.
-                reason = reason[:-1] + (
-                    "; their sum is not given here either, as a district lies "
-                    "across this polygon's edge.")
-                population = dict(gap(NOT_AVAILABLE, reason),
-                                  displaces_before=DISPLACES_BEFORE, no_child_sum=True)
             fields = {"population": population, "sex_ratio": gap(NOT_AVAILABLE, reason)}
         else:
             fields = {
@@ -1074,7 +1082,7 @@ def same_figures(rows: dict[str, dict[str, Any]], children: dict[str, list[str]]
     """
     by_total: dict[int, list[tuple[str, str]]] = {}
     for unit, province, key in districts:
-        if key in SHIFTED or key in MISPRINTED or key not in rows:
+        if key in SHIFTED or key not in rows:
             continue
         parts = [rows[key]] + [rows[t] for t in children.get(key, ())]
         both = sum(sexes(p)[2] for p in parts)
@@ -1127,14 +1135,13 @@ def district_records(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any
         else:
             said = (temporary_note([p["en"].strip() for p in parts[1:]])
                     + counted_in.get(key, ""))
+            fields["population"] = measure(both, year=YEAR, source=SOURCE)
+            fields["population_note"] = (
+                f"The statistics office's estimate of the settled population for 1396 "
+                f"(2017-18), projected from the 2003-05 household listing; Afghanistan "
+                f"has had no census since 1979.{said}{alike_note(alike.get(key))}")
             if key in MISPRINTED:
-                fields["population"] = gap(NOT_AVAILABLE, "Not written: " + MISPRINTED[key])
-            else:
-                fields["population"] = measure(both, year=YEAR, source=SOURCE)
-                fields["population_note"] = (
-                    f"The statistics office's estimate of the settled population for 1396 "
-                    f"(2017-18), projected from the 2003-05 household listing; Afghanistan "
-                    f"has had no census since 1979.{said}{alike_note(alike.get(key))}")
+                fields["population_note"] += " " + MISPRINTED[key]
             fields["sex_ratio"] = measure(males_per_100(male, female),
                                           unit="males_per_100_females", year=YEAR, source=SOURCE)
             fields["sex_ratio_note"] = (f"1396 estimate: {male:,} males against {female:,} "

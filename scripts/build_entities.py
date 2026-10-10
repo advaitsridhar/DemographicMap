@@ -3558,17 +3558,28 @@ VARIANTS = {"language": group_tree.LANGUAGE_VARIANTS,
             "ethnicity": group_tree.ETHNIC_VARIANTS}
 
 # What a division's composition is when it is not a count at all, and so is
-# never added up into its parent. Afghanistan's districts carry the ethnic line
-# of their development plans (afghanistan, afghanistan_ddp): the provincial
-# authorities' estimate as a planning summary prints it, from plans drawn up
-# between 2007 and 2014, many of them naming only part of the district
-# ("Pashtun 75% and the remaining 25% are Uzbak and Arab"), most of them as an
-# encyclopaedia transcribes them. Each line stands on its own district,
-# labelled as what it is. Priced at the office's 2017 populations and added
-# up, they gave provinces compositions that no plan and no office states --
-# Kunduz's came to 95.5% with nothing said about the rest -- so a province
-# keeps the reason its own source gives instead.
-UNSUMMED_BASES = frozenset({"district development plan"})
+# never added up into its parent. Empty: a sum of every division's shares,
+# priced at their own populations and labelled with the basis they share, is
+# a figure a reader can judge from its note.
+#
+# Afghanistan's district development plans were here. Each district carries
+# the ethnic line of its plan (afghanistan, afghanistan_ddp), from plans drawn
+# up between 2007 and 2014, and Kunduz's sum once came to 95.5% with nothing
+# said about the rest. Every district now carries an "Other or not stated"
+# remainder that closes its line to 100%, so where every district of a
+# province has a line the province is summed from them -- Faryab, Kunduz,
+# Laghman, Nangarhar and Nuristan -- with the basis, "district development
+# plan", carried onto the sum and its note saying it is one. The mechanism
+# stays for a basis that is not a share of people at all.
+UNSUMMED_BASES: frozenset[str] = frozenset()
+
+# How a sum's note says what its divisions' basis is, where "Every division
+# counts <basis>" would not be English: a plan is not a thing counted.
+BASIS_SAID = {
+    "district development plan": (
+        "Every division's shares are the ones its district development plan "
+        "states, an estimate rather than a count, and so are these."),
+}
 
 # How much the population gate widens per year between the two figures' dates,
 # and the most it will ever widen by. A census and an estimate of the same
@@ -4194,7 +4205,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         # Korea's provinces count nationality on the ethnicity field, and
         # the country's sum of them does too: without the basis it read as
         # a count of ethnicity.
-        + (f" Every division counts {usual} rather than {field}, so this "
+        + (f" {BASIS_SAID[usual]}" if usual in BASIS_SAID else
+           f" Every division counts {usual} rather than {field}, so this "
            "does too." if usual else ""))
     if usual:
         parent[f"{field}_basis"] = usual
