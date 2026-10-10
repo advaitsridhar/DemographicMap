@@ -9308,6 +9308,58 @@
     "sex_ratio_note": "9,723 men and 12,436 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ Красноуральск."
   },
   {
+    "id": "RUS-VPN2020-50074027B16344941885909",
+    "level": "admin2",
+    "name": "Vyshny Volochyok",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 45830,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 75.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B16344941885909",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Вышний Волочек, from the town's own row of the census's table. The census counts the town within Вышневолоцкий городской округ (67,163 people), whose other 21,333 people live outside the town and are shown on Vyshnevolotsky District, which the map draws beside it.",
+    "sex_ratio_note": "19,693 men and 26,137 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Вышний Волочек, from the town's own row of the census's table. The census counts the town within Вышневолоцкий городской округ (67,163 people), whose other 21,333 people live outside the town and are shown on Vyshnevolotsky District, which the map draws beside it."
+  },
+  {
     "id": "RUS-VPN2020-50074027B16367864202082",
     "level": "admin2",
     "name": "Burayevsky District",
@@ -17992,6 +18044,58 @@
     "sex_ratio_note": "27,313 men and 34,242 women; Everyone the 2020 census counted (reference date 1 October 2021) in Боровичский муниципальный район."
   },
   {
+    "id": "RUS-VPN2020-50074027B22618712178528",
+    "level": "admin2",
+    "name": "Pereslavsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18844,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 89.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B22618712178528",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Переславль-Залесский outside the town of Переславль-Залесский: its rural population (18,844), from the okrug's own rows of the census's table. The town (37,738 people), which the census counts in the same okrug, is shown on городской округ Переславль, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "8,915 men and 9,929 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Переславль-Залесский outside the town of Переславль-Залесский: its rural population (18,844), from the okrug's own rows of the census's table. The town (37,738 people), which the census counts in the same okrug, is shown on городской округ Переславль, which the map draws as a polygon of its own."
+  },
+  {
     "id": "RUS-VPN2020-50074027B22639528653177",
     "level": "admin2",
     "name": "Pestravsky District",
@@ -25220,6 +25324,58 @@
     "sex_ratio_note": "4,416 men and 4,012 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ поселок Солнечный."
   },
   {
+    "id": "RUS-VPN2020-50074027B27866786044045",
+    "level": "admin2",
+    "name": "Kungursky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41965,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 90.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B27866786044045",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Кунгурский муниципальный округ outside the town of Кунгур: its rural population (41,965), from the okrug's own rows of the census's table. The town (62,673 people), which the census counts in the same okrug, is shown on Кунгурский городской округ, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "19,987 men and 21,978 women; Everyone the 2020 census counted (reference date 1 October 2021) in Кунгурский муниципальный округ outside the town of Кунгур: its rural population (41,965), from the okrug's own rows of the census's table. The town (62,673 people), which the census counts in the same okrug, is shown on Кунгурский городской округ, which the map draws as a polygon of its own."
+  },
+  {
     "id": "RUS-VPN2020-50074027B27880509956465",
     "level": "admin2",
     "name": "Gusevsky District",
@@ -30524,6 +30680,58 @@
     "sex_ratio_note": "5,478 men and 5,948 women; Everyone the 2020 census counted (reference date 1 October 2021) in Килемарский муниципальный район."
   },
   {
+    "id": "RUS-VPN2020-50074027B31853797856912",
+    "level": "admin2",
+    "name": "Novozybkovsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10699,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 88.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B31853797856912",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Новозыбковский городской округ outside the town of Новозыбков: its rural population (10,699), from the okrug's own rows of the census's table. The town (38,680 people), which the census counts in the same okrug, is shown on Novozybkov, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "5,024 men and 5,675 women; Everyone the 2020 census counted (reference date 1 October 2021) in Новозыбковский городской округ outside the town of Новозыбков: its rural population (10,699), from the okrug's own rows of the census's table. The town (38,680 people), which the census counts in the same okrug, is shown on Novozybkov, which the map draws as a polygon of its own."
+  },
+  {
     "id": "RUS-VPN2020-50074027B31953791322816",
     "level": "admin2",
     "name": "Shatoysky District",
@@ -34996,6 +35204,58 @@
     "sex_ratio_note": "24,752 men and 25,848 women; Everyone the 2020 census counted (reference date 1 October 2021) in Казбековский муниципальный район."
   },
   {
+    "id": "RUS-VPN2020-50074027B35196015373053",
+    "level": "admin2",
+    "name": "Georgiyevsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 97017,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 95.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B35196015373053",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Георгиевский городской округ outside the town of Георгиевск: its rural population (97,017), from the okrug's own rows of the census's table. The town (63,221 people), which the census counts in the same okrug, is shown on Georgiyevsk, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "47,413 men and 49,604 women; Everyone the 2020 census counted (reference date 1 October 2021) in Георгиевский городской округ outside the town of Георгиевск: its rural population (97,017), from the okrug's own rows of the census's table. The town (63,221 people), which the census counts in the same okrug, is shown on Georgiyevsk, which the map draws as a polygon of its own."
+  },
+  {
     "id": "RUS-VPN2020-50074027B35209567650538",
     "level": "admin2",
     "name": "Ovyursky Kozhuun",
@@ -35670,6 +35930,58 @@
     "shape_id": "50074027B35779351568121",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Бабаюртовский муниципальный район.",
     "sex_ratio_note": "25,930 men and 27,405 women; Everyone the 2020 census counted (reference date 1 October 2021) in Бабаюртовский муниципальный район."
+  },
+  {
+    "id": "RUS-VPN2020-50074027B35817816722243",
+    "level": "admin2",
+    "name": "городской округ Переславль",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37738,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 83.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B35817816722243",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Переславль-Залесский, from the town's own row of the census's table. The census counts the town within Городской округ город Переславль-Залесский (56,582 people), whose other 18,844 people live outside the town and are shown on Pereslavsky District, which the map draws beside it.",
+    "sex_ratio_note": "17,214 men and 20,524 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Переславль-Залесский, from the town's own row of the census's table. The census counts the town within Городской округ город Переславль-Залесский (56,582 people), whose other 18,844 people live outside the town and are shown on Pereslavsky District, which the map draws beside it."
   },
   {
     "id": "RUS-VPN2020-50074027B35821970089241",
@@ -44564,6 +44876,58 @@
     "sex_ratio_note": "14,473 men and 16,209 women; Everyone the 2020 census counted (reference date 1 October 2021) in Мелекесский муниципальный район."
   },
   {
+    "id": "RUS-VPN2020-50074027B42449829895110",
+    "level": "admin2",
+    "name": "Starodub",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17687,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 86.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B42449829895110",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Стародуб, from the town's own row of the census's table. The census counts the town within Стародубский муниципальный округ (35,404 people), whose other 17,717 people live outside the town and are shown on Starodubsky District, which the map draws beside it.",
+    "sex_ratio_note": "8,176 men and 9,511 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Стародуб, from the town's own row of the census's table. The census counts the town within Стародубский муниципальный округ (35,404 people), whose other 17,717 people live outside the town and are shown on Starodubsky District, which the map draws beside it."
+  },
+  {
     "id": "RUS-VPN2020-50074027B42465403886102",
     "level": "admin2",
     "name": "Vesyegonsky District",
@@ -46434,6 +46798,58 @@
     "shape_id": "50074027B4381001352303",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Дагестанские Огни.",
     "sex_ratio_note": "15,226 men and 16,186 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Дагестанские Огни."
+  },
+  {
+    "id": "RUS-VPN2020-50074027B43842218944359",
+    "level": "admin2",
+    "name": "Manturovo",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13043,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 78.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B43842218944359",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Мантурово, from the town's own row of the census's table. The census counts the town within Городской округ город Мантурово (15,889 people), whose other 2,846 people live outside the town and are shown on Manturovsky District, which the map draws beside it.",
+    "sex_ratio_note": "5,745 men and 7,298 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Мантурово, from the town's own row of the census's table. The census counts the town within Городской округ город Мантурово (15,889 people), whose other 2,846 people live outside the town and are shown on Manturovsky District, which the map draws beside it."
   },
   {
     "id": "RUS-VPN2020-50074027B43884412711869",
@@ -71446,6 +71862,58 @@
     "shape_id": "50074027B63247354154361",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Сосновский муниципальный район.",
     "sex_ratio_note": "12,294 men and 12,967 women; Everyone the 2020 census counted (reference date 1 October 2021) in Сосновский муниципальный район."
+  },
+  {
+    "id": "RUS-VPN2020-50074027B63283607391559",
+    "level": "admin2",
+    "name": "Vyshnevolotsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21333,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 84.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B63283607391559",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Вышневолоцкий городской округ outside the town of Вышний Волочек: its rural population (16,940) and the urban-type settlement of Красномайский (4,393), from the okrug's own rows of the census's table. The town (45,830 people), which the census counts in the same okrug, is shown on Vyshny Volochyok, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "9,752 men and 11,581 women; Everyone the 2020 census counted (reference date 1 October 2021) in Вышневолоцкий городской округ outside the town of Вышний Волочек: its rural population (16,940) and the urban-type settlement of Красномайский (4,393), from the okrug's own rows of the census's table. The town (45,830 people), which the census counts in the same okrug, is shown on Vyshny Volochyok, which the map draws as a polygon of its own."
   },
   {
     "id": "RUS-VPN2020-50074027B63365100968819",
@@ -97656,6 +98124,58 @@
     "sex_ratio_note": "3,417 men and 4,116 women; Everyone the 2020 census counted (reference date 1 October 2021) in Любытинский муниципальный район."
   },
   {
+    "id": "RUS-VPN2020-50074027B83273775031724",
+    "level": "admin2",
+    "name": "Georgiyevsk",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 63221,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 81.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B83273775031724",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Георгиевск, from the town's own row of the census's table. The census counts the town within Георгиевский городской округ (160,238 people), whose other 97,017 people live outside the town and are shown on Georgiyevsky District, which the map draws beside it.",
+    "sex_ratio_note": "28,417 men and 34,804 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Георгиевск, from the town's own row of the census's table. The census counts the town within Георгиевский городской округ (160,238 people), whose other 97,017 people live outside the town and are shown on Georgiyevsky District, which the map draws beside it."
+  },
+  {
     "id": "RUS-VPN2020-50074027B83450646469259",
     "level": "admin2",
     "name": "Щёкинский район",
@@ -107744,6 +108264,58 @@
     "sex_ratio_note": "11,363 men and 12,522 women; Everyone the 2020 census counted (reference date 1 October 2021) in Куединский муниципальный округ."
   },
   {
+    "id": "RUS-VPN2020-50074027B9105763704567",
+    "level": "admin2",
+    "name": "Novozybkov",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38680,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 80.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B9105763704567",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Новозыбков, from the town's own row of the census's table. The census counts the town within Новозыбковский городской округ (49,379 people), whose other 10,699 people live outside the town and are shown on Novozybkovsky District, which the map draws beside it.",
+    "sex_ratio_note": "17,208 men and 21,472 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Новозыбков, from the town's own row of the census's table. The census counts the town within Новозыбковский городской округ (49,379 people), whose other 10,699 people live outside the town and are shown on Novozybkovsky District, which the map draws beside it."
+  },
+  {
     "id": "RUS-VPN2020-50074027B91132812213332",
     "level": "admin2",
     "name": "Yeysky District",
@@ -108990,6 +109562,58 @@
     "shape_id": "50074027B91908607754232",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Пестяковский муниципальный район.",
     "sex_ratio_note": "2,235 men and 2,780 women; Everyone the 2020 census counted (reference date 1 October 2021) in Пестяковский муниципальный район."
+  },
+  {
+    "id": "RUS-VPN2020-50074027B91982770240457",
+    "level": "admin2",
+    "name": "Manturovsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2846,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 88.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B91982770240457",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Мантурово outside the town of Мантурово: its rural population (2,846), from the okrug's own rows of the census's table. The town (13,043 people), which the census counts in the same okrug, is shown on Manturovo, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "1,338 men and 1,508 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ город Мантурово outside the town of Мантурово: its rural population (2,846), from the okrug's own rows of the census's table. The town (13,043 people), which the census counts in the same okrug, is shown on Manturovo, which the map draws as a polygon of its own."
   },
   {
     "id": "RUS-VPN2020-50074027B92028031785312",
@@ -114504,6 +115128,58 @@
     "sex_ratio_note": "6,799 men and 8,586 women; Everyone the 2020 census counted (reference date 1 October 2021) in Дивеевский муниципальный округ."
   },
   {
+    "id": "RUS-VPN2020-50074027B96019567685522",
+    "level": "admin2",
+    "name": "Кунгурский городской округ",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62673,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 84.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B96019567685522",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Кунгур, from the town's own row of the census's table. The census counts the town within Кунгурский муниципальный округ (104,638 people), whose other 41,965 people live outside the town and are shown on Kungursky District, which the map draws beside it.",
+    "sex_ratio_note": "28,771 men and 33,902 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Кунгур, from the town's own row of the census's table. The census counts the town within Кунгурский муниципальный округ (104,638 people), whose other 41,965 people live outside the town and are shown on Kungursky District, which the map draws beside it."
+  },
+  {
     "id": "RUS-VPN2020-50074027B96103137717036",
     "level": "admin2",
     "name": "Zapolyarny District",
@@ -117000,6 +117676,58 @@
     "sex_ratio_note": "14,006 men and 14,234 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ Власиха."
   },
   {
+    "id": "RUS-VPN2020-50074027B9814729903160",
+    "level": "admin2",
+    "name": "Starodubsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17717,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 88.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B9814729903160",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Стародубский муниципальный округ outside the town of Стародуб: its rural population (17,717), from the okrug's own rows of the census's table. The town (17,687 people), which the census counts in the same okrug, is shown on Starodub, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "8,327 men and 9,390 women; Everyone the 2020 census counted (reference date 1 October 2021) in Стародубский муниципальный округ outside the town of Стародуб: its rural population (17,717), from the okrug's own rows of the census's table. The town (17,687 people), which the census counts in the same okrug, is shown on Starodub, which the map draws as a polygon of its own."
+  },
+  {
     "id": "RUS-VPN2020-50074027B98333742065229",
     "level": "admin2",
     "name": "Urmarsky District",
@@ -117154,6 +117882,58 @@
     "shape_id": "50074027B98412549184479",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ Верхний Тагил.",
     "sex_ratio_note": "4,991 men and 6,256 women; Everyone the 2020 census counted (reference date 1 October 2021) in Городской округ Верхний Тагил."
+  },
+  {
+    "id": "RUS-VPN2020-50074027B98420232968680",
+    "level": "admin2",
+    "name": "Solikamsky District",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12085,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 95.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B98420232968680",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Соликамский городской округ outside the town of Соликамск: its rural population (12,085), from the okrug's own rows of the census's table. The town (89,473 people), which the census counts in the same okrug, is shown on Solikamsk, which the map draws as a polygon of its own.",
+    "sex_ratio_note": "5,909 men and 6,176 women; Everyone the 2020 census counted (reference date 1 October 2021) in Соликамский городской округ outside the town of Соликамск: its rural population (12,085), from the okrug's own rows of the census's table. The town (89,473 people), which the census counts in the same okrug, is shown on Solikamsk, which the map draws as a polygon of its own."
   },
   {
     "id": "RUS-VPN2020-50074027B98445565270592",
@@ -117414,6 +118194,58 @@
     "shape_id": "50074027B98786634162425",
     "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in Усть-Донецкий муниципальный район.",
     "sex_ratio_note": "15,142 men and 16,408 women; Everyone the 2020 census counted (reference date 1 October 2021) in Усть-Донецкий муниципальный район."
+  },
+  {
+    "id": "RUS-VPN2020-50074027B98790872673944",
+    "level": "admin2",
+    "name": "Solikamsk",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 89473,
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sex_ratio": {
+      "value": 89.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 1, таблица 5: Численность населения ... муниципальных образований, retrieved via the Internet Archive capture of 2026-09-01",
+        "url": "https://rosstat.gov.ru/vpn/2020/Tom1_Chislennost_i_razmeshchenie_naseleniya",
+        "license": "Rosstat open data",
+        "year": 2021
+      }
+    ],
+    "country": "RUS",
+    "match_by": "shape_id",
+    "shape_id": "50074027B98790872673944",
+    "population_note": "Everyone the 2020 census counted (reference date 1 October 2021) in the town of Соликамск, from the town's own row of the census's table. The census counts the town within Соликамский городской округ (101,558 people), whose other 12,085 people live outside the town and are shown on Solikamsky District, which the map draws beside it.",
+    "sex_ratio_note": "42,262 men and 47,211 women; Everyone the 2020 census counted (reference date 1 October 2021) in the town of Соликамск, from the town's own row of the census's table. The census counts the town within Соликамский городской округ (101,558 people), whose other 12,085 people live outside the town and are shown on Solikamsky District, which the map draws beside it."
   },
   {
     "id": "RUS-VPN2020-50074027B98796247779729",
@@ -118963,45 +119795,6 @@
     "shape_id": "50074027B14481941865109"
   },
   {
-    "id": "RUS-VPN2020-50074027B16344941885909",
-    "level": "admin2",
-    "name": "Vyshny Volochyok",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Вышневолоцкий городской округ (67,163 people) as one unit, and the map draws it as more than one polygon: this one and Vyshny Volochyok, which holds 45,830 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Вышневолоцкий городской округ (67,163 people) as one unit, and the map draws it as more than one polygon: this one and Vyshny Volochyok, which holds 45,830 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B16344941885909"
-  },
-  {
     "id": "RUS-VPN2020-50074027B18050530060536",
     "level": "admin2",
     "name": "Serpukhovsky District",
@@ -119119,45 +119912,6 @@
     "shape_id": "50074027B20152914209721"
   },
   {
-    "id": "RUS-VPN2020-50074027B22618712178528",
-    "level": "admin2",
-    "name": "Pereslavsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Переславль-Залесский (56,582 people) as one okrug: the town and the district around it, which the map still draws apart as 'городской округ Переславль' and 'Pereslavsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Переславль-Залесский (56,582 people) as one okrug: the town and the district around it, which the map still draws apart as 'городской округ Переславль' and 'Pereslavsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B22618712178528"
-  },
-  {
     "id": "RUS-VPN2020-50074027B22646243288292",
     "level": "admin2",
     "name": "городской округ Орехово-Зу",
@@ -119170,7 +119924,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Орехово-Зу, which holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and Orekhovo-Zuyevsky District. This one holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "median_age": {
       "status": "not_available",
@@ -119178,7 +119932,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Орехово-Зу, which holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and Orekhovo-Zuyevsky District. This one holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "religion": {
       "status": "not_available"
@@ -119209,7 +119963,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Красноарме, which holds 137,360 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one, городской округ Красноарме and Pushkinsky District. городской округ Красноарме holds 26,492 of its people in its towns. Pushkinsky District holds 110,868 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "median_age": {
       "status": "not_available",
@@ -119217,7 +119971,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Красноарме, which holds 137,360 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one, городской округ Красноарме and Pushkinsky District. городской округ Красноарме holds 26,492 of its people in its towns. Pushkinsky District holds 110,868 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "religion": {
       "status": "not_available"
@@ -119234,45 +119988,6 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B25224023728003"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B27866786044045",
-    "level": "admin2",
-    "name": "Kungursky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Кунгурский муниципальный округ (104,638 people) as one unit, and the map draws it as more than one polygon: this one and Кунгурский городской округ, which holds 62,673 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Кунгурский муниципальный округ (104,638 people) as one unit, and the map draws it as more than one polygon: this one and Кунгурский городской округ, which holds 62,673 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B27866786044045"
   },
   {
     "id": "RUS-VPN2020-50074027B29364235379676",
@@ -119353,45 +120068,6 @@
     "shape_id": "50074027B31438457510607"
   },
   {
-    "id": "RUS-VPN2020-50074027B31853797856912",
-    "level": "admin2",
-    "name": "Novozybkovsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Новозыбковский городской округ (49,379 people) as one unit, and the map draws it as more than one polygon: this one and Novozybkov, which holds 38,680 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Новозыбковский городской округ (49,379 people) as one unit, and the map draws it as more than one polygon: this one and Novozybkov, which holds 38,680 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B31853797856912"
-  },
-  {
     "id": "RUS-VPN2020-50074027B3207695915667",
     "level": "admin2",
     "name": "Zvenigorod",
@@ -119431,84 +120107,6 @@
     "shape_id": "50074027B3207695915667"
   },
   {
-    "id": "RUS-VPN2020-50074027B35196015373053",
-    "level": "admin2",
-    "name": "Georgiyevsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Георгиевский городской округ (160,238 people) as one unit, and the map draws it as more than one polygon: this one and Georgiyevsk, which holds 63,221 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Георгиевский городской округ (160,238 people) as one unit, and the map draws it as more than one polygon: this one and Georgiyevsk, which holds 63,221 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B35196015373053"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B35817816722243",
-    "level": "admin2",
-    "name": "городской округ Переславль",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Переславль-Залесский (56,582 people) as one okrug: the town and the district around it, which the map still draws apart as 'городской округ Переславль' and 'Pereslavsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Переславль-Залесский (56,582 people) as one okrug: the town and the district around it, which the map still draws apart as 'городской округ Переславль' and 'Pereslavsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B35817816722243"
-  },
-  {
     "id": "RUS-VPN2020-50074027B41322199318299",
     "level": "admin2",
     "name": "Berezniki",
@@ -119546,84 +120144,6 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B41322199318299"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B42449829895110",
-    "level": "admin2",
-    "name": "Starodub",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Стародубский муниципальный округ (35,404 people) as one unit, and the map draws it as more than one polygon: this one and Starodub, which holds 17,687 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Стародубский муниципальный округ (35,404 people) as one unit, and the map draws it as more than one polygon: this one and Starodub, which holds 17,687 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B42449829895110"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B43842218944359",
-    "level": "admin2",
-    "name": "Manturovo",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Мантурово (15,889 people) as one okrug: the town and the district around it, which the map still draws apart as 'Manturovo' and 'Manturovsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Мантурово (15,889 people) as one okrug: the town and the district around it, which the map still draws apart as 'Manturovo' and 'Manturovsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B43842218944359"
   },
   {
     "id": "RUS-VPN2020-50074027B43970917695104",
@@ -119716,7 +120236,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Орехово-Зу, which holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Орехово-Зу. городской округ Орехово-Зу holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "median_age": {
       "status": "not_available",
@@ -119724,7 +120244,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Орехово-Зу, which holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Орехово-Зуевский городской округ (241,126 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Орехово-Зу. городской округ Орехово-Зу holds 105,745 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "religion": {
       "status": "not_available"
@@ -119794,7 +120314,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Красноарме, which holds 137,360 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one, Ivanteyevka and Pushkinsky District. This one holds 26,492 of its people in its towns. Pushkinsky District holds 110,868 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "median_age": {
       "status": "not_available",
@@ -119802,7 +120322,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Красноарме, which holds 137,360 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one, Ivanteyevka and Pushkinsky District. This one holds 26,492 of its people in its towns. Pushkinsky District holds 110,868 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "religion": {
       "status": "not_available"
@@ -119899,45 +120419,6 @@
     "shape_id": "50074027B59167920748755"
   },
   {
-    "id": "RUS-VPN2020-50074027B63283607391559",
-    "level": "admin2",
-    "name": "Vyshnevolotsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Вышневолоцкий городской округ (67,163 people) as one unit, and the map draws it as more than one polygon: this one and Vyshny Volochyok, which holds 45,830 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Вышневолоцкий городской округ (67,163 people) as one unit, and the map draws it as more than one polygon: this one and Vyshny Volochyok, which holds 45,830 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B63283607391559"
-  },
-  {
     "id": "RUS-VPN2020-50074027B73865200932973",
     "level": "admin2",
     "name": "Losino-Petrovsky",
@@ -119989,7 +120470,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Красноарме, which holds 137,360 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one, Ivanteyevka and городской округ Красноарме. городской округ Красноарме holds 26,492 of its people in its towns. This one holds 110,868 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "median_age": {
       "status": "not_available",
@@ -119997,7 +120478,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one and городской округ Красноарме, which holds 137,360 of its people in its towns. Its count belongs to no one polygon, so none is written."
+      "note": "The 2020 census counts Городской округ Пушкинский (299,385 people) as one unit, and the map draws it as more than one polygon: this one, Ivanteyevka and городской округ Красноарме. городской округ Красноарме holds 26,492 of its people in its towns. This one holds 110,868 of its people in its towns. Its count belongs to no one polygon, so none is written."
     },
     "religion": {
       "status": "not_available"
@@ -120014,45 +120495,6 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B8291962289284"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B83273775031724",
-    "level": "admin2",
-    "name": "Georgiyevsk",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Георгиевский городской округ (160,238 people) as one unit, and the map draws it as more than one polygon: this one and Georgiyevsk, which holds 63,221 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Георгиевский городской округ (160,238 people) as one unit, and the map draws it as more than one polygon: this one and Georgiyevsk, which holds 63,221 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B83273775031724"
   },
   {
     "id": "RUS-VPN2020-50074027B84914409766003",
@@ -120133,84 +120575,6 @@
     "shape_id": "50074027B89871819113429"
   },
   {
-    "id": "RUS-VPN2020-50074027B9105763704567",
-    "level": "admin2",
-    "name": "Novozybkov",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Новозыбковский городской округ (49,379 people) as one unit, and the map draws it as more than one polygon: this one and Novozybkov, which holds 38,680 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Новозыбковский городской округ (49,379 people) as one unit, and the map draws it as more than one polygon: this one and Novozybkov, which holds 38,680 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B9105763704567"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B91982770240457",
-    "level": "admin2",
-    "name": "Manturovsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Мантурово (15,889 people) as one okrug: the town and the district around it, which the map still draws apart as 'Manturovo' and 'Manturovsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Городской округ город Мантурово (15,889 people) as one okrug: the town and the district around it, which the map still draws apart as 'Manturovo' and 'Manturovsky District'. Its count belongs to neither polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B91982770240457"
-  },
-  {
     "id": "RUS-VPN2020-50074027B9417606654384",
     "level": "admin2",
     "name": "городской округ Серпухов",
@@ -120250,45 +120614,6 @@
     "shape_id": "50074027B9417606654384"
   },
   {
-    "id": "RUS-VPN2020-50074027B96019567685522",
-    "level": "admin2",
-    "name": "Кунгурский городской округ",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Кунгурский муниципальный округ (104,638 people) as one unit, and the map draws it as more than one polygon: this one and Кунгурский городской округ, which holds 62,673 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Кунгурский муниципальный округ (104,638 people) as one unit, and the map draws it as more than one polygon: this one and Кунгурский городской округ, which holds 62,673 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B96019567685522"
-  },
-  {
     "id": "RUS-VPN2020-50074027B97204580379125",
     "level": "admin2",
     "name": "Одинцовский район",
@@ -120326,122 +120651,5 @@
     "country": "RUS",
     "match_by": "shape_id",
     "shape_id": "50074027B97204580379125"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B9814729903160",
-    "level": "admin2",
-    "name": "Starodubsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Стародубский муниципальный округ (35,404 people) as one unit, and the map draws it as more than one polygon: this one and Starodub, which holds 17,687 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Стародубский муниципальный округ (35,404 people) as one unit, and the map draws it as more than one polygon: this one and Starodub, which holds 17,687 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B9814729903160"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B98420232968680",
-    "level": "admin2",
-    "name": "Solikamsky District",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Соликамский городской округ (101,558 people) as one unit, and the map draws it as more than one polygon: this one and Solikamsk, which holds 89,473 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Соликамский городской округ (101,558 people) as one unit, and the map draws it as more than one polygon: this one and Solikamsk, which holds 89,473 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B98420232968680"
-  },
-  {
-    "id": "RUS-VPN2020-50074027B98790872673944",
-    "level": "admin2",
-    "name": "Solikamsk",
-    "parent": "RUS",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The 2020 census counts Соликамский городской округ (101,558 people) as one unit, and the map draws it as more than one polygon: this one and Solikamsk, which holds 89,473 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2020 census's age by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2020 census counts Соликамский городской округ (101,558 people) as one unit, and the map draws it as more than one polygon: this one and Solikamsk, which holds 89,473 of its people in its towns. Its count belongs to no one polygon, so none is written."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2020 census's native language by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census's nationality by municipal unit is not read here. Rosstat's federal volumes publish it by subject only (shown one level up); below that the regional offices publish it, on hosts whose Russian Trusted Root CA certificate the runner does not trust, and the Internet Archive holds about 12 of their 85 sites."
-    },
-    "sources": [],
-    "country": "RUS",
-    "match_by": "shape_id",
-    "shape_id": "50074027B98790872673944"
   }
 ]
