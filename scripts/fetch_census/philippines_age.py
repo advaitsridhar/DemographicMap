@@ -56,10 +56,11 @@ whose drawn provinces get no figure, are instead the sum of the census
 provinces that made them before 2019 (``REGIONS``), placed on the map's admin1
 tiles. Central and Western Visayas are drawn as they stood before the Negros
 Island Region took Negros Oriental, Siquijor, Negros Occidental and Bacolod
-from them in 2024 (``REDRAWN``). These four regions' later figures are for
-other ground than their polygons, so each is also given the 2020 count of the
-ground it draws, as its population, and the note says why (``LATER``); the
-other regions' later figures are for the ground they draw and are left alone.
+from them in 2024 (``REDRAWN``). Those two regions' and Soccsksargen's later
+figures are for other ground than their polygons, so each is also given the
+2020 count of the ground it draws, as its population, and the note says why
+(``LATER``); the other regions' later figures are for the ground they draw and
+are left alone, and so is the ARMM's 2015 count of its own five provinces.
 
 **Checks**, each a refusal: every barangay's ages make its own total for both
 sexes and for each, and its males and females make its total; the country's
@@ -147,10 +148,17 @@ REDRAWN = {
 }
 # Why the region's later figures are for other ground than its polygon, said
 # on the population the census gives it instead.
+#
+# Not the ARMM. Its population on the map is the 2015 census's count of the
+# same five provinces, which is the ground its polygon draws, so nothing is
+# wrong with it -- and its 2020 count was not harmless: it makes the ARMM's
+# districts' populations add up to the region's, and the map then subtracts
+# the other four provinces' religion from the region's to give a religion to
+# "Maguindanao", whose polygon is not the province (``EXCLUDE``). The
+# subtraction would put Maguindanao's and Cotabato City's people on ground
+# that takes in Sultan Kudarat, over the reason that says no census figure
+# fits it.
 LATER = {
-    "ARMM": ("The Bangsamoro region, which replaced the ARMM in 2019, also took in "
-             "Cotabato City and 63 barangays of Cotabato, so its figures are for more "
-             "ground than this polygon draws."),
     "Soccsksargen": ("Cotabato City and 63 barangays of Cotabato have been part of the "
                      "Bangsamoro region since 2019, so Soccsksargen's figures since then "
                      "are for less ground than this polygon draws."),

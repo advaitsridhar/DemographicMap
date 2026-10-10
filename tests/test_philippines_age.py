@@ -124,16 +124,31 @@ class BuildTest(unittest.TestCase):
         self.assertIn("Maguindanao, Cotabato City", by["R4"]["median_age_note"])
 
     def test_a_pre_2019_region_counts_its_own_ground(self):
-        admin1 = ADMIN1 + [{"id": "R4", "name": "ARMM"}]
-        regions = {"ARMM": ["Maguindanao", "Cotabato City"]}
+        admin1 = ADMIN1 + [{"id": "R4", "name": "Soccsksargen"}]
+        regions = {"Soccsksargen": ["Maguindanao", "Cotabato City"]}
         with mock.patch.object(p, "REGIONS", regions):
             recs = p.build(self.units(), 80, admin1, ADMIN2)
         by = {r["shape_id"]: r for r in recs}
         self.assertEqual(by["R4"]["population"]["value"], 18 * 81)
         self.assertEqual(by["R4"]["population"]["year"], 2020)
-        self.assertIn("for more ground than this polygon draws",
+        self.assertIn("for less ground than this polygon draws",
                       by["R4"]["population_note"])
         self.assertEqual(by["R4"]["sources"][0]["field"], "population/median_age/sex_ratio")
+
+    def test_the_armm_keeps_the_count_it_has(self):
+        # Its 2015 count is of its own ground; a 2020 count would make its
+        # districts add up to it, and the map would then subtract a religion
+        # for "Maguindanao", whose polygon is not the province.
+        admin1 = ADMIN1 + [{"id": "R4", "name": "ARMM"}]
+        regions = {"ARMM": ["Maguindanao", "Cotabato City"]}
+        with mock.patch.object(p, "REGIONS", regions):
+            recs = p.build(self.units(), 80, admin1, ADMIN2)
+        by = {r["shape_id"]: r for r in recs}
+        self.assertNotIn("value", by["R4"]["population"])
+        self.assertNotIn("population_note", by["R4"])
+        self.assertEqual(by["R4"]["sources"][0]["field"], "median_age/sex_ratio")
+        self.assertEqual(by["R4"]["sex_ratio"]["value"], 100.0)
+        self.assertNotIn("ARMM", p.LATER)
 
     def visayas(self, drawn, elsewhere=()):
         rows = [row("Region VII", "CEBU", "C1", flat(6), flat(5)),
@@ -174,7 +189,7 @@ class BuildTest(unittest.TestCase):
         self.assertIn("Negros Oriental", str(caught.exception))
 
     def test_every_region_given_its_own_count_says_why(self):
-        self.assertEqual(set(p.LATER), set(p.REGIONS) | set(p.REDRAWN))
+        self.assertEqual(set(p.LATER), (set(p.REGIONS) - {"ARMM"}) | set(p.REDRAWN))
 
     def test_a_province_with_no_polygon_refuses(self):
         cols = p.columns(HEADER)
