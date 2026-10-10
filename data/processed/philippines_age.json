@@ -4631,9 +4631,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 4404288,
-      "year": 2020,
-      "source": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)"
+      "status": "not_available"
     },
     "median_age": {
       "value": 18.5,
@@ -4658,7 +4656,7 @@
     },
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "median_age/sex_ratio",
         "name": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)",
         "url": "https://data.humdata.org/dataset/popn-single-year-age-sex-and-barangay-census-2020",
         "year": 2020,
@@ -4669,8 +4667,7 @@
     "match_by": "shape_id",
     "shape_id": "36201628B49646111072560",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2020 Census of Population and Housing's count of everyone in Basilan, Lanao del Sur, Maguindanao, Sulu, Tawi-Tawi -- the region as its polygon draws it, before the Bangsamoro region of 2019, by single year of age to an open 80+.",
-    "sex_ratio_note": "Males per 100 females in the 2020 Census of Population and Housing's count of everyone in Basilan, Lanao del Sur, Maguindanao, Sulu, Tawi-Tawi -- the region as its polygon draws it, before the Bangsamoro region of 2019.",
-    "population_note": "The 2020 Census of Population and Housing's count of everyone in Basilan, Lanao del Sur, Maguindanao, Sulu, Tawi-Tawi -- the region as its polygon draws it, before the Bangsamoro region of 2019. The Bangsamoro region, which replaced the ARMM in 2019, also took in Cotabato City and 63 barangays of Cotabato, so its figures are for more ground than this polygon draws."
+    "sex_ratio_note": "Males per 100 females in the 2020 Census of Population and Housing's count of everyone in Basilan, Lanao del Sur, Maguindanao, Sulu, Tawi-Tawi -- the region as its polygon draws it, before the Bangsamoro region of 2019."
   },
   {
     "id": "PHL-CPH2020-R-bicolregion",
