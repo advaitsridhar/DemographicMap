@@ -9244,5 +9244,42 @@
     "match_by": "shape_id",
     "shape_id": "98125504B45092445676114",
     "population_note": "BFS's permanent resident population on 31 December 2020, summed over the 2 communes of that year inside this district as drawn: The map draws this district as it was in 2009, and Neuchâtel -- today's commune(s) -- merged 2009 communes from inside and outside it; BFS publishes no split of a merged commune. 2020 is the latest year in which the district's communes still lay wholly inside it."
+  },
+  {
+    "id": "CHE-2009-bodensee",
+    "level": "admin2",
+    "name": "Bodensee",
+    "parent": "70761945B73326014959541",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "This polygon is Thurgau's part of Lake Constance (Bodensee), not a district. Nobody is counted on the lake. Its shore takes in part of the lakeside commune of Horn, whose residents the Federal Statistical Office counts in the district of Arbon, where the map shows them."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "This polygon is Thurgau's part of Lake Constance (Bodensee), not a district. Nobody is counted on the lake. Its shore takes in part of the lakeside commune of Horn, whose residents the Federal Statistical Office counts in the district of Arbon, where the map shows them."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "This polygon is Thurgau's part of Lake Constance (Bodensee), not a district. Nobody is counted on the lake. Its shore takes in part of the lakeside commune of Horn, whose residents the Federal Statistical Office counts in the district of Arbon, where the map shows them."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "98125504B74528098758836"
   }
 ]
