@@ -89,12 +89,16 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Korea's nationality as ethnicity, by the owner's decision: two register
   # files from data.go.kr, no key.
   soft python3 -m scripts.fetch_census.korea_nationality
+  soft python3 -m scripts.fetch_census.korea_ages
+  soft python3 -m scripts.fetch_census.korea_religion
   # Taiwan by the owner's decision: census main language read, ethnicity and
   # religion modelled; two DGBAS/Hakka PDFs and three MOI tables, no key.
   soft python3 -m scripts.fetch_census.taiwan
+  soft python3 -m scripts.fetch_census.taiwan_townships
   # Japan by the owner's decision: census nationality read, religion and
   # language modelled; two e-Stat calls, needs ESTAT_API.
   soft python3 -m scripts.fetch_census.japan
+  soft python3 -m scripts.fetch_census.japan_municipal
   # Five Chinese provinces from a survey, transcribed; no network.
   soft python3 -m scripts.fetch_census.cfps_survey
   # Its newer wave from the public-release file on Kaggle; needs egress.
@@ -123,24 +127,50 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # egress and 300 MB of PDF; the adapter itself reads the text files --fetch
   # left in data/raw/mongolia and needs nothing.
   soft python3 -m scripts.fetch_census.mongolia
+  soft python3 -m scripts.fetch_census.mongolia_ages
   # North Korea: the 2008 census's Table 2, population and sex ratio for the
   # 11 first-level units and all 179 counties, read from the UN Statistics
   # Division's copy of the CBS National Report; one 1.4 MB PDF, needs egress.
   soft python3 -m scripts.fetch_census.northkorea
   # Census ethnicity for the 31 divisions, one MediaWiki API call each.
   soft python3 -m scripts.fetch_census.china_wiki
+  soft python3 -m scripts.fetch_census.china_census
+  soft python3 -m scripts.fetch_census.china_county_census
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Thailand's ethnicity by the owner's decision: modelled from the same
   # article's home-language cells and a regional assignment; two API calls.
   soft python3 -m scripts.fetch_census.thailand_ethnicity
+  soft python3 -m scripts.fetch_census.thailand_nationality
   # Papua New Guinea: two NSO PDFs, the 2024 census Final Figures (8 MB) and
   # the 2011 National Report (12 MB), read with pypdf.
   soft python3 -m scripts.fetch_census.png
+  # The Pacific offices' own census tables, a few PDFs or workbooks each (some
+  # through the Internet Archive); nothing is read from data/raw.
+  soft python3 -m scripts.fetch_census.fiji_census
+  soft python3 -m scripts.fetch_census.solomon_census
+  soft python3 -m scripts.fetch_census.vanuatu_census
+  soft python3 -m scripts.fetch_census.samoa_census
+  soft python3 -m scripts.fetch_census.tonga_census
+  soft python3 -m scripts.fetch_census.kiribati_census
+  soft python3 -m scripts.fetch_census.marshall_census
+  soft python3 -m scripts.fetch_census.tuvalu_census
+  soft python3 -m scripts.fetch_census.micronesia_census
+  soft python3 -m scripts.fetch_census.nauru_census
+  soft python3 -m scripts.fetch_census.palau_census
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
   soft python3 -m scripts.fetch_census.wiki_census
   # Reads the committed BNS workbook under data/raw/kazakhstan; no network.
   soft python3 -m scripts.fetch_census.kazakhstan
+  soft python3 -m scripts.fetch_census.kazakhstan_census
+  soft python3 -m scripts.fetch_census.kazakhstan_religion
+  soft python3 -m scripts.fetch_census.iran_census
+  soft python3 -m scripts.fetch_census.iran_ali
+  soft python3 -m scripts.fetch_census.uzbekistan_siat
+  soft python3 -m scripts.fetch_census.uzbekistan_census
+  soft python3 -m scripts.fetch_census.kyrgyzstan_census
+  soft python3 -m scripts.fetch_census.tajikistan_census
+  soft python3 -m scripts.fetch_census.turkmenistan_census
   soft python3 -m scripts.fetch_census.malaysia --level both
   # One DOSM dashboard parquet (religion, 2020 census) plus the two population
   # CSVs above for the count base; needs pyarrow.
@@ -148,9 +178,21 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Brunei: one DEPS workbook, the BPP 2021 census annexes. Race and religion
   # for the four districts, a head count for the 38 mukims; needs openpyxl.
   soft python3 -m scripts.fetch_census.brunei
+  soft python3 -m scripts.fetch_census.indonesia_age
   # Indonesia: 2010 census ethnicity by province and registry/BPS religion by
   # province and regency, read from the Indonesian Wikipedia (~550 API calls).
   soft python3 -m scripts.fetch_census.indonesia
+  soft python3 -m scripts.fetch_census.vietnam_district
+  soft python3 -m scripts.fetch_census.vietnam_religion
+  soft python3 -m scripts.fetch_census.timor_age
+  soft python3 -m scripts.fetch_census.timor_nationality
+  soft python3 -m scripts.fetch_census.myanmar_age
+  soft python3 -m scripts.fetch_census.philippines_age
+  soft python3 -m scripts.fetch_census.sea_composed
+  soft python3 -m scripts.fetch_census.singapore_age
+  soft python3 -m scripts.fetch_census.cambodia_census
+  soft python3 -m scripts.fetch_census.sea_cod_ps_age
+  # held: soft python3 -m scripts.fetch_census.indonesia_language
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.
   soft python3 -m scripts.fetch_census.czechia
@@ -241,6 +283,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # and similar -- there is no state-level dataflow (see the G14 catalogue
   # listing in run 32566750604). LGAs join the admin-2 layer.
   soft python3 -m scripts.fetch_census.abs --level lga
+  # The ABS Data API's 2021 G01/G02/G08 by LGA and SA2+, G13/G14 by state:
+  # medians, sex ratios, ancestry, and the states' own counts and compositions.
+  soft python3 -m scripts.fetch_census.australia_profile
   # India has no statistics API; this reads a validated district-level extract
   # of the 2011 census and aggregates it to states.
   soft python3 -m scripts.fetch_census.india_census --level state
@@ -276,6 +321,24 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.bangladesh
   soft python3 -m scripts.fetch_census.south_africa
   soft python3 -m scripts.fetch_census.nepal
+  # South Asia's later readers, each after the file it reads: the India
+  # readers check against the C-01 shapes india_census writes,
+  # pakistan_census_tables against pakistan_district.json (pakistan),
+  # bangladesh_zila_ages against bangladesh_district.json (bangladesh), and
+  # afghanistan_sdes takes each figure's size from afghanistan_estimates.
+  # afghanistan reads the district development plans' ethnic shares as the
+  # provinces' articles transcribe them, afghanistan_ddp the plans' own PDFs
+  # in the Internet Archive (and compares the two, so it runs after).
+  soft python3 -m scripts.fetch_census.india_ages
+  soft python3 -m scripts.fetch_census.india_birthplace
+  soft python3 -m scripts.fetch_census.pakistan_census_tables
+  soft python3 -m scripts.fetch_census.bangladesh_zila_ages
+  soft python3 -m scripts.fetch_census.bhutan
+  soft python3 -m scripts.fetch_census.maldives_census
+  soft python3 -m scripts.fetch_census.afghanistan
+  soft python3 -m scripts.fetch_census.afghanistan_ddp
+  soft python3 -m scripts.fetch_census.afghanistan_estimates
+  soft python3 -m scripts.fetch_census.afghanistan_sdes
   soft python3 -m scripts.fetch_census.new_zealand
   # One reader, every country in the U.S. Census Bureau's subnational series:
   # the Philippines (2020 census) and Ethiopia (2007, the last it completed).
@@ -299,6 +362,18 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # skips Germany instead of failing the run.
   soft python3 -m scripts.fetch_census.germany --level land
   soft python3 -m scripts.fetch_census.germany --level regierungsbezirk
+  soft python3 -m scripts.fetch_census.iraq_census --offline
+  soft python3 -m scripts.fetch_census.syria_census
+  soft python3 -m scripts.fetch_census.yemen_census
+  soft python3 -m scripts.fetch_census.bahrain_census
+  soft python3 -m scripts.fetch_census.saudi_census
+  soft python3 -m scripts.fetch_census.qatar_census
+  soft python3 -m scripts.fetch_census.kuwait_census
+  soft python3 -m scripts.fetch_census.israel_cbs
+  soft python3 -m scripts.fetch_census.jordan_dos
+  soft python3 -m scripts.fetch_census.oman_ncsi
+  soft python3 -m scripts.fetch_census.lebanon_survey
+  soft python3 -m scripts.fetch_census.uae_scad
 fi
 
 if [ "${SKIP_TILES:-0}" != "1" ]; then

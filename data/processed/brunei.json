@@ -17,10 +17,16 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 32.0,
+      "unit": "years",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 111.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "religion": [
       {
@@ -67,13 +73,13 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -88,7 +94,9 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
     "religion_year": 2021,
-    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\".",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2021 census's count of Brunei Muara district by five-year age group and sex (annex table A2, to an open 85+), the finest the census publishes.",
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Brunei Muara district by five-year age group and sex (annex table A2)."
   },
   {
     "id": "BRN-Belait",
@@ -108,10 +116,16 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 34.0,
+      "unit": "years",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 114.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "religion": [
       {
@@ -158,13 +172,13 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -175,7 +189,9 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
     "religion_year": 2021,
-    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\".",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2021 census's count of Belait district by five-year age group and sex (annex table A2, to an open 85+), the finest the census publishes.",
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Belait district by five-year age group and sex (annex table A2)."
   },
   {
     "id": "BRN-Tutong",
@@ -195,10 +211,16 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 31.2,
+      "unit": "years",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "religion": [
       {
@@ -245,13 +267,13 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -262,7 +284,9 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
     "religion_year": 2021,
-    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\".",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2021 census's count of Tutong district by five-year age group and sex (annex table A2, to an open 85+), the finest the census publishes.",
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Tutong district by five-year age group and sex (annex table A2)."
   },
   {
     "id": "BRN-Temburong",
@@ -282,10 +306,16 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 32.7,
+      "unit": "years",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 114.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table A2: population by age group, district and sex"
     },
     "religion": [
       {
@@ -332,13 +362,13 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "ethnicity/religion/population",
+        "field": "ethnicity/religion/population/median age/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -349,7 +379,9 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
     "religion_year": 2021,
-    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\".",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2021 census's count of Temburong district by five-year age group and sex (annex table A2, to an open 85+), the finest the census publishes.",
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Temburong district by five-year age group and sex (annex table A2)."
   },
   {
     "id": "BRN-Brunei-Muara-Berakas-A",
@@ -369,10 +401,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 121.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -388,13 +424,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -407,7 +443,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Berakas A (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Berakas-B",
@@ -427,10 +464,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 107.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -446,13 +487,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -465,7 +506,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Berakas B (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Burong-Pingai-Ayer",
@@ -485,10 +527,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -504,13 +550,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -523,7 +569,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Burong Pingai Ayer (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Gadong",
@@ -543,10 +590,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -562,13 +613,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -581,7 +632,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Gadong A and Gadong B together (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Kianggeh",
@@ -601,10 +653,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -620,13 +676,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -639,7 +695,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Kianggeh (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Kilanas",
@@ -659,10 +716,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 118.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -678,13 +739,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -697,7 +758,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Kilanas (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Kota-Batu",
@@ -717,10 +779,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 109.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -736,13 +802,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -755,7 +821,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Kota Batu (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Lumapas",
@@ -775,10 +842,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -794,13 +865,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -813,7 +884,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Lumapas (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Mentiri",
@@ -833,10 +905,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -852,13 +928,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -871,7 +947,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Mentiri (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Pangkalan-Batu",
@@ -891,10 +968,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 114.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -910,13 +991,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -929,7 +1010,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Pangkalan Batu (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Peramu",
@@ -949,10 +1031,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -968,13 +1054,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -987,7 +1073,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Peramu (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Saba",
@@ -1007,10 +1094,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1026,13 +1117,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1045,7 +1136,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Saba (annex table C1). The census counts 426 males and 401 females here, so few that a single household or workers' camp moves the ratio far; it describes these 827 people, not a typical mukim."
   },
   {
     "id": "BRN-Brunei-Muara-Sengkurong",
@@ -1065,10 +1157,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 116.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1084,13 +1180,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1103,7 +1199,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Sengkurong (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Serasa",
@@ -1123,10 +1220,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 123.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1142,13 +1243,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1161,7 +1262,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Serasa (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Sungai-Kebun",
@@ -1181,10 +1283,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 116.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1200,13 +1306,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1219,7 +1325,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Sungai Kebun (annex table C1)."
   },
   {
     "id": "BRN-Brunei-Muara-Sungai-Kedayan",
@@ -1239,10 +1346,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 217.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1258,13 +1369,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1277,7 +1388,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Sungai Kedayan (annex table C1). The census counts 165 males and 76 females here, so few that a single household or workers' camp moves the ratio far; it describes these 241 people, not a typical mukim."
   },
   {
     "id": "BRN-Brunei-Muara-Tamoi",
@@ -1297,10 +1409,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1316,13 +1432,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1335,7 +1451,8 @@
       "Daerah Brunei Muara"
     ],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Tamoi (annex table C1). The census counts 467 males and 475 females here, so few that a single household or workers' camp moves the ratio far; it describes these 942 people, not a typical mukim."
   },
   {
     "id": "BRN-Belait-Bukit-Sawat",
@@ -1355,10 +1472,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 182.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1374,13 +1495,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1389,7 +1510,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Bukit Sawat (annex table C1). The census counts 490 males and 269 females here, so few that a single household or workers' camp moves the ratio far; it describes these 759 people, not a typical mukim."
   },
   {
     "id": "BRN-Belait-Kuala-Balai",
@@ -1409,10 +1531,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 45.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1428,13 +1554,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1443,7 +1569,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Kuala Balai (annex table C1). The census counts 5 males and 11 females here, so few that a single household or workers' camp moves the ratio far; it describes these 16 people, not a typical mukim."
   },
   {
     "id": "BRN-Belait-Kuala-Belait",
@@ -1463,10 +1590,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 120.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1482,13 +1613,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1497,7 +1628,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Kuala Belait (annex table C1)."
   },
   {
     "id": "BRN-Belait-Labi",
@@ -1517,10 +1649,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 136.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1536,13 +1672,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1551,7 +1687,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Labi (annex table C1). The census counts 419 males and 308 females here, so few that a single household or workers' camp moves the ratio far; it describes these 727 people, not a typical mukim."
   },
   {
     "id": "BRN-Belait-Liang",
@@ -1571,10 +1708,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 109.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1590,13 +1731,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1605,7 +1746,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Liang (annex table C1)."
   },
   {
     "id": "BRN-Belait-Melilas",
@@ -1625,10 +1767,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 107.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1644,13 +1790,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1659,7 +1805,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Melilas (annex table C1). The census counts 15 males and 14 females here, so few that a single household or workers' camp moves the ratio far; it describes these 29 people, not a typical mukim."
   },
   {
     "id": "BRN-Belait-Seria",
@@ -1679,10 +1826,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1698,13 +1849,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1713,7 +1864,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Seria (annex table C1)."
   },
   {
     "id": "BRN-Belait-Sukang",
@@ -1733,10 +1885,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 125.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1752,13 +1908,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1767,7 +1923,8 @@
     "parent_name": "Belait",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Sukang (annex table C1). The census counts 45 males and 36 females here, so few that a single household or workers' camp moves the ratio far; it describes these 81 people, not a typical mukim."
   },
   {
     "id": "BRN-Tutong-Keriam",
@@ -1787,10 +1944,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 109.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1806,13 +1967,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1821,7 +1982,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Keriam (annex table C1)."
   },
   {
     "id": "BRN-Tutong-Kiudang",
@@ -1841,10 +2003,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 111.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1860,13 +2026,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1875,7 +2041,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Kiudang (annex table C1)."
   },
   {
     "id": "BRN-Tutong-Lamunin",
@@ -1895,10 +2062,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1914,13 +2085,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1929,7 +2100,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Lamunin (annex table C1)."
   },
   {
     "id": "BRN-Tutong-Pekan-Tutong",
@@ -1949,10 +2121,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 111.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -1968,13 +2144,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -1983,7 +2159,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Pekan Tutong (annex table C1)."
   },
   {
     "id": "BRN-Tutong-Rambai",
@@ -2003,10 +2180,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 93.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2022,13 +2203,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2037,7 +2218,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Rambai (annex table C1). The census counts 474 males and 506 females here, so few that a single household or workers' camp moves the ratio far; it describes these 980 people, not a typical mukim."
   },
   {
     "id": "BRN-Tutong-Tanjong-Maya",
@@ -2057,10 +2239,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 110.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2076,13 +2262,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2091,7 +2277,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Tanjong Maya (annex table C1)."
   },
   {
     "id": "BRN-Tutong-Telisai",
@@ -2111,10 +2298,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 107.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2130,13 +2321,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2145,7 +2336,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Telisai (annex table C1)."
   },
   {
     "id": "BRN-Tutong-Ukong",
@@ -2165,10 +2357,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2184,13 +2380,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2199,7 +2395,8 @@
     "parent_name": "Tutong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Ukong (annex table C1)."
   },
   {
     "id": "BRN-Temburong-Amo",
@@ -2219,10 +2416,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 115.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2238,13 +2439,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2253,7 +2454,8 @@
     "parent_name": "Temburong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Amo (annex table C1)."
   },
   {
     "id": "BRN-Temburong-Bangar",
@@ -2273,10 +2475,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 128.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2292,13 +2498,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2307,7 +2513,8 @@
     "parent_name": "Temburong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Bangar (annex table C1)."
   },
   {
     "id": "BRN-Temburong-Batu-Apoi",
@@ -2327,10 +2534,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 112.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2346,13 +2557,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2361,7 +2572,8 @@
     "parent_name": "Temburong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Batu Apoi (annex table C1)."
   },
   {
     "id": "BRN-Temburong-Bokok",
@@ -2381,10 +2593,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2400,13 +2616,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2417,7 +2633,8 @@
     "country": "BRN",
     "aliases": [
       "Bunkok"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Bokok (annex table C1)."
   },
   {
     "id": "BRN-Temburong-Labu",
@@ -2437,10 +2654,14 @@
       "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Not published finely enough for a median. The 2021 census gives a mukim's ages only in the broad groups 00-14, 15-24, 25-64, 65+ (Table C6 of the census annexes, beside the kampung tables C7 to C10), too coarse to interpolate a median from. Five-year groups are published for the four districts only (Table A2)."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 117.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex table C1: population by mukim, residential status and sex"
     },
     "religion": {
       "status": "not_available",
@@ -2456,13 +2677,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
         "year": 2021
       },
       {
-        "field": "population",
+        "field": "population/sex ratio",
         "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
         "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
         "year": 2021
@@ -2471,6 +2692,7 @@
     "parent_name": "Temburong",
     "parent_aliases": [],
     "country": "BRN",
-    "aliases": []
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2021 census's count of Labu (annex table C1). The census counts 274 males and 234 females here, so few that a single household or workers' camp moves the ratio far; it describes these 508 people, not a typical mukim."
   }
 ]

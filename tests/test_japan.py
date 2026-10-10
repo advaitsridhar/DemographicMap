@@ -153,14 +153,37 @@ class Language(unittest.TestCase):
             self.assertGreater(len(cg.ancestry("ethnicity", label)), 1, label)
 
     def test_nationalities_sharing_a_language_are_summed(self):
-        out = m.languages_from({"American": 30.0, "British": 10.0, "Japanese": 9960.0})
+        out = m.languages_from({"American national": 30.0, "British national": 10.0,
+                                "Japanese": 9960.0})
         self.assertEqual(out["English"], 40.0)
         self.assertEqual(out["Japanese"], 9960.0)
 
     def test_a_language_too_small_to_round_folds_into_other(self):
-        out = m.languages_from({"Japanese": 99_990.0, "Thai": 5.0, "Other nationalities": 5.0})
+        out = m.languages_from({"Japanese": 99_990.0, "Thai national": 5.0,
+                                "Other nationalities": 5.0})
         self.assertNotIn("Thai", out)
         self.assertEqual(out["Other languages"], 10.0)
+
+    def test_a_foreign_row_is_written_as_a_passport_and_filed_as_one(self):
+        # "Korean" alone is the Korean people, and the tree files it there;
+        # the census row is a passport, so it is "Korean national" and goes
+        # wherever the tree files a nationality. Japanese stays with the
+        # Japanese peoples, because it is everyone holding Japanese
+        # nationality, whatever their ancestry, and is not a foreign row.
+        import group_tree as gt
+        self.assertEqual(m.NATIONALITY_CODES["2"], "Japanese")
+        self.assertEqual(m.NATIONALITY_CODES["113"], "Other nationalities")
+        self.assertEqual(m.NATIONALITY_CODES["101"], "Korean national")
+        self.assertEqual(m.NATIONALITY_CODES["111"], "Brazilian national")
+        self.assertEqual(gt.parent_of("ethnicity", "Japanese"), "Japanese peoples")
+        foreign = {c: label for c, label in m.NATIONALITY_CODES.items()
+                   if c not in ("2", "113")}
+        self.assertEqual(len(foreign), 12)
+        for code, label in foreign.items():
+            self.assertTrue(label.endswith(" national"), label)
+            self.assertIsNotNone(gt.nationality_parent("ethnicity", label), label)
+            self.assertEqual(gt.parent_of("ethnicity", label),
+                             gt.nationality_parent("ethnicity", label), label)
 
     def test_an_unmapped_nationality_is_refused(self):
         with self.assertRaises(KeyError):
@@ -261,12 +284,13 @@ class Records(unittest.TestCase):
             self.assertIn("no backtest is possible", r["religion"]["note"])
             self.assertIn("no backtest is possible", r["language"]["note"])
 
-    def test_the_notes_say_what_they_are_and_when_it_was_decided(self):
+    def test_the_notes_say_what_they_are_and_not_who_decided(self):
         for r in self.records:
             for field in ("religion", "language"):
                 note = r[field]["note"]
                 self.assertTrue(note.startswith("Modelled from"), note[:80])
-                self.assertIn(m.DECISION, note)
+                self.assertNotIn("owner", note)
+                self.assertNotIn(m.DECISION, note)
                 self.assertIn("a model, not a count", note)
                 # Short: the first sentence says what it is, the caveats after
                 # it, not a paragraph.
@@ -276,7 +300,7 @@ class Records(unittest.TestCase):
             self.assertIn("NATIONALITY, not ethnicity", note)
             self.assertIn("naturalised", note)
             self.assertIn("不詳補完値", note)
-            self.assertIn(m.DECISION, note)
+            self.assertNotIn("owner", note)
             self.assertLess(len(note), 1000, f"{r['name']} ethnicity note is {len(note)}")
 
     def test_the_bounds_hold_on_every_prefecture(self):

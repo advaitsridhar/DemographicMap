@@ -1,0 +1,4159 @@
+[
+  {
+    "id": "FJI-CENSUS-central",
+    "level": "admin1",
+    "name": "Central",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.7,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 37.6,
+        "count": 128769
+      },
+      {
+        "group": "Hinduism",
+        "pct": 22.4,
+        "count": 76630
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 10.0,
+        "count": 34273
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 6.1,
+        "count": 21059
+      },
+      {
+        "group": "Islam",
+        "pct": 4.5,
+        "count": 15360
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.4,
+        "count": 15155
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 2.6,
+        "count": 8890
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 2.4,
+        "count": 8212
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.8,
+        "count": 6314
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.7,
+        "count": 5711
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.0,
+        "count": 3535
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 1.0,
+        "count": 3492
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 3596
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 2257
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 2046
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 898
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.3,
+        "count": 1113
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.3,
+        "count": 1030
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 1031
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.3,
+        "count": 880
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 808
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 474
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.1,
+        "count": 504
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 62.1,
+        "count": 212780
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 30.1,
+        "count": 103134
+      },
+      {
+        "group": "Others",
+        "pct": 2.5,
+        "count": 8494
+      },
+      {
+        "group": "Rotuman",
+        "pct": 1.7,
+        "count": 5923
+      },
+      {
+        "group": "Part-European",
+        "pct": 1.5,
+        "count": 5029
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 1.0,
+        "count": 3277
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.7,
+        "count": 2381
+      },
+      {
+        "group": "European",
+        "pct": 0.5,
+        "count": 1576
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "53030831B39644845067980",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 557 of the 342,594 people here, and they are in no share. The division's provinces added up: Naitasiri, Namosi, Rewa, Serua, Tailevu.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today. The division's provinces added up: Naitasiri, Namosi, Rewa, Serua, Tailevu."
+  },
+  {
+    "id": "FJI-CENSUS-northern",
+    "level": "admin1",
+    "name": "Northern",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.2,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 104.9,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 32.4,
+        "count": 43995
+      },
+      {
+        "group": "Hinduism",
+        "pct": 28.7,
+        "count": 39080
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 14.1,
+        "count": 19173
+      },
+      {
+        "group": "Islam",
+        "pct": 6.8,
+        "count": 9193
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 4.4,
+        "count": 5972
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.7,
+        "count": 3652
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.3,
+        "count": 3114
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.3,
+        "count": 3093
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.0,
+        "count": 1395
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.0,
+        "count": 1292
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 0.9,
+        "count": 1210
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 965
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 796
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.4,
+        "count": 553
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.4,
+        "count": 556
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.3,
+        "count": 406
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 452
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 208
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.2,
+        "count": 294
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 178
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 104
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 61
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 55.4,
+        "count": 75358
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 38.9,
+        "count": 52846
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 2.2,
+        "count": 3054
+      },
+      {
+        "group": "Part-European",
+        "pct": 1.9,
+        "count": 2639
+      },
+      {
+        "group": "Others",
+        "pct": 0.9,
+        "count": 1209
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.2,
+        "count": 331
+      },
+      {
+        "group": "European",
+        "pct": 0.2,
+        "count": 264
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.2,
+        "count": 260
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "53030831B91072554514863",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 117 of the 135,961 people here, and they are in no share. The division's provinces added up: Bua, Cakaudrove, Macuata.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today. The division's provinces added up: Bua, Cakaudrove, Macuata."
+  },
+  {
+    "id": "FJI-CENSUS-western",
+    "level": "admin1",
+    "name": "Western",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 103.1,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Hinduism",
+        "pct": 36.3,
+        "count": 116069
+      },
+      {
+        "group": "Methodist",
+        "pct": 27.7,
+        "count": 88466
+      },
+      {
+        "group": "Islam",
+        "pct": 8.8,
+        "count": 27982
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 6.2,
+        "count": 19727
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.1,
+        "count": 19605
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.8,
+        "count": 12266
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 7598
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.6,
+        "count": 5025
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.3,
+        "count": 4169
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 3510
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.0,
+        "count": 3216
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 2013
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 1459
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.5,
+        "count": 1564
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.4,
+        "count": 1369
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.4,
+        "count": 1318
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.3,
+        "count": 1024
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.3,
+        "count": 995
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.2,
+        "count": 749
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.2,
+        "count": 485
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.1,
+        "count": 169
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 269
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.1,
+        "count": 405
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Indo-Fijian",
+        "pct": 49.2,
+        "count": 157170
+      },
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 47.6,
+        "count": 152186
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.8,
+        "count": 2704
+      },
+      {
+        "group": "Others",
+        "pct": 0.7,
+        "count": 2097
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.7,
+        "count": 2208
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.4,
+        "count": 1181
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.3,
+        "count": 1013
+      },
+      {
+        "group": "European",
+        "pct": 0.3,
+        "count": 1052
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "53030831B88292306460023",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 159 of the 319,611 people here, and they are in no share. The division's provinces added up: Ba, Nadroga/Navosa, Ra.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today. The division's provinces added up: Ba, Nadroga/Navosa, Ra."
+  },
+  {
+    "id": "FJI-CENSUS-eastern",
+    "level": "admin1",
+    "name": "Eastern",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10869,
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "median_age": {
+      "value": 25.7,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 121.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 81.7,
+        "count": 8302
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 3.2,
+        "count": 330
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.9,
+        "count": 296
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.8,
+        "count": 285
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.2,
+        "count": 222
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 2.0,
+        "count": 206
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.0,
+        "count": 204
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 1.5,
+        "count": 150
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 87
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.2,
+        "count": 16
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 20
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.1,
+        "count": 14
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 98.0,
+        "count": 9964
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.9,
+        "count": 96
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 0.5,
+        "count": 49
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.2,
+        "count": 17
+      },
+      {
+        "group": "Others",
+        "pct": 0.2,
+        "count": 19
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "53030831B61477600220974",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 2 of the 10,167 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today.",
+    "population_note": "Kadavu's own count. The boundary file draws the Eastern Division as Kadavu alone -- Lau, Lomaiviti and Rotuma have polygons only at the provincial level -- so this polygon carries Kadavu's figures throughout. The Eastern Division as a whole had 37,648 people at the 2017 census."
+  },
+  {
+    "id": "FJI-CENSUS-ba",
+    "level": "admin2",
+    "name": "Ba",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 102.3,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Hinduism",
+        "pct": 39.7,
+        "count": 92014
+      },
+      {
+        "group": "Methodist",
+        "pct": 24.3,
+        "count": 56213
+      },
+      {
+        "group": "Islam",
+        "pct": 9.9,
+        "count": 23022
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.1,
+        "count": 14026
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 5.8,
+        "count": 13434
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.1,
+        "count": 7183
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 5613
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.6,
+        "count": 3680
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.1,
+        "count": 2641
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 2658
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 0.9,
+        "count": 2147
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 1327
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.6,
+        "count": 1359
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 1216
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.4,
+        "count": 983
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.4,
+        "count": 952
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.3,
+        "count": 739
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.3,
+        "count": 806
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.2,
+        "count": 555
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.2,
+        "count": 429
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.1,
+        "count": 152
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 240
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.1,
+        "count": 227
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Indo-Fijian",
+        "pct": 54.4,
+        "count": 126142
+      },
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 41.8,
+        "count": 96852
+      },
+      {
+        "group": "Part-European",
+        "pct": 1.0,
+        "count": 2400
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.9,
+        "count": 1991
+      },
+      {
+        "group": "Others",
+        "pct": 0.8,
+        "count": 1747
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.4,
+        "count": 884
+      },
+      {
+        "group": "European",
+        "pct": 0.4,
+        "count": 876
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.4,
+        "count": 868
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Western",
+    "match_by": "shape_id",
+    "shape_id": "14151628B98370545668292",
+    "aliases": [
+      "Ba"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 144 of the 231,760 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-bua",
+    "level": "admin2",
+    "name": "Bua",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.1,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 107.6,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 55.5,
+        "count": 7864
+      },
+      {
+        "group": "Hinduism",
+        "pct": 13.0,
+        "count": 1847
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 11.5,
+        "count": 1631
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 4.2,
+        "count": 596
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 3.4,
+        "count": 485
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.0,
+        "count": 426
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 415
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 347
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 0.9,
+        "count": 128
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.9,
+        "count": 134
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 81
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.5,
+        "count": 67
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 51
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.2,
+        "count": 27
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.2,
+        "count": 22
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 78.9,
+        "count": 11183
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 16.7,
+        "count": 2367
+      },
+      {
+        "group": "Part-European",
+        "pct": 3.4,
+        "count": 479
+      },
+      {
+        "group": "Others",
+        "pct": 0.7,
+        "count": 102
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.2,
+        "count": 27
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "European",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Northern",
+    "match_by": "shape_id",
+    "shape_id": "14151628B59272471160482",
+    "aliases": [
+      "Bua"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 3 of the 14,176 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-cakaudrove",
+    "level": "admin2",
+    "name": "Cakaudrove",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.0,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 109.0,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 39.0,
+        "count": 19255
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 26.1,
+        "count": 12879
+      },
+      {
+        "group": "Hinduism",
+        "pct": 10.5,
+        "count": 5172
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.8,
+        "count": 2354
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 4.3,
+        "count": 2126
+      },
+      {
+        "group": "Islam",
+        "pct": 3.0,
+        "count": 1499
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.8,
+        "count": 1374
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.1,
+        "count": 1034
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.3,
+        "count": 626
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.2,
+        "count": 602
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.1,
+        "count": 554
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 461
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.7,
+        "count": 350
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 310
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.4,
+        "count": 179
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 136
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 158
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.2,
+        "count": 84
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 53
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 72.9,
+        "count": 35978
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 16.1,
+        "count": 7929
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 5.3,
+        "count": 2598
+      },
+      {
+        "group": "Part-European",
+        "pct": 3.0,
+        "count": 1479
+      },
+      {
+        "group": "Others",
+        "pct": 1.8,
+        "count": 903
+      },
+      {
+        "group": "European",
+        "pct": 0.4,
+        "count": 201
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.3,
+        "count": 127
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.3,
+        "count": 129
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Northern",
+    "match_by": "shape_id",
+    "shape_id": "14151628B95966095088914",
+    "aliases": [
+      "Cakaudrove"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 39 of the 49,344 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-kadavu",
+    "level": "admin2",
+    "name": "Kadavu",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.7,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 121.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 81.7,
+        "count": 8302
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 3.2,
+        "count": 330
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.9,
+        "count": 296
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.8,
+        "count": 285
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.2,
+        "count": 222
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 2.0,
+        "count": 206
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.0,
+        "count": 204
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 1.5,
+        "count": 150
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 87
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.2,
+        "count": 16
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 20
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.1,
+        "count": 14
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 98.0,
+        "count": 9964
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.9,
+        "count": 96
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 0.5,
+        "count": 49
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.2,
+        "count": 17
+      },
+      {
+        "group": "Others",
+        "pct": 0.2,
+        "count": 19
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Eastern",
+    "match_by": "shape_id",
+    "shape_id": "14151628B61046117406534",
+    "aliases": [
+      "Kadavu"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 2 of the 10,167 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-macuata",
+    "level": "admin2",
+    "name": "Macuata",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.3,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Hinduism",
+        "pct": 44.3,
+        "count": 32061
+      },
+      {
+        "group": "Methodist",
+        "pct": 23.3,
+        "count": 16876
+      },
+      {
+        "group": "Islam",
+        "pct": 10.0,
+        "count": 7279
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.4,
+        "count": 4663
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 4.5,
+        "count": 3250
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.2,
+        "count": 1595
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.9,
+        "count": 1372
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.2,
+        "count": 872
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.9,
+        "count": 659
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.8,
+        "count": 599
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 0.7,
+        "count": 528
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 459
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 423
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.5,
+        "count": 387
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 265
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.3,
+        "count": 194
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.3,
+        "count": 223
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 195
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.3,
+        "count": 188
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Indo-Fijian",
+        "pct": 58.7,
+        "count": 42550
+      },
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 38.9,
+        "count": 28197
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.9,
+        "count": 681
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.6,
+        "count": 429
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.3,
+        "count": 197
+      },
+      {
+        "group": "Others",
+        "pct": 0.3,
+        "count": 204
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.2,
+        "count": 121
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 62
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Northern",
+    "match_by": "shape_id",
+    "shape_id": "14151628B42533076410957",
+    "aliases": [
+      "Macuata"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 75 of the 72,441 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-nadroganavosa",
+    "level": "admin2",
+    "name": "Nadroga-Navosa",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 105.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 35.6,
+        "count": 20782
+      },
+      {
+        "group": "Hinduism",
+        "pct": 28.1,
+        "count": 16388
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 7.6,
+        "count": 4411
+      },
+      {
+        "group": "Islam",
+        "pct": 7.0,
+        "count": 4106
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.6,
+        "count": 3248
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 5.0,
+        "count": 2926
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.2,
+        "count": 1294
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.2,
+        "count": 1278
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.2,
+        "count": 717
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 650
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.0,
+        "count": 596
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.6,
+        "count": 343
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.5,
+        "count": 309
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.5,
+        "count": 318
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.3,
+        "count": 177
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 166
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 200
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.3,
+        "count": 164
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.2,
+        "count": 141
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 53
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 25
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 60.1,
+        "count": 35075
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 37.9,
+        "count": 22140
+      },
+      {
+        "group": "Others",
+        "pct": 0.5,
+        "count": 266
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.4,
+        "count": 260
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.4,
+        "count": 243
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.3,
+        "count": 169
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.2,
+        "count": 95
+      },
+      {
+        "group": "European",
+        "pct": 0.2,
+        "count": 139
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Western",
+    "match_by": "shape_id",
+    "shape_id": "14151628B53702400461405",
+    "aliases": [
+      "Nadroga/Navosa"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 13 of the 58,387 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-naitasiri",
+    "level": "admin2",
+    "name": "Naitasiri",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.1,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 35.7,
+        "count": 57448
+      },
+      {
+        "group": "Hinduism",
+        "pct": 26.8,
+        "count": 43009
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.8,
+        "count": 12556
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 6.4,
+        "count": 10356
+      },
+      {
+        "group": "Islam",
+        "pct": 5.7,
+        "count": 9173
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.6,
+        "count": 5741
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 2.3,
+        "count": 3719
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 2.2,
+        "count": 3511
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.1,
+        "count": 3402
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.9,
+        "count": 3004
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.0,
+        "count": 1542
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.9,
+        "count": 1444
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.8,
+        "count": 1283
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.5,
+        "count": 782
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 695
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 500
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.3,
+        "count": 451
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 475
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.3,
+        "count": 555
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.2,
+        "count": 268
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.2,
+        "count": 258
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 228
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.1,
+        "count": 197
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 57.9,
+        "count": 93124
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 36.4,
+        "count": 58496
+      },
+      {
+        "group": "Rotuman",
+        "pct": 1.8,
+        "count": 2860
+      },
+      {
+        "group": "Others",
+        "pct": 1.4,
+        "count": 2309
+      },
+      {
+        "group": "Part-European",
+        "pct": 1.0,
+        "count": 1557
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.7,
+        "count": 1179
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.6,
+        "count": 915
+      },
+      {
+        "group": "European",
+        "pct": 0.2,
+        "count": 320
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Central",
+    "match_by": "shape_id",
+    "shape_id": "14151628B8492423103487",
+    "aliases": [
+      "Naitasiri"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 163 of the 160,760 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-namosi",
+    "level": "admin2",
+    "name": "Namosi",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 22.5,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 106.7,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 49.3,
+        "count": 3399
+      },
+      {
+        "group": "Methodist",
+        "pct": 18.6,
+        "count": 1285
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 12.6,
+        "count": 868
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 5.2,
+        "count": 359
+      },
+      {
+        "group": "Hinduism",
+        "pct": 4.6,
+        "count": 316
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 3.2,
+        "count": 218
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 1.8,
+        "count": 126
+      },
+      {
+        "group": "Islam",
+        "pct": 1.7,
+        "count": 120
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.8,
+        "count": 53
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 32
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 28
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 0.3,
+        "count": 24
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.3,
+        "count": 22
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 17
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 89.3,
+        "count": 6159
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 7.5,
+        "count": 514
+      },
+      {
+        "group": "Part-European",
+        "pct": 1.1,
+        "count": 77
+      },
+      {
+        "group": "Others",
+        "pct": 0.8,
+        "count": 55
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.8,
+        "count": 53
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.3,
+        "count": 24
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Central",
+    "match_by": "shape_id",
+    "shape_id": "14151628B28251361437248",
+    "aliases": [
+      "Namosi"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 6 of the 6,898 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-ra",
+    "level": "admin2",
+    "name": "Ra",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 104.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 38.9,
+        "count": 11471
+      },
+      {
+        "group": "Hinduism",
+        "pct": 26.0,
+        "count": 7667
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.9,
+        "count": 2331
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 7.3,
+        "count": 2157
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 6.4,
+        "count": 1882
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 854
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.4,
+        "count": 707
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 2.1,
+        "count": 628
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.6,
+        "count": 473
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 1.2,
+        "count": 343
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 0.8,
+        "count": 234
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 202
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.4,
+        "count": 108
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.4,
+        "count": 110
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.3,
+        "count": 77
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.2,
+        "count": 48
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.2,
+        "count": 48
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 68.8,
+        "count": 20259
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 30.2,
+        "count": 8888
+      },
+      {
+        "group": "Others",
+        "pct": 0.3,
+        "count": 84
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.2,
+        "count": 53
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.2,
+        "count": 61
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.2,
+        "count": 48
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.1,
+        "count": 34
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 37
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Western",
+    "match_by": "shape_id",
+    "shape_id": "14151628B53541640625043",
+    "aliases": [
+      "Ra"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 2 of the 29,464 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-rewa",
+    "level": "admin2",
+    "name": "Rewa",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.9,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 37.4,
+        "count": 37729
+      },
+      {
+        "group": "Hinduism",
+        "pct": 17.0,
+        "count": 17199
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 12.5,
+        "count": 12579
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 5.5,
+        "count": 5573
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 4.9,
+        "count": 4959
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.8,
+        "count": 4845
+      },
+      {
+        "group": "Islam",
+        "pct": 3.3,
+        "count": 3361
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 2.6,
+        "count": 2593
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.9,
+        "count": 1881
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.6,
+        "count": 1622
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 1.6,
+        "count": 1618
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.5,
+        "count": 1496
+      },
+      {
+        "group": "No religion",
+        "pct": 1.1,
+        "count": 1072
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.8,
+        "count": 785
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.7,
+        "count": 661
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.7,
+        "count": 737
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 512
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.4,
+        "count": 369
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 267
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 342
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.2,
+        "count": 247
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.2,
+        "count": 188
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.0,
+        "count": 44
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 61.6,
+        "count": 62173
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 23.8,
+        "count": 24082
+      },
+      {
+        "group": "Others",
+        "pct": 5.5,
+        "count": 5577
+      },
+      {
+        "group": "Rotuman",
+        "pct": 2.7,
+        "count": 2678
+      },
+      {
+        "group": "Part-European",
+        "pct": 2.6,
+        "count": 2607
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 2.1,
+        "count": 2130
+      },
+      {
+        "group": "European",
+        "pct": 1.1,
+        "count": 1068
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.7,
+        "count": 680
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Central",
+    "match_by": "shape_id",
+    "shape_id": "14151628B39642918357252",
+    "aliases": [
+      "Rewa"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 316 of the 100,995 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-serua",
+    "level": "admin2",
+    "name": "Serua",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 101.3,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 32.1,
+        "count": 5855
+      },
+      {
+        "group": "Hinduism",
+        "pct": 26.9,
+        "count": 4901
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 16.2,
+        "count": 2963
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 5.4,
+        "count": 977
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.2,
+        "count": 581
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.0,
+        "count": 553
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 524
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.8,
+        "count": 331
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.7,
+        "count": 313
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.6,
+        "count": 283
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 263
+      },
+      {
+        "group": "No religion",
+        "pct": 1.3,
+        "count": 232
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.6,
+        "count": 114
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.5,
+        "count": 89
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.5,
+        "count": 86
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 63
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 42
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 61.0,
+        "count": 11138
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 31.9,
+        "count": 5830
+      },
+      {
+        "group": "Part-European",
+        "pct": 2.8,
+        "count": 517
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 1.1,
+        "count": 203
+      },
+      {
+        "group": "Others",
+        "pct": 1.0,
+        "count": 190
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.8,
+        "count": 150
+      },
+      {
+        "group": "European",
+        "pct": 0.7,
+        "count": 132
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.5,
+        "count": 89
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Central",
+    "match_by": "shape_id",
+    "shape_id": "14151628B68154180840071",
+    "aliases": [
+      "Serua"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 14 of the 18,249 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-tailevu",
+    "level": "admin2",
+    "name": "Tailevu",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.3,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 108.1,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 47.5,
+        "count": 26452
+      },
+      {
+        "group": "Hinduism",
+        "pct": 20.1,
+        "count": 11205
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 6.8,
+        "count": 3794
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 5.7,
+        "count": 3148
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 5.0,
+        "count": 2776
+      },
+      {
+        "group": "Islam",
+        "pct": 3.9,
+        "count": 2182
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 2.4,
+        "count": 1351
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.6,
+        "count": 890
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.5,
+        "count": 819
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.1,
+        "count": 615
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.9,
+        "count": 474
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.7,
+        "count": 388
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7,
+        "count": 365
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 241
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.3,
+        "count": 182
+      },
+      {
+        "group": "Presbyterian",
+        "pct": 0.3,
+        "count": 147
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.3,
+        "count": 193
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.2,
+        "count": 88
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.2,
+        "count": 104
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.2,
+        "count": 117
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.1,
+        "count": 55
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 22
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 72.2,
+        "count": 40186
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 25.5,
+        "count": 14212
+      },
+      {
+        "group": "Others",
+        "pct": 0.7,
+        "count": 363
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.5,
+        "count": 295
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.5,
+        "count": 271
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.3,
+        "count": 182
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.2,
+        "count": 137
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 46
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "parent_name": "Central",
+    "match_by": "shape_id",
+    "shape_id": "14151628B48978228339800",
+    "aliases": [
+      "Tailevu"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 58 of the 55,692 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-lau",
+    "level": "admin2",
+    "name": "Lau",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 115.7,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 83.7,
+        "count": 8945
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 4.3,
+        "count": 459
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 3.4,
+        "count": 365
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 2.6,
+        "count": 281
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.7,
+        "count": 177
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.3,
+        "count": 136
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6,
+        "count": 69
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.4,
+        "count": 42
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.4,
+        "count": 45
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.4,
+        "count": 41
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 36
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 98.7,
+        "count": 10540
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 0.8,
+        "count": 88
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.2,
+        "count": 18
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Others",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "14151628B80423492752803",
+    "aliases": [
+      "Lau"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 55 of the 10,683 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-lomaiviti",
+    "level": "admin2",
+    "name": "Lomaiviti",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 107.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 68.3,
+        "count": 11104
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.5,
+        "count": 2189
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 2.7,
+        "count": 433
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.5,
+        "count": 411
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.1,
+        "count": 345
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.0,
+        "count": 325
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 1.7,
+        "count": 272
+      },
+      {
+        "group": "Hinduism",
+        "pct": 1.6,
+        "count": 259
+      },
+      {
+        "group": "Christian Mission Fellowship",
+        "pct": 1.5,
+        "count": 243
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2,
+        "count": 196
+      },
+      {
+        "group": "United Pentecostal Church",
+        "pct": 0.9,
+        "count": 151
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 69
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.4,
+        "count": 66
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.3,
+        "count": 41
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 51
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.2,
+        "count": 38
+      },
+      {
+        "group": "Gospel",
+        "pct": 0.2,
+        "count": 28
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Salvation Army",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 91.2,
+        "count": 14822
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 3.0,
+        "count": 494
+      },
+      {
+        "group": "Others",
+        "pct": 2.8,
+        "count": 461
+      },
+      {
+        "group": "Part-European",
+        "pct": 1.7,
+        "count": 284
+      },
+      {
+        "group": "Rotuman",
+        "pct": 0.4,
+        "count": 68
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.3,
+        "count": 53
+      },
+      {
+        "group": "European",
+        "pct": 0.2,
+        "count": 38
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.2,
+        "count": 33
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "14151628B20319301670654",
+    "aliases": [
+      "Lomaiviti"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity. The table prints no religion for 5 of the 16,253 people here, and they are in no share.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  },
+  {
+    "id": "FJI-CENSUS-rotuma",
+    "level": "admin2",
+    "name": "Rotuma",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "sex_ratio": {
+      "value": 105.6,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)"
+    },
+    "religion": [
+      {
+        "group": "Methodist",
+        "pct": 48.7,
+        "count": 974
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 35.1,
+        "count": 702
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 7.1,
+        "count": 142
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 3.5,
+        "count": 71
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 3.0,
+        "count": 60
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 1.2,
+        "count": 25
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.6,
+        "count": 13
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "All Nations Christian Fellowship",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Apostolic Church",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Neither of Fiji's last two censuses publishes language. The 2007 census's 423-page Analytical Report mentions language once, to say that the 1946 census asked it, and its tables by province carry relationship, ethnicity and religion; the word appears on none of the 484 pages of the 2017 census's Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity."
+    },
+    "ethnicity": [
+      {
+        "group": "Rotuman",
+        "pct": 92.5,
+        "count": 1852
+      },
+      {
+        "group": "Fijian (iTaukei)",
+        "pct": 4.4,
+        "count": 89
+      },
+      {
+        "group": "Indo-Fijian",
+        "pct": 1.0,
+        "count": 20
+      },
+      {
+        "group": "Others",
+        "pct": 0.8,
+        "count": 17
+      },
+      {
+        "group": "Part-European",
+        "pct": 0.6,
+        "count": 12
+      },
+      {
+        "group": "Chinese or part-Chinese",
+        "pct": 0.4,
+        "count": 8
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Other Pacific Islanders",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, population by five-year age group and sex (PopGIS; OCHA COD-PS for Fiji)",
+        "url": "https://data.humdata.org/dataset/cod-ps-fji",
+        "year": 2017,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Fiji Bureau of Statistics, 2007 Census of Population and Housing, Table P01-3: Relationship, Ethnicity, and Religion by Province of Enumeration",
+        "url": "http://web.archive.org/web/20150325124401/http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "original_url": "http://www.statsfiji.gov.fj/index.php/document-library/doc_download/1256-relationship-ethnicity-religion-by-province-of-enumeration-fiji-2007",
+        "year": 2007,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "controls",
+        "name": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+        "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+        "year": 2017,
+        "license": "None stated -- Fiji Bureau of Statistics publication, cited as such"
+      }
+    ],
+    "country": "FJI",
+    "match_by": "shape_id",
+    "shape_id": "14151628B71764118664060",
+    "aliases": [
+      "Rotuma"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2017 census's population by age and sex (the Fiji Bureau of Statistics' tabulation in PopGIS, published by OCHA as COD-PS). The Bureau publishes a median only for Fiji as a whole, 27.5 years.",
+    "sex_ratio_note": "Males per 100 females, 2017 census, from the same table.",
+    "religion_year": 2007,
+    "religion_note": "Religion at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no religion table: the word appears on none of the 484 pages of its Administrative Report and General Tables, and its Release 1 covers age, sex, geography and economic activity.",
+    "ethnicity_year": 2007,
+    "ethnicity_note": "Ethnicity at the 2007 census, the latest by province: Table P01-3 of the Fiji Bureau of Statistics (by province of enumeration). The 2017 census has published no ethnicity table: its Administrative Report and General Tables (484 pages) tabulate no ethnic group, and its Release 1 covers age, sex, geography and economic activity. The census's \"Fijian\" is the indigenous iTaukei people and its \"Indian\" the Indo-Fijian community, named here as they are today."
+  }
+]

@@ -386,9 +386,11 @@ class Records(unittest.TestCase):
             self.assertLess(len(r["religion"]["note"]), 1100, r["name"])
             self.assertLess(len(r["ethnicity"]["note"]), 900, r["name"])
 
-    def test_the_decision_and_the_sources_are_on_every_record(self):
+    def test_the_sources_are_on_every_record_and_no_note_says_who_decided(self):
         for r in self.records:
-            self.assertIn(m.DECISION, r["ethnicity"]["note"])
+            for note in (r["ethnicity"]["note"], r["religion"]["note"], r["language_note"]):
+                self.assertNotIn("owner", note)
+                self.assertNotIn(m.DECISION, note)
             fields = {s["field"] for s in r["sources"]}
             self.assertEqual(fields, {"language", "ethnicity", "ethnicity/population", "religion"})
 

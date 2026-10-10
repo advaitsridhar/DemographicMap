@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """South Korea: religion by residence region, Hankook Research's 2025 pooled survey.
 
-No census figure by province is reachable: the 2015 census asked religion
-and KOSIS publishes it by province and district, but only through an API
-that needs a registered key. Until that key exists, the best published
-figure by region is a survey. Hankook Research's weekly report No. 358-3
+The 2015 census asked religion, and ``korea_religion`` now reads it for every
+province and district from KOSIS's bulk download. A census count stands in
+front of a survey however much older it is, so this file is named
+``*_survey.json`` and marked "survey estimate": the build keeps it only
+where no count reaches, which today is nowhere in Korea. Hankook Research's weekly report No. 358-3
 (3 December 2025, *2025 Religion Perception Survey: religious population and
 religious activity*) pools the religion question from the 22 waves of its
 biweekly "Yeoron sok-ui Yeoron" web panel run January to November 2025:
@@ -55,7 +56,9 @@ from ._shared import PROCESSED, log, record, write_json
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import PAGE_BREAK, fetch_text  # noqa: E402
 
-OUT = "korea_survey_province.json"
+OUT = "korea_province_survey.json"     # *_survey.json: fills, replaces no count
+BASIS = ("survey estimate: self-identification, adults 18+ in a web panel weighted to the "
+         "resident register")
 YEAR = 2025
 # The report as the pollster posts it (archives/34782), its Korean file name
 # percent-encoded so the URL is plain ASCII.
@@ -158,11 +161,12 @@ def build(text: str) -> list[dict[str, Any]]:
                    if len(provinces) == 1 else
                    f"one of the {len(provinces)} provinces the report pools as the residence "
                    f"region '{name}' ({', '.join(provinces)}) and carries that region's figure, "
-                   "by the map owner's decision, because no figure by province is reachable")
+                   "because the report gives no figure by province")
         for province in provinces:
             records.append(record(
                 f"KOR-{slugify(province)}", province, level="admin1", parent="KOR",
                 country="KOR", sources=src, religion=shares, religion_year=YEAR,
+                religion_basis=BASIS,
                 religion_note=(
                     f"{SOURCE}. A survey of adults, not a census: the religion question "
                     "pooled from the 22 waves of Hankook Research's biweekly web panel run "
@@ -170,9 +174,8 @@ def build(text: str) -> list[dict[str, Any]]:
                     "by region, sex and age to the resident register. Whole percentages as "
                     "printed; 'other religions' is the printed 'has a religion' less "
                     "Protestant, Catholic and Buddhist. "
-                    f"This province is {members}. The 2015 census asked religion and KOSIS "
-                    "publishes it by province behind a registered key; that figure replaces "
-                    "this one when read.")))
+                    f"This province is {members}. The 2015 census asked religion, and its "
+                    "count by province stands in front of this survey.")))
     return records
 
 
@@ -182,7 +185,16 @@ def main() -> int:
     ap.add_argument("--text", default=None, help="a saved probe_pdf dump instead of the PDF")
     args = ap.parse_args()
     log(f"korea_survey: {SOURCE}")
-    text = Path(args.text).read_text(encoding="utf-8") if args.text else fetch_text(URL)
+    if args.text:
+        text = Path(args.text).read_text(encoding="utf-8")
+    else:
+        try:
+            text = fetch_text(URL)
+        except Exception as exc:  # noqa: BLE001 - the pollster's host refuses the runner
+            # hrcopinion.co.kr answered 403 to the runner in October 2026; the
+            # Internet Archive's capture of the same file is the other route.
+            log(f"  {URL[:60]}... refused ({exc}); reading the Internet Archive's copy")
+            text = fetch_text(f"https://web.archive.org/web/2026id_/{URL}")
     records = build(text)
     log(f"  {len(records)} provinces from {len(GROUPINGS)} residence regions")
     if len(records) != 17:

@@ -278,6 +278,16 @@ class Country:
 
 HDX = "https://data.humdata.org/dataset"
 
+PHILIPPINES_RELIGION_NOTE = (
+    "2020 Census of Population and Housing. The census records religious "
+    "affiliation as the individual church or denomination a person names, "
+    "so the groups here are as published rather than collapsed into "
+    "traditions -- the alternative would decide, on this map's authority "
+    "rather than the census's, which churches count as one religion.")
+PHILIPPINES_ETHNICITY_NOTE = (
+    "2020 Census of Population and Housing, the census's question on each "
+    "person's ethnicity, as published.")
+
 PHILIPPINES = Country(
     iso3="PHL",
     name="Philippines",
@@ -288,8 +298,11 @@ PHILIPPINES = Country(
     dataset="809dfb22-77f4-482c-8560-79b07d20fc15",
     out="philippines_province.json",
     levels={1: "admin1", 2: "admin2"},
-    topics=(Topic("Religion", "religion"),
-            Topic("Ethnicity", "ethnicity")),
+    # Each topic says what its own question was: the country's note was the
+    # religion note, and fell to the ethnicity topic too, so Tagalog 52.8 and
+    # Bisaya 12.9 stood beside a sentence about churches and denominations.
+    topics=(Topic("Religion", "religion", note=PHILIPPINES_RELIGION_NOTE),
+            Topic("Ethnicity", "ethnicity", note=PHILIPPINES_ETHNICITY_NOTE)),
     # What geoBoundaries calls the same area. The census writes a region's
     # full name and the boundary file its initials, which no matching rule
     # should bridge on its own -- "NCR" and "National Capital Region" share no
@@ -297,6 +310,10 @@ PHILIPPINES = Country(
     #
     # The cities are not here but in no_shape below: they are absent rather
     # than misnamed, and an alias cannot conjure a boundary.
+    # The PSA's "Batak" is the Batak of Palawan, a Negrito people of a few
+    # thousand, and not Sumatra's Batak, eight million strong, whose name the
+    # group tree files among the Malay and Indonesian peoples.
+    relabel={"Batak": "Batak (Palawan)"},
     aliases={
         "Bangsamoro Autonomous Region Of Muslim Mindanao": ("ARMM",),
         "Cordillera Administrative Region": ("CAR",),
@@ -348,12 +365,17 @@ PHILIPPINES = Country(
         ("Soccsksargen", "General Santos"),
         ("Davao Region", "Davao"),
         ("Zamboanga Peninsula", "Zamboanga"),
+        # Two provinces whose polygons are not the provinces, measured on the
+        # map's own tiles (philippines_age.EXCLUDE): the boundary file's
+        # "Maguindanao" spans 9,144 km2 and takes in Sultan Kudarat, which it
+        # does not draw (Maguindanao is some 4,900 km2), and its "Cotabato"
+        # covers some 5,900 km2 of the province's 9,008, the rest lying inside
+        # that "Maguindanao". Either province's composition on them would be
+        # the wrong people's.
+        ("Bangsamoro Autonomous Region Of Muslim Mindanao", "Maguindanao"),
+        ("Soccsksargen", "Province Of Cotabato"),
     )),
-    note=("2020 Census of Population and Housing. The census records religious "
-          "affiliation as the individual church or denomination a person names, "
-          "so the groups here are as published rather than collapsed into "
-          "traditions -- the alternative would decide, on this map's authority "
-          "rather than the census's, which churches count as one religion."),
+    note="2020 Census of Population and Housing.",
 )
 
 ETHIOPIA = Country(
@@ -492,6 +514,14 @@ MYANMAR = Country(
         # sheet, which is the other reason they cannot be read together.
         Topic("Ethnicity", "religion", prefix="RLG_"),
     ),
+    # The profiles' "Burmese" is the Bamar, Myanmar's majority people, and
+    # their "Indian" the country's own citizens of South Asian descent; read
+    # as written, the group tree files both as the nationalities a European
+    # or Korean register means by those words. Their "Naga" is the Naga of
+    # Myanmar's Sagaing Region, written with the country for the same reason:
+    # the bare word is also India's Naga, filed with India's peoples.
+    relabel={"Burmese": "Bamar", "Indian": "Indian (Myanmar)",
+             "Naga": "Naga (Myanmar)"},
     # None needed for the states and regions: the census writes "KACHIN STATE"
     # where geoBoundaries writes "Kachin", and norm() drops the word "state"
     # on both sides. Two boundary names are misspelled rather than differently

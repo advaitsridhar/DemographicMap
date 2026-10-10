@@ -198,6 +198,46 @@ class CountryRecords(unittest.TestCase):
         self.assertEqual(records, [])
         self.assertIn("not a composition", printed)
 
+    def test_nepal_s_khasi_is_written_as_khash_and_says_so(self):
+        # Karnali's Khas, Indo-Aryan, which the file names after the
+        # Austroasiatic language of Meghalaya.
+        rows = [row("NP61", "Jumla", "Khasi", 0.512), row("NP61", "Jumla", "Nepali", 0.488),
+                row("NP62", "Kalikot", "Khasi", 0.262), row("NP62", "Kalikot", "Nepali", 0.738),
+                row("NP11", "Jhapa", "Nepali", 0.6), row("NP11", "Jhapa", "Maithili", 0.4)]
+        self.serve(csv_text(rows))
+        nepal = dict(PACKAGE, name="nepal-languages", groups=[{"name": "npl"}])
+        records, _ = quiet(cg.country_records, nepal)
+        by_name = {r["name"]: r for r in records}
+        jumla = {g["group"]: g["pct"] for g in by_name["Jumla"]["language"]}
+        self.assertEqual(jumla, {"Khash": 51.2, "Nepali": 48.8})
+        self.assertNotIn("Khasi", {g["group"] for r in records for g in r["language"]})
+        self.assertIn("'Khash' is the Khas language of Karnali", by_name["Kalikot"]["language_note"])
+        self.assertIn("Meghalaya", by_name["Jumla"]["language_note"])
+        # A unit without it says nothing about it.
+        self.assertNotIn("Khash", by_name["Jhapa"]["language_note"])
+        self.assertTrue(by_name["Jhapa"]["language_note"].endswith("."))
+
+    def test_khasi_elsewhere_is_left_as_the_file_writes_it(self):
+        rows = [row("A1", "Alpha", "Khasi", 0.6), row("A1", "Alpha", "Garo", 0.4),
+                row("A2", "Beta", "Khasi", 0.9), row("A2", "Beta", "Garo", 0.1)]
+        self.serve(csv_text(rows))
+        india = dict(PACKAGE, groups=[{"name": "ind"}])
+        records, _ = quiet(cg.country_records, india)
+        self.assertEqual({g["group"] for r in records for g in r["language"]}, {"Khasi", "Garo"})
+        self.assertNotIn("Karnali", records[0]["language_note"])
+
+    def test_a_relabelled_name_listed_beside_its_own_is_added_up(self):
+        rows = [row("NP61", "Jumla", "Khasi", 0.3), row("NP61", "Jumla", "Khash", 0.2),
+                row("NP61", "Jumla", "Nepali", 0.5)]
+        kept, _, _ = cg.compose(rows, 1, cg.LANGUAGE_RELABEL["NPL"])
+        self.assertEqual({r["group"]: r["pct"] for r in kept["NP61"]["shares"]},
+                         {"Khash": 50.0, "Nepali": 50.0})
+        self.assertEqual(cg.LANGUAGE_RELABEL, {"NPL": {"Khasi": "Khash"}})
+
+    def test_the_tree_files_khash_with_the_indo_aryan_languages(self):
+        import group_tree as gt
+        self.assertEqual(gt.parent_of("language", "Khash"), "Indo-Aryan languages")
+
     def test_a_dataset_with_no_iso3_is_refused_rather_than_guessed(self):
         self.serve(csv_text(TWO_UNITS))
         records, printed = quiet(cg.country_records, dict(PACKAGE, groups=[]))
@@ -230,6 +270,20 @@ class Written(unittest.TestCase):
     def test_ids_are_unique(self):
         ids = [r["id"] for r in self.rows]
         self.assertEqual(len(ids), len(set(ids)))
+
+    def test_nepal_s_khas_is_written_khash_and_nothing_else_moved(self):
+        nepal = [r for r in self.rows if r["country"] == "NPL"]
+        groups = {g["group"] for r in nepal for g in r["language"]}
+        self.assertNotIn("Khasi", groups)
+        self.assertIn("Khash", groups)
+        jumla = next(r for r in nepal if r["name"] == "Jumla" and r["level"] == "admin2")
+        self.assertEqual(next(g["pct"] for g in jumla["language"] if g["group"] == "Khash"), 51.2)
+        self.assertIn("Meghalaya", jumla["language_note"])
+        # The relabel is Nepal's alone: no other country's record says it.
+        for r in self.rows:
+            if r["country"] != "NPL":
+                self.assertNotIn("Khash", {g["group"] for g in r["language"]}, r["id"])
+                self.assertNotIn("Karnali", r["language_note"], r["id"])
 
     def test_no_country_says_the_same_thing_in_every_unit(self):
         by_country: dict[str, set] = {}

@@ -919,232 +919,6 @@
     "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
   },
   {
-    "id": "IND-S-Dadra-and-Nagar-Haveli",
-    "level": "admin1",
-    "name": "Dadra and Nagar Haveli",
-    "parent": "IND",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 343709,
-      "year": 2011,
-      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "value": 774,
-      "unit": "females_per_1000_males",
-      "year": 2011,
-      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
-    },
-    "religion": [
-      {
-        "group": "Hindu",
-        "pct": 93.9,
-        "count": 322857
-      },
-      {
-        "group": "Muslim",
-        "pct": 3.8,
-        "count": 12922
-      },
-      {
-        "group": "Christian",
-        "pct": 1.5,
-        "count": 5113
-      },
-      {
-        "group": "Jain",
-        "pct": 0.3,
-        "count": 1186
-      },
-      {
-        "group": "Buddhist",
-        "pct": 0.2,
-        "count": 634
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.1,
-        "count": 487
-      },
-      {
-        "group": "Other religions (not separately named)",
-        "pct": 0.1,
-        "count": 293
-      },
-      {
-        "group": "Sikh",
-        "pct": 0.1,
-        "count": 217
-      }
-    ],
-    "language": {
-      "status": "not_available",
-      "note": "India does ask mother tongue -- Census 2011 table C-16 -- but publishes it as a workbook per state rather than through any API. Those workbooks are read by a separate adapter (python -m scripts.fetch_census.india_language), which has not been run against this unit."
-    },
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
-    },
-    "sources": [
-      {
-        "field": "population/religion/scheduled groups",
-        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog",
-        "year": 2011,
-        "license": "Government of India open data (GODL-India)",
-        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
-      },
-      {
-        "field": "religion",
-        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
-        "year": 2011,
-        "license": "Government of India open data (GODL-India)",
-        "note": "Published for India and the states only; the table's district column is zero on every row."
-      }
-    ],
-    "codes": {
-      "census2011_state_name": "DADRA AND NAGAR HAVELI"
-    },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 293 people here -- 0.1% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 5 religions in this state; the 5 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
-    "religion_year": 2011,
-    "scheduled_groups": [
-      {
-        "group": "Scheduled Tribe",
-        "pct": 52.0,
-        "count": 178564
-      },
-      {
-        "group": "Scheduled Caste",
-        "pct": 1.8,
-        "count": 6186
-      }
-    ],
-    "scheduled_groups_year": 2011,
-    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
-  },
-  {
-    "id": "IND-S-Daman-and-Diu",
-    "level": "admin1",
-    "name": "Daman and Diu",
-    "parent": "IND",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 243247,
-      "year": 2011,
-      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "value": 618,
-      "unit": "females_per_1000_males",
-      "year": 2011,
-      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
-    },
-    "religion": [
-      {
-        "group": "Hindu",
-        "pct": 90.5,
-        "count": 220150
-      },
-      {
-        "group": "Muslim",
-        "pct": 7.9,
-        "count": 19277
-      },
-      {
-        "group": "Christian",
-        "pct": 1.2,
-        "count": 2820
-      },
-      {
-        "group": "Buddhist",
-        "pct": 0.1,
-        "count": 217
-      },
-      {
-        "group": "Jain",
-        "pct": 0.1,
-        "count": 287
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.1,
-        "count": 245
-      },
-      {
-        "group": "Sikh",
-        "pct": 0.1,
-        "count": 172
-      },
-      {
-        "group": "Other religions (not separately named)",
-        "pct": 0.0,
-        "count": 79
-      }
-    ],
-    "language": {
-      "status": "not_available",
-      "note": "India does ask mother tongue -- Census 2011 table C-16 -- but publishes it as a workbook per state rather than through any API. Those workbooks are read by a separate adapter (python -m scripts.fetch_census.india_language), which has not been run against this unit."
-    },
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
-    },
-    "sources": [
-      {
-        "field": "population/religion/scheduled groups",
-        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog",
-        "year": 2011,
-        "license": "Government of India open data (GODL-India)",
-        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
-      },
-      {
-        "field": "religion",
-        "name": "Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx",
-        "year": 2011,
-        "license": "Government of India open data (GODL-India)",
-        "note": "Published for India and the states only; the table's district column is zero on every row."
-      }
-    ],
-    "codes": {
-      "census2011_state_name": "DAMAN AND DIU"
-    },
-    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 79 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 1 religions in this state; the 1 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead.",
-    "religion_year": 2011,
-    "scheduled_groups": [
-      {
-        "group": "Scheduled Tribe",
-        "pct": 6.3,
-        "count": 15363
-      },
-      {
-        "group": "Scheduled Caste",
-        "pct": 2.5,
-        "count": 6124
-      }
-    ],
-    "scheduled_groups_year": 2011,
-    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
-  },
-  {
     "id": "IND-S-Goa",
     "level": "admin1",
     "name": "Goa",
@@ -1679,6 +1453,7 @@
     "codes": {
       "census2011_state_name": "JAMMU AND KASHMIR"
     },
+    "sex_ratio_note": "Census of India 2011 table C-01: 156,756 males and 117,533 females, 750 females per 1,000 males against 943 for India as a whole. A ratio this far from the country's is the census's count as published, not an error. Summed from the 2 districts of Jammu and Kashmir that became Ladakh: Leh(Ladakh) and Kargil. The 2011 census enumerated all 2 separately and they exhaust the territory, so their total -- 274,289 people -- is that census's figure for this state rather than an estimate of one. The Registrar General published no row under this name because the state did not exist when the tables were drawn up. Table C-01 Appendix, which names the religions inside 'Other religions and persuasions', is published against the states of 2011 and has no row for this one, so the residual stays whole here where those states show its break-up.",
     "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Summed from the 2 districts of Jammu and Kashmir that became Ladakh: Leh(Ladakh) and Kargil. The 2011 census enumerated all 2 separately and they exhaust the territory, so their total -- 274,289 people -- is that census's figure for this state rather than an estimate of one. The Registrar General published no row under this name because the state did not exist when the tables were drawn up. Table C-01 Appendix, which names the religions inside 'Other religions and persuasions', is published against the states of 2011 and has no row for this one, so the residual stays whole here where those states show its break-up.",
     "religion_year": 2011,
     "scheduled_groups": [
@@ -1696,7 +1471,6 @@
     "scheduled_groups_year": 2011,
     "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap. Summed from the 2 districts of Jammu and Kashmir that became Ladakh: Leh(Ladakh) and Kargil. The 2011 census enumerated all 2 separately and they exhaust the territory, so their total -- 274,289 people -- is that census's figure for this state rather than an estimate of one. The Registrar General published no row under this name because the state did not exist when the tables were drawn up. Table C-01 Appendix, which names the religions inside 'Other religions and persuasions', is published against the states of 2011 and has no row for this one, so the residual stays whole here where those states show its break-up.",
     "population_note": "Summed from the 2 districts of Jammu and Kashmir that became Ladakh: Leh(Ladakh) and Kargil. The 2011 census enumerated all 2 separately and they exhaust the territory, so their total -- 274,289 people -- is that census's figure for this state rather than an estimate of one. The Registrar General published no row under this name because the state did not exist when the tables were drawn up. Table C-01 Appendix, which names the religions inside 'Other religions and persuasions', is published against the states of 2011 and has no row for this one, so the residual stays whole here where those states show its break-up.",
-    "sex_ratio_note": "Summed from the 2 districts of Jammu and Kashmir that became Ladakh: Leh(Ladakh) and Kargil. The 2011 census enumerated all 2 separately and they exhaust the territory, so their total -- 274,289 people -- is that census's figure for this state rather than an estimate of one. The Registrar General published no row under this name because the state did not exist when the tables were drawn up. Table C-01 Appendix, which names the religions inside 'Other religions and persuasions', is published against the states of 2011 and has no row for this one, so the residual stays whole here where those states show its break-up.",
     "language_note": "Summed from the 2 districts of Jammu and Kashmir that became Ladakh: Leh(Ladakh) and Kargil. The 2011 census enumerated all 2 separately and they exhaust the territory, so their total -- 274,289 people -- is that census's figure for this state rather than an estimate of one. The Registrar General published no row under this name because the state did not exist when the tables were drawn up. Table C-01 Appendix, which names the religions inside 'Other religions and persuasions', is published against the states of 2011 and has no row for this one, so the residual stays whole here where those states show its break-up."
   },
   {
@@ -4234,5 +4008,112 @@
     ],
     "scheduled_groups_year": 2011,
     "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap."
+  },
+  {
+    "id": "IND-S-Dadra-and-Nagar-Haveli-and-Daman-and-Diu",
+    "level": "admin1",
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 586956,
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 706,
+      "unit": "females_per_1000_males",
+      "year": 2011,
+      "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 92.5,
+        "count": 543007
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.5,
+        "count": 32199
+      },
+      {
+        "group": "Christian",
+        "pct": 1.4,
+        "count": 7933
+      },
+      {
+        "group": "Jain",
+        "pct": 0.3,
+        "count": 1473
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 851
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 732
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 372
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.1,
+        "count": 389
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "India does ask mother tongue -- Census 2011 table C-16 -- but publishes it as a workbook per state rather than through any API. Those workbooks are read by a separate adapter (python -m scripts.fetch_census.india_language), which has not been run against this unit."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe status and mother tongue are collected instead."
+    },
+    "sources": [
+      {
+        "field": "population/religion/scheduled groups",
+        "name": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)",
+        "note": "District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals."
+      }
+    ],
+    "codes": {
+      "census2011_state_name": "Dadra and Nagar Haveli + Daman and Diu"
+    },
+    "sex_ratio_note": "Census of India 2011 table C-01: 344,061 males and 242,895 females, 706 females per 1,000 males against 943 for India as a whole. A ratio this far from the country's is the census's count as published, not an error. Summed from Dadra and Nagar Haveli (343,709) and Daman and Diu (243,247), the union territories the 2011 census enumerated separately and that were merged into Dadra and Nagar Haveli and Daman and Diu in 2020. Nothing is apportioned: the two rows exhaust the territory, so their sum is that census's figure for it.",
+    "religion_note": "Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Summed from Dadra and Nagar Haveli (343,709) and Daman and Diu (243,247), the union territories the 2011 census enumerated separately and that were merged into Dadra and Nagar Haveli and Daman and Diu in 2020. Nothing is apportioned: the two rows exhaust the territory, so their sum is that census's figure for it.",
+    "religion_year": 2011,
+    "scheduled_groups": [
+      {
+        "group": "Scheduled Tribe",
+        "pct": 33.0,
+        "count": 193927
+      },
+      {
+        "group": "Scheduled Caste",
+        "pct": 2.1,
+        "count": 12310
+      }
+    ],
+    "scheduled_groups_year": 2011,
+    "scheduled_groups_note": "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap. Summed from Dadra and Nagar Haveli (343,709) and Daman and Diu (243,247), the union territories the 2011 census enumerated separately and that were merged into Dadra and Nagar Haveli and Daman and Diu in 2020. Nothing is apportioned: the two rows exhaust the territory, so their sum is that census's figure for it.",
+    "population_note": "Summed from Dadra and Nagar Haveli (343,709) and Daman and Diu (243,247), the union territories the 2011 census enumerated separately and that were merged into Dadra and Nagar Haveli and Daman and Diu in 2020. Nothing is apportioned: the two rows exhaust the territory, so their sum is that census's figure for it."
   }
 ]

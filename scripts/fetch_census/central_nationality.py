@@ -34,7 +34,6 @@ from typing import Any, Iterable
 
 from ._shared import shares
 
-DECISION = "19 September 2026"
 OTHER = "Other nationalities"
 STATELESS = "Stateless"
 UNKNOWN = "Nationality unknown"
@@ -190,11 +189,10 @@ def composition(counts: dict[str, float], total: float, names: list[str],
 def note(what: str, when: str, question: str, *, extra: str = "",
          residual: str | None = OTHER) -> str:
     """The ethnicity note every reader writes: what was counted, when, and that
-    it is not ethnicity, by the owner's decision. ``residual`` is the bar the
+    it is not ethnicity, which the census does not ask. ``residual`` is the bar the
     nationalities below the naming threshold go to, or None where the office's
     own groups are written whole and nothing is folded."""
     rest = (f"; nationalities below the naming threshold are '{residual}'" if residual else "")
     return (f"{what} on {when}: {question} -- NATIONALITY, not ethnicity, which this country's "
             f"census does not ask. A person's own nationality is counted, naturalised "
-            f"citizens with the country's own nationals{rest}.{(' ' + extra) if extra else ''} "
-            f"Written by the map owner's decision of {DECISION}.")
+            f"citizens with the country's own nationals{rest}.{(' ' + extra) if extra else ''}")

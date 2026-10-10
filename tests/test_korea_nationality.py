@@ -212,10 +212,13 @@ class TheDistrictTable(unittest.TestCase):
                    json.loads((ROOT / "site" / "data" / "admin1" / "KOR.units.json").read_text())}
         parents["KOR"] = ""
         drawn = {(parents[r["parent"]], r["name"]) for r in shapes}
-        mapped = set()
-        for province, table in m.DISTRICTS.items():
-            for shape in table.values():
-                mapped.add((m.DRAWN_ELSEWHERE.get((province, shape), province), shape))
+        # Every district sits under its own province: the build files the
+        # ones drawn in a neighbour's polygon, or in none (DRAWN_ELSEWHERE),
+        # where the register counts them (DECLARED_PARENTS). Gunwi-gun, which
+        # the 2022 file lists under North Gyeongsang, is Daegu's since 2023.
+        moved = {(under, shape): home for (home, shape), under in m.DRAWN_ELSEWHERE.items()}
+        mapped = {(moved.get((province, shape), province), shape)
+                  for province, table in m.DISTRICTS.items() for shape in table.values()}
         self.assertEqual(len(shapes), 228)
         self.assertEqual(drawn, mapped)
 
@@ -285,16 +288,41 @@ class TheRecords(unittest.TestCase):
 
     def test_a_district_drawn_under_another_province_says_so(self):
         by = {(r["parent_name"], r["name"]): r for r in self.records if r["level"] == "admin2"}
-        eunpyeong = by[("Gyeonggi", "Eunpyeong-gu")]
+        # The map files it under Seoul (the build's DECLARED_PARENTS), so the
+        # join scopes it to Seoul; the note says whose polygon draws it.
+        eunpyeong = by[("Seoul", "Eunpyeong-gu")]
         self.assertEqual(eunpyeong["parent"], "KOR-seoul")
-        self.assertIn("draws Eunpyeong-gu under Gyeonggi", eunpyeong["ethnicity_note"])
-        self.assertIn("district of Seoul", eunpyeong["ethnicity_note"])
-        # A shape the boundary file draws under the country itself keeps its
-        # own province as parent_name: the join finds it as the one
-        # Yeongdo-gu in the country, and the note says where it is drawn.
+        self.assertIn("The boundary file draws Eunpyeong-gu's outline inside Gyeonggi's "
+                      "polygon; it is a district of Seoul, and is filed and counted with "
+                      "Seoul here.", eunpyeong["ethnicity_note"])
+        self.assertNotIn(("Gyeonggi", "Eunpyeong-gu"), by)
+        # Gwangju's Dong-gu is one of six: it is found under Gwangju.
+        self.assertIn(("Gwangju", "Dong-gu [East District]"), by)
         yeongdo = by[("Busan", "Yeongdo-gu")]
-        self.assertIn("under the country itself", yeongdo["ethnicity_note"])
+        self.assertIn("outline outside every province's polygon", yeongdo["ethnicity_note"])
         self.assertNotIn("draws", by[("Seoul", "Jongno-gu")]["ethnicity_note"])
+
+    def test_every_district_drawn_elsewhere_is_declared_under_its_own_province(self):
+        # The join scopes these rows to their own province, which finds them
+        # only where the build files them there.
+        homes = sorted(home for (home, _) in m.DRAWN_ELSEWHERE)
+        declared = sorted(home for iso3, home in be.DECLARED_PARENTS.values() if iso3 == "KOR")
+        self.assertEqual(declared, homes)
+        self.assertEqual(len(declared), 17)
+
+    def test_either_parent_reaches_the_shape_by_both_provinces(self):
+        drawn = {("Seoul", "Jongno-gu"): "J", ("Gyeonggi", "Eunpyeong-gu"): "E",
+                 ("", "Ongjin-gun"): "O"}
+        keyed = m.either_parent(drawn)
+        self.assertEqual(keyed[("Seoul", "Eunpyeong-gu")], "E")
+        self.assertEqual(keyed[("Gyeonggi", "Eunpyeong-gu")], "E")
+        self.assertEqual(keyed[("Incheon", "Ongjin-gun")], "O")
+        refiled = m.either_parent({("Seoul", "Eunpyeong-gu"): "E"})
+        self.assertEqual(refiled[("Gyeonggi", "Eunpyeong-gu")], "E")
+        # A drawn unit's own key is never replaced.
+        own = m.either_parent({("Gyeonggi", "Eunpyeong-gu"): "E",
+                               ("Seoul", "Eunpyeong-gu"): "X"})
+        self.assertEqual(own[("Seoul", "Eunpyeong-gu")], "X")
 
     def test_the_undrawn_county_counts_in_its_province(self):
         names = {r["name"] for r in self.records}
@@ -357,8 +385,11 @@ class TheRecords(unittest.TestCase):
 class Integration(unittest.TestCase):
     def test_registered_right_after_the_korea_survey(self):
         files = be.ADAPTER_FILES
-        self.assertEqual(files[files.index("korea_survey_province.json") + 1],
-                         "korea_nationality.json")
+        # korea_survey writes korea_province_survey.json, a *_survey.json the
+        # build keeps fill-only; the list may still name its older output.
+        survey = next(name for name in ("korea_province_survey.json",
+                                        "korea_survey_province.json") if name in files)
+        self.assertEqual(files[files.index(survey) + 1], "korea_nationality.json")
 
     def test_korea_no_longer_declares_ethnicity_uncollected(self):
         # The owner's decision of 19 September 2026: the declaration's

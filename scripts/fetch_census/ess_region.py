@@ -890,7 +890,7 @@ def main() -> int:
                          f"the round's respondents, and pooled. The census does not ask this "
                          f"question. Where one of the country's regions holds {MIN_N} "
                          f"respondents or more, its division carries the same survey's "
-                         f"regional estimate (ess_region_survey.json)."),
+                         f"regional estimate."),
             }, ensure_ascii=False), flush=True)
     write_json(PROCESSED / OUT, records)
     log(f"  {len(records)} records")

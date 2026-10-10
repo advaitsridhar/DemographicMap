@@ -8,9 +8,10 @@ groups) and religion. The Lao Statistics Bureau's English results volume --
 UNFPA -- prints both for the country and for nothing smaller: its Chapter 3
 tables 3.4 and 3.5 are national, and so are the Appendix 1 tables they cite
 (P2.7 ethnicity, P2.9 religion). Its other appendix tables cross province with
-age, migration, literacy, schooling, economic activity, disability and
-housing, and not once with either of these two. That reading is what
-``--probe --routes p`` measured, and it stands.
+migration, literacy, schooling, economic activity, disability and housing, and
+age with sex and urban-rural residence for the country alone (P2.2-P2.6) --
+never the province with age, nor with either of these two. That reading is
+what ``--probe --routes p`` and ``sea_probe pdf`` measured, and it stands.
 
 What does publish them below the country is the census's **village indicator
 table**, which LSB releases through Open Development Laos: one row for each of

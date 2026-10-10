@@ -110,6 +110,8 @@ import collections
 import csv
 import difflib
 import io
+import re
+import unicodedata
 import urllib.parse
 from pathlib import Path
 from typing import Any, NamedTuple
@@ -151,7 +153,18 @@ NATIONAL_CONTROLS = {
     "Sikhs": (1.72, 0.05),
     "Buddhists": (0.70, 0.05),
     "Jains": (0.37, 0.05),
+    # Females per 1,000 males: 587,584,719 females and 623,270,258 males.
+    "sex_ratio": (943, 0),
 }
+
+# A unit whose ratio of females per 1,000 males falls outside this band is far
+# from every other district's, and its note gives the counts and says the
+# figure is the census's own. The census gives no reason for any district's
+# ratio, and the note supplies none. India's districts otherwise run from
+# about 800 (Surat 787, Dadra and Nagar Haveli 774) to about 1,140 (Kannur):
+# the band leaves out Daman (534), Leh (690), Tawang (714), North District
+# (767), Nicobars (777) and Mahe (1,184).
+FAR_RATIO = (800, 1150)
 
 # Districts the 2011 census reported under a name the current boundary files
 # spell differently. Renames only -- never a merge or a split.
@@ -254,6 +267,27 @@ SPLIT_STATES: dict[str, StateSplit] = {
         caveat="", residual_caveat="",
     ),
 }
+
+# The other direction: union territories the census counted apart that have
+# since been merged into one, which the boundary file draws as one shape. Two
+# measurements that exhaust a territory sum to a measurement of it, the same
+# arithmetic as SPLIT_STATES run forwards. Before this, the merged shape -- the
+# boundary file labels it "Dadra and Nagar Haveli and Daman and Diu" -- matched
+# Dadra and Nagar Haveli's row by name and wore its 343,709 people as the whole
+# territory's, while Daman and Diu's 243,247 matched nothing.
+MERGED_STATES: dict[str, tuple[tuple[str, ...], int]] = {
+    "Dadra and Nagar Haveli and Daman and Diu": (
+        ("Dadra and Nagar Haveli", "Daman and Diu"), 2020),
+}
+
+
+def merged_state_note(name: str, parts: dict[str, int], year: int) -> str:
+    listed = " and ".join(f"{part} ({count:,})" for part, count in parts.items())
+    return (f"Summed from {listed}, the union territories the 2011 census "
+            f"enumerated separately and that were merged into {name} in "
+            f"{year}. Nothing is apportioned: the two rows exhaust the "
+            f"territory, so their sum is that census's figure for it.")
+
 
 # 2011 districts that have since been subdivided, so one census row covers
 # several present-day boundary units. Their figures are deliberately NOT
@@ -1075,7 +1109,10 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     # districts created out of Arunachal's after 2011 -- Kamle, Shi Yomi,
     # Leparada, Siang and the rest -- from being the only Indian shapes left
     # whose largest group is the word "other".
-    if detail and detail["counts"] and whole["Others_Religions"]:
+    split = (detail and detail["counts"] and whole["Others_Religions"]
+             and names_a_religion(district_detail(detail, whole["Others_Religions"]),
+                                  total))
+    if split:
         religion = without_counts(religion_with_detail(
             whole, district_detail(detail, whole["Others_Religions"])))
     else:
@@ -1089,7 +1126,7 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     if religion:
         fields["religion"] = religion
         fields["religion_note"] = estimate
-        if detail and detail["counts"] and whole["Others_Religions"]:
+        if split:
             # Two estimates ride on this composition rather than one, and a
             # reader owed the first is owed the second: the shares are the
             # predecessor's, and the split inside "Other religions" is the
@@ -1114,6 +1151,22 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     if religion:
         fields["population"] = gap(NOT_AVAILABLE, estimate)
     return fields
+
+
+# A district created after 2011 out of one whose shape keeps the 2011 row
+# shows no head count, and an encyclopaedia's figure for it dated before this
+# year is not shown either (the build's ``displaces_before``): the people it
+# counts are already in the predecessor's count beside it. Wikidata's 2011
+# figures for Chhota Udaipur, Devbhumi Dwarka, Gir Somnath and Mahisagar put
+# Gujarat's districts at 64,476,108 against the state's 60,439,692. Checked in
+# 2026, with no census held since 2011; a later figure is newer than the check.
+DISPLACES_BEFORE = 2026
+
+
+def counted_on_a_shape(predecessors: tuple[str, ...]) -> bool:
+    """Whether any predecessor's 2011 row is on a shape of this map -- every one
+    not in ``SUBDIVIDED_SINCE_2011`` is (``check_lost_territory``)."""
+    return any(p.casefold() not in SUBDIVIDED_SINCE_2011 for p in predecessors)
 
 
 def new_districts(measured: dict[tuple[str, str], collections.Counter]
@@ -1157,6 +1210,9 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
                 fields = inherited_fields(
                     whole, inherited_note(name, year, predecessors), reason,
                     (detail or {}).get(state_key(state_2011)))
+            if counted_on_a_shape(predecessors) and isinstance(fields["population"], dict):
+                fields["population"] = dict(fields["population"],
+                                            displaces_before=DISPLACES_BEFORE)
             out.append(record(
                 f"IND-NEW-{state.replace(' ', '-')}-{name.replace(' ', '-')}",
                 name, level="admin2", parent="IND",
@@ -1183,6 +1239,36 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
     return out
 
 
+def check_sex_ratio(rows: list[dict[str, str]]) -> None:
+    """Refuse an extract whose males and females do not give the published
+    national ratio, which the far-ratio notes quote beside each unit's."""
+    males = sum(cell(r, "Male") for r in rows)
+    females = sum(cell(r, "Female") for r in rows)
+    expected, tol = NATIONAL_CONTROLS["sex_ratio"]
+    got = round(1000.0 * females / males) if males else None
+    if got is None or abs(got - expected) > tol:
+        raise SystemExit(
+            f"india_census: the extract's {males:,} males and {females:,} females give "
+            f"{got} females per 1,000 males, not the published {expected}")
+    log(f"  national sex ratio {got} females per 1,000 males ({males:,} males, "
+        f"{females:,} females)")
+
+
+def far_ratio_note(males: int, females: int) -> str | None:
+    """The sex ratio's note where it is far outside every other district's
+    (``FAR_RATIO``): the counts it comes from, beside the country's ratio.
+    None elsewhere."""
+    if not males or not females:
+        return None
+    ratio = round(1000.0 * females / males)
+    if FAR_RATIO[0] <= ratio <= FAR_RATIO[1]:
+        return None
+    return (f"Census of India 2011 table C-01: {males:,} males and {females:,} females, "
+            f"{ratio:,} females per 1,000 males against {NATIONAL_CONTROLS['sex_ratio'][0]:,} "
+            f"for India as a whole. A ratio this far from the country's is the census's "
+            f"count as published, not an error.")
+
+
 def build_record(name: str, counts: collections.Counter, *, level: str,
                  parent: str, entity_id: str, codes: dict[str, Any]) -> dict[str, Any]:
     population = counts["Population"]
@@ -1201,6 +1287,7 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
         sex_ratio=(measure(sex_ratio, unit="females_per_1000_males",
                            year=2011, source=SOURCE)
                    if sex_ratio else gap(NOT_AVAILABLE)),
+        sex_ratio_note=far_ratio_note(males, females),
         religion=shares(religion_counts, total=population) or gap(NOT_AVAILABLE),
         religion_note=("Census of India 2011 table C-01. India's next census was "
                        "postponed, so these remain the most recent official figures."),
@@ -1304,7 +1391,7 @@ def districts(rows: list[dict[str, str]],
         bucket = counts["Others_Religions"]
         if unit and unit["counts"] and bucket and isinstance(record_["religion"], list):
             scaled = district_detail(unit, bucket)
-            if scaled["counts"]:
+            if names_a_religion(scaled, counts["Population"]):
                 record_["religion"] = religion_with_detail(counts, scaled)
                 record_["religion_note"] = (
                     record_.get("religion_note", "") + " "
@@ -1726,6 +1813,21 @@ def district_detail(unit: dict[str, Any], bucket: int) -> dict[str, Any]:
     return {**unit, "bucket": bucket, "counts": scaled}
 
 
+def names_a_religion(scaled: dict[str, Any], population: int) -> bool:
+    """Whether the state's split, scaled to one district's residual, names any
+    religion at all at the district's size.
+
+    Leh's residual is 54 people of 133,487: no religion of Jammu & Kashmir's
+    Appendix comes to a share worth showing there, so the split would only
+    rename C-01's "Other religions" row and call the renamed row an estimate --
+    and its note printed the split it did not show as "()". C-01's row stands.
+    """
+    if not scaled["counts"]:
+        return False
+    kept = named_residual(scaled["counts"], scaled["bucket"], population)
+    return any(label != ORP_REMAINDER for label in kept)
+
+
 def district_residual_note(state: str, kept: dict[str, int], bucket: int,
                            population: int) -> str:
     """That the split inside this district's residual is the state's, not its
@@ -1861,10 +1963,16 @@ def states(rows: list[dict[str, str]],
     pieces = split_states(rows, agg, numeric)
 
     out = []
+    member_of = {fold_state(part): merged for merged, (parts, _year)
+                 in MERGED_STATES.items() for part in parts}
+    merging: dict[str, dict[str, collections.Counter]] = collections.defaultdict(dict)
     for state, whole in sorted(agg.items()):
         # The extract shouts state names; the boundary files use title case.
         plain = state.title().replace(" And ", " and ").replace(" Of ", " of ")
         plain = STATE_ALIASES.get(state.lower(), plain)
+        if fold_state(plain) in member_of:
+            merging[member_of[fold_state(plain)]][plain] = whole
+            continue
         for name, counts, split_prose in pieces.get(state, [(plain, whole, "")]):
             record_ = build_record(
                 name, counts, level="admin1", parent="IND",
@@ -1891,7 +1999,31 @@ def states(rows: list[dict[str, str]],
                     record_[f"{field}_note"] = (
                         (record_.get(f"{field}_note", "") + " " + split_prose).strip())
             out.append(record_)
+    for merged, members in sorted(merging.items()):
+        parts, year = MERGED_STATES[merged]
+        if sorted(members) != sorted(parts):
+            raise SystemExit(f"india_census: {merged} is {', '.join(parts)} and the "
+                             f"extract has {', '.join(sorted(members))}")
+        whole: collections.Counter = collections.Counter()
+        for counts in members.values():
+            whole.update(counts)
+        prose = merged_state_note(merged, {p: members[p]["Population"] for p in parts},
+                                  year)
+        record_ = build_record(merged, whole, level="admin1", parent="IND",
+                               entity_id=f"IND-S-{merged.replace(' ', '-')}",
+                               codes={"census2011_state_name": " + ".join(parts)})
+        for field in ("population", "religion", "scheduled_groups", "sex_ratio"):
+            record_[f"{field}_note"] = (
+                (record_.get(f"{field}_note", "") + " " + prose).strip())
+        log(f"  merged {merged}: {whole['Population']:,} from "
+            + ", ".join(f"{p} {members[p]['Population']:,}" for p in parts))
+        out.append(record_)
     return out
+
+
+def fold_state(name: str) -> str:
+    return re.sub(r"[^a-z]+", "", unicodedata.normalize("NFKD", name)
+                  .encode("ascii", "ignore").decode().lower().replace("&", "and"))
 
 
 def split_note(new_state: str, split: StateSplit, *, residual: bool,
@@ -2144,6 +2276,7 @@ def main() -> int:
         log(f"india_census: Census 2011, level={args.level}")
         rows = load_csv(args.csv_url)
         validate(rows)
+        check_sex_ratio(rows)
         if args.level != "state":
             # The Appendix is a state table, but its break-up is the only
             # account anyone publishes of what is inside "Other religions and

@@ -406,9 +406,13 @@ class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
             ("ethnicity", "Mangbetu", "Central African peoples"),
             ("ethnicity", "Namwanga", "Bantu peoples"),
             ("ethnicity", "Antanosy", "Malagasy peoples"),
-            # Scotland writes each census category three ways at once.
+            # Scotland writes each census category three ways at once; its
+            # Bangladeshi group is a South Asian census category, not the
+            # Asian one the tree files as East and Southeast Asian.
             ("ethnicity", "Bangladeshi, Bangladeshi Scottish or Bangladeshi "
-                          "British", "Asian (census category)"),
+                          "British", "South Asian (census category)"),
+            ("ethnicity", "Chinese, Chinese Scottish or Chinese British",
+             "Asian (census category)"),
         )
         for field, name, expected in cases:
             self.assertEqual(group_tree.parent_of(field, name), expected, name)
@@ -484,8 +488,9 @@ class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
         """
         import group_tree
         for field, name in (
-                # Two ancestries welded into one answer.
-                ("ethnicity", "Chinese and Portuguese"),
+                # Two ancestries welded into one answer. (Macao's "Chinese
+                # and Portuguese" was here; its census defines it as people
+                # of both descents, and it is filed as mixed.)
                 ("ethnicity", "Afro-Asian"),
                 ("ethnicity", "American or European"),
                 # A nationality that is argued over, not a spelling.
@@ -507,6 +512,21 @@ class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
                 # And the Central African Republic's, which is mostly
                 # Ubangian and not reliably so.
                 ("language", "Tal\u00e9"),
+                # New Zealand's pooled Middle Eastern, Latin American and
+                # African group: three ancestries with no node in common,
+                # which the slash rule must not hand to the first of them.
+                ("ethnicity", "Middle Eastern/Latin American/African"),
+                # Two small mother tongues of Nepal's 2021 census that no
+                # reference classifies, and the Myanmar township profiles'
+                # transliterations that no reference spells.
+                ("language", "Dhuleli"),
+                ("language", "Done"),
+                ("ethnicity", "Htanot"),
+                ("ethnicity", "Kho Lone Li Shaw"),
+                ("ethnicity", "Liz"),
+                ("ethnicity", "Mong Wong"),
+                ("ethnicity", "Myaing"),
+                ("ethnicity", "Yinn"),
         ):
             self.assertIsNone(group_tree.parent_of(field, name),
                               f"{field}: {name} was given a parent")
@@ -627,3 +647,322 @@ class NounClassPrefixes(unittest.TestCase):
         import group_tree
         self.assertEqual(group_tree.parent_of("ethnicity", "Malinke"),
                          "West African peoples")
+
+
+class PlacementsAcrossTheWrongContinent(unittest.TestCase):
+    """Labels the word rules had sent to another continent's family.
+
+    Each case is a label the shipped map carries. A rule read a word in it
+    -- a prefix, a substring, the first half of a slash -- and filed it with
+    a namesake elsewhere: Nepal's Kisan with the San of the Kalahari,
+    Pakistan's Saraiki with Chad's Sara, an Iranian dialect with a language
+    of the upper Nile. A label filed wrongly never shows up as unplaced, so
+    each is pinned here.
+    """
+
+    def check(self, cases):
+        import group_tree
+        for field, name, expected in cases:
+            self.assertEqual(group_tree.parent_of(field, name), expected,
+                             f"{field}: {name}")
+
+    def test_south_asian_peoples(self):
+        self.check((
+            ("ethnicity", "Kisan", "Dravidian peoples"),
+            ("ethnicity", "Saraiki", "Indo-Aryan peoples"),
+            ("ethnicity", "Magar", "Himalayan and Tibeto-Burman peoples"),
+            ("ethnicity", "indigenous or migrant tribes",
+             "Himalayan and Tibeto-Burman peoples"),
+            ("ethnicity", "Sri Lankan Chetty", "Dravidian peoples"),
+        ))
+
+    def test_south_asian_census_categories_are_south_asian(self):
+        """A census category that names South Asia is South Asian ancestry.
+
+        Filed with the Asian category, Hong Kong's "Other South Asian",
+        Canada's "South Asian", the Caribbean's "East Indian" -- the largest
+        group of Trinidad and Tobago and of Guyana -- and the United
+        Kingdom's Pakistani and Bangladeshi groups were all drawn as East
+        and Southeast Asian ancestry.
+        """
+        import group_tree
+        for name in ("Other South Asian", "South Asian", "East Indian",
+                     "Asian Indian", "Indian/Asian",
+                     "Asian, Asian British or Asian Welsh: Indian",
+                     "Asian, Asian British or Asian Welsh: Pakistani",
+                     "Asian, Asian British or Asian Welsh: Bangladeshi",
+                     "Pakistani, Pakistani Scottish or Pakistani British",
+                     "Indian (Hong Kong)", "Nepalese (Hong Kong)",
+                     "Pakistani (Hong Kong)"):
+            self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
+                             "South Asian ancestry", name)
+        self.assertEqual(group_tree.at_tier("ethnicity", "West Asian", 1),
+                         "Middle Eastern and North African ancestry")
+        self.assertEqual(group_tree.parent_of("ethnicity",
+                                              "mixed - African/East Indian"),
+                         "Mixed or multiple (census category)")
+        # The generic Asian category and its East Asian members stay put.
+        for name in ("Asian", "Southeast Asian",
+                     "Asian, Asian British or Asian Welsh: Chinese"):
+            self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
+                             "East and Southeast Asian ancestry", name)
+
+    def test_hong_kong_ethnic_groups_have_their_own_names(self):
+        """Hong Kong's census asks ethnicity; the bare adjectives are the
+        nationalities other sources count, and stay filed as nationalities.
+        """
+        import group_tree
+        self.assertEqual(group_tree.parent_of("ethnicity", "Indonesian (Hong Kong)"),
+                         "Malay and Indonesian peoples")
+        self.assertEqual(group_tree.parent_of("ethnicity", "Thai (Hong Kong)"),
+                         "Mainland Southeast Asian peoples")
+        for name in ("Indonesian", "Thai", "Indian", "Nepalese", "Pakistani"):
+            self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
+                             "Stated as a nationality", name)
+
+    def test_central_asia_and_the_hindu_kush(self):
+        import group_tree
+        for name in ("Tajik", "Pamiri"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Iranian peoples of Central Asia", name)
+            self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
+                             "Turkic and Central Asian ancestry", name)
+        # The Iranian peoples of Iran and of Afghanistan's south and centre
+        # stay where they were.
+        for name in ("Persian", "Pashtun", "Hazara", "Afghan"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Iranian peoples", name)
+        # Nuristani beside the Iranian peoples, not under them.
+        self.assertEqual(group_tree.parent_of("ethnicity", "Nuristani"),
+                         "Nuristani peoples")
+        self.assertEqual(group_tree.at_tier("ethnicity", "Nuristani", 1),
+                         "Middle Eastern and North African ancestry")
+        self.assertEqual(group_tree.parent_of("ethnicity", "Yugur"),
+                         "Turkic peoples")
+
+    def test_myanmar_and_the_moluccas(self):
+        import group_tree
+        self.assertEqual(group_tree.parent_of("ethnicity", "Naga (Myanmar)"),
+                         "Tibeto-Burman peoples of China and Southeast Asia")
+        # India's Naga stay with the Himalayan peoples.
+        self.assertEqual(group_tree.parent_of("ethnicity", "Naga"),
+                         "Himalayan and Tibeto-Burman peoples")
+        self.assertEqual(group_tree.parent_of("ethnicity", "Moluccan"),
+                         "Malay and Indonesian peoples")
+        self.assertEqual(group_tree.parent_of("ethnicity", "Baya"),
+                         "Central African peoples")
+        self.assertEqual(group_tree.parent_of("ethnicity", "Korean-Chinese"),
+                         "Korean peoples")
+        self.assertEqual(group_tree.parent_of("ethnicity", "Vietnam"),
+                         group_tree.parent_of("ethnicity", "Vietnamese"))
+
+    def test_the_pacific(self):
+        self.check((
+            ("ethnicity", "Pacific Peoples", "Pacific Islander (census category)"),
+            ("ethnicity", "iTaukei", "Melanesian peoples"),
+            ("ethnicity", "Yap outer islanders", "Micronesian peoples"),
+            ("ethnicity", "Tuvaluan/I-Kiribati", "Mixed or multiple (census category)"),
+            ("ethnicity", "Tuvaluan/other", "Mixed or multiple (census category)"),
+            ("ethnicity", "I-Kiribati/mixed", "Mixed or multiple (census category)"),
+            ("language", "iTaukei", "Oceanic languages"),
+            ("language", "Hiri Motu", "Creole languages"),
+        ))
+
+    def test_africa_and_its_namesakes(self):
+        self.check((
+            ("ethnicity", "Cotier/Ngoe/Oroko", "Bantu peoples"),
+            ("ethnicity", "Baamba", "Bantu peoples"),
+            ("ethnicity", "Maka", "Bantu peoples"),
+            ("ethnicity", "Sudanese", "Other national identities"),
+            # Sudan's Arabs stay Arab now that the nationality is filed apart.
+            ("ethnicity", "Sudanese Arab", "Arab peoples"),
+            ("ethnicity", "Caribbean, Caribbean Scottish or Caribbean British",
+             "Black or African (census category)"),
+            ("ethnicity", "Afro-Mauricien (Creole)",
+             "Black or African (census category)"),
+            ("language", "Bodo (Central African Republic)", "Bantu languages"),
+            ("language", "Komo (Democratic Republic of Congo)", "Bantu languages"),
+            ("language", "Kulung (Nigeria)", "Bantu languages"),
+            ("language", "Maaka", "Chadic languages"),
+            ("language", "Lala-Roba", "Adamawa-Ubangi languages"),
+            ("language", "Lama, Lamba", "Gur languages"),
+            ("language", "Mina, Guen", "Kwa languages"),
+            # The bare homonyms keep their own families.
+            ("language", "Bodo", "Tibeto-Burman languages"),
+            ("language", "Kulung", "Tibeto-Burman languages"),
+        ))
+
+    def test_south_asian_and_iranian_languages(self):
+        self.check((
+            ("language", "Newari", "Tibeto-Burman languages"),
+            ("language", "Pahari-Pothwari", "Indo-Aryan languages"),
+            ("language", "Pakistani Pahari (with Mirpuri and Potwari)",
+             "Indo-Aryan languages"),
+            # Nepal's own Pahari is Tibeto-Burman and stays so.
+            ("language", "Pahari", "Tibeto-Burman languages"),
+            ("language", "Rāji", "Iranian languages"),
+            ("language", "Rubāri", "Iranian languages"),
+            ("language", "Banda (Indonesia)", "Malayo-Polynesian languages"),
+            ("language", "Sara Bakati'", "Malayo-Polynesian languages"),
+            ("language", "Armenic", "Armenian languages"),
+        ))
+        import group_tree
+        self.assertEqual(group_tree.parent_of("language", "Kathmandu Valley Newari"),
+                         "Newari")
+        self.assertEqual(group_tree.at_tier("language", "Nepalbhasha (Newari)", 1),
+                         "Sino-Tibetan languages")
+        # Nepal's mother tongues as CLEAR Global names them.
+        for name in ("Kham", "Kham-Hor", "Thangmi", "Chantyal", "Camling",
+                     "Lamjung-Melamchi Yolmo", "Athpariya", "Belhariya",
+                     "Byangsi", "Chintang", "Koi", "Manangba-Nar-Phu",
+                     "Nachering", "Tichurong", "Wayu", "Baraamu"):
+            self.assertEqual(group_tree.parent_of("language", name),
+                             "Tibeto-Burman languages", name)
+        for name in ("Tharuic", "Kumhali", "Kuswaric", "Soradi", "Surjapuri",
+                     "Acchami", "Bajurali"):
+            self.assertEqual(group_tree.parent_of("language", name),
+                             "Indo-Aryan languages", name)
+
+    def test_religions(self):
+        import group_tree
+        table = cg.lookup("religion")
+        for name in ("non-Christian", "other non-Christian"):
+            canonical = table.get(cg.key(name), name)
+            self.assertNotIn("Christianity", cg.ancestry("religion", canonical),
+                             name)
+        # The negation is on "practising": a non-practising Catholic is a
+        # Catholic.
+        self.assertEqual(group_tree.parent_of("religion", "Non-practising Catholic"),
+                         "Catholicism")
+        self.assertEqual(cg.ancestry("religion", "Scheduled Castes"),
+                         ["Scheduled Castes", "Hinduism", "Indian religions"])
+        self.assertEqual(group_tree.parent_of("religion", "No religion/Refused"),
+                         "Not stated")
+        self.assertEqual(table[cg.key("none or atheist")], "No religion")
+        self.assertEqual(group_tree.parent_of("religion", "Muslim/Jewish"),
+                         "Abrahamic religions")
+
+
+class ANegationIsNotWhatItNegates(unittest.TestCase):
+    """"non-Qatari" names no Qatari, and no rule may file it as one."""
+
+    def test_the_rules_never_file_a_label_under_what_it_excludes(self):
+        import group_tree
+        for field, name, excluded in (
+                ("ethnicity", "non-Fijian", "Melanesian peoples"),
+                ("ethnicity", "non-Zulu residents", "Bantu peoples"),
+                ("ethnicity", "non-Sara groups", "Central African peoples"),
+                ("religion", "non-Buddhist", "Buddhism"),
+                ("religion", "non-Catholic Christians", "Catholicism")):
+            self.assertNotIn(excluded, group_tree.ancestry(field, name),
+                             f"{field}: {name}")
+
+    def test_the_shipped_exclusions_are_residuals(self):
+        import group_tree
+        for name in ("non-Qatari", "non-Niuean", "non-Kenyan", "non-African",
+                     "non-Central African Republic ethnic groups",
+                     "Other non-Malian ethnic group"):
+            self.assertEqual(group_tree.at_tier("ethnicity", name, 1),
+                             "Other or not stated ancestry", name)
+
+    def test_two_descents_are_mixed_not_the_half_the_rules_read(self):
+        """Macao's descent rows, the Bahamas' two-race answers and Haiti's
+        "mixed and White": the word rules read one half of each (with the
+        negation skipped, "Chinese and non-Portuguese" reads as Chinese)."""
+        import group_tree
+        for name in ("Chinese and Portuguese", "Chinese and non-Portuguese",
+                     "Portuguese and others", "Black and other",
+                     "White and other", "mixed and White"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Mixed or multiple (census category)", name)
+
+    def test_a_negation_inside_a_name_is_read_where_it_is(self):
+        import group_tree
+        self.assertTrue(group_tree._unnegated("Non-practising Catholic", "Catholic"))
+        self.assertFalse(group_tree._unnegated("non-Christian", "Christian"))
+        self.assertFalse(group_tree._unnegated("other non-Christian", "Christian"))
+        self.assertTrue(group_tree._unnegated("Christian, non-denominational",
+                                              "Christian"))
+
+
+class APassportIsFiledAsOne(unittest.TestCase):
+    """A label a source wrote as a nationality is filed as one."""
+
+    def test_national_and_citizen_labels(self):
+        import group_tree
+        for name in ("Japanese national", "Chinese nationals",
+                     "Indonesian national", "Kuwaiti citizens"):
+            self.assertEqual(group_tree.parent_of("ethnicity", name),
+                             "Other national identities", name)
+        self.assertEqual(group_tree.parent_of("ethnicity", "American citizens"),
+                         "Settler-nation identities")
+        # The labels the tables already name keep their placement.
+        self.assertEqual(group_tree.parent_of("ethnicity", "GCC nationals"),
+                         "Arab peoples")
+        self.assertEqual(group_tree.at_tier("ethnicity", "Foreign nationals", 1),
+                         "Other or not stated ancestry")
+        # A remainder or an exclusion names no state.
+        self.assertIsNone(group_tree.nationality_parent("ethnicity",
+                                                        "Other EU nationals"))
+        self.assertIsNone(group_tree.nationality_parent("ethnicity",
+                                                        "Non-Kenyan nationals"))
+
+
+class EveryNameHasOneParent(unittest.TestCase):
+    def test_no_name_is_listed_under_two_parents_in_two_tables(self):
+        """Each table is inverted on its own and merged into one dict, so a
+        name two tables list under different parents silently took the
+        later table's -- "Indonesian" and "Thai" were Malay and Mainland
+        peoples in one table and nationalities in the next, and nothing
+        said which one the map drew."""
+        import group_tree
+        tables = {
+            "ethnicity": [
+                {n: "Unclassified ethnicity answers"
+                 for n in group_tree.ETHNIC_RESIDUALS},
+                group_tree._invert(group_tree.ETHNIC_PEOPLES),
+                group_tree._invert(group_tree.ETHNIC_CENSUS),
+                group_tree._invert(group_tree.ETHNIC_NATIONALITY),
+                group_tree._invert(group_tree.ETHNIC_ANCESTRY),
+                group_tree._invert(group_tree.ETHNIC_EXTRA)],
+            "language": [
+                group_tree._invert(group_tree.LANGUAGE_BRANCH),
+                group_tree._invert(group_tree.LANGUAGE_BANDS),
+                group_tree._invert(group_tree.LANGUAGE_FAMILY),
+                group_tree._invert(group_tree.LANGUAGE_EXTRA)],
+        }
+        for field, parts in tables.items():
+            seen = {}
+            for part in parts:
+                for child, parent in part.items():
+                    self.assertEqual(seen.setdefault(child, parent), parent,
+                                     f"{field}: {child!r} is under "
+                                     f"{seen[child]!r} and {parent!r}")
+
+
+class FamiliesAreToldApart(unittest.TestCase):
+    def test_the_tibeto_burman_family_is_not_its_neighbours_colour(self):
+        """The share ramp keeps a colour's hue and saturation and sets its
+        lightness, so two families whose hue and saturation nearly match are
+        one colour on the map whatever their hex says."""
+        import colorsys
+        import group_tree
+
+        def hue_and_saturation(name):
+            n = int(group_tree.hue("ethnicity", name).lstrip("#"), 16)
+            h, _, s = colorsys.rgb_to_hls(((n >> 16) & 255) / 255,
+                                          ((n >> 8) & 255) / 255,
+                                          (n & 255) / 255)
+            return h * 360, s
+
+        node = "Tibeto-Burman peoples of China and Southeast Asia"
+        tb_h, tb_s = hue_and_saturation(node)
+        for other in ("Korean peoples", "Philippine peoples",
+                      "Mainland Southeast Asian peoples"):
+            h, s = hue_and_saturation(other)
+            gap = min(abs(tb_h - h), 360 - abs(tb_h - h))
+            self.assertTrue(gap >= 12 or abs(tb_s - s) >= 0.25,
+                            f"{node} and {other} share a colour")
+        # A people under it takes its colour.
+        self.assertEqual(group_tree.hue("ethnicity", "Tibetan"),
+                         group_tree.hue("ethnicity", node))

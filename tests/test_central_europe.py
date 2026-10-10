@@ -39,6 +39,29 @@ class SlovakDataCube(unittest.TestCase):
             svk.national_ages([cell("SK0", "1", "Y0T4", 1.0)])
 
 
+class NationalityNotes(unittest.TestCase):
+    """The ethnicity note a visitor reads says what was counted and that it is
+    not ethnicity, and nothing about how the map came to show it."""
+
+    def test_each_note_says_it_is_not_ethnicity_and_cites_no_decision(self):
+        from fetch_census import central_nationality as cn
+        from fetch_census import germany as deu
+        notes = {
+            "central": cn.note("Population by citizenship", "1 January 2026",
+                               "the register's count", extra="Extra sentence."),
+            "germany": deu.NATIONALITY_NOTE,
+            "netherlands": nld.ORIGIN_NOTE,
+        }
+        for where, text in notes.items():
+            self.assertIn("not ethnicity", text, where)
+            self.assertTrue(text.endswith("."), where)
+            for word in ("owner", "decision", "Written by"):
+                self.assertNotIn(word, text, where)
+        self.assertTrue(notes["central"].endswith("nationals; nationalities below the naming "
+                                                  "threshold are 'Other nationalities'. "
+                                                  "Extra sentence."), notes["central"])
+
+
 class DutchKeyFiguresFromTheWfs(unittest.TestCase):
     def feature(self, code, name, men, women, water="NEE"):
         return {"properties": {"gemeentecode": code, "gemeentenaam": name, "mannen": men,

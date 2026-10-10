@@ -239,6 +239,10 @@ ETHNIC_LABELS: dict[str, str] = {
     "betawi": "Betawi", "minangkabau": "Minangkabau", "bugis": "Buginese",
     "melayu": "Malay", "banten": "Bantenese", "banjar": "Banjar", "bali": "Balinese",
     "aceh": "Acehnese", "dayak": "Dayak", "sasak": "Sasak", "tionghoa": "Chinese Indonesian",
+    # North Kalimantan's row, which the article once printed "Dayak (termasuk
+    # Tidung dan Bulungan)" and now "Gabungan Dayak, Tidung dan Bulungan": the
+    # same census row, which counts the Tidung and Bulungan with the Dayak.
+    "gabungan dayak, tidung dan bulungan": "Dayak",
     "makassar": "Makassarese", "cirebon": "Cirebonese", "nias": "Nias",
     "lampung": "Lampung", "gayo": "Gayo", "aneuk jamee": "Aneuk Jamee",
     "singkil": "Singkil", "devayan": "Devayan", "mentawai": "Mentawai",
@@ -792,6 +796,44 @@ def read_population(wikitext: str,
         return None, ("neither the head count nor its citation carries a year, "
                       "so there is no date the figure is as of")
     return {"total": total, "year": year, "kind": kind}, ""
+
+
+# The 2020 census's Long Form (indonesia_age.py) counts every regency's people
+# for 2022. A head count an article cites from anything but the registry, and
+# that differs from it by more than this, is a misreading -- Jombang's article
+# cites 376,547 from a BPS religion table for 2024, 28% of the Long Form's
+# 1,335,972 -- and is not read: the census count stands. The registry's own
+# counts are a different measure (identity cards held, not people enumerated)
+# and differ most in Papua's highlands; they are read, and the far ones logged.
+LONG_FORM = PROCESSED / "indonesia_age.json"
+LONG_FORM_FAR = 0.25
+
+
+def long_form_counts(path: Path = LONG_FORM) -> dict[str, int]:
+    """Shape id -> the Long Form's 2022 head count, for every regency it covers."""
+    import json
+    try:
+        rows = json.loads(path.read_text())
+    except FileNotFoundError:
+        log(f"  no {path.name}: transcribed head counts are not checked against the "
+            f"census Long Form")
+        return {}
+    return {r["shape_id"]: int(r["population"]["value"]) for r in rows
+            if r.get("level") == "admin2" and r.get("shape_id")
+            and isinstance(r.get("population"), dict) and r["population"].get("value")}
+
+
+def against_long_form(reading: dict[str, Any], census: int | None) -> str:
+    """Why a transcribed head count is not read, or "" where it may be."""
+    if not census or reading["kind"] == "dukcapil":
+        return ""
+    if abs(reading["total"] - census) / census <= LONG_FORM_FAR:
+        return ""
+    return (f"the head count the article cites ({reading['total']:,} for "
+            f"{reading['year']}, from {EXPLAINED[reading['kind']]}) is "
+            f"{reading['total'] / census:.0%} of the 2020 census Long Form's {census:,} "
+            f"for the regency in 2022; no regency changes by that much in two years, so "
+            f"the transcription is not read and the census count stands")
 
 
 def population_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
@@ -1494,7 +1536,8 @@ def residual_records(known: dict[str, dict[str, Any]],
 
 
 def regency_records(fetch_page=fetch,
-                    province_rows: list[dict[str, Any]] | None = None
+                    province_rows: list[dict[str, Any]] | None = None,
+                    long_form: dict[str, int] | None = None
                     ) -> list[dict[str, Any]]:
     """The regency records, and the residual estimates the provinces imply.
 
@@ -1512,6 +1555,9 @@ def regency_records(fetch_page=fetch,
     known: dict[str, dict[str, dict[str, float]]] = {}
     counted = uninhabited = from_hapi = 0
     hapi = hapi_by_province()
+    long_form = long_form_counts() if long_form is None else long_form
+    against: list[str] = []
+    registry_far: list[str] = []
     for shape in shapes("admin2"):
         name, province = shape["name"], provinces.get(shape["parent"], "")
         if not province:
@@ -1542,6 +1588,16 @@ def regency_records(fetch_page=fetch,
         fields = religion_fields(reading, resolved)
         sources = [fields.pop("religion_source")]
         head, why = read_population(wikitext, resolved)
+        census = long_form.get(shape["id"])
+        if head and (refused := against_long_form(head, census)):
+            against.append(f"{name} {head['total']:,} ({head['year']}) against {census:,}")
+            fields["population"] = gap(NOT_AVAILABLE, f"No head count is written here: "
+                                                      f"{refused}.")
+            records.append(regency_record(name, province, fields, sources, resolved))
+            continue
+        if head and census and head["kind"] == "dukcapil" \
+                and abs(head["total"] - census) / census > LONG_FORM_FAR:
+            registry_far.append(f"{name} {head['total'] / census:.2f}")
         if head:
             counted += 1
             fields.update(population_fields(head, resolved))
@@ -1565,6 +1621,13 @@ def regency_records(fetch_page=fetch,
     log(f"  regencies: {len(records)} read from the infobox; by kind of source: "
         + ", ".join(f"{k} {v}" for k, v in sorted(kinds.items())))
     log(f"  regencies with a head count: {counted} of {len(records)}")
+    if against:
+        log(f"  transcribed head counts refused against the census Long Form "
+            f"({len(against)}): {'; '.join(against)}")
+    if registry_far:
+        log(f"  registry counts read though they differ from the Long Form by more than "
+            f"{LONG_FORM_FAR:.0%} ({len(registry_far)}), a different measure: "
+            f"{', '.join(registry_far)}")
     log(f"  {uninhabited} shapes at this level are uninhabited features, not "
         f"regencies, and say so: {', '.join(sorted(NOT_REGENCIES))}")
     for why, n in sorted(refusals.items(), key=lambda kv: -kv[1]):

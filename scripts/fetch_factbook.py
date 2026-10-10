@@ -513,7 +513,7 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         if comp:
             return comp
         if text:
-            return gap(NOT_AVAILABLE, f"Factbook reports free text only: {text[:180]}")
+            return gap(NOT_AVAILABLE, f"Factbook reports free text only: {clip(text, 180)}")
         return gap(NOT_AVAILABLE, "No composition published by the Factbook for this entity.")
 
     language_text = languages_text(profile)
@@ -587,6 +587,37 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
                                         "language": (language, language_text),
                                         "ethnicity": (ethnicity, ethnic_text)}))
     return record
+
+
+def clip(text: str, limit: int) -> str:
+    """Text cut to at most ``limit`` characters where a reader can follow it.
+
+    A plain slice cut the Factbook's words mid-word and mid-bracket:
+    Afghanistan's ethnic groups ended "Baluch, Pashaie, Nur", Madagascar's
+    "French, Indian, Creo", Sao Tome's "Tongas (children of". The cut falls
+    at the last comma or semicolon outside brackets, when one lies in the
+    second half of the room; otherwise at the last space before any bracket
+    left open; and "..." says that something was cut.
+    """
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if len(text) <= limit:
+        return text
+    room = limit - 3
+    depth, clause = 0, -1
+    for i, ch in enumerate(text[:room]):
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth = max(0, depth - 1)
+        elif ch in ",;" and depth == 0:
+            clause = i
+    if clause >= room // 2:
+        head = text[:clause]
+    else:
+        head = text[:room].rsplit(" ", 1)[0]
+        while head.count("(") > head.count(")") and "(" in head:
+            head = head[:head.rfind("(")].rstrip()
+    return head.rstrip(" ,;:-") + "..."
 
 
 def has_shares(comp: Any) -> bool:

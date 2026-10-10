@@ -128,7 +128,7 @@
     "language_year": 2020,
     "ethnicity": {
       "status": "not_available",
-      "note": "Factbook reports free text only: current, reliable statistical data on ethnicity in Afghanistan are not available; Afghanistan's 2004 Constitution cited Pashtun, Tajik, Hazara, Uzbek, Turkman, Baluch, Pashaie, Nur"
+      "note": "Factbook reports free text only: current, reliable statistical data on ethnicity in Afghanistan are not available; Afghanistan's 2004 Constitution cited Pashtun, Tajik, Hazara, Uzbek, Turkman, Baluch, Pashaie..."
     },
     "ethnicity_year": null,
     "sources": [
@@ -3820,7 +3820,7 @@
     ],
     "religion_note": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either. The figure shown is the CIA World Factbook's estimate, which reads: \"Lamaistic Buddhist 75.3%, Indian- and Nepali-influenced Hinduism 22.1%, other 2.6% (2005 est.)\".",
     "language_note": "Bhutan's census does not ask language or mother tongue. The figure shown is the CIA World Factbook's estimate, which reads: \"Sharchopkha 28%, Dzongkha (official) 24%, Lhotshamkha 22%, other 26% (includes foreign languages) (2005 est.)\".",
-    "ethnicity_note": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving. The figure shown is the CIA World Factbook's estimate, which reads: \"Ngalop (also known as Bhote) 50%, ethnic Nepali 35% (predominantly Lhotshampas), indigenous or migrant tribes 15%\"."
+    "ethnicity_note": "Bhutan's census does not ask ethnicity. It publishes citizenship -- the Bhutanese and everyone else, by dzongkhag and by gewog (each dzongkhag report's Tables 2.1 and 2.2) -- which this map shows on the ethnicity field under its basis, wherever the two tables reconcile. The figure shown is the CIA World Factbook's estimate, which reads: \"Ngalop (also known as Bhote) 50%, ethnic Nepali 35% (predominantly Lhotshampas), indigenous or migrant tribes 15%\"."
   },
   {
     "id": "BOL",
@@ -5470,7 +5470,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Myanmar's census does not ask language. The 2014 Population and Housing Census main questionnaire, reproduced as Annex 1 of Census Report Volume 2-B, asks religion and ethnicity but names language once, in the literacy question \"Can [name] read and write in any language?\", which records whether a person can, not which language they speak. The list shown is the CIA World Factbook's, with no shares, which reads: \"Burmese (official)\"."
   },
   {
     "id": "BDI",
@@ -5880,7 +5881,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "ethnicity_note": "Cambodia's census does not ask ethnicity. The 2019 General Population Census's individual questionnaire (Form B), as the National Institute of Statistics' final report lists it in chapter 1, asks name, relationship to the head of household, sex, age, marital status, mother tongue, religion, birth place, previous residence, duration of stay and reason for migration, literacy and education, disability, main activity, occupation and industry -- and nothing about ethnicity, race or tribe. The census's thematic report on ethnic minorities is built from the mother-tongue answer, which the map carries on the language field. The figure shown is the CIA World Factbook's estimate, which reads: \"Khmer 95.4%, Cham 2.4%, Chinese 1.5%, other 0.7% (2019-20 est.)\"."
   },
   {
     "id": "CMR",
@@ -7221,7 +7223,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "religion_note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead. The China Family Panel Studies asked it in 2012 and supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them. The figure shown is the CIA World Factbook's estimate, which reads: \"folk religion 21.9%, Buddhist 18.2%, Christian 5.1%, Muslim 1.8%, Hindu < 0.1%, Jewish < 0.1%, other 0.7% (includes Daoist (Taoist)), unaffiliated 52.1% (2021 est.)\"."
+    "religion_note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead. The China Family Panel Studies, a national survey, asks it, and its 2016 wave supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them. The figure shown is the CIA World Factbook's estimate, which reads: \"folk religion 21.9%, Buddhist 18.2%, Christian 5.1%, Muslim 1.8%, Hindu < 0.1%, Jewish < 0.1%, other 0.7% (includes Daoist (Taoist)), unaffiliated 52.1% (2021 est.)\"."
   },
   {
     "id": "CXR",
@@ -9499,7 +9501,7 @@
     "language_year": null,
     "ethnicity": {
       "status": "not_available",
-      "note": "Factbook reports free text only: more than 200 African ethnic groups of which the majority are Bantu; the four largest groups - Mongo, Luba, Kongo (all Bantu), and the Mangbetu-Azande (Hamitic) - make up about 45%"
+      "note": "Factbook reports free text only: more than 200 African ethnic groups of which the majority are Bantu; the four largest groups - Mongo, Luba, Kongo (all Bantu)..."
     },
     "ethnicity_year": null,
     "sources": [
@@ -12069,8 +12071,7 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ],
-    "religion_note": "Finland's population register records membership of a religious community for everyone, but Statistics Finland publishes it for the whole country only (table 11rx, by age and sex); no StatFin table, and none of the municipal key figures, gives it by region or municipality. The register keeper (DVV) publishes election statistics, citizens by municipality and lists of parishes, not membership counts. The Evangelical Lutheran Church publishes its own members by municipality, which is one church's count and not the register's. The figure shown is the CIA World Factbook's estimate, which reads: \"Lutheran 66.6%, Greek Orthodox 1.1%, other 1.7%, none 30.6% (2022 est.)\"."
+    ]
   },
   {
     "id": "FRA",
@@ -15832,7 +15833,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "ethnicity_note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead. The figure shown is the CIA World Factbook's estimate, which reads: \"Indo-Aryan 72%, Dravidian 25%, and other 3% (2000)\"."
+    "ethnicity_note": "India does not collect ethnicity; Scheduled Caste and Scheduled Tribe shares and mother tongue are collected instead. Its census does count place of birth (table D-01, 2011), which this map shows on the ethnicity field under its basis, for every state and for every district drawn as the 2011 census counted it. A district created, divided or cut down since has no count of its own. The figure shown is the CIA World Factbook's estimate, which reads: \"Indo-Aryan 72%, Dravidian 25%, and other 3% (2000)\"."
   },
   {
     "id": "IDN",
@@ -16213,8 +16214,8 @@
     ],
     "language_year": null,
     "ethnicity": {
-      "status": "not_collected",
-      "note": "Iran's census does not ask ethnicity; the 2016 census asked religion in the state's recognised categories, not ethnic group."
+      "status": "not_available",
+      "note": "Factbook reports free text only: Persian, Azeri, Kurd, Lur, Baloch, Arab, Turkmen, and Turkic tribes"
     },
     "ethnicity_year": null,
     "sources": [
@@ -17669,7 +17670,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one. The list shown is the CIA World Factbook's, with no shares, which reads: \"Arabic (official), English (widely understood among upper and middle classes)\"."
   },
   {
     "id": "KAZ",
@@ -20325,7 +20327,7 @@
     "language_year": 2018,
     "ethnicity": {
       "status": "not_available",
-      "note": "Factbook reports free text only: Malayo-Indonesian (Merina and related Betsileo), Cotiers (mixed African, Malayo-Indonesian, and Arab ancestry - Betsimisaraka, Tsimihety, Antaisaka, Sakalava), French, Indian, Creo"
+      "note": "Factbook reports free text only: Malayo-Indonesian (Merina and related Betsileo), Cotiers (mixed African, Malayo-Indonesian, and Arab ancestry - Betsimisaraka, Tsimihety, Antaisaka, Sakalava), French, Indian..."
     },
     "ethnicity_year": null,
     "sources": [
@@ -20836,7 +20838,7 @@
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables."
+      "note": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables, and this map shows it on the ethnicity field under its basis, for every atoll and island the 2022 atoll sheet gives it for."
     },
     "ethnicity_year": null,
     "sources": [
@@ -24856,7 +24858,7 @@
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. Nationality is not ethnicity, and nothing in the round crosses either with a province."
+      "note": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. The country carries it as nationality; nothing in the round crosses nationality, or any other origin, with a province."
     },
     "ethnicity_year": null,
     "sources": [
@@ -25673,7 +25675,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "ethnicity_note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked. The figure shown is the CIA World Factbook's estimate, which reads: \"Punjabi 44.7%, Pashtun (Pathan) 15.4%, Sindhi 14.1%, Saraiki 8.4%, Muhajirs 7.6%, Baloch 3.6%, other 6.3%\"."
+    "ethnicity_note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups line for Pakistan follows the census's mother-tongue groups under ethnic names (Pashto speakers as Pashtun, Urdu speakers as Muhajir) and gives no year; the census's own mother-tongue counts are on the language field, which is the question that was actually asked. Its count of nationality -- Pakistani or not, by district (Table 10 of the 2023 census) -- is shown on the ethnicity field of the provinces and districts under its basis. The Bureau publishes no Table 10 for Gilgit-Baltistan or for Azad Jammu and Kashmir, which it tabulates apart from the four provinces, so their units carry no nationality. The figure shown is the CIA World Factbook's estimate, which reads: \"Punjabi 44.7%, Pashtun (Pathan) 15.4%, Sindhi 14.1%, Saraiki 8.4%, Muhajirs 7.6%, Baloch 3.6%, other 6.3%\"."
   },
   {
     "id": "PLW",
@@ -27693,7 +27695,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "religion_note": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map. The figure shown is the CIA World Factbook's estimate, which reads: \"Russian Orthodox 15-20%, Muslim 10-15%, other Christian 2% (2006 est.)\"."
+    "religion_note": "Russia's census has not asked religion since 1937 (the 1897 and 1937 censuses did); the 2002, 2010 and 2020 censuses asked nationality and native language, which are on the map. Where religion is shown by federal subject it is a survey estimate (Sreda's Arena, 2012, 56,900 adults); Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed. The figure shown is the CIA World Factbook's estimate, which reads: \"Russian Orthodox 15-20%, Muslim 10-15%, other Christian 2% (2006 est.)\"."
   },
   {
     "id": "RWA",
@@ -29126,7 +29128,7 @@
     "language_year": 2012,
     "ethnicity": {
       "status": "not_available",
-      "note": "Factbook reports free text only: Mestico, Angolares (descendants of Angolan slaves), Forros (descendants of freed slaves), Servicais (contract laborers from Angola, Mozambique, and Cabo Verde), Tongas (children of"
+      "note": "Factbook reports free text only: Mestico, Angolares (descendants of Angolan slaves), Forros (descendants of freed slaves), Servicais (contract laborers from Angola, Mozambique, and Cabo Verde)..."
     },
     "ethnicity_year": null,
     "sources": [
@@ -29278,8 +29280,7 @@
       }
     ],
     "religion_note": "Saudi Arabia's 2022 census asks citizenship (Saudi or non-Saudi, and country of citizenship) and not religion; there are no official religious statistics at any level. The list shown is the CIA World Factbook's, with no shares, which reads: \"Muslim (official; citizens are 85-90% Sunni and 10-12% Shia), other (includes Eastern Orthodox, Protestant, Roman Catholic, Jewish, Hindu, Buddhist, and Sikh) (2020 est.)\".",
-    "language_note": "Saudi Arabia's 2022 census does not ask language. The list shown is the CIA World Factbook's, with no shares, which reads: \"Arabic (official)\".",
-    "ethnicity_note": "Saudi Arabia's 2022 census records citizenship, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Arab 90%, Afro-Asian 10%\"."
+    "language_note": "Saudi Arabia's 2022 census does not ask language. The list shown is the CIA World Factbook's, with no shares, which reads: \"Arabic (official)\"."
   },
   {
     "id": "SEN",
@@ -31672,8 +31673,8 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "religion_note": "Spain's census does not ask religion (CIS survey data exists instead). The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 58.2%, atheist 16.2%, agnostic 10.8%, other 2.7%, non-believer 10.5%, unspecified 1.7% (2021 est.)\".",
-    "language_note": "Spain's census (INE) does not ask language. Some regional governments survey it in their own communities -- Eustat's census for the Basque Country and its provinces, the IGE's survey for Galicia and its provinces, Idescat's EULP survey for Catalonia (not published by province) -- and the units those reach carry it, as do the communities where the European Social Survey has 100 respondents. The figure shown is the CIA World Factbook's estimate, which reads: \"Castilian Spanish (official) 74%, Catalan (official in Catalonia, the Balearic Islands, and the Valencian Community) 17%, Galician (official in Galicia) 7%, Basque (official in the Basque Country and Navarre) 2%, Aranese (official in part of Catalonia) <5,000 speakers\".",
+    "religion_note": "Spain's census (INE) has not asked religion since the Constitution of 1978, which provides that no one may be obliged to declare it (art. 16.2). Surveys measure it, and the units they reach carry it: the CIS's regional pre-electoral surveys -- by province for Andalucía, Aragón, Castilla y León and Extremadura (2025-2026) and the Basque Country (2020), and for the comunidad as a whole for Galicia and the Basque Country (2024), the Community of Madrid (2021) and La Rioja (2019); the Catalan government's CEO barometer, for Catalonia and its provinces; and the European Social Survey, for the communities where it has 100 respondents. None reaches the rest: the CIS's regional surveys of Castilla-La Mancha and the Canaries (2015) and the Comunitat Valenciana (2015, 2019) did not ask it, and the tables of their 2023 successors went with its former website; it publishes its Galician surveys for the comunidad only; its 2019 macro-survey, published by comunidad, reached Ceuta and Melilla with 60 respondents each, too few to use; and its monthly barometers are published by no region, their microdata only through a request form. The figure shown is the CIA World Factbook's estimate, which reads: \"Roman Catholic 58.2%, atheist 16.2%, agnostic 10.8%, other 2.7%, non-believer 10.5%, unspecified 1.7% (2021 est.)\".",
+    "language_note": "Spain's census (INE) does not ask language. Some regional governments survey it in their own communities -- Eustat's census for the Basque Country and its provinces, the IGE's survey for Galicia and its provinces, Idescat's EULP survey for Catalonia (not published by province), the CEO barometer's first language for Catalonia's provinces -- and the units those reach carry it, as do the communities where the European Social Survey has 100 respondents. The CIS's monthly barometer and its regional pre-electoral surveys of 2025-2026 ask no language question; of the 2024 ones, the Basque Country's asks mother tongue and is published for the comunidad only, and Catalonia's tables are no longer on the CIS's site. The figure shown is the CIA World Factbook's estimate, which reads: \"Castilian Spanish (official) 74%, Catalan (official in Catalonia, the Balearic Islands, and the Valencian Community) 17%, Galician (official in Galicia) 7%, Basque (official in the Basque Country and Navarre) 2%, Aranese (official in part of Catalonia) <5,000 speakers\".",
     "ethnicity_note": "Spain's census records nationality and birthplace, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Spanish 84.8%, Moroccan 1.7%, Romanian 1.2%, other 12.3% (2021 est.)\"."
   },
   {
@@ -32451,7 +32452,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "religion_note": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000. The figure shown is the CIA World Factbook's estimate, which reads: \"Church of Sweden (Lutheran) 53.9%, other (includes Roman Catholic, Orthodox, Baptist, Muslim, Jewish, and Buddhist) 8.9%, none or unspecified 37.2% (2021 est.)\".",
+    "religion_note": "Sweden's census is compiled from registers, and no state register records religion; the state kept none after the Church of Sweden separated in 2000. The Church's own count of its members by kommun and län, made by Statistics Sweden for the Church (31 December 2021, or 2019 where only that edition's row is the kommun's), gives every län and every kommun but fifteen. The table sums each kommun's parishes, and a parish that crosses a kommun boundary is counted whole under one kommun. Forshaga and Munkfors share one parish, Forshaga-Munkfors församling, in every edition since 2016; and in each of the 2019, 2020 and 2021 editions the rows for Berg, Essunga, Gnosjö, Grästorp, Gullspång, Helsingborg, Härjedalen, Höör, Landskrona, Svenljunga, Tranemo, Töreboda and Vadstena count more or fewer people than Statistics Sweden finds in the kommun, beyond what the people registered without a property explain: each is another territory than its kommun. The figure shown is the CIA World Factbook's estimate, which reads: \"Church of Sweden (Lutheran) 53.9%, other (includes Roman Catholic, Orthodox, Baptist, Muslim, Jewish, and Buddhist) 8.9%, none or unspecified 37.2% (2021 est.)\".",
     "language_note": "Sweden's census is compiled from registers, and no register records mother tongue. The list shown is the CIA World Factbook's, with no shares, which reads: \"Swedish (official)\".",
     "ethnicity_note": "Sweden records country of birth and citizenship, not ethnicity. The figure shown is the CIA World Factbook's estimate, which reads: \"Swedish 79.6%, Syrian 1.9%, Iraqi 1.4%, Finnish 1.3%, other 15.8% (2022 est.)\"."
   },
@@ -37039,7 +37040,8 @@
         "license": "Public domain",
         "retrieved_via": "factbook/factbook.json mirror"
       }
-    ]
+    ],
+    "language_note": "Viet Nam's 2019 Population and Housing Census publishes no language composition at any level. Its 842-page Completed Results volume (General Statistics Office, December 2019) tabulates ethnicity by province (Table 2) and religion for the country (Table 3) and has no language or mother-tongue table among its tables: the volume is bilingual, and no page of its English text mentions language, mother tongue or speaking. The list shown is the CIA World Factbook's, with no shares, which reads: \"Vietnamese (official); English (often as a second language); some French, Chinese, and Khmer; mountain-area languages (including Mon-Khmer and Malayo-Polynesian)\"."
   },
   {
     "id": "VIR",

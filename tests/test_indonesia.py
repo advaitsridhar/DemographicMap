@@ -605,6 +605,41 @@ class Records(unittest.TestCase):
         self.assertIn("Dukcapil", cilacap["population"]["source"])
         self.assertNotIn("UNFPA", cilacap["population"]["source"])
 
+    def test_a_transcription_the_long_form_contradicts_is_not_read(self):
+        # Jombang's article cites 376,547 from a BPS religion table for 2024,
+        # 28% of the Long Form's 1,335,972: refused, and it says why.
+        jombang = {"total": 376_547, "year": 2024, "kind": "bps"}
+        why = m.against_long_form(jombang, 1_335_972)
+        self.assertIn("28%", why)
+        self.assertIn("1,335,972", why)
+        # Within a quarter it stands; a registry count is a different measure
+        # and stands however far it is; and with no census count, nothing to say.
+        self.assertEqual(m.against_long_form(dict(jombang, total=1_400_000), 1_335_972), "")
+        self.assertEqual(m.against_long_form(dict(jombang, kind="dukcapil"), 1_335_972), "")
+        self.assertEqual(m.against_long_form(jombang, None), "")
+
+    def test_a_refused_head_count_leaves_the_census_count_to_stand(self):
+        # Cilacap's count, cited to a BPS table instead of the registry, set
+        # against a Long Form count it is a quarter of.
+        bps = CILACAP.replace(
+            "https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data "
+            "Kependudukan - Kementerian Dalam Negeri 2024",
+            "https://cilacapkab.bps.go.id/statictable/2024/01/01/1/jumlah-penduduk.html"
+            "|title=Jumlah Penduduk Kabupaten Cilacap 2024|website=cilacapkab.bps.go.id")
+        self.assertNotEqual(bps, CILACAP)
+        pages = {("Kabupaten Cilacap", "id"): bps}
+        shape = next(s["id"] for s in m.shapes("admin2") if s["name"] == "Cilacap")
+        regencies, printed = quiet(
+            m.regency_records,
+            lambda title, lang="id": (pages.get((title, lang), ""), title),
+            None, {shape: 9_000_000})
+        cilacap = next(r for r in regencies if r["name"] in ("Cilacap", "Kabupaten Cilacap"))
+        self.assertEqual(cilacap["population"]["status"], "not_available")
+        self.assertIn("census count stands", cilacap["population"]["note"])
+        self.assertIn("9,000,000", cilacap["population"]["note"])
+        self.assertEqual(cilacap["religion_year"], 2019)
+        self.assertIn("refused against the census Long Form", printed)
+
     def test_a_hapi_record_carries_its_licence_and_its_vintage(self):
         from scripts.fetch_census import indonesia_hapi as hapi
         row = {"population": "95303", "year": "2020",
@@ -615,10 +650,12 @@ class Records(unittest.TestCase):
         self.assertEqual(fields["population"]["year"], 2020)
         self.assertEqual(fields["population_source"]["license"], hapi.LICENCE)
         self.assertIn("humanitarian use only", fields["population_source"]["license"])
-        for phrase in ("projection, not a count", "owner's decision",
+        for phrase in ("projection, not a count",
                        "humanitarian use only", "marks it as not open",
                        "the article prints no head count"):
             self.assertIn(phrase, fields["population_note"], phrase)
+        self.assertNotIn("owner", fields["population_note"])
+        self.assertNotIn("decision", fields["population_note"])
 
     def test_a_lake_says_it_is_a_lake(self):
         """Five shapes at this level are lakes, a forest and two reservoirs.

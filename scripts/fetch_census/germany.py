@@ -63,7 +63,7 @@ from typing import Any
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
 )
-from .central_nationality import DECISION, GERMAN, composition, label_for, named
+from .central_nationality import GERMAN, composition, label_for, named
 
 BASE = "https://ergebnisse.zensus2022.de/api/rest/2020"
 TABLE = "1000A-1018"
@@ -164,7 +164,7 @@ NATIONALITY_NOTE = (
     f"resettlers included; nationalities below {NAMED_SHARE:.1%} of Germany's population, those "
     "the table does not list, the stateless and those whose citizenship is unclear are 'Other "
     "nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a "
-    "count by a few people. Written by the map owner's decision of " + DECISION + ".")
+    "count by a few people.")
 
 
 def credentials() -> dict[str, str]:

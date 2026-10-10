@@ -148,6 +148,25 @@ OTHER_UNITS: dict[tuple[str, int], str] = {
 }
 YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 
+# Language names the publisher's file gets wrong for one country, by country:
+# {iso3: {the file's name: the language it is}}. Applied to that country's
+# rows only, before the units are composed, so a unit that lists both names
+# adds them up rather than showing one language twice.
+#
+# Nepal's file names the Khas language of Karnali "Khasi", which is the name
+# of an Austroasiatic language of Meghalaya, in India. Its shares are those
+# Nepal's 2021 census prints for "Khash" (Jumla 51.2%, Kalikot 26.2%, Mugu
+# 6.7%, Humla 5.7%), an Indo-Aryan language, so that is what it is written as.
+LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
+    "NPL": {"Khasi": "Khash"},
+}
+# Said on the record of every unit whose shares carry a relabelled name.
+RELABEL_NOTES: dict[tuple[str, str], str] = {
+    ("NPL", "Khash"): ("'Khash' is the Khas language of Karnali, as Nepal's 2021 census "
+                       "names it; CLEAR Global's table writes it 'Khasi', the name of a "
+                       "different language, spoken in Meghalaya, India."),
+}
+
 
 # ---------------------------------------------------------------------------
 # What CLEAR Global calls a unit, against what the boundary file calls it
@@ -395,9 +414,13 @@ def read_csv(body: str) -> tuple[list[dict[str, str]], list[str]]:
     return list(reader), list(reader.fieldnames or [])
 
 
-def compose(rows: list[dict[str, str]], level: int = 1
+def compose(rows: list[dict[str, str]], level: int = 1,
+            relabel: dict[str, str] | None = None
             ) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
     """{unit code: {name, shares, total}}, and the units dropped, with reasons.
+
+    ``relabel`` is the country's entry in ``LANGUAGE_RELABEL``: a language
+    name the file gets wrong, read as the language it is.
 
     The dropped ones come back in two lists, because they are two different
     findings and only one of them is evidence about the file. A unit whose
@@ -419,6 +442,7 @@ def compose(rows: list[dict[str, str]], level: int = 1
         code = (row.get("location_code") or "").strip()
         name = (row.get("location_name") or "").strip()
         language = (row.get("language_name") or "").strip()
+        language = (relabel or {}).get(language, language)
         if not code or not name or not language:
             continue
         try:
@@ -501,7 +525,8 @@ def country_records(package: dict[str, Any], level: int = 1
         log(f"      its columns are: {', '.join(columns)}")
         return []
 
-    kept, refused, unnamed = compose(rows, level)
+    relabel = LANGUAGE_RELABEL.get(iso, {})
+    kept, refused, unnamed = compose(rows, level, relabel)
     for line in unnamed[:4]:
         log(f"    dropped {line}")
     for line in refused[:8]:
@@ -555,14 +580,17 @@ def country_records(package: dict[str, Any], level: int = 1
     # boundary file's, and there is no second-level equivalent. A district
     # joins on its own name or not at all.
     aliases = BOUNDARY_ALIASES.get(iso, {}) if level == 1 else {}
+    relabelled = set(relabel.values())
     for code, unit in sorted(kept.items()):
+        said = [RELABEL_NOTES[(iso, r["group"])] for r in unit["shares"]
+                if r["group"] in relabelled and (iso, r["group"]) in RELABEL_NOTES]
         records.append(record(
             f"{iso}-CG-{code}", unit["name"], level=f"admin{level}",
             parent=iso, country=iso,
             aliases=aliases.get(unit["name"]) and [aliases[unit["name"]]],
             language=unit["shares"],
             language_year=year,
-            language_note=note,
+            language_note=" ".join([note, *said]),
             sources=[{"field": "language", "name": source_name,
                       "url": DATASET_PAGE.format(stub=stub),
                       "license": terms}],

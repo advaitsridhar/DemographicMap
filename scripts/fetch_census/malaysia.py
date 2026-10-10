@@ -26,10 +26,35 @@ estimates -- rather than a census count. Malaysia's districts carried nothing
 before this, so an estimate from the national office is the first figure, not
 a replacement.
 
+**Median age and sex ratio** come from the same two files, at the same date as
+the ethnicity: the ``age`` dimension splits everyone into five-year groups up to
+an open ``85+`` (OpenDOSM publishes nothing finer by state or district), and
+the ``sex`` dimension into male and female. The median is interpolated within
+the five-year group that holds the middle person; the ratio is males per 100
+females. Each cell is rounded to the nearest hundred people, so a district's
+groups are checked against its own total within that rounding, its sexes the
+same way, and the districts of each state against the state file's figure for
+the same date. Every record says the figures are DOSM's estimates for that
+year, carried forward from the 2020 census, not a count.
+
 **Names.** DOSM writes the state as it is in Malay (Melaka, Pulau Pinang,
 W.P. Kuala Lumpur); the boundary file has the English exonym (Malacca, Penang,
 Kuala Lumpur). The record keeps DOSM's name and carries the boundary file's as
 an alias. Districts are matched within their state, since the CSV names it.
+
+**Which year a state's districts are read at.** The map draws the districts
+of the boundary file's vintage, and DOSM's table follows the districts as
+they are now: its 2026 rows divide Sabah's Beaufort and Papar to make
+Membakut, and five of Sarawak's (Serian, Simunjan, Sri Aman among them) to
+make Gedong, Lingga, Pantu, Sebuyau and Siburan. A divided district's 2026
+figure is what is left of it, and on the polygon of the whole district it
+would be a third too small (Simunjan 37,300 in 2025, 12,000 in 2026). So
+each state's districts are read at the latest date at which every district
+in the table is one the map draws (by name, alias, or a name DOSM has used at
+every date, such as W.P. Putrajaya); a state whose latest rows name a
+district the map does not draw is read at the date before the division, and
+its records say so (``vintages``). A renamed district (Cameron Highland,
+Sp Utara) is not a division: its new name is drawn.
 
 Usage:
     python -m scripts.fetch_census.malaysia --level both
@@ -61,14 +86,16 @@ LABELS = {
     "bumi_malay": "Malay",
     "bumi_other": "Other Bumiputera",
     "chinese": "Chinese",
-    "indian": "Indian",
+    "indian": "Indian (Malaysia)",
     "other_citizen": "Other (Malaysian citizen)",
     "other_noncitizen": "Non-Malaysian citizen",
 }
 NOTE = ("DOSM's ethnicity dimension includes non-citizens as a category of the "
         "resident population and it is kept as one; the other five are Malaysian "
         "citizens. 'Other Bumiputera' is DOSM's own group for the indigenous "
-        "peoples of Sabah, Sarawak and the peninsula other than Malays.")
+        "peoples of Sabah, Sarawak and the peninsula other than Malays; "
+        "'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian "
+        "descent, not Indian nationals.")
 
 # The boundary file's English name where DOSM's differs from it.
 STATE_ALIASES = {
@@ -81,6 +108,23 @@ STATE_ALIASES = {
 # geoBoundaries' spelling of a district where it is not DOSM's. Each is the
 # same place under an older or alternative name; none is a guess at a
 # different one.
+# The map's districts, folded, against which DOSM's are tested (``vintages``).
+WP = re.compile(r"(?i)^w\.?\s*p\.?\s+")
+
+
+def district_key(name: str) -> str:
+    """A district name reduced for comparison: W.P. dropped, letters and digits."""
+    import unicodedata
+    text = unicodedata.normalize("NFKD", WP.sub("", str(name or "")).lower())
+    return "".join(c for c in text if c.isalnum() and not unicodedata.combining(c))
+
+
+def drawn_districts() -> set[str]:
+    """The boundary file's district labels for Malaysia, folded."""
+    from .sea_common import drawn
+    return {district_key(u["name"]) for u in drawn("MYS", "admin2")}
+
+
 DISTRICT_ALIASES = {
     "Hulu Langat": ["Ulu Langat"],
     "Hulu Selangor": ["Ulu Selangor"],
@@ -140,49 +184,284 @@ def check(name: str, counts: dict[str, int]) -> int:
     return total
 
 
-def build_states() -> list[dict[str, Any]]:
-    date, comps = compositions(read_csv(STATE_URL), ("state",))
+AGE_GROUP = re.compile(r"^(\d{1,2})-(\d{1,2})$")
+AGE_OPEN = re.compile(r"^(\d{1,2})\+$")
+# The groups the files carried when this was written: 0-4 ... 80-84, 85+.
+EXPECTED_GROUPS = 18
+
+
+def age_band(label: str) -> tuple[int, int | None] | None:
+    if m := AGE_GROUP.match(label):
+        return int(m.group(1)), int(m.group(2))
+    if m := AGE_OPEN.match(label):
+        return int(m.group(1)), None
+    return None
+
+
+def grouped_median(groups: list[tuple[int, int | None, float]]) -> float | None:
+    """The median of (from, to, people) five-year groups; None if in the open one."""
+    total = sum(n for _, _, n in groups)
+    if total <= 0:
+        return None
+    half, before = total / 2, 0.0
+    for low, high, n in sorted(groups, key=lambda g: g[0]):
+        if before + n >= half and n > 0:
+            if high is None:
+                return None
+            return round(low + (half - before) / n * (high - low + 1), 1)
+        before += n
+    return None
+
+
+def ages(rows: list[dict[str, str]], keys: tuple[str, ...], date: str
+         ) -> dict[tuple[str, ...], dict[str, Any]]:
+    """Per place at ``date``: everyone by five-year group, and men and women.
+
+    Both sexes and all ethnicities (``overall``) for the groups; all ages for
+    the sexes. A label the reader does not know refuses the run, and so does a
+    run of groups that does not start at 0 and climb without a gap to an open
+    top group.
+    """
+    out: dict[tuple[str, ...], dict[str, Any]] = {}
+    for r in rows:
+        if r["date"] != date:
+            continue
+        # Non-citizens by sex, where the file crosses the two: said beside a
+        # ratio far from even, never used for the figures themselves.
+        if (r["ethnicity"] == "other_noncitizen" and r["age"] == "overall"
+                and r["sex"] in ("male", "female")):
+            place = tuple(r[k] for k in keys)
+            unit = out.setdefault(place, {"groups": {}, "sex": {}})
+            unit.setdefault("noncitizen", {})[r["sex"]] = thousands(r["population"])
+            continue
+        if r["ethnicity"] != "overall":
+            continue
+        place = tuple(r[k] for k in keys)
+        unit = out.setdefault(place, {"groups": {}, "sex": {}})
+        if r["age"] == "overall":
+            if r["sex"] in ("male", "female"):
+                unit["sex"][r["sex"]] = thousands(r["population"])
+            elif r["sex"] != "both":
+                raise SystemExit(f"malaysia: unknown sex category {r['sex']!r}")
+            continue
+        if r["sex"] != "both":
+            continue
+        band = age_band(r["age"])
+        if band is None:
+            raise SystemExit(f"malaysia: unknown age group {r['age']!r}; DOSM changed the file")
+        unit["groups"][band] = thousands(r["population"])
+    for place, unit in out.items():
+        bands = sorted(unit["groups"])
+        edge = 0
+        for low, high in bands:
+            if low != edge:
+                raise SystemExit(f"malaysia: {place}: age groups jump to {low} at {edge}")
+            edge = (high + 1) if high is not None else -1
+        if edge != -1 or len(bands) != EXPECTED_GROUPS:
+            raise SystemExit(f"malaysia: {place}: {len(bands)} age groups, not "
+                             f"{EXPECTED_GROUPS} ending in an open one")
+    return out
+
+
+# A ratio this far from even, for a whole district or state, is said to be one
+# on its record with the counts it rests on, as the Southeast Asian COD-PS
+# reader does (sea_cod_ps_age.UNUSUAL_RATIO): Bukit Mabong's 152.4 and Cameron
+# Highlands' 152.2 had only the note every district carries.
+UNUSUAL_RATIO = (85.0, 115.0)
+
+
+def unusual_ratio(men: int, women: int, year: int, unit: dict[str, Any], what: str) -> str:
+    """A sentence for a ratio far from even, with DOSM's counts; else nothing.
+
+    The non-citizens among them are given where the file crosses citizenship
+    with sex; no cause is named, as DOSM's table gives none.
+    """
+    if UNUSUAL_RATIO[0] <= 100 * men / women <= UNUSUAL_RATIO[1]:
+        return ""
+    foreign = unit.get("noncitizen") or {}
+    among = (f"; {foreign['male']:,} of the males and {foreign['female']:,} of the females "
+             f"are not Malaysian citizens" if {"male", "female"} <= set(foreign) else "")
+    return (f" An unusual ratio for a whole {what}: DOSM's estimate for {year} counts "
+            f"{men:,} males against {women:,} females here, each rounded to the nearest "
+            f"hundred{among}, and the table gives no reason.")
+
+
+def age_fields(name: str, unit: dict[str, Any] | None, year: int, total: int,
+               what: str = "district") -> dict[str, Any]:
+    """median_age, sex_ratio and their notes for one place, after its checks."""
+    if not unit or not total:
+        return {}
+    groups = [(low, high, n) for (low, high), n in unit["groups"].items()]
+    aged = sum(n for _, _, n in groups)
+    # 18 groups, each rounded to the nearest hundred people.
+    if abs(aged - total) > max(1000, 0.01 * total):
+        raise SystemExit(f"malaysia: {name}: age groups make {aged:,}, not {total:,}")
+    men, women = unit["sex"].get("male"), unit["sex"].get("female")
+    if not men or not women:
+        raise SystemExit(f"malaysia: {name}: no male or female total")
+    if abs(men + women - total) > max(200, 0.005 * total):
+        raise SystemExit(f"malaysia: {name}: men {men:,} and women {women:,} "
+                         f"make {men + women:,}, not {total:,}")
+    median = grouped_median(groups)
+    if median is None:
+        raise SystemExit(f"malaysia: {name}: the middle person is in the open 85+ group")
+    basis = (f"DOSM's population estimate for {year}, carried forward from the 2020 "
+             f"census (OpenDOSM), not a count")
+    return {
+        "median_age": measure(median, unit="years", year=year, source=SOURCE),
+        "median_age_note": (f"Interpolated within the five-year age group that holds "
+                            f"the middle person, from {basis}. OpenDOSM publishes ages "
+                            f"in five-year groups to an open 85+ and nothing finer at "
+                            f"this level, each cell rounded to the nearest hundred."),
+        "sex_ratio": measure(round(100 * men / women, 1), unit="males_per_100_females",
+                             year=year, source=SOURCE),
+        "sex_ratio_note": (f"Males per 100 females in {basis}; non-citizens are part "
+                           f"of the resident population DOSM estimates."
+                           f"{unusual_ratio(men, women, year, unit, what)}"),
+    }
+
+
+def check_against_states(comps: dict[tuple[str, ...], dict[str, int]],
+                         state_rows: list[dict[str, str]], date: str) -> None:
+    """Each state's districts against the state file's own figure for that date."""
+    states = {r["state"]: thousands(r["population"]) for r in state_rows
+              if r["date"] == date and r["sex"] == "both" and r["age"] == "overall"
+              and r["ethnicity"] == "overall"}
+    if not states:
+        raise SystemExit(f"malaysia: the state file has no figures for {date}")
+    summed: dict[str, int] = {}
+    for (state, _), counts in comps.items():
+        summed[state] = summed.get(state, 0) + counts.get("__total__", 0)
+    for state, total in sorted(summed.items()):
+        own = states.get(state)
+        if own is None:
+            raise SystemExit(f"malaysia: districts of {state!r}, which the state file lacks")
+        # A hundred people of rounding per district.
+        if abs(total - own) > max(2000, 0.01 * own):
+            raise SystemExit(f"malaysia: {state}'s districts make {total:,}, "
+                             f"against its {own:,} for {date}")
+    log(f"  {len(summed)} states' districts each make the state's own figure for {date}")
+
+
+def build_states(rows: list[dict[str, str]] | None = None) -> list[dict[str, Any]]:
+    rows = rows if rows is not None else read_csv(STATE_URL)
+    date, comps = compositions(rows, ("state",))
     year = int(date[:4])
     log(f"  states: {len(comps)} at {date}")
+    by_age = ages(rows, ("state",), date)
     records = []
     for (state,), counts in sorted(comps.items()):
         total = check(state, counts)
-        rows = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
+        bars = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
         records.append(record(
             f"MYS-{slug(state)}", state, level="admin1", parent="MYS", country="MYS",
             aliases=STATE_ALIASES.get(state, []),
             population=measure(total, year=year, source=SOURCE) if total else gap(NOT_AVAILABLE),
-            ethnicity=rows or gap(NOT_AVAILABLE),
-            ethnicity_year=dated(rows, year),
+            ethnicity=bars or gap(NOT_AVAILABLE),
+            ethnicity_year=dated(bars, year),
             ethnicity_note=NOTE,
-            sources=[{"field": "population/ethnicity", "name": f"{SOURCE} ({year})",
+            sources=[{"field": "population/ethnicity/median age/sex ratio",
+                      "name": f"{SOURCE} ({year})",
                       "url": PAGES["state"], "license": LICENCE}],
+            **age_fields(state, by_age.get((state,)), year, total, what="state"),
         ))
     if len(records) != 16:
         raise SystemExit(f"malaysia: expected 16 states, read {len(records)}")
     return records
 
 
-def build_districts() -> list[dict[str, Any]]:
-    date, comps = compositions(read_csv(DISTRICT_URL), ("state", "district"))
-    year = int(date[:4])
-    log(f"  districts: {len(comps)} at {date}")
+def vintages(rows: list[dict[str, str]], drawn: set[str]
+             ) -> dict[str, tuple[str, list[str]]]:
+    """state -> (the date its districts are read at, the districts the latest
+    date names that the map does not draw).
+
+    The date is the latest at which every district of the state is drawn
+    (``district_key`` of its name or an alias) or is one the table names at
+    every date (W.P. Putrajaya, which the map draws as its state). A state
+    none of whose dates passes is read at the latest, and logged.
+    """
+    by_state: dict[str, dict[str, set[str]]] = {}
+    for r in rows:
+        if r["sex"] == "both" and r["age"] == "overall" and r["ethnicity"] == "overall":
+            by_state.setdefault(r["state"], {}).setdefault(r["date"], set()).add(r["district"])
+
+    def is_drawn(district: str) -> bool:
+        return any(district_key(n) in drawn
+                   for n in [district, *DISTRICT_ALIASES.get(district, [])])
+
+    out: dict[str, tuple[str, list[str]]] = {}
+    for state, by_date in sorted(by_state.items()):
+        if len(by_date) < 2:
+            raise SystemExit(f"malaysia: {state}'s districts have one date only, so a "
+                             "district divided since the map's vintage cannot be told apart")
+        always = set.intersection(*by_date.values())
+        dates = sorted(by_date, reverse=True)
+        undrawn = {d: sorted(x for x in by_date[d] if not is_drawn(x) and x not in always)
+                   for d in dates}
+        chosen = next((d for d in dates if not undrawn[d]), dates[0])
+        out[state] = (chosen, undrawn[dates[0]])
+        if chosen != dates[0]:
+            log(f"  {state}: DOSM's {dates[0]} rows name districts the map does not draw "
+                f"({', '.join(undrawn[dates[0]])}), so its districts are read at {chosen}")
+        elif undrawn[dates[0]]:
+            log(f"  {state}: no date's districts are all drawn; read at {dates[0]}, its "
+                f"undrawn {', '.join(undrawn[dates[0]])} left to the build")
+    return out
+
+
+# How many districts a run may write: the 2025 table had 160, the 2026 one 166.
+DISTRICTS_EXPECTED = (150, 170)
+VINTAGE_NOTE = ("DOSM's {latest} table divides districts of {state} that the map draws whole "
+                "({new}), so {state}'s districts are read at {date}, the latest date "
+                "whose districts are the map's.")
+
+
+def new_districts(names: list[str]) -> str:
+    """'Membakut is new'; 'Gedong, Lingga and Pantu are new'."""
+    if len(names) == 1:
+        return f"{names[0]} is new"
+    return f"{', '.join(names[:-1])} and {names[-1]} are new"
+
+
+def build_districts(rows: list[dict[str, str]] | None = None,
+                    state_rows: list[dict[str, str]] | None = None,
+                    drawn: set[str] | None = None) -> list[dict[str, Any]]:
+    rows = rows if rows is not None else read_csv(DISTRICT_URL)
+    state_rows = state_rows if state_rows is not None else read_csv(STATE_URL)
+    chosen = vintages(rows, drawn if drawn is not None else drawn_districts())
+    latest = max(date for date, _ in chosen.values())
     records = []
-    for (state, district), counts in sorted(comps.items()):
-        total = check(f"{state}/{district}", counts)
-        rows = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
-        records.append(record(
-            f"MYS-{slug(state)}-{slug(district)}", district, level="admin2",
-            parent=f"MYS-{slug(state)}", parent_name=state, country="MYS",
-            aliases=DISTRICT_ALIASES.get(district, []),
-            population=measure(total, year=year, source=SOURCE) if total else gap(NOT_AVAILABLE),
-            ethnicity=rows or gap(NOT_AVAILABLE),
-            ethnicity_year=dated(rows, year),
-            ethnicity_note=NOTE,
-            sources=[{"field": "population/ethnicity", "name": f"{SOURCE} ({year})",
-                      "url": PAGES["district"], "license": LICENCE}],
-        ))
-    if not 150 <= len(records) <= 170:
+    for state, (date, new) in sorted(chosen.items()):
+        own = [r for r in rows if r["state"] == state and r["date"] == date]
+        _, comps = compositions(own, ("state", "district"))
+        year = int(date[:4])
+        by_age = ages(own, ("state", "district"), date)
+        check_against_states(comps, state_rows, date)
+        vintage = (VINTAGE_NOTE.format(latest=latest[:4], state=state,
+                                       new=new_districts(list(new)), date=date)
+                   if date != latest else "")
+        for (_, district), counts in sorted(comps.items()):
+            total = check(f"{state}/{district}", counts)
+            bars = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
+            records.append(record(
+                f"MYS-{slug(state)}-{slug(district)}", district, level="admin2",
+                parent=f"MYS-{slug(state)}", parent_name=state, country="MYS",
+                aliases=DISTRICT_ALIASES.get(district, []),
+                population=(measure(total, year=year, source=SOURCE) if total
+                            else gap(NOT_AVAILABLE)),
+                population_note=vintage or None,
+                ethnicity=bars or gap(NOT_AVAILABLE),
+                ethnicity_year=dated(bars, year),
+                ethnicity_note=f"{NOTE} {vintage}".strip(),
+                sources=[{"field": "population/ethnicity/median age/sex ratio",
+                          "name": f"{SOURCE} ({year})",
+                          "url": PAGES["district"], "license": LICENCE}],
+                **age_fields(f"{state}/{district}", by_age.get((state, district)), year, total),
+            ))
+    log(f"  districts: {len(records)}, read at "
+        + ", ".join(f"{d} ({sum(1 for x, _ in chosen.values() if x == d)} states)"
+                    for d in sorted({x for x, _ in chosen.values()}, reverse=True)))
+    if not DISTRICTS_EXPECTED[0] <= len(records) <= DISTRICTS_EXPECTED[1]:
         raise SystemExit(f"malaysia: expected about 160 districts, read {len(records)}")
     return records
 
@@ -192,11 +471,22 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--level", default="both", choices=["state", "district", "both"])
     args = ap.parse_args()
-    log("malaysia: ethnicity by state and district, OpenDOSM")
+    log("malaysia: ethnicity, median age and sex ratio by state and district, OpenDOSM")
+    state_rows = read_csv(STATE_URL)
+    written = []
     if args.level in ("state", "both"):
-        write_json(PROCESSED / "malaysia_state.json", build_states())
+        written.append(("malaysia_state.json", build_states(state_rows)))
     if args.level in ("district", "both"):
-        write_json(PROCESSED / "malaysia_district.json", build_districts())
+        written.append(("malaysia_district.json",
+                        build_districts(read_csv(DISTRICT_URL), state_rows)))
+    for name, records in written:
+        aged = [r for r in records if isinstance(r.get("median_age"), dict)
+                and r["median_age"].get("value") is not None]
+        medians = sorted(r["median_age"]["value"] for r in aged)
+        ratios = sorted(r["sex_ratio"]["value"] for r in aged)
+        log(f"  {name}: {len(aged)} of {len(records)} with a median age "
+            f"({medians[0]}-{medians[-1]}) and a sex ratio ({ratios[0]}-{ratios[-1]})")
+        write_json(PROCESSED / name, records)
     return 0
 
 

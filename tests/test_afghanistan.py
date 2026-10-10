@@ -75,6 +75,29 @@ class WhatIsRefusedOnArithmetic(unittest.TestCase):
             a.usable([{"group": "Pashtun", "pct": 70.0},
                       {"group": "Tajik", "pct": 20.0}], "x"))
 
+    def test_what_the_shares_leave_is_shown_as_a_remainder(self) -> None:
+        # Bilchiragh: Uzbek 55, Tajik 5, Turkmen 5 -- the other 35% were drawn
+        # as if nobody lived there.
+        got = a.with_remainder([{"group": "Uzbek", "pct": 55.0},
+                                {"group": "Tajik", "pct": 5.0},
+                                {"group": "Turkmen", "pct": 5.0}])
+        self.assertEqual(got[-1], {"group": a.REMAINDER, "pct": 35.0})
+        self.assertAlmostEqual(sum(r["pct"] for r in got), 100.0)
+        self.assertIn("The 35% the article's shares leave",
+                      a.remainder_note(got, "the article's shares leave"))
+
+    def test_a_rounding_shortfall_or_overrun_adds_nothing(self) -> None:
+        for parts in ([{"group": "Pashtun", "pct": 70.0}, {"group": "Tajik", "pct": 29.7}],
+                      [{"group": "Pashtun", "pct": 60.0}, {"group": "Tajik", "pct": 41.0}]):
+            got = a.with_remainder(parts)
+            self.assertEqual(got, parts)
+            self.assertEqual(a.remainder_note(got, "x"), "")
+
+    def test_the_remainder_is_placed_among_the_answers_naming_no_ancestry(self) -> None:
+        import group_tree
+        self.assertEqual(group_tree.parent_of("ethnicity", a.REMAINDER),
+                         "Unclassified ethnicity answers")
+
     def test_a_group_named_twice_keeps_the_first_figure(self) -> None:
         got = a.shares("Tajik 60%, Uzbek 30%, 10% Tajik")
         self.assertEqual([p["group"] for p in got], ["Tajik", "Uzbek"])
@@ -281,11 +304,16 @@ class TheAliasesNameShapesThatExist(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         import json
+        from common import as_drawn
         root = Path(__file__).resolve().parent.parent
+        # Under the boundary file's own labels, as the build matches them: a
+        # polygon bound to a census row by id shows the row's name on the site
+        # (Ghazni) and keeps its label as shape_name (Ghanzi).
         cls.a1 = {s["id"]: s["name"]
-                  for s in json.loads((root / "site/data/admin1/AFG.units.json")
-                                      .read_text())}
-        cls.shapes = json.loads((root / "site/data/admin2/AFG.units.json").read_text())
+                  for s in as_drawn(json.loads((root / "site/data/admin1/AFG.units.json")
+                                               .read_text()))}
+        cls.shapes = as_drawn(json.loads((root / "site/data/admin2/AFG.units.json")
+                                         .read_text()))
         cls.provinces = set(cls.a1.values())
         cls.by_province = {}
         for s in cls.shapes:

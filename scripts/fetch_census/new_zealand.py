@@ -1,12 +1,27 @@
 #!/usr/bin/env python3
-"""New Zealand -- Census 2023 ethnicity, religion and languages, by TA.
+"""New Zealand -- Census 2023 ethnicity, religion, languages, age and sex, by TA.
 
-Stats NZ asks all three, and publishes them through Aotearoa Data Explorer's
-SDMX API. Two dataflows carry what this map wants, both broken down by the
+Stats NZ asks all of them, and publishes them through Aotearoa Data Explorer's
+SDMX API. Three dataflows carry what this map wants, all broken down by the
 geography geoBoundaries happens to use for New Zealand:
 
     CEN23_ECI_017   religious affiliation x ethnicity x gender
     CEN23_ECI_011   languages spoken x ethnicity x gender
+    CEN23_POP_006   ethnicity x age x sex at birth, whose age list carries
+                    Stats NZ's own median ("Median - age") beside the counts
+
+**Median age and sex ratio** are the 2023 Census's: the median is the one
+Stats NZ publishes for exactly each region, territorial authority and local
+board (age code ``Median``), and the sex ratio is males per 100 females by sex
+at birth, from the same table's totals. The national median must read the
+published 38.1 years.
+
+**The Chatham Islands** are drawn as a first-level unit of their own. Stats
+NZ's regional-council tier has no such region: it files the territory under
+"Area Outside Region" (code 99), 633 people, together with 21 people of other
+outlying islands the map does not draw there. The territorial authority
+(code 067, 612 people) is exactly the Chatham Islands Territory, so its
+figures are written for the first-level polygon as well as the second.
 
 **The API needs a key.** Only the bare dataflow catalogue is open; every
 ``/data/``, ``/datastructure/`` and ``?references=`` request is 401 without
@@ -33,6 +48,7 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import json
 import os
 import re
 import urllib.error
@@ -43,6 +59,7 @@ from typing import Any
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
 )
+from .oceania_common import withhold_small
 
 BASE = "https://api.data.stats.govt.nz/rest"
 AGENCY = "STATSNZ"
@@ -67,7 +84,20 @@ XML_ACCEPT = "application/vnd.sdmx.structure+xml;version=2.1"
 FLOWS = {
     "religion": "CEN23_ECI_017",
     "language": "CEN23_ECI_011",
+    "age": "CEN23_POP_006",
 }
+# Every area, all ethnicities together, the median and the all-ages total,
+# for both sexes at birth and their sum.
+AGE_SELECTION = "2023..999.Median+99.999+11+22"
+MEDIAN_CODE, ALL_AGES = "Median", "99"
+SEX_AT_BIRTH = {"999": "total", "11": "male", "22": "female"}
+# The Chatham Islands Territory: its territorial authority, and the
+# regional-council code Stats NZ files it under with other outlying islands.
+CHATHAM_TA, OUTSIDE_REGION = "067", "99"
+
+# Said beside a small area's men and women, which need not make its total.
+ROUNDING = ("Stats NZ randomly rounds every count to base 3, so the men and the women need not "
+            "add up to the total")
 
 # A suppressed or unavailable cell is not a zero. Stats NZ randomly rounds
 # every count to base 3 and withholds cells too small to publish; reading
@@ -248,6 +278,7 @@ FIELD_NOTES = {
 # shares could never establish on its own.
 NATIONAL = {
     "population": 4_993_923,
+    "median_age": 38.1,
     "ethnicity": {"European": 3_383_742, "Māori": 887_493,
                   "Asian": 861_576, "Pacific Peoples": 442_632},
     "religion": {"No religion": 2_576_049, "Catholicism": 449_466,
@@ -314,6 +345,97 @@ def check_national(field: str, built: dict[str, dict[str, Any]]) -> None:
                              "published figure")
 
 
+def age_sex(rows: list[dict[str, str]], tiers: dict[str, str]
+            ) -> dict[str, dict[str, float]]:
+    """{area: {"median", "total", "male", "female"}} from CEN23_POP_006.
+
+    The median is Stats NZ's own, for exactly the area; the counts are the
+    all-ages totals by sex at birth. A suppressed or missing cell leaves its
+    key out, and the caller writes only what is there.
+    """
+    out: dict[str, dict[str, float]] = {}
+    for row in rows:
+        area = row["CEN23_GEO_002"]
+        if area not in tiers and area not in AREA_TOTALS:
+            continue
+        if row.get("CEN23_ETH_002") != "999":
+            continue
+        raw = (row.get("OBS_VALUE") or "").strip()
+        if not raw:
+            continue
+        age, sex = row.get("CEN23_AGE_001"), SEX_AT_BIRTH.get(row.get("CEN23_SAB_002", ""))
+        entry = out.setdefault(area, {})
+        if age == MEDIAN_CODE and sex == "total":
+            entry["median"] = float(raw)
+        elif age == ALL_AGES and sex:
+            entry[sex] = int(raw)
+    for area, entry in out.items():
+        if {"male", "female", "total"} <= set(entry):
+            # Random rounding to base 3 moves each of the three cells by up
+            # to two people on its own.
+            slack = max(6, 0.001 * entry["total"])
+            if abs(entry["male"] + entry["female"] - entry["total"]) > slack:
+                raise SystemExit(
+                    f"age: area {area}: males {entry['male']:,} and females "
+                    f"{entry['female']:,} do not make {entry['total']:,}")
+    return out
+
+
+def check_ages(by_area: dict[str, dict[str, float]]) -> None:
+    nation = by_area.get("999999") or by_area.get("9999")
+    if not nation:
+        raise SystemExit("age: no national row to check against")
+    if nation.get("total") != NATIONAL["population"]:
+        raise SystemExit(f"age: national population reads {nation.get('total')}, "
+                         f"published is {NATIONAL['population']:,}")
+    if nation.get("median") != NATIONAL["median_age"]:
+        raise SystemExit(f"age: national median age reads {nation.get('median')}, "
+                         f"published is {NATIONAL['median_age']}")
+    log(f"  age: national median {nation['median']}, {nation['male']:,} males and "
+        f"{nation['female']:,} females by sex at birth")
+
+
+def age_fields(entry: dict[str, float] | None) -> dict[str, Any]:
+    """The median age and sex ratio fields for one area, where both counts exist."""
+    if not entry:
+        return {}
+    fields: dict[str, Any] = {}
+    if entry.get("median") is not None:
+        fields["median_age"] = measure(entry["median"], unit="years", year=YEAR,
+                                       source=SOURCE)
+        fields["median_age_note"] = (
+            "Stats NZ's own median age for this area, 2023 Census usually resident "
+            "population count (CEN23_POP_006).")
+    if entry.get("male") and entry.get("female"):
+        fields["sex_ratio"] = measure(round(100.0 * entry["male"] / entry["female"], 1),
+                                      unit="males_per_100_females", year=YEAR,
+                                      source=SOURCE)
+        fields["sex_ratio_note"] = (
+            f"Males per 100 females by sex at birth: {entry['male']:,} males and "
+            f"{entry['female']:,} females in the 2023 Census usually resident population "
+            "count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3.")
+    return fields
+
+
+def chatham_region(admin2: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """The Chatham Islands Territory's own figures, for its first-level polygon."""
+    territory = next((r for r in admin2 if (r.get("codes") or {}).get("statsnz") == CHATHAM_TA),
+                     None)
+    if territory is None:
+        return None
+    region = json.loads(json.dumps(territory))
+    region.update(id=f"NZL-{CHATHAM_TA}-region", level="admin1", parent="NZL",
+                  codes={"statsnz": CHATHAM_TA})
+    why = (" These are the Chatham Islands Territory's own figures (territorial "
+           "authority 067): Stats NZ's regional-council tier files the territory under "
+           "'Area Outside Region' together with 21 people of other outlying islands the "
+           "map does not draw here.")
+    for field in ("religion", "ethnicity", "language", "median_age", "sex_ratio"):
+        if f"{field}_note" in region:
+            region[f"{field}_note"] += why
+    return region
+
+
 def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     religion_xml = structure(FLOWS["religion"], key)
     language_xml = structure(FLOWS["language"], key)
@@ -343,6 +465,8 @@ def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     }
     for field in built:
         check_national(field, built[field])
+    ages = age_sex(observations(FLOWS["age"], AGE_SELECTION, key), tiers)
+    check_ages(ages)
 
     admin1: list[dict[str, Any]] = []
     admin2: list[dict[str, Any]] = []
@@ -365,8 +489,15 @@ def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
                          ", ".join(sorted(entry["suppressed"])) +
                          " here as too small to publish; withheld is not zero.")
             fields[f"{field}_note"] = note
+        fields.update(age_fields(ages.get(code)))
         if not fields:
             continue
+        population = population or (ages.get(code) or {}).get("total")
+        # The Area Outside Territorial Authority -- the outlying islands, 72
+        # people -- is the one area with too few to carry a ratio or a share.
+        if population:
+            fields = withhold_small(fields, population, (ages.get(code) or {}).get("male"),
+                                    (ages.get(code) or {}).get("female"), counting=ROUNDING)
         record_ = record(
             f"NZL-{code}", name,
             aliases=list(ALIASES.get(name, ())) or None,
@@ -375,12 +506,19 @@ def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
             population=(measure(population, year=YEAR, source=SOURCE)
                         if population else gap(NOT_AVAILABLE)),
             codes={"statsnz": code},
-            sources=[{"field": "ethnicity/language/religion", "name": SOURCE,
-                      "url": "https://explore.data.stats.govt.nz/",
+            sources=[{"field": "ethnicity/language/religion/median_age/sex_ratio",
+                      "name": SOURCE, "url": "https://explore.data.stats.govt.nz/",
                       "license": LICENSE}],
             **fields,
         )
         (admin1 if level == "admin1" else admin2).append(record_)
+    # "Area Outside Region" is not a polygon the map draws; the Chatham
+    # Islands Territory is, and takes its territorial authority's figures.
+    admin1 = [r for r in admin1 if r["codes"]["statsnz"] != OUTSIDE_REGION]
+    chatham = chatham_region(admin2)
+    if chatham is None:
+        raise SystemExit("no territorial-authority record for the Chatham Islands (067)")
+    admin1.append(chatham)
     return admin1, admin2
 
 

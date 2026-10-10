@@ -80,6 +80,9 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
     "Abrahamic religions": (
         "Christianity", "Islam", "Judaism", "Baha'i", "Druze", "Samaritan",
         "Rastafarian",
+        # Sint Maarten's country row, two religions in one figure: Abrahamic
+        # both, and neither alone. The patterns had read it as Islam.
+        "Muslim/Jewish",
     ),
     "Indian religions": ("Hinduism", "Buddhism", "Sikhism", "Jainism"),
     "East Asian religions": (
@@ -163,7 +166,15 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
                     # under no religion, not folded into it.
                     "Not a member of any religious community"),
     "Not stated": ("Not stated", "Unaffiliated or not reported",
-                   "Scheduled Castes",
+                   # (Pakistan's "Scheduled Castes", which sat here, are the
+                   # Hindu Dalit castes its religion question counts apart:
+                   # canonical_groups files them under Hinduism.)
+                   # The FSM 2023 census's Table B6 row, which joins those who
+                   # have no religion to those who refused the question: a
+                   # weld of an answer to a non-answer, like the ones below,
+                   # and not a count of the non-religious, where the slash
+                   # rule had put it.
+                   "No religion/Refused",
                    # Chile's 2024 census prints "*" for a count too small to
                    # publish; what a province's stars hid is no named answer.
                    "Religion not published",
@@ -175,6 +186,14 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
                    "other and unaffiliated", "other or unaffiliated",
                    "agnostics and other", "not applicable", "undeclared",
                    "No Data", "No religion data",
+                   # Israel's population register: the people it records
+                   # under no religion, most of them immigrants under the Law
+                   # of Return who are not Jews by religion. Not a refusal to
+                   # answer: a classification that names no religion, so it
+                   # is kept as its own bar and filed with the other answers
+                   # that name none, not with "No religion" (an answer of
+                   # none) or "Other religions" (an answer of some).
+                   "Not classified by religion",
                    # Cells an office does not publish (Romania's "*",
                    # Montenegro's "z", Albania's ".."), which the Balkan
                    # readers keep together as one bar so a row still adds up.
@@ -260,7 +279,7 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("Pagan and neo-pagan", ("Pagan", "pagan")),
     # Bosnia's registers record a nationality where the form asks for a
     # religion. The adapter says so in the label; what it is not is a
-    # religion, which is where "Scheduled Castes" already sits.
+    # religion, so it is filed with the answers that name none.
     ("Not stated", ("written as religion",)),
     ("Not stated", ("not reported", "not stated", "Not reported",
                     "Not stated", "no answer", "unspecified")),
@@ -314,7 +333,7 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Magahi", "Haryanvi", "Rajasthani", "Bishnupriya", "Sylheti",
         "Tharu", "Bajjika", "Doteli", "Achhami", "Rangpuri",
         "Hindko", "Sareiki", "Saraiki", "Khandeshi", "Bhili/Bhilodi",
-        "Bhili", "Kacchi", "Parsi", "Rohingya", "Majhi", "Newari",
+        "Bhili", "Kacchi", "Parsi", "Rohingya", "Majhi",
     ),
     "Iranian languages": (
         "Persian", "Persian (excluding Dari)", "Dari", "Pashto", "Kurdish",
@@ -365,7 +384,11 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     ),
     "Tibeto-Burman languages": (
         "Burmese", "Tibetan", "Karen", "Chin", "Kachin", "Rakhine", "Mon",
-        "Newar", "Tamang", "Magar", "Gurung", "Limbu", "Rai", "Sherpa",
+        # Newari (Nepal Bhasa), the Newar language of the Kathmandu valley,
+        # under both its names. It had been listed with the Indo-Aryan
+        # languages, and "Kathmandu Valley Newari" with it.
+        "Newar", "Newari",
+        "Tamang", "Magar", "Gurung", "Limbu", "Rai", "Sherpa",
         "Bodo", "Manipuri", "Meitei", "Garo", "Mizo", "Naga", "Sunwar",
         "Thakali", "Chepang", "Dzongkha", "Lepcha",
     ),
@@ -410,7 +433,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     # Round 8's language question brought Liberia's and the Niger delta's.
     "Kru languages": ("Kru", "Krahn", "Grebo", "Klao", "Bassa (Liberia)"),
     "Ijoid languages": ("Ijaw", "Izon"),
-    "Adamawa-Ubangi languages": ("Sango", "Gbaya", "Banda", "Zande", "Ngbaka",
+    # Sango, the Ngbandi-based lingua franca of the Central African
+    # Republic, is filed with the creoles (LANGUAGE_BANDS), not here.
+    "Adamawa-Ubangi languages": ("Gbaya", "Banda", "Zande", "Ngbaka",
                                  "Mbum", "Mumuye"),
     # -- other families
     "Turkic languages": (
@@ -455,6 +480,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     "Munda languages": (
         "Santali", "Mundari", "Ho", "Munda", "Kharia", "Korku", "Savara",
         "Sora", "Bhumij", "Juang", "Koda", "Kora", "Korwa", "Mudiyari",
+        # Koraput's Gadaba, which India's census groups with the Munda
+        # languages (the Gutob of the Bonda hills).
+        "Gadaba",
     ),
     "Tai-Kadai languages": ("Thai", "Lao", "Shan", "Zhuang", "Isan"),
     "Hmong-Mien languages": ("Hmong", "Miao", "Mien", "Yao"),
@@ -497,6 +525,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     ),
     "Indigenous languages of Australia": (
         "Australian Aboriginal languages", "Arrernte", "Warlpiri",
+        # The ABS's own name for the group (G13, code 8; abs and
+        # australia_profile). By its words it went to the Americas'.
+        "Australian Indigenous Languages",
         "Yolngu Matha", "Pitjantjatjara", "Kriol",
     ),
     "Creole languages": (
@@ -737,6 +768,9 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # names no language and cannot be read as one, but it led Papua New
         # Guinea's whole entry until it was named here.
         "some 839 living indigenous languages are spoken",
+        # Two more of its sentences, which the compound rule read through
+        # the word "more" as the Gur language Mooré.
+        "more than 120 languages and dialects", "more than one language",
         # Counts of how many languages a person speaks, and the rows a
         # register prints where it has no answer at all.
         "two languages", "two mother tongues", "Two mother tongues",
@@ -784,6 +818,13 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # which is neither its Yiddish (идиш) nor its Hebrew (иврит) and
         # names no one language (77 subjects).
         "Jewish (unspecified)",
+        # Indonesia's 2020 census Long Form (indonesia_language): the first
+        # language a person learned, as Indonesian, a regional language, a
+        # foreign language or sign language. "Bahasa daerah" pools Javanese,
+        # Sundanese and Buginese with the Trans-New Guinea languages of the
+        # Papuan highlands -- Austronesian and Papuan at once -- so it is no
+        # family's, as "Foreign language" above is none.
+        "Regional languages of Indonesia",
     ),
 }
 
@@ -839,22 +880,53 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     "Arab peoples": (
         "Arab", "Arabs", "Sri Lankan Moor", "Moor", "Syrian", "Egyptian", "Lebanese", "Iraqi",
         "Palestinian", "Jordanian", "Yemeni", "Saudi", "Moroccan",
-        "Algerian", "Tunisian", "Libyan", "Sudanese", "Bedouin", "Emirati",
+        "Algerian", "Tunisian", "Libyan", "Bedouin", "Emirati",
+        # A Gulf state's or Jordan's own citizens, as its census counts
+        # them. They are filed with the people that is nearly all of them
+        # because no governorate of these states has a non-Arab majority for
+        # the placement to misdraw; where a state's citizens include a people
+        # that is the majority of some units -- Syria's Kurds in Afrin and
+        # Ain al-Arab, Yemen's Mehri and Soqotri, Oman's Jibbali and Baluchi
+        # -- the adapters write "<state> citizens", filed as a nationality.
         "Kuwaiti", "Omani", "Qatari", "Bahraini",
+        # Kuwait's and Bahrain's censuses count the citizens of the other
+        # Gulf Cooperation Council states as one nationality group, and
+        # every other Arab state's citizens as another: Arab states'
+        # passports, filed as "Syrian" and "Egyptian" are.
+        "GCC nationals", "Other Arab nationalities",
         # Cyprus's Maronites, of Levantine origin, whose heritage language is
         # Cypriot Maronite Arabic; the census records them as an
         # ethnic/religious group (only in the curated country row).
         "Cypriot Maronite",
     ),
     "Iranian peoples": (
-        "Persian", "Kurd", "Kurdish", "Pashtun", "Tajik", "Baloch",
-        "Balochi", "Hazara", "Ossetian", "Talysh", "Pamiri", "Lur",
-        "Afghan", "Iranian", "Tat", "Aimaq", "Nuristani", "Yazidi",
+        "Persian", "Kurd", "Kurdish", "Pashtun", "Baloch",
+        "Balochi", "Hazara", "Ossetian", "Talysh", "Lur",
+        "Afghan", "Iranian", "Tat", "Aimaq", "Yazidi",
         "Zaza", "Gilaki", "Mazandarani",
+        # Afghanistan's district profiles: the Persian-speaking people of
+        # the west, named apart from the Tajik.
+        "Farsiwan",
     ),
+    # The Iranian-speaking peoples whose homeland is Central Asia: the Tajik
+    # of Tajikistan, Uzbekistan's Samarkand and Bukhara and northern
+    # Afghanistan, and the Pamiri peoples of Badakhshan and the Wakhan,
+    # whom China's census also counts as "Tajik". Their language family is
+    # the Persians' and Pashtuns', which is why the node is named for it;
+    # their band is the region their homeland is in, the line the tree
+    # already draws between the Himalayan and the Chinese and Southeast Asian
+    # Tibeto-Burman peoples. Filed under Iranian peoples, Tajikistan's 84%
+    # Tajik majority was coloured as Middle Eastern beside four Central Asian
+    # neighbours whose peoples were not.
+    "Iranian peoples of Central Asia": ("Tajik", "Pamiri", "Wakhi",
+                                        "Yaghnobi"),
+    # Nuristan's peoples, of the Hindu Kush. Their languages are the third
+    # branch of Indo-Iranian, neither Iranian nor Indo-Aryan -- the language
+    # tree files them as their own branch -- so the people stand beside the
+    # Iranian peoples rather than under them.
+    "Nuristani peoples": ("Nuristani",),
     "Berber peoples": ("Berber", "Amazigh", "Tamazight", "Tuareg", "Kabyle",
-                       "Rif", "Shilha", "Imalawa", "Arab-Amazigh",
-                       "Arab-Berber"),
+                       "Rif", "Shilha", "Arab-Amazigh", "Arab-Berber"),
     "Caucasian peoples": (
         "Georgian", "Chechen", "Ingush", "Avar", "Dargin", "Lezgin", "Lak",
         "Tabasaran", "Rutul", "Tsakhur", "Agul", "Udi", "Kabardian",
@@ -872,7 +944,7 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Turkmen", "Tatar", "Crimean Tatar", "Bashkir", "Chuvash", "Uyghur",
         "Yakut", "Sakha", "Karakalpak", "Gagauz", "Kumyk", "Nogai",
         "Balkar", "Karachay", "Tuvan", "Khakas", "Altai", "Shor", "Karaim",
-        "Dolgan", "Nagaybak", "Kumandin", "Meskhetian Turk", "Dungan",
+        "Dolgan", "Nagaybak", "Kumandin", "Meskhetian Turk",
     ),
     # -- Africa
     "Bantu peoples": (
@@ -913,7 +985,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Silte", "Burji", "Mareko", "Alaba", "Shinasha", "Wolaita",
     ),
     "Central African peoples": (
-        "Gbaya", "Banda", "Zande", "Ngbaka", "Mbum", "Sara", "Mandjia",
+        # "Baya" is the Gbaya under the spelling some census tables print.
+        "Gbaya", "Baya", "Banda", "Zande", "Ngbaka", "Mbum", "Sara", "Mandjia",
         "Yakoma", "Sango", "Nzakara", "Ngbandi", "Mbaka", "Kaba",
         "Zaghawa", "Massa", "Toupouri", "Moundang", "Baka", "Aka",
         "Mbuti", "Batwa", "Kanembu", "Ouaddai", "Hadjarai", "Tandjile",
@@ -930,7 +1003,7 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         # family this tree has. They had been filed with South America's.
         "Vedda",
         "Rajasthani", "Brahman - Hill", "Brahman - Tarai", "Kshetri",
-        "Thakuri", "Tharu", "Magar", "Chhetri", "Yadav", "Musalman",
+        "Thakuri", "Tharu", "Chhetri", "Yadav", "Musalman",
         "Kumal", "Majhi", "Bishwokarma", "Pariyar", "Sanyasi/Dasnami",
         "Gharti/Bhujel", "Mijar", "Sarki", "Damai", "Kami", "Teli",
         "Kurmi", "Dhanuk", "Mallaha", "Chamar", "Dusadh", "Koiri",
@@ -965,15 +1038,28 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     # Basques are neither Romance nor anything else in this band; the
     # language they are named for has no relatives at all.
     "Basque peoples": ("Basque", "Euskaldun"),
+    # The Maltese speak a Semitic language and are European by every other
+    # measure: neither the Romance band nor the Arab one is theirs, so, like
+    # the Basques, they stand as their own family. Australia's census counts
+    # Maltese ancestry in every state (ABS 2021, G08; australia_profile).
+    "Maltese peoples": ("Maltese",),
     "Himalayan and Tibeto-Burman peoples": (
         "Tamang", "Newar", "Newa: (Newar)", "Gurung", "Rai", "Limbu",
-        "Sherpa", "Sunuwar", "Thakali", "Chepang", "Tibetan", "Bhutia",
+        "Sherpa", "Sunuwar", "Thakali", "Chepang", "Bhutia",
         "Lepcha", "Bodo", "Naga", "Mizo", "Manipuri", "Garo",
-        "Chin", "Kachin", "Karen", "Rakhine", "Mon", "Shan", "Kayah",
-        "Burman", "Bamar", "Wa", "Palaung", "Danu", "Kokang", "Lahu",
-        "Akha", "Lisu",
+        # Nepal's largest janajati, whose Magar languages are Tibeto-Burman
+        # (the language tree has always filed them there). They had been
+        # listed with the Indo-Aryan castes of the hills.
+        "Magar",
+        # The Tibeto-Burman peoples whose homelands are in South Asia: Nepal's
+        # hills, Bhutan, Sikkim, India's north-east and Bangladesh's hill
+        # tracts. Those of China and Myanmar have their own node below.
     ),
     "Han and Sinitic peoples": ("Chinese", "Han", "Taiwanese", "Hui",
+                                # The Hui of Kazakhstan and Kyrgyzstan, who speak
+                                # Dungan, a Sinitic language (filed there under
+                                # languages). Not a Turkic people, where they sat.
+                                "Dungan",
                                 "Hakka", "Hokkien", "Teochew", "Cantonese",
                                 # Peru's 2017 census: Peruvians of Chinese descent.
                                 "Tusán (Chinese Peruvian)"),
@@ -993,11 +1079,34 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Enets",
     ),
     "Mainland Southeast Asian peoples": (
-        "Vietnamese", "Thai", "Lao", "Khmer", "Hmong", "Miao",
+        # Not the bare "Thai": that word is the nationality Thailand's and
+        # Japan's censuses count, and is filed as one (ETHNIC_NATIONALITY).
+        # Thailand's regional Tai peoples are named below.
+        "Vietnamese", "Lao", "Khmer", "Hmong", "Miao",
         "Muong", "Tay", "Nung", "Cham", "Zhuang", "Isan",
+        # Myanmar's peoples who are not Tibeto-Burman, filed with the
+        # Tibeto-Burman ones until they were moved here: the Shan are Tai,
+        # the Mon are Monic and the Wa and Palaung Palaungic, both branches
+        # of Austroasiatic, as Khmer is.
+        "Shan", "Mon", "Wa", "Palaung",
+    ),
+    # The Tibeto-Burman peoples of China and of mainland south-east Asia,
+    # which were filed under the Himalayan node and so drawn as South Asian
+    # ancestry: Tibet and the Yi of Sichuan and Yunnan, Myanmar's Bamar and
+    # its hill peoples. The band is the region a people's homeland is in,
+    # and theirs are in East and South-East Asia. The language family is the
+    # same as the Himalayan peoples', which is why the two nodes are named
+    # alike; the line between them is the one the bands already draw between
+    # Nepal and Tibet, and between Bangladesh and Myanmar.
+    "Tibeto-Burman peoples of China and Southeast Asia": (
+        "Tibetan", "Chin", "Kachin", "Karen", "Rakhine", "Kayah",
+        "Burman", "Bamar", "Danu", "Lahu", "Akha", "Lisu",
     ),
     "Malay and Indonesian peoples": (
-        "Malay", "Indonesian", "Javanese", "Sundanese", "Madurese",
+        # Not the bare "Indonesian", which names the state of some three
+        # hundred peoples and is filed as a nationality (ETHNIC_NATIONALITY);
+        # the peoples are named one by one.
+        "Malay", "Javanese", "Sundanese", "Madurese",
         "Minangkabau", "Buginese", "Balinese", "Acehnese", "Batak",
         "Banjar", "Betawi", "Dayak", "Bumiputera", "Other Bumiputera",
         "Sama", "Bajau", "Badjao", "Iban", "Kadazan", "Melanau", "Murut",
@@ -1006,11 +1115,13 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     # Taiwan's sixteen recognised indigenous peoples, Austronesian all, as
     # the Council of Indigenous Peoples names them; the map writes the
     # register's one category and the peoples are here for a finer table.
+    # "Gaoshan" is the name China's census gives the same peoples as one of
+    # its 56 nationalities.
     "Taiwanese indigenous peoples": (
         "Indigenous Taiwanese", "Taiwanese aborigines", "Amis", "Atayal",
         "Paiwan", "Bunun", "Rukai", "Puyuma", "Tsou", "Saisiyat", "Yami",
         "Tao", "Thao", "Kavalan", "Truku", "Taroko", "Sakizaya", "Seediq",
-        "Saaroa", "Hla'alua", "Kanakanavu",
+        "Saaroa", "Hla'alua", "Kanakanavu", "Gaoshan",
     ),
     "Philippine peoples": (
         "Filipino", "Tagalog", "Cebuano", "Ilocano", "Ilonggo", "Bikol/Bicol",
@@ -1032,7 +1143,10 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Rapa Nui",
         "Māori", "Maori", "Samoan", "Tongan", "Cook Islands Maori", "Niuean",
         "Tokelauan", "Tuvaluan", "Hawaiian", "Tahitian", "Wallisian",
-        "Rotuman", "Pacific Peoples",
+        "Rotuman",
+        # The two Polynesian outliers of Pohnpei State, as the FSM's 2010
+        # census names their people (micronesia_census).
+        "Nukuoroan", "Kapingamarangian",
     ),
     "Melanesian peoples": ("Fijian", "Ni-Vanuatu", "Papuan", "Solomon Islander",
                            "Kanak", "New Caledonian"),
@@ -1041,7 +1155,20 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     "Micronesian peoples": ("Chamorro", "Guamanian", "Carolinian",
                             "Palauan", "Marshallese", "Chuukese",
                             "Pohnpeian", "Yapese", "Kosraean", "Nauruan",
-                            "i-Kiribati", "Gilbertese"),
+                            "i-Kiribati", "Gilbertese",
+                            # The FSM 2010 census's outer-island peoples of
+                            # Yap, Chuuk and Pohnpei states, and its answers of
+                            # two of a state's own ethnicities -- in Yap and
+                            # Chuuk all Micronesian (micronesia_census).
+                            "Ulithian", "Woleaian", "Satawalese",
+                            "Mortlockese", "Sapwuahfikese", "Pingelapese",
+                            "Mwoakilese", "Two or more Yap State ethnicities",
+                            "Two or more Chuuk State ethnicities",
+                            # The 2000 census's one column for Yap's outer
+                            # islanders -- Ulithian, Woleaian, Satawalese and
+                            # their neighbours, all Micronesian
+                            # (micronesia_census, Table P1-4).
+                            "Yap Outer Islander"),
     # -- the Americas
     "Indigenous peoples of North America": (
         "Navajo", "Cherokee", "Sioux", "Ojibwe", "Cree", "Inuit", "Métis",
@@ -1150,14 +1277,10 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     ),
     "Asian (census category)": (
         "Asian", "Asian (non-Hispanic)", "Asian or Asian British",
-        "Asian or Asian Irish", "South Asian", "Southeast Asian",
-        "East Asian", "West Asian", "Other Asian", "Amarela",
-        "Indian/Asian", "East Indian", "Asian/Indian",
-        "Asian, Asian British or Asian Welsh: Bangladeshi",
+        "Asian or Asian Irish", "Southeast Asian",
+        "East Asian", "Other Asian", "Amarela",
         "Asian, Asian British or Asian Welsh: Chinese",
-        "Asian, Asian British or Asian Welsh: Indian",
         "Asian, Asian British or Asian Welsh: Other Asian",
-        "Asian, Asian British or Asian Welsh: Pakistani",
     ),
     "Indigenous (census category)": (
         "Indigenous", "Indigenous People", "Indigenous Peoples", "Amerindian",
@@ -1168,6 +1291,15 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     "Pacific Islander (census category)": (
         "Pacific Islander",
         "Native Hawaiian and Other Pacific Islander (non-Hispanic)",
+        # New Zealand's level-1 group, which holds Fijian, I-Kiribati,
+        # Solomon Islander and Ni-Vanuatu beside Samoan and Tongan: the
+        # whole of the Pacific, not its Polynesian part, where it had sat.
+        "Pacific Peoples",
+        # Two of Pohnpei State's own ethnicities, which include its two
+        # Polynesian outliers beside the Micronesian peoples (micronesia_census),
+        # and the 2000 census's one column for Pohnpei's outer islanders, the
+        # same mixture: Pingelapese and Mwoakilese, Nukuoro and Kapingamarangi.
+        "Two or more Pohnpei State ethnicities", "Pohnpei Outer Islander",
     ),
     "Mixed or multiple (census category)": (
         "Coloured", "Mixed", "Mixed or multiple",
@@ -1200,7 +1332,11 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     ),
     "Middle Eastern or North African (census category)": (
         "Middle Eastern or North African", "Other ethnic group: Arab",
-        "Middle Eastern/Latin American/African",
+        # Canada's visible-minority category for Western Asia outside the
+        # Arab world -- Iranian, Afghan, Armenian, Turkish and Kurdish
+        # answers among them. Filed with the Asian category, it was coloured
+        # as East and Southeast Asian ancestry.
+        "West Asian",
     ),
     # Bangladesh counts one figure per district for the peoples scheduled
     # under the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010, and names
@@ -1219,12 +1355,65 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     "Hill tribes (census category)": (
         "Hill tribe languages (census category)", "Hill tribes", "Hill tribe",
     ),
+    # Malaysia's and Singapore's censuses count "Indian" as one of a handful
+    # of official races, and Myanmar's township profiles as one of its
+    # ethnic rows: the descendants of Tamil, Telugu, Malayali, Punjabi,
+    # Bengali and other South Asian migrants, residents of the country that
+    # counts them. Not the nationality "Indian" a European register counts,
+    # which is why each is written with its country's name, and not one
+    # South Asian people either, which is why it is a census category.
+    "Indian (census category)": (
+        "Indian (Malaysia)", "Indian (Singapore)", "Indian (Myanmar)",
+        # Hong Kong's census asks ethnicity, and its "Indian" is this answer
+        # rather than the nationality of the same spelling.
+        "Indian (Hong Kong)",
+        # The same answer under the names other censuses give it: the
+        # Caribbean's "East Indian" -- the descendants of the indentured
+        # labourers, Trinidad and Tobago's and Guyana's largest group --
+        # the US "Asian Indian", South Africa's "Indian/Asian" population
+        # group, and the United Kingdom's Indian ethnic group. All of them
+        # had been filed with the Asian category, and so drawn as East and
+        # Southeast Asian ancestry.
+        "East Indian", "East Indian/Indian", "Asian Indian", "Indian/Asian",
+        "Asian/Indian", "Asian, Asian British or Asian Welsh: Indian",
+        "Asian/Asian British: Indian",
+    ),
+    # The census categories that name South Asia, or a South Asian country
+    # other than India: Canada's visible-minority "South Asian", Hong Kong's
+    # Nepalese, Pakistani and "Other South Asian" (Bangladeshi and Sri
+    # Lankan), and the Pakistani and Bangladeshi groups of the United
+    # Kingdom's censuses. A sibling of the peoples, as every census category
+    # is, and of South Asian ancestry rather than of the Asian category,
+    # which the tree files as East and Southeast Asian.
+    "South Asian (census category)": (
+        "South Asian", "Other South Asian", "Nepalese (Hong Kong)",
+        "Pakistani (Hong Kong)",
+        "Asian, Asian British or Asian Welsh: Bangladeshi",
+        "Asian, Asian British or Asian Welsh: Pakistani",
+        "Asian/Asian British: Pakistani",
+    ),
 }
 
-# The answers that name a country rather than a people. Where the country has
-# one clear ancestry the group is filed under it; the settler nations, whose
-# populations are themselves multi-origin and whose "American" or "Australian"
-# answer means "nothing further to add", are kept apart and said to be that.
+# The answers that name a country rather than a people.
+#
+# The tree files a label, and one label means one thing in every source that
+# writes it: it cannot see whether a record counts ancestry, birthplace or
+# passports. So the rule is about the word. Where the adjective is also the
+# name of a people or family the tree carries -- "Chinese", "Korean",
+# "Vietnamese", "Filipino", "British" -- it is filed with that people. Where
+# it names only a state of several peoples -- "Indonesian", "Indian",
+# "Nepalese", "Nigerian", and "Thai" as Thailand's and Japan's censuses use it
+# -- it is filed here, as a nationality. The settler nations, whose
+# populations are themselves multi-origin and whose "American" or
+# "Australian" answer means "nothing further to add", are kept apart and said
+# to be that.
+#
+# A source that counts passports and writes them as bare adjectives
+# therefore gets both kinds of placement in one bar: Japan's municipalities
+# show Chinese and Vietnamese nationals among the East Asian peoples and
+# Indonesian and Nepalese nationals as nationalities. A source that wants all
+# its rows read as nationalities writes them so ("Afghan national", "Syrian
+# citizens"), and such a label is filed here whatever word it is built on.
 ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
     "Settler-nation identities": (
         "American", "Canadian", "Australian", "New Zealander", "Brazilian",
@@ -1235,10 +1424,21 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
     ),
     "Other national identities": (
         # European registers' nationality and country-of-birth rows for
-        # states of many peoples (the owner's 19 September 2026 decision):
-        # a nationality, which names no one ethnic group.
+        # states of many peoples: a nationality, which names no one ethnic
+        # group.
         "Eritrean", "Ethiopian", "Congolese", "Kosovar", "Non-EU nationals",
+        # Sudan's citizens are Arab, Nubian, Beja, Fur and Nuba among others,
+        # of two ancestries; Ethiopia's "Ethnic group Sudanese" is already
+        # filed here, and the Central African Republic prints "Sudanese"
+        # beside "Chadian". It had sat under the Arab peoples.
+        "Sudanese",
         "Belgian", "Yugoslavian", "Sri Lankan", "Iranian national",
+        # Iran's 2016 census counts citizenship, and iran_census writes each
+        # country as the nationality it is. The bare adjectives are peoples
+        # in this tree -- "Afghan" under the Iranian peoples, "Iraqi" under
+        # the Arab, "Turkish" under the Turkic -- and a passport is not one.
+        "Afghan national", "Iraqi national", "Pakistani national",
+        "Turkish national",
         "Nigerian", "Kenyan", "Cameroonian", "Malian", "Senegalese",
         "Congolese (Kinshasa)", "Congolese (Brazzaville)", "Chadian",
         "Pakistani", "Indian", "Bangladeshi", "Sri Lankan", "Nepalese",
@@ -1247,11 +1447,30 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         # Asian nationalities it does not name -- Vietnamese, Indonesian,
         # Burmese, Nepalese, Indian -- which no single ancestry holds.
         "Other Asian nationality",
+        # The Gulf and Levant censuses' nationality rows by region of the
+        # world (Kuwait's CSB, Bahrain's iGA, Jordan's DoS, Syria's 2004
+        # workbook): passports of many countries, which name no ancestry.
+        # Left to the word rules they land on a continent's census category
+        # ("Asian", "European") or on the settler-nation "American".
+        "Asian nationalities", "African nationalities",
+        "African nationalities (non-Arab)", "European nationalities",
+        "North American nationalities", "South American nationalities",
+        "Nationalities of the Americas", "Oceanian nationalities",
+        # Citizens of states whose citizens are of more than one people,
+        # written so by syria_census, yemen_census and oman_ncsi: Syria's
+        # Kurds, Yemen's Mehri and Soqotri speakers, Oman's Baluchi, Jibbali
+        # and Mahri. Left to the normaliser, "Syrian citizens" folds to
+        # "Syrian" and colours Afrin and Ain al-Arab Arab, which no count
+        # says.
+        "Syrian citizens", "Yemeni citizens", "Omani citizens",
         # Korea's immigration register counts these by passport, and each
         # is a country of more than one people: Malaysian and Hong Konger
         # are not "Chinese", Cambodian and East Timorese are not one
         # ancestry a census names, Ghanaian is a dozen.
         "Cambodian", "Malaysian", "East Timorese", "Hong Konger", "Ghanaian",
+        # Bhutan's census counts citizenship (bhutan.py, Table 2.2) and the
+        # Maldives' nationality (maldives_census.py): the home row of each.
+        "Bhutanese", "Maldivian",
     ),
 }
 
@@ -1271,18 +1490,26 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
         "Baltic peoples", "Greek and Albanian peoples",
         "Finnic and Ugric peoples", "Basque peoples",
         "White or European (census category)",
+        # Last, so the families above keep the hues they already have.
+        "Maltese peoples",
     ),
     "Middle Eastern and North African ancestry": (
         "Arab peoples", "Iranian peoples", "Berber peoples",
         "Caucasian peoples", "Armenian peoples",
         "Assyrian and Aramean peoples",
         "Middle Eastern or North African (census category)",
+        # Last, so the families above keep the hues they already have.
+        "Nuristani peoples",
     ),
-    "Turkic and Central Asian ancestry": ("Turkic peoples",),
+    "Turkic and Central Asian ancestry": ("Turkic peoples",
+                                          "Iranian peoples of Central Asia"),
     "South Asian ancestry": (
         "Indo-Aryan peoples", "Dravidian peoples",
         "Himalayan and Tibeto-Burman peoples", "Munda peoples",
         "Scheduled ethnic groups (census category)", "Khasi peoples",
+        "Indian (census category)",
+        # Last, so the families above keep the hues they already have.
+        "South Asian (census category)",
     ),
     "East and Southeast Asian ancestry": (
         "Han and Sinitic peoples", "Japanese peoples", "Korean peoples",
@@ -1290,6 +1517,8 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
         "Malay and Indonesian peoples", "Philippine peoples",
         "Taiwanese indigenous peoples",
         "Asian (census category)", "Hill tribes (census category)",
+        # Last, so that no family above it changes colour.
+        "Tibeto-Burman peoples of China and Southeast Asia",
     ),
     "Indigenous American ancestry": (
         "Indigenous peoples of North America",
@@ -1340,7 +1569,9 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     "Other foreign ethnicity", "Other ethnic group: Any other ethnic group",
     "Visible minority, n.i.e.", "Not a visible minority", "Foreigner",
     "Non-Malaysian citizen", "Other (Malaysian citizen)",
-    "Other Africa", "Other West Africa", "Other Asian", "Other European",
+    # ("Other Asian" and "Other European" are not here: each is a census
+    # category's own remainder and is filed under that category.)
+    "Other Africa", "Other West Africa",
     # Laos: what its ten ethno-linguistic categories leave, which is the
     # census's own other-and-not-stated together with the foreign population.
     "Other or not stated",
@@ -1359,10 +1590,24 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     "other or unspecified", "undeclared or unknown", "none or unspecified",
     "unspecified smaller ethnic groups", "no ethnic affiliation data available",
     "other Liberian ethnic group", "other Togolese", "and other", "none",
+    "Other Malian ethnic group",
+    # Botswana's Factbook "other, including Kgalagadi and people of European
+    # ancestry", as its row keeps it without the "other".
+    "including Kgalagadi and people of European ancestry",
     # A person counted as not being from here, which says nothing about
     # where they are from.
     "Foreign", "foreign", "foreign population", "non-Gambian",
     "foreign/other ethnic group",
+    # The same answer in the other countries' rows that write it -- 88% of
+    # Qatar's residents, and the residents of Niue, Kenya, Liberia, the
+    # Central African Republic and Mali who are not their nationals. Each
+    # had been filed under the very people it excludes.
+    "non-Qatari", "non-Niuean", "non-Kenyan", "non-African",
+    "non-Central African Republic ethnic groups", "Other non-Malian ethnic group",
+    "non-citizens",
+    # Bhutan's Table 2.1 less its Table 2.2: everyone counted who is not a
+    # Bhutanese citizen.
+    "Non-Bhutanese",
     # Uganda's census asks one question and takes two kinds of answer: a
     # Ugandan names an ethnic group, a non-Ugandan names a country. Neither
     # of these two rows is an ethnic group.
@@ -1371,8 +1616,8 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # citizens whose ethnicity is a foreign nation's. The row says which
     # citizenship they hold and nothing about where they are from.
     "Other nationals (Mongolian citizens)",
-    # A religion written into the ethnicity question. The mirror of
-    # "Scheduled Castes" in the religion tree: an answer to a different
+    # A religion written into the ethnicity question. The mirror of the
+    # religion tree's "(written as religion)" rows: an answer to a different
     # question, kept and kept apart.
     "Orthodox (written as ethnicity)",
     # Cape Verde and Sao Tome ask what a person has been treated differently
@@ -1514,6 +1759,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Aka", "Kaka", "Pomo", "Bomitaba", "Kele", "Tsogho", "Nzebi",
         "Myene", "Duma", "Makaa", "Mbochi", "Sangha", "Eshira", "Bakweri",
         "Bafia", "Bamum", "Batanga", "Yaka",
+        # Bantu languages CLEAR Global names with the country, because the
+        # bare name is another language elsewhere: the Bodo of the Central
+        # African Republic (not India's Bodo), Nigeria's Kulung, of the
+        # Jarawan Bantu (not Nepal's Kiranti Kulung), and the Komo of the
+        # Congo's Ituri (not the Koman Komo of Sudan and Ethiopia). The
+        # spelling rule took the bracket off and filed each with its
+        # namesake.
+        "Bodo (Central African Republic)", "Kulung (Nigeria)",
+        "Komo (Democratic Republic of Congo)",
     ),
     "Mande languages": (
         # CLEAR Global, Guinea and Sierra Leone.
@@ -1536,12 +1790,34 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Dadeldhuri", "Jumli", "Angika", "Sadri", "Ranatharu", "Tajpuriya",
         "Rajbanshi", "Rajbansi", "Kumal", "Danuwar", "Darai", "Bote",
         "Sonaha", "Kewarat", "Marwadi", "Marwari",
+        # Two more of the 2021 census's: Ganagai, the speech of the Gangai of
+        # Jhapa and Morang (the people are filed above with the Tarai
+        # castes), and "Musalman", which Nepal's Muslims report beside Urdu
+        # under their community's name.
+        "Ganagai", "Musalman",
         # Karnali's Khas, which Jumla and Kalikot report beside Nepali
         # rather than as another word for it.
         "Khash",
+        # CLEAR Global's Nepal file, which names each language by its
+        # Glottolog name: the Tharu languages together, the Kumal language
+        # (Kumhali), the Inner Tarai river languages of the Danuwar and
+        # Kuswar (Kuswaric), the speech of Baitadi and the Sor valley
+        # (Soradi), and Surjapuri of the Jhapa border.
+        "Tharuic", "Kumhali", "Kuswaric", "Soradi", "Surjapuri",
+        # Pakistan's Pahari-Pothwari and the United Kingdom's "Pakistani
+        # Pahari (with Mirpuri and Potwari)": the Lahnda speech of the
+        # Pothohar plateau, Mirpur and Azad Kashmir. Read through its word
+        # "Pahari", which is also the name of a Tibeto-Burman language of
+        # Nepal, it had been filed with the Sino-Tibetan languages in
+        # every district of England and Wales.
+        "Pahari-Pothwari", "Pothwari", "Potwari", "Mirpuri",
+        "Pakistani Pahari (with Mirpuri and Potwari)",
         # Pakistan and the Dardic north. Khowar sits beside Shina: both are
         # Dardic, and Gilgit-Baltistan reports them together.
         "Lahnda", "Shina", "Pashai", "Khowar",
+        # Azad Kashmir's census answers: the Gujari of the Gujjars, and the
+        # Dardic speech of Kundal Shahi in the Neelum valley.
+        "Gojri", "Kundal Shahi",
         # The three the 2023 census added that belong here. Kalasha and
         # Kohistani are Dardic like their neighbours above -- Kohistani is a
         # cover term for the Indus valley's several, which is how the census
@@ -1560,12 +1836,18 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Gur languages": (
         # CLEAR Global, Benin and Ghana.
         "Kusaal", "Yom", "Biali", "Waama", "Talni", "Mamara Senoufo","Gurma", "Bwamu", "Lobi", "Dagara",
+                      # Togo's Lama (Lamba), a Gur language of the Kara
+                      # region, not Zambia's Bantu Lamba.
+                      "Lama, Lamba",
                       "Gurunsi", "Minianka", "Kassena", "Konkomba"),
     # Central African Republic: the Ubangian languages its census lists, which
     # the tree reached only through the "Banda" and "Gbaya" cover terms.
     "Adamawa-Ubangi languages": (
         # CLEAR Global, Nigeria.
         "Chamba Donga", "Longuda",
+        # Nigeria's Lala-Roba, an Adamawa language of the Gongola valley,
+        # which the compound rule filed with Zambia's Bantu Lala.
+        "Lala-Roba",
         "Yakoma", "Nzakara", "Gbanziri", "Langbashe", "Sere", "Mandjia",
         "Gbanu", "Bokoto", "Suma", "Kare", "Dakpa", "Langba", "Ndi",
         "Tongo", "Gbaguiri", "Mboundjia", "Issongo", "Bofi", "Gbadok",
@@ -1627,7 +1909,10 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # Mexico's census counts whether a person speaks an indigenous
         # language, not which, and Panama's figure is the same kind; in both
         # countries every one of them is a language of this continent.
-        "Indigenous languages"),
+        "Indigenous languages",
+        # Paraguay's Maká, a Mataco-Guaicuruan language. The prefix rule read
+        # it as Cameroon's Bantu Makaa.
+        "Maká"),
     # Russia's federal subjects. The Andic and Tsezic languages of Dagestan,
     # which the Russian census lists one by one beside Avar: every one of
     # them is Nakh-Dagestanian, and several have fewer than a thousand
@@ -1680,10 +1965,20 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Topkegola", "Mugali", "Karmarong", "Tichhurong",
         "Tichhurong Poike", "Baragunwa",
         "Dolpali", "Dolpo", "Pahari",
+        # CLEAR Global's Nepal file, by Glottolog's names: the Kham (Magaric)
+        # languages of Rukum and Rolpa, Tibetan's Kham-Hor dialects in Mugu,
+        # the Yolmo of Lamjung and Melamchi, and Manang's and Nar-Phu's.
+        "Kham", "Kham-Hor", "Lamjung-Melamchi Yolmo", "Manangba-Nar-Phu",
+        "Camling",
     ),
     "Dravidian languages": ("Kui", "Kondh", "Khond", "Malto", "Koya",
                             "Kolami", "Kodagu", "Coorgi", "Konda", "Parji",
-                            "Oraon", "Kudukh"),
+                            "Oraon", "Kudukh",
+                            # India's census mother tongues of Odisha and
+                            # the Andhra hills: Kisan is Kurukh's northern
+                            # neighbour (Nepal's Kisan of Jhapa report it
+                            # too), Jatapu one of the Kui-Kuvi group.
+                            "Kisan", "Jatapu"),
     # Timor-Leste, whose census names every language of the country. The
     # Austronesian ones and the Papuan ones are a settled split: the country
     # has a handful of Timor-Alor-Pantar languages and everything else it
@@ -1707,13 +2002,31 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Kawaimina", "Lakalei", "Lolein", "Makuva", "Nanaek", "Rahesuk",
         "Raklungu", "Resuk",
         "Philippine languages", "Sasak", "Bantenese",
+        # Two of Indonesia's whose names are also another family's
+        # language: the Bandanese of the Banda Islands in Maluku, and Sara
+        # Bakati', a Land Dayak language of West Kalimantan. The rules filed
+        # them with the Central African Banda and Sara.
+        "Banda (Indonesia)", "Sara Bakati'",
     ),
     "Papuan languages": ("Bunak", "Fataluku", "Makasai", "Makalero", "Adabe"),
     "Oceanic languages": ("Futunian", "Marquesan", "Paumotu", "Tuamotuan",
-                          "Nauruan"),
+                          "Nauruan",
+                          # Vanuatu's 2020 census counts the speakers of any of
+                          # the country's hundred-odd indigenous languages as
+                          # one row (vanuatu_census), and the FSM's censuses
+                          # name Yap's outer-island languages together, Pohnpei
+                          # State's Pohnpeic ones and its two Polynesian
+                          # outliers' (micronesia_census): every one Oceanic.
+                          "Vanuatu vernacular languages",
+                          "Yap Outer Island languages", "Sapwuahfikese",
+                          "Pingelapese", "Mwoakilese",
+                          "Nukuoro and Kapingamarangi"),
     "Creole languages": (
         # CLEAR Global, Cape Verde.
         "Kabuverdianu","Norfolk", "Angolar", "Forro", "Lunguie", "Haitian",
+        # Papua New Guinea's Hiri Motu, the Motu-based pidgin of the south
+        # coast and one of its official languages.
+        "Hiri Motu",
         # Suriname's Maroon creoles (suriname_census).
         "Saramaccan", "Ndyuka", "Pamaka"),
     # The band the US Virgin Islands writes, filed where the ACS's "Spanish
@@ -1759,6 +2072,11 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # are answers rather than languages.
     "Iranian languages": (
         "Ezidian", "Ezdiki",
+        # Two ALI varieties a spelling rule sent across the world: Rāji, the
+        # Central Plateau dialect of Natanz and Kashan, whose folded "Raji"
+        # is a Tibeto-Burman language of Nepal; and Rubāri of Rudbar in
+        # Gilan, which the prefix rule read as "Ru-" on South Sudan's Bari.
+        "Rāji", "Rubāri",
         "Ahrami", "Amlei", "Anāraki", "Ardestān group", "Arkawāzi",
         "Ashkanuni", "Ashomi", "Bahmei", "Bakhtiāri",
         "Banderi of Bandar Abbās", "Banzarki", "Bardesuni", "Bastaki",
@@ -1809,6 +2127,10 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Ede Nago", "Weme Gbe", "Gbe", "Ayizo Gbe", "Kotafon Gbe",
         "Saxwe Gbe", "Ede Idaca", "Maxi Gbe", "Ifè", "Ci Gbe", "Gen",
         "Ede Cabe", "Tofin Gbe",
+        # Togo's Mina (Gen), the Gbe language of the coast, as Togo's tables
+        # name it. Its first word was read as the "Mina" Canada's census
+        # lists among the creoles.
+        "Mina, Guen",
     ),
     # CLEAR Global, Sierra Leone and Senegal.
     "Atlantic languages": (
@@ -1817,6 +2139,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # CLEAR Global, Nigeria's north-east at district level.
     "Chadic languages": (
         "Bacama", "Marghic", "Cibak", "Karekare", "Kilba-South Margi",
+        # Maaka of Yobe, West Chadic. The prefix rule read it as "Ma-" on
+        # the Aka of the Lobaye and filed it as Bantu.
+        "Maaka",
     ),
     # CLEAR Global, Nigeria's delta.
     "Ijoid languages": (
@@ -1939,9 +2264,19 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Printed beside Chokwe and Lomwe by the censuses that use them,
         # so each is a row of its own and not another spelling.
         "Tshoko", "Lomue",
+        # Cameroon's coastal Sawa peoples, one row in its tables. The
+        # patterns read the Siberian Orok in "Oroko".
+        "Cotier/Ngoe/Oroko",
+        # Uganda's Baamba (Bwamba) of the Semliki, whose Amba language is
+        # Bantu. The prefix rule took "Ba-" and then "A-" off, and filed the
+        # remaining "Mba" with the Central African peoples.
+        "Baamba", "Bwamba",
     ),
     "Mainland Southeast Asian peoples": (
         "Vietnamese",
+        # Hong Kong's census asks ethnicity: its Thai, under the qualified
+        # name, apart from the nationality of the same spelling.
+        "Thai (Hong Kong)",
         # Laos names its peoples by language: Katang and Makong are Katuic,
         # Khmu is Khmuic, Phu Thai and Lue are Tai.
         "Katong", "Katang", "Khmou", "Khmu", "Makong", "Phouthay",
@@ -1994,6 +2329,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Mozambique, and the tree cannot tell the two apart by name.
         "Bouyei", "Dong", "Sui", "Mulao", "Maonan", "Gelao", "Li", "Dai",
         "She", "Yao (China)", "Gin",
+        # And Yunnan's Palaungic nationalities, Austroasiatic like the Wa
+        # beside them: De'ang is the Chinese name of the Palaung, Blang that
+        # of the Bulang.
+        "De'ang", "Blang",
     ),
     "Malagasy peoples": ("Sihanaka", "Masikoro", "Antesaka", "Antandroy",
                          # The rest of Madagascar's eighteen.
@@ -2008,7 +2347,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                         # the Ateker of Karamoja, whose sections the census
                         # counts one by one.
                         "Jopadhola", "Jonam", "Ethur", "Kakwa", "Kuku",
-                        "Jie", "Dodoth", "Ngikutio"),
+                        "Jie", "Dodoth", "Ngikutio",
+                        # The Karamojong in the constitution's spelling, which
+                        # Afrobarometer's Ugandan rounds use.
+                        "Karimojong"),
     "Mongolic and Siberian peoples": (
         "Khalkha",
         # Mongolia's own aimags, and the peoples of the Russian far east
@@ -2060,16 +2402,6 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     ),
     "Himalayan and Tibeto-Burman peoples": (
         "Ngalop", "Sharchop",
-        # The tenth of Laos's ethno-linguistic categories, which is the Akha,
-        # Singsily, Lahu, Sila, Hanyi, Lolo and Ho -- every one of them
-        # already filed here under its own name. Named rather than left to
-        # the word rules, which would read it through "Burman" and put the
-        # uplands of Phongsaly under the Bamar of Myanmar.
-        "Tibeto-Burman",
-        # Thailand's 2000 census counts "Burmese and Peguan" (Mon) speakers
-        # as one row; it sits where the tree already keeps Mon and Burmese
-        # would sit as a people.
-        "Burmese and Mon",
         # Nepal's janajati: the Kiranti (Rai) groups of the eastern hills
         # and the Bhote (Tibetan-descended) groups of the north, which the
         # census lists one by one where a summary writes "Rai" or "Bhote".
@@ -2082,9 +2414,6 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Dhimal", "Byasi", "Sauka", "Baram", "Baramu",
         "Chhantyal", "Chhantel", "Hayu", "Chumba", "Nubri", "Pahari",
         "Pun",
-        # Myanmar's national races, which are Tibeto-Burman unless the
-        # census says otherwise.
-        "Pa'o", "Intha", "Kayan", "Taungyo", "Kadu", "Kanan",
         # North-east India.
         "Tripuri", "Rabha", "Deori", "Hmar", "Paite", "Vaiphei",
         # Bangladesh's scheduled peoples, in the Bureau's own spellings.
@@ -2097,6 +2426,29 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # and Monipuri, whom the Bureau lists under the Meitei homeland's
         # name rather than the people's.
         "Tripura", "Monipuri", "Koch", "Barman", "Dalu",
+        # Nepal's Koche of Jhapa (2021 census), the same Koch people across
+        # the border, under the name Nepal's census gives them.
+        "Koche",
+        # Bhutan's country row: everyone neither Ngalop nor ethnic Nepali.
+        # Most are the Tibeto-Burman peoples of central and eastern Bhutan
+        # and its borders -- Kheng, Bumthap, Kurtop, Brokpa, Lepcha, Doya,
+        # Monpa -- beside smaller groups who came from India. Read through
+        # its word "indigenous", it had been filed with the Americas'.
+        "indigenous or migrant tribes",
+    ),
+    "Tibeto-Burman peoples of China and Southeast Asia": (
+        # The tenth of Laos's ethno-linguistic categories, which is the Akha,
+        # Singsily, Lahu, Sila, Hanyi, Lolo and Ho -- every one of them
+        # already filed here under its own name. Named rather than left to
+        # the word rules, which would read it through "Burman".
+        "Tibeto-Burman",
+        # Thailand's 2000 census counts "Burmese and Peguan" (Mon) speakers
+        # as one row; it sits with the Bamar, as the larger half. Both halves
+        # are Myanmar's, so the band is the same either way.
+        "Burmese and Mon",
+        # Myanmar's national races, which are Tibeto-Burman unless the
+        # census says otherwise.
+        "Pa'o", "Intha", "Kayan", "Taungyo", "Kadu", "Kanan",
         # China's Tibeto-Burman nationalities of Yunnan, Sichuan, Guizhou,
         # Hunan and Tibet, as the census tables print them: the Loloish Yi,
         # Hani and Jino, the Qiangic Qiang and Pumi, the Burmish Achang,
@@ -2104,16 +2456,31 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Nakhi, the Tujia and the Bai (whose language is Sino-Tibetan and
         # argued over between the Loloish and Sinitic sides; the people are
         # Yunnan's, beside the Yi). Jingpo is the Chinese name of the
-        # Kachin above; De'ang is the Palaung and Blang the Bulang, whom
-        # this node already keeps beside the Wa.
+        # Kachin above.
         "Yi", "Hani", "Jino", "Qiang", "Pumi", "Achang", "Nu", "Derung",
-        "Monba", "Lhoba", "Nakhi", "Tujia", "Bai", "Jingpo", "De'ang",
-        "Blang",
+        "Monba", "Lhoba", "Nakhi", "Tujia", "Bai", "Jingpo",
+        # The Naga of Myanmar's Sagaing Region and its Naga Self-Administered
+        # Zone. The bare "Naga" is India's Nagaland people, filed with the
+        # Himalayan and Tibeto-Burman peoples; the line between the two
+        # nodes is the border, as it is between the Mizo and the Chin, so
+        # Myanmar's Naga are written with the country.
+        "Naga (Myanmar)",
     ),
-    "Arab peoples": ("Iraki", "Rashaida", "Sahraoui", "Sahrawi"),
+    # Sudan's Arabs, named here because the bare "Sudanese" is a nationality
+    # in this tree and the two words no longer agree on a family.
+    "Arab peoples": ("Iraki", "Rashaida", "Sahraoui", "Sahrawi", "Sudanese Arab"),
+    # The Korean-Chinese of Korea's immigration register (한국계 중국인):
+    # Chinese nationals of Korean descent, which is what the label says.
+    "Korean peoples": ("Korean-Chinese",),
     # Suriname's census names the community by where its ancestors came from.
     "Indo-Aryan peoples": (
         "Hindustani",
+        # Fiji's census counts the descendants of the indentured labourers
+        # brought from India in 1879-1916 as "Indian" (fiji_census writes
+        # Indo-Fijian). Named, like Suriname's Hindustani, for where their
+        # ancestors came from. Left to the word rules it files under its last
+        # word, Fijian -- the iTaukei's Melanesian people, another population.
+        "Indo-Fijian",
         # Nepal's Tarai and hill castes, which speak Maithili, Bhojpuri,
         # Awadhi or Nepali. The census lists them beside Teli, Kurmi and
         # Chamar, which the table already carries, and they are the same
@@ -2129,9 +2496,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Halkhor", "Beldar", "Natuwa", "Kahar", "Tatma", "Tatwa",
         "Kamar", "Kalwar", "Rajbansi", "Rajbanshi", "Tajpuriya", "Gangai",
         "Darai", "Bote", "Kumal", "Danuwar", "Bangali", "Ranatharu",
-        "Kewarat", "Chai", "Khulaut",
+        "Kewarat", "Chai", "Khulaut", "Mali",
+        # Afghanistan's Pashai, of the Dardic hills north of Jalalabad.
+        "Pashai",
         # Pakistan's Urdu-speaking migrants from India.
         "Muhajirs", "Muhajir",
+        # The Saraiki of southern Punjab, whose language is Indo-Aryan
+        # (Lahnda) -- a twelfth of Pakistan in its country row. Named because
+        # the patterns read "Sara" in it, and filed it with Chad's Sara.
+        "Saraiki", "Seraiki", "Sareiki",
         # Bangladesh's scheduled peoples whose own language is Indo-Aryan.
         # Chakma and Tonchonga are the hill peoples the table files here
         # rather than with their Chittagong Hill Tracts neighbours: this
@@ -2143,6 +2516,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # spelling of Musahar, already carried above in Nepal's.
         "Bagdi", "Bedia", "Bhuimali", "Gonju", "Malo/Ghasimalo", "Mushor",
         "Rajoar", "Vil",
+        # And four more of the 2022 census's tea-garden and plains peoples,
+        # in its own spellings, who speak Sadri or Bengali.
+        "Boraik/Baraik", "Gorait", "Hudi", "Kharoar/Kheroar",
         # Descendants of the Nepali soldiers of the garrison towns.
         "Gurkha",
     ),
@@ -2151,7 +2527,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Cayman Islander", "Curacaoan", "Falkland Islander", "Gibraltarian",
         "Greenlandic", "Guernsey", "Jersey", "Manx", "Bermudian",
         "Saint Helenian", "Montserratian", "Anguillian", "Aruban",
-        "Faroese", "iTaukei", "Liechtensteiner", "Monegasque",
+        "Faroese", "Liechtensteiner", "Monegasque",
         "St. Helena", "Saint Maarten", "Sint Maarten",
         # Sint Maarten, Guernsey, Saint Helena and the Falklands publish the
         # country a person came from where another census publishes an
@@ -2167,7 +2543,6 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Andorran", "Chilean", "Colombian", "Dominican", "Honduran",
         "Jamaican", "Kosovan", "Nicaraguan", "Saban", "Surinamese",
         "Venezuelan", "Haitian", "Pitcairn Islander",
-        "Yap outer islanders",
     ),
     # Mauritius counts four "communities" defined by religion and origin
     # together, so two of its four are a faith. Reading "Hindou" as South
@@ -2185,7 +2560,13 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # Thai Chinese are Thailand's, the Ethnolinguistic Maps' own label.
     "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái", "Thai Chinese",
                                 # BPS's Tionghoa, the 2010 census's own group.
-                                "Chinese Indonesian"),
+                                "Chinese Indonesian",
+                                # Myanmar counts the Kokang among the races of
+                                # Shan State, where the tree had them with the
+                                # Tibeto-Burman peoples; they are Han and speak
+                                # a south-western Mandarin, the axis this tree
+                                # files a people by.
+                                "Kokang"),
     # The Austronesian peoples of maritime south-east Asia that Indonesia,
     # Malaysia and Myanmar name beyond the tree's existing list.
     "Malay and Indonesian peoples": ("Banjarese", "Bantenese", "Sasak",
@@ -2193,15 +2574,32 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                                      # The peoples BPS's 2010 census names by
                                      # province, and its regional bundles
                                      # ("asal Sulawesi", "asal Sumatera
-                                     # Selatan"): every one Austronesian.
+                                     # Selatan"): Austronesian nearly all.
                                      # East Nusa Tenggara's bundle holds the
                                      # Alor-Pantar speakers too, a twentieth
-                                     # of it; Maluku's is not placed, its
-                                     # northern peoples being Papuan.
+                                     # of it.
                                      "Makassarese", "Cirebonese", "Nias",
                                      "Lampung", "Gayo", "Aneuk Jamee",
                                      "Singkil", "Devayan", "Mentawai",
                                      "Rejang", "Serawai", "Minahasan",
+                                     # Indonesia's 2010 census row for the
+                                     # peoples of Maluku and North Maluku
+                                     # taken together: the Austronesian
+                                     # peoples of Ambon, Seram, Kei and
+                                     # Tanimbar, and the north Halmahera
+                                     # peoples (Ternate, Tidore, Tobelo,
+                                     # Galela), whose languages are Papuan.
+                                     # It is filed here as a bundle of the
+                                     # Moluccas' peoples, beside the other
+                                     # regional bundles, and not as a claim
+                                     # that every language in it is
+                                     # Austronesian.
+                                     "Moluccan",
+                                     # Hong Kong's census asks ethnicity: its
+                                     # Indonesians (most of them domestic
+                                     # workers from Java) under the qualified
+                                     # name, apart from the nationality.
+                                     "Indonesian (Hong Kong)",
                                      "Gorontalo", "Torajan", "Kutai", "Paser",
                                      "Butonese", "Berau", "Mandar",
                                      "Florenese", "Mamuju", "Palembang",
@@ -2215,7 +2613,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                                      "Riau peoples", "Other Java peoples",
                                      "Other Kalimantan peoples",
                                      "Other indigenous Bengkulu peoples"),
-    "Philippine peoples": ("Tinananen", "Kabayukan"),
+    "Philippine peoples": ("Tinananen", "Kabayukan",
+                           # The PSA's 2020 ethnicity table (uscb's
+                           # Philippines): Imalawa, counted in all seventeen
+                           # regions and in no other country's table, was
+                           # filed among the Berber peoples by its first
+                           # syllable; and the Batak of Palawan, a Negrito
+                           # people, written "Batak (Palawan)" by uscb so that
+                           # it is not read as Sumatra's Batak.
+                           "Imalawa", "Batak (Palawan)"),
     # Poland's ethnographic regions, which its census counts as separate
     # declarations of ethnicity beside Silesian and Kashubian.
     "Slavic peoples": ("Hutsul", "Pomeranian", "Kociewian", "Kurpian",
@@ -2229,18 +2635,39 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                                  "Nganasan", "Livonian"),
     "Caucasian peoples": ("Shapsug",),
     "Armenian peoples": ("Hemshin",),
-    "Turkic peoples": ("Soyot", "Teleut", "Chulym", "Kumandin", "Chelkan",
+    # The Yugur of Gansu, one of China's 56 nationalities, named for and
+    # descended from the Uyghur khaganate's Hexi remnant. Western Yugur is
+    # Turkic; the Eastern Yugur speak a Mongolic language, and many Yugur
+    # speak Chinese. Filed by the people's own Turkic name and origin.
+    "Turkic peoples": ("Yugur",
+                       "Soyot", "Teleut", "Chulym", "Kumandin", "Chelkan",
                        "Tubalar",
                        # The Salar of Qinghai, whose language is Oghuz.
                        "Salar"),
     "Horn of Africa peoples": ("Orma", "Borana", "Bilen", "Tigre"),
     # Kondo is the Bureau's spelling of Khond, whose Kui is Dravidian.
-    "Dravidian peoples": ("Bharatha", "Kondo"),
+    "Dravidian peoples": ("Bharatha", "Kondo",
+                          # Nepal's Kisan of Jhapa, kin of the Kurukh
+                          # (Oraon), whose Kisan language the language tree
+                          # files as Dravidian. The prefix rule read the
+                          # name as "Ki-" on the San of the Kalahari.
+                          "Kisan",
+                          # Sri Lanka's Chetty, a Tamil-origin merchant
+                          # community its census counts apart. Read by its
+                          # first word, it was filed as the nationality.
+                          "Sri Lankan Chetty"),
     # The Austroasiatic peoples of Bangladesh's north-west, whom the
     # schedule lists beside the Santal the tree already carries. Saontal is
     # the Bureau's spelling of that same people.
     "Munda peoples": ("Saontal", "Mahali", "Kora", "Turi", "Kol", "Shobor"),
     "Polynesian peoples": ("Futunian", "Native Hawaiian"),
+    # Fiji's indigenous people by their own name, as the Factbook writes
+    # Fiji's country row; the census's "Fijian (iTaukei)" is the same answer.
+    # It had been listed with the small territories' islander identities.
+    "Melanesian peoples": ("iTaukei",),
+    # The Factbook's name for the FSM 2000 census's "Yap Outer Islander"
+    # column: the Ulithian, Woleaian and Satawalese of Yap's outer islands.
+    "Micronesian peoples": ("Yap outer islanders",),
     "Aboriginal and Torres Strait Islander peoples": ("Australian Aboriginal",),
     "Hispanic or Latino (census category)": (
         "Latino",
@@ -2259,9 +2686,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # category: Costa Rica's white or mestizo, Argentina's European and
         # mestizo, Chile's white and non-indigenous remainder, and the
         # Dominican Republic's mestizo or indio (a colour term there, not
-        # indigenous descent).
+        # indigenous descent), and Colombia's Factbook mestizo and white.
         "White or Mestizo", "European and Mestizo", "White and non-Indigenous",
-        "Mestizo or Indio",
+        "Mestizo or Indio", "Mestizo and White",
         # Ecuador's coastal mestizo people, and Bolivia's cholo.
         "Montubio", "Cholo/Chola",
     ),
@@ -2319,6 +2746,31 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # published groups beside Caucasian, Asian, Arab, African and Hispanic
         # or Latino (malta_census).
         "More than one racial origin",
+        # The Pacific censuses' answers of two descents: Vanuatu's Part
+        # Ni-Vanuatu (vanuatu_census), Fiji's Part-European (fiji_census),
+        # Tuvalu's "Tuvaluan / I-Kiribati" and "Tuvaluan / Other"
+        # (tuvalu_census), and the FSM's mixed answers whose main ethnicity was
+        # neither a Micronesian people nor named (micronesia_census). By their
+        # words alone the first three file under one half, and the answer was
+        # both.
+        "Part Ni-Vanuatu", "Part-European", "Tuvaluan and I-Kiribati",
+        "Tuvaluan and other", "Other mixed ethnicity",
+        # The same answers as the Factbook writes Tuvalu's, with a slash
+        # that the spelling rule reads as two names for one people; and
+        # Kiribati's census row for I-Kiribati of mixed descent.
+        "Tuvaluan/I-Kiribati", "Tuvaluan/other", "I-Kiribati/mixed",
+        # Trinidad and Tobago's country row: people of African and East
+        # Indian descent together, which the slash rule had read as East
+        # Indian alone.
+        "mixed - African/East Indian",
+        # Macao's descent categories for people of two descents, of which
+        # the word rules read only one half (and "non-Portuguese" names no
+        # people at all); the Bahamas' 2010 census answers that name two
+        # races; and Haiti's Factbook "mixed and White", most of whom are
+        # of mixed descent.
+        "Chinese and Portuguese", "Chinese and non-Portuguese",
+        "Portuguese and others", "Black and other", "White and other",
+        "mixed and White",
     ),
     "Middle Eastern or North African (census category)": (
         "Arab, Arab Scottish or Arab British",
@@ -2341,19 +2793,37 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "African descent or African-American",
         "African, African Scottish or African British",
         "Black, Black Scottish or Black British",
+        # Scotland's Caribbean group, in its "Caribbean or Black" section.
+        # Left to the compound rule, its "Scottish" and "British" filed it
+        # under the Germanic peoples.
+        "Caribbean, Caribbean Scottish or Caribbean British",
+        # Mauritius's community of African and Malagasy descent, the census
+        # category beside "Euro-Mauricien (Blanc)" below. Its bracketed
+        # "Creole" had filed it with the Afro-descendant peoples of the
+        # Americas.
+        "Afro-Mauricien (Creole)",
         # Honduras's P06 "Otro" for someone who told P05 they are
         # Afro-Honduran or Black: of no people the form lists, neither
         # Garifuna nor the English-speaking Black people of the Bay Islands.
         "Afro-Honduran or Black (no people listed)",
     ),
     "Asian (census category)": (
-        "Asian Indian",
-        "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "Chinese, Chinese Scottish or Chinese British",
-        "Indian, Indian Scottish or Indian British",
-        "Pakistani, Pakistani Scottish or Pakistani British",
-        "Peoples of India and Pakistan",
     ),
+    "Indian (census category)": (
+        "Indian, Indian Scottish or Indian British",
+    ),
+    "South Asian (census category)": (
+        "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
+        "Pakistani, Pakistani Scottish or Pakistani British",
+    ),
+    # The Soviet censuses' "народы Индии и Пакистана", which Kazakhstan's and
+    # Kyrgyzstan's censuses still count as one group: South Asian peoples of
+    # two states, so filed under the ancestry and under neither state. As a
+    # census category of Asians it sat under East and Southeast Asian
+    # ancestry, and Kyrgyzstan's spelling of it ("People of ...") was read by
+    # the word rule as India alone.
+    "South Asian ancestry": ("Peoples of India and Pakistan",),
     # Scotland counts Gypsy/Travellers inside its White section, as England
     # and Wales count "White: Gypsy or Irish Traveller", which the table
     # already carries.
@@ -2454,6 +2924,21 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     "Wergigna": "Werji", "Kontigna": "Konta", "Messengogna": "Messengo",
     # Bhutan names Nepali after the south of the country.
     "Lhotshamkha": "Nepali", "Pashaie": "Pashai",
+    # CLEAR Global's Nepal file writes Glottolog's spellings of mother
+    # tongues the census table already places under its own: Acchami,
+    # Bajurali, Athpariya, Belhariya, Byangsi, Chintang, Koi (Koyee),
+    # Nachering, Tichurong, Wayu (Vayu, Hayu), Baraamu (Baram), Thangmi
+    # (Thami) and Chantyal (Chhantyal). (Its "Camling" is placed directly
+    # instead: Nepal's country row sums provinces read from both sources and
+    # prints Camling beside the census's Chamling.)
+    "Acchami": "Achhami", "Bajurali": "Bajureli",
+    "Athpariya": "Athpahariya", "Belhariya": "Belhare", "Byangsi": "Byansi",
+    "Chintang": "Chhintang", "Koi": "Koyee", "Nachering": "Nachhiring",
+    "Tichurong": "Tichhurong", "Wayu": "Vayu", "Baraamu": "Baram",
+    "Thangmi": "Thami", "Chantyal": "Chhantyal",
+    # Glottolog's name for the Armenian language (CLEAR Global's Iraq and
+    # Ukraine files), and Fiji's language as its Factbook row names it.
+    "Armenic": "Armenian", "iTaukei": "Fijian",
 }
 
 ETHNIC_VARIANTS: dict[str, str] = {
@@ -2475,6 +2960,12 @@ ETHNIC_VARIANTS: dict[str, str] = {
     # the Kalmyks, and Балба -- which is the Mongolian for Nepal -- the
     # Nepalis that two aimags' books name among their citizens.
     "Tuva": "Tuvan", "Khalimag": "Kalmyk", "Balba": "Nepali",
+    # The Factbook's Japan row writes the country where it means its
+    # nationals, beside "Chinese" and "South Korean" in the same line.
+    "Vietnam": "Vietnamese",
+    # Cameroon's Maka, the Makaa of the East Region (Bantu A.83). The
+    # prefix rule read "M-" on the Aka of the Lobaye.
+    "Maka": "Makaa",
     "Makuwa": "Makua", "Mmakuwa": "Makua",
     "Bakwa Kalonji": "Kalonji", "Mb\u00e9d\u00e8": "Mbete", "Muha": "Ha",
     "Lorma": "Loma",
@@ -2689,9 +3180,48 @@ _EMPTY_WORDS = frozenset({
 })
 
 
+# A word that says the answer is *not* the name after it: "non-Qatari",
+# "not Jews or Arabs". A rule that reads a label by its words must not file
+# it under the very name it excludes -- that put Qatar's non-Qataris, 88% of
+# its residents, among the Arab peoples, and Papua New Guinea's
+# non-Christians among the Protestants.
+_NEGATIONS = frozenset({"non", "not"})
+_NEGATED_BEFORE = re.compile(r"(?i)(?:^|[\s(/,\-])(?:non|not)[\s\-]*$")
+
+
+def _unnegated(name: str, root: str) -> bool:
+    """True if ``root`` occurs in ``name`` somewhere it is not negated.
+
+    "Non-practising Catholic" is a Catholic: the negation is on the word
+    before. "non-Christian" and "other non-Christian" are not Christians.
+    """
+    start = 0
+    while True:
+        at = name.find(root, start)
+        if at < 0:
+            return False
+        if not _NEGATED_BEFORE.search(name[:at]):
+            return True
+        start = at + 1
+
+
 def _constituents(name: str) -> list[str]:
-    """The parts of ``name`` that could each name a group on their own."""
-    words = [w for w in re.split(r"[\s,/()\-]+", name) if w]
+    """The parts of ``name`` that could each name a group on their own.
+
+    A word a negation governs is not one of them: "non-Qatari" names no
+    Qatari, so it has no part that could place it.
+    """
+    raw = [w for w in re.split(r"[\s,/()\-]+", name) if w]
+    words: list[str] = []
+    skip = False
+    for w in raw:
+        if skip:
+            skip = False
+            continue
+        if w.lower() in _NEGATIONS:
+            skip = True
+            continue
+        words.append(w)
     words = [w for w in words
              if len(w) > 2 and w.lower().strip(".") not in _EMPTY_WORDS]
     out = list(words)
@@ -2754,6 +3284,40 @@ def agreed_parent(field: str, name: str) -> str | None:
     return cache[name]
 
 
+# "<Adjective> national(s)" and "<Adjective> citizen(s)": a row a source has
+# written as a passport count on purpose, so that it is not read as the
+# people of the same name (iran_census, syria_census and the rest).
+_PASSPORT = re.compile(r"([A-Z][\w'’.\-]*(?: [A-Z][\w'’.\-]*)*) "
+                       r"(?:national|nationals|citizen|citizens)")
+_NOT_A_STATE = frozenset({"other", "foreign", "all", "some", "eu", "gcc"})
+
+
+def nationality_parent(field: str, name: str) -> str | None:
+    """Where a label written as a nationality goes: always a nationality.
+
+    Without this, the compound rule read "Japanese national" through its
+    first word and filed it with the Japanese people -- the one reading the
+    source had written the suffix to prevent. Every such label the shipped
+    data carries is also named in the tables; this keeps the next one in
+    line with them. A settler nation's passport stays with the settler
+    nations.
+    """
+    if field != "ethnicity":
+        return None
+    match = _PASSPORT.fullmatch(name.strip())
+    if match is None:
+        return None
+    stem = match.group(1)
+    first = stem.split()[0].lower()
+    # "Other EU nationals", "Foreign nationals", "Non-Ugandan nationals":
+    # a remainder or an exclusion, which names no state.
+    if first in _NOT_A_STATE or first.startswith("non"):
+        return None
+    if stem in ETHNIC_NATIONALITY["Settler-nation identities"]:
+        return "Settler-nation identities"
+    return "Other national identities"
+
+
 def pattern_parent(field: str, name: str) -> str | None:
     """The family a name falls in by its root word, where no exact name did.
 
@@ -2764,7 +3328,7 @@ def pattern_parent(field: str, name: str) -> str | None:
     if field == "religion":
         for parent, roots in RELIGION_PATTERNS:
             for root in roots:
-                if root in name:
+                if _unnegated(name, root):
                     return parent
         return None
     if field != "ethnicity":
@@ -2773,7 +3337,7 @@ def pattern_parent(field: str, name: str) -> str | None:
         return ETHNIC_PATTERN_EXCEPTIONS[name]
     for parent, roots in ETHNIC_PATTERNS:
         for root in roots:
-            if root in name:
+            if _unnegated(name, root):
                 return parent
     return None
 
@@ -2830,7 +3394,17 @@ def _folded(field: str) -> dict[str, str]:
 # argued over, as the Ashkali's origin is; agreed_parent reads "Balkan
 # Egyptian" as Egypt's Egyptians and files it under Arab peoples, on another
 # continent. Like Ashkali (which no rule reaches), it is left unplaced.
-UNPLACED: dict[str, frozenset[str]] = {"ethnicity": frozenset({"Balkan Egyptian"})}
+#
+# New Zealand's level-1 "Middle Eastern/Latin American/African" group is
+# three ancestries that share no node, pooled because each is small. It is
+# the welded answer agreed_parent refuses ("African and Mestizo"), but its
+# slashes read as alternate spellings and handed it to the first of the
+# three, so every one of New Zealand's regions drew its Latin Americans and
+# Africans as Middle Eastern. Left unplaced, it is shown as what it is.
+UNPLACED: dict[str, frozenset[str]] = {
+    "ethnicity": frozenset({"Balkan Egyptian",
+                            "Middle Eastern/Latin American/African"}),
+}
 
 
 def parent_of(field: str, name: str, table: dict[str, str] | None = None,
@@ -2871,6 +3445,9 @@ def parent_of(field: str, name: str, table: dict[str, str] | None = None,
             return folded[form.lower()]
         if form != name and form in tops:
             return form
+    by_passport = nationality_parent(field, name)
+    if by_passport is not None:
+        return by_passport
     by_root = pattern_parent(field, name)
     if by_root is not None:
         return by_root
@@ -3114,6 +3691,19 @@ FAMILY_HUE: dict[str, dict[str, str]] = {
         "Other religions": "#00A0B0",
         "Not stated": "#B0B7BC",
         "Unaffiliated or not reported": "#95A5A6",
+    },
+    # One exception to the rotation, where the rotation runs out of room.
+    # East and Southeast Asian ancestry has eleven families inside its 60
+    # degrees, and the eleventh landed within a hair of the third and the
+    # seventh: drawn at the map's share ramp, which keeps a colour's hue and
+    # saturation and sets its lightness, the Tibeto-Burman peoples, the
+    # Korean peoples and the Philippine peoples were the same colour (CIE76
+    # difference about 1-2), and Poland's Tibetan, Korean and Filipino
+    # slices could not be told apart. This is the band's hue turned 27
+    # degrees towards violet at full saturation: at least 24 from every
+    # other family of every band at the ramp's three test lightnesses.
+    "ethnicity": {
+        "Tibeto-Burman peoples of China and Southeast Asia": "#f938fa",
     },
 }
 

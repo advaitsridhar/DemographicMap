@@ -16,10 +16,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 43.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.9,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -33,14 +39,14 @@
         "count": 15213
       },
       {
-        "group": "Christian nfd",
-        "pct": 7.2,
-        "count": 13914
-      },
-      {
         "group": "Catholicism",
         "pct": 7.2,
         "count": 13980
+      },
+      {
+        "group": "Christian nfd",
+        "pct": 7.2,
+        "count": 13914
       },
       {
         "group": "Anglican",
@@ -78,24 +84,24 @@
         "count": 1998
       },
       {
-        "group": "Hinduism",
-        "pct": 0.7,
-        "count": 1395
-      },
-      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.7,
         "count": 1269
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.6,
-        "count": 1107
+        "group": "Hinduism",
+        "pct": 0.7,
+        "count": 1395
       },
       {
         "group": "Baptist",
         "pct": 0.6,
         "count": 1182
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 1107
       },
       {
         "group": "Other religions",
@@ -138,14 +144,14 @@
         "count": 480
       },
       {
-        "group": "Ringatū",
-        "pct": 0.1,
-        "count": 219
-      },
-      {
         "group": "Judaism",
         "pct": 0.1,
         "count": 177
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.1,
+        "count": 219
       },
       {
         "group": "Not elsewhere included",
@@ -175,14 +181,14 @@
         "count": 3735
       },
       {
-        "group": "German",
-        "pct": 0.9,
-        "count": 1776
-      },
-      {
         "group": "French",
         "pct": 0.9,
         "count": 1758
+      },
+      {
+        "group": "German",
+        "pct": 0.9,
+        "count": 1776
       },
       {
         "group": "Afrikaans",
@@ -215,6 +221,11 @@
         "count": 660
       },
       {
+        "group": "Northern Chinese",
+        "pct": 0.2,
+        "count": 405
+      },
+      {
         "group": "Panjabi",
         "pct": 0.2,
         "count": 387
@@ -223,11 +234,6 @@
         "group": "Tongan",
         "pct": 0.2,
         "count": 381
-      },
-      {
-        "group": "Northern Chinese",
-        "pct": 0.2,
-        "count": 405
       },
       {
         "group": "Sinitic not further defined",
@@ -284,7 +290,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -299,7 +305,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 95,949 males and 98,055 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-02",
@@ -318,10 +326,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 35.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -380,14 +394,14 @@
         "count": 29679
       },
       {
-        "group": "Sikhism",
-        "pct": 1.7,
-        "count": 28401
-      },
-      {
         "group": "Other Christian religions",
         "pct": 1.7,
         "count": 28203
+      },
+      {
+        "group": "Sikhism",
+        "pct": 1.7,
+        "count": 28401
       },
       {
         "group": "Latter-day Saints",
@@ -400,11 +414,6 @@
         "count": 12645
       },
       {
-        "group": "Ratana",
-        "pct": 0.7,
-        "count": 10869
-      },
-      {
         "group": "Baptist",
         "pct": 0.7,
         "count": 11520
@@ -415,19 +424,24 @@
         "count": 10845
       },
       {
+        "group": "Ratana",
+        "pct": 0.7,
+        "count": 10869
+      },
+      {
         "group": "Adventist",
         "pct": 0.6,
         "count": 9555
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.3,
-        "count": 5505
-      },
-      {
         "group": "Jedi",
         "pct": 0.3,
         "count": 4647
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 5505
       },
       {
         "group": "Spiritualism and New Age religions",
@@ -440,14 +454,14 @@
         "count": 2592
       },
       {
-        "group": "Ringatū",
-        "pct": 0.1,
-        "count": 1350
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
         "count": 2040
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.1,
+        "count": 1350
       },
       {
         "group": "Not elsewhere included",
@@ -522,14 +536,14 @@
         "count": 19599
       },
       {
-        "group": "Spanish",
-        "pct": 1.1,
-        "count": 17412
-      },
-      {
         "group": "French",
         "pct": 1.1,
         "count": 17574
+      },
+      {
+        "group": "Spanish",
+        "pct": 1.1,
+        "count": 17412
       },
       {
         "group": "German",
@@ -586,7 +600,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -601,7 +615,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 821,733 males and 834,753 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-03",
@@ -620,10 +636,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.6,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -677,9 +699,9 @@
         "count": 5889
       },
       {
-        "group": "Ratana",
+        "group": "Methodist",
         "pct": 1.2,
-        "count": 5925
+        "count": 6012
       },
       {
         "group": "Other Christian religions",
@@ -687,9 +709,9 @@
         "count": 5925
       },
       {
-        "group": "Methodist",
+        "group": "Ratana",
         "pct": 1.2,
-        "count": 6012
+        "count": 5925
       },
       {
         "group": "Pentecostal",
@@ -702,14 +724,14 @@
         "count": 4296
       },
       {
-        "group": "Evangelical, Born Again and Fundamentalist",
-        "pct": 0.7,
-        "count": 3381
-      },
-      {
         "group": "Baptist",
         "pct": 0.7,
         "count": 3444
+      },
+      {
+        "group": "Evangelical, Born Again and Fundamentalist",
+        "pct": 0.7,
+        "count": 3381
       },
       {
         "group": "Jehovah's Witnesses",
@@ -717,14 +739,14 @@
         "count": 2304
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.5,
-        "count": 2259
-      },
-      {
         "group": "Other religions",
         "pct": 0.5,
         "count": 2460
+      },
+      {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.5,
+        "count": 2259
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -732,14 +754,14 @@
         "count": 2070
       },
       {
-        "group": "Jedi",
-        "pct": 0.3,
-        "count": 1668
-      },
-      {
         "group": "Adventist",
         "pct": 0.3,
         "count": 1563
+      },
+      {
+        "group": "Jedi",
+        "pct": 0.3,
+        "count": 1668
       },
       {
         "group": "Ringatū",
@@ -779,6 +801,11 @@
         "count": 11064
       },
       {
+        "group": "Afrikaans",
+        "pct": 1.2,
+        "count": 6048
+      },
+      {
         "group": "Hindi",
         "pct": 1.2,
         "count": 6132
@@ -787,11 +814,6 @@
         "group": "Panjabi",
         "pct": 1.2,
         "count": 6060
-      },
-      {
-        "group": "Afrikaans",
-        "pct": 1.2,
-        "count": 6048
       },
       {
         "group": "Northern Chinese",
@@ -814,9 +836,9 @@
         "count": 3309
       },
       {
-        "group": "Sinitic not further defined",
+        "group": "German",
         "pct": 0.6,
-        "count": 2967
+        "count": 2922
       },
       {
         "group": "Samoan",
@@ -824,9 +846,9 @@
         "count": 2805
       },
       {
-        "group": "German",
+        "group": "Sinitic not further defined",
         "pct": 0.6,
-        "count": 2922
+        "count": 2967
       },
       {
         "group": "New Zealand Sign Language",
@@ -888,7 +910,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -903,7 +925,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 247,587 males and 251,184 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-04",
@@ -922,10 +946,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 39.7,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 96.1,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -1034,14 +1064,14 @@
         "count": 1365
       },
       {
-        "group": "Islam",
-        "pct": 0.3,
-        "count": 1158
-      },
-      {
         "group": "Adventist",
         "pct": 0.3,
         "count": 879
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 1158
       },
       {
         "group": "Jedi",
@@ -1096,14 +1126,14 @@
         "count": 3021
       },
       {
-        "group": "Hindi",
-        "pct": 0.8,
-        "count": 2511
-      },
-      {
         "group": "French",
         "pct": 0.8,
         "count": 2586
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.8,
+        "count": 2511
       },
       {
         "group": "German",
@@ -1121,14 +1151,14 @@
         "count": 1494
       },
       {
-        "group": "Samoan",
-        "pct": 0.4,
-        "count": 1188
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.4,
         "count": 1491
+      },
+      {
+        "group": "Samoan",
+        "pct": 0.4,
+        "count": 1188
       },
       {
         "group": "Sinitic not further defined",
@@ -1190,7 +1220,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -1205,7 +1235,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 163,713 males and 170,427 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-05",
@@ -1224,10 +1256,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.7,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.8,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -1276,14 +1314,14 @@
         "count": 834
       },
       {
-        "group": "Other Māori religions, beliefs and philosophies",
-        "pct": 1.0,
-        "count": 492
-      },
-      {
         "group": "Methodist",
         "pct": 1.0,
         "count": 507
+      },
+      {
+        "group": "Other Māori religions, beliefs and philosophies",
+        "pct": 1.0,
+        "count": 492
       },
       {
         "group": "Pentecostal",
@@ -1296,19 +1334,14 @@
         "count": 444
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.6,
-        "count": 324
-      },
-      {
         "group": "Hinduism",
         "pct": 0.6,
         "count": 282
       },
       {
-        "group": "Other religions",
-        "pct": 0.5,
-        "count": 243
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 324
       },
       {
         "group": "Evangelical, Born Again and Fundamentalist",
@@ -1316,14 +1349,14 @@
         "count": 270
       },
       {
+        "group": "Other religions",
+        "pct": 0.5,
+        "count": 243
+      },
+      {
         "group": "Spiritualism and New Age religions",
         "pct": 0.5,
         "count": 252
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.4,
-        "count": 183
       },
       {
         "group": "Baptist",
@@ -1331,14 +1364,19 @@
         "count": 180
       },
       {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 183
+      },
+      {
         "group": "Sikhism",
         "pct": 0.4,
         "count": 198
       },
       {
-        "group": "Jedi",
+        "group": "Adventist",
         "pct": 0.3,
-        "count": 141
+        "count": 162
       },
       {
         "group": "Islam",
@@ -1346,9 +1384,9 @@
         "count": 132
       },
       {
-        "group": "Adventist",
+        "group": "Jedi",
         "pct": 0.3,
-        "count": 162
+        "count": 141
       },
       {
         "group": "Judaism",
@@ -1393,22 +1431,22 @@
         "count": 351
       },
       {
-        "group": "Spanish",
-        "pct": 0.6,
-        "count": 288
-      },
-      {
         "group": "French",
         "pct": 0.6,
         "count": 297
       },
       {
-        "group": "Samoan",
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 288
+      },
+      {
+        "group": "German",
         "pct": 0.5,
         "count": 246
       },
       {
-        "group": "German",
+        "group": "Samoan",
         "pct": 0.5,
         "count": 246
       },
@@ -1438,14 +1476,14 @@
         "count": 87
       },
       {
-        "group": "Sinitic not further defined",
-        "pct": 0.1,
-        "count": 60
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.1,
         "count": 63
+      },
+      {
+        "group": "Sinitic not further defined",
+        "pct": 0.1,
+        "count": 60
       },
       {
         "group": "Not elsewhere included",
@@ -1492,7 +1530,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -1507,7 +1545,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 25,413 males and 25,722 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-06",
@@ -1526,10 +1566,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 40.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 96.1,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -1608,16 +1654,6 @@
         "count": 1068
       },
       {
-        "group": "Other religions",
-        "pct": 0.5,
-        "count": 846
-      },
-      {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.5,
-        "count": 798
-      },
-      {
         "group": "Baptist",
         "pct": 0.5,
         "count": 798
@@ -1628,14 +1664,24 @@
         "count": 795
       },
       {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 882
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.5,
+        "count": 846
+      },
+      {
         "group": "Ringatū",
         "pct": 0.5,
         "count": 840
       },
       {
-        "group": "Jehovah's Witnesses",
+        "group": "Spiritualism and New Age religions",
         "pct": 0.5,
-        "count": 882
+        "count": 798
       },
       {
         "group": "Jedi",
@@ -1705,19 +1751,9 @@
         "count": 1365
       },
       {
-        "group": "Tagalog",
+        "group": "German",
         "pct": 0.6,
-        "count": 1038
-      },
-      {
-        "group": "Spanish",
-        "pct": 0.6,
-        "count": 990
-      },
-      {
-        "group": "New Zealand Sign Language",
-        "pct": 0.6,
-        "count": 1032
+        "count": 1110
       },
       {
         "group": "Hindi",
@@ -1725,9 +1761,19 @@
         "count": 1002
       },
       {
-        "group": "German",
+        "group": "New Zealand Sign Language",
         "pct": 0.6,
-        "count": 1110
+        "count": 1032
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 990
+      },
+      {
+        "group": "Tagalog",
+        "pct": 0.6,
+        "count": 1038
       },
       {
         "group": "Northern Chinese",
@@ -1794,7 +1840,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -1809,7 +1855,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 85,800 males and 89,274 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-07",
@@ -1828,10 +1876,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 40.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -1885,14 +1939,14 @@
         "count": 1173
       },
       {
-        "group": "Ratana",
-        "pct": 0.6,
-        "count": 807
-      },
-      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.6,
         "count": 723
+      },
+      {
+        "group": "Ratana",
+        "pct": 0.6,
+        "count": 807
       },
       {
         "group": "Baptist",
@@ -1900,19 +1954,14 @@
         "count": 666
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.5,
-        "count": 621
-      },
-      {
         "group": "Islam",
         "pct": 0.5,
         "count": 627
       },
       {
-        "group": "Jedi",
-        "pct": 0.4,
-        "count": 492
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.5,
+        "count": 621
       },
       {
         "group": "Buddhism",
@@ -1920,9 +1969,14 @@
         "count": 486
       },
       {
-        "group": "Other religions",
+        "group": "Jedi",
         "pct": 0.4,
-        "count": 552
+        "count": 492
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 528
       },
       {
         "group": "Latter-day Saints",
@@ -1930,9 +1984,9 @@
         "count": 501
       },
       {
-        "group": "Jehovah's Witnesses",
+        "group": "Other religions",
         "pct": 0.4,
-        "count": 528
+        "count": 552
       },
       {
         "group": "Sikhism",
@@ -2002,9 +2056,9 @@
         "count": 789
       },
       {
-        "group": "Spanish",
+        "group": "German",
         "pct": 0.5,
-        "count": 687
+        "count": 693
       },
       {
         "group": "New Zealand Sign Language",
@@ -2012,9 +2066,9 @@
         "count": 597
       },
       {
-        "group": "German",
+        "group": "Spanish",
         "pct": 0.5,
-        "count": 693
+        "count": 687
       },
       {
         "group": "Hindi",
@@ -2032,14 +2086,14 @@
         "count": 330
       },
       {
-        "group": "Sinitic not further defined",
-        "pct": 0.2,
-        "count": 216
-      },
-      {
         "group": "Panjabi",
         "pct": 0.2,
         "count": 297
+      },
+      {
+        "group": "Sinitic not further defined",
+        "pct": 0.2,
+        "count": 216
       },
       {
         "group": "Yue",
@@ -2096,7 +2150,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -2111,7 +2165,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 62,415 males and 63,603 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-08",
@@ -2130,10 +2186,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 39.7,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.4,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -2202,11 +2264,6 @@
         "count": 1563
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.6,
-        "count": 1410
-      },
-      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.6,
         "count": 1566
@@ -2217,9 +2274,9 @@
         "count": 1542
       },
       {
-        "group": "Other religions",
-        "pct": 0.5,
-        "count": 1338
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.6,
+        "count": 1410
       },
       {
         "group": "Baptist",
@@ -2227,19 +2284,24 @@
         "count": 1314
       },
       {
+        "group": "Other religions",
+        "pct": 0.5,
+        "count": 1338
+      },
+      {
         "group": "Adventist",
         "pct": 0.4,
         "count": 942
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.4,
-        "count": 906
-      },
-      {
         "group": "Jedi",
         "pct": 0.4,
         "count": 1026
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 906
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -2252,14 +2314,14 @@
         "count": 789
       },
       {
-        "group": "Ringatū",
-        "pct": 0.1,
-        "count": 342
-      },
-      {
         "group": "Judaism",
         "pct": 0.1,
         "count": 159
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.1,
+        "count": 342
       },
       {
         "group": "Not elsewhere included",
@@ -2309,11 +2371,6 @@
         "count": 1773
       },
       {
-        "group": "Tagalog",
-        "pct": 0.6,
-        "count": 1473
-      },
-      {
         "group": "Hindi",
         "pct": 0.6,
         "count": 1485
@@ -2324,9 +2381,9 @@
         "count": 1410
       },
       {
-        "group": "Yue",
-        "pct": 0.5,
-        "count": 1188
+        "group": "Tagalog",
+        "pct": 0.6,
+        "count": 1473
       },
       {
         "group": "German",
@@ -2339,19 +2396,24 @@
         "count": 1299
       },
       {
+        "group": "Yue",
+        "pct": 0.5,
+        "count": 1188
+      },
+      {
         "group": "Panjabi",
         "pct": 0.3,
         "count": 810
       },
       {
-        "group": "Tongan",
-        "pct": 0.3,
-        "count": 693
-      },
-      {
         "group": "Sinitic not further defined",
         "pct": 0.3,
         "count": 723
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.3,
+        "count": 693
       },
       {
         "group": "Not elsewhere included",
@@ -2398,7 +2460,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -2418,7 +2480,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 124,023 males and 127,383 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-09",
@@ -2437,10 +2501,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.8,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -2489,14 +2559,14 @@
         "count": 6594
       },
       {
-        "group": "Pentecostal",
-        "pct": 1.2,
-        "count": 6369
-      },
-      {
         "group": "Buddhism",
         "pct": 1.2,
         "count": 6387
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.2,
+        "count": 6369
       },
       {
         "group": "Methodist",
@@ -2519,9 +2589,9 @@
         "count": 3195
       },
       {
-        "group": "Spiritualism and New Age religions",
+        "group": "Baptist",
         "pct": 0.5,
-        "count": 2553
+        "count": 2730
       },
       {
         "group": "Ratana",
@@ -2529,14 +2599,14 @@
         "count": 2526
       },
       {
-        "group": "Baptist",
-        "pct": 0.5,
-        "count": 2730
-      },
-      {
         "group": "Sikhism",
         "pct": 0.5,
         "count": 2370
+      },
+      {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.5,
+        "count": 2553
       },
       {
         "group": "Jedi",
@@ -2544,14 +2614,14 @@
         "count": 2313
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.3,
-        "count": 1476
-      },
-      {
         "group": "Adventist",
         "pct": 0.3,
         "count": 1437
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 1476
       },
       {
         "group": "Judaism",
@@ -2559,14 +2629,14 @@
         "count": 1014
       },
       {
-        "group": "Ringatū",
-        "pct": 0.1,
-        "count": 636
-      },
-      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
         "count": 738
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.1,
+        "count": 636
       },
       {
         "group": "Not elsewhere included",
@@ -2705,7 +2775,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -2720,7 +2790,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 254,934 males and 266,034 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-12",
@@ -2739,10 +2811,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 48.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.8,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -2796,9 +2874,9 @@
         "count": 186
       },
       {
-        "group": "Pentecostal",
+        "group": "Jedi",
         "pct": 0.5,
-        "count": 174
+        "count": 183
       },
       {
         "group": "Methodist",
@@ -2806,14 +2884,9 @@
         "count": 180
       },
       {
-        "group": "Jedi",
+        "group": "Pentecostal",
         "pct": 0.5,
-        "count": 183
-      },
-      {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.4,
-        "count": 129
+        "count": 174
       },
       {
         "group": "Buddhism",
@@ -2826,14 +2899,19 @@
         "count": 120
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.3,
-        "count": 84
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 129
       },
       {
         "group": "Baptist",
         "pct": 0.3,
         "count": 108
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.3,
+        "count": 84
       },
       {
         "group": "Islam",
@@ -2846,14 +2924,9 @@
         "count": 63
       },
       {
-        "group": "Sikhism",
+        "group": "Adventist",
         "pct": 0.1,
         "count": 45
-      },
-      {
-        "group": "Other Māori religions, beliefs and philosophies",
-        "pct": 0.1,
-        "count": 24
       },
       {
         "group": "Judaism",
@@ -2861,19 +2934,24 @@
         "count": 18
       },
       {
-        "group": "Adventist",
+        "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
-        "count": 45
+        "count": 24
       },
       {
-        "group": "Ringatū",
-        "pct": 0.0,
-        "count": 12
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 45
       },
       {
         "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.0,
+        "count": 12
       }
     ],
     "language": [
@@ -2903,14 +2981,14 @@
         "count": 264
       },
       {
-        "group": "Tagalog",
-        "pct": 0.6,
-        "count": 201
-      },
-      {
         "group": "Afrikaans",
         "pct": 0.6,
         "count": 198
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 216
       },
       {
         "group": "Spanish",
@@ -2918,9 +2996,9 @@
         "count": 186
       },
       {
-        "group": "French",
+        "group": "Tagalog",
         "pct": 0.6,
-        "count": 216
+        "count": 201
       },
       {
         "group": "New Zealand Sign Language",
@@ -2933,11 +3011,6 @@
         "count": 84
       },
       {
-        "group": "Sinitic not further defined",
-        "pct": 0.2,
-        "count": 54
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.2,
         "count": 57
@@ -2948,14 +3021,19 @@
         "count": 63
       },
       {
-        "group": "Yue",
-        "pct": 0.1,
-        "count": 27
+        "group": "Sinitic not further defined",
+        "pct": 0.2,
+        "count": 54
       },
       {
         "group": "Panjabi",
         "pct": 0.1,
         "count": 33
+      },
+      {
+        "group": "Yue",
+        "pct": 0.1,
+        "count": 27
       },
       {
         "group": "Not elsewhere included",
@@ -3007,7 +3085,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -3022,7 +3100,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 17,085 males and 16,305 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-13",
@@ -3041,10 +3121,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 39.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -3108,11 +3194,6 @@
         "count": 5295
       },
       {
-        "group": "Sikhism",
-        "pct": 0.7,
-        "count": 4842
-      },
-      {
         "group": "Baptist",
         "pct": 0.7,
         "count": 4263
@@ -3121,6 +3202,11 @@
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.7,
         "count": 4557
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.7,
+        "count": 4842
       },
       {
         "group": "Other religions",
@@ -3133,14 +3219,14 @@
         "count": 2940
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.4,
-        "count": 2289
-      },
-      {
         "group": "Jedi",
         "pct": 0.4,
         "count": 2712
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 2289
       },
       {
         "group": "Adventist",
@@ -3168,14 +3254,14 @@
         "count": 357
       },
       {
-        "group": "Ringatū",
-        "pct": 0.0,
-        "count": 321
-      },
-      {
         "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.0,
+        "count": 321
       }
     ],
     "language": [
@@ -3220,6 +3306,11 @@
         "count": 6576
       },
       {
+        "group": "Hindi",
+        "pct": 0.9,
+        "count": 5823
+      },
+      {
         "group": "Sinitic not further defined",
         "pct": 0.9,
         "count": 5811
@@ -3228,11 +3319,6 @@
         "group": "Spanish",
         "pct": 0.9,
         "count": 6003
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.9,
-        "count": 5823
       },
       {
         "group": "Afrikaans",
@@ -3309,7 +3395,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -3324,7 +3410,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 323,439 males and 327,585 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-14",
@@ -3343,10 +3431,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 38.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -3380,14 +3474,14 @@
         "count": 8757
       },
       {
-        "group": "Other Christian religions",
-        "pct": 1.0,
-        "count": 2337
-      },
-      {
         "group": "Hinduism",
         "pct": 1.0,
         "count": 2502
+      },
+      {
+        "group": "Other Christian religions",
+        "pct": 1.0,
+        "count": 2337
       },
       {
         "group": "Islam",
@@ -3415,6 +3509,11 @@
         "count": 1410
       },
       {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 1134
+      },
+      {
         "group": "Jedi",
         "pct": 0.5,
         "count": 1140
@@ -3423,11 +3522,6 @@
         "group": "Spiritualism and New Age religions",
         "pct": 0.5,
         "count": 1236
-      },
-      {
-        "group": "Baptist",
-        "pct": 0.5,
-        "count": 1134
       },
       {
         "group": "Evangelical, Born Again and Fundamentalist",
@@ -3455,6 +3549,11 @@
         "count": 363
       },
       {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 267
+      },
+      {
         "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
         "count": 135
@@ -3463,11 +3562,6 @@
         "group": "Ratana",
         "pct": 0.1,
         "count": 327
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 267
       },
       {
         "group": "Not elsewhere included",
@@ -3517,14 +3611,14 @@
         "count": 2964
       },
       {
-        "group": "Tagalog",
-        "pct": 0.8,
-        "count": 2010
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.8,
         "count": 1968
+      },
+      {
+        "group": "Tagalog",
+        "pct": 0.8,
+        "count": 2010
       },
       {
         "group": "Afrikaans",
@@ -3557,14 +3651,14 @@
         "count": 1056
       },
       {
-        "group": "Tongan",
-        "pct": 0.3,
-        "count": 807
-      },
-      {
         "group": "Panjabi",
         "pct": 0.3,
         "count": 654
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.3,
+        "count": 807
       },
       {
         "group": "Not elsewhere included",
@@ -3611,7 +3705,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -3626,7 +3720,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 119,013 males and 121,887 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-15",
@@ -3645,10 +3741,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 40.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -3707,6 +3809,11 @@
         "count": 624
       },
       {
+        "group": "Baptist",
+        "pct": 0.5,
+        "count": 537
+      },
+      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.5,
         "count": 534
@@ -3717,24 +3824,9 @@
         "count": 477
       },
       {
-        "group": "Baptist",
-        "pct": 0.5,
-        "count": 537
-      },
-      {
-        "group": "Ratana",
-        "pct": 0.4,
-        "count": 381
-      },
-      {
         "group": "Adventist",
         "pct": 0.4,
         "count": 387
-      },
-      {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.4,
-        "count": 366
       },
       {
         "group": "Islam",
@@ -3747,6 +3839,21 @@
         "count": 354
       },
       {
+        "group": "Ratana",
+        "pct": 0.4,
+        "count": 381
+      },
+      {
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.4,
+        "count": 366
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 261
+      },
+      {
         "group": "Latter-day Saints",
         "pct": 0.3,
         "count": 288
@@ -3755,11 +3862,6 @@
         "group": "Sikhism",
         "pct": 0.3,
         "count": 255
-      },
-      {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.3,
-        "count": 261
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -3772,14 +3874,14 @@
         "count": 81
       },
       {
-        "group": "Not elsewhere included",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Judaism",
         "pct": 0.0,
         "count": 33
+      },
+      {
+        "group": "Not elsewhere included",
+        "pct": 0.0,
+        "count": 0
       }
     ],
     "language": [
@@ -3819,6 +3921,11 @@
         "count": 519
       },
       {
+        "group": "French",
+        "pct": 0.5,
+        "count": 507
+      },
+      {
         "group": "German",
         "pct": 0.5,
         "count": 483
@@ -3827,11 +3934,6 @@
         "group": "New Zealand Sign Language",
         "pct": 0.5,
         "count": 537
-      },
-      {
-        "group": "French",
-        "pct": 0.5,
-        "count": 507
       },
       {
         "group": "Samoan",
@@ -3849,6 +3951,11 @@
         "count": 312
       },
       {
+        "group": "Panjabi",
+        "pct": 0.2,
+        "count": 213
+      },
+      {
         "group": "Sinitic not further defined",
         "pct": 0.2,
         "count": 231
@@ -3857,11 +3964,6 @@
         "group": "Yue",
         "pct": 0.2,
         "count": 174
-      },
-      {
-        "group": "Panjabi",
-        "pct": 0.2,
-        "count": 213
       },
       {
         "group": "Tongan",
@@ -3913,7 +4015,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -3928,7 +4030,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 50,277 males and 49,866 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-16",
@@ -3947,10 +4051,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.8,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -4019,11 +4129,6 @@
         "count": 312
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.4,
-        "count": 255
-      },
-      {
         "group": "Baptist",
         "pct": 0.4,
         "count": 258
@@ -4039,9 +4144,9 @@
         "count": 255
       },
       {
-        "group": "Ratana",
-        "pct": 0.2,
-        "count": 99
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 255
       },
       {
         "group": "Islam",
@@ -4054,14 +4159,14 @@
         "count": 120
       },
       {
-        "group": "Sikhism",
-        "pct": 0.1,
-        "count": 60
+        "group": "Ratana",
+        "pct": 0.2,
+        "count": 99
       },
       {
-        "group": "Other Māori religions, beliefs and philosophies",
+        "group": "Adventist",
         "pct": 0.1,
-        "count": 39
+        "count": 81
       },
       {
         "group": "Judaism",
@@ -4069,9 +4174,14 @@
         "count": 36
       },
       {
-        "group": "Adventist",
+        "group": "Other Māori religions, beliefs and philosophies",
         "pct": 0.1,
-        "count": 81
+        "count": 39
+      },
+      {
+        "group": "Sikhism",
+        "pct": 0.1,
+        "count": 60
       },
       {
         "group": "Not elsewhere included",
@@ -4126,6 +4236,11 @@
         "count": 447
       },
       {
+        "group": "New Zealand Sign Language",
+        "pct": 0.5,
+        "count": 276
+      },
+      {
         "group": "Samoan",
         "pct": 0.5,
         "count": 282
@@ -4134,11 +4249,6 @@
         "group": "Tongan",
         "pct": 0.5,
         "count": 270
-      },
-      {
-        "group": "New Zealand Sign Language",
-        "pct": 0.5,
-        "count": 276
       },
       {
         "group": "Northern Chinese",
@@ -4161,14 +4271,14 @@
         "count": 96
       },
       {
-        "group": "Yue",
-        "pct": 0.1,
-        "count": 78
-      },
-      {
         "group": "Panjabi",
         "pct": 0.1,
         "count": 69
+      },
+      {
+        "group": "Yue",
+        "pct": 0.1,
+        "count": 78
       },
       {
         "group": "Not elsewhere included",
@@ -4215,7 +4325,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -4230,7 +4340,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 28,797 males and 29,013 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-17",
@@ -4249,10 +4361,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.0,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.6,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -4311,19 +4429,14 @@
         "count": 432
       },
       {
-        "group": "Spiritualism and New Age religions",
-        "pct": 0.7,
-        "count": 351
-      },
-      {
         "group": "Other religions",
         "pct": 0.7,
         "count": 375
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.6,
-        "count": 315
+        "group": "Spiritualism and New Age religions",
+        "pct": 0.7,
+        "count": 351
       },
       {
         "group": "Evangelical, Born Again and Fundamentalist",
@@ -4336,14 +4449,19 @@
         "count": 306
       },
       {
-        "group": "Islam",
-        "pct": 0.5,
-        "count": 237
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 315
       },
       {
         "group": "Baptist",
         "pct": 0.5,
         "count": 255
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 237
       },
       {
         "group": "Jehovah's Witnesses",
@@ -4356,19 +4474,14 @@
         "count": 111
       },
       {
-        "group": "Sikhism",
-        "pct": 0.2,
-        "count": 105
-      },
-      {
         "group": "Ratana",
         "pct": 0.2,
         "count": 93
       },
       {
-        "group": "Other Māori religions, beliefs and philosophies",
-        "pct": 0.1,
-        "count": 42
+        "group": "Sikhism",
+        "pct": 0.2,
+        "count": 105
       },
       {
         "group": "Judaism",
@@ -4376,14 +4489,19 @@
         "count": 69
       },
       {
-        "group": "Ringatū",
-        "pct": 0.0,
-        "count": 15
+        "group": "Other Māori religions, beliefs and philosophies",
+        "pct": 0.1,
+        "count": 42
       },
       {
         "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
+      },
+      {
+        "group": "Ringatū",
+        "pct": 0.0,
+        "count": 15
       }
     ],
     "language": [
@@ -4433,6 +4551,11 @@
         "count": 306
       },
       {
+        "group": "Hindi",
+        "pct": 0.5,
+        "count": 282
+      },
+      {
         "group": "Samoan",
         "pct": 0.5,
         "count": 282
@@ -4443,24 +4566,14 @@
         "count": 243
       },
       {
-        "group": "Hindi",
-        "pct": 0.5,
-        "count": 282
-      },
-      {
-        "group": "Panjabi",
-        "pct": 0.3,
-        "count": 135
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.3,
         "count": 180
       },
       {
-        "group": "Yue",
-        "pct": 0.2,
-        "count": 105
+        "group": "Panjabi",
+        "pct": 0.3,
+        "count": 135
       },
       {
         "group": "Sinitic not further defined",
@@ -4471,6 +4584,11 @@
         "group": "Tongan",
         "pct": 0.2,
         "count": 114
+      },
+      {
+        "group": "Yue",
+        "pct": 0.2,
+        "count": 105
       },
       {
         "group": "Not elsewhere included",
@@ -4517,7 +4635,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -4532,7 +4650,9 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 25,704 males and 26,880 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
     "id": "NZL-18",
@@ -4551,10 +4671,16 @@
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.7,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
@@ -4613,11 +4739,6 @@
         "count": 357
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.5,
-        "count": 255
-      },
-      {
         "group": "Evangelical, Born Again and Fundamentalist",
         "pct": 0.5,
         "count": 249
@@ -4628,9 +4749,19 @@
         "count": 225
       },
       {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 255
+      },
+      {
         "group": "Latter-day Saints",
         "pct": 0.5,
         "count": 228
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.4,
+        "count": 213
       },
       {
         "group": "Ratana",
@@ -4643,9 +4774,9 @@
         "count": 186
       },
       {
-        "group": "Other religions",
-        "pct": 0.4,
-        "count": 213
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 168
       },
       {
         "group": "Islam",
@@ -4653,9 +4784,9 @@
         "count": 150
       },
       {
-        "group": "Baptist",
-        "pct": 0.3,
-        "count": 168
+        "group": "Adventist",
+        "pct": 0.2,
+        "count": 111
       },
       {
         "group": "Sikhism",
@@ -4663,14 +4794,9 @@
         "count": 108
       },
       {
-        "group": "Adventist",
-        "pct": 0.2,
-        "count": 111
-      },
-      {
-        "group": "Ringatū",
+        "group": "Judaism",
         "pct": 0.1,
-        "count": 42
+        "count": 36
       },
       {
         "group": "Other Māori religions, beliefs and philosophies",
@@ -4678,9 +4804,9 @@
         "count": 45
       },
       {
-        "group": "Judaism",
+        "group": "Ringatū",
         "pct": 0.1,
-        "count": 36
+        "count": 42
       },
       {
         "group": "Not elsewhere included",
@@ -4740,14 +4866,14 @@
         "count": 318
       },
       {
-        "group": "Tongan",
-        "pct": 0.5,
-        "count": 246
-      },
-      {
         "group": "Northern Chinese",
         "pct": 0.5,
         "count": 231
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.5,
+        "count": 246
       },
       {
         "group": "New Zealand Sign Language",
@@ -4802,14 +4928,14 @@
         "count": 1821
       },
       {
-        "group": "Other Ethnicity",
-        "pct": 1.5,
-        "count": 744
-      },
-      {
         "group": "Middle Eastern/Latin American/African",
         "pct": 1.5,
         "count": 738
+      },
+      {
+        "group": "Other Ethnicity",
+        "pct": 1.5,
+        "count": 744
       },
       {
         "group": "Not elsewhere included",
@@ -4819,7 +4945,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -4834,12 +4960,14 @@
     "ethnicity_year": 2023,
     "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006).",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 24,675 males and 24,756 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3."
   },
   {
-    "id": "NZL-99",
+    "id": "NZL-067-region",
     "level": "admin1",
-    "name": "Area Outside Region",
+    "name": "Chatham Islands Territory",
     "parent": "NZL",
     "capital": {
       "status": "not_available"
@@ -4848,66 +4976,72 @@
       "status": "not_available"
     },
     "population": {
-      "value": 633,
+      "value": 612,
       "year": 2023,
       "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.0,
+      "unit": "years",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.1,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Stats NZ, 2023 Census (Aotearoa Data Explorer)"
     },
     "religion": [
       {
         "group": "No religion",
-        "pct": 55.9,
-        "count": 354
+        "pct": 56.4,
+        "count": 345
       },
       {
         "group": "Catholicism",
         "pct": 13.7,
-        "count": 87
+        "count": 84
       },
       {
         "group": "Anglican",
-        "pct": 9.5,
+        "pct": 9.8,
         "count": 60
       },
       {
         "group": "Object to answering",
-        "pct": 8.1,
-        "count": 51
+        "pct": 7.8,
+        "count": 48
       },
       {
         "group": "Christian nfd",
-        "pct": 3.8,
+        "pct": 3.9,
         "count": 24
       },
       {
         "group": "Ratana",
-        "pct": 2.4,
+        "pct": 2.5,
         "count": 15
       },
       {
         "group": "Presbyterian, Congregational and Reformed",
-        "pct": 1.9,
+        "pct": 2.0,
         "count": 12
       },
       {
         "group": "Jedi",
-        "pct": 0.9,
+        "pct": 1.0,
         "count": 6
       },
       {
         "group": "Spiritualism and New Age religions",
-        "pct": 0.9,
+        "pct": 1.0,
         "count": 6
       },
       {
-        "group": "Islam",
-        "pct": 0.9,
-        "count": 6
+        "group": "Buddhism",
+        "pct": 0.5,
+        "count": 3
       },
       {
         "group": "Evangelical, Born Again and Fundamentalist",
@@ -4915,7 +5049,12 @@
         "count": 3
       },
       {
-        "group": "Latter-day Saints",
+        "group": "Hinduism",
+        "pct": 0.5,
+        "count": 3
+      },
+      {
+        "group": "Islam",
         "pct": 0.5,
         "count": 3
       },
@@ -4925,7 +5064,7 @@
         "count": 3
       },
       {
-        "group": "Buddhism",
+        "group": "Latter-day Saints",
         "pct": 0.5,
         "count": 3
       },
@@ -4940,22 +5079,17 @@
         "count": 3
       },
       {
-        "group": "Hinduism",
-        "pct": 0.5,
-        "count": 3
+        "group": "Adventist",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 0
       },
       {
         "group": "Jehovah's Witnesses",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Pentecostal",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Adventist",
         "pct": 0.0,
         "count": 0
       },
@@ -4965,7 +5099,17 @@
         "count": 0
       },
       {
+        "group": "Other Christian religions",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
         "group": "Other religions",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Pentecostal",
         "pct": 0.0,
         "count": 0
       },
@@ -4975,17 +5119,7 @@
         "count": 0
       },
       {
-        "group": "Other Christian religions",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Sikhism",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Baptist",
         "pct": 0.0,
         "count": 0
       }
@@ -4993,23 +5127,18 @@
     "language": [
       {
         "group": "English",
-        "pct": 98.6,
-        "count": 624
+        "pct": 98.0,
+        "count": 600
       },
       {
         "group": "Māori",
-        "pct": 10.9,
+        "pct": 11.3,
         "count": 69
       },
       {
         "group": "None (eg too young to talk)",
-        "pct": 1.4,
+        "pct": 1.5,
         "count": 9
-      },
-      {
-        "group": "Other",
-        "pct": 0.9,
-        "count": 6
       },
       {
         "group": "French",
@@ -5022,27 +5151,17 @@
         "count": 3
       },
       {
-        "group": "Yue",
-        "pct": 0.0,
-        "count": 0
+        "group": "Other",
+        "pct": 0.5,
+        "count": 3
       },
       {
-        "group": "Sinitic not further defined",
-        "pct": 0.0,
-        "count": 0
+        "group": "Tagalog",
+        "pct": 0.5,
+        "count": 3
       },
       {
-        "group": "Hindi",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Samoan",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Not elsewhere included",
+        "group": "Afrikaans",
         "pct": 0.0,
         "count": 0
       },
@@ -5052,12 +5171,17 @@
         "count": 0
       },
       {
-        "group": "Tagalog",
+        "group": "Hindi",
         "pct": 0.0,
         "count": 0
       },
       {
-        "group": "Tongan",
+        "group": "Northern Chinese",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Not elsewhere included",
         "pct": 0.0,
         "count": 0
       },
@@ -5067,7 +5191,12 @@
         "count": 0
       },
       {
-        "group": "Afrikaans",
+        "group": "Samoan",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Sinitic not further defined",
         "pct": 0.0,
         "count": 0
       },
@@ -5077,7 +5206,12 @@
         "count": 0
       },
       {
-        "group": "Northern Chinese",
+        "group": "Tongan",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yue",
         "pct": 0.0,
         "count": 0
       }
@@ -5086,31 +5220,31 @@
       {
         "group": "European",
         "pct": 72.5,
-        "count": 459
+        "count": 444
       },
       {
         "group": "Māori",
-        "pct": 66.4,
+        "pct": 68.6,
         "count": 420
       },
       {
         "group": "Pacific Peoples",
-        "pct": 3.8,
+        "pct": 3.9,
         "count": 24
       },
       {
         "group": "Asian",
-        "pct": 2.8,
-        "count": 18
+        "pct": 2.0,
+        "count": 12
       },
       {
         "group": "Other Ethnicity",
-        "pct": 1.4,
+        "pct": 1.5,
         "count": 9
       },
       {
         "group": "Middle Eastern/Latin American/African",
-        "pct": 0.9,
+        "pct": 1.0,
         "count": 6
       },
       {
@@ -5121,7 +5255,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity/language/religion",
+        "field": "ethnicity/language/religion/median_age/sex_ratio",
         "name": "Stats NZ, 2023 Census (Aotearoa Data Explorer)",
         "url": "https://explore.data.stats.govt.nz/",
         "license": "Creative Commons Attribution 4.0 International, as published by Stats NZ"
@@ -5129,13 +5263,15 @@
     ],
     "country": "NZL",
     "codes": {
-      "statsnz": "99"
+      "statsnz": "067"
     },
     "religion_year": 2023,
-    "religion_note": "Religious affiliation is also multi-response in New Zealand, though only slightly: the parts sum to about 100.3%. \"Object to answering\" is kept as its own category rather than folded into a non-response bucket, because Stats NZ counts it inside \"total stated\" -- it is an answer people gave, not a question they skipped.",
+    "religion_note": "Religious affiliation is also multi-response in New Zealand, though only slightly: the parts sum to about 100.3%. \"Object to answering\" is kept as its own category rather than folded into a non-response bucket, because Stats NZ counts it inside \"total stated\" -- it is an answer people gave, not a question they skipped. These are the Chatham Islands Territory's own figures (territorial authority 067): Stats NZ's regional-council tier files the territory under 'Area Outside Region' together with 21 people of other outlying islands the map does not draw here.",
     "ethnicity_year": 2023,
-    "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice.",
+    "ethnicity_note": "Total response ethnicity: a person may report more than one, so the parts sum to about 115% of the population and each share is the percentage of people who named that group, not a slice of a whole. The six groups shown are Stats NZ's level-1 classification; the detailed groups beneath them are not added, because that would count most people twice. These are the Chatham Islands Territory's own figures (territorial authority 067): Stats NZ's regional-council tier files the territory under 'Area Outside Region' together with 21 people of other outlying islands the map does not draw here.",
     "language_year": 2023,
-    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole."
+    "language_note": "Languages a person can hold an everyday conversation in. Multi-response -- the parts sum to about 125% of the population -- so each share is the percentage of people who speak that language, not a slice of a whole. These are the Chatham Islands Territory's own figures (territorial authority 067): Stats NZ's regional-council tier files the territory under 'Area Outside Region' together with 21 people of other outlying islands the map does not draw here.",
+    "median_age_note": "Stats NZ's own median age for this area, 2023 Census usually resident population count (CEN23_POP_006). These are the Chatham Islands Territory's own figures (territorial authority 067): Stats NZ's regional-council tier files the territory under 'Area Outside Region' together with 21 people of other outlying islands the map does not draw here.",
+    "sex_ratio_note": "Males per 100 females by sex at birth: 315 males and 297 females in the 2023 Census usually resident population count (CEN23_POP_006). Stats NZ randomly rounds every count to base 3. These are the Chatham Islands Territory's own figures (territorial authority 067): Stats NZ's regional-council tier files the territory under 'Area Outside Region' together with 21 people of other outlying islands the map does not draw here."
   }
 ]

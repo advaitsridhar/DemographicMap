@@ -361,10 +361,17 @@ window.Dashboard = (function () {
     return parts.join("") + "</section>";
   }
 
-  /** When a unit has no demographic values, say what would fill it -- or why
-   *  nothing would. The two are different claims and must not read alike: a
-   *  command in a <code> block promises that running it fills the panel, which
-   *  is false where the country never published the figures. */
+  /* Where the notes on every source -- what was read, and what was tried and
+   * failed -- are kept for readers. */
+  const SOURCE_NOTES = "https://github.com/advaitsridhar/DemographicMap/blob/HEAD/docs/SOURCES.md";
+
+  /** When a unit has no demographic values, say why -- or that nothing has
+   *  been gathered for it yet. The two are different claims and must not
+   *  read alike. Neither names a command or a file: the panel is for a reader
+   *  of the map, and the command that might fill a unit (adapter_hint) is the
+   *  pipeline's business; a command in a <code> block also promised that
+   *  running it fills the panel, which is false where the country never
+   *  published the figures. */
   function hintPanel(record) {
     if (!record.adapter_hint && !record.gap_reason) return "";
     const fields = ["population", "religion", "language", "ethnicity", "median_age"];
@@ -372,12 +379,36 @@ window.Dashboard = (function () {
     if (hasAny) return "";
     if (record.gap_reason) {
       return `<section class="panel"><div class="panel-head"><h3>Why this is empty</h3></div>
-        <p class="note">${esc(record.gap_reason)} See <code>docs/SOURCES.md</code>
-        for what was tried.</p></section>`;
+        <p class="note">${esc(record.gap_reason)} The
+        <a href="${SOURCE_NOTES}" target="_blank" rel="noopener noreferrer">notes on each
+        source</a> say what was tried.</p></section>`;
     }
-    return `<section class="panel"><div class="panel-head"><h3>Filling this gap</h3></div>
-      <p class="note">This build has not fetched demographics for this unit. The
-      pipeline in this repository can: <code>${esc(record.adapter_hint)}</code></p></section>`;
+    // "Nothing gathered yet" is only true of a field whose gap says nothing
+    // else: Algeria's districts said it above three fields that each say the
+    // census never asks them.
+    const unexplained = fields.filter((field) => !gapReason(record, field));
+    if (!unexplained.length) return "";
+    const said = unexplained.length === fields.length
+      ? "No figures for this unit have been gathered yet."
+      : `No ${listed(unexplained.map((f) => FIELD_WORDS[f]))} figure has been gathered ` +
+        `for this unit yet; the other fields say why they are empty.`;
+    return `<section class="panel"><div class="panel-head"><h3>Not gathered yet</h3></div>
+      <p class="note">${esc(said)}</p></section>`;
+  }
+
+  const FIELD_WORDS = { population: "population", religion: "religion", language: "language",
+                        ethnicity: "ethnicity", median_age: "median age" };
+
+  /** Whether an empty field says why it is empty. */
+  function gapReason(record, field) {
+    const value = record[field];
+    return Boolean((value && value.note) || gapStatus(value) === "not_collected" ||
+                   record[`${field}_note`]);
+  }
+
+  function listed(words) {
+    if (words.length < 2) return words.join("");
+    return `${words.slice(0, -1).join(", ")} or ${words[words.length - 1]}`;
   }
 
   function breadcrumb(record) {

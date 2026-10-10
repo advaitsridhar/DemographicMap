@@ -231,6 +231,31 @@ class NewDistricts(unittest.TestCase):
         self.assertIsNone(got["population"].get("value"))
         self.assertIn("count them twice", got["population"]["note"])
 
+    def test_an_encyclopaedia_count_beside_the_predecessors_row_is_displaced(self):
+        # Gujarat's districts summed to 64,476,108 against the state's
+        # 60,439,692: Wikidata's 2011 figures for the four districts cut from
+        # shapes that keep the undivided count were counting their people twice.
+        got = emitted()
+        self.assertEqual(got["Palghar"]["population"]["displaces_before"],
+                         india_census.DISPLACES_BEFORE)
+        self.assertEqual(got["Balrampur"]["population"]["displaces_before"],
+                         india_census.DISPLACES_BEFORE)
+        # Warangal was divided whole: no shape carries its row, so a figure for
+        # Jangaon counts nobody twice and is left to fill the gap.
+        self.assertNotIn("displaces_before", got["Jangaon"]["population"])
+
+    def test_the_build_drops_the_double_count(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import build_entities  # noqa: PLC0415
+        row = dict(emitted()["Palghar"], _source="india_district.json")
+        entity = {"population": {"value": 2990116, "year": 2011, "source": "Wikidata (CC0)"},
+                  "_from": {"population": "wikidata_admin2.json"}, "sources": []}
+        build_entities.merge_adapter(entity, row)
+        self.assertNotIn("value", entity["population"])
+        self.assertIn("count them twice", entity["population"]["note"])
+
     def test_ethnicity_keeps_its_own_kind_of_absence(self):
         # India does not ask the question of anyone, anywhere, so this is not
         # something an estimate could fill.
@@ -731,6 +756,19 @@ class ResidualDetail(unittest.TestCase):
                 ARUNACHAL, self.unit({"Doni Polo / Sidonyi Polo": 1}, bucket=2))
         self.assertIn("against an enumerated 1,383,727", str(caught.exception))
 
+    def test_a_residual_too_small_to_name_anything_keeps_c01s_row(self):
+        # Leh: 54 people in "Other religions" out of 133,487. Jammu & Kashmir's
+        # split names nothing at that size, and its note printed "()".
+        state = {"name": "State - JAMMU & KASHMIR", "bucket": 2000,
+                 "counts": collections.Counter({"Faith A": 1200, "Faith B": 800})}
+        self.assertFalse(india_census.names_a_religion(
+            india_census.district_detail(state, 54), 133487))
+        self.assertTrue(india_census.names_a_religion(
+            india_census.district_detail(self.unit({"Doni Polo / Sidonyi Polo": 324742}),
+                                         362553), ARUNACHAL["Population"]))
+        self.assertFalse(india_census.names_a_religion(
+            {"bucket": 54, "counts": {}}, 133487))
+
     def test_the_note_says_it_is_a_state_figure_with_no_district_below_it(self):
         counts = collections.Counter({"Doni Polo / Sidonyi Polo": 324742,
                                       "Nocte": 500, "Aka": 300})
@@ -1147,6 +1185,48 @@ class RealDistrictsAreUntouched(unittest.TestCase):
         groups = [row["group"] for row in emitted()["Raigarh"]["religion"]]
         self.assertIn("Other religions", groups)
         self.assertIn("Not stated", groups)
+
+
+class FarRatiosSayTheyAreTheCensuss(unittest.TestCase):
+    """A ratio far outside every other district's carries its counts."""
+
+    def daman(self):
+        return {"District code": "495", "State name": "DAMAN & DIU",
+                "District name": "Daman", "Population": "191173", "Male": "124659",
+                "Female": "66514", "Hindus": "191173", "Muslims": "0",
+                "Christians": "0", "Sikhs": "0", "Buddhists": "0", "Jains": "0",
+                "Others_Religions": "0", "Religion_Not_Stated": "0", "SC": "0",
+                "ST": "0"}
+
+    def test_daman_says_its_counts_and_the_countrys_ratio(self):
+        counts = collections.Counter({k: india_census.cell(self.daman(), k)
+                                      for k in ("Population", "Male", "Female")})
+        got = india_census.build_record("Daman", counts, level="admin2", parent="IND",
+                                        entity_id="IND-D495", codes={})
+        self.assertEqual(got["sex_ratio"]["value"], 534)
+        note = got["sex_ratio_note"]
+        self.assertIn("124,659 males and 66,514 females", note)
+        self.assertIn("534 females per 1,000 males against 943", note)
+        # The census gives no reason for the ratio, and the note invents none.
+        self.assertNotIn("migra", note)
+
+    def test_an_ordinary_ratio_carries_no_note(self):
+        got = emitted()["Raigarh"]
+        self.assertEqual(got["sex_ratio"]["value"], 991)
+        self.assertNotIn("sex_ratio_note", got)
+
+    def test_the_band_edges(self):
+        self.assertIsNone(india_census.far_ratio_note(1000, 800))
+        self.assertIsNone(india_census.far_ratio_note(1000, 1150))
+        self.assertIsNotNone(india_census.far_ratio_note(1000, 799))
+        self.assertIsNotNone(india_census.far_ratio_note(1000, 1184))
+        self.assertIsNone(india_census.far_ratio_note(0, 10))
+
+    def test_the_national_ratio_is_checked(self):
+        rows = [{"Male": "623270258", "Female": "587584719"}]
+        india_census.check_sex_ratio(rows)        # must not raise
+        with self.assertRaises(SystemExit):
+            india_census.check_sex_ratio([{"Male": "600000000", "Female": "587584719"}])
 
 
 if __name__ == "__main__":

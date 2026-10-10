@@ -16,10 +16,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 31.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 115.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -44,7 +50,7 @@
         "count": 383100
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 5.9,
         "count": 248900
       },
@@ -61,7 +67,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -70,7 +76,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates. An unusual ratio for a whole state: DOSM's estimate for 2026 counts 2,261,100 males against 1,963,200 females here, each rounded to the nearest hundred; 310,400 of the males and 72,700 of the females are not Malaysian citizens, and the table gives no reason."
   },
   {
     "id": "MYS-Kedah",
@@ -89,10 +97,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -112,7 +126,7 @@
         "count": 245500
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 5.7,
         "count": 128200
       },
@@ -134,7 +148,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -143,7 +157,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Kelantan",
@@ -162,10 +178,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 26.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -200,14 +222,14 @@
         "count": 11100
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 0.2,
         "count": 4700
       }
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -216,7 +238,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Melaka",
@@ -235,10 +259,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 31.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 112.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -263,7 +293,7 @@
         "count": 91400
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 5.0,
         "count": 52500
       },
@@ -280,7 +310,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -291,7 +321,9 @@
       "Malacca"
     ],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Negeri_Sembilan",
@@ -310,10 +342,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 31.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 107.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -333,7 +371,7 @@
         "count": 243900
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 13.1,
         "count": 163400
       },
@@ -355,7 +393,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -364,7 +402,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Pahang",
@@ -383,10 +423,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 113.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -416,7 +462,7 @@
         "count": 98200
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 3.3,
         "count": 55900
       },
@@ -428,7 +474,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -437,7 +483,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Perak",
@@ -456,10 +504,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 32.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 109.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -479,7 +533,7 @@
         "count": 622300
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 10.5,
         "count": 269600
       },
@@ -501,7 +555,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -510,7 +564,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Perlis",
@@ -529,10 +585,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -562,7 +624,7 @@
         "count": 5800
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 1.7,
         "count": 5100
       },
@@ -574,7 +636,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -583,7 +645,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Pulau_Pinang",
@@ -602,10 +666,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 34.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -630,7 +700,7 @@
         "count": 182300
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 8.6,
         "count": 154700
       },
@@ -647,7 +717,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -658,7 +728,9 @@
       "Penang"
     ],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Sabah",
@@ -677,10 +749,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 28.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -715,14 +793,14 @@
         "count": 47000
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 0.2,
         "count": 5900
       }
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -731,7 +809,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Sarawak",
@@ -750,10 +830,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 33.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -788,14 +874,14 @@
         "count": 6700
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 0.2,
         "count": 5100
       }
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -804,7 +890,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Selangor",
@@ -823,10 +911,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 34.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 114.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -851,7 +945,7 @@
         "count": 737500
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 9.8,
         "count": 731500
       },
@@ -868,7 +962,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -877,7 +971,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-Terengganu",
@@ -896,10 +992,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 27.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 105.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -929,7 +1031,7 @@
         "count": 3400
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 0.2,
         "count": 2000
       },
@@ -941,7 +1043,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -950,7 +1052,9 @@
     "country": "MYS",
     "aliases": [],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-W_P_Kuala_Lumpur",
@@ -969,10 +1073,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 117.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -997,7 +1107,7 @@
         "count": 272800
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 8.5,
         "count": 176800
       },
@@ -1014,7 +1124,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -1025,7 +1135,9 @@
       "Kuala Lumpur"
     ],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates. An unusual ratio for a whole state: DOSM's estimate for 2026 counts 1,123,500 males against 958,800 females here, each rounded to the nearest hundred; 209,800 of the males and 63,000 of the females are not Malaysian citizens, and the table gives no reason."
   },
   {
     "id": "MYS-W_P_Labuan",
@@ -1044,10 +1156,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -1082,14 +1200,14 @@
         "count": 1500
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 0.9,
         "count": 900
       }
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -1100,7 +1218,9 @@
       "Labuan"
     ],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   },
   {
     "id": "MYS-W_P_Putrajaya",
@@ -1119,10 +1239,16 @@
       "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 27.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 96.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity"
     },
     "religion": {
       "status": "not_available"
@@ -1147,7 +1273,7 @@
         "count": 2300
       },
       {
-        "group": "Indian",
+        "group": "Indian (Malaysia)",
         "pct": 1.2,
         "count": 1400
       },
@@ -1164,7 +1290,7 @@
     ],
     "sources": [
       {
-        "field": "population/ethnicity",
+        "field": "population/ethnicity/median age/sex ratio",
         "name": "Department of Statistics Malaysia, OpenDOSM population estimates by ethnicity (2026)",
         "url": "https://open.dosm.gov.my/data-catalogue/population_state",
         "license": "Creative Commons Attribution 4.0 (OpenDOSM)"
@@ -1175,6 +1301,8 @@
       "Putrajaya"
     ],
     "ethnicity_year": 2026,
-    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays."
+    "ethnicity_note": "DOSM's ethnicity dimension includes non-citizens as a category of the resident population and it is kept as one; the other five are Malaysian citizens. 'Other Bumiputera' is DOSM's own group for the indigenous peoples of Sabah, Sarawak and the peninsula other than Malays; 'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian descent, not Indian nationals.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count. OpenDOSM publishes ages in five-year groups to an open 85+ and nothing finer at this level, each cell rounded to the nearest hundred.",
+    "sex_ratio_note": "Males per 100 females in DOSM's population estimate for 2026, carried forward from the 2020 census (OpenDOSM), not a count; non-citizens are part of the resident population DOSM estimates."
   }
 ]

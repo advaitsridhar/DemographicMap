@@ -17,6 +17,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from contextlib import redirect_stderr
 from pathlib import Path
 
@@ -119,6 +120,15 @@ def only(records, name):
     return found[0] if found else None
 
 
+def figures(records):
+    """The records that carry a figure; the rest are stated gaps."""
+    return [r for r in records if r["language"].get("estimate")]
+
+
+def stated(records):
+    return [r for r in records if not r["language"].get("estimate")]
+
+
 class TheNestingRule(unittest.TestCase):
     """The one mistake that would be invisible: adding a hierarchy up."""
 
@@ -144,7 +154,7 @@ class TheNestingRule(unittest.TestCase):
         records, _, _ = build(province_rows())
         province = only(records, "Kurdistan")
         self.assertEqual(province["language"]["coverage_pct"], 100.0)
-        self.assertIn("1,000 that the atlas's own total",
+        self.assertIn("the atlas's own total for Kurdistan, 1,000 people",
                       province["language"]["note"])
 
     def test_the_province_total_is_the_row_with_the_atlas_id_not_the_biggest(self):
@@ -161,7 +171,7 @@ class TheNestingRule(unittest.TestCase):
         rows[1] = line(ALI_unique_ID_place="1120001", province_roman="Kordestān",
                        shahrestan_roman="Marivān", population_2011_census="9999")
         records, _, _ = build(rows)
-        self.assertIn("1,000 that the atlas's own total",
+        self.assertIn("the atlas's own total for Kurdistan, 1,000 people",
                       only(records, "Kurdistan")["language"]["note"])
 
 
@@ -215,6 +225,15 @@ class TheShareParser(unittest.TestCase):
         self.assertEqual(province["language"]["settlements_refused"], 1)
         self.assertIn("Bābārshāni (200 people)", province["language"]["note"])
         self.assertIn("add to 80%", province["language"]["note"])
+        self.assertNotIn("tolerance", province["language"]["note"])
+
+    def test_a_refused_place_without_a_name_is_not_called_by_its_atlas_id(self):
+        rows = province_rows(second_language="Turkic 60%; Southern Kurdish 20%")
+        rows[-1] = rows[-1].replace('"Bābārshāni"', '""')
+        records, _, _ = build(rows)
+        note = only(records, "Kurdistan")["language"]["note"]
+        self.assertIn("an unnamed place (200 people)", note)
+        self.assertNotIn("1120005", note)
 
 
 class TheWeights(unittest.TestCase):
@@ -281,23 +300,31 @@ class TheRomanisations(unittest.TestCase):
         self.assertEqual(m.county_shape("Bushehr", "Dayyer", shapes)["name"],
                          "Deyr")
 
-    def test_the_shahrestan_of_esfahan_is_the_county_and_not_the_city(self):
+    def test_the_city_of_isfahan_and_the_county_around_it_are_measured_apart(self):
         """Isfahan province has two shapes that fold to one name.
 
         "Isfahan" is a 0.2-degree polygon over the city; "Isfahan County" is
-        the 1.7-degree one around it. The shahrestan's figures belong to the
-        county, and putting them on the city would be the mis-match that looks
-        exactly like a right answer.
+        the 1.7-degree one around it, and the two do not overlap. The atlas's
+        Esfahān shahrestan is both: its city row (1,756,126 people, whose
+        point is inside the city polygon) and the towns and villages around.
+        The whole shahrestan's figure on the county polygon was four-fifths
+        the city's; each now carries its own.
         """
         shapes = {s["name"]: s for s in m.shapes("admin2")}
         self.assertIn("Isfahan", shapes)
         self.assertIn("Isfahan County", shapes)
-        self.assertEqual(m.SHAHRESTAN_ALIASES["Isfahan"]["Esfahān"],
-                         "Isfahan County")
-        written = {r["name"] for r in json.loads(PROCESSED.read_text("utf-8"))
-                   if r["level"] == "admin2"}
-        self.assertIn("Isfahan County", written)
-        self.assertNotIn("Isfahan", written)
+        self.assertEqual(m.SHAHRESTAN_ALIASES["Isfahan"]["Esfahān"], "Isfahan County")
+        self.assertIn(("city_roman", "Esfahān", "Isfahan"), m.CARVED["Isfahan"]["Esfahān"])
+        written = {r["name"]: r for r in figures(json.loads(PROCESSED.read_text("utf-8")))
+                   if r["level"] == "admin2" and r["parent_name"] == "Isfahan"}
+        city, county = written["Isfahan"], written["Isfahan County"]
+        self.assertEqual(city["shape_id"], shapes["Isfahan"]["id"])
+        self.assertEqual(county["shape_id"], shapes["Isfahan County"]["id"])
+        self.assertEqual(city["language"]["settlements"], 1)
+        self.assertIn("1,756,126 people", city["language"]["note"])
+        around = {g["group"]: g["pct"] for g in county["language"]["estimate"]}
+        self.assertNotIn("Esfahāni", around)          # the city's own variety
+        self.assertGreater(around["Esfahān Persian group"], 50.0)
 
     def test_one_county_spelled_two_ways_is_read_as_one(self):
         """Gilān writes "Rudsar" on 357 rows and "Rud Sar" on the town's own.
@@ -313,7 +340,7 @@ class TheRomanisations(unittest.TestCase):
                          language_distribution_estimate="Hōrāmi 100%",
                          language_distribution_source="Erik Anonby, field notes 2014"))
         records, _, _ = build(rows)
-        counties = [r for r in records if r["level"] == "admin2"]
+        counties = [r for r in figures(records) if r["level"] == "admin2"]
         self.assertEqual(len(counties), 1)
         self.assertEqual(counties[0]["language"]["settlements"], 3)
 
@@ -349,27 +376,43 @@ class TheCoverageThreshold(unittest.TestCase):
         rows[0] = line(ALI_unique_ID_place="1120000", province_roman="Kordestān",
                        population_2011_census="100000")
         records, tally, log = build(rows)
-        self.assertEqual([r for r in records if r["level"] == "admin1"], [])
+        self.assertEqual([r for r in figures(records) if r["level"] == "admin1"], [])
         self.assertIn("Kurdistan", [name for name, _ in tally["gaps"]])
         self.assertIn("1.0% of the province's 100,000 people", log)
+        kurdistan = [r for r in records if r["level"] == "admin1"][0]
+        self.assertEqual(kurdistan["language"]["status"], "not_available")
+        # The atlas's own total, said to be the atlas's and dated, not "the
+        # province's": the panel beside it shows the map's population.
+        self.assertIn("1.0% of the atlas's own total for Kurdistan, 100,000 people in "
+                      "the 2011 census: too few", kurdistan["language"]["note"])
+        self.assertNotIn("the province's 100,000", kurdistan["language"]["note"])
 
     def test_kermanshah_is_that_case_in_the_committed_file(self):
         """Its module covers five of fourteen counties and 18.6% of the people.
 
         The five counties are written and the province is not: a figure for
         Kermanshah province built on a fifth of it would be a statement about
-        Kermanshah city, which the module does not reach at all.
+        Kermanshah city, which the module does not reach at all. The other
+        nine say so.
         """
         rows = json.loads(PROCESSED.read_text("utf-8"))
-        names = {r["name"] for r in rows if r["level"] == "admin1"}
+        names = {r["name"] for r in figures(rows) if r["level"] == "admin1"}
         self.assertNotIn("Kermanshah", names)
-        counties = {r["name"] for r in rows
+        counties = {r["name"] for r in figures(rows)
                     if r.get("parent_name") == "Kermanshah"}
         self.assertEqual(len(counties), 5)
+        rest = [r for r in stated(rows) if r.get("parent_name") == "Kermanshah"]
+        self.assertEqual(len(rest), 9)
+        for r in rest:
+            self.assertIn("lists settlements in 5 of the 14 counties", r["language"]["note"])
 
     def test_rasht_is_the_same_case_one_level_down(self):
         rows = json.loads(PROCESSED.read_text("utf-8"))
-        self.assertNotIn("Rasht", {r["name"] for r in rows})
+        self.assertNotIn("Rasht", {r["name"] for r in figures(rows)})
+        rasht = [r for r in stated(rows) if r["name"] == "Rasht"][0]
+        self.assertIn("28.5% of the atlas's own total for Rasht, 956,971 people in the "
+                      "2016 census", rasht["language"]["note"])
+        self.assertIn("Rasht (679,995 people)", rasht["language"]["note"])
         gilan = [r for r in rows if r["name"] == "Gilan"][0]
         self.assertIn("Rasht (679,995 people)", gilan["language"]["note"])
 
@@ -379,30 +422,46 @@ class WhatWasWritten(unittest.TestCase):
     def setUpClass(cls):
         cls.rows = json.loads(PROCESSED.read_text("utf-8"))
 
-    def test_eleven_provinces_and_ninety_six_counties(self):
-        levels = [r["level"] for r in self.rows]
+    def test_eleven_provinces_and_a_hundred_and_two_counties(self):
+        levels = [r["level"] for r in figures(self.rows)]
         self.assertEqual(levels.count("admin1"), 11)
-        self.assertEqual(levels.count("admin2"), 96)
+        self.assertEqual(levels.count("admin2"), 102)
 
-    def test_every_record_is_an_estimate_and_never_a_composition(self):
+    def test_every_record_is_an_estimate_or_a_stated_gap(self):
         for row in self.rows:
-            self.assertIn(row["language"]["status"], ("modelled", "derived"))
             self.assertNotIsInstance(row["language"], list)
             # A year beside a gap would fall through merge_adapter onto
             # somebody else's figures, so it travels inside the estimate.
             self.assertNotIn("language_year", row)
+            # Bound to the shape it was measured for.
+            self.assertEqual(row["match_by"], "shape_id")
+            if row["language"].get("estimate"):
+                self.assertIn(row["language"]["status"], ("modelled", "derived"))
+            else:
+                self.assertEqual(row["language"]["status"], "not_available")
+                self.assertTrue(row["language"]["note"])
+
+    def test_every_shape_of_a_province_read_says_something(self):
+        """A county of a province the atlas reaches carries a figure or its
+        own reason, never the country's reason about provinces not reached."""
+        read = {r["name"] for r in self.rows if r["level"] == "admin1"}
+        provinces = {s["id"]: s["name"] for s in m.shapes("admin1")}
+        drawn = [s for s in m.shapes("admin2") if provinces.get(s["parent"]) in read]
+        written = [r["shape_id"] for r in self.rows if r["level"] == "admin2"]
+        self.assertEqual(sorted(written), sorted(s["id"] for s in drawn))
 
     def test_no_record_claims_a_census_asked(self):
         for row in self.rows:
             note = row["language"]["note"]
-            self.assertIn("not a census", note)
+            if row["language"].get("estimate"):
+                self.assertIn("not a census", note)
             self.assertIn("Iran's census does not ask language", note)
 
     def test_each_province_carries_its_own_modules_year(self):
         """Twelve modules, 2015 to 2024. One date over the twelve would say
         that Hormozgān and Khuzestān were looked at together."""
         years = {r["name"]: r["language"]["year"]
-                 for r in self.rows if r["level"] == "admin1"}
+                 for r in figures(self.rows) if r["level"] == "admin1"}
         self.assertEqual(years["Hormozgan"], 2015)
         self.assertEqual(years["Kurdistan"], 2016)
         self.assertEqual(years["Khuzestan"], 2024)
@@ -410,10 +469,10 @@ class WhatWasWritten(unittest.TestCase):
         self.assertGreater(len(set(years.values())), 4)
 
     def test_a_county_carries_the_year_of_the_province_it_is_in(self):
-        for row in self.rows:
+        for row in figures(self.rows):
             if row["level"] != "admin2":
                 continue
-            parent = [r for r in self.rows
+            parent = [r for r in figures(self.rows)
                       if r["level"] == "admin1"
                       and r["name"] == row["parent_name"]]
             if parent:
@@ -436,11 +495,24 @@ class WhatWasWritten(unittest.TestCase):
         """Khuzestān, Lorestān and Kohgiluyeh va Boyer Ahmad leave every column
         below the province blank, so their settlements cannot be placed in a
         county. A county record from them would be invented."""
-        for province in ("Khuzestan", "Lorestan", "Kohgiluyeh and Boyer-Ahmad"):
+        drawn = {}
+        provinces = {s["id"]: s["name"] for s in m.shapes("admin1")}
+        for s in m.shapes("admin2"):
+            drawn.setdefault(provinces.get(s["parent"]), []).append(s["name"])
+        for province, count in (("Khuzestan", 27), ("Lorestan", 11),
+                                ("Kohgiluyeh and Boyer-Ahmad", 8)):
             self.assertIn(province,
-                          {r["name"] for r in self.rows if r["level"] == "admin1"})
-            self.assertEqual([], [r["name"] for r in self.rows
+                          {r["name"] for r in figures(self.rows) if r["level"] == "admin1"})
+            self.assertEqual([], [r["name"] for r in figures(self.rows)
                                   if r.get("parent_name") == province])
+            # Each of its counties says so, rather than that the atlas has not
+            # reached the province.
+            gaps = [r for r in stated(self.rows) if r.get("parent_name") == province]
+            self.assertEqual(len(gaps), count)
+            self.assertEqual(sorted(r["name"] for r in gaps), sorted(drawn[province]))
+            for r in gaps:
+                self.assertIn("names no county for any of its", r["language"]["note"])
+                self.assertIn("the province carries its figure", r["language"]["note"])
 
     def test_every_county_names_the_province_it_is_in(self):
         """match_admin2 scopes a district row to the admin-1 it names, and
@@ -448,6 +520,193 @@ class WhatWasWritten(unittest.TestCase):
         for row in self.rows:
             if row["level"] == "admin2":
                 self.assertTrue(row.get("parent_name"), row["name"])
+
+
+class TheCarvedParts(unittest.TestCase):
+    """A district the atlas counts inside an older county, which the boundary
+    file draws as a county of its own, is measured on its own polygon, and
+    the older county's figure and total leave it out."""
+
+    def rows(self):
+        rows = province_rows()
+        # A second district of Marivān, with its own total row and a village.
+        rows += [
+            line(ALI_unique_ID_place="1120006", province_roman="Kordestān",
+                 shahrestan_roman="Marivān", bakhsh_roman="Markazi",
+                 population_2011_census="500"),
+            line(ALI_unique_ID_place="1120007", province_roman="Kordestān",
+                 shahrestan_roman="Marivān", bakhsh_roman="Markazi",
+                 dehestan_roman="Markazi", settlement_roman="Kani",
+                 population_2011_census="500",
+                 language_distribution_estimate="Hōrāmi 100%",
+                 language_distribution_source="Erik Anonby, field notes 2014"),
+        ]
+        # The county's own row counts both districts.
+        rows[1] = line(ALI_unique_ID_place="1120001", province_roman="Kordestān",
+                       shahrestan_roman="Marivān", population_2011_census="1500")
+        rows[0] = line(ALI_unique_ID_place="1120000", province_roman="Kordestān",
+                       population_2011_census="1500")
+        return rows
+
+    def test_a_carved_district_is_its_own_figure_and_leaves_its_county(self):
+        carve = {"Kurdistan": {"Marivān": (("bakhsh_roman", "Sar Shiv", "Sarvabad"),)}}
+        with mock.patch.object(m, "CARVED", carve):
+            records, _, log = build(self.rows())
+        counties = {r["name"]: r for r in figures(records) if r["level"] == "admin2"}
+        sarvabad = {g["group"]: g["pct"] for g in counties["Sarvabad"]["language"]["estimate"]}
+        marivan = {g["group"]: g["pct"] for g in counties["Marivan"]["language"]["estimate"]}
+        self.assertEqual(sarvabad, {"Central Kurdish": 80.0, "Turkic": 16.0,
+                                    "Southern Kurdish": 4.0})
+        self.assertEqual(marivan, {"Hōrāmi": 100.0})
+        # Measured against what is left of the county's own total, 1,500 less
+        # the carved district's 1,000 -- and said to be that, not the atlas's
+        # own total, which the atlas never prints.
+        self.assertIn("100.0% of the 500 left of the atlas's total for Marivan (1,500 "
+                      "people in the 2011 census) once the 1,000 it counts in Sarvabad, "
+                      "which the map draws apart, is taken out.",
+                      counties["Marivan"]["language"]["note"])
+        self.assertNotIn("own total for Marivan", counties["Marivan"]["language"]["note"])
+        self.assertIn("carved out of its atlas county", log)
+        # The province is all of it.
+        province = [r for r in figures(records) if r["level"] == "admin1"][0]
+        self.assertEqual(province["language"]["settlements"], 3)
+
+    def test_a_carve_naming_no_shape_stops_the_run(self):
+        carve = {"Kurdistan": {"Marivān": (("bakhsh_roman", "Sar Shiv", "Nowhere"),)}}
+        with mock.patch.object(m, "CARVED", carve), self.assertRaises(SystemExit):
+            build(self.rows())
+
+    def test_every_carved_shape_is_drawn_in_its_province(self):
+        provinces = {s["id"]: s["name"] for s in m.shapes("admin1")}
+        drawn = {(provinces.get(s["parent"]), s["name"]) for s in m.shapes("admin2")}
+        for province, counties in m.CARVED.items():
+            for parts in counties.values():
+                for _, _, shape_name in parts:
+                    self.assertIn((province, shape_name), drawn)
+
+    def test_the_committed_parts_carry_their_own_languages(self):
+        rows = figures(json.loads(PROCESSED.read_text("utf-8")))
+
+        def shares(name):
+            row = [r for r in rows if r["level"] == "admin2" and r["name"] == name][0]
+            return {g["group"]: g["pct"] for g in row["language"]["estimate"]}
+        # Every Bayray and Hinimini speaker of Darreh Shahr is in Badreh.
+        self.assertNotIn("Bayray", shares("Darreh Shahr County"))
+        self.assertNotIn("Hinimini", shares("Darreh Shahr County"))
+        self.assertGreater(shares("Badreh")["Bayray"], 40.0)
+        # Fereydan's Georgian speakers are in Buin and Miandasht.
+        self.assertNotIn("Phereydnuli Georgian", shares("Fereydan"))
+        self.assertGreater(shares("Buin and Miandasht")["Phereydnuli Georgian"], 15.0)
+        for name in ("Asaluyeh", "Ben", "Saman"):
+            self.assertTrue(shares(name), name)
+
+
+class TheCoverageSentence(unittest.TestCase):
+    """What the weighted places hold, against which total, in plain words."""
+
+    def note(self, basis):
+        unit = m.Unit("Isfahan")
+        unit.population, unit.rows, unit.years = 1_755_000, 12, {2016}
+        entry = {"authors": "Anonby et al.", "year": "2019"}
+        return m.method_note(unit, "Isfahan", entry, 1_961_260, basis, 1_755_000 / 1_961_260)
+
+    def test_the_map_s_own_population_is_a_number_of_people(self):
+        note = self.note("shape")
+        self.assertIn("1,755,000 people, 89.5% of the 1,961,260 people this map gives "
+                      "the unit.", note)
+        self.assertNotIn("accounts for", note)
+
+    def test_more_than_the_map_s_population_is_not_blamed_on_the_atlas(self):
+        # Kabutarahang: 131,526 weighted against the map's 126,062.
+        unit = m.Unit("Kabutarahang")
+        unit.population, unit.rows, unit.years = 131_526, 12, {2016}
+        entry = {"authors": "Anonby et al.", "year": "2019"}
+        note = m.method_note(unit, "Kabutarahang", entry, 126_062, "shape",
+                             131_526 / 126_062)
+        self.assertIn("the atlas's settlement populations and the population this map "
+                      "gives the unit do not quite agree", note)
+        self.assertNotIn("the total it prints", note)
+        own = m.method_note(unit, "Kabutarahang", entry, 126_062, "own", 131_526 / 126_062)
+        self.assertIn("the total it prints for the unit do not quite agree", own)
+
+    def test_a_carved_county_shows_its_subtraction_and_the_map_s_population(self):
+        # Isfahan County: the atlas's 2,174,172 less the city's 1,756,126 is a
+        # total the atlas never prints, and the places it holds are 148% of
+        # the 281,989 people the map gives the polygon.
+        unit = m.Unit("Esfahān")
+        unit.population, unit.rows, unit.years = 417_414, 396, {2011}
+        unit.own_year, unit.atlas_total = 2011, 2_174_172
+        unit.carved = [("the city of Isfahan", 1_756_126)]
+        entry = {"authors": "Anonby et al.", "year": "2022"}
+        note = m.method_note(unit, "Isfahan County", entry, 418_046, "own",
+                             417_414 / 418_046,
+                             held={"value": 281_989, "year": 2016})
+        self.assertIn("99.8% of the 418,046 left of the atlas's total for Isfahan County "
+                      "(2,174,172 people in the 2011 census) once the 1,756,126 it counts "
+                      "in the city of Isfahan, which the map draws apart, is taken out.",
+                      note)
+        self.assertIn("This map gives the polygon 281,989 people (2016); the weighted "
+                      "places are 148.0% of that.", note)
+        self.assertNotIn("own total for Isfahan County", note)
+        # Two parts are both named; a county nothing was carved from says nothing
+        # of the map's population on this basis.
+        unit.carved = [("Ben", 29_481), ("Saman", 35_895)]
+        two = m.of_total(unit, "Sharekurd", 275_006, "own")
+        self.assertIn("once the 29,481 it counts in Ben and the 35,895 in Saman, which "
+                      "the map draws apart, are taken out", two)
+        unit.carved = []
+        plain = m.method_note(unit, "Isfahan County", entry, 418_046, "own",
+                              417_414 / 418_046, held={"value": 281_989, "year": 2016})
+        self.assertNotIn("This map gives the polygon", plain)
+
+    def test_the_committed_carved_counties_say_how_their_total_was_reached(self):
+        rows = {r["name"]: r for r in figures(json.loads(PROCESSED.read_text("utf-8")))
+                if r["level"] == "admin2"}
+        note = rows["Isfahan County"]["language"]["note"]
+        self.assertIn("left of the atlas's total for Isfahan County (2,174,172 people in "
+                      "the 2011 census) once the 1,756,126 it counts in the city of "
+                      "Isfahan", note)
+        self.assertIn("This map gives the polygon 281,989 people (2016); the weighted "
+                      "places are 148.0% of that.", note)
+        for name in ("Darreh Shahr County", "Kangan", "Sharekurd", "Fereydan"):
+            self.assertIn("left of the atlas's total for", rows[name]["language"]["note"],
+                          name)
+            self.assertNotIn("the atlas's own total", rows[name]["language"]["note"], name)
+
+    def test_the_atlas_s_own_totals_are_named_as_the_atlas_s(self):
+        self.assertIn("89.5% of the atlas's own total for Isfahan, 1,961,260 people.",
+                      self.note("own"))
+        self.assertIn("89.5% of the 1,961,260 that the settlements and towns the atlas "
+                      "lists in Isfahan account for.", self.note("places"))
+
+
+class StatedReasons(unittest.TestCase):
+    """The committed gaps say what is true of each shape."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rows = {(r.get("parent_name"), r["name"]): r
+                    for r in stated(json.loads(PROCESSED.read_text("utf-8")))}
+
+    def test_counted_together(self):
+        for name in ("Chardavol", "Sirvan"):
+            note = self.rows[("Ilam", name)]["language"]["note"]
+            self.assertIn("counts Shirvān va Chardāvol as one county", note)
+            self.assertIn("Chardavol and Sirvan apart", note)
+
+    def test_too_thinly_covered(self):
+        note = self.rows[("Isfahan", "Aran and Bidgol")]["language"]["note"]
+        # The atlas's 2011 total, said to be that: the panel shows the 2016
+        # census's 103,517 as the county's population.
+        self.assertIn("37.8% of the atlas's own total for Ārān o Bidgol, 97,409 people "
+                      "in the 2011 census", note)
+        self.assertNotIn("the county's 97,409", note)
+
+    def test_no_note_names_a_rule_of_this_pipeline(self):
+        for row in self.rows.values():
+            note = row["language"]["note"]
+            for word in ("60%", "threshold", "MIN_COVERAGE", "adapter", "build"):
+                self.assertNotIn(word, note, row["name"])
 
 
 class AgainstTheWorld(unittest.TestCase):
@@ -458,7 +717,7 @@ class AgainstTheWorld(unittest.TestCase):
         cls.rows = json.loads(PROCESSED.read_text("utf-8"))
 
     def shares(self, name):
-        row = [r for r in self.rows if r["name"] == name][0]
+        row = [r for r in figures(self.rows) if r["name"] == name][0]
         return {s["group"]: s["pct"] for s in row["language"]["estimate"]}
 
     def test_kordestan_is_overwhelmingly_central_kurdish(self):
@@ -487,7 +746,7 @@ class AgainstTheWorld(unittest.TestCase):
         self.assertGreater(gilaki, 20.0)
 
     def test_every_composition_is_a_partition(self):
-        for row in self.rows:
+        for row in figures(self.rows):
             total = sum(s["pct"] for s in row["language"]["estimate"])
             self.assertAlmostEqual(total, 100.0, delta=m.SUM_TOLERANCE,
                                    msg=f"{row['name']} adds to {total}")
@@ -530,10 +789,10 @@ class ItIsRegistered(unittest.TestCase):
         table is silent, and every record still says it.
         """
         import common
-        self.assertNotIn("language", common.NOT_COLLECTED_POLICY["IRN"])
-        # Ethnicity is untouched: nobody has measured it independently, so
-        # the stronger declaration is still the right one there.
-        self.assertIn("ethnicity", common.NOT_COLLECTED_POLICY["IRN"])
+        self.assertNotIn("language", common.NOT_COLLECTED_POLICY.get("IRN", {}))
+        # Ethnicity is not this test's business: the 2016 census's citizenship
+        # stands for it under the owner's rule of 19 September 2026 (see
+        # iran_census.py), and its policy entry goes or stays with that file.
         self.assertIn("no Iranian census has ever asked it",
                       be.ADAPTER_GAPS["IRN"])
         records = json.loads(PROCESSED.read_text())
@@ -590,7 +849,7 @@ class EveryLabelHasAFamily(unittest.TestCase):
         cls.labels = sorted({
             share["group"]
             for record in json.loads(PROCESSED.read_text())
-            for share in record["language"]["estimate"]})
+            for share in record["language"].get("estimate") or []})
 
     def test_every_label_the_adapter_writes_carries_a_hue(self):
         unplaced = [name for name in self.labels

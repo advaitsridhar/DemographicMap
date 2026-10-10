@@ -5,7 +5,7 @@ The ABS Data API serves census tables as SDMX-JSON dataflows.  This pulls:
 
 * ``C21_G14_LGA`` religious affiliation
 * ``C21_G08_LGA`` ancestry (multi-response: people may report two ancestries,
-  so shares sum above 100% and are labelled as responses, not persons)
+  so its shares are of all the responses given, not of persons, and sum to 100%)
 * ``C21_G13_LGA`` language used at home, cross-tabulated with proficiency in
   spoken English and sex; the total of both is read, so it is one answer per
   person and partitions the population
@@ -167,7 +167,11 @@ CHARACTERISTIC_HINTS = {
 # A cross-tabulation summed over every cell counts each person once per
 # proficiency category as well as once per sex; only the total of each
 # extra dimension is a count of people.
-TOTAL_VALUES = ("persons", "total", "all persons", "total persons")
+# G08 heads its birthplace-of-parents dimension "Total responses": missed,
+# every ancestry was counted once per parental-birthplace category and the
+# counts came out doubled (the shares, being ratios, did not move).
+TOTAL_VALUES = ("persons", "total", "all persons", "total persons",
+                "total responses")
 # G13's one English category is worded as a behaviour; the chart names a
 # language, so it is renamed to sit beside the others.
 LANGUAGE_LABELS = {"Speaks English only": "English only"}
@@ -336,18 +340,33 @@ def outermost_by_code(coded: dict[tuple[str, str], float]) -> dict[str, float]:
     # then summed. Every real group in these tables is written "... Total".
     branches = {b for b in (branch_code(code) for (label, code) in coded
                             if code and label.lower().endswith(TOTAL_SUFFIX)) if b}
-    hidden = {child for parent, children in CHILDREN_OF.items() if parent in codes
-              for child in children}
+    # A declared child of a present code is named beside its parent, and the
+    # parent keeps the rest: "Australian Indigenous Languages" out of G13's
+    # "Other", which held them -- the Tiwi Islands' 81% 'Other' was its
+    # Indigenous languages. The partition sums to what it did before.
+    split = {child: parent for parent, children in CHILDREN_OF.items() if parent in codes
+             for child in children}
+    taken: dict[str, float] = {}
     out: dict[str, float] = {}
     for (label, code), value in coded.items():
         if not code or label.strip().lower() in GRAND_TOTAL:
             continue
         mine = branch_code(code)
-        if code in hidden:
-            continue                       # a declared child of a present code
+        if code in split:
+            if value:
+                out[strip_total(label)] = out.get(strip_total(label), 0.0) + value
+                taken[split[code]] = taken.get(split[code], 0.0) + value
+            continue
         if any(mine != other and mine.startswith(other) for other in branches):
             continue                       # something sits above it
         out[strip_total(label)] = out.get(strip_total(label), 0.0) + value
+    for (label, code), _ in coded.items():
+        if code in taken:
+            rest = out.get(strip_total(label), 0.0) - taken.pop(code)
+            if rest > 0:
+                out[strip_total(label)] = rest
+            else:
+                out.pop(strip_total(label), None)
     return out
 
 
@@ -498,6 +517,14 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
     return grouped, totals
 
 
+# The shares are each response's share of all the responses (shares() divides
+# by their sum), so they add up to 100 -- measured at 99.6-100.5 after
+# rounding across the 556 units. The note once said they summed above 100%,
+# which is true only of shares of people.
+ANCESTRY_NOTE = ("ABS ancestry is multi-response (up to two per person); these shares are of "
+                 "all the responses given, not of people, so they sum to 100%.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -577,8 +604,7 @@ def main() -> int:
                           "'not stated' is retained as its own category.",
             ancestry=anc_rows or gap(NOT_AVAILABLE),
             ancestry_year=dated(anc_rows, YEAR),
-            ancestry_note="ABS ancestry is multi-response (up to two per person), so shares "
-                          "are of responses and sum above 100%.",
+            ancestry_note=ANCESTRY_NOTE,
             language=lan_rows or gap(NOT_AVAILABLE),
             language_year=dated(lan_rows, YEAR),
             language_note=f"ABS {YEAR} language used at home (G13), one answer per person, "

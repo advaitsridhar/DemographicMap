@@ -42,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import canonical_groups
 import group_tree
+from fetch_geonames import SPANS as GEONAMES_SPANS  # noqa: E402
 from common import (  # noqa: E402
     DERIVED, MODELLED, NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED,
     RAW, ROOT,
@@ -137,7 +138,7 @@ ADAPTER_FILES = [
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
-    "korea_survey_province.json",
+    "korea_province_survey.json",
     # Korea's nationality, by the owner's decision of 19 September 2026: the
     # immigration register's foreign residents by country of nationality
     # against the resident register's Koreans, written on the ethnicity
@@ -188,7 +189,8 @@ ADAPTER_FILES = [
     # office's own Vietnamese results volume: a census count.
     "vietnam_province.json",
     # Hong Kong's own census, one shape under China: ethnicity and usual
-    # spoken language from the 2021 Main Results workbook.
+    # spoken language from the 2021 Main Results workbook, on the SAR and
+    # again on 'Xianggang', the polygon the second level draws it as.
     "hongkong_census.json",
     # Laos's 18 provinces and 148 districts: ethno-linguistic category and
     # religion summed from the 2015 census's own 8,500-village indicator
@@ -232,6 +234,17 @@ ADAPTER_FILES = [
     # article's table, or a unit that is its country less another unit of
     # the same census (wiki_table_population). Fill-only like the file above.
     "wiki_table_population.json",
+    # Lebanon's cazas and governorates: residents by nationality (Lebanese or
+    # not) from CAS's Labour Force and Household Living Conditions Survey
+    # 2018-19, Table HL.6A (lebanon_survey). Lebanon has held no census since
+    # 1932; a survey, so its compositions only fill, behind any count, as a
+    # *_survey.json's do wherever it sits. It sits below the encyclopaedic
+    # floor above for its population statements: each caza's says no count of
+    # its residents exists and displaces Wikidata's undated figure for it
+    # (Baabda's 511,200), and a statement read before that figure would have
+    # been overwritten by it -- and, where Wikidata has none, by Wikidata's
+    # own "no P1082 statement" marker (Jezzine).
+    "lebanon_survey.json",
     # The source a Wikipedia article cites, read where the article's own
     # figure garbles or contradicts it (cited_sources): Somalia's eighteen
     # regions from citypopulation.de's 2019 column, which six region articles
@@ -261,6 +274,19 @@ ADAPTER_FILES = [
     # Afghanistan there is no count to lose to, which is the whole reason this
     # file exists.
     "afghanistan_district.json",
+    # Afghan district ethnicity read from the development plans' own PDFs (the
+    # Internet Archive's copies): where a plan states shares they replace the
+    # articles' transcription above, whose year is a range and so decides nothing.
+    "afghanistan_ddp.json",
+    # The statistics office's 1396 (2017-18) estimates by district and province:
+    # settled population and sex ratio, temporary districts summed into the
+    # polygon drawn for them; a stated reason for median age and ethnicity on all.
+    "afghanistan_estimates.json",
+    # Median age by district from the office's Socio-Demographic and Economic
+    # Survey of twelve provinces (2011-16): a survey estimate from every other
+    # listed household (Bamyan's from its full listing), each record giving its
+    # basis and size. After the estimates file so its particular reasons stand.
+    "afghanistan_sdes_survey.json",
     "cod_ps_admin2.json",
     # Median age and sex ratio from the same datasets' sex and five-year age
     # breakdown, for the regions no census file gives them. Fill-only (see
@@ -277,10 +303,29 @@ ADAPTER_FILES = [
     # Where the agency counts a district the boundary file does not draw, the
     # older shape around it carries both, or a gap that says why.
     "uzbekistan_siat.json",
+    # Uzbekistan's 2026 census, preliminary results by region: population,
+    # five-year ages, sex, nationality and native language
+    # (uzbekistan_census). A count, so after SIAT's estimate for the same year.
+    "uzbekistan_census.json",
     # Iraq's 2024 census from COSIT's Annual Abstract (iraq_census): every
     # governorate, and the districts of the governorates whose census districts
     # can be placed wholly inside the boundary file's older ones.
     "iraq_census.json",
+    # Iran's 2016 census by province and shahrestan -- single-year ages, sex,
+    # citizenship as ethnicity (basis "citizenship") -- and the 1395 yearbook's
+    # religion by province, from Archive captures (iran_census). The three
+    # shahrestans drawn as two polygons take each half's own settlement count.
+    "iran_census.json",
+    # Kyrgyzstan's 2022 census Book III: age, sex, ethnic group and native
+    # language by region, district and city.
+    "kyrgyzstan_census.json",
+    # Tajikistan's 2020 census volume 2 and the 2010 census's nationality by
+    # region.
+    "tajikistan_census.json",
+    # Turkmenistan's 2022 census volumes 2 and 4 by velayat, Ashgabat inside
+    # Ahal. Every etrap carries its own reason, which displaces older
+    # Wikidata figures.
+    "turkmenistan_census.json",
     # Ecuador's 2022 census by province and canton, from INEC's workbook as
     # the Internet Archive captured it (ecuador_census): INEC's host refuses
     # the runner.
@@ -320,6 +365,46 @@ ADAPTER_FILES = [
     "europe_wiki_montenegro.json",
     "europe_wiki_serbia.json",
     "europe_wiki_bulgaria.json",
+    # Syria's 2004 census by governorate and district, from the Census Bureau's
+    # HDX workbook (syria_census): age, sex and nationality, the census's only
+    # identity question. The citizens' row is "Syrian citizens", naming no people.
+    "syria_census.json",
+    # Yemen's 2004 census by governorate and district from the same kind of
+    # workbook (yemen_census): people, sex, nationality; the units the boundary
+    # file cuts or merges say why they are empty.
+    "yemen_census.json",
+    # Median age from the CSO's 2017 district projection (yemen_census).
+    # Fill-only: a projection never replaces a count.
+    "yemen_census_age.json",
+    # Bahrain's 2020 census on data.gov.bh (bahrain_census): governorates by sex
+    # and eight nationality groups, written at both levels, the map drawing the
+    # same four polygons twice; age and religion are kingdom-only and say so.
+    "bahrain_census.json",
+    # Saudi Arabia's 2022 census by region, sex and age as OCHA's COD-PS relays
+    # GASTAT (saudi_census); the 147 governorates say why they hold no figure.
+    "saudi_census.json",
+    # Qatar's 2020 census by municipality, sex and age from data.gov.qa
+    # (qatar_census); the 79 zones say why the portal's zone table is not used.
+    "qatar_census.json",
+    # Kuwait's 2021 register-based census from the CSB (kuwait_census):
+    # governorates by sex, age and nationality group; areas by sex and Kuwaiti or
+    # not, bound by their OpenStreetMap ground, the rest saying what they may hold.
+    "kuwait_census.json",
+    # Israel's CBS Statistical Abstract 2024 tables 2.17, 2.19 and 2.15
+    # (israel_cbs): population group, median age, sex, district religion;
+    # Jerusalem's encyclopaedia figures are displaced by a stated gap.
+    "israel_cbs.json",
+    # Jordan's DoS end-2025 estimates (people, sex) and 2015 census (median age,
+    # nationality) by governorate (jordan_dos); the second-level shapes are not
+    # the DoS's liwas and say so.
+    "jordan_dos.json",
+    # Oman's NCSI Statistical Year Book 2024 (oman_ncsi): wilayats' registered
+    # population by nationality at the end of 2023, regions summed from them,
+    # median age where a region is whole governorates.
+    "oman_ncsi.json",
+    # Abu Dhabi emirate from SCAD's census site (uae_scad): 2024 population and
+    # sex ratio, written at both levels, the map drawing the emirates twice.
+    "uae_scad.json",
     # Moldova's seven units the Europe reader refused, read by the owner's
     # decision of 22 September 2026 from the Romanian articles and the
     # Transnistria article's table. After europe_wiki_moldova.json, whose gap
@@ -340,8 +425,10 @@ ADAPTER_FILES = [
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
-    # beside it. It writes no composition -- the country asks none of the
-    # three, which this file's own reading of the report is what established.
+    # beside it (males per 100 females), and Table 4's median age for the 7
+    # provinces drawn on their 2008 ground. It writes no composition -- the
+    # country asks none of the three, which this file's own reading of the
+    # report is what established.
     "northkorea_county.json",
     # NUTS-1 where it is a first-level unit -- France's regions, Germany's
     # Laender, Belgium's regions, Italy's macro-regions, Mazowieckie -- placed
@@ -373,8 +460,42 @@ ADAPTER_FILES = [
     # Sovereign Order 4,481 of 2013) and Andorra's parishes in 2025, summed
     # from the Departament d'Estadistica's settlements.
     "microstates.json",
-    # The 2020 census's median age for every municipality, bound by JIS code.
+    # Japan's 2020 census for all 1,731 municipalities, bound by JIS code
+    # (japan_municipal): population and nationality as ethnicity (e-Stat
+    # 0003445244, the owner's decision of 19 September 2026), median age
+    # (0004019308) and sex ratio (0004019309), and the prefectures' median and
+    # sex ratio; religion and language not_collected on every municipality.
     "japan_municipal.json",
+    # Korea's resident register by single year of age, 31 December 2025
+    # (korea_ages): median age and sex ratio for 17 provinces and 228
+    # districts; no population (korea_nationality's), no composition.
+    "korea_ages.json",
+    # Korea's 2015 census religion (korea_religion, KOSIS DT_1PM1502: the
+    # sample's answers weighted to every resident) for 17 provinces and 228
+    # districts. A count: it replaces the 2025 survey above wherever both reach.
+    "korea_religion.json",
+    # Taiwan's 368 townships (taiwan_townships): the household register at the
+    # end of August 2026 for population, median age, sex ratio and indigenous
+    # status; the 2020 census's main language from the county reports' Table 6;
+    # religion not_collected. The 22 counties get the register's population,
+    # median and sex ratio and keep taiwan_county.json's modelled religion;
+    # their ethnicity is the register's indigenous-status count.
+    "taiwan_township.json",
+    # China's census yearbook 2020, the bureau's own tables (china_census): 31
+    # provinces' population, sex ratio, median age and 56 nationalities (after
+    # china_wiki_province, which transcribes the same tables); Hong Kong's and
+    # Macau's 2021 median age and sex ratio.
+    "china_census_province.json",
+    # China's 2,370 county polygons (china_census): a reason on each mainland
+    # polygon; Hong Kong drawn again ('Xianggang') with the SAR's median and sex
+    # ratio and a stated count gap; Macau's 1.4 km2 sliver a stated gap.
+    "china_census_county.json",
+    # The provinces' own 2020 census yearbooks by county (china_county_census):
+    # Jilin, Jiangsu, Qinghai, Inner Mongolia, Hebei and Shandong. Population,
+    # sex ratio, median age and nationalities on the 75 polygons still the
+    # county counted (six tests), a specific reason on the other 260. After
+    # china_census_county.json, whose general reason it replaces.
+    "china_county_census.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
     "romania_county.json",
@@ -385,6 +506,13 @@ ADAPTER_FILES = [
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
+    # Median age for every state and every district drawn as the 2011 census
+    # counted it, from table C-13's single years; shapes made or cut since say
+    # why, and nothing of a parent is put on a child.
+    "india_age.json",
+    # Place of birth (Census 2011 D-01) on the ethnicity field under its basis,
+    # by the owner's decision of 19 September 2026; same shapes as india_age.
+    "india_birthplace.json",
     "mexico_state.json", "mexico_municipality.json", "mexico_municipality_age.json",
     # Indigenous and Afro-Mexican self-identification, crossed in the extended
     # questionnaire's sample; ITER's files above carry no ethnicity.
@@ -545,17 +673,37 @@ ADAPTER_FILES = [
     # -- the 2020 questionnaire does not ask it -- and comes from
     # NOT_COLLECTED_POLICY.
     "mongolia.json",
+    # Mongolia's resident population at the end of 2025 by sex and five-year
+    # age for all 339 soums (mongolia_ages, NSO DT_NSO_0300_068V2/067V2);
+    # aimags are sums of their drawn soums, the 2025 reform's moves noted.
+    "mongolia_ages.json",
     # Religion, population and mother tongue together: this one file reads
     # Table 9 and Table 11 of the same census. It used to be a pair, the
     # language half coming from the U.S. Census Bureau's tables of the 2017
     # round, which named nine tongues and left Chitral 93.1% "Other".
     "pakistan_district.json",
-    # Population only: Bhutan's census does not ask religion, language or
-    # ethnicity, and those three are declared not_collected in common.py.
-    # This fills 205 gewogs that carried nothing at all, and Thimphu, which
-    # carried nothing because geoBoundaries spells it "Thimpu".
+    # Census 2023 Table 4 (single years by sex) by district: median age and sex
+    # ratio; Gilgit-Baltistan, which PBS tabulates apart, says why it has none.
+    "pakistan_age.json",
+    # Table 10's nationality on the ethnicity field under its basis, in the
+    # census's own categories ("Bangali" as printed).
+    "pakistan_nationality.json",
+    # Bhutan's 20 dzongkhags and 205 gewogs from the PHCB 2017 dzongkhag reports:
+    # population and sex ratio from Table 2.1, median age from annex A2.6/A2.7
+    # where its groups add up, and citizenship (Table 2.2 against 2.1) on the
+    # ethnicity field under its basis. Religion and language are declarations.
     "bhutan_gewog.json",
     "bangladesh_district.json",
+    # Every zila's 2022 median age, interpolated in the five-year groups of the
+    # Bureau's Community Series (Table C-02), each division's zilas held to
+    # National Report Table P03 group by group; dated 2022 on the record.
+    "bangladesh_zila_age.json",
+    # The Maldives' 2022 census by atoll: head count, sex ratio and the bureau's
+    # own median age; nationality on the ethnicity field under its basis.
+    # (One shared comment; maldives_census.json and maldives_nationality.json go on one line: "maldives_census.json", "maldives_nationality.json",)
+    "maldives_census.json",
+    # (same line and comment as maldives_census.json)
+    "maldives_nationality.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
@@ -569,13 +717,65 @@ ADAPTER_FILES = [
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
     "thailand_province.json",
-    # Papua New Guinea's own office, two of its publications: the 2024
-    # census's head count for the 22 provinces and 71 of the 87 district
-    # shapes, and the 2011 census's one provincial religion figure. Nothing
-    # else writes PNG, so its place here is only by kind -- a census count.
+    # Papua New Guinea's own office, two of its publications: the 2024 census's
+    # head count and sex ratio for the 22 provinces and all 87 district shapes, and
+    # the 2011 census's provincial median age (20 of 22; NCD's and Milne Bay's
+    # contradict their sexes') and one provincial religion figure. Nothing else
+    # writes PNG.
     "png.json",
+    # Fiji's 2017 census by five-year age and sex for the 15 provinces and 4
+    # divisions (median age, sex ratio), and the 2007 census's Table P01-3
+    # religion and ethnicity, the latest by province. The Eastern polygon is Kadavu alone.
+    "fiji_census.json",
+    # Solomon Islands' 2019 census Basic Tables by province and ward, the wards
+    # summed into the constituencies by OCHA's ward table: count, median age,
+    # sex ratio, religion; ethnicity by province only. OCHA's 2023 projections
+    # for the same constituencies give way to it (SUPERSEDED_ROWS).
+    "solomon_census.json",
+    # Vanuatu's 2020 census, Volume 1, for the six provinces and 58 drawn area
+    # councils: count, median age (Table 4's own for the rural provinces), sex
+    # ratio, ethnic origin, religion, and first language of everyone aged 3+.
+    "vanuatu_census.json",
+    # Samoa's 2021 census villages filed into the 41 old Faipule districts by the
+    # 2016 census's village lists, and the 11 itumalo made of them: count, median
+    # age, sex ratio, religion, and citizenship on the ethnicity field.
+    "samoa_census.json",
+    # Tonga's 2021 census General Tables for the five divisions and 21 drawn
+    # districts: count, median age, sex ratio, religion, multi-response ethnic
+    # origin; language at home by division only.
+    "tonga_census.json",
+    # Kiribati's 2020 census by island: the Island Profile's counts, the General
+    # Report's sex and ethnicity, median ages from SPC's five-year tabulation of
+    # the same census (the Report's own column contradicts its age groups), and
+    # the 2015 census's religion by island. Same year as cod_ps_admin2.json's
+    # island counts, so it replaces them.
+    "kiribati_census.json",
+    # The Marshall Islands' 2021 census by atoll, the same record at both levels:
+    # count, median age, sex ratio, religion, ethnicity; language for Majuro and
+    # Kwajalein only (multi-response).
+    "marshall_census.json",
+    # Tuvalu's 2022 census by island (count, median age, sex ratio), the 2017
+    # census's religion and ethnicity by island, and its count and sex ratio for
+    # the six drawn villages.
+    "tuvalu_census.json",
+    # The FSM's 2023 census by state and municipality (count, median age, sex
+    # ratio, religion), the 2010 census's ethnicity and language, and the 2000
+    # census's first ethnicity for Chuuk's and Kosrae's municipalities.
+    "micronesia_census.json",
+    # Nauru's 2021 census by district: count, sex ratio, median age from the
+    # five-year groups above 15, ethnicity, and the religion of its citizens.
+    "nauru_census.json",
+    # Palau's 2020 census by state and Koror hamlet, transcribed from Volume I's
+    # scanned tables: count, median age, sex ratio, ethnicity, religion, and
+    # whether people speak Palauan.
+    "palau_census.json",
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
+    # Kazakhstan's 2021 census median age and sex ratio by region and district.
+    "kazakhstan_census.json",
+    # Religion by region from the 2021 census's brief results (table 7.1),
+    # replacing Wikipedia's transcription, and by district from the 2009 census.
+    "kazakhstan_religion.json",
     "malaysia_state.json", "malaysia_district.json",
     # After both: the same 16 states and the districts, religion only, from
     # the 2020 census; its gaps never displace the ethnicity above.
@@ -637,6 +837,47 @@ ADAPTER_FILES = [
     "bucharest_sectors.json", "north_macedonia_2002.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "peru_department.json",
+    # Southeast Asia from its offices' own tables. After indonesia, timor,
+    # singapore_planning_area, philippines_province, thailand_province,
+    # cambodia_province and myanmar_state, whose same-year figures these replace.
+    # Indonesia: population, median age and sex ratio for 34 provinces and 513
+    # regencies, BPS 2020 census Long Form (2022, Table 3.1) via USCB on HDX;
+    # stated reasons for regency ethnicity, religion and language.
+    "indonesia_age.json",
+    # Viet Nam: 2019 census district population and sex ratio (Table 1) and
+    # province median age (Table 5); religion by province from the 2009 census
+    # (Tables 7 and 1), which 2019 publishes for the country only.
+    "vietnam_district.json",
+    "vietnam_religion.json",
+    # Timor-Leste: 2022 municipality median and sex ratio; post sex ratio and
+    # count (2022) and post median (2015, tables 6 and 7); nationality by
+    # municipality (2015, table 9) as ethnicity_basis "nationality".
+    "timor_age.json",
+    "timor_nationality.json",
+    # Myanmar: median, sex ratio and count by district and state/region from the
+    # 2014 census's five-year groups; nine split or zoned polygons summed.
+    "myanmar_age.json",
+    # Philippines: median, sex ratio and count by province and region from the
+    # PSA 2020 census single years by barangay; two mismatched polygons say why.
+    "philippines_age.json",
+    # Religion and ethnicity summed onto Myanmar's composed districts and Metro
+    # Manila's districts, under uscb's labels; CLEAR Global's 2010 household
+    # language bound to Metro Manila's four districts, Isabela's row refused.
+    "sea_composed.json",
+    # Singapore: median age and sex ratio by planning area, Census 2020.
+    "singapore_age.json",
+    # Cambodia: district and province count and sex ratio, 2019 census final
+    # report (Table 2.1.1, annex P-01 to P-25), communes crosswalked by name.
+    "cambodia_census.json",
+    # Thailand, Laos, Cambodia: COD-PS medians and sex ratios (projections,
+    # FILL_ONLY), plus Thailand's district composition reasons, which replace
+    # thailand_province's generic ones.
+    "sea_cod_ps_age.json",
+    # Thailand: Thai and foreign nationals by province, 2000 census (each final
+    # report's key indicators, read off the page and checked against the
+    # census's Table 1), ethnicity_basis "nationality". A count, so it replaces
+    # thailand_ethnicity's modelled estimate on the 76 provinces.
+    "thailand_nationality.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
     # the language each person learned to speak in, for all 22 departments
     # and 340 municipios. Below CLEAR Global, whose 2002 sample it replaces
@@ -781,6 +1022,11 @@ ADAPTER_FILES = [
     "iceland_origin.json",
     "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
+    # The ABS's 2021 General Community Profile for the 547 LGAs and nine states
+    # (australia_profile): median age (G02), sex ratio (G01), ancestry on the
+    # ethnicity field (G08); each state's own G01 count and G14/G13 religion and
+    # language (Australian Indigenous languages named) from the SA2+ tables.
+    "australia_profile.json",
     "uk_lad.json", "uk_county.json",
     # England and Wales themselves, the map's first level: the same ONS 2021
     # tables (TS021 ethnic group, TS030 religion, TS024 main language) asked
@@ -853,10 +1099,24 @@ ADAPTER_HINTS: dict[str, str] = {
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
            "županija and grad/općina: python -m scripts.fetch_census.croatia",
-    "KAZ": "2021 census religion by region, transcribed on Wikipedia "
-           "(python -m scripts.fetch_census.wiki_census --country KAZ); ethnicity by "
+    "KAZ": "2021 census religion by region from the Bureau's brief results, and by "
+           "district from the 2009 census's regional volumes "
+           "(python -m scripts.fetch_census.kazakhstan_religion); ethnicity by "
            "region and district from the Bureau's start-of-2025 workbook "
-           "(python -m scripts.fetch_census.kazakhstan)",
+           "(python -m scripts.fetch_census.kazakhstan); median age and sex ratio "
+           "from the 2021 census (python -m scripts.fetch_census.kazakhstan_census)",
+    "UZB": "Population, median age and sex ratio by region and district from SIAT "
+           "(python -m scripts.fetch_census.uzbekistan_siat); the 2026 census's "
+           "preliminary results by region -- population, age, sex, nationality, "
+           "native language (python -m scripts.fetch_census.uzbekistan_census)",
+    "KGZ": "2022 census Book III, the nine regional books: population, age, sex, "
+           "ethnic group and native language by region, district and city: "
+           "python -m scripts.fetch_census.kyrgyzstan_census",
+    "TJK": "2020 census volume 2 (age and sex by region; men and women by city and "
+           "district) and the 2010 census's volume III (nationality by region): "
+           "python -m scripts.fetch_census.tajikistan_census",
+    "TKM": "2022 census volumes 2 and 4 by velayat (age, sex, nationality, mother "
+           "tongue): python -m scripts.fetch_census.turkmenistan_census",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
     "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
@@ -986,38 +1246,76 @@ ADAPTER_HINTS: dict[str, str] = {
 # a script is a promise that running it would fill the panel; for these it would
 # not, and saying so is the point of the map rather than an admission against
 # it. Kept short here; docs/SOURCES.md carries what was actually tried.
+IRAN_LANGUAGE = (
+    "Language: no Iranian census has ever asked it. Some provinces and "
+    "counties carry a figure all the same -- a population-weighted roll-up of "
+    "the settlement estimates in the Atlas of the Languages of Iran, marked as "
+    "the atlas's field estimates and not as anybody's count. The atlas is "
+    "published province by province and has reached twelve of the thirty-one; "
+    "the rest of the country is empty because those modules do not exist yet, "
+    "and Kermanshah is empty because its module reaches five of its fourteen "
+    "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
-    "THA": "The statistical office refuses automated readers on every host "
-           "tried. Religion by province is the 2000 census, read from its "
+    "THA": "The statistical office's own tables could not be read from any of "
+           "its websites. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
            "made public once, for 2000, in a file that is not a composition. "
-           "Ethnicity is not asked, and by the owner's decision of 19 September "
-           "2026 every province carries a modelled estimate instead: the 2000 "
-           "census's home-language minorities as printed, the rest assigned to "
-           "the region's Tai group as the Ethnolinguistic Maps of Thailand name "
-           "it, labelled as a model on every record.",
-    "IRN": "The 2016 census asked religion and the Statistical Centre publishes "
-           "it by province, but amar.org.ir ends the TLS handshake before a "
-           "standard client can read a page (an EOF in the protocol, measured "
-           "on the runner), and this project does not turn verification off. "
-           "The data exists and is not reachable from here. Language is a "
-           "different kind of gap: no Iranian census has ever asked it, so "
-           "there is nothing withheld and nothing to fetch. Eleven provinces "
-           "and 96 counties carry a figure all the same -- a population-"
-           "weighted roll-up of the settlement estimates in the Atlas of the "
-           "Languages of Iran, marked as the atlas's field estimates and not "
-           "as anybody's count. The atlas is published province by province "
-           "and has reached twelve of the thirty-one; the rest of the country "
-           "is empty because those modules do not exist yet, and Kermanshah "
-           "is empty because its module reaches five of its fourteen counties "
-           "and under a fifth of its people.",
-    "EGY": "CAPMAS collected religion in the 2017 census and has not published "
-           "it, nationally or by governorate; the last published figures are "
-           "the 2006 census, national only. The data exists and is withheld. "
-           "17 of the 27 governorates carry a survey estimate instead, from "
-           "Afrobarometer Round 5 (2013), the last round that asked religion "
-           "in Egypt; this one was not among them.",
+           "Ethnicity is not asked: the provinces carry the 2000 census's count "
+           "of Thai and foreign nationals, and where that is missing a modelled "
+           "estimate -- the 2000 census's home-language minorities as printed, "
+           "the rest assigned to the region's Tai group as the Ethnolinguistic "
+           "Maps of Thailand name it, labelled as a model on every record.",
+    # Only language is left for this to explain. The 2016 census's religion
+    # by province now comes from iran_census.json, which reads the Statistical
+    # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir
+    # itself still ends the TLS handshake), and every unit it cannot fill --
+    # each county, Golestan, the polygon drawn for Bandar-e Gaz -- carries
+    # its own stated reason.
+    "IRN": IRAN_LANGUAGE + " Religion is a different gap: the 2016 census "
+           "asked it and the Statistical Centre publishes it by province only, "
+           "so no county carries it.",
 }
+# A country-level reason for one field, where ADAPTER_GAPS' one sentence for
+# the whole unit would be wrong about the others. Egypt's said CAPMAS withheld
+# religion, and say_why_empty put that under language and ethnicity too, and
+# on 341 districts whose main empty field is a population nobody has counted
+# for them. Iran's put its religion sentence under language. A reason given
+# by level applies at that level only. Checked by say_why_empty before the
+# unit's gap_reason, and never over a note already there.
+FIELD_GAPS: dict[str, dict[str, str | dict[str, str]]] = {
+    "EGY": {
+        "religion": {
+            "admin1": "CAPMAS collected religion in the 2017 census and has not "
+                      "published it, nationally or by governorate; the last "
+                      "published figures are the 2006 census's, national only. 17 of "
+                      "the 27 governorates carry a survey estimate instead, from "
+                      "Afrobarometer Round 5 (2013), the last round that asked "
+                      "religion in Egypt; this governorate is not among them.",
+            "admin2": "CAPMAS collected religion in the 2017 census and has not "
+                      "published it, nationally, by governorate or by district; the "
+                      "last published figures are the 2006 census's, national only. "
+                      "The survey estimate some governorates carry (Afrobarometer "
+                      "Round 5, 2013) is sampled by governorate and gives no figure "
+                      "for a district.",
+        },
+        "language": "Afrobarometer asked about language in Egypt but coded every "
+                    "one of its 2,388 Egyptian respondents, across both rounds, to a "
+                    "single value, so no composition is built from it, and no census "
+                    "table of language by governorate or district has been read.",
+        "ethnicity": "Afrobarometer did not ask about ethnicity in Egypt in either "
+                     "round that surveyed it, and no census table of ethnicity by "
+                     "governorate or district has been read.",
+    },
+    "IRN": {"language": IRAN_LANGUAGE},
+}
+
+
+def field_gap(country: str | None, field: str, level: str | None) -> str | None:
+    """FIELD_GAPS' reason for this field of a unit of this country and level."""
+    reason = FIELD_GAPS.get(country or "", {}).get(field)
+    if isinstance(reason, dict):
+        return reason.get(level or "")
+    return reason
 
 # Shapes an adapter deliberately will not fill, and why -- a fact about the
 # boundary file rather than about what a country publishes, which is why it
@@ -1587,6 +1885,7 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
             "The CGAZ boundary files are not in git (they are ~550 MB).\n"
             "Run: python3 scripts/fetch_boundaries.py --cgaz")
     out: list[dict[str, Any]] = []
+    seats = seat_points() if level in ("ADM1", "ADM2") else None
     with fiona.open(path) as src:
         for feat in src:
             props = dict(feat["properties"])
@@ -1595,17 +1894,23 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 continue
             point = geom.representative_point()
             bounds = geom.bounds
-            out.append({
+            name = respell(repair((props.get("shapeName") or "").strip()),
+                           props.get("shapeGroup"))
+            row = {
                 "shape_id": props.get("shapeID") or props.get("shapeGroup"),
-                "name": respell(repair((props.get("shapeName") or "").strip()),
-                                props.get("shapeGroup")),
+                "name": name,
                 "group": props.get("shapeGroup"),
                 "point": [round(point.x, 5), round(point.y, 5)],
                 "bbox": [round(b, 4) for b in bounds],
                 "_geom": (geom if level != "ADM2"
                           or props.get("shapeGroup") in OUTLINE_REFERENCE else None),
                 "area": geom.area,
-            })
+            }
+            # While the polygon is in hand: the second level's is not kept.
+            seat = seat_drawn_for(geom, row["group"], name, seats) if seats else None
+            if seat:
+                row["_seat"] = seat
+            out.append(row)
     log(f"  {level}: {len(out)} shapes")
     if level == "ADM2":
         for iso3, filename in OUTLINE_REFERENCE.items():
@@ -1919,9 +2224,309 @@ def weigh_adm2_parents(
     return moved, unplaced
 
 
+# Second-level polygons whose first-level unit the geometry cannot give,
+# declared with the unit the census files them under:
+# {shapeID: (ISO3, the first-level unit's name as the boundary file labels it)}.
+# Geometry stays the rule (see link_adm2_parents); this is for a polygon that
+# meets no first-level one, or that the boundary file's coarser first level
+# puts mostly inside a neighbour, each entry with the count that shows it.
+#
+# The parent is not decoration. It is what a first-level unit's sum is taken
+# over, so a child filed elsewhere is a child that sum leaves out: Kinmen's five
+# drawn townships added up to 136,611 against the county's registered 137,208,
+# and the sum replaced the count.
+DECLARED_PARENTS: dict[str, tuple[str, str]] = {
+    # Wuqiu township lies off the Fujian coast, about a degree from both Kinmen
+    # and the Matsu Islands, and its polygon meets no first-level one. The
+    # household register files it under Kinmen County: its register code
+    # 09020060 is Kinmen's (09020), its register name 金門縣烏坵鄉, and
+    # Kinmen's 137,208 registered people are its six townships' to the person,
+    # Wuqiu's 597 included (taiwan_township, taiwan_county).
+    "52511910B62500214534323": ("TWN", "Kinmen"),
+    # Kiribati is deliberately absent. The polygon CGAZ labels the Phoenix
+    # Islands also draws Tarawa and Banaba, which the census counts in the
+    # Gilbert group; kiribati_census gives each island-group polygon the
+    # islands it draws ('Tarawa, Banaba and the Phoenix Islands', 'Gilbert
+    # Islands except Tarawa and Banaba') and stops if the map files those
+    # islands anywhere but where they are drawn, which is where geometry puts
+    # them.
+    # Viet Nam's first level is drawn coarser than its districts, so by area
+    # An Duong and An Lao (Hai Phong's) and Dong Trieu (Quang Ninh's) sat in
+    # Hai Duong, whose 13 drawn children added up to 2,149,590 against its
+    # census 1,892,254; Son Tay (Quang Ngai's) sat in Kon Tum and Ba Vi (Ha
+    # Noi's) in Phu Tho, and five island districts met no province at all.
+    # Each is filed under the province whose districts the General Statistics
+    # Office's 2019 table counts it among (vietnam_district.json's ids); with
+    # all 27 so filed, every one of the 19 provinces they touch adds up to its
+    # census population exactly, where by area they ran from 66% (Bac Giang)
+    # to 127% (Phu Tho).
+    "81297802B90799057915407": ("VNM", "Bình Thuận"),  # Phu Quy; by area in no province
+    "81297802B61782089337393": ("VNM", "Bắc Giang"),  # Hiep Hoa; by area in Hà Nội
+    "81297802B30186135932553": ("VNM", "Bắc Giang"),  # Viet Yen; by area in Bắc Ninh
+    "81297802B99638089462809": ("VNM", "Bắc Giang"),  # Yen Dung; by area in Bắc Ninh
+    "81297802B85996690558528": ("VNM", "Bắc Ninh"),  # Tu Son; by area in Hà Nội
+    "81297802B94958861355476": ("VNM", "Hà Nội"),  # Ba Vi; by area in Phú Thọ
+    "81297802B91668671895601": ("VNM", "Hà Nội"),  # Me Linh; by area in Vĩnh Phúc
+    "81297802B48632704069528": ("VNM", "Hà Nội"),  # My Duc; by area in Hòa Bình
+    "81297802B83594447255": ("VNM", "Hưng Yên"),  # Hung Yen; by area in Hà Nam
+    "81297802B59998896925567": ("VNM", "Hưng Yên"),  # Khoai Chau; by area in Hà Nội
+    "81297802B33082020704537": ("VNM", "Hưng Yên"),  # Van Giang; by area in Hà Nội
+    "81297802B56696175700764": ("VNM", "Hải Dương"),  # Binh Giang; by area in Hưng Yên
+    "81297802B67689154766571": ("VNM", "Hải Dương"),  # Thanh Mien; by area in Hưng Yên
+    "81297802B31270346353021": ("VNM", "Hải Phòng"),  # An Duong; by area in Hải Dương
+    "81297802B65658789050233": ("VNM", "Hải Phòng"),  # An Lao; by area in Hải Dương
+    "81297802B40834484476285": ("VNM", "Hải Phòng"),  # Bach Long Vi; by area in no province
+    "81297802B83209776142835": ("VNM", "Hậu Giang"),  # Chau Thanh; by area in Cần Thơ
+    "81297802B94036559538482": ("VNM", "Hậu Giang"),  # Chau Thanh A; by area in Cần Thơ
+    "81297802B10550571931229": ("VNM", "Kiên Giang"),  # Kien Hai; by area in no province
+    "81297802B63810165613250": ("VNM", "Quảng Ngãi"),  # Ly Son; by area in no province
+    "81297802B56181672233009": ("VNM", "Quảng Ngãi"),  # Son Tay; by area in Kon Tum
+    "81297802B76384767601248": ("VNM", "Quảng Ninh"),  # Co To; by area in no province
+    "81297802B3249391660958": ("VNM", "Quảng Ninh"),  # Dong Trieu; by area in Hải Dương
+    "81297802B38356347526872": ("VNM", "Quảng Ninh"),  # Quang Yen; by area in Hải Phòng
+    "81297802B99897160628736": ("VNM", "Thái Bình"),  # Vu Thu; by area in Nam Định
+    "81297802B72352297629850": ("VNM", "Vĩnh Phúc"),  # Song Lo; by area in Phú Thọ
+    "81297802B74371944720443": ("VNM", "Vĩnh Phúc"),  # Vinh Tuong; by area in Hà Nội
+    # Timor-Leste: the 2022 census counts Dom Aleixo (165,799) in Dili and
+    # Zumalai in Cova Lima; by area they fell in Liquica, whose four drawn
+    # children came to 249,457 against its 83,658, and in Ainaro. Filed as
+    # counted, Dili, Liquica, Ainaro and Cova Lima each add up to their census
+    # populations (timor_age).
+    "22284137B34351426942246": ("TLS", "Dili"),  # Dom Aleixo; by area in Liquiçá
+    "22284137B47375840688188": ("TLS", "Cova Lima"),  # Zumalai; by area in Ainaro
+    # Samoa: the 2021 census counts Vaisigano East (Vaisigano No. 1: Auala,
+    # Matavai (Asau), Utuloa and Vaisala) in Vaisigano. Its polygon reaches
+    # inland, so by area it is 56% in Gaga'ifomauga, whose drawn children then
+    # came to 6,896 against its census 4,797 and Vaisigano's to 4,658 against
+    # 6,757. Filed as counted, both add up to their census populations
+    # (samoa_census).
+    "51752279B16736708134398": ("WSM", "Vaisigano"),  # Vaisigano East; by area in Gaga'ifomauga
+    # Solomon Islands: the 2019 census counts West Honiara (wards Nggossi,
+    # Mbumburu and Rove/Lengakiki) in Honiara. The boundary file draws the
+    # Capital Territory narrow, so by area 76% of West Honiara lies in
+    # Guadalcanal, whose drawn constituencies then came to 190,081 against its
+    # census 154,022 and Honiara's to 93,510 against 129,569. Three island
+    # constituencies meet no province at all. Filed as counted, Honiara,
+    # Guadalcanal, Western, Malaita and Makira each add up to their census
+    # populations (solomon_census); Temotu is short only Temotu Pele, which
+    # has no polygon.
+    "97153195B79685360325521": ("SLB", "Capital Territory (Honiara)"),  # West Honiara; by area in Guadalcanal
+    "97153195B5229435776265": ("SLB", "Western"),  # Ranongga-Simbo; by area in no province
+    "97153195B283418478941": ("SLB", "Malaita"),  # Malaita Outer Island; by area in no province
+    "97153195B5813678005448": ("SLB", "Makira"),  # Ulawa-Ugi; by area in no province
+    # South Korea: the boundary file draws the metropolitan cities small, and
+    # seventeen districts fall inside a neighbouring province's polygon or
+    # outside every province's. Gwangju's drawn children came to 426,867
+    # against its 1,444,585 registered people, with four of its five districts
+    # under South Jeolla (2,778,927 against 1,853,327); Incheon's to 0.67 of
+    # it and Gyeonggi's to 1.10. The resident register files each of them
+    # under its own province (korea_nationality's DRAWN_ELSEWHERE); filed so,
+    # every province adds up to its registered population exactly, South
+    # Jeolla short only Yeonggwang-gun, which has no polygon. Gunwi-gun is
+    # Daegu's since July 2023, which is the register this follows.
+    "91817680B53616587081026": ("KOR", "Seoul"),  # Eunpyeong-gu; in Gyeonggi's polygon
+    "91817680B73279111808647": ("KOR", "Incheon"),  # Seo-gu [West District]; in Gyeonggi's polygon
+    "91817680B94833670639499": ("KOR", "Incheon"),  # Gyeyang-gu; in Gyeonggi's polygon
+    "91817680B24929628173287": ("KOR", "Incheon"),  # Ganghwa-gun; in Gyeonggi's polygon
+    "91817680B43125449030549": ("KOR", "Incheon"),  # Ongjin-gun; in no province
+    "91817680B91211823266814": ("KOR", "Busan"),  # Gangseo-gu; in South Gyeongsang's polygon
+    "91817680B54012703126739": ("KOR", "Busan"),  # Gijang-gun; in South Gyeongsang's polygon
+    "91817680B63526671374694": ("KOR", "Busan"),  # Yeongdo-gu; in no province
+    "91817680B33489673734556": ("KOR", "Daegu"),  # Dalseong-gun; in North Gyeongsang's polygon
+    "91817680B30315657457409": ("KOR", "Daegu"),  # Gunwi-gun; in North Gyeongsang's polygon
+    "91817680B89733153975870": ("KOR", "Gwangju"),  # Dong-gu [East District]; in South Jeolla's polygon
+    "91817680B87996420220515": ("KOR", "Gwangju"),  # Seo-gu [West District]; in South Jeolla's polygon
+    "91817680B68494559899558": ("KOR", "Gwangju"),  # Nam-gu [South District]; in South Jeolla's polygon
+    "91817680B16538338684661": ("KOR", "Gwangju"),  # Gwangsan-gu; in South Jeolla's polygon
+    "91817680B53543824194985": ("KOR", "Daejeon"),  # Dong-gu; in North Chungcheong's polygon
+    "91817680B88731995383072": ("KOR", "North Gyeongsang"),  # Uljin-gun; in Gangwon's polygon
+    "91817680B46467557111645": ("KOR", "South Jeolla"),  # Sinan-gun; in no province
+}
+
+
+# First-level units whose own count takes in a second-level unit the boundary
+# file draws no polygon for, so their drawn divisions cannot add up to it.
+# (country, first-level label) -> the undrawn unit. The note says so, with
+# what the drawn divisions add up to and what that leaves.
+UNDRAWN_PARTS: dict[tuple[str, str], str] = {
+    ("KOR", "South Jeolla"): "Yeonggwang-gun",
+    ("SLB", "Temotu"): "Temotu Pele",
+}
+
+
+def note_undrawn_parts(admin1: dict[str, list[dict[str, Any]]],
+                       admin2: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Say where a first-level count takes in a unit the map does not draw.
+
+    DECLARED_PARENTS files every Korean, Samoan and Solomon second-level
+    polygon under the unit that counts it, and each first-level unit then adds
+    up to its own count -- but two: South Jeolla is 52,871 more than its drawn
+    counties, Yeonggwang-gun having no polygon, and Temotu 5,395 more than its
+    drawn constituencies, Temotu Pele having none. That was said only in a
+    comment. Run once the populations are final; a note already there is kept
+    and this follows it, and nothing is said where a division has no
+    population or the drawn ones do not fall short.
+    """
+    said = []
+    for (iso3, name), part in sorted(UNDRAWN_PARTS.items()):
+        units = [e for e in admin1.get(iso3, []) if e.get("name") == name]
+        if len(units) != 1:
+            raise SystemExit(f"UNDRAWN_PARTS: {iso3} draws {len(units)} first-level "
+                             f"units named {name!r}")
+        unit = units[0]
+        own = published(unit.get("population"))
+        kids = [published(e.get("population")) for e in admin2.get(iso3, [])
+                if e.get("parent") == unit["id"]]
+        if own is None or not kids or None in kids:
+            continue
+        drawn = sum(kids)
+        if drawn >= own:
+            continue
+        sentence = (f"This count takes in {part}, which the map does not draw as a "
+                    f"unit of its own: the {len(kids)} divisions drawn here add up to "
+                    f"{drawn:,.0f}, which leaves {own - drawn:,.0f} for {part}.")
+        held = unit.get("population_note")
+        unit["population_note"] = f"{held} {sentence}" if held else sentence
+        said.append(f"{iso3} {name}: {part} {own - drawn:,.0f}")
+    return said
+
+
+def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
+                    declared: dict[str, tuple[str, str]] | None = None) -> list[str]:
+    """Give the declared second-level polygons the first-level unit they belong to.
+
+    A declaration names its unit by the boundary file's label, so it reads as
+    what it claims; the label must name exactly one first-level shape of that
+    country, and the polygon must be drawn in it. Either failing stops the
+    build: a stale declaration would file a district under nothing, or under
+    a namesake, and say nothing.
+    """
+    declared = DECLARED_PARENTS if declared is None else declared
+    by_name: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for row in adm1:
+        by_name[(row["group"], row["name"])].append(row)
+    seen: set[str] = set()
+    done: list[str] = []
+    for row in adm2:
+        wanted = declared.get(row.get("shape_id") or "")
+        if wanted is None:
+            continue
+        iso3, name = wanted
+        if row["group"] != iso3:
+            raise SystemExit(
+                f"DECLARED_PARENTS: {row['shape_id']} ({row['name']}) is drawn in "
+                f"{row['group']}, not {iso3}")
+        found = by_name.get((iso3, name), [])
+        if len(found) != 1:
+            raise SystemExit(
+                f"DECLARED_PARENTS: {iso3} draws {len(found)} first-level shapes "
+                f"labelled {name!r}, where {row['name']} needs exactly one")
+        was = row.get("parent_shape")
+        row["parent_shape"] = found[0]["shape_id"]
+        seen.add(row["shape_id"])
+        if was != row["parent_shape"]:
+            done.append(f"{row['name']} ({iso3}) under {name}")
+    missing = sorted(set(declared) - seen)
+    if missing:
+        raise SystemExit(f"DECLARED_PARENTS: no second-level shape drawn with id "
+                         f"{', '.join(missing)}")
+    return done
+
+
 # ---------------------------------------------------------------------------
 # Attribute side
 # ---------------------------------------------------------------------------
+
+# A file's rows for a country, dropped where another registered file counts
+# the same units outright: {file: {country: the file that counts them}}.
+# OCHA's Afghan table (cod-ps-afg, reference year 2026) totals 48.6 million
+# people and binds about 266 of the 398 drawn districts; the statistics
+# office's own 1396 (2017-18) estimates total 28.2 million settled people,
+# bind every district but two, and make their provinces to the person. The
+# year rule put OCHA's figure in front of the office's wherever both reached
+# a district, so a province's districts added up to neither year's total.
+# One vintage per level: the office's.
+# OCHA's Solomon Islands table is the National Statistics Office's projection
+# for 2023, by constituency; solomon_census.json sums the 2019 census's own
+# ward counts into the same 49 drawn constituencies (OCHA's fiftieth row,
+# Temotu Pele, has no polygon). The year rule let the projection stand in
+# front of the count -- 6.5-6.9% above it, over the census's ages, sexes and
+# religions -- where cod_ps_admin2.json's own entry says the office's census
+# file should win. A projection is not a count.
+# Nepal's is the same case. OCHA's table is the 2023 projection of the 77
+# districts; nepal_district.json counts all 75 the map draws in the 2021
+# census, the census every other field of those districts comes from, and
+# the provinces carry the same census. The projection stood on 64 of them by
+# year, so a district's median-age note quoted one head count (Kathmandu's
+# 2,041,587) beside another (2,181,575), and Bagmati's districts added up to
+# 6,475,167 against the province's 6,116,866.
+# The Wikipedia floor gives way the same way where an office's file pins every
+# first-level polygon of the country. It fills only what nothing else writes,
+# but a row still claims its polygon, and two rows naming different places on
+# one polygon stop the build. Afghanistan's one row is Ghazni's infobox
+# figure under the boundary file's misspelling, 'Ghanzi', on the polygon the
+# office's estimates now pin as Ghazni. Kiribati's three are the island
+# groups' Wikipedia figures -- the Gilbert group's 83,382 of 2005 -- on
+# polygons kiribati_census gives the census counts of the islands each draws,
+# named for them: the Gilbert polygon draws neither Tarawa nor Banaba.
+# Japan's municipalities are the third case. japan_municipal writes all 1,731
+# polygons from the 2020 census, bound by JIS code, but Wikidata's points
+# figures are dated 2021-2024 and so outranked it on 1,208 of them: Okuma, a
+# town under an evacuation order, showed its 10,004 registered residents
+# against the 847 the census found living there, and Masaki 39,681 against
+# 29,630.
+# Thailand's is a mismatch of concepts. Its provinces carry the Department of
+# Provincial Administration's register (through Wikidata, 2018-2022), and
+# OCHA's districts the US Census Bureau's 2023 projection of the de facto
+# population, which puts Bangkok's 50 districts at 11,479,338 against the
+# register's 5,676,648 and Mueang Samut Sakhon alone at 1,353,400 against its
+# province's 586,199. Wikidata carries the register for the districts too (877
+# of them at 2018): filed under the provinces Wikidata gives them, they add up
+# to the provinces' figures within 3% in 71 of 74. The projection's ages and
+# sexes stay, in sea_cod_ps_age.json.
+SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
+    "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
+                           "NPL": "nepal_district.json",
+                           "SLB": "solomon_census.json",
+                           "THA": "wikidata_admin2.json"},
+    "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
+                                    "KIR": "kiribati_census.json"},
+    "wikidata_points_admin2.json": {"JPN": "japan_municipal.json"},
+}
+
+
+# Rows a file spells differently from the boundary file, keyed by file and row
+# id. The alias joins the row's own names, so the matcher reaches the shape by
+# an exact name inside the row's province rather than by a guess. Thailand's
+# districts take the register through Wikidata (SUPERSEDED_ROWS), and three of
+# its romanisations are not the boundary file's: Watthana is CGAZ's 'Vadhana'
+# (Bangkok), Khwao Sinarin its 'Khwao Sin Rin' (Surin) and Thap Khlo its 'Tap
+# Khlo' (Phichit).
+ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
+    "wikidata_admin2.json": {
+        "THA-WD-Q1019417": ("Vadhana",),
+        "THA-WD-Q475772": ("Khwao Sin Rin",),
+        "THA-WD-Q476889": ("Tap Khlo",),
+    },
+}
+
+# Rows that are not a unit of today's map, keyed by file and row id, with the
+# reason. Wikidata files Thonburi Province, merged into Bangkok in 1971, among
+# Bangkok's districts with its 1970 population (920,033); its name reaches the
+# Thon Buri district's polygon, so the district's own row (103,377 in 2020)
+# met a rival and neither was placed.
+DROPPED_ROWS: dict[str, dict[str, str]] = {
+    "wikidata_admin2.json": {
+        "THA-WD-Q6580711": "Thonburi Province, merged into Bangkok in 1971",
+    },
+}
+
+
+def superseded(filename: str) -> set[str]:
+    """The countries whose rows in ``filename`` give way to a registered file with rows."""
+    return {iso3 for iso3, by in SUPERSEDED_ROWS.get(filename, {}).items()
+            if by in ADAPTER_FILES and read_json(PROCESSED / by, None)}
+
 
 def load_adapters() -> dict[str, list[dict[str, Any]]]:
     """Every adapter record, bucketed by country, in authority order."""
@@ -1932,8 +2537,15 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         if not rows:
             continue
         log(f"  adapter {filename}: {len(rows)} records")
+        dropped = superseded(filename)
+        aliases = ROW_ALIASES.get(filename, {})
+        not_units = DROPPED_ROWS.get(filename, {})
         for row in rows:
             iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
+            if iso3 in dropped or row.get("id") in not_units:
+                continue
+            if row.get("id") in aliases:
+                row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
             # Which file a row came from decides whether two rows landing on one
             # shape are a conflict. Across files it is normal -- India's C-01 and
             # C-16 both describe Kargil -- and within one file it means one of
@@ -1961,20 +2573,37 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
 # quarter of the country -- the question the reader has is what is inside it,
 # and the Factbook's line cannot answer it.
 #
-# Two kinds of answer go in data/curated/admin0_detail.json. A row with
-# ``groups`` replaces the field with a census's own division of it, which is
-# always the better answer and is used wherever such a table exists -- or,
-# where the census does not ask, a survey's, marked as one by its ``basis``
-# (the European Social Survey's pooled national samples). A row with
-# only a ``note`` says what the bucket holds and why it is not divided, which
-# is what is left when the census published one number and no break-up of it.
-# Neither invents a split.
+# Three kinds of answer go in data/curated/admin0_detail.json for a
+# composition. A row with ``groups`` replaces the field with a census's own
+# division of it, which is always the better answer and is used wherever such
+# a table exists -- or, where the census does not ask, a survey's, marked as
+# one by its ``basis`` (the European Social Survey's pooled national samples).
+# A row with only a ``note`` says what the bucket holds and why it is not
+# divided, which is what is left when the census published one number and no
+# break-up of it. A row with a ``status`` replaces a line that is not a
+# composition at all with a stated gap -- Kazakhstan's Factbook "languages" are
+# the shares of people who know Kazakh, Russian and English, 199% in all. None
+# of them invents a split.
+#
+# And a row for ``population``, ``median_age`` or ``sex_ratio`` gives the
+# country a census's own figure where the Factbook's estimate cannot be the
+# same people as the census its divisions carry: the Marshall Islands' 82,011
+# against the 2021 census's 42,418, Nauru's median of 28.2 against the
+# census's 21.6. Those are applied before the roll-ups, because the population
+# is what a sum of the divisions is checked against.
 #
 # This is the admin-0 counterpart of data/curated/admin1_seed.json, and it is a
 # curated file for the same reason that one is: an adapter cannot reach admin0.
 # Adapter output lands on admin1 and admin2 shapes; the country record is the
 # Factbook profile plus whatever its children roll up into it, and there is no
 # third door.
+
+COMPOSITION_ROWS = ("religion", "language", "ethnicity")
+FIGURE_ROWS = {"population": None, "median_age": "years",
+               "sex_ratio": "males_per_1000_females"}
+CURATED_GAPS = (NOT_AVAILABLE, NOT_COLLECTED)
+# The keys of a curated figure row that only says what the figure counts.
+NOTE_ONLY = frozenset({"country", "field", "note", "status"})
 
 
 def load_country_detail() -> dict[str, list[dict[str, Any]]]:
@@ -1984,6 +2613,92 @@ def load_country_detail() -> dict[str, list[dict[str, Any]]]:
     for row in payload.get("rows", []):
         rows[row["country"]].append(row)
     return rows
+
+
+def _curated_country(by_id: dict[str, dict[str, Any]], iso3: str) -> dict[str, Any]:
+    entity = by_id.get(iso3)
+    if entity is None:
+        raise SystemExit(
+            f"admin0_detail: no country record with id {iso3!r}. The "
+            f"curated rows for it would go nowhere and nothing would say "
+            f"so.")
+    return entity
+
+
+def _cite(entity: dict[str, Any], field: str, row: dict[str, Any]) -> None:
+    """The row's source on the record, in place of what the field held before.
+
+    A source goes with the figure it produced, as in merge_adapter: Uganda kept
+    Afrobarometer beside the census table that had replaced its figure, and
+    Austria ten regional survey citations beside the national table, each read
+    as a source of the number on screen. Entries that cite this field and
+    nothing else go; one citing several fields stays, for the others.
+    """
+    sources = entity.setdefault("sources", [])
+    sources[:] = [src for src in sources
+                  if not set(str(src.get("field") or "").split("/")) <= {field}]
+    if row.get("source"):
+        sources.append({"field": field, "name": row["source"],
+                        "url": row.get("url"), "year": row.get("year"),
+                        "license": row.get("license", "See docs/SOURCES.md")})
+
+
+def apply_country_figures(admin0: list[dict[str, Any]],
+                          rows: dict[str, list[dict[str, Any]]]) -> set[str]:
+    """Put the curated population, median age and sex ratio on the countries.
+
+    Run before the roll-ups, which check a sum of the divisions against the
+    country's population: a Factbook estimate twice the census's count refused
+    every sum the Marshall Islands' atolls could give. Returns the countries
+    whose population is now a census count, for roll_up_countries.
+
+    A row must give a value, a year and a source; one that does not stops the
+    build, as an unmatched country does. The one exception is a row that
+    gives a note and nothing else (NOTE_ONLY): it says what the figure
+    already shown counts, and leaves the figure alone -- Israel's Factbook
+    population counts East Jerusalem and the Golan, which the map draws
+    outside its shape. On a field that is a gap, the note is the gap's own
+    reason, with the row's status if it gives one (Antarctica has no
+    permanent population to count).
+    """
+    by_id = {entity["id"]: entity for entity in admin0}
+    counted: set[str] = set()
+    applied = 0
+    for iso3, country_rows in sorted(rows.items()):
+        for row in country_rows:
+            field = row["field"]
+            if field not in FIGURE_ROWS:
+                continue
+            entity = _curated_country(by_id, iso3)
+            if set(row) <= NOTE_ONLY and row.get("note"):
+                if is_gap(entity.get(field)):
+                    held = entity.get(field)
+                    status = row.get("status") or (held.get("status") if isinstance(held, dict)
+                                                   else None) or NOT_AVAILABLE
+                    if status not in (NOT_AVAILABLE, NOT_COLLECTED, NOT_APPLICABLE):
+                        raise SystemExit(f"admin0_detail: {iso3} {field} gives status "
+                                         f"{status!r}, which is not a gap's")
+                    entity[field] = gap(status, row["note"])
+                else:
+                    entity[f"{field}_note"] = row["note"]
+                applied += 1
+                continue
+            if not isinstance(row.get("value"), (int, float)) or not row.get("year") \
+                    or not row.get("source"):
+                raise SystemExit(f"admin0_detail: {iso3} {field} needs a value, a year "
+                                 f"and a source")
+            entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
+                                    year=row["year"], source=row["source"])
+            entity[f"{field}_note"] = row["note"]
+            _cite(entity, field, row)
+            if field == "population":
+                counted.add(iso3)
+            applied += 1
+    if applied:
+        log(f"  admin0 detail: {applied} curated figures on "
+            f"{len({r['country'] for rs in rows.values() for r in rs if r['field'] in FIGURE_ROWS})} "
+            f"countries")
+    return counted
 
 
 def apply_country_detail(admin0: list[dict[str, Any]],
@@ -2003,30 +2718,47 @@ def apply_country_detail(admin0: list[dict[str, Any]],
     by_id = {entity["id"]: entity for entity in admin0}
     applied = 0
     for iso3, country_rows in sorted(rows.items()):
-        entity = by_id.get(iso3)
-        if entity is None:
-            raise SystemExit(
-                f"admin0_detail: no country record with id {iso3!r}. The "
-                f"curated rows for it would go nowhere and nothing would say "
-                f"so.")
+        entity = _curated_country(by_id, iso3)
         for row in country_rows:
             field = row["field"]
-            if field not in ("religion", "language", "ethnicity"):
+            if field in FIGURE_ROWS:
+                continue                     # apply_country_figures' rows
+            if field not in COMPOSITION_ROWS:
                 raise SystemExit(
                     f"admin0_detail: {iso3} names field {field!r}, which is "
                     f"not one of the three compositions.")
+            if row.get("status"):
+                if row["status"] not in CURATED_GAPS or row.get("groups"):
+                    raise SystemExit(
+                        f"admin0_detail: {iso3} {field} gives status "
+                        f"{row['status']!r}; a row states a gap "
+                        f"({' or '.join(CURATED_GAPS)}) or gives groups, not both")
+                # The reason is the gap's own note, as everywhere else; a
+                # separate field note would say it twice.
+                entity[field] = gap(row["status"], row["note"])
+                for suffix in SATELLITES:
+                    entity.pop(f"{field}{suffix}", None)
+                _cite(entity, field, row)
+                applied += 1
+                continue
             if row.get("groups"):
                 entity[field] = row["groups"]
+                for suffix in ("_year", "_basis"):
+                    entity.pop(f"{field}{suffix}", None)
                 if row.get("year"):
                     entity[f"{field}_year"] = row["year"]
-                if row.get("basis"):
-                    entity[f"{field}_basis"] = row["basis"]
-            entity[f"{field}_note"] = row["note"]
-            if row.get("source"):
+                _cite(entity, field, row)
+            elif row.get("source"):
                 entity.setdefault("sources", []).append(
                     {"field": field, "name": row["source"],
                      "url": row.get("url"), "year": row.get("year"),
                      "license": row.get("license", "See docs/SOURCES.md")})
+            # A basis on a note-only row says what the line already there
+            # counts: Thailand's Factbook "ethnic groups" are nationality, by
+            # the Factbook's own note, and read as ethnicity without it.
+            if row.get("basis"):
+                entity[f"{field}_basis"] = row["basis"]
+            entity[f"{field}_note"] = row["note"]
             applied += 1
     log(f"  admin0 detail: {applied} curated rows on "
         f"{len(rows)} countries")
@@ -2042,6 +2774,39 @@ def primary_country_profiles(rows: list[dict[str, Any]]) -> dict[str, dict[str, 
         if row["id"] == iso3 or iso3 not in countries:
             countries[iso3] = row
     return countries
+
+
+# Factbook entities without a country outline of their own that the boundary
+# file does draw, as a disputed area: the West Bank (shapeGroup 129), Gaza
+# (118) and the Falklands (117). Their records said the composite has no
+# outline for them and draws them inside the administering state, which is
+# false, and the Jerusalem District's notes rely on the West Bank outline.
+# record id -> the disputed area's name in the boundary file, and as a
+# sentence says it.
+DRAWN_AS_DISPUTED: dict[str, tuple[str, str]] = {
+    "PSE-WE": ("West Bank", "the West Bank"),
+    "PSE": ("Gaza Strip", "the Gaza Strip"),
+    "FLK": ("Falkland Islands (UK)", "the Falkland Islands"),
+}
+
+
+def disputed_outline_note(record_id: str, admin0: list[dict[str, Any]]) -> str | None:
+    """What a geometry-less record drawn as a disputed area says about its outline.
+
+    None for a record not declared, or where no boundary layer of disputed
+    areas was read; a declaration whose area is no longer drawn stops the
+    build rather than say something false.
+    """
+    declared = DRAWN_AS_DISPUTED.get(record_id)
+    if not declared or not any(e.get("disputed") for e in admin0):
+        return None
+    name, said = declared
+    if not any(e.get("disputed") and e.get("name") == name for e in admin0):
+        raise SystemExit(f"build_entities: {record_id} is declared drawn as the disputed "
+                         f"area {name!r}, which the boundary file no longer draws")
+    return (f"The map draws {said} as a disputed area of its own, as geoBoundaries' "
+            f"global composite delimits it, and shows no figures on that outline. The "
+            f"figures below are this entity's own, kept here rather than joined to it.")
 
 
 def geometryless_profiles(rows: list[dict[str, Any]],
@@ -2167,8 +2932,26 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        # fills a sector no census median reaches.
                        "bucharest_sectors.json",
                        # Turkey's districts as OCHA relays TUIK's 2022 register.
-                       "turkey_districts.json"})
+                       "turkey_districts.json",
+                       # Thailand's, Laos's and Cambodia's medians and sex
+                       # ratios from OCHA's COD-PS: projections (Thailand's
+                       # by the US Census Bureau), read only where no office
+                       # could be.
+                       "sea_cod_ps_age.json",
+                       # Yemen's median ages from the CSO's 2017 district
+                       # projection: a projection never replaces a count.
+                       "yemen_census_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
+
+# The figures a statistics office's stated reason may displace
+# (``displaces_before``): every fill-only file's, and Wikidata's as the points
+# files bind it by id (scripts/wikidata_points.py). Those are not fill-only --
+# a figure bound by id corrects one matched by name -- but they are still an
+# encyclopaedia's, and the reason has to reach them: Cambodia's census refuses
+# Preah Sihanouk's four districts as a 29% undercount, and Wikidata's 2019
+# figures for them, the same undercount, arrive through wikidata_points_admin2
+# after wikidata_admin2 and stood beside the reason.
+DISPLACEABLE = FILL_ONLY | {"wikidata_points_admin1.json", "wikidata_points_admin2.json"}
 
 # A survey's share is an estimate from a sample, and a census's or a
 # register's is a count of everyone: where both describe a unit, the count
@@ -2336,11 +3119,16 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # census's: 1973 read as the population of Kyrenia. A count is never
         # displaced, nor an encyclopaedia's figure of that year or later, and
         # the figure is not kept aside to fall back to: the statement is
-        # that there is none for now.
+        # that there is none for now. A statement that says so
+        # (``displaces_undated``) displaces an undated figure too: Wikidata's
+        # undated 80,000 for Khavas, 88,900 for As-Salt and 511,200 for
+        # Baabda stand on shapes no count reaches, and nothing dates them.
         if (key in FILL_ONLY_FIELDS and is_gap(value) and isinstance(value, dict)
                 and isinstance(value.get("displaces_before"), int) and not encyclopaedic
-                and not is_gap(entity.get(key)) and origin.get(key) in FILL_ONLY
-                and (year_of(entity, key) or value["displaces_before"]) < value["displaces_before"]):
+                and not is_gap(entity.get(key)) and origin.get(key) in DISPLACEABLE
+                and ((year_of(entity, key) is None and value.get("displaces_undated") is True)
+                     or (year_of(entity, key) or value["displaces_before"])
+                     < value["displaces_before"])):
             entity[key] = value
             for suffix in SATELLITES:
                 if f"{key}{suffix}" not in row:
@@ -2769,6 +3557,19 @@ SAMPLE_SHARE = 0.05
 VARIANTS = {"language": group_tree.LANGUAGE_VARIANTS,
             "ethnicity": group_tree.ETHNIC_VARIANTS}
 
+# What a division's composition is when it is not a count at all, and so is
+# never added up into its parent. Afghanistan's districts carry the ethnic line
+# of their development plans (afghanistan, afghanistan_ddp): the provincial
+# authorities' estimate as a planning summary prints it, from plans drawn up
+# between 2007 and 2014, many of them naming only part of the district
+# ("Pashtun 75% and the remaining 25% are Uzbak and Arab"), most of them as an
+# encyclopaedia transcribes them. Each line stands on its own district,
+# labelled as what it is. Priced at the office's 2017 populations and added
+# up, they gave provinces compositions that no plan and no office states --
+# Kunduz's came to 95.5% with nothing said about the rest -- so a province
+# keeps the reason its own source gives instead.
+UNSUMMED_BASES = frozenset({"district development plan"})
+
 # How much the population gate widens per year between the two figures' dates,
 # and the most it will ever widen by. A census and an estimate of the same
 # territory taken years apart are the same people counted at different times,
@@ -2941,12 +3742,34 @@ def covered_share(children: list[dict[str, Any]], field: str) -> float | None:
     return covered / total if total > 0 else None
 
 
+def year_sort_key(year: Any) -> tuple[int, str]:
+    """A year or year span ("2008-2014") as a sortable key: its first four-digit year."""
+    m = re.search(r"\d{4}", str(year))
+    return (int(m.group()) if m else 0, str(year))
+
+
+def counted_noun(basis: Any) -> str:
+    """What the divisions' own counts are counts of, for the roll-up's note.
+
+    People, unless the basis every division counts on says otherwise.
+    Suriname's districts count households by the language most spoken in
+    them, and the country's note read "the divisions' own counts, of 123,416
+    people in 2004" above a sentence saying they are households. Gilgit-
+    Baltistan's survey, which counts the language of each household's head,
+    counts households too.
+    """
+    said = basis.casefold() if isinstance(basis, str) else ""
+    return ("households" if said.startswith("households") or "household head" in said
+            else "people")
+
+
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   field: str, *, level: str = "second-level",
                   over_published: bool = False,
                   whole_country: bool = False,
                   complete: bool | None = None,
-                  min_coverage: float | None = None) -> str | None:
+                  min_coverage: float | None = None,
+                  restate_same_year: bool = False) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -2980,6 +3803,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     the two divisions that have no published population of their own to be
     checked against. Pakistan is why it is not assumed -- 114 of its 126
     districts join, so its provinces are genuinely short and stay refused.
+
+    ``restate_same_year`` lets the children's total replace a published
+    population of its own year. A country's own figure is usually the
+    Factbook's estimate, and an itemised count of the same year is the better
+    number (Finland, below). A first-level unit's is an office's count, and
+    children of the same year that add up to something else are short of a
+    child or counted apart, not better: Kinmen's five drawn townships made
+    136,611 against the county's registered 137,208 -- the register's sixth
+    township, Wuqiu, is drawn apart from it -- and the sum replaced the count.
     """
     current = parent.get(field)
     if isinstance(current, list) and not over_published:
@@ -3019,6 +3851,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
              and c.get(f"{field}_basis") != usual]
     if apart:
         children = [c for c in children if c not in apart]
+    if usual in UNSUMMED_BASES:
+        return (f"{field}: its divisions carry {usual} estimates, which are not "
+                f"added up into a figure for the unit")
 
     # A division that names only its largest group has not published a
     # composition, and largest groups do not add up to one. Papua New Guinea's
@@ -3169,8 +4004,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             if not whole_country and (not complete or shares_of(current)):
                 return (f"{field}: children sum to {total_pop:,.0f} against a "
                         f"published {own:,.0f}{drift}")
+            # The sentence names the total it is measured against rather than
+            # pointing back at "that": other sentences can stand between the
+            # two -- the divisions' own counts, a weighting -- and Italy's
+            # note then read "...own counts, of 57,251,233 people in 2015. The
+            # unit's own published population of 60,924,851 disagrees with
+            # that by -3%", a gap that is -6% against the figure just named.
             disagrees = (f" The unit's own published population of {own:,.0f} "
-                         f"disagrees with that by "
+                         f"disagrees with the divisions' total of "
+                         f"{total_pop:,.0f} by "
                          f"{100 * (total_pop - own) / own:+.0f}%; "
                          + ("the sum was taken anyway because every division "
                             "at this level in the country carries these "
@@ -3193,10 +4035,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         best = max(weight, key=lambda y: weight[y])
         if weight[best] / weighed >= YEAR_MAJORITY:
             dated = best
-    aside = sorted((y, n) for y, n in (
+    # Years are sorted by their first four-digit year, so a span a source
+    # writes as text ("2008-2014", Afghanistan's district profiles) sorts
+    # beside the integer years of a sibling file instead of breaking the sort.
+    aside = sorted(((y, n) for y, n in (
         (c.get(f"{field}_year"), c.get("name", c.get("id", "?")))
         for c in children if isinstance(c.get(field), list))
-        if y is not None and y != dated)
+        if y is not None and y != dated), key=lambda t: (year_sort_key(t[0]), t[1]))
 
     counts: dict[str, float] = {}
     denominator = 0.0
@@ -3276,6 +4121,19 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         displaced = (f" Replaces a list that names groups without shares "
                      f"({named}{', ...' if len(current) > 3 else ''}), which "
                      f"gives this sum nothing to be checked against.")
+    # The people the added counts are of, where that is not the populations the
+    # note quotes. Kazakhstan's regions carry the register's 2025 populations
+    # and the 2021 census's religion, which counts 19.2 million people, not
+    # their 20.3 million; Tajikistan's carry 2020 populations and the 2010
+    # census's nationalities. Quoting only the populations put a total and a
+    # year on the figure that are not its own.
+    counted = ""
+    if (not weighted and denominator > 0 and total_pop
+            and abs(denominator - total_pop) > ROLLUP_TOLERANCE * total_pop):
+        when = (f" in {next(iter(years))}" if len(years) == 1 else
+                f", nearly all of them in {dated}" if dated is not None else "")
+        counted = (f" The figures added are the divisions' own counts, of "
+                   f"{denominator:,.0f} {counted_noun(usual)}{when}.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
         # The semicolon introduces the clause that follows it, so a sum that
@@ -3308,6 +4166,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
               f"against it")
            + "; it was summed because every division at this level in "
              "the country has these figures, so these are all of its children.")
+        + counted
         + (f" Weighted by population: {len(sampled)} of them count a survey's "
            "respondents and the rest count people, so every division's shares "
            "are taken of its own published population." if weighted else
@@ -3327,7 +4186,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            f" {', '.join(f'{n} ({y})' for y, n in aside)} were counted."
            if dated is not None else
            f" The divisions do not all report the same year"
-           f" ({', '.join(str(y) for y in sorted(years))}),"
+           f" ({', '.join(str(y) for y in sorted(years, key=year_sort_key))}),"
            f" so this figure carries no single date."
            if len(years) > 1 else
            " The divisions do not date their figures, so neither does this."
@@ -3418,9 +4277,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     one_year = bool(years_seen) and (
         max(years_seen) - min(years_seen) <= 1
         or on_child_year >= ONE_MOMENT * sum(v for _, v in stamped))
+    # A published figure of the children's own year is replaced only where the
+    # caller says it is an estimate an itemised count improves on
+    # (``restate_same_year``); otherwise only an older one is.
     if child_year and not waived and not left_out and (
             own is None or (one_year and round(total_pop) != round(own)
-                            and (own_year is None or own_year <= child_year))):
+                            and (own_year is None or own_year < child_year
+                                 or (own_year == child_year and restate_same_year)))):
         if own is not None:
             parent["population_note"] = (
                 f"Summed from all {len(children)} {level} divisions. Replaces "
@@ -3469,6 +4332,12 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
         for parent in parents:
             pop = parent.get("population")
             if not (isinstance(pop, dict) and pop.get("status") == NOT_AVAILABLE):
+                continue
+            # A gap whose adapter says the divisions linked to it do not make
+            # its polygon either: Afghanistan's provinces where a district's
+            # point falls across the province's edge, whose linked districts
+            # are not the ground drawn (afghanistan_estimates' POINT_ELSEWHERE).
+            if pop.get("no_child_sum"):
                 continue
             children = kids.get(parent["id"], [])
             values = [published(c.get("population")) for c in children]
@@ -3652,11 +4521,91 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
                           "country's is the 2022 census's",
     ("ARM", "religion"): "its marzes' religion is the 2011 census's, and the "
                          "country's is the 2022 census's",
+    # fiji_census gives the four divisions Table P01-3's 2007 religion and
+    # ethnicity, but the polygon the boundary file labels Eastern is Kadavu
+    # alone and carries Kadavu's: Lau, Lomaiviti and Rotuma (26,779 people in
+    # 2017) are drawn only at the second level. A sum would leave them out and
+    # look whole. The country keeps the 2007 census's national table, the
+    # same census, as the Factbook prints it.
+    ("FJI", "religion"): "its Eastern polygon is Kadavu alone; Lau, Lomaiviti and "
+                         "Rotuma are drawn only at the second level",
+    ("FJI", "ethnicity"): "its Eastern polygon is Kadavu alone; Lau, Lomaiviti and "
+                          "Rotuma are drawn only at the second level",
+    # kiribati_census gives the three island groups the 2015 census's religion
+    # (Volume 1, Table 6), the latest by island: the 2020 census published
+    # religion for the country only (General Report, Table G-3), and the
+    # country carries that.
+    ("KIR", "religion"): "its island groups' religion is the 2015 census's, and the "
+                         "country's is the 2020 census's",
+    # vietnam_religion gives the 63 provinces the 2009 census's Table 7, the
+    # newest religion by province: the 2019 census published religion for the
+    # country only (Completed Results, Table 3), and the country carries that
+    # table (data/curated/admin0_detail.json).
+    ("VNM", "religion"): "its provinces' religion is the 2009 census's, and the "
+                         "country's is the 2019 census's",
+    # timor gives the 13 municipalities the 2015 census's priority table 11,
+    # the newest religion by municipality: the 2022 census published religion
+    # for the country only (Main Report basic table 4.07), and the country
+    # carries that table (data/curated/admin0_detail.json).
+    ("TLS", "religion"): "its municipalities' religion is the 2015 census's, and the "
+                         "country's is the 2022 census's",
+    # thailand_nationality and thailand give the 76 provinces the 2000
+    # census's provincial reports, the last to print nationality and religion
+    # by province. The country's figures are later: the Factbook's 2015
+    # nationality line (Thai 97.5%, Burmese 1.3%) and its 2021 religion line.
+    # A sum would put a count from 2000 over both.
+    ("THA", "ethnicity"): "its provinces' nationality is the 2000 census's, and the "
+                          "country's figure is of 2015",
+    ("THA", "religion"): "its provinces' religion is the 2000 census's, and the "
+                         "country's figure is of 2021",
+    # vanuatu_census gives each province Table 6.16 of the 2020 census, first
+    # language learned, which the census asked only of the people who speak
+    # one of the islands' own languages: 84-97% of each province, every share
+    # taken of everyone. A sum would leave out the rest and look whole. The
+    # country keeps the Analytical Report's four-way split of everyone
+    # (indigenous languages, Bislama, English, French), which its note
+    # describes.
+    ("VUT", "language"): "its provinces' first language was asked only of the people "
+                         "who speak one of the islands' own languages, 84-97% of each "
+                         "province",
+    # lebanon_survey gives the governorates the LFHLCS 2018-19's residents by
+    # nationality, a survey of residential dwellings: the refugee camps and
+    # their gatherings, informal settlements, barracks and work sites are
+    # outside it, which is where many of the country's foreign nationals live.
+    # Each governorate's own record says so; a country total would read as
+    # Lebanon's share of foreign nationals and understate it.
+    ("LBN", "ethnicity"): "its governorates' nationality is a survey of residential "
+                          "dwellings, which leaves out the refugee camps and informal "
+                          "settlements",
+    # Myanmar's 14 drawn states and regions carry the Department of
+    # Population's 2018 Township Profiles, Table 14 (reference date 1 April
+    # 2017), for ethnicity (uscb): 40 of the 135 national races, counting
+    # 47.8 million of the states' 56.2 million people. The Rohingya are not in
+    # it (Rakhine's rows total 2,086,677 of 3,397,770 people), and Chinese and
+    # Indian people hardly are (5,638 and 1,921 in all), so a sum reads Chinese
+    # 0.0% and looks whole. Their religion is the 2014 census's township
+    # columns, 49.0 million people; the census's own Union table, which the
+    # country carries (Buddhist 87.9%, Christian 6.2%, Muslim 4.3%), counts
+    # 51,486,253, with the 1.2 million it did not enumerate, most of them in
+    # Rakhine and counted as Muslim. A sum gives Muslim 3.0%, matching neither
+    # that table nor the enumerated people's 2.3%. The country keeps the
+    # Factbook's ethnicity line and the census's national religion; the
+    # states keep their own figures and caveats. COD-PS 2023 populations
+    # brought the states within the population gate (2.9% under, against 5%),
+    # which is why this has to be said rather than left to the gate.
+    ("MMR", "ethnicity"): "its states' ethnicity is the 2018 Township Profiles' table of "
+                          "40 national races, counting 47.8 million of their 56.2 million "
+                          "people; the Rohingya are not in it and Chinese and Indian "
+                          "people hardly are",
+    ("MMR", "religion"): "its states' religion counts 49.0 million people; the census's "
+                         "national table, which the country carries, counts 51.5 million, "
+                         "with the 1.2 million it did not enumerate",
 }
 
 
 def roll_up_countries(admin0: list[dict[str, Any]],
-                      admin1_by_country: dict[str, list[dict[str, Any]]]) -> None:
+                      admin1_by_country: dict[str, list[dict[str, Any]]],
+                      counted: frozenset[str] | set[str] = frozenset()) -> None:
     """Sum a country from its first-level divisions, where they are all there.
 
     Unlike the level below, this never fills a gap: every country record
@@ -3690,6 +4639,12 @@ def roll_up_countries(admin0: list[dict[str, Any]],
     than faults, and widening the bound for them is a separate decision from
     this one; it is left tight here so that nothing is rewritten on a looser
     rule than the one that has been tested.
+
+    ``counted`` names the countries whose population is a census count rather
+    than the Factbook's estimate (data/curated/admin0_detail.json). Their
+    divisions' total replaces it only when it is newer, as at the level below:
+    the Marshall Islands' drawn atolls add up to 42,262, Lib's 156 people
+    having no polygon, against the census's 42,418 for the same day.
     """
     filled: list[str] = []
     refused: list[str] = []
@@ -3713,7 +4668,8 @@ def roll_up_countries(admin0: list[dict[str, Any]],
             why = roll_up_field(country, children, field,
                                 level="first-level", over_published=True,
                                 complete=True,
-                                min_coverage=COUNTRY_MIN_COVERAGE)
+                                min_coverage=COUNTRY_MIN_COVERAGE,
+                                restate_same_year=iso3 not in counted)
             if why:
                 refused.append(f"{iso3}: {why}")
             elif country.get(field) is not before:
@@ -4053,6 +5009,9 @@ def say_why_empty(entity: dict[str, Any], country: str,
             continue
         if entity.get("disputed"):
             note, case = DISPUTED_NOTE, "disputed"
+        elif field_gap(entity.get("country"), field, entity.get("level")):
+            note = field_gap(entity.get("country"), field, entity.get("level"))
+            case = "country publishes nothing"
         elif entity.get("gap_reason"):
             # The country-level fact already on the record: what the country
             # publishes. True of the field, so it is the field's reason too.
@@ -4084,6 +5043,155 @@ def say_why_empty(entity: dict[str, Any], country: str,
             note, case = NO_SOURCE_READ.format(country=country), "no source read"
         entity[field] = gap(value["status"], note)
     return case
+
+
+# The fields the panel reads to decide that a unit is empty, in its order
+# (hintPanel in site/js/dashboard.js).
+PANEL_FIELDS = ("population", "religion", "language", "ethnicity", "median_age")
+
+
+def drop_answered_hint(entity: dict[str, Any]) -> bool:
+    """Take the adapter hint off a unit whose every empty field says why.
+
+    A hint is printed on a unit with nothing in it, as "this build has not
+    fetched demographics for this unit" and a command to fetch them. That is
+    true of a unit nobody has read. It is false of one an adapter read and
+    left empty on purpose, field by field, with the reason on each: Jerusalem
+    District's figures count East Jerusalem, which the map draws in the West
+    Bank, and its panel went on to recommend the Wikidata fetch whose count
+    had just been refused for exactly that; Turkmenistan's etraps are divided
+    differently by the census and the boundary file, and the panel offered to
+    run the census adapter that said so. Each card already gives its own
+    reason, so the hint is taken off rather than turned into one more.
+
+    A unit with any field that is a gap with no reason keeps its hint: there
+    something really has not been fetched. Runs after say_why_empty, which is
+    what gives the bare compositions their reasons.
+    """
+    if "adapter_hint" not in entity:
+        return False
+    for field in PANEL_FIELDS:
+        value = entity.get(field)
+        if not (isinstance(value, dict) and is_gap(value) and value.get("note")):
+            return False
+    entity.pop("adapter_hint")
+    return True
+
+
+# Instructions an adapter gives the build on a field's value, read while the
+# rows are merged and summed, and nothing a reader of the map is told:
+# ``displaces_before`` and ``displaces_undated`` (see merge_adapter) and
+# ``no_child_sum`` (see fill_parent_populations).
+BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum", "not_this_ground")
+
+
+def drop_build_flags(entity: dict[str, Any]) -> int:
+    """Take the build's own flags off a record's values before it is written.
+
+    Afghanistan's seven provinces drawn across the census's lines went out
+    with ``"no_child_sum": true`` on their population, and 430 stated gaps
+    with the year before which they displace an encyclopaedia's figure:
+    instructions to the build, written into the published files beside the
+    figures. Returns how many were taken.
+    """
+    taken = 0
+    for value in entity.values():
+        if isinstance(value, dict):
+            for flag in BUILD_FLAGS:
+                if value.pop(flag, None) is not None:
+                    taken += 1
+    return taken
+
+
+# A reason written in a source's own vocabulary, said in plain words. The
+# Wikidata sweep marks a unit whose item has no population statement with the
+# property's number (scripts/fetch_wikidata.py), and 982 population tiles read
+# "No P1082 statement on Wikidata (asked by id)."
+PLAIN_NOTES = {
+    "No P1082 statement on Wikidata.": "Wikidata gives no population for this unit.",
+    "No P1082 statement on Wikidata (asked by id).":
+        "Wikidata gives no population for this unit.",
+}
+
+
+def plain_notes(entity: dict[str, Any]) -> int:
+    """Say a source's coded reasons in plain words; returns how many."""
+    said = 0
+    for value in entity.values():
+        if isinstance(value, dict) and value.get("note") in PLAIN_NOTES:
+            value["note"] = PLAIN_NOTES[value["note"]]
+            said += 1
+    return said
+
+
+# Pipeline wording in the visitor's text, said as what is or is not published.
+# Adapters wrote these into notes, licences and reasons: the server's answer
+# to this project's reader ("BPS answers automated requests with HTTP 403"),
+# the CKAN registry's own fields beside a licence's name ("license_id='cc-by',
+# isopen=True"), a publisher's coded grade ("representivity very_high"), how a
+# row was joined to its polygon, and a file of this repository. Each is put
+# in plain words, or dropped where the sentence says nothing else.
+PLAIN_PHRASES: tuple[tuple[str, str], ...] = (
+    ("BPS answers automated requests with HTTP 403 on every bps.go.id host",
+     "BPS's own websites could not be read"),
+    ("Statistics Indonesia (BPS) answers this project's reader HTTP 403 on every "
+     "bps.go.id host", "Statistics Indonesia's (BPS's) own websites could not be read"),
+    ("and the government's open-data portal and the National Statistical Office's "
+     "census hosts answer HTTP 403 or 418 to automated requests",
+     "and the government's open-data portal and the National Statistical Office's "
+     "census websites could not be read"),
+    ("and the National Statistical Office's hosts and the government's open-data "
+     "portal answer HTTP 418 or 403 to automated requests",
+     "and the National Statistical Office's and the government's open-data "
+     "websites could not be read"),
+    ("the National Statistical Office's later census hosts refuse automated requests",
+     "the National Statistical Office's later census tables could not be read from "
+     "its websites"),
+    ("The National Statistical Office's later census hosts refuse automated requests",
+     "The National Statistical Office's later census tables could not be read from "
+     "its websites"),
+    (" (docs/SOURCES.md, \"Indonesia: what BPS's refusal left reachable\", lists the "
+     "110 portals tried)", " (110 portals were tried)"),
+    ("Bound to this boundary shape by the shape's own id rather than by its name. ", ""),
+    (" Bound to this boundary shape by the shape's own id rather than by its name.", ""),
+    (" (prod.redatam.org/binkna/RpWebEngine.exe/Portal answers 404)", ""),
+)
+PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
+    (re.compile(r" -- license_id='[^']*', isopen=(?:True|False)"), ""),
+    (re.compile(r" \(HTTP \d{3}\)"), ""),
+    (re.compile(r"\brepresentivity (very_high|high|moderate|low|very_low)\b"),
+     lambda m: f"representativeness rated {m.group(1).replace('_', ' ')}"),
+)
+# The keys whose text a visitor reads: notes, reasons and licences.
+WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
+
+
+def plain_wording(text: str) -> str:
+    """A visitor's text with PLAIN_PHRASES and PLAIN_PATTERNS applied."""
+    for old, new in PLAIN_PHRASES:
+        if old in text:
+            text = text.replace(old, new)
+    for pattern, new in PLAIN_PATTERNS:
+        text = pattern.sub(new, text)
+    return text
+
+
+def plain_record(value: Any, key: str = "") -> int:
+    """Put every note, reason and licence under a record in plain words; how many changed."""
+    changed = 0
+    if isinstance(value, dict):
+        for k, v in value.items():
+            if isinstance(v, str) and WORDED.search(k):
+                said = plain_wording(v)
+                if said != v:
+                    value[k] = said
+                    changed += 1
+            else:
+                changed += plain_record(v, k)
+    elif isinstance(value, list):
+        for v in value:
+            changed += plain_record(v, key)
+    return changed
 
 
 # A Wikidata item joined to a district by name is sometimes the town of that
@@ -4329,39 +5437,616 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     return filled
 
 
+# GeoNames places put inside a unit's polygon that belong to the unit beside
+# it, where the polygons are simplified at the line: Chosica's point is 300 m
+# outside Metropolitan Lima's outline, and GeoNames' own second-order code for
+# it is Lima Province's (1501). Left unnamed rather than named for the region
+# around Lima. (country, unit, place) -> the unit the place is part of. Where
+# that unit is drawn at the same level under that very name and GeoNames puts
+# no place of its own in it, the place is named there instead.
+GEONAMES_ELSEWHERE: dict[tuple[str, str, str], str] = {
+    ("PER", "Lima", "Chosica"): "Lima Province (Metropolitan Lima)",
+    # Hwawŏn-eup is a town of Dalseong-gun, Daegu's one county, and GeoNames
+    # files it there (second-order code 22310, KOSTAT's for Dalseong-gun);
+    # its point is 0.002 degrees inside Dalseo-gu's simplified outline, and
+    # Dalseong-gun's own polygon holds no GeoNames place at all.
+    ("KOR", "Dalseo-gu", "Hwawŏn"): "Dalseong-gun",
+}
+
+
+@lru_cache(maxsize=1)
+def seat_points() -> tuple[Any, list[dict[str, Any]]] | None:
+    """GeoNames' seats down to the second order that have a population, as
+    (STRtree of their points, the places), or None without the places file."""
+    from fetch_geonames import PLACES, SEATS, read_places
+    from shapely import STRtree
+    from shapely.geometry import Point
+
+    if not PLACES.exists():
+        return None
+    rows = [p for p in read_places() if p["code"] in SEATS and p["population"] > 0]
+    return STRtree([Point(p["lon"], p["lat"]) for p in rows]), rows
+
+
+def seat_drawn_for(geom: Any, iso3: str, name: str,
+                   seats: tuple[Any, list[dict[str, Any]]]) -> dict[str, Any] | None:
+    """The GeoNames seat whose point this polygon holds and that the polygon is
+    drawn for, or None.
+
+    scripts/fetch_geonames.py passes over a place whose first- or
+    second-order code is not the one most places inside its polygon carry:
+    it has most likely crossed a simplified line. A seat inside a polygon
+    drawn for it has not, whatever the codes say. Minsk stands inside the
+    Minsk City polygon, coded '04' among places coded '05' (Minsk Region's);
+    Lima inside Metropolitan Lima, coded 'LMA' among places coded '15'; and
+    Yamoussoukro inside its autonomous district. Each unit was given a
+    village or a suburb as its largest settlement instead: Syenitsa,
+    Santa Anita, Zata. The name test is the one that decides whether
+    Natural Earth's place for a region stands in a polygon drawn for it
+    (drawn_for), or the unit's own name in its own spelling (own_key).
+    """
+    tree, rows = seats
+    mine = [rows[int(i)] for i in tree.query(geom, predicate="contains")]
+    mine = [p for p in mine if p["iso3"] == iso3
+            and (drawn_for(p["name"], name)
+                 or (own_key(p["name"]) and own_key(p["name"]) == own_key(name)))]
+    if not mine:
+        return None
+    best = max(mine, key=lambda p: p["population"])
+    return {"name": best["name"], "population": best["population"],
+            "geonameid": best["geonameid"], "feature_code": best["code"],
+            "coordinates": [round(best["lon"], 5), round(best["lat"], 5)],
+            "source": "GeoNames (CC BY 4.0)"}
+
+
+# The reasons fetch_geonames gives for naming nothing where no place, or no
+# place with a population, can be shown to stand in the unit.
+NO_PLACE = ("no place with a population",
+            "GeoNames lists no populated place that can be shown to stand in this unit")
+
+
+def with_own_seat(town: dict[str, Any] | None, seat: dict[str, Any] | None,
+                  taken: set[str]) -> dict[str, Any] | None:
+    """A unit's GeoNames place once its own seat is counted among its places.
+
+    The seat replaces the place fetch_geonames chose only where it is more
+    populous than that place, which is what fetch_geonames would have done
+    had it credited the seat: where the place chosen carries no figure (it
+    was more than the unit), or was refused for being more than the unit and
+    is larger than the seat, it stands. A seat GeoNames already gives to
+    another unit of the same level is that unit's.
+    """
+    if not seat or seat["geonameid"] in taken:
+        return town
+    if not town or town.get("none") in NO_PLACE:
+        return seat
+    if "none" in town:
+        spans = SPANS_REASON.match(town["none"])
+        if spans and seat["population"] > int(spans["people"].replace(",", "")):
+            return seat
+        return town
+    if town.get("geonameid") == seat["geonameid"] or not town.get("population"):
+        return town
+    return seat if seat["population"] > town["population"] else town
+
+
 def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
-                                   admin2: dict[str, list[dict[str, Any]]]) -> int:
+                                   admin2: dict[str, list[dict[str, Any]]],
+                                   own_seats: dict[str, dict[str, Any]] | None = None) -> int:
     """The largest GeoNames place inside each unit, where no source named one.
 
     scripts/fetch_geonames.py places GeoNames' populated places in the map's
-    own polygons and keeps the most populous that belongs; this only reads
-    the result. It never replaces a settlement a national source or Natural
-    Earth named, and a town GeoNames counts larger than the unit it is in
-    carries its name without that figure.
+    own polygons and keeps the most populous that belongs; this reads the
+    result, with a seat in the polygon drawn for it counted among the unit's
+    places (``own_seats``, see seat_drawn_for). It never replaces a
+    settlement a national source or Natural Earth named, and a town GeoNames
+    counts larger than the unit it is in carries its name without that
+    figure.
     """
     towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
+    own_seats = own_seats or {}
     filled = 0
     for table in (admin1, admin2):
-        for rows in table.values():
+        level_ids = {e["id"] for rows in table.values() for e in rows}
+        # A seat is not counted for a unit where GeoNames gives it to another
+        # unit of the same level.
+        held_by: dict[str, set[str]] = defaultdict(set)
+        for sid in level_ids:
+            town = towns.get(sid) or {}
+            if town.get("geonameid"):
+                held_by[town["geonameid"]].add(sid)
+        placed = {}
+        for sid in level_ids:
+            seat = own_seats.get(sid)
+            taken = ({seat["geonameid"]} if seat and held_by.get(seat["geonameid"], set()) - {sid}
+                     else set())
+            placed[sid] = with_own_seat(towns.get(sid), seat, taken)
+        moved: dict[tuple[str, str], dict[str, Any]] = {}
+        for iso3, rows in table.items():
             for entity in rows:
-                town = towns.get(entity["id"])
+                town = placed.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
                     continue
-                if "none" in town:
-                    held = entity.get("largest_settlement") or {}
-                    if not held.get("note"):
-                        entity["largest_settlement"] = gap(
-                            held.get("status") or NOT_AVAILABLE,
-                            f"No GeoNames place is named: {town['none']}.")
+                where = GEONAMES_ELSEWHERE.get((iso3, entity.get("name"), town.get("name")))
+                if where:
+                    entity["largest_settlement"] = gap(NOT_AVAILABLE, (
+                        f"No GeoNames place is named: the most populous place GeoNames "
+                        f"puts inside this outline, {town['name']}"
+                        + (f" ({town['population']:,})" if town.get("population") else "")
+                        + f", is part of {where}, drawn as a unit of its own; its "
+                          f"point lies just outside that unit's simplified outline."))
+                    moved[(iso3, where)] = town
                     continue
-                entity["largest_settlement"] = town["name"]
-                if town.get("population"):
-                    entity["largest_settlement_population"] = measure(
-                        town["population"], source="GeoNames (CC BY 4.0)")
-                entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
-                filled += 1
+                filled += name_geonames_place(entity, town)
+        for iso3, rows in table.items():
+            for entity in rows:
+                town = moved.get((iso3, entity.get("name")))
+                if not town:
+                    continue
+                held = placed.get(entity["id"]) or {}
+                shown = entity.get("largest_settlement")
+                said = (shown.get("note") if isinstance(shown, dict) else None) or ""
+                if (held.get("none") in NO_PLACE and not entity.get("water")
+                        and is_gap(shown)
+                        and (not said or said.startswith("No GeoNames place is named"))):
+                    entity["largest_settlement"] = gap(NOT_AVAILABLE)
+                    filled += name_geonames_place(entity, town)
     return filled
+
+
+def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
+    """Name a GeoNames place as the unit's largest settlement, or say why none is."""
+    if "none" in town:
+        held = entity.get("largest_settlement") or {}
+        if not held.get("note"):
+            entity["largest_settlement"] = gap(
+                held.get("status") or NOT_AVAILABLE,
+                f"No GeoNames place is named: {town['none']}.")
+            # The one refusal that turns on the unit's population, which is
+            # weighed again once the populations are final
+            # (settle_geonames_spans).
+            spans = SPANS_REASON.match(town["none"])
+            if spans:
+                entity["largest_settlement"]["_spans"] = {
+                    "town": spans["town"],
+                    "people": int(spans["people"].replace(",", ""))}
+        return 0
+    entity["largest_settlement"] = town["name"]
+    if town.get("population"):
+        entity["largest_settlement_population"] = measure(
+            town["population"], source="GeoNames (CC BY 4.0)")
+    entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+    return 1
+
+
+# scripts/fetch_geonames.py names no settlement where the most populous place
+# inside a unit outnumbers the unit SPANS times over -- a city the unit is only
+# part of, or a place across a boundary -- and says so in these words, with
+# the unit's population as the map showed it when the places were placed.
+SPANS_REASON = re.compile(r"^(?P<town>.+) \((?P<people>\d{1,3}(?:,\d{3})*)\) is more than "
+                          r"the unit \((?P<unit>\d{1,3}(?:,\d{3})*)\)")
+
+
+def beyond_unit_note(town: str, people: float, unit: float) -> str:
+    """Why a GeoNames place more than SPANS times its unit is not named.
+
+    Only what was measured: the place is not the unit's own name, and its
+    figure is too large to be the unit's town. Which of the reasons a figure
+    can be that large -- a city the unit is part of, a place across a line,
+    an older or wider count -- is not something the build has checked, so it
+    is not asserted: Kep's 35,990 in Kaeb is the province's 2008 count."""
+    return (f"No GeoNames place is named: GeoNames gives {town} {people:,.0f} people, "
+            f"more than one and a half times the unit's {unit:,.0f}, so it is not taken "
+            f"to be the unit's own town. Its figure may be of a city the unit is only "
+            f"part of, of a place across a boundary, or a wider or older count than "
+            f"the unit's.")
+
+
+def drawn_elsewhere_note(town: str, people: float, unit: float) -> str:
+    """Why a GeoNames place a little more than its unit, named like another unit, is not named."""
+    return (f"No GeoNames place is named: {town} ({people:,.0f}) is more than the unit "
+            f"({unit:,.0f}), and the map draws a unit named like it elsewhere, so it "
+            f"cannot be shown to be this unit's town.")
+
+
+def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
+                          admin2: dict[str, list[dict[str, Any]]]) -> tuple[int, int]:
+    """Weigh GeoNames' 'more than the unit' refusals against the final populations.
+
+    The refusal is a comparison with the unit's population, and fetch_geonames
+    made it against whatever population the map carried on the day it ran.
+    Populations change after that, and the reason then quotes a figure the map
+    no longer shows: Bukhar-Zhyrauskiy's said Temirtau (170,600) outnumbered
+    the unit's 52,263 while the map gave the district 798,840, and Kulob
+    District's that Kulob (214,700) outnumbered 96,000 against the census's
+    216,830. So the comparison is made again here, against the population the
+    record is written with. Where the place no longer outnumbers the unit
+    SPANS times over it is named, as fetch_geonames would have named it, with
+    its population only where that is not more than the unit's; where it still
+    does, the reason quotes the population shown; and where the unit has none,
+    the reason says that instead of quoting one.
+
+    A place that is still more than the unit, if less than SPANS times, is
+    named only when no other unit of the country is drawn under its name, or
+    when it bears the unit's own name (see town_stands). The margin is for a
+    town whose GeoNames figure is older or wider than the unit's count; it is
+    not for Dushanbe, whose point GeoNames puts inside Rudaki District's
+    polygon while the map draws the city as a first-level unit of its own, of
+    948,251 people beside Rudaki's 603,337. The unit itself, the units above
+    it and the units drawn inside it do not count: Pristina is drawn inside
+    the District of Prishtina.
+
+    Returns (named, restated).
+    """
+    named = restated = 0
+    for iso3 in sorted(set(admin1) | set(admin2)):
+        units = admin1.get(iso3, []) + admin2.get(iso3, [])
+        apart_from = drawn_apart(units)
+        for entity in units:
+            held = entity.get("largest_settlement")
+            if not isinstance(held, dict) or "_spans" not in held:
+                continue
+            spans = held.pop("_spans")
+            town, people = spans["town"], spans["people"]
+            unit = published(entity.get("population"))
+            if unit is not None and (people <= unit
+                                     or town_stands(town, people, unit, entity, apart_from)):
+                entity["largest_settlement"] = town
+                if people <= unit:
+                    entity["largest_settlement_population"] = measure(
+                        people, source="GeoNames (CC BY 4.0)")
+                entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+                named += 1
+                continue
+            was = held.get("note")
+            if unit is not None and people <= GEONAMES_SPANS * unit:
+                held["note"] = drawn_elsewhere_note(town, people, unit)
+            elif unit is not None:
+                held["note"] = beyond_unit_note(town, people, unit)
+            else:
+                held["note"] = (f"No GeoNames place is named: the most populous place "
+                                f"GeoNames puts inside it, {town} ({people:,}), cannot "
+                                f"be weighed against a population for the unit, which "
+                                f"has none here, so it may be a city the unit is only "
+                                f"part of, or a place across a boundary.")
+            restated += held["note"] != was
+    return named, restated
+
+
+# Words that make a unit's name the town itself: Russia's urban okrugs and
+# closed towns ("городской округ Радужный", "ЗАТО Заозёрск"), Vietnam's
+# provincial cities and towns ("Thành phố Bà Rịa"), Azerbaijan's cities
+# ("Lənkəran şəhəri") and a name ending "City" ("Al Mukalla City"). Read only
+# to compare a GeoNames place the unit's polygon holds with the unit's own
+# name (see own_key), never in a join.
+TOWN_UNIT = re.compile(
+    r"^(?:городской округ|зато|город|г\.|thành phố|thanh pho|thị xã|thi xa)\s+"
+    r"|\s+(?:şəhəri|seheri|city)$")
+# A leading Arabic article: "Al Mukalla City" against GeoNames' "Mukalla".
+ARTICLE = re.compile(r"^(?:al|el)[\s-]+")
+# Russian Cyrillic in the romanisation GeoNames uses for its own names
+# (Raduzhny, Slobodskoy, Zaozërsk); the doubled letters that leaves are
+# folded away by own_key. And the Azerbaijani schwa, which GeoNames writes
+# "a" (Lankaran) where FOLD makes it "e".
+CYRILLIC = str.maketrans({
+    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "e",
+    "ж": "zh", "з": "z", "и": "i", "й": "y", "к": "k", "л": "l", "м": "m",
+    "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+    "ф": "f", "х": "kh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch", "ъ": "",
+    "ы": "y", "ь": "", "э": "e", "ю": "yu", "я": "ya", "ə": "a",
+})
+# Ho Chi Minh City's numbered districts, which GeoNames writes in words
+# ("Quận Mười Một") and the boundary file in figures ("Quan 11"). Only after
+# "Quận" with its marks, so Hà Giang's Quản Bạ, written "Quan Ba", is not
+# district 3.
+VIET_NUMBER = {"một": "1", "hai": "2", "ba": "3", "bốn": "4", "tư": "4", "năm": "5",
+               "sáu": "6", "bảy": "7", "tám": "8", "chín": "9", "mười": "10",
+               "mười một": "11", "mười hai": "12"}
+VIET_DISTRICT = re.compile(r"\bquận (mười một|mười hai|mười|một|hai|ba|bốn|tư|năm|"
+                           r"sáu|bảy|tám|chín)\b")
+
+
+@lru_cache(maxsize=200_000)
+def own_key(text: str | None) -> str:
+    """A unit's or a place's name as two spellings of one town agree on it.
+
+    norm() keeps a name in its own script and spelling, which is right for a
+    join: a romanisation this code invents is a guess about which place a
+    row means. This is asked something narrower -- whether a GeoNames place
+    whose point the unit's own polygon holds bears the unit's name -- and the
+    place is already located. So here the town words come off ("городской
+    округ", "Thành phố", "şəhəri", "City", a leading "Al"), Cyrillic is
+    romanised as GeoNames romanises it, Ho Chi Minh City's district numbers
+    are read as figures, and the letters spellings of one name trade are
+    folded together: ə and a (Lənkəran, Lankaran), y and i (Quy Nhon, Qui
+    Nhon), x and kh (Yevlax, Yevlakh), a doubled letter and a single one
+    (Khoramshahr, Khorramshahr).
+    """
+    if not text:
+        return ""
+    text = unicodedata.normalize("NFC", text).lower().strip()
+    text = VIET_DISTRICT.sub(lambda m: "quận " + VIET_NUMBER[m.group(1)], text)
+    text = TOWN_UNIT.sub("", text).strip()
+    text = ARTICLE.sub("", text)
+    key = norm(text.translate(CYRILLIC))
+    key = key.replace("x", "kh").replace("y", "i")
+    # Letters only: Quan 11 is not Quan 1.
+    return re.sub(r"([^\W\d_])\1+", r"\1", key)
+
+
+def town_unit(name: str | None) -> bool:
+    """Whether a unit's name says the unit is a town or city itself."""
+    return bool(name) and bool(TOWN_UNIT.search(
+        unicodedata.normalize("NFC", name).lower().strip()))
+
+
+def drawn_apart(units: list[dict[str, Any]]):
+    """A test of whether the map draws a unit named like a town somewhere
+    other than the unit itself, the units above it and the units drawn inside
+    it, over one country's units (see settle_geonames_spans).
+
+    With ``loose`` it reads names by own_key as well as norm(), for a town
+    that bears the unit's own name in another spelling: Mukalla, in Al
+    Mukalla City, has Al Mukalla drawn beside it under the same name."""
+    drawn: dict[str, set[str]] = defaultdict(set)
+    loosely: dict[str, set[str]] = defaultdict(set)
+    inside: dict[Any, set[str]] = defaultdict(set)
+    for entity in units:
+        if norm(entity.get("name")):
+            drawn[norm(entity.get("name"))].add(entity["id"])
+        if own_key(entity.get("name")):
+            loosely[own_key(entity.get("name"))].add(entity["id"])
+        inside[entity.get("parent")].add(entity["id"])
+
+    def apart(town: str, entity: dict[str, Any], loose: bool = False) -> bool:
+        near = {entity["id"], entity.get("parent")} | inside[entity["id"]]
+        found = set(drawn.get(norm(town), set()))
+        if loose:
+            found |= loosely.get(own_key(town), set())
+        return bool(found - near)
+    return apart
+
+
+def town_stands(town: str, people: float, unit: float, entity: dict[str, Any],
+                apart_from) -> bool:
+    """Whether a GeoNames place more than its unit is still named, without its figure.
+
+    GeoNames placed the place by its point, inside this unit's polygon; what
+    is weighed here is whether its figure says it is a different place.
+
+    Within SPANS times the unit it is named unless another unit of the country
+    is drawn under its name -- and even then where the place bears this unit's
+    own name. The test of a name drawn apart reads names the way the joins
+    do, so "Kyiv Oblast" is drawn under "Kyiv", and the boundary file names
+    Baltimore County "Baltimore" and the regency of Bekasi "Bekasi"; on its
+    own it took Kyiv off the city of Kyiv, Baltimore off Baltimore city and
+    Bekasi off Kota Bekasi, each with a figure a little above a census that
+    is older or narrower than GeoNames'. Japan's two Oyamas and Portugal's
+    two Calhetas are a city and a town far apart, and the point says which
+    one this is. Dushanbe is not Rudaki District's name, and stays unnamed
+    there.
+
+    Beyond SPANS times the unit the place may be a city the unit is only part
+    of, or a place across a boundary -- Aden in Kritar - Sirah, Ibadan in
+    Ibadan North East, Bratislava in Bratislava I -- and it is named only
+    where it bears the unit's own name and no other unit is drawn under that
+    name: Drammen (106,013) in the municipality of Drammen (68,933), Periam
+    (6,563) in the commune of Periam (4,196), where GeoNames' figure is older
+    than the census or reaches past the town.
+
+    The unit's own name is read in its own spelling or script too (own_key):
+    Qui Nhon in Quy Nhon, Lankaran in Lənkəran şəhəri, Raduzhny in городской
+    округ Радужный, Quận Mười in Quan 10. And a unit whose name says it is the
+    town (TOWN_UNIT) keeps its own town beside another unit named for it:
+    Slobodskoy is the urban okrug's town, whatever Slobodskoy District around
+    it is called, and Raduzhny the okrug's in Khanty-Mansi, whatever Vladimir's
+    closed town of the name is. Tirmiz, in Termez District beside Termez city,
+    is not the district's name and is still refused, as is Bukhara in Bukhara
+    District beside Bukhara city.
+    """
+    mine = entity.get("name")
+    same = bool(norm(town)) and norm(town) == norm(mine)
+    loose = bool(own_key(town)) and own_key(town) == own_key(mine)
+    if people <= GEONAMES_SPANS * unit:
+        # The very name as well as a related one: related() reads no name
+        # whose last word is shorter than PREFIX_MIN, so it found neither
+        # Ono in Ono nor Orange Bay in Orange Bay.
+        return (not apart_from(town, entity) or same or loose
+                or related(name_forms(town), name_forms(mine)))
+    return (same or loose) and (town_unit(mine)
+                                or not apart_from(town, entity, loose=True))
+
+
+GEONAMES_FIGURE = "GeoNames (CC BY 4.0)"
+
+
+def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
+                              admin2: dict[str, list[dict[str, Any]]]) -> tuple[int, int]:
+    """Weigh every largest settlement's figure against the unit's final population.
+
+    scripts/fetch_geonames.py gives a place its figure only where that is not
+    more than the unit's population, and names no place at all where it is
+    more than SPANS times the unit, or more than the unit while the map draws
+    a unit of its name elsewhere. It weighs against the population the map
+    carried on the day it ran, and a unit that had none then kept its town's
+    figure whatever it was. Populations filled or lowered since then turned
+    the rule over: Kritar - Sirah, a district of Aden, came out at 76,723
+    people beside Aden's 1,079,670, and Hirat district at 506,896 beside
+    Herat's 574,300. settle_geonames_spans weighs again only the places
+    fetch_geonames refused; this weighs the ones it named, against the
+    population each record is written with.
+
+    A GeoNames place more than SPANS times the unit, or more than the unit
+    and drawn as a unit of its own elsewhere, is not named, with
+    fetch_geonames' reason, unless town_stands finds it is the unit's own
+    town; one that is only more than the unit keeps its name and loses its
+    figure. Natural Earth's figures are of a metropolitan area
+    the place stands for -- Tokyo's 35,676,000 beside the prefecture's
+    14,047,594 -- so its name, found by the unit's own name rather than a
+    point, stands and only the larger figure goes.
+
+    Returns (unnamed, unfigured).
+    """
+    unnamed = unfigured = 0
+    for iso3 in sorted(set(admin1) | set(admin2)):
+        units = admin1.get(iso3, []) + admin2.get(iso3, [])
+        apart_from = drawn_apart(units)
+        for entity in units:
+            figure = entity.get("largest_settlement_population")
+            town = entity.get("largest_settlement")
+            people = published(figure)
+            unit = published(entity.get("population"))
+            if people is None or unit is None or people <= unit:
+                continue
+            if (figure.get("source") == GEONAMES_FIGURE and isinstance(town, str)
+                    and not town_stands(town, people, unit, entity, apart_from)):
+                entity["largest_settlement"] = gap(
+                    NOT_AVAILABLE,
+                    drawn_elsewhere_note(town, people, unit)
+                    if people <= GEONAMES_SPANS * unit else
+                    beyond_unit_note(town, people, unit))
+                entity["sources"] = [
+                    src for src in entity.get("sources", [])
+                    if not (src.get("name") == GEONAMES_SOURCE["name"]
+                            and src.get("field") == GEONAMES_SOURCE["field"])]
+                unnamed += 1
+            else:
+                unfigured += 1
+            del entity["largest_settlement_population"]
+    return unnamed, unfigured
+
+
+# A Natural Earth figure this much larger than GeoNames' for the same place is
+# said to be the urban area's.
+URBAN_AREA_MARGIN = 1.1
+
+
+def note_urban_area_figures(admin1: dict[str, list[dict[str, Any]]]) -> int:
+    """Say where a first-level unit's settlement figure is Natural Earth's urban area.
+
+    Natural Earth's figure for a populated place is the largest it has, which
+    for a city is its urban area: Haifa District showed Haifa with 1,011,000
+    people, the city's urban area, while the Haifa sub-district beside it
+    showed GeoNames' 285,316 for the same city. The figure stays -- it is
+    Natural Earth's for every first-level unit, and an urban area is a fair
+    reading of a settlement -- and where GeoNames gives the same place a
+    figure smaller by more than URBAN_AREA_MARGIN, the note says which is
+    which. Run after settle_settlement_figures, so only a figure that is
+    still shown is described.
+    """
+    towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
+    noted = 0
+    for rows in admin1.values():
+        for entity in rows:
+            figure = entity.get("largest_settlement_population")
+            town = entity.get("largest_settlement")
+            if (not isinstance(figure, dict) or not isinstance(town, str)
+                    or not str(figure.get("source") or "").startswith("Natural Earth")
+                    or entity.get("largest_settlement_note")):
+                continue
+            place = towns.get(entity["id"]) or {}
+            people = place.get("population")
+            if (not people or norm(place.get("name")) != norm(town)
+                    or figure["value"] <= URBAN_AREA_MARGIN * people):
+                continue
+            entity["largest_settlement_note"] = (
+                f"Natural Earth's figure, for the urban area {town} stands for, which "
+                f"can reach past the city's own limits; GeoNames gives {town} "
+                f"{people:,} people.")
+            noted += 1
+    return noted
+
+
+# How far outside a first-level polygon, in degrees, Natural Earth's point for
+# the place it files under that unit may lie inside another unit's polygon
+# before the place is taken to be the other unit's. CGAZ's outlines are
+# simplified, and a city on a border river can land across it: Neuquén's
+# point is 0.11 degrees from the province's polygon, inside Río Negro's.
+NATURAL_EARTH_APART = 0.2
+
+# Natural Earth places filed under a first-level unit they are not in, where
+# the point cannot say so: each lands inside the unit it belongs to, but
+# within NATURAL_EARTH_APART of the unit it is filed under, as Neuquén and
+# Mobaye (on the Ubangi, its point across the river in Congo) land just
+# outside their own. (country, unit, place) -> the unit the place is in.
+NATURAL_EARTH_MISFILED: dict[tuple[str, str, str], str] = {
+    ("ALB", "Durrës", "Tirana"): "Tiranë",
+    ("BDI", "Muramvya", "Gitega"): "Gitega",
+    ("BEN", "Oueme", "Cotonou"): "Littoral",
+    ("MDA", "Bender", "Tiraspol"): "Transnistria",
+    ("SEN", "Matam", "Kaédi"): "Gorgol, Mauritania",
+    ("TCD", "Mandoul", "Sarh"): "Moyen-Chari",
+    ("TWN", "Chiayi", "Puzi"): "Chiayi County",
+    ("TWN", "Hsinchu", "Zhubei"): "Hsinchu County",
+}
+
+# The words that make a unit's name the metropolitan government of a place,
+# and the French elided article: "Municipalidad Metropolitana de Lima" is
+# Lima's own unit, and "District Autonome D'Abidjan" Abidjan's. Read only to
+# ask whether a polygon a place's point stands in is drawn for the place; a
+# join still takes "Area Metropolitana de Lisboa" for a different place from
+# Lisbon (see QUALIFIERS).
+METROPOLITAN = frozenset({"metropolitan", "metropolitana", "metropolitaine"})
+ELIDED = re.compile(r"\b([DdLl])['’]")
+
+
+def drawn_for(place: str, unit: str) -> bool:
+    """Whether a unit's name is a place's own, as a unit drawn for it."""
+    if related(name_forms(place), name_forms(unit)):
+        return True
+    words = tuple(w for w in tokens(ELIDED.sub(r"\1 ", unit)) if w not in METROPOLITAN)
+    return related(name_forms(place), (words,))
+
+
+def natural_earth_elsewhere(city: dict[str, Any], shape: dict[str, Any],
+                            others) -> str | None:
+    """Why Natural Earth's place for a first-level unit is another unit's, or None.
+
+    Natural Earth files its populated places under a first-level unit by that
+    unit's name (ADM1NAME), not by where the place stands, and the build
+    joined them by that name alone. Daegu came out with Pohang, a city of
+    North Gyeongsang 60 km away, and Gwangju with Yeosu in South Jeolla;
+    Thái Nguyên with Hanoi; the piece of Golestan the boundary file labels
+    Mazandaran with Sari, inside the other Mazandaran polygon. A place is
+    another unit's when its point is inside another first-level polygon and
+    either that polygon is drawn for the place itself (Minsk's region and
+    Minsk City, Selangor and Kuala Lumpur, Hadjer-Lamis and N'Djamena) or it
+    lies more than NATURAL_EARTH_APART from this unit's. A point in no
+    polygon -- Fortaleza, São Luís, Suva, a few hundred metres off a
+    simplified coast -- is left to the name. So is one just across a border
+    from the unit it is filed under, unless NATURAL_EARTH_MISFILED says
+    which unit it is in: Tirana, filed under Durrës, is 0.11 degrees inside
+    Tiranë, as close as Neuquén is to its own province.
+
+    ``others`` answers which first-level shapes hold a point (an STRtree query
+    over every first-level shape, with the shapes in the same order).
+    """
+    import shapely
+    from shapely.geometry import Point
+
+    misfiled = NATURAL_EARTH_MISFILED.get((shape.get("group"), shape.get("name"),
+                                           city.get("name")))
+    if misfiled:
+        return f"a place of {misfiled}"
+    geom = shape.get("_geom")
+    point = city.get("coordinates")
+    if geom is None or not point:
+        return None
+    point = Point(point)
+    if shapely.contains(geom, point):
+        return None
+    tree, rows = others
+    for idx in tree.query(point):
+        other = rows[int(idx)]
+        if other is shape or not shapely.contains(other["_geom"], point):
+            continue
+        if drawn_for(city["name"], other["name"]):
+            return f"drawn as a unit of its own, {other['name']}"
+        if shapely.distance(geom, point) > NATURAL_EARTH_APART:
+            return f"inside {other['name']}"
+        return None
+    return None
 
 
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -5028,6 +6713,9 @@ def residual_child(admin0: list[dict[str, Any]],
                 continue
             target = blank[0]
             where = f"{iso3} {target['name']} {field}"
+            if target[field].get("not_this_ground"):
+                refused.append(f"{where}: its own gap says no figure fits this polygon")
+                continue
             why, shares = residual(nation, known, target, field)
             if why or not shares:
                 refused.append(f"{where}: {why or 'nothing left over'}")
@@ -5100,6 +6788,12 @@ def residual_grandchild(admin1_by_country: dict[str, list[dict[str, Any]]],
                     continue
                 target = blank[0]
                 where = f"{iso3} {target['name']} {field}"
+                # An adapter's gap can say that no figure, its own or a
+                # difference, fits the polygon: Maguindanao's religion once the
+                # ARMM it sits in carried a count of the region's own ground.
+                if target[field].get("not_this_ground"):
+                    refused.append(f"{where}: its own gap says no figure fits this polygon")
+                    continue
                 why, shares = residual(parent, known, target, field)
                 if why or not shares:
                     refused.append(f"{where}: {why or 'nothing left over'}")
@@ -5941,8 +7635,13 @@ def main() -> int:
 
     log("build_entities: reading boundaries")
     shapes = {level: read_shapes(level) for level in args.levels}
+    own_seats = {row["shape_id"]: row.pop("_seat")
+                 for rows in shapes.values() for row in rows if row.get("_seat")}
+    log(f"  {len(own_seats)} polygons hold a GeoNames seat drawn for them")
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
+        for line in declare_parents(shapes["ADM1"], shapes["ADM2"]):
+            log(f"  declared parent: {line}")
         shapes["ADM2"].extend(read_remainders())
         replaced, redrawn = read_redrawn()
         if redrawn:
@@ -6038,18 +7737,33 @@ def main() -> int:
         entity["note"] = ("geoBoundaries' global composite has no separate outline for "
                           "this entity -- it is drawn as part of the state that "
                           "administers it. The figures below are still its own.")
+        entity["note"] = disputed_outline_note(entity["id"], admin0) or entity["note"]
         entity.setdefault("sources", [])
         admin0.append(entity)
 
     admin0.sort(key=lambda e: e["name"])
+    # Before anything is summed: a country's population is what the sums of
+    # its divisions are checked against.
+    counted = apply_country_figures(admin0, country_detail)
 
     # -- admin 1 -------------------------------------------------------------
     admin1_by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
     adm1_index: dict[str, dict[str, str]] = defaultdict(dict)
+    # Natural Earth's place for a unit is joined by the unit's name; its point
+    # is checked against the polygons, and a place that is another unit's is
+    # left for GeoNames' placement by point (see natural_earth_elsewhere).
+    from shapely.strtree import STRtree
+    drawn1 = [s for s in shapes.get("ADM1", []) if s.get("_geom") is not None]
+    held_by = (STRtree([s["_geom"] for s in drawn1]), drawn1) if drawn1 else None
+    elsewhere: list[str] = []
     for shape in shapes.get("ADM1", []):
         iso3 = shape["group"]
         entity = blank(shape, "admin1", iso3)
         city = cities["by_admin1"].get(f"{iso3}||{norm_city(shape['name'])}")
+        why = natural_earth_elsewhere(city, shape, held_by) if city and held_by else None
+        if why:
+            elsewhere.append(f"{iso3} {shape['name']}: {city['name']}, {why}")
+            city = None
         if city:
             entity["largest_settlement"] = city["name"]
             entity["largest_settlement_population"] = measure(city["population"], source=city["source"])
@@ -6057,6 +7771,9 @@ def main() -> int:
         mark_water(entity, iso3)
         admin1_by_country[iso3].append(entity)
         adm1_index[iso3][norm(shape["name"])] = entity["id"]
+    if elsewhere:
+        log(f"  {len(elsewhere)} Natural Earth places filed under a first-level unit "
+            f"stand in another and are left to GeoNames: " + "; ".join(elsewhere))
 
     for iso3, rows in curated_rows.items():
         prov = provenance.get(iso3, {})
@@ -6417,7 +8134,8 @@ def main() -> int:
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "
             f"the district's")
-    placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country)
+    placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country,
+                                                  own_seats)
     if placed_towns:
         log(f"  {placed_towns} largest settlements placed from GeoNames")
     placed_seats = fill_capitals_from_geonames(admin1_by_country, admin2_by_country)
@@ -6475,11 +8193,28 @@ def main() -> int:
     if twinned:
         log(f"  {twinned} second-level fields filled from the same polygon "
             f"drawn a level up")
+    for line in note_undrawn_parts(admin1_by_country, admin2_by_country):
+        log(f"  undrawn part of a first-level count: {line}")
+    # After every pass that sets a unit's population, so GeoNames' refusals
+    # are weighed against the figure each record is written with.
+    named, restated = settle_geonames_spans(admin1_by_country, admin2_by_country)
+    if named or restated:
+        log(f"  GeoNames places weighed again against final populations: {named} "
+            f"named, {restated} reasons restated")
+    # And the places that were named, for the same reason.
+    unnamed, unfigured = settle_settlement_figures(admin1_by_country, admin2_by_country)
+    if unnamed or unfigured:
+        log(f"  largest settlements larger than their unit: {unnamed} no longer "
+            f"named, {unfigured} named without their figure")
+    urban = note_urban_area_figures(admin1_by_country)
+    if urban:
+        log(f"  {urban} first-level settlement figures said to be Natural Earth's "
+            f"urban area")
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
     check_no_stale_country_declaration(admin0, admin1_by_country)
-    roll_up_countries(admin0, admin1_by_country)
+    roll_up_countries(admin0, admin1_by_country, counted)
 
     # Last, so a curated country row is the last word on the field it names.
     apply_country_detail(admin0, country_detail)
@@ -6529,10 +8264,32 @@ def main() -> int:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why.items(), key=lambda kv: -kv[1])))
+    # After the reasons are written, since it reads them.
+    answered = sum(drop_answered_hint(entity)
+                   for table in (admin1_by_country, admin2_by_country)
+                   for rows in table.values() for entity in rows)
+    if answered:
+        log(f"  {answered} adapter hints taken off units whose every empty "
+            f"field already says why")
 
     # Last check before writing: every pass that could have filled a field
     # has run, so a lake that is still water here stays water on the map.
     check_water_shapes(admin1_by_country, admin2_by_country)
+    # Nothing reads the adapters' instructions to the build after this.
+    flags = sum(drop_build_flags(entity) for entity in admin0) + sum(
+        drop_build_flags(entity) for table in (admin1_by_country, admin2_by_country)
+        for rows in table.values() for entity in rows)
+    if flags:
+        log(f"  {flags} build flags taken off the values before writing")
+    reworded = sum(plain_notes(entity) for table in (admin1_by_country, admin2_by_country)
+                   for rows in table.values() for entity in rows)
+    if reworded:
+        log(f"  {reworded} coded reasons said in plain words")
+    plain = sum(plain_record(entity) for entity in admin0) + sum(
+        plain_record(entity) for table in (admin1_by_country, admin2_by_country)
+        for rows in table.values() for entity in rows)
+    if plain:
+        log(f"  {plain} notes, reasons and licences put in plain words")
 
     # -- write ---------------------------------------------------------------
     out = args.out

@@ -4538,8 +4538,12 @@ its province, and the wrong one for Addis Ababa's ten sub-cities -- and the
 difference is a fact about the shape, not a matter of taste.
 
 A highly urbanized city is drawn *inside* something larger that has a row of
-its own: the province's figures already cover the city, so the city's row has
-nowhere to go and `no_shape` says so. Addis Ababa's sub-cities are not inside
+its own, so the city's row has no polygon of its own and `no_shape` says so.
+The province's row does **not** cover the city -- the census tabulates the two
+apart, and the region's row is their sum -- so `sea_composed.py` adds each of
+the seventeen cities outside Metro Manila to its province's figures for the
+polygon that holds both (`HUC_PROVINCES`): Davao del Sur's row alone is 28% of
+its polygon's 2020 count, and with Davao City 99.7%. Addis Ababa's sub-cities are not inside
 anything else at the second order. The ten **are** the second order there:
 geoBoundaries draws exactly one zone-level shape in Addis Ababa, labelled
 "Region 14", and it is the region entire. Declaring the ten absent left that
@@ -7867,12 +7871,20 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
 * **Iran** -- the 2016 census asked religion and the Statistical Centre
   publishes it by province, but `amar.org.ir` ends the TLS handshake before a
   standard client reads a page (`SSL: UNEXPECTED_EOF_WHILE_READING`, measured
-  on the runner). Verification is not turned off for it. The country carries a
-  `gap_reason` saying the data exists and is unreachable; ethnicity and
-  language were already declared not collected. The language declaration still
-  stands — no Iranian census has asked it — and eleven provinces carry a
-  figure from a research atlas instead, marked as one: see *Iran: language
-  from a research atlas, twelve provinces at a time* below.
+  on the runner). Verification is not turned off for it. Since the Asia round
+  the Internet Archive's captures of the same files are read instead
+  (`iran_census.py`): the census's detailed tables by province and shahrestan
+  (age, sex, citizenship) and the 1395 yearbook's religion by province, whose
+  English edition swaps the Christian and Zoroastrian headings. The three
+  shahrestans the map draws as two polygons (Tehran, Isfahan, Mehdishahr) take
+  each half's own count from the province's settlement table -- the city and
+  the rest of the county, or the two districts. Religion is published for no
+  unit below the province. Citizenship stands for ethnicity, which the census
+  does not ask (the owner's rule of 19 September 2026), labelled as
+  nationalities. The language declaration still stands — no Iranian census has
+  asked it — and eleven provinces carry a figure from a research atlas
+  instead, marked as one: see *Iran: language from a research atlas, twelve
+  provinces at a time* below.
 * **South Korea** -- the 2015 census asked religion and KOSIS publishes it by
   province, behind an API that needs a registered key; *Religion in South
   Korea* carries the national series only. Declared a gap at first; the
@@ -8437,18 +8449,19 @@ runs below the share of all foreigners present, and the Korean-Chinese
 figure in particular is the registered part of that community.
 
 **The shapes.** All 228 districts are matched. geoBoundaries CGAZ draws
-twenty of them under the wrong province or under the country itself --
-Seoul's Eunpyeong-gu under Gyeonggi; Incheon's Seo-gu, Gyeyang-gu and
-Ganghwa-gun under Gyeonggi and Ongjin-gun under the country; Gwangju's
-Dong-gu, Seo-gu, Nam-gu and Gwangsan-gu under South Jeolla; Busan's
-Gangseo-gu and Gijang-gun under South Gyeongsang and Yeongdo-gu under the
-country; Daegu's Dalseong-gun and Gunwi-gun under North Gyeongsang;
-Daejeon's Dong-gu under North Chungcheong; Gyeongbuk's Uljin-gun under
-Gangwon; Jeonnam's Sinan-gun under the country. Each of those rows names the
-province the shape is drawn under as its `parent_name`, because that is the
-only way the join finds a Dong-gu among six, and its note says which
-province it is actually part of; the province rows sum the districts by
-their real province. Jeonnam's Yeonggwang-gun has no shape at all and counts
+seventeen of them inside a neighbouring province's polygon or outside every
+province's -- Seoul's Eunpyeong-gu inside Gyeonggi; Incheon's Seo-gu,
+Gyeyang-gu and Ganghwa-gun inside Gyeonggi and Ongjin-gun outside every
+province; Gwangju's Dong-gu, Seo-gu, Nam-gu and Gwangsan-gu inside South
+Jeolla; Busan's Gangseo-gu and Gijang-gun inside South Gyeongsang and
+Yeongdo-gu outside every province; Daegu's Dalseong-gun and Gunwi-gun inside
+North Gyeongsang; Daejeon's Dong-gu inside North Chungcheong; Gyeongbuk's
+Uljin-gun inside Gangwon; Jeonnam's Sinan-gun outside every province. The
+map files each of them under its own province all the same, so each of
+those rows names that province, the district's own, as its `parent_name`
+(which is how the join finds a Dong-gu among six), and its note says whose
+polygon the outline is drawn in; the province rows sum the districts by
+their own province. Jeonnam's Yeonggwang-gun has no shape at all and counts
 in South Jeolla only. Cities with districts (Suwon, Seongnam, Goyang, Yongin,
 Ansan, Anyang, Cheongju, Cheonan, Jeonju, Pohang, Changwon) are one shape
 each and are summed from the file's district rows.
@@ -8992,9 +9005,23 @@ Iran's census has never asked language. That declaration is in
 `NOT_COLLECTED_POLICY` and it is still true; nothing below changes it. What
 changed on 20 September 2026 is that the owner supplied twelve province files
 from the **Atlas of the Languages of Iran (ALI)**, and this map now carries a
-language figure for eleven provinces and 96 counties that is explicitly *not*
+language figure for eleven provinces and 102 counties that is explicitly *not*
 a census: a linguist's field estimate, settlement by settlement, weighted up
 by population and labelled as an estimate on every record.
+
+Every other county of the twelve provinces read carries its own stated reason
+rather than the country-wide one: Khuzestān's, Lorestān's and Kohgiluyeh va
+Boyer Ahmad's modules name no county for any settlement; Rasht and Ārān o
+Bidgol are covered too thinly (28.5% and 37.8%); the atlas counts Chardavol
+and Sirvan as one county; nine of Kermānshāh's fourteen are not in its
+module. The atlas keeps Iran's older division, so five of its districts that
+have since become counties (Asaluyeh, Ben, Sāmān, Badreh, Buin o Miān Dasht)
+and the city of Isfahan, which the boundary file draws apart from the county
+around it, are carved out of the county the atlas counts them in. Placing the
+atlas's settlement points in the boundary file's polygons shows each part
+inside its own polygon (93% for Badreh, 99-100% for the rest), and without
+the carving Darreh Shahr's figure carried Badreh's Bayray and Hinimini
+speakers and Isfahan County's was four-fifths the city's.
 
 ### What ALI is
 

@@ -1071,6 +1071,134 @@
    ]
   },
   {
+   "country": "MNG",
+   "field": "ethnicity",
+   "year": 2020,
+   "source": "National Statistics Office of Mongolia, 2020 Population and Housing Census of Mongolia: National Report (English edition), Table 3.2: population and ethnic groups, 2010, 2020",
+   "url": "https://web.archive.org/web/20211122214957id_/https://www.1212.mn/BookLibraryDownload.ashx?url=Census2020_Main_report_Eng.pdf&ln=En",
+   "license": "Official statistics of the National Statistics Office of Mongolia, cited as published",
+   "note": "Mongolia's 2020 census asked every citizen's ethnic group (үндэс угсаа). This is Table 3.2 of the National Statistics Office's English national report: the 3,174,565 Mongolian citizens it counted, by the census's own groups, with the counts as printed and each share taken from its count. 'Other ethnic groups' is the 143 people the table prints as other and the 2,364 people of the 6 groups too few to show at one decimal (Eljigen, Khamnigan, Tsaatan (Dukha), Uzbek (Chantuu), Kharchin and Khoshuud); 'Other nationals' are citizens of foreign origin. The base is citizens, so the 22,418 foreign nationals the census counted apart are outside it, as they are in the aimags' own shares (Appendix Table 3.6 of the same report). Being the country's own table, it stands in place of a sum of the aimags' shares, which that appendix prints to one decimal.",
+   "groups": [
+    {
+     "group": "Khalkh",
+     "pct": 83.8,
+     "count": 2659985
+    },
+    {
+     "group": "Kazakh",
+     "pct": 3.8,
+     "count": 120999
+    },
+    {
+     "group": "Durvud",
+     "pct": 2.6,
+     "count": 83719
+    },
+    {
+     "group": "Bayad",
+     "pct": 2.0,
+     "count": 63775
+    },
+    {
+     "group": "Buriad",
+     "pct": 1.4,
+     "count": 43661
+    },
+    {
+     "group": "Zakhchin",
+     "pct": 1.2,
+     "count": 37407
+    },
+    {
+     "group": "Dariganga",
+     "pct": 1.1,
+     "count": 36419
+    },
+    {
+     "group": "Uriankhai",
+     "pct": 0.9,
+     "count": 29021
+    },
+    {
+     "group": "Darkhad",
+     "pct": 0.8,
+     "count": 24549
+    },
+    {
+     "group": "Torguud",
+     "pct": 0.5,
+     "count": 15596
+    },
+    {
+     "group": "Uuld",
+     "pct": 0.5,
+     "count": 14666
+    },
+    {
+     "group": "Khoton",
+     "pct": 0.4,
+     "count": 12057
+    },
+    {
+     "group": "Khotgoid",
+     "pct": 0.3,
+     "count": 8583
+    },
+    {
+     "group": "Myangad",
+     "pct": 0.3,
+     "count": 8125
+    },
+    {
+     "group": "Barga",
+     "pct": 0.1,
+     "count": 2832
+    },
+    {
+     "group": "Tuva",
+     "pct": 0.1,
+     "count": 2354
+    },
+    {
+     "group": "Uzemchin",
+     "pct": 0.1,
+     "count": 2308
+    },
+    {
+     "group": "Sartuul",
+     "pct": 0.1,
+     "count": 2023
+    },
+    {
+     "group": "Other nationals (Mongolian citizens)",
+     "pct": 0.1,
+     "count": 3979
+    },
+    {
+     "group": "Other ethnic groups",
+     "pct": 0.1,
+     "count": 2507
+    }
+   ]
+  },
+  {
+   "country": "PRK",
+   "field": "ethnicity",
+   "year": 2008,
+   "source": "Central Bureau of Statistics, DPR Korea, 2008 Population Census -- National Report (Pyongyang, 2009), Table 5: population by nationality, by 5-year age group and by sex",
+   "url": "https://unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final%20national%20census%20report.pdf",
+   "license": "Central Bureau of Statistics, DPR Korea. Official publication; copy served by the UN Statistics Division.",
+   "basis": "nationality",
+   "note": "North Korea's 2008 census asked nationality, not ethnicity: question P7, 'What is ____'s nationality?', answered Korean or Others. Table 5 of the National Report, the only table built from it, is national: 23,349,326 Koreans and 533 people of other nationalities, the 23,349,859 people the census counted in households and institutional living quarters (the 702,372 in military camps, which make the census's 24,052,231, were enumerated on a shorter form and are not in it). The 533 are 0.002% and too few to draw at one decimal. No table crosses nationality with a province, so the provinces carry the census's declaration instead.",
+   "groups": [
+    {
+     "group": "Korean",
+     "pct": 100.0,
+     "count": 23349326
+    }
+   ]
+  },
+  {
    "country": "AUT",
    "field": "religion",
    "year": 2023,
@@ -1125,7 +1253,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 10,524 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 10,524 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "AUT",
@@ -1257,7 +1385,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 10,606 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 10,606 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "BEL",
@@ -1314,7 +1442,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 8,205 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 8,205 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "BEL",
@@ -1441,7 +1569,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,219 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,219 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "FRA",
@@ -1498,7 +1626,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 9,655 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 9,655 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "GRC",
@@ -1545,7 +1673,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 10, 11 (2020-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 5,513 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 5,513 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "GRC",
@@ -1587,7 +1715,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 10, 11 (2020-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 5,545 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 5,545 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "ISL",
@@ -1629,7 +1757,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 8, 9, 10, 11 (2016-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 8, 9, 10, 11 (2016-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 3,471 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 8, 9, 10, 11 (2016-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 3,471 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "LVA",
@@ -1686,7 +1814,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 9, 10, 11 (2018-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 9, 10, 11 (2018-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 3,157 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 9, 10, 11 (2018-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 3,157 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "NLD",
@@ -1808,7 +1936,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,411 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,411 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "SVN",
@@ -1865,7 +1993,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 6,292 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 6,292 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "SVN",
@@ -1932,7 +2060,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 6,325 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 6,325 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "ESP",
@@ -1989,7 +2117,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 9,581 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 9,581 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "SWE",
@@ -2046,7 +2174,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 8,348 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 8,348 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "SWE",
@@ -2213,7 +2341,7 @@
    "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
    "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
    "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
-   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,312 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,312 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate."
   },
   {
    "country": "CYP",
@@ -2459,7 +2587,7 @@
    "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891616E",
    "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px",
    "license": "Statistical Service of Cyprus (reuse with attribution)",
-   "note": "Language, 2021 census, resident population, the five districts of table 1891616E summed (cyprus_census.py). The rows 'Indian', 'Sri Lankan' and 'Yugoslavian', which name a country rather than a language, are within Other. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "note": "Language, 2021 census, resident population, the five districts of table 1891616E summed. The rows 'Indian', 'Sri Lankan' and 'Yugoslavian', which name a country rather than a language, are within Other. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
    "groups": [
     {
      "group": "Greek",
@@ -4548,7 +4676,7 @@
    "source": "Sreda, Arena: Atlas of Religions and Nationalities of Russia (2012), arena_statistic.xls -- 'Распределение ответов в регионах РФ', column 'Население в целом'",
    "url": "http://sreda.org/arena",
    "license": "Sreda, published aggregate tabulation",
-   "note": "Sreda's Arena survey (fieldwork by the Public Opinion Foundation, MegaFOM omnibus, 29 May-25 June 2012, face to face at home): 56,900 adults aged 18 and over in 79 of the 83 federal subjects the map draws, 500 to 800 in each, which Sreda puts at 98.8% of the population -- Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed. Sreda's own figure for Russia as a whole, its subjects weighted by their populations; the counts are those weighted shares of the 56,900 respondents, not people. One answer from a card: 'Russian Orthodox Church' is 'I profess Orthodoxy and belong to the Russian Orthodox Church', 'Believe in God, no specific religion' is 'I believe in God (a higher power) but profess no particular religion', 'Atheist' is 'I do not believe in God'. A survey estimate, not a count: no Russian census since 1937 has asked religion. The subjects carry the same survey's own figures (russia_religion_survey.json)."
+   "note": "Sreda's Arena survey (fieldwork by the Public Opinion Foundation, MegaFOM omnibus, 29 May-25 June 2012, face to face at home): 56,900 adults aged 18 and over in 79 of the 83 federal subjects the map draws, 500 to 800 in each, which Sreda puts at 98.8% of the population -- Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed. Sreda's own figure for Russia as a whole, its subjects weighted by their populations; the counts are those weighted shares of the 56,900 respondents, not people. One answer from a card: 'Russian Orthodox Church' is 'I profess Orthodoxy and belong to the Russian Orthodox Church', 'Believe in God, no specific religion' is 'I believe in God (a higher power) but profess no particular religion', 'Atheist' is 'I do not believe in God'. A survey estimate, not a count: no Russian census since 1937 has asked religion. The subjects carry the same survey's own figures."
   },
   {
    "country": "FIN",
@@ -4626,6 +4754,917 @@
    "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vaerak/statfin_vaerak_pxt_11rx.px",
    "license": "CC BY 4.0 (Statistics Finland)",
    "note": "Membership of a religious community as Finland's population register records it for every resident on 31 December 2025: 5,652,881 people (Statistics Finland, table 11rx). A count of registered membership, not of belief. 'Not a member of any religious community' is everyone in no registered community, which Statistics Finland calls no religious affiliation; it also holds people of faith who belong to none. 'Other Christian' joins the smaller Christian bodies the table names (Adventists, the Anglican churches, Baptists, the Lutheran free congregations, Methodists, the free churches and other Christians); 'Other religions' the Bahá'í, the Christian Community, the Liberal Catholic Church, the indigenous religions and neo-paganism and the rest of the other religious groups. Statistics Finland counts the communities apart for the whole country only: the regions and sub-regions carry the same register's three groups (the Lutheran church, every other community together, and none) for the same day, so this figure is the itemised whole of theirs."
+  },
+  {
+   "country": "UZB",
+   "field": "ethnicity",
+   "year": 2026,
+   "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026): population by nationality, and by region and native language",
+   "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+   "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan",
+   "note": "Nationality as each person declared it in Uzbekistan's first census since 1989, taken at 15 January 2026: the preliminary results' national table, 39,047,321 people (the permanent population, the 2,090,953 temporarily away included). It is the exact sum of the fourteen regions the map draws, which carry the same table; the Factbook's estimate for the country, 37,015,151 for 2025, is 5.5% below the census's count. The preliminary results name seven nationalities and print the rest, 300,019 people, as 'other' (другие) without naming them; they replace the Factbook's older estimate. The final results are due by 1 July 2027.",
+   "groups": [
+    {
+     "group": "Uzbek",
+     "pct": 89.4,
+     "count": 34901261
+    },
+    {
+     "group": "Tajik",
+     "pct": 3.3,
+     "count": 1276941
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 2.2,
+     "count": 841397
+    },
+    {
+     "group": "Kazakh",
+     "pct": 1.8,
+     "count": 707329
+    },
+    {
+     "group": "Russian",
+     "pct": 1.6,
+     "count": 606526
+    },
+    {
+     "group": "Other",
+     "pct": 0.8,
+     "count": 300019
+    },
+    {
+     "group": "Kyrgyz",
+     "pct": 0.6,
+     "count": 219091
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.5,
+     "count": 194757
+    }
+   ]
+  },
+  {
+   "country": "UZB",
+   "field": "language",
+   "year": 2026,
+   "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026): population by nationality, and by region and native language",
+   "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+   "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan",
+   "note": "Native language as each person named it in the 2026 census (critical moment 15 January 2026): the preliminary results' table by region, summed over the fourteen regions the map draws, which is the republic's own row, 39,047,321 people. Seven languages are named and the rest, 88,244 people, are 'other languages'. It replaces the Factbook's figure, which is not a count from this census. The final results are due by 1 July 2027.",
+   "groups": [
+    {
+     "group": "Uzbek",
+     "pct": 91.3,
+     "count": 35654647
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 2.3,
+     "count": 910462
+    },
+    {
+     "group": "Tajik",
+     "pct": 2.2,
+     "count": 851326
+    },
+    {
+     "group": "Russian",
+     "pct": 2.0,
+     "count": 787493
+    },
+    {
+     "group": "Kazakh",
+     "pct": 1.4,
+     "count": 561316
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.3,
+     "count": 114274
+    },
+    {
+     "group": "Kyrgyz",
+     "pct": 0.2,
+     "count": 79559
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.2,
+     "count": 88244
+    }
+   ]
+  },
+  {
+   "country": "VNM",
+   "field": "religion",
+   "year": 2019,
+   "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 3: population by religion, urban/rural and sex, 1 April 2019",
+   "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+   "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published",
+   "note": "Religion as each person declared it in the 2019 census, for the whole country: Table 3 of the Completed Results volume (page 211 of the PDF), the 96,208,984 people counted on 1 April 2019, with the counts as printed; its rows make that total exactly. 'No religion' is the census's 'không theo tôn giáo'. The table names sixteen religions; 'Other religions' is two of them, Minh Sư Đạo and Minh Lý Đạo (260 and 193 people), as the provinces' figures group them. The 2019 census published religion for the country only, so the provinces carry the 2009 census's, the latest by province.",
+   "groups": [
+    {
+     "group": "No religion",
+     "pct": 86.3,
+     "count": 83046105
+    },
+    {
+     "group": "Catholicism",
+     "pct": 6.1,
+     "count": 5866169
+    },
+    {
+     "group": "Buddhism",
+     "pct": 4.8,
+     "count": 4606543
+    },
+    {
+     "group": "Hoa Hao Buddhism",
+     "pct": 1.0,
+     "count": 983079
+    },
+    {
+     "group": "Protestantism",
+     "pct": 1.0,
+     "count": 960558
+    },
+    {
+     "group": "Caodaism",
+     "pct": 0.6,
+     "count": 556234
+    },
+    {
+     "group": "Islam",
+     "pct": 0.1,
+     "count": 70934
+    },
+    {
+     "group": "Balamon Hinduism",
+     "pct": 0.1,
+     "count": 64547
+    },
+    {
+     "group": "Tu An Hieu Nghia",
+     "pct": 0.0,
+     "count": 30416
+    },
+    {
+     "group": "Seventh-day Adventist",
+     "pct": 0.0,
+     "count": 11830
+    },
+    {
+     "group": "Church of Jesus Christ of Latter-day Saints",
+     "pct": 0.0,
+     "count": 4281
+    },
+    {
+     "group": "Buu Son Ky Huong",
+     "pct": 0.0,
+     "count": 2975
+    },
+    {
+     "group": "Pure Land Buddhism (Tinh Do Cu Si)",
+     "pct": 0.0,
+     "count": 2306
+    },
+    {
+     "group": "Baha'i",
+     "pct": 0.0,
+     "count": 2153
+    },
+    {
+     "group": "Hieu Nghia Ta Lon Buddhism",
+     "pct": 0.0,
+     "count": 401
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.0,
+     "count": 453
+    }
+   ]
+  },
+  {
+   "country": "IRN",
+   "field": "religion",
+   "year": 2016,
+   "source": "Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), chapter 3 (Population), table 3.18: population by religion and ostan, 1395 census",
+   "url": "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf",
+   "license": "Official statistics of the Statistical Centre of Iran",
+   "note": "Religion as each person declared it in the 2016 census, for the whole country: the national row of table 3.18 of the Statistical Yearbook 1395, 79,926,270 people, which the table's 31 provinces make exactly. The Centre's categories are Muslim, Christian, Zoroastrian, Jewish, other and not stated. The English yearbook prints the Christian and Zoroastrian headings the wrong way round -- its table 3.17 gives the 2011 census's 117,704 Christians as Zoroastrians, against the Centre's Persian results of that census -- and they are put back here as on the provinces. The provinces carry the same table, except Golestan and the Bandar-e Gaz polygon, which the map draws apart from the province the table counts.",
+   "groups": [
+    {
+     "group": "Islam",
+     "pct": 99.6,
+     "count": 79598054
+    },
+    {
+     "group": "Christianity",
+     "pct": 0.2,
+     "count": 130158
+    },
+    {
+     "group": "Zoroastrianism",
+     "pct": 0.0,
+     "count": 23109
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.0,
+     "count": 9826
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.1,
+     "count": 40551
+    },
+    {
+     "group": "Not stated",
+     "pct": 0.2,
+     "count": 124572
+    }
+   ]
+  },
+  {
+   "country": "KGZ",
+   "field": "ethnicity",
+   "year": 2022,
+   "source": "National Statistical Committee of the Kyrgyz Republic, 2022 Population and Housing Census, Book III: Regions of the Kyrgyz Republic (2023), table 3.2: ethnic groups by territory, the seven regional books and those of Bishkek and Osh added up",
+   "url": "https://www.stat.gov.kg/ru/publications/",
+   "license": "Official statistics of the National Statistical Committee of the Kyrgyz Republic; free to use with attribution",
+   "note": "Ethnic group (национальность) as each person declared it in the 2022 census: table 3.2 of the nine books of Book III -- the seven regions and the cities of Bishkek and Osh -- added up, 6,936,156 people, the whole country. Each book prints its own territory's most numerous groups and the rest as other, so a group named in some books and not in others is counted where it is named and is inside 'Other' elsewhere; 'Other' is 20,346 people in all, which bounds that. The regions carry the same tables.",
+   "groups": [
+    {
+     "group": "Kyrgyz",
+     "pct": 77.6,
+     "count": 5379020
+    },
+    {
+     "group": "Uzbek",
+     "pct": 14.2,
+     "count": 986619
+    },
+    {
+     "group": "Russian",
+     "pct": 4.1,
+     "count": 282471
+    },
+    {
+     "group": "Dungan",
+     "pct": 0.9,
+     "count": 65329
+    },
+    {
+     "group": "Tajik",
+     "pct": 0.9,
+     "count": 59320
+    },
+    {
+     "group": "Uyghur",
+     "pct": 0.4,
+     "count": 31129
+    },
+    {
+     "group": "Kazakh",
+     "pct": 0.4,
+     "count": 27336
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.3,
+     "count": 21435
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 0.2,
+     "count": 17039
+    },
+    {
+     "group": "Tatar",
+     "pct": 0.2,
+     "count": 10735
+    },
+    {
+     "group": "Kurdish",
+     "pct": 0.1,
+     "count": 10285
+    },
+    {
+     "group": "Peoples of India and Pakistan",
+     "pct": 0.1,
+     "count": 7514
+    },
+    {
+     "group": "Korean",
+     "pct": 0.1,
+     "count": 5632
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.1,
+     "count": 3538
+    },
+    {
+     "group": "German",
+     "pct": 0.0,
+     "count": 2622
+    },
+    {
+     "group": "Dargin",
+     "pct": 0.0,
+     "count": 1671
+    },
+    {
+     "group": "Lezgin",
+     "pct": 0.0,
+     "count": 1410
+    },
+    {
+     "group": "Karachay",
+     "pct": 0.0,
+     "count": 697
+    },
+    {
+     "group": "Balkar",
+     "pct": 0.0,
+     "count": 545
+    },
+    {
+     "group": "Chechen",
+     "pct": 0.0,
+     "count": 469
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.0,
+     "count": 379
+    },
+    {
+     "group": "Avar",
+     "pct": 0.0,
+     "count": 330
+    },
+    {
+     "group": "Agul",
+     "pct": 0.0,
+     "count": 250
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.0,
+     "count": 35
+    },
+    {
+     "group": "Other",
+     "pct": 0.3,
+     "count": 20346
+    }
+   ]
+  },
+  {
+   "country": "KGZ",
+   "field": "language",
+   "year": 2022,
+   "source": "National Statistical Committee of the Kyrgyz Republic, 2022 Population and Housing Census, Book III: Regions of the Kyrgyz Republic (2023), table 3.4: ethnic groups by native language, the seven regional books and those of Bishkek and Osh added up",
+   "url": "https://www.stat.gov.kg/ru/publications/",
+   "license": "Official statistics of the National Statistical Committee of the Kyrgyz Republic; free to use with attribution",
+   "note": "Native language (родной язык) in the 2022 census: table 3.4 of the nine books of Book III added up, 6,936,156 people. For each group a book lists, the table gives the number who named their own group's language, Kyrgyz, Russian (and Uzbek where printed) or another language; a group's own language is counted as that language, and the own language of the groups a book does not list is in 'Other languages' (27,111 people). The regions carry the same tables.",
+   "groups": [
+    {
+     "group": "Kyrgyz",
+     "pct": 79.7,
+     "count": 5527168
+    },
+    {
+     "group": "Uzbek",
+     "pct": 12.7,
+     "count": 883838
+    },
+    {
+     "group": "Russian",
+     "pct": 4.4,
+     "count": 304465
+    },
+    {
+     "group": "Dungan",
+     "pct": 0.9,
+     "count": 61770
+    },
+    {
+     "group": "Tajik",
+     "pct": 0.8,
+     "count": 53205
+    },
+    {
+     "group": "Uyghur",
+     "pct": 0.2,
+     "count": 17112
+    },
+    {
+     "group": "Kazakh",
+     "pct": 0.2,
+     "count": 15143
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 0.2,
+     "count": 12619
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.2,
+     "count": 11534
+    },
+    {
+     "group": "Kurdish",
+     "pct": 0.1,
+     "count": 9052
+    },
+    {
+     "group": "Tatar",
+     "pct": 0.1,
+     "count": 4604
+    },
+    {
+     "group": "Korean",
+     "pct": 0.0,
+     "count": 2191
+    },
+    {
+     "group": "Dargin",
+     "pct": 0.0,
+     "count": 1527
+    },
+    {
+     "group": "Lezgin",
+     "pct": 0.0,
+     "count": 1157
+    },
+    {
+     "group": "Karachay-Balkar",
+     "pct": 0.0,
+     "count": 1015
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.0,
+     "count": 752
+    },
+    {
+     "group": "Chechen",
+     "pct": 0.0,
+     "count": 555
+    },
+    {
+     "group": "German",
+     "pct": 0.0,
+     "count": 512
+    },
+    {
+     "group": "Avar",
+     "pct": 0.0,
+     "count": 309
+    },
+    {
+     "group": "Agul",
+     "pct": 0.0,
+     "count": 256
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.0,
+     "count": 88
+    },
+    {
+     "group": "Kalmyk",
+     "pct": 0.0,
+     "count": 40
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.0,
+     "count": 37
+    },
+    {
+     "group": "Belarusian",
+     "pct": 0.0,
+     "count": 29
+    },
+    {
+     "group": "Romani",
+     "pct": 0.0,
+     "count": 23
+    },
+    {
+     "group": "Kumyk",
+     "pct": 0.0,
+     "count": 21
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.0,
+     "count": 17
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.0,
+     "count": 6
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.4,
+     "count": 27111
+    }
+   ]
+  },
+  {
+   "country": "TKM",
+   "field": "ethnicity",
+   "year": 2022,
+   "source": "State Committee of Turkmenistan on Statistics, Results of the Complete Population and Housing Census of Turkmenistan 2022, volume 4: National composition of the population and language proficiency, tables 4.3-4.8, Ashgabat and the five velayats added up",
+   "url": "https://stat.gov.tm/en/population-census",
+   "license": "Official statistics of the State Committee of Turkmenistan on Statistics",
+   "note": "Nationality (milli degişliligi) as each person declared it in the 2022 census: tables 4.3-4.8 of volume 4, for Ashgabat and the five velayats, added up -- 7,057,841 people, the census's count for the whole country. Every table names the same fifteen nationalities, the country's most numerous, and prints the rest as other nationalities (6,171 people), so the sum is the country's own composition. The velayats carry the same tables, Ahal with Ashgabat inside it.",
+   "groups": [
+    {
+     "group": "Turkmen",
+     "pct": 86.7,
+     "count": 6120854
+    },
+    {
+     "group": "Uzbek",
+     "pct": 9.1,
+     "count": 642476
+    },
+    {
+     "group": "Russian",
+     "pct": 1.6,
+     "count": 114447
+    },
+    {
+     "group": "Baloch",
+     "pct": 1.2,
+     "count": 87503
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 0.4,
+     "count": 26576
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.2,
+     "count": 14711
+    },
+    {
+     "group": "Kazakh",
+     "pct": 0.2,
+     "count": 11825
+    },
+    {
+     "group": "Persian",
+     "pct": 0.2,
+     "count": 10997
+    },
+    {
+     "group": "Tatar",
+     "pct": 0.1,
+     "count": 8643
+    },
+    {
+     "group": "Kurdish",
+     "pct": 0.0,
+     "count": 2739
+    },
+    {
+     "group": "Afghan",
+     "pct": 0.0,
+     "count": 2655
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.0,
+     "count": 2566
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 0.0,
+     "count": 2371
+    },
+    {
+     "group": "Lezgin",
+     "pct": 0.0,
+     "count": 2292
+    },
+    {
+     "group": "Korean",
+     "pct": 0.0,
+     "count": 1015
+    },
+    {
+     "group": "Other",
+     "pct": 0.1,
+     "count": 6171
+    }
+   ]
+  },
+  {
+   "country": "TKM",
+   "field": "language",
+   "year": 2022,
+   "source": "State Committee of Turkmenistan on Statistics, Results of the Complete Population and Housing Census of Turkmenistan 2022, volume 4: National composition of the population and language proficiency, tables 4.12-4.29, first rows, Ashgabat and the five velayats added up",
+   "url": "https://stat.gov.tm/en/population-census",
+   "license": "Official statistics of the State Committee of Turkmenistan on Statistics",
+   "note": "Mother tongue as each person named it in the 2022 census: the first row of tables 4.12-4.29 of volume 4, which gives each area's people by mother tongue, for Ashgabat and the five velayats added up -- 7,057,841 people. The census tabulates nine languages and the rest as other languages (17,596 people). The velayats carry the same tables.",
+   "groups": [
+    {
+     "group": "Turkmen",
+     "pct": 89.2,
+     "count": 6297965
+    },
+    {
+     "group": "Uzbek",
+     "pct": 6.8,
+     "count": 478212
+    },
+    {
+     "group": "Russian",
+     "pct": 1.9,
+     "count": 135565
+    },
+    {
+     "group": "Balochi",
+     "pct": 1.2,
+     "count": 82767
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 0.3,
+     "count": 21274
+    },
+    {
+     "group": "Kazakh",
+     "pct": 0.1,
+     "count": 10578
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.1,
+     "count": 9154
+    },
+    {
+     "group": "Tatar",
+     "pct": 0.1,
+     "count": 3900
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.0,
+     "count": 830
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.2,
+     "count": 17596
+    }
+   ]
+  },
+  {
+   "country": "KAZ",
+   "field": "language",
+   "status": "not_available",
+   "year": 2021,
+   "source": "Bureau of National Statistics of Kazakhstan, 2021 National Population Census: National composition, religion and language proficiency in the Republic of Kazakhstan",
+   "url": "https://stat.gov.kz/ru/national/2021/",
+   "license": "Official statistics of the Bureau of National Statistics; free to use with attribution",
+   "note": "The 2021 census asked each person's native language, and the Bureau of National Statistics publishes it for the republic only as whether the members of each nationality named their own nationality's language or another one, without saying which other (section 6 of National composition, religion and language proficiency in the Republic of Kazakhstan), so no language composition can be formed from it. Section 7 counts who can speak, read or write Kazakh, Russian and English, which is proficiency: one person may know all three. The Factbook's line for Kazakhstan -- Kazakh 80.1%, Russian 83.7%, English 35.1% (2021), 'based on population that understands the spoken language' -- is shares of that kind, 199% in all, and is not drawn as a composition; the regions and districts say the same."
+  },
+  {
+   "country": "THA",
+   "field": "ethnicity",
+   "basis": "nationality",
+   "note": "The Factbook's line for Thailand -- Thai 97.5%, Burmese 1.3%, other 1.1%, unspecified under 0.1% (2015) -- counts nationality, as the Factbook's own note on it says. The provinces carry the share of Thai nationals that the 2000 census's provincial reports print; a sum of them would be a figure of 2000, so the country keeps this later one."
+  },
+  {
+   "country": "MHL",
+   "field": "population",
+   "value": 42418,
+   "year": 2021,
+   "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report",
+   "url": "https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf",
+   "license": "None stated -- EPPSO publication, cited as such",
+   "note": "The 2021 census count of the Marshall Islands: 42,418 people on its 25 atolls and islands (Basic Tables), 41,575 of them in private households. It stands in place of the Factbook's estimate of 82,011 for 2024, nearly twice the count. The atolls the map draws carry the same census; Lib's 156 people have no polygon of their own, and Bikini and Rongelap counted nobody."
+  },
+  {
+   "country": "NRU",
+   "field": "population",
+   "value": 11680,
+   "year": 2021,
+   "source": "Nauru Bureau of Statistics, 2021 Population and Housing Census Tables, Volume 1",
+   "url": "https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx",
+   "license": "None stated -- Nauru Bureau of Statistics publication, cited as such",
+   "note": "The 2021 census count of Nauru: 11,680 people in its fourteen districts and the Location settlement (Tables, Volume 1), 11,215 of them citizens. It stands in place of the Factbook's estimate of 9,930 for 2025, 15% below the count four years earlier. The districts carry the same census."
+  },
+  {
+   "country": "NRU",
+   "field": "median_age",
+   "value": 21.6,
+   "year": 2021,
+   "source": "Nauru Bureau of Statistics, Nauru 2021 Population and Housing Census, Analytical Report (Table 2)",
+   "url": "https://stats.gov.nr/download/49/2021/359/nauru-2021-population-and-housing-census-analytical-report.pdf",
+   "license": "None stated -- Nauru Bureau of Statistics publication, cited as such",
+   "note": "The median age the 2021 census prints for Nauru (Analytical Report, Table 2), which the census's own age groups reproduce. It stands in place of the Factbook's 28.2 for 2025. The districts carry medians from the same census."
+  },
+  {
+   "country": "PLW",
+   "field": "population",
+   "value": 17614,
+   "year": 2020,
+   "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022)",
+   "url": "http://web.archive.org/web/20230102070720/https://www.palaugov.pw/wp-content/uploads/2022/09/2020-Census-of-Population-and-Housing.pdf",
+   "license": "None stated -- Government of Palau publication, cited as such",
+   "note": "The 2020 census count of Palau: 17,614 people (Volume I, Table 6) -- the sixteen states' 17,413 usual residents and the 201 people counted whose usual residence was outside Palau or not known. It stands in place of the Factbook's estimate of 21,947 for 2025, a quarter above the count five years earlier. The states carry the same census."
+  },
+  {
+   "country": "PLW",
+   "field": "median_age",
+   "value": 37.9,
+   "year": 2020,
+   "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022), Table 6",
+   "url": "http://web.archive.org/web/20230102070720/https://www.palaugov.pw/wp-content/uploads/2022/09/2020-Census-of-Population-and-Housing.pdf",
+   "license": "None stated -- Government of Palau publication, cited as such",
+   "note": "The median age Table 6 of the 2020 census prints for all 17,614 people counted in Palau, which its own five-year age groups reproduce; the volume's summary Table 1 prints 36.3, which Table 6's age groups do not give. It stands in place of the Factbook's 35.5 for 2025. The states carry Table 6's medians."
+  },
+  {
+   "country": "TUV",
+   "field": "population",
+   "value": 10632,
+   "year": 2022,
+   "source": "Central Statistics Division, Government of Tuvalu, Tuvalu 2022 Census on Population and Housing: Analytical Report",
+   "url": "https://stats.gov.tv/download/85/population-and-housing-census/1836/tuvalu_2022_census_report.pdf",
+   "license": "None stated -- Central Statistics Division publication, cited as such",
+   "note": "The 2022 census count of Tuvalu: 10,632 people on its nine islands (Analytical Report, Table 3). It stands in place of the Factbook's estimate of 11,824 for 2025, 11% above the count three years earlier. The three islands the map draws at the first level carry the same census."
+  },
+  {
+   "country": "FSM",
+   "field": "population",
+   "value": 75817,
+   "year": 2023,
+   "source": "FSM Statistics Division, Federated States of Micronesia, 2023 Population and Housing Census, National Basic Tables (Table B1)",
+   "url": "https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx",
+   "license": "None stated -- FSM Statistics Division publication, cited as such",
+   "note": "The 2023 census count of the Federated States of Micronesia: 75,817 people (National Basic Tables), its four states' rows adding up to within a person of it. It stands in place of the Factbook's estimate of 99,603 for 2024, nearer the 2010 census's 102,843 than this one. The states carry the same census."
+  },
+  {
+   "country": "KIR",
+   "field": "population",
+   "value": 119438,
+   "year": 2020,
+   "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables",
+   "url": "https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx",
+   "license": "None stated -- Kiribati National Statistics Office publication, cited as such",
+   "note": "The 2020 census count of Kiribati: 119,438 people on its 24 islands (Island Profile tables). It stands in place of the Factbook's estimate of 116,545 for 2024, which is below this count of four years earlier; the census before, in 2015, counted 110,136. The island groups carry the same census."
+  },
+  {
+   "country": "KIR",
+   "field": "median_age",
+   "value": 22.9,
+   "year": 2020,
+   "source": "Kiribati National Statistics Office, Kiribati Census Atlas 2022 (Table 2, Key population statistics)",
+   "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
+   "license": "None stated -- Kiribati National Statistics Office publication, cited as such",
+   "note": "The Statistics Office's median age for Kiribati in the 2020 census (Census Atlas 2022, Table 2), which the Pacific Community's tabulation of the same census by five-year age group reproduces. It stands in place of the Factbook's 27.7 for 2025. The census's General Report prints 20.4 in its Table A-10a, a column whose island figures the census's own age groups do not give, and which is not used."
+  },
+  {
+   "country": "WSM",
+   "field": "median_age",
+   "value": 21.4,
+   "year": 2021,
+   "source": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Table 1)",
+   "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+   "license": "None stated -- Samoa Bureau of Statistics publication, cited as such",
+   "note": "The median age of Samoa's 205,557 people in the 2021 census, interpolated within the single year of age from Table 1 of the census tables, as the districts' are. The Bureau's Final Report and Fact Sheet print 22, which Table 1's own single years do not give: they put the median at 21.4, the males' at 20.6 and the females' at 22.4. It stands in place of the Factbook's 27.8 for 2025."
+  },
+  {
+   "country": "TON",
+   "field": "median_age",
+   "value": 22.2,
+   "year": 2021,
+   "source": "Tonga Statistics Department, 2021 Census of Population and Housing, General Tables (Table G 6)",
+   "url": "https://tongastats.gov.to/census-2/population-census-3/census-tables/",
+   "license": "None stated -- Tonga Statistics Department publication, cited as such",
+   "note": "The median age of Tonga's 100,179 people in the 2021 census, interpolated within the single year of age from Table G 6, as the divisions' are; the Census Report prints it as 22 in whole years. It stands in place of the Factbook's 26.4 for 2025."
+  },
+  {
+   "country": "VUT",
+   "field": "median_age",
+   "value": 20.9,
+   "year": 2020,
+   "source": "Vanuatu National Statistics Office, 2020 National Population and Housing Census, Analytical Report Volume 2, Table 4",
+   "url": "https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_Volume_2.pdf",
+   "license": "None stated -- Vanuatu National Statistics Office publication, cited as such",
+   "note": "The office's own median age for Vanuatu in the 2020 census, from single years of age (Analytical Report Volume 2, Table 4); the Basic Tables' five-year groups give 21.0. It stands in place of the Factbook's 24.9 for 2025."
+  },
+  {
+   "country": "FJI",
+   "field": "median_age",
+   "value": 27.5,
+   "year": 2017,
+   "source": "Fiji Bureau of Statistics, 2017 Population and Housing Census, Release 1",
+   "url": "https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf",
+   "license": "None stated -- Fiji Bureau of Statistics publication, cited as such",
+   "note": "The median age of Fiji's 884,887 people in the 2017 census as Release 1 prints it ('The Median Age of the Population is 27.5 years'), which the census's own five-year age groups reproduce. It stands in place of the Factbook's 32 for 2025."
+  },
+  {
+   "country": "SLB",
+   "field": "median_age",
+   "value": 21.4,
+   "year": 2019,
+   "source": "Solomon Islands National Statistics Office, 2019 Population and Housing Census, Report Volume 2: Basic Tables and Census Description",
+   "url": "https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1207/solomon-islands-2019-census-report-vol-2_basic-tables_operations.pdf",
+   "license": "None stated -- Solomon Islands National Statistics Office publication, cited as such",
+   "note": "The median age of the Solomon Islands' 720,956 people in the 2019 census, as the report's summary of main indicators prints it, which its own five-year age groups (Table P3.1) reproduce. It stands in place of the Factbook's 25.5 for 2025. The provinces carry medians from the same census."
+  },
+  {
+   "country": "TLS",
+   "field": "religion",
+   "year": 2022,
+   "source": "Population and Housing Census 2022, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Main Report basic table 4.07: population in private households 3 years of age and older, by sex, five-year age group, and by religion",
+   "url": "https://inetl-ip.gov.tl/wp-content/uploads/2023/05/Chapter-4-TLPHC-Census-report-Basic-tables.xlsx",
+   "license": "Official statistics of INETL, I.P., cited as published",
+   "note": "Religion as each person declared it in the 2022 census, for the whole country: the Total row of basic table 4.07 of the census's Main Report, the 1,248,705 people aged 3 and over in private households, with the counts as printed; its columns make that total exactly. 'Traditional religion' is the table's 'Indigenous religion', the 2015 census's 'Traditional', and 'Not stated' its 'No answer'. The 2022 census published religion for the country only, so the municipalities carry the 2015 census's, the latest by municipality.",
+   "groups": [
+    {
+     "group": "Catholic",
+     "pct": 97.5,
+     "count": 1217157
+    },
+    {
+     "group": "Protestant/Evangelical",
+     "pct": 2.0,
+     "count": 25511
+    },
+    {
+     "group": "Muslim",
+     "pct": 0.3,
+     "count": 3202
+    },
+    {
+     "group": "No religion",
+     "pct": 0.1,
+     "count": 797
+    },
+    {
+     "group": "Buddhism",
+     "pct": 0.0,
+     "count": 378
+    },
+    {
+     "group": "Traditional religion",
+     "pct": 0.0,
+     "count": 240
+    },
+    {
+     "group": "Hinduism",
+     "pct": 0.0,
+     "count": 161
+    },
+    {
+     "group": "Other religion",
+     "pct": 0.1,
+     "count": 1020
+    },
+    {
+     "group": "Not stated",
+     "pct": 0.0,
+     "count": 239
+    }
+   ]
+  },
+  {
+   "country": "ISR",
+   "field": "population",
+   "note": "The Factbook's figure counts East Jerusalem and the Golan Heights, as the Central Bureau of Statistics' count does: the bureau's six districts held 9,410,100 people at the end of 2023, the Golan within the Northern District and East Jerusalem within the Jerusalem District. This map draws East Jerusalem inside the West Bank's polygon and the Golan Heights within Syria, so the figure is larger than the population of the shape shown here; no figure is published for that shape alone."
+  },
+  {
+   "country": "ISR",
+   "field": "religion",
+   "note": "These are the Central Bureau of Statistics' national shares for 2022, as the Factbook prints them. They count East Jerusalem, which this map draws inside the West Bank's polygon, the Golan Heights, which it draws within Syria, and the Israelis living in West Bank settlements, whom the bureau counts with Israel. No shares are published for the shape drawn here alone."
+  },
+  {
+   "country": "ISR",
+   "field": "ethnicity",
+   "note": "These are the Central Bureau of Statistics' national shares for 2022, as the Factbook prints them. They count East Jerusalem, which this map draws inside the West Bank's polygon, the Golan Heights, which it draws within Syria, and the Israelis living in West Bank settlements, whom the bureau counts with Israel. No shares are published for the shape drawn here alone."
+  },
+  {
+   "country": "ATA",
+   "field": "population",
+   "status": "not_applicable",
+   "note": "Antarctica has no permanent population. The people there staff research stations and come and go with the seasons, so there is no resident population to count."
   }
  ]
 }

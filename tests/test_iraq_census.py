@@ -167,5 +167,150 @@ class Names(unittest.TestCase):
         self.assertEqual(ic.ar_key("كربالء"), ic.ar_key("كربلاء"))
 
 
+# Duhok's block of Table 10/2 as the PDF lays it out: the total, women and men
+# whole, the rural and urban figures split mid-number, the governorate's label
+# printed among the rows.
+DUHOK = """164,384 80,355 84,029 37 ,010 18 ,145 18, 865 127 ,374 62,210 65,164 00-04
+179,963 87,726 92,237 40 ,028 19 ,674 20, 354 139 ,935 68,052 71,883 05-09
+190,072 93,543 96,529 42 ,149 20 ,829 21, 320 147 ,923 72,714 75,209 10-14
+169,893 83,459 86,434 36 ,986 18 ,154 18, 832 132 ,907 65,305 67,602 15-19
+163,269 80,983 82,286 35 ,567 17 ,378 18, 189 127 ,702 63,605 64,097 20-24
+136,437 67,471 68,966 27 ,524 13 ,389 14, 135 108 ,913 54,082 54,831 25-29
+121,465 60,360 61,105 24 ,138 11 ,971 12, 167 97 ,327 48,389 48,938 30-34
+117,285 57,701 59,584 21 ,517 10 ,661 10, 856 95 ,768 47,040 48,728 35-39
+98,876 49,361 49,515 16 ,925 8 ,592 8, 333 81, 951 40,769 41,182 40-44
+Duhok-11 11-كوهد
+73,132 36,814 36,318 12 ,368 6 ,440 5, 928 60, 764 30,374 30,390 45-49
+62,410 30,572 31,838 10 ,951 5 ,354 5, 597 51, 459 25,218 26,241 50-54
+39,973 18,731 21,242 6, 852 3 ,274 3, 578 33, 121 15,457 17,664 55-59
+24,676 14,765 9,911 4, 023 2, 596 1, 427 20, 653 12,169 8,484 60-64
+22,272 12,126 10,146 3, 581 1 ,969 1, 612 18, 691 10,157 8,534 65-69
+19,531 10,438 9,093 3, 626 1, 909 1, 717 15, 905 8,529 7,376 70-74
+7,987 4,458 3,529 1, 446 8 39 6 07 6,5 41 3,619 2,922 75-79
+4,064 2,298 1,766 75 5 4 46 3 09 3,3 09 1,852 1,457 80-84
+4,182 2,746 1,436 87 9 5 57 3 22 3,3 03 2,189 1,114 85+ رثكأف
+Total 1,599,871 793,907 805,964 32 6,325 16 2,177 164 ,148 1,2 73,546 631,730 641,816 عومجملا
+"""
+
+
+class AgesAndSexes(unittest.TestCase):
+    TABLE = {"governorates": {"11": 1_599_871}}
+
+    def test_a_row_s_women_and_men_are_its_second_and_third_figures(self):
+        self.assertEqual(ic.sexes_of("452,981 225,058 227,923 14 8 6 452,967 225,050 "
+                                     "227,917 D.C of Duhok-11011-كوهد ق.م"), (225_058, 227_923))
+
+    def test_a_row_whose_sexes_do_not_make_it_is_not_read_for_sex(self):
+        self.assertIsNone(ic.sexes_of("84,319 416,665 42,654 17 ,435 30-34"))
+
+    def test_a_governorate_s_age_groups_are_read_and_checked(self):
+        ages = ic.governorate_ages(DUHOK, self.TABLE)
+        self.assertEqual(list(ages), ["11"])
+        groups = ages["11"]["groups"]
+        self.assertEqual(groups[0], (0, 4, 164_384))
+        self.assertEqual(groups[-1], (85, None, 4_182))
+        self.assertEqual(sum(n for _a, _b, n in groups), 1_599_871)
+
+    def test_a_block_that_does_not_make_its_total_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            ic.governorate_ages(DUHOK.replace("164,384 80,355 84,029", "164,385 80,356 84,029"),
+                                self.TABLE)
+
+    def test_a_governorate_drawn_on_the_census_s_ground_gets_a_median(self):
+        ages = ic.governorate_ages(DUHOK, self.TABLE)
+        fields = ic.age_fields("Duhok", "11", {"value": 1_599_871}, ages)
+        self.assertAlmostEqual(fields["median_age"]["value"], 22.9, delta=1.5)
+
+    def test_one_whose_ground_moved_says_why_it_has_none(self):
+        ages = ic.governorate_ages(DUHOK, self.TABLE)
+        fields = ic.age_fields("Duhok", "11", {"value": 1_400_000, "note": "moved"}, ages)
+        self.assertEqual(fields["median_age"]["status"], "not_available")
+
+    def test_sex_ratio_is_written_only_beside_the_same_count(self):
+        self.assertEqual(ic.sex_fields({"value": 10, "sexes": (5, 5)}, "district")
+                         ["sex_ratio"]["value"], 100.0)
+        self.assertEqual(ic.sex_fields({"value": 11, "sexes": (5, 5)}, "district"), {})
+
+
+AGES = ROOT / "data" / "raw" / "iraq" / "aas2024_table10.txt"
+
+
+@unittest.skipUnless(DUMP.exists() and GAZ.exists() and AGES.exists(), "Iraq dumps not present")
+class EveryEmptyFieldSaysWhy(unittest.TestCase):
+    """A district's empty median age or sex ratio carries the reason, not a bare gap."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rows = ic.build(DUMP.read_text(encoding="utf-8"), GAZ.read_text(encoding="utf-8"),
+                            PLACES.read_text(encoding="utf-8") if PLACES.exists() else "",
+                            AGES.read_text(encoding="utf-8"))
+
+    def test_every_district_says_why_it_has_no_median_age(self):
+        districts = [r for r in self.rows if r["level"] == "admin2"]
+        self.assertTrue(districts)
+        for row in districts:
+            self.assertEqual(row["median_age"]["status"], "not_available", row["name"])
+            self.assertIn("Table 10/2", row["median_age"]["note"], row["name"])
+
+    def test_a_district_with_no_count_says_why_it_has_no_sex_ratio(self):
+        empty = [r for r in self.rows if r["level"] == "admin2"
+                 and "value" not in r["population"]]
+        self.assertTrue(empty)
+        for row in empty:
+            self.assertEqual(row["sex_ratio"]["note"], row["population"]["note"], row["name"])
+
+    def test_no_empty_field_is_left_without_a_note(self):
+        for row in self.rows:
+            for field in ("population", "median_age", "sex_ratio", "religion"):
+                value = row[field]
+                if isinstance(value, dict) and value.get("status"):
+                    self.assertTrue(value.get("note"), f"{row['name']} {field}")
+
+
+class Crossings(unittest.TestCase):
+    """A district the map files under another governorate's polygon says so."""
+
+    MAPPED = {
+        "Kerbala/Al-Hindiya": {"governorate": "Kerbala", "district": "Al-Hindiya",
+                               "value": 352503},
+        "Kerbala/Kerbela": {"governorate": "Kerbala", "district": "Kerbela", "value": 1368059},
+        "Baghdad/Al-Mahmoudiya": {"governorate": "Baghdad", "district": "Al-Mahmoudiya",
+                                  "value": None},
+    }
+    DRAWN = {"Al-Hindiya": "Babil", "Kerbela": "Karbala", "Al-Mahmoudiya": "Babil"}
+
+    def test_a_district_filed_elsewhere_and_both_governorates_say_so(self):
+        district, governorate = ic.crossings(self.MAPPED, self.DRAWN)
+        self.assertEqual(sorted(district), ["Baghdad/Al-Mahmoudiya", "Kerbala/Al-Hindiya"])
+        self.assertIn("counts it in Kerbala governorate", district["Kerbala/Al-Hindiya"])
+        self.assertIn("labelled Babil", district["Kerbala/Al-Hindiya"])
+        self.assertIn("Al-Hindiya (352,503 people, counted in Kerbala)", governorate["Babil"])
+        self.assertIn("Al-Mahmoudiya (counted in Baghdad)", governorate["Babil"])
+        self.assertIn("not in this figure", governorate["Babil"])
+        self.assertIn("Al-Hindiya (352,503 people, filed under Babil) in Kerbala",
+                      governorate["Kerbala"])
+        # The map's spelling of a governorate is the census's under another name.
+        self.assertNotIn("Kerbala/Kerbela", district)
+
+    def test_no_drawn_parent_no_note(self):
+        district, governorate = ic.crossings(self.MAPPED, {})
+        self.assertEqual((district, governorate), ({}, {}))
+
+
+@unittest.skipUnless(DUMP.exists() and GAZ.exists(), "Iraq dumps not present")
+class SexesInTheTable(unittest.TestCase):
+    def test_every_unit_of_the_table_has_women_and_men_making_its_count(self):
+        table = ic.parse(DUMP.read_text(encoding="utf-8"))
+        sexes = table["sexes"]
+        for code, (_en, _ar, value) in table["nahiyas"].items():
+            self.assertEqual(sum(sexes[code]), value, code)
+        for code, value in table["governorates"].items():
+            self.assertEqual(sum(sexes[code]), value, code)
+        women = sum(sexes[g][0] for g in table["governorates"])
+        men = sum(sexes[g][1] for g in table["governorates"])
+        # Table 2/2's national figures.
+        self.assertEqual((women, men), (22_957_189, 23_161_604))
+
+
 if __name__ == "__main__":
     unittest.main()

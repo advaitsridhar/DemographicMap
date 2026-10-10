@@ -92,6 +92,7 @@ from ._shared import (
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, log, measure, record,
     shares, write_json,
 )
+from .south_asia_common import median_single
 
 SOURCE = "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
 LICENCE = "Pakistan Bureau of Statistics, free reuse with attribution"
@@ -413,7 +414,95 @@ MERGED: dict[str, tuple[str, ...]] = {
     "KOHISTAN": ("LOWER KOHISTAN", "UPPER KOHISTAN", "KOLAI PALAS KOHISTAN"),
     "KARACHI": ("KARACHI CENTRAL", "KARACHI EAST", "KARACHI SOUTH",
                 "KARACHI WEST", "KORANGI", "MALIR", "KEAMARI"),
+    # The same thing the other way up, and the half this file had wrong.
+    # geoBoundaries draws twelve districts as they were before a newer one was
+    # carved out of them, and the 2023 census counts the two apart. Bound by
+    # name, the shape that kept the old name wore only the remainder's people:
+    # Sheikhupura's polygon, which still holds Nankana Sahib, carried
+    # 4,049,377 against the 5,684,248 who live inside it, and Larkana's 1.78
+    # million had no shape at all -- the polygon geoBoundaries labels
+    # "Qambar Shahdadkot" is the undivided district of before 2004, Larkana
+    # city inside it. Each pair below was placed by the carved-out district's
+    # seat falling inside the drawn polygon (point in polygon, against this
+    # map's own tiles) and by the district's own history, which names the one
+    # parent it was cut from (MERGED_WHY). The key is the census district
+    # whose name the shape still carries, so it is one of its own parts.
+    "MANSEHRA": ("MANSEHRA", "TORGHAR"),
+    "JHANG": ("JHANG", "CHINIOT"),
+    "SHEIKHUPURA": ("SHEIKHUPURA", "NANKANA SAHIB"),
+    "KAMBAR SHAHDAD KOT": ("KAMBAR SHAHDAD KOT", "LARKANA"),
+    "THATTA": ("THATTA", "SUJAWAL"),
+    "KILLA ABDULLAH": ("KILLA ABDULLAH", "CHAMAN"),
+    "LORALAI": ("LORALAI", "DUKI"),
+    "SIBI": ("SIBI", "HARNAI"),
+    "ZHOB": ("ZHOB", "SHERANI"),
+    "JAFFARABAD": ("JAFFARABAD", "SOHBATPUR"),
+    "KALAT": ("KALAT", "SURAB"),
+    "KHARAN": ("KHARAN", "WASHUK"),
 }
+
+# Why each of those shapes is more than one census district, for the note on
+# the record. The first three are divisions geoBoundaries draws whole; the
+# rest are districts it draws as they stood before a split.
+MERGED_WHY: dict[str, str] = {
+    "CHITRAL": "the boundary file draws Chitral undivided; it was split into "
+               "Lower and Upper Chitral in 2018",
+    "KOHISTAN": "the boundary file draws Kohistan undivided; it was split "
+                "into Upper and Lower Kohistan in 2014, and Kolai-Palas was "
+                "cut from Lower Kohistan in 2017",
+    # The note lists the seven districts and adds "and the census counts
+    # them apart", so this says only what the boundary file does: "the census
+    # counts its seven districts, and the census counts them apart" said it
+    # twice.
+    "KARACHI": "the boundary file draws Karachi as one shape",
+    "MANSEHRA": "the boundary file draws Mansehra as it was before Torghar "
+                "(the Kala Dhaka area) became a district of its own in 2011",
+    "JHANG": "the boundary file draws Jhang as it was before Chiniot was "
+             "carved out of it in 2009",
+    "SHEIKHUPURA": "the boundary file draws Sheikhupura as it was before "
+                   "Nankana Sahib was carved out of it in 2005",
+    "KAMBAR SHAHDAD KOT": "the boundary file draws, under the name Qambar "
+                          "Shahdadkot, the undivided Larkana district of "
+                          "before 2004 (Larkana city lies inside the shape)",
+    "THATTA": "the boundary file draws Thatta as it was before Sujawal was "
+              "carved out of it in 2013",
+    "KILLA ABDULLAH": "the boundary file draws Killa Abdullah as it was before "
+                      "Chaman was carved out of it in 2021",
+    "LORALAI": "the boundary file draws Loralai as it was before Duki was "
+               "carved out of it in 2016",
+    "SIBI": "the boundary file draws Sibi as it was before Harnai was carved "
+            "out of it in 2007",
+    "ZHOB": "the boundary file draws Zhob as it was before Sherani was carved "
+            "out of it in 2006",
+    "JAFFARABAD": "the boundary file draws Jaffarabad as it was before "
+                  "Sohbatpur was carved out of it in 2013",
+    "KALAT": "the boundary file draws Kalat as it was before Surab was carved "
+             "out of it in 2017",
+    "KHARAN": "the boundary file draws Kharan as it was before Washuk was "
+              "carved out of it in 2005",
+}
+
+
+def merged_note(name: str, parts: tuple[str, ...]) -> str:
+    """The sentence a summed shape carries, saying which districts and why."""
+    listed = ", ".join(p.title() for p in parts[:-1]) + " and " + parts[-1].title()
+    why = MERGED_WHY.get(name)
+    return (f" This shape is {listed} summed: {why}, and the census counts "
+            f"them apart." if why else
+            f" The boundary file draws one shape here, so this is "
+            f"{', '.join(p.title() for p in parts)} summed.")
+
+
+def summed_population_note(name: str, parts: tuple[str, ...],
+                           totals: dict[str, int]) -> str:
+    """The population tile's note on a summed shape: which census districts it
+    adds, each with its own Table 9 count, and why. Without it the tile shows
+    the sum under the name of one part, whose own Table 9 row is smaller."""
+    each = [f"{p.title()} {totals[p]:,}" for p in parts]
+    listed = ", ".join(each[:-1]) + " and " + each[-1]
+    return (merged_note(name, parts).strip()
+            + f" Census 2023 Table 9 counts {listed}; this is their sum, "
+              f"{sum(totals[p] for p in parts):,}.")
 
 
 # Table 9's columns, in the order the numbered header row gives them. Column 1
@@ -737,8 +826,13 @@ def province_row(slug: str, province: str, found: dict[str, dict[str, int]],
 
 
 def merge(province: str, found: dict[str, dict[str, int]],
-          columns: list[str] = COLUMNS) -> dict[str, tuple[str, ...]]:
-    """Sum the districts that share one boundary shape. Which ones, back."""
+          columns: list[str] = COLUMNS,
+          totals: dict[str, int] | None = None) -> dict[str, tuple[str, ...]]:
+    """Sum the districts that share one boundary shape. Which ones, back.
+
+    ``totals``, when given, is filled with each summed part's own TOTAL, so
+    the shape's population note can give the census's figures for its parts.
+    """
     assembled: dict[str, tuple[str, ...]] = {}
     for name, parts in MERGED.items():
         here = [part for part in parts if part in found]
@@ -750,14 +844,20 @@ def merge(province: str, found: dict[str, dict[str, int]],
             raise SystemExit(
                 f"{province}: {name} is {', '.join(parts)} and only "
                 f"{', '.join(here)} were read")
-        if name in found:
+        # A shape that kept one part's name is assembled under that name, so
+        # the name being in the table is expected; a name that is printed and
+        # is not one of the parts would be counted twice.
+        if name in found and name not in parts:
             raise SystemExit(
                 f"{province}: {name} is both printed in the table and "
                 "assembled from its parts here, so it would be counted twice")
-        found[name] = {column: sum(found[part][column] for part in parts)
-                       for column in columns}
+        summed = {column: sum(found[part][column] for part in parts)
+                  for column in columns}
+        if totals is not None and "TOTAL" in columns:
+            totals.update({part: found[part]["TOTAL"] for part in parts})
         for part in parts:
             del found[part]
+        found[name] = summed
         assembled[name] = parts
         log(f"    {name} is one shape in the boundaries: summed "
             f"{len(parts)} districts, {found[name]['TOTAL']:,} people")
@@ -888,6 +988,256 @@ def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
                 f"{total:,}")
         log(f"    {name}: religions sum to {parts - total:+,} against its own "
             f"printed total, which the yearbook's own 15.23 also shows")
+
+
+# ---------------------------------------------------------------------------
+# Azad Jammu and Kashmir's ages and sexes: the same yearbook, Table 15.8.
+# ---------------------------------------------------------------------------
+#
+# Table 15.8, *Age Group and Gender-wise Rural & Urban Population of AJ&K*,
+# reprints the 2017 census's single years of age for the territory -- "Below
+# 1", 1 to 74 and "75 +" under each five-year group -- by sex (male, female,
+# transgender) for rural, urban and all of AJ&K, across two pages. The
+# territory's own columns are the last four of each row.
+#
+# One label is misprinted: under 60-64 the rows read 60, 61, 61, 63, 64. The
+# rows are in order and the third is 62, so a single year is assigned by its
+# place under its group, and the printed label is only checked to lie inside
+# the group. A row lost or duplicated would still be caught, because every
+# group's single years must add up to the group's own row, sex by sex.
+#
+# Some figures are misprinted too: age 26's males read 28,258 in the
+# territory column where its rural 23,357 and urban 5,901 make 29,258, which
+# is what the 25-29 group's 141,285 needs; age 49's rural males read 10,484
+# where the 45-49 group and the territory's 12,883 both need 10,480. Every row
+# prints its rural and urban halves beside the territory and every group its
+# own row, so a single misprinted cell shows in two sums at once, by the same
+# amount: ``ajk_misprints`` corrects exactly that pattern and refuses any
+# other, and the log names each correction.
+AJK_AGE_TABLE = re.compile(r"Age\s*Group\s*and\s*Gender[\s-]*wise\s*Rural\s*&\s*"
+                           r"Urban\s*Population\s*of\s*AJ&K", re.I)
+AJK_AGE_SOURCE = ("Pakistan Bureau of Statistics, Population and Housing Census "
+                  "2017, Table: Age Group and Gender-wise Rural & Urban Population "
+                  "of AJ&K, as printed in the AJ&K Statistical Year Book 2023 "
+                  "(Table 15.8)")
+AJK_AGE_OPEN = 75
+COLUMN_NUMBERS = [str(i) for i in range(1, 14)]
+
+
+def ajk_age_label(words: list[str]) -> tuple[str, Any, int] | None:
+    """(kind, value, words used) for a Table 15.8 row label, or None."""
+    if not words or words == COLUMN_NUMBERS[:len(words)] and len(words) > 3:
+        return None
+    if words[0] == "Below" and len(words) > 1 and words[1] == "1":
+        return "single", 0, 2
+    if re.fullmatch(r"\d{1,2}-\d{1,2}", words[0]):
+        low, high = (int(x) for x in words[0].split("-"))
+        return "group", (low, high), 1
+    if words[0] == f"{AJK_AGE_OPEN}+":
+        return "open", AJK_AGE_OPEN, 1
+    if words[0] == str(AJK_AGE_OPEN) and len(words) > 1 and words[1] == "+":
+        return "open", AJK_AGE_OPEN, 2
+    if words[0] == "Total":
+        return "total", None, 1
+    if re.fullmatch(r"\d{1,2}", words[0]):
+        return "single", int(words[0]), 1
+    return None
+
+
+def ajk_ages_from_pages(pages) -> dict[str, Any]:
+    """Table 15.8: single years, groups and the total, for each area column.
+
+    Returns {"ages": {age: row}, "groups": {(low, high): row}, "total": row},
+    the open 75 and over under 75, where a row is {"rural": (male, female,
+    trans, total), "urban": (...), "territory": (...)} as printed.
+    """
+    ages: dict[int, dict[str, tuple[int, ...]]] = {}
+    groups: dict[tuple[int, int], dict[str, tuple[int, ...]]] = {}
+    total: dict[str, tuple[int, ...]] | None = None
+    group: tuple[int, int] | None = None
+    place = 0
+    found = False
+    for number, rows in enumerate(pages, start=1):
+        lines = [(" ".join(t for _a, _b, t in cells), cells) for cells in rows]
+        if not any(AJK_AGE_TABLE.search(line) for line, _cells in lines):
+            continue
+        for line, cells in lines:
+            words = [t for _a, _b, t in cells]
+            if words[:13] == COLUMN_NUMBERS:
+                continue
+            label = ajk_age_label(words)
+            if label is None:
+                continue
+            kind, value, used = label
+            figures = printed(cells[used:])
+            if len(figures) != 12:
+                continue                     # a caption or a stray line
+            found = True
+            territory = {"rural": tuple(figures[0:4]), "urban": tuple(figures[4:8]),
+                         "territory": tuple(figures[8:12])}
+            if kind == "group":
+                if value in groups:
+                    raise SystemExit(f"AJ&K Table 15.8 prints ages {value} twice")
+                groups[value] = territory
+                group, place = value, 0
+            elif kind == "single":
+                if group is None:
+                    raise SystemExit(f"AJ&K Table 15.8: age {value} before any group")
+                age = group[0] + place
+                if not group[0] <= value <= group[1] or age > group[1]:
+                    raise SystemExit(f"AJ&K Table 15.8: the row labelled {value} "
+                                     f"is the {place + 1}th under {group}")
+                if value != age:
+                    log(f"    AJ&K Table 15.8: the row labelled {value} under "
+                        f"{group[0]}-{group[1]} is age {age} by its place")
+                if age in ages:
+                    raise SystemExit(f"AJ&K Table 15.8 prints age {age} twice")
+                ages[age] = territory
+                place += 1
+            elif kind == "open":
+                ages[AJK_AGE_OPEN] = territory
+                group = None
+            else:
+                total = territory
+        if total is not None:
+            break
+    if not found:
+        raise LookupError("no page carries Table 15.8's caption with rows under it")
+    return {"ages": ages, "groups": groups, "total": total}
+
+
+def ajk_ages(blob: bytes) -> dict[str, Any]:
+    return ajk_ages_from_pages(words_by_row(blob))
+
+
+AREAS = ("rural", "urban", "territory")
+
+
+def ajk_misprints(ages: dict[int, dict[str, list[int]]],
+                  groups: dict[tuple[int, int], dict[str, tuple[int, ...]]]
+                  ) -> list[str]:
+    """Correct the cells two of the table's own sums agree are misprinted.
+
+    Within a five-year group and one column of figures (males, females,
+    transgender or persons), a single misprinted cell shows twice: its row's
+    rural plus urban stops making the territory, by some amount d, and its
+    area's single years stop making that area's group row -- by -d if the
+    cell is the territory's, by +d if it is the rural or urban one. Only that
+    pattern is corrected, and only by that amount; anything else is a
+    disagreement this cannot place, and refuses. Returns what it corrected.
+    """
+    fixed: list[str] = []
+    for (low, high), group in groups.items():
+        years = range(low, high + 1)
+        for i, column in enumerate(("males", "females", "transgender", "persons")):
+            by_row = {a: ages[a]["rural"][i] + ages[a]["urban"][i]
+                      - ages[a]["territory"][i] for a in years}
+            by_area = {area: sum(ages[a][area][i] for a in years) - group[area][i]
+                       for area in AREAS}
+            rows = {a: d for a, d in by_row.items() if d}
+            areas = {area: d for area, d in by_area.items() if d}
+            if not rows and not areas:
+                continue
+            placed = None
+            if len(rows) == 1 and len(areas) == 1:
+                (age, d), = rows.items()
+                (area, off), = areas.items()
+                if area == "territory" and off == -d:
+                    ages[age]["territory"][i] += d
+                    placed = area
+                elif area != "territory" and off == d:
+                    ages[age][area][i] -= d
+                    placed = area
+            if placed is None:
+                raise SystemExit(f"AJ&K Table 15.8 ages {low}-{high} {column}: rows "
+                                 f"off by {rows} and areas by {areas}; no single "
+                                 "misprint explains both")
+            fixed.append(f"age {age} {placed} {column}: {d:+,} by its row and by "
+                         f"its {low}-{high} group")
+    return fixed
+
+
+def ajk_ages_check(table: dict[str, Any], population: int) -> None:
+    """Every year present once; every column to its groups, total and halves.
+
+    A cell the table's own sums show to be misprinted is corrected first
+    (:func:`ajk_misprints`, named in the log); after that every check must
+    hold exactly: each row's sexes make its total, rural plus urban make the
+    territory, each area's single years make its group rows and its Total
+    row, and the territory's Total is Table 15.24's population. Leaves
+    ``table["ages"]`` etc. holding the territory's tuples.
+    """
+    ages, groups, total = table["ages"], table["groups"], table["total"]
+    if total is None:
+        raise SystemExit("AJ&K Table 15.8 has no Total row")
+    if set(ages) != set(range(0, AJK_AGE_OPEN + 1)):
+        raise SystemExit(f"AJ&K Table 15.8 is missing ages "
+                         f"{sorted(set(range(0, AJK_AGE_OPEN + 1)) - set(ages))}")
+    ages = {a: {area: list(row[area]) for area in AREAS} for a, row in ages.items()}
+    fixed = ajk_misprints(ages, groups)
+    for row in [*ages.values(), *groups.values(), total]:
+        for area in AREAS:
+            if sum(row[area][:3]) != row[area][3]:
+                raise SystemExit(f"AJ&K Table 15.8 {area}: {row[area][:3]} do not "
+                                 f"make {row[area][3]:,}")
+        if [r + u for r, u in zip(row["rural"], row["urban"])] != list(row["territory"]):
+            raise SystemExit(f"AJ&K Table 15.8: rural {row['rural']} and urban "
+                             f"{row['urban']} do not make {row['territory']}")
+    for area in AREAS:
+        for (low, high), row in groups.items():
+            for i in range(4):
+                summed = sum(ages[a][area][i] for a in range(low, high + 1))
+                if summed != row[area][i]:
+                    raise SystemExit(f"AJ&K Table 15.8 {area} ages {low}-{high}: "
+                                     f"the single years add up to {summed:,}, "
+                                     f"the group row says {row[area][i]:,}")
+        for i in range(4):
+            summed = sum(row[area][i] for row in ages.values())
+            if summed != total[area][i]:
+                raise SystemExit(f"AJ&K Table 15.8 {area}: the single years add up "
+                                 f"to {summed:,}, the Total row says "
+                                 f"{total[area][i]:,}")
+    for line in fixed:
+        log(f"    AJ&K Table 15.8 misprint corrected -- {line}")
+    table["ages"] = {a: tuple(r["territory"]) for a, r in ages.items()}
+    table["groups"] = {g: tuple(r["territory"]) for g, r in groups.items()}
+    table["total"] = tuple(total["territory"])
+    table["misprints"] = fixed
+    if table["total"][3] != population:
+        raise SystemExit(f"AJ&K Table 15.8 counts {table['total'][3]:,} people and "
+                         f"Table 15.24 {population:,}")
+    log(f"    Table 15.8: {len(ages)} single years add up to their {len(groups)} "
+        f"groups and to the territory's {table['total'][3]:,}, Table 15.24's "
+        "population, in the rural, urban and territory columns alike")
+
+
+def ajk_age_fields(table: dict[str, Any], extra: str = "") -> dict[str, Any]:
+    male, female, trans, persons = table["total"]
+    out: dict[str, Any] = {}
+    median = median_single({a: row[3] for a, row in table["ages"].items()},
+                           open_from=AJK_AGE_OPEN)
+    if median is not None:
+        out["median_age"] = measure(median, unit="years", year=AJK_YEAR,
+                                    source=AJK_AGE_SOURCE)
+        out["median_age_note"] = (
+            "Population and Housing Census 2017, as reprinted in the AJ&K "
+            f"Statistical Year Book 2023 (Table 15.8): the median of {persons:,} "
+            "people's single years of age, interpolated within the year that "
+            "holds the middle person. The 2023 census published no age table "
+            "for the territory."
+            + (f" {len(table['misprints'])} misprinted cells of the yearbook's "
+               "table are corrected from the two sums each one breaks -- its "
+               "row's rural plus urban and its five-year group."
+               if table.get("misprints") else "")
+            + extra)
+    out["sex_ratio"] = measure(round(100.0 * male / female, 1),
+                               unit="males_per_100_females", year=AJK_YEAR,
+                               source=AJK_AGE_SOURCE)
+    out["sex_ratio_note"] = (
+        f"Census 2017 (yearbook Table 15.8): {male:,} males and {female:,} "
+        f"females; the {trans:,} transgender persons counted are in the "
+        "population and in neither figure." + extra)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -2044,7 +2394,8 @@ def gb_population_fields(name: str, counts: dict[str, int],
 
 def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
                 tongues: dict[str, float] | None = None,
-                short: str = "") -> list[dict[str, Any]]:
+                short: str = "",
+                ages: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
 
     Religion and population from the printed territory row, which the check
@@ -2077,13 +2428,20 @@ def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
         }
         cite.append({"field": "language", "name": AJK_TONGUE_SOURCE,
                      "url": AJK_BOOK, "license": AJK_TONGUE_LICENCE})
+    whole_ages: dict[str, Any] = {}
+    shape_ages: dict[str, Any] = {}
+    if ages:
+        whole_ages = ajk_age_fields(ages)
+        shape_ages = ajk_age_fields(ages, " " + AJK_ONE_SHAPE)
+        cite.append({"field": "median_age/sex_ratio", "name": AJK_AGE_SOURCE,
+                     "url": AJK_BOOK, "license": AJK_LICENCE})
     return [
         record("PAK-ajk", "Azad Jammu and Kashmir", level="admin1",
                parent="PAK", aliases=["Azad Kashmir"],
                population=measure(total, year=AJK_YEAR, source=AJK_SOURCE),
                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                religion_year=AJK_YEAR, religion_note=AJK_NOTE,
-               sources=list(cite), **said),
+               sources=list(cite), **said, **whole_ages),
         record("PAK-ajk-azad-kashmir", "Azad Kashmir", level="admin2",
                parent="PAK", parent_name="Azad Jammu and Kashmir",
                parent_aliases=["Azad Kashmir"],
@@ -2091,7 +2449,7 @@ def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                religion_year=AJK_YEAR,
                religion_note=AJK_NOTE + " " + AJK_ONE_SHAPE,
-               sources=list(cite), **said),
+               sources=list(cite), **said, **shape_ages),
     ]
 
 
@@ -2432,6 +2790,15 @@ def say_ethnicity(records: list[dict[str, Any]]) -> int:
     for row in records:
         if isinstance(row.get("ethnicity"), list):
             continue
+        if is_territory(row):
+            # The two territories' reason is about publication, not the
+            # question: the census's nationality count, which the map carries
+            # on this field for the provinces (pakistan_census_tables), is
+            # published for neither territory.
+            row["ethnicity"] = gap(NOT_AVAILABLE, TERRITORY_NATIONALITY_GAP
+                                   + ETHNICITY_NO_TONGUE)
+            said += 1
+            continue
         tongues = row.get("language")
         first = tongues[0] if isinstance(tongues, list) and tongues else None
         note = ETHNICITY_GAP + (
@@ -2440,6 +2807,71 @@ def say_ethnicity(records: list[dict[str, Any]]) -> int:
         row["ethnicity"] = gap(NOT_COLLECTED, note)
         said += 1
     return said
+
+
+# The territories' records carry the two age fields' reason too: Table 4, the
+# single years of age by sex, is published for the four provinces and
+# Islamabad and for neither territory, and their own booklets print
+# population without sex or age.
+TERRITORY_AGE_GAP = (
+    "The 7th Population and Housing Census 2023 enumerated Azad Jammu and "
+    "Kashmir and Gilgit-Baltistan apart from the census proper, and the Bureau "
+    "of Statistics publishes no Table 4 (population by single year age and "
+    "sex) for either -- the four provinces and Islamabad have it, at every "
+    "path the office files it under, and these two do not. Gilgit-Baltistan "
+    "at a Glance, the territory's own booklet of the 2023 count, prints each "
+    "district's 2017 and 2023 population with no split by sex or age. So no "
+    "census median age or sex ratio is published for this unit.")
+TERRITORY_NATIONALITY_GAP = (
+    "Pakistan's census asks no ethnicity question. What it counts instead is "
+    "nationality (Table 10), which the map carries on this field for the four "
+    "provinces and Islamabad; Azad Jammu and Kashmir and Gilgit-Baltistan were "
+    "enumerated apart from the census proper, and the Bureau of Statistics "
+    "publishes no Table 10 for either, as it publishes no Table 9 or Table 11.")
+
+
+def is_territory(row: dict[str, Any]) -> bool:
+    return any(str(row.get("id", "")).startswith(f"PAK-{slug}")
+               for slug in TERRITORIES)
+
+
+def say_ages(records: list[dict[str, Any]]) -> int:
+    """Give the territories' records the reason their ages are empty."""
+    said = 0
+    for row in records:
+        if not is_territory(row):
+            continue
+        for field in ("median_age", "sex_ratio"):
+            value = row.get(field)
+            if isinstance(value, dict) and value.get("status") and not value.get("note"):
+                row[field] = gap(NOT_AVAILABLE, TERRITORY_AGE_GAP)
+                said += 1
+    return said
+
+
+def district_record(slug: str, province: str, name: str, counts: dict[str, int],
+                    assembled: dict[str, tuple[str, ...]], part_totals: dict[str, int],
+                    cite: list[dict[str, Any]], said: dict[str, Any]) -> dict[str, Any]:
+    """One district's Table 9 record. A shape summed from several census
+    districts says so on its population as well as on its religion: the
+    population tile shows the sum under one part's name, and that part's own
+    Table 9 row is smaller."""
+    total = counts["TOTAL"]
+    parts = {k: v for k, v in counts.items() if k != "TOTAL"}
+    note = NOTE + RELIGION_DISTRICT_NOTES.get(name, "")
+    population_note = None
+    if name in assembled:
+        note += merged_note(name, assembled[name])
+        population_note = summed_population_note(name, assembled[name], part_totals)
+    return record(
+        f"PAK-{slug}-{name.lower().replace(' ', '-')}",
+        name.title(), level="admin2", parent="PAK",
+        parent_name=province, aliases=list(ALIASES.get(name.title(), ())),
+        population=measure(total, year=YEAR, source=SOURCE),
+        population_note=population_note,
+        religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
+        religion_year=YEAR, religion_note=note,
+        sources=list(cite), **said)
 
 
 def main() -> int:
@@ -2472,7 +2904,8 @@ def main() -> int:
             continue
         whole = province_row(slug, province, found, whole)
         check(province, found, whole)
-        assembled = merge(province, found)
+        part_totals: dict[str, int] = {}
+        assembled = merge(province, found, totals=part_totals)
         tongues, tongue_url = read_tongues(slug, province, set(found))
         named.update(found)
 
@@ -2508,22 +2941,9 @@ def main() -> int:
             religion_note=TERRITORY_NOTE if slug in ONE_DISTRICT else PROVINCE_NOTE,
             sources=list(cite), **here))
         for name, counts in sorted(found.items()):
-            total = counts["TOTAL"]
-            parts = {k: v for k, v in counts.items() if k != "TOTAL"}
-            note = NOTE + RELIGION_DISTRICT_NOTES.get(name, "")
-            if name in assembled:
-                note += (" The boundary file draws one shape here, so this is "
-                         + ", ".join(p.title() for p in assembled[name])
-                         + " summed.")
             said = spoken(tongues[name], name) if name in tongues else {}
-            records.append(record(
-                f"PAK-{slug}-{name.lower().replace(' ', '-')}",
-                name.title(), level="admin2", parent="PAK",
-                parent_name=province, aliases=list(ALIASES.get(name.title(), ())),
-                population=measure(total, year=YEAR, source=SOURCE),
-                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
-                religion_year=YEAR, religion_note=note,
-                sources=list(cite), **said))
+            records.append(district_record(slug, province, name, counts, assembled,
+                                           part_totals, cite, said))
 
     # A note keyed to a district that no longer exists reaches nobody, and
     # reaches nobody silently: the district keeps the general note and looks
@@ -2603,7 +3023,17 @@ def main() -> int:
                         + ", ".join(f"{g} {p}%" for g, p in
                                     sorted(tongues.items(),
                                            key=lambda kv: -kv[1])))
-                records.extend(ajk_records(found, whole, tongues, short))
+                # Table 15.8, the census's single years for the territory: a
+                # missing caption leaves the ages' declared gap, a caption
+                # that does not read refuses.
+                ages: dict[str, Any] | None = None
+                try:
+                    ages = ajk_ages(blob)
+                except LookupError as err:
+                    log(f"    NO AGE TABLE -- {err}")
+                else:
+                    ajk_ages_check(ages, whole["TOTAL"])
+                records.extend(ajk_records(found, whole, tongues, short, ages))
                 absent[APART] = [(slug, line) for slug, line in absent[APART]
                                  if slug != "ajk"]
 
@@ -2660,6 +3090,8 @@ def main() -> int:
     # cannot slip past it.
     log(f"  {say_ethnicity(records)} units say why their ethnicity field is "
         f"empty, which is that the census does not ask it")
+    log(f"  {say_ages(records)} territory fields say why no age or sex ratio "
+        f"is published for them")
     bare = [row["id"] for row in records
             if isinstance(row.get("ethnicity"), dict)
             and not row["ethnicity"].get("note")]

@@ -98,11 +98,11 @@
         "pct": 0.4
       },
       {
-        "group": "Mayogo",
+        "group": "Logo",
         "pct": 0.4
       },
       {
-        "group": "Logo",
+        "group": "Mayogo",
         "pct": 0.4
       },
       {
@@ -110,15 +110,11 @@
         "pct": 0.3
       },
       {
-        "group": "Luba-Katanga",
+        "group": "Bakongo",
         "pct": 0.1
       },
       {
-        "group": "Mbala",
-        "pct": 0.1
-      },
-      {
-        "group": "Yansi",
+        "group": "Bakwanga",
         "pct": 0.1
       },
       {
@@ -126,15 +122,19 @@
         "pct": 0.1
       },
       {
-        "group": "Lokele",
-        "pct": 0.1
-      },
-      {
         "group": "Lendu",
         "pct": 0.1
       },
       {
-        "group": "Bakwanga",
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbala",
         "pct": 0.1
       },
       {
@@ -146,7 +146,7 @@
         "pct": 0.1
       },
       {
-        "group": "Bakongo",
+        "group": "Yansi",
         "pct": 0.1
       }
     ],
@@ -304,11 +304,11 @@
         "pct": 0.6
       },
       {
-        "group": "Tetela",
+        "group": "Bembe",
         "pct": 0.5
       },
       {
-        "group": "Bembe",
+        "group": "Tetela",
         "pct": 0.5
       },
       {
@@ -316,7 +316,7 @@
         "pct": 0.5
       },
       {
-        "group": "Kusu",
+        "group": "Bangobango",
         "pct": 0.4
       },
       {
@@ -324,12 +324,8 @@
         "pct": 0.4
       },
       {
-        "group": "Bangobango",
+        "group": "Kusu",
         "pct": 0.4
-      },
-      {
-        "group": "Lega-Mwenga",
-        "pct": 0.3
       },
       {
         "group": "Bena-Kanioka",
@@ -340,7 +336,11 @@
         "pct": 0.3
       },
       {
-        "group": "Yansi",
+        "group": "Lega-Mwenga",
+        "pct": 0.3
+      },
+      {
+        "group": "Bakongo",
         "pct": 0.2
       },
       {
@@ -348,87 +348,11 @@
         "pct": 0.2
       },
       {
-        "group": "Bakongo",
+        "group": "Yansi",
         "pct": 0.2
       },
       {
-        "group": "Mongo",
-        "pct": 0.1
-      },
-      {
-        "group": "Northern Ngbandi",
-        "pct": 0.1
-      },
-      {
-        "group": "Yaka",
-        "pct": 0.1
-      },
-      {
-        "group": "Shi",
-        "pct": 0.1
-      },
-      {
-        "group": "Ndibu",
-        "pct": 0.1
-      },
-      {
-        "group": "Budza",
-        "pct": 0.1
-      },
-      {
-        "group": "Zande",
-        "pct": 0.1
-      },
-      {
-        "group": "Ntandu",
-        "pct": 0.1
-      },
-      {
-        "group": "Mbunda",
-        "pct": 0.1
-      },
-      {
-        "group": "Kete",
-        "pct": 0.1
-      },
-      {
-        "group": "Sakata",
-        "pct": 0.1
-      },
-      {
-        "group": "Teke",
-        "pct": 0.1
-      },
-      {
-        "group": "Phende",
-        "pct": 0.1
-      },
-      {
-        "group": "Suku",
-        "pct": 0.1
-      },
-      {
-        "group": "Luntu",
-        "pct": 0.1
-      },
-      {
-        "group": "Budu",
-        "pct": 0.1
-      },
-      {
-        "group": "Lokele",
-        "pct": 0.1
-      },
-      {
-        "group": "Besi Ngombe",
-        "pct": 0.1
-      },
-      {
         "group": "Baboa",
-        "pct": 0.1
-      },
-      {
-        "group": "Kutshu",
         "pct": 0.1
       },
       {
@@ -440,7 +364,79 @@
         "pct": 0.1
       },
       {
+        "group": "Besi Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Budu",
+        "pct": 0.1
+      },
+      {
+        "group": "Budza",
+        "pct": 0.1
+      },
+      {
+        "group": "Hunde",
+        "pct": 0.1
+      },
+      {
+        "group": "Kete",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.1
+      },
+      {
         "group": "Mono",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndibu",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Sakata",
+        "pct": 0.1
+      },
+      {
+        "group": "Shi",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Teke",
         "pct": 0.1
       },
       {
@@ -448,7 +444,11 @@
         "pct": 0.1
       },
       {
-        "group": "Hunde",
+        "group": "Yaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Zande",
         "pct": 0.1
       }
     ],
@@ -576,7 +576,7 @@
         "pct": 0.7
       },
       {
-        "group": "Songe",
+        "group": "Bakwa Mulumba",
         "pct": 0.4
       },
       {
@@ -584,7 +584,7 @@
         "pct": 0.4
       },
       {
-        "group": "Bakwa Mulumba",
+        "group": "Songe",
         "pct": 0.4
       },
       {
@@ -655,11 +655,11 @@
         "pct": 4.6
       },
       {
-        "group": "Without religion",
+        "group": "Other religion",
         "pct": 1.6
       },
       {
-        "group": "Other religion",
+        "group": "Without religion",
         "pct": 1.6
       },
       {
@@ -724,27 +724,7 @@
         "pct": 0.2
       },
       {
-        "group": "Nande",
-        "pct": 0.1
-      },
-      {
-        "group": "Luba-Lulua",
-        "pct": 0.1
-      },
-      {
-        "group": "Ngombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Tetela",
-        "pct": 0.1
-      },
-      {
         "group": "Kusu",
-        "pct": 0.1
-      },
-      {
-        "group": "Phende",
         "pct": 0.1
       },
       {
@@ -752,7 +732,27 @@
         "pct": 0.1
       },
       {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
         "group": "Mukumu",
+        "pct": 0.1
+      },
+      {
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
         "pct": 0.1
       }
     ],
@@ -870,11 +870,11 @@
         "pct": 1.5
       },
       {
-        "group": "Luba",
+        "group": "Logo",
         "pct": 0.5
       },
       {
-        "group": "Logo",
+        "group": "Luba",
         "pct": 0.5
       },
       {
@@ -886,6 +886,14 @@
         "pct": 0.3
       },
       {
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Lega-Mwenga",
+        "pct": 0.2
+      },
+      {
         "group": "Luba-Katanga",
         "pct": 0.2
       },
@@ -894,39 +902,7 @@
         "pct": 0.2
       },
       {
-        "group": "Lega-Mwenga",
-        "pct": 0.2
-      },
-      {
-        "group": "Bakongo",
-        "pct": 0.2
-      },
-      {
-        "group": "Luba-Lulua",
-        "pct": 0.1
-      },
-      {
-        "group": "Ngombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Ngbaka",
-        "pct": 0.1
-      },
-      {
         "group": "Bakwa Kalonji",
-        "pct": 0.1
-      },
-      {
-        "group": "Kusu",
-        "pct": 0.1
-      },
-      {
-        "group": "Phende",
-        "pct": 0.1
-      },
-      {
-        "group": "Lokele",
         "pct": 0.1
       },
       {
@@ -934,7 +910,31 @@
         "pct": 0.1
       },
       {
+        "group": "Kusu",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
         "group": "Mukumu",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngbaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
         "pct": 0.1
       },
       {
@@ -1090,7 +1090,7 @@
         "pct": 0.4
       },
       {
-        "group": "Songe",
+        "group": "Bakongo",
         "pct": 0.2
       },
       {
@@ -1098,75 +1098,11 @@
         "pct": 0.2
       },
       {
-        "group": "Bakongo",
+        "group": "Songe",
         "pct": 0.2
       },
       {
-        "group": "Luba-Katanga",
-        "pct": 0.1
-      },
-      {
-        "group": "Yombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Mongo",
-        "pct": 0.1
-      },
-      {
-        "group": "Ngombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Yaka",
-        "pct": 0.1
-      },
-      {
-        "group": "Lunda",
-        "pct": 0.1
-      },
-      {
-        "group": "Mbala",
-        "pct": 0.1
-      },
-      {
-        "group": "Yansi",
-        "pct": 0.1
-      },
-      {
-        "group": "Ndibu",
-        "pct": 0.1
-      },
-      {
-        "group": "Budza",
-        "pct": 0.1
-      },
-      {
-        "group": "Mbunda",
-        "pct": 0.1
-      },
-      {
         "group": "Bakwa Mulumba",
-        "pct": 0.1
-      },
-      {
-        "group": "Taabwa",
-        "pct": 0.1
-      },
-      {
-        "group": "Lokele",
-        "pct": 0.1
-      },
-      {
-        "group": "Hemba",
-        "pct": 0.1
-      },
-      {
-        "group": "Kutshu",
-        "pct": 0.1
-      },
-      {
-        "group": "Mba",
         "pct": 0.1
       },
       {
@@ -1174,7 +1110,15 @@
         "pct": 0.1
       },
       {
-        "group": "Kwese",
+        "group": "Bangobango",
+        "pct": 0.1
+      },
+      {
+        "group": "Budza",
+        "pct": 0.1
+      },
+      {
+        "group": "Hemba",
         "pct": 0.1
       },
       {
@@ -1182,11 +1126,67 @@
         "pct": 0.1
       },
       {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Kwese",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Lunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Mba",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbala",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Mongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndibu",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.1
+      },
+      {
         "group": "Vira",
         "pct": 0.1
       },
       {
-        "group": "Bangobango",
+        "group": "Yaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Yombe",
         "pct": 0.1
       }
     ],
@@ -1298,19 +1298,19 @@
         "pct": 0.5
       },
       {
-        "group": "Lunda",
-        "pct": 0.3
-      },
-      {
         "group": "Bakwa Kalonji",
         "pct": 0.3
       },
       {
-        "group": "Songe",
-        "pct": 0.2
+        "group": "Lunda",
+        "pct": 0.3
       },
       {
         "group": "Lele",
+        "pct": 0.2
+      },
+      {
+        "group": "Songe",
         "pct": 0.2
       },
       {
@@ -1318,19 +1318,19 @@
         "pct": 0.1
       },
       {
-        "group": "Bushoong",
-        "pct": 0.1
-      },
-      {
-        "group": "Kutshu",
-        "pct": 0.1
-      },
-      {
         "group": "Bakwanga",
         "pct": 0.1
       },
       {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
         "group": "Kanioka",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
         "pct": 0.1
       }
     ],
@@ -1444,11 +1444,11 @@
         "pct": 4.5
       },
       {
-        "group": "Songe",
+        "group": "Bena-Kanioka",
         "pct": 0.6
       },
       {
-        "group": "Bena-Kanioka",
+        "group": "Songe",
         "pct": 0.6
       },
       {
@@ -1456,31 +1456,15 @@
         "pct": 0.4
       },
       {
-        "group": "Ngombe",
-        "pct": 0.2
-      },
-      {
         "group": "Kanioka",
         "pct": 0.2
       },
       {
-        "group": "Tetela",
-        "pct": 0.1
+        "group": "Ngombe",
+        "pct": 0.2
       },
       {
-        "group": "Shi",
-        "pct": 0.1
-      },
-      {
-        "group": "Chokwe",
-        "pct": 0.1
-      },
-      {
-        "group": "Nyanga",
-        "pct": 0.1
-      },
-      {
-        "group": "Hutu",
+        "group": "Benye Nonda",
         "pct": 0.1
       },
       {
@@ -1488,11 +1472,27 @@
         "pct": 0.1
       },
       {
-        "group": "Benye Nonda",
+        "group": "Chokwe",
+        "pct": 0.1
+      },
+      {
+        "group": "Hutu",
         "pct": 0.1
       },
       {
         "group": "Lemfu",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Shi",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
         "pct": 0.1
       }
     ],
@@ -1604,11 +1604,11 @@
         "pct": 4.8
       },
       {
-        "group": "Yombe",
+        "group": "No tribe data",
         "pct": 3.8
       },
       {
-        "group": "No tribe data",
+        "group": "Yombe",
         "pct": 3.8
       },
       {
@@ -1628,11 +1628,11 @@
         "pct": 2.4
       },
       {
-        "group": "Teke",
+        "group": "Suku",
         "pct": 2.2
       },
       {
-        "group": "Suku",
+        "group": "Teke",
         "pct": 2.2
       },
       {
@@ -1660,11 +1660,11 @@
         "pct": 1.4
       },
       {
-        "group": "Budza",
+        "group": "Bakongo",
         "pct": 1.1
       },
       {
-        "group": "Bakongo",
+        "group": "Budza",
         "pct": 1.1
       },
       {
@@ -1672,19 +1672,7 @@
         "pct": 1.0
       },
       {
-        "group": "Songe",
-        "pct": 0.9
-      },
-      {
-        "group": "Lunda",
-        "pct": 0.9
-      },
-      {
         "group": "Bakwa Kalonji",
-        "pct": 0.9
-      },
-      {
-        "group": "Mbunda",
         "pct": 0.9
       },
       {
@@ -1692,15 +1680,27 @@
         "pct": 0.9
       },
       {
+        "group": "Lunda",
+        "pct": 0.9
+      },
+      {
+        "group": "Mbunda",
+        "pct": 0.9
+      },
+      {
+        "group": "Songe",
+        "pct": 0.9
+      },
+      {
         "group": "Luba-Katanga",
         "pct": 0.8
       },
       {
-        "group": "Northern Ngbandi",
+        "group": "Lokele",
         "pct": 0.7
       },
       {
-        "group": "Lokele",
+        "group": "Northern Ngbandi",
         "pct": 0.7
       },
       {
@@ -1720,15 +1720,7 @@
         "pct": 0.4
       },
       {
-        "group": "Shi",
-        "pct": 0.3
-      },
-      {
-        "group": "Kusu",
-        "pct": 0.3
-      },
-      {
-        "group": "Sengele",
+        "group": "Bakwanga",
         "pct": 0.3
       },
       {
@@ -1736,15 +1728,23 @@
         "pct": 0.3
       },
       {
+        "group": "Kusu",
+        "pct": 0.3
+      },
+      {
         "group": "Ntomba",
         "pct": 0.3
       },
       {
-        "group": "Bakwanga",
+        "group": "Sengele",
         "pct": 0.3
       },
       {
-        "group": "Nande",
+        "group": "Shi",
+        "pct": 0.3
+      },
+      {
+        "group": "Baboa",
         "pct": 0.2
       },
       {
@@ -1756,23 +1756,11 @@
         "pct": 0.2
       },
       {
+        "group": "Ekonda",
+        "pct": 0.2
+      },
+      {
         "group": "Hutu",
-        "pct": 0.2
-      },
-      {
-        "group": "Pelende",
-        "pct": 0.2
-      },
-      {
-        "group": "Baboa",
-        "pct": 0.2
-      },
-      {
-        "group": "Poke",
-        "pct": 0.2
-      },
-      {
-        "group": "Nunu",
         "pct": 0.2
       },
       {
@@ -1784,12 +1772,76 @@
         "pct": 0.2
       },
       {
-        "group": "Ekonda",
+        "group": "Nande",
         "pct": 0.2
       },
       {
         "group": "Ndembe",
         "pct": 0.2
+      },
+      {
+        "group": "Nunu",
+        "pct": 0.2
+      },
+      {
+        "group": "Pelende",
+        "pct": 0.2
+      },
+      {
+        "group": "Poke",
+        "pct": 0.2
+      },
+      {
+        "group": "Bangobango",
+        "pct": 0.1
+      },
+      {
+        "group": "Boma",
+        "pct": 0.1
+      },
+      {
+        "group": "Budu",
+        "pct": 0.1
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.1
+      },
+      {
+        "group": "Havu",
+        "pct": 0.1
+      },
+      {
+        "group": "Kete",
+        "pct": 0.1
+      },
+      {
+        "group": "Kutshu",
+        "pct": 0.1
+      },
+      {
+        "group": "Kwese",
+        "pct": 0.1
+      },
+      {
+        "group": "Lele",
+        "pct": 0.1
+      },
+      {
+        "group": "Libinja",
+        "pct": 0.1
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.1
+      },
+      {
+        "group": "Mukumu",
+        "pct": 0.1
       },
       {
         "group": "Ngbaka",
@@ -1800,23 +1852,7 @@
         "pct": 0.1
       },
       {
-        "group": "Chokwe",
-        "pct": 0.1
-      },
-      {
-        "group": "Kete",
-        "pct": 0.1
-      },
-      {
-        "group": "Luntu",
-        "pct": 0.1
-      },
-      {
-        "group": "Budu",
-        "pct": 0.1
-      },
-      {
-        "group": "Boma",
+        "group": "Selele",
         "pct": 0.1
       },
       {
@@ -1824,35 +1860,7 @@
         "pct": 0.1
       },
       {
-        "group": "Havu",
-        "pct": 0.1
-      },
-      {
-        "group": "Bushoong",
-        "pct": 0.1
-      },
-      {
-        "group": "Mukumu",
-        "pct": 0.1
-      },
-      {
-        "group": "Kutshu",
-        "pct": 0.1
-      },
-      {
-        "group": "Lele",
-        "pct": 0.1
-      },
-      {
-        "group": "Kwese",
-        "pct": 0.1
-      },
-      {
         "group": "Tshoko",
-        "pct": 0.1
-      },
-      {
-        "group": "Libinja",
         "pct": 0.1
       },
       {
@@ -1860,15 +1868,15 @@
         "pct": 0.1
       },
       {
-        "group": "Selele",
-        "pct": 0.1
+        "group": "Babango",
+        "pct": 0.0
       },
       {
-        "group": "Bangobango",
-        "pct": 0.1
+        "group": "Bangando",
+        "pct": 0.0
       },
       {
-        "group": "Lega-Shabunda",
+        "group": "Banyarwanda",
         "pct": 0.0
       },
       {
@@ -1880,7 +1888,15 @@
         "pct": 0.0
       },
       {
-        "group": "Taabwa",
+        "group": "Hunde",
+        "pct": 0.0
+      },
+      {
+        "group": "Kundu",
+        "pct": 0.0
+      },
+      {
+        "group": "Lega-Shabunda",
         "pct": 0.0
       },
       {
@@ -1888,31 +1904,7 @@
         "pct": 0.0
       },
       {
-        "group": "Banyarwanda",
-        "pct": 0.0
-      },
-      {
-        "group": "Ndengese",
-        "pct": 0.0
-      },
-      {
-        "group": "Babango",
-        "pct": 0.0
-      },
-      {
-        "group": "Hunde",
-        "pct": 0.0
-      },
-      {
         "group": "Lombo",
-        "pct": 0.0
-      },
-      {
-        "group": "Zela",
-        "pct": 0.0
-      },
-      {
-        "group": "Bangando",
         "pct": 0.0
       },
       {
@@ -1924,11 +1916,19 @@
         "pct": 0.0
       },
       {
-        "group": "Kundu",
+        "group": "Ndengese",
         "pct": 0.0
       },
       {
         "group": "Ngengele",
+        "pct": 0.0
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.0
+      },
+      {
+        "group": "Zela",
         "pct": 0.0
       }
     ],
@@ -2064,11 +2064,11 @@
         "pct": 0.7
       },
       {
-        "group": "Luba",
+        "group": "Bakongo",
         "pct": 0.6
       },
       {
-        "group": "Bakongo",
+        "group": "Luba",
         "pct": 0.6
       },
       {
@@ -2080,6 +2080,10 @@
         "pct": 0.3
       },
       {
+        "group": "Ekonda",
+        "pct": 0.2
+      },
+      {
         "group": "Luba-Katanga",
         "pct": 0.2
       },
@@ -2088,7 +2092,7 @@
         "pct": 0.2
       },
       {
-        "group": "Yaka",
+        "group": "Songe",
         "pct": 0.2
       },
       {
@@ -2096,51 +2100,11 @@
         "pct": 0.2
       },
       {
-        "group": "Songe",
+        "group": "Yaka",
         "pct": 0.2
       },
       {
-        "group": "Ekonda",
-        "pct": 0.2
-      },
-      {
-        "group": "Luba-Lulua",
-        "pct": 0.1
-      },
-      {
-        "group": "Northern Ngbandi",
-        "pct": 0.1
-      },
-      {
-        "group": "Ngbaka",
-        "pct": 0.1
-      },
-      {
-        "group": "Lunda",
-        "pct": 0.1
-      },
-      {
-        "group": "Shi",
-        "pct": 0.1
-      },
-      {
-        "group": "Lega-Mwenga",
-        "pct": 0.1
-      },
-      {
-        "group": "Sakata",
-        "pct": 0.1
-      },
-      {
-        "group": "Teke",
-        "pct": 0.1
-      },
-      {
-        "group": "Phende",
-        "pct": 0.1
-      },
-      {
-        "group": "Suku",
+        "group": "Baboa",
         "pct": 0.1
       },
       {
@@ -2148,19 +2112,7 @@
         "pct": 0.1
       },
       {
-        "group": "Taabwa",
-        "pct": 0.1
-      },
-      {
-        "group": "Lokele",
-        "pct": 0.1
-      },
-      {
         "group": "Boma",
-        "pct": 0.1
-      },
-      {
-        "group": "Pelende",
         "pct": 0.1
       },
       {
@@ -2168,7 +2120,7 @@
         "pct": 0.1
       },
       {
-        "group": "Baboa",
+        "group": "Kanioka",
         "pct": 0.1
       },
       {
@@ -2176,15 +2128,23 @@
         "pct": 0.1
       },
       {
-        "group": "Ngongo",
+        "group": "Lega-Mwenga",
         "pct": 0.1
       },
       {
-        "group": "Kanioka",
+        "group": "Lokele",
         "pct": 0.1
       },
       {
-        "group": "Tshoko",
+        "group": "Lombo",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Lunda",
         "pct": 0.1
       },
       {
@@ -2192,11 +2152,51 @@
         "pct": 0.1
       },
       {
+        "group": "Ngbaka",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Pelende",
+        "pct": 0.1
+      },
+      {
+        "group": "Phende",
+        "pct": 0.1
+      },
+      {
+        "group": "Sakata",
+        "pct": 0.1
+      },
+      {
         "group": "Selele",
         "pct": 0.1
       },
       {
-        "group": "Lombo",
+        "group": "Shi",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Taabwa",
+        "pct": 0.1
+      },
+      {
+        "group": "Teke",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
         "pct": 0.1
       }
     ],
@@ -2320,11 +2320,11 @@
         "pct": 0.6
       },
       {
-        "group": "Yansi",
+        "group": "Ngongo",
         "pct": 0.6
       },
       {
-        "group": "Ngongo",
+        "group": "Yansi",
         "pct": 0.6
       },
       {
@@ -2340,26 +2340,6 @@
         "pct": 0.2
       },
       {
-        "group": "Ngombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Tetela",
-        "pct": 0.1
-      },
-      {
-        "group": "Songe",
-        "pct": 0.1
-      },
-      {
-        "group": "Ntandu",
-        "pct": 0.1
-      },
-      {
-        "group": "Manyanga",
-        "pct": 0.1
-      },
-      {
         "group": "Kusu",
         "pct": 0.1
       },
@@ -2368,11 +2348,31 @@
         "pct": 0.1
       },
       {
-        "group": "Mbata",
+        "group": "Manyanga",
         "pct": 0.1
       },
       {
         "group": "Mba",
+        "pct": 0.1
+      },
+      {
+        "group": "Mbata",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Songe",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
         "pct": 0.1
       }
     ],
@@ -2528,27 +2528,15 @@
         "pct": 0.2
       },
       {
-        "group": "Nande",
-        "pct": 0.1
-      },
-      {
-        "group": "Luba-Lulua",
-        "pct": 0.1
-      },
-      {
-        "group": "Mongo",
-        "pct": 0.1
-      },
-      {
-        "group": "Ngombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Lunda",
-        "pct": 0.1
-      },
-      {
         "group": "Budza",
+        "pct": 0.1
+      },
+      {
+        "group": "Ekonda",
+        "pct": 0.1
+      },
+      {
+        "group": "Kundu",
         "pct": 0.1
       },
       {
@@ -2556,7 +2544,11 @@
         "pct": 0.1
       },
       {
-        "group": "Nyanga",
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Lunda",
         "pct": 0.1
       },
       {
@@ -2568,11 +2560,15 @@
         "pct": 0.1
       },
       {
-        "group": "Songola",
+        "group": "Mongo",
         "pct": 0.1
       },
       {
-        "group": "Nyari",
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngombe",
         "pct": 0.1
       },
       {
@@ -2584,15 +2580,11 @@
         "pct": 0.1
       },
       {
-        "group": "Tshoko",
+        "group": "Nyanga",
         "pct": 0.1
       },
       {
-        "group": "Ekonda",
-        "pct": 0.1
-      },
-      {
-        "group": "Selele",
+        "group": "Nyari",
         "pct": 0.1
       },
       {
@@ -2600,7 +2592,15 @@
         "pct": 0.1
       },
       {
-        "group": "Kundu",
+        "group": "Selele",
+        "pct": 0.1
+      },
+      {
+        "group": "Songola",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
         "pct": 0.1
       }
     ],
@@ -2728,12 +2728,16 @@
         "pct": 0.8
       },
       {
+        "group": "Bakwanga",
+        "pct": 0.5
+      },
+      {
         "group": "Luba-Katanga",
         "pct": 0.5
       },
       {
-        "group": "Bakwanga",
-        "pct": 0.5
+        "group": "Bushoong",
+        "pct": 0.2
       },
       {
         "group": "Lunda",
@@ -2744,19 +2748,11 @@
         "pct": 0.2
       },
       {
-        "group": "Bushoong",
-        "pct": 0.2
-      },
-      {
         "group": "Ndembe",
         "pct": 0.2
       },
       {
-        "group": "Nande",
-        "pct": 0.1
-      },
-      {
-        "group": "Tetela",
+        "group": "Bakongo",
         "pct": 0.1
       },
       {
@@ -2772,11 +2768,15 @@
         "pct": 0.1
       },
       {
-        "group": "Bakongo",
+        "group": "Lombo",
         "pct": 0.1
       },
       {
-        "group": "Lombo",
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
         "pct": 0.1
       }
     ],
@@ -2908,7 +2908,7 @@
         "pct": 0.7
       },
       {
-        "group": "Songe",
+        "group": "Lega-Mwenga",
         "pct": 0.3
       },
       {
@@ -2916,11 +2916,11 @@
         "pct": 0.3
       },
       {
-        "group": "Lega-Mwenga",
+        "group": "Mbunda",
         "pct": 0.3
       },
       {
-        "group": "Mbunda",
+        "group": "Songe",
         "pct": 0.3
       },
       {
@@ -2928,23 +2928,11 @@
         "pct": 0.3
       },
       {
-        "group": "Luba-Lulua",
-        "pct": 0.2
-      },
-      {
-        "group": "Tetela",
-        "pct": 0.2
-      },
-      {
-        "group": "Teke",
-        "pct": 0.2
-      },
-      {
         "group": "Bembe",
         "pct": 0.2
       },
       {
-        "group": "Taabwa",
+        "group": "Kanioka",
         "pct": 0.2
       },
       {
@@ -2952,12 +2940,32 @@
         "pct": 0.2
       },
       {
+        "group": "Luba-Lulua",
+        "pct": 0.2
+      },
+      {
         "group": "Ntomba",
         "pct": 0.2
       },
       {
-        "group": "Kanioka",
+        "group": "Taabwa",
         "pct": 0.2
+      },
+      {
+        "group": "Teke",
+        "pct": 0.2
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.2
+      },
+      {
+        "group": "Bushoong",
+        "pct": 0.1
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.1
       },
       {
         "group": "Nande",
@@ -2968,19 +2976,11 @@
         "pct": 0.1
       },
       {
-        "group": "Yansi",
-        "pct": 0.1
-      },
-      {
         "group": "Ntandu",
         "pct": 0.1
       },
       {
-        "group": "Lokele",
-        "pct": 0.1
-      },
-      {
-        "group": "Bushoong",
+        "group": "Yansi",
         "pct": 0.1
       },
       {
@@ -3136,7 +3136,7 @@
         "pct": 0.3
       },
       {
-        "group": "Luba-Lulua",
+        "group": "Budza",
         "pct": 0.2
       },
       {
@@ -3144,15 +3144,7 @@
         "pct": 0.2
       },
       {
-        "group": "Yombe",
-        "pct": 0.2
-      },
-      {
-        "group": "Ngombe",
-        "pct": 0.2
-      },
-      {
-        "group": "Budza",
+        "group": "Luba-Lulua",
         "pct": 0.2
       },
       {
@@ -3160,24 +3152,16 @@
         "pct": 0.2
       },
       {
+        "group": "Ngombe",
+        "pct": 0.2
+      },
+      {
         "group": "Phende",
         "pct": 0.2
       },
       {
-        "group": "Mongo",
-        "pct": 0.1
-      },
-      {
-        "group": "Northern Ngbandi",
-        "pct": 0.1
-      },
-      {
-        "group": "Sanga",
-        "pct": 0.1
-      },
-      {
-        "group": "Ntandu",
-        "pct": 0.1
+        "group": "Yombe",
+        "pct": 0.2
       },
       {
         "group": "Lokele",
@@ -3188,15 +3172,31 @@
         "pct": 0.1
       },
       {
-        "group": "Ngongo",
-        "pct": 0.1
-      },
-      {
-        "group": "Tshoko",
+        "group": "Mongo",
         "pct": 0.1
       },
       {
         "group": "Mpama",
+        "pct": 0.1
+      },
+      {
+        "group": "Ngongo",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Ntandu",
+        "pct": 0.1
+      },
+      {
+        "group": "Sanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
         "pct": 0.1
       }
     ],
@@ -3304,11 +3304,11 @@
         "pct": 9.4
       },
       {
-        "group": "Mukumu",
+        "group": "Benye Nonda",
         "pct": 7.0
       },
       {
-        "group": "Benye Nonda",
+        "group": "Mukumu",
         "pct": 7.0
       },
       {
@@ -3336,11 +3336,11 @@
         "pct": 0.4
       },
       {
-        "group": "Nande",
+        "group": "Luba",
         "pct": 0.3
       },
       {
-        "group": "Luba",
+        "group": "Nande",
         "pct": 0.3
       },
       {
@@ -3348,19 +3348,7 @@
         "pct": 0.2
       },
       {
-        "group": "Luba-Katanga",
-        "pct": 0.1
-      },
-      {
         "group": "Bemba",
-        "pct": 0.1
-      },
-      {
-        "group": "Manyanga",
-        "pct": 0.1
-      },
-      {
-        "group": "Fuliiru",
         "pct": 0.1
       },
       {
@@ -3368,31 +3356,7 @@
         "pct": 0.1
       },
       {
-        "group": "Luntu",
-        "pct": 0.1
-      },
-      {
-        "group": "Nyanga",
-        "pct": 0.1
-      },
-      {
         "group": "Bena-Kanioka",
-        "pct": 0.1
-      },
-      {
-        "group": "Hemba",
-        "pct": 0.1
-      },
-      {
-        "group": "Poke",
-        "pct": 0.1
-      },
-      {
-        "group": "Lengola",
-        "pct": 0.1
-      },
-      {
-        "group": "Tshoko",
         "pct": 0.1
       },
       {
@@ -3400,7 +3364,39 @@
         "pct": 0.1
       },
       {
-        "group": "Tere",
+        "group": "Fuliiru",
+        "pct": 0.1
+      },
+      {
+        "group": "Hemba",
+        "pct": 0.1
+      },
+      {
+        "group": "Lengola",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Luntu",
+        "pct": 0.1
+      },
+      {
+        "group": "Manyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Nyanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Plains Bira",
+        "pct": 0.1
+      },
+      {
+        "group": "Poke",
         "pct": 0.1
       },
       {
@@ -3408,7 +3404,11 @@
         "pct": 0.1
       },
       {
-        "group": "Plains Bira",
+        "group": "Tere",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshoko",
         "pct": 0.1
       }
     ],
@@ -3528,11 +3528,11 @@
         "pct": 0.3
       },
       {
-        "group": "Lendu",
+        "group": "Baboa",
         "pct": 0.2
       },
       {
-        "group": "Baboa",
+        "group": "Lendu",
         "pct": 0.2
       },
       {
@@ -3540,27 +3540,7 @@
         "pct": 0.2
       },
       {
-        "group": "Luba",
-        "pct": 0.1
-      },
-      {
-        "group": "Yombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Yansi",
-        "pct": 0.1
-      },
-      {
-        "group": "Suku",
-        "pct": 0.1
-      },
-      {
         "group": "Boma",
-        "pct": 0.1
-      },
-      {
-        "group": "Mboma",
         "pct": 0.1
       },
       {
@@ -3568,7 +3548,27 @@
         "pct": 0.1
       },
       {
+        "group": "Luba",
+        "pct": 0.1
+      },
+      {
+        "group": "Mboma",
+        "pct": 0.1
+      },
+      {
         "group": "Mbosa",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
+        "pct": 0.1
+      },
+      {
+        "group": "Yansi",
+        "pct": 0.1
+      },
+      {
+        "group": "Yombe",
         "pct": 0.1
       }
     ],
@@ -3684,27 +3684,27 @@
         "pct": 2.9
       },
       {
-        "group": "Mukumu",
-        "pct": 1.1
-      },
-      {
         "group": "Bakongo",
         "pct": 1.1
       },
       {
-        "group": "Lega-Mwenga",
-        "pct": 0.6
+        "group": "Mukumu",
+        "pct": 1.1
       },
       {
         "group": "Havu",
         "pct": 0.6
       },
       {
-        "group": "Luba",
-        "pct": 0.5
+        "group": "Lega-Mwenga",
+        "pct": 0.6
       },
       {
         "group": "Kusu",
+        "pct": 0.5
+      },
+      {
+        "group": "Luba",
         "pct": 0.5
       },
       {
@@ -3712,23 +3712,7 @@
         "pct": 0.4
       },
       {
-        "group": "Luba-Katanga",
-        "pct": 0.1
-      },
-      {
-        "group": "Northern Ngbandi",
-        "pct": 0.1
-      },
-      {
-        "group": "Tetela",
-        "pct": 0.1
-      },
-      {
-        "group": "Songe",
-        "pct": 0.1
-      },
-      {
-        "group": "Lega-Shabunda",
+        "group": "Baboa",
         "pct": 0.1
       },
       {
@@ -3736,19 +3720,39 @@
         "pct": 0.1
       },
       {
-        "group": "Mayogo",
-        "pct": 0.1
-      },
-      {
-        "group": "Baboa",
-        "pct": 0.1
-      },
-      {
         "group": "Kundu",
         "pct": 0.1
       },
       {
-        "group": "Ngombe",
+        "group": "Lega-Shabunda",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Katanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Mayogo",
+        "pct": 0.1
+      },
+      {
+        "group": "Northern Ngbandi",
+        "pct": 0.1
+      },
+      {
+        "group": "Songe",
+        "pct": 0.1
+      },
+      {
+        "group": "Tetela",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwa Kalonji",
+        "pct": 0.0
+      },
+      {
+        "group": "Bakwanga",
         "pct": 0.0
       },
       {
@@ -3756,11 +3760,27 @@
         "pct": 0.0
       },
       {
-        "group": "Bakwa Kalonji",
+        "group": "Benye Nonda",
+        "pct": 0.0
+      },
+      {
+        "group": "Budu",
         "pct": 0.0
       },
       {
         "group": "Budza",
+        "pct": 0.0
+      },
+      {
+        "group": "Libinja",
+        "pct": 0.0
+      },
+      {
+        "group": "Lokele",
+        "pct": 0.0
+      },
+      {
+        "group": "Luntu",
         "pct": 0.0
       },
       {
@@ -3772,31 +3792,11 @@
         "pct": 0.0
       },
       {
-        "group": "Luntu",
-        "pct": 0.0
-      },
-      {
-        "group": "Budu",
-        "pct": 0.0
-      },
-      {
-        "group": "Lokele",
+        "group": "Ngombe",
         "pct": 0.0
       },
       {
         "group": "Poke",
-        "pct": 0.0
-      },
-      {
-        "group": "Bakwanga",
-        "pct": 0.0
-      },
-      {
-        "group": "Benye Nonda",
-        "pct": 0.0
-      },
-      {
-        "group": "Libinja",
         "pct": 0.0
       },
       {
@@ -3869,11 +3869,11 @@
         "pct": 1.1
       },
       {
-        "group": "Without religion",
+        "group": "Muslim",
         "pct": 1.0
       },
       {
-        "group": "Muslim",
+        "group": "Without religion",
         "pct": 1.0
       },
       {
@@ -3926,11 +3926,7 @@
         "pct": 0.3
       },
       {
-        "group": "Luba-Lulua",
-        "pct": 0.1
-      },
-      {
-        "group": "Suku",
+        "group": "Benja",
         "pct": 0.1
       },
       {
@@ -3938,7 +3934,11 @@
         "pct": 0.1
       },
       {
-        "group": "Benja",
+        "group": "Luba-Lulua",
+        "pct": 0.1
+      },
+      {
+        "group": "Suku",
         "pct": 0.1
       }
     ],
@@ -4046,11 +4046,11 @@
         "pct": 0.7
       },
       {
-        "group": "Luba-Lulua",
+        "group": "Kusu",
         "pct": 0.4
       },
       {
-        "group": "Kusu",
+        "group": "Luba-Lulua",
         "pct": 0.4
       },
       {
@@ -4062,7 +4062,11 @@
         "pct": 0.4
       },
       {
-        "group": "Sanga",
+        "group": "Bakwa Dishi",
+        "pct": 0.1
+      },
+      {
+        "group": "Bakwanga",
         "pct": 0.1
       },
       {
@@ -4074,15 +4078,11 @@
         "pct": 0.1
       },
       {
-        "group": "Bakwa Dishi",
+        "group": "Sanga",
         "pct": 0.1
       },
       {
         "group": "Suku",
-        "pct": 0.1
-      },
-      {
-        "group": "Bakwanga",
         "pct": 0.1
       }
     ],
@@ -4194,11 +4194,11 @@
         "pct": 4.0
       },
       {
-        "group": "Phende",
+        "group": "No tribe data",
         "pct": 1.1
       },
       {
-        "group": "No tribe data",
+        "group": "Phende",
         "pct": 1.1
       },
       {
@@ -4210,11 +4210,11 @@
         "pct": 0.6
       },
       {
-        "group": "Nande",
+        "group": "Luba",
         "pct": 0.3
       },
       {
-        "group": "Luba",
+        "group": "Nande",
         "pct": 0.3
       },
       {
@@ -4230,7 +4230,7 @@
         "pct": 0.1
       },
       {
-        "group": "Taabwa",
+        "group": "Lokele",
         "pct": 0.1
       },
       {
@@ -4238,11 +4238,11 @@
         "pct": 0.1
       },
       {
-        "group": "Lokele",
+        "group": "Pelende",
         "pct": 0.1
       },
       {
-        "group": "Pelende",
+        "group": "Taabwa",
         "pct": 0.1
       }
     ],
@@ -4360,11 +4360,11 @@
         "pct": 2.5
       },
       {
-        "group": "Mongo",
+        "group": "Budza",
         "pct": 0.5
       },
       {
-        "group": "Budza",
+        "group": "Mongo",
         "pct": 0.5
       },
       {
@@ -4372,11 +4372,11 @@
         "pct": 0.4
       },
       {
-        "group": "Nande",
+        "group": "Ekonda",
         "pct": 0.1
       },
       {
-        "group": "Ndibu",
+        "group": "Lokele",
         "pct": 0.1
       },
       {
@@ -4388,7 +4388,11 @@
         "pct": 0.1
       },
       {
-        "group": "Lokele",
+        "group": "Nande",
+        "pct": 0.1
+      },
+      {
+        "group": "Ndibu",
         "pct": 0.1
       },
       {
@@ -4397,10 +4401,6 @@
       },
       {
         "group": "Nunu",
-        "pct": 0.1
-      },
-      {
-        "group": "Ekonda",
         "pct": 0.1
       }
     ],
@@ -4512,11 +4512,11 @@
         "pct": 0.4
       },
       {
-        "group": "Fuliiru",
+        "group": "Bembe",
         "pct": 0.2
       },
       {
-        "group": "Bembe",
+        "group": "Fuliiru",
         "pct": 0.2
       },
       {
@@ -4664,11 +4664,11 @@
         "pct": 1.0
       },
       {
-        "group": "Budza",
+        "group": "Baboa",
         "pct": 0.7
       },
       {
-        "group": "Baboa",
+        "group": "Budza",
         "pct": 0.7
       },
       {
@@ -4676,11 +4676,7 @@
         "pct": 0.6
       },
       {
-        "group": "Tetela",
-        "pct": 0.4
-      },
-      {
-        "group": "Lega-Shabunda",
+        "group": "Bangando",
         "pct": 0.4
       },
       {
@@ -4688,11 +4684,15 @@
         "pct": 0.4
       },
       {
+        "group": "Lega-Shabunda",
+        "pct": 0.4
+      },
+      {
         "group": "Mboma",
         "pct": 0.4
       },
       {
-        "group": "Bangando",
+        "group": "Tetela",
         "pct": 0.4
       },
       {
@@ -4700,7 +4700,11 @@
         "pct": 0.3
       },
       {
-        "group": "Ngombe",
+        "group": "Bakongo",
+        "pct": 0.2
+      },
+      {
+        "group": "Bangobango",
         "pct": 0.2
       },
       {
@@ -4716,39 +4720,23 @@
         "pct": 0.2
       },
       {
-        "group": "Bakongo",
+        "group": "Ngombe",
         "pct": 0.2
-      },
-      {
-        "group": "Bangobango",
-        "pct": 0.2
-      },
-      {
-        "group": "Luba-Lulua",
-        "pct": 0.1
-      },
-      {
-        "group": "Yombe",
-        "pct": 0.1
-      },
-      {
-        "group": "Songe",
-        "pct": 0.1
-      },
-      {
-        "group": "Sanga",
-        "pct": 0.1
       },
       {
         "group": "Bakwa Kalonji",
         "pct": 0.1
       },
       {
-        "group": "Zande",
+        "group": "Bakwanga",
         "pct": 0.1
       },
       {
-        "group": "Phende",
+        "group": "Kaonde",
+        "pct": 0.1
+      },
+      {
+        "group": "Luba-Lulua",
         "pct": 0.1
       },
       {
@@ -4760,11 +4748,23 @@
         "pct": 0.1
       },
       {
-        "group": "Bakwanga",
+        "group": "Phende",
         "pct": 0.1
       },
       {
-        "group": "Kaonde",
+        "group": "Sanga",
+        "pct": 0.1
+      },
+      {
+        "group": "Songe",
+        "pct": 0.1
+      },
+      {
+        "group": "Yombe",
+        "pct": 0.1
+      },
+      {
+        "group": "Zande",
         "pct": 0.1
       }
     ],
@@ -5028,11 +5028,11 @@
         "pct": 0.5
       },
       {
-        "group": "Tetela",
+        "group": "Poke",
         "pct": 0.5
       },
       {
-        "group": "Poke",
+        "group": "Tetela",
         "pct": 0.5
       },
       {
@@ -5044,15 +5044,27 @@
         "pct": 0.3
       },
       {
-        "group": "Northern Ngbandi",
-        "pct": 0.2
-      },
-      {
         "group": "Bakongo",
         "pct": 0.2
       },
       {
-        "group": "Yansi",
+        "group": "Northern Ngbandi",
+        "pct": 0.2
+      },
+      {
+        "group": "Babango",
+        "pct": 0.1
+      },
+      {
+        "group": "Baboa",
+        "pct": 0.1
+      },
+      {
+        "group": "Bangando",
+        "pct": 0.1
+      },
+      {
+        "group": "Benye Nonda",
         "pct": 0.1
       },
       {
@@ -5064,19 +5076,7 @@
         "pct": 0.1
       },
       {
-        "group": "Baboa",
-        "pct": 0.1
-      },
-      {
-        "group": "Benye Nonda",
-        "pct": 0.1
-      },
-      {
-        "group": "Babango",
-        "pct": 0.1
-      },
-      {
-        "group": "Bangando",
+        "group": "Yansi",
         "pct": 0.1
       }
     ],

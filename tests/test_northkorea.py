@@ -11,6 +11,7 @@ draws.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -410,7 +411,17 @@ class TheRecords(unittest.TestCase):
             self.assertIn("Table 2", row["population_note"])
             self.assertIn("military camps", row["population_note"])
             self.assertEqual(row["sex_ratio"]["unit"],
-                             "females_per_1000_males")
+                             "males_per_100_females")
+            self.assertIn("military camps", row["sex_ratio_note"])
+
+    def test_the_sex_ratio_is_males_per_hundred_females_of_the_row(self):
+        for row in self.rows:
+            men, women = (int(n.replace(",", "")) for n in re.match(
+                r"([\d,]+) males and ([\d,]+) females\.", row["sex_ratio_note"]).groups())
+            self.assertEqual(men + women, row["population"]["value"], row["name"])
+            self.assertEqual(row["sex_ratio"]["value"], round(100 * men / women, 1))
+            self.assertLess(row["sex_ratio"]["value"], 150, row["name"])
+            self.assertGreater(row["sex_ratio"]["value"], 60, row["name"])
 
     def test_a_province_says_how_its_boundary_differs_from_the_reports(self):
         self.assertIn("Nampo was not a first-level area in 2008",
@@ -428,6 +439,95 @@ class TheRecords(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             nk.check(broken)
         self.assertIn("Ryanggang", str(caught.exception))
+
+
+# Table 4 as the report prints it: each 2008 area's name on its own line, its
+# Total row, then the eighteen age groups, nine figures a row. The figures
+# split each province's Table 2 quarters across the groups, so the two tables
+# agree on every province's total as the real ones do.
+AGE_SHARES = [1, 4, 6, 6, 6, 5, 6, 6, 7, 7, 6, 5, 4, 4, 3, 2, 1, 1]
+
+
+def age_blocks() -> dict[str, dict[str, list[int]]]:
+    totals: dict[str, list[int]] = {}
+    for (province, _county), quarter in QUARTERS.items():
+        got = totals.setdefault(province, [0, 0, 0, 0])
+        for i in range(4):
+            got[i] += quarter[i]
+    totals["DPR Korea"] = [sum(t[i] for t in totals.values()) for i in range(4)]
+    weight = sum(AGE_SHARES)
+    out: dict[str, dict[str, list[int]]] = {}
+    for area, quarter in totals.items():
+        parts = [[q * w // weight for w in AGE_SHARES] for q in quarter]
+        for i, q in enumerate(quarter):
+            parts[i][-1] += q - sum(parts[i])
+        block = {g: nine(*(parts[i][k] for i in range(4)))
+                 for k, g in enumerate(nk.AGE_GROUPS)}
+        block["Total"] = nine(*quarter)
+        out[area] = block
+    # The country's groups are the provinces' added up, as printed.
+    out["DPR Korea"] = {g: [sum(out[p][g][i] for p in nk.PROVINCES) for i in range(9)]
+                        for g in [*nk.AGE_GROUPS, "Total"]}
+    return out
+
+
+def age_lines(blocks: dict[str, dict[str, list[int]]]) -> list[str]:
+    lines = ["2008 Census of Population of DPR Korea",
+             f"Table 4. {nk.AGE_CAPTION}", "Age Group All Areas Urban Rural", "And",
+             "Both Both Both", "Province Male Female Male Female Male Female",
+             "Sexes Sexes Sexes"]
+    for area in nk.AGE_AREAS:
+        lines.append(area)
+        lines.append(printed("Total", blocks[area]["Total"]))
+        for group in nk.AGE_GROUPS:
+            lines.append(printed(group, blocks[area][group]))
+    return lines
+
+
+class TableFour(unittest.TestCase):
+    def setUp(self):
+        self.blocks = age_blocks()
+        self.text = ["", "\n".join(table()), "\n".join(age_lines(self.blocks))]
+
+    def ages(self):
+        return nk.age_table(self.text, nk.age_pages(self.text))
+
+    def test_every_block_is_read(self):
+        ages = self.ages()
+        self.assertEqual(set(ages), set(nk.AGE_AREAS))
+        self.assertEqual(ages["Jagang"]["5-9"], self.blocks["Jagang"]["5-9"])
+
+    def test_seven_provinces_get_a_median_and_four_a_reason(self):
+        table_two = nk.counties(nk.rows(self.text, nk.table_pages(self.text)))
+        medians = nk.ages_by_shape(self.ages(), table_two)
+        values = {s for s, v in medians.items() if "value" in v}
+        self.assertEqual(values, {"Ryanggang", "North Hamgyong", "South Hamgyong", "Kangwon",
+                                  "Jagang", "North Pyongan", "South Hwanghae"})
+        for shape in nk.REDRAWN:
+            self.assertEqual(medians[shape]["status"], common.NOT_AVAILABLE)
+            self.assertIn("No age table", medians[shape]["note"])
+        self.assertTrue(20 < medians["Jagang"]["value"] < 50)
+        records = nk.build(nk.regroup(table_two), medians)
+        jagang = next(r for r in records if r["name"] == "Jagang" and r["level"] == "admin1")
+        self.assertIn("Table 4", jagang["median_age_note"])
+        self.assertEqual(jagang["median_age"]["year"], 2008)
+        county = next(r for r in records if r["level"] == "admin2")
+        self.assertIn("no age table below the province", county["median_age"]["note"])
+        nk.check(records)
+
+    def test_groups_that_miss_the_total_are_refused(self):
+        self.blocks["Kangwon"]["1-4"] = nine(5, 5, 5, 5)
+        self.text[2] = "\n".join(age_lines(self.blocks))
+        with self.assertRaises(SystemExit):
+            self.ages()
+
+    def test_a_province_that_disagrees_with_table_two_is_refused(self):
+        table_two = nk.counties(nk.rows(self.text, nk.table_pages(self.text)))
+        ages = self.ages()
+        ages["Ryanggang"]["Total"] = [v + 1 if i < 3 else v
+                                      for i, v in enumerate(ages["Ryanggang"]["Total"])]
+        with self.assertRaises(SystemExit):
+            nk.ages_by_shape(ages, table_two)
 
 
 if __name__ == "__main__":

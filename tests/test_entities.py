@@ -446,6 +446,15 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         self.assertEqual(be.fill_parent_populations(a1, a2), [])
         self.assertEqual(a1["AGO"][0]["population"]["value"], 9)
 
+    def test_a_gap_that_refuses_the_sum_stays_a_gap(self):
+        # Afghanistan's Sar-e Pol: Gosfandi is linked to it and its point lies
+        # in Balkh's polygon, so its linked districts are not its polygon.
+        refused = {"status": "not_available", "note": "Not this polygon's.",
+                   "no_child_sum": True}
+        a1, a2 = self.tables([53056, 59750], parent_pop=dict(refused))
+        self.assertEqual(be.fill_parent_populations(a1, a2), [])
+        self.assertEqual(a1["AGO"][0]["population"], refused)
+
 
 class APolygonDrawnAtBothLevelsShowsOneUnit(unittest.TestCase):
     def tables(self):
@@ -2478,6 +2487,24 @@ class LargestGroupsDoNotAddUp(unittest.TestCase):
              "religion": [{"group": "Muslim", "pct": 100.0, "count": 500}]}],
             "religion")
         self.assertIsNone(why)
+
+    def test_a_year_span_beside_integer_years_does_not_break_the_sum(self):
+        # Afghanistan's district profiles date their ethnicity "2008-2014";
+        # the provincial development plans date theirs 2006-2010. A province
+        # whose districts mix the two once stopped the build in the sort.
+        parent = {"population": {"value": 1500}}
+        why = be.roll_up_field(parent, [
+            {"name": "A", "population": {"value": 500}, "ethnicity_year": "2008-2014",
+             "ethnicity": [{"group": "Pashtun", "pct": 100.0, "count": 500}]},
+            {"name": "B", "population": {"value": 500}, "ethnicity_year": 2010,
+             "ethnicity": [{"group": "Tajik", "pct": 100.0, "count": 500}]},
+            {"name": "C", "population": {"value": 500}, "ethnicity_year": 2006,
+             "ethnicity": [{"group": "Hazara", "pct": 100.0, "count": 500}]}],
+            "ethnicity")
+        self.assertIsNone(why)
+        self.assertIn("2008-2014", parent["ethnicity_note"])
+        self.assertEqual([be.year_sort_key(y)[0] for y in ("2008-2014", 2010, "n.d.")],
+                         [2008, 2010, 0])
 
 
 class ACountrySumNeedsItsCheck(unittest.TestCase):
@@ -5009,7 +5036,8 @@ class RollUpVintage(unittest.TestCase):
         dhaka = {"population": {"value": 49_729_000, "year": 2011}}
         self.assertIsNone(be.roll_up_field(dhaka, [self.kid(44_215_759)],
                                            "religion", whole_country=True))
-        self.assertIn("disagrees with that by", dhaka["religion_note"])
+        self.assertIn("disagrees with the divisions' total of 44,215,759 by -11%",
+                      dhaka["religion_note"])
         # The same numbers without complete coverage stay refused.
         why = be.roll_up_field({"population": {"value": 49_729_000, "year": 2011}},
                                [self.kid(44_215_759)], "religion")
@@ -5028,11 +5056,24 @@ class RollUpVintage(unittest.TestCase):
         # Finland's register; the country carried 5,550,449 for 2025 from the
         # Factbook. An itemised count against a general estimate, with the
         # language shares already taken from the register.
+        # That is a country's estimate, so roll_up_countries says so.
         parent = {"population": {"value": 5_550_449, "year": 2025}}
         be.roll_up_field(parent, [self.kid(5_652_881, 2025)], "religion",
-                         whole_country=True)
+                         whole_country=True, restate_same_year=True)
         self.assertEqual(parent["population"]["value"], 5_652_881)
         self.assertIn("5,550,449", parent["population_note"])
+
+    def test_a_first_level_count_of_the_same_year_is_not_replaced_by_a_sum(self):
+        # Kinmen's five drawn townships added up to 136,611 against the
+        # county's registered 137,208, both for August 2026: the register's
+        # sixth township was drawn apart from the county. A same-year count
+        # that the children fall short of is not an estimate they improve on.
+        parent = {"population": {"value": 137_208, "year": 2026}}
+        self.assertIsNone(be.roll_up_field(parent, [self.kid(136_611, 2026)],
+                                           "religion"))
+        self.assertEqual(parent["population"]["value"], 137_208)
+        self.assertNotIn("population_note", parent)
+        self.assertEqual(parent["religion"][0]["group"], "Muslim")
 
     def test_a_population_the_children_agree_with_is_left_alone(self):
         # Ladakh's Leh and Kargil sum to exactly the 274,289 Wikidata gives it.
@@ -5394,6 +5435,84 @@ class GapReasons(unittest.TestCase):
         self.assertFalse(set(be.ADAPTER_GAPS) & set(be.ADAPTER_HINTS))
 
 
+class AnsweredHints(unittest.TestCase):
+    """A unit an adapter emptied on purpose, saying why on every field, is not
+    offered a command that would fetch what was refused."""
+
+    WHY = "The CBS's Jerusalem figures count East Jerusalem."
+
+    def jerusalem(self):
+        entity = {"adapter_hint": "python scripts/fetch_wikidata.py --countries ISR"}
+        for field in be.PANEL_FIELDS:
+            entity[field] = {"status": "not_available", "note": self.WHY}
+        entity["language"] = {"status": "not_available", "note": "No CBS table."}
+        return entity
+
+    def test_every_field_saying_why_takes_the_hint_off(self):
+        entity = self.jerusalem()
+        self.assertTrue(be.drop_answered_hint(entity))
+        self.assertNotIn("adapter_hint", entity)
+        self.assertNotIn("gap_reason", entity)
+        self.assertEqual(entity["population"]["note"], self.WHY)
+
+    def test_a_field_with_no_reason_keeps_the_hint(self):
+        for field in ("population", "median_age"):
+            entity = self.jerusalem()
+            entity[field] = {"status": "not_available"}
+            self.assertFalse(be.drop_answered_hint(entity))
+            self.assertIn("adapter_hint", entity)
+        entity = self.jerusalem()
+        del entity["median_age"]
+        self.assertFalse(be.drop_answered_hint(entity))
+
+    def test_a_unit_with_a_figure_is_left_alone(self):
+        entity = self.jerusalem()
+        entity["population"] = {"value": 1_000, "year": 2021}
+        self.assertFalse(be.drop_answered_hint(entity))
+        self.assertIn("adapter_hint", entity)
+
+
+class BuildFlags(unittest.TestCase):
+    """An adapter's instructions to the build are not written to the map."""
+
+    def test_the_flags_come_off_and_the_reason_stays(self):
+        why = "The 2021 estimates draw Balkh across the census's lines."
+        entity = {"name": "Balkh",
+                  "population": {"status": "not_available", "note": why,
+                                 "displaces_before": 2026, "no_child_sum": True},
+                  "religion": {"status": "not_available", "note": "x",
+                               "displaces_undated": True},
+                  "median_age": {"value": 17.5, "year": 2016},
+                  "sources": [{"field": "population", "name": "NSIA"}]}
+        self.assertEqual(be.drop_build_flags(entity), 3)
+        self.assertEqual(entity["population"], {"status": "not_available", "note": why})
+        self.assertEqual(entity["religion"], {"status": "not_available", "note": "x"})
+        self.assertEqual(entity["median_age"], {"value": 17.5, "year": 2016})
+        self.assertEqual(be.drop_build_flags(entity), 0)
+
+    def test_the_sum_guard_still_reads_the_flag_before_it_goes(self):
+        # fill_parent_populations runs before the flags are taken off, and
+        # the write is the last thing main() does with the records.
+        import inspect
+        main = inspect.getsource(be.main)
+        self.assertLess(main.index("fill_parent_populations("),
+                        main.index("drop_build_flags("))
+        self.assertLess(main.index("drop_build_flags("), main.index('write_json(out / "admin0.json"'))
+
+    def test_a_coded_reason_is_said_in_plain_words(self):
+        entity = {"population": {"status": "not_available",
+                                 "note": "No P1082 statement on Wikidata (asked by id)."},
+                  "religion": {"status": "not_available", "note": "Not asked."}}
+        self.assertEqual(be.plain_notes(entity), 1)
+        self.assertEqual(entity["population"]["note"],
+                         "Wikidata gives no population for this unit.")
+        self.assertEqual(entity["religion"]["note"], "Not asked.")
+        main = __import__("inspect").getsource(be.main)
+        # After every pass that reads or replaces the marker, before the write.
+        self.assertLess(main.index("say_why_empty("), main.index("plain_notes("))
+        self.assertLess(main.index("plain_notes("), main.index('write_json(out / "admin0.json"'))
+
+
 class SiteFreshness(unittest.TestCase):
     """Whether the map still reflects the adapter output beside it.
 
@@ -5728,6 +5847,28 @@ class DerivedValues(unittest.TestCase):
         be.residual_child([nation], {"XXX": [*known, blank]})
         self.assertFalse(isinstance(blank["religion"], list))
 
+    def test_a_gap_that_says_no_figure_fits_its_polygon_is_not_subtracted_into(self):
+        # Maguindanao's religion, once the ARMM around it carries a count of
+        # the region's own ground: the arithmetic closes, and the gap stands.
+        for level in ("child", "grandchild"):
+            nation, known, blank = self.same_source_country()
+            why = "No count fits this polygon."
+            blank["religion"] = {**common.gap(common.NOT_AVAILABLE, why),
+                                 "not_this_ground": True}
+            if level == "child":
+                filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+            else:
+                for row in (*known, blank):
+                    row["parent"] = "XXX"
+                filled, refused = be.residual_grandchild({"XXX": [nation]},
+                                                         {"XXX": [*known, blank]})
+            self.assertEqual(filled, [], level)
+            self.assertIn("its own gap says no figure fits this polygon", refused[0])
+            self.assertEqual(blank["religion"]["note"], why)
+            # The flag is the build's, and does not reach the published file.
+            self.assertEqual(be.drop_build_flags(blank), 1)
+            self.assertNotIn("not_this_ground", blank["religion"])
+
 
 class DeclaredSecondNames(unittest.TestCase):
     """ALSO_KNOWN_AS joins a shape under a name that is not its own.
@@ -5781,6 +5922,23 @@ class DeclaredSecondNames(unittest.TestCase):
         self.assertEqual(be.add_known_as(idx, rows), 0)
         self.assertEqual([e["name"] for e in idx[be.norm("Zambezi Region")]],
                          ["Zambezi Region"])
+
+    def test_dalseo_is_found_beside_dalseong(self):
+        # Dalseong-gun is filed under Daegu with Dalseo-gu (DECLARED_PARENTS),
+        # and "Dalseo" starts both names: Wikidata's Dalseo District row,
+        # scoped to Daegu, was refused as ambiguous and the district lost its
+        # link.
+        daegu = {"id": "DG", "name": "Daegu", "country": "KOR"}
+        kids = [{"id": "DS", "name": "Dalseo-gu", "country": "KOR", "parent": "DG"},
+                {"id": "DSG", "name": "Dalseong-gun", "country": "KOR", "parent": "DG"}]
+        row = {"name": "Dalseo District", "parent_name": "Daegu"}
+        idx = self.index(kids)
+        self.assertEqual(be.match_admin2(row, idx, {"daegu": daegu})[0], None)
+        self.assertEqual(be.add_known_as(idx, kids), 1)
+        hit, how = be.match_admin2(row, idx, {"daegu": daegu})
+        self.assertEqual((hit["id"], how), ("DS", "name+state"))
+        dalseong = {"name": "Dalseong County", "parent_name": "Daegu"}
+        self.assertEqual(be.match_admin2(dalseong, idx, {"daegu": daegu})[0]["id"], "DSG")
 
     def test_nothing_is_indexed_for_a_shape_with_no_declaration(self):
         rows = [self.shape("Somewhere Undeclared", "ZZZ")]
@@ -8607,7 +8765,7 @@ class RollingUpWithoutAPopulationToCheckAgainst(unittest.TestCase):
         got = {g["group"]: g["pct"] for g in parent["language"]}
         self.assertEqual(got, {"Swahili": 80.0, "Sukuma": 20.0})
         note = parent["language_note"]
-        self.assertIn("disagrees with that by -20%", note)
+        self.assertIn("disagrees with the divisions' total of 4,000,000 by -20%", note)
         self.assertIn("names groups without shares (Kiswahili or Swahili, English)", note)
         self.assertNotIn("None%", note)
 
@@ -8678,7 +8836,10 @@ class CountryDetail(unittest.TestCase):
     def test_every_row_names_a_country_a_field_and_a_note(self):
         for row in self.rows():
             self.assertRegex(row.get("country", ""), r"^[A-Z]{3}$", row)
-            self.assertIn(row.get("field"), ("religion", "language", "ethnicity"))
+            # A census figure for the country (population, median age, sex
+            # ratio) or one of the three compositions.
+            self.assertIn(row.get("field"), ("religion", "language", "ethnicity",
+                                              *be.FIGURE_ROWS))
             self.assertGreater(len(row.get("note", "")), 80,
                                f"{row['country']} {row['field']}: a note that "
                                f"does not explain is worse than none")

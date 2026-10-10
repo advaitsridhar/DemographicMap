@@ -1,0 +1,1975 @@
+[
+  {
+    "id": "ISR-CBS-Jerusalem District",
+    "level": "admin1",
+    "name": "Jerusalem District",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": "Jerusalem",
+    "population": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here.",
+      "displaces_before": 2026
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "sources": [
+      {
+        "field": "largest settlement",
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/",
+        "license": "CC BY 4.0",
+        "note": "Jerusalem (GeoNames 281184): its point, 35.21633 E 31.76904 N, lies inside this shape."
+      }
+    ],
+    "country": "ISR",
+    "match_by": "shape_id",
+    "shape_id": "19161824B79530266069959",
+    "largest_settlement_note": "The city's population is not shown: published figures for Jerusalem count its whole municipal area, East Jerusalem included, which the map draws within the West Bank, and none is published for the part of the city inside this shape."
+  },
+  {
+    "id": "ISR-CBS-Northern District",
+    "level": "admin1",
+    "name": "Northern District",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1513100,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Zefat, Kinneret, Yizre'el and Akko sub-districts, published in thousands to one decimal (the nearest hundred people). The sum of the district's sub-districts other than the Golan (56,900 people), which the map draws in Syria's Quneitra governorate."
+    },
+    "median_age": {
+      "value": 30.7,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 100.2,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes the Northern District's religions with the Golan sub-district in them, and does not list the Golan's Christians and unclassified apart, so the religion of the district as the map draws it (without the Golan) is not published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Arabs",
+        "pct": 52.5,
+        "count": 793700
+      },
+      {
+        "group": "Jewish",
+        "pct": 43.0,
+        "count": 650100
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 3.8,
+        "count": 57600
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.8,
+        "count": 11500
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "match_by": "shape_id",
+    "shape_id": "19161824B91089536365577",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 57,600 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: interpolated within the table's age groups (0-4, 5-14, 15-19 and so on to 75+) summed over the Zefat, Kinneret, Yizre'el and Akko sub-districts, since the CBS's own median is for a different ground.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 745,000 men and 743,600 women in the Zefat, Kinneret, Yizre'el and Akko sub-districts, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Haifa",
+    "level": "admin1",
+    "name": "Haifa",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1148700,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Haifa District, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 34.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 96.4,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": [
+      {
+        "group": "Judaism",
+        "pct": 67.1,
+        "count": 760900
+      },
+      {
+        "group": "Muslims",
+        "pct": 20.6,
+        "count": 233200
+      },
+      {
+        "group": "Not classified by religion",
+        "pct": 7.3,
+        "count": 82200
+      },
+      {
+        "group": "Christianity",
+        "pct": 2.5,
+        "count": 28900
+      },
+      {
+        "group": "Druze",
+        "pct": 2.5,
+        "count": 28500
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 66.2,
+        "count": 760900
+      },
+      {
+        "group": "Arabs",
+        "pct": 24.6,
+        "count": 282600
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 7.9,
+        "count": 90200
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.3,
+        "count": 15000
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "religion",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "match_by": "shape_id",
+    "shape_id": "19161824B12012272353046",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 90,200 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Haifa District.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 552,500 men and 573,000 women in the Haifa District, the men being the table's total less its females, in thousands to one decimal.",
+    "religion_year": 2023,
+    "religion_basis": "religion as recorded in the population register",
+    "religion_note": "Israelis (citizens and permanent residents, not foreigners) by the religion the population register records, 31 December 2023, in thousands to one decimal. 'Not classified by religion' is the register's own category, mostly immigrants under the Law of Return who are not Jewish."
+  },
+  {
+    "id": "ISR-CBS-Central District",
+    "level": "admin1",
+    "name": "Central District",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2381200,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Central District, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 33.8,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": [
+      {
+        "group": "Judaism",
+        "pct": 86.5,
+        "count": 2019300
+      },
+      {
+        "group": "Muslims",
+        "pct": 8.3,
+        "count": 193800
+      },
+      {
+        "group": "Not classified by religion",
+        "pct": 4.6,
+        "count": 107700
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.5,
+        "count": 12500
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 84.8,
+        "count": 2019300
+      },
+      {
+        "group": "Arabs",
+        "pct": 8.4,
+        "count": 199300
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 4.8,
+        "count": 114900
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.0,
+        "count": 47600
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "religion",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "match_by": "shape_id",
+    "shape_id": "19161824B470428506180",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 114,900 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Central District.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 1,145,600 men and 1,177,800 women in the Central District, the men being the table's total less its females, in thousands to one decimal.",
+    "religion_year": 2023,
+    "religion_basis": "religion as recorded in the population register",
+    "religion_note": "Israelis (citizens and permanent residents, not foreigners) by the religion the population register records, 31 December 2023, in thousands to one decimal. 'Not classified by religion' is the register's own category, mostly immigrants under the Law of Return who are not Jewish. The table lists the Druze only in the Northern and Haifa districts; the remaining 200 people of the Central District are of no religion it lists here."
+  },
+  {
+    "id": "ISR-CBS-Tel Aviv",
+    "level": "admin1",
+    "name": "Tel Aviv",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1526500,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Tel Aviv District, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 34.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 96.8,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": [
+      {
+        "group": "Judaism",
+        "pct": 91.7,
+        "count": 1352300
+      },
+      {
+        "group": "Not classified by religion",
+        "pct": 5.6,
+        "count": 82800
+      },
+      {
+        "group": "Muslims",
+        "pct": 1.7,
+        "count": 25500
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.9,
+        "count": 13400
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 88.6,
+        "count": 1352300
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 6.0,
+        "count": 91500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 3.4,
+        "count": 52100
+      },
+      {
+        "group": "Arabs",
+        "pct": 2.0,
+        "count": 30600
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "religion",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "match_by": "shape_id",
+    "shape_id": "19161824B77983365125372",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 91,500 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Tel Aviv District.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 725,500 men and 749,700 women in the Tel Aviv District, the men being the table's total less its females, in thousands to one decimal.",
+    "religion_year": 2023,
+    "religion_basis": "religion as recorded in the population register",
+    "religion_note": "Israelis (citizens and permanent residents, not foreigners) by the religion the population register records, 31 December 2023, in thousands to one decimal. 'Not classified by religion' is the register's own category, mostly immigrants under the Law of Return who are not Jewish. The table lists the Druze only in the Northern and Haifa districts; the remaining 400 people of the Tel Aviv District are of no religion it lists here."
+  },
+  {
+    "id": "ISR-CBS-Southern District",
+    "level": "admin1",
+    "name": "Southern District",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1485500,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Southern District, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 27.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": [
+      {
+        "group": "Judaism",
+        "pct": 70.7,
+        "count": 1027800
+      },
+      {
+        "group": "Muslims",
+        "pct": 22.4,
+        "count": 325700
+      },
+      {
+        "group": "Not classified by religion",
+        "pct": 6.3,
+        "count": 91900
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.5,
+        "count": 6900
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 69.2,
+        "count": 1027800
+      },
+      {
+        "group": "Arabs",
+        "pct": 22.0,
+        "count": 327000
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 6.6,
+        "count": 98000
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.2,
+        "count": 32600
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "religion",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "match_by": "shape_id",
+    "shape_id": "19161824B24193204184747",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 98,000 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Southern District.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 713,300 men and 723,000 women in the Southern District, the men being the table's total less its females, in thousands to one decimal.",
+    "religion_year": 2023,
+    "religion_basis": "religion as recorded in the population register",
+    "religion_note": "Israelis (citizens and permanent residents, not foreigners) by the religion the population register records, 31 December 2023, in thousands to one decimal. 'Not classified by religion' is the register's own category, mostly immigrants under the Law of Return who are not Jewish. The table lists the Druze only in the Northern and Haifa districts; the remaining 500 people of the Southern District are of no religion it lists here."
+  },
+  {
+    "id": "ISR-CBS-Zefat",
+    "level": "admin2",
+    "name": "Zefat",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 135000,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Zefat sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 100.0,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Zefat sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 84.6,
+        "count": 114200
+      },
+      {
+        "group": "Arabs",
+        "pct": 10.7,
+        "count": 14400
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 3.3,
+        "count": 4400
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.4,
+        "count": 1900
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Northern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B13386645158990",
+    "aliases": [
+      "Zefat sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 4,400 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Zefat sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 65,000 men and 65,000 women in the Zefat sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Kinneret",
+    "level": "admin2",
+    "name": "Kinneret",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 124800,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Kinneret sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 31.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 103.2,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Kinneret sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 66.2,
+        "count": 82600
+      },
+      {
+        "group": "Arabs",
+        "pct": 28.9,
+        "count": 36100
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 3.4,
+        "count": 4300
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.5,
+        "count": 1900
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Northern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B15624900320210",
+    "aliases": [
+      "Kinneret sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 4,300 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Kinneret sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 61,900 men and 60,000 women in the Kinneret sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Yizre'el",
+    "level": "admin2",
+    "name": "Yizre'el",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 565200,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Yizre'el sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 30.3,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Yizre'el sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Arabs",
+        "pct": 52.9,
+        "count": 299200
+      },
+      {
+        "group": "Jewish",
+        "pct": 42.7,
+        "count": 241300
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 3.5,
+        "count": 20000
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.8,
+        "count": 4600
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Northern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B83064859640631",
+    "aliases": [
+      "Yizre'el sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 20,000 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Yizre'el sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 276,400 men and 279,900 women in the Yizre'el sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Akko",
+    "level": "admin2",
+    "name": "Akko",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 688100,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Akko sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 31.3,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Akko sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Arabs",
+        "pct": 64.5,
+        "count": 444000
+      },
+      {
+        "group": "Jewish",
+        "pct": 30.8,
+        "count": 212000
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 4.2,
+        "count": 28900
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 3100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Northern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B83749751332199",
+    "aliases": [
+      "Akko sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 28,900 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Akko sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 341,700 men and 338,700 women in the Akko sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Golan",
+    "level": "admin2",
+    "name": "Golan",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The CBS counts the Golan Heights as the Golan sub-district of the Northern District; the map draws the Golan Heights within Syria's Quneitra governorate, and this shape is a sliver of it, so no CBS figure is this shape's."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The CBS counts the Golan Heights as the Golan sub-district of the Northern District; the map draws the Golan Heights within Syria's Quneitra governorate, and this shape is a sliver of it, so no CBS figure is this shape's."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The CBS counts the Golan Heights as the Golan sub-district of the Northern District; the map draws the Golan Heights within Syria's Quneitra governorate, and this shape is a sliver of it, so no CBS figure is this shape's."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS counts the Golan Heights as the Golan sub-district of the Northern District; the map draws the Golan Heights within Syria's Quneitra governorate, and this shape is a sliver of it, so no CBS figure is this shape's."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The CBS counts the Golan Heights as the Golan sub-district of the Northern District; the map draws the Golan Heights within Syria's Quneitra governorate, and this shape is a sliver of it, so no CBS figure is this shape's."
+    },
+    "sources": [],
+    "country": "ISR",
+    "parent_name": "Northern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B72335129252345"
+  },
+  {
+    "id": "ISR-CBS-Haifa",
+    "level": "admin2",
+    "name": "Haifa",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 633400,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Haifa sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 37.5,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 94.2,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Haifa sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 74.8,
+        "count": 473900
+      },
+      {
+        "group": "Arabs",
+        "pct": 12.1,
+        "count": 76800
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 11.4,
+        "count": 72500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.6,
+        "count": 10200
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Haifa",
+    "match_by": "shape_id",
+    "shape_id": "584046B37321511847561",
+    "aliases": [
+      "Haifa sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 72,500 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Haifa sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 301,000 men and 319,700 women in the Haifa sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Hadera",
+    "level": "admin2",
+    "name": "Hadera",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 515300,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Hadera sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 30.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Hadera sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 55.7,
+        "count": 287000
+      },
+      {
+        "group": "Arabs",
+        "pct": 39.9,
+        "count": 205800
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 3.4,
+        "count": 17700
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.9,
+        "count": 4800
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Haifa",
+    "match_by": "shape_id",
+    "shape_id": "584046B72217003232480",
+    "aliases": [
+      "Hadera sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 17,700 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Hadera sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 251,500 men and 253,300 women in the Hadera sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-HaSharon",
+    "level": "admin2",
+    "name": "HaSharon",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 512900,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Sharon sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 33.8,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 98.2,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Sharon sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 71.5,
+        "count": 366700
+      },
+      {
+        "group": "Arabs",
+        "pct": 20.9,
+        "count": 107200
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 5.6,
+        "count": 28900
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.0,
+        "count": 10200
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Central District",
+    "match_by": "shape_id",
+    "shape_id": "584046B61571705909900",
+    "aliases": [
+      "Sharon sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 28,900 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Sharon sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 248,600 men and 253,200 women in the Sharon sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Petah Tiqwa",
+    "level": "admin2",
+    "name": "Petah Tiqwa",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 828500,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Petah Tiqwa sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 33.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 96.2,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Petah Tiqwa sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 88.8,
+        "count": 735300
+      },
+      {
+        "group": "Arabs",
+        "pct": 5.1,
+        "count": 42300
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 4.0,
+        "count": 32800
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.2,
+        "count": 18100
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Central District",
+    "match_by": "shape_id",
+    "shape_id": "584046B54386898087809",
+    "aliases": [
+      "Petah Tiqwa sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 32,800 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Petah Tiqwa sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 396,300 men and 412,000 women in the Petah Tiqwa sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Ramla",
+    "level": "admin2",
+    "name": "Ramla",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 394500,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Ramla sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 30.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 100.0,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Ramla sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 82.3,
+        "count": 324800
+      },
+      {
+        "group": "Arabs",
+        "pct": 12.2,
+        "count": 48300
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 3.6,
+        "count": 14300
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.8,
+        "count": 7200
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Central District",
+    "match_by": "shape_id",
+    "shape_id": "584046B58948260517771",
+    "aliases": [
+      "Ramla sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 14,300 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Ramla sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 191,200 men and 191,200 women in the Ramla sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Rehovot",
+    "level": "admin2",
+    "name": "Rehovot",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 645300,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Rehovot sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 35.7,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 96.3,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Rehovot sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 91.8,
+        "count": 592600
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 6.0,
+        "count": 38900
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.9,
+        "count": 12200
+      },
+      {
+        "group": "Arabs",
+        "pct": 0.2,
+        "count": 1600
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Central District",
+    "match_by": "shape_id",
+    "shape_id": "584046B25822139954764",
+    "aliases": [
+      "Rehovot sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 38,900 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Rehovot sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 309,500 men and 321,400 women in the Rehovot sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Tel Aviv",
+    "level": "admin2",
+    "name": "Tel Aviv",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1526500,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Tel Aviv sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 34.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 96.8,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": [
+      {
+        "group": "Judaism",
+        "pct": 91.7,
+        "count": 1352300
+      },
+      {
+        "group": "Not classified by religion",
+        "pct": 5.6,
+        "count": 82800
+      },
+      {
+        "group": "Muslims",
+        "pct": 1.7,
+        "count": 25500
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.9,
+        "count": 13400
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 88.6,
+        "count": 1352300
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 6.0,
+        "count": 91500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 3.4,
+        "count": 52100
+      },
+      {
+        "group": "Arabs",
+        "pct": 2.0,
+        "count": 30600
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "religion",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Tel Aviv",
+    "match_by": "shape_id",
+    "shape_id": "584046B34315111222202",
+    "aliases": [
+      "Tel Aviv sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 91,500 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Tel Aviv sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 725,500 men and 749,700 women in the Tel Aviv sub-district, the men being the table's total less its females, in thousands to one decimal.",
+    "religion_year": 2023,
+    "religion_basis": "religion as recorded in the population register",
+    "religion_note": "Israelis (citizens and permanent residents, not foreigners) by the religion the population register records, 31 December 2023, in thousands to one decimal. 'Not classified by religion' is the register's own category, mostly immigrants under the Law of Return who are not Jewish. The table lists the Druze only in the Northern and Haifa districts; the remaining 400 people of the Tel Aviv sub-district are of no religion it lists here."
+  },
+  {
+    "id": "ISR-CBS-Ashqelon",
+    "level": "admin2",
+    "name": "Ashqelon",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 617100,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Ashqelon sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 32.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Ashqelon sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 88.8,
+        "count": 547800
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 8.5,
+        "count": 52200
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.4,
+        "count": 14900
+      },
+      {
+        "group": "Arabs",
+        "pct": 0.4,
+        "count": 2300
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Southern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B11408100439208",
+    "aliases": [
+      "Ashqelon sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 52,200 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Ashqelon sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 294,000 men and 302,100 women in the Ashqelon sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Be'er Sheva",
+    "level": "admin2",
+    "name": "Be'er Sheva",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 868300,
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+      "note": "The CBS's estimate for 31 December 2023 for the Be'er Sheva sub-district, published in thousands to one decimal (the nearest hundred people)."
+    },
+    "median_age": {
+      "value": 25.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "sex_ratio": {
+      "value": 99.6,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS publishes religion by sub-district only in part: Table 2.15 of the Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its Muslims, Christians, Druze and people of no classified religion only for the sub-districts where each is numerous, so no full religious breakdown of the Be'er Sheva sub-district is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": [
+      {
+        "group": "Jewish",
+        "pct": 55.3,
+        "count": 480000
+      },
+      {
+        "group": "Arabs",
+        "pct": 37.4,
+        "count": 324800
+      },
+      {
+        "group": "Others (not Jews or Arabs)",
+        "pct": 5.3,
+        "count": 45800
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.0,
+        "count": 17700
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.15: Israelis by district, sub-district and religion, 31 December 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.19: Israelis by age and sex, district and sub-district, average 2023",
+        "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx",
+        "year": 2023,
+        "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Southern District",
+    "match_by": "shape_id",
+    "shape_id": "584046B9730835639199",
+    "aliases": [
+      "Be'er Sheva sub-district"
+    ],
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "population group",
+    "ethnicity_note": "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews with the others as one group; the Jews are Table 2.15's count of the same date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews or Arabs)' is the rest of that group: non-Arab Christians, members of other religions and people the population register classifies by no religion, 45,800 people here. Arabs are the CBS's group of Muslims, Arab Christians and the Druze. Foreign nationals are residents who are neither citizens nor permanent residents. Published in thousands to one decimal.",
+    "median_age_note": "Median age of Israelis (citizens and permanent residents, not foreigners), average 2023: the CBS's own median for the Be'er Sheva sub-district.",
+    "sex_ratio_note": "Males per 100 females among Israelis, average 2023: 419,300 men and 420,900 women in the Be'er Sheva sub-district, the men being the table's total less its females, in thousands to one decimal."
+  },
+  {
+    "id": "ISR-CBS-Jerusalem",
+    "level": "admin2",
+    "name": "Jerusalem",
+    "parent": "ISR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": "Jerusalem",
+    "population": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here.",
+      "displaces_before": 2026
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No CBS table of language by district or sub-district could be found: the Statistical Abstract of Israel 2024's population chapter tabulates population group, religion, age and sex; UNdata's census tables reported to the UN Statistics Division hold no language table for Israel; and the CBS's census and social-survey pages could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer)."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The CBS's Jerusalem figures count all of Jerusalem's municipal area, East Jerusalem included, which the map draws within the West Bank; the CBS publishes no figure for the part of the district this shape is. Encyclopaedia figures for the district or the city of Jerusalem count East Jerusalem too, and are not shown here."
+    },
+    "sources": [
+      {
+        "field": "largest settlement",
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/",
+        "license": "CC BY 4.0",
+        "note": "Jerusalem (GeoNames 281184): its point, 35.21633 E 31.76904 N, lies inside this shape."
+      }
+    ],
+    "country": "ISR",
+    "parent_name": "Jerusalem District",
+    "match_by": "shape_id",
+    "shape_id": "584046B86518607604876",
+    "largest_settlement_note": "The city's population is not shown: published figures for Jerusalem count its whole municipal area, East Jerusalem included, which the map draws within the West Bank, and none is published for the part of the city inside this shape."
+  }
+]

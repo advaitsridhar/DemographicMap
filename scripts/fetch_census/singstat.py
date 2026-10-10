@@ -17,9 +17,9 @@ wrong.
 
 **Median age is derived, not published.** The table gives grouped bands, so the
 median is interpolated within whichever band contains the midpoint. That is
-standard demography and it is not a measurement -- ``median_age_note`` says so,
-because everywhere else in this map the median age is a figure a statistical
-office published directly.
+standard demography and it is not a measurement -- ``median_age_note`` says so.
+It does not claim the medians elsewhere are published ones: many on the map,
+Singapore's own planning areas among them, are interpolated the same way.
 
 Religion, ethnicity and language are all collected by Singapore's census, but
 none is published by planning region in this series, so each is an explicit
@@ -154,8 +154,7 @@ def median_from_bands(bands: dict[str, float]) -> float | None:
 
     Derived, not published: the table reports five-year groups, so this is the
     standard grouped-median interpolation rather than a figure the Department
-    calculated. Everywhere else in this map median age comes straight from a
-    statistical office, which is why the record says which one this is.
+    calculated, which is why the record says which one this is.
     """
     ordered = []
     for label, count in bands.items():
@@ -203,8 +202,7 @@ def build(year: str, regions: dict[str, dict[str, Any]]) -> list[dict[str, Any]]
             median_age_note=(
                 "Interpolated from the five-year age bands SingStat publishes, not a "
                 "median the Department reported. It is also the median age of "
-                "residents only. Elsewhere on this map median age is a published "
-                "figure, so the two are not exactly like for like."),
+                "residents only."),
             religion=gap(NOT_AVAILABLE, NOT_BY_REGION),
             ethnicity=gap(NOT_AVAILABLE, NOT_BY_REGION),
             language=gap(NOT_AVAILABLE, NOT_BY_REGION),

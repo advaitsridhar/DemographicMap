@@ -63,6 +63,12 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Protestant (Mixed)", "Mixed Catholic / Protestant",
         "Non-denominational Christian", "Christian Fellowship Church",
         "Independent", "African Independent Church",
+        # The Pacific censuses' rows for the churches they do not name
+        # (Vanuatu, Samoa), and the smaller bodies Samoa's, Tonga's and
+        # Nauru's censuses do name whose tradition their tables do not state:
+        # Christian, and no more is claimed for them here.
+        "Other churches", "Bible Study", "Peace Chapel", "Samoa Evangelism",
+        "Mo'ui Fo'ou 'ia Kalaisi", "Pacific Light House",
     ),
     "Catholicism": (
         "Catholic", "Roman Catholic", "Catholicism", "Catholics",
@@ -106,6 +112,9 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Independent Congregation of Hafnarfjordur",
         "Evangelical Church of the Augsburg Confession",
         "Kiribati Protestant Church", "Kiribati Uniting Church",
+        # Samoa's 2021 census: the Church of the Nazarene (Wesleyan-Holiness)
+        # and the Samoa Independent Seventh-day Adventist Church.
+        "Nazarene", "Aso Fitu (SISDAC)",
         "Congregational Christian Church", "Ekalesia Niue",
         "Church of Jesus Christ in Madagascar/Malagasy Lutheran Church/Anglican Church",
         "Awakening Churches/Christian Revival", "Apostolic Sect",
@@ -222,7 +231,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
                  # countries under its own name on a map whose
                  # Buddhist colour they should have carried.
                  "Lamaistic Buddhist", "Lamaistic", "Lamaism"),
-    "Judaism": ("Jewish", "Judaism", "Jew", "Jews"),
+    # The last clause of the Factbook's Lebanon row, kept as its own label.
+    "Judaism": ("Jewish", "Judaism", "Jew", "Jews", "very small numbers of Jews"),
     "Sikhism": ("Sikh", "Sikhism", "Sikha", "Sikhs"),
     "Jainism": ("Jain", "Jainism", "Jains"),
     "Taoism": ("Taoist", "Taoism", "Dao", "Daoism"),
@@ -239,7 +249,12 @@ RELIGION: dict[str, tuple[str, ...]] = {
     # religion -- the tree parented "Non Christians" under Protestantism.
     "Other religions (not separately named)": (
         "Other religions (not separately named)", "Non Christians",
-        "Non Christian", "Non-Christians"),
+        "Non Christian", "Non-Christians",
+        # The Factbook's spellings of the same answer: Papua New Guinea's
+        # and Lesotho's "non-Christian", and Seychelles' "other
+        # non-Christian" after its named religions. The word rules read
+        # "Christian" in both and filed them under Protestantism.
+        "non-Christian", "other non-Christian"),
     "Zoroastrianism": ("Zoroastrian", "Zoroastrianism", "Parsi", "Parsee",
                        "Parsi/Zorastrian", "Parsi / Zorastrian", "Zorastrian"),
     "Baha'i": ("Baha'i", "Bahai", "Bahá'í", "Baha'i Faith", "Bahais",
@@ -271,6 +286,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Traditional/Ethnic religion", "Traditional/ethnic religion",
         # Brazil's 2022 column for the religions of its indigenous peoples.
         "Indigenous traditions",
+        # Solomon Islands' 2019 census column (solomon_census).
+        "Custom beliefs or animism",
     ),
     # Maori churches. Stats NZ classifies these apart from Christian and this
     # follows it: Ratana and Ringatu are Christian in origin but are counted,
@@ -309,6 +326,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
         # cannot be split, so they stay at the level that contains both.
         "agnostic/atheist", "agnostic or atheist", "none/atheist",
         "nonbeliever/agnostic", "atheist or agnostic", "non-believer/agnostic",
+        # Croatia's country row, the same pair in other words.
+        "none or atheist",
     ),
     # Two positions several censuses count separately and side by side, and
     # which are therefore groups of their own rather than spellings of the one
@@ -1083,6 +1102,22 @@ PARENT: dict[str, dict[str, str]] = {
         # respondent saying they are not religious, which the lower-case
         # "believer" pattern would file with the unaffiliated.
         "Indifferent / non-believer": "No religion",
+        # Viet Nam's 2009 census (vietnam_religion) counts two lay Buddhist
+        # movements of the Mekong delta apart, under their own names: Buu Son
+        # Ky Huong, the millenarian Buddhist tradition Hoa Hao Buddhism grew
+        # from, and Tu An Hieu Nghia, which grew from it in turn. Filed where
+        # Hoa Hao Buddhism is, rather than as two religions of their own.
+        "Buu Son Ky Huong": "Buddhism",
+        "Tu An Hieu Nghia": "Buddhism",
+        # Pakistan's census offers "Scheduled Castes" beside "Hindu (Jati)"
+        # as an answer to its religion question: the Hindu Dalit castes
+        # scheduled under the Scheduled Castes (Declaration) Ordinance --
+        # Meghwar, Kolhi, Bheel, Oad and the rest. The census counts them
+        # apart, so they are their own group; they are Hindus, so the group
+        # is a child of Hinduism, the way Ismailism is a child of Shia
+        # Islam. Filed under "Not stated", Tharparkar's Scheduled Castes had
+        # been read as people who named no religion.
+        "Scheduled Castes": "Hinduism",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of

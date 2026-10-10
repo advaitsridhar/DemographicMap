@@ -53,6 +53,13 @@ def east_tables() -> dict[str, sg.Table]:
             "language_2010": table(CENSUS_2010, national=3000)}
 
 
+class TheLabels(unittest.TestCase):
+    def test_the_indian_race_is_written_with_its_country(self):
+        # A bare "Indian" is the nationality a European or Korean register
+        # counts; the census's is one of Singapore's four races.
+        self.assertEqual(sg.ETHNIC_COLUMNS["Indians_Total"], "Indian (Singapore)")
+
+
 class TheRegions(unittest.TestCase):
     def test_the_five_regions_hold_the_55_shapes_once_each(self):
         areas = [a for areas in sg.REGIONS.values() for a in areas]
