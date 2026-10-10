@@ -158,6 +158,7 @@ def units(blob: bytes) -> dict[str, dict[str, Any]]:
     current: dict[str, Any] | None = None
     tier = 1
     combined = False
+    sub_open: dict[str, Any] | None = None
     for row in sheet.iter_rows():
         cell = row[0]
         name = " ".join(str(cell.value or "").split())
@@ -190,12 +191,31 @@ def units(blob: bytes) -> dict[str, dict[str, Any]]:
             block["units"].append(current)
             current["towns"] += [" ".join(t.split()) for t in TOWN.findall(name)]
             current["places"] = settlements(name, *values)
+            current["parts"] = []
+            sub_open = None
             continue
         if current is not None and depth > tier:
             if name.startswith("Сельское население") and values[0]:
                 current["rural"] += values[0]
             current["towns"] += [" ".join(t.split()) for t in TOWN.findall(name)]
             current["places"] += settlements(name, *values)
+            # The formation's own urban and rural rows, one level in, and the
+            # settlements an unnamed urban row is made of, one level further:
+            # what a formation that spans a town's polygon and a district's
+            # can be split by (split_okrug).
+            if depth == tier + 1:
+                opened = None
+                if re.match(r"(Городское|Сельское) население", name):
+                    opened = {"urban": name.startswith("Городское"), "label": name,
+                              "total": values[0], "men": values[1], "women": values[2],
+                              "places": settlements(name, *values), "sub": []}
+                    current["parts"].append(opened)
+                # Rows one level further belong to this row only while no
+                # other row of its level has come between.
+                sub_open = opened if opened and opened["urban"] and not opened["places"] \
+                    else None
+            elif depth == tier + 2 and sub_open is not None:
+                sub_open["sub"] += settlements(name, *values)
     book.close()
     return out
 
@@ -834,9 +854,140 @@ RATIO = 2.5
 REST = (0.7, 1.3)
 
 
+# Settlement kinds that are urban without being towns: an okrug's urban row
+# may hold these beside its town, and they go with the district around it.
+URBAN_TYPE = {"пгт", "рп", "рабочий поселок", "поселок городского типа"}
+
+
+def split_okrug(cu: dict[str, Any], town_sid: str, rest_sid: str,
+                placed: list[tuple[str, float, str, str]], name_of: dict[str, str],
+                kind_of: dict[str, str | None],
+                figure_of: dict[str, float | None] | None = None
+                ) -> tuple[dict[str, Any], dict[str, Any]] | str:
+    """The town's row and the rest of an okrug, as two units, or why not.
+
+    An okrug made of a town and the district around it, which the map still
+    draws as two polygons, is counted by the census as one unit -- and, one
+    row in, as its urban population and its rural population, each with its
+    sex. Where the urban population is the town alone (or the town and
+    urban-type settlements, пгт, which lie in the district), the town's row
+    is the town polygon's own count and the okrug less the town is the
+    district polygon's. Taken only when all of these hold:
+
+    - the okrug's urban and rural rows are one each and make its total, and
+      its urban row is exactly one town (г.) and any number of пгт;
+    - GeoNames puts the town inside the town's polygon, and none of the
+      okrug's other settlements there;
+    - the town's polygon is not a district's, and the other polygon is one;
+    - where either polygon carries a figure from another source, its part is
+      within REST of it (Serpukhov's rest, 47,237, is 1.33 times the 35,551
+      Serpukhovsky District carries, and is refused).
+
+    Returns the two units, or a sentence saying which condition failed.
+    """
+    parts = cu.get("parts") or []
+    urban = [p for p in parts if p["urban"]]
+    rural = [p for p in parts if not p["urban"]]
+    if len(urban) != 1 or len(rural) > 1:
+        return "its urban and rural rows are not one of each"
+    up = urban[0]
+    rp = rural[0] if rural else {"total": 0.0, "men": 0.0, "women": 0.0}
+    for key in ("total", "men", "women"):
+        if abs((up[key] or 0) + (rp[key] or 0) - (cu[key] or 0)) > 0.5:
+            return f"its urban and rural rows do not make its {key}"
+    rows = up["places"] or up["sub"]
+    towns = [p for p in rows if p[0] == "г."]
+    if len(towns) != 1 or any(p[0] not in URBAN_TYPE for p in rows if p[0] != "г."):
+        return "its urban population is not one town and urban-type settlements"
+    if abs(sum(p[2] for p in rows) - (up["total"] or 0)) > 0.5:
+        return "its urban row's settlements do not make it"
+    _, town, people, men, women = towns[0]
+    if men is None or women is None or abs(men + women - people) > 0.5:
+        return f"the row for {town} does not give its sex"
+    if kind_of.get(town_sid) == "district" or kind_of.get(rest_sid) != "district":
+        return "the polygons are not a town's and a district's"
+    where = [s for s, _, name, _ in placed if name == town]
+    if where != [town_sid]:
+        return (f"GeoNames does not put {town} inside {name_of.get(town_sid, town_sid)!r}")
+    inside = [name for s, _, name, _ in placed if s == town_sid and name != town]
+    if inside:
+        return (f"{', '.join(inside)}, also of the okrug, lie inside "
+                f"{name_of.get(town_sid, town_sid)!r}")
+    rest = {k: (cu[k] or 0) - v for k, v in (("total", people), ("men", men),
+                                             ("women", women))}
+    if min(rest.values()) <= 0:
+        return "nothing is left of the okrug outside the town"
+    for sid, part in ((town_sid, people), (rest_sid, rest["total"])):
+        held = (figure_of or {}).get(sid)
+        if held and not REST[0] <= part / held <= REST[1]:
+            return (f"its part for {name_of.get(sid, sid)!r}, {part:,.0f}, is "
+                    f"{part / held:.2f} times the {held:,.0f} that polygon carries")
+    others = [p for p in rows if p[0] != "г."]
+    outside = f"its rural population ({rp['total'] or 0:,.0f})"
+    if others:
+        outside += " and the urban-type settlement" + ("s" if len(others) > 1 else "") \
+            + " of " + ", ".join(f"{p[1]} ({p[2]:,.0f})" for p in others)
+    town_unit = {
+        "name": f"г. {town}", "total": people, "men": men, "women": women,
+        "towns": [town], "places": [], "parts": [], "rural": 0.0,
+        "stems": cu["stems"], "split_of": cu["name"],
+        "own_note": (
+            f"Everyone the 2020 census counted (reference date 1 October 2021) in the "
+            f"town of {town}, from the town's own row of the census's table. The census "
+            f"counts the town within {cu['name']} ({cu['total']:,.0f} people), whose "
+            f"other {rest['total']:,.0f} people live outside the town and are shown on "
+            f"{name_of.get(rest_sid, rest_sid)}, which the map draws beside it.")}
+    rest_unit = {
+        "name": f"{cu['name']} less г. {town}", "total": rest["total"],
+        "men": rest["men"], "women": rest["women"], "towns": [], "places": [],
+        "parts": [], "rural": rp["total"] or 0.0, "stems": cu["stems"],
+        "split_of": cu["name"],
+        "own_note": (
+            f"Everyone the 2020 census counted (reference date 1 October 2021) in "
+            f"{cu['name']} outside the town of {town}: {outside}, from the okrug's own "
+            f"rows of the census's table. The town ({people:,.0f} people), which the "
+            f"census counts in the same okrug, is shown on "
+            f"{name_of.get(town_sid, town_sid)}, which the map draws as a polygon of "
+            "its own.")}
+    return town_unit, rest_unit
+
+
+def carried(shape: dict[str, Any], labels: dict[str, dict[str, Any]],
+            linked: dict[str, dict[str, Any]] | None) -> dict[str, Any]:
+    """The figure a polygon carries from another source, or {}.
+
+    The map's figure is this file's own once a build has run: the comparison
+    is then with the figure the linked item carries, which the census's
+    replaced, so a second run decides as the first did. A population that
+    came with a link to the wrong item says nothing about this polygon.
+    """
+    pop = shape.get("population") or {}
+    if pop.get("source") == SOURCE:
+        pop = (linked or {}).get(shape.get("wikidata") or "") or {}
+    label = labels.get(shape.get("wikidata") or "")
+    if label and label.get("ru") and not label_agrees(shape["name"], label["ru"]):
+        pop = {}
+    return pop
+
+
+def spanning_reason(unit: str, total: float, polygons: list[str], here: str,
+                    held: dict[str, float]) -> str:
+    """Why a polygon gets no figure when its okrug spans several of them.
+
+    Said from the polygon's own side: the others are named, never itself.
+    """
+    others = ["this one"] + [p for p in polygons if p != here]
+    towns = "".join(f" {'This one' if p == here else p} holds {held[p]:,.0f} of its "
+                    "people in its towns." for p in polygons if held.get(p))
+    return (f"The 2020 census counts {unit} ({total:,.0f} people) as one unit, and the "
+            f"map draws it as more than one polygon: {', '.join(others[:-1])} and "
+            f"{others[-1]}.{towns} Its count belongs to no one polygon, so none is "
+            "written.")
+
+
 def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
              admin2: list[dict[str, Any]], labels: dict[str, dict[str, Any]],
-             shapes_geo: dict[str, Any]
+             shapes_geo: dict[str, Any], linked: dict[str, dict[str, Any]] | None = None
              ) -> tuple[dict[str, dict[str, Any]], list[str], dict[str, str]]:
     """{polygon id: {subject, members}} for all of Russia, the log of what was
     not bound, and {polygon id: why it has no census figure} for the rest."""
@@ -880,6 +1031,13 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         # found to span polygons is then not placed anywhere by its towns
         # either: its count belongs to two polygons and so to neither.
         spanning: set[int] = set()
+        kind_of = {sh["id"]: shape_kind(sh["name"]) for sh in shapes}
+        figure_of = {sh["id"]: carried(sh, labels, linked).get("value") for sh in shapes}
+        # Okrugs split into the town's row and the rest (split_okrug):
+        # (formation, town polygon, district polygon, the two units, the
+        # reason written if the split cannot be kept).
+        splits: list[tuple[int, str, str, dict[str, Any], dict[str, Any],
+                           dict[str, str]]] = []
         for i, sid in list(bound.items()):
             total = cunits[i]["total"] or 0
             own = cunits[i]["stems"][0]
@@ -896,15 +1054,21 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                               f"{name_of[sid]!r} but {sum(away.values()):,.0f} of its "
                               f"{total:,.0f} people live in towns the map draws in "
                               f"{where}; it spans polygons and is not bound")
-                reason = (f"The 2020 census counts {cunits[i]['name']} ({total:,.0f} "
-                          f"people) as one unit, and the map draws it as more than one "
-                          f"polygon: this one and {where.split(' (')[0]}, which holds "
-                          f"{sum(away.values()):,.0f} of its people in its towns. Its "
-                          "count belongs to no one polygon, so none is written.")
-                for s in [sid, *away]:
-                    why.setdefault(s, reason)
+                polygons = [name_of[s] for s in [sid, *away]]
+                held = {name_of[s]: n for s, n in away.items()}
+                reasons = {s: spanning_reason(cunits[i]["name"], total, polygons,
+                                              name_of[s], held) for s in [sid, *away]}
                 del bound[i]
                 spanning.add(i)
+                split = (split_okrug(cunits[i], next(iter(away)), sid, placed_at[i],
+                                     name_of, kind_of, figure_of) if len(away) == 1
+                         else "its towns lie in more than one other polygon")
+                if isinstance(split, tuple):
+                    splits.append((i, next(iter(away)), sid, *split, reasons))
+                    continue
+                report.append(f"{subject}: {cunits[i]['name']!r} is not split: {split}")
+                for s, reason in reasons.items():
+                    why.setdefault(s, reason)
         # The other way round: an okrug made from a town and the district
         # around it, bound to the town's polygon while the boundary file still
         # draws the district beside it (Pereslavl-Zalessky and Pereslavsky
@@ -935,16 +1099,25 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                               f"it, which the map still draws apart as "
                               f"{name_of[sid]!r} and {sh['name']!r}. Its count belongs "
                               "to neither polygon, so none is written.")
-                    why.setdefault(sid, reason)
-                    why.setdefault(sh["id"], reason)
+                    reasons = {sid: reason, sh["id"]: reason}
                     # And the polygons its other towns lie in (Ozyory's).
-                    for s, _, town, kind in placed_at[i]:
+                    for s, _, other, kind in placed_at[i]:
                         if kind == "г." and s not in (sid, sh["id"]):
-                            why.setdefault(s, reason[:-len("so none is written.")]
-                                           + f"and it takes in {town}, which lies in this "
-                                           "polygon; so none is written.")
+                            reasons.setdefault(s, reason[:-len("so none is written.")]
+                                               + f"and it takes in {other}, which lies "
+                                               "in this polygon; so none is written.")
                     del bound[i]
                     spanning.add(i)
+                    split = split_okrug(cu, sid, sh["id"], placed_at[i], name_of,
+                                        kind_of, figure_of)
+                    if isinstance(split, tuple) and len(reasons) == 2:
+                        splits.append((i, sid, sh["id"], *split, reasons))
+                        break
+                    report.append(f"{subject}: {cu['name']!r} is not split: "
+                                  + (split if isinstance(split, str)
+                                     else "its towns lie in a third polygon"))
+                    for s, why_not in reasons.items():
+                        why.setdefault(s, why_not)
                     break
         members: dict[str, list[int]] = {sid: [i] for i, sid in bound.items()}
         how: dict[str, str] = {sid: "name" for sid in members}
@@ -991,6 +1164,27 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                     "units (" + ", ".join(cunits[j]["name"] for j in js) + "), and "
                     "which of them it draws cannot be told, so no figure is written."))
 
+        # The split okrugs, where nothing else has claimed either polygon:
+        # the town's row on the town's polygon, the rest on the district's.
+        for i, town_sid, rest_sid, town_unit, rest_unit, reasons in splits:
+            if town_sid in members or rest_sid in members or town_sid in pending \
+                    or rest_sid in pending:
+                report.append(f"{subject}: {cunits[i]['name']!r} is not split: another "
+                              "formation lies in one of its polygons")
+                for s, reason in reasons.items():
+                    why.setdefault(s, reason)
+                continue
+            for sid, unit in ((town_sid, town_unit), (rest_sid, rest_unit)):
+                j = len(cunits)
+                cunits.append(unit)
+                placed_at[j], located[j] = [], Counter()
+                members[sid] = [j]
+                how[sid] = "split okrug"
+            report.append(f"{subject}: {cunits[i]['name']!r} ({cunits[i]['total']:,.0f}) "
+                          f"split: the town's row {town_unit['total']:,.0f} to "
+                          f"{name_of[town_sid]!r}, the rest {rest_unit['total']:,.0f} to "
+                          f"{name_of[rest_sid]!r}")
+
         # A polygon's current figure, where it has one, and the census's
         # cannot be worlds apart -- unless the formation's own towns, placed
         # inside the polygon, are the difference.
@@ -998,12 +1192,7 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         for sid, js in list(members.items()):
             shape = next(sh for sh in shapes if sh["id"] == sid)
             total = sum(cunits[j]["total"] or 0 for j in js)
-            pop = shape.get("population") or {}
-            label = labels.get(shape.get("wikidata") or "")
-            # A population that came with a link to the wrong item says
-            # nothing about this polygon.
-            if label and label.get("ru") and not label_agrees(shape["name"], label["ru"]):
-                pop = {}
+            pop = carried(shape, labels, linked)
             ratio = total / pop["value"] if pop.get("value") else None
             if ratio is not None and ratio > RATIO:
                 inside = [(town, n) for j in js for s, n, town, kind in placed_at[j]
@@ -1087,8 +1276,10 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                            "members": [cunits[j] for j in js], "extra": extra.get(sid, ""),
                            "moved_out": moved_out.get(sid, []),
                            "moved_in": moved_in.get(sid, [])}
+        split_up = {cunits[j].get("split_of") for js in members.values() for j in js}
         left = [cu["name"] for j, cu in enumerate(cunits)
-                if not any(j in js for js in members.values())]
+                if not any(j in js for js in members.values())
+                and cu["name"] not in split_up]
         empty = [sh for sh in shapes if sh["id"] not in members]
         for sh in empty:
             why.setdefault(sh["id"], (
@@ -1100,6 +1291,20 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             report.append(f"{subject}: formations left {left}; polygons left "
                           f"{[sh['name'] for sh in empty]}")
     return groups, report, why
+
+
+def linked_populations() -> dict[str, dict[str, Any]]:
+    """{Wikidata item: its population} for Russia's second level, as the
+    Wikidata sweep wrote it: what a polygon carried before this file's figure
+    replaced it."""
+    path = PROCESSED / "wikidata_admin2.json"
+    if not path.exists():
+        return {}
+    rows = json.loads(path.read_text())
+    rows = rows.get("records", rows) if isinstance(rows, dict) else rows
+    return {r["id"].split("-WD-", 1)[1]: r["population"] for r in rows
+            if r.get("country") == "RUS" and "-WD-" in r.get("id", "")
+            and isinstance(r.get("population"), dict) and r["population"].get("value")}
 
 
 def figures(group: dict[str, Any]) -> tuple[float, float, float]:
@@ -1155,7 +1360,7 @@ def main() -> int:
     admin2 = json.loads((SITE / "admin2" / "RUS.units.json").read_text())
     labels = json.loads(LABELS.read_text())
     groups, report, why = bind_all(table, admin1, admin2, labels,
-                                   east_geo.polygons("RUS"))
+                                   east_geo.polygons("RUS"), linked_populations())
     for line in report:
         log("  " + line)
     records = []
@@ -1165,12 +1370,16 @@ def main() -> int:
         total, men, women = figures(g)
         names = [u["name"] for u in members]
         how_many[g["how"]] += 1
-        note = ("Everyone the 2020 census counted (reference date 1 October 2021) in "
-                + names[0])
-        if len(names) > 1:
-            note += (" and in " + ", ".join(names[1:]) + ", which the census counts "
-                     "apart and the map draws inside this polygon")
-        note += "." + g.get("extra", "") + moved_note(g)
+        if len(members) == 1 and members[0].get("own_note"):
+            note = members[0]["own_note"]
+        else:
+            note = ("Everyone the 2020 census counted (reference date 1 October 2021) in "
+                    + names[0])
+            if len(names) > 1:
+                note += (" and in " + ", ".join(names[1:]) + ", which the census counts "
+                         "apart and the map draws inside this polygon")
+            note += "."
+        note += g.get("extra", "") + moved_note(g)
         records.append(record(
             f"RUS-VPN2020-{sid}", g["shape"], level="admin2", parent="RUS",
             country="RUS", match_by="shape_id", shape_id=sid,
@@ -1202,7 +1411,10 @@ def main() -> int:
         raise SystemExit(f"russia_municipal: the polygons are written with {written:,.0f} "
                          f"people and their units count {held:,.0f}")
     formations = sum(len(b["units"]) for k, b in table.items() if k not in NOT_DRAWN)
-    placed = sum(len(g["members"]) for g in groups.values())
+    # A split okrug's two parts are one formation.
+    placed = sum(1 for g in groups.values() for u in g["members"] if not u.get("split_of"))
+    placed += len({(g["subject"], u["split_of"]) for g in groups.values()
+                   for u in g["members"] if u.get("split_of")})
     bound_n = len(groups)
     log(f"  {bound_n} of {len(admin2)} polygons bound ({dict(how_many)}), holding "
         f"{placed} of {formations} formations; {len(records) - bound_n} polygons "
