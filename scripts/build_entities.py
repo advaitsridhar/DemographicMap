@@ -4747,6 +4747,45 @@ def state_population_gaps(admin0: list[dict[str, Any]],
     return said
 
 
+def country_from_sole_unit(admin0: list[dict[str, Any]],
+                           admin1_by_country: dict[str, list[dict[str, Any]]]
+                           ) -> list[str]:
+    """A country with no population takes its one first-level unit's figure.
+
+    Western Sahara's record had none: the Factbook gives the territory no
+    population, while the one unit the boundary file draws inside it -- the
+    same outline (it covers all of the country and nothing else, measured on
+    the boundary file) -- carries the UN's 2021 estimate. A unit that is the
+    whole country is the country's ground, so its figure is the country's.
+    The disputed areas, each drawn as a country of one unit, are left alone:
+    their record already says why nothing is joined to them, and that is what
+    the panel shows. A country whose population is not applicable keeps that.
+    """
+    done: list[str] = []
+    for country in admin0:
+        if country.get("disputed"):
+            continue
+        pop = country.get("population")
+        if published(pop) is not None or (isinstance(pop, dict)
+                                           and pop.get("status") == NOT_APPLICABLE):
+            continue
+        units = [u for u in admin1_by_country.get(country["id"], []) if not u.get("water")]
+        if len(units) != 1 or published(units[0].get("population")) is None:
+            continue
+        unit = units[0]
+        country["population"] = {k: v for k, v in unit["population"].items()
+                                 if k in ("value", "unit", "year", "source")}
+        country["population_note"] = (
+            "The figure of the one first-level unit the map draws for it, which "
+            "covers the whole territory.")
+        cited = [dict(src) for src in unit.get("sources", [])
+                 if "population" in str(src.get("field") or "").split("/")]
+        if cited:
+            country["sources"] = [*country.get("sources", []), *cited]
+        done.append(f"{country['id']} {published(unit['population']):,.0f}")
+    return done
+
+
 def note_population_gaps(admin0: list[dict[str, Any]],
                          admin1_by_country: dict[str, list[dict[str, Any]]],
                          admin2_by_country: dict[str, list[dict[str, Any]]]) -> list[str]:
@@ -9930,6 +9969,9 @@ def main() -> int:
     if unsummed:
         log(f"  {len(unsummed)} country notes say why the first level is not added "
             f"up: " + ", ".join(unsummed))
+    # A country with no figure whose one unit is the whole country.
+    for line in country_from_sole_unit(admin0, admin1_by_country):
+        log(f"  country population from its one first-level unit: {line}")
 
     # -- derived values ------------------------------------------------------
     # After the country row is final and before the bare fields are explained:

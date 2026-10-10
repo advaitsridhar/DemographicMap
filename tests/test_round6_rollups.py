@@ -262,17 +262,21 @@ class CountryCounts(unittest.TestCase):
         self.assertEqual(curated("MCO", "sex_ratio")["value"], 969)
 
     def test_note_only_rows_leave_the_figure(self):
-        for iso3 in ("BTN", "LAO", "UKR"):
+        for iso3 in ("BTN", "LAO", "UKR", "ERI"):
             row = curated(iso3, "population")
             self.assertLessEqual(set(row), be.NOTE_ONLY, iso3)
         self.assertIn("18.6% below", curated("BTN", "population")["note"])
         self.assertIn("7,631,798", curated("LAO", "population")["note"])
+        # Eritrea's regions, restated to their subzones' 2001 sum, add up to
+        # the figure the note names, so no second sentence is written.
+        self.assertIn("no census since independence", curated("ERI", "population")["note"])
+        self.assertIn("2,908,795", curated("ERI", "population")["note"])
 
     def test_visitor_notes_name_no_files_or_code(self):
         rows = json.loads(CURATED.read_text(encoding="utf-8"))["rows"]
         for row in rows:
             if row["country"] in ("TKM", "KWT", "OMN", "MDV", "PRY", "GTM", "XKX", "MCO",
-                                  "MDA", "GEO", "BTN", "LAO", "UKR") and \
+                                  "MDA", "GEO", "BTN", "LAO", "UKR", "ERI") and \
                     row["field"] in ("population", "median_age", "sex_ratio"):
                 for bad in (".json", ".py", "adapter", "build", "SUPERSEDED", "cod-ps"):
                     self.assertNotIn(bad, row["note"], (row["country"], bad))
@@ -502,6 +506,49 @@ class StatedPopulationGaps(unittest.TestCase):
         abyei["population"]["note"] = "Its own reason."
         be.state_population_gaps([], {"SDN": [abyei]})
         self.assertEqual(abyei["population"]["note"], "Its own reason.")
+
+
+class CountryFromSoleUnit(unittest.TestCase):
+    """Western Sahara's country takes the figure of the one unit that is all of it (rollups-65)."""
+
+    def test_the_one_unit_figure_reaches_an_empty_country(self):
+        esh = {"id": "ESH", "name": "Western Sahara", "population": {"status": "not_available"},
+               "sources": [{"field": "*", "name": "CIA World Factbook"}]}
+        sahara = unit("DIS020", "Western Sahara", 565_581, 2021,
+                      "English Wikipedia, Western Sahara (infobox)", parent="ESH")
+        sahara["population"]["unit"] = "people"
+        sahara["sources"] = [{"field": "population", "name": "Wikipedia", "url": "u"},
+                             {"field": "capital", "name": "GeoNames"}]
+        done = be.country_from_sole_unit([esh], {"ESH": [sahara]})
+        self.assertEqual(done, ["ESH 565,581"])
+        self.assertEqual(esh["population"], {"value": 565_581, "year": 2021, "unit": "people",
+                                             "source": "English Wikipedia, Western Sahara (infobox)"})
+        self.assertIn("covers the whole territory", esh["population_note"])
+        self.assertIn({"field": "population", "name": "Wikipedia", "url": "u"}, esh["sources"])
+        self.assertNotIn({"field": "capital", "name": "GeoNames"}, esh["sources"])
+
+    def test_what_stays(self):
+        cases = {
+            "a country with its own figure": (
+                {"id": "VAT", "population": {"value": 1000, "year": 2024}},
+                [unit("V", "Vatican City", 882, 2024)]),
+            "not applicable": (
+                {"id": "ATA", "population": {"status": "not_applicable", "note": "None live."}},
+                [unit("A", "Antarctica", 10, 2020)]),
+            "a disputed area": (
+                {"id": "129", "disputed": True, "population": {"status": "not_available"}},
+                [unit("W", "West Bank", 2_949_246, 2021)]),
+            "two units": (
+                {"id": "XYZ", "population": {"status": "not_available"}},
+                [unit("A", "A", 10, 2020), unit("B", "B", 20, 2020)]),
+            "a unit without a figure": (
+                {"id": "XYZ", "population": {"status": "not_available"}}, [unit("A", "A")]),
+        }
+        for case, (country, units) in cases.items():
+            before = copy.deepcopy(country)
+            self.assertEqual(be.country_from_sole_unit([country], {country["id"]: units}), [],
+                             case)
+            self.assertEqual(country, before, case)
 
 
 class OneSexRatioUnit(unittest.TestCase):
