@@ -5662,6 +5662,14 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # Factbook prints it (Protestant 23.6%, Hindu 22.3%, Roman Catholic 21.6%).
     ("SUR", "religion"): "its districts' religion comes from two censuses, 2004 "
                          "and 2012, and no sum across them is either",
+    # paraguay_census gives the 18 departments the 2002 census's religion
+    # (INE's REDATAM base CPV2002), the latest it publishes by department;
+    # the country carries the Factbook's line of 2023. The 2022 census's
+    # department populations brought the sum within the population gate,
+    # which is why this has to be said rather than left to the gate: a sum
+    # would put Catholics at 90.5% of 2002 over the 80.4% of 2023.
+    ("PRY", "religion"): "its departments' religion is the 2002 census's, and the "
+                         "country's figure is of 2023",
     # malta_census gives each locality the main language of its Maltese
     # citizens (Volume 3, Table 3.6) as shares of all its residents aged 5 and
     # over; the NSO tabulates the other fifth of residents by district only.
