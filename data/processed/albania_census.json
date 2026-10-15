@@ -2595,7 +2595,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B3220488890929",
     "parent_name": "Berat",
-    "population_note": "The 2011 census's 12 municipalities and communes that made up the district of Berat, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 12 municipalities and communes that made up the district of Berat, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the districts of Kuçovë and Skrapar, it covers the municipalities of Berat, Dimal, Kuçovë, Poliçan and Skrapar, 140,956 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B36949901982284",
@@ -2649,7 +2649,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B36949901982284",
     "parent_name": "Berat",
-    "population_note": "The 2011 census's 3 municipalities and communes that made up the district of Kuçovë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 3 municipalities and communes that made up the district of Kuçovë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the districts of Berat and Skrapar, it covers the municipalities of Berat, Dimal, Kuçovë, Poliçan and Skrapar, 140,956 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B62055143354216",
@@ -2703,7 +2703,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B62055143354216",
     "parent_name": "Berat",
-    "population_note": "The 2011 census's 10 municipalities and communes that made up the district of Skrapar, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 10 municipalities and communes that made up the district of Skrapar, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the districts of Berat and Kuçovë, it covers the municipalities of Berat, Dimal, Kuçovë, Poliçan and Skrapar, 140,956 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B60153855067708",
@@ -2825,19 +2825,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 44218,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 29577,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 100.6,
+      "value": 101.5,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -2854,10 +2854,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -2865,7 +2865,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B55788488782298",
     "parent_name": "Dibër",
-    "population_note": "The 2011 census's 12 municipalities and communes that made up the district of Mat, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Klos and Mat (Tab. 7), added up: together they are the former district of Mat, the 12 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B45959085094100",
@@ -2919,7 +2919,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B45959085094100",
     "parent_name": "Durrës",
-    "population_note": "The 2011 census's 9 municipalities and communes that made up the district of Durrës, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 9 municipalities and communes that made up the district of Durrës, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the district of Krujë, it covers the municipalities of Durrës, Krujë and Shijak, 226,863 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B91291617478666",
@@ -2973,7 +2973,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B91291617478666",
     "parent_name": "Durrës",
-    "population_note": "The 2011 census's 7 municipalities and communes that made up the district of Krujë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 7 municipalities and communes that made up the district of Krujë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the district of Durrës, it covers the municipalities of Durrës, Krujë and Shijak, 226,863 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B34590160208903",
@@ -2987,19 +2987,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 188662,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 157387,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 99.5,
+      "value": 98.7,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3016,10 +3016,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3027,7 +3027,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B34590160208903",
     "parent_name": "Elbasan",
-    "population_note": "The 2011 census's 23 municipalities and communes that made up the district of Elbasan, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Belsh, Cërrik and Elbasan (Tab. 7), added up: together they are the former district of Elbasan, the 23 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B60363170083379",
@@ -3095,19 +3095,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 56798,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 42080,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 102.8,
+      "value": 103.4,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3124,10 +3124,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3135,7 +3135,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B87569046172350",
     "parent_name": "Elbasan",
-    "population_note": "The 2011 census's 11 municipalities and communes that made up the district of Librazhd, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Librazhd and Prrenjas (Tab. 7), added up: together they are the former district of Librazhd, the 11 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B93113119561724",
@@ -3203,19 +3203,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 165356,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 136522,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 101.7,
+      "value": 100.9,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3232,10 +3232,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3243,7 +3243,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B94080737422449",
     "parent_name": "Fier",
-    "population_note": "The 2011 census's 17 municipalities and communes that made up the district of Fier, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Fier, Patos and Roskovec (Tab. 7), added up: together they are the former district of Fier, the 17 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B73435711419495",
@@ -3257,19 +3257,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 117913,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 88017,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 102.7,
+      "value": 100.8,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3286,10 +3286,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3297,7 +3297,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B73435711419495",
     "parent_name": "Fier",
-    "population_note": "The 2011 census's 16 municipalities and communes that made up the district of Lushnjë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Divjakë and Lushnje (Tab. 7), added up: together they are the former district of Lushnjë, the 16 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B72354996665991",
@@ -3365,19 +3365,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 35843,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 34294,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 100.6,
+      "value": 99.7,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3394,10 +3394,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3405,7 +3405,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B28188595050305",
     "parent_name": "Gjirokastër",
-    "population_note": "The 2011 census's 13 municipalities and communes that made up the district of Gjirokastër, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Dropull, Gjirokastër and Libohovë (Tab. 7), added up: together they are the former district of Gjirokastër, the 13 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B23103740146981",
@@ -3419,19 +3419,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 16727,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 12380,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 103.4,
+      "value": 102.6,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3448,10 +3448,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3459,7 +3459,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B23103740146981",
     "parent_name": "Gjirokastër",
-    "population_note": "The 2011 census's 9 municipalities and communes that made up the district of Përmet, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Këlcyrë and Përmet (Tab. 7), added up: together they are the former district of Përmet, the 9 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B25662331989090",
@@ -3473,19 +3473,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 19606,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 13339,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 105.4,
+      "value": 105.3,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3502,10 +3502,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3513,7 +3513,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B25662331989090",
     "parent_name": "Gjirokastër",
-    "population_note": "The 2011 census's 10 municipalities and communes that made up the district of Tepelenë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Memaliaj and Tepelenë (Tab. 7), added up: together they are the former district of Tepelenë, the 10 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B41402008781007",
@@ -3581,19 +3581,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 11070,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 7519,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 104.2,
+      "value": 102.7,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3610,10 +3610,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3621,7 +3621,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B91947048364679",
     "parent_name": "Korçë",
-    "population_note": "The 2011 census's 8 municipalities and communes that made up the district of Kolonjë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipality of Kolonjë (Tab. 7), which is the former district of Kolonjë: the 8 municipalities and communes of 2011 that made up the one made up the other."
   },
   {
     "id": "ALB-district-67620474B90792074310011",
@@ -3635,19 +3635,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 121041,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 93605,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 101.4,
+      "value": 101.6,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3664,10 +3664,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3675,7 +3675,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B90792074310011",
     "parent_name": "Korçë",
-    "population_note": "The 2011 census's 16 municipalities and communes that made up the district of Korçë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The boundary file labels this polygon 'Kuçovë'; it lies in Korçë prefecture and holds Korçë and its communes."
+    "population_note": "The 2023 census's municipalities of Korçë, Maliq and Pustec (Tab. 7), added up: together they are the former district of Korçë, the 16 municipalities and communes of 2011 that made it up having gone to them and to no other. The boundary file labels this polygon 'Kuçovë'; it lies in Korçë prefecture and holds Korçë and its communes."
   },
   {
     "id": "ALB-district-67620474B77805918454880",
@@ -3689,19 +3689,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 61530,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 46070,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 103.9,
+      "value": 102.6,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3718,10 +3718,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3729,7 +3729,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B77805918454880",
     "parent_name": "Korçë",
-    "population_note": "The 2011 census's 8 municipalities and communes that made up the district of Pogradec, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipality of Pogradec (Tab. 7), which is the former district of Pogradec: the 8 municipalities and communes of 2011 that made up the one made up the other."
   },
   {
     "id": "ALB-district-67620474B51228836218093",
@@ -3959,19 +3959,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 65633,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 51354,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 100.8,
+      "value": 99.4,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -3988,10 +3988,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -3999,7 +3999,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B20431026689517",
     "parent_name": "Lezhë",
-    "population_note": "The 2011 census's 10 municipalities and communes that made up the district of Lezhë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipality of Lezhë (Tab. 7), which is the former district of Lezhë: the 10 municipalities and communes of 2011 that made up the one made up the other."
   },
   {
     "id": "ALB-district-67620474B99888539945274",
@@ -4121,19 +4121,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 18474,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 11100,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 101.1,
+      "value": 107.3,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -4150,10 +4150,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -4161,7 +4161,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B73280275449109",
     "parent_name": "Shkodër",
-    "population_note": "The 2011 census's 10 municipalities and communes that made up the district of Pukë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Fushë Arrës and Pukë (Tab. 7), added up: together they are the former district of Pukë, the 10 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B15717375113052",
@@ -4175,19 +4175,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 166050,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 121695,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 98.2,
+      "value": 96.5,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -4204,10 +4204,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -4215,7 +4215,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B15717375113052",
     "parent_name": "Shkodër",
-    "population_note": "The 2011 census's 17 municipalities and communes that made up the district of Shkodër, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Shkodër and Vau I Dejës (Tab. 7), added up: together they are the former district of Shkodër, the 17 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B5524789266710",
@@ -4229,19 +4229,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 62242,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 42579,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 98.0,
+      "value": 99.5,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -4258,10 +4258,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -4269,7 +4269,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B5524789266710",
     "parent_name": "Tiranë",
-    "population_note": "The 2011 census's 10 municipalities and communes that made up the district of Kavajë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Kavajë and Rrogozhinë (Tab. 7), added up: together they are the former district of Kavajë, the 10 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B90997304428465",
@@ -4283,19 +4283,19 @@
       "status": "not_available"
     },
     "population": {
-      "value": 687123,
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "value": 715934,
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "median_age": {
       "status": "not_available",
       "note": "INSTAT counts the municipalities and communes by age only in three broad groups (0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can be read, and publishes finer ages by prefecture only."
     },
     "sex_ratio": {
-      "value": 97.8,
+      "value": 93.6,
       "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group"
+      "year": 2023,
+      "source": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group"
     },
     "religion": {
       "status": "not_available",
@@ -4312,10 +4312,10 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2011, Tab. 2.1.2, resident population by municipality/commune, sex and age group",
-        "url": "https://www.instat.gov.al/media/3140/tab_2_1_2.xls",
+        "name": "Institute of Statistics of Albania (INSTAT), Population and Housing Census 2023, Tab. 7, resident population by municipality, sex and age group",
+        "url": "https://www.instat.gov.al/media/13652/tab7.xlsx",
         "page": "https://www.instat.gov.al/en/themes/censuses/census-of-population-and-housing/",
-        "year": 2011,
+        "year": 2023,
         "license": "Institute of Statistics of Albania (reuse with attribution)"
       }
     ],
@@ -4323,7 +4323,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B90997304428465",
     "parent_name": "Tiranë",
-    "population_note": "The 2011 census's 19 municipalities and communes that made up the district of Tiranë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2023 census's municipalities of Kamëz, Tiranë and Vorë (Tab. 7), added up: together they are the former district of Tiranë, the 19 municipalities and communes of 2011 that made it up having gone to them and to no other."
   },
   {
     "id": "ALB-district-67620474B1879164611880",
@@ -4377,7 +4377,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B1879164611880",
     "parent_name": "Vlorë",
-    "population_note": "The 2011 census's 4 municipalities and communes that made up the district of Delvinë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 4 municipalities and communes that made up the district of Delvinë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the districts of Sarandë and Vlorë, it covers the municipalities of Delvinë, Finiq, Himarë, Konispol, Sarandë, Selenicë and Vlorë, 146,681 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B70468291702657",
@@ -4431,7 +4431,7 @@
     "match_by": "shape_id",
     "shape_id": "67620474B70468291702657",
     "parent_name": "Vlorë",
-    "population_note": "The 2011 census's 9 municipalities and communes that made up the district of Sarandë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 9 municipalities and communes that made up the district of Sarandë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the districts of Delvinë and Vlorë, it covers the municipalities of Delvinë, Finiq, Himarë, Konispol, Sarandë, Selenicë and Vlorë, 146,681 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   },
   {
     "id": "ALB-district-67620474B72762453157270",
@@ -4485,6 +4485,6 @@
     "match_by": "shape_id",
     "shape_id": "67620474B72762453157270",
     "parent_name": "Vlorë",
-    "population_note": "The 2011 census's 13 municipalities and communes that made up the district of Vlorë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census."
+    "population_note": "The 2011 census's 13 municipalities and communes that made up the district of Vlorë, summed (Tab. 2.1.2); the district is not a unit of the 2023 census. The 2023 census counts by the municipalities made in 2015, whose lines cross this district's: together with the districts of Delvinë and Sarandë, it covers the municipalities of Delvinë, Finiq, Himarë, Konispol, Sarandë, Selenicë and Vlorë, 146,681 people in 2023 (Tab. 7); no 2023 count is this district's alone."
   }
 ]
