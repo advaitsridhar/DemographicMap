@@ -160,13 +160,15 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
         value = number(cells[p])
         if zone is None or value is None or sex not in ("total", "masculino", "feminino"):
             continue
+        if level == "zone" and sex in zones.get(zone, {}):
+            # A second total under a zone with no locality named is a locality
+            # whose name cell is blank: its rows count towards the zone's
+            # localities, which must still make the zone.
+            level = "place"
         if level == "own":
             own[sex] = value
         elif level == "zone":
-            if sex in zones.setdefault(zone, {}):
-                raise SystemExit(f"cabo_verde_parishes: {where}: zone {zone[0]!r} has two "
-                                 f"{sex} rows")
-            zones[zone][sex] = value
+            zones.setdefault(zone, {})[sex] = value
         elif sex == "total":
             places[zone] = places.get(zone, 0.0) + value
     if not zones:

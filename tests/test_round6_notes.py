@@ -983,6 +983,18 @@ class CaboVerdeParishesTest(unittest.TestCase):
                              ["", "", "", "Feminino", 1.0, 0.0]]
         got = self.cv.parish(twice, "test")
         self.assertEqual((got["total"], got["zones"]), (203.0, 3.0))
+        # A locality whose name cell is blank still counts as the zone's locality.
+        blank = CPV_SHEET + [["", "SALTO", "", "Total", 10.0, 2.0],
+                             ["", "", "", "Masculino", 6.0, 1.0],
+                             ["", "", "", "Feminino", 4.0, 1.0],
+                             ["", "", "", "Total", 10.0, 2.0],
+                             ["", "", "", "Masculino", 6.0, 1.0],
+                             ["", "", "", "Feminino", 4.0, 1.0]]
+        got = self.cv.parish(blank, "test")
+        self.assertEqual((got["total"], got["men"], got["zones"]), (210.0, 114.0, 3.0))
+        blank[-3][4] = 9.0                                  # then it no longer makes the zone
+        with self.assertRaises(SystemExit):
+            self.cv.parish(blank, "test")
 
     def test_names_and_the_one_parish_rule(self):
         cv = self.cv

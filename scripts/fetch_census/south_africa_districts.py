@@ -8,8 +8,8 @@ metropolitan municipalities, and for each of those the census's counts by sex.
 The province totals in south_africa.py come from the census's statistical
 release; these are the same census's counts one level down.
 
-Written for each of the 52 districts and metros: population (the men and women
-counted, added together) and sex ratio (males per 100 females), Census 2022.
+Written for each of the 52 districts and metros: population and sex ratio
+(males per 100 females), Census 2022.
 
 **The ground.** Census 2022 counts the districts as they have stood since the
 boundary changes of 2016. The boundary file's districts are those too, though
@@ -19,12 +19,14 @@ about 9,900 km², includes Naledi, merged into the metro in 2016, and its
 Alfred Nzo, about 10,800 km², includes Mbizana and Ntabankulu, moved to it in
 2011.
 
-**Checks before anything is written.** Each district's men and women make the
-service's own total for it, and its share of men is the one the service
-prints; each province's districts make the province's total from the same
-service; the provinces make the census's 62,027,503. Districts are matched to
-the boundary file's within their province, by name, and every polygon must
-get exactly one district and every district one polygon.
+**Checks before anything is written.** Each district's population is the
+service's own total for it; its counts by sex, which give the ratio, fall
+short of that total by no more than half a percent (the City of Cape Town's
+by 2,533 of 4,772,846), and its share of men is the one the service prints.
+Each province's districts make the province's total from the same service,
+to a few people each; the provinces make the census's 62,027,503. Districts
+are matched to the boundary file's within their province, by name, and every
+polygon must get exactly one district and every district one polygon.
 
 Usage:
     python -m scripts.fetch_census.south_africa_districts
@@ -50,6 +52,7 @@ CENSUS = 1                           # the service's time series: 1 is Census 20
 PROVINCE, DISTRICT = 2, 5            # the service's geography levels
 NATIONAL = 62_027_503
 SLACK = 3                            # people a separately rounded count may miss by
+SEX_SHORT = 0.005                    # how far short of the total the counts by sex may fall
 OUT = "south_africa_districts.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -108,12 +111,17 @@ def read() -> dict[str, Any]:
             men, women = by_sex(code)
             own = indicators(DISTRICT, code)
             total = own.get("Total population")
-            # The census's counts are weighted and each is rounded on its own,
-            # so men and women can miss the total by a person or two (Alfred
-            # Nzo: 439,455 and 497,006 against 936,462). More is a misreading.
-            if not isinstance(total, (int, float)) or abs(men + women - total) > SLACK:
+            # The service's counts by sex fall a little short of its totals --
+            # Alfred Nzo's by one person, the City of Cape Town's by 2,533 of
+            # 4,772,846 -- so the population is the service's total and the
+            # counts by sex give only the ratio. A gap past SEX_SHORT is a
+            # misreading, not that.
+            if (not isinstance(total, (int, float)) or men + women > total + SLACK
+                    or men + women < total * (1 - SEX_SHORT)):
                 raise SystemExit(f"south_africa_districts: {d['districtName']}: {men:,} men and "
                                  f"{women:,} women against a total of {total}")
+            if men + women != total:
+                log(f"  {d['districtName']}: men and women {men + women:,}, total {total:,}")
             if abs(100 * men / (men + women) - float(own.get("Male") or 0)) > 0.06:
                 raise SystemExit(f"south_africa_districts: {d['districtName']}: the first count "
                                  f"by sex is not the men's ({own.get('Male')}% men)")
