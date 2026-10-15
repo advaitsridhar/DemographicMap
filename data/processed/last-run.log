@@ -1,195 +1,31 @@
-    read Provinces/getAll/: answer sha256 a68951e7b5bad48d89934754c7069b010da27df1e01168d8acd49fb50bfb5dc6
-    read KeyIndicators/listKeyIndicators/1/2/2: answer sha256 8f7e3efb34620a93e00611beaf286f0b18f7433372329875cf418e973d17a434
-    read Districts/listByProvince/2: answer sha256 b2bdbe53fddadc94936cbe999cbb4416ab418e03b21ea8f39b346597f211415d
-    read DsSexes/listDsByParams/1/5/DC44: answer sha256 f38605979fbdbbe5200bbc616e7115727bf1f8cb254b493630d4950068b2e344
-    read KeyIndicators/listKeyIndicators/1/5/DC44: answer sha256 81bc9b822929cfa5f4a266a829ebd7a32a2f2b849baca2e0e2931ffe780097c6
-  Alfred Nzo: men and women 936,461, total 936,462
-    read DsSexes/listDsByParams/1/5/DC12: answer sha256 239b959b610a480fd1a419ecbdd6afc6c1765ac90eee697dc93b2077eb32720b
-    read KeyIndicators/listKeyIndicators/1/5/DC12: answer sha256 8f646945dd778a0893f9a7c257a5ed57b3d3d824887369cb9b1cc9b5c69493bf
-  Amathole: men and women 871,602, total 871,601
-    read DsSexes/listDsByParams/1/5/BUF: answer sha256 d8cf447bab504160bff1bac9929c92b8d4ebc4f888a36389bc205f5b9e26dba2
-    read KeyIndicators/listKeyIndicators/1/5/BUF: answer sha256 00a9f847815c533a66511b5e166570419b76c78c57b406ca19b6706169f4a824
-    read DsSexes/listDsByParams/1/5/DC13: answer sha256 c53ce5fe9c3e4ffb0a07e7ffbf86f8477b2c5de6c0c3d59251b0af0673acbf00
-    read KeyIndicators/listKeyIndicators/1/5/DC13: answer sha256 621f74606edb552f93618e72b7f1c62bede1af879374b91795091f9e181c4276
-  Chris Hani: men and women 828,388, total 828,387
-    read DsSexes/listDsByParams/1/5/DC14: answer sha256 ada7aa947422262eff1830a7e6e8650359f4c9b76f9f48ded7d3cb08a3bb0c7e
-    read KeyIndicators/listKeyIndicators/1/5/DC14: answer sha256 1699654dc7be8f8b74bc7bc7e54b3436e4440fcd90703021d5d9a85dac9981f4
-    read DsSexes/listDsByParams/1/5/NMA: answer sha256 79758e5b0fa525a34e4dca0dbf99987c30abbcfc72267b8e1c1e38a23abe838d
-    read KeyIndicators/listKeyIndicators/1/5/NMA: answer sha256 b66d4ef65719dd7a044cd0b79072f99608fd03a4eb4a12295c90c26ead8d2da8
-    read DsSexes/listDsByParams/1/5/DC15: answer sha256 e2536b5ac67abb162a288d66201adcd4a99c8cdffeaf2322af91b31bb996519b
-    read KeyIndicators/listKeyIndicators/1/5/DC15: answer sha256 f9ade47b98008bfb60c8d0b45bb0b857105ca9d9c07a97bc998ba26af5a6c7cd
-    read DsSexes/listDsByParams/1/5/DC10: answer sha256 c1d0ff4e7c2b7317ac6b42ab70c26f5695a49113bf8abb3a985f68a968591e8c
-    read KeyIndicators/listKeyIndicators/1/5/DC10: answer sha256 ae0b646ae678d3cc97c4c9762553411648c42e482d143a3c137e2d9003190d60
-    read KeyIndicators/listKeyIndicators/1/2/4: answer sha256 9197b2236af1c33608f24a7668985f8301747c3f2f0e6c601c0a9a359a362ab5
-    read Districts/listByProvince/4: answer sha256 44f3cca9badb36e71cde5b7b128f810d9a1ec5d59c80806a7a3c07999b2e6975
-    read DsSexes/listDsByParams/1/5/DC20: answer sha256 5f67c439888d8b3dbf7ed6f50cb6fbb7828f0f862d8975b62200f9c9f8926bb7
-    read KeyIndicators/listKeyIndicators/1/5/DC20: answer sha256 f5eb697ca6103e93f7e5b8b29b0bb5f1aafdd5be104422cad7b78ea593f23ea0
-    read DsSexes/listDsByParams/1/5/DC18: answer sha256 c1c88010e818b60e4012df242f5ded78a4495c9a46340fd2bf5ad89a66ef0f2f
-    read KeyIndicators/listKeyIndicators/1/5/DC18: answer sha256 78229f1270659f60150b1be96303951d3ea47337aff9b6de96615e1373bf4076
-    read DsSexes/listDsByParams/1/5/MAN: answer sha256 98624b5e4e29b1c79327d3ce09e6097c18b7762f25f93266ddf257e631003c90
-    read KeyIndicators/listKeyIndicators/1/5/MAN: answer sha256 4cd32a289d1d77027c162d6eed68b148eb3d7a34c4c406362bc59ce54f037665
-  Mangaung: men and women 811,432, total 811,431
-    read DsSexes/listDsByParams/1/5/DC19: answer sha256 6a8ab0826aa564df803ff1d841a1747fe569e32cdec33294d5596c81c9707d22
-    read KeyIndicators/listKeyIndicators/1/5/DC19: answer sha256 1ef432f5ef9855868ecb364e72363677cd118986fb683f5c118f1386962895d4
-    read DsSexes/listDsByParams/1/5/DC16: answer sha256 803982c5fd79674ae9ffe6b71682fcd2f8ce575c8ca0ca0f5542f9fa611200d4
-    read KeyIndicators/listKeyIndicators/1/5/DC16: answer sha256 045e7a693bc23b852ebf8d6f73908d238bc956089369b886620817c320e88672
-    read KeyIndicators/listKeyIndicators/1/2/7: answer sha256 95f2d75c73df180f738493f629365c0e15f4ec8e2862ea45be12cd26b2460211
-    read Districts/listByProvince/7: answer sha256 7aa450b71f14121cd7ec18a7a2c9edd1d82d4de8404ecbff7b29528b4155501b
-    read DsSexes/listDsByParams/1/5/JHB: answer sha256 71000a2263afde8e274230b218ffa3c2044598bfce044df7fdc29ac873a49ed4
-    read KeyIndicators/listKeyIndicators/1/5/JHB: answer sha256 b4c7f5e11ad285b52d9fa06daacaed066866297d3814983a74daf24a930382e4
-    read DsSexes/listDsByParams/1/5/TSH: answer sha256 aba247a9d6bb602fb550a229c69fffd94a8af3d0bc56c60f3316c7ddbedc353e
-    read KeyIndicators/listKeyIndicators/1/5/TSH: answer sha256 61d01ca81862ec1577327a8c5fdcc49fb735d0c3a7ceaeaf4f677937451871b1
-    read DsSexes/listDsByParams/1/5/EKU: answer sha256 1d7067d83041ae13033230e6cb56fda6f50bd414b0bf7198733dd0480b0b81d8
-    read KeyIndicators/listKeyIndicators/1/5/EKU: answer sha256 a550c92469575901120c60ea7c76bdeb25b6cff07699b9603f784fab6eb8a0cd
-    read DsSexes/listDsByParams/1/5/DC42: answer sha256 c73efc3eb6b3b77f8f16ef8ad59fe4275bffb853101c2c7fc1322f182b77b241
-    read KeyIndicators/listKeyIndicators/1/5/DC42: answer sha256 aa6f55f28d26069688089e56415621f49d5090dbaf180e0a1410b2e903f6caf2
-    read DsSexes/listDsByParams/1/5/DC48: answer sha256 46fc77915b9aac1368f1bb9bb3308a467e35cf407729fe20d87f68eede43a45d
-    read KeyIndicators/listKeyIndicators/1/5/DC48: answer sha256 061bfc93e0fe94ba5e01c97b59b53454d88b805c0168897afff948905fdc47db
-    read KeyIndicators/listKeyIndicators/1/2/5: answer sha256 283689164a1f3b2490e6216b433c0cf2cdc820aa099a588d0a4517071abd6601
-    read Districts/listByProvince/5: answer sha256 11b346c41010b9fa1994c1e172f71be115fa6bd33e10893f66dd13baab9077cc
-    read DsSexes/listDsByParams/1/5/DC25: answer sha256 692a2f36d026b11ca893d6093b6679286cf82468a7712044cd89a4b516297581
-    read KeyIndicators/listKeyIndicators/1/5/DC25: answer sha256 458d46b4065253b1b7914591515e88fa9165baa4650eae475780d5d2f435e247
-    read DsSexes/listDsByParams/1/5/ETH: answer sha256 ccf4c567904a58380fa3756326887b5b0002748aa64fcd7a13c1699c5c7f9e66
-    read KeyIndicators/listKeyIndicators/1/5/ETH: answer sha256 a9abb79110c6e8de2edfe382a268e55085a5478a7d94a499fa586007760207f0
-  eThekwini: men and women 4,239,900, total 4,239,901
-    read DsSexes/listDsByParams/1/5/DC43: answer sha256 a06cb14d4136ca591793efdd130caa70a89ea92c62370295a1f73617b79bb44a
-    read KeyIndicators/listKeyIndicators/1/5/DC43: answer sha256 6b886997e41bd368ca9efd6681ef9a6a225e832cba7b5709dcab1d4c53af8e67
-    read DsSexes/listDsByParams/1/5/DC29: answer sha256 f6086100461b9a893683c4bea0f9ebe7e762dbecce38cecff218f2931f9a2bbb
-    read KeyIndicators/listKeyIndicators/1/5/DC29: answer sha256 3a5c729a4be54ae1827648e577a1c9ff1ec0bf8725ef49876a7bb802995e0ada
-    read DsSexes/listDsByParams/1/5/DC28: answer sha256 a9813966573287df16d47cec47a8e5eec4a4dea0e157460cf494c0c74fd23d80
-    read KeyIndicators/listKeyIndicators/1/5/DC28: answer sha256 c5112451a1717113234a61c42b70b985ec08198e4f13a3223a18f1e91fc87cf0
-    read DsSexes/listDsByParams/1/5/DC21: answer sha256 fd6988287ac5f3c10611880bca1a977a577f5431137ad01f9c9e19dd6d016789
-    read KeyIndicators/listKeyIndicators/1/5/DC21: answer sha256 7fd969ac50df1f5c105baec7e1af667e31356a65432dfb6ae5ce5bb65e5d8aa6
-    read DsSexes/listDsByParams/1/5/DC22: answer sha256 91d109b94e75e18700fa7305ff1c507cb9a5d4785b22be8ebfb96628c19b6891
-    read KeyIndicators/listKeyIndicators/1/5/DC22: answer sha256 895172f64ffd7d111bca67a731b72fd16f3c3e118f2ff5ff1d882bcb7d2dc04d
-  Umgungundlovu: men and women 1,235,716, total 1,235,715
-    read DsSexes/listDsByParams/1/5/DC27: answer sha256 702b02778f66d0031115d7012e35ebb7e0d2c3a3b864fc94ba206c4086936248
-    read KeyIndicators/listKeyIndicators/1/5/DC27: answer sha256 21ce094efcfa32155109857cb6fb3466fc3c5714af3b3be7c2ea604cccd47200
-  Umkhanyakude: men and women 738,436, total 738,437
-    read DsSexes/listDsByParams/1/5/DC24: answer sha256 5fdf754801b5658d297290a1bbbe3461df4fd1388a437be093bcb52761c73b0b
-    read KeyIndicators/listKeyIndicators/1/5/DC24: answer sha256 178d6da7440cac670a604529ca3462cf4d49bc9f1ed57aafb998ef01269c8add
-    read DsSexes/listDsByParams/1/5/DC23: answer sha256 9207c7957a0a371e0489a94855876970955478aab6b7695c23ff30fa37b5093f
-    read KeyIndicators/listKeyIndicators/1/5/DC23: answer sha256 4af59eec20642401a7e6fa46717a69335857e931f76a0cc0d2d05010f4748ff5
-    read DsSexes/listDsByParams/1/5/DC26: answer sha256 bafc1249239503cc9280740d4b816586679c7151f1e324421768cf1ab720d81c
-    read KeyIndicators/listKeyIndicators/1/5/DC26: answer sha256 ed34fc3d0b19e25efe69454ed0a8f2283636035659fd2353255719ce4a709c59
-    read KeyIndicators/listKeyIndicators/1/2/9: answer sha256 d256ea299f6f9d03c2f83cdcb3b510d28bac31acec2aba5d9288dadfd442e4ab
-    read Districts/listByProvince/9: answer sha256 463b4504d5c0af70710fbd1b024eac9ad5350c5e3ace96903e2439af8355ca34
-    read DsSexes/listDsByParams/1/5/DC35: answer sha256 2df40cabae2fbb0694e7229c0f5603211fd00f4fbb0bedc1a35f1c4d94a5be2c
-    read KeyIndicators/listKeyIndicators/1/5/DC35: answer sha256 05efaaa0e505e37e407b7b77056acaf0c682503931676c2c115111f13d0d1b42
-    read DsSexes/listDsByParams/1/5/DC33: answer sha256 df7c119f12ded31b8480da0f76acc08db8f702a1ae0ccbfa539659302ab3d014
-    read KeyIndicators/listKeyIndicators/1/5/DC33: answer sha256 6b6486df80195f3a16f6e57c242623a85c7e61ff618a6307e912365e03d3eaf4
-    read DsSexes/listDsByParams/1/5/DC47: answer sha256 e79f639042c22e623d6473f35356107a5a8486eb8a321228e19cb1f3eba4f7ab
-    read KeyIndicators/listKeyIndicators/1/5/DC47: answer sha256 e650d82a75f9883ebf98cb53da54c2136e6eaa70ee8761dfde676c1b42ccf846
-    read DsSexes/listDsByParams/1/5/DC34: answer sha256 8b01292bdd64c23f340c20b989d81a81bb2262b1eea885d67915cbe5ff0d1c20
-    read KeyIndicators/listKeyIndicators/1/5/DC34: answer sha256 f0ab705e9cd766fc5c0665330ae28c9039d54d90ee59da92449d3b7ae051a414
-    read DsSexes/listDsByParams/1/5/DC36: answer sha256 7d2ab8028b0be9c06e2b49594045227e7b3c88a3d74f9c468b5d167c5520bf5b
-    read KeyIndicators/listKeyIndicators/1/5/DC36: answer sha256 c956f9b2e17d63f51e447a13eaee9d2c839eddbc840b408310f21588e74f9072
-    read KeyIndicators/listKeyIndicators/1/2/8: answer sha256 19ef07738c7487543c2cccadae36787c7d962dcb1a9cdc13e2336471d9b343f7
-    read Districts/listByProvince/8: answer sha256 394164d4c73c746baf38eb90434141afda842f64406725fa9c635da13999c08c
-    read DsSexes/listDsByParams/1/5/DC32: answer sha256 a8a772ba6acdb0dc4a806d33bc131fdf850c1c344e1bf07eb5d3f09689797cfd
-    read KeyIndicators/listKeyIndicators/1/5/DC32: answer sha256 2345f67f04c8cff8aa7e3459e91746b8307c423d056d5f9dc85b6c5ec1c3ca8d
-    read DsSexes/listDsByParams/1/5/DC30: answer sha256 a5b3ed576f6f662e2158ceb4730106e7881ed4aa1b0f36d22d6e901396ff407c
-    read KeyIndicators/listKeyIndicators/1/5/DC30: answer sha256 da9679620603e7e2dd2aa0738efb7d9b03d9471eb745f11df27d6b5c29378c38
-    read DsSexes/listDsByParams/1/5/DC31: answer sha256 92781cd9ff8ab5e7fe90f3e780f58dba62c9821dc5b73b9d25770065bd559df5
-    read KeyIndicators/listKeyIndicators/1/5/DC31: answer sha256 ac9c308bdb361d462714a479b31973444fec4921bf6fd24e8ccbbee9ab9a2a34
-    read KeyIndicators/listKeyIndicators/1/2/6: answer sha256 5038dcaf6be2f7e4ceb8a3f6d67a743fdc133b016976441f340c149283f68c09
-    read Districts/listByProvince/6: answer sha256 c9188372340de8dca4b255c016ed66863b49af3fbb59bcb2261cebb5fa9f7b77
-    read DsSexes/listDsByParams/1/5/DC37: answer sha256 1b547a99bc96badd0b5e3dd94702cc2b765cfde6d01234f2e4a8b62b8caf7c4d
-    read KeyIndicators/listKeyIndicators/1/5/DC37: answer sha256 94fd012365325175fb3cb745d8b3b2ac07ab68ca2dc9157f05952838b196b755
-  Bojanala: men and women 1,624,143, total 1,624,144
-    read DsSexes/listDsByParams/1/5/DC40: answer sha256 a587bb44410aa45cef387d69df568edcbf8c3f3ee53be7d57a2e4afa176c92bf
-    read KeyIndicators/listKeyIndicators/1/5/DC40: answer sha256 e741bd11e75ccf01da42410faf016aaa91db4530d9ae3428fd0edd20a8d94531
-  Dr Kenneth Kaunda: men and women 734,204, total 734,203
-    read DsSexes/listDsByParams/1/5/DC39: answer sha256 5e1ae6fa6e71abcef9d700752386da39616da4ada07ee9aec2e9eb5022d6668d
-    read KeyIndicators/listKeyIndicators/1/5/DC39: answer sha256 186061b29f06644ce0c4c12f46a8b206e91b566244a935c7e1f3f3864dd79e44
-  Dr Ruth Segomotsi Mompati: men and women 508,193, total 508,192
-    read DsSexes/listDsByParams/1/5/DC38: answer sha256 b5079e269f978d7578eb8a08d0dd734c385bc803f24c5fc446159b9541b632f1
-    read KeyIndicators/listKeyIndicators/1/5/DC38: answer sha256 70d6f19895f06486c2815635a17dd483bce50e102541b321488b648d9a3acbdf
-    read KeyIndicators/listKeyIndicators/1/2/3: answer sha256 d35ce51706f3747aa03e8c24922ddf654085150c57354c1afb4d89a50865e91d
-    read Districts/listByProvince/3: answer sha256 9917a158955f059dfb3f167ae2df758be54b42c89ce49404c87f3db0d2d4f222
-    read DsSexes/listDsByParams/1/5/DC9: answer sha256 6781d95596f5443af7b90296383ee0850060cd6aaf13b201d3f7b84144f3dc0b
-    read KeyIndicators/listKeyIndicators/1/5/DC9: answer sha256 11da66153a6b8195e5899947dc33703e6aaa6172f05f61c2829da04d7e323bcb
-    read DsSexes/listDsByParams/1/5/DC45: answer sha256 23cbf0fc315ce274cd5cd9cb1ba8d844ef38c074a0dc8a2e535d975cc9dacda0
-    read KeyIndicators/listKeyIndicators/1/5/DC45: answer sha256 5ededf1524208907d37174107da2bfe6b0fddbe538ec9e6a7ea2ebf7f3dcfa82
-    read DsSexes/listDsByParams/1/5/DC6: answer sha256 86a73e0a6f757f1b8ab4b9badc47c233d6cb2969032f0ac7c5801c342e4e2199
-    read KeyIndicators/listKeyIndicators/1/5/DC6: answer sha256 09af1c5a21a567cfa03c2295f66d11da0594e6b27a03b8859bead25036c3adf8
-  Namakwa: men and women 148,936, total 148,935
-    read DsSexes/listDsByParams/1/5/DC7: answer sha256 b57a7d0c681fac2d7936318591a43637f23a3c77bff1a13d0e4da80aaffd25cf
-    read KeyIndicators/listKeyIndicators/1/5/DC7: answer sha256 c1c930300bf82b08ff759d7e6d20c827691d04a09670d1282cc938140ce557fe
-    read DsSexes/listDsByParams/1/5/DC8: answer sha256 05d1dc9536100035fbb1229f54133379312c11739ab9cffdb0d5cdabd1f5e1ae
-    read KeyIndicators/listKeyIndicators/1/5/DC8: answer sha256 2e6140bc2302656f7c0b0c0e8a08c7ff4632d0e9af507e142474a99297c96f0a
-    read KeyIndicators/listKeyIndicators/1/2/1: answer sha256 997f978ff862e36ff70253e8e57f3b31d16a8a1d17b975481c45afb9c4284c4f
-    read Districts/listByProvince/1: answer sha256 5920aca074ce949a8632ea7ca620e9302dcb6844db102acdc73cac225781b181
-    read DsSexes/listDsByParams/1/5/DC2: answer sha256 b3a3557ca154864e88281d8f814d0346f6c8c7a13f80026fc71cabdc43f549ea
-    read KeyIndicators/listKeyIndicators/1/5/DC2: answer sha256 bf5d46746083ff74b0d3ae4b7423abe09da72ba9fd26ef438b54a1a91e83dc8f
-    read DsSexes/listDsByParams/1/5/DC5: answer sha256 0bd1916ad7466b2f196ed310c0cd98b8edab9bad0bca7e819bc6c1b774fd1b8c
-    read KeyIndicators/listKeyIndicators/1/5/DC5: answer sha256 a494027ab033e1eea04f1260bfbb095d354e97b68fbf3693d1ce70de9948601a
-    read DsSexes/listDsByParams/1/5/CPT: answer sha256 0c6b91651c021f78c7da9869b65a3262804cdcb152ad879f7323767980ba33b9
-    read KeyIndicators/listKeyIndicators/1/5/CPT: answer sha256 9a3f7abddc332ca2319441a5f1b2fa0cfd0e6eb89ad5adab758f453ef6a059af
-  City of Cape Town: men and women 4,770,313, total 4,772,846
-    read DsSexes/listDsByParams/1/5/DC4: answer sha256 6ea2fd60b81f7c6a8940ad2a89e25d45ca853f0fc637e4a8a8188e6736cd252b
-    read KeyIndicators/listKeyIndicators/1/5/DC4: answer sha256 4244d312f286d93074fbe0b1eda891b87b22fc9f376e5e930f42e84d462db43c
-    read DsSexes/listDsByParams/1/5/DC3: answer sha256 37be2e52aab5ba5f8fd3eea4287c2db10993edf03e9334faa9cf73a74b07a7b3
-    read KeyIndicators/listKeyIndicators/1/5/DC3: answer sha256 9dc5f34e6a0529cad0c8f2e0709f377ed89927327827f7a63442282b167c5d82
-    read DsSexes/listDsByParams/1/5/DC1: answer sha256 cc1977b349f225dbb0963cb75e78eb8cbf930f326c4829c199a53332a7092654
-    read KeyIndicators/listKeyIndicators/1/5/DC1: answer sha256 9349b5daf8d70d39909d6326b5a76d1b1024b41fd57621a3f1c6235d1b3eb50d
-  Free State: its 5 districts make 2,964,411 against 2,964,412
-  KwaZulu-Natal: its 11 districts make 12,423,908 against 12,423,907
-  Limpopo: its 5 districts make 6,572,665 against 6,572,721
-  Mpumalanga: its 3 districts make 5,143,040 against 5,143,324
-  North West: its 4 districts make 3,804,262 against 3,804,548
-  Western Cape: its 6 districts make 7,433,019 against 7,433,020
-  9 provinces and 52 districts, making 62,027,503
-  Alfred Nzo: 936,462, 88.4 men per 100 women; Census 2022's count for Alfred Nzo.
-  Amajuba: 687,408, 92.6 men per 100 women; Census 2022's count for Amajuba.
-  Amathole: 871,601, 90.9 men per 100 women; Census 2022's count for Amathole.
-  Bojanala: 1,624,144, 103.3 men per 100 women; Census 2022's count for Bojanala.
-  Buffalo City: 975,255, 89.9 men per 100 women; Census 2022's count for Buffalo City.
-  Cacadu: 533,253, 90.7 men per 100 women; Census 2022's count for Sarah Baartman (the boundary file's 'Cacadu').
-  Cape Winelands: 862,703, 94.1 men per 100 women; Census 2022's count for Cape Winelands.
-  Capricorn: 1,447,103, 90.3 men per 100 women; Census 2022's count for Capricorn.
-  Central Karoo: 102,173, 92.0 men per 100 women; Census 2022's count for Central Karoo.
-  Chris Hani: 828,387, 91.9 men per 100 women; Census 2022's count for Chris Hani.
-  City of Cape Town: 4,772,846, 93.6 men per 100 women; Census 2022's count for City of Cape Town.
-  City of Johannesburg: 4,803,262, 101.5 men per 100 women; Census 2022's count for City of Johannesburg.
-  City of Tshwane: 4,040,315, 100.5 men per 100 women; Census 2022's count for City of Tshwane.
-  Dr Kenneth Kaunda: 734,203, 93.9 men per 100 women; Census 2022's count for Dr Kenneth Kaunda.
-  Dr Ruth Segomotsi Mompati: 508,192, 93.5 men per 100 women; Census 2022's count for Dr Ruth Segomotsi Mompati.
-  Eden: 838,457, 94.4 men per 100 women; Census 2022's count for Garden Route (the boundary file's 'Eden').
-  Ehlanzeni: 2,270,897, 89.3 men per 100 women; Census 2022's count for Ehlanzeni.
-  Ekurhuleni: 4,066,691, 104.4 men per 100 women; Census 2022's count for Ekurhuleni.
-  Fezile Dabi: 509,912, 92.3 men per 100 women; Census 2022's count for Fezile Dabi.
-  Frances Baard: 434,343, 92.0 men per 100 women; Census 2022's count for Frances Baard.
-  Gert Sibande: 1,283,459, 93.2 men per 100 women; Census 2022's count for Gert Sibande.
-  Joe Gqabi: 393,048, 90.4 men per 100 women; Census 2022's count for Joe Gqabi.
-  John Taolo Gaetsewe: 272,454, 90.1 men per 100 women; Census 2022's count for John Taolo Gaetsewe.
-  Lejweleputswa: 679,746, 92.3 men per 100 women; Census 2022's count for Lejweleputswa.
-  Mangaung: 811,431, 90.6 men per 100 women; Census 2022's count for Mangaung.
-  Mopani: 1,372,873, 85.9 men per 100 women; Census 2022's count for Mopani.
-  Namakwa: 148,935, 96.4 men per 100 women; Census 2022's count for Namakwa.
-  Nelson Mandela Bay: 1,190,496, 89.8 men per 100 women; Census 2022's count for Nelson Mandela Bay.
-  Ngaka Modiri Molema: 937,723, 95.7 men per 100 women; Census 2022's count for Ngaka Modiri Molema.
-  Nkangala: 1,588,684, 96.2 men per 100 women; Census 2022's count for Nkangala.
-  O.R.Tambo: 1,501,702, 89.2 men per 100 women; Census 2022's count for O.R. Tambo.
-  Overberg: 359,446, 97.0 men per 100 women; Census 2022's count for Overberg.
-  Pixley ka Seme: 216,589, 93.3 men per 100 women; Census 2022's count for Pixley ka Seme.
-  Sedibeng: 1,190,688, 98.5 men per 100 women; Census 2022's count for Sedibeng.
-  Sekhukhune: 1,336,805, 89.0 men per 100 women; Census 2022's count for Sekhukhune.
-  Sisonke: 563,893, 88.0 men per 100 women; Census 2022's count for Harry Gwala (the boundary file's 'Sisonke').
-  Thabo Mofutsanyane: 831,421, 87.4 men per 100 women; Census 2022's count for Thabo Mofutsanyane.
-  Ugu: 773,402, 90.0 men per 100 women; Census 2022's count for Ugu.
-  Umgungundlovu: 1,235,715, 91.1 men per 100 women; Census 2022's count for Umgungundlovu.
-  Umkhanyakude: 738,437, 87.1 men per 100 women; Census 2022's count for Umkhanyakude.
-  Umzinyathi: 649,261, 83.0 men per 100 women; Census 2022's count for Umzinyathi.
-  Uthukela: 789,092, 87.2 men per 100 women; Census 2022's count for Uthukela.
-  Uthungulu: 1,021,344, 89.8 men per 100 women; Census 2022's count for King Cetshwayo (the boundary file's 'Uthungulu').
-  Vhembe: 1,653,022, 88.0 men per 100 women; Census 2022's count for Vhembe.
-  Waterberg: 762,862, 96.7 men per 100 women; Census 2022's count for Waterberg.
-  West Coast: 497,394, 95.7 men per 100 women; Census 2022's count for West Coast.
-  West Rand: 998,466, 102.4 men per 100 women; Census 2022's count for West Rand.
-  Xhariep: 131,901, 92.1 men per 100 women; Census 2022's count for Xhariep.
-  Z F Mgcawu: 283,624, 95.3 men per 100 women; Census 2022's count for Z F Mgcawu.
-  Zululand: 942,794, 86.3 men per 100 women; Census 2022's count for Zululand.
-  eThekwini: 4,239,901, 95.6 men per 100 women; Census 2022's count for eThekwini.
-  iLembe: 782,661, 90.2 men per 100 women; Census 2022's count for iLembe.
-  wrote data/processed/south_africa_districts.json (76 kB)
+portugal_census: 308 municipalities
+  50 read
+  100 read
+  150 read
+  200 read
+  250 read
+  300 read
+  Portugal: 10,343,066 people, median 46.5, mean 45.44 against INE's published 45.44
+  308 municipalities bound; polygons left without one: 2272694B61775283939308 (unidentified)
+  AVEIRO: 19 municipalities, 700,787 people, median 47.2
+  BEJA: 14 municipalities, 144,401 people, median 48.5
+  BRAGA: 14 municipalities, 846,293 people, median 45.3
+  BRAGANÇA: 12 municipalities, 122,804 people, median 55.0
+  CASTELO BRANCO: 11 municipalities, 177,962 people, median 53.3
+  COIMBRA: 17 municipalities, 408,551 people, median 49.7
+  FARO: 16 municipalities, 467,343 people, median 46.6
+  GUARDA: 14 municipalities, 142,974 people, median 55.3
+  LEIRIA: 16 municipalities, 458,605 people, median 48.0
+  LISBOA: 16 municipalities, 2,275,385 people, median 44.2
+  PORTALEGRE: 15 municipalities, 104,923 people, median 51.4
+  PORTO: 18 municipalities, 1,785,405 people, median 45.8
+  Região Autónoma da Madeira: 11 municipalities, 250,744 people, median 46.1
+  Região Autónoma dos Açores: 19 municipalities, 236,413 people, median 42.2
+  SANTARÉM: 21 municipalities, 424,973 people, median 49.3
+  SETÚBAL: 13 municipalities, 874,806 people, median 45.2
+  VIANA DO CASTELO: 10 municipalities, 231,266 people, median 49.9
+  VILA REAL: 14 municipalities, 185,695 people, median 53.0
+  VISEU: 24 municipalities, 351,292 people, median 50.1
+  ÉVORA: 14 municipalities, 152,444 people, median 49.2
+  wrote data/processed/portugal_census.json (1143 kB)
+  329 records
