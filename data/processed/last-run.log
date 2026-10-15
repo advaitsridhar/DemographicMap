@@ -1,82 +1,9 @@
-https://census.statssa.gov.za/main.c3756bb39a090c83.js: 19,172,187 characters
-  https://g.co/ng/security
-  function R8(){const i=M9();return i&&i[kl]}const fn=new p2("ENVIRONMENT_INITIALIZER"),Wi=new p2("INJECTOR",-1),GT=new p2("INJECTOR_DEF_TYPES");class pn{get(r,e=jt){if(e===jt){const s=new Erro
-  essProvider(v)),this.records.set(Wi,$i(void 0,this)),u.has("environment")&&this.records.set(z5,$i(void 0,this));const f=this.records.get(cy);null!=f&&"string"==typeof f.value&&this.scopes.add
-  qi,useValue:this.componentFactoryResolver}],a1(r),new Set(["environment"])),this._r3Injector.resolveInjectorInitializers(),this.instance=this._r3Injector.get(r)}get injector(){return this._r3
-  seValue:this.componentFactoryResolver}],e||uy(),s,new Set(["environment"]));this.injector=u,u.resolveInjectorInitializers()}destroy(){this.injector.destroy()}onDestroy(r){this.injector.onDest
-  ctors.clear()}}}return i.\u0275prov=D9({token:i,providedIn:"environment",factory:()=>new i(v9(z5))}),i})();function dr(i){i.getStandaloneInjector=r=>r.get(ap).getOrCreateStandaloneInjector(i)
-  nst P=e||{};_=P.index,s=P.injector,u=P.projectableNodes,f=P.environmentInjector||P.ngModuleRef}const S=v?r:new bc(m3(r)),C=s||this.parentInjector;if(!f&&null==S.ngModule){const N=(v?C:this.pa
-  eturn new bc(e).create(s,r.projectableNodes,r.hostElement,r.environmentInjector)}let Yo=null;function m4(){return Yo}class OE{}const g1=new p2("DocumentToken");let lt=(()=>{class i{historyGo(
-  http://www.w3.org/2000/svg
-  http://www.w3.org/1999/xhtml
-  http://www.w3.org/1999/xlink
-  http://www.w3.org/XML/1998/namespace
-  http://www.w3.org/2000/xmlns/
-  http://www.w3.org/1998/MathML/
-  Y2(ku),this.location=Y2(P6),this.changeDetector=Y2(o5),this.environmentInjector=Y2(z5)}ngOnChanges(e){if(e.name){const{firstChange:s,previousValue:u}=e.name;if(s)return;this.isTrackedInParent
-  is.activated=u.createComponent(v,{index:u.length,injector:S,environmentInjector:s??this.environmentInjector});this.changeDetector.markForCheck(),this.activateEvents.emit(this.activated.instan
-  ation=null,this.events=new w0,this.configLoader=Y2(nS),this.environmentInjector=Y2(z5),this.urlSerializer=Y2(Cu),this.rootContexts=Y2(ku),this.navigationId=0,this.afterPreactivation=()=>_2(vo
-  ctedUrl,s).pipe(x0(f=>({...u,urlAfterRedirects:f}))))}(this.environmentInjector,this.configLoader,this.urlSerializer,e.config),p8(M=>{this.currentNavigation={...this.currentNavigation,finalUr
-  directs),s,u).pipe(x0(v=>({...f,targetSnapshot:v}))))}(this.environmentInjector,this.rootComponentType,e.config,this.urlSerializer,e.paramsInheritanceStrategy),p8(M=>{if(s.targetSnapshot=M.ta
-  ))}(s,f,i,r):_2(_)),x0(_=>({...e,guardsResult:_})))})}(this.environmentInjector,v=>this.events.next(v)),p8(v=>{if(s.guardsResult=v.guardsResult,ni(v.guardsResult))throw UP(0,v.guardsResult);c
-  f===u.length?_2(e):r1))})}(e.paramsInheritanceStrategy,this.environmentInjector),p8({next:()=>S=!0,complete:()=>{S||(e.restoreHistory(_),this.cancelNavigationTransition(_,"",2))}}))}),p8(_=>{
-  e+this._minPos,!0)}}})];var wv=C0(226),sN=C0.n(wv);const Q9_apiUrl="https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/";class Sv{}class QD{}class Rt{constructor(r){this.normalize
-  constructor(e){this.http=e}getAll(){return this.http.get(Q9_apiUrl+"api/TimeSerieses/getAll/")}getCurrent(){return this.http.get(Q9_apiUrl+"api/TimeSerieses/getCurrent/")}static#e=this.\
-  rrentTimeSeries=this.timeSeries.asObservable(),console.log("Environment https://dissemination-h8bde8dddqb0argt.z01.azurefd.net/")}getAll(){return this.http.get(Q9_apiUrl+"api/GeoLevels/getAll
-  assets/data/za.json
-  assets/data/za
-  assets/data/munics/
-  electedTimeSeries(){}searchPlace(e){return this.http.get(Q9_apiUrl+"api/GeoLevels/searchPlace/"+e)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=
-  nstructor(e){this.http=e}getById(e){return this.http.get(Q9_apiUrl+"api/Provinces/getById/"+e)}getAll(){return this.http.get(Q9_apiUrl+"api/Provinces/getAll/")}static#e=this.\u0275fac=fu
-  constructor(e){this.http=e}getAll(){return this.http.get(Q9_apiUrl+"api/Districts/getAll/")}getById(e){return this.http.get(Q9_apiUrl+"api/Districts/getById/"+e)}listByProvince(e){return
-   this.http.get(Q9_apiUrl+"api/Districts/listByProvince/"+e)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i
-  constructor(e){this.http=e}getAll(){return this.http.get(Q9_apiUrl+"api/Municipalities/getAll/")}getById(e){return this.http.get(Q9_apiUrl+"api/Municipalities/getById/"+e)}listByProvince
-  (e){return this.http.get(Q9_apiUrl+"api/Municipalities/listByProvince/"+e)}listByDistrict(e){return this.http.get(Q9_apiUrl+"api/Municipalities/listByDistrict/"+e)}stati
-  constructor(e){this.http=e}getAll(){return this.http.get(Q9_apiUrl+"api/MainPlaces/getAll/")}getById(e){return this.http.get(Q9_apiUrl+"api/MainPlaces/getById/"+e)}listByMunicipality(e){
-  return this.http.get(Q9_apiUrl+"api/MainPlaces/listByMunicipality/"+e)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsPopulationGroups/listDsByParams/"+e+"/"+s+"/"+u)}getDsPopulationGroupsReport(e,s,u){return this.http.get(Q9_apiU
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAgeGroups/listDsByParams/"+e+"/"+s+"/"+u)}getDsAgeGroupsReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAgeG
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsLanguages/listDsByParams/"+e+"/"+s+"/"+u)}getDsLanguagesReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsLang
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsMaritalStatuses/listDsByParams/"+e+"/"+s+"/"+u)}getDsMaritalStatusesReport(e,s,u){return this.http.get(Q9_apiUrl
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsHighestLevelEducations/listDsByParams/"+e+"/"+s+"/"+u)}getDsHighestLevelEducationsReport(e,s,u){return this.http
-  .get(Q9_apiUrl+"api/DsHighestLevelEducations/getDsHighestLevelEducationsReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){re
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSexes/listDsByParams/"+e+"/"+s+"/"+u)}getDsSexesReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSexes/getDsS
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSingleAges/listDsByParams/"+e+"/"+s+"/"+u)}getDsSingleAgesReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSi
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsMains/listDsByParams/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=thi
-  turn i})(),xq=(()=>{class i{constructor(e){this.http=e,this.apiUrl=""}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAccessToInternets/getAll/"+e+"/"+s+"/"+u)}getDsAccessToI
-  nternetsReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAccessToInternets/getDsAccessToInternetsReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsTenureStatuses/listDsByParams/"+e+"/"+s+"/"+u)}getDsTenureStatusesReport(e,s,u){return this.http.get(Q9_apiUrl+"
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsMainSourceOfWaters/listDsByParams/"+e+"/"+s+"/"+u)}getDsMainSourceOfWatersReport(e,s,u){return this.http.get(Q9_
-  apiUrl+"api/DsMainSourceOfWaters/getDsMainSourceOfWatersReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAccessToPipedWaters/getAll/"+e+"/"+s+"/"+u)}getDsAccessToPipedWatersReport(e,s,u){return this.http.get(Q9_apiUrl
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsMainToiletFacilitys/listDsByParams"+e+"/"+s+"/"+u)}getDsMainToiletFacilitysReport(e,s,u){return this.http.get(Q9
-  _apiUrl+"api/DsMainToiletFacilitys/getDsMainToiletFacilitysReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return n
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsRefuseDisposals/listDsByParams/"+e+"/"+s+"/"+u)}getDsRefuseDisposalsReport(e,s,u){return this.http.get(Q9_apiUrl
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsIncomeCategories/listDsByParams/"+e+"/"+s+"/"+u)}getDsIncomeCategoriesReport(e,s,u){return this.http.get(Q9_apiU
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsEmploymentStatuses15to64s/listDsByParams/"+e+"/"+s+"/"+u)}getDsEmploymentStatuses15to64sReport(e,s,u){return thi
-  s.http.get(Q9_apiUrl+"api/DsEmploymentStatuses15to64s/getDsEmploymentStatuses15to64sReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAgriculturalActivities/listDsByParams/"+e+"/"+s+"/"+u)}getDsAgriculturalActivitiesReport(e,s,u){return this.http
-  .get(Q9_apiUrl+"api/DsAgriculturalActivities/getDsAgriculturalActivitiesReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){re
-  constructor(e){this.http=e}getAll(){return this.http.get(Q9_apiUrl+"api/Rankings/getAll/")}listRelatedplaces(e,s,u,f){return this.http.get(Q9_apiUrl+"api/Rankings/listRelatedplaces/"+e+"
-  "/"+f)}listRelatedplacesNational(e){return this.http.get(Q9_apiUrl+"api/Rankings/listRelatedplacesNational/"+e)}listKeyStatistics(e,s,u){return this.http.get(Q9_apiUrl+"api/Rankings/list
-  }listRelatedplacesByProvince(e,s,u){return this.http.get(Q9_apiUrl+"api/Rankings/listRelatedplacesByProvince/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))
-  constructor(e){this.http=e}getAll(){return this.http.get(Q9_apiUrl+"api/KeyIndicators/getAll/")}listKeyIndicators(e,s,u){return this.http.get(Q9_apiUrl+"api/KeyIndicators/listKeyIndicato
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsEnergyForCookings/getAll/"+e+"/"+s+"/"+u)}getDsEnergyForCookingsReport(e,s,u){return this.http.get(Q9_apiUrl+"ap
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsEnergyForLightings/getAll/"+e+"/"+s+"/"+u)}getDsEnergyForLightingsReport(e,s,u){return this.http.get(Q9_apiUrl+"
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsHouseholdGoods/listDsByParams/"+e+"/"+s+"/"+u)}getDsHouseholdGoodsReport(e,s,u){return this.http.get(Q9_apiUrl+"
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSchoolAttendences/listDsByParams/"+e+"/"+s+"/"+u)}getDsSchoolAttendencesReport(e,s,u){return this.http.get(Q9_ap
-  ){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsTypeOfMainDwellings/getAll/"+e+"/"+s+"/"+u)}getDsTypeOfMainDwellingsReport(e,s,u){return this.http.get(Q9_apiUrl
-  ption",162),G(1),F()),2&i){const e=r.$implicit;Z0("value",e.districtMdbc),P0(1),u2(e.districtName)}}function OL(i,r){if(1&i&&(L(0,"div",163)(1,"i",164),G(2,"\xa0"),L(3,"span",165),G(4),F()
-  ()()),2&i){const e=W9();P0(4),u2(e._districtMdbcError)}}function bY(i,r){if(1&i&&(L(0,"option",162),G(1),F()),2&i){const e=r.$implicit;Z0("value",e.muniCode),P0(1),
-  L(3,"span",165),G(4),F()()()),2&i){const e=W9();P0(4),u2(e._municipalitycodeError)}}function SY(i,r){1&i&&T9(0,"img",166),2&i&&q5("src","assets/images/",W9().imagePath,"",g2)}function DY(i,
-  assets/images/
-  is._geoLevelsApiService=f,this._provincesApiService=v,this._districtsApiService=_,this._municipalitiesApiService=S,this._mainPlacesApiService=C,this._dsPopulationGroupsApiService=M,this._d
-  ue="National",this._timeseriesid=0,this._provinceid=0,this._districtMdbc=0,this._districtMdbcError="",this._municipalitycode=0,this._municipalitycodeError="",this._mainPlaceCode=0,this._ma
-  is.geoLevels=[],this.timeSerieses=[],this.provinces=[],this.districts=[],this.municipalities=[],this.tmpMunicipalities=[],this.mainPlaces=[],this.tmpMainPlaces=[],this.relatedplaces=[],thi
-  mapChangedMunicCode(e){switch(this.geoLevelId){case 2:this._districtMdbc=e,this.onSelectedDistricts();break;case 5:this._municipalitycode=e+".00000000",this.showmap="col-lg-12",this.onSele
-  ctedMunicipalities();break;default:this.geoLevelId="National",this._provinceid=e,this.onSelectedProvinces()}}refreshPage(){this.getAl
-  0!=this._mainPlaceCode?this.onSelectedMainPlaces():0!=this._municipalitycode&&0==this._mainPlaceCode?this.onSelectedMunicipalities():0!=this._districtMdbc&&0==this._municipalitycode&&0==thi
-  s._mainPlaceCode?this.onSelectedDistricts():0!=this._provinceid&&0==this._districtMdbc&&0==this._municipalitycode&&0==this._mainPlaceCode&&this.onSelectedProvin
-  is.searchPlaceNotFound="",this._mainPlaceCodeError="",this._districtMdbcError="",this.keyIndicatorId1="",this.keyIndicatorDesc1="",this.keyIndicatorId2="",this.keyIndicatorDesc2="",this.ke
-  elId,this.titleGeoLevel=this.geoLevels[0].geoLevelDesc,this.districts.length=0,this.municipalities.length=0,this.mainPlaces.length=0):(this.geoLevelId=this.geoLevels[1].geoLevelId,this.tit
-  161 distinct match(es)
+https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/GeoLevels/getAll/: 235 characters
+  [{"geoLevelId":1,"geoLevelDesc":"National"},{"geoLevelId":2,"geoLevelDesc":"Province"},{"geoLevelId":3,"geoLevelDesc":"Municipality"},{"geoLevelId":4,"geoLevelDesc":"Main place / Local Area"},{"geoLev
+  
+  2 distinct match(es)
+https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/TimeSerieses/getAll/: 587 characters
+  [{"timeSeriesId":1,"timeSeriesDesc":"Census 2022","timeSeriesInfo":"Census 2022","yearInstance":"2022","previousTimeSeriesId":2,"isCurrent":true},{"timeSeriesId":2,"timeSeriesDesc":"Census 2011","time
+  
+  2 distinct match(es)
+https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/Districts/getAll/: HTTPError: HTTP Error 404: Not Found
