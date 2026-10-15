@@ -1,31 +1,9 @@
-portugal_census: 308 municipalities
-  50 read
-  100 read
-  150 read
-  200 read
-  250 read
-  300 read
-  Portugal: 10,343,066 people, median 46.5, mean 45.44 against INE's published 45.44
-  308 municipalities bound; polygons left without one: 2272694B61775283939308 (unidentified)
-  AVEIRO: 19 municipalities, 700,787 people, median 47.2
-  BEJA: 14 municipalities, 144,401 people, median 48.5
-  BRAGA: 14 municipalities, 846,293 people, median 45.3
-  BRAGANÇA: 12 municipalities, 122,804 people, median 55.0
-  CASTELO BRANCO: 11 municipalities, 177,962 people, median 53.3
-  COIMBRA: 17 municipalities, 408,551 people, median 49.7
-  FARO: 16 municipalities, 467,343 people, median 46.6
-  GUARDA: 14 municipalities, 142,974 people, median 55.3
-  LEIRIA: 16 municipalities, 458,605 people, median 48.0
-  LISBOA: 16 municipalities, 2,275,385 people, median 44.2
-  PORTALEGRE: 15 municipalities, 104,923 people, median 51.4
-  PORTO: 18 municipalities, 1,785,405 people, median 45.8
-  Região Autónoma da Madeira: 11 municipalities, 250,744 people, median 46.1
-  Região Autónoma dos Açores: 19 municipalities, 236,413 people, median 42.2
-  SANTARÉM: 21 municipalities, 424,973 people, median 49.3
-  SETÚBAL: 13 municipalities, 874,806 people, median 45.2
-  VIANA DO CASTELO: 10 municipalities, 231,266 people, median 49.9
-  VILA REAL: 14 municipalities, 185,695 people, median 53.0
-  VISEU: 24 municipalities, 351,292 people, median 50.1
-  ÉVORA: 14 municipalities, 152,444 people, median 49.2
-  wrote data/processed/portugal_census.json (1143 kB)
-  329 records
+india_census: Census 2011, level=district
+  validated against published national totals: 640 districts, 1,210,854,977 people
+  national sex ratio 943 females per 1,000 males (623,270,258 males, 587,584,719 females)
+  C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
+  C-01 Maharashtra: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW27C-01 MDDS.xls
+  Palghar: 2,990,116 from 8 tehsils; Thane: 8,070,032 from 7; together 11,060,148, the district's own row
+  wrote data/processed/india_district.json (2745 kB)
+  735 records, 734 with religion shares, 1 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (31): ADI DHARM, Addi Bassi, Adi, Adim dhamm, Animist, Atheist, Bahai / Bahais, Bidin, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Idu / Idu Mishmi, Intaya, Jews / Judaism, Khasi, Nani Intiya, Niamtre, Nocte, Non Christians, Nyarino, Other religions (not separately named), Pagan, Parsi/Zorastrian, Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Traditional Religion, Tribal Religion, Yumasam
