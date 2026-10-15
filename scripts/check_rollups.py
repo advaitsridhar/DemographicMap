@@ -12,11 +12,11 @@ parent's population note. This lists every such disagreement whose parent
 says nothing about it.
 
 The build writes that sentence itself (build_entities.note_population_gaps)
-using the same helpers, so a disagreement this finds after a build is one
-the build could not see: a note that names neither the divisions' total nor
-the difference between the two. The unit test (tests/test_round6_rollups.py)
-runs this on site/data and fails on any gap not in ``ROLLUP_ALLOWLIST``, the
-file of known gaps with their reasons.
+using the same helpers, and stops before writing if any disagreement is left
+unsaid (build_entities.check_population_gaps_said), so a disagreement this
+finds in published files is one put there by something other than the build.
+The unit test (tests/test_round6_rollups.py) runs this on site/data and fails
+on any gap not in ``ALLOWLIST``, the file of known gaps with their reasons.
 
 Usage:
     python3 scripts/check_rollups.py            # site/data

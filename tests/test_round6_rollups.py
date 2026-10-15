@@ -359,6 +359,37 @@ class RestateEncyclopaediaParents(unittest.TestCase):
         self.assertIn(("SLB", "Temotu"), be.UNDRAWN_PARTS)
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
 
+    def test_a_declared_sole_division_shows_its_count_over_a_newer_infobox(self):
+        # rollups-54: the Capital District is Libertador, its one division.
+        census = "INE Venezuela, XIV Censo Nacional de Población y Vivienda 2011"
+        parent = unit("P", "Distrito Capital", 3_523_959, 2020,
+                      "English Wikipedia, Capital District (Venezuela) (infobox)")
+        parent["population"]["unit"] = "people"
+        child = unit("L", "Libertador", 1_943_901, 2011, census, parent="P")
+        child["sources"] = [{"field": "population", "name": census, "url": "u"}]
+        a1, a2 = self.tables(parent, [child], iso3="VEN")
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2),
+                         ["VEN Distrito Capital 3,523,959 -> 1,943,901"])
+        self.assertEqual(parent["population"],
+                         {"value": 1_943_901, "year": 2011, "source": census})
+        note = parent["population_note"]
+        self.assertTrue(note.startswith("The Capital District is the municipality of "
+                                        "Libertador, the one division drawn inside it"))
+        self.assertIn("It replaces 3,523,959 for 2020 from Wikipedia, 81% above this count "
+                      "of the same ground", note)
+        self.assertIn({"field": "population", "name": census, "url": "u"}, parent["sources"])
+        # Undeclared, the same pair is left to the sole-child pass.
+        parent = unit("P", "Elsewhere", 3_523_959, 2020, "Wikidata (CC0)")
+        a1, a2 = self.tables(parent, [unit("L", "L", 1_943_901, 2011, census, parent="P")],
+                             iso3="VEN")
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
+
+    def test_a_declared_sole_division_that_is_no_longer_alone_stops_the_build(self):
+        parent = unit("P", "Distrito Capital", 3_523_959, 2020, "Wikidata (CC0)")
+        a1, a2 = self.tables(parent, self.kids(2011, "INE"), iso3="VEN")
+        with self.assertRaises(SystemExit):
+            be.restate_encyclopaedia_parents(a1, a2)
+
 
 class NotePopulationGaps(unittest.TestCase):
     """Every disagreement over 15% says what the divisions add up to (rollups-21, 52-57, 59)."""
@@ -433,6 +464,74 @@ class NotePopulationGaps(unittest.TestCase):
         kids = [unit("K", "Kid", 100, 2021, "X", parent="P")]
         be.note_population_gaps([], {"TON": [parent]}, {"TON": kids})
         self.assertNotIn("population_note", parent)
+
+    def test_one_division_is_not_said_to_place_people_differently(self):
+        # Kinshasa: one polygon at both levels, two estimates of 2020.
+        parent = unit("P", "Kinshasa", 14_565_700, 2020, "Wikidata (CC0)")
+        kids = [unit("K", "Kinshasa", 9_924_784, 2020, OCHA, parent="P")]
+        be.note_population_gaps([], {"COD": [parent]}, {"COD": kids})
+        note = parent["population_note"]
+        self.assertTrue(note.startswith("The one division drawn on this map carries 9,924,784 "
+                                        "(OCHA's common operational dataset, 2020), 32% below"))
+        self.assertTrue(note.endswith("the two are different sources' figures for the same "
+                                      "year."))
+
+    def test_a_first_level_kept_over_its_divisions_says_why(self):
+        # rollups-48: Zimbabwe's provinces keep the 2022 census over OCHA's
+        # projection, and the note says that is what the districts carry.
+        parent = unit("P", "Harare", 2_427_209, 2022, "English Wikipedia, Harare (infobox)")
+        kids = [unit(f"K{i}", f"Kid {i}", v, 2023, OCHA, parent="P")
+                for i, v in enumerate((2_000_000, 1_078_170))]
+        a1, a2 = {"ZWE": [parent]}, {"ZWE": kids}
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
+        be.note_population_gaps([], a1, a2)
+        note = parent["population_note"]
+        self.assertIn("add up to 3,078,170 (OCHA's common operational dataset, 2023), 27% "
+                      "above this figure; their figures are for 2023, 1 year after this one; "
+                      + be.RESTATE_KEEPS["ZWE"] + ".", note)
+
+
+class PopulationGapsSaid(unittest.TestCase):
+    """The build stops on a gap over 15% that nothing on the record names (rollups-21)."""
+
+    def tables(self):
+        parent = unit("P", "Parent", 1_000, 2020)
+        kids = [unit("K1", "Kid", 400, 2010, "Census", parent="P"),
+                unit("K2", "Kid", 300, 2010, "Census", parent="P")]
+        country = {"id": "XYZ", "name": "Xyz", "population": {"value": 10_000, "year": 2025}}
+        return [country], {"XYZ": [parent]}, {"XYZ": kids}
+
+    def test_the_sentence_satisfies_the_check(self):
+        a0, a1, a2 = self.tables()
+        with self.assertRaises(SystemExit) as stop:
+            be.check_population_gaps_said(a0, a1, a2)
+        self.assertIn("XYZ Parent: 700 against 1,000", str(stop.exception))
+        self.assertIn("XYZ Xyz: 1,000 against 10,000", str(stop.exception))
+        self.assertEqual(len(be.note_population_gaps(a0, a1, a2)), 2)
+        be.check_population_gaps_said(a0, a1, a2)
+
+    def test_a_later_change_to_a_figure_is_caught(self):
+        a0, a1, a2 = self.tables()
+        be.note_population_gaps(a0, a1, a2)
+        a1["XYZ"][0]["population"]["value"] = 5_000
+        with self.assertRaises(SystemExit):
+            be.check_population_gaps_said(a0, a1, a2)
+
+    def test_the_build_and_the_published_check_agree(self):
+        a0, a1, a2 = self.tables()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "admin1").mkdir()
+            (root / "admin2").mkdir()
+            (root / "admin0.json").write_text(json.dumps(a0))
+            (root / "admin1" / "XYZ.units.json").write_text(json.dumps(a1["XYZ"]))
+            (root / "admin2" / "XYZ.units.json").write_text(json.dumps(a2["XYZ"]))
+            self.assertEqual({(d["level"], d["id"]) for d in cr.disagreements(root)},
+                             {("admin0", "XYZ"), ("admin1", "P")})
+            be.note_population_gaps(a0, a1, a2)
+            (root / "admin0.json").write_text(json.dumps(a0))
+            (root / "admin1" / "XYZ.units.json").write_text(json.dumps(a1["XYZ"]))
+            self.assertEqual(cr.disagreements(root), [])
 
 
 class CountryNotSummed(unittest.TestCase):
@@ -583,6 +682,25 @@ class OneSexRatioUnit(unittest.TestCase):
         with self.assertRaises(SystemExit):
             be.one_sex_ratio_unit([{"id": "x", "sex_ratio": {"value": 5, "unit": "per_mille"}}])
 
+    def test_canada_counts_gender_and_says_so_in_the_new_unit(self):
+        row = {"id": "can", "sex_ratio": {"value": 1026, "unit": "males_per_1000_females"},
+               "sex_ratio_note": "Men+ per 1,000 women+: the 2021 census counts gender."}
+        be.one_sex_ratio_unit([row])
+        self.assertEqual(row["sex_ratio"], {"value": 102.6, "unit": "males_per_100_females"})
+        self.assertEqual(row["sex_ratio_note"], "Men+ per 100 women+: the 2021 census counts "
+                                                "gender.")
+
+    def test_monaco_reads_in_the_unit_its_figure_is_shown_in(self):
+        # The curated row is per 1,000 (the country records' unit); after the
+        # build's conversion its note must not quote the Factbook per 1,000.
+        country = {"id": "MCO", "sex_ratio": {"value": 930, "unit": "males_per_1000_females"}}
+        quiet(be.apply_country_figures, [country], {"MCO": [curated("MCO", "sex_ratio")]})
+        be.one_sex_ratio_unit([country])
+        self.assertEqual(country["sex_ratio"]["value"], 96.9)
+        self.assertEqual(country["sex_ratio"]["unit"], "males_per_100_females")
+        self.assertIn("93.0 males per 100 females", country["sex_ratio_note"])
+        self.assertNotIn("1,000", country["sex_ratio_note"])
+
 
 class BahamasGroups(unittest.TestCase):
     """The seven districts the 2022 census prints in groups say so (rollups-61)."""
@@ -660,6 +778,13 @@ class CheckRollups(unittest.TestCase):
         sentence = cr.gap_sentence(summed, 1_000, 2020)
         self.assertTrue(cr.explained([sentence], 1_000, summed["total"]))
 
+    def test_a_year_is_not_a_figure(self):
+        # Divisions adding up to 2,015 are not named by "the 2015 census".
+        self.assertFalse(cr.explained(["Counted by the 2015 census."], 3_000, 2_015))
+        self.assertTrue(cr.explained(["They add up to 2,015."], 3_000, 2_015))
+        self.assertEqual(cr.numbers("In 2011, 1,943,901 people; 2004: 2,073,768; 12 of 2020"),
+                         [1_943_901.0, 2_073_768.0, 12.0])
+
     def test_sources_are_named_as_a_reader_knows_them_and_undated_ones_are_said(self):
         # Madagascar's regions: twenty-two Wikipedia articles, one year.
         kids = [unit(f"K{i}", f"Kid {i}", 100, 2018, f"English Wikipedia, Kid {i} (infobox)")
@@ -673,6 +798,29 @@ class CheckRollups(unittest.TestCase):
         sentence = cr.gap_sentence(cr.complete_sum(kids), 2_000, 2024)
         self.assertIn("(2 sources, 2011 and undated)", sentence)
         self.assertNotIn("2011 to 2011", sentence)
+
+    def test_the_passes_leave_no_gap_unsaid_on_the_published_records(self):
+        # The population passes run over the records the site last published,
+        # as the build runs them: every disagreement over 15% they leave is
+        # said, and the build's own stop agrees with the published check.
+        if not (SITE / "admin0.json").exists():
+            raise unittest.SkipTest("site/data has not been built")
+        admin0 = json.loads((SITE / "admin0.json").read_text(encoding="utf-8"))
+        tables = {}
+        for level in ("admin1", "admin2"):
+            tables[level] = {p.name.split(".")[0]: json.loads(p.read_text(encoding="utf-8"))
+                             for p in sorted((SITE / level).glob("*.units.json"))}
+        a1, a2 = tables["admin1"], tables["admin2"]
+        quiet(be.apply_country_figures, admin0, be.load_country_detail())
+        restated = be.restate_encyclopaedia_parents(a1, a2)
+        self.assertIn("VEN Distrito Capital 3,523,959 -> 1,943,901", restated)
+        said = be.note_population_gaps(admin0, a1, a2)
+        self.assertGreater(len(said), 100)
+        be.check_population_gaps_said(admin0, a1, a2)
+        left = [(iso3, parent.get("name")) for iso3, parent, summed, own, _ in
+                be.population_disagreements(admin0, a1, a2)
+                if not cr.explained(cr.notes_of(parent), own, summed["total"])]
+        self.assertEqual(left, [])
 
     def test_site_data_has_no_unexplained_gap(self):
         build = SITE / "build.json"
