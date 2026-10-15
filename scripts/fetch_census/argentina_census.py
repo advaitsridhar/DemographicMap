@@ -33,14 +33,19 @@ language is given in the note; it is not a language composition (the
 question is asked of nobody else), and language stays the documented gap
 the collection policy states.
 
-**Binding.** The boundary file files some departments under the wrong
-province -- Entre Ríos's under Buenos Aires, which it draws as one polygon
-with them, ten Greater Buenos Aires partidos under the capital, Santiago del
-Estero's Rivadavia under Córdoba -- so a department is bound to its polygon
-by shape id: by name within its province where that is unique; then by a
-name no other unbound polygon or department shares; then, for a name
-several share, by the one polygon that lies among its province's other
-departments. Anything left is reported and left out, never guessed.
+**Binding.** The boundary file's two levels do not nest: by area, ten
+Greater Buenos Aires partidos lie under the capital, Santiago del Estero's
+Rivadavia under Córdoba, and Entre Ríos has no first-level polygon at all,
+its ground and departments being inside the polygon drawn as Buenos Aires.
+So a department is bound to its polygon by shape id: by name within its
+province where that is unique; then by a name no other unbound polygon or
+department shares; then, for a name several share, by the one polygon that
+lies among its province's other departments. Anything left is reported and
+left out, never guessed. The build files the misplaced ones under their own
+provinces (``build_entities.DECLARED_PARENTS``). The polygon drawn as Buenos
+Aires takes Buenos Aires and Entre Ríos together (``DRAWN_INSIDE``): their
+counts are added before anything is derived, so its figures describe its
+ground and its departments add up to it.
 
 Usage:
     python -m scripts.fetch_census.argentina_census
@@ -156,6 +161,13 @@ ALIASES: dict[str, str] = {
 # (province, department created since the boundary file) -> the department it
 # was carved from: Tolhuin, from Río Grande in 2012.
 MERGES = {("Tierra del Fuego, Antártida e Islas del Atlántico Sur", "Tolhuin"): "Río Grande"}
+# A province the boundary file draws no first-level polygon for, by the
+# province whose polygon holds its ground: Entre Ríos is drawn inside the
+# polygon drawn as Buenos Aires, and its departments are filed under it. That
+# polygon takes the two provinces' figures together, added before anything is
+# derived from them, so that it describes its ground and its departments make
+# it.
+DRAWN_INSIDE = {"Buenos Aires": ("Entre Ríos",)}
 SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+) y más$")
 BAND = re.compile(r"^(\d+)-(\d+)$")
@@ -501,6 +513,113 @@ def dept_sheet(sheets: dict[tuple[int, int | None], list[list[Any]]], index: int
     return out
 
 
+def ethnicity(what: str, ind: dict[str, int], afr: int, dwelling: int,
+              spoken: list[int], level: str) -> dict[str, Any]:
+    """The ethnicity fields of a unit: its indigenous people (by people for a
+    province), its Afro-descendants and the rest of its private-dwelling
+    population."""
+    if not dwelling:
+        return {}
+    indigenous_total = sum(ind.values())
+    rest = dwelling - indigenous_total - afr
+    if rest < 0:
+        raise SystemExit(f"argentina_census: {what}: indigenous and Afro-descendant "
+                         f"people exceed the private-dwelling population")
+    counts = {**ind, AFRO: afr, REST: rest}
+    yes, no = spoken[1], spoken[2]
+    # Only where table 7 has the department: a share of nothing read is no share.
+    said = (f" {100 * yes / indigenous_total:.0f}% of the indigenous population speak or "
+            "understand their people's language." if indigenous_total and yes + no
+            else "")
+    which = ("which people is published for the province only, so the "
+             "department's indigenous population is one line. "
+             if level == "admin2" else "")
+    return {
+        "ethnicity": shares(counts),
+        "ethnicity_year": YEAR,
+        "ethnicity_note": (
+            f"Two questions the 2022 census asked the {dwelling:,} people in private "
+            "dwellings: whether a person recognises themselves as indigenous or "
+            "descended from an indigenous people, and whether as Afro-descendant or "
+            "as having Black or African ancestors. Someone may answer yes to both, and "
+            "INDEC publishes no cross of the two, so the remainder is the population "
+            "less both counts; " + which + "the census asks nothing about European or "
+            "mestizo ancestry." + said),
+    }
+
+
+def fields(level: str, pop: int, women: int, men: int, median: float | None,
+           rounded: int | None, eth: dict[str, Any],
+           links: list[dict[tuple[str, int], str]]) -> dict[str, Any]:
+    """A unit's fields; ``links`` is the workbooks read for it, one set per
+    province it takes figures from."""
+    source = SOURCE.format(table=TABLE_NAMES[("est", 4)])
+    table = ("poblacion_indigena", 1 if level == "admin2" else 9)
+    out = {
+        "population": measure(pop, year=YEAR,
+                              source=SOURCE.format(table=TABLE_NAMES[("est", 1)])),
+        "median_age": measure(median, unit="years", year=YEAR, source=source),
+        "median_age_note": (
+            "Interpolated within the single year of age that holds the middle person, "
+            "from INDEC's count of everyone by sex and single year of age"
+            + (f"; INDEC's own median, to the whole year, is {rounded}." if rounded
+               is not None else ".")),
+        "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
+                             year=YEAR, source=source),
+        **eth,
+        "sources": [entry for link in links for entry in (
+            {"field": "population", "name": SOURCE.format(table=TABLE_NAMES[("est", 1)]),
+             "url": link[("est", 1)], "year": YEAR},
+            {"field": "median_age/sex_ratio", "name": source,
+             "url": link[("est", 4)], "year": YEAR},
+            {"field": "ethnicity", "name": SOURCE.format(
+                table=TABLE_NAMES[table] + "; "
+                + TABLE_NAMES[("poblacion_afrodescendiente", 7)]),
+             "url": link[table], "year": YEAR},
+        )],
+    }
+    return out
+
+
+def drawn_together(host: str, guests: tuple[str, ...],
+                   kept: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """The fields of the polygon drawn as ``host``, which also holds ``guests``
+    (DRAWN_INSIDE): the provinces' counts added together -- people, ages, the
+    indigenous peoples, Afro-descendants, private dwellings and the language
+    answers -- and everything derived from the sums. INDEC publishes no median
+    for the two together, so none is compared."""
+    parts = [kept[p] for p in (host, *guests)]
+    names = [host, *guests]
+    together = " and ".join(names)
+    women, men, median = ages([p["ages"] for p in parts], together)
+    if women + men != sum(p["people"] for p in parts):
+        # As for any province: the population is table 1's, the ages table 4's.
+        log(f"  {together}: table 4's ages count {women + men:,}, table 1 "
+            f"{sum(p['people'] for p in parts):,}")
+    peoples: dict[str, int] = defaultdict(int)
+    for part in parts:
+        for people, n in part["peoples"].items():
+            peoples[people] += n
+    speak = [sum(col) for col in zip(*(p["speak"] for p in parts))]
+    out = fields("admin1", sum(p["people"] for p in parts), women, men, median, None,
+                 ethnicity(together, dict(peoples), sum(p["afro"] for p in parts),
+                           sum(p["private"] for p in parts), speak, "admin1"),
+                 [p["links"] for p in parts])
+    guest = guests[0] if len(guests) == 1 else ", ".join(guests[:-1]) + " and " + guests[-1]
+    each = " and ".join(f"{name} {p['people']:,}" for name, p in zip(names, parts))
+    why = (f"The boundary file draws {guest} inside this polygon and no first-level polygon "
+           f"of {'its' if len(guests) == 1 else 'their'} own, so the figures here are "
+           f"{together} together.")
+    out["population_note"] = (f"{why} The 2022 census counts {each}; this is their sum, "
+                              f"{out['population']['value']:,}.")
+    out["median_age_note"] = f"{why} {out['median_age_note']}"
+    if out.get("ethnicity_note"):
+        out["ethnicity_note"] = f"{why} {out['ethnicity_note']}"
+    log(f"  {host}'s polygon holds {guest}: {out['population']['value']:,} people together, "
+        f"median {median}")
+    return out
+
+
 def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
          parents: dict[str, str]) -> tuple[dict[str, str], list[str]]:
     return binding.bind(departments, shapes, parents, ALIASES)
@@ -520,12 +639,17 @@ def main() -> int:
     worst_median = 0.0
     agreement: dict[str, int] = defaultdict(int)
     far: list[str] = []
+    # Each province's own counts, kept for a polygon that holds two provinces
+    # (DRAWN_INSIDE).
+    kept: dict[str, dict[str, Any]] = {}
+
     for index, pcode, slug, page, name, map_name in PROVINCES:
         what = name
         books = {}
         for (topic, table) in TABLES:
             books[(topic, table)], url = fetcher.workbook(index, slug, page, topic, table)
             urls[(topic, table)].append(url)
+        here = {key: found[-1] for key, found in urls.items()}
         sheets = {k: cuadros(b) for k, b in books.items()}
 
         # -- the departments and their 2022 populations
@@ -548,7 +672,8 @@ def main() -> int:
         est4 = sheets[("est", 4)]
         by_dept = dept_sheet(est4, index, names, f"{what} est_c4")
         age_figures = {c: ages(r, f"{what}, {names[c]}") for c, r in by_dept.items()}
-        age_province = ages(sheet(est4, index, f"{what} est_c4"), what)
+        est4_province = sheet(est4, index, f"{what} est_c4")
+        age_province = ages(est4_province, what)
         if sum(a[0] + a[1] for a in age_figures.values()) != age_province[0] + age_province[1]:
             raise SystemExit(f"argentina_census: {what}: departments' ages do not make the province")
         published = {c: v[1][0] for c, v in
@@ -667,81 +792,25 @@ def main() -> int:
             log(f"  {what}: {source_name} is added to {target_name}, which the boundary file "
                 "draws whole")
 
-        def ethnicity(ind: dict[str, int], afr: int, dwelling: int, spoken: list[int],
-                      level: str) -> dict[str, Any]:
-            if not dwelling:
-                return {}
-            indigenous_total = sum(ind.values())
-            rest = dwelling - indigenous_total - afr
-            if rest < 0:
-                raise SystemExit(f"argentina_census: {what}: indigenous and Afro-descendant "
-                                 f"people exceed the private-dwelling population")
-            counts = {**ind, AFRO: afr, REST: rest}
-            yes, no = spoken[1], spoken[2]
-            # Only where table 7 has the department: a share of nothing read is no share.
-            said = (f" {100 * yes / indigenous_total:.0f}% of the indigenous population speak or "
-                    "understand their people's language." if indigenous_total and yes + no
-                    else "")
-            which = ("which people is published for the province only, so the "
-                     "department's indigenous population is one line. "
-                     if level == "admin2" else "")
-            return {
-                "ethnicity": shares(counts),
-                "ethnicity_year": YEAR,
-                "ethnicity_note": (
-                    f"Two questions the 2022 census asked the {dwelling:,} people in private "
-                    "dwellings: whether a person recognises themselves as indigenous or "
-                    "descended from an indigenous people, and whether as Afro-descendant or "
-                    "as having Black or African ancestors. Someone may answer yes to both, and "
-                    "INDEC publishes no cross of the two, so the remainder is the population "
-                    "less both counts; " + which + "the census asks nothing about European or "
-                    "mestizo ancestry." + said),
-            }
-
-        def fields(level: str, pop: int, women: int, men: int, median: float | None,
-                   rounded: int | None, eth: dict[str, Any]) -> dict[str, Any]:
-            source = SOURCE.format(table=TABLE_NAMES[("est", 4)])
-            out = {
-                "population": measure(pop, year=YEAR,
-                                      source=SOURCE.format(table=TABLE_NAMES[("est", 1)])),
-                "median_age": measure(median, unit="years", year=YEAR, source=source),
-                "median_age_note": (
-                    "Interpolated within the single year of age that holds the middle person, "
-                    "from INDEC's count of everyone by sex and single year of age"
-                    + (f"; INDEC's own median, to the whole year, is {rounded}." if rounded
-                       is not None else ".")),
-                "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
-                                     year=YEAR, source=source),
-                **eth,
-                "sources": [
-                    {"field": "population", "name": SOURCE.format(table=TABLE_NAMES[("est", 1)]),
-                     "url": urls[("est", 1)][-1], "year": YEAR},
-                    {"field": "median_age/sex_ratio", "name": source,
-                     "url": urls[("est", 4)][-1], "year": YEAR},
-                    {"field": "ethnicity", "name": SOURCE.format(
-                        table=TABLE_NAMES[("poblacion_indigena", 1 if level == "admin2" else 9)]
-                        + "; " + TABLE_NAMES[("poblacion_afrodescendiente", 7)]),
-                     "url": urls[("poblacion_indigena", 1 if level == "admin2" else 9)][-1],
-                     "year": YEAR},
-                ],
-            }
-            return out
-
         provinces[pcode] = {
             "name": name, "map_name": map_name,
             "fields": fields("admin1", province_pop, age_province[0], age_province[1],
                              age_province[2], published.get(pcode),
-                             ethnicity(peoples, afro_total[1], afro_total[0], speak_province,
-                                       "admin1")),
+                             ethnicity(what, peoples, afro_total[1], afro_total[0],
+                                       speak_province, "admin1"), [here]),
         }
+        kept[name] = {"code": pcode, "people": province_pop, "ages": est4_province,
+                      "peoples": peoples, "afro": afro_total[1], "private": afro_total[0],
+                      "speak": speak_province, "links": here}
         for code in names:
             women, men, median = age_figures[code]
             departments[code] = {
                 "name": names[code], "province": name, "map_province": map_name or "",
                 "fields": fields("admin2", population[code], women, men, median,
                                  None if code in merged_from else published.get(code),
-                                 ethnicity({INDIGENOUS_DEPT: indigenous[code]}, afro[code],
-                                           private[code], speak[code], "admin2")),
+                                 ethnicity(what, {INDIGENOUS_DEPT: indigenous[code]},
+                                           afro[code], private[code], speak[code], "admin2"),
+                                 [here]),
             }
             if code in merged_from:
                 departments[code]["fields"]["population"]["note"] = (
@@ -759,6 +828,8 @@ def main() -> int:
                          "rounding")
     national = sum(p["fields"]["population"]["value"] for p in provinces.values())
     log(f"  {len(provinces)} provinces, {len(departments)} departments, {national:,} people")
+    for host, guests in DRAWN_INSIDE.items():
+        provinces[kept[host]["code"]]["fields"] = drawn_together(host, guests, kept)
 
     bound, missing = bind({c: (d["name"], d["map_province"] or d["province"])
                            for c, d in departments.items()}, admin2, parents)

@@ -1547,6 +1547,29 @@ PARTIAL_LEVELS: dict[tuple[str, str], dict[str, Any]] = {
                 "nothing there to draw. The five island groups are the level "
                 "that does cover it.",
     },
+    # Not found by the detector: the ground left out is five islets, 12% of
+    # Torba's first-level polygon and under a point of the country, which
+    # renders as sea at second-level zoom all the same. The 2020 census counts
+    # 66 area councils and the boundary file draws 58 (vanuatu_census): the
+    # Torres Islands (166.6E 13.1-13.4S) lie inside Torba's first-level outline
+    # and in no council's; Mota, Merelava and Shefa's five undrawn councils'
+    # islands lie outside every polygon, the country's own outline included
+    # (8 to 54 km from it). The declared share is of the country polygon, which
+    # is larger than its provinces' outlines (89.6%), so the figure measures
+    # the boundary file's coastlines more than the councils; the note says
+    # what the councils leave out instead. Declaring the level puts land under
+    # the Torres Islands (map.js's partial-land layer, from the first level).
+    ("VUT", "admin2"): {
+        "units": 58,
+        "coverage_pct": 88.9,
+        "note": "Vanuatu's second-order units are its area councils. The 2020 census "
+                "counts 66 of them and the boundary file draws 58. The Torres Islands, "
+                "in Torba, lie inside the province's outline but in none of its "
+                "councils', so at this level they show as land with no unit on it; "
+                "Mota and Merelava in Torba, and North Tongoa, Tongariki, Makimae, "
+                "Nguna and Emau in Shefa, are not drawn at all. Their people are in "
+                "their provinces' counts.",
+    },
 }
 
 # The ground a second level leaves out, drawn as one unit per first-order
@@ -2016,6 +2039,39 @@ def whole(geom):
     return unary_union(parts) if parts else fixed
 
 
+# Countries whose boundary file draws a second level that is not inside its
+# first, so that no first-level unit is the parent of any second-level one:
+# {country: what the two levels are}. Each second-level unit falls back to the
+# country, which is true, rather than to the one first-level unit it is most
+# inside, which is not its parent.
+#   SYC  The first level is the 26 districts; the second is the eight regions
+#        OCHA's population table counts (Central 1 Mahe, Central 2 Mahe, East,
+#        North and West Mahe, Praslin, La Digue and Other Islands), each made
+#        of several districts. By area each region went to the one district it
+#        is most inside: East Mahe's 22,414 people sat under Takamaka's 2,850,
+#        and Takamaka's "divisions" came to 7.9 times its own count.
+NOT_NESTED: dict[str, str] = {
+    "SYC": "Seychelles' second level is its eight regions, each of several of the 26 "
+           "districts that make its first level",
+}
+
+# Second-level polygons with no first-level parent on the map, though their
+# country's levels nest: {shapeID: (ISO3, why)}. Belgium's "Brussels" is the
+# whole Brussels-Capital Region (162 km2), and the first-level polygon labelled
+# Brussels Hoofdstedelijk is 70.6 km2 of it, the rest drawn inside Flanders'
+# outline; the region's figures stand on this polygon and none on the
+# first-level one (NOT_THIS_GROUND). By area it sat under Flanders, whose drawn
+# provinces then came to 8,155,980 against its 6,884,271; filed under the half
+# polygon instead, the roll-ups would put the whole region's figures back on
+# ground they were refused for. So it is filed under neither, and falls back to
+# the country: Flanders' five provinces make Flanders.
+UNPARENTED: dict[str, tuple[str, str]] = {
+    "21686613B18913386279163": (
+        "BEL", "the whole Brussels-Capital Region, whose first-level polygon is drawn as "
+               "half of it"),
+}
+
+
 def link_adm2_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]]) -> None:
     """CGAZ ADM2 carries no parent link, so work it out from the geometry.
 
@@ -2095,9 +2151,17 @@ def link_adm2_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]]) ->
 
     matched = 0
     pending: dict[str, dict[str, Any]] = {}
+    unnested = 0
     for row in adm2:
         entry = trees.get(row["group"])
         row["parent_shape"] = None
+        if row["group"] in NOT_NESTED or row.get("shape_id") in UNPARENTED:
+            # A second level that is not inside the first has no parent in
+            # it, nor does a unit drawn across a first-level polygon that is
+            # part of it: the unit falls back to the country (NOT_NESTED,
+            # UNPARENTED).
+            unnested += 1
+            continue
         if not entry:
             continue
         tree, rows = entry
@@ -2130,6 +2194,10 @@ def link_adm2_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]]) ->
     log(f"  ADM2 -> ADM1 parent assigned for {matched}/{len(adm2)} units "
         f"({len(pending)} weighed by area, {moved} moved to the shape they are "
         f"mostly inside)")
+    if unnested:
+        log(f"  {unnested} units left under their country, the first level drawn round "
+            f"none of them (NOT_NESTED: {', '.join(sorted(NOT_NESTED))}; UNPARENTED: "
+            f"{', '.join(sorted({iso3 for iso3, _ in UNPARENTED.values()}))})")
     if unplaced:
         shown = ", ".join(unplaced[:8])
         more = f" and {len(unplaced) - 8} more" if len(unplaced) > 8 else ""
@@ -2342,22 +2410,200 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     "91817680B53543824194985": ("KOR", "Daejeon"),  # Dong-gu; in North Chungcheong's polygon
     "91817680B88731995383072": ("KOR", "North Gyeongsang"),  # Uljin-gun; in Gangwon's polygon
     "91817680B46467557111645": ("KOR", "South Jeolla"),  # Sinan-gun; in no province
+    # Bhutan: the boundary file's dzongkhags and gewogs are not one partition,
+    # and by area 17 of the 205 gewogs fell in a neighbouring dzongkhag --
+    # Punakha's Goenshari, Kabjisa, Talo and Toepisa in Thimpu, whose own
+    # Mewang and Soe fell in Paro, so Thimpu's drawn gewogs came to 23,072
+    # with four of them Punakha's. The 2017 census prints each gewog in its
+    # dzongkhag's own report (bhutan_gewog's parent_name), and filed so, every
+    # dzongkhag's gewogs add up to its Table 2.1 count less the towns it counts
+    # beside them, to the person (Thimpu's eight 23,219, Punakha's eleven
+    # 21,694, Pemagatshel's eleven 16,007), which is what each dzongkhag's
+    # note says.
+    "84629894B72045307811039": ("BTN", "Thimpu"),  # Mewang; by area in Paro
+    "84629894B34921780137315": ("BTN", "Thimpu"),  # Soe; by area in Paro
+    "84629894B19712913086843": ("BTN", "Punakha"),  # Goenshari; by area in Thimpu
+    "84629894B81369433275324": ("BTN", "Punakha"),  # Kabjisa; by area in Thimpu
+    "84629894B89675802182154": ("BTN", "Punakha"),  # Talo; by area in Thimpu
+    "84629894B31491158844122": ("BTN", "Punakha"),  # Toepisa; by area in Thimpu
+    "84629894B48304633314853": ("BTN", "Punakha"),  # Bapisa (Barp); by area in Wangdue Phodrang
+    "84629894B81792888214428": ("BTN", "Pemagatshel"),  # Chhimung; by area in Mongar
+    "84629894B57619855084660": ("BTN", "Pemagatshel"),  # Chokhorling; by area in Samdrup Jongkhar
+    "84629894B76488101752434": ("BTN", "Pemagatshel"),  # Dechhenling; by area in Samdrup Jongkhar
+    "84629894B84199937092772": ("BTN", "Pemagatshel"),  # Norboogang; by area in Samdrup Jongkhar
+    "84629894B55544402274944": ("BTN", "Pemagatshel"),  # Nanong; by area in Trashigang
+    "84629894B7815238118708": ("BTN", "Samdrup Jongkhar"),  # Gomdar; by area in Trashigang
+    "84629894B93354039766562": ("BTN", "Trashigang"),  # Bartsham; by area in Trashiyangtse
+    "84629894B1832791956678": ("BTN", "Samtse"),  # Denchhukha; by area in Haa
+    "84629894B38821780913292": ("BTN", "Dagana"),  # Lhamoizingkha; by area in Sarpang
+    "84629894B33123696098059": ("BTN", "Dagana"),  # Nichula; by area in Sarpang
+    # Saudi Arabia: Sharurah governorate is Najran Region's; its polygon lies
+    # 50.8% in the Eastern Region's and 49.2% in Najran's, so by area it sat
+    # under the Eastern Region and Najran's drawn governorates came to 415,660.
+    "3984122B36425593132698": ("SAU", "Najran Region"),  # Sharurah; by area in Eastern Region
+    # Uzbekistan: the statistics agency counts Bektemir, Sergeli and Uchtepa
+    # in Tashkent city (SIAT codes 1726264, 1726283 with Yangikhayot's
+    # 1726292, and 1726262); the boundary file draws the city small, and by
+    # area they lay 95.8%, 59.5% and 52.6% in Tashkent Region. Filed under the
+    # city, its eleven districts come to 3,178,100 against the census's
+    # 3,224,838, the agency's count of 1 January against the census's of 15
+    # January.
+    "79887680B40109116454398": ("UZB", "Tashkent"),  # Bektemir; by area in Tashkent Region
+    "79887680B58716268454454": ("UZB", "Tashkent"),  # Sergeli; by area in Tashkent Region
+    "79887680B78178339313098": ("UZB", "Tashkent"),  # Uchtepa; by area in Tashkent Region
+    # Iraq: COSIT's 2024 census (Table 11/2) and OCHA's gazetteer count
+    # Al-Hindiya in Kerbala and Al-Mahmoudiya, Al-Kadhmiyah and Al-Mada'in in
+    # Baghdad, whose first-level polygon the boundary file draws small. By area
+    # they lay in Babil (69.0% and 91.9%), Salah al-Din (32.9%, as much as in
+    # Al-Anbar) and Diyala (80.6%), and Babil's drawn districts came to
+    # 2,834,827 against its 2,482,324. Filed as counted, Babil, Kerbala, Diyala
+    # and Salah al-Din each add up to their census counts (iraq_census).
+    "34846034B69940766405797": ("IRQ", "Karbala"),  # Al-Hindiya; by area in Babil
+    "34846034B92813694057989": ("IRQ", "Baghdad"),  # Al-Mahmoudiya; by area in Babil
+    "34846034B5863384083959": ("IRQ", "Baghdad"),  # Al-Kadhmiyah; by area in Salah al-Din
+    "34846034B77650308075556": ("IRQ", "Baghdad"),  # Al-Mada'in; by area in Diyala
+    # Argentina: INDEC's 2022 census counts ten Greater Buenos Aires partidos
+    # in Buenos Aires province, Juan Bautista Alberdi and Tafí del Valle in
+    # Tucumán and Rivadavia in Santiago del Estero; by area they lay in the
+    # capital, Catamarca and Córdoba, and Comuna 1 meets no first-level polygon
+    # at all. The capital's drawn children came to 6,147,121 against its
+    # 3,121,707; filed as counted, the capital, Tucumán, Catamarca, Córdoba and
+    # Santiago del Estero each add up to their census counts
+    # (argentina_census). Entre Ríos has no polygon at the first level, and its
+    # departments stay under Buenos Aires, whose polygon draws both provinces.
+    "61730980B497821979952": ("ARG", "Buenos Aires"),  # Avellaneda; by area in the capital
+    "61730980B46018574851610": ("ARG", "Buenos Aires"),  # General San Martín; by area in the capital
+    "61730980B67082136706980": ("ARG", "Buenos Aires"),  # Hurlingham; by area in the capital
+    "61730980B5073290621442": ("ARG", "Buenos Aires"),  # Ituzaingó; by area in the capital
+    "61730980B82567739160952": ("ARG", "Buenos Aires"),  # Lanús; by area in the capital
+    "61730980B30318397352263": ("ARG", "Buenos Aires"),  # Morón; by area in the capital
+    "61730980B51340579014160": ("ARG", "Buenos Aires"),  # San Isidro; by area in the capital
+    "61730980B42310570317073": ("ARG", "Buenos Aires"),  # San Miguel; by area in the capital
+    "61730980B88678124443771": ("ARG", "Buenos Aires"),  # Tres de Febrero; by area in the capital
+    "61730980B14767108287685": ("ARG", "Buenos Aires"),  # Vicente López; by area in the capital
+    "61730980B33319795319357": ("ARG", "Ciudad Autónoma de Buenos Aires"),  # Comuna 1; in no province
+    "61730980B38664240857483": ("ARG", "Tucumán"),  # Juan Bautista Alberdi; by area in Catamarca
+    "61730980B13889034691247": ("ARG", "Tucumán"),  # Tafí del Valle; by area in Catamarca
+    "61730980B21057051979490": ("ARG", "Santiago del Estero"),  # Rivadavia; by area in Córdoba
+    # Belgium's "Brussels", by area in Flanders, is UNPARENTED instead.
+    # Malawi: Mangochi is a Southern Region district (OCHA's cod-ps-mwi); its
+    # polygon takes in the south of Lake Malawi, and by area 76.7% of it lay
+    # in the Northern Region's.
+    "42251766B89682559169951": ("MWI", "Southern Region"),  # Mangochi; by area in Northern Region
+    # Madagascar: Vohipeno is Vatovavy-Fitovinany's (OCHA's cod-ps-mdg);
+    # by area 91.2% of it lay in Atsimo-Atsinanana.
+    "10022922B81120329184352": ("MDG", "Vatovavy-Fitovinany"),  # Vohipeno; by area in Atsimo-Atsinanana
+    # Namibia: the constituency measured as Mukwe (labelled "Arandis" in the
+    # boundary file) is Kavango East's (OCHA's cod-ps-nam); the boundary file
+    # draws Kavango whole, and by area 96.7% of Mukwe lay in Caprivi's polygon.
+    "8085530B20929283489058": ("NAM", "Kavango"),  # Mukwe; by area in Caprivi
+    # The Dominican Republic: the 2022 census counts the Distrito Nacional
+    # municipio in the Distrito Nacional, Bajos de Haina in San Cristóbal, Las
+    # Salinas in Barahona, Arenoso in Duarte and Sabana Iglesia in Santiago;
+    # by area they lay in Santo Domingo (62.9% and 51.5%), Independencia,
+    # Samaná and La Vega. Filed as counted, every province's municipios make
+    # its census count (dominican_census).
+    "3306468B63097535879723": ("DOM", "Distrito Nacional"),  # Distrito Nacional; by area in Santo Domingo
+    "3306468B44390196227357": ("DOM", "San Cristóbal"),  # Bajos de Haina; by area in Santo Domingo
+    "3306468B53490324555446": ("DOM", "Barahona"),  # Las Salinas; by area in Independencia
+    "3306468B79017025460716": ("DOM", "Duarte"),  # Arenoso; by area in Samaná
+    "3306468B1703224271200": ("DOM", "Santiago"),  # Sabana Iglesia; by area in La Vega
+    # Suriname: the 2012 census counts Kwatta in Wanica and Pontbuiten and Weg
+    # naar Zee in Paramaribo; by area they lay in Saramacca (94.8%) and
+    # Wanica (100% and 46.3%). Filed as counted, Wanica and Saramacca add up to
+    # their census counts; Paramaribo is short only the four ressorts the
+    # boundary file does not draw (UNDRAWN_PARTS).
+    "93971198B97783973915980": ("SUR", "Wanica"),  # Kwatta; by area in Saramacca
+    "93971198B33771230340661": ("SUR", "Paramaribo"),  # Pontbuiten; by area in Wanica
+    "93971198B55832706288336": ("SUR", "Paramaribo"),  # Weg naar Zee; by area in Wanica
+    # The Bahamas: the second level draws each district again, and two of
+    # them by area under a neighbour -- Spanish Wells under Harbour Island
+    # (66.2%), the City of Freeport under West Grand Bahama (79.6%). Each is
+    # its first-level namesake's ground; Spanish Wells' 1,551 people (2010
+    # census) are that district's, not Harbour Island's.
+    "86173395B84342245076332": ("BHS", "Spanish Wells"),  # Spanish Wells; by area in Harbour Island
+    "86173395B95713051783720": ("BHS", "City of Freeport"),  # City of Freeport; by area in West Grand Bahama
+    # Portugal: INE's districts are their municipalities (the first two digits
+    # of the municipality code), and five are drawn mostly inside another
+    # district's outline: Espinho (Aveiro's) and Mesão Frio (Vila Real's) in
+    # Porto's, Tábua (Coimbra's) and Oliveira de Frades (Viseu's) in each
+    # other's districts, Sardoal (Santarém's) in Castelo Branco's. Filed as INE
+    # counts them, every district's municipalities make its census count
+    # (portugal_census).
+    "2272694B58845957130361": ("PRT", "AVEIRO"),  # Espinho; by area in Porto
+    "2272694B97180634547799": ("PRT", "COIMBRA"),  # Tábua; by area in Viseu
+    "2272694B62092960833864": ("PRT", "SANTARÉM"),  # Sardoal; by area in Castelo Branco
+    "2272694B2878786593857": ("PRT", "VILA REAL"),  # Mesão Frio; by area in Porto
+    "2272694B21944289016738": ("PRT", "VISEU"),  # Oliveira de Frades; by area in Aveiro
 }
 
 
-# First-level units whose own count takes in a second-level unit the boundary
+# First-level units whose own count takes in second-level units the boundary
 # file draws no polygon for, so their drawn divisions cannot add up to it.
-# (country, first-level label) -> the undrawn unit. The note says so, with
-# what the drawn divisions add up to and what that leaves.
-UNDRAWN_PARTS: dict[tuple[str, str], str] = {
+# (country, first-level label) -> the undrawn unit's name, or, where there are
+# several, (what they are, their names). The note says so, with what the drawn
+# divisions add up to and what that leaves -- a difference, which is the
+# undrawn units' people only where the count and its divisions are of one year
+# (note_undrawn_parts stops the build where they are not).
+#   FSM  The boundary file draws ten of Yap's 20 municipalities and seven of
+#        Pohnpei's 11; Elato and Sapwuahfik are inside the country's outline
+#        but in no state or municipality, the rest in no polygon at all. The
+#        2023 census's state basic tables count every one (micronesia_census);
+#        their municipalities' rows differ from the state's by up to three
+#        people, so the difference is the undrawn ones' to within that.
+#        Chuuk is not here: its municipalities' latest counts are 2010's,
+#        under a 2023 state count, and micronesia_census says so on the state.
+#   VUT  The 2020 census's Table 1.1 counts 66 area councils and the boundary
+#        file draws 58 (vanuatu_census's UNDRAWN): Torres, Mota and Merelava
+#        are Torba's, the Torres Islands inside Torba's first-level outline
+#        and the other two in no polygon; North Tongoa, Tongariki, Makimae,
+#        Nguna and Emau are Shefa's islands, in no polygon.
+#   SUR  The 2012 census counts Beekhuizen, Latour, Tammenga and Welgelegen
+#        in Paramaribo (suriname_census); the boundary file draws none of them.
+# Senegal's Dakar is not here although Keur Massar department, made in 2021,
+# has no polygon: its ground is drawn, inside the outlines Pikine and Rufisque
+# had before it was cut from them, so it is not missing ground, and the
+# difference would not be its people either -- the RGPH-5 counts Keur Massar
+# at 770,314 (ANSD's 2023-2050 projections workbook, base year), where Dakar's
+# figure less its drawn departments' leaves 668,496.
+UNDRAWN_PARTS: dict[tuple[str, str], str | tuple[str, tuple[str, ...]]] = {
     ("KOR", "South Jeolla"): "Yeonggwang-gun",
     ("SLB", "Temotu"): "Temotu Pele",
+    ("FSM", "Yap"): ("municipalities", ("Rumung", "Ulithi", "Fais", "Ngulu", "Eauripik",
+                                        "Ifalik", "Faraulep", "Elato", "Lamotrek",
+                                        "Satawal")),
+    ("FSM", "Pohnpei"): ("municipalities", ("Mwoakilloa", "Sapwuahfik", "Nukuoro",
+                                            "Kapingamarangi")),
+    ("VUT", "Torba"): ("area councils", ("Torres", "Mota", "Merelava")),
+    ("VUT", "Shefa Province"): ("area councils", ("North Tongoa", "Tongariki", "Makimae",
+                                                  "Nguna", "Emau")),
+    ("SUR", "Paramaribo"): ("ressorts", ("Beekhuizen", "Latour", "Tammenga", "Welgelegen")),
 }
+
+
+def listed(names: Sequence[str]) -> str:
+    """Names as a sentence lists them: "a", "a and b", "a, b and c"."""
+    names = list(names)
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def undrawn_sentence(part: str | tuple[str, tuple[str, ...]], kids: int, drawn: float,
+                     own: float) -> str:
+    """The note's sentence for one UNDRAWN_PARTS entry."""
+    rest = f"{own - drawn:,.0f}"
+    if isinstance(part, str):
+        return (f"This count takes in {part}, which the map does not draw as a unit of "
+                f"its own: the {kids} divisions drawn here add up to {drawn:,.0f}, which "
+                f"leaves {rest} for {part}.")
+    kind, names = part
+    return (f"This count takes in {len(names)} {kind} the map does not draw as units of "
+            f"their own: {listed(names)}. The {kids} divisions drawn here add up to "
+            f"{drawn:,.0f}, which leaves {rest} for those {len(names)}.")
 
 
 def note_undrawn_parts(admin1: dict[str, list[dict[str, Any]]],
                        admin2: dict[str, list[dict[str, Any]]]) -> list[str]:
-    """Say where a first-level count takes in a unit the map does not draw.
+    """Say where a first-level count takes in units the map does not draw.
 
     DECLARED_PARENTS files every Korean, Samoan and Solomon second-level
     polygon under the unit that counts it, and each first-level unit then adds
@@ -2367,28 +2613,51 @@ def note_undrawn_parts(admin1: dict[str, list[dict[str, Any]]],
     comment. Run once the populations are final; a note already there is kept
     and this follows it, and nothing is said where a division has no
     population or the drawn ones do not fall short.
+
+    The difference is the undrawn units' people only when the count and the
+    divisions are of one year: Chuuk's 33,885 of 2023 less its drawn
+    municipalities' 26,553 of 2010 would put 7,332 people on thirty
+    municipalities that held 22,101 in 2010. So the build stops where an
+    entry's unit and its divisions carry different years, or the divisions no
+    one year between them: the sentence would state a difference of two
+    counts as a number of people.
     """
     said = []
     for (iso3, name), part in sorted(UNDRAWN_PARTS.items()):
-        units = [e for e in admin1.get(iso3, []) if e.get("name") == name]
+        if not admin1.get(iso3):
+            # A run that draws nothing of the country (a caller passing some
+            # countries' units) is not one this entry is about; a country that
+            # is drawn and has lost the unit is, and stops below.
+            continue
+        units = [e for e in admin1.get(iso3, [])
+                 if name in (e.get("name"), e.get("shape_name"))]
         if len(units) != 1:
             raise SystemExit(f"UNDRAWN_PARTS: {iso3} draws {len(units)} first-level "
                              f"units named {name!r}")
         unit = units[0]
         own = published(unit.get("population"))
-        kids = [published(e.get("population")) for e in admin2.get(iso3, [])
-                if e.get("parent") == unit["id"]]
+        children = [e for e in admin2.get(iso3, [])
+                    if e.get("parent") == unit["id"] and not e.get("water")]
+        kids = [published(e.get("population")) for e in children]
         if own is None or not kids or None in kids:
             continue
         drawn = sum(kids)
         if drawn >= own:
             continue
-        sentence = (f"This count takes in {part}, which the map does not draw as a "
-                    f"unit of its own: the {len(kids)} divisions drawn here add up to "
-                    f"{drawn:,.0f}, which leaves {own - drawn:,.0f} for {part}.")
+        years = {vintage(e.get("population")) for e in children}
+        year = vintage(unit.get("population"))
+        if len(years) != 1 or years != {year}:
+            shown = ", ".join(str(y) for y in sorted(years, key=str))
+            raise SystemExit(
+                f"UNDRAWN_PARTS: {iso3} {name}'s count is for {year}, and its divisions' "
+                f"figures for {shown}; the difference between them is not the undrawn "
+                f"units' people, so the note would be false. Say why the two differ in "
+                f"the unit's own note instead, and take the entry out.")
+        sentence = undrawn_sentence(part, len(kids), drawn, own)
         held = unit.get("population_note")
         unit["population_note"] = f"{held} {sentence}" if held else sentence
-        said.append(f"{iso3} {name}: {part} {own - drawn:,.0f}")
+        what = part if isinstance(part, str) else listed(part[1])
+        said.append(f"{iso3} {name}: {what} {own - drawn:,.0f}")
     return said
 
 
@@ -2417,6 +2686,11 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
             raise SystemExit(
                 f"DECLARED_PARENTS: {row['shape_id']} ({row['name']}) is drawn in "
                 f"{row['group']}, not {iso3}")
+        if iso3 in NOT_NESTED or row["shape_id"] in UNPARENTED:
+            raise SystemExit(
+                f"DECLARED_PARENTS: {row['shape_id']} ({row['name']}) is declared under "
+                f"{name!r}, and also as having no first-level parent (NOT_NESTED, "
+                f"UNPARENTED)")
         found = by_name.get((iso3, name), [])
         if len(found) != 1:
             raise SystemExit(

@@ -70,17 +70,21 @@ import argparse
 import csv
 import io
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, RAW, download, gap, http_get, log, measure,
-    record, shares, write_json,
+    read_json, record, shares, write_json,
 )
+from .declared_parents import as_filed
 from .south_asia_common import agree, males_per_100, median_single
 
+from common import as_drawn, shard_name  # noqa: E402  (scripts/ is on the path)
+
 YEAR = 2021
+SITE = PROCESSED.parent.parent / "site" / "data"
 SOURCE = ("National Statistics Office, National Population and Housing Census "
           "2021: National Report on caste/ethnicity, Language and Religion")
 LICENSE = "Government of Nepal, National Statistics Office. Official publication."
@@ -791,13 +795,105 @@ AGE_SOURCE_ENTRY = {"field": "median_age/sex_ratio", "name": AGE_SOURCE,
                     "url": AGES_URL, "license": LICENSE}
 
 
+def holdings(admin1: list[dict[str, Any]],
+             admin2: list[dict[str, Any]]) -> dict[str, list[tuple[str, ...]]]:
+    """The census districts in each drawn second-level polygon, by the census
+    province the map files the polygon under.
+
+    ``admin1`` is the drawn provinces under the boundary file's labels and
+    ``admin2`` the drawn districts with the parents the build gives them
+    (``declared_parents.as_filed``). A polygon in SHAPE_BOUND holds the
+    districts named there; any other is the district its label names. Every
+    census district must be in exactly one polygon, or the run stops: a
+    province's note says what its drawn districts add up to, and that sum is
+    only true if each district is drawn once.
+    """
+    province_of = {name: province for province, aliases in PROVINCES.items()
+                   for name in (province, *aliases)}
+    district_of = {name: district for names in DISTRICTS.values() for district in names
+                   for name in (district, *DISTRICT_ALIASES.get(district, ()))}
+    label_of = {u["id"]: u["name"] for u in admin1}
+    out: dict[str, list[tuple[str, ...]]] = defaultdict(list)
+    for unit in admin2:
+        province = province_of.get(label_of.get(unit.get("parent"), ""))
+        parts = SHAPE_BOUND.get(unit.get("id", "")) or (
+            (district_of[unit["name"]],) if unit.get("name") in district_of else ())
+        if province is None or not parts:
+            raise SystemExit(f"nepal: cannot tell which census district the drawn "
+                             f"{unit.get('name')!r} ({unit.get('id')}) is, or which "
+                             f"province it is shown under")
+        out[province].append(parts)
+    held = Counter(d for polygons in out.values() for parts in polygons for d in parts)
+    every = [d for names in DISTRICTS.values() for d in names]
+    if sorted(held.elements()) != sorted(every):
+        raise SystemExit(f"nepal: the drawn polygons do not hold each census district "
+                         f"once: {sorted(set(held) ^ set(every)) or held.most_common(3)}")
+    return dict(out)
+
+
+def province_notes(parsed: dict[str, dict[str, dict[str, int]]],
+                   held: dict[str, list[tuple[str, ...]]]) -> dict[str, str]:
+    """Population notes for the provinces whose drawn districts do not make
+    them: a polygon that is a district as it was before the 2017 splits holds
+    two census districts of two provinces, and the map can show it under only
+    one of them."""
+    where = {district: province
+             for province, names in DISTRICTS.items() for district in names}
+
+    def people(district: str) -> int:
+        return int(next(parsed[f][district]["_total"] for f in FIELDS
+                        if parsed[f].get(district, {}).get("_total")))
+
+    shown = {parts: province for province, polygons in held.items() for parts in polygons}
+    notes: dict[str, str] = {}
+    for province in PROVINCES:
+        polygons = held.get(province, [])
+        clauses = []
+        for parts in polygons:
+            for district in parts:
+                if where[district] != province:
+                    clauses.append(
+                        f"the boundary file draws {' and '.join(parts)} as one district, as "
+                        f"it was before 2017, and it is shown here, but {district}'s "
+                        f"{people(district):,} people are counted in {where[district]}")
+        for parts, other in shown.items():
+            if other == province:
+                continue
+            for district in parts:
+                if where[district] == province:
+                    with_ = [d for d in parts if d != district]
+                    clauses.append(
+                        f"the boundary file draws {district} ({people(district):,} people) "
+                        f"as one district with {' and '.join(with_)}, as it was before "
+                        f"2017, and it is shown under {other}")
+        if not clauses:
+            continue
+        drawn = sum(people(d) for parts in polygons for d in parts)
+        notes[province] = (f"Its districts as drawn add up to {drawn:,}, not this count: "
+                           + "; ".join(clauses) + ".")
+    return notes
+
+
+def drawn_holdings() -> dict[str, list[tuple[str, ...]]] | None:
+    """``holdings`` of the map's polygons, with the parents the next build
+    gives them; None where the map has no Nepal yet."""
+    admin1 = as_drawn(read_json(SITE / "admin1" / shard_name("NPL"), []))
+    admin2 = as_drawn(read_json(SITE / "admin2" / shard_name("NPL"), []))
+    if not admin1 or not admin2:
+        return None
+    return holdings(admin1, as_filed("NPL", admin1, admin2))
+
+
 def build(lines: list[str], *, min_pct: float = MIN_PCT,
-          ages: dict[str, dict[str, Any]] | None = None
+          ages: dict[str, dict[str, Any]] | None = None,
+          held: dict[str, list[tuple[str, ...]]] | None = None
           ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """(province records, district records), both validated before return.
 
     ``ages`` is Indv03 as :func:`read_ages` returns it; given, every record
-    also carries its median age and sex ratio, checked first.
+    also carries its median age and sex ratio, checked first. ``held`` is
+    :func:`holdings` of the map's polygons; given, a province whose drawn
+    districts do not make it says what they add up to and why.
     """
     parsed = parse_all(lines)
     for field in FIELDS:
@@ -820,6 +916,7 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT,
 
     provinces: list[dict[str, Any]] = []
     districts: list[dict[str, Any]] = []
+    notes = province_notes(parsed, held) if held else {}
 
     for province in PROVINCES:
         fields = fields_for(parsed, province, min_pct)
@@ -831,6 +928,7 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT,
             f"NPL-{province}", province, level="admin1", parent="NPL",
             country="NPL", aliases=list(PROVINCES[province]),
             population=population_of(parsed, province),
+            population_note=notes.get(province),
             sources=sources,
             **fields, **age_part,
         ))
@@ -1019,7 +1117,8 @@ def main() -> int:
     log(f"  Indv03: {len(text):,} characters from {AGES_URL}")
     ages = read_ages(text)
 
-    provinces, districts = build(lines, min_pct=args.min_pct, ages=ages)
+    provinces, districts = build(lines, min_pct=args.min_pct, ages=ages,
+                                 held=drawn_holdings())
     write_json(PROCESSED / "nepal_province.json", provinces)
     write_json(PROCESSED / "nepal_district.json", districts)
     log(f"  {len(provinces)} provinces, {len(districts)} districts")
