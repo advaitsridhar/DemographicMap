@@ -1,12 +1,21 @@
-india_census: Census 2011, level=state
-  validated against published national totals: 640 districts, 1,210,854,977 people
-  national sex ratio 943 females per 1,000 males (623,270,258 males, 587,584,719 females)
-  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
-  C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
-  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
-  split Jammu And Kashmir: Ladakh 274,289, Jammu and Kashmir 12,267,013
-  split Andhra Pradesh: Telangana 35,193,978, Andhra Pradesh 49,386,799
-  merged Dadra and Nagar Haveli and Daman and Diu: 586,956 from Dadra and Nagar Haveli 343,709, Daman and Diu 243,247
-  wrote data/processed/india_state.json (175 kB)
-  36 records, 36 with religion shares, 0 explicit gaps carrying their reason
-  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam
+  read https://www.hcp.ma/file/242341/: 166,693 bytes, sha256 7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  12 regions and 75 provinces and prefectures, making 36,828,330
+  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
+  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
+  'Oued Ed-Dahab Province': a piece across the line, written as a gap
+  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
+  'Tarfaya Province': part of a province across the line, written as a gap
+  HCP provinces not drawn: []
+  Province d'Ouezzane: 274,577
+  Préfecture d'Oujda-Angad: 572,454
+  Préfecture de Skhirate-Témara: 783,475
+  Province d'Errachidia: 427,572
+  Province de Tarfaya: Commune de Tarfaya 11,030 (115370105)
+  Province de Tarfaya: Commune de Daoura 902 (115370303)
+  Province de Tarfaya: Commune d'El Hagounia 561 (115370305)
+  Province de Tarfaya: Commune d'Akhfennir 2,841 (115370501)
+  Province de Tarfaya: Commune de Tah 894 (115370507)
+  10 regions and 69 of 72 provinces bound
+  wrote data/processed/morocco_rgph2024.json (137 kB)
