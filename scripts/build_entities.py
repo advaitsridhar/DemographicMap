@@ -2526,8 +2526,8 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     # Portugal: INE's districts are their municipalities (the first two digits
     # of the municipality code), and five are drawn mostly inside another
     # district's outline: Espinho (Aveiro's) and Mesão Frio (Vila Real's) in
-    # Porto's, Tábua (Coimbra's) and Oliveira de Frades (Viseu's) in each
-    # other's districts, Sardoal (Santarém's) in Castelo Branco's. Filed as INE
+    # Porto's, Tábua (Coimbra's) in Viseu's, Oliveira de Frades (Viseu's) in
+    # Aveiro's and Sardoal (Santarém's) in Castelo Branco's. Filed as INE
     # counts them, every district's municipalities make its census count
     # (portugal_census).
     "2272694B58845957130361": ("PRT", "AVEIRO"),  # Espinho; by area in Porto
