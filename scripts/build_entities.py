@@ -36,7 +36,7 @@ from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
 from collections.abc import Sequence
-from typing import Any, Callable
+from typing import Any, Callable, Iterator
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -4611,13 +4611,32 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
 
 # Countries whose first level keeps an encyclopaedia's figure over divisions of
 # a later year, because the divisions' source is the older account. Zimbabwe's
-# provinces carry ZIMSTAT's 2022 census as Wikipedia and Wikidata print it,
-# and its districts OCHA's table for 2023, a projection from the 2012 census
-# that runs 16% above the 2022 count: a later reference year, an older base.
-# The province's note says what its districts add up to instead.
+# provinces carry ZIMSTAT's 2022 census as Wikipedia and Wikidata print it
+# (Mashonaland Central an older figure), and its districts OCHA's table for
+# 2023, a projection: the districts add up to 17,408,564 against the
+# provinces' 14,961,031, and to more than the census counted in every province
+# that carries its count (by 4% to 27%). A later reference year, an older
+# account. The province's note says what its districts add up to instead, and
+# why the two differ.
 RESTATE_KEEPS: dict[str, str] = {
-    "ZWE": "the districts' 2023 figures are projected from the 2012 census, and the "
-           "provinces' are the 2022 census's",
+    "ZWE": "the districts carry OCHA's projection for 2023, which runs above the 2022 "
+           "census's count in every province that carries one",
+}
+
+# First-level units drawn as one division on the same ground, whose
+# encyclopaedia figure the count of that ground contradicts by more than any
+# growth: the unit shows its division's count, and the note says why the other
+# figure goes. Venezuela's Capital District is the municipality of Libertador
+# and nothing else; the infobox of its Wikipedia article gives 3,523,959 for
+# 2020 -- 81% above the 2011 census's 1,943,901 for the same ground -- while the
+# same article's text gives 2,073,768 for 2004. The year rule cannot settle it
+# (the encyclopaedia's figure is the newer), and two figures for one ground
+# 81% apart cannot both be right.
+RESTATE_SOLE_DIVISION: dict[tuple[str, str], tuple[str, str]] = {
+    ("VEN", "Distrito Capital"): (
+        "The Capital District is the municipality of Libertador, the one division "
+        "drawn inside it, so this is Libertador's count.",
+        "the same article gives the district 2,073,768 people in 2004"),
 }
 
 
@@ -4641,7 +4660,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
     encyclopaedia and one year later than the parent's (or the parent gives
     none), and where there are at least two of them -- a unit drawn as a single
     division is its own ground or a misfiled one, and is left to the passes
-    that weigh that. A unit whose count takes in ground the map does not draw
+    that weigh that, except where ``RESTATE_SOLE_DIVISION`` declares the
+    division the unit's whole ground and the encyclopaedia's figure not that
+    ground's. A unit whose count takes in ground the map does not draw
     (``UNDRAWN_PARTS``) keeps its count, since its divisions are not all of it.
     """
     done: list[str] = []
@@ -4660,30 +4681,46 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                 continue
             children = kids.get(parent["id"], [])
             summed = check_rollups.complete_sum(children)
-            if summed is None or summed["n"] < 2:
+            declared = RESTATE_SOLE_DIVISION.get((iso3, parent.get("name")))
+            if summed is None or summed["n"] < (1 if declared else 2):
                 continue
+            if declared and summed["n"] != 1:
+                raise SystemExit(f"RESTATE_SOLE_DIVISION: {iso3} {parent.get('name')} is "
+                                 f"drawn with {summed['n']} divisions, not one")
             if len(summed["sources"]) != 1 or len(summed["years"]) != 1:
                 continue
             source, year = next(iter(summed["sources"])), next(iter(summed["years"]))
             if not source or year is None or check_rollups.is_encyclopaedic({"source": source}):
                 continue
             own_year = vintage(pop)
-            if own_year is not None and year <= own_year:
+            if not declared and own_year is not None and year <= own_year:
                 continue
             total = int(round(summed["total"]))
             if total == round(own):
                 continue
             was = check_rollups.short_source(str(pop.get("source") or ""))
-            parent["population"] = {"value": total, "year": year,
-                                    "source": f"summed from {summed['n']} second-level "
-                                              f"divisions"}
-            every = "both" if summed["n"] == 2 else f"all {summed['n']}"
-            parent["population_note"] = (
-                f"The sum of {every} divisions drawn inside it, which all carry "
-                f"figures for {year} from {check_rollups.short_source(source)}. It replaces "
-                f"{own:,.0f}"
-                + (f" for {own_year}, an older figure from {was}." if own_year else
-                   f" from {was}, which gives no year for it."))
+            if declared:
+                # The division's own figure, as it stands, on its parent.
+                parent["population"] = {k: v for k, v in children[0]["population"].items()
+                                        if k in ("value", "unit", "year", "source")}
+                lead, why_not = declared
+                side = "above" if own > total else "below"
+                parent["population_note"] = (
+                    f"{lead} It replaces {own:,.0f}"
+                    + (f" for {own_year}" if own_year else "")
+                    + f" from {was}, {abs(own / total - 1):.0%} {side} this count of the "
+                      f"same ground; {why_not}.")
+            else:
+                parent["population"] = {"value": total, "year": year,
+                                        "source": f"summed from {summed['n']} second-level "
+                                                  f"divisions"}
+                every = "both" if summed["n"] == 2 else f"all {summed['n']}"
+                parent["population_note"] = (
+                    f"The sum of {every} divisions drawn inside it, which all carry "
+                    f"figures for {year} from {check_rollups.short_source(source)}. It "
+                    f"replaces {own:,.0f}"
+                    + (f" for {own_year}, an older figure from {was}." if own_year else
+                       f" from {was}, which gives no year for it."))
             # The source goes with the figure: an entry citing the population
             # alone goes, one citing other fields too stays for those.
             parent["sources"] = [src for src in parent.get("sources", [])
@@ -4803,26 +4840,42 @@ def note_population_gaps(admin0: list[dict[str, Any]],
     check_rollups.py finds any that a later change leaves unsaid.
 
     Run last of the passes that set a population, so the sentence describes
-    the figures the reader is shown.
+    the figures the reader is shown. Where a country's first level kept its
+    figures over later divisions on purpose (``RESTATE_KEEPS``), the reason it
+    did is the reason the two differ, and the sentence ends with it.
     """
     said: list[str] = []
-
-    def judge(iso3: str, parent: dict[str, Any], children: list[dict[str, Any]],
-              level: str) -> None:
-        pop = parent.get("population")
-        own = published(pop)
-        summed = check_rollups.complete_sum(children)
-        if own is None or summed is None or not check_rollups.disagrees(own, summed["total"]):
-            return
+    for iso3, parent, summed, own, level in population_disagreements(
+            admin0, admin1_by_country, admin2_by_country):
         if check_rollups.explained(check_rollups.notes_of(parent), own, summed["total"]):
-            return
+            continue
+        pop = parent["population"]
         sentence = check_rollups.gap_sentence(summed, own, vintage(pop), level,
                                               own_source=str(pop.get("source") or ""))
+        if level == "divisions" and iso3 in RESTATE_KEEPS:
+            sentence = f"{sentence[:-1]}; {RESTATE_KEEPS[iso3]}."
         held = parent.get("population_note") or (pop.get("note") if isinstance(pop, dict)
                                                  else None)
         parent["population_note"] = f"{held} {sentence}" if held else sentence
         said.append(f"{iso3} {parent.get('name')}: {summed['total']:,.0f} against {own:,.0f}")
+    return said
 
+
+def population_disagreements(admin0: list[dict[str, Any]],
+                             admin1_by_country: dict[str, list[dict[str, Any]]],
+                             admin2_by_country: dict[str, list[dict[str, Any]]]
+                             ) -> Iterator[tuple[str, dict[str, Any], dict[str, Any], float, str]]:
+    """Each parent whose complete divisions differ from its population by more
+    than ``check_rollups.GAP``: (country, parent, the divisions' sum, the
+    parent's figure, what its divisions are called).
+
+    A first-level unit against the non-water divisions drawn inside it, outside
+    the countries whose second level does not cover their first
+    (``PARTIAL_LEVELS``); a country against its first level. A parent with no
+    figure, or a division without one, is not compared: a partial sum says
+    nothing about the parent. scripts/check_rollups.py asks the same of the
+    published files.
+    """
     for iso3, parents in sorted(admin1_by_country.items()):
         if (iso3, "admin2") in PARTIAL_LEVELS:
             continue
@@ -4830,13 +4883,44 @@ def note_population_gaps(admin0: list[dict[str, Any]],
         for entity in admin2_by_country.get(iso3, []):
             kids[entity.get("parent")].append(entity)
         for parent in parents:
-            if not parent.get("water"):
-                judge(iso3, parent, kids.get(parent["id"], []), "divisions")
+            if parent.get("water"):
+                continue
+            own = published(parent.get("population"))
+            summed = check_rollups.complete_sum(kids.get(parent["id"], []))
+            if own is not None and summed is not None \
+                    and check_rollups.disagrees(own, summed["total"]):
+                yield iso3, parent, summed, own, "divisions"
     for country in admin0:
         iso3 = country.get("id")
-        if iso3 in admin1_by_country:
-            judge(iso3, country, admin1_by_country[iso3], "first-level divisions")
-    return said
+        if iso3 not in admin1_by_country:
+            continue
+        own = published(country.get("population"))
+        summed = check_rollups.complete_sum(admin1_by_country[iso3])
+        if own is not None and summed is not None \
+                and check_rollups.disagrees(own, summed["total"]):
+            yield iso3, country, summed, own, "first-level divisions"
+
+
+def check_population_gaps_said(admin0: list[dict[str, Any]],
+                               admin1_by_country: dict[str, list[dict[str, Any]]],
+                               admin2_by_country: dict[str, list[dict[str, Any]]]) -> None:
+    """Stop the build if a parent far from its divisions' sum says nothing about it.
+
+    note_population_gaps writes the sentence; this runs on the records as they
+    are about to be written, so a pass added after it that moves a population
+    or rewrites a note cannot publish a disagreement the reader is not told
+    of. It asks what scripts/check_rollups.py asks of site/data, which the
+    unit tests run on the published files.
+    """
+    unsaid = [f"{iso3} {parent.get('name')}: {summed['total']:,.0f} against {own:,.0f}"
+              for iso3, parent, summed, own, _ in population_disagreements(
+                  admin0, admin1_by_country, admin2_by_country)
+              if not check_rollups.explained(check_rollups.notes_of(parent), own,
+                                             summed["total"])]
+    if unsaid:
+        raise SystemExit(f"{len(unsaid)} populations differ from their divisions' sum by "
+                         f"more than {check_rollups.GAP:.0%} with nothing said about it: "
+                         + "; ".join(unsaid[:10]))
 
 
 def note_country_not_summed(admin0: list[dict[str, Any]]) -> list[str]:
@@ -4880,6 +4964,8 @@ def note_country_not_summed(admin0: list[dict[str, Any]]) -> list[str]:
 # unit for all of them, the United Nations' males per 100 females.
 SEX_RATIO_UNIT = "males_per_100_females"
 SEX_RATIO_PHRASES: tuple[tuple[re.Pattern[str], str], ...] = (
+    # Canada's census counts gender: "Men+ per 1,000 women+".
+    (re.compile(r"\b([Mm]en)\+ per (?:1,000|1000) (women)\+"), r"\1+ per 100 \2+"),
     (re.compile(r"\b([Mm]ales|[Mm]en) per (?:1,000|1000) (females|women)\b"), r"\1 per 100 \2"),
     (re.compile(r"\b([Mm]ales|[Mm]en) per thousand (females|women)\b"), r"\1 per hundred \2"),
     (re.compile(r"\bFemales per (?:1,000|1000) males\b"), "Males per 100 females"),
@@ -10059,6 +10145,9 @@ def main() -> int:
     converted = one_sex_ratio_unit(admin0, admin1_by_country, admin2_by_country)
     if converted:
         log(f"  {converted} sex ratios put in males per 100 females")
+    # On the records as they are written: no parent far from its divisions'
+    # sum without a sentence saying what they add up to.
+    check_population_gaps_said(admin0, admin1_by_country, admin2_by_country)
 
     # -- write ---------------------------------------------------------------
     out = args.out

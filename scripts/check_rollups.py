@@ -95,10 +95,19 @@ def complete_sum(children: Iterable[dict[str, Any]]) -> dict[str, Any] | None:
 
 
 NUMBER = re.compile(r"\d{1,3}(?:,\d{3})+|\d+")
+# A bare four-digit number in this range is a year ("the 2015 census"), not a
+# head count, which the notes print with separators ("2,015 people").
+YEARS = range(1800, 2101)
 
 
 def numbers(text: str) -> list[float]:
-    return [float(m.replace(",", "")) for m in NUMBER.findall(text or "")]
+    """The figures a note prints, leaving out the years it names."""
+    found = []
+    for m in NUMBER.findall(text or ""):
+        if "," not in m and len(m) == 4 and int(m) in YEARS:
+            continue
+        found.append(float(m.replace(",", "")))
+    return found
 
 
 def explained(texts: Iterable[str], own: float, total: float) -> bool:
@@ -173,8 +182,9 @@ def gap_sentence(summed: dict[str, Any], own: float, own_year: int | None,
         # Inside a country, two estimates of one year that differ have put the
         # same people in different places. Two national totals that differ
         # have counted different people -- residents only, or everyone -- and
-        # the figures alone cannot say which.
-        if level == "divisions":
+        # the figures alone cannot say which; nor can a unit's one division,
+        # which is all of it or is not.
+        if level == "divisions" and not one:
             said += ", which place people differently"
     return said + "."
 
