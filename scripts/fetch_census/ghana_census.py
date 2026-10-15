@@ -52,6 +52,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import time
@@ -131,11 +132,21 @@ def clean(text: str) -> str:
     return " ".join(str(text).replace("/ ", "/").split())
 
 
+def digest(value: Any) -> str:
+    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False)
+                          .encode("utf-8")).hexdigest()
+
+
 def ask(url: str, payload: dict | None = None) -> Any:
-    """GET (metadata) or POST (a query), asked again after a pause if it fails."""
+    """GET (metadata) or POST (a query), asked again after a pause if it fails.
+    The SHA-256 of the answer (and of the query) goes to the log, so the run's
+    record says what the service answered."""
     for wait in (5, 20, 60, None):
         try:
-            return http_json(url, payload)
+            got = http_json(url, payload)
+            log(f"    read {url}" + (f" (query {digest(payload)[:16]})" if payload else "")
+                + f": answer sha256 {digest(got)}")
+            return got
         except Exception as exc:                    # noqa: BLE001 -- network, 5xx, rate limit
             if wait is None:
                 raise

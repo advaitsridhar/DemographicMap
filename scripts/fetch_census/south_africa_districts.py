@@ -37,6 +37,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import time
@@ -76,9 +77,14 @@ def key(name: str) -> str:
 
 
 def get(path: str) -> Any:
+    """One answer of the service. Its SHA-256 goes to the log, so the run's
+    record says what the service answered."""
     for wait in (5, 20, 60, None):
         try:
-            return http_json(API + path, cache=False, timeout=120)
+            got = http_json(API + path, cache=False, timeout=120)
+            body = json.dumps(got, sort_keys=True, ensure_ascii=False).encode("utf-8")
+            log(f"    read {path}: answer sha256 {hashlib.sha256(body).hexdigest()}")
+            return got
         except Exception as exc:                    # noqa: BLE001 -- network, 5xx
             if wait is None:
                 raise
