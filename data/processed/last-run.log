@@ -1,18 +1,45 @@
-https://ine.cv/main.93862c2013bb61af.js: 1,421,929 characters
-  e}filterAnexos(){const gt=this._anexo_destaque?this._anexo.filter(ft=>ft.url!=="Uploads/"+this._anexo_destaque):[...this._anexo];this.filteredAnexos=(0,Y.F)(gt)}static{this.\u0275fac=function(ft){retu
-  .url=`${f.c.apiUrl}/${Ee}`}getAll(Ce){return this.http.get(`${this.url}/${Ce}`)}getAllByLang(Ce,Ee){let je=null!==Ee?`${this.url}/${Ee}`:`${this.url}`;const Ve=(new v.Nl).set("codigo_lingua",Ce);retur
-  so");const ye=(0,v.f)(oe.titulo??oe.nome??`${oe.codigo_censo_conteudo}`);return`/censos/${oe.codigo_censo}/${(0,v.f)(oe.tipo)}/${oe.codigo_censo_conteudo}/${ye}`},codigo_divulgacao:oe=>{if(!oe.tipo)th
-  ine.cv/pedido_dados_api/api",baseUploadUrl:"https://bdmi.ine.cv/site_deploy_api/Uploads/",baseUploadAnexo:"https://bdmi.ine.cv/site_deploy_api/",anexoDivulgacao:"divulgacao",anexoConteudo:"conteudo_su
-  {this.hasErrorListaDestaque=!0,this.loadingListaDestaque=!1}}),this.temaService.getAllByLang(e,"feature").subscribe({next:r=>{this.listaTema=r,this.loadingListaTema=!1},error:()=>{this.hasErrorListaTe
-  ()=>{this.hasErrorConcurso=!0,this.loadingConcurso=!1}}),this.calendarioService.getAllByLang(e,"top-two").subscribe({next:r=>{this.listaCalendario=r,this.loadingCalendario=!1},error:()=>{this.hasError
-  ();this.route.paramMap.subscribe(a=>{this.tipo=a.get("tipo")}),this.temaService.getAllByLang(this.languageService.currentLanguage,null).subscribe({next:a=>{this.listTema=a},error:a=>{}})}ngOnDestroy()
-  aque}filterAnexos(){const e=this._anexo_destaque?this._anexo.filter(r=>r.url!=="Uploads/"+this._anexo_destaque):[...this._anexo];this.filteredAnexos=(0,hE.F)(e)}static{this.\u0275fac=function(r){retur
-  !1}ngOnInit(){this.titleService.setTitle(this.pageTitle),this.divulgacaoService.getAllByLang(this.languageService.currentLanguage,"in-progress").subscribe({next:r=>{this.listaEmCurso=r,this.loading=!1
-  turn t})();var Qg=j(7254);const Ec=t=>({show:t}),yE=t=>({active:t}),nI=(t,o)=>["/censos",t,o],gy=(t,o,e)=>({itemsPerPage:t,currentPage:o,totalItems:e}),Su=(t,o,e)=>["/divulgacao-detalhe",t,o,e];functi
-  =S,this.languageService=R,this.estatisticaState=F,this.navigationContext=q,this.censoService=X,this.pageTitle="",this.subPages=[],this.loadingEstatistica=!0,this.hasErrorEstatistica=!1,this.loadingDiv
-  o.push(...a.map(m=>new uf({codigo:m.codigo,ordem:m.ordem,nome:m.nome}))),this.isCensoEstatistica()&&this.divulgacaoTipo.push(new uf({codigo:this.censosMenuCode,ordem:9999,nome:"Censos"})),this.divulga
-  this.routeEstatisticaSlug=a)}onResize(e){this.screenWidth=e.target.innerWidth}isCensoEstatistica(){return this.estatistica.codigo===En.c.estatisticaCensos}loadPublication(){this.isLoading=!0,this.hasE
-  rrentLanguage;this.loadingCenso=!0,this.hasErrorCenso=!1,this.listCenso=[],this.censoService.getAllByLang(e,null).subscribe({next:r=>{this.listCenso=r.sort((a,d)=>new Date(d.date_created).getTime()-ne
-  window.innerWidth;const e=this.languageService.currentLanguage;this.temaService.getAllByLang(e,null).subscribe(r=>{if(this.listaTema=r,this.listaTema.length>0){const a=this.restoringFromPopState?this.
-  t"}}loadPublication(){this.isLoading=!0,this.hasError=!1,this.calendarioService.getAllByLang(this.languageService.currentLanguage,null).subscribe({next:r=>{this.calendarioPublicacao=r??[],this.aplicar
-  16 distinct match(es)
+https://www.instat.gov.al/media/13672/tab1.xlsx: 15,001 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab.1 Popullsia banuese sipas moshës dhe gjinisë
+    r2: Tab.1 Resident population by age and sex
+    r3: 
+    r4: Mosha Age | Gjinia Sex
+https://www.instat.gov.al/media/13671/tab2.xlsx: 12,593 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab.2 Popullsia banuese sipas grupmoshës dhe gjinisë
+    r2: Resident population by age group and sex
+    r3: 
+    r4: Grupmosha
+Age group | Gjinia Sex
+https://www.instat.gov.al/media/13665/tab3.xlsx: 14,839 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab. 3 Popullsia banuese sipas gjinisë, grupmoshës dhe gjendjes civile
+    r2: Resident population by sex, age group and marital status
+    r3: 
+    r4: Gjinia dhe grupmosha Sex and age group |  | Gjendja civile Marital status
+https://www.instat.gov.al/media/13670/tab4.xlsx: 13,336 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab. 4 Popullsia banuese sipas grupmoshës, llojit të shtetësisë dhe gjinisë
+    r2: Resident population by age group, citizenship type and sex
+    r3: 
+    r4: Grupmosha  Age group | Lloji shtetësisë Citizenship type
+https://www.instat.gov.al/media/13669/tab5.xlsx: 12,250 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab. 5 Popullsia banuese sipas shtetësisë dhe gjinisë
+    r2: Resident population by country of citizenship and sex
+    r3: 
+    r4: Shtetësia Country of citizenship | Gjinia Sex
+https://www.instat.gov.al/media/13663/tab11.xlsx: 12,335 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab. 11 Popullsia banuese sipas vendit të lindjes dhe gjinisë
+    r2: Resident population by country of birth and sex
+    r3: 
+    r4: Vendlindja Country of birth | Gjinia Sex
+https://www.instat.gov.al/media/13662/tab12.xlsx: 13,524 bytes, starts b'PK\x03\x04\x14\x00\x06\x00'
+  sheet 'Table 1 - Cross-tabular summary'
+    r1: Tab. 12 Popullsia banuese sipas shtetit të lindjes, qarkut të lindjes dhe qarkut të vendbanimit të zakonshëm
+    r2: Resident population by country of birth, prefecture of birth and prefecture of usual residence
+    r3: 
+    r4: Vendlindja dhe qarku i lindjes 
+Country of birth and prefecture 
+of birth | Qarku i vendbanimit të zakonshëm Prefecture of usual residence
