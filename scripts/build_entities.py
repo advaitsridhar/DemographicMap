@@ -8282,9 +8282,11 @@ def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str,
     3,510,028 for 2023, while the country's other regions took their
     provinces' 2023 sums; Conakry and Benin's Littoral sat the same way. As
     there, only a division's figure of a later year than the parent's, from a
-    source that is not itself an encyclopaedia, and never in a country
-    RESTATE_KEEPS names or for a unit whose count takes in ground the map
-    draws elsewhere (UNDRAWN_PARTS).
+    source that is not itself an encyclopaedia, a projection only where the
+    parent's figure is RESTATE_PROJECTION_YEARS older or more, and never in a
+    country RESTATE_KEEPS names, for a unit whose count takes in ground the map
+    draws elsewhere (UNDRAWN_PARTS), or where a division is drawn on the wrong
+    side of the unit's edge (MISFILED_DIVISIONS).
     """
     pop, theirs = parent.get("population"), child.get("population")
     own, value = published(pop), published(theirs)
@@ -8296,8 +8298,15 @@ def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str,
         return None
     if theirs.get("not_this_ground"):
         return None
+    if (iso3, child.get("id")) in MISFILED_DIVISIONS or any(
+            iso == iso3 and home == parent.get("name")
+            for (iso, _), (_, home) in MISFILED_DIVISIONS.items()):
+        return None
     year, own_year = vintage(theirs), vintage(pop)
     if year is None or (own_year is not None and year <= own_year):
+        return None
+    if own_year is not None and projection(theirs) \
+            and year - own_year < RESTATE_PROJECTION_YEARS:
         return None
     was = check_rollups.short_source(str(pop.get("source") or ""))
     return (f"{only_division(parent, child)} covers the same ground, and its figure is "

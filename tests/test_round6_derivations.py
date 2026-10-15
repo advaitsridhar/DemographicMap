@@ -304,10 +304,12 @@ class SoleChildren(unittest.TestCase):
         self.assertEqual(filled, ["BFA Centre > Kadiogo population: 3,030,384 on the parent "
                                   "gives way to its division's 3,510,028"])
         # Not where the countries' divisions are projected from an older count
-        # than the parent's (Zimbabwe), nor from an older or equal year, nor
-        # from another encyclopaedia.
+        # than the parent's (Zimbabwe), nor from an older or equal year, nor a
+        # projection only a year on (Rwanda's rule), nor from another
+        # encyclopaedia.
         for iso, year, source in (("ZWE", 2023, "OCHA, Common Operational Dataset"),
                                   ("BFA", 2019, "OCHA, Common Operational Dataset"),
+                                  ("BFA", 2020, "OCHA, Common Operational Dataset"),
                                   ("BFA", 2023, "Wikidata (CC0)")):
             a1, a2, parent, child = self.pair(iso=iso, parent_name="Centre",
                                               child_name="Centre",
