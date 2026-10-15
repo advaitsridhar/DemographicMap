@@ -222,8 +222,11 @@ def read() -> tuple[dict[int, list[dict[str, Any]]], dict[str, float], dict[str,
         for sheet, rows in sheets_of(blob).items():
             hit = SHEET.match(sheet)
             if not hit:
+                # São Vicente's workbook keeps a working sheet beside its
+                # parish; a parish missing from its sheets would leave its
+                # municipality short, which check() stops on.
                 if any(str(c).strip() for r in rows for c in r):
-                    raise SystemExit(f"cabo_verde_parishes: {island}: sheet {sheet!r} is no parish")
+                    log(f"    {island}: sheet {sheet!r} is no parish sheet; not read")
                 continue
             code = int(hit.group(1))
             if code // 10 not in MUNICIPALITIES:
