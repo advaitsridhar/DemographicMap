@@ -263,5 +263,63 @@ class IdsNameTheirLevelTest(unittest.TestCase):
         self.assertEqual(ids, {"L": "ZMB-2022-province-lusaka", "l": "ZMB-2022-lusaka"})
 
 
+def processed(name):
+    import json
+    path = ROOT / "data" / "processed" / name
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
+class RegeneratedFilesTest(unittest.TestCase):
+    """What the runner's re-reads wrote: the repairs hold in the files themselves."""
+
+    def test_cabo_verde_municipalities_and_their_only_parishes_agree(self):
+        rows = processed("cabo_verde_parishes.json")
+        if rows is None:
+            self.skipTest("cabo_verde_parishes.json is not in this checkout")
+        first = {int(r["id"].rsplit("-", 1)[1]): r for r in rows if r["level"] == "admin1"}
+        second = [r for r in rows if r["level"] == "admin2"]
+        self.assertEqual(sorted(first), sorted(cv.MUNICIPALITIES))
+        self.assertEqual(sum(r["population"]["value"] for r in first.values()), 491233)
+        self.assertTrue(all(r["population"]["year"] == 2021 for r in first.values()))
+        single = [r for r in second if r["population"]["year"] == 2021]
+        self.assertEqual(len(single), 14)
+        for r in single:
+            own = first[int(r["id"].rsplit("-", 1)[1]) // 10]
+            self.assertEqual(r["population"]["value"], own["population"]["value"], r["name"])
+            self.assertEqual(r["sex_ratio"]["value"], own["sex_ratio"]["value"], r["name"])
+        self.assertEqual(len(second), 32)
+        self.assertTrue(all(r["population"]["year"] == 2010 for r in second if r not in single))
+        self.assertEqual(len({r["id"] for r in rows}), len(rows))
+
+    def test_tarfaya_states_why_it_has_no_figure(self):
+        rows = processed("morocco_rgph2024.json")
+        if rows is None:
+            self.skipTest("morocco_rgph2024.json is not in this checkout")
+        tarfaya = [r for r in rows if r.get("shape_id") == "96644757B75888110493475"]
+        self.assertEqual(len(tarfaya), 1)
+        pop = tarfaya[0]["population"]
+        self.assertNotIn("value", pop)
+        self.assertEqual(pop["displaces_before"], 2025)
+        self.assertIn("(16,228 people), the commune of Daoura", pop["note"])
+
+    def test_every_guinea_bissau_record_cites_its_regions_pdf(self):
+        rows = processed("guinea_bissau_census.json")
+        if rows is None:
+            self.skipTest("guinea_bissau_census.json is not in this checkout")
+        for r in rows:
+            self.assertTrue(r["sources"], r["name"])
+            self.assertTrue(all(s["url"].endswith(".pdf") for s in r["sources"]), r["name"])
+
+    def test_ids_are_unique_across_levels(self):
+        for name in ("senegal_rgph5.json", "zambia_census.json", "morocco_rgph2024.json",
+                     "guinea_bissau_census.json", "tanzania_census.json", "ghana_census.json",
+                     "south_africa_districts.json", "cabo_verde_parishes.json"):
+            rows = processed(name)
+            if rows is None:
+                continue
+            ids = [r["id"] for r in rows]
+            self.assertEqual(len(set(ids)), len(ids), name)
+
+
 if __name__ == "__main__":
     unittest.main()
