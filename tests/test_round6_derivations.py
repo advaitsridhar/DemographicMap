@@ -106,10 +106,41 @@ class SoleChildren(unittest.TestCase):
 
     def test_nothing_shows_the_division_is_the_only_one(self):
         a1, a2, _, child = self.pair(iso="COG", parent_name="Brazzaville", child_name="Zanaga",
-                                     religion=comp(A=100.0))
+                                     religion=comp(A=100.0),
+                                     population={"value": 2145783, "year": 2023})
         filled, refused = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(filled, [])
         self.assertIn("nothing shows", refused[0])
+        # The polygon is Brazzaville's ground under another district's name,
+        # and its empty fields say so where the parent has a figure.
+        for field in ("population", "religion"):
+            self.assertEqual(child[field]["status"], NA)
+            self.assertIn("labelled Zanaga, but it is the ground around Brazzaville",
+                          child[field]["note"])
+        self.assertNotIn("note", child["median_age"])
+
+    def test_a_declared_reason_keeps_a_sources_marker_in_plain_words(self):
+        # Nouadhibou: a fifth of the polygon lies in Inchiri.
+        a1, a2, _, child = self.pair(iso="MRT", parent_name="Dakhlet Nouadhibou",
+                                     child_name="Nouadhibou",
+                                     population={"value": 184459, "year": 2023},
+                                     language=comp(A=100.0))
+        child["population"] = common.gap(NA, "No P1082 statement on Wikidata (asked by id).")
+        child["language"] = common.gap(NA, "The survey's own reason.")
+        _, refused = be.fill_sole_children(a1, a2, {"C": {**GOOD, "inside": 0.79}}, {})
+        self.assertIn("only 79%", refused[0])
+        self.assertTrue(child["population"]["note"].startswith(
+            "Wikidata gives no population for this unit. This polygon is not the region's "
+            "ground as the map draws it"))
+        self.assertNotIn("P1082", child["population"]["note"])
+        # A source's own reason stands.
+        self.assertEqual(child["language"]["note"], "The survey's own reason.")
+        # A pair the declaration does not name says nothing.
+        a1, a2, _, child = self.pair(iso="MRT", parent_name="Dakhlet Nouadhibou",
+                                     child_name="Elsewhere",
+                                     population={"value": 184459, "year": 2023})
+        be.fill_sole_children(a1, a2, {"C": {**GOOD, "inside": 0.79}}, {})
+        self.assertNotIn("note", child["population"])
 
     def test_a_code_list_with_one_division_is_evidence_and_a_namesake_elsewhere_is_not(self):
         codes = {"BEN": {be.norm("Littoral"): ["Cotonou"]}}
@@ -178,20 +209,29 @@ class SoleChildren(unittest.TestCase):
         self.assertEqual(filled, ["CPV Santa Catarina do Fogo > Santa Catarina do Fogo "
                                   "population"])
         self.assertIn("whole island of Fogo", refused[0])
-        # The Bahamas' 2022 district rows, whichever route brought them.
+        # The empty field says why the parent's figure is not there.
+        self.assertEqual(child["religion"]["note"], (
+            "Santa Catarina do Fogo's religion figure is not repeated here: its survey "
+            "region is the whole island of Fogo, not this municipality."))
+        # The Bahamas' 2022 district rows, whichever route brought them; a
+        # division that already says why it is empty keeps its own reason.
         a1, a2, _, child = self.pair(iso="BHS", parent_name="East Grand Bahama",
                                      child_name="East Grand Bahama",
                                      population={"value": 11011, "year": 2022,
                                                  "source": "Wikidata (CC0)"})
+        child["population"] = common.gap(NA, "The 2010 census's own reason.")
         filled, refused = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(filled, [])
         self.assertIn("supervisory districts", refused[0])
-        # And a figure flagged as another ground's by its own source.
+        self.assertEqual(child["population"]["note"], "The 2010 census's own reason.")
+        # And a figure flagged as another ground's by its own source, whose
+        # note is the parent's to give.
         a1, a2, _, child = self.pair(iso="XXX", parent_name="Same", child_name="Same",
                                      population={"value": 5, "year": 2020,
                                                  "not_this_ground": True})
         filled, _ = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(filled, [])
+        self.assertNotIn("note", child["population"])
 
     def test_a_refused_figure_is_refused_by_value_not_the_whole_field(self):
         # Tarrafal's 30,000 is not the municipality's; its 2021 census row is.
@@ -217,7 +257,19 @@ class SoleChildren(unittest.TestCase):
         child["population"] = {"value": 3094, "year": 2010, "source": "DoS 2010"}
         filled, _ = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(parent["population"]["value"], 3094)
-        self.assertIn("both show this figure", parent["population_note"])
+        self.assertIn("Its only division, of the same name, covers the same ground, so "
+                      "both show this figure.", parent["population_note"])
+        # A division whose name only begins with its parent's is named.
+        a1, a2, parent, child = self.pair(iso="BHS", parent_name="Crooked Island",
+                                          child_name="Crooked Island and Long Cay",
+                                          population={"value": 350,
+                                                      "source": "Wikidata (CC0)"})
+        child["population"] = {"value": 330, "year": 2010, "source": "DoS 2010"}
+        be.fill_sole_children(a1, a2, {"C": GOOD}, {})
+        self.assertEqual(parent["population"]["value"], 330)
+        self.assertIn("Its only division, Crooked Island and Long Cay, covers the same "
+                      "ground", parent["population_note"])
+        self.assertNotIn("same name", parent["population_note"])
         # An older count does not take a newer encyclopaedia figure off (El Callao).
         a1, a2, parent, child = self.pair(iso="PER", parent_name="Callao",
                                           child_name="Callao",
@@ -583,6 +635,21 @@ class TownFigureWording(unittest.TestCase):
                     {"id": "D", "name": "Other", "parent": "P", "population": {"value": 1}}]}
         be.refuse_town_figures(a1, a2)
         self.assertIn("probably the town of this name", a2["X"][0]["population"]["note"])
+
+    def test_a_polygon_the_drawing_shows_to_be_more_says_what_it_holds(self):
+        # Djibouti's polygon, filed under Arta, holds the city and Arta town.
+        a1 = {"DJI": [{"id": "P", "name": "Arta", "population": {"value": 48922}}]}
+        a2 = {"DJI": [{"id": "C", "name": "Djibouti", "parent": "P",
+                       "population": {"value": 603900, "year": 2018,
+                                      "source": "Wikidata (CC0)"}},
+                      {"id": "D", "name": "Other", "parent": "P", "population": {"value": 1}}]}
+        self.assertEqual(be.refuse_town_figures(a1, a2), 1)
+        note = a2["DJI"][0]["population"]["note"]
+        self.assertTrue(note.startswith("The Wikidata item joined here by name gives 603,900 "
+                                        "(2018), the figure of the city of Djibouti. This "
+                                        "polygon, filed under Arta, holds the city"))
+        self.assertNotIn("the unit it lies in", note)
+        self.assertTrue(note.endswith("It is left out."))
 
 
 class BahamasSupervisoryDistricts(unittest.TestCase):

@@ -5949,6 +5949,18 @@ SOLE_CHILD_BAND = (0.6, 1.6)
 # wrong, and refuse_capital_figures below has already taken it off.
 PARENT_BAND = (0.75, 1.33)
 NO_ROOM = 1.25
+# What the polygon is, where the drawing says more than the ratio does:
+# (country, polygon) -> what follows "gives N (year), ". Djibouti's
+# second-level polygon is filed under Arta, 63% of it lying there, and holds
+# 99.8% of Djibouti region's polygon besides, with the GeoNames points of
+# Djibouti, Balbala and Arta inside it; the item is the city's (Q3604).
+TOWN_FIGURE_GROUND: dict[tuple[str, str], str] = {
+    ("DJI", "Djibouti"): (
+        "the figure of the city of Djibouti. This polygon, filed under Arta, holds the "
+        "city and Balbala as well as the town of Arta and the land between them, so the "
+        "city's figure is not this polygon's, and no figure has been read for that "
+        "ground. It is left out."),
+}
 
 
 def fall_back(entity: dict[str, Any], refused: dict[str, Any],
@@ -6040,12 +6052,14 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                 what = f"{parent['name']} as a whole"
             else:
                 continue
+            ground = TOWN_FIGURE_GROUND.get((iso3, entity.get("name")))
             entity["population"] = gap(NOT_AVAILABLE, (
                 f"The Wikidata item joined here by name gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
-                + f", which is {why}. "
-                + (verdict or f"It is probably {what} rather than this unit, so its "
-                              f"figure is left out.")))
+                + (f", {ground}" if ground else
+                   f", which is {why}. "
+                   + (verdict or f"It is probably {what} rather than this unit, so its "
+                                 f"figure is left out."))))
             fall_back(entity, entity["population"])
             refused += 1
     return refused
@@ -7784,6 +7798,72 @@ LEVEL_REDRAWS_FIRST: dict[str, str] = {
             "it has any, are on the first level, and none is repeated here."),
 }
 
+# What a refused division says in place of its parent's figures, where the
+# reason is a fact about the drawing a reader should have rather than one
+# measure falling short: (country, parent, division) -> note, written where
+# the division's field is a gap with no reason and the parent carries a
+# figure. Each was checked on the boundary file and GeoNames' points.
+SOLE_CHILD_REFUSED_NOTES: dict[tuple[str, str, str], str] = {
+    # The second level's names are shuffled: Brazzaville's point lies in the
+    # polygon labelled Zanaga, Zanaga's (226 km away) in "Komono", Sibiti's in
+    # "Divenie", Impfondo's in "Owando", Dongou's in "Ngabe", Mvouti's in
+    # "Djambala". The polygon is Brazzaville's ground under another name.
+    ("COG", "Brazzaville", "Zanaga"): (
+        "This polygon is labelled Zanaga, but it is the ground around Brazzaville, the "
+        "city's centre included. The town of Zanaga lies about 230 km to the north-west, "
+        "in Lékoumou, inside a polygon labelled Komono, and other second-level polygons "
+        "of the country carry names out of place in the same way. Brazzaville's figures "
+        "are shown one level up and are not repeated under this name."),
+    # 79% of the drawn Nouadhibou lies inside the region and some 3,000 km2 in
+    # Inchiri; the region's department of Chami (Wikidata Q131008371) is drawn
+    # as a polygon filed under Inchiri, over 26% of the region's polygon.
+    ("MRT", "Dakhlet Nouadhibou", "Nouadhibou"): (
+        "This polygon is not the region's ground as the map draws it: about a fifth of "
+        "it lies in Inchiri, and the region's other department, Chami, is drawn as a "
+        "polygon filed under Inchiri. Dakhlet Nouadhibou's figures are shown one level "
+        "up and are not repeated here."),
+    # La Digue island is 32% of the district's polygon; the 67% drawn as
+    # "Other Islands" is filed under Outer Islands. The district's survey
+    # region is the whole district.
+    ("SYC", "La Digue a", "La Digue"): (
+        "The survey figures read for La Digue and Inner Islands describe the whole "
+        "district, including the inner islands that the map draws apart as Other "
+        "Islands, so they are not repeated on La Digue alone."),
+}
+
+# How a refused figure is named in the sentence that says so.
+FIELD_WORDS = {"population": "population", "median_age": "median age",
+               "sex_ratio": "sex ratio", "religion": "religion", "language": "language",
+               "ethnicity": "ethnicity"}
+# Gate 5's reason for a figure its own source flags; the source's note says it.
+FLAGGED_GROUND = "its figure is flagged as another ground's"
+
+
+def say_in_gap(entity: dict[str, Any], field: str, note: str) -> bool:
+    """``note`` as the reason ``field`` is empty, where it is a gap with no
+    reason yet or only a source's coded marker, which is kept in plain words
+    before it. Never over a figure, a stated reason or another status."""
+    value = entity.get(field)
+    if not (isinstance(value, dict) and value.get("status") == NOT_AVAILABLE
+            and "value" not in value):
+        return False
+    before = value.get("note")
+    if before and before not in PLAIN_NOTES:
+        return False
+    entity[field] = {**value, "note": join_note(PLAIN_NOTES.get(before), note)}
+    return True
+
+
+def say_refused(iso3: str, parent: dict[str, Any], child: dict[str, Any]) -> None:
+    """A refused division's declared reason, in each field its parent fills."""
+    note = SOLE_CHILD_REFUSED_NOTES.get((iso3, parent.get("name"), child.get("name")))
+    if not note:
+        return
+    for field in SOLE_FIELDS:
+        value = parent.get(field)
+        if published(value) is not None or (isinstance(value, list) and value):
+            say_in_gap(child, field, note)
+
 
 def sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
                   admin2_by_country: dict[str, list[dict[str, Any]]]
@@ -8030,7 +8110,7 @@ def parent_not_its_ground(iso3: str, parent: dict[str, Any], field: str) -> str 
     """Gate 5: why the parent's figure for ``field`` is not its own drawn ground."""
     value = parent.get(field)
     if isinstance(value, dict) and value.get("not_this_ground"):
-        return "its figure is flagged as another ground's"
+        return FLAGGED_GROUND
     declared = SOLE_CHILD_NOT_ITS_GROUND.get((iso3, parent.get("name"))) or {}
     why = declared.get(field) or declared.get("*")
     if isinstance(why, tuple):
@@ -8118,10 +8198,12 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
         evidence, from_codes, own_ground = sole_child_evidence(iso3, parent, child, codes)
         if evidence is None:
             refused.append(f"{where}: nothing shows it is the parent's only division")
+            say_refused(iso3, parent, child)
             continue
         why = sole_child_drawing(parent, measures.get(child["id"]), from_codes, own_ground)
         if why:
             refused.append(f"{where}: {why}")
+            say_refused(iso3, parent, child)
             continue
         mine, theirs = child.get("population"), parent.get("population")
         if published(mine) and published(theirs) and vintage(mine) is not None \
@@ -8130,6 +8212,7 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
             if not SOLE_CHILD_BAND[0] <= ratio <= SOLE_CHILD_BAND[1]:
                 refused.append(f"{where}: it counts {ratio:.0%} of its parent's people "
                                f"in the same year")
+                say_refused(iso3, parent, child)
                 continue
         # Said of the division, on the division's record: its own name would
         # read "Conakry is Conakry's only division".
@@ -8150,6 +8233,11 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
             ground = parent_not_its_ground(iso3, parent, field)
             if ground:
                 refused.append(f"{where} {field}: {ground}")
+                # Said where the division would otherwise be bare; a figure
+                # its own source flags is explained by that source's note.
+                if ground != FLAGGED_GROUND:
+                    say_in_gap(child, field, f"{parent.get('name')}'s {FIELD_WORDS[field]} "
+                                             f"figure is not repeated here: {ground}.")
                 continue
             copy_field(parent, child, field, sentence)
             filled.append(f"{where} {field}")
@@ -8192,8 +8280,8 @@ def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str,
     the same rule holds for its one figure. Burkina Faso's Centre carried
     Wikipedia's 3,030,384 for 2019 over Kadiogo, its whole ground, at OCHA's
     3,510,028 for 2023, while the country's other regions took their
-    provinces' 2023 sums; Conakry and N'Djamena sat the same way. As there,
-    only a division's figure of a later year than the parent's, from a
+    provinces' 2023 sums; Conakry and Benin's Littoral sat the same way. As
+    there, only a division's figure of a later year than the parent's, from a
     source that is not itself an encyclopaedia, and never in a country
     RESTATE_KEEPS names or for a unit whose count takes in ground the map
     draws elsewhere (UNDRAWN_PARTS).
@@ -8221,8 +8309,13 @@ def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str,
 
 
 def only_division(parent: dict[str, Any], child: dict[str, Any]) -> str:
-    """The parent's one division, named as the parent's record says it."""
-    if same_name(child.get("name"), parent.get("name")):
+    """The parent's one division, named as the parent's record says it.
+
+    "Of the same name" only where the two names are one: same_name also
+    relates Crooked Island to its division Crooked Island and Long Cay, which
+    is evidence enough for gate 2 but not a thing to tell a reader.
+    """
+    if child.get("name") and norm(child.get("name")) == norm(parent.get("name")):
         return "Its only division, of the same name,"
     return f"Its only division, {child.get('name')},"
 
