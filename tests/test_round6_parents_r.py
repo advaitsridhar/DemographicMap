@@ -101,6 +101,15 @@ class SaudiRegionNote(Plain):
             regions += 1
         self.assertEqual(regions, 13)
 
+    def test_every_region_written_carries_the_note(self):
+        rows = rows_of(sc.OUT)
+        if not rows:
+            self.skipTest("saudi_census.json needs a network run to exist")
+        regions = [r for r in rows if r["level"] == "admin1"]
+        self.assertEqual(len(regions), 13)
+        for row in regions:
+            self.assertEqual(row["population"]["note"], sc.REGION_NOTE, row["name"])
+
 
 class OliveiraDeFrades(Plain):
     def test_the_note_tells_the_two_polygons_apart_by_size(self):
@@ -118,6 +127,15 @@ class OliveiraDeFrades(Plain):
         filed = {u["id"]: labels.get(u.get("parent")) for u in dp.as_filed("PRT", admin1, admin2)}
         self.assertEqual(filed[OLIVEIRA], "VISEU")
         self.assertEqual(filed[OLIVEIRA_SMALL], "VISEU")
+
+    def test_the_written_record_carries_the_note(self):
+        rows = rows_of(pc.OUT)
+        if not rows:
+            self.skipTest("portugal_census.json needs a network run to exist")
+        found = [r for r in rows if r.get("shape_id") == OLIVEIRA_SMALL]
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["population"]["note"], pc.UNIDENTIFIED[OLIVEIRA_SMALL])
+        self.assertNotIn("value", found[0]["population"])
 
 
 class CapitalOutline(Plain):
@@ -171,6 +189,15 @@ class CapitalOutline(Plain):
                          sorted(self.MOSTLY + self.IN_PART))
         for sid in named:
             self.assertEqual(under[sid][1], "Buenos Aires", under[sid][0])
+
+    def test_the_written_record_carries_the_note(self):
+        rows = rows_of(ac.OUT)
+        if not rows:
+            self.skipTest("argentina_census.json needs a network run to exist")
+        capital = next(r for r in rows if r["id"] == "ARG-INDEC-02")
+        self.assertEqual(capital["name"], CABA)
+        self.assertEqual(capital["population_note"], self.note())
+        self.assertEqual(capital["population"]["value"], 3_121_707)
 
 
 class VanuatuPartialLevel(unittest.TestCase):
