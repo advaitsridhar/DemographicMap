@@ -1,31 +1,31 @@
-switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
-  nationalities against Switzerland: parts sum to 9,127,125 = 9,127,125
-  named: Swiss, Italian, German, Portuguese, French, Kosovan, Spanish, Turkish, Ukrainian, North Macedonian, Serbian, Polish, Austrian, Eritrean, Romanian, Afghan, British
-  the table's 2115 communes are the register's of 31-12-2025
-  communes against Switzerland: parts sum to 9,127,125 = 9,127,125
-  the balance sheet's communes against Switzerland: parts sum to 9,127,125 = 9,127,125
-  the balance sheet's communes against Switzerland: parts sum to 9,051,029 = 9,051,029
-  the balance sheet's communes against Switzerland: parts sum to 8,962,258 = 8,962,258
-  the balance sheet's communes against Switzerland: parts sum to 8,815,385 = 8,815,385
-  the balance sheet's communes against Switzerland: parts sum to 8,738,791 = 8,738,791
-  districts: 142 written, 26 straddled; unbound []; polygons with no unit ['Bodensee']
-  Appenzell Ausserrhoden's districts against the canton: parts sum to 57,221 = 57,221
-  Fribourg / Freiburg's districts against the canton: parts sum to 350,918 = 350,918
-  Zürich's districts against the canton: parts sum to 1,632,918 = 1,632,918
-  Luzern's districts against the canton: parts sum to 441,500 = 441,500
-  Schwyz's districts against the canton: parts sum to 170,072 = 170,072
-  Zug's districts against the canton: parts sum to 135,018 = 135,018
-  Solothurn's districts against the canton: parts sum to 291,583 = 291,583
-  Nidwalden's districts against the canton: parts sum to 45,664 = 45,664
-  Uri's districts against the canton: parts sum to 38,581 = 38,581
-  Glarus's districts against the canton: parts sum to 42,451 = 42,451
-  Genève's districts against the canton: parts sum to 537,084 = 537,084
-  Thurgau's districts against the canton: parts sum to 302,806 = 302,806
-  Basel-Stadt's districts against the canton: parts sum to 204,157 = 204,157
-  Obwalden's districts against the canton: parts sum to 39,879 = 39,879
-  Jura's districts against the canton: parts sum to 75,178 = 75,178
-  Basel-Landschaft's districts against the canton: parts sum to 303,872 = 303,872
-  Appenzell Innerrhoden's districts against the canton: parts sum to 16,890 = 16,890
-  St. Gallen's districts against the canton: parts sum to 544,040 = 544,040
-  wrote data/processed/switzerland_nationality.json (573 kB)
-  wrote switzerland_nationality.json: 194 records
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 156 characters
+  [["timestamp","statuscode","length","mimetype"],
+  ["20240530110650","200","6267243","application/pdf"],
+  ["20240809222910","200","937099","application/pdf"]]
+  3 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 201 characters
+  [["timestamp","statuscode","length","mimetype"],
+  ["20240611091530","200","2872644","application/pdf"],
+  ["20250208061039","200","919148","application/pdf"],
+  ["20260928192929","200","3497","text/html"]]
+  4 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2023/07/resultados-definitivos-2021-corrigido.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
+  [["timestamp","statuscode","length","mimetype"],
+  ["20250929213113","200","-1876099488","application/vnd.ms-excel"]]
+  2 distinct match(es)
+  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype :: <urlopen error timed out>
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 186 characters
+  [["timestamp","statuscode","length","mimetype"],
+  ["20240606051453","302","248","unk"],
+  ["20250325063502","200","4073361","application/pdf"],
+  ["20260318003540","-","893","warc/revisit"]]
+  4 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/02/quadros_tabelas_publicacao.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
+  [["timestamp","statuscode","length","mimetype"],
+  ["20250926193735","200","-7626739187","application/vnd.ms-excel"]]
+  2 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2023/03/parque-habitacional-e-condicao-de-vida-rgph2021-final.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 156 characters
+  [["timestamp","statuscode","length","mimetype"],
+  ["20240624032939","200","768432","application/pdf"],
+  ["20250130185212","200","6277453","application/pdf"]]
+  3 distinct match(es)
