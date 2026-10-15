@@ -25,8 +25,11 @@ The map's second level is the 36 districts of 2000-2015, which no INSTAT
 table is by. Their head count and sex ratio are summed from the 2011 census's
 373 municipalities and communes (Tab. 2.1.2), each placed in the district it
 lay in (``DISTRICTS``, measured against GeoNames and the district polygons);
-the twelve districts that are exactly one municipality of 2015 take that
-municipality's 2023 count instead (Tab. 7). Ages by commune and municipality
+the 28 districts that are whole municipalities of 2015, one or several, take
+those municipalities' 2023 counts instead (Tab. 7, ``WHOLE_2023``). In the
+prefectures of Berat, Durrës and Vlorë municipalities of 2015 cross the old
+district lines, so their districts keep the 2011 counts and say what the 2023
+census counts across them (``CROSSED_2023``). Ages by commune and municipality
 come only in three broad groups, so no district has a median; ethnicity,
 religion and language are published by prefecture at the finest. Both say so.
 
@@ -36,7 +39,8 @@ count and with Tab. 6's, and the prefectures add to the country. For the
 districts: every commune's age groups and sexes add to its total, the communes
 to their prefecture and the prefectures to 2011's 2,800,138, Tab. 7's
 municipalities to 2023's 2,402,113; every commune is in exactly one district,
-of its own prefecture.
+of its own prefecture; every municipality of Tab. 7 is in exactly one district
+or crossed group.
 
 Usage:
     python -m scripts.fetch_census.albania_census
@@ -47,6 +51,7 @@ from __future__ import annotations
 import argparse
 import re
 import urllib.parse
+from collections.abc import Sequence
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json
@@ -206,7 +211,7 @@ def cell_is_number(value: Any) -> bool:
 # municipalities and communes of its day by sex and broad age group
 # (tab_2_1_2.xls, a sheet per prefecture), and every one of those lay in one
 # district. The 2023 census counts the 61 municipalities of 2015 the same way
-# (Tab. 7), and twelve of them are exactly a former district.
+# (Tab. 7), and 28 districts are whole municipalities of 2015 (WHOLE_2023).
 COMMUNES_2011 = MEDIA + "3140/tab_2_1_2.xls"
 MUNICIPALITIES_2023 = MEDIA + "13652/tab7.xlsx"
 TITLE_2011 = ("Population and Housing Census 2011, Tab. 2.1.2, resident population by "
@@ -274,18 +279,51 @@ DISTRICTS: dict[str, tuple[str, int, str]] = {
     "67620474B70468291702657": ("Sarandë", 11, "ALIKO|DHIVËR|KONISPOL|KSAMIL|LIVADHJA|LUKOVË|MARKAT|SARANDË|XARRË"),
     "67620474B72762453157270": ("Vlorë", 11, "ARMEN|BRATAJ|HIMARË|KOTE|NOVOSELË|ORIKUM|QENDËR|SELENICË|SEVASTER|SHUSHICË|VLLAHINË|VLORË|VRANISHT"),
 }
-# Districts that are exactly one municipality of 2015 -- every one of its
-# communes went to that municipality, and the municipality took no other --
-# and so have the 2023 census's count: the polygon -> the municipality as
-# Tab. 7 names it.
-SAME_2023 = {
-    "67620474B60153855067708": "Bulqizë", "67620474B73468897065558": "Dibër",
-    "67620474B60363170083379": "Gramsh", "67620474B93113119561724": "Peqin",
-    "67620474B72354996665991": "Mallakastër", "67620474B41402008781007": "Devoll",
-    "67620474B51228836218093": "Has", "67620474B92464717887955": "Kukës",
-    "67620474B51082079967557": "Tropojë", "67620474B62137861373373": "Malësi e Madhe",
-    "67620474B66777869203493": "Kurbin", "67620474B99888539945274": "Mirditë",
+# Districts that are whole municipalities of 2015 -- every one of their
+# communes went to those municipalities, and the municipalities took no other
+# -- and so have the 2023 census's count: the district (as DISTRICTS names it)
+# -> the municipalities as Tab. 7 names them.
+#
+# Measured, not copied. GeoNames files each administrative unit of 2015 (the
+# former municipality or commune, ADM3) under its municipality (ADM2); each of
+# DISTRICTS' 373 communes was matched to its unit by name within its
+# prefecture -- the table's nominative against GeoNames' genitive ("Lumas",
+# "Komuna e Lumasit") -- and the 15 no spelling rule reaches by reading the
+# dump ("Fushë Muhur" is "Komuna e Muhurit", the two "Qendër" communes of Fier
+# prefecture are told apart by their municipality). A district is listed here
+# when every municipality its communes went to took communes of no other
+# district. The twelve districts declared earlier as one municipality each are
+# among the fifteen it finds, with the same municipalities, and their 2023
+# counts are unchanged; Kolonjë, Lezhë and Pogradec are the other three.
+WHOLE_2023: dict[str, tuple[str, ...]] = {
+    "Bulqizë": ("Bulqizë",), "Dibër": ("Dibër",), "Mat": ("Klos", "Mat"),
+    "Elbasan": ("Belsh", "Cërrik", "Elbasan"), "Gramsh": ("Gramsh",),
+    "Librazhd": ("Librazhd", "Prrenjas"), "Peqin": ("Peqin",),
+    "Fier": ("Fier", "Patos", "Roskovec"), "Lushnjë": ("Divjakë", "Lushnje"),
+    "Mallakastër": ("Mallakastër",), "Gjirokastër": ("Dropull", "Gjirokastër", "Libohovë"),
+    "Përmet": ("Këlcyrë", "Përmet"), "Tepelenë": ("Memaliaj", "Tepelenë"),
+    "Devoll": ("Devoll",), "Kolonjë": ("Kolonjë",), "Korçë": ("Korçë", "Maliq", "Pustec"),
+    "Pogradec": ("Pogradec",), "Has": ("Has",), "Kukës": ("Kukës",), "Tropojë": ("Tropojë",),
+    "Kurbin": ("Kurbin",), "Lezhë": ("Lezhë",), "Mirditë": ("Mirditë",),
+    "Malësi e Madhe": ("Malësi e Madhe",), "Pukë": ("Fushë Arrës", "Pukë"),
+    "Shkodër": ("Shkodër", "Vau I Dejës"), "Kavajë": ("Kavajë", "Rrogozhinë"),
+    "Tiranë": ("Kamëz", "Tiranë", "Vorë"),
 }
+# Districts whose municipalities of 2015 cross their lines, grouped so that a
+# group is whole municipalities: Poliçan took communes of Berat and Skrapar
+# districts, Kuçovë Lumas of Berat's; Durrës took Ishëm, which the map draws
+# in Krujë; Finiq took communes of Delvinë and Sarandë districts, Himarë of
+# Sarandë's and Vlorë's. Each group is a whole prefecture. Its districts keep
+# their 2011 counts and say what the 2023 census counts across them.
+CROSSED_2023: dict[tuple[str, ...], tuple[str, ...]] = {
+    ("Berat", "Kuçovë", "Skrapar"): ("Berat", "Dimal", "Kuçovë", "Poliçan", "Skrapar"),
+    ("Durrës", "Krujë"): ("Durrës", "Krujë", "Shijak"),
+    ("Delvinë", "Sarandë", "Vlorë"): ("Delvinë", "Finiq", "Himarë", "Konispol", "Sarandë",
+                                     "Selenicë", "Vlorë"),
+}
+# The districts that are one municipality each, by polygon (as before).
+SAME_2023 = {sid: WHOLE_2023[name][0] for sid, (name, _, _) in DISTRICTS.items()
+             if len(WHOLE_2023.get(name, ())) == 1}
 WHY_MEDIAN = ("INSTAT counts the municipalities and communes by age only in three broad groups "
               "(0-14, 15-64, 65 and over: 2011 Tab. 2.1.2, 2023 Tab. 7), from which no median can "
               "be read, and publishes finer ages by prefecture only.")
@@ -339,9 +377,34 @@ def sex_rows(rows: list[list[Any]], what: str) -> tuple[dict[str, tuple[float, f
     return units, whole
 
 
+def municipalities_2023(munis: dict[str, tuple[float, float, float]]
+                        ) -> dict[str, tuple[float, float, float]]:
+    """Tab. 7's rows by the names WHOLE_2023 and CROSSED_2023 use; every
+    municipality is named once there, and every name is a row."""
+    by_fold = {fold(k): v for k, v in munis.items()}
+    named = [m for ms in WHOLE_2023.values() for m in ms] + \
+        [m for ms in CROSSED_2023.values() for m in ms]
+    twice = sorted({m for m in named if named.count(m) > 1})
+    absent = sorted(m for m in named if fold(m) not in by_fold)
+    left = sorted(k for k in by_fold if k not in {fold(m) for m in named})
+    if twice or absent or left:
+        raise SystemExit(f"albania_census: Tab. 7's municipalities against the districts: named "
+                         f"twice {twice}, not in Tab. 7 {absent}, in no district {left}")
+    districts_named = set(WHOLE_2023) | {d for group in CROSSED_2023 for d in group}
+    names = {name for name, _, _ in DISTRICTS.values()}
+    if districts_named != names:
+        raise SystemExit(f"albania_census: districts with no 2023 rule or no polygon: "
+                         f"{sorted(districts_named ^ names)}")
+    return {m: by_fold[fold(m)] for m in named}
+
+
+def listing(names: Sequence[str]) -> str:
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
 def districts(admin1_names: dict[str, str]) -> list[dict[str, Any]]:
     """The 36 districts: head count and sex ratio from 2023 where the district
-    is one municipality of 2015, from 2011 otherwise; the rest stated."""
+    is whole municipalities of 2015, from 2011 otherwise; the rest stated."""
     books = sheets_of(http_get(COMMUNES_2011, binary=True, timeout=300))
     communes: dict[int, dict[str, tuple[float, float, float]]] = {}
     national = 0.0
@@ -354,7 +417,7 @@ def districts(admin1_names: dict[str, str]) -> list[dict[str, Any]]:
     munis, whole = sex_rows(next(iter(sheets_of(http_get(MUNICIPALITIES_2023, binary=True,
                                                           timeout=300)).values())), "2023 Tab. 7")
     check_sum(whole[0], NATIONAL, "albania_census: Tab. 7 against the country")
-    by_fold = {fold(k): v for k, v in munis.items()}
+    rows_2023 = municipalities_2023(munis)
     polys = {s["id"]: s for s in shapes("ALB", "admin2")}
     if set(polys) != set(DISTRICTS):
         raise SystemExit(f"albania_census: the map's districts are not DISTRICTS': "
@@ -378,15 +441,28 @@ def districts(admin1_names: dict[str, str]) -> list[dict[str, Any]]:
         year, title, url = 2011, TITLE_2011, COMMUNES_2011
         note = (f"The 2011 census's {len(parts)} municipalities and communes that made up the district "
                 "of " + name + ", summed (Tab. 2.1.2); the district is not a unit of the 2023 census.")
-        if sid in SAME_2023:
-            key = fold(SAME_2023[sid])
-            if key not in by_fold:
-                raise SystemExit(f"albania_census: Tab. 7 has no municipality {SAME_2023[sid]!r}")
-            total, men, women = by_fold[key]
+        if name in WHOLE_2023:
+            whole_of = WHOLE_2023[name]
+            total, men, women = (sum(rows_2023[m][i] for m in whole_of) for i in range(3))
             year, title, url = YEAR, TITLE_2023, MUNICIPALITIES_2023
-            note = (f"The 2023 census's municipality of {SAME_2023[sid]} (Tab. 7), which is the former "
-                    f"district of {name}: the {len(parts)} municipalities and communes of 2011 that made "
-                    "up the one made up the other.")
+            if len(whole_of) == 1:
+                note = (f"The 2023 census's municipality of {whole_of[0]} (Tab. 7), which is the "
+                        f"former district of {name}: the {len(parts)} municipalities and communes "
+                        "of 2011 that made up the one made up the other.")
+            else:
+                note = (f"The 2023 census's municipalities of {listing(whole_of)} (Tab. 7), added "
+                        f"up: together they are the former district of {name}, the {len(parts)} "
+                        "municipalities and communes of 2011 that made it up having gone to them "
+                        "and to no other.")
+        for group, crossed in CROSSED_2023.items():
+            if name in group:
+                others = [d for d in group if d != name]
+                count = sum(rows_2023[m][0] for m in crossed)
+                note += (" The 2023 census counts by the municipalities made in 2015, whose lines "
+                         "cross this district's: together with the district"
+                         f"{'s' if len(others) > 1 else ''} of {listing(others)}, it covers the "
+                         f"municipalities of {listing(crossed)}, {count:,.0f} people in 2023 "
+                         "(Tab. 7); no 2023 count is this district's alone.")
         if shape["name"] != name:
             note += (f" The boundary file labels this polygon {shape['name']!r}; it lies in {prefecture} "
                      f"prefecture and holds {name} and its communes.")

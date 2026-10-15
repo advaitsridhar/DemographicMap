@@ -541,11 +541,14 @@ class AlbaniaDistrictTest(unittest.TestCase):
                 [n, 2.0, 2.0, 0, 0, 1.0, 1.0, 0, 0, 1.0, 1.0, 0, 0] for n in names]
         munis = [["Gjithsej Total", float(albania_census.NATIONAL), float(albania_census.NATIONAL), 0, 0,
                   1_190_448.0, 1_190_448.0, 0, 0, 1_211_665.0, 1_211_665.0, 0, 0]]
+        named = [m for ms in albania_census.WHOLE_2023.values() for m in ms] + \
+            [m for ms in albania_census.CROSSED_2023.values() for m in ms]
         munis += [[m, 100.0, 100.0, 0, 0, 60.0, 60.0, 0, 0, 40.0, 40.0, 0, 0]
-                  for m in albania_census.SAME_2023.values()]
-        rest = albania_census.NATIONAL - 100 * len(munis[1:])
-        munis.append(["Tiranë", float(rest), float(rest), 0, 0, 1_190_448.0 - 60 * 12, 1_190_448.0 - 60 * 12,
-                      0, 0, 1_211_665.0 - 40 * 12, 1_211_665.0 - 40 * 12, 0, 0])
+                  for m in named if m != "Tiranë"]
+        n = len(munis[1:])
+        rest = albania_census.NATIONAL - 100 * n
+        munis.append(["Tiranë", float(rest), float(rest), 0, 0, 1_190_448.0 - 60 * n, 1_190_448.0 - 60 * n,
+                      0, 0, 1_211_665.0 - 40 * n, 1_211_665.0 - 40 * n, 0, 0])
         saved = (albania_census.http_get, albania_census.sheets_of, albania_census.NATIONAL_2011,
                  albania_census.log)
         albania_census.http_get = lambda url, **k: url.encode()

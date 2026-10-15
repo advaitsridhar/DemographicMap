@@ -13,7 +13,9 @@ departments make the region; the regions make the census's national total,
 **Binding.** The map draws the 45 departments of 2013-2021. Keur Massar
 department was made in 2021 from communes of Pikine and Rufisque, whose drawn
 outlines are the older ones: the 2023 counts of those three departments do not
-describe either polygon, so neither is bound (and the log says so). Every
+describe either polygon, so neither is bound, and each says why in a reason
+that stands in front of an encyclopaedia's figure older than 2024 (Wikidata's
+2023 figures for the two are the new, smaller departments'). Every
 other department is bound within its region by name; ALIASES holds the
 spellings no reduction joins. The regions are bound whole.
 
@@ -30,7 +32,7 @@ import re
 import unicodedata
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 
 URL = "https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx"
 PAGE = "https://www.ansd.sn/node/13519"
@@ -125,6 +127,26 @@ def fields(row: dict[str, Any], note: str) -> dict[str, Any]:
                          "page": PAGE, "license": LICENCE, "year": YEAR}]}
 
 
+def redrawn(table: dict[str, Any], shape: dict[str, Any]) -> dict[str, Any]:
+    """Pikine's or Rufisque's polygon: drawn on the outline Keur Massar was cut
+    from, so no 2023 count is its own. The reason stands in front of any
+    encyclopaedia's figure older than 2024 -- Wikidata's 2023 figures for the
+    two are the new departments', without Keur Massar's communes."""
+    parts = [table["departments"].get(k) for k in ("pikine", "rufisque", "keurmassar")]
+    if None in parts:
+        raise SystemExit("senegal_rgph5: the workbook lacks Pikine, Rufisque or Keur Massar")
+    note = ("Drawn on its outline from before 2021, when Keur Massar department was made from "
+            "communes of Pikine and Rufisque. The 2023 census counts the three departments on "
+            f"their new lines -- Pikine {parts[0]['total']:,}, Rufisque {parts[1]['total']:,} and "
+            f"Keur Massar {parts[2]['total']:,} -- so no 2023 count is this polygon's.")
+    stated = {f: {**gap(NOT_AVAILABLE, note), "displaces_before": YEAR + 1}
+              for f in ("population", "sex_ratio")}
+    return record(f"SEN-RGPH5-{key(shape['name'])}", shape["name"], level="admin2", parent="SEN",
+                  country="SEN", match_by="shape_id", shape_id=shape["id"],
+                  sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
+                            "page": PAGE, "license": LICENCE, "year": YEAR}], **stated)
+
+
 def build(table: dict[str, Any], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
     records: list[dict[str, Any]] = []
@@ -148,7 +170,8 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         region = region_of.get(shape["parent"])
         if k in REDRAWN:
             report.append(f"{shape['name']!r}: drawn on its outline before Keur Massar was "
-                          "made from it; not bound")
+                          "made from it; not bound, and its reason stated")
+            records.append(redrawn(table, shape))
             continue
         if row is None or k in used or row["region"] != region:
             report.append(f"{shape['name']!r} ({k}): no RGPH-5 department of that name in "

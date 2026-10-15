@@ -19,7 +19,8 @@ from (Ubungo to Kinondoni, Kigamboni to Temeke, Chalinze to Bagamoyo...;
 POOLED). A polygon is written only when every council it takes is in the
 table, and only when its count moves with the region's: against OCHA's 2020
 projection for the same unit, built on the 2012 census, the polygon's 2022
-count must be within a fifth of its region's own ratio. A town that grew past
+count's ratio to it must be within a factor of 1.4 of its region's own ratio
+(``TOLERANCE``), either way. A town that grew past
 its old outline fails that test, and so does the district it grew out of:
 FAMILIES holds the polygons drawn from one district of 2012, which stand or
 fall together. Kahama and Katavi's districts, split three and four ways since

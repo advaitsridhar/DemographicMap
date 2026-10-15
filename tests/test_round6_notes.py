@@ -656,9 +656,10 @@ class StatedGapsTest(unittest.TestCase):
 SENEGAL_ROWS = [
     ["PROJECTION DE LA POPULATION - 2023-2050", "RGPH-5 2023", None, None, "2024"],
     [None, "HOMME", "FEMME", "ENSEMBLE", "HOMME"],
-    ["REGION DAKAR", 60, 40, 100, 61],
+    ["REGION DAKAR", 70, 50, 120, 71],
     ["DEPARTEMENT DE DAKAR", 30, 20, 50, 31],
     ["DEPARTEMENT DE PIKINE", 20, 10, 30, 20],
+    ["DEPARTEMENT DE RUFISQUE", 10, 10, 20, 10],
     ["DEPARTEMENT DE KEUR MASSAR", 10, 10, 20, 10],
     ["REGION KOLDA", 40, 60, 100, 41],
     ["DEPARTEMENT  KOLDA", 20, 30, 50, 21],
@@ -671,7 +672,7 @@ class SenegalCensusTest(unittest.TestCase):
         from scripts.fetch_census import senegal_rgph5 as sn
         self.sn = sn
         self.national = sn.NATIONAL
-        sn.NATIONAL = 200
+        sn.NATIONAL = 220
 
     def tearDown(self):
         self.sn.NATIONAL = self.national
@@ -702,10 +703,313 @@ class SenegalCensusTest(unittest.TestCase):
                   {"id": "k", "name": "Kolda", "parent": "K"}]
         records, _ = self.sn.build(table, admin1, admin2)
         by = {r["shape_id"]: r for r in records}
-        self.assertEqual(by["D"]["population"]["value"], 100)
+        self.assertEqual(by["D"]["population"]["value"], 120)
         self.assertEqual(by["m"]["population"]["value"], 50)
         self.assertEqual(by["m"]["sex_ratio"]["value"], round(1000 * 20 / 30))
-        self.assertNotIn("p", by)
+        # Pikine's polygon carries no figure, and says why in front of an
+        # encyclopaedia's 2023 figure for the smaller department.
+        for f in ("population", "sex_ratio"):
+            stated = by["p"][f]
+            self.assertEqual(stated["status"], "not_available")
+            self.assertEqual(stated["displaces_before"], 2024)
+            self.assertIn("Pikine 30, Rufisque 20 and Keur Massar 20", stated["note"])
+        self.assertNotIn("value", by["p"]["population"])
+
+
+class AlbaniaMunicipalitiesTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import albania_census as al
+        self.al = al
+        self.named = [m for ms in al.WHOLE_2023.values() for m in ms] + \
+            [m for ms in al.CROSSED_2023.values() for m in ms]
+
+    def test_every_district_has_one_rule_and_every_municipality_one_place(self):
+        al = self.al
+        groups = [d for g in al.CROSSED_2023 for d in g]
+        names = {name for name, _, _ in al.DISTRICTS.values()}
+        self.assertEqual(len(groups) + len(al.WHOLE_2023), 36)
+        self.assertEqual(set(groups) | set(al.WHOLE_2023), names)
+        self.assertFalse(set(groups) & set(al.WHOLE_2023))
+        self.assertEqual(len(self.named), 61)
+        self.assertEqual(len(set(self.named)), 61)
+        # The twelve districts that were one municipality each are still so.
+        self.assertEqual(len(al.SAME_2023), 15)
+
+    def test_tab7_must_name_every_municipality_once(self):
+        al = self.al
+        rows = {m: (10.0, 6.0, 4.0) for m in self.named}
+        got = al.municipalities_2023(rows)
+        self.assertEqual(len(got), 61)
+        with self.assertRaises(SystemExit):
+            al.municipalities_2023({k: v for k, v in rows.items() if k != "Dimal"})
+        with self.assertRaises(SystemExit):
+            al.municipalities_2023({**rows, "Nowhere": (1.0, 1.0, 0.0)})
+
+    def test_districts_take_their_municipalities_or_say_what_crosses_them(self):
+        al = self.al
+        sheets = {}
+        for i, sheet in enumerate(al.SHEETS_2011):
+            names = [p for n, s, listed in al.DISTRICTS.values() if s == i for p in listed.split("|")]
+            k = float(len(names))
+            sheets[sheet] = [["t"], ["Gjithsej Total", 2 * k, 2 * k, 0, 0, k, k, 0, 0, k, k, 0, 0]] + [
+                [n, 2.0, 2.0, 0, 0, 1.0, 1.0, 0, 0, 1.0, 1.0, 0, 0] for n in names]
+        others = [m for m in self.named if m != "Tiranë"]
+        rest = al.NATIONAL - 100 * len(others)
+        munis = [["Gjithsej Total", float(al.NATIONAL), float(al.NATIONAL), 0, 0, 1_190_448.0,
+                  1_190_448.0, 0, 0, 1_211_665.0, 1_211_665.0, 0, 0]]
+        munis += [[m, 100.0, 100.0, 0, 0, 60.0, 60.0, 0, 0, 40.0, 40.0, 0, 0] for m in others]
+        men = 1_190_448.0 - 60 * len(others)
+        women = 1_211_665.0 - 40 * len(others)
+        munis.append(["Tiranë", float(rest), float(rest), 0, 0, men, men, 0, 0, women, women, 0, 0])
+        saved = (al.http_get, al.sheets_of, al.NATIONAL_2011, al.log)
+        al.http_get = lambda url, **k: url.encode()
+        al.sheets_of = lambda blob: sheets if b"3140" in blob else {"T": munis}
+        al.NATIONAL_2011 = 2 * 373
+        al.log = lambda *a: None
+        try:
+            admin1 = {s["id"]: s["name"] for s in al.shapes("ALB", "admin1")}
+            recs = al.districts(admin1)
+        finally:
+            al.http_get, al.sheets_of, al.NATIONAL_2011, al.log = saved
+        by = {r["name"]: r for r in recs}
+        elbasan = by["Elbasan"]
+        self.assertEqual((elbasan["population"]["value"], elbasan["population"]["year"]), (300, 2023))
+        self.assertIn("municipalities of Belsh, Cërrik and Elbasan", elbasan["population_note"])
+        self.assertEqual(by["Tiranë"]["population"]["value"], round(rest + 200))
+        vlore = by["Vlorë"]
+        self.assertEqual(vlore["population"]["year"], 2011)
+        self.assertIn("together with the districts of Delvinë and Sarandë", vlore["population_note"])
+        self.assertIn("700 people in 2023", vlore["population_note"])
+        kruje = by["Krujë"]
+        self.assertIn("together with the district of Durrës,", kruje["population_note"])
+        self.assertIn("Durrës, Krujë and Shijak, 300 people", kruje["population_note"])
+
+
+GHANA_AREAS = ["Ghana", "Volta", "Hohoe Municipal", "Ho Municipal", "Oti", "Guan", "Jasikan",
+               "Northern", "Tamale Metropolitan Area (TMA)", "TMA-Tamale South", "TMA-Tamale Central",
+               "Sagnarigu Municipal"]
+
+
+def ghana_table(g, overrides=None):
+    sex, age, rel, eth = {}, {}, {}, {}
+
+    def fill(name, n):
+        sex[name] = {"Both sexes": n, "Male": 0.6 * n, "Female": 0.4 * n}
+        age[name] = {str(i): n / 100 for i in range(100)}
+        age[name]["100+"] = 0.0
+        r = {"Protestant (Anglican, Lutheran, Presbyterian, Methodist, etc.)": 0.2 * n,
+             "Catholic": 0.1 * n, "Pentecostal/Charismatic": 0.3 * n, "Other Christian": 0.1 * n,
+             "Islam": 0.2 * n, "Traditionalist": 0.05 * n, "No Religion": 0.03 * n,
+             "Other Religion": 0.02 * n}
+        rel[name] = {**r, "Christian": 0.7 * n, "Total": n}
+        e = {"Akan": 0.4 * n, "Ewe": 0.3 * n, "Mole-Dagbani": 0.2 * n, "Others": 0.05 * n}
+        eth[name] = {**e, "Total": 0.95 * n}
+
+    areas = g.areas(GHANA_AREAS)
+    for a in areas:
+        if a["kind"] in ("district", "submetro"):
+            fill(a["name"], 50.0 if a["kind"] == "submetro" else 100.0)
+    for r in ("Volta", "Oti", "Northern"):
+        fill(r, 200.0)
+    fill("Ghana", 600.0)
+    for name, (field, value) in (overrides or {}).items():
+        {"religion": rel, "ethnicity": eth, "sex": sex}[field][name].update(value)
+    return {"areas": areas, "sex": sex, "age": age, "religion": rel, "ethnicity": eth}
+
+
+class GhanaCensusTest(unittest.TestCase):
+    ADMIN1 = [{"id": "V", "name": "Volta Region"}, {"id": "O", "name": "Oti Region"},
+              {"id": "N", "name": "Northern Region"}]
+    ADMIN2 = [{"id": "h", "name": "Hohoe Municipal", "parent": "V"},
+              {"id": "ho", "name": "Ho Municipal", "parent": "V"},
+              {"id": "j", "name": "Jasikan", "parent": "O"},
+              {"id": "t", "name": "Tamale Metropolitan", "parent": "N"},
+              {"id": "s", "name": "Sagnerigu", "parent": "N"}]
+
+    def setUp(self):
+        from scripts.fetch_census import ghana_census as g
+        self.g = g
+        self.saved = (g.REGIONS, g.NATIONAL, g.log)
+        g.REGIONS, g.NATIONAL, g.log = ("Volta", "Oti", "Northern"), 600, (lambda *a: None)
+
+    def tearDown(self):
+        self.g.REGIONS, self.g.NATIONAL, self.g.log = self.saved
+
+    def test_areas_are_told_apart(self):
+        kinds = {a["name"]: a["kind"] for a in self.g.areas(GHANA_AREAS)}
+        self.assertEqual(kinds["Volta"], "region")
+        self.assertEqual(kinds["TMA-Tamale South"], "submetro")
+        self.assertEqual(kinds["Sagnarigu Municipal"], "district")
+        self.assertEqual(self.g.key("Tamale Metropolitan Area (TMA)"), "tamale")
+        self.assertEqual(self.g.clean("Pentecostal/ Charismatic"), "Pentecostal/Charismatic")
+
+    def test_counts_that_do_not_add_up_stop_the_run(self):
+        g = self.g
+        g.check(ghana_table(g))
+        for bad in ({"Ho Municipal": ("religion", {"Christian": 69.0})},
+                    {"Jasikan": ("ethnicity", {"Total": 120.0, "Akan": 70.0})},
+                    {"Guan": ("sex", {"Male": 61.0})}):
+            with self.assertRaises(SystemExit):
+                g.check(ghana_table(g, bad))
+
+    def test_guan_is_counted_with_hohoe_and_the_regions_say_so(self):
+        g = self.g
+        table = ghana_table(g)
+        recs = g.build(table, g.check(table), self.ADMIN1, self.ADMIN2)
+        by = {r["shape_id"]: r for r in recs}
+        self.assertEqual(by["h"]["population"]["value"], 200)
+        self.assertIn("Guan district was made in 2019", by["h"]["population_note"])
+        self.assertIn("Hohoe Municipal 100 and Guan 100", by["h"]["population_note"])
+        self.assertEqual(by["V"]["population"]["value"], 300)
+        self.assertIn("Volta Region's 2 districts and Guan", by["V"]["population_note"])
+        self.assertEqual(by["O"]["population"]["value"], 100)
+        self.assertIn("other than Guan", by["O"]["population_note"])
+        self.assertEqual(by["N"]["population_note"], "The 2021 census's count for Northern Region.")
+        self.assertEqual(by["s"]["population_note"], "The 2021 census's count for Sagnarigu Municipal.")
+        self.assertEqual(by["s"]["sex_ratio"]["value"], 150.0)
+        self.assertEqual(by["s"]["median_age"]["value"], 50.0)
+        religion = {r["group"]: r["pct"] for r in by["s"]["religion"]}
+        self.assertEqual(religion["Pentecostal/Charismatic"], 30.0)
+        self.assertNotIn("Christian", religion)
+        ethnicity = {r["group"]: r["pct"] for r in by["s"]["ethnicity"]}
+        self.assertEqual(ethnicity["Other"], round(100 * 5 / 95, 1))
+        self.assertIn("95 people the census counts by ethnic group here, of 100",
+                      by["s"]["ethnicity_note"])
+
+    def test_a_polygon_or_district_left_over_stops_the_run(self):
+        g = self.g
+        table = ghana_table(g)
+        got = g.check(table)
+        with self.assertRaises(SystemExit):
+            g.build(table, got, self.ADMIN1, self.ADMIN2[:-1])
+        with self.assertRaises(SystemExit):
+            g.build(table, got, self.ADMIN1,
+                    self.ADMIN2 + [{"id": "x", "name": "Nowhere", "parent": "N"}])
+
+
+class SouthAfricaDistrictsTest(unittest.TestCase):
+    ADMIN1 = [{"id": "K", "name": "KwaZulu-Natal"}, {"id": "W", "name": "Western Cape"},
+              {"id": "N", "name": "North West"}]
+    ADMIN2 = [{"id": "u", "name": "Uthungulu", "parent": "K"},
+              {"id": "e", "name": "eThekwini", "parent": "K"},
+              {"id": "g", "name": "Eden", "parent": "W"},
+              {"id": "b", "name": "Bojanala", "parent": "N"}]
+    DISTRICTS = [{"code": "DC28", "name": "King Cetshwayo", "province": "KwaZulu-Natal",
+                  "men": 48, "women": 52},
+                 {"code": "ETH", "name": "eThekwini", "province": "KwaZulu-Natal",
+                  "men": 100, "women": 100},
+                 {"code": "DC4", "name": "Garden Route", "province": "Western Cape",
+                  "men": 49, "women": 51},
+                 {"code": "DC37", "name": "Bojanala Platinum", "province": "North West",
+                  "men": 60, "women": 40}]
+
+    def setUp(self):
+        from scripts.fetch_census import south_africa_districts as za
+        self.za = za
+
+    def test_renamed_districts_join_and_say_the_boundary_files_name(self):
+        recs = self.za.records_of({"districts": self.DISTRICTS}, self.ADMIN1, self.ADMIN2)
+        by = {r["shape_id"]: r for r in recs}
+        self.assertEqual(by["u"]["population"]["value"], 100)
+        self.assertEqual(by["u"]["population"]["year"], 2022)
+        self.assertEqual(by["u"]["sex_ratio"]["value"], round(100 * 48 / 52, 1))
+        self.assertIn("King Cetshwayo (the boundary file's 'Uthungulu')", by["u"]["population_note"])
+        self.assertEqual(by["e"]["population_note"], "Census 2022's count for eThekwini.")
+        self.assertIn("Garden Route", by["g"]["population_note"])
+        self.assertEqual(by["b"]["population"]["value"], 100)
+
+    def test_a_district_on_no_polygon_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            self.za.records_of({"districts": self.DISTRICTS}, self.ADMIN1, self.ADMIN2[:-1])
+        moved = [dict(d) for d in self.DISTRICTS]
+        moved[0]["province"] = "Western Cape"
+        with self.assertRaises(SystemExit):
+            self.za.records_of({"districts": moved}, self.ADMIN1, self.ADMIN2)
+
+    def test_provinces_must_be_made_by_their_districts(self):
+        za = self.za
+        saved = za.NATIONAL
+        za.NATIONAL = 500
+        try:
+            provinces = {"KwaZulu-Natal": {"id": 5, "total": 300}, "Western Cape": {"id": 1, "total": 100},
+                         "North West": {"id": 6, "total": 100}}
+            za.check(provinces, self.DISTRICTS)
+            provinces["Western Cape"]["total"] = 101
+            provinces["North West"]["total"] = 99
+            with self.assertRaises(SystemExit):
+                za.check(provinces, self.DISTRICTS)
+        finally:
+            za.NATIONAL = saved
+
+
+CPV_SHEET = [
+    ["POPULAÇÃO RESIDENTE E AGREGADOS"],
+    ["", "Zona", "Lugar", "Sexo", "População residente", "Agregados"],
+    ["", "", "", "", "", "", "Menos de 15 anos"],
+    ["", "BRANDÃO", "", "Total", 198.0, 41.0],
+    ["", "", "", "Masculino", 107.0, 30.0],
+    ["", "", "", "Feminino", 91.0, 11.0],
+    ["", "", "BRANDÃO/BRANDÃOZINHO", "Total", 31.0, 5.0],
+    ["", "", "", "Masculino", 14.0, 3.0],
+    ["", "", "", "Feminino", 17.0, 2.0],
+    ["", "", "JOÃO DA NOLY", "Total", 167.0, 36.0],
+    ["", "", "", "Masculino", 93.0, 27.0],
+    ["", "", "", "Feminino", 74.0, 9.0],
+    ["", "CIDADE", "", "Total", 2.0, 1.0],
+    ["", "", "", "Masculino", 1.0, 1.0],
+    ["", "", "", "Feminino", 1.0, 0.0],
+]
+
+
+class CaboVerdeParishesTest(unittest.TestCase):
+    def setUp(self):
+        from scripts.fetch_census import cabo_verde_parishes as cv
+        self.cv = cv
+
+    def test_a_parish_is_its_zones_added_up(self):
+        got = self.cv.parish(CPV_SHEET, "test")
+        self.assertEqual((got["total"], got["men"], got["women"], got["zones"]), (200.0, 108.0, 92.0, 2.0))
+        bad = [list(r) for r in CPV_SHEET]
+        bad[9][4] = 160.0                                   # the localities no longer make the zone
+        with self.assertRaises(SystemExit):
+            self.cv.parish(bad, "test")
+        bad = [list(r) for r in CPV_SHEET]
+        bad[4][4] = 108.0                                   # men and women no longer make it
+        with self.assertRaises(SystemExit):
+            self.cv.parish(bad, "test")
+
+    def test_names_and_the_one_parish_rule(self):
+        cv = self.cv
+        self.assertEqual(cv.key("Freguesia N.S. Conceição"), cv.key("Nossa Senhora Da Conceicao"))
+        self.assertEqual(cv.key("Nossa Senhora de Ajuda"), cv.key("Nossa Senhora Da Ajuda"))
+        parishes = {82: [{"code": 821, "name": "São Lourenço", "total": 1},
+                         {"code": 822, "name": "N.S. Conceição", "total": 2}],
+                    83: [{"code": 831, "name": "Santa Catarina", "total": 3}]}
+        admin1 = [{"id": "F", "name": "São Filipe"}, {"id": "C", "name": "Santa Catarina do Fogo"}]
+        admin2 = [{"id": "a", "name": "Sao Lourenco", "parent": "F"},
+                  {"id": "b", "name": "Nossa Senhora Da Conceicao", "parent": "F"},
+                  {"id": "c", "name": "Santa Catarina Do Fogo", "parent": "C"}]
+        saved = cv.MUNICIPALITIES
+        cv.MUNICIPALITIES = {82: ("São Filipe", "S. Filipe"), 83: ("Santa Catarina do Fogo", "x")}
+        try:
+            bound = cv.bind(parishes, admin1, admin2)
+            self.assertEqual({k: v["code"] for k, v in bound.items()}, {"a": 821, "b": 822, "c": 831})
+            with self.assertRaises(SystemExit):
+                cv.bind({82: parishes[82][:1], 83: parishes[83]}, admin1, admin2)
+        finally:
+            cv.MUNICIPALITIES = saved
+
+    def test_the_municipalities_must_be_made_by_their_parishes(self):
+        cv = self.cv
+        saved = (cv.MUNICIPALITIES, cv.NATIONAL)
+        cv.MUNICIPALITIES, cv.NATIONAL = {82: ("São Filipe", "S. Filipe")}, 3
+        try:
+            parishes = {82: [{"total": 1.0}, {"total": 2.0}]}
+            cv.check(parishes, {"s. filipe": 3.0, "cabo verde": 3.0})
+            with self.assertRaises(SystemExit):
+                cv.check(parishes, {"s. filipe": 4.0, "cabo verde": 3.0})
+        finally:
+            cv.MUNICIPALITIES, cv.NATIONAL = saved
 
 
 if __name__ == "__main__":
