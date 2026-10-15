@@ -1,40 +1,4 @@
-switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
-  nationalities against Switzerland: parts sum to 9,127,125 = 9,127,125
-  named: Swiss, Italian, German, Portuguese, French, Kosovan, Spanish, Turkish, Ukrainian, North Macedonian, Serbian, Polish, Austrian, Eritrean, Romanian, Afghan, British
-  the table's 2115 communes are the register's of 31-12-2025
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 325, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 318, in main
-    records = build(args.year)
-              ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 135, in build
-    for key, value in query(code, year, px[start:start + BATCH], asked):
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/switzerland_nationality.py", line 80, in query
-    return unstack(http_json(TABLE, {"query": q, "response": {"format": "json-stat2"}}))
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/pxweb.py", line 327, in http_json
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 429: 
+https://web.archive.org/web/2024id_/https://ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf: 1,048,576 bytes, starts b'%PDF-1.5'
+https://web.archive.org/web/2024id_/https://ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf: PdfminerException: Unexpected EOF
+https://web.archive.org/web/2024id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf: 1,048,576 bytes, starts b'%PDF-1.5'
+https://web.archive.org/web/2024id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf: PdfminerException: Unexpected EOF
