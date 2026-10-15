@@ -7514,17 +7514,16 @@ def inherit_single_unit(admin0: list[dict[str, Any]],
                           f"unit, so this is the country's own {field} figure: it "
                           f"describes exactly this ground and no more. Derived from the "
                           f"national row, not separately published for the unit."))
-            elif isinstance(value, list) and value and field in ROLLUP_FIELDS:
-                # A list of names with no shares: the same list, said to be the
-                # country's.
+            elif (isinstance(value, list) and value and field in ROLLUP_FIELDS) \
+                    or (field in FIGURE_FIELDS and published(value) is not None):
+                # A list of names with no shares, or a median, a ratio or a
+                # count: the same value, said to be the country's in the note
+                # beside it, which is the one the panel shows.
                 unit[field] = copy.deepcopy(value)
                 for suffix in ("_year", "_basis"):
                     if nation.get(f"{field}{suffix}") is not None:
                         unit[f"{field}{suffix}"] = nation[f"{field}{suffix}"]
                 unit[f"{field}_note"] = join_note(nation.get(f"{field}_note"), said)
-            elif field in FIGURE_FIELDS and published(value) is not None:
-                unit[field] = {**copy.deepcopy(value),
-                               "note": join_note(value.get("note"), said)}
             else:
                 continue
             cite_country(unit, nation, field)
@@ -7567,8 +7566,10 @@ def copy_field(source: dict[str, Any], target: dict[str, Any], field: str,
     """``source``'s value for ``field`` onto ``target``, with its satellites and sources.
 
     What fill_same_polygons does for a polygon drawn twice, for any two
-    records that are the same ground. ``sentence`` is added to the note the
-    value carries -- inside a figure, or beside a list.
+    records that are the same ground. ``sentence`` is added to the note
+    beside the value, ``<field>_note``, after the source's own: that is the
+    note the panel shows for a figure as for a list. A note inside a figure
+    is shown only for a gap, so a sentence put there would never be read.
     """
     value = copy.deepcopy(source[field])
     for suffix in SATELLITES:
@@ -7576,11 +7577,8 @@ def copy_field(source: dict[str, Any], target: dict[str, Any], field: str,
             target[f"{field}{suffix}"] = copy.deepcopy(source[f"{field}{suffix}"])
         else:
             target.pop(f"{field}{suffix}", None)
-    if sentence:
-        if isinstance(value, dict) and "value" in value:
-            value["note"] = join_note(value.get("note"), sentence)
-        elif isinstance(value, list):
-            target[f"{field}_note"] = join_note(target.get(f"{field}_note"), sentence)
+    if sentence and not is_gap(value):
+        target[f"{field}_note"] = join_note(target.get(f"{field}_note"), sentence)
     target[field] = value
     sources = target.setdefault("sources", [])
     sources[:] = [src for src in sources
@@ -8144,9 +8142,12 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
             copy_field(parent, child, field, sentence)
             filled.append(f"{where} {field}")
         # One unit, two populations: the office's on both, where it is at
-        # least as new as the encyclopaedia's.
+        # least as new as the encyclopaedia's. A parent figure of other ground
+        # is never handed down; it may still give way to its division's.
         office = office_over_encyclopaedia(parent, child)
-        if office is not None and not parent_not_its_ground(iso3, parent, "population"):
+        if office is parent and parent_not_its_ground(iso3, parent, "population"):
+            office = None
+        if office is not None:
             other = child if office is parent else parent
             said = (f"{child.get('name')} is {parent.get('name')}'s only division and "
                     f"covers the same ground, so both show this figure.")
@@ -8155,7 +8156,54 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
             filled.append(f"{where} population: {was:,.0f} on the "
                           f"{'division' if other is child else 'parent'} gives way to "
                           f"{published(office['population']):,.0f}")
+            continue
+        said = division_restates_parent(iso3, parent, child)
+        if said:
+            was = published(parent["population"])
+            copy_field(child, parent, "population", said)
+            filled.append(f"{where} population: {was:,.0f} on the parent gives way to "
+                          f"its division's {published(child['population']):,.0f}")
     return filled, refused
+
+
+def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str, Any]
+                             ) -> str | None:
+    """The sentence for a parent whose encyclopaedia figure gives way to its only
+    division's, or None.
+
+    restate_encyclopaedia_parents puts the one-source sum of a unit's
+    divisions in place of an encyclopaedia's older figure for the unit, and
+    leaves a unit drawn as a single division to this pass, which is the one
+    that weighs whether the division is the unit's whole ground. Where it is,
+    the same rule holds for its one figure. Burkina Faso's Centre carried
+    Wikipedia's 3,030,384 for 2019 over Kadiogo, its whole ground, at OCHA's
+    3,510,028 for 2023, while the country's other regions took their
+    provinces' 2023 sums; Conakry and N'Djamena sat the same way. As there,
+    only a division's figure of a later year than the parent's, from a
+    source that is not itself an encyclopaedia, and never in a country
+    RESTATE_KEEPS names or for a unit whose count takes in ground the map
+    draws elsewhere (UNDRAWN_PARTS).
+    """
+    pop, theirs = parent.get("population"), child.get("population")
+    own, value = published(pop), published(theirs)
+    if own is None or value is None or round(own) == round(value):
+        return None
+    if not check_rollups.is_encyclopaedic(pop) or check_rollups.is_encyclopaedic(theirs):
+        return None
+    if iso3 in RESTATE_KEEPS or (iso3, parent.get("name")) in UNDRAWN_PARTS:
+        return None
+    if theirs.get("not_this_ground"):
+        return None
+    year, own_year = vintage(theirs), vintage(pop)
+    if year is None or (own_year is not None and year <= own_year):
+        return None
+    was = check_rollups.short_source(str(pop.get("source") or ""))
+    return (f"{child.get('name')} is {parent.get('name')}'s only division and covers the "
+            f"same ground, so this is its figure, for {year} from "
+            f"{check_rollups.short_source(str(theirs.get('source') or ''))}. It replaces "
+            f"{own:,.0f}"
+            + (f" for {own_year}, an older figure from {was}." if own_year
+               else f" from {was}, which gives no year for it."))
 
 
 # A source name ends with how this map reached it, which is provenance rather

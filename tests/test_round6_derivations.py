@@ -62,8 +62,13 @@ class SoleChildren(unittest.TestCase):
         self.assertEqual(refused, [])
         self.assertEqual(len(filled), 6)
         self.assertEqual(child["population"]["value"], 130271)
+        # Beside the figure, where the panel reads a figure's note; a note
+        # inside a figure is shown only for a gap.
         self.assertIn("is Praia's only division and covers the same ground",
-                      child["population"]["note"])
+                      child["population_note"])
+        self.assertNotIn("note", child["population"])
+        self.assertIn("only division", child["median_age_note"])
+        self.assertIn("only division", child["sex_ratio_note"])
         self.assertEqual(child["religion"], parent["religion"])
         self.assertIsNot(child["religion"], parent["religion"])
         self.assertEqual(child["religion_year"], 2022)
@@ -212,25 +217,72 @@ class SoleChildren(unittest.TestCase):
         child["population"] = {"value": 3094, "year": 2010, "source": "DoS 2010"}
         filled, _ = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(parent["population"]["value"], 3094)
-        self.assertIn("both show this figure", parent["population"]["note"])
+        self.assertIn("both show this figure", parent["population_note"])
         # An older count does not take a newer encyclopaedia figure off (El Callao).
         a1, a2, parent, child = self.pair(iso="PER", parent_name="Callao",
                                           child_name="Callao",
                                           population={"value": 1226200, "year": 2025,
                                                       "source": "English Wikipedia, X"})
         child["population"] = {"value": 994494, "year": 2017, "source": "INEI 2017"}
-        be.fill_sole_children(a1, a2, {"C": GOOD}, {})
+        filled, _ = be.fill_sole_children(a1, a2, {"C": GOOD}, {})
         self.assertEqual(parent["population"]["value"], 1226200)
-        # Nor does a projection take a census's figure off (Centre, Kadiogo).
+        self.assertEqual(child["population"]["value"], 994494)
+        self.assertEqual(filled, [])
+
+    def test_an_older_encyclopaedia_figure_gives_way_to_its_divisions_later_one(self):
+        # Centre and Kadiogo, as restate_encyclopaedia_parents does for a unit
+        # of several divisions: the division's later figure, from a source that
+        # is not an encyclopaedia, is the parent's too, and says what it replaced.
         a1, a2, parent, child = self.pair(iso="BFA", parent_name="Centre",
-                                          child_name="Centre",
+                                          child_name="Kadiogo",
                                           population={"value": 3030384, "year": 2019,
                                                       "source": "English Wikipedia, X"})
+        parent["population_note"] = "The infobox's figure."
         child["population"] = {"value": 3510028, "year": 2023, "source": (
             "OCHA, Common Operational Dataset -- population statistics (cod-ps-bfa)")}
-        be.fill_sole_children(a1, a2, {"C": GOOD}, {})
-        self.assertEqual(parent["population"]["value"], 3030384)
+        child["sources"] = [{"field": "population", "name": "OCHA"}]
+        codes = {"BFA": {be.norm("Centre"): ["Kadiogo"]}}
+        filled, _ = be.fill_sole_children(a1, a2, {"C": GOOD}, codes)
+        self.assertEqual(parent["population"]["value"], 3510028)
         self.assertEqual(child["population"]["value"], 3510028)
+        self.assertIn("It replaces 3,030,384 for 2019, an older figure from Wikipedia",
+                      parent["population_note"])
+        self.assertNotIn("infobox", parent["population_note"])
+        self.assertEqual(parent["sources"], [{"field": "population", "name": "OCHA"}])
+        self.assertEqual(filled, ["BFA Centre > Kadiogo population: 3,030,384 on the parent "
+                                  "gives way to its division's 3,510,028"])
+        # Not where the countries' divisions are projected from an older count
+        # than the parent's (Zimbabwe), nor from an older or equal year, nor
+        # from another encyclopaedia.
+        for iso, year, source in (("ZWE", 2023, "OCHA, Common Operational Dataset"),
+                                  ("BFA", 2019, "OCHA, Common Operational Dataset"),
+                                  ("BFA", 2023, "Wikidata (CC0)")):
+            a1, a2, parent, child = self.pair(iso=iso, parent_name="Centre",
+                                              child_name="Centre",
+                                              population={"value": 3030384, "year": 2019,
+                                                          "source": "English Wikipedia, X"})
+            child["population"] = {"value": 3510028, "year": year, "source": source}
+            be.fill_sole_children(a1, a2, {"C": GOOD}, {})
+            self.assertEqual(parent["population"]["value"], 3030384, (iso, year, source))
+
+    def test_a_parent_figure_of_other_ground_gives_way_but_is_never_handed_down(self):
+        # Dire Dawa's 277,000 is the city's alone; the administration's own
+        # figure, on its one division, replaces it.
+        a1, a2, parent, child = self.pair(iso="ETH", parent_name="Dire Dawa",
+                                          child_name="Dire Dawa",
+                                          population={"value": 277000, "year": 2015,
+                                                      "source": "Wikidata (CC0)"})
+        child["population"] = {"value": 521000, "year": 2022,
+                               "source": "OCHA, Common Operational Dataset"}
+        be.fill_sole_children(a1, a2, {"C": GOOD}, {})
+        self.assertEqual(parent["population"]["value"], 521000)
+        a1, a2, parent, child = self.pair(iso="ETH", parent_name="Dire Dawa",
+                                          child_name="Dire Dawa",
+                                          population={"value": 277000, "year": 2015,
+                                                      "source": "A census"})
+        child["population"] = {"value": 250000, "year": 2007, "source": "Wikidata (CC0)"}
+        be.fill_sole_children(a1, a2, {"C": GOOD}, {})
+        self.assertEqual(child["population"]["value"], 250000)
 
 
 class SoleChildMeasures(unittest.TestCase):
@@ -357,7 +409,9 @@ class SingleUnitCountries(unittest.TestCase):
         self.assertIn("ESH Western Sahara language (drawn again)", done)
         for record in (first, twin):
             self.assertEqual(record["median_age"]["value"], 21.8)
-            self.assertIn("drawn as a single first-level unit", record["median_age"]["note"])
+            self.assertIn("drawn as a single first-level unit", record["median_age_note"])
+            self.assertIn("drawn as a single first-level unit", record["sex_ratio_note"])
+            self.assertNotIn("note", record["median_age"])
             self.assertEqual(record["sex_ratio"]["value"], 990)
             self.assertEqual(record["language"][0]["group"], "Hassaniya Arabic")
             self.assertIn("single first-level unit", record["language_note"])
