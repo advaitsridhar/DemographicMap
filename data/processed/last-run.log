@@ -1,21 +1,12 @@
-  read https://www.hcp.ma/file/242341/: 166,693 bytes, sha256 7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  12 regions and 75 provinces and prefectures, making 36,828,330
-  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
-  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
-  'Oued Ed-Dahab Province': a piece across the line, written as a gap
-  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
-  'Tarfaya Province': part of a province across the line, written as a gap
-  HCP provinces not drawn: []
-  Province d'Ouezzane: 274,577
-  Préfecture d'Oujda-Angad: 572,454
-  Préfecture de Skhirate-Témara: 783,475
-  Province d'Errachidia: 427,572
-  Province de Tarfaya: Commune de Tarfaya 11,030 (115370105)
-  Province de Tarfaya: Commune de Daoura 902 (115370303)
-  Province de Tarfaya: Commune d'El Hagounia 561 (115370305)
-  Province de Tarfaya: Commune d'Akhfennir 2,841 (115370501)
-  Province de Tarfaya: Commune de Tah 894 (115370507)
-  10 regions and 69 of 72 provinces bound
-  wrote data/processed/morocco_rgph2024.json (137 kB)
+  read https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx: 49,987 bytes, sha256 86e033450e376e581865edf9a39c0175f47a967a3ff697d1a0a9703e8c13a399
+  14 regions and 46 departments, making 18,126,390
+  'Pikine': drawn on its outline before Keur Massar was made from it; not bound, and its reason stated
+  'Rufisque': drawn on its outline before Keur Massar was made from it; not bound, and its reason stated
+  RGPH-5 departments not bound: ['DEPARTEMENT DE PIKINE', 'DEPARTEMENT DE RUFISQUE', 'DEPARTEMENT DE KEUR MASSAR']
+  DEPARTEMENT MEDINA YORO FOULAH: 185,456
+  DEPARTEMENT SAINT-LOUIS: 387,368
+  DEPARTEMENT DAGANA: 329,063
+  DEPARTEMENT PODOR: 486,007
+  DEPARTEMENT TIVAOUANE: 649,189
+  14 regions and 45 of 45 departments bound
+  wrote data/processed/senegal_rgph5.json (112 kB)
