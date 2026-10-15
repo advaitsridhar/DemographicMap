@@ -506,6 +506,33 @@ class Residuals(unittest.TestCase):
         blank["name"] = "Assa-Zag Province"
         be.residual_grandchild({"MAR": [parent]}, {"MAR": [*known, blank]})
         self.assertIn("no row for Assa-Zag", blank["language"]["note"])
+        # And why the census's own 2014 weights would not do either.
+        self.assertIn("High Commission for Planning's 2014 report",
+                      blank["language"]["note"])
+
+
+class StatedSplits(unittest.TestCase):
+    """Bueng Kan keeps a stated gap, which claims only what is true."""
+
+    def test_the_gap_does_not_say_no_source_publishes_the_province(self):
+        # Thailand's 2010 census does tabulate Bueng Kan; none read here does.
+        src = {"id": "THA-NK", "level": "admin1", "name": "Nong Khai Province",
+               "country": "THA", "_source": "thailand_province.json", "sources": [],
+               "religion": comp(Buddhism=99.1, Other=0.9), "religion_year": 2000}
+        row = be.gaps_from(src, "Bueng Kan Province", "THA")
+        note = row["religion"]["note"]
+        self.assertNotIn("No source publishes", note)
+        self.assertIn("No religion figure for Bueng Kan Province on its own has been read",
+                      note)
+        self.assertIn("Nong Khai Province in 2000 counted this ground", note)
+
+
+class AlgeriasSecondLevel(unittest.TestCase):
+    def test_the_note_claims_no_figure_the_wilaya_lacks(self):
+        note = be.LEVEL_REDRAWS_FIRST["DZA"]
+        self.assertIn("draws the 48 wilayas a second time", note)
+        self.assertIn("where it has any", note)
+        self.assertNotIn("covers the same ground", note)
 
 
 class PolicyReasons(unittest.TestCase):
@@ -535,6 +562,27 @@ class TownFigureWording(unittest.TestCase):
         note = a2["X"][0]["population"]["note"]
         self.assertNotIn("covers the same ground", note)
         self.assertIn("the only division drawn under Adrar", note)
+        self.assertTrue(note.endswith("so it is left out."))
+
+    def test_a_sole_divisions_figure_is_not_called_a_towns(self):
+        # Naro-Fominsky's item is the urban okrug, a unit; what is known is
+        # only that its figure and the polygon drawn under Moscow do not match.
+        a1 = {"RUS": [{"id": "P", "name": "Moscow", "population": {"value": 13010112}}]}
+        a2 = {"RUS": [{"id": "C", "name": "Naro-Fominsky District", "parent": "P",
+                       "population": {"value": 201751, "year": 2025,
+                                      "source": "Wikidata (CC0)"}}]}
+        be.refuse_town_figures(a1, a2)
+        note = a2["RUS"][0]["population"]["note"]
+        self.assertNotIn("town", note)
+        self.assertIn("does not describe the polygon as drawn", note)
+        # A division holding more than its parent is still said to be a town.
+        a1 = {"X": [{"id": "P", "name": "Arta", "population": {"value": 48922}}]}
+        a2 = {"X": [{"id": "C", "name": "Djibouti", "parent": "P",
+                     "population": {"value": 603900, "year": 2018,
+                                    "source": "Wikidata (CC0)"}},
+                    {"id": "D", "name": "Other", "parent": "P", "population": {"value": 1}}]}
+        be.refuse_town_figures(a1, a2)
+        self.assertIn("probably the town of this name", a2["X"][0]["population"]["note"])
 
 
 class BahamasSupervisoryDistricts(unittest.TestCase):

@@ -158,7 +158,9 @@ class TownFiguresOnDistricts(unittest.TestCase):
         refused, rows = self.run_guard(86949, [(2374, "Wikidata (CC0)")])
         self.assertEqual(refused, 1)
         self.assertEqual(rows[0]["population"]["status"], common.NOT_AVAILABLE)
-        self.assertIn("probably the town", rows[0]["population"]["note"])
+        # Only that the figure and the polygon do not match is said: the
+        # item may be a town, or a unit counted on other ground.
+        self.assertIn("does not describe the polygon as drawn", rows[0]["population"]["note"])
 
     def test_a_division_bigger_than_its_parent_is_left_out(self):
         refused, _ = self.run_guard(165839, [(416000, "Wikidata (CC0)"), (1, "Wikidata (CC0)")])

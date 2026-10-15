@@ -6013,6 +6013,7 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
             sole = siblings[entity.get("parent")] == 1
             rest = held[entity.get("parent")] - pop["value"]
             what = "the town of this name"
+            verdict = None
             if ratio > TOWN_RATIO_MAX:
                 why = (f"more than {parent['name']}'s own {above:,.0f}, "
                        f"the unit it lies in")
@@ -6020,9 +6021,15 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                 # Only the division drawn under it is said, not that it covers
                 # the parent's ground: that is a measurement, and Algeria's
                 # second level, the wilayas drawn again out of register, and
-                # Naro-Fominsky under Moscow are not the parent's ground.
+                # Naro-Fominsky under Moscow are not the parent's ground. Nor
+                # is the figure said to be a town's: Naro-Fominsky's item is
+                # the urban okrug, a unit, counted on other ground than the
+                # polygon drawn under Moscow. What is known is that the two
+                # do not match.
                 why = (f"{ratio:.0%} of {parent['name']}'s {above:,.0f}, though "
-                       f"it is the only division drawn under {parent['name']}")
+                       f"this polygon is the only division drawn under "
+                       f"{parent['name']}")
+                verdict = "The figure does not describe the polygon as drawn, so it is left out."
             elif (not sole and rest < above
                   and PARENT_BAND[0] <= ratio <= PARENT_BAND[1]
                   and pop["value"] + rest > NO_ROOM * above
@@ -6036,8 +6043,9 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
             entity["population"] = gap(NOT_AVAILABLE, (
                 f"The Wikidata item joined here by name gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
-                + f", which is {why}. It is probably {what} "
-                  f"rather than this unit, so its figure is left out."))
+                + f", which is {why}. "
+                + (verdict or f"It is probably {what} rather than this unit, so its "
+                              f"figure is left out.")))
             fall_back(entity, entity["population"])
             refused += 1
     return refused
@@ -7433,11 +7441,13 @@ def gaps_from(src: dict[str, Any], target: str, iso3: str) -> dict[str, Any] | N
             continue
         year = src.get(f"{field}_year")
         when = f" in {year}" if year else ""
+        # Not "no source publishes it": Thailand's 2010 census did, for the
+        # new province. What is true is that none read here does.
         row[field] = gap(NOT_AVAILABLE, (
-            f"No source publishes {field} for {target} on its own. The figure "
-            f"published for {src['name']}{when} counted this ground as part of it, "
-            f"and a region's figure is not any one of its parts', so it is not "
-            f"repeated here."))
+            f"No {field} figure for {target} on its own has been read. The one "
+            f"read for {src['name']}{when} counted this ground as part of it, and a "
+            f"region's figure is not any one of its parts', so it is not repeated "
+            f"here."))
         written = True
     return row if written else None
 
@@ -7770,8 +7780,8 @@ LEVEL_REDRAWS_FIRST: dict[str, str] = {
     "DZA": ("The boundary file's second level for Algeria is not its districts or "
             "communes: it draws the 48 wilayas a second time, from another source and "
             "out of register with the first level, so its outlines do not follow the "
-            "wilayas' and some lie over other wilayas. The wilaya's own figures are on "
-            "the first level, and none is repeated here."),
+            "wilayas' and some lie over other wilayas. The wilaya's own figures, where "
+            "it has any, are on the first level, and none is repeated here."),
 }
 
 
@@ -8121,8 +8131,10 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
                 refused.append(f"{where}: it counts {ratio:.0%} of its parent's people "
                                f"in the same year")
                 continue
-        sentence = (f"{child.get('name')} is {parent.get('name')}'s only division and "
-                    f"covers the same ground, so this is {parent.get('name')}'s figure.")
+        # Said of the division, on the division's record: its own name would
+        # read "Conakry is Conakry's only division".
+        sentence = (f"This is {parent.get('name')}'s only division and covers the same "
+                    f"ground, so the figure is {parent.get('name')}'s.")
         for field in SOLE_FIELDS:
             current, value = child.get(field), parent.get(field)
             if not (isinstance(current, dict) and current.get("status") == NOT_AVAILABLE
@@ -8149,8 +8161,10 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
             office = None
         if office is not None:
             other = child if office is parent else parent
-            said = (f"{child.get('name')} is {parent.get('name')}'s only division and "
-                    f"covers the same ground, so both show this figure.")
+            said = (f"This is {parent.get('name')}'s only division and covers the same "
+                    f"ground, so both show this figure." if other is child else
+                    f"{only_division(parent, child)} covers the same ground, so both show "
+                    f"this figure.")
             was = published(other["population"])
             copy_field(office, other, "population", said)
             filled.append(f"{where} population: {was:,.0f} on the "
@@ -8198,12 +8212,19 @@ def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str,
     if year is None or (own_year is not None and year <= own_year):
         return None
     was = check_rollups.short_source(str(pop.get("source") or ""))
-    return (f"{child.get('name')} is {parent.get('name')}'s only division and covers the "
-            f"same ground, so this is its figure, for {year} from "
+    return (f"{only_division(parent, child)} covers the same ground, and its figure is "
+            f"shown here too, for {year} from "
             f"{check_rollups.short_source(str(theirs.get('source') or ''))}. It replaces "
             f"{own:,.0f}"
             + (f" for {own_year}, an older figure from {was}." if own_year
                else f" from {was}, which gives no year for it."))
+
+
+def only_division(parent: dict[str, Any], child: dict[str, Any]) -> str:
+    """The parent's one division, named as the parent's record says it."""
+    if same_name(child.get("name"), parent.get("name")):
+        return "Its only division, of the same name,"
+    return f"Its only division, {child.get('name')},"
 
 
 # A source name ends with how this map reached it, which is provenance rather
@@ -8257,9 +8278,11 @@ RESIDUAL_REFUSED_NOTES: dict[tuple[str, str, str], str] = {
     ("MAR", "Assa-Zag Province", "language"): (
         "CLEAR Global's tabulation of Morocco's 2014 census gives Guelmim-Oued Noun and "
         "its other provinces, but no row for Assa-Zag. The region's figure less the other "
-        "provinces' is not given in its place: the only populations to weigh their shares "
-        "by are of other years, and a difference taken that way is not a count of anyone "
-        "here."),
+        "provinces' is not given in its place: the populations to weigh their shares by "
+        "are of other years, and a difference taken that way is not a count of anyone "
+        "here. Weighed by the census's own 2014 populations instead, it would put more "
+        "people on Tachelhit than the High Commission for Planning's 2014 report on the "
+        "province counts using the language at all."),
 }
 
 
