@@ -970,9 +970,14 @@ class CaboVerdeParishesTest(unittest.TestCase):
         got = self.cv.parish(CPV_SHEET, "test")
         self.assertEqual((got["total"], got["men"], got["women"], got["zones"]), (200.0, 108.0, 92.0, 2.0))
         bad = [list(r) for r in CPV_SHEET]
-        bad[9][4] = 160.0                                   # the localities no longer make the zone
-        with self.assertRaises(SystemExit):
-            self.cv.parish(bad, "test")
+        bad[9][4] = 160.0                                   # the localities no longer make the zone:
+        logged = []                                         # reported, and the zone's own total kept
+        saved, self.cv.log = self.cv.log, logged.append
+        try:
+            self.assertEqual(self.cv.parish(bad, "test")["total"], 200.0)
+        finally:
+            self.cv.log = saved
+        self.assertIn("localities make 191, not 198", logged[0])
         bad = [list(r) for r in CPV_SHEET]
         bad[4][4] = 108.0                                   # men and women no longer make it
         with self.assertRaises(SystemExit):
@@ -992,9 +997,6 @@ class CaboVerdeParishesTest(unittest.TestCase):
                              ["", "", "", "Feminino", 4.0, 1.0]]
         got = self.cv.parish(blank, "test")
         self.assertEqual((got["total"], got["men"], got["zones"]), (210.0, 114.0, 3.0))
-        blank[-3][4] = 9.0                                  # then it no longer makes the zone
-        with self.assertRaises(SystemExit):
-            self.cv.parish(blank, "test")
 
     def test_names_and_the_one_parish_rule(self):
         cv = self.cv

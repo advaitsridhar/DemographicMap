@@ -15,7 +15,8 @@ population and sex ratio (males per 100 females), 2010. The workbooks count
 ages only in three broad groups, so there is no median age.
 
 **Checks before anything is written.** Every zone's men and women make its
-total, and its localities make it too; every parish is a sheet whose code
+total (the localities listed under a zone do not always make it, and are
+only reported); every parish is a sheet whose code
 names its municipality; each municipality's parishes make the municipality's
 resident population in INE's 2010 table by municipality (``TOTALS``), and the
 municipalities make the country's 491,683. Parishes are matched to the
@@ -163,7 +164,7 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
         if level == "zone" and sex in zones.get(zone, {}):
             # A second total under a zone with no locality named is a locality
             # whose name cell is blank: its rows count towards the zone's
-            # localities, which must still make the zone.
+            # localities, not the zone.
             level = "place"
         if level == "own":
             own[sex] = value
@@ -177,9 +178,13 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
         if row.get("masculino", 0) + row.get("feminino", 0) != row.get("total"):
             raise SystemExit(f"cabo_verde_parishes: {where}: zone {name[0]}'s men and women do "
                              f"not make its total {row}")
+        # The localities listed under a zone do not always make it (Santo
+        # André's "Chã de Norte": 935 listed under a zone of 241), so they are
+        # reported, not used: the zones' own totals are what is added, and the
+        # parishes they make are checked against INE's table by municipality.
         if name in places and places[name] != row["total"]:
-            raise SystemExit(f"cabo_verde_parishes: {where}: zone {name[0]}'s localities make "
-                             f"{places[name]:,.0f}, not {row['total']:,.0f}")
+            log(f"    {where}: zone {name[0]}'s localities make {places[name]:,.0f}, "
+                f"not {row['total']:,.0f}")
     out = {"total": sum(r["total"] for r in zones.values()),
            "men": sum(r["masculino"] for r in zones.values()),
            "women": sum(r["feminino"] for r in zones.values()), "zones": float(len(zones))}
