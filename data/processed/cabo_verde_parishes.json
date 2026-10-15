@@ -11,9 +11,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 9520,
+      "value": 9524,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -35,6 +35,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo",
         "url": "https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
@@ -46,7 +53,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B13080281314211",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora de Ajuda, its 13 zones added up. The 4 people of Mosteiros municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Ajuda, which is the whole municipality of Mosteiros.",
+    "sex_ratio_note": "Men per 100 women among the 9,520 people living in private households; the 4 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-822",
@@ -109,9 +117,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 130271,
+      "value": 131602,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -133,6 +141,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -144,7 +159,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B19025383966327",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Graça, its 1 zones added up. The 1,331 people of Praia municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Graça, which is the whole municipality of Praia.",
+    "sex_ratio_note": "Men per 100 women among the 130,271 people living in private households; the 1,331 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-311",
@@ -207,9 +223,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 6943,
+      "value": 6952,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Maio"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -231,6 +247,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Maio",
         "url": "https://web.archive.org/web/20131106000710id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Maio.xls",
@@ -242,7 +265,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B67599039999674",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Luz, its 14 zones added up. The 9 people of Maio municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Luz, which is the whole municipality of Maio.",
+    "sex_ratio_note": "Men per 100 women among the 6,943 people living in private households; the 9 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-751",
@@ -305,9 +329,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 74986,
+      "value": 76107,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Vicente"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -329,6 +353,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Vicente",
         "url": "https://web.archive.org/web/20131106000537id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Vicente.xls",
@@ -340,7 +371,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B58817505266013",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Luz, its 11 zones added up. The 1,121 people of São Vicente municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Luz, which is the whole municipality of São Vicente.",
+    "sex_ratio_note": "Men per 100 women among the 74,986 people living in private households; the 1,121 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-411",
@@ -354,9 +386,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 25481,
+      "value": 25765,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Sal"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -378,6 +410,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Sal",
         "url": "https://web.archive.org/web/20131105235411id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Sal.xls",
@@ -389,7 +428,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B51777192933696",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora das Dores, its 7 zones added up. The 284 people of Sal municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Nossa Senhora das Dores, which is the whole municipality of Sal.",
+    "sex_ratio_note": "Men per 100 women among the 25,481 people living in private households; the 284 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-112",
@@ -599,9 +639,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 43250,
+      "value": 43297,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -623,6 +663,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -634,7 +681,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B9089914822408",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Santa Catarina, its 51 zones added up. The 47 people of Santa Catarina municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Santa Catarina, which is the whole municipality of Santa Catarina.",
+    "sex_ratio_note": "Men per 100 women among the 43,250 people living in private households; the 47 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-831",
@@ -650,7 +698,7 @@
     "population": {
       "value": 5299,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -672,6 +720,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo",
         "url": "https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
@@ -683,7 +738,7 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B71170562423195",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Santa Catarina, its 14 zones added up."
+    "population_note": "The 2010 census's count for the parish of Santa Catarina, which is the whole municipality of Santa Catarina do Fogo."
   },
   {
     "id": "CPV-2010-512",
@@ -746,9 +801,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 26585,
+      "value": 26609,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -770,6 +825,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -781,7 +843,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B62302711188639",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Santiago Maior, its 24 zones added up. The 24 people of Santa Cruz municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Santiago Maior, which is the whole municipality of Santa Cruz.",
+    "sex_ratio_note": "Men per 100 women among the 26,585 people living in private households; the 24 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-791",
@@ -844,9 +907,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 18561,
+      "value": 18565,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -868,6 +931,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -879,7 +949,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B37752467633472",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Santo Amaro Abade, its 19 zones added up. The 4 people of Tarrafal municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of Santo Amaro Abade, which is the whole municipality of Tarrafal.",
+    "sex_ratio_note": "Men per 100 women among the 18,561 people living in private households; the 4 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-132",
@@ -944,7 +1015,7 @@
     "population": {
       "value": 6997,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -966,6 +1037,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
@@ -977,7 +1055,7 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B53098387752451",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of Santo António Pombas, its 11 zones added up."
+    "population_note": "The 2010 census's count for the parish of Santo António das Pombas, which is the whole municipality of Paul."
   },
   {
     "id": "CPV-2010-113",
@@ -1040,9 +1118,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 5205,
+      "value": 5237,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -1064,6 +1142,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau",
         "url": "https://web.archive.org/web/20131106000907id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
@@ -1075,7 +1160,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B96931694342339",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of São Francisco Assis, its 7 zones added up. The 32 people of Tarrafal de São Nicolau municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of São Francisco de Assis, which is the whole municipality of Tarrafal de São Nicolau.",
+    "sex_ratio_note": "Men per 100 women among the 5,205 people living in private households; the 32 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-911",
@@ -1334,9 +1420,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 7350,
+      "value": 7388,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -1358,6 +1444,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -1369,7 +1462,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B72941798312267",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of São Lourenço dos Órgãos, its 26 zones added up. The 38 people of São Lourenço dos Órgãos municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of São Lourenço dos Órgãos, which is the whole municipality of São Lourenço dos Órgãos.",
+    "sex_ratio_note": "Men per 100 women among the 7,350 people living in private households; the 38 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-761",
@@ -1383,9 +1477,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 15630,
+      "value": 15648,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -1407,6 +1501,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -1418,7 +1519,8 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B69203973191500",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of São Miguel Arcanjo, its 24 zones added up. The 18 people of São Miguel municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of São Miguel Arcanjo, which is the whole municipality of São Miguel.",
+    "sex_ratio_note": "Men per 100 women among the 15,630 people living in private households; the 18 in collective dwellings are not counted by sex in the parish tables."
   },
   {
     "id": "CPV-2010-752",
@@ -1530,9 +1632,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 8643,
+      "value": 8677,
       "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
     },
     "median_age": {
       "status": "not_available"
@@ -1554,6 +1656,13 @@
     },
     "sources": [
       {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      },
+      {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
@@ -1565,6 +1674,997 @@
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B42982614395502",
-    "population_note": "The 2010 census's count of the people living in private households in the parish of São Salvador Mundo, its 20 zones added up. The 34 people of São Salvador do Mundo municipality who lived in collective dwellings are counted only for the municipality as a whole."
+    "population_note": "The 2010 census's count for the parish of São Salvador do Mundo, which is the whole municipality of São Salvador do Mundo.",
+    "sex_ratio_note": "Men per 100 women among the 8,643 people living in private households; the 34 in collective dwellings are not counted by sex in the parish tables."
+  },
+  {
+    "id": "CPV-2010-M51",
+    "level": "admin1",
+    "name": "Boa Vista",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9162,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B70460974689380",
+    "population_note": "The 2010 census's count for the municipality of Boa Vista, 464 of them living in collective dwellings and 8,698 in private households."
+  },
+  {
+    "id": "CPV-2010-M91",
+    "level": "admin1",
+    "name": "Brava",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5995,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B86099575470036",
+    "population_note": "The 2010 census's count for the municipality of Brava, 24 of them living in collective dwellings and 5,971 in private households."
+  },
+  {
+    "id": "CPV-2010-M61",
+    "level": "admin1",
+    "name": "Maio",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6952,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B49116351933928",
+    "population_note": "The 2010 census's count for the municipality of Maio, 9 of them living in collective dwellings and 6,943 in private households."
+  },
+  {
+    "id": "CPV-2010-M81",
+    "level": "admin1",
+    "name": "Mosteiros",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9524,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B60508126620075",
+    "population_note": "The 2010 census's count for the municipality of Mosteiros, 4 of them living in collective dwellings and 9,520 in private households."
+  },
+  {
+    "id": "CPV-2010-M12",
+    "level": "admin1",
+    "name": "Paul",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6997,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B70239090782327",
+    "population_note": "The 2010 census's count for the municipality of Paul."
+  },
+  {
+    "id": "CPV-2010-M13",
+    "level": "admin1",
+    "name": "Porto Novo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18028,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B16121613622578",
+    "population_note": "The 2010 census's count for the municipality of Porto Novo, 77 of them living in collective dwellings and 17,951 in private households."
+  },
+  {
+    "id": "CPV-2010-M74",
+    "level": "admin1",
+    "name": "Praia",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 131602,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B53857372811673",
+    "population_note": "The 2010 census's count for the municipality of Praia, 1,331 of them living in collective dwellings and 130,271 in private households."
+  },
+  {
+    "id": "CPV-2010-M31",
+    "level": "admin1",
+    "name": "Ribeira Brava",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7580,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B49995424745322",
+    "population_note": "The 2010 census's count for the municipality of Ribeira Brava, 16 of them living in collective dwellings and 7,564 in private households."
+  },
+  {
+    "id": "CPV-2010-M11",
+    "level": "admin1",
+    "name": "Ribeira Grande",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18890,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B32096079392942",
+    "population_note": "The 2010 census's count for the municipality of Ribeira Grande, 4 of them living in collective dwellings and 18,886 in private households."
+  },
+  {
+    "id": "CPV-2010-M79",
+    "level": "admin1",
+    "name": "Ribeira Grande de Santiago",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8325,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B5815864302343",
+    "population_note": "The 2010 census's count for the municipality of Ribeira Grande de Santiago, 2 of them living in collective dwellings and 8,323 in private households."
+  },
+  {
+    "id": "CPV-2010-M41",
+    "level": "admin1",
+    "name": "Sal",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25765,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B31219630131339",
+    "population_note": "The 2010 census's count for the municipality of Sal, 284 of them living in collective dwellings and 25,481 in private households."
+  },
+  {
+    "id": "CPV-2010-M72",
+    "level": "admin1",
+    "name": "Santa Catarina",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 43297,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B65851114160010",
+    "population_note": "The 2010 census's count for the municipality of Santa Catarina, 47 of them living in collective dwellings and 43,250 in private households."
+  },
+  {
+    "id": "CPV-2010-M83",
+    "level": "admin1",
+    "name": "Santa Catarina do Fogo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5299,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B48710154896989",
+    "population_note": "The 2010 census's count for the municipality of Santa Catarina do Fogo."
+  },
+  {
+    "id": "CPV-2010-M73",
+    "level": "admin1",
+    "name": "Santa Cruz",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26609,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B13195842681213",
+    "population_note": "The 2010 census's count for the municipality of Santa Cruz, 24 of them living in collective dwellings and 26,585 in private households."
+  },
+  {
+    "id": "CPV-2010-M75",
+    "level": "admin1",
+    "name": "São Domingos",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13808,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B61929302069698",
+    "population_note": "The 2010 census's count for the municipality of São Domingos, 109 of them living in collective dwellings and 13,699 in private households."
+  },
+  {
+    "id": "CPV-2010-M82",
+    "level": "admin1",
+    "name": "São Filipe",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22228,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B42709825939270",
+    "population_note": "The 2010 census's count for the municipality of São Filipe, 1 of them living in collective dwellings and 22,227 in private households."
+  },
+  {
+    "id": "CPV-2010-M78",
+    "level": "admin1",
+    "name": "São Lourenço dos Órgãos",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7388,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B32254847060203",
+    "population_note": "The 2010 census's count for the municipality of São Lourenço dos Órgãos, 38 of them living in collective dwellings and 7,350 in private households."
+  },
+  {
+    "id": "CPV-2010-M76",
+    "level": "admin1",
+    "name": "São Miguel",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15648,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B58765438888265",
+    "population_note": "The 2010 census's count for the municipality of São Miguel, 18 of them living in collective dwellings and 15,630 in private households."
+  },
+  {
+    "id": "CPV-2010-M77",
+    "level": "admin1",
+    "name": "São Salvador do Mundo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8677,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B8506465148242",
+    "population_note": "The 2010 census's count for the municipality of São Salvador do Mundo, 34 of them living in collective dwellings and 8,643 in private households."
+  },
+  {
+    "id": "CPV-2010-M21",
+    "level": "admin1",
+    "name": "São Vicente",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 76107,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B41743840760019",
+    "population_note": "The 2010 census's count for the municipality of São Vicente, 1,121 of them living in collective dwellings and 74,986 in private households."
+  },
+  {
+    "id": "CPV-2010-M71",
+    "level": "admin1",
+    "name": "Tarrafal",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18565,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B2594883865860",
+    "population_note": "The 2010 census's count for the municipality of Tarrafal, 4 of them living in collective dwellings and 18,561 in private households."
+  },
+  {
+    "id": "CPV-2010-M32",
+    "level": "admin1",
+    "name": "Tarrafal de São Nicolau",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5237,
+      "year": 2010,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
+        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2010
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B27983455382142",
+    "population_note": "The 2010 census's count for the municipality of Tarrafal de São Nicolau, 32 of them living in collective dwellings and 5,205 in private households."
   }
 ]
