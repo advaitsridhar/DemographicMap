@@ -1,50 +1,18 @@
-https://statsbank.statsghana.gov.gh/api/v1/en/PHC%202021%20StatsBank/Population/population_table.px: 13,838 characters
-/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/r6_probe.py:67: FutureWarning: Possible nested set at position 51
-  for m in re.finditer(grep, text, re.I):
-/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/r6_probe.py:67: FutureWarning: Possible nested set at position 77
-  for m in re.finditer(grep, text, re.I):
-  "code":"Age"
-  "text":"Age"
-  "values":[
-  "valueTexts":[
-  "code":"Locality"
-  "text":"Locality"
-  "code":"Education"
-  "text":"Education"
-  "code":"Geographic_Area"
-  "text":"Geographic_Area"
-  "code":"Sex"
-  "text":"Sex"
-  12 distinct match(es)
-https://statsbank.statsghana.gov.gh/api/v1/en/PHC%202021%20StatsBank/Population/religion_table.px: 13,360 characters
-  "code":"Religious_Affiliation"
-  "text":"Religious_Affiliation"
-  "values":[
-  "valueTexts":[
-  "code":"Education"
-  "text":"Education"
-  "code":"Locality"
-  "text":"Locality"
-  "code":"Geographic_Area"
-  "text":"Geographic_Area"
-  "code":"Sex"
-  "text":"Sex"
-  "code":"Age"
-  "text":"Age"
-  14 distinct match(es)
-https://statsbank.statsghana.gov.gh/api/v1/en/PHC%202021%20StatsBank/Population/ethnic_table.px: 13,113 characters
-  "code":"Ethnicity"
-  "text":"Ethnicity"
-  "values":[
-  "valueTexts":[
-  "code":"Education"
-  "text":"Education"
-  "code":"Locality"
-  "text":"Locality"
-  "code":"Geographic_Area"
-  "text":"Geographic_Area"
-  "code":"Sex"
-  "text":"Sex"
-  "code":"Age"
-  "text":"Age"
-  14 distinct match(es)
+https://ine.cv/main.93862c2013bb61af.js: 1,421,929 characters
+  e}filterAnexos(){const gt=this._anexo_destaque?this._anexo.filter(ft=>ft.url!=="Uploads/"+this._anexo_destaque):[...this._anexo];this.filteredAnexos=(0,Y.F)(gt)}static{this.\u0275fac=function(ft){retu
+  .url=`${f.c.apiUrl}/${Ee}`}getAll(Ce){return this.http.get(`${this.url}/${Ce}`)}getAllByLang(Ce,Ee){let je=null!==Ee?`${this.url}/${Ee}`:`${this.url}`;const Ve=(new v.Nl).set("codigo_lingua",Ce);retur
+  so");const ye=(0,v.f)(oe.titulo??oe.nome??`${oe.codigo_censo_conteudo}`);return`/censos/${oe.codigo_censo}/${(0,v.f)(oe.tipo)}/${oe.codigo_censo_conteudo}/${ye}`},codigo_divulgacao:oe=>{if(!oe.tipo)th
+  ine.cv/pedido_dados_api/api",baseUploadUrl:"https://bdmi.ine.cv/site_deploy_api/Uploads/",baseUploadAnexo:"https://bdmi.ine.cv/site_deploy_api/",anexoDivulgacao:"divulgacao",anexoConteudo:"conteudo_su
+  {this.hasErrorListaDestaque=!0,this.loadingListaDestaque=!1}}),this.temaService.getAllByLang(e,"feature").subscribe({next:r=>{this.listaTema=r,this.loadingListaTema=!1},error:()=>{this.hasErrorListaTe
+  ()=>{this.hasErrorConcurso=!0,this.loadingConcurso=!1}}),this.calendarioService.getAllByLang(e,"top-two").subscribe({next:r=>{this.listaCalendario=r,this.loadingCalendario=!1},error:()=>{this.hasError
+  ();this.route.paramMap.subscribe(a=>{this.tipo=a.get("tipo")}),this.temaService.getAllByLang(this.languageService.currentLanguage,null).subscribe({next:a=>{this.listTema=a},error:a=>{}})}ngOnDestroy()
+  aque}filterAnexos(){const e=this._anexo_destaque?this._anexo.filter(r=>r.url!=="Uploads/"+this._anexo_destaque):[...this._anexo];this.filteredAnexos=(0,hE.F)(e)}static{this.\u0275fac=function(r){retur
+  !1}ngOnInit(){this.titleService.setTitle(this.pageTitle),this.divulgacaoService.getAllByLang(this.languageService.currentLanguage,"in-progress").subscribe({next:r=>{this.listaEmCurso=r,this.loading=!1
+  turn t})();var Qg=j(7254);const Ec=t=>({show:t}),yE=t=>({active:t}),nI=(t,o)=>["/censos",t,o],gy=(t,o,e)=>({itemsPerPage:t,currentPage:o,totalItems:e}),Su=(t,o,e)=>["/divulgacao-detalhe",t,o,e];functi
+  =S,this.languageService=R,this.estatisticaState=F,this.navigationContext=q,this.censoService=X,this.pageTitle="",this.subPages=[],this.loadingEstatistica=!0,this.hasErrorEstatistica=!1,this.loadingDiv
+  o.push(...a.map(m=>new uf({codigo:m.codigo,ordem:m.ordem,nome:m.nome}))),this.isCensoEstatistica()&&this.divulgacaoTipo.push(new uf({codigo:this.censosMenuCode,ordem:9999,nome:"Censos"})),this.divulga
+  this.routeEstatisticaSlug=a)}onResize(e){this.screenWidth=e.target.innerWidth}isCensoEstatistica(){return this.estatistica.codigo===En.c.estatisticaCensos}loadPublication(){this.isLoading=!0,this.hasE
+  rrentLanguage;this.loadingCenso=!0,this.hasErrorCenso=!1,this.listCenso=[],this.censoService.getAllByLang(e,null).subscribe({next:r=>{this.listCenso=r.sort((a,d)=>new Date(d.date_created).getTime()-ne
+  window.innerWidth;const e=this.languageService.currentLanguage;this.temaService.getAllByLang(e,null).subscribe(r=>{if(this.listaTema=r,this.listaTema.length>0){const a=this.restoringFromPopState?this.
+  t"}}loadPublication(){this.isLoading=!0,this.hasError=!1,this.calendarioService.getAllByLang(this.languageService.currentLanguage,null).subscribe({next:r=>{this.calendarioPublicacao=r??[],this.aplicar
+  16 distinct match(es)
