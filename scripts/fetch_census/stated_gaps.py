@@ -89,6 +89,9 @@ def town(name: str, territory: str) -> str:
 CLEAR_IRQ = ("CLEAR Global's tabulation of Iraq's 1997 census, the source of the language "
              "shares shown for the other districts of {gov}, has no row for {name}, so no "
              "shares are shown here.")
+CLEAR_SEN = ("CLEAR Global's tabulation of Senegal's 2013 census, the source of the language "
+             "shares shown for the other departments of {region}, has no row for {name}, so "
+             "no shares are shown here.")
 
 # (country, level, polygon id, name drawn, fields, reason, premise or None)
 DECLARED: list[tuple[str, str, str, str, tuple[str, ...], str,
@@ -181,6 +184,15 @@ DECLARED: list[tuple[str, str, str, str, tuple[str, ...], str,
      ("CLEAR Global's tabulation of Afrobarometer's 2014 survey of Namibia, the source of "
       "the language shares shown for the other constituencies, has no row for Guinas, so "
       "no shares are shown here."), no_clear_row("NAM-CG-NA1202", "NAM-CG-NA12")),
+    ("SEN", "admin2", "50182788B90737446104605", "Gossas", ("language",),
+     CLEAR_SEN.format(region="Fatick", name="Gossas"),
+     no_clear_row("SEN-CG-SN0303", "SEN-CG-SN0301")),
+    ("SEN", "admin2", "50182788B97054679922117", "Guinguineo", ("language",),
+     CLEAR_SEN.format(region="Kaolack", name="Guinguineo"),
+     no_clear_row("SEN-CG-SN0501", "SEN-CG-SN0502")),
+    ("SEN", "admin2", "50182788B14678638932037", "Linguere", ("language",),
+     CLEAR_SEN.format(region="Louga", name="Linguère"),
+     no_clear_row("SEN-CG-SN0802", "SEN-CG-SN0801")),
     ("SOM", "admin1", "83879307B33420401553888", "Middle Juba", ("language",),
      ("CLEAR Global's language data for Somalia, a tabulation of the Joint Multi-Cluster "
       "Needs Assessment of 2021, has no row for Middle Juba or any of its districts, so no "
