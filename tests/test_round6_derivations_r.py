@@ -300,6 +300,10 @@ class SingleUnitGapReasons(unittest.TestCase):
                 "figures are this unit's. The country has no religion shares to give it: the "
                 "CIA World Factbook gives only the words “Muslim”."))
             self.assertIn("“Arab, Berber”", record["ethnicity"]["note"])
+            # The languages the Factbook names, with no shares, are a list.
+            self.assertIn("so this is the country's own list: it describes exactly this "
+                          "ground", record["language_note"])
+            self.assertIn("own figure", record["median_age_note"])
             # The last pass that names a bare field's reason leaves it alone.
             be.say_why_empty({**record, "match": {"by": "name"}}, "Western Sahara", None)
         # Nor does the generic sentence ever name the Factbook as lacking it.

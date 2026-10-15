@@ -7943,7 +7943,11 @@ def inherit_single_unit(admin0: list[dict[str, Any]],
                 for suffix in ("_year", "_basis"):
                     if nation.get(f"{field}{suffix}") is not None:
                         unit[f"{field}{suffix}"] = nation[f"{field}{suffix}"]
-                unit[f"{field}_note"] = join_note(nation.get(f"{field}_note"), said)
+                # A list of names is no figure: it says which languages, not
+                # how many speak them.
+                unit[f"{field}_note"] = join_note(
+                    nation.get(f"{field}_note"),
+                    said.replace("own figure", "own list") if isinstance(value, list) else said)
             else:
                 continue
             cite_country(unit, nation, field)
