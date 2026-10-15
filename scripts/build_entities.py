@@ -4161,6 +4161,42 @@ def control_population(entity: dict[str, Any]) -> Any:
     return pop
 
 
+def own_population_figures(admin1_by_country: dict[str, list[dict[str, Any]]]
+                           ) -> dict[tuple[str, Any], dict[str, Any]]:
+    """Each first-level unit's published population before any pass restates it
+    from its divisions, for mark_restated_since: (country, unit id) -> figure."""
+    return {(iso3, unit.get("id")): dict(unit["population"])
+            for iso3, units in admin1_by_country.items() for unit in units
+            if published(unit.get("population")) is not None}
+
+
+def mark_restated_since(admin1_by_country: dict[str, list[dict[str, Any]]],
+                        before: dict[tuple[str, Any], dict[str, Any]]) -> list[str]:
+    """Flag each first-level population put in place of the unit's own figure
+    since ``before`` was taken (RESTATED_FROM), as restate_encyclopaedia_parents
+    flags its own, so the country's gate weighs the unit's own figure
+    (control_population) whichever pass restated it.
+
+    The sole-division pass gives Burkina Faso's Centre, Guinea's Conakry and
+    Benin's Littoral their one division's OCHA figure. Unflagged, Centre's
+    3,510,028 for 2023 in place of Wikipedia's 3,030,384 for 2019 brought
+    Burkina Faso's regions within the gate of the Factbook's figure, and their
+    survey shares replaced its census and Factbook lines.
+    """
+    marked: list[str] = []
+    for iso3, units in sorted(admin1_by_country.items()):
+        for unit in units:
+            pop = unit.get("population")
+            was = before.get((iso3, unit.get("id")))
+            if not isinstance(pop, dict) or was is None or RESTATED_FROM in pop:
+                continue
+            if (published(pop), vintage(pop)) != (published(was), vintage(was)):
+                pop[RESTATED_FROM] = {k: was[k] for k in ("value", "year", "source")
+                                      if k in was}
+                marked.append(f"{iso3} {unit.get('name')}")
+    return marked
+
+
 def common_year(children: list[dict[str, Any]]) -> int | None:
     """The year most of the children's populations are for.
 
@@ -10572,7 +10608,10 @@ def main() -> int:
         log(f"  {len(summed_up)} first-level populations filled from all their "
             f"divisions: " + ", ".join(summed_up[:12])
             + (" ..." if len(summed_up) > 12 else ""))
-    # Before the country sums, which read the first level's populations.
+    # Before the country sums, which read the first level's populations; the
+    # figures the units carry for themselves are kept for the country's gate
+    # (mark_restated_since, below).
+    own_figures = own_population_figures(admin1_by_country)
     restated = restate_encyclopaedia_parents(admin1_by_country, admin2_by_country)
     if restated:
         log(f"  {len(restated)} first-level encyclopaedia populations replaced by "
@@ -10620,6 +10659,12 @@ def main() -> int:
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
     check_no_stale_country_declaration(admin0, admin1_by_country)
+    # A first-level figure restated from its divisions since then is shown,
+    # but the country's gate weighs the unit's own (control_population).
+    flagged = mark_restated_since(admin1_by_country, own_figures)
+    if flagged:
+        log(f"  {len(flagged)} first-level populations restated from their divisions; "
+            f"the country sums are gated on the units' own figures")
     roll_up_countries(admin0, admin1_by_country, counted)
 
     # Last, so a curated country row is the last word on the field it names.

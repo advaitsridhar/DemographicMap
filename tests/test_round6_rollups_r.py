@@ -192,6 +192,53 @@ class CountryGateOnOwnFigures(unittest.TestCase):
         self.assertNotIn(be.RESTATED_FROM, entity["population"])
         self.assertIs(be.control_population(entity), entity["population"])
 
+    def test_a_unit_restated_by_any_pass_is_gated_on_its_own_figure(self):
+        # Burkina Faso's Centre: the sole-division pass gives it Kadiogo's
+        # OCHA figure, which unflagged moved the country's gate.
+        centre = unit("C", "Centre", 3_030_384, 2019, "English Wikipedia, Kadiogo Region")
+        east = unit("E", "East", 1_941_505, 2019, "English Wikipedia, Goulmou Region")
+        same = unit("S", "Same", 1_000, 2019, CENSUS)
+        empty = unit("G", "Gap")
+        a1 = {"BFA": [centre, east, same, empty]}
+        own = be.own_population_figures(a1)
+        self.assertNotIn(("BFA", "G"), own)
+        # The reconcile pass flags what it restates; another pass does not.
+        restated(east, 2_184_593, 2023, 1_941_505, 2019)
+        centre["population"] = {"value": 3_510_028, "year": 2023, "source": OCHA}
+        empty["population"] = {"value": 50, "year": 2023, "source": OCHA}
+        self.assertEqual(be.mark_restated_since(a1, own), ["BFA Centre"])
+        self.assertEqual(be.control_population(centre),
+                         {"value": 3_030_384, "year": 2019,
+                          "source": "English Wikipedia, Kadiogo Region"})
+        self.assertEqual(be.control_population(east)["value"], 1_941_505)
+        self.assertIs(be.control_population(same), same["population"])
+        self.assertIs(be.control_population(empty), empty["population"])
+
+    def test_burkina_fasos_lines_stand_whichever_pass_restated_its_regions(self):
+        country = {"id": "BFA", "population": {"value": 23_490_300, "year": 2025,
+                                               "source": FACTBOOK},
+                   "language": [{"group": "Mossi", "pct": 52.9}, {"group": "Fula", "pct": 7.8}]}
+        centre = unit("C", "Centre", 3_030_384, 2019, "English Wikipedia",
+                      **groups("language", {"Mooré": 200, "Dioula": 30}))
+        west = unit("W", "West", 8_727_478, 2019, "English Wikipedia",
+                    **groups("language", {"Mooré": 253, "Dioula": 208}))
+        east = unit("E", "East", 8_727_477, 2019, "English Wikipedia",
+                    **groups("language", {"Mooré": 200, "Fulfuldé": 300}))
+        a1 = {"BFA": [centre, west, east]}
+        own = be.own_population_figures(a1)
+        restated(west, 9_679_444, 2023, 8_727_478, 2019)
+        restated(east, 9_679_443, 2023, 8_727_477, 2019)
+        centre["population"] = {"value": 3_510_028, "year": 2023, "source": OCHA}
+        be.mark_restated_since(a1, own)
+        quiet(be.roll_up_countries, [country], a1)
+        self.assertEqual(country["language"][0], {"group": "Mossi", "pct": 52.9})
+        # Without the flag on Centre, as the sole-division pass leaves it,
+        # the projections bring the regions within the gate.
+        country["language"] = [{"group": "Mossi", "pct": 52.9}]
+        centre["population"].pop(be.RESTATED_FROM)
+        quiet(be.roll_up_countries, [country], a1)
+        self.assertEqual(country["language"][0]["group"], "Mooré")
+
 
 # --------------------------------------------------------------------------
 # R6-ROLLUPS-V3: what a gap sentence gives as the reason
