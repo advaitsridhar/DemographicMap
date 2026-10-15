@@ -7581,11 +7581,19 @@ class ASurveyIsNotACount(unittest.TestCase):
         self.assertGreater(marked, 0, "no low-precision region found to check")
 
     def test_a_question_never_asked_is_not_collected_and_never_a_composition(self):
-        """Mauritania was not asked about religion; it must not acquire one."""
+        """Mauritania was not asked about religion; it must not acquire one.
+
+        It was asked about ethnicity, so a region too thinly sampled to show
+        shares says so instead of reading as never asked."""
         for row in self.rows():
             if row["parent"] == "MRT":
                 self.assertEqual(row["religion"], {"status": "not_collected"})
-                self.assertIsInstance(row["ethnicity"], list)
+                if isinstance(row["ethnicity"], dict):
+                    self.assertEqual(row["ethnicity"]["status"], "not_available")
+                    self.assertIn("too few to estimate ethnicity shares",
+                                  row["ethnicity"]["note"])
+                else:
+                    self.assertIsInstance(row["ethnicity"], list)
         for iso in ("SDN", "TUN", "SYC"):
             for row in self.rows():
                 if row["parent"] == iso:
