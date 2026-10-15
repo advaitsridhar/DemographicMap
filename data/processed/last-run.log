@@ -1,2 +1,39 @@
-https://bdmi.ine.cv/site_deploy_api/api/censo?codigo_lingua=pt: HTTPError: HTTP Error 401: Unauthorized
-https://bdmi.ine.cv/site_deploy_api/api/censo_conteudo?codigo_lingua=pt: HTTPError: HTTP Error 401: Unauthorized
+== grep https://census.statssa.gov.za/ (?:src|href)=[^>]{0,150} 60
+  HTTP 200 text/html 57,280 bytes
+  28 matches
+  href="/"
+  href="favicon.ico"
+  href="./assets/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'"
+  href="./assets/css/bootstrap.min.css"
+  href="./assets/css/docs.css" rel="stylesheet" media="print" onload="this.media='all'"
+  href="./assets/css/docs.css"
+  href="./assets/css/bootstrapv4.min.css" media="print" onload="this.media='all'"
+  href="./assets/css/bootstrapv4.min.css"
+  href="https://fonts.googleapis.com"
+  href="https://fonts.gstatic.com" crossorigin=""
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  href="./assets/css/animate.min.css" media="print" onload="this.media='all'"
+  href="./assets/css/animate.min.css"
+  href="./assets/css/newstyle.css" media="print" onload="this.media='all'"
+  href="./assets/css/newstyle.css"
+  href="./manifest.json"
+  src="https://www.googletagmanager.com/gtag/js?id=G-LM1F2DPCMY"
+  src="./assets/js/code.jquery.com_jquery-3.7.0.min.js"
+  src="./assets/js/popper.min.js"
+  src="./assets/js/bootstrap@4.0.0_dist_js_bootstrap.min.js"
+  src="./assets/js/bootstrap.bundle.min.js"
+  src="https://maps.googleapis.com/maps/api/js"
+  src="https://www.googletagmanager.com/ns.html?id=GTM-58WR334C"
+            height="0" width="0" style="display:none;visibility:hidden"
+  src="https://www.googletagmanager.com/ns.html?id=G-LM1F2DPCMY"
+            height="0" width="0" style="display:none;visibility:hidden"
+  src="runtime.086133a9b001a2eb.js" type="module"
+  src="polyfills.966f32341c832d01.js" type="module"
+  src="scripts.f139441cd30c00b8.js" defer
+  src="main.c3756bb39a090c83.js" type="module"
+== grep https://census.statssa.gov.za/ .{0,120}(?:api/|documents|[.]json|ajax|fetch[(]).{0,160} 30
+  HTTP 200 text/html 57,280 bytes
+  3 matches
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="./manifest.json">
+    <script defer src="https://maps.googleapis.com/maps/api/js"></script>
