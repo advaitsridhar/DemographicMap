@@ -1,8 +1,5 @@
-https://en.wikipedia.org/wiki/Vatovavy-Fitovinany: 109,898 characters
-  <title>Vatovavy-Fitovinany - Wikipedia</title>
-  ss="infobox-label"><div style="white-space:nowrap;"><span typeof="mw:Entity"> </span>•<span typeof="mw:Entity"> </span>Total</div></th><td class="infobox-data">730,207</td></tr><tr class="mergedrow"><
-  2 distinct match(es)
-https://en.wikipedia.org/wiki/Fitovinany: 126,072 characters
-  <title>Fitovinany - Wikipedia</title>
-  ss="infobox-label"><div style="white-space:nowrap;"><span typeof="mw:Entity"> </span>•<span typeof="mw:Entity"> </span>Total</div></th><td class="infobox-data">730,207</td></tr><tr class="mergedtoprow
-  2 distinct match(es)
+  retry 1/4 after 2s :: https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+  retry 2/4 after 4s :: https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+  retry 3/4 after 8s :: https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+  retry 4/4 after 16s :: https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx: RuntimeError: GET failed after 4 retries: https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx
