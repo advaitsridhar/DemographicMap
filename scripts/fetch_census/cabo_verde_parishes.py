@@ -13,9 +13,14 @@ INE served them in November 2013.
 A parish's count is its zones' counts added up. The zone tables count the
 people living in private households; those in collective dwellings are
 counted only by municipality, and each parish's note says how many that
-leaves out in its municipality. Written for each parish: population and sex
-ratio (males per 100 females), 2010. The workbooks count ages only in three
-broad groups, so there is no median age.
+leaves out in its municipality. A parish that is its municipality's only one
+takes the municipality's own count instead, collective dwellings included,
+and every municipality takes its count from INE's table by municipality, so
+that no sum of household counts stands in for a municipality. Written for
+each parish: population and sex ratio (males per 100 females, among the
+people in private households), 2010; for each municipality: population,
+2010. The workbooks count ages only in three broad groups, so there is no
+median age.
 
 **Checks before anything is written.** Every zone's men and women make its
 total (the localities listed under a zone do not always make it, and are
@@ -65,6 +70,8 @@ TOTALS_ORIGINAL = ("http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434
 TOTALS_STAMP = "20121113153850"
 SOURCE = ("Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e "
           "Habitação 2010: resident population by zone and locality, {island}")
+TOTALS_SOURCE = ("Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da "
+                 "População e Habitação 2010: resident population by municipality")
 LICENCE = "INE Cabo Verde publication (reuse with attribution)"
 YEAR = 2010
 NATIONAL = 491_683
@@ -93,8 +100,12 @@ MUNICIPALITIES = {
 SHEET = re.compile(r"^\s*(\d{3})\s*-\s*(.+?)\s*$")
 # Parishes whose sheet name is not their name: Santiago's workbook splits
 # "Santíssimo Nome de Jesus" across two sheets, "791 - Santissimo Nome" and
-# "792 - Jesus São João Baptista".
-SHEET_NAMES = {791: "Santíssimo Nome de Jesus", 792: "São João Baptista"}
+# "792 - Jesus São João Baptista"; three sheet names drop a particle
+# ("Santo António Pombas", "São Francisco Assis", "São Salvador Mundo"), and
+# Mosteiros' parish is printed "Nossa Senhora de Ajuda".
+SHEET_NAMES = {791: "Santíssimo Nome de Jesus", 792: "São João Baptista",
+               121: "Santo António das Pombas", 321: "São Francisco de Assis",
+               771: "São Salvador do Mundo", 811: "Nossa Senhora da Ajuda"}
 
 
 def fold(text: Any) -> str:
@@ -394,8 +405,13 @@ def note_for(p: dict[str, Any], name: str, parishes: dict[int, list[dict[str, An
     own = table[fold(ine)]
     mine = parishes[p["code"] // 10]
     made = sum(q["total"] for q in mine)
+    if len(mine) == 1 and made == own["households"]:
+        # The parish is the whole municipality, whose count INE's table by
+        # municipality gives with the people in collective dwellings.
+        return (f"The 2010 census's count for the parish of {name}, which is the whole "
+                f"municipality of {municipality}.")
     note = (f"The 2010 census's count of the people living in private households in the parish "
-            f"of {name}, its {p['zones']:.0f} zones added up.")
+            f"of {name}" + (f", its {p['zones']:.0f} zones added up." if p["zones"] > 1 else "."))
     collective = own["total"] - own["households"]
     if collective:
         one = collective == 1
@@ -413,20 +429,59 @@ def note_for(p: dict[str, Any], name: str, parishes: dict[int, list[dict[str, An
 
 def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, float]],
                admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """A record for each parish and each municipality. A parish that is its
+    municipality's only one takes the municipality's count, people in
+    collective dwellings included; the others take their zones' count of the
+    people in private households. Every municipality takes its count from
+    INE's table by municipality, so that no sum of household counts stands
+    for it."""
     bound = bind(parishes, admin1, admin2)
+    totals_url = ARCHIVE.format(stamp=TOTALS_STAMP, original=TOTALS_ORIGINAL)
     out = []
     for shape in admin2:
         p = bound[shape["id"]]
+        municipality, ine = MUNICIPALITIES[p["code"] // 10]
+        own = table[fold(ine)]
         source = SOURCE.format(island=p["island_name"])
+        sources = [{"field": "population/sex_ratio", "name": source, "url": p["url"],
+                    "page": POPULATION + p["island"], "license": LICENCE, "year": YEAR}]
+        population = measure(round(p["total"]), year=YEAR, source=source)
+        sex_note = None
+        whole = len(parishes[p["code"] // 10]) == 1 and p["total"] == own["households"]
+        if whole:
+            population = measure(round(own["total"]), year=YEAR, source=TOTALS_SOURCE)
+            sources.insert(0, {"field": "population", "name": TOTALS_SOURCE, "url": totals_url,
+                               "license": LICENCE, "year": YEAR})
+            collective = own["total"] - own["households"]
+            if collective:
+                sex_note = (f"Men per 100 women among the {own['households']:,.0f} people living "
+                            f"in private households; the {collective:,.0f} in collective dwellings "
+                            "are not counted by sex in the parish tables.")
         out.append(record(
             f"CPV-2010-{p['code']}", shape["name"], level="admin2", parent="CPV", country="CPV",
             match_by="shape_id", shape_id=shape["id"],
-            population=measure(round(p["total"]), year=YEAR, source=source),
+            population=population,
             population_note=note_for(p, display(p, shape), parishes, table),
             sex_ratio=measure(round(100 * p["men"] / p["women"], 1), unit="males_per_100_females",
                               year=YEAR, source=source),
-            sources=[{"field": "population/sex_ratio", "name": source, "url": p["url"],
-                      "page": POPULATION + p["island"], "license": LICENCE, "year": YEAR}]))
+            sex_ratio_note=sex_note,
+            sources=sources))
+    for shape in admin1:
+        code = next(c for c, (name, _) in MUNICIPALITIES.items() if fold(name) == fold(shape["name"]))
+        municipality, ine = MUNICIPALITIES[code]
+        own = table[fold(ine)]
+        collective = own["total"] - own["households"]
+        note = f"The 2010 census's count for the municipality of {municipality}"
+        if collective:
+            note += (f", {collective:,.0f} of them living in collective dwellings and "
+                     f"{own['households']:,.0f} in private households")
+        out.append(record(
+            f"CPV-2010-M{code}", shape["name"], level="admin1", parent="CPV", country="CPV",
+            match_by="shape_id", shape_id=shape["id"],
+            population=measure(round(own["total"]), year=YEAR, source=TOTALS_SOURCE),
+            population_note=note + ".",
+            sources=[{"field": "population", "name": TOTALS_SOURCE, "url": totals_url,
+                      "license": LICENCE, "year": YEAR}]))
     return out
 
 
@@ -441,8 +496,10 @@ def main() -> int:
     admin2 = json.loads((SITE / "admin2" / "CPV.units.json").read_text())
     records = records_of(parishes, table, admin1, admin2)
     for r in records:
-        log(f"  {r['name']}: {r['population']['value']:,}, {r['sex_ratio']['value']} men per 100 "
-            f"women; {r['population_note']}")
+        ratio = r["sex_ratio"].get("value")
+        log(f"  {r['name']}: {r['population']['value']:,}"
+            + (f", {ratio} men per 100 women" if ratio is not None else "")
+            + f"; {r['population_note']}")
     write_json(PROCESSED / OUT, records)
     return 0
 

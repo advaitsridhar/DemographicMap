@@ -1040,6 +1040,59 @@ class CaboVerdeParishesTest(unittest.TestCase):
         # between them; their codes give the names the polygons carry.
         self.assertEqual(cv.key(cv.SHEET_NAMES[791]), cv.key("Santissimo Nome De Jesus"))
         self.assertEqual(cv.key(cv.SHEET_NAMES[792]), cv.key("Sao Joao Baptista"))
+        for code, shape in ((121, "Santo Antonio Das Pombas"), (321, "Sao Francisco De Assis"),
+                            (771, "Sao Salvador Do Mundo"), (811, "Nossa Senhora Da Ajuda")):
+            self.assertEqual(cv.key(cv.SHEET_NAMES[code]), cv.key(shape))
+        one = {74: [{"code": 741, "name": "N.S. Graça", "total": 10.0, "zones": 1.0}]}
+        saved = cv.MUNICIPALITIES
+        cv.MUNICIPALITIES = {74: ("Praia", "Praia")}
+        try:
+            note = cv.note_for(one[74][0], "Nossa Senhora da Graça", one,
+                               {"praia": {"total": 10.0, "households": 10.0}})
+        finally:
+            cv.MUNICIPALITIES = saved
+        self.assertEqual(note, "The 2010 census's count for the parish of Nossa Senhora da "
+                               "Graça, which is the whole municipality of Praia.")
+
+    def test_a_municipality_and_its_only_parish_take_the_municipality_count(self):
+        cv = self.cv
+        parishes = {74: [{"code": 741, "name": "N.S. Graça", "total": 130271.0, "zones": 1.0,
+                          "men": 63482.0, "women": 66789.0, "island": "Santiago.xls",
+                          "island_name": "Santiago", "url": "u"}],
+                    82: [{"code": 821, "name": "São Lourenço", "total": 8899.0, "zones": 18.0,
+                          "men": 4306.0, "women": 4593.0, "island": "Fogo.xls",
+                          "island_name": "Fogo", "url": "u"},
+                         {"code": 822, "name": "N.S. Conceição", "total": 13328.0, "zones": 17.0,
+                          "men": 6667.0, "women": 6661.0, "island": "Fogo.xls",
+                          "island_name": "Fogo", "url": "u"}]}
+        table = {"praia": {"total": 131602.0, "households": 130271.0},
+                 "s. filipe": {"total": 22228.0, "households": 22227.0}}
+        admin1 = [{"id": "P", "name": "Praia"}, {"id": "F", "name": "São Filipe"}]
+        admin2 = [{"id": "g", "name": "Nossa Senhora Da Graca", "parent": "P"},
+                  {"id": "l", "name": "Sao Lourenco", "parent": "F"},
+                  {"id": "c", "name": "Nossa Senhora Da Conceicao", "parent": "F"}]
+        saved = cv.MUNICIPALITIES
+        cv.MUNICIPALITIES = {74: ("Praia", "Praia"), 82: ("São Filipe", "S. Filipe")}
+        try:
+            got = {r["shape_id"]: r for r in cv.records_of(parishes, table, admin1, admin2)}
+        finally:
+            cv.MUNICIPALITIES = saved
+        # The only parish of Praia is Praia: its count is the municipality's.
+        self.assertEqual(got["g"]["population"]["value"], 131602)
+        self.assertIn("which is the whole municipality of Praia", got["g"]["population_note"])
+        self.assertIn("among the 130,271 people living in private households",
+                      got["g"]["sex_ratio_note"])
+        # São Filipe's two parishes keep their household counts and say so.
+        self.assertEqual(got["c"]["population"]["value"], 13328)
+        self.assertIn("The 1 person of São Filipe municipality who lived in collective "
+                      "dwellings is counted only", got["c"]["population_note"])
+        # Each municipality takes INE's count, not its parishes' sum.
+        self.assertEqual(got["F"]["population"]["value"], 22228)
+        self.assertEqual(got["F"]["level"], "admin1")
+        self.assertEqual(got["F"]["population_note"], (
+            "The 2010 census's count for the municipality of São Filipe, 1 of them living in "
+            "collective dwellings and 22,227 in private households."))
+        self.assertEqual(got["P"]["population"]["value"], 131602)
         parishes = {82: [{"code": 821, "name": "São Lourenço", "total": 1},
                          {"code": 822, "name": "N.S. Conceição", "total": 2}],
                     83: [{"code": 831, "name": "Santa Catarina", "total": 3}]}
