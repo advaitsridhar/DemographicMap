@@ -23802,6 +23802,101 @@
     "language_note": "European Social Survey, ESS rounds 7, 9 (2014-2019), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 725 respondents in NUTS region DK03 gave an answer (18 refused, did not know or did not answer and are left out), weighted within each round by the post-stratification weight (pspwght), rescaled to that round's respondents here, and pooled. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
   },
   {
+    "id": "ESS-DNK-admin1-84455774B84842167963849",
+    "level": "admin1",
+    "name": "Nordjylland",
+    "parent": "DNK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestant",
+        "pct": 58.1,
+        "count": 205
+      },
+      {
+        "group": "No religion",
+        "pct": 40.6,
+        "count": 143
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.1,
+        "count": 3
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Danish",
+        "pct": 96.4,
+        "count": 333
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.9,
+        "count": 6
+      },
+      {
+        "group": "English",
+        "pct": 1.7,
+        "count": 5
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 7, 9 (2014-2019): religion by NUTS region DK05",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      },
+      {
+        "field": "language",
+        "name": "European Social Survey (ESS ERIC), ESS rounds 7, 9 (2014-2019): language by NUTS region DK05",
+        "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+        "license": "CC BY-NC-SA 4.0 (ESS ERIC)"
+      }
+    ],
+    "country": "DNK",
+    "match_by": "shape_id",
+    "shape_id": "84455774B84842167963849",
+    "codes": {
+      "nuts": [
+        "DK05"
+      ],
+      "ess_n": {
+        "religion": 354,
+        "language": 346
+      }
+    },
+    "religion_year": 2018,
+    "religion_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "religion_note": "European Social Survey, ESS rounds 7, 9 (2014-2019), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 354 respondents in NUTS region DK05 gave an answer (3 refused, did not know or did not answer and are left out), weighted within each round by the post-stratification weight (pspwght), rescaled to that round's respondents here, and pooled. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask religion here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read.",
+    "language_year": 2018,
+    "language_basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+    "language_note": "European Social Survey, ESS rounds 7, 9 (2014-2019), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 346 respondents in NUTS region DK05 gave an answer (11 refused, did not know or did not answer and are left out), weighted within each round by the post-stratification weight (pspwght), rescaled to that round's respondents here, and pooled. Universe: residents aged 15 and over in private households who could be interviewed in a survey language. Tabulated by the ESS Data Portal's open analysis service. The census does not ask home language here, or its figure is not published for this unit; a census or register count replaces this estimate wherever one is read."
+  },
+  {
     "id": "ESS-DNK-admin1-84455774B92412385890269",
     "level": "admin1",
     "name": "Sjælland",
