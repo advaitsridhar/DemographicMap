@@ -1,8 +1,8 @@
 [
   {
-    "id": "CPV-2010-811",
-    "level": "admin2",
-    "name": "Nossa Senhora Da Ajuda",
+    "id": "CPV-2021-51",
+    "level": "admin1",
+    "name": "Boa Vista",
     "parent": "CPV",
     "capital": {
       "status": "not_available"
@@ -11,18 +11,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 9524,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 12798,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 96.1,
+      "value": 115.9,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -35,26 +35,1096 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B70460974689380",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-91",
+    "level": "admin1",
+    "name": "Brava",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5647,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 108.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo",
-        "url": "https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B86099575470036",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-61",
+    "level": "admin1",
+    "name": "Maio",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6330,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B49116351933928",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-81",
+    "level": "admin1",
+    "name": "Mosteiros",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8084,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 101.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B60508126620075",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-12",
+    "level": "admin1",
+    "name": "Paul",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5770,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 122.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B70239090782327",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-13",
+    "level": "admin1",
+    "name": "Porto Novo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16052,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 110.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B16121613622578",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-74",
+    "level": "admin1",
+    "name": "Praia",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 145378,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B53857372811673",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-31",
+    "level": "admin1",
+    "name": "Ribeira Brava",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6996,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 109.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B49995424745322",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-11",
+    "level": "admin1",
+    "name": "Ribeira Grande",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15128,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 114.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B32096079392942",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-79",
+    "level": "admin1",
+    "name": "Ribeira Grande de Santiago",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7757,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 97.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B5815864302343",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-41",
+    "level": "admin1",
+    "name": "Sal",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33615,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 114.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B31219630131339",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-72",
+    "level": "admin1",
+    "name": "Santa Catarina",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37982,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 89.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B65851114160010",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-83",
+    "level": "admin1",
+    "name": "Santa Catarina do Fogo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4743,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 104.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B48710154896989",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-73",
+    "level": "admin1",
+    "name": "Santa Cruz",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25152,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 98.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B13195842681213",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-75",
+    "level": "admin1",
+    "name": "São Domingos",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14051,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 96.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B61929302069698",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-82",
+    "level": "admin1",
+    "name": "São Filipe",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20927,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B42709825939270",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-78",
+    "level": "admin1",
+    "name": "São Lourenço dos Órgãos",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6328,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B32254847060203",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-76",
+    "level": "admin1",
+    "name": "São Miguel",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12966,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 89.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B58765438888265",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-77",
+    "level": "admin1",
+    "name": "São Salvador do Mundo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7482,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 96.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B8506465148242",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-21",
+    "level": "admin1",
+    "name": "São Vicente",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 75845,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 102.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B41743840760019",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-71",
+    "level": "admin1",
+    "name": "Tarrafal",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16892,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 90.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B2594883865860",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-32",
+    "level": "admin1",
+    "name": "Tarrafal de São Nicolau",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5310,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 105.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      }
+    ],
+    "country": "CPV",
+    "match_by": "shape_id",
+    "shape_id": "35879248B27983455382142",
+    "population_note": "The 2021 census's count of the resident population of the municipality."
+  },
+  {
+    "id": "CPV-2021-811",
+    "level": "admin2",
+    "name": "Nossa Senhora Da Ajuda",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8084,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 101.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B13080281314211",
-    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Ajuda, which is the whole municipality of Mosteiros.",
-    "sex_ratio_note": "Men per 100 women among the 9,520 people living in private households; the 4 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Mosteiros, of which this is the only parish."
   },
   {
     "id": "CPV-2010-822",
@@ -106,7 +1176,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Conceição, its 17 zones added up. The 1 person of São Filipe municipality who lived in collective dwellings is counted only for the municipality as a whole."
   },
   {
-    "id": "CPV-2010-741",
+    "id": "CPV-2021-741",
     "level": "admin2",
     "name": "Nossa Senhora Da Graca",
     "parent": "CPV",
@@ -117,18 +1187,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 131602,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 145378,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 95.0,
+      "value": 97.6,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -141,26 +1211,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B19025383966327",
-    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Graça, which is the whole municipality of Praia.",
-    "sex_ratio_note": "Men per 100 women among the 130,271 people living in private households; the 1,331 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Praia, of which this is the only parish."
   },
   {
     "id": "CPV-2010-311",
@@ -212,7 +1274,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Lapa, its 5 zones added up. The 16 people of Ribeira Brava municipality who lived in collective dwellings are counted only for the municipality as a whole."
   },
   {
-    "id": "CPV-2010-611",
+    "id": "CPV-2021-611",
     "level": "admin2",
     "name": "Nossa Senhora Da Luz",
     "parent": "CPV",
@@ -223,18 +1285,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 6952,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 6330,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 93.8,
+      "value": 101.0,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Maio"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -247,26 +1309,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Maio",
-        "url": "https://web.archive.org/web/20131106000710id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Maio.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Maio.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B67599039999674",
-    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Luz, which is the whole municipality of Maio.",
-    "sex_ratio_note": "Men per 100 women among the 6,943 people living in private households; the 9 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Maio, of which this is the only parish."
   },
   {
     "id": "CPV-2010-751",
@@ -318,7 +1372,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Luz, its 13 zones added up. The 109 people of São Domingos municipality who lived in collective dwellings are counted only for the municipality as a whole."
   },
   {
-    "id": "CPV-2010-211",
+    "id": "CPV-2021-211",
     "level": "admin2",
     "name": "Nossa Senhora Da Luz",
     "parent": "CPV",
@@ -329,18 +1383,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 76107,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 75845,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 99.3,
+      "value": 102.9,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Vicente"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -353,29 +1407,21 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Vicente",
-        "url": "https://web.archive.org/web/20131106000537id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Vicente.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Vicente.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B58817505266013",
-    "population_note": "The 2010 census's count for the parish of Nossa Senhora da Luz, which is the whole municipality of São Vicente.",
-    "sex_ratio_note": "Men per 100 women among the 74,986 people living in private households; the 1,121 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of São Vicente, of which this is the only parish."
   },
   {
-    "id": "CPV-2010-411",
+    "id": "CPV-2021-411",
     "level": "admin2",
     "name": "Nossa Senhora Das Dores",
     "parent": "CPV",
@@ -386,9 +1432,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 25765,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 33615,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
@@ -396,8 +1442,8 @@
     "sex_ratio": {
       "value": 114.5,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Sal"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -410,26 +1456,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Sal",
-        "url": "https://web.archive.org/web/20131105235411id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Sal.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Sal.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B51777192933696",
-    "population_note": "The 2010 census's count for the parish of Nossa Senhora das Dores, which is the whole municipality of Sal.",
-    "sex_ratio_note": "Men per 100 women among the 25,481 people living in private households; the 284 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Sal, of which this is the only parish."
   },
   {
     "id": "CPV-2010-112",
@@ -628,7 +1666,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Nossa Senhora do Rosário, its 9 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives."
   },
   {
-    "id": "CPV-2010-721",
+    "id": "CPV-2021-721",
     "level": "admin2",
     "name": "Santa Catarina",
     "parent": "CPV",
@@ -639,18 +1677,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 43297,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 37982,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 88.2,
+      "value": 89.5,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -663,29 +1701,21 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B9089914822408",
-    "population_note": "The 2010 census's count for the parish of Santa Catarina, which is the whole municipality of Santa Catarina.",
-    "sex_ratio_note": "Men per 100 women among the 43,250 people living in private households; the 47 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Santa Catarina, of which this is the only parish."
   },
   {
-    "id": "CPV-2010-831",
+    "id": "CPV-2021-831",
     "level": "admin2",
     "name": "Santa Catarina Do Fogo",
     "parent": "CPV",
@@ -696,18 +1726,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 5299,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 4743,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 96.0,
+      "value": 104.4,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -720,25 +1750,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo",
-        "url": "https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B71170562423195",
-    "population_note": "The 2010 census's count for the parish of Santa Catarina, which is the whole municipality of Santa Catarina do Fogo."
+    "population_note": "The 2021 census's count for the municipality of Santa Catarina do Fogo, of which this is the only parish."
   },
   {
     "id": "CPV-2010-512",
@@ -790,7 +1813,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Santa Isabel, its 6 zones added up. The 464 people of Boa Vista municipality who lived in collective dwellings are counted only for the municipality as a whole."
   },
   {
-    "id": "CPV-2010-731",
+    "id": "CPV-2021-731",
     "level": "admin2",
     "name": "Santiago Maior",
     "parent": "CPV",
@@ -801,18 +1824,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 26609,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 25152,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 93.3,
+      "value": 98.0,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -825,26 +1848,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B62302711188639",
-    "population_note": "The 2010 census's count for the parish of Santiago Maior, which is the whole municipality of Santa Cruz.",
-    "sex_ratio_note": "Men per 100 women among the 26,585 people living in private households; the 24 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Santa Cruz, of which this is the only parish."
   },
   {
     "id": "CPV-2010-791",
@@ -896,7 +1911,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Santíssimo Nome de Jesus, its 7 zones added up. The 2 people of Ribeira Grande de Santiago municipality who lived in collective dwellings are counted only for the municipality as a whole."
   },
   {
-    "id": "CPV-2010-711",
+    "id": "CPV-2021-711",
     "level": "admin2",
     "name": "Santo Amaro Abade",
     "parent": "CPV",
@@ -907,18 +1922,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 18565,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 16892,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 82.7,
+      "value": 90.9,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -931,26 +1946,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B37752467633472",
-    "population_note": "The 2010 census's count for the parish of Santo Amaro Abade, which is the whole municipality of Tarrafal.",
-    "sex_ratio_note": "Men per 100 women among the 18,561 people living in private households; the 4 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Tarrafal, of which this is the only parish."
   },
   {
     "id": "CPV-2010-132",
@@ -1002,7 +2009,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Santo André, its 8 zones added up. The 77 people of Porto Novo municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Porto Novo's 2 parishes make 17,906, 45 fewer than the 17,951 people in private households that INE's table by municipality gives."
   },
   {
-    "id": "CPV-2010-121",
+    "id": "CPV-2021-121",
     "level": "admin2",
     "name": "Santo Antonio Das Pombas",
     "parent": "CPV",
@@ -1013,18 +2020,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 6997,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 5770,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 120.8,
+      "value": 122.6,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1037,25 +2044,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
-        "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B53098387752451",
-    "population_note": "The 2010 census's count for the parish of Santo António das Pombas, which is the whole municipality of Paul."
+    "population_note": "The 2021 census's count for the municipality of Paul, of which this is the only parish."
   },
   {
     "id": "CPV-2010-113",
@@ -1107,7 +2107,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of Santo Crucifixo, its 12 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives."
   },
   {
-    "id": "CPV-2010-321",
+    "id": "CPV-2021-321",
     "level": "admin2",
     "name": "Sao Francisco De Assis",
     "parent": "CPV",
@@ -1118,18 +2118,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 5237,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 5310,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 108.5,
+      "value": 105.4,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1142,26 +2142,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau",
-        "url": "https://web.archive.org/web/20131106000907id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B96931694342339",
-    "population_note": "The 2010 census's count for the parish of São Francisco de Assis, which is the whole municipality of Tarrafal de São Nicolau.",
-    "sex_ratio_note": "Men per 100 women among the 5,205 people living in private households; the 32 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of Tarrafal de São Nicolau, of which this is the only parish."
   },
   {
     "id": "CPV-2010-911",
@@ -1409,7 +2401,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of São Lourenço, its 18 zones added up. The 1 person of São Filipe municipality who lived in collective dwellings is counted only for the municipality as a whole."
   },
   {
-    "id": "CPV-2010-781",
+    "id": "CPV-2021-781",
     "level": "admin2",
     "name": "Sao Lourenco Dos Orgaos",
     "parent": "CPV",
@@ -1420,18 +2412,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 7388,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 6328,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 93.3,
+      "value": 98.3,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1444,29 +2436,21 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B72941798312267",
-    "population_note": "The 2010 census's count for the parish of São Lourenço dos Órgãos, which is the whole municipality of São Lourenço dos Órgãos.",
-    "sex_ratio_note": "Men per 100 women among the 7,350 people living in private households; the 38 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of São Lourenço dos Órgãos, of which this is the only parish."
   },
   {
-    "id": "CPV-2010-761",
+    "id": "CPV-2021-761",
     "level": "admin2",
     "name": "Sao Miguel Arcanjo",
     "parent": "CPV",
@@ -1477,18 +2461,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 15648,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 12966,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 81.6,
+      "value": 89.5,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1501,26 +2485,18 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B69203973191500",
-    "population_note": "The 2010 census's count for the parish of São Miguel Arcanjo, which is the whole municipality of São Miguel.",
-    "sex_ratio_note": "Men per 100 women among the 15,630 people living in private households; the 18 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of São Miguel, of which this is the only parish."
   },
   {
     "id": "CPV-2010-752",
@@ -1621,7 +2597,7 @@
     "population_note": "The 2010 census's count of the people living in private households in the parish of São Pedro Apóstolo, its 4 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives."
   },
   {
-    "id": "CPV-2010-771",
+    "id": "CPV-2021-771",
     "level": "admin2",
     "name": "Sao Salvador Do Mundo",
     "parent": "CPV",
@@ -1632,18 +2608,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 8677,
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality"
+      "value": 7482,
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 87.6,
+      "value": 96.4,
       "unit": "males_per_100_females",
-      "year": 2010,
-      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
+      "year": 2021,
+      "source": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1656,25 +2632,17 @@
     },
     "sources": [
       {
-        "field": "population",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by municipality",
-        "url": "https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls",
-        "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
-      },
-      {
         "field": "population/sex_ratio",
-        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
-        "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
-        "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: resident population by municipality and sex",
+        "url": "https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "page": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
         "license": "INE Cabo Verde publication (reuse with attribution)",
-        "year": 2010
+        "year": 2021
       }
     ],
     "country": "CPV",
     "match_by": "shape_id",
     "shape_id": "66160863B42982614395502",
-    "population_note": "The 2010 census's count for the parish of São Salvador do Mundo, which is the whole municipality of São Salvador do Mundo.",
-    "sex_ratio_note": "Men per 100 women among the 8,643 people living in private households; the 34 in collective dwellings are not counted by sex in the parish tables."
+    "population_note": "The 2021 census's count for the municipality of São Salvador do Mundo, of which this is the only parish."
   }
 ]
