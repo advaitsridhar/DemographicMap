@@ -504,6 +504,17 @@ class BuenosAiresWithEntreRios(Plain):
         with self.assertRaises(SystemExit):
             quiet(ac.drawn_together, "Buenos Aires", ("Entre Ríos",), kept)
 
+    def test_the_provinces_are_read_under_the_boundary_file_s_labels(self):
+        # The build names a polygon after the row bound to it, so the map shows
+        # La Roja as La Rioja; read by those names, two provinces lost their
+        # polygon and 31 departments their label.
+        if not site_units("admin1", "ARG"):
+            self.skipTest("no Argentine units in this checkout")
+        admin1, admin2 = ac.drawn_units()
+        labels = {u["name"] for u in admin1}
+        self.assertEqual([p[5] for p in ac.PROVINCES if p[5] and p[5] not in labels], [])
+        self.assertTrue(all(u["name"] == (u.get("shape_name") or u["name"]) for u in admin2))
+
     def test_only_entre_rios_is_drawn_inside_another_province(self):
         self.assertEqual(ac.DRAWN_INSIDE, {"Buenos Aires": ("Entre Ríos",)})
         undrawn = [p[4] for p in ac.PROVINCES if p[5] is None]

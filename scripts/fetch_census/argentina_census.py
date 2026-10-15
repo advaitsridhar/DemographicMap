@@ -70,6 +70,7 @@ from .binding import fold
 from .cod_ps_age import grouped_median
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from common import as_drawn  # noqa: E402
 from probe_tls import verified_opener  # noqa: E402
 
 OUT = "argentina_census.json"
@@ -620,6 +621,15 @@ def drawn_together(host: str, guests: tuple[str, ...],
     return out
 
 
+def drawn_units() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """The map's provinces and departments under the boundary file's own labels
+    (common.as_drawn): the build renames a polygon after the row bound to it
+    ("La Roja" shows as La Rioja), and this reader binds the provinces and
+    writes each polygon's label as an alias by those labels."""
+    return (as_drawn(json.loads((SITE / "admin1" / "ARG.units.json").read_text())),
+            as_drawn(json.loads((SITE / "admin2" / "ARG.units.json").read_text())))
+
+
 def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
          parents: dict[str, str]) -> tuple[dict[str, str], list[str]]:
     return binding.bind(departments, shapes, parents, ALIASES)
@@ -627,8 +637,7 @@ def bind(departments: dict[str, tuple[str, str]], shapes: list[dict[str, Any]],
 
 def main() -> int:
     argparse.ArgumentParser(description=__doc__).parse_args()
-    admin1 = json.loads((SITE / "admin1" / "ARG.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "ARG.units.json").read_text())
+    admin1, admin2 = drawn_units()
     parents = {u["id"]: u["name"] for u in admin1}
     admin1_ids = {u["name"]: u["id"] for u in admin1}
 
