@@ -211,9 +211,17 @@ REFUSED: dict[tuple[str, str], str] = {
 # Districts the same table prints only inside a group -- "South Abaco + Central
 # Abaco + Moore's Island" -- which the map draws apart. Their population is a
 # gap, and the gap says why: the row that does hold them, and its figure, read
-# from the table the same way a district printed alone is.
+# from the table the same way a district printed alone is. The figure is a
+# supervisory district's, as every row's is (SUPERVISORY), set by the table
+# against the local-government districts it takes in; the gap says that too,
+# in the same words as the rows refused above, rather than that the census
+# prints the districts together, which it does not.
 # The "Exuma + Black Point" row cannot be lined up with its headers, so its
 # figure is not quoted; the gap still names the group.
+SUPERVISED = ("The census tabulates by its supervisory districts, which are drawn like "
+              "the parliamentary constituencies rather than like the local-government "
+              "districts the map draws, so the figure is not this district's, and no "
+              "{year} figure is given here.")
 GROUPED: dict[tuple[str, str], Term] = {
     ("BHS", _district): Term("Local government in the Bahamas", row=_district,
                              column=r"^Population$", cite=r"Census of The Bahamas 2022")
@@ -297,18 +305,18 @@ def grouped_row(iso3: str, name: str, term: Term, shape_id: str,
     if label is None:
         log(f"  {iso3} {name}: {landed}: {why}; not written")
         return None
-    others = [p for p in label.split(" + ") if p.casefold() != name.casefold()]
-    listed = others[0] if len(others) == 1 else ", ".join(others[:-1]) + " and " + others[-1]
+    parts = label.split(" + ")
+    listed = ", ".join(parts[:-1]) + " and " + parts[-1]
     log(f"  {iso3} {name}: printed only in the group {label} "
         + (f"({value:,})" if value is not None else f"({why}; its figure is not quoted)"))
-    figure = f", {value:,} people" if value is not None else ""
+    figure = f", {value:,} people," if value is not None else ""
     return record(
         f"{iso3}-WT-{slugify(name)}", name, level="admin1", parent=iso3, country=iso3,
         shape_id=shape_id, match_by="shape_id",
         population=gap(NOT_AVAILABLE, (
-            f"The {GROUPED_YEAR} census prints {name} together with {listed} as one "
-            f"figure{figure}; the map draws them apart, and a group's figure is not any "
-            f"one of its districts'.")),
+            f"Wikipedia's table of the Bahamas' local-government districts prints one "
+            f"{GROUPED_YEAR} census figure{figure} on a row for {listed} together. "
+            + SUPERVISED.format(year=GROUPED_YEAR))),
         sources=[{"field": "population", "name": "Wikipedia", "url": url(landed),
                   "year": GROUPED_YEAR, "license": LICENCE}])
 

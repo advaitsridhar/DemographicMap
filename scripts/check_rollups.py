@@ -6,10 +6,10 @@ divisions drawn inside it are two answers to one question. Where every
 non-water division carries a figure, their total is comparable with the
 unit's own, and the two should agree; the same holds for a country and its
 first level. When they disagree by more than ``GAP`` (15%), the reader is
-owed a sentence saying why -- older children under a newer estimate, two
-sources placing people differently, ground the map draws elsewhere -- in the
-parent's population note. This lists every such disagreement whose parent
-says nothing about it.
+owed a sentence in the parent's population note saying what the divisions add
+up to, and why where the figures show it -- older children under a newer
+figure, two sources' figures for one year, ground the map draws elsewhere.
+This lists every such disagreement whose parent says nothing about it.
 
 The build writes that sentence itself (build_entities.note_population_gaps)
 using the same helpers, and stops before writing if any disagreement is left
@@ -42,6 +42,22 @@ GAP = 0.15
 # How close a number in a note must come to a total for the note to be
 # taken as naming it: the sum of rounded or slightly later figures.
 NAMED = 0.005
+# The most a population is taken to grow, or to shrink, in a year, for the
+# years between two figures to be given as why they differ. Regions growing
+# faster than any country -- N'Djamena 4.6% a year from 2012 to 2021, Peru's
+# Madre de Dios 4.7% from 2017 to 2025 -- stay inside it; two years cannot
+# make Tanzania's Katavi census half as large again as OCHA's projection for
+# 2020, nor fifteen make Malawi's Northern Region 128% larger (5.7% a year,
+# with a district of the Southern Region drawn inside it), so there the years
+# are not said. Ukraine's oblasts, 1.1% fewer each year since 2001, are.
+GROWTH = 0.05
+DECLINE = 0.03
+# How far apart two sources' figures for one ground and one year may be for
+# their being two sources to be given as why they differ. Congo's provinces
+# and OCHA's sums of their territories differ by up to a third; Madagascar's
+# Vatovavy-Fitovinany, at 730,207 against its districts' 1,731,243, is not two
+# counts of one ground.
+SOURCES_APART = 1.5
 
 
 def published(value: Any) -> float | None:
@@ -137,16 +153,34 @@ def disagrees(own: float, total: float) -> bool:
     return bool(own) and abs(total / own - 1) > GAP
 
 
+def growth_explains(own: float, own_year: int, total: float, year: int) -> bool:
+    """Whether the years between two figures could make the one the other.
+
+    The change a year it takes, newer figure on older, compounded over the
+    years between them, is at most ``GROWTH`` up or ``DECLINE`` down.
+    """
+    span = abs(year - own_year)
+    if not span or own <= 0 or total <= 0:
+        return False
+    newer, older = (total, own) if year > own_year else (own, total)
+    rate = (newer / older) ** (1 / span) - 1
+    return -DECLINE <= rate <= GROWTH
+
+
 def gap_sentence(summed: dict[str, Any], own: float, own_year: int | None,
                  level: str = "divisions", own_source: str | None = None) -> str:
     """What the divisions add up to, and the one reason the data itself gives.
 
     The reason is said only where the figures show it: the divisions counted
-    in another year than the parent, or two sources' estimates of one year.
-    Where parent and divisions are one source and one year and still differ,
-    the divisions drawn are not the ground the parent's figure counts, and
-    which ground is a question the figures cannot answer, so nothing is said
-    beyond the arithmetic.
+    in another year than the parent, by no more than growth or decline over
+    those years could make (``GROWTH``, ``DECLINE``), or two sources' figures
+    for one year, no further apart than two accounts of one ground
+    (``SOURCES_APART``). Where parent and divisions are one source and one
+    year and still differ, the divisions drawn are not the ground the parent's
+    figure counts, and which ground is a question the figures cannot answer;
+    nor can they say where two figures are further apart than either reason
+    makes them. There nothing is said beyond the arithmetic -- nor how two
+    sources' figures come to differ, which the figures do not show either.
     """
     n, total = summed["n"], summed["total"]
     sources = sorted(s for s in summed["sources"] if s)
@@ -172,22 +206,18 @@ def gap_sentence(summed: dict[str, Any], own: float, own_year: int | None,
             f"this map {'carries' if one else 'add up to'} {total:,.0f} ({what}{when}), "
             f"{abs(pct):.0f}% {side} this figure")
     if len(years) == 1 and not undated and own_year and years[0] != own_year:
-        gap = abs(years[0] - own_year)
-        said += (f"; {'its figure is' if one else 'their figures are'} for {years[0]}, "
-                 f"{gap} year{'s' if gap != 1 else ''} "
-                 f"{'before' if years[0] < own_year else 'after'} this one")
+        if growth_explains(own, own_year, total, years[0]):
+            gap = abs(years[0] - own_year)
+            said += (f"; {'its figure is' if one else 'their figures are'} for {years[0]}, "
+                     f"{gap} year{'s' if gap != 1 else ''} "
+                     f"{'before' if years[0] < own_year else 'after'} this one")
     elif (len(years) == 1 and not undated and own_year == years[0] and len(named) == 1
-          and own_source is not None and short_source(own_source) != named[0]):
+          and own_source is not None and short_source(own_source) != named[0]
+          and 1 / SOURCES_APART <= total / own <= SOURCES_APART):
         # Compared as a reader knows them: Tuvalu's census report and its
-        # island tables are one office's count, not two sources.
+        # island tables are one office's count, not two sources. Which of
+        # them counts whom, or places people where, the figures do not say.
         said += "; the two are different sources' figures for the same year"
-        # Inside a country, two estimates of one year that differ have put the
-        # same people in different places. Two national totals that differ
-        # have counted different people -- residents only, or everyone -- and
-        # the figures alone cannot say which; nor can a unit's one division,
-        # which is all of it or is not.
-        if level == "divisions" and not one:
-            said += ", which place people differently"
     return said + "."
 
 

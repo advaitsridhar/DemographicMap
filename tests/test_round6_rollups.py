@@ -18,6 +18,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -308,14 +309,22 @@ class RestateEncyclopaediaParents(unittest.TestCase):
         a1, a2 = self.tables(parent, kids)
         done = be.restate_encyclopaedia_parents(a1, a2)
         self.assertEqual(len(done), 1)
+        # The figure replaced rides along as a build flag for the country's
+        # composition gate, and is taken off before the record is written.
+        self.assertEqual(parent["population"], {
+            "value": 1100, "year": 2022, "source": "summed from 2 second-level divisions",
+            "restated_from": {"value": 800, "year": 2011, "source": "Wikidata (CC0)"}})
+        self.assertEqual(be.drop_build_flags(parent), 1)
         self.assertEqual(parent["population"], {"value": 1100, "year": 2022,
                                                 "source": "summed from 2 second-level divisions"})
         note = parent["population_note"]
         self.assertIn("The sum of both divisions drawn inside it", note)
         self.assertIn("OCHA's common operational dataset", note)
         self.assertIn("It replaces 800 for 2011, an older figure from Wikidata.", note)
-        self.assertEqual([s["field"] for s in parent["sources"]],
-                         ["population/capital/coordinates", "population"])
+        # Wikidata stays cited for what else it gives, not for the population
+        # (R6-ROLLUPS-V6).
+        self.assertEqual([(s["field"], s["name"]) for s in parent["sources"]],
+                         [("capital/coordinates", "Wikidata"), ("population", OCHA)])
 
     def test_an_undated_wikipedia_figure_gives_way_too(self):
         parent = unit("P", "Parent", 5000, None, "English Wikipedia, Parent (infobox)")
@@ -370,6 +379,7 @@ class RestateEncyclopaediaParents(unittest.TestCase):
         a1, a2 = self.tables(parent, [child], iso3="VEN")
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2),
                          ["VEN Distrito Capital 3,523,959 -> 1,943,901"])
+        be.drop_build_flags(parent)
         self.assertEqual(parent["population"],
                          {"value": 1_943_901, "year": 2011, "source": census})
         note = parent["population_note"]
@@ -385,11 +395,13 @@ class RestateEncyclopaediaParents(unittest.TestCase):
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
 
     def test_a_division_drawn_on_the_wrong_side_stops_both_sums(self):
-        # Mangochi lies by area under Malawi's Northern Region; summing it in
+        # Mangochi lay by area under Malawi's Northern Region; summing it in
         # would count the Southern Region's people as the north's, and the
-        # south's sum would lack them.
+        # south's sum would lack them. DECLARED_PARENTS now files it, so the
+        # stopgap is empty, and the guard is tested on an entry of its own.
         shape = "42251766B89682559169951"
-        self.assertEqual(be.MISFILED_DIVISIONS[("MWI", shape)], ("Mangochi", "Southern Region"))
+        self.assertEqual(be.DECLARED_PARENTS[shape], ("MWI", "Southern Region"))
+        self.assertNotIn(("MWI", shape), be.MISFILED_DIVISIONS)
         north = unit("N", "Northern Region", 1_698_502, 2008)
         south = unit("S", "Southern Region", 5_876_784, 2008)
         mangochi = unit(shape, "Mangochi", 1_346_740, 2023, OCHA, parent="N")
@@ -398,14 +410,16 @@ class RestateEncyclopaediaParents(unittest.TestCase):
                 unit("S1", "Blantyre", 1_400_000, 2023, OCHA, parent="S"),
                 unit("S2", "Zomba", 900_000, 2023, OCHA, parent="S")]
         a1, a2 = {"MWI": [north, south]}, {"MWI": kids}
-        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
-        self.assertEqual((north["population"]["value"], south["population"]["value"]),
-                         (1_698_502, 5_876_784))
-        # Filed under its own region, both take their divisions' sums.
-        mangochi["parent"] = "S"
-        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2),
-                         ["MWI Northern Region 1,698,502 -> 2,259,252",
-                          "MWI Southern Region 5,876,784 -> 3,646,740"])
+        with mock.patch.dict(be.MISFILED_DIVISIONS,
+                             {("MWI", shape): ("Mangochi", "Southern Region")}):
+            self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
+            self.assertEqual((north["population"]["value"], south["population"]["value"]),
+                             (1_698_502, 5_876_784))
+            # Filed under its own region, both take their divisions' sums.
+            mangochi["parent"] = "S"
+            self.assertEqual(be.restate_encyclopaedia_parents(a1, a2),
+                             ["MWI Northern Region 1,698,502 -> 2,259,252",
+                              "MWI Southern Region 5,876,784 -> 3,646,740"])
 
     def test_a_projection_a_year_on_does_not_replace_a_dated_figure(self):
         # Rwanda: the provinces carry the 2022 census, OCHA's districts 2023.
@@ -507,11 +521,15 @@ class NotePopulationGaps(unittest.TestCase):
         note = country["population_note"]
         self.assertIn("the two are different sources' figures for the same year.", note)
         self.assertNotIn("place people differently", note)
+        # Nor are two sources' figures for one unit: how they come to differ
+        # is not something the figures show (R6-ROLLUPS-V3).
         parent = unit("P", "Lagos", 11_000_000, 2020, "Wikidata (CC0)")
         kids = [unit("K", "Kid", 14_879_754, 2020, "OCHA", parent="P"),
                 unit("K2", "Kid 2", 1, 2020, "OCHA", parent="P")]
         be.note_population_gaps([], {"NGA": [parent]}, {"NGA": kids})
-        self.assertIn("which place people differently", parent["population_note"])
+        self.assertTrue(parent["population_note"].endswith(
+            "35% above this figure; the two are different sources' figures for the same "
+            "year."), parent["population_note"])
 
     def test_a_partial_level_is_not_compared(self):
         parent = unit("P", "Tongatapu", 1000, 2021)
@@ -540,9 +558,10 @@ class NotePopulationGaps(unittest.TestCase):
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
         be.note_population_gaps([], a1, a2)
         note = parent["population_note"]
+        # A year's growth makes no 27%, so the year is not given as the
+        # reason; the projection is (R6-ROLLUPS-V3).
         self.assertIn("add up to 3,078,170 (OCHA's common operational dataset, 2023), 27% "
-                      "above this figure; their figures are for 2023, 1 year after this one; "
-                      + be.RESTATE_KEEPS["ZWE"] + ".", note)
+                      "above this figure; " + be.RESTATE_KEEPS["ZWE"] + ".", note)
 
 
 class PopulationGapsSaid(unittest.TestCase):
@@ -772,8 +791,12 @@ class BahamasGroups(unittest.TestCase):
                      "Moore's Island", "South Abaco", "South Eleuthera"):
             pop = rows[name]["population"]
             self.assertNotIn("value", pop, name)
-            self.assertTrue(pop["note"].startswith(f"The 2022 census prints {name} together "
-                                                   f"with"), name)
+            # The table's rows are supervisory districts (R6-ROLLUPS-V5); the
+            # earlier wording stands until the reader's next run writes this.
+            self.assertTrue(pop["note"].startswith(
+                ("Wikipedia's table of the Bahamas' local-government districts prints one "
+                 "2022 census figure", f"The 2022 census prints {name} together with")), name)
+            self.assertIn(name, pop["note"])
             self.assertNotIn("Wikidata", pop["note"])
         self.assertIn("6,530 people", rows["South Abaco"]["population"]["note"])
 
@@ -857,6 +880,8 @@ class CheckRollups(unittest.TestCase):
         # The population passes run over the records the site last published,
         # as the build runs them: every disagreement over 15% they leave is
         # said, and the build's own stop agrees with the published check.
+        # This holds of records built before the passes existed and of records
+        # built with them, where the passes find little or nothing left to do.
         if not (SITE / "admin0.json").exists():
             raise unittest.SkipTest("site/data has not been built")
         admin0 = json.loads((SITE / "admin0.json").read_text(encoding="utf-8"))
@@ -865,16 +890,24 @@ class CheckRollups(unittest.TestCase):
             tables[level] = {p.name.split(".")[0]: json.loads(p.read_text(encoding="utf-8"))
                              for p in sorted((SITE / level).glob("*.units.json"))}
         a1, a2 = tables["admin1"], tables["admin2"]
+        build = SITE / "build.json"
+        built_with_passes = build.exists() and "rollup_gap" in json.loads(
+            build.read_text(encoding="utf-8"))
         quiet(be.apply_country_figures, admin0, be.load_country_detail())
         restated = be.restate_encyclopaedia_parents(a1, a2)
-        self.assertIn("VEN Distrito Capital 3,523,959 -> 1,943,901", restated)
         said = be.note_population_gaps(admin0, a1, a2)
-        self.assertGreater(len(said), 100)
         be.check_population_gaps_said(admin0, a1, a2)
         left = [(iso3, parent.get("name")) for iso3, parent, summed, own, _ in
                 be.population_disagreements(admin0, a1, a2)
                 if not cr.explained(cr.notes_of(parent), own, summed["total"])]
         self.assertEqual(left, [])
+        # The Capital District shows Libertador's count either way: restated
+        # here from records built before the pass, or as the build wrote it.
+        capital = next(u for u in a1["VEN"] if u["name"] == "Distrito Capital")
+        self.assertEqual(capital["population"]["value"], 1_943_901)
+        if not built_with_passes:
+            self.assertIn("VEN Distrito Capital 3,523,959 -> 1,943,901", restated)
+            self.assertGreater(len(said), 100)
 
     def test_site_data_has_no_unexplained_gap(self):
         build = SITE / "build.json"

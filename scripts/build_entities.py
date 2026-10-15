@@ -4131,6 +4131,36 @@ def vintage(value: Any) -> int | None:
     return None
 
 
+# The flag restate_encyclopaedia_parents leaves on a first-level population it
+# replaced with its divisions' sum: the figure the unit carried before, which
+# the country's composition gate still weighs (control_population). Dropped
+# before writing (BUILD_FLAGS).
+RESTATED_FROM = "restated_from"
+
+
+def control_population(entity: dict[str, Any]) -> Any:
+    """The population a country's sum of its first level is gated on.
+
+    The unit's own, except where restate_encyclopaedia_parents put its
+    divisions' sum in its place: then the figure it carried before. The gate
+    asks whether the first level's compositions describe the country's people,
+    and it was set on the figures the units carry for themselves, mostly the
+    censuses their compositions come from. A sum put there so the unit agrees
+    with what is drawn inside it, OCHA's projections mostly, moved it for no
+    reason of the compositions': Honduras' and Colombia's census ethnicity,
+    summed until then, were refused because OCHA's 2024 and 2025 projections
+    ran 4% and 7% above the Factbook's estimates; and because the projections
+    ran close to the Factbook's, Burkina Faso's, Mozambique's and São Tomé's
+    census and Factbook lines gave way to sums of a survey's interviews, and
+    the Central African Republic's 2020 religion estimate to its regions'
+    2003 census.
+    """
+    pop = entity.get("population")
+    if isinstance(pop, dict) and isinstance(pop.get(RESTATED_FROM), dict):
+        return pop[RESTATED_FROM]
+    return pop
+
+
 def common_year(children: list[dict[str, Any]]) -> int | None:
     """The year most of the children's populations are for.
 
@@ -4479,6 +4509,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                 f"to weigh them by")
 
     disagrees = ""
+    # Whether the sum stands although the gate below found the populations
+    # apart: a waived control, which no population is then taken from.
+    overruled = False
     own = published(parent.get("population"))
     stated = own
     if (unpriced or not total_pop) and own is not None and over_published \
@@ -4501,9 +4534,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         if not complete:
             return f"{field}: no published population to check the sum against"
     else:
+        # Weighed on the figures the divisions carry for themselves, before any
+        # was restated to its own divisions' sum (control_population); the
+        # note below still quotes the populations the map shows.
+        controls = [{"population": control_population(c)} for c in children]
+        gated = sum(published(c["population"]) or 0.0 for c in controls)
         limit = allowance(vintage(parent.get("population")),
-                          common_year(children), own, total_pop)
-        if abs(total_pop - own) > limit * own:
+                          common_year(controls), own, gated)
+        if abs(gated - own) > limit * own:
+            overruled = True
             drift = "" if limit == ROLLUP_TOLERANCE else \
                 f", outside even the {limit:.0%} allowed for their dates"
             # Complete children and a parent figure that disagrees with them
@@ -4523,25 +4562,32 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             # Factbook's 69.1 million for 2025; refusing them left Tanzania
             # with no language shares at all.
             if not whole_country and (not complete or shares_of(current)):
-                return (f"{field}: children sum to {total_pop:,.0f} against a "
-                        f"published {own:,.0f}{drift}")
+                return (f"{field}: children sum to {gated:,.0f} against a "
+                        f"published {own:,.0f}{drift}"
+                        + (f" (their figures before their divisions' sums were put "
+                           f"on them; they now total {total_pop:,.0f})"
+                           if round(gated) != round(total_pop) else ""))
             # The sentence names the total it is measured against rather than
             # pointing back at "that": other sentences can stand between the
             # two -- the divisions' own counts, a weighting -- and Italy's
             # note then read "...own counts, of 57,251,233 people in 2015. The
             # unit's own published population of 60,924,851 disagrees with
             # that by -3%", a gap that is -6% against the figure just named.
-            disagrees = (f" The unit's own published population of {own:,.0f} "
-                         f"disagrees with the divisions' total of "
-                         f"{total_pop:,.0f} by "
-                         f"{100 * (total_pop - own) / own:+.0f}%; "
-                         + ("the sum was taken anyway because every division "
-                            "at this level in the country carries these "
-                            "figures, so these are certainly all of its "
-                            "children." if whole_country else
-                            "the sum was taken anyway because these are the "
-                            "country's own divisions and it publishes no "
-                            "shares of its own for the sum to overrule."))
+            # It is the total the map shows, and it is said only where that
+            # one disagrees too: a first level restated to its divisions'
+            # sums can agree with the unit where its own figures did not.
+            if abs(total_pop - own) > ROLLUP_TOLERANCE * own:
+                disagrees = (f" The unit's own published population of {own:,.0f} "
+                             f"disagrees with the divisions' total of "
+                             f"{total_pop:,.0f} by "
+                             f"{100 * (total_pop - own) / own:+.0f}%; "
+                             + ("the sum was taken anyway because every division "
+                                "at this level in the country carries these "
+                                "figures, so these are certainly all of its "
+                                "children." if whole_country else
+                                "the sum was taken anyway because these are the "
+                                "country's own divisions and it publishes no "
+                                "shares of its own for the sum to overrule."))
 
     # Computed before the note, because a sum that carries no date owes the
     # reader the reason. Pakistan is the case: four provinces and Islamabad
@@ -4783,7 +4829,14 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # its ethnicity then "agreed" with that and overwrote the Factbook's
     # shares. Morocco lost Laayoune-Sakia El Hamra from its population the
     # same way.
-    waived = bool(disagrees) and not whole_country
+    waived = overruled and not whole_country
+    # Nor does a first level any of whose figures was restated to its own
+    # divisions' sum (control_population) replace a figure the country has:
+    # those sums were put there so each unit agrees with what is drawn inside
+    # it, not to stand for the country. Honduras' eighteen departments,
+    # restated to OCHA's 2024 projections, add up to 9,878,457, and the
+    # country keeps its own 9,529,188 for 2024.
+    restated = any(control_population(c) is not c.get("population") for c in children)
     # And only a sum of about one year replaces a figure that exists: years at
     # most one apart, or nine in ten of the people counted in the same one.
     # Germany's states carry Eurostat's 2025 figures where a state is its own
@@ -4803,7 +4856,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # caller says it is an estimate an itemised count improves on
     # (``restate_same_year``); otherwise only an older one is.
     if child_year and not waived and not left_out and (
-            own is None or (one_year and round(total_pop) != round(own)
+            own is None or (one_year and not restated and round(total_pop) != round(own)
                             and (own_year is None or own_year < child_year
                                  or (own_year == child_year and restate_same_year)))):
         if own is not None:
@@ -4898,19 +4951,17 @@ RESTATE_KEEPS: dict[str, str] = {
 }
 
 # Divisions drawn by area under a first-level unit other than the one their
-# census counts them in: (country, shape id) -> (division, the unit that
-# counts it). While one is filed away from its unit, neither the unit holding
-# it nor the unit missing it is restated to its divisions' sum, which would
-# count one unit's people as another's. Mangochi (OCHA's 1,346,740) lies by
-# area under Malawi's Northern Region, across the lake from the Southern
-# Region that counts it; Mukwe (29,965) under Namibia's Caprivi, though it is
-# Kavango East's. DECLARED_PARENTS files them where they belong, and the sums
-# then follow; until then both units keep their figures and say what their
-# divisions add up to.
-MISFILED_DIVISIONS: dict[tuple[str, str], tuple[str, str]] = {
-    ("MWI", "42251766B89682559169951"): ("Mangochi", "Southern Region"),
-    ("NAM", "8085530B20929283489058"): ("Mukwe", "Kavango"),
-}
+# census counts them in, and not yet filed where they belong: (country, shape
+# id) -> (division, the unit that counts it). While one is filed away from its
+# unit, neither the unit holding it nor the unit missing it is restated to its
+# divisions' sum, which would count one unit's people as another's. Empty:
+# Mangochi (OCHA's 1,346,740, by area under Malawi's Northern Region, across
+# the lake from the Southern Region that counts it) and Mukwe (29,965, by area
+# under Namibia's Caprivi, though it is Kavango East's) were here, and
+# DECLARED_PARENTS now files both where their census counts them, so their
+# units take their divisions' sums. An entry belongs here only until its
+# division is so filed.
+MISFILED_DIVISIONS: dict[tuple[str, str], tuple[str, str]] = {}
 
 # A projection dated a year after the parent's figure is not a later account
 # of the same people but another account of the same moment: where the two
@@ -5033,11 +5084,23 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                     f"replaces {own:,.0f}"
                     + (f" for {own_year}, an older figure from {was}." if own_year else
                        f" from {was}, which gives no year for it."))
+            # What the unit carried before, for the country's composition gate
+            # (control_population); a build flag, not written.
+            parent["population"][RESTATED_FROM] = {k: pop[k] for k in ("value", "year",
+                                                                       "source") if k in pop}
             # The source goes with the figure: an entry citing the population
-            # alone goes, one citing other fields too stays for those.
-            parent["sources"] = [src for src in parent.get("sources", [])
-                                 if not set(str(src.get("field") or "").split("/"))
-                                 <= {"population"}]
+            # alone goes, and one citing other fields too stays for those
+            # alone. Sierra Leone's Northern Province listed Wikidata for
+            # "population/capital/coordinates" beside OCHA's population.
+            kept = []
+            for src in parent.get("sources", []):
+                cites = str(src.get("field") or "").split("/")
+                if "population" not in cites:
+                    kept.append(src)
+                elif set(cites) - {"population"}:
+                    kept.append(dict(src, field="/".join(f for f in cites
+                                                         if f != "population")))
+            parent["sources"] = kept
             cited = next((dict(src) for child in children
                           for src in child.get("sources", [])
                           if "population" in str(src.get("field") or "").split("/")
@@ -5147,9 +5210,11 @@ def note_population_gaps(admin0: list[dict[str, Any]],
     already names the divisions' total or the difference, the parent's note
     says what its divisions add up to, from what and for when, and the reason
     the figures themselves give -- the divisions counted years apart from the
-    parent, or two estimates of one year. 254 first-level units outside Asia
-    and 39 countries disagreed that way with nothing said; scripts/
-    check_rollups.py finds any that a later change leaves unsaid.
+    parent, by no more than growth over those years makes, or two sources'
+    figures for one year, no further apart than two accounts of one ground
+    (check_rollups.gap_sentence). 254 first-level units outside Asia and 39
+    countries disagreed that way with nothing said; scripts/check_rollups.py
+    finds any that a later change leaves unsaid.
 
     Run last of the passes that set a population, so the sentence describes
     the figures the reader is shown. Where a country's first level kept its
@@ -5289,7 +5354,13 @@ PRINTED_RATIO = re.compile(r"(?i)\d[\d,.]*\s+(?:males|men|females|women)\s+per\s
 
 
 def one_sex_ratio_unit(*tables: Any) -> int:
-    """Put every sex ratio in males per 100 females, and its note's unit with it."""
+    """Put every sex ratio in males per 100 females, and its note's unit with it.
+
+    A note beside a gap names its unit too: Saint Lucia's settlements with no
+    ratio read "Men per thousand women among the 1 people the 2010 base holds"
+    where every published ratio of theirs is per hundred. It is put in the
+    same unit; a note that prints a ratio in its own unit keeps it.
+    """
     done = 0
     for table in tables:
         rows = (table if isinstance(table, list)
@@ -5297,7 +5368,15 @@ def one_sex_ratio_unit(*tables: Any) -> int:
         for entity in rows:
             value = entity.get("sex_ratio")
             ratio = published(value)
-            if ratio is None or value.get("unit") == SEX_RATIO_UNIT:
+            if ratio is None:
+                note = entity.get("sex_ratio_note")
+                if is_gap(value) and isinstance(note, str) and note \
+                        and not PRINTED_RATIO.search(note):
+                    for pattern, said in SEX_RATIO_PHRASES:
+                        note = pattern.sub(said, note)
+                    entity["sex_ratio_note"] = note
+                continue
+            if value.get("unit") == SEX_RATIO_UNIT:
                 continue
             unit = value.get("unit")
             if unit == "males_per_1000_females":
@@ -6084,8 +6163,10 @@ def drop_answered_hint(entity: dict[str, Any]) -> bool:
 # Instructions an adapter gives the build on a field's value, read while the
 # rows are merged and summed, and nothing a reader of the map is told:
 # ``displaces_before`` and ``displaces_undated`` (see merge_adapter) and
-# ``no_child_sum`` (see fill_parent_populations).
-BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum", "not_this_ground")
+# ``no_child_sum`` (see fill_parent_populations); and one the build leaves for
+# itself, ``restated_from`` (RESTATED_FROM, see control_population).
+BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum", "not_this_ground",
+               "restated_from")
 
 
 def drop_build_flags(entity: dict[str, Any]) -> int:
