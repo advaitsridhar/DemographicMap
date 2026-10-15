@@ -5007,8 +5007,11 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
                 continue
             years = {vintage(c.get("population")) for c in children}
             year = years.pop() if len(years) == 1 and None not in years else None
-            names = ", ".join(sorted({str(c["population"].get("source") or "")[:60]
-                                      for c in children}))
+            # Named as a sentence can name them: cut at sixty characters, OCHA's
+            # dataset ended "population statistics (c)." under Moxico and
+            # Vatovavy-Fitovinany.
+            names = ", ".join(sorted({check_rollups.short_source(
+                str(c["population"].get("source") or "")) for c in children}))
             parent["population"] = {
                 "value": int(round(sum(values))),
                 **({"year": year} if year else {}),
@@ -9847,7 +9850,9 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
     # people, San Salvador's 940 and Rum Cay's 99), as the religion gaps of
     # both islands already say.
     ("BHS", "57655419B6447054147513"): {
-        "ethnicity": ("bahamas_island.json", (
+        # Any file's: a composition's file is no longer known when compositions
+        # are refused, so a refusal scoped to one never applied.
+        "ethnicity": (None, (
             "The 2010 census's report prints San Salvador's racial groups only "
             "together with Rum Cay's (Table 8.0, San Salvador & Rum Cay, 1,039 "
             "people), so the table is not this island's alone.")),
@@ -9931,11 +9936,19 @@ def refuse_not_this_ground(admin1: dict[str, list[dict[str, Any]]],
                 current = entity.get(field)
                 origin = (entity.get("_from") or {}).get(field)
                 refused = dict(gap(NOT_AVAILABLE, note), not_this_ground=True)
-                if field == "population" and published(current) is not None:
+                if field == "population":
                     # The unit's own count, refused only for this polygon: kept
                     # (as a build flag, never written out) so that a country's
-                    # sum can still weigh how much of it this unit is.
-                    refused["refused_value"] = published(current)
+                    # sum can still weigh how much of it this unit is. A reader
+                    # that wrote the gap itself hands the count on the same way:
+                    # morocco_rgph2024's Laayoune-Sakia El Hamra had displaced
+                    # the figure this refusal would have kept, and Morocco's
+                    # language went unsummed for want of its 451,028.
+                    kept = published(current)
+                    if kept is None and isinstance(current, dict):
+                        kept = current.get("refused_value")
+                    if kept is not None:
+                        refused["refused_value"] = kept
                 if field == "population" and entity.get("level") == "admin1":
                     # Its divisions do not make the ground the figure was for
                     # either: no sum of them stands in for it.

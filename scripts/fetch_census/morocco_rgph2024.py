@@ -280,14 +280,20 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         code, row = hit
         region_of_shape[shape["id"]] = code
         if code in CLAIM_LINE_REGIONS:
+            why = stated(
+                f"This polygon is only the part of the {CLAIM_LINE_REGIONS[code]} region "
+                "north of the Western Sahara line; the region's people live almost all "
+                "across it. The 2024 census counts the region whole "
+                f"({row['total']:,}), and no source counts this part apart, so no "
+                "figure is shown here.")
+            # The region's own count goes with the reason and is never shown:
+            # the build weighs by it how much of Morocco the region is when it
+            # sums the country from its regions (covered_share), and takes it
+            # off before writing, as it does a count NOT_THIS_GROUND refuses.
+            why["population"]["refused_value"] = row["total"]
             records.append(record(
                 f"MAR-RGPH2024-{code}", shape["name"], level="admin1", parent="MAR",
-                country="MAR", match_by="shape_id", shape_id=shape["id"], **stated(
-                    f"This polygon is only the part of the {CLAIM_LINE_REGIONS[code]} region "
-                    "north of the Western Sahara line; the region's people live almost all "
-                    "across it. The 2024 census counts the region whole "
-                    f"({row['total']:,}), and no source counts this part apart, so no "
-                    "figure is shown here.")))
+                country="MAR", match_by="shape_id", shape_id=shape["id"], **why))
             report.append(f"region {shape['name']!r}: across the line, written as a gap")
             continue
         records.append(record(f"MAR-RGPH2024-{code}", shape["name"], level="admin1",

@@ -175,6 +175,15 @@ class Declarations(unittest.TestCase):
                 for word in ("cod_ps", ".json", "adapter", "build", "pipeline"):
                     self.assertNotIn(word, note, f"{iso3} {field}")
 
+    def test_a_composition_refusal_names_no_file(self):
+        # The file a composition came from is no longer known when the
+        # compositions are refused, so a refusal scoped to one never applies:
+        # San Salvador's ethnicity stood through a whole build that way.
+        for (iso3, shape_id), fields in be.NOT_THIS_GROUND.items():
+            for field, (source, _note) in fields.items():
+                if field in be.ROLLUP_FIELDS:
+                    self.assertIsNone(source, f"{iso3} {shape_id} {field}")
+
     def test_the_argoba_row_is_scoped_to_amhara_and_drawn(self):
         # The polygon "Special Woreda" in Amhara is Argoba's; Bahir Dar's
         # special wereda stays a declared absence.
@@ -409,6 +418,34 @@ class NotThisGround(unittest.TestCase):
         self.run_pass(e, {"population": (None, "North of the line.")})
         self.assertEqual(e["population"]["note"], "North of the line.")
         self.assertTrue(e["population"]["no_child_sum"])
+
+    def test_a_refused_count_is_kept_to_weigh_the_country(self):
+        e = unit("m", level="admin1", population={"value": 451028},
+                 _from={"population": "hcp.json"})
+        self.run_pass(e, {"population": (None, "North of the line.")})
+        self.assertEqual(e["population"]["refused_value"], 451028)
+
+    def test_a_count_a_reader_hands_on_with_its_own_reason_is_kept_too(self):
+        # morocco_rgph2024 writes Laayoune-Sakia El Hamra's reason itself,
+        # displacing the figure this pass would have kept, and hands the
+        # region's count on with it; without it Morocco's language was not
+        # summed for want of the 1.2% the region is.
+        e = unit("m", level="admin1",
+                 population={"status": be.NOT_AVAILABLE, "note": "Across the line.",
+                             "refused_value": 451028})
+        self.run_pass(e, {"population": (None, "North of the line.")})
+        self.assertEqual(e["population"]["note"], "North of the line.")
+        self.assertEqual(e["population"]["refused_value"], 451028)
+        others = [{"population": {"value": 9_000_000},
+                   "language": [{"group": "A", "pct": 100.0}]}]
+        self.assertAlmostEqual(be.covered_share([e] + others, "language"),
+                               9_000_000 / 9_451_028)
+
+    def test_a_refused_count_is_never_written(self):
+        e = {"population": {"status": be.NOT_AVAILABLE, "note": "x.", "refused_value": 5,
+                            "not_this_ground": True}}
+        be.drop_build_flags(e)
+        self.assertEqual(e["population"], {"status": be.NOT_AVAILABLE, "note": "x."})
 
     def test_a_bare_gap_is_given_the_reason(self):
         e = unit("x", religion={"status": be.NOT_COLLECTED, "note": "Country policy."})

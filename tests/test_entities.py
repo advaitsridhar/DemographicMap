@@ -439,6 +439,17 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         self.assertEqual((pop["value"], pop["year"]), (744945, 2024))
         self.assertIn("sum of all 3 divisions", pop["note"])
 
+    def test_the_divisions_source_is_named_whole(self):
+        # Cut at sixty characters, OCHA's dataset was named "population
+        # statistics (c)." under Moxico and Vatovavy-Fitovinany.
+        a1, a2 = self.tables([515629, 129054])
+        for kid in a2["AGO"]:
+            kid["population"]["source"] = ("OCHA, Common Operational Dataset -- population "
+                                           "statistics (cod-ps-ago), reference year 2024")
+        be.fill_parent_populations(a1, a2)
+        note = a1["AGO"][0]["population"]["note"]
+        self.assertIn("drawn inside it (OCHA's common operational dataset).", note)
+
     def test_one_division_without_a_figure_leaves_the_gap(self):
         a1, a2 = self.tables([515629, None])
         self.assertEqual(be.fill_parent_populations(a1, a2), [])

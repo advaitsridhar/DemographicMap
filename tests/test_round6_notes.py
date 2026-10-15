@@ -381,6 +381,11 @@ class MoroccoCensusTest(unittest.TestCase):
                 self.assertIn("Western Sahara line", cell["note"])
         self.assertIn("(52 people)", by["c"]["population"]["note"])
         self.assertIn("(570)", by["R11"]["population"]["note"])
+        # The region's count rides on its reason for the country's sum to weigh
+        # by; a province's piece carries none.
+        self.assertEqual(by["R11"]["population"]["refused_value"], 570)
+        self.assertNotIn("refused_value", by["R11"]["religion"])
+        self.assertNotIn("refused_value", by["c"]["population"])
         # A polygon of the region the line cuts that is not a declared piece is left alone.
         self.assertNotIn("d", by)
 
