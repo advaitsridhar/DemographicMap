@@ -358,12 +358,12 @@
       "status": "not_available"
     },
     "population": {
-      "value": 17523996,
+      "value": 18949574,
       "year": 2022,
       "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
     },
     "median_age": {
-      "value": 33.6,
+      "value": 33.5,
       "unit": "years",
       "year": 2022,
       "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
@@ -383,48 +383,43 @@
     "ethnicity": [
       {
         "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
-        "pct": 97.1,
-        "count": 16908272
+        "pct": 97.2,
+        "count": 18295766
       },
       {
         "group": "Indigenous (people not stated)",
         "pct": 1.0,
-        "count": 179726
+        "count": 189433
       },
       {
         "group": "Afro-descendant",
         "pct": 0.7,
-        "count": 128804
+        "count": 137714
       },
       {
         "group": "Guaraní",
         "pct": 0.3,
-        "count": 49845
+        "count": 52477
       },
       {
         "group": "Mapuche",
         "pct": 0.2,
-        "count": 29677
-      },
-      {
-        "group": "Aymara",
-        "pct": 0.1,
-        "count": 8995
+        "count": 30182
       },
       {
         "group": "Diaguita",
         "pct": 0.1,
-        "count": 15949
+        "count": 16162
       },
       {
         "group": "Qom (Toba)",
         "pct": 0.1,
-        "count": 16503
+        "count": 16997
       },
       {
         "group": "Quechua",
         "pct": 0.1,
-        "count": 25770
+        "count": 25965
       },
       {
         "group": "Alakaluf",
@@ -434,42 +429,47 @@
       {
         "group": "Aoniken",
         "pct": 0.0,
-        "count": 225
+        "count": 235
       },
       {
         "group": "Atacama",
         "pct": 0.0,
-        "count": 696
+        "count": 723
       },
       {
         "group": "Avipón",
         "pct": 0.0,
-        "count": 201
+        "count": 222
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 9156
       },
       {
         "group": "Chana",
         "pct": 0.0,
-        "count": 423
+        "count": 951
       },
       {
         "group": "Chané",
         "pct": 0.0,
-        "count": 145
+        "count": 162
       },
       {
         "group": "Charrúa",
         "pct": 0.0,
-        "count": 3626
+        "count": 6657
       },
       {
         "group": "Chicha",
         "pct": 0.0,
-        "count": 309
+        "count": 325
       },
       {
         "group": "Chorote",
         "pct": 0.0,
-        "count": 182
+        "count": 194
       },
       {
         "group": "Churumata",
@@ -479,42 +479,42 @@
       {
         "group": "Comechingón",
         "pct": 0.0,
-        "count": 5111
+        "count": 5261
       },
       {
         "group": "Corundí",
         "pct": 0.0,
-        "count": 85
+        "count": 91
       },
       {
         "group": "Diaguita Cacano",
         "pct": 0.0,
-        "count": 340
+        "count": 344
       },
       {
         "group": "Fiscara",
         "pct": 0.0,
-        "count": 25
+        "count": 26
       },
       {
         "group": "Guarayo",
         "pct": 0.0,
-        "count": 70
+        "count": 73
       },
       {
         "group": "Guaycurú",
         "pct": 0.0,
-        "count": 412
+        "count": 456
       },
       {
         "group": "Günün A Küna",
         "pct": 0.0,
-        "count": 1404
+        "count": 1428
       },
       {
         "group": "Huarpe",
         "pct": 0.0,
-        "count": 1902
+        "count": 1960
       },
       {
         "group": "Iogys",
@@ -534,7 +534,7 @@
       {
         "group": "Kolla",
         "pct": 0.0,
-        "count": 6348
+        "count": 6445
       },
       {
         "group": "Kolla Atacameño",
@@ -544,12 +544,12 @@
       {
         "group": "Lule",
         "pct": 0.0,
-        "count": 301
+        "count": 311
       },
       {
         "group": "Lule Vilela",
         "pct": 0.0,
-        "count": 297
+        "count": 301
       },
       {
         "group": "Mak'A",
@@ -559,22 +559,22 @@
       {
         "group": "Mapuche Tehuelche",
         "pct": 0.0,
-        "count": 4993
+        "count": 5059
       },
       {
         "group": "Mbya Guaraní",
         "pct": 0.0,
-        "count": 560
+        "count": 584
       },
       {
         "group": "Minuán",
         "pct": 0.0,
-        "count": 5
+        "count": 48
       },
       {
         "group": "Mocoví",
         "pct": 0.0,
-        "count": 1573
+        "count": 1814
       },
       {
         "group": "Nivaclé",
@@ -589,32 +589,32 @@
       {
         "group": "Omaguaca",
         "pct": 0.0,
-        "count": 407
+        "count": 418
       },
       {
         "group": "Pilagá",
         "pct": 0.0,
-        "count": 128
+        "count": 135
       },
       {
         "group": "Querandí",
         "pct": 0.0,
-        "count": 710
+        "count": 729
       },
       {
         "group": "Ranquel",
         "pct": 0.0,
-        "count": 3648
+        "count": 3694
       },
       {
         "group": "Sanavirón",
         "pct": 0.0,
-        "count": 373
+        "count": 376
       },
       {
         "group": "Selk'Nam/Ona",
         "pct": 0.0,
-        "count": 285
+        "count": 298
       },
       {
         "group": "Tapiete",
@@ -629,27 +629,27 @@
       {
         "group": "Tehuelche",
         "pct": 0.0,
-        "count": 4860
+        "count": 4963
       },
       {
         "group": "Tilián",
         "pct": 0.0,
-        "count": 11
+        "count": 12
       },
       {
         "group": "Toara",
         "pct": 0.0,
-        "count": 45
+        "count": 46
       },
       {
         "group": "Tonokoté",
         "pct": 0.0,
-        "count": 921
+        "count": 924
       },
       {
         "group": "Vilela",
         "pct": 0.0,
-        "count": 117
+        "count": 118
       },
       {
         "group": "Wayteca/Chono",
@@ -659,17 +659,17 @@
       {
         "group": "Weenhayek",
         "pct": 0.0,
-        "count": 28
+        "count": 30
       },
       {
         "group": "Wichí",
         "pct": 0.0,
-        "count": 4335
+        "count": 4472
       },
       {
         "group": "Yagán",
         "pct": 0.0,
-        "count": 23
+        "count": 25
       }
     ],
     "sources": [
@@ -690,6 +690,24 @@
         "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 9, por pueblo; población afrodescendiente, cuadro 7)",
         "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c9_2.xlsx",
         "year": 2022
+      },
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c1_8.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c4_8.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 9, por pueblo; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_entrerios_poblacion_indigena_c9_8.xlsx",
+        "year": 2022
       }
     ],
     "country": "ARG",
@@ -699,9 +717,10 @@
     "match_by": "shape_id",
     "shape_id": "19177384B97722443848736",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
+    "median_age_note": "The boundary file draws Entre Ríos inside this polygon and no first-level polygon of its own, so the figures here are Buenos Aires and Entre Ríos together. Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Two questions the 2022 census asked the 17,408,906 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 25% of the indigenous population speak or understand their people's language."
+    "ethnicity_note": "The boundary file draws Entre Ríos inside this polygon and no first-level polygon of its own, so the figures here are Buenos Aires and Entre Ríos together. Two questions the 2022 census asked the 18,824,003 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 25% of the indigenous population speak or understand their people's language.",
+    "population_note": "The boundary file draws Entre Ríos inside this polygon and no first-level polygon of its own, so the figures here are Buenos Aires and Entre Ríos together. The 2022 census counts Buenos Aires 17,523,996 and Entre Ríos 1,425,578; this is their sum, 18,949,574."
   },
   {
     "id": "ARG-INDEC-10",
@@ -3618,11 +3637,6 @@
     "codes": {
       "indec": "46"
     },
-    "match_by": "shape_id",
-    "shape_id": "19177384B72583408220290",
-    "aliases": [
-      "La Roja"
-    ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 382,453 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 14% of the indigenous population speak or understand their people's language."
@@ -7224,11 +7238,6 @@
     "codes": {
       "indec": "94"
     },
-    "match_by": "shape_id",
-    "shape_id": "19177384B7010788354129",
-    "aliases": [
-      "Tierra del Fuego"
-    ],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 31.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 184,958 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 19% of the indigenous population speak or understand their people's language."
@@ -8639,9 +8648,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B59817068959156",
-    "aliases": [
-      "Adolfo Gonzáles Chaves"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 35.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 12,847 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 13% of the indigenous population speak or understand their people's language."
@@ -10633,9 +10640,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B45528536534389",
-    "aliases": [
-      "Coronel de Marina L. Rosales"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 34.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 65,823 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
@@ -20595,9 +20600,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B62302984984112",
-    "aliases": [
-      "Paclin"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 4,696 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
@@ -20680,9 +20683,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B48511689100190",
-    "aliases": [
-      "Poman"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 12,219 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
@@ -26741,9 +26742,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B22683842441482",
-    "aliases": [
-      "1ro. de Mayo"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 14,265 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 26% of the indigenous population speak or understand their people's language."
@@ -27988,9 +27987,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B5870054171142",
-    "aliases": [
-      "Martires"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 37.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 744 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 17% of the indigenous population speak or understand their people's language."
@@ -28073,9 +28070,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B85851407891039",
-    "aliases": [
-      "Paso de los Indios"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 1,882 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 14% of the indigenous population speak or understand their people's language."
@@ -29403,9 +29398,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B78785017489869",
-    "aliases": [
-      "Nogoya"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 34.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 42,954 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
@@ -30567,9 +30560,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B72104600250977",
-    "aliases": [
-      "Pirane"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 29.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 72,560 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 72% of the indigenous population speak or understand their people's language."
@@ -31980,9 +31971,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B17407958230561",
-    "aliases": [
-      "Yaví"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 29.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 25,831 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 54% of the indigenous population speak or understand their people's language."
@@ -32065,9 +32054,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B71031057558278",
-    "aliases": [
-      "Atreuco"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 36.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 11,053 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 9% of the indigenous population speak or understand their people's language."
@@ -32731,9 +32718,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B98672472309924",
-    "aliases": [
-      "Chical Có"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 32.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 1,461 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 7% of the indigenous population speak or understand their people's language."
@@ -34144,9 +34129,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B22460334108875",
-    "aliases": [
-      "Coronel Felipe Varela"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 32.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 11,371 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
@@ -34478,9 +34461,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B31870245826613",
-    "aliases": [
-      "General Angel V. Peñaloza"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 3,184 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 5% of the indigenous population speak or understand their people's language."
@@ -34646,9 +34627,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B64076546006472",
-    "aliases": [
-      "General Juan F.Quiroga"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 31.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 4,013 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 21% of the indigenous population speak or understand their people's language."
@@ -34814,9 +34793,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B1877190753616",
-    "aliases": [
-      "General Ocampo"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 7,347 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 24% of the indigenous population speak or understand their people's language."
@@ -36891,9 +36868,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B76555431598408",
-    "aliases": [
-      "Apostoles"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 27.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 50,503 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 24% of the indigenous population speak or understand their people's language."
@@ -37308,9 +37283,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B34474057540122",
-    "aliases": [
-      "El Dorado"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 29.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 91,133 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 54% of the indigenous population speak or understand their people's language."
@@ -38389,9 +38362,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B32081384015227",
-    "aliases": [
-      "Anelo"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 27.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 18,150 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 29% of the indigenous population speak or understand their people's language."
@@ -38474,9 +38445,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B52691065899930",
-    "aliases": [
-      "Catan Lil"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 2,641 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 53% of the indigenous population speak or understand their people's language."
@@ -38891,9 +38860,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B88853023630124",
-    "aliases": [
-      "Lacar"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 34.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 39,567 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 27% of the indigenous population speak or understand their people's language."
@@ -40304,9 +40271,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B95848117097679",
-    "aliases": [
-      "Pichi Mahuída"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 16,493 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 13% of the indigenous population speak or understand their people's language."
@@ -40389,9 +40354,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B63808307170695",
-    "aliases": [
-      "Pilnaniyeu"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 37.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 9,309 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 22% of the indigenous population speak or understand their people's language."
@@ -43296,9 +43259,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B85841660882492",
-    "aliases": [
-      "9 de julio"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 27.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 12,498 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 21% of the indigenous population speak or understand their people's language."
@@ -44792,9 +44753,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B37295099370503",
-    "aliases": [
-      "La Capital"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 31.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 260,769 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 12% of the indigenous population speak or understand their people's language."
@@ -46537,9 +46496,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B50411515207012",
-    "aliases": [
-      "San Cristobal"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 32.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 72,593 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 12% of the indigenous population speak or understand their people's language."
@@ -48199,9 +48156,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B19837134975286",
-    "aliases": [
-      "Juan F. Ibarra"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 25.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 20,567 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 15% of the indigenous population speak or understand their people's language."
@@ -48533,9 +48488,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B49758081905530",
-    "aliases": [
-      "Ojo de agua"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 29.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 15,008 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 12% of the indigenous population speak or understand their people's language."
@@ -48618,9 +48571,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B89830542201766",
-    "aliases": [
-      "Pelegrini"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 27.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 26,193 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 10% of the indigenous population speak or understand their people's language."
@@ -49616,9 +49567,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B2044576725385",
-    "aliases": [
-      "Famallá"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 28.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 42,669 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 13% of the indigenous population speak or understand their people's language."
@@ -49784,9 +49733,7 @@
     },
     "match_by": "shape_id",
     "shape_id": "61730980B38664240857483",
-    "aliases": [
-      "Juan B. Alberdi"
-    ],
+    "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 30.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Two questions the 2022 census asked the 34,745 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; which people is published for the province only, so the department's indigenous population is one line. the census asks nothing about European or mestizo ancestry. 8% of the indigenous population speak or understand their people's language."
