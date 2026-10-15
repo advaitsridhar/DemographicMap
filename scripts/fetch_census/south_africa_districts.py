@@ -49,6 +49,7 @@ YEAR = 2022
 CENSUS = 1                           # the service's time series: 1 is Census 2022
 PROVINCE, DISTRICT = 2, 5            # the service's geography levels
 NATIONAL = 62_027_503
+SLACK = 3                            # people a separately rounded count may miss by
 OUT = "south_africa_districts.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -106,29 +107,38 @@ def read() -> dict[str, Any]:
             code = d["districtMdbc"]
             men, women = by_sex(code)
             own = indicators(DISTRICT, code)
-            if own.get("Total population") != men + women:
+            total = own.get("Total population")
+            # The census's counts are weighted and each is rounded on its own,
+            # so men and women can miss the total by a person or two (Alfred
+            # Nzo: 439,455 and 497,006 against 936,462). More is a misreading.
+            if not isinstance(total, (int, float)) or abs(men + women - total) > SLACK:
                 raise SystemExit(f"south_africa_districts: {d['districtName']}: {men:,} men and "
-                                 f"{women:,} women against a total of {own.get('Total population')}")
+                                 f"{women:,} women against a total of {total}")
             if abs(100 * men / (men + women) - float(own.get("Male") or 0)) > 0.06:
                 raise SystemExit(f"south_africa_districts: {d['districtName']}: the first count "
                                  f"by sex is not the men's ({own.get('Male')}% men)")
             districts.append({"code": code, "name": " ".join(str(d["districtName"]).split()),
-                              "province": name, "men": men, "women": women})
+                              "province": name, "men": men, "women": women, "total": int(total)})
             time.sleep(0.2)
     check(provinces, districts)
     return {"provinces": provinces, "districts": districts}
 
 
 def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]]) -> None:
+    """The provinces make the country and each province's districts make it,
+    to the rounding of separately rounded counts (``SLACK`` a unit)."""
     national = sum(p["total"] or 0 for p in provinces.values())
-    if national != NATIONAL:
+    if abs(national - NATIONAL) > SLACK * len(provinces):
         raise SystemExit(f"south_africa_districts: the provinces make {national:,}, "
                          f"not {NATIONAL:,}")
     for name, p in provinces.items():
-        made = sum(d["men"] + d["women"] for d in districts if d["province"] == name)
-        if made != p["total"]:
+        mine = [d for d in districts if d["province"] == name]
+        made = sum(d["total"] for d in mine)
+        if not mine or abs(made - p["total"]) > SLACK * len(mine):
             raise SystemExit(f"south_africa_districts: {name}'s districts make {made:,}, "
                              f"not {p['total']:,}")
+        if made != p["total"]:
+            log(f"  {name}: its {len(mine)} districts make {made:,} against {p['total']:,}")
 
 
 def bind(districts: list[dict[str, Any]], admin1: list[dict[str, Any]],
@@ -177,7 +187,7 @@ def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
         out.append(record(
             f"ZAF-2022-{d['code']}", shape["name"], level="admin2", parent="ZAF", country="ZAF",
             match_by="shape_id", shape_id=shape["id"],
-            population=measure(d["men"] + d["women"], year=YEAR, source=SOURCE),
+            population=measure(d["total"], year=YEAR, source=SOURCE),
             population_note=note,
             sex_ratio=measure(round(100 * d["men"] / d["women"], 1), unit="males_per_100_females",
                               year=YEAR, source=SOURCE),

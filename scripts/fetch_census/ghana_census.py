@@ -14,9 +14,9 @@ sex ratio (males per 100 females) from the counts by sex, the median age from
 the counts by single year of age, and religion and ethnicity as shares of
 their own counts. The census's "Christian" is a subtotal of four groups
 (Protestant, Catholic, Pentecostal/Charismatic, Other Christian), which are
-shown instead of it. Fewer people are counted by ethnic group than live in
-most districts, so the ethnic shares are of the people counted by ethnic
-group, and each unit's note gives both numbers.
+shown instead of it. Fewer people are counted by religion, and fewer still by
+ethnic group, than live in a district, so each composition is a share of the
+people its table counts, and each unit's note gives both numbers.
 
 **The districts.** The census counts 261 districts; the boundary file draws
 260, drawn before Guan district was made in 2019 out of the Santrokofi,
@@ -38,9 +38,10 @@ Bosomtwe, the census's "Cape Cape Metropolitan Area").
 
 **Checks before anything is written.** For every area: men and women make the
 total, and the single years of age make it too; the religions make their
-total, which is the population, and the four Christian groups make
-"Christian"; the ethnic groups make their total, which is no more than the
-population. Each region's districts make the region, the regions make Ghana,
+total and the four Christian groups make "Christian"; the ethnic groups make
+theirs. Neither table counts everyone (the religion table 30,753,327 of
+Ghana's 30,832,019), so each composition is a share of its own table's count,
+which may not exceed the population, and each unit's note gives both numbers. Each region's districts make the region, the regions make Ghana,
 and Ghana is 30,832,019. Every polygon is bound to one census district (Hohoe
 to two), and every census district to one polygon.
 
@@ -263,13 +264,16 @@ def check_area(area: str, c: dict[str, Any]) -> None:
     same(c["men"] + c["women"], c["total"], "men and women against the total")
     same(sum(c["ages"].values()), c["total"], "the single years of age against the total")
     same(sum(c["religion"].values()), c["religion_total"], "the religions against their total")
-    same(c["religion_total"], c["total"], "the religion table's total against the population")
     same(sum(c["religion"][k] for k in CHRISTIAN), c["christian"],
          "the four Christian groups against Christian")
     same(sum(c["ethnicity"].values()), c["ethnicity_total"], "the ethnic groups against their total")
-    if c["ethnicity_total"] > c["total"]:
-        raise SystemExit(f"ghana_census: {area}: more people counted by ethnic group "
-                         f"({c['ethnicity_total']:,.0f}) than live there ({c['total']:,.0f})")
+    # Neither question is tabulated for everyone: Ghana's religion table counts
+    # 30,753,327 of the 30,832,019, and ethnicity fewer. Each composition is a
+    # share of its own table's count, and the notes give both numbers.
+    for what in ("religion", "ethnicity"):
+        if c[f"{what}_total"] > c["total"]:
+            raise SystemExit(f"ghana_census: {area}: more people counted by {what} "
+                             f"({c[f'{what}_total']:,.0f}) than live there ({c['total']:,.0f})")
 
 
 def add(parts: list[dict[str, Any]]) -> dict[str, Any]:
@@ -380,9 +384,11 @@ def fields(c: dict[str, Any], note: str) -> dict[str, Any]:
         "median_age": measure(median, unit="years", year=YEAR, source=src["population"]),
         "religion": shares(c["religion"], total=c["religion_total"]),
         "religion_year": YEAR,
-        "religion_note": ("Religious affiliation as the 2021 census counts it, of every resident. "
-                          "The census's 'Christian' is shown as its four groups: Protestant, "
-                          "Catholic, Pentecostal/Charismatic and Other Christian."),
+        "religion_note": (f"Religious affiliation as the 2021 census counts it. These shares are of "
+                          f"the {c['religion_total']:,.0f} people the census counts by religion "
+                          f"here, of {c['total']:,.0f} residents. The census's 'Christian' is "
+                          "shown as its four groups: Protestant, Catholic, Pentecostal/Charismatic "
+                          "and Other Christian."),
         "ethnicity": shares(c["ethnicity"], total=c["ethnicity_total"]),
         "ethnicity_year": YEAR,
         "ethnicity_note": ethnic_note,

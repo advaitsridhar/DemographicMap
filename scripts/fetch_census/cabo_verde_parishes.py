@@ -139,16 +139,21 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
     p = next((j for k, j in cols.items() if k.startswith("populacao")), None)
     if p is None:
         raise SystemExit(f"cabo_verde_parishes: {where}: no 'População residente' column")
-    zones: dict[str, dict[str, float]] = {}
-    places: dict[str, float] = {}
+    # A zone is keyed by its name and the order it comes in: two zones of one
+    # parish can share a name (Nossa Senhora do Rosário has two "Cidade de
+    # Ribeira Grande"). Were a zone printed twice instead, the municipality's
+    # parishes would overshoot INE's table by municipality, which check() tests.
+    zones: dict[tuple[str, int], dict[str, float]] = {}
+    places: dict[tuple[str, int], float] = {}
     own: dict[str, float] = {}
-    zone = level = None
+    zone: tuple[str, int] | None = None
+    level = None
     for row in rows[head + 1:]:
         cells = list(row) + [""] * (max(z, lugar, s, p) + 1)
         if str(cells[z]).strip():
-            zone, level = " ".join(str(cells[z]).split()), "zone"
-            if fold(zone).startswith("total"):
-                level = "own"
+            name = " ".join(str(cells[z]).split())
+            zone = (name, sum(1 for n, _ in zones if n == name))
+            level = "own" if fold(name).startswith("total") else "zone"
         elif str(cells[lugar]).strip():
             level = "place"
         sex = fold(cells[s])
@@ -159,7 +164,8 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
             own[sex] = value
         elif level == "zone":
             if sex in zones.setdefault(zone, {}):
-                raise SystemExit(f"cabo_verde_parishes: {where}: zone {zone!r} printed twice")
+                raise SystemExit(f"cabo_verde_parishes: {where}: zone {zone[0]!r} has two "
+                                 f"{sex} rows")
             zones[zone][sex] = value
         elif sex == "total":
             places[zone] = places.get(zone, 0.0) + value
@@ -167,10 +173,10 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
         raise SystemExit(f"cabo_verde_parishes: {where}: no zones")
     for name, row in zones.items():
         if row.get("masculino", 0) + row.get("feminino", 0) != row.get("total"):
-            raise SystemExit(f"cabo_verde_parishes: {where}: zone {name}'s men and women do not "
-                             f"make its total {row}")
+            raise SystemExit(f"cabo_verde_parishes: {where}: zone {name[0]}'s men and women do "
+                             f"not make its total {row}")
         if name in places and places[name] != row["total"]:
-            raise SystemExit(f"cabo_verde_parishes: {where}: zone {name}'s localities make "
+            raise SystemExit(f"cabo_verde_parishes: {where}: zone {name[0]}'s localities make "
                              f"{places[name]:,.0f}, not {row['total']:,.0f}")
     out = {"total": sum(r["total"] for r in zones.values()),
            "men": sum(r["masculino"] for r in zones.values()),

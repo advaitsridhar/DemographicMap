@@ -895,13 +895,13 @@ class SouthAfricaDistrictsTest(unittest.TestCase):
               {"id": "g", "name": "Eden", "parent": "W"},
               {"id": "b", "name": "Bojanala", "parent": "N"}]
     DISTRICTS = [{"code": "DC28", "name": "King Cetshwayo", "province": "KwaZulu-Natal",
-                  "men": 48, "women": 52},
+                  "men": 48, "women": 52, "total": 100},
                  {"code": "ETH", "name": "eThekwini", "province": "KwaZulu-Natal",
-                  "men": 100, "women": 100},
+                  "men": 100, "women": 100, "total": 200},
                  {"code": "DC4", "name": "Garden Route", "province": "Western Cape",
-                  "men": 49, "women": 51},
+                  "men": 49, "women": 51, "total": 100},
                  {"code": "DC37", "name": "Bojanala Platinum", "province": "North West",
-                  "men": 60, "women": 40}]
+                  "men": 60, "women": 40, "total": 101}]
 
     def setUp(self):
         from scripts.fetch_census import south_africa_districts as za
@@ -916,7 +916,7 @@ class SouthAfricaDistrictsTest(unittest.TestCase):
         self.assertIn("King Cetshwayo (the boundary file's 'Uthungulu')", by["u"]["population_note"])
         self.assertEqual(by["e"]["population_note"], "Census 2022's count for eThekwini.")
         self.assertIn("Garden Route", by["g"]["population_note"])
-        self.assertEqual(by["b"]["population"]["value"], 100)
+        self.assertEqual(by["b"]["population"]["value"], 101)          # the service's own total
 
     def test_a_district_on_no_polygon_stops_the_run(self):
         with self.assertRaises(SystemExit):
@@ -934,8 +934,8 @@ class SouthAfricaDistrictsTest(unittest.TestCase):
             provinces = {"KwaZulu-Natal": {"id": 5, "total": 300}, "Western Cape": {"id": 1, "total": 100},
                          "North West": {"id": 6, "total": 100}}
             za.check(provinces, self.DISTRICTS)
-            provinces["Western Cape"]["total"] = 101
-            provinces["North West"]["total"] = 99
+            provinces["Western Cape"]["total"] = 110
+            provinces["North West"]["total"] = 100
             with self.assertRaises(SystemExit):
                 za.check(provinces, self.DISTRICTS)
         finally:
@@ -977,6 +977,12 @@ class CaboVerdeParishesTest(unittest.TestCase):
         bad[4][4] = 108.0                                   # men and women no longer make it
         with self.assertRaises(SystemExit):
             self.cv.parish(bad, "test")
+        # Two zones of one name are two zones (Ribeira Grande's "Cidade").
+        twice = CPV_SHEET + [["", "CIDADE", "", "Total", 3.0, 1.0],
+                             ["", "", "", "Masculino", 2.0, 1.0],
+                             ["", "", "", "Feminino", 1.0, 0.0]]
+        got = self.cv.parish(twice, "test")
+        self.assertEqual((got["total"], got["zones"]), (203.0, 3.0))
 
     def test_names_and_the_one_parish_rule(self):
         cv = self.cv
