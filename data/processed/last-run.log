@@ -1,2 +1,14 @@
-https://web.archive.org/web/2024id_/https://ine.cv/wp-content/uploads/2023/07/resultados-definitivos-2021-corrigido.xls: HTTPError: HTTP Error 404: NOT FOUND
-https://web.archive.org/web/2024id_/https://ine.cv/wp-content/uploads/2022/06/resultados-definitivos-2020-1.xls: HTTPError: HTTP Error 404: NOT FOUND
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 156 characters
+/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/r6_probe.py:67: FutureWarning: Possible nested set at position 1
+  for m in re.finditer(grep, text, re.I):
+  0 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 201 characters
+  0 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2023/07/resultados-definitivos-2021-corrigido.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
+  0 distinct match(es)
+  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype :: <urlopen error timed out>
+  retry 2/4 after 4s :: https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype :: <urlopen error _ssl.c:999: The handshake operation timed out>
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 186 characters
+  0 distinct match(es)
+https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/02/quadros_tabelas_publicacao.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
+  0 distinct match(es)
