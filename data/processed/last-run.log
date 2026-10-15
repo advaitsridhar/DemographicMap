@@ -1,59 +1,14 @@
-  Tombali: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf: 666,188 bytes, sha256 7a0dd26616b771d601e265a4b92474c10b4e4f2520ca44394064e76dd87291e6
-  Tombali: region (91089, 44099, 46990); sectors Cacine 15,648, Komo 8,777, Catió 26,999, Quebo 15,372, Bedanda 24,293
-  Quinara: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf: 598,031 bytes, sha256 b6759aeb668e51ae22a92e22d187a6dad96034e678fc5dc10950dd5e518b7c82
-  Quinara: region (60777, 29854, 30923); sectors Quinara 17,123, Buba 17,123, Empada 17,517, Fulacunda 11,275, Tite 14,862
-  Oio: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf: 833,713 bytes, sha256 55f151cfe319bda60abeea750a9109991dbd7dff5a3539b22b583debcf81d4cf
-  Oio: region (215259, 103194, 112065); sectors Farim 48,264, Mansoa 46,046, Mansaba 43,725, Nhacra 20,639, Bissorã 56,585
-  Biombo: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf: 511,049 bytes, sha256 67d358b24e0d89a2fcf569ade09f6ca07d0414bb985c6b581d521a004a08e5cc
-  Biombo: region (93039, 43747, 49292); sectors Prabis 33,024, Safim 17,356, Quinhamel 42,659
-  Bolama: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf: 565,001 bytes, sha256 4c5934d8e780cb90e74b17199b4199333c2f84b8bcd1edfbdf3c1a78befe4587
-  Bolama: region (32424, 15770, 16654); sectors Uno 6,751, Caravela 4,263, Bolama 10,206, Bubaque 11,204
-  Bafatá: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf: 919,070 bytes, sha256 c70ec1833f551a480ebd5d19b79adbc0fc61b45fe37511fefe53f1f613bb6b7b
-  Bafatá: region (200884, 97231, 103653); sectors Bafatá 68,956, Contuboel 44,048, Gã-mamudo 24,564, Xitole 16,928, Bambadinca 31,834, Cossé 14,554
-  Gabú: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf: 814,827 bytes, sha256 77dd9c3d1942a699890d197ab055e3bf90884a7f633b40c4077af0f1e69575e3
-  Gabú: region (205608, 99591, 106017); sectors Boé 10,878, Gabú 81,495, Sonaco 37,804, Pitche 45,594, Pirada 29,837
-  Cacheu: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf: 913,086 bytes, sha256 cb9126295e1057660975725fdf11f125f2e0cd738f52f8a1cbd1c86139f4d3e2
-  Cacheu: region (185053, 88132, 96921); sectors Cacheu 18,563, Caió 12,696, Canchungo 43,709, Bigene 51,412, São Domingos 29,116, Bula 29,557
-  Bissau: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/SAB_RGPH_2009.pdf: 563,140 bytes, sha256 93f5b5bffd8f0521281fa35f49f942a7f2ff51ced9c2c011fbc47dbb02401b2a
-  Bissau: region (365097, 181208, 183889); sectors Sector-3 49,198, Sector-8 25,258, Sector-4 56,934, Sector-2 25,473, Sector-5 41,929, Sector-6 67,812, Sector-7 74,167, Sector-1 24,326
-    Setor de Catie: 35,776 (catio, komo)
-    Setor de Bedanda: 24,293 (bedanda)
-    Setor de Cacine: 15,648 (cacine)
-    Setor de Quebo: 15,372 (quebo)
-    Setor de Buba: 17,123 (buba)
-    Setor de Empada: 17,517 (empada)
-    Setor de Fulacunda: 11,275 (fulacunda)
-    Setor de Tite: 14,862 (tite)
-    Setor de Bissora: 56,585 (bissora)
-    Setor de Farim: 48,264 (farim)
-    Setor de Mansaba: 43,725 (mansaba)
-    Setor de Mansoa: 46,046 (mansoa)
-    Setor de Nhacra: 20,639 (nhacra)
-    Setor de Quinh: 42,659 (quinhamel)
-    Setor de Safim: 17,356 (safim)
-    Setor de Prabis: 33,024 (prabis)
-    Setor de Bolama: 10,206 (bolama)
-    Setor de Bubaque: 11,204 (bubaque)
-    Setor de Caravela: 4,263 (caravela)
-    Setor de Uno: 6,751 (uno)
-    Setor de Bafata: 68,956 (bafata)
-    Setor de Bambadinca: 31,834 (bambadinca)
-    Setor de Galomaro: 14,554 (cosse)
-    Setor de Gamamundo: 24,564 (gamamudo)
-    Setor de Xitole: 16,928 (xitole)
-    Contuboel: 44,048 (contuboel)
-    Setor de Gabv: 81,495 (gabu)
-    Setor de Madina do Bo˒: 10,878 (boe)
-    Setor de Pirada: 29,837 (pirada)
-    Setor de Pitche: 45,594 (pitche)
-    Setor de Sonaco: 37,804 (sonaco)
-    Setor de Bigene: 51,412 (bigene)
-    Setor de Bula: 29,557 (bula)
-    Setor de Cacheu: 18,563 (cacheu)
-    Setor de Canghungo: 43,709 (canchungo)
-    Setor de Sto Domingos: 29,116 (saodomingos)
-    Caió: 12,696 on neither of its two polygons
-    Bissau Autonomous Sector: 365,097 (sector1, sector2, sector3, sector4, sector5, sector6, sector7, sector8)
-  regions read make 1,449,230
-  9 regions and 39 sector polygons written
-  wrote data/processed/guinea_bissau_census.json (85 kB)
+  read https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf: 16,069,809 bytes, sha256 16f5ee5b4fea25fb0d24c5e853823171f4e07dd3d049c9c5260488c07ebf209e
+  10 provinces and 116 districts, making 19,693,423
+  census districts not drawn: []
+  province polygon 'Central': the sum of its drawn districts (2,391,803): The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province.
+  province polygon 'Eastern': the sum of its drawn districts (2,321,898): The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga.
+  province polygon 'Lusaka': the sum of its drawn districts (3,172,603): The 2022 census's final counts for the 7 districts drawn here, added up: Lusaka Province's districts and Chirundu, which the census counts under Southern Province.
+  province polygon 'Muchinga': the sum of its drawn districts (1,062,997): The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province.
+  province polygon 'Southern': the sum of its drawn districts (2,178,638): The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central).
+  SHANG'OMBO DISTRICT: 74,654
+  SENANGA DISTRICT: 113,124
+  SESHEKE DISTRICT: 73,204
+  WESTERN PROVINCE: 1,375,604
+  116 of 116 districts and 10 of 10 provinces written
+  wrote data/processed/zambia_census.json (196 kB)
