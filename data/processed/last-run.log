@@ -1,2 +1,50 @@
-https://census.statssa.gov.za/: 57,280 characters
-https://census.statssa.gov.za/: error: missing ), unterminated subpattern at position 0
+https://statsbank.statsghana.gov.gh/api/v1/en/PHC%202021%20StatsBank/Population/population_table.px: 13,838 characters
+/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/r6_probe.py:67: FutureWarning: Possible nested set at position 51
+  for m in re.finditer(grep, text, re.I):
+/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/r6_probe.py:67: FutureWarning: Possible nested set at position 77
+  for m in re.finditer(grep, text, re.I):
+  "code":"Age"
+  "text":"Age"
+  "values":[
+  "valueTexts":[
+  "code":"Locality"
+  "text":"Locality"
+  "code":"Education"
+  "text":"Education"
+  "code":"Geographic_Area"
+  "text":"Geographic_Area"
+  "code":"Sex"
+  "text":"Sex"
+  12 distinct match(es)
+https://statsbank.statsghana.gov.gh/api/v1/en/PHC%202021%20StatsBank/Population/religion_table.px: 13,360 characters
+  "code":"Religious_Affiliation"
+  "text":"Religious_Affiliation"
+  "values":[
+  "valueTexts":[
+  "code":"Education"
+  "text":"Education"
+  "code":"Locality"
+  "text":"Locality"
+  "code":"Geographic_Area"
+  "text":"Geographic_Area"
+  "code":"Sex"
+  "text":"Sex"
+  "code":"Age"
+  "text":"Age"
+  14 distinct match(es)
+https://statsbank.statsghana.gov.gh/api/v1/en/PHC%202021%20StatsBank/Population/ethnic_table.px: 13,113 characters
+  "code":"Ethnicity"
+  "text":"Ethnicity"
+  "values":[
+  "valueTexts":[
+  "code":"Education"
+  "text":"Education"
+  "code":"Locality"
+  "text":"Locality"
+  "code":"Geographic_Area"
+  "text":"Geographic_Area"
+  "code":"Sex"
+  "text":"Sex"
+  "code":"Age"
+  "text":"Age"
+  14 distinct match(es)
