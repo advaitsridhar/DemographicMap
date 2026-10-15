@@ -8935,8 +8935,15 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
 #   BEL  "Brussels Hoofdstedelijk" at the first level is 79.7 km2, of which
 #        70.6 km2 lies in the Brussels-Capital Region; the other 91.6 km2 of
 #        the region (162.2 km2, drawn whole at the second level as
-#        "Brussels") lies inside the polygon drawn for Flanders. The region's
-#        figures stand on the second-level polygon.
+#        "Brussels") lies inside the polygon drawn for Flanders, and with it
+#        the seats of Anderlecht, Schaerbeek, Molenbeek-Saint-Jean, Uccle,
+#        Jette, Berchem-Sainte-Agathe, Ganshoren and Koekelberg (GeoNames'
+#        points), about half the region's people. Every figure the region
+#        publishes -- Eurostat's population, median age and sex ratio, the
+#        census's nationalities, the survey's religion and language -- stands
+#        on the second-level polygon, and none of them on this one. Belgium's
+#        own sums over its three regions then lack this one; the country's
+#        published figures stand instead.
 #   CPV  Wikidata's undated 30,000 for Tarrafal (Santiago, 115 km2 as drawn)
 #        is nearly twice what the municipality's censuses count; the 2021
 #        census row (wiki_table_population) it stood in front of shows.
@@ -9008,11 +9015,13 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
     ("BEL", "27649430B17719898407236"): {
         field: (None, (
             "This polygon is about half of the Brussels-Capital Region: 70.6 km² "
-            "of the region's 162 km² lie in it, and the rest is drawn inside the "
+            "of the region's 162 km² lie in it, and the rest, with Anderlecht, "
+            "Schaerbeek, Molenbeek-Saint-Jean, Uccle and Jette, is drawn inside the "
             "polygon for Flanders. The region's figures are shown on the "
             "second-level polygon \"Brussels\", which is the whole region, and "
             "describe more ground and more people than this polygon holds."))
-        for field in ("population", "religion", "language")
+        for field in ("population", "median_age", "sex_ratio",
+                      "religion", "language", "ethnicity")
     },
     ("CPV", "35879248B2594883865860"): {
         "population": ("wikidata_admin1.json", (

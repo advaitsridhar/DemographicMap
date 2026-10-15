@@ -448,6 +448,32 @@ class NotThisGround(unittest.TestCase):
         self.assertTrue(e["population"]["note"].endswith("so it is left out and this figure "
                                                          "is shown instead."))
 
+    def test_brussels_half_polygon_carries_none_of_the_regions_figures(self):
+        # The first-level polygon is about half the region; the region's
+        # figures stand whole on the second-level "Brussels".
+        declared = be.NOT_THIS_GROUND[("BEL", "27649430B17719898407236")]
+        self.assertEqual(set(declared), {"population", "median_age", "sex_ratio",
+                                         "religion", "language", "ethnicity"})
+        self.assertTrue(all(source is None for source, _ in declared.values()))
+        e = unit("27649430B17719898407236", level="admin1",
+                 population={"value": 1271709, "year": 2025},
+                 median_age={"value": 36.1, "year": 2025},
+                 sex_ratio={"value": 97.1, "year": 2025},
+                 ethnicity=[{"group": "Belgian", "pct": 64.2, "count": 787590}],
+                 religion={"status": be.NOT_COLLECTED, "note": "Country policy."},
+                 _from={"population": "eurostat_nuts2.json"})
+        self.run_pass(e, declared, fields=("population", "median_age", "sex_ratio"),
+                      iso3="BEL")
+        self.run_pass(e, declared, fields=be.ROLLUP_FIELDS, iso3="BEL")
+        for field in declared:
+            self.assertEqual(e[field]["status"], be.NOT_AVAILABLE, field)
+            self.assertIn("about half of the Brussels-Capital Region", e[field]["note"])
+        self.assertTrue(e["population"]["no_child_sum"])
+        shapes_ = shapes("BEL")
+        if shapes_:
+            region = shapes_[("admin2", "21686613B18913386279163")]
+            self.assertEqual(region["name"], "Brussels")
+
     def test_north_abacos_supervisory_district_count_is_refused(self):
         source, note = be.NOT_THIS_GROUND[("BHS", "57655419B79428110843392")]["population"]
         self.assertEqual(source, "wiki_population_admin1.json")
@@ -467,6 +493,228 @@ class Georgia(unittest.TestCase):
         entity = {"population": {"value": 2008, "year": 1996}, "_from": {"population": "wikidata_admin1.json"}}
         be.merge_adapter(entity, {"_source": "georgia.json", "population": why})
         self.assertEqual(entity["population"]["status"], "not_available")
+
+
+def drawn_index(iso3: str):
+    """The published build's polygons of a country, indexed the way the join indexes them.
+
+    The boundary file's own label is the key (``shape_name`` where a binding
+    renamed the polygon), as it is when the build matches a row.
+    """
+    units = shapes(iso3)
+    admin1 = [dict(u, name=u.get("shape_name") or u["name"])
+              for (level, _), u in units.items() if level == "admin1"]
+    admin2 = [dict(u, name=u.get("shape_name") or u["name"])
+              for (level, _), u in units.items() if level == "admin2"]
+    a1_by_key = {}
+    for e in admin1:
+        a1_by_key.setdefault(be.norm(e["name"]), []).append(e)
+    a1 = {k: v[0] for k, v in a1_by_key.items() if len(v) == 1}
+    a1_exact = {" ".join(e["name"].split()).casefold(): e for e in admin1}
+    a2 = {}
+    for e in admin2:
+        if not e.get("remainder"):
+            a2.setdefault(be.norm(e["name"]), []).append(e)
+    be.add_known_as(a2, admin2)
+    return a2, a1, a1_exact, {e["id"]: e["name"] for e in admin1}
+
+
+def join(row: dict, iso3: str):
+    """What the build's second-level matcher does with one adapter row."""
+    a2, a1, a1_exact, names = drawn_index(iso3)
+    key = {"name": row.get("name") or "", "aliases": row.get("aliases") or [],
+           "parent_name": row.get("parent_name"),
+           "parent_aliases": row.get("parent_aliases") or [],
+           "point": be.row_point(row)}
+    entity, how = be.match_admin2(key, a2, a1, a1_exact)
+    return entity, how, names
+
+
+class RealRowsReachTheirPolygons(unittest.TestCase):
+    """Each declared row, as the file holds it, reaches the one polygon declared for it.
+
+    Run through the build's own matcher against the published polygons, so an
+    alias that a province name or a rival row would defeat fails here, and so
+    does a file re-read under other names.
+    """
+
+    def test_every_aliased_row_reaches_its_alias(self):
+        checked = 0
+        for filename, by_id in be.ROW_ALIASES.items():
+            if filename == "wikidata_admin2.json":
+                continue
+            data = rows(filename)
+            if not data:
+                continue
+            for row_id, aliases in by_id.items():
+                row = copy.deepcopy(data[row_id])
+                iso3 = row_id[:3]
+                if not shapes(iso3):
+                    continue
+                row["aliases"] = [*(row.get("aliases") or []), *aliases]
+                entity, how, _ = join(row, iso3)
+                self.assertIsNotNone(entity, f"{row_id} {row.get('name')!r}: {how}")
+                self.assertIn(entity["name"], aliases, f"{row_id} reached {entity['name']!r}")
+                checked += 1
+        if not checked:
+            self.skipTest("the published build or the files are not in this checkout")
+
+    def test_the_rows_without_their_aliases_reach_nothing_or_elsewhere(self):
+        # The aliases add joins; without them none of these rows found its
+        # polygon, which is why they were declared.
+        for filename in ("cod_ps_admin2.json", "clear_global_language.json"):
+            data = rows(filename)
+            for row_id, aliases in be.ROW_ALIASES.get(filename, {}).items():
+                if row_id not in data or not shapes(row_id[:3]):
+                    continue
+                entity, _, _ = join(copy.deepcopy(data[row_id]), row_id[:3])
+                self.assertFalse(entity is not None and entity["name"] in aliases,
+                                 f"{row_id} needs no alias")
+
+    def test_samraong_is_takeos_by_its_code(self):
+        data = rows("clear_global_language.json")
+        if "KHM-CG-KH2107" not in data or not shapes("KHM"):
+            self.skipTest("CLEAR's Cambodian rows or the published build are not here")
+        row = copy.deepcopy(data["KHM-CG-KH2107"])
+        # Without its province the name is two polygons', and the matcher's
+        # word pass reaches a third, Kampong Cham's Samraong Tong, which has a
+        # row of its own: never Takeo's district.
+        entity, how, names = join(row, "KHM")
+        self.assertFalse(entity is not None and entity["name"] == "Samraong"
+                         and names[entity["parent"]] == "Takeo", how)
+        row["parent_name"] = be.ROW_PARENTS["clear_global_language.json"]["KHM-CG-KH2107"]
+        entity, _, names = join(row, "KHM")
+        self.assertEqual((entity["name"], names[entity["parent"]]), ("Samraong", "Takeo"))
+
+    def test_argoba_reaches_amharas_special_woreda(self):
+        data = rows("ethiopia_region.json")
+        row = data.get("ETH-āmara-argoba-special-wereda")
+        if not row or not shapes("ETH"):
+            self.skipTest("Ethiopia's census rows or the published build are not here")
+        self.assertFalse(row.get("no_shape"))
+        entity, _, names = join(copy.deepcopy(row), "ETH")
+        self.assertEqual((entity["name"], names[entity["parent"]]), ("Special Woreda", "Amhara"))
+        self.assertTrue(data["ETH-āmara-bahir-dar-special-wereda"].get("no_shape"))
+
+
+class RowUnionsFromTheFiles(unittest.TestCase):
+    """The unions' parts, as the files hold them, make the figures the audit measured."""
+
+    SUMS = {("MWI", "Zomba"): 947812, ("MWI", "Lilongwe"): 2993163,
+            ("MWI", "Mzimba"): 1290719, ("MWI", "Blantyre"): 1381065,
+            ("ETH", "Dire Dawa"): 521000, ("PRY", "Bella Vista"): 35013}
+
+    def test_population_unions_sum_to_the_measured_figures(self):
+        data = rows("cod_ps_admin2.json")
+        if not data:
+            self.skipTest("cod_ps_admin2.json is not in this checkout")
+        for key, total in self.SUMS.items():
+            spec = be.ROW_UNIONS[key]
+            parts = [data[rid] for rid in spec["rows"]]
+            self.assertEqual(sum(p["population"]["value"] for p in parts), total, key)
+            self.assertEqual(len({p["population"]["year"] for p in parts}), 1, key)
+
+    def test_survey_unions_are_pooled_by_their_respondents(self):
+        data = rows("afrobarometer_region.json")
+        if not data:
+            self.skipTest("afrobarometer_region.json is not in this checkout")
+        for key in (("MOZ", "Maputo"), ("STP", "São Tomé Province")):
+            parts = [data[rid] for rid in be.ROW_UNIONS[key]["rows"]]
+            for field in ("religion", "language"):
+                for part in parts:
+                    self.assertTrue(all(isinstance(e.get("count"), (int, float))
+                                        for e in part[field]), (key, field, part["id"]))
+            with mock.patch.object(be, "log"):
+                pooled = be.pool_rows(key[1], [dict(p, _source="afrobarometer_region.json")
+                                               for p in parts], key[0],
+                                      "afrobarometer_region.json")
+            self.assertIn("weighted by their published counts", pooled["language_note"])
+        # Sao Tome's three strata hold 1,127 answers on religion.
+        stp = [data[rid] for rid in be.ROW_UNIONS[("STP", "São Tomé Province")]["rows"]]
+        self.assertEqual(sum(e["count"] for p in stp for e in p["religion"]), 1127)
+
+
+class RefusedFiguresAreTheFilesFigures(unittest.TestCase):
+    """A refusal scoped to one file quotes that file's figure for the country.
+
+    If the file is re-read and the figure changes, the sentence would quote a
+    number nobody shows, so it fails here.
+    """
+
+    def test_each_quoted_figure_is_in_its_file(self):
+        import re
+        checked = 0
+        for (iso3, _), fields in be.NOT_THIS_GROUND.items():
+            for field, (source, note) in fields.items():
+                if source is None or field != "population":
+                    continue
+                data = rows(source)
+                if not data:
+                    continue
+                # The first figure written with a thousands separator: a year
+                # ("The 2021 figure of 180,507") is written without one.
+                quoted = int(re.search(r"\d{1,3}(?:,\d{3})+", note).group().replace(",", ""))
+                values = {(r.get("population") or {}).get("value")
+                          for r in data.values()
+                          if (r.get("country") or r["id"][:3]) == iso3
+                          and isinstance(r.get("population"), dict)}
+                self.assertIn(quoted, values, f"{iso3} {source}: {quoted}")
+                checked += 1
+        if not checked:
+            self.skipTest("the refused files are not in this checkout")
+
+
+class RegeneratedFiles(unittest.TestCase):
+    """What the runner's re-reads wrote, checked record by record against the items."""
+
+    def test_georgias_stated_gaps_give_way_to_nothing_older(self):
+        data = rows("georgia.json")
+        if not data:
+            self.skipTest("georgia.json is not in this checkout")
+        names = {"Abkhazia", "Gagra", "Gali", "Gudauta", "Gulripshi", "Ochamchire",
+                 "Sokhumi", "Khobi", "Lanchkhuti", "Terjola", "Tkibuli", "Tsqaltubo"}
+        found = {r["name"]: r for r in data.values() if r.get("name") in names}
+        self.assertEqual(set(found), names)
+        for name, record in found.items():
+            pop = record["population"]
+            self.assertEqual(pop["status"], "not_available", name)
+            self.assertGreaterEqual(pop["displaces_before"], 2027, name)
+            self.assertTrue(pop["displaces_undated"], name)
+
+    def test_transnistria_is_the_left_bank(self):
+        data = rows("transnistria_2015.json")
+        if not data:
+            self.skipTest("transnistria_2015.json is not in this checkout")
+        for rid in ("MDA-pmr-admin1-transnistria", "MDA-pmr-admin2-transnistria"):
+            self.assertEqual((data[rid]["population"]["value"], data[rid]["population"]["year"]),
+                             (383810, 2015))
+        self.assertEqual(475007 - 91197, 383810)
+
+    def test_yamoussoukro_and_tarrafal(self):
+        data = rows("wiki_table_population.json")
+        if not data:
+            self.skipTest("wiki_table_population.json is not in this checkout")
+        civ = data["CIV-WT-district-autonome-de-yamoussoukro"]["population"]
+        self.assertEqual((civ["value"], civ["year"]), (422072, 2021))
+        self.assertEqual(372559 + 49513, 422072)       # its two departments, 2021
+        cpv = data["CPV-WT-tarrafal"]["population"]
+        self.assertEqual((cpv["value"], cpv["year"]), (16620, 2021))
+
+
+class Nordjylland(unittest.TestCase):
+    """DK05 dropped out of the crosswalk unremarked; decided, the reader places it."""
+
+    def test_the_reader_follows_dk05_to_nordjylland(self):
+        from scripts.fetch_census import ess_region
+        crosswalk = {"DK05": {"superseded_by": "DK050"},
+                     "DK050": {"nuts_level": 3, "level": "admin1", "name": "Nordjylland",
+                               "shape_id": nuts_crosswalk.DECIDED["DK050"][0]}}
+        self.assertEqual(ess_region.placement("DK05", crosswalk),
+                         [{"level": "admin1", "shape_id": "84455774B84842167963849",
+                           "name": "Nordjylland"}])
+        drawn = {sid for (level, sid) in shapes("DNK") if level == "admin1"}
+        if drawn:
+            self.assertIn("84455774B84842167963849", drawn)
 
 
 class Transnistria(unittest.TestCase):
