@@ -384,22 +384,44 @@ class RestateEncyclopaediaParents(unittest.TestCase):
                              iso3="VEN")
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
 
-    def test_a_parent_holding_another_units_division_is_not_restated(self):
+    def test_a_division_drawn_on_the_wrong_side_stops_both_sums(self):
         # Mangochi lies by area under Malawi's Northern Region; summing it in
-        # would count the Southern Region's people as the north's.
-        shape, name = be.RESTATE_NOT_WITH[("MWI", "Northern Region")]
-        self.assertEqual(name, "Mangochi")
-        parent = unit("P", "Northern Region", 1_698_502, 2008)
-        kids = self.kids(2023, values=(2_259_252,)) + [unit(shape, name, 1_346_740, 2023, OCHA,
-                                                            parent="P")]
-        a1, a2 = self.tables(parent, kids, iso3="MWI")
+        # would count the Southern Region's people as the north's, and the
+        # south's sum would lack them.
+        shape = "42251766B89682559169951"
+        self.assertEqual(be.MISFILED_DIVISIONS[("MWI", shape)], ("Mangochi", "Southern Region"))
+        north = unit("N", "Northern Region", 1_698_502, 2008)
+        south = unit("S", "Southern Region", 5_876_784, 2008)
+        mangochi = unit(shape, "Mangochi", 1_346_740, 2023, OCHA, parent="N")
+        kids = [unit("N1", "Mzimba", 1_200_000, 2023, OCHA, parent="N"),
+                unit("N2", "Karonga", 1_059_252, 2023, OCHA, parent="N"), mangochi,
+                unit("S1", "Blantyre", 1_400_000, 2023, OCHA, parent="S"),
+                unit("S2", "Zomba", 900_000, 2023, OCHA, parent="S")]
+        a1, a2 = {"MWI": [north, south]}, {"MWI": kids}
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
-        self.assertEqual(parent["population"]["value"], 1_698_502)
-        # Once filed under its own region, the north takes its divisions' sum.
-        parent = unit("P", "Northern Region", 1_698_502, 2008)
-        a1, a2 = self.tables(parent, self.kids(2023, values=(2_000_000, 259_252)), iso3="MWI")
+        self.assertEqual((north["population"]["value"], south["population"]["value"]),
+                         (1_698_502, 5_876_784))
+        # Filed under its own region, both take their divisions' sums.
+        mangochi["parent"] = "S"
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2),
-                         ["MWI Northern Region 1,698,502 -> 2,259,252"])
+                         ["MWI Northern Region 1,698,502 -> 2,259,252",
+                          "MWI Southern Region 5,876,784 -> 3,646,740"])
+
+    def test_a_projection_a_year_on_does_not_replace_a_dated_figure(self):
+        # Rwanda: the provinces carry the 2022 census, OCHA's districts 2023.
+        parent = unit("P", "Eastern Province", 3_563_145, 2022)
+        a1, a2 = self.tables(parent, self.kids(2023, values=(2_000_000, 1_948_191)),
+                             iso3="RWA")
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
+        # Two years on is a later account (Chad's regions, 2019 and 2021),
+        # and an office's count a year on is one too.
+        parent = unit("P", "Batha", 667_600, 2019)
+        a1, a2 = self.tables(parent, self.kids(2021, values=(400_000, 309_823)), iso3="TCD")
+        self.assertEqual(len(be.restate_encyclopaedia_parents(a1, a2)), 1)
+        parent = unit("P", "Unit", 1_000, 2022)
+        a1, a2 = self.tables(parent, self.kids(2023, "Statistics Office, register",
+                                               values=(600, 500)))
+        self.assertEqual(len(be.restate_encyclopaedia_parents(a1, a2)), 1)
 
     def test_a_declared_sole_division_that_is_no_longer_alone_stops_the_build(self):
         parent = unit("P", "Distrito Capital", 3_523_959, 2020, "Wikidata (CC0)")
@@ -441,6 +463,21 @@ class NotePopulationGaps(unittest.TestCase):
         be.note_population_gaps([], {"ARG": [parent]}, {"ARG": kids})
         self.assertNotIn("place people differently", parent["population_note"])
         self.assertTrue(parent["population_note"].endswith("97% above this figure."))
+
+    def test_one_office_in_two_publications_is_one_source(self):
+        # Tuvalu: the census report's national count and its island tables.
+        country = {"id": "TUV", "name": "Tuvalu", "population": {
+            "value": 10_632, "year": 2022,
+            "source": "Central Statistics Division, Government of Tuvalu, Tuvalu 2022 Census "
+                      "on Population and Housing: Analytical Report"}}
+        islands = [unit(f"I{i}", f"Island {i}", v, 2022,
+                        "Central Statistics Division, Government of Tuvalu, 2022 census "
+                        "island tables", parent="TUV") for i, v in enumerate((1_007, 1_095))]
+        be.note_population_gaps([country], {"TUV": islands}, {})
+        note = country["population_note"]
+        self.assertTrue(note.endswith("(Central Statistics Division, 2022), 80% below this "
+                                      "figure."), note)
+        self.assertNotIn("different sources", note)
 
     def test_a_figure_note_is_kept_in_front_of_the_sentence(self):
         parent = unit("P", "Unit", 1000, 2020)

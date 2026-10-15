@@ -176,8 +176,10 @@ def gap_sentence(summed: dict[str, Any], own: float, own_year: int | None,
         said += (f"; {'its figure is' if one else 'their figures are'} for {years[0]}, "
                  f"{gap} year{'s' if gap != 1 else ''} "
                  f"{'before' if years[0] < own_year else 'after'} this one")
-    elif (len(years) == 1 and not undated and own_year == years[0] and len(sources) == 1
-          and own_source is not None and own_source != sources[0]):
+    elif (len(years) == 1 and not undated and own_year == years[0] and len(named) == 1
+          and own_source is not None and short_source(own_source) != named[0]):
+        # Compared as a reader knows them: Tuvalu's census report and its
+        # island tables are one office's count, not two sources.
         said += "; the two are different sources' figures for the same year"
         # Inside a country, two estimates of one year that differ have put the
         # same people in different places. Two national totals that differ

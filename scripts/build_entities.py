@@ -4623,6 +4623,31 @@ RESTATE_KEEPS: dict[str, str] = {
            "census's count in every province that carries one",
 }
 
+# Divisions drawn by area under a first-level unit other than the one their
+# census counts them in: (country, shape id) -> (division, the unit that
+# counts it). While one is filed away from its unit, neither the unit holding
+# it nor the unit missing it is restated to its divisions' sum, which would
+# count one unit's people as another's. Mangochi (OCHA's 1,346,740) lies by
+# area under Malawi's Northern Region, across the lake from the Southern
+# Region that counts it; Mukwe (29,965) under Namibia's Caprivi, though it is
+# Kavango East's. DECLARED_PARENTS files them where they belong, and the sums
+# then follow; until then both units keep their figures and say what their
+# divisions add up to.
+MISFILED_DIVISIONS: dict[tuple[str, str], tuple[str, str]] = {
+    ("MWI", "42251766B89682559169951"): ("Mangochi", "Southern Region"),
+    ("NAM", "8085530B20929283489058"): ("Mukwe", "Kavango"),
+}
+
+# A projection dated a year after the parent's figure is not a later account
+# of the same people but another account of the same moment: where the two
+# differ, the projection rests on an older base. Rwanda's provinces carry the
+# 2022 census (Eastern Province 3,563,145) and OCHA's districts a projection
+# for 2023 that puts 3,948,191 there and 10% fewer in the Northern Province
+# than the census counted. A projection replaces only a figure at least this
+# many years older; the parent keeps its figure otherwise, and a gap over 15%
+# is said like any other.
+RESTATE_PROJECTION_YEARS = 2
+
 # First-level units drawn as one division on the same ground, whose
 # encyclopaedia figure the count of that ground contradicts by more than any
 # growth: the unit shows its division's count, and the note says why the other
@@ -4632,20 +4657,6 @@ RESTATE_KEEPS: dict[str, str] = {
 # same article's text gives 2,073,768 for 2004. The year rule cannot settle it
 # (the encyclopaedia's figure is the newer), and two figures for one ground
 # 81% apart cannot both be right.
-# Divisions drawn by area under a first-level unit that is not the one their
-# census counts them in, by shape id: while one is still filed there, its
-# parent is not restated to its divisions' sum, which would count another
-# unit's people as its own. Mangochi (OCHA's 1,346,740) lies by area under
-# Malawi's Northern Region, across the lake from the Southern Region that
-# counts it; Mukwe (29,965) under Namibia's Caprivi, though it is Kavango
-# East's. DECLARED_PARENTS files them where they belong, and the sum then
-# follows; until then the parent keeps its figure and says what its divisions
-# add up to.
-RESTATE_NOT_WITH: dict[tuple[str, str], tuple[str, str]] = {
-    ("MWI", "Northern Region"): ("42251766B89682559169951", "Mangochi"),
-    ("NAM", "Caprivi"): ("8085530B20929283489058", "Mukwe"),
-}
-
 RESTATE_SOLE_DIVISION: dict[tuple[str, str], tuple[str, str]] = {
     ("VEN", "Distrito Capital"): (
         "The Capital District is the municipality of Libertador, the one division "
@@ -4678,8 +4689,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
     division the unit's whole ground and the encyclopaedia's figure not that
     ground's. A unit whose count takes in ground the map does not draw
     (``UNDRAWN_PARTS``) keeps its count, since its divisions are not all of it,
-    and so does one that still holds a division its census counts elsewhere
-    (``RESTATE_NOT_WITH``).
+    and so do two units between which a division is drawn on the wrong side
+    (``MISFILED_DIVISIONS``), and a dated figure that a projection only a year
+    later would replace (``RESTATE_PROJECTION_YEARS``).
     """
     done: list[str] = []
     for iso3, parents in sorted(admin1_by_country.items()):
@@ -4696,8 +4708,12 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                     or (iso3, parent.get("name")) in UNDRAWN_PARTS):
                 continue
             children = kids.get(parent["id"], [])
-            misfiled = RESTATE_NOT_WITH.get((iso3, parent.get("name")))
-            if misfiled and any(c.get("id") == misfiled[0] for c in children):
+            name = parent.get("name")
+            held = {c.get("id") for c in children}
+            if any(MISFILED_DIVISIONS.get((iso3, c.get("id")), (None, name))[1] != name
+                   for c in children) or any(
+                    home == name and shape not in held
+                    for (iso, shape), (_, home) in MISFILED_DIVISIONS.items() if iso == iso3):
                 continue
             summed = check_rollups.complete_sum(children)
             declared = RESTATE_SOLE_DIVISION.get((iso3, parent.get("name")))
@@ -4713,6 +4729,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                 continue
             own_year = vintage(pop)
             if not declared and own_year is not None and year <= own_year:
+                continue
+            if (not declared and own_year is not None and projection({"source": source})
+                    and year - own_year < RESTATE_PROJECTION_YEARS):
                 continue
             total = int(round(summed["total"]))
             if total == round(own):
