@@ -998,6 +998,40 @@ class CaboVerdeParishesTest(unittest.TestCase):
         got = self.cv.parish(blank, "test")
         self.assertEqual((got["total"], got["men"], got["zones"]), (210.0, 114.0, 3.0))
 
+    def test_a_zone_printed_among_localities_is_a_zone_of_its_own(self):
+        # Santo André's "Jorge Luis" (347) is printed in the locality column
+        # under "Chã de Norte" (241): the localities before it make Chã de
+        # Norte, and those after it make Jorge Luis.
+        def rows(name, total, men, women, zone=False):
+            first = ["", name, "", "Total", total] if zone else ["", "", name, "Total", total]
+            return [first, ["", "", "", "Masculino", men], ["", "", "", "Feminino", women]]
+        sheet = (CPV_SHEET + rows("CHÃ DE NORTE", 241.0, 120.0, 121.0, zone=True)
+                 + rows("BORDEIRA", 41.0, 20.0, 21.0) + rows("CHÃ / LOMBINHO", 200.0, 100.0, 100.0)
+                 + rows("JORGE LUIS", 347.0, 170.0, 177.0) + rows("CAVOUCO", 41.0, 20.0, 21.0)
+                 + rows("LOMBO VELHO", 306.0, 150.0, 156.0))
+        logged = []
+        saved, self.cv.log = self.cv.log, logged.append
+        try:
+            got = self.cv.parish(sheet, "test")
+        finally:
+            self.cv.log = saved
+        self.assertEqual((got["total"], got["men"], got["women"], got["zones"]),
+                         (788.0, 398.0, 390.0, 4.0))
+        self.assertIn("JORGE LUIS (347), printed among CHÃ DE NORTE's localities", logged[0])
+        # Only when both sums close exactly: here the localities after it
+        # make 346, so nothing is promoted and the mismatch is reported.
+        short = sheet[:-3] + rows("LOMBO VELHO", 305.0, 150.0, 155.0)
+        logged.clear()
+        self.cv.log = logged.append
+        try:
+            got = self.cv.parish(short, "test")
+        finally:
+            self.cv.log = saved
+        self.assertEqual((got["total"], got["zones"]), (441.0, 3.0))
+        self.assertIn("CHÃ DE NORTE's localities make 934, not 241", logged[0])
+        self.assertIsNone(self.cv.embedded([{"name": "", "total": 10.0},
+                                            {"name": "", "total": 40.0}], 10.0))
+
     def test_names_and_the_one_parish_rule(self):
         cv = self.cv
         self.assertEqual(cv.key("Freguesia N.S. Conceição"), cv.key("Nossa Senhora Da Conceicao"))

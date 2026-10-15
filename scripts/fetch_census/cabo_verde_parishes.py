@@ -19,11 +19,15 @@ broad groups, so there is no median age.
 
 **Checks before anything is written.** Every zone's men and women make its
 total (the localities listed under a zone do not always make it, and are
-only reported); every parish is a sheet whose code names its municipality;
-INE's 2010 table by municipality (``TOTALS``) gives the country its 491,683;
-and each municipality's parishes make the people that table counts in its
-private households, to within half a percent (``SLACK``: Ribeira Grande's
-four make 18,931 against 18,886), any difference stated in the note.
+only reported, except where a zone was printed in the locality column: when
+the localities before it make the zone above and those after it make it, it
+is read as the zone it is); every parish is a sheet whose code names its
+municipality; INE's 2010 table by municipality (``TOTALS``) gives the
+country its 491,683; and each municipality's parishes make the people that
+table counts in its private households, to within half a percent
+(``SLACK``), any difference stated in the note. Twenty of the 22 close
+exactly; Ribeira Grande's parishes make 45 more and Porto Novo's 45 fewer,
+the two together exactly, and all 32 make the country's 488,040.
 Parishes are matched to the boundary file's within their municipality by
 name (``N.S.`` read as Nossa Senhora, "de/da/do" set aside, a sheet name cut
 at 31 characters by its beginning); where a municipality has one parish, the
@@ -138,6 +142,18 @@ def sheets_of(blob: bytes) -> dict[str, list[list[Any]]]:
             for sh in book.sheets()}
 
 
+def embedded(places: list[dict[str, Any]], total: Any) -> int | None:
+    """Where in a zone's localities a zone of its own was printed: the index
+    of a named locality such that those before it make the zone's ``total``
+    exactly and those after it make the locality's own total exactly."""
+    for cut in range(1, len(places) - 1):
+        before = sum(q["total"] for q in places[:cut])
+        after = sum(q["total"] for q in places[cut + 1:])
+        if places[cut]["name"] and before == total and after == places[cut]["total"]:
+            return cut
+    return None
+
+
 def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
     """{"total", "men", "women", "zones"}: a parish sheet's zones added up."""
     head = next((i for i, r in enumerate(rows[:12])
@@ -154,7 +170,7 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
     # Ribeira Grande"). Were a zone printed twice instead, the municipality's
     # parishes would overshoot INE's table by municipality, which check() tests.
     zones: dict[tuple[str, int], dict[str, float]] = {}
-    places: dict[tuple[str, int], float] = {}
+    places: dict[tuple[str, int], list[dict[str, Any]]] = {}
     own: dict[str, float] = {}
     zone: tuple[str, int] | None = None
     level = None
@@ -180,20 +196,41 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
         elif level == "zone":
             zones.setdefault(zone, {})[sex] = value
         elif sex == "total":
-            places[zone] = places.get(zone, 0.0) + value
+            places.setdefault(zone, []).append(
+                {"name": " ".join(str(cells[lugar]).split()), "total": value})
+        elif places.get(zone):
+            places[zone][-1][sex] = value
     if not zones:
         raise SystemExit(f"cabo_verde_parishes: {where}: no zones")
+    for name in list(zones):
+        mine = places.get(name, [])
+        made = sum(q["total"] for q in mine)
+        if not mine or made == zones[name].get("total"):
+            continue
+        cut = embedded(mine, zones[name].get("total"))
+        if cut is None:
+            # The localities listed under a zone need not make it; the zones'
+            # own totals are what is added, and the parishes they make are
+            # checked against INE's table by municipality.
+            log(f"    {where}: zone {name[0]}'s localities make {made:,.0f}, "
+                f"not {zones[name].get('total'):,.0f}")
+            continue
+        # A zone printed in the locality column (Santo André's "Jorge Luis",
+        # 347 people, among the localities of "Chã de Norte", 241): the
+        # localities before it make the zone above, and those after it make
+        # it, so it is a zone of its own.
+        inner = mine[cut]
+        places[name] = mine[:cut]
+        new = (inner["name"], sum(1 for n, _ in zones if n == inner["name"]))
+        zones[new] = {k: v for k, v in inner.items() if k != "name"}
+        places[new] = mine[cut + 1:]
+        log(f"    {where}: {inner['name']} ({inner['total']:,.0f}), printed among {name[0]}'s "
+            "localities, is a zone of its own: the localities before it make "
+            f"{name[0]} and those after it make it")
     for name, row in zones.items():
         if row.get("masculino", 0) + row.get("feminino", 0) != row.get("total"):
             raise SystemExit(f"cabo_verde_parishes: {where}: zone {name[0]}'s men and women do "
                              f"not make its total {row}")
-        # The localities listed under a zone do not always make it (Santo
-        # André's "Chã de Norte": 935 listed under a zone of 241), so they are
-        # reported, not used: the zones' own totals are what is added, and the
-        # parishes they make are checked against INE's table by municipality.
-        if name in places and places[name] != row["total"]:
-            log(f"    {where}: zone {name[0]}'s localities make {places[name]:,.0f}, "
-                f"not {row['total']:,.0f}")
     out = {"total": sum(r["total"] for r in zones.values()),
            "men": sum(r["masculino"] for r in zones.values()),
            "women": sum(r["feminino"] for r in zones.values()), "zones": float(len(zones))}
@@ -269,7 +306,8 @@ def check(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, 
     households (Tarrafal's one parish sheet closes on 18,561, the
     municipality's 18,565 less its 4 in collective dwellings), and they do
     not always close on the table by municipality exactly (Ribeira Grande's
-    four parishes make 18,931 against 18,886)."""
+    four parishes make 18,931 against 18,886, Porto Novo's two 17,906
+    against 17,951)."""
     if set(parishes) != set(MUNICIPALITIES):
         raise SystemExit(f"cabo_verde_parishes: municipalities with no parish sheet: "
                          f"{sorted(set(MUNICIPALITIES) - set(parishes))}")
