@@ -23,9 +23,10 @@ and the autonomous regions are theirs (31-32 Madeira, 41-49 the Azores). Their
 single years and religion counts are added, and the median taken afresh.
 
 **Binding.** Municipalities are bound to the map's polygons by name within the
-district the boundary file files them under, then by a name no other polygon
-shares -- ``binding.bind``, so Espinho, Mesão Frio, Sardoal and Tábua, which
-geoBoundaries files under a neighbouring district, still land. Eight of the
+district the map files them under, then by a name no other polygon shares --
+``binding.bind``, so Espinho, Mesão Frio, Sardoal and Tábua, which
+geoBoundaries draws mostly inside a neighbouring district, land whichever
+district the last build filed them under. Eight of the
 boundary file's names are misspelt or shortened ("Setubul", "Praia da
 Vitoria") and are declared below, and three polygons
 are pinned by id because the boundary file draws two polygons under one name:
@@ -34,14 +35,17 @@ are pinned by id because the boundary file draws two polygons under one name:
   Ílhavo's two: the figures go on the larger part, and the smaller part is
   left without them -- ``shared.patch`` proposes merging each pair in
   ``make_redrawn.py`` so the one municipality is one unit;
-* "Oliveira de Frades" twice: a 144 km² polygon filed under Aveiro
-  (``2272694B21944289016738``), the size of the municipality (145 km²), and a
+* "Oliveira de Frades" twice: a 144 km² polygon (``2272694B21944289016738``),
+  the size of the municipality (145 km²), drawn mostly inside Aveiro's
+  outline and filed under Viseu, INE's district (``DECLARED_PARENTS``), and a
   21 km² polygon under Viseu (``2272694B61775283939308``) between Tondela,
   Vouzela and Águeda. The figures go on the first. The second is not the
   municipality and what it is could not be established, so it is written as a
   stated gap (``UNIDENTIFIED``) rather than given anyone's figures -- the
   shared patch also keeps Wikidata's head count of the whole municipality off
-  it, where it had shown the municipality twice.
+  it, where it had shown the municipality twice. Its note tells the two apart
+  by size, not by the district each is filed under: both are under Viseu once
+  the declaration is built, and the note must hold before and after.
 
 **Districts are INE's, not the boundary file's.** Five municipalities lie
 mostly inside the outline of a district other than INE's (Espinho, Mesão
@@ -157,9 +161,9 @@ SECOND_PARTS = {
 UNIDENTIFIED = {
     "2272694B61775283939308": (
         "The boundary file draws two polygons named Oliveira de Frades. The municipality "
-        "(145 km²) is the 144 km² one filed under Aveiro, which carries INE's 2021 census "
-        "figures; this 21 km² polygon, filed under Viseu between Tondela, Vouzela and "
-        "Águeda, is not the municipality, and which ground it is could not be established. "
+        "(145 km²) is the 144 km² one, which carries INE's 2021 census figures; this 21 km² "
+        "polygon, between Tondela, Vouzela and Águeda, is not the municipality, and which "
+        "ground it is could not be established. "
         "No figure is put on it, since a municipality's figures on a shape that is not it "
         "would be a mis-match."),
 }

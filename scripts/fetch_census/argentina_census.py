@@ -45,7 +45,10 @@ left out, never guessed. The build files the misplaced ones under their own
 provinces (``build_entities.DECLARED_PARENTS``). The polygon drawn as Buenos
 Aires takes Buenos Aires and Entre Ríos together (``DRAWN_INSIDE``): their
 counts are added before anything is derived, so its figures describe its
-ground and its departments add up to it.
+ground and its departments add up to it. The polygon labelled as the capital
+is about four times the city, most of it Greater Buenos Aires partidos, and
+misses ground on the city's eastern side; its figures are the city's, and its
+population note says what the outline holds (``OUTLINE_NOTES``).
 
 Usage:
     python -m scripts.fetch_census.argentina_census
@@ -169,6 +172,32 @@ MERGES = {("Tierra del Fuego, Antártida e Islas del Atlántico Sur", "Tolhuin")
 # derived from them, so that it describes its ground and its departments make
 # it.
 DRAWN_INSIDE = {"Buenos Aires": ("Entre Ríos",)}
+# A province whose first-level outline is not its own, with what the outline
+# holds, said on its population. The polygon labelled as the capital was
+# measured on the boundary file (15 October 2026, areas at 34.6 degrees S):
+# 829 km2, against the 192 km2 of the 15 comunas drawn at the second level,
+# which cover 18.4% of it (152 km2, 79% of the city). General San Martín,
+# Hurlingham, Morón and Tres de Febrero lie wholly inside it, Vicente López
+# (99.7%) and San Isidro (97.6%) almost wholly, San Miguel (80.0%), Lanús
+# (79.5%) and Ituzaingó (72.1%) mostly; La Matanza (46.6%), Lomas de Zamora
+# (28.0%), Avellaneda (23.7%), Malvinas Argentinas (8.1%), Esteban Echeverría
+# (8.0%), Tigre (7.9%), Ezeiza (3.8%), Merlo (2.4%) and San Fernando (2.3%)
+# in part, and Moreno by a sliver (0.1%), not named. Comuna 1 and 99.9% of
+# Comuna 2 lie outside it, as do 59.7% of Comuna 3, 38.5% of Comuna 4, 10.7%
+# of Comuna 13 and 64.7% of Comuna 14. The census counts every partido in
+# Buenos Aires, and the map files them there: the ten mostly inside this
+# outline by build_entities.DECLARED_PARENTS, the rest by area.
+OUTLINE_NOTES = {
+    "Ciudad Autónoma de Buenos Aires": (
+        "The outline drawn here is not the city's own: it is about four times the city's "
+        "area. Besides most of the city it takes in ground of Buenos Aires province -- all "
+        "or nearly all of General San Martín, Hurlingham, Morón, San Isidro, Tres de "
+        "Febrero and Vicente López, most of Ituzaingó, Lanús and San Miguel, and parts of "
+        "La Matanza, Lomas de Zamora, Avellaneda and six other partidos -- and it leaves "
+        "out ground on the city's eastern side: Comuna 1, nearly all of Comuna 2 and parts "
+        "of Comunas 3, 4, 13 and 14. These figures are the city's, all 15 comunas; the "
+        "partidos' people are counted in Buenos Aires."),
+}
 SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+) y más$")
 BAND = re.compile(r"^(\d+)-(\d+)$")
@@ -839,6 +868,10 @@ def main() -> int:
     log(f"  {len(provinces)} provinces, {len(departments)} departments, {national:,} people")
     for host, guests in DRAWN_INSIDE.items():
         provinces[kept[host]["code"]]["fields"] = drawn_together(host, guests, kept)
+    for name, note in OUTLINE_NOTES.items():
+        held = provinces[kept[name]["code"]]["fields"]
+        held["population_note"] = (f"{held['population_note']} {note}"
+                                   if held.get("population_note") else note)
 
     bound, missing = bind({c: (d["name"], d["map_province"] or d["province"])
                            for c, d in departments.items()}, admin2, parents)

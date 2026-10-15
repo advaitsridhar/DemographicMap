@@ -367,10 +367,13 @@ class NepalProvinces(Plain):
 
 
 class SaudiRegions(Plain):
-    def test_a_region_says_its_governorates_carry_no_2022_figure(self):
+    def test_a_region_says_whose_figures_its_governorates_carry(self):
         self.assertTrue(sc.REGION_NOTE.startswith("The 2022 census count (10 May 2022)."))
-        self.assertIn("no governorate drawn here carries a 2022 figure", sc.REGION_NOTE)
-        self.assertIn("most of them for 2010", sc.REGION_NOTE)
+        self.assertIn("the governorates drawn here that show a population carry Wikidata's "
+                      "figures, most of them for 2010", sc.REGION_NOTE)
+        # Balqarn ('Asir) shows Wikidata's figure for 2022, so no region may
+        # say that none of its governorates carries one.
+        self.assertNotIn("no governorate drawn here carries a 2022 figure", sc.REGION_NOTE)
         self.assertPlain(sc.REGION_NOTE)
 
     def test_every_region_written_carries_it(self):

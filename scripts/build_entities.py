@@ -1559,6 +1559,19 @@ PARTIAL_LEVELS: dict[tuple[str, str], dict[str, Any]] = {
     # the boundary file's coastlines more than the councils; the note says
     # what the councils leave out instead. Declaring the level puts land under
     # the Torres Islands (map.js's partial-land layer, from the first level).
+    #   It does more than that, and the rest is not free. A declared level is
+    # taken out of every comparison of a province with its councils: no
+    # province is filled from its councils (fill_parent_populations) or
+    # restated as their sum (restate_encyclopaedia_parents),
+    # population_disagreements writes no "divisions add up to" sentence for
+    # one, and check_rollups skips the country (it reads build.json's
+    # partial_levels). And mark_disputed_or_hint writes the level's note as
+    # the record note of all 58 councils. Measured when it was declared,
+    # nothing was hidden: Malampa, Penama, Sanma (off by one person) and Tafea
+    # make their councils' sums, and Torba's and Shefa's shortfalls are said
+    # by UNDRAWN_PARTS, which does not read this table. A later gap between a
+    # Vanuatu province and its councils is not caught by check_rollups, and
+    # must be looked for by hand.
     ("VUT", "admin2"): {
         "units": 58,
         "coverage_pct": 88.9,
