@@ -384,6 +384,23 @@ class RestateEncyclopaediaParents(unittest.TestCase):
                              iso3="VEN")
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
 
+    def test_a_parent_holding_another_units_division_is_not_restated(self):
+        # Mangochi lies by area under Malawi's Northern Region; summing it in
+        # would count the Southern Region's people as the north's.
+        shape, name = be.RESTATE_NOT_WITH[("MWI", "Northern Region")]
+        self.assertEqual(name, "Mangochi")
+        parent = unit("P", "Northern Region", 1_698_502, 2008)
+        kids = self.kids(2023, values=(2_259_252,)) + [unit(shape, name, 1_346_740, 2023, OCHA,
+                                                            parent="P")]
+        a1, a2 = self.tables(parent, kids, iso3="MWI")
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
+        self.assertEqual(parent["population"]["value"], 1_698_502)
+        # Once filed under its own region, the north takes its divisions' sum.
+        parent = unit("P", "Northern Region", 1_698_502, 2008)
+        a1, a2 = self.tables(parent, self.kids(2023, values=(2_000_000, 259_252)), iso3="MWI")
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2),
+                         ["MWI Northern Region 1,698,502 -> 2,259,252"])
+
     def test_a_declared_sole_division_that_is_no_longer_alone_stops_the_build(self):
         parent = unit("P", "Distrito Capital", 3_523_959, 2020, "Wikidata (CC0)")
         a1, a2 = self.tables(parent, self.kids(2011, "INE"), iso3="VEN")

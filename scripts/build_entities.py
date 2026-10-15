@@ -4632,6 +4632,20 @@ RESTATE_KEEPS: dict[str, str] = {
 # same article's text gives 2,073,768 for 2004. The year rule cannot settle it
 # (the encyclopaedia's figure is the newer), and two figures for one ground
 # 81% apart cannot both be right.
+# Divisions drawn by area under a first-level unit that is not the one their
+# census counts them in, by shape id: while one is still filed there, its
+# parent is not restated to its divisions' sum, which would count another
+# unit's people as its own. Mangochi (OCHA's 1,346,740) lies by area under
+# Malawi's Northern Region, across the lake from the Southern Region that
+# counts it; Mukwe (29,965) under Namibia's Caprivi, though it is Kavango
+# East's. DECLARED_PARENTS files them where they belong, and the sum then
+# follows; until then the parent keeps its figure and says what its divisions
+# add up to.
+RESTATE_NOT_WITH: dict[tuple[str, str], tuple[str, str]] = {
+    ("MWI", "Northern Region"): ("42251766B89682559169951", "Mangochi"),
+    ("NAM", "Caprivi"): ("8085530B20929283489058", "Mukwe"),
+}
+
 RESTATE_SOLE_DIVISION: dict[tuple[str, str], tuple[str, str]] = {
     ("VEN", "Distrito Capital"): (
         "The Capital District is the municipality of Libertador, the one division "
@@ -4663,7 +4677,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
     that weigh that, except where ``RESTATE_SOLE_DIVISION`` declares the
     division the unit's whole ground and the encyclopaedia's figure not that
     ground's. A unit whose count takes in ground the map does not draw
-    (``UNDRAWN_PARTS``) keeps its count, since its divisions are not all of it.
+    (``UNDRAWN_PARTS``) keeps its count, since its divisions are not all of it,
+    and so does one that still holds a division its census counts elsewhere
+    (``RESTATE_NOT_WITH``).
     """
     done: list[str] = []
     for iso3, parents in sorted(admin1_by_country.items()):
@@ -4680,6 +4696,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                     or (iso3, parent.get("name")) in UNDRAWN_PARTS):
                 continue
             children = kids.get(parent["id"], [])
+            misfiled = RESTATE_NOT_WITH.get((iso3, parent.get("name")))
+            if misfiled and any(c.get("id") == misfiled[0] for c in children):
+                continue
             summed = check_rollups.complete_sum(children)
             declared = RESTATE_SOLE_DIVISION.get((iso3, parent.get("name")))
             if summed is None or summed["n"] < (1 if declared else 2):
