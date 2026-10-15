@@ -1,14 +1,31 @@
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 156 characters
-/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/r6_probe.py:67: FutureWarning: Possible nested set at position 1
-  for m in re.finditer(grep, text, re.I):
-  0 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 201 characters
-  0 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2023/07/resultados-definitivos-2021-corrigido.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
-  0 distinct match(es)
-  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype :: <urlopen error _ssl.c:999: The handshake operation timed out>
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 186 characters
-  0 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/02/quadros_tabelas_publicacao.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
-  0 distinct match(es)
+switzerland_nationality: BFS px-x-0102010000_104, 31 December 2025, read against the districts of 01-01-2009
+  nationalities against Switzerland: parts sum to 9,127,125 = 9,127,125
+  named: Swiss, Italian, German, Portuguese, French, Kosovan, Spanish, Turkish, Ukrainian, North Macedonian, Serbian, Polish, Austrian, Eritrean, Romanian, Afghan, British
+  the table's 2115 communes are the register's of 31-12-2025
+  communes against Switzerland: parts sum to 9,127,125 = 9,127,125
+  the balance sheet's communes against Switzerland: parts sum to 9,127,125 = 9,127,125
+  the balance sheet's communes against Switzerland: parts sum to 9,051,029 = 9,051,029
+  the balance sheet's communes against Switzerland: parts sum to 8,962,258 = 8,962,258
+  the balance sheet's communes against Switzerland: parts sum to 8,815,385 = 8,815,385
+  the balance sheet's communes against Switzerland: parts sum to 8,738,791 = 8,738,791
+  districts: 142 written, 26 straddled; unbound []; polygons with no unit ['Bodensee']
+  Appenzell Ausserrhoden's districts against the canton: parts sum to 57,221 = 57,221
+  Fribourg / Freiburg's districts against the canton: parts sum to 350,918 = 350,918
+  Zürich's districts against the canton: parts sum to 1,632,918 = 1,632,918
+  Luzern's districts against the canton: parts sum to 441,500 = 441,500
+  Schwyz's districts against the canton: parts sum to 170,072 = 170,072
+  Zug's districts against the canton: parts sum to 135,018 = 135,018
+  Solothurn's districts against the canton: parts sum to 291,583 = 291,583
+  Nidwalden's districts against the canton: parts sum to 45,664 = 45,664
+  Uri's districts against the canton: parts sum to 38,581 = 38,581
+  Glarus's districts against the canton: parts sum to 42,451 = 42,451
+  Genève's districts against the canton: parts sum to 537,084 = 537,084
+  Thurgau's districts against the canton: parts sum to 302,806 = 302,806
+  Basel-Stadt's districts against the canton: parts sum to 204,157 = 204,157
+  Obwalden's districts against the canton: parts sum to 39,879 = 39,879
+  Jura's districts against the canton: parts sum to 75,178 = 75,178
+  Basel-Landschaft's districts against the canton: parts sum to 303,872 = 303,872
+  Appenzell Innerrhoden's districts against the canton: parts sum to 16,890 = 16,890
+  St. Gallen's districts against the canton: parts sum to 544,040 = 544,040
+  wrote data/processed/switzerland_nationality.json (573 kB)
+  wrote switzerland_nationality.json: 194 records
