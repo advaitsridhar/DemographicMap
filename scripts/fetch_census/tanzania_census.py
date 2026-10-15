@@ -36,6 +36,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import re
@@ -412,6 +413,8 @@ def main() -> int:
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if not blob.startswith(b"%PDF"):
         raise SystemExit(f"tanzania_census: {URL} is not a PDF: {blob[:80]!r}")
+    # Which bytes were read, for anyone checking the rows against the file.
+    log(f"  read {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     table = read(blob)
     log(f"  {len(table['regions'])} regions and {len(table['councils'])} councils, making "
         f"{NATIONAL:,}")

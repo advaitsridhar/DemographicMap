@@ -26,6 +26,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import re
@@ -159,7 +160,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             report.append(f"region polygon {shape['name']!r} ({k}): no RGPH-5 region")
             continue
         region_of[shape["id"]] = k
-        records.append(record(f"SEN-RGPH5-{k}", shape["name"], level="admin1", parent="SEN",
+        # Fourteen departments share their region's name: the level is in the
+        # id, so no table keyed by a row's id can reach both.
+        records.append(record(f"SEN-RGPH5-region-{k}", shape["name"], level="admin1", parent="SEN",
                               country="SEN", match_by="shape_id", shape_id=shape["id"],
                               **fields(row, f"The 2023 census (RGPH-5) count for the region of "
                                             f"{shape['name']}.")))
@@ -194,6 +197,8 @@ def main() -> int:
     blob = http_get(URL, binary=True, cache=False, timeout=120, aia=True)
     if blob[:2] != b"PK":
         raise SystemExit(f"senegal_rgph5: {URL} is not a workbook: {blob[:80]!r}")
+    # Which bytes were read, for anyone checking the rows against the file.
+    log(f"  read {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     rows = [list(r) for r in book.worksheets[0].iter_rows(values_only=True)]
     table = parse(rows)

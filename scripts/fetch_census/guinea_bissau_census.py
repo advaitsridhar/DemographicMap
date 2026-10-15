@@ -42,6 +42,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import re
@@ -236,12 +237,17 @@ def check(table: dict[str, Any], region: str, wanted: set[str]) -> str | None:
     return None
 
 
-def fields(total: int, men: int, women: int, note: str) -> dict[str, Any]:
+def cited(region: str) -> list[dict[str, Any]]:
+    """The region's own PDF, as the source of a record written from it."""
+    return [{"field": "population/sex_ratio", "name": SOURCE,
+             "url": BASE + REGIONS[region]["file"], "license": LICENCE, "year": YEAR}]
+
+
+def fields(total: int, men: int, women: int, note: str, region: str) -> dict[str, Any]:
     return {"population": measure(total, year=YEAR, source=SOURCE), "population_note": note,
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
-            "sources": [{"field": "population/sex_ratio", "name": SOURCE,
-                         "url": BASE, "license": LICENCE, "year": YEAR}]}
+            "sources": cited(region)}
 
 
 def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
@@ -268,7 +274,7 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             match_by="shape_id", shape_id=poly["id"],
             **fields(total, men, women, f"The 2009 census's resident population of {region}"
                      + (" (the Autonomous Sector of Bissau)." if region == "Bissau" else
-                        " region."))))
+                        " region."), region)))
         by_polygon: dict[str, list[str]] = {}
         for key, sid in spec["sectors"].items():
             if sid is not None:
@@ -293,7 +299,7 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 note = f"The 2009 census's resident population of {rows[0]['name']} sector."
             records.append(record(f"GNB-2009-{sid}", shape["name"], level="admin2", parent="GNB",
                                   country="GNB", match_by="shape_id", shape_id=sid,
-                                  **fields(total, men, women, note)))
+                                  **fields(total, men, women, note, region)))
             report.append(f"  {shape['name']}: {total:,} ({', '.join(keys)})")
         if region == "Cacheu":
             caio = table["sectors"]["caio"]
@@ -304,11 +310,14 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 text = (f"This polygon is {what}. The 2009 census counts Caió sector whole, "
                         f"islands included ({caio['total']:,} people), and no table counts its "
                         "parts apart, so no figure is shown here.")
+                # The table it was read from is named, as on every sector:
+                # a record citing nothing would have its empty compositions
+                # put down to "an unnamed source".
                 records.append(record(
                     f"GNB-2009-caio-{sid}", shape["name"], level="admin2", parent="GNB",
                     country="GNB", match_by="shape_id", shape_id=sid,
                     population=gap(NOT_AVAILABLE, text), sex_ratio=gap(NOT_AVAILABLE, text),
-                    median_age=gap(NOT_AVAILABLE, text)))
+                    median_age=gap(NOT_AVAILABLE, text), sources=cited(region)))
             report.append(f"  Caió: {caio['total']:,} on neither of its two polygons")
     made = sum(t["region"][0] for t in tables.values() if t.get("region"))
     report.append(f"regions read make {made:,}")
@@ -329,6 +338,9 @@ def main() -> int:
         if not blob.startswith(b"%PDF"):
             log(f"  {region}: not a PDF: {blob[:60]!r}")
             continue
+        # Which bytes were read, for anyone checking the rows against the file.
+        log(f"  {region}: read {url}: {len(blob):,} bytes, "
+            f"sha256 {hashlib.sha256(blob).hexdigest()}")
         tables[region] = read(blob, region)
         t = tables[region]
         log(f"  {region}: region {t['region']}; sectors "

@@ -1,24 +1,32 @@
 #!/usr/bin/env python3
-"""Cabo Verde -- the 2010 census (RGPH 2010) by parish.
+"""Cabo Verde -- the 2021 census by municipality, and the 2010 census by parish.
 
-The map's second level is Cabo Verde's 32 parishes (freguesias), and nothing
-read so far gave them a count: Wikidata has one, for São Lourenço. INE Cabo
-Verde published the 2010 census's resident population by zone and locality in
-one workbook per island, a sheet per parish (``811 - Nossa Senhora de Ajuda``),
-each zone with its total, men and women and then each of its localities. Those
+The map's first level is Cabo Verde's 22 municipalities (concelhos), its
+second the 32 parishes (freguesias); fourteen municipalities have one parish
+each, which is the municipality whole.
+
+**The municipalities, 2021.** INE's thematic report on the 2021 census (V
+RGPH, "Estado e Estrutura da População", 2022) gives every municipality's
+resident population by sex in its Tabela 7. The report has left INE's site
+with the rest of its old one; the copy read is the Internet Archive's of
+INE's own file. Written for each municipality: population and sex ratio
+(males per 100 females), 2021 -- and the same for the parish of each of the
+fourteen municipalities that have only one, since the two are one place.
+
+**The other parishes, 2010.** Nothing gives the 18 parishes of the eight
+municipalities with several a count of their own after 2010. INE published
+the 2010 census's resident population by zone and locality in one workbook
+per island, a sheet per parish (``811 - Nossa Senhora de Ajuda``), each zone
+with its total, men and women and then each of its localities. Those
 workbooks have since left INE's site, whose census service now asks for a
 login; the copies read here are the Internet Archive's of INE's own files, as
-INE served them in November 2013.
-
-A parish's count is its zones' counts added up. The zone tables count the
-people living in private households; those in collective dwellings are
-counted only by municipality, and each parish's note says how many that
-leaves out in its municipality. A parish that is its municipality's only one
-takes the municipality's own count instead (INE's table by municipality),
-collective dwellings included. Written for each parish: population and sex
-ratio (males per 100 females, among the people in private households),
-2010. The workbooks count ages only in three broad groups, so there is no
-median age.
+INE served them in November 2013. A parish's count is its zones' counts added
+up. The zone tables count the people living in private households; those in
+collective dwellings are counted only by municipality, and each parish's note
+says how many that leaves out in its municipality. Written for each of these
+parishes: population and sex ratio (males per 100 females, among the people
+in private households), 2010. The workbooks count ages only in three broad
+groups and the 2021 report gives mean ages only, so there is no median age.
 
 **Checks before anything is written.** Every zone's men and women make its
 total (the localities listed under a zone do not always make it, and are
@@ -34,7 +42,10 @@ the two together exactly, and all 32 make the country's 488,040.
 Parishes are matched to the boundary file's within their municipality by
 name (``N.S.`` read as Nossa Senhora, "de/da/do" set aside, a sheet name cut
 at 31 characters by its beginning); where a municipality has one parish, the
-two are the same. Every polygon must get exactly one parish.
+two are the same. Every polygon must get exactly one parish. Tabela 7 must
+name each of the 22 municipalities once; each row's men and women make its
+total, its women per 100 men are the ones it prints, and the municipalities
+make the country's 491,233.
 
 Usage:
     python -m scripts.fetch_census.cabo_verde_parishes
@@ -43,6 +54,8 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
+import io
 import json
 import re
 import time
@@ -73,6 +86,26 @@ TOTALS_SOURCE = ("Instituto Nacional de Estatística (INE) Cabo Verde, Recenseam
 LICENCE = "INE Cabo Verde publication (reuse with attribution)"
 YEAR = 2010
 NATIONAL = 491_683
+# INE's thematic report on the 2021 census, whose Tabela 7 gives every
+# municipality's resident population by sex: the Internet Archive's capture
+# of the file as INE served it in June 2024, the whole report (112 pages).
+# Not every capture is: one asked for by year alone came back cut at 1 MB.
+REPORT_ORIGINAL = "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf"
+REPORT_STAMP = "20240611091530"
+REPORT_SOURCE = ("Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da "
+                 "População e Habitação (Censo 2021), Estado e Estrutura da População, Tabela 7: "
+                 "resident population by municipality and sex")
+REPORT_TABLE = "tabela 7 - reparticao da populacao residente, segundo o concelho"
+YEAR_2021 = 2021
+NATIONAL_2021 = (491_233, 246_363, 244_870)          # both sexes, men, women
+# Each municipality's name in Tabela 7, by INE's code.
+NAMES_2021 = {
+    11: "Ribeira Grande", 12: "Paul", 13: "Porto Novo", 21: "São Vicente", 31: "Ribeira Brava",
+    32: "Tarrafal de São Nicolau", 41: "Sal", 51: "Boavista", 61: "Maio", 71: "Tarrafal",
+    72: "Santa Catarina", 73: "Santa Cruz", 74: "Praia", 75: "São Domingos", 76: "São Miguel",
+    77: "São Salvador do Mundo", 78: "São Lourenço dos Órgãos", 79: "Ribeira Grande Santiago",
+    81: "Mosteiros", 82: "São Filipe", 83: "Santa Catarina do Fogo", 91: "Brava",
+}
 # How far a municipality's parishes may miss the people its table counts in
 # private households (Ribeira Grande's make 18,931 against 18,886).
 SLACK = 0.005
@@ -130,13 +163,24 @@ def number(cell: Any) -> float | None:
     return float(text) if text.isdigit() else None
 
 
-def fetch(original: str, stamp: str) -> tuple[bytes, str]:
+WORKBOOK = b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1"
+
+
+def fetch(original: str, stamp: str, magic: bytes = WORKBOOK) -> tuple[bytes, str]:
+    """A file as the Internet Archive kept it, checked to be the kind it should
+    be. Its size and SHA-256 go to the log, so the run's record says which
+    bytes were read."""
     url = ARCHIVE.format(stamp=stamp, original=original)
     for wait in (10, 30, 90, None):
         try:
             blob = http_get(url, binary=True, cache=False, timeout=180)
-            if blob[:8] != b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1":
-                raise SystemExit(f"cabo_verde_parishes: {url} is not a workbook: {blob[:60]!r}")
+            if not blob.startswith(magic):
+                raise SystemExit(f"cabo_verde_parishes: {url} is not the file expected: "
+                                 f"{blob[:60]!r}")
+            if magic == b"%PDF" and b"%%EOF" not in blob[-2048:]:
+                # A PDF the transfer cut short: asked for again.
+                raise OSError(f"the PDF ends without its end marker after {len(blob):,} bytes")
+            log(f"    read {url}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
             return blob, url
         except SystemExit:
             raise
@@ -153,6 +197,102 @@ def sheets_of(blob: bytes) -> dict[str, list[list[Any]]]:
     book = xlrd.open_workbook(file_contents=blob)
     return {sh.name: [[sh.cell_value(r, c) for c in range(sh.ncols)] for r in range(sh.nrows)]
             for sh in book.sheets()}
+
+
+ROW_2021 = re.compile(r"^(?P<name>\D+?)\s+(?P<rest>\d[\d\s,]*)$")
+
+
+def row_2021(line: str) -> tuple[str, int, int, int, float] | None:
+    """A row of Tabela 7 -- 'Ribeira Grande 15 128 3,1 8 066 3,3 7 062 2,9 87,6'
+    -> (name, both sexes, men, women, women per 100 men). Each count is the
+    digit groups before a share (the share has a decimal comma); the last
+    figure is the ratio. A line that is not such a row gives None."""
+    hit = ROW_2021.match(line.strip())
+    if not hit:
+        return None
+    groups: list[tuple[list[str], str]] = []
+    digits: list[str] = []
+    for token in hit.group("rest").split():
+        if re.fullmatch(r"\d+,\d+", token):
+            groups.append((digits, token))
+            digits = []
+        elif token.isdigit():
+            digits.append(token)
+        else:
+            return None
+    if digits or len(groups) != 4 or groups[3][0]:
+        return None
+    counts = []
+    for parts, _share in groups[:3]:
+        if not parts or len(parts[0]) > 3 or any(len(p) != 3 for p in parts[1:]):
+            return None
+        counts.append(int("".join(parts)))
+    return (hit.group("name").strip(), counts[0], counts[1], counts[2],
+            float(groups[3][1].replace(",", ".")))
+
+
+def table_7(blob: bytes) -> list[str]:
+    """The lines of Tabela 7, from its title to the source line under it. The
+    report's list of tables names it too, on a page with no rows: the page
+    taken is the one whose lines read as rows."""
+    import pdfplumber                               # noqa: PLC0415
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages:
+            lines = (page.extract_text() or "").splitlines()
+            start = next((i for i, line in enumerate(lines)
+                          if fold(line).startswith(REPORT_TABLE)), None)
+            if start is None:
+                continue
+            end = next((i for i in range(start + 1, len(lines))
+                        if fold(lines[i]).startswith("fonte")), len(lines))
+            if any(row_2021(line) for line in lines[start + 1:end]):
+                return lines[start + 1:end]
+    raise SystemExit("cabo_verde_parishes: the 2021 report has no Tabela 7 by municipality")
+
+
+def read_2021(lines: list[str]) -> dict[int, dict[str, Any]]:
+    """{municipality code: {"name", "total", "men", "women"}} from Tabela 7, once
+    every check holds: each of the 22 municipalities named once and nothing
+    else but the country, each row's men and women making its total and its
+    women per 100 men the ones it prints, and the municipalities making the
+    country's NATIONAL_2021."""
+    rows: dict[str, dict[str, Any]] = {}
+    for line in lines:
+        got = row_2021(line)
+        if got is None:
+            continue
+        name, total, men, women, ratio = got
+        if fold(name) in rows:
+            raise SystemExit(f"cabo_verde_parishes: Tabela 7 names {name} twice")
+        rows[fold(name)] = {"name": name, "total": total, "men": men, "women": women,
+                            "ratio": ratio}
+    wrong = []
+    for row in rows.values():
+        if row["men"] + row["women"] != row["total"]:
+            wrong.append(f"{row['name']}: {row['men']:,} men and {row['women']:,} women do not "
+                         f"make {row['total']:,}")
+        elif not row["men"] or abs(100 * row["women"] / row["men"] - row["ratio"]) > 0.051:
+            wrong.append(f"{row['name']}: {row['women']:,} women to {row['men']:,} men is not "
+                         f"the {row['ratio']} per 100 printed")
+    country = rows.pop("cabo verde", None)
+    if country is None or (country["total"], country["men"], country["women"]) != NATIONAL_2021:
+        wrong.append(f"the country's row is {country}, not {NATIONAL_2021}")
+    out = {}
+    for code, name in NAMES_2021.items():
+        row = rows.pop(fold(name), None)
+        if row is None:
+            wrong.append(f"no row for {name}")
+        else:
+            out[code] = row
+    if rows:
+        wrong.append(f"rows for no municipality: {sorted(r['name'] for r in rows.values())}")
+    for i, field in enumerate(("total", "men", "women")):
+        made = sum(r[field] for r in out.values())
+        if made != NATIONAL_2021[i]:
+            wrong.append(f"the municipalities' {field} make {made:,}, not {NATIONAL_2021[i]:,}")
+    if wrong:
+        raise SystemExit("cabo_verde_parishes: Tabela 7: " + "; ".join(wrong))
+    return out
 
 
 def embedded(places: list[dict[str, Any]], total: Any) -> int | None:
@@ -349,17 +489,23 @@ def check(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, 
         raise SystemExit("cabo_verde_parishes: " + "; ".join(wrong))
 
 
-def bind(parishes: dict[int, list[dict[str, Any]]], admin1: list[dict[str, Any]],
-         admin2: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
-    """{polygon id: parish}: by name within the municipality (a name the
-    workbook cut short, by its beginning), or the only parish of a
-    municipality with one."""
+def codes_of(admin1: list[dict[str, Any]]) -> dict[str, int]:
+    """{municipality polygon id: INE's code}, every polygon named once."""
     code_of = {}
     for shape in admin1:
         hits = [c for c, (name, _) in MUNICIPALITIES.items() if fold(name) == fold(shape["name"])]
         if len(hits) != 1:
             raise SystemExit(f"cabo_verde_parishes: municipality polygon {shape['name']!r}: {hits}")
         code_of[shape["id"]] = hits[0]
+    return code_of
+
+
+def bind(parishes: dict[int, list[dict[str, Any]]], admin1: list[dict[str, Any]],
+         admin2: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """{polygon id: parish}: by name within the municipality (a name the
+    workbook cut short, by its beginning), or the only parish of a
+    municipality with one."""
+    code_of = codes_of(admin1)
     bound: dict[str, dict[str, Any]] = {}
     left = []
     for code in sorted(MUNICIPALITIES):
@@ -425,21 +571,53 @@ def note_for(p: dict[str, Any], name: str, parishes: dict[int, list[dict[str, An
     return note
 
 
-def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, float]],
-               admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """A record for each parish. A parish that is its municipality's only one
-    takes the municipality's count, people in collective dwellings included;
-    the others take their zones' count of the people in private households.
+def figures_2021(row: dict[str, Any], note: str) -> dict[str, Any]:
+    """A municipality's 2021 count and sex ratio, cited to the report."""
+    return {"population": measure(row["total"], year=YEAR_2021, source=REPORT_SOURCE),
+            "population_note": note,
+            "sex_ratio": measure(round(100 * row["men"] / row["women"], 1),
+                                 unit="males_per_100_females", year=YEAR_2021,
+                                 source=REPORT_SOURCE),
+            "sources": [{"field": "population/sex_ratio", "name": REPORT_SOURCE,
+                         "url": ARCHIVE.format(stamp=REPORT_STAMP, original=REPORT_ORIGINAL),
+                         "page": REPORT_ORIGINAL, "license": LICENCE, "year": YEAR_2021}]}
 
-    No record is written for the municipalities themselves: most carry a
-    later count (the 2021 census, for nine of them), which a 2010 figure here
-    would stand in front of."""
+
+def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, float]],
+               admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+               counts_2021: dict[int, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    """A record for each parish, and with the 2021 counts one for each
+    municipality.
+
+    A municipality takes its 2021 count, and so does the parish of each of
+    the fourteen that have only one: the two are one place, and a 2010 count
+    on the parish would contradict the 2021 count on the municipality drawn
+    around it. The other parishes take their zones' 2010 count of the people
+    in private households. Without the 2021 counts, a municipality's only
+    parish takes the municipality's 2010 count, people in collective
+    dwellings included, and no municipality record is written."""
     bound = bind(parishes, admin1, admin2)
     totals_url = ARCHIVE.format(stamp=TOTALS_STAMP, original=TOTALS_ORIGINAL)
     out = []
+    if counts_2021 is not None:
+        for shape_id, code in codes_of(admin1).items():
+            shape = next(s for s in admin1 if s["id"] == shape_id)
+            out.append(record(
+                f"CPV-2021-{code}", shape["name"], level="admin1", parent="CPV", country="CPV",
+                match_by="shape_id", shape_id=shape_id,
+                **figures_2021(counts_2021[code], "The 2021 census's count of the resident "
+                                                  "population of the municipality.")))
     for shape in admin2:
         p = bound[shape["id"]]
         municipality, ine = MUNICIPALITIES[p["code"] // 10]
+        if counts_2021 is not None and len(parishes[p["code"] // 10]) == 1:
+            out.append(record(
+                f"CPV-2021-{p['code']}", shape["name"], level="admin2", parent="CPV",
+                country="CPV", match_by="shape_id", shape_id=shape["id"],
+                **figures_2021(counts_2021[p["code"] // 10],
+                               f"The 2021 census's count for the municipality of {municipality}, "
+                               "of which this is the only parish.")))
+            continue
         own = table[fold(ine)]
         source = SOURCE.format(island=p["island_name"])
         sources = [{"field": "population/sex_ratio", "name": source, "url": p["url"],
@@ -471,16 +649,21 @@ def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[
 def main() -> int:
     argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    blob, _ = fetch(REPORT_ORIGINAL, REPORT_STAMP, magic=b"%PDF")
+    counts_2021 = read_2021(table_7(blob))
+    for code, row in counts_2021.items():
+        log(f"  2021: {row['name']}: {row['total']:,} ({row['men']:,} men, {row['women']:,} women)")
     parishes, table, _ = read()
     n = sum(len(v) for v in parishes.values())
     log(f"  {n} parishes in {len(parishes)} municipalities, making "
         f"{sum(p['total'] for v in parishes.values() for p in v):,.0f}")
     admin1 = json.loads((SITE / "admin1" / "CPV.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "CPV.units.json").read_text())
-    records = records_of(parishes, table, admin1, admin2)
+    records = records_of(parishes, table, admin1, admin2, counts_2021)
     for r in records:
         ratio = r["sex_ratio"].get("value")
-        log(f"  {r['name']}: {r['population']['value']:,}"
+        log(f"  {r['level']} {r['name']}: {r['population']['value']:,} "
+            f"({r['population']['year']})"
             + (f", {ratio} men per 100 women" if ratio is not None else "")
             + f"; {r['population_note']}")
     write_json(PROCESSED / OUT, records)

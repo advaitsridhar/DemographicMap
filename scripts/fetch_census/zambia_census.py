@@ -33,6 +33,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import re
@@ -272,7 +273,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             note = summed_note(shape["name"], len(here), extra, missing)
             report.append(f"province polygon {shape['name']!r}: the sum of its drawn districts "
                           f"({row['total']:,}): {note}")
-        records.append(record(f"ZMB-2022-{k}", shape["name"], level="admin1", parent="ZMB",
+        # Lusaka is a province and a district: the level is in the id, so no
+        # table keyed by a row's id can reach both.
+        records.append(record(f"ZMB-2022-province-{k}", shape["name"], level="admin1", parent="ZMB",
                               country="ZMB", match_by="shape_id", shape_id=shape["id"],
                               **fields(row, note)))
     return records, report
@@ -284,6 +287,8 @@ def main() -> int:
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if not blob.startswith(b"%PDF"):
         raise SystemExit(f"zambia_census: {URL} is not a PDF: {blob[:80]!r}")
+    # Which bytes were read, for anyone checking the rows against the file.
+    log(f"  read {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     table = read(blob)
     log(f"  {len(table['provinces'])} provinces and {len(table['districts'])} districts, "
         f"making {table['national']['total']:,}")

@@ -365,7 +365,7 @@ class MoroccoCensusTest(unittest.TestCase):
                    "parent": "R2"},
                   {"id": "b", "name": "Taourirte Province", "parent": "R2"},
                   {"id": "c", "name": "Province d'Es-Semara إقليم السمارة", "parent": "R11"},
-                  {"id": "d", "name": "Tarfaya Province", "parent": "R11"}]
+                  {"id": "d", "name": "Boujdour Province", "parent": "R11"}]
         records, report = self.mr.build(table, admin1, admin2)
         by = {r["shape_id"]: r for r in records}
         self.assertEqual(by["R2"]["population"]["value"], 630)

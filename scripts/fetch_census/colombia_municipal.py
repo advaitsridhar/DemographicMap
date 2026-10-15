@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Colombia: median age and sex ratio for every municipality and department (DANE, 2018),
-and each municipality's 2018 head count.
+and each municipality's 2018 population as DANE's census-based series gives it.
 
 DANE's municipal population series built on the 2018 census (CNPV 2018),
 ``PPED-AreaSexoEdadMun-2018-2042_VP.xlsx``, gives every municipality's
@@ -9,10 +9,13 @@ rows -- the census year the series is built on -- are read, for the whole
 municipality ("Total" area):
 
 * **sex ratio** is its men per 1,000 women;
-* **population**, a municipality's men and women. Every later count or
-  projection stands in front of it; it is for the areas nothing newer
-  describes on their own outline (Mapiripana, folded into Barrancominas in
-  2019 and still drawn apart);
+* **population**, a municipality's men and women. These are the series' base
+  population for 2018 -- the census count adjusted for those it missed, so
+  the municipalities make DANE's adjusted 48,258,494 rather than the census's
+  head count -- not the enumeration itself. Every later count or projection
+  stands in front of it; it is for the areas nothing newer describes on their
+  own outline (Mapiripana, folded into Barrancominas in 2019 and still drawn
+  apart);
 * **median age** is computed from its single-year counts, the age at which
   half the population is younger, interpolated within that year of age.
   DANE's workbook publishes the counts, not the median, so the record says
@@ -119,10 +122,11 @@ def main() -> int:
             median_age_note="Computed from DANE's single-year counts by age.",
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE) if women else None,
-            # Its 2018 head count too: a later count or projection stands in front
-            # of it, so it shows only where nothing newer reaches the polygon --
-            # Mapiripana, an area DANE counted apart in 2018 and has since
-            # folded into Barrancominas.
+            # Its 2018 population too, the series' adjusted base for the census
+            # year rather than the census's head count: a later count or
+            # projection stands in front of it, so it shows only where nothing
+            # newer reaches the polygon -- Mapiripana, an area DANE counted
+            # apart in 2018 and has since folded into Barrancominas.
             population=measure(men + women, year=YEAR, source=SOURCE),
             sources=[{"field": "median age/sex ratio", "name": SOURCE, "url": URL,
                       "license": "DANE open data (attribution)"},

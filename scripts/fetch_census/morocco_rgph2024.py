@@ -27,8 +27,12 @@ people live almost all across that line: a 2,016 km2 strip of Es-Semara and a
 0.7 km2 sliver labelled Oued Ed-Dahab (Dakhla's province). HCP counts each
 province whole, so no figure of its is written on those pieces, and the
 region's own polygon gets none either: each says why, and the figure an
-encyclopaedia put there (the whole region's, or Dakhla's) gives way. Dakhla-
-Oued Ed-Dahab, the twelfth region, is not drawn under Morocco at all.
+encyclopaedia put there (the whole region's, or Dakhla's) gives way. The
+third, Tarfaya Province, is most of its province, but HCP counts it with its
+communes south of the line (Daoura), so it too says why instead of showing
+the province's count; the province's communes must make that count, and the
+commune named must be among them. Dakhla-Oued Ed-Dahab, the twelfth region,
+is not drawn under Morocco at all.
 
 Usage:
     python -m scripts.fetch_census.morocco_rgph2024
@@ -37,6 +41,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import re
@@ -70,6 +75,17 @@ ACROSS_THE_LINE = {
     "Oued Ed-Dahab Province": (
         "Oued Ed-Dahab", "a sliver of 0.7 km2 at the Western Sahara line, labelled for "
                          "Oued Ed-Dahab province"),
+}
+# A polygon that is most of its province, the rest across the line: the
+# boundary file draws Tarfaya Province north of 27°40'N only (its polygon
+# stops at 27.667°N), and HCP counts the province with its communes south of
+# the line -- Daoura, which GeoNames places at 27.46°N, inside the disputed
+# polygon and outside this one. Written as a stated gap like the pieces, the
+# commune named with its own count: label -> (the province HCP counts, the
+# part drawn, the communes across the line as HCP names them, folded).
+PART_ACROSS = {
+    "Tarfaya Province": ("Tarfaya", "the part of Tarfaya province north of the Western "
+                                    "Sahara line", ("daoura",)),
 }
 # Spellings no reduction joins: the boundary file's reduced label -> HCP's.
 ALIASES = {
@@ -121,7 +137,7 @@ def read(blob: bytes) -> dict[str, Any]:
     import openpyxl                                 # noqa: PLC0415
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     rows = list(book.worksheets[0].iter_rows(values_only=True))
-    out: dict[str, Any] = {"national": None, "regions": {}, "provinces": {}}
+    out: dict[str, Any] = {"national": None, "regions": {}, "provinces": {}, "communes": {}}
     for row in rows:
         cells = list(row) + [None] * 7
         name = str(cells[0] or "").strip()
@@ -144,10 +160,14 @@ def read(blob: bytes) -> dict[str, Any]:
         if code is None or code < 1:
             continue
         # Regions have one or two digits; provinces and prefectures the region's
-        # code and three more; cercles and communes are longer.
+        # code and three more; cercles two more and communes four more. Only
+        # the communes of the regions the Western Sahara line cuts are kept.
         table = ("regions" if code < 100 else "provinces" if code < 100_000 else None)
         if table is None:
-            continue
+            if code >= 10_000_000 and code // 10_000 // 1000 in CLAIM_LINE_REGIONS:
+                table = "communes"
+            else:
+                continue
         seen = out[table].get(code)
         if seen is not None and (seen["total"], seen["name"]) != (total, name):
             raise SystemExit(f"morocco_rgph2024: code {code} is printed as {seen['name']} "
@@ -189,6 +209,40 @@ def stated(text: str) -> dict[str, Any]:
         why["displaces_before"] = YEAR + 1
         out[field] = why
     return out
+
+
+def part_across(table: dict[str, Any], label: str) -> str:
+    """The stated reason for a polygon PART_ACROSS declares: its province's
+    count, and the communes of it across the line with theirs. The province's
+    communes must make its count, and each declared commune must be one of
+    them, or the run stops."""
+    province, part, across = PART_ACROSS[label]
+    hits = [(c, p) for c, p in table["provinces"].items() if key(p["name"]) == key(province)]
+    if len(hits) != 1:
+        raise SystemExit(f"morocco_rgph2024: {label}: {len(hits)} HCP provinces named {province}")
+    code, row = hits[0]
+    communes = [c for k, c in table["communes"].items() if k // 10_000 == code]
+    made = sum(c["total"] for c in communes)
+    if made != row["total"]:
+        raise SystemExit(f"morocco_rgph2024: {province} province's {len(communes)} communes make "
+                         f"{made:,}, not its {row['total']:,}")
+    named = []
+    for name in across:
+        found = [c for c in communes if name in latin(c["name"])]
+        if len(found) != 1:
+            raise SystemExit(f"morocco_rgph2024: {province} province has {len(found)} communes "
+                             f"named {name!r}: {[c['name'] for c in communes]}")
+        named.append(f"{display_commune(found[0]['name'])} ({found[0]['total']:,} people)")
+    which = ("the commune of " + named[0] if len(named) == 1 else
+             "the communes of " + ", ".join(named[:-1]) + " and " + named[-1])
+    return (f"This polygon is {part}. The 2024 census counts {province} province whole "
+            f"({row['total']:,} people), {which} south of that line among them, and no figure "
+            "for the part north of it alone has been read, so none is shown here.")
+
+
+def display_commune(name: str) -> str:
+    """'Commune de Daoura' -> 'Daoura'; "Commune d'El Hagounia" -> 'El Hagounia'."""
+    return re.sub(r"(?i)^commune\s+(?:de\s+|d['’]\s*)?", "", str(name).strip())
 
 
 def pair_by_spelling(shapes: list[dict[str, Any]],
@@ -262,6 +316,14 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                              "here.")))
                 report.append(f"{shape['name']!r}: a piece across the line, written as a gap")
                 continue
+            if shape["name"] in PART_ACROSS:
+                records.append(record(
+                    f"MAR-RGPH2024-part-{shape['id']}", shape["name"], level="admin2",
+                    parent="MAR", country="MAR", match_by="shape_id", shape_id=shape["id"],
+                    **stated(part_across(table, shape["name"]))))
+                report.append(f"{shape['name']!r}: part of a province across the line, written "
+                              "as a gap")
+                continue
             if region in CLAIM_LINE_REGIONS or region == -1:
                 report.append(f"{shape['name']!r}: in a region the line cuts; not bound")
                 continue
@@ -299,6 +361,8 @@ def main() -> int:
     blob = http_get(URL, binary=True, cache=False, timeout=120)
     if blob[:2] != b"PK":
         raise SystemExit(f"morocco_rgph2024: {URL} is not a workbook: {blob[:80]!r}")
+    # Which bytes were read, for anyone checking the rows against the file.
+    log(f"  read {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     table = read(blob)
     log(f"  {len(table['regions'])} regions and {len(table['provinces'])} provinces and "
         f"prefectures, making {table['national']:,}")
@@ -311,6 +375,12 @@ def main() -> int:
         row = table["provinces"].get(code)
         if row:
             log(f"  {row['name']}: {row['total']:,}")
+    for label, (province, _, _) in PART_ACROSS.items():
+        for code, row in table["provinces"].items():
+            if key(row["name"]) == key(province):
+                for c in sorted(table["communes"].values(), key=lambda c: c["code"]):
+                    if c["code"] // 10_000 == code:
+                        log(f"  {row['name']}: {c['name']} {c['total']:,} ({c['code']})")
     bound = [r for r in records if r["level"] == "admin2" and "value" in r["population"]]
     log(f"  {sum(1 for r in records if r['level'] == 'admin1' and 'value' in r['population'])} "
         f"regions and {len(bound)} of {len(admin2)} provinces bound")
