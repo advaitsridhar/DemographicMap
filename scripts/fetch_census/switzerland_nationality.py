@@ -175,10 +175,7 @@ def build(year: int) -> list[dict[str, Any]]:
         if across and not straddling:
             extra = took_in_note(across, initial_of, members, old_communes, todays, name)
         if straddling:
-            why = (f"Not written: the map draws this district as it was in 2009, and "
-                   f"{', '.join(todays[t] for t in straddling)} -- today's commune(s) -- merged "
-                   f"2009 communes from inside and outside it; BFS publishes nationality by "
-                   f"today's communes only and no split of a merged commune.")
+            why = straddled_note([todays[t] for t in straddling])
             unit_fields = {"ethnicity": gap(NOT_AVAILABLE, why)}
             gaps += 1
         else:
@@ -241,6 +238,19 @@ def build(year: int) -> list[dict[str, Any]]:
             whole = sum(counts.get(c, {}).get(TOTAL, 0) for c in members)
             check_sum(totals, whole, f"{cantons[hist]['Name']}'s districts against the canton")
     return records
+
+
+def straddled_note(communes: list[str]) -> str:
+    """Why a 2009 district has no nationality: today's communes that merged
+    2009 communes from inside and outside it, which BFS does not split."""
+    if len(communes) == 1:
+        which = f"today's commune of {communes[0]} merged"
+    else:
+        which = (f"today's communes of {', '.join(communes[:-1])} and {communes[-1]} each "
+                 f"merged")
+    return (f"No nationality figure is given for this district. The map draws it as it was "
+            f"in 2009, and {which} 2009 communes from inside and outside it; BFS publishes "
+            f"nationality by today's communes only and does not split a merged commune.")
 
 
 def crosses_canton_only(initial: set[str], members: set[str],

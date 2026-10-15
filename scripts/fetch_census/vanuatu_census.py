@@ -525,14 +525,23 @@ NOTES = {
 }
 
 
-def language_note(asked: float, aged: float, swapped: bool) -> str:
+def language_note(asked: float, aged: float, swapped: bool, shown: float | None = None) -> str:
+    """The note beside a council's or province's first language.
+
+    ``shown`` is what the shares written beside it add up to, each rounded to
+    a tenth as the map shows it; that, not the unrounded reach, is the sum a
+    reader can check. Aneityum's four shares make 94.1 of the 1,260 of 1,338
+    people (94.17%) the question reached, and the note once said 94.2%.
+    """
+    if shown is None:
+        shown = 100 * asked / aged
     note = (
         "First language learned to speak, 2020 Census (Table 6.16), which the census asked "
         "only of the people who can speak one of the islands' own languages: "
         f"{asked:,.0f} of the {aged:,.0f} people aged three and over in private households "
-        "here (Table 6.17). Each share is of all of them, so the shares add up to the "
-        f"{100 * asked / aged:.1f}% the question reached; the first language of the rest, who "
-        "speak no vernacular, was not asked. 'Vanuatu vernacular languages' is the census's "
+        "here (Table 6.17). Each share is of all of them, so the shares add up to "
+        f"{shown:.1f}% rather than 100%: the first language of the rest, who speak no "
+        "vernacular, was not asked. 'Vanuatu vernacular languages' is the census's "
         "'Indigenous (Vernacular)': the islands' own languages, every one of them Oceanic.")
     if swapped:
         note += (" Table 6.17 prints Port Vila's and Luganville's rows under each other's "
@@ -552,12 +561,21 @@ def completed_note(language: dict[str, Any]) -> str:
     counts = language["counts"]
     where = PROVINCE_ON_MAP[province]
     if language.get("completed_panels", 1) >= len(WIDTHS["6.16"]):
-        return (f" Table 6.16 prints no row for this council. Its figures are {where}'s "
-                f"less its other councils' in the same table: English "
-                f"{counts['English']:,.0f}, French {counts['French']:,.0f}, Bislama "
-                f"{counts['Bislama']:,.0f}, vernacular {counts[VERNACULAR]:,.0f} and not "
-                f"stated {counts['Not stated']:,.0f}, {language['total']:,.0f} people in "
-                f"all -- arithmetic on the table's own counts.")
+        # The people the parts add up to, which the shares are of; the made
+        # total, from the totals' own column, may differ by the table's
+        # rounding (Aneityum: 1,260 in its parts, 1,261 from the totals).
+        parts = sum(counts.values())
+        note = (f" Table 6.16 prints no row for this council. Its figures are {where}'s "
+                f"less its other councils' in the same table -- arithmetic on the table's "
+                f"own counts: English {counts['English']:,.0f}, French "
+                f"{counts['French']:,.0f}, Bislama {counts['Bislama']:,.0f}, vernacular "
+                f"{counts[VERNACULAR]:,.0f} and not stated {counts['Not stated']:,.0f}, "
+                f"{parts:,.0f} people in all.")
+        if round(parts) != round(language["total"]):
+            note += (f" The table's totals, taken the same way, give "
+                     f"{language['total']:,.0f}, since its rows do not all add up to the "
+                     f"person.")
+        return note
     return (f" The page prints this council's total, English and French but not its "
             f"Bislama, vernacular and not-stated figures, which are "
             f"{where}'s less its other councils' in the same table: "
@@ -571,12 +589,16 @@ def fields_for(people: dict[str, float], groups: list[float], religion: dict[str
                ethnicity: dict[str, Any], language: dict[str, Any] | None,
                aged: float | None = None, swapped: bool = False) -> dict[str, Any]:
     median = median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, groups)])
-    spoken: dict[str, Any] = (
-        {"language": shares_of(language["counts"], aged), "language_year": YEAR,
-         "language_note": language_note(language["total"], aged, swapped)
-                          + completed_note(language)}
-        if language is not None and aged
-        else {"language": gap(NOT_AVAILABLE, ANEITYUM_LANGUAGE)})
+    spoken: dict[str, Any] = {"language": gap(NOT_AVAILABLE, ANEITYUM_LANGUAGE)}
+    if language is not None and aged:
+        shares = shares_of(language["counts"], aged)
+        # A made row's people are its parts', which its shares are of.
+        asked = (sum(language["counts"].values()) if language.get("completed_from")
+                 else language["total"])
+        shown = round(sum(s["pct"] for s in shares), 1)
+        spoken = {"language": shares, "language_year": YEAR,
+                  "language_note": language_note(asked, aged, swapped, shown)
+                                   + completed_note(language)}
     return {
         "population": population(people["total"], YEAR, f"{SOURCE} (Table 1.1)"),
         "sex_ratio": measure(sex_ratio(people["male"], people["female"]),

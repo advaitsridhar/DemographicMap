@@ -5524,7 +5524,12 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
             chosen = twin_population(twin, entity)
             if chosen is not None:
                 source, target = chosen
-                copy_field(source, target, "population")
+                if target is twin:
+                    # The first level's own figure gives way: flagged, so the
+                    # country's gate still weighs it (restate_population).
+                    restate_population(source, target)
+                else:
+                    copy_field(source, target, "population")
                 filled += 1
             for field in sorted(VALUE_FIELDS):
                 mine, theirs = entity.get(field), twin.get(field)
@@ -7944,6 +7949,19 @@ def inherit_single_unit(admin0: list[dict[str, Any]],
             cite_country(unit, nation, field)
             written.append(field)
             done.append(f"{iso3} {unit['name']} {field}")
+        # Where the country has no figure to hand down either, the unit says
+        # why in the country's words. Once the unit cites the country's source
+        # for what it did take, the generic sentence for an empty field would
+        # name that source as lacking the field: Western Sahara's religion
+        # read "the CIA World Factbook ... carries language and not
+        # religion", where the Factbook gives "Muslim" with no shares.
+        reasons: dict[str, str] = {}
+        if written:
+            for field in ROLLUP_FIELDS:
+                why = country_gap_reason(nation, field)
+                if why and field not in written and say_in_gap(unit, field, why):
+                    reasons[field] = why
+                    done.append(f"{iso3} {unit['name']} {field} (the country's reason)")
         # The same unit drawn again a level down takes what was just written.
         for twin in (admin2_by_country or {}).get(iso3, []):
             if twin.get("id") != unit.get("id") or twin.get("water"):
@@ -7954,7 +7972,36 @@ def inherit_single_unit(admin0: list[dict[str, Any]],
                         and not mine.get("not_this_ground"):
                     copy_field(unit, twin, field)
                     done.append(f"{iso3} {twin['name']} {field} (drawn again)")
+            for field, why in reasons.items():
+                if say_in_gap(twin, field, why):
+                    done.append(f"{iso3} {twin['name']} {field} (the country's reason, "
+                                f"drawn again)")
     return done
+
+
+# How the Factbook reader says a field is given in words alone
+# (scripts/fetch_factbook.py).
+FACTBOOK_FREE_TEXT = "Factbook reports free text only: "
+
+
+def country_gap_reason(nation: dict[str, Any], field: str) -> str | None:
+    """For a country drawn as one first-level unit, why that unit has no
+    ``field`` either: the country's own reason for its gap, or None where it
+    gives none."""
+    value = nation.get(field)
+    if not (isinstance(value, dict) and is_gap(value) and value.get("note")):
+        return None
+    note = str(value["note"]).strip()
+    if note.startswith(FACTBOOK_FREE_TEXT):
+        words = note[len(FACTBOOK_FREE_TEXT):].strip()
+        why = f"the CIA World Factbook gives only the words “{words}”."
+    else:
+        why = note if note.endswith(".") else note + "."
+        if why[:1].isupper() and why[1:2].islower():
+            why = why[:1].lower() + why[1:]
+    return (f"{nation.get('name') or nation.get('id')} is drawn as a single first-level "
+            f"unit, so the country's own figures are this unit's. The country has no "
+            f"{field} shares to give it: {why}")
 
 
 def join_note(before: Any, sentence: str) -> str:
@@ -7987,6 +8034,10 @@ def copy_field(source: dict[str, Any], target: dict[str, Any], field: str,
     is shown only for a gap, so a sentence put there would never be read.
     """
     value = copy.deepcopy(source[field])
+    if isinstance(value, dict):
+        # What the source record carried before a pass restated it describes
+        # that record, not this one.
+        value.pop(RESTATED_FROM, None)
     for suffix in SATELLITES:
         if f"{field}{suffix}" in source:
             target[f"{field}{suffix}"] = copy.deepcopy(source[f"{field}{suffix}"])
@@ -7995,12 +8046,87 @@ def copy_field(source: dict[str, Any], target: dict[str, Any], field: str,
     if sentence and not is_gap(value):
         target[f"{field}_note"] = join_note(target.get(f"{field}_note"), sentence)
     target[field] = value
-    sources = target.setdefault("sources", [])
-    sources[:] = [src for src in sources
-                  if not set(str(src.get("field") or "").split("/")) <= {field}]
-    sources.extend(src for src in source.get("sources") or []
-                   if field in str(src.get("field") or "").split("/")
-                   and src not in sources)
+    carry_citation(source, target, field)
+
+
+def restate_population(source: dict[str, Any], unit: dict[str, Any],
+                       sentence: str | None = None) -> None:
+    """copy_field for a first-level unit whose own population gives way to
+    the same ground's figure on another record, flagged as the roll-ups'
+    restate flags its own (RESTATED_FROM): the country's sum of its first
+    level is gated on the figure the unit carried for itself
+    (control_population), not on the one put in its place.
+
+    Burkina Faso's Centre shows its one division Kadiogo's OCHA figure,
+    3,510,028 for 2023, in place of Wikipedia's 3,030,384 for 2019.
+    Unflagged, that brought the regions within the gate of the Factbook's
+    figure for the country, and Burkina Faso's census and Factbook lines
+    gave way to sums of a survey's 1,191 interviews.
+    """
+    was = unit.get("population")
+    copy_field(source, unit, "population", sentence)
+    if published(was) is None:
+        return
+    own = was.get(RESTATED_FROM)
+    unit["population"][RESTATED_FROM] = (
+        dict(own) if isinstance(own, dict)
+        else {k: was[k] for k in ("value", "year", "source") if k in was})
+
+
+def cited_fields(src: dict[str, Any]) -> list[str]:
+    """The fields a source entry is cited for."""
+    return str(src.get("field") or "").split("/")
+
+
+def names_source(src: dict[str, Any], value: Any) -> bool:
+    """Whether a source entry names the source a figure says it is from: the
+    same words, or the entry's name standing whole in the figure's (an entry
+    "Wikidata" for "Wikidata (CC0)", "OCHA" for OCHA's dataset)."""
+    said = str(value.get("source") or "") if isinstance(value, dict) else ""
+    name = str(src.get("name") or "")
+    if not said or not name:
+        return False
+    return (source_identity(said) == source_identity(name)
+            or re.search(rf"(?<!\w){re.escape(name)}(?!\w)", said) is not None)
+
+
+def carry_citation(source: dict[str, Any], target: dict[str, Any], field: str) -> None:
+    """The citation for ``field`` goes with its value from ``source`` to ``target``.
+
+    On ``target``, an entry citing ``field`` alone goes, and one citing other
+    fields too stays for those alone. From ``source`` each entry citing
+    ``field`` comes, for that field alone; and where some of them name the
+    source the figure says it is from, only those. Kadiogo cites its
+    Wikidata item for "population/capital/coordinates" beside OCHA's
+    population table, and when Centre shows Kadiogo's OCHA figure the item
+    is not Centre's source for anything; Centre's own Wikipedia citation for
+    the figure it no longer shows goes. An entry carried for several fields,
+    one call each, is cited once for all of them, in its own order.
+    """
+    kept: list[dict[str, Any]] = []
+    for src in target.get("sources") or []:
+        fields = cited_fields(src)
+        if field not in fields:
+            kept.append(src)
+        elif set(fields) - {field}:
+            kept.append(dict(src, field="/".join(f for f in fields if f != field)))
+    citing = [src for src in source.get("sources") or [] if field in cited_fields(src)]
+    named = [src for src in citing if names_source(src, source.get(field))]
+    for src in named or citing:
+        entry = dict(src, field=field)
+        if entry in kept:
+            continue
+        order = cited_fields(src)
+        # An earlier field's narrowed copy of this same entry.
+        same = next((i for i, have in enumerate(kept)
+                     if dict(have, field=field) == entry
+                     and set(cited_fields(have)) <= set(order)), None)
+        if same is None:
+            kept.append(entry)
+            continue
+        have = set(cited_fields(kept[same])) | {field}
+        kept[same] = dict(kept[same], field="/".join(f for f in order if f in have))
+    target["sources"] = kept
 
 
 def fields_published(rows: list[dict[str, Any]]) -> set[str]:
@@ -8213,13 +8339,9 @@ SOLE_CHILD_REFUSED_NOTES: dict[tuple[str, str, str], str] = {
         "it lies in Inchiri, and the region's other department, Chami, is drawn as a "
         "polygon filed under Inchiri. Dakhlet Nouadhibou's figures are shown one level "
         "up and are not repeated here."),
-    # La Digue island is 32% of the district's polygon; the 67% drawn as
-    # "Other Islands" is filed under Outer Islands. The district's survey
-    # region is the whole district.
-    ("SYC", "La Digue a", "La Digue"): (
-        "The survey figures read for La Digue and Inner Islands describe the whole "
-        "district, including the inner islands that the map draws apart as Other "
-        "Islands, so they are not repeated on La Digue alone."),
+    # Seychelles is not here: its second level is the census's eight regions,
+    # each of several districts, and is filed under the country (NOT_NESTED),
+    # so no district has an only division and none is refused.
 }
 
 # How a refused figure is named in the sentence that says so.
@@ -8645,7 +8767,10 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
                     f"{only_division(parent, child)} covers the same ground, so both show "
                     f"this figure.")
             was = published(other["population"])
-            copy_field(office, other, "population", said)
+            if other is parent:
+                restate_population(office, parent, said)
+            else:
+                copy_field(office, other, "population", said)
             filled.append(f"{where} population: {was:,.0f} on the "
                           f"{'division' if other is child else 'parent'} gives way to "
                           f"{published(office['population']):,.0f}")
@@ -8653,7 +8778,7 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
         said = division_restates_parent(iso3, parent, child)
         if said:
             was = published(parent["population"])
-            copy_field(child, parent, "population", said)
+            restate_population(child, parent, said)
             filled.append(f"{where} population: {was:,.0f} on the parent gives way to "
                           f"its division's {published(child['population']):,.0f}")
     return filled, refused
