@@ -791,12 +791,14 @@ class BahamasGroups(unittest.TestCase):
                      "Moore's Island", "South Abaco", "South Eleuthera"):
             pop = rows[name]["population"]
             self.assertNotIn("value", pop, name)
-            # The table's rows are supervisory districts (R6-ROLLUPS-V5); the
-            # earlier wording stands until the reader's next run writes this.
+            # The table's rows are supervisory districts (R6-ROLLUPS-V5).
             self.assertTrue(pop["note"].startswith(
-                ("Wikipedia's table of the Bahamas' local-government districts prints one "
-                 "2022 census figure", f"The 2022 census prints {name} together with")), name)
+                "Wikipedia's table of the Bahamas' local-government districts prints one 2022 "
+                "census figure"), name)
             self.assertIn(name, pop["note"])
+            self.assertIn("supervisory districts, which are drawn like the parliamentary "
+                          "constituencies", pop["note"])
+            self.assertNotIn("census prints", pop["note"])
             self.assertNotIn("Wikidata", pop["note"])
         self.assertIn("6,530 people", rows["South Abaco"]["population"]["note"])
 
