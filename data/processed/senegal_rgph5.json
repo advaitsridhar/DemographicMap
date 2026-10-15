@@ -2254,6 +2254,53 @@
     "population_note": "The 2023 census (RGPH-5) count for the department of Oussouye."
   },
   {
+    "id": "SEN-RGPH5-pikine",
+    "level": "admin2",
+    "name": "Pikine",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Drawn on its outline from before 2021, when Keur Massar department was made from communes of Pikine and Rufisque. The 2023 census counts the three departments on their new lines -- Pikine 764,597, Rufisque 818,337 and Keur Massar 770,314 -- so no 2023 count is this polygon's.",
+      "displaces_before": 2024
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Drawn on its outline from before 2021, when Keur Massar department was made from communes of Pikine and Rufisque. The 2023 census counts the three departments on their new lines -- Pikine 764,597, Rufisque 818,337 and Keur Massar 770,314 -- so no 2023 count is this polygon's.",
+      "displaces_before": 2024
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, population by region and department (Projections démographiques 2023-2050, base year)",
+        "url": "https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx",
+        "page": "https://www.ansd.sn/node/13519",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B8601261498481"
+  },
+  {
     "id": "SEN-RGPH5-podor",
     "level": "admin2",
     "name": "Podor",
@@ -2350,6 +2397,53 @@
     "match_by": "shape_id",
     "shape_id": "50182788B34306626760019",
     "population_note": "The 2023 census (RGPH-5) count for the department of Ranerou."
+  },
+  {
+    "id": "SEN-RGPH5-rufisque",
+    "level": "admin2",
+    "name": "Rufisque",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Drawn on its outline from before 2021, when Keur Massar department was made from communes of Pikine and Rufisque. The 2023 census counts the three departments on their new lines -- Pikine 764,597, Rufisque 818,337 and Keur Massar 770,314 -- so no 2023 count is this polygon's.",
+      "displaces_before": 2024
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Drawn on its outline from before 2021, when Keur Massar department was made from communes of Pikine and Rufisque. The 2023 census counts the three departments on their new lines -- Pikine 764,597, Rufisque 818,337 and Keur Massar 770,314 -- so no 2023 count is this polygon's.",
+      "displaces_before": 2024
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, population by region and department (Projections démographiques 2023-2050, base year)",
+        "url": "https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx",
+        "page": "https://www.ansd.sn/node/13519",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B16861669195445"
   },
   {
     "id": "SEN-RGPH5-saintlouis",
