@@ -1723,6 +1723,17 @@
     "name": "Midtjylland",
     "iou": 0.868
   },
+  "DK050": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "84455774B84842167963849",
+    "name": "Nordjylland",
+    "iou": 0.788,
+    "decided": "Nordjylland, drawn too coarsely for the outline rule (0.788) and on no other Danish unit"
+  },
+  "DK05": {
+    "superseded_by": "DK050"
+  },
   "EL41": {
     "nuts_level": 2,
     "level": "admin2",

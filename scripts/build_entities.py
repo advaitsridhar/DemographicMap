@@ -706,6 +706,21 @@ ADAPTER_FILES = [
     # (same line and comment as maldives_census.json)
     "maldives_nationality.json",
     "south_africa_province.json",
+    # Statistics offices' own counts for units OCHA's COD-PS projects, after
+    # cod_ps_admin2.json and cod_ps_age.json so each office's count stands in
+    # front of the projection for the same unit: Senegal's RGPH-5 2023 by
+    # region and department (Pikine and Rufisque say why they carry none),
+    # Morocco's RGPH 2024 by region and province (the polygons the Western
+    # Sahara line cuts say why), Zambia's final 2022 count by district,
+    # Guinea-Bissau's 2009 census by sector, Tanzania's 2022 census by council
+    # pooled onto the councils drawn, Ghana's PHC 2021 by district (with
+    # religion and ethnicity), South Africa's Census 2022 by district
+    # municipality, and Cabo Verde's 2021 census by municipality with its
+    # parishes (the 18 parishes of the eight municipalities with several on
+    # the 2010 census).
+    "senegal_rgph5.json", "morocco_rgph2024.json", "zambia_census.json",
+    "guinea_bissau_census.json", "tanzania_census.json", "ghana_census.json",
+    "south_africa_districts.json", "cabo_verde_parishes.json",
     "philippines_province.json", "ethiopia_region.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
     # and now carry the 2019 census, and merge_adapter lets the count win the
@@ -1072,6 +1087,11 @@ ADAPTER_FILES = [
     # PRRI asks people, covers all of them, and separates the two. The owner
     # weighed that and chose it.
     "us_prri_county.json",
+    # Last of all: the stated reasons for polygons no figure describes (towns
+    # drawn inside the territory that counts them, a lake, pieces of other
+    # units, rows no tabulation has). It writes no figure, so it displaces
+    # none, and being last its reason replaces an earlier, vaguer one.
+    "stated_gaps.json",
 ]
 
 # Where a real adapter exists for a country's subnational demographics. Shown in
@@ -2847,7 +2867,7 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 #     Kourittenga/Kouritenga, Komandjari/Komonjdjari, Nangha/Nagha Boguila,
 #     Baraouéli/Baroueli, Ngwa/Nwga, Damban/Dambam, Igueben/Iguegben,
 #     Mbaitoli/Mbatoli, Bagudo/Bagudu, Wamako/Wamakko, Raja/Raga,
-#     Me-Zochi/Mé-zóxi, Harari/Hareri, Tarmua/Tarmuwa, Tivaouane/Tivaoune,
+#     Me-Zochi/Mé-zóxi, Tarmua/Tarmuwa, Tivaouane/Tivaoune,
 #     Garoowe/GAROWE, Mohammadia/Mohammédia, Taroudannt/Taroudant,
 #     Rehamna/Rhamna, Fquih Ben Salah/Saleh, Tanger/Tangier.
 #   * Morocco's elided names: OCHA writes "Province d Azilal" and CLEAR
@@ -2858,8 +2878,12 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 #   * "Gambos (ex-Chiange)" is the boundary file's "Gambos(Chiange)"; "Ville
 #     de Tahoua" its "Tahoua Ville", an enclave the department of Tahoua, a
 #     separate OCHA row, surrounds; "ABUJA MUNICIPAL" its "Municipal Area
-#     Council"; "Região Autónoma do Príncipe" its one district on the island,
-#     Pagué.
+#     Council".
+#   * Not aliased: OCHA's Harari (Ethiopia) and Região Autónoma do Príncipe
+#     (Sao Tome) rows. Each region is drawn once more at the second level on
+#     the same ground (Hareri; Pagué), which fill_sole_children gives the
+#     region's own figure; an alias would put OCHA's older 2022 projection on
+#     the second-level copy and so show the one ground with two populations.
 #   * Tanzania's town and municipal councils, which OCHA writes "<X>
 #     MUNICIPAL" or "<X> TOWN" and the boundary file "<X> Urban" or "<X>
 #     Township Authority": in each region the councils OCHA lists are the
@@ -2880,7 +2904,6 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "BFA-CODPS-BF4803": ("Kouritenga",),
         "BFA-CODPS-BF5203": ("Komonjdjari",),
         "CAF-CODPS-CF324": ("Nagha Boguila",),
-        "ETH-CODPS-ET1301": ("Hareri",),
         "MAR-CODPS-MA001001": ("Province d'Azilal إقليم أزيلال",),
         "MAR-CODPS-MA006005": ("Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة",),
         "MLI-CODPS-ML0401": ("Baroueli",),
@@ -2893,7 +2916,6 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "NGA-CODPS-NG022005": ("Bagudu",),
         "NGA-CODPS-NG034021": ("Wamakko",),
         "SSD-CODPS-SS0902": ("Raga",),
-        "STP-CODPS-ST0101": ("Pagué",),
         "STP-CODPS-ST0206": ("Mé-zóxi",),
         "TZA-CODPS-TZ0105": ("Dodoma Urban",),
         "TZA-CODPS-TZ0306": ("Moshi Urban",),
@@ -2991,10 +3013,18 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
 # reason. Wikidata files Thonburi Province, merged into Bangkok in 1971, among
 # Bangkok's districts with its 1970 population (920,033); its name reaches the
 # Thon Buri district's polygon, so the district's own row (103,377 in 2020)
-# met a rival and neither was placed.
+# met a rival and neither was placed. English Wikipedia's Vatovavy-Fitovinany
+# article now opens as Fitovinany, the region made in 2021 from three of the
+# six districts the polygon holds, and its infobox's 730,207 (2018) is
+# Fitovinany's; the polygon's six districts carry OCHA's 2018 figures, which
+# fill_parent_populations then sums.
 DROPPED_ROWS: dict[str, dict[str, str]] = {
     "wikidata_admin2.json": {
         "THA-WD-Q6580711": "Thonburi Province, merged into Bangkok in 1971",
+    },
+    "wiki_population_admin1.json": {
+        "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
+                                      "polygon's six districts",
     },
 }
 
@@ -4319,6 +4349,14 @@ def covered_share(children: list[dict[str, Any]], field: str) -> float | None:
     for child in children:
         pop = published(child.get("population"))
         has = isinstance(child.get(field), list)
+        if pop is None and not has:
+            # A count refused only because the polygon is not its ground
+            # (NOT_THIS_GROUND) still says how many people the unit has:
+            # Laayoune-Sakia El Hamra's 451,028, most of whom live across the
+            # Western Sahara line from the strip drawn under its name. Weighed
+            # in, it can only understate the share the others cover.
+            held = child.get("population")
+            pop = held.get("refused_value") if isinstance(held, dict) else None
         if pop is None:
             if not has:
                 return None
@@ -6220,7 +6258,7 @@ def drop_answered_hint(entity: dict[str, Any]) -> bool:
 # ``no_child_sum`` (see fill_parent_populations); and one the build leaves for
 # itself, ``restated_from`` (RESTATED_FROM, see control_population).
 BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum", "not_this_ground",
-               "restated_from")
+               "restated_from", "refused_value")
 
 
 def drop_build_flags(entity: dict[str, Any]) -> int:
@@ -6299,6 +6337,11 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r" \(HTTP \d{3}\)"), ""),
     (re.compile(r"\brepresentivity (very_high|high|moderate|low|very_low)\b"),
      lambda m: f"representativeness rated {m.group(1).replace('_', ' ')}"),
+    # "Not written:" opens an adapter's reason for a figure it left out, and
+    # says how the map was made rather than what is or is not published. What
+    # follows it is the reason itself, which stands as the sentence: Slovenia's
+    # "SiStat blanks 68 of the municipality's 332 people ...".
+    (re.compile(r"\bNot written: (\w)"), lambda m: m.group(1).upper()),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
@@ -7626,13 +7669,18 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
     if all(v is not None for v in pops):
         first = dict(parts[0]["population"])
         first["value"] = int(round(sum(v for v in pops if v is not None)))
+        first.pop("note", None)
         years = {vintage(p.get("population")) for p in parts}
         if len(years) != 1:
             first.pop("year", None)
         # A sum says it is one: no row this source published has this figure.
-        first["note"] = (f"The sum of the figures published for {names}; "
-                         f"the boundary file draws them as one unit.")
+        # Said in population_note, the note a figure is shown with; a note
+        # inside the figure is shown only when the figure is a gap.
         pooled["population"] = first
+        pooled["population_note"] = (
+            shared_sentences([p.get("population_note") for p in parts])
+            + f"The sum of the figures published for {names}; the boundary "
+            f"file draws them as one unit.")
     for field in ROLLUP_FIELDS:
         lists = [p.get(field) for p in parts]
         if not all(isinstance(v, list) and shares_of(v) for v in lists):
@@ -9746,14 +9794,86 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
             "is not this polygon's, and no figure for Savelugu alone has been "
             "read.")),
     },
+    # Barrancominas has been a municipality since 2019, when the former area
+    # of Mapiripana was joined to it; OCHA's figure counts both, and the map
+    # draws Mapiripana apart with DANE's own 2018 count. The note ends "left
+    # out" so DANE's 2018 count for Barrancominas, held behind OCHA's, is
+    # shown instead (refuse_not_this_ground -> fall_back).
+    ("COL", "7082276B12505915261295"): {
+        "population": ("cod_ps_admin2.json", (
+            "OCHA's 2025 figure of 9,225 is for Barrancominas as it has stood since "
+            "2019, when the former area of Mapiripana was joined to it. The map "
+            "draws Mapiripana apart with its own count, so the 2025 figure, which "
+            "counts Mapiripana's people as well, is left out.")),
+    },
+    # The polygon named Sonsonate lies north of the city, where Sonzacate is;
+    # the 2024 census counts the two districts on it and the unnamed polygon
+    # beside it, and which is which cannot be told. (OCHA's figure comes first
+    # in the sentence: RefusedFiguresAreTheFilesFigures checks it is the file's.)
+    ("SLV", "79315794B61024232293340"): {
+        field: (source, (
+            "OCHA's 2024 figure of 81,236 for the municipio of Sonsonate is not "
+            "this polygon's. The 2024 census's districts of Sonsonate (72,233) and "
+            "Sonzacate (28,226) together count 100,459 people on this polygon and "
+            "the unnamed one beside it, but which polygon is which district cannot "
+            "be told: this polygon lies north of the city, where Sonzacate is."))
+        for field, source in (("population", "cod_ps_admin2.json"),
+                              ("median_age", "cod_ps_age.json"),
+                              ("sex_ratio", "cod_ps_age.json"))
+    },
+    # The Bahamas' 2022 census tabulates by its supervisory districts, drawn
+    # like the parliamentary constituencies (see wiki_table_population's
+    # SUPERVISORY). English Wikipedia's district infoboxes repeat those rows:
+    # South Andros' 3,711 is the row that takes in South Andros, Central Andros
+    # and Mangrove Cay together (the table prints it so), and North Andros'
+    # 4,069 is the supervisory district that also takes in Fresh Creek and
+    # Coakley Town, which lie in the local-government district of Central
+    # Andros. Neither is the district drawn.
+    ("BHS", "57655419B29435673895959"): {
+        "population": ("wiki_population_admin1.json", (
+            "English Wikipedia's 3,711 for 2022 is the census's figure for South "
+            "Andros, Central Andros and Mangrove Cay together, which the census "
+            "counts as one supervisory district, so it is not this district's.")),
+    },
+    ("BHS", "57655419B63159467904865"): {
+        "population": ("wiki_population_admin1.json", (
+            "English Wikipedia's 4,069 for 2022 is the census's supervisory district "
+            "of North Andros, which also takes in Fresh Creek and Coakley Town in the "
+            "local-government district of Central Andros, so it is not this "
+            "district's.")),
+    },
+    # The 2010 census's island report prints San Salvador's racial groups only
+    # together with Rum Cay's (Table 8.0, "San Salvador & Rum Cay": 1,039
+    # people, San Salvador's 940 and Rum Cay's 99), as the religion gaps of
+    # both islands already say.
+    ("BHS", "57655419B6447054147513"): {
+        "ethnicity": ("bahamas_island.json", (
+            "The 2010 census's report prints San Salvador's racial groups only "
+            "together with Rum Cay's (Table 8.0, San Salvador & Rum Cay, 1,039 "
+            "people), so the table is not this island's alone.")),
+    },
+    # The second-level polygon labelled Kyiv is drawn off the city: 983 km2,
+    # of which 53% lies inside the city (the first-level polygon, 827 km2)
+    # and the rest in Kyiv Oblast around Brovary, whose centre it holds, while
+    # 37% of the city lies outside it. The city's 2001 census figures are its
+    # ten raions', which are the first-level polygon's ground, not this one.
+    ("UKR", "74538382B60890943260132"): {
+        field: (None, (
+            "This polygon is drawn off the city: about half of it lies outside Kyiv, "
+            "in Kyiv Oblast around Brovary, and over a third of the city lies outside "
+            "it. The city's own figures are shown on Kyiv one level up."))
+        for field in ("population", "median_age", "sex_ratio", "language")
+    },
     ("CHN", "17275852B66204891178522"): {
         field: (None, (
             "This polygon is part of Hong Kong as the boundary file's second level "
             "draws it ('Xianggang'): about 441 km² of the SAR's 1,110 or so km² of "
             "land, without Hong Kong Island and Lantau. The 2021 census figures "
             "describe the whole SAR, many of whose people live outside this "
-            "polygon, so they are shown on the first-level polygon only; no census "
-            "area follows this polygon's edge."))
+            "polygon, so they are not repeated here; they are shown one level up, "
+            "for the SAR as a unit, though the boundary file draws that polygon "
+            "too as only part of the SAR's land. No census area follows this "
+            "polygon's edge."))
         for field in ("population", "median_age", "sex_ratio", "language", "ethnicity")
     },
     ("BEL", "27649430B17719898407236"): {
@@ -9811,6 +9931,11 @@ def refuse_not_this_ground(admin1: dict[str, list[dict[str, Any]]],
                 current = entity.get(field)
                 origin = (entity.get("_from") or {}).get(field)
                 refused = dict(gap(NOT_AVAILABLE, note), not_this_ground=True)
+                if field == "population" and published(current) is not None:
+                    # The unit's own count, refused only for this polygon: kept
+                    # (as a build flag, never written out) so that a country's
+                    # sum can still weigh how much of it this unit is.
+                    refused["refused_value"] = published(current)
                 if field == "population" and entity.get("level") == "admin1":
                     # Its divisions do not make the ground the figure was for
                     # either: no sum of them stands in for it.
@@ -9834,6 +9959,18 @@ def refuse_not_this_ground(admin1: dict[str, list[dict[str, Any]]],
                     fall_back(entity, refused, field,
                               usable=lambda held, source=source: held.get("file") != source)
                 done.append(f"{iso3} {entity.get('name')} {field}")
+            # A citation goes with the figures it produced: one naming several
+            # fields, every one of them now refused here, cites nothing on the
+            # map (Brussels' half polygon kept Eurostat for 'population/median
+            # age/sex ratio' after all three were refused).
+            gone = {f for f, v in entity.items()
+                    if isinstance(v, dict) and v.get("not_this_ground")}
+            if gone:
+                def cites(src: dict[str, Any]) -> set[str]:
+                    return {f.strip().replace(" ", "_")
+                            for f in str(src.get("field") or "").split("/") if f.strip()}
+                entity["sources"] = [src for src in entity.get("sources", []) or []
+                                     if not cites(src) or not cites(src) <= gone]
     return done
 
 # Countries whose boundary file draws their first level one level down: under

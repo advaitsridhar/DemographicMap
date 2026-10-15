@@ -5738,7 +5738,7 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual(pooled["eurostat_nuts2.json"]["population"]["value"], 1183208)
         self.assertEqual(pooled["wikidata_admin1.json"]["population"]["value"], 1196509)
         self.assertIn("The sum of the figures published for Thessalia and Sterea",
-                      pooled["eurostat_nuts2.json"]["population"]["note"])
+                      pooled["eurostat_nuts2.json"]["population_note"])
         # A median does not sum; Thessaly's is not the administration's.
         self.assertNotIn("median_age", pooled["eurostat_nuts2.json"])
 

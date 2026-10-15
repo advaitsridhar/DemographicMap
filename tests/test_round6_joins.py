@@ -307,8 +307,10 @@ class Unions(unittest.TestCase):
         self.assertEqual(row["population"]["value"], 947812)
         self.assertEqual((row["match_by"], row["shape_id"], row["level"], row["name"]),
                          ("shape_id", "42251766B13881881574545", "admin2", "Zomba"))
-        self.assertIn("Zomba District and Zomba City", row["population"]["note"])
-        self.assertIn("lies inside this one", row["population"]["note"])
+        # The sentence goes where the panel shows a figure's note.
+        self.assertNotIn("note", row["population"])
+        self.assertIn("Zomba District and Zomba City", row["population_note"])
+        self.assertIn("lies inside this one", row["population_note"])
 
     def test_a_union_missing_a_part_is_not_pooled(self):
         adapters = {"MWI": [cod_row("MWI-CODPS-MW314", "Zomba District", 831015)]}
@@ -331,8 +333,8 @@ class Unions(unittest.TestCase):
         (row,) = adapters["PRY"]
         self.assertEqual(row["population"]["value"], 35013)
         self.assertIn("Bella Vista (Amambay) and Bella Vista (Itapúa)",
-                      row["population"]["note"])
-        self.assertIn("Cerro Corá", row["population"]["note"])
+                      row["population_note"])
+        self.assertIn("Cerro Corá", row["population_note"])
 
     def test_survey_counts_are_summed_and_the_caveat_kept(self):
         caveat = "Regional shares are survey estimates, not census counts."

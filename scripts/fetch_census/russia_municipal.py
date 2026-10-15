@@ -79,18 +79,35 @@ OUT = "russia_municipal.json"
 #
 # Measured: Rosstat's federal volume 2 (tables 2 and 5) and volume 5 (tables
 # 1, 3, 4, 6 and 23), read through the Internet Archive, are all by subject.
+#
+# The regional offices' hosts present certificates from the Russian Trusted
+# Root CA, which GitHub's runners do not trust (TLS verification is never
+# turned off), so their tables cannot be fetched; the reason a visitor reads
+# says only that the sites could not be reached.
 _UNREACHED = (
     " Rosstat's federal volumes publish it by subject only (shown one level up); "
-    "below that the regional offices publish it, on hosts whose Russian Trusted "
-    "Root CA certificate the runner does not trust, and the Internet Archive holds "
+    "below that the regional statistics offices publish it on their own sites, "
+    "which could not be reached, and the Internet Archive holds copies of only "
     "about 12 of their 85 sites.")
 UNREAD = {
-    "median_age": gap(NOT_AVAILABLE, "The 2020 census's age by municipal unit is not "
-                      "read here." + _UNREACHED),
+    "median_age": gap(NOT_AVAILABLE, "The 2020 census's age by municipal unit has "
+                      "not been read for this map." + _UNREACHED),
     "ethnicity": gap(NOT_AVAILABLE, "The 2020 census's nationality by municipal unit "
-                     "is not read here." + _UNREACHED),
+                     "has not been read for this map." + _UNREACHED),
     "language": gap(NOT_AVAILABLE, "The 2020 census's native language by municipal "
-                    "unit is not read here." + _UNREACHED),
+                    "unit has not been read for this map." + _UNREACHED),
+}
+
+# What a polygon no census unit is takes in, measured on the boundary file,
+# said after the reason it has no census figure. Moscow's one second-level
+# polygon is labelled Naro-Fominsky District: it covers nearly all of Moscow
+# and about 1,545 km2 of Moscow Oblast around Naro-Fominsk and Aprelevka
+# (Zelenograd lies outside it), so it is neither the city nor the district.
+DRAWN_AS = {
+    "50074027B20152914209721": (
+        " Drawn, it covers nearly all of Moscow and about 1,545 km2 of Moscow "
+        "Oblast around Naro-Fominsk and Aprelevka, so it is neither the city nor "
+        "the district whose name it carries."),
 }
 
 
@@ -1011,7 +1028,8 @@ def bind_all(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                     f"The boundary file files this polygon under {first['name']}, which "
                     "the 2020 census's municipal table counts whole, with no municipal "
                     "units below it; a unit of the same name elsewhere is not this "
-                    "polygon's to take, so no census figure is written."))
+                    "polygon's to take, so no census figure is shown for it."
+                    + DRAWN_AS.get(sh["id"], "")))
             continue
         for sh in shapes:
             sh["stems"] = shape_stems(sh, labels.get(sh.get("wikidata") or ""))
@@ -1399,10 +1417,13 @@ def main() -> int:
         if sid in groups or sid not in site:
             continue
         refusal = gap(NOT_AVAILABLE, reason)
+        # No census unit is this polygon, so that is the reason on every field,
+        # not that a table has not been read.
         records.append(record(
             f"RUS-VPN2020-{sid}", site[sid]["name"], level="admin2", parent="RUS",
             country="RUS", match_by="shape_id", shape_id=sid,
-            population=refusal, sex_ratio=refusal, **UNREAD))
+            population=refusal, sex_ratio=refusal,
+            **{field: gap(NOT_AVAILABLE, reason) for field in UNREAD}))
     # A settlement moved between polygons leaves one and joins another: what
     # the polygons are written with must be what their units count.
     written = sum(figures(g)[0] for g in groups.values())

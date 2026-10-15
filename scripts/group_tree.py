@@ -2169,6 +2169,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # The rest of the Volta basin, where each census writes the group
         # and, as often as not, its neighbours' name for it beside it.
         "Guan", "Kusasi", "Konkomba", "Konkonba", "Wale", "Waala",
+        # Ghana's 2021 census groups, beside Akan, Ewe, Guan, Gurma, Grusi and
+        # Mande above.
+        "Ga-Dangme", "Mole-Dagbani",
         "Akebu", "Akposso", "Ikposso, Akposso", "Akposso/Akebu", "Ife",
         "Ana", "Ana-Ife", "Ouatchi", "Mina", "Gen", "Tchamba", "Anufo",
         "Tchokossi, Anoufom", "Ngangam", "Ngam-Gam", "Nawdem",

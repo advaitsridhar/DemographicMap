@@ -5805,6 +5805,78 @@
    "country": "ERI",
    "field": "population",
    "note": "The Factbook's estimate for 2025. Eritrea has taken no census since independence in 1993, so every figure for its people is an estimate. The regions and subzones drawn here carry OCHA's common operational dataset's figures for 2001, which add up to 2,908,795, less than half this estimate."
+  },
+  {
+   "country": "BEL",
+   "field": "population",
+   "value": 11883495,
+   "year": 2025,
+   "source": "Eurostat, population on 1 January 2025 by region (demo_r_pjangrp3): the Brussels-Capital, Flemish and Walloon Regions added up",
+   "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_pjangrp3/default/table",
+   "license": "Eurostat re-use policy (attribution)",
+   "note": "Belgium's three regions on 1 January 2025, as Eurostat publishes them, added up: the Brussels-Capital Region 1,271,709, Flanders 6,884,271 and Wallonia 3,727,515, 11,883,495 people. It stands in place of the Factbook's estimate of 11,960,170 for 2025. The map draws the Brussels-Capital Region whole only at the second level, so its own figures are shown there and not on the smaller first-level outline that carries its name."
+  },
+  {
+   "country": "BEL",
+   "field": "ethnicity",
+   "year": 2021,
+   "basis": "nationality",
+   "groups": [
+    {
+     "group": "Belgian",
+     "pct": 87.2,
+     "count": 10075908
+    },
+    {
+     "group": "Other nationalities",
+     "pct": 5.3,
+     "count": 611906
+    },
+    {
+     "group": "French",
+     "pct": 1.5,
+     "count": 172583
+    },
+    {
+     "group": "Dutch",
+     "pct": 1.4,
+     "count": 160596
+    },
+    {
+     "group": "Italian",
+     "pct": 1.3,
+     "count": 154214
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.9,
+     "count": 109680
+    },
+    {
+     "group": "Moroccan",
+     "pct": 0.7,
+     "count": 80857
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.6,
+     "count": 69588
+    },
+    {
+     "group": "Polish",
+     "pct": 0.6,
+     "count": 69574
+    },
+    {
+     "group": "Portuguese",
+     "pct": 0.4,
+     "count": 49861
+    }
+   ],
+   "source": "Statbel, Census 2021 (1 January 2021), population by country of citizenship, as transmitted to Eurostat's 2021 Census Hub (cens_21ctz_r3): the three regions added up",
+   "url": "https://ec.europa.eu/eurostat/databrowser/view/cens_21ctz_r3/default/table",
+   "license": "Eurostat (free reuse with attribution)",
+   "note": "Population by country of citizenship on 1 January 2021, from the register-based census (Statbel, Census 2021, through Eurostat's Census Hub), for the Brussels-Capital, Flemish and Walloon Regions added up: 11,554,767 people. This is nationality, not ethnicity, which Belgium's census does not ask: a naturalised citizen counts as Belgian. It stands in place of the Factbook's estimate (Belgian 75.2%, Italian 4.1%, Moroccan 3.7%)."
   }
  ]
 }

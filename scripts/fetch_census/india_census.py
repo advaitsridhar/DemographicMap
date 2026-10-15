@@ -1306,14 +1306,12 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
                       "Tribe status and mother tongue are collected instead."),
         # A placeholder, not a finding: india_language.py reads C-16 for all 35
         # states and overwrites this on every unit the census enumerated. It
-        # survives only where that file was not run, so it names the command
-        # rather than describing a property of India.
+        # survives only where no C-16 row reaches the unit, and says so in plain
+        # words (it once named the command a maintainer would run).
         language=gap(NOT_AVAILABLE,
-                     "India does ask mother tongue -- Census 2011 table C-16 -- but "
-                     "publishes it as a workbook per state rather than through any "
-                     "API. Those workbooks are read by a separate adapter "
-                     "(python -m scripts.fetch_census.india_language), which has "
-                     "not been run against this unit."),
+                     "India does ask mother tongue -- Census 2011 table C-16 -- and "
+                     "publishes it as a workbook per state; no row of it has been read "
+                     "for this unit."),
         sources=[{"field": "population/religion/scheduled groups", "name": SOURCE,
                   "url": CATALOG, "year": 2011,
                   "license": "Government of India open data (GODL-India)",

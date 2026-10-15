@@ -202,6 +202,11 @@ DECLARED: list[tuple[str, str, str, str, tuple[str, ...], str,
       "is counted on the lake. Its shore takes in part of the lakeside commune of Horn, "
       "whose residents the Federal Statistical Office counts in the district of Arbon, "
       "where the map shows them."), None),
+    ("SYC", "admin2", "34574756B18865708954128", "La Digue", ("religion", "language"),
+     ("The survey figures read for La Digue and Inner Islands, Afrobarometer's region, "
+      "describe the whole district, including the inner islands that the map draws apart "
+      "as Other Islands, so they are not repeated on La Digue alone. They are shown on the "
+      "district one level up."), None),
     ("FRA", "admin1", "19338628B22604203385446", "Corse", ("religion",),
      ("The European Social Survey (rounds 5 to 11), which gives France's other regions "
       "their religion shares, places none of its respondents in Corsica, so no shares can "
