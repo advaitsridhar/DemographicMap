@@ -1036,6 +1036,10 @@ class CaboVerdeParishesTest(unittest.TestCase):
         cv = self.cv
         self.assertEqual(cv.key("Freguesia N.S. Conceição"), cv.key("Nossa Senhora Da Conceicao"))
         self.assertEqual(cv.key("Nossa Senhora de Ajuda"), cv.key("Nossa Senhora Da Ajuda"))
+        # The two Ribeira Grande de Santiago sheets split one parish's name
+        # between them; their codes give the names the polygons carry.
+        self.assertEqual(cv.key(cv.SHEET_NAMES[791]), cv.key("Santissimo Nome De Jesus"))
+        self.assertEqual(cv.key(cv.SHEET_NAMES[792]), cv.key("Sao Joao Baptista"))
         parishes = {82: [{"code": 821, "name": "São Lourenço", "total": 1},
                          {"code": 822, "name": "N.S. Conceição", "total": 2}],
                     83: [{"code": 831, "name": "Santa Catarina", "total": 3}]}

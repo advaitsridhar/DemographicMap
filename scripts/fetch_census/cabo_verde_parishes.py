@@ -91,6 +91,10 @@ MUNICIPALITIES = {
     91: ("Brava", "Brava"),
 }
 SHEET = re.compile(r"^\s*(\d{3})\s*-\s*(.+?)\s*$")
+# Parishes whose sheet name is not their name: Santiago's workbook splits
+# "Santíssimo Nome de Jesus" across two sheets, "791 - Santissimo Nome" and
+# "792 - Jesus São João Baptista".
+SHEET_NAMES = {791: "Santíssimo Nome de Jesus", 792: "São João Baptista"}
 
 
 def fold(text: Any) -> str:
@@ -289,7 +293,8 @@ def read() -> tuple[dict[int, list[dict[str, Any]]], dict[str, dict[str, float]]
                                  f"{code // 10}")
             counts = parish(rows, f"{island} {sheet}")
             parishes.setdefault(code // 10, []).append({
-                "code": code, "name": re.sub(r"(?i)^freguesia\s+", "", hit.group(2)),
+                "code": code,
+                "name": SHEET_NAMES.get(code) or re.sub(r"(?i)^freguesia\s+", "", hit.group(2)),
                 # A sheet's name is cut at 31 characters ("112 - Nossa
                 # Senhora do Livramen"); bind() then matches its beginning.
                 "truncated": len(sheet) >= SHEET_NAME_LIMIT,
