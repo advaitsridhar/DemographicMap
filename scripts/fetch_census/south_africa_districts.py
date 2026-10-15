@@ -24,7 +24,9 @@ service's own total for it; its counts by sex, which give the ratio, fall
 short of that total by no more than half a percent (the City of Cape Town's
 by 2,533 of 4,772,846), and its share of men is the one the service prints.
 Each province's districts make the province's total from the same service,
-to a few people each; the provinces make the census's 62,027,503. Districts
+to a hundredth of a percent (Limpopo's five make 6,572,665 against 6,572,721:
+each count is weighted and rounded on its own); the provinces make the
+census's 62,027,503, to the same rounding. Districts
 are matched to the boundary file's within their province, by name, and every
 polygon must get exactly one district and every district one polygon.
 
@@ -53,6 +55,9 @@ PROVINCE, DISTRICT = 2, 5            # the service's geography levels
 NATIONAL = 62_027_503
 SLACK = 3                            # people a separately rounded count may miss by
 SEX_SHORT = 0.005                    # how far short of the total the counts by sex may fall
+# How far a province's districts may miss its total: each count is weighted and
+# rounded on its own (Limpopo's five districts make 6,572,665 against 6,572,721).
+ROUNDING = 0.0001
 OUT = "south_africa_districts.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -134,15 +139,16 @@ def read() -> dict[str, Any]:
 
 def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]]) -> None:
     """The provinces make the country and each province's districts make it,
-    to the rounding of separately rounded counts (``SLACK`` a unit)."""
+    to the rounding of separately rounded counts (``SLACK`` people a district,
+    or ``ROUNDING`` of the total, whichever is more)."""
     national = sum(p["total"] or 0 for p in provinces.values())
-    if abs(national - NATIONAL) > SLACK * len(provinces):
+    if abs(national - NATIONAL) > ROUNDING * NATIONAL:
         raise SystemExit(f"south_africa_districts: the provinces make {national:,}, "
                          f"not {NATIONAL:,}")
     for name, p in provinces.items():
         mine = [d for d in districts if d["province"] == name]
         made = sum(d["total"] for d in mine)
-        if not mine or abs(made - p["total"]) > SLACK * len(mine):
+        if not mine or abs(made - p["total"]) > max(SLACK * len(mine), ROUNDING * p["total"]):
             raise SystemExit(f"south_africa_districts: {name}'s districts make {made:,}, "
                              f"not {p['total']:,}")
         if made != p["total"]:
