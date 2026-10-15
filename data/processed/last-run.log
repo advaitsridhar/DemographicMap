@@ -1,31 +1,512 @@
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 156 characters
-  [["timestamp","statuscode","length","mimetype"],
-  ["20240530110650","200","6267243","application/pdf"],
-  ["20240809222910","200","937099","application/pdf"]]
-  3 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 201 characters
-  [["timestamp","statuscode","length","mimetype"],
-  ["20240611091530","200","2872644","application/pdf"],
-  ["20250208061039","200","919148","application/pdf"],
-  ["20260928192929","200","3497","text/html"]]
-  4 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2023/07/resultados-definitivos-2021-corrigido.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
-  [["timestamp","statuscode","length","mimetype"],
-  ["20250929213113","200","-1876099488","application/vnd.ms-excel"]]
-  2 distinct match(es)
-  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype :: <urlopen error timed out>
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 186 characters
-  [["timestamp","statuscode","length","mimetype"],
-  ["20240606051453","302","248","unk"],
-  ["20250325063502","200","4073361","application/pdf"],
-  ["20260318003540","-","893","warc/revisit"]]
-  4 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2022/02/quadros_tabelas_publicacao.xls&output=json&fl=timestamp,statuscode,length,mimetype: 116 characters
-  [["timestamp","statuscode","length","mimetype"],
-  ["20250926193735","200","-7626739187","application/vnd.ms-excel"]]
-  2 distinct match(es)
-https://web.archive.org/cdx/search/cdx?url=ine.cv/wp-content/uploads/2023/03/parque-habitacional-e-condicao-de-vida-rgph2021-final.pdf&output=json&fl=timestamp,statuscode,length,mimetype: 156 characters
-  [["timestamp","statuscode","length","mimetype"],
-  ["20240624032939","200","768432","application/pdf"],
-  ["20250130185212","200","6277453","application/pdf"]]
-  3 distinct match(es)
+https://web.archive.org/web/20240530110650id_/https://ine.cv/wp-content/uploads/2022/04/apresentacao-resultados-definitivos.pdf: 6,885,722 bytes, starts b'%PDF-1.5'
+  59 pages
+  p5: REPARTIÇÃO DOS EDIFÍCIOS POR CONCELHO (%)
+  p5: Praia 23,1
+  p5: S. Vicente 16,0
+  p5: Santa Catarina 8,2
+  p5: Tarrafal 4,4
+  p5: Maio 1,8
+  p5: Tarrafal de S. Nicolau 1,4
+  p5: Santa Catarina do Fogo 1,2
+  p7: EDIFÍCIOS SEGUNDO TIPO POR CONCELHO
+  p7: S. Vicente 24 036 22 117 92,0 148 0,6 1 771 7,4
+  p7: Tarrafal de S. Nicolau 2 097 2 078 99,1 18 0,9 1 0,0
+  p7: Maio 2 731 2 691 98,5 40 1,5 0 0,0
+  p7: Tarrafal 6 562 6 515 99,3 39 0,6 8 0,1
+  p7: Santa Catarina 12 299 12 256 99,7 30 0,2 13 0,1
+  p7: Praia 34 689 34 019 98,1 143 0,4 527 1,5
+  p7: Santa Catarina do Fogo 1 769 1 741 98,4 26 1,5 2 0,1
+  p9: UTILIZAÇÃO POR CONCELHO
+  p9: São Vicente 22 117 21 023 95,1 1 094 4,9
+  p9: Tarrafal de São Nicolau 2 078 1 963 94,5 115 5,5
+  p9: Maio 2 691 2 440 90,7 251 9,3
+  p9: Tarrafal 6 515 6 279 96,4 236 3,6
+  p9: Santa Catarina 12 256 11 890 97,0 366 3,0
+  p9: Praia 34 019 32 252 94,8 1 767 5,2
+  p9: Santa Catarina do Fogo 1 741 1 636 94,0 105 6,0
+  p12: POR CONCELHO (%)
+  p12: Praia 28,2
+  p12: S. Vicente 15,9
+  p12: Santa Catarina 8,0
+  p12: Tarrafal 3,4
+  p12: Maio 1,5
+  p12: Tarrafal de S. Nicolau 1,2
+  p12: Santa Catarina do Fogo 0,9
+  p13: DE RESIDÊNCIA POR CONCELHO
+  p13: S. Vicente 31 904 29 560 92,7 2 344 7,3
+  p13: Tarrafal de S. Nicolau 2 314 1 924 83,1 390 16,9
+  p13: Maio 2 969 2 118 71,3 851 28,7
+  p13: Tarrafal 6 771 5 522 81,6 1 249 18,4
+  p13: Santa Catarina 16 088 9 967 62,0 6 121 38,0
+  p13: Praia 56 580 55 547 98,2 1 033 1,8
+  p13: Santa Catarina do Fogo 1 837 296 16,1 1 541 83,9
+  p16: FORMA DE OCUPAÇÃO POR CONCELHO
+  p16: São Vicente 31 904 24 144 75,7 3 629 11,4 4 131 12,9
+  p16: Tarrafal de São Nicolau 2 314 1 533 66,2 398 17,2 383 16,6
+  p16: Maio 2 969 1 992 67,1 399 13,4 578 19,5
+  p16: Tarrafal 6 771 4 698 69,4 841 12,4 1 232 18,2
+  p16: Santa Catarina 16 088 9 755 60,6 3 022 18,8 3 311 20,6
+  p16: Praia 56 580 42 254 74,7 3 378 6,0 10 948 19,3
+  p16: Santa Catarina do Fogo 1 837 1 256 68,4 347 18,9 234 12,7
+  p17: ÁGUA POR CONCELHO (2010 E 2021) (%)
+  p17: São Vicente 58 71
+  p17: Tarrafal de São Nicolau 77 95
+  p17: Maio 75 82
+  p17: Tarrafal 67 82
+  p17: Santa Catarina 45 60
+  p17: Praia 50 68
+  p17: Santa Catarina do Fogo 36 79
+  p18: COM ELETRICIDADE POR CONCELHO (2010 E 2021) (%)
+  p18: São Vicente 88 92
+  p18: Tarrafal de São Nicolau 85 94
+  p18: Maio 87 94
+  p18: Tarrafal 59 84
+  p18: Santa Catarina 66 84
+  p18: Praia 92 92
+  p18: Santa Catarina do Fogo 47 82
+  p19: SEGUNDO INSTALAÇÕES SANITÁRIAS POR CONCELHO
+  p19: São Vicente 24 144 21 183 87,7 158 0,7 2 803 11,6
+  p19: Tarrafal de São Nicolau 1 533 1 378 89,9 0 0,0 155 10,1
+  p19: Maio 1 992 1 840 92,4 0 0,0 152 7,6
+  p19: Tarrafal 4 698 3 579 76,2 1 0,0 1 118 23,8
+  p19: Santa Catarina 9 755 7 154 73,3 21 0,2 2 580 26,4
+  p19: Praia 42 254 36 549 86,5 47 0,1 5 658 13,4
+  p19: Santa Catarina do Fogo 1 256 1 005 80,0 0 0,0 251 20,0
+  p20: COM SANITAS POR CONCELHO (2010 E 2021) (%)
+  p20: São Vicente 78 88
+  p20: Tarrafal de São Nicolau 73 90
+  p20: Maio 73 92
+  p20: Tarrafal 50 76
+  p20: Santa Catarina 51 73
+  p20: Praia 68 86
+  p20: Santa Catarina do Fogo 67 80
+  p22: POR CONCELHO (%)
+  p22: Praia 30,0
+  p22: São Vicente 16,9
+  p22: Santa Catarina 6,9
+  p22: Tarrafal 3,3
+  p22: Maio 1,4
+  p22: Tarrafal de São Nicolau 1,1
+  p22: Santa Catarina do Fogo 0,9
+  p23: RESIDÊNCIA E POR CONCELHO
+  p23: São Vicente 25 071 23 599 94,1 1 472 5,9
+  p23: Tarrafal de São Nicolau 1 571 1 304 83,0 267 17,0
+  p23: Maio 2 040 1 468 72,0 572 28,0
+  p23: Tarrafal 4 829 3 925 81,3 904 18,7
+  p23: Santa Catarina 10 166 6 082 59,8 4 084 40,2
+  p23: Praia 44 352 43 540 98,2 812 1,8
+  p23: Santa Catarina do Fogo 1 280 201 15,7 1 079 84,3
+  p25: POR CONCELHO
+  p25: São Vicente 25 071 23 033 91,9 1 630 6,5 61 0,2 347 1,4
+  p25: Tarrafal de São Nicolau 1 571 1 480 94,2 42 2,7 14 0,9 35 2,2
+  p25: Maio 2 040 1 899 93,1 84 4,1 13 0,6 44 2,2
+  p25: Tarrafal 4 829 3 995 82,7 736 15,2 24 0,5 74 1,5
+  p25: Santa Catarina 10 166 8 434 83,0 1 590 15,6 10 0,1 132 1,3
+  p25: Praia 44 352 40 543 91,4 2 976 6,7 43 0,1 790 1,8
+  p25: Santa Catarina do Fogo 1 280 1 035 80,9 139 10,9 7 0,5 99 7,7
+  p27: UTILIZAM POR CONCELHO
+  p27: São Vicente 25 071 17 111 68,3 2 438 9,7 3 306 13,2 1 772 7,1 444 1,8
+  p27: Tarrafal de São Nicolau 1 571 1 497 95,3 20 1,3 4 0,3 14 0,9 36 2,3
+  p27: Maio 2 040 1 627 79,8 128 6,3 146 7,2 131 6,4 8 0,4
+  p27: Tarrafal 4 829 3 777 78,2 336 7,0 200 4,1 362 7,5 154 3,2
+  p27: Santa Catarina 10 166 4 435 43,6 730 7,2 678 6,7 2 645 26,0 1 678 16,5
+  p27: Praia 44 352 28 878 65,1 6 994 15,8 792 1,8 6 938 15,6 750 1,7
+  p27: Santa Catarina do Fogo 1 280 977 76,3 59 4,6 97 7,6 10 0,8 137 10,7
+  p29: COZINHAR POR CONCELHO
+  p29: São Vicente 25 071 23 819 95,0 358 1,4 31 0,1 21 0,1 842 3,4
+  p29: Tarrafal de São Nicolau 1 571 1 321 84,1 191 12,2 4 0,3 2 0,1 53 3,4
+  p29: Maio 2 040 1 575 77,2 289 14,2 0 0,0 88 4,3 88 4,3
+  p29: Tarrafal 4 829 2 895 60,0 1 794 37,2 7 0,1 21 0,4 112 2,3
+  p29: Santa Catarina 10 166 5 890 57,9 4 115 40,5 39 0,4 12 0,1 110 1,1
+  p29: Praia 44 352 39 990 90,2 1 997 4,5 1 061 2,4 96 0,2 1 208 2,7
+  p29: Santa Catarina do Fogo 1 280 812 63,4 410 32,0 2 0,2 0 0,0 56 4,4
+  p33: SEXO DO REPRESENTANTE POR CONCELHO
+  p33: São Vicente 3,0 2,6 3,3
+  p33: Tarrafal de São Nicolau 3,4 2,9 3,8
+  p33: Maio 3,1 2,9 3,2
+  p33: Tarrafal 3,5 3,0 3,8
+  p33: Santa Catarina 3,7 3,3 4,0
+  p33: Praia 3,2 2,9 3,5
+  p33: Santa Catarina do Fogo 3,7 3,6 3,8
+  p40: CONCELHO (%)
+  p40: Praia 29,6
+  p40: São Vicente 15,4
+  p40: Santa Catarina 7,7
+  p40: Tarrafal 3,4
+  p40: Maio 1,3
+  p40: Tarrafal São Nicolau 1,1
+  p40: Santa Catarina Fogo 1,0
+  p41: RESIDÊNCIA POR CONCELHO
+  p41: São Vicente 75 845 70 743 93,3 5 102 6,7
+  p41: Tarrafal São Nicolau 5 310 4 420 83,2 890 16,8
+  p41: Maio 6 330 4 504 71,2 1 826 28,8
+  p41: Tarrafal 16 892 13 714 81,2 3 178 18,8
+  p41: Santa Catarina 37 982 21 662 57,0 16 320 43,0
+  p41: Praia 145 378 141 219 97,1 4 159 2,9
+  p41: Santa Catarina Fogo 4 743 724 15,3 4 019 84,7
+  p42: POR CONCELHO
+  p42: São Vicente 75 845 38 472 50,7 37 373 49,3 97,1
+  p42: Tarrafal São Nicolau 5 310 2 725 51,3 2 585 48,7 94,9
+  p42: Maio 6 330 3 180 50,2 3 150 49,8 99,1
+  p42: Tarrafal 16 892 8 043 47,6 8 849 52,4 110,0
+  p42: Santa Catarina 37 982 17 943 47,2 20 039 52,8 111,7
+  p42: Praia 145 378 71 803 49,4 73 575 50,6 102,5
+  p42: Santa Catarina Fogo 4 743 2 423 51,1 2 320 48,9 95,7
+  p51: TAXA DE ANALFABETISMO (POPULAÇÃO MAIOR
+https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf: 3,551,899 bytes, starts b'%PDF-1.5'
+  112 pages
+  p3: Cx. Postal 116, Fazenda - Praia
+  p4: as seguintes publicações: um volume de quadros brutos de Cabo Verde, um volume por zonas e
+  p5: lugares, um volume para cada concelho do país, e onze publicações temáticas (Estado e estrutura
+  p6: CONCELHOS
+  p6: SV S. Vicente
+  p6: TASN Tarrafal de S. Nicolau
+  p6: MA Maio
+  p6: TF Tarrafal
+  p6: PR Praia
+  p6: SC Santa Catarina
+  p6: SCFO Santa Catarina do Fogo
+  p7: Divisão Administrativa 22 Concelhos distribuídos pelas seguintes ilhas:
+  p7: S. Vicente S. Vicente
+  p7: Tarrafal de S. Nicolau
+  p7: Maio Maio
+  p7: Tarrafal
+  p7: Santa Catarina
+  p7: Praia
+  p7: Santa Catarina do Fogo
+  p7: Cidade Capital Praia
+  p8: Cabo Verde é um pequeno país arquipelágico, formado por dez ilhas - Santo Antão, São Vicente,
+  p8: Santa Luzia, São Nicolau, Sal, Boa Vista, Maio, Santiago, Fogo e Brava - e cinco1 principais ilhéus
+  p8: Vicente, Santa Luzia, São Nicolau, Santiago, Fogo e Brava), onde predominam as paisagens
+  p8: outro grupo constituído por ilhas planas (Sal, Boa Vista e Maio), caraterizadas pela quase
+  p8: inexistência de relevos montanhosos, onde marcam presença as extensas praias de areia branca,
+  p9: observação, a exclusividade, o quadro institucional, a obrigatoriedade da disponibilização de
+  p9: População recenseada por sexo, meio de residência e concelho
+  p9: O concelho da Praia é o mais populoso do país, concentrando mais de um quarto da população total
+  p9: (29,6%). Seguem-se os concelhos de S. Vicente com 15,4% da população do país, Santa Catarina
+  p9: (7,7%), Sal (6,8%), Santa Cruz (5,1%) e S. Filipe (4,3%). Os restantes concelhos são os menos
+  p10: populosos, com percentagens variando entre 3,4% no Tarrafal e 1% no concelho de Santa Catarina
+  p10: homens em todos os concelhos da ilha de Santiago. Nos restantes concelhos, a situação se inverte.
+  p10: A taxa de urbanização é de 74,1%. Os concelhos mais urbanizados do país são: Praia com uma taxa
+  p10: de urbanização correspondente a 97,1%, Sal (95,6%), S. Vicente (93,3%), Boavista (86,3%), Tarrafal
+  p10: de S. Nicolau (83,2%), Tarrafal (81,2%). Em Santa Catarina e nos Mosteiros, mais de metade da
+  p10: respetivamente em cada um dos concelhos. A taxa mais baixa se verifica em S. Lourenço dos Órgãos
+  p10: Os concelhos mais densamente povoados do país são: Praia (1.485 habitantes/km²), S. Vicente
+  p10: habitantes/km²), S. Miguel (169,3 habitantes/km²), Santa Catarina (157,3 habitantes/km²), Sal (153,1
+  p10: Idade média e mediana da população
+  p10: A idade mediana da população residente é de 27 anos a nível nacional, com valor mais elevado para
+  p11: A maioria da população residente de 12 anos ou mais é solteiro (a) (44,5%). A percentagem desta
+  p12: A maioria da população com 15 anos ou mais pratica a religião católica (72,5%) e 15,6% não praticam
+  p13: TABELAS .................................................................................................................................................. 15
+  p14: 4.3.2. População residente segundo o concelho ............................................................................... 53
+  p14: 4.3.3. População residente segundo o meio de residência por concelho ......................................... 55
+  p14: 4.3.4. Urbanização por concelho ....................................................................................................... 57
+  p14: 4.4. 2. Evolução a nível dos concelhos ............................................................................................. 61
+  p14: 5.1.4. Idade média e mediana da população por meio de residência e concelho ............................ 69
+  p14: 5.1.6. Estrutura segundo os grupos etários funcionais por concelho ............................................... 74
+  p14: 6.4.2 Taxa de alfabetização por concelho ......................................................................................... 88
+  p14: 6. 5. 2 Taxa de atividade por concelho .............................................................................................. 90
+  p15: TABELAS
+  p15: Tabela 1 - Índices de Whipple, Myers, Bachi e ICNU por meio de residência e sexo, Cabo Verde, 2021
+  p15: Tabela 2 - População recenseada, segundo o local de recenseamento e a situação na residência, por
+  p15: Tabela 3 - Repartição da população residente, segundo o meio de residência, por local de
+  p15: Tabela 4 - Repartição da população residente nos alojamentos coletivos, segundo os grupos etários, por
+  p15: Tabela 5 - Repartição da população residente, segundo o sexo, por meio de residência, Cabo Verde, 2021
+  p15: Tabela 6 - Repartição da população residente, segundo o meio de residência, por sexo, Cabo Verde 2021
+  p15: Tabela 7 - Repartição da população residente, segundo o concelho, por sexo e razão de feminilidade,
+  p15: Tabela 8 - Repartição da população residente, segundo o sexo, por concelho, Cabo Verde, 2021 ....... 55
+  p15: Tabela 9 - Repartição da população residente, segundo o meio de residência, por concelho, Cabo Verde,
+  p15: Tabela 10 - Densidade populacional, por concelho (habitantes/km²), Cabo Verde, 2021 ....................... 59
+  p15: Tabela 11 – Taxa de Crescimento Médio Anual (TCMA) da população residente, por sexo e meio de
+  p15: Tabela 12 - Taxa de Crescimento Médio Anual da população residente, por concelho (%), Cabo Verde,
+  p15: Tabela 13 – População urbana e taxa de urbanização, por concelho (%), Cabo Verde, 2000, 2010 e 2021
+  p15: Tabela 14 - Repartição da população residente, segundo os grupos etários, por sexo e razão de
+  p15: Tabela 15 - Repartição da população residente no meio urbano, segundo os grupos etários, por sexo e
+  p15: Tabela 16 - Repartição da população residente no meio rural, segundo os grupos etários, por sexo e razão
+  p15: Tabela 17 - Idade média e mediana da população residente, por sexo e meio de residência, Cabo Verde,
+  p15: Tabela 18 - Idade média da população residente, por sexo e concelho, Cabo Verde 2021 .................... 71
+  p15: Tabela 19 - Repartição da população residente, segundo os grupos etários funcionais, por sexo e razão
+  p15: Tabela 20 - Repartição da população residente no meio urbano, segundo os grupos etários funcionais,
+  p16: Tabela 21 - Repartição da população residente no meio rural, segundo os grupos etários funcionais, por
+  p16: Tabela 22 - Repartição da população residente, segundo os grupos etários funcionais, por concelho, Cabo
+  p16: Tabela 23 - Índices de dependência demográfica, por sexo e meio de residência (%), Cabo Verde, 2021
+  p16: Tabela 24 - Repartição da população residente, segundo a nacionalidade, por sexo, Cabo Verde, 2021
+  p16: Tabela 25 - Repartição da população residente com dupla nacionalidade, segundo o país de
+  p16: Tabela 26 - Repartição da população residente com dupla nacionalidade, segundo os grupos etários, por
+  p16: Tabela 27 - Repartição da população residente com a primeira nacionalidade estrangeira, segundo o país
+  p16: Tabela 28 - Repartição da população residente de 12 anos ou mais, segundo o estado civil, por sexo,
+  p16: Tabela 29 - Repartição da população residente de 15 anos ou mais, segundo a religião/espiritualidade
+  p16: Tabela 30 - Repartição da população residente de 15 anos ou mais, segundo a religião/espiritualidade
+  p16: Tabela 31 - População residente de 15 anos ou mais que sabe ler e escrever e taxa de alfabetização, por
+  p16: sexo, meio de residência e concelho (%), Cabo Verde, 2021 .................................................................. 89
+  p16: Tabela 32 - Taxa de atividade da população residente de 15 anos ou mais, por sexo, meio de residência
+  p16: e concelho (%), Cabo Verde 2021 ............................................................................................................ 90
+  p16: Tabela A1 - Divisão Administrativa do país............................................................................................... 91
+  p16: Tabela A2 - População residente no meio urbano, segundo o sexo, por concelho, Cabo Verde, 2021 .. 92
+  p16: Tabela A3 - População residente no meio rural, segundo o sexo, por concelho, Cabo Verde, 2021 ...... 93
+  p16: Tabela A 4 - População residente, segundo idade simples, por sexo, Cabo Verde, 2021 ....................... 94
+  p16: Tabela A 5 - População residente, segundo idade simples, por sexo, Cabo Verde, 2021 (continuação) 95
+  p16: Tabela A6 - População residente de 15 anos ou mais, segundo o sexo e a capacidade para ler e escrever,
+  p16: por sexo, meio de residência e concelho (efetivo), Cabo Verde, 2021 .................................................... 96
+  p16: Tabela A7 - População residente de 15 anos ou mais, segundo a situação perante a atividade económica,
+  p16: por sexo, meio de residência e concelho (efetivo), Cabo Verde, 2021 .................................................... 97
+  p17: Gráfico 3 - Repartição da população residente nos alojamentos coletivos, segundo o concelho (%), Cabo
+  p17: Gráfico 9 - Razão de feminilidade (RF), por concelho (%), Cabo Verde, 2021 ........................................ 54
+  p17: Gráfico 10 - Razão de feminilidade (RF) no meio urbano, por concelho (%), Cabo Verde Urbano, 202156
+  p17: Gráfico 11 - Razão de feminilidade (RF) no meio rural, por concelho (%), Cabo Verde Rural, 2021 ...... 56
+  p17: Gráfico 16 - Idade média da população residente, por concelho (anos), Cabo Verde, 2021 ................... 70
+  p18: Figura 1 – Mapa da Taxa de urbanização, por concelho, Cabo Verde, 2021 .......................................... 58
+  p18: Figura 2 - Mapa da densidade populacional (habitantes/km²), por concelho, Cabo Verde, 2021 ............ 59
+  p19: espacial por meio de residência e concelho. Este trabalho é realizado com base nos dados do V
+  p19: o Caraterizar a repartição espacial da população por meio de residência e concelho;
+  p19: de estrutura e de envelhecimento da população, desagregados por meio de residência, concelho e
+  p20: meio de residência urbano e rural e concelho. Neste capítulo, apresenta-se também uma descrição
+  p20: e meio de residência. Analisa-se a idade média e mediana da população residente e a estrutura da
+  p20: Os resultados são apresentados a nível nacional, urbano/rural e concelhos, e, no final de cada
+  p21: nomeadamente na Praia, S, Vicente e Sal. A forte concentração de infraestruturas socioeconómicas
+  p23: Administrativamente, encontra-se subdividido em concelhos, correspondendo cada um dos
+  p23: territórios a um Município, uma autarquia local, que se subdividem em freguesias. As freguesias, não
+  p23: concelhos, e abaixo destes, as Delegações Municipais que administram as localidades. Os
+  p23: Na altura da Independência, em 1975, o país contava com 14 concelhos e 31 freguesias. Após a
+  p23: criação dos seguintes concelhos/municípios:
+  p23: de 9 de maio;
+  p23: 9 de maio;
+  p23: de maio;
+  p23: o Em 2005 – criado o Município de Santa Catarina do Fogo, através da Lei nº 66/VI/2005, de
+  p23: 9 de maio;
+  p23: o Em 2005 – criado o Município de Tarrafal de S. Nicolau, através da Lei nº 67/VI/2005, de 9
+  p23: de maio.
+  p24: A divisão administrativa oficial, desde 2005, contempla 22 Concelhos e 32 Freguesias (Ver Anexo
+  p24: O Censo 2021, constitui uma prioridade nacional e a maior operação estatística realizada pelo
+  p24: Instituto Nacional de Estatística (INE). Assume um papel estruturante no quadro da Agenda
+  p26: gráficos e tabelas, permitindo fazer o acompanhamento da recolha em tempo real. De acordo
+  p26: Foram analisados e publicados 9 temas de análise temática e 24 volumes de quadros brutos, sendo
+  p26: um a nível de cada concelho, um a nível nacional e outro por zonas e lugares.
+  p27: exclusividade, o quadro institucional, a obrigatoriedade da disponibilização de informações e a
+  p27: Nacional de Estatística (SNE) foi criado o seguinte quadro institucional:
+  p28: tomada de decisões, gerir os recursos e assumir compromissos de maior alcance, com vista a facilitar
+  p28: concelhos de Cabo Verde, com a finalidade de apoiar o Gabinete nos aspetos relacionados com a
+  p29: concelhos do país, campanhas de sensibilização e recolha de dados no terreno para
+  p29: do Gabinete aos diferentes concelhos para supervisão, o recrutamento e a formação dos
+  p30: o Elaboração das tabelas de análise e de publicação dos 24 volumes de quadros brutos:
+  p33: Assim, a residência e presença de cada indivíduo, bem como a maior parte dos dados recolhidos,
+  p33: Entretanto, verificou-se algum atraso nos concelhos mais populosos. Assim, o término da recolha foi
+  p35: o Os estudantes que se encontram no estrangeiro ou fora da sua freguesia por um período
+  p36: Do ponto de vista administrativo, Cabo Verde está dividido em Ilhas, Concelhos e Freguesias. Para
+  p37: o Ter procurado ativamente um emprego, nas últimas 4 semanas (9 de maio a 15 de junho
+  p37: ou aversão a outros, leva que inconscientemente as idades sejam na maioria das vezes declaradas
+  p38: somente as idades terminadas em 0 e 5 foram declaradas. A atração é tanto maior quanto mais o
+  p38: Maior que 1,75 Muito má qualidade (péssima)
+  p38: Maior que 30 Qualidade muito alta
+  p39: Maior que 40 Muito má qualidade
+  p41: Idade média e Idade mediana
+  p41: idade média e mediana da população – são calculadas para resumir os dados por ser uma técnica
+  p42: A Tabela 1 apresenta um resumo dos quatro índices mais utilizados para avaliar a qualidade da
+  p43: Tabela 1 - Índices de Whipple, Myers, Bachi e ICNU por meio de residência e sexo, Cabo Verde, 2021
+  p43: masculino no meio urbano (1,69), o que demonstra uma maior atração e irregularidade segundo o
+  p43: Isto mostra uma maior atração e irregularidade dos dados na declaração das idades por parte dos
+  p43: dados da tabela de mortalidade é utilizar as estatísticas da população por sexo e idade proveniente
+  p44: etária de 20 a 64 anos (onde se inclui a maior parte da população ativa) esse indicador não apresenta
+  p45: A Tabela 2 apresenta a população recenseada segundo o local de recenseamento e a situação na
+  p45: Tabela 2 - População recenseada, segundo o local de recenseamento e a situação na residência, por
+  p46: detalhada ao longo deste trabalho, observa-se da mesma Tabela que este Censo contou mais
+  p46: Os resultados da Tabela 3 indicam que, entre o total da população residente no país, 364.106
+  p46: Tabela 3 - Repartição da população residente, segundo o meio de residência, por local de
+  p47: De acordo com a Tabela 4 e, conforme referido anteriormente, nos alojamentos coletivos foram
+  p47: de sexo feminino, correspondente a 17,1%. A mesma Tabela mostra que a maioria dessa população
+  p47: Quanto ao sexo, verifica-se que existem algumas diferenças: entre os homens, a maior percentagem
+  p47: corresponde à população de 15-34 anos (68,3%), enquanto que, entre as mulheres, a maior
+  p47: Tabela 4 - Repartição da população residente nos alojamentos coletivos, segundo os grupos etários,
+  p48: o Repartição por concelho
+  p48: Quanto à repartição por concelho, verifica-se do Gráfico 3 que, a maioria dessa população reside no
+  p48: concelho da Praia (49,2%). Seguem-se por ordem de importância os concelhos de S. Vicente
+  p48: (20,2%), Sal (9,5%), Santa Catarina (3,7%), S. Filipe (3%), S. Domingos (2,6%), Porto Novo (2,4%)
+  p48: e Ribeira Grande (2,3%). Nos restantes concelhos residem cerca de 7% dessa população.
+  p48: Gráfico 3 - Repartição da população residente nos alojamentos coletivos, segundo o concelho (%),
+  p49: Câmaras Municipais de todos os concelhos do país no sentido de identificar os locais onde costumam
+  p49: distribuídos quase todos na Praia, Sal, S. Vicente e Santa Catarina.
+  p49: Relativamente à idade, o Gráfico 4 mostra que a maioria dos homens possui entre 35 e 39 anos (17
+  p50: condição. Os resultados do Gráfico 5 mostram que a maioria vive nesta condição há 9 anos ou mais
+  p51: indica que a maioria vive nessa condição devido a problemas familiares (28,7%). Seguem-se os que
+  p51: Relativamente ao local de nascimento, observa-se do Gráfico 7 que a maioria nasceu no concelho
+  p51: da Praia (48,4%). Entretanto, 35,2% nasceram em outros concelhos e 16,5% nasceram no
+  p51: Praia
+  p51: Outros concelhos
+  p52: diferenças no que se refere ao meio de residência. Com efeito, verifica-se também da Tabela 5 que,
+  p52: Tabela 5 - Repartição da população residente, segundo o sexo, por meio de residência, Cabo Verde,
+  p52: 74,1% reside no meio urbano, contra 25,9% que reside no meio rural (Tabela 6). A mesma tabela
+  p52: Tabela 6 - Repartição da população residente, segundo o meio de residência, por sexo, Cabo Verde
+  p53: 4.3.2. População residente segundo o concelho
+  p53: Nesta subsecção analisa-se a repartição da população residente segundo o concelho. Verifica-se
+  p53: das Tabelas 7 e 8 seguintes que, o concelho da Praia é o mais populoso, concentrando mais de um
+  p53: quarto da população total (29,6%). Seguem-se por ordem de importância, os concelhos de S.
+  p53: Vicente com 15,4% da população do país, Santa Catarina (7,7%), Sal (6,8%), Santa Cruz (5,1%) e
+  p53: S. Filipe (4,3%). Os restantes concelhos são os menos populosos, com percentagens variando entre
+  p53: 3,4% no Tarrafal e 1% no concelho de Santa Catarina do Fogo.
+  p53: Existem diferenças importantes entre os diferentes concelhos quando se analisa a repartição por
+  p53: sexo. Com efeito, analisando a RF, observa-se também no Gráfico 9 que, nos concelhos de S.
+  p53: Miguel, Santa Catarina, Tarrafal, S. Salvador do Mundo, S. Domingos, Ribeira Grande de Santiago,
+  p53: Praia, Santa Cruz e S. Lourenço dos Órgãos, existem mais mulheres do que homens, contrariamente
+  p53: à tendência nacional. Por exemplo, em S. Miguel e Santa Catarina existem cerca de 112 mulheres
+  p53: para cada 100 homens. Nos restantes concelhos acima mencionados, esse indicador varia entre 110
+  p53: mulheres para cada 100 homens no Tarrafal e cerca de 102 mulheres para cada 100 homens em S.
+  p53: Nos concelhos de S. Filipe e Maio (RF= 99 % para cada um dos concelhos) quase que existe um
+  p53: equilíbrio entre os dois sexos. Diferenças mais acentuadas entre os sexos se verificam nos concelhos
+  p54: Tabela 7 - Repartição da população residente, segundo o concelho, por sexo e razão de feminilidade,
+  p54: Concelho Ambos os sexos Masculino Feminino
+  p54: São Vicente 75 845 15,4 38 472 15,6 37 373 15,3 97,1
+  p54: Tarrafal de São Nicolau 5 310 1,1 2 725 1,1 2 585 1,1 94,9
+  p54: Maio 6 330 1,3 3 180 1,3 3 150 1,3 99,1
+  p54: Tarrafal 16 892 3,4 8 043 3,3 8 849 3,6 110,0
+  p54: Santa Catarina 37 982 7,7 17 943 7,3 20 039 8,2 111,7
+  p54: Praia 145 378 29,6 71 803 29,1 73 575 30,0 102,5
+  p54: Santa Catarina do Fogo 4 743 1,0 2 423 1,0 2 320 0,9 95,7
+  p54: Gráfico 9 - Razão de feminilidade (RF), por concelho (%), Cabo Verde, 2021
+  p55: Tabela 8 - Repartição da população residente, segundo o sexo, por concelho, Cabo Verde, 2021
+  p55: Concelho Ambos os sexos Masculino Feminino
+  p55: São Vicente 75 845 100,0 38 472 50,7 37 373 49,3
+  p55: Tarrafal de São Nicolau 5 310 100,0 2 725 51,3 2 585 48,7
+  p55: Maio 6 330 100,0 3 180 50,2 3 150 49,8
+  p55: Tarrafal 16 892 100,0 8 043 47,6 8 849 52,4
+  p55: Santa Catarina 37 982 100,0 17 943 47,2 20 039 52,8
+  p55: Praia 145 378 100,0 71 803 49,4 73 575 50,6
+  p55: Santa Catarina do Fogo 4 743 100,0 2 423 51,1 2 320 48,9
+  p55: 4.3.3. População residente segundo o meio de residência por concelho
+  p55: O Gráfico 10 apresenta a razão de feminilidade no meio urbano por concelho. Observa-se do mesmo,
+  p55: a Cabo Verde Urbano, em Santa Catarina, S. Miguel (113 mulheres para cada 100 homens
+  p55: respetivamente para cada um dos concelhos), S. Salvador do Mundo (RF 111%) Tarrafal (108%), S.
+  p55: Domingos (105%), Praia e S. Lourenço dos Órgãos (104% para cada um dos concelhos), Ribeira
+  p55: Em situação contrária, estão os concelhos onde a RF corresponde a valores inferiores a Cabo Verde
+  p55: Urbano, variando entre 98 mulheres para cada 100 homens em S. Vicente e Maio e, 87 mulheres
+  p55: para cada 100 homens na Boavista. (Ver Tabela A2 do Anexo).
+  p56: Gráfico 10 - Razão de feminilidade (RF) no meio urbano, por concelho (%), Cabo Verde Urbano, 2021
+  p56: Relativamente ao meio rural, o Gráfico 11 mostra que, entre os concelhos com RF superiores ao
+  p56: valor correspondente a Cabo Verde Rural, destacam-se Tarrafal, com cerca de 121 mulheres para
+  p56: cada 100 homens, S. Miguel e Santa Catarina com 110 mulheres para cada 100 homens,
+  p56: respetivamente para cada um dos concelhos, S. Domingos (103), Ribeira Grande de Santiago (102),
+  p56: Santa Cruz (102), S. Lourenço dos Órgãos, Maio e S. Salvador do Mundo, com cerca de 101
+  p56: mulheres para cada 100 homens em cada um dos concelhos.
+  p56: Em Santa Catarina do Fogo, o valor deste indicador é idêntico ao nacional. Nos Mosteiros, Tarrafal
+  p56: de S. Nicolau, Brava, Ribeira Brava, Ribeira Grande, S. Vicente, Boavista, Porto Novo, Paul, Sal e
+  p56: Praia, existem mais homens do que mulheres, com valores mais baixos nos concelhos do Sal (62
+  p56: mulheres para cada 100 homens) e Praia (59 mulheres para cada 100 homens). (Ver a Tabela A3
+  p56: Gráfico 11 - Razão de feminilidade (RF) no meio rural, por concelho (%), Cabo Verde Rural, 2021
+  p57: 4.3.4. Urbanização por concelho
+  p57: Neste subcapítulo analisa-se a urbanização nos diferentes concelhos do país, através da “taxa de
+  p57: cada concelho. A Tabela 9 apresenta a repartição da população residente, segundo o meio de
+  p57: residência por concelho. Observa-se da mesma que, conforme referido anteriormente, 74,1% da
+  p57: Relativamente aos concelhos, a mesma Tabela indica que os concelhos mais urbanizados do país
+  p57: são: Praia, com uma taxa de urbanização correspondente a 97,1%, Sal (95,6%), S. Vicente (93,3%),
+  p57: Boavista (86,3%), Tarrafal de S. Nicolau (83,2%), Tarrafal (81,2%), todos com valores superiores ao
+  p57: nacional. Em Santa Catarina e nos Mosteiros, mais de metade da população reside no meio urbano,
+  p57: concelhos.
+  p57: Nos restantes concelhos, esse indicador corresponde a valores inferiores ao nacional, e, a taxa mais
+  p57: Tabela 9 - Repartição da população residente, segundo o meio de residência, por concelho, Cabo Verde,
+  p57: Concelho Cabo Verde Urbano Rural
+  p57: São Vicente 75 845 100,0 70 743 93,3 5 102 6,7
+  p57: Tarrafal de São Nicolau 5 310 100,0 4 420 83,2 890 16,8
+  p57: Maio 6 330 100,0 4 504 71,2 1 826 28,8
+  p57: Tarrafal 16 892 100,0 13 714 81,2 3 178 18,8
+  p57: Santa Catarina 37 982 100,0 21 662 57,0 16 320 43,0
+  p57: Praia 145 378 100,0 141 219 97,1 4 159 2,9
+  p57: Santa Catarina do Fogo 4 743 100,0 724 15,3 4 019 84,7
+  p58: A Figura 1 ilustra a taxa de urbanização por concelho, representada em forma de mapa, e permite
+  p58: Figura 1 – Mapa da Taxa de urbanização, por concelho, Cabo Verde, 2021
+  p58: De acordo com a Tabela 10, esse indicador corresponde a 121,8 habitantes/km² a nível nacional. No
+  p58: que se refere aos concelhos, a mesma Tabela mostra que os concelhos mais densamente povoados
+  p58: do país são: Praia (1.485 habitantes/km²), S. Vicente (336,9 habitantes/km²), S. Salvador do Mundo,
+  (limit reached)
+https://web.archive.org/web/20250325063502id_/https://ine.cv/wp-content/uploads/2021/10/resultados_preliminares_rgph-2021.pdf: 4,429,941 bytes, starts b'%PDF-1.5'
+  34 pages
+  p1: Praia, 6 de agosto de 2021
+  p7: CONCELHO (%)
+  p7: Praia 23,1
+  p7: S. Vicente 16,0
+  p7: Santa Catarina 8,2
+  p7: Tarrafal 4,4
+  p7: Maio 1,8
+  p7: Tarrafal de S. Nicolau 1,4
+  p7: Santa Catarina do Fogo 1,2
+  p8: CONCELHO
+  p8: S. Vicente 23 976 68,5 23,8 0,4 7,3 0,0
+  p8: Tarrafal de S. Nicolau 2 096 67,1 32,8 0,0 0,0 0,0
+  p8: Maio 2 728 91,8 7,8 0,4 0,0 0,0
+  p8: Tarrafal 6 554 79,7 19,9 0,3 0,1 0,1
+  p8: Santa Catarina 12 295 68,8 31,0 0,1 0,1 0,0
+  p8: Praia 34 663 56,7 41,6 0,2 1,5 0,0
+  p8: Santa Catarina do Fogo 1 769 82,2 17,1 0,6 0,1 0,0
+  p9: Edifício com a maior parte da área afecta à
+  p9: Edifício com a maior parte da área afecta a fins
+  p14: FAMILIARES POR CONCELHO (%)
+  p14: Praia 28,1
+  p14: São Vicente 15,8
+  p14: Santa Catarina 8,0
+  p14: Tarrafal 3,4
+  p14: Maio 1,5
+  p14: Tarrafal de São Nicolau 1,2
+  p14: Santa Catarina do Fogo 0,9
+  p15: MEIO DE RESIDÊNCIA POR CONCELHO
+  p15: S. Vicente 31 590 29 266 92,6 2 324 7,4
+  p15: Tarrafal de S. Nicolau 2 306 1 916 83,1 390 16,9
+  p15: Maio 2 964 2 116 71,4 848 28,6
+  p15: Tarrafal 6 732 5 485 81,5 1 247 18,5
+  p15: Santa Catarina 16 046 9 938 61,9 6 108 38,1
+  p15: Praia 56 146 55 113 98,2 1 033 1,8
+  p15: Santa Catarina do Fogo 1 836 296 16,1 1 540 83,9
+  p19: MEIO DE RESIDÊNCIA POR CONCELHO
+  p19: São Vicente 24 524 23 082 94,1 1 442 5,9
+  p19: Tarrafal de São Nicolau 1 559 1 292 82,9 267 17,1
+  p19: Maio 2 035 1 463 71,9 572 28,1
+  p19: Tarrafal 4 767 3 874 81,3 893 18,7
+  p19: Santa Catarina 10 047 6 000 59,7 4 047 40,3
+  p19: Praia 43 429 42 621 98,1 808 1,9
+  p19: Santa Catarina do Fogo 1 278 200 15,6 1 078 84,4
+  p20: FAMILIARES POR CONCELHO (%)
+  p20: Praia 29,8
+  p20: São Vicente 16,8
+  p20: Santa Catarina 6,9
+  p20: Tarrafal 3,3
+  p20: Maio 1,4
+  p20: Tarrafal de São Nicolau 1,1
+  p20: Santa Catarina do Fogo 0,9
+  p24: RESIDENTE POR CONCELHO (%)
+  p24: Praia 29,4
+  p24: São Vicente 15,3
+  p24: Santa Catarina 7,7
+  p24: Tarrafal 3,4
+  p24: Maio 1,3
+  p24: Tarrafal São Nicolau 1,1
+  p24: Santa Catarina Fogo 1,0
+  p25: MEIO DE RESIDÊNCIA POR CONCELHO
+  p25: São Vicente 74 016 69 013 93,2 5 003 6,8
+  p25: Tarrafal São Nicolau 5 261 4 371 83,1 890 16,9
+  p25: Maio 6 298 4 472 71,0 1 826 29,0
+  p25: Tarrafal 16 620 13 483 81,1 3 137 18,9
+  p25: Santa Catarina 37 472 21 297 56,8 16 175 43,2
+  p25: Praia 142 009 137 868 97,1 4 141 2,9
+  p25: Santa Catarina Fogo 4 725 720 15,2 4 005 84,8
+  p26: CONCELHO (%)
+  p26: Praia 97,1
+  p26: São Vicente 93,2
+  p26: Tarrafal São Nicolau 83,1
+  p26: Tarrafal 81,1
+  p26: Maio 71,0
+  p26: Santa Catarina 56,8
+  p26: Santa Catarina Fogo 15,2
+  p27: SEXO POR CONCELHO
+  p27: São Vicente 74 016 37 551 50,7 36 465 49,3
+  p27: Tarrafal São Nicolau 5 261 2 716 51,6 2 545 48,4
+  p27: Maio 6 298 3 183 50,5 3 115 49,5
+  p27: Tarrafal 16 620 7 911 47,6 8 709 52,4
+  p27: Santa Catarina 37 472 17 746 47,4 19 726 52,6
+  p27: Praia 142 009 70 348 49,5 71 661 50,5
+  p27: Santa Catarina Fogo 4 725 2 423 51,3 2 302 48,7
+  p28: RAZÃO DE FEMINILIDADE POR CONCELHO
+  p29: CONCELHO (%)
+  p30: São Vicente 76 107 74 016 -0,3
+  p30: Tarrafal São Nicolau 5 237 5 261 0,0
+  p30: Maio 6 952 6 298 -0,9
+  p30: Tarrafal 18 565 16 620 -1,0
+  p30: Santa Catarina 43 297 37 472 -1,3
+  p30: Praia 131 602 142 009 0,7
+  p30: Santa Catarina Fogo 5 299 4 725 -1,0
