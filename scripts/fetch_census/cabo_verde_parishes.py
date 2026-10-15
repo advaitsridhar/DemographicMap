@@ -10,19 +10,24 @@ workbooks have since left INE's site, whose census service now asks for a
 login; the copies read here are the Internet Archive's of INE's own files, as
 INE served them in November 2013.
 
-A parish's count is its zones' counts added up. Written for each parish:
-population and sex ratio (males per 100 females), 2010. The workbooks count
-ages only in three broad groups, so there is no median age.
+A parish's count is its zones' counts added up. The zone tables count the
+people living in private households; those in collective dwellings are
+counted only by municipality, and each parish's note says how many that
+leaves out in its municipality. Written for each parish: population and sex
+ratio (males per 100 females), 2010. The workbooks count ages only in three
+broad groups, so there is no median age.
 
 **Checks before anything is written.** Every zone's men and women make its
 total (the localities listed under a zone do not always make it, and are
-only reported); every parish is a sheet whose code
-names its municipality; each municipality's parishes make the municipality's
-resident population in INE's 2010 table by municipality (``TOTALS``), and the
-municipalities make the country's 491,683. Parishes are matched to the
-boundary file's within their municipality by name (``N.S.`` read as Nossa
-Senhora, "de/da/do" set aside); where a municipality has one parish, the two
-are the same. Every polygon must get exactly one parish.
+only reported); every parish is a sheet whose code names its municipality;
+INE's 2010 table by municipality (``TOTALS``) gives the country its 491,683;
+and each municipality's parishes make the people that table counts in its
+private households, to within half a percent (``SLACK``: Ribeira Grande's
+four make 18,931 against 18,886), any difference stated in the note.
+Parishes are matched to the boundary file's within their municipality by
+name (``N.S.`` read as Nossa Senhora, "de/da/do" set aside, a sheet name cut
+at 31 characters by its beginning); where a municipality has one parish, the
+two are the same. Every polygon must get exactly one parish.
 
 Usage:
     python -m scripts.fetch_census.cabo_verde_parishes
@@ -59,6 +64,10 @@ SOURCE = ("Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Ge
 LICENCE = "INE Cabo Verde publication (reuse with attribution)"
 YEAR = 2010
 NATIONAL = 491_683
+# How far a municipality's parishes may miss the people its table counts in
+# private households (Ribeira Grande's make 18,931 against 18,886).
+SLACK = 0.005
+SHEET_NAME_LIMIT = 31                # a workbook cuts its sheet names at 31 characters
 OUT = "cabo_verde_parishes.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -194,23 +203,32 @@ def parish(rows: list[list[Any]], where: str) -> dict[str, float]:
     return out
 
 
-def totals(rows: list[list[Any]]) -> dict[str, float]:
-    """{INE's municipality name, folded: resident population} and the country."""
+def totals(rows: list[list[Any]]) -> dict[str, dict[str, float]]:
+    """{INE's municipality name, folded: {"total": its resident population,
+    "households": its residents of private households}}, the country among
+    them. The table's first column is blank; a row's name is its first
+    filled cell."""
     head = next((i for i, r in enumerate(rows[:6])
                  if any(fold(c).startswith("total - populacao residente") for c in r)), None)
     if head is None:
         raise SystemExit("cabo_verde_parishes: the table by municipality has no total column")
     col = next(j for j, c in enumerate(rows[head]) if fold(c).startswith("total - populacao residente"))
+    home = next((j for j, c in enumerate(rows[head])
+                 if fold(c).startswith("residente nos agregados")), None)
+    if home is None:
+        raise SystemExit("cabo_verde_parishes: the table by municipality has no column for "
+                         "residents of private households")
     out = {}
     for row in rows[head + 1:]:
-        cells = list(row) + [""] * (col + 1)
-        value = number(cells[col])
-        if str(cells[0]).strip() and value is not None:
-            out[fold(cells[0])] = value
+        cells = list(row) + [""] * (max(col, home) + 1)
+        total, households = number(cells[col]), number(cells[home])
+        name = next((str(c) for c in cells[:min(col, home)] if str(c).strip()), "")
+        if name and number(name) is None and total is not None and households is not None:
+            out[fold(name)] = {"total": total, "households": households}
     return out
 
 
-def read() -> tuple[dict[int, list[dict[str, Any]]], dict[str, float], dict[str, str]]:
+def read() -> tuple[dict[int, list[dict[str, Any]]], dict[str, dict[str, float]], dict[str, str]]:
     """({municipality code: [parish]}, the table by municipality, {island: url})."""
     blob, _ = fetch(TOTALS_ORIGINAL, TOTALS_STAMP)
     table = totals(next(iter(sheets_of(blob).values())))
@@ -235,33 +253,55 @@ def read() -> tuple[dict[int, list[dict[str, Any]]], dict[str, float], dict[str,
             counts = parish(rows, f"{island} {sheet}")
             parishes.setdefault(code // 10, []).append({
                 "code": code, "name": re.sub(r"(?i)^freguesia\s+", "", hit.group(2)),
+                # A sheet's name is cut at 31 characters ("112 - Nossa
+                # Senhora do Livramen"); bind() then matches its beginning.
+                "truncated": len(sheet) >= SHEET_NAME_LIMIT,
                 "island": island, "url": url, "island_name": name, **counts})
         time.sleep(2)
     check(parishes, table)
     return parishes, table, urls
 
 
-def check(parishes: dict[int, list[dict[str, Any]]], table: dict[str, float]) -> None:
+def check(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, float]]) -> None:
+    """The table is the census's (the country's 491,683), and each
+    municipality's parishes make the people it counts in private households
+    to within ``SLACK``: the zone tables count the residents of private
+    households (Tarrafal's one parish sheet closes on 18,561, the
+    municipality's 18,565 less its 4 in collective dwellings), and they do
+    not always close on the table by municipality exactly (Ribeira Grande's
+    four parishes make 18,931 against 18,886)."""
     if set(parishes) != set(MUNICIPALITIES):
         raise SystemExit(f"cabo_verde_parishes: municipalities with no parish sheet: "
                          f"{sorted(set(MUNICIPALITIES) - set(parishes))}")
+    country = table.get("cabo verde") or {}
+    wrong = []
+    if country.get("total") != NATIONAL:
+        wrong.append(f"the table by municipality gives the country {country.get('total')}, "
+                     f"not {NATIONAL:,}")
     national = 0.0
     for code, (_, ine) in MUNICIPALITIES.items():
         made = sum(p["total"] for p in parishes[code])
-        own = table.get(fold(ine))
-        if own != made:
-            raise SystemExit(f"cabo_verde_parishes: {ine}'s parishes make {made:,.0f}, the table by "
-                             f"municipality {own}")
         national += made
-    if national != NATIONAL or table.get("cabo verde") != NATIONAL:
-        raise SystemExit(f"cabo_verde_parishes: the country is {national:,.0f} (table "
-                         f"{table.get('cabo verde')}), not {NATIONAL:,}")
+        own = table.get(fold(ine))
+        if not own:
+            wrong.append(f"{ine} is not in the table by municipality")
+            continue
+        log(f"  {ine}: {len(parishes[code])} parishes make {made:,.0f}; in private households "
+            f"{own['households']:,.0f}, all residents {own['total']:,.0f}")
+        if abs(made - own["households"]) > SLACK * own["households"]:
+            wrong.append(f"{ine}'s parishes make {made:,.0f}, not the {own['households']:,.0f} it "
+                         f"counts in private households (all residents {own['total']:,.0f})")
+    log(f"  the parishes make {national:,.0f}; in private households "
+        f"{country.get('households')}, all residents {country.get('total')}")
+    if wrong:
+        raise SystemExit("cabo_verde_parishes: " + "; ".join(wrong))
 
 
 def bind(parishes: dict[int, list[dict[str, Any]]], admin1: list[dict[str, Any]],
          admin2: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
-    """{polygon id: parish}: by name within the municipality, or the only
-    parish of a municipality with one."""
+    """{polygon id: parish}: by name within the municipality (a name the
+    workbook cut short, by its beginning), or the only parish of a
+    municipality with one."""
     code_of = {}
     for shape in admin1:
         hits = [c for c, (name, _) in MUNICIPALITIES.items() if fold(name) == fold(shape["name"])]
@@ -275,7 +315,9 @@ def bind(parishes: dict[int, list[dict[str, Any]]], admin1: list[dict[str, Any]]
         spare = list(parishes.get(code, []))
         rest = []
         for shape in shapes:
-            hits = [p for p in spare if key(p["name"]) == key(shape["name"])]
+            k = key(shape["name"])
+            hits = [p for p in spare if key(p["name"]) == k] or \
+                [p for p in spare if p.get("truncated") and k.startswith(key(p["name"]))]
             if len(hits) == 1:
                 bound[shape["id"]] = hits[0]
                 spare.remove(hits[0])
@@ -291,20 +333,53 @@ def bind(parishes: dict[int, list[dict[str, Any]]], admin1: list[dict[str, Any]]
     return bound
 
 
-def records_of(parishes: dict[int, list[dict[str, Any]]], admin1: list[dict[str, Any]],
-               admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def display(p: dict[str, Any], shape: dict[str, Any]) -> str:
+    """INE's name for the parish ("N.S." written out); where the workbook cut
+    the name short, the boundary file's, its particles in lower case."""
+    if p.get("truncated"):
+        return re.sub(r"\b(D[aeo]s?)\b", lambda m: m.group(1).lower(), shape["name"])
+    hit = re.match(r"N\.\s*S\.\s*(.+)$", p["name"])
+    if not hit:
+        return p["name"]
+    rest = hit.group(1)
+    return "Nossa Senhora " + (rest if re.match(r"(?i)d[aeo]s?\s", rest) else "da " + rest)
+
+
+def note_for(p: dict[str, Any], name: str, parishes: dict[int, list[dict[str, Any]]],
+             table: dict[str, dict[str, float]]) -> str:
+    municipality, ine = MUNICIPALITIES[p["code"] // 10]
+    own = table[fold(ine)]
+    mine = parishes[p["code"] // 10]
+    made = sum(q["total"] for q in mine)
+    note = (f"The 2010 census's count of the people living in private households in the parish "
+            f"of {name}, its {p['zones']:.0f} zones added up.")
+    collective = own["total"] - own["households"]
+    if collective:
+        one = collective == 1
+        note += (f" The {collective:,.0f} {'person' if one else 'people'} of {municipality} "
+                 f"municipality who lived in collective dwellings {'is' if one else 'are'} "
+                 "counted only for the municipality as a whole.")
+    gap = made - own["households"]
+    if gap:
+        whose = "the parish makes" if len(mine) == 1 else f"{municipality}'s {len(mine)} parishes make"
+        note += (f" Added up this way, {whose} {made:,.0f}, {abs(gap):,.0f} "
+                 f"{'more' if gap > 0 else 'fewer'} than the {own['households']:,.0f} people in "
+                 "private households that INE's table by municipality gives.")
+    return note
+
+
+def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, float]],
+               admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     bound = bind(parishes, admin1, admin2)
     out = []
     for shape in admin2:
         p = bound[shape["id"]]
         source = SOURCE.format(island=p["island_name"])
-        note = (f"The 2010 census's count for the parish of {p['name']}: its "
-                f"{p['zones']:.0f} zones added up.")
         out.append(record(
             f"CPV-2010-{p['code']}", shape["name"], level="admin2", parent="CPV", country="CPV",
             match_by="shape_id", shape_id=shape["id"],
             population=measure(round(p["total"]), year=YEAR, source=source),
-            population_note=note,
+            population_note=note_for(p, display(p, shape), parishes, table),
             sex_ratio=measure(round(100 * p["men"] / p["women"], 1), unit="males_per_100_females",
                               year=YEAR, source=source),
             sources=[{"field": "population/sex_ratio", "name": source, "url": p["url"],
@@ -321,7 +396,7 @@ def main() -> int:
         f"{sum(p['total'] for v in parishes.values() for p in v):,.0f}")
     admin1 = json.loads((SITE / "admin1" / "CPV.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "CPV.units.json").read_text())
-    records = records_of(parishes, admin1, admin2)
+    records = records_of(parishes, table, admin1, admin2)
     for r in records:
         log(f"  {r['name']}: {r['population']['value']:,}, {r['sex_ratio']['value']} men per 100 "
             f"women; {r['population_note']}")

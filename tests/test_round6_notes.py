@@ -1021,15 +1021,97 @@ class CaboVerdeParishesTest(unittest.TestCase):
 
     def test_the_municipalities_must_be_made_by_their_parishes(self):
         cv = self.cv
-        saved = (cv.MUNICIPALITIES, cv.NATIONAL)
-        cv.MUNICIPALITIES, cv.NATIONAL = {82: ("São Filipe", "S. Filipe")}, 3
+        saved = (cv.MUNICIPALITIES, cv.NATIONAL, cv.log)
+        cv.MUNICIPALITIES, cv.NATIONAL = {82: ("São Filipe", "S. Filipe")}, 1010
+        cv.log = lambda *_: None
+        country = {"total": 1010.0, "households": 1000.0}
         try:
-            parishes = {82: [{"total": 1.0}, {"total": 2.0}]}
-            cv.check(parishes, {"s. filipe": 3.0, "cabo verde": 3.0})
-            with self.assertRaises(SystemExit):
-                cv.check(parishes, {"s. filipe": 4.0, "cabo verde": 3.0})
+            parishes = {82: [{"total": 400.0}, {"total": 600.0}]}
+            # The parishes make the people in private households; those in
+            # collective dwellings (10 here) are not in any parish.
+            cv.check(parishes, {"s. filipe": {"total": 1010.0, "households": 1000.0},
+                                "cabo verde": country})
+            # Within half a percent of it, the difference stated, not refused.
+            cv.check({82: [{"total": 404.0}, {"total": 600.0}]},
+                     {"s. filipe": {"total": 1010.0, "households": 1000.0}, "cabo verde": country})
+            with self.assertRaises(SystemExit):              # past half a percent
+                cv.check({82: [{"total": 406.0}, {"total": 600.0}]},
+                         {"s. filipe": {"total": 1010.0, "households": 1000.0},
+                          "cabo verde": country})
+            with self.assertRaises(SystemExit):              # a table that is not the census's
+                cv.check(parishes, {"s. filipe": {"total": 1010.0, "households": 1000.0},
+                                    "cabo verde": {"total": 1011.0, "households": 1000.0}})
         finally:
-            cv.MUNICIPALITIES, cv.NATIONAL = saved
+            cv.MUNICIPALITIES, cv.NATIONAL, cv.log = saved
+
+    def test_a_note_says_who_the_parish_leaves_out_and_by_how_much_it_misses(self):
+        cv = self.cv
+        parishes = {11: [{"code": 111, "name": "Nossa Senhora do Rosário", "total": 7361.0,
+                          "zones": 9.0},
+                         {"code": 112, "name": "Nossa Senhora do Livramen", "truncated": True,
+                          "total": 11570.0, "zones": 14.0}]}
+        table = {"ribeira grande": {"total": 18890.0, "households": 18886.0}}
+        note = cv.note_for(parishes[11][0], "Nossa Senhora do Rosário", parishes, table)
+        self.assertEqual(note, (
+            "The 2010 census's count of the people living in private households in the parish "
+            "of Nossa Senhora do Rosário, its 9 zones added up. The 4 people of Ribeira Grande "
+            "municipality who lived in collective dwellings are counted only for the "
+            "municipality as a whole. Added up this way, Ribeira Grande's 2 parishes make "
+            "18,931, 45 more than the 18,886 people in private households that INE's table "
+            "by municipality gives."))
+        self.assertEqual(cv.display(parishes[11][1], {"name": "Nossa Senhora Do Livramento"}),
+                         "Nossa Senhora do Livramento")
+        self.assertEqual(cv.display({"name": "N.S. Conceição"}, {"name": "x"}),
+                         "Nossa Senhora da Conceição")
+        self.assertEqual(cv.display({"name": "N.S. do Monte"}, {"name": "x"}),
+                         "Nossa Senhora do Monte")
+        # A cut-short sheet name binds by its beginning.
+        admin1 = [{"id": "R", "name": "Ribeira Grande"}]
+        admin2 = [{"id": "a", "name": "Nossa Senhora Do Rosario", "parent": "R"},
+                  {"id": "b", "name": "Nossa Senhora Do Livramento", "parent": "R"},
+                  {"id": "c", "name": "Santo Crucifixo", "parent": "R"}]
+        three = {11: parishes[11] + [{"code": 113, "name": "Santo Crucifixo", "total": 1.0}]}
+        saved = cv.MUNICIPALITIES
+        cv.MUNICIPALITIES = {11: ("Ribeira Grande", "Ribeira Grande")}
+        try:
+            bound = cv.bind(three, admin1, admin2)
+        finally:
+            cv.MUNICIPALITIES = saved
+        self.assertEqual({k: v["code"] for k, v in bound.items()}, {"a": 111, "b": 112, "c": 113})
+
+    def test_the_table_by_municipality_names_its_rows_in_its_second_column(self):
+        # As INE's workbook lays it out: a blank first column, the names
+        # beside it, and the resident population in the fourth figure column.
+        rows = [["", "Distribuição da população residente", "", "", "", "", ""],
+                ["", "", "População urbana", "População rural", "Total - população residente",
+                 "Residente nos agregados familiares", "Residente nos alojamentos colectivos"],
+                ["", "CABO VERDE", 303673.0, 188010.0, 491683.0, 488040.0, 3643.0],
+                ["", "Concelho", "", "", "", "", ""],
+                ["", "Ribeira Grande", 4625.0, 14265.0, 18890.0, 18886.0, 4.0],
+                ["", "Ribeira Grande de Santiago", 1214.0, 7111.0, 8325.0, 8323.0, 2.0],
+                ["", "S. Filipe", 8125.0, 14103.0, 22228.0, 22227.0, 1.0],
+                ["", "Fonte: INE", "", "", "", "", ""]]
+        self.assertEqual(self.cv.totals(rows), {
+            "cabo verde": {"total": 491683.0, "households": 488040.0},
+            "ribeira grande": {"total": 18890.0, "households": 18886.0},
+            "ribeira grande de santiago": {"total": 8325.0, "households": 8323.0},
+            "s. filipe": {"total": 22228.0, "households": 22227.0}})
+
+    def test_every_municipality_that_misses_is_named_at_once(self):
+        cv = self.cv
+        saved = (cv.MUNICIPALITIES, cv.NATIONAL, cv.log)
+        cv.MUNICIPALITIES, cv.NATIONAL = {82: ("São Filipe", "S. Filipe"), 91: ("Brava", "Brava")}, 600
+        cv.log = lambda *_: None
+        try:
+            with self.assertRaises(SystemExit) as caught:
+                cv.check({82: [{"total": 100.0}], 91: [{"total": 500.0}]},
+                         {"s. filipe": {"total": 200.0, "households": 200.0},
+                          "brava": {"total": 400.0, "households": 400.0},
+                          "cabo verde": {"total": 600.0, "households": 600.0}})
+        finally:
+            cv.MUNICIPALITIES, cv.NATIONAL, cv.log = saved
+        self.assertIn("S. Filipe's parishes make 100", str(caught.exception))
+        self.assertIn("Brava's parishes make 500", str(caught.exception))
 
 
 if __name__ == "__main__":
