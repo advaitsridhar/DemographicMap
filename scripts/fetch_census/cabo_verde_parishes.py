@@ -14,11 +14,9 @@ A parish's count is its zones' counts added up. The zone tables count the
 people living in private households; those in collective dwellings are
 counted only by municipality, and each parish's note says how many that
 leaves out in its municipality. A parish that is its municipality's only one
-takes the municipality's own count instead, collective dwellings included,
-and every municipality takes its count from INE's table by municipality, so
-that no sum of household counts stands in for a municipality. Written for
-each parish: population and sex ratio (males per 100 females, among the
-people in private households), 2010; for each municipality: population,
+takes the municipality's own count instead (INE's table by municipality),
+collective dwellings included. Written for each parish: population and sex
+ratio (males per 100 females, among the people in private households),
 2010. The workbooks count ages only in three broad groups, so there is no
 median age.
 
@@ -429,12 +427,13 @@ def note_for(p: dict[str, Any], name: str, parishes: dict[int, list[dict[str, An
 
 def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[str, float]],
                admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """A record for each parish and each municipality. A parish that is its
-    municipality's only one takes the municipality's count, people in
-    collective dwellings included; the others take their zones' count of the
-    people in private households. Every municipality takes its count from
-    INE's table by municipality, so that no sum of household counts stands
-    for it."""
+    """A record for each parish. A parish that is its municipality's only one
+    takes the municipality's count, people in collective dwellings included;
+    the others take their zones' count of the people in private households.
+
+    No record is written for the municipalities themselves: most carry a
+    later count (the 2021 census, for nine of them), which a 2010 figure here
+    would stand in front of."""
     bound = bind(parishes, admin1, admin2)
     totals_url = ARCHIVE.format(stamp=TOTALS_STAMP, original=TOTALS_ORIGINAL)
     out = []
@@ -466,22 +465,6 @@ def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[
                               year=YEAR, source=source),
             sex_ratio_note=sex_note,
             sources=sources))
-    for shape in admin1:
-        code = next(c for c, (name, _) in MUNICIPALITIES.items() if fold(name) == fold(shape["name"]))
-        municipality, ine = MUNICIPALITIES[code]
-        own = table[fold(ine)]
-        collective = own["total"] - own["households"]
-        note = f"The 2010 census's count for the municipality of {municipality}"
-        if collective:
-            note += (f", {collective:,.0f} of them living in collective dwellings and "
-                     f"{own['households']:,.0f} in private households")
-        out.append(record(
-            f"CPV-2010-M{code}", shape["name"], level="admin1", parent="CPV", country="CPV",
-            match_by="shape_id", shape_id=shape["id"],
-            population=measure(round(own["total"]), year=YEAR, source=TOTALS_SOURCE),
-            population_note=note + ".",
-            sources=[{"field": "population", "name": TOTALS_SOURCE, "url": totals_url,
-                      "license": LICENCE, "year": YEAR}]))
     return out
 
 

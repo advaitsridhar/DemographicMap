@@ -1054,7 +1054,7 @@ class CaboVerdeParishesTest(unittest.TestCase):
         self.assertEqual(note, "The 2010 census's count for the parish of Nossa Senhora da "
                                "Graça, which is the whole municipality of Praia.")
 
-    def test_a_municipality_and_its_only_parish_take_the_municipality_count(self):
+    def test_a_municipality_s_only_parish_takes_the_municipality_count(self):
         cv = self.cv
         parishes = {74: [{"code": 741, "name": "N.S. Graça", "total": 130271.0, "zones": 1.0,
                           "men": 63482.0, "women": 66789.0, "island": "Santiago.xls",
@@ -1086,13 +1086,9 @@ class CaboVerdeParishesTest(unittest.TestCase):
         self.assertEqual(got["c"]["population"]["value"], 13328)
         self.assertIn("The 1 person of São Filipe municipality who lived in collective "
                       "dwellings is counted only", got["c"]["population_note"])
-        # Each municipality takes INE's count, not its parishes' sum.
-        self.assertEqual(got["F"]["population"]["value"], 22228)
-        self.assertEqual(got["F"]["level"], "admin1")
-        self.assertEqual(got["F"]["population_note"], (
-            "The 2010 census's count for the municipality of São Filipe, 1 of them living in "
-            "collective dwellings and 22,227 in private households."))
-        self.assertEqual(got["P"]["population"]["value"], 131602)
+        # The municipalities themselves are left to their own, mostly later, counts.
+        self.assertEqual(sorted(got), ["c", "g", "l"])
+        self.assertTrue(all(r["level"] == "admin2" for r in got.values()))
         parishes = {82: [{"code": 821, "name": "São Lourenço", "total": 1},
                          {"code": 822, "name": "N.S. Conceição", "total": 2}],
                     83: [{"code": 831, "name": "Santa Catarina", "total": 3}]}
