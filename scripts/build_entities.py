@@ -4289,12 +4289,16 @@ CHECKED_AGAINST = "checked_against"
 
 
 def gate_population(entity: dict[str, Any]) -> Any:
-    """The population a country's sum of its first level is weighed against:
-    the count curated beside the figure shown (CHECKED_AGAINST) where there is
-    one, else the figure shown."""
+    """The population a sum of a unit's divisions is weighed against: the
+    count curated beside a country's figure (CHECKED_AGAINST) where there is
+    one, else the count a newer figure took the place of (RESTATED_FROM, see
+    prefer_newer_figures), else the figure shown. The compositions summed are
+    a census's, and the count is that census's people."""
     pop = entity.get("population")
     if isinstance(pop, dict) and isinstance(pop.get(CHECKED_AGAINST), dict):
         return pop[CHECKED_AGAINST]
+    if isinstance(pop, dict) and isinstance(pop.get(RESTATED_FROM), dict):
+        return pop[RESTATED_FROM]
     return pop
 
 
@@ -5316,9 +5320,11 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                     + (f" for {own_year}, an older figure from {was}." if own_year else
                        f" from {was}, which gives no year for it."))
             # What the unit carried before, for the country's composition gate
-            # (control_population); a build flag, not written.
-            parent["population"][RESTATED_FROM] = {k: pop[k] for k in ("value", "year",
-                                                                       "source") if k in pop}
+            # (control_population); a build flag, not written. A count a newer
+            # figure already stood in front of stays the one carried.
+            parent["population"][RESTATED_FROM] = (
+                dict(pop[RESTATED_FROM]) if isinstance(pop.get(RESTATED_FROM), dict)
+                else {k: pop[k] for k in ("value", "year", "source") if k in pop})
             # The source goes with the figure: an entry citing the population
             # alone goes, and one citing other fields too stays for those
             # alone. Sierra Leone's Northern Province listed Wikidata for
@@ -6652,7 +6658,9 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
 
     The count is held in the newer figure's place, with its note and its
     link, so a check that later refuses the newer figure -- a town's, a
-    settlement's -- shows the count again (fall_back). Returns one line for
+    settlement's -- shows the count again (fall_back); and it rides on the
+    newer figure as RESTATED_FROM, so the sums of compositions are still
+    weighed on the counts the compositions come from. Returns one line for
     each unit given a newer figure and one for each kept from one.
     """
     refused_files = {(iso3, shape_id): declared["population"][0]
@@ -6727,7 +6735,11 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                              "match": how.get("population"), "sources": cited,
                              "unit_note": entity.get("population_note"),
                              "link": entity.get("wikidata")})
-        entity["population"] = dict(best["value"])
+        # The count stays the figure a sum of compositions is weighed on
+        # (control_population, gate_population): the compositions are the
+        # census's, of the people it counted, not of the newer figure's.
+        entity["population"] = {**best["value"], RESTATED_FROM: {
+            k: shown[k] for k in ("value", "year", "source") if k in shown}}
         entity.pop("population_note", None)
         entity["sources"] = [src for src in entity.get("sources") or []
                              if src not in cited] + list(best.get("sources") or [])

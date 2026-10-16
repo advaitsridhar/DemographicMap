@@ -66,7 +66,16 @@ class NewerFigures(unittest.TestCase):
         taken, kept = be.prefer_newer_figures({}, country(target, *peers))
         self.assertEqual(len(taken), 6)
         self.assertEqual(kept, [])
-        self.assertEqual(target["population"],
+        self.assertEqual(target["population"], {
+            "value": 4_488, "year": 2025, "source": "Wikidata (CC0)",
+            be.RESTATED_FROM: {"value": 4_975, "year": 2021, "source": CENSUS}})
+        # The count is what a sum of compositions is weighed on, and is not
+        # written out.
+        self.assertIs(be.control_population(target), target["population"][be.RESTATED_FROM])
+        self.assertIs(be.gate_population(target), target["population"][be.RESTATED_FROM])
+        written = copy.deepcopy(target)
+        be.drop_build_flags(written)
+        self.assertEqual(written["population"],
                          {"value": 4_488, "year": 2025, "source": "Wikidata (CC0)"})
         # The count's own note and citation go with it, and are held for a
         # check that refuses the newer figure; a citation of several fields
