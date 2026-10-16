@@ -304,7 +304,7 @@ class Written(unittest.TestCase):
         # religion table by soum is not known; its soums must not say it does not.
         missing = [row for row in self.rows if row["level"] == "admin2"
                    and row["ethnicity"] == {"status": "not_available",
-                                            "note": M.NO_BOOK_GAP}]
+                                            "note": M.NO_BOOK_SOUM_GAP}]
         self.assertTrue(missing)
         for row in missing:
             self.assertEqual(row["religion"]["note"], M.NO_BOOK_GAP, row["id"])
@@ -312,6 +312,15 @@ class Written(unittest.TestCase):
             if row["level"] == "admin2" and row not in missing:
                 self.assertEqual(row["religion"]["note"], M.SOUM_RELIGION_GAP,
                                  row["id"])
+
+    def test_a_missing_book_is_said_of_ethnic_group_on_the_ethnicity_field(self):
+        # The religion text on the soums' ethnicity field told the reader
+        # about religion where the field is ethnic group.
+        self.assertIn("ethnic group", M.NO_BOOK_SOUM_GAP)
+        self.assertNotIn("religion", M.NO_BOOK_SOUM_GAP)
+        for row in self.rows:
+            if row["level"] == "admin2" and isinstance(row["ethnicity"], dict):
+                self.assertNotIn("religion", row["ethnicity"].get("note") or "", row["id"])
 
     def test_a_soum_carries_its_aimag_as_its_parent(self):
         first = {row["id"] for row in self.rows if row["level"] == "admin1"}

@@ -67,5 +67,36 @@ class TheCommittedFile(unittest.TestCase):
                     self.assertEqual(text.count("("), text.count(")"), (row.get("id"), text))
 
 
+
+class OlderLayoutPopulation(unittest.TestCase):
+    """Western Sahara's profile gives its population as the field's own text,
+    with no "total" under it, and the reader passed it over."""
+
+    @staticmethod
+    def profile(population):
+        return {"People and Society": {"Population": population}}
+
+    def record(self, population):
+        return fetch_factbook.build_record("africa", "wi", self.profile(population),
+                                           "ESH", "EH")["population"]
+
+    def test_a_bare_count_with_its_date_is_read(self):
+        pop = self.record({"text": "652,271 (July 2020 est.)", "note": "estimate"})
+        self.assertEqual((pop["value"], pop["year"]), (652271, 2020))
+
+    def test_the_total_is_still_preferred(self):
+        pop = self.record({"total": {"text": "2,230 (2024 est.)"},
+                           "text": "9,999 (2019 est.)"})
+        self.assertEqual((pop["value"], pop["year"]), (2230, 2024))
+
+    def test_prose_whose_first_number_is_no_population_is_not_read(self):
+        for text in ("no permanent inhabitants, but staff is present at year-round and "
+                     "summer-only research stations\n\nnote: 56 countries have signed the "
+                     "1959 Antarctic Treaty",
+                     "(2020) approximately 18,195 on the Sovereign Base Areas of Akrotiri "
+                     "and Dhekelia including 11,000 Cypriots",
+                     "approximately 15,500 on the Sovereign Base Areas"):
+            self.assertEqual(self.record({"text": text}), {"status": "not_available"}, text)
+
 if __name__ == "__main__":
     unittest.main()

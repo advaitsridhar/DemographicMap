@@ -1299,6 +1299,11 @@ SOUM_RELIGION_GAP = (
 NO_BOOK_GAP = (
     "The 2020 census published religion for this aimag, and anything it published "
     "by soum, in the aimag's own results book. That book has not been obtained.")
+# The same, said of ethnic group on a soum: the book that has not been
+# obtained is where the census printed ethnic group by soum, if it did.
+NO_BOOK_SOUM_GAP = (
+    "The 2020 census published ethnic group by soum, where it did, in each aimag's "
+    "own results book, and this aimag's book has not been obtained.")
 NO_TABLE_GAP = (
     "This aimag's 2020 census results book has been obtained, but no table of "
     "religious adherence in it could be resolved into a composition.")
@@ -1437,7 +1442,7 @@ def run() -> int:
         path = RAW_DIR / f"{raw_name(aimag)}.txt"
         if not path.exists():
             gaps[aimag] = NO_BOOK_GAP
-            soum_gaps[aimag] = NO_BOOK_GAP
+            soum_gaps[aimag] = NO_BOOK_SOUM_GAP
             log(f"    {aimag:14} no book read")
             continue
         book = pages(path.read_text(encoding="utf-8"))

@@ -1290,10 +1290,7 @@ ADAPTER_GAPS: dict[str, str] = {
            "made public once, for 2000, in a table whose shares are not parts of "
            "one whole. "
            "Ethnicity is not asked: the provinces carry the 2000 census's count "
-           "of Thai and foreign nationals, which is shown in place of a modelled "
-           "estimate -- the 2000 census's home-language minorities as printed, "
-           "the rest assigned to the region's Tai group as the Ethnolinguistic "
-           "Maps of Thailand name it.",
+           "of Thai and foreign nationals.",
     # Only language is left for this to explain. The 2016 census's religion
     # by province now comes from iran_census.json, which reads the Statistical
     # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir
@@ -5766,11 +5763,12 @@ def country_from_sole_unit(admin0: list[dict[str, Any]],
                            ) -> list[str]:
     """A country with no population takes its one first-level unit's figure.
 
-    Western Sahara's record had none: the Factbook gives the territory no
-    population, while the one unit the boundary file draws inside it -- the
-    same outline (it covers all of the country and nothing else, measured on
-    the boundary file) -- carries the UN's 2021 estimate. A unit that is the
-    whole country is the country's ground, so its figure is the country's.
+    A unit that covers all of the country and nothing else, measured on the
+    boundary file, is the country's ground, so its figure is the country's.
+    Western Sahara was the case until the Factbook reader took the figure its
+    profile gives in an older layout ("652,271 (July 2020 est.)", with no
+    total under it; fetch_factbook.build_record): its one unit carries the
+    UN's 2021 estimate, and the country now shows the Factbook's.
     The disputed areas, each drawn as a country of one unit, are left alone:
     their record already says why nothing is joined to them, and that is what
     the panel shows. A country whose population is not applicable keeps that.

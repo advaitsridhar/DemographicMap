@@ -4094,10 +4094,12 @@ class BhutanGewogJoin(unittest.TestCase):
         rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
         sipsu = rows[("Tashichhoeling", "Samtse")]
         self.assertIn("Sipsu", sipsu["aliases"])
-        self.assertIn("draws this gewog as Sipsu", sipsu["population_note"])
+        self.assertIn("The census calls this gewog Tashichhoeling, and the boundary file "
+                      "draws it as Sipsu", sipsu["population_note"])
         self.assertIn("reference point", sipsu["population_note"])
         yangtse = rows[("Yangtse", "Trashi Yangtse")]
         self.assertIn("elimination", yangtse["population_note"])
+        self.assertIn("The census calls this gewog Yangtse", yangtse["population_note"])
 
     def test_the_two_left_in_trashi_yangtse_say_there_were_two(self):
         # Two gewogs and two polygons were left there, told apart by the

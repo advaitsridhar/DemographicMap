@@ -467,19 +467,21 @@ SEX_RATIO_REFUSED = (
 # is another romanisation of the same word. Either way the name is not what
 # made the join, and the note says what did.
 RENAMED_NOTE = (
-    " The boundary file draws this gewog as {label}. The polygon was "
-    "identified by this gewog's own reference point falling inside it and by "
-    "Wikidata placing that gewog in this dzongkhag, not by either spelling.")
+    " The census calls this gewog {name}, and the boundary file draws it as "
+    "{label}. The polygon was identified by the gewog's own reference point "
+    "falling inside it and by Wikidata placing that gewog in this dzongkhag, "
+    "not by either spelling.")
 CLOSURE_NOTE = (
-    " The boundary file draws this gewog as {label}. This gewog has no "
-    "reference point to place it with, so the polygon was identified by "
-    "elimination: every other gewog of {dzongkhag} is matched, and this is "
-    "the one polygon and the one gewog left.")
+    " The census calls this gewog {name}, and the boundary file draws it as "
+    "{label}. The gewog has no reference point to place it with, so the "
+    "polygon was identified by elimination: every other gewog of {dzongkhag} "
+    "is matched, and this is the one polygon and the one gewog left.")
 # Trashi Yangtse is the one dzongkhag with two gewogs left over, and the
 # boundary file's own labels tell the two apart (see BY_CLOSURE): "the one
 # polygon and the one gewog left" is not true of them, so they say this.
 TWO_LEFT = {"Trashi Yangtse": (
-    " The map draws this gewog as {label}. Neither Tongmajangsa nor Yangtse has a "
+    " The census calls this gewog {name}, and the map draws it as {label}. "
+    "Neither Tongmajangsa nor Yangtse has a "
     "reference point to place it with; once every other gewog of Trashi Yangtse "
     "has its own polygon, these two are left by elimination, and the map's labels "
     "tell them apart: Tomzhangtshen is Tongmajangsa (also spelled Tomzhang), and "
@@ -2043,14 +2045,14 @@ def main() -> int:
             bound = SHAPE_BOUND.get(where)
             note = POPULATION_NOTE + GEWOG_NOTE
             if bound:
-                note += RENAMED_NOTE.format(label=SHAPE_LABELS[bound])
+                note += RENAMED_NOTE.format(name=name, label=SHAPE_LABELS[bound])
                 log(f"    {dzongkhag}/{name} -> shape {bound} "
                     f"(labelled {SHAPE_LABELS[bound]!r})")
             elif where in GEWOG_BY_POINT:
                 label = GEWOG_BY_POINT[where][0]
                 template = (TWO_LEFT.get(dzongkhag, CLOSURE_NOTE) if where in BY_CLOSURE
                             else RENAMED_NOTE)
-                note += template.format(label=label, dzongkhag=dzongkhag)
+                note += template.format(name=name, label=label, dzongkhag=dzongkhag)
                 log(f"    {dzongkhag}/{name} -> labelled {label!r}"
                     + ("  (by the two lists closing, not by a point)"
                        if where in BY_CLOSURE else ""))

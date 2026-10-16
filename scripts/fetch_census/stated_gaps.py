@@ -29,8 +29,9 @@ Measured on the CGAZ polygons, 10 October 2026:
 * Maquival (613.5 km2) borders Nicoadala (24.2 km), Namacurra (49.1 km) and
   Quelimane city (23.6 km).
 * Nigeria's Bakassi is 256 km2 around Ikang; the peninsula lies in Cameroon.
-* Sudan's "Abyei PCA" is 40.8 km2 in two pieces; the boundary file draws the
-  Abyei Area itself (10,654 km2) as disputed ground of its own.
+* Sudan's "Abyei PCA" is 40.6 km2 in two pieces (37.4 and 3.2), and the
+  second-level "Abyei PCA area" 36.6 km2 (34.4 and 2.2); the boundary file
+  draws the Abyei Area itself (10,654 km2) as disputed ground of its own.
 
 Usage:
     python -m scripts.fetch_census.stated_gaps
@@ -142,7 +143,7 @@ DECLARED: list[tuple[str, str, str, str, tuple[str, ...], str,
       "No statistics read for either country count it, so no figures are shown here."),
      None),
     ("SDN", "admin2", "16777658B69119058579524", "Abyei PCA area", ("population", "language"),
-     ("This polygon is 41 km2 in two pieces at the edge of the Abyei Area, which Sudan and "
+     ("This polygon is 37 km2 in two pieces at the edge of the Abyei Area, which Sudan and "
       "South Sudan both claim and which the boundary file draws apart as disputed ground. "
       "No statistics read for either country count it, so no figures are shown here."),
      None),

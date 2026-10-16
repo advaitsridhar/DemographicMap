@@ -204,7 +204,7 @@ class PlainWording(unittest.TestCase):
 
     def test_thailand_s_reason_names_no_reader(self):
         self.assertNotIn("automated", be.ADAPTER_GAPS["THA"])
-        self.assertIn("modelled", be.ADAPTER_GAPS["THA"])
+        self.assertIn("nationals", be.ADAPTER_GAPS["THA"])
 
 
 if __name__ == "__main__":

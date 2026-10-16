@@ -30,7 +30,9 @@ and an encyclopaedia is not a source. The shares partition the population:
 the four religious groups make "Totaal gelovig", and the rest is written as
 "No religion", which is what the survey's other answer is. The municipal
 level has no figure: CBS publishes this table by province and COROP region
-only, and COROP regions are not drawn.
+only, and COROP regions are not drawn. The table's row for the whole country
+is the country's figure, a row of data/curated/admin0_detail.json, and the run
+says whether that row still matches it.
 
 Usage:
     python -m scripts.fetch_census.netherlands_religion
@@ -42,6 +44,8 @@ import argparse
 import io
 from typing import Any
 
+import json
+
 from ._shared import PROCESSED, http_get, log, record, write_json
 from .central_ages import fold, units
 
@@ -50,6 +54,7 @@ PAGE = "https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025"
 SOURCE = "CBS, Religie naar regio, 2021/2025 (maatwerk, maart 2026), tabel 2"
 LICENCE = "CC BY 4.0 (CBS)"
 OUT = PROCESSED / "netherlands_religion_survey.json"
+CURATED = PROCESSED.parent / "curated" / "admin0_detail.json"
 YEAR = 2025
 OTHER = "Other or unspecified religion"
 COLUMNS = {"Rooms-katholiek": "Roman Catholic", "Rooms-kaholiek": "Roman Catholic",
@@ -100,6 +105,35 @@ def read() -> dict[str, dict[str, float]]:
     return out
 
 
+def shares_of(row: dict[str, float]) -> dict[str, float]:
+    """One row of Tabel 2 as the map's groups, "No religion" the rest of 100."""
+    parts = {COLUMNS[k]: round(v, 1) for k, v in row.items() if k != TOTAL}
+    parts["No religion"] = round(100 - row[TOTAL], 1)
+    return parts
+
+
+def curated_agreement(national: dict[str, float]) -> str:
+    """Whether data/curated/admin0_detail.json's Dutch religion row is Tabel 2's
+    'Nederland' row, which the country shows: said, never stopped on, since the
+    curated file is the build's."""
+    try:
+        rows = json.loads(CURATED.read_text(encoding="utf-8")).get("rows", [])
+    except (OSError, ValueError) as exc:
+        return f"the curated file cannot be read ({exc})"
+    row = next((r for r in rows if r.get("country") == "NLD"
+                and r.get("field") == "religion"), None)
+    if row is None:
+        return "the curated file has no row for the Netherlands' religion"
+    theirs = {g.get("group"): g.get("pct") for g in row.get("groups") or []}
+    ours = shares_of(national)
+    if theirs == ours and row.get("year") == YEAR:
+        return f"the curated row agrees with Tabel 2's 'Nederland' row for {YEAR}"
+    return (f"the curated row ({row.get('year')}) differs from Tabel 2's 'Nederland' row: "
+            + "; ".join(f"{k} {theirs.get(k)} against {ours.get(k)}"
+                        for k in sorted(set(theirs) | set(ours), key=str)
+                        if theirs.get(k) != ours.get(k)))
+
+
 def build() -> list[dict[str, Any]]:
     table = read()
     missing = [p for p in PROVINCES if p not in table]
@@ -128,7 +162,7 @@ def build() -> list[dict[str, Any]]:
             sources=[{"field": "religion", "name": SOURCE, "url": PAGE, "license": LICENCE,
                       "year": YEAR}]))
     national = table["Nederland"]
-    log(f"  Nederland: {national}")
+    log(f"  Nederland: {national}; {curated_agreement(national)}")
     return records
 
 
