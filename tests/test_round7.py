@@ -738,6 +738,55 @@ class FigureNotesLeaveWithTheirFigure(unittest.TestCase):
         self.assertEqual(entity["median_age_note"], "The census's own median.")
 
 
+class CitationsOfWhatIsShown(unittest.TestCase):
+    """Each figure shown is cited to its source, and each source once."""
+
+    def test_a_census_is_not_cited_for_the_factbooks_population(self):
+        census = {"name": "Central Statistical Bureau (Kuwait), Census 2021", "url": "u",
+                  "year": 2021}
+        kwt = {"population": {"value": 3_172_511, "year": 2025,
+                              "source": "CIA World Factbook (public domain)"},
+               "sources": [{"field": "*", "name": "CIA World Factbook"},
+                           dict(census, field="population/sex_ratio/median_age/ethnicity"),
+                           dict(census, field="sex_ratio/median_age/ethnicity")]}
+        self.assertEqual(be.tidy_citations(kwt), 2)
+        self.assertEqual(kwt["sources"],
+                         [{"field": "*", "name": "CIA World Factbook"},
+                          dict(census, field="sex_ratio/median_age/ethnicity")])
+
+    def test_one_source_twice_is_cited_once(self):
+        item = {"name": "Wikidata", "url": "https://www.wikidata.org/wiki/Q1", "license": "CC0"}
+        brest = {"wikidata": "Q1",
+                 "population": {"value": 1, "year": 2026, "source": "Wikidata (CC0)"},
+                 "sources": [dict(item, field="capital/coordinates"),
+                             dict(item, field="population/capital/coordinates")]}
+        be.tidy_citations(brest)
+        self.assertEqual(brest["sources"], [dict(item, field="capital/coordinates/population")])
+
+    def test_a_namesakes_item_beside_the_records_own_goes(self):
+        # Sokhumi: the city's item and the district's, both for capital and
+        # coordinates once the yearbook's population is shown.
+        yearbook = {"field": "population/sex_ratio", "name": "State Committee, yearbook"}
+        sokhumi = {"wikidata": "Q14558465",
+                   "population": {"value": 76_392, "year": 2026,
+                                  "source": "State Committee, yearbook"},
+                   "sources": [dict(yearbook),
+                               {"field": "population/capital/coordinates", "name": "Wikidata",
+                                "url": "https://www.wikidata.org/wiki/Q40811"},
+                               {"field": "population/capital/coordinates", "name": "Wikidata",
+                                "url": "https://www.wikidata.org/wiki/Q14558465"}]}
+        be.tidy_citations(sokhumi)
+        self.assertEqual(sokhumi["sources"],
+                         [yearbook, {"field": "capital/coordinates", "name": "Wikidata",
+                                     "url": "https://www.wikidata.org/wiki/Q14558465"}])
+
+    def test_a_figure_no_entry_names_keeps_its_citations(self):
+        moxico = {"population": {"value": 1, "source": "summed from 9 second-level divisions"},
+                  "sources": [{"field": "population/capital", "name": "Wikidata", "url": "w"},
+                              {"field": "population", "name": "OCHA", "url": "o"}]}
+        self.assertEqual(be.tidy_citations(moxico), 0)
+
+
 class TheMapNotTheFile(unittest.TestCase):
     """A visitor's note names the map, not the file it is drawn from."""
 

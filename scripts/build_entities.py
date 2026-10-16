@@ -3057,6 +3057,21 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
     },
 }
 
+# The sources ROW_NOTES' sentences quote, cited on the row for its notes: Gal
+# district's 2011 village rows, which Zugdidi's four notes count.
+GAL_VILLAGES_2011 = {
+    "name": "Ethno-Caucasus (ethno-kavkaz.narod.ru), the de facto authorities' 2011 "
+            "census of Gal district by village administration",
+    "url": "http://ethno-kavkaz.narod.ru/gal11.html", "year": 2011,
+    "license": "Transcription of the census; terms of reuse not stated"}
+ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
+    "georgia.json": {
+        "GEO-GEOSTAT-92138335B56355921545740": [
+            {"field": f"{field} note", **GAL_VILLAGES_2011}
+            for field in ("population", "median_age", "sex_ratio", "ethnicity")],
+    },
+}
+
 # Rows that are not a unit of today's map, keyed by file and row id, with the
 # reason. Wikidata files Thonburi Province, merged into Bangkok in 1971, among
 # Bangkok's districts with its 1970 population (920,033); its name reaches the
@@ -3128,6 +3143,8 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                     row[field] = {**value, "note": join_note(value.get("note"), extra)}
                 else:
                     row[f"{field}_note"] = join_note(row.get(f"{field}_note"), extra)
+            for cited in ROW_NOTE_SOURCES.get(filename, {}).get(row.get("id"), []):
+                row["sources"] = [*(row.get("sources") or []), dict(cited)]
             if row.get("id") in placed_by_id:
                 shape_id, label = placed_by_id[row["id"]]
                 row["aliases"] = [*(row.get("aliases") or []), row.get("name")]
@@ -6220,6 +6237,15 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     ("VUT", "language"): "its provinces' first language was asked only of the people "
                          "who speak one of the islands' own languages, 84-97% of each "
                          "province",
+    # clear_global_language gives the 25 provinces CLEAR Global's tabulation of the
+    # 2019 census's IPUMS sample: the main language spoken in each household.
+    # Summed they come to Khmer 96.3% and Chinese 0.1%; the census's own count
+    # by mother tongue, which the Factbook prints and the country's ethnicity
+    # note describes, is Khmer 95.8% and Chinese 0.6%.
+    ("KHM", "language"): "its provinces carry the main language spoken in each "
+                         "household, tabulated from a sample of the 2019 census, and "
+                         "the country's figure is the census's own count by mother "
+                         "tongue",
     # lebanon_survey gives the governorates the LFHLCS 2018-19's residents by
     # nationality, a survey of residential dwellings: the refugee camps and
     # their gatherings, informal settlements, barracks and work sites are
@@ -6867,6 +6893,64 @@ def plain_wording(text: str) -> str:
     for pattern, new in PLAIN_PATTERNS:
         text = pattern.sub(new, text)
     return text
+
+
+def tidy_citations(entity: dict[str, Any]) -> int:
+    """Cite each figure shown to the source it is from, and each source once.
+
+    Three ways a record's list came to cite what it does not show:
+      * an entry citing several fields kept one whose figure another entry is
+        the source of -- Kuwait's census cited for the population beside the
+        Factbook's, which is the figure shown;
+      * one source cited twice, for overlapping fields -- every Belarusian
+        region's Wikidata item, "capital/coordinates" and "population/capital/
+        coordinates";
+      * a Wikidata item other than the record's own, cited for fields the
+        record's own item is cited for -- Sokhumi's city item beside the
+        district's.
+    The panel lists each source once by name and link, so the visitor saw
+    two of the last. Returns how many entries changed or went.
+    """
+    sources = entity.get("sources")
+    if not isinstance(sources, list) or not sources:
+        return 0
+    changed = 0
+    for field in FIGURE_FIELDS:
+        value = entity.get(field)
+        if not isinstance(value, dict) or is_gap(value):
+            continue
+        # The Factbook's entry cites every field ("*").
+        if not any({field, "*"} & set(cited_fields(src)) and names_source(src, value)
+                   for src in sources):
+            continue
+        for i, src in enumerate(sources):
+            cites = cited_fields(src)
+            if field in cites and len(cites) > 1 and not names_source(src, value):
+                sources[i] = dict(src, field="/".join(f for f in cites if f != field))
+                changed += 1
+    merged: list[dict[str, Any]] = []
+    for src in sources:
+        rest = {k: v for k, v in src.items() if k != "field"}
+        twin = next((m for m in merged
+                     if {k: v for k, v in m.items() if k != "field"} == rest), None)
+        if twin is None:
+            merged.append(dict(src))
+            continue
+        fields = cited_fields(twin)
+        twin["field"] = "/".join(fields + [f for f in cited_fields(src) if f not in fields])
+        changed += 1
+    own = entity.get("wikidata")
+    if own:
+        mine = [m for m in merged if m.get("name") == "Wikidata"
+                and str(m.get("url") or "").endswith(f"/{own}")]
+        covered = {f for m in mine for f in cited_fields(m)}
+        kept = [m for m in merged
+                if not (m.get("name") == "Wikidata" and mine and m not in mine
+                        and set(cited_fields(m)) <= covered)]
+        changed += len(merged) - len(kept)
+        merged = kept
+    entity["sources"] = merged
+    return changed
 
 
 def plain_record(value: Any, key: str = "") -> int:
@@ -12044,6 +12128,11 @@ def main() -> int:
         for rows in table.values() for entity in rows)
     if plain:
         log(f"  {plain} notes, reasons and licences put in plain words")
+    tidied = sum(tidy_citations(entity) for entity in admin0) + sum(
+        tidy_citations(entity) for table in (admin1_by_country, admin2_by_country)
+        for rows in table.values() for entity in rows)
+    if tidied:
+        log(f"  {tidied} citations narrowed to what they cite, merged or dropped")
     converted = one_sex_ratio_unit(admin0, admin1_by_country, admin2_by_country)
     if converted:
         log(f"  {converted} sex ratios put in males per 100 females")
