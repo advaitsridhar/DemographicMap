@@ -1,33 +1,4 @@
-mongolia: 2020 Population and Housing Census of Mongolia, National Statistics Office of Mongolia
-  Appendix Table 3.6: 22 aimags over 26 ethnic groups, each adding to 100 (furthest Dornod at 100.00)
-    Arkhangai      Buddhism 77.2, No religion 21.6, Christianity 0.7 soums  19 (column shares)
-    Bayan-Ölgii    Islam 82.0, No religion 11.3, Buddhism 5.4       soums   0 (no table found)
-    Bayankhongor   Buddhism 86.3, No religion 12.4, Christianity 0.7 soums  20 (column shares)
-    Bulgan         Buddhism 57.8, No religion 38.0, Shamanism 2.4   soums  16 (counts)
-    Darkhan-Uul    religion not read                                soums   0 (no table found)
-    Dornod         No religion 55.7, Buddhism 37.7, Shamanism 4.8   soums  14 (counts)
-    Dornogovi      No religion 50.4, Buddhism 44.2, Shamanism 3.0   soums  14 (row shares)
-    Dundgovi       religion not read                                soums   0 (no table found)
-    Govi-Altai     Buddhism 52.4, No religion 44.9, Other religions 1.3 soums   0 (no table found)
-    Govisumber     No religion 51.8, Buddhism 43.5, Shamanism 3.3   soums   3 (row shares)
-    Hovsgel        Buddhism 48.8, No religion 46.5, Shamanism 3.8   soums  23 (counts)
-    Khentii        no book read
-    Khovd          soum table refused: the soum table puts Khalkh at 39.5% of the aimag where the national report's Appendix Table 3.6 has 29.8%
-    Khovd          religion not read                                soums   0 (no table found)
-    Orkhon         Buddhism 53.0, No religion 41.2, Shamanism 2.8   soums   0 (no table found)
-    Selenge        No religion 54.9, Buddhism 38.4, Shamanism 3.1   soums  17 (counts)
-    Sükhbaatar     Buddhism 66.5, No religion 31.1, Christianity 1.0 soums  13 (row shares)
-    Töv            Buddhism 63.2, No religion 32.9, Shamanism 2.3   soums  25 (row shares)
-    Ulaanbaatar    Buddhism 47.8, No religion 46.3, Shamanism 2.9   soums   0 (no table found)
-    Uvs            Buddhism 56.7, No religion 35.6, Islam 3.5       soums   0 (no table found)
-    Zavkhan        Buddhism 81.4, No religion 16.8, Christianity 0.9 soums  25 (row shares)
-    Ömnögovi       No religion 47.4, Buddhism 46.9, Shamanism 3.6   soums   0 (no table found)
-    Övörkhangai    Buddhism 79.6, No religion 10.4, Other religions 8.5 soums  16 (row shares)
-    Arkhangai: 1 row label(s) in the soum table match no shape of this aimag and are left unwritten: ['үндэстэн,']
-    Töv: 16 row label(s) in the soum table match no shape of this aimag and are left unwritten: ['Барилга', 'Баруун бүс', 'Боловсрол', 'Боловсруулах үйлдвэрлэл', 'Зүүн бүс', 'Мэдээлэл холбоо', 'Тээвэр агуулахын үйл ажиллагаа', 'Төвийн бүс']
-  religion read for 18 of 22 aimags; most Muslim Bayan-Ölgii 82.0%, next Uvs 3.5%; Buddhist share runs 5.4% to 86.3% around the national 51.7%
-  1 soum row(s) matched no shape in their aimag and are left unwritten:
-    Zavkhan / Ихуул (a second row for Ix-Uul)
-  204 soums written of the 339 the boundary file draws
-  wrote data/processed/mongolia.json (632 kB)
-  wrote 22 aimags and 339 soums to mongolia.json
+  CBS's note: *Voor een aantal corop-regio's waren er te weinig (< 300) waarnemingen. In dat geval wordt alleen het percentage per provincie gegeven.
+  Nederland: {'Totaal gelovig': 42.9, 'Rooms-kaholiek': 17.2, 'Protestants': 13.1, 'Islam': 5.8, 'Ander geloof': 6.8}; the curated row agrees with Tabel 2's 'Nederland' row for 2025
+  wrote data/processed/netherlands_religion_survey.json (29 kB)
+  wrote netherlands_religion_survey.json: 12 records
