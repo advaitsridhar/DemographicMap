@@ -5428,11 +5428,16 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
                     kept.append(dict(src, field="/".join(f for f in cites
                                                          if f != "population")))
             for child in children:
-                for src in child.get("sources", []):
-                    if "population" in cited_fields(src):
-                        entry = dict(src, field="population")
-                        if entry not in kept:
-                            kept.append(entry)
+                # The entry that is the source of the figure shown, where one
+                # says so: a division's Wikidata item can still be cited for
+                # "population/capital/coordinates" beside OCHA's figure.
+                cited = [src for src in child.get("sources", [])
+                         if "population" in cited_fields(src)]
+                naming = [src for src in cited if names_source(src, child.get("population"))]
+                for src in naming or cited:
+                    entry = dict(src, field="population")
+                    if entry not in kept:
+                        kept.append(entry)
             parent["sources"] = kept
             filled.append(f"{iso3} {parent['name']}")
     return filled

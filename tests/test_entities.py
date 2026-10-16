@@ -456,7 +456,9 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         a1, a2 = self.tables([515629, 129054])
         ocha = {"field": "population", "name": "OCHA COD-PS", "url": "u"}
         for kid in a2["AGO"]:
-            kid["sources"] = [dict(ocha), {"field": "capital", "name": "GeoNames"}]
+            kid["population"]["source"] = "OCHA COD-PS, reference year 2024"
+            kid["sources"] = [dict(ocha), {"field": "capital", "name": "GeoNames"},
+                              {"field": "population/capital", "name": "Wikidata", "url": "w"}]
         a1["AGO"][0]["sources"] = [{"field": "population/capital/coordinates",
                                     "name": "Wikidata"}]
         be.fill_parent_populations(a1, a2)
