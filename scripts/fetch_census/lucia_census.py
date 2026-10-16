@@ -87,6 +87,11 @@ SLACK = 6
 # base holds 89% of 2010's household population and the island grew 4%, so
 # a settlement unchanged in extent sits near 1.2.
 DRIFT = 2.0
+# Fewer people than this in a settlement's 2010 base and no median, ratio or
+# shares are drawn from it: Anbre's "median age" of 45.5 and its 100% African
+# descent were one person's answers, in a base that holds 89% of the island's
+# household population and not all of any settlement for certain.
+FEWEST = 30
 
 DISTRICTS = ("Castries", "Anse La Raye", "Canaries", "Soufriere", "Choiseul", "Laborie",
              "Vieux Fort", "Micoud", "Dennery", "Gros Islet")
@@ -572,6 +577,11 @@ def main() -> int:
             row = None
         universe = (f"the {held:,} people the 2010 base holds in the settlement (the base holds "
                     "147,581 of the 2010 census's 165,595 in households)")
+        few = held < FEWEST
+        too_few = (f"The 2010 census base holds only {held:,} "
+                   f"{'person' if held == 1 else 'people'} in this settlement, too few for "
+                   "a figure that describes it (the base holds 147,581 of the 2010 census's "
+                   "165,595 in households).")
         if row:
             fields.update(
                 population=measure(row["population"], year=2022, source=SOURCE_REPORT),
@@ -585,22 +595,36 @@ def main() -> int:
                 if sid in recent else "Table A.9 of the 2022 report lists no settlement of this " \
                                       "name in the district"
             fields.update(
-                population=gap(NOT_AVAILABLE, f"No population is written: {why}, and the 2010 "
-                                              f"base is not the whole 2010 population."),
-                sex_ratio=sex_ratio(sex.get("Male", 0), sex.get("Female", 0), 2010, SOURCE_2010),
-                sex_ratio_note=f"Men per thousand women among {universe}.")
+                population=gap(NOT_AVAILABLE, f"No population is shown: {why}, and the 2010 "
+                                              f"base is not the whole 2010 population."))
+            if few:
+                fields.update(sex_ratio=gap(NOT_AVAILABLE, too_few))
+            else:
+                fields.update(
+                    sex_ratio=sex_ratio(sex.get("Male", 0), sex.get("Female", 0), 2010,
+                                        SOURCE_2010),
+                    sex_ratio_note=f"Men per thousand women among {universe}.")
+        if few:
+            measured: dict[str, Any] = {
+                "median_age": gap(NOT_AVAILABLE, too_few),
+                "ethnicity": gap(NOT_AVAILABLE, too_few),
+                "religion": gap(NOT_AVAILABLE, too_few)}
+        else:
+            measured = {
+                "median_age": measure(median_age(ages), unit="years", year=2010,
+                                      source=SOURCE_2010),
+                "median_age_note": f"Interpolated within the single year holding the middle "
+                                   f"person of {universe}.",
+                "ethnicity": present(eth), "ethnicity_year": 2010,
+                "ethnicity_note": f"Ethnic group, as asked of {universe}.",
+                "religion": present(rel), "religion_year": 2010,
+                "religion_note": f"Religion, as asked of {universe}."}
         records_by_shape[sid] = record(
             f"LCA-CSO-{sid}", shape["name"], level="admin2",
             parent="LCA", parent_name=district_shape[district_of_shape[shape["parent"]]]["name"],
             country="LCA",
             match_by="shape_id", shape_id=sid,
-            median_age=measure(median_age(ages), unit="years", year=2010, source=SOURCE_2010),
-            median_age_note=f"Interpolated within the single year holding the middle person of "
-                            f"{universe}.",
-            ethnicity=present(eth), ethnicity_year=2010,
-            ethnicity_note=f"Ethnic group, as asked of {universe}.",
-            religion=present(rel), religion_year=2010,
-            religion_note=f"Religion, as asked of {universe}.",
+            **measured,
             language=gap(NOT_AVAILABLE, LANGUAGE_GAP),
             sources=[{"field": "median_age/ethnicity/religion", "name": SOURCE_2010,
                       "url": PORTAL.format(base="PHC2010C"), "year": 2010},

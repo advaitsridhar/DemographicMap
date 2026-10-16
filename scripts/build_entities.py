@@ -7101,7 +7101,7 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     # database-words: [None.2]/[None.11] BTN gewogs: 'the polygon was identified by elimination ... is matched'
     (re.compile(r"\bso the polygon was identified by elimination: every other gewog of ([^.:]+?) is matched,"), r"so the polygon is shown as this gewog by elimination: every other gewog of \1 has its own polygon,"),
     # database-words: [None.11] NPL: 'the district was identified instead by which of the census's reference points fall inside the polygon'
-    (re.compile(r"\bso the district was identified instead by which of the census's reference points fall inside the polygon\b"), r"so the district shown on it is the one indicated instead by which of the census's reference points fall inside the polygon"),
+    (re.compile(r"\bso the district was identified instead by which of the census's reference points fall inside the polygon\b"), r"so the district shown on it is the one whose census reference points fall inside the polygon"),
     # database-words: [None.11] SAU 'citizenship may stand on this field'
     (re.compile(r"\bcitizenship may stand on this field\b"), r"citizenship could be shown in its place"),
     # database-words: [None.11] PAK 'which the map carries on this field' (+ LAO 'which the map carries on the ethnicity field')
@@ -7389,6 +7389,32 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"(\(General Table G 1\);) The (map|boundary file) draws\b"), r"\1 the \2 draws"),
     # grammar: KAZ district notes: a list of two or three units with no 'and' -- 'holds Улытауский район and also Жезказган г.а., Сатпаев г.а., which the map does no
     (re.compile(r"(\band also (?:[^,;]+, )*?[^,;]+), ((?:(?! and )[^,;])+), (which the (?:map|boundary file) does not draw apart)"), r"\1 and \2, \3"),
+    # Round 7's last wording review: what the map did, said instead as what
+    # is published or shown.
+    # build-words: DOM 154 / HTI 52 gap notes: '..., so no municipio figure has been published to read.'
+    (re.compile(r"\bhas been published to read\."), r"has been published."),
+    # build-words: CHN 753 county notes: '... (1 of X's 1 townships has no point to place it by (乌斯太镇))' and '..., so this county's row may be short of the ground drawn here.'
+    (re.compile(r"\b(\d+) of (\S+?)'s (\d+) townships? (?:has|have) no point to place (?:it|them) by\b"), r"\1 of \2's \3 townships cannot be located"),
+    (re.compile(r"\bonly township has no point to place it by\b"), r"only township cannot be located"),
+    (re.compile(r"\bso this county's row may be short of the ground drawn here\."), r"so the yearbook's count for this county may not cover all the ground drawn here."),
+    # build-words: PHL 100 religion notes: '... the alternative would decide, on this map's authority rather than the census's, which churches count as one religion.'
+    (re.compile(r"\bthe alternative would decide, on this map's authority rather than the census's, which churches count as one religion\."), r"collapsing them would decide which churches count as one religion on the map's own judgment rather than the census's."),
+    # build-words: EGY 17 language notes: 'A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it.'
+    (re.compile(r"\bA variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it\."), r"A question with one answer for everyone is a constant, not a measured composition, so no shares are shown."),
+    # file-names: BRB language notes: '(Census-2020-Tables.xlsx)' and '(Census-Tables-2010.xlsx)'
+    (re.compile(r" \(Census-2020-Tables\.xlsx\)| \(Census-Tables-2010\.xlsx\)"), r""),
+    # file-names: THA 928 districts' gap notes cite one province's workbook as though it were the district's own: '(Ranong: Malay 0.5%, Burmese and Mon 7.0%)', '(Ranong's tables, web.archive.org/...ranong1.xls)'
+    (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0%\)"), r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0%)"),
+    (re.compile(r"\(Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r"(as in Ranong's report, for example)"),
+    (re.compile(r": Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r", as in Ranong's report, for example)"),
+    # grammar: RUS 2,303 sex-ratio notes: '8,934 men and 9,745 women; Everyone the 2020 census counted ...'
+    (re.compile(r"\b(men and [\d,]+ women); Everyone the (\d{4}) census counted\b"), r"\1 among everyone the \2 census counted"),
+    # wording: NLD survey notes: '... who count themselves to a religion', '... does not count themselves to one', '... count themselves to a church denomination'
+    (re.compile(r"\bwho count themselves to (a|an|the)\b"), r"who consider themselves members of \1"),
+    (re.compile(r"\bwho does not count themselves to one\b"), r"who does not consider themselves a member of one"),
+    (re.compile(r"\bdoes not count themselves to one\b"), r"does not consider themselves a member of one"),
+    # formatting: IRL 170 / PAK 1 notes carry markdown bold, which the panel prints as asterisks
+    (re.compile(r"\*\*([^*]+)\*\*"), r"\1"),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
@@ -7519,6 +7545,61 @@ def tidy_citations(entity: dict[str, Any]) -> int:
         merged = kept
     entity["sources"] = merged
     return changed
+
+
+# Source titles a visitor reads in the panel's list, and figures' sources,
+# with what the map did and the files it was taken from left out. plain_record
+# rewrites notes only; these are names.
+SOURCE_NAME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
+    # MYS 175 / BRN 42: '(the national figures the file is checked against)'
+    (re.compile(r"\(the national figures the (?:file|workbook) is checked against\)"),
+     "(the national figures used as a check)"),
+    # KWT 35: "the areas' outlines (boundary=administrative, admin_level=6) read through the Overpass API"
+    (re.compile(r"(the areas' outlines) \(boundary=administrative, admin_level=\d+\) read "
+                r"through the Overpass API"), r"\1"),
+    # TTO 29: "(read from the Internet Archive's capture of the CSO's file)"
+    (re.compile(r"\(read from the Internet Archive's capture of the CSO's file\)"),
+     "(via the Internet Archive's copy)"),
+    # CHN 5: 'weight (rswt_natcs16) from the public-release file'
+    (re.compile(r"\bfrom the public-release file\b"), "from the public-release data"),
+    # BGR 292: '(Census2021_Ethnocultural characteristics_BG.xlsx, sheet 2)'
+    (re.compile(r" \(Census2021_[^()]*?\.xlsx, sheet \d+\)"), ""),
+    # RUS 79: 'arena_statistic.xls -- ...'
+    (re.compile(r"^arena_statistic\.xls -- "), ""),
+)
+UNNAMED = "Unnamed area"
+
+
+def name_and_cite_plainly(*tables: Any) -> tuple[int, int]:
+    """The last words on a record: a shape the boundary file gives no name
+    ("Null", or its own id) is an unnamed area, and source titles say what
+    was published, not which file it came in. Returns the names and the
+    titles changed."""
+    named = cited = 0
+
+    def plain_title(text: str) -> str:
+        for pattern, new in SOURCE_NAME_PATTERNS:
+            text = pattern.sub(new, text)
+        return text
+
+    for table in tables:
+        rows = table if isinstance(table, list) else [e for r in table.values() for e in r]
+        for entity in rows:
+            if entity.get("name") in ("Null", "null", "None") or (
+                    entity.get("name") == entity.get("id") and entity.get("level") != "admin0"):
+                entity["name"] = UNNAMED
+                named += 1
+            for src in entity.get("sources") or []:
+                if isinstance(src, dict) and isinstance(src.get("name"), str):
+                    title = plain_title(src["name"])
+                    if title != src["name"]:
+                        src["name"] = title
+                        cited += 1
+            for field in FIGURE_FIELDS:
+                value = entity.get(field)
+                if isinstance(value, dict) and isinstance(value.get("source"), str):
+                    value["source"] = plain_title(value["source"])
+    return named, cited
 
 
 def plain_record(value: Any, key: str = "") -> int:
@@ -12855,6 +12936,8 @@ def main() -> int:
         for rows in table.values() for entity in rows)
     if tidied:
         log(f"  {tidied} citations narrowed to what they cite, merged or dropped")
+    named, titled = name_and_cite_plainly(admin0, admin1_by_country, admin2_by_country)
+    log(f"  {named} unnamed shapes named so; {titled} source titles in plain words")
     converted = one_sex_ratio_unit(admin0, admin1_by_country, admin2_by_country)
     if converted:
         log(f"  {converted} sex ratios put in males per 100 females")

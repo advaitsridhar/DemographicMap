@@ -459,23 +459,23 @@ SEX_RATIO_REFUSED = (
     "Table 2.1 prints {male:,} males and {female:,} females against a total "
     "of {total:,} for this row -- {diff:+,} -- so the two halves are not the "
     "whole that is published beside them. The head count is the report's own "
-    "and stands; a ratio derived from figures the census does not itself add "
-    "up would be this map's arithmetic, not Bhutan's measurement.")
+    "and stands; a ratio from halves that do not add up to the published whole "
+    "would not be the census's own.")
 # The two ways a gewog reaches a polygon the boundary file labels differently,
 # said on the record itself. In the southern dzongkhags the label is usually
 # the Nepali-origin name the place carried before the renamings; elsewhere it
 # is another romanisation of the same word. Either way the name is not what
 # made the join, and the note says what did.
 RENAMED_NOTE = (
-    " The census calls this gewog {name}, and the boundary file draws it as "
-    "{label}. The polygon was identified by the gewog's own reference point "
-    "falling inside it and by Wikidata placing that gewog in this dzongkhag, "
-    "not by either spelling.")
+    " The census calls this gewog {name}, and the map draws it as {label}. The "
+    "polygon is shown as this gewog because the gewog's own reference point "
+    "falls inside it and Wikidata places the gewog in this dzongkhag, not "
+    "because of either spelling.")
 CLOSURE_NOTE = (
-    " The census calls this gewog {name}, and the boundary file draws it as "
-    "{label}. The gewog has no reference point to place it with, so the "
-    "polygon was identified by elimination: every other gewog of {dzongkhag} "
-    "is matched, and this is the one polygon and the one gewog left.")
+    " The census calls this gewog {name}, and the map draws it as {label}. The "
+    "gewog has no reference point to place it with, so the polygon is shown as "
+    "this gewog by elimination: every other gewog of {dzongkhag} has its own "
+    "polygon, and this is the one polygon and the one gewog left.")
 # Trashi Yangtse is the one dzongkhag with two gewogs left over, and the
 # boundary file's own labels tell the two apart (see BY_CLOSURE): "the one
 # polygon and the one gewog left" is not true of them, so they say this.

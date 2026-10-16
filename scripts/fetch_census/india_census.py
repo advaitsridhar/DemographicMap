@@ -828,7 +828,7 @@ def subdivided_reason(undivided: str) -> str:
             f"measurement.")
 
 
-def subdivided_inherited_note(undivided: str, successor: str) -> str:
+def subdivided_inherited_note(undivided: str, successor: str, ratio: bool = False) -> str:
     """That this successor's shares are the undivided district's, and what that
     costs.
 
@@ -849,8 +849,9 @@ def subdivided_inherited_note(undivided: str, successor: str) -> str:
             f"part of the undivided {undivided} district, which has since been "
             f"subdivided; {successor} has never been enumerated separately, and "
             f"India's next census -- due in 2021 -- has not been held. The "
-            f"shares shown are undivided {undivided}'s own 2011 shares, which "
-            f"assumes this successor resembles the district it was cut out of. "
+            + (f"ratio shown is undivided {undivided}'s own 2011 ratio"
+               if ratio else f"shares shown are undivided {undivided}'s own 2011 shares")
+            + f", which assumes this successor resembles the district it was cut out of. "
             f"No population or head count is shown: the census counted these "
             f"people once, for the undivided district, and repeating that "
             f"figure on each successor would count them several times over. "
@@ -1033,7 +1034,8 @@ def check_lost_territory(rows: list[dict[str, str]]) -> None:
             + "\n  - ".join(problems))
 
 
-def inherited_note(name: str, year: int, predecessors: tuple[str, ...]) -> str:
+def inherited_note(name: str, year: int, predecessors: tuple[str, ...],
+                   ratio: bool = False) -> str:
     """That this district's shares are its predecessor's, and what that costs.
 
     An estimate, and the file's only one. The census never enumerated these
@@ -1055,10 +1057,17 @@ def inherited_note(name: str, year: int, predecessors: tuple[str, ...]) -> str:
               if len(predecessors) > 1 else predecessors[0])
     note = (f"Estimated, not measured. {name} was created in {year} out of "
             f"{listed} and has never been enumerated separately -- India's "
-            f"last census was 2011 and the next was postponed. The shares "
-            f"shown are ")
-    note += (f"{listed}'s 2011 shares combined, weighted by their populations, "
-             if len(predecessors) > 1 else f"{listed}'s own 2011 shares, ")
+            f"last census was 2011 and the next was postponed. ")
+    if ratio:
+        # A sex ratio is no share, and the sentence for shares read wrongly on
+        # it: Agar's said "the shares shown are Shajapur's own 2011 shares".
+        note += (f"The ratio shown is that of {listed}'s 2011 counts of women and "
+                 f"men added together, " if len(predecessors) > 1
+                 else f"The ratio shown is {listed}'s own 2011 ratio, ")
+    else:
+        note += "The shares shown are "
+        note += (f"{listed}'s 2011 shares combined, weighted by their populations, "
+                 if len(predecessors) > 1 else f"{listed}'s own 2011 shares, ")
     note += ("which assumes this district resembles the ground it was cut out "
              "of. No population or head count is shown: the census counted "
              f"those people as part of {listed}, ")
@@ -1087,7 +1096,8 @@ def without_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def inherited_fields(whole: collections.Counter, estimate: str,
                      fallback: str,
-                     detail: dict[str, Any] | None = None) -> dict[str, Any]:
+                     detail: dict[str, Any] | None = None,
+                     ratio_estimate: str | None = None) -> dict[str, Any]:
     """The fields a shape carries when it inherits a measured district's shares.
 
     Shared by the two kinds of shape that do so -- a district created out of a
@@ -1147,9 +1157,12 @@ def inherited_fields(whole: collections.Counter, estimate: str,
         fields["sex_ratio"] = measure(
             round(1000.0 * females / males),
             unit="females_per_1000_males", year=2011, source=SOURCE)
-        fields["sex_ratio_note"] = estimate
+        fields["sex_ratio_note"] = ratio_estimate or estimate
     if religion:
-        fields["population"] = gap(NOT_AVAILABLE, estimate)
+        # No figure is shown, so nothing here is estimated: the gap gives the
+        # reason without the estimate's opening words.
+        fields["population"] = gap(NOT_AVAILABLE,
+                                   estimate.removeprefix("Estimated, not measured. "))
     return fields
 
 
@@ -1209,7 +1222,8 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
                 # Arunachal Pradesh's break-up.
                 fields = inherited_fields(
                     whole, inherited_note(name, year, predecessors), reason,
-                    (detail or {}).get(state_key(state_2011)))
+                    (detail or {}).get(state_key(state_2011)),
+                    ratio_estimate=inherited_note(name, year, predecessors, ratio=True))
             if counted_on_a_shape(predecessors) and isinstance(fields["population"], dict):
                 fields["population"] = dict(fields["population"],
                                             displaces_before=DISPLACES_BEFORE)
@@ -1370,7 +1384,8 @@ def districts(rows: list[dict[str, str]],
             for successor in SUBDIVIDED_SINCE_2011[key]:
                 fields = inherited_fields(
                     counts, subdivided_inherited_note(name, successor), reason,
-                    detail.get(state_key(state)))
+                    detail.get(state_key(state)),
+                    ratio_estimate=subdivided_inherited_note(name, successor, ratio=True))
                 out.append(record(
                     f"IND-D{code}-{successor}", successor, level="admin2", parent="IND",
                     ethnicity=gap(NOT_COLLECTED,

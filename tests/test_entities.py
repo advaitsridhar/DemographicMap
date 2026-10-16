@@ -4094,8 +4094,11 @@ class BhutanGewogJoin(unittest.TestCase):
         rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
         sipsu = rows[("Tashichhoeling", "Samtse")]
         self.assertIn("Sipsu", sipsu["aliases"])
-        self.assertIn("The census calls this gewog Tashichhoeling, and the boundary file "
-                      "draws it as Sipsu", sipsu["population_note"])
+        self.assertIn("The census calls this gewog Tashichhoeling, and the map draws it "
+                      "as Sipsu", sipsu["population_note"])
+        # Said as the visitor sees it, not as the join was made.
+        for row in self.gewogs:
+            self.assertNotIn("identified by", row["population_note"], row["name"])
         self.assertIn("reference point", sipsu["population_note"])
         yangtse = rows[("Yangtse", "Trashi Yangtse")]
         self.assertIn("elimination", yangtse["population_note"])

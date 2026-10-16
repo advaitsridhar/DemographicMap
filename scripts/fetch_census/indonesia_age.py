@@ -108,13 +108,13 @@ FOREST_GAP = (
 # Why a regency has no ethnicity, and why one of the few without a religion
 # has none: said on every regency this reader binds, and shown only where no
 # figure stands (a gap never displaces a value).
+# (Not "which is what the map's provinces carry": Bangka-Belitung and West
+# Sulawesi carry none, and their thirteen regencies said they did.)
 ETHNICITY_GAP = (
-    "Indonesia's 2010 census asked ethnicity (suku bangsa) and BPS published it by province, "
-    "which is what the map's provinces carry; no table of it by regency could be retrieved: "
-    "BPS answers automated requests with HTTP 403 on every bps.go.id host, and its 2010 census "
-    "site (sp2010.bps.go.id) serves one identical page at every address. The 2020 census's "
-    "tables that reach the regencies -- the Long Form's age, household, language, mortality, "
-    "disability and migration tables -- have no ethnicity.")
+    "Indonesia's 2010 census asked ethnicity (suku bangsa) and BPS published it by province; "
+    "no table of it by regency has been obtained. The 2020 census's tables that reach the "
+    "regencies -- the Long Form's age, household, language, mortality, disability and "
+    "migration tables -- have no ethnicity.")
 RELIGION_GAP = (
     "No table of this regency's religion could be retrieved. BPS answers automated requests "
     "with HTTP 403 on every bps.go.id host, and neither the regency's own nor its province's "

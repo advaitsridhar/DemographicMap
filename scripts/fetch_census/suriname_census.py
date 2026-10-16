@@ -501,7 +501,8 @@ def main() -> int:
             households += old[district_2004[r]]["households"]
         shape = district_shape[d]
         values = fields(districts[d], ethnic[d]["_total"]["total"],
-                        ethnic[d]["_total"]["counts"], rel, lang, households, ", the district")
+                        ethnic[d]["_total"]["counts"], rel, lang, households,
+                        " (the district as a whole)")
         if d in recent_religion:
             values.update(
                 religion=present(recent_religion[d]), religion_year=2012,

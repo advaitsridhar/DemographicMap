@@ -317,8 +317,8 @@ def main() -> int:
             sources=cite))
     why = ("SIB tabulates the 2022 census by district, by urban and rural area and by city, "
            "town and village, and publishes nothing by electoral division; a village cannot be "
-           "placed in a division from anything the census publishes, so the divisions carry the "
-           "districts' figures and none of their own.")
+           "placed in a division from anything the census publishes, so no figure is shown for "
+           "a division; the district it lies in shows the census's figures, one level up.")
     for shape in admin2:
         records.append(record(
             f"BLZ-SIB-division-{shape['id']}", shape["name"], level="admin2", parent="BLZ",
