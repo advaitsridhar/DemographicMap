@@ -70,7 +70,7 @@ def restated(entity, people, year, before, before_year):
 def sum_country(country, children, field):
     return be.roll_up_field(country, children, field, level="first-level", over_published=True,
                             complete=True, min_coverage=be.COUNTRY_MIN_COVERAGE,
-                            restate_same_year=True)
+                            fill_population_only=True)
 
 
 # --------------------------------------------------------------------------
@@ -147,11 +147,12 @@ class CountryGateOnOwnFigures(unittest.TestCase):
                     unit("K2", "Two", 520, 2023, CENSUS,
                          **groups("religion", {"A": 310, "B": 210}, 2023))]
 
-        # An office's newer count of every unit becomes the country's...
+        # A country keeps the Factbook's estimate beside an office's newer
+        # count of every unit...
         plain = country()
         self.assertIsNone(sum_country(plain, kids(), "religion"))
-        self.assertEqual(plain["population"]["value"], 1_040)
-        # ...but sums put on the units to match their divisions do not.
+        self.assertEqual(plain["population"]["value"], 1_000)
+        # ...and beside sums put on the units to match their divisions.
         held = country()
         marked = kids()
         for k in marked:

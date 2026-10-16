@@ -1,5 +1,5 @@
 {
- "_readme": "Country-level detail for the three compositions, applied by scripts/build_entities.py after the roll-ups. Each row names one country and one field. A row with 'groups' replaces the field with a census's own division of it and is always preferred -- or, where the census does not ask, a survey's, whose 'basis' says it is a survey estimate; a row with only a 'note' says what a large residual holds and why it is not divided. Neither invents a split. This is the admin-0 counterpart of admin1_seed.json, and it is curated for the same reason: adapter output lands on admin1 and admin2 shapes, and the country record is the Factbook profile plus whatever its children roll up into it.",
+ "_readme": "Country-level detail, applied by scripts/build_entities.py. Each row names one country and one field. For the three compositions, applied after the roll-ups: a row with 'groups' replaces the field with a census's own division of it and is always preferred -- or, where the census does not ask, a survey's, whose 'basis' says it is a survey estimate; a row with only a 'note' says what a large residual holds and why it is not divided. Neither invents a split. For population, median_age and sex_ratio, applied before the roll-ups: a median_age or sex_ratio row with a 'value' replaces the Factbook's figure with a census's. Every country shows the Factbook's population estimate; a population row with \"use\": \"check\" is the census or register count of the people the country's first level counts, kept beside the estimate for a sum of the first level to be checked against, and its note says what the two figures are. A row with only a 'note' (and a 'status', on a gap) says what the figure shown counts. This is the admin-0 counterpart of admin1_seed.json, and it is curated for the same reason: adapter output lands on admin1 and admin2 shapes, and the country record is the Factbook profile plus whatever its children roll up into it.",
  "rows": [
   {
    "country": "UGA",
@@ -5452,22 +5452,24 @@
   {
    "country": "MHL",
    "field": "population",
+   "use": "check",
    "value": 42418,
    "year": 2021,
-   "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report",
+   "source": "EPPSO (Economic Policy, Planning and Statistics Office), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report",
    "url": "https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf",
    "license": "None stated -- EPPSO publication, cited as such",
-   "note": "The 2021 census count of the Marshall Islands: 42,418 people on its 25 atolls and islands (Basic Tables), 41,575 of them in private households. It stands in place of the Factbook's estimate of 82,011 for 2024, nearly twice the count. The atolls the map draws carry the same census; Lib's 156 people have no polygon of their own, and Bikini and Rongelap counted nobody."
+   "note": "The Factbook's estimate for 2024, nearly twice the 2021 census's count of 42,418 people on the Marshall Islands' 25 atolls and islands (Basic Tables), 41,575 of them in private households. The atolls the map draws carry that census; Lib's 156 people have no polygon of their own, and Bikini and Rongelap counted nobody."
   },
   {
    "country": "NRU",
    "field": "population",
+   "use": "check",
    "value": 11680,
    "year": 2021,
    "source": "Nauru Bureau of Statistics, 2021 Population and Housing Census Tables, Volume 1",
    "url": "https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx",
    "license": "None stated -- Nauru Bureau of Statistics publication, cited as such",
-   "note": "The 2021 census count of Nauru: 11,680 people in its fourteen districts and the Location settlement (Tables, Volume 1), 11,215 of them citizens. It stands in place of the Factbook's estimate of 9,930 for 2025, 15% below the count four years earlier. The districts carry the same census."
+   "note": "The Factbook's estimate for 2025, 15% below the 2021 census's count four years earlier: 11,680 people in Nauru's fourteen districts and the Location settlement (Tables, Volume 1), 11,215 of them citizens. The districts carry that census."
   },
   {
    "country": "NRU",
@@ -5482,12 +5484,13 @@
   {
    "country": "PLW",
    "field": "population",
+   "use": "check",
    "value": 17614,
    "year": 2020,
-   "source": "Republic of Palau, Office of Planning and Statistics, 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022)",
+   "source": "Office of Planning and Statistics (Republic of Palau), 2020 Census of Population and Housing, Volume I: Basic Tables (August 2022)",
    "url": "http://web.archive.org/web/20230102070720/https://www.palaugov.pw/wp-content/uploads/2022/09/2020-Census-of-Population-and-Housing.pdf",
    "license": "None stated -- Government of Palau publication, cited as such",
-   "note": "The 2020 census count of Palau: 17,614 people (Volume I, Table 6) -- the sixteen states' 17,413 usual residents and the 201 people counted whose usual residence was outside Palau or not known. It stands in place of the Factbook's estimate of 21,947 for 2025, a quarter above the count five years earlier. The states carry the same census."
+   "note": "The Factbook's estimate for 2025, a quarter above the 2020 census's count five years earlier: 17,614 people (Volume I, Table 6), the sixteen states' 17,413 usual residents and the 201 people counted whose usual residence was outside Palau or not known. The states carry that census."
   },
   {
    "country": "PLW",
@@ -5502,32 +5505,35 @@
   {
    "country": "TUV",
    "field": "population",
+   "use": "check",
    "value": 10632,
    "year": 2022,
    "source": "Central Statistics Division, Government of Tuvalu, Tuvalu 2022 Census on Population and Housing: Analytical Report",
    "url": "https://stats.gov.tv/download/85/population-and-housing-census/1836/tuvalu_2022_census_report.pdf",
    "license": "None stated -- Central Statistics Division publication, cited as such",
-   "note": "The 2022 census count of Tuvalu: 10,632 people on its nine islands (Analytical Report, Table 3). It stands in place of the Factbook's estimate of 11,824 for 2025, 11% above the count three years earlier. The three islands the map draws at the first level carry the same census."
+   "note": "The Factbook's estimate for 2025, 11% above the 2022 census's count three years earlier: 10,632 people on Tuvalu's nine islands (Analytical Report, Table 3). The three islands the map draws at the first level carry that census."
   },
   {
    "country": "FSM",
    "field": "population",
+   "use": "check",
    "value": 75817,
    "year": 2023,
    "source": "FSM Statistics Division, Federated States of Micronesia, 2023 Population and Housing Census, National Basic Tables (Table B1)",
    "url": "https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx",
    "license": "None stated -- FSM Statistics Division publication, cited as such",
-   "note": "The 2023 census count of the Federated States of Micronesia: 75,817 people (National Basic Tables), its four states' rows adding up to within a person of it. It stands in place of the Factbook's estimate of 99,603 for 2024, nearer the 2010 census's 102,843 than this one. The states carry the same census."
+   "note": "The Factbook's estimate for 2024, nearer the 2010 census's 102,843 than the 2023 census's count of 75,817 people (National Basic Tables), whose four states' rows add up to within a person of it. The states carry the 2023 census."
   },
   {
    "country": "KIR",
    "field": "population",
+   "use": "check",
    "value": 119438,
    "year": 2020,
    "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables",
    "url": "https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx",
    "license": "None stated -- Kiribati National Statistics Office publication, cited as such",
-   "note": "The 2020 census count of Kiribati: 119,438 people on its 24 islands (Island Profile tables). It stands in place of the Factbook's estimate of 116,545 for 2024, which is below this count of four years earlier; the census before, in 2015, counted 110,136. The island groups carry the same census."
+   "note": "The Factbook's estimate for 2024, below the 2020 census's count four years earlier: 119,438 people on Kiribati's 24 islands (Island Profile tables). The census before, in 2015, counted 110,136. The island groups carry the 2020 census."
   },
   {
    "country": "KIR",
@@ -5669,82 +5675,90 @@
   {
    "country": "TKM",
    "field": "population",
+   "use": "check",
    "value": 7057841,
    "year": 2022,
    "source": "State Committee of Turkmenistan on Statistics, Results of the Complete Population and Housing Census of Turkmenistan 2022",
    "url": "https://stat.gov.tm/en/population-census",
    "license": "Official statistics of the State Committee of Turkmenistan on Statistics",
-   "note": "The 2022 census's count of Turkmenistan: Ashgabat and the five velayats make 7,057,841 people. It stands in place of the Factbook's estimate of 5,744,151 for 2024, which cannot be the same people as the census the velayats carry."
+   "note": "The Factbook's estimate for 2024, 1.3 million below the 2022 census's count of 7,057,841 people in Ashgabat and the five velayats, which carry that census."
   },
   {
    "country": "KWT",
    "field": "population",
+   "use": "check",
    "value": 4385717,
    "year": 2021,
    "source": "Central Statistical Bureau (Kuwait), Register-based Census 2021, Table 1",
    "url": "https://census.csb.gov.kw/CensusData_EN?id=1",
    "license": "Central Statistical Bureau of Kuwait, published census tables",
-   "note": "The 2021 register-based census's count of Kuwait: 4,385,717 people, of whom the six governorates hold 4,381,139 and 4,578 are not stated by governorate. It stands in place of the Factbook's estimate of 3,172,511 for 2025."
+   "note": "The Factbook's estimate for 2025. Kuwait's 2021 register-based census counted 4,385,717 people, of whom the six governorates hold 4,381,139 and 4,578 are not stated by governorate; the governorates carry that census."
   },
   {
    "country": "OMN",
    "field": "population",
+   "use": "check",
    "value": 5165602,
    "year": 2023,
    "source": "National Centre for Statistics and Information (Oman), Statistical Year Book 2024 (Issue 52), Table 7-2, the Sultanate's row",
    "url": "https://web.archive.org/web/20240801130251id_/https://www.ncsi.gov.om/Elibrary/LibraryContentDoc/bar_Statistical%20Year%20Book%202024%20Issue%2052_469215ea-35ad-4c19-baeb-be858bd6c934.pdf",
    "license": "National Centre for Statistics and Information (Oman), published yearbook",
-   "note": "The population registered in the Sultanate at the end of 2023, Omanis and expatriates, which its governorates make: 5,165,602 people. It stands in place of the Factbook's estimate of 3,969,824 for 2025."
+   "note": "The Factbook's estimate for 2025. The population registered in the Sultanate at the end of 2023, Omanis and expatriates, was 5,165,602 people, the figure its governorates carry."
   },
   {
    "country": "MDV",
    "field": "population",
+   "use": "check",
    "value": 515132,
    "year": 2022,
    "source": "Maldives Bureau of Statistics, Population and Housing Census 2022, Atoll Level Indicator Sheet - Population, the Republic's row",
    "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx",
    "license": "Maldives Bureau of Statistics publication, reuse with attribution",
-   "note": "The 2022 census's count of the Republic: 515,132 people, Malé's 211,908 and the atolls' 303,224, foreign residents included -- 131,223 of the 505,955 people in the second-level units the map draws are foreigners. It stands in place of the Factbook's estimate of 388,858 for 2024. The thirteen atolls the map draws at the first level hold 214,582 of these people; Malé (211,908) and six atolls (79,465) are drawn only at the second level, and Gnaviyani (9,177) at neither."
+   "note": "The Factbook's estimate for 2024. The 2022 census counted 515,132 people in the Republic, Malé's 211,908 and the atolls' 303,224, foreign residents included -- 131,223 of the 505,955 people in the second-level units the map draws are foreigners. The thirteen atolls the map draws at the first level hold 214,582 of these people; Malé (211,908) and six atolls (79,465) are drawn only at the second level, and Gnaviyani (9,177) at neither."
   },
   {
    "country": "PRY",
    "field": "population",
+   "use": "check",
    "value": 6109903,
    "year": 2022,
    "source": "INE Paraguay, Censo Nacional de Población y Viviendas 2022",
    "url": "https://prod.redatam.org/binpry/RpWebEngine.exe/Portal?BASE=CPV2022",
    "license": "Official statistics of INE Paraguay",
-   "note": "The 2022 census's count of Paraguay, which its departments make: 6,109,903 people. It stands in place of the Factbook's estimate of 7,604,044 for 2025."
+   "note": "The Factbook's estimate for 2025. The 2022 census counted 6,109,903 people in Paraguay, the count its departments carry."
   },
   {
    "country": "GTM",
    "field": "population",
+   "use": "check",
    "value": 14901286,
    "year": 2018,
    "source": "INE Guatemala, XII Censo Nacional de Poblacion y VII de Vivienda 2018",
    "url": "https://censo2018.ine.gob.gt/",
    "license": "Official statistics of INE Guatemala",
-   "note": "Everyone INE's 2018 census enumerated in Guatemala, which its departments and municipios make: 14,901,286 people. It stands in place of the Factbook's estimate of 18,255,216 for 2024."
+   "note": "The Factbook's estimate for 2024. INE's 2018 census enumerated 14,901,286 people in Guatemala, the count its departments and municipios carry."
   },
   {
    "country": "XKX",
    "field": "population",
+   "use": "check",
    "value": 1602515,
    "year": 2024,
    "source": "Kosovo Agency of Statistics, Population and Housing Census 2024",
    "url": "https://askdata.rks-gov.net/pxweb/en/ASKdata/ASKdata__Census%20population__1_Demographic_Characteristics/",
    "license": "Kosovo Agency of Statistics (reuse with attribution)",
-   "note": "The 2024 census's count of Kosovo, which its seven districts make: 1,602,515 people. It stands in place of the Factbook's estimate of 1,977,093 for the same year."
+   "note": "The Factbook's estimate for 2024. Kosovo's 2024 census counted 1,602,515 people, the count its seven districts carry."
   },
   {
    "country": "MCO",
    "field": "population",
+   "use": "check",
    "value": 38857,
    "year": 2025,
    "source": "Monaco Statistics (IMSEE), 2025 Population census (register-based), report of May 2026",
    "url": "https://imsee.mc/en/thematics/population/population-census",
    "license": "Monaco Statistics (IMSEE) publication",
-   "note": "The Principality's 2025 census: 38,857 residents, the count its one unit on the map carries. It stands in place of the Factbook's estimate of 32,047 for 2025."
+   "note": "The Factbook's estimate for 2025. The Principality's 2025 census counted 38,857 residents, the count its one unit on the map carries."
   },
   {
    "country": "MCO",
@@ -5769,22 +5783,24 @@
   {
    "country": "MDA",
    "field": "population",
+   "use": "check",
    "value": 2409207,
    "year": 2024,
    "source": "Biroul Național de Statistică, Recensământul Populației și Locuințelor 2024, final results",
    "url": "https://statistica.gov.md/ro/rezultatele-finale-ale-recensamantului-populatiei-si-locuintelor-2024-10118.html",
    "license": "Official statistics of the Republic of Moldova (reuse with attribution)",
-   "note": "The 2024 census's count of the Republic of Moldova on the right bank of the Dniester: 2,409,207 people. The census did not reach the left bank (Transnistria) or the city of Bender, which are not in this figure; the map draws them with older estimates of their own. It stands in place of the Factbook's estimate of 3,578,930 for 2025."
+   "note": "The Factbook's estimate for 2025. The 2024 census counted 2,409,207 people in the Republic of Moldova on the right bank of the Dniester; it did not reach the left bank (Transnistria) or the city of Bender, which the map draws with older figures of their own."
   },
   {
    "country": "GEO",
    "field": "population",
+   "use": "check",
    "value": 3941200,
    "year": 2026,
    "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units",
    "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
    "license": "Geostat, open publication",
-   "note": "Geostat's population of Georgia on 1 January 2026, which its regions make: 3,941,200 people. Geostat does not count Abkhazia or the Tskhinvali region, which the government does not control, so they are not in this figure. It stands in place of the Factbook's estimate of 4,900,961 for 2024."
+   "note": "The Factbook's estimate for 2024. Geostat's population of Georgia on 1 January 2026 was 3,941,200 people, the figure its regions carry; Geostat does not count Abkhazia or the Tskhinvali region, which the government does not control."
   },
   {
    "country": "BTN",
@@ -5809,12 +5825,13 @@
   {
    "country": "BEL",
    "field": "population",
+   "use": "check",
    "value": 11883495,
    "year": 2025,
    "source": "Eurostat, population on 1 January 2025 by region (demo_r_pjangrp3): the Brussels-Capital, Flemish and Walloon Regions added up",
    "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_pjangrp3/default/table",
    "license": "Eurostat re-use policy (attribution)",
-   "note": "Belgium's three regions on 1 January 2025, as Eurostat publishes them, added up: the Brussels-Capital Region 1,271,709, Flanders 6,884,271 and Wallonia 3,727,515, 11,883,495 people. It stands in place of the Factbook's estimate of 11,960,170 for 2025. The map draws the Brussels-Capital Region whole only at the second level, so its own figures are shown there and not on the smaller first-level outline that carries its name."
+   "note": "The Factbook's estimate for 2025. Belgium's three regions held 11,883,495 people on 1 January 2025 as Eurostat publishes them: the Brussels-Capital Region 1,271,709, Flanders 6,884,271 and Wallonia 3,727,515. The map draws the Brussels-Capital Region whole only at the second level, so its own figures are shown there and not on the smaller first-level outline that carries its name."
   },
   {
    "country": "BEL",

@@ -276,11 +276,32 @@ class CountryCounts(unittest.TestCase):
     def test_visitor_notes_name_no_files_or_code(self):
         rows = json.loads(CURATED.read_text(encoding="utf-8"))["rows"]
         for row in rows:
-            if row["country"] in ("TKM", "KWT", "OMN", "MDV", "PRY", "GTM", "XKX", "MCO",
-                                  "MDA", "GEO", "BTN", "LAO", "UKR", "ERI") and \
-                    row["field"] in ("population", "median_age", "sex_ratio"):
-                for bad in (".json", ".py", "adapter", "build", "SUPERSEDED", "cod-ps"):
+            if row["field"] in ("population", "median_age", "sex_ratio"):
+                for bad in (".json", ".py", "adapter", "build", "SUPERSEDED", "cod-ps",
+                            "check row", "curated"):
                     self.assertNotIn(bad, row["note"], (row["country"], bad))
+
+    def test_every_country_shows_the_factbooks_estimate(self):
+        # A census or register count curated for a country stands beside the
+        # Factbook's estimate, for the first level's sums to be checked
+        # against, and its note names the year of the estimate shown and the
+        # count itself.
+        factbook = {r["id"]: r.get("population")
+                    for r in processed("admin0.json") if isinstance(r, dict)}
+        rows = [r for r in json.loads(CURATED.read_text(encoding="utf-8"))["rows"]
+                if r["field"] == "population"]
+        counts = [r for r in rows if "value" in r]
+        self.assertEqual(len(counts), 17)
+        for row in counts:
+            self.assertEqual(row.get("use"), "check", row["country"])
+            self.assertIn(f"{row['value']:,}", row["note"], row["country"])
+        for row in rows:
+            shown = factbook[row["country"]]
+            if row["note"].startswith("The Factbook's estimate"):
+                self.assertTrue(row["note"].startswith(
+                    f"The Factbook's estimate for {shown['year']}"), row["country"])
+            else:
+                self.assertNotIn("value", row, row["country"])
 
 
 # --------------------------------------------------------------------------

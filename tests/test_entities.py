@@ -5075,17 +5075,22 @@ class RollUpVintage(unittest.TestCase):
         self.assertEqual(parent["population"]["year"], 2022)
         self.assertIn("8,325,666", parent["population_note"])
 
-    def test_a_same_year_published_population_gives_way_to_the_children(self):
+    def test_a_country_population_is_filled_and_never_replaced(self):
         # Finland's nineteen regions total 5,652,881 for 2025 from Statistics
-        # Finland's register; the country carried 5,550,449 for 2025 from the
-        # Factbook. An itemised count against a general estimate, with the
-        # language shares already taken from the register.
-        # That is a country's estimate, so roll_up_countries says so.
-        parent = {"population": {"value": 5_550_449, "year": 2025}}
+        # Finland's register; the country shows the Factbook's 5,550,449 for
+        # 2025, as every country shows the Factbook's estimate.
+        # roll_up_countries says so, and a newer sum does not replace it either.
+        for year in (2025, 2026):
+            parent = {"population": {"value": 5_550_449, "year": 2025}}
+            be.roll_up_field(parent, [self.kid(5_652_881, year)], "religion",
+                             whole_country=True, fill_population_only=True)
+            self.assertEqual(parent["population"], {"value": 5_550_449, "year": 2025})
+            self.assertNotIn("population_note", parent)
+        # A country with none takes the sum.
+        parent = {"population": {"status": "not_available"}}
         be.roll_up_field(parent, [self.kid(5_652_881, 2025)], "religion",
-                         whole_country=True, restate_same_year=True)
+                         whole_country=True, fill_population_only=True)
         self.assertEqual(parent["population"]["value"], 5_652_881)
-        self.assertIn("5,550,449", parent["population_note"])
 
     def test_a_first_level_count_of_the_same_year_is_not_replaced_by_a_sum(self):
         # Kinmen's five drawn townships added up to 136,611 against the

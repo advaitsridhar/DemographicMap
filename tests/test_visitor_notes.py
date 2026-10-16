@@ -42,10 +42,9 @@ class CountryFiguresThatCountOtherGround(unittest.TestCase):
         israel = {"id": "ISR", "population": {"value": 9_402_617, "year": 2024,
                                               "source": "CIA World Factbook"}}
         antarctica = {"id": "ATA", "population": {"status": "not_available"}}
-        counted = quiet(be.apply_country_figures, [israel, antarctica],
-                        {"ISR": [r for r in self.rows() if r["country"] == "ISR"],
-                         "ATA": [r for r in self.rows() if r["country"] == "ATA"]})
-        self.assertEqual(counted, set())
+        quiet(be.apply_country_figures, [israel, antarctica],
+              {"ISR": [r for r in self.rows() if r["country"] == "ISR"],
+               "ATA": [r for r in self.rows() if r["country"] == "ATA"]})
         self.assertEqual(israel["population"]["value"], 9_402_617)
         self.assertIn("East Jerusalem", israel["population_note"])
         self.assertEqual(antarctica["population"]["status"], "not_applicable")

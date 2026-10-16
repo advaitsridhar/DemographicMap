@@ -274,11 +274,12 @@ class CountriesNotSummed(unittest.TestCase):
 
 
 class CuratedFigures(unittest.TestCase):
-    """A census count in front of an estimate that cannot be the same people."""
+    """A census count beside an estimate that cannot be the same people."""
 
-    ROW = {"country": "MHL", "field": "population", "value": 42_418, "year": 2021,
-           "source": "EPPSO, RMI 2021 Census Report, Volume 1", "url": "https://example.org",
-           "note": "The 2021 census count of the Marshall Islands."}
+    ROW = {"country": "MHL", "field": "population", "use": "check", "value": 42_418,
+           "year": 2021, "source": "EPPSO, RMI 2021 Census Report, Volume 1",
+           "url": "https://example.org",
+           "note": "The Factbook's estimate for 2024, nearly twice the 2021 census's count."}
 
     def country(self):
         return {"id": "MHL", "codes": {"iso3": "MHL"},
@@ -286,30 +287,86 @@ class CuratedFigures(unittest.TestCase):
                 "religion": [{"group": "Protestant", "pct": 80.0}],
                 "sources": [{"field": "*", "name": "CIA World Factbook"}]}
 
-    def test_the_count_replaces_the_estimate_before_the_sums(self):
+    def test_the_estimate_is_shown_and_the_count_checks_the_sums(self):
         mhl = self.country()
-        counted = quiet(be.apply_country_figures, [mhl], {"MHL": [self.ROW]})
-        self.assertEqual(counted, {"MHL"})
-        self.assertEqual(mhl["population"]["value"], 42_418)
-        self.assertEqual(mhl["population"]["year"], 2021)
+        self.assertIsNone(quiet(be.apply_country_figures, [mhl], {"MHL": [self.ROW]}))
+        self.assertEqual(mhl["population"]["value"], 82_011)
+        self.assertEqual(mhl["population"]["year"], 2024)
+        self.assertEqual(mhl["population"][be.CHECKED_AGAINST],
+                         {"value": 42_418, "year": 2021,
+                          "source": "EPPSO, RMI 2021 Census Report, Volume 1"})
+        self.assertIs(be.gate_population(mhl), mhl["population"][be.CHECKED_AGAINST])
         self.assertEqual(mhl["population_note"], self.ROW["note"])
-        self.assertIn("EPPSO, RMI 2021 Census Report, Volume 1",
-                      [s["name"] for s in mhl["sources"]])
-        # The atolls the map draws are all but Lib's 156 people.
+        # The count is named in the note, not cited as the figure's source.
+        self.assertEqual([s["name"] for s in mhl["sources"]], ["CIA World Factbook"])
+        # The atolls the map draws are all but Lib's 156 people: within 2% of
+        # the count, where the Factbook's 82,011 would refuse them.
         kids = [kid("Majuro", 23_000, {"United Church of Christ": 23_000}),
                 kid("Kwajalein", 19_262, {"United Church of Christ": 19_262})]
-        quiet(be.roll_up_countries, [mhl], {"MHL": kids}, counted)
+        quiet(be.roll_up_countries, [mhl], {"MHL": kids})
         self.assertEqual(mhl["religion"][0]["group"], "United Church of Christ")
-        self.assertEqual(mhl["population"]["value"], 42_418)
+        self.assertIn("Their populations total 42,262 against 42,418 for 2021 (EPPSO), "
+                      "the figure this sum is checked against; the population shown is "
+                      "82,011 for 2024 (CIA World Factbook).", mhl["religion_note"])
+        self.assertEqual(mhl["population"]["value"], 82_011)
+        # The count is the build's, not the reader's.
+        self.assertEqual(be.drop_build_flags(mhl), 1)
+        self.assertEqual(mhl["population"], {"value": 82_011, "year": 2024,
+                                             "source": "CIA World Factbook"})
 
-    def test_an_estimate_still_gives_way_to_a_same_year_count(self):
+    def test_without_the_count_the_estimate_refuses_the_sum(self):
+        mhl = self.country()
+        kids = [kid("Majuro", 23_000, {"United Church of Christ": 23_000}),
+                kid("Kwajalein", 19_262, {"United Church of Christ": 19_262})]
+        out = io.StringIO()
+        with redirect_stdout(out), redirect_stderr(out):
+            be.roll_up_countries([mhl], {"MHL": kids})
+        self.assertEqual(mhl["religion"], [{"group": "Protestant", "pct": 80.0}])
+        self.assertIn("children sum to 42,262 against a published 82,011", out.getvalue())
+
+    def test_a_disagreeing_count_is_named_as_the_one_checked_against(self):
+        # Complete divisions and a country with no shares of its own: the sum
+        # stands past the gate, and the note says which figure disagreed.
+        mhl = dict(self.country(), religion=[{"group": "Protestant"}])
+        quiet(be.apply_country_figures, [mhl], {"MHL": [self.ROW]})
+        kids = [kid("Majuro", 20_000, {"United Church of Christ": 20_000}),
+                kid("Kwajalein", 15_000, {"United Church of Christ": 15_000})]
+        quiet(be.roll_up_countries, [mhl], {"MHL": kids})
+        self.assertIn("The figure this sum is checked against, 42,418 for 2021 (EPPSO), "
+                      "disagrees with the divisions' total of 35,000 by -17%",
+                      mhl["religion_note"])
+
+    def test_a_country_keeps_its_estimate_whatever_its_first_level_adds_up_to(self):
+        # Finland's nineteen regions total 5,652,881 for 2025 from Statistics
+        # Finland's register; the country shows the Factbook's 5,550,449.
         fin = {"id": "FIN", "codes": {"iso3": "FIN"},
                "population": {"value": 5_550_449, "year": 2025},
                "religion": [{"group": "Lutheran", "pct": 60.0}]}
-        kids = [kid("North", 2_652_881, {"Lutheran": 2_652_881}, year=2025),
-                kid("South", 3_000_000, {"Lutheran": 3_000_000}, year=2025)]
+        kids = [kid("North", 2_652_881, {"Lutheran": 2_652_881}, year=2025, pop_year=2026),
+                kid("South", 3_000_000, {"Lutheran": 3_000_000}, year=2025, pop_year=2026)]
         quiet(be.roll_up_countries, [fin], {"FIN": kids})
-        self.assertEqual(fin["population"]["value"], 5_652_881)
+        self.assertEqual(fin["religion"][0]["group"], "Lutheran")
+        self.assertEqual(fin["population"], {"value": 5_550_449, "year": 2025})
+        self.assertNotIn("population_note", fin)
+
+    def test_a_country_without_a_population_takes_its_first_levels(self):
+        bare = {"id": "XYZ", "codes": {"iso3": "XYZ"},
+                "population": {"status": "not_available"},
+                "religion": [{"group": "Lutheran"}]}
+        kids = [kid("North", 2_000, {"Lutheran": 2_000}, year=2025),
+                kid("South", 3_000, {"Lutheran": 3_000}, year=2025)]
+        quiet(be.roll_up_countries, [bare], {"XYZ": kids})
+        self.assertEqual(bare["population"]["value"], 5_000)
+        self.assertEqual(bare["population"]["source"], "summed from 2 first-level divisions")
+
+    def test_a_check_row_needs_a_figure_to_stand_beside(self):
+        with self.assertRaises(SystemExit):
+            quiet(be.apply_country_figures,
+                  [dict(self.country(), population={"status": "not_available"})],
+                  {"MHL": [self.ROW]})
+        with self.assertRaises(SystemExit):
+            quiet(be.apply_country_figures, [self.country()],
+                  {"MHL": [dict(self.ROW, field="median_age")]})
 
     def test_a_median_row_carries_its_unit(self):
         nru = {"id": "NRU", "median_age": {"value": 28.2, "unit": "years", "year": 2025}}

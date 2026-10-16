@@ -3111,12 +3111,16 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
 # the shares of people who know Kazakh, Russian and English, 199% in all. None
 # of them invents a split.
 #
-# And a row for ``population``, ``median_age`` or ``sex_ratio`` gives the
-# country a census's own figure where the Factbook's estimate cannot be the
-# same people as the census its divisions carry: the Marshall Islands' 82,011
-# against the 2021 census's 42,418, Nauru's median of 28.2 against the
-# census's 21.6. Those are applied before the roll-ups, because the population
-# is what a sum of the divisions is checked against.
+# And a row for ``median_age`` or ``sex_ratio`` gives the country a census's
+# own figure where the Factbook's estimate cannot be the same people as the
+# census its divisions carry: Nauru's median of 28.2 against the census's 21.6.
+# A ``population`` row with ``"use": "check"`` is not shown: every country
+# shows the Factbook's estimate, and the row is the census or register count
+# of the people its first level counts, which a sum of the first level is
+# checked against instead (CHECKED_AGAINST) -- the Marshall Islands' 82,011
+# against the 2021 census's 42,418 the atolls carry. Those are applied before
+# the roll-ups, because the population is what a sum of the divisions is
+# checked against.
 #
 # This is the admin-0 counterpart of data/curated/admin1_seed.json, and it is a
 # curated file for the same reason that one is: an adapter cannot reach admin0.
@@ -3170,13 +3174,12 @@ def _cite(entity: dict[str, Any], field: str, row: dict[str, Any]) -> None:
 
 
 def apply_country_figures(admin0: list[dict[str, Any]],
-                          rows: dict[str, list[dict[str, Any]]]) -> set[str]:
+                          rows: dict[str, list[dict[str, Any]]]) -> None:
     """Put the curated population, median age and sex ratio on the countries.
 
     Run before the roll-ups, which check a sum of the divisions against the
     country's population: a Factbook estimate twice the census's count refused
-    every sum the Marshall Islands' atolls could give. Returns the countries
-    whose population is now a census count, for roll_up_countries.
+    every sum the Marshall Islands' atolls could give.
 
     A row must give a value, a year and a source; one that does not stops the
     build, as an unmatched country does. The one exception is a row that
@@ -3186,9 +3189,14 @@ def apply_country_figures(admin0: list[dict[str, Any]],
     outside its shape. On a field that is a gap, the note is the gap's own
     reason, with the row's status if it gives one (Antarctica has no
     permanent population to count).
+
+    A population row with ``"use": "check"`` leaves the figure shown too: its
+    count goes beside it, for the sums of the first level to be checked
+    against (CHECKED_AGAINST), and its note says what the two figures are. One
+    for a country that shows no population stops the build: its note would
+    describe a figure that is not there.
     """
     by_id = {entity["id"]: entity for entity in admin0}
-    counted: set[str] = set()
     applied = 0
     for iso3, country_rows in sorted(rows.items()):
         for row in country_rows:
@@ -3213,18 +3221,31 @@ def apply_country_figures(admin0: list[dict[str, Any]],
                     or not row.get("source"):
                 raise SystemExit(f"admin0_detail: {iso3} {field} needs a value, a year "
                                  f"and a source")
-            entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
-                                    year=row["year"], source=row["source"])
+            if "use" in row and (row["use"] != "check" or field != "population"):
+                raise SystemExit(f"admin0_detail: {iso3} {field} says use "
+                                 f"{row['use']!r}; only a population row is used "
+                                 f"as a check")
+            shown = entity.get(field)
+            if row.get("use") == "check":
+                # Its note says what the figure shown is, so a country with
+                # none would be told about a figure it does not show.
+                if published(shown) is None:
+                    raise SystemExit(f"admin0_detail: {iso3}'s population row is a "
+                                     f"check beside the figure shown, and the country "
+                                     f"shows none; give the count its own note and "
+                                     f"drop \"use\" to show it")
+                entity[field] = {**shown, CHECKED_AGAINST: {
+                    "value": row["value"], "year": row["year"], "source": row["source"]}}
+            else:
+                entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
+                                        year=row["year"], source=row["source"])
+                _cite(entity, field, row)
             entity[f"{field}_note"] = row["note"]
-            _cite(entity, field, row)
-            if field == "population":
-                counted.add(iso3)
             applied += 1
     if applied:
         log(f"  admin0 detail: {applied} curated figures on "
             f"{len({r['country'] for rs in rows.values() for r in rs if r['field'] in FIGURE_ROWS})} "
             f"countries")
-    return counted
 
 
 def apply_country_detail(admin0: list[dict[str, Any]],
@@ -4181,6 +4202,36 @@ def vintage(value: Any) -> int | None:
 RESTATED_FROM = "restated_from"
 
 
+# Every country shows the Factbook's estimate of its population: one estimate,
+# of one moment, for every country, which no census or sum of its divisions
+# replaces (roll_up_countries). Some carry beside it the census or register
+# count of the people their first level counts (data/curated/admin0_detail.json,
+# rows with "use": "check"), and a sum of the first level's compositions is
+# weighed against that count instead of the estimate shown: the Factbook's
+# 18,255,216 Guatemalans for 2024 would refuse every sum of the 2018 census's
+# departments, which count 14,901,286 and are the whole country. A build flag,
+# taken off before the record is written.
+CHECKED_AGAINST = "checked_against"
+
+
+def gate_population(entity: dict[str, Any]) -> Any:
+    """The population a country's sum of its first level is weighed against:
+    the count curated beside the figure shown (CHECKED_AGAINST) where there is
+    one, else the figure shown."""
+    pop = entity.get("population")
+    if isinstance(pop, dict) and isinstance(pop.get(CHECKED_AGAINST), dict):
+        return pop[CHECKED_AGAINST]
+    return pop
+
+
+def named_figure(pop: Any) -> str:
+    """A population as a sentence names it: "14,901,286 for 2018 (INE Guatemala)"."""
+    value, year = published(pop), vintage(pop)
+    source = str(pop.get("source") or "") if isinstance(pop, dict) else ""
+    return (f"{value:,.0f}" + (f" for {year}" if year else "")
+            + (f" ({check_rollups.short_source(source)})" if source else ""))
+
+
 def control_population(entity: dict[str, Any]) -> Any:
     """The population a country's sum of its first level is gated on.
 
@@ -4394,7 +4445,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   whole_country: bool = False,
                   complete: bool | None = None,
                   min_coverage: float | None = None,
-                  restate_same_year: bool = False) -> str | None:
+                  fill_population_only: bool = False) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -4429,14 +4480,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     checked against. Pakistan is why it is not assumed -- 114 of its 126
     districts join, so its provinces are genuinely short and stay refused.
 
-    ``restate_same_year`` lets the children's total replace a published
-    population of its own year. A country's own figure is usually the
-    Factbook's estimate, and an itemised count of the same year is the better
-    number (Finland, below). A first-level unit's is an office's count, and
-    children of the same year that add up to something else are short of a
-    child or counted apart, not better: Kinmen's five drawn townships made
-    136,611 against the county's registered 137,208 -- the register's sixth
-    township, Wuqiu, is drawn apart from it -- and the sum replaced the count.
+    ``fill_population_only`` keeps a published population whatever the
+    children add up to, and lets their total fill only a unit that has none:
+    a country shows the Factbook's estimate, and its first level's sum, of
+    whatever year, does not replace it (roll_up_countries). Elsewhere an older
+    figure gives way to the children's newer total; one of their own year does
+    not, because children of the same year that add up to something else are
+    short of a child or counted apart, not better: Kinmen's five drawn
+    townships made 136,611 against the county's registered 137,208 -- the
+    register's sixth township, Wuqiu, is drawn apart from it.
     """
     current = parent.get(field)
     if isinstance(current, list) and not over_published:
@@ -4599,8 +4651,19 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # Whether the sum stands although the gate below found the populations
     # apart: a waived control, which no population is then taken from.
     overruled = False
-    own = published(parent.get("population"))
-    stated = own
+    # Weighed against the count curated beside a country's Factbook estimate
+    # where there is one (gate_population); every sentence below that quotes
+    # the figure says which it is.
+    gate = gate_population(parent)
+    shown = published(parent.get("population"))
+    own = published(gate)
+    stated = shown
+    beside = (gate is not parent.get("population") and own is not None
+              and shown is not None and own != shown)
+    unit_figure = (f"{named_figure(gate)}, the figure this sum is checked against; the "
+                   f"population shown is {named_figure(parent.get('population'))}"
+                   if beside else f"a published {own:,.0f} for the unit"
+                   if own is not None else "")
     if (unpriced or not total_pop) and own is not None and over_published \
             and shares_of(current):
         # A sum that would replace a published composition is checked against
@@ -4626,8 +4689,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         # note below still quotes the populations the map shows.
         controls = [{"population": control_population(c)} for c in children]
         gated = sum(published(c["population"]) or 0.0 for c in controls)
-        limit = allowance(vintage(parent.get("population")),
-                          common_year(controls), own, gated)
+        limit = allowance(vintage(gate), common_year(controls), own, gated)
         if abs(gated - own) > limit * own:
             overruled = True
             drift = "" if limit == ROLLUP_TOLERANCE else \
@@ -4664,8 +4726,10 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             # one disagrees too: a first level restated to its divisions'
             # sums can agree with the unit where its own figures did not.
             if abs(total_pop - own) > ROLLUP_TOLERANCE * own:
-                disagrees = (f" The unit's own published population of {own:,.0f} "
-                             f"disagrees with the divisions' total of "
+                disagrees = ((f" The figure this sum is checked against, "
+                              f"{named_figure(gate)}," if beside else
+                              f" The unit's own published population of {own:,.0f}")
+                             + f" disagrees with the divisions' total of "
                              f"{total_pop:,.0f} by "
                              f"{100 * (total_pop - own) / own:+.0f}%; "
                              + ("the sum was taken anyway because every division "
@@ -4805,7 +4869,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         # instead of printing a total nobody published.
         + (f" {'Their' if many else 'Its'} population"
            f"{'s total' if many else ' is'} {total_pop:,.0f}"
-           f" against a published {own:,.0f} for the unit."
+           f" against {unit_figure}."
            if own is not None else
            (f" {'they publish' if many else 'it publishes'} no population of "
             f"{'their' if many else 'its'} own, and"
@@ -4876,25 +4940,22 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         parent.pop(f"{field}_year", None)
 
     # A unit whose composition was just summed from a complete set of children
-    # should carry their population too, when it has none, an older one, or one
-    # of the same year from somewhere else.
+    # should carry their population too, when it has none or an older one.
     #
     # Bangladesh is the older case: two of its divisions publish no population
     # at all and six publish 2011 figures, so the level above was summing a
     # mixture of vintages -- six 2011 divisions and two 2022 ones -- and
     # comparing that mongrel against a 2025 estimate.
     #
-    # Finland is the same-year case, and the reason the test is not a strict
-    # one. Its nineteen regions total 5,652,881 for 2025 from Statistics
-    # Finland's own register, and the country carried 5,550,449 for 2025 from
-    # the Factbook: a hundred thousand people apart, an itemised count against
-    # a general estimate, with the language shares already taken from the
-    # register. Leaving the two side by side published a national population
-    # that disagreed with the regions drawn inside it.
-    #
     # A newer figure still wins, because a later estimate of a place is not
     # something an older count should overwrite. The figure replaced goes into
-    # a note either way.
+    # a note.
+    #
+    # A country is the exception (``fill_population_only``): it shows the
+    # Factbook's estimate, one moment for every country, and its first level
+    # fills it only where it has none. Finland's nineteen regions total
+    # 5,652,881 for 2025 from Statistics Finland's register, and the country
+    # shows the Factbook's 5,550,449 for 2025 beside them.
     # Nothing is rewritten when the two agree. Ladakh's Leh and Kargil sum to
     # exactly the 274,289 Wikidata gives it, and restamping that number as
     # "summed from 2 second-level divisions" would trade a named source for a
@@ -4917,21 +4978,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # shares. Morocco lost Laayoune-Sakia El Hamra from its population the
     # same way.
     waived = overruled and not whole_country
-    # Nor does a first level any of whose figures was restated to its own
-    # divisions' sum (control_population) replace a figure the country has:
-    # those sums were put there so each unit agrees with what is drawn inside
-    # it, not to stand for the country. Honduras' eighteen departments,
-    # restated to OCHA's 2024 projections, add up to 9,878,457, and the
-    # country keeps its own 9,529,188 for 2024.
-    restated = any(control_population(c) is not c.get("population") for c in children)
     # And only a sum of about one year replaces a figure that exists: years at
     # most one apart, or nine in ten of the people counted in the same one.
     # Germany's states carry Eurostat's 2025 figures where a state is its own
     # NUTS region and the 2022 census elsewhere -- 78% of Germans on 2022 --
-    # and their total of 82.9 million replaced the country's 2025 estimate of
-    # 84.0 million as though it were one count. The Netherlands (96% on 2025)
-    # and Peru (2025 and 2026) are sums of one moment; Germany's is not. A
-    # mixed sum still fills a unit that has nothing.
+    # and their total of 82.9 million is no one year's count; it once replaced
+    # the country's 2025 estimate of 84.0 million as though it were. The
+    # Netherlands (96% on 2025) and Peru (2025 and 2026) are sums of one
+    # moment; Germany's is not. A mixed sum still fills a unit that has
+    # nothing.
     stamped = [(vintage(c.get("population")), published(c.get("population")) or 0.0)
                for c in children]
     years_seen = [y for y, _ in stamped if y is not None]
@@ -4939,13 +4994,12 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     one_year = bool(years_seen) and (
         max(years_seen) - min(years_seen) <= 1
         or on_child_year >= ONE_MOMENT * sum(v for _, v in stamped))
-    # A published figure of the children's own year is replaced only where the
-    # caller says it is an estimate an itemised count improves on
-    # (``restate_same_year``); otherwise only an older one is.
+    # A published figure is replaced only where it is older than the children's
+    # and the caller lets a sum replace one at all (``fill_population_only``).
     if child_year and not waived and not left_out and (
-            own is None or (one_year and not restated and round(total_pop) != round(own)
-                            and (own_year is None or own_year < child_year
-                                 or (own_year == child_year and restate_same_year)))):
+            own is None or (not fill_population_only and one_year
+                            and round(total_pop) != round(own)
+                            and (own_year is None or own_year < child_year))):
         if own is not None:
             parent["population_note"] = (
                 f"Summed from all {len(children)} {level} divisions. Replaces "
@@ -5789,8 +5843,7 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
 
 
 def roll_up_countries(admin0: list[dict[str, Any]],
-                      admin1_by_country: dict[str, list[dict[str, Any]]],
-                      counted: frozenset[str] | set[str] = frozenset()) -> None:
+                      admin1_by_country: dict[str, list[dict[str, Any]]]) -> None:
     """Sum a country from its first-level divisions, where they are all there.
 
     Unlike the level below, this never fills a gap: every country record
@@ -5825,11 +5878,13 @@ def roll_up_countries(admin0: list[dict[str, Any]],
     this one; it is left tight here so that nothing is rewritten on a looser
     rule than the one that has been tested.
 
-    ``counted`` names the countries whose population is a census count rather
-    than the Factbook's estimate (data/curated/admin0_detail.json). Their
-    divisions' total replaces it only when it is newer, as at the level below:
-    the Marshall Islands' drawn atolls add up to 42,262, Lib's 156 people
-    having no polygon, against the census's 42,418 for the same day.
+    The population itself is never summed over: every country shows the
+    Factbook's estimate, one moment for every country, and its first level's
+    total fills it only where it has none. Where the Factbook's estimate cannot
+    be the people the first level counts, a census count curated beside it is
+    what the sums are checked against (CHECKED_AGAINST): the Marshall Islands'
+    drawn atolls add up to 42,262, Lib's 156 people having no polygon, against
+    the census's 42,418 for the same day, and the Factbook's 82,011 is shown.
     """
     filled: list[str] = []
     refused: list[str] = []
@@ -5854,7 +5909,7 @@ def roll_up_countries(admin0: list[dict[str, Any]],
                                 level="first-level", over_published=True,
                                 complete=True,
                                 min_coverage=COUNTRY_MIN_COVERAGE,
-                                restate_same_year=iso3 not in counted)
+                                fill_population_only=True)
             if why:
                 refused.append(f"{iso3}: {why}")
             elif country.get(field) is not before:
@@ -6266,10 +6321,11 @@ def drop_answered_hint(entity: dict[str, Any]) -> bool:
 # Instructions an adapter gives the build on a field's value, read while the
 # rows are merged and summed, and nothing a reader of the map is told:
 # ``displaces_before`` and ``displaces_undated`` (see merge_adapter) and
-# ``no_child_sum`` (see fill_parent_populations); and one the build leaves for
-# itself, ``restated_from`` (RESTATED_FROM, see control_population).
+# ``no_child_sum`` (see fill_parent_populations); and two the build leaves for
+# itself, ``restated_from`` (RESTATED_FROM, see control_population) and
+# ``checked_against`` (CHECKED_AGAINST, see gate_population).
 BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum", "not_this_ground",
-               "restated_from", "refused_value")
+               "restated_from", "refused_value", "checked_against")
 
 
 def drop_build_flags(entity: dict[str, Any]) -> int:
@@ -10448,7 +10504,7 @@ def main() -> int:
     admin0.sort(key=lambda e: e["name"])
     # Before anything is summed: a country's population is what the sums of
     # its divisions are checked against.
-    counted = apply_country_figures(admin0, country_detail)
+    apply_country_figures(admin0, country_detail)
 
     # -- admin 1 -------------------------------------------------------------
     admin1_by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -10965,7 +11021,7 @@ def main() -> int:
     if flagged:
         log(f"  {len(flagged)} first-level populations restated from their divisions; "
             f"the country sums are gated on the units' own figures")
-    roll_up_countries(admin0, admin1_by_country, counted)
+    roll_up_countries(admin0, admin1_by_country)
 
     # Last, so a curated country row is the last word on the field it names.
     apply_country_detail(admin0, country_detail)
