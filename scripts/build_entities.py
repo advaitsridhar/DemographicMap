@@ -7144,22 +7144,27 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                     rate = (published(best["value"]) / value) ** (
                         1 / (vintage(best["value"]) - year)) - 1
                     offers.append((iso3, entity, best, rate))
-    rates: dict[str, list[float]] = defaultdict(list)
-    for iso3, _, _, rate in offers:
-        rates[iso3].append(rate)
-    typical = {iso3: sorted(r)[len(r) // 2] if len(r) % 2 else
+    # Peers are the country's units at the same level: Viet Nam's provinces
+    # offered the 2025 merger's figures, 8.7% a year above the 2019 census,
+    # set the median its districts were weighed against, and six districts
+    # changing by about 1% a year were kept off as far from their peers.
+    rates: dict[tuple[str, Any], list[float]] = defaultdict(list)
+    for iso3, entity, _, rate in offers:
+        rates[(iso3, entity.get("level"))].append(rate)
+    typical = {key: sorted(r)[len(r) // 2] if len(r) % 2 else
                (sorted(r)[len(r) // 2 - 1] + sorted(r)[len(r) // 2]) / 2
-               for iso3, r in rates.items()}
+               for key, r in rates.items()}
     taken: list[str] = []
     kept: list[str] = []
     for iso3, entity, best, rate in offers:
         shown = entity["population"]
+        peers = (iso3, entity.get("level"))
         line = (f"{iso3} {entity.get('name')}: {published(shown):,.0f} ({vintage(shown)}) "
                 f"-> {published(best['value']):,.0f} ({vintage(best['value'])}), "
                 f"{rate:+.1%} a year")
-        if len(rates[iso3]) >= RECENCY_PEERS:
+        if len(rates[peers]) >= RECENCY_PEERS:
             same = (-check_rollups.DECLINE <= rate <= check_rollups.GROWTH
-                    and abs(rate - typical[iso3]) <= RECENCY_SPREAD)
+                    and abs(rate - typical[peers]) <= RECENCY_SPREAD)
         else:
             same = RECENCY_FEW[0] <= rate <= RECENCY_FEW[1]
         if not same:
@@ -7168,17 +7173,17 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             # run (say_newer_not_taken): Kuwait's note had the governorates
             # show the census "where no newer figure is published", and
             # Farwaniya's and Jahra's are published and were not taken.
-            off = (len(rates[iso3]) >= RECENCY_PEERS
-                   and abs(rate - typical[iso3]) > RECENCY_SPREAD)
+            off = (len(rates[peers]) >= RECENCY_PEERS
+                   and abs(rate - typical[peers]) > RECENCY_SPREAD)
             entity["_not_taken"] = {"shown": published(shown), "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
                 f"{check_rollups.short_source(str(best['value'].get('source') or ''))}, "
                 f"a {'rise' if rate > 0 else 'fall'} of {abs(rate):.1%} a year from the "
                 f"figure shown"
-                + (f", while the country's other units given newer figures changed by "
-                   f"{typical[iso3]:+.1%} a year in the median. A figure so far from "
-                   f"theirs may be of other ground or counted another way."
+                + (f", while the country's other units at this level given newer figures "
+                   f"changed by {typical[peers]:+.1%} a year in the median. A figure so far "
+                   f"from theirs may be of other ground or counted another way."
                    if off else
                    ". A change that large may mean other ground or another way of "
                    "counting."))}

@@ -106,10 +106,25 @@ class NewerFigures(unittest.TestCase):
         self.assertEqual(cao_bang["population_note"],
                          "Everyone the 2021 census counted. A newer figure is not shown: "
                          "558,500 for 2024 from Wikidata, a rise of 1.0% a year from the "
-                         "figure shown, while the country's other units given newer "
-                         "figures changed by +9.0% a year in the median. A figure so far "
-                         "from theirs may be of other ground or counted another way.")
+                         "figure shown, while the country's other units at this level "
+                         "given newer figures changed by +9.0% a year in the median. A "
+                         "figure so far from theirs may be of other ground or counted "
+                         "another way.")
         self.assertNotIn("_not_taken", cao_bang)
+
+    def test_peers_are_the_units_at_the_same_level(self):
+        # Viet Nam's merged provinces, 9% a year, did not set the median its
+        # districts were weighed against.
+        merged = [unit(f"M{i}", 1_000_000, 2019, newer=round(1_000_000 * 1.09 ** 5),
+                       newer_year=2024) for i in range(6)]
+        for m in merged:
+            m["level"] = "admin1"
+        districts = [unit(f"D{i}", 100_000, 2019, newer=round(100_000 * 1.01 ** 2),
+                          newer_year=2021) for i in range(5)]
+        taken, kept = be.prefer_newer_figures(country(*merged), country(*districts))
+        self.assertEqual((len(taken), len(kept)), (5, 6))
+        self.assertEqual(districts[0]["population"]["value"], 102_010)
+        self.assertEqual(merged[0]["population"]["value"], 1_000_000)
 
     def test_a_change_too_large_says_so_without_peers(self):
         # Kuwait's Jahra: 566,861 at the 2021 census, Wikipedia's 439,106 for
