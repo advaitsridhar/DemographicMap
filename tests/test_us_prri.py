@@ -543,6 +543,13 @@ class Join(unittest.TestCase):
                     year=2024, prri_names={"01001": "Autauga County, AL"})
         self.assertEqual(len(got), self.n)
 
+    def test_joins_an_independent_city_under_its_short_name(self):
+        """PRRI 'Baltimore city, MD' against the map's 'Baltimore'."""
+        fips = fips_at(0).zfill(5)
+        got = build(self.nodes, universe(self.n, names={fips: "Baltimore"}),
+                    year=2024, prri_names={fips: "Baltimore city, MD"})
+        self.assertEqual(len(got), self.n)
+
     def test_refuses_a_fips_naming_a_different_county(self):
         """A FIPS whose name moved is usually a FIPS that was reassigned --
         Connecticut's 2022 planning regions are the live case. Joining it
@@ -628,6 +635,20 @@ class Normalise(unittest.TestCase):
 
     def test_keeps_genuinely_different_names_apart(self):
         self.assertNotEqual(normalise("Litchfield"), normalise("Autauga"))
+
+    def test_an_independent_citys_lowercase_city_is_a_designation(self):
+        """The county list now carries the map's own short names, so FIPS
+        24510 is "Baltimore" there and "Baltimore city, MD" in PRRI: one
+        place, and 39 such cities refused the whole run."""
+        self.assertEqual(normalise("Baltimore city, MD"), normalise("Baltimore"))
+        self.assertEqual(normalise("Virginia Beach city, VA"),
+                         normalise("Virginia Beach"))
+        self.assertEqual(normalise("St. Louis city, MO"), normalise("St. Louis"))
+
+    def test_a_capitalised_city_is_part_of_the_name(self):
+        self.assertEqual(normalise("Carson City, NV"), "carsoncity")
+        self.assertEqual(normalise("James City County, VA"), "jamescity")
+        self.assertNotEqual(normalise("Carson City, NV"), normalise("Carson"))
 
 
 if __name__ == "__main__":

@@ -387,12 +387,15 @@ DELIMITERS = (",", "\t", ";", "|")
 def normalise(name: str) -> str:
     """A county name reduced to the part two sources have to agree on.
 
-    PRRI writes "Autauga County, AL" and the map writes "Autauga County,
-    Alabama"; 'Doña Ana' and 'Dona Ana' are the same place too. Only ever used
-    to decide whether a name *disagrees* with the one already on the map --
-    never to make a join.
+    PRRI writes "Autauga County, AL" and the map writes "Autauga"; 'Doña Ana'
+    and 'Dona Ana' are the same place too. PRRI also keeps the Census Bureau's
+    lowercase "city" after an independent city ("Baltimore city, MD",
+    "Alexandria city, VA") where the map writes "Baltimore"; a capitalised
+    "City" is part of a name ("Carson City", "James City County") and stays.
+    Only ever used to decide whether a name *disagrees* with the one already
+    on the map -- never to make a join.
     """
-    name = name.split(",")[0]
+    name = re.sub(r" city$", "", name.split(",")[0].strip())
     name = name.replace("ñ", "n").replace("Ñ", "N")
     name = re.sub(r"\b(County|Parish|Borough|Census Area|Municipality|City and "
                   r"Borough|Municipio|Planning Region)\b", " ", name, flags=re.I)
