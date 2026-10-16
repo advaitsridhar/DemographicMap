@@ -946,6 +946,69 @@ class CitationSpellingsAndStaleEntries(unittest.TestCase):
                           if "population" in be.cited_fields(s)], ["Q374794"])
 
 
+class CitationsOnlyTheFiguresOwnNotesProtect(unittest.TestCase):
+    """An entry stays for a field when that field's own notes, or the figure's
+    own source line, name it -- not when a gap elsewhere lists the sources
+    used for the unit."""
+
+    WIKIDATA = {"field": "population/capital/coordinates", "name": "Wikidata",
+                "url": "https://www.wikidata.org/wiki/Q2466482"}
+    INEC = ("INEC, Censo de Población y Vivienda 2022, Estructura poblacional, "
+            "tabla 5.1")
+
+    def aguarico(self):
+        return {"population": {"value": 6872, "year": 2022, "source": self.INEC},
+                "religion": {"status": "not_available", "note": (
+                    "The sources used for this unit (GeoNames, INEC and Wikidata) give "
+                    "its language and ethnicity but not its religion.")},
+                "sources": [dict(self.WIKIDATA),
+                            {"field": "population", "name": self.INEC}]}
+
+    def test_a_gap_listing_the_sources_used_keeps_no_population_citation(self):
+        aguarico = self.aguarico()
+        be.tidy_citations(aguarico)
+        self.assertEqual(["capital/coordinates", "population"],
+                         [s["field"] for s in aguarico["sources"]])
+
+    def test_wikidata_goes_even_where_no_entry_names_the_figure(self):
+        # Panama's districts: the 2023 census count, cited by no entry for
+        # "population", beside Wikidata's item cited for it.
+        district = self.aguarico()
+        district["sources"] = [dict(self.WIKIDATA),
+                               {"field": "sex", "name": "INEC Panamá, XII Censo"}]
+        be.tidy_citations(district)
+        self.assertEqual("capital/coordinates", district["sources"][0]["field"])
+        self.assertEqual("sex", district["sources"][1]["field"])
+
+    def test_a_note_on_the_field_still_keeps_wikidata(self):
+        district = self.aguarico()
+        district["sources"] = [dict(self.WIKIDATA)]
+        district["population_note"] = ("A newer figure is not shown: 7,100 for 2025 "
+                                       "from Wikidata.")
+        be.tidy_citations(district)
+        self.assertEqual("population/capital/coordinates", district["sources"][0]["field"])
+
+    def test_a_sum_keeps_its_own_item(self):
+        # Barisal: the sum of its six districts, and its own item's 2011 figure
+        # kept as the check its note speaks of.
+        barisal = {"population": {"value": 9_100_102, "year": 2022,
+                                  "source": "summed from 6 second-level divisions"},
+                   "sources": [dict(self.WIKIDATA)]}
+        be.tidy_citations(barisal)
+        self.assertEqual("population/capital/coordinates", barisal["sources"][0]["field"])
+
+    def test_the_figures_own_publisher_stays(self):
+        artibonite = {"population": {"value": 1_727_524, "year": 2015, "source": (
+                          "IHSI, Population totale ... estimés en 2015, as the US Census "
+                          "Bureau tabulates it")},
+                      "sources": [{"field": "population", "name": "US Census Bureau, IDB"},
+                                  {"field": "population",
+                                   "name": "IHSI, the same estimates as published"}]}
+        be.tidy_citations(artibonite)
+        self.assertEqual(["population", "population"],
+                         [s["field"] for s in artibonite["sources"]])
+
+
 class SoleDivisionsOfTwoOffices(unittest.TestCase):
     def test_the_newer_office_count_shows_on_both(self):
         wien = {"population": {"value": 2_028_289, "year": 2025, "source": "Eurostat"}}

@@ -7468,17 +7468,21 @@ def plain_wording(text: str) -> str:
     return text
 
 
-def notes_said(entity: dict[str, Any]) -> str:
-    """Every note a visitor reads on a record, as one text: its own notes and
-    the notes inside its figures and gaps."""
-    parts = []
-    for key, value in entity.items():
-        if (key == "note" or key.endswith("_note") or key == "gap_reason") \
-                and isinstance(value, str):
-            parts.append(value)
-        elif isinstance(value, dict) and isinstance(value.get("note"), str):
-            parts.append(value["note"])
-    return " ".join(parts)
+def notes_said(entity: dict[str, Any], field: str) -> str:
+    """The notes a visitor reads beside one figure, as one text: the field's
+    own note and the note inside the figure.
+
+    Only these. A gap elsewhere on the record that lists the sources used for
+    the unit -- "The sources used for this unit (GeoNames, INEC and
+    Wikidata) give its language and ethnicity but not its religion" -- names
+    Wikidata without quoting any population of it, and read as a note on the
+    population it kept Wikidata's population citation on 1,300 units whose
+    population is an office's.
+    """
+    value = entity.get(field)
+    parts = [entity.get(f"{field}_note"),
+             value.get("note") if isinstance(value, dict) else None]
+    return " ".join(part for part in parts if isinstance(part, str))
 
 
 def named_in(src: dict[str, Any], said: str) -> bool:
@@ -7512,14 +7516,25 @@ def tidy_citations(entity: dict[str, Any]) -> int:
     if not isinstance(sources, list) or not sources:
         return 0
     changed = 0
-    said = notes_said(entity)
     for field in FIGURE_FIELDS:
         value = entity.get(field)
         if not isinstance(value, dict) or is_gap(value):
             continue
+        # The figure's own source line counts as said: Haiti's departments show
+        # IHSI's estimates "as the US Census Bureau tabulates" them, and the
+        # entry "IHSI, the same estimates as published" is that figure's
+        # publisher, not a stale one.
+        said = notes_said(entity, field) + " " + str(value.get("source") or "")
         # The Factbook's entry cites every field ("*").
-        if not any({field, "*"} & set(cited_fields(src)) and names_source(src, value)
-                   for src in sources if src is not None):
+        named = any({field, "*"} & set(cited_fields(src)) and names_source(src, value)
+                    for src in sources if src is not None)
+        # With no entry naming the figure's source, only a Wikidata entry is
+        # known not to be it: a figure from Wikidata says so, and Panama's
+        # 2023 census counts sat beside Wikidata's item cited for "population"
+        # on every district. A sum is the exception, since the separately
+        # published figure its note keeps as a check can be its own item's.
+        lone_wikidata = not named and not str(value.get("source") or "").startswith("summed from")
+        if not named and not lone_wikidata:
             continue
         for i, src in enumerate(sources):
             if src is None:
@@ -7530,6 +7545,8 @@ def tidy_citations(entity: dict[str, Any]) -> int:
             # Statistics Bureau", "A newer figure is not shown: ... from
             # Wikidata".
             if field not in cites or names_source(src, value) or named_in(src, said):
+                continue
+            if not named and src.get("name") != "Wikidata":
                 continue
             rest = [f for f in cites if f != field]
             sources[i] = dict(src, field="/".join(rest)) if rest else None
