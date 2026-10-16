@@ -924,6 +924,13 @@ ADAPTER_FILES = [
     # sex, nationality, religion and native language by region; sex and median
     # age by municipality; nationality by municipality from 2002 (georgia).
     "georgia.json",
+    # Abkhazia, which Georgia's census and estimates do not reach, from its de
+    # facto authorities' statistics committee: the 1 January 2026 count by
+    # district and sex, and the 2011 census's ages and nationality. Two of the
+    # six drawn municipalities are one of their districts; the other four are
+    # gaps that say why. After georgia.json, whose stated gaps it replaces
+    # (abkhazia_census).
+    "abkhazia_census.json",
     # Armenia's marzes and Yerevan on 1 January 2026 from Armstat's age-sex
     # workbook; the map's pre-1995 raions are gaps that say why (armenia).
     "armenia.json",
