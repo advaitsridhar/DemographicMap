@@ -2894,7 +2894,18 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 #     polygons drawn, one for one, and the rural council of the same name
 #     already joins its own polygon. Aliasing them one by one is narrower than
 #     treating Urban, Municipal and Town as one word.
+#   * Belarus: Wikidata's English labels for three regions are romanisations
+#     of their Belarusian names -- "Byerastsye Region", "Horadnia Region",
+#     "Mahilyow Region" -- where the boundary file draws Brest, Grodno and
+#     Mogilev; their ISO 3166-2 codes (BY-BR, BY-HR, BY-MA) say which. The
+#     other four regions join by name, so the three showed English
+#     Wikipedia's 2024 figures beside their siblings' 2026 ones.
 ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
+    "wikidata_admin1.json": {
+        "BLR-WD-Q173822": ("Brest",),
+        "BLR-WD-Q191061": ("Grodno",),
+        "BLR-WD-Q189822": ("Mogilev",),
+    },
     "wikidata_admin2.json": {
         "THA-WD-Q1019417": ("Vadhana",),
         "THA-WD-Q475772": ("Khwao Sin Rin",),

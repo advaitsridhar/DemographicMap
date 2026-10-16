@@ -540,5 +540,22 @@ class SharesWeighedByTheirCensus(unittest.TestCase):
         self.assertEqual(be.repriced_sentence([]), "")
 
 
+
+class BelarusRegionsJoinTheirOwnRows(unittest.TestCase):
+    """Wikidata names three of Belarus's regions in Belarusian romanisation."""
+
+    def test_each_alias_is_the_region_its_iso_code_names(self):
+        import json
+        rows = {r["id"]: r for r in json.loads(
+            (be.PROCESSED / "wikidata_admin1.json").read_text()) if r.get("country") == "BLR"}
+        drawn = {"BY-BR": "Brest", "BY-HR": "Grodno", "BY-MA": "Mogilev"}
+        aliased = {rid: names for rid, names in be.ROW_ALIASES["wikidata_admin1.json"].items()
+                   if rid.startswith("BLR-")}
+        self.assertEqual(len(aliased), 3)
+        for rid, names in aliased.items():
+            self.assertEqual(names, (drawn[rows[rid]["iso_3166_2"]],), rid)
+            self.assertEqual(rows[rid]["population"]["year"], 2026)
+
+
 if __name__ == "__main__":
     unittest.main()
