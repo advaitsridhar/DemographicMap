@@ -544,6 +544,12 @@
         "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.12",
         "url": "https://cgsra.org/media/files/25.pdf",
         "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "population note",
+        "name": "WorldPop, global population counts at 100 m, 2020",
+        "url": "https://www.worldpop.org/",
+        "license": "CC BY 4.0"
       }
     ],
     "country": "GEO",
@@ -568,12 +574,10 @@
     "capital": {
       "status": "not_available"
     },
-    "largest_settlement": {
-      "status": "not_available"
-    },
+    "largest_settlement": "Gali",
     "population": {
       "status": "not_available",
-      "note": "The de facto authorities redrew the districts here after the war: in 1995 they formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and they count more of Gal's former villages in Ochamchira district. The outlines drawn as Ochamchire and Gali follow the districts as they were before only roughly, and neither holds a district the authorities count: villages of the Ochamchira and Tkvarcheli districts lie in this one, and so does the centre of the town of Ochamchira (5,154 people on 1 January 2026), on the line with Ochamchire's, while Gal's villages along the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; at least 12,066 of the district's 30,356 people at the 2011 census) lie outside it, in the outline drawn as Zugdidi. Ochamchira, Tkvarcheli and Gal districts together had 72,882 people on 1 January 2026 (26,073, 16,458 and 30,351); no figure is written for either outline.",
+      "note": "The de facto authorities redrew the districts here after the war: in 1995 they formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and they count more of Gal's former villages in Ochamchira district. The outlines drawn as Ochamchire and Gali follow the districts as they were before only roughly, and neither holds a district the authorities count: villages of the Ochamchira and Tkvarcheli districts lie in this one, and so does the centre of the town of Ochamchira (5,154 people on 1 January 2026), which the line between this outline and Ochamchire's runs through, while Gal's villages along the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; at least 12,066 of the district's 30,356 people at the 2011 census) lie outside it, in the outline drawn as Zugdidi. Ochamchira, Tkvarcheli and Gal districts together had 72,882 people on 1 January 2026 (26,073, 16,458 and 30,351); no figure is written for either outline.",
       "not_this_ground": true
     },
     "median_age": {
@@ -598,10 +602,41 @@
       "note": "Not written: the outline drawn here holds parts of several of the districts the de facto authorities count by, and none of them whole.",
       "not_this_ground": true
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "largest_settlement",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "population note",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.7",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "population note",
+        "name": "Ethno-Caucasus (ethno-kavkaz.narod.ru), the de facto authorities' 2011 census of Gal district by village administration",
+        "url": "http://ethno-kavkaz.narod.ru/gal11.html",
+        "license": "Transcription of the census; terms of reuse not stated"
+      }
+    ],
     "country": "GEO",
     "match_by": "shape_id",
-    "shape_id": "92138335B69927081755421"
+    "shape_id": "92138335B69927081755421",
+    "largest_settlement_population": {
+      "value": 7493,
+      "year": 2026,
+      "source": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11"
+    },
+    "largest_settlement_note": "The de facto authorities' estimate of the people present in the town of Gal on 1 January 2026 (their statistics committee's yearbook, table 1.11)."
   },
   {
     "id": "GEO-ABK-92138335B11061478695929",
@@ -611,9 +646,7 @@
     "capital": {
       "status": "not_available"
     },
-    "largest_settlement": {
-      "status": "not_available"
-    },
+    "largest_settlement": "Gulripshi",
     "population": {
       "status": "not_available",
       "note": "The de facto authorities' Gulripsh district had 17,489 people on 1 January 2026. This outline holds nearly all of it, but its line with Sokhumi runs through the south-east of the city of Sukhum, which they count apart: by WorldPop's 2020 population grid, about a quarter of the people inside this outline live in that part of the city and its suburbs. Several of the district's villages also lie in the outline drawn as Ochamchire. The district's figure is not this outline's, so none is written here.",
@@ -641,10 +674,35 @@
       "note": "Not written: the outline drawn here holds parts of several of the districts the de facto authorities count by, and none of them whole.",
       "not_this_ground": true
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "largest_settlement",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "population note",
+        "name": "WorldPop, global population counts at 100 m, 2020",
+        "url": "https://www.worldpop.org/",
+        "license": "CC BY 4.0"
+      }
+    ],
     "country": "GEO",
     "match_by": "shape_id",
-    "shape_id": "92138335B11061478695929"
+    "shape_id": "92138335B11061478695929",
+    "largest_settlement_population": {
+      "value": 3704,
+      "year": 2026,
+      "source": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11"
+    },
+    "largest_settlement_note": "The de facto authorities' estimate of the people present in the urban settlement of Gulripsh on 1 January 2026 (their statistics committee's yearbook, table 1.11). A strip of the city of Sukhum also lies in this outline; the city's centre is in the one drawn as Sokhumi."
   },
   {
     "id": "GEO-ABK-92138335B91265178482349",
@@ -654,9 +712,7 @@
     "capital": {
       "status": "not_available"
     },
-    "largest_settlement": {
-      "status": "not_available"
-    },
+    "largest_settlement": "Tkvarcheli",
     "population": {
       "status": "not_available",
       "note": "The de facto authorities redrew the districts here after the war: in 1995 they formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and they count more of Gal's former villages in Ochamchira district. The outlines drawn as Ochamchire and Gali follow the districts as they were before only roughly, and neither holds a district the authorities count: the town of Ochamchira itself (5,154 people on 1 January 2026) sits on the line between the two, its centre just inside the outline drawn as Gali; the town of Tkvarcheli lies in this one and many of its district's villages in Gali's, and several villages of Gulripsh district lie in this one too. Ochamchira, Tkvarcheli and Gal districts together had 72,882 people on 1 January 2026 (26,073, 16,458 and 30,351); no figure is written for either outline.",
@@ -684,9 +740,28 @@
       "note": "Not written: the outline drawn here holds parts of several of the districts the de facto authorities count by, and none of them whole.",
       "not_this_ground": true
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "largest_settlement",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      }
+    ],
     "country": "GEO",
     "match_by": "shape_id",
-    "shape_id": "92138335B91265178482349"
+    "shape_id": "92138335B91265178482349",
+    "largest_settlement_population": {
+      "value": 5024,
+      "year": 2026,
+      "source": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11"
+    },
+    "largest_settlement_note": "The de facto authorities' estimate of the people present in the town of Tkvarcheli on 1 January 2026 (their statistics committee's yearbook, table 1.11). The town of Ochamchira (5,154), which the line with Gali runs through, has its centre in the outline drawn as Gali."
   }
 ]
