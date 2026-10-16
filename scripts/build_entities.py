@@ -1284,15 +1284,16 @@ IRAN_LANGUAGE = (
     "and Kermanshah is empty because its module reaches five of its fourteen "
     "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
-    "THA": "The statistical office's own tables could not be read from any of "
-           "its websites. Religion by province is the 2000 census, read from its "
+    "THA": "The statistical office's own tables have not been obtained from its "
+           "websites. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
-           "made public once, for 2000, in a file that is not a composition. "
+           "made public once, for 2000, in a table whose shares are not parts of "
+           "one whole. "
            "Ethnicity is not asked: the provinces carry the 2000 census's count "
-           "of Thai and foreign nationals, and where that is missing a modelled "
+           "of Thai and foreign nationals, which is shown in place of a modelled "
            "estimate -- the 2000 census's home-language minorities as printed, "
            "the rest assigned to the region's Tai group as the Ethnolinguistic "
-           "Maps of Thailand name it, labelled as a model on every record.",
+           "Maps of Thailand name it.",
     # Only language is left for this to explain. The 2016 census's religion
     # by province now comes from iran_census.json, which reads the Statistical
     # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir
@@ -1387,9 +1388,9 @@ SHAPE_GAPS: dict[str, dict[str, str]] = {
     # census row can be matched to them.
     "SLV": {
         "Null": (
-            "The boundary file draws this polygon with no name (\"Null\"), so "
-            "no census row can be matched to it; which district's ground it "
-            "is, the file does not say."),
+            "The map draws this polygon with no name (\"Null\") and does not "
+            "say which district's ground it is, so no census count can be put "
+            "on it."),
     },
     # Ecuador's two zonas no delimitadas the boundary file draws: ground whose
     # province was unsettled when it was drawn. INEC's 2022 table is by canton
@@ -5247,8 +5248,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         + (" " + ", ".join(sorted(c.get("name", c.get("id", "?"))
                                   for c in apart))
            + (f" counts {apart[0].get(f'{field}_basis')} rather than what the "
-              f"others count, so it is not added in; its own record carries "
-              f"that figure." if len(apart) == 1 else
+              f"others count, so it is not added in; its own figure is shown "
+              f"on it." if len(apart) == 1 else
               " count something the others do not, so they are not added in.")
            if apart else "")
         + (f" Dated {dated} because that is when all but"
@@ -6906,6 +6907,172 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     # item (see whole_items), as fetch_factbook now cuts one.
     (re.compile(r'(?<=which reads: ")([^"]*?)\.\.\.(?=")'),
      lambda m: whole_items(m.group(1))),
+    # Round 7's review: notes that said how the map was put together --
+    # what was read, fetched, joined or bound, a file's name, a database's words --
+    # said as what is or is not published, and sentences a rewrite left
+    # broken. Each changes only the texts it names (tested on every note).
+    # binding-fetch: KWT binding wording: '(N% of these, more than the 10% a binding allows)' in population/sex_ratio/ethnicity .note
+    (re.compile(r"more than the (\d+%) a binding allows\)"), r"more than the \1 a polygon's count may leave out)"),
+    # binding-fetch: LCA binding wording and REDATAM base name: 'The 2010 census's REDATAM base (PHC2010C) holds no settlement of this name in the district, or holds it tw
+    (re.compile(r"The 2010 census's REDATAM base \(PHC2010C\) holds no settlement of this name in the district, or holds it twice, so nothing is bound to this outline\."), r"The 2010 census lists no settlement of this name in this district, or lists two, so no census figure is shown for this outline."),
+    # binding-fetch: KAZ Zhualy (9891525B50399930684689): 'No unit the Bureau publishes is this polygon, so nothing is bound to it.'
+    (re.compile(r"(No unit the Bureau publishes is this polygon), so nothing is bound to it\."), r"\1, so no figure is shown for it."),
+    # binding-fetch: CYP Kyrenia (96831152B33829437974548): 'its quarters are bound to 31 of this district's 46 community polygons'
+    (re.compile(r"\bits quarters are bound to (\d+ of this district's)\b"), r"its quarters' counts are put on \1"),
+    # binding-fetch: PHL NCR districts language_note (4): '; it is bound to the polygon by that code.'
+    (re.compile(r"(, which is its PSGC code); it is bound to the polygon by that code\."), r"\1."),
+    # binding-fetch: SAU fetch-failure wording: 'No table ... could be read: the census portal (portal.saudicensus.sa) could not be reached, ... drawn by script, ... did n
+    (re.compile(r"\b([Nn]o table of (?:it|the 2022 census) by (?:governorate|region)) could be read(?:: the census portal \(portal\.saudicensus\.sa\) could not be reached, GASTAT's census page on stats\.gov\.sa \(statistics\?index=119025\) links no table file, its content being drawn by script, the Saudi open-data portal \(open\.data\.gov\.sa\) did not answer, and|;)(?= OCHA's| the governorates)"), r"\1 has been obtained;"),
+    # binding-fetch: ISR language notes (21): '...could not be read (their content is drawn by script, and the Internet Archive's index of the 2008 census site did not ans
+    (re.compile(r"; and the CBS's census and social-survey pages could not be read \(their content is drawn by script, and the Internet Archive's index of the 2008 census site did not answer\)\."), r"; and no table has been obtained from the CBS's census and social-survey pages."),
+    # binding-fetch: RUS median_age/language/ethnicity notes (2,303 records): 'has not been read for this map ... on their own sites, which could not be reached, and the I
+    (re.compile(r"\b(The 2020 census's (?:age|native language|nationality) by municipal unit) has not been read for this map\.( Rosstat's federal volumes publish it by subject only \(shown one level up\); below that the regional statistics offices publish it on their own sites), which could not be reached, and the Internet Archive holds copies of only about \d+ of their \d+ sites\."), r"\1 has not been obtained for this map.\2."),
+    # binding-fetch: THA religion/language notes: 'the National Statistical Office's later census tables could not be read from its websites' (same family as the finding's
+    (re.compile(r"\b([Tt]he National Statistical Office's later census tables) could not be read from its websites\."), r"\1 have not been obtained."),
+    # binding-fetch: THA median_age_note (1,003): '-- could not be retrieved: its statistics host does not resolve, and the government's open-data portal and the National 
+    (re.compile(r"\b(population register --) could not be retrieved: its statistics host does not resolve, and the government's open-data portal and the National Statistical Office's census websites could not be read\."), r"\1 has not been obtained."),
+    # binding-fetch: THA Ban Kha (78962969B84740319728586) and Suan Phueng (78962969B47422412766823) median_age.note/sex_ratio.note: 'the only age-and-sex table this map c
+    (re.compile(r"\bis the only age-and-sex table this map could read here(, .+?\. )Thailand's own figures could not be retrieved: the Department of Provincial Administration's register statistics \(stat\.bora\.dopa\.go\.th\) do not resolve, and the National Statistical Office's and the government's open-data websites could not be read\."), r"is the only age-and-sex table obtained for this district\1Thailand's own figures have not been obtained."),
+    # binding-fetch: IDN ethnicity.note (513): 'no table of it by regency could be retrieved: BPS's own websites could not be read, and its 2010 census site (sp2010.bps.go
+    (re.compile(r"\b(no table of it by regency) could be retrieved: BPS's own websites could not be read, and its 2010 census site \(sp2010\.bps\.go\.id\) serves one identical page at every address\."), r"\1 has been obtained."),
+    # binding-fetch: IDN language.note (344): 'No count of this regency's languages could be retrieved. ... for some units only; BPS's own websites could not be read; and 
+    (re.compile(r"\b(No count of this (?:regency|province)'s languages) could be retrieved\.( The 2010 census's household language reaches the map through CLEAR Global's tabulation of its IPUMS sample, for some units only); BPS's own websites could not be read;"), r"\1 has been obtained.\2;"),
+    # binding-fetch: IDN religion.note (40): 'No table of this regency's religion could be retrieved. BPS's own websites could not be read, and neither...'
+    (re.compile(r"\b(No table of this regency's religion) could be retrieved\. BPS's own websites could not be read, and neither"), r"\1 has been obtained from BPS, and neither"),
+    # binding-fetch: EXTRA, same family as [None.8]: CHN 'X's own census yearbook has not been read.' (COUNTY_UNREAD)
+    (re.compile(r"\b(own census yearbook) has not been read\."), r"\1 has not been obtained."),
+    # binding-fetch: EXTRA, same family: CHN 'X's own census yearbook has been read, but none of the counties it counts could be shown to be this polygon.' (COUNTY_UNMATCH
+    (re.compile(r"\b(own census yearbook) has been read, but none of the counties it counts could be shown to be this polygon\."), r"\1 counts its counties, but none of them could be shown to be this polygon."),
+    # binding-fetch: EXTRA, same family: CHN Inner Mongolia median_age.note (27): 'but that workbook could not be read: the bureau's server refused it and the Internet Arc
+    (re.compile(r"(, but that) workbook could not be read: (?:the bureau's server (?:refused it|did not answer)|the Internet Archive (?:holds no capture of it|did not serve its capture)|it could not be reached)(?: and the Internet Archive (?:holds no capture of it|did not serve its capture))?\."), r"\1 table has not been obtained."),
+    # binding-fetch: EXTRA, same family: TLS religion/language .note (130): 'INETL's REDATAM dashboard, which tabulates the microdata to any geography, is served from a ba
+    (re.compile(r"\b(INETL's REDATAM dashboard), which (tabulates the microdata to any geography), is served from a bare address that did not answer\."), r"\1 \2, but no table has been obtained from it."),
+    # binding-fetch: EXTRA, same family: ARE Ajman/Fujairah/Ras al-Khaimah/Umm al-Quwain median_age/sex_ratio .note: 'could be read for this map: the federal statistics ce
+    (re.compile(r"\b(No table of [^.:;]+?'s population by age and sex) could be read for this map: the federal statistics centre's site \((fcsc\.gov\.ae)\) refused the requests made for it, and the UAE's open-data portal \((bayanat\.ae)\) returned no dataset for a search for population\."), r"\1 has been obtained from the federal statistics centre (\2) or the UAE's open-data portal (\3)."),
+    # binding-fetch: EXTRA, same family: ARE Dubai median_age/sex_ratio .note: '...but its site (dsc.gov.ae) refused the requests made for it, and no such table was found 
+    (re.compile(r"\b(No table of Dubai's population by age and sex) could be read for this map\. The (Dubai Statistics Center publishes the emirate's population by sex and age group), but its site \((dsc\.gov\.ae)\) refused the requests made for it, and no such table was found among the Internet Archive's copies of the Center's reports\."), r"\1 has been obtained, although the \2 on its site (\3)."),
+    # binding-fetch: EXTRA, same family: ARE Sharjah median_age/sex_ratio .note: '...could not be reached (dscd.sharjah.ae), and the federal statistics centre's site (fcsc
+    (re.compile(r"\b(No table of Sharjah's population by age and sex) could be read for this map: (the emirate's Department of Statistics and Community Development), (which took its \d{4} census), could not be reached \((dscd\.sharjah\.ae)\), and the federal statistics centre's site \((fcsc\.gov\.ae)\) refused the requests made for it\."), r"\1 has been obtained from \2 (\4), \3, or from the federal statistics centre (\5)."),
+    # binding-fetch: EXTRA, same family: MNG 'No capture of that book could be read from the Internet Archive, and 1212.mn, which served it, no longer answers.'
+    (re.compile(r"\b(The 2020 census published religion for this aimag) (in the aimag's own results book)\. No capture of that book could be read from the Internet Archive, and 1212\.mn, which served it, no longer answers\."), r"\1, and anything it published by soum, \2. That book has not been obtained."),
+    # binding-fetch: EXTRA, same family: MNG soum ethnicity.note (95): '...prints no table of ethnic group by soum that could be read.'
+    (re.compile(r"; (this aimag's own results book, which is where the census published anything by soum), prints no table of ethnic group by soum that could be read\."), r"; no table of ethnic group by soum has been found in \1."),
+    # binding-fetch: EXTRA, same family: MNG religion.note (3): 'This aimag's 2020 census results book was read, and no table ...'
+    (re.compile(r"\b(This aimag's 2020 census results book) was read, and (no table of religious adherence in it could be resolved into a composition\.)"), r"\1 has been obtained, but \2"),
+    # binding-fetch: EXTRA, same family: KNA (140): 'Saint Kitts and Nevis publishes nothing below the country from its 2011 census that could be read:'
+    (re.compile(r"\bSaint Kitts and Nevis publishes nothing below the country from its (\d{4}) census that could be read:"), r"No figure below the country from Saint Kitts and Nevis's \1 census has been found:"),
+    # binding-fetch: NEW (missed variant of [None.8], fetch failure): UZB religion/language/ethnicity .note on 198 admin2 records: '...; the government open-data portal da
+    (re.compile(r"; the government open-data portal data\.egov\.uz refused the connection\."), r"; no table has been obtained from the government open-data portal (data.egov.uz)."),
+    # binding-fetch: NEW (missed variant of [None.8], fetch failure plus agent wording): PAK Gilgit-Baltistan districts' language.note (10): '... because both sit behind h
+    (re.compile(r"\bTwo routes are known and not taken( -- the MICS household microdata, which would cross language against district directly, and the Sociolinguistic Survey of Northern Pakistan, which mapped these valleys village by village --) because both sit behind hosts that deliberately refuse this kind of client, and this project does not disguise itself as a browser to get round that\."), r"Two further routes are known\1 but neither has been obtained."),
+    # binding-fetch: NEW (missed variant of [None.8], fetch failure): ESP La Rioja religion_note (admin1 and admin2): 'Read from the CIS's PDF marginals ...: the study's p
+    (re.compile(r"\bRead from (the CIS's PDF marginals for [^.:]+? as its former website published them, captured by the Internet Archive on [^.:]+): the study's page on the CIS's current site links them to pages that no longer answer\."), r"Taken from \1: the links to them on the study's page on the CIS's current site no longer work."),
+    # binding-fetch: NEW (missed variant of [None.8], 'not been read for this map'): CHN language.note (2,399): '... published nowhere as data; this map has not read them,
+    (re.compile(r"\bthis map has not read them\b"), r"they have not been obtained for this map"),
+    # binding-fetch: NEW (missed variant of [None.8], 'has been read'): EGY language.note and ethnicity.note (748): '... and no census table of language/ethnicity by gover
+    (re.compile(r"\b(no census table of (?:language|ethnicity) by governorate or district) has been read\."), r"\1 has been found."),
+    # binding-fetch: NEW (missed variant, 'has been read'): MAR Tarfaya Province population and field notes: '... and no figure for the part north of it alone has been rea
+    (re.compile(r"\b(no figure for the part north of it alone) has been read\b"), r"\1 has been found"),
+    # binding-fetch: NEW (missed variant, 'has been read'): BHS North Abaco population.note: 'This polygon is the smaller local-government district, for which no count has
+    (re.compile(r"\bfor which no count has been read\b"), r"for which no count has been found"),
+    # binding-fetch: NEW (missed variant, 'has been read'): THA Bueng Kan Province religion.note: 'No religion figure for Bueng Kan Province on its own has been read. The 
+    (re.compile(r"\b(No \w+ figure for [^.]+? on its own) has been read\. The one read for\b"), r"\1 has been found. The one given for"),
+    # binding-fetch: NEW (missed variant, 'has been read'): DJI Djibouti population.note: '... so the city's figure is not this polygon's, and no figure has been read for 
+    (re.compile(r"\bno figure has been read for that ground\b"), r"no figure has been found for that ground"),
+    # binding-fetch: NEW (missed variant, 'has been read'): KHM Baray language.note: 'No source has been read for Baray. Kampong Thom's language figure and every other dis
+    (re.compile(r"\bNo source has been read for ([^.]+?)\."), r"No source has been found for \1."),
+    # binding-fetch: NEW (missed variant, 'was read'): IRN language.note (113): 'Nothing was read for <unit> itself. This is the population-weighted sum of the language es
+    (re.compile(r"\bNothing was read for ([^.]+?) itself\. (?=This is the population-weighted sum of the language estimates)"), r"No language figure for \1 itself has been found. "),
+    # binding-fetch: NEW (missed variant, 'read' as 'obtained'): BWA Gaborone population.note: '... so the city's count is not this polygon's, and no count read describes 
+    (re.compile(r"\bno count read describes this ground\b"), r"no count for this ground has been found"),
+    # binding-fetch: NEW (missed variant, 'read' as 'obtained'): GNQ Riaba population.note: 'This polygon is the district of Riaba, 379 km² of southern Bioko, and no figur
+    (re.compile(r"\bno figure read describes it\b"), r"no figure for it has been found"),
+    # binding-fetch: NEW (missed variant, 'read' as 'obtained'): SDN Abyei PCA population and language notes (admin1 and admin2): 'No statistics read for either country co
+    (re.compile(r"\bNo statistics read for either country count it\b"), r"None of the statistics found for either country counts it"),
+    # geometry: CHN Macau fragment (admin2 17275852B34966799109471): 'in the map' and dangling 'the file draws'
+    (re.compile(r"\b(fragment of southern Coloane) in the map(, about [^;]*?, and the only second-level polygon) the file draws\b"), r"\1\2 the map draws"),
+    # geometry: SLV 'Null' polygons field notes: 'so no census row is matched to it'
+    (re.compile(r"\b(The map draws this polygon with no name), so no census row is matched to it\."), r"\1."),
+    # geometry: JPN sliver (admin2 22064153B20100015994007) 'a sliver of the map', plus the same wording on SVN Maribor sliver (79292919B38849654156102)
+    (re.compile(r"\b([Aa]) sliver of the map\b(?!')"), r"\1 sliver on the map"),
+    # geometry: IRQ 'redrawn since the map's' (no noun after the possessive)
+    (re.compile(r"\bsince the map's(?=[.,:;])"), r"since the map was drawn"),
+    # geometry: UKR 100% type (Zmiiv 74538382B19382473130603, Staryi Sambir 74538382B78037249212092): 'cannot be split between the two' gives no reason, and 'people a
+    (re.compile(r"\b100% of the area the 2001 census counts as ([^;]+?) lies in this polygon, and that area's people are drawn by the map outside the polygon of the raion it is the seat of \([^()]*\); the census's figures cannot be split between the two\."), r"100% of the area the 2001 census counts as \1 lies in this polygon, though that city is the seat of another raion; the census counts the city apart, so this raion's figures would not describe the polygon."),
+    # geometry: UKR Khrystynivka type (Khrystynivka 74538382B17175920641899, Uman 74538382B32197013600938, Vitovka 74538382B2161330582129, Mykolaiv 74538382B842481208
+    (re.compile(r"\b(?!100%)(\d+% of the area the 2001 census counts as [^;]+? lies in this polygon, )and that area's people are drawn by the map outside the polygon of the raion it is the seat of \("), r"\1and the map draws most of that city outside the polygon of the raion it is the seat of ("),
+    # geometry: UKR variant beyond the finding's list: Makiivka 'that area's people are drawn in no polygon by a majority of its area' (Amvrosiivka 74538382B609642378
+    (re.compile(r"\band that area's people are drawn in no polygon by a majority of its area; the census's figures cannot be split between the two\."), r"and no polygon holds a majority of that area; the census's figures for it cannot be split between the polygons it lies in."),
+    # geometry: UKR 'only 0%' (Brovary 74538382B7147656565480, Chuhuiv 74538382B29130308321511, Voznesensk 74538382B59692398614753, Kropyvnytskyi 74538382B50656102387
+    (re.compile(r"\bonly 0% of\b"), r"less than 1% of"),
+    # geometry: PRK Nampo (admin1 3916807B42842403076429) population_note: 'the six South Phyongan rows the map draws inside it'
+    (re.compile(r"\bSouth Phyongan rows the map draws\b"), r"South Phyongan counties the map draws"),
+    # geometry: OMN WILAYAT AL MUDAYBI (60546857B87143917250519) and WILAYAT NIZWA (60546857B8832404475688): 'made since the map was drawn from this wilayat's ground'
+    (re.compile(r"\b(made) since the map was drawn (from this wilayat's ground)"), r"\1 \2 since the map was drawn"),
+    # geometry: UKR 'The polygon is X. The polygon is X by its name; ...' repeated sentence (207 records / 1,035 texts)
+    (re.compile(r"\bThe polygon is ([^.;]+?)\. (The polygon is \1 by its name;)"), r"\2"),
+    # geometry: NEW: JPN sliver (admin2 22064153B20100015994007): 'with no name in the map' in the same sentence item 3 rewrites (a variant of None.6's 'in the map')
+    (re.compile(r"\bThis ([\d.]+ km2) polygon, with no name in the map, "), r"This unnamed \1 polygon "),
+    # geometry: NEW (optional): UKR 16 records / 79 texts: '... and that area's people are placed in no polygon: the map's name for it and its outline disagree; the c
+    (re.compile(r"\band that area's people are placed in no polygon: the map's name for it and its outline disagree; the census's figures cannot be split between the two\."), r"and that raion's figures are shown on no polygon, as the map's name for it and its outline disagree; the census's figures for it cannot be split between the polygons it lies in."),
+    # database-words: [None.2] BTN gewogs: 'The figure here is the dzongkhag's own' contradicts 'This is the gewog's own count'
+    (re.compile(r"The figure here is the dzongkhag's own, which its gewogs and towns add up to exactly\. (?=This is the gewog's own count\.)"), r""),
+    # database-words: [None.2] BTN: 'the ethnicity field carries citizenship'
+    (re.compile(r"\bthe ethnicity field carries citizenship, the one count of identity the census publishes\b"), r"citizenship, the one count of identity the census publishes, is shown under ethnicity"),
+    # database-words: [None.2] BTN gewogs: 'and named on the dzongkhag's record'
+    (re.compile(r"\band named on the dzongkhag's record\."), r"and named in the dzongkhag's population note."),
+    # database-words: [None.2] BTN dzongkhags: 'less than this row'
+    (re.compile(r"\b(the gewogs below come to that much less than) this row\."), r"\1 this figure."),
+    # database-words: [None.2]/[None.11] BTN gewogs: 'The polygon was identified by this gewog's own reference point ...'
+    (re.compile(r"The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling\."), r"The polygon is shown as this gewog because the gewog's own reference point falls inside it and Wikidata places the gewog in this dzongkhag, not because of either spelling."),
+    # database-words: [None.2]/[None.11] BTN gewogs: 'the polygon was identified by elimination ... is matched'
+    (re.compile(r"\bso the polygon was identified by elimination: every other gewog of ([^.:]+?) is matched,"), r"so the polygon is shown as this gewog by elimination: every other gewog of \1 has its own polygon,"),
+    # database-words: [None.11] NPL: 'the district was identified instead by which of the census's reference points fall inside the polygon'
+    (re.compile(r"\bso the district was identified instead by which of the census's reference points fall inside the polygon\b"), r"so the district shown on it is the one indicated instead by which of the census's reference points fall inside the polygon"),
+    # database-words: [None.11] SAU 'citizenship may stand on this field'
+    (re.compile(r"\bcitizenship may stand on this field\b"), r"citizenship could be shown in its place"),
+    # database-words: [None.11] PAK 'which the map carries on this field' (+ LAO 'which the map carries on the ethnicity field')
+    (re.compile(r"\bwhich the map carries on (?:this|the ethnicity) field\b"), r"which the map shows under ethnicity"),
+    # database-words: [None.11] PAK 'it is not republished under this field, and the language field beside this one'
+    (re.compile(r"\bit is not republished under this field, and the language field beside this one says\b"), r"it is not shown under ethnicity, and the note under language says"),
+    # database-words: [None.11]/[None.2] variant: 'It is shown on this field because ...' (BTN, IND, THA, TLS ethnicity notes)
+    (re.compile(r"\bshown on this field because\b"), r"shown under ethnicity because"),
+    # database-words: [None.2]/[None.11] variant: 'is on the ethnicity field' (BTN sex_ratio_note, HND and PAN language notes)
+    (re.compile(r"\bis on the ethnicity field\b"), r"is shown under ethnicity"),
+    # database-words: [None.11] variant: 'are on the language field' (TLS posts and admin0 TLS, PAK)
+    (re.compile(r"\bare on the language field\b"), r"belong under language"),
+    # database-words: [None.2]/[None.11] variant: admin0 'shows (it) on the ethnicity field under its basis' (BTN, MDV)
+    (re.compile(r"\bshows (it )?on the ethnicity field under its basis\b"), r"shows \1under ethnicity, by its own name"),
+    # database-words: [None.11] variant: PAK admin0 'is shown on the ethnicity field of the provinces and districts under its basis'
+    (re.compile(r"\bis shown on the ethnicity field of the provinces and districts under its basis\b"), r"is shown under ethnicity for the provinces and districts, by its own name"),
+    # database-words: [None.11] variant: XKX 'publishes this field for'
+    (re.compile(r"\bpublishes this field for\b"), r"publishes these figures for"),
+    # database-words: [None.11] variant: MMR 'unless a field says otherwise'
+    (re.compile(r"\bunless a field says otherwise\b"), r"unless stated otherwise"),
+    # database-words: [None.11] USA 'answers null for every county'
+    (re.compile(r" and answers null for every county\b"), r", with no figure for any county"),
+    # database-words: [None.11] variant 'record': IND 'and this record covers only what was left of it'
+    (re.compile(r"\band this record covers only what was left of it\b"), r"and this unit covers only what was left of it"),
+    # database-words: [None.11] variant 'record': KIR 'for the reason each island's record gives'
+    (re.compile(r"\bfor the reason each island's record gives\b"), r"for the reason each island's note gives"),
+    # database-words: [None.11] variant 'record': LVA 'as for the city's own municipal record'
+    (re.compile(r"\bas for the city's own municipal record\b"), r"as for the city at the municipality level"),
+    # database-words: [None.11] variant: PAK Gilgit-Baltistan 'which is what language_basis records and'
+    (re.compile(r"\bwhich is what language_basis records and what keeps\b"), r"which is what keeps"),
+    # database-words: [None.11] variant 'row': PAK Gilgit-Baltistan 'This row is the ten districts' own figures'
+    (re.compile(r"\bThis row is the ten districts' own figures weighted\b"), r"The composition shown here is the ten districts' own figures weighted"),
+    # database-words: [None.2] variant 'row': ARM Yerevan 'this is the city's own row'
+    (re.compile(r"\bthis is the city's own row\b"), r"these are the city's own figures"),
+    # database-words: NEW variant 'field': KHM ethnicity note 'which the map carries on the language field'
+    (re.compile(r", which the map carries on the language field\."), r"."),
+    # database-words: NEW variant 'field': CHN language.note 'so the field is not available rather than never collected'
+    (re.compile(r", so the field is not available rather than never collected\."), r", so language is shown as not yet available rather than as never collected."),
+    # database-words: NEW variant 'row': PAK Chitral language_note 'Khyber Pakhtunkhwa's own row above keeps the Other unbroken'
+    (re.compile(r"\bKhyber Pakhtunkhwa's own row above keeps\b"), r"Khyber Pakhtunkhwa's own figures keep"),
+    # database-words: NEW variant 'field': IDN Long Form notes 'the Bureau's dictionary dates the field to the census day'
+    (re.compile(r"\bthe Bureau's dictionary dates the field to\b"), r"the Bureau's data dictionary dates these figures to"),
+    # database-words: NEW data-model wording in the [None.2] BTN population_note: 'religion and language are declared rather than left empty'
+    (re.compile(r"\breligion and language are declared rather than left empty\b"), r"religion and language are shown as not collected rather than left empty"),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
@@ -8679,7 +8846,7 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         pooled[field] = rows
         pooled[f"{field}_note"] = (
             shared_sentences([p.get(f"{field}_note") for p in parts])
-            + f"Pooled from the rows published for {names}, weighted by {basis}; "
+            + f"Pooled from the figures published for {names}, weighted by {basis}; "
             f"the map draws them as one unit.")
         for satellite in ("year", "basis"):
             values = {p.get(f"{field}_{satellite}") for p in parts}

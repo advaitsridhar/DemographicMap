@@ -2651,7 +2651,7 @@ class ADivisionCountingSomethingElse(unittest.TestCase):
         note = self.roll(self.parent(), self.kids())["religion_note"]
         self.assertIn("Odd counts sectarian affiliation rather than what the "
                       "others count", note)
-        self.assertIn("its own record carries that figure", note)
+        self.assertIn("its own figure is shown on it", note)
 
     def test_which_basis_is_usual_does_not_depend_on_the_hash_seed(self):
         # CI and a local run disagreed about which of two equally-sized
@@ -5768,7 +5768,7 @@ class DerivedValues(unittest.TestCase):
                          {"A": 50.0, "B": 50.0})
         self.assertEqual(pooled["population"]["value"], 400)
         self.assertEqual(pooled["population"]["year"], 2020)
-        self.assertIn("Pooled from the rows published for Kavango East and Kavango West",
+        self.assertIn("Pooled from the figures published for Kavango East and Kavango West",
                       pooled["religion_note"])
         self.assertEqual(len(pooled["sources"]), 1)
 

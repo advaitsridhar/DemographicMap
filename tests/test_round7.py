@@ -814,7 +814,7 @@ class TheMapNotTheFile(unittest.TestCase):
         self.assertEqual(entity["population"]["note"], "The map draws it coarsely.")
         self.assertEqual(entity["population_note"],
                          "Includes Tolhuin, created since the map was drawn, on boundaries "
-                         "redrawn since the map's.")
+                         "redrawn since the map was drawn.")
         self.assertEqual(entity["sources"][0]["note"], "the map")
         self.assertEqual(be.plain_wording("geoBoundaries draws it"), "geoBoundaries draws it")
 
