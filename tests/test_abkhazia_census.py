@@ -513,7 +513,9 @@ class Records(unittest.TestCase):
             for field in ("population", "sex_ratio", "ethnicity"):
                 self.assertEqual(r[field]["status"], "not_available", (name, field))
                 self.assertTrue(r[field]["not_this_ground"], (name, field))
-            self.assertEqual(r["sources"], [])
+            # The publications the notes quote are cited for the notes.
+            self.assertIn(("population note", a.URL),
+                          [(c["field"], c.get("url")) for c in r["sources"]])
         self.assertIn("17,489", self.rows["Gulripshi"]["population"]["note"])
         self.assertIn("a quarter", self.rows["Gulripshi"]["population"]["note"])
         for name in ("Ochamchire", "Gali"):
@@ -533,6 +535,8 @@ class Records(unittest.TestCase):
         self.assertIn("its centre just inside the outline drawn as Gali",
                       self.rows["Ochamchire"]["population"]["note"])
         self.assertIn("the centre of the town of Ochamchira", self.rows["Gali"]["population"]["note"])
+        self.assertIn("which the line between this outline and Ochamchire's runs through",
+                      self.rows["Gali"]["population"]["note"])
 
     def test_each_unit_names_its_largest_town(self):
         expect = {"Abkhazia": ("Sokhumi", 65180), "Sokhumi": ("Sokhumi", 65180),
@@ -546,9 +550,22 @@ class Records(unittest.TestCase):
             self.assertIn("largest_settlement", [s["field"] for s in r["sources"]])
         # Not New Athos railway station's 26,636, which are Gagra's people.
         self.assertIn("town of Gudauta", self.rows["Gudauta"]["largest_settlement_note"])
-        # The outlines that are no district name none; GeoNames is left to.
-        for name in ("Gulripshi", "Ochamchire", "Gali"):
-            self.assertEqual(self.rows[name]["largest_settlement"]["status"], "not_available")
+        # The outlines that are no district name the largest town whose centre
+        # is in them: Ochamchira's is in Gali's, so Ochamchire's is Tkvarcheli.
+        expect = {"Gulripshi": ("Gulripshi", 3704), "Ochamchire": ("Tkvarcheli", 5024),
+                  "Gali": ("Gali", 7493)}
+        for name, (town, people) in expect.items():
+            r = self.rows[name]
+            self.assertEqual(r["largest_settlement"], town, name)
+            self.assertEqual((r["largest_settlement_population"]["value"],
+                              r["largest_settlement_population"]["year"]), (people, 2026), name)
+        self.assertIn("The town of Ochamchira (5,154), which the line with Gali runs through",
+                      self.rows["Ochamchire"]["largest_settlement_note"])
+        self.assertIn("A strip of the city of Sukhum",
+                      self.rows["Gulripshi"]["largest_settlement_note"])
+        self.assertIn(a.WORLDPOP, self.rows["Gulripshi"]["sources"])
+        self.assertIn(a.WORLDPOP, self.rows["Sokhumi"]["sources"])
+        self.assertIn(a.VILLAGE_ROWS, self.rows["Gali"]["sources"])
 
     def test_a_village_that_may_outnumber_the_town_stops_the_run(self):
         figures = a.read(YEARBOOK)
@@ -561,6 +578,18 @@ class Records(unittest.TestCase):
                 a.largest_town(("Гагрский район",), figures)
         # The city outnumbers every district whole, so the republic needs none.
         self.assertEqual(a.largest_town((a.WHOLE,), figures), ("г. Сухум", 65180))
+
+    def test_an_outline_s_town_must_outrank_its_villages_and_towns(self):
+        figures = a.read(YEARBOOK)
+        self.assertEqual(a.outline_town("Ochamchire", figures), ("г. Ткуарчал", 5024))
+        with mock.patch.dict(a.VILLAGES_2011, {"Ткуарчалский район": 5100}):
+            with self.assertRaises(SystemExit):
+                a.outline_town("Ochamchire", figures)
+        with mock.patch.dict(a.OUTLINE_TOWNS, {"Gali": ("г. Очамчыра", ("Галский район",),
+                                                        ("г. Гал",))}):
+            with self.assertRaises(SystemExit) as stop:
+                a.outline_town("Gali", figures)
+        self.assertIn("is not smaller than", str(stop.exception))
 
     def test_a_district_s_towns_make_its_urban_row(self):
         broken = YEARBOOK.replace("г. Гудаута 8 744 3 888 4 856", "г. Гудаута 8 745 3 889 4 856")

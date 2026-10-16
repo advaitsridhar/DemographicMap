@@ -147,6 +147,9 @@ NEXT_TITLE = re.compile(r"^1\.\s?\d{1,2}\s+\S")
 # settlement (largest_town): the most populous of its districts' towns in table
 # 1.11, in the map's spelling and as a note names it.
 TOWNS = {"г. Сухум": ("Sokhumi", "the city of Sukhum"),
+         "г. Ткуарчал": ("Tkvarcheli", "the town of Tkvarcheli"),
+         "г. Гал": ("Gali", "the town of Gal"),
+         "пгт Гулрыпш": ("Gulripshi", "the urban settlement of Gulripsh"),
          "г. Гагра": ("Gagra", "the town of Gagra"),
          "г. Гудаута": ("Gudauta", "the town of Gudauta")}
 # A town is its unit's largest settlement only where no village can be larger.
@@ -158,7 +161,33 @@ TOWNS = {"г. Сухум": ("Sokhumi", "the city of Sukhum"),
 # rows as ethno-kavkaz.narod.ru transcribes them (gagra11, gudauta11, suxum11).
 # GeoNames named Gudauta's polygon for New Athos railway station, with the
 # 26,636 people that are Gagra's figure of 1989 (GeoNames 615912).
-VILLAGES_2011 = {"Гагрский район": 2876, "Гудаутский район": 5760, "Сухумский район": 2721}
+VILLAGES_2011 = {"Гагрский район": 2876, "Гудаутский район": 5760, "Сухумский район": 2721,
+                 "Гулрыпшский район": 3205, "Очамчырский район": 2181,
+                 "Ткуарчалский район": 2256, "Галский район": 3340}
+# The three outlines that are no district name their largest settlement too,
+# from the same table: the map's label -> (the town, the districts whose
+# villages lie in the outline, the other towns whose centres do). Ochamchire's
+# is Tkvarcheli, 4.5 km inside it (Wikidata Q270535): the town of Ochamchira
+# has its centre just across the line, in Gali's, where it is outranked by Gal
+# itself. Gulripshi's outline also takes in a strip of Sukhum, a city whose
+# centre is in Sokhumi's. Villages: Dranda (3,205) in Gulripsh district, Kutol
+# (2,181) in Ochamchira, the Gal administration (2,256) in Tkvarcheli and
+# Chuburkhinji (3,340) in Gal at the 2011 census (VILLAGES_2011).
+OUTLINE_TOWNS = {
+    "Gulripshi": ("пгт Гулрыпш", ("Гулрыпшский район",), ()),
+    "Ochamchire": ("г. Ткуарчал", ("Очамчырский район", "Ткуарчалский район",
+                                   "Гулрыпшский район"), ()),
+    "Gali": ("г. Гал", ("Галский район", "Очамчырский район", "Ткуарчалский район"),
+             (TOWN,)),
+}
+# What a visitor is told beside each of those towns.
+OUTLINE_TOWN_NOTES = {
+    "Ochamchire": (" The town of Ochamchira ({ochamchira:,}), which the line with Gali runs "
+                   "through, has its centre in the outline drawn as Gali."),
+    "Gulripshi": (" A strip of the city of Sukhum also lies in this outline; the city's centre "
+                  "is in the one drawn as Sokhumi."),
+    "Gali": "",
+}
 
 # The polygons the authorities' units fill: the map's label -> the rows.
 BOUND = {"Gagra": ("Гагрский район",), "Gudauta": ("Гудаутский район",),
@@ -228,8 +257,9 @@ REFUSED: dict[str, Callable[[dict[str, int], dict[str, int]], str]] = {
         "and several villages of Gulripsh district lie in this one too.") + south_east(p),
     "Gali": lambda p, c: SOUTH_EAST + (
         "villages of the Ochamchira and Tkvarcheli districts lie in this one, and so does the "
-        f"centre of the town of Ochamchira ({p[TOWN]:,} people on 1 January {YEAR}), on the "
-        "line with Ochamchire's, while Gal's villages along the Enguri (Chuburkhinji, "
+        f"centre of the town of Ochamchira ({p[TOWN]:,} people on 1 January {YEAR}), which the "
+        "line between this outline and Ochamchire's runs through, while Gal's villages along "
+        "the Enguri (Chuburkhinji, "
         "Otobaia, Tagiloni, Pichori and others; at least "
         f"{sum(ENGURI.values()):,} of the district's {c['Галский район']:,} people at the "
         "2011 census) lie outside it, in the outline drawn as Zugdidi.") + south_east(p),
@@ -489,6 +519,19 @@ def read(text: str) -> dict[str, Any]:
             "towns": towns}
 
 
+# The 2011 census by village administration, as transcribed (the 12,066 Gal
+# people along the Enguri that Gali's note quotes), and the population grid the
+# Sokhumi and Gulripshi notes quote their shares from.
+VILLAGE_ROWS = {"field": "population note",
+                "name": "Ethno-Caucasus (ethno-kavkaz.narod.ru), the de facto authorities' 2011 "
+                        "census of Gal district by village administration",
+                "url": "http://ethno-kavkaz.narod.ru/gal11.html",
+                "license": "Transcription of the census; terms of reuse not stated"}
+WORLDPOP = {"field": "population note",
+            "name": "WorldPop, global population counts at 100 m, 2020",
+            "url": "https://www.worldpop.org/", "license": "CC BY 4.0"}
+
+
 def cite(table_no: str, field: str) -> dict[str, str]:
     return {"field": field, "name": SOURCE.format(table=table_no), "url": URL, "license": LICENCE}
 
@@ -582,6 +625,8 @@ def counted(rows: tuple[str, ...], figures: dict[str, Any]) -> dict[str, Any]:
         f"1 January {YEAR} (their statistics committee's yearbook, table 1.11).")
     cites = [cite("1.11", "population/sex_ratio"), cite("1.11", "largest_settlement"),
              cite("1.12", "ethnicity")]
+    if len(rows) > 1:
+        cites.append(WORLDPOP)
     if rows == (WHOLE,):
         fields["median_age"] = measure(figures["median"], unit="years", year=CENSUS,
                                        source=SOURCE.format(table="1.2"))
@@ -593,19 +638,54 @@ def counted(rows: tuple[str, ...], figures: dict[str, Any]) -> dict[str, Any]:
     return fields
 
 
+def outline_town(name: str, figures: dict[str, Any]) -> tuple[str, int]:
+    """A refused outline's largest settlement and its people on 1 January YEAR,
+    once it outnumbers the other towns whose centres lie in the outline and every
+    village of the districts it holds parts of (OUTLINE_TOWNS, VILLAGES_2011)."""
+    town, districts, rivals = OUTLINE_TOWNS[name]
+    every = {t: n for towns in figures["towns"].values() for t, n in towns.items()}
+    people = every[town]
+    for rival in rivals:
+        if every[rival] >= people:
+            raise SystemExit(f"abkhazia_census: {rival} ({every[rival]:,}) is not smaller "
+                             f"than {town} ({people:,}) in the outline drawn as {name}")
+    for d in districts:
+        grown = max(1.0, figures["people"][d][0] / figures["census"][d][0])
+        if people <= VILLAGES_2011[d] * grown:
+            raise SystemExit(f"abkhazia_census: a village of {DISTRICTS[d]} may be larger "
+                             f"than {town} ({people:,}) in the outline drawn as {name}")
+    return town, people
+
+
 def refused(figures: dict[str, Any], name: str) -> dict[str, Any]:
     """The fields of a polygon that is no district: gaps that say why, and that no
-    figure fits it, its own or one derived from its neighbours' (``not_this_ground``)."""
+    figure fits it, its own or one derived from its neighbours' (``not_this_ground``).
+    Its largest settlement is named, and the publications its notes quote are cited
+    for the notes."""
     people = {unit: both for unit, (both, _, _) in figures["people"].items()}
     people[TOWN] = figures["towns"]["Очамчырский район"][TOWN]
     census = {unit: both for unit, (both, _, _) in figures["census"].items()}
+    town, town_people = outline_town(name, figures)
+    cites = [cite("1.11", "population note"), cite("1.11", "largest_settlement")]
+    if name == "Gali":
+        cites += [cite("1.7", "population note"), VILLAGE_ROWS]
+    if name == "Gulripshi":
+        cites.append(WORLDPOP)
     return {"population": dict(gap(NOT_AVAILABLE, REFUSED[name](people, census)),
                                not_this_ground=True),
             "sex_ratio": dict(gap(NOT_AVAILABLE, PARTS), not_this_ground=True),
             "ethnicity": dict(gap(NOT_AVAILABLE, PARTS), not_this_ground=True),
             "median_age": gap(NOT_AVAILABLE, NO_DISTRICT_AGES),
             "religion": gap(NOT_AVAILABLE, NO_RELIGION),
-            "language": gap(NOT_AVAILABLE, NO_LANGUAGE)}
+            "language": gap(NOT_AVAILABLE, NO_LANGUAGE),
+            "largest_settlement": TOWNS[town][0],
+            "largest_settlement_population": measure(town_people, year=YEAR,
+                                                     source=SOURCE.format(table="1.11")),
+            "largest_settlement_note": (
+                f"The de facto authorities' estimate of the people present in {TOWNS[town][1]} "
+                f"on 1 January {YEAR} (their statistics committee's yearbook, table 1.11)."
+                + OUTLINE_TOWN_NOTES[name].format(ochamchira=people[TOWN])),
+            "sources": cites}
 
 
 def records(figures: dict[str, Any], admin1: list[dict[str, Any]],
@@ -651,6 +731,10 @@ def main() -> int:
     for name, rows in sorted({"Abkhazia": (WHOLE,), **BOUND}.items()):
         town, people = largest_town(rows, figures)
         log(f"  1 January {YEAR}: {name}'s largest settlement: {TOWNS[town][0]} ({people:,})")
+    for name in sorted(OUTLINE_TOWNS):
+        town, people = outline_town(name, figures)
+        log(f"  1 January {YEAR}: the outline {name}'s largest settlement: {TOWNS[town][0]} "
+            f"({people:,})")
     log(f"  2011 census: median age {figures['median']}; nationality of "
         f"{sum(figures['nationality'][WHOLE].values()):,} people")
     rows = records(figures, drawn("GEO", "admin1"), drawn("GEO", "admin2"))
