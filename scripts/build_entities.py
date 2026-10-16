@@ -3656,11 +3656,19 @@ GROUND_PINNED = frozenset({"estonia_municipality.json", "norway_kommune.json",
 # from the 2011 census's 26,494,504 by under 1% a year. Every district moved
 # by about as much, so the comparison with its peers let the whole table
 # through, and Koshi took the districts' 2023 sum.
+#
+# Cambodia's are figures nobody can say whose people they are: English
+# Wikipedia's infoboxes give Tboung Khmum 889,970, Banteay Meanchey 898,484
+# and Preah Sihanouk 234,702 "as of 2024", and cite for them the 2019
+# census's final results, which count 776,841, 861,883 and 310,072. Tboung
+# Khmum's would be 2.8% a year, against 1.7% for the country.
 OTHER_PEOPLE: dict[tuple[str, str], str] = {
     ("KOR", "wikidata_admin1.json"): "the resident register's Korean nationals alone, "
                                      "without the registered foreigners",
     ("NPL", "cod_ps_admin2.json"): "a projection 5.95% above the 2021 census two years "
                                    "on, which is another basis and not growth",
+    ("KHM", "wiki_population_admin1.json"): "figures dated 2024 whose cited source, the "
+                                            "2019 census's final results, does not give them",
 }
 
 # A count whose note says it was put together for the polygon -- summed over
@@ -7066,8 +7074,9 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                 continue
             ground = TOWN_FIGURE_GROUND.get((iso3, entity.get("name")))
             entity["population"] = gap(NOT_AVAILABLE, (
-                f"The Wikidata item joined here by name gives {pop['value']:,}"
+                f"Wikidata gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
+                + " for a place of this name"
                 + (f", {ground}" if ground else
                    f", which is {why}. "
                    + (verdict or f"It is probably {what} rather than this unit, so its "
@@ -7847,7 +7856,7 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                     else ", ".join(labels[:-1]) + " and " + labels[-1])
             article = "an" if what[0] in "aeiou" else "a"
             entity["population"] = gap(NOT_AVAILABLE, (
-                f"The Wikidata item joined here by name, {entity['wikidata']}, is "
+                f"Wikidata's item of this name, {entity['wikidata']}, is "
                 f"{article} {what}, and Wikidata calls it nothing else -- no "
                 f"municipality or district; its "
                 f"{pop['value']:,}"
@@ -7923,9 +7932,9 @@ def refuse_historic_figures(admin2: dict[str, list[dict[str, Any]]]) -> int:
                     and str(pop.get("source") or "").startswith("Wikidata")):
                 continue
             entity["population"] = gap(NOT_AVAILABLE, (
-                f"The Wikidata item joined here by name gives {pop['value']:,} "
-                f"for the year {year}: a historical place of this name, not the "
-                f"unit on the map, so its figure is left out."))
+                f"Wikidata gives {pop['value']:,} for the year {year} for a place of "
+                f"this name: a historical place, not the unit on the map, so its figure "
+                f"is left out."))
             fall_back(entity, entity["population"])
             refused += 1
     return refused
@@ -7996,10 +8005,10 @@ def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
             else:
                 continue
             parent["population"] = gap(NOT_AVAILABLE, (
-                f"The Wikidata item joined here gives {pop['value']:,}"
+                f"Wikidata gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
-                + f", {why}. It is probably the figure of the town or of a "
-                  f"smaller unit rather than of this one, so it is left out."))
+                + f" for this unit, {why}. It is probably the figure of the town or "
+                  f"of a smaller unit rather than of this one, so it is left out."))
             fall_back(parent, parent["population"])
             refused += 1
     return refused

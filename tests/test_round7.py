@@ -160,6 +160,18 @@ class NewerFigures(unittest.TestCase):
         self.assertEqual(incheon["population"]["value"], 3_078_426)
         self.assertEqual((taken, kept), ([], []))
 
+    def test_figures_their_cited_source_does_not_give_are_not_compared(self):
+        # Cambodia: Wikipedia's 889,970 "as of 2024" for Tboung Khmum, citing the
+        # 2019 census's final results, which count 776,841.
+        tbong = unit("T", 776_841, 2019, newer=889_970, newer_year=2024, country="KHM",
+                     newer_file="wiki_population_admin1.json")
+        peers = [unit(f"P{i}", 10_000, 2019, newer=11_000, newer_year=2024, country="KHM",
+                      newer_file="wiki_population_admin1.json") for i in range(5)]
+        taken, kept = be.prefer_newer_figures(country(tbong, *peers, iso3="KHM"), {})
+        self.assertEqual(tbong["population"]["value"], 776_841)
+        self.assertEqual(taken, [])
+        self.assertIn("2019 census", be.OTHER_PEOPLE[("KHM", "wiki_population_admin1.json")])
+
     def test_more_than_ten_years_apart_is_not_compared(self):
         far = unit("F", 100_000, 2011, newer=110_000, newer_year=2025)
         be.prefer_newer_figures({}, country(far, *self.peers(rate=0.007)))
