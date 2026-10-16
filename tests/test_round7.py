@@ -557,5 +557,26 @@ class BelarusRegionsJoinTheirOwnRows(unittest.TestCase):
             self.assertEqual(rows[rid]["population"]["year"], 2026)
 
 
+
+class LaosDistrictsOfOneName(unittest.TestCase):
+    """OCHA's rows for Laos's repeated district names bind by their P-code."""
+
+    def test_each_row_lands_on_its_own_provinces_polygon(self):
+        import json
+        rows = {r["id"]: r for r in json.loads(
+            (be.PROCESSED / "cod_ps_admin2.json").read_text()) if r.get("country") == "LAO"}
+        provinces = {"LA06": "Louangphabang", "LA16": "Champasack"}
+        placed = {rid: v for rid, v in be.ROW_SHAPES["cod_ps_admin2.json"].items()
+                  if rid.startswith("LAO-")}
+        self.assertEqual(len(placed), 3)
+        for rid, (shape, label) in placed.items():
+            row = rows[rid]
+            self.assertEqual(row["name"], label, rid)
+            self.assertEqual(row["parent_name"], provinces[rid.split("-")[-1][:4]], rid)
+            self.assertEqual(row["population"]["year"], 2024)
+        # Two Phonthongs, two polygons.
+        self.assertEqual(len({shape for shape, _ in placed.values()}), 3)
+
+
 if __name__ == "__main__":
     unittest.main()

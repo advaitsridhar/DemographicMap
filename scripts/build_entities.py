@@ -3000,10 +3000,20 @@ ROW_PARENTS: dict[str, dict[str, str]] = {
 # The cities are the polygons the boundary file calls "Arusha Urban" (269 km2)
 # and "Mbeya Urban" (254 km2), and the district councils then join their own.
 # The row takes the polygon's label as its name and keeps its own as an alias.
+#
+# Laos draws two Phonthongs and two Viengkhams, and OCHA's rows name their
+# provinces as "Louangphabang" and "Champasack", which reach none of the map's
+# (Luang Prabang, Champasak), so the three below joined nothing and their
+# districts kept the 2015 census beside siblings on OCHA's 2024 projection.
+# Each P-code's province digits say which polygon is the row's: LA06 is Luang
+# Prabang, LA16 Champasak. (Vientiane's Viengkham, LA1009, joins by name.)
 ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
     "cod_ps_admin2.json": {
         "TZA-CODPS-TZ0203": ("72390352B90906351205470", "Arusha Urban"),
         "TZA-CODPS-TZ1208": ("72390352B25057310038558", "Mbeya Urban"),
+        "LAO-CODPS-LA0610": ("54806243B97421577673591", "Viengkham"),
+        "LAO-CODPS-LA0612": ("54806243B14812805317737", "Phonthong"),
+        "LAO-CODPS-LA1606": ("54806243B67434402908614", "Phonthong"),
     },
 }
 
