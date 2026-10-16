@@ -93,24 +93,48 @@ class NewerFigures(unittest.TestCase):
 
     def test_far_from_its_countrys_change_it_is_kept_off(self):
         # Viet Nam's 2024 figures are mostly the provinces of 2025's merger,
-        # 8.7% a year above the 2019 census; Cao Bang, never merged, moved 1%.
+        # 8.7% a year and more above the 2019 census; the provinces the merger
+        # left alone moved about 1% a year and take their newer figures.
+        merged = [unit(f"M{i}", 1_000_000, 2019, newer=round(1_000_000 * 1.12 ** 5),
+                       newer_year=2024) for i in range(6)]
+        alone = [unit(f"A{i}", 500_000, 2019, newer=round(500_000 * 1.01 ** 5),
+                      newer_year=2024) for i in range(5)]
+        taken, kept = be.prefer_newer_figures(country(*merged, *alone), {})
+        self.assertEqual((len(taken), len(kept)), (5, 6))
+        self.assertEqual(alone[0]["population"]["value"], round(500_000 * 1.01 ** 5))
+        self.assertEqual(merged[0]["population"]["value"], 1_000_000)
+        # The unit says so once the figures are settled, and the median it is
+        # weighed against is the other units', not one its own kind set.
+        self.assertEqual(be.say_newer_not_taken(country(*merged, *alone)), 6)
+        self.assertEqual(merged[0]["population_note"],
+                         "Everyone the 2021 census counted. A newer figure is not shown: "
+                         "1,762,342 for 2024 from Wikidata, a rise of 12.0% a year from the "
+                         "figure shown, where the newer figures for the country's other units "
+                         "at this level change by +1.0% a year in the median. A figure so far "
+                         "from theirs may be of other ground or counted another way.")
+        self.assertNotIn("_not_taken", merged[0])
+
+    def test_offers_no_population_makes_do_not_set_the_median(self):
+        # Cao Bang beside six merged provinces only: none of theirs is a
+        # change people make, so it is weighed on its own, and 1% a year is.
         merged = [unit(f"M{i}", 1_000_000, 2019, newer=round(1_000_000 * 1.09 ** 5),
                        newer_year=2024) for i in range(6)]
         cao_bang = unit("C", 530_341, 2019, newer=558_500, newer_year=2024)
         taken, kept = be.prefer_newer_figures(country(*merged, cao_bang), {})
-        self.assertEqual(taken, [])
-        self.assertEqual(len(kept), 7)
-        self.assertEqual(cao_bang["population"]["value"], 530_341)
-        # The unit says so once the figures are settled.
-        self.assertEqual(be.say_newer_not_taken(country(*merged, cao_bang)), 7)
-        self.assertEqual(cao_bang["population_note"],
-                         "Everyone the 2021 census counted. A newer figure is not shown: "
-                         "558,500 for 2024 from Wikidata, a rise of 1.0% a year from the "
-                         "figure shown, while the country's other units at this level "
-                         "given newer figures changed by +9.0% a year in the median. A "
-                         "figure so far from theirs may be of other ground or counted "
-                         "another way.")
-        self.assertNotIn("_not_taken", cao_bang)
+        self.assertEqual((len(taken), len(kept)), (1, 6))
+        self.assertEqual(cao_bang["population"]["value"], 558_500)
+        be.say_newer_not_taken(country(*merged, cao_bang))
+        self.assertTrue(merged[0]["population_note"].endswith(
+            "A change that large may mean other ground or another way of counting."))
+
+    def test_a_unit_is_not_its_own_peer(self):
+        # Four peers at 0% and the unit at +2.5%: without itself in the median
+        # there are too few to weigh against, and the band for few takes it.
+        peers = self.peers(n=4, rate=0.0)
+        target = unit("T", 10_000, newer=round(10_000 * 1.025 ** 4))
+        taken, kept = be.prefer_newer_figures({}, country(target, *peers))
+        self.assertEqual(kept, [])
+        self.assertEqual(target["population"]["value"], round(10_000 * 1.025 ** 4))
 
     def test_peers_are_the_units_at_the_same_level(self):
         # Viet Nam's merged provinces, 9% a year, did not set the median its

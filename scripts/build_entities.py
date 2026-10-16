@@ -7579,12 +7579,12 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
         of the census's own units, HELD_ROWS);
       * the change a year it makes from the count is one people make, at
         most GROWTH up or DECLINE down (check_rollups), and within
-        RECENCY_SPREAD of the median change of the country's other units
-        offered a figure the same way, where there are RECENCY_PEERS of them;
-        where there are fewer, within RECENCY_FEW. Viet Nam is why the median
-        and not only the bound: the merged provinces' figures run 8.7% a year
-        above the 2019 census, and the provinces that were not merged change
-        by about 1%.
+        RECENCY_SPREAD of the median change of the country's other units at
+        its level offered a figure within those bounds, where there are
+        RECENCY_PEERS of them; where there are fewer, within RECENCY_FEW. Viet
+        Nam is why the median and the bound together: the merged provinces'
+        figures run 8.7% a year and more above the 2019 census, and the
+        provinces that were not merged change by about 1%.
 
     The count is held in the newer figure's place, with its note and its
     link, so a check that later refuses the newer figure -- a town's, a
@@ -7638,27 +7638,36 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                     rate = (published(best["value"]) / value) ** (
                         1 / (vintage(best["value"]) - year)) - 1
                     offers.append((iso3, entity, best, rate))
-    # Peers are the country's units at the same level: Viet Nam's provinces
-    # offered the 2025 merger's figures, 8.7% a year above the 2019 census,
-    # set the median its districts were weighed against, and six districts
-    # changing by about 1% a year were kept off as far from their peers.
-    rates: dict[tuple[str, Any], list[float]] = defaultdict(list)
+    # Peers are the country's other units at the same level, and only their
+    # offers a population can make, within -DECLINE..GROWTH. Viet Nam's
+    # provinces offered the 2025 merger's figures, 8.7% a year and more above
+    # the 2019 census: in the median, they set it at +9.3% a year, and the
+    # eleven provinces the merger left alone, changing by about 1% a year,
+    # were kept off as far from their peers; and they set the median Viet
+    # Nam's districts were weighed against until the levels were told apart.
+    plausible: dict[tuple[str, Any], list[tuple[int, float]]] = defaultdict(list)
     for iso3, entity, _, rate in offers:
-        rates[(iso3, entity.get("level"))].append(rate)
-    typical = {key: sorted(r)[len(r) // 2] if len(r) % 2 else
-               (sorted(r)[len(r) // 2 - 1] + sorted(r)[len(r) // 2]) / 2
-               for key, r in rates.items()}
+        if -check_rollups.DECLINE <= rate <= check_rollups.GROWTH:
+            plausible[(iso3, entity.get("level"))].append((id(entity), rate))
+
+    def peer_median(peers: tuple[str, Any], entity: dict[str, Any]) -> float | None:
+        others = sorted(rate for who, rate in plausible[peers] if who != id(entity))
+        if len(others) < RECENCY_PEERS:
+            return None
+        mid = len(others) // 2
+        return others[mid] if len(others) % 2 else (others[mid - 1] + others[mid]) / 2
+
     taken: list[str] = []
     kept: list[str] = []
     for iso3, entity, best, rate in offers:
         shown = entity["population"]
-        peers = (iso3, entity.get("level"))
+        typical = peer_median((iso3, entity.get("level")), entity)
         line = (f"{iso3} {entity.get('name')}: {published(shown):,.0f} ({vintage(shown)}) "
                 f"-> {published(best['value']):,.0f} ({vintage(best['value'])}), "
                 f"{rate:+.1%} a year")
-        if len(rates[peers]) >= RECENCY_PEERS:
+        if typical is not None:
             same = (-check_rollups.DECLINE <= rate <= check_rollups.GROWTH
-                    and abs(rate - typical[peers]) <= RECENCY_SPREAD)
+                    and abs(rate - typical) <= RECENCY_SPREAD)
         else:
             same = RECENCY_FEW[0] <= rate <= RECENCY_FEW[1]
         if not same:
@@ -7667,16 +7676,15 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             # run (say_newer_not_taken): Kuwait's note had the governorates
             # show the census "where no newer figure is published", and
             # Farwaniya's and Jahra's are published and were not taken.
-            off = (len(rates[peers]) >= RECENCY_PEERS
-                   and abs(rate - typical[peers]) > RECENCY_SPREAD)
+            off = typical is not None and abs(rate - typical) > RECENCY_SPREAD
             entity["_not_taken"] = {"shown": published(shown), "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
                 f"{named_source(str(best['value'].get('source') or ''))}, "
                 f"a {'rise' if rate > 0 else 'fall'} of {abs(rate):.1%} a year from the "
                 f"figure shown"
-                + (f", while the country's other units at this level given newer figures "
-                   f"changed by {typical[peers]:+.1%} a year in the median. A figure so far "
+                + (f", where the newer figures for the country's other units at this "
+                   f"level change by {typical:+.1%} a year in the median. A figure so far "
                    f"from theirs may be of other ground or counted another way."
                    if off else
                    ". A change that large may mean other ground or another way of "
