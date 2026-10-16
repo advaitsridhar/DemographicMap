@@ -131,6 +131,7 @@
     "match_by": "shape_id",
     "shape_id": "13066534B27338241074695",
     "population_note": "The de facto authorities' estimate of the people present on 1 January 2026: their census of February 2011, carried forward with each year's births and arrivals added and deaths and departures taken away (their statistics committee's yearbook, table 1.11). Georgia's own 2014 census and Geostat's estimates do not cover Abkhazia, and the authorities that count it are recognised by few states.",
+    "sex_ratio_note": "The de facto authorities' estimate for 1 January 2026: 115,252 men and 128,725 women. Their census of February 2011 counted 111,885 men and 128,820 women, 86.9 men per 100 women.",
     "ethnicity_year": 2011,
     "ethnicity_note": "Nationality as the de facto authorities' census of February 2011 counted it (their statistics committee's yearbook, table 1.12), Georgians and Mingrelians apart as the census lists them. Their tables for later years, to 1 January 2026, keep each district's 2011 shares to within a fifth of a percentage point, so they are not a newer count.",
     "median_age_note": "Interpolated within the five-year age group holding the middle person, from the de facto authorities' census of February 2011 (their statistics committee's yearbook, table 1.2). Their age tables for later years print the 2011 census's shares against each year's total, so they carry nothing newer."
@@ -259,6 +260,7 @@
     "match_by": "shape_id",
     "shape_id": "92138335B94061680814673",
     "population_note": "The de facto authorities' estimate of the people present in Gagra district on 1 January 2026: their census of February 2011, carried forward with each year's births and arrivals added and deaths and departures taken away (their statistics committee's yearbook, table 1.11). Georgia's own 2014 census and Geostat's estimates do not cover Abkhazia, and the authorities that count it are recognised by few states.",
+    "sex_ratio_note": "The de facto authorities' estimate for 1 January 2026: 17,457 men and 20,927 women. Their census of February 2011 counted 18,140 men and 22,077 women, 82.2 men per 100 women.",
     "ethnicity_year": 2011,
     "ethnicity_note": "Nationality as the de facto authorities' census of February 2011 counted it (their statistics committee's yearbook, table 1.12), Georgians and Mingrelians apart as the census lists them. Their tables for later years, to 1 January 2026, keep each district's 2011 shares to within a fifth of a percentage point, so they are not a newer count."
   },
@@ -386,8 +388,137 @@
     "match_by": "shape_id",
     "shape_id": "92138335B93375493400178",
     "population_note": "The de facto authorities' estimate of the people present in Gudauta district on 1 January 2026: their census of February 2011, carried forward with each year's births and arrivals added and deaths and departures taken away (their statistics committee's yearbook, table 1.11). Georgia's own 2014 census and Geostat's estimates do not cover Abkhazia, and the authorities that count it are recognised by few states.",
+    "sex_ratio_note": "The de facto authorities' estimate for 1 January 2026: 18,648 men and 20,182 women. Their census of February 2011 counted 17,553 men and 19,222 women, 91.3 men per 100 women.",
     "ethnicity_year": 2011,
     "ethnicity_note": "Nationality as the de facto authorities' census of February 2011 counted it (their statistics committee's yearbook, table 1.12), Georgians and Mingrelians apart as the census lists them. Their tables for later years, to 1 January 2026, keep each district's 2011 shares to within a fifth of a percentage point, so they are not a newer count."
+  },
+  {
+    "id": "GEO-ABK-92138335B38650724309521",
+    "level": "admin2",
+    "name": "Sokhumi",
+    "parent": "GEO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 76392,
+      "year": 2026,
+      "source": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Not published by district: the de facto authorities' statistics committee gives ages from their 2011 census for Abkhazia as a whole only."
+    },
+    "sex_ratio": {
+      "value": 87.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Not published: the de facto authorities' statistics committee gives no religion from their 2011 census, and Georgia's 2014 census did not count Abkhazia."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published: the de facto authorities' statistics committee gives nationality from their 2011 census but no language, and Georgia's 2014 census did not count Abkhazia."
+    },
+    "ethnicity": [
+      {
+        "group": "Abkhaz",
+        "pct": 61.6,
+        "count": 45847
+      },
+      {
+        "group": "Armenian",
+        "pct": 17.0,
+        "count": 12659
+      },
+      {
+        "group": "Russian",
+        "pct": 13.6,
+        "count": 10152
+      },
+      {
+        "group": "Georgian",
+        "pct": 2.6,
+        "count": 1925
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 1155
+      },
+      {
+        "group": "Greek",
+        "pct": 1.1,
+        "count": 791
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.0,
+        "count": 755
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.4,
+        "count": 308
+      },
+      {
+        "group": "Ossetian",
+        "pct": 0.3,
+        "count": 231
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3,
+        "count": 248
+      },
+      {
+        "group": "Tatar",
+        "pct": 0.2,
+        "count": 152
+      },
+      {
+        "group": "Belarusian",
+        "pct": 0.1,
+        "count": 94
+      },
+      {
+        "group": "Estonian",
+        "pct": 0.1,
+        "count": 69
+      },
+      {
+        "group": "Mingrelian",
+        "pct": 0.1,
+        "count": 59
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      },
+      {
+        "field": "ethnicity",
+        "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.12",
+        "url": "https://cgsra.org/media/files/25.pdf",
+        "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+      }
+    ],
+    "country": "GEO",
+    "match_by": "shape_id",
+    "shape_id": "92138335B38650724309521",
+    "population_note": "The de facto authorities' estimates of the people present on 1 January 2026 in the city of Sukhum (65,180) and in the Sukhum district around it (11,212), which they count apart, added together; each is their census of February 2011, carried forward with each year's births and arrivals added and deaths and departures taken away (their statistics committee's yearbook, table 1.11). The map draws no outline for the city, whose centre lies in this one, 5 km from any other. The line drawn with Gulripshi runs through the city's south-east: by WorldPop's 2020 population grid, about 7% of these people live on the Gulripshi side of it. Georgia's own 2014 census and Geostat's estimates do not cover Abkhazia, and the authorities that count it are recognised by few states.",
+    "sex_ratio_note": "The de facto authorities' estimate for 1 January 2026: 35,608 men and 40,784 women. Their census of February 2011 counted 33,388 men and 41,057 women, 81.3 men per 100 women.",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality as the de facto authorities' census of February 2011 counted it (their statistics committee's yearbook, table 1.12), Georgians and Mingrelians apart as the census lists them. Their tables for later years, to 1 January 2026, keep each district's 2011 shares to within a fifth of a percentage point, so they are not a newer count. The city's and the district's counts are added together."
   },
   {
     "id": "GEO-ABK-92138335B69927081755421",
@@ -402,7 +533,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The de facto authorities redrew the districts here after the war: in 1995 they formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and they count more of Gal's former villages in Ochamchira district. The outlines drawn as Ochamchire and Gali are the districts as they were before, so neither holds a district the authorities count: villages of the Ochamchira and Tkvarcheli districts lie in this one, and Gal's villages along the Enguri, such as Otobaia, lie outside it, in the outline drawn as Zugdidi. Ochamchira, Tkvarcheli and Gal districts together had 72,882 people on 1 January 2026 (26,073, 16,458 and 30,351); no figure is written for either outline.",
+      "note": "The de facto authorities redrew the districts here after the war: in 1995 they formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and they count more of Gal's former villages in Ochamchira district. The outlines drawn as Ochamchire and Gali are the districts as they were before, so neither holds a district the authorities count: villages of the Ochamchira and Tkvarcheli districts lie in this one, while Gal's villages along the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; 12,066 of the district's 30,356 people at the 2011 census) lie outside it, in the outline drawn as Zugdidi. Ochamchira, Tkvarcheli and Gal districts together had 72,882 people on 1 January 2026 (26,073, 16,458 and 30,351); no figure is written for either outline.",
       "not_this_ground": true
     },
     "median_age": {
@@ -445,7 +576,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The de facto authorities' Gulripsh district had 17,489 people on 1 January 2026. This outline holds most of it, but also the east of the city of Sukhum, which they count apart (the line drawn with Sokhumi runs through the city), while several of the district's villages lie in the outline drawn as Ochamchire: the district's figure is not this outline's, so none is written here.",
+      "note": "The de facto authorities' Gulripsh district had 17,489 people on 1 January 2026. This outline holds nearly all of it, but its line with Sokhumi runs through the south-east of the city of Sukhum, which they count apart: by WorldPop's 2020 population grid, about a quarter of the people inside this outline live in that part of the city and its suburbs. Several of the district's villages also lie in the outline drawn as Ochamchire. The district's figure is not this outline's, so none is written here.",
       "not_this_ground": true
     },
     "median_age": {
@@ -517,48 +648,5 @@
     "country": "GEO",
     "match_by": "shape_id",
     "shape_id": "92138335B91265178482349"
-  },
-  {
-    "id": "GEO-ABK-92138335B38650724309521",
-    "level": "admin2",
-    "name": "Sokhumi",
-    "parent": "GEO",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The de facto authorities count the city of Sukhum (65,180 people on 1 January 2026) apart from the Sukhum district around it (11,212). This outline holds most of both, but the line drawn between it and Gulripshi runs through the east of the city, whose university lies in the outline drawn as Gulripshi: neither figure, nor their sum, is this outline's, so none is written here.",
-      "not_this_ground": true
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "Not published by district: the de facto authorities' statistics committee gives ages from their 2011 census for Abkhazia as a whole only."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the outline drawn here holds parts of several of the districts the de facto authorities count by, and none of them whole.",
-      "not_this_ground": true
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Not published: the de facto authorities' statistics committee gives no religion from their 2011 census, and Georgia's 2014 census did not count Abkhazia."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Not published: the de facto authorities' statistics committee gives nationality from their 2011 census but no language, and Georgia's 2014 census did not count Abkhazia."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Not written: the outline drawn here holds parts of several of the districts the de facto authorities count by, and none of them whole.",
-      "not_this_ground": true
-    },
-    "sources": [],
-    "country": "GEO",
-    "match_by": "shape_id",
-    "shape_id": "92138335B38650724309521"
   }
 ]
