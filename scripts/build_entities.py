@@ -7594,6 +7594,9 @@ SOURCE_NAME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bfrom the public-release file\b"), "from the public-release data"),
     # BGR 292: '(Census2021_Ethnocultural characteristics_BG.xlsx, sheet 2)'
     (re.compile(r" \(Census2021_[^()]*?\.xlsx, sheet \d+\)"), ""),
+    # A file name alone in brackets: BGR 263 '(Census2021_Population_BG.xlsx)',
+    # HUN 13 '(hnt_letoltes_2014.xls)', GRC 2 '(mon_plith_2021.xlsx)'
+    (re.compile(r" \([\w.-]+\.(?:xlsx?|csv|json)\)"), ""),
     # RUS 80: "..., arena_statistic.xls -- 'Распределение ответов в регионах РФ'",
     # the country's with ", column 'Население в целом'" after it
     (re.compile(r", arena_statistic\.xls -- 'Распределение ответов в регионах РФ', "
