@@ -6749,6 +6749,12 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     # follows it is the reason itself, which stands as the sentence: Slovenia's
     # "SiStat blanks 68 of the municipality's 332 people ...".
     (re.compile(r"\bNot written: (\w)"), lambda m: m.group(1).upper()),
+    # "The boundary file" names the file the map is drawn from, in some 10,800
+    # notes from many adapters; what the visitor looks at is the map. "Its
+    # districts as drawn add up to 2,853,295 ...: the boundary file draws
+    # Parasi as one district with Nawalpur" reads "the map draws".
+    (re.compile(r"\b([Tt])he boundary file('s)?\b"),
+     lambda m: f"{m.group(1)}he map{m.group(2) or ''}"),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")

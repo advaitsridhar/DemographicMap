@@ -590,5 +590,23 @@ class LaosDistrictsOfOneName(unittest.TestCase):
         self.assertEqual(len({shape for shape, _ in placed.values()}), 3)
 
 
+
+class TheMapNotTheFile(unittest.TestCase):
+    """A visitor's note names the map, not the file it is drawn from."""
+
+    def test_the_boundary_file_reads_the_map(self):
+        entity = {"population": {"value": 1, "note": "The boundary file draws it coarsely."},
+                  "population_note": "Includes Tolhuin, created since the boundary file was "
+                                     "drawn, on boundaries redrawn since the boundary file's.",
+                  "sources": [{"name": "geoBoundaries", "note": "the boundary file"}]}
+        self.assertEqual(be.plain_record(entity), 3)
+        self.assertEqual(entity["population"]["note"], "The map draws it coarsely.")
+        self.assertEqual(entity["population_note"],
+                         "Includes Tolhuin, created since the map was drawn, on boundaries "
+                         "redrawn since the map's.")
+        self.assertEqual(entity["sources"][0]["note"], "the map")
+        self.assertEqual(be.plain_wording("geoBoundaries draws it"), "geoBoundaries draws it")
+
+
 if __name__ == "__main__":
     unittest.main()
