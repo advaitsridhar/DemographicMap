@@ -523,9 +523,11 @@ class Records(unittest.TestCase):
 
     def test_zugdidi_says_what_its_outline_takes_in_beyond_the_enguri(self):
         import build_entities as be
-        note = be.ROW_NOTES["georgia.json"]["GEO-GEOSTAT-92138335B56355921545740"]["population"]
-        self.assertIn("Enguri", note)
-        self.assertIn(f"about {round(sum(a.ENGURI.values()), -3):,.0f} people", note)
+        notes = be.ROW_NOTES["georgia.json"]["GEO-GEOSTAT-92138335B56355921545740"]
+        self.assertEqual(set(notes), {"population", "median_age", "sex_ratio", "ethnicity"})
+        for note in notes.values():
+            self.assertIn("Enguri", note)
+            self.assertIn(f"about {round(sum(a.ENGURI.values()), -3):,.0f} people", note)
 
     def test_the_notes_speak_to_a_reader(self):
         for r in self.rows.values():

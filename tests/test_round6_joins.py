@@ -254,14 +254,23 @@ class LoadAdapters(unittest.TestCase):
         clear = [{"id": "KHM-CG-KH2107", "name": "Samraong", "country": "KHM",
                   "level": "admin2"}]
         census = [{"id": "PRY-INE-x", "name": "x", "country": "PRY", "level": "admin2"}]
+        georgia = [{"id": "GEO-GEOSTAT-92138335B56355921545740", "name": "Zugdidi",
+                    "country": "GEO", "level": "admin2",
+                    "population": {"value": 98300, "year": 2026},
+                    "population_note": "Geostat's estimate for 1 January 2026.",
+                    "median_age": {"value": 40.9, "year": 2014},
+                    "sex_ratio": {"value": 91.1, "year": 2014},
+                    "ethnicity": [{"group": "Georgian", "pct": 99.0}]}]
         (path / "cod_ps_admin2.json").write_text(json.dumps(cod))
         (path / "clear_global_language.json").write_text(json.dumps(clear))
         (path / "paraguay_census.json").write_text(json.dumps(census))
+        (path / "georgia.json").write_text(json.dumps(georgia))
         self.patches = [
             mock.patch.object(be, "PROCESSED", path),
             mock.patch.object(be, "ADAPTER_FILES", ["paraguay_census.json",
                                                     "clear_global_language.json",
-                                                    "cod_ps_admin2.json"]),
+                                                    "cod_ps_admin2.json",
+                                                    "georgia.json"]),
             mock.patch.object(be, "SUPERSEDED_ROWS",
                               {"cod_ps_admin2.json": {"PRY": "paraguay_census.json"}}),
         ]
@@ -288,7 +297,28 @@ class LoadAdapters(unittest.TestCase):
         self.assertIn("ARUSHA CITY", row["aliases"])
 
     def test_note(self):
-        self.assertIn("Cacula", self.loaded["AGO-CODPS-AO09077"]["population"]["note"])
+        # Beside the figure: the sentence is about the polygon, and the figure
+        # may be copied to other records.
+        row = self.loaded["AGO-CODPS-AO09077"]
+        self.assertIn("Cacula", row["population_note"])
+        self.assertNotIn("note", row["population"])
+
+    def test_notes_after_the_rows_own_and_on_lists_too(self):
+        row = self.loaded["GEO-GEOSTAT-92138335B56355921545740"]
+        self.assertTrue(row["population_note"].startswith(
+            "Geostat's estimate for 1 January 2026. The outline drawn here also takes in "
+            "the villages along the Enguri"), row["population_note"])
+        self.assertTrue(row["population_note"].endswith("who are not in this figure."))
+        for field in ("median_age", "sex_ratio"):
+            self.assertTrue(row[f"{field}_note"].endswith(
+                "whom the 2014 census did not count."), field)
+        self.assertTrue(row["ethnicity_note"].endswith("whom the 2002 census did not count."))
+
+    def test_a_sentence_for_a_field_the_row_lacks_stops_the_run(self):
+        notes = {"cod_ps_admin2.json": {"AGO-CODPS-AO09077": {"median_age": "x."}}}
+        with mock.patch.object(be, "ROW_NOTES", notes), mock.patch.object(be, "log"), \
+                self.assertRaises(SystemExit):
+            be.load_adapters()
 
     def test_a_pooled_part_survives_its_countrys_superseding(self):
         self.assertIn("PRY-CODPS-PY1302", self.loaded)

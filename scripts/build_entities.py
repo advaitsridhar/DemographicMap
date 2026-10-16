@@ -2966,8 +2966,10 @@ ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
     },
 }
 
-# A sentence a row's figure carries about the polygon it lands on, keyed by
-# file, row id and field. Angola's Huíla has fourteen municipalities in
+# A sentence a row carries about the polygon it lands on, keyed by file, row
+# id and field, and written beside the field as ``<field>_note`` -- or into a
+# gap's own note -- since it is about the polygon and not the figure, which
+# other passes may copy elsewhere. Angola's Huíla has fourteen municipalities in
 # OCHA's table and thirteen polygons: the boundary file draws no Cacula, and
 # Cacula's seat (GeoNames 14.4956S 14.1163E) lies inside the polygon called
 # Lubango. That polygon is 3,680 km2, about 540 km2 more than Lubango
@@ -2980,7 +2982,13 @@ ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
 # Otobaias, Tagiloni, Pichori, Nabakevi, Dikhazurga and Ganakhleba, whose
 # Wikidata points lie 0.4 to 4.7 km inside it -- counted 12,066 people in the
 # de facto authorities' 2011 census (abkhazia_census.ENGURI). Geostat counts
-# the municipality without them, which is the figure the polygon carries.
+# the municipality without them, which is the figure the polygon carries, and
+# neither its 2014 census (ages, sex) nor the 2002 one (nationality) counted
+# them either.
+ENGURI_VILLAGES = (
+    "The outline drawn here also takes in the villages along the Enguri that the de "
+    "facto authorities in Abkhazia count in their Gal district (Chuburkhinji, Otobaia, "
+    "Tagiloni, Pichori and others), about 12,000 people at their 2011 census, ")
 ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO09077": {"population": (
@@ -2989,11 +2997,12 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
             "197,616 people in Cacula in 2024, who are not in this figure.")},
     },
     "georgia.json": {
-        "GEO-GEOSTAT-92138335B56355921545740": {"population": (
-            "The outline drawn here also takes in the villages along the Enguri that the "
-            "de facto authorities in Abkhazia count in their Gal district (Chuburkhinji, "
-            "Otobaia, Tagiloni, Pichori and others), about 12,000 people at their 2011 "
-            "census, who are not in this figure.")},
+        "GEO-GEOSTAT-92138335B56355921545740": {
+            "population": ENGURI_VILLAGES + "who are not in this figure.",
+            "median_age": ENGURI_VILLAGES + "whom the 2014 census did not count.",
+            "sex_ratio": ENGURI_VILLAGES + "whom the 2014 census did not count.",
+            "ethnicity": ENGURI_VILLAGES + "whom the 2002 census did not count.",
+        },
     },
 }
 
@@ -3061,9 +3070,13 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 row["parent_name"] = parents[row["id"]]
             for field, extra in notes.get(row.get("id"), {}).items():
                 value = row.get(field)
-                if isinstance(value, dict) and "value" in value:
-                    row[field] = {**value, "note": " ".join(
-                        n for n in (value.get("note"), extra) if n)}
+                if value is None:
+                    raise SystemExit(f"ROW_NOTES: {filename} {row['id']} has no {field} "
+                                     f"for its sentence to sit beside")
+                if is_gap(value):
+                    row[field] = {**value, "note": join_note(value.get("note"), extra)}
+                else:
+                    row[f"{field}_note"] = join_note(row.get(f"{field}_note"), extra)
             if row.get("id") in placed_by_id:
                 shape_id, label = placed_by_id[row["id"]]
                 row["aliases"] = [*(row.get("aliases") or []), row.get("name")]
