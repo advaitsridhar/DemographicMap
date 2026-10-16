@@ -487,18 +487,45 @@ class Records(unittest.TestCase):
         self.assertEqual(gagra["median_age"]["status"], "not_available")
         self.assertNotIn(0, [g["count"] for g in gagra["ethnicity"]])
 
-    def test_the_four_outlines_that_are_no_district_say_why(self):
-        for name in ("Sokhumi", "Gulripshi", "Ochamchire", "Gali"):
+    def test_sokhumi_is_the_city_and_its_district_together(self):
+        r = self.rows["Sokhumi"]
+        self.assertEqual((r["shape_id"], r["population"]["value"]), ("SOK", 65180 + 11212))
+        # 30,163 + 5,445 men and 35,017 + 5,767 women.
+        self.assertEqual(r["sex_ratio"]["value"], round(100 * 35608 / 40784, 1))
+        self.assertEqual(sum(g["count"] for g in r["ethnicity"]), 62914 + 11531)
+        self.assertEqual(r["ethnicity"][0], {"group": "Abkhaz", "pct": 61.6, "count": 45847})
+        self.assertIn("65,180", r["population_note"])
+        self.assertIn("11,212", r["population_note"])
+        self.assertIn("7%", r["population_note"])
+        self.assertIn("added together", r["ethnicity_note"])
+        self.assertEqual(r["median_age"]["status"], "not_available")
+
+    def test_the_sex_ratio_says_what_the_census_counted(self):
+        note = self.rows["Abkhazia"]["sex_ratio_note"]
+        self.assertIn("115,252 men and 128,725 women", note)
+        self.assertIn("111,885 men and 128,820 women, 86.9 men per 100 women", note)
+        self.assertIn("33,388 men and 41,057 women", self.rows["Sokhumi"]["sex_ratio_note"])
+
+    def test_the_three_outlines_that_are_no_district_say_why(self):
+        for name in ("Gulripshi", "Ochamchire", "Gali"):
             r = self.rows[name]
             for field in ("population", "sex_ratio", "ethnicity"):
                 self.assertEqual(r[field]["status"], "not_available", (name, field))
                 self.assertTrue(r[field]["not_this_ground"], (name, field))
             self.assertEqual(r["sources"], [])
-        self.assertIn("65,180", self.rows["Sokhumi"]["population"]["note"])
         self.assertIn("17,489", self.rows["Gulripshi"]["population"]["note"])
+        self.assertIn("a quarter", self.rows["Gulripshi"]["population"]["note"])
         for name in ("Ochamchire", "Gali"):
             self.assertIn("72,882", self.rows[name]["population"]["note"])
         self.assertEqual(26073 + 16458 + 30351, 72882)
+        self.assertIn("12,066 of the district's 30,356", self.rows["Gali"]["population"]["note"])
+        self.assertEqual(sum(a.ENGURI.values()), 12066)
+
+    def test_zugdidi_says_what_its_outline_takes_in_beyond_the_enguri(self):
+        import build_entities as be
+        note = be.ROW_NOTES["georgia.json"]["GEO-GEOSTAT-92138335B56355921545740"]["population"]
+        self.assertIn("Enguri", note)
+        self.assertIn(f"about {round(sum(a.ENGURI.values()), -3):,.0f} people", note)
 
     def test_the_notes_speak_to_a_reader(self):
         for r in self.rows.values():

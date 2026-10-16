@@ -34,24 +34,39 @@ has become a new count should then be read instead.
 **Binding.** The first-level polygon is all of Abkhazia, and takes the
 republic's rows. Its six second-level polygons are drawn as Georgia's
 municipalities, while the authorities count by districts redrawn since the
-war, and only two of the six are one of their districts: every settlement
-that Wikidata places in the Gagra and Gudauta districts lies inside the
-polygon of that name, but for one village on the line itself (Amzhikukhua,
-10 m from it by GeoNames' point). The other four are written as gaps that say
-why (``REFUSED``):
+war (``BOUND``):
 
-* Sokhumi and Gulripshi -- the authorities count the city of Sukhum apart
-  from both districts, and the line drawn between the two polygons runs
-  through the east of the city: Abkhazian State University lies 1.7 km inside
-  Gulripshi's polygon, and several of Gulripsh district's villages lie in
-  Ochamchire's.
+* Gagra and Gudauta are one district each: every settlement that Wikidata
+  places in either district lies inside the polygon of that name, but for one
+  village on the line itself (Amzhikukhua, 10 m from it by GeoNames' point).
+* Sokhumi takes the city of Sukhum and the Sukhum district around it, which
+  the authorities count apart: the map draws no polygon for the city, whose
+  centre (GeoNames) lies in this one, 5 km from any other -- the rule georgia
+  places Georgia's own cities by. The line drawn with Gulripshi runs through
+  the city's south-east, west of the Kelasuri: by WorldPop's 2020 grid (run
+  on the runner as binding evidence, not data), 6,064 people live in the part
+  of Gulripshi's polygon west of the river against 83,510 in Sokhumi's, so
+  6.8% of the two units' people are drawn outside it (``POOLED_OUTSIDE``),
+  under the tenth that cyprus_north_census allows a polygon's count.
+
+The other three are written as gaps that say why (``REFUSED``):
+
+* Gulripshi -- that strip of Sukhum is a quarter of the people in its polygon
+  (6,064 of 24,396 on the same grid), and several of Gulripsh district's
+  villages lie in Ochamchire's.
 * Ochamchire and Gali -- the districts as drawn before 1995, when the
   authorities formed Tkvarcheli district from parts of both and counted
-  others of Gal's villages in Ochamchira district; Gal's villages along the
-  Enguri (Otobaia, 2 km in) lie in the polygon drawn as Zugdidi.
+  others of Gal's villages in Ochamchira district; Gal's eight village
+  administrations along the Enguri (Chuburkhinji, the two Otobaias, Tagiloni,
+  Pichori, Nabakevi, Dikhazurga and Ganakhleba: 12,066 of Gal's 30,356 people
+  in 2011 by the census's village rows as ethno-kavkaz.narod.ru transcribes
+  them, ``ENGURI``) lie in the polygon drawn as Zugdidi, whose note says so
+  (build_entities.ROW_NOTES).
 
 The yearbook publishes no religion and no language, and ages for the
-republic only; those fields are gaps that say so.
+republic only; those fields are gaps that say so. Its sex split for 2026 is
+an estimate too, and has moved from the census's (all of the net growth since
+2011 is men's), so each sex ratio's note gives the census's beside it.
 
 Usage:
     python -m scripts.fetch_census.abkhazia_census
@@ -121,8 +136,17 @@ DATED = {"1.2": "Переписи населения 2011 года", "1.6": "1 �
          "1.12": "Переписи населения 2011 года", "1.16": "1 января 2026 года"}
 NEXT_TITLE = re.compile(r"^1\.\s?\d{1,2}\s+\S")
 
-# The two polygons that are one district each: the map's label -> the row.
-BOUND = {"Gagra": "Гагрский район", "Gudauta": "Гудаутский район"}
+# The polygons the authorities' units fill: the map's label -> the rows.
+BOUND = {"Gagra": ("Гагрский район",), "Gudauta": ("Гудаутский район",),
+         "Sokhumi": ("г. Сухум", "Сухумский район")}
+# The share of the city's and the district's people drawn outside Sokhumi's
+# polygon, by WorldPop's 2020 grid: 6,064 / (83,510 + 6,064).
+POOLED_OUTSIDE = 0.068
+# Gal's village administrations drawn inside Zugdidi's polygon, with their
+# 2011 census counts (ethno-kavkaz.narod.ru/gal11.html): the figure Zugdidi's
+# note quotes.
+ENGURI = {"Чубурхиндж": 3340, "Первая Отобая": 2772, "Таглан": 1430, "Пичора": 1064,
+          "Набакиа": 999, "Вторая Отобая": 979, "Дихазурга": 972, "Ганахлеба": 510}
 
 NOT_GEORGIAS = ("Georgia's own 2014 census and Geostat's estimates do not cover Abkhazia, and the "
                 "authorities that count it are recognised by few states.")
@@ -138,6 +162,15 @@ NO_DISTRICT_AGES = ("Not published by district: the de facto authorities' statis
                     "gives ages from their 2011 census for Abkhazia as a whole only.")
 PARTS = ("Not written: the outline drawn here holds parts of several of the districts the de "
          "facto authorities count by, and none of them whole.")
+NATIONALITY_NOTE = ("Nationality as the de facto authorities' census of February 2011 counted it "
+                    "(their statistics committee's yearbook, table 1.12), Georgians and "
+                    "Mingrelians apart as the census lists them. Their tables for later years, to "
+                    "1 January 2026, keep each district's 2011 shares to within a fifth of a "
+                    "percentage point, so they are not a newer count.")
+MEDIAN_NOTE = ("Interpolated within the five-year age group holding the middle person, from the "
+               "de facto authorities' census of February 2011 (their statistics committee's "
+               "yearbook, table 1.2). Their age tables for later years print the 2011 census's "
+               "shares against each year's total, so they carry nothing newer.")
 SOUTH_EAST = ("The de facto authorities redrew the districts here after the war: in 1995 they "
               "formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and "
               "they count more of Gal's former villages in Ochamchira district. The outlines "
@@ -153,29 +186,25 @@ def south_east(people: dict[str, int]) -> str:
             "written for either outline.")
 
 
-# The four polygons left without a figure: the map's label -> the population
-# note, from the 2026 counts by district.
-REFUSED: dict[str, Callable[[dict[str, int]], str]] = {
-    "Sokhumi": lambda p: (
-        f"The de facto authorities count the city of Sukhum ({p['г. Сухум']:,} people on "
-        f"1 January {YEAR}) apart from the Sukhum district around it "
-        f"({p['Сухумский район']:,}). This outline holds most of both, but the line drawn "
-        "between it and Gulripshi runs through the east of the city, whose university lies "
-        "in the outline drawn as Gulripshi: neither figure, nor their sum, is this "
-        "outline's, so none is written here."),
-    "Gulripshi": lambda p: (
+# The three polygons left without a figure: the map's label -> the population
+# note, from the 2026 counts by district and the 2011 census's.
+REFUSED: dict[str, Callable[[dict[str, int], dict[str, int]], str]] = {
+    "Gulripshi": lambda p, c: (
         f"The de facto authorities' Gulripsh district had {p['Гулрыпшский район']:,} people "
-        f"on 1 January {YEAR}. This outline holds most of it, but also the east of the city "
-        "of Sukhum, which they count apart (the line drawn with Sokhumi runs through the "
-        "city), while several of the district's villages lie in the outline drawn as "
-        "Ochamchire: the district's figure is not this outline's, so none is written here."),
-    "Ochamchire": lambda p: SOUTH_EAST + (
+        f"on 1 January {YEAR}. This outline holds nearly all of it, but its line with Sokhumi "
+        "runs through the south-east of the city of Sukhum, which they count apart: by "
+        "WorldPop's 2020 population grid, about a quarter of the people inside this outline "
+        "live in that part of the city and its suburbs. Several of the district's villages "
+        "also lie in the outline drawn as Ochamchire. The district's figure is not this "
+        "outline's, so none is written here."),
+    "Ochamchire": lambda p, c: SOUTH_EAST + (
         "the town of Tkvarcheli lies in this one and many of its district's villages in "
         "Gali's, and several villages of Gulripsh district lie in this one too.") + south_east(p),
-    "Gali": lambda p: SOUTH_EAST + (
-        "villages of the Ochamchira and Tkvarcheli districts lie in this one, and Gal's "
-        "villages along the Enguri, such as Otobaia, lie outside it, in the outline drawn as "
-        "Zugdidi.") + south_east(p),
+    "Gali": lambda p, c: SOUTH_EAST + (
+        "villages of the Ochamchira and Tkvarcheli districts lie in this one, while Gal's "
+        "villages along the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; "
+        f"{sum(ENGURI.values()):,} of the district's {c['Галский район']:,} people at the "
+        "2011 census) lie outside it, in the outline drawn as Zugdidi.") + south_east(p),
 }
 
 
@@ -385,45 +414,71 @@ def read(text: str) -> dict[str, Any]:
                              "the census's shares, and should be read")
     median = grouped_median([(lower, None if lower == 70 else 5, n)
                              for lower, (n, _) in ages.items()])
-    return {"people": t11, "nationality": nat, "median": median}
+    return {"people": t11, "census": t7, "nationality": nat, "median": median}
 
 
 def cite(table_no: str, field: str) -> dict[str, str]:
     return {"field": field, "name": SOURCE.format(table=table_no), "url": URL, "license": LICENCE}
 
 
-def counted(unit: str, figures: dict[str, Any], *, whole: bool) -> dict[str, Any]:
-    """The fields of a polygon that is the republic or one of its districts."""
-    both, men, women = figures["people"][unit]
-    if whole:
-        population_note = (f"The de facto authorities' estimate of the people present on 1 "
-                           f"January {YEAR}: {ESTIMATE}. {NOT_GEORGIAS}")
-    else:
-        population_note = (f"The de facto authorities' estimate of the people present in "
-                           f"{DISTRICTS[unit]} on 1 January {YEAR}: {ESTIMATE}. {NOT_GEORGIAS}")
+def total(figures: dict[str, Any], key: str, rows: tuple[str, ...]) -> tuple[int, ...]:
+    """The rows' (both sexes, men, women) in ``figures[key]``, added together."""
+    return tuple(sum(column) for column in zip(*(figures[key][r] for r in rows)))
+
+
+def population_note(rows: tuple[str, ...], figures: dict[str, Any]) -> str:
+    """What the population of the republic, of a district or of the city with
+    its district says."""
+    if rows == (WHOLE,):
+        return (f"The de facto authorities' estimate of the people present on 1 January {YEAR}: "
+                f"{ESTIMATE}. {NOT_GEORGIAS}")
+    if len(rows) == 1:
+        return (f"The de facto authorities' estimate of the people present in "
+                f"{DISTRICTS[rows[0]]} on 1 January {YEAR}: {ESTIMATE}. {NOT_GEORGIAS}")
+    city, district = (figures["people"][r][0] for r in rows)
+    return (f"The de facto authorities' estimates of the people present on 1 January {YEAR} in "
+            f"the city of Sukhum ({city:,}) and in the Sukhum district around it "
+            f"({district:,}), which they count apart, added together; each is {ESTIMATE}. The "
+            "map draws no outline for the city, whose centre lies in this one, 5 km from any "
+            "other. The line drawn with Gulripshi runs through the city's south-east: by "
+            f"WorldPop's 2020 population grid, about {POOLED_OUTSIDE:.0%} of these people live "
+            f"on the Gulripshi side of it. {NOT_GEORGIAS}")
+
+
+def sex_note(rows: tuple[str, ...], figures: dict[str, Any]) -> str:
+    """The estimate's men and women, and the census's beside them."""
+    _, men, women = total(figures, "people", rows)
+    _, men_then, women_then = total(figures, "census", rows)
+    return (f"The de facto authorities' estimate for 1 January {YEAR}: {men:,} men and "
+            f"{women:,} women. Their census of February 2011 counted {men_then:,} men and "
+            f"{women_then:,} women, {100 * men_then / women_then:.1f} men per 100 women.")
+
+
+def counted(rows: tuple[str, ...], figures: dict[str, Any]) -> dict[str, Any]:
+    """The fields of a polygon that the republic's or its districts' rows fill."""
+    both, men, women = total(figures, "people", rows)
+    nationality: dict[str, int] = {}
+    for row in rows:
+        for group, n in figures["nationality"][row].items():
+            nationality[group] = nationality.get(group, 0) + n
     fields: dict[str, Any] = {
         "population": measure(both, year=YEAR, source=SOURCE.format(table="1.11")),
-        "population_note": population_note,
+        "population_note": population_note(rows, figures),
         "sex_ratio": sex_ratio(men, women, year=YEAR, source=SOURCE.format(table="1.11")),
-        "ethnicity": shares({g: n for g, n in figures["nationality"][unit].items() if n}),
+        "sex_ratio_note": sex_note(rows, figures),
+        "ethnicity": shares({g: n for g, n in nationality.items() if n}),
         "ethnicity_year": CENSUS,
-        "ethnicity_note": (
-            "Nationality as the de facto authorities' census of February 2011 counted it "
-            "(their statistics committee's yearbook, table 1.12), Georgians and Mingrelians "
-            "apart as the census lists them. Their tables for later years, to 1 January 2026, keep each district's "
-            "2011 shares to within a fifth of a percentage point, so they are not a newer count."),
+        "ethnicity_note": NATIONALITY_NOTE + (
+            " The city's and the district's counts are added together." if len(rows) > 1
+            else ""),
         "religion": gap(NOT_AVAILABLE, NO_RELIGION),
         "language": gap(NOT_AVAILABLE, NO_LANGUAGE),
     }
     cites = [cite("1.11", "population/sex_ratio"), cite("1.12", "ethnicity")]
-    if whole:
+    if rows == (WHOLE,):
         fields["median_age"] = measure(figures["median"], unit="years", year=CENSUS,
                                        source=SOURCE.format(table="1.2"))
-        fields["median_age_note"] = (
-            "Interpolated within the five-year age group holding the middle person, from the "
-            "de facto authorities' census of February 2011 (their statistics committee's "
-            "yearbook, table 1.2). Their age tables for later years print the 2011 census's shares against each year's "
-            "total, so they carry nothing newer.")
+        fields["median_age_note"] = MEDIAN_NOTE
         cites.insert(1, cite("1.2", "median_age"))
     else:
         fields["median_age"] = gap(NOT_AVAILABLE, NO_DISTRICT_AGES)
@@ -431,10 +486,13 @@ def counted(unit: str, figures: dict[str, Any], *, whole: bool) -> dict[str, Any
     return fields
 
 
-def refused(people: dict[str, int], name: str) -> dict[str, Any]:
+def refused(figures: dict[str, Any], name: str) -> dict[str, Any]:
     """The fields of a polygon that is no district: gaps that say why, and that no
     figure fits it, its own or one derived from its neighbours' (``not_this_ground``)."""
-    return {"population": dict(gap(NOT_AVAILABLE, REFUSED[name](people)), not_this_ground=True),
+    people = {unit: both for unit, (both, _, _) in figures["people"].items()}
+    census = {unit: both for unit, (both, _, _) in figures["census"].items()}
+    return {"population": dict(gap(NOT_AVAILABLE, REFUSED[name](people, census)),
+                               not_this_ground=True),
             "sex_ratio": dict(gap(NOT_AVAILABLE, PARTS), not_this_ground=True),
             "ethnicity": dict(gap(NOT_AVAILABLE, PARTS), not_this_ground=True),
             "median_age": gap(NOT_AVAILABLE, NO_DISTRICT_AGES),
@@ -444,7 +502,7 @@ def refused(people: dict[str, int], name: str) -> dict[str, Any]:
 
 def records(figures: dict[str, Any], admin1: list[dict[str, Any]],
             admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """The republic's record, the two districts', and the four gaps."""
+    """The republic's record, the three polygons its units fill, and the gaps."""
     abkhazia = [u for u in admin1 if u["name"] == "Abkhazia"]
     if len(abkhazia) != 1:
         raise SystemExit(f"abkhazia_census: the map draws {len(abkhazia)} first-level "
@@ -454,20 +512,19 @@ def records(figures: dict[str, Any], admin1: list[dict[str, Any]],
     if set(inside) != set(BOUND) | set(REFUSED):
         raise SystemExit(f"abkhazia_census: the map draws {sorted(inside)} inside Abkhazia, "
                          f"not {sorted(set(BOUND) | set(REFUSED))}")
-    people = {unit: both for unit, (both, _, _) in figures["people"].items()}
     out = [record(f"GEO-ABK-{whole['id']}", whole["name"], level="admin1", parent="GEO",
                   country="GEO", match_by="shape_id", shape_id=whole["id"],
-                  **counted(WHOLE, figures, whole=True))]
-    for name, unit in sorted(BOUND.items()):
+                  **counted((WHOLE,), figures))]
+    for name, rows in sorted(BOUND.items()):
         sid = inside[name]["id"]
         out.append(record(f"GEO-ABK-{sid}", name, level="admin2", parent="GEO",
                           country="GEO", match_by="shape_id", shape_id=sid,
-                          **counted(unit, figures, whole=False)))
+                          **counted(rows, figures)))
     for name in sorted(REFUSED):
         sid = inside[name]["id"]
         out.append(record(f"GEO-ABK-{sid}", name, level="admin2", parent="GEO",
                           country="GEO", match_by="shape_id", shape_id=sid,
-                          **refused(people, name)))
+                          **refused(figures, name)))
     return out
 
 

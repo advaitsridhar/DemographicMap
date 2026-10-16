@@ -2974,12 +2974,26 @@ ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
 # municipality's own area, so it is not Lubango and Cacula together and
 # pooling the two would put Cacula's people on ground the map draws in other
 # municipalities; Lubango's figure stands, saying what it leaves out.
+#
+# Zugdidi's polygon runs past the Enguri into Abkhazia: the eight village
+# administrations of Gal district on that side -- Chuburkhinji, the two
+# Otobaias, Tagiloni, Pichori, Nabakevi, Dikhazurga and Ganakhleba, whose
+# Wikidata points lie 0.4 to 4.7 km inside it -- counted 12,066 people in the
+# de facto authorities' 2011 census (abkhazia_census.ENGURI). Geostat counts
+# the municipality without them, which is the figure the polygon carries.
 ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO09077": {"population": (
             "The boundary file draws no polygon for Cacula, the municipality to the "
             "north-east whose seat lies inside this polygon; OCHA's table counts "
             "197,616 people in Cacula in 2024, who are not in this figure.")},
+    },
+    "georgia.json": {
+        "GEO-GEOSTAT-92138335B56355921545740": {"population": (
+            "The outline drawn here also takes in the villages along the Enguri that the "
+            "de facto authorities in Abkhazia count in their Gal district (Chuburkhinji, "
+            "Otobaia, Tagiloni, Pichori and others), about 12,000 people at their 2011 "
+            "census, who are not in this figure.")},
     },
 }
 
