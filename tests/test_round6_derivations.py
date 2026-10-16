@@ -62,8 +62,8 @@ class SoleChildren(unittest.TestCase):
         self.assertEqual(refused, [])
         self.assertEqual(len(filled), 6)
         self.assertEqual(child["population"]["value"], 130271)
-        # Beside the figure, where the panel reads a figure's note; a note
-        # inside a figure is shown only for a gap.
+        # Beside the figure, not inside it: a note inside a figure travels
+        # with the figure wherever it is copied, and this one is the child's.
         self.assertIn("is Praia's only division and covers the same ground",
                       child["population_note"])
         self.assertNotIn("note", child["population"])

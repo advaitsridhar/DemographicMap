@@ -7993,8 +7993,8 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         if len(years) != 1:
             first.pop("year", None)
         # A sum says it is one: no row this source published has this figure.
-        # Said in population_note, the note a figure is shown with; a note
-        # inside the figure is shown only when the figure is a gap.
+        # Said in population_note, beside the figure; the note inside the
+        # first part's figure is about that part alone, so it is dropped.
         pooled["population"] = first
         pooled["population_note"] = (
             shared_sentences([p.get("population_note") for p in parts])
@@ -8415,7 +8415,7 @@ def copy_field(source: dict[str, Any], target: dict[str, Any], field: str,
     records that are the same ground. ``sentence`` is added to the note
     beside the value, ``<field>_note``, after the source's own: that is the
     note the panel shows for a figure as for a list. A note inside a figure
-    is shown only for a gap, so a sentence put there would never be read.
+    travels with the figure, so a sentence about this record goes beside it.
     """
     value = copy.deepcopy(source[field])
     if isinstance(value, dict):

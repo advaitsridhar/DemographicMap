@@ -120,7 +120,28 @@ window.Dashboard = (function () {
     if (unit) meta.push(unit);
     if (measure && measure.year) meta.push(String(measure.year));
     if (measure && measure.source) meta.push(measure.source.split(",")[0]);
-    return factCard(label, format ? format(raw) : raw, meta.join(" · "), note);
+    return factCard(label, format ? format(raw) : raw, meta.join(" · "),
+                    figureNote(measure, note));
+  }
+
+  /* What a figure's tile says about it: the record's `<field>_note`, and the
+   * note the figure carries inside itself.
+   *
+   * Many readers put the sentence that says what a count is inside the count
+   * -- `{value, year, source, note}` -- and this panel read only the note
+   * beside it, so 937 population figures showed with their sentence dropped:
+   * Yemen's 2004 census districts, Oman's registered Omanis and expatriates,
+   * Iraq's governorates counted on the ground the map draws, and Zugdidi's
+   * outline taking in villages past the Enguri that its figure leaves out.
+   * Where one note already holds the other it is not said twice.
+   */
+  function figureNote(measure, note) {
+    const own = measure && typeof measure === "object" && typeof measure.note === "string"
+      ? measure.note.trim() : "";
+    const beside = typeof note === "string" ? note.trim() : "";
+    if (!own || beside.includes(own)) return beside;
+    if (!beside || own.includes(beside)) return own;
+    return `${beside} ${own}`;
   }
 
   /* Make a partition's displayed percentages add to exactly 100.0.
