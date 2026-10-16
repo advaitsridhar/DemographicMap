@@ -238,6 +238,81 @@ class TwinsShowOneFigure(unittest.TestCase):
         self.assertEqual(first2["population"][be.RESTATED_FROM]["value"], 3_613)
 
 
+class UnionsAcrossFiles(unittest.TestCase):
+    """A polygon drawn as a municipio was before a newer one was made out of it."""
+
+    def rows(self, filename, pops, ratios=None, medians=None):
+        out = []
+        for i, (name, pop) in enumerate(pops):
+            row = {"id": f"MEX-{filename[:3]}-{i}", "name": name, "level": "admin2",
+                   "country": "MEX", "_source": filename, "sources": []}
+            if pop is not None:
+                row["population"] = {"value": pop, "year": 2020, "source": "INEGI 2020"}
+            if ratios:
+                row["sex_ratio"] = {"value": ratios[i], "unit": "males_per_1000_females",
+                                    "year": 2020}
+            if medians:
+                row["median_age"] = {"value": medians[i], "unit": "years", "year": 2020}
+            out.append(row)
+        return out
+
+    def test_each_files_rows_are_pooled_onto_the_polygon(self):
+        census = self.rows("census.json", [("Tecpatán", 21_426), ("Mezcalapa", 23_847)],
+                           ratios=[990, 962])
+        ages = self.rows("ages.json", [("Tecpatán", None), ("Mezcalapa", None)],
+                         medians=[25.0, 22.0])
+        adapters = {"MEX": census + ages}
+        spec = {"parts": {"census.json": tuple(r["id"] for r in census),
+                          "ages.json": tuple(r["id"] for r in ages)},
+                "shapes": (("admin2", "S1"),),
+                "note": "Mezcalapa has no outline of its own and lies inside this one."}
+        with mock.patch.object(be, "ROW_UNIONS", {("MEX", "Tecpatán"): spec}), \
+                mock.patch.object(be, "log"):
+            done = be.pool_row_unions(adapters)
+        self.assertEqual(len(done), 2)
+        pooled = {r["_source"]: r for r in adapters["MEX"]}
+        self.assertEqual(set(pooled), {"census.json", "ages.json"})
+        self.assertEqual(pooled["census.json"]["population"]["value"], 45_273)
+        self.assertEqual(pooled["census.json"]["shape_id"], "S1")
+        # Men and women from each part's population and ratio, summed: exact,
+        # where a mean of the two ratios weighted by population is not.
+        men = 21_426 * 990 / 1990 + 23_847 * 962 / 1962
+        women = 21_426 * 1000 / 1990 + 23_847 * 1000 / 1962
+        self.assertEqual(pooled["census.json"]["sex_ratio"]["value"],
+                         int(round(men / women * 1000)))
+        self.assertIn("Mezcalapa has no outline", pooled["census.json"]["sex_ratio_note"])
+        # A median of the two together cannot be had from their medians.
+        median = pooled["ages.json"]["median_age"]
+        self.assertNotIn("value", median)
+        self.assertIn("Tecpatán and Mezcalapa separately", median["note"])
+        self.assertEqual(be.union_row_ids("ages.json"), set())  # outside the patch
+
+    def test_ratios_with_no_populations_to_weigh_them_are_a_stated_gap(self):
+        parts = self.rows("ocha.json", [("A", None), ("B", None)], ratios=[1017, 990])
+        pooled = be.pool_rows("A", parts, "MEX", "ocha.json")
+        self.assertEqual(pooled["sex_ratio"]["status"], be.NOT_AVAILABLE)
+        self.assertIn("A and B separately", pooled["sex_ratio"]["note"])
+
+    def test_a_pooled_newer_figure_stands_in_front_of_a_pooled_count(self):
+        # Ensenada with San Quintín: the 2020 census's 561,375 and OCHA's
+        # 595,451 for 2024, both the two municipios added up.
+        entity = unit("E", 561_375, 2020, newer=595_451, newer_year=2024,
+                      note="The sum of the figures published for Ensenada and San "
+                           "Quintín; the map draws them as one unit.",
+                      newer_file="cod_ps_admin2.json", country="MEX")
+        entity["_held"]["population"][0]["row"] = "MEX-POOL-ensenada-codpsadmin2json-admin2"
+        lone = unit("L", 100_000, 2020, newer=103_000, newer_year=2024,
+                    note="The sum of the figures published for L and M; the map draws "
+                         "them as one unit.", newer_file="cod_ps_admin2.json",
+                    country="MEX")
+        lone["_held"]["population"][0]["row"] = "MEX-CODPS-MX99999"
+        with mock.patch.dict(be.HELD_ROWS["cod_ps_admin2.json"], {"MEX": "x.json"}):
+            be.prefer_newer_figures({}, country(entity, lone, iso3="MEX"))
+        self.assertEqual(entity["population"]["value"], 595_451)
+        # A figure for the municipio alone is not the polygon's.
+        self.assertEqual(lone["population"]["value"], 100_000)
+
+
 class HeldRows(unittest.TestCase):
     """A file held behind an office's count offers its population only."""
 

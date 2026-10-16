@@ -151,8 +151,11 @@ class SupersededProjections(unittest.TestCase):
         for iso3, file in self.WANTED.items():
             self.assertEqual(dropped.get(iso3) or held.get(iso3), file, iso3)
             self.assertIn(file, be.ADAPTER_FILES, file)
+        # Costa Rica's projection is from the 2011 census, and the 2022 one
+        # the provinces show counted fewer: it is dropped again.
         self.assertEqual({iso3 for iso3 in self.WANTED if iso3 in held},
-                         {"LAO", "PHL", "NIC", "CRI", "MEX"})
+                         {"LAO", "PHL", "NIC", "MEX"})
+        self.assertEqual(dropped["CRI"], "costa_rica_census.json")
         # Myanmar keeps one vintage at both levels.
         self.assertNotIn("MMR", dropped)
         self.assertNotIn("MMR", held)

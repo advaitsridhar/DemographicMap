@@ -5755,8 +5755,11 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual(pooled["wikidata_admin1.json"]["population"]["value"], 1196509)
         self.assertIn("The sum of the figures published for Thessalia and Sterea",
                       pooled["eurostat_nuts2.json"]["population_note"])
-        # A median does not sum; Thessaly's is not the administration's.
-        self.assertNotIn("median_age", pooled["eurostat_nuts2.json"])
+        # A median does not sum; Thessaly's is not the administration's, and
+        # the field says why it has none rather than carrying either part's.
+        median = pooled["eurostat_nuts2.json"]["median_age"]
+        self.assertNotIn("value", median)
+        self.assertIn("Thessalia and Sterea Elláda separately", median["note"])
 
     def test_a_declared_split_states_a_gap_rather_than_copying(self):
         # Bueng Kan was part of Nong Khai in 2000. Nong Khai's religion then

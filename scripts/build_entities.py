@@ -2824,6 +2824,13 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 #        and a stated reason on the 11 drawn as they were before a district
 #        was cut from them; OCHA's 2023 figures are projections made before
 #        that count, a median 31% above it.
+#   CRI  costa_rica_census.json, the 2011 census of the 83 cantons as drawn.
+#        OCHA's 2021 figures are INEC's projection from that census, and the
+#        2022 census, which the provinces show, counted fewer: Heredia's
+#        cantons are projected at 532,954 and the census found 479,117 in the
+#        province. The 2022 count of the cantons is not read yet; until it is,
+#        a projection a newer count contradicts does not stand in front of the
+#        count it was made from.
 # And Georgia's is older than the office's: Geostat's figures for the 55
 # municipalities it can place are for 2026, OCHA's for 2014, and these stood
 # on four of the 13 it cannot place (Khobi, Lanchkhuti, Terjola, Tkibuli),
@@ -2835,6 +2842,7 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # children under 2023 parents.
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
+                           "CRI": "costa_rica_census.json",
                            "DOM": "dominican_census.json",
                            "GEO": "georgia.json",
                            "GTM": "guatemala_census.json",
@@ -3569,8 +3577,7 @@ FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 # over the 2022 count, Paraguay's 2023 districts over the 2022 count -- the
 # count is the newer word, and those rows are still dropped (SUPERSEDED_ROWS).
 HELD_ROWS: dict[str, dict[str, str]] = {
-    "cod_ps_admin2.json": {"CRI": "costa_rica_census.json",
-                           "LAO": "laos_district.json",
+    "cod_ps_admin2.json": {"LAO": "laos_district.json",
                            "MEX": "mexico_municipality.json",
                            "NIC": "nicaragua_census.json",
                            "NPL": "nepal_district.json",
@@ -3611,9 +3618,18 @@ GROUND_PINNED = frozenset({"estonia_municipality.json", "norway_kommune.json",
 # provincial figures are the register's Koreans alone. Incheon's 3,049,315 for
 # 2025 stood in front of its 3,078,426, 81,016 of them foreigners, so a
 # province that grew read as shrinking.
+#
+# Nepal's is a projection on another basis than the census it is said to come
+# from: OCHA's 77 districts add up to 30,899,443 for 2023, 5.95% above the
+# 2021 census's 29,164,578 two years on, where the census itself had grown
+# from the 2011 census's 26,494,504 by under 1% a year. Every district moved
+# by about as much, so the comparison with its peers let the whole table
+# through, and Koshi took the districts' 2023 sum.
 OTHER_PEOPLE: dict[tuple[str, str], str] = {
     ("KOR", "wikidata_admin1.json"): "the resident register's Korean nationals alone, "
                                      "without the registered foreigners",
+    ("NPL", "cod_ps_admin2.json"): "a projection 5.95% above the 2021 census two years "
+                                   "on, which is another basis and not growth",
 }
 
 # A count whose note says it was put together for the polygon -- summed over
@@ -3782,7 +3798,11 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                 "value": row[key], "wikidata": row.get("wikidata"),
                 "file": row.get("_source"), "match": row.get("_match"),
                 "sources": [src for src in row.get("sources") or []
-                            if key in str(src.get("field") or "").split("/")]})
+                            if key in str(src.get("field") or "").split("/")],
+                "row": row.get("id"),
+                # The note beside the figure goes with it, to wherever it is
+                # later shown: a union's says what was added up.
+                **({"unit_note": row[f"{key}_note"]} if row.get(f"{key}_note") else {})})
     replaced = {key for key, value in row.items()
                 if key in VALUE_FIELDS and not is_gap(value) and key not in held}
     # And what a newer figure displaces is kept aside the same way. The town
@@ -6833,10 +6853,16 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                 said = " ".join(str(text or "") for text in (
                     entity.get("population_note"),
                     shown.get("note") if isinstance(shown, dict) else None))
-                if composed(said):
-                    continue
+                # A count put together for the polygon gives way only to a
+                # newer figure put together the same way: a union of the same
+                # places pooled from another file (pool_rows), as Mexico's
+                # municipios drawn with those made out of them are pooled from
+                # the 2020 census and from OCHA's table for 2024.
+                together = composed(said)
                 best = None
                 for held in (entity.get("_held") or {}).get("population", []):
+                    if together and "-POOL-" not in str(held.get("row") or ""):
+                        continue
                     offered, when = published(held.get("value")), vintage(held.get("value"))
                     if (not is_fill_only(held.get("file"), iso3) or not offered
                             or not when or when <= year
@@ -6907,6 +6933,8 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
         entity["population"] = {**best["value"], RESTATED_FROM: {
             k: shown[k] for k in ("value", "year", "source") if k in shown}}
         entity.pop("population_note", None)
+        if best.get("unit_note"):
+            entity["population_note"] = best["unit_note"]
         entity["sources"] = kept_sources + [src for src in best.get("sources") or []
                                             if src not in kept_sources]
         origin["population"] = best.get("file")
@@ -8101,6 +8129,49 @@ def shared_sentences(notes: Sequence[Any]) -> str:
     return prefix[:cut + 2] if cut > 0 else ""
 
 
+RATIO_UNIT_WORDS = re.compile(r"^(males|females)_per_(\d+)_(males|females)$")
+
+
+def pool_sex_ratio(pooled: dict[str, Any], parts: Sequence[dict[str, Any]],
+                   pops: Sequence[float | None], names: str) -> None:
+    """The parts' sex ratio pooled, from each part's population and ratio.
+
+    A ratio of males to females and the population give each part's men and
+    women, and the pooled ratio is theirs summed -- exact, as a weighted mean
+    of the ratios is not. Where the parts carry ratios but the file gives no
+    populations to weigh them by, the field says so rather than staying
+    silent: a part's own ratio would describe less than the polygon.
+    """
+    ratios = [p.get("sex_ratio") for p in parts]
+    if not all(published(r) is not None for r in ratios):
+        return
+    units = {r.get("unit") for r in ratios}
+    found = RATIO_UNIT_WORDS.match(str(next(iter(units)))) if len(units) == 1 else None
+    if found is None or any(v is None for v in pops):
+        pooled["sex_ratio"] = gap(NOT_AVAILABLE, (
+            f"Published for {names} separately, with no populations from the same "
+            f"source to weigh them by, so they are not combined for this polygon, "
+            f"which draws them as one unit."))
+        return
+    per = float(found.group(2))
+    over = under = 0.0
+    for people, ratio in zip(pops, (float(published(r)) for r in ratios)):
+        over += people * ratio / (per + ratio)
+        under += people * per / (per + ratio)
+    value = dict(ratios[0])
+    value.pop("note", None)
+    value["value"] = round(over / under * per, 1 if per <= 100 else 0)
+    if per > 100:
+        value["value"] = int(value["value"])
+    if len({vintage(r) for r in ratios}) != 1:
+        value.pop("year", None)
+    pooled["sex_ratio"] = value
+    pooled["sex_ratio_note"] = (
+        shared_sentences([p.get("sex_ratio_note") for p in parts])
+        + f"Pooled from the populations and ratios published for {names}; the map "
+        f"draws them as one unit.")
+
+
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
               filename: str) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
@@ -8143,8 +8214,15 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         pooled["population"] = first
         pooled["population_note"] = (
             shared_sentences([p.get("population_note") for p in parts])
-            + f"The sum of the figures published for {names}; the boundary "
-            f"file draws them as one unit.")
+            + f"The sum of the figures published for {names}; the map draws them "
+            f"as one unit.")
+    pool_sex_ratio(pooled, parts, pops, names)
+    if all(published(p.get("median_age")) is not None for p in parts):
+        # A median of two places together is not a mix of their medians.
+        pooled["median_age"] = gap(NOT_AVAILABLE, (
+            f"Published for {names} separately: the median of the two together "
+            f"cannot be taken from their medians, and the map draws them as one "
+            f"unit."))
     for field in ROLLUP_FIELDS:
         lists = [p.get(field) for p in parts]
         if not all(isinstance(v, list) and shares_of(v) for v in lists):
@@ -8190,7 +8268,7 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         pooled[f"{field}_note"] = (
             shared_sentences([p.get(f"{field}_note") for p in parts])
             + f"Pooled from the rows published for {names}, weighted by {basis}; "
-            f"the boundary file draws them as one unit.")
+            f"the map draws them as one unit.")
         for satellite in ("year", "basis"):
             values = {p.get(f"{field}_{satellite}") for p in parts}
             if len(values) == 1 and None not in values:
@@ -8268,6 +8346,20 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
 #        2022 census counts the districts as they are now, so it has no figure
 #        for this ground (paraguay_census says so on the polygon), and OCHA's
 #        rows are kept for this union although the census supersedes the rest.
+#   MEX  Twelve polygons are drawn as the municipio was before a newer one was
+#        made out of it: the census of 2020 and OCHA's table for 2024 count
+#        the two apart, and the newer has no polygon. Each part's seat lies
+#        inside the old polygon (GeoNames' seats, and for Mezcalapa, Hueyapan,
+#        Puerto Morelos and San Felipe their towns; Seybaplaya's and Puerto
+#        Morelos' lie on the coast just outside the generalised line, nearest
+#        it); Emiliano Zapata, made a municipio in 2011 (Spanish Wikipedia),
+#        has its seat at 16.538N 92.897W in Acala's polygon. The census's
+#        populations, sex ratios and compositions are pooled from its counts;
+#        a median age is not, and the field says why. San Felipe was made out
+#        of Mexicali after the 2020 census, which counted it in Mexicali, so
+#        only OCHA's rows are pooled there. Tecpatán alone drew 22,580 people
+#        of 47,348.
+#        An entry with "parts" pools each file's rows for the same places.
 ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
     ("MWI", "Zomba"): {
         "file": "cod_ps_admin2.json",
@@ -8311,13 +8403,141 @@ ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
         "note": ("Both are the districts as they were before Cerro Corá was "
                  "created in 2020, which is how the boundary file draws them; "
                  "the figures are projections for 2023.")},
+    ("MEX", "Ensenada"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-02001", "MEX-02006"),
+            "mexico_municipality_age.json": ("MEX-02001", "MEX-02006"),
+            "mexico_ethnicity.json": ("MEX-02001", "MEX-02006"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX02001", "MEX-CODPS-MX02006"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX02001", "MEX-CODPSAGE-MX02006"),
+        },
+        "shapes": (("admin2", "50627088B13797450449328"),),
+        "note": "San Quintín has no outline of its own and lies inside this one."},
+    ("MEX", "Mexicali"): {
+        "parts": {
+            "cod_ps_admin2.json": ("MEX-CODPS-MX02002", "MEX-CODPS-MX02007"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX02002", "MEX-CODPSAGE-MX02007"),
+        },
+        "shapes": (("admin2", "50627088B84599572497035"),),
+        "note": ("San Felipe has no outline of its own and lies inside this one; the 2020 "
+                 "census, taken before it was made a municipio, counted it in Mexicali.")},
+    ("MEX", "Champotón"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-04004", "MEX-04012"),
+            "mexico_municipality_age.json": ("MEX-04004", "MEX-04012"),
+            "mexico_ethnicity.json": ("MEX-04004", "MEX-04012"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX04004", "MEX-CODPS-MX04012"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX04004", "MEX-CODPSAGE-MX04012"),
+        },
+        "shapes": (("admin2", "50627088B90852523965903"),),
+        "note": "Seybaplaya has no outline of its own and lies inside this one."},
+    ("MEX", "Acala"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-07002", "MEX-07123"),
+            "mexico_municipality_age.json": ("MEX-07002", "MEX-07123"),
+            "mexico_ethnicity.json": ("MEX-07002", "MEX-07123"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX07002", "MEX-CODPS-MX07123"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX07002", "MEX-CODPSAGE-MX07123"),
+        },
+        "shapes": (("admin2", "50627088B13121801882345"),),
+        "note": "Emiliano Zapata has no outline of its own and lies inside this one."},
+    ("MEX", "Pueblo Nuevo Solistahuacán"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-07072", "MEX-07121"),
+            "mexico_municipality_age.json": ("MEX-07072", "MEX-07121"),
+            "mexico_ethnicity.json": ("MEX-07072", "MEX-07121"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX07072", "MEX-CODPS-MX07121"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX07072", "MEX-CODPSAGE-MX07121"),
+        },
+        "shapes": (("admin2", "50627088B52747419907097"),),
+        "note": ("Rincón Chamula San Pedro has no outline of its own and lies inside this "
+                 "one.")},
+    ("MEX", "Siltepec"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-07080", "MEX-07120", "MEX-07125"),
+            "mexico_municipality_age.json": ("MEX-07080", "MEX-07120", "MEX-07125"),
+            "mexico_ethnicity.json": ("MEX-07080", "MEX-07120", "MEX-07125"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX07080", "MEX-CODPS-MX07120", "MEX-CODPS-MX07125"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX07080", "MEX-CODPSAGE-MX07120", "MEX-CODPSAGE-MX07125"),
+        },
+        "shapes": (("admin2", "50627088B9123326628132"),),
+        "note": ("Capitán Luis Ángel Vidal and Honduras de la Sierra have no outlines of "
+                 "their own and lie inside this one.")},
+    ("MEX", "Tecpatán"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-07092", "MEX-07124"),
+            "mexico_municipality_age.json": ("MEX-07092", "MEX-07124"),
+            "mexico_ethnicity.json": ("MEX-07092", "MEX-07124"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX07092", "MEX-CODPS-MX07124"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX07092", "MEX-CODPSAGE-MX07124"),
+        },
+        "shapes": (("admin2", "50627088B96420175301119"),),
+        "note": "Mezcalapa has no outline of its own and lies inside this one."},
+    ("MEX", "Villa Corzo"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-07107", "MEX-07122"),
+            "mexico_municipality_age.json": ("MEX-07107", "MEX-07122"),
+            "mexico_ethnicity.json": ("MEX-07107", "MEX-07122"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX07107", "MEX-CODPS-MX07122"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX07107", "MEX-CODPSAGE-MX07122"),
+        },
+        "shapes": (("admin2", "50627088B92605446489911"),),
+        "note": "El Parral has no outline of its own and lies inside this one."},
+    ("MEX", "Miacatlán"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-17015", "MEX-17034"),
+            "mexico_municipality_age.json": ("MEX-17015", "MEX-17034"),
+            "mexico_ethnicity.json": ("MEX-17015", "MEX-17034"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX17015", "MEX-CODPS-MX17034"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX17015", "MEX-CODPSAGE-MX17034"),
+        },
+        "shapes": (("admin2", "50627088B93952904425300"),),
+        "note": "Coatetelco has no outline of its own and lies inside this one."},
+    ("MEX", "Puente de Ixtla"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-17017", "MEX-17035"),
+            "mexico_municipality_age.json": ("MEX-17017", "MEX-17035"),
+            "mexico_ethnicity.json": ("MEX-17017", "MEX-17035"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX17017", "MEX-CODPS-MX17035"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX17017", "MEX-CODPSAGE-MX17035"),
+        },
+        "shapes": (("admin2", "50627088B15428140679131"),),
+        "note": "Xoxocotla has no outline of its own and lies inside this one."},
+    ("MEX", "Tetela del Volcán"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-17022", "MEX-17036"),
+            "mexico_municipality_age.json": ("MEX-17022", "MEX-17036"),
+            "mexico_ethnicity.json": ("MEX-17022", "MEX-17036"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX17022", "MEX-CODPS-MX17036"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX17022", "MEX-CODPSAGE-MX17036"),
+        },
+        "shapes": (("admin2", "50627088B54865100778576"),),
+        "note": "Hueyapan has no outline of its own and lies inside this one."},
+    ("MEX", "Benito Juárez"): {
+        "parts": {
+            "mexico_municipality.json": ("MEX-23005", "MEX-23011"),
+            "mexico_municipality_age.json": ("MEX-23005", "MEX-23011"),
+            "mexico_ethnicity.json": ("MEX-23005", "MEX-23011"),
+            "cod_ps_admin2.json": ("MEX-CODPS-MX23005", "MEX-CODPS-MX23011"),
+            "cod_ps_age.json": ("MEX-CODPSAGE-MX23005", "MEX-CODPSAGE-MX23011"),
+        },
+        "shapes": (("admin2", "50627088B55174657645518"),),
+        "note": "Puerto Morelos has no outline of its own and lies inside this one."},
 }
+
+
+def union_groups(spec: dict[str, Any]) -> list[tuple[str, tuple[str, ...]]]:
+    """A ROW_UNIONS entry's (file, row ids) groups: one file's rows, or each of
+    several files' rows for the same parts (``parts``)."""
+    if "parts" in spec:
+        return [(filename, tuple(rows)) for filename, rows in spec["parts"].items()]
+    return [(spec["file"], tuple(spec["rows"]))]
 
 
 def union_row_ids(filename: str) -> set[str]:
     """Every row id a ROW_UNIONS entry pools from ``filename``."""
-    return {rid for spec in ROW_UNIONS.values() if spec["file"] == filename
-            for rid in spec["rows"]}
+    return {rid for spec in ROW_UNIONS.values()
+            for file, rows in union_groups(spec) if file == filename for rid in rows}
 
 
 def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
@@ -8330,32 +8550,32 @@ def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
     done: list[str] = []
     for (iso3, shape_name), spec in ROW_UNIONS.items():
         rows = adapters.get(iso3, [])
-        found = {r.get("id"): r for r in rows
-                 if r.get("_source") == spec["file"] and r.get("id") in spec["rows"]}
-        missing = [rid for rid in spec["rows"] if rid not in found]
-        if missing:
-            log(f"  union {iso3} {shape_name}: {spec['file']} lacks "
-                f"{', '.join(missing)}, not pooled")
-            continue
-        parts = [found[rid] for rid in spec["rows"]]
-        pooled = pool_rows(shape_name, parts, iso3, spec["file"])
-        extra = spec.get("note")
-        if extra:
-            for key in ("population", *ROLLUP_FIELDS):
-                value = pooled.get(key)
-                if isinstance(value, dict) and value.get("note") and "value" in value:
-                    value["note"] = f"{value['note']} {extra}"
-                elif pooled.get(f"{key}_note"):
-                    pooled[f"{key}_note"] = f"{pooled[f'{key}_note']} {extra}"
-        for part in parts:
-            rows.remove(part)
-        for level, shape_id in spec["shapes"]:
-            rows.append({**copy.deepcopy(pooled), "level": level,
-                         "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
-                         "shape_id": shape_id,
-                         "aliases": [p["name"] for p in parts]})
-        done.append(f"{iso3} {shape_name} from {' + '.join(spec['rows'])} "
-                    f"({spec['file']})")
+        for filename, wanted in union_groups(spec):
+            found = {r.get("id"): r for r in rows
+                     if r.get("_source") == filename and r.get("id") in wanted}
+            missing = [rid for rid in wanted if rid not in found]
+            if missing:
+                log(f"  union {iso3} {shape_name}: {filename} lacks "
+                    f"{', '.join(missing)}, not pooled")
+                continue
+            parts = [found[rid] for rid in wanted]
+            pooled = pool_rows(shape_name, parts, iso3, filename)
+            extra = spec.get("note")
+            if extra:
+                for key in ("population", "sex_ratio", *ROLLUP_FIELDS):
+                    value = pooled.get(key)
+                    if isinstance(value, dict) and value.get("note") and "value" in value:
+                        value["note"] = f"{value['note']} {extra}"
+                    elif pooled.get(f"{key}_note"):
+                        pooled[f"{key}_note"] = f"{pooled[f'{key}_note']} {extra}"
+            for part in parts:
+                rows.remove(part)
+            for level, shape_id in spec["shapes"]:
+                rows.append({**copy.deepcopy(pooled), "level": level,
+                             "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
+                             "shape_id": shape_id,
+                             "aliases": [p["name"] for p in parts]})
+            done.append(f"{iso3} {shape_name} from {' + '.join(wanted)} ({filename})")
     return done
 
 

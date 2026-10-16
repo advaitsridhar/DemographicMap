@@ -157,10 +157,11 @@ class Declarations(unittest.TestCase):
                     self.assertEqual(drawn[shape_id]["name"], label)
         for (iso3, name), spec in be.ROW_UNIONS.items():
             drawn = shapes(iso3)
-            data = rows(spec["file"])
-            for rid in spec["rows"]:
-                if data:
-                    self.assertIn(rid, data, f"{iso3} {name}: {rid}")
+            for filename, wanted in be.union_groups(spec):
+                data = rows(filename)
+                for rid in wanted:
+                    if data:
+                        self.assertIn(rid, data, f"{iso3} {name}: {rid}")
             for level, shape_id in spec["shapes"]:
                 if drawn:
                     self.assertEqual(drawn[(level, shape_id)]["name"], name)
