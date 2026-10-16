@@ -41,8 +41,8 @@ war (``BOUND``):
   village on the line itself (Amzhikukhua, 10 m from it by GeoNames' point).
 * Sokhumi takes the city of Sukhum and the Sukhum district around it, which
   the authorities count apart: the map draws no polygon for the city, whose
-  centre (GeoNames) lies in this one, 5 km from any other -- the rule georgia
-  places Georgia's own cities by. The line drawn with Gulripshi runs through
+  centre lies in this one (Wikidata's point and Freedom Square, about 2.7 km
+  from Gulripshi's line) -- the rule georgia places Georgia's own cities by. The line drawn with Gulripshi runs through
   the city's south-east, west of the Kelasuri: by WorldPop's 2020 grid (run
   on the runner as binding evidence, not data), 6,064 people live in the part
   of Gulripshi's polygon west of the river against 83,510 in Sokhumi's, so
@@ -54,14 +54,17 @@ The other three are written as gaps that say why (``REFUSED``):
 * Gulripshi -- that strip of Sukhum is a quarter of the people in its polygon
   (6,064 of 24,396 on the same grid), and several of Gulripsh district's
   villages lie in Ochamchire's.
-* Ochamchire and Gali -- the districts as drawn before 1995, when the
-  authorities formed Tkvarcheli district from parts of both and counted
-  others of Gal's villages in Ochamchira district; Gal's eight village
-  administrations along the Enguri (Chuburkhinji, the two Otobaias, Tagiloni,
-  Pichori, Nabakevi, Dikhazurga and Ganakhleba: 12,066 of Gal's 30,356 people
-  in 2011 by the census's village rows as ethno-kavkaz.narod.ru transcribes
-  them, ``ENGURI``) lie in the polygon drawn as Zugdidi, whose note says so
-  (build_entities.ROW_NOTES).
+* Ochamchire and Gali -- they follow the districts as drawn before 1995 only
+  roughly: since then the authorities have formed Tkvarcheli district from
+  parts of both and counted others of Gal's villages in Ochamchira district,
+  and the town of Ochamchira itself lies in the polygon drawn as Gali (its
+  GeoNames and Wikidata points both, 0.4-0.5 km inside it). Gal's eight
+  village administrations along the Enguri (Chuburkhinji, the two Otobaias,
+  Tagiloni, Pichori, Nabakevi, Dikhazurga and Ganakhleba: 12,066 of Gal's
+  30,356 people in 2011 by the census's village rows as ethno-kavkaz.narod.ru
+  transcribes them, ``ENGURI``) lie in the polygon drawn as Zugdidi, and a
+  ninth, Papynrkhua (2,370), has its centre on the line itself; Zugdidi's
+  note says so (build_entities.ROW_NOTES).
 
 The yearbook publishes no religion and no language, and ages for the
 republic only; those fields are gaps that say so. Its sex split for 2026 is
@@ -96,6 +99,9 @@ SOURCE = ("State Committee of the Republic of Abkhazia on Statistics (the statis
 LICENCE = "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
 
 WHOLE = "Все население"
+# The town the Ochamchire and Gali notes place: it lies in the polygon drawn as
+# Gali, not the one drawn as Ochamchire.
+TOWN = "г. Очамчыра"
 # The districts as the tables name them, in the order the 2011 nationality
 # table's columns follow (told apart by their totals all the same).
 DISTRICTS = {
@@ -174,8 +180,8 @@ MEDIAN_NOTE = ("Interpolated within the five-year age group holding the middle p
 SOUTH_EAST = ("The de facto authorities redrew the districts here after the war: in 1995 they "
               "formed Tkvarcheli district from parts of the Ochamchira and Gal districts, and "
               "they count more of Gal's former villages in Ochamchira district. The outlines "
-              "drawn as Ochamchire and Gali are the districts as they were before, so neither "
-              "holds a district the authorities count: ")
+              "drawn as Ochamchire and Gali follow the districts as they were before only "
+              "roughly, and neither holds a district the authorities count: ")
 
 
 def south_east(people: dict[str, int]) -> str:
@@ -198,11 +204,14 @@ REFUSED: dict[str, Callable[[dict[str, int], dict[str, int]], str]] = {
         "also lie in the outline drawn as Ochamchire. The district's figure is not this "
         "outline's, so none is written here."),
     "Ochamchire": lambda p, c: SOUTH_EAST + (
-        "the town of Tkvarcheli lies in this one and many of its district's villages in "
-        "Gali's, and several villages of Gulripsh district lie in this one too.") + south_east(p),
+        f"the town of Ochamchira itself ({p[TOWN]:,} people on 1 January {YEAR}) lies just "
+        "across the line, in the outline drawn as Gali; the town of Tkvarcheli lies in this "
+        "one and many of its district's villages in Gali's, and several villages of Gulripsh "
+        "district lie in this one too.") + south_east(p),
     "Gali": lambda p, c: SOUTH_EAST + (
-        "villages of the Ochamchira and Tkvarcheli districts lie in this one, while Gal's "
-        "villages along the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; "
+        f"the town of Ochamchira ({p[TOWN]:,} people on 1 January {YEAR}) and villages of "
+        "the Ochamchira and Tkvarcheli districts lie in this one, while Gal's villages along "
+        "the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; at least "
         f"{sum(ENGURI.values()):,} of the district's {c['Галский район']:,} people at the "
         "2011 census) lie outside it, in the outline drawn as Zugdidi.") + south_east(p),
 }
@@ -291,20 +300,23 @@ def year_total(lines: list[str], year: int) -> int:
 
 
 def by_district(lines: list[str], key: str) -> dict[str, tuple[int, int, int]]:
-    """{the republic and each district: (both sexes, men, women)}, from 1.7 or
-    1.11. The republic is the first "Все население" row; the city and town rows
-    inside a district are skipped."""
+    """{the republic, each district and the town of Ochamchira: (both sexes,
+    men, women)}, from 1.7 or 1.11. The republic is the first "Все население"
+    row; the other city and town rows inside a district are skipped."""
     out: dict[str, tuple[int, int, int]] = {}
     for label, figures in labelled(lines):
-        if label == WHOLE and WHOLE not in out or label in DISTRICTS:
+        if label == WHOLE and WHOLE not in out or label in DISTRICTS or label == TOWN:
             if label in out:
                 raise SystemExit(f"abkhazia_census: table {key} has two rows for {label!r}")
             both, men, women = numbers(figures, 3, lambda r: r[0] == r[1] + r[2],
                                        f"table {key}, {label}")
             out[label] = (both, men, women)
-    missing = [d for d in (WHOLE, *DISTRICTS) if d not in out]
+    missing = [d for d in (WHOLE, *DISTRICTS, TOWN) if d not in out]
     if missing:
         raise SystemExit(f"abkhazia_census: table {key} has no row for {missing}")
+    if out[TOWN][0] >= out["Очамчырский район"][0]:
+        raise SystemExit(f"abkhazia_census: table {key}'s town of Ochamchira is not inside "
+                         "its district")
     if sum(out[d][0] for d in DISTRICTS) != out[WHOLE][0]:
         raise SystemExit(f"abkhazia_census: table {key}'s districts make "
                          f"{sum(out[d][0] for d in DISTRICTS):,}, not {out[WHOLE][0]:,}")
@@ -439,8 +451,8 @@ def population_note(rows: tuple[str, ...], figures: dict[str, Any]) -> str:
     return (f"The de facto authorities' estimates of the people present on 1 January {YEAR} in "
             f"the city of Sukhum ({city:,}) and in the Sukhum district around it "
             f"({district:,}), which they count apart, added together; each is {ESTIMATE}. The "
-            "map draws no outline for the city, whose centre lies in this one, 5 km from any "
-            "other. The line drawn with Gulripshi runs through the city's south-east: by "
+            "map draws no outline for the city, whose centre lies in this one. The line drawn "
+            "with Gulripshi runs through the city's south-east: by "
             f"WorldPop's 2020 population grid, about {POOLED_OUTSIDE:.0%} of these people live "
             f"on the Gulripshi side of it. {NOT_GEORGIAS}")
 

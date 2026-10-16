@@ -483,7 +483,7 @@ class ParentsFromNewerDivisions(unittest.TestCase):
         parent["name"] = "Maputo"
         be.restate_encyclopaedia_parents(a1, a2, counts=True)
         self.assertTrue(parent["population_note"].startswith(
-            "The boundary file draws Maputo City and Maputo Province as one shape. The sum "
+            "The map draws Maputo City and Maputo Province as one shape. The sum "
             "of both divisions"), parent["population_note"])
 
 

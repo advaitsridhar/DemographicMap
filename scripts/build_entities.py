@@ -3018,11 +3018,11 @@ ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
 ENGURI_VILLAGES = (
     "The outline drawn here also takes in the villages along the Enguri that the de "
     "facto authorities in Abkhazia count in their Gal district (Chuburkhinji, Otobaia, "
-    "Tagiloni, Pichori and others), about 12,000 people at their 2011 census, ")
+    "Tagiloni, Pichori and others), 12,000 or more people at their 2011 census, ")
 ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO09077": {"population": (
-            "The boundary file draws no polygon for Cacula, the municipality to the "
+            "The map draws no polygon for Cacula, the municipality to the "
             "north-east whose seat lies inside this polygon; OCHA's table counts "
             "197,616 people in Cacula in 2024, who are not in this figure.")},
     },
@@ -5350,8 +5350,7 @@ MISFILED_DIVISIONS: dict[tuple[str, str], tuple[str, str]] = {}
 # whose earlier note said its count was put together for the polygon and that
 # has no sentence here is named in the build log.
 RESTATED_GROUND: dict[tuple[str, str], str] = {
-    ("MOZ", "Maputo"): "The boundary file draws Maputo City and Maputo Province as one "
-                       "shape.",
+    ("MOZ", "Maputo"): "The map draws Maputo City and Maputo Province as one shape.",
     ("LVA", "Madonas novads"): "Madona and Varakļāni merged on 1 July 2025 and are drawn "
                                "apart; these are the parishes and towns of Madona as it "
                                "was before.",

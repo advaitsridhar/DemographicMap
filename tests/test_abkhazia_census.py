@@ -518,8 +518,28 @@ class Records(unittest.TestCase):
         for name in ("Ochamchire", "Gali"):
             self.assertIn("72,882", self.rows[name]["population"]["note"])
         self.assertEqual(26073 + 16458 + 30351, 72882)
-        self.assertIn("12,066 of the district's 30,356", self.rows["Gali"]["population"]["note"])
+        self.assertIn("at least 12,066 of the district's 30,356",
+                      self.rows["Gali"]["population"]["note"])
         self.assertEqual(sum(a.ENGURI.values()), 12066)
+        # The outlines follow the old districts only roughly: the town of
+        # Ochamchira lies in the one drawn as Gali.
+        for name in ("Ochamchire", "Gali"):
+            note = self.rows[name]["population"]["note"]
+            self.assertNotIn("are the districts as they were before", note)
+            self.assertIn("only roughly", note)
+            self.assertIn("town of Ochamchira", note)
+            self.assertIn("5,154 people on 1 January 2026", note)
+        self.assertIn("in the outline drawn as Gali", self.rows["Ochamchire"]["population"]["note"])
+
+    def test_the_town_of_ochamchira_is_read_from_its_own_row(self):
+        figures = a.read(YEARBOOK)
+        self.assertEqual(figures["people"][a.TOWN], (5154, 2332, 2822))
+        self.assertEqual(figures["census"][a.TOWN], (5280, 2315, 2965))
+
+    def test_sokhumi_names_no_distance_that_holds_for_one_point_only(self):
+        note = self.rows["Sokhumi"]["population_note"]
+        self.assertIn("whose centre lies in this one.", note)
+        self.assertNotIn("km", note)
 
     def test_zugdidi_says_what_its_outline_takes_in_beyond_the_enguri(self):
         import build_entities as be
@@ -527,7 +547,7 @@ class Records(unittest.TestCase):
         self.assertEqual(set(notes), {"population", "median_age", "sex_ratio", "ethnicity"})
         for note in notes.values():
             self.assertIn("Enguri", note)
-            self.assertIn(f"about {round(sum(a.ENGURI.values()), -3):,.0f} people", note)
+            self.assertIn(f"{round(sum(a.ENGURI.values()), -3):,.0f} or more people", note)
 
     def test_the_notes_speak_to_a_reader(self):
         for r in self.rows.values():
