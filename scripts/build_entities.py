@@ -3879,7 +3879,9 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                             for part in str(src.get("field") or "").split("/")))]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
-                   "match_by", "shape_label", "_source", "_match", "_offer"}:
+                   "match_by", "shape_label", "_source", "_match", "_offer",
+                   # What a median was taken from, for pool_rows; not shown.
+                   "age_groups"}:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
@@ -8395,6 +8397,36 @@ def pool_sex_ratio(pooled: dict[str, Any], parts: Sequence[dict[str, Any]],
         f"draws them as one unit.")
 
 
+def pooled_age_groups(parts: Sequence[dict[str, Any]]
+                      ) -> list[tuple[int, int | None, float]] | None:
+    """The parts' age groups added together, where every part gives the same
+    groups (``age_groups``: [low, high, people], the last open); else None."""
+    tables = [p.get("age_groups") for p in parts]
+    if not all(isinstance(t, list) and t for t in tables):
+        return None
+    bands = [(low, high) for low, high, _ in tables[0]]
+    if any([(low, high) for low, high, _ in t] != bands for t in tables[1:]):
+        return None
+    return [(low, high, sum(t[i][2] for t in tables)) for i, (low, high) in enumerate(bands)]
+
+
+def grouped_median(groups: Sequence[tuple[int, int | None, float]]) -> float | None:
+    """The median of ``(low, high, people)`` groups, interpolated within the
+    group that holds the middle person; None where that group is the open one.
+    As scripts/fetch_census/cod_ps_age.py takes each unit's."""
+    base = sum(n for _, _, n in groups)
+    if base <= 0:
+        return None
+    half, before = base / 2, 0.0
+    for low, high, people in groups:
+        if before + people >= half:
+            if high is None or people <= 0:
+                return None
+            return round(low + (half - before) / people * (high - low + 1), 1)
+        before += people
+    return None
+
+
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
               filename: str) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
@@ -8441,13 +8473,28 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
             f"as one unit.")
     pool_sex_ratio(pooled, parts, pops, names)
     if all(published(p.get("median_age")) is not None for p in parts):
-        # A median of two places together is not a mix of their medians.
-        # Siltepec's polygon holds three municipios.
+        # A median of two places together is not a mix of their medians, but
+        # it is the median of their age groups added together, where the
+        # source gives them: OCHA's five-year groups for Mexico's municipios.
+        groups = pooled_age_groups(parts)
         together = {2: "the two", 3: "the three", 4: "the four"}.get(len(parts), "them all")
-        pooled["median_age"] = gap(NOT_AVAILABLE, (
-            f"Published for {names} separately: the median of {together} together "
-            f"cannot be taken from their medians, and the map draws them as one "
-            f"unit."))
+        median = grouped_median(groups) if groups else None
+        if median is not None:
+            first = parts[0]["median_age"]
+            years = {vintage(p.get("median_age")) for p in parts}
+            pooled["median_age"] = {**{k: first[k] for k in ("unit", "source") if k in first},
+                                    "value": median,
+                                    **({"year": years.pop()} if len(years) == 1 else {})}
+            pooled["median_age_note"] = (
+                shared_sentences([p.get("median_age_note") for p in parts])
+                + f"Taken from the age groups published for {names}, added together; "
+                f"the map draws them as one unit.")
+        else:
+            # Siltepec's polygon holds three municipios.
+            pooled["median_age"] = gap(NOT_AVAILABLE, (
+                f"Published for {names} separately: the median of {together} together "
+                f"cannot be taken from their medians, and the map draws them as one "
+                f"unit."))
     for field in ROLLUP_FIELDS:
         lists = [p.get(field) for p in parts]
         if not all(isinstance(v, list) and shares_of(v) for v in lists):

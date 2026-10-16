@@ -30,6 +30,24 @@ def row(f_counts, m_counts):
     return out
 
 
+class MethodQuote(unittest.TestCase):
+    def test_whole_sentences_up_to_the_length(self):
+        # Honduras's quotation ended "...Then, muncipality-..." at 220 characters.
+        method = ("Projections by INE. Then, municipality-level estimates were derived "
+                  "from the census. " + "Further detail follows here. " * 20)
+        quoted = cpa.method_quote(method)
+        self.assertTrue(quoted.endswith("."), quoted)
+        self.assertLessEqual(len(quoted), cpa.QUOTE_LENGTH)
+        self.assertTrue(quoted.startswith("Projections by INE. Then, municipality-level"))
+
+    def test_a_first_sentence_is_quoted_whole_however_long(self):
+        method = "One long sentence " + "of words " * 60 + "ends here. Then more."
+        self.assertTrue(cpa.method_quote(method).endswith("ends here."))
+
+    def test_no_method_no_quote(self):
+        self.assertEqual(cpa.method_quote(""), "")
+
+
 class GroupedMedian(unittest.TestCase):
     def test_interpolates_within_the_group_holding_the_middle_person(self):
         # 100 people; the 50th falls 10 of 40 into ages 10-14.
@@ -66,6 +84,10 @@ class UnitFigures(unittest.TestCase):
         figures, _ = cpa.unit_figures(row([10, 10, 20, 10, 0], [10, 10, 20, 10, 0]), self.cols)
         self.assertEqual(figures["median"], 11.2)
         self.assertEqual(figures["ratio"], 1000)
+        # The groups the median is taken from, both sexes added, for the build
+        # to add a union's parts together.
+        self.assertEqual(figures["groups"], [(0, 4, 20), (5, 9, 20), (10, 14, 40),
+                                             (15, 19, 20), (20, None, 0)])
 
     def test_groups_that_miss_the_total_are_refused(self):
         bad = row([10, 10, 20, 10, 0], [10, 10, 20, 10, 0])

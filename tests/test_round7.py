@@ -365,6 +365,38 @@ class UnionsAcrossFiles(unittest.TestCase):
         pooled = be.pool_rows("Siltepec", parts, "MEX", "ages.json")
         self.assertIn("the median of the three together", pooled["median_age"]["note"])
 
+    def test_a_median_is_taken_from_the_parts_age_groups_added_together(self):
+        # Acala with Emiliano Zapata: OCHA gives each its five-year groups.
+        parts = self.rows("cod_ps_age.json", [("Acala", None), ("Emiliano Zapata", None)],
+                          medians=[26.9, 24.0])
+        parts[0]["age_groups"] = [[0, 4, 100.0], [5, 9, 100.0], [10, None, 100.0]]
+        parts[1]["age_groups"] = [[0, 4, 300.0], [5, 9, 50.0], [10, None, 50.0]]
+        for part in parts:
+            part["median_age"]["year"] = 2024
+            part["median_age_note"] = ("Interpolated from the age breakdown. For a year "
+                                       f"after the last census it is a projection. {part['name']}.")
+        pooled = be.pool_rows("Acala", parts, "MEX", "cod_ps_age.json")
+        # 700 people; the 350th is in 0-4, which holds 400: 0 + 350/400 * 5.
+        self.assertEqual(pooled["median_age"]["value"], 4.4)
+        self.assertEqual(pooled["median_age"]["year"], 2024)
+        self.assertEqual(pooled["median_age_note"],
+                         "Interpolated from the age breakdown. For a year after the last "
+                         "census it is a projection. Taken from the age groups published "
+                         "for Acala and Emiliano Zapata, added together; the map draws "
+                         "them as one unit.")
+        self.assertNotIn("age_groups", pooled)
+        # Groups that do not line up are not added.
+        parts[1]["age_groups"] = [[0, 9, 350.0], [10, None, 50.0]]
+        pooled = be.pool_rows("Acala", parts, "MEX", "cod_ps_age.json")
+        self.assertEqual(pooled["median_age"]["status"], be.NOT_AVAILABLE)
+
+    def test_the_groups_a_median_is_taken_from_are_not_shown(self):
+        entity = {"id": "1", "name": "Acala", "level": "admin2", "country": "MEX"}
+        be.merge_adapter(entity, {"_source": "cod_ps_age.json", "_match": "name",
+                                  "median_age": {"value": 26.9, "year": 2024},
+                                  "age_groups": [[0, 4, 1.0], [5, None, 1.0]]})
+        self.assertNotIn("age_groups", entity)
+
     def test_ratios_with_no_populations_to_weigh_them_are_a_stated_gap(self):
         parts = self.rows("ocha.json", [("A", None), ("B", None)], ratios=[1017, 990])
         pooled = be.pool_rows("A", parts, "MEX", "ocha.json")
