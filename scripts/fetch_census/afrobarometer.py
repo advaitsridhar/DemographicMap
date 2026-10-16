@@ -255,8 +255,31 @@ def main() -> int:
         name = labels["REGION"].get(region)
         if not name:
             continue
+        iso = ISO3.get(country)
+        if not iso:
+            raise SystemExit(f"afrobarometer: no ISO3 for country code {country}")
         if n < MIN_SAMPLE:
+            # Not estimated, and the region says why rather than reading as
+            # never surveyed: a reason the panel shows where nothing else has
+            # a figure for the field (a count always stands in front of it).
             dropped += 1
+            thin: dict[str, Any] = {}
+            for field in ("religion", "ethnicity", "language"):
+                if (country, field) in never_asked:
+                    thin[field] = gap(NOT_COLLECTED)
+                    thin[f"{field}_note"] = (
+                        f"Afrobarometer did not ask about {field} in this country.")
+                else:
+                    thin[field] = gap(NOT_AVAILABLE, (
+                        f"Afrobarometer's Round 9 survey (2021-2023) interviewed only {n} "
+                        f"people in this region, too few to estimate {field} shares from, "
+                        "so none are shown."))
+            records.append(record(
+                f"{iso}-AB9-{region}", name, level="admin1", parent=iso, country=iso,
+                **thin,
+                sources=[{"field": "religion/ethnicity/language", "name": SOURCE,
+                          "url": "https://www.afrobarometer.org/data/",
+                          "license": "Afrobarometer data use policy"}]))
             continue
         fields: dict[str, Any] = {}
         for field, table in (("religion", labels["Q95"]),
@@ -282,9 +305,6 @@ def main() -> int:
                 fields[f"{field}_note"] = note
         if n < LOW_PRECISION:
             low += 1
-        iso = ISO3.get(country)
-        if not iso:
-            raise SystemExit(f"afrobarometer: no ISO3 for country code {country}")
         records.append(record(
             f"{iso}-AB9-{region}", name, level="admin1", parent=iso,
             country=iso,
@@ -293,7 +313,7 @@ def main() -> int:
                       "url": "https://www.afrobarometer.org/data/",
                       "license": "Afrobarometer data use policy"}],
         ))
-    log(f"  {len(records)} regions kept, {dropped} dropped under {MIN_SAMPLE} "
+    log(f"  {len(records) - dropped} regions kept, {dropped} under {MIN_SAMPLE} "
         f"respondents, {low} marked low precision")
     write_json(args.out or PROCESSED / OUT, records)
     return 0

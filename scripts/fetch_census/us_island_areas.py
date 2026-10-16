@@ -119,6 +119,19 @@ def rows(dataset: str, geo: str, key: str | None, get: list[str]) -> list[dict[s
     return list(out.values())
 
 
+def no_ratio(people: float | None, men: float | None, women: float | None) -> str:
+    """Why a unit has no ratio of men to women, in the census's own counts."""
+    if people == 0:
+        return "The 2020 census counts no one living here, so there is no ratio to show."
+    if men is None or women is None:
+        return "The 2020 census table gives no count by sex for this unit."
+    who = f"{men:,.0f} {'man' if men == 1 else 'men'} and no women"
+    return (f"The 2020 census counts {people:,.0f} "
+            f"{'person' if people == 1 else 'people'} here, {who}, so there is no ratio of "
+            "men to women to show; with so few people, a ratio would say little about the "
+            "place in any case.")
+
+
 def figures(row: dict[str, str], total: str, race: dict[str, str],
             sex: tuple[str, str], age: str, area: str) -> dict[str, Any]:
     people = as_float(row.get("P1_001N"))
@@ -134,7 +147,7 @@ def figures(row: dict[str, str], total: str, race: dict[str, str],
                        if median is not None and people else gap(NOT_AVAILABLE)),
         "sex_ratio": (measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE)
-                      if men is not None and women else gap(NOT_AVAILABLE)),
+                      if men is not None and women else gap(NOT_AVAILABLE, no_ratio(people, men, women))),
     }
     if people:
         # A basis of its own, so the country's sum -- the ACS's race and

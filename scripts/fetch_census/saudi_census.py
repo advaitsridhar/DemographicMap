@@ -88,6 +88,21 @@ OUT_OF_REACH = ("the census portal (portal.saudicensus.sa) could not be reached,
                 "(open.data.gov.sa) did not answer, and OCHA's tables of the census "
                 "(cod-ps-sau) are of the kingdom and its regions only")
 GOVERNORATE_WHY = f"No table of the 2022 census by governorate could be read: {OUT_OF_REACH}."
+# What a region's count is against the governorates drawn in it. The
+# governorates take only what the build fills from elsewhere: Wikidata's
+# figures, most of them for 2010 (measured on a build of 15 October 2026 with
+# the governorates filed as DECLARED_PARENTS files them: 74 of the 80
+# governorates with a figure are 2010's, two 2017's -- Al Ahsa and Al Qatif,
+# Eastern Region -- one 2022's -- Balqarn, 'Asir, 60,012 -- and three
+# undated, and in every region most are 2010's; probes 02895fb and b86f746
+# found GASTAT's 2010 tables but no 2022 one by governorate). So the note does
+# not say that no governorate carries a 2022 figure: Balqarn's is Wikidata's,
+# and stands. Najran's governorates, all of which carry a figure, add up to
+# 501,637 against 592,300 once Sharurah is filed under Najran.
+REGION_NOTE = ("The 2022 census count (10 May 2022). No table of the 2022 census by "
+               "governorate could be read; the governorates drawn here that show a "
+               "population carry Wikidata's figures, most of them for 2010, the year of the "
+               "previous census, and they do not add up to this count.")
 GOVERNORATE_NATIONALITY_WHY = (
     "Saudi Arabia's 2022 census asks citizenship (Saudi or not, and which country), not "
     "ethnicity; citizenship may stand on this field, but no table of it by governorate could "
@@ -185,7 +200,7 @@ def build(rows: list[dict[str, str]], admin1: list[dict[str, Any]]) -> list[dict
         bound[pcode] = label
         unit = labels[label]
         population = measure(total, year=YEAR, source=SOURCE)
-        population["note"] = "The 2022 census count (10 May 2022)."
+        population["note"] = REGION_NOTE
         out.append(record(
             f"SAU-CEN2022-{pcode}", label, level="admin1", parent=ISO3, country=ISO3,
             match_by="shape_id", shape_id=unit["id"], codes={"pcode": pcode},

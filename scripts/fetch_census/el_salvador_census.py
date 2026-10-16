@@ -406,6 +406,85 @@ def slivers(shapes: list[dict[str, Any]]) -> set[str]:
     return out
 
 
+GAP_FIELDS = ("population", "median_age", "sex_ratio", "ethnicity")
+
+
+def stated_gaps(admin2: list[dict[str, Any]], parents: dict[str, str], thin: set[str],
+                bound: dict[str, str], districts: dict[str, tuple], departments: dict[str, tuple],
+                pop: dict[tuple, dict[str, Any]]) -> list[dict[str, Any]]:
+    """Records for the polygons no district is bound to, each with its reason.
+
+    - A sliver: the district whose name it shares is shown on its own polygon.
+    - An unnamed polygon in a department whose districts all have polygons of
+      their own: no census row is left for it, and the districts drawn under
+      another department are named.
+    - The two Sonsonate polygons whose districts cannot be told apart (UNSURE).
+    """
+    def gap_record(shape: dict[str, Any], note: str) -> dict[str, Any]:
+        why = {"status": "not_available", "note": note}
+        return record(f"SLV-BCR-gap-{shape['id']}", shape["name"], level="admin2",
+                      parent="SLV", country="SLV", parent_name=parents.get(shape["parent"]),
+                      match_by="shape_id", shape_id=shape["id"],
+                      **{f: dict(why) for f in GAP_FIELDS})
+
+    out: list[dict[str, Any]] = []
+    shape_of = {s["id"]: s for s in admin2}
+    district_at = {sid: key for key, sid in bound.items()}
+    for s in admin2:
+        if s["id"] not in thin:
+            continue
+        main_ids = [o["id"] for o in admin2 if o["parent"] == s["parent"] and o["id"] not in thin
+                    and fold(o["name"]) == fold(s["name"])]
+        key = district_at.get(main_ids[0]) if len(main_ids) == 1 else None
+        if key is None:
+            continue
+        people = pop[districts[key][0]]["people"]
+        out.append(gap_record(s, (
+            f"A sliver of {districts[key][1]}'s outline that the boundary file draws as a "
+            f"separate polygon. {districts[key][1]}'s {people:,} people (2024 census) are "
+            "shown on its main polygon; no census unit is this sliver.")))
+    unsure = {key: districts[key] for key in UNSURE}
+    for s in admin2:
+        if s["id"] in thin or s["id"] in district_at or s["name"] != "Null":
+            continue
+        dept = next((c for c, (_, _, sh) in departments.items() if sh["id"] == s["parent"]), None)
+        if dept is None:
+            continue
+        own = sorted(k for k in districts if k[:2] == dept)
+        if any(k in UNSURE for k in own):
+            continue
+        if not all(k in bound for k in own):
+            continue
+        away = [f"{districts[k][1]}'s under {parents.get(shape_of[bound[k]]['parent'])}"
+                for k in own if shape_of[bound[k]]["parent"] != s["parent"]]
+        name = departments[dept][1]
+        note = (f"The boundary file draws this polygon with no name, so no census row is "
+                f"matched to it. Every one of {name}'s {len(own)} districts in the 2024 "
+                "census has a polygon of its own")
+        note += (" -- " + ", ".join(away) + " --" if away else ",")
+        note += " so no census count is left for this one."
+        out.append(gap_record(s, note))
+    # Sonsonate and Sonzacate: two polygons, two districts, and which is which
+    # cannot be told (UNSURE). Their combined count is stated on both.
+    pair = [shape_of[s["id"]] for s in admin2 if s["parent"] == departments["03"][2]["id"]
+            and s["id"] not in district_at and s["id"] not in thin
+            and s["name"] in ("Null", "Sonsonate")]
+    if len(pair) == 2 and set(UNSURE) <= set(districts):
+        both = sum(pop[unsure[k][0]]["people"] for k in UNSURE)
+        names = " and ".join(f"{unsure[k][1]} ({pop[unsure[k][0]]['people']:,})" for k in UNSURE)
+        for s in pair:
+            out.append(gap_record(s, (
+                f"The 2024 census's districts of {names} together count {both:,} people on "
+                "this polygon and the one beside it, but which polygon is which district "
+                "cannot be told: the polygon the boundary file names Sonsonate lies north of "
+                "the city, where Sonzacate is, and an unnamed polygon runs from the city's "
+                "south edge to the coast, where the municipio of Sonsonate is. Neither "
+                "district's figure is written on either polygon.")))
+    log(f"  {len(out)} polygons with no district written with the reason: "
+        f"{sorted((r['parent_name'], r['name']) for r in out)}")
+    return out
+
+
 def main() -> int:
     argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
@@ -497,6 +576,7 @@ def main() -> int:
             f"SLV-BCR-{code}", name, level="admin1", parent="SLV", country="SLV",
             codes={"bcr": code}, match_by="shape_id", shape_id=shape["id"],
             aliases=[shape["name"]], **fields(pop[place], ident[place], "admin1")))
+    records += stated_gaps(admin2, parents, thin, bound, districts, departments, pop)
     write_json(OUT, records)
     log(f"  wrote {OUT.name}: {len(records)} records "
         f"({sum(r['level'] == 'admin2' for r in records)} districts)")

@@ -38,6 +38,7 @@ import re
 import unicodedata
 import urllib.parse
 import urllib.request
+from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
@@ -396,6 +397,65 @@ def dataset_year(package: dict[str, Any]) -> int | None:
     return int(years.pop()) if len(years) == 1 else None
 
 
+# How a CSV's bytes become text. UTF-8 is what HDX asks for and what nearly
+# every file is; Windows Latin-1 (cp1252) is what the rest are, and a file can
+# be both. Angola's district table is UTF-8 in all its names but one
+# ("Pango-Aluquém", "Baía Farta") and cp1252 in "Chitato (Lóvua)"; the Central
+# African Republic's is cp1252 throughout. Decoding with 'replace' turned each
+# such letter into U+FFFD: 34 CAF names and one AGO name then matched no
+# shape ("Nd�l�" is not Ndélé), and their provinces' names were
+# damaged with them, so not even the parent was known.
+#
+# So each line is read as UTF-8, and only the bytes that are not UTF-8 are
+# read as cp1252: falling back for the whole file would have turned Angola's
+# good names into mojibake to save its one. A byte cp1252 does not define
+# either stays U+FFFD, and read_units refuses a name holding one -- a damaged
+# name is a guess about a place, so the run stops rather than write it.
+DAMAGED = "�"
+
+
+def decode_line(raw: bytes) -> tuple[str, int]:
+    """One line's text, and how many of its bytes were read as cp1252."""
+    parts: list[str] = []
+    fallen = 0
+    while True:
+        try:
+            parts.append(raw.decode("utf-8"))
+            return "".join(parts), fallen
+        except UnicodeDecodeError as err:
+            parts.append(raw[:err.start].decode("utf-8"))
+            bad = raw[err.start:err.end]
+            try:
+                parts.append(bad.decode("cp1252"))
+            except UnicodeDecodeError:
+                parts.append(DAMAGED * len(bad))
+            fallen += len(bad)
+            raw = raw[err.end:]
+
+
+def decode_table(raw_body: bytes) -> tuple[str, int]:
+    """A CSV's text -- UTF-8 where it is UTF-8, cp1252 where it is not."""
+    if raw_body.startswith(b"\xef\xbb\xbf"):
+        raw_body = raw_body[3:]
+    try:
+        return raw_body.decode("utf-8"), 0
+    except UnicodeDecodeError:
+        pass
+    lines: list[str] = []
+    fallen = 0
+    for line in raw_body.split(b"\n"):
+        text, n = decode_line(line)
+        lines.append(text)
+        fallen += n
+    return "\n".join(lines), fallen
+
+
+def damaged_names(rows: list[dict[str, str]], *columns: str | None) -> list[str]:
+    """Every name in ``columns`` that holds a character the bytes did not define."""
+    return sorted({(row.get(c) or "").strip() for row in rows for c in columns
+                   if c and DAMAGED in (row.get(c) or "")})
+
+
 def read_table(resource: dict[str, Any]) -> tuple[list[str], list[dict[str, str]], str] | None:
     """A table's columns, rows and the name its year may be read from."""
     try:
@@ -407,7 +467,11 @@ def read_table(resource: dict[str, Any]) -> tuple[list[str], list[dict[str, str]
         return None
     resource_name = str(resource.get("name") or "")
     if resource_name.lower().endswith(".csv"):
-        reader = csv.DictReader(io.StringIO(raw_body.decode("utf-8-sig", "replace")))
+        text, fallen = decode_table(raw_body)
+        if fallen:
+            log(f"    {fallen} byte(s) of {resource_name} are not UTF-8 and were "
+                f"read as cp1252")
+        reader = csv.DictReader(io.StringIO(text))
         return ([c.strip() for c in (reader.fieldnames or [])], list(reader),
                 resource_name)
     try:
@@ -454,6 +518,13 @@ def read_units(package: dict[str, Any], resource: dict[str, Any],
     # (residents against some other count) and adding them would invent a
     # population nobody published.
     pcodes = (f"adm{cod_level}pcode", f"admin{cod_level}pcode", "districtcode")
+    damaged = damaged_names(rows, unit, parent)
+    if damaged:
+        raise SystemExit(
+            f"cod_ps: {resource_name}: {len(damaged)} name(s) hold a character "
+            f"the file's bytes do not define ({'; '.join(damaged[:8])}); a "
+            f"damaged name matches no place, or the wrong one, so nothing is "
+            f"written")
     seen: dict[str, dict[str, Any]] = {}
     clashed: set[str] = set()
     unnamed = bad = 0
@@ -668,13 +739,46 @@ def headers(isos: list[str]) -> None:
                 with urllib.request.urlopen(urllib.request.Request(
                         str(resource.get("url")), headers=HEADERS),
                         timeout=TIMEOUT) as fh:
-                    body = fh.read(4000).decode("utf-8-sig", "replace")
+                    body, _ = decode_table(fh.read(4000))
             except Exception as err:                 # noqa: BLE001 -- reported
                 log(f"      unreadable: {type(err).__name__}: {err}")
                 continue
             for line in body.splitlines()[:2]:
                 log(f"      {line[:400]}")
             break
+
+
+def decoding(isos: list[str]) -> None:
+    """Which lines of each country's adm2 CSV are not UTF-8, as they now read.
+
+    Writes nothing: it shows what decode_table makes of the bytes before any
+    record is written from them.
+    """
+    wanted = {c.upper() for c in isos}
+    for package in sorted(catalogue(), key=lambda p: str(p.get("name"))):
+        code = iso3(package)
+        if wanted and code not in wanted:
+            continue
+        resource = adm2_resource(package)
+        name = str((resource or {}).get("name") or "")
+        if not name.lower().endswith(".csv"):
+            log(f"  {code}: no adm2 CSV ({name or 'none'})")
+            continue
+        try:
+            with urllib.request.urlopen(urllib.request.Request(
+                    str(resource.get("url")), headers=HEADERS), timeout=TIMEOUT) as fh:
+                raw = fh.read()
+        except Exception as err:                     # noqa: BLE001 -- reported
+            log(f"  {code} {name}: unreadable: {type(err).__name__}: {err}")
+            continue
+        text, fallen = decode_table(raw)
+        log(f"  {code} {name}: {len(raw):,} bytes, {fallen} read as cp1252, "
+            f"{text.count(DAMAGED)} undefined")
+        for line, raw_line in zip(text.split("\n"), raw.split(b"\n")):
+            try:
+                raw_line.decode("utf-8")
+            except UnicodeDecodeError:
+                log(f"      {line[:200]}")
 
 
 def main() -> int:
@@ -686,9 +790,15 @@ def main() -> int:
     ap.add_argument("--out", default=None)
     ap.add_argument("--headers", default="",
                     help="comma-separated ISO3s whose adm2 table to describe")
+    ap.add_argument("--decoding", default="",
+                    help="comma-separated ISO3s whose adm2 CSV's non-UTF-8 lines "
+                         "to show, writing nothing")
     args = ap.parse_args()
     if args.headers:
         headers([x for x in args.headers.split(",") if x])
+        return 0
+    if args.decoding:
+        decoding([x for x in args.decoding.split(",") if x])
         return 0
     if args.probe:
         probe()
@@ -709,8 +819,50 @@ def main() -> int:
         raise SystemExit("cod_ps: nothing usable was read; writing nothing")
     log(f"  {len(records_out)} districts in {len(written)} countries: "
         f"{', '.join(written)}")
-    write_json(args.out or PROCESSED / OUT, records_out)
+    target = Path(args.out) if args.out else PROCESSED / OUT
+    if only:
+        records_out = merged(read_existing(target), records_out, only)
+        log(f"  {len(records_out)} districts in the file after replacing "
+            f"{', '.join(sorted(only))}")
+    write_json(target, records_out)
     return 0
+
+
+def read_existing(path: Path) -> list[dict[str, Any]]:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+
+
+def merged(old: list[dict[str, Any]], new: list[dict[str, Any]],
+           only: set[str]) -> list[dict[str, Any]]:
+    """The file with ``only``'s countries re-read and every other row kept.
+
+    ``--only`` used to write those countries alone, so re-reading two of them
+    would have emptied the file of the other sixty-six. Each re-read country's
+    rows take the place of its old ones; a country asked for and not read
+    stops the run, since dropping its rows would be a silent loss.
+    """
+    fresh: dict[str, list[dict[str, Any]]] = {}
+    for row in new:
+        fresh.setdefault(row["country"], []).append(row)
+    missing = sorted(only - set(fresh))
+    if missing:
+        raise SystemExit(f"cod_ps: --only {', '.join(missing)} read nothing; the "
+                         f"file keeps its rows and nothing is written")
+    out: list[dict[str, Any]] = []
+    placed: set[str] = set()
+    for row in old:
+        code = row.get("country")
+        if code not in only:
+            out.append(row)
+        elif code not in placed:
+            out.extend(fresh[code])
+            placed.add(code)
+    for code in sorted(set(fresh) - placed):
+        out.extend(fresh[code])
+    return out
 
 
 if __name__ == "__main__":

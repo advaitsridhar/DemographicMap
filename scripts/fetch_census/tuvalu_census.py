@@ -202,13 +202,43 @@ COMPOSITION_NOTE = (
     "{people:,} usual residents here, who include people away on census night.")
 
 
+WORDS = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight",
+         9: "nine"}
+
+
+def island_note(name: str, villages: dict[tuple[str, str], tuple[int, ...]]) -> str:
+    """The island's population note: the 2022 census counts no village, so its
+    villages' 2017 counts say how many of its people live in the villages the
+    map draws and how many in those it does not, in one year."""
+    mine = [(v, n[0]) for (island, v), n in villages.items() if island == name]
+    total = sum(n for _, n in mine)
+    drawn = [(v, n) for v, n in mine if (name, v) in DRAWN_VILLAGES]
+    other = [(v, n) for v, n in mine if (name, v) not in DRAWN_VILLAGES]
+
+    def part(group: list[tuple[str, int]], one: str, many: str) -> str:
+        people = sum(n for _, n in group)
+        if len(group) == 1:
+            return f"{people:,} in {group[0][0]}, {one}"
+        count = WORDS.get(len(group), str(len(group)))
+        return (f"{people:,} in the {count} villages {many} ("
+                + ", ".join(f"{v} {n:,}" for v, n in group) + ")")
+
+    said = [part(drawn, "the one village the map draws", "the map draws")] if drawn else []
+    if other:
+        said.append(part(other, "which it does not draw", "it does not draw"))
+    return (f"The 2022 census count (Table 3). The 2022 census gives no village counts; in "
+            f"2017 {name} counted {total:,} people: " + ", and ".join(said) + ".")
+
+
 def island_fields(name: str, report: dict[str, dict[str, int]],
-                  faith: dict[str, dict[str, int]], ethnic: dict[str, dict[str, int]]
+                  faith: dict[str, dict[str, int]], ethnic: dict[str, dict[str, int]],
+                  villages: dict[tuple[str, str], tuple[int, ...]] | None = None
                   ) -> dict[str, Any]:
     figures = report[name]
     residents = sum(faith[name].values())
     return {
         "population": population(figures["population"], 2022, f"{REPORT} (Table 3)"),
+        "population_note": island_note(name, villages) if villages else None,
         "sex_ratio": measure(figures["sex_ratio"], unit="males_per_100_females", year=2022,
                              source=f"{REPORT} (Table 6)"),
         "sex_ratio_note": "Males per 100 females, 2022 census (Table 6), in whole numbers.",
@@ -273,7 +303,7 @@ def build(report: dict[str, dict[str, int]], villages: dict[tuple[str, str], tup
     village_units = bind_level({f"{i}|{v}": (v, i) for i, v in sorted(DRAWN_VILLAGES)}, admin2,
                                parents)
     records = [unit_record("TUV", island, unit["name"], unit, "admin1", None, SOURCES,
-                           **island_fields(island, report, faith, ethnic))
+                           **island_fields(island, report, faith, ethnic, villages))
                for island, unit in island_units.items()]
     # In a fixed order: a set's order changes from run to run, and so did the file.
     for key in sorted(village_units):

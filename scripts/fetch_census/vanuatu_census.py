@@ -32,8 +32,12 @@ answers. Table 6.17 prints the two towns' rows under each other's names (its
 "Port Vila" has 15,978 people aged three and over, fewer than the 34,802 who
 speak a vernacular there, and its "Luganville" 44,856 of a town of 17,407);
 read the other way round both fit, and the reader takes them so only when
-both fail as printed and both fit exchanged. Table 6.16's second panel has
-no row for Aneityum, so that council has no language here.
+both fail as printed and both fit exchanged. Table 6.16 prints no row for
+Aneityum in either of its panels. Tafea's own row and every other council's
+are in the same table, so Aneityum's figures are Tafea's less its other
+councils' (``completed_panels``): its five languages make its total by
+construction, so the test is the council's own Table 6.17 count of people
+aged three and over in private households, which that total may not exceed.
 
 **How the PDF reads.** pypdf gives each page's text with the rows intact:
 a region's name and then its figures ("Torres 1,190 597 593 ..."), with
@@ -159,9 +163,9 @@ def read_table(pages: list[str], table: str, order: list[str] | None = None
     1.1's); None reads them from the rows themselves (Table 1.1, which gives
     the list the others are read by). A panel that prints its names apart from
     its figures is read in that order from the first name it lists, because
-    the column of names can drop one -- Table 6.16's Shefa and Tafea panel
-    lists 29 names over 30 rows of figures, Aneityum's name missing -- while
-    the rows keep their places. Every row read that way still has to make its
+    the column of names can drop one -- Table 3.5's Torba panel lists two
+    names over three rows of figures, Ureparapara's name missing -- while the
+    rows keep their places. Every row read that way still has to make its
     region's total with the other panel, which a row read against the wrong
     region does not.
     """
@@ -365,31 +369,117 @@ def settle_towns(aged: dict[str, float], spoken: dict[str, dict[str, Any]],
     return swapped
 
 
-def read_language(pages: list[str], order: list[str], people: dict[str, dict[str, float]]
+def completed_panels(rows: dict[str, dict[int, list[float]]], full: dict[str, list[float]],
+                     by_province: dict[str, list[str]]
+                     ) -> dict[str, tuple[list[float], str, tuple[int, ...]]]:
+    """A council's Table 6.16 row that the page leaves out, in one panel or
+    both, made from its province's row less its other councils': (figures,
+    the province, the panels made that way).
+
+    Table 6.16 prints no row for Aneityum, in either panel. Tafea's own row and
+    every other council's are in the same table, so the missing figures are
+    their difference. Only one council of a province may be missing, every
+    other council's row must be whole, and no figure may come out negative;
+    otherwise nothing is made.
+    """
+    widths = WIDTHS["6.16"]
+    out: dict[str, tuple[list[float], str, tuple[int, ...]]] = {}
+    for province, names in (by_province or {}).items():
+        lacking = [n for n in names if n not in full]
+        if len(lacking) != 1 or province not in full:
+            continue
+        name = lacking[0]
+        others = [n for n in names if n != name]
+        if any(n not in full for n in others):
+            continue
+        have = rows.get(name, {})
+        values: list[float] = []
+        made: list[int] = []
+        start = 0
+        for width in widths:
+            if width in have:
+                values += have[width]
+            else:
+                values += [full[province][start + i] - sum(full[n][start + i] for n in others)
+                           for i in range(width)]
+                made.append(width)
+            start += width
+        if min(values) < 0:
+            log(f"  Table 6.16 {province} less its other councils leaves {values} for "
+                f"{name}: not made")
+            continue
+        out[name] = (values, province, tuple(made))
+    return out
+
+
+def settle_made_rows(language: dict[str, dict[str, Any]], aged: dict[str, float]) -> list[str]:
+    """Drop a made Table 6.16 row that counts more people than the council's
+    own Table 6.17 count of everyone aged three and over in private
+    households; returns the councils dropped."""
+    dropped = []
+    for name in [n for n, v in language.items() if v.get("completed_from")]:
+        if aged.get(name) is None or language[name]["total"] > aged[name]:
+            log(f"  Table 6.16 {name}: the made row counts {language[name]['total']:,.0f}, "
+                f"more than the {aged.get(name) or 0:,.0f} aged 3+ Table 6.17 gives it: "
+                "no language written")
+            del language[name]
+            dropped.append(name)
+        else:
+            log(f"  Table 6.16 {name}: the made row counts {language[name]['total']:,.0f} of "
+                f"the {aged[name]:,.0f} aged 3+ Table 6.17 gives it")
+    return dropped
+
+
+def read_language(pages: list[str], order: list[str], people: dict[str, dict[str, float]],
+                  by_province: dict[str, list[str]] | None = None
                   ) -> dict[str, dict[str, Any]]:
     """Table 6.16: {region: {total, counts}}, first language learned to speak (3+).
 
     ``total`` is the people the table counts -- those aged three and over who
     can speak a vernacular -- and is replaced by everyone aged three and over
-    once Table 6.17 is read.
+    once Table 6.17 is read. A council whose second panel the page leaves out
+    is completed from its province's row (``completed_panels``), and says so.
     """
     out = {}
     councils = frozenset(order) - NOT_COUNCILS - set(TOWNS)
-    for name, values in panels(read_table(pages, "6.16", order), "6.16", order,
-                               may_lack=councils).items():
+    rows = read_table(pages, "6.16", order)
+    full = panels(rows, "6.16", order, may_lack=councils)
+    completed = completed_panels(rows, full, by_province or {})
+    for name, (values, province, made) in completed.items():
+        log(f"  Table 6.16 {name}: {len(made)} of its panels made from {province} less its "
+            f"other councils")
+    # Every row of the table is rounded on its own, so a row made from the
+    # province's and its other councils' carries their rounding in each cell:
+    # up to two people a row. Its males and females are not used and not
+    # checked; its languages must still make its total within that slack.
+    slack: dict[str, float] = {}
+    for name, (values, province, made) in list(completed.items()):
+        slack[name] = max(5, 2 * len(by_province[province]))
+        spoken = values[3] + values[6] + values[9] + values[12] + values[15]
+        if abs(spoken - values[0]) > slack[name] or values[0] > people[name]["private"]:
+            log(f"  Table 6.16 {name}: the made row's languages make {spoken:,.0f} against "
+                f"its total of {values[0]:,.0f}, or more than its "
+                f"{people[name]['private']:,.0f} people in private households: no language "
+                "written")
+            del completed[name]
+    for name, values in {**full, **{n: v for n, (v, _, _) in completed.items()}}.items():
         total = values[0]
         counts = {"English": values[3], "French": values[6], "Bislama": values[9],
                   VERNACULAR: values[12], "Not stated": values[15]}
         for first in (0, 3, 6, 9, 12):
-            check(abs(values[first + 1] + values[first + 2] - values[first]) <= 2,
+            check(name in completed
+                  or abs(values[first + 1] + values[first + 2] - values[first]) <= 2,
                   f"vanuatu_census: Table 6.16 {name}: males and females do not make a total")
-        check(abs(sum(counts.values()) - total) <= 5,
+        check(abs(sum(counts.values()) - total) <= slack.get(name, 5),
               f"vanuatu_census: Table 6.16 {name}: languages make {sum(counts.values()):,.0f}"
               f", not {total:,.0f}")
         check(total <= people[name]["private"],
               f"vanuatu_census: Table 6.16 {name}: {total:,.0f} aged 3+ of "
               f"{people[name]['private']:,.0f} in private households")
         out[name] = {"total": total, "counts": counts}
+        if name in completed:
+            out[name]["completed_from"] = completed[name][1]
+            out[name]["completed_panels"] = len(completed[name][2])
     return out
 
 
@@ -435,14 +525,23 @@ NOTES = {
 }
 
 
-def language_note(asked: float, aged: float, swapped: bool) -> str:
+def language_note(asked: float, aged: float, swapped: bool, shown: float | None = None) -> str:
+    """The note beside a council's or province's first language.
+
+    ``shown`` is what the shares written beside it add up to, each rounded to
+    a tenth as the map shows it; that, not the unrounded reach, is the sum a
+    reader can check. Aneityum's four shares make 94.1 of the 1,260 of 1,338
+    people (94.17%) the question reached, and the note once said 94.2%.
+    """
+    if shown is None:
+        shown = 100 * asked / aged
     note = (
         "First language learned to speak, 2020 Census (Table 6.16), which the census asked "
         "only of the people who can speak one of the islands' own languages: "
         f"{asked:,.0f} of the {aged:,.0f} people aged three and over in private households "
-        "here (Table 6.17). Each share is of all of them, so the shares add up to the "
-        f"{100 * asked / aged:.1f}% the question reached; the first language of the rest, who "
-        "speak no vernacular, was not asked. 'Vanuatu vernacular languages' is the census's "
+        "here (Table 6.17). Each share is of all of them, so the shares add up to "
+        f"{shown:.1f}% rather than 100%: the first language of the rest, who speak no "
+        "vernacular, was not asked. 'Vanuatu vernacular languages' is the census's "
         "'Indigenous (Vernacular)': the islands' own languages, every one of them Oceanic.")
     if swapped:
         note += (" Table 6.17 prints Port Vila's and Luganville's rows under each other's "
@@ -451,20 +550,55 @@ def language_note(asked: float, aged: float, swapped: bool) -> str:
 
 
 ANEITYUM_LANGUAGE = (
-    "Table 6.16's second panel -- Bislama, the vernaculars and not stated -- has no row for "
-    "this council: the page for Shefa and Tafea ends its list at Futuna, so no first "
-    "language can be given here.")
+    "Table 6.16 prints no row for this council, so no first language can be given here.")
+
+
+def completed_note(language: dict[str, Any]) -> str:
+    """What a council whose row the page leaves out carries, and how it was made."""
+    province = language.get("completed_from")
+    if not province:
+        return ""
+    counts = language["counts"]
+    where = PROVINCE_ON_MAP[province]
+    if language.get("completed_panels", 1) >= len(WIDTHS["6.16"]):
+        # The people the parts add up to, which the shares are of; the made
+        # total, from the totals' own column, may differ by the table's
+        # rounding (Aneityum: 1,260 in its parts, 1,261 from the totals).
+        parts = sum(counts.values())
+        note = (f" Table 6.16 prints no row for this council. Its figures are {where}'s "
+                f"less its other councils' in the same table -- arithmetic on the table's "
+                f"own counts: English {counts['English']:,.0f}, French "
+                f"{counts['French']:,.0f}, Bislama {counts['Bislama']:,.0f}, vernacular "
+                f"{counts[VERNACULAR]:,.0f} and not stated {counts['Not stated']:,.0f}, "
+                f"{parts:,.0f} people in all.")
+        if round(parts) != round(language["total"]):
+            note += (f" The table's totals, taken the same way, give "
+                     f"{language['total']:,.0f}, since its rows do not all add up to the "
+                     f"person.")
+        return note
+    return (f" The page prints this council's total, English and French but not its "
+            f"Bislama, vernacular and not-stated figures, which are "
+            f"{where}'s less its other councils' in the same table: "
+            f"{counts['Bislama']:,.0f}, {counts[VERNACULAR]:,.0f} and "
+            f"{counts['Not stated']:,.0f}. With the council's own English "
+            f"({counts['English']:,.0f}) and French ({counts['French']:,.0f}) they make "
+            f"the {language['total']:,.0f} people its row counts.")
 
 
 def fields_for(people: dict[str, float], groups: list[float], religion: dict[str, Any],
                ethnicity: dict[str, Any], language: dict[str, Any] | None,
                aged: float | None = None, swapped: bool = False) -> dict[str, Any]:
     median = median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, groups)])
-    spoken: dict[str, Any] = (
-        {"language": shares_of(language["counts"], aged), "language_year": YEAR,
-         "language_note": language_note(language["total"], aged, swapped)}
-        if language is not None and aged
-        else {"language": gap(NOT_AVAILABLE, ANEITYUM_LANGUAGE)})
+    spoken: dict[str, Any] = {"language": gap(NOT_AVAILABLE, ANEITYUM_LANGUAGE)}
+    if language is not None and aged:
+        shares = shares_of(language["counts"], aged)
+        # A made row's people are its parts', which its shares are of.
+        asked = (sum(language["counts"].values()) if language.get("completed_from")
+                 else language["total"])
+        shown = round(sum(s["pct"] for s in shares), 1)
+        spoken = {"language": shares, "language_year": YEAR,
+                  "language_note": language_note(asked, aged, swapped, shown)
+                                   + completed_note(language)}
     return {
         "population": population(people["total"], YEAR, f"{SOURCE} (Table 1.1)"),
         "sex_ratio": measure(sex_ratio(people["male"], people["female"]),
@@ -513,8 +647,9 @@ def build(pages: list[str], admin1: list[dict[str, Any]], admin2: list[dict[str,
     ages = read_ages(pages, order, people)
     ethnicity = read_composition(pages, "3.1", ORIGINS, order, people)
     religion = read_composition(pages, "3.5", RELIGIONS, order, people)
-    language = read_language(pages, order, people)
+    language = read_language(pages, order, people, councils)
     aged = aged_three_plus(pages, order, people)
+    settle_made_rows(language, aged)
     swapped = settle_towns(aged, language, people)
     grouped = {row: median_from_groups([(lo, hi, n) for (lo, hi), n in zip(AGE_GROUPS, ages[row])])
                for row in TABLE_4}

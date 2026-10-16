@@ -21,6 +21,10 @@ So this writes two kinds of figure, and says which is which:
   Slobozia district also holds three communes on the right bank (Chițcani,
   Cremenciug, Gîsca) that the map draws inside Căușeni: the sum is of a
   slightly larger area than the shape.
+* **Transnistria's population, summed.** The same seven rows' people, 383,810
+  in the run of 10 October 2026. The republic's total (475,007; 475,373 in
+  its first results, which an encyclopaedia had put on this shape) counts
+  Bender too, and the map draws Bender apart.
 * **Religion and mother tongue, modelled.** Each unit's 2015 ethnic mix,
   weighted by how each ethnicity answered the two questions in Moldova's
   2024 census (annex tables 5.35 and 5.33, ethnicity by religion and by
@@ -303,6 +307,23 @@ def records(ethnic: dict[str, dict[str, int]], rate: dict[str, dict[str, dict[st
         fields: dict[str, Any] = {"ethnicity": ethnicity, "ethnicity_note": ethnicity_note}
         if name == "Bender":
             fields["ethnicity_year"] = YEAR
+        else:
+            # The republic's own total (475,007 in the table; 475,373 in its
+            # first results, which an encyclopaedia had put on this shape)
+            # counts Bender too, which the map draws apart. The left bank's
+            # rows are this shape's people, as for its ethnicity.
+            whole = sum(ethnic[REPUBLIC].values())
+            bender = sum(ethnic[BENDER].values())
+            people = sum(left.values())
+            fields["population"] = {
+                "value": people, "year": YEAR, "source": source_2015,
+                "note": (f"The sum of the seven left-bank rows of Transnistria's own 2015 "
+                         f"census (Tiraspol, Dnestrovsc and five districts): the "
+                         f"republic's {whole:,} less Bender's {bender:,}, which the map "
+                         f"draws apart. Its Slobozia district also counts three communes "
+                         f"on the right bank (Chițcani, Cremenciug, Gîsca) that the map "
+                         f"draws in Căușeni. Breakaway authority's census; Moldova's 2024 "
+                         f"census did not count this territory.")}
         for field, word in (("religion", "religious affiliation"), ("language", "mother tongue")):
             value = estimate(
                 MODELLED, modelled(field, counts, rate[field]),
@@ -331,7 +352,8 @@ def records(ethnic: dict[str, dict[str, int]], rate: dict[str, dict[str, dict[st
                 "id": f"MDA-pmr-{level}-{name.lower()}", "level": level, "name": name,
                 "parent": "MDA", "country": "MDA", "shape_id": shape, "match_by": "shape_id",
                 **fields,
-                "sources": [{"field": "ethnicity", "name": source_2015, "url": POPSTAT,
+                "sources": [{"field": "ethnicity" if name == "Bender" else "ethnicity/population",
+                             "name": source_2015, "url": POPSTAT,
                              "license": "Compilation of census results"},
                             {"field": "religion/language", "name": source_2024,
                              "url": ANNEX, "license": "Official statistics of the "
@@ -351,6 +373,8 @@ def main() -> int:
     ethnic = ethnic_2015(page)
     for name in (BENDER, *LEFT_BANK):
         log(f"  {name}: {sum(ethnic[name].values()):,}")
+    log(f"  the left bank: {sum(sum(ethnic[n].values()) for n in LEFT_BANK):,} of the "
+        f"republic's {sum(ethnic[REPUBLIC].values()):,}")
     log("transnistria: Moldova 2024, ethnicity by religion and by mother tongue")
     blob = http_get(ANNEX, binary=True, timeout=600)
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)

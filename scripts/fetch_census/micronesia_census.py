@@ -772,6 +772,33 @@ def municipal_rows(admin2: list[dict[str, Any]]) -> dict[str, tuple[str, str]]:
             for name in MUNICIPALITIES[state] if fold(ALIASES.get(name, name)) in drawn}
 
 
+def chuuk_note(fields: dict[str, dict[str, Any]], drawn: set[str]) -> str:
+    """Chuuk State's population note: its people by municipality at the 2010
+    census, the latest count of them, in the municipalities the map draws and
+    in those it does not.
+
+    The state's own figure is 2023's and its municipalities' 2010's, so the
+    two are not set against each other; the 2010 count is, which is the same
+    census's for both, and it says how many of Chuuk's people live where the
+    map draws no municipality.
+    """
+    names = MUNICIPALITIES["Chuuk"]
+    people = {n: int(fields[n]["population"]["value"]) for n in names}
+    total = sum(people.values())
+    shown = [n for n in names if n in drawn]
+    hidden = [n for n in names if n not in drawn]
+    held = sum(people[n] for n in shown)
+    note = (f"The 2023 census publishes Chuuk only as a state; its latest count by "
+            f"municipality is the 2010 census's, when Chuuk had {total:,} people. The map "
+            f"draws {len(shown)} of its {len(names)} municipalities, which held {held:,} of "
+            f"them")
+    if not hidden:
+        return note + "."
+    listed = hidden[0] if len(hidden) == 1 else ", ".join(hidden[:-1]) + " and " + hidden[-1]
+    return note + (f"; the other {len(hidden)}, which held {total - held:,}, are not drawn as "
+                   f"units of their own: {listed}.")
+
+
 def build(n23: dict, r23: dict, eth10: dict, lang10: dict, people10: dict,
           municipal: dict[str, dict[str, Any]], admin1: list[dict], admin2: list[dict]
           ) -> list[dict[str, Any]]:
@@ -783,12 +810,15 @@ def build(n23: dict, r23: dict, eth10: dict, lang10: dict, people10: dict,
          "B10A)", "url": NATIONAL_2010, "year": 2010, "license": LICENCE},
     ]
     bound = bind_level({s: (s, "") for s in STATES}, admin1, {})
-    for state, unit in bound.items():
-        records.append(unit_record("FSM", state, unit["name"], unit, "admin1", None,
-                                   sources_state,
-                                   **fields_state(state, n23, r23, eth10, lang10, people10)))
     parents = {u["id"]: u["name"] for u in admin1}
     placed = bind_level(municipal_rows(admin2), admin2, parents, ALIASES)
+    for state, unit in bound.items():
+        fields = fields_state(state, n23, r23, eth10, lang10, people10)
+        if state == "Chuuk" and state in municipal:
+            drawn = {key.split("-", 1)[1] for key in placed if key.startswith(f"{state}-")}
+            fields["population_note"] = chuuk_note(municipal[state]["fields"], drawn)
+        records.append(unit_record("FSM", state, unit["name"], unit, "admin1", None,
+                                   sources_state, **fields))
     for key, unit in placed.items():
         state, name = key.split("-", 1)
         m = municipal[state]

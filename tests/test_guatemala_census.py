@@ -124,10 +124,20 @@ class Counting(unittest.TestCase):
         with self.assertRaises(SystemExit):
             gt.sex_codes({"PCP6": {1: "Masculino", 2: "Femenino"}})
 
-    def test_population_is_left_to_newer_figures(self):
+    def test_population_is_everyone_enumerated_at_both_levels(self):
+        # OCHA's 2024 figures for the municipios are a projection from the
+        # 2002 census; the census's own count stands in front of them
+        # (SUPERSEDED_ROWS), and a department is its municipios' people.
         rows = self.build()
-        self.assertEqual(self.unit(rows, "admin2", "Sololá")["population"]["status"],
-                         "not_available")
+        municipio = self.unit(rows, "admin2", "Sololá")
+        department = self.unit(rows, "admin1", "Sololá")
+        municipios = [r for r in rows if r["level"] == "admin2"
+                      and r["parent"] == department["id"]]
+        self.assertEqual(municipio["population"]["year"], gt.YEAR)
+        self.assertEqual(department["population"]["value"],
+                         sum(r["population"]["value"] for r in municipios))
+        self.assertIn("Everyone INE's 2018 census enumerated here", municipio["population_note"])
+        self.assertIn("population", municipio["sources"][0]["field"])
 
     def test_a_department_off_by_one_writes_nothing(self):
         with self.assertRaises(SystemExit) as ctx:

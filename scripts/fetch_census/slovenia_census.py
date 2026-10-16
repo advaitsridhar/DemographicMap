@@ -300,7 +300,8 @@ def build() -> list[dict[str, Any]]:
         log(f"  {group}s: {published:,.0f} of {whole:,.0f} published by municipality; "
             f"{len(blank)} municipalities blank")
 
-    bound = bind({str(i): DRAWN_AS.get(n, today(n)) for i, n in enumerate(names)})
+    slivers: dict[str, tuple[dict[str, Any], dict[str, Any]]] = {}
+    bound = bind({str(i): DRAWN_AS.get(n, today(n)) for i, n in enumerate(names)}, slivers)
     polygon = {names[int(i)]: shape for i, shape in bound.items()}
     source = [{"field": "religion/ethnicity/language", "name": SOURCE, "url": PORTAL,
                "license": LICENCE, "year": YEAR}]
@@ -344,10 +345,19 @@ def build() -> list[dict[str, Any]]:
     for shape in units("SVN", "admin2"):
         if shape["id"] in written or shape["parent"] == "SVN":
             continue
+        reason, suffix = why, ""
+        if shape["id"] in slivers and slivers[shape["id"]][1]["id"] in written:
+            # Maribor's sliver: the municipality is counted, on its own polygon.
+            main = slivers[shape["id"]][1]["name"]
+            reason = (f"A sliver of the boundary file, under 1% of the extent of {main}'s own "
+                      f"polygon beside it, drawn as a polygon of its own with the same name. No "
+                      f"statistics unit is this sliver: the municipality of {main} is counted "
+                      "whole, and its figures are shown on its own polygon.")
+            suffix = f"-sliver-{shape['id']}"
         records.append(record(
-            f"SVN-C2002-gap-{fold(shape['name'])}", shape["name"], level="admin2",
+            f"SVN-C2002-gap-{fold(shape['name'])}{suffix}", shape["name"], level="admin2",
             parent=shape["parent"], country="SVN", match_by="shape_id", shape_id=shape["id"],
-            **{f: gap(NOT_AVAILABLE, why) for f in ("ethnicity", "religion", "language")}))
+            **{f: gap(NOT_AVAILABLE, reason) for f in ("ethnicity", "religion", "language")}))
     log(f"  {len(written)} municipalities written; "
         f"{sum(1 for r in records if r['id'].startswith('SVN-C2002-gap'))} stated gaps")
 

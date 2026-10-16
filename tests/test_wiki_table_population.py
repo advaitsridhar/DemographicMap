@@ -191,11 +191,45 @@ class MoreTables(unittest.TestCase):
                          (5383728, ""))
 
     def test_a_rendered_table_expands_merged_cells(self):
-        fig = wt.FIGURES[("CIV", "District Autonome De Yamoussoukro")]
+        # The list's undated district column, read as the page renders it.
+        fig = wt.Figure(
+            year=None,
+            terms=(wt.Term("Districts of Ivory Coast", row="Yamoussoukro", key=r"^District$",
+                           column=r"^Population \(District\)", rendered=True),),
+            source="English Wikipedia, Districts of Ivory Coast; the list gives no year",
+            note="The district's row: {terms}.")
         row = wt.figure_row("CIV", "Yamoussoukro", fig, "SHAPE", renderer=rendered_as(IVORY))
         self.assertEqual(row["population"]["value"], 355573)
         self.assertNotIn("year", row["population"])
         self.assertIn("gives no year", row["population"]["source"])
+
+    def test_yamoussoukro_is_the_districts_2021_census_count(self):
+        # The infobox's population_total is the district's (both departments);
+        # its blank1 is the city's and is not read.
+        infobox = ("{{Infobox settlement\n| population_as_of = 14 Dec. 2021 census\n"
+                   "| population_blank1 = 279977\n| population_blank1_title = City\n"
+                   "| population_total = 422072\n}}\n")
+        fig = wt.FIGURES[("CIV", "District Autonome De Yamoussoukro")]
+        row = wt.figure_row("CIV", "District Autonome De Yamoussoukro", fig, "SHAPE",
+                            fetcher=lambda title, lang: (infobox, title))
+        self.assertEqual((row["population"]["value"], row["population"]["year"]),
+                         (422072, 2021))
+        self.assertIn("Attiégouakro", row["population"]["note"])
+        self.assertNotIn("3,500", row["population"]["note"])
+        # An infobox dated to another census is refused, not read as 2021's.
+        older = infobox.replace("2021 census", "2014 census")
+        self.assertIsNone(wt.figure_row("CIV", "District Autonome De Yamoussoukro", fig,
+                                        "SHAPE", fetcher=lambda title, lang: (older, title)))
+
+    def test_tarrafal_is_read_from_its_own_row(self):
+        page = CAPE.replace("</table>", (
+            "<tr><td>80</td><td>Municipality of Tarrafal</td><td>Santiago</td><td>120.8</td>"
+            "<td>18,565</td><td>16,620</td></tr><tr><td>90</td><td>Municipality of Tarrafal "
+            "de São Nicolau</td><td>São Nicolau</td><td>119.0</td><td>5,237</td><td>4,825</td>"
+            "</tr></table>"))
+        row = wt.figure_row("CPV", "Tarrafal", wt.FIGURES[("CPV", "Tarrafal")], "SHAPE",
+                            renderer=rendered_as(page))
+        self.assertEqual((row["population"]["value"], row["population"]["year"]), (16620, 2021))
 
     def test_an_undated_reading_refuses_a_dated_column(self):
         term = wt.Term("X", row="Municipality of Santa Catarina", column="Population",

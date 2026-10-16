@@ -203,17 +203,23 @@ class Estimates(unittest.TestCase):
         self.assertIn("Shutul, which the office counts here, is drawn in Kapisa",
                       parwan["population"]["note"])
 
-    def test_provinces_drawn_otherwise_are_refused_and_say_why(self):
+    def test_provinces_drawn_otherwise_are_summed_or_refused_and_say_why(self):
+        # Koh Band's point falls inside Parwan's polygon. That is the outlines'
+        # doing, not a refusal: Kapisa still takes its drawn districts' sum,
+        # and says so; Parwan stays refused for Salang's own count.
         rows, settled = sheet()
         records = self.build(rows, settled, POINT_ELSEWHERE={"0202": ("Kapisa", "Parwan")})
         kapisa, parwan = records["AFG-EST-02"], records["AFG-EST-03"]
-        for province in (kapisa, parwan):
-            self.assertNotIn("value", province["population"])
-            self.assertNotIn("value", province["sex_ratio"])
+        self.assertEqual(kapisa["population"]["value"], 300 + 310 + 600 + 640 + 150 + 160)
+        self.assertIn("value", kapisa["sex_ratio"])
+        self.assertNotIn("value", parwan["population"])
+        self.assertNotIn("value", parwan["sex_ratio"])
         self.assertIn("Mahmudi Raqi, which the office counts here, is drawn in Parwan",
-                      kapisa["population"]["note"])
+                      kapisa["population_note"])
         self.assertIn("Shutul, drawn here, is counted by the office in Parwan",
-                      kapisa["population"]["note"])
+                      kapisa["population_note"])
+        self.assertIn("outlines that do not line up exactly: the point of Koh Band, "
+                      "drawn here, falls inside Parwan's polygon", kapisa["population_note"])
         self.assertIn("Shutul, which the office counts here, is drawn in Kapisa",
                       parwan["population"]["note"])
         # The district itself is the office's row, wherever it is drawn.
@@ -226,12 +232,12 @@ class Estimates(unittest.TestCase):
         """Kapisa's polygon kept Wikidata's 2009 figure for the office's province
         beside districts adding up to more; the stated reason now replaces it."""
         rows, settled = sheet()
-        records = self.build(rows, settled, POINT_ELSEWHERE={"0202": ("Kapisa", "Parwan")})
-        pop = records["AFG-EST-02"]["population"]
+        records = self.build(rows, settled)
+        pop = records["AFG-EST-03"]["population"]
         self.assertEqual(pop["displaces_before"], ae.DISPLACES_BEFORE)
         self.assertTrue(pop["note"].startswith("The statistics office's 1396 estimate"))
         self.assertNotIn("Not written", pop["note"])
-        self.assertNotIn("displaces_before", records["AFG-EST-02"]["sex_ratio"])
+        self.assertNotIn("displaces_before", records["AFG-EST-03"]["sex_ratio"])
         # A province drawn as the office counts it carries a figure, not a gap.
         self.assertIn("value", records["AFG-EST-01"]["population"])
         import sys
@@ -240,7 +246,7 @@ class Estimates(unittest.TestCase):
         for year, kept in ((2009, False), (2025, False), (2026, True)):
             entity = {"population": {"value": 399500, "year": year, "source": "Wikidata (CC0)"},
                       "_from": {"population": "wikidata_admin1.json"}, "sources": []}
-            be.merge_adapter(entity, dict(records["AFG-EST-02"], _source=ae.OUT))
+            be.merge_adapter(entity, dict(records["AFG-EST-03"], _source=ae.OUT))
             self.assertEqual("value" in entity["population"], kept, year)
 
     def test_a_misspelt_boundary_label_is_written_as_the_office_spells_it(self):
@@ -253,21 +259,24 @@ class Estimates(unittest.TestCase):
         self.assertIn("Internet Archive", ae.ETHNICITY_GAP_DISTRICT)
         self.assertIn("Wikipedia articles", ae.ETHNICITY_GAP_DISTRICT)
 
-    def test_a_point_in_another_polygon_refuses_both_provinces(self):
+    def test_a_point_in_another_polygon_is_a_caveat_not_a_refusal(self):
+        # The two levels' outlines do not nest; each district is still filed
+        # under one province, so both provinces take their drawn districts'
+        # sums and no record tells the build to refuse a sum.
         rows, settled = sheet()
         records = self.build(rows, settled,
                              POINT_ELSEWHERE={"0102": ("Kabul", "Kapisa")})
-        kabul = records["AFG-EST-01"]
-        self.assertNotIn("value", kabul["population"])
+        kabul, kapisa = records["AFG-EST-01"], records["AFG-EST-02"]
+        self.assertEqual(kabul["population"]["value"],
+                         1000 + 1100 + 5000 + 5200 + 700 + 760 + 200 + 230)
         self.assertIn("the point of Paghman, drawn here, falls inside Kapisa's polygon",
-                      kabul["population"]["note"])
+                      kabul["population_note"])
         self.assertIn("the point of Paghman, drawn in Kabul, falls inside this one",
-                      records["AFG-EST-02"]["sex_ratio"]["note"])
-        # Neither may be filled from the districts linked to it: the build is
-        # told so on the gap, and the reason says why.
-        for code in ("AFG-EST-01", "AFG-EST-02"):
-            self.assertIs(records[code]["population"]["no_child_sum"], True, code)
-            self.assertIn("their sum is not given here", records[code]["population"]["note"])
+                      kapisa["population_note"])
+        self.assertEqual(kapisa["population"]["value"], 300 + 310 + 600 + 640 + 150 + 160)
+        for rec in records.values():
+            self.assertNotIn("no_child_sum", rec["population"], rec["id"])
+        self.assertNotIn("their sum is not given", json.dumps(records))
 
     def test_a_province_drawn_as_counted_carries_no_refusal_flag(self):
         rows, settled = sheet()
@@ -281,7 +290,7 @@ class Estimates(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.build(rows, settled, POINT_ELSEWHERE={"0102": ("Kapisa", "Parwan")})
 
-    def test_a_misprinted_row_keeps_its_sex_ratio_only(self):
+    def test_a_misprinted_row_is_written_as_its_sexes_add_up(self):
         # Koh Band prints 3,610 both-sexes people against 300 + 310 females
         # and males, rurally and in all: the province's Total row has 610.
         rows, settled = sheet()
@@ -290,8 +299,9 @@ class Estimates(unittest.TestCase):
         records = self.build(rows, settled,
                              MISPRINTED={"0202": "Koh Band prints 3,610 against 610."})
         koh = records["AFG-EST-0202"]
-        self.assertNotIn("value", koh["population"])
-        self.assertIn("3,610", koh["population"]["note"])
+        self.assertEqual(koh["population"]["value"], 610)
+        self.assertEqual(koh["population"]["year"], ae.YEAR)
+        self.assertIn("Koh Band prints 3,610 against 610.", koh["population_note"])
         self.assertEqual(koh["sex_ratio"]["value"], round(100 * 310 / 300, 1))
 
     def test_the_same_misprint_unnamed_stops_the_run(self):

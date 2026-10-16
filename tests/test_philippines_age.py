@@ -135,20 +135,45 @@ class BuildTest(unittest.TestCase):
                       by["R4"]["population_note"])
         self.assertEqual(by["R4"]["sources"][0]["field"], "population/median_age/sex_ratio")
 
-    def test_the_armm_keeps_the_count_it_has(self):
-        # Its 2015 count is of its own ground; a 2020 count would make its
-        # districts add up to it, and the map would then subtract a religion
-        # for "Maguindanao", whose polygon is not the province.
+    def test_the_armm_takes_its_2020_count_and_says_what_is_not_drawn(self):
+        # Its 2020 count, of the same year as its provinces; the polygon
+        # labelled Maguindanao carries no count, and the note gives the
+        # arithmetic of what the drawn provinces hold.
         admin1 = ADMIN1 + [{"id": "R4", "name": "ARMM"}]
+        admin2 = [dict(s, parent="R4") if s["id"] in ("S5", "S6") else s for s in ADMIN2]
         regions = {"ARMM": ["Maguindanao", "Cotabato City"]}
         with mock.patch.object(p, "REGIONS", regions):
-            recs = p.build(self.units(), 80, admin1, ADMIN2)
+            recs = p.build(self.units(), 80, admin1, admin2)
         by = {r["shape_id"]: r for r in recs}
-        self.assertNotIn("value", by["R4"]["population"])
-        self.assertNotIn("population_note", by["R4"])
-        self.assertEqual(by["R4"]["sources"][0]["field"], "median_age/sex_ratio")
-        self.assertEqual(by["R4"]["sex_ratio"]["value"], 100.0)
-        self.assertNotIn("ARMM", p.LATER)
+        self.assertEqual(by["R4"]["population"]["value"], 18 * 81)
+        self.assertEqual(by["R4"]["population"]["year"], 2020)
+        note = by["R4"]["population_note"]
+        self.assertIn("Bangsamoro region replaced the ARMM in 2019", note)
+        self.assertIn("the polygon labelled Maguindanao, drawn inside this region, carries "
+                      "no count of its own", note)
+        self.assertIn(f"Cotabato City holds {8 * 81:,} of these people, and the other "
+                      f"{10 * 81:,} are in Maguindanao.", note)
+        self.assertEqual(by["R4"]["sources"][0]["field"], "population/median_age/sex_ratio")
+
+    def test_an_excluded_polygon_states_its_population_gap_and_refuses_a_subtraction(self):
+        recs = p.build(self.units(), 80, ADMIN1, ADMIN2)
+        mag = {r["shape_id"]: r for r in recs}["S6"]
+        pop = mag["population"]
+        self.assertNotIn("value", pop)
+        self.assertIn("No census figure fits this polygon", pop["note"])
+        # It displaces an encyclopaedia's province figure on the polygon.
+        self.assertEqual(pop["displaces_before"], p.DISPLACES_BEFORE)
+        for field in ("religion", "ethnicity", "language"):
+            self.assertIs(mag[field]["not_this_ground"], True, field)
+        self.assertNotIn("not_this_ground", mag["median_age"])
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        import build_entities as be
+        entity = {"population": {"value": 1_286_142, "year": 2024, "source": "Wikidata (CC0)"},
+                  "_from": {"population": "wikidata_admin2.json"}, "sources": []}
+        be.merge_adapter(entity, dict(mag, _source=p.OUT))
+        self.assertNotIn("value", entity["population"])
 
     def visayas(self, drawn, elsewhere=()):
         rows = [row("Region VII", "CEBU", "C1", flat(6), flat(5)),
@@ -189,7 +214,7 @@ class BuildTest(unittest.TestCase):
         self.assertIn("Negros Oriental", str(caught.exception))
 
     def test_every_region_given_its_own_count_says_why(self):
-        self.assertEqual(set(p.LATER), (set(p.REGIONS) - {"ARMM"}) | set(p.REDRAWN))
+        self.assertEqual(set(p.LATER), set(p.REGIONS) | set(p.REDRAWN))
 
     def test_a_province_with_no_polygon_refuses(self):
         cols = p.columns(HEADER)

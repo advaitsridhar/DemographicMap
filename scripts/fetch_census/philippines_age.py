@@ -108,13 +108,29 @@ ALIASES = {"Davao de Oro": "Compostela Valley"}
 # 9,144 km2 south to 6.12 N and east to 125.1 E -- Maguindanao itself is some
 # 4,900 km2 and ends near 6.6 N, Sultan Kudarat's 5,300 km2 lie south of it --
 # while its "Cotabato" covers 5,899 km2 of the province's 9,008. Either
-# province's count would be the wrong people on those shapes.
+# province's count would be the wrong people on those shapes. Re-measured on
+# the boundary file's own outlines in an equal-area projection (October
+# 2026): "Maguindanao" is 9,125 km2, 4,912 of them inside the ARMM's
+# first-level polygon and 4,212 inside Soccsksargen's, almost all south of
+# 6.75 N, where Isulan, Tacurong, Lebak and Esperanza lie; every one of the
+# eighteen municipal seats of Cotabato tested falls inside "Cotabato", so the
+# rest of that province is not inside "Maguindanao", and the reason does not
+# say where it is.
 EXCLUDE = {
-    "Maguindanao": ("the boundary file's polygon takes in Sultan Kudarat, which it does not "
-                    "draw, and more (9,144 km2 against Maguindanao's ~4,900)"),
-    "Cotabato": ("the boundary file's polygon covers some 5,900 km2 of the province's "
-                 "9,008; the rest lies inside its 'Maguindanao'"),
+    "Maguindanao": ("the boundary file's polygon also takes in the ground of Sultan Kudarat, "
+                    "a province it draws no polygon for (about 9,100 km2 against "
+                    "Maguindanao's ~4,900; about 4,200 km2 of it lies inside Soccsksargen's "
+                    "polygon)"),
+    "Cotabato": ("the boundary file's polygon is about 5,900 km2 against the province's "
+                 "9,008, and it holds the municipalities of the 63 barangays that joined "
+                 "the Bangsamoro region in 2019"),
 }
+# The year before which an encyclopaedia's figure on an ``EXCLUDE`` polygon
+# gives way to the stated reason (``displaces_before``): the reason is about
+# the polygon, so no figure for the province of its name fits it, whatever
+# its year. Wikidata's 1,286,142 for Cotabato (2024) is the province without
+# those 63 barangays, on a polygon that holds them.
+DISPLACES_BEFORE = 2027
 # Provinces of the census that the boundary file draws no polygon for: their
 # people are counted in the national check and written nowhere.
 NO_POLYGON = {"Sultan Kudarat", "Interim Province"}
@@ -149,16 +165,20 @@ REDRAWN = {
 # Why the region's later figures are for other ground than its polygon, said
 # on the population the census gives it instead.
 #
-# Not the ARMM. Its population on the map is the 2015 census's count of the
-# same five provinces, which is the ground its polygon draws, so nothing is
-# wrong with it -- and its 2020 count was not harmless: it makes the ARMM's
-# districts' populations add up to the region's, and the map then subtracts
-# the other four provinces' religion from the region's to give a religion to
-# "Maguindanao", whose polygon is not the province (``EXCLUDE``). The
-# subtraction would put Maguindanao's and Cotabato City's people on ground
-# that takes in Sultan Kudarat, over the reason that says no census figure
-# fits it.
+# The ARMM too, now. Its population on the map was the 2015 census's count of
+# the same five provinces, and its 2020 count was held back because it made
+# the ARMM's districts' populations add up to the region's, and the map then
+# subtracted the other four provinces' religion from the region's to give a
+# religion to "Maguindanao", whose polygon is not the province (``EXCLUDE``).
+# The polygons of ``EXCLUDE`` now carry a population gap of their own and
+# their compositions' gaps say ``not_this_ground``, which refuses that
+# subtraction, so the region takes the census of the same year as its
+# provinces. Each sentence ends with the arithmetic of what is not drawn
+# (``undrawn_note``).
 LATER = {
+    "ARMM": ("The Bangsamoro region replaced the ARMM in 2019 and added Cotabato City and "
+             "63 barangays of Cotabato, so the region's figures since then are for more "
+             "ground than this polygon draws."),
     "Soccsksargen": ("Cotabato City and 63 barangays of Cotabato have been part of the "
                      "Bangsamoro region since 2019, so Soccsksargen's figures since then "
                      "are for less ground than this polygon draws."),
@@ -408,12 +428,21 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
             # there; CLEAR Global's language rows for the provinces, named
             # "Cotabato (North Cotabato)" and "Maguindanao del Norte/Sur",
             # bind to neither).
+            #
+            # The population says so too, and displaces an encyclopaedia's
+            # figure for the province of this name (``DISPLACES_BEFORE``):
+            # with a bare gap, Wikidata's Cotabato figure filled the polygon
+            # the reason refuses. The compositions' gaps say
+            # ``not_this_ground``, so the build does not subtract the region's
+            # other provinces from the region to give this polygon one.
+            def elsewhere() -> dict[str, Any]:
+                return dict(gap(NOT_AVAILABLE, why), not_this_ground=True)
             records.append(record(
                 f"PHL-CPH2020-{fold(shape['name'])}", shape["name"], level="admin2",
                 parent="PHL", country="PHL", match_by="shape_id", shape_id=shape["id"],
+                population=dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE),
                 median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
-                religion=gap(NOT_AVAILABLE, why), ethnicity=gap(NOT_AVAILABLE, why),
-                language=gap(NOT_AVAILABLE, why)))
+                religion=elsewhere(), ethnicity=elsewhere(), language=elsewhere()))
     for region in admin1:
         if region["name"] in REGIONS:
             wanted = REGIONS[region["name"]]
@@ -453,6 +482,10 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
         # Wikidata carries, are for other ground. The other regions keep
         # those later figures, which are for the ground they draw.
         own = region["name"] in LATER
+        later = LATER.get(region["name"], "")
+        if own and region["name"] in REGIONS:
+            later += undrawn_note(region, admin2, figs, REGIONS[region["name"]], census,
+                                  total)
         records.append(record(
             f"PHL-CPH2020-R-{fold(region['name'])}", region["name"], level="admin1",
             parent="PHL", country="PHL", match_by="shape_id", shape_id=region["id"],
@@ -465,9 +498,58 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
                       ratio_note=f"Males per 100 females in {whose}.",
                       population=total if own else None,
                       population_note=(f"{whose[0].upper()}{whose[1:]}. "
-                                       f"{LATER[region['name']]}" if own else None)),
+                                       f"{later}" if own else None)),
         ))
     return records
+
+
+def undrawn_note(region: dict[str, Any], admin2: list[dict[str, Any]],
+                 figs: dict[str, dict[str, Any]], wanted: list[str],
+                 census: dict[str, dict[str, Any]], total: int) -> str:
+    """Why a region of ``REGIONS`` is more than the provinces drawn in it add up
+    to, with the arithmetic: which drawn provinces carry a count and how many
+    people they hold, and where the rest are.
+
+    The ARMM's polygon holds the polygon labelled Maguindanao, which carries
+    no count (``EXCLUDE``); Soccsksargen's holds the polygon labelled
+    Cotabato, and the map draws no Sultan Kudarat or Interim Province.
+    """
+    kids = sorted((s for s in admin2 if s["parent"] == region["id"]),
+                  key=lambda s: s["name"])
+    counted = [s for s in kids if s["id"] in figs]
+    held = sum(sum(figs[s["id"]]["ages"]["MF"].values()) for s in counted)
+    named = {fold(s["name"]) for s in counted}
+    rest = [p for p in wanted if fold(p) not in named]
+    out = sum(sum(census[fold(p)]["ages"]["MF"].values()) for p in rest)
+    if held + out != total:
+        raise SystemExit(f"philippines_age: {region['name']}: drawn {held:,} and the rest "
+                         f"{out:,} do not make {total:,}")
+    excluded = [s["name"] for s in kids if s["name"] in EXCLUDE]
+    why = []
+    if excluded:
+        listed = " and ".join(f"the polygon labelled {n}" for n in excluded)
+        why.append(f"{listed}, drawn inside this region, "
+                   f"{'carries' if len(excluded) == 1 else 'carry'} no count of "
+                   f"{'its' if len(excluded) == 1 else 'their'} own")
+    if "Sultan Kudarat" in rest:
+        why.append("the map draws no polygon for Sultan Kudarat, whose ground lies inside the "
+                   "polygon labelled Maguindanao, filed under the ARMM")
+    if "Interim Province" in rest:
+        why.append("nor for the Interim Province, the 63 barangays of Cotabato in the "
+                   "Bangsamoro region since 2019")
+    if not rest:
+        return ""
+
+    def joined(names: list[str]) -> str:
+        return ", ".join(names[:-1]) + " and " + names[-1] if len(names) > 1 else names[0]
+
+    said = (f" The provinces drawn here cannot add up to this figure: {'; '.join(why)}."
+            if why else "")
+    if counted:
+        said += (f" {joined([s['name'] for s in counted])} "
+                 f"hold{'s' if len(counted) == 1 else ''} {held:,} of these people, and the "
+                 f"other {out:,} are in {joined(rest)}.")
+    return said
 
 
 def resource_url() -> tuple[str, str]:

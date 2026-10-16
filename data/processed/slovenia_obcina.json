@@ -12054,5 +12054,42 @@
     "shape_id": "79292919B51493819354721",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from SURS's count of the municipality's population by single year of age (0 to 84, then 85 and over), 2026H1 (05C4003S).",
     "sex_ratio_note": "Males per 100 females in the municipality's population, 2026H1 (05C4010S)."
+  },
+  {
+    "id": "SVN-sliver-79292919B38849654156102",
+    "level": "admin2",
+    "name": "Maribor",
+    "parent": "3739544B32704473481330",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "A sliver of the boundary file, under 1% of the extent of Maribor's own polygon beside it, drawn as a polygon of its own with the same name. No statistics unit is this sliver: the municipality of Maribor is counted whole, and its figures are shown on its own polygon."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "A sliver of the boundary file, under 1% of the extent of Maribor's own polygon beside it, drawn as a polygon of its own with the same name. No statistics unit is this sliver: the municipality of Maribor is counted whole, and its figures are shown on its own polygon."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "A sliver of the boundary file, under 1% of the extent of Maribor's own polygon beside it, drawn as a polygon of its own with the same name. No statistics unit is this sliver: the municipality of Maribor is counted whole, and its figures are shown on its own polygon."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "SVN",
+    "match_by": "shape_id",
+    "shape_id": "79292919B38849654156102"
   }
 ]

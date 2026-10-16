@@ -86,6 +86,16 @@ DECIDED: dict[str, tuple[str | None, str]] = {
     #     which is Alentejo Litoral), 114,863 against 144,401.
     # Written on the districts, each region's figures stood beside the census
     # district's religion as though they described the same people.
+    # Nordjylland is one NUTS-2 region (DK05) and one NUTS-3 region (DK050),
+    # and the map's Nordjylland is it: GISCO's 1:10 million outline covers the
+    # polygon at 0.788, just under SAME, for a coast and islands (Læsø) drawn
+    # coarsely, and lies on no other Danish unit. Neither rule placed it, and
+    # nothing refused it either, so the region dropped out of the file
+    # unremarked, and with it Denmark's fifth region's survey figures.
+    "DK05": ("84455774B84842167963849", "Nordjylland, drawn too coarsely for the outline rule "
+                                        "(0.788) and on no other Danish unit"),
+    "DK050": ("84455774B84842167963849", "Nordjylland, drawn too coarsely for the outline "
+                                         "rule (0.788) and on no other Danish unit"),
     "PT11E": (None, "Terras de Tras-os-Montes, 9 of the Braganca district's 12 municipalities"),
     "PT192": (None, "Regiao de Coimbra, the Coimbra district's 17 municipalities with "
                     "Mealhada and Mortagua"),

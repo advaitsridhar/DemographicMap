@@ -344,7 +344,8 @@
     "aliases": [],
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 39.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Two questions the 2022 census asked the 3,095,454 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 28% of the indigenous population speak or understand their people's language."
+    "ethnicity_note": "Two questions the 2022 census asked the 3,095,454 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 28% of the indigenous population speak or understand their people's language.",
+    "population_note": "The outline drawn here is not the city's own: it is about four times the city's area. Besides most of the city it takes in ground of Buenos Aires province -- all or nearly all of General San Martín, Hurlingham, Morón, San Isidro, Tres de Febrero and Vicente López, most of Ituzaingó, Lanús and San Miguel, and parts of La Matanza, Lomas de Zamora, Avellaneda and six other partidos -- and it leaves out ground on the city's eastern side: Comuna 1, nearly all of Comuna 2 and parts of Comunas 3, 4, 13 and 14. These figures are the city's, all 15 comunas; the partidos' people are counted in Buenos Aires."
   },
   {
     "id": "ARG-INDEC-06",
@@ -358,12 +359,12 @@
       "status": "not_available"
     },
     "population": {
-      "value": 17523996,
+      "value": 18949574,
       "year": 2022,
       "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)"
     },
     "median_age": {
-      "value": 33.6,
+      "value": 33.5,
       "unit": "years",
       "year": 2022,
       "source": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)"
@@ -383,48 +384,43 @@
     "ethnicity": [
       {
         "group": "Mestizo or white (neither indigenous nor Afro-descendant)",
-        "pct": 97.1,
-        "count": 16908272
+        "pct": 97.2,
+        "count": 18295766
       },
       {
         "group": "Indigenous (people not stated)",
         "pct": 1.0,
-        "count": 179726
+        "count": 189433
       },
       {
         "group": "Afro-descendant",
         "pct": 0.7,
-        "count": 128804
+        "count": 137714
       },
       {
         "group": "Guaraní",
         "pct": 0.3,
-        "count": 49845
+        "count": 52477
       },
       {
         "group": "Mapuche",
         "pct": 0.2,
-        "count": 29677
-      },
-      {
-        "group": "Aymara",
-        "pct": 0.1,
-        "count": 8995
+        "count": 30182
       },
       {
         "group": "Diaguita",
         "pct": 0.1,
-        "count": 15949
+        "count": 16162
       },
       {
         "group": "Qom (Toba)",
         "pct": 0.1,
-        "count": 16503
+        "count": 16997
       },
       {
         "group": "Quechua",
         "pct": 0.1,
-        "count": 25770
+        "count": 25965
       },
       {
         "group": "Alakaluf",
@@ -434,42 +430,47 @@
       {
         "group": "Aoniken",
         "pct": 0.0,
-        "count": 225
+        "count": 235
       },
       {
         "group": "Atacama",
         "pct": 0.0,
-        "count": 696
+        "count": 723
       },
       {
         "group": "Avipón",
         "pct": 0.0,
-        "count": 201
+        "count": 222
+      },
+      {
+        "group": "Aymara",
+        "pct": 0.0,
+        "count": 9156
       },
       {
         "group": "Chana",
         "pct": 0.0,
-        "count": 423
+        "count": 951
       },
       {
         "group": "Chané",
         "pct": 0.0,
-        "count": 145
+        "count": 162
       },
       {
         "group": "Charrúa",
         "pct": 0.0,
-        "count": 3626
+        "count": 6657
       },
       {
         "group": "Chicha",
         "pct": 0.0,
-        "count": 309
+        "count": 325
       },
       {
         "group": "Chorote",
         "pct": 0.0,
-        "count": 182
+        "count": 194
       },
       {
         "group": "Churumata",
@@ -479,42 +480,42 @@
       {
         "group": "Comechingón",
         "pct": 0.0,
-        "count": 5111
+        "count": 5261
       },
       {
         "group": "Corundí",
         "pct": 0.0,
-        "count": 85
+        "count": 91
       },
       {
         "group": "Diaguita Cacano",
         "pct": 0.0,
-        "count": 340
+        "count": 344
       },
       {
         "group": "Fiscara",
         "pct": 0.0,
-        "count": 25
+        "count": 26
       },
       {
         "group": "Guarayo",
         "pct": 0.0,
-        "count": 70
+        "count": 73
       },
       {
         "group": "Guaycurú",
         "pct": 0.0,
-        "count": 412
+        "count": 456
       },
       {
         "group": "Günün A Küna",
         "pct": 0.0,
-        "count": 1404
+        "count": 1428
       },
       {
         "group": "Huarpe",
         "pct": 0.0,
-        "count": 1902
+        "count": 1960
       },
       {
         "group": "Iogys",
@@ -534,7 +535,7 @@
       {
         "group": "Kolla",
         "pct": 0.0,
-        "count": 6348
+        "count": 6445
       },
       {
         "group": "Kolla Atacameño",
@@ -544,12 +545,12 @@
       {
         "group": "Lule",
         "pct": 0.0,
-        "count": 301
+        "count": 311
       },
       {
         "group": "Lule Vilela",
         "pct": 0.0,
-        "count": 297
+        "count": 301
       },
       {
         "group": "Mak'A",
@@ -559,22 +560,22 @@
       {
         "group": "Mapuche Tehuelche",
         "pct": 0.0,
-        "count": 4993
+        "count": 5059
       },
       {
         "group": "Mbya Guaraní",
         "pct": 0.0,
-        "count": 560
+        "count": 584
       },
       {
         "group": "Minuán",
         "pct": 0.0,
-        "count": 5
+        "count": 48
       },
       {
         "group": "Mocoví",
         "pct": 0.0,
-        "count": 1573
+        "count": 1814
       },
       {
         "group": "Nivaclé",
@@ -589,32 +590,32 @@
       {
         "group": "Omaguaca",
         "pct": 0.0,
-        "count": 407
+        "count": 418
       },
       {
         "group": "Pilagá",
         "pct": 0.0,
-        "count": 128
+        "count": 135
       },
       {
         "group": "Querandí",
         "pct": 0.0,
-        "count": 710
+        "count": 729
       },
       {
         "group": "Ranquel",
         "pct": 0.0,
-        "count": 3648
+        "count": 3694
       },
       {
         "group": "Sanavirón",
         "pct": 0.0,
-        "count": 373
+        "count": 376
       },
       {
         "group": "Selk'Nam/Ona",
         "pct": 0.0,
-        "count": 285
+        "count": 298
       },
       {
         "group": "Tapiete",
@@ -629,27 +630,27 @@
       {
         "group": "Tehuelche",
         "pct": 0.0,
-        "count": 4860
+        "count": 4963
       },
       {
         "group": "Tilián",
         "pct": 0.0,
-        "count": 11
+        "count": 12
       },
       {
         "group": "Toara",
         "pct": 0.0,
-        "count": 45
+        "count": 46
       },
       {
         "group": "Tonokoté",
         "pct": 0.0,
-        "count": 921
+        "count": 924
       },
       {
         "group": "Vilela",
         "pct": 0.0,
-        "count": 117
+        "count": 118
       },
       {
         "group": "Wayteca/Chono",
@@ -659,17 +660,17 @@
       {
         "group": "Weenhayek",
         "pct": 0.0,
-        "count": 28
+        "count": 30
       },
       {
         "group": "Wichí",
         "pct": 0.0,
-        "count": 4335
+        "count": 4472
       },
       {
         "group": "Yagán",
         "pct": 0.0,
-        "count": 23
+        "count": 25
       }
     ],
     "sources": [
@@ -690,6 +691,24 @@
         "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 9, por pueblo; población afrodescendiente, cuadro 7)",
         "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_bsas_poblacion_indigena_c9_2.xlsx",
         "year": 2022
+      },
+      {
+        "field": "population",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 1, total de población por departamento)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c1_8.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (cuadro 4, población por sexo y edad)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2023/11/c2022_entrerios_est_c4_8.xlsx",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "INDEC, Censo Nacional de Población, Hogares y Viviendas 2022, resultados definitivos (población indígena, cuadro 9, por pueblo; población afrodescendiente, cuadro 7)",
+        "url": "https://censo.gob.ar/wp-content/uploads/2024/03/c2022_entrerios_poblacion_indigena_c9_8.xlsx",
+        "year": 2022
       }
     ],
     "country": "ARG",
@@ -699,9 +718,10 @@
     "match_by": "shape_id",
     "shape_id": "19177384B97722443848736",
     "aliases": [],
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age; INDEC's own median, to the whole year, is 33.",
+    "median_age_note": "The boundary file draws Entre Ríos inside this polygon and no first-level polygon of its own, so the figures here are Buenos Aires and Entre Ríos together. Interpolated within the single year of age that holds the middle person, from INDEC's count of everyone by sex and single year of age.",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Two questions the 2022 census asked the 17,408,906 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 25% of the indigenous population speak or understand their people's language."
+    "ethnicity_note": "The boundary file draws Entre Ríos inside this polygon and no first-level polygon of its own, so the figures here are Buenos Aires and Entre Ríos together. Two questions the 2022 census asked the 18,824,003 people in private dwellings: whether a person recognises themselves as indigenous or descended from an indigenous people, and whether as Afro-descendant or as having Black or African ancestors. Someone may answer yes to both, and INDEC publishes no cross of the two, so the remainder is the population less both counts; the census asks nothing about European or mestizo ancestry. 25% of the indigenous population speak or understand their people's language.",
+    "population_note": "The boundary file draws Entre Ríos inside this polygon and no first-level polygon of its own, so the figures here are Buenos Aires and Entre Ríos together. The 2022 census counts Buenos Aires 17,523,996 and Entre Ríos 1,425,578; this is their sum, 18,949,574."
   },
   {
     "id": "ARG-INDEC-10",

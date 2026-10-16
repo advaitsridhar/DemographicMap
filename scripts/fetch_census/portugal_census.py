@@ -23,9 +23,10 @@ and the autonomous regions are theirs (31-32 Madeira, 41-49 the Azores). Their
 single years and religion counts are added, and the median taken afresh.
 
 **Binding.** Municipalities are bound to the map's polygons by name within the
-district the boundary file files them under, then by a name no other polygon
-shares -- ``binding.bind``, so Espinho, Mesão Frio, Sardoal and Tábua, which
-geoBoundaries files under a neighbouring district, still land. Eight of the
+district the map files them under, then by a name no other polygon shares --
+``binding.bind``, so Espinho, Mesão Frio, Sardoal and Tábua, which
+geoBoundaries draws mostly inside a neighbouring district, land whichever
+district the last build filed them under. Eight of the
 boundary file's names are misspelt or shortened ("Setubul", "Praia da
 Vitoria") and are declared below, and three polygons
 are pinned by id because the boundary file draws two polygons under one name:
@@ -34,20 +35,27 @@ are pinned by id because the boundary file draws two polygons under one name:
   Ílhavo's two: the figures go on the larger part, and the smaller part is
   left without them -- ``shared.patch`` proposes merging each pair in
   ``make_redrawn.py`` so the one municipality is one unit;
-* "Oliveira de Frades" twice: a 144 km² polygon filed under Aveiro
-  (``2272694B21944289016738``), the size of the municipality (145 km²), and a
+* "Oliveira de Frades" twice: a 144 km² polygon (``2272694B21944289016738``),
+  the size of the municipality (145 km²), drawn mostly inside Aveiro's
+  outline and filed under Viseu, INE's district (``DECLARED_PARENTS``), and a
   21 km² polygon under Viseu (``2272694B61775283939308``) between Tondela,
   Vouzela and Águeda. The figures go on the first. The second is not the
   municipality and what it is could not be established, so it is written as a
   stated gap (``UNIDENTIFIED``) rather than given anyone's figures -- the
   shared patch also keeps Wikidata's head count of the whole municipality off
-  it, where it had shown the municipality twice.
+  it, where it had shown the municipality twice. Its note tells the two apart
+  by size, not by the district each is filed under: both are under Viseu once
+  the declaration is built, and the note must hold before and after.
 
-**Districts are INE's, not the boundary file's.** Five municipalities are drawn
-under a district other than INE's (Espinho, Mesão Frio, Sardoal, Tábua and
-Oliveira de Frades), so a district's census figures differ from the sum of
-the municipalities drawn inside its outline by up to 3%. Each district's note
-names the municipalities concerned.
+**Districts are INE's, not the boundary file's.** Five municipalities lie
+mostly inside the outline of a district other than INE's (Espinho, Mesão
+Frio, Sardoal, Tábua and Oliveira de Frades). The build files each under
+INE's district all the same (``build_entities.DECLARED_PARENTS``), so a
+district's municipalities on the map are INE's. The parents are read as the
+next build will file them (``declared_parents.as_filed``): should the map
+file a municipality under another district, both districts' notes name it,
+since their census figures and the municipalities shown under them then
+differ.
 
 Checks, each of which stops the run:
 
@@ -81,6 +89,7 @@ from ._shared import (
     write_json,
 )
 from .binding import bind, fold
+from .declared_parents import as_filed
 from .redatam import median_age
 
 OUT = "portugal_census.json"
@@ -152,9 +161,9 @@ SECOND_PARTS = {
 UNIDENTIFIED = {
     "2272694B61775283939308": (
         "The boundary file draws two polygons named Oliveira de Frades. The municipality "
-        "(145 km²) is the 144 km² one filed under Aveiro, which carries INE's 2021 census "
-        "figures; this 21 km² polygon, filed under Viseu between Tondela, Vouzela and "
-        "Águeda, is not the municipality, and which ground it is could not be established. "
+        "(145 km²) is the 144 km² one, which carries INE's 2021 census figures; this 21 km² "
+        "polygon, between Tondela, Vouzela and Águeda, is not the municipality, and which "
+        "ground it is could not be established. "
         "No figure is put on it, since a municipality's figures on a shape that is not it "
         "would be a mis-match."),
 }
@@ -369,10 +378,12 @@ def bind_municipalities(names: dict[str, str], admin1: list[dict[str, Any]],
 def drawn_elsewhere(bound: dict[str, str], names: dict[str, str],
                     admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
                     district_shape: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    """Municipalities the boundary file draws under a district other than INE's.
+    """Municipalities the map files under a district other than INE's.
 
-    Returns, by first-level polygon id, those drawn *out* of it (INE's, drawn
-    under another) and *in* to it (another district's, drawn under it).
+    ``admin2`` carries the parents the build gives the polygons
+    (``declared_parents.as_filed``). Returns, by first-level polygon id, those
+    filed *out* of it (INE's, filed under another) and *in* to it (another
+    district's, filed under it).
     """
     parent_of = {s["id"]: s.get("parent") for s in admin2}
     label = {u["id"]: u["name"] for u in admin1}
@@ -451,7 +462,9 @@ def main() -> int:
     admin2 = json.loads((SITE / "admin2" / "PRT.units.json").read_text())
     bound, district_shape = bind_municipalities(names, admin1, admin2)
     labels = {s["id"]: s["name"] for s in admin2}
-    elsewhere = drawn_elsewhere(bound, names, admin1, admin2, district_shape)
+    # The parents the next build gives the polygons, not the last build's.
+    elsewhere = drawn_elsewhere(bound, names, admin1, as_filed("PRT", admin1, admin2),
+                                district_shape)
     for line in elsewhere["lines"]:
         log(f"  {line}")
 

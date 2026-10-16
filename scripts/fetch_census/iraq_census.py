@@ -46,12 +46,15 @@ for Duhok, Ninewa, Erbil, Sulaymaniyah and Diyala is not the census's own
 total; each says what moved.
 
 The boundary file's own first-level polygons do not follow OCHA's
-governorates everywhere: the map files Al-Hindiya (Kerbala's) and
-Al-Mahmoudiya (Baghdad's) under Babil, Al-Mada'in under Diyala and
-Al-Kadhmiyah under Salah al-Din, each under the polygon holding most of it.
-No figure is moved for that -- a governorate keeps the census's count -- but
-each such district, and each governorate on either side, says so, which is
-why a polygon's drawn districts need not add up to it (``crossings``).
+governorates everywhere: most of Al-Hindiya (Kerbala's) and Al-Mahmoudiya
+(Baghdad's) lies in the polygon labelled Babil, of Al-Mada'in in Diyala's and
+of Al-Kadhmiyah in Salah al-Din's. The build files each under the
+governorate the census counts it in (``build_entities.DECLARED_PARENTS``), so
+every governorate's drawn districts are its own. Where the map files a
+district under another governorate's polygon all the same -- a district
+nothing declares -- no figure is moved for that (a governorate keeps the
+census's count), but the district, and each governorate on either side, says
+so (``crossings``), reading the parents as the next build will file them.
 
 **Sex ratio** comes from the same rows: Table 11/2 prints every sub-district
 by women and men as well as in all, so each district and governorate placed
@@ -86,6 +89,7 @@ from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
 from .cod_ps_age import grouped_median
+from .declared_parents import as_filed
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import NOT_AVAILABLE, as_drawn, gap, measure, read_json, shard_name, slugify  # noqa: E402
@@ -1158,16 +1162,19 @@ SITE = ROOT / "site" / "data"
 
 
 def drawn_parents() -> dict[str, str]:
-    """The map's own first-level polygon for each drawn district, by its label.
+    """The map's first-level polygon for each drawn district, by its label.
 
     The boundary file's two levels are not one partition of Iraq: its
     first-level polygons labelled Babil, Diyala and Salah al-Din hold most of
-    Al-Hindiya, Al-Mada'in and Al-Kadhmiyah, which OCHA's gazetteer and the
-    census put in Kerbala and Baghdad, and the map files each district under
-    the polygon holding most of it. Labels drawn more than once are left out.
+    Al-Hindiya, Al-Mahmoudiya, Al-Mada'in and Al-Kadhmiyah, which OCHA's
+    gazetteer and the census put in Kerbala and Baghdad. The build files a
+    district under the polygon holding most of it unless DECLARED_PARENTS
+    files it where its census counts it, as it does those four; the parents
+    are read as the next build will file them (``declared_parents.as_filed``),
+    not as the last one did. Labels drawn more than once are left out.
     """
     a1 = as_drawn(read_json(SITE / "admin1" / shard_name("IRQ"), []))
-    a2 = as_drawn(read_json(SITE / "admin2" / shard_name("IRQ"), []))
+    a2 = as_filed("IRQ", a1, as_drawn(read_json(SITE / "admin2" / shard_name("IRQ"), [])))
     names1 = {u["id"]: u["name"] for u in a1}
     seen = Counter(u["name"] for u in a2)
     return {u["name"]: names1.get(u.get("parent"), "") for u in a2 if seen[u["name"]] == 1}
@@ -1181,9 +1188,10 @@ def crossings(mapped: dict[str, dict[str, Any]], drawn: dict[str, str]
 
     The figures are not moved: the governorate's is the census's count of the
     governorate, and the district's is its own. What the notes say is why a
-    polygon's districts do not add up to it -- Babil's five drawn districts
-    make 2,834,827 against its 2,482,324, Al-Hindiya's 352,503 being
-    Kerbala's.
+    polygon's districts do not add up to it -- before Al-Hindiya was declared
+    Kerbala's, Babil's drawn districts made 2,834,827 against its 2,482,324,
+    Al-Hindiya's 352,503 being Kerbala's. With every crossing district
+    declared, there is nothing to say, and nothing is said.
     """
     canon = {alias: gov for gov, aliases in MAP_NAMES.items() for alias in aliases}
     canon.update({gov: gov for gov in GOVERNORATE.values()})

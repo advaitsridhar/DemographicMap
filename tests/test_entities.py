@@ -158,7 +158,9 @@ class TownFiguresOnDistricts(unittest.TestCase):
         refused, rows = self.run_guard(86949, [(2374, "Wikidata (CC0)")])
         self.assertEqual(refused, 1)
         self.assertEqual(rows[0]["population"]["status"], common.NOT_AVAILABLE)
-        self.assertIn("probably the town", rows[0]["population"]["note"])
+        # Only that the figure and the polygon do not match is said: the
+        # item may be a town, or a unit counted on other ground.
+        self.assertIn("does not describe the polygon as drawn", rows[0]["population"]["note"])
 
     def test_a_division_bigger_than_its_parent_is_left_out(self):
         refused, _ = self.run_guard(165839, [(416000, "Wikidata (CC0)"), (1, "Wikidata (CC0)")])
@@ -436,6 +438,17 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         pop = a1["AGO"][0]["population"]
         self.assertEqual((pop["value"], pop["year"]), (744945, 2024))
         self.assertIn("sum of all 3 divisions", pop["note"])
+
+    def test_the_divisions_source_is_named_whole(self):
+        # Cut at sixty characters, OCHA's dataset was named "population
+        # statistics (c)." under Moxico and Vatovavy-Fitovinany.
+        a1, a2 = self.tables([515629, 129054])
+        for kid in a2["AGO"]:
+            kid["population"]["source"] = ("OCHA, Common Operational Dataset -- population "
+                                           "statistics (cod-ps-ago), reference year 2024")
+        be.fill_parent_populations(a1, a2)
+        note = a1["AGO"][0]["population"]["note"]
+        self.assertIn("drawn inside it (OCHA's common operational dataset).", note)
 
     def test_one_division_without_a_figure_leaves_the_gap(self):
         a1, a2 = self.tables([515629, None])
@@ -2737,11 +2750,22 @@ class RollUpFromChildren(unittest.TestCase):
         self.assertEqual(parent["religion"][0]["pct"], 100.0)
 
     def test_not_collected_is_a_statement_and_stands(self):
+        # It stands unless every division carries a measured composition;
+        # then the divisions are summed and the statement opens the note
+        # (Greece's first level over its surveyed regions).
+        parent = self.parent()
+        parent["religion"] = {"status": "not_collected",
+                              "note": "France records no religion."}
+        kids = self.kids()
+        kids[0]["religion"] = {"status": "not_collected", "note": "Not asked."}
+        self.assertIsNone(be.roll_up_field(parent, kids, "religion"))
+        self.assertEqual(parent["religion"]["status"], "not_collected")
         parent = self.parent()
         parent["religion"] = {"status": "not_collected",
                               "note": "France records no religion."}
         self.assertIsNone(be.roll_up_field(parent, self.kids(), "religion"))
-        self.assertEqual(parent["religion"]["status"], "not_collected")
+        self.assertIsInstance(parent["religion"], list)
+        self.assertTrue(parent["religion_note"].startswith("France records no religion. "))
 
     def test_the_denominator_comes_from_the_shares_not_the_population(self):
         # New Zealand's ethnicity responses outnumber its people, and Mexico
@@ -5692,10 +5716,15 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual({r["group"]: r["pct"] for r in pooled["religion"]},
                          {"A": 62.5, "B": 37.5})
 
-    def test_a_union_with_neither_counts_nor_populations_leaves_the_field(self):
+    def test_a_union_with_neither_counts_nor_populations_says_why_it_is_empty(self):
+        # No shares are combined; the field is a stated gap naming the parts,
+        # so the polygon does not read as if the source had nothing for it.
         adapters = {"NAM": self.union_parts(counted=False, populations=False)}
         be.pool_declared_unions(adapters)
-        self.assertNotIn("religion", adapters["NAM"][0])
+        religion = adapters["NAM"][0]["religion"]
+        self.assertEqual(religion["status"], be.NOT_AVAILABLE)
+        self.assertIn("Kavango East and Kavango West Region separately", religion["note"])
+        self.assertNotIn("value", religion)
 
     def test_a_union_missing_a_part_in_a_file_is_not_pooled(self):
         parts = self.union_parts()[:1]
@@ -5720,11 +5749,14 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual(pooled["eurostat_nuts2.json"]["population"]["value"], 1183208)
         self.assertEqual(pooled["wikidata_admin1.json"]["population"]["value"], 1196509)
         self.assertIn("The sum of the figures published for Thessalia and Sterea",
-                      pooled["eurostat_nuts2.json"]["population"]["note"])
+                      pooled["eurostat_nuts2.json"]["population_note"])
         # A median does not sum; Thessaly's is not the administration's.
         self.assertNotIn("median_age", pooled["eurostat_nuts2.json"])
 
-    def test_a_declared_split_copies_shares_as_an_estimate(self):
+    def test_a_declared_split_states_a_gap_rather_than_copying(self):
+        # Bueng Kan was part of Nong Khai in 2000. Nong Khai's religion then
+        # is a region's figure, and a region's figure is not any one of its
+        # parts': the new province says so instead of wearing the old one's.
         src = {"id": "THA-NK", "level": "admin1", "name": "Nong Khai Province",
                "country": "THA", "_source": "thailand_province.json",
                "sources": [{"name": "NSO", "field": "religion"}],
@@ -5738,13 +5770,12 @@ class DerivedValues(unittest.TestCase):
         names = [r["name"] for r in adapters["THA"]]
         self.assertEqual(names, ["Nong Khai Province", "Bueng Kan Province"])
         copy = adapters["THA"][1]
-        self.assertTrue(common.is_estimate(copy["religion"]))
-        self.assertEqual(copy["religion"]["status"], common.MODELLED)
-        self.assertEqual(copy["religion"]["estimate"],
-                         [{"group": "Buddhism", "pct": 99.1},
-                          {"group": "Other or not stated", "pct": 0.9}])
-        self.assertIn("in 2000", copy["religion"]["note"])
-        self.assertIn("not a published figure", copy["religion"]["note"])
+        self.assertFalse(common.is_estimate(copy["religion"]))
+        self.assertEqual(copy["religion"]["status"], common.NOT_AVAILABLE)
+        self.assertIn("Nong Khai Province in 2000 counted this ground",
+                      copy["religion"]["note"])
+        self.assertIn("not any one of its parts", copy["religion"]["note"])
+        self.assertEqual(copy["sources"], [])
         # The old row's population covered both units, so the copy has none.
         self.assertNotIn("population", copy)
         # And the source row itself is untouched.
@@ -5756,7 +5787,7 @@ class DerivedValues(unittest.TestCase):
         self.assertIsNotNone(common.collection_gap("PAK", "ethnicity"))
         src = {"id": "x", "name": "Somewhere", "country": "PAK", "_source": "f",
                "sources": [], "ethnicity": [{"group": "A", "pct": 100.0}]}
-        self.assertIsNone(be.estimate_from(src, "Elsewhere", "PAK"))
+        self.assertIsNone(be.gaps_from(src, "Elsewhere", "PAK"))
 
     def test_the_build_refuses_an_estimate_on_a_policy_field(self):
         guess = common.estimate(common.MODELLED, [{"group": "A", "pct": 100.0}],
@@ -7563,11 +7594,19 @@ class ASurveyIsNotACount(unittest.TestCase):
         self.assertGreater(marked, 0, "no low-precision region found to check")
 
     def test_a_question_never_asked_is_not_collected_and_never_a_composition(self):
-        """Mauritania was not asked about religion; it must not acquire one."""
+        """Mauritania was not asked about religion; it must not acquire one.
+
+        It was asked about ethnicity, so a region too thinly sampled to show
+        shares says so instead of reading as never asked."""
         for row in self.rows():
             if row["parent"] == "MRT":
                 self.assertEqual(row["religion"], {"status": "not_collected"})
-                self.assertIsInstance(row["ethnicity"], list)
+                if isinstance(row["ethnicity"], dict):
+                    self.assertEqual(row["ethnicity"]["status"], "not_available")
+                    self.assertIn("too few to estimate ethnicity shares",
+                                  row["ethnicity"]["note"])
+                else:
+                    self.assertIsInstance(row["ethnicity"], list)
         for iso in ("SDN", "TUN", "SYC"):
             for row in self.rows():
                 if row["parent"] == iso:

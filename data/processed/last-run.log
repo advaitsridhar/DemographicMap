@@ -1,5 +1,21 @@
-afghanistan_estimates: CSO estimated settled population 1396 (2017-18)
-    34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
-    23 provinces written as the office counts them, 6 drawn otherwise written as the sum of the districts drawn in them (03, 11, 20, 21, 26, 27), 5 not; 396 districts written, 2 refused with their reason
-  wrote data/processed/afghanistan_estimates.json (1710 kB)
-  432 records
+  read https://www.hcp.ma/file/242341/: 166,693 bytes, sha256 7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  12 regions and 75 provinces and prefectures, making 36,828,330
+  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
+  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
+  'Oued Ed-Dahab Province': a piece across the line, written as a gap
+  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
+  'Tarfaya Province': part of a province across the line, written as a gap
+  HCP provinces not drawn: []
+  Province d'Ouezzane: 274,577
+  Préfecture d'Oujda-Angad: 572,454
+  Préfecture de Skhirate-Témara: 783,475
+  Province d'Errachidia: 427,572
+  Province de Tarfaya: Commune de Tarfaya 11,030 (115370105)
+  Province de Tarfaya: Commune de Daoura 902 (115370303)
+  Province de Tarfaya: Commune d'El Hagounia 561 (115370305)
+  Province de Tarfaya: Commune d'Akhfennir 2,841 (115370501)
+  Province de Tarfaya: Commune de Tah 894 (115370507)
+  10 regions and 69 of 72 provinces bound
+  wrote data/processed/morocco_rgph2024.json (137 kB)

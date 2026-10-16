@@ -378,6 +378,27 @@ def single_year_median(rows: list[list[Any]]) -> float | None:
     return median_age(ages) if ages else None
 
 
+# Polygons filed under one county that are a piece of a UAT of another county,
+# keyed by (the county they are filed under, folded; their name, folded).
+# Measured on the boundary file: the Dâmbovița "POIENARII BURCHII" is a
+# 17.5 km2 polygon about 150 m from the 31.2 km2 polygon of Poienarii Burchii
+# commune in Prahova, which carries the commune's census figures; Dâmbovița's
+# other 89 UATs make the county's census total exactly, so no count is left
+# for it. Each declaration is checked on every run: the commune must be bound
+# once in its own county, and the county the piece is filed under must close
+# without it.
+DETACHED: dict[tuple[str, str], dict[str, str]] = {
+    ("dambovita", "poienariiburchii"): {
+        "county": "Prahova",
+        "note": ("A detached piece of Poienarii Burchii, a commune of Prahova county, which "
+                 "the boundary file files under Dâmbovița. The 2021 census counts the commune "
+                 "whole ({people:,} people), and its figures are shown on its main polygon in "
+                 "Prahova; Dâmbovița's census total ({total:,.0f}) is fully counted on its "
+                 "other communes and towns, so no figure belongs to this piece."),
+    },
+}
+
+
 def build() -> list[dict[str, Any]]:
     admin1 = shapes("ROU", "admin1")
     admin2 = shapes("ROU", "admin2")
@@ -552,6 +573,35 @@ def build() -> list[dict[str, Any]]:
             sources=[{"field": "population/sex_ratio", "name": SOURCE.format(table=TABLE_NAMES["sex"]),
                       "url": FILES["sex"][0], "archive": FILES["sex"][1], "page": PAGE,
                       "year": YEAR, "license": LICENCE}]))
+    # Polygons that are pieces of a UAT drawn elsewhere, each with its reason:
+    # every field of the record is that reason, so the polygon says why it is
+    # empty rather than showing a bare gap.
+    county_of = {v["id"]: k for k, v in counties.items()}
+    for s in admin2:
+        why = DETACHED.get((county_of.get(s["parent"], ""), fold(bare(s["name"]))))
+        if s["id"] in used or why is None:
+            continue
+        home = [r for r in records if r["level"] == "admin2"
+                and r.get("parent_name") == why["county"].upper()
+                and fold(bare(r["name"])) == fold(bare(s["name"]))]
+        if len(home) != 1:
+            raise SystemExit(f"romania_census: {s['name']} is declared a piece of the UAT of "
+                             f"{why['county']}, which is bound {len(home)} times")
+        here = county_of[s["parent"]]
+        if abs(sum(r["population"]["value"] for r in records if r["level"] == "admin2"
+                   and r.get("parent_name") == counties[here]["name"])
+               - base[here]["total"]) > 0.5:
+            raise SystemExit(f"romania_census: {s['name']}: {here}'s other UATs do not make "
+                             "its census total, so the piece may hold people of its own")
+        note = why["note"].format(people=home[0]["population"]["value"],
+                                  total=base[here]["total"])
+        used.add(s["id"])
+        records.append(record(
+            f"ROU-2021-piece-{s['id']}", s["name"], level="admin2", parent="ROU", country="ROU",
+            parent_name=counties[here]["name"], match_by="shape_id", shape_id=s["id"],
+            **{field: gap(NOT_AVAILABLE, note) for field in
+               ("population", "median_age", "sex_ratio", "ethnicity", "language", "religion")}))
+        log(f"  {s['name']} ({here}): a piece of {why['county']}'s UAT, written with the reason")
     spare = [f"{s['name']} ({next(k for k, v in counties.items() if v['id'] == s['parent'])})"
              for s in admin2 if s["id"] not in used]
     log(f"  {sum(1 for r in records if r['level'] == 'admin2'):,} UATs bound; "

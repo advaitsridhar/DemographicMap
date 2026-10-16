@@ -84,7 +84,12 @@ RARON = {
 SCHAFFHAUSEN_EXCLAVE = {"Buchberg", "Rüdlingen"}
 BASEL_STADT = {"Basel", "Bettingen", "Riehen"}
 WATER = {"Bodensee"}
-LAKE = re.compile(r"(?i)\b(?:see|lac|lago|lai|lej)\b|bodensee|thunersee|brienzersee|zürichsee")
+WATER_NOTE = (
+    "This polygon is Thurgau's part of Lake Constance (Bodensee), not a district. Nobody is "
+    "counted on the lake. Its shore takes in part of the lakeside commune of Horn, whose "
+    "residents the Federal Statistical Office counts in the district of Arbon, where the map "
+    "shows them.")
+LAKE =re.compile(r"(?i)\b(?:see|lac|lago|lai|lej)\b|bodensee|thunersee|brienzersee|zürichsee")
 # Map spellings that no prefix rule reaches.
 ALIASES = {"Jura-Nord vaudois": "Jura-North Vaudois",
            "Riviera-Pays-d'Enhaut": "Pays-d'Enhaut"}
@@ -438,6 +443,18 @@ def build(year: int, batch: int) -> list[dict[str, Any]]:
             **fields))
     log(f"  units unbound: {unbound}")
     log(f"  polygons with no unit: {left}")
+    # The lake polygon says what it is rather than standing empty. Measured on
+    # the boundary file: 143.6 km2 with its centre in the lake (47.565 N,
+    # 9.415 E), and the GeoNames point of the lakeside commune of Horn
+    # (9.462 E, 47.494 N) inside it; BFS counts Horn (commune 4421) in the
+    # district of Arbon.
+    for shape in units("CHE", "admin2"):
+        if shape["name"] in WATER and shape["name"] in left:
+            why = gap(NOT_AVAILABLE, WATER_NOTE)
+            records.append(record(
+                f"CHE-2009-{fold(shape['name'])}", shape["name"], level="admin2",
+                parent=shape["parent"], country="CHE", match_by="shape_id",
+                shape_id=shape["id"], population=why, median_age=why, sex_ratio=why))
     if unbound or set(left) - WATER:
         raise SystemExit("switzerland_ages: units and polygons do not pair up one to one")
     return records

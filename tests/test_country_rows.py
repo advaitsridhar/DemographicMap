@@ -138,27 +138,35 @@ class SameYearCounts(unittest.TestCase):
 
 
 class PlanEstimates(unittest.TestCase):
-    """Afghanistan's district plans are estimates of shares, not counts."""
+    """Afghanistan's district plans are shares of each district, and a province
+    whose every district has one is their sum, labelled with that basis."""
 
-    def test_plan_estimates_are_not_added_up_into_a_province(self):
+    def test_plan_estimates_are_added_up_into_a_province_with_their_basis(self):
         parent = {"population": {"value": 1_000, "year": 2017},
                   "religion": {"status": "not_available", "note": "the province's reason"}}
         kids = [kid("Aliabad", 600, {"Pashtun": 282, "Tajik": 198, "Hazara": 120},
                     year="2008-2014", basis="district development plan", pop_year=2017),
-                kid("Chahar Dara", 400, {"Pashtun": 300}, year=2007,
-                    basis="district development plan", pop_year=2017)]
-        why = be.roll_up_field(parent, kids, "religion")
-        self.assertIn("district development plan estimates", why)
-        self.assertEqual(parent["religion"]["note"], "the province's reason")
+                kid("Chahar Dara", 400, {"Pashtun": 300, "Other or not stated": 100},
+                    year=2007, basis="district development plan", pop_year=2017)]
+        self.assertIsNone(be.roll_up_field(parent, kids, "religion"))
+        self.assertEqual({g["group"] for g in parent["religion"]},
+                         {"Pashtun", "Tajik", "Hazara", "Other or not stated"})
+        self.assertEqual(parent["religion_basis"], "district development plan")
+        self.assertIn("Summed from all 2 second-level divisions", parent["religion_note"])
+        self.assertIn("district development plan states, an estimate rather than a count",
+                      parent["religion_note"])
+        self.assertNotIn("counts district development plan", parent["religion_note"])
 
-    def test_the_afghan_plan_rows_carry_the_basis_that_is_not_summed(self):
-        # If either reader ever words its basis differently, the provinces
-        # would be summed again without anyone deciding so.
+    def test_no_basis_is_held_back_from_a_sum(self):
+        self.assertEqual(be.UNSUMMED_BASES, frozenset())
+
+    def test_the_afghan_plan_rows_carry_their_basis(self):
+        # The sum carries the basis the districts share; if a reader ever
+        # words it differently, the province's figure would lose its label.
         for name in ("afghanistan_district.json", "afghanistan_ddp.json"):
             rows = common.read_json(ROOT / "data" / "processed" / name, []) or []
             bases = {r.get("ethnicity_basis") for r in rows if isinstance(r.get("ethnicity"), list)}
-            self.assertTrue(bases, name)
-            self.assertLessEqual(bases, be.UNSUMMED_BASES, name)
+            self.assertEqual(bases, {"district development plan"}, name)
 
 
 class CountedPeople(unittest.TestCase):

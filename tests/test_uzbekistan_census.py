@@ -292,11 +292,38 @@ class AgencyNotes(unittest.TestCase):
         self.assertRegex(note, r"between -4[.]8% and [-+]0[.]0% from the agency.s figure")
         self.assertNotIn("estimate", out["UZ-AN"]["population_note"])
 
-    def test_a_city_district_no_longer_drawn_in_the_region_stops_the_run(self):
+    def test_only_the_city_districts_still_filed_under_the_region_are_named(self):
         d = data()
         areas = read(compendium(d), d)
-        with self.assertRaises(SystemExit):
-            uz.build(areas, NAMED, [u for u in A2 if u["name"] != "Uchtepa"], agency())
+        two = [u for u in A2 if u["name"] != "Uchtepa"]
+        out = {r["aliases"][0]: r for r in uz.build(areas, NAMED, two, agency())}
+        note = out["UZ-TK"]["population_note"]
+        self.assertIn("draws two of the city's districts, Bektemir and Sergeli (450,500 people "
+                      "by the statistics agency's count for 1 January 2026, Sergeli with "
+                      "Yangikhayot), inside Tashkent Region; their people are in this figure.",
+                      note)
+        self.assertNotIn("Uchtepa", note)
+        one = [u for u in A2 if u["name"] in ("Bektemir", "Zangiata")]
+        out = {r["aliases"][0]: r for r in uz.build(areas, NAMED, one, agency())}
+        self.assertIn("draws one of Tashkent city's districts, Bektemir (71,300 people by the "
+                      "statistics agency's count for 1 January 2026), inside this region; its "
+                      "people are in the city's figure, not this one.",
+                      out["UZ-TO"]["population_note"])
+        self.assertNotIn("Yangikhayot", out["UZ-TK"]["population_note"])
+
+    def test_districts_the_build_files_under_the_city_are_not_named(self):
+        # The real polygons: DECLARED_PARENTS files all three under the city,
+        # whichever first-level polygon holds them, so neither note names them.
+        d = data()
+        areas = read(compendium(d), d)
+        real = {"Bektemir": "79887680B40109116454398", "Sergeli": "79887680B58716268454454",
+                "Uchtepa": "79887680B78178339313098"}
+        drawn = [dict(u, id=real.get(u["name"], u["id"])) for u in A2]
+        out = {r["aliases"][0]: r for r in uz.build(areas, NAMED, drawn, agency())}
+        for code in ("UZ-TK", "UZ-TO"):
+            note = out[code]["population_note"]
+            self.assertNotIn("Bektemir", note)
+            self.assertTrue(note.endswith(uz.PRELIMINARY), note)
 
     def test_a_district_the_agency_files_elsewhere_stops_the_run(self):
         d = data()

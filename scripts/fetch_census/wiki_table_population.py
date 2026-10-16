@@ -29,7 +29,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, http_json, log, measure, read_json, record, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, read_json,
+                      record, write_json)
 from .cited_sources import Tables
 from .europe_wiki import cell_text, fetch, number, sections
 from .wiki_population import read as infobox
@@ -141,9 +142,11 @@ FIGURES[("TZA", "Dar es Salaam")] = Figure(
 # Cape Verde's municipalities by the 2021 census. The list writes each row
 # on one line with single bars, which the wikitext reader cannot split, so
 # the table is read as the page renders it.
+# Tarrafal (Santiago) is one of them: Wikidata's undated 30,000 stood in front
+# of it, and the build refuses that figure (NOT_THIS_GROUND) so this one shows.
 for _name in ("Ribeira Grande de Santiago", "Santa Catarina", "Santa Catarina do Fogo",
               "Santa Cruz", "São Domingos", "São Lourenço dos Órgãos", "São Miguel",
-              "São Salvador do Mundo"):
+              "São Salvador do Mundo", "Tarrafal"):
     FIGURES[("CPV", _name)] = Figure(
         year=2021,
         terms=(Term("Administrative divisions of Cape Verde", row=f"Municipality of {_name}",
@@ -151,19 +154,20 @@ for _name in ("Ribeira Grande de Santiago", "Santa Catarina", "Santa Catarina do
                     rendered=True),),
         source="2021 census of Cape Verde, as the list of its municipalities gives it",
         note="The municipality's row in the list, under its 2021 census column: {terms}.")
-# Yamoussoukro Autonomous District. Its article redirects to the city's,
-# whose 422,072 (2021) covers 2,075 km^2 of the district's 3,500 and so is
-# not the district's. The list of districts gives the district a figure and
-# no year, and is read as that: undated.
+# Yamoussoukro Autonomous District, which is two departments: Yamoussoukro
+# and Attiégouakro. Its article redirects to Yamoussoukro's, whose infobox
+# gives 422,072 for the 2021 census (citing the INS's RGPH 2021 results) --
+# the two departments' 372,559 and 49,513 as citypopulation.de lists them,
+# so the district's count, not the city's. The polygon is 2,082 km² and holds
+# both departments' seats (the infobox gives 2,075 km²). The list of
+# districts prints 355,573 with no year: the 2014 census's count.
 FIGURES[("CIV", "District Autonome De Yamoussoukro")] = Figure(
-    year=None,
-    terms=(Term("Districts of Ivory Coast", row="Yamoussoukro",
-                key=r"^District$", column=r"^Population \(District\)", rendered=True),),
-    source=("English Wikipedia, Districts of Ivory Coast; the list gives no year "
-            "for the figure"),
-    note=("The district's row in the list of districts, which dates none of its "
-          "figures: {terms}. The city's article gives 422,072 for 2021, over 2,075 "
-          "km² of the district's 3,500, so that figure is not the district's."))
+    year=2021,
+    terms=(Term("Yamoussoukro"),),
+    source="2021 census of Côte d'Ivoire, as English Wikipedia's Yamoussoukro gives it",
+    note=("The autonomous district's count in the 2021 census, taking in both of its "
+          "departments, Yamoussoukro and Attiégouakro: {terms}. The 2014 census "
+          "counted 355,573."))
 
 # Five of Libya's shapes are districts of the 2001 scheme, which the 2007
 # scheme merged away. The list of districts keeps the 2001 table, whose
@@ -180,16 +184,141 @@ for _shape, _row in (("Ajdabiya", "Ajdabiya"), ("Al Qubbah", "Quba"),
         note="The district's row in the table of the 2001 districts, which gives no year: {terms}.")
 
 # The Bahamas' 2022 census by district, as "Local government in the Bahamas"
-# transcribes it. The table groups some districts the map draws apart --
-# "South Abaco + Central Abaco + Moore's Island" -- and those stay empty: a
-# group's figure is not any one of its members'. These three it prints alone.
-for _district in ("North Eleuthera", "East Grand Bahama", "West Grand Bahama"):
-    FIGURES[("BHS", _district)] = Figure(
-        year=2022,
-        terms=(Term("Local government in the Bahamas", row=_district,
-                    column=r"^Population$", cite=r"Census of The Bahamas 2022"),),
-        source="2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-        note="The district's row in the 2022 census table: {terms}.")
+# transcribes it, is not read. Its rows are the census's supervisory
+# districts, which are drawn like the parliamentary constituencies and not
+# like the local-government districts the map draws: Grand Bahama's five --
+# Central, East and West Grand Bahama, Marco City and Pineridge -- are
+# constituencies' names, and the table's West Grand Bahama counts 5,960
+# people while Freeport and Lucaya both lie inside the West Grand Bahama the
+# map draws (GeoNames' points, measured on the boundary file). East Grand
+# Bahama's 11,011 sat on a polygon whose only populated place is High Rock.
+# The three rows this read until October 2026 are written instead as gaps
+# saying so; the table's grouped rows ("South Abaco + Central Abaco + Moore's
+# Island") give gaps of their own (``GROUPED``, below). Figures of other
+# routes for these districts are not displaced.
+SUPERVISORY = ("The Bahamas' 2022 census tabulates by its supervisory districts, which are "
+               "drawn like the parliamentary constituencies rather than like the "
+               "local-government districts the map draws. Its {district} ({count:,} "
+               "people) is a supervisory district of that name, not this district, so "
+               "no 2022 figure is given here.")
+REFUSED: dict[tuple[str, str], str] = {
+    ("BHS", district): SUPERVISORY.format(district=district, count=count)
+    for district, count in (("North Eleuthera", 3923), ("East Grand Bahama", 11011),
+                            ("West Grand Bahama", 5960))
+}
+
+
+# Districts the same table prints only inside a group -- "South Abaco + Central
+# Abaco + Moore's Island" -- which the map draws apart. Their population is a
+# gap, and the gap says why: the row that does hold them, and its figure, read
+# from the table the same way a district printed alone is. The figure is a
+# supervisory district's, as every row's is (SUPERVISORY), set by the table
+# against the local-government districts it takes in; the gap says that too,
+# in the same words as the rows refused above, rather than that the census
+# prints the districts together, which it does not.
+# The "Exuma + Black Point" row cannot be lined up with its headers, so its
+# figure is not quoted; the gap still names the group.
+SUPERVISED = ("The census tabulates by its supervisory districts, which are drawn like "
+              "the parliamentary constituencies rather than like the local-government "
+              "districts the map draws, so the figure is not this district's, and no "
+              "{year} figure is given here.")
+GROUPED: dict[tuple[str, str], Term] = {
+    ("BHS", _district): Term("Local government in the Bahamas", row=_district,
+                             column=r"^Population$", cite=r"Census of The Bahamas 2022")
+    for _district in ("Black Point", "Central Abaco", "Central Eleuthera", "Mangrove Cay",
+                      "Moore's Island", "South Abaco", "South Eleuthera")
+}
+GROUPED_YEAR = 2022
+
+
+def group_parts(label: str) -> list[str]:
+    """The districts a grouped row names: "South Abaco + Central Abaco + Moore's
+    Island" is three, and a row naming one district is one."""
+    text = re.split(r"\s*[\[(]", cell_text(label), maxsplit=1)[0]
+    return [p.strip() for p in re.split(r"\s*(?:\+|,|&|\band\b)\s*", text) if p.strip()]
+
+
+def grouped_cell(wikitext: str, district: str, column: str, year: int,
+                 cite: str | None = None,
+                 pairs: list[tuple[str, list[list[str]]]] | None = None
+                 ) -> tuple[str | None, int | None, str]:
+    """(the grouped row's label, its figure, why not) for a district the table
+    prints only together with others. Exactly one row may name it, that row
+    must name at least one other district, and the column must be the
+    census's, as ``cell`` requires of a district printed alone. ``pairs``, as
+    for ``cell``, are a rendered page's tables with the page as their body."""
+    header = re.compile(column, re.I)
+    found: list[tuple[str, int]] = []
+    if pairs is None:
+        pairs = [(body, table) for _, body in sections(wikitext) for table in tables(body)]
+    for body, table in pairs:
+        start = next((n for n, r in enumerate(table[:4])
+                      if sum(1 for c in r if header.search(cell_text(c))) == 1), None)
+        if start is None:
+            continue
+        heads = [cell_text(c) for c in table[start]]
+        at = [i for i, h in enumerate(heads) if header.search(h)][0]
+        for cells in table[start + 1:]:
+            if not cells:
+                continue
+            parts = group_parts(cells[0])
+            if district.casefold() not in {p.casefold() for p in parts}:
+                continue
+            if len(parts) < 2:
+                return None, None, f"the table prints {district!r} alone"
+            cited = cite and str(year) in cite and re.search(cite, body, re.I)
+            if str(year) not in heads[at] and not cited:
+                return None, None, f"the column {heads[at]!r} does not name {year}"
+            # A row that cannot be lined up with its headers still says which
+            # districts the census prints together; its figure is not read.
+            if len(cells) != len(heads):
+                found.append((" + ".join(parts), None))
+                continue
+            value = number(cell_text(cells[at]), ".")
+            if value is None or value != int(value):
+                return None, None, f"the row's cell is {cells[at]!r}, not a count"
+            found.append((" + ".join(parts), int(value)))
+    if len(found) != 1:
+        return None, None, f"{len(found)} rows name {district!r} in a group; exactly one is read"
+    label, value = found[0]
+    return label, value, ("" if value is not None else
+                          f"the {label!r} row cannot be lined up with its headers")
+
+
+def grouped_row(iso3: str, name: str, term: Term, shape_id: str,
+                fetcher=fetch, renderer=None) -> dict[str, Any] | None:
+    """A stated population gap for a district the table prints only in a group."""
+    pairs = None
+    if term.rendered:
+        html, landed = (renderer or rendered)(term.title)
+        parser = Tables()
+        parser.feed(html or "")
+        pairs = [(html, t) for t in parser.tables]
+        wikitext = html
+    else:
+        wikitext, landed = fetcher(term.title, "en")
+    if not wikitext:
+        log(f"  {iso3} {name}: {landed} has no text; not written")
+        return None
+    label, value, why = grouped_cell(wikitext, term.row or name, term.column or "",
+                                     GROUPED_YEAR, term.cite, pairs=pairs)
+    if label is None:
+        log(f"  {iso3} {name}: {landed}: {why}; not written")
+        return None
+    parts = label.split(" + ")
+    listed = ", ".join(parts[:-1]) + " and " + parts[-1]
+    log(f"  {iso3} {name}: printed only in the group {label} "
+        + (f"({value:,})" if value is not None else f"({why}; its figure is not quoted)"))
+    figure = f", {value:,} people," if value is not None else ""
+    return record(
+        f"{iso3}-WT-{slugify(name)}", name, level="admin1", parent=iso3, country=iso3,
+        shape_id=shape_id, match_by="shape_id",
+        population=gap(NOT_AVAILABLE, (
+            f"Wikipedia's table of the Bahamas' local-government districts prints one "
+            f"{GROUPED_YEAR} census figure{figure} on a row for {listed} together. "
+            + SUPERVISED.format(year=GROUPED_YEAR))),
+        sources=[{"field": "population", "name": "Wikipedia", "url": url(landed),
+                  "year": GROUPED_YEAR, "license": LICENCE}])
 
 
 def cell(wikitext: str, row: str, column: str, year: int | None,
@@ -324,6 +453,15 @@ def figure_row(iso3: str, name: str, figure: Figure, shape_id: str,
         sources=sources)
 
 
+def refused_row(iso3: str, name: str, why: str, shape_id: str) -> dict[str, Any]:
+    """A stated gap for a unit whose table row is another ground's."""
+    return record(
+        f"{iso3}-WT-{slugify(name)}", name, level="admin1", parent=iso3, country=iso3,
+        shape_id=shape_id, match_by="shape_id",
+        population=gap(NOT_AVAILABLE, why),
+        sources=[])
+
+
 def main() -> None:
     rows: list[dict[str, Any]] = []
     for (iso3, name), figure in FIGURES.items():
@@ -335,6 +473,23 @@ def main() -> None:
         row = figure_row(iso3, name, figure, drawn[0]["id"])
         if row:
             rows.append(row)
+    for (iso3, name), term in GROUPED.items():
+        drawn = [u for u in read_json(shard_path("admin1", iso3), [])
+                 if u.get("name") == name]
+        if len(drawn) != 1:
+            log(f"  {iso3} {name}: drawn {len(drawn)} times; not written")
+            continue
+        row = grouped_row(iso3, name, term, drawn[0]["id"])
+        if row:
+            rows.append(row)
+    for (iso3, name), why in REFUSED.items():
+        drawn = [u for u in read_json(shard_path("admin1", iso3), [])
+                 if u.get("name") == name]
+        if len(drawn) != 1:
+            log(f"  {iso3} {name}: drawn {len(drawn)} times; no reason written")
+            continue
+        rows.append(refused_row(iso3, name, why, drawn[0]["id"]))
+        log(f"  {iso3} {name}: not read -- {why}")
     write_json(PROCESSED / OUT, rows)
     log(f"wrote {len(rows)} records to {OUT}")
 

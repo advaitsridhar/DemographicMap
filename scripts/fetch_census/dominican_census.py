@@ -7,9 +7,10 @@ site refuses this map's reader (HTTP 403), so the workbooks are read from the
 Internet Archive's captures of ONE's own files, byte for byte (``id_``):
 
 * **Cuadro 2** -- everyone by zone, sex and five-year age group, for every
-  region, province, municipio and distrito municipal: median age and sex
-  ratio for the 32 provinces and the municipios, and the municipios'
-  population (the provinces keep the map's newer 2023 figures).
+  region, province, municipio and distrito municipal: median age, sex ratio
+  and population for the 32 provinces and the municipios. The provinces'
+  population is the census's own count, which their municipios make; OCHA's
+  2023 projection of the provinces gives way to it.
 * **Cuadro 12** -- everyone aged 12 and over by question 64, the informant's
   perception of each household member's "facciones, color de piel y otras
   características culturales" (Negra, Morena, Mestiza, Mulata, India,
@@ -636,8 +637,15 @@ def adapter() -> int:
     perceived_by = {shape_of(k)["id"]: v for k, v in perceived.items()}
     for name, entry in provinces.items():
         shape = shape_of(name)
+        # The province's own 2022 count, which its municipios make (``tree``
+        # checks it). OCHA's 2023 projection of the provinces stood here
+        # before, over municipios that carry this census, so a province and
+        # its municipios were two different sources a year apart; that
+        # projection now gives way to this file (SUPERSEDED_ROWS).
         fields = age_figures(entry["area"])
-        fields.pop("population")   # the map's 2023 figures are newer
+        fields["population_note"] = (
+            f"The 2022 census's count of the province, which its municipios make: "
+            f"{fields['population']['value']:,} people.")
         answers = perceived_by.get(shape["id"])
         if answers is None:
             raise SystemExit(f"dominican_census: Cuadro 12 has no province {name!r}")
@@ -646,7 +654,7 @@ def adapter() -> int:
             match_by="shape_id", shape_id=shape["id"],
             aliases=[name] if name != shape["name"] else [], **fields,
             **perception_fields(answers["area"], header),
-            sources=sources("median age/sex ratio", True)))
+            sources=sources("population/median age/sex ratio", True)))
 
     parents = {u["id"]: u["name"] for u in admin1}
     unit_alias = {fold(k): v for k, v in (*country.units, *MUNICIPIOS.items())}

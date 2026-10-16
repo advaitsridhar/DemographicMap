@@ -651,10 +651,10 @@
     "match_by": "shape_id"
   },
   {
-    "id": "CIV-WT-district-autonome-de-yamoussoukro",
+    "id": "CPV-WT-tarrafal",
     "level": "admin1",
-    "name": "District Autonome De Yamoussoukro",
-    "parent": "CIV",
+    "name": "Tarrafal",
+    "parent": "CPV",
     "capital": {
       "status": "not_available"
     },
@@ -662,10 +662,11 @@
       "status": "not_available"
     },
     "population": {
-      "value": 355573,
+      "value": 16620,
       "unit": "people",
-      "source": "English Wikipedia, Districts of Ivory Coast; the list gives no year for the figure",
-      "note": "The district's row in the list of districts, which dates none of its figures: 355,573 (the Yamoussoukro row of Districts of Ivory Coast). The city's article gives 422,072 for 2021, over 2,075 km² of the district's 3,500, so that figure is not the district's."
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 16,620 (the Municipality of Tarrafal row of Administrative divisions of Cape Verde)."
     },
     "median_age": {
       "status": "not_available"
@@ -686,8 +687,54 @@
       {
         "field": "population",
         "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
-        "year": null,
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B2594883865860",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WT-district-autonome-de-yamoussoukro",
+    "level": "admin1",
+    "name": "District Autonome De Yamoussoukro",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 422072,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Côte d'Ivoire, as English Wikipedia's Yamoussoukro gives it",
+      "note": "The autonomous district's count in the 2021 census, taking in both of its departments, Yamoussoukro and Attiégouakro: 422,072 (Yamoussoukro's infobox). The 2014 census counted 355,573."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Yamoussoukro",
+        "year": 2021,
         "license": "CC BY-SA 4.0"
       }
     ],
@@ -921,9 +968,9 @@
     "match_by": "shape_id"
   },
   {
-    "id": "BHS-WT-north-eleuthera",
+    "id": "BHS-WT-black-point",
     "level": "admin1",
-    "name": "North Eleuthera",
+    "name": "Black Point",
     "parent": "BHS",
     "capital": {
       "status": "not_available"
@@ -932,11 +979,8 @@
       "status": "not_available"
     },
     "population": {
-      "value": 3923,
-      "unit": "people",
-      "year": 2022,
-      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-      "note": "The district's row in the 2022 census table: 3,923 (the North Eleuthera row of Local government in the Bahamas)."
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure on a row for Exuma and Black Point together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
     },
     "median_age": {
       "status": "not_available"
@@ -962,6 +1006,299 @@
         "license": "CC BY-SA 4.0"
       }
     ],
+    "country": "BHS",
+    "shape_id": "57655419B62023626616016",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-central-abaco",
+    "level": "admin1",
+    "name": "Central Abaco",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure, 6,530 people, on a row for South Abaco, Central Abaco and Moore's Island together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B6063467597350",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-central-eleuthera",
+    "level": "admin1",
+    "name": "Central Eleuthera",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure, 5,324 people, on a row for South Eleuthera and Central Eleuthera together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B18095522454644",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-mangrove-cay",
+    "level": "admin1",
+    "name": "Mangrove Cay",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure, 3,711 people, on a row for South Andros, Central Andros and Mangrove Cay together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B49483307836090",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-moores-island",
+    "level": "admin1",
+    "name": "Moore's Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure, 6,530 people, on a row for South Abaco, Central Abaco and Moore's Island together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B38120742943128",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-south-abaco",
+    "level": "admin1",
+    "name": "South Abaco",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure, 6,530 people, on a row for South Abaco, Central Abaco and Moore's Island together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B39711376309473",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-south-eleuthera",
+    "level": "admin1",
+    "name": "South Eleuthera",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Wikipedia's table of the Bahamas' local-government districts prints one 2022 census figure, 5,324 people, on a row for South Eleuthera and Central Eleuthera together. The census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws, so the figure is not this district's, and no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B57652232258076",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-north-eleuthera",
+    "level": "admin1",
+    "name": "North Eleuthera",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its North Eleuthera (3,923 people) is a supervisory district of that name, not this district, so no 2022 figure is given here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
     "country": "BHS",
     "shape_id": "57655419B2538538242492",
     "match_by": "shape_id"
@@ -978,11 +1315,8 @@
       "status": "not_available"
     },
     "population": {
-      "value": 11011,
-      "unit": "people",
-      "year": 2022,
-      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-      "note": "The district's row in the 2022 census table: 11,011 (the East Grand Bahama row of Local government in the Bahamas)."
+      "status": "not_available",
+      "note": "The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its East Grand Bahama (11,011 people) is a supervisory district of that name, not this district, so no 2022 figure is given here."
     },
     "median_age": {
       "status": "not_available"
@@ -999,15 +1333,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
-        "year": 2022,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "country": "BHS",
     "shape_id": "57655419B55305756041974",
     "match_by": "shape_id"
@@ -1024,11 +1350,8 @@
       "status": "not_available"
     },
     "population": {
-      "value": 5960,
-      "unit": "people",
-      "year": 2022,
-      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
-      "note": "The district's row in the 2022 census table: 5,960 (the West Grand Bahama row of Local government in the Bahamas)."
+      "status": "not_available",
+      "note": "The Bahamas' 2022 census tabulates by its supervisory districts, which are drawn like the parliamentary constituencies rather than like the local-government districts the map draws. Its West Grand Bahama (5,960 people) is a supervisory district of that name, not this district, so no 2022 figure is given here."
     },
     "median_age": {
       "status": "not_available"
@@ -1045,15 +1368,7 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
-        "year": 2022,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
+    "sources": [],
     "country": "BHS",
     "shape_id": "57655419B65085412826087",
     "match_by": "shape_id"

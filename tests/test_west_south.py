@@ -569,6 +569,7 @@ class PortugalCensus(unittest.TestCase):
     def test_binding_and_the_municipalities_drawn_under_another_district(self):
         import json
         from scripts.fetch_census import portugal_census as m
+        from scripts.fetch_census.declared_parents import as_filed
         admin1, admin2, processed = self.site()
         if not processed.exists():
             self.skipTest("portugal_census.json needs a network run to exist")
@@ -577,11 +578,24 @@ class PortugalCensus(unittest.TestCase):
                  for r in rows if r["level"] == "admin2" and "dico" in (r.get("codes") or {})}
         bound, district = m.bind_municipalities(names, admin1, admin2)
         self.assertEqual(len(bound), 308)
-        elsewhere = m.drawn_elsewhere(bound, names, admin1, admin2, district)
-        moved = sorted(line.split(":")[0] for line in elsewhere["lines"])
-        self.assertEqual(moved, ["Espinho", "Mesão Frio", "Oliveira de Frades", "Sardoal",
-                                 "Tábua"])
-        aveiro = next(u["id"] for u in admin1 if u["name"] == "AVEIRO")
+        # As the build files them, every municipality is under INE's district:
+        # the five the boundary file draws mostly inside another district's
+        # outline are declared under their own (DECLARED_PARENTS). This holds
+        # on site/data built before the declarations and after.
+        filed = as_filed("PRT", admin1, admin2)
+        self.assertEqual(m.drawn_elsewhere(bound, names, admin1, filed, district)["lines"], [])
+        # Filed by area alone, each of the five is under the district whose
+        # outline holds most of it, and both districts' notes name it.
+        by_area = {"Espinho": "PORTO", "Mesão Frio": "PORTO", "Tábua": "VISEU",
+                   "Oliveira de Frades": "AVEIRO", "Sardoal": "CASTELO BRANCO"}
+        first = {u["name"]: u["id"] for u in admin1}
+        polygon = {names[code]: sid for code, sid in bound.items()}
+        moved = {polygon[name]: first[label] for name, label in by_area.items()}
+        area = [{**s, "parent": moved.get(s["id"], s.get("parent"))} for s in filed]
+        elsewhere = m.drawn_elsewhere(bound, names, admin1, area, district)
+        self.assertEqual(sorted(line.split(":")[0] for line in elsewhere["lines"]),
+                         sorted(by_area))
+        aveiro = first["AVEIRO"]
         note = m.district_note(elsewhere["out"][aveiro], elsewhere["in"][aveiro])
         self.assertIn("Espinho under Porto", note)
         self.assertIn("Oliveira de Frades (INE's Viseu) inside this district's outline", note)

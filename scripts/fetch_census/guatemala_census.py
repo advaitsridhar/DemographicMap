@@ -366,6 +366,14 @@ def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, in
         median = median_age(unit["ages"])
         men, women = unit["sex"][man], unit["sex"][woman]
         return {
+            # Everyone the census enumerated here: the person file's rows,
+            # which make INE's published count of every department (checked
+            # above). The map's municipios otherwise carried OCHA's 2024
+            # projection from the 2002 census, under departments that carry
+            # this count.
+            "population": measure(people, year=YEAR, source=SOURCE),
+            "population_note": (f"Everyone INE's 2018 census enumerated here: {people:,} "
+                                f"people, counted from its person database."),
             "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
             "median_age_note": ("Computed from the single-year ages of everyone INE's 2018 "
                                 "person database enumerates here; INE publishes the ages, "
@@ -393,8 +401,8 @@ def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, in
                    f"of the {asked:,} of {people:,} people enumerated here who "
                    "answered it")
                 + ". Counted from INE's 2018 person database."),
-            "sources": [{"field": "ethnicity/language/median age/sex ratio", "name": SOURCE,
-                         "url": PAGE}],
+            "sources": [{"field": "population/ethnicity/language/median age/sex ratio",
+                         "name": SOURCE, "url": PAGE}],
         }
 
     out: list[dict[str, Any]] = []

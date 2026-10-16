@@ -65,6 +65,7 @@ from typing import Any
 
 from ._shared import PROCESSED, log, read_json, record, write_json
 from .cod_ps_age import grouped_median
+from .declared_parents import as_filed
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import NOT_AVAILABLE, as_drawn, gap, measure, slugify  # noqa: E402,F401
@@ -118,8 +119,10 @@ REGION = {
     "Surkhandarya region": "Surxondaryo Region", "Tashkent city": "Tashkent",
     "Tashkent region": "Tashkent Region", "Khorezm region": "Xorazm Region",
 }
-# The boundary file puts three of Tashkent city's districts in Tashkent
-# Region; a city district is looked for there as well.
+# The boundary file draws three of Tashkent city's districts mostly inside
+# Tashkent Region's polygon. The build files them under the city all the same
+# (build_entities.DECLARED_PARENTS); a city district is still looked for in
+# the region, should the map file one there.
 ALSO_IN = {"Tashkent": ("Tashkent Region",)}
 # Where the folded key cannot reach: Bo'z district was renamed Bo'ston, and
 # the boundary file spells four others its own way.
@@ -322,14 +325,18 @@ def first_year(unit: dict[str, Any], span: list[str]) -> str | None:
 
 
 def shapes() -> dict[str, list[dict[str, Any]]]:
-    """The map's second-level shapes in Uzbekistan, by the name of their region."""
+    """The map's second-level shapes in Uzbekistan, by the name of the region
+    the next build files each under."""
     # The boundary file's own labels (common.as_drawn): a polygon this reader
     # binds by id is renamed by the build after the row bound to it, and the
-    # next run must still find it under the label it was matched on.
-    parents = {e["id"]: e["name"]
-               for e in as_drawn(read_json(SITE / "admin1" / shard_name("UZB"), []))}
+    # next run must still find it under the label it was matched on. The
+    # parents are the next build's (declared_parents.as_filed), not the last
+    # build's, so a district's note says where the map will show it.
+    regions = as_drawn(read_json(SITE / "admin1" / shard_name("UZB"), []))
+    parents = {e["id"]: e["name"] for e in regions}
     out: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for entity in as_drawn(read_json(SITE / "admin2" / shard_name("UZB"), [])):
+    drawn = as_drawn(read_json(SITE / "admin2" / shard_name("UZB"), []))
+    for entity in as_filed("UZB", regions, drawn):
         out[parents.get(entity.get("parent"), "")].append(entity)
     return out
 

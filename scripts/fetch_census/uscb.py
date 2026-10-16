@@ -400,8 +400,9 @@ ETHIOPIA = Country(
     # them, and a rule loose enough to bridge the last would bridge anything.
     #
     # Not listed: Addis Ababa's ten sub-cities, which geoBoundaries draws as
-    # the single shape "Region 14", and the special weredas it draws as one
-    # "Special Woreda". Those are absent shapes, not wrong names.
+    # the single shape "Region 14", and the special weredas that have no shape
+    # of their own. Those are absent shapes, not wrong names. Argoba's is the
+    # exception: it is Amhara's shape "Special Woreda" (below).
     aliases={
         # "Region 14" is what geoBoundaries calls the single second-order
         # shape inside Addis Ababa, which is the region entire. It is an alias
@@ -422,6 +423,13 @@ ETHIOPIA = Country(
         "Kembata Tembaro": ("KT",),
         "Mezhenger": ("Majang",),
         "Basketo Special Wereda": ("Basketo",),
+        # Amhara's one second-order shape called "Special Woreda" (307 km2,
+        # centred 10.93N 39.98E, between South Wollo and the Oromia special
+        # zone) is Argoba's: the list of Amhara's special woredas gives
+        # Argobba 305.5 km2 there, and Amhara's other one, Bahir Dar, lies
+        # 2.5 degrees west. The row names Amhara as its region, so the alias
+        # reaches only Amhara's shape.
+        "Argoba Special Wereda": ("Special Woreda",),
         "Harari": ("Hareri",),
         "Oromiya": ("Oromia",),
         "Southwest Shuwa": ("South West Shewa",),
@@ -451,7 +459,6 @@ ETHIOPIA = Country(
         ("Oromīya", "Burayu Special Wereda"),
         ("Oromīya", "Jimma Town Special Wereda"),
         ("Tigray", "Mekele Town Special Wereda"),
-        ("Āmara", "Argoba Special Wereda"),
         ("Āmara", "Bahir Dar Special Wereda"),
         ("Yedebub Bihēroch Bihēreseboch Na Hizboch", "Hawassa City Administration"),
     )),

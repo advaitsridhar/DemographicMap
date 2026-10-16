@@ -30,13 +30,17 @@ of them working abroad), which is how the compendium counts every table.
 **Binding.** The compendium's fourteen regions are the boundary file's
 fourteen first-level units -- the Republic of Karakalpakstan, twelve regions
 (viloyat) and the city of Tashkent -- and each is bound by its ISO 3166-2
-code. The boundary file's second level puts three of Tashkent's districts
-(Bektemir, Sergeli, Uchtepa) under Tashkent Region, because its district
-outlines are drawn south-west of the first level's: the first-level polygon
-drawn as Tashkent is 344 km2, the city's own area, and it is the city. The
-population notes of both say so, with those districts' people by the
-statistics agency's count (SIAT indicator 2.01.02.0001, ``uzbekistan_siat``'s
-table), and the run stops if the second level no longer draws them there.
+code. The boundary file draws most of three of Tashkent's districts
+(Bektemir, Sergeli, Uchtepa) inside Tashkent Region's first-level polygon,
+because its district outlines are drawn south-west of the first level's: the
+first-level polygon drawn as Tashkent is 344 km2, the city's own area, and it
+is the city. The build files the three under the city all the same, where the
+statistics agency counts them (``build_entities.DECLARED_PARENTS``). Should
+the map file any city district under the region, the population notes of
+both say so, with its people by the statistics agency's count (SIAT indicator
+2.01.02.0001, ``uzbekistan_siat``'s table); the parents are read as the next
+build will file them (``declared_parents.as_filed``), so the notes say nothing
+the map does not show.
 A region whose count is more than ``AGENCY_GAP`` from the agency's estimate
 for 1 January 2026 says how far (Tashkent Region, 19.1% above it; the others
 are between -2.7% and +6.5%).
@@ -71,6 +75,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, \
     write_json
 from .cod_ps_age import grouped_median
+from .declared_parents import as_filed
 from .kyrgyzstan_census import figures
 from .uzbekistan_siat import CODE as SIAT_CODE, DUMP as SIAT_DUMP, REGION as SIAT_REGION
 
@@ -92,9 +97,10 @@ LICENCE = "Official statistics of the Statistics Committee of the Republic of Uz
 PRELIMINARY = ("A preliminary result of the 2026 census (critical moment 15 January 2026), "
                "which the Committee may still revise; its final results are due by 1 July "
                "2027.")
-# Tashkent city's districts that the boundary file draws inside Tashkent
-# Region, with the statistics agency's codes for each: the shape called
-# Sergeli holds Yangikhayot district too, which was carved out of it.
+# Tashkent city's districts that the boundary file draws mostly inside
+# Tashkent Region's polygon, with the statistics agency's codes for each: the
+# shape called Sergeli holds Yangikhayot district too, which was carved out of
+# it. The build files them under the city (DECLARED_PARENTS).
 CITY_DISTRICTS = {"Bektemir": ("1726264",), "Sergeli": ("1726283", "1726292"),
                   "Uchtepa": ("1726262",)}
 # A region whose census count is further than this from the agency's own
@@ -102,6 +108,7 @@ CITY_DISTRICTS = {"Bektemir": ("1726264",), "Sergeli": ("1726283", "1726292"),
 AGENCY_GAP = 0.10
 # The agency's code for Tashkent city; its districts' codes start with it.
 CITY_CODE = "1726"
+NUMBERS = {2: "two", 3: "three"}
 
 # The compendium's regions (folded: lower case, letters only) -> ISO 3166-2.
 REPUBLIC = "республикаузбекистан"
@@ -395,31 +402,31 @@ def latest_year(siat: list[dict[str, Any]]) -> str:
 
 
 def city_districts(a1: list[dict[str, Any]], a2: list[dict[str, Any]],
-                   siat: list[dict[str, Any]]) -> int:
-    """People in the city's districts that the boundary file draws inside
-    Tashkent Region (``CITY_DISTRICTS``), by the agency's count for its
-    newest year.
+                   siat: list[dict[str, Any]]) -> tuple[list[str], int]:
+    """The city's districts (``CITY_DISTRICTS``) the map files under Tashkent
+    Region, and their people by the agency's count for its newest year.
 
-    The run stops if the second level no longer draws them there, or the
-    agency's table no longer files them under the city, so that the notes
-    stay true.
+    The map's parents are read as the next build will file them
+    (``declared_parents.as_filed``): DECLARED_PARENTS files all three under
+    the city, so none is left, and the notes say nothing. The run stops if
+    the agency's table no longer files a district counted here under the
+    city, so that what the notes say stays true.
     """
     region = next((u["id"] for u in a1 if u.get("iso_3166_2") == "UZ-TO"), None)
-    drawn = {u["name"] for u in a2 if region and u.get("parent") == region}
-    if not set(CITY_DISTRICTS) <= drawn:
-        raise SystemExit(f"uzbekistan_census: the boundary file no longer draws "
-                         f"{sorted(set(CITY_DISTRICTS) - drawn)} inside Tashkent Region")
+    filed = as_filed(ISO3, a1, a2)
+    under_region = {u["name"] for u in filed if region and u.get("parent") == region}
+    inside = [label for label in CITY_DISTRICTS if label in under_region]
     by_code = {u["Code"]: u for u in siat}
     year = latest_year(siat)
     people = 0.0
-    for label, codes in CITY_DISTRICTS.items():
-        for code in codes:
+    for label in inside:
+        for code in CITY_DISTRICTS[label]:
             unit = by_code.get(code)
             if unit is None or not code.startswith(CITY_CODE) or not unit.get(year):
                 raise SystemExit(f"uzbekistan_census: SIAT has no Tashkent city unit {code} "
                                  f"for {label} in {year}")
             people += unit[year]
-    return round(people * 1000)
+    return inside, round(people * 1000)
 
 
 def agency_figures(siat: list[dict[str, Any]]) -> dict[str, float]:
@@ -440,18 +447,22 @@ def agency_notes(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
     """
     by_code = {u.get("iso_3166_2"): u for u in a1}
     year = latest_year(siat)
-    people = city_districts(a1, a2, siat)
-    names = list(CITY_DISTRICTS)
-    listed = ", ".join(names[:-1]) + " and " + names[-1]
-    counted = (f"{people:,} people by the statistics agency's count for 1 January {year}, "
-               f"Sergeli with Yangikhayot")
+    inside, people = city_districts(a1, a2, siat)
     notes: dict[str, str] = defaultdict(str)
-    notes["UZ-TK"] += (f" The boundary file draws three of the city's districts, {listed} "
-                       f"({counted}), inside Tashkent Region; their people are in this "
-                       f"figure.")
-    notes["UZ-TO"] += (f" The boundary file draws three of Tashkent city's districts, {listed} "
-                       f"({counted}), inside this region; their people are in the city's "
-                       f"figure, not this one.")
+    if inside:
+        many = len(inside) > 1
+        listed = (", ".join(inside[:-1]) + " and " + inside[-1]) if many else inside[0]
+        counted = f"{people:,} people by the statistics agency's count for 1 January {year}"
+        if "Sergeli" in inside:
+            counted += ", Sergeli with Yangikhayot"
+        count = NUMBERS.get(len(inside), str(len(inside)))
+        some = f"{count} of the city's districts" if many else "one of the city's districts"
+        theirs = "their people are" if many else "its people are"
+        notes["UZ-TK"] += (f" The boundary file draws {some}, {listed} ({counted}), inside "
+                           f"Tashkent Region; {theirs} in this figure.")
+        notes["UZ-TO"] += (f" The boundary file draws {some.replace('the city', 'Tashkent city')}"
+                           f", {listed} ({counted}), inside this region; {theirs} in the "
+                           f"city's figure, not this one.")
     agency = agency_figures(siat)
     apart: dict[str, float] = {}
     for area, code in REGIONS.items():
