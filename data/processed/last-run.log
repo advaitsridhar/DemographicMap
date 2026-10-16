@@ -1,3 +1,29 @@
-  6 districts making 397,483; ethnicity, religion, ages and sexes each make every district
-  wrote data/processed/belize_census.json (126 kB)
-  wrote belize_census.json: 37 records (6 districts, 31 electoral divisions with the reason they have no figures)
+us_prri: religion by county, PRRI Census of American Religion
+  excluding mL9BH and the diversity_index column (The Religious Diversity Index, By County -- a 0-1 concentration score rather than a percentage of anybody)
+  d76SP v7: https://datawrapper.dwcdn.net/d76SP/7/dataset.csv
+  3142 counties, data year 2024
+  CLuyf v4: https://datawrapper.dwcdn.net/CLuyf/4/dataset.csv
+  cross-check: CLuyf matches d76SP across 3142 counties
+  collapse: PRRI's 11 Christian categories all land in ['Catholicism', "Jehovah's Witnesses", 'Latter-day Saints', 'Orthodoxy', 'Protestantism']
+  population: median 0.74 of the ACS resident count (an adult base, as expected)
+  sums: worst county 4.7pp from 100, median 0.1pp
+    furthest from 100 -- 37183 Wake County, NC 95.3%; 36081 Queens County, NY 96.1%; 25017 Middlesex County, MA 97.4%; 06071 San Bernardino County, CA 97.4%; 48439 Tarrant County, TX 98.0%
+  national roll-up by node: Protestantism 44.7%, No religion 23.1%, Catholicism 22.0%, Other religions 1.8%, Judaism 1.8%, Latter-day Saints 1.8%, Buddhism 1.0%, Islam 1.0%, Jehovah's Witnesses 0.9%, Hinduism 0.8%, Orthodoxy 0.6%
+  against PRRI's published 2023 figures (the data year may differ, so a difference here is not by itself an error):
+      Religiously Unaffiliated                      23.1%  published 27.0   -3.9
+      White Evangelical Protestant                  16.1%  published 13.0   +3.1
+      White Mainline/Non-evangelical Protestant     14.1%  published 13.0   +1.1
+      White Catholic                                12.1%  published 12.0   +0.1
+      Black Protestant                               7.5%  published  8.0   -0.5
+      Hispanic Catholic                              8.0%  published  8.0   -0.0
+      Hispanic Protestant                            4.0%  published  4.0   -0.0
+      Other Protestant of Color                      3.0%  published  2.0   +1.0
+      Other Catholic of Color                        2.0%  published  2.0   -0.0
+      Jewish                                         1.8%  published  2.0   -0.2
+      Muslim                                         1.0%  published  1.0   -0.0
+      Buddhist                                       1.0%  published  1.0   +0.0
+      Hindu                                          0.8%  published  1.0   -0.2
+      Unitarian Universalist                         0.5%  published  0.5   +0.0
+      (no published figure for ["Jehovah's Witness", 'Latter-day Saint (Mormon)', 'Orthodox Christian', 'Other Non-Christian Religious']; the article gives those only as '<0.5%' or pooled)
+  aggregates: Christian 70.1% (2023 published 66%), No religion 23.1% (2023 published 27%), Non-Christian 6.5% (2023 published 6%)
+us_prri: 39 FIPS codes name a different county in PRRI than on the map, so the join would be silently wrong; first few: ["24510 PRRI 'Baltimore city, MD' vs map 'Baltimore'", "29510 PRRI 'St. Louis city, MO' vs map 'St. Louis'", "51510 PRRI 'Alexandria city, VA' vs map 'Alexandria'", "51520 PRRI 'Bristol city, VA' vs map 'Bristol'", "51530 PRRI 'Buena Vista city, VA' vs map 'Buena Vista'"]
