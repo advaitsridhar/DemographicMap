@@ -707,16 +707,27 @@ def note_for(name: str, province: str | None, drawn_under: str | None,
         f"of all foreigners present.{placement}")
 
 
+# The population is the two registers added together, named as its source.
+REGISTERS = ("Ministry of the Interior and Safety, resident register, and Ministry of "
+             "Justice, registered foreign residents, 31 December 2023")
+REGISTERS_NOTE = ("Koreans on the resident register plus registered foreign residents, "
+                  "at the end of 2023.")
+
+
 def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str, str], int],
           published: dict[str, int] | None = None) -> list[dict[str, Any]]:
     provinces, koreans, national = check(units, register)
     caveat = published_caveat(national, published) if published else ""
     names = named(national)
     log(f"  named: {', '.join(dict.fromkeys(NATIONALITIES[c] for c in names))}")
-    sources = [{"field": "ethnicity", "name": MOJ_SOURCE, "url": MOJ_DATASET, "year": YEAR,
-                "license": MOJ_LICENCE},
-               {"field": "ethnicity", "name": MOIS_SOURCE, "url": MOIS_DATASET, "year": YEAR,
-                "license": MOIS_LICENCE}]
+    # The two registers are the population's sources as well as the shares':
+    # the figure is their sum, and it read as a description where a source's
+    # name belongs ("resident-registered Koreans plus registered foreigners"),
+    # cited for nothing.
+    sources = [{"field": "population/ethnicity", "name": MOJ_SOURCE, "url": MOJ_DATASET,
+                "year": YEAR, "license": MOJ_LICENCE},
+               {"field": "population/ethnicity", "name": MOIS_SOURCE, "url": MOIS_DATASET,
+                "year": YEAR, "license": MOIS_LICENCE}]
     if published:
         sources.append({"field": "ethnicity", "name": MOJ_NATIONAL_SOURCE + ", the national "
                         "check", "url": MOJ_NATIONAL_DATASET, "year": YEAR,
@@ -733,8 +744,8 @@ def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
         records.append(record(
             f"KOR-{slugify(province)}", province, level="admin1", parent="KOR", country="KOR",
             sources=sources,
-            population=measure(population, year=YEAR,
-                               source="resident-registered Koreans plus registered foreigners"),
+            population=measure(population, year=YEAR, source=REGISTERS),
+            population_note=REGISTERS_NOTE,
             ethnicity=shares, ethnicity_year=YEAR, ethnicity_basis="nationality",
             ethnicity_note=note_for(province, None, None, caveat)))
     matched: set[tuple[str, str]] = set()
@@ -761,8 +772,8 @@ def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
             parent=f"KOR-{slugify(province)}",
             parent_name=province,
             country="KOR", sources=sources,
-            population=measure(population, year=YEAR,
-                               source="resident-registered Koreans plus registered foreigners"),
+            population=measure(population, year=YEAR, source=REGISTERS),
+            population_note=REGISTERS_NOTE,
             ethnicity=shares, ethnicity_year=YEAR, ethnicity_basis="nationality",
             ethnicity_note=note_for(shape, province, drawn_under, caveat)))
         matched.add((drawn_under if drawn_under is not None else province, shape))
