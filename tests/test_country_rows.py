@@ -767,8 +767,11 @@ class GeoNamesSpans(unittest.TestCase):
 
 
 class NepalDistricts(unittest.TestCase):
-    def test_the_census_districts_take_the_place_of_the_projection(self):
-        self.assertEqual(be.SUPERSEDED_ROWS["cod_ps_admin2.json"]["NPL"], "nepal_district.json")
+    def test_the_projection_is_held_behind_the_census_districts(self):
+        # Since round 7 OCHA's 2023 projection of the 2021 census stands in
+        # front of the census only where it is newer and the same ground.
+        self.assertEqual(be.HELD_ROWS["cod_ps_admin2.json"]["NPL"], "nepal_district.json")
+        self.assertNotIn("NPL", be.SUPERSEDED_ROWS["cod_ps_admin2.json"])
         self.assertIn("nepal_district.json", be.ADAPTER_FILES)
 
 

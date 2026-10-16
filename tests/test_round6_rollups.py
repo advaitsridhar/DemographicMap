@@ -141,13 +141,21 @@ class SupersededProjections(unittest.TestCase):
               "GEO": "georgia.json", "GTM": "guatemala_census.json",
               "DOM": "dominican_census.json"}
 
-    def test_the_census_files_supersede_the_projection(self):
-        rows = be.SUPERSEDED_ROWS["cod_ps_admin2.json"]
+    def test_the_census_files_supersede_or_hold_the_projection(self):
+        # Since round 7 a projection from the office's own census is held
+        # behind it and stands where it is newer and the same ground
+        # (HELD_ROWS); one from an older census than the office counted is
+        # still dropped.
+        dropped = be.SUPERSEDED_ROWS["cod_ps_admin2.json"]
+        held = be.HELD_ROWS["cod_ps_admin2.json"]
         for iso3, file in self.WANTED.items():
-            self.assertEqual(rows.get(iso3), file, iso3)
+            self.assertEqual(dropped.get(iso3) or held.get(iso3), file, iso3)
             self.assertIn(file, be.ADAPTER_FILES, file)
+        self.assertEqual({iso3 for iso3 in self.WANTED if iso3 in held},
+                         {"LAO", "PHL", "NIC", "CRI", "MEX"})
         # Myanmar keeps one vintage at both levels.
-        self.assertNotIn("MMR", rows)
+        self.assertNotIn("MMR", dropped)
+        self.assertNotIn("MMR", held)
 
     def test_every_drawn_unit_bound_by_shape_has_a_count_or_a_reason(self):
         for iso3 in ("PHL", "PRY", "NIC", "CRI", "GEO"):

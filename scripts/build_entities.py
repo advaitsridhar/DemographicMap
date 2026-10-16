@@ -2757,17 +2757,10 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # OCHA's Solomon Islands table is the National Statistics Office's projection
 # for 2023, by constituency; solomon_census.json sums the 2019 census's own
 # ward counts into the same 49 drawn constituencies (OCHA's fiftieth row,
-# Temotu Pele, has no polygon). The year rule let the projection stand in
-# front of the count -- 6.5-6.9% above it, over the census's ages, sexes and
-# religions -- where cod_ps_admin2.json's own entry says the office's census
-# file should win. A projection is not a count.
-# Nepal's is the same case. OCHA's table is the 2023 projection of the 77
-# districts; nepal_district.json counts all 75 the map draws in the 2021
-# census, the census every other field of those districts comes from, and
-# the provinces carry the same census. The projection stood on 64 of them by
-# year, so a district's median-age note quoted one head count (Kathmandu's
-# 2,041,587) beside another (2,181,575), and Bagmati's districts added up to
-# 6,475,167 against the province's 6,116,866.
+# Temotu Pele, has no polygon). Temotu's province figure is the census's and
+# says how much of it lies on islands the map does not draw (UNDRAWN_PARTS),
+# which holds only while its constituencies carry the same census; the
+# projection waits on that note being written another way.
 # The Wikipedia floor gives way the same way where an office's file pins every
 # first-level polygon of the country. It fills only what nothing else writes,
 # but a row still claims its polygon, and two rows naming different places on
@@ -2777,12 +2770,6 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # groups' Wikipedia figures -- the Gilbert group's 83,382 of 2005 -- on
 # polygons kiribati_census gives the census counts of the islands each draws,
 # named for them: the Gilbert polygon draws neither Tarawa nor Banaba.
-# Japan's municipalities are the third case. japan_municipal writes all 1,731
-# polygons from the 2020 census, bound by JIS code, but Wikidata's points
-# figures are dated 2021-2024 and so outranked it on 1,208 of them: Okuma, a
-# town under an evacuation order, showed its 10,004 registered residents
-# against the 847 the census found living there, and Masaki 39,681 against
-# 29,630.
 # Thailand's is a mismatch of concepts. Its provinces carry the Department of
 # Provincial Administration's register (through Wikidata, 2018-2022), and
 # OCHA's districts the US Census Bureau's 2023 projection of the de facto
@@ -2792,39 +2779,26 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # of them at 2018): filed under the provinces Wikidata gives them, they add up
 # to the provinces' figures within 3% in 71 of 74. The projection's ages and
 # sexes stay, in sea_cod_ps_age.json.
-# Nine more countries are the same case: OCHA's projection stood in front of
-# the statistics office's own census count of every drawn unit by date alone,
-# and the parents, which carry the census, no longer matched their children.
-# Each office's file was checked to give every drawn unit of the country a
-# count or a stated reason before its country was listed here:
-#   LAO  laos_district.json, the 2015 census of all 148 districts (the
-#        projection, 2024, stood on 145); they make each of the 18 provinces
-#        to the person, 6,481,625 in all.
-#   PHL  philippines_age.json, the 2020 census of 84 of the 86 drawn
-#        provinces and a stated reason on the other two, whose polygons are
-#        not the provinces of their names (OCHA's 2022 figure for
-#        Maguindanao, 1,389,643, stood on one of them).
-#   PRY  paraguay_census.json, the 2022 census of 236 of the 247 districts
-#        and a stated reason on the 11 drawn as they were before a district
-#        was cut from them (OCHA's 2023 figures for the new districts stood
-#        on 8 of those pre-split polygons).
-#   NIC  nicaragua_census.json, the 2005 census of all 153 municipios (the
-#        2020 projection stood on 140); every department then matches.
-#   CRI  costa_rica_census.json, the 2011 census of all 83 cantons (the 2021
-#        projection stood on 77).
-#   MEX  mexico_municipality.json, INEGI's 2020 census of the municipios
-#        (the 2024 projection stood on 2,452 of 2,457).
-#   GEO  georgia.json, Geostat's figures for the 55 municipalities it can
-#        place and a stated reason on the 13 it cannot; OCHA's 2014 figures
-#        stood on four of those reasons (Khobi, Lanchkhuti, Terjola, Tkibuli),
-#        whose polygons hold Poti's or Kutaisi's ground or none of it.
+# The rest are projections from an older census than the office counted,
+# which are older word of the units however late the year they are for (a
+# projection from the office's own census is held behind it instead, and
+# stands where it is newer and the same ground: HELD_ROWS):
 #   GTM  guatemala_census.json, everyone INE's 2018 census enumerated in each
 #        of the 340 municipios and 22 departments (the person file's rows,
 #        which make INE's published department counts); OCHA's 2024 figures
 #        are a projection from the 2002 census and stood on all 340.
 #   DOM  dominican_census.json, the 2022 census's count of the 32 provinces,
 #        which their municipios make; OCHA's table for the Dominican Republic
-#        is of the provinces (2023), over municipios carrying the census.
+#        is of the provinces for 2023, projected before that count, and runs
+#        a median 4.8% below it.
+#   PRY  paraguay_census.json, the 2022 census of 236 of the 247 districts
+#        and a stated reason on the 11 drawn as they were before a district
+#        was cut from them; OCHA's 2023 figures are projections made before
+#        that count, a median 31% above it.
+# And Georgia's is older than the office's: Geostat's figures for the 55
+# municipalities it can place are for 2026, OCHA's for 2014, and these stood
+# on four of the 13 it cannot place (Khobi, Lanchkhuti, Terjola, Tkibuli),
+# whose polygons hold Poti's or Kutaisi's ground or none of it.
 # Myanmar is not listed although its 2014 census file binds all 74
 # districts: its states and the composed districts (sea_composed.json) carry
 # the same OCHA table for 2023, so the projection is one vintage at both
@@ -2832,21 +2806,14 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # children under 2023 parents.
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
-                           "CRI": "costa_rica_census.json",
                            "DOM": "dominican_census.json",
                            "GEO": "georgia.json",
                            "GTM": "guatemala_census.json",
-                           "LAO": "laos_district.json",
-                           "MEX": "mexico_municipality.json",
-                           "NIC": "nicaragua_census.json",
-                           "NPL": "nepal_district.json",
-                           "PHL": "philippines_age.json",
                            "PRY": "paraguay_census.json",
                            "SLB": "solomon_census.json",
                            "THA": "wikidata_admin2.json"},
     "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
                                     "KIR": "kiribati_census.json"},
-    "wikidata_points_admin2.json": {"JPN": "japan_municipal.json"},
 }
 
 
@@ -3035,6 +3002,13 @@ def superseded(filename: str) -> set[str]:
             if by in ADAPTER_FILES and read_json(PROCESSED / by, None)}
 
 
+def offered(filename: str) -> set[str]:
+    """The countries whose rows in ``filename`` are held behind a registered file
+    with rows (HELD_ROWS): without that file they are read as any row is."""
+    return {iso3 for iso3, by in HELD_ROWS.get(filename, {}).items()
+            if by in ADAPTER_FILES and read_json(PROCESSED / by, None)}
+
+
 def load_adapters() -> dict[str, list[dict[str, Any]]]:
     """Every adapter record, bucketed by country, in authority order."""
     by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -3045,6 +3019,7 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
             continue
         log(f"  adapter {filename}: {len(rows)} records")
         dropped = superseded(filename)
+        offers = offered(filename)
         aliases = ROW_ALIASES.get(filename, {})
         not_units = DROPPED_ROWS.get(filename, {})
         parents = ROW_PARENTS.get(filename, {})
@@ -3080,12 +3055,8 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
             # A row held behind an office's count offers its population and
             # nothing else: its other fields are the markers of questions it
             # does not answer, which the office's file answers.
-            if held_row(row):
-                row = {key: value for key, value in row.items()
-                       if key in HELD_KEYS or key == "population"}
-                row["sources"] = [src for src in row.get("sources") or []
-                                  if set(str(src.get("field") or "").split("/"))
-                                  <= {"population"}]
+            if iso3 in offers:
+                row = offer_only(row)
             by_country[iso3].append(row)
     return by_country
 
@@ -3094,6 +3065,18 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
 HELD_KEYS = frozenset({"id", "level", "name", "parent", "parent_name", "parent_aliases",
                        "country", "match_by", "shape_id", "shape_label", "no_shape",
                        "aliases", "wikidata", "sources", "_source"})
+
+
+def offer_only(row: dict[str, Any]) -> dict[str, Any]:
+    """A HELD_ROWS row as it is read: what places it, its population and that
+    figure's citation, marked as an offer (``_offer``), which merge_adapter
+    holds behind whatever the unit carries."""
+    kept = {key: value for key, value in row.items()
+            if key in HELD_KEYS or key == "population"}
+    kept["sources"] = [src for src in row.get("sources") or []
+                       if set(str(src.get("field") or "").split("/")) <= {"population"}]
+    kept["_offer"] = True
+    return kept
 
 
 def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
@@ -3514,18 +3497,35 @@ FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 # filled, and a stated reason is never filled over by them. (SUPERSEDED_ROWS
 # drops a file's rows outright, where they are not the office's units or not
 # the same people at all.)
-HELD_ROWS: dict[str, dict[str, str]] = {}
+#
+# OCHA's tables here are the offices' own projections from the census the
+# office's file counts, so they are newer word of the same units: Laos's
+# districts for 2024 from the 2015 census, Mexico's municipios for 2024 from
+# the 2020 census (CONAPO), Costa Rica's cantons for 2021 from the 2011
+# census, Nicaragua's municipios for 2020 from the 2005 census, Nepal's
+# districts for 2023 from the 2021 census, the Philippines' provinces for 2022
+# from the 2020 census. Japan's are Wikidata's registered populations for
+# 2021-2024, bound by id, against the 2020 census: Okuma, under an evacuation
+# order, registered 10,004 and the census found 847 living there, and the
+# test keeps that one off. Where OCHA's table projects an older census than
+# the office counted -- Guatemala's 2024 figures from the 2002 census over the
+# 2018 count, the Dominican Republic's 2023 provinces from the 2010 census
+# over the 2022 count, Paraguay's 2023 districts over the 2022 count -- the
+# count is the newer word, and those rows are still dropped (SUPERSEDED_ROWS).
+HELD_ROWS: dict[str, dict[str, str]] = {
+    "cod_ps_admin2.json": {"CRI": "costa_rica_census.json",
+                           "LAO": "laos_district.json",
+                           "MEX": "mexico_municipality.json",
+                           "NIC": "nicaragua_census.json",
+                           "NPL": "nepal_district.json",
+                           "PHL": "philippines_age.json"},
+    "wikidata_points_admin2.json": {"JPN": "japan_municipal.json"},
+}
 
 
 def is_fill_only(source: str | None, iso3: str | None) -> bool:
     """Whether a file's figure for this country fills only, held behind a count."""
     return source in FILL_ONLY or (iso3 or "") in HELD_ROWS.get(source or "", {})
-
-
-def held_row(row: dict[str, Any]) -> bool:
-    """A row whose population is only ever offered (HELD_ROWS), never written."""
-    iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
-    return iso3 in HELD_ROWS.get(row.get("_source") or "", {})
 
 # How far a newer figure may sit from an older count and still be taken for
 # the same ground (prefer_newer_figures): its change a year within
@@ -3671,7 +3671,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
     # A file held behind an office's count (HELD_ROWS) offers its population
     # and writes nothing, whatever the unit holds and whichever came first.
-    if held_row(row) and not is_gap(row.get("population")):
+    if row.get("_offer") and not is_gap(row.get("population")):
         held.add("population")
     # A survey's estimate stands behind any count already written, and a
     # cross-national survey's behind a national one's.
@@ -3712,7 +3712,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                             for part in str(src.get("field") or "").split("/")))]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
-                   "match_by", "shape_label", "_source", "_match"}:
+                   "match_by", "shape_label", "_source", "_match", "_offer"}:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
@@ -3729,7 +3729,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # link, the settlement check below would read the town's classes and
         # refuse the municipality's figure as a town's.
         if key == "wikidata" and ("population" in held and entity.get("wikidata")
-                                  or held_row(row)):
+                                  or row.get("_offer")):
             continue
         # A statistics office's statement that its census does not reach a
         # unit displaces an encyclopaedia's figure for it that is older than
@@ -5209,8 +5209,8 @@ RESTATE_SOLE_DIVISION: dict[tuple[str, str], tuple[str, str]] = {
 
 
 def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, Any]]],
-                                  admin2_by_country: dict[str, list[dict[str, Any]]]
-                                  ) -> list[str]:
+                                  admin2_by_country: dict[str, list[dict[str, Any]]],
+                                  *, counts: bool = False) -> list[str]:
     """A first-level unit whose population an encyclopaedia gives, over divisions
     that all carry one source's figures of one later year, takes their sum.
 
@@ -5235,6 +5235,15 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
     and so do two units between which a division is drawn on the wrong side
     (``MISFILED_DIVISIONS``), and a dated figure that a projection only a year
     later would replace (``RESTATE_PROJECTION_YEARS``).
+
+    ``counts`` takes the same sum over an office's dated count of an earlier
+    year too: a subdivision shows the most recent figure available (the
+    owner's rule since round 7). Laos's provinces carry the 2015 census and
+    their districts OCHA's projection of it for 2024. A count gives way only
+    where the years between it and the sum could make the one the other
+    (check_rollups.growth_explains); a sum further off is of other ground
+    than the count, and the parent's note says what its divisions add up to
+    instead.
     """
     done: list[str] = []
     for iso3, parents in sorted(admin1_by_country.items()):
@@ -5247,7 +5256,8 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
         for parent in parents:
             pop = parent.get("population")
             own = published(pop)
-            if (own is None or parent.get("water") or not check_rollups.is_encyclopaedic(pop)
+            counted = not check_rollups.is_encyclopaedic(pop)
+            if (own is None or parent.get("water") or (counted and not counts)
                     or (iso3, parent.get("name")) in UNDRAWN_PARTS):
                 continue
             children = kids.get(parent["id"], [])
@@ -5259,7 +5269,7 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                     for (iso, shape), (_, home) in MISFILED_DIVISIONS.items() if iso == iso3):
                 continue
             summed = check_rollups.complete_sum(children)
-            declared = RESTATE_SOLE_DIVISION.get((iso3, parent.get("name")))
+            declared = None if counted else RESTATE_SOLE_DIVISION.get((iso3, parent.get("name")))
             if summed is None or summed["n"] < (1 if declared else 2):
                 continue
             if declared and summed["n"] != 1:
@@ -5278,6 +5288,9 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                 continue
             total = int(round(summed["total"]))
             if total == round(own):
+                continue
+            if counted and (own_year is None
+                            or not check_rollups.growth_explains(own, own_year, total, year)):
                 continue
             was = check_rollups.short_source(str(pop.get("source") or ""))
             if declared:
@@ -11183,10 +11196,11 @@ def main() -> int:
     # figures the units carry for themselves are kept for the country's gate
     # (mark_restated_since, below).
     own_figures = own_population_figures(admin1_by_country)
-    restated = restate_encyclopaedia_parents(admin1_by_country, admin2_by_country)
+    restated = restate_encyclopaedia_parents(admin1_by_country, admin2_by_country,
+                                             counts=True)
     if restated:
-        log(f"  {len(restated)} first-level encyclopaedia populations replaced by "
-            f"their divisions' one-source sum: " + ", ".join(restated[:10])
+        log(f"  {len(restated)} first-level populations replaced by their divisions' "
+            f"newer one-source sum: " + ", ".join(restated[:10])
             + (" ..." if len(restated) > 10 else ""))
     remaining = fill_remainders(admin1_by_country, admin2_by_country)
     if remaining:

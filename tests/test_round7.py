@@ -161,9 +161,10 @@ class HeldRows(unittest.TestCase):
         self.addCleanup(patcher.stop)
 
     def ocha(self, value=82_105, year=2024, iso3="LAO"):
-        return {"_source": "cod_ps_admin2.json", "_match": "name", "country": iso3,
-                "population": {"value": value, "year": year, "source": "OCHA COD-PS"},
-                "sources": [{"field": "population", "name": "OCHA COD-PS"}]}
+        return be.offer_only({
+            "_source": "cod_ps_admin2.json", "_match": "name", "country": iso3,
+            "population": {"value": value, "year": year, "source": "OCHA COD-PS"},
+            "sources": [{"field": "population", "name": "OCHA COD-PS"}]})
 
     def test_is_fill_only_by_country(self):
         self.assertTrue(be.is_fill_only("cod_ps_admin2.json", "LAO"))
@@ -213,10 +214,72 @@ class HeldRows(unittest.TestCase):
                "capital": {"status": "not_available"},
                "sources": [{"field": "population", "name": "OCHA"},
                            {"field": "median_age", "name": "OCHA"}]}
-        self.assertTrue(be.held_row(row))
-        kept = {k: v for k, v in row.items() if k in be.HELD_KEYS or k == "population"}
+        kept = be.offer_only(row)
+        self.assertTrue(kept["_offer"])
         self.assertNotIn("median_age", kept)
         self.assertNotIn("capital", kept)
+        self.assertEqual(kept["sources"], [{"field": "population", "name": "OCHA"}])
+        # Nothing of the mark reaches the record.
+        entity = {"id": "C", "name": "Chanthabuly", "level": "admin2", "country": "LAO"}
+        be.merge_adapter(entity, kept)
+        self.assertNotIn("_offer", entity)
+        self.assertNotIn("population", entity)
+
+    def test_only_a_country_whose_office_file_is_read_holds_its_rows(self):
+        with mock.patch.object(be, "ADAPTER_FILES", [f for f in be.ADAPTER_FILES
+                                                     if f != "laos_district.json"]):
+            self.assertNotIn("LAO", be.offered("cod_ps_admin2.json"))
+        self.assertEqual(be.offered("cod_ps_admin2.json") & {"GTM", "DOM", "PRY"}, set())
+
+    def test_held_and_dropped_countries_do_not_overlap(self):
+        for filename, held in be.HELD_ROWS.items():
+            self.assertEqual(set(held) & set(be.SUPERSEDED_ROWS.get(filename, {})), set(),
+                             filename)
+
+
+OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+
+
+class ParentsFromNewerDivisions(unittest.TestCase):
+    """A province's older count gives way to its districts' newer one-source sum."""
+
+    def tables(self, own, own_year=2015, values=(410_000, 450_000), year=2024,
+               source=OCHA, iso3="LAO"):
+        parent = {"id": "P", "name": "Province", "parent": None,
+                  "population": {"value": own, "year": own_year,
+                                 "source": "Lao Statistics Bureau, 2015 census"},
+                  "population_note": "The 2015 census's count.",
+                  "sources": [{"field": "population", "name": "Lao Statistics Bureau"}]}
+        kids = [{"id": f"K{i}", "name": f"District {i}", "parent": "P",
+                 "population": {"value": v, "year": year, "source": source},
+                 "sources": [{"field": "population", "name": source, "url": "u"}]}
+                for i, v in enumerate(values)]
+        return {iso3: [parent]}, {iso3: kids}, parent
+
+    def test_an_older_count_takes_the_newer_sum(self):
+        a1, a2, parent = self.tables(760_000)
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2), [])
+        done = be.restate_encyclopaedia_parents(a1, a2, counts=True)
+        self.assertEqual(done, ["LAO Province 760,000 -> 860,000"])
+        self.assertEqual(parent["population"]["value"], 860_000)
+        self.assertEqual(parent["population"]["year"], 2024)
+        self.assertEqual(parent["population"][be.RESTATED_FROM]["value"], 760_000)
+        self.assertIn("It replaces 760,000 for 2015, an older figure from Lao Statistics "
+                      "Bureau.", parent["population_note"])
+        self.assertEqual([s["name"] for s in parent["sources"]], [OCHA])
+
+    def test_a_sum_further_off_than_growth_is_other_ground(self):
+        # 40% above a count nine years older: more than people make.
+        a1, a2, parent = self.tables(400_000)
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])
+        self.assertEqual(parent["population"]["value"], 400_000)
+
+    def test_a_projection_a_year_on_and_an_undated_count_stay(self):
+        a1, a2, parent = self.tables(850_000, own_year=2023)
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])
+        a1, a2, parent = self.tables(760_000)
+        del parent["population"]["year"]
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])
 
 
 if __name__ == "__main__":
