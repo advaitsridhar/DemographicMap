@@ -487,5 +487,58 @@ class ParentsFromNewerDivisions(unittest.TestCase):
             "of both divisions"), parent["population_note"])
 
 
+
+class SharesWeighedByTheirCensus(unittest.TestCase):
+    """A census's shares are priced at that census's counts, not at a newer
+    figure shown in front of them."""
+
+    @staticmethod
+    def province(uid, name, people, shares):
+        return {"id": uid, "name": name, "parent": "KHM",
+                "population": {"value": people, "year": 2019, "source": CENSUS},
+                "religion": [{"group": g, "pct": p} for g, p in shares.items()],
+                "religion_year": 2019, "sources": []}
+
+    def cambodia(self):
+        country = {"id": "KHM", "name": "Cambodia",
+                   "population": {"value": 3_060_000, "year": 2019, "source": CENSUS}}
+        capital = self.province("A", "Phnom Penh", 2_281_951,
+                                {"Buddhism": 97.0, "Islam": 1.5, "Christianity": 1.5})
+        east = self.province("B", "Tbong Khmum", 776_841,
+                             {"Buddhism": 88.0, "Islam": 11.8, "Christianity": 0.2})
+        # As prefer_newer_figures leaves it: a 2024 figure in front of the count.
+        east["population"] = {"value": 889_970, "year": 2024, "source": "Wikipedia",
+                              be.RESTATED_FROM: dict(east["population"])}
+        return country, [capital, east]
+
+    def test_shares_are_taken_of_the_count_the_newer_figure_replaced(self):
+        country, kids = self.cambodia()
+        self.assertIsNone(be.roll_up_field(
+            country, kids, "religion", level="first-level", over_published=True,
+            complete=True, min_coverage=be.COUNTRY_MIN_COVERAGE,
+            fill_population_only=True))
+        counts = {r["group"]: r["count"] for r in country["religion"]}
+        # 1.5% of 2,281,951 and 11.8% of 776,841, not of 889,970.
+        self.assertEqual(counts["Islam"], round(0.015 * 2_281_951 + 0.118 * 776_841))
+        self.assertAlmostEqual(sum(counts.values()), 2_281_951 + 776_841, delta=2)
+        self.assertEqual(country["religion_year"], 2019)
+        note = country["religion_note"]
+        self.assertIn("For Tbong Khmum the population taken is 776,841 for 2019, the "
+                      "figure it carried before the newer one shown.", note)
+        # The populations the note totals are the ones the map shows.
+        self.assertIn("Their populations total 3,171,921", note)
+        # Shares taken of populations are no division's own counts.
+        self.assertNotIn("own counts", note)
+
+    def test_a_unit_shown_its_own_count_is_priced_at_it(self):
+        country, kids = self.cambodia()
+        kids[1]["population"] = kids[1]["population"][be.RESTATED_FROM]
+        be.roll_up_field(country, kids, "religion", level="first-level",
+                         over_published=True, complete=True,
+                         min_coverage=be.COUNTRY_MIN_COVERAGE, fill_population_only=True)
+        self.assertNotIn("population taken", country["religion_note"])
+        self.assertEqual(be.repriced_sentence([]), "")
+
+
 if __name__ == "__main__":
     unittest.main()

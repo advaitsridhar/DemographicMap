@@ -4556,6 +4556,26 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
     return best[1] if best else None
 
 
+def repriced_sentence(repriced: list[tuple[str, Any]]) -> str:
+    """What a sum says of the divisions whose shares were taken of the figure
+    they carried before the newer one shown: "For Tbong Khmum the population
+    taken is 776,841 for 2019, the figure it carried before the newer one
+    shown." Empty where there are none."""
+    if not repriced:
+        return ""
+    if len(repriced) == 1:
+        name, was = repriced[0]
+        value, year = published(was), vintage(was)
+        return (f" For {name} the population taken is {value:,.0f}"
+                + (f" for {year}" if year else "")
+                + ", the figure it carried before the newer one shown.")
+    names = sorted(name for name, _ in repriced)
+    listed = (", ".join(names[:-1]) + f" and {names[-1]}" if len(names) <= 4
+              else ", ".join(names[:3]) + f" and {len(names) - 3} others")
+    return (f" For {listed} the populations taken are the figures they "
+            f"carried before the newer ones shown.")
+
+
 def year_weights(children: list[dict[str, Any]], field: str
                  ) -> tuple[dict[int, float], float]:
     """Population behind each year the children stamp, and the total behind all.
@@ -4966,6 +4986,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # because the source published no counts. Named in the note: a sum of
     # derived numbers is a weaker claim than a sum of published ones.
     derived: list[str] = []
+    # Those of them priced at the figure they carried before a newer one was
+    # shown (control_population), named with it in the note.
+    repriced: list[tuple[str, Any]] = []
     for child in children:
         share = implied_total(child[field])
         rows = child[field]
@@ -4982,13 +5005,23 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             # -- Mexico's indigenous-language question asks people aged three
             # and over -- it publishes counts, and implied_total backs the
             # real base out of them instead.
-            pop = published(child.get("population"))
+            #
+            # The population is the one the unit carried before a newer figure
+            # took its place, where one did (control_population), as the gate
+            # above weighs it: a census's shares are of that census's people.
+            # Cambodia's 25 provinces publish the 2019 census's shares, and two
+            # of them showing 2024 figures moved the country's Muslims from the
+            # census's 2.0% to 2.1% under the census's date.
+            control = control_population(child)
+            pop = published(control)
             if pop is None:
                 return f"{field}: a child publishes shares with no counts"
             rows = [dict(r, count=(r["pct"] / 100.0) * pop)
                     for r in rows if isinstance(r.get("pct"), (int, float))]
             share = implied_total(rows)
             derived.append(child.get("name", child.get("id", "")))
+            if control is not child.get("population"):
+                repriced.append((child.get("name", child.get("id", "")), control))
         if share is None:
             return f"{field}: a child publishes shares with no counts"
         denominator += share
@@ -5044,8 +5077,12 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # their 20.3 million; Tajikistan's carry 2020 populations and the 2010
     # census's nationalities. Quoting only the populations put a total and a
     # year on the figure that are not its own.
+    # Not where every division's figures are its shares taken of a population:
+    # those are no division's counts, and the sentences below say which
+    # populations they were taken of.
     counted = ""
     if (not weighted and denominator > 0 and total_pop
+            and len(derived) < len(children)
             and abs(denominator - total_pop) > ROLLUP_TOLERANCE * total_pop):
         when = (f" in {next(iter(years))}" if len(years) == 1 else
                 f", nearly all of them in {dated}" if dated is not None else "")
@@ -5091,6 +5128,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
+        + repriced_sentence(repriced)
         + disagrees + displaced + left_out
         + (" " + ", ".join(sorted(c.get("name", c.get("id", "?"))
                                   for c in apart))
