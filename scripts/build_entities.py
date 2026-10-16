@@ -1285,7 +1285,7 @@ IRAN_LANGUAGE = (
     "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
     "THA": "The statistical office's own tables have not been obtained from its "
-           "websites. Religion by province is the 2000 census, read from its "
+           "websites. Religion by province is the 2000 census, taken from its "
            "provincial final reports as transcribed on Wikipedia; language was "
            "made public once, for 2000, in a table whose shares are not parts of "
            "one whole. "
@@ -3272,7 +3272,7 @@ def _cite(entity: dict[str, Any], field: str, row: dict[str, Any]) -> None:
     if row.get("source"):
         sources.append({"field": field, "name": row["source"],
                         "url": row.get("url"), "year": row.get("year"),
-                        "license": row.get("license", "See docs/SOURCES.md")})
+                        "license": row.get("license", "")})
 
 
 def _cite_quoted(entity: dict[str, Any], field: str, source: dict[str, Any]) -> None:
@@ -3284,7 +3284,7 @@ def _cite_quoted(entity: dict[str, Any], field: str, source: dict[str, Any]) -> 
     """
     quoted = {"field": f"{field} note", "name": source["name"],
               "url": source.get("url"), "year": source.get("year"),
-              "license": source.get("license", "See docs/SOURCES.md"),
+              "license": source.get("license", ""),
               "note": "The count the note beside the population quotes, "
                       "not the source of the figure shown."}
     if quoted not in entity.setdefault("sources", []):
@@ -3360,8 +3360,7 @@ def apply_country_figures(admin0: list[dict[str, Any]],
                 # for the note and said to be that, not for the figure shown.
                 _cite_quoted(entity, field, {"name": row["source"], "url": row.get("url"),
                                              "year": row.get("year"),
-                                             "license": row.get("license",
-                                                                "See docs/SOURCES.md")})
+                                             "license": row.get("license", "")})
             else:
                 entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
                                         year=row["year"], source=row["source"])
@@ -3427,7 +3426,7 @@ def apply_country_detail(admin0: list[dict[str, Any]],
                 entity.setdefault("sources", []).append(
                     {"field": field, "name": row["source"],
                      "url": row.get("url"), "year": row.get("year"),
-                     "license": row.get("license", "See docs/SOURCES.md")})
+                     "license": row.get("license", "")})
             # A basis on a note-only row says what the line already there
             # counts: Thailand's Factbook "ethnic groups" are nationality, by
             # the Factbook's own note, and read as ethnicity without it.
@@ -3545,7 +3544,7 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
             entity[field] = gap(NOT_COLLECTED, policy)
     entity.setdefault("sources", []).append(
         {"field": "curated", "name": source, "year": year,
-         "note": prov.get("note"), "license": "See docs/SOURCES.md"})
+         "note": prov.get("note"), "license": ""})
 
 
 # What makes a row an answer rather than a label. Wikidata supplies a shape's
@@ -5193,7 +5192,11 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # there to check.
     displaced = ""
     if shares_of(current):
-        top = ", ".join(f"{g.get('group')} {g.get('pct')}%" for g in current[:3])
+        # A group the source names without a share is named alone: Ireland's
+        # English, beside Irish 37.7%, read "English None%".
+        top = ", ".join(f"{g.get('group')} {g.get('pct')}%"
+                        if isinstance(g.get("pct"), (int, float)) else str(g.get("group"))
+                        for g in current[:3])
         displaced = (f" Replaces a separately published figure for the unit "
                      f"({top}), which is kept here as the only independent "
                      f"check on this sum.")
@@ -7157,6 +7160,195 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"(\bwas carved out of it\. The shape drawn here keeps about \d+% of [^.]*?), and the rest is now in those districts\."), r"\1, and the rest is now in that district."),
     # quotes-small: NEW, missed variant of the MOZ missing article: LVA median_age_note 'from Central Statistical Bureau of Latvia, IRD041's count of residents by single 
     (re.compile(r"\bfrom Central Statistical Bureau of Latvia, (IRD\d+)'s count of residents by single year of age (?:on|at) the beginning of (\d{4});"), r"from the Central Statistical Bureau of Latvia's count (table \1) of residents by single year of age at the beginning of \2;"),
+    # Round 7's review, continued (build-words, grammar).
+    # build-words: COL ethnicity_note: 'The same workbook carries a second sheet naming 124 individual indigenous peoples, and it is not read.' (workbook, sheet, read)
+    (re.compile(r"\bThe same workbook carries a second sheet naming (\d+) individual indigenous peoples, and it is not read\."), r"A second table in the same release names \1 individual indigenous peoples; it is not shown here."),
+    # build-words: COL ethnicity_note: 'which is the sheet's own published universe of people who answered the question' (sheet)
+    (re.compile(r"\bwhich is the sheet's own published universe\b"), r"which is the table's own published universe"),
+    # build-words: TWN language_note: 'The census also recorded a secondary language, which is not read' (and the admin1 variant ending ': Hokkien is the second language
+    (re.compile(r"\b(The census also recorded a secondary language), which is not read\b"), r"\1, which is not shown here"),
+    # build-words: AFG ethnicity_note: '...as the English Wikipedia article ... transcribes them; the plan itself is not read here' (e.g. 17698898B14779938213850 Acheen)
+    (re.compile(r"\bthe plan itself is not read here\b"), r"the plan itself has not been consulted here"),
+    # build-words: IND Palghar scheduled_groups.note: 'published by sub-district in the primary census abstract, which is not read here'
+    (re.compile(r"\b(published by sub-district in the primary census abstract), which is not read here\b"), r"\1, which is not used here"),
+    # build-words: ESS religion/language notes: 'a census or register count replaces this estimate wherever one is read' (AUT/BEL/DEU/DNK/ESP/FRA/GRC/ITA/SWE...)
+    (re.compile(r"\b(a census or register count replaces this estimate wherever one) is read\b"), r"\1 has been found"),
+    # build-words: MYS population/ethnicity notes: 'so Sarawak's/Sabah's districts are read at 2024-01-01, the latest date whose districts are the map's'
+    (re.compile(r"\b(districts are) read at (\d{4}-\d{2}-\d{2})\b"), r"\1 shown as at \2"),
+    # build-words: MDA Bender/Transnistria religion.note and language.note: 'Not read: no census that counted Bender has published its religious affiliation.'
+    (re.compile(r"\bNot read: no census\b"), r"No census"),
+    # build-words: MDA Transnistria ethnicity.note: 'Not read as one figure: the sum of Transnistria's seven left-bank rows of its own 2015 census'
+    (re.compile(r"\bNot read as one figure: the sum of\b"), r"This is not one published figure but the sum of"),
+    # build-words: IRN language.note: 'N settlement estimate(s) could not be read as shares ...' and 'whose estimate could not be read as shares: its shares add to 80%, 
+    (re.compile(r"\bcould not be read as shares\b"), r"could not be used as shares"),
+    # build-words: IRN language.note: '... and was/were refused rather than guessed at' (refused as a build action)
+    (re.compile(r"\b(was|were) refused rather than guessed at\b"), r"\1 left out rather than guessed at"),
+    # build-words: BTN gewog median_age.note: 'no All Chiwogs block under the gewog's name could be read in the report's Table A2.7'
+    (re.compile(r"\b(no All Chiwogs block under the gewog's name) could be read in\b"), r"\1 could be found in"),
+    # build-words: Provenance ', read from ...' (THA gap_reason 'read from its provincial final reports', IRN 'read from the Internet Archive's capture of amar.org.ir', 
+    (re.compile(r"(?:^|(?<=, ))read from\b"), r"taken from"),
+    # build-words: Provenance 'Read from ...' opening a sentence: KAZ 'Read from the Bureau's workbook.', ESP 'Read from the CEO's anonymised microdata ...', ESP Caceres
+    (re.compile(r"\bRead from\b"), r"Taken from"),
+    # build-words: GBR (Scotland) religion/language notes: 'England and Wales are read from the 2021 census, so a comparison across the border spans ten years.'
+    (re.compile(r"\bEngland and Wales are read from the (\d{4}) census\b"), r"The figures for England and Wales are from the \1 census"),
+    # build-words: CHN county population_note: '..., Table 1-1, read for the polygon because the polygon is still this one county'
+    (re.compile(r"\bread for the polygon because\b"), r"shown on the polygon because"),
+    # build-words: SOM population.note: 'Read for every region from the one table, because several articles print figures that table does not give.'
+    (re.compile(r"\bRead for every region from the one table\b"), r"Taken for every region from the one table"),
+    # build-words: COD/MOZ population.note: 'The population statistics and language data read for the DRC count its people within ...' and 'The population statistics rea
+    (re.compile(r"\b(The population statistics(?: and language data)?) read\b(?= (?:for the DRC|count))"), r"\1 used"),
+    # build-words: SYC La Digue religion.note: 'The survey figures read for La Digue and Inner Islands, Afrobarometer's region, describe the whole district'
+    (re.compile(r"\bThe survey figures read for\b"), r"The survey figures for"),
+    # build-words: MNG soum sex_ratio_note: 'it is the office's count, read as published, and the table says nothing of why'
+    (re.compile(r"\b(it is the office's count), read as published,"), r"\1 as published,"),
+    # build-words: BTN dzongkhag median_age_note: '...; the median reads the totals.'
+    (re.compile(r"\bthe median reads the totals\b"), r"the median uses the totals"),
+    # build-words: LVA Madona/Varaklani median_age_note: 'Madona and Varaklani merged on 1 July 2025 and are drawn apart, so both are read before the merger.'
+    (re.compile(r"\bso both are read before the merger\b"), r"so both are shown as they were before the merger"),
+    # build-words: KHM province religion_note: '...transcribes the 2008 and 2019 census tables by province; the 2019 columns are read.'
+    (re.compile(r"; the (\d{4}) columns are read\."), r"; the \1 columns are used."),
+    # build-words: IRN language.note: 'The atlas's module for Khuzestan is read and the province carries its figure, but ...' and admin1 Kermanshah 'The atlas's module f
+    (re.compile(r"\b(The atlas's module for [^.,;:]+?) is read\b"), r"\1 is published"),
+    # build-words: IRN Rasht / Aran and Bidgol language.note: 'The atlas's settlements in Rasht that carry a population and a reading hold 272,266 people'
+    (re.compile(r"\bthat carry a population and a reading hold\b"), r"that carry a population and a language estimate hold"),
+    # build-words: IND district median_age.note (one parent district): 'The 2011 row that counted these people covers the undivided X. That row is on this map, on the sh
+    (re.compile(r"\bThe (\d{4}) row that counted these people covers the undivided ([^.]+?)\. That row is on this map, on the shape that still bears that name -- now only the part left after this district was carved out, which the note on it says -- so the count exists and is for more ground than that shape covers\."), r"The \1 census counted these people in the undivided \2, so the count exists, but it is for more ground than the shape on this map that still bears that name -- now only the part left after this district was carved out, which the note on it says."),
+    # build-words: IND district median_age.note (two or three parent districts, 8 texts: Amethi, Batod, Kamle, Lower Siang, Mahisagar, Morbi, Shahdara, Siang): the same 
+    (re.compile(r"\bThe (\d{4}) row that counted these people covers the undivided ([^.]+?)\. That row is on this map, on the shape that still bears those names -- now only the part left after this district was carved out, which the note on it says -- so the count exists and is for more ground than that shape covers\. It is not repeated here:"), r"The \1 census counted these people in the undivided \2, so the counts exist, but they are for more ground than the shapes on this map that still bear those names -- now only the parts left after this district was carved out, which the notes on them say. They are not repeated here:"),
+    # build-words: IND Jangaon/Jayashankar/Mahabubabad/... median_age.note: 'so the 2011 row covering this ground is on no district on this map either; the state total c
+    (re.compile(r"\bthe (\d{4}) row covering this ground is on no district on this map either\b"), r"the \1 count covering this ground is shown on no district on this map either"),
+    # build-words: IND shrunken-district notes: 'This figure is for X as the 2011 census measured it ... The shape drawn here keeps about 25% of the ground that row coun
+    (re.compile(r"\bof the ground that row counted\b"), r"of the ground that figure covers"),
+    # build-words: BHS island ethnicity_note: 'The race question, not the citizenship question that shares its sheet.'
+    (re.compile(r"\bthe citizenship question that shares its sheet\b"), r"the citizenship question that shares its table"),
+    # build-words: UKR raion language_note/ethnicity.note: 'The Bureau's Language sheet names eight languages ...', 'The Bureau's Nationality-Language sheet has no figur
+    (re.compile(r"\b(The Bureau's (?:Nationality-)?Language) sheet\b"), r"\1 table"),
+    # build-words: UKR raion language_note: 'N of the M people (0.2%) fall in none of the sheet's columns and are shown as 'Other and unspecified''
+    (re.compile(r"\bnone of the sheet's columns\b"), r"none of the table's columns"),
+    # build-words: CAF ethnicity_note: 'so this is an ethnicity table with a foreign tail rather than the nationality table Syria's sheet turned out to be'
+    (re.compile(r"\brather than the nationality table Syria's sheet turned out to be\b"), r"rather than a nationality table like Syria's"),
+    # build-words: MDV atoll ethnicity_note: 'publishes no breakdown of foreigners by country in its atoll sheet'; admin0 MDV ethnicity.note: 'for every atoll and island
+    (re.compile(r"\b((?:\d{4} )?atoll) sheet\b"), r"\1 table"),
+    # build-words: SYR admin0 ethnicity.note: 'the 2004 sheet labelled Ethnicity is a distribution by nationality, which is citizenship'
+    (re.compile(r"\bthe (\d{4}) sheet labelled Ethnicity\b"), r"the \1 table labelled Ethnicity"),
+    # build-words: 'written' as the build writing a figure onto a unit: 'so no share is written below the province' (IRN), 'so no etrap's figure is written' (TKM), 'noth
+    (re.compile(r"\b((?:[Nn]o|[Nn]either)\b[\w' ]{0,40}?|[Nn]one|[Nn]othing|those counts) (is|are) written\b(?! as\b| together\b)"), r"\1 \2 shown"),
+    # build-words: KHM Preah Sihanouk / Kampong Seila population and sex_ratio notes: '...so a district's figure from those tables would understate it by as much, and is
+    (re.compile(r"\bwould understate it by as much, and is not written\."), r"would understate it by as much, and is not shown."),
+    # build-words: YEM Hadhramaut/Socotra population.note: 'Its nationality, published only for the census's row, is not written.'
+    (re.compile(r"\b(Its nationality, published only for the census's row,) is not written\."), r"\1 is not shown."),
+    # build-words: VNM province ethnicity_note: 'Religion is not written: the volume's Table 3 gives it for the country only.' (the provinces do show religion, from the 
+    (re.compile(r"\bReligion is not written: the volume's Table (\d+) gives it for the country only\."), r"Religion is not taken from this volume: its Table \1 gives it for the country only."),
+    # build-words: CHN CFPS religion_note: '...for which the survey supports province-level inference; the other provinces are not written.'
+    (re.compile(r"; the other provinces are not written\."), r"; its figures for the other provinces are not shown."),
+    # build-words: PAK province religion_note: 'The two are the same figure -- the run checks that every district adds up to this exactly -- but ..., which a sum of what
+    (re.compile(r"\b(The two are the same figure) -- the run checks that every district adds up to this exactly -- (but the printed row also covers the districts geoBoundaries has no shape for), which a sum of what landed on the map would silently leave out\."), r"\1 -- the districts add up to it exactly -- \2, which a sum of the districts drawn on the map would silently leave out."),
+    # build-words: AFG district ethnicity.note: '...or is archived or transcribed under a name or a province the map does not match to this polygon.'
+    (re.compile(r"\bunder a name or a province the map does not match to this polygon\b"), r"under a name or a province that could not be tied to this polygon"),
+    # build-words: ETH notes: 'so this is the most recent measurement in existence, not the most recent available to this project' (owner wording)
+    (re.compile(r"\bnot the most recent available to this project\b"), r"not merely the most recent one found for this map"),
+    # build-words: PNG province religion_note: '...and no denominational breakdown for any province is online anywhere this project could reach' (owner wording)
+    (re.compile(r"\bis online anywhere this project could reach\b"), r"has been found online"),
+    # build-words: NEW: PAK Gilgit-Baltistan population_note (GB and its ten districts) and GB language_note: 'the Bureau publishes no census table for it at any path' /
+    (re.compile(r"\b(publishes no (?:census|mother-tongue) table for (?:it|Gilgit-Baltistan)) at any path\b"), r"\1 on its website"),
+    # build-words: NEW: PAK Azad Kashmir and Gilgit-Baltistan median_age.note and sex_ratio.note: '-- the four provinces and Islamabad have it, at every path the office 
+    (re.compile(r", at every path the office files it under, and these two do not\."), r", wherever the office publishes it, and these two do not."),
+    # grammar: Nordic/Baltic age template, offices with an abbreviation (NOR, SWE): '{source}, {table}'s count' -- 'from Statistics Norway (SSB), table 07459's count
+    (re.compile(r"\bfrom (Statistics [A-Z][a-z]+) \(([A-Z]{2,4})\), (?:table )?([A-Za-z0-9]+)'s count of residents by single year of age on (\d{1,2} [A-Z][a-z]+ \d{4});"), r"from \1's count (\2, table \3) of residents by single year of age on \4;"),
+    # grammar: Nordic age template, offices without an abbreviation (DNK, EST, FIN, ISL): '{source}, {table}'s count' -- 'from Statistics Denmark, FOLK1A's count of 
+    (re.compile(r"\bfrom (Statistics [A-Z][a-z]+), (?:table )?([A-Za-z0-9]+)'s count of residents by single year of age on (\d{1,2} [A-Z][a-z]+ \d{4});"), r"from \1's count (table \2) of residents by single year of age on \3;"),
+    # grammar: LVA admin1, same template: 'Registered residents on the beginning of 2026.' and 'Males per 100 females among residents on the beginning of 2026 (...)'
+    (re.compile(r"\b(Registered residents|Males per 100 females among residents) on (the beginning of \d{4})\b"), r"\1 at \2"),
+    # grammar: ARG department ethnicity notes: a sentence starts in lower case after a full stop -- '... so the department's indigenous population is one line. the c
+    (re.compile(r"(?<=\. )the census asks nothing about European or mestizo ancestry\."), r"The census asks nothing about European or mestizo ancestry."),
+    # grammar: VNM district population notes repeat the source: 'The 2019 census: the 2019 census's count of An Biên (district), Kiên Giang (Table 1).'
+    (re.compile(r"\bThe (\d{4}) census: the \1 census's count of\b"), r"The \1 census's count of"),
+    # grammar: IRQ district population notes: a census unit's bracketed second name is left unclosed -- 'Akd (Al-Daggara (89,503)', 'Al-Multaqa (Mullah Abdullah (Kir
+    (re.compile(r"(?<=[\w'-]) \(([A-Z][\w'-]*(?:[ -][A-Za-z][\w'-]*)*) \((?=[\d,]+\)[,.]|[A-Z][\w'-]*\) \([\d,]+\)[,.])"), r" (\1) ("),
+    # grammar: Redrawn second-level units drawn as 2 features with the same label: 'geoBoundaries draws ARAD as 2 features, one of them labelled 'ARAD'' says nothing
+    (re.compile(r"\bgeoBoundaries draws ([^.;']+?) as 2 features, one of them labelled '\1';"), r"geoBoundaries draws \1 as 2 features, both labelled '\1';"),
+    # grammar: Redrawn units drawn as 3+ features: one feature given several labels -- 'geoBoundaries draws VLAHITA as 6 features, one of them labelled 'VLAHITA' and
+    (re.compile(r"\bgeoBoundaries draws ([^.;']+?) as (\d+) features, one of them labelled '\1'(?: and '\1')+;"), r"geoBoundaries draws \1 as \2 features, all labelled '\1';"),
+    # grammar: The same slip with two different labels: 'geoBoundaries draws Opicina Pirovac as 3 features, one of them labelled 'Opicina Muter-Kornati' and 'Otok Ko
+    (re.compile(r"\bgeoBoundaries draws ([^.;']+?) as 3 features, one of them labelled (?!'\1' and '\1';)('[^']*' and '[^']*');"), r"geoBoundaries draws \1 as 3 features, two of them labelled \2;"),
+    # grammar: BOL Cercado parts: a list with no 'and' -- 'geoBoundaries draws the Cercado provinces of Beni, Cochabamba, Oruro, Tarija as one feature'
+    (re.compile(r"(\bgeoBoundaries draws the [^.;]*? provinces of [^.;]*?), ((?:(?! and )[^,.;])+?) as one feature;"), r"\1 and \2 as one feature;"),
+    # grammar: ALB former districts: 'the 8 municipalities and communes of 2011 that made up the one made up the other' (a sentence that reads as a stutter)
+    (re.compile(r"\bthe (\d+) municipalities and communes of 2011 that made up the one made up the other\."), r"the two are made up of the same \1 municipalities and communes of 2011."),
+    # grammar: GHA: doubled word 'Cape Cape Metropolitan Area' in 'The 2021 census's count for Cape Cape Metropolitan Area (CCMA).'
+    (re.compile(r"\bCape Cape Metropolitan Area\b"), r"Cape Coast Metropolitan Area"),
+    # grammar: AFG Sari Pul ethnicity note: doubled word 'for Saripul Saripul Center district, Sar-E-Pul province'
+    (re.compile(r"\bfor Saripul Saripul Center district\b"), r"for Saripul Center district"),
+    # grammar: ROU Bucharest sectors: a source note that is a lower-case fragment with no full stop -- 'the city's median, the check'
+    (re.compile(r"^the city's median, the check$"), r"Gives the census's ages for the city as a whole, the check on the domicile figures."),
+    # grammar: Admin0 Factbook gap notes: no article, no full stop -- 'Factbook reports free text only: Hutu, Tutsi, Twa, South Asian'
+    (re.compile(r"^Factbook reports free text only: (.*(?:\.\.\.|[^.\s]))\s*$"), r"The CIA World Factbook gives only the words “\1”."),
+    # grammar: Admin0 largest-settlement gap notes: no article before the source -- 'Factbook lists no major urban areas for this entity.'
+    (re.compile(r"^Factbook lists no major urban areas\b"), r"The CIA World Factbook lists no major urban areas"),
+    # grammar: '1 people whose age was not stated/known/declared are left out' (UKR raions, WSM districts, PAN)
+    (re.compile(r"(?<![\d,.])\b1 people whose age was not (stated|known|declared) are left out\b"), r"1 person whose age was not \1 is left out"),
+    # grammar: LCA settlements with one person: 'the 1 people the 2010 base holds in the settlement' (median age, ethnicity, religion and sex-ratio notes)
+    (re.compile(r"(?<![\d,.])\bthe 1 people the\b"), r"the 1 person the"),
+    # grammar: LCA one-person settlements: 'The 2010 count here has 1 men and 0 women'
+    (re.compile(r"\bhas 1 men and 0 women\b"), r"has 1 man and 0 women"),
+    # grammar: LCA one-person settlements: 'The 2010 count here has 0 men and 1 women'
+    (re.compile(r"\bhas 0 men and 1 women\b"), r"has 0 men and 1 woman"),
+    # grammar: GEO regions: '1 categories are suppressed in this region'
+    (re.compile(r"(?<![\d,.])\b1 categories are suppressed\b"), r"1 category is suppressed"),
+    # grammar: GEO: '(1 people)' after the suppressed-categories sentence
+    (re.compile(r"\(1 people\)"), r"(1 person)"),
+    # grammar: CHN counties: ''Other ethnic groups' is the 1 people whose nationality is not identified (未定族称) ...'
+    (re.compile(r"(?<![\d,.])\bthe 1 people whose nationality is not identified\b"), r"the 1 person whose nationality is not identified"),
+    # grammar: FSM Kolonia religion note: 'the 1 people in those cells (0.0%) are left out'
+    (re.compile(r"(?<![\d,.])\bthe 1 people in those cells (\([^()]*\)) are left out\b"), r"the 1 person in those cells \1 is left out"),
+    # grammar: LTU Rokiškis language note: '1 people are in cells the office withholds as confidential, and are counted in 'Other language''
+    (re.compile(r"(?<![\d,.])\b1 people are in cells the office withholds as confidential, and are counted in\b"), r"1 person is in a cell the office withholds as confidential, and is counted in"),
+    # grammar: CHE districts with a single commune: 'summed over the 1 communes of today that lie wholly within this unit'
+    (re.compile(r"(?<![\d,.])\bthe 1 communes of today that lie wholly within\b"), r"the 1 commune of today that lies wholly within"),
+    # grammar: FIN sub-regions: 'So are the 1 languages each spoken by under 0.05% of the sub-region (12 people in all).'
+    (re.compile(r"\bSo are the 1 languages each spoken by\b"), r"So is the 1 language spoken by"),
+    # grammar: IRN Gilan shahrestans: '1 places the atlas records as uninhabited carry no language and are excluded.'
+    (re.compile(r"(?<![\d,.])\b1 places the atlas records as uninhabited carry no language and are excluded\b"), r"1 place the atlas records as uninhabited carries no language and is excluded"),
+    # grammar: SLB South Vella la Vella: 'Its 1 wards: Vonunu.'
+    (re.compile(r"\bIts 1 wards:"), r"Its 1 ward:"),
+    # grammar: WSM districts with one listed village: 'The 2021 Census counts of the 1 villages the 2016 Census lists in Gagaemauga I on Upolu: Leauvaa.'
+    (re.compile(r"\bCensus counts of the 1 villages the\b"), r"Census count of the 1 village the"),
+    # grammar: USA District of Columbia religion note: 'Summed from the 1 counties PRRI publishes, ... so this is those counties' weighted mean'
+    (re.compile(r"\bSummed from the 1 counties PRRI publishes, weighted by PRRI's own adult population -- the denominator its county shares are already expressed over, so this is those counties' weighted mean rather than a separate estimate\."), r"Taken from the 1 county PRRI publishes, so this is that county's own figure rather than a separate estimate."),
+    # grammar: BTN gewogs with one non-citizen: '1,561 are Bhutanese (its Table 2.2) and 1 are not'
+    (re.compile(r"(\(its Table 2\.2\) and 1) are not\b"), r"\1 is not"),
+    # grammar: WSM districts with one foreign national: ''Foreign nationals' the 1 who are not.'
+    (re.compile(r"(?<![\d,.])\bthe 1 who are not\."), r"the 1 who is not."),
+    # grammar: BTN gewog with one non-citizen in the sex-ratio note: '1 of the 250 is not Bhutanese citizens (Table 2.2)'
+    (re.compile(r"\b(1 of the [\d,]+ is not) Bhutanese citizens\b"), r"\1 a Bhutanese citizen"),
+    # grammar: BTN Naro sex-ratio note: '1 of the 250 is not Bhutanese citizens (Table 2.2), 1 of them male and 0 female.'
+    (re.compile(r"\b(1 of the [\d,]+ is not) (?:a Bhutanese citizen|Bhutanese citizens) \(Table 2\.2\), 1 of them male and 0 female\."), r"\1 a Bhutanese citizen (Table 2.2), and is male."),
+    # grammar: VEN ethnicity notes with one indigenous person: '1 of the 2,155 people here do, and each people is its own line'
+    (re.compile(r"(?<![\d,.])\b1 of the ([\d,]+) people here do\b"), r"1 of the \1 people here does"),
+    # grammar: ESS (European Social Survey) notes with one non-respondent: '(1 refused, did not know or did not answer and are left out)'
+    (re.compile(r"\(1 refused, did not know or did not answer and are left out\)"), r"(1 refused, did not know or did not answer and is left out)"),
+    # grammar: PRY religion note: '4,156 people of that age answered here; 1 gave no answer and are left out.' (the same template in latvia.py: 'the other N gave no 
+    (re.compile(r"(?<![\d,.])\b1 gave no answer and are left out\b"), r"1 gave no answer and is left out"),
+    # grammar: PAK district sex-ratio notes: 'The 1 transgender persons the census counted are in the population and in neither figure.'
+    (re.compile(r"\b([Tt]he) 1 transgender persons the census counted are in\b"), r"\1 1 transgender person the census counted is in"),
+    # grammar: MHL atoll religion and ethnicity notes: 'the 1 counted in its institutions -- boarding schools, hospitals, hostels -- are in neither table.'
+    (re.compile(r"(?<![\d,.])\bthe 1 counted in its institutions -- boarding schools, hospitals, hostels -- are in neither table\b"), r"the 1 counted in its institutions -- boarding schools, hospitals, hostels -- is in neither table"),
+    # grammar: SLV ethnicity note: '1 did not know or did not say whether they are indigenous and are left out of the shares.'
+    (re.compile(r"(?<![\d,.])\b1 did not know or did not say whether they are indigenous and are left out\b"), r"1 did not know or did not say whether they are indigenous and is left out"),
+    # grammar: CHN county notes: '(1 of 内蒙古阿拉善经济开发区's 1 townships has no point to place it by (乌斯太镇))' -- a zone with a single township
+    (re.compile(r"\b1 of ([^;()]+?)'s 1 townships has no point to place it by\b"), r"\1's only township has no point to place it by"),
+    # grammar: AFG Parwan population note: a space inside a bracket -- 'Sia Gird ( Ghorbund)'
+    (re.compile(r"\bSia Gird \( Ghorbund\)"), r"Sia Gird (Ghorbund)"),
+    # grammar: GMB (2) and SYC (1) source notes begin in lower case with build wording: 'read from the Internet Archive's copy, https://web.archive.org/...'
+    (re.compile(r"^(?:read|taken) from the Internet Archive's copy, "), r"Taken from the Internet Archive's copy, "),
+    # grammar: DNK religion notes print the year twice: '(FOLK1A 2026K1; the population shown here is of 1 July 2026 2026)'
+    (re.compile(r"\b(the population shown here is of \d{1,2} [A-Z][a-z]+ (\d{4})) \2\)"), r"\1)"),
+    # grammar: VNM Côn Đảo (admin1) median-age and ethnicity gap notes: a capital after a semicolon -- '..., drawn at the first level; The 2019 census publishes ages
+    (re.compile(r"\b(drawn at the first level); The (\d{4}) census\b"), r"\1; the \2 census"),
+    # grammar: TON Niuas (admin1) population note: a capital after a semicolon -- '(General Table G 1); The map draws Niuafo'ou alone for the Niuas'
+    (re.compile(r"(\(General Table G 1\);) The (map|boundary file) draws\b"), r"\1 the \2 draws"),
+    # grammar: KAZ district notes: a list of two or three units with no 'and' -- 'holds Улытауский район and also Жезказган г.а., Сатпаев г.а., which the map does no
+    (re.compile(r"(\band also (?:[^,;]+, )*?[^,;]+), ((?:(?! and )[^,;])+), (which the (?:map|boundary file) does not draw apart)"), r"\1 and \2, \3"),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
