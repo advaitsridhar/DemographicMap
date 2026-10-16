@@ -590,12 +590,26 @@ def drawn_index(iso3: str):
 
 
 def join(row: dict, iso3: str):
-    """What the build's second-level matcher does with one adapter row."""
+    """What the build's matcher for the row's level does with one adapter row.
+
+    A first-level row goes to the first-level shapes, as in the build: Huế's
+    Wikidata row (wikidata_admin1.json) is the province Thừa Thiên Huế, and
+    the second-level matcher would hand it Huế city's district instead.
+    """
     a2, a1, a1_exact, names = drawn_index(iso3)
     key = {"name": row.get("name") or "", "aliases": row.get("aliases") or [],
            "parent_name": row.get("parent_name"),
            "parent_aliases": row.get("parent_aliases") or [],
            "point": be.row_point(row)}
+    if row.get("level") == "admin1":
+        admin1 = [dict(u, name=u.get("shape_name") or u["name"])
+                  for (level, _), u in shapes(iso3).items() if level == "admin1"]
+        by_key: dict = {}
+        for e in admin1:
+            by_key.setdefault(be.norm(e["name"]), []).append(e)
+        be.add_known_as(by_key, admin1)
+        entity, how = be.match_name(key, be.settle(by_key, [key["name"], *key["aliases"]]))
+        return entity, how, names
     entity, how = be.match_admin2(key, a2, a1, a1_exact)
     return entity, how, names
 
