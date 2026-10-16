@@ -380,6 +380,17 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             by_code[district.zfill(3)] = shape
     lost = lost_territory()
     lost_keys = {(fold(s), fold(d)): v for (s, d), v in lost.items()}
+    # A district india_census splits by tehsil (TEHSIL_SPLITS: Thane, which
+    # Palghar was cut from) carries on its shape only the tehsils it kept, and
+    # the district made of the others carries theirs: the two together are the
+    # C-13 row, which is what the binding check below compares.
+    split_off: dict[tuple[str, str], int] = collections.Counter()
+    for (_, split_name), split in TEHSIL_SPLITS.items():
+        shape = next((s for s in shapes2
+                      if fold(s.get("site_name") or s.get("name")) == split_name), None)
+        counted = census_population(shape) if shape else None
+        if counted is not None:
+            split_off[(split["state_code"], split["district_code"])] += counted
     main: list[dict[str, Any]] = []
     successors: list[dict[str, Any]] = []
     tally = collections.Counter()
@@ -405,6 +416,8 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             tally["2011 district with no shape (subdivided since)"] += 1
             continue
         counted = census_population(shape)
+        if counted is not None:
+            counted += split_off.get((state, district), 0)
         if counted is not None and counted != unit["total"][0]:
             raise SystemExit(
                 f"india_ages: {name} (code {district}) has {unit['total'][0]:,} "
