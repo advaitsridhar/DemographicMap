@@ -550,7 +550,7 @@ class ParentsFromNewerDivisions(unittest.TestCase):
         self.assertEqual(parent["population"]["value"], 860_000)
         self.assertEqual(parent["population"]["year"], 2024)
         self.assertEqual(parent["population"][be.RESTATED_FROM]["value"], 760_000)
-        self.assertIn("It replaces 760,000 for 2015, an older figure from Lao Statistics "
+        self.assertIn("It replaces 760,000 for 2015, an older figure from the Lao Statistics "
                       "Bureau.", parent["population_note"])
         self.assertEqual([s["name"] for s in parent["sources"]], [OCHA])
 
@@ -583,7 +583,7 @@ class ParentsFromNewerDivisions(unittest.TestCase):
         self.promoted(a1, parent, 800_000, 2020)
         be.restate_encyclopaedia_parents(a1, a2, counts=True)
         self.assertEqual(parent["population"]["value"], 860_000)
-        self.assertIn("It replaces 760,000 for 2015, an older figure from Lao Statistics "
+        self.assertIn("It replaces 760,000 for 2015, an older figure from the Lao Statistics "
                       "Bureau.", parent["population_note"])
         self.assertEqual(parent["population"][be.RESTATED_FROM]["value"], 760_000)
 

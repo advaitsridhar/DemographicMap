@@ -4516,6 +4516,27 @@ def named_figure(pop: Any) -> str:
             + (f" ({check_rollups.short_source(source)})" if source else ""))
 
 
+# A source named for what it is takes "the" after "from": Maputo's note read
+# "an older figure from 2017 census of Mozambique", and Laos's provinces
+# "from Lao Statistics Bureau". A name of its own -- Eurostat, INEGI,
+# Statistik Austria, Wikidata, OCHA's common operational dataset -- takes none.
+SOURCE_TAKES_THE = re.compile(
+    r"^\d{4}(?!\d)|^[A-Z][\w.&'-]*(?: [A-Z][\w.&'-]*)* of "
+    r"|(?i:(?<![\w-])(?:agency|authority|board|bureau|census|cent(?:re|er)|commission|"
+    r"committee|community|council|department|directorate|division|factbook|institute|"
+    r"ministry|office|organi[sz]ation|questionnaire|report|service|survey)(?![\w-]))")
+
+
+def named_source(source: str) -> str:
+    """A source as a sentence names it after "from": check_rollups.short_source,
+    with "the" where the name needs one ("the Lao Statistics Bureau")."""
+    name = check_rollups.short_source(source)
+    if (not re.match(r"[A-Z0-9]", name) or name.startswith("The ")
+            or re.search(r"['’]s ", name)):
+        return name
+    return f"the {name}" if SOURCE_TAKES_THE.search(name) else name
+
+
 def control_population(entity: dict[str, Any]) -> Any:
     """The population a country's sum of its first level is gated on.
 
@@ -5624,7 +5645,7 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                           else pop)
             was_value = published(counted_as) if published(counted_as) is not None else own
             was_year = vintage(counted_as) if counted_as is not pop else own_year
-            was = check_rollups.short_source(str(counted_as.get("source") or ""))
+            was = named_source(str(counted_as.get("source") or ""))
             said_before = " ".join(str(text or "") for text in (
                 parent.get("population_note"), pop.get("note")))
             ground = RESTATED_GROUND.get((iso3, name))
@@ -5649,7 +5670,7 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                 every = "both" if summed["n"] == 2 else f"all {summed['n']}"
                 parent["population_note"] = (
                     f"The sum of {every} divisions drawn inside it, which all carry "
-                    f"figures for {year} from {check_rollups.short_source(source)}. It "
+                    f"figures for {year} from {named_source(source)}. It "
                     f"replaces {was_value:,.0f}"
                     + (f" for {was_year}, an older figure from {was}." if was_year else
                        f" from {was}, which gives no year for it."))
@@ -6721,8 +6742,13 @@ def say_why_empty(entity: dict[str, Any], country: str,
     Returns which case applied, for the build log to count, or None.
     """
     case = None
-    # "The Gambia" and "The Bahamas" mid-sentence.
+    # "The Gambia" and "The Bahamas" mid-sentence, and "the" before a name
+    # that takes one: "the units of the DRC", "of the United States".
     country = re.sub(r"^The ", "the ", country)
+    if re.search(r"^(?:United |Central African |Federated |Holy See\b|Isle of )"
+                 r"|^(?:Comoros|DRC|Maldives|Netherlands|Philippines)$|\bIslands(?: \(|$)",
+                 country):
+        country = f"the {country}"
     for field in COMPOSITION_FIELDS:
         value = entity.get(field)
         if not (isinstance(value, dict) and value.get("status")
@@ -6746,10 +6772,14 @@ def say_why_empty(entity: dict[str, Any], country: str,
             # field there is false, and false in the direction that hides the
             # miss.
             carriers = reach["sources"]
+            # Named as a sentence names them, at its start: "The U.S. Census
+            # Bureau gives it", "The European Social Survey gives it".
+            named = [named_source(name) for name in carriers]
+            named[0] = named[0][:1].upper() + named[0][1:]
             note = FIELD_ELSEWHERE.format(
-                field=field, carriers=listed(carriers),
+                field=field, carriers=listed(named),
                 give="give" if len(carriers) > 1 else "gives",
-                n=reach["n"], country=country, units=joined["units"])
+                n=f"{reach['n']:,}", country=country, units=f"{joined['units']:,}")
             case = "others at this level carry it"
         elif entity.get("match"):
             sources = listed(cited_names(entity.get("sources", [])))
@@ -7102,6 +7132,31 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\bfrom the public-release file\b"), r"from the public-release data"),
     # files-joins: NEW: CHN CFPS religion_note (5 texts / 5 records): 'The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report'
     (re.compile(r"\bThe same reading of the (\d{4}) file\b"), r"The same tabulation of the \1 wave"),
+    # Round 7's review, continued (quotes-small).
+    # quotes-small: NLD religion_note: raw Wikipedia link markup and cut-off archive link (CBS 2016 release; 10 provinces incl. Flevoland, Fryslân, Gelderland)
+    (re.compile(r"Cited to: \[https?://\S+ ([^\]]+)\], CBS, (\d{1,2}) december (\d{4})\.(?: \[https?://[^\s\]]*\.(?= ))?"), r'Cited to: CBS, "\1", \2 December \3.'),
+    # quotes-small: NLD religion_note: raw, garbled Wikipedia citation with a cut-off date (Limburg, Noord-Brabant)
+    (re.compile(r"Cited to: \[https?://www\.cbs\.nl/-/media/_excel/2026/11/religie_2025_tabellen\.xlsx [^\]]*\] CBS, \d{1,2}\. \w+(?: \d+)?\."), r'Cited to: CBS, "Religie naar regio, 2021/2025", table 2 (the share of each religious group among people aged 15 and over, by province and region).'),
+    # quotes-small: BLR population_note/sex_ratio_note with untransliterated Cyrillic: single raion or city (same sentence as the 11 records, other variant)
+    (re.compile(r"(?<=\.) The (?:г\.)?[А-яЁё][А-яЁё-]*(?: район)? as the 2019 census counted it\."), r""),
+    # quotes-small: BLR raion population_note/sex_ratio_note with untransliterated Cyrillic: raion plus its seat city (Babruysk, Baranovichy, Brest, Gomel, Grodno, Mogile
+    (re.compile(r"The г\.[А-яЁё][А-яЁё-]*, [А-яЁё][А-яЁё-]* район as the 2019 census counted it; with it the city of ([A-Z][\w'-]*(?: [A-Z][\w'-]*)*), the raion's seat, counted apart\."), r"The 2019 census counted \1 raion and the city of \1, its seat, separately; the figures here add the two together."),
+    # quotes-small: BLR raion population_note/sex_ratio_note with untransliterated Cyrillic: raion plus a city that is no raion's seat (Barysaw with Zhodzina, Polotsk wit
+    (re.compile(r"The г\.[А-яЁё][А-яЁё-]*, [А-яЁё][А-яЁё-]* район as the 2019 census counted it; with it the city of ([A-Z][\w'-]*(?: [A-Z][\w'-]*)*), counted apart and drawn inside this polygon \(its centre lies in it\)\."), r"The 2019 census counted this raion and the city of \1 separately; the city's centre lies inside this outline, so the figures here add the two together."),
+    # quotes-small: BLR Horki population_note/sex_ratio_note: two Cyrillic raion names (Горецкий, Дрибинский)
+    (re.compile(r"The Горецкий район, Дрибинский район as the 2019 census counted it; with it Дрибинский район, formed from Horki raion in (\d{4}), which the map draws as part of this polygon\."), r"The 2019 census counted Horki raion and Drybin raion separately; Drybin raion was formed from Horki raion in \1, the map draws it as part of this outline, and the figures here add the two together."),
+    # quotes-small: OMN region population.note '(of the governorates Dhofar)': one governorate
+    (re.compile(r"(?<=in this region )\(of the governorates (?!of )([^,()]+)\)"), r"(of the governorate of \1)"),
+    # quotes-small: OMN region population.note '(of the governorates A, B)': several governorates
+    (re.compile(r"(?<=in this region )\(of the governorates (?!of )([^()]+), ([^,()]+)\)"), r"(of the governorates of \1 and \2)"),
+    # quotes-small: KOR North Gyeongsang median_age_note 'those districts included' after one district (Uljin-gun)
+    (re.compile(r"(The map draws [A-Z][\w-]*(?: [A-Z][\w-]*)* (?:inside [A-Z][\w-]*(?: [A-Z][\w-]*)*'s polygon|outside every province's polygon): the figures here are the register's for the whole province), those districts included,"), r"\1, that district included,"),
+    # quotes-small: KOR companion sentence, same singular/plural slip: one district drawn here 'they are counted ... files them under' (Gangwon, North Chungcheong)
+    (re.compile(r"((?:The map|It also) draws [A-Z][\w-]*(?: [A-Z][\w-]*)*'s [A-Z][\w-]*) inside this province's polygon; they are counted with the province the register files them under,"), r"\1 inside this province's polygon; it is counted with the province the register files it under,"),
+    # quotes-small: NEW, missed variant of the KOR singular/plural slip: IND district notes say 'the rest is now in those districts' after a single carved-out district (5
+    (re.compile(r"(\bwas carved out of it\. The shape drawn here keeps about \d+% of [^.]*?), and the rest is now in those districts\."), r"\1, and the rest is now in that district."),
+    # quotes-small: NEW, missed variant of the MOZ missing article: LVA median_age_note 'from Central Statistical Bureau of Latvia, IRD041's count of residents by single 
+    (re.compile(r"\bfrom Central Statistical Bureau of Latvia, (IRD\d+)'s count of residents by single year of age (?:on|at) the beginning of (\d{4});"), r"from the Central Statistical Bureau of Latvia's count (table \1) of residents by single year of age at the beginning of \2;"),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
@@ -7425,7 +7480,7 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             entity["_not_taken"] = {"shown": published(shown), "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
-                f"{check_rollups.short_source(str(best['value'].get('source') or ''))}, "
+                f"{named_source(str(best['value'].get('source') or ''))}, "
                 f"a {'rise' if rate > 0 else 'fall'} of {abs(rate):.1%} a year from the "
                 f"figure shown"
                 + (f", while the country's other units at this level given newer figures "
@@ -8331,7 +8386,15 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
             if (above and siblings[entity.get("parent")] == 1
                     and SOLE_CHILD_BAND[0] <= pop["value"] / above <= SOLE_CHILD_BAND[1]):
                 continue
-            labels = sorted({SETTLEMENT_CLASSES[k] for k, _ in kinds})
+            # Each class once, the closest: Damietta's item is a "big city"
+            # and a "city", Belmopan's a "city" and a "human settlement", and
+            # the note named both.
+            named = {SETTLEMENT_CLASSES[k] for k, _ in kinds}
+            narrow = {n for n in named
+                      if n not in ("human settlement", "city or town", "locality")} or named
+            labels = sorted(n for n in narrow
+                            if not any(o != n and (o.endswith(" " + n) or o.startswith(n + " "))
+                                       for o in narrow))
             what = (labels[0] if len(labels) == 1
                     else ", ".join(labels[:-1]) + " and " + labels[-1])
             article = "an" if what[0] in "aeiou" else "a"
@@ -10208,10 +10271,10 @@ def division_restates_parent(iso3: str, parent: dict[str, Any], child: dict[str,
     if own_year is not None and projection(theirs) \
             and year - own_year < RESTATE_PROJECTION_YEARS:
         return None
-    was = check_rollups.short_source(str(pop.get("source") or ""))
+    was = named_source(str(pop.get("source") or ""))
     return (f"{only_division(parent, child)} covers the same ground, and its figure is "
             f"shown here too, for {year} from "
-            f"{check_rollups.short_source(str(theirs.get('source') or ''))}. It replaces "
+            f"{named_source(str(theirs.get('source') or ''))}. It replaces "
             f"{own:,.0f}"
             + (f" for {own_year}, an older figure from {was}." if own_year
                else f" from {was}, which gives no year for it."))

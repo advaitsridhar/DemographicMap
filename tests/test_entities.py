@@ -969,6 +969,16 @@ class EveryBareFieldSaysWhy(unittest.TestCase):
                          "(Wikidata) gives language, and no figure has been found for this "
                          "unit. That says nothing about whether the census asks.")
 
+    def test_counts_in_the_thousands_are_written_with_separators(self):
+        # "for 3220 of the 3231 units of the United States" read as a code.
+        rows = [self.bare() for _ in range(1200)]
+        for row in rows[1:]:
+            row["match"] = "adapter:name"
+            row["religion"] = [{"group": "Christian", "pct": 70.0}]
+            row["sources"] = [{"field": "religion", "name": "Wikidata"}]
+        be.say_why_empty(rows[0], "Testland", be.joined_here(rows))
+        self.assertIn("for 1,199 of the 1,200 units of Testland", rows[0]["religion"]["note"])
+
     def test_a_unit_with_figures_of_its_own_is_not_said_to_be_missed(self):
         # Libya's Al Butnan shows Wikipedia's population: its sources give no
         # religion, and neither do its siblings'.
