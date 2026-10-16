@@ -57,8 +57,9 @@ The other three are written as gaps that say why (``REFUSED``):
 * Ochamchire and Gali -- they follow the districts as drawn before 1995 only
   roughly: since then the authorities have formed Tkvarcheli district from
   parts of both and counted others of Gal's villages in Ochamchira district,
-  and the town of Ochamchira itself lies in the polygon drawn as Gali (its
-  GeoNames and Wikidata points both, 0.4-0.5 km inside it). Gal's eight
+  and the town of Ochamchira itself sits on the line, its centre in the
+  polygon drawn as Gali (its GeoNames and Wikidata points both, 0.4-0.5 km
+  inside it; GeoNames credits it to Ochamchire by its own codes). Gal's eight
   village administrations along the Enguri (Chuburkhinji, the two Otobaias,
   Tagiloni, Pichori, Nabakevi, Dikhazurga and Ganakhleba: 12,066 of Gal's
   30,356 people in 2011 by the census's village rows as ethno-kavkaz.narod.ru
@@ -142,6 +143,23 @@ DATED = {"1.2": "Переписи населения 2011 года", "1.6": "1 �
          "1.12": "Переписи населения 2011 года", "1.16": "1 января 2026 года"}
 NEXT_TITLE = re.compile(r"^1\.\s?\d{1,2}\s+\S")
 
+# The town each polygon the authorities' units fill names as its largest
+# settlement (largest_town): the most populous of its districts' towns in table
+# 1.11, in the map's spelling and as a note names it.
+TOWNS = {"г. Сухум": ("Sokhumi", "the city of Sukhum"),
+         "г. Гагра": ("Gagra", "the town of Gagra"),
+         "г. Гудаута": ("Gudauta", "the town of Gudauta")}
+# A town is its unit's largest settlement only where no village can be larger.
+# The city of Sukhum outnumbers every district but its own whole; a district's
+# own town must outnumber the most populous of the district's village
+# administrations at the 2011 census, grown by as much as the district has
+# grown since: Alakhadzy's 2,876 in Gagra district, Lykhny's 5,760 in Gudauta
+# district and Gumista's 2,721 in Sukhum district, by the census's village
+# rows as ethno-kavkaz.narod.ru transcribes them (gagra11, gudauta11, suxum11).
+# GeoNames named Gudauta's polygon for New Athos railway station, with the
+# 26,636 people that are Gagra's figure of 1989 (GeoNames 615912).
+VILLAGES_2011 = {"Гагрский район": 2876, "Гудаутский район": 5760, "Сухумский район": 2721}
+
 # The polygons the authorities' units fill: the map's label -> the rows.
 BOUND = {"Gagra": ("Гагрский район",), "Gudauta": ("Гудаутский район",),
          "Sokhumi": ("г. Сухум", "Сухумский район")}
@@ -204,14 +222,15 @@ REFUSED: dict[str, Callable[[dict[str, int], dict[str, int]], str]] = {
         "also lie in the outline drawn as Ochamchire. The district's figure is not this "
         "outline's, so none is written here."),
     "Ochamchire": lambda p, c: SOUTH_EAST + (
-        f"the town of Ochamchira itself ({p[TOWN]:,} people on 1 January {YEAR}) lies just "
-        "across the line, in the outline drawn as Gali; the town of Tkvarcheli lies in this "
-        "one and many of its district's villages in Gali's, and several villages of Gulripsh "
-        "district lie in this one too.") + south_east(p),
+        f"the town of Ochamchira itself ({p[TOWN]:,} people on 1 January {YEAR}) sits on "
+        "the line between the two, its centre just inside the outline drawn as Gali; the "
+        "town of Tkvarcheli lies in this one and many of its district's villages in Gali's, "
+        "and several villages of Gulripsh district lie in this one too.") + south_east(p),
     "Gali": lambda p, c: SOUTH_EAST + (
-        f"the town of Ochamchira ({p[TOWN]:,} people on 1 January {YEAR}) and villages of "
-        "the Ochamchira and Tkvarcheli districts lie in this one, while Gal's villages along "
-        "the Enguri (Chuburkhinji, Otobaia, Tagiloni, Pichori and others; at least "
+        "villages of the Ochamchira and Tkvarcheli districts lie in this one, and so does the "
+        f"centre of the town of Ochamchira ({p[TOWN]:,} people on 1 January {YEAR}), on the "
+        "line with Ochamchire's, while Gal's villages along the Enguri (Chuburkhinji, "
+        "Otobaia, Tagiloni, Pichori and others; at least "
         f"{sum(ENGURI.values()):,} of the district's {c['Галский район']:,} people at the "
         "2011 census) lie outside it, in the outline drawn as Zugdidi.") + south_east(p),
 }
@@ -300,23 +319,20 @@ def year_total(lines: list[str], year: int) -> int:
 
 
 def by_district(lines: list[str], key: str) -> dict[str, tuple[int, int, int]]:
-    """{the republic, each district and the town of Ochamchira: (both sexes,
-    men, women)}, from 1.7 or 1.11. The republic is the first "Все население"
-    row; the other city and town rows inside a district are skipped."""
+    """{the republic and each district: (both sexes, men, women)}, from 1.7 or
+    1.11. The republic is the first "Все население" row; the city and town rows
+    inside a district are skipped (by_town reads them)."""
     out: dict[str, tuple[int, int, int]] = {}
     for label, figures in labelled(lines):
-        if label == WHOLE and WHOLE not in out or label in DISTRICTS or label == TOWN:
+        if label == WHOLE and WHOLE not in out or label in DISTRICTS:
             if label in out:
                 raise SystemExit(f"abkhazia_census: table {key} has two rows for {label!r}")
             both, men, women = numbers(figures, 3, lambda r: r[0] == r[1] + r[2],
                                        f"table {key}, {label}")
             out[label] = (both, men, women)
-    missing = [d for d in (WHOLE, *DISTRICTS, TOWN) if d not in out]
+    missing = [d for d in (WHOLE, *DISTRICTS) if d not in out]
     if missing:
         raise SystemExit(f"abkhazia_census: table {key} has no row for {missing}")
-    if out[TOWN][0] >= out["Очамчырский район"][0]:
-        raise SystemExit(f"abkhazia_census: table {key}'s town of Ochamchira is not inside "
-                         "its district")
     if sum(out[d][0] for d in DISTRICTS) != out[WHOLE][0]:
         raise SystemExit(f"abkhazia_census: table {key}'s districts make "
                          f"{sum(out[d][0] for d in DISTRICTS):,}, not {out[WHOLE][0]:,}")
@@ -358,6 +374,48 @@ def by_nationality(lines: list[str], key: str, totals: dict[str, int]
             raise SystemExit(f"abkhazia_census: table {key}, {unit}: the nationalities make "
                              f"{sum(counts.values()):,}, not {rows[WHOLE][j]:,}")
         out[unit] = counts
+    return out
+
+
+TOWN_ROW = re.compile(r"^(?:г\.|пгт) \S")
+
+
+def by_town(lines: list[str], key: str, districts: dict[str, tuple[int, int, int]]
+            ) -> dict[str, dict[str, int]]:
+    """{each district: {its towns: people}} from 1.7 or 1.11, a town being a
+    "г." or "пгт" row under its district's row. The city of Sukhum, counted
+    apart from any district, is its own only town. Each district's towns add up
+    to its "Городское население" row where it prints one."""
+    out: dict[str, dict[str, int]] = {}
+    urban: dict[str, int] = {}
+    current = None
+    for label, figures in labelled(lines):
+        if label == WHOLE:
+            current = None
+            continue
+        if label in DISTRICTS:
+            current = label
+            if TOWN_ROW.match(label):
+                out.setdefault(label, {})[label] = districts[label][0]
+            continue
+        if current is None or not (label == "Городское население" or TOWN_ROW.match(label)):
+            continue
+        both = numbers(figures, 3, lambda r: r[0] == r[1] + r[2], f"table {key}, {label}")[0]
+        if label == "Городское население":
+            urban[current] = both
+        else:
+            if label in out.get(current, {}):
+                raise SystemExit(f"abkhazia_census: table {key} has two rows for {label!r} "
+                                 f"in {DISTRICTS[current]}")
+            out.setdefault(current, {})[label] = both
+    for district, total in urban.items():
+        if sum(out.get(district, {}).values()) != total:
+            raise SystemExit(f"abkhazia_census: table {key}'s towns in {DISTRICTS[district]} "
+                             f"make {sum(out.get(district, {}).values()):,}, not its urban "
+                             f"{total:,}")
+    if TOWN not in out.get("Очамчырский район", {}):
+        raise SystemExit(f"abkhazia_census: table {key} has no row for {TOWN!r} in "
+                         "Ochamchira district")
     return out
 
 
@@ -426,7 +484,9 @@ def read(text: str) -> dict[str, Any]:
                              "the census's shares, and should be read")
     median = grouped_median([(lower, None if lower == 70 else 5, n)
                              for lower, (n, _) in ages.items()])
-    return {"people": t11, "census": t7, "nationality": nat, "median": median}
+    towns = by_town(table(text, "1.11"), "1.11", t11)
+    return {"people": t11, "census": t7, "nationality": nat, "median": median,
+            "towns": towns}
 
 
 def cite(table_no: str, field: str) -> dict[str, str]:
@@ -466,6 +526,33 @@ def sex_note(rows: tuple[str, ...], figures: dict[str, Any]) -> str:
             f"{women_then:,} women, {100 * men_then / women_then:.1f} men per 100 women.")
 
 
+def largest_town(rows: tuple[str, ...], figures: dict[str, Any]) -> tuple[str, int]:
+    """The rows' largest settlement and its people on 1 January YEAR: the most
+    populous town of their districts (of every district, for the republic),
+    once no village of any of them can be larger (VILLAGES_2011)."""
+    districts = list(DISTRICTS) if rows == (WHOLE,) else list(rows)
+    pool = {town: n for d in districts for town, n in figures["towns"].get(d, {}).items()}
+    if not pool:
+        raise SystemExit(f"abkhazia_census: no town in {[DISTRICTS[d] for d in districts]}")
+    town, people = max(pool.items(), key=lambda kv: kv[1])
+    for d in districts:
+        if d == town:
+            continue
+        if town not in figures["towns"].get(d, {}):
+            if people <= figures["people"][d][0]:
+                raise SystemExit(f"abkhazia_census: {DISTRICTS[d]} ({figures['people'][d][0]:,}) "
+                                 f"may hold a village larger than {town} ({people:,})")
+            continue
+        grown = max(1.0, figures["people"][d][0] / figures["census"][d][0])
+        if d not in VILLAGES_2011 or people <= VILLAGES_2011[d] * grown:
+            raise SystemExit(f"abkhazia_census: a village of {DISTRICTS[d]} may be larger "
+                             f"than {town} ({people:,})")
+    if town not in TOWNS:
+        raise SystemExit(f"abkhazia_census: {town!r} is the largest settlement and has no "
+                         "name on the map in TOWNS")
+    return town, people
+
+
 def counted(rows: tuple[str, ...], figures: dict[str, Any]) -> dict[str, Any]:
     """The fields of a polygon that the republic's or its districts' rows fill."""
     both, men, women = total(figures, "people", rows)
@@ -486,12 +573,20 @@ def counted(rows: tuple[str, ...], figures: dict[str, Any]) -> dict[str, Any]:
         "religion": gap(NOT_AVAILABLE, NO_RELIGION),
         "language": gap(NOT_AVAILABLE, NO_LANGUAGE),
     }
-    cites = [cite("1.11", "population/sex_ratio"), cite("1.12", "ethnicity")]
+    town, people = largest_town(rows, figures)
+    fields["largest_settlement"] = TOWNS[town][0]
+    fields["largest_settlement_population"] = measure(people, year=YEAR,
+                                                      source=SOURCE.format(table="1.11"))
+    fields["largest_settlement_note"] = (
+        f"The de facto authorities' estimate of the people present in {TOWNS[town][1]} on "
+        f"1 January {YEAR} (their statistics committee's yearbook, table 1.11).")
+    cites = [cite("1.11", "population/sex_ratio"), cite("1.11", "largest_settlement"),
+             cite("1.12", "ethnicity")]
     if rows == (WHOLE,):
         fields["median_age"] = measure(figures["median"], unit="years", year=CENSUS,
                                        source=SOURCE.format(table="1.2"))
         fields["median_age_note"] = MEDIAN_NOTE
-        cites.insert(1, cite("1.2", "median_age"))
+        cites.insert(2, cite("1.2", "median_age"))
     else:
         fields["median_age"] = gap(NOT_AVAILABLE, NO_DISTRICT_AGES)
     fields["sources"] = cites
@@ -502,6 +597,7 @@ def refused(figures: dict[str, Any], name: str) -> dict[str, Any]:
     """The fields of a polygon that is no district: gaps that say why, and that no
     figure fits it, its own or one derived from its neighbours' (``not_this_ground``)."""
     people = {unit: both for unit, (both, _, _) in figures["people"].items()}
+    people[TOWN] = figures["towns"]["Очамчырский район"][TOWN]
     census = {unit: both for unit, (both, _, _) in figures["census"].items()}
     return {"population": dict(gap(NOT_AVAILABLE, REFUSED[name](people, census)),
                                not_this_ground=True),
@@ -552,6 +648,9 @@ def main() -> int:
     for unit, (both, men, women) in figures["people"].items():
         log(f"  1 January {YEAR}: {DISTRICTS.get(unit, 'Abkhazia')}: {both:,} "
             f"({men:,} men, {women:,} women)")
+    for name, rows in sorted({"Abkhazia": (WHOLE,), **BOUND}.items()):
+        town, people = largest_town(rows, figures)
+        log(f"  1 January {YEAR}: {name}'s largest settlement: {TOWNS[town][0]} ({people:,})")
     log(f"  2011 census: median age {figures['median']}; nationality of "
         f"{sum(figures['nationality'][WHOLE].values()):,} people")
     rows = records(figures, drawn("GEO", "admin1"), drawn("GEO", "admin2"))

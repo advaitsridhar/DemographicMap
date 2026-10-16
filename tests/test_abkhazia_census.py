@@ -4,6 +4,7 @@ runner's PDF reader gave for it (pages 6, 16, 17, 19, 20, 23, 24 and 28 of
 
 import sys
 import unittest
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -529,12 +530,49 @@ class Records(unittest.TestCase):
             self.assertIn("only roughly", note)
             self.assertIn("town of Ochamchira", note)
             self.assertIn("5,154 people on 1 January 2026", note)
-        self.assertIn("in the outline drawn as Gali", self.rows["Ochamchire"]["population"]["note"])
+        self.assertIn("its centre just inside the outline drawn as Gali",
+                      self.rows["Ochamchire"]["population"]["note"])
+        self.assertIn("the centre of the town of Ochamchira", self.rows["Gali"]["population"]["note"])
+
+    def test_each_unit_names_its_largest_town(self):
+        expect = {"Abkhazia": ("Sokhumi", 65180), "Sokhumi": ("Sokhumi", 65180),
+                  "Gagra": ("Gagra", 11729), "Gudauta": ("Gudauta", 8744)}
+        for name, (town, people) in expect.items():
+            r = self.rows[name]
+            self.assertEqual(r["largest_settlement"], town, name)
+            self.assertEqual((r["largest_settlement_population"]["value"],
+                              r["largest_settlement_population"]["year"]), (people, 2026), name)
+            self.assertIn("table 1.11", r["largest_settlement_note"])
+            self.assertIn("largest_settlement", [s["field"] for s in r["sources"]])
+        # Not New Athos railway station's 26,636, which are Gagra's people.
+        self.assertIn("town of Gudauta", self.rows["Gudauta"]["largest_settlement_note"])
+        # The outlines that are no district name none; GeoNames is left to.
+        for name in ("Gulripshi", "Ochamchire", "Gali"):
+            self.assertEqual(self.rows[name]["largest_settlement"]["status"], "not_available")
+
+    def test_a_village_that_may_outnumber_the_town_stops_the_run(self):
+        figures = a.read(YEARBOOK)
+        with mock.patch.dict(a.VILLAGES_2011, {"Гудаутский район": 8500}):
+            with self.assertRaises(SystemExit) as stop:
+                a.largest_town(("Гудаутский район",), figures)
+        self.assertIn("may be larger than г. Гудаута", str(stop.exception))
+        with mock.patch.dict(a.VILLAGES_2011, clear=True):
+            with self.assertRaises(SystemExit):
+                a.largest_town(("Гагрский район",), figures)
+        # The city outnumbers every district whole, so the republic needs none.
+        self.assertEqual(a.largest_town((a.WHOLE,), figures), ("г. Сухум", 65180))
+
+    def test_a_district_s_towns_make_its_urban_row(self):
+        broken = YEARBOOK.replace("г. Гудаута 8 744 3 888 4 856", "г. Гудаута 8 745 3 889 4 856")
+        self.assertNotEqual(broken, YEARBOOK)
+        with self.assertRaises(SystemExit) as stop:
+            a.read(broken)
+        self.assertIn("towns in Gudauta district", str(stop.exception))
 
     def test_the_town_of_ochamchira_is_read_from_its_own_row(self):
         figures = a.read(YEARBOOK)
-        self.assertEqual(figures["people"][a.TOWN], (5154, 2332, 2822))
-        self.assertEqual(figures["census"][a.TOWN], (5280, 2315, 2965))
+        self.assertEqual(figures["towns"]["Очамчырский район"], {a.TOWN: 5154})
+        self.assertNotIn(a.TOWN, figures["people"])
 
     def test_sokhumi_names_no_distance_that_holds_for_one_point_only(self):
         note = self.rows["Sokhumi"]["population_note"]
