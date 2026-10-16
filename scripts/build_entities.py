@@ -2900,6 +2900,10 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 #     Wikipedia's 2024 figures beside their siblings' 2026 ones.
 ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
     "wikidata_admin1.json": {
+        # Thừa Thiên Huế became the centrally governed city of Huế on 1
+        # January 2025 on the same ground (ISO VN-26), and Wikidata labels it
+        # so: the name never reached the province's polygon.
+        "VNM-WD-Q36399": ("Thừa Thiên Huế",),
         "BLR-WD-Q173822": ("Brest",),
         "BLR-WD-Q191061": ("Grodno",),
         "BLR-WD-Q189822": ("Mogilev",),
@@ -7543,7 +7547,7 @@ def tidy_citations(entity: dict[str, Any]) -> int:
                         and set(cited_fields(m)) <= covered)]
         changed += len(merged) - len(kept)
         merged = kept
-    entity["sources"] = merged
+    entity["sources"] = spell_fields(merged)
     return changed
 
 

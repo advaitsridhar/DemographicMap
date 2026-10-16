@@ -895,7 +895,7 @@ class CitationSpellingsAndStaleEntries(unittest.TestCase):
         ensenada = self.ensenada()
         be.tidy_citations(ensenada)
         self.assertEqual([(s["name"][:5], s["field"]) for s in ensenada["sources"]],
-                         [("INEGI", "sex ratio/religion/language"),
+                         [("INEGI", "sex_ratio/religion/language"),
                           ("OCHA,", "median_age/population")])
 
     def test_an_entry_a_note_names_stays(self):
