@@ -109,23 +109,61 @@ class NewerFigures(unittest.TestCase):
         self.assertEqual(merged[0]["population_note"],
                          "Everyone the 2021 census counted. A newer figure is not shown: "
                          "1,762,342 for 2024 from Wikidata, a rise of 12.0% a year from the "
-                         "figure shown, where the newer figures for the country's other units "
-                         "at this level change by +1.0% a year in the median. A figure so far "
-                         "from theirs may be of other ground or counted another way.")
+                         "figure shown, where the newer figures shown for the country's other "
+                         "units at this level change by +1.0% a year in the median. A figure so "
+                         "far from theirs may be of other ground or counted another way.")
         self.assertNotIn("_not_taken", merged[0])
 
     def test_offers_no_population_makes_do_not_set_the_median(self):
-        # Cao Bang beside six merged provinces only: none of theirs is a
-        # change people make, so it is weighed on its own, and 1% a year is.
+        # Cao Bang and Lai Chau beside six merged provinces: none of the six
+        # is a change people make, so the two are weighed on their own, and
+        # 1% a year, each beside the other, is.
         merged = [unit(f"M{i}", 1_000_000, 2019, newer=round(1_000_000 * 1.09 ** 5),
                        newer_year=2024) for i in range(6)]
         cao_bang = unit("C", 530_341, 2019, newer=558_500, newer_year=2024)
-        taken, kept = be.prefer_newer_figures(country(*merged, cao_bang), {})
-        self.assertEqual((len(taken), len(kept)), (1, 6))
+        lai_chau = unit("L", 460_196, 2019, newer=495_500, newer_year=2024)
+        taken, kept = be.prefer_newer_figures(country(*merged, cao_bang, lai_chau), {})
+        self.assertEqual((len(taken), len(kept)), (2, 6))
         self.assertEqual(cao_bang["population"]["value"], 558_500)
-        be.say_newer_not_taken(country(*merged, cao_bang))
+        be.say_newer_not_taken(country(*merged, cao_bang, lai_chau))
         self.assertTrue(merged[0]["population_note"].endswith(
             "A change that large may mean other ground or another way of counting."))
+
+    def test_a_lone_figure_among_changes_no_population_makes_is_not_shown(self):
+        # Nigeria's LGAs: four offers no change a population makes, and
+        # Ibadan South East's, the 2006 census's 266,457 dated 2026, -0.5% a
+        # year from OCHA's 2020 projection, which nothing else corroborates.
+        wild = [unit(f"W{i}", 200_000, 2020, newer=round(200_000 * 0.93 ** 6),
+                     newer_year=2026) for i in range(4)]
+        ibadan = unit("I", 274_558, 2020, newer=266_457, newer_year=2026)
+        taken, kept = be.prefer_newer_figures({}, country(*wild, ibadan))
+        self.assertEqual((taken, len(kept)), ([], 5))
+        self.assertEqual(ibadan["population"]["value"], 274_558)
+        be.say_newer_not_taken({}, country(*wild, ibadan))
+        self.assertTrue(ibadan["population_note"].endswith(
+            "A newer figure is not shown: 266,457 for 2026 from Wikidata, a fall of 0.5% a "
+            "year from the figure shown. Most of the newer figures for the country's other "
+            "units at this level change by more than a population does, and none of the "
+            "rest changes as this one does, so this one is not shown either."),
+            ibadan["population_note"])
+
+    def test_far_from_peers_none_of_which_is_shown_says_so_without_a_median(self):
+        # Three offers at +4% a year and three at -2.5%: each is far from the
+        # median of the other five, so none is shown, and no shown figure's
+        # median is there to quote.
+        up = [unit(f"U{i}", 100_000, 2020, newer=round(100_000 * 1.04 ** 4),
+                   newer_year=2024) for i in range(3)]
+        down = [unit(f"D{i}", 100_000, 2020, newer=round(100_000 * 0.975 ** 4),
+                     newer_year=2024) for i in range(3)]
+        taken, kept = be.prefer_newer_figures({}, country(*up, *down))
+        self.assertEqual(taken, [])
+        be.say_newer_not_taken({}, country(*up, *down))
+        for u in up + down:
+            self.assertNotIn("in the median", u["population_note"])
+            self.assertTrue(u["population_note"].endswith(
+                "far from the change the country's other newer figures at this level "
+                "make. A figure so far from theirs may be of other ground or counted "
+                "another way."), u["population_note"])
 
     def test_a_unit_is_not_its_own_peer(self):
         # Four peers at 0% and the unit at +2.5%: without itself in the median

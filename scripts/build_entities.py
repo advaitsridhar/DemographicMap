@@ -32,7 +32,7 @@ import os
 import re
 import sys
 import unicodedata
-from collections import defaultdict
+from collections import Counter, defaultdict
 from functools import lru_cache
 from pathlib import Path
 from collections.abc import Sequence
@@ -7579,10 +7579,19 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
         most GROWTH up or DECLINE down (check_rollups), and within
         RECENCY_SPREAD of the median change of the country's other units at
         its level offered a figure within those bounds, where there are
-        RECENCY_PEERS of them; where there are fewer, within RECENCY_FEW. Viet
-        Nam is why the median and the bound together: the merged provinces'
-        figures run 8.7% a year and more above the 2019 census, and the
-        provinces that were not merged change by about 1%.
+        RECENCY_PEERS of them, the unit's own left out; where there are
+        fewer, within RECENCY_FEW, and where most of the level's offers are
+        outside the bounds, only beside another offer that changes as it
+        does. Viet Nam is why the median and the bound together: the merged
+        provinces' figures run 8.7% a year and more above the 2019 census,
+        and the provinces that were not merged change by about 1%. Nigeria
+        is why the last: four of its five offers are no change a population
+        makes, and the fifth, which is, is the 2006 census's count dated
+        2026.
+
+    A unit kept from its newer figure says so, and where it is far from its
+    peers, gives the median change of the units at its level that do show
+    newer figures.
 
     The count is held in the newer figure's place, with its note and its
     link, so a check that later refuses the newer figure -- a town's, a
@@ -7643,50 +7652,86 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
     # eleven provinces the merger left alone, changing by about 1% a year,
     # were kept off as far from their peers; and they set the median Viet
     # Nam's districts were weighed against until the levels were told apart.
+    def possible(rate: float) -> bool:
+        return -check_rollups.DECLINE <= rate <= check_rollups.GROWTH
+
+    def median(rates: list[float]) -> float:
+        ordered = sorted(rates)
+        mid = len(ordered) // 2
+        return ordered[mid] if len(ordered) % 2 else (ordered[mid - 1] + ordered[mid]) / 2
+
+    offered: Counter[tuple[str, Any]] = Counter()
     plausible: dict[tuple[str, Any], list[tuple[int, float]]] = defaultdict(list)
     for iso3, entity, _, rate in offers:
-        if -check_rollups.DECLINE <= rate <= check_rollups.GROWTH:
-            plausible[(iso3, entity.get("level"))].append((id(entity), rate))
+        level = (iso3, entity.get("level"))
+        offered[level] += 1
+        if possible(rate):
+            plausible[level].append((id(entity), rate))
 
-    def peer_median(peers: tuple[str, Any], entity: dict[str, Any]) -> float | None:
-        others = sorted(rate for who, rate in plausible[peers] if who != id(entity))
-        if len(others) < RECENCY_PEERS:
-            return None
-        mid = len(others) // 2
-        return others[mid] if len(others) % 2 else (others[mid - 1] + others[mid]) / 2
+    # Every offer is decided before any note is written, so a note can give
+    # the change of the units that do show newer figures.
+    decided: list[tuple[str, dict[str, Any], dict[str, Any], float, str]] = []
+    for iso3, entity, best, rate in offers:
+        level = (iso3, entity.get("level"))
+        others = [r for who, r in plausible[level] if who != id(entity)]
+        if len(others) >= RECENCY_PEERS:
+            far = abs(rate - median(others)) > RECENCY_SPREAD
+            verdict = "far" if far else ("taken" if possible(rate) else "large")
+        elif not RECENCY_FEW[0] <= rate <= RECENCY_FEW[1]:
+            verdict = "large"
+        elif (2 * len(plausible[level]) < offered[level]
+              and not any(abs(r - rate) <= RECENCY_SPREAD for r in others)):
+            # Most of the level's newer figures are no change a population
+            # makes, and one from among them that happens to sit close to its
+            # count, with no other changing as it does, is not good for that:
+            # two of Nigeria's five offers are dated 2026 and are the 2006
+            # census's counts, and Ibadan South East's, -0.5% a year from
+            # 2020, is one of the two.
+            verdict = "most"
+        else:
+            verdict = "taken"
+        decided.append((iso3, entity, best, rate, verdict))
+    given: dict[tuple[str, Any], list[float]] = defaultdict(list)
+    for iso3, entity, _, rate, verdict in decided:
+        if verdict == "taken":
+            given[(iso3, entity.get("level"))].append(rate)
 
     taken: list[str] = []
     kept: list[str] = []
-    for iso3, entity, best, rate in offers:
+    for iso3, entity, best, rate, verdict in decided:
         shown = entity["population"]
-        typical = peer_median((iso3, entity.get("level")), entity)
         line = (f"{iso3} {entity.get('name')}: {published(shown):,.0f} ({vintage(shown)}) "
                 f"-> {published(best['value']):,.0f} ({vintage(best['value'])}), "
                 f"{rate:+.1%} a year")
-        if typical is not None:
-            same = (-check_rollups.DECLINE <= rate <= check_rollups.GROWTH
-                    and abs(rate - typical) <= RECENCY_SPREAD)
-        else:
-            same = RECENCY_FEW[0] <= rate <= RECENCY_FEW[1]
-        if not same:
+        if verdict != "taken":
             kept.append(line)
+            shown_newer = given[(iso3, entity.get("level"))]
+            if verdict == "far" and shown_newer:
+                why = (f", where the newer figures shown for the country's other units at "
+                       f"this level change by {median(shown_newer):+.1%} a year in the "
+                       f"median. A figure so far from theirs may be of other ground or "
+                       f"counted another way.")
+            elif verdict == "far":
+                why = (", far from the change the country's other newer figures at this "
+                       "level make. A figure so far from theirs may be of other ground or "
+                       "counted another way.")
+            elif verdict == "most":
+                why = (". Most of the newer figures for the country's other units at this "
+                       "level change by more than a population does, and none of the rest "
+                       "changes as this one does, so this one is not shown either.")
+            else:
+                why = (". A change that large may mean other ground or another way of "
+                       "counting.")
             # Said on the unit, once every pass that may change its figure has
             # run (say_newer_not_taken): Kuwait's note had the governorates
             # show the census "where no newer figure is published", and
             # Farwaniya's and Jahra's are published and were not taken.
-            off = typical is not None and abs(rate - typical) > RECENCY_SPREAD
             entity["_not_taken"] = {"shown": published(shown), "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
                 f"{named_source(str(best['value'].get('source') or ''))}, "
                 f"a {'rise' if rate > 0 else 'fall'} of {abs(rate):.1%} a year from the "
-                f"figure shown"
-                + (f", where the newer figures for the country's other units at this "
-                   f"level change by {typical:+.1%} a year in the median. A figure so far "
-                   f"from theirs may be of other ground or counted another way."
-                   if off else
-                   ". A change that large may mean other ground or another way of "
-                   "counting."))}
+                f"figure shown" + why)}
             continue
         origin = entity.setdefault("_from", {})
         how = entity.setdefault("_how", {})
