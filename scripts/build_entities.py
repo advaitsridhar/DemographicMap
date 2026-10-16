@@ -3547,7 +3547,7 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
             entity[field] = gap(NOT_COLLECTED, policy)
     entity.setdefault("sources", []).append(
         {"field": "curated", "name": source, "year": year,
-         "note": prov.get("note"), "license": ""})
+         "note": prov.get("note"), "license": prov.get("license", "")})
 
 
 # What makes a row an answer rather than a label. Wikidata supplies a shape's

@@ -687,12 +687,13 @@ def age_fields(got: dict[str, Any]) -> dict[str, Any]:
                               source=AGE_SOURCE),
         "median_age_note": ("Rosstat's own median age for the subject, as "
                             "Volume 2 publishes it (\"Медианный возраст\"), "
-                            "everyone counted by the 2020 census."),
+                            "everyone counted by the 2020 census (reference "
+                            "date 1 October 2021)."),
         "sex_ratio": measure(round(100 * men / women, 1),
                              unit="males_per_100_females", year=YEAR,
                              source=AGE_SOURCE),
         "sex_ratio_note": (f"{int(men):,} men and {int(women):,} women counted "
-                           "by the 2020 census."),
+                           "by the 2020 census (reference date 1 October 2021)."),
     }
 
 

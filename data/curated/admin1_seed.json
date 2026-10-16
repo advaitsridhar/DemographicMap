@@ -14,27 +14,32 @@
       "source": "Census of India 2011, table C-01 (Registrar General & Census Commissioner)",
       "year": 2011,
       "note": "India's next census was postponed; 2011 remains the latest official round.",
-      "ethnicity_policy": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead."
+      "ethnicity_policy": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
+      "license": "Government of India open data (GODL-India)"
     },
     "CHN": {
       "source": "Seventh National Population Census of China, 2020",
       "year": 2020,
       "note": "China records the 56 official nationalities (minzu); many provincial communiques publish only a Han / minority split.",
-      "religion_policy": "China's census does not ask religion."
+      "religion_policy": "China's census does not ask religion.",
+      "license": "Official statistics of the National Bureau of Statistics of China, cited as published"
     },
     "USA": {
       "source": "U.S. Census Bureau, American Community Survey 5-year estimates (table B03002)",
       "year": 2022,
       "note": "Race and Hispanic origin as collected by the ACS.",
-      "religion_policy": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). County-level religion comes from the 2020 U.S. Religion Census, which counts adherents, not self-identification."
+      "religion_policy": "The U.S. census may not ask a mandatory religion question (13 U.S.C. 221(c)). County-level religion comes from the 2020 U.S. Religion Census, which counts adherents, not self-identification.",
+      "license": "Public domain (U.S. Census Bureau)"
     },
     "PHL": {
       "source": "Philippine Statistics Authority, 2020 Census of Population and Housing",
-      "year": 2020
+      "year": 2020,
+      "license": "Official statistics of the Philippine Statistics Authority, cited as published"
     },
     "CAN": {
       "source": "Statistics Canada, 2021 Census of Population",
-      "year": 2021
+      "year": 2021,
+      "license": "Statistics Canada Open Licence"
     }
   },
   "rows": [
