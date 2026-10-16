@@ -297,8 +297,13 @@ class CuratedFigures(unittest.TestCase):
                           "source": "EPPSO, RMI 2021 Census Report, Volume 1"})
         self.assertIs(be.gate_population(mhl), mhl["population"][be.CHECKED_AGAINST])
         self.assertEqual(mhl["population_note"], self.ROW["note"])
-        # The count is named in the note, not cited as the figure's source.
-        self.assertEqual([s["name"] for s in mhl["sources"]], ["CIA World Factbook"])
+        # The count is named in the note, not cited as the figure's source: it
+        # is cited for the note, with its link, and says so.
+        self.assertEqual([(s["name"], s["field"]) for s in mhl["sources"]],
+                         [("CIA World Factbook", "*"),
+                          ("EPPSO, RMI 2021 Census Report, Volume 1", "population note")])
+        self.assertIn("not the source of the figure shown", mhl["sources"][1]["note"])
+        self.assertEqual(mhl["sources"][1]["url"], "https://example.org")
         # The atolls the map draws are all but Lib's 156 people: within 2% of
         # the count, where the Factbook's 82,011 would refuse them.
         kids = [kid("Majuro", 23_000, {"United Church of Christ": 23_000}),

@@ -3298,6 +3298,16 @@ def apply_country_figures(admin0: list[dict[str, Any]],
                                      f"drop \"use\" to show it")
                 entity[field] = {**shown, CHECKED_AGAINST: {
                     "value": row["value"], "year": row["year"], "source": row["source"]}}
+                # The count the note quotes keeps its link and licence, cited
+                # for the note and said to be that, not for the figure shown:
+                # Tuvalu's 2022 census was otherwise named and never linked.
+                quoted = {"field": f"{field} note", "name": row["source"],
+                          "url": row.get("url"), "year": row.get("year"),
+                          "license": row.get("license", "See docs/SOURCES.md"),
+                          "note": "The count the note beside the population quotes, "
+                                  "not the source of the figure shown."}
+                if quoted not in entity.setdefault("sources", []):
+                    entity["sources"].append(quoted)
             else:
                 entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
                                         year=row["year"], source=row["source"])
