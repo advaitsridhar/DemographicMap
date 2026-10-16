@@ -4089,6 +4089,17 @@ class BhutanGewogJoin(unittest.TestCase):
         yangtse = rows[("Yangtse", "Trashi Yangtse")]
         self.assertIn("elimination", yangtse["population_note"])
 
+    def test_the_two_left_in_trashi_yangtse_say_there_were_two(self):
+        # Two gewogs and two polygons were left there, told apart by the
+        # map's labels; "the one polygon and the one gewog left" was false.
+        rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
+        for name in ("Tongmajangsa", "Yangtse"):
+            note = rows[(name, "Trashi Yangtse")]["population_note"]
+            self.assertNotIn("the one polygon and the one gewog left", note)
+            self.assertIn("Tomzhangtshen is Tongmajangsa", note)
+        daga = rows[("Darkar", "Wangdue Phodrang")]["population_note"]
+        self.assertIn("the one polygon and the one gewog left", daga)
+
     def test_every_gewog_shape_is_claimed_exactly_once(self):
         # The whole point, where the geometry is at hand to check it: 205
         # census gewogs onto 205 polygons, no shape claimed twice and none

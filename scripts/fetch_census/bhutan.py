@@ -475,6 +475,15 @@ CLOSURE_NOTE = (
     "reference point to place it with, so the polygon was identified by "
     "elimination: every other gewog of {dzongkhag} is matched, and this is "
     "the one polygon and the one gewog left.")
+# Trashi Yangtse is the one dzongkhag with two gewogs left over, and the
+# boundary file's own labels tell the two apart (see BY_CLOSURE): "the one
+# polygon and the one gewog left" is not true of them, so they say this.
+TWO_LEFT = {"Trashi Yangtse": (
+    " The map draws this gewog as {label}. Neither Tongmajangsa nor Yangtse has a "
+    "reference point to place it with; once every other gewog of Trashi Yangtse "
+    "has its own polygon, these two are left by elimination, and the map's labels "
+    "tell them apart: Tomzhangtshen is Tongmajangsa (also spelled Tomzhang), and "
+    "Trashiyangtse, the dzongkhag's own name, is Yangtse.")}
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
@@ -2039,7 +2048,7 @@ def main() -> int:
                     f"(labelled {SHAPE_LABELS[bound]!r})")
             elif where in GEWOG_BY_POINT:
                 label = GEWOG_BY_POINT[where][0]
-                template = (CLOSURE_NOTE if where in BY_CLOSURE
+                template = (TWO_LEFT.get(dzongkhag, CLOSURE_NOTE) if where in BY_CLOSURE
                             else RENAMED_NOTE)
                 note += template.format(label=label, dzongkhag=dzongkhag)
                 log(f"    {dzongkhag}/{name} -> labelled {label!r}"
