@@ -179,6 +179,17 @@ class PlainWording(unittest.TestCase):
                          "A person answers once. geoBoundaries draws Nepal's map.")
         self.assertIn("isopen", record["url"])     # not a visitor's text
 
+    def test_a_cut_quotation_ends_at_a_whole_item(self):
+        for cut, whole in (
+                ('which reads: "Roman Catholic 36.5%, agnostic 0.3%, atheist 1.3%,...".',
+                 'which reads: "Roman Catholic 36.5%, agnostic 0.3%, atheist 1.3%...".'),
+                ('which reads: "Believer 0.9%, other 4.8%, agnostic 0.6%, none...".',
+                 'which reads: "Believer 0.9%, other 4.8%, agnostic 0.6%...".'),
+                ('which reads: "Spanish (official), English, Chinese (Yue and Hakka),...".',
+                 'which reads: "Spanish (official), English, Chinese (Yue and Hakka)...".')):
+            self.assertEqual(be.plain_wording(cut), whole)
+            self.assertEqual(be.plain_wording(whole), whole)
+
     def test_a_server_s_answer_is_not_quoted(self):
         self.assertEqual(
             be.plain_wording("but that workbook could not be read: the bureau's server "

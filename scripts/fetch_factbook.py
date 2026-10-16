@@ -639,9 +639,9 @@ def factbook_notes(iso3: str | None, fields: dict[str, tuple[Any, str | None]]) 
     for field, (value, text) in fields.items():
         reason = collection_policy(iso3, field)
         if reason and isinstance(value, list) and value:
-            quoted = re.sub(r"\s+", " ", text or "").strip()
-            if len(quoted) > 300:
-                quoted = quoted[:297].rsplit(" ", 1)[0] + "..."
+            # Cut, where it must be, at a whole item: a plain cut ended
+            # Uruguay's list "atheist 1.3%,..." and Bolivia's "none...".
+            quoted = clip(text, 300)
             what = ("figure shown is the CIA World Factbook's estimate" if has_shares(value)
                     else "list shown is the CIA World Factbook's, with no shares")
             notes[f"{field}_note"] = f"{reason} The {what}, which reads: \"{quoted}\"."

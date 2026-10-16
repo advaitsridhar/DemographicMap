@@ -5718,7 +5718,12 @@ def state_population_gaps(admin0: list[dict[str, Any]],
                 if iso3 in not_applicable:
                     reason = dict(not_applicable[iso3])
                 elif STATED_POPULATION_GAPS.get((iso3, entity.get("name"))) == "disputed":
-                    reason = gap(NOT_AVAILABLE, DISPUTED_GAP)
+                    # A population that already says why goes with its ages:
+                    # Sudan's "Abyei PCA" is a 41 km2 edge of the Abyei Area,
+                    # not the disputed ground itself, and says so.
+                    own = entity.get("population")
+                    reason = (dict(own) if is_gap(own) and isinstance(own, dict)
+                              and own.get("note") else gap(NOT_AVAILABLE, DISPUTED_GAP))
                 if reason is None:
                     continue
                 changed = False
@@ -6897,9 +6902,38 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     # Parasi as one district with Nawalpur" reads "the map draws".
     (re.compile(r"\b([Tt])he boundary file('s)?\b"),
      lambda m: f"{m.group(1)}he map{m.group(2) or ''}"),
+    # A quotation of the Factbook that had to be cut ends at its last whole
+    # item (see whole_items), as fetch_factbook now cuts one.
+    (re.compile(r'(?<=which reads: ")([^"]*?)\.\.\.(?=")'),
+     lambda m: whole_items(m.group(1))),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
+
+
+def whole_items(head: str) -> str:
+    """A quotation cut short, ended at its last whole item and marked "...".
+
+    The Factbook's lists were cut at a word: Uruguay's religions ended
+    "atheist 1.3%," and Bolivia's "agnostic 0.6%, none", a share without its
+    number. A trailing comma goes, and in a list of shares the last item, if
+    it has no share, is the one the cut broke and goes too. What is left ends
+    on a whole item, so a second pass changes nothing.
+    """
+    head = head.rstrip()
+    if head.endswith((",", ";")):
+        return head.rstrip(",; ") + "..."
+    depth, cut = 0, -1
+    for i, ch in enumerate(head):
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth = max(0, depth - 1)
+        elif ch in ",;" and depth == 0:
+            cut = i
+    if cut > 0 and "%" in head[:cut] and "%" not in head[cut:]:
+        return head[:cut] + "..."
+    return head + "..."
 
 
 def plain_wording(text: str) -> str:

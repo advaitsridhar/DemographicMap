@@ -711,6 +711,17 @@ class StatedPopulationGaps(unittest.TestCase):
         be.state_population_gaps([], {"SDN": [abyei]})
         self.assertEqual(abyei["population"]["note"], "Its own reason.")
 
+    def test_the_ages_take_the_population_s_own_reason(self):
+        # Sudan's "Abyei PCA" is an edge of the Abyei Area, not the disputed
+        # ground the CGAZ note describes, and its population says so.
+        abyei = unit("B", "Abyei PCA")
+        abyei["population"]["note"] = "This polygon is 41 km2 at the edge of the Abyei Area."
+        abyei.update(median_age={"status": "not_available"},
+                     sex_ratio={"status": "not_available"})
+        be.state_population_gaps([], {"SDN": [abyei]})
+        for field in ("median_age", "sex_ratio"):
+            self.assertEqual(abyei[field]["note"], abyei["population"]["note"], field)
+
 
 class CountryFromSoleUnit(unittest.TestCase):
     """Western Sahara's country takes the figure of the one unit that is all of it (rollups-65)."""
