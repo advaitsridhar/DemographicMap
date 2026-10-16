@@ -864,6 +864,157 @@ class CitationsOfWhatIsShown(unittest.TestCase):
         self.assertEqual(be.tidy_citations(moxico), 0)
 
 
+class CitationSpellingsAndStaleEntries(unittest.TestCase):
+    """Fields spelled "median age" are the build's "median_age", and an entry
+    for a field another entry is the shown figure's source of goes, unless a
+    note names it."""
+
+    OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-mex), reference year 2024"
+    INEGI = "INEGI, Censo de Población y Vivienda 2020 (ITER)"
+
+    def test_spaced_names_are_the_builds_own(self):
+        self.assertEqual(be.cited_fields({"field": "population/median age/sex ratio"}),
+                         ["population", "median_age", "sex_ratio"])
+        self.assertEqual(be.spell_fields([{"field": "median age/sex ratio", "name": "x"}]),
+                         [{"field": "median_age/sex_ratio", "name": "x"}])
+        self.assertEqual(be.cited_fields({"field": "median_age (islands)"}),
+                         ["median_age (islands)"])
+
+    def ensenada(self):
+        return {"population": {"value": 595_451, "year": 2024, "source": self.OCHA},
+                "median_age": {"value": 30.1, "year": 2024, "source": self.OCHA},
+                "sex_ratio": {"value": 100.3, "year": 2020, "source": self.INEGI},
+                "sources": [
+                    {"field": "sex ratio/religion/language", "name": self.INEGI},
+                    {"field": "median age", "name": "INEGI, Censo de Población y Vivienda "
+                                                    "2020, tabulados del cuestionario básico "
+                                                    "(Población 4: edad mediana por municipio)"},
+                    {"field": "median_age/sex_ratio/population", "name": self.OCHA}]}
+
+    def test_entries_for_figures_from_another_source_go(self):
+        ensenada = self.ensenada()
+        be.tidy_citations(ensenada)
+        self.assertEqual([(s["name"][:5], s["field"]) for s in ensenada["sources"]],
+                         [("INEGI", "sex ratio/religion/language"),
+                          ("OCHA,", "median_age/population")])
+
+    def test_an_entry_a_note_names_stays(self):
+        ensenada = self.ensenada()
+        ensenada["median_age_note"] = "INEGI's own median for 2020 was 29."
+        be.tidy_citations(ensenada)
+        self.assertIn("median_age", [f for s in ensenada["sources"]
+                                     for f in be.cited_fields(s)
+                                     if s["name"].startswith("INEGI, Censo de Población y "
+                                                             "Vivienda 2020, tabulados")])
+
+    def test_two_offices_figure_names_each_office(self):
+        # Busan: the resident register and the registered foreigners, and
+        # Wikidata's item cited for the population beside them.
+        busan = {"population": {"value": 3_342_452, "year": 2023, "source": (
+                    "Ministry of the Interior and Safety, resident register, and Ministry "
+                    "of Justice, registered foreign residents, 31 December 2023")},
+                 "sources": [
+                     {"field": "population/ethnicity",
+                      "name": "Ministry of Justice (Korea Immigration Service), registered "
+                              "foreign residents by city/county/district"},
+                     {"field": "population/ethnicity",
+                      "name": "Ministry of the Interior and Safety, resident registration "
+                              "population by city/county/district"},
+                     {"field": "population/capital/coordinates", "name": "Wikidata",
+                      "url": "https://www.wikidata.org/wiki/Q16520"}]}
+        be.tidy_citations(busan)
+        self.assertEqual([s["field"] for s in busan["sources"]],
+                         ["population/ethnicity", "population/ethnicity",
+                          "capital/coordinates"])
+
+    def test_a_copied_figure_cites_the_item_it_is_from(self):
+        # Gotland: the island's item, with no population, beside Region
+        # Gotland's, which carries the 60,724 shown.
+        gotland = {"wikidata": "Q374794",
+                   "population": {"value": 60_724, "year": 2026, "source": "Wikidata (CC0)"},
+                   "sources": [
+                       {"field": "population/capital/coordinates", "name": "Wikidata",
+                        "url": "https://www.wikidata.org/wiki/Q1027830"},
+                       {"field": "population/capital/coordinates", "name": "Wikidata",
+                        "url": "https://www.wikidata.org/wiki/Q374794"}]}
+        county = {"wikidata": "Q103738", "population": {"value": 1, "year": 2020,
+                                                        "source": "Wikidata (CC0)"},
+                  "sources": [{"field": "capital/coordinates", "name": "Wikidata",
+                               "url": "https://www.wikidata.org/wiki/Q103738"}]}
+        be.copy_field(gotland, county, "population")
+        self.assertEqual([s["url"].rsplit("/", 1)[1] for s in county["sources"]
+                          if "population" in be.cited_fields(s)], ["Q374794"])
+
+
+class SoleDivisionsOfTwoOffices(unittest.TestCase):
+    def test_the_newer_office_count_shows_on_both(self):
+        wien = {"population": {"value": 2_028_289, "year": 2025, "source": "Eurostat"}}
+        stadt = {"population": {"value": 2_040_914, "year": 2026,
+                                "source": "Statistik Austria"}}
+        self.assertIs(be.newer_office(wien, stadt), stadt)
+
+    def test_not_a_projection_nor_an_encyclopaedia_nor_one_year(self):
+        census = {"population": {"value": 665_952, "year": 2022, "source": "ZIMSTAT census"}}
+        for other in ({"value": 797_611, "year": 2023, "source": "OCHA, Common Operational "
+                                                                 "Dataset -- x"},
+                      {"value": 700_000, "year": 2024, "source": "Wikidata (CC0)"},
+                      {"value": 700_000, "year": 2022, "source": "Another office"}):
+            self.assertIsNone(be.newer_office(census, {"population": other}), other)
+
+    def test_not_ground_too_different(self):
+        bamako = {"population": {"value": 4_227_569, "year": 2023, "source": "INSTAT"}}
+        district = {"population": {"value": 2_231_344, "year": 2018, "source": "RGPH"}}
+        self.assertIsNone(be.newer_office(bamako, district))
+
+
+class DisputedOutlines(unittest.TestCase):
+    def outline(self, name):
+        return {"name": name, "sources": [], **{f: be.gap(be.NOT_AVAILABLE)
+                                              for f in (*be.FIGURE_FIELDS,
+                                                        *be.COMPOSITION_FIELDS)}}
+
+    def test_every_bare_field_says_why(self):
+        abyei = self.outline("Abyei")
+        be.disputed_record(abyei, {})
+        self.assertTrue(abyei["disputed"])
+        for field in (*be.FIGURE_FIELDS, *be.COMPOSITION_FIELDS):
+            self.assertEqual(abyei[field]["note"], be.DISPUTED_GAP, field)
+
+    def test_the_paracel_islands_show_the_factbooks_own_figure(self):
+        paracel = self.outline("Paracel Is")
+        profile = {"id": "GEC-PF", "population": {
+                       "value": 2_230, "year": 2024,
+                       "source": "CIA World Factbook (public domain), factbook.json mirror"},
+                   "sources": [{"field": "*", "name": "CIA World Factbook",
+                                "url": "pf.json"}]}
+        be.disputed_record(paracel, {"GEC-PF": profile})
+        self.assertEqual(paracel["population"]["value"], 2_230)
+        self.assertIn("Woody Island", paracel["population_note"])
+        self.assertEqual(paracel["sources"], [{"field": "population",
+                                               "name": "CIA World Factbook",
+                                               "url": "pf.json"}])
+        self.assertEqual(paracel["median_age"]["note"], be.DISPUTED_GAP)
+
+    def test_a_declared_profile_that_is_gone_stops_the_build(self):
+        with self.assertRaises(SystemExit):
+            be.disputed_record(self.outline("Paracel Is"), {})
+
+
+class AgesFromTheTableNotShown(unittest.TestCase):
+    def test_a_median_from_the_same_table_says_so(self):
+        ocha = "OCHA, Common Operational Dataset -- population statistics (cod-ps-mex), reference year 2024"
+        pueblo = {"population": {"value": 38_354, "year": 2020, "source": "INEGI"},
+                  "median_age": {"value": 19.5, "year": 2024, "source": ocha},
+                  "sex_ratio": {"value": 97.0, "year": 2020, "source": "INEGI"},
+                  "_not_taken": {"shown": 38_354, "sentence": "A newer figure is not shown.",
+                                 "offer": {"value": 48_665, "year": 2024, "source": ocha}}}
+        be.say_newer_not_taken({"MEX": [pueblo]})
+        self.assertEqual(pueblo["median_age_note"],
+                         "It is from the same table as the 48,665 for 2024 that the "
+                         "population's note says is not shown.")
+        self.assertNotIn("sex_ratio_note", pueblo)
+
+
 class TheMapNotTheFile(unittest.TestCase):
     """A visitor's note names the map, not the file it is drawn from."""
 

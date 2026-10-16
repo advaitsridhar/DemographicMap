@@ -3128,6 +3128,8 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
             if (iso3 in dropped and row.get("id") not in pooled) \
                     or row.get("id") in not_units:
                 continue
+            if row.get("sources"):
+                row["sources"] = spell_fields(row["sources"])
             if row.get("id") in aliases:
                 row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
             if row.get("id") in parents and not row.get("parent_name"):
@@ -5695,12 +5697,15 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                     kept.append(dict(src, field="/".join(f for f in cites
                                                          if f != "population")))
             parent["sources"] = kept
-            cited = next((dict(src) for child in children
-                          for src in child.get("sources", [])
-                          if "population" in str(src.get("field") or "").split("/")
-                          and src.get("name") == source), None)
-            if cited:
-                parent["sources"].append(dict(cited, field="population"))
+            # Every division's own entry, as fill_parent_populations has it:
+            # North Kalimantan's five regencies each cite their own article,
+            # and the province cited Bulungan's alone.
+            for child in children:
+                for src in child.get("sources", []):
+                    entry = dict(src, field="population")
+                    if ("population" in cited_fields(src) and src.get("name") == source
+                            and entry not in parent["sources"]):
+                        parent["sources"].append(entry)
             done.append(f"{iso3} {parent['name']} {own:,.0f} -> {total:,}")
     return done
 
@@ -6619,6 +6624,43 @@ DISPUTED_NOTE = ("Disputed or special-status territory as delimited by geoBounda
 # beside the Gaza Strip's, the West Bank's and the Falklands' populations.
 DISPUTED_GAP = DISPUTED_NOTE + " No source used here gives this figure for it."
 
+# Disputed outlines the Factbook profiles as a territory of its own, under no
+# country's code: the outline is the profile's ground, so it shows the
+# profile's population. The boundary file's name -> the profile's record in
+# admin0.json, and what the figure's note says.
+DISPUTED_PROFILES: dict[str, tuple[str, str]] = {
+    "Paracel Is": ("GEC-PF", "The Factbook's estimate for the Paracel Islands, which it "
+                             "profiles apart from the states that claim them; it puts over "
+                             "1,000 Chinese on Woody Island, the largest of them, and "
+                             "scattered Chinese garrisons on some of the others."),
+}
+
+
+def disputed_record(entity: dict[str, Any], profiles: dict[str, dict[str, Any]]) -> None:
+    """A disputed outline's record: the Factbook's own figure for it where it
+    profiles the territory (DISPUTED_PROFILES), and the reason on every field
+    that has none -- Abyei's six fields were bare beside the outline's note."""
+    entity["disputed"] = True
+    entity["note"] = DISPUTED_NOTE
+    declared = DISPUTED_PROFILES.get(entity.get("name"))
+    profile = profiles.get(declared[0]) if declared else None
+    if declared and profile is None:
+        raise SystemExit(f"build_entities: {entity.get('name')!r} is declared the "
+                         f"Factbook's {declared[0]}, which admin0.json no longer has")
+    if profile and published(profile.get("population")) is not None:
+        entity["population"] = {k: v for k, v in profile["population"].items()
+                                if k in ("value", "year", "source")}
+        entity["population_note"] = declared[1]
+        entity["sources"] = [*entity.get("sources", []),
+                             *(dict(src, field="population")
+                               for src in profile.get("sources") or []
+                               if "*" in cited_fields(src)
+                               or "population" in cited_fields(src))]
+    for field in (*FIGURE_FIELDS, *COMPOSITION_FIELDS):
+        value = entity.get(field)
+        if isinstance(value, dict) and value.get("status") and not value.get("note"):
+            entity[field] = gap(value["status"], DISPUTED_GAP)
+
 
 def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
     """Either flag the unit as disputed, or tell the UI which adapter would fill it.
@@ -7387,13 +7429,37 @@ def plain_wording(text: str) -> str:
     return text
 
 
+def notes_said(entity: dict[str, Any]) -> str:
+    """Every note a visitor reads on a record, as one text: its own notes and
+    the notes inside its figures and gaps."""
+    parts = []
+    for key, value in entity.items():
+        if (key == "note" or key.endswith("_note") or key == "gap_reason") \
+                and isinstance(value, str):
+            parts.append(value)
+        elif isinstance(value, dict) and isinstance(value.get("note"), str):
+            parts.append(value["note"])
+    return " ".join(parts)
+
+
+def named_in(src: dict[str, Any], said: str) -> bool:
+    """Whether a note names a source entry, as a sentence names a source
+    (check_rollups.short_source: "Wikidata", "OCHA's common operational
+    dataset", "Eurostat")."""
+    short = check_rollups.short_source(str(src.get("name") or ""))
+    return (bool(said) and len(short) >= 4 and short != "an unnamed source"
+            and re.search(rf"(?<!\w){re.escape(short)}(?!\w)", said) is not None)
+
+
 def tidy_citations(entity: dict[str, Any]) -> int:
     """Cite each figure shown to the source it is from, and each source once.
 
     Three ways a record's list came to cite what it does not show:
-      * an entry citing several fields kept one whose figure another entry is
-        the source of -- Kuwait's census cited for the population beside the
-        Factbook's, which is the figure shown;
+      * an entry kept a field whose figure another entry is the source of --
+        Kuwait's census cited for the population beside the Factbook's, which
+        is the figure shown; Ensenada's INEGI table of median ages beside
+        OCHA's pooled median, which is -- unless a note names it, quoting its
+        figure;
       * one source cited twice, for overlapping fields -- every Belarusian
         region's Wikidata item, "capital/coordinates" and "population/capital/
         coordinates";
@@ -7407,19 +7473,29 @@ def tidy_citations(entity: dict[str, Any]) -> int:
     if not isinstance(sources, list) or not sources:
         return 0
     changed = 0
+    said = notes_said(entity)
     for field in FIGURE_FIELDS:
         value = entity.get(field)
         if not isinstance(value, dict) or is_gap(value):
             continue
         # The Factbook's entry cites every field ("*").
         if not any({field, "*"} & set(cited_fields(src)) and names_source(src, value)
-                   for src in sources):
+                   for src in sources if src is not None):
             continue
         for i, src in enumerate(sources):
+            if src is None:
+                continue
             cites = cited_fields(src)
-            if field in cites and len(cites) > 1 and not names_source(src, value):
-                sources[i] = dict(src, field="/".join(f for f in cites if f != field))
-                changed += 1
+            # An entry a note names stays: the note quotes its figure --
+            # "It replaces 139,628 for 2015, an older figure from the Lao
+            # Statistics Bureau", "A newer figure is not shown: ... from
+            # Wikidata".
+            if field not in cites or names_source(src, value) or named_in(src, said):
+                continue
+            rest = [f for f in cites if f != field]
+            sources[i] = dict(src, field="/".join(rest)) if rest else None
+            changed += 1
+    sources = [src for src in sources if src is not None]
     merged: list[dict[str, Any]] = []
     for src in sources:
         rest = {k: v for k, v in src.items() if k != "field"}
@@ -7726,7 +7802,8 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             # run (say_newer_not_taken): Kuwait's note had the governorates
             # show the census "where no newer figure is published", and
             # Farwaniya's and Jahra's are published and were not taken.
-            entity["_not_taken"] = {"shown": published(shown), "sentence": (
+            entity["_not_taken"] = {"shown": published(shown), "offer": best["value"],
+                                    "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
                 f"{named_source(str(best['value'].get('source') or ''))}, "
@@ -7796,6 +7873,21 @@ def say_newer_not_taken(*tables: dict[str, list[dict[str, Any]]]) -> int:
                 entity["population_note"] = (f"{note} {why['sentence']}" if note
                                              else why["sentence"])
                 said += 1
+                # A median or ratio from the same table as the figure not
+                # shown says so: 52 of Mexico's municipios show OCHA's 2024
+                # median age, worked out from the age groups whose total is
+                # the 2024 population their notes give as perhaps of other
+                # ground.
+                offer = why.get("offer") or {}
+                for field in ("median_age", "sex_ratio"):
+                    value = entity.get(field)
+                    if (isinstance(value, dict) and not is_gap(value)
+                            and value.get("source") and value.get("source") == offer.get("source")
+                            and vintage(value) == vintage(offer)):
+                        entity[f"{field}_note"] = join_note(
+                            entity.get(f"{field}_note"),
+                            f"It is from the same table as the {published(offer):,.0f} for "
+                            f"{vintage(offer)} that the population's note says is not shown.")
     return said
 
 
@@ -9739,9 +9831,36 @@ def restate_population(source: dict[str, Any], unit: dict[str, Any],
         else {k: was[k] for k in ("value", "year", "source") if k in was})
 
 
+# The fields' names as a source entry may spell them, and as the build does.
+# INEGI's, the Dominican Republic's, Ireland's and a dozen other adapters'
+# entries cite "median age/sex ratio", and every comparison with "median_age"
+# missed them: Ensenada cited INEGI's median age beside OCHA's pooled one.
+FIELD_SPELLINGS = {"median age": "median_age", "sex ratio": "sex_ratio"}
+
+
+def field_name(part: str) -> str:
+    """One field of a source entry's "a/b/c", as the build spells it."""
+    part = part.strip()
+    return FIELD_SPELLINGS.get(part, part)
+
+
 def cited_fields(src: dict[str, Any]) -> list[str]:
     """The fields a source entry is cited for."""
-    return str(src.get("field") or "").split("/")
+    return [field_name(part) for part in str(src.get("field") or "").split("/")]
+
+
+def spell_fields(sources: Any) -> Any:
+    """A record's source entries with their fields spelled as the build does."""
+    if not isinstance(sources, list):
+        return sources
+    out = []
+    for src in sources:
+        if isinstance(src, dict) and isinstance(src.get("field"), str):
+            spelled = "/".join(cited_fields(src))
+            if spelled != src["field"]:
+                src = dict(src, field=spelled)
+        out.append(src)
+    return out
 
 
 def names_source(src: dict[str, Any], value: Any) -> bool:
@@ -9752,8 +9871,16 @@ def names_source(src: dict[str, Any], value: Any) -> bool:
     name = str(src.get("name") or "")
     if not said or not name:
         return False
-    return (source_identity(said) == source_identity(name)
-            or re.search(rf"(?<!\w){re.escape(name)}(?!\w)", said) is not None)
+    if (source_identity(said) == source_identity(name)
+            or re.search(rf"(?<!\w){re.escape(name)}(?!\w)", said) is not None):
+        return True
+    # A figure two offices' tables add up to names both, ", and " between
+    # them, and each office's entry is named office first: Korea's "Ministry
+    # of the Interior and Safety, resident register, and Ministry of Justice,
+    # registered foreign residents".
+    parts = re.split(r", and (?=[A-Z])", said)
+    return len(parts) > 1 and check_rollups.short_source(name) in {
+        check_rollups.short_source(part) for part in parts}
 
 
 def carry_citation(source: dict[str, Any], target: dict[str, Any], field: str) -> None:
@@ -9778,6 +9905,15 @@ def carry_citation(source: dict[str, Any], target: dict[str, Any], field: str) -
             kept.append(dict(src, field="/".join(f for f in fields if f != field)))
     citing = [src for src in source.get("sources") or [] if field in cited_fields(src)]
     named = [src for src in citing if names_source(src, source.get(field))]
+    # Of several Wikidata items, the one the source record is linked to: the
+    # figure is that item's. Gotland's only division cited the island's item,
+    # which has no population, beside Region Gotland's, which is the 60,724
+    # shown, and Gotland County took both.
+    own = source.get("wikidata")
+    mine = [src for src in named if own and src.get("name") == "Wikidata"
+            and str(src.get("url") or "").endswith(f"/{own}")]
+    if mine:
+        named = [src for src in named if src.get("name") != "Wikidata" or src in mine]
     for src in named or citing:
         entry = dict(src, field=field)
         if entry in kept:
@@ -10345,6 +10481,28 @@ def office_over_encyclopaedia(a: dict[str, Any], b: dict[str, Any]
     return office
 
 
+def newer_office(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any] | None:
+    """Of two records that are one unit, both with an office's count and no
+    encyclopaedia's or projection's, the one whose figure is newer, to show
+    on both (a subdivision shows the most recent figure available). None
+    where the two are of one year, either is missing, or they are too far
+    apart to be one ground's."""
+    pa, pb = a.get("population"), b.get("population")
+    va, vb = published(pa), published(pb)
+    if va is None or vb is None or va == vb:
+        return None
+    if encyclopaedic(pa) or encyclopaedic(pb) or projection(pa) or projection(pb):
+        return None
+    ya, yb = vintage(pa), vintage(pb)
+    if ya is None or yb is None or ya == yb:
+        return None
+    newer, other = (a, b) if ya > yb else (b, a)
+    ratio = published(other.get("population")) / published(newer.get("population"))
+    if not SOLE_CHILD_BAND[0] <= ratio <= SOLE_CHILD_BAND[1]:
+        return None
+    return newer
+
+
 def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
                        admin2_by_country: dict[str, list[dict[str, Any]]],
                        measures: dict[str, dict[str, Any]],
@@ -10447,7 +10605,11 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
         # One unit, two populations: the office's on both, where it is at
         # least as new as the encyclopaedia's. A parent figure of other ground
         # is never handed down; it may still give way to its division's.
-        office = office_over_encyclopaedia(parent, child)
+        # Or two offices' counts of it, the newer on both: Vienna showed
+        # Eurostat's 2,028,289 for 2025 and its only division, Wien(Stadt),
+        # Statistik Austria's 2,040,914 for 2026.
+        office = (office_over_encyclopaedia(parent, child)
+                  or newer_office(parent, child))
         if office is parent and parent_not_its_ground(iso3, parent, "population"):
             office = None
         if office is not None:
@@ -12011,8 +12173,7 @@ def main() -> int:
             # as states.
             # The id stays the raw shapeGroup so it still matches the tile's
             # promoted feature id; the flag is what the UI keys off.
-            entity["disputed"] = True
-            entity["note"] = DISPUTED_NOTE
+            disputed_record(entity, {row["id"]: row for row in country_profiles})
             admin0.append(entity)
             continue
         matched_iso3.add(iso3)

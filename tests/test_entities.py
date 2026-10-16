@@ -8973,8 +8973,12 @@ class CountryDetail(unittest.TestCase):
             total = sum(g["pct"] for g in groups)
             self.assertGreater(total, 99.0, f"{row['country']} sums to {total}")
             self.assertLess(total, 101.0, f"{row['country']} sums to {total}")
-            for group in groups:
-                self.assertIn("count", group, group)
+            # Counts on every group, or shares alone, as the Factbook's lines
+            # are: CBS publishes the Netherlands' survey shares and no counts.
+            counted = ["count" in group for group in groups]
+            self.assertTrue(all(counted) or not any(counted), row["country"])
+            if not any(counted):
+                self.assertIn("survey estimate", row.get("basis", ""), row["country"])
             self.assertIn("year", row,
                           f"{row['country']} substitutes figures and does not "
                           f"say what year they are")
