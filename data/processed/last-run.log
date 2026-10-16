@@ -1,14 +1,13 @@
-abkhazia_census: https://cgsra.org/media/files/25.pdf
-  167 pages
-  1 January 2026: Abkhazia: 243,977 (115,252 men, 128,725 women)
-  1 January 2026: the city of Sukhum: 65,180 (30,163 men, 35,017 women)
-  1 January 2026: Gagra district: 38,384 (17,457 men, 20,927 women)
-  1 January 2026: Gudauta district: 38,830 (18,648 men, 20,182 women)
-  1 January 2026: Sukhum district: 11,212 (5,445 men, 5,767 women)
-  1 January 2026: Gulripsh district: 17,489 (8,451 men, 9,038 women)
-  1 January 2026: Ochamchira district: 26,073 (12,650 men, 13,423 women)
-  1 January 2026: Tkvarcheli district: 16,458 (7,925 men, 8,533 women)
-  1 January 2026: Gal district: 30,351 (14,513 men, 15,838 women)
-  2011 census: median age 38.0; nationality of 240,705 people
-  wrote data/processed/abkhazia_census.json (28 kB)
-wrote 7 records to abkhazia_census.json
+page: http://sistemas.inec.cr:8080/bininecmm/RpWebEngine.exe/Portal?BASE=CENSO2022&lang=esp
+  unreachable: HTTPError: HTTP Error 500: Internal Server Error
+page: http://sistemas.inec.cr:8080/bininecmm/RpWebEngine.exe/Portal?BASE=CPV2022&lang=esp
+  unreachable: HTTPError: HTTP Error 500: Internal Server Error
+page: https://inec.cr/estadisticas-fuentes/censos/censo-2022
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://es.wikipedia.org/wiki/Municipio_de_Emiliano_Zapata_(Chiapas)
+  120,531 bytes
+  4 distinct match(es) for "(BASE=[A-Za-z0-9_]+|RpWeb[A-Za-z]+[.]exe[^'<>]{0,80}|[^'<> ]{0,140}[.]xlsx?|[Rr]edatam[^<]{0,120}|segreg[^<]{0,240}|[Cc]read[oa][^<]{0,240}|Villaflores[^<]{0,120}|Acala[^<]{0,120}|wgCoordinates[^<]{0,80})"
+    Acala" title="Municipio de Acala" id="mwIg">Acala
+    Acala; y al sur con Venustiano Carranza. Las coordenadas de la cabecera municipal son: 16°32'18" de latitud norte y 92°53'49"
+    creado de acuerdo con el Decreto No. 008, publicado en el Periódico Oficial del Gobierno del Estado Libre y Soberano de Chiapas, con fecha 23 de noviembre de 2011, siendo segregado del municipio de 
+    wgCoordinates":{"lat":16.5,"lon":-92.866666666667},"wgTestKitchenUserExperiments":{"overrides
