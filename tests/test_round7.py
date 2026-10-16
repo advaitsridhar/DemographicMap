@@ -296,8 +296,17 @@ class UnionsAcrossFiles(unittest.TestCase):
         # A median of the two together cannot be had from their medians.
         median = pooled["ages.json"]["median_age"]
         self.assertNotIn("value", median)
-        self.assertIn("Tecpatán and Mezcalapa separately", median["note"])
+        self.assertIn("Tecpatán and Mezcalapa separately: the median of the two together",
+                      median["note"])
         self.assertEqual(be.union_row_ids("ages.json"), set())  # outside the patch
+
+    def test_a_median_of_three_parts_says_three(self):
+        # Siltepec with Capitán Luis Ángel Vidal and Honduras de la Sierra.
+        parts = self.rows("ages.json", [("Siltepec", None), ("Capitán Luis Ángel Vidal", None),
+                                        ("Honduras de la Sierra", None)],
+                          medians=[22.0, 21.0, 23.0])
+        pooled = be.pool_rows("Siltepec", parts, "MEX", "ages.json")
+        self.assertIn("the median of the three together", pooled["median_age"]["note"])
 
     def test_ratios_with_no_populations_to_weigh_them_are_a_stated_gap(self):
         parts = self.rows("ocha.json", [("A", None), ("B", None)], ratios=[1017, 990])

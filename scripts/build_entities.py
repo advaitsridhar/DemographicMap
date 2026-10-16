@@ -8302,8 +8302,10 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
     pool_sex_ratio(pooled, parts, pops, names)
     if all(published(p.get("median_age")) is not None for p in parts):
         # A median of two places together is not a mix of their medians.
+        # Siltepec's polygon holds three municipios.
+        together = {2: "the two", 3: "the three", 4: "the four"}.get(len(parts), "them all")
         pooled["median_age"] = gap(NOT_AVAILABLE, (
-            f"Published for {names} separately: the median of the two together "
+            f"Published for {names} separately: the median of {together} together "
             f"cannot be taken from their medians, and the map draws them as one "
             f"unit."))
     for field in ROLLUP_FIELDS:
