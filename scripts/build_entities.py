@@ -3077,8 +3077,23 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
             # C-16 both describe Kargil -- and within one file it means one of
             # them is wrong.
             row["_source"] = filename
+            # A row held behind an office's count offers its population and
+            # nothing else: its other fields are the markers of questions it
+            # does not answer, which the office's file answers.
+            if held_row(row):
+                row = {key: value for key, value in row.items()
+                       if key in HELD_KEYS or key == "population"}
+                row["sources"] = [src for src in row.get("sources") or []
+                                  if set(str(src.get("field") or "").split("/"))
+                                  <= {"population"}]
             by_country[iso3].append(row)
     return by_country
+
+
+# What a held row keeps besides its population (load_adapters): what places it.
+HELD_KEYS = frozenset({"id", "level", "name", "parent", "parent_name", "parent_aliases",
+                       "country", "match_by", "shape_id", "shape_label", "no_shape",
+                       "aliases", "wikidata", "sources", "_source"})
 
 
 def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
@@ -3490,6 +3505,58 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "yemen_census_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
+# A file's rows for a country, held behind the statistics office's own count
+# rather than competing with it by date: {file: {country: the file that counts
+# them}}. Their populations stand in front of the office's only where
+# prefer_newer_figures finds them newer and the same ground; their other
+# fields are not read. Each office's file gives every drawn unit of its
+# country a count or a stated reason, so no polygon waits on these to be
+# filled, and a stated reason is never filled over by them. (SUPERSEDED_ROWS
+# drops a file's rows outright, where they are not the office's units or not
+# the same people at all.)
+HELD_ROWS: dict[str, dict[str, str]] = {}
+
+
+def is_fill_only(source: str | None, iso3: str | None) -> bool:
+    """Whether a file's figure for this country fills only, held behind a count."""
+    return source in FILL_ONLY or (iso3 or "") in HELD_ROWS.get(source or "", {})
+
+
+def held_row(row: dict[str, Any]) -> bool:
+    """A row whose population is only ever offered (HELD_ROWS), never written."""
+    iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
+    return iso3 in HELD_ROWS.get(row.get("_source") or "", {})
+
+# How far a newer figure may sit from an older count and still be taken for
+# the same ground (prefer_newer_figures): its change a year within
+# RECENCY_SPREAD of the median change of the country's other units offered
+# the same way, where there are RECENCY_PEERS of them, else within
+# RECENCY_FEW; and an encyclopaedia's no more than RECENCY_SPAN years after
+# the count.
+RECENCY_SPREAD = 0.02
+RECENCY_PEERS = 5
+RECENCY_FEW = (-0.02, 0.03)
+RECENCY_SPAN = 10
+
+# Offices' files whose counts are of the units as the map draws them, older
+# than the units of the same names today, so a newer figure under a unit's
+# name is the new unit's: Estonia's municipalities before the 2017 reform,
+# Norway's kommuner before 2020's, Iceland's of 2017, and Ukraine's raions
+# with the cities of oblast significance drawn inside them (the 2001 census;
+# Wikidata's 2022 Konotop is the city's 83,543, the raion with it held
+# 135,932).
+GROUND_PINNED = frozenset({"estonia_municipality.json", "norway_kommune.json",
+                           "iceland_municipality.json", "ukraine_raion.json"})
+
+# A count whose note says it was put together for the polygon -- summed over
+# the units drawn inside it, two units the census counts apart, a unit as it
+# stood before a reform or as the map draws it -- is the polygon's ground by
+# construction, and a newer figure under the unit's name is the unit's.
+COMPOSED_COUNT = re.compile(
+    r"\bsummed\b|\badded up\b|\bthe sum of\b|\bcounts? (?:it |them )?apart\b"
+    r"|\bas the map draws\b|\bas it stood\b|\bbefore the \d{4} reform\b"
+    r"|\bas one (?:shape|polygon)\b|\bless (?:its|the)\b", re.I)
+
 # The figures a statistics office's stated reason may displace
 # (``displaces_before``): every fill-only file's, and Wikidata's as the points
 # files bind it by id (scripts/wikidata_points.py). Those are not fill-only --
@@ -3585,13 +3652,14 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     # 2024 figure for An Giang -- 3,679,300 -- is the merged province's, on the
     # old province's shape, against the 2019 census's 1,908,352. A newer figure
     # can be a different unit's.
-    encyclopaedic = row.get("_source") in FILL_ONLY
+    iso3 = entity.get("country")
+    encyclopaedic = is_fill_only(row.get("_source"), iso3)
     rank = composition_rank(row.get("_source"))
     origin = entity.get("_from") or {}
     transcribed = is_wiki_composition(row.get("_source"))
     dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
-             and (origin.get(key) in FILL_ONLY) == encyclopaedic
+             and is_fill_only(origin.get(key), iso3) == encyclopaedic
              and composition_rank(origin.get(key)) == rank
              and not (key in SURVEY_FIELDS and origin.get(key)
                       and is_wiki_composition(origin.get(key)) != transcribed)}
@@ -3601,6 +3669,10 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
              if theirs is not None and ours is not None and theirs < ours}
     held = {key for key in FILL_ONLY_FIELDS
             if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
+    # A file held behind an office's count (HELD_ROWS) offers its population
+    # and writes nothing, whatever the unit holds and whichever came first.
+    if held_row(row) and not is_gap(row.get("population")):
+        held.add("population")
     # A survey's estimate stands behind any count already written, and a
     # cross-national survey's behind a national one's.
     held |= {key for key in SURVEY_FIELDS
@@ -3656,7 +3728,8 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # joined after it, is held back; had the town's item replaced the
         # link, the settlement check below would read the town's classes and
         # refuse the municipality's figure as a town's.
-        if key == "wikidata" and "population" in held and entity.get("wikidata"):
+        if key == "wikidata" and ("population" in held and entity.get("wikidata")
+                                  or held_row(row)):
             continue
         # A statistics office's statement that its census does not reach a
         # unit displaces an encyclopaedia's figure for it that is older than
@@ -3672,7 +3745,8 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # Baabda stand on shapes no count reaches, and nothing dates them.
         if (key in FILL_ONLY_FIELDS and is_gap(value) and isinstance(value, dict)
                 and isinstance(value.get("displaces_before"), int) and not encyclopaedic
-                and not is_gap(entity.get(key)) and origin.get(key) in DISPLACEABLE
+                and not is_gap(entity.get(key))
+                and (origin.get(key) in DISPLACEABLE or is_fill_only(origin.get(key), iso3))
                 and ((year_of(entity, key) is None and value.get("displaces_undated") is True)
                      or (year_of(entity, key) or value["displaces_before"])
                      < value["displaces_before"])):
@@ -6516,8 +6590,140 @@ def fall_back(entity: dict[str, Any], refused: dict[str, Any],
             + re.sub(r"\bleft out(?=\.?$)", "left out and this figure is shown instead",
                      refused.get("note", "")))}
         entity.setdefault("sources", []).extend(held["sources"])
+        # A count prefer_newer_figures held aside comes back as it was shown:
+        # with its own note, and linked to the item it was linked to.
+        if held.get("unit_note"):
+            entity[f"{field}_note"] = held["unit_note"]
+        if "link" in held:
+            if held["link"]:
+                entity["wikidata"] = held["link"]
+            else:
+                entity.pop("wikidata", None)
         return True
     return False
+
+
+def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
+                         admin2: dict[str, list[dict[str, Any]]]
+                         ) -> tuple[list[str], list[str]]:
+    """Put the newest population a unit was offered in front of an older count.
+
+    A subdivision shows the most recent figure available (the owner's rule
+    since round 7). merge_adapter lets the newer of two counts stand already,
+    but holds an encyclopaedia's figure behind any count however recent, and
+    a file held behind an office's census (HELD_ROWS) behind that census:
+    a newer figure can be a different unit's. Wikidata's 2024 An Giang is the
+    province Viet Nam made in 2025 out of three, on the old province's shape.
+    So the held figure takes the count's place only where nothing says it is
+    other ground:
+
+      * it reached the unit by its whole name, an alias, a code or an id, not
+        a fragment of its name -- Norway's 2026 Kristiansand, three of 2019's
+        municipalities since 2020, reached the old one as "prefix+state" --
+        and no declaration says its file's figure is other ground here
+        (NOT_THIS_GROUND);
+      * the count is not one put together for the polygon (GROUND_PINNED,
+        COMPOSED_COUNT), and an encyclopaedia's figure is at most RECENCY_SPAN
+        years newer: over longer, the change people make covers the
+        difference between a city and the district around it, and an
+        encyclopaedia names both alike (a projection held behind a census is
+        of the census's own units, HELD_ROWS);
+      * the change a year it makes from the count is one people make, at
+        most GROWTH up or DECLINE down (check_rollups), and within
+        RECENCY_SPREAD of the median change of the country's other units
+        offered a figure the same way, where there are RECENCY_PEERS of them;
+        where there are fewer, within RECENCY_FEW. Viet Nam is why the median
+        and not only the bound: the merged provinces' figures run 8.7% a year
+        above the 2019 census, and the provinces that were not merged change
+        by about 1%.
+
+    The count is held in the newer figure's place, with its note and its
+    link, so a check that later refuses the newer figure -- a town's, a
+    settlement's -- shows the count again (fall_back). Returns one line for
+    each unit given a newer figure and one for each kept from one.
+    """
+    refused_files = {(iso3, shape_id): declared["population"][0]
+                     for (iso3, shape_id), declared in NOT_THIS_GROUND.items()
+                     if "population" in declared}
+    offers: list[tuple[str, dict[str, Any], dict[str, Any], float]] = []
+    for table in (admin1, admin2):
+        for iso3, rows in table.items():
+            for entity in rows:
+                shown = entity.get("population")
+                value, year = published(shown), vintage(shown)
+                if entity.get("water") or not value or not year or value <= 0:
+                    continue
+                origin = (entity.get("_from") or {}).get("population")
+                if is_fill_only(origin, iso3):
+                    continue                 # the newer of those already stands
+                if origin in GROUND_PINNED:
+                    continue
+                said = " ".join(str(text or "") for text in (
+                    entity.get("population_note"),
+                    shown.get("note") if isinstance(shown, dict) else None))
+                if COMPOSED_COUNT.search(said):
+                    continue
+                best = None
+                for held in (entity.get("_held") or {}).get("population", []):
+                    offered, when = published(held.get("value")), vintage(held.get("value"))
+                    if (not is_fill_only(held.get("file"), iso3) or not offered
+                            or not when or when <= year
+                            or (held.get("file") in FILL_ONLY and when - year > RECENCY_SPAN)
+                            or round(offered) == round(value)
+                            or str(held.get("match") or "").split("+")[0]
+                            in ("prefix", "contains")
+                            or held.get("file") == refused_files.get((iso3, entity.get("id")))):
+                        continue
+                    if best is None or when > vintage(best["value"]):
+                        best = held
+                if best is not None:
+                    rate = (published(best["value"]) / value) ** (
+                        1 / (vintage(best["value"]) - year)) - 1
+                    offers.append((iso3, entity, best, rate))
+    rates: dict[str, list[float]] = defaultdict(list)
+    for iso3, _, _, rate in offers:
+        rates[iso3].append(rate)
+    typical = {iso3: sorted(r)[len(r) // 2] if len(r) % 2 else
+               (sorted(r)[len(r) // 2 - 1] + sorted(r)[len(r) // 2]) / 2
+               for iso3, r in rates.items()}
+    taken: list[str] = []
+    kept: list[str] = []
+    for iso3, entity, best, rate in offers:
+        shown = entity["population"]
+        line = (f"{iso3} {entity.get('name')}: {published(shown):,.0f} ({vintage(shown)}) "
+                f"-> {published(best['value']):,.0f} ({vintage(best['value'])}), "
+                f"{rate:+.1%} a year")
+        if len(rates[iso3]) >= RECENCY_PEERS:
+            same = (-check_rollups.DECLINE <= rate <= check_rollups.GROWTH
+                    and abs(rate - typical[iso3]) <= RECENCY_SPREAD)
+        else:
+            same = RECENCY_FEW[0] <= rate <= RECENCY_FEW[1]
+        if not same:
+            kept.append(line)
+            continue
+        origin = entity.setdefault("_from", {})
+        how = entity.setdefault("_how", {})
+        cited = [src for src in entity.get("sources") or []
+                 if set(str(src.get("field") or "").split("/")) <= {"population"}]
+        held_list = entity["_held"]["population"]
+        held_list.remove(best)
+        # Held as the count it is, not as a figure of the item the unit is
+        # linked to: a_unit refuses the refused item's own figures.
+        held_list.insert(0, {"value": shown, "wikidata": None,
+                             "file": origin.get("population"),
+                             "match": how.get("population"), "sources": cited,
+                             "unit_note": entity.get("population_note"),
+                             "link": entity.get("wikidata")})
+        entity["population"] = dict(best["value"])
+        entity.pop("population_note", None)
+        entity["sources"] = [src for src in entity.get("sources") or []
+                             if src not in cited] + list(best.get("sources") or [])
+        origin["population"] = best.get("file")
+        how["population"] = best.get("match")
+        if best.get("wikidata"):
+            entity["wikidata"] = best["wikidata"]
+        taken.append(line)
+    return taken, kept
 
 
 def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -10884,6 +11090,15 @@ def main() -> int:
     if mixtures:
         log(f"  {mixtures} polygons measured as mixtures of constituencies left "
             f"without figures")
+    # The most recent figure each unit was offered, where it is the same
+    # ground: before the settlement checks, which may refuse it and show the
+    # count it displaced again.
+    newer, refused_newer = prefer_newer_figures(admin1_by_country, admin2_by_country)
+    if newer:
+        log(f"  {len(newer)} populations shown from a newer figure than the count "
+            f"behind them: " + "; ".join(newer[:6]) + (" ..." if len(newer) > 6 else ""))
+    for line in refused_newer:
+        log(f"  newer figure not taken for the same ground -- {line}")
     settlements = refuse_settlement_figures(admin1_by_country, admin2_by_country,
                                             read_json(ITEM_CLASSES, {}) or {})
     if settlements:
