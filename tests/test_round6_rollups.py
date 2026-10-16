@@ -702,7 +702,7 @@ class StatedPopulationGaps(unittest.TestCase):
         self.assertEqual(sorted(said), ["ATA Antarctica", "SDN Abyei PCA"])
         self.assertEqual(ata["population"], reason)
         self.assertEqual(ata["median_age"]["status"], "not_applicable")
-        self.assertEqual(abyei["population"]["note"], be.DISPUTED_NOTE)
+        self.assertEqual(abyei["population"]["note"], be.DISPUTED_GAP)
         self.assertNotIn("note", other["population"])
 
     def test_a_gap_that_already_says_why_is_kept(self):

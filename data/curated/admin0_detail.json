@@ -2753,7 +2753,7 @@
    "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2014 census, table 17, Total population by regions and ethnicity, row 'GEORGIA'",
    "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
    "license": "Geostat, open publication",
-   "note": "Ethnicity (ეროვნება) as each person declared it, 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, which is why the country's population on the map (an estimate with them) is larger than this count, and why its regions are not summed into it.",
+   "note": "Ethnicity (ეროვნება) as each person declared it, 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, and these shares do not cover them.",
    "groups": [
     {
      "group": "Georgian",
@@ -2829,7 +2829,7 @@
    "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2014 census, table 22, Population by regions and religion, row 'GEORGIA'",
    "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
    "license": "Geostat, open publication",
-   "note": "Religion (აღმსარებლობა), 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, which is why the country's population on the map (an estimate with them) is larger than this count, and why its regions are not summed into it.",
+   "note": "Religion (აღმსარებლობა), 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, and these shares do not cover them.",
    "groups": [
     {
      "group": "Orthodox",
@@ -2895,7 +2895,7 @@
    "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2014 census, table 20, Population by region, by native languages, row 'GEORGIA'",
    "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
    "license": "Geostat, open publication",
-   "note": "Native language (მშობლიური ენა), 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, which is why the country's population on the map (an estimate with them) is larger than this count, and why its regions are not summed into it.",
+   "note": "Native language (მშობლიური ენა), 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, and these shares do not cover them.",
    "groups": [
     {
      "group": "Georgian",
@@ -5522,7 +5522,15 @@
    "source": "FSM Statistics Division, Federated States of Micronesia, 2023 Population and Housing Census, National Basic Tables (Table B1)",
    "url": "https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx",
    "license": "None stated -- FSM Statistics Division publication, cited as such",
-   "note": "The Factbook's estimate for 2024, nearer the 2010 census's 102,843 than the 2023 census's count of 75,817 people (National Basic Tables), whose four states' rows add up to within a person of it. The states carry the 2023 census."
+   "note": "The Factbook's estimate for 2024, nearer the 2010 census's 102,843 than the 2023 census's count of 75,817 people (National Basic Tables), whose four states' rows add up to within a person of it. The states carry the 2023 census.",
+   "note_sources": [
+    {
+     "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, National Basic Tables",
+     "url": "https://stats.gov.fm/download/18/population-statistics/600/fsm-basic-tables-2010-population-housing-census.xlsx",
+     "year": 2010,
+     "license": "None stated -- FSM Statistics Division publication, cited as such"
+    }
+   ]
   },
   {
    "country": "KIR",
@@ -5533,7 +5541,15 @@
    "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables",
    "url": "https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx",
    "license": "None stated -- Kiribati National Statistics Office publication, cited as such",
-   "note": "The Factbook's estimate for 2024, below the 2020 census's count four years earlier: 119,438 people on Kiribati's 24 islands (Island Profile tables). The census before, in 2015, counted 110,136. The island groups carry the 2020 census."
+   "note": "The Factbook's estimate for 2024, below the 2020 census's count four years earlier: 119,438 people on Kiribati's 24 islands (Island Profile tables). The census before, in 2015, counted 110,136. The island groups carry the 2020 census.",
+   "note_sources": [
+    {
+     "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016)",
+     "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+     "year": 2015,
+     "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+    }
+   ]
   },
   {
    "country": "KIR",
@@ -5654,7 +5670,15 @@
   {
    "country": "ISR",
    "field": "population",
-   "note": "The Factbook's figure counts East Jerusalem and the Golan Heights, as the Central Bureau of Statistics' count does: the bureau's six districts held 9,410,100 people at the end of 2023, the Golan within the Northern District and East Jerusalem within the Jerusalem District. This map draws East Jerusalem inside the West Bank's polygon and the Golan Heights within Syria, so the figure is larger than the population of the shape shown here; no figure is published for that shape alone."
+   "note": "The Factbook's figure counts East Jerusalem and the Golan Heights, as the Central Bureau of Statistics' count does: the bureau's six districts held 9,410,100 people at the end of 2023, the Golan within the Northern District and East Jerusalem within the Jerusalem District. This map draws East Jerusalem inside the West Bank's polygon and the Golan Heights within Syria, so the figure is larger than the population of the shape shown here; no figure is published for that shape alone.",
+   "note_sources": [
+    {
+     "name": "Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 (No. 75), Table 2.17: population by population group, district and sub-district, 31 December 2023",
+     "url": "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx",
+     "year": 2023,
+     "license": "Central Bureau of Statistics (Israel), published statistical abstract"
+    }
+   ]
   },
   {
    "country": "ISR",
@@ -5692,7 +5716,7 @@
    "source": "Central Statistical Bureau (Kuwait), Register-based Census 2021, Table 1",
    "url": "https://census.csb.gov.kw/CensusData_EN?id=1",
    "license": "Central Statistical Bureau of Kuwait, published census tables",
-   "note": "The Factbook's estimate for 2025. Kuwait's 2021 register-based census counted 4,385,717 people, of whom the six governorates hold 4,381,139 and 4,578 are not stated by governorate; the governorates show that census where no newer figure is published for them."
+   "note": "The Factbook's estimate for 2025. Kuwait's 2021 register-based census counted 4,385,717 people, of whom the six governorates hold 4,381,139 and 4,578 are not stated by governorate. Two governorates, Al Asimah and Hawalli, show newer figures; the other four show the census, and Farwaniya's and Jahra's notes say why the newer figures published for them are not shown."
   },
   {
    "country": "OMN",
@@ -5800,17 +5824,47 @@
    "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: population as of 1 January by regions and self-governed units",
    "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
    "license": "Geostat, open publication",
-   "note": "The Factbook's estimate for 2024. Geostat's population of Georgia on 1 January 2026 was 3,941,200 people, the figure its regions carry; Geostat does not count Abkhazia or the Tskhinvali region, which the government does not control. Abkhazia shows its de facto authorities' own estimate for the same day, 243,977 people."
+   "note": "The Factbook's estimate for 2024. Geostat's population of Georgia on 1 January 2026 was 3,941,200 people, the figure its regions carry; Geostat does not count Abkhazia or the Tskhinvali region, which the government does not control. Abkhazia shows its de facto authorities' own estimate for the same day, 243,977 people.",
+   "note_sources": [
+    {
+     "name": "State Committee of the Republic of Abkhazia on Statistics (the statistics office of Abkhazia's de facto authorities), «Абхазский статистический ежегодник – 2025» (Abkhaz statistical yearbook 2025, 2026), table 1.11",
+     "url": "https://cgsra.org/media/files/25.pdf",
+     "year": 2026,
+     "license": "Published by the State Committee of the Republic of Abkhazia on Statistics; terms of reuse not stated"
+    }
+   ]
   },
   {
    "country": "BTN",
    "field": "population",
-   "note": "The Factbook's estimate for 2025. Bhutan last counted its people in the 2017 census: 735,553, of whom 727,145 were enumerated in the twenty dzongkhags and 8,408 were tourists and others in transit; the dzongkhags carry that census and add up to 727,145, 18.6% below this estimate."
+   "note": "The Factbook's estimate for 2025. Bhutan last counted its people in the 2017 census: 735,553, of whom 727,145 were enumerated in the twenty dzongkhags and 8,408 were tourists and others in transit; the dzongkhags carry that census and add up to 727,145, 18.6% below this estimate.",
+   "note_sources": [
+    {
+     "name": "National Statistics Bureau of Bhutan, 2017 Population & Housing Census of Bhutan, National Report",
+     "url": "https://www.nsb.gov.bt/phcb",
+     "year": 2017,
+     "license": "National Statistics Bureau of Bhutan. Official publication."
+    }
+   ]
   },
   {
    "country": "LAO",
    "field": "population",
-   "note": "The Factbook's estimate for 2024. Most of Laos's districts carry OCHA's common operational dataset for 2024 (from UNFPA), which gives 7,631,798 people in all, and most provinces the sum of their districts; their ethnicity and religion come from the 4th Population and Housing Census of 2015, which counted 6,492,228 people."
+   "note": "The Factbook's estimate for 2024. Most of Laos's districts carry OCHA's common operational dataset for 2024 (from UNFPA), which gives 7,631,798 people in all, and most provinces the sum of their districts; their ethnicity and religion come from the 4th Population and Housing Census of 2015, which counted 6,492,228 people.",
+   "note_sources": [
+    {
+     "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+     "url": "https://data.humdata.org/dataset/cod-ps-lao",
+     "year": 2024,
+     "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+    },
+    {
+     "name": "Lao Statistics Bureau, 4th Population and Housing Census 2015, village indicator table, released through Open Development Laos",
+     "url": "https://data.laos.opendevelopmentmekong.net/dataset/lao-population-and-housing-census-2015-general-demographic",
+     "year": 2015,
+     "license": "Official statistics of the Lao Statistics Bureau, distributed by Open Development Laos"
+    }
+   ]
   },
   {
    "country": "UKR",

@@ -391,6 +391,28 @@ class CuratedFigures(unittest.TestCase):
         quiet(be.apply_country_detail, [mhl], {"MHL": [self.ROW]})
         self.assertEqual(mhl["population"]["value"], 82_011)
 
+    def test_the_counts_a_note_quotes_are_cited_for_it(self):
+        # Bhutan's note quotes the 2017 census; nothing on the record cited it.
+        btn = {"id": "BTN", "population": {"value": 893_282, "year": 2025,
+                                           "source": "CIA World Factbook"},
+               "sources": [{"field": "*", "name": "CIA World Factbook"}]}
+        census = {"name": "NSB, 2017 census, National Report", "url": "https://example.org",
+                  "year": 2017, "license": "Official publication."}
+        quiet(be.apply_country_figures, [btn], {"BTN": [
+            {"country": "BTN", "field": "population", "note": "n" * 90,
+             "note_sources": [census]}]})
+        self.assertEqual(btn["population"]["value"], 893_282)
+        self.assertEqual([(s["name"], s["field"]) for s in btn["sources"]],
+                         [("CIA World Factbook", "*"),
+                          ("NSB, 2017 census, National Report", "population note")])
+        self.assertIn("not the source of the figure shown", btn["sources"][1]["note"])
+        # A check row's quoted counts beside its own.
+        mhl = self.country()
+        row = dict(self.ROW, note_sources=[census])
+        quiet(be.apply_country_figures, [mhl], {"MHL": [row]})
+        self.assertEqual([s["field"] for s in mhl["sources"]],
+                         ["*", "population note", "population note"])
+
 
 class CuratedCompositions(unittest.TestCase):
     def test_a_status_row_states_the_gap_in_place_of_the_line(self):
@@ -434,7 +456,6 @@ class CuratedCompositions(unittest.TestCase):
             {"country": "THA", "field": "ethnicity", "basis": "nationality", "note": "n"}]})
         self.assertEqual(tha["ethnicity_basis"], "nationality")
         self.assertEqual(tha["ethnicity"], [{"group": "Thai", "pct": 97.5}])
-
 
 class CuratedFile(unittest.TestCase):
     """data/curated/admin0_detail.json as written."""

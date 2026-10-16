@@ -101,6 +101,35 @@ class NewerFigures(unittest.TestCase):
         self.assertEqual(taken, [])
         self.assertEqual(len(kept), 7)
         self.assertEqual(cao_bang["population"]["value"], 530_341)
+        # The unit says so once the figures are settled.
+        self.assertEqual(be.say_newer_not_taken(country(*merged, cao_bang)), 7)
+        self.assertEqual(cao_bang["population_note"],
+                         "Everyone the 2021 census counted. A newer figure is not shown: "
+                         "558,500 for 2024 from Wikidata, a rise of 1.0% a year from the "
+                         "figure shown, while the country's other units given newer "
+                         "figures changed by +9.0% a year in the median. A figure so far "
+                         "from theirs may be of other ground or counted another way.")
+        self.assertNotIn("_not_taken", cao_bang)
+
+    def test_a_change_too_large_says_so_without_peers(self):
+        # Kuwait's Jahra: 566,861 at the 2021 census, Wikipedia's 439,106 for
+        # 2025, with too few other governorates to weigh it against.
+        jahra = unit("J", 566_861, 2021, newer=439_106, newer_year=2025)
+        taken, kept = be.prefer_newer_figures({}, country(jahra))
+        self.assertEqual((taken, len(kept)), ([], 1))
+        self.assertEqual(be.say_newer_not_taken({}, country(jahra)), 1)
+        self.assertTrue(jahra["population_note"].endswith(
+            "A newer figure is not shown: 439,106 for 2025 from Wikidata, a fall of 6.2% a "
+            "year from the figure shown. A change that large may mean other ground or "
+            "another way of counting."), jahra["population_note"])
+
+    def test_a_reason_is_not_given_for_a_figure_since_replaced(self):
+        jahra = unit("J", 566_861, 2021, newer=439_106, newer_year=2025)
+        be.prefer_newer_figures({}, country(jahra))
+        jahra["population"] = {"value": 600_000, "year": 2024, "source": "another"}
+        self.assertEqual(be.say_newer_not_taken(country(jahra)), 0)
+        self.assertEqual(jahra["population_note"], "Everyone the 2021 census counted.")
+        self.assertNotIn("_not_taken", jahra)
 
     def test_a_figure_joined_by_a_fragment_of_the_name_is_not_compared(self):
         # Norway's 2026 Kristiansand, three of 2019's kommuner since 2020.
@@ -248,6 +277,34 @@ class TwinsShowOneFigure(unittest.TestCase):
         be.fill_same_polygons({"SMR": [first2]}, {"SMR": [second2]})
         self.assertEqual(first2["population"]["value"], 3_620)
         self.assertEqual(first2["population"][be.RESTATED_FROM]["value"], 3_613)
+
+    def test_a_parents_only_division_takes_the_figure_put_in_front_of_their_count(self):
+        # Minsk City: Wikidata's 1,995,091 for 2026 in front of the 2019
+        # census's 2,018,281 a level up; its only division, the same ground,
+        # the census's 2,018,281 alone.
+        census = {"value": 2_018_281, "year": 2019, "source": "Belstat, 2019 census"}
+        parent = {"id": "P", "name": "Minsk City", "parent": "BLR",
+                  "population": {"value": 1_995_091, "year": 2026, "source": "Wikidata (CC0)",
+                                 be.RESTATED_FROM: dict(census)},
+                  "sources": [{"field": "population", "name": "Wikidata"}]}
+        child = {"id": "C", "name": "Minsk City", "parent": "P",
+                 "population": dict(census),
+                 "sources": [{"field": "population", "name": "Belstat"}]}
+        good = {"inside": 0.99, "share": 0.99, "spill": 0.0, "spill_by": None,
+                "cover": [], "peopled": False}
+        filled, refused = be.fill_sole_children({"BLR": [parent]}, {"BLR": [child]},
+                                                {"C": good}, {})
+        self.assertEqual(refused, [])
+        self.assertEqual(child["population"]["value"], 1_995_091)
+        self.assertEqual(child["population"]["year"], 2026)
+        self.assertEqual(child["population"][be.RESTATED_FROM]["value"], 2_018_281)
+        self.assertEqual(child["population_note"],
+                         "This is Minsk City's only division and covers the same ground, "
+                         "so both show this figure.")
+        self.assertEqual([s["name"] for s in child["sources"]], ["Wikidata"])
+        self.assertEqual(parent["population"]["value"], 1_995_091)
+        self.assertIn("Minsk City population: 2,018,281 on the division gives way to "
+                      "1,995,091", " ".join(filled))
 
 
 class UnionsAcrossFiles(unittest.TestCase):
@@ -483,18 +540,19 @@ class ParentsFromNewerDivisions(unittest.TestCase):
                       "Bureau.", parent["population_note"])
         self.assertEqual(parent["population"][be.RESTATED_FROM]["value"], 760_000)
 
-    def test_a_same_year_sum_stands_in_front_of_a_figure_put_in_front_this_build(self):
-        # Papua: Wikidata's 2024 figure in front of BPS's 2022 count, and the
-        # 29 regencies' own 2024 figures.
+    def test_a_same_year_sum_is_no_newer(self):
+        # Jambi: Wikidata's 2024 figure (BPS's projection) in front of BPS's
+        # 2022 count, and the eleven regencies' civil-register figures for
+        # 2024. The register's sum is not newer, and the province keeps the
+        # figure its thirty siblings show.
         register = "Kementerian Dalam Negeri, Dukcapil civil registration"
         a1, a2, parent = self.tables(760_000, year=2024, source=register)
         self.promoted(a1, parent, 870_000, 2024)
-        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True),
-                         ["LAO Province 870,000 -> 860,000"])
-        self.assertIn("It replaces 760,000 for 2015", parent["population_note"])
-        # An encyclopaedia's figure the build did not put in front of a count
-        # keeps its year's place: Angola's 2024 provinces are Wikidata's,
-        # its municipalities OCHA's projection of 2024.
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])
+        self.assertEqual(parent["population"]["value"], 870_000)
+        # Nor does one the build did not put in front of a count: Angola's
+        # 2024 provinces are Wikidata's, its municipalities OCHA's projection
+        # of 2024.
         a1, a2, parent = self.tables(760_000, year=2024, source=register)
         parent["population"] = {"value": 870_000, "year": 2024, "source": "Wikidata (CC0)"}
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])

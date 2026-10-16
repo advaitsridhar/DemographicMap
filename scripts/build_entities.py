@@ -3216,7 +3216,8 @@ FIGURE_ROWS = {"population": None, "median_age": "years",
                "sex_ratio": "males_per_1000_females"}
 CURATED_GAPS = (NOT_AVAILABLE, NOT_COLLECTED)
 # The keys of a curated figure row that only says what the figure counts.
-NOTE_ONLY = frozenset({"country", "field", "note", "status"})
+# ``note_sources`` cites the counts its note quotes besides the row's own.
+NOTE_ONLY = frozenset({"country", "field", "note", "status", "note_sources"})
 
 
 def load_country_detail() -> dict[str, list[dict[str, Any]]]:
@@ -3254,6 +3255,22 @@ def _cite(entity: dict[str, Any], field: str, row: dict[str, Any]) -> None:
         sources.append({"field": field, "name": row["source"],
                         "url": row.get("url"), "year": row.get("year"),
                         "license": row.get("license", "See docs/SOURCES.md")})
+
+
+def _cite_quoted(entity: dict[str, Any], field: str, source: dict[str, Any]) -> None:
+    """Cite a count the note beside a figure quotes, said to be that.
+
+    Tuvalu's 2022 census was named in the note beside the Factbook's figure
+    and never linked; Bhutan's 2017 census, Israel's districts and Laos's two
+    totals were quoted with no source on the record at all.
+    """
+    quoted = {"field": f"{field} note", "name": source["name"],
+              "url": source.get("url"), "year": source.get("year"),
+              "license": source.get("license", "See docs/SOURCES.md"),
+              "note": "The count the note beside the population quotes, "
+                      "not the source of the figure shown."}
+    if quoted not in entity.setdefault("sources", []):
+        entity["sources"].append(quoted)
 
 
 def apply_country_figures(admin0: list[dict[str, Any]],
@@ -3298,6 +3315,8 @@ def apply_country_figures(admin0: list[dict[str, Any]],
                     entity[field] = gap(status, row["note"])
                 else:
                     entity[f"{field}_note"] = row["note"]
+                for source in row.get("note_sources") or []:
+                    _cite_quoted(entity, field, source)
                 applied += 1
                 continue
             if not isinstance(row.get("value"), (int, float)) or not row.get("year") \
@@ -3320,19 +3339,17 @@ def apply_country_figures(admin0: list[dict[str, Any]],
                 entity[field] = {**shown, CHECKED_AGAINST: {
                     "value": row["value"], "year": row["year"], "source": row["source"]}}
                 # The count the note quotes keeps its link and licence, cited
-                # for the note and said to be that, not for the figure shown:
-                # Tuvalu's 2022 census was otherwise named and never linked.
-                quoted = {"field": f"{field} note", "name": row["source"],
-                          "url": row.get("url"), "year": row.get("year"),
-                          "license": row.get("license", "See docs/SOURCES.md"),
-                          "note": "The count the note beside the population quotes, "
-                                  "not the source of the figure shown."}
-                if quoted not in entity.setdefault("sources", []):
-                    entity["sources"].append(quoted)
+                # for the note and said to be that, not for the figure shown.
+                _cite_quoted(entity, field, {"name": row["source"], "url": row.get("url"),
+                                             "year": row.get("year"),
+                                             "license": row.get("license",
+                                                                "See docs/SOURCES.md")})
             else:
                 entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
                                         year=row["year"], source=row["source"])
                 _cite(entity, field, row)
+            for source in row.get("note_sources") or []:
+                _cite_quoted(entity, field, source)
             entity[f"{field}_note"] = row["note"]
             applied += 1
     if applied:
@@ -4592,6 +4609,33 @@ def implied_total(groups: list[dict[str, Any]]) -> float | None:
     return best[1] if best else None
 
 
+def counted_total(groups: list[dict[str, Any]]) -> float | None:
+    """The people a composition's counts are of, where they are all of them.
+
+    implied_total backs the base out of one group's rounded percentage, which
+    is right where the rows count part of it -- Mexico's speakers of an
+    indigenous language, three and over -- and a little off where they count
+    everyone: Kuwait's governorates count 4,381,139 people by nationality, and
+    their sum's note said 4,381,064, under a population note giving 4,381,139.
+    Where the counts add up to the backed-out base within what the rounding of
+    that percentage allows, they are the whole of it, and their sum is the
+    base exactly.
+    """
+    implied = implied_total(groups)
+    if implied is None:
+        return None
+    counts = [row.get("count") for row in groups]
+    if not all(isinstance(c, (int, float)) for c in counts):
+        return implied
+    best = max((row for row in groups if isinstance(row.get("pct"), (int, float))
+                and row["pct"] > 0), key=lambda row: row["count"], default=None)
+    if best is None:
+        return implied
+    slack = implied * (0.05 / best["pct"] + 1e-6)
+    whole = float(sum(counts))
+    return whole if abs(whole - implied) <= slack else implied
+
+
 def repriced_sentence(repriced: list[tuple[str, Any]]) -> str:
     """What a sum says of the divisions whose shares were taken of the figure
     they carried before the newer one shown: "For Tbong Khmum the population
@@ -5026,7 +5070,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # shown (control_population), named with it in the note.
     repriced: list[tuple[str, Any]] = []
     for child in children:
-        share = implied_total(child[field])
+        share = counted_total(child[field])
         rows = child[field]
         priced = all(isinstance(r.get("count"), (int, float)) for r in rows)
         if not priced or weighted:
@@ -5116,9 +5160,12 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # Not where every division's figures are its shares taken of a population:
     # those are no division's counts, and the sentences below say which
     # populations they were taken of.
+    # Nor where some are: Indonesia's 34 provinces, 32 of them shares taken
+    # of a population, read "The figures added are the divisions' own
+    # counts", followed by the sentence saying 32 have none. The sentence on
+    # the derived ones says what was added.
     counted = ""
-    if (not weighted and denominator > 0 and total_pop
-            and len(derived) < len(children)
+    if (not weighted and denominator > 0 and total_pop and not derived
             and abs(denominator - total_pop) > ROLLUP_TOLERANCE * total_pop):
         when = (f" in {next(iter(years))}" if len(years) == 1 else
                 f", nearly all of them in {dated}" if dated is not None else "")
@@ -5349,6 +5396,25 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
                          + ("" if year else " They are not all counted in one year, "
                             "so the sum carries no year.")
                          + (" " + pop["note"] if pop.get("note") else ""))}
+            # The sum cites what it adds up, and the figure left out is no
+            # longer cited for the population: Moxico listed Wikidata for
+            # "population/capital/coordinates" and nothing for OCHA's
+            # municipalities, whose figures the sum is.
+            kept = []
+            for src in parent.get("sources", []):
+                cites = cited_fields(src)
+                if "population" not in cites:
+                    kept.append(src)
+                elif set(cites) - {"population"}:
+                    kept.append(dict(src, field="/".join(f for f in cites
+                                                         if f != "population")))
+            for child in children:
+                for src in child.get("sources", []):
+                    if "population" in cited_fields(src):
+                        entry = dict(src, field="population")
+                        if entry not in kept:
+                            kept.append(entry)
+            parent["sources"] = kept
             filled.append(f"{iso3} {parent['name']}")
     return filled
 
@@ -5495,16 +5561,14 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
             if not source or year is None or check_rollups.is_encyclopaedic({"source": source}):
                 continue
             own_year = vintage(pop)
-            # An encyclopaedia's figure that prefer_newer_figures put in front
-            # of a count in this build gives way to its divisions' own figures
-            # of the same year too: those are the office's account of the
-            # ground drawn, as they were before the newer figure came in front.
-            # Papua's 29 regencies' 2024 figures add up to 4,497,369, against
-            # Wikidata's 4,542,600 for 2024 over BPS's 2022 count.
-            promoted = (isinstance(pop.get(RESTATED_FROM), dict)
-                        and check_rollups.is_encyclopaedic(pop))
-            if (not declared and own_year is not None
-                    and (year < own_year or (year == own_year and not promoted))):
+            # A sum of the same year as the figure shown is no newer, and does
+            # not replace it, even where that figure is an encyclopaedia's that
+            # prefer_newer_figures put in front of a count. Jambi's eleven
+            # regencies carry the civil register's figures for 2024, which add
+            # up to 3,819,233; Wikidata's 3,724,300 for 2024 is BPS's own
+            # projection in thousands, as it is for the other thirty provinces
+            # that show 2024, and the register counts on a different basis.
+            if not declared and own_year is not None and year <= own_year:
                 continue
             if (not declared and own_year is not None and projection({"source": source})
                     and year - own_year < RESTATE_PROJECTION_YEARS):
@@ -5618,7 +5682,7 @@ def state_population_gaps(admin0: list[dict[str, Any]],
                 if iso3 in not_applicable:
                     reason = dict(not_applicable[iso3])
                 elif STATED_POPULATION_GAPS.get((iso3, entity.get("name"))) == "disputed":
-                    reason = gap(NOT_AVAILABLE, DISPUTED_NOTE)
+                    reason = gap(NOT_AVAILABLE, DISPUTED_GAP)
                 if reason is None:
                     continue
                 changed = False
@@ -6476,8 +6540,11 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
 
 DISPUTED_NOTE = ("Disputed or special-status territory as delimited by geoBoundaries "
                  "CGAZ, which follows US Department of State definitions. Shown for "
-                 "completeness; no sovereignty claim is implied and no demographic "
-                 "source is joined to it.")
+                 "completeness; no sovereignty claim is implied.")
+# The same, for a figure the territory has none of. It said "no demographic
+# source is joined to it", which spoke of the map's making, and was false
+# beside the Gaza Strip's, the West Bank's and the Falklands' populations.
+DISPUTED_GAP = DISPUTED_NOTE + " No source used here gives this figure for it."
 
 
 def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
@@ -6533,45 +6600,59 @@ def mark_water(entity: dict[str, Any], group: str) -> None:
 
 COMPOSITION_FIELDS = ("religion", "language", "ethnicity")
 
-# The three ways a composition field can still be bare at the end of the
-# pipeline, in the words the panel prints. Each says what is true and stops
-# there: none of them claims the census does not ask, because none of them
-# knows. The first is the one this pass exists for.
+# The ways a composition field can still be bare at the end of the pipeline,
+# in the words the panel prints. Each says what is true and stops there: none
+# of them claims the census does not ask, because none of them knows. They say
+# what the sources give, not how the map was put together: the first wording
+# told the visitor what had been "read", "fetched" and "joined", and which
+# unit "matched no row" -- on Libya's districts, whose populations the same
+# sources give.
 NO_SOURCE_READ = (
-    "No unit-level source has been read for {country} at this level, so "
-    "nothing has been fetched for this field. That is a gap in this map's "
-    "reading, not a claim about what the census asks or publishes.")
+    "No {field} figure is shown: none of the sources used here gives figures "
+    "for the units of {country} at this level.")
 SOURCE_LACKS_FIELD = (
-    "The source read for this unit -- {sources} -- carries {present} and "
-    "not {field}. Nothing has been fetched for it here, which is a limit of "
-    "what was read and not a statement that the census does not ask.")
+    "The sources used for this unit ({sources}) give its {present} but not its "
+    "{field}, and no {field} figure has been found for it. That says nothing "
+    "about whether the census asks.")
 SOURCE_LACKS_ALL = (
-    "The source read for this unit -- {sources} -- carries no composition "
-    "for any of religion, language or ethnicity. Nothing has been fetched "
-    "for this field, which is a limit of what was read and not a statement "
-    "that the census does not ask.")
-UNMATCHED_UNIT = (
-    "A unit-level source was read for {country} at this level -- {sources} -- "
-    "and {matched} of its {units} units were joined to it. This unit matched "
-    "no row in that source, so whatever it publishes here has not been "
-    "reached. That is a gap in this map's joining, not a claim about what the "
-    "census asks or publishes.")
+    "None of the sources used for this unit ({sources}) gives its religion, "
+    "language or ethnicity, and no figure has been found for it. That says "
+    "nothing about whether the census asks.")
+# A unit beside others at its level that carry the field, and one beside none.
+FIELD_ELSEWHERE = (
+    "No {field} figure has been found for this unit. {carriers} {give} it for "
+    "{n} of the {units} units of {country} at this level, not for this one.")
+FIELD_NOWHERE = (
+    "None of the sources used for the units of {country} at this level "
+    "({sources}) gives {field}, and no figure has been found for this unit. "
+    "That says nothing about whether the census asks.")
+
+
+def cited_names(sources: Sequence[dict[str, Any]]) -> list[str]:
+    """The sources cited, as a sentence names them, once each."""
+    return sorted({check_rollups.short_source(str(s.get("name")))
+                   for s in sources if s.get("name")}) or ["an unnamed source"]
 
 
 def joined_here(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
-    """What a source reached at this level, for the units it did not reach.
+    """What the sources give at this level, for the units they give nothing.
 
-    An unmatched unit sits beside units that matched, and the two need
-    different sentences. Counting the siblings once per country is what lets
-    say_why_empty tell them apart, and the counts go into the note so a reader
-    can see the shape of the failure rather than take the word "gap" on trust.
+    A bare unit beside units that carry the field and one beside none need
+    different sentences. Counted once per country and level, and the counts go
+    into the note, so a reader can see how far the sources reach rather than
+    take the word "gap" on trust.
     """
     live = [r for r in rows if not r.get("disputed")]
     matched = [r for r in live if r.get("match")]
-    names = sorted({s.get("name") for r in matched
-                    for s in r.get("sources", []) if s.get("name")})
-    return {"sources": ", ".join(names) or "an unnamed source",
-            "matched": len(matched), "units": len(live)}
+    fields = {}
+    for field in COMPOSITION_FIELDS:
+        carrying = [r for r in live if isinstance(r.get(field), list) and r[field]]
+        fields[field] = {"n": len(carrying), "sources": cited_names(
+            [src for r in carrying for src in r.get("sources", [])
+             if field in cited_fields(src)])}
+    return {"sources": listed(cited_names([src for r in matched
+                                           for src in r.get("sources", [])])),
+            "matched": len(matched), "units": len(live), "fields": fields}
 
 
 def say_why_empty(entity: dict[str, Any], country: str,
@@ -6589,13 +6670,16 @@ def say_why_empty(entity: dict[str, Any], country: str,
     Returns which case applied, for the build log to count, or None.
     """
     case = None
+    # "The Gambia" and "The Bahamas" mid-sentence.
+    country = re.sub(r"^The ", "the ", country)
     for field in COMPOSITION_FIELDS:
         value = entity.get(field)
         if not (isinstance(value, dict) and value.get("status")
                 and not value.get("note")):
             continue
+        reach = ((joined or {}).get("fields") or {}).get(field) or {"n": 0, "sources": []}
         if entity.get("disputed"):
-            note, case = DISPUTED_NOTE, "disputed"
+            note, case = DISPUTED_GAP, "disputed"
         elif field_gap(entity.get("country"), field, entity.get("level")):
             note = field_gap(entity.get("country"), field, entity.get("level"))
             case = "country publishes nothing"
@@ -6603,31 +6687,37 @@ def say_why_empty(entity: dict[str, Any], country: str,
             # The country-level fact already on the record: what the country
             # publishes. True of the field, so it is the field's reason too.
             note, case = entity["gap_reason"], "country publishes nothing"
+        elif joined and reach["n"]:
+            # Other units at this level carry the field and this one does
+            # not: 27 of Bulgaria's 28 oblasts carry Wikidata and Sofia does
+            # not, because "Sofia Oblast" could reach neither "Sofia" nor
+            # "Sofia City" without reaching both. Saying no source gives the
+            # field there is false, and false in the direction that hides the
+            # miss.
+            carriers = reach["sources"]
+            note = FIELD_ELSEWHERE.format(
+                field=field, carriers=listed(carriers),
+                give="give" if len(carriers) > 1 else "gives",
+                n=reach["n"], country=country, units=joined["units"])
+            case = "others at this level carry it"
         elif entity.get("match"):
-            sources = sorted({s.get("name") for s in entity.get("sources", [])
-                              if s.get("name")}) or ["an unnamed source"]
+            sources = listed(cited_names(entity.get("sources", [])))
             present = [f for f in COMPOSITION_FIELDS
                        if isinstance(entity.get(f), list)]
             if present:
                 note = SOURCE_LACKS_FIELD.format(
-                    sources=", ".join(sources), field=field,
-                    present=" and ".join(present))
+                    sources=sources, field=field, present=" and ".join(present))
                 case = "source lacks the field"
             else:
-                note = SOURCE_LACKS_ALL.format(sources=", ".join(sources))
+                note = SOURCE_LACKS_ALL.format(sources=sources)
                 case = "source carries no composition"
         elif joined and joined["matched"]:
-            # The unit is bare because the join missed it, not because nobody
-            # read anything: 27 of Bulgaria's 28 oblasts carry Wikidata and
-            # Sofia does not, because "Sofia Oblast" could reach neither
-            # "Sofia" nor "Sofia City" without reaching both. Saying "no
-            # source has been read for Bulgaria" there is false, and false in
-            # the direction that hides the bug -- it blames the absence of a
-            # source for what is an unmatched row.
-            note = UNMATCHED_UNIT.format(country=country, **joined)
-            case = "unit matched no row"
+            note = FIELD_NOWHERE.format(country=country, sources=joined["sources"],
+                                        field=field)
+            case = "no unit at this level carries it"
         else:
-            note, case = NO_SOURCE_READ.format(country=country), "no source read"
+            note = NO_SOURCE_READ.format(country=country, field=field)
+            case = "no source read"
         entity[field] = gap(value["status"], note)
     return case
 
@@ -6988,6 +7078,24 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             same = RECENCY_FEW[0] <= rate <= RECENCY_FEW[1]
         if not same:
             kept.append(line)
+            # Said on the unit, once every pass that may change its figure has
+            # run (say_newer_not_taken): Kuwait's note had the governorates
+            # show the census "where no newer figure is published", and
+            # Farwaniya's and Jahra's are published and were not taken.
+            off = (len(rates[iso3]) >= RECENCY_PEERS
+                   and abs(rate - typical[iso3]) > RECENCY_SPREAD)
+            entity["_not_taken"] = {"shown": published(shown), "sentence": (
+                f"A newer figure is not shown: {published(best['value']):,.0f} for "
+                f"{vintage(best['value'])} from "
+                f"{check_rollups.short_source(str(best['value'].get('source') or ''))}, "
+                f"a {'rise' if rate > 0 else 'fall'} of {abs(rate):.1%} a year from the "
+                f"figure shown"
+                + (f", while the country's other units given newer figures changed by "
+                   f"{typical[iso3]:+.1%} a year in the median. A figure so far from "
+                   f"theirs may be of other ground or counted another way."
+                   if off else
+                   ". A change that large may mean other ground or another way of "
+                   "counting."))}
             continue
         origin = entity.setdefault("_from", {})
         how = entity.setdefault("_how", {})
@@ -7032,6 +7140,27 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             entity["wikidata"] = best["wikidata"]
         taken.append(line)
     return taken, kept
+
+
+def say_newer_not_taken(*tables: dict[str, list[dict[str, Any]]]) -> int:
+    """Say on a unit why a newer figure it was offered is not the one shown.
+
+    Only where the figure shown is still the one the newer figure was weighed
+    against: a pass after prefer_newer_figures that replaced it took the
+    reason's subject with it. Returns how many units say so.
+    """
+    said = 0
+    for table in tables:
+        for rows in table.values():
+            for entity in rows:
+                why = entity.pop("_not_taken", None)
+                if not why or published(entity.get("population")) != why["shown"]:
+                    continue
+                note = entity.get("population_note")
+                entity["population_note"] = (f"{note} {why['sentence']}" if note
+                                             else why["sentence"])
+                said += 1
+    return said
 
 
 def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -8017,11 +8146,15 @@ def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
                        f"{sum(figures):,.0f} between them")
             else:
                 continue
+            # Worded as the other refusals of a figure joined by name are: the
+            # item is the place Wikidata calls by this name, and saying the
+            # figure is "for this unit" and then probably not this unit's
+            # contradicted itself (Angola's Moxico).
             parent["population"] = gap(NOT_AVAILABLE, (
                 f"Wikidata gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
-                + f" for this unit, {why}. It is probably the figure of the town or "
-                  f"of a smaller unit rather than of this one, so it is left out."))
+                + f" for a place of this name, {why}. It is probably the figure of the "
+                  f"town or of a smaller unit, so it is left out."))
             fall_back(parent, parent["population"])
             refused += 1
     return refused
@@ -9595,6 +9728,30 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
                 continue
             copy_field(parent, child, field, sentence)
             filled.append(f"{where} {field}")
+        # A newer figure prefer_newer_figures put in front of the count the
+        # other record shows is that count's successor on both, as for a
+        # polygon drawn twice (twin_population): Minsk City showed Wikidata's
+        # 1,995,091 for 2026 in front of the 2019 census, and its only
+        # division the census's 2,018,281 beside the same ground.
+        for newer, older in ((parent, child), (child, parent)):
+            if not put_in_front_of(newer.get("population"), older.get("population")):
+                continue
+            if newer is parent and parent_not_its_ground(iso3, parent, "population"):
+                continue
+            said = (f"This is {parent.get('name')}'s only division and covers the same "
+                    f"ground, so both show this figure." if older is child else
+                    f"{only_division(parent, child)} covers the same ground, so both show "
+                    f"this figure.")
+            was = published(older["population"])
+            restate_population(newer, older, said)
+            filled.append(f"{where} population: {was:,.0f} on the "
+                          f"{'division' if older is child else 'parent'} gives way to "
+                          f"{published(newer['population']):,.0f}")
+            break
+        else:
+            newer = None
+        if newer is not None:
+            continue
         # One unit, two populations: the office's on both, where it is at
         # least as new as the encyclopaedia's. A parent figure of other ground
         # is never handed down; it may still give way to its division's.
@@ -11784,6 +11941,9 @@ def main() -> int:
     # -- populations: what an empty one and a disagreeing one mean -----------
     # After every pass that sets a population, so each sentence describes the
     # figures the reader is shown.
+    not_taken = say_newer_not_taken(admin1_by_country, admin2_by_country)
+    if not_taken:
+        log(f"  {not_taken} units say why a newer figure they were offered is not shown")
     stated = state_population_gaps(admin0, admin1_by_country, admin2_by_country)
     if stated:
         log(f"  {len(stated)} empty populations given their reason: " + ", ".join(stated))
