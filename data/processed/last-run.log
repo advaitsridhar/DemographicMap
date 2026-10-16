@@ -36,4 +36,14 @@ india_ages: Census of India 2011, table C-13
   study 1470: 14 units, state(s) ['05'], 239,616 bytes
   study 1471: 20 units, state(s) ['19'], 332,800 bytes
   35 states and 640 districts reconcile, to India's 1,210,854,977
-india_ages: Thane (code 517) has 11,060,148 people in C-13 and its shape carries 8,070,032 from C-01; the code is bound to the wrong polygon
+  India's own median, from the all-India workbook: 24.9
+     3 2011 district with no shape (subdivided since)
+     1 boundary artefact
+    91 district created since 2011
+   562 district, unchanged since 2011
+    75 shape that kept a name after a split
+    36 state
+     6 successor of a district divided whole
+  wrote data/processed/india_age.json (1157 kB)
+  wrote data/processed/india_age_successors.json (346 kB)
+  771 records in india_age.json, 172 in india_age_successors.json
