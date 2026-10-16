@@ -205,9 +205,9 @@ ADAPTER_FILES = [
     # surveys, and it touches a field the surveys do not carry.
     "china_wiki_province.json",
     # The Netherlands' twelve provinces, religion from each province's own
-    # nl.wikipedia infobox, which transcribes CBS. A statistical office's
-    # figures read through a transcription, so it sits with the other
-    # Wikipedia-transcribed census tables rather than with the surveys. It
+    # nl.wikipedia infobox, which transcribes CBS. CBS's figures are survey
+    # estimates, so TRANSCRIBED_SURVEYS ranks this file with the surveys and
+    # behind CBS's own workbook above; it fills only what that leaves. It
     # touches religion only: language and ethnicity are NOT_COLLECTED_POLICY
     # for the Netherlands and this must not overwrite that.
     "netherlands_province.json",
@@ -3761,6 +3761,16 @@ SURVEY_FIELDS = frozenset({"religion", "language", "ethnicity"})
 # compare countries rather than to describe a region.
 CROSS_NATIONAL_SURVEYS = frozenset({"ess_region_survey.json"})
 
+# Survey estimates that reach the map through a transcription rather than in a
+# file of their own: CBS's religion by province, as nl.wikipedia's infoboxes
+# copy it. CBS measures religion by survey -- no Dutch census has asked it
+# since 1971 -- so these rank with the surveys and, being transcriptions, stand
+# behind CBS's own workbook whatever year an infobox gives. Drenthe's infobox
+# carries the 2021/2025 workbook's figures under a citation of the December
+# 2016 release, and Noord-Brabant's prints 47.4% with no religion where that
+# workbook has 52.6%.
+TRANSCRIBED_SURVEYS = frozenset({"netherlands_province.json"})
+
 
 def is_survey(filename: str | None) -> bool:
     """A file of survey estimates, which fills compositions and replaces none."""
@@ -3771,7 +3781,7 @@ def composition_rank(filename: str | None) -> int:
     """0 for a count, 1 for a national survey, 2 for a cross-national one."""
     if filename in CROSS_NATIONAL_SURVEYS:
         return 2
-    return 1 if is_survey(filename) else 0
+    return 1 if is_survey(filename) or filename in TRANSCRIBED_SURVEYS else 0
 
 
 # A census composition as Wikipedia transcribes it (europe_wiki.py) is the
@@ -3783,7 +3793,8 @@ def composition_rank(filename: str | None) -> int:
 # Europe brief has it; between two transcriptions, or two tables, the newer
 # still stands.
 def is_wiki_composition(filename: str | None) -> bool:
-    return bool(filename) and filename.startswith("europe_wiki_")
+    return bool(filename) and (filename.startswith("europe_wiki_")
+                               or filename in TRANSCRIBED_SURVEYS)
 
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
@@ -3858,10 +3869,11 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     held |= {key for key in SURVEY_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
              and composition_rank(origin.get(key)) < rank}
-    # And a Wikipedia transcription stands behind an office's own table.
+    # And a Wikipedia transcription stands behind an office's own table of the
+    # same kind: a census's behind the census's, a survey's behind the survey's.
     held |= {key for key in SURVEY_FIELDS
              if transcribed and not is_gap(row.get(key)) and not is_gap(entity.get(key))
-             and origin.get(key) and composition_rank(origin.get(key)) == 0
+             and origin.get(key) and composition_rank(origin.get(key)) <= rank
              and not is_wiki_composition(origin.get(key))}
     # What was held back is kept aside, not thrown away: a check that later
     # refuses the figure in front of it can fall back to it (see fall_back).

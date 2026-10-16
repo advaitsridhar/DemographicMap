@@ -1096,7 +1096,7 @@ def check_soums(name: str, table: Soums, report: dict[str, float]) -> str | None
         total = sum(v for v in mine_raw.values() if v > 0)
         against = sum(report.get(g, 0.0) for g in mine_raw)
         if total <= 0 or against <= 0:
-            return "nothing in the soum table could be read against the report"
+            return "nothing in the soum table could be checked against the report"
         for group, value in mine_raw.items():
             mine = 100.0 * value / total
             theirs = 100.0 * report.get(group, 0.0) / against
@@ -1110,7 +1110,7 @@ def check_soums(name: str, table: Soums, report: dict[str, float]) -> str | None
         total = sum(v for v in mine_raw.values() if v > 0)
         against = sum(report.get(g, 0.0) for g in mine_raw)
         if total <= 0 or against <= 0:
-            return "nothing in the soum table could be read against the report"
+            return "nothing in the soum table could be checked against the report"
         for group, value in mine_raw.items():
             mine = 100.0 * value / total
             theirs = 100.0 * report.get(group, 0.0) / against
@@ -1264,12 +1264,12 @@ def whole_hundred(values: list[float]) -> list[float]:
 
 ETHNICITY_NOTE_AIMAG = (
     "Shares of the aimag's Mongolian citizens by ethnic group as the 2020 census "
-    "published them, read from Appendix Table 3.6 of the National Statistics Office's "
+    "published them, from Appendix Table 3.6 of the National Statistics Office's "
     "English national report. The base is citizens, so the foreign nationals the "
     "census counted separately are outside it, and a group under 0.05% of the aimag "
     "is inside “Other ethnic groups”.")
 RELIGION_NOTE = (
-    "Shares of the population aged 15 and over, read from chapter three of this "
+    "Shares of the population aged 15 and over, from chapter three of this "
     "aimag's own 2020 census results book: the published share who follow a religion, "
     "split by the published breakdown of those who do. The census asked religion of a "
     "ten per cent sample of that age group, so these are sample estimates, and "
@@ -1294,17 +1294,18 @@ SOUM_RELIGION_GAP = (
     "The 2020 census asked religion of a ten per cent sample of the population aged 15 "
     "and over and published the answer for the aimag; this aimag's results book prints "
     "no religion table by soum.")
+# An aimag whose book has not been obtained says so on its soums too: that
+# the book prints no religion table by soum is known only of books in hand.
 NO_BOOK_GAP = (
-    "The 2020 census published religion for this aimag in the aimag's own results "
-    "book. No capture of that book could be read from the Internet Archive, and "
-    "1212.mn, which served it, no longer answers.")
+    "The 2020 census published religion for this aimag, and anything it published "
+    "by soum, in the aimag's own results book. That book has not been obtained.")
 NO_TABLE_GAP = (
-    "This aimag's 2020 census results book was read, and no table of religious "
-    "adherence in it could be resolved into a composition.")
+    "This aimag's 2020 census results book has been obtained, but no table of "
+    "religious adherence in it could be resolved into a composition.")
 NO_SOUM_TABLE_GAP = (
-    "The 2020 census published ethnic group for this aimag; this aimag's own results "
-    "book, which is where the census published anything by soum, prints no table of "
-    "ethnic group by soum that could be read.")
+    "The 2020 census published ethnic group for this aimag; no table of ethnic group "
+    "by soum has been found in this aimag's own results book, which is where the "
+    "census published anything by soum.")
 
 
 def build(report: dict[str, dict[str, float]],
@@ -1361,7 +1362,7 @@ def build(report: dict[str, dict[str, float]],
                 f"{aid}-{slugify(name)}", name, level="admin2", parent=aid,
                 parent_name=aimag, country="MNG",
                 ethnicity=rows, ethnicity_year=YEAR, ethnicity_note=SOUM_NOTES[kind],
-                religion=gap(NOT_AVAILABLE, SOUM_RELIGION_GAP),
+                religion=gap(NOT_AVAILABLE, gaps.get(aimag, SOUM_RELIGION_GAP)),
                 sources=[{"field": "ethnicity", "name": BOOK_SOURCE,
                           "url": ARCHIVE, "license": LICENCE}]))
         # ...and a record for every soum the boundary file draws that no row
@@ -1379,7 +1380,7 @@ def build(report: dict[str, dict[str, float]],
                 f"{aid}-{slugify(name)}", name, level="admin2", parent=aid,
                 parent_name=aimag, country="MNG",
                 ethnicity=gap(NOT_AVAILABLE, why),
-                religion=gap(NOT_AVAILABLE, SOUM_RELIGION_GAP)))
+                religion=gap(NOT_AVAILABLE, gaps.get(aimag, SOUM_RELIGION_GAP))))
     if unmatched:
         log(f"  {len(unmatched)} soum row(s) matched no shape in their aimag and are "
             "left unwritten:")
@@ -1453,8 +1454,8 @@ def run() -> int:
             log(f"    {aimag:14} soum table refused: {wrong}")
             soum_gaps[aimag] = (
                 "This aimag's 2020 census results book prints a table of ethnic group "
-                f"by soum, and it was refused rather than written because {wrong}. "
-                "A composition read one column out of step is worse than none.")
+                f"by soum, but it is not shown here, because {wrong}. Shares that may "
+                "each belong to the next group along would be worse than none.")
             table = None
         top = ", ".join(f"{g} {v:.1f}" for g, v in sorted(
             religion.get(aimag, {}).items(), key=lambda kv: -kv[1])[:3]) \
