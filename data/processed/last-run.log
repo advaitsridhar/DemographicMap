@@ -1,28 +1,39 @@
-timor: Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 12: population by mother tongue and municipality
-  fetched 4_2015-V2-Language.xls (0.6 MB)
-  fetched 3_2015-V2-Nationality-Citizenship-Religion.xls (0.6 MB)
-  fetched Chapter-4-TLPHC-Census-report-Basic-tables.xlsx (0.5 MB)
-  sheet 2.12: 'Table 12 Population by mother tongue, age, urban/rural location and Municipality'
-  sheet 2.11: 'Table 11 Population by religion, urban/rural location, Municipality and sex'
-  sheet 4.01: 'Table 4.01: Population, by municipality, administrative post, suco, and by urban/rural location, sex'
-  38 mother tongues: ['Adabe', 'Atauran', 'Baikenu', 'Bekais', 'Bunak', 'Chinese', "Dadu'a", 'English', 'Fataluku', 'Galoli', 'Habun', 'Idalaka', 'Idate', 'Indonesian', 'Isni', 'Kairui', 'Kawaimina', 'Kemak', 'Lakalei', 'Lolein', 'Makalero', 'Makasai', 'Makuva', 'Malay', 'Mambai', 'Midiki', 'Nanaek', 'Naueti', 'Other language', 'Portuguese', 'Rahesuk', 'Raklungu', 'Resuk', "Sa'ani", 'Tetun Prasa', 'Tetun Terik', 'Tokodede', "Waima'a"]
-  mother tongue: 13 municipalities, 38 tongues each, every one adding to the table's own municipal total to the person
-  religion: 13 municipalities adding to 1,179,654, the country row to the person, and every religion column likewise
-  both 2015 tables count the same 1,179,654 people, municipality by municipality: 3,989 below the volume's own total population (1,183,643) and 1,314 above its private-household population (1,178,340), which no footnote explains
-  national check: Catholicism 97.57% against a published 97.6%, all 14 of the country row's named mother tongues reproduced to within a rounding step, and the 2022 table's country row the published 1,341,737
-  population 2022: 14 municipalities adding to 1,341,737, the published national figure, and 67 administrative posts each adding to the municipality they are in
-    Aileu        54,324  Catholic 92.1  |  Mambai 68.8, Tetun Prasa 29.2, Lolein 1.1
-    Ainaro       73,115  Catholic 99.0  |  Mambai 62.4, Tetun Prasa 29.0, Bunak 7.5
-    Baucau      134,878  Catholic 98.3  |  Makasai 60.3, Waima'a 16.7, Tetun Prasa 13.0
-    Bobonaro    106,639  Catholic 99.7  |  Kemak 44.3, Bunak 25.1, Tetun Prasa 23.2
-    Cova Lima    73,933  Catholic 99.6  |  Bunak 48.0, Tetun Terik 39.7, Tetun Prasa 6.6
-    Dili        335,033  Catholic 95.8  |  Tetun Prasa 82.5, Mambai 4.0, Makasai 2.9
-    Ermera      137,750  Catholic 99.2  |  Mambai 61.3, Tetun Prasa 18.9, Kemak 15.5
-    Lautém       70,022  Catholic 97.6  |  Fataluku 60.9, Makasai 14.3, Makalero 12.1
-    Liquiçá      83,658  Catholic 97.0  |  Tokodede 64.0, Mambai 18.3, Tetun Prasa 16.3
-    Manatuto     50,859  Catholic 98.5  |  Galoli 29.9, Idate 28.8, Tetun Terik 16.4
-    Manufahi     60,665  Catholic 96.3  |  Mambai 34.3, Tetun Prasa 26.5, Tetun Terik 24.8
-    Oecusse      80,685  Catholic 99.5  |  Baikenu 98.1, Tetun Prasa 1.5, Indonesian 0.1
-    Viqueque     80,176  Catholic 97.1  |  Makasai 42.3, Tetun Terik 25.4, Naueti 18.3
-  wrote data/processed/timor.json (307 kB)
-  wrote 13 municipalities and 67 administrative posts to timor.json
+india_ages: Census of India 2011, table C-13
+  study 1436: 36 units, state(s) ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'], 572,928 bytes
+  study 1437: 4 units, state(s) ['35'], 84,992 bytes
+  study 1438: 24 units, state(s) ['28'], 394,752 bytes
+  study 1439: 17 units, state(s) ['12'], 286,208 bytes
+  study 1440: 28 units, state(s) ['18'], 455,680 bytes
+  study 1441: 39 units, state(s) ['10'], 626,176 bytes
+  study 1442: 2 units, state(s) ['04'], 53,760 bytes
+  study 1443: 19 units, state(s) ['22'], 316,928 bytes
+  study 1444: 2 units, state(s) ['26'], 53,760 bytes
+  study 1445: 3 units, state(s) ['25'], 69,632 bytes
+  study 1446: 10 units, state(s) ['07'], 177,664 bytes
+  study 1447: 3 units, state(s) ['30'], 69,632 bytes
+  study 1448: 27 units, state(s) ['24'], 440,320 bytes
+  study 1449: 22 units, state(s) ['06'], 363,520 bytes
+  study 1450: 13 units, state(s) ['02'], 224,256 bytes
+  study 1451: 23 units, state(s) ['01'], 378,880 bytes
+  study 1452: 25 units, state(s) ['20'], 409,600 bytes
+  study 1453: 31 units, state(s) ['29'], 502,272 bytes
+  study 1454: 15 units, state(s) ['32'], 254,976 bytes
+  study 1455: 2 units, state(s) ['31'], 53,760 bytes
+  study 1456: 51 units, state(s) ['23'], 812,032 bytes
+  study 1457: 36 units, state(s) ['27'], 579,584 bytes
+  study 1458: 10 units, state(s) ['14'], 171,008 bytes
+  study 1459: 8 units, state(s) ['17'], 146,944 bytes
+  study 1460: 9 units, state(s) ['15'], 162,304 bytes
+  study 1461: 12 units, state(s) ['13'], 208,896 bytes
+  study 1462: 31 units, state(s) ['21'], 502,272 bytes
+  study 1463: 5 units, state(s) ['34'], 100,352 bytes
+  study 1464: 21 units, state(s) ['03'], 348,160 bytes
+  study 1465: 34 units, state(s) ['08'], 548,864 bytes
+  study 1466: 5 units, state(s) ['11'], 100,352 bytes
+  study 1467: 33 units, state(s) ['33'], 533,504 bytes
+  study 1468: 5 units, state(s) ['16'], 100,352 bytes
+  study 1469: 72 units, state(s) ['09'], 1,136,640 bytes
+  study 1470: 14 units, state(s) ['05'], 239,616 bytes
+  study 1471: 20 units, state(s) ['19'], 332,800 bytes
+  35 states and 640 districts reconcile, to India's 1,210,854,977
+india_ages: Thane (code 517) has 11,060,148 people in C-13 and its shape carries 8,070,032 from C-01; the code is bound to the wrong polygon
