@@ -3480,8 +3480,8 @@ def disputed_outline_note(record_id: str, admin0: list[dict[str, Any]]) -> str |
         raise SystemExit(f"build_entities: {record_id} is declared drawn as the disputed "
                          f"area {name!r}, which the boundary file no longer draws")
     return (f"The map draws {said} as a disputed area of its own, as geoBoundaries' "
-            f"global composite delimits it, and shows no figures on that outline. The "
-            f"figures below are this entity's own, kept here rather than joined to it.")
+            f"global composite delimits it, and shows no figures on that outline; the "
+            f"territory's own figures are shown here instead.")
 
 
 def geometryless_profiles(rows: list[dict[str, Any]],
@@ -7073,6 +7073,35 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\bthe Bureau's dictionary dates the field to\b"), r"the Bureau's data dictionary dates these figures to"),
     # database-words: NEW data-model wording in the [None.2] BTN population_note: 'religion and language are declared rather than left empty'
     (re.compile(r"\breligion and language are declared rather than left empty\b"), r"religion and language are shown as not collected rather than left empty"),
+    # Round 7's review, continued (files-joins).
+    # files-joins: GUY questionnaire PDF name and byte count; KNA infographic PNG name (download-file names in parentheses)
+    (re.compile(r" \([\w\-]+\.(?:pdf|png)(?:, [\d,]+ bytes)?\)"), r""),
+    # files-joins: GUY 'Nothing read says whether' (same sentence as the questionnaire file name)
+    (re.compile(r"\bNothing read says whether\b"), r"It is not clear whether"),
+    # files-joins: USA 3,118 county religion_note: 'so this file cannot be used to ask about religion by race'
+    (re.compile(r"\bthis file (cannot be used to ask about religion by race)\b"), r"these figures \1"),
+    # files-joins: BHS 13 island ethnicity_note: 'The file's own dates are a 2021 extraction'
+    (re.compile(r"\bThe file's own dates are an? (\d{4}) extraction;"), r"The table is dated \1, when it was extracted;"),
+    # files-joins: TLS 4 Ermera posts population.note (Atsabe, Ermera, Letefoho, Railaco): 'where this file has two'
+    (re.compile(r" A boundary drawn on the older division has one shape where this file has two\."), r" The map follows the older division and draws Hatulia as one shape, where the 2022 census has two posts."),
+    # files-joins: TLS 4 Lautém posts population.note (Iliomar, Tutuala, Luro, Lautém): untrue 'joined' sentence
+    (re.compile(r" A boundary drawn on the older division covers more ground than whichever of these rows it is joined to\."), r""),
+    # files-joins: CHN 5 CFPS licence strings (sources[0].license): 'the file was read from a third-party re-upload on Kaggle'
+    (re.compile(r"; the file was read from a third-party re-upload on Kaggle and only aggregate shares are kept\b"), r"; the copy used here is a third-party re-upload on Kaggle, and only aggregate shares are kept"),
+    # files-joins: Factbook gap notes on admin0: 'No composition published by the Factbook for this entity.' (39) and 'Factbook lists no major urban areas for this entit
+    (re.compile(r"\b(Factbook|major urban areas) for this entity\b"), r"\1"),
+    # files-joins: NEW: FSM Chuuk municipalities religion.note and language.note (20 texts / 10 records, e.g. admin2/FSM 79324940B39467357025683 Weno): '... are not amon
+    (re.compile(r"\bare not among the files the office's site or the Internet Archive's copies of its former one serve\."), r"are not among the documents on the office's site or in the Internet Archive's copies of its former one."),
+    # files-joins: NEW: ESP ESS religion_note (13 texts / 13 records: 8 admin1, 5 admin2, e.g. admin1/ESP 25490228B84620027724461): 'Round 10 here is the self-completion
+    (re.compile(r"\bRound (\d+) here is the self-completion file\b"), r"Round \1 here is the self-completion questionnaire"),
+    # files-joins: NEW: PAK Gilgit-Baltistan districts language.note (10 texts / 10 records, e.g. admin2/PAK 60131773B26577032556552 Astore): 'its own upload index names
+    (re.compile(r"\bits own upload index names no file at all for\b"), r"a search of the documents uploaded to its website finds none at all for"),
+    # files-joins: NEW: PAK Azad Kashmir religion_note (2 texts / 2 records: admin1 70912109B7720427584286, admin2 60131773B7720427584286): '... rather than from the sam
+    (re.compile(r"\brather than from the same file as the four provinces\b"), r"rather than from the same table as the four provinces"),
+    # files-joins: NEW: CHN CFPS religion_note (5 texts / 5 records, e.g. admin1/CHN 43563684B11053367304830 Gansu): '... (rswt_natcs16) from the public-release file.'
+    (re.compile(r"\bfrom the public-release file\b"), r"from the public-release data"),
+    # files-joins: NEW: CHN CFPS religion_note (5 texts / 5 records): 'The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report'
+    (re.compile(r"\bThe same reading of the (\d{4}) file\b"), r"The same tabulation of the \1 wave"),
 )
 # The keys whose text a visitor reads: notes, reasons and licences.
 WORDED = re.compile(r"(?:^|_)note$|^gap_reason$|^license$")
@@ -8355,7 +8384,10 @@ def settle_outline_mixtures(admin2: dict[str, list[dict[str, Any]]]) -> int:
             outline = entity.pop("outline", None) or {}
             if outline.get("kind") != "mixed":
                 continue
-            note = outline_note(outline, outline.get("source") or "OCHA's outlines")
+            # Named by the dataset, not by the reference's own title, which ends
+            # with the archive it is downloaded as ("nam_admin_boundaries.shp.zip").
+            named = {"NAM": "OCHA's administrative boundaries for Namibia (cod-ab-nam)"}
+            note = outline_note(outline, named.get(entity.get("country"), "OCHA's outlines"))
             entity["note"] = note
             entity.pop("adapter_hint", None)
             for field in UNIT_FIELDS:
@@ -11715,7 +11747,7 @@ def main() -> int:
         entity["point"] = source.get("capital_coordinates")
         entity["bbox"] = None
         entity["note"] = ("geoBoundaries' global composite has no separate outline for "
-                          "this entity -- it is drawn as part of the state that "
+                          "this territory -- it is drawn as part of the state that "
                           "administers it. The figures below are still its own.")
         entity["note"] = disputed_outline_note(entity["id"], admin0) or entity["note"]
         entity.setdefault("sources", [])
