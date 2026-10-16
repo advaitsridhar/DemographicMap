@@ -79,11 +79,14 @@ class NewerFigures(unittest.TestCase):
                          {"value": 4_488, "year": 2025, "source": "Wikidata (CC0)"})
         # The count's own note and citation go with it, and are held for a
         # check that refuses the newer figure; a citation of several fields
-        # stays.
+        # stays for the others alone.
         self.assertNotIn("population_note", target)
-        self.assertEqual([s["name"] for s in target["sources"]], ["Census tables", "Wikidata"])
+        self.assertEqual([(s["name"], s["field"]) for s in target["sources"]],
+                         [("Census tables", "religion"), ("Wikidata", "population")])
         held = target["_held"]["population"][0]
         self.assertEqual(held["value"]["value"], 4_975)
+        self.assertEqual([(s["name"], s["field"]) for s in held["sources"]],
+                         [(CENSUS, "population"), ("Census tables", "population")])
         self.assertEqual(held["unit_note"], "Everyone the 2021 census counted.")
         self.assertEqual(held["file"], "office_census.json")
         self.assertEqual(target["_from"]["population"], "wikidata_admin2.json")
@@ -115,6 +118,47 @@ class NewerFigures(unittest.TestCase):
         be.prefer_newer_figures({}, country(composed, pinned, *self.peers(rate=0.01)))
         self.assertEqual(composed["population"]["value"], 135_932)
         self.assertEqual(pinned["population"]["value"], 39_620)
+
+    def test_every_way_a_note_says_the_count_was_put_together(self):
+        # Belarus's Gomel: the raion with its city, and Wikidata's 2026 Gomel
+        # is the city alone. Costa Rica's Grecia: the canton without Río
+        # Cuarto, and OCHA's 2021 Grecia the canton with it.
+        gomel = unit("G", 581_020, 2019, newer=571_000, newer_year=2023,
+                     note="The г.Гомель, Гомельский район as the 2019 census counted it; "
+                          "with it the city of Gomel, the raion's seat, counted apart.")
+        grecia = unit("R", 65_824, 2011, newer=70_000, newer_year=2015,
+                      note="Without Río Cuarto, a district of it in 2011 and a canton of "
+                           "its own since, which the boundary file draws apart.")
+        bugaba = unit("B", 92_395, 2023, newer=93_000, newer_year=2025,
+                      note="Includes Tierras Altas, created from it since the boundary "
+                           "file was drawn.")
+        be.prefer_newer_figures({}, country(gomel, grecia, bugaba,
+                                            *self.peers(rate=-0.004)))
+        self.assertEqual([e["population"]["value"] for e in (gomel, grecia, bugaba)],
+                         [581_020, 65_824, 92_395])
+
+    def test_a_note_that_says_nothing_was_counted_apart_is_no_composition(self):
+        # China's counties: "its prefecture lists no development zone counted
+        # apart" says the count is the county's alone.
+        county = unit("C", 260_000, 2020, newer=262_000, newer_year=2022,
+                      note="The 2020 census count of this county, read for the polygon "
+                           "because it is still this one county: its prefecture lists no "
+                           "development zone counted apart.")
+        be.prefer_newer_figures({}, country(county, *self.peers(rate=0.004)))
+        self.assertEqual(county["population"]["value"], 262_000)
+        self.assertTrue(be.composed("which the census counts apart"))
+        self.assertFalse(be.composed("no special unit the yearbook counts apart stands on it"))
+
+    def test_a_figure_of_other_people_is_not_compared(self):
+        # Korea's provinces: the register's Koreans and registered foreigners,
+        # and Wikidata's figure the Koreans alone.
+        incheon = unit("I", 3_078_426, 2023, newer=3_049_315, newer_year=2025,
+                       country="KOR", newer_file="wikidata_admin1.json")
+        peers = [unit(f"P{i}", 10_000, 2023, newer=10_000, newer_year=2025, country="KOR",
+                      newer_file="wikidata_admin1.json") for i in range(5)]
+        taken, kept = be.prefer_newer_figures(country(incheon, *peers, iso3="KOR"), {})
+        self.assertEqual(incheon["population"]["value"], 3_078_426)
+        self.assertEqual((taken, kept), ([], []))
 
     def test_more_than_ten_years_apart_is_not_compared(self):
         far = unit("F", 100_000, 2011, newer=110_000, newer_year=2025)
@@ -159,6 +203,39 @@ class NewerFigures(unittest.TestCase):
         before = copy.deepcopy(entity)
         be.prefer_newer_figures({}, country(entity))
         self.assertEqual(entity["population"], before["population"])
+
+
+class TwinsShowOneFigure(unittest.TestCase):
+    """A polygon drawn at both levels shows the newer figure on both copies."""
+
+    def test_a_figure_put_in_front_of_the_count_reaches_the_other_copy(self):
+        # Malta's Birkirkara: Wikipedia's 30,166 for 2026 in front of the 2021
+        # census's 25,807 a level up, the census's 25,807 alone a level down.
+        census = {"value": 25_807, "year": 2021, "source": "NSO Malta, Census 2021"}
+        first = {"id": "B", "name": "Birkirkara", "level": "admin1",
+                 "population": {"value": 30_166, "year": 2026,
+                                "source": "English Wikipedia, Birkirkara (infobox)",
+                                be.RESTATED_FROM: dict(census)},
+                 "sources": [{"field": "population", "name": "English Wikipedia"}]}
+        second = {"id": "B", "name": "Birkirkara", "level": "admin2", "parent": "B",
+                  "population": dict(census),
+                  "population_note": "Residents counted by the census of 21 November 2021.",
+                  "sources": [{"field": "population", "name": "NSO Malta"}]}
+        be.fill_same_polygons({"MLT": [first]}, {"MLT": [second]})
+        self.assertEqual(second["population"]["value"], 30_166)
+        self.assertEqual(second["population"][be.RESTATED_FROM]["value"], 25_807)
+        self.assertNotIn("population_note", second)
+        self.assertEqual([s["name"] for s in second["sources"]], ["English Wikipedia"])
+        # And the other way round: the second copy's newer figure goes up.
+        first2 = {"id": "D", "name": "Domagnano", "level": "admin1",
+                  "population": {"value": 3_613, "year": 2025, "source": "Ufficio di Statistica"}}
+        second2 = {"id": "D", "name": "Domagnano", "level": "admin2",
+                   "population": {"value": 3_620, "year": 2026, "source": "Wikidata (CC0)",
+                                  be.RESTATED_FROM: {"value": 3_613, "year": 2025,
+                                                     "source": "Ufficio di Statistica"}}}
+        be.fill_same_polygons({"SMR": [first2]}, {"SMR": [second2]})
+        self.assertEqual(first2["population"]["value"], 3_620)
+        self.assertEqual(first2["population"][be.RESTATED_FROM]["value"], 3_613)
 
 
 class HeldRows(unittest.TestCase):
@@ -289,6 +366,50 @@ class ParentsFromNewerDivisions(unittest.TestCase):
         a1, a2, parent = self.tables(760_000)
         del parent["population"]["year"]
         self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])
+
+    def promoted(self, a1, parent, value, year):
+        """The parent as prefer_newer_figures leaves it: Wikidata's newer
+        figure in front of the count."""
+        count = dict(parent["population"])
+        parent["population"] = {"value": value, "year": year, "source": "Wikidata (CC0)",
+                                be.RESTATED_FROM: count}
+        parent.pop("population_note")
+        return a1
+
+    def test_the_note_names_the_count_the_unit_showed(self):
+        # Xiangkhouang: the 2015 census's 244,684, behind it Wikidata's 267,172
+        # for 2020, and OCHA's 2024 districts. A map never showed 267,172.
+        a1, a2, parent = self.tables(760_000)
+        self.promoted(a1, parent, 800_000, 2020)
+        be.restate_encyclopaedia_parents(a1, a2, counts=True)
+        self.assertEqual(parent["population"]["value"], 860_000)
+        self.assertIn("It replaces 760,000 for 2015, an older figure from Lao Statistics "
+                      "Bureau.", parent["population_note"])
+        self.assertEqual(parent["population"][be.RESTATED_FROM]["value"], 760_000)
+
+    def test_a_same_year_sum_stands_in_front_of_a_figure_put_in_front_this_build(self):
+        # Papua: Wikidata's 2024 figure in front of BPS's 2022 count, and the
+        # 29 regencies' own 2024 figures.
+        register = "Kementerian Dalam Negeri, Dukcapil civil registration"
+        a1, a2, parent = self.tables(760_000, year=2024, source=register)
+        self.promoted(a1, parent, 870_000, 2024)
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True),
+                         ["LAO Province 870,000 -> 860,000"])
+        self.assertIn("It replaces 760,000 for 2015", parent["population_note"])
+        # An encyclopaedia's figure the build did not put in front of a count
+        # keeps its year's place: Angola's 2024 provinces are Wikidata's,
+        # its municipalities OCHA's projection of 2024.
+        a1, a2, parent = self.tables(760_000, year=2024, source=register)
+        parent["population"] = {"value": 870_000, "year": 2024, "source": "Wikidata (CC0)"}
+        self.assertEqual(be.restate_encyclopaedia_parents(a1, a2, counts=True), [])
+
+    def test_the_ground_a_restated_unit_is_drawn_on_is_still_said(self):
+        a1, a2, parent = self.tables(760_000, iso3="MOZ")
+        parent["name"] = "Maputo"
+        be.restate_encyclopaedia_parents(a1, a2, counts=True)
+        self.assertTrue(parent["population_note"].startswith(
+            "The boundary file draws Maputo City and Maputo Province as one shape. The sum "
+            "of both divisions"), parent["population_note"])
 
 
 if __name__ == "__main__":

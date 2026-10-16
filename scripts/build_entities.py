@@ -2575,6 +2575,28 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     "2272694B62092960833864": ("PRT", "SANTARÉM"),  # Sardoal; by area in Castelo Branco
     "2272694B2878786593857": ("PRT", "VILA REAL"),  # Mesão Frio; by area in Porto
     "2272694B21944289016738": ("PRT", "VISEU"),  # Oliveira de Frades; by area in Aveiro
+    # Slovenia: the boundary file's two cohesion regions are drawn on another
+    # line than NUTS's, so by area Primorsko-notranjska's six municipalities
+    # and Sodražica (SI03, Vzhodna) sat in Zahodna Slovenija, seven of
+    # Osrednjeslovenska's and Gorenjska's (SI04, Zahodna) in Vzhodna, and Brda
+    # in neither; Zahodna's 63 drawn children added up to 998,322 against
+    # Eurostat's 1,017,119. Each is filed in the region whose NUTS 3 unit holds
+    # 86% or more of its polygon (Eurostat's NUTS 2024 boundaries).
+    "79292919B39846175999715": ("SVN", "Zahodna Slovenija"),  # Brda; by area in neither
+    "79292919B28618537144130": ("SVN", "Zahodna Slovenija"),  # Kamnik; by area in Vzhodna
+    "79292919B10853611876799": ("SVN", "Zahodna Slovenija"),  # Dol pri Ljubljani; in Vzhodna
+    "79292919B38910398749783": ("SVN", "Zahodna Slovenija"),  # Lukovica; by area in Vzhodna
+    "79292919B87990706062865": ("SVN", "Zahodna Slovenija"),  # Moravče; by area in Vzhodna
+    "79292919B41680562738857": ("SVN", "Zahodna Slovenija"),  # Šmartno pri Litiji; Vzhodna
+    "79292919B27778695189905": ("SVN", "Zahodna Slovenija"),  # Ivančna Gorica; in Vzhodna
+    "79292919B51302363560812": ("SVN", "Zahodna Slovenija"),  # Jezersko; by area in Vzhodna
+    "79292919B88661184998894": ("SVN", "Vzhodna"),  # Sodražica; by area in Zahodna
+    "79292919B86153234432481": ("SVN", "Vzhodna"),  # Loška dolina; by area in Zahodna
+    "79292919B32570371692046": ("SVN", "Vzhodna"),  # Ilirska Bistrica; by area in Zahodna
+    "79292919B70479288725933": ("SVN", "Vzhodna"),  # Pivka; by area in Zahodna
+    "79292919B30079585867882": ("SVN", "Vzhodna"),  # Postojna; by area in Zahodna
+    "79292919B19554174708410": ("SVN", "Vzhodna"),  # Bloke; by area in Zahodna
+    "79292919B16697278472922": ("SVN", "Vzhodna"),  # Cerknica; by area in Zahodna
 }
 
 
@@ -3582,14 +3604,49 @@ RECENCY_SPAN = 10
 GROUND_PINNED = frozenset({"estonia_municipality.json", "norway_kommune.json",
                            "iceland_municipality.json", "ukraine_raion.json"})
 
+# Files whose newer figures for a country count other people than the counts
+# they would replace, so prefer_newer_figures leaves them behind. Korea's
+# provinces carry the resident register's Koreans with the registered
+# foreigners at the end of 2023, the basis their districts share; Wikidata's
+# provincial figures are the register's Koreans alone. Incheon's 3,049,315 for
+# 2025 stood in front of its 3,078,426, 81,016 of them foreigners, so a
+# province that grew read as shrinking.
+OTHER_PEOPLE: dict[tuple[str, str], str] = {
+    ("KOR", "wikidata_admin1.json"): "the resident register's Korean nationals alone, "
+                                     "without the registered foreigners",
+}
+
 # A count whose note says it was put together for the polygon -- summed over
 # the units drawn inside it, two units the census counts apart, a unit as it
-# stood before a reform or as the map draws it -- is the polygon's ground by
+# stood before a reform or as the map draws it, a unit with or without a part
+# the boundary file draws otherwise -- is the polygon's ground by
 # construction, and a newer figure under the unit's name is the unit's.
+# Belarus's Gomel polygon carried the raion with the city of Gomel, "counted
+# apart", and Wikidata's 2026 Gomel is the city's 499,853 against the two's
+# 581,020; Costa Rica's Grecia carried the canton "without Río Cuarto ...,
+# which the boundary file draws apart", and OCHA's 2021 Grecia is the canton
+# as it stood before Río Cuarto left it in 2017.
 COMPOSED_COUNT = re.compile(
-    r"\bsummed\b|\badded up\b|\bthe sum of\b|\bcounts? (?:it |them )?apart\b"
-    r"|\bas the map draws\b|\bas it stood\b|\bbefore the \d{4} reform\b"
-    r"|\bas one (?:shape|polygon)\b|\bless (?:its|the)\b", re.I)
+    r"\bsummed\b|\badded up\b|\bthe sum of\b|\btheir sum\b|\bthe two together\b"
+    r"|\bcount(?:s|ed)? (?:it |them )?apart\b|\bdraws? (?:it |them )?apart\b"
+    r"|\bdrawn apart\b|\b(?:boundary file|map) does not draw\b"
+    r"|\bsince the boundary file was drawn\b|\bwhich this polygon takes in\b"
+    r"|\bas the map draws\b|\bas drawn\b|\bas it stood\b|\bas it was before\b"
+    r"|\bbefore the \d{4} reform\b|\bas one (?:shape|polygon)\b|\bless (?:its|the)\b",
+    re.I)
+
+# ... unless the clause says there is none: China's county notes say "its
+# prefecture lists no development zone counted apart".
+COMPOSED_DENIED = re.compile(r"\bno\b", re.I)
+
+
+def composed(said: str) -> bool:
+    """Whether a count's note says it was put together for the polygon."""
+    for found in COMPOSED_COUNT.finditer(said):
+        start = max(said.rfind(mark, 0, found.start()) for mark in ".;:,(") + 1
+        if not COMPOSED_DENIED.search(said[start:found.start()]):
+            return True
+    return False
 
 # The figures a statistics office's stated reason may displace
 # (``displaces_before``): every fill-only file's, and Wikidata's as the points
@@ -5219,6 +5276,22 @@ RESTATE_KEEPS: dict[str, str] = {
 # division is so filed.
 MISFILED_DIVISIONS: dict[tuple[str, str], tuple[str, str]] = {}
 
+# What a restated unit's earlier note said about how the map draws it, which
+# the restatement's own note replaces: the divisions' sum is still of that
+# ground, and the reader still needs to be told what the ground is. A unit
+# whose earlier note said its count was put together for the polygon and that
+# has no sentence here is named in the build log.
+RESTATED_GROUND: dict[tuple[str, str], str] = {
+    ("MOZ", "Maputo"): "The boundary file draws Maputo City and Maputo Province as one "
+                       "shape.",
+    ("LVA", "Madonas novads"): "Madona and Varakļāni merged on 1 July 2025 and are drawn "
+                               "apart; these are the parishes and towns of Madona as it "
+                               "was before.",
+    ("LVA", "Varakļānu novads"): "Varakļāni merged into Madona on 1 July 2025 and the two "
+                                 "are drawn apart; these are the parishes and town of "
+                                 "Varakļāni as it was before.",
+}
+
 # A projection dated a year after the parent's figure is not a later account
 # of the same people but another account of the same moment: where the two
 # differ, the projection rests on an older base. Rwanda's provinces carry the
@@ -5319,7 +5392,16 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
             if not source or year is None or check_rollups.is_encyclopaedic({"source": source}):
                 continue
             own_year = vintage(pop)
-            if not declared and own_year is not None and year <= own_year:
+            # An encyclopaedia's figure that prefer_newer_figures put in front
+            # of a count in this build gives way to its divisions' own figures
+            # of the same year too: those are the office's account of the
+            # ground drawn, as they were before the newer figure came in front.
+            # Papua's 29 regencies' 2024 figures add up to 4,497,369, against
+            # Wikidata's 4,542,600 for 2024 over BPS's 2022 count.
+            promoted = (isinstance(pop.get(RESTATED_FROM), dict)
+                        and check_rollups.is_encyclopaedic(pop))
+            if (not declared and own_year is not None
+                    and (year < own_year or (year == own_year and not promoted))):
                 continue
             if (not declared and own_year is not None and projection({"source": source})
                     and year - own_year < RESTATE_PROJECTION_YEARS):
@@ -5330,18 +5412,32 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
             if counted and (own_year is None
                             or not check_rollups.growth_explains(own, own_year, total, year)):
                 continue
-            was = check_rollups.short_source(str(pop.get("source") or ""))
+            # The note names the count the unit showed, not a newer figure
+            # prefer_newer_figures put in front of it in this same build and
+            # no published map showed: Xiangkhouang's 2015 census, not the
+            # Wikidata 2020 figure it held.
+            counted_as = (pop[RESTATED_FROM] if isinstance(pop.get(RESTATED_FROM), dict)
+                          else pop)
+            was_value = published(counted_as) if published(counted_as) is not None else own
+            was_year = vintage(counted_as) if counted_as is not pop else own_year
+            was = check_rollups.short_source(str(counted_as.get("source") or ""))
+            said_before = " ".join(str(text or "") for text in (
+                parent.get("population_note"), pop.get("note")))
+            ground = RESTATED_GROUND.get((iso3, name))
+            if ground is None and composed(said_before):
+                log(f"  restate: {iso3} {name}'s earlier note said its count was put "
+                    f"together for the polygon, and RESTATED_GROUND says nothing")
             if declared:
                 # The division's own figure, as it stands, on its parent.
                 parent["population"] = {k: v for k, v in children[0]["population"].items()
                                         if k in ("value", "unit", "year", "source")}
                 lead, why_not = declared
-                side = "above" if own > total else "below"
+                side = "above" if was_value > total else "below"
                 parent["population_note"] = (
-                    f"{lead} It replaces {own:,.0f}"
-                    + (f" for {own_year}" if own_year else "")
-                    + f" from {was}, {abs(own / total - 1):.0%} {side} this count of the "
-                      f"same ground; {why_not}.")
+                    f"{lead} It replaces {was_value:,.0f}"
+                    + (f" for {was_year}" if was_year else "")
+                    + f" from {was}, {abs(was_value / total - 1):.0%} {side} this count of "
+                      f"the same ground; {why_not}.")
             else:
                 parent["population"] = {"value": total, "year": year,
                                         "source": f"summed from {summed['n']} second-level "
@@ -5350,9 +5446,11 @@ def restate_encyclopaedia_parents(admin1_by_country: dict[str, list[dict[str, An
                 parent["population_note"] = (
                     f"The sum of {every} divisions drawn inside it, which all carry "
                     f"figures for {year} from {check_rollups.short_source(source)}. It "
-                    f"replaces {own:,.0f}"
-                    + (f" for {own_year}, an older figure from {was}." if own_year else
+                    f"replaces {was_value:,.0f}"
+                    + (f" for {was_year}, an older figure from {was}." if was_year else
                        f" from {was}, which gives no year for it."))
+            if ground:
+                parent["population_note"] = f"{ground} {parent['population_note']}"
             # What the unit carried before, for the country's composition gate
             # (control_population); a build flag, not written. A count a newer
             # figure already stood in front of stays the one carried.
@@ -5759,9 +5857,12 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
             chosen = twin_population(twin, entity)
             if chosen is not None:
                 source, target = chosen
-                if target is twin:
-                    # The first level's own figure gives way: flagged, so the
-                    # country's gate still weighs it (restate_population).
+                if target is twin or put_in_front_of(source.get("population"),
+                                                     target.get("population")):
+                    # The first level's own figure gives way, or a count a
+                    # newer figure stands in front of on the other copy:
+                    # flagged, so the gates still weigh the count
+                    # (restate_population).
                     restate_population(source, target)
                 else:
                     copy_field(source, target, "population")
@@ -5795,6 +5896,14 @@ def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
     return filled
 
 
+def put_in_front_of(value: Any, count: Any) -> bool:
+    """Whether ``value`` is a figure put in front of ``count`` in this build:
+    it carries that count, value and year, as the figure it replaced."""
+    was = value.get(RESTATED_FROM) if isinstance(value, dict) else None
+    return (isinstance(was, dict) and published(was) is not None
+            and published(was) == published(count) and vintage(was) == vintage(count))
+
+
 def twin_population(first: dict[str, Any], second: dict[str, Any]
                     ) -> tuple[dict[str, Any], dict[str, Any]] | None:
     """(the copy whose population both should show, the other), or None.
@@ -5811,6 +5920,14 @@ def twin_population(first: dict[str, Any], second: dict[str, Any]
     va, vb = published(a), published(b)
     if va is None or vb is None or va == vb:
         return None
+    # A newer figure prefer_newer_figures put in front of the count the other
+    # copy shows is that count's successor on both: Malta's Birkirkara read
+    # Wikipedia's 30,166 for 2026 a level up and the 2021 census's 25,807 a
+    # level down, on one polygon.
+    if put_in_front_of(a, b):
+        return first, second
+    if put_in_front_of(b, a):
+        return second, first
     ya, yb = vintage(a), vintage(b)
     if encyclopaedic(a) and encyclopaedic(b):
         # One item at both levels is one figure's history: the newer.
@@ -6716,13 +6833,14 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                 said = " ".join(str(text or "") for text in (
                     entity.get("population_note"),
                     shown.get("note") if isinstance(shown, dict) else None))
-                if COMPOSED_COUNT.search(said):
+                if composed(said):
                     continue
                 best = None
                 for held in (entity.get("_held") or {}).get("population", []):
                     offered, when = published(held.get("value")), vintage(held.get("value"))
                     if (not is_fill_only(held.get("file"), iso3) or not offered
                             or not when or when <= year
+                            or (iso3, held.get("file")) in OTHER_PEOPLE
                             or (held.get("file") in FILL_ONLY and when - year > RECENCY_SPAN)
                             or round(offered) == round(value)
                             or str(held.get("match") or "").split("+")[0]
@@ -6758,8 +6876,22 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             continue
         origin = entity.setdefault("_from", {})
         how = entity.setdefault("_how", {})
-        cited = [src for src in entity.get("sources") or []
-                 if set(str(src.get("field") or "").split("/")) <= {"population"}]
+        # The count's citations go with it, as the restatement pass has it: one
+        # citing the population alone is held with the count, and one citing
+        # other fields too stays for those alone, its population held. Mexico's
+        # 2,234 municipios cited INEGI's 2020 census for "population/sex
+        # ratio/religion/language" beside OCHA's 2024 figure.
+        cited: list[dict[str, Any]] = []
+        kept_sources: list[dict[str, Any]] = []
+        for src in entity.get("sources") or []:
+            cites = str(src.get("field") or "").split("/")
+            if "population" not in cites:
+                kept_sources.append(src)
+                continue
+            cited.append(dict(src, field="population") if len(cites) > 1 else src)
+            if len(cites) > 1:
+                kept_sources.append(dict(src, field="/".join(f for f in cites
+                                                             if f != "population")))
         held_list = entity["_held"]["population"]
         held_list.remove(best)
         # Held as the count it is, not as a figure of the item the unit is
@@ -6775,8 +6907,8 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
         entity["population"] = {**best["value"], RESTATED_FROM: {
             k: shown[k] for k in ("value", "year", "source") if k in shown}}
         entity.pop("population_note", None)
-        entity["sources"] = [src for src in entity.get("sources") or []
-                             if src not in cited] + list(best.get("sources") or [])
+        entity["sources"] = kept_sources + [src for src in best.get("sources") or []
+                                            if src not in kept_sources]
         origin["population"] = best.get("file")
         how["population"] = best.get("match")
         if best.get("wikidata"):
