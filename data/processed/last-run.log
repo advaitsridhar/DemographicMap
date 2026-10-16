@@ -1,10 +1,19 @@
-  Paramaribo centrum: Volume I 20,632, the ethnic table 20,631
-  Paramaribo beekhuizen: Volume I 17,187, the ethnic table 17,185
-  Paramaribo wegnaarzee: Volume I 16,069, the ethnic table 16,037
-  Paramaribo livorno: Volume I 9,303, the ethnic table 8,209; its ages and sexes are left out
-  Wanica koewarasan: Volume I 27,072, the ethnic table 27,713; its ages and sexes are left out
-  Wanica denieuwegrond: Volume I 26,129, the ethnic table 26,161
-  Wanica lelydorp: Volume I 18,207, the ethnic table 18,663; its ages and sexes are left out
-  62 ressorts; 58 bound, 0 across a district line: []; left out: [('Paramaribo', 'beekhuizen'), ('Paramaribo', 'latour'), ('Paramaribo', 'tammenga'), ('Paramaribo', 'welgelegen')]
-  wrote data/processed/suriname_census.json (363 kB)
-  wrote suriname_census.json: 10 districts, 58 ressorts
+Central African Republic: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx
+  401,471 bytes
+  Ethnicity: 267 rows, 26 groups, denominator 'Total population'
+    177 rows skipped: another level, or no area name
+    admin1: 3,895,140 against the country's own 3,895,138 -- -2 fewer (-0.0%)
+    admin2: 3,895,111 against the country's own 3,895,138 -- 27 fewer (0.0%)
+    every one of 89 areas reaches its published total
+  Religion: 267 rows, 5 groups, denominator 'Total population'
+    177 rows skipped: another level, or no area name
+    admin1: 3,836,734 against the country's own 3,836,735 -- 1 fewer (0.0%)
+    admin2: 3,836,739 against the country's own 3,836,735 -- -4 fewer (-0.0%)
+    every one of 89 areas reaches its published total
+  Language: 267 rows, 78 groups, denominator 'Total population'
+    177 rows skipped: another level, or no area name
+    admin1: 3,726,658 against the country's own 3,726,679 -- 21 fewer (0.0%)
+    admin2: 3,726,562 against the country's own 3,726,679 -- 117 fewer (0.0%)
+    every one of 89 areas reaches its published total
+  wrote data/processed/car_prefecture.json (821 kB)
+  89 areas: 17 admin1, 72 admin2
