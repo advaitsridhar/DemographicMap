@@ -600,6 +600,54 @@ class LaosDistrictsOfOneName(unittest.TestCase):
 
 
 
+class FigureNotesLeaveWithTheirFigure(unittest.TestCase):
+    """A note beside a figure goes when a later file's figure replaces it."""
+
+    def test_a_census_median_does_not_keep_a_projections_note(self):
+        # Mexico: OCHA's 2024 projection is read first, INEGI's 2020 census
+        # after it, and the census's figure stands with nothing beside it.
+        entity = {"id": "1", "name": "Xoxocotla", "level": "admin2", "country": "MEX"}
+        be.merge_adapter(entity, {
+            "_source": "cod_ps_age.json", "_match": "name",
+            "median_age": {"value": 25.5, "year": 2024, "source": "OCHA COD-PS"},
+            "median_age_note": "Interpolated from OCHA's 2024 projection.",
+            "sex_ratio": {"value": 103.7, "year": 2024, "source": "OCHA COD-PS"},
+            "sex_ratio_note": "Males per 100 females in OCHA's 2024 projection."})
+        be.merge_adapter(entity, {
+            "_source": "mexico_municipality_age.json", "_match": "shape_id",
+            "median_age": {"value": 24.0, "year": 2020, "source": "INEGI"},
+            "sex_ratio": {"value": 100.7, "year": 2020, "source": "INEGI"}})
+        self.assertEqual(entity["median_age"]["value"], 24.0)
+        self.assertEqual(entity["sex_ratio"]["value"], 100.7)
+        self.assertNotIn("median_age_note", entity)
+        self.assertNotIn("sex_ratio_note", entity)
+
+    def test_a_note_the_replacing_row_gives_is_kept(self):
+        entity = {"id": "1", "name": "Unit", "level": "admin2", "country": "MEX"}
+        be.merge_adapter(entity, {
+            "_source": "cod_ps_age.json", "_match": "name",
+            "median_age": {"value": 25.5, "year": 2024, "source": "OCHA COD-PS"},
+            "median_age_note": "A projection."})
+        be.merge_adapter(entity, {
+            "_source": "mexico_municipality_age.json", "_match": "shape_id",
+            "median_age": {"value": 24.0, "year": 2020, "source": "INEGI"},
+            "median_age_note": "The census's own median."})
+        self.assertEqual(entity["median_age_note"], "The census's own median.")
+
+    def test_a_held_projection_leaves_the_census_note_alone(self):
+        entity = {"id": "1", "name": "Unit", "level": "admin2", "country": "MEX"}
+        be.merge_adapter(entity, {
+            "_source": "mexico_municipality_age.json", "_match": "shape_id",
+            "median_age": {"value": 24.0, "year": 2020, "source": "INEGI"},
+            "median_age_note": "The census's own median."})
+        be.merge_adapter(entity, {
+            "_source": "cod_ps_age.json", "_match": "name",
+            "median_age": {"value": 25.5, "year": 2024, "source": "OCHA COD-PS"},
+            "median_age_note": "A projection."})
+        self.assertEqual(entity["median_age"]["value"], 24.0)
+        self.assertEqual(entity["median_age_note"], "The census's own median.")
+
+
 class TheMapNotTheFile(unittest.TestCase):
     """A visitor's note names the map, not the file it is drawn from."""
 

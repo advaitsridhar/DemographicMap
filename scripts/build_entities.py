@@ -3937,7 +3937,14 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     # to the end of the record. build.json is a digest of the written files, so
     # a key order that churns invalidates every reader's cache for no change in
     # the figures.
-    for field in DESCRIBED_FIELDS:
+    #
+    # The figures as much as the compositions: Mexico's municipios took OCHA's
+    # 2024 median age and sex ratio first, with notes saying so, and the 2020
+    # census's figures in their place from a later file, which says nothing
+    # beside them -- 1,901 median ages and 2,467 sex ratios, and the sex ratios
+    # of eight more Latin American countries, went out under a note about a
+    # projection they were not.
+    for field in (*DESCRIBED_FIELDS, *FIGURE_FIELDS):
         if is_gap(row.get(field)) or field not in row or field in held:
             continue
         for suffix in SATELLITES:
