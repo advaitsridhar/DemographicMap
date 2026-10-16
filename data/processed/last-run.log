@@ -1,18 +1,47 @@
-abkhazia_census: https://cgsra.org/media/files/25.pdf
-  167 pages
-  1 January 2026: Abkhazia: 243,977 (115,252 men, 128,725 women)
-  1 January 2026: the city of Sukhum: 65,180 (30,163 men, 35,017 women)
-  1 January 2026: Gagra district: 38,384 (17,457 men, 20,927 women)
-  1 January 2026: Gudauta district: 38,830 (18,648 men, 20,182 women)
-  1 January 2026: Sukhum district: 11,212 (5,445 men, 5,767 women)
-  1 January 2026: Gulripsh district: 17,489 (8,451 men, 9,038 women)
-  1 January 2026: Ochamchira district: 26,073 (12,650 men, 13,423 women)
-  1 January 2026: Tkvarcheli district: 16,458 (7,925 men, 8,533 women)
-  1 January 2026: Gal district: 30,351 (14,513 men, 15,838 women)
-  1 January 2026: Abkhazia's largest settlement: Sokhumi (65,180)
-  1 January 2026: Gagra's largest settlement: Gagra (11,729)
-  1 January 2026: Gudauta's largest settlement: Gudauta (8,744)
-  1 January 2026: Sokhumi's largest settlement: Sokhumi (65,180)
-  2011 census: median age 38.0; nationality of 240,705 people
-  wrote data/processed/abkhazia_census.json (33 kB)
-wrote 7 records to abkhazia_census.json
+page: https://en.wikipedia.org/w/index.php?title=Tboung_Khmum_province&action=raw
+  8,218 bytes
+  7 distinct match(es) for '(population_[a-z_]+ *=[^|]{0,500})'
+    population_as_of = 2024
+
+    population_demonym = 
+
+    population_density_rank = 8th
+
+    population_footnotes = <ref name=census>{{Cite web
+    population_note = 
+
+    population_rank = 10th
+
+    population_total = {{increase}} 889,970
+
+page: https://en.wikipedia.org/w/index.php?title=Banteay_Meanchey_province&action=raw
+  18,359 bytes
+  7 distinct match(es) for '(population_[a-z_]+ *=[^|]{0,500})'
+    population_as_of   = 2024 census
+
+    population_demonym = 
+
+    population_density_rank = 9th
+
+    population_footnotes = <ref name="PopulationCensus2019">{{Cite web
+    population_note    = 
+
+    population_rank    = [[Provinces of Cambodia
+    population_total   = {{decrease}} 898,484
+
+page: https://en.wikipedia.org/w/index.php?title=Preah_Sihanouk_province&action=raw
+  100,360 bytes
+  7 distinct match(es) for '(population_[a-z_]+ *=[^|]{0,500})'
+    population_as_of = 2024
+
+    population_demonym = 
+
+    population_density_rank = 7th
+
+    population_footnotes = <ref>{{Cite web
+    population_note = 
+
+    population_rank = 20th
+
+    population_total = {{decrease}} 234,702
+
