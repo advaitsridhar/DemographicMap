@@ -911,7 +911,8 @@ def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
 
 
 def lost_territory_reason(name: str, share: int,
-                          successors: tuple[tuple[str, int], ...]) -> str:
+                          successors: tuple[tuple[str, int], ...],
+                          kind: str = "shares") -> str:
     """What a district the census enumerated before its split is a figure for.
 
     The figure exists, is official, and has this district's name on it. What it
@@ -934,6 +935,12 @@ def lost_territory_reason(name: str, share: int,
     So the note says which districts were carved out and when, what fraction of
     the census's ground is left, and, where most of the people have gone, that
     the count is mostly of somewhere else.
+
+    ``kind`` says what the note sits under, because the closing sentence is
+    about that figure: "shares" for a composition (its percentages and the
+    head counts beside them), "count" for the population, and "ratio" for the
+    sex ratio, which is neither -- Surguja's ratio used to be told to read its
+    percentages as describing the area.
     """
     names = [child for child, _ in successors]
     years = sorted({year for _, year in successors})
@@ -942,16 +949,25 @@ def lost_territory_reason(name: str, share: int,
     when = (f" ({years[0]})" if len(years) == 1
             else " (" + " and ".join(str(y) for y in years) + ")")
     many = len(names) > 1
-    note = (f"This figure is for {name} as the 2011 census measured it, before "
+    note = (f"This {'ratio' if kind == 'ratio' else 'figure'} is for {name} as "
+            f"the 2011 census measured it, before "
             f"{listed}{when} {'were' if many else 'was'} carved out of it. The "
             f"shape drawn here keeps about {share}% of the ground that row "
             f"counted")
     note += (", so most of the people in it now live outside this boundary. "
              if share < 50 else ", and the rest is now in those districts. ")
-    note += ("The census never measured the parts separately, so the shares "
-             "are the undivided district's and the counts are its whole "
-             "population -- read the percentages as describing this area and "
-             "the head counts as covering more of it than the map shows.")
+    note += "The census never measured the parts separately, so "
+    if kind == "count":
+        note += ("the count is the undivided district's whole population and "
+                 "covers more ground than the map shows.")
+    elif kind == "ratio":
+        note += ("the ratio is the undivided district's, for all of the ground "
+                 "that row counted.")
+    else:
+        note += ("the shares are the undivided district's and the counts are "
+                 "its whole population -- read the percentages as describing "
+                 "this area and the head counts as covering more of it than "
+                 "the map shows.")
     return note
 
 
@@ -1083,6 +1099,16 @@ def inherited_note(name: str, year: int, predecessors: tuple[str, ...],
     return note
 
 
+def no_figure(estimate: str) -> str:
+    """An estimate's note for a field that shows no figure.
+
+    Nothing on such a field is estimated, so its gap gives the reason without
+    the estimate's opening words. india_language.py writes the same gap under
+    the same id and merges later, so both files take it from here.
+    """
+    return estimate.removeprefix("Estimated, not measured. ")
+
+
 def without_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Shares with the head counts taken off.
 
@@ -1161,8 +1187,7 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     if religion:
         # No figure is shown, so nothing here is estimated: the gap gives the
         # reason without the estimate's opening words.
-        fields["population"] = gap(NOT_AVAILABLE,
-                                   estimate.removeprefix("Estimated, not measured. "))
+        fields["population"] = gap(NOT_AVAILABLE, no_figure(estimate))
     return fields
 
 
@@ -1433,10 +1458,12 @@ def districts(rows: list[dict[str, str]],
         # since the shares survive a boundary change and the counts do not.
         shrink = shrunken.get((state.casefold(), key))
         if shrink:
-            caveat = lost_territory_reason(DISTRICT_ALIASES.get(key, name),
-                                           *shrink)
             for field in ("population", "sex_ratio", "religion",
                           "scheduled_groups", "language"):
+                caveat = lost_territory_reason(
+                    DISTRICT_ALIASES.get(key, name), *shrink,
+                    kind={"population": "count",
+                          "sex_ratio": "ratio"}.get(field, "shares"))
                 note = record_.get(f"{field}_note")
                 record_[f"{field}_note"] = f"{note} {caveat}" if note else caveat
             record_["lost_territory_pct"] = 100 - shrink[0]

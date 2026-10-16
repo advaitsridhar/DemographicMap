@@ -478,10 +478,12 @@ class Subdivided(unittest.TestCase):
         got = rows["East Jaintia Hills"]
         want = india_census.subdivided_inherited_note("Jaintia Hills",
                                                       "East Jaintia Hills")
-        for field in ("population", "religion"):
-            with self.subTest(field=field):
-                self.assertEqual(want, got[field]["note"])
+        self.assertEqual(want, got["religion"]["note"])
         self.assertEqual(want, got["language_note"])
+        # No population is shown, so its gap does not open by calling an
+        # estimate what is not there -- and india_census writes the same gap.
+        self.assertEqual(india_census.no_figure(want), got["population"]["note"])
+        self.assertFalse(got["population"]["note"].startswith("Estimated"))
 
 
 # The C-01 Appendix as probe_xlsx prints it: a title row, the header, a row of
@@ -1072,6 +1074,21 @@ class DistrictsThatLostTheirGround(unittest.TestCase):
         self.assertIn("2012", note)
         self.assertIn("31%", note)
         self.assertIn("the counts are its whole population", note)
+
+    def test_each_field_reads_the_caveat_for_what_it_holds(self):
+        # A sex ratio is neither a share nor a head count, and a population has
+        # no percentages; Surguja's ratio was told to read its percentages as
+        # describing the area.
+        got = emitted()["Surguja"]
+        ratio, count = got["sex_ratio_note"], got["population_note"]
+        self.assertIn("This ratio is for Surguja", ratio)
+        self.assertIn("the ratio is the undivided district's", ratio)
+        self.assertIn("the count is the undivided district's whole population",
+                      count)
+        for note in (ratio, count):
+            for word in ("percentages", "shares", "head counts"):
+                with self.subTest(word=word):
+                    self.assertNotIn(word, note)
 
     def test_the_share_of_ground_lost_is_on_the_record(self):
         # Not only in prose: a reader filtering or sorting needs the number.
