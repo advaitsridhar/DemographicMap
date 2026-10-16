@@ -550,6 +550,23 @@ class Join(unittest.TestCase):
                     year=2024, prri_names={fips: "Baltimore city, MD"})
         self.assertEqual(len(got), self.n)
 
+    def test_carries_the_universes_shape_binding(self):
+        """Baltimore city and Baltimore County are both "Baltimore" in
+        Maryland on the map; the universe binds each to its own shape, and a
+        record that drops the binding is refused by the build as ambiguous."""
+        rows = universe(self.n, names={"01001": "Baltimore", "01002": "Baltimore"})
+        for row in rows:
+            row["match_by"], row["shape_id"] = "shape_id", f"shape-{row['codes']['geoid']}"
+        got = {r["id"]: r for r in build(self.nodes, rows, year=2024)}
+        for fips in ("01001", "01002"):
+            with self.subTest(fips=fips):
+                self.assertEqual("shape_id", got[f"USA-{fips}"]["match_by"])
+                self.assertEqual(f"shape-{fips}", got[f"USA-{fips}"]["shape_id"])
+
+    def test_a_universe_row_without_a_binding_is_matched_by_name(self):
+        got = build(self.nodes, universe(self.n), year=2024)
+        self.assertNotIn("shape_id", got[0])
+
     def test_refuses_a_fips_naming_a_different_county(self):
         """A FIPS whose name moved is usually a FIPS that was reassigned --
         Connecticut's 2022 planning regions are the live case. Joining it

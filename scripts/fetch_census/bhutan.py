@@ -1829,8 +1829,8 @@ def age_gap(reason: str) -> dict[str, Any]:
     """A median this run declined, with the reason in place of the figure."""
     return {"median_age": gap(NOT_AVAILABLE, (
         "2017 census: the report's annex has the age table, but " + reason
-        + "; a median from figures that do not reconcile would be this map's "
-          "arithmetic rather than the census's."))}
+        + "; a median from figures that do not reconcile would not be the "
+          "census's own."))}
 
 
 def fetch(url: str) -> bytes:

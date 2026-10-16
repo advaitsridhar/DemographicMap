@@ -7397,6 +7397,10 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     # is published or shown.
     # build-words: DOM 154 / HTI 52 gap notes: '..., so no municipio figure has been published to read.'
     (re.compile(r"\bhas been published to read\."), r"has been published."),
+    # build-words: BTN 71 median-age gaps, until bhutan.py's own wording is re-run:
+    # '... a median from figures that do not reconcile would be this map's arithmetic rather than the census's.'
+    (re.compile(r"\bwould be this map's arithmetic rather than the census's\."),
+     r"would not be the census's own."),
     # build-words: CHN 753 county notes: '... (1 of X's 1 townships has no point to place it by (乌斯太镇))' and '..., so this county's row may be short of the ground drawn here.'
     (re.compile(r"\b(\d+) of (\S+?)'s (\d+) townships? (?:has|have) no point to place (?:it|them) by\b"), r"\1 of \2's \3 townships cannot be located"),
     (re.compile(r"\bonly township has no point to place it by\b"), r"only township cannot be located"),
@@ -7411,6 +7415,11 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0%\)"), r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0%)"),
     (re.compile(r"\(Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r"(as in Ranong's report, for example)"),
     (re.compile(r": Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r", as in Ranong's report, for example)"),
+    # THA 77 provinces' language gap: the same quotation with its year, and the
+    # workbook's address in brackets of its own
+    (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0% in 2000\)"),
+     r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0% for 2000)"),
+    (re.compile(r" \(web\.archive\.org/\S+?/ranong1\.xls\)"), ""),
     # grammar: RUS 2,303 sex-ratio notes: '8,934 men and 9,745 women; Everyone the 2020 census counted ...'
     (re.compile(r"\b(men and [\d,]+ women); Everyone the (\d{4}) census counted\b"), r"\1 among everyone the \2 census counted"),
     # wording: NLD survey notes: '... who count themselves to a religion', '... does not count themselves to one', '... count themselves to a church denomination'
@@ -7568,8 +7577,12 @@ SOURCE_NAME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bfrom the public-release file\b"), "from the public-release data"),
     # BGR 292: '(Census2021_Ethnocultural characteristics_BG.xlsx, sheet 2)'
     (re.compile(r" \(Census2021_[^()]*?\.xlsx, sheet \d+\)"), ""),
-    # RUS 79: 'arena_statistic.xls -- ...'
-    (re.compile(r"^arena_statistic\.xls -- "), ""),
+    # RUS 80: "..., arena_statistic.xls -- 'Распределение ответов в регионах РФ'",
+    # the country's with ", column 'Население в целом'" after it
+    (re.compile(r", arena_statistic\.xls -- 'Распределение ответов в регионах РФ', "
+                r"column 'Население в целом'"), ", answers of the population as a whole"),
+    (re.compile(r", arena_statistic\.xls -- 'Распределение ответов в регионах РФ'"),
+     ", answers by region"),
 )
 UNNAMED = "Unnamed area"
 

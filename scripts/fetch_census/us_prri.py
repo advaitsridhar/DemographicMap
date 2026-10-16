@@ -1061,11 +1061,18 @@ def build(counties: dict[str, dict[str, float]],
                 for node, pct in sorted(counties[fips].items(),
                                         key=lambda kv: (-kv[1], kv[0]))
                 if round(pct, 1) > 0]
+        # The universe binds each county to its shape, and the binding travels
+        # with the name: matched by name alone, Baltimore city and Baltimore
+        # County are two "Baltimore"s in Maryland, and the build refuses both.
+        bound = ({"match_by": "shape_id", "shape_id": home["shape_id"]}
+                 if home.get("match_by") == "shape_id" and home.get("shape_id")
+                 else {})
         records.append(record(
             f"USA-{fips}", home["name"],
             level="admin2", parent=home.get("parent", "USA"), country="USA",
             codes=home.get("codes"),
             parent_name=home.get("parent_name"),
+            **bound,
             religion=rows or gap(NOT_AVAILABLE),
             religion_year=year,
             religion_basis="self-identification",
