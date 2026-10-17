@@ -88,8 +88,9 @@ CROSSWALK: dict[str, dict[str, list[str]]] = {}
 
 
 def number(cell: Any) -> int:
+    """A count; KNBS writes none as "-" and, in Volume III, as "_"."""
     text = str(cell or "").replace(",", "").strip()
-    return int(float(text)) if text not in ("", "-") else 0
+    return int(float(text)) if text not in ("", "-", "_") else 0
 
 
 def read_vol1(text: str) -> dict[str, dict[str, int]]:

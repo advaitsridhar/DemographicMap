@@ -324,20 +324,25 @@ AGE_ROW = re.compile(r"^(?P<age>\d{1,2}|80\s*\+|Total)\s+(?P<both>\d[\d,]*)\s+(?
 def parse_ages(lines: list[str]) -> dict[str, dict[str, Any]]:
     """{"regions": {key: table}, "councils": {key: table}}, each table checked: its single
     years make its total, and its men and women make it too."""
-    out: dict[str, dict[str, Any]] = {"regions": {}, "councils": {}}
+    out: dict[str, Any] = {"regions": {}, "councils": {}, "unread": []}
     current: dict[str, Any] | None = None
 
     def close(table: dict[str, Any] | None) -> None:
         if table is None:
             return
         name = table["name"]
+        # A table whose page the text layer does not give whole is left out
+        # and named: its unit keeps no census median, never a partial one.
         if table["total"] is None or len(table["ages"]) != 81:
-            raise SystemExit(f"tanzania_census: the age table of {name} has "
-                             f"{len(table['ages'])} single years and total {table['total']}")
+            out["unread"].append(f"{name}: {len(table['ages'])} single years read, total "
+                                 f"{table['total']}")
+            return
         made = sum(table["ages"].values())
         if made != table["total"] or table["men"] + table["women"] != table["total"]:
-            raise SystemExit(f"tanzania_census: {name}'s single years make {made:,} and its sexes "
-                             f"{table['men'] + table['women']:,}, against {table['total']:,}")
+            out["unread"].append(f"{name}: single years make {made:,} and sexes "
+                                 f"{table['men'] + table['women']:,}, against "
+                                 f"{table['total']:,}")
+            return
         lower = name.lower()
         if lower.startswith("tanzania"):
             return
@@ -363,8 +368,9 @@ def parse_ages(lines: list[str]) -> dict[str, dict[str, Any]]:
             continue
         both, men, women = (number(hit.group(k)) for k in ("both", "men", "women"))
         if men + women != both:
-            raise SystemExit(f"tanzania_census: {current['name']}, age {hit.group('age')}: "
-                             f"{men:,} men and {women:,} women do not make {both:,}")
+            # A row the text layer garbled: the table fails its total below.
+            current.setdefault("garbled", []).append(hit.group("age"))
+            continue
         age = hit.group("age").replace(" ", "")
         if age == "Total":
             current.update(total=both, men=men, women=women)
@@ -394,9 +400,11 @@ def check_ages(ages: dict[str, dict[str, Any]], table: dict[str, Any]) -> list[s
                 report.append(f"no age table for {row['name']}")
             elif (got["total"], got["men"], got["women"]) != (row["total"], row["men"],
                                                               row["women"]):
-                raise SystemExit(f"tanzania_census: {row['name']}: the age table counts "
-                                 f"{got['total']:,} ({got['men']:,} men), Volume 1a "
-                                 f"{row['total']:,} ({row['men']:,} men)")
+                # Not the same people, or not read the same way: no median for it.
+                report.append(f"{row['name']}: the age table counts {got['total']:,} "
+                              f"({got['men']:,} men), Volume 1a {row['total']:,} "
+                              f"({row['men']:,} men); its age table is left out")
+                ages[kind].pop(key)
     return report
 
 
@@ -590,6 +598,8 @@ def main() -> int:
     ages = read_ages(age_blob)
     log(f"  age tables: {len(ages['regions'])} regions and {len(ages['councils'])} councils, "
         "each one's single years and sexes making its total")
+    for line in ages["unread"]:
+        log(f"  age table left out: {line}")
     for line in check_ages(ages, table):
         log("  " + line)
     admin1 = json.loads((SITE / "admin1" / "TZA.units.json").read_text())
