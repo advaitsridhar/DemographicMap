@@ -1,242 +1,524 @@
-probe_pdf: https://www.gbosdata.org/downloads-file/213-census-2013-spatial-distribution-report
-  8,702,036 bytes
-  373 pages
-probe_pdf: 373 pages, 1 mention ['Foni', 'Jeshwang', 'Bakau', 'median']
-=== front matter ===
- 
- 
- 
- 
-
-ii 
- 
-Table of Contents 
-List of Tables ......................................................................................................................................... iii 
-List of Figures ....................................................................................................................................... iv 
-List of Annexes ..................................................................................................................................... iv 
-List of Abbreviations and Acronyms ..................................................................................................... v 
-Concepts and Definitions ...................................................................................................................... vi 
-Preface ................................................................................................................................................. viii 
-Executive Summary .............................................................................................................................. ix 
-CHAPTER 1: INTRODUCTION .......................................................................................................... 1 
-1.1 Background.................................................................................................................................... 1 
-1.2   Methodology .................................................................................................................................. 1 
-1.3 Limitations ..................................................................................................................................... 2 
-CHAPTER 2: SPATIAL DISTRIBUTION OF THE POPULATION AND SOCIO-CULTURAL 
-CHARACTERISTICS ................................................................................................................... 3 
-2.1 Population size, growth and percentage distribution ........................................................................ 3 
-2.1.1 Percentage distribution of population size and growth rate by LGA ................................... 4 
-2.1.2 Percentage distribution of population by LGA ..................................................................... 5 
-2.1.3 Distribution of the population by sex and residence ............................................................. 5 
-2.1.4 Distribution of the population by religion ............................................................................ 6 
-2.2 Population density ......................................................................................................................... 6 
-2.3 Population by age and sex ............................................................................................................. 6 
-2.4 Distribution of the population ..................................................................................................... 10 
-2.4.1 Population distribution by residence and LGA ................................................................... 10 
-2.5 Sex ratio ....................................................................................................................................... 11 
-2.5.1 Sex ratio by Local Government Area ................................................................................. 11 
-CHAPTER 3: ETHINICITY AND NATIONALITY .......................................................................... 12 
-3.1 Population distribution by ethnicity ............................................................................................ 12 
-3.2 Population distribution by ethnicity and LGA ............................................................................ 13 
-3.3.1 Non-Gambian population ................................................................................................... 13 
-3.3.2 Distribution of the population by nationality and LGA ...................................................... 13 
-3.3.3 Distribution of non-Gambians by nationality ..................................................................... 14 
-CHAPTER 4: MARITAL STATUS AND TYPE OF UNION ............................................................ 15 
-4.1 Population aged 12 years and over by marital status and sex ...................................................... 15 
-4.2 Population aged 12 years and over by marital status, sex and residence..................................... 16 
-4.3 Female Gambian teenage population (12-19 years) by marital status      and ethnicity .............. 17 
-4.4 Gambian population aged (12-19 years) by educational attainment and marital status .............. 17 
-4.5 Type of union .............................................................................................................................. 18 
-4.6 Ever married population aged 12 years and over by type of union and educational attainment . 18 
-4.7 Ever-married economically active population aged 12 years and over by type of union, sex and 
-occupation.................................................................................................................................... 19 
-4.8 Currently married population aged 12 years and over by sex, age group and type of union ...... 19 
-4.9 Currently married population aged 12 years and over by LGA, sex and type of union .............. 20 
-CHAPTER 5: CONCLUSION ............................................................................................................. 21 
-References ............................................................................................................................................ 22 
-Annexes ................................................................................................................................................ 23 
- 
-iii 
- 
-List of Tables 
- 
-Table 2.1.2: Percentage distribution of the population by LGA and sex................................................................ 5 
-Table 2.1.3: Percentage distribution of the population by residence and sex ......................................................... 5 
-Table 2.3: Percentage distribution of the population by five-year age group and sex ............................................ 7 
-Table 2.4.1: Percentage distribution of the population by LGA and Residence .................................................. 10 
-Table 2.5.1: Population by Local Government Area and Sex Ratio..................................................................... 11 
-Table 3.1.1: Percentage distribution of the Gambian Population by Ethnicity 1973,1983,1993,2003 and 2013 
-Censuses ..................................................................................................................................................... 12 
-Table 3.2: Percentage Distribution of Gambians by Ethnicity and LGA ............................................................. 13 
-Table 4.1: Percentage distribution of the population by marital status and sex, 1983, 1993, 2003, and 2013 
-Censuses ..................................................................................................................................................... 16 
-Table 4.2: Percentage Distribution of Population (12 years and over) by Marital Status .................................... 16 
-Table 4.4: Percentage distribution of Gambian teenage population (12-19 years) by educational attainment and 
-marital Status .............................................................................................................................................. 17 
-Table 4.5: Percentage distribution of ever-married population aged 12 years and over by type of union and sex
- .................................................................................................................................................................... 18 
-Table 4.6 Percentage distribution of ever married population aged 12 years and over by type of union, sex and 
-educational attainment ................................................................................................................................ 18 
-Table 4.7: Percentage distribution of ever-married economically active population aged 12 years and over by 
-type of union, sex and occupation .............................................................................................................. 19 
-  
-  
-iv 
- 
-List of Figures 
- 
-Figure 2.3 A & B: Percentage Distribution of age-sex population pyramid, Population & Housing Census 2013, 
-The Gambia ………..………………………………………………………………..…………………………………………………….….…….9 
-Figure 4.1: Proportion of Population (12 years and over) by marital Status, 2013 Census………………………………15 
-Figure 4.8: Percentage distribution of currently married Population aged 12 years and over by sex, Age group 
-and type of union……………………………………………………………………………………….…………………………………….…. 20 
- 
- 
-List of Annexes 
- 
-Annex A: Population of The Gambia, 1901 to 2013 ............................................................................ 23 
-Annex B: Population count and share from 1973 -2013 by LGA  .................................................... 24 
-Annex C: Non-Gambian population by LGA and Nationality ............................................................. 27 
-Annex D: Gambian teenage population aged 12-19 years by marital status and ethnicity .................. 28 
-Annex E: Currently married population aged 12 years and over by sex, Age group, LGA and type of 
-union ............................................................................................................................................ 29 
-Annex F: Population by residence, sex, five-year age group, and Local Government Area ............... 31 
-Annex G: Population of The Gambia by sex, five-year age group, ethnicity and Local Government 
-Area ............................................................................................................................................. 40 
-Annex H: Population by Five-year age group, Sex, Religion and Local Government Area .............. 109 
-Annex I: Population aged 12 years and Over by Single and Five-year age groups, Sex, Marital Status, 
-LGA and Residence ................................................................................................................... 172 
-Annex J: Population aged 12 years and Over by Sex, Marital Status, Local Government Area, 
-Residence and Educational Attainment ..................................................................................... 238 
-Annex K: Marital Status of the Teenage Population Aged (13-19) by Educational Attainment ....... 263 
-Annex L: Currently Married Population aged 12 years and Over by Five-year age group, Sex, Type of 
-union and Residence .................................................................................................................. 287 
-Annex M: Ever married population aged 12 years and over by type of union, sex and educational 
-attainment .................................................................................................................................. 356 
-Annex N: Ever married economically active population aged 12 years and over by type of union, sex 
-and occupation ........................................................................................................................... 359 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
-v 
- 
-List of Abbreviations and Acronyms 
- 
- 
-GBoS   Gambia Bureau of Statistics 
-IEC                   Information, Education and Communication 
-KPA                 Kilimanjaro Plan of Action 
-LGA   Local Government Area  
-NPCS               National Population Commission Secretariat  
-UN   United Nations 
-UNFPA            United Nations Population Fund 
- 
-  
-vi 
- 
-Concepts and Definitions 
- 
-Population Census: A population census is the total process  of collecting, compiling, 
-evaluating, analyzing and publishing or otherwise disseminating demographic, economic and 
-social data pertaining to all persons in a country or in a well delimited part of a country at a 
-specified time. 
- 
-De factor count: Count of all persons present in a country/locality on census night. 
- 
-De Jure count: Count of all persons usually resident in a country/locality as of census night  
- 
-Inter-censal period: The period between two censuses. For most developing countries, this 
-period is 10 years. 
- 
-Migration is a form of geographic or spatial mobility involving a change of usual residence 
-between clearly defined geographic units. Some changes of residence are temporal and do not 
-involve change of usual residence. Other changes of residence although permanent are short 
-distant movement. These raise the question of who a migrant is. In other words, one has to 
-consider the time, distance travelled and intention in deciding who qualifies to be called a 
-migrant. In the analysis of the 2 013 Population and Housing Census, two forms of migration 
-were looked at namely: internal migration and international (external) migration. 
- 
-Population Density: The total population of a given area divided  by that land area. It 
-measures the number of persons per square kilometre.  
- 
-Average Annual Growth Rate: Average rate of growth of the population per annum. 
- 
-Urban: According to the 2013 Population and Housing Census, a settlement is consi dered 
-urban if it satisfies most of the following: 
- 
- Has commercial importance 
- Has institutional importance 
- Majority of the population should be non-agricultural in occupation 
- Population should be 5,000 and above 
- Density should be high 
- Some degree of infrastructure should be available 
- 
-Rural: All settlements that do not meet the criteria described above are considered rural. 
- 
-  
-vii 
- 
-Household: This consists of a person or group of persons who live together in the same 
-house or compound, share the same house-keeping and catering arrangements. It is important 
-to remember that memb ers of a household may not necessarily be related (by blood or 
-marriage) as for instance, maid-servants can be household members.  
- 
-Sex Ratio: Sex ratio is the number of males per 100 females in a given population. Sex ratio 
-less than 100 indicates that th ere are relatively more female, whilst a sex ratio greater than 
-100 indicates that there are relatively more males than females. In general, sex ratios below 
-90 or above 110 are usually the result of migration, abnormally high levels of mortality 
-caused by wars or disease epidemics, under count or over count of one of the sexes etc. 
- 
-  
-viii 
- 
-Preface 
- 
-This is Volume 5  of the 20 13 Population and Housing Census report. The main objective of 
-
-=== pages mentioning ['Foni', 'Jeshwang', 'Bakau', 'median'] (first 20) ===
-
---- page 16 ----------------------------------------------------
-6
-2.1.4 Distribution of the population by religion
-According to the 2013 Census, the population of The Gambia is predominantly Muslim (96 .0
-per cent) followed by Christianity (3.8 per cent). Traditionalist and people who practice other
-religions each accounted for 0.1 per cent.
-2.2 Population density
-In 2013, the overall population density was estimated at 17 3.9 persons per square kilometre ,
-one of the highest in the S ub-Saharan Africa. Over the years, the population density of The
-Gambia has increased from 64 persons per square kilometre in 19 83 to 97 persons per square
-kilometre in 19 93 and further increased from 127 persons per square kilometre in 2003 to
-173.9 persons per square kilometre in 2013.
-Banjul, Kanifing and Brikama LGAs had the highest population densities . In 2013, the
-population density of Kanifing (4, 991.8 persons per square kilometre) surpasse d that of
-Banjul (2 ,539.2 persons per square kilometre) , while  the Brikama LGA had a population
-density of 390.4 persons per square kilometre. Unlike Kanifing, where the population density
-continues to rise,  Banjul's population density has been declining  in the past three decades.
-This could be attributed to the fact tha t the city is  an island and there is no more room for
-human settlement , thus, there has been migration of people from  Banjul to Kanifing  and
-Brikama (refer to annex, Table B.3).
-2.3 Population by age and sex
-The demographic significance of age and sex cannot be over -emphasized. These variables
-determine the future demographic trends and are in turn influenced by the dynamics of
-population (i.e. fertility, mortality and migration).
-During the census information on  age and sex of persons were collected.  The person’s age
-was recorded in complete years as at 15 th April 2013. For persons who did not know their
-ages, a calendar of events was used to assist them estimate their ages. This was meant to
-reduce the incidence of people who reported they don’t kn ow their ages and also to improve
-on the coverage and accuracy of age reporting.
-According to the 2013 Census, The Gambia has an overall median age of 18.2 years with
-17.8 and 18.5 years respectively for males and fem ales. The median  age divides the
-population into two halves i.e. the age at which 50 .0 per cent of the population are above and
-50.0 per cent are below. These low median ages mean that the country has a relatively young
-population.
+== pdfp https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome2_17-2021.pdf 26-29
+  HTTP 200 application/pdf 11,459,529 bytes
+  280 pages
+  --- page 26 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Tableau 8. Répartition de la population résidente par sexe selon la région, le District et densité, poids démo-
+  graphique, rapport de masculinité et pourcentage de femmes
+  Effectif Poids Proportion Densité
+  Région District démo- RM de femmes (Hab./
+  Homme Femme Ensemble graphique Km²)
+  26 DECEMBRE 2020
+  agnamalanA
+  Total Région 1 777 869 1 846 056 3 623 925 14,1 96,3 50,9 208,9
+  Antananarivo 615 659 658 566 1 274 225 5,0 93,5 51,7 15000,4
+  Renivohitra
+  Ankazobe 97 546 95 880 193 426 0,8 101,7 49,6 26,3
+  Anjozorobe 114 299 111 959 226 258 0,9 102,1 49,5 53,0
+  Ambohidratrimo 218 643 223 601 442 244 1,7 97,8 50,6 309,0
+  Manjakandriana 109 641 110 602 220 243 0,9 99,1 50,2 122,5
+  Antananarivo 221 111 228 467 449 578 1,8 96,8 50,8 773,1
+  Avaradrano
+  Antananarivo 318 036 330 744 648 780 2,5 96,2 51,0 1538,6
+  Atsimondrano
+  Andramasina 82 934 86 237 169 171 0,7 96,2 51,0 120,3
+  artaraknanikaV
+  Total Région 1 040 910 1 038 749 2 079 659 8,1 100,2 49,9 116,3
+  Antsirabe I 119 710 126 644 246 354 1,0 94,5 51,4 1854,6
+  Ambatolampy 141 027 141 216 282 243 1,1 99,9 50,0 171,0
+  Faratsiho 112 218 110 704 222 922 0,9 101,4 49,7 120,2
+  Mandoto 105 180 102 878 208 058 0,8 102,2 49,4 43,0
+  Antanifotsy 178 122 176 111 354 233 1,4 101,1 49,7 127,2
+  Betafo 159 933 158 643 318 576 1,2 100,8 49,8 76,7
+  Antsirabe II 224 720 222 553 447 273 1,7 101,0 49,8 181,1
+  ysatI
+  Total Région 453 468 445 081 898 549 3,5 101,9 49,5 136,6
+  Miarinarivo 148 416 145 302 293 718 1,1 102,1 49,5 114,0
+  Arivonimamo 178 388 176 348 354 736 1,4 101,2 49,7 166,3
+  Soavinandriana 126 664 123 431 250 095 1,0 102,6 49,4 133,9
+  avalognoB Total Région 340 841 330 152 670 993 2,6 103,2 49,2 37,1
+  Tsiroanomandidy 249 168 241 331 490 499 1,9 103,2 49,2 46,5
+  Fenoarivobe 91 673 88 821 180 494 0,7 103,2 49,2 23,9
+  --- page 27 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Effectif Poids Proportion Densité
+  Région District démo- RM de femmes (Hab./
+  Homme Femme Ensemble graphique Km²)
+  DECEMBRE 2020 27
+  artaistaM
+  etuaH
+  Total Région 714 484 730 103 1 444 587 5,6 97,9 50,5 69,4
+  Fianarantsoa I 91 893 99 883 191 776 0,7 92,0 52,1 2229,6
+  Ambohimahasoa 134 205 137 028 271 233 1,1 97,9 50,5 140,7
+  Ikalamavony 62 524 62 803 125 327 0,5 99,6 50,1 12,8
+  Isandra 74 415 76 641 151 056 0,6 97,1 50,7 112,6
+  Lalangina 92 248 91 914 184 162 0,7 100,4 49,9 175,2
+  Vohibato 111 981 110 648 222 629 0,9 101,2 49,7 121,8
+  Ambalavao 147 218 151 186 298 404 1,2 97,4 50,7 62,2
+  ainaM
+  I
+  ’noromA
+  Total Région 412 492 424 624 837 116 3,3 97,1 50,7 50,8
+  Ambositra 145 569 151 966 297 535 1,2 95,8 51,1 102,1
+  Fandriana 106 167 109 475 215 642 0,8 97,0 50,8 94,9
+  Ambatofinandrahana 108 439 109 054 217 493 0,8 99,4 50,1 21,1
+  Manandriana 52 317 54 129 106 446 0,4 96,7 50,9 108,5
+  ynanivotiF
+  yvavotaV
+  Total Région 703 779 736 878 1 440 657 5,6 95,5 51,1 69,5
+  Manakara Atsimo 185 734 200 126 385 860 1,5 92,8 51,9 121,9
+  Nosy-Varika 125 544 128 800 254 344 1,0 97,5 50,6 66,4
+  Mananjary 134 515 142 372 276 887 1,1 94,5 51,4 50,6
+  Ifanadiana 86 118 88 326 174 444 0,7 97,5 50,6 43,9
+  Ikongo 102 008 102 467 204 475 0,8 99,6 50,1 64,8
+  Vohipeno 69 860 74 787 144 647 0,6 93,4 51,7 125,6
+  ebmorohI
+  Répartition de la population résidente par sexe selon la région, le District et densité, poids démographique,
+  rapport de masculinité et pourcentage de femmes.
+  Total Région 207 877 209 435 417 312 1,6 99,3 50,2 16,0
+  Ihosy 146 217 146 663 292 880 1,1 99,7 50,1 17,1
+  Ivohibe 34 345 34 707 69 052 0,3 99,0 50,3 16,0
+  Iakora 27 315 28 065 55 380 0,2 97,3 50,7 12,2
+  --- page 28 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Effectif Poids Proportion Densité
+  Région District démo- RM de femmes (Hab./
+  Homme Femme Ensemble graphique Km²)
+  28 DECEMBRE 2020
+  anananistA
+  omistA
+  Total Région 502 390 528 014 1 030 404 4,0 95,1 51,2 62,0
+  Farafangana 197 517 210 426 407 943 1,6 93,9 51,6 144,4
+  Vondrozo 81 791 83 180 164 971 0,6 98,3 50,4 51,5
+  Vangaindrano 173 094 183 177 356 271 1,4 94,5 51,4 73,9
+  Midongy-Atsimo 23 573 24 206 47 779 0,2 97,4 50,7 18,8
+  Befotaka 26 415 27 025 53 440 0,2 97,7 50,6 16,5
+  anananistA
+  Total Région 724 646 753 826 1 478 472 5,8 96,1 51,0 67,1
+  Toamasina I 153 973 171 884 325 857 1,3 89,6 52,7 10535,2
+  Toamasina II 129 929 130 527 260 456 1,0 99,5 50,1 51,9
+  Brickaville 103 373 105 628 209 001 0,8 97,9 50,5 34,5
+  Vatomandry 83 107 86 754 169 861 0,7 95,8 51,1 74,4
+  Antanambao 30 433 31 026 61 459 0,2 98,1 50,5 47,3
+  Manampontsy
+  Mahanoro 141 909 143 617 285 526 1,1 98,8 50,3 75,8
+  Marolambo 81 922 84 390 166 312 0,6 97,1 50,7 46,5
+  oforijnalanA
+  Total Région 566 503 583 586 1 150 089 4,5 97,1 50,7 53,1
+  Fenerive Est 143 320 150 245 293 565 1,1 95,4 51,2 98,1
+  Maroantsetra 122 864 128 064 250 928 1,0 95,9 51,0 36,0
+  Mananara-Avaratra 119 061 121 088 240 149 0,9 98,3 50,4 53,5
+  Soanierana Ivongo 70 915 72 772 143 687 0,6 97,4 50,6 32,9
+  Sainte Marie 12 676 14 146 26 822 0,1 89,6 52,7 144,7
+  Vavatenina 97 667 97 271 194 938 0,8 100,4 49,9 73,0
+  orognaM
+  artoalA
+  Répartition de la population résidente par sexe selon la région, le District et densité, poids démographique,
+  rapport de masculinité et pourcentage de femmes.
+  Total Région 622 913 627 018 1 249 931 4,9 99,3 50,2 44,9
+  Ambatondrazaka 178 183 179 981 358 164 1,4 99,0 50,3 64,7
+  Andilamena 51 553 52 683 104 236 0,4 97,9 50,5 13,6
+  Amparafaravola 162 030 160 661 322 691 1,3 100,9 49,8 69,8
+  Moramanga 175 040 175 684 350 724 1,4 99,6 50,1 49,1
+  Anosibe-An'ala 56 107 58 009 114 116 0,4 96,7 50,8 39,9
+  --- page 29 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Effectif Poids Proportion Densité
+  Région District démo- RM de femmes (Hab./
+  Homme Femme Ensemble graphique Km²)
+  DECEMBRE 2020 29
+  yneoB
+  Total Région 456 039 473 273 929 312 3,6 96,4 50,9 29,7
+  Mahajanga I 116 867 129 155 246 022 1,0 90,5 52,5 4822,2
+  Mahajanga II 47 627 47 896 95 523 0,4 99,4 50,1 20,4
+  Mitsinjo 41 328 42 829 84 157 0,3 96,5 50,9 18,1
+  Marovoay 97 245 100 511 197 756 0,8 96,8 50,8 35,3
+  Soalala 20 734 20 950 41 684 0,2 99,0 50,3 5,4
+  Ambato Boeni 132 238 131 932 264 170 1,0 100,2 49,9 31,0
+  afioS
+  Total Région 743 627 763 964 1 507 591 5,9 97,3 50,7 29,6
+  Antsohihy 85 813 89 858 175 671 0,7 95,5 51,2 36,8
+  Analalava 80 532 84 154 164 686 0,6 95,7 51,1 18,9
+  Bealanana 93 212 94 903 188 115 0,7 98,2 50,4 27,6
+  Befandriana Nord 126 863 130 581 257 444 1,0 97,2 50,7 29,5
+  Port-Berge (Borizi- 113 067 115 718 228 785 0,9 97,7 50,6 32,3
+  ny-Vaovao)
+  Mandritsara 150 575 154 231 304 806 1,2 97,6 50,6 29,6
+  Mampikony 93 565 94 519 188 084 0,7 99,0 50,3 41,2
+  akobisteB
+  Total Région 196 040 197 238 393 278 1,5 99,4 50,2 13,6
+  Maevatanana 110 742 110 027 220 769 0,9 100,6 49,8 20,6
+  Tsaratanana 72 151 74 394 146 545 0,6 97,0 50,8 12,1
+  Kandreho 13 147 12 817 25 964 0,1 102,6 49,4 4,3
+  ykaleM
+  Répartition de la population résidente par sexe selon la région, le District et densité, poids démographique,
+  rapport de masculinité et pourcentage de femmes.
+  Total Région 153 120 155 824 308 944 1,2 98,3 50,4 7,6
+  Maintirano 56 020 57 522 113 542 0,4 97,4 50,7 11,5
+  Besalampy 29 322 30 073 59 395 0,2 97,5 50,6 5,0
+  Ambatomainty 21 628 21 583 43 211 0,2 100,2 49,9 9,1
+  Morafenobe 17 179 17 337 34 516 0,1 99,1 50,2 4,7
+  Antsalova 28 971 29 309 58 280 0,2 98,8 50,3 8,5
+== pdft https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome1_17-2021.pdf (?i)(A2-1[0-9]|A2-2|A2-3|Tableau.(8|10|14|31)[^0-9]) 30
+  HTTP 200 application/pdf 8,260,657 bytes
+  192 pages
+  p15: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / LISTE DES TABLEAUX / Tableau 1. Effectif et pourcentage de la population résidente des ménages ordinaires de Madagascar en juin
+  p16: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / lation de la Région et à la population de Madagascar selon la région ................................................... / Tableau 23. Effectif de la Population des femmes en âge de procréer (12-49 ans) recensée dans les ménages
+  p18: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / le logement, selon la province et la région ............................................................................ / Tableau 73. Répartition des ménages urbains par qualité des matériaux de construction et confort du logement
+  p19: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Tableau A2-6 Population totale par milieu de résidence et par sexe ..................................................... / Tableau A2-7 Population recensée par sexe selon le type de ménage ......................................................
+  p20: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / de résidence et par groupe d’âges ...................................................................................... / Tableau A2-38 Structure (%) de la population alphabétisée de 15 ans & plus par sexe selon la langue
+  p51: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / 3.1.3.4- Croissance urbaine par Province / Malgré les changements intervenus dans le concept de « l’Urbain » urbaine, alors que Fianarantsoa et Toliara affichent l
+  p54: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / 3.1.4.3- Répartition spatiale de la population par région selon le sexe / La répartition de la population par région indique qu’Analamanga sont : Vakinankaratra, Itasy et Bongolava. L’analyse de
+  p58: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Tableau 13. Taux d’accroissement intercensitaire annuel moyen entre 1975 et 2018 et temps de doublement de / la population selon la province
+  p59: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Il convient de signaler, comme on l’a vu plus haut, que la exclusivement Malagasy ne diffèreront pas de ceux de l’ensemb / population étrangère étant très négligeable par rapport à la de la population que nous avons examiné.
+  p79: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / 4- SYNTHESE DES RESULTATS SUR LES AUTRES THEMATIQUES DU RGPH-3 / Cette partie consiste à présenter la synthèse des principaux conformément au plan de publication des résultats du RGPH-3
+  p141: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / ANNEXE-2 : PRINCIPAUX INDICATEURS DU RGPH-3 / Tableau A2-1. Population totale, Densité et Taux d’accroissement
+  p142: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Tableau A2-8 Ménages ordinaires recensés et leur Population / Effectif de la population vivant dans les ménages ordinaires recensés 25 674 196
+  p143: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Tableau A2-14 Rapport de dépendance démographique (ou d’âge) * par milieu de résidence et par sexe (en %) / Milieu de résidence Masculin Féminin Ensemble
+  p146: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Effectif de la population des hommes de 60 ans ou plus 560 198 / Part de la population des hommes de 60 ans ou plus 48,9
+  p147: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Source : MDG - INSTAT - rGPH2018 / Tableau A2-22 Population d’âge électoral ou de majorité (18 ans et plus) recensée dans les ménages ordinaires)
+  p148: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / 18-25 ans 16,0 12,1 13,9 75,8 / 6-25 ans 47,3 45,2 46,2 95,6
+  p149: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Tableau A2-33 Indice de Parité entre Sexes IPS (F/M) en matière de scolarisation (en %) dans le Primaire et / dans le Secondaire par milieu de résidence
+  p150: RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER / Tableau A2-38 Structure (%) de la population alphabétisée de 15 ans & plus par sexe selon la langue / d’alphabétisation
+== pdfp https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome1_17-2021.pdf 120-126
+  HTTP 200 application/pdf 8,260,657 bytes
+  192 pages
+  --- page 120 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Tableau 79. Effectif et composition de la population des personnes âgées par le milieu de résidence
+  Milieu de résidence/ sexe Urbain Rural Ensemble
+  Homme 112 135 448 063 560 198
+  Femme 137 153 447 625 584 778
+  RM 82 100 96
+  Ensemble 249 288 895 688 1 144 976
+  3ème âge (60-79 ans) 226 260 789 706 1 015 966
+  4ème âge (80 et plus) 23 028 105 982 129 010
+  Proportion (%) dans la population totale résidente 5,0 4,3 4,5
+  Source : MDG - INSTAT - rGPH2018
+  4.9.3.2- Statut d’activités et protection sociale des personnes âgées
+  À Madagascar, pour mieux survivre, on continue à travailler même Pour ce qui est de la protection sociale des personnes âgées,
+  après 60 ans. En effet, l’on enregistre 60,4 % des personnes de elle se manifeste par leur adhésion à un organisme chargé de la
+  60ans et plus qui sont encore actives occupées. Il est à noter protection, soit par la prise en charge de leur santé, leur retraite ou
+  que plus de 90 %de ces personnes âgées actives occupées sont les deux à la fois. Dans l’ensemble, 16,6 % des personnes âgées
+  des indépendants. ont bénéficié de la protection sociale, dont 0,4 % ont bénéficié de
+  la protection sociale pour la santé, 0,3 % pour la retraite et 15,9 %
+  pour la santé et la retraite en même temps.
+  Tableau 80. Proportion (en %) des personnes âgées ayant bénéficié de la sécurité sociale par milieu de rési-
+  dence et sexe, selon le type de protection
+  Urbain Rural Ensemble
+  Type de protection
+  Masculin Féminin Total RM Masculin Féminin Total RM Masculin Féminin Total RM
+  Santé 0,3 0,2 0,2 154 0,5 0,4 0,5 131 0,5 0,4 0,4 134
+  Retraite 0,4 0,2 0,3 195 0,4 0,2 0,3 215 0,4 0,2 0,3 210
+  Santé et retraite 54,1 32,2 42,1 137 10,5 6,7 8,6 156 19,2 12,7 15,9 145
+  TOTAL 54,8 32,6 42,6 138 11,4 7,3 9,4 156 20,1 13,3 16,6 145
+  Source : MDG - INSTAT - rGPH2018
+  Selon le milieu de résidence, on constate que la proportion de personnes âgées membres d’un organisme destiné à la santé et à
+  personnes âgées membres d’un organisme chargé de la protection la retraite est de 42,1 % contre 8,6 % en milieu rural.
+  sociale présente une énorme différence. En milieu urbain, les
+  4.9.3.3- Les personnes âgées en situation de Handicap
+  À Madagascar, le phénomène de handicap touche le plus les femmes). La proportion des personnes en situation de handicap
+  personnes âgées que d’autres ne sous-groupes de personnes. Dans augmente avec l’âge. Elle est de l’ordre de 1,7 % chez le 3ème âge
+  l’ensemble, l’effectif des personnes âgées vivant avec handicap contre 4,3 % chez le 4ème âge. En ce qui concerne le milieu de
+  représente 22 447 individus, soit 2,0 % des individus de 60 ans ou résidence, les personnes âgées vivant avec handicap résident plus
+  plus. On constate que ce phénomène est plus accentué chez les en milieu rural (2,1 %) qu’en milieu urbain (1,5 %).
+  femmes âgées que chez les hommes âgés (93 hommes pour 100
+  Tableau 81. Effectif et composition de la population des personnes âgées handicapées par milieu de résidence,
+  selon le groupe d’âges
+  Urbain Rural Ensemble
+  Groupe d’âges
+  Eff RM Prop Eff RM Prop Eff RM Prop
+  60-64 ans 1046 107 1,0 4892 107 1,4 5938 107 1,3
+  65-69 ans 754 81 1,2 3426 106 1,6 4180 101 1,5
+  70-74 ans 674 81 1,8 3432 90 2,5 4106 89 2,3
+  75-79 ans 432 76 2,0 2266 96 2,9 2698 93 2,8
+  80 ans et plus 727 62 3,2 4798 80 4,5 5525 77 4,3
+  88 DÉCEMBRE 2020
+  --- page 121 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Urbain Rural Ensemble
+  Groupe d’âges
+  Eff RM Prop Eff RM Prop Eff RM Prop
+  Total 3633 83 1,5 18814 95 2,1 22447 93 2,0
+  3ème âge (60-79 ans) 2906 89 1,3 14016 101 1,8 16922 99 1,7
+  4ème âge (80 ans et plus) 727 62 3,2 4798 80 4,5 5525 77 4,3
+  TOTAL 3633 83 1,5 18814 95 2,1 22447 93 2,0
+  Source : MDG - INSTAT - rGPH2018
+  En ce qui concerne les types de handicap chez les personnes aveugle (16,6 %), membres supérieurs (12,4 %), mental (9,3 %)
+  âgées, l’on enregistre par ordre d’importance les types suivants : et muet (2,1 %).
+  sourd ou hypoacousie (33,3 %), membres inférieurs (19,6 %),
+  4.9.3.4- Conditions de vulnérabilité chez les personnes âgées
+  Pour améliorer la condition de vie des personnes âgées, il est seul 1,3 % d’entre elles vivent dans des ménages ayant le gaz ou
+  important d’assurer leur confort au quotidien et leur accès à l’électricité comme source d’énergie pour la cuisson. En outre,
+  quelques services sociaux de base, notamment les services 27,8 % des personnes âgées vivent dans des ménages ayant des
+  de santé. toilettes améliorées. Enfin, seuls 4,4% d’entre elles résident dans
+  des ménages ayant accès à l’internet.
+  Dans l’ensemble, on observe que, 31,6 % des personnes âgées
+  vivent dans des ménages desservis en eau potable. Par contre,
+  Tableau 82. Pourcentage de la population des personnes âgées résidentes par milieu de résidence et sexe, se-
+  lon leur accès à certains services sociaux de base
+  Urbain Rural Ensemble
+  Indicateur
+  Hommes Femmes Ensemble Hommes Femmes Ensemble Hommes Femmes Ensemble
+  Proportion des Personnes
+  Agées vivant dans des ménages
+  67,4 69,4 68,5 20,6 22,2 21,4 29,9 33,2 31,6
+  ayant une source d'eau amé-
+  liorée
+  Proportion des des Personnes
+  Agées vivant dans des ménages
+  4,5 3,8 4,1 0,6 0,5 0,5 1,4 1,3 1,3
+  utilisant le gaz ou l'électricité
+  pour la cuisson
+  Proportion des des Personnes
+  Agées vivant dans des ménages 53,3 53,2 53,3 20,7 20,8 20,7 27,2 28,4 27,8
+  ayant des toilettes améliorées
+  Proportion des des Personnes
+  Agées vivant dans des ménages 15 12,9 13,9 1,8 1,6 1,7 4,4 4,3 4,4
+  ayant accès à l'internet
+  Source : MDG - INSTAT - rGPH2018
+  4.9.4- Personnes en situation de handicap
+  Le handicap est un phénomène qui a toujours préoccupé les Le premier cadre de référence de handicap pour toute enquête ou
+  acteurs de développements tant nationaux qu’internationaux études sur le handicap a été créé en 1980 par l’OMS en collaboration
+  du fait de l’augmentation de son ampleur et surtout ses effets avec le Docteur Wood. Par une approche dite médicale, l’OMS a
+  préjudiciables sur la condition de vie des personnes concernées. Le sorti une première classification internationale du handicap (CIH)
+  concept de handicap n’est pas immuable. Il connait d’une mutation permettant de classer les différents types de handicap selon la
+  paradigmatique au fil du temps. Au début, il vient du terme hand cause ou la déficience concernée. Il a été défini le handicap comme
+  in cap qui signifie main dans le chapeau et s’appliquait dans le « un désavantage dont est victime un individu pour accomplir un
+  domaine de commerce pour désigner une situation négative ou rôle social normal du fait de sa déficience (lésion temporaire ou
+  défavorable en cas d’une inégalité de valeur d’échange entre objets. définitive) ou de son incapacité (réduction partielle ou totale des
+  Par la suite, il s’appliquait aux courses hippiques et se traduisent capacités pour accomplir une activité) ».
+  par le désavantage imposé à certains chevaux jugés plus forts afin
+  de rendre équitables les chances. Le terme s’est progressivement En dépit des efforts de l’OMS en 1980, il ne reste pas moins que
+  évolué pour désigner une déficience qui afflige les invalides de la des chercheurs ont remis en question le modèle médical en faisant
+  guerre, les personnes malformées à la naissance, etc. valoir qu’en principe les individus sont davantage handicapés par
+  la société que par leur corps et que le principal problème est une
+  DÉCEMBRE 2020 89
+  --- page 122 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  question d’intégration complète des individus dans celle-ci. Ce qui classification internationale du fonctionnement, du handicap et de
+  a conduit à certaines organisations à construire un autre modèle la santé (CIF). La CIF est largement utilisée partout dans le monde
+  dite social qui pointe la responsabilité de la société et les barrières dans les enquêtes portant sur le handicap.
+  environnementales sur la participation à l’activité sociale des
+  personnes ayant un handicap. En 2012, conscient de l’interaction Dans le cadre du RGPH-3, l’accent est mis sur la dimension
+  entre dynamique entre la santé d’un individu et son environnement médicale du handicap. Dans cette optique, une personne est dite
+  social, l’OMS a créé une approche biopsychosociale prenant infirme ou handicapée, si une (ou plusieurs) partie (s) de son
+  en compte les deux modèles : modèle médical et le modèle corps est (sont) atteinte(s) d’une infection chronique et que cette
+  social (OMS et Banque Mondiale, 2012) en créant une nouvelle infirmité/handicap est permanente et non guérissable.
+  4.9.4.1- Volume et poids de la population en situation de handicap
+  Le RGPH-3 a recensé 154 255 personnes en situation de handicap, trouve en milieu rural (82,2 %). Cela s’observe quel que soit le sexe.
+  soit une prévalence de 0,6 %. Selon le sexe, cette prévalence est L’examen du rapport de masculinité montre qu’il y a environ 114
+  de 0,7% chez les hommes tandis qu’elle est de 0,6% chez les hommes pour 100 femmes en situation de handicap. Cet excèdent
+  femmes. La grande majorité de cette catégorie de population se d’hommes est plus remarqué en milieu urbain qu’en milieu rural.
+  Tableau 83. Effectif et répartition (en %) des personnes vivant avec un handicap par sexe, selon le milieu de
+  résidence
+  Masculin Féminin Ensemble
+  Milieu de résidence RM
+  Effectif % Prévalence Effectif % Prévalence Effectif % Prévalence
+  Urbain 14 671 17,8 0,6 12 714 17,7 0,5 27 385 17,8 0,6 115
+  Rural 67 649 82,2 0,7 59 221 82,3 0,6 126 870 82,2 0,6 114
+  MADAGASCAR 82 320 100 0,7 71 935 100 0,6 154 255 100 0,6 114
+  Source : MDG - INSTAT - rGPH2018
+  4.9.4.2- Structure par âge et par sexe du phénomène
+  Le graphique ci-dessous montre le niveau de prévalence du que soit l’âge entre 0 et 65 ans, cette prévalence est plus élevée
+  handicap selon l’âge et le sexe. Il montre que plus l’âge est élevé chez les hommes que chez les femmes. Mais, au-delà de cette
+  plus ce phénomène est fréquent. Il montre également que quel tranche d’âges la situation semble inversée.
+  Graphique 10. Courbe de prévalence de handicap
+  3,0
+  2,5
+  2,0
+  Ensemble
+  Féminin
+  1,5
+  Masculin
+  1,0
+  0,5
+  0,0
+  90 DÉCEMBRE 2020
+  sna5
+  ed
+  snioM
+  sna
+  9-5
+  sna
+  41-01
+  sna
+  91-51
+  sna
+  42-02
+  sna
+  92-52
+  sna
+  43-03
+  sna
+  93-53
+  sna
+  44-04
+  sna
+  94-54
+  sna
+  45-05
+  sna
+  95-55
+  sna
+  46-06
+  +
+  te
+  sna
+  56
+  Source : MDG - INSTAT - rGPH2018
+  --- page 123 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  4.9.4.3- Structure par âge et par sexe de la population en situation de handicap
+  Les résultats dans le tableau présentent les répartitions des personnes 5,3 % chez les moins de cinq ans à 11,6 % dans le groupe d’âges
+  en situation de handicap par groupes d’âges quinquennaux selon de 15 -19 ans. Pour devenir seulement 4 % dans les tranches d’âges
+  le sexe. Il apparaît que les personnes en situation de handicap de 60-64 ans. Ces proportions ont les mêmes allures quel que soit
+  sont inégalement répartit selon l’âge. Entre 0-4 ans et 15-19ans, le sexe. L’analyse du rapport de masculinité montre qu’entre 0 et
+  les proportions de chaque groupe d’âges augmentent à mesure 64 ans il y plus d’hommes que de femmes qui sont en situation de
+  que l’on avance avec l’âge. À partir de 15-19 ans, plus on avance handicap. Par contre, au-delà de 64 ans, les femmes en situation
+  avec l’âge plus les personnes en situation de handicap sont moins de handicap sont plus nombreuses que les hommes en situation
+  nombreux. Ce qui traduit la jeunesse de cette population. En effet, de handicap.
+  les proportions des personnes en situation de handicap passent de
+  Tableau 84. Effectif et répartition (en %) des personnes en situation de handicap par sexe, selon le groupe
+  d’âges
+  Masculin Féminin Ensemble
+  Groupe d’âges RM
+  Effectif % Effectif % Effectif %
+  Moins de 5ans 4 651 5,6 3 567 5,0 8 218 5,3 130
+  5-9 ans 7 712 9,4 6 008 8,4 13 720 8,9 128
+  10-14 ans 9 029 11,0 7 063 9,8 16 092 10,4 128
+  15-19 ans 9 703 11,8 8 121 11,3 17 824 11,6 119
+  20-24 ans 7 008 8,5 5 938 8,3 12 946 8,4 118
+  25-29 ans 6 053 7,4 5 087 7,1 11 140 7,2 119
+  30-34 ans 5 589 6,8 4 982 6,9 10 571 6,9 112
+  35-39 ans 5 274 6,4 4 781 6,6 10 055 6,5 110
+  40-44 ans 5 230 6,4 4 669 6,5 9 899 6,4 112
+  45-49 ans 4 185 5,1 3 603 5,0 7 788 5,0 116
+  50-54 ans 3 800 4,6 3 486 4,8 7 286 4,7 109
+  55-59 ans 3 035 3,7 2 713 3,8 5 748 3,7 112
+  60-64 ans 3 166 3,8 2 969 4,1 6 135 4,0 107
+  65 ans et + 7 875 9,6 8 933 12,4 16 808 10,9 88
+  Maquant 10 0,0 15 0,0 25 0,0 -
+  ENSEMBLE 82 320 100,0 71 935 100,0 154 255 100,0 114
+  Source : MDG - INSTAT - rGPH2018
+  4.9.4.4- Variation selon les lieux de résidence
+  Le tableau ci-après montre la variation de la prévalence du montrent que cet indicateur est plus élevé dans la région de Sava
+  handicap selon les unités administratives. Il montre clairement (0,9 %), Vatovavy Fitovinany (0,8 %) et Atsinanana (0,8 %) alors
+  que la prévalence du handicap varie peu selon la province allant qu’il est le plus faible dans les régions d’Ihorombe (0,4 %), de
+  de 0,5 % dans la province de Toliara à 0,7 % dans la province Haute Matsiatra (0,4 %) et d’Androy (0,4 %).
+  de Toamasina et celle d’Antsiranana. Selon la région, les résultats
+  DÉCEMBRE 2020 91
+  --- page 124 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Tableau 85. Prévalence (en %) du handicap par sexe, selon la province et la région
+  Sexe
+  Province / Région
+  Masculin Féminin Ensemble
+  Total Province 0,6 0,5 0,6
+  Analamanga 0,6 0,5 0,5
+  Antananarivo Vakinankaratra 0,7 0,6 0,6
+  Itasy 0,7 0,6 0,6
+  Bongolava 0,5 0,5 0,5
+  Total Province 0,7 0,5 0,6
+  Haute Matsiatra 0,5 0,4 0,4
+  Amoron’i Mania 0,8 0,7 0,7
+  Fianarantsoa
+  Vatovavy Fitovinany 0,9 0,8 0,8
+  Ihorombe 0,4 0,3 0,4
+  Atsimo Atsinanana 0,6 0,5 0,5
+  Total Province 0,8 0,6 0,7
+  Atsinanana 0,9 0,8 0,8
+  Toamasina
+  Analanjirofo 0,7 0,6 0,6
+  Alaotra Mangoro 0,6 0,5 0,6
+  Total Province 0,7 0,5 0,6
+  Boeny 0,6 0,5 0,5
+  Mahajanga Sofia 0,7 0,6 0,6
+  Betsiboka 0,5 0,5 0,5
+  Melaky 1,0 0,6 0,7
+  Total Province 0,5 0,5 0,5
+  Atsimo Andrefana 0,5 0,5 0,5
+  Toliara Androy 0,5 0,4 0,4
+  Anosy 0,5 0,5 0,5
+  Menabe 0,6 0,5 0,6
+  Total Province 0,8 0,6 0,7
+  Antsiranana Diana 0,6 0,4 0,5
+  Sava 1,0 0,8 0,9
+  ENSEMBLE 0,7 0,6 0,6
+  Source : MDG - INSTAT - rGPH2018
+  4.9.4.5- Types de handicap
+  Le tableau 85 montre le pourcentage des personnes ayant un mental (22 %) ; à l’inverse, la cécité est le type de handicap le plus
+  type donné de handicap ainsi que le rapport de masculinité parmi rare (6,8 %). Cela est valable quel que soit le milieu de résidence.
+  l’ensemble des personnes en situation de handicap. Il donne une L’analyse du rapport de masculinité montre que seulement chez
+  vue d’ensemble des types les plus fréquents selon le milieu de les aveugles qu’il y a plus de femmes que d’hommes tant en
+  résidence et le sexe. milieu urbain qu’en milieu rural. Pour les restes des personnes en
+  Dans l’ensemble, le handicap de membre inférieur (28,6 %) est situation de handicap, on observe l’inverse.
+  le type de handicap le plus fréquent suivi de près par le handicap
+  92 DÉCEMBRE 2020
+  --- page 125 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Tableau 86. Effectif et répartition (en %) de la population avec handicap par milieu de résidence et sexe, selon
+  le type de handicap (17)
+  Urbain Rural Ensemble
+  Type de Mascu- Fémi- Mascu- Mascu-
+  Total Féminin Total Féminin Total
+  handicap lin nin RM lin RM lin RM
+  Effectif Effectif % Effectif Effectif Effectif % Effectif Effectif Effectif % Effectif
+  Aveugle 759 677 112 6,0 1 436 4 649 4 049 115 7,0 8 698 5 408 4 726 114 6,8 10 134
+  Sourd 1 248 1 535 81 11,7 2 783 11 584 12 555 92 19,3 24 139 12 832 14 090 91 18,1 26 922
+  Muet 1 185 987 120 9,1 2 172 5 964 5 143 116 8,9 11 107 7 149 6 130 117 8,9 13 279
+  Membre
+  2 205 1 855 119 17,1 4 060 11 765 9 446 125 17,0 21 211 13 970 11 301 124 17,0 25 271
+  supérieur
+  Membre
+  4 192 3 591 117 32,7 7 783 19 798 14 897 133 27,8 34 695 23 990 18 488 130 28,6 42 478
+  inférieur
+  Multi 1243 1083 2326 5156 4441 9597 6399 5524 11923
+  115 9,8 116 7,7 116 8,0
+  handicap
+  Mental 3 482 3 061 114 27,5 6 543 13 552 12 454 109 20,8 26 006 17 034 15 515 110 21,9 32 549
+  Autre 924 901 103 7,7 1 825 5 563 4 845 115 8,3 10 408 6 487 5 746 113 8,2 12 233
+  Ensemble 12 500 11 308 111 100,0 23 808 66 703 58 091 115 100,0 124 794 79 203 69 399 114 100,0 148 602
+  Source : MDG - INSTAT - rGPH2018
+  (17) Les informations dans ce tableau concernent uniquement les personnes en situation de handicap vivant dans les ménages ordinaires.
+  4.9.4.6- Causes de handicap
+  Plusieurs facteurs peuvent être à l’origine du handicap d’un individu. type de handicap après la maladie. En ce qui concerne les types de
+  En effet, le handicap peut être dû à l’accident, à la malformation handicap ci-après : muet, membres inférieurs, membres supérieurs,
+  congénitale et à la maladie (génétiques et chroniques). Le tableau mental et les autres types de handicap, ils sont principalement dus
+  68 montre la répartition en pourcentage de chaque type de à la mal formation congénitale. En particulier, pour le handicap
+  handicap par cause et par sexe. Il montre clairement que la cécité mental, la cause maladie est également importante car après
+  (42,3 %) et la surdité (47,7 %) sont majoritairement causées par la cause congénitale elle est à l’origine des 33,5 % du handicap
+  la maladie. Il faut noter que pour la surdité, la deuxième cause qui mental. Selon le sexe, l’on n’observe pas assez de variations quel
+  est congénitale n’est pas minime car elle cause les 33,5 % de ce que soit le type de handicap.
+  Tableau 87. Répartition (en %) de la population en situation de handicap par type de handicap, selon la cause
+  du handicap (18)
+  Cause de handicap Aveugle Sourd Muet Membre supérieur Membre inférieur Mental Autre
+  Masculin
+  Congénital 28,1 35,3 74,8 45,3 45,4 47,0 42,6
+  Maladie 38,9 46,6 17,9 22,8 26,3 32,2 24,8
+  Blessure/accident 24,4 9,4 5,4 28,8 24,9 10,5 14,7
+  Autre 8,6 8,6 1,8 3,0 3,4 10,3 17,9
+  Total 100,0 100,0 100,0 100,0 100,0 100,0 100,0
+  Effectif 5 408 12 832 7 149 13 970 23 990 17 034 6 487
+  Féminin
+  Congénital 25,7 31,8 74,5 46,4 48,1 44,5 43,1
+  Maladie 46,1 48,7 18,2 28,8 29,1 35,0 27,4
+  Blessure/accident 17,1 8,4 5,4 21,8 19,2 10,4 10,9
+  (18) Ici, il faut préciser qu’une personne en situation de handicap peut porter au moins deux handicaps différents, ce qui fait qu’elle peut être comptée dans au moins deux
+  colonnes de ce tableau.
+  DÉCEMBRE 2020 93
+  --- page 126 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Cause de handicap Aveugle Sourd Muet Membre supérieur Membre inférieur Mental Autre
+  Autre 11,1 11,2 1,8 3,0 3,6 10,0 18,7
+  Total 100,0 100,0 100,0 100,0 100,0 100,0 100,0
+  Effectif 4 726 14 090 6 130 11 301 18 488 15 515 5 746
+  Ensemble
+  Congénital 27,0 33,5 74,7 45,8 46,5 45,8 42,8
+  Maladie 42,3 47,7 18,1 25,5 27,5 33,5 26,0
+  Blessure/accident 21,0 8,9 5,4 25,7 22,4 10,5 12,9
+  Autre 9,8 10,0 1,8 3,0 3,5 10,2 18,2
+  Total 100,0 100,0 100,0 100,0 100,0 100,0 100,0
+  Effectif 10 134 26 922 13 279 25 271 42 478 32 549 12 233
+  Source : MDG - INSTAT - rGPH2018
+  94 DÉCEMBRE 2020
