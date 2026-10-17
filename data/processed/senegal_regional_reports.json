@@ -1,0 +1,4252 @@
+[
+  {
+    "id": "SEN-RGPH5-RR-dakar",
+    "level": "admin1",
+    "name": "Dakar",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Wolof",
+        "pct": 68.7,
+        "count": 2478174
+      },
+      {
+        "group": "Pulaar",
+        "pct": 15.7,
+        "count": 567823
+      },
+      {
+        "group": "Serer",
+        "pct": 5.7,
+        "count": 205270
+      },
+      {
+        "group": "Jola",
+        "pct": 3.0,
+        "count": 109967
+      },
+      {
+        "group": "French",
+        "pct": 1.8,
+        "count": 66541
+      },
+      {
+        "group": "Soninke",
+        "pct": 1.2,
+        "count": 43852
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.9,
+        "count": 34220
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.9,
+        "count": 32938
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.7,
+        "count": 24912
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.3,
+        "count": 9516
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.3,
+        "count": 10869
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.2,
+        "count": 8039
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.2,
+        "count": 8203
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.1,
+        "count": 4061
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 247
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 383
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 1266
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 251
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 1014
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 163
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 197
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar, Tableau II-11",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B16569890219484",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-diourbel",
+    "level": "admin1",
+    "name": "Diourbel",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Wolof",
+        "pct": 82.2,
+        "count": 1480406
+      },
+      {
+        "group": "Serer",
+        "pct": 12.9,
+        "count": 233063
+      },
+      {
+        "group": "Pulaar",
+        "pct": 4.1,
+        "count": 73425
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.4,
+        "count": 6339
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 1653
+      },
+      {
+        "group": "Jola",
+        "pct": 0.1,
+        "count": 1690
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.1,
+        "count": 1004
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 1605
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 205
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.0,
+        "count": 464
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.0,
+        "count": 572
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.0,
+        "count": 703
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel, Tableau III-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B89912390768536",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-fatick",
+    "level": "admin1",
+    "name": "Fatick",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick, Tableau II-4"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick, Tableau II-4",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B84527172065489",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years."
+  },
+  {
+    "id": "SEN-RGPH5-RR-kaffrine",
+    "level": "admin1",
+    "name": "Kaffrine",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Wolof",
+        "pct": 75.0,
+        "count": 530382
+      },
+      {
+        "group": "Pulaar",
+        "pct": 18.5,
+        "count": 130667
+      },
+      {
+        "group": "Serer",
+        "pct": 4.6,
+        "count": 32304
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.7,
+        "count": 4643
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.4,
+        "count": 2794
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.3,
+        "count": 1836
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.2,
+        "count": 1291
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.2,
+        "count": 1343
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 567
+      },
+      {
+        "group": "Jola",
+        "pct": 0.1,
+        "count": 641
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.0,
+        "count": 223
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine, Tableau II-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B9856693808493",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-kaolack",
+    "level": "admin1",
+    "name": "Kaolack",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack, Tableau II-4"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Wolof",
+        "pct": 69.4,
+        "count": 801629
+      },
+      {
+        "group": "Pulaar",
+        "pct": 16.0,
+        "count": 184774
+      },
+      {
+        "group": "Serer",
+        "pct": 11.0,
+        "count": 127529
+      },
+      {
+        "group": "Other African languages",
+        "pct": 1.2,
+        "count": 14314
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.6,
+        "count": 7465
+      },
+      {
+        "group": "Jola",
+        "pct": 0.4,
+        "count": 4241
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.4,
+        "count": 4752
+      },
+      {
+        "group": "Pourcentage (%) Langage des signes (Sourd-Muet)",
+        "pct": 0.3,
+        "count": 3681
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 1961
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.1,
+        "count": 662
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 881
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.1,
+        "count": 757
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 508
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 441
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.0,
+        "count": 537
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 14
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack, Tableau II-4",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack, Tableau II-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B19471834738959",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-kedougou",
+    "level": "admin1",
+    "name": "Kedougou",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Pulaar",
+        "pct": 50.4,
+        "count": 107112
+      },
+      {
+        "group": "Other African languages",
+        "pct": 31.5,
+        "count": 66991
+      },
+      {
+        "group": "Mandinka",
+        "pct": 5.0,
+        "count": 10713
+      },
+      {
+        "group": "Wolof",
+        "pct": 4.4,
+        "count": 9402
+      },
+      {
+        "group": "Yalunka",
+        "pct": 2.5,
+        "count": 5273
+      },
+      {
+        "group": "Bassari",
+        "pct": 2.4,
+        "count": 5068
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.9,
+        "count": 1942
+      },
+      {
+        "group": "French",
+        "pct": 0.9,
+        "count": 1879
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.5,
+        "count": 1088
+      },
+      {
+        "group": "Serer",
+        "pct": 0.4,
+        "count": 829
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.4,
+        "count": 920
+      },
+      {
+        "group": "Jola",
+        "pct": 0.2,
+        "count": 406
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.2,
+        "count": 439
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.1,
+        "count": 249
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou, Tableau II-13",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B5066698136661",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-kolda",
+    "level": "admin1",
+    "name": "Kolda",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda, Tableau II-4"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Pulaar",
+        "pct": 79.3,
+        "count": 637970
+      },
+      {
+        "group": "Wolof",
+        "pct": 9.0,
+        "count": 72191
+      },
+      {
+        "group": "Mandinka",
+        "pct": 4.4,
+        "count": 35731
+      },
+      {
+        "group": "Soninke",
+        "pct": 2.7,
+        "count": 21511
+      },
+      {
+        "group": "Jola",
+        "pct": 1.0,
+        "count": 7993
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.8,
+        "count": 6213
+      },
+      {
+        "group": "Serer",
+        "pct": 0.8,
+        "count": 6186
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.6,
+        "count": 4690
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.5,
+        "count": 3729
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 1969
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.2,
+        "count": 1295
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.2,
+        "count": 1515
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.1,
+        "count": 1023
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 1161
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 145
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 325
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 25
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda, Tableau II-4",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda, Tableau II-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B66864032803639",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-louga",
+    "level": "admin1",
+    "name": "Louga",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Wolof",
+        "pct": 65.2,
+        "count": 646680
+      },
+      {
+        "group": "Pulaar",
+        "pct": 31.7,
+        "count": 314505
+      },
+      {
+        "group": "Serer",
+        "pct": 2.0,
+        "count": 19715
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.2,
+        "count": 2469
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.2,
+        "count": 2434
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 1197
+      },
+      {
+        "group": "Jola",
+        "pct": 0.1,
+        "count": 952
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 1194
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.1,
+        "count": 1021
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 761
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 89
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.0,
+        "count": 309
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.0,
+        "count": 317
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga, Tableau II-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B63374102885919",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-matam",
+    "level": "admin1",
+    "name": "Matam",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Pulaar",
+        "pct": 91.9,
+        "count": 648450
+      },
+      {
+        "group": "Wolof",
+        "pct": 4.0,
+        "count": 28292
+      },
+      {
+        "group": "Soninke",
+        "pct": 3.1,
+        "count": 22189
+      },
+      {
+        "group": "Serer",
+        "pct": 0.3,
+        "count": 2244
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.2,
+        "count": 1248
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 751
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 363
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.1,
+        "count": 795
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Jola",
+        "pct": 0.0,
+        "count": 313
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.0,
+        "count": 219
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam, Tableau II-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B85295751834134",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-saintlouis",
+    "level": "admin1",
+    "name": "Saint Louis",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 19,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Pulaar",
+        "pct": 53.0,
+        "count": 559255
+      },
+      {
+        "group": "Wolof",
+        "pct": 43.3,
+        "count": 457304
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 1.4,
+        "count": 15089
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 3844
+      },
+      {
+        "group": "Serer",
+        "pct": 0.4,
+        "count": 4375
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.3,
+        "count": 2965
+      },
+      {
+        "group": "Jola",
+        "pct": 0.2,
+        "count": 2609
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.2,
+        "count": 2538
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.2,
+        "count": 2618
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.1,
+        "count": 552
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.1,
+        "count": 1328
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.1,
+        "count": 1083
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 1137
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 390
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 426
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis, Tableau II-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B37999982332216",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-sedhiou",
+    "level": "admin1",
+    "name": "Sedhiou",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou, Tableau II.5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Mandinka",
+        "pct": 38.3,
+        "count": 196082
+      },
+      {
+        "group": "Pulaar",
+        "pct": 26.1,
+        "count": 133503
+      },
+      {
+        "group": "Wolof",
+        "pct": 11.0,
+        "count": 56083
+      },
+      {
+        "group": "Balanta",
+        "pct": 8.0,
+        "count": 41110
+      },
+      {
+        "group": "Jola",
+        "pct": 5.8,
+        "count": 29831
+      },
+      {
+        "group": "Manjak",
+        "pct": 4.7,
+        "count": 24056
+      },
+      {
+        "group": "Other African languages",
+        "pct": 1.2,
+        "count": 6234
+      },
+      {
+        "group": "Sign language",
+        "pct": 1.2,
+        "count": 5964
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.9,
+        "count": 4572
+      },
+      {
+        "group": "Serer",
+        "pct": 0.9,
+        "count": 4737
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.8,
+        "count": 4346
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 2568
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.3,
+        "count": 1460
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.1,
+        "count": 455
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.1,
+        "count": 341
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 180
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 187
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou, Tableau II.5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou, Tableau III-12",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B19178449543377",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-tambacounda",
+    "level": "admin1",
+    "name": "Tambacounda",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Pulaar",
+        "pct": 58.7,
+        "count": 504905
+      },
+      {
+        "group": "Wolof",
+        "pct": 13.6,
+        "count": 117099
+      },
+      {
+        "group": "Soninke",
+        "pct": 8.8,
+        "count": 75898
+      },
+      {
+        "group": "Mandinka",
+        "pct": 7.9,
+        "count": 68286
+      },
+      {
+        "group": "Other African languages",
+        "pct": 5.3,
+        "count": 45272
+      },
+      {
+        "group": "Serer",
+        "pct": 3.3,
+        "count": 28234
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.7,
+        "count": 5707
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.5,
+        "count": 4280
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 3051
+      },
+      {
+        "group": "Jola",
+        "pct": 0.3,
+        "count": 2856
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.1,
+        "count": 539
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.1,
+        "count": 494
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.1,
+        "count": 867
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.1,
+        "count": 608
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.1,
+        "count": 471
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.1,
+        "count": 445
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.1,
+        "count": 644
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 117
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 291
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda, Tableau II-13",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B85662395344337",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-thies",
+    "level": "admin1",
+    "name": "Thies",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 20,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès, Tableau 1.4"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Wolof",
+        "pct": 67.4,
+        "count": 1470178
+      },
+      {
+        "group": "Serer",
+        "pct": 20.3,
+        "count": 443160
+      },
+      {
+        "group": "Pulaar",
+        "pct": 9.0,
+        "count": 196810
+      },
+      {
+        "group": "Jola",
+        "pct": 0.9,
+        "count": 20074
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 9562
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.4,
+        "count": 9131
+      },
+      {
+        "group": "Mandinka",
+        "pct": 0.3,
+        "count": 7470
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.3,
+        "count": 6113
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.2,
+        "count": 3504
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.2,
+        "count": 3489
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.2,
+        "count": 3747
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.1,
+        "count": 2669
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.1,
+        "count": 1574
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 2144
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 217
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 214
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 539
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 29
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès, Tableau 1.4",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B89315153043645",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-ziguinchor",
+    "level": "admin1",
+    "name": "Ziguinchor",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 20,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor, Tableau II-5"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Jola",
+        "pct": 49.3,
+        "count": 271946
+      },
+      {
+        "group": "Wolof",
+        "pct": 18.4,
+        "count": 101370
+      },
+      {
+        "group": "Mandinka",
+        "pct": 12.1,
+        "count": 66912
+      },
+      {
+        "group": "Pulaar",
+        "pct": 10.1,
+        "count": 55725
+      },
+      {
+        "group": "Manjak",
+        "pct": 2.5,
+        "count": 13568
+      },
+      {
+        "group": "Balanta",
+        "pct": 1.7,
+        "count": 9553
+      },
+      {
+        "group": "Mankanya",
+        "pct": 1.5,
+        "count": 8055
+      },
+      {
+        "group": "Serer",
+        "pct": 1.0,
+        "count": 5288
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.9,
+        "count": 5171
+      },
+      {
+        "group": "French",
+        "pct": 0.8,
+        "count": 4464
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.5,
+        "count": 3008
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.4,
+        "count": 2141
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.2,
+        "count": 1055
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.2,
+        "count": 1169
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.2,
+        "count": 1017
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.1,
+        "count": 598
+      },
+      {
+        "group": "des signes (Sourd- Muet)",
+        "pct": 0.1,
+        "count": 727
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor, Tableau II-5",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor, Tableau II-13",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "71046170B26251724010642",
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-bakel",
+    "level": "admin2",
+    "name": "Bakel",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B16013842146029"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-bambey",
+    "level": "admin2",
+    "name": "Bambey",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B75300917140294"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-bignona",
+    "level": "admin2",
+    "name": "Bignona",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B19391387689457"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-birkelane",
+    "level": "admin2",
+    "name": "Birkelane",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B56779252201559"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-bounkiling",
+    "level": "admin2",
+    "name": "Bounkiling",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B68388966372963"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-dagana",
+    "level": "admin2",
+    "name": "Dagana",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B94177495754038"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-dakar",
+    "level": "admin2",
+    "name": "Dakar",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B18539004609148"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-diourbel",
+    "level": "admin2",
+    "name": "Diourbel",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B22549322426328"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-fatick",
+    "level": "admin2",
+    "name": "Fatick",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B55839740763416"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-foundiougne",
+    "level": "admin2",
+    "name": "Foundiougne",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B85341589150678"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-gossas",
+    "level": "admin2",
+    "name": "Gossas",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B90737446104605"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-goudiry",
+    "level": "admin2",
+    "name": "Goudiry",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B18390590381778"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-goudomp",
+    "level": "admin2",
+    "name": "Goudomp",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B48951494587639"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-guediawaye",
+    "level": "admin2",
+    "name": "Guediawaye",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B55211093773925"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-guinguineo",
+    "level": "admin2",
+    "name": "Guinguineo",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B97054679922117"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-kaffrine",
+    "level": "admin2",
+    "name": "Kaffrine",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B43046627101076"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-kanel",
+    "level": "admin2",
+    "name": "Kanel",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B72122084264725"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-kaolack",
+    "level": "admin2",
+    "name": "Kaolack",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B15645681951695"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-kebemer",
+    "level": "admin2",
+    "name": "Kebemer",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B60047071387499"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-kedougou",
+    "level": "admin2",
+    "name": "Kedougou",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B85082652306110"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-kolda",
+    "level": "admin2",
+    "name": "Kolda",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B77977720497228"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-koumpentoum",
+    "level": "admin2",
+    "name": "Koumpentoum",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B60464160168835"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-koungheul",
+    "level": "admin2",
+    "name": "Koungheul",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B42114348275286"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-linguere",
+    "level": "admin2",
+    "name": "Linguere",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B14678638932037"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-louga",
+    "level": "admin2",
+    "name": "Louga",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B22933374767599"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-malemhodar",
+    "level": "admin2",
+    "name": "Malem Hodar",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B13883389428586"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-matam",
+    "level": "admin2",
+    "name": "Matam",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B95113260184043"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-mbacke",
+    "level": "admin2",
+    "name": "Mbacke",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B63857747785645"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-mbour",
+    "level": "admin2",
+    "name": "Mbour",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B56533800648606"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-medinayoroufoula",
+    "level": "admin2",
+    "name": "Medina Yoroufoula",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B71056203552440"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-niorodurip",
+    "level": "admin2",
+    "name": "Nioro Du Rip",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B29473400533502"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-oussouye",
+    "level": "admin2",
+    "name": "Oussouye",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B11051302290888"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-pikine",
+    "level": "admin2",
+    "name": "Pikine",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B8601261498481"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-podor",
+    "level": "admin2",
+    "name": "Podor",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B66510054428140"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-ranerou",
+    "level": "admin2",
+    "name": "Ranerou",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B34306626760019"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-rufisque",
+    "level": "admin2",
+    "name": "Rufisque",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B16861669195445"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-saintlouis",
+    "level": "admin2",
+    "name": "Saint Louis",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B94115130730188"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-salemata",
+    "level": "admin2",
+    "name": "Salemata",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B75788529380727"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-saraya",
+    "level": "admin2",
+    "name": "Saraya",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B8770711358016"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-sedhiou",
+    "level": "admin2",
+    "name": "Sedhiou",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B34006486463131"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-tambacounda",
+    "level": "admin2",
+    "name": "Tambacounda",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B74600736318601"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-thies",
+    "level": "admin2",
+    "name": "Thies",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B65872214095625"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-tivaoune",
+    "level": "admin2",
+    "name": "Tivaoune",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B62483410284412"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-velingara",
+    "level": "admin2",
+    "name": "Velingara",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B9780593325351"
+  },
+  {
+    "id": "SEN-RGPH5-RR-dept-ziguinchor",
+    "level": "admin2",
+    "name": "Ziguinchor",
+    "parent": "SEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "SEN",
+    "match_by": "shape_id",
+    "shape_id": "50182788B19119296887329"
+  }
+]
