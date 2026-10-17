@@ -275,8 +275,9 @@ def main() -> int:
     records = build(tables, units("MUS", "admin1"), units("MUS", "admin2"))
     for r in records:
         if r["level"] == "admin1":
-            log(f"  {r['name']}: {r['population']['value']:,}, ratio {r['sex_ratio']['value']}, "
-                f"median {r['median_age']['value']}, {r['religion'][:2]}, {r['language'][:1]}")
+            log(f"  {r['name']}: {r['population'].get('value')}, ratio "
+                f"{r['sex_ratio'].get('value')}, median {r['median_age'].get('value')}, "
+                f"{r['religion'][:2] if isinstance(r['religion'], list) else '-'}")
     write_json(PROCESSED / OUT, records)
     return 0
 
