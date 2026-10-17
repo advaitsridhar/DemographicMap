@@ -101,11 +101,15 @@ class Build(unittest.TestCase):
         bata = by["BATA"]["population"]
         self.assertEqual(bata["displaces_before"], 2015)
         self.assertIn("309,345", bata["note"])
-        self.assertIn("Bitica and Machinda", bata["note"])
-        self.assertIn("not one", by["NKUE"]["population"]["note"])
-        self.assertIn("not a district", by["NKUE"]["ethnicity"]["note"])
-        self.assertIn("may not be the whole of Bata district", by["BATA"]["ethnicity"]["note"])
-        self.assertIn("Kié-Ntem", by["NKUE"]["population"]["note"])
+        self.assertIn("two polygons (Bata and Machinda)", bata["note"])
+        self.assertIn("Río Campo", bata["note"])
+        self.assertIn("Micomiseng and Nkue", by["NKUE"]["population"]["note"])
+        self.assertIn("drawn as two polygons", by["BATA"]["ethnicity"]["note"])
+        # A district drawn as one polygon, its other municipalities inside it.
+        self.assertEqual(by["COGO"]["population"]["value"], 29_341)
+        self.assertIn("Cabo San Juan, Cogo and Corisco", by["COGO"]["population_note"])
+        self.assertEqual(by["ACURENAM"]["population"]["value"], 23_614)
+        self.assertEqual(by["NSOC NSOMO"]["ethnicity_basis"], "nationality")
         for r in records:
             for field in ("population", "sex_ratio", "median_age"):
                 value = r[field]

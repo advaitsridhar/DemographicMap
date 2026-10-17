@@ -23,10 +23,15 @@ What this writes:
   ethnic group);
 * the districts of the provinces whose polygons are exactly their districts
   (Annobón, Bioko Norte, Bioko Sur): the count and nationality;
-* every other polygon: why the district's count is not shown on it. The map
-  draws the four mainland provinces as 18 polygons against their 13
-  districts, the extra ones municipalities drawn apart from the district each
-  belongs to, so a polygon named after a district may not be the whole of it.
+* the mainland: the map draws the four provinces as 20 polygons against their
+  13 districts, seven of them municipalities drawn apart. Spanish Wikipedia's
+  table of the country's organisation lists each district's municipalities
+  (APART, MUNICIPALITIES): a district all of whose municipalities lie in one
+  polygon (Acurenam, Ebibeyin, Nsok Nsomo, Cogo, Aconibe, Nsork) gets its count
+  and nationality there; a district drawn as two polygons (Evinayong with
+  Bicurga, Niefang with Nkimi, Micomiseng with Nkue, Bata with Machinda, Mbini
+  with Bitica, Añisok with Ayene, Mongomo with Mongomoyen) says on both why
+  the census, which counts the district, describes neither.
 
 **Checks**, each of which stops the run: the provinces make the national
 total; each province's districts make the province; the shares of men and
@@ -71,6 +76,26 @@ DISTRICTS: dict[str, tuple[str, ...]] = {
 }
 # The map's spellings of census districts, where they differ by more than accents.
 DRAWN_AS = {"ebebiyin": "Ebibeyin", "nsocnsomo": "Nsok Nsomo", "anisoc": "Añisok"}
+# Each mainland district's municipalities, as Spanish Wikipedia's "Organización
+# territorial de Guinea Ecuatorial" lists them (Regiones | Provincias | Distritos |
+# Municipios). Seven municipalities are drawn as polygons of their own; the
+# others lie within their district's namesake polygon.
+MUNICIPALITIES: dict[str, tuple[str, ...]] = {
+    "Acurenam": ("Akurenam",), "Evinayong": ("Bicurga", "Evinayong", "Teguete"),
+    "Niefang": ("Niefang", "Nkimi", "Nkumekien"), "Ebibeyin": ("Bidjabidján", "Ebibeyin"),
+    "Micomiseng": ("Micomiseng", "Ncue", "Nsang"), "Nsok Nsomo": ("Nsok-Nsomo",),
+    "Bata": ("Bata", "Machinda", "Río Campo"), "Mbini": ("Bitica", "Mbini"),
+    "Cogo": ("Cabo San Juan", "Cogo", "Corisco"), "Aconibe": ("Aconibe",),
+    "Añisok": ("Añisok", "Ayene"), "Mongomo": ("Mengomeyén", "Mongomo", "Nzangayong"),
+    "Nsork": ("Nsork",),
+}
+# The polygons drawn for a municipality, and the district each lies in.
+APART = {"bicurga": "Evinayong", "nkimi": "Niefang", "nkue": "Micomiseng",
+         "machinda": "Bata", "bitica": "Mbini", "ayene": "Añisok", "mongomoyen": "Mongomo"}
+MUNICIPALITIES_SOURCE = {
+    "field": "population/ethnicity", "license": "CC BY-SA 4.0",
+    "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+    "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"}
 NUMBER = re.compile(r"^\d{1,3}(?:\.\d{3})*$")
 SHARE = re.compile(r"^(?:\d+(?:,\d+)?|-)$")
 
@@ -83,6 +108,8 @@ def words(n: int) -> str:
     return WORDS[n] if 0 <= n < len(WORDS) else f"{n:,}"
 AGE_GAP = ("INEGE publishes the 2015 census's ages for the whole country only (the yearbook's "
            "population pyramid), not by province or district, so no median age is shown.")
+SEAT_GAP = ("No published list of the districts' and municipalities' seats has been found; "
+            "the census tables name the districts, not their seats.")
 SEX_GAP = ("INEGE publishes the 2015 census's shares of men and women by province, not by "
            "district, so no sex ratio is shown for the district.")
 
@@ -265,40 +292,61 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
                 report.append(f"    {u['name']}: {d['total']:,} ({census})")
                 continue
             listed = ", ".join(p["districts"])
-            if census:
-                others = (apart[0] if len(apart) == 1
-                          else ", ".join(apart[:-1]) + " and " + apart[-1])
-                one = len(apart) == 1
-                why = (f"The 2015 census counts {census} district as "
-                       f"{p['districts'][census]['total']:,} people. The map draws {shown} as "
-                       f"{words(len(polys))} polygons against the census's "
-                       f"{words(len(p['districts']))} districts ({listed}): {others} "
-                       f"{'is a municipality' if one else 'are municipalities'} drawn apart from "
-                       f"the district {'it belongs' if one else 'each belongs'} to, so this "
-                       f"polygon may not be the whole of {census} district, and the district's "
-                       f"count is not shown on it.")
+            district = census or APART.get(fold(u["name"]))
+            members = [v for v in polys
+                       if (named[v["id"]] or APART.get(fold(v["name"]))) == district]
+            if district and len(members) == 1:
+                # The district is drawn as this one polygon, its other municipalities
+                # (if any) within it.
+                d = p["districts"][district]
+                towns = MUNICIPALITIES.get(district, ())
+                note = f"The population of {district} district at the 2015 census"
+                if len(towns) > 1:
+                    note += (f", which is the municipalities of "
+                             f"{', '.join(towns[:-1])} and {towns[-1]}")
+                records.append(record(
+                    f"GNQ-CGPV2015-{sid}", u["name"], level="admin2", parent="GNQ",
+                    country="GNQ", match_by="shape_id", shape_id=sid,
+                    sources=cite + [MUNICIPALITIES_SOURCE],
+                    population=measure(d["total"], year=YEAR, source=SOURCE),
+                    population_note=note + ".",
+                    median_age=gap(NOT_AVAILABLE, AGE_GAP),
+                    sex_ratio=gap(NOT_AVAILABLE, SEX_GAP),
+                    **nationality(d["nationals"], d["foreigners"], f"{district} district")))
+                report.append(f"    {u['name']}: {d['total']:,} ({district}, drawn whole)")
+                continue
+            if district:
+                towns = MUNICIPALITIES.get(district, ())
+                drawn = sorted(v["name"].title() for v in members)
+                why = (f"The 2015 census counts {district} district as "
+                       f"{p['districts'][district]['total']:,} people. The district is the "
+                       f"municipalities of {', '.join(towns[:-1])} and {towns[-1]}, drawn here as "
+                       f"{words(len(members))} polygons ({' and '.join(drawn)}), and the census "
+                       f"does not count its municipalities apart, so the district's count is not "
+                       f"shown on this one.")
+                share = (f"The 2015 census publishes the shares of Equatorial Guinean and "
+                         f"foreign nationals by district, and {district} district is drawn as "
+                         f"{words(len(members))} polygons, so its shares are not shown on this "
+                         f"one; no ethnic group is published.")
             else:
                 why = (f"The 2015 census publishes counts by district, and {label} is not one: it "
                        f"is a municipality within one of {shown}'s {words(len(p['districts']))} "
                        f"districts ({listed}), whose counts include it, and no count of {label} "
                        f"alone is published.")
-            population = {**gap(NOT_AVAILABLE, why), "displaces_before": YEAR}
-            if census:
-                share = (f"The 2015 census publishes the shares of Equatorial Guinean and "
-                         f"foreign nationals by district, and this polygon may not be the whole "
-                         f"of {census} district (see its population), so the district's shares "
-                         f"are not shown on it; no ethnic group is published.")
-            else:
                 share = (f"The 2015 census publishes the shares of Equatorial Guinean and "
                          f"foreign nationals by district, and {label} is a municipality within "
                          f"one of {shown}'s districts, not a district, so none is shown for it; "
                          f"no ethnic group is published.")
+            population = {**gap(NOT_AVAILABLE, why), "displaces_before": YEAR}
             records.append(record(
                 f"GNQ-CGPV2015-{sid}", u["name"], level="admin2", parent="GNQ", country="GNQ",
-                match_by="shape_id", shape_id=sid, sources=cite, population=population,
-                sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
-                ethnicity=gap(NOT_AVAILABLE, share)))
+                match_by="shape_id", shape_id=sid, sources=cite + [MUNICIPALITIES_SOURCE],
+                population=population, sex_ratio=gap(NOT_AVAILABLE, SEX_GAP),
+                median_age=gap(NOT_AVAILABLE, AGE_GAP), ethnicity=gap(NOT_AVAILABLE, share)))
             report.append(f"    {u['name']}: not shown ({census or 'not a district'})")
+    for r in records:
+        if r["level"] == "admin2" and not isinstance(r.get("capital"), str):
+            r["capital"] = gap(NOT_AVAILABLE, SEAT_GAP)
     return records, report
 
 
