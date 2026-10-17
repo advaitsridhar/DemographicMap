@@ -1,387 +1,141 @@
-    read Provinces/getAll/: answer sha256 a68951e7b5bad48d89934754c7069b010da27df1e01168d8acd49fb50bfb5dc6
-    read KeyIndicators/listKeyIndicators/1/2/2: answer sha256 8f7e3efb34620a93e00611beaf286f0b18f7433372329875cf418e973d17a434
-    read DsPopulationGroups/listDsByParams/1/2/2: answer sha256 052aa98eedce2dd0106ff5a0c8d90d73368e1f75f2ea2329694d79d65af5410c
-    read DsAgeGroups/listDsByParams/1/2/2: answer sha256 9eb771835250a691b434a6fbc03b1766631713ace2ee3b3342f7f8529e5bdc0c
-    read DsMains/listDsByParams/1/2/2: answer sha256 25d08caade0c6c5dcd412f5cb192ae9eaea0d9d9582aa1257e048fccf10fcfd3
-    read Districts/listByProvince/2: answer sha256 b2bdbe53fddadc94936cbe999cbb4416ab418e03b21ea8f39b346597f211415d
-    read DsSexes/listDsByParams/1/5/DC44: answer sha256 f38605979fbdbbe5200bbc616e7115727bf1f8cb254b493630d4950068b2e344
-    read KeyIndicators/listKeyIndicators/1/5/DC44: answer sha256 81bc9b822929cfa5f4a266a829ebd7a32a2f2b849baca2e0e2931ffe780097c6
-  Alfred Nzo: men and women 936,461, total 936,462
-    read DsPopulationGroups/listDsByParams/1/5/DC44: answer sha256 6965b7326f83f6620bb4e7fa9e00d6ca16ac86fc48f7f687837aaca54d800715
-    read DsAgeGroups/listDsByParams/1/5/DC44: answer sha256 f69065f6cd4efc64b8f5e639ff97b3adaf370f1fc82a85b9955beee96949de07
-    read DsMains/listDsByParams/1/5/DC44: answer sha256 83519aed52124172c8eff2646894afc883c37cd13793866d8a92cafba0bf3c5f
-    read DsSexes/listDsByParams/1/5/DC12: answer sha256 239b959b610a480fd1a419ecbdd6afc6c1765ac90eee697dc93b2077eb32720b
-    read KeyIndicators/listKeyIndicators/1/5/DC12: answer sha256 8f646945dd778a0893f9a7c257a5ed57b3d3d824887369cb9b1cc9b5c69493bf
-  Amathole: men and women 871,602, total 871,601
-    read DsPopulationGroups/listDsByParams/1/5/DC12: answer sha256 b3abf7297705179421b89f874af91e1e4bf0c400795bab7503bc9b41a4dbb93f
-    read DsAgeGroups/listDsByParams/1/5/DC12: answer sha256 6258fc38657ceff9bf6f913f1bf12c7861dd60a8cbc82fc8b17eb476703c2bb5
-    read DsMains/listDsByParams/1/5/DC12: answer sha256 9e0e5ed55d76ee468605379f2a765591ce847db0d4793387ecb30f45cf7fe2ec
-    read DsSexes/listDsByParams/1/5/BUF: answer sha256 d8cf447bab504160bff1bac9929c92b8d4ebc4f888a36389bc205f5b9e26dba2
-    read KeyIndicators/listKeyIndicators/1/5/BUF: answer sha256 00a9f847815c533a66511b5e166570419b76c78c57b406ca19b6706169f4a824
-    read DsPopulationGroups/listDsByParams/1/5/BUF: answer sha256 bceb5e820e08ea138022d0937a9e7949130c16e615e73b04f4926067cbc01a4c
-    read DsAgeGroups/listDsByParams/1/5/BUF: answer sha256 52cee6677defea7dfab19ecad4781da46fbe1ddd77aa97b1f3742fe58770af4d
-    read DsMains/listDsByParams/1/5/BUF: answer sha256 0ee66950f7092dbce21e4d161af4d2476630912d8d5f83c48c08b34dff09d67e
-    read DsSexes/listDsByParams/1/5/DC13: answer sha256 c53ce5fe9c3e4ffb0a07e7ffbf86f8477b2c5de6c0c3d59251b0af0673acbf00
-    read KeyIndicators/listKeyIndicators/1/5/DC13: answer sha256 621f74606edb552f93618e72b7f1c62bede1af879374b91795091f9e181c4276
-  Chris Hani: men and women 828,388, total 828,387
-    read DsPopulationGroups/listDsByParams/1/5/DC13: answer sha256 53dba85c1253c52f7f9020e31088ab5da49d4546f5cba0a0f5c11084eb9995dc
-    read DsAgeGroups/listDsByParams/1/5/DC13: answer sha256 f784df94ec881c19db143d41fe262606a859e2ce65312d496194af2b0a1a070b
-    read DsMains/listDsByParams/1/5/DC13: answer sha256 6f4b8f7ac879356fc1767131f34ecbe2ad94123de4f2b2f9abffae190c74c769
-    read DsSexes/listDsByParams/1/5/DC14: answer sha256 ada7aa947422262eff1830a7e6e8650359f4c9b76f9f48ded7d3cb08a3bb0c7e
-    read KeyIndicators/listKeyIndicators/1/5/DC14: answer sha256 1699654dc7be8f8b74bc7bc7e54b3436e4440fcd90703021d5d9a85dac9981f4
-    read DsPopulationGroups/listDsByParams/1/5/DC14: answer sha256 4f179c562193c7078d01c248bec17bda422f3a33eaa7a51cd462290cc26bdcff
-    read DsAgeGroups/listDsByParams/1/5/DC14: answer sha256 32ce4e335dc22291be2dc0b9a4e94a47c7f2361136eff3e9279d6ca45c418d85
-    read DsMains/listDsByParams/1/5/DC14: answer sha256 e5668f6ebf972d17e3051850e0ed71fa6d28203525eb6089b63608b9b6f436c1
-    read DsSexes/listDsByParams/1/5/NMA: answer sha256 79758e5b0fa525a34e4dca0dbf99987c30abbcfc72267b8e1c1e38a23abe838d
-    read KeyIndicators/listKeyIndicators/1/5/NMA: answer sha256 b66d4ef65719dd7a044cd0b79072f99608fd03a4eb4a12295c90c26ead8d2da8
-    read DsPopulationGroups/listDsByParams/1/5/NMA: answer sha256 2f7e735bbb56085a2e9fc63c7ecb40fa2dc76ea4bef930635faf59b8c2eb1b3f
-    read DsAgeGroups/listDsByParams/1/5/NMA: answer sha256 64f2b1604abe8abf45372e16e33cba74d15bbd7b4355615e7129f333198cc56d
-    read DsMains/listDsByParams/1/5/NMA: answer sha256 24e9d459c6afaa24c62412968fd9efb5e6e5304adb872e1cc907ae216daa40b2
-    read DsSexes/listDsByParams/1/5/DC15: answer sha256 e2536b5ac67abb162a288d66201adcd4a99c8cdffeaf2322af91b31bb996519b
-    read KeyIndicators/listKeyIndicators/1/5/DC15: answer sha256 f9ade47b98008bfb60c8d0b45bb0b857105ca9d9c07a97bc998ba26af5a6c7cd
-    read DsPopulationGroups/listDsByParams/1/5/DC15: answer sha256 c4f87e826edbbff3d31d9b8694d7b60f64cec7fd90a8e1581bee6fa3b3c72470
-    read DsAgeGroups/listDsByParams/1/5/DC15: answer sha256 f67a20aba8bf2b460be5a0b3f40ae426c2960317def96044a1dc471e0ecdfee5
-    read DsMains/listDsByParams/1/5/DC15: answer sha256 f5cfae09961e546c64821b9cbd510095c7ff0f8241c3606975479d8dd094f3e7
-    read DsSexes/listDsByParams/1/5/DC10: answer sha256 c1d0ff4e7c2b7317ac6b42ab70c26f5695a49113bf8abb3a985f68a968591e8c
-    read KeyIndicators/listKeyIndicators/1/5/DC10: answer sha256 ae0b646ae678d3cc97c4c9762553411648c42e482d143a3c137e2d9003190d60
-    read DsPopulationGroups/listDsByParams/1/5/DC10: answer sha256 3e2fd69bc5b08036157746e863531cbee426ae92168698e35c89b7924cbd55e6
-    read DsAgeGroups/listDsByParams/1/5/DC10: answer sha256 42ce2eed107b71aa84b8c57e7035f3e6f356d744f6175dcf8c31fe5fc71be27b
-    read DsMains/listDsByParams/1/5/DC10: answer sha256 db3a31dba1c17e735558db9cf06c273e1caf6ad90d44b1c37de4b02f8057927c
-    read KeyIndicators/listKeyIndicators/1/2/4: answer sha256 9197b2236af1c33608f24a7668985f8301747c3f2f0e6c601c0a9a359a362ab5
-    read DsPopulationGroups/listDsByParams/1/2/4: answer sha256 61cfe620df27339cf1f37e622aea12251481b09b842b793f1b2f2809acaa15c9
-    read DsAgeGroups/listDsByParams/1/2/4: answer sha256 991770eb16e8f14a106837522cd0419dc0a984ccac9a5d8eac95f236dc596268
-    read DsMains/listDsByParams/1/2/4: answer sha256 a64b14d0d4621902bb5cb3adb10d1d3f5703c073bd6fa79d4b9711d03f5c365a
-    read Districts/listByProvince/4: answer sha256 44f3cca9badb36e71cde5b7b128f810d9a1ec5d59c80806a7a3c07999b2e6975
-    read DsSexes/listDsByParams/1/5/DC20: answer sha256 5f67c439888d8b3dbf7ed6f50cb6fbb7828f0f862d8975b62200f9c9f8926bb7
-    read KeyIndicators/listKeyIndicators/1/5/DC20: answer sha256 f5eb697ca6103e93f7e5b8b29b0bb5f1aafdd5be104422cad7b78ea593f23ea0
-    read DsPopulationGroups/listDsByParams/1/5/DC20: answer sha256 5f896e44371fc16d46a5ba63c71b80375e27707ef3c4f042b9d63a360c6ba141
-    read DsAgeGroups/listDsByParams/1/5/DC20: answer sha256 cc0776d96d3837b5038cbfec404d42fe8dff3119be87f7af54283c3e3a34088d
-    read DsMains/listDsByParams/1/5/DC20: answer sha256 ba36b4db4907dad2d3bd506bd814e9b8dfba90a49dd7ff906b2bee8a223128de
-    read DsSexes/listDsByParams/1/5/DC18: answer sha256 c1c88010e818b60e4012df242f5ded78a4495c9a46340fd2bf5ad89a66ef0f2f
-    read KeyIndicators/listKeyIndicators/1/5/DC18: answer sha256 78229f1270659f60150b1be96303951d3ea47337aff9b6de96615e1373bf4076
-    read DsPopulationGroups/listDsByParams/1/5/DC18: answer sha256 8347e3ae75e29a4873abbd7606fc676af2f85c12d657fe6ff8c1f131421b2aeb
-    read DsAgeGroups/listDsByParams/1/5/DC18: answer sha256 b128721cba2c1f323315c7b3bfc947d5f12df7bfd1523448e8da9c476a406b2c
-    read DsMains/listDsByParams/1/5/DC18: answer sha256 dd54de2cff1f83298908056503454a14274d17efde9560e242149c5e601100d3
-    read DsSexes/listDsByParams/1/5/MAN: answer sha256 98624b5e4e29b1c79327d3ce09e6097c18b7762f25f93266ddf257e631003c90
-    read KeyIndicators/listKeyIndicators/1/5/MAN: answer sha256 4cd32a289d1d77027c162d6eed68b148eb3d7a34c4c406362bc59ce54f037665
-  Mangaung: men and women 811,432, total 811,431
-    read DsPopulationGroups/listDsByParams/1/5/MAN: answer sha256 95ae365fc8c4d2ecee25be8791b9c34dc7d78d04f1d4dedf3687c6ed36567bd6
-    read DsAgeGroups/listDsByParams/1/5/MAN: answer sha256 66a2997addbed8b2d3b801decea2d607a3bd75ea603e6149ef210fcf8d1c9bd7
-    read DsMains/listDsByParams/1/5/MAN: answer sha256 81f5e9fa0350cb89cc42d6b6274fe7c3bf67eee580541087ec63a0adb28340bd
-    read DsSexes/listDsByParams/1/5/DC19: answer sha256 6a8ab0826aa564df803ff1d841a1747fe569e32cdec33294d5596c81c9707d22
-    read KeyIndicators/listKeyIndicators/1/5/DC19: answer sha256 1ef432f5ef9855868ecb364e72363677cd118986fb683f5c118f1386962895d4
-    read DsPopulationGroups/listDsByParams/1/5/DC19: answer sha256 be5ad333ff560a3552f9b6b877efb025364f0330a19227affc9b0150d94ad70e
-    read DsAgeGroups/listDsByParams/1/5/DC19: answer sha256 04baacc03d11de62106c384eac2a73598fefef0ff2883123f7d44cf7f484de6d
-    read DsMains/listDsByParams/1/5/DC19: answer sha256 3ef5dc8d6dbe797775e114239eff0de2b54da0efc448e91cc1fac33c3af5eaa4
-    read DsSexes/listDsByParams/1/5/DC16: answer sha256 803982c5fd79674ae9ffe6b71682fcd2f8ce575c8ca0ca0f5542f9fa611200d4
-    read KeyIndicators/listKeyIndicators/1/5/DC16: answer sha256 045e7a693bc23b852ebf8d6f73908d238bc956089369b886620817c320e88672
-    read DsPopulationGroups/listDsByParams/1/5/DC16: answer sha256 2156ad78c6ecfc6b3cdeda847a6dc16d3aaeb3c68cf767e0499acaeab7a182cc
-    read DsAgeGroups/listDsByParams/1/5/DC16: answer sha256 f99b9fb91c759fad2bbad92ee0941d6e64f21a905bc537027f2d9b95c7a03f30
-    read DsMains/listDsByParams/1/5/DC16: answer sha256 1e8193c918d1cd815f690e32e6777d97c1dbbd8f9b42fe471913a8dff569ffe4
-    read KeyIndicators/listKeyIndicators/1/2/7: answer sha256 95f2d75c73df180f738493f629365c0e15f4ec8e2862ea45be12cd26b2460211
-    read DsPopulationGroups/listDsByParams/1/2/7: answer sha256 d747c8e7d992d5df42c7aad97e98ad7c11bc334d0e3d86ebed7bfa4d1d739b8f
-    read DsAgeGroups/listDsByParams/1/2/7: answer sha256 3dc078d2660e415b861724d85f99d7129b1dd930ad8453618019ce38fa610422
-    read DsMains/listDsByParams/1/2/7: answer sha256 81ad293f548db56d944ee8241c41d75e84bcbae2900c8d0c095c8344043282d9
-    read Districts/listByProvince/7: answer sha256 7aa450b71f14121cd7ec18a7a2c9edd1d82d4de8404ecbff7b29528b4155501b
-    read DsSexes/listDsByParams/1/5/JHB: answer sha256 71000a2263afde8e274230b218ffa3c2044598bfce044df7fdc29ac873a49ed4
-    read KeyIndicators/listKeyIndicators/1/5/JHB: answer sha256 b4c7f5e11ad285b52d9fa06daacaed066866297d3814983a74daf24a930382e4
-    read DsPopulationGroups/listDsByParams/1/5/JHB: answer sha256 1fd2e65ece65bb4defeb1a269987fb34f55c25bc6f826df937df2bc3b0b551c4
-    read DsAgeGroups/listDsByParams/1/5/JHB: answer sha256 edf582dba3f3c885cb23f8eb1eeaa4c5f3ffb078dd1d9b51d81888db5e94fe4a
-    read DsMains/listDsByParams/1/5/JHB: answer sha256 4d2222ec103ef9c6dd5aad2b2491a49c99e4393c3ddb7a17b0c95dbb75731d8c
-    read DsSexes/listDsByParams/1/5/TSH: answer sha256 aba247a9d6bb602fb550a229c69fffd94a8af3d0bc56c60f3316c7ddbedc353e
-    read KeyIndicators/listKeyIndicators/1/5/TSH: answer sha256 61d01ca81862ec1577327a8c5fdcc49fb735d0c3a7ceaeaf4f677937451871b1
-    read DsPopulationGroups/listDsByParams/1/5/TSH: answer sha256 28ba464b80d964b2703daca1c9a818e997c4dd861cea1fc4a4a434f121af6e01
-    read DsAgeGroups/listDsByParams/1/5/TSH: answer sha256 d83a1a6701353d10d34f3655315bcaeaa6430eac8b020ffdbdb222a927ea1604
-    read DsMains/listDsByParams/1/5/TSH: answer sha256 364a734e03188bfefa48819a7c75b802ebcdac9bdb7ab1b86f2251202e9b9986
-    read DsSexes/listDsByParams/1/5/EKU: answer sha256 1d7067d83041ae13033230e6cb56fda6f50bd414b0bf7198733dd0480b0b81d8
-    read KeyIndicators/listKeyIndicators/1/5/EKU: answer sha256 a550c92469575901120c60ea7c76bdeb25b6cff07699b9603f784fab6eb8a0cd
-    read DsPopulationGroups/listDsByParams/1/5/EKU: answer sha256 20a04c74f130cb51814b09a5d5e4eccc348517b18bb2cc7b40e198f31d4a3284
-    read DsAgeGroups/listDsByParams/1/5/EKU: answer sha256 9e1b8ce85d51a0c261a1498df746da327baa1b331be5fdd5c66b5656d1bb46bc
-    read DsMains/listDsByParams/1/5/EKU: answer sha256 c7c61b86642e946c32f5117a1860cad2e98fc75b234b62ab31d377b519258450
-    read DsSexes/listDsByParams/1/5/DC42: answer sha256 c73efc3eb6b3b77f8f16ef8ad59fe4275bffb853101c2c7fc1322f182b77b241
-    read KeyIndicators/listKeyIndicators/1/5/DC42: answer sha256 aa6f55f28d26069688089e56415621f49d5090dbaf180e0a1410b2e903f6caf2
-    read DsPopulationGroups/listDsByParams/1/5/DC42: answer sha256 ce3a0b70bcc62d7096261770a704ae6fa3d8c5965064263454ff6ec12fa3181e
-    read DsAgeGroups/listDsByParams/1/5/DC42: answer sha256 c934cd37739dee519f093b3bb47bf8900d1362f3e297fceddc9755a064987398
-    read DsMains/listDsByParams/1/5/DC42: answer sha256 9ce2d0b94912c6097c2cb9f5421a9f8c231928987fb30af2e5886220c02475a4
-    read DsSexes/listDsByParams/1/5/DC48: answer sha256 46fc77915b9aac1368f1bb9bb3308a467e35cf407729fe20d87f68eede43a45d
-    read KeyIndicators/listKeyIndicators/1/5/DC48: answer sha256 061bfc93e0fe94ba5e01c97b59b53454d88b805c0168897afff948905fdc47db
-    read DsPopulationGroups/listDsByParams/1/5/DC48: answer sha256 26d7e878dea5473d393eb95977155d9300dccc033605695d3a3cf938ee6cd732
-    read DsAgeGroups/listDsByParams/1/5/DC48: answer sha256 715943ee6bb69efa0a0ae7ff0de94bca9673669dd05b1cf70bfa361326848c40
-    read DsMains/listDsByParams/1/5/DC48: answer sha256 fb03387fb7644898a3f279d071dfe23503c579476ca1d2d52378a510643ce4a2
-    read KeyIndicators/listKeyIndicators/1/2/5: answer sha256 283689164a1f3b2490e6216b433c0cf2cdc820aa099a588d0a4517071abd6601
-    read DsPopulationGroups/listDsByParams/1/2/5: answer sha256 f871ef0a2bfac841af1ecd168d61c71db6296486089ce1f80217556ea9c451a5
-    read DsAgeGroups/listDsByParams/1/2/5: answer sha256 79a50052dd35f253c41f7e5a913004eea54fef2434994d367f472b80d23b4556
-    read DsMains/listDsByParams/1/2/5: answer sha256 67485fbd33913a11b18ee1f11816ca3fa6d313328a1d0bd193ad5a58067bb8a4
-    read Districts/listByProvince/5: answer sha256 11b346c41010b9fa1994c1e172f71be115fa6bd33e10893f66dd13baab9077cc
-    read DsSexes/listDsByParams/1/5/DC25: answer sha256 692a2f36d026b11ca893d6093b6679286cf82468a7712044cd89a4b516297581
-    read KeyIndicators/listKeyIndicators/1/5/DC25: answer sha256 458d46b4065253b1b7914591515e88fa9165baa4650eae475780d5d2f435e247
-    read DsPopulationGroups/listDsByParams/1/5/DC25: answer sha256 4178bf5fccad8fc038be2c3c7a8d2928b646ec612d2f7a7883236b1d0a517acb
-    read DsAgeGroups/listDsByParams/1/5/DC25: answer sha256 efb4f73599897bf666af536c49bcf01035d931cf325883e08aafb90db808dab8
-    read DsMains/listDsByParams/1/5/DC25: answer sha256 27cd1f06c474c96ac973c0fd5d1deb4b1fe7093e1760d6c7b5cc2a2fdc0a388b
-    read DsSexes/listDsByParams/1/5/ETH: answer sha256 ccf4c567904a58380fa3756326887b5b0002748aa64fcd7a13c1699c5c7f9e66
-    read KeyIndicators/listKeyIndicators/1/5/ETH: answer sha256 a9abb79110c6e8de2edfe382a268e55085a5478a7d94a499fa586007760207f0
-  eThekwini: men and women 4,239,900, total 4,239,901
-    read DsPopulationGroups/listDsByParams/1/5/ETH: answer sha256 49e86d4a4c463c278d95b17411c8e6970c6b92f485c08ee4f657a0179db784b1
-    read DsAgeGroups/listDsByParams/1/5/ETH: answer sha256 a59ad39231c69098c0c2ea7520a8dc3f9bf3549ec999f16845c3ab268ad4f4e5
-    read DsMains/listDsByParams/1/5/ETH: answer sha256 b52748dafded52316455263df4dd3f959a4b70c0e35fa85fcee1483d4021262a
-    read DsSexes/listDsByParams/1/5/DC43: answer sha256 a06cb14d4136ca591793efdd130caa70a89ea92c62370295a1f73617b79bb44a
-    read KeyIndicators/listKeyIndicators/1/5/DC43: answer sha256 6b886997e41bd368ca9efd6681ef9a6a225e832cba7b5709dcab1d4c53af8e67
-    read DsPopulationGroups/listDsByParams/1/5/DC43: answer sha256 dd8ab3dbdb8d99308eb6bd3d1710875899651511ab64d0786a000a79dc57682c
-    read DsAgeGroups/listDsByParams/1/5/DC43: answer sha256 a2b992ce3688269a600c1783e973396da9011ab6b8bf9aec34de367c4ca19730
-    read DsMains/listDsByParams/1/5/DC43: answer sha256 e24be1da893eeaefc3db590c66be53b41dc0549a9b8bb815bdc85cee5d9c5b86
-    read DsSexes/listDsByParams/1/5/DC29: answer sha256 f6086100461b9a893683c4bea0f9ebe7e762dbecce38cecff218f2931f9a2bbb
-    read KeyIndicators/listKeyIndicators/1/5/DC29: answer sha256 3a5c729a4be54ae1827648e577a1c9ff1ec0bf8725ef49876a7bb802995e0ada
-    read DsPopulationGroups/listDsByParams/1/5/DC29: answer sha256 332bf64530a79f2367a864d9b5e587a9528abeba1da10fd30a5b8b19e6d1a12c
-    read DsAgeGroups/listDsByParams/1/5/DC29: answer sha256 053f7f94fe9c8689bce9f2d7a24d68538eb4b4dc322c784e6b8b2f25622a6ee6
-    read DsMains/listDsByParams/1/5/DC29: answer sha256 96f97483322f99987c2825b5146bb3eea406585bb9ee80001565e9072bb4ed2b
-    read DsSexes/listDsByParams/1/5/DC28: answer sha256 a9813966573287df16d47cec47a8e5eec4a4dea0e157460cf494c0c74fd23d80
-    read KeyIndicators/listKeyIndicators/1/5/DC28: answer sha256 c5112451a1717113234a61c42b70b985ec08198e4f13a3223a18f1e91fc87cf0
-    read DsPopulationGroups/listDsByParams/1/5/DC28: answer sha256 755ad4e78e4daebaeaf7a1ac9a1ef79f7d2a31a76e4dab0c6912d8829a728525
-    read DsAgeGroups/listDsByParams/1/5/DC28: answer sha256 1e10afbf4e0b7c247ab3b9565563e7171634417ade39e78c566df575d41c436f
-    read DsMains/listDsByParams/1/5/DC28: answer sha256 b6a7f4d1e3e66534f7d2c23782144178ce69213346a7f6b6e48e3880b084f928
-    read DsSexes/listDsByParams/1/5/DC21: answer sha256 fd6988287ac5f3c10611880bca1a977a577f5431137ad01f9c9e19dd6d016789
-    read KeyIndicators/listKeyIndicators/1/5/DC21: answer sha256 7fd969ac50df1f5c105baec7e1af667e31356a65432dfb6ae5ce5bb65e5d8aa6
-    read DsPopulationGroups/listDsByParams/1/5/DC21: answer sha256 c6010f3170d3062498201590e7339427286234b0b985d2ba619e1edebe2dac2e
-    read DsAgeGroups/listDsByParams/1/5/DC21: answer sha256 a40e604c45c499c51c6821e35c3dd19fe3a75d92c60478e3c7906f8a3fa77c60
-    read DsMains/listDsByParams/1/5/DC21: answer sha256 d3e9d717fb41e3fa442ee5f410a836fa7700cfa3f7d6a2e27f9e4f0ecc5ea9d8
-    read DsSexes/listDsByParams/1/5/DC22: answer sha256 91d109b94e75e18700fa7305ff1c507cb9a5d4785b22be8ebfb96628c19b6891
-    read KeyIndicators/listKeyIndicators/1/5/DC22: answer sha256 895172f64ffd7d111bca67a731b72fd16f3c3e118f2ff5ff1d882bcb7d2dc04d
-  Umgungundlovu: men and women 1,235,716, total 1,235,715
-    read DsPopulationGroups/listDsByParams/1/5/DC22: answer sha256 f14b9694023143537ed63920c7398702cf2c91519d20a1d9feb1aadc5ee7e620
-    read DsAgeGroups/listDsByParams/1/5/DC22: answer sha256 5166547fe2291a77f9121ea089b21039c38486d99f876c70a6f256eadbacda59
-    read DsMains/listDsByParams/1/5/DC22: answer sha256 721e664a444fc2cc8a8049444dfacb2afcbac39f03891aaac5bb627200cc709d
-    read DsSexes/listDsByParams/1/5/DC27: answer sha256 702b02778f66d0031115d7012e35ebb7e0d2c3a3b864fc94ba206c4086936248
-    read KeyIndicators/listKeyIndicators/1/5/DC27: answer sha256 21ce094efcfa32155109857cb6fb3466fc3c5714af3b3be7c2ea604cccd47200
-  Umkhanyakude: men and women 738,436, total 738,437
-    read DsPopulationGroups/listDsByParams/1/5/DC27: answer sha256 bc9934a00eb91790afa99155b7e634b726dac64f8a2829a1eef53b3326776de5
-    read DsAgeGroups/listDsByParams/1/5/DC27: answer sha256 34194cc345e4202e8a99a2549c709343e8551c7d3157dc920158ecc4220f210c
-    read DsMains/listDsByParams/1/5/DC27: answer sha256 b0e8077ae84ad7a62af9208041c23a16875f99078077fbab332cfbec62d3649f
-    read DsSexes/listDsByParams/1/5/DC24: answer sha256 5fdf754801b5658d297290a1bbbe3461df4fd1388a437be093bcb52761c73b0b
-    read KeyIndicators/listKeyIndicators/1/5/DC24: answer sha256 178d6da7440cac670a604529ca3462cf4d49bc9f1ed57aafb998ef01269c8add
-    read DsPopulationGroups/listDsByParams/1/5/DC24: answer sha256 2be4e0ae308e81a0fa2e782711b086204927c05cfc237fad6790277c4302ca11
-    read DsAgeGroups/listDsByParams/1/5/DC24: answer sha256 6833a62e449c63444531f13bbc3fbe07eb6bc98e8e74d580fa99a067cc5b9c75
-    read DsMains/listDsByParams/1/5/DC24: answer sha256 41b1cdbcf420b6a11665139bda2a531e258b127a111cafb8ae182ffd16212d13
-    read DsSexes/listDsByParams/1/5/DC23: answer sha256 9207c7957a0a371e0489a94855876970955478aab6b7695c23ff30fa37b5093f
-    read KeyIndicators/listKeyIndicators/1/5/DC23: answer sha256 4af59eec20642401a7e6fa46717a69335857e931f76a0cc0d2d05010f4748ff5
-    read DsPopulationGroups/listDsByParams/1/5/DC23: answer sha256 29806ea44cc7f16837a865acb9ee46d7f9899a54d650d6fc9d3ff59b5abc8b56
-    read DsAgeGroups/listDsByParams/1/5/DC23: answer sha256 6fa67414d7345ef42b10acd9ae273bace36ca151bc53e346e9a8025c61b764b0
-    read DsMains/listDsByParams/1/5/DC23: answer sha256 e3d5e184dd1336bd2c17a56a4408cbb364f0a3cdbd434483db9ffed4fe7e0cde
-    read DsSexes/listDsByParams/1/5/DC26: answer sha256 bafc1249239503cc9280740d4b816586679c7151f1e324421768cf1ab720d81c
-    read KeyIndicators/listKeyIndicators/1/5/DC26: answer sha256 ed34fc3d0b19e25efe69454ed0a8f2283636035659fd2353255719ce4a709c59
-    read DsPopulationGroups/listDsByParams/1/5/DC26: answer sha256 442adbdb3dc6c26ca8665df6c66f09420be474bfd7150b5112504f8850f8fe74
-    read DsAgeGroups/listDsByParams/1/5/DC26: answer sha256 d0704e1cbbda2110fc4b3264c93137d74562b4ea1d4f8cdf30efd959fc686a2a
-    read DsMains/listDsByParams/1/5/DC26: answer sha256 828cd9c3de3ecd82f5c2c1772938b0c40464eff7bc0ebae8c5f5664538af7a07
-    read KeyIndicators/listKeyIndicators/1/2/9: answer sha256 d256ea299f6f9d03c2f83cdcb3b510d28bac31acec2aba5d9288dadfd442e4ab
-    read DsPopulationGroups/listDsByParams/1/2/9: answer sha256 0475ee26738771f636b9c8d757367c976b38893320541eebf8ff8aff99f9e8d6
-    read DsAgeGroups/listDsByParams/1/2/9: answer sha256 96a1618c3e765fe19c2949b011dfe54ad98759f64cfca1edd176a909831faaa8
-    read DsMains/listDsByParams/1/2/9: answer sha256 4eb6783de5a441702316c3b6a0d3c07d2ccfc99ab1f0c9a44c07dbe80831ae66
-    read Districts/listByProvince/9: answer sha256 463b4504d5c0af70710fbd1b024eac9ad5350c5e3ace96903e2439af8355ca34
-    read DsSexes/listDsByParams/1/5/DC35: answer sha256 2df40cabae2fbb0694e7229c0f5603211fd00f4fbb0bedc1a35f1c4d94a5be2c
-    read KeyIndicators/listKeyIndicators/1/5/DC35: answer sha256 05efaaa0e505e37e407b7b77056acaf0c682503931676c2c115111f13d0d1b42
-    read DsPopulationGroups/listDsByParams/1/5/DC35: answer sha256 9dbb1d1eb00f1ed1473134552e904c05bcd07d0829bf56dccf3fa13b583ebd6c
-    read DsAgeGroups/listDsByParams/1/5/DC35: answer sha256 767cc4e1d650721189bc4ebd399b9220b2c9b133c97ed9f7b1226865d0cf7df9
-    read DsMains/listDsByParams/1/5/DC35: answer sha256 cc0b632f4e75887127ac2d1734d3c1188be8e802f00f30c1921fdbd58df33bf8
-    read DsSexes/listDsByParams/1/5/DC33: answer sha256 df7c119f12ded31b8480da0f76acc08db8f702a1ae0ccbfa539659302ab3d014
-    read KeyIndicators/listKeyIndicators/1/5/DC33: answer sha256 6b6486df80195f3a16f6e57c242623a85c7e61ff618a6307e912365e03d3eaf4
-    read DsPopulationGroups/listDsByParams/1/5/DC33: answer sha256 87e6872ac538ead736a408dc39ddeebf6a537d24709be7ab5aa737a7407241f9
-    read DsAgeGroups/listDsByParams/1/5/DC33: answer sha256 6a7285646b74bbdfe2b5892a7cd1fd1c1298a0e226cc37e629288d421b0b2d0b
-    read DsMains/listDsByParams/1/5/DC33: answer sha256 23adc215b93e5f903b7182b3dbfe3729985e0407408925a17aa14c65395c6f53
-    read DsSexes/listDsByParams/1/5/DC47: answer sha256 e79f639042c22e623d6473f35356107a5a8486eb8a321228e19cb1f3eba4f7ab
-    read KeyIndicators/listKeyIndicators/1/5/DC47: answer sha256 e650d82a75f9883ebf98cb53da54c2136e6eaa70ee8761dfde676c1b42ccf846
-    read DsPopulationGroups/listDsByParams/1/5/DC47: answer sha256 545303009030827a9bb71a110b35086be1e73a6dffddd00a5e3f2c055f211565
-    read DsAgeGroups/listDsByParams/1/5/DC47: answer sha256 c51aab8bb2a5c4fafc53ca0446b7312da9f0a0a13f3a447ca98bd166edd2574c
-    read DsMains/listDsByParams/1/5/DC47: answer sha256 943a6a2fb3cae4cf6db6b56318015ee0da2d3327dab39da9f589b8dece18e1ee
-    read DsSexes/listDsByParams/1/5/DC34: answer sha256 8b01292bdd64c23f340c20b989d81a81bb2262b1eea885d67915cbe5ff0d1c20
-    read KeyIndicators/listKeyIndicators/1/5/DC34: answer sha256 f0ab705e9cd766fc5c0665330ae28c9039d54d90ee59da92449d3b7ae051a414
-    read DsPopulationGroups/listDsByParams/1/5/DC34: answer sha256 0de9b31f462d14d34dc9331064140453a5d89a30450de6f33e5cde330d649cbf
-    read DsAgeGroups/listDsByParams/1/5/DC34: answer sha256 496c3df3f8dd4d58c42e3d297f510408c534d749043efbb4051f7f0fe7d1e2a2
-    read DsMains/listDsByParams/1/5/DC34: answer sha256 f6d603b70bd077bca0b9ef021f07418eb5bf85045fc056f6e2740c28172bdab1
-    read DsSexes/listDsByParams/1/5/DC36: answer sha256 7d2ab8028b0be9c06e2b49594045227e7b3c88a3d74f9c468b5d167c5520bf5b
-    read KeyIndicators/listKeyIndicators/1/5/DC36: answer sha256 c956f9b2e17d63f51e447a13eaee9d2c839eddbc840b408310f21588e74f9072
-    read DsPopulationGroups/listDsByParams/1/5/DC36: answer sha256 131c1dd53b394589a13329db94cdb45369c5c728faeb52fcc5f73a845c3b9653
-    read DsAgeGroups/listDsByParams/1/5/DC36: answer sha256 05e7a3ecfad28bfd7080f43939999652bc8fc55d93adb501671a670710f92269
-    read DsMains/listDsByParams/1/5/DC36: answer sha256 9cbe79e790aead648abf6aec558528f8296e4599b0e40f3a309a38f2d137e495
-    read KeyIndicators/listKeyIndicators/1/2/8: answer sha256 19ef07738c7487543c2cccadae36787c7d962dcb1a9cdc13e2336471d9b343f7
-    read DsPopulationGroups/listDsByParams/1/2/8: answer sha256 a8d47d49937990fe7d3607b68f82123ebc2a890933e3dbde77e0dd9668864492
-    read DsAgeGroups/listDsByParams/1/2/8: answer sha256 559c4bc6dd726639ca030a3cb2dcdc9c25eaf3f52f3c69930f9bb1c5c6b49691
-    read DsMains/listDsByParams/1/2/8: answer sha256 8b2c21441cf7749194f7fcba5265b4d92c39b4410c43d9b8c7af665d576a89ee
-    read Districts/listByProvince/8: answer sha256 394164d4c73c746baf38eb90434141afda842f64406725fa9c635da13999c08c
-    read DsSexes/listDsByParams/1/5/DC32: answer sha256 a8a772ba6acdb0dc4a806d33bc131fdf850c1c344e1bf07eb5d3f09689797cfd
-    read KeyIndicators/listKeyIndicators/1/5/DC32: answer sha256 2345f67f04c8cff8aa7e3459e91746b8307c423d056d5f9dc85b6c5ec1c3ca8d
-    read DsPopulationGroups/listDsByParams/1/5/DC32: answer sha256 685fe2ffb722b6ced3eb12bea29b6e3e7b8464bd917a70ce18776e0281e911c2
-    read DsAgeGroups/listDsByParams/1/5/DC32: answer sha256 8e97636a16e29ab70e003f0896b470b789c8a0dfcaa84e5ae089cbf889a339bf
-    read DsMains/listDsByParams/1/5/DC32: answer sha256 07ff057d4ce7f035b396b990dd68bbb1458a30735202908bff8449ecfccdec97
-    read DsSexes/listDsByParams/1/5/DC30: answer sha256 a5b3ed576f6f662e2158ceb4730106e7881ed4aa1b0f36d22d6e901396ff407c
-    read KeyIndicators/listKeyIndicators/1/5/DC30: answer sha256 da9679620603e7e2dd2aa0738efb7d9b03d9471eb745f11df27d6b5c29378c38
-    read DsPopulationGroups/listDsByParams/1/5/DC30: answer sha256 b186ab55eff58867621450235da7b7fb438e61140fd75aa88ba44408328391b9
-    read DsAgeGroups/listDsByParams/1/5/DC30: answer sha256 393e868af1777732d336b93ca192bef312c8468f591f2ab64fe1eefcc989fa81
-    read DsMains/listDsByParams/1/5/DC30: answer sha256 39f7594dcf0e47c858744343b01c0ace566a2a0984e14f38d2ea65dcef008db7
-    read DsSexes/listDsByParams/1/5/DC31: answer sha256 92781cd9ff8ab5e7fe90f3e780f58dba62c9821dc5b73b9d25770065bd559df5
-    read KeyIndicators/listKeyIndicators/1/5/DC31: answer sha256 ac9c308bdb361d462714a479b31973444fec4921bf6fd24e8ccbbee9ab9a2a34
-    read DsPopulationGroups/listDsByParams/1/5/DC31: answer sha256 c651e4b1ada88e7de84b5b2b88c0aad117da5b57233899683580ee49d3cd6da6
-    read DsAgeGroups/listDsByParams/1/5/DC31: answer sha256 37e4b308242cccdc305e4008867d8669b8894fc8933ab46596fe51e5c598ad1a
-    read DsMains/listDsByParams/1/5/DC31: answer sha256 584f08d1feddf05027ae2bec1a6cf18a234ad93604052e120e3cc2e66ec0130f
-    read KeyIndicators/listKeyIndicators/1/2/6: answer sha256 5038dcaf6be2f7e4ceb8a3f6d67a743fdc133b016976441f340c149283f68c09
-    read DsPopulationGroups/listDsByParams/1/2/6: answer sha256 87a6f3af9185c2aa1f777ab9fec04b53578c5d21d0e8d14202e6a654d214f67b
-    read DsAgeGroups/listDsByParams/1/2/6: answer sha256 0603d1ef583d6b807946887fb4c90f24ffae4f2ff9d029b9fb1545cd9bcd7466
-    read DsMains/listDsByParams/1/2/6: answer sha256 995f7d2c460b3b95458de33c825de8b213f9a63f5c81dcb7f69db36167e0ee82
-    read Districts/listByProvince/6: answer sha256 c9188372340de8dca4b255c016ed66863b49af3fbb59bcb2261cebb5fa9f7b77
-    read DsSexes/listDsByParams/1/5/DC37: answer sha256 1b547a99bc96badd0b5e3dd94702cc2b765cfde6d01234f2e4a8b62b8caf7c4d
-    read KeyIndicators/listKeyIndicators/1/5/DC37: answer sha256 94fd012365325175fb3cb745d8b3b2ac07ab68ca2dc9157f05952838b196b755
-  Bojanala: men and women 1,624,143, total 1,624,144
-    read DsPopulationGroups/listDsByParams/1/5/DC37: answer sha256 aa36b0a8ea490862a67687065dd4428fea29bbc131b04b24b6db0bc74bdafcf9
-    read DsAgeGroups/listDsByParams/1/5/DC37: answer sha256 04ef5bdca5e6d051e710b466a82cbe53603037c351bfef895951d1cd43011680
-    read DsMains/listDsByParams/1/5/DC37: answer sha256 f7b2198ce73a3f937c754e1160a3c46b75f34584c821b4d79de26966bb965576
-    read DsSexes/listDsByParams/1/5/DC40: answer sha256 a587bb44410aa45cef387d69df568edcbf8c3f3ee53be7d57a2e4afa176c92bf
-    read KeyIndicators/listKeyIndicators/1/5/DC40: answer sha256 e741bd11e75ccf01da42410faf016aaa91db4530d9ae3428fd0edd20a8d94531
-  Dr Kenneth Kaunda: men and women 734,204, total 734,203
-    read DsPopulationGroups/listDsByParams/1/5/DC40: answer sha256 cad6a5c6d82ee2d1aa358f88eba1d06c03f010803947f78edfe91a6ca5ca90e0
-    read DsAgeGroups/listDsByParams/1/5/DC40: answer sha256 a7f260383fc87dc9437fa30bd70d928ca62c9070c0e31d7e45ba27cd5f8e491b
-    read DsMains/listDsByParams/1/5/DC40: answer sha256 43e2f26d1688309ba18ce88d0ed28b4f1bc8ed05378b04f284fd279ad143aad3
-    read DsSexes/listDsByParams/1/5/DC39: answer sha256 5e1ae6fa6e71abcef9d700752386da39616da4ada07ee9aec2e9eb5022d6668d
-    read KeyIndicators/listKeyIndicators/1/5/DC39: answer sha256 186061b29f06644ce0c4c12f46a8b206e91b566244a935c7e1f3f3864dd79e44
-  Dr Ruth Segomotsi Mompati: men and women 508,193, total 508,192
-    read DsPopulationGroups/listDsByParams/1/5/DC39: answer sha256 942b90832d458d5ceca2d8691c02502b33364a9cde8ce0f37fa22c78c2425a2a
-    read DsAgeGroups/listDsByParams/1/5/DC39: answer sha256 3c89b366ed3d531627c0a6eec6ee630f94809a5c1f90df91716f39e3b82f072b
-    read DsMains/listDsByParams/1/5/DC39: answer sha256 f77516bbab5c60c6e6edd3c0641a4a4c3d9fd39b981986fcaeb21e5a7f3a56c0
-    read DsSexes/listDsByParams/1/5/DC38: answer sha256 b5079e269f978d7578eb8a08d0dd734c385bc803f24c5fc446159b9541b632f1
-    read KeyIndicators/listKeyIndicators/1/5/DC38: answer sha256 70d6f19895f06486c2815635a17dd483bce50e102541b321488b648d9a3acbdf
-    read DsPopulationGroups/listDsByParams/1/5/DC38: answer sha256 fe150cb817cb86d9c453c702bea9e55286708d4f297b971ebb21a7bd943d3eb1
-    read DsAgeGroups/listDsByParams/1/5/DC38: answer sha256 353e2bf262182a915cf6832085840de2cacb885d2c5127aa352dbd52adc2cff1
-    read DsMains/listDsByParams/1/5/DC38: answer sha256 2bffb7bb11db795031fdd8e0e934c14aafd25ec8a32bfe265b820ed08cfce805
-    read KeyIndicators/listKeyIndicators/1/2/3: answer sha256 d35ce51706f3747aa03e8c24922ddf654085150c57354c1afb4d89a50865e91d
-    read DsPopulationGroups/listDsByParams/1/2/3: answer sha256 37600b3759220d9808f5fd4641ffdbee3d43ee94876a684a39a41b6acb0c9228
-    read DsAgeGroups/listDsByParams/1/2/3: answer sha256 2bf8ad4821610c74b7f25ff762bbd68a0bddabd9ad06b7f6f828e435672ab2a6
-    read DsMains/listDsByParams/1/2/3: answer sha256 755207bf8083fa0f808ff72ccb44e2c57d6f58656d78e5180e58bac50b9c85ff
-    read Districts/listByProvince/3: answer sha256 9917a158955f059dfb3f167ae2df758be54b42c89ce49404c87f3db0d2d4f222
-    read DsSexes/listDsByParams/1/5/DC9: answer sha256 6781d95596f5443af7b90296383ee0850060cd6aaf13b201d3f7b84144f3dc0b
-    read KeyIndicators/listKeyIndicators/1/5/DC9: answer sha256 11da66153a6b8195e5899947dc33703e6aaa6172f05f61c2829da04d7e323bcb
-    read DsPopulationGroups/listDsByParams/1/5/DC9: answer sha256 f013df5735ce4552e777a63354b765b059b7747903ae511a4f739adde73c122d
-    read DsAgeGroups/listDsByParams/1/5/DC9: answer sha256 792d868e8d7e6913b9fd29945d142d97a395400d8f83e0e927c25379d9d3e6d3
-    read DsMains/listDsByParams/1/5/DC9: answer sha256 cb57bd13086aa188cc8cda2e52a90a05daabbf9c7fa5ca996f40151db1fe063c
-    read DsSexes/listDsByParams/1/5/DC45: answer sha256 23cbf0fc315ce274cd5cd9cb1ba8d844ef38c074a0dc8a2e535d975cc9dacda0
-    read KeyIndicators/listKeyIndicators/1/5/DC45: answer sha256 5ededf1524208907d37174107da2bfe6b0fddbe538ec9e6a7ea2ebf7f3dcfa82
-    read DsPopulationGroups/listDsByParams/1/5/DC45: answer sha256 e92c2350a697a8e434b14ca90ab89bfbf9e3757a782f3bfa242ee2d20d13c1b7
-    read DsAgeGroups/listDsByParams/1/5/DC45: answer sha256 06202cfa8b0940d891764bc91cbcbb6f6a23f6a10b203b3cb27f0222cc634afb
-    read DsMains/listDsByParams/1/5/DC45: answer sha256 bcdd3219d93e06413d7bc168ecb7d98603fb010e6f0a07ddc9610676cb5f7400
-    read DsSexes/listDsByParams/1/5/DC6: answer sha256 86a73e0a6f757f1b8ab4b9badc47c233d6cb2969032f0ac7c5801c342e4e2199
-    read KeyIndicators/listKeyIndicators/1/5/DC6: answer sha256 09af1c5a21a567cfa03c2295f66d11da0594e6b27a03b8859bead25036c3adf8
-  Namakwa: men and women 148,936, total 148,935
-    read DsPopulationGroups/listDsByParams/1/5/DC6: answer sha256 27e6c7981f91e6a12ea66912fdf687ba7253e147388bd42578ee9b192f80919d
-    read DsAgeGroups/listDsByParams/1/5/DC6: answer sha256 db0149ead3e748ab1e2684c716f446a91ccb3cf7a06157b49c8c484f68353b9f
-    read DsMains/listDsByParams/1/5/DC6: answer sha256 33ed3b90baa30a51cf2ce7bbda249d0e4bd04fdfedb012f20fa235c262832c8c
-    read DsSexes/listDsByParams/1/5/DC7: answer sha256 b57a7d0c681fac2d7936318591a43637f23a3c77bff1a13d0e4da80aaffd25cf
-    read KeyIndicators/listKeyIndicators/1/5/DC7: answer sha256 c1c930300bf82b08ff759d7e6d20c827691d04a09670d1282cc938140ce557fe
-    read DsPopulationGroups/listDsByParams/1/5/DC7: answer sha256 06ef157caa403f1f71aaa17018b1fa74eb11bf39fb9f3cbc8ad60d55ec02956d
-    read DsAgeGroups/listDsByParams/1/5/DC7: answer sha256 263472ce1a1b58ddb573b0ff71d2a165aa012ae87fd2e0f639453dee86d98ee6
-    read DsMains/listDsByParams/1/5/DC7: answer sha256 4a83cac68987fd4292bfce6630f49c4f00b833aa6357e956dde41f7673bbe1a4
-    read DsSexes/listDsByParams/1/5/DC8: answer sha256 05d1dc9536100035fbb1229f54133379312c11739ab9cffdb0d5cdabd1f5e1ae
-    read KeyIndicators/listKeyIndicators/1/5/DC8: answer sha256 2e6140bc2302656f7c0b0c0e8a08c7ff4632d0e9af507e142474a99297c96f0a
-    read DsPopulationGroups/listDsByParams/1/5/DC8: answer sha256 4cfcc994a58a4a54b59c45e6ec7f77630c0a3a1cc59a721e18c7275466a5123c
-    read DsAgeGroups/listDsByParams/1/5/DC8: answer sha256 67abdbfde2bd85c6e26a4b49ceafaf11db231c681f14027b10a569d2271e36a7
-    read DsMains/listDsByParams/1/5/DC8: answer sha256 14382a6c06bc012e544d6a620194c0ae6a629317de9822c75a3f816884516a0c
-    read KeyIndicators/listKeyIndicators/1/2/1: answer sha256 997f978ff862e36ff70253e8e57f3b31d16a8a1d17b975481c45afb9c4284c4f
-    read DsPopulationGroups/listDsByParams/1/2/1: answer sha256 0f37f85dbdcf64bd4a9f96eaf7beb5627f78ec5bcdbfe9d58fb8551d1f777501
-    read DsAgeGroups/listDsByParams/1/2/1: answer sha256 0e2982c2cb747089034e46b258a2e76b65c6840ff3624e229040ed63bfe44f08
-    read DsMains/listDsByParams/1/2/1: answer sha256 b0414300bee150a4cedb0c0cc880dadc751ce47bc2b9287b27573909f801ae32
-    read Districts/listByProvince/1: answer sha256 5920aca074ce949a8632ea7ca620e9302dcb6844db102acdc73cac225781b181
-    read DsSexes/listDsByParams/1/5/DC2: answer sha256 b3a3557ca154864e88281d8f814d0346f6c8c7a13f80026fc71cabdc43f549ea
-    read KeyIndicators/listKeyIndicators/1/5/DC2: answer sha256 bf5d46746083ff74b0d3ae4b7423abe09da72ba9fd26ef438b54a1a91e83dc8f
-    read DsPopulationGroups/listDsByParams/1/5/DC2: answer sha256 6a7f06e3c5518e5bf3cc2bc046b1e56305015bb7a871441b61a85283c3bb45b1
-    read DsAgeGroups/listDsByParams/1/5/DC2: answer sha256 5d574ec1e75ac9514d18e02b3f1d9444a7c051334690ab7dfe88c392e5f602a1
-    read DsMains/listDsByParams/1/5/DC2: answer sha256 6efc72d5507d4dc4a3193e854f0018168a644210e3a8b46ccc0e1dc22615d992
-    read DsSexes/listDsByParams/1/5/DC5: answer sha256 0bd1916ad7466b2f196ed310c0cd98b8edab9bad0bca7e819bc6c1b774fd1b8c
-    read KeyIndicators/listKeyIndicators/1/5/DC5: answer sha256 a494027ab033e1eea04f1260bfbb095d354e97b68fbf3693d1ce70de9948601a
-    read DsPopulationGroups/listDsByParams/1/5/DC5: answer sha256 a2672ff711c03d57b79ab9f77d978f31f14ef4f68a9e752642b2255153d4cab1
-    read DsAgeGroups/listDsByParams/1/5/DC5: answer sha256 a9f99fa527d522ad16b0c3f356e6236595b73ef9a5a0355cf6b5804651c7a107
-    read DsMains/listDsByParams/1/5/DC5: answer sha256 e38acf4c6874b3711e033ceac3315e559b19849653717f26f41e7f424a79c621
-    read DsSexes/listDsByParams/1/5/CPT: answer sha256 0c6b91651c021f78c7da9869b65a3262804cdcb152ad879f7323767980ba33b9
-    read KeyIndicators/listKeyIndicators/1/5/CPT: answer sha256 9a3f7abddc332ca2319441a5f1b2fa0cfd0e6eb89ad5adab758f453ef6a059af
-  City of Cape Town: men and women 4,770,313, total 4,772,846
-    read DsPopulationGroups/listDsByParams/1/5/CPT: answer sha256 fdbee5ef11b68ba5231974a4c188a50e2ab8dcbb7fed6204493571a8f3da0f30
-    read DsAgeGroups/listDsByParams/1/5/CPT: answer sha256 f48ec0ed222f66cfcf371cac974cb82f2c958e916a81e403bc9dbca560d1ed8d
-    read DsMains/listDsByParams/1/5/CPT: answer sha256 cef5e63ec9369a75a1c5209a867a788a89a25c5cea8faf692767f686929b3f78
-    read DsSexes/listDsByParams/1/5/DC4: answer sha256 6ea2fd60b81f7c6a8940ad2a89e25d45ca853f0fc637e4a8a8188e6736cd252b
-    read KeyIndicators/listKeyIndicators/1/5/DC4: answer sha256 4244d312f286d93074fbe0b1eda891b87b22fc9f376e5e930f42e84d462db43c
-    read DsPopulationGroups/listDsByParams/1/5/DC4: answer sha256 3de36bff64fbb358288339ea8fe60c207fbd8f0cd8f7f6036f63d89535e0d080
-    read DsAgeGroups/listDsByParams/1/5/DC4: answer sha256 f4d91eb334e9c9175b7be021d56f055fae4da19fc040ff3b38e2ccdbaa849b91
-    read DsMains/listDsByParams/1/5/DC4: answer sha256 4b13c16be80c320acc18aea18b6c30fc73004febe5c3dbd3d18374a5031b1825
-    read DsSexes/listDsByParams/1/5/DC3: answer sha256 37be2e52aab5ba5f8fd3eea4287c2db10993edf03e9334faa9cf73a74b07a7b3
-    read KeyIndicators/listKeyIndicators/1/5/DC3: answer sha256 9dc5f34e6a0529cad0c8f2e0709f377ed89927327827f7a63442282b167c5d82
-    read DsPopulationGroups/listDsByParams/1/5/DC3: answer sha256 81460228863d5570c35e64f66384523da278449ff725a84fd132beefb7b3520a
-    read DsAgeGroups/listDsByParams/1/5/DC3: answer sha256 bd00fdbc673d9c46f12b7ee7bb419b63dd22d7aed9e7046a2f5aa8971319bd77
-    read DsMains/listDsByParams/1/5/DC3: answer sha256 b5e9a9756aa9cf50215b9e98234afa8f6e5abeeed1d6d35871a665db76906eba
-    read DsSexes/listDsByParams/1/5/DC1: answer sha256 cc1977b349f225dbb0963cb75e78eb8cbf930f326c4829c199a53332a7092654
-    read KeyIndicators/listKeyIndicators/1/5/DC1: answer sha256 9349b5daf8d70d39909d6326b5a76d1b1024b41fd57621a3f1c6235d1b3eb50d
-    read DsPopulationGroups/listDsByParams/1/5/DC1: answer sha256 c05ea515fcc1a02a0403b00314f59d869c770aaa254ca955719652d224c6051d
-    read DsAgeGroups/listDsByParams/1/5/DC1: answer sha256 481a8ee3fa525efc3dd5f4f6ad71f7731f281bc4aad1baada7b911835ecb6276
-    read DsMains/listDsByParams/1/5/DC1: answer sha256 ee4878300ac14ecc49aa28224ea51d8dc5542eeb8762e0be714483a490870f54
-  Free State: its 5 districts make 2,964,411 against 2,964,412
-  KwaZulu-Natal: its 11 districts make 12,423,908 against 12,423,907
-  Limpopo: its 5 districts make 6,572,665 against 6,572,721
-  Mpumalanga: its 3 districts make 5,143,040 against 5,143,324
-  North West: its 4 districts make 3,804,262 against 3,804,548
-  Western Cape: its 6 districts make 7,433,019 against 7,433,020
-  9 provinces and 52 districts, making 62,027,503
-  Alfred Nzo: 936,462, 88.4 men per 100 women, median age 22.0; Black African 99.1, Coloured 0.4, Indian/Asian 0.2, White 0.2, Other 0.1; Census 2022's count for Alfred Nzo.
-  Amajuba: 687,408, 92.6 men per 100 women, median age 26.3; Black African 92.3, White 3.7, Indian/Asian 3.0, Coloured 0.8, Other 0.2; Census 2022's count for Amajuba.
-  Amathole: 871,601, 90.9 men per 100 women, median age 28.2; Black African 95.4, Coloured 2.2, White 1.7, Other 0.4, Indian/Asian 0.2; Census 2022's count for Amathole.
-  Bojanala: 1,624,144, 103.3 men per 100 women, median age 29.4; Black African 95.4, White 3.7, Coloured 0.7, Other 0.2, Indian/Asian 0.1; Census 2022's count for Bojanala.
-  Buffalo City: 975,255, 89.9 men per 100 women, median age 30.5; Black African 84.7, White 8.4, Coloured 5.2, Indian/Asian 1.0, Other 0.6; Census 2022's count for Buffalo City.
-  Cacadu: 533,253, 90.7 men per 100 women, median age 32.1; Black African 48.8, Coloured 33.4, White 15.5, Other 1.9, Indian/Asian 0.5; Census 2022's count for Sarah Baartman (the boundary file's 'Cacadu').
-  Cape Winelands: 862,703, 94.1 men per 100 women, median age 30.7; Coloured 54.4, Black African 29.1, White 14.8, Other 1.3, Indian/Asian 0.4; Census 2022's count for Cape Winelands.
-  Capricorn: 1,447,103, 90.3 men per 100 women, median age 26.6; Black African 96.0, White 2.7, Indian/Asian 0.7, Coloured 0.5, Other 0.2; Census 2022's count for Capricorn.
-  Central Karoo: 102,173, 92.0 men per 100 women, median age 28.2; Coloured 80.7, Black African 11.9, White 5.6, Other 1.4, Indian/Asian 0.3; Census 2022's count for Central Karoo.
-  Chris Hani: 828,387, 91.9 men per 100 women, median age 27.8; Black African 91.5, Coloured 5.2, White 2.3, Other 0.6, Indian/Asian 0.3; Census 2022's count for Chris Hani.
-  City of Cape Town: 4,772,846, 93.6 men per 100 women, median age 31.1; Black African 45.7, Coloured 35.1, White 16.2, Indian/Asian 1.6, Other 1.5; Census 2022's count for City of Cape Town.
-  City of Johannesburg: 4,803,262, 101.5 men per 100 women, median age 30.6; Black African 84.5, White 7.0, Coloured 4.8, Indian/Asian 3.5, Other 0.2; Census 2022's count for City of Johannesburg.
-  City of Tshwane: 4,040,315, 100.5 men per 100 women, median age 30.7; Black African 82.8, White 13.4, Coloured 1.8, Indian/Asian 1.7, Other 0.3; Census 2022's count for City of Tshwane.
-  Dr Kenneth Kaunda: 734,203, 93.9 men per 100 women, median age 28.9; Black African 85.3, White 11.1, Coloured 3.4, Other 0.2, Indian/Asian 0.1; Census 2022's count for Dr Kenneth Kaunda.
-  Dr Ruth Segomotsi Mompati: 508,192, 93.5 men per 100 women, median age 24.7; Black African 95.1, Coloured 2.7, White 2.0, Other 0.1, Indian/Asian 0.0; Census 2022's count for Dr Ruth Segomotsi Mompati.
-  Eden: 838,457, 94.4 men per 100 women, median age 32.5; Coloured 49.7, Black African 27.8, White 19.6, Other 2.5, Indian/Asian 0.3; Census 2022's count for Garden Route (the boundary file's 'Eden').
-  Ehlanzeni: 2,270,897, 89.3 men per 100 women, median age 26.2; Black African 96.8, White 2.4, Coloured 0.5, Indian/Asian 0.4, Other 0.0; Census 2022's count for Ehlanzeni.
-  Ekurhuleni: 4,066,691, 104.4 men per 100 women, median age 30.6; Black African 85.3, White 10.3, Coloured 2.5, Indian/Asian 1.8, Other 0.2; Census 2022's count for Ekurhuleni.
-  Fezile Dabi: 509,912, 92.3 men per 100 women, median age 30.3; Black African 85.7, White 12.1, Coloured 1.8, Indian/Asian 0.3, Other 0.2; Census 2022's count for Fezile Dabi.
-  Frances Baard: 434,343, 92.0 men per 100 women, median age 28.1; Black African 67.1, Coloured 23.4, White 8.3, Indian/Asian 1.0, Other 0.1; Census 2022's count for Frances Baard.
-  Gert Sibande: 1,283,459, 93.2 men per 100 women, median age 27.6; Black African 93.6, White 5.0, Indian/Asian 0.8, Coloured 0.7, Other 0.0; Census 2022's count for Gert Sibande.
-  Joe Gqabi: 393,048, 90.4 men per 100 women, median age 26.6; Black African 91.8, Coloured 4.2, White 3.1, Indian/Asian 0.4, Other 0.4; Census 2022's count for Joe Gqabi.
-  John Taolo Gaetsewe: 272,454, 90.1 men per 100 women, median age 25.1; Black African 89.7, Coloured 6.5, White 3.2, Indian/Asian 0.5, Other 0.0; Census 2022's count for John Taolo Gaetsewe.
-  Lejweleputswa: 679,746, 92.3 men per 100 women, median age 28.6; Black African 89.2, White 8.4, Coloured 1.9, Indian/Asian 0.4, Other 0.1; Census 2022's count for Lejweleputswa.
-  Mangaung: 811,431, 90.6 men per 100 women, median age 29.0; Black African 87.9, White 7.8, Coloured 3.8, Indian/Asian 0.4, Other 0.2; Census 2022's count for Mangaung.
-  Mopani: 1,372,873, 85.9 men per 100 women, median age 25.5; Black African 96.8, White 2.4, Indian/Asian 0.5, Coloured 0.2, Other 0.1; Census 2022's count for Mopani.
-  Namakwa: 148,935, 96.4 men per 100 women, median age 32.5; Coloured 85.5, White 7.5, Black African 5.9, Indian/Asian 0.6, Other 0.4; Census 2022's count for Namakwa.
-  Nelson Mandela Bay: 1,190,496, 89.8 men per 100 women, median age 32.2; Black African 62.7, Coloured 19.2, White 15.7, Indian/Asian 1.2, Other 1.2; Census 2022's count for Nelson Mandela Bay.
-  Ngaka Modiri Molema: 937,723, 95.7 men per 100 women, median age 25.7; Black African 96.4, White 2.2, Coloured 1.2, Indian/Asian 0.1, Other 0.1; Census 2022's count for Ngaka Modiri Molema.
-  Nkangala: 1,588,684, 96.2 men per 100 women, median age 28.6; Black African 94.4, White 4.2, Coloured 0.8, Indian/Asian 0.5, Other 0.0; Census 2022's count for Nkangala.
-  O.R.Tambo: 1,501,702, 89.2 men per 100 women, median age 22.6; Black African 98.6, Coloured 0.5, Other 0.4, Indian/Asian 0.2, White 0.2; Census 2022's count for O.R. Tambo.
-  Overberg: 359,446, 97.0 men per 100 women, median age 32.9; Coloured 47.1, Black African 30.7, White 20.5, Other 1.4, Indian/Asian 0.3; Census 2022's count for Overberg.
-  Pixley ka Seme: 216,589, 93.3 men per 100 women, median age 27.2; Coloured 59.5, Black African 29.8, White 9.9, Indian/Asian 0.8, Other 0.1; Census 2022's count for Pixley ka Seme.
-  Sedibeng: 1,190,688, 98.5 men per 100 women, median age 30.3; Black African 88.4, White 9.7, Coloured 1.0, Indian/Asian 0.7, Other 0.2; Census 2022's count for Sedibeng.
-  Sekhukhune: 1,336,805, 89.0 men per 100 women, median age 25.5; Black African 98.4, White 1.0, Indian/Asian 0.3, Coloured 0.2, Other 0.1; Census 2022's count for Sekhukhune.
-  Sisonke: 563,893, 88.0 men per 100 women, median age 24.1; Black African 96.2, Coloured 2.0, White 1.2, Indian/Asian 0.3, Other 0.2; Census 2022's count for Harry Gwala (the boundary file's 'Sisonke').
-  Thabo Mofutsanyane: 831,421, 87.4 men per 100 women, median age 27.8; Black African 93.6, White 5.0, Coloured 0.8, Indian/Asian 0.5, Other 0.1; Census 2022's count for Thabo Mofutsanyane.
-  Ugu: 773,402, 90.0 men per 100 women, median age 27.5; Black African 87.3, White 6.1, Indian/Asian 5.4, Coloured 1.0, Other 0.1; Census 2022's count for Ugu.
-  Umgungundlovu: 1,235,715, 91.1 men per 100 women, median age 29.8; Black African 81.2, Indian/Asian 10.2, White 6.0, Coloured 2.3, Other 0.3; Census 2022's count for Umgungundlovu.
-  Umkhanyakude: 738,437, 87.1 men per 100 women, median age 24.0; Black African 98.8, White 0.6, Coloured 0.2, Indian/Asian 0.2, Other 0.1; Census 2022's count for Umkhanyakude.
-  Umzinyathi: 649,261, 83.0 men per 100 women, median age 23.0; Black African 95.2, Indian/Asian 2.2, White 1.7, Coloured 0.7, Other 0.2; Census 2022's count for Umzinyathi.
-  Uthukela: 789,092, 87.2 men per 100 women, median age 26.0; Black African 93.9, Indian/Asian 3.5, White 1.6, Coloured 0.9, Other 0.2; Census 2022's count for Uthukela.
-  Uthungulu: 1,021,344, 89.8 men per 100 women, median age 26.6; Black African 93.7, White 3.7, Indian/Asian 1.9, Coloured 0.6, Other 0.2; Census 2022's count for King Cetshwayo (the boundary file's 'Uthungulu').
-  Vhembe: 1,653,022, 88.0 men per 100 women, median age 25.2; Black African 98.1, White 1.0, Indian/Asian 0.7, Coloured 0.2, Other 0.0; Census 2022's count for Vhembe.
-  Waterberg: 762,862, 96.7 men per 100 women, median age 28.3; Black African 90.2, White 8.7, Indian/Asian 0.5, Coloured 0.4, Other 0.2; Census 2022's count for Waterberg.
-  West Coast: 497,394, 95.7 men per 100 women, median age 30.9; Coloured 63.8, Black African 20.1, White 14.4, Other 1.4, Indian/Asian 0.3; Census 2022's count for West Coast.
-  West Rand: 998,466, 102.4 men per 100 women, median age 29.9; Black African 85.5, White 10.3, Coloured 2.8, Indian/Asian 1.2, Other 0.2; Census 2022's count for West Rand.
-  Xhariep: 131,901, 92.1 men per 100 women, median age 28.2; Black African 74.2, Coloured 15.0, White 10.1, Indian/Asian 0.5, Other 0.2; Census 2022's count for Xhariep.
-  Z F Mgcawu: 283,624, 95.3 men per 100 women, median age 27.9; Coloured 66.3, Black African 24.9, White 7.6, Indian/Asian 0.8, Other 0.4; Census 2022's count for Z F Mgcawu.
-  Zululand: 942,794, 86.3 men per 100 women, median age 23.3; Black African 98.3, White 1.2, Coloured 0.3, Indian/Asian 0.2, Other 0.1; Census 2022's count for Zululand.
-  eThekwini: 4,239,901, 95.6 men per 100 women, median age 31.4; Black African 71.6, Indian/Asian 19.7, White 6.0, Coloured 2.5, Other 0.3; Census 2022's count for eThekwini.
-  iLembe: 782,661, 90.2 men per 100 women, median age 27.2; Black African 86.8, Indian/Asian 8.4, White 3.9, Coloured 0.7, Other 0.3; Census 2022's count for iLembe.
-  Eastern Cape: median age 27.3
-  Free State: median age 28.8
-  Gauteng: median age 30.5
-  KwaZulu-Natal: median age 28.1
-  Limpopo: median age 26.0
-  Mpumalanga: median age 27.3
-  North West: median age 27.9
-  Northern Cape: median age 27.7
-  Western Cape: median age 31.3
-  wrote data/processed/south_africa_districts.json (229 kB)
+
+===== page: 'Départements du Cameroun', 28,824 bytes of wikitext
+  11 table(s)
+--- table 1: 6 rows ---
+  Département |  | Chef-lieu | Superficie | Population (2001) | Préfet
+  Djérem |  | Tibati | formatnum:13283 | formatnum:89382 | Roger Saffo (depuis 2023)
+  Faro-et-Déo |  | Tignère | formatnum:10435 | formatnum:66442 | Auguste Essomba
+  Mayo-Banyo |  | Banyo | formatnum:8520 | formatnum:134902 | 
+  Mbéré |  | Meiganga | formatnum:14267 | formatnum:185473 | Bello Nouhou
+  Vina |  | Ngaoundéré | formatnum:17196 | formatnum:247427 | Fritz Dikosso Seme
+--- table 2: 11 rows ---
+  Département |  | Chef-lieu | Superficie | Population (2001) | Préfet
+  Haute-Sanaga |  | Nanga-Eboko | formatnum:11854 | formatnum:115305 | 
+  Lekié |  | Monatélé | formatnum:2989 | formatnum:354864 | 
+  Mbam-et-Inoubou |  | Bafia | formatnum:7125 | formatnum:153020 | Absalom Woloa Monono
+  Mbam-et-Kim |  | Ntui | formatnum:25906 | formatnum:64540 | Irenée Galim Ngong
+  Méfou-et-Afamba |  | Mfou | formatnum:3338 | formatnum:89805 | 
+  Méfou-et-Akono |  | Ngoumou | formatnum:1329 | formatnum:57051 | Antoinette Nyambone Zongo
+  Mfoundi |  | Yaoundé | 297 | formatnum:1248235 | 
+  Nyong-et-Kéllé |  | Éséka | formatnum:6362 | formatnum:145181 | 
+  Nyong-et-Mfoumou |  | Akonolinga | formatnum:6172 | formatnum:130321 | Ernest Samuel Christian Ebel
+  Nyong-et-So'o |  | Mbalmayo | formatnum:3581 | formatnum:142907 | Pierre René Songa
+--- table 3: 5 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  Boumba-et-Ngoko | Yokadouma | formatnum:30389 | formatnum:116702
+  Haut-Nyong | Abong-Mbang | formatnum:36384 | formatnum:216768
+  Kadey | Batouri | formatnum:15884 | formatnum:192927
+  Lom-et-Djérem | Bertoua | formatnum:26345 | formatnum:228691
+--- table 4: 7 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  |Diamaré | |Maroua | formatnum:4665 | formatnum:566921
+  Logone-et-Chari | Kousséri | formatnum:12133 | formatnum:405035
+  Mayo-Danay | Yagoua | formatnum:5303 | formatnum:522782
+  Mayo-Kani | Kaélé | formatnum:5033 | formatnum:338448
+  Mayo-Sava | Mora | formatnum:2736 | formatnum:313413
+  Mayo-Tsanaga | Mokolo | formatnum:4393 | formatnum:574864
+--- table 5: 5 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  |Moungo | |Nkongsamba | formatnum:3723 | formatnum:452722
+  Nkam | Yabassi | formatnum:6291 | formatnum:66979
+  Sanaga-Maritime | Édéa | formatnum:9311 | formatnum:167661
+  Wouri | Douala | alig="right" | 923 | formatnum:1514978
+--- table 6: 5 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  Bénoué | Garoua | formatnum:13614 | formatnum:568793
+  Faro | Poli | formatnum:11785 | formatnum:81472
+  Mayo-Louti | Guider | formatnum:4162 | formatnum:334312
+  Mayo-Rey | Tcholliré | formatnum:36529 | formatnum:242441
+--- table 7: 8 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  Boyo | Fundong | formatnum:1592 | formatnum:169725
+  Bui | Kumbo | formatnum:2297 | formatnum:322877
+  Donga-Mantung | Nkambé | formatnum:4279 | formatnum:337533
+  Menchum | Wum | formatnum:4469 | formatnum:157173
+  Mezam | Bamenda | formatnum:1745 | formatnum:465644
+  Momo | Mbengwi | formatnum:1792 | formatnum:213402
+  Ngo-Ketunjia | Ndop | formatnum:1126 | formatnum:174173
+--- table 8: 9 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  Bamboutos | Mbouda | formatnum:1173 | formatnum:318848
+  Haut-Nkam | Bafang | 958 | formatnum:203251
+  Hauts-Plateaux | Baham | 415 | formatnum:117008
+  Koung-Khi | Bandjoun | 353 | formatnum:121794
+  Menoua | Dschang | formatnum:1380 | formatnum:372244
+  Mifi | Bafoussam | 402 | formatnum:290758
+  Ndé | Bangangté | formatnum:1524 | formatnum:123661
+  Noun | Foumban | formatnum:7687 | formatnum:434542
+--- table 9: 5 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  |Dja-et-Lobo | |Sangmélima | formatnum:19911 | formatnum:173219
+  Mvila | Ebolowa | formatnum:8697 | formatnum:163826
+  Océan | Kribi | formatnum:11280 | formatnum:133062
+  Vallée-du-Ntem | Ambam | formatnum:7303 | formatnum:64747
+--- table 10: 7 rows ---
+  Département | Chef-lieu | Superficie | Population (2001)
+  Fako | Limbé | formatnum:2093 | formatnum:367812
+  Koupé-Manengouba | Bangem | formatnum:3404 | formatnum:123011
+  Lebialem | Menji | 617 | formatnum:144560
+  Manyu | Mamfé | formatnum:9565 | formatnum:177389
+  Meme | Kumba | formatnum:3105 | formatnum:300138
+  Ndian | Mundemba | formatnum:6626 | formatnum:129659
+--- table 11: 59 rows ---
+  Département | Préfecture | Sous-préfecture(s) | Région | Superficie (km²) | Population (2001) | Densité | Localisation
+  Bamboutos | Mbouda | Babadjou Batcham Galim Mboud | Ouest | formatnum:1173 | formatnum:318848 | 272 | centré|sans_cadre|75x75px
+  Bénoué | Garoua | Bibemi Dembo Garoua Ier Garo | Nord | formatnum:13614 | formatnum:568793 | 42 | centré|sans_cadre|75x75px
+  Boumba-et-Ngoko | Yokadouma |  | Est | formatnum:30389 | formatnum:116702 | 4 | centré|sans_cadre|75x75px
+  Boyo | Fundong |  | Nord-Ouest | formatnum:1592 | formatnum:169725 | 107 | centré|sans_cadre|75x75px
+  Bui | Kumbo |  | Nord-Ouest | formatnum:2297 | formatnum:322877 | 141 | centré|sans_cadre|75x75px
+  Diamaré | Maroua |  | Extrême-Nord | formatnum:4665 | formatnum:566921 | 122 | centré|sans_cadre|75x75px
+  Dja-et-Lobo | Sangmélima |  | Sud | formatnum:19911 | formatnum:173219 | 9 | centré|sans_cadre|75x75px
+  Djérem | Tibati |  | Adamaoua | formatnum:13283 | formatnum:89382 | 7 | centré|sans_cadre|75x75px
+  Donga-Mantung | Nkambé |  | Nord-Ouest | formatnum:4279 | formatnum:337533 | 79 | centré|sans_cadre|75x75px
+  Fako | Limbé |  | Sud-Ouest | formatnum:2093 | formatnum:367812 | 176 | centré|sans_cadre|75x75px
+  Faro | Poli |  | Nord | formatnum:11785 | formatnum:81472 | 7 | centré|sans_cadre|75x75px
+  Faro-et-Déo | Tignère |  | Adamaoua | formatnum:10435 | formatnum:66442 | 6 | centré|sans_cadre|75x75px
+  Haute-Sanaga | Nanga-Eboko |  | Centre | formatnum:11854 | formatnum:115305 | 10 | centré|sans_cadre|75x75px
+  Haut-Nkam | Bafang | Bafang | Ouest | 958 | formatnum:203251 | 212 | centré|sans_cadre|75x75px
+  Haut-Nyong | Abong-Mbang |  | Est | formatnum:36384 | formatnum:216768 | 6 | centré|sans_cadre|75x75px
+  Hauts-Plateaux | Baham |  | Ouest | 415 | formatnum:117008 | 282 | centré|sans_cadre|75x75px
+  Kadey | Batouri |  | Est | formatnum:15884 | formatnum:192927 | 12 | centré|sans_cadre|75x75px
+  Koung-Khi | Bandjoun |  | Ouest | 353 | formatnum:121794 | 345 | centré|sans_cadre|75x75px
+  Koupé-Manengouba | Bangem |  | Sud-Ouest | formatnum:3404 | formatnum:123011 | 36 | centré|sans_cadre|75x75px
+  Lebialem | Menji |  | Sud-Ouest | 617 | formatnum:144560 | 234 | centré|sans_cadre|75x75px
+  Lekié | Monatélé |  | Centre | formatnum:2989 | formatnum:354864 | 119 | centré|sans_cadre|75x75px
+  Logone-et-Chari | Kousséri |  | Extrême-Nord | formatnum:12133 | formatnum:405035 | 33 | centré|sans_cadre|75x75px
+  Lom-et-Djérem | Bertoua |  | Est | formatnum:26345 | formatnum:228691 | 9 | centré|sans_cadre|75x75px
+  Manyu | Mamfé |  | Sud-Ouest | formatnum:9565 | formatnum:177389 | 19 | centré|sans_cadre|75x75px
+  Mayo-Banyo | Banyo |  | Adamaoua | formatnum:8520 | formatnum:134902 | 16 | centré|sans_cadre|75x75px
+  Mayo-Danay | Yagoua |  | Extrême-Nord | formatnum:5303 | formatnum:522782 | 99 | centré|sans_cadre|75x75px
+  Mayo-Kani | Kaélé |  | Extrême-Nord | formatnum:5033 | formatnum:338448 | 67 | centré|sans_cadre|75x75px
+  Mayo-Louti | Guider |  | Nord | formatnum:4162 | formatnum:334312 | 80 | centré|sans_cadre|75x75px
+  Mayo-Rey | Tcholliré |  | Nord | formatnum:36529 | formatnum:242441 | 7 | centré|sans_cadre|75x75px
+  Mayo-Sava | Mora |  | Extrême-Nord | formatnum:2736 | formatnum:313413 | 115 | centré|sans_cadre|75x75px
+  Mayo-Tsanaga | Mokolo |  | Extrême-Nord | formatnum:4393 | formatnum:574864 | 131 | centré|sans_cadre|75x75px
+  Mbam-et-Inoubou | Bafia |  | Centre | formatnum:7125 | formatnum:153020 | 21 | centré|sans_cadre|75x75px
+  Mbam-et-Kim | Ntui |  | Centre | formatnum:25906 | formatnum:64540 | 2 | centré|sans_cadre|75x75px
+  Mbéré | Meiganga |  | Adamaoua | formatnum:14267 | formatnum:185473 | 13 | centré|sans_cadre|75x75px
+  Méfou-et-Afamba | Mfou |  | Centre | formatnum:3338 | formatnum:89805 | 27 | centré|sans_cadre|75x75px
+  Méfou-et-Akono | Ngoumou |  | Centre | formatnum:1329 | formatnum:57051 | 43 | centré|sans_cadre|75x75px
+  Meme | Kumba |  | Sud-Ouest | formatnum:3105 | formatnum:300138 | 97 | centré|sans_cadre|75x75px
+  Menchum | Wum |  | Nord-Ouest | formatnum:4469 | formatnum:157173 | 35 | centré|sans_cadre|75x75px
+  Menoua | Dschang |  | Ouest | formatnum:1380 | formatnum:372244 | 270 | centré|sans_cadre|75x75px
+  Mezam | Bamenda |  | Nord-Ouest | formatnum:1745 | formatnum:465644 | 267 | centré|sans_cadre|75x75px
+  Mfoundi | Yaoundé |  | Centre | 297 | formatnum:1248235 | formatnum:4203 | centré|sans_cadre|75x75px
+  Mifi | Bafoussam |  | Ouest | 402 | formatnum:290758 | 723 | centré|sans_cadre|75x75px
+  Momo | Mbengwi |  | Nord-Ouest | formatnum:1792 | formatnum:213402 | 119 | centré|sans_cadre|75x75px
+  Moungo | Nkongsamba |  | Littoral | formatnum:3723 | formatnum:452722 | 122 | centré|sans_cadre|75x75px
+  Mvila | Ebolowa |  | Sud | formatnum:8697 | formatnum:163826 | 19 | centré|sans_cadre|75x75px
+  Ndé | Bangangté |  | Ouest | formatnum:1524 | formatnum:123661 | 81 | centré|sans_cadre|75x75px
+  Ndian | Mundemba |  | Sud-Ouest | formatnum:6626 | formatnum:129659 | 20 | centré|sans_cadre|75x75px
+  Ngo-Ketunjia | Ndop |  | Nord-Ouest | formatnum:1126 | formatnum:174173 | 155 | centré|sans_cadre|75x75px
+  Nkam | Yabassi |  | Littoral | formatnum:6291 | formatnum:66979 | 11 | centré|sans_cadre|75x75px
+  Noun | Foumban |  | Ouest | formatnum:7687 | formatnum:434542 | 57 | centré|sans_cadre|75x75px
+  Nyong-et-Kéllé | Éséka |  | Centre | formatnum:6362 | formatnum:145181 | 23 | centré|sans_cadre|75x75px
+  Nyong-et-Mfoumou | Akonolinga |  | Centre | formatnum:6172 | formatnum:130321 | 21 | centré|sans_cadre|75x75px
+  Nyong-et-So'o | Mbalmayo |  | Centre | formatnum:3581 | formatnum:142907 | 40 | centré|sans_cadre|75x75px
+  Océan | Kribi |  | Sud | formatnum:11280 | formatnum:133062 | 12 | centré|sans_cadre|75x75px
+  Sanaga-Maritime | Édéa |  | Littoral | formatnum:9311 | formatnum:167661 | 18 | centré|sans_cadre|75x75px
+  Vallée-du-Ntem | Ambam |  | Sud | formatnum:7303 | formatnum:64747 | 9 | centré|sans_cadre|75x75px
+  Vina | Ngaoundéré |  | Adamaoua | formatnum:17196 | formatnum:247427 | 14 | centré|sans_cadre|75x75px
+  Wouri | Douala |  | Littoral | 923 | formatnum:1514978 | formatnum:1641 | centré|sans_cadre|75x75px
