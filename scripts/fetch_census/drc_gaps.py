@@ -166,20 +166,25 @@ def town_note(town: str, touching: tuple[str, ...], counted_in: str) -> str:
             f"median age or sex ratio is shown here.")
 
 
-def seats(wikitext: str) -> dict[str, str]:
-    """OCHA code -> seat, from the article's table of territories."""
-    out: dict[str, str] = {}
+def seats(wikitext: str) -> dict[tuple[str, str], str]:
+    """(territory, province), folded -> seat, from the article's table of territories.
+
+    By name and province, not by the table's codes: some of those are not
+    OCHA's (it gives 9102, OCHA's code for Dibaya, to Kamonia).
+    """
+    out: dict[tuple[str, str], str] = {}
     for table in tables(wikitext):
         if not table:
             continue
         head = [fold(c) for c in table[0]]
-        code = next((i for i, c in enumerate(head) if c == "pcode"), None)
+        name = next((i for i, c in enumerate(head) if c.startswith("territoire")), None)
         seat = next((i for i, c in enumerate(head) if c.startswith("cheflieu")), None)
-        if code is None or seat is None:
+        province = next((i for i, c in enumerate(head) if c.startswith("province")), None)
+        if name is None or seat is None or province is None:
             continue
         for row in table[1:]:
-            if len(row) > max(code, seat) and row[code].strip() and row[seat].strip():
-                out[f"CD{row[code].strip()}"] = row[seat].strip()
+            if len(row) > max(name, seat, province) and row[name].strip() and row[seat].strip():
+                out[(fold(row[name]), fold(row[province]))] = row[seat].strip()
     return out
 
 
@@ -226,7 +231,7 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
     shapes = {u["id"]: u for u in admin2}
     seat_cite = {"field": "capital", "name": f"French Wikipedia, {WIKI_TITLE}", "url": WIKI_URL,
                  "license": "CC BY-SA 4.0"}
-    written = 0
+    written = seated = cities = 0
     for code, sid in sorted(bound.items()):
         r = by_code[code]
         shape = shapes[sid]
@@ -250,9 +255,18 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
         else:
             fields = territory_fields(shown)
         sources = list(cite)
-        if code in seat_of:
-            fields["capital"] = seat_of[code]
+        seat = seat_of.get((fold(r["admin2Name_fr"]), fold(province)))
+        if seat:
+            fields["capital"] = seat
+            seated += 1
             sources.append(seat_cite)
+        elif len(siblings) > 1:
+            # Not among the territories: one of the cities OCHA lists beside them,
+            # whose seat is the city itself.
+            fields["capital"] = shape["name"]
+            fields["capital_note"] = (f"{shape['name']} is a city administered apart from the "
+                                      f"territories of {shown}; its seat is the city itself.")
+            cities += 1
         city = next((c for c, t in CITIES_COUNTED_IN.items() if t == shape["name"]), None)
         if city:
             ocha = next((x for x in adm2 if fold(x["admin2Name_fr"]) == fold(city)), None)
@@ -269,7 +283,7 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
                               sources=sources, **fields))
         written += 1
     report.append(f"  {written} territories and cities given reasons"
-                  f" ({sum(1 for c in bound if c in seat_of)} with a seat)")
+                  f" ({seated} territories with a seat, {cities} cities)")
     # Towns.
     by_name = defaultdict(list)
     for u in admin2:
