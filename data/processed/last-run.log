@@ -1,52 +1,163 @@
-gabon_census: https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf: 2,461,517 bytes, sha256 017f3bb741957d68b6cdc9ceeee6fa7f24bdd7ebaf20716031a63c046797357d
-  Abanga-Bignè: 14,941 (Abanga-Bigne)
-  Basse-Banio: 7,192 (Basse-Banio)
-  Bayi-Brikolo: 1,998 (Bayi-Brikolo)
-  Bendjè: 140,747 (Bendjé)
-  Boumi-Louetsi: 13,223 (Boumi-Louetsi)
-  Djouè: 2,178 (Djoue)
-  Djouori-Agnili: 4,210 (Djouori-Agnili)
-  Dola: 6,979 (Dola)
-  Douigni: 5,235 (Douigny)
-  Doutsita: 4,623 (Doutsila)
-  Douya-Onoyè: 37,699 (Douya-Onoye)
-  Etimbouè: 5,723 (Etimboué)
-  Haut-Komo: 3,403 (Haut-Como)
-  Haut-Ntem: 10,838 (Haut-Ntem)
-  Haute-Banio: 1,413 (Haute-Banio)
-  Ivindo: 31,073 (Ivindo)
-  Komo: 17,575 (Komo)
-  Komo-Mondah: 169,396 (Komo-Mondah + Owendo)
-  Komo-Ocèan: 553 (Komo-Océan)
-  Lèbombi-Leyou: 64,569 (Lebombi-Leyou)
-  Lèkabi-Lèwolo: 4,914 (Lekabi-Lewolo)
-  Lèkoko: 4,920 (Lekoko)
-  Lèkoni-Lèkori: 10,028 (Lekoni-Lekori)
-  Libreville: 703,940 (Libreville)
-  Lolo-Bouenguidi: 30,643 (Lolo-Bouenguidi)
-  Lombo-Bouenguidi: 4,635 (Lombo-Bouenguidi)
-  Lopè: 12,382 (Lopé)
-  Louetsi-Bibaka: 2,734 (Louetsi-Bibaka)
-  Louetsi-Wano: 9,750 (Louetsi-Wano)
-  Mongo: 2,602 (Mongo)
-  Mougalaba: 1,490 (Mougalaba)
-  Mougoutsi: 31,789 (Mougoutsi)
-  Mpassa: 129,694 (Mpassa)
-  Mouloundou: 27,750 (Mulundu)
-  Mvoung: 4,022 (Mvoung)
-  Ndolou: 5,727 (Ndolou)
-  Ndougou: 11,092 (Ndougou)
-  Noya: 4,225 (Noya)
-  Ntem: 49,712 (Ntem)
-  Offouè-Onoyè: 2,743 (Offoué-Onoye)
-  Ogoouè et Lacs: 54,346 (Ogooué et Lacs)
-  Ogoouè-Lètili: 2,791 (Ogooué-Letili)
-  Ogoulou: 8,361 (Ogoulou)
-  Okano: 16,630 (Okano)
-  Plateaux: 9,054 (Plateaux)
-  Sèbè-Brikolo: 16,443 (Sebe-Brikolo)
-  Tsamba-Magotsi: 14,875 (Tsamba-Magotsi)
-  Woleu: 74,403 (Woleu)
-  Zadiè: 15,816 (Zadié)
-  9 provinces and 49 department polygons written
-  wrote data/processed/gabon_census.json (112 kB)
+probe_pdf: https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-resultats-globaux-rgph5_rgph.pdf
+  7,141,850 bytes
+  56 pages
+probe_pdf: 56 pages, printing [28, 29, 30, 31]
+
+--- page 28 ----------------------------------------------------
+28
+CINQUIEME RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT (RGPH5) du Mali
+Tableau 2 : Répartition de la population résidente par groupe d’âge selon le sexe, le rapport de masculinité (RM)
+et la proportion des femmes
+Groupes d’âge SEXE RM % FemmesHomme Femme Ensemble
+0-4 ans 2 084 863 1 948 632 4 033 495 107,0 48,3
+5-9 ans 1 875 017 1 742 435 3 617 452 107,6 48,2
+10-14 ans 1 513 917 1 396 651 2 910 568 108,4 48,0
+15-19 ans 1 144 723 1 184 800 2 329 523 96,6 50,9
+20-24 ans 911 329 1 060 116 1 971 445 86,0 53,8
+25-29 ans 682 875 812 320 1 495 195 84,1 54,3
+30-34 ans 645 650 734 579 1 380 229 87,9 53,2
+35-39 ans 527 104 544 656 1 071 760 96,8 50,8
+40-44 ans 465 936 455 273 921 209 102,3 49,4
+45-49 ans 343 450 305 177 648 627 112,5 47,0
+50-54 ans 301 737 275 767 577 504 109,4 47,8
+55-59 ans 215 317 191 863 407 180 112,2 47,1
+60-64 ans 203 082 181 103 384 185 112,1 47,1
+65-69 ans 135 367 112 990 248 357 119,8 45,5
+70-74 ans 97 470 87 726 185 196 111,1 47,4
+75-79 ans 55 594 48 408 104 002 114,8 46,5
+80-84 ans 31 738 32 454 64 192 97,8 50,6
+85-89 ans 12 059 11 801 23 860 102,2 49,5
+90-94 ans 5 649 7 484 13 133 75,5 57,0
+95-99 ans 2 601 3 048 5 649 85,3 54,0
+100 ans ou plus 1 077 1 651 2 728 65,2 60,5
+Ensemble       11 256 555       11 138 934       22 395 489 101,1 49,7
+1.1. Répartition de la population résidente par région, milieu de résidence selon certaines caractéristiques
+sociodémographiques
+L’actuel découpage territorial se réfère à la Loi N°2023 - 006 du 13 mars 2023 portant création des circonscriptions adminis-
+tratives en république du Mali et subdivise le pays en 19 régions et un district correspondant à la capitale du pays.
+La répartition de la population met en évidence des disparités importantes entre les régions. Le district de Bamako, où réside
+une population de 4 227 569 habitants, soit 18,9 % de l’ensemble de la population, est le plus peuplé. Hormis le District de
+Bamako, la région de Ségou, avec 11 % de la population du pays est la région la plus peuplée. Par contre, la région de Kidal
+reste la moins peuplée avec 83 192 habitants, soit 0,4 % de l’ensemble de la population (Tableau 3).
+
+--- page 29 ----------------------------------------------------
+29
+CINQUIEME RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT (RGPH5) du Mali
+Toutes les régions du Nord (Tombouctou, Gao, Kidal, Taoudenni et Ménaka) et du Centre (Mopti, Douentza, Bandiagara) ont
+chacune moins d’un million d’habitants. Par contre, dans le Sud, les régions ayant moins d’un million d’habitants sont : Nioro,
+Kita, Dioïla, Nara, San. Ces quatre (04) régions sont toutes des régions nouvellement créées.
+Par ailleurs, quatre régions ont une population entre un et deux millions d’habitants (Kayes, Sikasso, Bougouni et Koutiala).
+Les régions de Koulikoro, Ségou et le district de Bamako ont chacune plus deux millions d’habitants.
+La proportion des femmes est plus faible dans les régions du Nord (Tombouctou, Gao, Kidal, Taoudenni et Ménaka) et au
+centre (Mopti).
+Tableau 3 : Répartition de la population résidente par région selon le sexe, le poids démographique, le rapport
+de masculinité et la proportion des femmes
+REGION SEXE POIDS DEMO-GRAPHIQUE (%) RM % FemmesMasculin Féminin Ensemble
+Kayes           921 044           919 285        1 840 329 8,2 100,2 50,0
+Koulikoro        1 142 015         1 113 142        2 255 157 10,1 102,6 49,4
+Sikasso           760 239           772 884        1 533 123 6,8 98,4 50,4
+Ségou        1 231 931         1 223 332        2 455 263 11,0 100,7 49,8
+Mopti           483 089           452 490           935 579 4,2 106,8 48,4
+Tombouctou           504 864           469 414           974 278 4,4 107,6 48,2
+Gao           373 996           353 521           727 517 3,2 105,8 48,6
+Kidal             45 229             37 963             83 192 0,4 119,1 45,6
+Taoudenni             55 284             45 074           100 358 0,4 122,7 44,9
+Ménaka           170 205           148 671           318 876 1,4 114,5 46,6
+Nioro           333 731           344 330           678 061 3,0 96,9 50,8
+Kita           340 853           340 818           681 671 3,0 100,0 50,0
+Dioïla           338 396           337 569           675 965 3,0 100,2 49,9
+Nara           154 080           153 697           307 777 1,4 100,2 49,9
+Bougouni           794 189           776 790        1 570 979 7,0 102,2 49,4
+Koutiala           573 069           596 813        1 169 882 5,2 96,0 51,0
+San           418 353           402 454           820 807 3,7 104,0 49,0
+Douentza             87 186             83 003           170 189 0,8 105,0 48,8
+Bandiagara           433 502           435 414           868 916 3,9 99,6 50,1
+Bamako        2 095 300         2 132 269        4 227 569 18,9 98,3 50,4
+Ensemble       11 256 555       11 138 934       22 395 489 100,0 101,1 49,7
+
+--- page 30 ----------------------------------------------------
+30
+CINQUIEME RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT (RGPH5) du Mali
+Le rapport de masculinité présente également des disparités entre les régions. Il montre un nombre supérieur d’hommes
+par rapport aux femmes dans toutes les régions, sauf les régions de Bandiagara, Sikasso, Nioro, Koutiala et le District de
+Bamako où on observe plus de femmes que d’hommes.
+Graphique 6 : Rapport de masculinité (RM) selon la région
+96,0
+96,9
+98,3
+98,4
+99,6
+100,0
+100,2
+100,2
+100,2
+100,7
+101,1
+102,2
+102,6
+104,0
+105,0
+105,8
+106,8
+107,6
+114,5
+119,1
+122,7
+0,0 2 0,0 4 0,0 6 0,0 8 0,0 10 0,0 12 0,0 14 0,0
+Koutiala
+Nioro
+Bama ko
+Sika ss o
+Bandiaga ra
+Kita
+Kayes
+Dioila
+Nara
+Segou
+ Mali
+Bou go uni
+Koulikoro
+San
+Do uentza
+Gao
+M op ti
+Tombouc …
+Menaka
+K ida l
+Tao udenni
+
+--- page 31 ----------------------------------------------------
+31
+CINQUIEME RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT (RGPH5) du Mali
+En 2022, près de sept personnes sur dix (69,6 %) vivent en milieu rural. Les taux d’urbanisation les plus élevés sont observés
+à Bamako (99,7 %) et dans les régions de Kidal (32,7 %) et Sikasso (28,8 %). En outre, plus de la moitié de la population
+résidente urbaine vit dans le district de Bamako (62 %) suivi de très loin par les régions de Sikasso, Ségou et Koulikoro
+avec respectivement 6,5 %, 4,7 % et 4,0 %. Par contre, c’est dans les régions de Dioïla, Nara, Bandiagara, Douentza, Kidal,
+Taoudenni et Ménaka (en majorité des régions nouvellement créées) que cette proportion est, de loin, la plus faible (moins
+de 1 %) (Tableau 4)..
+Tableau 4 : Répartition de la population résidente par région selon le milieu de résidence, le taux d’urbanisation et
+le pourcentage d’urbain dans l’ensemble urbain
+REGION Milieu de résidence Taux d’urbanisa-tion (%) % Urbain dans l’ensemble urbainUrbain Rural Ensemble
+Kayes                252 218             1 588 111             1 840 329 13,7 3,7
+Koulikoro                268 940             1 986 217             2 255 157 11,9 4,0
+Sikasso                441 315             1 091 808             1 533 123 28,8 6,5
+Ségou                320 156             2 135 107             2 455 263 13,0 4,7
+Mopti                214 884                720 695                935 579 23,0 3,2
+Tombouctou                155 602                818 676                974 278 16,0 2,3
+Gao                144 225                583 292                727 517 19,8 2,1
+Kidal                  27 227                  55 965                  83 192 32,7 0,4
+Taoudenni                  11 024                  89 334                100 358 11,0 0,2
+Ménaka                  45 133                273 743                318 876 14,2 0,7
+Nioro                  65 082                612 979                678 061 9,6 1,0
+Kita                113 611                568 060                681 671 16,7 1,7
+Dioïla                   1 089                674 876                675 965 0,2 0,0
+Nara*                         -                  307 777                307 777 0,0 0,0
+Bougouni                113 088             1 457 891             1 570 979 7,2 1,7
+Koutiala                217 402                952 480             1 169 882 18,6 3,2
+San                119 706                701 101                820 807 14,6 1,8
+Douentza                  42 221                127 968                170 189 24,8 0,6
+Bandiagara                  31 872                837 044                868 916 3,7 0,5
+Bamako             4 216 731                  10 838             4 227 569 99,7 62,0
+Ensemble             6 801 527           15 593 962           22 395 489 30,4 100,0
+* Toutes les communes de la région de Nara sont rurales selon la Loi n°2023- 007 du 13 mars 2023 portant création
+des collectivités territoriales en république du Mali
