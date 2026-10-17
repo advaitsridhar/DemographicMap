@@ -14,12 +14,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 19.1,
+      "unit": "years",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 1005,
+      "unit": "males_per_1000_females",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -32,17 +36,18 @@
     },
     "sources": [
       {
-        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
-        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
-        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
-        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
-        "year": 2022,
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2009,
+        "license": "CC BY-IGO, published via HDX",
         "field": "median_age/sex_ratio"
       }
     ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "92416918B70420899930674"
+    "shape_id": "92416918B70420899930674",
+    "median_age_note": "The 2009 census's count of the district as drawn here, as it stood before 2023, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle.",
+    "sex_ratio_note": "The 2009 census's count of the district as drawn here, as it stood before 2023: 907,643 men and 902,723 women. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle."
   },
   {
     "id": "MLI-RGPH5-region-gao",
@@ -218,12 +223,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 takes in ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 15.5,
+      "unit": "years",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 takes in ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 984,
+      "unit": "males_per_1000_females",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -236,17 +245,18 @@
     },
     "sources": [
       {
-        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
-        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
-        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
-        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
-        "year": 2022,
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2009,
+        "license": "CC BY-IGO, published via HDX",
         "field": "median_age/sex_ratio"
       }
     ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "92416918B61022065682725"
+    "shape_id": "92416918B61022065682725",
+    "median_age_note": "The 2009 census's count of the region as drawn here, as it stood before 2023, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 takes in ground drawn here in the Kati cercle.",
+    "sex_ratio_note": "The 2009 census's count of the region as drawn here, as it stood before 2023: 1,201,061 men and 1,221,047 women. The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 takes in ground drawn here in the Kati cercle."
   },
   {
     "id": "MLI-RGPH5-region-mopti",
@@ -263,12 +273,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 15.9,
+      "unit": "years",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 978,
+      "unit": "males_per_1000_females",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -281,17 +295,18 @@
     },
     "sources": [
       {
-        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
-        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
-        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
-        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
-        "year": 2022,
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2009,
+        "license": "CC BY-IGO, published via HDX",
         "field": "median_age/sex_ratio"
       }
     ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "92416918B29694163592634"
+    "shape_id": "92416918B29694163592634",
+    "median_age_note": "The 2009 census's count of the region as drawn here, as it stood before 2023, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this region's: the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti.",
+    "sex_ratio_note": "The 2009 census's count of the region as drawn here, as it stood before 2023: 1,007,009 men and 1,029,200 women. The 2022 census counts the regions of 2023, and their lines cross this region's: the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti."
   },
   {
     "id": "MLI-RGPH5-region-segou",
@@ -308,12 +323,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Koutiala region of 2023 took in part of the cercle of Bla, drawn here in Ségou, and the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 15.7,
+      "unit": "years",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Koutiala region of 2023 took in part of the cercle of Bla, drawn here in Ségou, and the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 979,
+      "unit": "males_per_1000_females",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -326,17 +345,18 @@
     },
     "sources": [
       {
-        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
-        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
-        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
-        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
-        "year": 2022,
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2009,
+        "license": "CC BY-IGO, published via HDX",
         "field": "median_age/sex_ratio"
       }
     ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "92416918B20164850262385"
+    "shape_id": "92416918B20164850262385",
+    "median_age_note": "The 2009 census's count of the region as drawn here, as it stood before 2023, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this region's: the Koutiala region of 2023 took in part of the cercle of Bla, drawn here in Ségou, and the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti.",
+    "sex_ratio_note": "The 2009 census's count of the region as drawn here, as it stood before 2023: 1,156,665 men and 1,181,684 women. The 2022 census counts the regions of 2023, and their lines cross this region's: the Koutiala region of 2023 took in part of the cercle of Bla, drawn here in Ségou, and the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti."
   },
   {
     "id": "MLI-RGPH5-region-sikasso",
@@ -353,12 +373,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué from Koulikoro, and the Koutiala region of 2023 part of the cercle of Bla from Ségou. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 15.1,
+      "unit": "years",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué from Koulikoro, and the Koutiala region of 2023 part of the cercle of Bla from Ségou. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -371,17 +395,18 @@
     },
     "sources": [
       {
-        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
-        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
-        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
-        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
-        "year": 2022,
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2009,
+        "license": "CC BY-IGO, published via HDX",
         "field": "median_age/sex_ratio"
       }
     ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "92416918B9364304684584"
+    "shape_id": "92416918B9364304684584",
+    "median_age_note": "The 2009 census's count of the region as drawn here, as it stood before 2023, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué from Koulikoro, and the Koutiala region of 2023 part of the cercle of Bla from Ségou.",
+    "sex_ratio_note": "The 2009 census's count of the region as drawn here, as it stood before 2023: 1,303,903 men and 1,339,276 women. The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué from Koulikoro, and the Koutiala region of 2023 part of the cercle of Bla from Ségou."
   },
   {
     "id": "MLI-RGPH5-region-tombouctou",
@@ -502,7 +527,10 @@
       "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -513,10 +541,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "8926073B56917716124995"
+    "shape_id": "8926073B56917716124995",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
   },
   {
     "id": "MLI-cercle-kayes-bafoulabe",
@@ -580,11 +617,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+      "value": 19.1,
+      "unit": "years",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 1005,
+      "unit": "males_per_1000_females",
+      "year": 2009,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
     },
     "religion": {
       "status": "not_available"
@@ -595,10 +637,20 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2009,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "median_age/sex_ratio"
+      }
+    ],
     "country": "MLI",
     "match_by": "shape_id",
-    "shape_id": "8926073B70420899930674"
+    "shape_id": "8926073B70420899930674",
+    "median_age_note": "The 2009 census's count of the district as drawn here, as it stood before 2023, drawn as one cercle, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle.",
+    "sex_ratio_note": "The 2009 census's count of the district as drawn here, as it stood before 2023, drawn as one cercle: 907,643 men and 902,723 women. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle."
   },
   {
     "id": "MLI-cercle-koulikoro-banamba",
