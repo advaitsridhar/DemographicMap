@@ -43,7 +43,7 @@ The governorates are written the same way from their own rows and pages.
 **Not written.** The fourteen outlines labelled Zemam Out -- the land outside
 the zimam, the bounds of the towns and villages, which no census table counts
 as a district -- and the port police districts, which CAPMAS lists without a
-population, say so. Hala'ib, the kism of the triangle south of 22°N that Egypt
+population, say so. Hala'ib, the kism of the triangle north of 22°N that Egypt
 and Sudan both claim, is not drawn on Egypt's side; it is never written, and
 the Red Sea governorate is written without it.
 
@@ -217,22 +217,19 @@ def parse_pyramid(html: str) -> list[tuple[int, int | None, int, int]] | None:
         return None
     for chart in json.loads(m.group(1)):
         if chart.get("name") == "Age Distribution" and chart.get("type") == "pyramid":
-            out = []
+            # Ten-year groups to an open 90+; a page leaves out a group no
+            # one is in, which is a group of nobody, not a break.
+            found: dict[int, tuple[int, int]] = {}
             for label, men, women in chart["data"][1:]:
                 g = re.match(r"(\d+)\s*(?:-\s*(\d+)|\+)", str(label))
-                if not g:
+                low = int(g.group(1)) if g else -1
+                high = int(g.group(2)) if g and g.group(2) else None
+                if not g or low % 10 or (high is not None and high != low + 9) \
+                        or (high is None and low != 90) or low > 90:
                     raise SystemExit(f"egypt_census: an age group reads {label!r}")
-                out.append((int(g.group(1)), int(g.group(2)) if g.group(2) else None,
-                            abs(int(men)), abs(int(women))))
-            out.sort(key=lambda r: r[0])
-            edge = 0
-            for low, high, _, _ in out:
-                if low != edge:
-                    raise SystemExit(f"egypt_census: the age groups break at {low}")
-                edge = high + 1 if high is not None else None
-            if out and out[-1][1] is None:
-                return out
-            raise SystemExit("egypt_census: the age groups have no open last group")
+                found[low] = (abs(int(men)), abs(int(women)))
+            return [(low, None if low == 90 else low + 9, *found.get(low, (0, 0)))
+                    for low in range(0, 100, 10)]
     return None
 
 
@@ -675,7 +672,7 @@ def governorates(cp: dict[str, Any], gov_shape: dict[str, dict[str, Any]],
                 pyr = None
             less = " " + " ".join(
                 f"It leaves out the kism of {clean(c['name'])} ({c['p2023']:,} people in "
-                "2023), in the triangle south of the 22nd parallel that Egypt and Sudan both "
+                "2023), in the triangle north of the 22nd parallel that Egypt and Sudan both "
                 "claim." for c in claimed)
         aswan = (" Egypt's count does not include Bir Tawil, the uninhabited land south of the "
                  "22nd parallel that neither Egypt nor Sudan claims." if gov == "28" else "")
@@ -728,7 +725,7 @@ def main() -> int:
              if str(r.get("name", "")).lower().endswith(".xlsx") and "2006" in str(r.get("name"))]
     if len(found) != 1:
         raise SystemExit(f"egypt_census: {len(found)} 2006 workbooks on HDX")
-    hdx_licence = package.get("license_title") or "HDX dataset licence"
+    hdx_licence = f"HDX licence: {package.get('license_title') or 'not stated'}"
     blob = http_get(found[0]["url"], binary=True, cache=False, timeout=120)
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     districts, provinces = read_hdx(book)

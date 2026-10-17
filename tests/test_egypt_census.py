@@ -76,10 +76,16 @@ class Pages(unittest.TestCase):
         self.assertEqual(pyr[-1], (90, None, 42, 52))
         self.assertIsNone(ec.parse_pyramid("<p>no ages</p>"))
 
-    def test_a_broken_pyramid_stops_the_run(self):
-        html = pyramid_html([("90+ years", 1, 1), ("0-9 years", 1, 1)])
+    def test_a_group_no_one_is_in_is_a_group_of_nobody(self):
+        pyr = ec.parse_pyramid(pyramid_html([("80-89 years", 1, 2), ("0-9 years", 3, 4)]))
+        self.assertEqual(len(pyr), 10)
+        self.assertEqual(pyr[0], (0, 9, 3, 4))
+        self.assertEqual(pyr[5], (50, 59, 0, 0))
+        self.assertEqual(pyr[-1], (90, None, 0, 0))
+
+    def test_groups_of_another_width_stop_the_run(self):
         with self.assertRaises(SystemExit):
-            ec.parse_pyramid(html)
+            ec.parse_pyramid(pyramid_html([("0-4 years", 1, 1), ("5+ years", 1, 1)]))
 
 
 class Binding(unittest.TestCase):
