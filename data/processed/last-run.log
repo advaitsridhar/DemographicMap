@@ -1,79 +1,33 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  P01 GEZIRA: its age groups make 3,549,025 of 3,549,026 (rounding)
-  P01 KASSALA: its age groups make 1,769,886 of 1,769,887 (rounding)
-  P01 KHARTOUM: 2,725,185 men and 2,456,002 women against 5,181,186 (rounding)
-  P01 KHARTOUM: its age groups make 5,181,187 of 5,181,186 (rounding)
-  P01 NORTH DARFUR: its age groups make 2,089,799 of 2,089,801 (rounding)
-  P01 NORTH KORDOFAN: its age groups make 2,888,970 of 2,888,969 (rounding)
-  P01 RED SEA: its age groups make 1,368,329 of 1,368,330 (rounding)
-  P01 SENNAR: its age groups make 1,272,765 of 1,272,766 (rounding)
-  P01 SOUTH DARFUR: 2,104,363 men and 1,950,239 women against 4,054,603 (rounding)
-  P01 SOUTH DARFUR: its age groups make 4,054,602 of 4,054,603 (rounding)
-  P01 SOUTH KORDOFAN: its age groups make 1,389,075 of 1,389,076 (rounding)
-  P01 WHITE NILE: 834,286 men and 879,073 women against 1,713,360 (rounding)
-  retabulation: 18 states, 173 localities, 30,894,000 people; P01: 15 states of 2008
-  state BLUE NILE: unchanged since 2008 (816,048 in P01 of 832,112); median 16.1
-  BLUE NILE: 6 localities in 2008, 7 drawn; divided since, none written
-  state CENTRAL DARFUR: 553,515 as drawn in 2020, none in P01; no census median
-  CENTRAL DARFUR: 7 localities in 2008, 9 drawn; divided since, none written
-  state EAST DARFUR: 1,216,719 as drawn in 2020, none in P01; no census median
-  EAST DARFUR: 9 localities, 9 polygons
-    ADEELA -> 'Adila' by spelling (0.73)
-    AL FIRDOSE -> 'Al Firdous' by spelling (0.89)
-    ASALAYA -> 'Assalaya' by spelling (0.93)
-    SHIAIRYYA -> "Shia'ria" by spelling (0.75)
-  state GEDAREF: unchanged since 2008 (1,334,947 in P01 of 1,348,378); median 16.6
-  GEDAREF: 12 localities, 12 polygons
-    AL FASHAQAA -> 'Al Fashaga' by spelling (0.84)
-    AL FĀW -> 'Al Fao' by spelling (0.80)
-    AL MAFĀZAH -> 'Al Mafaza' by spelling (0.94)
-    ALRRAHA -> 'Ar Rahad' by spelling (0.86)
-    BASUNDA -> 'Basundah' by spelling (0.93)
-    QALA‘ AN NAḨL -> "Gala'a Al Nahal" by spelling (0.73)
-  state GEZIRA: unchanged since 2008 (3,549,026 in P01 of 3,575,280); median 19.3
-  GEZIRA: 7 localities in 2008, 8 drawn; divided since, none written
-  state KASSALA: unchanged since 2008 (1,769,887 in P01 of 1,789,806); median 19.0
-  KASSALA: 11 localities, 11 polygons
-    HALFĀ AL GADĪDAH -> 'Halfa Aj Jadeedah' by spelling (0.76)
-    NAHR ATBARA -> 'Reifi Nahr Atbara' by spelling (0.80)
-  state KHARTOUM: unchanged since 2008 (5,181,186 in P01 of 5,274,321); median 22.0
-  KHARTOUM: 7 localities, 7 polygons
-    KARARI -> 'Karrari' by spelling (0.92)
-    OMDURMAN -> 'Um Durman' by spelling (0.88)
-    SHAREQ AL NEEL -> 'Sharg An Neel' by spelling (0.78)
-    UMM BADDA -> 'Um Bada' by spelling (0.86)
-  state NORTH DARFUR: unchanged since 2008 (2,089,801 in P01 of 2,113,626); median 17.0
-  NORTH DARFUR: 14 localities in 2008, 17 drawn; divided since, none written
-  state NORTHERN: unchanged since 2008 (686,098 in P01 of 699,065); median 22.2
-  NORTHERN: 7 localities, 7 polygons
-  state NORTH KORDOFAN: 2,039,495 as drawn in 2020, 2888969 in P01; no census median
-  NORTH KORDOFAN: 8 localities, 8 polygons
-    BĀRAH -> 'Bara' by spelling (0.89)
-    OM DAMA HAJ AHMAD -> 'Um Dam Haj Ahmed' by spelling (0.81)
-    SHEEKAN -> 'Sheikan' by spelling (0.86)
-    UMM RUWABA -> 'Um Rawaba' by spelling (0.82)
-  RED SEA: written without the claimed ['ḨALĀ’IB']
-  state RED SEA: P01 counts it with ḨALĀ’IB; no census median
-  RED SEA: 9 localities, 9 polygons
-    AL GHANIB -> 'Al Ganab' by spelling (0.80)
-    TOKĀR -> 'Tawkar' by spelling (0.73)
-  state RIVER NILE: unchanged since 2008 (1,097,356 in P01 of 1,120,441); median 21.5
-  RIVER NILE: 6 localities in 2008, 7 drawn; divided since, none written
-  state SENNAR: unchanged since 2008 (1,272,766 in P01 of 1,285,058); median 17.9
-  SENNAR: 7 localities, 7 polygons
-    AD DINDAR -> 'Ad Dinder' by spelling (0.88)
-    SINGA -> 'Sinja' by spelling (0.80)
-  state SOUTH DARFUR: 2,876,875 as drawn in 2020, 4054603 in P01; no census median
-  SOUTH DARFUR: 20 localities in 2008, 21 drawn; divided since, none written
-  state SOUTH KORDOFAN: 867,918 as drawn in 2020, 1389076 in P01; no census median
-  SOUTH KORDOFAN: 15 localities in 2008, 17 drawn; divided since, none written
-  state WEST DARFUR: 754,710 as drawn in 2020, 1292714 in P01; no census median
-  WEST DARFUR: 7 localities in 2008, 8 drawn; divided since, none written
-  WEST KORDOFAN: written without the claimed ['ABYEI']
-  state WEST KORDOFAN: 1,419,983 as drawn in 2020, none in P01; no census median
-  WEST KORDOFAN: 11 localities in 2008, 13 drawn; divided since, none written
-  state WHITE NILE: unchanged since 2008 (1,713,360 in P01 of 1,730,588); median 18.3
-  WHITE NILE: 8 localities in 2008, 9 drawn; divided since, none written
-  18 states and 70 of 189 localities bound
-  wrote data/processed/sudan_census.json (149 kB)
+  read https://web.archive.org/web/20221113190955id_/https://www.bos.gov.ls/New%20Folder/Copy%20of%20Demography/2016%20POPULATION%20CENSUS%20VILLAGE%20LIST.zip: 1,116,444 bytes, sha256 9cdb569a497195f5e05e179ce1abc5f27fd157ba10d8c07fbeb338fb79c1bab4
+  40 lines whose men and women do not make their total: ['HA MAKAI (47 + 28 against 70)', 'Total (223 + 191 against 409)', 'MALEHLAKANA (72 + 63 against 137)', 'Total (298 + 317 against 617)', 'TETETE HA SEKHONYANA (206 + 209 against 406)', 'Total (271 + 294 against 556)', 'HA LUKASE (195 + 232 against 423)', 'HA LESUPI LEJOE-MOTHO  (155 + 343 against 734)', 'KHOMO-NALA HA SENYOKOTHO  (258 + 263 against 522)', 'Total (265 + 235 against 490)', 'Total (234 + 284 against 540)', 'LETSOAPANG HA MONKI (170 + 177 against 860)']
+  69 enumeration areas whose villages do not make their Total line: ["('Leribe', 'Matsoku', '2060132023'): villages [269, 292, 557], Total line [269, 288, 557]", "('Leribe', 'Matsoku', '2060133016'): villages [213, 195, 408], Total line [220, 200, 420]", "('Leribe', 'Matsoku', '2060133020'): villages [270, 271, 541], Total line [265, 265, 530]", "('Leribe', 'Matsoku', '2060133027'): villages [214, 198, 412], Total line [214, 202, 416]", "('Leribe', 'Matsoku', '2060133028'): villages [236, 426, 898], Total line [236, 213, 449]", "('Leribe', 'Bolahla', '2070223035'): villages [348, 334, 683], Total line [349, 334, 683]", "('Leribe', 'Mamafubelu', '2090413022'): villages [291, 286, 577], Total line [293, 291, 584]", "('Leribe', 'Menkhoaneng', '2100523043'): villages [393, 382, 775], Total line [389, 377, 766]", "('Leribe', 'Sephokong', '2120713003'): villages [325, 287, 612], Total line [433, 472, 905]", "('Leribe', 'Sephokong', '2120713029'): villages [262, 234, 496], Total line [265, 235, 490]", "('Leribe', 'Hlotse', '2131211016'): villages [234, 284, 518], Total line [234, 284, 540]", "('Leribe', 'Hlotse', '2131211017'): villages [189, 203, 905], Total line [189, 203, 392]"]
+  district ['Berea']: 262,739 in the list, 262616 in the census's district table
+  district ['Botha-Bothe']: 118,176 in the list, 118242 in the census's district table
+  district ['Leribe']: 338,115 in the list, 337521 in the census's district table
+  district ['Mafeteng']: 178,372 in the list, 178222 in the census's district table
+  district ['Maseru']: 522,277 in the list, 519186 in the census's district table
+  district ["Mohale's Hoek"]: 163,907 in the list, 165590 in the census's district table
+  district ['Mokhotlong']: 100,442 in the list, 100442 in the census's district table
+  district ["Qacha's Nek"]: 74,547 in the list, 74566 in the census's district table
+  district ['Quthing']: 115,274 in the list, 115469 in the census's district table
+  district ['Thaba-Tseka']: 135,213 in the list, 135347 in the census's district table
+  10,965 villages in 79 councils; 5,675 enumeration areas with a Total line, 3 without; 2,009,062 people
+  district Berea: 262,739
+  district Botha-Bothe: 118,176
+  district Leribe: 338,115
+  district Mafeteng: 178,372
+  district Maseru: 522,277
+  district Mohale's Hoek: 163,907
+  district Mokhotlong: 100,442
+  district Qacha's Nek: 74,547
+  district Quthing: 115,274
+  district Thaba-Tseka: 135,213
+    council on no polygon: Berea / Maseru (60,936)
+    council on no polygon: Maseru / Mazenod (17,193)
+    council on no polygon: Quthing / Tsitsong (21,075)
+    council on no polygon: Thaba-Tseka / Nts'upe (1,664)
+    polygon with no council: Maseru (Berea Distict) (in Berea)
+    polygon with no council: Mphaki (in Quthing)
+    polygon with no council: Thota-ea-Moli (in Maseru)
+  78 councils written
+  wrote data/processed/lesotho_census.json (166 kB)
