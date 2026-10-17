@@ -22,6 +22,27 @@ newer is shown. The sex ratio and the median age are the census's own
 measurement and stand in front of the projection's: a projection carries the
 census's structure forward, it does not measure it again.
 
+**Reading Volume IV.** Its text layer was typeset from spreadsheets and shows
+it, so the reader takes each table by position and lets the sums decide:
+
+* a figure broken at the end of a line ("64,80" over "9") is put back
+  together, and a TOTAL row whose figures run over several lines is read
+  across them;
+* the age groups are read in order, 0-4 to 85+, whatever their labels say:
+  Kebbi's and Nasarawa's print 5-9 and 10-14 as the dates "05-Sep" and
+  "Oct-14", the Federal Capital Territory's drop the dashes ("1014"), Lagos's
+  and Niger's print 5-9 as "4 - 9", and one of Babura's is garbled; every
+  label that is not its group's is logged;
+* a table's name is the nearest line above its TOTAL row that is neither a
+  heading (nor a heading word the line breaks in two, "Femal" / "es") nor a
+  row of figures, and the table after a page of single years of age is
+  Nigeria's or a state's, every other one an area of the state before it.
+
+**Volume III names the areas.** Volume IV prints Sabon Gari's table under
+Makarfi's name, so each Volume IV table is paired with the Volume III row of
+its state carrying the same men, women and persons, and both names are
+offered to the boundary file; every disagreement is logged.
+
 **Bakassi.** The 2006 census counted Bakassi local government area while it
 still held the Bakassi peninsula, which passed to Cameroon in 2008. The
 polygon drawn under that name is the 256 km2 left on the Nigerian side, so the
@@ -32,10 +53,7 @@ area's figures are not written on it, and Cross River's note says that its
 total, in the total and in every age group, and the age groups make the
 total; a table that fails is written without the figure it cannot give, and
 says why. Every state's areas make the state, the states make Nigeria, and
-Nigeria is 140,431,790 (71,345,488 men, 69,086,302 women). Volume III's men
-and women for each state's areas are compared with Volume IV's, area for area
-(matched by their counts, so a spelling that differs between the two volumes
-cannot hide a difference), and every difference is logged. Every polygon is
+Nigeria is 140,431,790 (71,345,488 men, 69,086,302 women). Every polygon is
 bound to one census area and every census area but Bakassi to one polygon,
 within its state.
 
@@ -71,14 +89,20 @@ UNIT = "males_per_100_females"
 
 # Table DS5's age groups, in order: (low, high); the open top group has no high.
 GROUPS = [(a, a + 4) for a in range(0, 85, 5)] + [(85, None)]
+# Labels a spreadsheet turned into dates.
+DATE_LABELS = {"05-sep": (5, 9), "5-sep": (5, 9), "sep-05": (5, 9), "oct-14": (10, 14),
+               "14-oct": (10, 14)}
 
 NUM = r"\d[\d,]*"
-TOTAL = re.compile(rf"^TOTAL\s+({NUM})\s+({NUM})\s+({NUM})\s*$")
-GROUP = re.compile(rf"^(\d+)\s*(?:[-–—]\s*(\d+)|\+)\s+({NUM})\s+({NUM})\s+({NUM})\s*$")
-# Words of the table's headings and the page's running head; a line of these
-# alone is never an area's name.
+FIGURE = re.compile(rf"^{NUM}$")
+# A row: whatever label, then exactly three figures.
+ROW = re.compile(rf"^(?P<label>.*?)\s*(?P<a>{NUM})\s+(?P<b>{NUM})\s+(?P<c>{NUM})\s*$")
+# A figure broken at the end of a line: its last group has one or two digits.
+BROKEN = re.compile(r"\d,\d{1,2}$")
+# Words of the table's headings and the page's running head; a line of these,
+# or of pieces of them, is never an area's name.
 HEADING = frozenset("""table ds5 distribution of population by five year age groups and sex
-total males females - – single years both sexes male female""".split())
+total males females single years both sexes male female""".split())
 
 # The census's state names -> the boundary file's, reduced (see key()).
 STATES = {"fctabuja": "abujafederalcapitalterritory", "fct": "abujafederalcapitalterritory",
@@ -91,8 +115,10 @@ bayelsa benue borno crossriver delta ebonyi edo ekiti enugu gombe imo jigawa kad
 katsina kebbi kogi kwara lagos nasarawa niger ogun ondo osun oyo plateau rivers sokoto taraba
 yobe zamfara""".split())
 # (state, the boundary file's reduced name) -> the census's reduced name,
-# within the same state; each checked against Volume IV's spelling.
-ALIASES: dict[tuple[str, str], str] = {}
+# within the same state; each checked against both volumes' spellings.
+ALIASES: dict[tuple[str, str], str] = {
+    ("abujafederalcapitalterritory", "municipalareacouncil"): "abujamunicipal",
+}
 # The census area whose figures fit no polygon: Bakassi as it stood in 2006.
 NOT_DRAWN = {("crossriver", "bakassi")}
 BAKASSI = ("The 2006 census counted Bakassi local government area while it held the Bakassi "
@@ -106,17 +132,17 @@ MEDIAN_NOTE = ("Interpolated within the five-year age group that holds the middl
 
 
 def key(name: str) -> str:
-    """A name reduced to its letters, without STATE."""
+    """A name reduced to its letters, without STATE or a closing LGA."""
     s = unicodedata.normalize("NFKD", str(name or ""))
     s = "".join(c for c in s if not unicodedata.combining(c)).lower()
-    s = re.sub(r"\bstate\b", " ", s)
+    s = re.sub(r"\bstate\b|\blga\s*$", " ", s.strip())
     return "".join(c for c in s if "a" <= c <= "z")
 
 
 def keys(name: str) -> list[str]:
     """Every reduction a census name may be drawn under: whole, without what
     it puts in brackets, and the bracketed name itself ("IBADAN CENTRAL [IBADAN
-    NORTH EAST]", "ABUJA MUNICIPAL (AMAC)", "NAFADA (BAJOGA)")."""
+    NORTH EAST]", "ABUJA MUNICIPAL [AMAC]", "NAFADA (BAJOGA)")."""
     out = [key(name)]
     inside = re.findall(r"[\[(]([^\])]*)[\])]", name)
     bare = re.sub(r"[\[(][^\])]*[\])]", " ", name)
@@ -136,8 +162,26 @@ def number(text: str) -> int:
 
 
 def is_heading(line: str) -> bool:
+    """A line of heading words, page numbers, dashes, or the pieces a heading
+    word is broken into at a line's end ("Femal" / "es")."""
     words = line.lower().replace(":", " ").split()
-    return all(w in HEADING or w.isdigit() for w in words)
+    if not words:
+        return True
+    for w in words:
+        if w in HEADING or w.isdigit() or w in ("-", "–", "—"):
+            continue
+        if len(w) >= 2 and any(h.startswith(w) or h.endswith(w) for h in HEADING):
+            continue
+        return False
+    return True
+
+
+def is_name(line: str) -> bool:
+    """A line that can be (part of) an area's name: letters, not a heading,
+    not a row of figures (a single year's row begins with its age)."""
+    return (any(c.isalpha() for c in line) and not line[:1].isdigit()
+            and not is_heading(line) and not line.upper().startswith("TOTAL")
+            and not ROW.match(line))
 
 
 def digest(blob: bytes) -> str:
@@ -153,11 +197,27 @@ def pages_of(blob: bytes) -> list[str]:
 SINGLE_YEARS = "\x00single years\x00"
 
 
-def is_name(line: str) -> bool:
-    """A line that can be (part of) an area's name: letters, not a heading,
-    not a row of figures (a single year's row begins with its age)."""
-    return (any(c.isalpha() for c in line) and not line[:1].isdigit()
-            and not is_heading(line) and not TOTAL.match(line) and not GROUP.match(line))
+def mend(lines: list[tuple[int, str]]) -> list[tuple[int, str]]:
+    """Put back the figures a line's end breaks: "64,80" then "9" is 64,809."""
+    out: list[tuple[int, str]] = []
+    for page, line in lines:
+        if out and BROKEN.search(out[-1][1]) and re.match(r"^\d{1,2}(?:\s|$)", line):
+            head, _, rest = line.partition(" ")
+            out[-1] = (out[-1][0], out[-1][1] + head)
+            if rest.strip():
+                out.append((page, rest.strip()))
+            continue
+        out.append((page, line))
+    return out
+
+
+def label_ok(label: str, low: int, high: int | None) -> bool:
+    """Whether a row's printed label is its group's, in any of the forms used."""
+    text = " ".join(label.lower().split())
+    if text in DATE_LABELS:
+        return DATE_LABELS[text] == (low, high)
+    digits = re.sub(r"\D", "", text)
+    return digits == (f"{low}{high}" if high is not None else f"{low}")
 
 
 def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
@@ -169,21 +229,15 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
     and the next table is marked as the one that page belongs to: that is how
     a state's table is told from its areas', since the volume names some
     states with "STATE" and others not ("LAGOS"), and several areas carry
-    their state's name (Bauchi, Gombe, Ebonyi). A table's name is the nearest
-    line above its TOTAL row that is neither a heading nor a row of figures --
-    the headings sit above the name on some pages and between the name and the
-    total on others -- and a name broken over two lines is joined.
-
-    The rows are read by position, 0-4 to 85+; a row whose printed label is
-    not its position's (Lagos's "4 - 9" for 5-9) is read where it stands and
-    logged. A row missing or out of place shows in the sums, which check().
+    their state's name (Bauchi, Gombe, Ebonyi).
     """
-    lines: list[tuple[int, str]] = []
+    raw: list[tuple[int, str]] = []
     for page_number, text in enumerate(pages, 1):
         if "single years" in text.lower():
-            lines.append((page_number, SINGLE_YEARS))
+            raw.append((page_number, SINGLE_YEARS))
             continue
-        lines.extend((page_number, ln.strip()) for ln in text.splitlines() if ln.strip())
+        raw.extend((page_number, ln.strip()) for ln in text.splitlines() if ln.strip())
+    lines = mend(raw)
     tables: list[dict[str, Any]] = []
     after_single = False
     i = 0
@@ -193,38 +247,50 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
             after_single = True
             i += 1
             continue
-        m = TOTAL.match(line)
-        if not m:
+        if not re.match(r"^TOTAL\b", line):
+            i += 1
+            continue
+        # The total's three figures, from this line and any lines of figures after it.
+        figures = [t for t in line.split()[1:] if FIGURE.match(t)]
+        k = i + 1
+        while len(figures) < 3 and k < len(lines) \
+                and all(FIGURE.match(t) for t in lines[k][1].split()):
+            figures.extend(lines[k][1].split())
+            k += 1
+        if len(figures) != 3:
+            log(f"  page {page}: a TOTAL row with figures {figures} is not read")
             i += 1
             continue
         j, name = i - 1, []
         while j >= 0 and is_heading(lines[j][1]):
             j -= 1
-        while j >= 0 and is_name(lines[j][1]) and lines[j][1] != SINGLE_YEARS and len(name) < 2:
+        while j >= 0 and lines[j][1] != SINGLE_YEARS and is_name(lines[j][1]) and len(name) < 2:
             name.insert(0, lines[j][1])
             j -= 1
-        rows, k = [], i + 1
+        rows: list[tuple[str, tuple[int, int, int]]] = []
+        noise = 0
         while k < len(lines) and len(rows) < len(GROUPS):
-            g = GROUP.match(lines[k][1])
-            if g:
-                rows.append(g)
-            elif not is_heading(lines[k][1]):
+            text = lines[k][1]
+            r = ROW.match(text)
+            if r and not text.upper().startswith("TOTAL"):
+                rows.append((r.group("label"), (number(r.group("a")), number(r.group("b")),
+                                                number(r.group("c")))))
+            elif is_heading(text):
+                pass
+            elif len(text) <= 12 and noise < 3 and not re.search(r"[a-z]{3}", text):
+                noise += 1             # a garbled label: "G23720 -", "24"
+            else:
                 break
             k += 1
         groups, misprints = [], []
-        for (low, high), g in zip(GROUPS, rows):
-            got_low, got_high = int(g.group(1)), g.group(2)
-            if got_low != low or (high is None) != (got_high is None) \
-                    or (high is not None and int(got_high) != high):
-                misprints.append(g.group(0))
-            groups.append((low, high, number(g.group(3)), number(g.group(4)),
-                           number(g.group(5))))
+        for (low, high), (label, (gt, gm, gf)) in zip(GROUPS, rows):
+            if not label_ok(label, low, high):
+                misprints.append(f"{label or '(none)'} for {low}-{high if high else ''}")
+            groups.append((low, high, gt, gm, gf))
         table = {"name": " ".join(name), "page": page,
-                 "total": tuple(number(x) for x in m.groups()), "groups": groups,
+                 "total": tuple(number(x) for x in figures), "groups": groups,
                  "single_before": after_single}
         if misprints:
-            log(f"  page {page}: {table['name']!r}: rows read by position although printed "
-                f"as {misprints}")
             table["misprints"] = misprints
         tables.append(table)
         after_single = False
@@ -279,8 +345,8 @@ def organise(tables: list[dict[str, Any]]) -> dict[str, Any]:
     return {"nation": nation, "states": states}
 
 
-def check(book: dict[str, Any]) -> dict[str, list[str]]:
-    """The volume's sums, checked; {"STATE/AREA": its own problems} for the
+def check(book: dict[str, Any]) -> dict[int, list[str]]:
+    """The volume's sums, checked; {id(table): its own problems} for the
     tables that do not add up, which are written without what they cannot give."""
     nation = book["nation"]
     if nation["total"] != NATIONAL:
@@ -290,13 +356,14 @@ def check(book: dict[str, Any]) -> dict[str, list[str]]:
                          f"{[s['table']['name'] for s in book['states']]}")
     areas = sum(len(s["areas"]) for s in book["states"])
     if areas != 774:
-        raise SystemExit(f"nigeria_census: {areas} local government areas, not 774")
+        counts = {s["table"]["name"]: len(s["areas"]) for s in book["states"]}
+        raise SystemExit(f"nigeria_census: {areas} local government areas, not 774: {counts}")
     for col in range(3):
         made = sum(s["table"]["total"][col] for s in book["states"])
         if made != nation["total"][col]:
             raise SystemExit(f"nigeria_census: the states make {made:,} in column {col}, "
                              f"not Nigeria's {nation['total'][col]:,}")
-    bad: dict[str, list[str]] = {}
+    bad: dict[int, list[str]] = {}
     for s in book["states"]:
         for col in range(3):
             made = sum(a["total"][col] for a in s["areas"])
@@ -306,9 +373,10 @@ def check(book: dict[str, Any]) -> dict[str, list[str]]:
         for t in [s["table"], *s["areas"]]:
             p = problems(t)
             if p:
-                bad[f"{s['table']['name']}/{t['name']}"] = p
-    for label, p in bad.items():
-        log(f"  does not add up: {label}: {'; '.join(p)}")
+                bad[id(t)] = p
+                log(f"  does not add up: {s['table']['name']}/{t['name']}: {'; '.join(p)}")
+            if t.get("misprints"):
+                log(f"  read by position: {s['table']['name']}/{t['name']}: {t['misprints']}")
     return bad
 
 
@@ -316,39 +384,57 @@ VOL3_ROW = re.compile(rf"^(\d+)\s+(.+?)\s+([A-C])\s+([\d,.]+)\s+({NUM})\s+({NUM}
 
 
 def parse_vol3(pages: list[str]) -> dict[str, list[tuple[str, int, int, int]]]:
-    """{state key: [(area name, men, women, persons), ...]} from Volume III."""
+    """{state key: [(area name, men, women, persons), ...]} from Volume III's
+    pages of areas, each headed by its state's name in capitals."""
     out: dict[str, list[tuple[str, int, int, int]]] = {}
     for text in pages:
         if "POPULATION DISTRIBUTION BY LGA" not in text.upper():
             continue
         state = None
-        for line in (ln.strip() for ln in text.splitlines()):
-            if VOL3_ROW.match(line) and state:
-                r = VOL3_ROW.match(line)
+        for line in mend([(0, ln.strip()) for ln in text.splitlines() if ln.strip()]):
+            line = line[1]
+            r = VOL3_ROW.match(line)
+            if r and state:
                 out[state].append((r.group(2), number(r.group(5)), number(r.group(6)),
                                    number(r.group(7))))
                 continue
-            m = re.match(r"^(.+?)\s+STATE$", line, re.I) or re.match(r"^(FCT\b.*)$", line)
-            if m and state is None:
+            m = re.match(r"^([A-Z][A-Z .'-]+?)(?:\s+STATE)?$", line)
+            if m and state_key(m.group(1)) in STATE_KEYS:
                 state = state_key(m.group(1))
                 out.setdefault(state, [])
     return out
 
 
-def cross_check(book: dict[str, Any], vol3: dict[str, list[tuple[str, int, int, int]]]
-                ) -> list[str]:
-    """Each state's areas in Volume III against Volume IV, by their counts."""
+def name_from_vol3(book: dict[str, Any], vol3: dict[str, list[tuple[str, int, int, int]]]
+                   ) -> list[str]:
+    """Each area's Volume III name, from the row of its state with the same
+    men, women and persons; the differences between the volumes, in words."""
     said = []
     for s in book["states"]:
         sk = state_key(s["table"]["name"])
-        if sk not in vol3:
+        rows = vol3.get(sk, [])
+        if not rows:
             said.append(f"{s['table']['name']}: no Volume III page read")
             continue
-        four = Counter((a["total"][1], a["total"][2], a["total"][0]) for a in s["areas"])
-        three = Counter((m, f, p) for _, m, f, p in vol3[sk])
-        if four != three:
-            said.append(f"{s['table']['name']}: Volume IV alone {sorted(four - three)}; "
-                        f"Volume III alone {sorted(three - four)}")
+        by_counts: dict[tuple[int, int, int], list[str]] = {}
+        for name, m, f, p in rows:
+            by_counts.setdefault((p, m, f), []).append(name)
+        unmatched = []
+        for a in s["areas"]:
+            names = by_counts.get(tuple(a["total"]), [])
+            if len(names) == 1:
+                a["vol3"] = names[0]
+                if not set(keys(names[0])) & set(keys(a["name"])):
+                    said.append(f"{s['table']['name']}: Volume IV's {a['name']!r} "
+                                f"{a['total']} is Volume III's {names[0]!r}")
+            else:
+                unmatched.append(f"{a['name']} {a['total']}")
+        if unmatched:
+            said.append(f"{s['table']['name']}: no single Volume III row has the counts of "
+                        f"{unmatched}")
+        if len(rows) != len(s["areas"]):
+            said.append(f"{s['table']['name']}: Volume III lists {len(rows)} areas, "
+                        f"Volume IV {len(s['areas'])}")
     return said
 
 
@@ -367,6 +453,12 @@ def median(groups: list[tuple[int, int | None, int, int, int]]) -> float | None:
     return None
 
 
+def area_keys(a: dict[str, Any]) -> list[str]:
+    """The keys an area may be drawn under: Volume III's name first."""
+    out = keys(a["vol3"]) if a.get("vol3") else []
+    return out + [k for k in keys(a["name"]) if k not in out]
+
+
 def bind(book: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
          ) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], list[dict[str, Any]]]:
     """({state polygon id: state}, {area polygon id: {"state", "area"}}, [the
@@ -382,13 +474,6 @@ def bind(book: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[s
     if len({id(s) for s in by_polygon.values()}) != 37:
         raise SystemExit("nigeria_census: the state polygons are not the 37 census states")
     state_of = {sid: state_key(s["table"]["name"]) for sid, s in by_polygon.items()}
-    census: dict[tuple[str, str], dict[str, Any]] = {}
-    for sk, s in states_by_key.items():
-        for a in s["areas"]:
-            for k in keys(a["name"]):
-                if (sk, k) in census and census[(sk, k)] is not a:
-                    raise SystemExit(f"nigeria_census: two areas of {sk} read {k!r}")
-                census[(sk, k)] = a
     bound: dict[str, dict[str, Any]] = {}
     not_drawn: list[dict[str, Any]] = []
     used: set[int] = set()
@@ -400,16 +485,21 @@ def bind(book: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[s
             not_drawn.append(shape)
             continue
         k = ALIASES.get((sk, k), k)
-        a = census.get((sk, k))
-        if a is None or id(a) in used:
-            left.append(f"{shape['name']!r} ({sk}, {k})")
+        state = states_by_key.get(sk)
+        found = [a for a in (state["areas"] if state else []) if k in area_keys(a)]
+        # A name both volumes agree on wins over one only Volume IV prints.
+        if len(found) > 1:
+            found = [a for a in found if k in keys(a.get("vol3") or "")] or found
+        if len(found) != 1 or id(found[0]) in used:
+            left.append(f"{shape['name']!r} ({sk}, {k}: {[a['name'] for a in found]})")
             continue
-        used.add(id(a))
-        bound[shape["id"]] = {"state": states_by_key[sk], "area": a}
+        used.add(id(found[0]))
+        bound[shape["id"]] = {"state": state, "area": found[0]}
     if left:
-        raise SystemExit(f"nigeria_census: {len(left)} polygons with no census area: {left}")
-    unused = sorted(f"{s['table']['name']}: {a['name']}" for s in book["states"]
-                    for a in s["areas"] if id(a) not in used
+        raise SystemExit(f"nigeria_census: {len(left)} polygons with no single census area: "
+                         f"{left}")
+    unused = sorted(f"{s['table']['name']}: {a['name']} ({a.get('vol3')})"
+                    for s in book["states"] for a in s["areas"] if id(a) not in used
                     and (state_key(s["table"]["name"]), key(a["name"])) not in NOT_DRAWN)
     if unused:
         raise SystemExit(f"nigeria_census: census areas on no polygon: {unused}")
@@ -420,12 +510,14 @@ def title(name: str) -> str:
     """A census name as it reads in a sentence: "OBIO/AKPOR" -> "Obio/Akpor"."""
     s = re.sub(r"(^|[\s\-/\[(])([a-z])", lambda m: m.group(1) + m.group(2).upper(),
                " ".join(str(name).lower().split()))
-    return re.sub(r"\((amac|fct)\)", lambda m: f"({m.group(1).upper()})", s, flags=re.I)
+    s = re.sub(r"\s+Lga$", "", s)
+    return re.sub(r"[\[(](amac|fct)[\])]", lambda m: f"({m.group(1).upper()})", s, flags=re.I)
 
 
-def area_note(census_name: str, drawn_name: str) -> str:
+def area_note(a: dict[str, Any], drawn_name: str) -> str:
     """The count's note, naming the census's area where it is spelled otherwise."""
-    if key(drawn_name) in keys(census_name):
+    census_name = a.get("vol3") or a["name"]
+    if key(drawn_name) in area_keys(a):
         return f"The 2006 census's count for {title(census_name)}."
     return f"The 2006 census's count for this area, which it names {title(census_name)}."
 
@@ -456,7 +548,7 @@ def fields(t: dict[str, Any], wrong: list[str] | None, note: str) -> dict[str, A
     return out
 
 
-def build(book: dict[str, Any], bad: dict[str, list[str]], admin1: list[dict[str, Any]],
+def build(book: dict[str, Any], bad: dict[int, list[str]], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_polygon, bound, not_drawn = bind(book, admin1, admin2)
     records: list[dict[str, Any]] = []
@@ -465,11 +557,10 @@ def build(book: dict[str, Any], bad: dict[str, list[str]], admin1: list[dict[str
         if b is None:
             continue
         s, a = b["state"], b["area"]
-        label = f"{s['table']['name']}/{a['name']}"
         records.append(record(
-            f"NGA-NPC2006-{state_key(s['table']['name'])}-{key(a['name'])}", shape["name"],
-            level="admin2", parent="NGA", country="NGA", match_by="shape_id",
-            shape_id=shape["id"], **fields(a, bad.get(label), area_note(a["name"], shape["name"]))))
+            f"NGA-NPC2006-{state_key(s['table']['name'])}-{key(a.get('vol3') or a['name'])}",
+            shape["name"], level="admin2", parent="NGA", country="NGA", match_by="shape_id",
+            shape_id=shape["id"], **fields(a, bad.get(id(a)), area_note(a, shape["name"]))))
     # The polygon drawn as Bakassi: the census area of that name is not its ground.
     for shape in not_drawn:
         records.append(record(
@@ -481,16 +572,44 @@ def build(book: dict[str, Any], bad: dict[str, list[str]], admin1: list[dict[str
     for shape in admin1:
         t = by_polygon[shape["id"]]["table"]
         sk = state_key(t["name"])
+        bare = re.sub(r"(?i)\s+state$", "", t["name"])
         named = ("the Federal Capital Territory" if sk == "abujafederalcapitalterritory"
-                 else title(t["name"]))
+                 else f"{title(bare)} State")
         note = f"The 2006 census's count for {named}."
         if sk == "crossriver" and bakassi is not None:
             note += " " + CROSS_RIVER.format(n=bakassi["total"][0])
         records.append(record(
             f"NGA-NPC2006-state-{sk}", shape["name"], level="admin1", parent="NGA",
             country="NGA", match_by="shape_id", shape_id=shape["id"],
-            **fields(t, bad.get(f"{t['name']}/{t['name']}"), note)))
+            **fields(t, bad.get(id(t)), note)))
     return records
+
+
+def read(dump: bool = False) -> dict[str, Any]:
+    blob4 = http_get(VOL4, binary=True, timeout=300)
+    assert isinstance(blob4, bytes)
+    log(f"  Volume IV: {len(blob4):,} bytes, sha256 {digest(blob4)}")
+    pages4 = pages_of(blob4)
+    tables = parse_tables(pages4)
+    log(f"  {len(pages4)} pages, {len(tables)} tables read")
+    book = organise(tables)
+    blob3 = http_get(VOL3, binary=True, timeout=300)
+    assert isinstance(blob3, bytes)
+    log(f"  Volume III: {len(blob3):,} bytes, sha256 {digest(blob3)}")
+    vol3 = parse_vol3(pages_of(blob3))
+    log(f"  Volume III: {sum(len(v) for v in vol3.values())} areas in {len(vol3)} states")
+    for line in name_from_vol3(book, vol3):
+        log(f"  Volume III: {line}")
+    if dump:
+        for s in book["states"]:
+            t = s["table"]
+            log(f"STATE p{t['page']} {t['name']!r} {t['total']} median {median(t['groups'])} "
+                f"{len(s['areas'])} areas {problems(t) or ''}")
+            for a in s["areas"]:
+                log(f"   p{a['page']} {a['name']!r} [{a.get('vol3')}] {a['total']} median "
+                    f"{median(a['groups'])} {problems(a) or ''}")
+    book["bad"] = check(book)
+    return book
 
 
 def main() -> int:
@@ -498,38 +617,18 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dump", action="store_true", help="print the tables read and stop")
     args = ap.parse_args()
-    blob4 = http_get(VOL4, binary=True, timeout=300)
-    assert isinstance(blob4, bytes)
-    log(f"  Volume IV: {len(blob4):,} bytes, sha256 {digest(blob4)}")
-    pages4 = pages_of(blob4)
-    log(f"  {len(pages4)} pages")
-    tables = parse_tables(pages4)
-    log(f"  {len(tables)} tables read")
-    book = organise(tables)
-    if args.dump:
-        for s in book["states"]:
-            t = s["table"]
-            log(f"STATE p{t['page']} {t['name']!r} {t['total']} median {median(t['groups'])} "
-                f"{len(s['areas'])} areas {problems(t) or ''}")
-            for a in s["areas"]:
-                log(f"   p{a['page']} {a['name']!r} {a['total']} median {median(a['groups'])} "
-                    f"{problems(a) or ''}")
-    bad = check(book)
-    blob3 = http_get(VOL3, binary=True, timeout=300)
-    assert isinstance(blob3, bytes)
-    log(f"  Volume III: {len(blob3):,} bytes, sha256 {digest(blob3)}")
-    for line in cross_check(book, parse_vol3(pages_of(blob3))):
-        log(f"  Volume III differs: {line}")
+    book = read(dump=args.dump)
     if args.dump:
         return 0
     admin1 = json.loads((SITE / "admin1" / "NGA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "NGA.units.json").read_text())
-    records = build(book, bad, admin1, admin2)
+    records = build(book, book["bad"], admin1, admin2)
     for r in records:
         if r["name"] in ("Ibadan South East", "Atakunmosa West", "Kano Municipal", "Oyo",
-                         "Cross River", "Bakassi", "Municipal Area Council", "Ikeja"):
+                         "Cross River", "Bakassi", "Municipal Area Council", "Sabon Gari",
+                         "Makarfi", "Miga"):
             log(f"  {r['level']} {r['name']}: {r['population']} | {r['sex_ratio']} | "
-                f"{r['median_age']}")
+                f"{r['median_age']} | {r.get('population_note')}")
     log(f"  {sum(1 for r in records if r['level'] == 'admin2')} of {len(admin2)} areas and "
         f"{sum(1 for r in records if r['level'] == 'admin1')} of {len(admin1)} states written")
     write_json(PROCESSED / OUT, records)
