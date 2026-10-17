@@ -1165,6 +1165,60 @@ class TheMapNotTheFile(unittest.TestCase):
         self.assertEqual(entity["sources"][0]["note"], "the map")
         self.assertEqual(be.plain_wording("geoBoundaries draws it"), "geoBoundaries draws it")
 
+    def test_a_table_is_named_by_its_code_not_its_file(self):
+        note = ("Cirkulane counts 280 men and 198 women (05C5003S.px, 2026), +82 of the "
+                "municipality's +245 men over women.")
+        self.assertEqual(be.plain_wording(note),
+                         "Cirkulane counts 280 men and 198 women (05C5003S, 2026), +82 of the "
+                         "municipality's +245 men over women.")
+
+
+class DisputedOutlinesAtEveryLevel(unittest.TestCase):
+    """A disputed outline's first- and second-level records say why a figure is empty."""
+
+    def test_bare_figures_take_the_outlines_reason_and_a_shown_one_stays(self):
+        na = {"status": "not_available"}
+        abyei = {"id": "DIS001", "name": "Abyei", "disputed": True,
+                 "population": dict(na), "median_age": dict(na), "sex_ratio": dict(na)}
+        gaza = {"id": "DIS008", "name": "Gaza Strip", "disputed": True,
+                "population": {"value": 2_050_000, "year": 2025, "source": "Wikipedia"},
+                "median_age": dict(na), "sex_ratio": dict(na)}
+        plain = {"id": "X", "name": "Elsewhere", "population": dict(na),
+                 "median_age": dict(na), "sex_ratio": dict(na)}
+        said = be.state_population_gaps([], {"111": [abyei], "118": [gaza], "XYZ": [plain]},
+                                        {"111": [copy.deepcopy(abyei)]})
+        self.assertEqual(len(said), 3)
+        for field in ("population", "median_age", "sex_ratio"):
+            self.assertEqual(abyei[field]["note"], be.DISPUTED_GAP)
+            self.assertNotIn("note", plain[field])
+        self.assertEqual(gaza["population"]["value"], 2_050_000)
+        self.assertEqual(gaza["median_age"]["note"], be.DISPUTED_GAP)
+
+
+class NoCountClaimWhereACountIsShown(unittest.TestCase):
+    """A district that shows a population does not say none is shown."""
+
+    def test_the_sentence_goes_only_where_a_population_is_shown(self):
+        tail = (" No population or head count is shown: the census counted those people "
+                "as part of Warangal, where the count is carried, and repeating it here "
+                "would count them twice.")
+        undivided = (" No population or head count is shown: the census counted these "
+                     "people once, for the undivided district, and repeating that figure on "
+                     "each successor would count them several times over. The state total "
+                     "carries the count.")
+        head = "Estimated, not measured. The shares shown are Warangal's own 2011 shares."
+        jangaon = {"name": "Jangaon",
+                   "population": {"value": 534_991, "year": 2011, "source": "Wikidata (CC0)"},
+                   "religion_note": head + tail, "sex_ratio_note": head + undivided}
+        mulugu = {"name": "Mulugu", "population": {"status": "not_available",
+                                                   "note": "Not counted separately."},
+                  "religion_note": head + tail}
+        done = be.drop_no_count_claims({"IND": [jangaon, mulugu]})
+        self.assertEqual(done, ["IND Jangaon"])
+        self.assertEqual(jangaon["religion_note"], head)
+        self.assertEqual(jangaon["sex_ratio_note"], head)
+        self.assertEqual(mulugu["religion_note"], head + tail)
+
 
 if __name__ == "__main__":
     unittest.main()

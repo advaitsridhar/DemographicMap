@@ -242,7 +242,12 @@ class Records(unittest.TestCase):
         self.assertIn("written doctrines", row["religion_note"])
         self.assertEqual(row["population"]["value"], 1000)
         self.assertEqual(sorted(s["field"] for s in row["sources"]),
-                         ["ethnicity", "population", "religion"])
+                         ["ethnicity", "population", "religion", "sex_ratio"])
+        # The ratio is cited where it is written, and only there.
+        self.assertIn("sex_ratio", row)
+        for row in self.rows("province") + self.rows("district"):
+            cited = {s["field"] for s in row["sources"]}
+            self.assertEqual("sex_ratio" in cited, "sex_ratio" in row, row["name"])
 
     def test_language_is_not_written_here_at_all(self):
         from common import NOT_COLLECTED, collection_status

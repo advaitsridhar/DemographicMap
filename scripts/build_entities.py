@@ -5744,7 +5744,12 @@ def state_population_gaps(admin0: list[dict[str, Any]],
     its one drawn unit at each level said only that Wikidata gives it no
     figure. A country whose population is not applicable passes that down to
     every unit drawn inside it, with the median age and sex ratio, which have
-    no one to describe either. ``STATED_POPULATION_GAPS`` names the rest.
+    no one to describe either. A disputed outline's first- and second-level
+    records take its reason, as its country record does (disputed_record):
+    Abyei, Aksai Chin and eight more left their populations bare at both
+    levels, and all nineteen their ages and sex ratios, Gaza's and the West
+    Bank's beside populations they show. ``STATED_POPULATION_GAPS`` names the
+    rest.
     """
     not_applicable = {c["id"]: c["population"] for c in admin0
                       if isinstance(c.get("population"), dict)
@@ -5760,7 +5765,8 @@ def state_population_gaps(admin0: list[dict[str, Any]],
                 reason = None
                 if iso3 in not_applicable:
                     reason = dict(not_applicable[iso3])
-                elif STATED_POPULATION_GAPS.get((iso3, entity.get("name"))) == "disputed":
+                elif (entity.get("disputed")
+                      or STATED_POPULATION_GAPS.get((iso3, entity.get("name"))) == "disputed"):
                     # A population that already says why goes with its ages:
                     # Sudan's "Abyei PCA" is a 41 km2 edge of the Abyei Area,
                     # not the disputed ground itself, and says so.
@@ -5777,6 +5783,40 @@ def state_population_gaps(admin0: list[dict[str, Any]],
                 if changed:
                     said.append(f"{iso3} {entity.get('name')}")
     return said
+
+
+# India's readers say on a district cut out of another since 2011 that it
+# shows no population, the census having counted its people under the
+# district it came from. Four show one all the same, Wikidata's 2011 figure
+# for their own ground -- Jangaon's 534,991, Jayashankar's, and East and West
+# Jaintia Hills' -- and there the sentence is untrue.
+NO_COUNT_SHOWN = re.compile(
+    r" No population or head count is shown: .*?(?:several times over\. The state total "
+    r"carries the count\.|count them twice\.)")
+
+
+def drop_no_count_claims(*tables: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Take the sentence that no population is shown out of the notes of a
+    unit that shows one (NO_COUNT_SHOWN). Returns the units changed."""
+    done: list[str] = []
+    for table in tables:
+        for iso3, rows in table.items():
+            for entity in rows:
+                if published(entity.get("population")) is None:
+                    continue
+                changed = False
+                for key, value in list(entity.items()):
+                    if isinstance(value, str) and key.endswith("_note") \
+                            and NO_COUNT_SHOWN.search(value):
+                        entity[key] = NO_COUNT_SHOWN.sub("", value)
+                        changed = True
+                    elif isinstance(value, dict) and isinstance(value.get("note"), str) \
+                            and NO_COUNT_SHOWN.search(value["note"]):
+                        entity[key] = {**value, "note": NO_COUNT_SHOWN.sub("", value["note"])}
+                        changed = True
+                if changed:
+                    done.append(f"{iso3} {entity.get('name')}")
+    return done
 
 
 def country_from_sole_unit(admin0: list[dict[str, Any]],
@@ -7460,6 +7500,10 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0% in 2000\)"),
      r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0% for 2000)"),
     (re.compile(r" \(web\.archive\.org/\S+?/ranong1\.xls\)"), ""),
+    # file-names: SVN 3 sex-ratio notes cite SiStat's settlement table as its
+    # file, '(05C5003S.px, 2026)', beside the municipal table as its code,
+    # '(05C4010S)'
+    (re.compile(r"\(([0-9A-Z]{8})\.px, (\d{4})\)"), r"(\1, \2)"),
     # grammar: RUS 2,303 sex-ratio notes: '8,934 men and 9,745 women; Everyone the 2020 census counted ...'
     (re.compile(r"\b(men and [\d,]+ women); Everyone the (\d{4}) census counted\b"), r"\1 among everyone the \2 census counted"),
     # wording: NLD survey notes: '... who count themselves to a religion', '... does not count themselves to one', '... count themselves to a church denomination'
@@ -12966,6 +13010,10 @@ def main() -> int:
     stated = state_population_gaps(admin0, admin1_by_country, admin2_by_country)
     if stated:
         log(f"  {len(stated)} empty populations given their reason: " + ", ".join(stated))
+    shown_after_all = drop_no_count_claims(admin1_by_country, admin2_by_country)
+    if shown_after_all:
+        log(f"  {len(shown_after_all)} units no longer say no population is shown: "
+            + ", ".join(shown_after_all))
     gaps_said = note_population_gaps(admin0, admin1_by_country, admin2_by_country)
     if gaps_said:
         log(f"  {len(gaps_said)} populations far from their divisions' sum say what "
