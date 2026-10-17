@@ -82,10 +82,18 @@ def read_chart(body: dict[str, Any]) -> dict[str, Any]:
 
 
 def check(chart: dict[str, Any], table: dict[str, Any]) -> None:
+    """The chart answers its 10,000 largest rows, so a unit too small for that
+    is missing: Aousserd's men, south of the Western Sahara line, are. The
+    regions the line cuts are written nowhere and are not checked below
+    their own row; everything else must be whole."""
+    across = {legal.key(r["name"]) for c, r in table["regions"].items()
+              if c in legal.CLAIM_LINE_REGIONS}
     for sex in SEXES.values():
         if sex not in chart["kingdom"]:
             raise SystemExit(f"morocco_rgph2024_sexes: no {sex} for the Kingdom")
     for rkey, region in chart["regions"].items():
+        if rkey in across:
+            continue
         for sex in SEXES.values():
             made = sum(p.get(sex, 0) for (r, _), p in chart["provinces"].items() if r == rkey)
             if sex not in region or made != region[sex]:
@@ -100,7 +108,8 @@ def check(chart: dict[str, Any], table: dict[str, Any]) -> None:
     missing = names - set(chart["regions"])
     if missing:
         raise SystemExit(f"morocco_rgph2024_sexes: regions not in the chart: {sorted(missing)}")
-    provinces = {legal.key(p["name"]) for p in table["provinces"].values()}
+    provinces = {legal.key(p["name"]) for c, p in table["provinces"].items()
+                 if c // 1000 not in legal.CLAIM_LINE_REGIONS}
     have = {k for _, k in chart["provinces"]}
     if provinces - have:
         raise SystemExit(f"morocco_rgph2024_sexes: provinces not in the chart: "

@@ -47,6 +47,17 @@ class Chart(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ms.check(ms.read_chart(body(rows)), TABLE)
 
+    def test_a_province_across_the_line_may_be_missing(self):
+        rows = ROWS + [("Dakhla-Oued Ed-Dahab", "Ensemble", "Masculin", 9.0),
+                       ("Dakhla-Oued Ed-Dahab", "Ensemble", "Féminin", 8.0),
+                       ("Dakhla-Oued Ed-Dahab -> Oued Ed-Dahab", "Ensemble", "Masculin", 8.0),
+                       ("Dakhla-Oued Ed-Dahab -> Oued Ed-Dahab", "Ensemble", "Féminin", 8.0)]
+        rows = [r if r[0] != "Royaume du Maroc" or r[1] != "Ensemble" else
+                (r[0], r[1], r[2], r[3] + (9.0 if r[2] == "Masculin" else 8.0)) for r in rows]
+        table = {"regions": {**TABLE["regions"], 12: {"name": "Dakhla-Oued Ed-Dahab"}},
+                 "provinces": {**TABLE["provinces"], 12391: {"name": "Province d'Aousserd"}}}
+        ms.check(ms.read_chart(body(rows)), table)
+
     def test_a_province_missing_from_the_chart_stops_the_run(self):
         table = {**TABLE, "provinces": {**TABLE["provinces"],
                                         1: {"name": "Province de Berkane", "code": 1}}}
