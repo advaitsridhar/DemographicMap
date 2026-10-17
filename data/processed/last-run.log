@@ -1,69 +1,279 @@
-== grep https://census.statssa.gov.za/main.c3756bb39a090c83.js (DsPopulationGroups|DsSingleAges|DsMains|DsLanguages|DsAgeGroups)/listDsByParams 10 300
-  HTTP 200 text/javascript 19,172,187 bytes
-  ~ piUrl+"api/MainPlaces/listByMunicipality/"+e)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),UQ=(()=>{class i{constructor(e){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsPopulationGroups/listDsByParams/"+e+"/"+s+"/"+u)}getDsPopulationGroupsReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsPopulationGroups/getDsPopulationGroupsReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i
-  ~ /getDsPopulationGroupsReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),Sq=(()=>{class i{constructor(e){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAgeGroups/listDsByParams/"+e+"/"+s+"/"+u)}getDsAgeGroupsReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAgeGroups/getDsAgeGroupsReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),AN=(()=>{class i
-  ~ eGroups/getDsAgeGroupsReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),AN=(()=>{class i{constructor(e){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsLanguages/listDsByParams/"+e+"/"+s+"/"+u)}getDsLanguagesReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsLanguages/getDsLanguagesReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),uC=(()=>{class i
-  ~ api/DsSexes/getDsSexesReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),Ch=(()=>{class i{constructor(e){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSingleAges/listDsByParams/"+e+"/"+s+"/"+u)}getDsSingleAgesReport(e,s,u){return this.http.get(Q9_apiUrl+"api/DsSingleAges/getDsSingleAgesReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),Cq=(()=>{clas
-  ~ leAges/getDsSingleAgesReport/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),Cq=(()=>{class i{constructor(e){this.http=e}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsMains/listDsByParams/"+e+"/"+s+"/"+u)}static#e=this.\u0275fac=function(s){return new(s||i)(v9(b3))};static#t=this.\u0275prov=D9({token:i,factory:i.\u0275fac,providedIn:"root"})}return i})(),xq=(()=>{class i{constructor(e){this.http=e,this.apiUrl=""}listDsByParams(e,s,u){return this.http.get(Q9_apiUrl+"api/DsAccessToInt
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/DsPopulationGroups/listDsByParams/1/5/DC44 30
-  HTTP 200 application/json; charset=utf-8 1,814 bytes
-  5 items
-  keys: ['dspopulationGroupId', 'timeSeriesId', 'geoLevelId', 'geoLevelValue', 'populationGroupId', 'counts', 'percentageValue', 'maintUser', 'maintDate', 'countsMales', 'percentageValueMales', 'countsFemales', 'percentageValueFemales', 'geoLevel', 'populationGroup', 'timeSeries']
-  {"dspopulationGroupId": 80221, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "populationGroupId": 1, "counts": 927772, "percentageValue": 99.1, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T22:16:44.1", "countsMales": null, "percentageValueMales": null, "countsFemales": null, 
-  {"dspopulationGroupId": 80222, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "populationGroupId": 2, "counts": 3404, "percentageValue": 0.4, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T22:16:44.127", "countsMales": null, "percentageValueMales": null, "countsFemales": null, "
-  {"dspopulationGroupId": 80223, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "populationGroupId": 3, "counts": 1733, "percentageValue": 0.2, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T22:16:44.15", "countsMales": null, "percentageValueMales": null, "countsFemales": null, "p
-  {"dspopulationGroupId": 80224, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "populationGroupId": 4, "counts": 2135, "percentageValue": 0.2, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T22:16:44.177", "countsMales": null, "percentageValueMales": null, "countsFemales": null, "
-  {"dspopulationGroupId": 80225, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "populationGroupId": 5, "counts": 1163, "percentageValue": 0.1, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T22:16:44.2", "countsMales": null, "percentageValueMales": null, "countsFemales": null, "pe
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/DsLanguages/listDsByParams/1/5/DC44 40
-  HTTP 200 application/json; charset=utf-8 2 bytes
-  0 items
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/DsAgeGroups/listDsByParams/1/5/DC44 60
-  HTTP 200 application/json; charset=utf-8 6,114 bytes
-  18 items
-  keys: ['dsAgeGroupId', 'timeSeriesId', 'geoLevelId', 'geoLevelValue', 'ageGroupId', 'counts', 'percentageValue', 'maintUser', 'maintDate', 'countsMales', 'percentageValueMales', 'countsFemales', 'percentageValueFemales', 'ageGroup', 'geoLevel', 'timeSeries']
-  {"dsAgeGroupId": 289250, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 1, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.297", "countsMales": 60424, "percentageValueMales": 6.5, "countsFemales": 59454, "percentageValue
-  {"dsAgeGroupId": 289252, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 2, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.347", "countsMales": 53616, "percentageValueMales": 5.7, "countsFemales": 51527, "percentageValue
-  {"dsAgeGroupId": 289254, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 3, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.393", "countsMales": 56519, "percentageValueMales": 6.0, "countsFemales": 53849, "percentageValue
-  {"dsAgeGroupId": 289256, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 4, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.44", "countsMales": 52511, "percentageValueMales": 5.6, "countsFemales": 48033, "percentageValueF
-  {"dsAgeGroupId": 289258, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 5, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.503", "countsMales": 41536, "percentageValueMales": 4.4, "countsFemales": 41058, "percentageValue
-  {"dsAgeGroupId": 289260, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 6, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.557", "countsMales": 36770, "percentageValueMales": 3.9, "countsFemales": 39548, "percentageValue
-  {"dsAgeGroupId": 289262, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 7, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.597", "countsMales": 27564, "percentageValueMales": 2.9, "countsFemales": 31980, "percentageValue
-  {"dsAgeGroupId": 289264, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 8, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.643", "countsMales": 23854, "percentageValueMales": 2.5, "countsFemales": 28953, "percentageValue
-  {"dsAgeGroupId": 289266, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 9, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.69", "countsMales": 18367, "percentageValueMales": 2.0, "countsFemales": 23220, "percentageValueF
-  {"dsAgeGroupId": 289268, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 10, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.76", "countsMales": 14722, "percentageValueMales": 1.6, "countsFemales": 21048, "percentageValue
-  {"dsAgeGroupId": 289270, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 11, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.797", "countsMales": 11301, "percentageValueMales": 1.2, "countsFemales": 18563, "percentageValu
-  {"dsAgeGroupId": 289272, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 12, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.847", "countsMales": 11268, "percentageValueMales": 1.2, "countsFemales": 19277, "percentageValu
-  {"dsAgeGroupId": 289274, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 13, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.89", "countsMales": 11482, "percentageValueMales": 1.2, "countsFemales": 18097, "percentageValue
-  {"dsAgeGroupId": 289276, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 14, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.94", "countsMales": 8356, "percentageValueMales": 0.9, "countsFemales": 14373, "percentageValueF
-  {"dsAgeGroupId": 289278, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 15, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:00.99", "countsMales": 5387, "percentageValueMales": 0.6, "countsFemales": 10484, "percentageValueF
-  {"dsAgeGroupId": 289279, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 16, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:01.04", "countsMales": 2767, "percentageValueMales": 0.3, "countsFemales": 7114, "percentageValueFe
-  {"dsAgeGroupId": 289282, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 17, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:01.087", "countsMales": 1753, "percentageValueMales": 0.2, "countsFemales": 4862, "percentageValueF
-  {"dsAgeGroupId": 289284, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "ageGroupId": 18, "counts": 0, "percentageValue": 0.0, "maintUser": "umkhanyakude", "maintDate": "2023-09-29T03:25:01.14", "countsMales": 1248, "percentageValueMales": 0.1, "countsFemales": 5564, "percentageValueFe
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/DsSingleAges/listDsByParams/1/5/DC44 15
-  HTTP 200 application/json; charset=utf-8 2 bytes
-  0 items
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/DsMains/listDsByParams/1/5/DC44 20
-  HTTP 200 application/json; charset=utf-8 3,144 bytes
-  1 items
-  keys: ['dsMainId', 'timeSeriesId', 'geoLevelId', 'geoLevelValue', 'populationEstimation', 'populationEstimationPercentage', 'ageYoungPeople0to14', 'ageYoungPeople0to14Percentage', 'ageWorkingAge15to64', 'ageWorkingAge15to64Percentage', 'ageElderly65Plus', 'ageElderly65PlusPercentage', 'dependencyRatio', 'dependencyRatioPercentage', 'sexRatio', 'sexRatioPercentage', 'sexCompositionMale', 'sexCompositionMalePercentage', 'sexCompositionFemale', 'sexCompositionFemalePercentage', 'growthRatio', 'growthRatioPercentage', 'youngUnemploymentRate15to34', 'youngUnemploymentRate15to34Percentage', 'unemploymentrate15to64', 'unemploymentrate15to64Percentage', 'noSchoolingAge20Plus', 'noSchoolingAge20PlusPercentage', 'higherEducationAge20Plus', 'higherEducationAge20PlusPercentage', 'schoolAttendenceYes', 'schoolAttendenceYesPercentage', 'matricAge20Plus', 'matricAge20PlusPercentage', 'numberOfHouseholds', 'numberOfHouseholdsPercentage', 'avgHouseholdSize', 'avgHouseholdSizePercentage', 'femaleHeadedHouseholds', 'femaleHeadedHouseholdsPercentage', 'formalDwellings', 'formalDwellingsPercentage', 'pipedWaterInsideDwelling', 'pipedWaterInsideDwellingPercentage', 'householdsAccessToPipedWater', 'householdsAccessToPipedWaterPercentage', 'flushToilet', 'flushToiletPercentage', 'weeklyRefuseRemoval', 'weeklyRefuseRemovalPercentage', 'agriculturalhouseholds', 'agriculturalhouseholdsPercentage', 'populationDensity', 'populationDensityPercentage', 'electricityForLighting', 'electricityForLightingPercentage', 'maintUser', 'maintDate', 'geoLevel', 'timeSeries']
-  {"dsMainId": 16052, "timeSeriesId": 1, "geoLevelId": 5, "geoLevelValue": "DC44", "populationEstimation": 936462, "populationEstimationPercentage": null, "ageYoungPeople0to14": null, "ageYoungPeople0to14Percentage": 35.8, "ageWorkingAge15to64": null, "ageWorkingAge15to64Percentage": 57.6, "ageElderly
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/GeoLevels/getAll 20
-  HTTP 200 application/json; charset=utf-8 235 bytes
-  5 items
-  keys: ['geoLevelId', 'geoLevelDesc']
-  {"geoLevelId": 1, "geoLevelDesc": "National"}
-  {"geoLevelId": 2, "geoLevelDesc": "Province"}
-  {"geoLevelId": 3, "geoLevelDesc": "Municipality"}
-  {"geoLevelId": 4, "geoLevelDesc": "Main place / Local Area"}
-  {"geoLevelId": 5, "geoLevelDesc": "District"}
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/TimeSerieses/getAll 10
-  HTTP 200 application/json; charset=utf-8 587 bytes
-  4 items
-  keys: ['timeSeriesId', 'timeSeriesDesc', 'timeSeriesInfo', 'yearInstance', 'previousTimeSeriesId', 'isCurrent']
-  {"timeSeriesId": 1, "timeSeriesDesc": "Census 2022", "timeSeriesInfo": "Census 2022", "yearInstance": "2022", "previousTimeSeriesId": 2, "isCurrent": true}
-  {"timeSeriesId": 2, "timeSeriesDesc": "Census 2011", "timeSeriesInfo": "Census 2011", "yearInstance": "2011", "previousTimeSeriesId": 4, "isCurrent": false}
-  {"timeSeriesId": 4, "timeSeriesDesc": "Census 2001", "timeSeriesInfo": "Census 2001", "yearInstance": "2001", "previousTimeSeriesId": 5, "isCurrent": false}
-  {"timeSeriesId": 5, "timeSeriesDesc": "Census 1996", "timeSeriesInfo": "Census 1996", "yearInstance": "1996", "previousTimeSeriesId": null, "isCurrent": false}
-== keys https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/DsSingleAges/listDsByParams/1/2/1 15
-  HTTP 200 application/json; charset=utf-8 2 bytes
-  0 items
+probe_pdf: https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf
+  32,333,406 bytes
+  528 pages
+probe_pdf: 528 pages, 2 mention ['median']
+=== front matter ===
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+  
+ 
+ 
+The United Republic of Tanzania 
+ 
+ 
+Age and Sex Distribution Report 
+Tanzania 
+Ministry of Finance and Planning 
+National Bureau of Statistics 
+Tanzania 
+ 
+and 
+ 
+Presidents’ Office - Finance and Planning 
+Office of the Chief Government Statistician 
+Zanzibar 
+ 
+ 
+December 2022 
+ 
+ 
+ 
+The Republic of Korea 
+ People's Republic of China 
+
+ 
+i 
+ 
+ 
+ 
+ 
+Citation: 
+Ministry of Finance and Planning, Tanzania National Bureau of Statistics and President’s 
+Office - Finance and Planning, Office of the Chief Government Statistician, Zanzibar. The 
+2022 Population and Housing Census: Age and Sex Distribution Report. Tanzania , 
+December 2022 
+ 
+ 
+ 
+ 
+ 
+Note: 
+Maps used in this publication are based on the cartographic work; thus, it is for statistical 
+use only. 
+ 
+ii 
+ 
+ 
+THE UNITED REPUBLIC OF TANZANIA, ADMINISTRATIVE BOUNDARIES 
+ 
+
+ 
+iii 
+Foreword 
+ 
+The 2022 Population and Housing Census 
+(PHC) for the United Republic of Tanzania 
+had its reference as the midnight of the 
+22nd/23rd August 2022. This was the Sixth 
+and the first digital Census after the Union 
+of Tanganyika and Zanzibar in 1964. Other 
+post union censuses were  carried out in 1967, 1978, 1988, 2002 and 2012. The Sixth 
+Phase Government of Tanzania under the leadership of Her Excellence Dr. Samia Suluhu 
+Hassan, and the Eighth Phase Government of Zanzibar under the leadership of Dr. 
+Hussein Ali Mwinyi like the prev ious phases, have fulfilled their obligation of conducting 
+the 2022 PHC according to the United Nations Principles and Recommendation for the 
+Population and Housing Census. We owe them much appreciation for their commitment 
+and support during Census implementation. 
+ 
+The 2022 PHC was conducted in accordance with the Statistics Act Cap 351, which 
+mandates the Government of the United Republic of Tanzania to conduct Population and 
+Housing Census every ten years. It also followed the United Nations guidelines f or 
+countries to adapt use of more advanced technology at all stages of Census 
+implementation. Indeed, the country’s decision to use more advanced technology to 
+capture data during cartographic work; enumeration and data transmission; and 
+processing made the 2022 PHC the first ever digital census to be conducted in Tanzania.  
+  
+The 2022 PHC results are for integrated plans and sustainable development of the country 
+and will help to increase awareness and transparency in allocation of resources at all levels 
+of administration based on the actual population. The Census results will be used by the 
+Government and stakeholders in monitoring and evaluating various national, regional and 
+international development frameworks including the Tanzania Development Vision 2025 
+and Zanzibar Development Vision 2050; the Third National Five -Year Development Plan 
+2021/22 - 2025/26 and Zanzibar Development Plan 2021/22 - 2025/26; the East African 
+Community Vision 2050; Southern African Development Community Vision 2050 and the 
+African Development Agenda 2063. 
+ 
+
+ 
+iv 
+Census results will enable the country to evaluate the progress of implementation of 
+Sustainable Development Goals; goals that aim at achieving equality and eradicating 
+poverty of all kinds including extreme poverty by 2030  by ensuring no one is left behind. 
+The census data will also provide a basis for the computation of several indicators such 
+as enrolment and literacy rates, infant and maternal mortality rates, unemployment rate 
+and others.  
+ 
+The Age and Sex Distribution Report is the second in a series of planned publications for 
+the 2022 PHC;  the first publication was the Population Distribution Administrative Units 
+report which is divided into Volume 1A for the United Republic of Tanzania, Volume 1B for 
+Tanzania Mainland and Volume 1C for Tanzania Zanzibar. The main purpose of this report 
+is to give aggregated total population by age and sex of the United Republic of Tanzania 
+disaggregated by Tanzania Mainland, Tanzania Zanzibar, Region, and C ouncil levels for 
+informed decision making. Other reports in the series of planned Census publications will 
+present among others Basic Demographic and Socio -Economic Characteristics of the 
+population at National, Regional and Council levels.  
+ 
+The success of the 2022 PHC depen ded on the cooperation and contributions from the 
+Government, specifically Census Committees from national to the lowest administrative 
+level. These include the National Central Census Committee which comprised of sectorial 
+Ministers; National Census Advis ory Committee which comprised of Sectorial 
+Permanent/Principal Secretaries; National Census Technical Committee; Census 
+Committees at Regional, District, Wards/Shehia, Village/Mtaa and Hamlet. Forums from 
+Non-States Actors including Collaborators Forum, Private Sector, various institutions and 
+the public at large.  
+ 
+A special word of thanks goes to Government leaders at all levels, particularly, Prime 
+Minister's Office - Policy, Parliamentary Affairs and  Coordination; Office of Second Vice 
+President of Zanzibar; Minister for Finance and Planning; Minister of State - President’s 
+Office, Finance and Planning, Zanzibar; Members of Parliament; Member s of the House 
+of Representatives; Councillors/Shehas; Regional and District Census Committees 
+chaired by Regional and District Commissioners of respective area; Census Coordinators 
+(National and Zanzibar); Regional and District Census Coordinators; Superv isors; 
+Enumerators; Local leaders and all respondents (head of household, members of 
+households and individuals).  
+ 
+v 
+ 
+Special gratitude is extended to the following Development Partners: - United Nations 
+Population Fund (UNFPA); World Bank (WB); United Nation s Children's Fund (UNICEF); 
+UN-Women; International Organization for Migration (IOM); United States Agency for 
+International Development (USAID); Foreign, Commonwealth and Development Office 
+(FCDO); United States Census Bureau (USCB), The Republic of South Korea, The 
+People’s Republic of China  and other Development Partners for providing equipment, 
+expertise, training and financial support in making the 2022 Population and Housing 
+Census a success. We also thank religious, traditional and political leaders,  non-
+governmental organization leaders, the media and all citizens and non -citizen in general 
+for their participation and contributions in the successful implementation of the Census.  
+ 
+Special thanks should go to the Honourable Anne Semamba Makinda - Census 
+Commissar for Tanzania Mainland and Former Speaker of the National Assembly; and 
+Honourable Ambassador Mohamed Haji Hamza - Census Commissar for Tanzania 
+Zanzibar, for their effective leadership and management in educating and sensitizing all 
+citizens and non-citizens to participate in the 2022 Population and Housing Census thus, 
+resulting in enhanced quality, smoothness and timely execution of the Census exercise. 
+We also thank the Chairperson of the Governing Board of the National Bureau of Statistics 
+(NBS), Dr. Amina Msengwa and the Chairperson of the Statistics Board of Zanzibar, 
+Ambassador Amina Salum Ali, for their guidance throughout the implementation of the 
+Census exercise.  
+ 
+Last but not least, we would wish to acknowledge the unprecedented effo rts and 
+commitment of the management and staff of the National Bureau of Statistics under the 
+leadership of Dr. Albina Chuwa, the Statistician General; and staff of the Office of the Chief 
+Government Statistician, Zanzibar under the leadership of Mr. Salum  Kassim Ali; Chief 
+Government Statistician; staff from the Ministry of Lands, Housing and Human Settlements 
+Development; Ministry of Information, Communications and Information Technology; as 
+well as other Government officials who worked tirelessly in ensu ring that the 2022 
+Population and Housing Census was implemented successfully. 
+ 
+ 
+Kassim Majaliwa Majaliwa (MP)  
+Prime Minister of 
+The United Republic of Tanzania 
+Hemed Suleiman Abdulla (MHR) 
+Second Vice President of Zanzibar 
+
+ 
+vi 
+Acknowledgement 
+The National Bureau of Statistics and Office of the Chief Government Statistician, Zanzibar 
+conducted the 2022 PHC to provide necessary information for policy formulation, planning, 
+monitoring and evaluation of development processes. The Census collected detailed 
+information on demographics, disabilities, migration, possession of National documents and 
+orphanhood, education, economic activities, land ownership and information related to ICT 
+ownership and use, fertility, mortality, housing ownership and assets, agriculture, 
+community facilities and buildings. Some information on physical addresses was also 
+collected.  
+ 
+This report presents population distribution disaggregated by age and sex from regional to 
+council level . It provides detail ed statistics of different indicators that facilitate making 
+evidence-based decisions relevant to the population at their localities. We therefore express 
+our sincere appreciation to all experts who have put their time and efforts to produce this 
+report. In particular we would like to thank Ruth Davison Minja, Acting Director of Census 
+and Demographic Statistics; Fahima Mohamed Issa, Director of Social Statistics 
+Department, OCGS; Seif Ahmad Kuchengo, the National Census Coordinator; Abdul-majid 
+
+=== pages mentioning ['median'] (first 10) ===
+
+--- page 21 ----------------------------------------------------
+xix
+Basic Concepts and Definitions
+Age is the number of years one had lived as of his/her last birthday i.e. in reference to the
+census night.
+Age-Dependency Ratio is the ratio of people in the “dependent” ages (those under age 15
+and age 65 or above) to the “working age population” (age 15-64 years).
+Census Night  is the reference night of the census. According to the Tanzania 2022
+Population and Housing Census, the  census night was the midnight of 22 nd/23rd August
+2022.
+Collective Households: For census purpose, a collective household is a group of persons
+residing in one dwelling or compound having no head of household. Boarding schools,
+hospitals and camps are examples of collective households.
+Elderly Population: According to the international definition, an elderly is a person aged
+65 years or above. However, according to the Tanzania National Ageing Policy, an elderly
+is a person aged 60 years or above.
+De facto census is the method of enumeration of individuals as of where they are found
+during the census night, regardless of where they normally reside.
+Geographical Information System (GIS)  is a system designed to capture, store,
+manipulate, analyse, manage and present all types of geographical data.
+A Household refers to a person or group of persons who reside in the same homestead or
+compound, but not necessarily in the same dwelling unit,  having same cooking
+arrangements and are answerable to the same household head.
+Median Age is the age at which exactly half the population is older and the other half is
+younger.
+Myers’ Index is calculated for the age above 10 years and shows the excess  or deficit of
+people in ages in any of the ten digits (digits “0” to “9”) expressed as percentage. It is based
+on the assumption that; the population is equally distributed among all ages. The theoretical
+range of Myers` Index is from 0 to 90, where “0” indicates no preference, while “90” indicates
+absolute preference.
+
+--- page 35 ----------------------------------------------------
+13
+Section Three
+Population Distribution by Age and Sex
+3.0 Introduction
+This Section highlights the 2022 PHC results by age and sex. The information is critical for
+the implementation of national policies and programmes. Moreover, information on age and
+sex is essential in the analysis of demographic determinants of population change (fertility,
+mortality and migration ). Detailed statistical tables  from national  to council level, are
+presented in Section four.
+3.1 Age and Sex Structure
+Table 3.1 presents the distribution of Tanzania’s population by 5-year age groups and sex.
+Similar inform ation is presented in Table 3.2 for Tanzania Mainland and Table 3.3 for
+Tanzania Zanzibar. The data depict a young population age structure  for Tanzania, with
+42.8 percent of the population aged below 15 years, and 3.8 percent aged 65 years and
+above. The pattern is similar for both  Tanzania Mainland and Tanzania Zanzibar
+The median age of the Tanzania’s population is 18 years. The results also depict a higher
+number of females than males in almost all age groups, except 10-14.
+Table 3. 1: Population Distribution by Five -Year Age Groups and
+Sex – Tanzania; 2022 PHC
+Age Group Both Sexes Percent Male Percent Female Percent
+Total 61,741,120 100.0 30,053,130 100.0 31,687,990 100.0
+0-4  9,484,170   15.4   4,723,358   15.7   4,760,812   15.0
+5-9  8,918,580   14.4   4,434,206   14.8   4,484,374   14.2
+10-14  7,997,239   13.0   4,035,586   13.4   3,961,653   12.5
+15-19  6,282,391   10.2   3,096,584   10.3   3,185,807   10.1
+20-24  5,565,953   9.0   2,560,783   8.5   3,005,170   9.5
+25-29  4,728,149   7.7   2,220,550   7.4   2,507,599   7.9
+30-34  3,955,937   6.4   1,902,811   6.3   2,053,126   6.5
+35-39  3,208,340   5.2   1,532,154   5.1   1,676,186   5.3
+40-44  2,711,507   4.4   1,315,193   4.4   1,396,314   4.4
+45-49  2,290,045   3.7   1,121,983   3.7   1,168,062   3.7
+50-54  1,853,385   3.0   906,155   3.0   947,230   3.0
+55-59  1,253,343   2.0   616,934   2.1   636,409   2.0
+60-64  1,151,078   1.9   555,227   1.8   595,851   1.9
+65-69  704,081   1.1   329,836   1.1   374,245   1.2
+70-74  626,872   1.0   288,957   1.0   337,915   1.1
+75-79  374,322   0.6   166,374   0.6   207,948   0.7
+80-84  291,434   0.5   117,935   0.4   173,499   0.5
+85+  344,294   0.6   128,504   0.4   215,790   0.7
