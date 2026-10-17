@@ -134,7 +134,8 @@ def unit_of(label: str) -> str | None:
 def numeric_rows(text: str, count: int) -> dict[str, list[float]]:
     """{unit: its figures} for the lines of a page that are a unit's name and
     exactly ``count`` figures."""
-    row = re.compile(rf"^(?P<name>[A-Za-z][A-Za-z .]*?)\s+(?P<nums>{NUM}(?:\s+{NUM}){{{count - 1}}})$")
+    row = re.compile(rf"^(?P<name>[A-Za-z][A-Za-z .]*?)\s+"
+                     rf"(?P<nums>{NUM}(?:\s+{NUM}){{{count - 1}}})$")
     out: dict[str, list[float]] = {}
     for line in joined_lines(text):
         m = row.match(line)
