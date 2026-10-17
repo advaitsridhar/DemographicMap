@@ -237,10 +237,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.1,
+        "count": 371043
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.9,
+        "count": 3276
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -269,6 +277,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -277,7 +292,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B27612515465928",
@@ -815,10 +833,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.7,
+        "count": 364651
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 1067
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -847,6 +873,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyanza.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyanza.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -855,7 +888,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B87181547360532",
@@ -1244,10 +1280,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.7,
+        "count": 380926
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 974
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1276,6 +1320,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Huye.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Huye.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -1284,7 +1335,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B14277660644276",
@@ -1673,10 +1727,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.8,
+        "count": 357882
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 551
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1705,6 +1767,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Muhanga.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Muhanga.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -1713,7 +1782,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B23352434464252",
@@ -1804,10 +1876,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 450531
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 318
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1836,6 +1916,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Kamonyi.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Kamonyi.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -1844,7 +1931,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-91480417B44016762519517",
@@ -2233,10 +2323,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 368993
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 187
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2265,6 +2363,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rutsiro.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rutsiro.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -2273,7 +2378,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B86206624572237",
@@ -2513,10 +2621,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 318682
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 365
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2545,6 +2661,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyabihu.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyabihu.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -2553,7 +2676,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B38913138871456",
@@ -2775,10 +2901,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.7,
+        "count": 484237
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 1292
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2807,6 +2941,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rusizi.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rusizi.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -2815,7 +2956,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B22601397790462",
@@ -3204,10 +3348,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 359925
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 219
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -3236,6 +3388,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rulindo.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rulindo.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -3244,7 +3403,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B43223731633869",
@@ -3764,10 +3926,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 448446
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 378
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -3796,6 +3966,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gicumbi.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gicumbi.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -3804,7 +3981,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-91480417B20985019767017",
@@ -4044,10 +4224,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.8,
+        "count": 483911
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 1042
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -4076,6 +4264,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rwamagana.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rwamagana.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -4084,7 +4279,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B31387731734731",
@@ -4175,10 +4373,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.8,
+        "count": 652420
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 1441
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -4207,6 +4413,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyagatare.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyagatare.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -4215,7 +4428,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B53863210323147",
@@ -4455,10 +4671,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 456491
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 665
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -4487,6 +4711,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Kayonza.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Kayonza.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -4495,7 +4726,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B14634167117771",
@@ -4735,10 +4969,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 403481
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 567
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -4767,6 +5009,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Ngoma.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Ngoma.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -4775,7 +5024,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B3134655885223",
@@ -4866,10 +5118,18 @@
       "status": "not_available",
       "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Rwanda's 2022 census asks no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.3,
+        "count": 547078
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.7,
+        "count": 4025
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -4898,6 +5158,13 @@
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/BUGESERA.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/BUGESERA.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       }
     ],
     "country": "RWA",
@@ -4906,6 +5173,9 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   }
 ]
