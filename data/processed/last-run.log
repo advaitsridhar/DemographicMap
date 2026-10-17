@@ -1,3 +1,812 @@
-usage: probe_hdx.py [-h] [--search SEARCH] [--seed SEED] [--rows ROWS]
-                    [--org ORG] [--match MATCH] [--dataset DATASET]
-probe_hdx.py: error: unrecognized arguments: population
+probe_pdf: https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf
+  3,762,432 bytes
+  122 pages
+probe_pdf: 122 pages, 38 mention ['médian', 'mediane', 'préfecture']
+=== front matter ===
+ 
+REPUBLIQUE DE GUINEE 
+Travail -Justice -Solidarité  
+MINISTERE DU PLAN ET DE LA COOPERATION INTERNATIONALE 
+INSTITUT NATIONAL DE LA STATISTIQUE (INS) 
+BUREAU CENTRAL DE RECENSEMENT (BCR) 
+TROISIEME 
+RECENSEMENT GENERAL DE LA POPULATION ET DE  L’HABITATION 
+(RGPH3 ) 
+ 
+RAPPORT D’ANALYSE DES DONNEES DU RGPH3  
+Thème : Etat et Structure de la population  
+Rédigé par :  Mamadou Chérif BAH et Mamadouba Alkal y BANGOURA 
+Edition Décembre 2017  
+
+
+ 
+ 
+REPUBLIQUE DE GUINEE 
+Travail -Justice -Solidarité  
+MINISTERE DU PLAN ET DE LA COOPERATION INTERNATIONALE 
+INSTITUT NATIONAL DE LA STATISTIQUE (INS) 
+BUREAU CENTRAL DE RECENSEMENT (BCR) 
+TROISIEME 
+RECENSEMENT GENERAL DE LA POPULATION ET DE  L’HABITATION 
+(RGPH3)  
+ 
+Réalisé avec l’appui technique et financier  
+du Fonds des Nations Unies pour la Population (UNFP A),  
+de l’Union Européenne (UE),  
+de la Banque Africaine de Développement (BAD),  
+et du Programme des Nations Unies pour le Développement (PNUD). 
+ 
+ 
+  
+
+
+Institut National de la Statistique – RGPH 2014 
+ETAT ET STRUCTURE DE LA POPULATION  3 
+TABLE DES MATIERES 
+LISTE DES TABLEAUX ................................................................................................................................................. 5 
+LISTE DES GRAPHIQUES ............................................................................................................................................ 9 
+LISTE DES CARTES .................................................................................................................................................... 11  
+LISTE DES TABLEAUX DE L’ANNEXE ....................................................................................................................... 13 
+SIGLES ET ABREVIATIONS........................................................................................................................................ 15  
+AVANT PROPOS ......................................................................................................................................................... 17  
+INTRODUCTION .......................................................................................................................................................... 19  
+CHAPITRE 1 : CONTEXTE ET ASPECTS METHODOLOGIQUES ............................................................................. 21  
+1.1  Contexte ...................................................................................................................................................... 21  
+1.1.1  Milieu naturel ...................................................................................................................................... 21  
+1.1.2  Contexte historique ............................................................................................................................ 22  
+1.1.3  Découpage administratif de la République de Guinée ....................................................................... 23  
+1.1.4  Contexte économique ........................................................................................................................ 23  
+1.1.5  Contexte démographique ................................................................................................................... 23  
+1.2  Aspects méthodologiques ........................................................................................................................... 24  
+1.2.1  Définition des concepts opérationnels ................................................................................................ 24  
+1.2.2  Définition des concepts d’analyse ...................................................................................................... 26  
+1.2.3  Définition des indicateurs ................................................................................................................... 26  
+1.3  Évaluation de la qualité des donnés ........................................................................................................... 27  
+1.3.1  Rapport de masculinité ....................................................................................................................... 27  
+1.3.2  Qualité de la déclaration de l’âge ....................................................................................................... 27  
+CHAPITRE 2 : VOLUME et REPARTITION SPATIALE DE LA POPULATION ............................................................ 31  
+2.1  Volume de la population .............................................................................................................................. 31 
+2.1.1  Population de droit et population de fait ............................................................................................. 31  
+2.1.2  Population résidente ........................................................................................................................... 31  
+2.1.3  Population résidente par type de ménage .......................................................................................... 32  
+2.1.4  Population des ménages collectifs ..................................................................................................... 33  
+2.2  Répartition spatiale de la population ........................................................................................................... 33  
+2.2.1  Répartition de la population totale selon le sexe par milieu de résidence .......................................... 33  
+2.2.2  Répartition de la population totale par région de résidence ............................................................... 33  
+2.2.3  Population des préfectures ................................................................................................................. 37  
+2.3  Population urbaine ...................................................................................................................................... 45  
+2.3.1  Population urbaine par région ............................................................................................................ 45  
+2.3.2  Population urbaine par préfecture ...................................................................................................... 47  
+2.3.3  Evolution de la population urbaine ..................................................................................................... 49  
+2.3.4  Taille des villes ................................................................................................................................... 51  
+2.4  Stabilité résidentielle de la population ......................................................................................................... 51  
+2.4.1  Stabilité résidentielle de la population selon la région de résidence ................................................... 51  
+2.4.2  Stabilité résidentielle de la population selon la préfecture de résidence ............................................ 53  
+2.5  Répartition des ménages et de la population par milieu et région de résidence selon le sexe du chef de 
+ménage 54  
+2.6  Vue d’ensemble .......................................................................................................................................... 55  
+CHAPITRE 3 : STRUCTURE PAR SEXE ET PAR AGE DE LA  POPULATION .......................................................... 57  
+3.1  Population selon les grands groupes d’âges classiques ............................................................................. 57  
+3.1.1  Structure par grands groupes d’âges par sexe selon le milieu de résidence ..................................... 57  
+3.1.2  Évolution de la structure par grand groupe d’âges de la population ................................................... 58  
+3.2  Structure par sexe et par groupes d’âges quinquennaux ............................................................................ 58  
+3.2.1  Structure par groupes d’âges quinquennaux par sexe selon le milieu de résidence (national) .......... 58  
+3.2.2  Structure par groupe d’âges quinquennaux et par sexe de la capitale Conakry ................................ 59  
+3.2.3  Pyramide des âges ............................................................................................................................. 60  
+3.2.4  Évolution de la structure par sexe et par groupe d’âges selon le milieu de résidence ....................... 62  
+3.2.5  Age moyen et âge médian ................................................................................................................. 62  
+3.3 Population selon les groupes d’âges opérationnels .................................................................................... 63  
+3.4  Vue d’ensemble .......................................................................................................................................... 66  
+CHAPITRE 4: VOLUME ET STRUCTURE SELON CERTAINES CARACTERISTIQUES SOCIO-DEMOGRAPHIQUES 
+ ..................................................................................................................................................................................... 67  
+4.1  Etat matrimonial de la population de 12 ans et plus .................................................................................... 67  
+4.1.1  Structure de la population de douze ans plus par état matrimonial et le milieu de résidence selon le 
+sexe 67  
+4.1.2  Structure de la population de douze ans et plus par région administrative selon l’état matrimonial ... 68  
+Institut National de la Statistique – RGPH 2014 
+4  ETAT ET STRUCTURE DE LA POPULATION  
+4.2  Structure de la population selon le statut et le type de handicap ................................................................ 71  
+4.2.1  Structure de la population résidente des personnes vivant avec un handicap par sexe et le milieu de 
+résidence 71  
+4.2.2  Structure de la population résidente des personnes vivant avec un handicap par région de résidence 
+ 72  
+4.2.3  Structure de la population résidente des personnes vivant avec un handicap par milieu de résidence 
+et le principal handicap selon le sexe .................................................................................................................. 73  
+4.3  Survie des parents des enfants de 0-17 ans ............................................................................................... 74  
+4.3.1  Survie des parents pour les enfants de 0-17 ans ............................................................................... 74  
+4.3.2  Les enfants en situation de confiage .................................................................................................. 76  
+4.4  Enregistrement des enfants de 0 à 17 ans à l’état civil ............................................................................... 77  
+4.5  Vue d’ensemble .......................................................................................................................................... 78  
+CHAPITRE 5 : CARACTERISTIQUES SOCIOCULTURELLES DE LA POPULATION ................................................ 81  
+5.1  Alphabétisation et niveau d’éducation ......................................................................................................... 81  
+5.1.1  Alphabétisation ................................................................................................................................... 81  
+5.1.2  Niveau d’instruction ............................................................................................................................ 83 
+5.1.3  Diplôme le plus élevé ......................................................................................................................... 84  
+5.2  Principales langues parlées par la population ............................................................................................. 85  
+5.2.1  Répartition de la population par sexe et milieu de résidence selon la principale langue parlée ......... 85  
+5.2.2 Répartition  de la population par région selon la principale langue parlée ......................................... 86  
+5.3  Structure de la population selon la religion d’appartenance ........................................................................ 87  
+5.3.1  Répartition de la population par sexe et milieu de résidence selon la religion ................................... 87  
+5.3.2  Répartition de la population par région selon la religion ..................................................................... 88  
+5.3.3  Évolution des principales religions ..................................................................................................... 88  
+5.4  Structure de la population selon la nationalité ............................................................................................. 89  
+5.5  Vue d’ensemble .......................................................................................................................................... 90  
+CHAPITRE 6 : STRUCTURES DE LA POPULATION SELON LES CARACTERISTIQUES ÉCONOMIQUES ........... 91  
+6.1  Structure de la population recensée de 15 ans et plus selon la situation d’activité ..................................... 91  
+6.1.1  Structure de la population totale recensée de 15 ans et plus par situation d’activité selon le milieu de 
+résidence 91  
+6.1.2  Structure de la population totale recensée de 15 ans et plus par situation d’activité selon la région de 
+résidence 92  
+6.2  Structure de la population totale recensée active occupée de 15 à 64 ans par grands groupes de 
+professions ............................................................................................................................................................... 93  
+6.2.1  Structure de la population totale recensée active occupée de 15 – 64 ans par grands groupes de 
+professions et le milieu de résidence selon le sexe ............................................................................................. 93  
+6.2.2  Structure de la population totale recensée active occupée de 15 à 64 ans par région de résidence 
+selon les grands groupes de professions ............................................................................................................ 95  
+6.3  Structure de la population totale recensée active occupée de 15 à 64 ans selon le statut dans la profession 
+ 96  
+6.3.1  Structure de la population totale recensée active occupée de 15-64 ans par milieu de résidence et 
+statut dans la profession selon le sexe ................................................................................................................ 96  
+6.3.2  Structure de la population totale recensée active occupée de 15 à 64 ans par région de résidence 
+selon le statut dans la profession ......................................................................................................................... 97  
+6.3.3  Structure de la population active occupée de 15 à 64 ans par branche d’activité selon le sexe ........ 97  
+6.4  Vue d’ensemble .......................................................................................................................................... 98  
+CONCLUSION GENERALE ......................................................................................................................................... 99  
+BIBLIOGRAPHIE ........................................................................................................................................................ 101  
+ANNEXE ..................................................................................................................................................................... 103  
+Institut National de la Statistique – RGPH 2014 
+ETAT ET STRUCTURE DE LA POPULATION  5 
+LISTE DES TABLEAUX 
+Tableau 1. 01: Indice Whipple selon le milieu de résidence et le sexe ......................................................................... 29  
+Tableau 1. 02: Indice Combiné des Nations Unies selon la région de résidence ......................................................... 29  
+Tableau 2.01: Répartition de la population recensée (ménages ordinaires et collectifs) par milieu de résidence et 
+statut de résidence selon le sexe ................................................................................................................................. 31  
+Tableau 2.02: Effectif et répartition (%) de la population résidente par sexe selon le milieu de résidence ................... 32  
+Tableau 2.03: Effectif et répartition (%) de la population résidente par milieu de résidence selon le sexe ................... 32  
+Tableau 2.04: Effectif et répartition (%) de la population résidente par type de ménages selon le sexe ...................... 32  
+Tableau 2.05: Effectif et répartition (%) de la population résidente par type de ménages selon le milieu de résidence 
+ ..................................................................................................................................................................................... 33  
+Tableau 2.06: Répartition de la population des ménages collectifs par type selon le sexe .......................................... 33  
+Tableau 2.07: Effectif et répartition (%) de la population résidente par sexe selon la région de résidence,  rang 
+démographique de la région et pourcentage des femmes ............................................................................................ 34  
+Tableau 2.08: Répartition de la population résidente par région naturelle et taux d’accroissement intercensitaire par 
+région naturelle ............................................................................................................................................................. 37  
+Tableau 2.09: Répartition de la population résidente et taux d’accroissement intercensitaire par région administrative 
+ ..................................................................................................................................................................................... 37  
+Tableau 2.10: Répartition de la population résidente par préfecture selon le sexe, le rang démographique et la 
+proportion de femmes ................................................................................................................................................... 38  
+Tableau 2.11 : Densité de la population au niveau régional et son évolution ............................................................... 42  
+Tableau 2.12: Densité de la population des préfectures (hors Conakry) et son évolution ............................................ 44  
+Tableau 2.13: Population urbaine résidente des ménages ordinaires par région ......................................................... 46  
+Tableau 2.14: Population urbaine résidente des ménages ordinaires par centre urbain .............................................. 48  
+Tableau 2.15: Population urbaine et son évolution par centre urbain ........................................................................... 50  
+Tableau 2.16: Classification des villes selon la taille et la région.................................................................................. 51 
+Tableau 2.17: Pourcentage de la population qui n’a jamais quitté son lieu de naissance par région selon le sexe et le 
+milieu de résidence ....................................................................................................................................................... 52  
+Tableau 2.18 : Pourcentage de la population qui n’a jamais quitté son lieu de naissance par préfecture selon le sexe 
+et le milieu de résidence ............................................................................................................................................... 53  
+Tableau 2.19: Taille moyenne des ménages par milieu de résidence selon le sexe du chef de ménage ..................... 54  
+Tableau 2.20 : Taille du ménage selon le sexe du chef de ménage et les régions de résidence ................................. 54  
+Tableau 3.01: Poids et Rapport de dépendance démographique de la population par sexe, milieu de résidence et par 
+région selon les groupes d’âges classiques ................................................................................................................. 58  
+Tableau 3.02: Évolution de la structure par grand groupe d’âges de la population de 1983 à 2014 ............................ 58  
+Tableau 3.03: Répartition de la population résidente par groupes d’âges quinquennaux selon le sexe....................... 59  
+Tableau 3.04: Répartition de la population résidente par groupe d’âges quinquennaux et par sexe de la Capitale 
+Conakry ........................................................................................................................................................................ 60  
+Tableau 3.05: Évolution de la structure par groupe d’âges quinquennaux de 1983 à 2014 ......................................... 62  
+Tableau 3.06: Age moyen et âge médian de la population par milieu et par région de résidence selon le sexe .......... 63  
+Tableau 4.01: Effectif et répartition (%) de la population de 12 ans et plus par milieu de résidence et par sexe selon 
+l’état matrimonial et pourcentage de femmes ............................................................................................................... 68  
+Tableau 4.02: Répartition de la population de 12 ans et plus par région de résidence selon l’état matrimonial ........... 69  
+Tableau 4.03: Répartition de la population masculine de 12 ans et plus par région de résidence selon état matrimonial 
+ ..................................................................................................................................................................................... 70  
+Tableau 4.0 4: Répartition de la population féminine de 12 ans et plus par région de résidence selon état matrimonial 
+ ..................................................................................................................................................................................... 71  
+Tableau 4.05: Répartition de la population vivant avec un handicap par milieu de résidence selon le sexe ................ 72  
+
+=== pages mentioning ['médian', 'mediane', 'préfecture'] (first 20) ===
+
+--- page 5 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  3
+TABLE DES MATIERES
+LISTE DES TABLEAUX ................................................................................................................................................. 5
+LISTE DES GRAPHIQUES ............................................................................................................................................ 9
+LISTE DES CARTES .................................................................................................................................................... 11
+LISTE DES TABLEAUX DE L’ANNEXE ....................................................................................................................... 13
+SIGLES ET ABREVIATIONS........................................................................................................................................ 15
+AVANT PROPOS ......................................................................................................................................................... 17
+INTRODUCTION .......................................................................................................................................................... 19
+CHAPITRE 1 : CONTEXTE ET ASPECTS METHODOLOGIQUES ............................................................................. 21
+1.1  Contexte ...................................................................................................................................................... 21
+1.1.1  Milieu naturel ...................................................................................................................................... 21
+1.1.2  Contexte historique ............................................................................................................................ 22
+1.1.3  Découpage administratif de la République de Guinée ....................................................................... 23
+1.1.4  Contexte économique ........................................................................................................................ 23
+1.1.5  Contexte démographique ................................................................................................................... 23
+1.2  Aspects méthodologiques ........................................................................................................................... 24
+1.2.1  Définition des concepts opéra
+
+--- page 7 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  5
+LISTE DES TABLEAUX
+Tableau 1. 01: Indice Whipple selon le milieu de résidence et le sexe ......................................................................... 29
+Tableau 1. 02: Indice Combiné des Nations Unies selon la région de résidence ......................................................... 29
+Tableau 2.01: Répartition de la population recensée (ménages ordinaires et collectifs) par milieu de résidence et
+statut de résidence selon le sexe ................................................................................................................................. 31
+Tableau 2.02: Effectif et répartition (%) de la population résidente par sexe selon le milieu de résidence ................... 32
+Tableau 2.03: Effectif et répartition (%) de la population résidente par milieu de résidence selon le sexe ................... 32
+Tableau 2.04: Effectif et répartition (%) de la population résidente par type de ménages selon le sexe ...................... 32
+Tableau 2.05: Effectif et répartition (%) de la population résidente par type de ménages selon le milieu de résidence
+ ..................................................................................................................................................................................... 33
+Tableau 2.06: Répartition de la population des ménages collectifs par type selon le sexe .......................................... 33
+Tableau 2.07: Effectif et répartition (%) de la population résidente par sexe selon la région de résidence,  rang
+démographique de la région et pourcentage des femmes ............................................................................................ 34
+Tableau 2.08: Répartition de la population résidente par région naturelle et taux d’accroissement intercensitaire par
+région naturelle ............................................................................................................................................................. 37
+Tableau 2.09: Répartition de la population résidente et taux d’accroissement intercensitaire par région administrative
+ ..................................................................................................................................................................................... 37
+Tableau 2.10: Répartition de la population résidente par préfecture selon le sexe, le rang démographique et la
+proportion de femmes .....
+
+--- page 8 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+6  ETAT ET STRUCTURE DE LA POPULATION
+Tableau 5.02: Répartition de la population de 12 ans et plus par région naturelle et région administrative selon
+l’aptitude à lire et écrire dans une langue quelconque .................................................................................................. 82
+Tableau 5.03: Répartition de la population de 3 ans et plus par niveau d’instruction selon le sexe ............................. 83
+Tableau 5.04: Répartition de la population de 3 ans et plus par région selon le niveau s’instruction ........................... 84
+Tableau 5.05: Répartition de la population résidente de 15 ans et plus par milieu de résidence et par sexe selon le
+diplôme obtenu ............................................................................................................................................................. 84
+Tableau 5.06: Répartition de la population résidente de plus de 15 ans par région de résidence selon le diplôme
+obtenu .......................................................................................................................................................................... 85
+Tableau 5.07: Répartition de la population de 3 ans et plus par milieu de résidence et par sexe selon la langue
+nationale parlée ............................................................................................................................................................ 86
+Tableau 5.08: Répartition de la population résidente de plus de 15 ans par région de résidence selon la langue
+principale parlée ........................................................................................................................................................... 87
+Tableau 5.09: Répartition de la population résidente par religion selon le milieu de résidence et le sexe ................... 88
+Tableau 5.10: Répartition de la population résidente par région de résidence  selon la religion .................................. 88
+Tableau 5.11: Évolution des différentes religions selon le milieu de résidence de 1996 à 2014 .................................. 88
+Tableau 5.12: Répartition de la population étrangère par nationalité selon le sexe ..................................................... 89
+Tableau 5.13: Répartition de la population résidente par sexe, milieu et région de résidence selon la nationalité ...... 89
+Tableau 6.01: Répartition de la population résidente de 6 a
+
+--- page 11 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  9
+LISTE DES GRAPHIQUES
+Graphique 1.01: Rapport de masculinité selon le milieu de résidence ......................................................................... 27
+Graphique 1.02: Répartition de la population résidente par sexe selon l’âge ............................................................... 28
+Graphique 2.01: Poids démographique de la population (%) par région ...................................................................... 34
+Graphique 2.02: Poids démographique des femmes par région .................................................................................. 35
+Graphique 2.03: Poids démographique de la population par préfecture ....................................................................... 39
+Graphique 2.04 : Poids démographique des femmes par préfecture ........................................................................... 40
+Graphique 2.05: Densité des régions hormis Conakry ................................................................................................. 42
+Graphique 2.06: Taux d'urbanisation par région de résidence ..................................................................................... 46
+Graphique 2.07: Proportion de ceux qui n'ont jamais quitté leur préfecture de naissance ........................................... 52
+Graphique 2.08: Taille moyenne des ménages ............................................................................................................ 55
+Graphique 3.01: Pyramide de la population totale ........................................................................................................ 61
+Graphique 3.02 Pyramide de la population urbaine...................................................................................................... 61
+Graphique 3.03: Pyramide de la population Rurale ...................................................................................................... 61
+Graphique 4.01: Proportion (%) des célibataires au sein de la population totale de douze ans et plus par région de
+résidence ...................................................................................................................................................................... 69
+Graphique 4.02: Proportion (%) des célibataires au sein de la population masculine agée de douze ans et plus par
+région de résidence .................................................
+
+--- page 13 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  11
+LISTE DES CARTES
+Carte 2.01: Répartition de la population résidente par région ...................................................................................... 35
+Carte 2.02: Poids démographique des femmes par région .......................................................................................... 36
+Carte 2.03: Poids démographique des femmes par Préfecture .................................................................................... 41
+Carte 2.04: Carte régionale selon la densité................................................................................................................. 43
+Carte 2.05: Carte de densités par Préfecture ............................................................................................................... 45
+Carte 2.06: Niveau d’urbanisation par Préfecture ......................................................................................................... 47
+Carte 2.07: Niveau d’urbanisation par Préfecture ......................................................................................................... 49
+Carte 5.01: Répartition (%) de la population analphabète par région ........................................................................... 83
+
+--- page 15 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  13
+LISTE DES TABLEAUX DE L’ANNEXE
+Tableau A.01: Taux d'accroissement intercensitaire par préfecture selon les régions naturelles de résidence ......... 103
+Tableau A.02: Répartition de la population résidente par milieu de résidence et par région de résidence selon le sexe
+ ................................................................................................................................................................................... 104
+Tableau A.03: Répartition de la population résidente urbaine, par  région et par  préfecture de résidence selon le sexe
+ ................................................................................................................................................................................... 105
+Tableau A.04: Répartition de la population résidente rurale, par  région et par  préfecture de résidence selon le sexe
+ ................................................................................................................................................................................... 106
+Tableau A.05: Répartition de la population résidente totale, par  région et par  préfecture de résidence selon le sexe
+ ................................................................................................................................................................................... 107
+Tableau A.0 6: Répartition de la population résidente urbaine par milieu de résidence et par groupe d'âges
+quinquennaux selon le sexe ....................................................................................................................................... 108
+Tableau A.0 7: Répartition de la population résidente rurale par milieu de résidence et par groupe d'âges
+quinquennaux selon le sexe ....................................................................................................................................... 108
+Tableau A.0 8: Répartition de la population résidente totale par groupe d'âges quinquennaux selon le sexe ........... 109
+Tableau A.0 9: Répartition de la population résidente de la région administrative de Boké par milieu de résidence et
+par groupe d'âges quinquennaux selon le sexe ......................................................................................................... 109
+Tableau A.10: Répartition de la population résidente de la région administrative de Conakry par milieu 
+
+--- page 19 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  17
+AVANT PROPOS
+Le troisième Recensement Général de la Population e t de l’Habitation (RGPH-3) a été réalisé du 1 er  mars
+au 2 avril 2014 sur toute l’étendue du territoire national. Il s’inscrit dans le cadre de la mise en œuvre de la
+Stratégie Nationale de Développement de la Statisti que (SNDS 2009-2015) et de la recommandation des
+Nations Unies invitant les pays à réaliser un recen sement de la population au cours de la période 2005 -
+2014.
+L’opération a été financée par le Gouvernement, le Fonds des Nations Unies pour la Population (UNFPA),
+l’Union Européenne (UE), la Banque Africaine de Dév eloppement (BAD) et le Programme des Nations
+Unies pour le Développement (PNUD). Pour l’exécutio n de cette grande investigation statistique, l’Inst itut
+National de la Statistique (INS) a bénéficié de l’a ssistance technique des experts de l’UNFPA à toutes  les
+étapes du processus. La Commission Economique pour l’Afrique des Nations Unies (CEA) a aussi apporté
+un appui technique pendant le traitement des données.
+Les résultats définitifs du RGPH-3 ont été publiés par le Décret D/2015/229/PRG/SGG du 31 décembre
+2015. Ils fournissent les effectifs de la populatio n résidente par sexe selon les unités administrativ es
+(régions, préfectures, et sous-préfectures/ communes).
+La présente publication fait partie d’une série de dix-sept (17) rapports qui ont été rédigés dans le cadre de
+l’analyse des données du RGPH-3. Ces rapports théma tiques fournissent une analyse détaillée des
+caractéristiques démographiques et socioéconomiques de la population guinéenne ainsi que ses conditions
+de logement en 2014. Il s’agit des rapports suivants :
+1. Etat et structure de la population
+2. Etat matrimonial et nuptialité
+3. Fécondité
+4. Mortalité
+5. Migration
+6. Caractéristiques des ménages
+7. Caractéristiques des habitations
+8. Caractéristiques économiques de la population
+9. Scolarisation, alphabétisation et instruction
+10. Mesure et cartographie de la pauvreté
+11.  Situation des femmes
+12.  Situation des enfants et des jeunes
+13.  Situation des personnes âgées
+14.  Situation des personnes vivant avec un
+handicap
+15.  Perspectives démographiques
+16.  Prospectives démographiques
+17.  Evaluation de la qualité des données
+Par rapport aux recensements de 1983 et 1996, les données du RGPH-3 ont fait l’objet d’une analyse plus
+approfondie pour satisfaire aux demandes multiples et variées des utilisateurs d
+
+--- page 21 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  19
+INTRODUCTION
+La République de Guinée, depuis son indépendance a réalisé trois opérations de recensements généraux
+de population et d’habitation à savoir ceux de 1983 , de 1996 et le troisième en 2014. Le recensement
+général de 2014 a été réalisé du 1 er  Mars au 02 Avril 2014.
+L’objectif principal est de fournir des information s fiables et actuelles sur l’effectif de la populat ion, sa
+structure et sa répartition géographique.
+Les objectifs spécifiques de ce recensement sont :
+• Elaborer des perspectives plus conformes à la réal ité ;
+• Réactualiser la base de sondage destinée au tirage  d’échantillons pour les futures enquêtes
+auprès des ménages ;
+• Mettre à jour le répertoire national des localités  (fichier villages) ;
+• Mettre en place un système d’informations géograph iques (SIG) harmonisé sur les structures
+socio-économiques de base ;
+• Renforcer les capacités de planification de l’admi nistration centrale et des administrations
+locales et le suivi évaluation des projets et programmes ;
+• Renforcer les capacités de l’Institut National de la Statistiques dans la planification, la collecte,
+le traitement, l’analyse et la dissémination des données à une plus large échelle ;
+• Fournir des données pour l’élaboration d’une carte  de pauvreté à l’échelle des Sous-
+préfectures.
+En l’absence d’un état civil fonctionnel comme (c’e st le cas dans la plupart des pays d’Afrique
+subsaharienne), les recensements constituent la seu le source de données sur la structure par sexe et p ar
+âge ainsi que la répartition spatiale de la populat ion d’un pays jusqu’au niveau des unités géographiq ues
+les plus fines. Le recensement permet aussi de mett re à jour la base de sondage nationale pour la
+réalisation des enquêtes intercensitaires.
+L’état et la structure de la population présentent la physionomie de celle-ci à un moment donné de la vie de
+son histoire. En particulier, la structure par sexe  et par âge, les caractéristiques sociodémographiqu es,
+socioculturelles et économiques permettent d’appréhender et de comprendre la dynamique de la population
+et de faire des projections démographiques. A struc ture par sexe et par âge fournit également la valeu r du
+dénominateur nécessaire pour le calcul des indicate urs utilisés ailleurs, en particulier l’effectif et  la
+composition par sexe des populations spécifiques destinées pour les besoins de programmes sectoriels de
+développement (san
+
+--- page 25 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  23
+1.1.3 Découpage administratif de la République de G uinée
+Depuis son indépendance politique, la République de  Guinée a subi plusieurs découpages administratifs.
+Mais au moment du troisième recensement, la Républi que de Guinée était subdivisée en sept régions
+administratives ayant chacune à sa tête un Gouverne ur. Au niveau de chaque Région administrative, tous
+les services de l’état y sont représentés. Les régi ons sont subdivisées en Préfectures qui sont au nom bre
+de trente-trois qui sont-elles mêmes subdivisées en Communes rurales et urbaines. La ville de Conakry est
+une région ayant un statut spécial. La région de Conakry est cependant elle subdivisée en cinq communes
+qui sont reparties en quartiers.
+Les Préfectures sont des subdivisions territoriales  qui relèvent directement des régions administrativ es et
+sont dirigées chacune par un Préfet. Chaque préfecture compte un certain nombre de Communes (urbaines
+et rurales) qui sont aussi des entités de taille va riable. Elles comptent des districts et des quartie rs. Au
+niveau du chef-lieu de chaque préfecture, la subdivision mise en place est la Commune urbaine formée de
+quartiers et de districts selon la taille de sa pop ulation et la position géographique des localités q ui la
+composent.
+Les institutions politiques ont joué un rôle import ant dans l’organisation du recensement. Ainsi lors de la
+sensibilisation ayant précédé le dénombrement, des rencontres avaient été organisées avec ces
+institutions, notamment les partis politiques, dans  le but d’expliquer les objectifs et l’importance d u
+recensement à la population, en vue de leur participation active à la réussite de l’opération .
+1.1.4 Contexte économique
+L’économie du pays reste dominée par le secteur rur al et le secteur minier qui contribuent respectivem ent
+pour 18% et 19% du PIB. Le secteur rural assure l’essentiel de l’emploi et des moyens de subsistance à la
+majorité de la population. Le sous-sol renferme d’immenses potentialités minières (bauxite, diamant, fer, or
+etc.). Les résultats de l’enquête légère de 2012 indiquent que 55,2% de la population vivent en dessous du
+seuil de pauvreté. Les grands changements intervenu s dans l’amélioration de la mobilisation des
+ressources, le recul appréciable de l’évasion fisca le et la maitrise des dépenses publiques, ont permi s la
+réduction du déficit budgétaire de 11 points, entre  décembre 2010 et mai 2014. Le
+
+--- page 27 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  25
+Préfecture  : C’est la subdivision administrative qui vient di rectement après la région. La Guinée compte
+trente-trois préfectures.
+Communes  : En dessous des préfectures se trouvent les commu nes (urbaines et rurales). Elles sont au
+nombre de trois cent quarante-deux dont trente-huit sont urbaines.
+Urbain : est considérée comme urbaine toute agglomération située dans le périmètre loti du chef-lieu de la
+préfecture bénéficiant de certaines commodités nota mment l’eau et l’électricité. Ainsi toute la ville de
+Conakry est considérée comme urbaine, de même les p arties strictement loties des chefs-lieux des
+préfectures. Exceptionnellement dans la préfecture de Boké, les cités de Kamsar et de Sangarédi sont aussi
+considérées comme urbaines.
+Age : c’est le nombre d’années vécues (révolues) qui sép are la date de naissance et la date du
+recensement.
+Lieu de naissance : le lieu de naissance est défini comme la préfecture de naissance pour les personnes
+nées en Guinée et le pays de naissance pour les personnes nées à l’étranger.
+Durée de naissance  : la durée de résidence est le temps passé par un individu dans le lieu où il a été
+recensé. Cette durée est exprimée en années révolues.
+Religion  : c’est l’ensemble des croyances et pratiques qui régissent les rapports entre l’homme et Dieu.
+Handicap majeur  : l’OMS définit le handicap majeur comme « le désa vantage résultant pour un individu
+d’une défaillance ou d’une incapacité qui limite l’individu concerné dans l’exercice d’un rôle normal pour lui,
+compte tenu de son âge, de son sexe et des facteurs sociaux et culturels ou l’empêche d’exercer ce rôle ».
+Cet handicap peut être dû à une déficience congénitale (une malformation) ou acquise ou à un accident ou
+une maladie.
+Survie des parents  : On entend par survie du père et de la mère, le f ait que le père ou la mère biologique
+d’un membre du ménage est encore en vie.
+Langue nationale parlée  : il s’agit de la langue nationale habituellement parlée par l’individu même s’il
+parle d’autres langues. Ces langues peuvent être : le soussou, le malinké, le poular, le Kpèlè, le bag a, le
+kono etc.
+Fréquentation scolaire  : la fréquentation scolaire est la fréquentation d ’un établissement formel public ou
+privé, ou communautaire (laïc ou confessionnel) pou r faire des études régulières à un niveau quelconqu e
+et pendant une période déterminée.
+Niveau d’instruction  : le niveau d’instruct
+
+--- page 28 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+26  ETAT ET STRUCTURE DE LA POPULATION
+Alphabétisation  : Une personne alphabétisée est une personne capable à la fois de lire et écrire dans une
+langue quelconque.
+Situation matrimoniale  : la situation matrimoniale est l’état d’un indivi du par rapport au mariage. Les
+différentes modalités dans la situation matrimonial e sont : célibataire, marié monogame, marié polygam e,
+veuf/veuve, divorcé, union libre.
+1.2.2 Définition des concepts d’analyse
+Population de droit ou population résidente : Elle est constituée des résidents présents (RP) et des
+résidents absents (RA)
+Population de fait  : Elle est constituée des Résidents présents (RP) et des Visiteurs (VI).
+Groupes d’âges quinquennaux  : Ce sont des tranches d’âges de 5 ans conventionnelles très utilisées en
+démographie : 0 – 4 ans, 5 – 9 ans, 10 – 14 ans.
+Pyramide des âges  : Elle est une représentation graphique de la stru cture par âge et par sexe d’une
+population à un moment donné.
+Population urbaine  : Elle englobe toute la population vivant dans la zone de Conakry, dans les zones
+strictement loties des capitales des préfectures et des cités de Kamsar et de Sangaredi.
+Population rurale  : c’est l’ensemble de la population vivant dans le s différentes sous-préfectures du pays
+et de celle qui sont dans les districts relevant des communes urbaines.
+1.2.3 Définition des indicateurs
+Densité : Elle exprime la concentration de la population sur une entité territoriale et est exprimée par le
+nombre moyen d’habitants par kilomètre carré, soit le rapport de l’effectif de la population sur la su perficie
+de cette entité. La densité dont il sera question ici est celle dite générale ou physique, c'est-à-dire celle qui
+tient compte de toute l’espace géographique considéré (y compris les forêts, les savanes et les cours d’eau)
+par opposition à la densité physiologique qui se réfère à l’espace réellement habitable.
+Rapport de masculinité (RM) : c’est le nombre d’hommes pour cent femmes.
+Proportion de femmes  : Effectif de femmes rapporté à l’effectif de la population totale (en pour cent)
+Poids démographique  : Effectif des personnes ayant une modalité donnée  sur l’effectif de la population
+totale (en pour cent)
+Taille moyenne de ménages  : exprime le nombre moyen de personnes par ménage.  Elle est obtenue en
+divisant l’effectif de la population totale des ménages ordinaires par le nombre de ménages ordinaires.
+Rapport de dépendance démographique  : C’est l’ensemble
+
+--- page 29 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  27
+Stabilité résidentielle : est le fait qu’une personne n’a jamais quitté sa préfecture de naissance c'est-à-dire
+qu’au moment du recensement on retrouve la personne  dans la préfecture où elle est née et qu’elle n’a
+jamais effectué une migration de plus de six mois.
+Indice de Whipple : C’est un indice qui permet de mesurer le degré d’attraction ou de répulsion des chiffres
+se terminant par 0 et 5. Son calcul est basé sur l’hypothèse d’une distribution uniforme de la population des
+différents âges d’une part et ne prend en compte qu e le groupe d’âge 23 à 65 ans d’autre part, afin de
+compenser l’effet dû à la décroissance normale des effectifs dans un groupe d’âge. Une valeur égale à 1
+de cet indice traduit une absence de préférence pour les âges terminés par 0 et 5.
+1.3 Évaluation de la qualité des donnés
+1.3.1 Rapport de masculinité
+Le rapport de masculinité rend compte de l’importan ce relative de l’effectif de chaque sexe dans la
+population totale. Pour un âge donné, il peut y avo ir plus d’hommes que de femmes et vis-versa. Ainsi,  il
+met en évidence le déséquilibre entre les deux sexes à un âge donné. Il ressort de ce graphe que la courbe
+du rapport de masculinité est irrégulière, on s’att endait à la supériorité masculine aux bas âges et a u
+surnombre de femmes aux âges avancés. La première étant confirmée quel que soit le milieu de résidence,
+la seconde est loin de l’être surtout en milieu rur al. De ce résultat, nous pouvons dire que les femme s
+avaient tendance à diminuer leurs âges (mauvaise déclaration des âges).
+Graphique 1.01: Rapport de masculinité selon le milieu de résidence
+1.3.2 Qualité de la déclaration de l’âge
+En démographie, l’âge des enquêtés occupe une place importante dans l’explication des faits sociaux. C’est
+pourquoi son évaluation dans une étude démographiqu e est indispensable. Les erreurs dues à la
+déclaration de l’âge peuvent avoir des répercussions sur les phénomènes que nous étudions et conduire à
+0,0
+20,0
+40,0
+60,0
+80,0
+100,0
+120,0
+140,0
+0 - 4 5 - 9 10 -
+14
+15 -
+19
+20 -
+24
+25 -
+29
+30 -
+34
+35 -
+39
+40 -
+44
+45 -
+49
+50 -
+54
+55 -
+59
+60 -
+64
+65 -
+69
+70 -
+74
+75 -
+79
+80 -
+84
+85 -
+89
+90 -
+94
+95
+et
+plus
+Ensemble Urbain Rural
+
+--- page 35 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  33
+Tableau 2.05: Effectif et répartition (%) de la pop ulation résidente par type de ménages selon le mili eu de
+résidence
+Milieu de résidence
+Type de ménage
+Ordinaire % Collectif % Total %
+Urbain 3 651 372 99,8 5750 0,2 3 657 122 100,0
+Rural 6 851 760 99,8 1 4379 0,2 6 866 139 100,0
+Ensemble 10 503 132 99,8 2 0129 0,2 10 523 261 100, 0
+2.1.4 Population des ménages collectifs
+Près de la moitié des ménages collectifs ( 9 528 personnes ) ont été recensés dans les casernes, 2 726
+personnes  dans les hôtels, 2 504 personnes dans les internats scolaires et 2 275 personnes  dans les
+orphelinats. En considérant la répartition selon le sexe, le sexe masculin est nettement plus représenté que
+leur homologue quel que soit le lieu de regroupement.
+Tableau 2.06: Répartition de la population des ménages collectifs par type selon le sexe
+Lieu Masculin  Féminin Total
+Caserne 7 226 2 302 9 528
+Hôtel 2 367 359 2 726
+Hôpital 345 117 462
+Orphelinat 1 525 750 2 275
+Couvent/Monastère 1 133 134 1 267
+Internat scolaire 1 713 791 2 504
+Prison 1 308 59 1 367
+TOTAL 15 617 4 512 20 129
+2.2 Répartition spatiale de la population
+La République de Guinée compte sept régions adminis tratives et la zone spéciale de Conakry. Chaque
+région administrative est subdivisée en préfecture. L’analyse portera sur la répartition de la population selon
+les régions et les préfectures de résidence.
+2.2.1 Répartition de la population totale selon le sexe par milieu de résidence
+La population totale de Guinée en 2014 est de 10.52 3.261 habitants. Les femmes représentent 51,7% et
+les hommes 48,3% soit un rapport de masculinité de 93,5. En milieu urbain, la population résidente tot ale
+est de 3.657.122 habitants soit 34,8%. Les femmes r eprésentent 50,2% contre 49,8% pour les hommes.
+En milieu rural, la population résidente totale est  de 6.866.139 habitants dont 52,5% de femmes et 47, 5%
+d’hommes (voir tableau 2.03).
+2.2.2 Répartition de la population totale par régio n de résidence
+2.2.2.1. Répartition de la population résidente de 2014 par région
+ Les résultats du RGPH-3 montrent que la population est inégalement répartie entre les régions
+administratives du pays. En effet, les régions admi nistratives de Kankan (18,7%), Conakry (15,8%) et
+N’Zérékoré (15%) sont les plus peuplées. Elles comp tent à elles seules près de la moitié de la populat ion
+guinéenne (49,5%). Les régions les moins peuplées sont respectivement celles
+
+--- page 39 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  37
+Tableau 2.08: Répartition de la population résidente par région naturelle et taux d’accroissement intercensitaire
+par région naturelle
+Région naturelle
+Population résidente Taux d’accroissement  intercensitaire
+1983 1996 2014 1983 - 1996 1996 - 2014
+Basse Guinée 891 750 1 460 577 2 320 897 3,6 2,6
+Moyenne Guinée 1 252 740 1 639 617 2 049 232 1,9 1,2
+Haute Guinée 922 836 1 407 734 2 630 313 3,1 3,5
+Guinée Forestière 882 884 1 555 542 1 861 846 4,1 1,0
+Conakry 710 372 1 092 936 1 660 973 3,1 2,4
+Ensemble 4 660 582 7 156 406 10 523 261 3,1 2,2
+Selon les régions administratives, on constate une disparité importante entre les différentes régions.
+L’accroissement le plus élevé est observé dans la r égion de Kankan (3,8) suivi de celui des régions de
+Kindia (2,9) et de Faranah avec 2,5. Les régions de Boké, Labé, Mamou et N’Zérékoré connaissent un taux
+d’accroissement faible et inférieur à la moyenne na tionale qui est de 2,2. Le taux passe ainsi de 2,0 pour
+Boké à 0,9 pour la région administrative de N’Zérékoré.
+Tableau 2.09: Répartition de la population résident e et taux d’accroissement intercensitaire par régio n
+administrative
+Région administrative Population résidente Taux d’accroissement intercensitaire
+1983 1996 2014 1983 - 1996 1996 - 2014
+Boké 508 724 760 119 1 083 147 2,9 2,0
+Conakry 710 372 1 092 936 1 660 973 3,1 2,4
+Faranah 425 160 602 845 941 554 2,5 2,5
+Kankan 640 432 1 011 644 1 972 537 3,3 3,8
+Kindia 555 937 928 312 1 561 336 3,7 2,9
+Labé 642 617 799 545 994 458 1,6 1,2
+Mamou 437 212 612 218 731 188 2,4 1,0
+N'Zérékoré 740 128 1 348 787 1 578 068 4,4 0,9
+Ensemble 4 660 582 7 156 406 10 523 261 3,1 2,2
+2.2.3 Population des préfectures
+Les préfectures de la Guinée ont des effectifs de p opulation de taille très variables. Elles vont de 9 6 700
+habitants à Fria à 687 002 habitants pour la préfecture de Siguiri.
+Sur les trente-trois préfectures, seulement dix ont une population supérieure à 300 000 habitants totalisant
+46% de la population totale du pays. Ces dix préfec tures sont inégalement réparties entre les régions
+administratives : trois dans la région de Kankan, d eux à Kindia et à N’Zérékoré et une dans chacune de s
+régions de Boké, Labé et Mamou.
+Des disparités importantes sont observées dans la r épartition de la population des autres préfectures.  Elle
+varie de 96 700 pour la préfecture de Fria à 290 611 habitants pour Gueckédou. Cette inégalité de taill
+
+--- page 40 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+38  ETAT ET STRUCTURE DE LA POPULATION
+Tableau 2.10: Répartition de la population résidente par préfecture selon le sexe, le rang démographiq ue et la
+proportion de femmes
+Préfectures
+Sexe Rang Proportion
+Masculin Féminin Total %  Femmes
+BOFFA  104 347     108 236     212 583    2,4 21 50,9
+BOKE  222 124     228 154     450 278    5,1 3 50,7
+FRIA  46 077     50 623     96 700    1,1 33 52,4
+GAOUAL  91 204     102 408     193 612    2,2 24 52,9
+KOUNDARA  63 167     66 807     129 974    1,5 29 51,4
+DABOLA  85 392     95 745     181 137    2,0 25 52,9
+DINGUIRAYE  94 387     102 082     196 469    2,2 23 52,0
+FARANAH  134 663     145 507     280 170    3,2 15 51,9
+KISSIDOUGOU  136 381     147 397     283 778    3,2 14 51,9
+KANKAN  233 617     239 742     473 359    5,3 2 50,6
+KEROUANE  102 125     105 422     207 547    2,3 22 50,8
+KOUROUSSA  130 558     138 072     268 630    3,0 18 51,4
+MANDIANA  167 873     168 126     335 999    3,8 6 50,0
+SIGUIRI  346 276     340 726     687 002    7,8 1 49,6
+COYAH  127 088     136 735     263 823    3,0 19 51,8
+DUBREKA  162 656     167 892     330 548    3,7 7 50,8
+FORECARIAH  116 500     126 442     242 942    2,7 20 52,0
+KINDIA  212 994     226 620     439 614    5,0 4 51,5
+TELIMELE  129 954     154 455     284 409    3,2 13 54,3
+KOUBIA  45 533     54 637     100 170    1,1 32 54,5
+LABE  143 583     175 355     318 938    3,6 10 55,0
+LELOUMA  68 998     94 071     163 069    1,8 27 57,7
+MALI  134 957     153 044     288 001    3,2 12 53,1
+TOUGUE  55 788     68 492     124 280    1,4 30 55,1
+DALABA  59 852     73 825     133 677    1,5 28 55,2
+MAMOU  148 157     170 824     318 981    3,6 9 53,6
+PITA  123 999     154 531     278 530    3,1 16 55,5
+BEYLA  159 879     166 241     326 120    3,7 8 51,0
+GUECKEDOU  138 407     152 204     290 611    3,3 11 52,4
+LOLA  81 654     89 907     171 561    1,9 26 52,4
+MACENTA  133 045     145 411     278 456    3,1 17 52,2
+NZEREKORE  194 055     202 894     396 949    4,5 5 51,1
+YOMOU  55 261     59 110     114 371    1,3 31 51,7
+ENSEMBLE  4 250 551     4 611 737     8 862 288    100 - 52,0
+NB : La population de Conakry n’est pas comptée ici parce que Conakry est une région
+
+--- page 41 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  39
+Graphique 2.03: Poids démographique de la population par préfecture
+Le graphique 2.03 montre l’importance numérique des  effectifs de la population des préfectures de Sigu iri
+(qui occupe la première place avec 7,8% de la popul ation), de Kankan (5,3%), Boké (5,1%) et de Kindia
+(5%). Par contre, les préfectures les moins peuplées qui occupent les quatre dernières places sont : Tougué
+(1,4%), Yomou (1,3%), Koubia (1,1%) et Fria (1,1%).
+
+--- page 42 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+40  ETAT ET STRUCTURE DE LA POPULATION
+Le graphique 2.04 montre que dans quinze préfecture s sur les trente-trois, la proportion de femmes est
+supérieure à la moyenne de l’ensemble des préfectur es qui est de 52,0%. Dans ces préfectures les
+proportions varient de 52,2% à Macenta à 57,7% pour  la préfecture de Lélouma. Il faut noter que c’est
+seulement dans la préfecture de Siguiri où les hommes sont plus nombreux que les femmes (49,6%).
+Graphique 2.04 : Poids démographique des femmes par préfecture
+
+--- page 43 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  41
+Carte 2.03: Poids démographique des femmes par préfecture
+2.2.2.3. Analyse de la concentration de la populati on
+La densité dont il est question dans ce chapitre es t la densité physique qui tient compte de toutes le s
+superficies du territoire.
+La densité globale du pays est de 42,8 habitants au  kilomètre carré (tableau 2.12). La ville de Conakr y
+enregistre une densité exceptionnelle (3691 habitan ts au kilomètre carré) liée à son statut de capital e
+administrative, politique, économique et sociale. E lle est aussi le principal point de chute des migra nts
+venant des préfectures. La densité nationale était de 29,1 habitants au kilomètre carré au recensement de
+1996. Cet important accroissement est le résultat d e l’accroissement démographique enregistré dans le
+pays au cours de cette période. La densité national e masque par ailleurs d’importantes disparités
+régionales.
+2.2.2.4. Densité des régions
+Le tableau 2.11 donne la population totale de 2014,  la superficie du pays par région, la densité de la
+population et son évolution entre les deux derniers recensements. Hormis Conakry (capitale du pays) qui a
+une densité très élevée (3691 habitants au kilomètr e carré), les autres régions enregistrent des densi tés
+relativement modestes. Deux régions ont des densités supérieures à la densité nationales. Il s’agit de Kindia
+(58,9) et Labé (43,5).  La région de Mamou a la même densité que le niveau national. Par contre, les régions
+de Boké, Kankan et Faranah ont de très faibles dens ités. Il n’existe pas de relation entre la superfic ie des
+régions et le niveau de peuplement. Avec 44% de la superficie du territoire national, les régions de Kankan
+et Faranah n’abritent que 27% de la population totale du pays.
+
+--- page 44 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+42  ETAT ET STRUCTURE DE LA POPULATION
+Tableau 2.11 : Densité de la population au niveau régional et son évolution
+Régions
+Superficie
+(km²)  Population résidente Densité (habitants au km²) Evolution  (%)
+ 1996 2014 1996 2014
+Boké 312 077 760 119 1 083 147 24,4 34,7 10,3
+Conakry 450 1 092 936 1 660 973 2 428,7 3 691,1 1 262,4
+Faranah 35 581 602 845 941 554 16,9 26,5 9,5
+Kankan 72 145 1 011 644 1 972 537 14,0 27,3 13,3
+Kindia 28 873 928 312 1 561 336 32,2 54,1 21,9
+Labé 22 869 799 545 994  458 35,0 43,5 8,5
+Mamou 17 074 612 218 731 188 35,9 42,8 7,0
+N’Zérékoré 37 658 1 348 787 1 578 068 35,8 41,9 6,1
+Ensemble 245 857 7 156 406 10 523 261 29,1 42,8 13, 7
+Par ailleurs, la densité des différentes régions a beaucoup évolué entre 1996 et 2014. Hormis Conakry,
+l’augmentation la plus forte a été enregistrée dans  la région administrative de Kindia où la densité e st
+passée de 35 habitants au kilomètre carré à 58,9 habitants au km 2. Ceci pourrait expliquer par leur proximité
+à la capitale, donc on peut constater que ces deux préfectures sont les zones de refoulement de la
+population de Conakry.
+Graphique 2.05: Densité des régions hormis Conakry
+Faranah
+Kankan
+Boké
+Nzérékoré
+Ensemble
+Mamou
+Labé
+Kindia
+26,5
+27,3
+34,7
+41,9
+42,8
+42,8
+43,5
+58,9
+
+--- page 45 ----------------------------------------------------
+Institut National de la Statistique – RGPH 2014
+ETAT ET STRUCTURE DE LA POPULATION  43
+Carte 2.04: Carte régionale selon la densité
+2.2.2.5. Densité de la population des préfectures
+La densité de population est très variable entre le s préfectures, allant de 19,1 habitants au kilomètr e carré
+pour la préfecture de Kouroussa à 206,9 habitants au Km 2 pour la préfecture de  Coyah. Sur les trente-trois
+préfectures, quinze ont une densité supérieure à la  moyenne nationale. C’est essentiellement dans les
+régions de Faranah, de Kankan et dans quelques préfectures de Boké (Fria, Gaoual et Koundara) que l’on
+trouve les préfectures les moins densément peuplées.
+Les préfectures les plus densément peuplées par ord re décroissant sont : Coyah (206,9), Labé (142,3),
+Forécariah (120,5), N’Zérékoré (109,5), Dubréka (76,0) et Pita (60,1). Les préfectures de Labé, N’Zérékoré
+et de Pita sont des zones de commerce attirant des populations des préfectures voisines. Quant à Coyah ,
+Forécariah et Dubréka elles constituent les portes d’entrée de Conakry et aussi des zones d’intenses
+activités agricoles liées à la fertilité des sols. On y trouve de nombreuses plantations de bananes, d’ananas
+et d’agrumes.
+Les préfectures les moins densément peuplées sont K ouroussa (19,1), Faranah (21,6) Fria (22,1),
+Koundara (24,8) et Gaoual (25,0). La perte de la po pulation de Fria peut s’expliquer par la fermeture de
+l’usine d’alumine entrainant ainsi le chômage pour nombreux chefs de ménage et la paupérisation de la
+population.
+
+... and 18 further pages match; re-run with a narrower --terms to see them.
