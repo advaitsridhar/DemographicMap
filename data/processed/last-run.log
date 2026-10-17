@@ -1,144 +1,370 @@
-  read https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome2_17-2021.pdf: 11,459,529 bytes, sha256 20d572315f7415ab08bf3ba56ce2162082b310962148900442a0a20e404a3b09
-  22 regions, 114 districts
-  admin2 1er Arrondissement: None, ratio None
-  admin2 2e Arrondissement: None, ratio None
-  admin2 3e Arrondissement: None, ratio None
-  admin2 4e Arrondissement: None, ratio None
-  admin2 5e Arrondissement: None, ratio None
-  admin2 6e Arrondissement: None, ratio None
-  admin2 Ankazobe: 193426, ratio 1017
-  admin2 Anjozorobe: 226258, ratio 1021
-  admin2 Ambohidratrimo: 442244, ratio 978
-  admin2 Manjakandriana: 220243, ratio 991
-  admin2 Antananarivo Avaradrano: 449578, ratio 968
-  admin2 Antananarivo Atsimondrano: 648780, ratio 962
-  admin2 Andramasina: 169171, ratio 962
-  admin1 Analamanga: 3623925, ratio 963
-  admin2 Antsirabe I: 246354, ratio 945
-  admin2 Ambatolampy: 282243, ratio 999
-  admin2 Faratsiho: 222922, ratio 1014
-  admin2 Mandoto: 208058, ratio 1022
-  admin2 Antanifotsy: 354233, ratio 1011
-  admin2 Betafo: 318576, ratio 1008
-  admin2 Antsirabe II: 447273, ratio 1010
-  admin1 Vakinankaratra: 2079659, ratio 1002
-  admin2 Miarinarivo: 293718, ratio 1021
-  admin2 Arivonimamo: 354736, ratio 1012
-  admin2 Soavinandriana: 250095, ratio 1026
-  admin1 Itasy: 898549, ratio 1019
-  admin2 Tsiroanomandidy: 490499, ratio 1032
-  admin2 Fenoarivobe: 180494, ratio 1032
-  admin1 Bongolava: 670993, ratio 1032
-  admin2 Fianarantsoa I: 191776, ratio 920
-  admin2 Ambohimahasoa: 271233, ratio 979
-  admin2 Ikalamavony: 125327, ratio 996
-  admin2 Isandra: 151056, ratio 971
-  admin2 Lalangina: 184162, ratio 1004
-  admin2 Vohibato: 222629, ratio 1012
-  admin2 Ambalavao: 298404, ratio 974
-  admin1 Matsiatra Ambony: 1444587, ratio 979
-  admin2 Ambositra: 297535, ratio 958
-  admin2 Fandriana: 215642, ratio 970
-  admin2 Ambatofinandrahana: 217493, ratio 994
-  admin2 Manandriana: 106446, ratio 967
-  admin1 Amoron'i Mania: 837116, ratio 971
-  admin2 Manakara Atsimo: 385860, ratio 928
-  admin2 Nosy-Varika: 254344, ratio 975
-  admin2 Mananjary: 276887, ratio 945
-  admin2 Ifanadiana: 174444, ratio 975
-  admin2 Ikongo: 204475, ratio 996
-  admin2 Vohipeno: 144647, ratio 934
-  admin1 Vatovavy-Fitovinany: 1440657, ratio 955
-  admin2 Ihosy: 292880, ratio 997
-  admin2 Ivohibe: 69052, ratio 990
-  admin2 Iakora: 55380, ratio 973
-  admin1 Ihorombe: 417312, ratio 993
-  admin2 Farafangana: 407943, ratio 939
-  admin2 Vondrozo: 164971, ratio 983
-  admin2 Vangaindrano: 356271, ratio 945
-  admin2 Midongy-Atsimo: 47779, ratio 974
-  admin2 Befotaka: 53440, ratio 977
-  admin1 Atsimo-Atsinanana: 1030404, ratio 951
-  admin2 Toamasina I: 325857, ratio 896
-  admin2 Toamasina II: 260456, ratio 995
-  admin2 Brickaville: 209001, ratio 979
-  admin2 Vatomandry: 169861, ratio 958
-  admin2 Antanambao Manampontsy: 61459, ratio 981
-  admin2 Mahanoro: 285526, ratio 988
-  admin2 Marolambo: 166312, ratio 971
-  admin1 Atsinanana: 1478472, ratio 961
-  admin2 Fenerive Est: 293565, ratio 954
-  admin2 Maroantsetra: 250928, ratio 959
-  admin2 Mananara-Avaratra: 240149, ratio 983
-  admin2 Soanierana Ivongo: 143687, ratio 974
-  admin2 Sainte Marie: 26822, ratio 896
-  admin2 Vavatenina: 194938, ratio 1004
-  admin1 Analanjirofo: 1150089, ratio 971
-  admin2 Ambatondrazaka: 358164, ratio 990
-  admin2 Andilamena: 104236, ratio 979
-  admin2 Amparafaravola: 322691, ratio 1009
-  admin2 Moramanga: 350724, ratio 996
-  admin2 Anosibe-An'ala: 114116, ratio 967
-  admin1 Alaotra-Mangoro: 1249931, ratio 993
-  admin2 Mahajanga I: 246022, ratio 905
-  admin2 Mahajanga II: 95523, ratio 994
-  admin2 Mitsinjo: 84157, ratio 965
-  admin2 Marovoay: 197756, ratio 968
-  admin2 Soalala: 41684, ratio 990
-  admin2 Ambato Boeni: 264170, ratio 1002
-  admin1 Boeny: 929312, ratio 964
-  admin2 Antsohihy: 175671, ratio 955
-  admin2 Analalava: 164686, ratio 957
-  admin2 Bealanana: 188115, ratio 982
-  admin2 Befandriana Nord: 257444, ratio 972
-  admin2 Port-Berge (Boriziny-Vaovao): 228785, ratio 977
-  admin2 Mandritsara: 304806, ratio 976
-  admin2 Mampikony: 188084, ratio 990
-  admin1 Sofia: 1507591, ratio 973
-  admin2 Maevatanana: 220769, ratio 1006
-  admin2 Tsaratanana: 146545, ratio 970
-  admin2 Kandreho: 25964, ratio 1026
-  admin1 Betsiboka: 393278, ratio 994
-  admin2 Maintirano: 113542, ratio 974
-  admin2 Besalampy: 59395, ratio 975
-  admin2 Ambatomainty: 43211, ratio 1002
-  admin2 Morafenobe: 34516, ratio 991
-  admin2 Antsalova: 58280, ratio 988
-  admin1 Melaky: 308944, ratio 983
-  admin2 Toliary-I: 168756, ratio 902
-  admin2 Beroroha: 68729, ratio 1007
-  admin2 Morombe: 217144, ratio 960
-  admin2 Ankazoabo: 72557, ratio 981
-  admin2 Sakaraha: 150366, ratio 1007
-  admin2 Toliary-II: 371156, ratio 983
-  admin2 Benenitra: 43332, ratio 981
-  admin2 Betioky Atsimo: 306859, ratio 964
-  admin2 Ampanihy Ouest: 398995, ratio 942
-  admin1 Atsimo-Andrefana: 1797894, ratio 963
-  admin2 Ambovombe-Androy: 362195, ratio 919
-  admin2 Bekily: 237111, ratio 946
-  admin2 Beloha: 154052, ratio 908
-  admin2 Tsihombe: 146877, ratio 899
-  admin1 Androy: 900235, ratio 921
-  admin2 Taolagnaro: 340739, ratio 976
-  admin2 Betroka: 210071, ratio 983
-  admin2 Amboasary-Atsimo: 258241, ratio 937
-  admin1 Anosy: 809051, ratio 965
-  admin2 Morondava: 150531, ratio 973
-  admin2 Miandrivazo: 155089, ratio 986
-  admin2 Belo Sur Tsiribihina: 129527, ratio 990
-  admin2 Mahabo: 150947, ratio 991
-  admin2 Manja: 106369, ratio 984
-  admin1 Menabe: 692463, ratio 985
-  admin2 Antsiranana I: 129320, ratio 879
-  admin2 Antsiranana II: 130313, ratio 1013
-  admin2 Ambilobe: 285075, ratio 967
-  admin2 Nosy-Be: 108266, ratio 905
-  admin2 Ambanja: 236988, ratio 947
-  admin1 Diana: 889962, ratio 947
-  admin2 Sambava: 397880, ratio 969
-  admin2 Vohemar: 247454, ratio 967
-  admin2 Andapa: 213631, ratio 1001
-  admin2 Antalaha: 264807, ratio 970
-  admin1 Sava: 1123772, ratio 975
-  wrote data/processed/madagascar_census.json (225 kB)
+
+===== page: 'Districts of São Tomé and Príncipe', 3,505 bytes of wikitext
+  1 table(s)
+--- table 1: 8 rows ---
+  Map Key | District | Capital | Area (km 2 ) | Population (2012 census) | Population (2018 estimate)
+  1 | Água Grande | São Tomé | 16.5 | 69,772 | 77,700
+  2 | Cantagalo | Santana | 119.0 | 17,169 | 19,400
+  3 | Caué | São João dos Angolares | 267.0 | 6,062 | 7,200
+  4 | Lembá | Neves | 229.5 | 14,676 | 16,300
+  5 | Lobata | Guadalupe | 105.0 | 19,414 | 22,000
+  6 | Mé-Zóchi | Trindade | 122.0 | 44,763 | 50,800
+  7 | Pagué (Autonomous Region o | Santo António | 142.0 | 7,344 | 8,420
+
+===== page: 'Departments of Gabon', 4,689 bytes of wikitext
+  0 table(s)
+
+===== page: 'Departments of Chad', 27,925 bytes of wikitext
+  23 table(s)
+--- table 1: 63 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Abdi | formatnum:114055 | 3=Abdi (ville) | Abdi, Abkar Djombo, Biyeré
+  Aboudeïa | formatnum:65772 | Aboudeïa | Abgué, Aboudeïa, Am Habilé
+  Abtouyour | formatnum:171999 | Bitkine | Bang Bang, Bitkine
+  Amdjarass |  | Amdjarass | 
+  Assoungha | formatnum:282315 | Adré | Adré, Borota, Hadjer Hadid
+  Baguirmi | formatnum:226128 | Massenya | Dourbali, Maï Aïche, Masse
+  Barh Azoum (Barh-Azoum) | formatnum:224984 | Am Timan | Am Timan, Djouna, Mouraye 
+  Bahr el Gazel Nord | formatnum:64822 | Salal | Dourgoulanga, Mandjoura, S
+  Bahr el Gazel Sud | formatnum:196043 | Moussoro | Amsilep, Chadra, Michemiré
+  Barh Köh | formatnum:319087 | Sarh | Balimba, Korbol, Koumogo, 
+  Barh Sara | formatnum:225827 | Moïssala | Béboro, Békourou, Bouna, D
+  Barh Signaka | formatnum:104812 | Melfi | Chinguil, Mélfi, Mokofi
+  Batha Est | formatnum:188631 | Oum Hadjer | Am Sack, Assinet, Haraze D
+  Batha Ouest | formatnum:222243 | Ati | Ati, Djédaa, Koundjourou, 
+  Biltine | formatnum:159323 | Biltine | Am Zoer, Arada, Biltine, M
+  Borkou | formatnum:72760 | Faya-Largeau | Faya-Largeau (Faya), Kouba
+  Borkou Yala | formatnum:24491 | Kirdimi | Kirdimi, Yarda
+  Chari | formatnum:191945 | Mandélia | Koundoul, La Loumia, Linia
+  Dababa | formatnum:219686 | Bokoro | Bokoro, Gama, Moïto
+  Dagana | formatnum:188233 | Massakory | Karal, Massakory, Tourba
+  Dar Tama | formatnum:179095 | Guéréda | Guéréda, Kolonga, Sirim Bi
+  Djourf Al Ahmar (Djourouf  | formatnum:71472 | Am Dam | Am Dam, Haouich, Magrane
+  Dodjé | formatnum:105126 | Beinamar | Béïnamar, Béïssa, Laoukass
+  Ennedi |  |  | 
+  Fitri | formatnum:116157 | Yao | N'Djamena Bilala, Yao
+  Grande Sido | formatnum:105375 | 3=Maro (Tchad) | Danamadji, Djéké Djéké, Ma
+  Guéni | formatnum:94529 | Krim Krim | Bao, Bémangra, Doguindi, K
+  Guéra | formatnum:179609 | Mongo | Baro, Mongo, Niergui
+  Haraze Al Biar | formatnum:562957 | Massaguet | Mani, Massaguet, N'Djamena
+  Haraze-Mangueigne | formatnum:57849 | Haraze | Daha, Haraze, Mangueigne
+  Kabbia | formatnum:216151 | Gounou Gaya | Berem, Djodo Gassa, Gounou
+  Kanem | formatnum:160223 | Mao | Kekedina, Mao, Melea, Wadj
+  Kimiti | formatnum:218304 | Goz Beïda | Adé, Goz Beïda, Kerfi, Kou
+  Kobé | formatnum:156515 | Iriba | Iriba, Matadjana, Tiné Dja
+  Kouh-Est | formatnum:100401 | 3=Bodo (Tchad) | Bédjo, Bodo, Béti
+  Kouh-Ouest | formatnum:50509 | Béboto | Baké, Béboto, Dobiti
+  La Nya | formatnum:139381 | Bébédjia | Bébédjia, Béboni, Komé, Mb
+  La Nya Pendé | formatnum:111459 | Goré | Békan, Donia, Goré, Yamodo
+  La Pendé | formatnum:169049 | Doba | Doba, Kara, Madana
+  Lac Iro | formatnum:173822 | Kyabé | Alako, Bohobé, Baltoubaye,
+  Lac Léré | formatnum:226600 | Léré | Binder, Guégou, Lagon, Lér
+  Lac Wey | formatnum:326496 | Moundou | Bah, Déli, Dodinda, Mbalka
+  Loug Chari | formatnum:203712 | Bousso | Bä Illi, Bogomoro, Bousso,
+  Mamdi | formatnum:232242 | Bol | Bagassola, Bol, Daboua, Ka
+  Mandoul Occidental | formatnum:148774 | Bédjondo | Bébopen, Bédjondo, Békamba
+  Mandoul Oriental | formatnum:262485 | Koumra | Bédaya, Béssada, Goundi, K
+  Mangalmé | formatnum:97375 | Mangalmé | Bitchotchi, Eref, Kouka Ma
+  Mayo-Boneye | formatnum:242845 | Bongor | Bongor, Gam, Kim, Koyom, M
+  Mayo-Dallah | formatnum:338487 | Pala | Gagal, Lamé, Pala, Torrock
+  Mayo-Lémié | formatnum:81816 | Guélengdeng | Guélengdeng, Katoa, Nangui
+  Mont Illi (Mont d'Illi) | formatnum:228366 | Fianga | Fianga, Hollom Gamé, Kéra,
+  Monts de Lam | formatnum:225654 | Baïbokoum | Baïbokoum, Béssao, Laraman
+  Ngourkosso | formatnum:157142 | Benoye | Bébalem, Békiri, Béladjia,
+  Nord Kanem | formatnum:97868 | Nokou | Nokou, Ntiona, Rig Rig, Zi
+  Ouara | formatnum:335309 | Abéché | Abéché, Abougoudam, Amleyo
+  Tandjilé Est | formatnum:259241 | Laï | Deressia, Dono Manga, Guid
+  Tandjilé Ouest | formatnum:423576 | Kélo | Baktchoro, Béré, Bologo, D
+  Tibesti Est | formatnum:14984 | Bardaï | Aouzou, Bardaï, Yebbibou, 
+  Tibesti Ouest | formatnum:6986 | Zouar | Goubonne, Wour, Zouar
+  Wadi Bissam | formatnum:96512 | Mondo | Am Doback, Mondo
+  Wadi Hawar |  |  | 
+  Wayi | formatnum:219127 | Ngouri (N'Gouri) | Doum Doum, Kouloudia, Ngou
+--- table 2: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Bahr el Gazel Nord | formatnum:64822 | Salal | Dourgoulanga, Mandjoura, S
+  Bahr El Gazel Sud | formatnum:196043 | Moussoro | Amsilep, Chadra, Michemiré
+--- table 3: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Batha Est | formatnum:188631 | Oum Hadjer | Am Sack, Assinet, Haraze D
+  Batha Ouest | formatnum:222243 | Ati | Ati, Djédaa, Koundjourou, 
+  Fitri | formatnum:116157 | Yao | N'Djamena Bilala, Yao
+--- table 4: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Borkou | formatnum:72760 | Faya-Largeau | Faya-Largeau (Faya), Kouba
+  Borkou Yala | formatnum:24491 | Kirdimi | Kirdimi, Yarda
+--- table 5: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Baguirmi | formatnum:226128 | Massenya | Dourbali, Maï Aïche, Masse
+  Chari | formatnum:191945 | Mandélia | Koundoul, La Loumia, Linia
+  Loug Chari | formatnum:203712 | Bousso | Bä Illi, Bogomoro, Bousso,
+--- table 6: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Am-Djarass |  |  | 
+  Wadi Hawar |  |  | 
+--- table 7: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Fada |  |  | 
+  Mourtcha |  |  | 
+--- table 8: 5 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Abtouyour | formatnum:171999 | Bitkine | Bang Bang, Bitkine
+  Barh Signaka | formatnum:104812 | Melfi | Chinguil, Mélfi, Mokofi
+  Guéra | formatnum:179609 | Mongo | Baro, Mongo, Niergui
+  Mangalmé | formatnum:97375 | Mangalmé | Bitchotchi, Eref, Kouka Ma
+--- table 9: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Dababa | formatnum:219686 | Bokoro | Bokoro, Gama, Moïto
+  Dagana | formatnum:188233 | Massakory | Karal, Massakory, Tourba
+  Haraze Al Biar | formatnum:562957 | Massaguet | Mani, Massaguet, N'Djamena
+--- table 10: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Kanem | formatnum:160223 | Mao | Kekedina, Mao, Melea, Wadj
+  Nord Kanem | formatnum:97868 | Nokou | Nokou, Ntiona, Rig Rig, Zi
+  Wadi Bissam | formatnum:96512 | Mondo | Am Doback, Mondo
+--- table 11: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Mamdi | formatnum:232242 | Bol | Bagassola, Bol, Daboua, Ka
+  Wayi | formatnum:219127 | Ngouri (N'Gouri) | Doum Doum, Kouloudia, Ngou
+--- table 12: 5 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Dodjé | formatnum:105126 | Beinamar | Béïnamar, Béïssa, Laoukass
+  Guéni | formatnum:94529 | Krim Krim | Bao, Bémangra, Doguindi, K
+  Lac Wey | formatnum:326496 | Moundou | Bah, Déli, Dodinda, Mbalka
+  Ngourkosso | formatnum:157142 | Benoye | Bébalem, Békiri, Béladjia,
+--- table 13: 7 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Kouh-Est | formatnum:100401 | 3=Bodo (Tchad) | Bédjo, Bodo, Béti
+  Kouh-Ouest | formatnum:50509 | Béboto | Baké, Béboto, Dobiti
+  La Nya | formatnum:139381 | Bébédjia | Bébédjia, Béboni, Komé, Mb
+  La Nya Pendé | formatnum:111459 | Goré | Békan, Donia, Goré, Yamodo
+  La Pendé | formatnum:169049 | Doba | Doba, Kara, Madana
+  Monts de Lam | formatnum:225654 | Baïbokoum | Baïbokoum, Béssao, Laraman
+--- table 14: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Barh Sara | formatnum:225827 | Moïssala | Béboro, Békourou, Bouna, D
+  Mandoul Occidental | formatnum:148774 | Bédjondo | Bébopen, Bédjondo, Békamba
+  Mandoul Oriental | formatnum:262485 | Koumra | Bédaya, Béssada, Goundi, K
+--- table 15: 5 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Kabbia | formatnum:216151 | Gounou Gaya | Berem, Djodo Gassa, Gounou
+  Mayo-Boneye | formatnum:242845 | Bongor | Bongor, Gam, Kim, Koyom, M
+  Mayo-Lémié | formatnum:81816 | Guélengdeng | Guélengdeng, Katoa, Nangui
+  Mont Illi (Mont d'Illi) | formatnum:228366 | Fianga | Fianga, Hollom Gamé, Kéra,
+--- table 16: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Lac Léré | formatnum:226600 | Léré | Binder, Guégou, Lagon, Lér
+  Mayo-Dallah | formatnum:338487 | Pala | Gagal, Lamé, Pala, Torrock
+--- table 17: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Barh Köh | formatnum:319087 | Sarh | Balimba, Korbol, Koumogo, 
+  Grande Sido | formatnum:105375 | 3=Maro (Tchad) | Danamadji, Djéké Djéké, Ma
+  Lac Iro | formatnum:173822 | Kyabé | Alako, Bohobé, Baltoubaye,
+--- table 18: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Abdi | formatnum:114055 | 3=Abdi (ville) | Abdi, Abkar Djombo, Biyeré
+  Assoungha | formatnum:282315 | Adré | Adré, Borota, Hadjer Hadid
+  Ouara | formatnum:335309 | Abéché | Abéché, Abougoudam, Amleyo
+--- table 19: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Aboudeïa | formatnum:65772 | Aboudeïa | Abgué, Aboudeïa, Am Habilé
+  Barh Azoum (Barh-Azoum) | formatnum:184984 | Am Timan | Am Timan, Djouna, Mouraye
+  Haraze-Mangueigne | formatnum:57849 | Haraze | Daha, Haraze, Mangueigne
+--- table 20: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Djourf Al Ahmar (Djourouf  | formatnum:71472 | Am Dam | Am Dam, Haouich, Magrane
+  Kimiti | formatnum:218304 | Goz Beïda | Adé, Goz Beïda, Kerfi, Kou
+--- table 21: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Tandjilé Est | formatnum:259241 | Laï | Deressia, Dono Manga, Guid
+  Tandjilé Ouest | formatnum:423576 | Kélo | Baktchoro, Béré, Bologo, D
+--- table 22: 3 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Tibesti Est | formatnum:14984 | Bardaï | Aouzou, Bardaï, Yebbibou, 
+  Tibesti Ouest | formatnum:6986 | Zouar | Goubonne, Wour, Zouar
+--- table 23: 4 rows ---
+  Department | Pop. 2009 | Capital | Sub-prefectures
+  Biltine | formatnum:159323 | Biltine | Am Zoer, Arada, Biltine, M
+  Dar Tama | formatnum:179095 | Guéréda | Guéréda, Kolonga, Sirim Bi
+  Kobé | formatnum:156515 | Iriba | Iriba, Matadjana, Tiné Dja
+
+===== page: 'Sub-prefectures of the Central African Republic', 5,149 bytes of wikitext
+  0 table(s)
+
+===== page: 'Territories of the Democratic Republic of the Congo', 20,911 bytes of wikitext
+  1 table(s)
+--- table 1: 147 rows ---
+  Territory | Province | Pre-2015 Province
+  Aketi | Bas-Uele | Orientale
+  Ango | Bas-Uele | Orientale
+  Aru | Ituri | Orientale
+  Bafwasende | Tshopo | Orientale
+  Bagata | Kwilu | Bandundu
+  Bambesa | Bas-Uele | Orientale
+  Banalia | Tshopo | Orientale
+  Basankusu | Équateur | Équateur (old)
+  Basoko | Tshopo | Orientale
+  Befale | Tshuapa | Équateur (old)
+  Beni | North Kivu | North Kivu
+  Bikoro | Équateur | Équateur (old)
+  Boende | Tshuapa | Équateur (old)
+  Bokungu | Tshuapa | Équateur (old)
+  Bolobo | Mai-Ndombe | Bandundu
+  Bolomba | Équateur | Équateur (old)
+  Bomongo | Équateur | Équateur (old)
+  Bondo | Bas-Uele | Orientale
+  Bongandanga | Mongala | Équateur (old)
+  Bosobolo | Nord-Ubangi | Équateur (old)
+  Budjala | Sud-Ubangi | Équateur (old)
+  Bukama | Haut-Lomami | Katanga
+  Bulungu | Kwilu | Bandundu
+  Bumba | Mongala | Équateur (old)
+  Businga | Nord-Ubangi | Équateur (old)
+  Buta | Bas-Uele | Orientale
+  Dekese | Kasaï | Kasaï-Occidental
+  Demba | Kasaï-Central | Kasaï-Occidental
+  Dibaya | Kasaï-Central | Kasaï-Occidental
+  Dilolo | Lualaba | Katanga
+  Dimbelenge | Kasaï-Central | Kasaï-Occidental
+  Djolu | Tshuapa | Équateur (old)
+  Djugu | Ituri | Orientale
+  Dungu | Haut-Uele | Orientale
+  Faradje | Haut-Uele | Orientale
+  Feshi | Kwango | Bandundu
+  Fizi | South Kivu | South Kivu
+  Gandajika or Ngandajika | Lomami | Kasaï-Oriental (old)
+  Gemena | Sud-Ubangi | Équateur (old)
+  Gungu | Kwilu | Bandundu
+  Idiofa | Kwilu | Bandundu
+  Idjwi | South Kivu | South Kivu
+  Ikela | Tshuapa | Équateur (old)
+  Ilebo | Kasaï | Kasaï-Occidental
+  Ingende | Équateur | Équateur (old)
+  Inongo | Mai-Ndombe | Bandundu
+  Irumu | Ituri | Orientale
+  Isangi | Tshopo | Orientale
+  Kabalo | Tanganyika | Katanga
+  Kabambare | Maniema | Maniema
+  Kabare | South Kivu | South Kivu
+  Kabeya-Kamwanga | Kasaï-Oriental | Kasaï-Oriental (old)
+  Kabinda | Lomami | Kasaï-Oriental (old)
+  Kabongo | Haut-Lomami | Katanga
+  Kahemba | Kwango | Bandundu
+  Kailo | Maniema | Maniema
+  Kalehe | South Kivu | South Kivu
+  Kalemie | Tanganyika | Katanga
+  Kambove | Haut-Katanga | Katanga
+  Kamiji | Lomami | Kasaï-Oriental (old)
+  Kamina | Haut-Lomami | Katanga
+  Kamonia or Tshikapa | Kasaï | Kasaï-Occidental
+  Kanyama or Kaniama | Haut-Lomami | Katanga
+  Kapanga | Lualaba | Katanga
+  Kasangulu | Kongo Central | Bas-Congo
+  Kasenga | Haut-Katanga | Katanga
+  Kasongo | Maniema | Maniema
+  Kasongo-Lunda | Kwango | Bandundu
+  Katako-Kombe | Sankuru | Kasaï-Oriental (old)
+  Katanda | Kasaï-Oriental | Kasaï-Oriental (old)
+  Kazumba | Kasaï-Central | Kasaï-Occidental
+  Kenge | Kwango | Bandundu
+  Kibombo | Maniema | Maniema
+  Kimvula | Kongo Central | Bas-Congo
+  Kipushi | Haut-Katanga | Katanga
+  Kiri | Mai-Ndombe | Bandundu
+  Kole | Sankuru | Kasaï-Oriental (old)
+  Kongolo | Tanganyika | Katanga
+  Kungu | Sud-Ubangi | Équateur (old)
+  Kutu | Mai-Ndombe | Bandundu
+  Kwamouth | Mai-Ndombe | Bandundu
+  Libenge | Sud-Ubangi | Équateur (old)
+  Lisala | Mongala | Équateur (old)
+  Lodja | Sankuru | Kasaï-Oriental (old)
+  Lomela | Sankuru | Kasaï-Oriental (old)
+  Lubao | Lomami | Kasaï-Oriental (old)
+  Lubefu | Sankuru | Kasaï-Oriental (old)
+  Lubero | North Kivu | North Kivu
+  Lubudi | Lualaba | Katanga
+  Lubutu | Maniema | Maniema
+  Luebo | Kasaï | Kasaï-Occidental
+  Luilu | Lomami | Kasaï-Oriental (old)
+  Luiza | Kasaï-Central | Kasaï-Occidental
+  Lukolela | Équateur | Équateur (old)
+  Lukula | Kongo Central | Bas-Congo
+  Luozi | Kongo Central | Bas-Congo
+  Lupatapata or Luhatahata | Kasaï-Oriental | Kasaï-Oriental (old)
+  Lusambo | Sankuru | Kasaï-Oriental (old)
+  Madimba | Kongo Central | Bas-Congo
+  Mahagi | Ituri | Orientale
+  Makanza or Mankanza | Équateur | Équateur (old)
+  Malemba-Nkulu | Haut-Lomami | Katanga
+  Mambasa | Ituri | Orientale
+  Manono | Tanganyika | Katanga
+  Masi-Manimba | Kwilu | Bandundu
+  Masisi | North Kivu | North Kivu
+  Mbanza-Ngungu | Kongo Central | Bas-Congo
+  Miabi | Kasaï-Oriental | Kasaï-Oriental (old)
+  Mitwaba | Haut-Katanga | Katanga
+  Moanda | Kongo Central | Bas-Congo
+  Moba | Tanganyika | Katanga
+  Mobayi-Mbongo | Nord-Ubangi | Équateur (old)
+  Monkoto | Tshuapa | Équateur (old)
+  Mushie | Mai-Ndombe | Bandundu
+  Mutshatsha | Lualaba | Katanga
+  Mweka | Kasaï | Kasaï-Occidental
+  Mwenga | South Kivu | South Kivu
+  Niangara | Haut-Uele | Orientale
+  Nyiragongo | North Kivu | North Kivu
+  Nyunzu | Tanganyika | Katanga
+  Opala | Tshopo | Orientale
+  Oshwe | Mai-Ndombe | Bandundu
+  Pangi | Maniema | Maniema
+  Poko | Bas-Uele | Orientale
+  Popokabaka | Kwango | Bandundu
+  Punia | Maniema | Maniema
+  Pweto | Haut-Katanga | Katanga
+  Rungu | Haut-Uele | Orientale
+  Rutshuru | North Kivu | North Kivu
+  Sakania | Haut-Katanga | Katanga
+  Sandoa | Lualaba | Katanga
+  Seke-Banza | Kongo Central | Bas-Congo
+  Shabunda | South Kivu | South Kivu
+  Songololo | Kongo Central | Bas-Congo
+  Tshela | Kongo Central | Bas-Congo
+  Tshilenge | Kasaï-Oriental | Kasaï-Oriental (old)
+  Ubundu | Tshopo | Orientale
+  Uvira | South Kivu | South Kivu
+  Walikale | North Kivu | North Kivu
+  Walungu | South Kivu | South Kivu
+  Wamba | Haut-Uele | Orientale
+  Watsa | Haut-Uele | Orientale
+  Yahuma | Tshopo | Orientale
+  Yakoma | Nord-Ubangi | Équateur (old)
+  Yumbi | Mai-Ndombe | Bandundu
+  colspan=3|Main Source: Ind
+
+===== page: None, 0 bytes of wikitext
+  {'code': 'missingtitle', 'info': "The page you specified doesn't exist.", 'docref': 'See https://en.wikipedia.org/w/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}
+
+===== page: 'List of municipalities of Angola', 6,967 bytes of wikitext
+  1 table(s)
+--- table 1: 20 rows ---
+  colspan=3|Angolan Municipa
+  Province | Capital | Municipalities
+  Bengo | Caxito | 6: Ambriz, Bula Atumba, Da
+  Benguela | Benguela | 10: Balombo, Baía Farta, B
+  Bié | Kuito | 9: Andulo, Camacupa, Catab
+  Cabinda | Cabinda | 4: Belize, Buco-Zau, Cabin
+  Cuando Cubango]] (Kuando-K | Menongue | 9: Calai, Cuangar, Cuchi, 
+  Cuanza Norte (Kwanza-Norte | N'dalatando | 10: Ambaca, Banga, Bolongo
+  Cuanza Sul (Kwanza-Sul) | Sumbe | 12: Amboim, Cassongue, Cel
+  Cunene | Ondjiva | 6: Cahama, Cuanhama, Curoc
+  Huambo | Huambo | 11: Bailundo, Caála, Katch
+  Huíla | Lubango | 14: Caconda, Caluquembe, C
+  Luanda | Luanda | 9: Belas, Cacuaco, Cazenga
+  Lunda Norte (Lunda-Norte) | Dundo | 10: Cambulo, Capenda-Camul
+  Lunda Sul (Lunda-Sul) | Saurimo | 4: Cacolo, Dala, Muconda, 
+  Malanje (Malange) | Malanje | 14: Cacuso, Calandula, Cam
+  Moxico | Luena | 9: Alto Zambeze, Camanongu
+  Namibe | Moçâmedes | 5: Bibala, Camacuio, Moçâm
+  Uíge | Uíge | 16: Ambuila, Bembe, Buenga
+  Zaire | M'Banza Kongo | 6: Cuimba, M'Banza Kongo, 
