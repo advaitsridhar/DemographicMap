@@ -66,6 +66,9 @@
     Yagha: 88,190 men, 83,404 women, 171,594
   3,919,197 bytes
   Sud-Ouest: read https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf: 3,919,197 bytes, sha256 ec47a6989e96c2b6f2523847268c959da0a3b8154dfd069383b86ac4b615d2f9
-  Sud-Ouest: burkina_provinces: the province table gives [] of ['Bougouriba', 'Ioba', 'Noumbiel', 'Poni']; its provinces make (423178, 452264, 875442), and its total rows say []; its provinces are left as they are
-  41 provinces written
-  wrote data/processed/burkina_provinces.json (66 kB)
+    Bougouriba: 75,001 men, 78,652 women, 153,653
+    Ioba: 130,361 men, 135,595 women, 265,956
+    Noumbiel: 49,272 men, 49,643 women, 98,915
+    Poni: 168,544 men, 188,374 women, 356,918
+  45 provinces written
+  wrote data/processed/burkina_provinces.json (73 kB)
