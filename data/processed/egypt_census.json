@@ -22657,16 +22657,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 0,
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006: population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "status": "not_available",
+      "note": "The 2006 census, as OCHA publishes it, counts no one in the new city of Madīnat Tūshka al-Jadīdah, where CAPMAS's later tables put 2,655 people in 2006, and CAPMAS gives it no count since."
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2006 census's tables by kism and markaz give no ages, and the 2017 census's ages are of the units as redrawn since, which do not follow this outline."
+      "note": "The 2006 census, as OCHA publishes it, counts no one in the new city of Madīnat Tūshka al-Jadīdah, where CAPMAS's later tables put 2,655 people in 2006, and CAPMAS gives it no count since."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2006 census, as OCHA publishes it, counts no one in the new city of Madīnat Tūshka al-Jadīdah, where CAPMAS's later tables put 2,655 people in 2006, and CAPMAS gives it no count since."
     },
     "religion": {
       "status": "not_available"
@@ -22677,27 +22677,10 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "population",
-        "name": "OCHA (HDX), after CAPMAS",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
-      }
-    ],
+    "sources": [],
     "country": "EGY",
     "match_by": "shape_id",
-    "shape_id": "37247803B52387591644217",
-    "codes": {
-      "capmas_2006": [
-        2809
-      ],
-      "capmas": [
-        "2810"
-      ]
-    },
-    "population_note": "The 2006 census count of the new city of Madīnat Tūshka al-Jadīdah as drawn then: 0 men and 0 women. CAPMAS's later counts are of Madīnat Tūshka al-Jadīdah as redrawn since, which do not follow this outline."
+    "shape_id": "37247803B52387591644217"
   },
   {
     "id": "EGY-CAPMAS-37247803B30889137034133",
