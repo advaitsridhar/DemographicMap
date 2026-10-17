@@ -80,7 +80,8 @@ class MauritiusCensusTest(unittest.TestCase):
                                                    [100, 800, 40, 10]),
                                                   ("ISLAND OF RODRIGUES", [0, 40, 1, 0])],
                                                  LANGUAGE_HEAD), "D9", mu.language_of)}
-        with mock.patch.object(mu, "UNITS", {"portlouis": "portlouis", "rodrigues": "rodrigues"}), \
+        with mock.patch.object(mu, "UNITS", {"portlouis": ("portlouis",),
+                                             "rodrigues": ("rodrigues",)}), \
                 mock.patch.object(mu, "NATIONAL", 991):
             recs = mu.build(tables, [{"id": "P", "name": "Port Louis"},
                                      {"id": "R", "name": "Rodrigues"}],
@@ -91,6 +92,17 @@ class MauritiusCensusTest(unittest.TestCase):
         self.assertEqual(by["P"]["religion"][0]["group"], "Islam")
         self.assertIn("five Hindu groups", by["p"]["religion_note"])
         self.assertEqual(by["r"]["sex_ratio"]["value"], round(1000 * 20 / 21))
+
+    def test_the_abbreviated_district_and_the_outer_islands(self):
+        self.assertEqual(mu.unit_of("R. DU REMPART DISTRICT"), "rivieredurempart")
+        self.assertEqual(mu.unit_of("RIVIERE DU REMPART DISTRICT"), "rivieredurempart")
+        self.assertIsNone(mu.unit_of("Rivière du Rempart VCA"))
+        tables = {"D2": {}, "D6": {}, "D9": {}}
+        with mock.patch.object(mu, "UNITS", {}), mock.patch.object(mu, "NATIONAL", 0):
+            recs = mu.build(tables, [{"id": "A", "name": "Agaléga"}], [])
+        self.assertEqual(recs[0]["median_age"]["status"], "not_available")
+        self.assertIn("Agaléga has no line", recs[0]["median_age"]["note"])
+        self.assertNotIn("value", recs[0]["population"])
 
 
 if __name__ == "__main__":

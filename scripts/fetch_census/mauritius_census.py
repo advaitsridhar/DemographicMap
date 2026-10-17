@@ -10,13 +10,13 @@ village council area:
     D6  resident population by religious group
     D9  resident population by language usually spoken at home
 
-Written: for the nine districts of the Island of Mauritius and for Rodrigues,
-Agaléga and St. Brandon -- each drawn by the map once at either level -- the
-census's count, the sex ratio (men per thousand women), the median age
+Written: for the nine districts of the Island of Mauritius and for Rodrigues
+-- each drawn by the map once at either level -- the census's count, the sex ratio (men per thousand women), the median age
 (interpolated within the age group that holds the middle person), religion and
 home language as counts. The five Hindu groups the census lists (Hindu & Other
 Hindu, Tamil, Telugu, Marathi and Vedic) are written as one Hindu group, and
-the note says so.
+the note says so. Agaléga and St. Brandon have no line in these tables (the
+Republic's residents in them are the two main islands'), and say so.
 
 **The units.** Each table's blocks are found by their label: a district's
 ("PORT LOUIS DISTRICT ...") or an island's ("... RODRIGUES"); the first block
@@ -38,7 +38,7 @@ import io
 import re
 from typing import Any
 
-from ._shared import PROCESSED, log, measure, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from .southern_africa_common import fetch, grouped_median, key, sex_ratio, units
 
 URL = ("https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/"
@@ -50,11 +50,17 @@ YEAR = 2022
 NATIONAL = 1_233_097
 OUT = "mauritius_census.json"
 # The map's units (reduced name) -> how each table labels them, reduced.
-UNITS = {"portlouis": "portlouis", "pamplemousses": "pamplemousses",
-         "rivieredurempart": "rivieredurempart", "flacq": "flacq", "grandport": "grandport",
-         "savanne": "savanne", "plaineswilhems": "plaineswilhems", "moka": "moka",
-         "blackriver": "blackriver", "rodrigues": "rodrigues", "agalega": "agalega",
-         "stbrandon": "brandon"}
+UNITS = {"portlouis": ("portlouis",), "pamplemousses": ("pamplemousses",),
+         "rivieredurempart": ("rivieredurempart", "rdurempart"), "flacq": ("flacq",),
+         "grandport": ("grandport",), "savanne": ("savanne",),
+         "plaineswilhems": ("plaineswilhems",), "moka": ("moka",),
+         "blackriver": ("blackriver",), "rodrigues": ("rodrigues",)}
+# The outer islands, which the volume's tables do not give: the Republic's
+# resident population in them is the Island of Mauritius' and Rodrigues'.
+OUTER = {"agalega": "Agaléga", "stbrandon": "St. Brandon"}
+OUTER_NOTE = ("Statistics Mauritius' 2022 census tables of age, sex, religion and language give "
+              "the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 "
+              "residents in them are those two islands' alone, and {name} has no line.")
 
 RELIGION = (("buddhist", "Buddhist"), ("assembl", "Assembly of God"),
             ("churchofengland", "Church of England/ Protestant"),
@@ -68,6 +74,9 @@ LANGUAGE = {"creole": "Mauritian Creole", "bhojpuri": "Bhojpuri", "french": "Fre
             "chineselanguages": "Chinese languages", "marathi": "Marathi", "tamil": "Tamil",
             "telugu": "Telugu", "urdu": "Urdu", "othernotstated": "Other languages or not stated"}
 
+ETHNICITY_NOTE = ("Mauritius has not asked residents' ethnic group in its census since 1972 "
+                  "(the 2022 census records religion, language usually spoken at home and "
+                  "language of forefathers), so there is no census figure for it.")
 AGE = re.compile(r"^(?:<\s*(?P<lt>\d+)|(?P<lo>\d+)\s*-\s*(?P<hi>\d+)|(?P<top>\d+)\s*\+)$")
 
 
@@ -89,10 +98,10 @@ def sheets(blob: bytes) -> dict[str, list[list[Any]]]:
 def unit_of(label: str) -> str | None:
     """The map unit a block's label is the whole of, or None."""
     k = key(label)
-    for unit, want in UNITS.items():
-        if want in k and ("district" in k or unit in ("rodrigues", "agalega", "stbrandon")):
-            if "ward" in k or "vca" in k or "village" in k:
-                return None
+    if "ward" in k or "vca" in k or "village" in k:
+        return None
+    for unit, wants in UNITS.items():
+        if any(w in k for w in wants) and ("district" in k or unit == "rodrigues"):
             return unit
     return None
 
@@ -208,6 +217,16 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
     for level, shapes in (("admin1", admin1), ("admin2", admin2)):
         for shape in shapes:
             u = key(shape["name"])
+            if u in OUTER:
+                note = OUTER_NOTE.format(name=OUTER[u])
+                out.append(record(
+                    f"MUS-2022-{level}-{u}", shape["name"], level=level, parent="MUS",
+                    country="MUS", match_by="shape_id", shape_id=shape["id"],
+                    sources=sources[:1],
+                    median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note),
+                    religion=gap(NOT_AVAILABLE, note), language=gap(NOT_AVAILABLE, note),
+                    ethnicity=gap(NOT_AVAILABLE, ETHNICITY_NOTE)))
+                continue
             if u not in UNITS:
                 raise SystemExit(f"mauritius_census: no census unit for {shape['name']!r}")
             a, r, g = ages[u], rel[u], lang[u]
@@ -237,7 +256,8 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
                                 total=g["total"]),
                 language_year=YEAR, language_basis="language usually spoken at home",
                 language_note=("Language usually spoken at home, as the 2022 census records it "
-                               "for every resident (Table D9).")))
+                               "for every resident (Table D9)."),
+                ethnicity=gap(NOT_AVAILABLE, ETHNICITY_NOTE)))
     return out
 
 
