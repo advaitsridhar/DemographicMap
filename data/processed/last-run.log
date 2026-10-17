@@ -1,15 +1,228 @@
-
-=== HDX dataset: cod-ab-ago ===
-    title: Angola - Subnational Administrative Boundaries
-    org:   ocha-fiss
-    licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
-    notes: Angola administrative level 0-3 boundaries (COD-AB) dataset version 01.      This dataset is structured into 3 levels:   - Admin 1: 18 Province   - Admin 2: 161 Municipality   - Admin 3: 539          Dates associated with this dataset:   - 28 January 2025: dataset reviewed for accuracy and completeness   - 04 September 2018: valid for use by the humanitarian community   - 30 August 2018: last edit
-    4 resource(s):
-      Geodatabase ago_admin_boundaries.gdb.zip
-             https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/2d79a4a7-a161-4775-af64-7aa0a7c9a5a9/download/ago_admin_boundaries.gdb.zip
-      SHP    ago_admin_boundaries.shp.zip
-             https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/e793b6b3-77df-4e06-a7f5-2fac6882863f/download/ago_admin_boundaries.shp.zip
-      GeoJSON ago_admin_boundaries.geojson.zip
-             https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/1076fc26-8c42-4196-bb6b-2353487fd7e0/download/ago_admin_boundaries.geojson.zip
-      XLSX   ago_admin_boundaries.xlsx
-             https://data.humdata.org/dataset/a62b2816-7d2e-4e07-a794-0a1dcb507092/resource/1e2b4c71-600c-4917-9de3-46fb011c8976/download/ago_admin_boundaries.xlsx
+== pdfp https://censo2024.ine.gov.ao/BENGO.pdf 6-12 260
+  HTTP 200 application/pdf 9,729,481 bytes
+  207 pages
+  --- page 6 ---
+  L
+  ISTA DE MAPAS, CARTOGRAMAS, QUADROS E GRÁFICOS
+  MAPAS
+  Mapa 1 - Municípios, comunas e localidades à luz da Lei 14/24, de 05 de Setembro ................................. 30
+  CARTOGRAMAS
+  Cartograma 1 - Distribuição da população residente por municípios, 2024 .................................................. 34
+  Cartograma 2 - Densidade demográfica por municípios, 2024 .................................................................. 34
+  Cartograma 3 - Índice de masculinidade por província, 2024 ...................................................................... 35
+  Cartograma 4 - População com 0-14 anos de idade, 2024 ............................................................................ 39
+  Cartograma 5 - População com 65 ou mais anos de idade, 2024 ................................................................ 40
+  Cartograma 6 - Percentagem da população com registo de nascimento, por município, 2024 ...................... 43
+  QUADROS
+  Quadro 1 - Síntese dos principais indicadores, 2014 e 2024 ........................................................................ 19
+  Quadro 2 - Síntese dos principais indicadores, 2024 .................................................................................... 20
+  Quadro 3 - Taxa de subcobertura líquida de pessoas por área de residência .............................................. 25
+  Quadro 4 - Taxa de subcobertura líquida dos agregados familiares por área de residência ....................... 26
+  Quadro 5 - Índice de erro de conteúdo para características demográficas ................................................. 26
+  Quadro 6 - Probabilidade de inclusão e de omissão para as pessoas .......................................................... 26
+  Quadro 7 -Distribuição da população final verdadeira de pessoas (milhões) .............................................. 27
+  Quadro 8 - Número de municípios, comunas e localidades por província à luz da Lei 14/24 de 05 de
+  Setembro ............................................................................................................................................. 30
+  Quadro 9 - População residente por área de residência, segundo o sexo, 2014 -2024 .............................. 31
+  Quadro 10 - População residente por município, segundo o sexo, Censo 2024 ......................................... 32
+  Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e 2024 ............................ 33
+  Quadro 12 - População por área de residêmcia e sexo, 2014 e 2024 ......................................................... 37
+  Quadro 13 - População residente por grupos de idade, segundo o sexo, 2014 - 2024 ............................... 38
+  Quadro 14 - População com 12 ou mais anos por estado civil, segundo o sexo, 2014 - 2024 .................... 41
+  Quadro 15 - População com registo de nascimento por área de residência, 2014 e 2024 ......................... 42
+  Quadro 16 - População com bilhete de identidade, 2024 ........................................................................... 43
+  Quadro 17 - População com Bilhete de identidade por município, segundo o sexo, 2024 ......................... 44
+  Quadro 18 - Agregados familiares que receberam algum apoio social, 2024 ............................................. 45
+  Quadro 19 - Distribuição da população com 5 ou mais anos por tipo de domínio funcional e grau de
+  dificuldade, 2024.................................................................................................................................. 46
+  Quadro 20 - Crianças órfãs com 0-17 anos de idade, segundo o tipo, 2014 e 2024 ................................... 47
+  --- page 7 ---
+  Quadro 21 - População de 2 ou mais anos por grupo étnico, 2024............................................................. 48
+  Quadro 22- População com albinismo por área de residência, 2024 .......................................................... 49
+  Quadro 23 - População com 2 ou mais anos de idade, segundo a religião declarada, 2024 ........................ 50
+  Quadro 24 - População com 5 ou mais anos de idade, segundo a frequência escolar, 2024 ...................... 52
+  Quadro 25 - População com 5-18 anos fora do sistema de ensino por grupos etários, segundo o sexo, 2024
+  ............................................................................................................................................................. 54
+  Quadro 26 - População por tipo de habitação, 2024 ................................................................................... 55
+  Quadro 27 - Agregados familiares por município e área de residência, 2024 ............................................. 56
+  Quadro 28 - Agregados familiares por tamanho e média de pessoas, 2024 ............................................... 57
+  Quadro 29 - Agregados familiares por tipo e localização da instalação sanitária, 2024 ............................. 58
+  Quadro 30 - Agregados familiares com acesso à água apropriada para beber por área de residência, 2024
+  ............................................................................................................................................................. 59
+  Quadro 31 - Agregados familiares que utilizam a electricidade da rede pública por área de residência, 2014
+  e 2024 .................................................................................................................................................. 59
+  Quadro 32 - Agregados familiares por posse de alguns bens, 2024 ............................................................ 60
+  Quadro 33 - Agregado familiar por área de residência segundo a posse de parcela/lavra ou prática de
+  actividade agrícola, 2024 ..................................................................................................................... 61
+  Gráfico 34 - Agregados familiares por dimensão das habitações, 2014-2024 .............................................. 62
+  GRÁFICOS
+  Gráfico 1 - População residente por sexo, 2024 ............................................................................................ 31
+  Gráfico 2 - Distribuição percentual da população residente por município, segundo o sexo, 2024 ............. 32
+  Gráfico 3 - Distribuição percentual da população residente por município, 2024 ......................................... 33
+  Gráfico 4 - Índice de masculinidade por município, 2024 ............................................................................ 35
+  Gráfico 5 – Estrutura etária da população por sexo ..................................................................................... 36
+  Gráfico 6 – Distribuição percentual da população por grupos etários de 5 anos, 2024 ............................... 36
+  Gráfico 7– Idade mediana por município, 2024 ........................................................................................... 37
+  Gráfico 8 – Estrutura etária da população, 2024 .......................................................................................... 38
+  Gráfico 9 - Proporção da população com 0-14 anos de idade por município, 2024..................................... 38
+  Gráfico 10 - Proporção da população com 65 ou mais anos de idade por município, 2024 ........................ 39
+  Gráfico 11 - Proporção da população com 12 ou mais anos por estado civil, 2014 e 2024 ......................... 40
+  Gráfico 12 - Proporção da população com 12 ou mais anos por estado civil, segundo o sexo, 2024 .......... 41
+  Gráfico 13 - População com registo de nascimento, 2024 ........................................................................... 42
+  Gráfico 14 - Proporção da população de 0-4 anos com registo de nascimento, ........................................ 42
+  Gráfico 15 – População com bilhete de identidade, por grupos etários, 2024 .......................................... 44
+  --- page 8 ---
+  Gráfico 16 - Distribuição percentual dos agregados que receberam apoio social, por entidade prestadora,
+  2024 ..................................................................................................................................................... 45
+  Gráfico 17 – Taxa de orfandade em crianças de 0-17 anos por município, 2024 ......................................... 47
+  Gráfico 18 – Línguas maternas mais faladas, 2024 ..................................................................................... 48
+  Gráfico 19 – Percentagem da população com albinismo, Bengo 2024 ........................................................ 49
+  Gráfico 20 – Principais religiões praticadas, 2014 e 2024 ............................................................................ 50
+  Gráfico 21 – Taxa de alfabetismo na população com 15 ou mais anos, por área de residência, 2014-2024 51
+  Gráfico 22 – Taxa de alfabetismo na população com 15 ou mais anos, por província, 2024 ....................... 51
+  Gráfico 23 – Taxa de alfabetismo na população com 15-24 anos, por província, 2024 ............................... 52
+  Gráfico 24 – Percentagem da população com 5 ou mais anos de idade que nunca frequentou a escola, por
+  município, 2024 ................................................................................................................................... 53
+  Gráfico 25 – Percentagem da população com 18 ou mais anos, segundo o nível de escolaridade ............. 53
+  Gráfico 26 – Percentagem da população com 5-18 anos fora do sistema de ensino, segundo o grupo etário,
+  2014-2024 ............................................................................................................................................ 54
+  Gráfico 27 - Distribuição percentual da população por tipo de habitação ................................................... 55
+  Gráfico 28 - Distribuição percentual dos chefes dos agregados familiares por sexo, 2024 ......................... 56
+  Gráfico 29 – Grupo etário do chefe do agregado familiar ............................................................................ 56
+  Gráfico 30 – Tipo de núcleo familiar ............................................................................................................. 57
+  Gráfico 31 – Distribuição percentual dos agregados familiares segundo a principal ................................... 58
+  Gráfico 32 – Percentagem de agregados familiares, segundo o principal tipo de iluminação, 2014 - 2024 59
+  Gráfico 33 - Percentagem de agregados familiares, segundo a posse de alguns bens, 2024 ...................... 61
+  Gráfico 34 - Agregados familiares, por tipo de habitações, 2014-2024 ....................................................... 62
+  --- page 9 ---
+  L
+  ISTA DOS PRINCIPAIS QUADROS DE RESULTADOS
+  1. POPULAÇÃO
+  Quadro 1.1 - População por área de residência, Municípios e comunas, 2024 ........................................... 68
+  Quadro 1.2 - População por idades simples, 2024 ....................................................................................... 69
+  Quadro 1.3 - População por grupos etários quinquenais, 2024 ................................................................... 70
+  Quadro 1.4 - População por município, segundo grandes grupos etários, 2024 ......................................... 71
+  Quadro 1.5 - População por província, segundo outros grupos etários, 2024 ............................................. 72
+  Quadro 1.6 - População por província e área de residência, 2024 ............................................................... 73
+  Quadro 1.7 - Idade média e mediana da população por área de residência e sexo, 2024 ........................... 74
+  2. ESTADO CIVIL
+  Quadro 2.1 - População com 12 ou mais por estado civil segundo o sexo, 2024 ......................................... 78
+  3. REGISTO CIVIL
+  Quadro 3.1 - População residente com registo de nascimento por província e área de residência, segundo
+  sexo, RGPH 2024 .................................................................................................................................. 81
+  Quadro 3.2 - População residente com registo de nascimento por grupos etários segundo sexo, RGPH –
+  2024 ..................................................................................................................................................... 82
+  Quadro 3.3 - População residente com Bilhete de identidade por área de residência, segundo os grupos
+  etários e sexo, RGPH 2024 ................................................................................................................... 82
+  Quadro 3.4 - População com 5 anos ou mais, residente com Bilhete de identidade por província, área de
+  residencia segundo sexo, RGPH 2024 ................................................................................................. 83
+  4. Deficiência e Albinismo
+  Quadro 4.1- Distribuição da população com 5 ou mais anos por tipo de domínio funcional e grau de
+  dificuldade, 2024.................................................................................................................................. 86
+  Quadro 4.2 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo o sexo ...... 87
+  Quadro 4.3 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo grupo etário
+  ............................................................................................................................................................. 88
+  5. ORFANDADE
+  Quadro 5.1 - Crianças com 0-17 anos que não vivem com os pais por área de residência, município, segundo
+  sexo, RGPH província, segundo sexo ................................................................................................... 92
+  Quadro 5.2 - Crianças orfãos com 0-17 anos por área de residência, grupo etário, segundo tipo e taxa de
+  orfandade ............................................................................................................................................. 93
+  --- page 10 ---
+  6. LÍNGUA MATERNA
+  Quadro 6.1 - População de 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 ................................. 96
+  Quadro 6.2 - População por província e área de residência, segundo a língua Materna .......................... 100
+  7. RELIGIÃO
+  Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a religião ou
+  espiritualidade, 2024 .......................................................................................................................... 105
+  Quadro 7.2- População com 2 ou mais anos por área de residência e município, segundo a religião ou
+  espiritualidade, 2024 ......................................................................................................................... 105
+  8. EDUCAÇÃO
+  Quadro 8.1 - População com 15 ou mais anos que sabe ler e escrever por província e área de residência,
+  2024 ................................................................................................................................................... 109
+  Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupos etários e área de residência,
+  2024 ................................................................................................................................................... 111
+  Quadro 8.3 - População com 15 - 24 anos que sabe ler e escrever por província e área de residência, 2024
+  ........................................................................................................................................................... 113
+  Quadro 8.4 - População com 5 ou mais anos anos por província e área de residência, segundo a situação
+  de frequência escolar, 2024 ............................................................................................................... 114
+  Quadro 8.5 - População com 5-11 anos anos por província e área de residência fora do sistema de ensino,
+  2024 ................................................................................................................................................... 116
+  Quadro 8.6 - População com 12-14 anos anos por província e área de residência fora do sistema de ensino,
+  2024 ................................................................................................................................................... 117
+  Quadro 8.7 - População com 15-18 anos anos por província e área de residência fora do sistema de ensino,
+  2024 ................................................................................................................................................... 118
+  Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de
+  frequência escolar, RGPH 2024 .......................................................................................................... 119
+  Quadro 8.9 - População com 15-18 anos por província e área de residência fora do sistema de ensino, 2024
+  ........................................................................................................................................................... 120
+  Quadro 8.10 - População com 5-18 anos por província e área de residência, segundo a situação de
+  frequência escolar no ensino primário, 2024 .................................................................................... 121
+  Quadro 8.11 - População com 5-11 anos por província e área de residência, segundo a situação de
+  frequência escolar no ensino primário, 2024 .................................................................................... 122
+  Quadro 8.12 - População com 12-14 anos por província e área de residência, segundo a situação de
+  frequência escolar no ensino primário, 2024 .................................................................................... 124
+  Quadro 8.13 - População com 18 ou mais anos por província e área de residência, segundo o nível de ensino
+  concluído, 2024 .................................................................................................................................. 125
+  --- page 11 ---
+  Quadro 8.14 - População com 18 ou mais anos por província e área de residência, segundo o nível de ensino
+  concluído, 2024 .................................................................................................................................. 127
+  Quadro 8.15 - Taxa líquida de frequência do ensino primário e secundário por província e área de residência,
+  segundo o sexo, 2024 ....................................................................................................................... 129
+  9. AGREGADO FAMILIAR
+  Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de
+  iluminação, 2024................................................................................................................................. 133
+  Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte
+  de energia/combustível utilizado para cozinhar, 2024 ...................................................................... 135
+  Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário
+  (casa de banho, retrete) que o agregado familiar utiliza normalmente dentro ou fora de casa, 2024
+  ........................................................................................................................................................... 137
+  Quadro 9.4 - Agregados familiares por área de residência, município e comuna, segundo o modo de
+  tratamento habitual que se dá a água para beber, 2024 .................................................................. 141
+  Quadro 9.5 - Agregados familiares por área de residência, município e comuna, segundo a situação de
+  partilha da casa de banho, 2024 ........................................................................................................ 143
+  Quadro 9.6 - Agregados familiares por área de residência, município e comuna, segundo o acesso a água da
+  rede pública, 2024 ............................................................................................................................. 144
+  Quadro 9.7 - Agregados familiares por área de residência, município e comuna, segundo situação se a água
+  utilizada para beber provém da mesma fonte, 2024 ......................................................................... 145
+  Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte
+  utilizada para abastecimento de água, 2024 ..................................................................................... 146
+  Quadro 9.9 - Agregados familiares por área de residência, município e comuna, segundo a posse de
+  parcela/lavra ou a prática da actividade agrícola, 2024 ................................................................... 148
+  Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de
+  ocupação da lavra/ parcela (exploração), 2024 ................................................................................. 149
+  Quadro 9.11 - Agregados familiares por área de residência, município e comuna, segundo a situação de
+  criação de animais por algum membro nos últimos 12 meses, 2024 ................................................ 151
+  Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna,
+  segundo o tipo de animais criados nos últimos 12 meses, 2024 ....................................................... 152
+  Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de
+  actividade piscatória praticada, 2024 ................................................................................................ 153
+  Quadro 9.14 - Agregados familiares por área de residência, município e comuna, segundo a posse de bens
+  que funcionam em casa, 2024 ........................................................................................................... 154
+  Quadro 9.15 - Agregados familiares por área de residência, município e comuna, segundo a situação se
+  recebe algum tipo de apoio social ..................................................................................................... 156
+  Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade que
+  prestou o apoio social, 2024 .............................................................................................................. 157
+  Quadro 9.17 - Agregados familiares por área de residência, município e comuna, segundo o sexo do chefe,
+  2024 ................................................................................................................................................... 158
+  --- page 12 ---
+  Quadro 9.18 - Agregados familiares por província e área de residência, segundo o tipo de núcleo familiar,
+  2024 ................................................................................................................................................... 159
+  Quadro 9.19 - Agregados familiares por grupo etário, segundo o sexo do chefe, 2024 ............................ 159
+  Quadro 9.20 - Agregados familiares por área de residência e município, segundo o tamanho e média de
+  pessoas por agregado, 2024 .............................................................................................................. 160
+  10. HABITAÇÃO
+  Quadro 10.1 - População recenseada por área de residência, município e comuna, segundo grupos etários,
+  2024 .................................................................................................................................................... 163
+  Quadro 10.2 - Habitações familiares por município e comuna e área de residência, segundo o tipo de
+  habitação, 2024 ................................................................................................................................. 164
+  Quadro 10.3 - Habitações familiares por município, comuna e área de residência, segundo o estado de
+  ocupação da habitação, 2024 ............................................................................................................ 165
+  Quadro 10.4 - Habitações familiares por municípi, comuna e área de residência, segundo o tipo de material
+  usado principalmente nas paredes exteriores, 2024 ......................................................................... 166
+  Quadro 10.5 - Habitações familiares por município, comuna e área de residência, segundo o tipo de material
+  usado principamente no tecto, 2024 ................................................................................................. 167
+  Quadro 10.6 - Habitações familiares por município, comuna e área de residência, segundo o tipo de material
+  usado principamente no chão, 2024 ................................................................................................. 168
+  Quadro 10.7 - Agregados familiares por área de residência e município, segundo a média de divisões, média
+  de pessoas por divisão, média de quartos para dormir e média de pessoas por quarto só para dormir
+  da habitação....................................................................................................................................... 169
