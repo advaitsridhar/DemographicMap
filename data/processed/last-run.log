@@ -1,15 +1,151 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uganda_census.py", line 127, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uganda_census.py", line 122, in main
-    return write_points()
-           ^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uganda_census.py", line 109, in write_points
-    f"{sum(c['total'] or 0 for c in out):,} people")
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
+== links https://ins-congo.cg/recensement-population.html (?i)(pdf|rgph|recens|t.l.charger|download) 60
+  HTTP 200 text/html 41,228 bytes
+  https://ins-congo.cg/recensement-population.html  [Recensement général de la population et des logements]
+  https://ins-congo.cg/recensement-agriculture.html  [Recensement général de l'agriculture]
+  https://ins-congo.cg/populations-vulnerables.html  [Recensement des populations économiquement vulnérable]
+  https://ins-congo.cg/offre-educative.html  [Recensement général de l'offre éducative]
+  https://ins-congo.cg/recensement.html  [Recensement]
+  https://ins-congo.cg/recensement-population.html  [Recensement général de la population et des logements]
+  https://ins-congo.cg/recensement-agriculture.html  [Recensement général de l'agriculture]
+  https://ins-congo.cg/populations-vulnerables.html  [Recensement des populations économiquement vulnérable]
+  https://ins-congo.cg/offre-educative.html  [Recensement général de l'offre éducative]
+  https://ins-congo.cg/recensement.html  [Recensement]
+  (10 links shown)
+== links https://ins-congo.cg/publications.html (?i)(pdf|rgph|recens|annuaire) 80
+  HTTP 200 text/html 40,796 bytes
+  https://ins-congo.cg/recensement-population.html  [Recensement général de la population et des logements]
+  https://ins-congo.cg/recensement-agriculture.html  [Recensement général de l'agriculture]
+  https://ins-congo.cg/populations-vulnerables.html  [Recensement des populations économiquement vulnérable]
+  https://ins-congo.cg/offre-educative.html  [Recensement général de l'offre éducative]
+  https://ins-congo.cg/recensement.html  [Recensement]
+  https://ins-congo.cg/recensement-population.html  [Recensement général de la population et des logements]
+  https://ins-congo.cg/recensement-agriculture.html  [Recensement général de l'agriculture]
+  https://ins-congo.cg/populations-vulnerables.html  [Recensement des populations économiquement vulnérable]
+  https://ins-congo.cg/offre-educative.html  [Recensement général de l'offre éducative]
+  https://ins-congo.cg/recensement.html  [Recensement]
+  (10 links shown)
+== cdx www.cnsee.org/index.php 120
+  HTTP 200: 480 captures
+  20111102005300 text/html 6809 http://www.cnsee.org:80/index.php?
+  20111104092520 text/html 3698 http://www.cnsee.org:80/index.php?option=com_poll&
+  20201225163330 text/html 5135 http://www.cnsee.org/index.php?option=com_content&amp%3Bview=article&amp%3Bid=135%3Apopdep&amp%3Bcatid=43%3Aanalyse-rgph&amp%3BItemid=2
+  20201225163357 text/html 3553 http://www.cnsee.org/index.php?option=com_content&amp%3Bview=section&amp%3Bid=11&amp%3BItemid=49
+  20190825050509 text/html 4174 http://www.cnsee.org/index.php?option=com_poll&amp;id=15:sondage001
+  20111113144438 application/pdf 215010 http://www.cnsee.org/index.php?view=article&catid=1%3Alatest-news&id=164%3Aasc2009info&format=pdf&option=com_content&Itemid=50
+  20131113143547 application/pdf 214237 http://www.cnsee.org/index.php?view=article&catid=1%3Alatest-news&id=182%3Acommission-superieure-de-la-statistique&format=pdf&option=com_content&Itemid=50
+  20131115044907 application/pdf 214229 http://www.cnsee.org/index.php?view=article&catid=1%3Alatest-news&id=182%3Acommission-superieure-de-la-statistique&format=pdf&option=com_content
+  20131023132431 application/pdf 214213 http://www.cnsee.org/index.php?view=article&catid=1:latest-news&id=182:commission-superieure-de-la-statistique&format=pdf
+  20111113144442 text/html 1915 http://www.cnsee.org/index.php?view=article&catid=1%3Alatest-news&id=164%3Aasc2009info&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=50
+  20111113143849 text/html 4498 http://www.cnsee.org/index.php?option=com_content&view=article&id=164:asc2009info&catid=1:latest-news&Itemid=50
+  20181113170853 text/html 1569 http://www.cnsee.org/index.php?view=article&catid=1%3Alatest-news&id=182%3Acommission-superieure-de-la-statistique&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=50
+  20131023132749 text/html 4622 http://www.cnsee.org/index.php?option=com_content&view=article&id=182:commission-superieure-de-la-statistique&catid=1:latest-news&Itemid=50
+  20131023130729 text/html 1479 http://www.cnsee.org/index.php?view=article&catid=1:latest-news&id=182:commission-superieure-de-la-statistique&tmpl=component&print=1&layout=default&page=
+  20110414205646 text/html 3348 http://www.cnsee.org/index.php?option=com_content&view=article&id=22:nouveaute-2010&catid=29:the-cms
+  20131115021923 application/pdf 291622 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=134%3Aphaseindicateurs&format=pdf&option=com_content&Itemid=61
+  20131115045318 application/pdf 291614 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=134%3Aphaseindicateurs&format=pdf&option=com_content
+  20131114103343 application/pdf 291594 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=134:phaseindicateurs&format=pdf
+  20131113165556 application/pdf 214232 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=176%3Aeesic-iitab001&format=pdf&option=com_content&Itemid=61
+  20131115045245 application/pdf 214224 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=176%3Aeesic-iitab001&format=pdf&option=com_content
+  20131113165646 application/pdf 214208 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=176:eesic-iitab001&format=pdf
+  20131113143534 application/pdf 216029 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=184%3Aedsc-ii&format=pdf&option=com_content&Itemid=61
+  20131115045103 application/pdf 216027 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=184%3Aedsc-ii&format=pdf&option=com_content
+  20131113142905 application/pdf 216015 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=184:edsc-ii&format=pdf
+  20131115045557 application/pdf 218348 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=46%3Aplan-analyse-phase1&format=pdf&option=com_content&Itemid=61
+  20131115045545 application/pdf 273419 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=63%3Aenquete-emploi-doc-2009&format=pdf&option=com_content&Itemid=61
+  20131115022812 application/pdf 215381 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=64%3Aresultats-enquete-esisc&format=pdf&option=com_content&Itemid=61
+  20131115050111 application/pdf 215375 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=64%3Aresultats-enquete-esisc&format=pdf&option=com_content
+  20131114104930 application/pdf 215356 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=64:resultats-enquete-esisc&format=pdf
+  20191015063734 text/html 3735 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=134%3Aphaseindicateurs&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20131115021937 text/html 5261 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aedsc-2&Itemid=61&limitstart=1
+  20131115021939 text/html 5613 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aedsc-2&Itemid=61&limitstart=2
+  20131115021941 text/html 5804 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aedsc-2&Itemid=61&limitstart=3
+  20131115021943 text/html 6719 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aedsc-2&Itemid=61&showall=1
+  20131114103402 text/html 5306 http://www.cnsee.org/index.php?option=com_content&view=article&id=134:phaseindicateurs&catid=34:edsc-2&Itemid=61
+  20181114124125 text/html 3548 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=134:phaseindicateurs&tmpl=component&print=1&layout=default&page=
+  20131113165602 text/html 1430 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=176%3Aeesic-iitab001&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20131113143058 text/html 4517 http://www.cnsee.org/index.php?option=com_content&view=article&id=176:eesic-iitab001&catid=34:edsc-2&Itemid=61
+  20181113171807 text/html 1484 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=176:eesic-iitab001&tmpl=component&print=1&layout=default&page=
+  20181113170825 text/html 2820 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=184%3Aedsc-ii&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20131113142718 text/html 5947 http://www.cnsee.org/index.php?option=com_content&view=article&id=184:edsc-ii&catid=34:edsc-2&Itemid=61
+  20131113142914 text/html 2732 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=184:edsc-ii&tmpl=component&print=1&layout=default&page=
+  20181115080813 text/html 2668 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=46%3Aplan-analyse-phase1&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20131114105535 text/html 5661 http://www.cnsee.org/index.php?option=com_content&view=article&id=46:plan-analyse-phase1&catid=34:edsc-2&Itemid=61
+  20181115080743 text/html 2085 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=63%3Aenquete-emploi-doc-2009&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20131114105533 text/html 5117 http://www.cnsee.org/index.php?option=com_content&view=article&id=63:enquete-emploi-doc-2009&catid=34:edsc-2&Itemid=61
+  20131115022819 text/html 2427 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=64%3Aresultats-enquete-esisc&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20131114104939 text/html 5630 http://www.cnsee.org/index.php?option=com_content&view=article&id=64:resultats-enquete-esisc&catid=34:edsc-2&Itemid=61
+  20131115050117 text/html 2423 http://www.cnsee.org/index.php?view=article&catid=34%3Aedsc-2&id=64%3Aresultats-enquete-esisc&tmpl=component&print=1&layout=default&page=&option=com_content
+  20131114104937 text/html 2408 http://www.cnsee.org/index.php?view=article&catid=34:edsc-2&id=64:resultats-enquete-esisc&tmpl=component&print=1&layout=default&page=
+  20111115014853 application/pdf 291636 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=134%3Aphaseindicateurs&format=pdf&option=com_content&Itemid=61
+  20111115040836 application/pdf 291626 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=134%3Aphaseindicateurs&format=pdf&option=com_content
+  20111114123252 application/pdf 291602 http://www.cnsee.org/index.php?view=article&catid=34:enquete-emploi-2009&id=134:phaseindicateurs&format=pdf
+  20111115041548 application/pdf 218357 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=46%3Aplan-analyse-phase1&format=pdf&option=com_content&Itemid=61
+  20111115040809 application/pdf 273412 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=63%3Aenquete-emploi-doc-2009&format=pdf&option=com_content&Itemid=61
+  20111115015531 application/pdf 215383 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=64%3Aresultats-enquete-esisc&format=pdf&option=com_content&Itemid=61
+  20111115041150 application/pdf 215376 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=64%3Aresultats-enquete-esisc&format=pdf&option=com_content
+  20111115015620 application/pdf 215364 http://www.cnsee.org/index.php?view=article&catid=34:enquete-emploi-2009&id=64:resultats-enquete-esisc&format=pdf
+  20111115014901 text/html 3504 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=134%3Aphaseindicateurs&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20111115014905 text/html 5072 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aenquete-emploi-2009&Itemid=61&limitstart=1
+  20111115014907 text/html 5175 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aenquete-emploi-2009&Itemid=61&limitstart=2
+  20111115014909 text/html 5804 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aenquete-emploi-2009&Itemid=61&limitstart=3
+  20111115014911 text/html 6381 http://www.cnsee.org/index.php?option=com_content&view=article&id=134%3Aphaseindicateurs&catid=34%3Aenquete-emploi-2009&Itemid=61&showall=1
+  20110414131212 text/html 4957 http://www.cnsee.org/index.php?option=com_content&view=article&id=134:phaseindicateurs&catid=34:enquete-emploi-2009&Itemid=61
+  20111115040844 text/html 3494 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=134%3Aphaseindicateurs&tmpl=component&print=1&layout=default&page=&option=com_content
+  20111114123301 text/html 3480 http://www.cnsee.org/index.php?view=article&catid=34:enquete-emploi-2009&id=134:phaseindicateurs&tmpl=component&print=1&layout=default&page=
+  20131023124742 text/html 4610 http://www.cnsee.org/index.php?option=com_content&view=article&id=176:eesic-iitab001&catid=34:enquete-emploi-2009&Itemid=61
+  20111115041556 text/html 2604 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=46%3Aplan-analyse-phase1&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20111115040741 text/html 5489 http://www.cnsee.org/index.php?option=com_content&view=article&id=46:plan-analyse-phase1&catid=34:enquete-emploi-2009&Itemid=61
+  20111115040814 text/html 2014 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=63%3Aenquete-emploi-doc-2009&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20111114124313 text/html 4849 http://www.cnsee.org/index.php?option=com_content&view=article&id=63:enquete-emploi-doc-2009&catid=34:enquete-emploi-2009&Itemid=61
+  20111115015536 text/html 2428 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=64%3Aresultats-enquete-esisc&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=61
+  20111114124007 text/html 5172 http://www.cnsee.org/index.php?option=com_content&view=article&id=64:resultats-enquete-esisc&catid=34:enquete-emploi-2009&Itemid=61
+  20111115041156 text/html 2423 http://www.cnsee.org/index.php?view=article&catid=34%3Aenquete-emploi-2009&id=64%3Aresultats-enquete-esisc&tmpl=component&print=1&layout=default&page=&option=com_content
+  20111115015625 text/html 2410 http://www.cnsee.org/index.php?view=article&catid=34:enquete-emploi-2009&id=64:resultats-enquete-esisc&tmpl=component&print=1&layout=default&page=
+  20111115015119 application/pdf 346695 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=121%3Atableau-recapitulatif-des-principaux-indicateur-de-la-phase2&format=pdf&option=com_content&Itemid=62
+  20111114124428 application/pdf 346681 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=121%3Atableau-recapitulatif-des-principaux-indicateur-de-la-phase2&format=pdf&option=com_content
+  20111114123506 application/pdf 346660 http://www.cnsee.org/index.php?view=article&catid=35:enquete-secteur-informel-2009&id=121:tableau-recapitulatif-des-principaux-indicateur-de-la-phase2&format=pdf
+  20111115040816 application/pdf 329831 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=47%3Aplan-analyse-phase2&format=pdf&option=com_content&Itemid=62
+  20111115015657 application/pdf 346882 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=48%3Atableau-recap-sect-informel&format=pdf&option=com_content&Itemid=62
+  20111115041245 application/pdf 346878 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=48%3Atableau-recap-sect-informel&format=pdf&option=com_content
+  20111114124015 application/pdf 346850 http://www.cnsee.org/index.php?view=article&catid=35:enquete-secteur-informel-2009&id=48:tableau-recap-sect-informel&format=pdf
+  20111115015128 text/html 4684 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=121%3Atableau-recapitulatif-des-principaux-indicateur-de-la-phase2&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=62
+  20111114123417 text/html 7881 http://www.cnsee.org/index.php?option=com_content&view=article&id=121:tableau-recapitulatif-des-principaux-indicateur-de-la-phase2&catid=35:enquete-secteur-informel-2009&Itemid=62
+  20111114124436 text/html 4673 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=121%3Atableau-recapitulatif-des-principaux-indicateur-de-la-phase2&tmpl=component&print=1&layout=default&page=&option=com_content
+  20111114123515 text/html 4660 http://www.cnsee.org/index.php?view=article&catid=35:enquete-secteur-informel-2009&id=121:tableau-recapitulatif-des-principaux-indicateur-de-la-phase2&tmpl=component&print=1&layout=default&page=
+  20111115040824 text/html 3177 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=47%3Aplan-analyse-phase2&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=62
+  20111114124322 text/html 6325 http://www.cnsee.org/index.php?option=com_content&view=article&id=47:plan-analyse-phase2&catid=35:enquete-secteur-informel-2009&Itemid=62
+  20111115015706 text/html 4314 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=48%3Atableau-recap-sect-informel&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=62
+  20111114124027 text/html 7386 http://www.cnsee.org/index.php?option=com_content&view=article&id=48:tableau-recap-sect-informel&catid=35:enquete-secteur-informel-2009&Itemid=62
+  20111115041254 text/html 4311 http://www.cnsee.org/index.php?view=article&catid=35%3Aenquete-secteur-informel-2009&id=48%3Atableau-recap-sect-informel&tmpl=component&print=1&layout=default&page=&option=com_content
+  20111114124024 text/html 4291 http://www.cnsee.org/index.php?view=article&catid=35:enquete-secteur-informel-2009&id=48:tableau-recap-sect-informel&tmpl=component&print=1&layout=default&page=
+  20111115041933 application/pdf 349342 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=148%3Aihpcbrazza04&format=pdf&option=com_content&Itemid=2
+  20111115014737 application/pdf 349334 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=148%3Aihpcbrazza04&format=pdf&option=com_content
+  20111114101930 application/pdf 349313 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=148:ihpcbrazza04&format=pdf
+  20111115041914 application/pdf 349849 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=149%3Aihpcpn04&format=pdf&option=com_content&Itemid=2
+  20111115014717 application/pdf 349839 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=149%3Aihpcpn04&format=pdf&option=com_content
+  20111114101911 application/pdf 349816 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=149:ihpcpn04&format=pdf
+  20111115041906 application/pdf 215844 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=161%3Aihpc2006-2010&format=pdf&option=com_content&Itemid=2
+  20111113165920 application/pdf 215838 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=161%3Aihpc2006-2010&format=pdf&option=com_content
+  20110723153855 application/pdf 215870 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=161:ihpc2006-2010&format=pdf
+  20111115015713 application/pdf 379272 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=162%3Aihpcmai2011&format=pdf&option=com_content&Itemid=2
+  20111113144507 application/pdf 379263 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=162%3Aihpcmai2011&format=pdf&option=com_content
+  20111113144049 application/pdf 379240 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=162:ihpcmai2011&format=pdf
+  20111115042007 application/pdf 225181 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=53%3Aihpc&format=pdf&option=com_content&Itemid=2
+  20111115041327 application/pdf 225171 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=53%3Aihpc&format=pdf&option=com_content
+  20111115015639 application/pdf 225155 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=53:ihpc&format=pdf
+  20111115041953 application/pdf 350188 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=54%3Aindice-prix-consommation-juin-2010&format=pdf&option=com_content&Itemid=2
+  20111115015538 application/pdf 350177 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=54%3Aindice-prix-consommation-juin-2010&format=pdf&option=com_content
+  20111115015626 application/pdf 350157 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=54:indice-prix-consommation-juin-2010&format=pdf
+  20111115041943 text/html 4689 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=148%3Aihpcbrazza04&tmpl=component&print=1&layout=default&page=&option=com_content&Itemid=2
+  20111115041946 text/html 6744 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&Itemid=2&limitstart=1
+  20111115041948 text/html 6009 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&Itemid=2&limitstart=2
+  20111115041950 text/html 8414 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&Itemid=2&showall=1
+  20111115041505 text/html 5368 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&Itemid=2
+  20111115014747 text/html 4684 http://www.cnsee.org/index.php?view=article&catid=36%3Aprix&id=148%3Aihpcbrazza04&tmpl=component&print=1&layout=default&page=&option=com_content
+  20111114101939 text/html 4669 http://www.cnsee.org/index.php?view=article&catid=36:prix&id=148:ihpcbrazza04&tmpl=component&print=1&layout=default&page=
+  20111115014751 text/html 5588 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&limitstart=1
+  20111115014753 text/html 4750 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&limitstart=2
+  20111115014755 text/html 7385 http://www.cnsee.org/index.php?option=com_content&view=article&id=148%3Aihpcbrazza04&catid=36%3Aprix&showall=1
+== cdx cnsee.org/index.php 60
+  HTTP 503: 14 captures
+  check official <a our
