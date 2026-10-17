@@ -1,17 +1,157 @@
-== attrs https://census.nsa.org.na/erongo/ data-chart_data 60 2500
-  HTTP 200 text/html; charset=UTF-8 180,428 bytes
-  3 values of data-chart_data
-  -- {"columns":[{"title":"Constituency"},{"title":"Population"},{"title":"Area in km\u00b2"},{"title":"Persons per km\u00b2"}],"data":[[" Arandis"," 13 542"," 13 519.74","1.0"],["Daures"," 14 601"," 17 786.64","0.8"],[" Karibib"," 19 705"," 14 535.81","1.4"],[" Omaruru"," 13 322"," 8 431.88","1.6"],[" Swakopmund"," 75 921"," 196.32","386.7"],[" Walvis Bay Rural"," 51 497"," 9 149.99","5.6"],[" Walvis Bay Urban"," 51 618"," 18.90","2730.8"]],"searching":true,"paging":true,"info":true,"lengthChange":false,"sort":true,"pagingType":"numbers","scrollX":true,"scrollY":"","pageLength":10,"responsive":true,"dom":"Bfrtip","lengthMenu":[[10,50,100,-1],[10,50,100,"All"]],"buttons":["pageLength"],"columnDefs":[{"className":"dt-head-center","targets":"_all"},{"className":"dt-center","targets":"_all"}],"deferRender":true,"language":{"search":"","info":"Showing _START_ to _END_ of _TOTAL_ entries","searchPlaceholder":"Search....","emptyTable":"No data available in table","zeroRecords":"No matching records found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"buttons":{"copy":"Copy","pdf":"PDF","print":"Print","excel":"Excel","pageLength":{"-1":"Show all rows","_":"Show %d rows"}}}}
-  -- {"columns":[{"title":"Constituency"},{"title":"Male"},{"title":"Female"},{"title":"Area in km\u00b2"},{"title":"Persons per km\u00b2"},{"title":"Population"}],"data":[["Arandis"," 3 102"," 2 624"," 30.6625 "," 186.7 "," 5 726"],["Henties Bay"," 3 673"," 3 896"," 124.5437 "," 60.8 "," 7 569"],["Karibib"," 3 585"," 3 353"," 95.8968 "," 72.3 "," 6 938"],["Omaruru"," 5 296"," 5 374"," 191.9204 "," 55.6 "," 10 670"],["Swakopmund"," 37 950"," 37 971"," 196.4133 "," 386.5 "," 75 921"],["Usakos"," 2 446"," 2 648"," 56.2995 "," 90.5 "," 5 094"],["Walvis Bay"," 51 817"," 50 887"," 1,121.1347 "," 91.6 "," 102 704"]],"searching":true,"paging":true,"info":true,"lengthChange":false,"sort":true,"pagingType":"numbers","scrollX":true,"scrollY":"","pageLength":10,"responsive":true,"dom":"Bfrtip","lengthMenu":[[10,50,100,-1],[10,50,100,"All"]],"buttons":["pageLength"],"columnDefs":[{"className":"dt-head-center","targets":"_all"},{"className":"dt-center","targets":"_all"}],"deferRender":true,"language":{"search":"","info":"Showing _START_ to _END_ of _TOTAL_ entries","searchPlaceholder":"Search....","emptyTable":"No data available in table","zeroRecords":"No matching records found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"buttons":{"copy":"Copy","pdf":"PDF","print":"Print","excel":"Excel","pageLength":{"-1":"Show all rows","_":"Show %d rows"}}}}
-  -- {"columns":[{"title":"Constituency"},{"title":"Household Population"},{"title":"Household"},{"title":"Average Household Size"}],"data":[["Arandis","12852","4153","3.1"],["Daures","12538","4820","2.6"],["Karibib","18524","5883","3.2"],["Omaruru","11792","3768","3.1"],["Swakopmund","73687","24424","3.0"],["Walvis Bay Rural","50835","15524","3.3"],["Walvis Bay Urban","49806","16223","3.1"]],"searching":true,"paging":true,"info":true,"lengthChange":false,"sort":true,"pagingType":"numbers","scrollX":true,"scrollY":"","pageLength":10,"responsive":true,"dom":"Bfrtip","lengthMenu":[[10,50,100,-1],[10,50,100,"All"]],"buttons":["pageLength"],"columnDefs":[{"className":"dt-head-center","targets":"_all"},{"className":"dt-center","targets":"_all"}],"deferRender":true,"language":{"search":"","info":"Showing _START_ to _END_ of _TOTAL_ entries","searchPlaceholder":"Search....","emptyTable":"No data available in table","zeroRecords":"No matching records found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"buttons":{"copy":"Copy","pdf":"PDF","print":"Print","excel":"Excel","pageLength":{"-1":"Show all rows","_":"Show %d rows"}}}}
-== attrs https://census.nsa.org.na/walvis-bay-urban/ data-chart_data 60 2500
-  HTTP 200 text/html; charset=UTF-8 181,230 bytes
-  3 values of data-chart_data
-  -- {"columns":[{"title":"Constituency"},{"title":"Population"},{"title":"Area in km\u00b2"},{"title":"Persons per km\u00b2"}],"data":[[" Nami-Nus","17 243"," 48 270.82","0.4"],["Berseba"," 11 258"," 31 724.85","0.4"],["Karasburg East","13 821","24 276.26","0.6"],["Karasburg West","17 741","14 053.11","1.3"],["Keetmanshoop Urban","27 862","524.35","53.1"],["Keetmanshoop Rural","8 744","37 922.48","0.2"],["Oranjemund","13 224","4 623.14","2.9"]],"searching":true,"paging":true,"info":true,"lengthChange":false,"sort":true,"pagingType":"numbers","scrollX":true,"scrollY":"","pageLength":10,"responsive":true,"dom":"Bfrtip","lengthMenu":[[10,50,100,-1],[10,50,100,"All"]],"buttons":["pageLength"],"columnDefs":[{"className":"dt-head-center","targets":"_all"},{"className":"dt-center","targets":"_all"}],"deferRender":true,"language":{"search":"","info":"Showing _START_ to _END_ of _TOTAL_ entries","searchPlaceholder":"Search....","emptyTable":"No data available in table","zeroRecords":"No matching records found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"buttons":{"copy":"Copy","pdf":"PDF","print":"Print","excel":"Excel","pageLength":{"-1":"Show all rows","_":"Show %d rows"}}}}
-  -- {"columns":[{"title":"Constituency"},{"title":"Male"},{"title":"Female"},{"title":"Area in km\u00b2"},{"title":"Persons per km\u00b2"},{"title":"Population"}],"data":[["Aroab"," 1 310"," 1 341","103.1612","25.7"," 2 651"],["Karasburg","3 189","3 432"," 35.1701","188.3","6 621"],["Keetmanshoop"," 13 602"," 14 260"," 524.3466 "," 53.1 ","27 862"],["Koes","1 110","1 154"," 134.8654"," 16.8","2 264"],["Luderitz","7 831"," 8 294","14.1726","1,137.8","16 125"],["Oranjemund","4 336","3 105","6.9012","1,078.2 ","7 441"],["Tses","964","1 089","34.3703","59.7","2 053"]],"searching":true,"paging":true,"info":true,"lengthChange":false,"sort":true,"pagingType":"numbers","scrollX":true,"scrollY":"","pageLength":10,"responsive":true,"dom":"Bfrtip","lengthMenu":[[10,50,100,-1],[10,50,100,"All"]],"buttons":["pageLength"],"columnDefs":[{"className":"dt-head-center","targets":"_all"},{"className":"dt-center","targets":"_all"}],"deferRender":true,"language":{"search":"","info":"Showing _START_ to _END_ of _TOTAL_ entries","searchPlaceholder":"Search....","emptyTable":"No data available in table","zeroRecords":"No matching records found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"buttons":{"copy":"Copy","pdf":"PDF","print":"Print","excel":"Excel","pageLength":{"-1":"Show all rows","_":"Show %d rows"}}}}
-  -- {"columns":[{"title":"Constituency"},{"title":"Household Population"},{"title":"Household"},{"title":"Average Household Size"}],"data":[["Nami-Nus","16649","5496","3.1"],["Berseba","10054","3264","3.1"],["Karasburg East","12457","3694","3.4"],["Karasburg West","17149","7091","2.4"],["Keetmanshoop Urban","26533","6790","3.9"],["Keetmanshoop Rural","7740","2281","3.4"],["Oranjemund","13017","4657","2.8"]],"searching":true,"paging":true,"info":true,"lengthChange":false,"sort":true,"pagingType":"numbers","scrollX":true,"scrollY":"","pageLength":10,"responsive":true,"dom":"Bfrtip","lengthMenu":[[10,50,100,-1],[10,50,100,"All"]],"buttons":["pageLength"],"columnDefs":[{"className":"dt-head-center","targets":"_all"},{"className":"dt-center","targets":"_all"}],"deferRender":true,"language":{"search":"","info":"Showing _START_ to _END_ of _TOTAL_ entries","searchPlaceholder":"Search....","emptyTable":"No data available in table","zeroRecords":"No matching records found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"buttons":{"copy":"Copy","pdf":"PDF","print":"Print","excel":"Excel","pageLength":{"-1":"Show all rows","_":"Show %d rows"}}}}
-== attrs https://census.nsa.org.na/population/ data-chart_data 60 2500
-  HTTP 200 text/html; charset=UTF-8 167,355 bytes
-  2 values of data-chart_data
-  -- {"columns":[{"type":"string","label":"Category"},{"type":"number","label":"Households"}],"rows":[["2023",756339],["2011",464839],["2001",346455],["1991",254389]]}
-  -- {"columns":[{"type":"string","label":"Category"},{"type":"number","label":"Household size"}],"rows":[["1991",3.79999999999999982236431605997495353221893310546875],["2001",4.4000000000000003552713678800500929355621337890625],["2011",5.0999999999999996447286321199499070644378662109375],["2023",5.20000000000000017763568394002504646778106689453125]]}
+probe_pdf: https://web.archive.org/web/2022id_/https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/2021%20PHC%20General%20Report%20Vol%203A_Population%20of%20Regions%20and%20Districts_181121.pdf
+  4,815,197 bytes
+  128 pages
+probe_pdf: 128 pages, 0 mention ['capital', 'Capital']
+=== front matter ===
+ 
+ 
+
+ 
+ 
+  
+
+  
+GHANA STATISTICAL SERVICE ii 
+ 
+ADMINISTRATIVE MAP OF GHANA 
+ 
+  
+
+  
+GHANA STATISTICAL SERVICE iii 
+ 
+2021 POPULATION AND HOUSING CENSUS PUBLICATIONS 
+Volume 1 Preliminary Report 
+Volume 2 Residential Proximity to Essential Service Facilities Report 
+Volume 3A Population of Regions and Districts 
+Volume 3B Age and Sex Composition 
+Volume 3C Background Characteristics 
+Volume 3D Literacy and Education 
+Volume 3E  Economic Activities 
+Volume 3F Difficulties in Performing Activities 
+Volume 3G Information and Communication Technology 
+Volume 3H Fertility and Mortality 
+Volume 3K Housing Characteristics 
+Volume 3M Sanitation and Water 
+Volume 3N Structures   
+Volume 4 Thematic Reports 
+Volume 5 Analytical Reports 
+Volume 6 Census Atlas 
+ 
+  
+  
+GHANA STATISTICAL SERVICE iv 
+ 
+FOREWORD 
+The Ghana 2021 Population and Housing Census (PHC) was conducted to provide 
+updated demographic, social and economic data for research, policy and planning to 
+support national development activities and to track the implementation of national, 
+continental, and global development goals, such as The Coordinated Programme of 
+Economic and Social Development Policies (2017-2024); An Agenda for Jobs: Creating 
+Prosperity and Equal Opportunity for All; AU Agenda 2063: The Africa We Want; and 
+Transforming Our World: The 2030 Agenda for Sustainable Development.  
+As Ghana’s first fully digital census, the 2021 PHC presents the country and the global 
+community with timely data within three months of exiting the field. The report highlights 
+the resourcefulness of the census, which is the only national data collection exercise that 
+can provide the lowest levels of disaggregation to support decentralised decision  
+making across the nation. The General Report, the third major census  product release, 
+presents the main results in eleven volumes , with each  volume focusing on a different 
+module of the 2021 PHC questionnaire.  
+Volume 3A: Population of Regions and Districts  focuses on population size , share and 
+growth, sex composition, population density, number of households and household size 
+by region, district, and type of locality.  
+This publication generally targets Government Ministries, Departments, and Agencies 
+(MDAs), Metropolitan, Municipal and District Assemblies (MMDAs), development 
+partners, civil society organisations (CSOs), private sector, researchers, and the general 
+public. Volume 3A particularly seeks to provide basic data to MMDAs to assist them 
+achieve their core function as stipulated in the 1993 Local Government Act (Act 462) — 
+that is, to aid decentralised planning and provision of public services in all districts for the 
+development of local economies. This is important because the 2021 PHC provides the 
+first set of official statistics on the recently created regions and districts.  
+The central premise of the Sustainable Development Goals , which is to “leave no one 
+behind” requires disaggregated data to inform settlement arrangements, identify areas 
+of sub-national disparities and make vulnerable groups more visible to decision makers. 
+This report thus sets the tone for subsequent volumes which will contain various types of 
+disaggregated indicators  including socio-demographic characteristics, economic  
+activity, housing, sanitation, and structures. Overall, the General Report is expected to 
+present at least 2.6 million disaggregated indicators to be used for research, policy, and 
+planning to improve the well-being of all groups and persons. 
+ 
+PROFESSOR SAMUEL KOBINA ANNIM  
+CHIEF CENSUS OFFICER AND GOVERNMENT STATISTICIAN  
+  
+GHANA STATISTICAL SERVICE v 
+ 
+ACKNOWLEDGEMENTS 
+Ghana Statistical Service (GSS) wishes to take this opportunity to thank the Government 
+of Ghana, former Presidents, members of the National Census Steering Committee, 
+National Census Technical Advisory Committee, National  Census Publicity, Education 
+and Advocacy Committee and the Regional and District Census Implementation 
+Committees for their commitment and dedication to ensuring a well-coordinated census 
+operation.   
+We are indeed grateful to the Ministry of Finance, Min istry of Education, Ghana 
+Education Service (GES), Ministry of Information, Information Services Department, 
+Ministry of Local Government, Decentralisation and Rural Development, Local 
+Government Service, and the various District Assemblies, National Ident ification 
+Authority, Ministry of Defence, Ghana Armed Forces, Ministry of Interior, Ghana Police 
+Service, Ghana Immigration Service, Ghana Civil Aviation Authority, Ghana Airports 
+Company Limited, Ghana Fire Service, Ghana Prisons Service, Ministry of Health, Ghana 
+Health Service, Ministry of Foreign Affairs and Regional Integration, National Commission 
+for Civic Education (NCCE), Electoral Commission (EC), Office of Government 
+Machinery, Ministry of Parliamentary Affairs, Parliament, Ministry of National S ecurity, 
+National Sports Authority, National Communication Authority, Ghana Highways 
+Authority, Survey Department, Ministry of Sanitation and Water Resources, Ministry of 
+Food and Agriculture, Births and Deaths Registry, Religious and Traditional Leaders, 
+individuals and all other organisations that provided the needed support to enable the 
+GSS execute this essential national exercise.   
+We are also indebted to our partners and collaborators, notably the United Nations 
+Population Fund (UNFPA), World Bank, E uropean Union (EU), International Organisation 
+for Migration (IOM), United Nations Development Programme (UNDP), United Nations 
+Economic Commission for Africa (UNECA), United Kingdom Office for National Statistics 
+(ONS), Statistics Denmark, Geo -Referenced Infrastructure and Demographic Data for 
+Development (GRID3), Jospong Group of Companies, IPMC Ghana, telecommunication 
+companies, CalBank, Windy Lodge Beach Resort, and tertiary institutions for their 
+technical, logistic, financial support, publicity, educ ation, and advocacy campaigns 
+that led to the effective and efficient management of the census processes.  
+GSS also appreciates the contributions of the general public, the media, all Census 
+officials and field officers for ensuring a successful enumeration.   
+  
+  
+GHANA STATISTICAL SERVICE vi 
+ 
+Table of Contents 
+ADMINISTRATIVE MAP OF GHANA ................................ ................................ ..........................  ii 
+2021 POPULATION AND HOUSING CENSUS PUBLICATIONS ................................ .................. iii 
+FOREWORD ................................ ................................ ................................ ..............................  iv 
+ACKNOWLEDGEMENTS ................................ ................................ ................................ ........... v 
+LIST OF FIGURES ................................ ................................ ................................ .........................  x 
+LIST OF TABLES ................................ ................................ ................................ ..........................  xi 
+ABBREVIATIONS AND ACRONYMS ................................ ................................ ........................ xiii 
+1. OVERVIEW OF 2021 POPULATION AND HOUSING CENSUS ................................ ........... 1 
+1.1. Introduction ................................ ................................ ................................ ............... 1 
+1.2. History of Census Taking in Ghana ................................ ................................ .......... 1 
+1.3. Objectives of 2021 PHC ................................ ................................ ............................  2 
+1.4. Legal Framework ................................ ................................ ................................ ...... 3 
+1.5. E-Census ................................ ................................ ................................ .................... 4 
+1.6. Census in COVID-19 Era ................................ ................................ ...........................  5 
+1.7. Census Organisational Structure ................................ ................................ ............. 5 
+1.8. Finance and Logistics ................................ ................................ ...............................  6 
+1.9. Publicity, Education and Advocacy ................................ ................................ ....... 7 
+1.9.1. Pre-Enumeration ................................ ................................ ................................  7 
+1.9.2. Main Enumeration................................ ................................ ..............................  7 
+1.9.3. Post-Enumeration ................................ ................................ ...............................  8 
+1.9.4. Special Events ................................ ................................ ................................ .... 8 
+1.10. Instruments and Procedures ................................ ................................ ................. 8 
+1.10.1. Listing Form ................................ ................................ ................................ ......... 8 
+1.10.2. PHC 1A ................................ ................................ ................................ ................ 8 
+  
+GHANA STATISTICAL SERVICE vii 
+ 
+1.10.3. PHC 1B ................................ ................................ ................................ ................ 9 
+1.10.4. PHC 1C ................................ ................................ ................................ ............... 9 
+1.10.5. PHC 1D ................................ ................................ ................................ ................ 9 
+1.10.6. PHC 1E ................................ ................................ ................................ ................ 9 
+1.10.7. PHC 1F ................................ ................................ ................................ ................. 9 
+1.11. IT Operations ................................ ................................ ................................ .......... 9 
+
+=== pages mentioning ['capital', 'Capital'] (first 10) ===
