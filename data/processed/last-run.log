@@ -1,9 +1,8 @@
-== cdxf inege.org/wp-content/uploads/ (?i)(anuario|censo|estad|poblacion|resultado) 90
+== cdxf ins-cameroun.cm/wp-content/uploads/ (?i)(repertoire|rgph|recensement|bucrep|annuaire|population|demograph) 90
   HTTP 500: 0 captures
-== text https://inege.org/ 1500
-  HTTP 403 text/html; charset=UTF-8 5,495 bytes
-  Just a moment... Enable JavaScript and cookies to continue
-== wbav https://inege.org/wp-content/uploads/2025/10/Estad%C3%ADstico-de-G.E.-2025.pdf 
-  HTTP 200: {"url": "https://inege.org/wp-content/uploads/2025/10/Estad%C3%ADstico-de-G.E.-2025.pdf", "archived_snapshots": {}}
-== wbav https://inege.org/wp-content/uploads/2024/11/ANUARIO-ESTADISTICO-DE-GUINEA-ECUATORIAL-2024.pdf 
-  HTTP 200: {"url": "https://inege.org/wp-content/uploads/2024/11/ANUARIO-ESTADISTICO-DE-GUINEA-ECUATORIAL-2024.pdf", "archived_snapshots": {}}
+== cdxf bucrep.cm/ (?i)([.]pdf|rgph|resultat) 80
+  HTTP 500: 0 captures
+== wbav https://ins-cameroun.cm/wp-content/uploads/2023/06/Repertoire_actualise_villages_cameroun1-3.pdf 
+  HTTP 200: {"url": "https://ins-cameroun.cm/wp-content/uploads/2023/06/Repertoire_actualise_villages_cameroun1-3.pdf", "archived_snapshots": {}}
+== wbav https://files.aho.afro.who.int/afahobckpcontainer/production/files/3e_RGPH_Rapport_de_pr%C3%A9sentation_des_r%C3%A9sultats_2005.pdf 
+  HTTP 200: {"url": "https://files.aho.afro.who.int/afahobckpcontainer/production/files/3e_RGPH_Rapport_de_pr%C3%A9sentation_des_r%C3%A9sultats_2005.pdf", "archived_snapshots": {}}
