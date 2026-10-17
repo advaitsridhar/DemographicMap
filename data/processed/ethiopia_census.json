@@ -1,0 +1,4422 @@
+[
+  {
+    "id": "ETH-2007-75662566B5378229891244",
+    "level": "admin1",
+    "name": "Addis Ababa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2739551,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 24.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 910,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B5378229891244",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B25357223982520",
+    "level": "admin1",
+    "name": "Afar",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1390273,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1260,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B25357223982520",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B52684709481520",
+    "level": "admin1",
+    "name": "Amhara",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17221976,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B52684709481520",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B16746670119676",
+    "level": "admin1",
+    "name": "Beneshangul Gumu",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 784345,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1034,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B16746670119676",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B22109266514860",
+    "level": "admin1",
+    "name": "Dire Dawa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 341834,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 20.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B22109266514860",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B92391245038365",
+    "level": "admin1",
+    "name": "Gambela",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 307096,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1085,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B92391245038365",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B51121866066295",
+    "level": "admin1",
+    "name": "Hareri",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 183415,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 20.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1013,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B51121866066295",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B9273833721501",
+    "level": "admin1",
+    "name": "Oromia",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26993933,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1015,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B9273833721501",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B72302855928957",
+    "level": "admin1",
+    "name": "SNNPR",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14929548,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.9,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 990,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B72302855928957",
+    "population_note": "The 2007 census's counts for the region and for Sidama added up: the region is drawn as it was before Sidama Region was made from it in 2020.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the region and Sidama together."
+  },
+  {
+    "id": "ETH-2007-75662566B32417772325798",
+    "level": "admin1",
+    "name": "Somali",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4445219,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1253,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B32417772325798",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-75662566B45163836206557",
+    "level": "admin1",
+    "name": "Tigray",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4316988,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "75662566B45163836206557",
+    "population_note": "The 2007 census's count for the region.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B43250517747981",
+    "level": "admin2",
+    "name": "Afder",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 570629,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.9,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1330,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B43250517747981",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B400917035317",
+    "level": "admin2",
+    "name": "Agnuak",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 135242,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1032,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B400917035317",
+    "population_note": "The 2007 census's count for the zone with the Etang special wereda added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and the Etang special wereda together."
+  },
+  {
+    "id": "ETH-2007-57463737B42353021919887",
+    "level": "admin2",
+    "name": "Alaba",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 232325,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1020,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B42353021919887",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B25487196396811",
+    "level": "admin2",
+    "name": "Arsi",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2637657,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B25487196396811",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B99696038054094",
+    "level": "admin2",
+    "name": "Asosa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 310822,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1046,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B99696038054094",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B64256577014982",
+    "level": "admin2",
+    "name": "Awi/Agew",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 982942,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1002,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B64256577014982",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B60581059142887",
+    "level": "admin2",
+    "name": "Bale",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1402492,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1036,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B60581059142887",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B27385669654887",
+    "level": "admin2",
+    "name": "Basketo",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 56689,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 14.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1013,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B27385669654887",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B29794193200035",
+    "level": "admin2",
+    "name": "Bench Maji",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 652531,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 982,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B29794193200035",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B436520794921",
+    "level": "admin2",
+    "name": "Borena",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 962489,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 14.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1024,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B436520794921",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B39814221548700",
+    "level": "admin2",
+    "name": "Central",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1245824,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B39814221548700",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B47047900870989",
+    "level": "admin2",
+    "name": "Dawro",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 489577,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 14.3,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B47047900870989",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B22109266514860",
+    "level": "admin2",
+    "name": "Dire Dawa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 341834,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 20.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B22109266514860",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B30637581928389",
+    "level": "admin2",
+    "name": "Doolo",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 306488,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1342,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B30637581928389",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B71037891772162",
+    "level": "admin2",
+    "name": "East Gojam",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2153937,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 981,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B71037891772162",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B249587140491",
+    "level": "admin2",
+    "name": "East Harerge",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2723850,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1032,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B249587140491",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B77878883306359",
+    "level": "admin2",
+    "name": "East Shewa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1576554,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1044,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B77878883306359",
+    "population_note": "The 2007 census's count for the zone with Adama added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and Adama together."
+  },
+  {
+    "id": "ETH-2007-57463737B79125801583063",
+    "level": "admin2",
+    "name": "East Wellega",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1213503,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.9,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 999,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B79125801583063",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B91204154361244",
+    "level": "admin2",
+    "name": "Eastern",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 755343,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 909,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B91204154361244",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B89594176742126",
+    "level": "admin2",
+    "name": "Fafan",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 967652,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1193,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B89594176742126",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B86635569864278",
+    "level": "admin2",
+    "name": "Gamo Gofa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1593104,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 992,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B86635569864278",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B31962206171619",
+    "level": "admin2",
+    "name": "Gedio",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 847434,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1005,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B31962206171619",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B6587793524925",
+    "level": "admin2",
+    "name": "Guji",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1389800,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 13.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B6587793524925",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B1298615116598",
+    "level": "admin2",
+    "name": "Gurage",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1279646,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 946,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B1298615116598",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B63499939283868",
+    "level": "admin2",
+    "name": "Hadiya",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1231196,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 988,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B63499939283868",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B51121866066295",
+    "level": "admin2",
+    "name": "Hareri",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 183415,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 20.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1013,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B51121866066295",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B15837769236873",
+    "level": "admin2",
+    "name": "Horo Guduru",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 570040,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1003,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B15837769236873",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B22829161726493",
+    "level": "admin2",
+    "name": "Ilubabor",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1271609,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B22829161726493",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B12747542791958",
+    "level": "admin2",
+    "name": "Jarar",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 478168,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.3,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1275,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B12747542791958",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B95697256598451",
+    "level": "admin2",
+    "name": "Jimma",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2607115,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1012,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B95697256598451",
+    "population_note": "The 2007 census's count for the zone with Jimma town added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and Jimma town together."
+  },
+  {
+    "id": "ETH-2007-57463737B7073767873208",
+    "level": "admin2",
+    "name": "KT",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 680837,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 978,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B7073767873208",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B32863879872033",
+    "level": "admin2",
+    "name": "Keffa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 874716,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 975,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B32863879872033",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B75894737720042",
+    "level": "admin2",
+    "name": "Kelem Wellega",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 797666,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1016,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B75894737720042",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B3908522439812",
+    "level": "admin2",
+    "name": "Kemashi",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 101543,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1061,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B3908522439812",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B85243758761860",
+    "level": "admin2",
+    "name": "Konta",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90846,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 968,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B85243758761860",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B1594897228976",
+    "level": "admin2",
+    "name": "Korahe",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 312713,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1320,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B1594897228976",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B84149246133198",
+    "level": "admin2",
+    "name": "Liben",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 539821,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 14.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1226,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B84149246133198",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B25474915943822",
+    "level": "admin2",
+    "name": "Majang",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 59248,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 19.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1066,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B25474915943822",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B57190037536303",
+    "level": "admin2",
+    "name": "Metekel",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 321919,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.9,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1018,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B57190037536303",
+    "population_note": "The 2007 census's count for the zone with the Pawe special wereda added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and the Pawe special wereda together."
+  },
+  {
+    "id": "ETH-2007-57463737B76500923720199",
+    "level": "admin2",
+    "name": "Nogob",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 348409,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.9,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1295,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B76500923720199",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B33844308695129",
+    "level": "admin2",
+    "name": "North Gonder",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2929628,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1029,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B33844308695129",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B29739464578805",
+    "level": "admin2",
+    "name": "North Shewa(R3)",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1837490,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B29739464578805",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B31651758241956",
+    "level": "admin2",
+    "name": "North Shewa(R4)",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1431305,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1005,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B31651758241956",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B89864099179699",
+    "level": "admin2",
+    "name": "North Western",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 736805,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 999,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B89864099179699",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B48822238288228",
+    "level": "admin2",
+    "name": "North Wollo",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1500303,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B48822238288228",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B84329108093360",
+    "level": "admin2",
+    "name": "Nuer",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112606,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1163,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B84329108093360",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B14712300908991",
+    "level": "admin2",
+    "name": "Oromia",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 457278,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B14712300908991",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B5378229891244",
+    "level": "admin2",
+    "name": "Region 14",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2739551,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 24.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 910,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B5378229891244",
+    "population_note": "The 2007 census's count for Addis Ababa, the whole of which is this one polygon.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B59192913037223",
+    "level": "admin2",
+    "name": "Segen Peoples'",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 582757,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B59192913037223",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B47845623472468",
+    "level": "admin2",
+    "name": "Selti",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 750398,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 943,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B47845623472468",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B16105117004736",
+    "level": "admin2",
+    "name": "Shabelle",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 464253,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1257,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B16105117004736",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B63626574921368",
+    "level": "admin2",
+    "name": "Sheka",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 199314,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.0,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1029,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B63626574921368",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B92297495098422",
+    "level": "admin2",
+    "name": "Sidama",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3212944,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1023,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B92297495098422",
+    "population_note": "The 2007 census's count for the zone with Hawassa city added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and Hawassa city together."
+  },
+  {
+    "id": "ETH-2007-57463737B50434499514610",
+    "level": "admin2",
+    "name": "Siti",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 457086,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1169,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B50434499514610",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B98964662910033",
+    "level": "admin2",
+    "name": "South Gonder",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2051738,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1030,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B98964662910033",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B95170801436908",
+    "level": "admin2",
+    "name": "South Omo",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 573435,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 999,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B95170801436908",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B78639560237753",
+    "level": "admin2",
+    "name": "South West Shewa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1101129,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.2,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1021,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B78639560237753",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B70829133861950",
+    "level": "admin2",
+    "name": "South Wollo",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2518862,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 19.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B70829133861950",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B99888121280160",
+    "level": "admin2",
+    "name": "Southern",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1222418,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.3,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B99888121280160",
+    "population_note": "The 2007 census's count for the zone with Mekele town added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and Mekele town together."
+  },
+  {
+    "id": "ETH-2007-57463737B67745192438967",
+    "level": "admin2",
+    "name": "Special Woreda",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34998,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.6,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1024,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B67745192438967",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B2754129791816",
+    "level": "admin2",
+    "name": "Wag Himra",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 426213,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.3,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B2754129791816",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B70873970034442",
+    "level": "admin2",
+    "name": "West Arsi",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1964038,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 14.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B70873970034442",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B52956719481852",
+    "level": "admin2",
+    "name": "West Gojam",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2106596,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1009,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B52956719481852",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B54894668037624",
+    "level": "admin2",
+    "name": "West Harerge",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1871706,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1050,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B54894668037624",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B12311921356322",
+    "level": "admin2",
+    "name": "West Shewa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2122565,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 998,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B12311921356322",
+    "population_note": "The 2007 census's count for the zone with Burayu added: the census counted it apart, and this polygon holds it.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and Burayu together."
+  },
+  {
+    "id": "ETH-2007-57463737B50553734798288",
+    "level": "admin2",
+    "name": "West Wellega",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1350415,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 16.8,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B50553734798288",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B15825605122203",
+    "level": "admin2",
+    "name": "Western",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 356598,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1049,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B15825605122203",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B13273048506325",
+    "level": "admin2",
+    "name": "Wolayita",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1501112,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.9,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B13273048506325",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B71172530098060",
+    "level": "admin2",
+    "name": "Yem",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 80687,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1011,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B71172530098060",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B91823679317491",
+    "level": "admin2",
+    "name": "Zone 1",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 410790,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1207,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B91823679317491",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B59365186809272",
+    "level": "admin2",
+    "name": "Zone 2",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 350111,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 15.7,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1263,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B59365186809272",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B74315162620914",
+    "level": "admin2",
+    "name": "Zone 3",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 198751,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 18.4,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1214,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B74315162620914",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B38369228192248",
+    "level": "admin2",
+    "name": "Zone 4",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 246822,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.1,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1327,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B38369228192248",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  },
+  {
+    "id": "ETH-2007-57463737B89952928868477",
+    "level": "admin2",
+    "name": "Zone 5",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 183799,
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1342,
+      "unit": "males_per_1000_females",
+      "year": 2007,
+      "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
+        "year": 2007,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B89952928868477",
+    "population_note": "The 2007 census's count for the zone.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+  }
+]
