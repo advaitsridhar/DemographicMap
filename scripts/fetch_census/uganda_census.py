@@ -13,24 +13,27 @@ fully verified.
 
 **The map's counties are not the census's.** The boundary file draws 151
 second-level polygons in Uganda: the counties as they stood around 2002, with
-a few municipalities, where the 2024 census counts some 350 counties, cities
+a few municipalities, where the 2024 census counts some 310 counties, cities
 and municipalities, many of them cut from the older counties since (Kyadondo
 into Kira and Nansana, Busiro into Entebbe and Makindye-Ssabagabo...). The
-dashboard publishes each 2024 county's outline with its figures, so which 2024
-counties make each polygon is measured rather than guessed: ``--points`` writes
-points sampled evenly over every 2024 county (``uganda_county_points.json``),
-and each county is placed in the drawn polygon that holds at least
-``WHOLLY`` of its points. CROSSWALK records the result; a polygon is written
-only when every 2024 county that reaches it is wholly inside it, and its figures
-are the sum of those counties'.
+dashboard publishes each 2024 unit's outline with its figures, so which 2024
+units make each polygon is measured rather than guessed: ``--points`` writes
+points sampled evenly over every 2024 unit (``uganda_county_points.json``),
+and ``uganda_counties`` records which units each polygon is the union of
+(PLACED) and, for the others, which 2024 units cross the polygon's line
+(STRADDLING). A polygon in PLACED takes the sum of its units' figures; every
+other one says why it has none. (OCHA's COD-PS table for Uganda is by
+district, and its 54 figures that stood on county polygons of the same names
+were districts', Mityana's with Busujju in it and Serere's with Kasilo.)
 
-**What is written.** Population and men per 1,000 women for each polygon, and
-the median age, interpolated within the age group that holds the middle
-person from the groups above made disjoint (0-4, 5-14, 15-17, 18-24, 25-30,
-31-59, 60-64, 65-79, 80 and over).
+**What is written.** For each region and each placed county: the population
+and men per 1,000 women, and the median age, interpolated within the age
+group that holds the middle person from the dashboard's groups made disjoint
+(0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over). The
+regions are the sums of their counties.
 
-**Checks.** Each county's sexes make its total, and its age groups make it
-too; the counties make their districts, and the districts make the country.
+**Checks.** Each unit's sexes make its total and its age groups make it too;
+the units make the country's total.
 
 Usage:
     python -m scripts.fetch_census.uganda_census --points
@@ -44,7 +47,8 @@ import json
 import math
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
+from .cod_ps_age import grouped_median
 
 API = "https://statistics.ubos.org/nphc/api"
 PAGE = "https://statistics.ubos.org/nphc/"
@@ -166,6 +170,172 @@ def write_points() -> int:
     return 0
 
 
+OUT = "uganda_census.json"
+YEAR = 2024
+SITE = PROCESSED.parent.parent / "site" / "data"
+SOURCE = ("Uganda Bureau of Statistics, National Population and Housing Census 2024, county "
+          "statistics (population by sex and by age group), from the Bureau's census "
+          "dissemination dashboard")
+LICENCE = "Uganda Bureau of Statistics publication (reuse with attribution)"
+# The Bureau's region codes -> the map's first-level polygons.
+REGION_NAMES = {"1": "Central Region", "2": "Eastern Region", "3": "Northern Region",
+                "4": "Western Region"}
+AGE_KEYS = ("age_0_4", "age_0_17", "age_15_plus", "age_15_24", "age_18_30", "age_18_plus",
+            "age_60_plus", "age_65_plus", "age_80_plus")
+
+
+def age_groups(total: int, ages: dict[str, int], where: str) -> list[tuple[int, int | None, int]]:
+    """The dashboard's overlapping age groups made disjoint, checked against the total."""
+    a = {k: count(ages.get(k)) for k in AGE_KEYS}
+    if any(v is None for v in a.values()):
+        raise ValueError(f"{where}: an age group is missing: {a}")
+    under15 = total - a["age_15_plus"]
+    groups = [
+        (0, 4, a["age_0_4"]),
+        (5, 14, under15 - a["age_0_4"]),
+        (15, 17, a["age_0_17"] - under15),
+        (18, 24, a["age_15_24"] - (a["age_0_17"] - under15)),
+        (25, 30, a["age_18_30"] - (a["age_15_24"] - (a["age_0_17"] - under15))),
+        (31, 59, total - a["age_60_plus"] - a["age_0_17"] - a["age_18_30"]),
+        (60, 64, a["age_60_plus"] - a["age_65_plus"]),
+        (65, 79, a["age_65_plus"] - a["age_80_plus"]),
+        (80, None, a["age_80_plus"]),
+    ]
+    if a["age_0_17"] + a["age_18_plus"] != total:
+        raise ValueError(f"{where}: under-18s and adults make "
+                         f"{a['age_0_17'] + a['age_18_plus']:,}, not {total:,}")
+    if any(n < 0 for _, _, n in groups) or sum(n for _, _, n in groups) != total:
+        raise ValueError(f"{where}: age groups {groups} do not make {total:,}")
+    return groups
+
+
+def read_units() -> list[dict[str, Any]]:
+    """Every 2024 county, city division and municipality: codes, names, sexes, age groups."""
+    units: dict[str, dict[str, Any]] = {}
+    for sub in fetch_json(f"{API}/get_subregions.php"):
+        for district in fetch_json(f"{API}/get_districts.php?subregion_code={sub['code']}"):
+            for c in fetch_json(f"{API}/get_counties.php?district_code={district['code']}"):
+                male, female, total = (count(c.get(k))
+                                       for k in ("male_popn", "female_popn", "total_popn"))
+                if None in (male, female, total) or male + female != total:
+                    raise SystemExit(f"uganda_census: {c.get('name')}: {male} men and {female} "
+                                     f"women against {total}")
+                units[str(c["code"])] = {"code": str(c["code"]), "name": c["name"],
+                                         "district": district["name"],
+                                         "region": str(c.get("region_code") or ""),
+                                         "male": male, "female": female, "total": total}
+    for code, unit in sorted(units.items()):
+        profile = fetch_json(f"{API}/get_profile_data.php?level=2&location_code={code}"
+                             "&format=detailed")
+        tables = (profile.get("data") or {}).values()
+        found = [t for t in tables if str(t.get("table_name")) == "Age Groups"]
+        records = found[0].get("records") if found else []
+        try:
+            if len(records) != 1:
+                raise ValueError(f"{unit['name']}: {len(records)} age records")
+            unit["groups"] = age_groups(unit["total"], records[0], unit["name"])
+        except ValueError as err:
+            unit["groups"] = None
+            log(f"  ages not read: {err}")
+    return list(units.values())
+
+
+def title(name: str) -> str:
+    text = " ".join(str(name).split()).title()
+    return text.replace(" - ", "-")
+
+
+def fields(units: list[dict[str, Any]], note: str) -> dict[str, Any]:
+    male = sum(u["male"] for u in units)
+    female = sum(u["female"] for u in units)
+    total = sum(u["total"] for u in units)
+    out: dict[str, Any] = {
+        "population": measure(total, year=YEAR, source=SOURCE), "population_note": note,
+        "sex_ratio": measure(round(1000 * male / female), unit="males_per_1000_females",
+                             year=YEAR, source=SOURCE),
+        "sources": [{"field": "population/median_age/sex_ratio", "name": SOURCE, "url": PAGE,
+                     "year": YEAR, "license": LICENCE}]}
+    if all(u.get("groups") for u in units):
+        shape0 = [(a, b) for a, b, _ in units[0]["groups"]]
+        groups = [(a, b, sum(u["groups"][i][2] for u in units)) for i, (a, b) in enumerate(shape0)]
+        value = grouped_median(groups)
+        if value is not None:
+            out["median_age"] = measure(value, unit="years", year=YEAR, source=SOURCE)
+            out["median_age_note"] = (
+                "Interpolated within the age group that holds the middle person, from the 2024 "
+                "census's counts in the age groups it publishes for each county (0-4, 5-14, "
+                "15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over)"
+                + (", added up over the units named." if len(units) > 1 else "."))
+    return out
+
+
+def build(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
+          admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    from .uganda_counties import PLACED, STRADDLING  # noqa: PLC0415
+    by_code = {u["code"]: u for u in units}
+    records, report = [], []
+    regions = {s["name"].strip(): s for s in admin1}
+    for code, label in REGION_NAMES.items():
+        members = [u for u in units if u["region"] == code]
+        shape = regions.get(label)
+        if not members or shape is None:
+            raise SystemExit(f"uganda_census: region {code} ({label}): {len(members)} units, "
+                             f"polygon {bool(shape)}")
+        records.append(record(
+            f"UGA-2024-{shape['id']}", shape["name"].strip(), level="admin1", parent="UGA",
+            country="UGA", match_by="shape_id", shape_id=shape["id"],
+            **fields(members, f"The 2024 census's counts for the region's {len(members)} "
+                              "counties, cities and municipalities, added up.")))
+    labels = {s["id"]: s["name"].strip() for s in admin2}
+    used: dict[str, str] = {}
+    for sid, codes in PLACED.items():
+        missing = [c for c in codes if c not in by_code]
+        if missing or sid not in labels:
+            report.append(f"{labels.get(sid, sid)}: units {missing} not in the census; not "
+                          "written")
+            continue
+        for c in codes:
+            if c in used:
+                raise SystemExit(f"uganda_census: {c} placed in both {used[c]} and {sid}")
+            used[c] = sid
+        members = [by_code[c] for c in codes]
+        names = [title(u["name"]) for u in members]
+        if len(members) == 1:
+            own = labels[sid].lower() in members[0]["name"].lower()
+            note = (f"The 2024 census's count for {names[0]}"
+                    + ("." if own else ", the area this polygon draws."))
+        else:
+            note = ("The 2024 census's counts for " + ", ".join(names[:-1]) + " and " + names[-1]
+                    + ", added up: the county as drawn here is these units of 2024 together.")
+        records.append(record(f"UGA-2024-{sid}", labels[sid], level="admin2", parent="UGA",
+                              country="UGA", match_by="shape_id", shape_id=sid,
+                              **fields(members, note)))
+    for sid, crossing in STRADDLING.items():
+        if sid not in labels:
+            continue
+        if crossing:
+            names = [title(n) for n in crossing]
+            listed = (names[0] if len(names) == 1 else
+                      ", ".join(names[:-1]) + " and " + names[-1])
+            why = ("The 2024 census was published for the counties, cities and municipalities "
+                   "of 2024, and the county as drawn here is not a whole number of them: "
+                   f"{listed} {'crosses' if len(names) == 1 else 'cross'} its line. No count "
+                   "is published for the county as drawn.")
+        else:
+            why = ("The 2024 census counts this ground within a county that is drawn mostly "
+                   "outside it; no count is published for this part alone.")
+        stated = gap(NOT_AVAILABLE, why)
+        records.append(record(f"UGA-2024-{sid}", labels[sid], level="admin2", parent="UGA",
+                              country="UGA", match_by="shape_id", shape_id=sid,
+                              population=stated, median_age=stated, sex_ratio=stated,
+                              sources=[{"field": "population/median_age/sex_ratio",
+                                        "name": SOURCE, "url": PAGE, "year": YEAR,
+                                        "license": LICENCE}]))
+    spare = sorted(u["name"] for u in units if u["code"] not in used)
+    report.append(f"2024 units on no written polygon ({len(spare)}): {spare}")
+    return records, report
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -175,7 +345,22 @@ def main() -> int:
     args = ap.parse_args()
     if args.points:
         return write_points()
-    raise SystemExit("uganda_census: the crosswalk is not written yet; run --points")
+    units = read_units()
+    total = sum(u["total"] for u in units)
+    log(f"  {len(units)} counties, cities and municipalities, {total:,} people, "
+        f"{sum(1 for u in units if u.get('groups'))} with their age groups")
+    admin1 = json.loads((SITE / "admin1" / "UGA.units.json").read_text())
+    admin2 = json.loads((SITE / "admin2" / "UGA.units.json").read_text())
+    records, report = build(units, admin1, admin2)
+    for line in report:
+        log("  " + line)
+    for r in records:
+        pop = r["population"]
+        log(f"  {r['level']} {r['name']}: "
+            + (f"{pop['value']:,}, median {(r.get('median_age') or {}).get('value')}, "
+               f"sex ratio {r['sex_ratio']['value']}" if "value" in pop else "stated"))
+    write_json(PROCESSED / OUT, records)
+    return 0
 
 
 if __name__ == "__main__":

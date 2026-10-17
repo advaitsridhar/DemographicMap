@@ -1,0 +1,621 @@
+"""Which of the 2024 census's counties, cities and municipalities make each of the
+map's Ugandan counties (generated, do not edit by hand). Each 2024 unit's
+outline, as the Bureau's dashboard serves it, is sampled evenly (uganda_census
+--points) and the unit placed in the county polygon holding at least three
+quarters of its points on land; a polygon is in PLACED when no unit placed
+elsewhere, or straddling, has a quarter or more of its points in it and none of
+its own has more than 15 per cent in one other polygon. STRADDLING names, for
+every other polygon, the 2024 units that cross its line. Kampala and Buvuma are
+set by hand: Kampala's polygon is the city's five divisions, which the Bureau's
+outline of Rubaga draws a sliver beyond, and Buvuma's is the island district,
+whose outline the Bureau draws over the lake.
+"""
+
+PLACED = {
+    # Amuria: AMURIA COUNTY, ORUNGO COUNTY
+    "47994165B16908800154052": [
+        "2161", "2162"
+    ],
+    # Ayivu: ARUA CENTRAL DIVISION, AYIVU DIVISION
+    "47994165B64790493286849": [
+        "3381", "3382"
+    ],
+    # Bamunanika: BAMUNANIKA COUNTY
+    "47994165B21872772059494": [
+        "1041"
+    ],
+    # Bbaale: BBALE COUNTY
+    "47994165B42239206569952": [
+        "1121"
+    ],
+    # Bokora: BOKORA COUNTY, BOKORA EAST COUNTY
+    "47994165B53659181203636": [
+        "3271", "3272"
+    ],
+    # Bubulo: BUBULO WEST COUNTY, BUTIRU COUNTY, BUBULO EAST COUNTY, NAMISINDWA COUNTY
+    "47994165B89650562708032": [
+        "2231", "2232", "2341", "2342"
+    ],
+    # Budadiri: BUDADIRI COUNTY
+    "47994165B3113361799554": [
+        "2151"
+    ],
+    # Budiope: BUDIOPE EAST COUNTY, BUDIOPE WEST COUNTY
+    "47994165B97848148013516": [
+        "2261", "2262"
+    ],
+    # Bufumbira: BUFUMBIRA COUNTY, BUKIMBIRI COUNTY, KISORO MUNICIPALITY
+    "47994165B70493584211425": [
+        "4081", "4082", "4083"
+    ],
+    # Bugabula: BUGABULA COUNTY, KAMULI  MUNICIPALITY
+    "47994165B81905252056509": [
+        "2051", "2053"
+    ],
+    # Bugangaizi: BUGANGAIZI EAST COUNTY, BUGANGAIZI SOUTH COUNTY, BUGANGAIZI WEST COUNTY
+    "47994165B34489902123210": [
+        "4281", "4282", "4283"
+    ],
+    # Bughendra: BUGHENDERA, BWAMBA COUNTY
+    "47994165B11452154134589": [
+        "4011", "4012"
+    ],
+    # Bugweri: BUGWERI COUNTY
+    "47994165B20760665917659": [
+        "2351"
+    ],
+    # Buikwe: BUIKWE COUNTY, LUGAZI MUNICIPALITY, NJERU MUNICIPALITY
+    "47994165B96029758291375": [
+        "1171", "1172", "1173"
+    ],
+    # Bujenje: BUJENJE COUNTY
+    "47994165B50691253396030": [
+        "4091"
+    ],
+    # Bujjumba: BUJUMBA COUNTY
+    "47994165B90613881451638": [
+        "1011"
+    ],
+    # Bujumbura: RUJUMBURA COUNTY, RUKUNGIRI MUNICIPALITY
+    "47994165B34585576880018": [
+        "4122", "4123"
+    ],
+    # Bukanga: BUKANGA COUNTY, BUKANGA NORTH COUNTY
+    "47994165B66721291741884": [
+        "4181", "4182"
+    ],
+    # Bukedea: BUKEDEA COUNTY, KACHUMBALA COUNTY
+    "47994165B84551843907837": [
+        "2191", "2192"
+    ],
+    # Bukomansimbi: BUKOMANSIMBI NORTH COUNTY, BUKOMANSIMBI SOUTH COUNTY
+    "47994165B10999178688233": [
+        "1181", "1182"
+    ],
+    # Bukonjo: BUKONJO COUNTY
+    "47994165B33706557437921": [
+        "4061"
+    ],
+    # Bukuto: BUKOTO COUNTY, BUKOTO COUNTY, KIMAANYA-KABONERA DIVISION, NYENDO-MUKUNGWE DIVISION
+    "47994165B51876264217150": [
+        "1051", "1241", "1271", "1272"
+    ],
+    # Bulamogi: BULAMOGI COUNTY, BULAMOGI NORTH WEST COUNTY
+    "47994165B99812853970537": [
+        "2221", "2222"
+    ],
+    # Buliisa: BULIISA
+    "47994165B54861886476760": [
+        "4161"
+    ],
+    # Bunya: BUNYA COUNTY, JINJA SOUTH DIVISION
+    "47994165B29778202541114": [
+        "2141", "2382"
+    ],
+    # Bunyole: BUNYOLE EAST COUNTY, BUNYOLE WEST COUNTY
+    "47994165B61533694327481": [
+        "2211", "2212"
+    ],
+    # Buruli: BUDYEBO COUNTY, NAKASONGOLA COUNTY
+    "47994165B79895845203755": [
+        "1091", "1092"
+    ],
+    # Buruuli: BURULI COUNTY, MASINDI MUNICIPALITY
+    "47994165B39129884067999": [
+        "4092", "4093"
+    ],
+    # Busiki: BUKONO COUNTY, BUSIKI COUNTY, BUSIKI NORTH COUNTY
+    "47994165B63760788376193": [
+        "2241", "2242", "2243"
+    ],
+    # Busiro: BUSIRO COUNTY, ENTEBBE MUNICIPALITY, MAKINDYE-SSABAGABO MUNICIPALITY
+    "47994165B22960344442703": [
+        "1131", "1132", "1135"
+    ],
+    # Busujju: BUSUJJU COUNTY
+    "47994165B3352038782506": [
+        "1151"
+    ],
+    # Butambala: BUTAMBALA COUNTY
+    "47994165B24232061225094": [
+        "1191"
+    ],
+    # Butebo: KIBALE COUNTY, BUTEBO COUNTY
+    "47994165B53168099118732": [
+        "2103", "2331"
+    ],
+    # Butembe: BUTEMBE COUNTY
+    "47994165B27757339786209": [
+        "2041"
+    ],
+    # Buvuma: BUVUMA ISLANDS COUNTY  (set by hand: see the adapter)
+    "47994165B9859706646942": [
+        "1201"
+    ],
+    # Buwekula: BUWEKULA COUNTY, BUWEKULA SOUTH COUNTY, KASAMBYA COUNTY, MUBENDE MUNICIPALITY
+    "47994165B66547934642478": [
+        "1071", "1072", "1073", "1074"
+    ],
+    # Buyaga: BUYAGA EAST COUNTY, BUYAGA WEST COUNTY
+    "47994165B22989190111925": [
+        "4271", "4272"
+    ],
+    # Buyanja: BUYANJA COUNTY, BUYANJA EAST COUNTY
+    "47994165B56924699209128": [
+        "4071", "4072"
+    ],
+    # Buzaaya: BUZAAYA COUNTY
+    "47994165B31542685200678": [
+        "2052"
+    ],
+    # Chua: CHUA EAST, CHUA WEST, KITGUM MUNICIPALITY
+    "47994165B96271856998333": [
+        "3051", "3052", "3053"
+    ],
+    # Dodoth: DODOTH EAST COUNTY, DODOTH NORTH COUNTY, IK COUNTY, DODOTH WEST COUNTY, NAPORE WEST COUNTY
+    "47994165B4837390146164": [
+        "3181", "3182", "3183", "3351", "3352"
+    ],
+    # Dokolo: DOKOLO NORTH COUNTY, DOKOLO SOUTH COUNTY
+    "47994165B88415518747117": [
+        "3171", "3172"
+    ],
+    # East Moyo: ADJUMANI EAST COUNTY, ADJUMANI WEST COUNTY
+    "47994165B33231894396929": [
+        "3011", "3012"
+    ],
+    # Erute: ERUTE COUNTY, LIRA EAST DIVISION, LIRA WEST DIVISION
+    "47994165B60823564237207": [
+        "3071", "3411", "3412"
+    ],
+    # Gomba: GOMBA EAST COUNTY, GOMBA WEST COUNTY
+    "47994165B99789703761817": [
+        "1211", "1212"
+    ],
+    # Ibanda: IBANDA COUNTY, IBANDA MUNICIPALITY
+    "47994165B63410985341096": [
+        "4171", "4172"
+    ],
+    # Igara: BUSHENYI - ISHAKA MUNICIPALITY, IGARA COUNTY
+    "47994165B92927391049004": [
+        "4021", "4022"
+    ],
+    # Isingiro: ISINGIRO COUNTY, ISINGIRO WEST COUNTY
+    "47994165B31608073741271": [
+        "4183", "4184"
+    ],
+    # Jie: JIE COUNTY, KOTIDO MUNICIPALITY
+    "47994165B3911985594780": [
+        "3061", "3062"
+    ],
+    # Jonam: JONAM COUNTY
+    "47994165B82358514726491": [
+        "3321"
+    ],
+    # Kaberamaido: KABERAMAIDO COUNTY, OCHERO COUNTY
+    "47994165B45261633624927": [
+        "2131", "2132"
+    ],
+    # Kabula: KABULA COUNTY
+    "47994165B38718344318021": [
+        "1141"
+    ],
+    # Kakuuto: KAKUUTO COUNTY
+    "47994165B82422100714593": [
+        "1251"
+    ],
+    # Kalaki: KALAKI COUNTY
+    "47994165B47733876177687": [
+        "2371"
+    ],
+    # Kalungu: KALUNGU COUNTY
+    "47994165B11605468614002": [
+        "1221"
+    ],
+    # Kampala: KAMPALA CENTRAL DIVISION, KAWEMPE DIVISION, MAKINDYE DIVISION, NAKAWA DIVISION, RUBAGA DIVISION  (set by hand: see the adapter)
+    "47994165B16286500452212": [
+        "1021", "1022", "1023", "1024", "1025"
+    ],
+    # Kashari: KASHARI NORTH, KASHARI SOUTH, MBARARA NORTH DIVISION
+    "47994165B48268751645511": [
+        "4101", "4102", "4371"
+    ],
+    # Kasilo: KASILO COUNTY, PINGIRE COUNTY
+    "47994165B3162512256822": [
+        "2321", "2322"
+    ],
+    # Kassanda: BUKUYA COUNTY, KASSANDA COUNTY
+    "47994165B76380418026499": [
+        "1261", "1262"
+    ],
+    # Katikamu: KATIKAMU COUNTY
+    "47994165B81778624417030": [
+        "1042"
+    ],
+    # Kazo: KAZO COUNTY
+    "47994165B24748680846243": [
+        "4331"
+    ],
+    # Kibale: KIBALE COUNTY, KIBALE EAST COUNTY
+    "47994165B39061876769815": [
+        "4131", "4132"
+    ],
+    # Kiboga: KIBOGA EAST COUNTY, KIBOGA WEST COUNTY, BUTEMBA COUNTY, NTWETWE COUNTY
+    "47994165B88376902859288": [
+        "1031", "1032", "1231", "1232"
+    ],
+    # Kibuku: KABWERI COUNTY, KIBUKU COUNTY
+    "47994165B21419778448231": [
+        "2271", "2272"
+    ],
+    # Kigulu: IGANGA MUNICIPALITY, KIGULU COUNTY
+    "47994165B78850695856698": [
+        "2031", "2032"
+    ],
+    # Kilak: KILAK NORTH COUNTY, KILAK SOUTH COUNTY
+    "47994165B70719248408693": [
+        "3161", "3162"
+    ],
+    # Kinkiizi: KINKIZI COUNTY
+    "47994165B13656364891086": [
+        "4141"
+    ],
+    # Kioga: KIOGA COUNTY, KIOGA NORTH COUNTY
+    "47994165B94890268111599": [
+        "3151", "3152"
+    ],
+    # Kitagwenda: KITAGWENDA COUNTY
+    "47994165B73404797657815": [
+        "4341"
+    ],
+    # Koboko: KOBOKO COUNTY, KOBOKO MUNICIPALITY, KOBOKO NORTH COUNTY
+    "47994165B18629173559965": [
+        "3191", "3192", "3193"
+    ],
+    # Kole: KOLE NORTH COUNTY, KOLE SOUTH COUNTY
+    "47994165B12447044132108": [
+        "3251", "3252"
+    ],
+    # Kooki: BUYAMBA COUNTY, KOOKI COUNTY
+    "47994165B7560944849987": [
+        "1101", "1102"
+    ],
+    # Kumi: KANYUM COUNTY, KUMI COUNTY, KUMI MUNICIPALITY
+    "47994165B5785370496570": [
+        "2081", "2082", "2083"
+    ],
+    # Kyaka: KYAKA CENTRAL COUNTY, KYAKA NORTH COUNTY, KYAKA SOUTH COUNTY
+    "47994165B62938984296920": [
+        "4221", "4222", "4223"
+    ],
+    # Kyamuswa: KYAMUSWA COUNTY
+    "47994165B73004169365400": [
+        "1012"
+    ],
+    # Kyotera: KYOTERA COUNTY
+    "47994165B21715380423840": [
+        "1252"
+    ],
+    # Lamwo: LAMWO COUNTY, PALABEK COUNTY
+    "47994165B96818667529958": [
+        "3261", "3262"
+    ],
+    # Luuka: LUUKA NORTH COUNTY, LUUKA SOUTH COUNTY
+    "47994165B36988780589750": [
+        "2291", "2292"
+    ],
+    # Lwemiyaga: LWEMIYAGA COUNTY
+    "47994165B37773698387343": [
+        "1111"
+    ],
+    # Madi-Okollo: LOWER MADI COUNTY, UPPER MADI COUNTY
+    "47994165B20901550230314": [
+        "3361", "3362"
+    ],
+    # Matheniko: MATHENIKO COUNTY, MOROTO MUNICIPALITY, TEPETH COUNTY
+    "47994165B54104585672972": [
+        "3081", "3082", "3083"
+    ],
+    # Mawogola: MAWOGOLA COUNTY, MAWOGOLA NORTH COUNTY, MAWOGOLA WEST COUNTY
+    "47994165B97901592069991": [
+        "1112", "1113", "1114"
+    ],
+    # Mawokota: MAWOKOTA COUNTY
+    "47994165B21649077875075": [
+        "1061"
+    ],
+    # Mityana: MITYANA COUNTY, MITYANA MUNICIPALITY
+    "47994165B25067051253579": [
+        "1152", "1153"
+    ],
+    # Moroto: AJURI COUNTY, MOROTO COUNTY
+    "47994165B76258969942575": [
+        "3231", "3232"
+    ],
+    # Mukono: MUKONO COUNTY, MUKONO MUNICIPALITY
+    "47994165B89759933687529": [
+        "1081", "1082"
+    ],
+    # Mwenge: MWENGE COUNTY, MWENGE CENTRAL COUNTY
+    "47994165B8256906368680": [
+        "4151", "4152"
+    ],
+    # Nakaseke: NAKASEKE CENTRAL COUNTY, NAKASEKE NORTH COUNTY, NAKASEKE SOUTH COUNTY
+    "47994165B70745997951619": [
+        "1161", "1162", "1163"
+    ],
+    # Nakifuma: NAKIFUMA COUNTY
+    "47994165B45375916338342": [
+        "1083"
+    ],
+    # Ngora: KAPIR COUNTY, NGORA COUNTY
+    "47994165B3926647194046": [
+        "2311", "2312"
+    ],
+    # Ntenjeru: NTENJERU COUNTY
+    "47994165B60619713855646": [
+        "1122"
+    ],
+    # Nyabushozi: KASHONGI COUNTY, NYABUSHOZI COUNTY
+    "47994165B6241508458979": [
+        "4191", "4192"
+    ],
+    # Okoro: OKORO COUNTY, ORA COUNTY
+    "47994165B72215977726895": [
+        "3301", "3302"
+    ],
+    # Otuke: OTUKE COUNTY, OTUKE  EAST COUNTY
+    "47994165B10700512776787": [
+        "3291", "3292"
+    ],
+    # Oyam: OYAM COUNTY
+    "47994165B74891165492587": [
+        "3211"
+    ],
+    # Padyere: NEBBI MUNICIPALITY, PADYERE COUNTY
+    "47994165B98583791721874": [
+        "3101", "3102"
+    ],
+    # Pallisa: AGULE COUNTY, GOGONYO COUNTY, PALLISA COUNTY
+    "47994165B18693228751796": [
+        "2101", "2102", "2104"
+    ],
+    # Pian: PIAN COUNTY
+    "47994165B22240361323581": [
+        "3341"
+    ],
+    # Pokot: UPE COUNTY
+    "47994165B62865726932923": [
+        "3241"
+    ],
+    # Rubabo: RUBABO COUNTY
+    "47994165B44661751467195": [
+        "4121"
+    ],
+    # Rubanda: RUBANDA COUNTY
+    "47994165B8009354139702": [
+        "4291"
+    ],
+    # Samia-Bugwe: BUSIA MUNICIPALITY, SAMIA BUGWE CENTRAL COUNTY, SAMIA BUGWE COUNTY
+    "47994165B10893310093346": [
+        "2021", "2022", "2023"
+    ],
+    # Serere: SERERE COUNTY
+    "47994165B20913720061072": [
+        "2323"
+    ],
+    # Sheema: SHEEMA COUNTY, SHEEMA MUNICIPALITY
+    "47994165B26325362501667": [
+        "4261", "4262"
+    ],
+    # Soroti: KAPELEBYONG COUNTY
+    "47994165B8099782863608": [
+        "2361"
+    ],
+    # Soroti: DAKABELA COUNTY, GWERI COUNTY, SOROTI COUNTY, SOROTI EAST DIVISION, SOROTI WEST DIVISION
+    "47994165B98524578813070": [
+        "2111", "2112", "2113", "2401", "2402"
+    ],
+    # Tingey: KAPCHORWA MUNICIPALITY, TINGEY  COUNTY
+    "47994165B18254739821586": [
+        "2061", "2062"
+    ],
+    # Tororo: TORORO MUNICIPALITY, TORORO NORTH COUNTY, TORORO SOUTH COUNTY
+    "47994165B11164765344071": [
+        "2121", "2122", "2123"
+    ],
+    # Usuk: NGARIAM COUNTY, TOROMA COUNTY, USUK COUNTY
+    "47994165B21646999801356": [
+        "2071", "2072", "2073"
+    ],
+    # Vurra: VURRA COUNTY
+    "47994165B92141857832480": [
+        "3031"
+    ],
+    # West Budama: WEST BUDAMA COUNTY, WEST BUDAMA CENTRAL COUNTY, WEST BUDAMA NORTH EAST COUNTY
+    "47994165B86428300038461": [
+        "2124", "2125", "2126"
+    ],
+    # West Moyo: WEST MOYO
+    "47994165B18082180372450": [
+        "3091"
+    ],
+}
+STRADDLING = {
+    # Agago
+    "47994165B69868161530690": [
+        "ARUU COUNTY"
+    ],
+    # Aringa
+    "47994165B72229648359475": [
+        "ARINGA EAST COUNTY", "ARINGA SOUTH COUNTY"
+    ],
+    # Aruu
+    "47994165B56342809461630": [
+        "ARUU COUNTY"
+    ],
+    # Aswa
+    "47994165B67304928066156": [
+        "BARDEGE-LAYIBI DIVISION", "LAROO-PECE DIVISION"
+    ],
+    # Budaka
+    "47994165B89785898288101": [
+        "BUDAKA COUNTY"
+    ],
+    # Bugahya
+    "47994165B50184791272452": [
+        "BUHAGUZI EAST COUNTY", "HOIMA EAST DIVISION", "HOIMA WEST DIVISION"
+    ],
+    # Buhaguzi
+    "47994165B25063311461714": [
+        "BUHAGUZI EAST COUNTY", "HOIMA WEST DIVISION"
+    ],
+    # Buhweju
+    "47994165B43798322080680": [
+        "KATERERA COUNTY"
+    ],
+    # Bukooli
+    "47994165B53582052488113": [
+        "BUKOOLI SOUTH COUNTY"
+    ],
+    # Bulambuli
+    "47994165B13948699459529": [
+        "ELGON COUNTY"
+    ],
+    # Bungokho
+    "47994165B99308193569988": [
+        "BUNGOKHO COUNTY"
+    ],
+    # Bunyangabu
+    "47994165B11721893458190": [
+        "FORT PORTAL NORTH DIVISION"
+    ],
+    # Bunyaruguru
+    "47994165B31113025447965": [
+        "BUNYARUGURU COUNTY", "KATERERA COUNTY"
+    ],
+    # Burahya
+    "47994165B30266788778311": [
+        "FORT PORTAL NORTH DIVISION", "NTOROKO COUNTY"
+    ],
+    # Busongora
+    "47994165B17746304388431": [
+        "BUSONGORA COUNTY"
+    ],
+    # Chekwii
+    "47994165B56208747589297": [
+        "CHEKWI COUNTY", "CHEKWII EAST COUNTY"
+    ],
+    # Kagoma
+    "47994165B29030563175808": [
+        "JINJA NORTH DIVISION", "KAGOMA NORTH COUNTY"
+    ],
+    # Kajara
+    "47994165B5370592709245": [
+        "RUSHENYI COUNTY"
+    ],
+    # Kibanda
+    "47994165B14290887607301": [
+        "KIBANDA NORTH COUNTY"
+    ],
+    # Kongasis
+    "47994165B90341384150702": [
+        "T'OO COUNTY"
+    ],
+    # Kwania
+    "47994165B60801811357860": [
+        "MARUZI NORTH COUNTY"
+    ],
+    # Kween
+    "47994165B23169852214817": [
+        "T'OO COUNTY"
+    ],
+    # Kyadondo
+    "47994165B50134135343616": [
+        "KIRA MUNICIPALITY"
+    ],
+    # Labwor
+    "47994165B64132571931325": [
+        "LABWOR COUNTY"
+    ],
+    # Manjiya
+    "47994165B68778999410521": [
+        "LUTSESHE COUNTY", "MANJIYA COUNTY"
+    ],
+    # Maracha
+    "47994165B51818816351694": [
+        "MARACHA COUNTY"
+    ],
+    # Maruzi
+    "47994165B34973305717373": [
+        "MARUZI NORTH COUNTY"
+    ],
+    # Mukono
+    "47994165B98080040988734": [
+
+    ],
+    # Ndorwa
+    "47994165B87135499009730": [
+        "KABALE MUNICIPALITY"
+    ],
+    # Ntoroko
+    "47994165B6683335913560": [
+        "NTOROKO COUNTY"
+    ],
+    # Nwoya
+    "47994165B12111387495879": [
+        "BARDEGE-LAYIBI DIVISION", "TOCHI COUNTY"
+    ],
+    # Obongi
+    "47994165B27399302838777": [
+        "ARINGA EAST COUNTY", "OBONGI COUNTY"
+    ],
+    # Omoro
+    "47994165B994646399882": [
+        "BARDEGE-LAYIBI DIVISION", "LAROO-PECE DIVISION", "OMORO", "TOCHI COUNTY"
+    ],
+    # Ruhaama
+    "47994165B38391299649672": [
+        "RUHAAMA COUNTY"
+    ],
+    # Ruhinda
+    "47994165B84895370971255": [
+        "RUHINDA SOUTH COUNTY"
+    ],
+    # Rukiga
+    "47994165B81051513806104": [
+        "KABALE MUNICIPALITY"
+    ],
+    # Rushenyi
+    "47994165B78443213575962": [
+        "RUSHENYI COUNTY"
+    ],
+    # Rwampara
+    "47994165B31232091804297": [
+        "RWAMPARA EAST COUNTY"
+    ],
+    # Terego
+    "47994165B75534969186170": [
+        "TEREGO WEST COUNTY"
+    ],
+}
