@@ -61,11 +61,11 @@ MAP = {"karas": ["//Kharas"], "caprivi": ["Zambezi"], "kavango": ["Kavango East"
 DIGITS = r"\d{1,3}(?: \d{3})*"
 DEC = r"\d+\.\d"
 T22 = re.compile(rf"^(?P<name>[/A-Za-z ]+?) (?P<nums>{DIGITS}(?: {DIGITS})*) (?P<pm>{DEC}) "
-                 rf"(?P<pf>{DEC})$")
+                 rf"(?P<pf>{DEC})(?: \d{{1,3}})?$")
 T23 = re.compile(rf"^(?P<name>[/A-Za-z ]+?) (?P<total>{DIGITS}) (?P<a>{DEC}) (?P<b>{DEC}) "
-                 rf"(?P<c>{DEC}) (?P<d>{DEC}) (?P<e>{DEC})$")
+                 rf"(?P<c>{DEC}) (?P<d>{DEC}) (?P<e>{DEC})(?: \d{{1,3}})?$")
 T24 = re.compile(rf"^(?P<name>[/A-Za-z ]+?) (?P<youth>{DIGITS}) (?P<a>{DEC}) (?P<b>{DEC}) "
-                 rf"(?P<c>{DEC}) (?P<d>{DEC})$")
+                 rf"(?P<c>{DEC}) (?P<d>{DEC})(?: \d{{1,3}})?$")
 
 
 def number(text: str) -> int:
