@@ -14,7 +14,10 @@ INS Niger's report *Etat et structure de la population du Niger en 2012*
 **What this writes.** The sex ratio of every department and region, a census's
 figure in front of OCHA's 2024 projection; the median age and the religion of
 every first-level polygon. No population: OCHA's 2024 projections are newer
-figures for the same departments, and the regions are their sums.
+figures for the same departments, and the regions are their sums. Every
+department says why it has no median age: the census publishes ages by region
+only, and OCHA's 2024 table gives 65 of the 67 departments one and the same age
+structure (only the cities of Maradi and Zinder have their own).
 
 **Two polygons are two regions.** The boundary file draws Tahoua with Agadez
 and Zinder with Diffa as single first-level polygons. Each takes its two
@@ -68,6 +71,12 @@ POLYGONS = {"dossa": ["DOSSO"], "dosso": ["DOSSO"], "maradi": ["MARADI"], "niame
 DEPARTMENTS = {"tibiridoutchi": "tibiri", "villedemaradi": "maradi", "villedetahoua": "tahouaville",
                "villedezinder": "zinder", "villedeniamey": "niamey"}
 RELIGIONS = ["No religion", "Islam", "Christianity", "Animist", "Other religion", "Not stated"]
+# Why a department has no median age of its own. OCHA's 2024 table gives 65 of
+# the 67 departments one age structure (the cities of Maradi and Zinder their
+# own), so its medians are not the departments'.
+NO_DEPARTMENT_AGES = ("The 2012 census publishes ages by region only, and OCHA's 2024 "
+                      "projection gives nearly every department of Niger the same age "
+                      "proportions, so neither gives a median age of the department's own.")
 SHOWN = {"AGADEZ": "Agadez", "DIFFA": "Diffa", "DOSSO": "Dosso", "MARADI": "Maradi",
          "TAHOUA": "Tahoua", "TILLABERI": "Tillabéri", "ZINDER": "Zinder", "NIAMEY": "Niamey"}
 AGE_ROW = re.compile(r"^\s*(\d{1,2})\s*-\s*(\d{1,2})\s*ans\s+(.*)$")
@@ -321,7 +330,8 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
             sex_ratio_note=(f"The 2012 census counted {men:,} men and {women:,} women in "
                             + (f"the city of {shape['name'].replace(' Ville', '')}."
                                if name.startswith("VILLE DE") else
-                               f"the department of {shape['name']}."))))
+                               f"the department of {shape['name']}.")),
+            median_age=gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)))
     left = sorted(f"{r}/{n}" for (r, n) in by_name if (r, n) not in used)
     if left:
         report.append(f"departments not bound: {left}")
