@@ -64,6 +64,12 @@ class BeninCensus(unittest.TestCase):
         self.assertEqual(bc.match("Akpro-Missérété", ["Akpo-Misserete", "Adjarra"]),
                          "Akpo-Misserete")
         self.assertIsNone(bc.match("Djakotomey", ["Dogbo", "Lalo"]))
+        self.assertEqual(bc.match("Cobly", ["Kobli", "Kerou"]), "Kobli")
+
+    def test_negative_growth(self):
+        # Constructed: a commune whose population fell between the censuses.
+        rows = dict(bc.leaflet_rows("Zagnanado 55 061 26 617 28 444 56 000 27 000 29 000 -0,15 6,5"))
+        self.assertEqual(rows["Zagnanado"], (55_061, 26_617, 28_444))
 
     def test_workbook(self):
         saved = bc.NATIONAL

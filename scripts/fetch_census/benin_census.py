@@ -45,7 +45,10 @@ from typing import Any
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .cod_ps_age import grouped_median
 
-ARCHIVE = "https://web.archive.org/web/2024id_/"
+# The Internet Archive's captures, nearest these years (Donga's leaflet answers
+# empty at the first).
+ARCHIVES = ["https://web.archive.org/web/2024id_/", "https://web.archive.org/web/2021id_/",
+            "https://web.archive.org/web/2018id_/"]
 FOLDER = ("instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/"
           "resultats%20finaux/")
 WORKBOOK = FOLDER + "Resultats%20globaux/Doc_principaux_indicateurs.xlsx"
@@ -62,7 +65,7 @@ LEAFLETS = {
 DEPARTMENT_NAMES = {"atakora": "atacora", "kouffo": "couffo"}
 # The leaflets' spellings of the map's communes (folded), where they differ.
 COMMUNE_NAMES = {"dogbo": "dogbotota", "akpomisserete": "akpromisserete",
-                 "boukombe": "boukoumbe", "semekpodji": "semepodji"}
+                 "boukombe": "boukoumbe", "semekpodji": "semepodji", "kobli": "cobly"}
 PUBLISHER = "Institut National de la Statistique et de l'Analyse Economique (INSAE) du Bénin"
 CENSUS = "Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2013"
 WORKBOOK_SOURCE = (f"{PUBLISHER}, {CENSUS}, Résultats globaux: principaux indicateurs "
@@ -84,8 +87,8 @@ def fold(text: Any) -> str:
 def fetch(path: str, magic: bytes) -> tuple[bytes, str]:
     """The Internet Archive's copy of INStaD's file, under either host name."""
     last = ""
-    for host in ("https://", "https://www."):
-        url = ARCHIVE + host + path
+    for archive, host in ((a, h) for a in ARCHIVES for h in ("https://", "https://www.")):
+        url = archive + host + path
         try:
             blob = http_get(url, binary=True, cache=False, timeout=120, retries=3)
         except Exception as err:  # noqa: BLE001 -- the other host is tried
@@ -190,7 +193,9 @@ def leaflet_rows(text: str) -> list[tuple[str, tuple[int, int, int]]]:
     rows = []
     text = re.sub(r"[\u00a0\u2009\u202f]", " ", text)
     for line in text.splitlines():
-        m = re.match(r"^\s*([^\d]+?)\s+(\d[\d ]*\d)\s+(\d+,\d+)(?:\s+(\d+,\d+))?\s*$", line)
+        # The growth rate may be negative (Zagnanado's).
+        m = re.match(r"^\s*([^\d]+?)\s+(\d[\d ]*\d)\s+(-?\d+,\d+)(?:\s+(\d+,\d+))?\s*$",
+                     line)
         if not m:
             continue
         tokens = m.group(2).split()
@@ -265,6 +270,10 @@ def main() -> int:
             hit = match(name, [c["name"] for c in communes])
             if hit and hit not in found:
                 found[hit] = figures
+        if not found and len(communes) == 1:
+            # Littoral is the one commune of Cotonou, and its leaflet has no
+            # row apart from the department's.
+            found[communes[0]["name"]] = whole[0][1]
         if len(found) != len(communes) or sum(v[0] for v in found.values()) != d["total"]:
             problems.append(f"{shape['name']}: the leaflet gives {sorted(found)} of "
                             f"{sorted(c['name'] for c in communes)}, making "
