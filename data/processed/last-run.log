@@ -1,3 +1,4 @@
-  read https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf: 1,883,934 bytes, sha256 4ba09a999d25f7d568eb8f236091e5c5ca9298e3c66922a3e9c14874fef36f30
-Cannot set line width because b'' is an invalid float value
-niger_census: Tableau 6 lacks ['MARADI', 'NIAMEY', 'TAHOUA', 'TILLABERI', 'ZINDER']
+  read https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf: 15,016,674 bytes, sha256 6f41eee70eefd764efaea876e0b13546666a69c5b91c1f50e5d9b38c3f78d1b9
+  31 regions and 195 councils, making 61,741,120
+  read https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf: 32,333,406 bytes, sha256 849a2d3627c90572d497b3f9ea54698597799c1d1ab36f6eb50788731c1d637c
+tanzania_census: the age table of Kongwa District Council has 40 single years and total None
