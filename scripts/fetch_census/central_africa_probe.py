@@ -27,6 +27,11 @@ zip, xls, csv, cdx, pdf), and these are added:
     xlsx:URL~~SHEETREGEX[~~ROWS[~~COLS]]
                                    every sheet's name and size, and the first ROWS
                                    rows of the sheets whose name matches
+    gjz:URL~~MEMBERREGEX[~~TOLERANCE]
+                                   a GeoJSON file, or the GeoJSON members of a zip whose
+                                   names match: each feature's name and code
+                                   properties and its outline simplified to TOLERANCE
+                                   degrees (default 0.005), as WKT, to overlay offline
 
 The workflow splits the command on whitespace and xargs reads quotes and
 backslashes, so no part may hold a space, a quote or a backslash: a regex
@@ -82,6 +87,39 @@ def rows_of(page, tolerance: float = 3.0) -> list[str]:
         else:
             rows.append((top, [(word["x0"], word["text"])]))
     return [" ".join(t for _, t in sorted(cells)) for _, cells in rows]
+
+
+LABEL_KEY = re.compile(r"(?i)^(adm\d?_?(name|pcode|en|pt|fr|es)|admin\d(name|pcode)\w*|shape(name|id)|name\w*|pcode)$")
+
+
+def outlines(body: bytes, member_rx: str, tolerance: float) -> None:
+    """Every feature's labels and simplified outline, from GeoJSON or a zip of it."""
+    import zipfile                                    # noqa: PLC0415
+    from shapely.geometry import shape                # noqa: PLC0415
+    files: list[tuple[str, bytes]] = []
+    if body[:2] == b"PK":
+        with zipfile.ZipFile(io.BytesIO(body)) as z:
+            names = z.namelist()
+            say(f"  zip: {len(names)} members: {', '.join(names[:12])}")
+            rx = re.compile(member_rx, re.I)
+            files = [(n, z.read(n)) for n in names
+                     if n.lower().endswith((".geojson", ".json")) and rx.search(n)]
+    else:
+        files = [("(body)", body)]
+    for name, blob in files:
+        data = json.loads(blob.decode("utf-8"))
+        feats = data.get("features") or []
+        say(f"  --- {name}: {len(feats)} features")
+        for f in feats:
+            props = f.get("properties") or {}
+            label = " | ".join(f"{k}={v}" for k, v in props.items() if LABEL_KEY.match(str(k)))
+            try:
+                geom = shape(f["geometry"]).simplify(tolerance, preserve_topology=True)
+                wkt = re.sub(r"(\d+\.\d{4})\d+", r"\1", geom.wkt)
+            except Exception as exc:                  # noqa: BLE001
+                wkt = f"(unreadable: {exc})"
+            say(f"  F {label}")
+            say(f"  G {wkt}")
 
 
 def probe(arg: str) -> None:
@@ -144,12 +182,16 @@ def probe(arg: str) -> None:
                     break
         say(f"  ({shown} rows shown)")
         return
-    if mode not in ("pdfp", "pdfl", "pdfg", "pdft", "xlsx"):
+    if mode not in ("pdfp", "pdfl", "pdfg", "pdft", "xlsx", "gjz"):
         say(f"?? unknown mode in {arg!r}")
         return
     status, final, headers, body = get(url)
     if status >= 400 or status < 0:
         say("  " + base.strip(base.decode(body, headers))[:400])
+        return
+    if mode == "gjz":
+        outlines(body, extra[0] if extra and extra[0] else ".",
+                 float(extra[1]) if len(extra) > 1 else 0.005)
         return
     if mode == "xlsx":
         if body[:2] != b"PK":
