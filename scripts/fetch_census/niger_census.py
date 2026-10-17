@@ -117,8 +117,10 @@ def parse_departments(text: str) -> dict[str, Any]:
     departments: dict[tuple[str, str], tuple[int, int, int]] = {}
     region = None
     seen = False
+    # Tableau 6 runs over four pages and repeats its column heads on each;
+    # only the first carries the title.
     for page in text.split("\f"):
-        if "Tableau 6" not in page or "Répartition de la population résidente par région" not in page:
+        if "% Population du pays" not in page or "% Population de la région" not in page:
             continue
         seen = True
         for line in page.splitlines():
