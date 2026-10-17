@@ -1,67 +1,296 @@
-  retry 1/4 after 2s :: https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/4 after 4s :: https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf :: <urlopen error [Errno 110] Connection timed out>
-  retry 3/4 after 8s :: https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf :: <urlopen error [Errno 110] Connection timed out>
-  retry 4/4 after 16s :: https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf :: <urlopen error [Errno 110] Connection timed out>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: [Errno 110] Connection timed out
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1052, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1364, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [Errno 110] Connection timed out>
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/tanzania_census.py", line 654, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/tanzania_census.py", line 619, in main
-    blob = http_get(URL, binary=True, cache=False, timeout=300)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1073, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf
+===== page: 'Districts of Ghana', 63,292 bytes of wikitext
+  16 table(s)
+--- table 1: 7 rows ---
+  District | Category | Capital | Established | Comments
+  Asunafo North | Municipal | Goaso | 1912 | Regional capital
+  Asunafo South | District | Kukuom | 2012 | 
+  Asutifi North | District | Kenyasi |  | 
+  Asutifi South | District | Hwidiem | 2012 | 
+  Tano North | Municipal | Duayaw Nkwanta | 2004 | 
+  Tano South | Municipal | Bechem | 2004 | 
+--- table 2: 44 rows ---
+  District | Category | Capital | Established | Comments
+  Adansi Asokwa | District | Adansi Asokwa | 2018 | 
+  Adansi North | District | Fomena |  | 
+  Adansi South | District | New Edubiase |  | 
+  Afigya-Kwabre North | District | Boamang | 2018 | 
+  Afigya-Kwabre South | District | Kodie | 1 November 2007 | 
+  Ahafo-Ano North | Municipal | Tepa | 1988 | 
+  Ahafo-Ano South East | District | Adugyama | 2018 | 
+  Ahafo-Ano South West | District | Mankranso |  | 
+  Akrofuom | District | Akrofuom | 15 March 2018 | 
+  Amansie Central | District | Jacobu | 2004 | 
+  Amansie West | District | Manso Nkwanta | 1988 | 
+  Amansie South | District | Manso Adubia | 15 March 2018 | 
+  Asante-Akim Central | Municipal | Konongo | 1988 | 
+  Asante-Akim North | District | Agogo |  | 
+  Asante-Akim South | Municipal | Juaso |  | 
+  Asokore-Mampong | Municipal | Asokore Mampong | 29 June 2012 | 
+  Asokwa | Municipal | Asokwa | 2018 | 
+  Atwima-Kwanwoma | District | Twedie | November 2007 | 
+  Atwima-Mponua | District | Nyinahin |  | 
+  Atwima-Nwabiagya | Municipal | Nkawie |  | 
+  Atwima-Nwabiagya North | District | Barekese | 2018 | 
+  Bekwai | Municipal | Bekwai |  | 
+  Bosome Freho | District | Asiwa |  | 
+  Bosomtwe | District | Kuntanase |  | 
+  Ejisu | Municipal | Ejisu |  | 
+  Ejura/Sekyedumase | Municipal | Ejura |  | 
+  Juaben | Municipal | Juaben | 2018 | 
+  Kumasi | Metropolitan | Kumasi |  | 
+  Kwabre East | Municipal | Mamponteng |  | 
+  Kwadaso | Municipal | Kwadaso | 2018 | 
+  Mampong | Municipal | Mampong |  | 
+  Obuasi East | Municipal | Tutuka | 2018 | 
+  Obuasi | Municipal | Obuasi | 2004 | 
+  Offinso | Municipal | Offinso | 2007 | 
+  Offinso North | District | Akomadan |  | 
+  Oforikrom | Municipal | Oforikrom | 2018 | 
+  Old Tafo | Municipal | Old Tafo | 2018 | 
+  Sekyere Afram Plains | District | Drobonso | 28 June 2012 | 
+  Sekyere Central | District | Nsuta |  | 
+  Sekyere East | District | Effiduase | 1988 | 
+  Sekyere Kumawu | District | Kumawu | 2008 | 
+  Sekyere South | District | Agona |  | 
+  Suame | Municipal | Suame | 2018 | 
+--- table 3: 13 rows ---
+  District | Category | Capital | Established | Comments
+  Banda | District | Banda Ahenkro |  | 
+  Berekum East | Municipal | Berekum |  | 
+  Berekum West | District | Jinijini |  | 
+  Dormaa Central | Municipal | Dormaa Ahenkro |  | 
+  Dormaa East | District | Wamfie |  | 
+  Dormaa West | District | Nkrankwanta |  | 
+  Jaman North | District | Sampa |  | 
+  Jaman South | Municipal | Drobo |  | 
+  Sunyani | Municipal | Sunyani |  | Regional capital
+  Sunyani West | District | Odumase |  | 
+  Tain | District | Nsawkaw |  | 
+  Wenchi | Municipal | Wenchi |  | 
+--- table 4: 12 rows ---
+  District | Category | Capital | Established | Comments
+  Atebubu-Amantin | Municipal | Atebubu |  | 
+  Kintampo North | Municipal | Kintampo |  | 
+  Kintampo South | District | Jema |  | 
+  Nkoranza North | District | Busunya |  | 
+  Nkoranza South | Municipal | Nkoranza |  | 
+  Pru East | District | Yeji |  | 
+  Pru West | District | Prang |  | 
+  Sene East | District | Kajaji |  | 
+  Sene West | District | Kwame Danso |  | 
+  Techiman | Municipal | Techiman |  | Regional capital
+  Techiman North | District | Tuobodom |  | 
+--- table 5: 23 rows ---
+  District | Category | Capital | Established | Comments
+  Abura/Asebu/Kwamankese | District | Abura-Dunkwa | 1988 | 
+  Agona East | District | Nsaba |  | 
+  Agona West Municipal | Municipal | Agona Swedru |  | 
+  Ajumako/Enyan/Essiam | District | Ajumako |  | 
+  Asikuma Odoben Brakwa | District | Breman Asikuma | 2 November 1988 | 
+  Assin Central | Municipal | Assin Foso |  | 
+  Assin North | District | Assin Bereku | 15 March 2018 | 
+  Assin South | District | Nsuaem Kyekyewere |  | 
+  Awutu Senya East | Municipal | Kasoa | 28 June 2012 | 
+  Awutu Senya West | District | Awutu Breku |  | 
+  Cape Coast | Metropolitan | Cape Coast |  | Municipal 1987 Metropolitan 2007
+  Effutu | Municipal | Winneba |  | 
+  Ekumfi | District | Esakyir | June 2012 | 
+  Gomoa East | District | Potsin | 2018 | 
+  Gomoa Central | District | Afransi | 29 February 2008 | 
+  Gomoa West | District | Apam |  | 
+  Komenda/Edina/Eguafo/Abirem | Municipal | Elmina |  | 
+  Mfantsiman | Municipal | Saltpond |  | 
+  Twifo Atti Morkwa | District | Twifo Praso | 2012 | 
+  Twifo/Hemang/Lower Denkyira | District | Hemang |  | 
+  Upper Denkyira East | Municipal | Dunkwa-on-Offin | February 2008 | 
+  Upper Denkyira West | District | Diaso |  | 
+--- table 6: 34 rows ---
+  District | Category | Capital | Established | Comments
+  Abuakwa North | Municipal | Kukurantumi | 2018 | 
+  Abuakwa South | Municipal | Kibi |  | Municipal status 2008
+  Achiase | District | Achiase |  | 
+  Akuapim North | Municipal | Akropong | 1988 | Municipal status 15 March 2012
+  Akuapim South | District | Aburi | 2012 | 
+  Akyemansa | District | Ofoase | 2008 | 
+  Asene Manso Akroso | District | Manso | 2018 | 
+  Asuogyaman | District | Atimpoku |  | 
+  Atiwa East | District | Anyinam | 2018 | 
+  Atiwa West | District | Kwabeng | 2008 | 
+  Ayensuano | District | Coaltar | 28 June 2012 | 
+  Birim Central | Municipal | Akim Oda | 2007 | 
+  Birim North | District | New Abirem |  | 
+  Birim South | District | Akim Swedru | 2008 | 
+  Denkyembour | District | Akwatia | 28 June 2012 | 
+  Fanteakwa North | District | Begoro |  | 
+  Fanteakwa South | District | Osino | 2018 | 
+  Kwaebibirem | Municipal | Kade | 1988 | 
+  Kwahu Afram Plains North | District | Donkorkrom |  | 
+  Kwahu Afram Plains South | District | Tease | 28 June 2012 | 
+  Kwahu East | District | Abetifi |  | 
+  Kwahu South | District | Mpraeso |  | 
+  Kwahu West | Municipal | Nkawkaw |  | 
+  Lower Manya Krobo | Municipal | Krobo Odumase |  | 
+  New Juaben North | Municipal | Effiduase | 2018 | 
+  New Juaben South | Municipal | Koforidua | 1988 | 
+  Nsawam Adoagyire | Municipal | Nsawam |  | 
+  Okere | District | Adukrom | 15 March 2018 | 
+  Suhum | Municipal | Suhum, Ghana | July 2012 | 
+  Upper Manya Krobo | District | Asesewa |  | 
+  Upper West Akim | District | Adeiso | 28 June 2012 | 
+  West Akim | Municipal | Asamankese |  | 
+  Yilo-Krobo | Municipal | Somanya |  | 
+--- table 7: 30 rows ---
+  District | Category | Capital | Established | Comments
+  Ablekuma Central | Municipal | Lartebiokorshie | 19 February 2019
+  Ablekuma North | Municipal | Darkuman |  | 
+  Ablekuma West | Municipal | Dansoman |  | 
+  Accra | Metropolitan | Accra |  | 
+  Ada East | District | Ada Foah |  | 
+  Ada West | District | Sege |  | 
+  Adenta | Municipal | Adenta | 2008 | 
+  Ashaiman | Municipal | Ashaiman | 2008 | 
+  Ayawaso Central | Municipal | Kokomlemle | 9 February 2019
+  Ayawaso East | Municipal | Nima |  | 
+  Ayawaso North | Municipal | Accra New Town |  | 
+  Ayawaso West | Municipal | Dzorwulu |  | 
+  Ga Central | Municipal | Sowutuom |  | 
+  Ga East | Municipal | Abokobi |  | 
+  Ga North | Municipal | Amomole |  | 
+  Ga South | Municipal | Ngleshie Amanfro | 2008 | 
+  Ga West | Municipal | Amasaman |  | 
+  Korle-Klottey | Municipal | Osu | 19 February 2019
+  Kpone-Katamanso | Municipal | Kpone |  | 
+  Krowor | Municipal | Nungua | 2008 | 
+  La-Dade-Kotopon | Municipal | La |  | 
+  La-Nkwantanang-Madina | Municipal | Madina |  | 
+  Ledzokuku | Municipal | Teshie | 2008 | 
+  Ningo-Prampram | District | Prampram |  | 
+  Okaikwei North | Municipal | Tesano |  | 
+  Shai-Osudoku | District | Dodowa |  | 
+  Tema Metropolitan | Metropolitan | Tema |  | 
+  Tema West | Municipal | Tema Community 18 |  | 
+  Weija Gbawe | Municipal | Weija |  | 
+--- table 8: 17 rows ---
+  District | Category | Capital | Established | Comments
+  Gushegu Municipal | Municipal | Gushegu |  | 
+  Karaga | District | Karaga |  | 
+  Kpandai | District | Kpandai | 29 February 2008 | 
+  Kumbungu | District | Kumbungu | 28 June 2012 | 
+  Mion | District | Sang |  | 
+  Nanton | District | Nanton | 15 March 2018 | 
+  Nanumba North Municipal | Municipal | Bimbilla | 2004 | 
+  Nanumba South | District | Wulensi | 2004 | 
+  Saboba | District | Saboba | 1988 | 
+  Sagnarigu Municipal | Municipal | Sagnarigu |  | 
+  Savelugu Municipal | Municipal | Savelugu |  | 
+  Tamale Metropolitan | Metropolitan | Tamale |  | Metropolis since 2004
+  Tatale Sanguli | District | Tatale | 28 June 2012 | 
+  Tolon | District | Tolon | 2011 | 
+  Yendi Municipal | Municipal | Yendi | 1988 | 
+  Zabzugu | District | Zabzugu | 2012 | 
+--- table 9: 7 rows ---
+  District | Category | Capital | Established | Comments
+  Bunkpurugu Nyankpanduri | District | Bunkpurugu | August 2004 | 
+  Chereponi | District | Chereponi |  | 
+  East Mamprusi | Municipal | Nalerigu | 2004 | One of the oldest districts. Municipal s
+  Mamprugu Moagduri | District | Yagaba | 28 June 2012 | 
+  West Mamprusi | Municipal | Walewale | 1988 | 
+  Yunyoo-Nasuan | District | Yunyoo | 15 March 2018 | 
+--- table 10: 10 rows ---
+  District | Category | Capital | Established | Comments
+  Biakoye | District | Nkonya Ahenkro | 2008 | 
+  Guan | District | Likpe-Mate | 2021 | 
+  Jasikan | Municipal | Jasikan |  | 
+  Kadjebi | District | Kadjebi |  | 
+  Krachi East | Municipal | Dambai |  | 
+  Krachi Nchumuru | District | Chinderi |  | 
+  Krachi West | Municipal | Kete Krachi |  | 
+  Nkwanta North | District | Kpassa |  | 
+  Nkwanta South | Municipal | Nkwanta |  | 
+--- table 11: 8 rows ---
+  District | Category | Capital | Established | Comments
+  Bole | District | Bole |  | 
+  Central Gonja | District | Buipe |  | 
+  East Gonja Municipal | Municipal | Salaga | 2007 | 
+  North Gonja | District | Daboya | 28 June 2012 | 
+  North East Gonja | District | Kpalbe |  | 
+  Sawla-Tuna-Kalba | District | Sawla | 2004 | 
+  West Gonja | Municipal | Damongo | 2004 | 
+--- table 12: 16 rows ---
+  District | Category | Capital | Established | Comments
+  Bawku Municipal | Municipal | Bawku |  | 
+  Bawku West | District | Zebilla |  | 
+  Binduri | District | Binduri | 2012 | 
+  Bolgatanga East | District | Zuarungu | 2018 | 
+  Bolgatanga Municipal | Municipal | Bolgatanga | 2004 | 
+  Bongo | District | Bongo | 1988 | 
+  Builsa North Municipal | Municipal | Sandema |  | 
+  Builsa South | District | Fumbisi |  | 
+  Garu | District | Garu |  | 
+  Kassena-Nankana Municipal | Municipal | Navrongo |  | 
+  Kassena-Nankana West | District | Paga | 2008 | 
+  Nabdam | District | Nangodi |  | 
+  Pusiga | District | Pusiga |  | 
+  Talensi | District | Tongo |  | 
+  Tempane | District | Tempane |  | 
+--- table 13: 12 rows ---
+  District | Category | Capital | Established | Comments
+  Daffiama Bussie Issa | District | Issa |  | 
+  Jirapa Municipal | Municipal | Jirapa |  | 
+  Lambussie Karni | District | Lambussie |  | 
+  Lawra Municipal | Municipal | Lawra |  | 
+  Nadowli-Kaleo | District | Nadowli |  | 
+  Nandom Municipal | Municipal | Nandom |  | 
+  Sissala East Municipal | Municipal | Tumu |  | 
+  Sissala West | District | Gwollu |  | 
+  Wa East | District | Funsi |  | 
+  Wa Municipal | Municipal | Wa |  | 
+  Wa West | District | Wechiau |  | 
+--- table 14: 19 rows ---
+  District | Category | Capital | Established | Comments
+  Adaklu District | District | Adaklu Waya | 2012 | 
+  Afadzato South | District | Ve Golokwati | 2012 | 
+  Agotime Ziope | District | Kpetoe | 2012 | 
+  Akatsi North | District | Ave-Dakpa | 28 June 2012 | 
+  Akatsi South | District | Akatsi | 15 March 2012 | 
+  Anloga | District | Anloga | 2019 | 
+  Central Tongu | District | Adidome | February 2012 | 
+  Ho Municipal | Municipal | Ho |  | 
+  Ho West | District | Dzolokpuita | 2012 | 
+  Hohoe Municipal | Municipal | Hohoe |  | 
+  Keta Municipal | Municipal | Keta |  | 
+  Ketu North Municipal | Municipal | Dzodze | 2008 | 
+  Ketu South Municipal | Municipal | Denu | 1989 | 
+  Kpando Municipal | Municipal | Kpando |  | 
+  North Dayi | District | Anfoega | 2012 | 
+  North Tongu | District | Battor Dugame | 2012 | 
+  South Dayi | District | Kpeve | 19 August 2004 | 
+  South Tongu | District | Sogakope | 1989 | 
+--- table 15: 15 rows ---
+  District | Category | Capital | Established | Comments
+  Ahanta West | Municipal | Agona Ahanta |  | 
+  Amenfi Central | District | Manso Amenfi |  | 
+  Amenfi West | Municipal | Asankragua |  | 
+  Effia Kwesimintsim Municipal | Municipal | Kwesimintsim |  | 
+  Ellembelle | District | Nkroful |  | 
+  Jomoro | Municipal | Half Assini |  | 
+  Mpohor | District | Mpohor |  | 
+  Nzema East Municipal | Municipal | Axim |  | 
+  Prestea-Huni Valley Municipal | Municipal | Prestea |  | 
+  Sekondi Takoradi Metropolitan | Metropolitan | Sekondi-Takoradi |  | 
+  Shama | District | Shama |  | 
+  Tarkwa-Nsuaem Municipal | Municipal | Tarkwa |  | 
+  Wassa Amenfi East | Municipal | Wassa-Akropong |  | 
+  Wassa East | District | Daboase |  | |
+--- table 16: 10 rows ---
+  District | Category | Capital | Established | Comments
+  Aowin | Municipal | Enchi | 2012 | Municipal status 2017
+  Bia East | District | Sefwi Adabokrom | 28 June 2012 | 
+  Bia West | District | Essam-Debiso | 2012 | 
+  Bibiani Anhwiaso Bekwai | Municipal | Bibiani | 1988 | 
+  Bodi | District | Sefwi Bodi | 28 June 2012 | 
+  Juaboso | District | Juaboso |  | 
+  Sefwi Akontombra | District | Sefwi Akontombra |  | 
+  Sefwi-Wiawso | Municipal | Sefwi Wiawso |  | 
+  Suaman | District | Dadieso | 28 June 2012 | 
