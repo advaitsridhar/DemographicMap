@@ -130,13 +130,18 @@ def province_fields(name: str, row: dict[str, str]) -> dict[str, Any] | None:
             f"{name} gives its people's ages in four broad groups only (under 5, 5 to 19, 20 "
             "to 64, and 65 and over), split from ratios estimated for the province rather than "
             "counted, which cannot place a median age.")
-    off = max(abs(s["f_total"] - s["f_groups"]), abs(s["m_total"] - s["m_groups"]))
-    if not s["f_total"] or off < 0.005 * (s["f_total"] + s["m_total"]):
+    if not s["f_total"] or not s["f_groups"]:
         return None
-    sexes = (f"OCHA's 2020 estimate for {name} splits its people by sex with ratios estimated "
-             f"for the province rather than counted, and its two splits disagree: its totals "
-             f"give {s['f_total']:,} women and {s['m_total']:,} men, its age groups "
-             f"{s['f_groups']:,} women and {s['m_groups']:,} men. No sex ratio is shown.")
+    off = max(abs(s["f_total"] - s["f_groups"]), abs(s["m_total"] - s["m_groups"]))
+    if off >= 0.005 * (s["f_total"] + s["m_total"]):
+        sexes = (f"OCHA's 2020 estimate for {name} splits its people by sex with ratios estimated "
+                 f"for the province rather than counted, and its two splits disagree: its totals "
+                 f"give {s['f_total']:,} women and {s['m_total']:,} men, its age groups "
+                 f"{s['f_groups']:,} women and {s['m_groups']:,} men. No sex ratio is shown.")
+    else:
+        sexes = (f"OCHA's 2020 estimate for {name} splits its people by sex with a ratio estimated "
+                 f"for the province rather than counted, and the DRC has taken no census since "
+                 f"1984 that would count it, so no sex ratio is shown.")
     return {"median_age": gap(NOT_AVAILABLE, ages), "sex_ratio": gap(NOT_AVAILABLE, sexes)}
 
 
@@ -201,7 +206,7 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
             continue
         fields = province_fields(poly["name"], row)
         if fields is None:
-            report.append(f"  province {name}: its two sex splits agree; left out")
+            report.append(f"  province {name}: no totals by sex; left out")
             continue
         records.append(record(f"COD-GAPS-{poly['id']}", poly["name"], level="admin1",
                               parent="COD", country="COD", match_by="shape_id",
