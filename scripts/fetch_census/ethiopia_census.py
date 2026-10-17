@@ -35,8 +35,25 @@ and Mao-Komo, between Asosa and West Wellega -- are added to neither, and
 "Region 17", the workbook's thirteenth first-order area of 96,754 people, which
 it does not name, is placed nowhere.
 
+**The newer head count** (``ethiopia_projection.json``). The statistics office
+(the Central Statistical Agency, since 2021 the Ethiopian Statistics Service)
+projects the 2007 count forward by region, zone and wereda; OCHA's COD-PS for
+Ethiopia tabulates the projection for July 2022. Its regions are the map's,
+with SNNPR the sum of SNNP, Sidama and South West Ethiopia, the regions made
+from it in 2020 and 2021. Its zones are today's, and several of them are not
+the map's 2007 zones (Bale without East Bale, North Gondar without Central and
+West Gondar, the Somali region's new weredas across the old zone lines), so a
+zone polygon takes the sum of the weredas that lie within it, from the
+placement in ``ethiopia_zones`` (OCHA's wereda outlines against the polygons),
+and only where the polygon is the union of whole weredas (ACCEPTED). A zone
+whose weredas the table and the outlines do not both know is left to the 2007
+count. The projection's sex and age split are not read: a census's own figure
+stands over a projection's, and the table applies one age structure to all the
+weredas of a zone.
+
 Usage:
     python -m scripts.fetch_census.ethiopia_census
+    python -m scripts.fetch_census.ethiopia_census --points
 """
 
 from __future__ import annotations
@@ -320,6 +337,109 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
     return records, report
 
 
+PROJECTION_OUT = "ethiopia_projection.json"
+PROJECTION_YEAR = 2022
+PROJECTION_DATASET = "cod-ps-eth"
+PROJECTION_SOURCE = ("Ethiopian Statistics Service, population projection for July 2022 from the "
+                     "2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it")
+# The map's region -> the projection's regions (folded) it holds.
+PROJECTION_REGIONS = {
+    "Addis Ababa": ["addisababa"], "Afar": ["afar"], "Amhara": ["amhara"],
+    "Beneshangul Gumu": ["benishangulgumz"], "Dire Dawa": ["diredawa"], "Gambela": ["gambela"],
+    "Hareri": ["harari"], "Oromia": ["oromia"],
+    "SNNPR": ["snnp", "sidama", "southwestethiopia"], "Somali": ["somali"],
+    "Tigray": ["tigray"],
+}
+
+
+def projection_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], str]:
+    """The projection's regions {fold: row} and weredas {pcode: row}, and the dataset page."""
+    resources = uscb.package(PROJECTION_DATASET).get("resources", [])
+
+    def table(pattern: str) -> list[dict[str, str]]:
+        hits = [r for r in resources if re.search(pattern, str(r.get("name") or ""), re.I)]
+        if len(hits) != 1:
+            raise SystemExit(f"ethiopia_census: {len(hits)} resources match {pattern}")
+        body = http_get(hits[0]["url"], cache=False, timeout=300)
+        text = body if isinstance(body, str) else body.decode("utf-8-sig", "replace")
+        log(f"  read {hits[0]['url']}: {len(text):,} characters")
+        import csv                                  # noqa: PLC0415
+        return list(csv.DictReader(io.StringIO(text.lstrip("﻿"))))
+
+    def count(row: dict[str, str], key: str) -> int:
+        return int(float(str(row.get(key) or "0").replace(",", "")))
+
+    regions = {}
+    for row in table(r"adm1_2022_v2\.csv$"):
+        total, men, women = (count(row, k) for k in ("T_TL", "M_TL", "F_TL"))
+        if men + women != total:
+            raise SystemExit(f"ethiopia_census: {row['admin1Name_en']}: sexes make "
+                             f"{men + women:,}, not {total:,}")
+        regions[fold(row["admin1Name_en"])] = {"name": row["admin1Name_en"], "total": total}
+    weredas = {}
+    for row in table(r"adm3_2022_v2\.csv$"):
+        weredas[row["admin3Pcode"]] = {"name": row["admin3Name_en"], "zone": row["admin2Pcode"],
+                                       "total": count(row, "T_TL")}
+    made = sum(w["total"] for w in weredas.values())
+    national = sum(r["total"] for r in regions.values())
+    if abs(made - national) > national * 0.001:
+        raise SystemExit(f"ethiopia_census: the projection's weredas make {made:,}, its regions "
+                         f"{national:,}")
+    return regions, weredas, uscb.dataset_url(PROJECTION_DATASET)
+
+
+def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, dict[str, Any]],
+                       page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+                       ) -> tuple[list[dict[str, Any]], list[str]]:
+    from .ethiopia_zones import ACCEPTED, PLACED, UNPLACED  # noqa: PLC0415
+    cite = [{"field": "population", "name": PROJECTION_SOURCE, "url": page,
+             "year": PROJECTION_YEAR, "license": LICENCE}]
+    records, report = [], []
+    for shape in admin1:
+        keys = PROJECTION_REGIONS[shape["name"].strip()]
+        if any(k not in regions for k in keys):
+            raise SystemExit(f"ethiopia_census: the projection has no {keys}: {sorted(regions)}")
+        total = sum(regions[k]["total"] for k in keys)
+        note = ("The statistics office's projection for July 2022, from the 2007 census."
+                if len(keys) == 1 else
+                "The statistics office's projections for July 2022 for SNNP, Sidama and South "
+                "West Ethiopia added up: the region is drawn as it was before Sidama (2020) and "
+                "South West Ethiopia (2021) were made from it.")
+        records.append(record(f"ETH-2022-{shape['id']}", shape["name"].strip(), level="admin1",
+                              parent="ETH", country="ETH", match_by="shape_id",
+                              shape_id=shape["id"],
+                              population=measure(total, year=PROJECTION_YEAR,
+                                                 source=PROJECTION_SOURCE),
+                              population_note=note, sources=cite))
+    known = {c for codes in PLACED.values() for c in codes} | set(UNPLACED)
+    unknown_zones = defaultdict(list)
+    for code, row in weredas.items():
+        if code not in known:
+            unknown_zones[row["zone"]].append(f"{row['name']} ({code}, {row['total']:,})")
+    for zone, rows in sorted(unknown_zones.items()):
+        report.append(f"projection weredas with no outline, in zone {zone}: {rows}")
+    labels = {s["id"]: s["name"].strip() for s in admin2}
+    for sid in sorted(ACCEPTED, key=lambda s: labels.get(s, s)):
+        codes = PLACED[sid]
+        missing = [c for c in codes if c not in weredas]
+        zones = {weredas[c]["zone"] for c in codes if c in weredas}
+        blind = [z for z in zones if z in unknown_zones]
+        if missing or blind or sid not in labels:
+            report.append(f"{labels.get(sid, sid)}: not written -- weredas without a projection "
+                          f"{missing}, zones holding weredas without an outline {blind}")
+            continue
+        total = sum(weredas[c]["total"] for c in codes)
+        records.append(record(
+            f"ETH-2022-{sid}", labels[sid], level="admin2", parent="ETH", country="ETH",
+            match_by="shape_id", shape_id=sid,
+            population=measure(total, year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
+            population_note=(f"The statistics office's projections for July 2022, from the 2007 "
+                             f"census, for the {len(codes)} weredas that lie within the zone as "
+                             "drawn, added up."),
+            sources=cite))
+    return records, report
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -356,6 +476,15 @@ def main() -> int:
     log(f"  {by_level['admin1']} of {len(admin1)} regions and {by_level['admin2']} of "
         f"{len(admin2)} zones written")
     write_json(PROCESSED / OUT, records)
+    regions, weredas, page = projection_tables()
+    projected, report = projection_records(regions, weredas, page, admin1, admin2)
+    for line in report:
+        log("  " + line)
+    for r in projected:
+        log(f"  projection {r['level']} {r['name']}: {r['population']['value']:,}")
+    log(f"  projection: {sum(1 for r in projected if r['level'] == 'admin1')} regions and "
+        f"{sum(1 for r in projected if r['level'] == 'admin2')} zones written")
+    write_json(PROCESSED / PROJECTION_OUT, projected)
     return 0
 
 
