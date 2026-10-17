@@ -1,4 +1,15 @@
-xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
-usage: probe_hdx.py [-h] [--search SEARCH] [--seed SEED] [--rows ROWS]
-                    [--org ORG] [--match MATCH] [--dataset DATASET]
-probe_hdx.py: error: argument --search: expected one argument
+
+=== HDX dataset: cod-ps-mrt ===
+    title: Mauritania - Subnational Population Statistics
+    org:   unfpa
+    licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
+    notes: Mauritania administrative level 0-1 sex and age disaggregated 2022 projected population statistics  REFERENCE YEAR:  2022  This dataset has NOT been updated to link to the new [Mali - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-mli).  The administrative level 1 boundaries and P-codes no longer match.
+    4 resource(s):
+      XLSX   MRT_AdminBoundaries_TabularData.xlsx
+             https://data.humdata.org/dataset/77c97850-4004-4285-94db-0b390a962d6e/resource/15f6da38-5427-42e7-8c98-5980bc361e2d/download/mrt_adminboundaries_tabulardata.xlsx
+      XLSX   mrt_admpop_2022.xlsx
+             https://data.humdata.org/dataset/77c97850-4004-4285-94db-0b390a962d6e/resource/6c7a901e-03ce-4dbf-af30-324d7da9da88/download/mrt_admpop_2022.xlsx
+      CSV    mrt_admpop_adm0_2022.csv
+             https://data.humdata.org/dataset/77c97850-4004-4285-94db-0b390a962d6e/resource/2b206fef-320d-42e9-8e92-93c4f0c3e13d/download/mrt_admpop_adm0_2022.csv
+      CSV    mrt_admpop_adm1_2022.csv
+             https://data.humdata.org/dataset/77c97850-4004-4285-94db-0b390a962d6e/resource/b228e130-8703-4126-8dfd-547124dca6fc/download/mrt_admpop_adm1_2022.csv
