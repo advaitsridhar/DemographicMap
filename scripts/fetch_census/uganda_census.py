@@ -355,7 +355,7 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
         if len(members) == 1:
             own = labels[sid].lower() in members[0]["name"].lower()
             note = (f"The 2024 census's count for {names[0]}"
-                    + ("." if own else ", the area this polygon draws."))
+                    + ("." if own else ", which is the county drawn here."))
         else:
             note = ("The 2024 census's counts for " + ", ".join(names[:-1]) + " and " + names[-1]
                     + ", added up: the county as drawn here is these units of 2024 together.")
