@@ -33,7 +33,11 @@ group that holds the middle person from the dashboard's groups made disjoint
 regions are the sums of their districts: the dashboard draws one county,
 Chekwi in Nakapiripirit, without figures, so its counties make 45,826,553
 people, while its districts make 45,895,961 of the 45,905,417 the Bureau
-announced as the final count.
+announced as the final count. Every county also says why it has no religion or
+ethnicity, and every region why it has no ethnicity (``composition``): the
+2024 Final Report publishes both for the country only (Volume 1, Tables 3.1
+and 3.2), as the 2014 Main Report did, and the 2002 census religion by
+district, which ``uganda_2002`` writes where it stands on the drawn ground.
 
 **Checks.** Each unit's sexes make its total and its age groups make it too;
 the districts make the country's total within a tenth of a percent, and each
@@ -185,6 +189,21 @@ SOURCE = ("Uganda Bureau of Statistics, National Population and Housing Census 2
           "statistics (population by sex and by age group), from the Bureau's census "
           "dissemination dashboard")
 LICENCE = "Uganda Bureau of Statistics publication (reuse with attribution)"
+# What the censuses publish on religion and ethnicity, said on every county and
+# on the regions' ethnicity: the 2024 Final Report gives both for the country
+# only (Volume 1, Tables 3.1 and 3.2), as the 2014 Main Report did (Tables A8
+# and A9, by sex and residence), and the 2002 census religion by district,
+# which uganda_2002.py writes for the regions and for the counties that were a
+# district on their own.
+REPORT = ("Uganda Bureau of Statistics, National Population and Housing Census 2024, Final "
+          "Report, Volume 1 (Main), Tables 3.1 and 3.2")
+REPORT_URL = ("https://www.ubos.org/wp-content/uploads/2024/12/"
+              "National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf")
+RELIGION = ("Uganda's 2024 and 2014 censuses published religion for the country as a whole "
+            "only, and its 2002 census by district, not by county, so no count is given for "
+            "this county.")
+ETHNICITY = ("Uganda's 2024 and 2014 censuses published ethnicity for the country as a whole "
+             "only, so no count is given for this {unit}.")
 # The Bureau's region codes -> the map's first-level polygons.
 REGION_NAMES = {"1": "Central Region", "2": "Eastern Region", "3": "Northern Region",
                 "4": "Western Region"}
@@ -320,6 +339,28 @@ def fields(units: list[dict[str, Any]], note: str) -> dict[str, Any]:
     return out
 
 
+def composition(unit: str) -> dict[str, Any]:
+    """The religion and ethnicity a census does not publish for the unit, with the
+    report that says so: a county gets both, a region its ethnicity (its religion
+    is the 2002 census's, in uganda_2002.json)."""
+    out: dict[str, Any] = {"ethnicity": gap(NOT_AVAILABLE, ETHNICITY.format(unit=unit))}
+    fields_ = ["ethnicity"]
+    if unit == "county":
+        out["religion"] = gap(NOT_AVAILABLE, RELIGION)
+        fields_.insert(0, "religion")
+    # One citation per field, so a figure that later fills one of them takes
+    # its own citation's place and leaves the other's.
+    out["sources"] = [{"field": f, "name": REPORT, "url": REPORT_URL, "year": YEAR,
+                       "license": LICENCE} for f in fields_]
+    return out
+
+
+def with_composition(extra: dict[str, Any], unit: str) -> dict[str, Any]:
+    stated = composition(unit)
+    return {**extra, **{k: v for k, v in stated.items() if k != "sources"},
+            "sources": list(extra.get("sources") or []) + stated["sources"]}
+
+
 def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
           ) -> tuple[list[dict[str, Any]], list[str]]:
@@ -336,8 +377,9 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
         records.append(record(
             f"UGA-2024-{shape['id']}", shape["name"].strip(), level="admin1", parent="UGA",
             country="UGA", match_by="shape_id", shape_id=shape["id"],
-            **fields(members, f"The 2024 census's counts for the region's {len(members)} "
-                              "districts, added up.")))
+            **with_composition(fields(members, f"The 2024 census's counts for the region's "
+                                               f"{len(members)} districts, added up."),
+                               "region")))
     labels = {s["id"]: s["name"].strip() for s in admin2}
     used: dict[str, str] = {}
     for sid, codes in PLACED.items():
@@ -361,7 +403,7 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
                     + ", added up: the county as drawn here is these units of 2024 together.")
         records.append(record(f"UGA-2024-{sid}", labels[sid], level="admin2", parent="UGA",
                               country="UGA", match_by="shape_id", shape_id=sid,
-                              **fields(members, note)))
+                              **with_composition(fields(members, note), "county")))
     for sid, crossing in STRADDLING.items():
         if sid not in labels:
             continue
@@ -379,10 +421,12 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
         stated = gap(NOT_AVAILABLE, why)
         records.append(record(f"UGA-2024-{sid}", labels[sid], level="admin2", parent="UGA",
                               country="UGA", match_by="shape_id", shape_id=sid,
-                              population=stated, median_age=stated, sex_ratio=stated,
-                              sources=[{"field": "population/median_age/sex_ratio",
-                                        "name": SOURCE, "url": PAGE, "year": YEAR,
-                                        "license": LICENCE}]))
+                              **with_composition(
+                                  {"population": stated, "median_age": stated,
+                                   "sex_ratio": stated,
+                                   "sources": [{"field": "population/median_age/sex_ratio",
+                                                "name": SOURCE, "url": PAGE, "year": YEAR,
+                                                "license": LICENCE}]}, "county")))
     spare = sorted(u["name"] for u in units if u["code"] not in used)
     report.append(f"2024 units on no written polygon ({len(spare)}): {spare}")
     return records, report

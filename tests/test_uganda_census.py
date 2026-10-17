@@ -90,6 +90,18 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(by["Kampala"]["sex_ratio"]["value"], 923)
         self.assertIn("Busujju County crosses its line", by["Mityana"]["population"]["note"])
         self.assertIn("median_age", by["Kampala"])
+        # Every county says why it has no religion or ethnicity, placed or not,
+        # and a region why it has no ethnicity; each reason cites the report.
+        for name in ("Kampala", "Mityana"):
+            self.assertIn("2002 census by district", by[name]["religion"]["note"])
+            self.assertIn("this county", by[name]["ethnicity"]["note"])
+            cited = {s["field"] for s in by[name]["sources"] if s["name"] == uc.REPORT}
+            self.assertEqual(cited, {"religion", "ethnicity"})
+        central = by["Central Region"]
+        self.assertIn("this region", central["ethnicity"]["note"])
+        self.assertNotIn("note", central["religion"])
+        self.assertEqual({s["field"] for s in central["sources"] if s["name"] == uc.REPORT},
+                         {"ethnicity"})
 
 
 class CrosswalkDataTest(unittest.TestCase):
