@@ -51,6 +51,29 @@ class SenegalRegionalReports(unittest.TestCase):
         self.assertEqual(kind, "pct")
         self.assertEqual(language["Mandinka"], 2.0)
 
+    def test_wrapped_label(self):
+        # Tambacounda's table as the runner printed it, cut after three rows,
+        # with a total row made from them.
+        table = """Tableau II-13 : Répartition (%) de la population résidente de 3 ans ou plus par principale langue couramment parlée selon
+le sexe
+Principale langue
+couramment parlée
+SEXE
+Masculin Féminin Ensemble
+Effectif % Effectif % Effectif %
+Langage des signes
+(Sourd-Muet)
+2813 0,7 2894 0,7 5707 0,7
+wolof 60226 13,9 56873 13,3 117099 13,6
+pulaar 254514 58,9 250391 58,5 504905 58,7
+Ensemble 317553 100 310158 100 627711 100
+Source : ANSD. RGPH-5, 2023
+"""
+        language, kind, number = sr.parse_language(table)
+        self.assertEqual((kind, number), ("count", "Tableau II-13"))
+        self.assertEqual(language, {"Sign language": 5707.0, "Wolof": 117099.0,
+                                    "Pulaar": 504905.0})
+
     def test_build(self):
         reports = [sr.parsed("Dakar", DAKAR, "u1"),
                    sr.parsed("Kaolack", KAOLACK + "\f" + KAOLACK_LANGUAGE, "u2")]

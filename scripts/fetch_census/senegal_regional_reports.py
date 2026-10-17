@@ -96,7 +96,7 @@ ROW6 = re.compile(rf"^(?P<label>\D+?)\s+(?P<m>{N})\s+(?P<mp>{P})\s+(?P<f>{N})\s+
 ROW3 = re.compile(rf"^(?P<label>\D+?)\s+(?P<mp>{P})\s+(?P<fp>{P})\s+(?P<tp>{P})\s*$")
 TITLE_LANG = re.compile(r"(?i)principale\s+langue\s+couramment")
 TITLE_MEDIAN = re.compile(r"(?i)[aâ]ges?\s+moyens?\s+et\s+(?:[aâ]ge\s+)?m[ée]dian")
-MEDIAN_ROW = re.compile(r"^\s*M[ée]diane\s+((?:\d+\s*)+)$")
+MEDIAN_ROW = re.compile(r"(?i)^\s*(?:[aâ]ge\s+)?m[ée]dian(?:e)?\s*(?:\(ans\))?\s+((?:\d+\s*)+)$")
 TABLE_NO = re.compile(r"(?i)tableau\s*([IVX]+\s*[-\u2013\u2011.]\s*\d+|\d+(?:\.\d+)+)")
 
 
@@ -119,8 +119,11 @@ def is_contents(line: str) -> bool:
 
 
 # The words of a table's title and header lines, which are not a row's label.
-HEADER = re.compile(r"(?i)^(sexe|masculin|f[ée]minin|effectif|source)|selon\s+le|tableau|"
-                    r"r[ée]partition|couramment\s+parl")
+HEADER = re.compile(r"(?i)^(sexe|masculin|f[ée]minin|effectif|source|principale\s+langue)|"
+                    r"selon\s+le|tableau|r[ée]partition|couramment\s+parl")
+NUMBERS_ONLY = re.compile(rf"^(?:{N})\s+(?:{P})\s+(?:{N})\s+(?:{P})\s+(?:{N})\s+(?:{P})\s*$|"
+                          rf"^(?:{P})\s+(?:{P})\s+(?:{P})\s*$")
+TOTALS = {"total", "ensemble"}
 
 
 def title_at(lines: list[str], i: int, title: re.Pattern) -> bool:
@@ -182,7 +185,13 @@ def parse_language(text: str) -> tuple[dict[str, float], str, str]:
             if not row or HEADER.search(row):
                 if row.lower().startswith("source") and rows:
                     break
+                # The title's and the header's words are not a label's start.
+                carry = ""
                 continue
+            # A label that wraps puts its figures on a line of their own:
+            # "Langage des signes" / "(Sourd-Muet)" / "2813 0,7 2894 0,7 5707 0,7".
+            if carry and NUMBERS_ONLY.match(row):
+                row, carry = f"{carry} {row}", ""
             m6, m3 = ROW6.match(row), ROW3.match(row)
             m = m6 or m3
             if not m:
@@ -206,7 +215,7 @@ def parse_language(text: str) -> tuple[dict[str, float], str, str]:
             if kind and this != kind:
                 raise SystemExit(f"senegal_regional_reports: {label!r} mixes counts and shares")
             kind = this
-            if fold(label) == "total":
+            if fold(label) in TOTALS:
                 total = value
                 break
             name = language_label(label)
@@ -255,22 +264,31 @@ def parsed(region: str, text: str, url: str) -> dict[str, Any]:
     try:
         out["median"], out["median_table"] = parse_median(text)
     except SystemExit as err:
-        out["problems"].append((str(err), context(text, r"(?i)m[ée]dian")))
+        out["problems"].append((str(err), context(text, TITLE_MEDIAN, r"(?i)m[ée]dian")))
     try:
         out["language"], out["kind"], out["language_table"] = parse_language(text)
     except SystemExit as err:
-        out["problems"].append((str(err), context(text, r"(?i)couramment")))
+        out["problems"].append((str(err), context(text, TITLE_LANG, r"(?i)couramment")))
+    if not out["broad"]:
+        out["problems"].append(("the department age table is not the three broad groups",
+                                context(text, re.compile(r"(?i)selon\s+le\s+d[ée]partement"),
+                                        r"(?i)d[ée]partement")))
     return out
 
 
-def context(text: str, pattern: str, after: int = 14, limit: int = 90) -> list[str]:
-    """The lines matching ``pattern`` and the ones after them, for the log."""
+def context(text: str, title: re.Pattern, pattern: str, after: int = 45,
+            limit: int = 140) -> list[str]:
+    """For the log: the lines below each title of the table (not the list of
+    tables), or else below each line matching ``pattern``."""
     lines = text.splitlines()
+    starts = [i for i in range(len(lines)) if title_at(lines, i, title)]
+    if not starts:
+        starts = [i for i, line in enumerate(lines) if re.search(pattern, line)]
+        after = 12
     out: list[str] = []
-    for i, line in enumerate(lines):
-        if re.search(pattern, line):
-            out.extend(f"    | {x}" for x in lines[i:i + after])
-            out.append("    | ---")
+    for i in starts:
+        out.extend(f"    | {x}" for x in lines[i:i + after])
+        out.append("    | ---")
         if len(out) >= limit:
             break
     return out[:limit]
