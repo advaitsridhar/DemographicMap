@@ -1,19 +1,3 @@
-
-=== HDX dataset: cod-ps-mli ===
-    title: Mali - Subnational Population Statistics
-    org:   ocha-mali
-    licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
-    notes: Population of Mali 2018, disaggregated by admin 1 to 3 and by gender  REFERENCE YEAR:  2018  These tables are suitable for database or GIS linkage to the [Mali - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-mli) layers.  Projection based on 2009 population census  Update history  8 August 2019 Addition of CSV files  7 March 2018 Initial upload  Ver
-    6 resource(s):
-      XLSX   MLI_AdminBoundaries_TabularData.xlsx
-             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/dfbc914d-ecd6-4642-8e18-01ca6d2e3b5d/download/mli_adminboundaries_tabulardata.xlsx
-      XLS    Mali_Population_communes_sexe_2018.xls
-             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/074b6e23-3241-40a9-bd49-d8fc3d4d959e/download/mali_population_communes_sexe_2018.xls
-      CSV    mli_pop_adm0_v2.csv
-             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/6f243ba2-4d4a-4663-a7c4-e917dbbde73a/download/mli_pop_adm0_v2.csv
-      CSV    mli_pop_adm1_v2.csv
-             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/0bd515ae-613c-400f-a84c-ea203cc529be/download/mli_pop_adm1_v2.csv
-      CSV    mli_pop_adm2_v2.csv
-             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/af0c935f-d507-4252-945c-9d1a6cc1b598/download/mli_pop_adm2_v2.csv
-      CSV    mli_pop_adm3_v2.csv
-             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/6a73b827-302d-47be-94a9-580fa73011b5/download/mli_pop_adm3_v2.csv
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+uganda_census: CHEKWII COUNTY: None men and None women against None
