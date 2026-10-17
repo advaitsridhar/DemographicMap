@@ -172,6 +172,8 @@ def write_points() -> int:
 
 OUT = "uganda_census.json"
 YEAR = 2024
+# The 2024 census's final count of everyone enumerated.
+NATIONAL = 45_905_417
 SITE = PROCESSED.parent.parent / "site" / "data"
 SOURCE = ("Uganda Bureau of Statistics, National Population and Housing Census 2024, county "
           "statistics (population by sex and by age group), from the Bureau's census "
@@ -217,13 +219,25 @@ def read_units() -> list[dict[str, Any]]:
             for c in fetch_json(f"{API}/get_counties.php?district_code={district['code']}"):
                 male, female, total = (count(c.get(k))
                                        for k in ("male_popn", "female_popn", "total_popn"))
+                if (male, female, total) == (None, None, None):
+                    # The list still names a few counties of before 2024 with no
+                    # figures (Chekwii, now Chekwii East and Chekwii West).
+                    log(f"  listed without figures: {c.get('name')} ({c.get('code')}), "
+                        f"{district['name']}")
+                    continue
                 if None in (male, female, total) or male + female != total:
                     raise SystemExit(f"uganda_census: {c.get('name')}: {male} men and {female} "
                                      f"women against {total}")
+                if str(c["code"]) in units:
+                    raise SystemExit(f"uganda_census: county code {c['code']} listed twice")
                 units[str(c["code"])] = {"code": str(c["code"]), "name": c["name"],
                                          "district": district["name"],
                                          "region": str(c.get("region_code") or ""),
                                          "male": male, "female": female, "total": total}
+    made = sum(u["total"] for u in units.values())
+    if made != NATIONAL:
+        raise SystemExit(f"uganda_census: the counties make {made:,}, not the census's "
+                         f"{NATIONAL:,}")
     for code, unit in sorted(units.items()):
         profile = fetch_json(f"{API}/get_profile_data.php?level=2&location_code={code}"
                              "&format=detailed")

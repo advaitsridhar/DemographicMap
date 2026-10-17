@@ -389,6 +389,20 @@ def projection_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, 
     return regions, weredas, uscb.dataset_url(PROJECTION_DATASET)
 
 
+# The outlines' region codes a projection wereda's may have become: Tigray's
+# western weredas are ET99 in the outlines; SNNPR's (ET07) went to Sidama (ET16),
+# South West Ethiopia (ET11) and South Ethiopia (ET08), and kept ET07 in Central.
+REGION_FAMILY = {"ET01": {"ET01", "ET99"}, "ET07": {"ET07", "ET08", "ET11", "ET16"}}
+
+
+def bare(name: str) -> str:
+    """A wereda's name without a special wereda's label or a bracketed region. A town
+    keeps its "town": it is not the wereda around it."""
+    text = re.sub(r"\(.*?\)", " ", name.lower())
+    text = re.sub(r"\b(special|sp|woreda|wereda)\b", " ", text)
+    return fold(text)
+
+
 def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, dict[str, Any]],
                        page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
                        ) -> tuple[list[dict[str, Any]], list[str]]:
@@ -436,17 +450,50 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
             if len(hits) == 1:
                 outline[code] = hits[0]
                 claimed.add(hits[0])
+    # Then by the name without a special wereda's label or a bracketed
+    # region ("Tembaro" is "Tembaro Special", "Awra (TG)" is Tigray's "Awra"),
+    # the one such outline in the same region's codes: Tigray's western weredas
+    # are coded ET99 in the outlines, and SNNPR's weredas went to four regions.
+    by_base: dict[str, list[str]] = defaultdict(list)
+    for c, name in NAMES.items():
+        by_base[bare(name)].append(c)
+    for code, row in weredas.items():
+        if code not in outline:
+            family = REGION_FAMILY.get(code[:4], {code[:4]})
+            hits = [c for c in by_base.get(bare(row["name"]), [])
+                    if c not in claimed and c[:4] in family]
+            if len(hits) == 1:
+                outline[code] = hits[0]
+                claimed.add(hits[0])
     unknown_zones = defaultdict(list)
     for code, row in weredas.items():
         if code not in outline:
-            unknown_zones[row["zone"]].append(f"{row['name']} ({code}, {row['total']:,})")
-    for zone, rows in sorted(unknown_zones.items()):
-        report.append(f"projection weredas matched to no outline, in zone {zone}: {rows}")
+            unknown_zones[row["zone"]].append(code)
+    # A wereda matched to no outline still lies in its zone of 2022. Where every
+    # matched wereda of that zone lies in one zone as drawn, and none straddles
+    # its line, the zone of 2022 is inside that drawn zone, and so is the wereda.
+    drawn_of: dict[str, set[str]] = defaultdict(set)
+    for code, row in weredas.items():
+        if code in outline:
+            drawn_of[row["zone"]].add(home.get(outline[code], "straddling"))
+    placed_by_zone: dict[str, list[str]] = defaultdict(list)
+    for zone, codes in sorted(unknown_zones.items()):
+        inside = drawn_of.get(zone, set())
+        names = [f"{weredas[c]['name']} ({c}, {weredas[c]['total']:,})" for c in codes]
+        if len(inside) == 1 and "straddling" not in inside:
+            placed_by_zone[next(iter(inside))] += codes
+            report.append(f"projection weredas matched to no outline, in zone {zone}, placed "
+                          f"with the zone's other weredas: {names}")
+        else:
+            report.append(f"projection weredas matched to no outline, in zone {zone}, whose "
+                          f"weredas lie in {sorted(inside)}: {names}")
     labels = {s["id"]: s["name"].strip() for s in admin2}
     for sid in sorted(ACCEPTED, key=lambda s: labels.get(s, s)):
         codes = [c for c in weredas if c in outline and home.get(outline[c]) == sid]
+        codes += placed_by_zone.get(sid, [])
         zones = {weredas[c]["zone"] for c in codes}
-        blind = sorted(z for z in zones if z in unknown_zones)
+        blind = sorted(z for z in zones if z in unknown_zones
+                       and any(c not in codes for c in unknown_zones[z]))
         if not codes or blind or sid not in labels:
             report.append(f"{labels.get(sid, sid)}: not written -- {len(codes)} weredas, zones "
                           f"holding weredas matched to no outline {blind}")

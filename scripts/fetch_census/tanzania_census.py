@@ -303,7 +303,8 @@ def fields(row: dict[str, Any], note: str, ages: list[dict[str, Any]] | None = N
                 "Interpolated within the single year of age that holds the middle person, from "
                 "the 2022 census's count of everyone by single year of age"
                 + (f", of {' and '.join(a['name'] for a in ages)} together." if len(ages) > 1
-                   else "."))
+                   else f", its {len(ages[0]['parts'])} councils' counts added up."
+                   if ages[0].get("parts") else "."))
             out["sources"].append({"field": "median_age", "name": AGE_SOURCE, "url": AGE_URL,
                                    "license": LICENCE, "year": YEAR})
     return out
@@ -396,9 +397,31 @@ def age_median(tables: list[dict[str, Any]]) -> float | None:
     return grouped_median(groups)
 
 
+# Councils Volume 2a names otherwise than Volume 1a (a council's type, a
+# spelling, Lindi District Council's new name): {2a key: 1a key}. A table taken
+# this way must still count Volume 1a's people, men and women exactly.
+AGE_ALIASES = {
+    "busekelo district": "busokelo district",
+    "chake chake district": "chake chake town",
+    "kaskazini a town": "kaskazini a district",
+    "kaskazini b district": "kaskazini b town",
+    "kati district": "kati town",
+    "misenyi district": "missenyi district",
+    "mtama district": "lindi district",
+    "mtwara mikindani municipal": "mtwara municipal",
+    "wanging'ombe town": "wanging'ombe district",
+    "wete district": "wete town",
+}
+
+
 def check_ages(ages: dict[str, dict[str, Any]], table: dict[str, Any]) -> list[str]:
-    """Each age table's total must be the Volume 1a count of the same unit."""
+    """Each age table's total must be the Volume 1a count of the same unit. A region
+    whose own table is not read takes its councils' tables added up, when every one
+    of them is read and they make the region."""
     report = []
+    for old, new in AGE_ALIASES.items():
+        if old in ages["councils"] and new not in ages["councils"]:
+            ages["councils"][new] = ages["councils"].pop(old)
     for kind in ("regions", "councils"):
         spare = sorted(t["name"] for k, t in ages[kind].items() if k not in table[kind])
         if spare:
@@ -414,6 +437,20 @@ def check_ages(ages: dict[str, dict[str, Any]], table: dict[str, Any]) -> list[s
                               f"({got['men']:,} men), Volume 1a {row['total']:,} "
                               f"({row['men']:,} men); its age table is left out")
                 ages[kind].pop(key)
+    for key, row in table["regions"].items():
+        if key in ages["regions"]:
+            continue
+        parts = [ages["councils"].get(k) for k, c in table["councils"].items()
+                 if c["region"] == key]
+        if not parts or not all(parts):
+            continue
+        summed = {"name": row["name"], "parts": [p["name"] for p in parts],
+                  "ages": {a: sum(p["ages"][a] for p in parts) for a in parts[0]["ages"]},
+                  **{f: sum(p[f] for p in parts) for f in ("total", "men", "women")}}
+        if (summed["total"], summed["men"], summed["women"]) == (row["total"], row["men"],
+                                                                  row["women"]):
+            ages["regions"][key] = summed
+            report.append(f"{row['name']}: ages from its {len(parts)} councils' tables added up")
     return report
 
 
