@@ -49,6 +49,34 @@ class Capitals(unittest.TestCase):
         self.assertNotIn("Kollo", by)     # its seat point is named "Kollo Carre"
         self.assertNotIn("Tahoua", by)
 
+    def test_first_level_same_ground(self):
+        # Burkina Faso's layer names the regions of 2025 (points as the layer
+        # gives them): Kadiogo and Djoro are the old Centre and Sud-Ouest under
+        # new names; Goulmou is part of the old Est only.
+        def point(region, province, name):
+            return {"adm1_name": region, "adm2_name": province or "<Null>",
+                    "adm3_name": "<Null>", "name": name, "_xy": [0, 0]}
+        points = [point("Kadiogo", None, "Ouagadougou"), point("Kadiogo", "Kadiogo", "Ouagadougou"),
+                  point("Djoro", None, "Gaoua"), point("Djoro", "Bougouriba", "Diebougou"),
+                  point("Djoro", "Ioba", "Dano"), point("Djoro", "Noumbiel", "Batie"),
+                  point("Djoro", "Poni", "Gaoua"), point("Goulmou", None, "Fada N'Gourma"),
+                  point("Goulmou", "Gourma", "Fada N'Gourma"),
+                  point("Goulmou", "Kompienga", "Pama")]
+        silent = {"status": "not_available"}
+        admin1 = [{"id": "C", "name": "Centre", "capital": silent},
+                  {"id": "S", "name": "Sud-Ouest", "capital": silent},
+                  {"id": "E", "name": "Est", "capital": silent},
+                  {"id": "N", "name": "Nord", "capital": "Ouahigouya"}]
+        admin2 = [{"id": f"p{i}", "name": n, "parent": p} for i, (n, p) in enumerate(
+            [("Kadiogo", "C"), ("Bougouriba", "S"), ("Ioba", "S"), ("Noumbiel", "S"),
+             ("Poni", "S"), ("Gnagna", "E"), ("Gourma", "E"), ("Komonjdjari", "E"),
+             ("Kompienga", "E"), ("Tapoa", "E")])]
+        records, report = sc.regions("BFA", points, "page", admin1, admin2)
+        by = {r["shape_id"]: r["capital"] for r in records}
+        self.assertEqual(by, {"C": "Ouagadougou", "S": "Gaoua"})
+        self.assertTrue(all(r["level"] == "admin1" for r in records))
+        self.assertTrue(any(line.startswith("Est (first level)") for line in report))
+
 
 if __name__ == "__main__":
     unittest.main()

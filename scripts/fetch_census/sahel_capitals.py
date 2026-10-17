@@ -18,6 +18,13 @@ map's polygons beforehand (2026-10-17): EXCLUDED lists the units whose point
 falls in another polygon or whose name is not the seat's, and they are left as
 they are.
 
+**First-level units.** Where a layer also has a point for each region (one
+with no second-level name: Burkina Faso's), a first-level unit with no capital
+takes its region's seat when the layer's region is made of exactly the
+second-level units the map draws inside the unit -- the same ground, whatever
+it is called now (Burkina Faso's layer names the regions of 2025, of which
+Kadiogo and Djôrô are the old Centre and Sud-Ouest renamed).
+
 Only units whose capital is empty on the map are written: a capital another
 source names is not replaced. Where the layer spells the seat as a variant of
 the unit's own name (Benin's "Kopargo" for Copargo), the unit's spelling is
@@ -190,6 +197,48 @@ def build(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[
     return records, report
 
 
+def regions(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[str, Any]],
+            admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    """First-level units' seats, where the layer has a point for a region (no
+    second-level name) and that region is made of exactly the second-level
+    units the map draws inside the unit: the same ground, whatever its name
+    (Burkina Faso's layer names the regions of 2025, two of which are old
+    regions renamed)."""
+    _, country = COUNTRIES[iso3]
+    source = {"field": "capital",
+              "name": f"OCHA, {country} - Subnational Administrative Boundaries (COD-AB), "
+                      "administrative capitals", "url": page, "license": "CC BY-IGO"}
+    seat_of: dict[str, set[str]] = {}
+    made_of: dict[str, set[str]] = {}
+    for p in points:
+        region = p.get("adm1_name")
+        if not filled(region):
+            continue
+        if filled(p.get("adm2_name")):
+            made_of.setdefault(fold(region), set()).add(unit_key(iso3, p["adm2_name"]))
+        elif not filled(p.get("adm3_name")):
+            seat_of.setdefault(fold(region), set()).add(
+                str(p.get("name_1") or p.get("name") or "").strip())
+    records, report = [], []
+    for u in admin1:
+        if not is_silent(u.get("capital")):
+            continue
+        children = {unit_key(iso3, c["name"]) for c in admin2 if c.get("parent") == u["id"]}
+        same = [r for r, kids in made_of.items() if children and kids == children]
+        seats_ = sorted(seat_of.get(same[0], set())) if len(same) == 1 else []
+        if len(seats_) != 1 or not seats_[0]:
+            report.append(f"{u['name']} (first level): "
+                          + ("no region of the layer is made of its units" if len(same) != 1
+                             else f"the region's points name {seats_}"))
+            continue
+        log(f"    {iso3} {u['name']} [{u['id']}] (first level, the layer's {same[0]}): "
+            f"{seats_[0]}")
+        records.append(record(f"{iso3}-CODAB-seat1-{fold(u['name'])}-{u['id'][-6:]}", u["name"],
+                              level="admin1", parent=iso3, country=iso3, match_by="shape_id",
+                              shape_id=u["id"], capital=seats_[0], sources=[source]))
+    return records, report
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -203,9 +252,12 @@ def main() -> int:
         mine, report = build(iso3, points, page, admin1, admin2)
         silent = sum(1 for u in admin2 if is_silent(u.get("capital")))
         log(f"  {iso3}: {len(mine)} of {silent} empty capitals named")
-        for line in report:
+        first, more = regions(iso3, points, page, admin1, admin2)
+        silent1 = sum(1 for u in admin1 if is_silent(u.get("capital")))
+        log(f"  {iso3}: {len(first)} of {silent1} empty first-level capitals named")
+        for line in report + more:
             log(f"    not named: {line}")
-        records += mine
+        records += mine + first
     write_json(PROCESSED / OUT, records)
     return 0
 
