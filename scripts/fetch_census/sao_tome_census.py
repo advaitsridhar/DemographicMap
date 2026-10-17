@@ -18,10 +18,12 @@ of Principe (one district, drawn as Pagué) at the second level, and the two
 islands' provinces at the first: Sao Tome province is the six districts added
 up, Principe the region.
 
-**Not language.** Quadro 10 asks which languages each person speaks, several
-answers allowed -- in Água Grande 98.6% speak Portuguese and 36.8% Forro -- so
-its answers do not divide the population into shares, and the language field
-says so rather than show them.
+* each district report's Quadro 10 -- the same residents, aged one year and
+  over, by each language they speak: Portuguese, Forro, Angolar, Lung'ie,
+  Cape Verdean Creole, French, English and any other (sign language
+  included). Several answers are allowed -- in Água Grande 98.6% speak
+  Portuguese and 36.8% Forro -- so the shares add up to more than 100 and the
+  record says so (``language_basis``).
 
 **Checks.** Quadro 2's men and women make its total; every age table's groups
 make its total; every religion row makes the district's total; the districts'
@@ -76,12 +78,13 @@ RELIGION_FIRST = ("Adventist", "Assembly of God", "Catholic", "God Is Love Pente
 RELIGION_SECOND = ("New Apostolic", "Church of World Messianity",
                    "Universal Church of the Kingdom of God", "Other religion", "Don't know",
                    "Not stated", "No religion")
+# Quadro 10's languages, four to a column group, each as total, yes and no.
+LANGUAGE_FIRST = ("Portuguese", "Forro", "Angolar", "Lung'ie")
+LANGUAGE_SECOND = ("Cape Verdean Creole", "French", "English", "Other languages")
 AGE_ROWS = [f"{lo}-{lo + 4}" for lo in range(0, 80, 5)] + ["80"]
 NUMBER = re.compile(r"^\d{1,3}(?:\.\d{3})*$")
 
-LANGUAGE_GAP = ("The 2012 census asked which languages each person speaks, several answers "
-                "allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers "
-                "do not divide the population into shares and none are shown.")
+LANGUAGE_BASIS = "languages spoken (multi-response)"
 
 
 def fold(text: str) -> str:
@@ -251,9 +254,50 @@ def religion(pages: list[str], total: int) -> dict[str, int] | None:
     return dict(zip(RELIGION_FIRST + RELIGION_SECOND, first + second))
 
 
+def languages(pages: list[str]) -> tuple[int, dict[str, int]] | None:
+    """Quadro 10 of a district report: (people asked, {language: speakers}).
+
+    A row gives, for four languages in turn, the people asked, those who speak
+    it and those who do not. The district's own rows are the two (one per
+    column group) asked of the most people; urban, rural, sex and age rows are
+    of fewer.
+    """
+    rows: list[list[int]] = []
+    for page in pages:
+        if "Quadro 10" not in page or "língua" not in page:
+            continue
+        for line in page.splitlines():
+            f = numbers(line)
+            if (len(f) == 12 and f[0] == f[3] == f[6] == f[9]
+                    and all(f[i + 1] + f[i + 2] == f[i] for i in (0, 3, 6, 9))):
+                rows.append(f)
+    if not rows:
+        return None
+    asked = max(r[0] for r in rows)
+    top = [r for r in rows if r[0] == asked]
+    first = top[0]
+    second = next((r for r in top[1:] if r != first), None)
+    if second is None:
+        return None
+    speakers = dict(zip(LANGUAGE_FIRST, first[1::3]))
+    speakers.update(zip(LANGUAGE_SECOND, second[1::3]))
+    return asked, speakers
+
+
 def fields(res: tuple[int, int, int] | None, age: tuple[int, list] | None,
-           rel: dict[str, int] | None, where: str) -> dict[str, Any]:
-    out: dict[str, Any] = {"language": gap(NOT_AVAILABLE, LANGUAGE_GAP)}
+           rel: dict[str, int] | None, where: str,
+           lang: tuple[int, dict[str, int]] | None = None) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    if lang:
+        asked, speakers = lang
+        out["language"] = shares(speakers, total=asked)
+        out["language_year"] = YEAR
+        out["language_basis"] = LANGUAGE_BASIS
+        out["language_note"] = (
+            f"Which languages each person speaks, as the 2012 census asked the {asked:,} "
+            f"residents of ordinary dwellings aged one year and over, several answers allowed: "
+            f"each share is the percentage of them who speak the language, so the shares add up "
+            f"to more than 100. Other languages include sign language.")
     if res:
         total, men, women = res
         out["population"] = measure(total, year=YEAR, source=SOURCE)
@@ -310,10 +354,23 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
             for line in table_lines(pages, "Quadro 6"):
                 log(f"    | {line}")
             raise SystemExit(f"sao_tome_census: no religion row read for {name}")
-        data[name] = {"age": age, "religion": rel}
+        lang = languages(pages)
+        if lang is None:
+            for line in table_lines(pages, "Quadro 10"):
+                log(f"    | {line}")
+            raise SystemExit(f"sao_tome_census: no language rows read for {name}")
+        # Asked of everyone in ordinary dwellings but the under-ones.
+        under_five = age[1][0][2]
+        if not age[0] - under_five < lang[0] < age[0]:
+            raise SystemExit(f"sao_tome_census: {name}'s language table asks {lang[0]:,} people, "
+                             f"against {age[0]:,} residents of ordinary dwellings")
+        if lang[1]["Portuguese"] < lang[0] / 2:
+            raise SystemExit(f"sao_tome_census: {name}'s language columns read out of order: {lang}")
+        data[name] = {"age": age, "religion": rel, "language": lang}
         report.append(f"  {name}: residents {total:,} ({men:,} men); ordinary dwellings "
-                      f"{ordinary:,}; religion "
-                      + (f"{sum(rel.values()):,} in {len(rel)} answers" if rel else "not read"))
+                      f"{ordinary:,}; religion {sum(rel.values()):,} in {len(rel)} answers; "
+                      f"languages asked of {lang[0]:,}: "
+                      + ", ".join(f"{k} {v:,}" for k, v in lang[1].items()))
     whole = national_residents(national)
     made = sum(r[0] for r in res.values())
     report.append(f"  the districts' residents make {made:,}; the national line {whole}")
@@ -322,14 +379,14 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
     records: list[dict[str, Any]] = []
     for name, (file, sid) in DISTRICTS.items():
         d = data.get(name, {})
-        cite = [{"field": "population/sex_ratio/median_age/religion",
-                 "name": SOURCE + f", Resultado Distrital ({name}), Quadros 2, 5 and 6",
+        cite = [{"field": "population/sex_ratio/median_age/religion/language",
+                 "name": SOURCE + f", Resultado Distrital ({name}), Quadros 2, 5, 6 and 10",
                  "url": BASE + file, "year": YEAR, "license": LICENCE}]
         where = "the Autonomous Region of Príncipe" if name == "Príncipe" else f"{name} district"
         records.append(record(f"STP-RGPH2012-{sid}", name, level="admin2", parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
                               sources=cite, **fields(res[name], d.get("age"), d.get("religion"),
-                                                      where)))
+                                                      where, d.get("language"))))
     for province, (sid, members) in PROVINCES.items():
         total = sum(res[m][0] for m in members)
         men = sum(res[m][1] for m in members)
@@ -345,16 +402,21 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
         if all(data.get(m, {}).get("religion") for m in members):
             rel = {k: sum(data[m]["religion"][k] for m in members)
                    for k in RELIGION_FIRST + RELIGION_SECOND}
+        lang = None
+        if all(data.get(m, {}).get("language") for m in members):
+            lang = (sum(data[m]["language"][0] for m in members),
+                    {k: sum(data[m]["language"][1][k] for m in members)
+                     for k in LANGUAGE_FIRST + LANGUAGE_SECOND})
         where = ("the Autonomous Region of Príncipe" if province == "Príncipe"
                  else "São Tomé province, its six districts added up")
-        cite = [{"field": "population/sex_ratio/median_age/religion",
-                 "name": SOURCE + f", Resultado Distrital ({m}), Quadros 2, 5 and 6",
+        cite = [{"field": "population/sex_ratio/median_age/religion/language",
+                 "name": SOURCE + f", Resultado Distrital ({m}), Quadros 2, 5, 6 and 10",
                  "url": BASE + DISTRICTS[m][0], "year": YEAR, "license": LICENCE}
                 for m in members]
         records.append(record(f"STP-RGPH2012-{sid}", province, level="admin1", parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
                               sources=cite,
-                              **fields((total, men, women), agegroups, rel, where)))
+                              **fields((total, men, women), agegroups, rel, where, lang)))
         report.append(f"  province {province}: {total:,}")
     return records, report
 
