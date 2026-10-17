@@ -84,6 +84,12 @@ total males females - – single years both sexes male female""".split())
 STATES = {"fctabuja": "abujafederalcapitalterritory", "fct": "abujafederalcapitalterritory",
           "federalcapitalterritory": "abujafederalcapitalterritory",
           "abuja": "abujafederalcapitalterritory", "nassarawa": "nasarawa"}
+# The 36 states and the Federal Capital Territory, reduced as the boundary
+# file names them.
+STATE_KEYS = frozenset("""abia abujafederalcapitalterritory adamawa akwaibom anambra bauchi
+bayelsa benue borno crossriver delta ebonyi edo ekiti enugu gombe imo jigawa kaduna kano
+katsina kebbi kogi kwara lagos nasarawa niger ogun ondo osun oyo plateau rivers sokoto taraba
+yobe zamfara""".split())
 # (state, the boundary file's reduced name) -> the census's reduced name,
 # within the same state; each checked against Volume IV's spelling.
 ALIASES: dict[tuple[str, str], str] = {}
@@ -144,25 +150,49 @@ def pages_of(blob: bytes) -> list[str]:
     return [(page.extract_text() or "") for page in reader.pages]
 
 
+SINGLE_YEARS = "\x00single years\x00"
+
+
+def is_name(line: str) -> bool:
+    """A line that can be (part of) an area's name: letters, not a heading,
+    not a row of figures (a single year's row begins with its age)."""
+    return (any(c.isalpha() for c in line) and not line[:1].isdigit()
+            and not is_heading(line) and not TOTAL.match(line) and not GROUP.match(line))
+
+
 def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
     """Every Table DS5 in the volume, in order: name, page, total and groups.
 
-    A page of single years of age (each state has one, before its five-year
-    table) is skipped: its rows are not five-year groups, and the same state
-    is printed in five-year groups on the page after it. A table's name is the
-    nearest line above its TOTAL row that is neither a heading nor a row of
-    figures -- the headings sit above the name on some pages and between the
-    name and the total on others -- and a name broken over two lines is joined.
+    A page of single years of age (Nigeria and each state have one, before
+    their five-year table) is skipped -- its rows are not five-year groups,
+    and the same area is printed in five-year groups on the page after it --
+    and the next table is marked as the one that page belongs to: that is how
+    a state's table is told from its areas', since the volume names some
+    states with "STATE" and others not ("LAGOS"), and several areas carry
+    their state's name (Bauchi, Gombe, Ebonyi). A table's name is the nearest
+    line above its TOTAL row that is neither a heading nor a row of figures --
+    the headings sit above the name on some pages and between the name and the
+    total on others -- and a name broken over two lines is joined.
+
+    The rows are read by position, 0-4 to 85+; a row whose printed label is
+    not its position's (Lagos's "4 - 9" for 5-9) is read where it stands and
+    logged. A row missing or out of place shows in the sums, which check().
     """
     lines: list[tuple[int, str]] = []
     for page_number, text in enumerate(pages, 1):
         if "single years" in text.lower():
+            lines.append((page_number, SINGLE_YEARS))
             continue
         lines.extend((page_number, ln.strip()) for ln in text.splitlines() if ln.strip())
     tables: list[dict[str, Any]] = []
+    after_single = False
     i = 0
     while i < len(lines):
         page, line = lines[i]
+        if line == SINGLE_YEARS:
+            after_single = True
+            i += 1
+            continue
         m = TOTAL.match(line)
         if not m:
             i += 1
@@ -170,8 +200,7 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
         j, name = i - 1, []
         while j >= 0 and is_heading(lines[j][1]):
             j -= 1
-        while j >= 0 and not is_heading(lines[j][1]) and not TOTAL.match(lines[j][1]) \
-                and not GROUP.match(lines[j][1]) and len(name) < 2:
+        while j >= 0 and is_name(lines[j][1]) and lines[j][1] != SINGLE_YEARS and len(name) < 2:
             name.insert(0, lines[j][1])
             j -= 1
         rows, k = [], i + 1
@@ -182,17 +211,23 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
             elif not is_heading(lines[k][1]):
                 break
             k += 1
-        groups = []
+        groups, misprints = [], []
         for (low, high), g in zip(GROUPS, rows):
             got_low, got_high = int(g.group(1)), g.group(2)
             if got_low != low or (high is None) != (got_high is None) \
                     or (high is not None and int(got_high) != high):
-                raise SystemExit(f"nigeria_census: page {page}: {' '.join(name)!r}: group "
-                                 f"{g.group(0)!r} where {low}-{high} was expected")
+                misprints.append(g.group(0))
             groups.append((low, high, number(g.group(3)), number(g.group(4)),
                            number(g.group(5))))
-        tables.append({"name": " ".join(name), "page": page,
-                       "total": tuple(number(x) for x in m.groups()), "groups": groups})
+        table = {"name": " ".join(name), "page": page,
+                 "total": tuple(number(x) for x in m.groups()), "groups": groups,
+                 "single_before": after_single}
+        if misprints:
+            log(f"  page {page}: {table['name']!r}: rows read by position although printed "
+                f"as {misprints}")
+            table["misprints"] = misprints
+        tables.append(table)
+        after_single = False
         i = k
     return tables
 
@@ -219,13 +254,20 @@ def problems(table: dict[str, Any]) -> list[str]:
 
 
 def organise(tables: list[dict[str, Any]]) -> dict[str, Any]:
-    """{"nation": table, "states": [{"table": ..., "areas": [table, ...]}, ...]}."""
+    """{"nation": table, "states": [{"table": ..., "areas": [table, ...]}, ...]}.
+
+    A table that follows a page of single years is Nigeria's or a state's;
+    every other table is an area of the state before it. A state table whose
+    name is not one of the 37 is refused rather than guessed at."""
     nation, states = None, []
     for t in tables:
         name = t["name"].upper()
-        if name == "NIGERIA":
+        if t.get("single_before") and name == "NIGERIA":
             nation = t
-        elif re.search(r"\bSTATE$", name) or key(name) in STATES:
+        elif t.get("single_before"):
+            if state_key(name) not in STATE_KEYS:
+                raise SystemExit(f"nigeria_census: page {t['page']}: {t['name']!r} follows a "
+                                 "page of single years but is no state")
             states.append({"table": t, "areas": []})
         elif not states:
             raise SystemExit(f"nigeria_census: {t['name']!r} (page {t['page']}) comes "
