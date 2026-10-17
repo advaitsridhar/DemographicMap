@@ -1,63 +1,79 @@
+  district-autonome-abidjan-mono: 6,321,017 (3,210,983 men), seat None, mean age 25, Ivorians None
+  district-autonome-yamoussoukro-mono: 422,072 (217,176 men), seat None, mean age 25, Ivorians (88.4, 11.6)
+  mono-region-gbokle: 460,980 (250,395 men), seat Sassandra Chef Lieu De Departement : Fresco, mean age 22, Ivorians None
+  mono-region-nawa: 1,165,472 (620,869 men), seat Soubre Chef Lieu De Departement : Meagui, Gueyo, Buyo, mean age 21, Ivorians None
+  mono-region-de-san-pedro: 1,060,724 (570,701 men), seat San-Pedro, mean age None, Ivorians (59.9, 40.1)
+  region-indenie-djuablin-mono: 716,443 (381,684 men), seat Abengourou, mean age 23, Ivorians None
+  region-sud-comoe-mono: 784,893 (407,615 men), seat None, mean age 24, Ivorians None
+  retry 1/4 after 2s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-folon-mono/ :: <urlopen error [Errno 111] Connection refused>
+  retry 2/4 after 4s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-folon-mono/ :: <urlopen error [Errno 111] Connection refused>
+  retry 3/4 after 8s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-folon-mono/ :: <urlopen error [Errno 111] Connection refused>
+  retry 4/4 after 16s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-folon-mono/ :: <urlopen error [Errno 111] Connection refused>
+  region-folon-mono: 146,209 (75,902 men), seat Minignan, mean age 20, Ivorians None
+  retry 1/4 after 2s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-kabadougou-mono/ :: <urlopen error [Errno 111] Connection refused>
+  retry 2/4 after 4s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-kabadougou-mono/ :: <urlopen error [Errno 111] Connection refused>
+  retry 3/4 after 8s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-kabadougou-mono/ :: <urlopen error [Errno 111] Connection refused>
+  retry 4/4 after 16s :: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-kabadougou-mono/ :: <urlopen error [Errno 111] Connection refused>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
 
-===== page: 'Districts of Zimbabwe', 10,292 bytes of wikitext
-  1 table(s)
---- table 1: 73 rows ---
-  District | Own | Province | Capital | Area (km²) | Population | Density (Persons/km²)
-  Chirumhanzu | MI-01 | Midlands | Chirumhanzu | 4,749 | 95,272 | 20.1
-  Chitungwiza | HA-01 | Harare | Harare | 49 | 371,246 | 7576.4
-  Chivi | MV-04 | Masvingo | Chivi | 3,543 | 172,979 | 48.8
-  Epworth | HA-02 | Harare | Harare | 35 | 206,368 | 5896.2
-  Gokwe North | MI-02 | Midlands | Gokwe | 7,268 | 249,723 | 34.4
-  ... 67 more rows
+During handling of the above exception, another exception occurred:
 
-===== page: 'Districts of Zambia', 11,339 bytes of wikitext
-  0 table(s)
+Traceback (most recent call last):
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1052, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1364, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 
-===== page: 'Districts of Mozambique', 4,100 bytes of wikitext
-  0 table(s)
+The above exception was the direct cause of the following exception:
 
-===== page: 'Districts of Madagascar', 24,844 bytes of wikitext
-  1 table(s)
---- table 1: 115 rows ---
-  District | Region | Former province | Area in km 2 | Population estimate mid 20 | Population Census 2018 | Population density per km 
-  Ambalavao | Haute Matsiatra | Fianarantsoa | 4,798.47 | 209,417 | 300,242 | 62.6
-  Ambanja | Diana | Antsiranana | 5,999.72 | 190,435 | 238,114 | 39.7
-  Ambato-Boeni | Boeny | Mahajanga | 8,528.25 | 211,204 | 264,141 | 31.0
-  Ambatofinandrahana | Amoron'i Mania | Fianarantsoa | 10,321.48 | 155,470 | 215,851 | 20.9
-  Ambatolampy | Vakinankaratra | Antananarivo | 1,651.14 | 256,164 | 282,970 | 171.4
-  ... 109 more rows
-
-===== page: 'List of municipalities in South Africa', 93,561 bytes of wikitext
-  4 table(s)
---- table 1: 10 rows ---
-  rowspan=2| Name | rowspan=2| Code | rowspan=2| Province | rowspan=2| Seat | colspan=2| Area | rowspan=2| Population (202 | colspan=2| Pop. density
-  km 2 | sq mi | per km 2 | per sq mi
-  Buffalo City Metropolitan  | BUF | Eastern Cape | East London | sortable=on | 975,255 | sortable=on
-  City of Cape Town Metropol | CPT | Western Cape | Cape Town | sortable=on | 4,772,846 | sortable=on
-  City of Ekurhuleni Metropo | EKU | Gauteng | Germiston | sortable=on | 4,066,691 | sortable=on
-  City of Johannesburg Metro | JHB | Gauteng | Johannesburg | sortable=on | 4,803,262 | sortable=on
-  ... 4 more rows
---- table 2: 54 rows ---
-  rowspan=2| Name | rowspan=2| Code | rowspan=2| Province | rowspan=2| Seat | colspan=2| Area | rowspan=2| Population (202 | colspan=2| Pop. density
-  km 2 | sq mi | per km 2 | per sq mi
-  Alfred Nzo District Munici | DC44 | Eastern Cape | Mount Ayliff | sortable=on | 936,462 | sortable=on
-  Amajuba District Municipal | DC25 | KwaZulu-Natal | Newcastle | sortable=on | 687,408 | sortable=on
-  Amathole District Municipa | DC12 | Eastern Cape | East London | sortable=on | 871,601 | sortable=on
-  Bojanala District Municipa | DC37 | North West | Rustenburg | sortable=on | 1,624,428 | sortable=on
-  ... 48 more rows
---- table 3: 215 rows ---
-  rowspan=2| Name | rowspan=2| Code | rowspan=2| Province | rowspan=2| District | rowspan=2| Seat | rowspan=2| Municipal Infra | colspan=2| Area | rowspan=2| Population (202 | colspan=2| Pop. density
-  km 2 | sq mi | per km 2 | per sq mi
-  Abaqulusi Local Municipali | KZN263 | KwaZulu-Natal | Zululand | Vryheid | B3 (small towns) | sortable=on | 247,263 | sortable=on
-  Albert Luthuli Local Munic | MP301 | Mpumalanga | Gert Sibande | Carolina | B4 (mostly rural) | sortable=on | 247,664 | sortable=on
-  Alfred Duma Local Municipa | KZN238 | KwaZulu-Natal | Uthukela | Ladysmith | B2 (large town) | sortable=on | 415,036 | sortable=on
-  Amahlathi Local Municipali | EC124 | Eastern Cape | Amathole | Stutterheim | B3 (small towns) | sortable=on | 115,703 | sortable=on
-  ... 209 more rows
---- table 4: 44 rows ---
-  Name | Code | Province | Dissolved | Fate
-  Camdeboo Local Municipalit | EC101 | Eastern Cape | 3 August 2016 | rowspan=3| Merged to creat
-  Ikwezi Local Municipality | EC103 | Eastern Cape | 3 August 2016
-  Baviaans Local Municipalit | EC107 | Eastern Cape | 3 August 2016
-  Nkonkobe Local Municipalit | EC127 | Eastern Cape | 3 August 2016 | rowspan=2| Merged to creat
-  Nxuba Local Municipality | EC128 | Eastern Cape | 3 August 2016
-  ... 38 more rows
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cote_divoire_census.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cote_divoire_census.py", line 249, in main
+    body = http_get(ARCHIVE + slug + "/", cache=False, timeout=120)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1073, in http_get
+    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
+RuntimeError: GET failed after 4 retries: https://web.archive.org/web/2026/https://rp2021.anstat.ci/region-kabadougou-mono/
