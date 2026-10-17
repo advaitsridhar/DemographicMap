@@ -9,12 +9,14 @@ rows per zone level -- to see which figures by region and province are there.
 
 Usage:
     python -m scripts.fetch_census.morocco_rgph_probe --chart 669 --chart 807
+    python -m scripts.fetch_census.morocco_rgph_probe --chart 807 --grep mahbass
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter, defaultdict
 
 from ._shared import http_get, log
@@ -22,7 +24,7 @@ from ._shared import http_get, log
 BASE = "https://resultats2024.rgphapps.ma/api/v1/chart/{}/data/?format=json"
 
 
-def show(chart: int, rows_per: int) -> None:
+def show(chart: int, rows_per: int, grep: str = "") -> None:
     body = json.loads(http_get(BASE.format(chart), cache=False, timeout=180))
     for result in body.get("result", []):
         data = result.get("data") or []
@@ -32,6 +34,13 @@ def show(chart: int, rows_per: int) -> None:
         ind = next((c for c in cols if "indicateur" in c.lower() and "titre" in c.lower()), None)
         val = next((c for c in cols if "valeur" in c.lower()), None)
         zone = next((c for c in cols if c.lower() == "zone"), None)
+        if grep:
+            # Every row whose zone (or any cell) matches: a commune's rows,
+            # wherever the chart's row limit left them.
+            hits = [r for r in data if re.search(grep, json.dumps(r, ensure_ascii=False), re.I)]
+            log(f"  {len(hits)} rows match {grep!r}:")
+            for r in hits[:400]:
+                log(f"    {json.dumps(r, ensure_ascii=False)[:400]}")
         if ind:
             counts = Counter(r.get(ind) for r in data)
             log(f"  {len(counts)} indicators:")
@@ -54,10 +63,11 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--chart", type=int, action="append", required=True)
     ap.add_argument("--rows", type=int, default=6)
+    ap.add_argument("--grep", default="", help="print every row matching this regex")
     args = ap.parse_args()
     for chart in args.chart:
         try:
-            show(chart, args.rows)
+            show(chart, args.rows, args.grep)
         except Exception as exc:                    # noqa: BLE001 -- a probe reports and goes on
             log(f"== chart {chart}: {exc}")
     return 0
