@@ -177,7 +177,10 @@ def summary(level: int, value: Any) -> dict[str, Any]:
     """The service's own summary of an area (DsMains): its shares of children
     and of the old, against which the age groups' numbering is checked."""
     rows = get(f"DsMains/listDsByParams/{CENSUS}/{level}/{value}")
-    return rows[0] if rows else {}
+    # A list of one row for a district, the row itself for a province.
+    if isinstance(rows, dict):
+        return rows
+    return rows[0] if isinstance(rows, list) and rows and isinstance(rows[0], dict) else {}
 
 
 def median_of(ages: dict[int, tuple[int, int]]) -> float | None:
