@@ -65,7 +65,8 @@
     "name": "ANNOBON",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -185,7 +186,8 @@
     "name": "BANEY",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -242,7 +244,8 @@
     "name": "MALABO",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -359,7 +362,8 @@
     "name": "LUBA",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -416,7 +420,8 @@
     "name": "RIABA",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -533,15 +538,16 @@
     "name": "ACURENAM",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2015 census counts Acurenam district as 23,614 people. The map draws Centro Sur as five polygons against the census's three districts (Evinayong, Niefang, Acurenam): Bicurga and Nkimi are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Acurenam district, and the district's count is not shown on it.",
-      "displaces_before": 2015
+      "value": 23614,
+      "year": 2015,
+      "source": "Instituto Nacional de Estadística de Guinea Ecuatorial (INEGE), IV Censo General de Población y Vivienda 2015, as published in the Anuario Estadístico de Guinea Ecuatorial 2020"
     },
     "median_age": {
       "status": "not_available",
@@ -557,10 +563,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Acurenam district (see its population), so the district's shares are not shown on it; no ethnic group is published."
-    },
+    "ethnicity": [
+      {
+        "group": "Equatorial Guinean nationals",
+        "pct": 84.0
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 16.0
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/ethnicity",
@@ -568,11 +580,21 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
     "match_by": "shape_id",
-    "shape_id": "11065452B93144755032170"
+    "shape_id": "11065452B93144755032170",
+    "population_note": "The population of Acurenam district at the 2015 census.",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census's published tables give the shares of Equatorial Guinean nationals and of foreign nationals among Acurenam district's people, and no ethnic group, so nationality is shown in place of ethnicity."
   },
   {
     "id": "GNQ-CGPV2015-11065452B87560810385120",
@@ -580,14 +602,15 @@
     "name": "BICURGA",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Bicurga is not one: it is a municipality within one of Centro Sur's three districts (Evinayong, Niefang, Acurenam), whose counts include it, and no count of Bicurga alone is published.",
+      "note": "The 2015 census counts Evinayong district as 56,664 people. The district is the municipalities of Bicurga, Evinayong and Teguete, drawn here as two polygons (Bicurga and Evinayong), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -606,7 +629,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Bicurga is a municipality within one of Centro Sur's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Evinayong district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -615,6 +638,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -627,14 +656,15 @@
     "name": "EVINAYONG",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Evinayong district as 56,664 people. The map draws Centro Sur as five polygons against the census's three districts (Evinayong, Niefang, Acurenam): Bicurga and Nkimi are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Evinayong district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Evinayong district as 56,664 people. The district is the municipalities of Bicurga, Evinayong and Teguete, drawn here as two polygons (Bicurga and Evinayong), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -653,7 +683,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Evinayong district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Evinayong district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -662,6 +692,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -674,14 +710,15 @@
     "name": "NIEFANG",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Niefang district as 61,708 people. The map draws Centro Sur as five polygons against the census's three districts (Evinayong, Niefang, Acurenam): Bicurga and Nkimi are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Niefang district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Niefang district as 61,708 people. The district is the municipalities of Niefang, Nkimi and Nkumekien, drawn here as two polygons (Niefang and Nkimi), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -700,7 +737,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Niefang district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Niefang district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -709,6 +746,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -721,14 +764,15 @@
     "name": "NKIMI",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Nkimi is not one: it is a municipality within one of Centro Sur's three districts (Evinayong, Niefang, Acurenam), whose counts include it, and no count of Nkimi alone is published.",
+      "note": "The 2015 census counts Niefang district as 61,708 people. The district is the municipalities of Niefang, Nkimi and Nkumekien, drawn here as two polygons (Niefang and Nkimi), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -747,7 +791,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Nkimi is a municipality within one of Centro Sur's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Niefang district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -756,6 +800,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -828,15 +878,16 @@
     "name": "EBEBIYIN",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2015 census counts Ebibeyin district as 94,019 people. The map draws Kié-Ntem as four polygons against the census's three districts (Ebibeyin, Nsok Nsomo, Micomiseng): Nkue is a municipality drawn apart from the district it belongs to, so this polygon may not be the whole of Ebibeyin district, and the district's count is not shown on it.",
-      "displaces_before": 2015
+      "value": 94019,
+      "year": 2015,
+      "source": "Instituto Nacional de Estadística de Guinea Ecuatorial (INEGE), IV Censo General de Población y Vivienda 2015, as published in the Anuario Estadístico de Guinea Ecuatorial 2020"
     },
     "median_age": {
       "status": "not_available",
@@ -852,10 +903,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Ebibeyin district (see its population), so the district's shares are not shown on it; no ethnic group is published."
-    },
+    "ethnicity": [
+      {
+        "group": "Equatorial Guinean nationals",
+        "pct": 87.8
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 12.2
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/ethnicity",
@@ -863,11 +920,21 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
     "match_by": "shape_id",
-    "shape_id": "11065452B6027875666302"
+    "shape_id": "11065452B6027875666302",
+    "population_note": "The population of Ebibeyin district at the 2015 census, which is the municipalities of Bidjabidján and Ebibeyin.",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census's published tables give the shares of Equatorial Guinean nationals and of foreign nationals among Ebibeyin district's people, and no ethnic group, so nationality is shown in place of ethnicity."
   },
   {
     "id": "GNQ-CGPV2015-11065452B35658646165921",
@@ -875,14 +942,15 @@
     "name": "MICOMISENG",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Micomiseng district as 51,725 people. The map draws Kié-Ntem as four polygons against the census's three districts (Ebibeyin, Nsok Nsomo, Micomiseng): Nkue is a municipality drawn apart from the district it belongs to, so this polygon may not be the whole of Micomiseng district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Micomiseng district as 51,725 people. The district is the municipalities of Micomiseng, Ncue and Nsang, drawn here as two polygons (Micomiseng and Nkue), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -901,7 +969,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Micomiseng district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Micomiseng district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -910,6 +978,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -922,14 +996,15 @@
     "name": "NKUE",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Nkue is not one: it is a municipality within one of Kié-Ntem's three districts (Ebibeyin, Nsok Nsomo, Micomiseng), whose counts include it, and no count of Nkue alone is published.",
+      "note": "The 2015 census counts Micomiseng district as 51,725 people. The district is the municipalities of Micomiseng, Ncue and Nsang, drawn here as two polygons (Micomiseng and Nkue), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -948,7 +1023,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Nkue is a municipality within one of Kié-Ntem's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Micomiseng district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -957,6 +1032,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -969,15 +1050,16 @@
     "name": "NSOC NSOMO",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2015 census counts Nsok Nsomo district as 37,920 people. The map draws Kié-Ntem as four polygons against the census's three districts (Ebibeyin, Nsok Nsomo, Micomiseng): Nkue is a municipality drawn apart from the district it belongs to, so this polygon may not be the whole of Nsok Nsomo district, and the district's count is not shown on it.",
-      "displaces_before": 2015
+      "value": 37920,
+      "year": 2015,
+      "source": "Instituto Nacional de Estadística de Guinea Ecuatorial (INEGE), IV Censo General de Población y Vivienda 2015, as published in the Anuario Estadístico de Guinea Ecuatorial 2020"
     },
     "median_age": {
       "status": "not_available",
@@ -993,10 +1075,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Nsok Nsomo district (see its population), so the district's shares are not shown on it; no ethnic group is published."
-    },
+    "ethnicity": [
+      {
+        "group": "Equatorial Guinean nationals",
+        "pct": 90.5
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 9.5
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/ethnicity",
@@ -1004,11 +1092,21 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
     "match_by": "shape_id",
-    "shape_id": "11065452B43435483695389"
+    "shape_id": "11065452B43435483695389",
+    "population_note": "The population of Nsok Nsomo district at the 2015 census.",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census's published tables give the shares of Equatorial Guinean nationals and of foreign nationals among Nsok Nsomo district's people, and no ethnic group, so nationality is shown in place of ethnicity."
   },
   {
     "id": "GNQ-CGPV2015-51917635B39894172986547",
@@ -1076,14 +1174,15 @@
     "name": "BATA",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Bata district as 309,345 people. The map draws Litoral as five polygons against the census's three districts (Bata, Mbini, Cogo): Bitica and Machinda are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Bata district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Bata district as 309,345 people. The district is the municipalities of Bata, Machinda and Río Campo, drawn here as two polygons (Bata and Machinda), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1102,7 +1201,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Bata district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Bata district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1111,6 +1210,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1123,14 +1228,15 @@
     "name": "BITICA",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Bitica is not one: it is a municipality within one of Litoral's three districts (Bata, Mbini, Cogo), whose counts include it, and no count of Bitica alone is published.",
+      "note": "The 2015 census counts Mbini district as 28,662 people. The district is the municipalities of Bitica and Mbini, drawn here as two polygons (Bitica and Mbini), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1149,7 +1255,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Bitica is a municipality within one of Litoral's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Mbini district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1158,6 +1264,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1170,15 +1282,16 @@
     "name": "COGO",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2015 census counts Cogo district as 29,341 people. The map draws Litoral as five polygons against the census's three districts (Bata, Mbini, Cogo): Bitica and Machinda are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Cogo district, and the district's count is not shown on it.",
-      "displaces_before": 2015
+      "value": 29341,
+      "year": 2015,
+      "source": "Instituto Nacional de Estadística de Guinea Ecuatorial (INEGE), IV Censo General de Población y Vivienda 2015, as published in the Anuario Estadístico de Guinea Ecuatorial 2020"
     },
     "median_age": {
       "status": "not_available",
@@ -1194,10 +1307,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Cogo district (see its population), so the district's shares are not shown on it; no ethnic group is published."
-    },
+    "ethnicity": [
+      {
+        "group": "Equatorial Guinean nationals",
+        "pct": 92.8
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.2
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/ethnicity",
@@ -1205,11 +1324,21 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
     "match_by": "shape_id",
-    "shape_id": "11065452B22787327477805"
+    "shape_id": "11065452B22787327477805",
+    "population_note": "The population of Cogo district at the 2015 census, which is the municipalities of Cabo San Juan, Cogo and Corisco.",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census's published tables give the shares of Equatorial Guinean nationals and of foreign nationals among Cogo district's people, and no ethnic group, so nationality is shown in place of ethnicity."
   },
   {
     "id": "GNQ-CGPV2015-11065452B59369715507709",
@@ -1217,14 +1346,15 @@
     "name": "MACHINDA",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Machinda is not one: it is a municipality within one of Litoral's three districts (Bata, Mbini, Cogo), whose counts include it, and no count of Machinda alone is published.",
+      "note": "The 2015 census counts Bata district as 309,345 people. The district is the municipalities of Bata, Machinda and Río Campo, drawn here as two polygons (Bata and Machinda), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1243,7 +1373,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Machinda is a municipality within one of Litoral's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Bata district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1252,6 +1382,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1264,14 +1400,15 @@
     "name": "MBINI",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Mbini district as 28,662 people. The map draws Litoral as five polygons against the census's three districts (Bata, Mbini, Cogo): Bitica and Machinda are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Mbini district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Mbini district as 28,662 people. The district is the municipalities of Bitica and Mbini, drawn here as two polygons (Bitica and Mbini), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1290,7 +1427,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Mbini district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Mbini district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1299,6 +1436,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1371,15 +1514,16 @@
     "name": "ACONIBE",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2015 census counts Aconibe district as 24,346 people. The map draws Wele-Nzas as six polygons against the census's four districts (Mongomo, Añisok, Aconibe, Nsork): Ayene and Mongomoyen are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Aconibe district, and the district's count is not shown on it.",
-      "displaces_before": 2015
+      "value": 24346,
+      "year": 2015,
+      "source": "Instituto Nacional de Estadística de Guinea Ecuatorial (INEGE), IV Censo General de Población y Vivienda 2015, as published in the Anuario Estadístico de Guinea Ecuatorial 2020"
     },
     "median_age": {
       "status": "not_available",
@@ -1395,10 +1539,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Aconibe district (see its population), so the district's shares are not shown on it; no ethnic group is published."
-    },
+    "ethnicity": [
+      {
+        "group": "Equatorial Guinean nationals",
+        "pct": 93.6
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.4
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/ethnicity",
@@ -1406,11 +1556,21 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
     "match_by": "shape_id",
-    "shape_id": "11065452B89932418637458"
+    "shape_id": "11065452B89932418637458",
+    "population_note": "The population of Aconibe district at the 2015 census.",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census's published tables give the shares of Equatorial Guinean nationals and of foreign nationals among Aconibe district's people, and no ethnic group, so nationality is shown in place of ethnicity."
   },
   {
     "id": "GNQ-CGPV2015-11065452B61336086634219",
@@ -1418,14 +1578,15 @@
     "name": "AYENE",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Ayene is not one: it is a municipality within one of Wele-Nzas's four districts (Mongomo, Añisok, Aconibe, Nsork), whose counts include it, and no count of Ayene alone is published.",
+      "note": "The 2015 census counts Añisok district as 62,924 people. The district is the municipalities of Añisok and Ayene, drawn here as two polygons (Ayene and Añisoc), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1444,7 +1605,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Ayene is a municipality within one of Wele-Nzas's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Añisok district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1453,6 +1614,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1465,14 +1632,15 @@
     "name": "AÑISOC",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Añisok district as 62,924 people. The map draws Wele-Nzas as six polygons against the census's four districts (Mongomo, Añisok, Aconibe, Nsork): Ayene and Mongomoyen are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Añisok district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Añisok district as 62,924 people. The district is the municipalities of Añisok and Ayene, drawn here as two polygons (Ayene and Añisoc), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1491,7 +1659,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Añisok district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Añisok district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1500,6 +1668,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1512,14 +1686,15 @@
     "name": "MONGOMO",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census counts Mongomo district as 88,326 people. The map draws Wele-Nzas as six polygons against the census's four districts (Mongomo, Añisok, Aconibe, Nsork): Ayene and Mongomoyen are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Mongomo district, and the district's count is not shown on it.",
+      "note": "The 2015 census counts Mongomo district as 88,326 people. The district is the municipalities of Mengomeyén, Mongomo and Nzangayong, drawn here as two polygons (Mongomo and Mongomoyen), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1538,7 +1713,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Mongomo district (see its population), so the district's shares are not shown on it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Mongomo district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1547,6 +1722,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1559,14 +1740,15 @@
     "name": "MONGOMOYEN",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "The 2015 census publishes counts by district, and Mongomoyen is not one: it is a municipality within one of Wele-Nzas's four districts (Mongomo, Añisok, Aconibe, Nsork), whose counts include it, and no count of Mongomoyen alone is published.",
+      "note": "The 2015 census counts Mongomo district as 88,326 people. The district is the municipalities of Mengomeyén, Mongomo and Nzangayong, drawn here as two polygons (Mongomo and Mongomoyen), and the census does not count its municipalities apart, so the district's count is not shown on this one.",
       "displaces_before": 2015
     },
     "median_age": {
@@ -1585,7 +1767,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Mongomoyen is a municipality within one of Wele-Nzas's districts, not a district, so none is shown for it; no ethnic group is published."
+      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and Mongomo district is drawn as two polygons, so its shares are not shown on this one; no ethnic group is published."
     },
     "sources": [
       {
@@ -1594,6 +1776,12 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
@@ -1606,15 +1794,16 @@
     "name": "NSORK",
     "parent": "GNQ",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No published list of the districts' and municipalities' seats has been found; the census tables name the districts, not their seats."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2015 census counts Nsork district as 16,421 people. The map draws Wele-Nzas as six polygons against the census's four districts (Mongomo, Añisok, Aconibe, Nsork): Ayene and Mongomoyen are municipalities drawn apart from the district each belongs to, so this polygon may not be the whole of Nsork district, and the district's count is not shown on it.",
-      "displaces_before": 2015
+      "value": 16421,
+      "year": 2015,
+      "source": "Instituto Nacional de Estadística de Guinea Ecuatorial (INEGE), IV Censo General de Población y Vivienda 2015, as published in the Anuario Estadístico de Guinea Ecuatorial 2020"
     },
     "median_age": {
       "status": "not_available",
@@ -1630,10 +1819,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2015 census publishes the shares of Equatorial Guinean and foreign nationals by district, and this polygon may not be the whole of Nsork district (see its population), so the district's shares are not shown on it; no ethnic group is published."
-    },
+    "ethnicity": [
+      {
+        "group": "Equatorial Guinean nationals",
+        "pct": 89.7
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.3
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/ethnicity",
@@ -1641,10 +1836,20 @@
         "url": "https://web.archive.org/web/20250530165942id_/https://inege.org/wp-content/uploads/2019/02/Anuario-Estadi%CC%81stico-de-G.E.-2020.pdf",
         "year": 2015,
         "license": "Official statistics of the Republic of Equatorial Guinea (INEGE), as the Internet Archive keeps it"
+      },
+      {
+        "field": "population/ethnicity",
+        "license": "CC BY-SA 4.0",
+        "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
+        "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
       }
     ],
     "country": "GNQ",
     "match_by": "shape_id",
-    "shape_id": "11065452B58050641555743"
+    "shape_id": "11065452B58050641555743",
+    "population_note": "The population of Nsork district at the 2015 census.",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census's published tables give the shares of Equatorial Guinean nationals and of foreign nationals among Nsork district's people, and no ethnic group, so nationality is shown in place of ethnicity."
   }
 ]

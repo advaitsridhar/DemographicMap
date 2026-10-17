@@ -1,64 +1,35 @@
-probe_pdf: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Principaux%20indicateurs/Principaux%20indicateurs%20du%20Borgou_Final.pdf
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 557, in error
-    result = self._call_chain(*args)
-             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 749, in http_error_302
-    return self.parent.open(new, timeout=req.timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 557, in error
-    result = self._call_chain(*args)
-             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 749, in http_error_302
-    return self.parent.open(new, timeout=req.timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: NOT FOUND
+equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
+  Annobón: 5,314; men 48.9%; nationals 98.3%
+    ANNOBON: 5,314 (Annobón)
+  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
+    BANEY: 29,366 (Baney)
+    MALABO: 271,008 (Malabo)
+  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
+    LUBA: 26,331 (Luba)
+    RIABA: 8,343 (Riaba)
+  Centro Sur: 141,986; men 51.2%; nationals 89.9%
+    ACURENAM: 23,614 (Acurenam, drawn whole)
+    BICURGA: not shown (not a district)
+    EVINAYONG: not shown (Evinayong)
+    NIEFANG: not shown (Niefang)
+    NKIMI: not shown (not a district)
+  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
+    EBEBIYIN: 94,019 (Ebibeyin, drawn whole)
+    MICOMISENG: not shown (Micomiseng)
+    NKUE: not shown (not a district)
+    NSOC NSOMO: 37,920 (Nsok Nsomo, drawn whole)
+  Litoral: 367,348; men 52.3%; nationals 87.7%
+    BATA: not shown (Bata)
+    BITICA: not shown (not a district)
+    COGO: 29,341 (Cogo, drawn whole)
+    MACHINDA: not shown (not a district)
+    MBINI: not shown (Mbini)
+  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
+    ACONIBE: 24,346 (Aconibe, drawn whole)
+    AYENE: not shown (not a district)
+    AÑISOC: not shown (Añisok)
+    MONGOMO: not shown (Mongomo)
+    MONGOMOYEN: not shown (not a district)
+    NSORK: 16,421 (Nsork, drawn whole)
+  wrote data/processed/equatorial_guinea_census.json (85 kB)
+  7 provinces and 25 district polygons written
