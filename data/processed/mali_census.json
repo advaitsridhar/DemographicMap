@@ -1,0 +1,439 @@
+[
+  {
+    "id": "MLI-RGPH5-region-bamako",
+    "level": "admin1",
+    "name": "Bamako",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age/sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B70420899930674"
+  },
+  {
+    "id": "MLI-RGPH5-region-gao",
+    "level": "admin1",
+    "name": "Gao",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1046393,
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "median_age": {
+      "value": 16.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)"
+    },
+    "sex_ratio": {
+      "value": 1084,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population/sex_ratio/median_age"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B98496355207236",
+    "population_note": "The 2022 census counts the region as drawn here as the regions of 2023 made from it: Gao 727,517 and Ménaka 318,876 (Tableau 2.3), added here.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count of the population of ordinary households by five-year age group (Tableaux A.02 to A.21), of the regions of Gao and Ménaka of 2023 together."
+  },
+  {
+    "id": "MLI-RGPH5-region-kayes",
+    "level": "admin1",
+    "name": "Kayes",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3200061,
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "median_age": {
+      "value": 15.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)"
+    },
+    "sex_ratio": {
+      "value": 995,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population/sex_ratio/median_age"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B67011525583155",
+    "population_note": "The 2022 census counts the region as drawn here as the regions of 2023 made from it: Kayes 1,840,329, Kita 681,671 and Nioro 678,061 (Tableau 2.3), added here.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count of the population of ordinary households by five-year age group (Tableaux A.02 to A.21), of the regions of Kayes, Kita and Nioro of 2023 together."
+  },
+  {
+    "id": "MLI-RGPH5-region-kidal",
+    "level": "admin1",
+    "name": "Kidal",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83192,
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "median_age": {
+      "value": 20.0,
+      "unit": "years",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)"
+    },
+    "sex_ratio": {
+      "value": 1191,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population/sex_ratio/median_age"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B67702032852187",
+    "population_note": "The 2022 census's count for the region (Tableau 2.3).",
+    "median_age_note": "The 2022 census's median age of the region's population in ordinary households, in whole years (Tableau 3.4)."
+  },
+  {
+    "id": "MLI-RGPH5-region-koulikouro",
+    "level": "admin1",
+    "name": "Koulikouro",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 takes in ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 takes in ground drawn here in the Kati cercle. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age/sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B61022065682725"
+  },
+  {
+    "id": "MLI-RGPH5-region-mopti",
+    "level": "admin1",
+    "name": "Mopti",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age/sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B29694163592634"
+  },
+  {
+    "id": "MLI-RGPH5-region-segou",
+    "level": "admin1",
+    "name": "Segou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Koutiala region of 2023 took in part of the cercle of Bla, drawn here in Ségou, and the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Koutiala region of 2023 took in part of the cercle of Bla, drawn here in Ségou, and the Ségou region of 2023 took in, as the cercle of Nampala, part of the cercle of Ténenkou, drawn here in Mopti. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age/sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B20164850262385"
+  },
+  {
+    "id": "MLI-RGPH5-region-sikasso",
+    "level": "admin1",
+    "name": "Sikasso",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué from Koulikoro, and the Koutiala region of 2023 part of the cercle of Bla from Ségou. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2022 census counts the regions of 2023, and their lines cross this region's: the Bougouni region of 2023 took in the cercle of Ouélessébougou and part of the cercle of Sélingué from Koulikoro, and the Koutiala region of 2023 part of the cercle of Bla from Ségou. Its sex ratio and median age cannot be put together from the census's tables of the regions of 2023."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age/sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B9364304684584"
+  },
+  {
+    "id": "MLI-RGPH5-region-tombouctou",
+    "level": "admin1",
+    "name": "Tombouctou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1074636,
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "median_age": {
+      "value": 17.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)"
+    },
+    "sex_ratio": {
+      "value": 1089,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024), Tableau 2.3"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population/sex_ratio/median_age"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "92416918B34817349162892",
+    "population_note": "The 2022 census counts the region as drawn here as the regions of 2023 made from it: Tombouctou 974,278 and Taoudenni 100,358 (Tableau 2.3), added here.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count of the population of ordinary households by five-year age group (Tableaux A.02 to A.21), of the regions of Tombouctou and Taoudenni of 2023 together."
+  }
+]
