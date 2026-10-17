@@ -1,255 +1,522 @@
-cod_ps_age: 82 dataset(s) for 87 countries
-  cod-ps-ago (AGO)
-    admin1: 18 unit(s) from ago_admpop_2024.xlsx ago_admpop_adm1_2024_ (18 of 18 names match this map's admin1 (against 7 at admin2)); 0 left out
-    admin2: 161 unit(s) from ago_admpop_2024.xlsx ago_admpop_adm2_2024_ (156 of 161 names match this map's admin2 (against 7 at admin1)); 0 left out
-  cod-ps-arg (ARG)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-atg (ATG)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-bdi (BDI)
-    admin1: 18 unit(s) from bdi_admpop_2022_v2.xlsx BDI_admpop_adm1_2022_ (18 of 18 names match this map's admin1 (against 13 at admin2)); 0 left out
-    admin2: 119 unit(s) from bdi_admpop_2022_v2.xlsx BDI_admpop_adm2_119_2022_ (108 of 117 names match this map's admin2 (against 13 at admin1)); 0 left out
-  cod-ps-ben (BEN)
-    admin1: 12 unit(s) from ben_admpop_2024.xlsx ben_admpop_adm1_2024 (2)_ (10 of 12 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 77 unit(s) from ben_admpop_2024.xlsx ben_admpop_adm2_2024_ (77 of 77 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-bfa (BFA)
-    admin1: 13 unit(s) from bfa_admpop_2023_5yr.xlsx bfa_admpop_adm1_2023_ (13 of 13 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 45 unit(s) from bfa_admpop_2023_5yr.xlsx bfa_admpop_adm2_2023_ (43 of 45 names match this map's admin2 (against 0 at admin1)); 0 left out
-    admin2: 45 of 45 units carry their parent's age proportions and 45 its sex ratio: all 45 medians and sex ratios withdrawn
-  cod-ps-bhs (BHS)
-    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
-  cod-ps-blz (BLZ)
-    admin1: 6 unit(s) from blz_admpop_v2.xlsx blz_adm1_pop_v2_ (6 of 6 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-bol (BOL)
-    admin1: 9 unit(s) from bol_admpop_2022.xlsx bol_admpop_adm1_2022_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-bra (BRA)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-brb (BRB)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-bwa (BWA)
-    admin1: 17 unit(s) from bwa_admpop_2023.xlsx bwa_admpop_adm1_2023_ (10 of 17 names match this map's admin1 (against 5 at admin2)); 0 left out
-    refused bwa_admpop_2023.xlsx bwa_admpop_adm2_2023_: its names match 11 of this map's districts and 6 of its first-level units, out of 28; too few of either to say which level this file describes
-    refused bwa_admpop_2023.xlsx bwa_admpop_adm3_2023_: its names match 9 of this map's districts and 2 of its first-level units, out of 510; too few of either to say which level this file describes
-  cod-ps-caf (CAF)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-chl (CHL)
-    admin1: 16 unit(s) from chl_admpop_2022.xlsx chl_admpop_adm1_2022_ (16 of 16 names match this map's admin1 (against 3 at admin2)); 0 left out
-    admin2: 56 unit(s) from chl_admpop_2022.xlsx chl_admpop_adm2_2022_ (54 of 56 names match this map's admin2 (against 3 at admin1)); 0 left out
-    refused chl_admpop_2022.xlsx chl_admpop_adm3_2022_: its names match 27 of this map's districts and 5 of its first-level units, out of 344; too few of either to say which level this file describes
-  cod-ps-civ (CIV)
-    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
-  cod-ps-cmr (CMR)
-    admin1: 10 unit(s) from CMR_admpop_adm1_2025.csv (9 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
-    refused CMR_admpop2_2025.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
-  cod-ps-cod (COD)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-col (COL)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-com (COM)
-    refused com_admpop_2017.xlsx com_admpop_adm1_2017_: its names match 0 of this map's districts and 0 of its first-level units, out of 3; too few of either to say which level this file describes
-  cod-ps-cpv (CPV)
-    admin1: 22 unit(s) from cpv_admpop_2022B.xlsx cpv_admpop_adm1_2022_ (20 of 22 names match this map's admin1 (against 3 at admin2)); 0 left out
-  cod-ps-cri (CRI)
-    admin1: 7 unit(s) from cri_admpop_unfpa_2021.xlsx cri_admpop_adm1_2021_ (7 of 7 names match this map's admin1 (against 6 at admin2)); 0 left out
-    admin2: 81 unit(s) from cri_admpop_unfpa_2021.xlsx cri_admpop_adm2_2021_ (79 of 81 names match this map's admin2 (against 6 at admin1)); 0 left out
-    refused cri_admpop_adm3_unfpa2021.csv: its names match 51 of this map's districts and 5 of its first-level units, out of 380; too few of either to say which level this file describes
-  cod-ps-cub (CUB)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-dji (DJI)
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-dma (DMA)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-dom (DOM)
-    refused dom_admpop_2023.xlsx dom_admpop_adm1_2023_: its names match 2 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
-    admin1: 32 unit(s) from dom_admpop_2023.xlsx dom_admpop_adm2_2023_ (28 of 32 names match this map's admin1 (against 8 at admin2)); 0 left out
-  cod-ps-ecu (ECU)
-    admin1: 25 unit(s) from ecu_admpop_2020.xlsx ecu_admpop_adm1_2020_ (21 of 25 names match this map's admin1 (against 12 at admin2)); 0 left out
-  cod-ps-egy (EGY)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-eri (ERI)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-eth (ETH)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-gab (GAB)
-    admin1: 9 unit(s) from gab_admpop_2022.xlsx gab_adminpop_adm1_2022_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-gha (GHA)
-    admin1: 16 unit(s) from gha_admpop_2021.xlsx gha_admpop_adm1_2021_ (15 of 16 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 260 unit(s) from gha_admpop_2021.xlsx gha_admpop_adm2_2021_ (260 of 260 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-gin (GIN)
-    refused gin_admpop_adm1_2024.csv: its names match 8 of this map's districts and 8 of its first-level units, out of 8; too few of either to say which level this file describes
-    admin2: 34 unit(s) from gin_admpop_2024.xlsx GIN_ADM2_POP_2024_ (34 of 34 names match this map's admin2 (against 8 at admin1)); 0 left out
-  cod-ps-gmb (GMB)
-    admin1: 8 unit(s) from gmb_popadm_2021.xlsx GMB_ADM1_POP_2021_ (8 of 8 names match this map's admin1 (against 2 at admin2)); 0 left out
-  cod-ps-grd (GRD)
-    refused grd_admpop_2011.xlsx grd_admpop_adm1_2011_: its names match 6 of this map's districts and 6 of its first-level units, out of 7; too few of either to say which level this file describes
-  cod-ps-gtm (GTM)
-    admin1: 22 unit(s) from gtm_admpop_adm1_2024.csv (22 of 22 names match this map's admin1 (against 14 at admin2)); 0 left out
-    admin2: 340 unit(s) from gtm_admpop_adm2_2024.csv (334 of 334 names match this map's admin2 (against 14 at admin1)); 0 left out
-  cod-ps-guy (GUY)
-    admin1: 10 unit(s) from guy_admpop_2021.xlsx guy_admpop_adm1_2021_ (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
-    refused guy_admpop_2021.xlsx guy_admpop_adm2_2021_: its names match 0 of this map's districts and 0 of its first-level units, out of 125; too few of either to say which level this file describes
-  cod-ps-hnd (HND)
-    admin1: 18 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm1_2024_ (17 of 18 names match this map's admin1 (against 8 at admin2)); 0 left out
-    admin2: 298 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm2_2024_ (266 of 269 names match this map's admin2 (against 8 at admin1)); 0 left out
-  cod-ps-hti (HTI)
-    refused hti_admpop_adm1_2024.csv: its names match 0 of this map's districts and 2 of its first-level units, out of 10; too few of either to say which level this file describes
-    refused hti_admpop_adm2_2024.csv: its names match 32 of this map's districts and 0 of its first-level units, out of 140; too few of either to say which level this file describes
-  cod-ps-jam (JAM)
-    admin1: 14 unit(s) from jam_adm_pop.xlsx jam_adm1_pop_ (14 of 14 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-ken (KEN)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-kna (KNA)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-lbr (LBR)
-    admin1: 15 unit(s) from lbr_admpop_adm1_2020_v2.csv (15 of 15 names match this map's admin1 (against 0 at admin2)); 0 left out
-    left out Commonwealth 2: 2 rows carry the name
-    left out Commonwealth 2: 2 rows carry the name
-    left out Kpi: its age groups add up to 2,076, not 2,091
-    left out Wlogba: its age groups add up to 894, not 899
-    admin2: 132 unit(s) from lbr_admpop_adm2_2020_v2.csv (135 of 135 names match this map's admin2 (against 0 at admin1)); 2 left out
-    admin1: all 15 units carry the same age proportions (within 0.3 points in every group): medians withdrawn
-    admin2: all 132 units carry the same age proportions (within 0.3 points in every group): medians withdrawn
-  cod-ps-lca (LCA)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-lso (LSO)
-    admin1: 10 unit(s) from lso_admpop_2022.xlsx lso_admpop_adm1_2022_ (10 of 10 names match this map's admin1 (against 9 at admin2)); 0 left out
-  cod-ps-mar (MAR)
-    left out Province d El Kelaat Es Sraghna: women 26,349 and men 271,904 do not add up to 535,753
-    admin2: 30 unit(s) from mar_admpop_adm2eq_2014.csv (20 of 31 names match this map's admin2 (against 0 at admin1)); 1 left out
-  cod-ps-mdg (MDG)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-mex (MEX)
-    admin1: 32 unit(s) from mex_admpop_adm1_2024.csv (30 of 32 names match this map's admin1 (against 17 at admin2)); 0 left out
-    left out San Juan Mixtepec: 2 rows carry the name
-    left out San Juan Mixtepec: 2 rows carry the name
-    left out San Pedro Mixtepec: 2 rows carry the name
-    left out San Pedro Mixtepec: 2 rows carry the name
-    admin2: 2471 unit(s) from mex_admpop_adm2_2024.csv (2303 of 2328 names match this map's admin2 (against 16 at admin1)); 0 left out
-  cod-ps-mli (MLI)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-moz (MOZ)
-    admin1: 11 unit(s) from moz_admpop_adm1_2025.csv (10 of 11 names match this map's admin1 (against 1 at admin2)); 0 left out
-    left out Ilha Licom: no female or male total
-    left out Ilha Risunodo: no female or male total
-    left out Lago Niassa: no female or male total
-    left out Maquival: no female or male total
-    admin2: 155 unit(s) from moz_admpop_adm2_2025.csv (156 of 159 names match this map's admin2 (against 1 at admin1)); 4 left out
-  cod-ps-mrt (MRT)
-    admin1: 13 unit(s) from mrt_admpop_2022.xlsx mrt_admpop_adm1_2022_ (10 of 13 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-mus (MUS)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-mwi (MWI)
-    admin1: 3 unit(s) from MWI_ADM2_POP_2023.xlsx mwi_admpop_adm1_2023_ (3 of 3 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 32 unit(s) from MWI_ADM2_POP_2023.xlsx mwi_admpop_adm2_2023_ (26 of 32 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-nam (NAM)
-    left out Erongo: its age groups add up to 244,767, not 15,022
-    left out Hardap: its age groups add up to 116,460, not 13,650
-    left out Karas: its age groups add up to 93,817, not 13,519
-    left out Kavango East: its age groups add up to 184,765, not 16,266
-    left out Kavango West: its age groups add up to 83,805, not 30,297
-    left out Khomas: its age groups add up to 543,385, not 17,800
-    left out Kunene: its age groups add up to 121,291, not 26,756
-    left out Ohangwena: its age groups add up to 278,322, not 25,846
-    left out Omaheke: its age groups add up to 82,679, not 12,963
-    left out Omusati: its age groups add up to 272,421, not 15,305
-    left out Oshana: its age groups add up to 207,294, not 18,609
-    left out Oshikoto: its age groups add up to 223,570, not 35,175
-    left out Otjozondjupa: its age groups add up to 173,603, not 27,856
-    left out Zambezi: its age groups add up to 111,337, not 14,878
-    admin1: 0 unit(s) from nam_admpop_2023.xlsx nam_admpop_adm1_2023_ (11 of 14 names match this map's admin1 (against 1 at admin2)); 14 left out
-    admin2: 107 unit(s) from nam_admpop_2023.xlsx nam_admpop_adm2_2023_ (96 of 107 names match this map's admin2 (against 1 at admin1)); 0 left out
-  cod-ps-ner (NER)
-    refused ner_admpop_adm1_2024.csv: the file names its 8 rows as admin1 units; they match admin2 names only as namesakes (the map draws 67 there)
-    admin2: 67 unit(s) from ner_admpop_adm2_2024.csv (63 of 67 names match this map's admin2 (against 1 at admin1)); 0 left out
-    refused ner_admpop_adm3_2024.csv: its names match 58 of this map's districts and 1 of its first-level units, out of 264; too few of either to say which level this file describes
-  cod-ps-nga (NGA)
-    admin1: 37 unit(s) from nga_admpop_2022.xlsx nga_admpop_adm1_2022_ (36 of 37 names match this map's admin1 (against 7 at admin2)); 0 left out
-    admin2: 773 unit(s) from nga_admpop_2020.xlsx nga_admpop_adm2_2020_ (736 of 768 names match this map's admin2 (against 7 at admin1)); 0 left out
-  cod-ps-nic (NIC)
-    left out Las Minas: 2 rows carry the name
-    left out Las Minas: 2 rows carry the name
-    admin1: 15 unit(s) from NIC_ADM2_pop_2020.xlsx nic_admpop_adm1_2020_ (15 of 16 names match this map's admin1 (against 10 at admin2)); 0 left out
-    admin2: 153 unit(s) from NIC_ADM2_pop_2020.xlsx nic_admpop_adm2_2020_ (152 of 153 names match this map's admin2 (against 10 at admin1)); 0 left out
-  cod-ps-pan (PAN)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-per (PER)
-    left out Lima: the whole department, Metropolitan Lima inside it
-    admin1: 24 unit(s) from per_admpop_2024.xlsx per_admpop_adm1_2024_ (24 of 25 names match this map's admin1 (against 17 at admin2)); 0 left out
-  cod-ps-pry (PRY)
-    admin1: 18 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm1_2023_ (17 of 18 names match this map's admin1 (against 5 at admin2)); 0 left out
-    left out San Carlos del Apa: women 287 and men 454 do not add up to 750
-    left out Dr. Bottrell: women 864 and men 925 do not add up to 1,798
-    left out Desmochados: women 932 and men 865 do not add up to 1,808
-    left out Villa Franca: women 727 and men 775 do not add up to 1,510
-    admin2: 246 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm2_2023_ (221 of 249 names match this map's admin2 (against 6 at admin1)); 4 left out
-    admin2: 246 of 246 units carry their parent's age proportions and 13 its sex ratio: all 246 medians withdrawn, the sex ratios kept
-  cod-ps-rwa (RWA)
-    refused rwa_admpop_2023.xlsx rwa_admpop_adm1_2023_: its names match 0 of this map's districts and 4 of its first-level units, out of 5; too few of either to say which level this file describes
-    admin2: 30 unit(s) from rwa_admpop_2023.xlsx rwa_admpop_adm2_2023_ (30 of 30 names match this map's admin2 (against 0 at admin1)); 0 left out
-    refused rwa_admpop_2023.xlsx rwa_admpop_adm3_2023_: its names match 14 of this map's districts and 0 of its first-level units, out of 379; too few of either to say which level this file describes
-  cod-ps-sdn (SDN)
-    unreadable: sdn_admpop_2025.xlsx: HTTPError: HTTP Error 404: Not Found
-    admin1: 18 unit(s) from sdn_admpop_adm1_2025.csv (17 of 18 names match this map's admin1 (against 2 at admin2)); 0 left out
-    admin2: 188 unit(s) from sdn_admpop_adm2_2025.csv (187 of 187 names match this map's admin2 (against 2 at admin1)); 0 left out
-  cod-ps-sen (SEN)
-    refused sen_admpop_2023.xlsx sen_admpop_adm1_2022_: its names match 14 of this map's districts and 14 of its first-level units, out of 14; too few of either to say which level this file describes
-  cod-ps-sle (SLE)
-    refused sle_admpop_adm1_2020_v2.csv: its names match 0 of this map's districts and 3 of its first-level units, out of 4; too few of either to say which level this file describes
-    refused sle_admpop_adm3_2020_v2.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 166; too few of either to say which level this file describes
-  cod-ps-slv (SLV)
-    admin1: 14 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm1_2024_ (14 of 14 names match this map's admin1 (against 10 at admin2)); 0 left out
-    admin2: 262 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm2_2024_ (247 of 254 names match this map's admin2 (against 10 at admin1)); 0 left out
-    refused slv_admpop_adm3_2024.csv: admin2 already read
-  cod-ps-som (SOM)
-    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='Restricted for use only in HRP and Humanitarian Operations.'
-  cod-ps-ssd (SSD)
-    admin1: 10 unit(s) from ssd_admpop_2022_v2.xlsx ssd_admpop_adm1_2022_ (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 78 unit(s) from ssd_admpop_2022_v2.xlsx ssd_admpop_adm2_2022_ (77 of 78 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-stp (STP)
-    refused stp_admpop_2022.xlsx stp_admpop_adm1_2022_: its names match 0 of this map's districts and 2 of its first-level units, out of 2; too few of either to say which level this file describes
-    admin2: 7 unit(s) from stp_admpop_2022.xlsx stp_admpop_adm2_2022_ (5 of 7 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-sur (SUR)
-    admin1: 10 unit(s) from sur_admpop_adm1_v2.csv (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 62 unit(s) from sur_admpop_adm2_v2.csv (44 of 60 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-swz (SWZ)
-    admin1: 4 unit(s) from swz_admpop_2022.xlsx swz_admpop_adm1_2022_ (4 of 4 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-syc (SYC)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-tcd (TCD)
-    admin1: 23 unit(s) from tcd_admpop_2023.xlsx tcd_admpop_adm1_2023_ (22 of 23 names match this map's admin1 (against 4 at admin2)); 0 left out
-    admin2: 70 unit(s) from tcd_admpop_2021.xlsx tcd_admpop_adm2_2021_ (70 of 70 names match this map's admin2 (against 4 at admin1)); 0 left out
-    admin2: 67 of 70 units carry their parent's age proportions and 68 its sex ratio: all 70 medians and sex ratios withdrawn
-  cod-ps-tgo (TGO)
-    admin1: 5 unit(s) from TGO_ADM2_POP_2021.xlsx tgo_admpop_adm1_2021_ (5 of 5 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 37 unit(s) from TGO_ADM2_POP_2021.xlsx tgo_admpop_adm2_2021_ (37 of 37 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-tto (TTO)
-    refused tto_admpop_2011.xlsx tto_admpop_adm1_2011_: its names match 13 of this map's districts and 13 of its first-level units, out of 15; too few of either to say which level this file describes
-  cod-ps-tun (TUN)
-    refused tun_admpop_2020.xlsx tun_admpop_adm1_2020_: its names match 0 of this map's districts and 0 of its first-level units, out of 6; too few of either to say which level this file describes
-    admin1: 24 unit(s) from tun_admpop_2020.xlsx tun_admpop_adm2_2020_ (22 of 24 names match this map's admin1 (against 0 at admin2)); 0 left out
-  cod-ps-tza (TZA)
-    admin1: 31 unit(s) from tza_admpop_2020_v2.xlsx tza_admpop_adm1_2020_v2_ (26 of 31 names match this map's admin1 (against 12 at admin2)); 0 left out
-    admin2: 169 unit(s) from tza_admpop_2020_v2.xlsx tza_admpop_adm2_2020_v2_ (140 of 169 names match this map's admin2 (against 12 at admin1)); 0 left out
-  cod-ps-uga (UGA)
-    admin1: 4 unit(s) from uga_admpop_2023.xlsx uga_admpop_adm1_2023_ (4 of 4 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 135 unit(s) from uga_admpop_2023.xlsx uga_admpop_adm2_2023_ (56 of 135 names match this map's admin2 (against 0 at admin1)); 0 left out
-  cod-ps-ury (URY)
-    admin1: 19 unit(s) from ury_admpop_2023.xlsx ury_admpop_adm1_2023_ (19 of 19 names match this map's admin1 (against 2 at admin2)); 0 left out
-  cod-ps-vct (VCT)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-ven (VEN)
-    admin1: 24 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm1_2011_ (22 of 24 names match this map's admin1 (against 9 at admin2)); 0 left out
-    admin2: 335 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm2_2011_ (271 of 273 names match this map's admin2 (against 8 at admin1)); 0 left out
-  cod-ps-zaf (ZAF)
-    admin1: 9 unit(s) from zaf_admpop_2020.xlsx zaf_admpop_adm1_2020_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
-    admin2: 52 unit(s) from zaf_admpop_2020.xlsx zaf_admpop_adm2_2020_ (43 of 52 names match this map's admin2 (against 0 at admin1)); 0 left out
-    refused zaf_admpop_2020.xlsx zaf_admpop_adm3_2020_: its names match 9 of this map's districts and 0 of its first-level units, out of 232; too few of either to say which level this file describes
-  cod-ps-zmb (ZMB)
-    no table with a full breakdown by sex and five-year age group
-  cod-ps-zwe (ZWE)
-    admin1: 10 unit(s) from zwe_admpop_2023.xlsx zwe_admpop_adm1_2023_ (10 of 10 names match this map's admin1 (against 3 at admin2)); 0 left out
-    admin2: 91 unit(s) from zwe_admpop_2023.xlsx zwe_admpop_adm2_2023_ (91 of 91 names match this map's admin2 (against 3 at admin1)); 0 left out
-  written: AGO 179, BDI 137, BEN 89, BFA 58, BLZ 6, BOL 9, BWA 17, CHL 72, CMR 10, CPV 22, CRI 88, DOM 32, ECU 25, GAB 9, GHA 276, GIN 34, GMB 8, GTM 362, GUY 10, HND 316, JAM 14, LBR 147, LSO 10, MAR 30, MEX 2503, MOZ 166, MRT 13, MWI 35, NAM 107, NER 67, NGA 810, NIC 168, PER 24, PRY 264, RWA 30, SDN 206, SLV 276, SSD 88, STP 7, SUR 72, SWZ 4, TCD 93, TGO 42, TUN 24, TZA 200, UGA 139, URY 19, VEN 359, ZAF 61, ZWE 101
-  wrote data/processed/cod_ps_age.json (23323 kB)
+probe_pdf: https://sierraleone.unfpa.org/sites/default/files/pub-pdf/Population%20structure%20Report_1.pdf
+  4,192,879 bytes
+  54 pages
+probe_pdf: 54 pages, 14 mention ['Kailahun', 'median']
+=== front matter ===
+STATISTICS SIERRA LEONE (SSL)
+OCTOBER 2017
+Sierra Leone 2015
+Population and Housing Census
+Thematic Report on  
+POPULATION STRUCTURE AND 
+POPULATION DISTRIBUTION 
+Sierra Leone 2015
+Population and Housing Census
+Thematic Report on  
+POPULATION STRUCTURE AND 
+POPULATION DISTRIBUTION 
+Sierra Leone 2015
+Population and Housing Census
+Thematic Report on  
+POPULATION STRUCTURE AND 
+POPULATION DISTRIBUTION 
+By
+SAMUEL BERESFORD WEEKES
+SILLEH BAH
+iv
+DISCLAIMER
+  
+Statistics Sierra Leone cannot be held responsible for errors, or any consequences 
+arising from the use of information contained in this report. All rights reserved. This 
+document may be freely quoted or reproduced, in part or in full, provided that the source 
+is acknowledged. 
+We wish to thank the Government of Sierra Leone for the financial 
+and oversight support to the project. Special thanks goes to our 
+development partners DFID, Irish Aid, UNFPA and UNDP for providing 
+the funds, technical support and guidance in  the implementation of 
+the Census project. 
+We wish to acknowledge the contributions of all those 
+who helped us to complete this report. Firstly, we 
+are grateful to Statistics Sierra Leone for giving us 
+an opportunity to participate.  Our thanks also go to 
+UNFPA for funding the writing exercise and then the 
+review workshop, which led to invaluable technical 
+feedback. This really helped us to finalize our report.
+We wish also to put on record our gratitude to the 
+data team, led by  Kwadwo Danso-Manu, (Technical 
+Specialist, UNFPA), who provided relevant data for 
+analysis. We are also grateful to the entire UNFPA 
+Census technical team, especially  Aiah Sosokonneh, 
+for their support.
+The typing of the report was done by Mrs. Lucinda 
+Walker, to whom we are immensely grateful. Last, but 
+by no means least, we want to register our gratitude 
+to  Stephen O. Kwankye (Technical Editor, Regional 
+Institute for Population Studies, University of Ghana, 
+Legon) for his painstaking editing of this report.  We 
+are thankful to him for his patience, diligence and 
+hard work. 
+Acknowledgements 
+v
+Acknowledgements
+List of tables
+List of figures
+Abbreviations
+Abstract
+Executive Summary
+CHAPTER 1: INTRODUCTION
+1.1 Background to population distribution and composition
+1.2 Sources of data
+1.3 Rationale and objectives
+1.4 Methodology
+1.5 Structure of report
+CHAPTER 2: POPULATION TRENDS IN SIERRA LEONE
+2.1 Introduction 
+2.2 Type of enumeration
+2.3 Total population 2015
+2.4 Population change since 1963
+ 2.4.1 Doubling time
+2.5 Population density
+CHAPTER 3: POPULATION DISTRIBUTION 
+3.1 Introduction
+3.2 Distribution by regions
+3.3 Population distribution at the district level
+3.4 Population distribution at the chiefdom level
+3.5 Population distribution by wards 
+CHAPTER 4: EVALUATION OF AGE DATA
+4.1 Introduction
+4.2 Evaluation of single-year data
+ 4.2.1 Digit preference and avoidance
+4.3 Estimation of age/sex accuracy index based on the five-year age data
+ 
+|     V
+|  viii
+|  viii
+|  viii
+|    ix
+|   01
+|   03
+|   03
+|   03
+Contents
+|   03
+|   04
+|   04
+|   05
+|   05
+|   05
+|   05
+|   05
+|   07
+|   08
+|   09
+|   09
+|   09
+|   09
+|   10
+|   17
+|   18
+|   18
+|   18
+|   20
+|   21
+vi  
+CHAPTER 5: POPULATION COMPOSITION
+5.1 Sex Composition
+ 5.1.1 Introduction
+ 5.1.2 Sex ratio
+5.2 Ethnic composition
+5.3 Religious composition
+5.4 Youth population 
+5.5 Adolescent population 
+5.6 Female population age 15-49 years
+5.7 Age dependency ratio
+5.8 Demographic dividend 
+CHAPTER 6: DATA ADJUSTMENT 
+6.1 Introduction
+6.2 Justification for adjustment
+6.3 Data adjustment 
+ 6.3.1 Comparison between reported and smoothed data by age and sex 
+ for Sierra Leone 
+CHAPTER 7: DISCUSSION OF RESULTS, CONCLUSIONS, POLICY IMPLICATIONS AND 
+RECOMMENDATIONS
+7.1 Discussion of results
+7.2 Conclusion
+7.3   Policy implications
+7.4   Recommendations
+REFERENCES
+APPENDIX
+|   23
+|   23
+|   23
+|   23
+|   24
+|   27
+|   28
+
+=== pages mentioning ['Kailahun', 'median'] (first 8) ===
+
+--- page 17 ----------------------------------------------------
+Table 2.2: Intercensal population growth rate by region and district, 1963-2015
+(continued)
+District 2015 1963-1974 1974-1985 1985-2004 2004-2015 Doubling Time
+Kailahun 526,379 1.7 2.4 2.2 3.5 19.8
+Kenema 609,891 1.4 2.1 2.1 1.8 38.5
+Kono 506,100 6.1 1.5 -0.8 3.7 18.7
+Bombali 606,544 1.5 2.8 1.3 3.6 19.2
+Kambia 345,474 1.1 1.6 2.0 2.2 31.5
+Koinadugu 409,372 1.9 1.3 2.0 3.9 17.8
+Port Loko 615,376 1.5 1.1 1.7 2.8 24.7
+Tonkolili 531,435 1.0 1.5 1.9 3.9 17.8
+Bo 575,478 0.3 1.9 2.9 2.0 34.6
+Bonthe 200,781 0.8 1.7 1.5 3.3 21.0
+Moyamba 318,588 1.1 2.6 0.2 1.8 38.5
+Pujehun 346,461 1.7 1.2 3.5 3.8 18.2
+Western Area
+Rural 444,270 4.7 6.8 3.8 8.5 8.0
+Western Area
+Urban 1,055,964 7.0 4.8 2.6 2.8 24.7
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Regarding the rate of population growth at the district levels, seven of the 14 districts grew at higher
+than 3.0 per cent per annum in the 2004-2015 intercensal period.  These included the Western Rural
+Area (8.5 per cent), Koinadugu (3.9 per cent), Tonkolili (3.9 per cent), Pujehun (3.8 per cent) and
+Kono (3.7 per cent).
+The population growth in the Western Rural Area is probably due to large scale migration from the
+other regions during and after the eleven-year war. This growth is currently evidenced by large scale
+destruction of forests for settlement purposes. Only four districts grew between two and three per
+cent per annum and two other districts recorded between one and two per cent per annum in the
+2004-2015 period.
+A composite index of population growth generated from 1963-2015 (a period of 52 years) suggests
+that the national growth rate was 2.2 per cent per annum; one percentage point less than the 3.2 per
+cent recorded for 2004-2015.
+2.4.1 Doubling time
+Table 2.2 also has information on the doubling time of the population by region and district. The
+concept of doubling time is associated with population dynamics.   Essentially, it is how long (in years)
+it takes a population to double its size at a current growth rate. Generally, the higher the rate of growth
+of the population, the faster the doubling time.
+ 7
+
+--- page 20 ----------------------------------------------------
+The data suggest that 50.0 per cent of all districts
+have experienced positive increases in their share
+of the national population; although with varying
+degrees.  The largest increase occurred in the
+Western Area Rural which had a 2.8 per cent
+increase. The smallest increase was reported in
+Pujehun and Kailahun, of 0.2 per cent.
+In another six of the districts, their respective
+shares of the national population decreased during
+the 2004 -2015 intercensal period.   The biggest
+decrease was reported in Kenema with a difference
+of 1.4 per cent.
+Bonthe District’s share remained the same in the
+two census years and its share of the country’s
+population is also the lowest. Apart from the fact that
+Bonthe District is one of the smallest districts in the
+county, it is also economically poor, accessible only
+by sea, with little or no social amenities.  Although
+it used to be an active trading and administrative
+district, it has become moribund over the years.
+3.4 Population distribution at the
+chiefdom level
+This section of the report examines the share of
+the chiefdoms of the population of their respective
+districts.  The analysis compares the proportion of
+the population of each chiefdom of its district’s total
+population during the intercensal period 2004- 2015
+to determine changes that have occurred between
+the two censuses. The results of the analysis are
+presented in Table 3.3 a-c.  The table also shows
+the proportion of each chiefdom’s population
+relative to the total population of Sierra Leone.
+Table 3.2: Percentage distribution of total population by district 2004 and 2015
+Census
+District       2004 2015 % Change 2004 – 2015
+Kailahun 7.2 7.4 +0.2
+Kenema 10.0 8.6 -1.4
+Kono 6.8 7.1 +0.3
+Bombali 8.2 8.6 +0.4
+Kambia 5.4 4.9 - 0.5
+Koinadugu 5.3 5.8 +0.5
+Port Loko 9.1 8.7 - 0.4
+Tonkolili 7.0 7.5 +0.5
+Bo 9.3 8.1 -1.2
+Bonthe 2.8 2.8 0.0
+Moyamba 5.3 4.5 -0.8
+Pujehun 4.6 4.8 +0.2
+Western Area Rural 3.5 6.3 +2.8
+Western Area Urban 15.5 14.9 -0.6
+All Districts 100.0 100.0
+Total Population 4,976,871 7,092,113
+Source: Statistics Sierra
+Leone, 2015 Population
+and Housing Census
+10
+
+--- page 21 ----------------------------------------------------
+At the regional level, the Eastern Region had the highest proportion of the school-going population (47.0
+per cent), while the Western Region registered the lowest proportion (44.9 per cent) of the school-going
+population (Table 2.2). Variations by place of residence indicate that the proportion of primary school-
+going age persons in the rural areas was 19.0 per cent compared to 15.2 per cent in the urban setting.
+Analysis of school-going population by sex reveals that there were no significant sex differentials across
+the various age groups.
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+Table 3.3a: Distribution of the total population of districts by chiefdom
+ in the Eastern Region
+                KAILAHUN
+% of District Total
+Chiedom 2004 2015
+Dea 2.8 2.5
+Jawie 11.9 9.7
+Kissi Kama 3.6 3.9
+Kiss Teng 8.5 8.6
+Kissi Tongi 9.3 9.7
+Kpeje Bongre 3.5 4.8
+Kpeje West 3.6 5.2
+Luawa 18.3 15.4
+Malema 6.5 7.0
+Mandu 5.5 5.9
+Njaluahun 10.5 11.6
+Penguia 3.5 5.0
+Upper Bambara 7.9 5.1
+Yawei 4.5 5.6
+Total % 100 100
+Total 35,819 526,379
+              KENEMA
+% of District Total
+Chiedom 2004 2015
+Dama 5.3 5.0
+Dodo 2.9 3.7
+Gaura 3.5 3.0
+Gorama Mende 6.5 7.1
+Kandu
+Lekpeama 4.4 3.0
+Koya 2 2.2
+Langrama 0.9 0.6
+Lower Bambara 15.7 12.5
+Malegohun 2.5 3.4
+Niawa 1.7 1.3
+Nomo 0.8 0.9
+Nongowa 36.1 7.5
+Simbaru 3.7 2.9
+Small Bo 6.3 4.8
+Tunkia 4.3 5.9
+Wandor 3.5 3.3
+Kenema City  32.9
+Total % 100 100
+Total 497,948 609,891
+            KONO
+% of District Total
+Chiedom 2004 2015
+Fiama 2.7 3.1
+Gbane 4.4 4.8
+Ghane
+Kandor 1.2 2.4
+Gbense 21.4 3.1
+Gorama
+Kono 3.5 3.6
+Kamara 3.7 3.8
+Lei 4.9 5.3
+Mafindor 2.0 2.7
+Nimikoro 13.2 12.1
+Nimiyama 7.8 5.6
+Sandor 14.9 17.8
+Soa 6.3 7.8
+Tankoro 13.1 1.7
+Toli 0.8 1
+Koidu/New  25.3
+Total % 100 100
+Total 335,401 506,100
+ 11
+
+--- page 22 ----------------------------------------------------
+In Kailahun District, Luawa Chiefdom has the
+largest share of the district’s total population,
+although it recorded a drop of 2.9 per cent
+between 2004 and 2015. In contrast, Dea
+Chiefdom is the smallest chiefdom in the
+district in terms of population size in both
+years.
+In 2015 in Kenema District, Kenema City accounted for one-third of the district’s population.  Like all
+administrative headquarters in the three provincial regions, the municipal centres were created as
+part of the decentralization process.  Apart from Kenema City, Lower Bambara Chiefdom is the second
+largest in both census years, although its share of the district’s population dropped by 3.2 per cent from
+15.7 per cent in 2004 to 12.5 per cent in 2015.
+In 2004, Nongowa Chiefdom was the largest in the Kenema District and represented 36.1 per cent of
+the population of the district. In 2015, Kenema City was created and had 32.9 per cent of the district’s
+population. Because of this, Nongowa Chiefdom’s proportion of the district’s population reduced to 7.5
+per cent in 2015.
+With respect to Kono District, Gbense chiefdom had 21.4 per cent of its district’s total population in
+2004 but suffered a reduction to 3.1 per cent in 2015 for the same reason as was the case in Kenema
+District.  A similar development occurred in Tankoro, which represented 13.1 per cent of the district’s
+population in 2004, but lost 11.4 per cent of its population by 2015, recording only 1.7 per cent of the
+total population of its district.
+12
+
+--- page 29 ----------------------------------------------------
+Table 4.1: Results of the Whipple’s, Myer’s and Bachi indices
+for Sierra Leone by sex, regions and districts
+Whipple’s index for digits ‘0’ and ‘5’
+together         Myers Index Bachi Index
+Region Total Male Female Total Male Female Total Male Female
+Sierra Leone 240 255 248 47.2 52.4 49.9 30.0 33.0 31.6
+Eastern 268 286 277 55.5 61.3 58.4 35.1 39.1 37.0
+Kailahun 296 308 302 63.7 68.7 66.3 41.0 43.0 42.0
+Kenema 264 277 271 53.0 57.5 55.3 34.7 37.4 36.0
+Kono 260 278 269 54.3 58.9 26.6 33.4 37.5 35.4
+Northern 263 278 271 63.2 60.3 57.2 34.6 37.5 36.1
+Bombali 242 257 250 48.3 54.4 51.5 30.4 33.5 32.1
+Kambia 282 291 287 60.2 65.7 63.2 38.5 40.0 39.3
+Koinadugu 272 279 275 56.3 59.6 58.0 36.1 37.2 36.7
+Port Loko 258 276 268 52.7 60.0 56.6 33.7 37.3 35.7
+Tonkolili 277 296 287 58.3 64.9 61.8 36.9 40.0 39.0
+Southern 256 269 263 51.3 56.8 54.2 33.4 43.0 34.7
+Bo 239 253 246 48.7 51.2 48.5 29.8 32.9 31.4
+Bonthe 272 277 275 56.7 60.6 58.7 36.1 37.6 36.9
+Moyamba 257 275 266 52.7 59.6 56.3 33.0 36.7 35.0
+Pujehun 278 286 283 57.8 61.5 59.8 37.5 39.1 38.4
+Western Area 176 177 177 27.2 28.3 27.7 17.5 18.1 17.8
+Urban 197 200 199 24.9* 34.9 34.1 21.4 22.5 21.6
+Rural 168 168 168 24.9 25.7 25.3 16.0 16.6 16.3
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+The results of the Whipple’s Index are high in all regions as well as at the national level.  There is
+a major difference in the Western Area where the index is the lowest, indicating a lower incidence
+of age heaping on digits ‘0’ and ‘5’.
+A similar picture is portrayed by the Myer’s Index with the highest value being in the Eastern
+Region.  The index in the Western Area Region is twice as low than that of the Eastern Region,
+which suggests that age reporting in single years is more than twice as good in the Western Area
+Region as in the Eastern Region.  Again, the results of the Bachi Index are highest in the Eastern
+Region and lowest in the Western Area Region.
+ 19
+
+--- page 32 ----------------------------------------------------
+The level of accuracy in reporting ages in five years nationally is 54.9, which is
+14.9 points higher than the maximum of 40 recommended by the United Nations.
+Consequently, the data can be considered as highly inaccurate.
+Situations in the regions and districts the worst, although the results for the
+Western Region appear to be relatively better. As suggested earlier, this may be
+associated with the increased registering of births and deaths in the Western
+Region.
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+Table 4.2: Age/Sex accuracy index for Sierra Leone
+by regions and districts and districts
+Age ratio score     Sex ratio score Age/sex accuracy index
+Region Male Female
+Sierra Leone 13.1 16.9 24.9 54.9
+Eastern 15.7 20.5 14.1 78.5
+Kailahun 17.6 23.2 13.4 81.0
+Kenema 15.0 19.1 12.3 71.0
+Kono 5.3 19.4 17.5 87.2
+Northern 15.3 18.1 8.4 58.5
+Bombali 13.0 15.6 7.5 51.2
+Kambia 16.3 19.7 9.9 65.6
+Koinadugu 17.2 19.9 9.9 66.6
+Port Loko 14.1 16.5 8.6 56.5
+Tonkolili 17.4 21.2 10.2 69.2
+Southern 14.1 18.3 9.7 61.6
+Bo 13.1 16.7 9.4 58.0
+Bonthe 14.6 19.1 9.9 63.3
+Moyamba 13.2 16.6 10.5 61.2
+Pujehun 16.9 23.0 12.0 76.0
+Western Area 7.7 10.2 6.7 37.9
+Urban 7.6 12.1 8.4 44.8
+Rural 8.0 9.5 6.8 37.8
+22
+
+--- page 34 ----------------------------------------------------
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+Table 5.1: Sex ratio for Sierra Leone by region
+and district, 2004 and 2015
+Region Sex Ratio 2004     Sex Ratio 2015 Absolute Change
+Sierra Leone 94.0 96.9 +2.9
+Eastern 101 98.4 -2.9
+Kailahun 94 98.0 +4.0
+Kenema 102 97.5 -4.5
+Kono 106 99.8 -6.2
+Northern 88 95.4 +7.4
+Bombali 93 98.7 +5.7
+Kambia 90 92.0 +2.0
+Koinadugu 88 99.8 +11.8
+Port Loko 88 92.1 +4.1
+Tonkolili 87 98.1 +11.1
+Southern 94 95.0 +1.0
+Bo 96 99.1 +3.1
+Bonthe 92 99.3 +7.3
+Moyamba 90 98.7 +8.7
+Pujehun 93 95.1 +2.1
+Western Area 97 99.9 +2.9
+Urban 96 99.1 +3.1
+Rural 92 99.3 +7.3
+The 2015 data reveal a dominance of women
+in the population at both the regional and
+district levels.  The only variation is the
+Western Area Urban population, where
+there appears to be a balance between the
+number of males and females, reflected by
+a sex ratio of 100.1.
+Most of the regions and districts have
+recorded an increase in their respective
+sex ratios. Typical examples are Koinadugu
+District (11.8) and Tonkolili District (11.1).
+These increases may be associated with
+internal migration, which is selective of
+males. For Tonkolili, the increase could
+have resulted from greater employment
+opportunities provided by industries
+established in the district. In the Kenema
+and Kono districts the male population
+decreased in the intercensal period, resulting
+in a reduction in the corresponding sex
+ratios. This may be attributed to the decline
+in diamond mining in the two districts.
+5.2 Ethnic composition
+Ethnic composition is one social characteristic that has barely been analysed in past censuses,
+possibly for fear of raising issues about tribalism which may be inimical to national development.
+In Sierra Leone, ethnic groups are associated with specific geographic regions. For example,
+Temnes and Limbas are mostly located in the Northern Region.  One objective of this analysis,
+apart from revealing the size of each ethnic group, is to assess the extent of diffusion of ethnic
+groups outside their traditional geographic settings.
+Sierra Leone is a multi-ethnic community. A total of 15 ethnic groups were enumerated during
+the 2015 Census.  However, the two dominant ethnic groups were the Mende (31.9 per cent)
+and Temne (31.4 per cent of the total population of Sierra Leone). The two ethnic groups make
+up almost two-thirds of the total population.
+24
+
+--- page 35 ----------------------------------------------------
+The remaining 13 groups make up just a little over a third of the population with Krim accounting
+for only 0.2 per cent. These 13 ethnic groups account for less than 10.0 per cent each, as seen in
+Table 5.2.
+Table 5.2: Ethnic composition of Sierra Leone, regions and district
+Region Krio Mende Temne  Limba Kono Koranko Fullah Susu
+Sierra Leone 1.3 31.9 31.4 8.4 5.1 4.4 3.8 2.9
+Eastern 0.2 54.7 4.8 2.2 19.4 2.1 2.6 0.5
+Northern 0.2 1.1 57.0 13.8 0.2 10.1 3.8 5.8
+Southern 0.3 78.1 8.0 0.9 0.3 0.2 1.8 0.5
+Western
+Area 5.4 14.1 40.3 13.2 2.3 1.6 6.9 3.0
+District
+Kailahun 0.1 70.7 1.0 0.6 1.0 0.1 0.9 0.1
+Kenema 0.3 83.4 4.8 1.8 0.6 0.4 3.1 0.7
+Kono 0.3 3.3 8.6 4.5 61.2 6.0 3.8 0.5
+Bombali 0.3 1.4 45.0 24.8 0.3 0.6 4.4 6.5
+Kambia 0.1 0.7 54.8 17.9 0.1 0.1 1.7 20.8
+Koinadugu 0.1 0.4 3.4 15.8 0.3 51.3 11.9 0.2
+Port Loko 0.4 1.7 84.4 4.1 0.3 0.2 1.5 5.2
+Tonkolili 0.2 0.9 81.5 8.1 0.2 7.3 0.9 0.1
+Bo 0.5 81.9 6.7 1.7 0.4 0.2 2.8 0.6
+Bonthe 0.4 72.4 1.6 0.3 0.2 0.1 1.0 0.4
+Moyamba 0.3 55.4 22.3 0.7 0.4 0.1 1.5 1.0
+Pujehun 0.1 95.8 0.7 0.3 0.1 0.3 0.7 0.1
+Western
+Area Rural 3.4 12.8 47.4 11.3 2.4 1.5 6.1 2.5
+Western
+Area Urban 6.2 14.6 37.3 14.1 2.3 1.6 7.3 3.1
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+ 25
+
+... and 6 further pages match; re-run with a narrower --terms to see them.
