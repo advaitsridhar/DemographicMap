@@ -29,7 +29,7 @@ residents make the national line; and each religion column, added over the
 districts, must make the national report's Quadro 6 where that row is read.
 
 Usage:
-    python -m scripts.fetch_census.sao_tome_census
+    python -m scripts.fetch_census.sao_tome_census [--run LABEL]
 """
 
 from __future__ import annotations
@@ -342,8 +342,10 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     drawn = {u["id"] for level in ("admin1", "admin2")
              for u in json.loads((SITE / level / "STP.units.json").read_text())}
     wanted = {sid for _f, sid in DISTRICTS.values()} | {sid for sid, _m in PROVINCES.values()}
