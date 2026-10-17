@@ -1,25 +1,144 @@
-  read https://web.archive.org/web/20200101164030id_/http://www.ine.gov.mz/iv-rgph-2017/mocambique/populacao/quadro-3-populacao-por-idade-segundo-provincia-area-de-residencia-e-sexo-mocambique-2017.xlsx: 18,486 bytes, sha256 e4cbf635de7a7d2ba20da6aaae408a2ed82c3718df222e912cd38340208c76c5
-  read https://web.archive.org/web/20191220233923id_/http://www.ine.gov.mz/iv-rgph-2017/niassa/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-niassa-2017.xlsx: 20,289 bytes, sha256 b956b103d9355f656d59d3d3b2c289056e538e4b7b13f510db3dbe076ead2513
-  read https://web.archive.org/web/20191114002733id_/http://www.ine.gov.mz/iv-rgph-2017/niassa/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-do-niassa-2017.xlsx: 24,024 bytes, sha256 2956e8a6eb933c91c81575a5ad014e90fda813f462fea353b181dcebac03fa56
-  read https://web.archive.org/web/20191220234322id_/http://www.ine.gov.mz/iv-rgph-2017/niassa/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-do-niassa-2017.xlsx: 24,993 bytes, sha256 64e878c6c9f7110fb04a0be6900249045ef9f53ae265706b674a9e3c4ef8b69a
-  read https://web.archive.org/web/20191114004502id_/http://www.ine.gov.mz/iv-rgph-2017/cabo-delgado/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-cabo-delgado-2017.xlsx: 21,478 bytes, sha256 d0b54f6a0cf61f6eaff10db41ea5279122a7eba8bab10f0cc99e2b81c6b62224
-  read https://web.archive.org/web/20191114004834id_/http://www.ine.gov.mz/iv-rgph-2017/cabo-delgado/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-cabo-delgado-2017.xlsx: 24,530 bytes, sha256 7ffd272b55c428df84cc8bf5665e0528e923fdfe0f8b8d0946bc7fbbd511d582
-  read https://web.archive.org/web/20191114005018id_/http://www.ine.gov.mz/iv-rgph-2017/cabo-delgado/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-cabo-delgado-2017.xlsx: 25,059 bytes, sha256 de7d70f303f9bbe300f49c4168d0e01ac9b104d886e210e4a6d56cf01c2a2da0
-    a language kept as printed: 'KISWALHILI'
-  read https://web.archive.org/web/20191114010934id_/http://www.ine.gov.mz/iv-rgph-2017/nampula/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-nampula-2017.xlsx: 24,176 bytes, sha256 96d1a52cacdfacc7950161e01ee780c6d68086a203deda950ca977255ca18d6d
-  read https://web.archive.org/web/20191114011052id_/http://www.ine.gov.mz/iv-rgph-2017/nampula/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-nampula-2017.xlsx: 25,367 bytes, sha256 392a739b423476cfc98fd767a8a1d36b52938c63f1c7558a4e6c513b1b5e26f9
-  read https://web.archive.org/web/20191114013404id_/http://www.ine.gov.mz/iv-rgph-2017/nampula/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-nampula-2017.xlsx: 25,234 bytes, sha256 8b484551b490da99398536a1f49c248da5888c5220618f7cbad2963907d5462f
-    a language kept as printed: 'COTI'
-  retry 1/2 after 2s :: https://web.archive.org/web/20191114013455id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
-  retry 2/2 after 4s :: https://web.archive.org/web/20191114013455id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
-    https://web.archive.org/web/20191114013455id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx: RuntimeError: GET failed after 2 retries: https://web.archive.org/web/20191114013455id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-a
-  retry 1/2 after 2s :: https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
-  retry 2/2 after 4s :: https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
-    https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx: RuntimeError: GET failed after 2 retries: https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-res
-  read https://web.archive.org/web/2020id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx: 26,058 bytes, sha256 19c71fd73127aff9ebe3b0ee896c5cd627127dcda7e6c0991680a480863b14b7
-  read https://web.archive.org/web/20191114013816id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-zambezia-2017.xlsx: 24,337 bytes, sha256 feb3c2a0b8b17d4c6e878a50ef5ef93cb29e2a9edf297476469d3bef67a72af2
-    a language kept as printed: 'Elomwue'
-    a language kept as printed: 'Lolo/Malolo'
-    a language kept as printed: 'Outas línguas estrangeiras'
-  read https://web.archive.org/web/20191114015524id_/http://www.ine.gov.mz/iv-rgph-2017/tete/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-tete-2017.xlsx: 20,530 bytes, sha256 167350d954563c7c641d6ff987d38e21d6418c18fb719abbc7705d467e57e5ab
-mozambique_census: TETE's units make 2,551,824 total, its total line 2,551,826, the country's table 2,551,826
+  read https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome2_17-2021.pdf: 11,459,529 bytes, sha256 20d572315f7415ab08bf3ba56ce2162082b310962148900442a0a20e404a3b09
+  22 regions, 114 districts
+  admin2 1er Arrondissement: None, ratio None
+  admin2 2e Arrondissement: None, ratio None
+  admin2 3e Arrondissement: None, ratio None
+  admin2 4e Arrondissement: None, ratio None
+  admin2 5e Arrondissement: None, ratio None
+  admin2 6e Arrondissement: None, ratio None
+  admin2 Ankazobe: 193426, ratio 1017
+  admin2 Anjozorobe: 226258, ratio 1021
+  admin2 Ambohidratrimo: 442244, ratio 978
+  admin2 Manjakandriana: 220243, ratio 991
+  admin2 Antananarivo Avaradrano: 449578, ratio 968
+  admin2 Antananarivo Atsimondrano: 648780, ratio 962
+  admin2 Andramasina: 169171, ratio 962
+  admin1 Analamanga: 3623925, ratio 963
+  admin2 Antsirabe I: 246354, ratio 945
+  admin2 Ambatolampy: 282243, ratio 999
+  admin2 Faratsiho: 222922, ratio 1014
+  admin2 Mandoto: 208058, ratio 1022
+  admin2 Antanifotsy: 354233, ratio 1011
+  admin2 Betafo: 318576, ratio 1008
+  admin2 Antsirabe II: 447273, ratio 1010
+  admin1 Vakinankaratra: 2079659, ratio 1002
+  admin2 Miarinarivo: 293718, ratio 1021
+  admin2 Arivonimamo: 354736, ratio 1012
+  admin2 Soavinandriana: 250095, ratio 1026
+  admin1 Itasy: 898549, ratio 1019
+  admin2 Tsiroanomandidy: 490499, ratio 1032
+  admin2 Fenoarivobe: 180494, ratio 1032
+  admin1 Bongolava: 670993, ratio 1032
+  admin2 Fianarantsoa I: 191776, ratio 920
+  admin2 Ambohimahasoa: 271233, ratio 979
+  admin2 Ikalamavony: 125327, ratio 996
+  admin2 Isandra: 151056, ratio 971
+  admin2 Lalangina: 184162, ratio 1004
+  admin2 Vohibato: 222629, ratio 1012
+  admin2 Ambalavao: 298404, ratio 974
+  admin1 Matsiatra Ambony: 1444587, ratio 979
+  admin2 Ambositra: 297535, ratio 958
+  admin2 Fandriana: 215642, ratio 970
+  admin2 Ambatofinandrahana: 217493, ratio 994
+  admin2 Manandriana: 106446, ratio 967
+  admin1 Amoron'i Mania: 837116, ratio 971
+  admin2 Manakara Atsimo: 385860, ratio 928
+  admin2 Nosy-Varika: 254344, ratio 975
+  admin2 Mananjary: 276887, ratio 945
+  admin2 Ifanadiana: 174444, ratio 975
+  admin2 Ikongo: 204475, ratio 996
+  admin2 Vohipeno: 144647, ratio 934
+  admin1 Vatovavy-Fitovinany: 1440657, ratio 955
+  admin2 Ihosy: 292880, ratio 997
+  admin2 Ivohibe: 69052, ratio 990
+  admin2 Iakora: 55380, ratio 973
+  admin1 Ihorombe: 417312, ratio 993
+  admin2 Farafangana: 407943, ratio 939
+  admin2 Vondrozo: 164971, ratio 983
+  admin2 Vangaindrano: 356271, ratio 945
+  admin2 Midongy-Atsimo: 47779, ratio 974
+  admin2 Befotaka: 53440, ratio 977
+  admin1 Atsimo-Atsinanana: 1030404, ratio 951
+  admin2 Toamasina I: 325857, ratio 896
+  admin2 Toamasina II: 260456, ratio 995
+  admin2 Brickaville: 209001, ratio 979
+  admin2 Vatomandry: 169861, ratio 958
+  admin2 Antanambao Manampontsy: 61459, ratio 981
+  admin2 Mahanoro: 285526, ratio 988
+  admin2 Marolambo: 166312, ratio 971
+  admin1 Atsinanana: 1478472, ratio 961
+  admin2 Fenerive Est: 293565, ratio 954
+  admin2 Maroantsetra: 250928, ratio 959
+  admin2 Mananara-Avaratra: 240149, ratio 983
+  admin2 Soanierana Ivongo: 143687, ratio 974
+  admin2 Sainte Marie: 26822, ratio 896
+  admin2 Vavatenina: 194938, ratio 1004
+  admin1 Analanjirofo: 1150089, ratio 971
+  admin2 Ambatondrazaka: 358164, ratio 990
+  admin2 Andilamena: 104236, ratio 979
+  admin2 Amparafaravola: 322691, ratio 1009
+  admin2 Moramanga: 350724, ratio 996
+  admin2 Anosibe-An'ala: 114116, ratio 967
+  admin1 Alaotra-Mangoro: 1249931, ratio 993
+  admin2 Mahajanga I: 246022, ratio 905
+  admin2 Mahajanga II: 95523, ratio 994
+  admin2 Mitsinjo: 84157, ratio 965
+  admin2 Marovoay: 197756, ratio 968
+  admin2 Soalala: 41684, ratio 990
+  admin2 Ambato Boeni: 264170, ratio 1002
+  admin1 Boeny: 929312, ratio 964
+  admin2 Antsohihy: 175671, ratio 955
+  admin2 Analalava: 164686, ratio 957
+  admin2 Bealanana: 188115, ratio 982
+  admin2 Befandriana Nord: 257444, ratio 972
+  admin2 Port-Berge (Boriziny-Vaovao): 228785, ratio 977
+  admin2 Mandritsara: 304806, ratio 976
+  admin2 Mampikony: 188084, ratio 990
+  admin1 Sofia: 1507591, ratio 973
+  admin2 Maevatanana: 220769, ratio 1006
+  admin2 Tsaratanana: 146545, ratio 970
+  admin2 Kandreho: 25964, ratio 1026
+  admin1 Betsiboka: 393278, ratio 994
+  admin2 Maintirano: 113542, ratio 974
+  admin2 Besalampy: 59395, ratio 975
+  admin2 Ambatomainty: 43211, ratio 1002
+  admin2 Morafenobe: 34516, ratio 991
+  admin2 Antsalova: 58280, ratio 988
+  admin1 Melaky: 308944, ratio 983
+  admin2 Toliary-I: 168756, ratio 902
+  admin2 Beroroha: 68729, ratio 1007
+  admin2 Morombe: 217144, ratio 960
+  admin2 Ankazoabo: 72557, ratio 981
+  admin2 Sakaraha: 150366, ratio 1007
+  admin2 Toliary-II: 371156, ratio 983
+  admin2 Benenitra: 43332, ratio 981
+  admin2 Betioky Atsimo: 306859, ratio 964
+  admin2 Ampanihy Ouest: 398995, ratio 942
+  admin1 Atsimo-Andrefana: 1797894, ratio 963
+  admin2 Ambovombe-Androy: 362195, ratio 919
+  admin2 Bekily: 237111, ratio 946
+  admin2 Beloha: 154052, ratio 908
+  admin2 Tsihombe: 146877, ratio 899
+  admin1 Androy: 900235, ratio 921
+  admin2 Taolagnaro: 340739, ratio 976
+  admin2 Betroka: 210071, ratio 983
+  admin2 Amboasary-Atsimo: 258241, ratio 937
+  admin1 Anosy: 809051, ratio 965
+  admin2 Morondava: 150531, ratio 973
+  admin2 Miandrivazo: 155089, ratio 986
+  admin2 Belo Sur Tsiribihina: 129527, ratio 990
+  admin2 Mahabo: 150947, ratio 991
+  admin2 Manja: 106369, ratio 984
+  admin1 Menabe: 692463, ratio 985
+  admin2 Antsiranana I: 129320, ratio 879
+  admin2 Antsiranana II: 130313, ratio 1013
+  admin2 Ambilobe: 285075, ratio 967
+  admin2 Nosy-Be: 108266, ratio 905
+  admin2 Ambanja: 236988, ratio 947
+  admin1 Diana: 889962, ratio 947
+  admin2 Sambava: 397880, ratio 969
+  admin2 Vohemar: 247454, ratio 967
+  admin2 Andapa: 213631, ratio 1001
+  admin2 Antalaha: 264807, ratio 970
+  admin1 Sava: 1123772, ratio 975
+  wrote data/processed/madagascar_census.json (225 kB)
