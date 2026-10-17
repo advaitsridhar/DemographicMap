@@ -53,6 +53,16 @@ POINTS = "uganda_county_points.json"
 SAMPLES = 60
 
 
+def count(value: Any) -> int | None:
+    """The dashboard writes counts as numbers in one table and strings in another."""
+    if value in (None, ""):
+        return None
+    try:
+        return int(round(float(str(value).replace(",", ""))))
+    except ValueError:
+        return None
+
+
 def fetch_json(url: str) -> Any:
     body = http_get(url, cache=False, timeout=300, aia=True)
     text = body if isinstance(body, str) else body.decode("utf-8", "replace")
@@ -103,8 +113,8 @@ def write_points() -> int:
         out.append({"code": str(pop.get("code") or ""), "name": props.get("County"),
                     "district_code": str(props.get("DCode") or pop.get("district_code") or ""),
                     "region_code": str(props.get("RCode") or ""),
-                    "male": pop.get("male_popn"), "female": pop.get("female_popn"),
-                    "total": pop.get("total_popn"), "area_km2": area, "points": points})
+                    "male": count(pop.get("male_popn")), "female": count(pop.get("female_popn")),
+                    "total": count(pop.get("total_popn")), "area_km2": area, "points": points})
     log(f"  {len(out)} counties, {sum(len(c['points']) for c in out):,} points, "
         f"{sum(c['total'] or 0 for c in out):,} people")
     write_json(PROCESSED / POINTS, out)
