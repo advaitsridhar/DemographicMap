@@ -63,6 +63,29 @@ Source: Fifth Rwanda Population and Housing Census, 2022 (NISR)
 """
 
 
+# The profile's list of tables names Table 2.1 too, with no rows after it; the
+# table itself follows in the body, its district row before its sectors'.
+PROFILE = """Table 2.  1 Distribution (count and %) of the resident population of Kicukiro district by
+Nationality and sector ................................................................................................. 10
+Table 2.  2 Distribution (count and %) of the resident population of Kicukiro district by
+Religious Affiliation and residence areas .................................................................. 11
+Table 2.  1 Distribution (count and %) of the resident population of Kicukiro district
+by Nationality and sector
+ Sectors
+Counts Percentage%
+Total Rwandan Foreigners Total Rwandan Foreigners
+Rwanda 13,246,394 13,129,019 117,375 100 99.11 0.89
+City of Kigali 1,745,555 1,725,001 20,554 100 98.82 1.18
+Kicukiro district 491,731 484,982 6,749 100 98.63 1.37
+Gahanga 75,000 74,000 1,000 100 98.67 1.33
+""" + KICUKIRO
+# Nyarugenge's and Gasabo's rows, made up so that Kigali's three districts make
+# Table 6's Rwandans and foreigners.
+KIGALI = {"Kicukiro": {"Rwandan": 484982, "Foreign nationals": 6749},
+          "Nyarugenge": {"Rwandan": 368319, "Foreign nationals": 6000},
+          "Gasabo": {"Rwandan": 871700, "Foreign nationals": 7805}}
+
+
 def table1_rows(rows=TABLE1):
     return [[None, n, t, m, f, 1.0, 100] for n, t, m, f in rows]
 
@@ -108,6 +131,17 @@ class TablesTest(unittest.TestCase):
     def test_no_table_reads_as_none(self):
         self.assertIsNone(rc.read_religion("Kicukiro district 491,731 249,115", "Kicukiro"))
 
+    def test_nationality_is_the_district_row_of_table_2_1(self):
+        self.assertEqual(rc.read_nationality(PROFILE, "Kicukiro"),
+                         {"Rwandan": 484982, "Foreign nationals": 6749, "_total": 491731})
+        # The religion table's own row (everyone, urban, rural, 100 three times)
+        # is not taken for it, and neither is a profile without the table.
+        self.assertIsNone(rc.read_nationality(KICUKIRO, "Kicukiro"))
+
+    def test_a_row_whose_shares_disagree_reads_as_none(self):
+        bad = PROFILE.replace("100 98.63 1.37", "100 97.63 2.37")
+        self.assertIsNone(rc.read_nationality(bad, "Kicukiro"))
+
 
 class BuildTest(unittest.TestCase):
     def test_records_for_every_polygon(self):
@@ -128,6 +162,40 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(kigali["ethnicity_basis"], "nationality")
         self.assertNotIn("religion_note", kigali)      # two of its districts are unread
         self.assertEqual(kigali["median_age"]["value"], 20)
+        # No profile's nationality was given: the districts say the census asks
+        # no ethnicity, and every unit why it has no language.
+        self.assertEqual(by["Kicukiro"]["ethnicity"]["note"],
+                         "Rwanda's 2022 census asks no ethnicity.")
+        for r in records:
+            self.assertEqual(r["language"]["note"], rc.LANGUAGE)
+
+    def build_kigali(self, nations):
+        table1 = rc.read_table1(table1_rows())
+        admin1 = json.loads((SITE / "admin1" / "RWA.units.json").read_text())
+        admin2 = json.loads((SITE / "admin2" / "RWA.units.json").read_text())
+        records = rc.build(table1, rc.read_table6(TABLE6, table1),
+                           rc.read_medians(*median_rows()), {}, {}, admin1, admin2, nations)
+        return {r["name"]: r for r in records}
+
+    def test_districts_take_their_profiles_nationality_where_they_make_table_6(self):
+        by = self.build_kigali(KIGALI)
+        kicukiro = by["Kicukiro"]
+        self.assertEqual(kicukiro["ethnicity_basis"], "nationality")
+        self.assertEqual({g["group"]: g["count"] for g in kicukiro["ethnicity"]},
+                         KIGALI["Kicukiro"])
+        self.assertIn("Table 2.1", [s for s in kicukiro["sources"]
+                                    if s["field"] == "ethnicity"][0]["name"])
+        self.assertIsInstance(by["Nyarugenge"]["ethnicity"], list)
+        # Another province, with no profile read, keeps its gap.
+        self.assertEqual(by["Huye"]["ethnicity"]["status"], "not_available")
+
+    def test_districts_that_do_not_make_table_6_write_none(self):
+        nations = {d: dict(v) for d, v in KIGALI.items()}
+        nations["Gasabo"]["Foreign nationals"] += 1
+        nations["Gasabo"]["Rwandan"] -= 1
+        by = self.build_kigali(nations)
+        for d in KIGALI:
+            self.assertEqual(by[d]["ethnicity"]["status"], "not_available")
 
 
 if __name__ == "__main__":

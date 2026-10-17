@@ -32,7 +32,9 @@ boundary dataset has no sub-county outlines (its second level is the
 constituencies), so CROSSWALK rests on the land area Volume II gives each
 sub-county against the area of the constituency's polygon, with names that
 correspond; the rule is set out above the constant. Every other constituency
-gets a gap that says why.
+gets a gap that says why. And every constituency says why it has no religion,
+ethnicity or language (COMPOSITION): Volume IV publishes the first by county
+and the second for the country only, and no volume tabulates the third.
 
 **Bomet and Kericho.** The map's Bomet County polygon takes in Bureti, which
 the census counts as a sub-county of Kericho (OCHA's boundaries put Buret
@@ -85,6 +87,15 @@ SOURCE2 = ("Kenya National Bureau of Statistics, 2019 Kenya Population and Housi
            "and sub-county")
 SOURCE3 = ("Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, "
            "Volume III: Distribution of Population by Age and Sex, by county and sub-county")
+SOURCE4 = ("Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, "
+           "Volume IV: Distribution of Population by Socio-Economic Characteristics")
+# What the census publishes on religion, ethnicity and language, said on every
+# constituency: Volume IV gives religion by county (Table 2.30, kenya.py) and
+# ethnicity for the country only (openAFRICA's table of it has one row per
+# group and no county), and no volume tabulates language.
+COMPOSITION = ("Kenya's 2019 census reports give religion by county and ethnicity for the "
+               "country as a whole, and no languages, so none of the three is published for "
+               "a constituency.")
 LICENCE = "Creative Commons Attribution (openAFRICA copy of a KNBS publication)"
 NATIONAL = 47_564_296
 POINTS = "kenya_subcounty_points.json"
@@ -608,6 +619,10 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
         key = shape_of.get(shape["parent"])
         if key is None:
             continue
+        composition = {field: gap(NOT_AVAILABLE, COMPOSITION)
+                       for field in ("religion", "language", "ethnicity")}
+        unpublished = {"field": "religion/language/ethnicity", "name": SOURCE4, "url": PAGE,
+                       "year": YEAR, "license": LICENCE}
         taken = plans.get(shape["id"])
         if not taken:
             why = ("The 2019 census was published for sub-counties, and this constituency's "
@@ -617,10 +632,10 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
             records.append(record(f"KEN-2019-{shape['id']}", shape["name"], level="admin2",
                                   parent="KEN", country="KEN", match_by="shape_id",
                                   shape_id=shape["id"], population=stated, median_age=stated,
-                                  sex_ratio=stated,
+                                  sex_ratio=stated, **composition,
                                   sources=[{"field": "population/median_age/sex_ratio",
                                             "name": SOURCE2, "url": PAGE, "year": YEAR,
-                                            "license": LICENCE}]))
+                                            "license": LICENCE}, unpublished]))
             continue
         units = [by_key[home]["subs"][sub] for home, sub in taken]
         if any("everyone" not in u for u in units):
@@ -647,11 +662,11 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
             population=measure(total, year=YEAR, source=SOURCE2), population_note=note,
             sex_ratio=measure(round(1000 * male / female), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE2),
-            **age_fields(units, of),
+            **age_fields(units, of), **composition,
             sources=[{"field": "population/sex_ratio", "name": SOURCE2, "url": PAGE,
                       "year": YEAR, "license": LICENCE},
                      {"field": "median_age", "name": SOURCE3, "url": PAGE, "year": YEAR,
-                      "license": LICENCE}]))
+                      "license": LICENCE}, unpublished]))
     return records
 
 

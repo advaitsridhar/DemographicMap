@@ -245,6 +245,16 @@ class ConstituencyTest(unittest.TestCase):
         self.assertIn("cannot be shown to be one sub-county", konoin["note"])
         self.assertTrue(any("3 of 4 constituencies" in line for line in report))
 
+    def test_every_constituency_says_why_it_has_no_religion_ethnicity_or_language(self):
+        by, _ = self.build()
+        for name in ("Buret", "Konoin"):
+            for field in ("religion", "language", "ethnicity"):
+                self.assertEqual(by[name][field]["status"], "not_available")
+                self.assertEqual(by[name][field]["note"], kc.COMPOSITION)
+            cited = [s for s in by[name]["sources"] if s["field"] == "religion/language/ethnicity"]
+            self.assertEqual([s["name"] for s in cited], [kc.SOURCE4])
+        self.assertIn("religion by county", kc.COMPOSITION)
+
     def test_a_crosswalk_naming_no_constituency_stops_the_run(self):
         self.crosswalk["bomet"]["Chepalungu"] = ["sotik"]
         with self.assertRaises(SystemExit):

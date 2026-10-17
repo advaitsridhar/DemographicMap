@@ -13,20 +13,27 @@ reports. Three are read here:
   (workbook): Table 4.3, the median age by province, and Table 4.4, the median age
   by district -- whole years, for men, women and both.
 * The 30 *District Profiles* (PDF, September 2023): each prints its district's
-  resident population by religious affiliation, in counts.
+  resident population by religious affiliation, in counts, and by nationality
+  (Table 2.1, Rwandan or foreign, by sector, with the district's own row).
 
 **What is written.** For each district and province: the population and men per
 1,000 women (Table 1), the median age of both sexes (Tables 4.3 and 4.4, as the
 Institute prints it, in whole years), and religion (the district's profile; a
-province's is its districts' counts added up). For each province, nationality on
-the ethnicity field (``ethnicity_basis``: nationality), since the census asks no
-ethnicity. OCHA's district table for Rwanda projects the 2012 census to 2023 and
-gives way to these counts (SUPERSEDED_ROWS); its medians, a projection too,
-only fill, and these stand in front of them.
+province's is its districts' counts added up). Nationality goes on the ethnicity
+field (``ethnicity_basis``: nationality), since the census asks no ethnicity:
+Table 6's for each province, the profile's Table 2.1 for each district. The
+census's only language table (Main Indicators Table 8) is literacy, the
+languages people aged 15 and over read and write, and not a language
+composition, so every unit says so (LANGUAGE). OCHA's district table for Rwanda
+projects the 2012 census to 2023 and gives way to these counts
+(SUPERSEDED_ROWS); its medians, a projection too, only fill, and these stand in
+front of them.
 
 **Checks.** Each row's men and women make it; the districts make their province and
 the provinces the country; Rwandans and foreigners make each province; a profile's
-religions make its district's count in Table 1.
+religions make its district's count in Table 1, and so do its Rwandans and
+foreigners, whose printed shares they must give; a province's districts' Rwandans
+and foreigners must make Table 6's, or none of its districts' are written.
 
 Usage:
     python -m scripts.fetch_census.rwanda_census
@@ -41,7 +48,8 @@ import json
 import re
 from typing import Any
 
-from ._shared import PROCESSED, dated, http_get, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record,
+                      shares, write_json)
 
 OUT = "rwanda_census.json"
 YEAR = 2022
@@ -67,6 +75,19 @@ RELIGION_SOURCE = ("National Institute of Statistics of Rwanda, Fifth Population
                    "resident population")
 NATIONALITY_SOURCE = ("National Institute of Statistics of Rwanda, Fifth Population and "
                       "Housing Census 2022, Main Indicators Report, Table 6")
+PROFILE_NATIONALITY_SOURCE = ("National Institute of Statistics of Rwanda, Fifth Population "
+                              "and Housing Census 2022, District Profiles (2023), Table 2.1, "
+                              "resident population by nationality")
+LANGUAGE_SOURCE = ("National Institute of Statistics of Rwanda, Fifth Population and Housing "
+                   "Census 2022, Main Indicators Report, Table 8")
+# Table 8 is "Population aged 15 years and above ... by language" in the sense
+# of literacy (its note: "Literacy means here being able to read and write"),
+# in combinations ("Kinyarwanda and English"), by province.
+LANGUAGE = ("The 2022 census published literacy by language -- the languages people aged 15 "
+            "and over can read and write -- and not the languages they speak, so no language "
+            "composition is given.")
+NATIONALITY_NOTE = ("The 2022 census's count of the resident population by nationality, "
+                    "Rwandan or foreign; the census asks no ethnicity.")
 LICENCE = "National Institute of Statistics of Rwanda publication (reuse with attribution)"
 PROVINCES = {"City of Kigali": ["Nyarugenge", "Gasabo", "Kicukiro"],
              "Southern Province": ["Nyanza", "Gisagara", "Nyaruguru", "Huye", "Nyamagabe",
@@ -188,6 +209,40 @@ def read_religion(text: str, district: str) -> dict[str, int] | None:
     return None
 
 
+NATIONALITY_TABLE = re.compile(r"nationality\s+and\s+sector", re.I)
+
+
+def read_nationality(text: str, district: str) -> dict[str, int] | None:
+    """The district's own row of its profile's Table 2.1 -- everyone, Rwandans,
+    foreigners, then 100 and the two shares -- as {"Rwandan": n, "Foreign
+    nationals": n, "_total": n}; None if no such row follows the table's title
+    or its figures do not agree with each other.
+
+    The title also appears in the list of tables, with no rows after it; the
+    religion table's own district row has three counts too (everyone, urban,
+    rural) but then 100 three times, not the two shares.
+    """
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    number = r"(\d[\d,]*)"
+    share = r"(\d{1,2}(?:\.\d+)?)"
+    row = re.compile(rf"^{re.escape(district)}\s+district\s+{number}\s+{number}\s+{number}"
+                     rf"\s+100(?:\.0+)?\s+{share}\s+{share}\s*$", re.I)
+    for i, line in enumerate(lines):
+        if not NATIONALITY_TABLE.search(line):
+            continue
+        for candidate in lines[i + 1:i + 12]:
+            hit = row.match(candidate)
+            if not hit:
+                continue
+            total, own, foreign = (int(hit.group(k).replace(",", "")) for k in (1, 2, 3))
+            if own + foreign != total or total <= 0 \
+                    or abs(100 * own / total - float(hit.group(4))) > 0.01 \
+                    or abs(100 * foreign / total - float(hit.group(5))) > 0.01:
+                return None
+            return {"Rwandan": own, "Foreign nationals": foreign, "_total": total}
+    return None
+
+
 def profile_text(name: str) -> tuple[str, str] | None:
     """A district profile's text and URL; the files are named in more than one case."""
     from pypdf import PdfReader                    # noqa: PLC0415
@@ -206,9 +261,11 @@ def profile_text(name: str) -> tuple[str, str] | None:
     return None
 
 
-def religions(table1: dict[str, dict[str, int]]) -> tuple[dict[str, dict[str, int]], dict[str, str]]:
-    """{district: counts} for the profiles that read whole, and {district: url}."""
-    out, urls = {}, {}
+def religions(table1: dict[str, dict[str, int]]
+              ) -> tuple[dict[str, dict[str, int]], dict[str, dict[str, int]], dict[str, str]]:
+    """{district: religion counts} and {district: nationality counts} for the
+    profiles whose tables read whole, and {district: url}."""
+    out, nations, urls = {}, {}, {}
     for districts in PROVINCES.values():
         for d in districts:
             got = profile_text(d)
@@ -216,6 +273,12 @@ def religions(table1: dict[str, dict[str, int]]) -> tuple[dict[str, dict[str, in
                 log(f"  {d}: no profile found")
                 continue
             text, url = got
+            urls[d] = url
+            nationality = read_nationality(text, d)
+            if nationality is None or nationality.pop("_total") != table1[d]["total"]:
+                log(f"  {d}: no nationality row agreeing with Table 1 in its profile")
+            else:
+                nations[d] = nationality
             counts = read_religion(text, d)
             if counts is None:
                 log(f"  {d}: no religion table in its profile")
@@ -226,8 +289,8 @@ def religions(table1: dict[str, dict[str, int]]) -> tuple[dict[str, dict[str, in
                 log(f"  {d}: religions make {made:,} of {total:,} (Table 1: "
                     f"{table1[d]['total']:,}), {len(counts)} rows; not written")
                 continue
-            out[d], urls[d] = counts, url
-    return out, urls
+            out[d] = counts
+    return out, nations, urls
 
 
 def fields(name: str, table1: dict[str, dict[str, int]], medians: dict[str, float],
@@ -241,9 +304,12 @@ def fields(name: str, table1: dict[str, dict[str, int]], medians: dict[str, floa
         "median_age": measure(medians[name], unit="years", year=YEAR, source=AGE_SOURCE),
         "median_age_note": ("The 2022 census's median age of the resident population, as the "
                             "Institute prints it, in whole years."),
+        "language": gap(NOT_AVAILABLE, LANGUAGE),
         "sources": [{"field": "population/sex_ratio", "name": SOURCE, "url": MAIN_PAGE,
                      "year": YEAR, "license": LICENCE},
                     {"field": "median_age", "name": AGE_SOURCE, "url": THEMATIC_PAGE,
+                     "year": YEAR, "license": LICENCE},
+                    {"field": "language", "name": LANGUAGE_SOURCE, "url": MAIN_PAGE,
                      "year": YEAR, "license": LICENCE}]}
     if religion:
         rows = shares(religion, total=row["total"])
@@ -262,8 +328,10 @@ def fields(name: str, table1: dict[str, dict[str, int]], medians: dict[str, floa
 
 def build(table1: dict[str, dict[str, int]], table6: dict[str, dict[str, int]],
           medians: dict[str, float], faiths: dict[str, dict[str, int]], urls: dict[str, str],
-          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          nations: dict[str, dict[str, int]] | None = None) -> list[dict[str, Any]]:
     records = []
+    nations = dict(nations or {})
     shapes1 = {s["name"].strip(): s for s in admin1}
     shapes2 = {s["name"].strip(): s for s in admin2}
     for province, districts in PROVINCES.items():
@@ -273,13 +341,20 @@ def build(table1: dict[str, dict[str, int]], table6: dict[str, dict[str, int]],
         summed = None
         if all(d in faiths for d in districts):
             summed = {g: sum(faiths[d][g] for d in districts) for g in faiths[districts[0]]}
+        # The profiles' nationality rows stand only where the province's districts
+        # make Table 6's Rwandans and foreigners between them; a profile misread
+        # is a whole province's worth of doubt.
+        if all(d in nations for d in districts):
+            made = {g: sum(nations[d][g] for d in districts) for g in table6[province]}
+            if made != table6[province]:
+                log(f"  {province}: its districts' profiles make {made}, not Table 6's "
+                    f"{table6[province]}; no district nationality written")
+                for d in districts:
+                    nations.pop(d, None)
         extra = fields(province, table1, medians, summed, None, "province")
         nationality = shares(table6[province], total=table1[province]["total"])
         extra.update(ethnicity=nationality, ethnicity_basis="nationality",
-                     ethnicity_year=dated(nationality, YEAR),
-                     ethnicity_note=("The 2022 census's count of the resident population by "
-                                     "nationality, Rwandan or foreign; the census asks no "
-                                     "ethnicity."))
+                     ethnicity_year=dated(nationality, YEAR), ethnicity_note=NATIONALITY_NOTE)
         extra["sources"].append({"field": "ethnicity", "name": NATIONALITY_SOURCE,
                                  "url": MAIN_PAGE, "year": YEAR, "license": LICENCE})
         records.append(record(f"RWA-2022-{shape['id']}", province, level="admin1", parent="RWA",
@@ -288,10 +363,19 @@ def build(table1: dict[str, dict[str, int]], table6: dict[str, dict[str, int]],
             shape2 = shapes2.get(d)
             if shape2 is None:
                 raise SystemExit(f"rwanda_census: no polygon for {d}")
+            extra = fields(d, table1, medians, faiths.get(d), urls.get(d), "district")
+            if d in nations:
+                rows = shares(nations[d], total=table1[d]["total"])
+                extra.update(ethnicity=rows, ethnicity_basis="nationality",
+                             ethnicity_year=dated(rows, YEAR), ethnicity_note=NATIONALITY_NOTE)
+                extra["sources"].append({"field": "ethnicity", "name": PROFILE_NATIONALITY_SOURCE,
+                                         "url": urls.get(d) or MAIN_PAGE, "year": YEAR,
+                                         "license": LICENCE})
+            else:
+                extra["ethnicity"] = gap(NOT_AVAILABLE, "Rwanda's 2022 census asks no ethnicity.")
             records.append(record(f"RWA-2022-{shape2['id']}", d, level="admin2", parent="RWA",
                                   country="RWA", match_by="shape_id", shape_id=shape2["id"],
-                                  **fields(d, table1, medians, faiths.get(d), urls.get(d),
-                                           "district")))
+                                  **extra))
     return records
 
 
@@ -313,16 +397,19 @@ def main() -> int:
     medians = read_medians(cells(thematic, "Table 4.3"), cells(thematic, "Table 4.4"))
     log(f"  Table 1: 5 provinces and 30 districts making {NATIONAL:,}; Table 6: nationality "
         f"by province; Tables 4.3 and 4.4: {len(medians)} medians")
-    faiths, urls = religions(table1)
-    log(f"  religion read whole for {len(faiths)} of 30 districts")
+    faiths, nations, urls = religions(table1)
+    log(f"  religion read whole for {len(faiths)} of 30 districts, nationality for "
+        f"{len(nations)}")
     admin1 = json.loads((SITE / "admin1" / "RWA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "RWA.units.json").read_text())
-    records = build(table1, table6, medians, faiths, urls, admin1, admin2)
+    records = build(table1, table6, medians, faiths, urls, admin1, admin2, nations)
     for r in records:
         lead = r["religion"][0]["group"] if isinstance(r.get("religion"), list) else "-"
+        foreign = next((g["count"] for g in r["ethnicity"] if g["group"] == "Foreign nationals"),
+                       None) if isinstance(r.get("ethnicity"), list) else None
         log(f"  {r['level']} {r['name']}: {r['population']['value']:,}, median "
             f"{r['median_age']['value']}, sex ratio {r['sex_ratio']['value']}, religion led by "
-            f"{lead}")
+            f"{lead}, foreign nationals {foreign if foreign is not None else '-'}")
     write_json(PROCESSED / OUT, records)
     return 0
 
