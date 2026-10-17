@@ -197,21 +197,26 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
         if len(found) > SLIPS * max(of, 1):
             raise SystemExit(f"lesotho_census: {len(found)} of {of:,} {what}")
     districts: dict[str, int] = defaultdict(int)
+    spellings: dict[str, set[str]] = defaultdict(set)
     for (d, _), c in councils.items():
-        districts[d] += c["total"]
+        districts[key(d)] += c["total"]
+        spellings[key(d)].add(d)
+    for k, n in sorted(districts.items()):
+        log(f"  district {sorted(spellings[k])}: {n:,} in the list, "
+            f"{DISTRICT_TOTALS.get(k)} in the census's district table")
     national = sum(districts.values())
     log(f"  {villages:,} villages in {len(councils)} councils; {areas['with']:,} enumeration "
         f"areas with a Total line, {areas['without']} without; {national:,} people")
     if not NATIONAL * (1 - UNPLACED) <= national <= NATIONAL * 1.001:
         raise SystemExit(f"lesotho_census: the list makes {national:,}, against the census's "
                          f"{NATIONAL:,}")
-    for d, n in districts.items():
-        want = DISTRICT_TOTALS.get(key(d))
+    for k, n in districts.items():
+        want = DISTRICT_TOTALS.get(k)
         if want is None or abs(n - want) > UNPLACED * want:
-            raise SystemExit(f"lesotho_census: {d} makes {n:,} in the list, against the "
-                             f"census's {want}")
-        log(f"  district {d}: {n:,} in the list, {want:,} in the census's district table")
-    return {"councils": councils, "districts": dict(districts)}
+            raise SystemExit(f"lesotho_census: {sorted(spellings[k])} make {n:,} in the list, "
+                             f"against the census's {want}")
+    names = {k: sorted(v)[0] for k, v in spellings.items()}
+    return {"councils": councils, "districts": {names[k]: n for k, n in districts.items()}}
 
 
 def bind(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]

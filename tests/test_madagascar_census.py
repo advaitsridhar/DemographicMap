@@ -92,13 +92,21 @@ T6_LEFT = "7 333 914 7 741 875 15 075 789 6 425 945 6 805 588 13 231 533 4 677 3
 T6_RIGHT = "4 859 690 9 537 070 1 296 239 1 317 246 2 613 485 560 198 584 778 1 144 976"
 
 
+T4_LEFT = ("1 703 839 1 661 622 3 365 461 3 242 739 3 299 794 6 542 533 4 360 373 4 543 807 "
+           "8 904 180 907 969")
+T4_RIGHT = ("936 287 1 844 256 1 538 900 1 638 172 3 177 072 2 656 534 2 882 185 5 538 719 "
+            "6 112 843 6 502 966 12 615 809")
+
+
 def age_pages():
     names = ["MADAGASCAR"] + list(mg.REGION_NAMES)
+    t4 = "Tableau 4. Effectif\n10-14 ans\n" + "\n".join(f"{n} {T4_LEFT}" for n in names)
+    t4r = "15- 17 ans\n" + "\n".join(T4_RIGHT for _ in names) + "\nDECEMBRE 2020 13"
     t5 = "Tableau 5. Effectif\n18-24 ans 19-24 ans\n" + "\n".join(f"{n} {T5_LEFT}" for n in names)
     t5r = "25- 49 ans 50- 59 ans\n" + "\n".join(T5_RIGHT for _ in names) + "\nDECEMBRE 2020 15"
     t6 = "Tableau 6. Effectif\n15 ans et plus\n" + "\n".join(f"{n} {T6_LEFT}" for n in names)
     t6r = "25 ans et plus\n" + "\n".join(T6_RIGHT for _ in names) + "\nDECEMBRE 2020 17"
-    return ["Tableau 4. x", "y", t5, t5r, t6, t6r]
+    return [t4, t4r, t5, t5r, t6, t6r]
 
 
 class MadagascarAgesTest(unittest.TestCase):
@@ -112,6 +120,10 @@ class MadagascarAgesTest(unittest.TestCase):
         self.assertEqual(ages["MADAGASCAR"]["19"], 9_537_070 + 2_902_497)
         self.assertEqual(mg.median_from(25_674_196, ages["MADAGASCAR"]), 18.5)
         self.assertIn("Haute Matsiatra", ages)
+        self.assertEqual(ages["MADAGASCAR"]["10"], 15_075_789 + 3_365_461)
+        # A region younger than 15 at the median is read between 10 and 15.
+        young = {"10": 600, "15": 430, "18": 380, "19": 350, "20": 330, "25": 260}
+        self.assertEqual(mg.median_from(900, young), 14.4)
 
     def test_a_median_outside_the_bands_is_refused(self):
         with self.assertRaises(SystemExit):

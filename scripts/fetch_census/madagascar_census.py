@@ -22,9 +22,10 @@ on the map; the arrondissements say so instead of carrying a figure.
 
 **Median ages.** The same volume counts each region's people in the age bands
 health programmes use: Tableau 6 those of 15, 18 and 25 and over, Tableau 5
-those of 18-24, 19-24 and 20-24. Together they give how many are under 15,
-18, 19, 20 and 25, and the median is interpolated within the band that holds
-the middle person -- for the country, between 18 and 19, which INSTAT's own
+those of 18-24, 19-24 and 20-24, Tableau 4 those of 10-14 and 15-17. Together
+they give how many are under 10, 15, 18, 19, 20 and 25, and the median is
+interpolated within the band that holds the middle person (Androy's, under 15,
+between 10 and 15) -- for the country, between 18 and 19, which INSTAT's own
 Tome 1 (Tableau 14) gives as a median of 18. Each table's left page carries the
 region names and the first columns, its right page the rest, line for line;
 a line's digit groups are read as consecutive (men, women, both) triples, the
@@ -108,11 +109,12 @@ def reading(counts: str, ratio: str) -> tuple[int, int, int]:
     return options[0]
 
 
-AGE_SOURCE = ("INSTAT Madagascar, Résultats globaux du RGPH-3 de 2018, Tome 2, Tableaux 5 and 6 "
+AGE_SOURCE = ("INSTAT Madagascar, Résultats globaux du RGPH-3 de 2018, Tome 2, Tableaux 4 to 6 "
               "(population of the health programmes' age groups by region)")
 AGE_NOTE_DISTRICT = ("INSTAT's RGPH-3 Résultats globaux give ages by region (Tome 2, Tableaux 2 "
                      "to 6), not by district, so no median age is published for this district.")
 # Tableau 5's columns (both sexes taken), and Tableau 6's.
+T4 = ("10-14", "10-19", "10-24", "15-17", "15-19", "15-24", "15-49")
 T5 = ("18-24", "19-24", "20-24", "25-49", "50-59")
 T6 = ("15+", "18+", "25+", "49+", "60+")
 REGION_NAMES = ("Analamanga", "Vakinankaratra", "Itasy", "Bongolava", "Haute Matsiatra",
@@ -187,17 +189,18 @@ def page_after(pages: list[str], title: str) -> tuple[str, str]:
 
 
 def region_ages(pages: list[str]) -> dict[str, dict[str, int]]:
-    """{region name: people of 15, 18, 19, 20 and 25 and over}, checked."""
+    """{region name: people of 10, 15, 18, 19, 20 and 25 and over}, checked."""
+    t4 = two_page_table(*page_after(pages, "Tableau 4."), T4)
     t5 = two_page_table(*page_after(pages, "Tableau 5."), T5)
     t6 = two_page_table(*page_after(pages, "Tableau 6."), T6)
     out: dict[str, dict[str, int]] = {}
     for name in ("MADAGASCAR",) + REGION_NAMES:
-        a, b = t5[name], t6[name]
-        if b["18+"] - b["25+"] != a["18-24"]:
-            raise SystemExit(f"madagascar_census: {name}: 18 and over less 25 and over is "
-                             f"{b['18+'] - b['25+']:,}, Tableau 5's 18-24 {a['18-24']:,}")
-        out[name] = {"15": b["15+"], "18": b["18+"], "19": b["25+"] + a["19-24"],
-                     "20": b["25+"] + a["20-24"], "25": b["25+"]}
+        y, a, b = t4[name], t5[name], t6[name]
+        if b["18+"] - b["25+"] != a["18-24"] or b["15+"] - b["18+"] != y["15-17"]:
+            raise SystemExit(f"madagascar_census: {name}: the bands of Tableaux 4, 5 and 6 "
+                             f"disagree ({b}, {a['18-24']:,}, {y['15-17']:,})")
+        out[name] = {"10": b["15+"] + y["10-14"], "15": b["15+"], "18": b["18+"],
+                     "19": b["25+"] + a["19-24"], "20": b["25+"] + a["20-24"], "25": b["25+"]}
     return out
 
 
@@ -348,8 +351,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                                             year=YEAR, source=AGE_SOURCE),
                       "median_age_note": (
                           "Interpolated within the age band that holds the middle person, "
-                          "from the 2018 census's counts of the people under 15, 18, 19, 20 "
-                          "and 25 (INSTAT, RGPH-3 Résultats globaux, Tome 2, Tableaux 5 and 6).")}
+                          "from the 2018 census's counts of the people under 10, 15, 18, 19, "
+                          "20 and 25 (INSTAT, RGPH-3 Résultats globaux, Tome 2, Tableaux 4 to "
+                          "6).")}
         out.append(record(f"MDG-2018-region-{key(parent['name'])}", parent["name"],
                           level="admin1", parent="MDG", country="MDG", match_by="shape_id",
                           shape_id=parent["id"], sources=age_sources if median else sources,
