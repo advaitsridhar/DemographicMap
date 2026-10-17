@@ -102,6 +102,51 @@ def sample(geometry: dict[str, Any], wanted: int) -> tuple[list[list[float]], fl
     return points, round(area, 1)
 
 
+def hdx_features(dataset: str, level: int) -> list[dict[str, Any]]:
+    """The features of one level of an HDX Common Operational Dataset of boundaries.
+
+    The geojson archive holds one file per level, named for it ("ken_admin2",
+    "eth_admbnda_adm3_..."); the one whose name carries the level is read.
+    """
+    import io                                       # noqa: PLC0415
+    import re                                       # noqa: PLC0415
+    import zipfile                                  # noqa: PLC0415
+
+    from .uscb import package                       # noqa: PLC0415
+    resources = [r for r in package(dataset).get("resources", [])
+                 if str(r.get("name") or r.get("url") or "").lower().endswith("geojson.zip")]
+    if not resources:
+        raise SystemExit(f"uganda_census: {dataset} has no geojson archive")
+    url = resources[0]["url"]
+    blob = http_get(url, binary=True, cache=False, timeout=900)
+    with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+        names = [n for n in zf.namelist()
+                 if re.search(rf"adm(?:in)?_?{level}(?!\d)", n.lower())
+                 and n.lower().endswith(("json", "geojson"))]
+        log(f"  {url}: {len(blob):,} bytes; members {zf.namelist()}; level {level}: {names}")
+        if len(names) != 1:
+            raise SystemExit(f"uganda_census: {len(names)} files for level {level} in {url}")
+        data = json.loads(zf.read(names[0]).decode("utf-8-sig"))
+    return data.get("features") or []
+
+
+def write_cod_points(dataset: str, level: int, out: str, wanted: int = 40) -> int:
+    """Points sampled over every unit of one COD level, with the unit's names and codes."""
+    rows = []
+    for feature in hdx_features(dataset, level):
+        props = feature.get("properties") or {}
+        keep = {k: v for k, v in props.items()
+                if any(w in k.lower() for w in ("name", "pcode", "code")) and v not in (None, "")}
+        if not feature.get("geometry"):
+            continue
+        points, area = sample(feature["geometry"], wanted)
+        rows.append({"props": keep, "area_km2": area, "points": points})
+    log(f"  {dataset} level {level}: {len(rows)} units, "
+        f"{sum(len(r['points']) for r in rows):,} points")
+    write_json(PROCESSED / out, rows)
+    return 0
+
+
 def write_points() -> int:
     data = fetch_json(f"{API}/get_geospatial_data.php?level=county")
     features = (data.get("geojson") or data).get("features") or []

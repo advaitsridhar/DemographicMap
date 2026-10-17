@@ -324,7 +324,13 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
-    ap.parse_args()
+    ap.add_argument("--points", action="store_true",
+                    help="write points sampled over OCHA's wereda outlines, for placing the "
+                         "projection's weredas in the zones drawn")
+    args = ap.parse_args()
+    if args.points:
+        from .uganda_census import write_cod_points  # noqa: PLC0415
+        return write_cod_points("cod-ab-eth", 3, "ethiopia_wereda_points.json", 30)
     import openpyxl                                 # noqa: PLC0415
     url = uscb.workbook_url(uscb.ETHIOPIA.dataset)
     blob = http_get(url, binary=True, cache=False, timeout=300)
