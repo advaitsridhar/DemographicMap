@@ -1,92 +1,15 @@
-  read https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx: 1,759,157 bytes, sha256 17fb2f59b82d6ab4490078427f6779ca1284250a1035a854d31e6bb109e9fdee
-  13 first-order areas and 93 zones, making 73,750,932, every row's groups and sexes making its total; listed without a count: ['OROMĪYA, FINFINNE ZURIA SPECIAL ZONE']
-  bahirdarspecialwereda: counted apart and placed in no polygon -- the city lies on the line between West Gojam and North Gonder
-  maokomospecialwereda: counted apart and placed in no polygon -- its land lies across the line between Asosa and West Wellega
-  zones of the workbook on no polygon: []
-  admin1 Addis Ababa: 2,739,551, median 24.0, sex ratio 910
-  admin1 Afar: 1,390,273, median 17.1, sex ratio 1260
-  admin1 Amhara: 17,221,976, median 18.0, sex ratio 1007
-  admin1 Beneshangul Gumu: 784,345, median 17.0, sex ratio 1034
-  admin1 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin1 Gambela: 307,096, median 18.2, sex ratio 1085
-  admin1 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin1 Oromia: 26,993,933, median 16.0, sex ratio 1015
-  admin1 SNNPR: 14,929,548, median 15.9, sex ratio 990
-  admin1 Somali: 4,445,219, median 17.1, sex ratio 1253
-  admin1 Tigray: 4,316,988, median 17.7, sex ratio 971
-  admin2 Afder: 570,629, median 15.9, sex ratio 1330
-  admin2 Agnuak: 135,242, median 18.8, sex ratio 1032
-  admin2 Alaba: 232,325, median 16.7, sex ratio 1020
-  admin2 Arsi: 2,637,657, median 15.4, sex ratio 1007
-  admin2 Asosa: 310,822, median 17.5, sex ratio 1046
-  admin2 Awi/Agew: 982,942, median 17.0, sex ratio 1002
-  admin2 Bale: 1,402,492, median 15.2, sex ratio 1036
-  admin2 Basketo: 56,689, median 14.8, sex ratio 1013
-  admin2 Bench Maji: 652,531, median 15.6, sex ratio 982
-  admin2 Borena: 962,489, median 14.5, sex ratio 1024
-  admin2 Central: 1,245,824, median 17.6, sex ratio 971
-  admin2 Dawro: 489,577, median 14.3, sex ratio 1037
-  admin2 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin2 Doolo: 306,488, median 17.6, sex ratio 1342
-  admin2 East Gojam: 2,153,937, median 17.8, sex ratio 981
-  admin2 East Harerge: 2,723,850, median 15.4, sex ratio 1032
-  admin2 East Shewa: 1,576,554, median 18.8, sex ratio 1044
-  admin2 East Wellega: 1,213,503, median 16.9, sex ratio 999
-  admin2 Eastern: 755,343, median 17.2, sex ratio 909
-  admin2 Fafan: 967,652, median 17.8, sex ratio 1193
-  admin2 Gamo Gofa: 1,593,104, median 16.4, sex ratio 992
-  admin2 Gedio: 847,434, median 15.0, sex ratio 1005
-  admin2 Guji: 1,389,800, median 13.8, sex ratio 1022
-  admin2 Gurage: 1,279,646, median 17.7, sex ratio 946
-  admin2 Hadiya: 1,231,196, median 16.7, sex ratio 988
-  admin2 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin2 Horo Guduru: 570,040, median 16.5, sex ratio 1003
-  admin2 Ilubabor: 1,271,609, median 16.4, sex ratio 1004
-  admin2 Jarar: 478,168, median 18.3, sex ratio 1275
-  admin2 Jimma: 2,607,115, median 16.7, sex ratio 1012
-  admin2 KT: 680,837, median 16.6, sex ratio 978
-  admin2 Keffa: 874,716, median 15.6, sex ratio 975
-  admin2 Kelem Wellega: 797,666, median 16.7, sex ratio 1016
-  admin2 Kemashi: 101,543, median 16.7, sex ratio 1061
-  admin2 Konta: 90,846, median 15.2, sex ratio 968
-  admin2 Korahe: 312,713, median 18.8, sex ratio 1320
-  admin2 Liben: 539,821, median 14.2, sex ratio 1226
-  admin2 Majang: 59,248, median 19.1, sex ratio 1066
-  admin2 Metekel: 321,919, median 16.9, sex ratio 1018
-  admin2 Nogob: 348,409, median 17.9, sex ratio 1295
-  admin2 North Gonder: 2,929,628, median 17.5, sex ratio 1029
-  admin2 North Shewa(R3): 1,837,490, median 18.8, sex ratio 1022
-  admin2 North Shewa(R4): 1,431,305, median 17.6, sex ratio 1005
-  admin2 North Western: 736,805, median 17.5, sex ratio 999
-  admin2 North Wollo: 1,500,303, median 18.7, sex ratio 1007
-  admin2 Nuer: 112,606, median 17.1, sex ratio 1163
-  admin2 Oromia: 457,278, median 17.7, sex ratio 989
-  admin2 Region 14: 2,739,551, median 24.0, sex ratio 910
-  admin2 Segen Peoples': 582,757, median 15.1, sex ratio 963
-  admin2 Selti: 750,398, median 16.1, sex ratio 943
-  admin2 Shabelle: 464,253, median 16.5, sex ratio 1257
-  admin2 Sheka: 199,314, median 18.0, sex ratio 1029
-  admin2 Sidama: 3,212,944, median 15.2, sex ratio 1023
-  admin2 Siti: 457,086, median 17.4, sex ratio 1169
-  admin2 South Gonder: 2,051,738, median 17.7, sex ratio 1030
-  admin2 South Omo: 573,435, median 15.2, sex ratio 999
-  admin2 South West Shewa: 1,101,129, median 17.2, sex ratio 1021
-  admin2 South Wollo: 2,518,862, median 19.1, sex ratio 983
-  admin2 Southern: 1,222,418, median 18.3, sex ratio 971
-  admin2 Special Woreda: 34,998, median 16.6, sex ratio 1024
-  admin2 Wag Himra: 426,213, median 17.3, sex ratio 1007
-  admin2 West Arsi: 1,964,038, median 14.5, sex ratio 983
-  admin2 West Gojam: 2,106,596, median 17.4, sex ratio 1009
-  admin2 West Harerge: 1,871,706, median 15.1, sex ratio 1050
-  admin2 West Shewa: 2,122,565, median 16.5, sex ratio 998
-  admin2 West Wellega: 1,350,415, median 16.8, sex ratio 989
-  admin2 Western: 356,598, median 18.1, sex ratio 1049
-  admin2 Wolayita: 1,501,112, median 15.9, sex ratio 971
-  admin2 Yem: 80,687, median 17.1, sex ratio 1011
-  admin2 Zone 1: 410,790, median 17.7, sex ratio 1207
-  admin2 Zone 2: 350,111, median 15.7, sex ratio 1263
-  admin2 Zone 3: 198,751, median 18.4, sex ratio 1214
-  admin2 Zone 4: 246,822, median 17.1, sex ratio 1327
-  admin2 Zone 5: 183,799, median 17.5, sex ratio 1342
-  11 of 11 regions and 74 of 74 zones written
-  wrote data/processed/ethiopia_census.json (171 kB)
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uganda_census.py", line 127, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uganda_census.py", line 122, in main
+    return write_points()
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/uganda_census.py", line 109, in write_points
+    f"{sum(c['total'] or 0 for c in out):,} people")
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
