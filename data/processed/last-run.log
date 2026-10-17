@@ -1,37 +1,41 @@
-  read https://web.archive.org/web/20260106063554id_/https://www.statsbots.org.bw/sites/default/files/publications/Botswana%20Population%20%26%20Housing%20Census%202022%20Analytical%20Report%20Volume%201.pdf: 6,027,082 bytes, sha256 303ceb2ea55197bfaae684a8013722b80817b20f1bcabd23657fd22bbf73e631
-  admin1 Central District: 706129; The 2022 census's counts for Central Serowe/Palapye, Central Mahalapye, Central Bobonong, Central Boteti, Central Tutume, Selibe Phikwe, Orapa and Sowa added together.
-  admin1 Chobe District: 28742; The 2022 census's count for Chobe.
-  admin1 Ghanzi District: 56565; The 2022 census's counts for Ghanzi and CKGR added together.
-  admin1 Kgalagadi District: 58858; The 2022 census's counts for Kgalagadi South and Kgalagadi North added together.
-  admin1 Kgatleng District: 121873; The 2022 census's count for Kgatleng.
-  admin1 Kweneng District: 387983; The 2022 census's counts for Kweneng East and Kweneng West added together.
-  admin1 North-East District: 172769; The 2022 census's counts for North East and Francistown added together.
-  admin1 North-West District: 198436; The 2022 census's counts for Ngamiland East, Ngamiland West and Delta added together.
-  admin1 South-East District: 387546; The 2022 census's counts for South East, Gaborone and Lobatse added together.
-  admin1 Southern District: 240708; The 2022 census's counts for Southern, Barolong, Ngwaketse West and Jwaneng added together.
-  admin2 Barolong: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Bobonong: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Chobe: 28742; The 2022 census's count for Chobe.
-  admin2 Gaborone: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Gemsbok: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Ghanzi: 56565; The 2022 census's counts for Ghanzi and CKGR added together.
-  admin2 Hukunsti: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Kgatleng: 121873; The 2022 census's count for Kgatleng.
-  admin2 Kweneng North: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Kweneng South: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Lethlakane: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Machaneng: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Mahalapye: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Masungu: 172769; The 2022 census's counts for North East and Francistown added together.
-  admin2 Ngamiland East: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Ngamiland West: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Ngwaketse Central: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Ngwaketse North: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Ngwaketse South: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Palapye: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Serowe: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 South East: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Tshabong: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Tuli: None; The 2022 census counts Botswana by 28 census districts (Stat
-  admin2 Tutume: None; The 2022 census counts Botswana by 28 census districts (Stat
-  wrote data/processed/botswana_census.json (57 kB)
+== xlsx https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx . 12 16
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/f026a982-b530-4e49-97a3-f54bbc5bad5d/tchad_populationdutchad_20240102.xlsx?AWSAccessKeyId=ASIAXYC32WNA4K3CVM66&Signature=IU3yZMIGOCBV5sIRPzjByGbEk1Y%3D&x-amz-security-token=FwoGZXIvYXdzEE0aDM3QO218TwKNm9wa4CLBAVtZFbxkLR7VfxdAGUL3%2FZD83FLkpQlT0pf8hVlA19f2ksx4KwPtQVpgKJEX7RoBULEpSbYE%2B0KGYoPFtUsCoo3XCXoQtvdzCfTuZfdIhEeS5fjwZg0YjSnM3DKUUZFtUI1e6MdOOQ8CUEpqGuGxVCJVp3kpKI%2FnA17UK3edG4ui7JAiYQaNLVuiBfchIKE5l6xwaFzjHONYMn9u6BWPWYvKN8MLbymuWftCj0Vdr5KTUPS%2BwlM4n%2Bc8dwpdpIwrd4QohZvP1gYyLeX7%2BfWzFKy%2Bq1YTqGgB%2FUi6a8YchHW4ERyrKF6nu7kqgXroW26AsL1gPPFRkw%3D%3D&Expires=1792267371 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 14,268 bytes
+  sheet 'Feuil1' 73x5
+    ADM1_NAME | ADM1_Pcode | ADM2_NAME | ADM2_Pcode | Population_Project
+    Batha | TD01 | Batha Ouest | TD0101 | 319035.77441063547
+    Batha | TD01 | Batha Est | TD0102 | 290993.5319541022
+    Batha | TD01 | Fitri | TD0103 | 178148.9991526056
+    Borkou | TD02 | Borkou | TD0201 | 115288.05231571502
+    Borkou | TD02 | Borkou Yala | TD0202 | 42516.55028637378
+    Chari-Baguirmi | TD03 | Baguirmi | TD0301 | 350098.93653028586
+    Chari-Baguirmi | TD03 | Chari | TD0302 | 305325.1734802423
+    Chari-Baguirmi | TD03 | Loug-Chari | TD0303 | 310162.7815873737
+    Guera | TD04 | Guéra | TD0401 | 232703.52650286985
+    Guera | TD04 | Abtouyour | TD0402 | 225937.57214465627
+    Guera | TD04 | Barh-Signaka | TD0403 | 139762.60836228257
+== csv https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/fb3d793e-57c5-4fb9-b361-8d4222fd254e/download/tcd_admpop_adm1_2023.csv 30
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/fb3d793e-57c5-4fb9-b361-8d4222fd254e/tcd_admpop_adm1_2023.csv?AWSAccessKeyId=ASIAXYC32WNA4K3CVM66&Signature=bLHEaCLh9V2PHHwkTq%2B9cy2bT%2BM%3D&x-amz-security-token=FwoGZXIvYXdzEE0aDM3QO218TwKNm9wa4CLBAVtZFbxkLR7VfxdAGUL3%2FZD83FLkpQlT0pf8hVlA19f2ksx4KwPtQVpgKJEX7RoBULEpSbYE%2B0KGYoPFtUsCoo3XCXoQtvdzCfTuZfdIhEeS5fjwZg0YjSnM3DKUUZFtUI1e6MdOOQ8CUEpqGuGxVCJVp3kpKI%2FnA17UK3edG4ui7JAiYQaNLVuiBfchIKE5l6xwaFzjHONYMn9u6BWPWYvKN8MLbymuWftCj0Vdr5KTUPS%2BwlM4n%2Bc8dwpdpIwrd4QohZvP1gYyLeX7%2BfWzFKy%2Bq1YTqGgB%2FUi6a8YchHW4ERyrKF6nu7kqgXroW26AsL1gPPFRkw%3D%3D&Expires=1792267372 text/csv 8,425 bytes
+    ﻿year | ISO3 | ADM0_NAME | ADM0_FR | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49
+    2023 | TCD | Chad | Tchad | TD | Barh-El-Gazel | TD19 | 197133 | 215675 | 412808 | 39107 | 31748 | 21839 | 21090 | 18023 | 14474 | 11007 | 8881 | 7964 | 6829
+    2023 | TCD | Chad | Tchad | TD | Batha | TD01 | 388772 | 374290 | 763062 | 69240 | 56875 | 65852 | 49611 | 30159 | 22193 | 20799 | 18151 | 14576 | 11748
+    2023 | TCD | Chad | Tchad | TD | Borkou | TD02 | 76005 | 83348 | 159353 | 15140 | 12826 | 7731 | 7447 | 6460 | 5334 | 4592 | 3919 | 3333 | 2774
+    2023 | TCD | Chad | Tchad | TD | Chari-Baguirmi | TD03 | 460253 | 457831 | 918084 | 88370 | 71760 | 61616 | 54817 | 39438 | 29905 | 26594 | 22458 | 17466 | 13789
+    2023 | TCD | Chad | Tchad | TD | Ennedi Est | TD20 | 81709 | 93096 | 174805 | 16558 | 13895 | 7955 | 7775 | 7353 | 6248 | 4941 | 4030 | 3412 | 2859
+    2023 | TCD | Chad | Tchad | TD | Ennedi Ouest | TD23 | 46334 | 52792 | 99126 | 9389 | 7879 | 4511 | 4409 | 4169 | 3542 | 2802 | 2286 | 1935 | 1623
+    2023 | TCD | Chad | Tchad | TD | Guéra | TD04 | 362115 | 347778 | 709893 | 42459 | 36372 | 139397 | 52859 | 14856 | 15421 | 12927 | 11028 | 9383 | 7805
+    2023 | TCD | Chad | Tchad | TD | Hadjer-Lamis | TD05 | 452762 | 455365 | 908127 | 86279 | 70530 | 60213 | 54686 | 38965 | 29120 | 26124 | 22156 | 17292 | 13654
+    2023 | TCD | Chad | Tchad | TD | Kanem | TD06 | 278068 | 272024 | 550092 | 54527 | 45095 | 30466 | 29121 | 24382 | 19569 | 15730 | 13106 | 11774 | 10026
+    2023 | TCD | Chad | Tchad | TD | Lac | TD07 | 349694 | 355668 | 705362 | 68017 | 55846 | 43883 | 40203 | 29953 | 23030 | 20605 | 17528 | 13897 | 11039
+    2023 | TCD | Chad | Tchad | TD | Logone Occidental | TD08 | 563418 | 551826 | 1115244 | 108918 | 89255 | 75185 | 63843 | 47500 | 37623 | 33648 | 28261 | 20940 | 16202
+    2023 | TCD | Chad | Tchad | TD | Logone Oriental | TD09 | 625625 | 614113 | 1239738 | 119303 | 98562 | 87010 | 73934 | 51345 | 39185 | 37126 | 32100 | 24389 | 18862
+    2023 | TCD | Chad | Tchad | TD | Mandoul | TD10 | 517299 | 508281 | 1025580 | 97034 | 81290 | 69623 | 61278 | 41329 | 30546 | 30070 | 26761 | 21394 | 17135
+    2023 | TCD | Chad | Tchad | TD | Mayo-Kebbi Est | TD11 | 645178 | 619584 | 1264762 | 124728 | 100668 | 80963 | 73834 | 56468 | 43836 | 36987 | 30529 | 23880 | 19147
+    2023 | TCD | Chad | Tchad | TD | Mayo-Kebbi Ouest | TD12 | 471860 | 460296 | 932156 | 92846 | 74795 | 60912 | 54196 | 41504 | 32699 | 28354 | 23306 | 16891 | 12806
+    2023 | TCD | Chad | Tchad | TD | Moyen-Chari | TD13 | 483583 | 485423 | 969006 | 94095 | 77706 | 61555 | 54294 | 40948 | 32207 | 28725 | 24393 | 19302 | 15269
+    2023 | TCD | Chad | Tchad | TD | N'Djamena | TD18 | 902753 | 898511 | 1801264 | 173908 | 142585 | 117437 | 104495 | 76616 | 58960 | 52867 | 44880 | 35020 | 27679
+    2023 | TCD | Chad | Tchad | TD | Ouaddaï | TD14 | 592452 | 575836 | 1168288 | 113726 | 94849 | 74407 | 67783 | 48951 | 37196 | 34900 | 30480 | 24638 | 19713
+    2023 | TCD | Chad | Tchad | TD | Salamat | TD15 | 251216 | 245503 | 496719 | 48680 | 40367 | 32259 | 28929 | 20829 | 15960 | 15295 | 13258 | 9989 | 7650
+    2023 | TCD | Chad | Tchad | TD | Sila | TD21 | 323714 | 322078 | 645792 | 61105 | 50374 | 42376 | 40086 | 28280 | 20526 | 17927 | 15357 | 13348 | 10989
+    2023 | TCD | Chad | Tchad | TD | Tandjilé | TD16 | 563815 | 540338 | 1104153 | 109371 | 89367 | 71659 | 63646 | 48567 | 38153 | 32786 | 27402 | 21802 | 17458
+    2023 | TCD | Chad | Tchad | TD | Tibesti | TD22 | 20399 | 22385 | 42784 | 4165 | 3504 | 1922 | 1805 | 1795 | 1580 | 1254 | 1023 | 859 | 714
+    2023 | TCD | Chad | Tchad | TD | Wadi Fira | TD17 | 420888 | 406663 | 827551 | 82144 | 66852 | 50786 | 48681 | 37049 | 28205 | 24151 | 20319 | 16899 | 13725
