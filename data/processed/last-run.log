@@ -1,54 +1,17 @@
-== chart 675: 10000 rows; columns ['Zone', 'Milieu', 'Sexe', "Titre de l'indicateur", "Valeur de l'indicateur"]
-  query: SELECT COALESCE(libelle_fr, '') || COALESCE(' -> ' || libelle_prov, '') || COALESCE(' -> ' || libelle_commune, '') AS "Zone", "Milieu" AS "Milieu", "Sexe" AS "Sexe", "Titre de l'indicateur" AS "Titre de l'indicateur", SUM("Value(valeur indicateur)") AS "Valeur de l'indicateur" FROM public."TAB_VF_LANGUES_MATERNELLES_CHECKED" GROUP BY COALESCE(libelle_fr, '') || COALESCE(' -> ' || libelle_prov, '') || COALESCE(' -> ' || libelle_commune, ''), "Milieu", "Sexe", "Titre de l'indicateur" ORDER BY "Valeur de l'indicateur" DESC LIMIT 10000;
-  2 indicators:
-      5832  "Part de la population dont la langue maternelle est l'arabe (%)"  values 99.8..100.0
-      4168  "Part de la population dont la langue maternelle est l'amazigh (%)"  values 99.8..99.8
-  depth 1: 40 rows, 11 zones
-    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Ensemble", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Casablanca-Settat -> Casablanca", "Milieu": "Rural", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Casablanca-Settat -> Casablanca", "Milieu": "Rural", "Sexe": "Ensemble", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Féminin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Ensemble", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Casablanca-Settat -> Casablanca", "Milieu": "Rural", "Sexe": "Ensemble", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-  depth 2: 9960 rows, 1420 zones
-    {"Zone": "Béni Mellal-Khénifra -> Azilal -> Bin El Ouidane", "Milieu": "Urbain", "Sexe": "Féminin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Tanger-Tétouan-Al Hoceima -> Larache -> Bni Arouss", "Milieu": "Urbain", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Marrakech-Safi -> Rehamna -> Akarma", "Milieu": "Urbain", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Casablanca-Settat -> El Jadida -> Zaouiat Saiss", "Milieu": "Urbain", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Oriental -> Taourirt -> Sidi Lahsen", "Milieu": "Urbain", "Sexe": "Féminin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'arabe (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Oriental -> Nador -> Selouane", "Milieu": "Rural", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Fès-Meknès -> Sefrou -> Oulad Mkoudou", "Milieu": "Urbain", "Sexe": "Masculin", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-    {"Zone": "Béni Mellal-Khénifra -> Khénifra -> Oum Rabia", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Part de la population dont la langue maternelle est l'amazigh (%)", "Valeur de l'indicateur": null}
-== chart 674: 3 rows; columns ['Milieu ', 'Indice synthétique de fécondité']
-  query: SELECT "Milieu " AS "Milieu ", SUM("ISF") AS "Indice synthétique de fécondité" FROM public."POP6" GROUP BY "Milieu " ORDER BY "Indice synthétique de fécondité" DESC LIMIT 10000;
-== chart 676: 4878 rows; columns ['Zone', "Type d'établissement", 'Nombre des établissements']
-  query: SELECT COALESCE(NULLIF(libelle_region, ''), 'Royaume du Maroc') || COALESCE(' -> ' || libelle_province, '') || COALESCE(' -> ' || libelle_commune, '') AS "Zone", types_ebl AS "Type d'établissement", SUM(valeurs) AS "Nombre des établissements" FROM public.cee_ets GROUP BY COALESCE(NULLIF(libelle_region, ''), 'Royaume du Maroc') || COALESCE(' -> ' || libelle_province, '') || COALESCE(' -> ' || libelle_commune, ''), types_ebl ORDER BY "Nombre des établissements" DESC LIMIT 10000;
-  depth 0: 39 rows, 13 zones
-    {"Zone": "Royaume du Maroc", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 1130021}
-    {"Zone": "Casablanca-Settat", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 254018}
-    {"Zone": "Rabat-Salé-Kénitra", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 153387}
-    {"Zone": "Royaume du Maroc", "Type d'établissement": "Etablissements de services publiques", "Nombre des établissements": 147062}
-    {"Zone": "Marrakech-Safi", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 137955}
-    {"Zone": "Fès-Meknès", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 135174}
-    {"Zone": "Tanger-Tétouan-Al Hoceima", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 124653}
-    {"Zone": "Souss-Massa", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 100577}
-  depth 1: 225 rows, 75 zones
-    {"Zone": "Casablanca-Settat -> Casablanca", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 147440}
-    {"Zone": "Marrakech-Safi -> Marrakech", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 61875}
-    {"Zone": "Tanger-Tétouan-Al Hoceima -> Tanger-Assilah", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 57771}
-    {"Zone": "Fès-Meknès -> Fès", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 55938}
-    {"Zone": "Rabat-Salé-Kénitra -> Salé", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 38762}
-    {"Zone": "Fès-Meknès -> Meknès", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 32808}
-    {"Zone": "Rabat-Salé-Kénitra -> Kénitra", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 32660}
-    {"Zone": "Souss-Massa -> Agadir-Ida-Ou-Tanane", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 30358}
-  depth 2: 4614 rows, 1538 zones
-    {"Zone": "Souss-Massa -> Agadir-Ida-Ou-Tanane -> Agadir", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 24939}
-    {"Zone": "Fès-Meknès -> Meknès -> Meknès", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 23881}
-    {"Zone": "l'Oriental -> Oujda-Angad -> Oujda", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 20648}
-    {"Zone": "Rabat-Salé-Kénitra -> Kénitra -> Kénitra", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 19428}
-    {"Zone": "Marrakech-Safi -> Marrakech -> Ménara", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 19282}
-    {"Zone": "Casablanca-Settat -> Casablanca -> Hay-Hassani", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 18185}
-    {"Zone": "Tanger-Tétouan-Al Hoceima -> Tétouan -> Tétouan", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 17568}
-    {"Zone": "Tanger-Tétouan-Al Hoceima -> Tanger-Assilah -> Bni Makada", "Type d'établissement": "Etablissements à but lucratif", "Nombre des établissements": 17558}
+== chart 807: 10000 rows; columns ['Zone', 'Milieu', 'Sexe', "Titre de l'indicateur", "Valeurs de l'indicateur"]
+  query: SELECT COALESCE(libelle_fr, '') || COALESCE(' -> ' || libelle_prov, '') || COALESCE(' -> ' || libelle_commune, '') AS "Zone", "Milieu" AS "Milieu", "Sexe" AS "Sexe", "Key(Nom indicateur)" AS "Titre de l'indicateur", SUM("Value(valeur indicateur)") AS "Valeurs de l'indicateur" FROM public.lot1_rgph WHERE "Key(Nom indicateur)" IN ('Population municipale') GROUP BY COALESCE(libelle_fr, '') || COALESCE(' -> ' || libelle_prov, '') || COALESCE(' -> ' || libelle_commune, ''), "Milieu", "Sexe", "Key(Nom indicateur)" ORDER BY "Valeurs de l'indicateur" DESC LIMIT 10000;
+  3 rows match 'mahbass':
+    {"Zone": "Guelmim-Oued Noun -> Assa-Zag -> Al Mahbass", "Milieu": "Urbain", "Sexe": "Féminin", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+    {"Zone": "Guelmim-Oued Noun -> Assa-Zag -> Al Mahbass", "Milieu": "Urbain", "Sexe": "Masculin", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+    {"Zone": "Guelmim-Oued Noun -> Assa-Zag -> Al Mahbass", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+  1 indicators:
+     10000  'Population municipale'  values 5619.0..36490591.0
+  depth 0: 115 rows, 13 zones
+    {"Zone": "Royaume du Maroc", "Milieu": "Ensemble", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": 36490591.0}
+    {"Zone": "Royaume du Maroc", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": 22921202.0}
+  depth 1: 645 rows, 75 zones
+    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+    {"Zone": "Casablanca-Settat -> Casablanca", "Milieu": "Rural", "Sexe": "Féminin", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+  depth 2: 9240 rows, 1531 zones
+    {"Zone": "Marrakech-Safi -> Essaouira -> Mejji", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+    {"Zone": "Fès-Meknès -> Boulemane -> El Mers", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
