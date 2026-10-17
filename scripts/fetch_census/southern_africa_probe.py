@@ -22,6 +22,8 @@ zip, xls, csv, cdx, pdf), and these are added:
     sheets:URL                     every sheet of a workbook (or of the first
                                    workbook in a zip): name, size, first text cells
     sheet:URL~~NAME[~~ROWS[~~COLS]] one sheet's rows (NAME may be its number, 1-based)
+    attrs:URL~~ATTR[~~N[~~CHARS]]  every value of one HTML attribute on the page
+                                   (a chart widget's data-chart_data), unescaped
 
 The workflow splits the command on whitespace and xargs reads quotes and
 backslashes, so no part may hold a space, a quote or a backslash: a regex
@@ -128,12 +130,24 @@ def probe(arg: str) -> None:
             if len(f) >= 7:
                 say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
         return
-    if mode not in ("json", "keys", "pdfp", "pdfg", "pdft", "sheets", "sheet"):
+    if mode not in ("json", "keys", "pdfp", "pdfg", "pdft", "sheets", "sheet", "attrs"):
         say(f"?? unknown mode in {arg!r}")
         return
     status, final, headers, body = get(url)
     if status >= 400 or status < 0:
         say("  " + base.strip(base.decode(body, headers))[:400])
+        return
+    if mode == "attrs":
+        import html as html_lib                     # noqa: PLC0415
+        attr = extra[0] if extra else "data-chart_data"
+        n = int(extra[1]) if len(extra) > 1 else 40
+        chars = int(extra[2]) if len(extra) > 2 else 1500
+        page = base.decode(body, headers)
+        found = re.findall(re.escape(attr) + r"""\s*=\s*(?:'([^']*)'|"([^"]*)")""", page)
+        say(f"  {len(found)} values of {attr}")
+        for single, double in found[:n]:
+            value = html_lib.unescape(single or double)
+            say("  -- " + " ".join(value.split())[:chars])
         return
     if mode in ("sheets", "sheet"):
         sheets = workbook_rows(body)
