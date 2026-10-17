@@ -1,34 +1,4 @@
-  read https://cms.nsomalawi.mw/api/download/277/Series-A.-Population-Tables.xlsx: 558,785 bytes, sha256 ea07cd8a1e638a12a834b0177e482a4821907daa001c5ddcb01084d072ef2142
-  read https://cms.nsomalawi.mw/api/download/281/Series-E.-Social-Tables.xlsx: 113,997 bytes, sha256 522489142a7437ff3a024f9dbef817bbfb087c5ee01031f7c9f12b20e6c2a0cd
-  admin2 Balaka: pop 438379, median 16.6, ratio 913, ('Islam', 'Yao')
-  admin2 Blantyre: pop 1251484, median 19.7, ratio 981, ('Other Christian denominations', 'Lomwe')
-  admin2 Chikwawa: pop 564684, median 17.3, ratio 962, ('Other Christian denominations', 'Sena')
-  admin2 Chiradzulu: pop 356875, median 18.6, ratio 906, ('Other Christian denominations', 'Lomwe')
-  admin2 Chitipa: pop 234927, median 17.4, ratio 949, ('Other Christian denominations', 'Lambya')
-  admin2 Dedza: pop 830512, median 17.7, ratio 911, ('Catholic', 'Chewa')
-  admin2 Dowa: pop 772569, median 18.2, ratio 959, ('Catholic', 'Chewa')
-  admin2 Karonga: pop 365028, median 17.3, ratio 933, ('Other Christian denominations', 'Tumbuka')
-  admin2 Kasungu: pop 842953, median 17.3, ratio 980, ('Other Christian denominations', 'Chewa')
-  admin2 Likoma: pop 14527, median 20.1, ratio 983, ('Anglican', 'Nyanja')
-  admin2 Lilongwe: pop 2626901, median 18.7, ratio 969, ('Other Christian denominations', 'Chewa')
-  admin2 Machinga: pop 735438, median 15.4, ratio 912, ('Islam', 'Yao')
-  admin2 Mangochi: pop 1148611, median 15.6, ratio 904, ('Islam', 'Yao')
-  admin2 Mchinji: pop 602305, median 17.3, ratio 971, ('Catholic', 'Chewa')
-  admin2 Mulanje: pop 684107, median 17.6, ratio 906, ('Other Christian denominations', 'Lomwe')
-  admin2 Mwanza: pop 130949, median 17.7, ratio 942, ('Other Christian denominations', 'Chewa')
-  admin2 Mzimba: pop 1161456, median 17.9, ratio 946, ('Other Christian denominations', 'Tumbuka')
-  admin2 Neno: pop 138291, median 17.1, ratio 950, ('Seventh Day Adventist/Baptist/Apostolic', 'Ngoni')
-  admin2 Nkhata Bay: pop 284681, median 17.4, ratio 959, ('Other Christian denominations', 'Tonga')
-  admin2 Nkhotakota: pop 393077, median 16.7, ratio 961, ('Other Christian denominations', 'Chewa')
-  admin2 Nsanje: pop 299168, median 16.6, ratio 923, ('Other Christian denominations', 'Sena')
-  admin2 Ntcheu: pop 659608, median 17.8, ratio 939, ('Other Christian denominations', 'Ngoni')
-  admin2 Ntchisi: pop 317069, median 17.3, ratio 954, ('Other Christian denominations', 'Chewa')
-  admin2 Phalombe: pop 429450, median 16.5, ratio 931, ('Other Christian denominations', 'Lomwe')
-  admin2 Rumphi: pop 229161, median 17.5, ratio 967, ('Other Christian denominations', 'Tumbuka')
-  admin2 Salima: pop 478346, median 16.6, ratio 941, ('Islam', 'Chewa')
-  admin2 Thyolo: pop 721456, median 17.8, ratio 895, ('Other Christian denominations', 'Lomwe')
-  admin2 Zomba: pop 851737, median 17.5, ratio 921, ('Other Christian denominations', 'Lomwe')
-  admin1 Central Region: pop None, median 17.9, ratio 957, ('Other Christian denominations', 'Chewa')
-  admin1 Northern Region: pop None, median 17.7, ratio 948, ('Other Christian denominations', 'Tumbuka')
-  admin1 Southern Region: pop None, median 17.3, ratio 926, ('Other Christian denominations', 'Lomwe')
-  wrote data/processed/malawi_census.json (150 kB)
+  Volume IV: 34,215,383 bytes, sha256 af4ef18f3c7c546054299343767686e4709e6295b0666c73a2062024cd271148
+  page 349: a TOTAL row with figures ['64,759', '62,926'] is not read
+  371 pages, 811 tables read
+nigeria_census: page 344: '*DISPUTED AREAS' follows a page of single years but is no state
