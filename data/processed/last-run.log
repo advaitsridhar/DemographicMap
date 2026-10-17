@@ -1,39 +1,90 @@
-chad_departments: OCHA's 2023 table, 23 provinces
-  Departments of Chad: 62 names with a seat
-  Bahr el Gazel: 412,808
-  Batha: 763,062
-  Borkou: 159,353
-  Chari-Baguirmi: 918,084
-  Ennedi-Est: 174,805
-  Ennedi-Ouest: 99,126
-  Guéra: 709,893
-  Hadjer-Lamis: 908,127
-  Kanem: 550,092
-  Lac: 705,362
-  Logone Occidental: 1,115,244
-  Logone Oriental: 1,239,738
-  Mandoul: 1,025,580
-  Mayo-Kebbi Est: 1,264,762
-  Mayo-Kebbi Ouest: 932,156
-  Moyen-Chari: 969,006
-  N'Djamena Region: 1,801,264
-  Ouaddaï: 1,168,288
-  Salamat: 496,719
-  Sila: 645,792
-  Tandjilé: 1,104,153
-  Tibesti: 42,784
-  Wadi Fira: 827,551
-  the provinces make 18,033,749
-    Barh-El-Gazel Ouest: no seat named
-    Fada: no seat named
-    Fouli: no seat named
-    Kaya: no seat named
-    Mayo-Binder: no seat named
-    Mourtcha: no seat named
-    Mégri: no seat named
-    N'Djaména: no seat named
-    Tandjilé Centre: no seat named
-    Wadi Hawar: no seat named
-  60 of 70 departments with a seat
-  wrote data/processed/chad_departments.json (83 kB)
-  83 records written
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  chart: the Kingdom {'women': 18295103, 'men': 18195488}, 12 regions, 74 provinces
+  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
+  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
+  'Oued Ed-Dahab Province': a piece across the line, written as a gap
+  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
+  'Tarfaya Province': part of a province across the line, written as a gap
+  HCP provinces not drawn: []
+  admin1 Béni Mellal-Khénifra                     956
+  admin1 Casablanca-Settat                        995
+  admin1 Drâa-Tafilalet                           968
+  admin1 Fez-Meknes                               987
+  admin1 Guelmim-Oued Noun                        972
+  admin1 Marrakech-Safi                           1017
+  admin1 Oriental                                 957
+  admin1 Rabat-Salé-Kenitra                       987
+  admin1 Souss-Massa                              983
+  admin1 Tangier-Tetouan-Al Hoceima               1032
+  admin2 Al Hoceima Province                      1023
+  admin2 Chefchaouen Province                     1103
+  admin2 Fahs-Anjra Province                      1084
+  admin2 Larache Province                         1031
+  admin2 Prefecture of Tangier - Assilah          1032
+  admin2 Province d'Ouezzane إقليم وزان           1022
+  admin2 Préfecture de M'diq-Fnideq عمالة المضيق  995
+  admin2 Tetouan Province                         1003
+  admin2 Province de Berkane إقليم بركان          960
+  admin2 Province de Driouch إقليم الدريوش        915
+  admin2 Province de Figuig إقليم الناظور         956
+  admin2 Province de Guercif إقليم جرسيف          972
+  admin2 Province de Jerada إقليم جرادة           954
+  admin2 Province de Nador إقليم الناظور          965
+  admin2 Province de Taourirt إقليم تاوريرت       955
+  admin2 Préfecture d'Oujda-Angad عمالة وجدة - أن 957
+  admin2 Prefecture de Meknès عمالة مكناس         969
+  admin2 Province d'El Hajeb إقليم الحاجب         999
+  admin2 Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إف 969
+  admin2 Province de Boulemane إقليم بولمان       985
+  admin2 Province de Moulay Yacoub إقليم مولاي يع 1078
+  admin2 Province de Sefrou إقليم صفرو            955
+  admin2 Province de Taounate إقليم تاونات        1037
+  admin2 Province de Taza اقليم تازة              975
+  admin2 Préfecture de Fès عمالة فاس              976
+  admin2 Prefecture of Rabat                      930
+  admin2 Prefecture of Salé                       981
+  admin2 Province de Kenitra إقليم القنيطرة       1005
+  admin2 Province de Khémisset إقليم الخميسات     968
+  admin2 Province de Sidi Kacem إقليم سيدي قاسم   1026
+  admin2 Province de Sidi Slimane إقليم سيدي سليم 1006
+  admin2 Préfecture de Skhirate-Témara عمالة الصخ 985
+  admin2 Province d'Azilal إقليم أزيلال           1021
+  admin2 Province de Beni Mellal إقليم بني ملال   926
+  admin2 Province de Fquih Ben Saleh إقليم الفقيه 926
+  admin2 Province de Khouribga إقليم خريبكة       947
+  admin2 Province de Khénifra إقليم خنيفرة        955
+  admin2 Berrechid Province                       1025
+  admin2 El Jadida Province                       1033
+  admin2 Médiouna Province                        1015
+  admin2 Nouaceur Province                        1005
+  admin2 Prefecture of Casablanca                 965
+  admin2 Prefecture of Mohammédia                 991
+  admin2 Province de Benslimane إقليم بن سليمان   1020
+  admin2 Province de Sidi Bennour إقليم سيدي بنور 1030
+  admin2 Settat Province                          1014
+  admin2 Al Haouz Province                        1071
+  admin2 Chichaoua Province                       1025
+  admin2 Essaouira Province                       1021
+  admin2 Province d'El Kelâat Es-Sraghna إقليم قل 996
+  admin2 Province de Safi إقليم أسفي              1039
+  admin2 Province de Youssoufia إقليم اليوسفية    1040
+  admin2 Préfecture de Marrakech عمالة مراكش      977
+  admin2 Rhamna Province                          1071
+  admin2 Ouarzazate Province                      950
+  admin2 Province d'Errachidia إقليم الرشيدية     964
+  admin2 Province de Midelt إقليم ميدلت           982
+  admin2 Province de Tinghir إقليم تنغير          959
+  admin2 Zagora Province                          991
+  admin2 Agadir Ida-Outanane Prefecture           998
+  admin2 Chtouka-Ait Baha Province                1037
+  admin2 Inezgane-Ait Melloul Prefecture          1002
+  admin2 Tata Province                            820
+  admin2 Tiznit Province                          913
+  admin2 Taroudant Province                       966
+  admin2 Assa-Zag Province                        992
+  admin2 Guelmim Province                         958
+  admin2 Province de Tan-Tan إقليم طانطان         1009
+  admin2 Sidi Ifni Province                       959
+  10 regions and 69 provinces written
+  wrote data/processed/morocco_rgph2024_sexes.json (135 kB)
