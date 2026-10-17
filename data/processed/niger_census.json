@@ -165,7 +165,8 @@
     "name": "Niamey",
     "parent": "NER",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Niamey is the capital district, the city itself, not a region with a seat apart."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -245,7 +246,8 @@
     "name": "Tahoua/Agadez",
     "parent": "NER",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The polygon is two regions, Tahoua and Agadez, each with a seat of its own."
     },
     "largest_settlement": {
       "status": "not_available"
@@ -406,7 +408,8 @@
     "name": "Zinder/Diffa",
     "parent": "NER",
     "capital": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The polygon is two regions, Zinder and Diffa, each with a seat of its own."
     },
     "largest_settlement": {
       "status": "not_available"
