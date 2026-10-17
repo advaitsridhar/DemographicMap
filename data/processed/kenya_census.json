@@ -1078,7 +1078,10 @@
       "source": "Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, Volume I: Population by County and Sub-County, distribution of population by sex and county"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.2,
+      "unit": "years",
+      "year": 2019,
+      "source": "Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, Volume III: Distribution of Population by Age and Sex, by county and sub-county"
     },
     "sex_ratio": {
       "value": 963,
@@ -1114,7 +1117,8 @@
     "country": "KEN",
     "match_by": "shape_id",
     "shape_id": "32016919B50438423394723",
-    "population_note": "The 2019 census's count of everyone in the county, 18 intersex persons included."
+    "population_note": "The 2019 census's count of everyone in the county, 18 intersex persons included.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2019 census's count of everyone by single year of age, leaving out the 12 whose age was not stated."
   },
   {
     "id": "KEN-2019-32016919B40191501607276",
