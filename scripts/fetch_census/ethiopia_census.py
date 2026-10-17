@@ -321,7 +321,7 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
             towns = [NAMES[z] for _, z in parts[1:]]
             if towns:
                 note = (f"The 2007 census's count for the zone with {' and '.join(towns)} added: "
-                        "the census counted it apart, and this polygon holds it.")
+                        "the census counted it apart, and it lies within the zone as drawn.")
                 of = f", of the zone and {' and '.join(towns)} together"
             else:
                 note = "The 2007 census's count for the zone."
