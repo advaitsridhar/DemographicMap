@@ -674,12 +674,17 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
     order = kept
     first = groups[order[0]]
     out: list[tuple[str, dict[str, int]]] = []
+
+    def total_of(key: tuple[str, ...], vals: list[int | None]) -> int | None:
+        return vals[key.index("TOTAL")] if "TOTAL" in key else None
+
     for k, (label, vals) in enumerate(first):
         row: dict[str, int] = {}
         blank: list[str] = []
         for key in order:
             rows = groups[key]
-            if k >= len(rows) or same_row(rows[k][0]) != same_row(label):
+            if k >= len(rows) or not aligned(rows[k][0], label, total_of(key, rows[k][1]),
+                                             total_of(order[0], vals)):
                 rep.problems.append(f"{name}: column groups do not list the same rows at "
                                     f"{label!r}")
                 return []
@@ -720,6 +725,15 @@ ROW_SPELLINGS = {"urbama": "urbana"}
 def same_row(label: str) -> str:
     key = fold(label)
     return ROW_SPELLINGS.get(key, key)
+
+
+def aligned(one: str, other: str, total: int | None, other_total: int | None) -> bool:
+    """Two column groups' rows are the same row: the same name, one name cut
+    short in one group ("Jamba" for "Jamba Mineira"), or the same total."""
+    a, b = same_row(one), same_row(other)
+    if a == b or (min(len(a), len(b)) >= 4 and (a.startswith(b) or b.startswith(a))):
+        return True
+    return bool(total) and total == other_total
 
 
 def sexed_age_labels(block: Block) -> list[str] | None:
@@ -764,9 +778,14 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
     The province's own rows (it, urban, rural, men, women) come first and are
     passed over. A row is a municipality's when its name is one of the report's
     municipalities not yet met and the communes since the last one have made
-    that one's total; the rest are its communes.
+    that one's total; the rest are its communes. Where a municipality's
+    communes do not make it (Cunene's ethnic table leaves out Cahama's own
+    row), that municipality is left out and the walk picks up again at the
+    next row that is a municipality's by its name and by its size against the
+    municipality's residents.
     """
     names = {fold(n) for n, *_ in rep.new}
+    residents = {fold(n): t for n, t, *_ in rep.new}
     lead = {"urbana", "urbama", "rural", "homens", "mulheres"}
     start = 0
     for k, (label, _) in enumerate(rows[:8]):
@@ -777,6 +796,7 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
     body = rows[start:]
     only = len(body) == len(names) and all(fold(lab) in names for lab, _ in body)
     out: dict[str, dict[str, int]] = {}
+    broken: set[str] = set()
     current: str | None = None
     made = 0
     communes = 0
@@ -786,11 +806,21 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
         # 16,441 and its two communes 14,099 and 2,343.
         return 2 + communes
 
+    def close() -> None:
+        if current is not None and not only and communes \
+                and abs(made - out[current]["TOTAL"]) > slack():
+            rep.problems.append(f"{name}: communes of {current} make {made:,}, not "
+                                f"{out[current]['TOTAL']:,}; left out")
+            broken.add(current)
+
     for label, vals in body:
         key = fold(label)
+        fresh = key in names and key not in out
         ready = current is None or only or (
             communes and abs(made - out[current]["TOTAL"]) <= slack())
-        if key in names and key not in out and ready:
+        resume = fresh and not ready and plausible(name, vals["TOTAL"], residents.get(key, 0))
+        if fresh and (ready or resume):
+            close()
             current = key
             out[key] = dict(vals)
             made = 0
@@ -801,15 +831,11 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
         else:
             rep.problems.append(f"{name}: {label} before any municipality")
             return {}
-        if not only and current is not None and made > out[current]["TOTAL"] + slack():
-            rep.problems.append(f"{name}: communes of {current} pass its total")
-            return {}
-    if current is not None and not only and abs(made - out[current]["TOTAL"]) > slack():
-        rep.problems.append(f"{name}: communes of {current} make {made}, not "
-                            f"{out[current]['TOTAL']}")
-        return {}
-    if len(out) != len(names):
-        missing = [n for n, *_ in rep.new if fold(n) not in out]
+    close()
+    for key in broken:
+        out.pop(key, None)
+    if len(out) + len(broken) != len(names):
+        missing = [n for n, *_ in rep.new if fold(n) not in out and fold(n) not in broken]
         rep.problems.append(f"{name}: municipalities not found: {', '.join(missing)}")
     return out
 

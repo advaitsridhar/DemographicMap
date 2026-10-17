@@ -360,13 +360,15 @@ class Rounding(unittest.TestCase):
         self.assertEqual(set(got), {"necuto", "miconje"})
         self.assertEqual(rep.problems, [])
 
-    def test_communes_far_past_their_municipality_are_refused(self):
+    def test_a_municipality_its_communes_do_not_make_is_left_out(self):
         rep = am.Report("Cabinda")
         rep.new = [("Necuto", 16_441, 8_000, 8_441), ("Miconje", 8_629, 4_300, 4_329)]
         rows = [("Cabinda", {"TOTAL": 25_070}), ("Necuto", {"TOTAL": 16_441}),
                 ("Necuto", {"TOTAL": 14_099}), ("Inhuca", {"TOTAL": 2_443}),
                 ("Miconje", {"TOTAL": 8_629}), ("Miconje", {"TOTAL": 8_629})]
-        self.assertEqual(am.municipalities(rep, "religion", rows), {})
+        got = am.municipalities(rep, "religion", rows)
+        self.assertEqual(set(got), {"miconje"})
+        self.assertTrue(any("communes of necuto" in p for p in rep.problems))
 
 
 class Cells(unittest.TestCase):
@@ -558,6 +560,26 @@ class Settling(unittest.TestCase):
         records, _ = am.build([rep], ADMIN1, ADMIN2, set(), apart)
         dande = next(r for r in records if r["name"] == "Dande")
         self.assertIn(f"{total['Bakongo'] * 2:,}", dande["ethnicity_note"])
+
+
+class Resuming(unittest.TestCase):
+    def test_the_walk_resumes_after_a_municipality_whose_row_is_missing(self):
+        rep = am.Report("Cunene")
+        rep.new = [("Chitado", 35_425, 17_000, 18_425), ("Cahama", 140_925, 68_000, 72_925),
+                   ("Cuvelai", 76_582, 37_000, 39_582)]
+        rows = [("Cunene", {"TOTAL": 1_000_000}), ("Chitado", {"TOTAL": 32_985}),
+                ("Chitado", {"TOTAL": 32_985}), ("Cahama", {"TOTAL": 76_090}),
+                ("Otchinjau", {"TOTAL": 54_436}), ("Cuvelai", {"TOTAL": 70_729}),
+                ("Cuvelai", {"TOTAL": 70_729})]
+        got = am.municipalities(rep, "ethnicity", rows)
+        self.assertEqual(set(got), {"chitado", "cuvelai"})
+        self.assertTrue(any("communes of cahama" in p for p in rep.problems))
+
+    def test_rows_aligned_on_a_shortened_name_or_their_total(self):
+        self.assertTrue(am.aligned("Jamba", "Jamba Mineira", None, None))
+        self.assertTrue(am.aligned("Urbama", "Urbana", None, None))
+        self.assertTrue(am.aligned("Xa-Muteba", "Cassanje", 40_000, 40_000))
+        self.assertFalse(am.aligned("Luau", "Luanda", 10, 20))
 
 
 if __name__ == "__main__":
