@@ -264,7 +264,7 @@ NOTES = {
                   "Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, "
                   "Xindonga as Ndonga and Ovanganguela as Ngangela."),
     "language": ("The 2024 census's count of the population aged 2 and over by mother tongue "
-                 "(língua materna), in the census's groups; foreign languages are one group."),
+                 "(língua materna), in the census's groups."),
     "religion": ("The 2024 census's count of the population aged 2 and over by declared "
                  "religion, the denominations kept apart as printed."),
 }
@@ -1187,6 +1187,7 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         parts = [p for u in units for p in u["parts"]]
         rows = [r for u in units for r in u["rows"]]
         made = sum(u["made"] for u in units)
+        stood = "it stood" if len(names) == 1 else "they stood"
         if not all(u["resolved"] for u in units):
             parts = []
             for name in NOTES:
@@ -1195,10 +1196,10 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
             share = ""
         elif len(parts) == 1:
             share = (f" It holds {made:,} residents, against the {t:,} the census counts in "
-                     f"{listed(names)} as it stood under Lei n.º 18/16.")
+                     f"{listed(names)} as {stood} under Lei n.º 18/16.")
         else:
             share = (f" Together they hold {made:,} residents, against the {t:,} the census "
-                     f"counts in {listed(names)} as it stood under Lei n.º 18/16.")
+                     f"counts in {listed(names)} as {stood} under Lei n.º 18/16.")
         if not parts or (len(parts) == 1 and len(units) == 1 and not share
                          and fold(parts[0]) in census_keys(names[0])):
             tail = ""
@@ -1207,11 +1208,11 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                     f"under Lei n.º 18/16 is shown by {parts[0]}'s figures." + share)
         elif share:
             tail = (f" The census tabulates the municipalities of 2024: {listed(parts)} are "
-                    f"added together for {listed(names)} as it stood under Lei n.º 18/16."
+                    f"added together for {listed(names)} as {stood} under Lei n.º 18/16."
                     + share)
         else:
             tail = (f" The census tabulates the municipalities of 2024: {listed(parts)}, "
-                    f"which together are {listed(names)} as it stood under Lei n.º 18/16, "
+                    f"which together are {listed(names)} as {stood} under Lei n.º 18/16, "
                     f"are added together.")
         if parts:
             for name in NOTES:
