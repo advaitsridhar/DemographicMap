@@ -1,5 +1,61 @@
 [
   {
+    "id": "CIV-RGPH2021-agnebytiassa",
+    "level": "admin2",
+    "name": "Agneby-Tiassa",
+    "parent": "CIV",
+    "capital": "Agboville",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 865951,
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2021 census's synoptic table for the region gives the mean age (24 years) and the population in a few broad age groups (under 5, under 15, under 18, 15 to 64, 60 and over, 65 and over), from which no median age can be taken."
+    },
+    "sex_ratio": {
+      "value": 1127,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ivorian",
+        "pct": 79.7
+      },
+      {
+        "group": "Non-Ivorian",
+        "pct": 20.3
+      }
+    ],
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région",
+        "url": "https://rp2021.anstat.ci/",
+        "license": "ANStat publication (reuse with attribution)",
+        "year": 2021,
+        "field": "population/sex_ratio/capital/ethnicity"
+      }
+    ],
+    "country": "CIV",
+    "match_by": "shape_id",
+    "shape_id": "98640826B52449815511854",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2021 census's shares of Ivorians and of other nationals among the region's residents, as ANStat's regional page gives them; it gives no breakdown by ethnic group or by country."
+  },
+  {
     "id": "CIV-RGPH2021-bafing",
     "level": "admin2",
     "name": "Bafing",
@@ -1200,6 +1256,52 @@
     "shape_id": "98640826B73875625736421"
   },
   {
+    "id": "CIV-RGPH2021-nawa",
+    "level": "admin2",
+    "name": "Nawa",
+    "parent": "CIV",
+    "capital": "Soubre",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1165472,
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2021 census's synoptic table for the region gives the mean age (21 years) and the population in a few broad age groups (under 5, under 15, under 18, 15 to 64, 60 and over, 65 and over), from which no median age can be taken."
+    },
+    "sex_ratio": {
+      "value": 1140,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région",
+        "url": "https://rp2021.anstat.ci/",
+        "license": "ANStat publication (reuse with attribution)",
+        "year": 2021,
+        "field": "population/sex_ratio/capital"
+      }
+    ],
+    "country": "CIV",
+    "match_by": "shape_id",
+    "shape_id": "98640826B56207519899242"
+  },
+  {
     "id": "CIV-RGPH2021-poro",
     "level": "admin2",
     "name": "Poro",
@@ -1506,6 +1608,56 @@
     "shape_id": "98640826B81277132888560"
   },
   {
+    "id": "CIV-RGPH2021-district-bassassandra",
+    "level": "admin1",
+    "name": "Bas-Sassandra",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available",
+      "note": "The district groups the regions of Gbokle (seat Sassandra), Nawa (seat Soubre) and San Pedro (seat San-Pedro), as the 2021 census's regional pages give them; they name no seat for the district itself."
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2687176,
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2021 census's synoptic tables give each region's mean age and broad age groups only, from which no median age can be taken."
+    },
+    "sex_ratio": {
+      "value": 1158,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région",
+        "url": "https://rp2021.anstat.ci/",
+        "license": "ANStat publication (reuse with attribution)",
+        "year": 2021,
+        "field": "population/sex_ratio"
+      }
+    ],
+    "country": "CIV",
+    "match_by": "shape_id",
+    "shape_id": "83157122B96959932745266",
+    "population_note": "The 2021 census's counts of the district's 3 regions, added."
+  },
+  {
     "id": "CIV-RGPH2021-district-comoe",
     "level": "admin1",
     "name": "Comoe",
@@ -1796,6 +1948,56 @@
     "match_by": "shape_id",
     "shape_id": "83157122B20352934117266",
     "population_note": "The 2021 census's counts of the district's 4 regions, added."
+  },
+  {
+    "id": "CIV-RGPH2021-district-lagunes",
+    "level": "admin1",
+    "name": "Lagunes",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available",
+      "note": "The district groups the regions of Agneby-Tiassa (seat Agboville), Grands Ponts (seat Dabou) and Me (seat Adzope), as the 2021 census's regional pages give them; they name no seat for the district itself."
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2042623,
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2021 census's synoptic tables give each region's mean age and broad age groups only, from which no median age can be taken."
+    },
+    "sex_ratio": {
+      "value": 1116,
+      "unit": "males_per_1000_females",
+      "year": 2021,
+      "source": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau synoptique de la région",
+        "url": "https://rp2021.anstat.ci/",
+        "license": "ANStat publication (reuse with attribution)",
+        "year": 2021,
+        "field": "population/sex_ratio"
+      }
+    ],
+    "country": "CIV",
+    "match_by": "shape_id",
+    "shape_id": "83157122B73612976130091",
+    "population_note": "The 2021 census's counts of the district's 3 regions, added."
   },
   {
     "id": "CIV-RGPH2021-district-montagnes",
