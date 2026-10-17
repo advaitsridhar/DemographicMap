@@ -96,6 +96,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
     args = ap.parse_args()
 
     log("kenya: religion by county, KNBS 2019 Volume IV via openAFRICA")
