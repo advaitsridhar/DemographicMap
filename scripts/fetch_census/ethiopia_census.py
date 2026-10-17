@@ -321,8 +321,10 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
+    ap.parse_args()
     import openpyxl                                 # noqa: PLC0415
     url = uscb.workbook_url(uscb.ETHIOPIA.dataset)
     blob = http_get(url, binary=True, cache=False, timeout=300)
