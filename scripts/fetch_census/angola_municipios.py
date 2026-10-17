@@ -212,6 +212,10 @@ LANGUAGE = {
     "Luvale": ("luvale",),
     "Khoisan": ("khoisan",),
     "Foreign languages": ("estrangeir", "estangeir"),
+    # Namibe's table names them one by one, as the national report does.
+    "Mandarin": ("mandarim",), "English": ("ingles",), "French": ("frances",),
+    "Spanish": ("espanhol",), "German": ("alemao",), "Russian": ("russo",),
+    "Arabic": ("arabe",), "Lingala": ("lingala",), "Creole": ("criolo", "crioulo"),
     "Other languages": ("outras",),
     "Not stated": ("naosabe",),
 }
@@ -357,10 +361,14 @@ class Block:
     labels: list[str] = field(default_factory=list)
 
 
-def blocks_of(rows: list[Row]) -> list[Block]:
-    """A page cut at each "Quadro" heading; rows before the first belong to none."""
+def blocks_of(rows: list[Row], lead: bool = False) -> list[Block]:
+    """A page cut at each "Quadro" heading. Rows before the first belong to none,
+    or, with ``lead``, to an untitled block: a table carried over from the page
+    before (Huíla's prints its last columns on a page of their own)."""
     out: list[Block] = []
-    current: Block | None = None
+    current: Block | None = Block("", [], []) if lead else None
+    if current is not None:
+        out.append(current)
     for row in rows:
         if squeeze(row.label).startswith("quadro"):
             current = Block(row.label, [], [])
@@ -574,7 +582,8 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
         made = sum(t for _, t, *_ in rep.old)
         slack = 2 + len(rep.old)          # each row rounded from a weighted count
         same = {fold(n): t for n, t, *_ in rep.new}
-        if not summed and abs(old_head[0] - rep.total[0]) > 2:
+        if not summed and abs(old_head[0] - rep.total[0]) > (
+                2 if rep.province else 2 + len(rep.new)):
             rep.problems.append(f"the 2016 table's province is {old_head[0]:,}, not "
                                 f"{rep.total[0]:,}; table left out")
             rep.old = []
@@ -608,11 +617,13 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
     groups: dict[tuple[str, ...], list[tuple[str, list[int | None]]]] = {}
     order: list[tuple[str, ...]] = []
     last: Block | None = None
+    before = False                 # the page before held a block of this table
     for i, text in enumerate(texts):
-        if not any(k in text for k in keys_of(spec)):
+        if not before and not any(k in text for k in keys_of(spec)):
             continue
-        for block in blocks_of(pages[i]):
-            if not any(k in squeeze(block.title) for k in keys_of(spec)):
+        here = False
+        for block in blocks_of(pages[i], lead=before):
+            if block.title and not any(k in squeeze(block.title) for k in keys_of(spec)):
                 continue
             bad = assign_columns(block)
             if bad:
@@ -625,20 +636,42 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                     and all(abs(a - b) <= 4 for a, b in zip(last.columns, block.columns)):
                 labels = last.labels
             if labels is None:
-                rep.problems.append(f"{name} p{i + 1}: header not read "
-                                    f"({len(block.columns)} columns: "
-                                    + " | ".join(t[:40] for t in header_texts(block)) + ")")
+                if block.title:
+                    rep.problems.append(f"{name} p{i + 1}: header not read "
+                                        f"({len(block.columns)} columns: "
+                                        + " | ".join(t[:40] for t in header_texts(block))
+                                        + ")")
                 continue
             block.labels = labels
             last = block
+            here = True
             key = tuple(labels)
+            rows = [(r.label, values(block, r)) for r in block.data]
             if key not in groups:
                 groups[key] = []
                 order.append(key)
-            groups[key] += [(r.label, values(block, r)) for r in block.data]
+            else:
+                # The same columns again: the table's rows go on, under the
+                # province's rows printed again (Cunene's ethnic groups).
+                seen = {(same_row(lab), tuple(v)) for lab, v in groups[key][:4]}
+                while rows and (same_row(rows[0][0]), tuple(rows[0][1])) in seen:
+                    rows.pop(0)
+            groups[key] += rows
+        before = here
     if not order:
         rep.problems.append(f"{name}: not found")
         return []
+    # A column group that adds no age group or answer is the same table printed
+    # another way (Cunene's broad age groups by municipality, then by sex).
+    covered: set[str] = set()
+    kept = []
+    for key in order:
+        own = {lab.split("|")[0] for lab in key} - {"TOTAL"}
+        if kept and own <= covered:
+            continue
+        kept.append(key)
+        covered |= own
+    order = kept
     first = groups[order[0]]
     out: list[tuple[str, dict[str, int]]] = []
     for k, (label, vals) in enumerate(first):
@@ -646,7 +679,7 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
         blank: list[str] = []
         for key in order:
             rows = groups[key]
-            if k >= len(rows) or fold(rows[k][0]) != fold(label):
+            if k >= len(rows) or same_row(rows[k][0]) != same_row(label):
                 rep.problems.append(f"{name}: column groups do not list the same rows at "
                                     f"{label!r}")
                 return []
@@ -678,6 +711,15 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                 return []
         out.append((label, row))
     return out
+
+
+# Row labels misprinted in one column group and not the other.
+ROW_SPELLINGS = {"urbama": "urbana"}
+
+
+def same_row(label: str) -> str:
+    key = fold(label)
+    return ROW_SPELLINGS.get(key, key)
 
 
 def sexed_age_labels(block: Block) -> list[str] | None:
@@ -770,6 +812,14 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
         missing = [n for n, *_ in rep.new if fold(n) not in out]
         rep.problems.append(f"{name}: municipalities not found: {', '.join(missing)}")
     return out
+
+
+def plausible(name: str, counted: int, residents: int) -> bool:
+    """A municipality's row against its residents in Quadro 10: the age tables
+    count everyone, the others the population aged 2 and over (Bengo's 95%)."""
+    if name.startswith("age_"):
+        return abs(counted - residents) <= 2 + 0.005 * residents
+    return 0.85 * residents <= counted <= residents + 2
 
 
 def check_composition(field_name: str, label: str, vals: dict[str, int]) -> str | None:
@@ -890,14 +940,25 @@ def crosswalk_parts(rep: Report) -> dict[str, tuple[list[str], bool]]:
         count = Counter(k for ks in found.values() for k in ks)
         return {o: ks for o, ks in found.items() if all(count[k] == 1 for k in ks)}
 
-    exact = keep({o: hits[0] for o in old if len(hits := search(o, pool, False)) == 1})
+    def settle(loose: bool, done: dict[str, tuple[str, ...]]) -> dict[str, tuple[str, ...]]:
+        # Each round takes the old municipalities that one set alone makes,
+        # then tries the rest again without the new municipalities taken:
+        # Moçâmedes is Moçâmedes, Sacomar and Lucira once Iona is Tômbwa's.
+        found: dict[str, tuple[str, ...]] = {}
+        while True:
+            used = {k for ks in (*done.values(), *found.values()) for k in ks}
+            left = [k for k in pool if k not in used]
+            step = keep({o: hits[0] for o in old if o not in done and o not in found
+                         and len(hits := search(o, left, loose)) == 1})
+            if not step:
+                return found
+            found.update(step)
+
+    exact = settle(False, {})
     out = {o: ([names[k] for k in ks], True) for o, ks in exact.items()}
     if rep.short:
         return out
-    used = {k for ks in exact.values() for k in ks}
-    left = [k for k in pool if k not in used]
-    near = keep({o: hits[0] for o in old if o not in exact
-                 and len(hits := search(o, left, True)) == 1})
+    near = settle(True, exact)
     out.update({o: ([names[k] for k in ks], False) for o, ks in near.items()})
     return out
 
@@ -958,11 +1019,14 @@ def median_of(parts: list[dict[str, dict[str, int]]]) -> tuple[float | None, str
 
 
 def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
-          refused: set[tuple[str, str]] | None = None
+          refused: set[tuple[str, str]] | None = None,
+          apart: dict[tuple[str, str], str] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     """Records for the provinces and polygons; ``refused`` holds the (province as
-    drawn, field) pairs whose provincial table disagrees with the national one."""
+    drawn, field) pairs whose provincial table disagrees with the national one,
+    ``apart`` the sentence for those it differs from in one group only."""
     refused = refused or set()
+    apart = apart or {}
     log_lines: list[str] = []
     provinces = {u["id"]: fold(u["name"]) for u in admin1}
     first = {fold(u["name"]): u for u in admin1}
@@ -1002,6 +1066,12 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         sizes = {fold(n): t for n, t, *_ in rep.new}
         rows = {name: municipalities(rep, name, rep.tables.get(name) or [])
                 for name in TABLES}
+        for name in TABLES:
+            for k, vals in list(rows[name].items()):
+                if not plausible(name, vals["TOTAL"], sizes.get(k, 0)):
+                    rep.problems.append(f"{name}: {k}'s row counts {vals['TOTAL']:,}, against "
+                                        f"{sizes.get(k, 0):,} residents; left out")
+                    del rows[name][k]
         valid = set()
         for name in TABLES:
             bad = [p for k, v in rows[name].items()
@@ -1156,7 +1226,9 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                 fields[name] = shares({k: v for k, v in counts.items() if v}, total=total) \
                     or gap(NOT_AVAILABLE)
                 fields[f"{name}_year"] = YEAR
-                fields[f"{name}_note"] = NOTES[name] + tail
+                drawn_in = next((sh for sh in set(REPORTS.values())
+                                 if fold(sh) == provinces.get(poly["parent"])), "")
+                fields[f"{name}_note"] = NOTES[name] + tail + apart.get((drawn_in, name), "")
             if {"age_broad", "age_other"} <= usable:
                 med, why = median_of(rows)
                 if med is not None:
@@ -1204,7 +1276,8 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
     return records, log_lines
 
 
-def compare_national(reports: list[Report], national_rows: list[dict[str, Any]]
+def compare_national(reports: list[Report], national_rows: list[dict[str, Any]],
+                     apart: dict[tuple[str, str], str] | None = None
                      ) -> list[tuple[str, str, str]]:
     """Each province's composition against the national report's, by group, for
     the provinces as drawn whose every report's table was read."""
@@ -1247,17 +1320,31 @@ def compare_national(reports: list[Report], national_rows: list[dict[str, Any]]
             # some size more than a tenth off refuses the table.
             total = mine.get("TOTAL") or sum(v for k, v in mine.items() if k != "TOTAL")
             off = []
+            apart_of = []
             for group, count in theirs.items():
                 if count is None or group not in mine or count < 0.005 * total:
                     continue
                 ratio = mine[group] / count if count else 0.0
                 if abs(ratio - 1) > 0.10:
                     off.append(f"{group} {mine[group]:,} against {count:,}")
+                    apart_of.append((group, (mine[group], count)))
             if len(off) > 1:
                 problems.append((shape, name, f"{shape} {name}: " + "; ".join(off)))
             elif off:
                 log(f"  national check: {shape} {name}: one group apart, kept: {off[0]}")
+                if apart is not None:
+                    group, counts = apart_of[0]
+                    apart[(shape, name)] = (
+                        f" The provincial report counts {counts[0]:,} people of {shape} "
+                        f"province under {QUOTED.get(group, group)}, the census's "
+                        f"national report {counts[1]:,}.")
     return problems
+
+
+# How a group reads inside a sentence.
+QUOTED = {"No religion": "no religion", "Not stated": "no answer",
+          "Other religion": "another religion", "Other languages": "other languages",
+          "Other": "another ethnic group"}
 
 
 # Linked from the census's site as Relatorio_Provincial_<stem>_Censo2024.pdf; some
@@ -1374,6 +1461,7 @@ def main() -> int:
                       if any(k in t for k in (*SEX_TABLES, "porgruposetariosquinquenais",
                                               *(k for s in TABLES.values()
                                                 for k in keys_of(s))))}
+            wanted |= {i + 1 for i in wanted if i + 1 < len(texts)}
             pages: list[list[Row]] = [[] for _ in texts]
             with pdfplumber.open(io.BytesIO(blob)) as pdf:
                 for i in sorted(wanted):
@@ -1394,7 +1482,8 @@ def main() -> int:
         log("    2024: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.new))
     path = PROCESSED / "angola_province.json"
     national = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
-    disagree = compare_national(reports, national)
+    apart: dict[tuple[str, str], str] = {}
+    disagree = compare_national(reports, national, apart)
     for _, _, line in disagree[:80]:
         log(f"  national check: {line}")
     refused = {(shape, name) for shape, name, _ in disagree}
@@ -1402,7 +1491,7 @@ def main() -> int:
         log(f"  {shape}: {name} left out, its provincial table not the national report's")
     admin1 = json.loads((SITE / "admin1" / "AGO.units.json").read_text(encoding="utf-8"))
     admin2 = json.loads((SITE / "admin2" / "AGO.units.json").read_text(encoding="utf-8"))
-    records, lines = build(reports, admin1, admin2, refused)
+    records, lines = build(reports, admin1, admin2, refused, apart)
     for line in lines:
         log(line)
     a2 = [r for r in records if r["level"] == "admin2"]

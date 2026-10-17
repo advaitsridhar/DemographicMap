@@ -463,5 +463,102 @@ class OldDivision(unittest.TestCase):
         self.assertIn("do not match Dembos", by["Dembos-Quibaxe"]["ethnicity"]["note"])
 
 
+RELIGION_TITLE = ("Quadro 7.1 - População com 2 ou mais anos por área de residência e "
+                  "município, segundo a religião ou espiritualidade, 2024")
+
+
+class Continued(unittest.TestCase):
+    def read(self, pages):
+        rep = am.Report("Bengo")
+        rows = am.read_table(rep, "religion", am.TABLES["religion"],
+                             [am.rows_of(pg.words) for pg in pages], [pg.text() for pg in pages])
+        return rep, dict(rows)
+
+    def test_columns_carried_to_an_untitled_page(self):
+        first, second = Page(), Page()
+        first.title(RELIGION_TITLE)
+        first.head([("População com 2 ou mais anos", 180), ("Católica", 270)])
+        second.head([("População com 2 ou mais anos", 180), ("Protestante", 270)])
+        for label, total, cat in (("Bengo", 300, 200), ("Dande", 100, 60), ("Dembos", 200, 140)):
+            first.row(label, [total, cat], [240.0, 310.0])
+            second.row(label, [total, total - cat], [240.0, 310.0])
+        _, rows = self.read([first, second])
+        self.assertEqual(rows["Dande"], {"TOTAL": 100, "Catholic": 60, "Protestant": 40})
+
+    def test_rows_carried_on_under_the_province_printed_again(self):
+        first, second = Page(), Page()
+        for page in (first, second):
+            page.title(RELIGION_TITLE)
+            page.head([("População com 2 ou mais anos", 180), ("Católica", 270),
+                       ("Protestante", 335)])
+            page.row("Bengo", [300, 200, 100], [240.0, 310.0, 380.0])
+        first.row("Dande", [100, 60, 40], [240.0, 310.0, 380.0])
+        second.row("Dembos", [200, 140, 60], [240.0, 310.0, 380.0])
+        _, rows = self.read([first, second])
+        self.assertEqual(list(rows), ["Bengo", "Dande", "Dembos"])
+
+    def test_the_same_age_groups_printed_twice(self):
+        plain, sexed = Page(), Page()
+        plain.title("Quadro 1.4 - População por área de residência, municípios e comunas, "
+                    "segundo os grandes grupos etários, 2024")
+        plain.head([("Total", 220), ("0 - 14 anos", 270), ("15-64 anos", 330),
+                    ("65 ou mais anos", 390)])
+        plain.row("Dande", [1000, 600, 360, 40], [240.0, 300.0, 360.0, 420.0])
+        sexed.title("Quadro 1.6 - População por área de residência, municípios e comunas, "
+                    "segundo os grandes grupos etários e sexo, 2024")
+        rights = [250.0 + 60 * k for k in range(9)]
+        sexed.head([("0 - 14 anos", 270), ("15 - 64 anos", 450), ("65 ou mais", 630)])
+        sexed.head([(w, r - 40) for w, r in zip(["Total", "Homens", "Mulheres"] * 3, rights)])
+        sexed.row("Homens", [290, 290, 0, 170, 170, 0, 20, 20, 0], rights)
+        sexed.row("Dande", [600, 290, 310, 360, 170, 190, 40, 20, 20], rights)
+        rep = am.Report("Bengo")
+        rows = dict(am.read_table(rep, "age_broad", am.TABLES["age_broad"],
+                                  [am.rows_of(plain.words), am.rows_of(sexed.words)],
+                                  [plain.text(), sexed.text()]))
+        self.assertEqual(rows["Dande"], {"TOTAL": 1000, "0-14": 600, "15-64": 360, "65+": 40})
+        self.assertEqual(rep.problems, [])
+
+
+class Settling(unittest.TestCase):
+    def test_a_municipality_settles_once_its_neighbour_has(self):
+        new = [("Moçâmedes", 345_987), ("Tômbwa", 123_620), ("Bibala", 119_295),
+               ("Virei", 54_034), ("Camucuio", 42_073), ("Lucira", 28_354),
+               ("Cacimbas", 32_077), ("Sacomar", 65_692), ("Iona", 4_576)]
+        rep = report(new, [])
+        by = {n: (t, m, f) for n, t, m, f in rep.new}
+
+        def old(name, parts, moved=(0, 0, 0)):
+            return (name, *(sum(by[q][j] for q in parts) + moved[j] for j in range(3)))
+        rep.old = [old("Moçâmedes", ["Moçâmedes", "Sacomar", "Lucira"], (-340, -163, -177)),
+                   old("Tômbwa", ["Tômbwa", "Iona"], (340, 163, 177)),
+                   old("Bibala", ["Bibala"]), old("Virei", ["Virei"]),
+                   old("Camucuio", ["Camucuio", "Cacimbas"])]
+        got = am.crosswalk_parts(rep)
+        self.assertEqual(set(got["mocamedes"][0]), {"Moçâmedes", "Sacomar", "Lucira"})
+        self.assertFalse(got["mocamedes"][1])
+        self.assertEqual(got["tombwa"], (["Tômbwa", "Iona"], False))
+        self.assertEqual(got["camucuio"], (["Camucuio", "Cacimbas"], True))
+
+    def test_rows_against_their_residents(self):
+        self.assertTrue(am.plausible("religion", 95_000, 100_000))
+        self.assertFalse(am.plausible("religion", 50_000, 100_000))
+        self.assertTrue(am.plausible("age_other", 100_200, 100_000))
+        self.assertFalse(am.plausible("age_broad", 90_000, 100_000))
+
+    def test_one_group_apart_is_said(self):
+        pages, texts = report_pages()
+        rep = am.read_report("Bengo", pages, texts)
+        total = rep.tables["ethnicity"][0][1]
+        near = [{"name": "Bengo", "ethnicity": [
+            {"group": "Bakongo", "pct": 1.0, "count": total["Bakongo"] * 2},
+            {"group": "Ambundu", "pct": 1.0, "count": total["Ambundu"] + 5_000}]}]
+        apart = {}
+        self.assertEqual(am.compare_national([rep], near, apart), [])
+        self.assertIn("national report", apart[("Bengo", "ethnicity")])
+        records, _ = am.build([rep], ADMIN1, ADMIN2, set(), apart)
+        dande = next(r for r in records if r["name"] == "Dande")
+        self.assertIn(f"{total['Bakongo'] * 2:,}", dande["ethnicity_note"])
+
+
 if __name__ == "__main__":
     unittest.main()
