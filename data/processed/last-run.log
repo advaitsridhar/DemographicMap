@@ -1,27 +1,10 @@
-drc_gaps: OCHA's tables: 26 provinces, 189 territories, cities and towns
-  Territoire (république démocratique du Congo): 144 territories with a seat
-  province Equateur: its two sex splits agree; left out
-  province Haut-Katanga: its two sex splits agree; left out
-  province Maniema: its two sex splits agree; left out
-  province Mongala: its two sex splits agree; left out
-  province Sud-Kivu: its two sex splits agree; left out
-  province Tshopo: its two sex splits agree; left out
-  province Tshuapa: its two sex splits agree; left out
-  164 territories and cities given reasons (118 with a seat)
-  town Aba: counted in Faradje
-  town Ariwara: counted in Aru
-  town Bangu: counted in Songololo
-  town Baraka: counted in Fizi
-  town Bena-Dibele: counted in Kole
-  town Dibaya-Lubwe: counted in Idiofa
-  town Ingbokolo: counted in Aru
-  town Inkisi: counted in Madimba
-  town Isiro: counted in Rungu
-  town Kalima: counted in Pangi
-  town Kamituga: counted in Mwenga
-  town Mangai: counted in Idiofa
-  town Mongwalu: counted in Djugu
-  town Namoya: counted in Kabambare
-  town Tshumbe: counted in Kole
-  wrote data/processed/drc_gaps.json (360 kB)
-  19 provinces and 179 second-level polygons written
+page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=1
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=2
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=3
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=4
+  unreachable: HTTPError: HTTP Error 404: Not Found
