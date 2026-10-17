@@ -61,6 +61,7 @@ SLACK = 2
 HEADER = re.compile(r"([A-Za-zÀ-ÿ'’. -]+?)\s*\(\s*(\d{1,2})\s*\)")
 ROW = re.compile(r"(?i)(\d{1,2}\s*-\s*\d{1,2}\s*ans|85\s*ans\s*&\s*\+|ND|Total)"
                  r"\s+(\d[\d ]*?\d|\d)\s+(\d[\d ]*?\d|\d)\s+(\d[\d ]*?\d|\d)(?=\s|$)")
+LABEL = re.compile(r"(?i)(\d{1,2}\s*-\s*\d{1,2}\s*ans|85\s*ans\s*&\s*\+|ND|Total)")
 
 
 def fold(text: Any) -> str:
@@ -82,6 +83,19 @@ def label_bounds(label: str) -> tuple[int, int | None] | str:
     if not m:
         raise SystemExit(f"algeria_census: an age group reads {label!r}")
     return int(m.group(1)), int(m.group(2))
+
+
+def one_label(line: str, wanted: int) -> list[tuple[str, str, str, str]]:
+    """A row whose age group is printed once for both wilayas ("85 ans & +
+    1414 1509 2923 1692 1583 3274"): its numbers taken three by three, where
+    they are plain and there are three for each wilaya; else nothing."""
+    labels = LABEL.findall(line)
+    if not labels or len({str(label_bounds(lab)) for lab in labels}) != 1:
+        return []
+    numbers = re.findall(r"\d+", LABEL.sub(" ", line))
+    if len(numbers) != 3 * wanted:
+        return []
+    return [(labels[0], *numbers[3 * i:3 * i + 3]) for i in range(wanted)]
 
 
 def parse(pages: list[str]) -> dict[int, dict[str, Any]]:
@@ -109,8 +123,12 @@ def parse(pages: list[str]) -> dict[int, dict[str, Any]]:
             if not cells or not current:
                 continue
             if len(cells) != len(current):
-                raise SystemExit(f"algeria_census: a row carries {len(cells)} wilayas where "
-                                 f"the block names {len(current)}: {line!r}")
+                found, cells = len(cells), one_label(line, len(current))
+                if not cells:
+                    raise SystemExit(f"algeria_census: a row carries {found} wilayas "
+                                     f"where the block names {len(current)}: {line!r}")
+                log(f"  a row printed with its label once for {len(current)} wilayas, read "
+                    f"in threes: {line.strip()!r}")
             for number, (label, men, women, total) in zip(current, cells):
                 unit = out[number]
                 m, f, t = count(men), count(women), count(total)

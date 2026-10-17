@@ -37,6 +37,11 @@ class Folding(unittest.TestCase):
     def test_french_names_lose_their_kind_word(self):
         self.assertEqual(tc.latin("Délégation de Carthage"), "carthage")
 
+    def test_the_two_censuses_names_join_without_articles(self):
+        self.assertEqual(tc.place_key("Gouvernorat du Kef"), tc.place_key("Le Kef"))
+        self.assertEqual(tc.place_key("Gouvernorat de l'Ariana"), tc.place_key("Ariana"))
+        self.assertEqual(tc.place_key("Délégation d'El Faouar"), "faouar")
+
     def test_open_age_group(self):
         self.assertEqual(tc.bounds("80+"), (80, None))
         self.assertEqual(tc.bounds("05-09"), (5, 9))
@@ -75,7 +80,7 @@ class Reading(unittest.TestCase):
         admin2 = [{"id": "P1", "name": "Carthage", "parent": "G1"},
                   {"id": "P2", "name": "المدينة", "parent": "G1"}]
         sectors_2014 = {"tunis": {"sidibousaid": "carthage", "amilcar": "carthage",
-                                  "medina": "lamedina"}}
+                                  "medina": "medina"}}
         saved = dict(tc.DELEGATIONS)
         tc.DELEGATIONS.clear()
         try:
@@ -89,6 +94,38 @@ class Reading(unittest.TestCase):
         self.assertEqual(by_shape["P2"]["population"]["value"], 2 * 17 * 20)
         self.assertEqual(by_shape["P2"]["sex_ratio"]["value"], 1000)
         self.assertTrue(any("made since 2014" in line for line in report))
+
+    def test_a_new_delegation_that_cannot_be_placed_stops_the_run(self):
+        t = self.table()
+        admin1 = [{"id": "G1", "name": "Tunis"}]
+        admin2 = [{"id": "P1", "name": "Carthage", "parent": "G1"},
+                  {"id": "P2", "name": "المدينة", "parent": "G1"}]
+        saved = dict(tc.DELEGATIONS)
+        tc.DELEGATIONS.clear()
+        try:
+            with self.assertRaises(SystemExit):
+                tc.build(t, admin1, admin2, {"tunis": {"medina": "medina"}})
+        finally:
+            tc.DELEGATIONS.update(saved)
+
+    def test_a_declared_home_places_a_delegation_the_2014_table_does_not_name(self):
+        t = self.table()
+        admin1 = [{"id": "G1", "name": "Tunis"}]
+        admin2 = [{"id": "P1", "name": "Carthage", "parent": "G1"},
+                  {"id": "P2", "name": "المدينة", "parent": "G1"}]
+        saved, homes = dict(tc.DELEGATIONS), dict(tc.HOMES_2014)
+        tc.DELEGATIONS.clear()
+        tc.HOMES_2014.clear()
+        tc.HOMES_2014["1172"] = "medina"
+        try:
+            records, report = tc.build(t, admin1, admin2, {"tunis": {"medina": "medina"}})
+        finally:
+            tc.DELEGATIONS.update(saved)
+            tc.HOMES_2014.clear()
+            tc.HOMES_2014.update(homes)
+        by_shape = {r["shape_id"]: r for r in records if r["level"] == "admin2"}
+        self.assertEqual(by_shape["P2"]["population"]["value"], 2 * 17 * 25)
+        self.assertTrue(any("whose outline holds it" in line for line in report))
 
 
 class Medians(unittest.TestCase):

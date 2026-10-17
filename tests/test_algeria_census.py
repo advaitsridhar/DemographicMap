@@ -45,6 +45,19 @@ class Parsing(unittest.TestCase):
         self.assertEqual(table[1]["groups"][0], (0, 4, 47855))
         self.assertEqual(table[1]["rounding"], ["0-4 Ans -1"])
 
+    def test_a_label_printed_once_for_both_wilayas_is_read_in_threes(self):
+        once = PAGE.replace("85 ans &  + 640 639 1279  85 ans &  + 1360 1547 2907",
+                            "85 ans &  + 640 639 1279  1360 1547 2907")
+        table = ac.parse([once])
+        self.assertEqual(table[1]["groups"][-1], (85, None, 1279))
+        self.assertEqual(table[2]["groups"][-1], (85, None, 2907))
+
+    def test_a_row_short_of_numbers_stops_the_run(self):
+        short = PAGE.replace("85 ans &  + 640 639 1279  85 ans &  + 1360 1547 2907",
+                             "85 ans &  + 640 639 1279  1360 1547")
+        with self.assertRaises(SystemExit):
+            ac.parse([short])
+
     def test_the_check_wants_all_48_and_unbroken_groups(self):
         with self.assertRaises(SystemExit):
             ac.check(ac.parse([PAGE]))

@@ -87,6 +87,13 @@ DELEGATIONS: dict[tuple[str, str], str] = {
 SPELLING = 0.82
 # A sector of a new delegation is found in 2014 under another spelling at this.
 SECTOR_SPELLING = 0.8
+# A delegation made since 2014 none of whose sectors INS's 2014 table names
+# -> the 2014 delegation (as ``place_key`` writes it) whose outline holds it.
+# Rjim Maatoug, the desert settlement west of El Faouar: the 2014 table's
+# sectors of El Faouar make 17,424 of the delegation's 19,613 people, the rest
+# counted in no sector, and El Faouar's is the only outline of Kebili in that
+# part of the desert (the nearest other, Douz Sud's, lies 70 km east of it).
+HOMES_2014 = {"6357": "faouar"}
 AGE = re.compile(r"^\s*(\d{1,3})\s*-\s*(\d{1,3})\s*$")
 OPEN = re.compile(r"^\s*(\d{1,3})\s*(?:\+|ans?\s*et\s*plus|et\s*\+|et\s*plus)\s*$", re.I)
 ARABIC = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ة": "ه", "ى": "ي",
@@ -107,6 +114,17 @@ def fold(text: Any) -> str:
 def latin(text: Any) -> str:
     """The French name without 'Délégation de' and its kind words."""
     name = re.sub(r"(?i)^\s*d[ée]l[ée]gation\s+d[e']\s*", "", str(text or ""))
+    return fold(name)
+
+
+def place_key(text: Any) -> str:
+    """A governorate's or delegation's French name as the 2014 and 2024
+    tables can be joined on: without 'Gouvernorat' or 'Délégation', 'de',
+    'du' or 'd'', and a leading article -- 2014's 'Gouvernorat du Kef' and
+    2024's 'Le Kef' are both 'kef'."""
+    name = re.sub(r"(?i)^\s*(gouvernorat|d[ée]l[ée]gation)\s+", "", str(text or ""))
+    name = re.sub(r"(?i)^(d[eu]s?\s+|d['’]\s*)", "", name)
+    name = re.sub(r"(?i)^(l[ea]s?\s+|l['’]\s*|el\s+)", "", name)
     return fold(name)
 
 
@@ -228,13 +246,17 @@ def read_2014(rows: list[list[Any]]) -> dict[str, dict[str, str]]:
             continue
         key = fold(name)
         if re.match(r"(?i)^gouvernorat\s+d", name):
-            gov, deleg = latin(re.sub(r"(?i)^gouvernorat\s+d[e']\s*", "", name)), None
+            gov, deleg = place_key(name), None
             continue
         if re.match(r"(?i)^d[ée]l[ée]gation\s+d", name):
-            deleg = latin(name)
+            deleg = place_key(name)
             totals[(gov or "", deleg)] = int(people)
             continue
         if key in REGIONS or gov is None or deleg is None:
+            continue
+        if int(people) > totals[(gov, deleg)]:
+            # A region's heading between two governorates, not a sector.
+            log(f"  2014: {name!r} ({int(people):,}) is more than its delegation; skipped")
             continue
         out[gov][key] = deleg
         made[(gov, deleg)] += int(people)
@@ -254,8 +276,8 @@ def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict
     for sid, codes in held.items():
         for code in codes:
             unit = table["delegations"][code]
-            by_name[(unit["gov"], latin(unit["fr"]))] = sid
-    gov_fold = {code: latin(u["fr"]) for code, u in table["governorates"].items()}
+            by_name[(unit["gov"], place_key(unit["fr"]))] = sid
+    gov_fold = {code: place_key(u["fr"]) for code, u in table["governorates"].items()}
     extra: dict[str, list[str]] = defaultdict(list)
     for code, unit in sorted(table["delegations"].items()):
         if code in bound_codes:
@@ -278,6 +300,15 @@ def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict
             if sid:
                 placed[sec["code"]] = sid
         homes = set(placed.values())
+        if not placed and code in HOMES_2014:
+            home = by_name.get((unit["gov"], HOMES_2014[code]))
+            if home is None:
+                raise SystemExit(f"tunisia_census: HOMES_2014 puts {code} in "
+                                 f"{HOMES_2014[code]!r}, which is drawn nowhere")
+            report.append(f"    {unit['fr']}: none of its sectors in the 2014 table; put in "
+                          f"{HOMES_2014[code]!r}, whose outline holds it")
+            placed = {sec["code"]: home for sec in mine}
+            homes = {home}
         if len(homes) == 1 and len(placed) < len(mine):
             # A sector renamed or made since 2014 goes where all its
             # delegation's other sectors went.
@@ -407,13 +438,18 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
                                    f"the governorate of {display(unit['fr'])}"))
     held = bind_delegations(table["delegations"], admin2, govs, report)
     extra = carved(table, held, sectors_2014 or {}, report)
-    # A polygon some of whose 2014 ground the 2024 census counts in a new
-    # delegation it could not be given whole is left without figures: the
-    # delegation it is bound to no longer covers it.
+    # A delegation made since 2014 that is neither drawn nor put back on the
+    # polygon it was carved from leaves that polygon short, and which polygon
+    # it is cannot be told: nothing is written until it is placed.
     unplaced = {code for code, unit in table["delegations"].items()
                 if code not in {c for codes in held.values() for c in codes}
                 and not any(s["del"] == code for sid in extra for s in
                             (table["sectors"][x] for x in extra[sid]))}
+    if unplaced:
+        for line in report:
+            log(line)
+        raise SystemExit(f"tunisia_census: delegations neither drawn nor placed: "
+                         f"{sorted(unplaced)}")
     labels = {s["id"]: s for s in admin2}
     for sid, codes in sorted(held.items()):
         units = [table["delegations"][c] for c in codes]
@@ -429,8 +465,6 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             what = f"the delegation of {name}"
         records.append(unit_record(f"TUN-RGPH2024-{'-'.join(codes)}", labels[sid], "admin2",
                                    unit, sources, what))
-    if unplaced:
-        report.append(f"  delegations neither drawn nor placed: {sorted(unplaced)}")
     return records, report
 
 

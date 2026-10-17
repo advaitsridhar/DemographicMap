@@ -17,13 +17,13 @@ figures are in the US Census Bureau's subnational tables for HDX
 2025 projections: men per 1,000 women for every state and every locality the
 map draws that the retabulation names, and the median age for every state
 whose ground has not changed since 2008 -- a state whose 2008 count in Table
-P01 is the same, to the person, as the retabulation's count of the state as
-drawn in 2020. The states made since (Central and East Darfur, West Kordofan)
+P01 is the same as the retabulation's count of the state as drawn in 2020, to
+within the two people the Bureau's rounding of each cell can make. The states made since (Central and East Darfur, West Kordofan)
 and those they were taken from have no census median, and say nothing here.
 No head count is written: the projections are of later years.
 
 **Checks before anything is written.** Every row's men and women make its
-total and its age groups make it too; the localities of each state make the
+total (to within two people of rounding) and its age groups make it too; the localities of each state make the
 state, and the states the country. Localities bind to the map's within their
 state by name, then by the closest spelling where each is the other's best;
 every pairing that is not exact is logged.
@@ -67,6 +67,10 @@ CLAIMED = ("abyei", "halaib", "halayeb")
 # The most of a state's people Table P01 may leave without a stated age
 # before the table is taken to be misread rather than incomplete.
 UNSTATED_SHARE = 0.05
+# How far a row's men and women may miss its total, and Table P01's count of
+# a state the retabulation's, in people: the Bureau's cells are rounded one by
+# one (P01 gives Khartoum 2,725,185 men and 2,456,002 women, 5,181,186 in all).
+SLACK = 2
 SPELLING = 0.72
 GROUP = re.compile(r"^([BMF])(\d{2})(\d{2})$")
 OPEN = re.compile(r"^([BMF])(\d{2})PL$")
@@ -117,8 +121,10 @@ def read_retab(rows: list[list[Any]]) -> dict[str, Any]:
             continue
         name = str(row[at["AREA_NAME"]] or "").strip()
         men, women, total = number(row[men_col]), number(row[women_col]), number(row[total_col])
-        if None in (men, women, total) or men + women != total:
+        if None in (men, women, total) or abs(men + women - total) > SLACK:
             raise SystemExit(f"sudan_census: {name}: men {men}, women {women}, total {total}")
+        if men + women != total:
+            log(f"  {name}: {men:,} men and {women:,} women against {total:,} (rounding)")
         unit = {"name": name, "men": men, "women": women, "total": total,
                 "state": str(row[at["ADM1_NAME"]] or "").strip(),
                 "code": str(row[at["GEO_MATCH"]] or name).strip()}
@@ -164,14 +170,21 @@ def read_ages(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
         name = str(row[at["AREA_NAME"]] or "").strip()
         total, men, women = (number(row[at[k]]) for k in ("BTOTL", "MTOTL", "FTOTL"))
         groups = [(lo, hi, number(row[i]) or 0) for lo, hi, i in cols["B"]]
-        if None in (total, men, women) or men + women != total:
+        if None in (total, men, women) or abs(men + women - total) > SLACK:
             raise SystemExit(f"sudan_census: P01 {name}: men {men}, women {women}, "
                              f"total {total}")
+        if men + women != total:
+            log(f"  P01 {name}: {men:,} men and {women:,} women against {total:,} (rounding)")
         aged = sum(n for _, _, n in groups)
         by_sex = [sum(number(row[i]) or 0 for _, _, i in cols[s]) for s in "MF"]
         # People whose age was not stated are in the total and in no group:
-        # they are left out of the median, and must be few.
+        # they are left out of the median, and must be few. A difference no
+        # bigger than half a person a group is the rounding of the cells.
         unstated = total - aged
+        if abs(unstated) <= len(groups) // 2:
+            if unstated:
+                log(f"  P01 {name}: its age groups make {aged:,} of {total:,} (rounding)")
+            unstated = 0
         if unstated < 0 or unstated > UNSTATED_SHARE * total:
             raise SystemExit(f"sudan_census: P01 {name}: its age groups make {aged:,} of "
                              f"{total:,} (men {by_sex[0]:,} of {men:,}, women {by_sex[1]:,} "
@@ -243,7 +256,7 @@ def build(retab: dict[str, Any], ages: dict[str, dict[str, Any]],
                                f"women."),
             "sources": [{**retab_src, "field": "sex_ratio"}]}
         p01 = ages.get(key)
-        if p01 and p01["total"] == unit["total"]:
+        if p01 and abs(p01["total"] - unit["total"]) <= SLACK:
             median = grouped_median(p01["groups"])
             fields["median_age"] = measure(median, unit="years", year=YEAR, source=AGE_SOURCE)
             unstated = (f" The {p01['unstated']:,} people whose age was not stated are left "
