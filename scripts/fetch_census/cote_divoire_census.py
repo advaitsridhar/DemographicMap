@@ -16,7 +16,11 @@ shares of its people on the ethnicity field under its basis (nationality: the
 census's question is nationality, and the page gives only those two shares).
 The median age says why there is none: the table gives the mean age and broad
 groups only. Each of the 14 districts takes its regions added together; the map
-draws the two autonomous districts at both levels.
+draws the two autonomous districts at both levels. A district of several
+regions names them and their seats where no capital of its own is named.
+Where a page prints the country's column wrongly ("29 276 660,00", "29
+389150") or a region's figure with a space misplaced ("61 2029"), the figure
+is read only as far as the men and women make it.
 
 **Checks before anything is written.** Each table's men and women make its
 total, for 2021 and for 1998; the national column is the census's 29,389,150;
@@ -74,8 +78,8 @@ PAGES = {
     "region-gontougo-mono": "gontougo",
 }
 NO_MEDIAN = ("The 2021 census's synoptic table for the {unit} gives the mean age ({mean} "
-             "years) and the population in broad age groups (under 15, 15 to 64, 65 and over), "
-             "from which no median age can be taken.")
+             "years) and the population in a few broad age groups (under 5, under 15, under 18, "
+             "15 to 64, 60 and over, 65 and over), from which no median age can be taken.")
 
 
 def fold(text: Any) -> str:
@@ -106,10 +110,13 @@ def readings(tokens: list[str], start: int) -> list[tuple[int, int]]:
 def row_numbers(text: str, label: str, national: int) -> list[list[int | None]]:
     """The candidate (region 2021, region 1998) readings of a synoptic row, after
     the country's own figure; 1998 is None where the table gives '-'."""
-    m = re.search(rf"{label}\s+((?:[\d-]+\s+){{1,12}})", text + " ")
+    # The country's figure as some pages print it: "29 389150", "29 389 150,00".
+    spaced = r"\s*".join(str(national)) + r"(?:,00)?"
+    text = re.sub(rf"(?<=\s){spaced}(?=\s)", str(national), text)
+    m = re.search(rf"{label}\s+((?:[\d-]+(?:,00)?\s+){{1,12}})", text + " ")
     if not m:
         raise SystemExit(f"cote_divoire_census: no row {label!r}")
-    tokens = m.group(1).split()
+    tokens = [t[:-3] if t.endswith(",00") else t for t in m.group(1).split()]
     starts = [end for value, end in readings(tokens, 0) if value == national]
     if not starts:
         # The country's column misprinted on a page: any reading near it.
@@ -119,7 +126,12 @@ def row_numbers(text: str, label: str, national: int) -> list[list[int | None]]:
         raise SystemExit(f"cote_divoire_census: {label!r} does not open with {national:,}: "
                          f"{' '.join(tokens)}")
     out = []
-    for value, end in readings(tokens, starts[0]):
+    # A region's figure with its space misplaced ("61 2029" for 612,029) is
+    # also offered, joined: only a reading the men and women make is taken.
+    joined = [(int("".join(tokens[starts[0]:starts[0] + k])), starts[0] + k) for k in (2, 3)
+              if len(tokens) >= starts[0] + k
+              and all(t.isdigit() for t in tokens[starts[0]:starts[0] + k])]
+    for value, end in readings(tokens, starts[0]) + joined:
         rest = tokens[end:]
         if rest and rest[0] == "-":
             out.append([value, None])
@@ -142,8 +154,8 @@ def synoptic(text: str) -> dict[str, Any]:
                     continue
                 if None not in (t[1], m[1], w[1]) and abs(m[1] + w[1] - t[1]) > 1:
                     continue
-                mean = re.search(r"(?i)[AÂ]ge\s+moyen\s+de\s+la\s+population\s+"
-                                 r"([\d,]+)\s+([\d,]+)", text)
+                mean = re.search(r"(?i)[AÂ]ge\s+moyen\s+de\s+la\s+population\s*"
+                                 r"(?:\(ans\))?\s+([\d,]+)\s+([\d,]+)", text)
                 return {"men": m[0], "women": w[0], "total": t[0],
                         "mean": mean.group(2).replace(",", ".") if mean else None}
     raise SystemExit("cote_divoire_census: the synoptic table's sexes do not make its total")
@@ -179,9 +191,13 @@ def page_facts(text: str) -> dict[str, Any]:
     # The seat as the page's heading prints it, in capitals (the heading lists
     # the departments' seats before or after it); spelled as the page's
     # sentence spells it where the two are the same name.
-    head = re.search(r"CHEF[ -]LIEU\s+DE\s+(?:LA\s+)?R[EÉ]GION\s*:\s*(.+?)"
-                     r"\s*(?=CHEF[ -]LIEU|POPULATION\b)", text)
-    said = re.search(r"Sa capitale est ([^.]+?)\s*(?:\.|CHEF)", text)
+    # The heading's seat runs to the next heading word (CHEF LIEU, POPULATION,
+    # SUPERFICIE, DISTRICT) or to the first word not in capitals ("ABOISSO Sud
+    # Comoe - Tableau..."); an autonomous district's says only "CHEF LIEU".
+    head = re.search(r"CHEF[ -]LIEU\s+(?:(?:DE\s+)?(?:LA\s+)?R[EÉ]GION\s*)?:\s*(.+?)"
+                     r"(?=\s+(?:CHEF[ -]LIEU|POPULATION|SUPERFICIE|DISTRICT)\b"
+                     r"|\s+[A-Z][a-zà-ÿ]|\s*$)", text)
+    said = re.search(r"(?:Sa capitale|Son chef-lieu) est ([^.]+?)\s*(?:\.|CHEF)", text)
     seat = head.group(1).strip(" ,;") if head else None
     if said and (seat is None or fold(said.group(1)) == fold(seat)):
         seat = said.group(1).strip()
@@ -222,7 +238,7 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         if f is None:
             report.append(f"region polygon {shape['name']!r}: no page")
             continue
-        parents.setdefault(shape["parent"], []).append(f)
+        parents.setdefault(shape["parent"], []).append({**f, "region": shape["name"]})
         unit = "region" if not shape["name"].startswith("District") else "district"
         fields: dict[str, Any] = {
             "population": measure(f["total"], year=YEAR, source=SOURCE),
@@ -263,6 +279,12 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         if len(parts) > 1:
             fields["population_note"] = ("The 2021 census's counts of the district's "
                                          f"{len(parts)} regions, added.")
+            named = [f"{p['region']} (seat {p['seat']})" if p["seat"] else p["region"]
+                     for p in parts]
+            fields["capital"] = gap(NOT_AVAILABLE, (
+                "The district groups the regions of " + ", ".join(named[:-1]) + " and "
+                + named[-1] + ", as the 2021 census's regional pages give them; they name no "
+                "seat for the district itself."))
         elif parts[0]["seat"]:
             fields["capital"] = parts[0]["seat"]
         records.append(record(f"CIV-RGPH2021-district-{fold(shape['name'])}", shape["name"],

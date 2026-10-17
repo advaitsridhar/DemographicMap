@@ -67,7 +67,62 @@ class CoteDivoire(unittest.TestCase):
         self.assertIn("mean age (26 years)", gbeke["median_age"]["note"])
         district = by[("admin1", "Valle Du Bandama")]
         self.assertEqual(district["population"]["value"], 1_352_900 + 590_000)
+        self.assertIn("Gbeke (seat Bouaké) and Hambol (seat Katiola)",
+                      district["capital"]["note"])
         self.assertEqual(len(report), 31 + 13)  # 31 regions unread; 13 districts not whole
+
+
+# Run 3's log: excerpts of the regional pages where they were not yet read.
+MORONOU = "Tableau Synoptique de la région Indicateurs National 2021 Moronou 2021 Moronou 1998 Population totale 29 276 660,00 439755 247 635 Population masculine 15 266 032 237458 122 464 Population féminine 14 010 628 202297 125 171 Rapport de masculinité 109,0 117,4 97,80 Taux d'accroissance moyen annuelle (%) 2,90 3,90 - Densité moyenne (habitants/km²) 91,00 79,9 45,00 Poids (%) de la région dans la population nationale - 1,50 1,6 Femmes en âge de procréer (15-49 ans) 7 385 550 103699 55 195,00 Enfants âgés de moins de 5 ans (0-4 ans) 3 692 273 47 723 36 709 Enfants âgés de moins de 15 ans (0-14 ans) 11 206 299 152 972 114 911 Population âgée de 0-17 ans 13 174 947 182 020 130 541,00 Age moyen de l"
+
+NZI = "Tableau Synoptique de la région Indicateurs National 2021 N’Zi 2021 N’Zi 1998 Population totale 29 389 150,00 254623 165 197 Population masculine 15 344 990 129386 79 832 Population féminine 14 044 160 125237 85 365 Rapport de masculinité 109,30 103,3 93,50 Taux d'accroissance annuelle moyen (%) 2,90 1,9 - Densité moyenne (habitants/km²) 91,10 52,9 34,60 Poids (%) de la région dans la population nationale - 0,9 1,10 Femmes en âge de procréer (15-49 ans) 7 407 671 54 491 34 885 Enfants âgés de moins de 5 ans (0-4 ans) 3 696 301 32 373 24 372 Enfants âgés de moins de 15 ans (0-14 ans) 11 225 273 101 275 77 151 Population âgée de 0-17 ans 13 174 947 117 290 87 531 Age moyen de la population 23 "
+
+GUEMON = 'Tableau Synoptique de la région Indicateurs National 2021 Guémon 2021 Guémon 1998 Population totale 29 389150 930 873 440 646 Population masculine 15 344 990 503 870 230 135 Population féminine 14 044 160 427 003 210 511 Rapport de masculinité 109 118 109 Taux d’Accroissement Moyen Annuel 2,9 3,3 - Densité moyenne (habitants/km²) 91,1 125,0 59,4 Poids (%) de la région dans la population nationale 3,2 2,9 - Femmes en âge de procréer (15-49 ans) 7 407 671 218 077 101 646 Enfants âgés de moins de 5 ans (0-4 ans) 3 696 301 122 903 74 429 Enfants âgés de moins de 15 ans (0-14 ans) 11 225 273 381 378 190 778 Population âgée de 0-17ans 13 174 947 445 468 215 373 Age moyen de la population 23 23 - P'
+
+HAMBOL = "Tableau Synoptique de la région Indicateurs Côte d’Ivoire 2021 Hambol 2021 Hambol 1998 Population totale 29389150 61 2029 269 235 Population masculine 15 344 990 321 767 135 318 Population féminine 14 044 160 290 262 133 917 Rapport de masculinité 109,3 109,6 101 Taux d'accroissance annuelle moyen (%) 2,9 3,6 - Densité moyenne (habitants/km²) 91,1 31,4 13,8 Poids (%) de la région dans la population nationale - 2,1 1,8 Femmes en âge de procréer (15-49 ans) 7 407 671 14 4613 58 708 Enfants âgés de moins de 5 ans (0-4 ans) 3 696 301 79 342 43 219 Enfants âgés de moins de 15 ans (0-14 ans) 11 225 273 244 889 122 949 Population âgée de 0-17 ans 13 174 947 286 403 139 275 Age moyen de la populatio"
+
+ABIDJAN_HEAD = "inclinée rattachée à une immense croix. CHEF LIEU : ABIDJAN POPULATION : 6 321 017 District d'Abidjan - Tableau Synoptique de la région Indicateurs National 2021 DAA 2021 DAA 1998 Population totale 29 389 150 6 321 017 3 125 890 Population masculine 15 344 990 3 210 983 1 578 462 Population féminine"
+
+YAMOUSSOUKRO_HEAD = 'vitraux et son dôme dominant l’édifice. CHEF LIEU REGION : YAMOUSSOUKRO CHEF LIEU DE DEPARTEMENT : ATTIEGOUAKRO POPULATION : 422 072 Yamoussoukro- Tableau Synoptique de la région Indicateurs National 2021 Yakro 2021 Yakro 1998 Population totale 29 389 150 422072 248 032 Population masculine 15 344 9'
+
+SUD_COMOE_HEAD = 'a , Tiapoum et Maféré. DISTRICT : COMOE CHEF LIEU DE DEPARTEMENT : GRAND-BASSAM, ADIAKE, TIAPOUM CHEF LIEU DE REGION : ABOISSO Sud Comoe - Tableau Synoptique de la région Indicateurs National 2021 Sud-Comoé 2021 Sud-Comoé 1998 Population totale 29389150 784893 459487 Population masculine 15 344 990'
+
+BELIER_HEAD = 'ar la réforme territoriale de 2011. Son chef-lieu est Toumodi . CHEF LIEU DE DEPARTEMENT : TIEBISSOU, DIDIEVI, DJEKANOU CHEF LIEU DE REGION : TOUMODI SUPERFICIE : 6 809 km² POPULATION : 415 593 Bélier - Tableau Synoptique de la région Indicateurs National 2021 BELIER 2021 BELIER 1998 Population tota'
+
+AGNEBY_HEAD = 're située dans le district des Lagunes. Sa capitale est Agboville . CHEF LIEU DE DEPARTEMENT : TAABO, TIASSALE, SIKENSI CHEF LIEU DE REGION : AGBOVILLE SUPERFICIE : 8 110 km² POPULATION : 865 951 Agneby Tiassa - Tableau Synoptique de la région Indicateurs National 2021 Agneby-Tiassa 2021 Agneby-Tias'
+
+GOH_AGES = 'de 0-17 ans 13 174 947 474 792 270 805 Age moyen de la population (ans) 23 23 - Population âgée de 6-14 ans 6 670 555 244 823 133 363 Population âgée de 15-64 ans 17 385 410 554 597 289 717 Population âgée de 15-59 ans 16 910 080 537 616 279 749 Population âgée de 60 ans et plus 1 229 791 43820 26 7'
+
+
+class CoteDivoireRun3(unittest.TestCase):
+    def test_national_figure_misprinted(self):
+        # "29 276 660,00", "29 389 150,00" and "29 389150" for the country.
+        for text, want in [(MORONOU, (237_458, 202_297, 439_755)),
+                           (NZI, (129_386, 125_237, 254_623)),
+                           (GUEMON, (503_870, 427_003, 930_873))]:
+            f = cc.synoptic(text)
+            self.assertEqual((f["men"], f["women"], f["total"]), want)
+
+    def test_region_figure_with_its_space_misplaced(self):
+        f = cc.synoptic(HAMBOL)
+        self.assertEqual((f["men"], f["women"], f["total"]), (321_767, 290_262, 612_029))
+
+    def test_seat_headings(self):
+        def seat(head):
+            head = head.split("Tableau Synoptique")[0]   # the page's own table follows
+            return cc.page_facts(GBEKE.replace(
+                "Sa capitale est Bouaké. CHEF LIEU DE DEPARTEMENT : BEOUMI, BOTRO, SAKASSOU "
+                "CHEF LIEU DE REGION : BOUAKE POPULATION : 1 352 900", head))["seat"]
+        self.assertEqual(seat(ABIDJAN_HEAD), "Abidjan")
+        self.assertEqual(seat(YAMOUSSOUKRO_HEAD), "Yamoussoukro")
+        self.assertEqual(seat(SUD_COMOE_HEAD), "Aboisso")
+        self.assertEqual(seat(BELIER_HEAD), "Toumodi")
+        self.assertEqual(seat(AGNEBY_HEAD), "Agboville")
+
+    def test_mean_age_in_years(self):
+        text = GBEKE.replace("Age moyen de la population 23 26 -",
+                             GOH_AGES[GOH_AGES.index("Age moyen"):][:45])
+        self.assertEqual(cc.page_facts(text)["mean"], "23")
 
 
 if __name__ == "__main__":
