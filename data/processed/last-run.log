@@ -1,45 +1,67 @@
-== rows https://www.citypopulation.de/en/congo/admin/07__cuvette/ . 80
-  HTTP 200 text/html; charset=UTF-8 11,610 bytes
-  HTTP 200 11,610 bytes
-  Name | Status | Population Census 2023-05-17 | 
-  Cuvette | Department | 316,599 | 
-  Bokoma | District | 4,588 | →
-  Boundji | District | 27,577 | →
-  Loukoléla | District | 42,676 | →
-  Makoua | District | 40,004 | →
-  Mossaka | District | 46,605 | →
-  Ngoko | District | 5,103 | →
-  Ntokou | District | 5,909 | →
-  Owando ( incl. Owando commune ) | District | 64,358 | →
-  Oyo | District | 70,287 | →
-  Tchikapika | District | 9,492 | →
-  Congo | Republic | 6,142,180 | 
-  Gender (C 2023)
-  Males | 153,648
-  Females | 162,951
-  (16 rows shown)
-== text https://www.citypopulation.de/en/congo/admin/07__cuvette/ 5000
-  HTTP 200 text/html; charset=UTF-8 11,610 bytes
-  ﻿ Cuvette (Department, Congo (Rep.)) - Population Statistics, Charts, Map and Location Home → Africa → Congo (Rep.) → Administrative Division Cuvette Department in Congo (Rep.) Contents: Subdivision The population in Cuvette as well as related information and services (Wikipedia, Google, images). The icon links to further information about a selected division including its population structure (gender). Name Status Population Census 2023-05-17 Cuvette Department 316,599 Bokoma District 4,588 → Boundji District 27,577 → Loukoléla District 42,676 → Makoua District 40,004 → Mossaka District 46,605 → Ngoko District 5,103 → Ntokou District 5,909 → Owando ( incl. Owando commune ) District 64,358 → Oyo District 70,287 → Tchikapika District 9,492 → Congo Republic 6,142,180 Source: Institut National de la Statistique (INS), Republique du Congo. Explanation: The population figures are preliminary. Area figures of districts are calculated using geospatial data. Further information about the population structure: Gender (C 2023) Males 153,648 Females 162,951
-== rows https://www.citypopulation.de/en/cameroon/admin/0202__lekié/ . 60
-  HTTP 200 text/html; charset=UTF-8 12,730 bytes
-  HTTP 200 12,730 bytes
-  Name | Status | Population Census 1987-04-10 | Population Census 2005-11-11 | 
-  Lekié | Department | 240,252 | 286,050 | 
-  Batchenga | Arrondissement | ... | 9,303 | →
-  Ebebda | Arrondissement | ... | 21,368 | →
-  Elig-Mfomo | Arrondissement | ... | 16,161 | →
-  Evodoula | Arrondissement | ... | 18,899 | →
-  Lobo | Arrondissement | ... | 10,157 | →
-  Monatélé | Arrondissement | ... | 36,933 | →
-  Obala | Arrondissement | ... | 78,929 | →
-  Okola | Arrondissement | ... | 41,081 | →
-  Sa'a | Arrondissement | ... | 53,219 | →
-  Cameroun [ Cameroon ] | Republic | 10,493,655 | 17,463,836 | 
-  Gender (C 2005)
-  Males | 139,611
-  Females | 146,439
-  Urbanization (C 2005)
-  Rural | 222,651
-  Urban | 63,399
-  (18 rows shown)
+  Volume IV: 34,215,383 bytes, sha256 af4ef18f3c7c546054299343767686e4709e6295b0666c73a2062024cd271148
+  371 pages, 812 tables read
+  Volume III: 7,394,260 bytes, sha256 01d7d8dda8c9359a126b56add6376a823857a935483718db582efe226de7a52e
+  Volume III: 747 areas in 35 states
+  Volume III: ANAMBRA STATE: no Volume III page read
+  Volume III: BENUE STATE: Volume IV's 'Aguta LGA' (115597, 58478, 57119) is Volume III's 'AGATU'
+  Volume III: BENUE STATE: Volume IV's 'Bukuru LGA' (206215, 103655, 102560) is Volume III's 'BURUKU'
+  Volume III: IMO: Volume IV's 'O OHAJI/EGBEMA' (182891, 92604, 90287) is Volume III's 'OHAJI/EGBEMA'
+  Volume III: KADUNA STATE: Volume IV's 'MAKARFI' (291358, 149111, 142247) is Volume III's 'SABON-GARI'
+  Volume III: KADUNA STATE: Volume IV prints no table for Volume III's 'KAURA' (174626, 88565, 86061); its count and sexes are read from Volume III
+  Volume III: KADUNA STATE: Volume III lists 23 areas, Volume IV 22
+  Volume III: OGUN: Volume IV's 'OGUN WARTERSIDE' (74222, 37412, 36810) is Volume III's 'OGUN WATERSIDE'
+  Volume III: FCT ABUJA: no Volume III page read
+  read by position: JIGAWA/BABURA: ['(none) for 20-24']
+  does not add up: KATSINA/KUSADA: 17 age groups where 18 were expected
+  read by position: KATSINA/KUSADA: ['5 - 9 for 0-4', '10 - 14 for 5-9', '15 - 19 for 10-14', '20 - 24 for 15-19', '25 - 29 for 20-24', '30 - 34 for 25-29', '35 - 39 for 30-34', '40 - 44 for 35-39', '45 - 49 for 40-44', '50 - 54 for 45-49', '55 - 59 for 50-54', '60 - 64 for 55-59', '65 - 69 for 60-64', '70 - 74 for 65-69', '75 - 79 for 70-74', '80 - 84 for 75-79', '85+ for 80-84']
+  read by position: KEBBI/FAKAI: ['(none) for 85-']
+  read by position: KEBBI/KALGO: ['41913 for 10-14']
+  read by position: LAGOS/LAGOS: ['4 - 9 for 5-9']
+  read by position: LAGOS/AGEGE: ['4 - 9 for 5-9']
+  read by position: LAGOS/AJEROMI-IFELODUN: ['4 - 9 for 5-9']
+  read by position: LAGOS/ALIMOSHO: ['4 - 9 for 5-9']
+  read by position: LAGOS/AMUWO-ODOFIN: ['4 - 9 for 5-9']
+  read by position: LAGOS/APAPA: ['4 - 9 for 5-9']
+  read by position: LAGOS/BADAGRY: ['4 - 9 for 5-9']
+  read by position: LAGOS/EPE: ['4 - 9 for 5-9']
+  read by position: LAGOS/ETI-OSA: ['4 - 9 for 5-9']
+  read by position: LAGOS/IBEJU/LEKKI: ['4 - 9 for 5-9']
+  read by position: LAGOS/IFAKO-IJAYE: ['4 - 9 for 5-9']
+  read by position: LAGOS/IKEJA: ['4 - 9 for 5-9']
+  read by position: LAGOS/IKORODU: ['4 - 9 for 5-9']
+  read by position: LAGOS/KOSOFE: ['4 - 9 for 5-9']
+  read by position: LAGOS/LAGOS ISLAND: ['4 - 9 for 5-9']
+  read by position: LAGOS/LAGOS MAINLAND: ['4 - 9 for 5-9']
+  read by position: LAGOS/MUSHIN: ['4 - 9 for 5-9']
+  read by position: LAGOS/OJO: ['4 – 9 for 5-9']
+  read by position: LAGOS/OSHODI-ISOLO: ['4 - 9 for 5-9']
+  read by position: LAGOS/SHOMOLU: ['4 - 9 for 5-9']
+  read by position: LAGOS/SURULERE: ['4 - 9 for 5-9']
+  read by position: NIGER/NIGER: ['4 - 9 for 5-9']
+  read by position: NIGER/Agaie: ['4 - 9 for 5-9']
+  read by position: NIGER/Agwara: ['4 - 9 for 5-9']
+  read by position: NIGER/Bida: ['4 - 9 for 5-9']
+  read by position: NIGER/Borgu: ['4 - 9 for 5-9']
+  read by position: NIGER/Bosso: ['4 - 9 for 5-9']
+  read by position: NIGER/Chanchaga: ['4 - 9 for 5-9']
+  read by position: NIGER/Edati: ['4 - 9 for 5-9']
+  read by position: NIGER/Gbako: ['4 - 9 for 5-9']
+  read by position: NIGER/Gurara: ['4 - 9 for 5-9']
+  read by position: NIGER/Katcha: ['4 - 9 for 5-9']
+  read by position: NIGER/Kontagora: ['4 - 9 for 5-9']
+  read by position: NIGER/Lapai: ['4 - 9 for 5-9']
+  read by position: NIGER/Lavun: ['4 - 9 for 5-9']
+  read by position: NIGER/Magama: ['4 - 9 for 5-9']
+  read by position: NIGER/Mariga: ['4 - 9 for 5-9']
+  read by position: NIGER/Mashegu: ['4 - 9 for 5-9']
+  read by position: NIGER/Mokwa: ['4 - 9 for 5-9']
+  read by position: NIGER/Muya: ['4 - 9 for 5-9']
+  read by position: NIGER/Paikoro: ['4 - 9 for 5-9']
+  read by position: NIGER/Rafi: ['4 - 9 for 5-9']
+  read by position: NIGER/Rijau: ['4 - 9 for 5-9']
+  read by position: NIGER/Shiroro: ['4 - 9 for 5-9']
+  read by position: NIGER/Suleja: ['4 - 9 for 5-9']
+  read by position: NIGER/Tafa: ['4 - 9 for 5-9']
+  read by position: NIGER/Wushishi: ['4 - 9 for 5-9']
+  read by position: TARABA/ZING: ['no total printed: men plus women']
+nigeria_census: 27 polygons with no single census area: ["'Atakunmosa East' (osun, atakunmosaeast: [])", "'Atakunmosa West' (osun, atakunmosawest: [])", "'Atisbo' (oyo, atisbo: [])", "'Ayedade' (osun, ayedade: [])", "'Ayedire' (osun, ayedire: [])", "'Bagudu' (kebbi, bagudu: [])", "'Barkin Ladi' (plateau, barkinladi: [])", "'Bekwarra' (crossriver, bekwarra: [])", "'Birnin Magaji-Kiyaw' (zamfara, birninmagajikiyaw: [])", "'Dambam' (bauchi, dambam: [])", "'Emuoha' (rivers, emuoha: [])", "'Garun Malam' (kano, garunmalam: [])", "'Iguegben' (edo, iguegben: [])", "'Ilejemeje' (ekiti, ilejemeje: [])", "'Isuikwuato' (abia, isuikwuato: [])", "'Kiri Kasama' (jigawa, kirikasama: [])", "'Mbatoli' (imo, mbatoli: [])", "'Munya' (niger, munya: [])", "'Nasarawa Egon' (nasarawa, nasarawaegon: [])", "'Nassarawa' (kano, nassarawa: [])", "'Obi Nwga' (abia, obinwga: [])", "'Obio/Akpor' (rivers, obioakpor: [])", "'Olamaboro' (kogi, olamaboro: [])", "'Onuimo' (imo, onuimo: [])", "'Tarmuwa' (yobe, tarmuwa: [])", "'Yewa North' (ogun, yewanorth: [])", "'Yewa South' (ogun, yewasouth: [])"]
