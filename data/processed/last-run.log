@@ -1,4 +1,3 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  read https://www.ons.dz/collections/pop3_national.pdf: 505,663 bytes, sha256 084ab4775e11e0d0146c1ed59881ad85c6c99a2739bcb08fed5f8bdf0af823ba
-algeria_census: Chlef 20-24 ans: 61,818 men and 62,127 women do not make 123,946
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+sudan_census: P01 GEZIRA: its groups and sexes do not make 3549026
