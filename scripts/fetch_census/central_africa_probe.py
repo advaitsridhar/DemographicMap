@@ -16,6 +16,8 @@ zip, xls, csv, cdx, pdf), and these are added:
     cdxm:URLPREFIX~~MIMETYPE[~~N]  Internet Archive captures under a prefix of one
                                    media type (application/pdf), newest per address
     wbav:URL                       the Internet Archive's closest capture of URL
+    rows:URL[~~REGEX[~~N]]         an HTML page's table rows, cells joined by " | ",
+                                   the first N whose text matches REGEX
     pdfp:URL~~PAGES[~~WIDTH]       pdfplumber's text of the pages given (3-7,12)
     pdfl:URL~~PAGES[~~WIDTH]       the same pages rebuilt row by row from the words'
                                    coordinates, so a label stays with its figures
@@ -124,6 +126,23 @@ def probe(arg: str) -> None:
         q = "https://archive.org/wayback/available?url=" + urllib.parse.quote(url, safe="")
         status, _, headers, body = base.fetch(q, timeout=120)
         say(f"  HTTP {status}: {base.decode(body, headers)[:600]}")
+        return
+    if mode == "rows":
+        status, final, headers, body = get(url)
+        say(f"  HTTP {status} {len(body):,} bytes")
+        rx = re.compile(extra[0] if extra and extra[0] else ".", re.I)
+        n = int(extra[1]) if len(extra) > 1 else 200
+        text = base.decode(body, headers)
+        shown = 0
+        for row in re.finditer(r"(?is)<tr\b.*?</tr>", text):
+            cells = [base.strip(c) for c in re.findall(r"(?is)<t[dh]\b[^>]*>(.*?)</t[dh]>", row.group(0))]
+            line = " | ".join(c for c in cells)
+            if cells and rx.search(line):
+                say("  " + line[:400])
+                shown += 1
+                if shown >= n:
+                    break
+        say(f"  ({shown} rows shown)")
         return
     if mode not in ("pdfp", "pdfl", "pdfg", "pdft", "xlsx"):
         say(f"?? unknown mode in {arg!r}")
