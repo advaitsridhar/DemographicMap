@@ -9867,6 +9867,84 @@
     "shape_id": "67063806B75605811528327"
   },
   {
+    "id": "BFA-CODAB-seat1-centre-014946",
+    "level": "admin1",
+    "name": "Centre",
+    "parent": "BFA",
+    "capital": "Ouagadougou",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "capital",
+        "name": "OCHA, Burkina Faso - Subnational Administrative Boundaries (COD-AB), administrative capitals",
+        "url": "https://data.humdata.org/dataset/cod-ab-bfa",
+        "license": "CC BY-IGO"
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "92566538B14190085014946"
+  },
+  {
+    "id": "BFA-CODAB-seat1-sudouest-110708",
+    "level": "admin1",
+    "name": "Sud-Ouest",
+    "parent": "BFA",
+    "capital": "Gaoua",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "capital",
+        "name": "OCHA, Burkina Faso - Subnational Administrative Boundaries (COD-AB), administrative capitals",
+        "url": "https://data.humdata.org/dataset/cod-ab-bfa",
+        "license": "CC BY-IGO"
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "92566538B26761698110708"
+  },
+  {
     "id": "MLI-CODAB-seat-bandiagara-572424",
     "level": "admin2",
     "name": "Bandiagara",
