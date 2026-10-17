@@ -80,6 +80,9 @@ VOL2 = BASE + ("ddddbe91-b5fa-4449-a50d-846401e701c4/download/"
 SOURCE1 = ("Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, "
            "Volume I: Population by County and Sub-County, distribution of population by sex "
            "and county")
+SOURCE2 = ("Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, "
+           "Volume II: Distribution of Population by Administrative Units, population by sex "
+           "and sub-county")
 SOURCE3 = ("Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, "
            "Volume III: Distribution of Population by Age and Sex, by county and sub-county")
 LICENCE = "Creative Commons Attribution (openAFRICA copy of a KNBS publication)"
@@ -532,8 +535,10 @@ def county_records(vol1: dict[str, dict[str, int]], vol3: dict[str, dict[str, An
             **age_fields(units, of),
             sources=[{"field": "population/sex_ratio", "name": SOURCE1, "url": PAGE,
                       "year": YEAR, "license": LICENCE},
-                     {"field": "population/sex_ratio/median_age" if moved else "median_age",
-                      "name": SOURCE3, "url": PAGE, "year": YEAR, "license": LICENCE}]))
+                     *([{"field": "population/sex_ratio", "name": SOURCE2, "url": PAGE,
+                         "year": YEAR, "license": LICENCE}] if moved else []),
+                     {"field": "median_age", "name": SOURCE3, "url": PAGE, "year": YEAR,
+                      "license": LICENCE}]))
         ages["key"] = key
     return records, shape_of
 
@@ -614,7 +619,7 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
                                   shape_id=shape["id"], population=stated, median_age=stated,
                                   sex_ratio=stated,
                                   sources=[{"field": "population/median_age/sex_ratio",
-                                            "name": SOURCE3, "url": PAGE, "year": YEAR,
+                                            "name": SOURCE2, "url": PAGE, "year": YEAR,
                                             "license": LICENCE}]))
             continue
         units = [by_key[home]["subs"][sub] for home, sub in taken]
@@ -639,12 +644,14 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
         records.append(record(
             f"KEN-2019-{shape['id']}", shape["name"], level="admin2", parent="KEN",
             country="KEN", match_by="shape_id", shape_id=shape["id"],
-            population=measure(total, year=YEAR, source=SOURCE3), population_note=note,
+            population=measure(total, year=YEAR, source=SOURCE2), population_note=note,
             sex_ratio=measure(round(1000 * male / female), unit="males_per_1000_females",
-                              year=YEAR, source=SOURCE3),
+                              year=YEAR, source=SOURCE2),
             **age_fields(units, of),
-            sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE3, "url": PAGE,
-                      "year": YEAR, "license": LICENCE}]))
+            sources=[{"field": "population/sex_ratio", "name": SOURCE2, "url": PAGE,
+                      "year": YEAR, "license": LICENCE},
+                     {"field": "median_age", "name": SOURCE3, "url": PAGE, "year": YEAR,
+                      "license": LICENCE}]))
     return records
 
 
