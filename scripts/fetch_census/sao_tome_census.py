@@ -108,40 +108,68 @@ def pages_text(blob: bytes) -> list[str]:
 
 DISTRICT_KEYS = {**{fold(d): d for d in DISTRICTS},
                  fold("Região Autónoma do Príncipe"): "Príncipe", fold("R. A. Príncipe"): "Príncipe"}
+# Quadro 2's row labels; what is left of a line without them and its figures
+# is a piece of the district name printed down the block's side.
+LABELS = ("% População residente por sexo", "População Residente (RP+RA)",
+          "População total recenseada", "(RP+RA+V)", "Residente Presente (RP)",
+          "Residente Ausentes (RA)", "Visitas (Presente não Residente) (V)")
 
 
-def heading(line: str) -> str | None:
-    """The district a block heading names: a short line naming one district,
-    and not the page header's "Instituto ... de São Tomé e Príncipe"."""
-    key = fold(line)
-    if not key or "saotome" in key or "instituto" in key or "total" in key:
-        return None
-    hits = {name for k, name in DISTRICT_KEYS.items() if k in key and len(key) <= len(k) + 16}
-    return hits.pop() if len(hits) == 1 else None
+def letters(text: str) -> str:
+    """A name's letters in alphabetical order, accents and punctuation dropped."""
+    return "".join(sorted(c for c in fold(text) if c.isalpha()))
+
+
+NAME_LETTERS = {letters(key): name for key, name in DISTRICT_KEYS.items()}
+
+
+def blocks(page: str) -> list[tuple[str, list[int]]]:
+    """Quadro 2's district blocks on a page: (the letters of the district name
+    printed sideways down the block, the resident line's figures).
+
+    A block runs from "População total recenseada" to the line of shares by
+    sex. The name is set vertically, so it reaches the text a letter or two
+    at a time, alone on a line or ahead of a row label.
+    """
+    out: list[tuple[str, list[int]]] = []
+    pool: list[str] = []
+    figures: list[int] = []
+    inside = False
+    for line in page.splitlines():
+        if "População total recenseada" in line:
+            pool, figures, inside = [], [], True
+        if not inside:
+            continue
+        rest = line
+        for label in LABELS:
+            rest = rest.replace(label, " ")
+        pool.extend(t for t in rest.split() if not re.search(r"\d", t))
+        if "População Residente (RP+RA)" in line:
+            after = line.split("População Residente (RP+RA)", 1)[1].split()
+            figures = [int(t.replace(".", "")) for t in after if NUMBER.match(t)]
+        if "% População residente por sexo" in line:
+            out.append((letters(" ".join(pool)), figures))
+            inside = False
+    return out
 
 
 def residents(pages: list[str]) -> dict[str, tuple[int, int, int, int]]:
     """Quadro 2: district -> (total, men, women, of them in ordinary dwellings).
 
-    The table lists the districts one block after another, each block headed
-    by a line naming the district and carrying no figures; a block's resident
+    The table lists the districts one block after another; a block's resident
     line gives total, men and women in all dwellings, then the same in
-    ordinary and in collective dwellings.
+    ordinary and in collective dwellings. A block is the district whose name
+    has exactly the block's letters.
     """
     out: dict[str, tuple[int, int, int, int]] = {}
-    current = None
     for page in pages:
         # The table itself, not the contents page that names it.
         if "Quadro 2" not in page or "Residente (RP+RA)" not in page:
             continue
-        for line in page.splitlines():
-            figures = numbers(line)
-            if not figures:
-                current = heading(line) or current
-                continue
-            if "Residente (RP+RA)" in line and current and current not in out:
-                if len(figures) >= 6 and figures[1] + figures[2] == figures[0]:
-                    out[current] = (figures[0], figures[1], figures[2], figures[3])
+        for key, figures in blocks(page):
+            name = NAME_LETTERS.get(key)
+            if name and len(figures) >= 6 and figures[1] + figures[2] == figures[0]:
+                out.setdefault(name, (figures[0], figures[1], figures[2], figures[3]))
     return out
 
 
@@ -253,10 +281,10 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
         pages = reports.get(name)
         if pages is None:
             raise SystemExit(f"sao_tome_census: no report read for {name}")
-        own = residents(pages).get(name)
-        if own is not None and own != table[name]:
-            raise SystemExit(f"sao_tome_census: {name}'s report prints {own}, the national "
-                             f"report {table[name]}")
+        for other, own in residents(pages).items():
+            if own != table[other]:
+                raise SystemExit(f"sao_tome_census: {name}'s report prints {own} for {other}, "
+                                 f"the national report {table[other]}")
         total, men, women, ordinary = table[name]
         res[name] = (total, men, women)
         age = ages(pages)
