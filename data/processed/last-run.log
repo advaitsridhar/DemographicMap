@@ -1,22 +1,2 @@
-angola_seats: 1,522,816 characters; 18 provinces, 164 municipalities with a seat
-  bengo: ambriz -> Ambriz; bulaatumba -> Bula Atumba; dande -> Caxito; dembosquibaxe -> Quibaxe; nambuangongo -> Muxaluando; pangoaluquem -> Pango Aluquém
-  benguela: baiafarta -> Baía Farta; balombo -> Balombo; benguela -> Benguela; bocoio -> Bocoio; caimbambo -> Caimbambo; catumbela -> Catumbela; chongoroi -> Chongorói; cubal -> Cubal; ganda -> Ganda; lobito -> Lobito
-  bie: andulo -> Andulo; camacupa -> Camacupa; catabola -> Catabola; chinguar -> Chinguar; chitembo -> Chitembo; cuemba -> Cuemba; cuito -> Cuito; cunhinga -> Cunhinga; nharea -> Nharêa
-  cabinda: belize -> Belize; bucozau -> Buco Zau; cabinda -> Cabinda; cacongo -> Lândana
-  cuandocubango: calai -> Calai; cuangar -> Cuangar; cuchi -> Cuchi; cuitocuanavale -> Cuito Cuanavale; dirico -> Dirico; mavinga -> Mavinga; menongue -> Menongue; nancova -> Nancova; rivungo -> Rivungo
-  cuanzanorte: ambaca -> Camabatela; banga -> Banga; bolongongo -> Bolongongo; cambambe -> Dondo; cazengo -> Ndalatando; golungoalto -> Golungo Alto; lucala -> Lucala; ngonguembo -> Quilombo dos Dembos; quiculongo -> Quiculungo; sambacaju -> Samba Cajú
-  cuanzasul: amboim -> Gabela; cassongue -> Cassongue; cela -> Wacu Kungo; conda -> Conda; ebo -> Ebo; libolo -> Calulo; mussende -> Mussende; portoamboim -> Porto Amboim; quibala -> Quibala; quilenda -> Quilenda; seles -> Seles; sumbe -> Sumbe
-  cunene: cahama -> Cahama; cuanhama -> Ondjiva; curoca -> Oncócua; cuvelai -> Mukolongodjo; namacunde -> Namacunde; ombadja -> Xangongo
-  huambo: bailundo -> Bailundo; caala -> Caála; catchiungo -> Cachiungo; ecunha -> Ecunha; huambo -> Huambo; londuimbale -> Londuimbali; longonjo -> Longonjo; mungo -> Mungo; tchikalatcholohanga -> Chicala; tchinjenje -> Chinjenje; ukuma -> Ucuma
-  huila: caconda -> Caconda; cacula -> Cacula; caluquembe -> Caluquembe; chibia -> Chibia; chicomba -> Chicomba; chipindo -> Chipindo; cuvango -> Cuvango; gambos -> Chiange; humpata -> Humpata; jamba -> Jamba; lubango -> Lubango; matala -> Matala; quilengues -> Quilengues; quipungo -> Quipungo
-  luanda: belas -> Belas; cacuaco -> Cacuaco; cazenga -> Cazenga; icoloebengo -> Catete; kilambakiaxi -> Kilamba Kiaxi; luanda -> Ingombota; quissama -> Muxima; talatona -> Talatona; viana -> Viana
-  lundanorte: cambulo -> Cambulo; capendacamulemba -> Capenda Camulemba; caungula -> Caungula; chitato -> Dundo; cuango -> Cuango; cuilo -> Cuilo; lovua -> Lóvua; lubalo -> Lubalo; lucapa -> Lucapa; xamuteba -> Xá Muteba
-  lundasul: cacolo -> Cacolo; dala -> Dala; muconda -> Muconda; saurimo -> Saurimo
-  malanje: cacuso -> Cacuso; cahombo -> Cahombo; calandula -> Calandula; cambundicatembo -> Cambundi Catembo; cangandala -> Cangandala; cundadiabaze -> Kunda dya Baze; kiuabanzoji -> Kiwaba Nzoji; luquembo -> Luquembo; malanje -> Malanje; marimba -> Marimba; massango -> Massango; mucari -> Caculama; quela -> Quela; quirima -> Quirima
-  moxico: altozambeze -> Cazombo; bundas -> Lumbala Nguimbo; camanongue -> Camanongue; cameia -> Lumege; leua -> Léua; luacano -> Luacano; luau -> Luau; luchazes -> Cangamba; luena -> Luena
-  namibe: bibala -> Bibala; camucuio -> Camucuio; namibe -> Moçâmedes; tombwa -> Tômbwa; virei -> Virei
-  uige: ambuila -> Nova Ambuíla; bembe -> Bembe; buengas -> Nova Esperança; bungo -> Bungo; cangola -> Cangola; damba -> Damba; maqueladozombo -> Maquela do Zombo; milunga -> Milunga; mucaba -> Mucaba; negage -> Negage; puri -> Puri; quimbele -> Quimbele; quitexe -> Quitexe; sanzapombo -> Sanza Pombo; songo -> Songo; uige -> Uíge
-  zaire: cuimba -> Cuimba; mbanzacongo -> Mbanza Kongo; noqui -> Nóqui; nzeto -> Nzeto; soyo -> Soyo; tomboco -> Tomboco
-  157 of 157 municipality polygons given a seat
-    Luanda: drawn over several municipalities; left out
-  wrote data/processed/angola_seats.json (165 kB)
+usage: car_census.py [-h] [--dump]
+car_census.py: error: unrecognized arguments: --run=seat1
