@@ -1,37 +1,1442 @@
-  read https://web.archive.org/web/20240814133631id_/https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555: 10,525,457 bytes, sha256 7a9c1ec3f7458c69f042da9f4789c668fc82a2264cab8644b80d60b12f05fefa
-  the country's median age: 35.5
-  admin1 Anse Boile: 4,595, ratio 1318, median 35.4, [{'group': 'Seychellois Creole', 'pct': 92.4, 'count': 3441}], [{'group': 'Catholic', 'pct': 76.7, 'count': 2961}]
-  admin1 Anse Etoil: 5,477, ratio 1140, median 35.5, [{'group': 'Seychellois Creole', 'pct': 82.7, 'count': 4167}], [{'group': 'Catholic', 'pct': 67.1, 'count': 3489}]
-  admin1 Anse Royal: 4,552, ratio 1087, median 36.1, [{'group': 'Seychellois Creole', 'pct': 87.4, 'count': 3682}], [{'group': 'Catholic', 'pct': 70.6, 'count': 3067}]
-  admin1 Anse aux Pins: 3,898, ratio 1059, median 35.0, [{'group': 'Seychellois Creole', 'pct': 92.4, 'count': 3207}], [{'group': 'Catholic', 'pct': 77.3, 'count': 2792}]
-  admin1 Au Cap: 5,168, ratio 1165, median 35.5, [{'group': 'Seychellois Creole', 'pct': 82.1, 'count': 3907}], [{'group': 'Catholic', 'pct': 68.6, 'count': 3206}]
-  admin1 Baie Lazar: 4,265, ratio 1308, median 35.9, [{'group': 'Seychellois Creole', 'pct': 86.6, 'count': 3086}], [{'group': 'Catholic', 'pct': 77.1, 'count': 2838}]
-  admin1 Baie Saint: 4,272, ratio 1271, median 34.5, [{'group': 'Seychellois Creole', 'pct': 91.5, 'count': 3250}], [{'group': 'Catholic', 'pct': 64.5, 'count': 2383}]
-  admin1 Beau Vallo: 4,740, ratio 1088, median 36.0, [{'group': 'Seychellois Creole', 'pct': 81.1, 'count': 3126}], [{'group': 'Catholic', 'pct': 71.7, 'count': 2854}]
-  admin1 Bel Air: 2,619, ratio 1061, median 38.7, [{'group': 'Seychellois Creole', 'pct': 82.2, 'count': 1870}], [{'group': 'Catholic', 'pct': 65.5, 'count': 1528}]
-  admin1 Bel Ombre: 3,823, ratio 1062, median 36.4, [{'group': 'Seychellois Creole', 'pct': 84.1, 'count': 2783}], [{'group': 'Catholic', 'pct': 68.9, 'count': 2370}]
-  admin1 Cascade: 6,659, ratio 2490, median 35.3, [{'group': 'Seychellois Creole', 'pct': 64.6, 'count': 3188}], [{'group': 'Catholic', 'pct': 59.0, 'count': 2951}]
-  admin1 Glacis: 3,803, ratio 1095, median 38.8, [{'group': 'Seychellois Creole', 'pct': 85.8, 'count': 2958}], [{'group': 'Catholic', 'pct': 76.0, 'count': 2673}]
-  admin1 Grand'Anse Mahé: 3,425, ratio 1057, median 34.4, [{'group': 'Seychellois Creole', 'pct': 89.9, 'count': 2759}], [{'group': 'Catholic', 'pct': 73.6, 'count': 2336}]
-  admin1 Grand'Anse Praslin: 3,610, ratio 1224, median 36.2, [{'group': 'Seychellois Creole', 'pct': 88.0, 'count': 2706}], [{'group': 'Catholic', 'pct': 53.3, 'count': 1703}]
-  admin1 La Digue a: 3,537, ratio 1453, median 36.8, [{'group': 'Seychellois Creole', 'pct': 83.9, 'count': 2371}], [{'group': 'Catholic', 'pct': 70.0, 'count': 2050}]
-  admin1 La Rivière: 3,508, ratio 997, median 35.6, [{'group': 'Seychellois Creole', 'pct': 89.1, 'count': 2845}], [{'group': 'Catholic', 'pct': 70.8, 'count': 2355}]
-  admin1 Les Mamell: 2,215, ratio 1096, median 36.6, [{'group': 'Seychellois Creole', 'pct': 91.9, 'count': 1774}], [{'group': 'Catholic', 'pct': 74.4, 'count': 1492}]
-  admin1 Mont Buxto: 2,778, ratio 1006, median 38.0, [{'group': 'Seychellois Creole', 'pct': 93.1, 'count': 2372}], [{'group': 'Catholic', 'pct': 74.7, 'count': 1964}]
-  admin1 Mont Fleur: 3,506, ratio 1199, median 36.3, [{'group': 'Seychellois Creole', 'pct': 83.5, 'count': 2340}], [{'group': 'Catholic', 'pct': 71.4, 'count': 2033}]
-  admin1 Outer Islands: 1,075, ratio 13333, median 32.1, The census report's tables of first language at home (Table , The census report's tables of first language at home (Table 
-  admin1 Plaisance: 3,685, ratio 1095, median 35.8, [{'group': 'Seychellois Creole', 'pct': 90.1, 'count': 2918}], [{'group': 'Catholic', 'pct': 74.6, 'count': 2512}]
-  admin1 Pointe La: 3,267, ratio 1149, median 33.8, [{'group': 'Seychellois Creole', 'pct': 92.7, 'count': 2740}], [{'group': 'Catholic', 'pct': 77.0, 'count': 2373}]
-  admin1 Port Glaud: 2,773, ratio 1224, median 34.7, [{'group': 'Seychellois Creole', 'pct': 95.3, 'count': 2150}], [{'group': 'Catholic', 'pct': 76.8, 'count': 1788}]
-  admin1 Roche Caïm: 3,157, ratio 1156, median 34.1, [{'group': 'Seychellois Creole', 'pct': 79.5, 'count': 1923}], [{'group': 'Catholic', 'pct': 61.5, 'count': 1554}]
-  admin1 Saint Loui: 3,267, ratio 1116, median 36.2, [{'group': 'Seychellois Creole', 'pct': 84.7, 'count': 2331}], [{'group': 'Catholic', 'pct': 65.1, 'count': 1873}]
-  admin1 Takamaka: 3,528, ratio 1389, median 36.1, [{'group': 'Seychellois Creole', 'pct': 82.1, 'count': 2488}], [{'group': 'Catholic', 'pct': 73.4, 'count': 2306}]
-  admin2 Central 1 Mahe: 12,172, ratio 1043, median 37.0, [{'group': 'Seychellois Creole', 'pct': 87.5, 'count': 9418}], [{'group': 'Catholic', 'pct': 69.2, 'count': 7720}]
-  admin2 Central 2 Mahe: 12,563, ratio 1139, median 35.6, [{'group': 'Seychellois Creole', 'pct': 86.2, 'count': 8955}], [{'group': 'Catholic', 'pct': 70.6, 'count': 7591}]
-  admin2 East Mahe: 27,072, ratio 1382, median 35.4, [{'group': 'Seychellois Creole', 'pct': 82.2, 'count': 19212}], [{'group': 'Catholic', 'pct': 70.0, 'count': 16695}]
-  admin2 La Digue: 3,133, ratio 1292, median 36.5, [{'group': 'Seychellois Creole', 'pct': 85.1, 'count': 2310}], [{'group': 'Catholic', 'pct': 70.6, 'count': 1989}]
-  admin2 North Mahe: 17,843, ratio 1100, median 36.5, [{'group': 'Seychellois Creole', 'pct': 83.3, 'count': 13034}], [{'group': 'Catholic', 'pct': 70.6, 'count': 11386}]
-  admin2 Other Islands: 1,479, ratio 8860, median 34.0, The census report's tables of first language at home (Table , The census report's tables of first language at home (Table 
-  admin2 Praslin: 7,882, ratio 1249, median 35.3, [{'group': 'Seychellois Creole', 'pct': 89.9, 'count': 5956}], [{'group': 'Catholic', 'pct': 59.3, 'count': 4086}]
-  admin2 West Mahe: 15,058, ratio 1233, median 35.2, [{'group': 'Seychellois Creole', 'pct': 90.7, 'count': 11436}], [{'group': 'Catholic', 'pct': 76.1, 'count': 9923}]
-  wrote data/processed/seychelles_census.json (148 kB)
+probe_pdf: https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20LA%20BOUCLE%20DU%20MOUHOUN%205E%20RGPH.pdf
+  3,111,520 bytes
+  212 pages
+probe_pdf: 212 pages, printing [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+
+--- page 26 ----------------------------------------------------
+_
+_____________________________________________________________________________________
+4 | R
+GPH 2019-Monographie de la Boucle du Mouhoun
+1.1.1.3. Cl
+imat
+La
+ région de la Boucle du Mouhoun est située dans la zone soudano-sahélienne avec cependant
+trois (3) variantes climatiques qui sont :
+· au Nord, le secteur sud-sahélien avec une pluviométrie moyenne annuelle de 500 à 700 mm.
+Il couvre la province du Sourou et une partie de la province de la Kossi ;
+· au Centre, le secteur-soudanien avec une pluviométrie moyenne annuelle de 700 à 900 mm.
+Il s’étend sur la partie sud de la province de la Kossi, sur toute la province du Nayala et les
+parties septentrionales des provinces du Mouhoun, des Balé et des Banwa ;
+· au Sud, le secteur sud-soudanien avec une pluviométrie moyenne annuelle de 1 000 à 1 400
+mm.
+La région connaît deux (2) saisons :
+· une saison sèche qui dure de 7 à 9 mois dans le Nord de la région et de 4 à 6 mois dans  le
+Su
+d. Elle est marquée par un harmattan, vent frais et sec qui dure de décembre à fin janvier
+a
+vec des températures douces autour de 27°C, chaud et sec de février à avril avec de fortes
+températures dépassant souvent 40°C ;
+· une saison pluvieuse qui s’étale sur 3 à 5 mois dans le Nord et 6 à 8 mois dans le Sud. Elle
+est annoncée par une mousson, vent frais et humide avec des températures oscillant entre
+2
+4 et 28°C.
+1.1.
+2. Végétation, faune et flore
+S
+ur le plan des formations végétales, la Boucle du Mouhoun enregistre des nuances du Nord au
+Sud. En effet, au Nord dans le secteur sud-sahélien, la végétation évolue de la steppe arbustive à
+la steppe arborée et au Sud, à la savane. Au Centre, dans le secteur nord-soudanien, dominent les
+savanes arbustives et arborées, les formations mixtes des vallées associées aux cultures. Enfin,
+au Sud dans le secteur sud-soudanien, s’étend la savane arborée à boisée avec des forêts galeries
+le long des cours d’eau (MEDEV, 2005).
+Ces formations végétales servent de gîte à une faune assez riche et variée. Elle est constituée en
+grande partie de petits gibiers (lièvres, antilopes de petite taille, rats, écureuils, tourterelles…). Le
+gros gibier rencontré est formé essentiellement de quelques troupeaux d’hippopotames, de buffles,
+d’éléphants (espèce intégralement protégée), de phacochères, d’hyènes, de lions et de panthères
+(MEDEV, 2005).
+1.1.
+3. Hydrographie
+S
+ur le plan hydrographique, la région dispose d’un réseau  assez dense tissé autour du bassin
+versant du fleuve Mouhoun qui traverse la région sur 280 km. Autour du fleuve Mouhoun
+s’organisent des cours d’eau secondaires permanents comme le « Tui ou Grand Balé » avec son
+affluent permanent, le « Son ou Petit Balé » et ses affluents temporaires : le Labozéré, le Labozaba,
+le Bonboré, le Maboni, le Hinn, le Vohon, le Banou Yao, le Kidiaho, le Sourou et le Nayala. En plus
+du Mouhoun et de ses affluents, il existe d’autres cours d’eau permanents comme le Nawaka, le
+Tibouzou et non permanents comme la Kossi, le Koin et le Zouma.
+Cet ensemble physique intègre des réserves et forêts classées représentant environ 7% de la
+superficie régionale et localisée essentiellement dans les provinces des Balé, du Mouhoun et du
+Nayala (MEDEV, 2005).
+
+--- page 27 ----------------------------------------------------
+________
+_____
+___________________________________
+_____________
+_____
+____________________
+RGPH 2019
+-
+Monographie de la Boucle du Mouhoun
+|
+5
+1.2.
+SITUATION ADMINISTRA
+TIVE
+Créée par la loi N° 2001
+-
+013/AN du 02 juillet 2001 portant création des régions, la région de la
+Boucle du Mouhoun regroupe les provinces des Balé, des Banwa, de la Kossi, du Mouhoun, du
+Nayala et du Sourou qui ont
+respectivement pour chef
+-
+lieux, les villes de Boromo, Solenzo, Nouna,
+Dédougou, Toma et Tougan (MEDEV, 2005). Sur le plan administratif, la région comprend les six
+(06) provinces ci
+-
+dessus citées, 47 départements (soit six (6) communes urbaines, quarante
+-
+un
+e
+(41) communes rurales) et
+98
+5
+villages. A côté de cette organisation administrative, se trouve une
+organisation traditionnelle, type société villageoise, dirigée par un chef de village qui est
+généralement le plus âgé du lignage le plus anciennement im
+planté. Cette organisation
+traditionnelle est essentiellement dominée par trois grands groupes ethniques qui sont les Bwaba,
+les Samo et les marka (MEDEV, 2005).
+Carte n°
+2
+:
+Carte des provinces et communes de la région de la Bo
+ucle du Mouhoun
+CONCLUSION
+L’examen du contexte général de la région de la Boucle du Mouhoun fait ressortir qu’elle présente
+d’énormes potentialités aussi bien sur le plan physique qu’administratif. Du point de vue physique,
+la région de la Boucle du Mou
+houn reste composée en grande partie d’une savane arborée qui
+s’étend jusqu’au Mali voisin. Le relief est assez monotone tandis que différents types de sols
+rencontrés dans la région s’illustrent parfois avec de hautes valeurs agronomiques. De par sa
+situa
+tion dans la zone soudanienne, elle bénéficie d’une flore riche et variée résultant d’une
+pluviométrie au
+-
+dessus de la moyenne
+nationale
+. Sur le plan administratif, la subdivision de la
+région en 6 provinces et 47 départements apparaît comme un atout dans
+un contexte de
+
+--- page 28 ----------------------------------------------------
+____
+__
+_
+________
+_______________________________________________________________________
+6
+|
+RGPH 2019
+-
+Monographie
+de la Boucle du Mouhoun
+décentralisation dans la mesure où elle facilite l’implication des populations à la base dans le
+processus de développement. Les activités du secteur primaire animent une bonne partie de la vie
+économique de la région car le cadre physique d
+e la région est un véritable potentiel pour les
+activités agricoles.
+
+--- page 29 ----------------------------------------------------
+__
+____________________________________________________________________________________
+R
+GPH 2019-Monographie de la Boucle du Mouhoun | 7
+C
+HAPITRE 2 :ETAT ET STRUCTURE DE LA POPULATION
+I
+NTRODUCTION
+Le
+ présent chapitre aborde le volume de la population de la région de la Boucle du Mouhoun. Pour
+rendre compte de ses spécificités, sa composition selon le genre ainsi que sa structure par âge, sa
+répartition spatiale et sa densité par commune sont présentées et analysées.
+Collecte des données
+Les principales variables utilisées dans cette partie sont l’âge, le sexe, la région, la province , la
+commune, le milieu de résidence, les superficies. Les superficies proviennent de l’annuaire
+statistique 2020 de la région de la Boucle du Mouhoun . Les données collectées sur l’âge
+proviennent des questions suivantes : « quelle est la date de naissance de (nom) » ? Inscrivez le
+jour, le mois et l’année de naissance ; si l’année de naissance est inconnue, « quel est l’âge en
+années révolues de (nom) » ? Quant au sexe, l’agent recenseur devrait demander au chef de
+ménage si l’individu est un homme ou une femme et cocher la modalité correspondante.
+Définition des concepts
+Âge
+L’
+âge est l’une des caractéristiques de la structure de la population. C’est l’intervalle de temps
+exprimé en année révolue qui sépare la date de naissance d’un individu de la date de son dernier
+anniversaire, c'est-à-dire l’âge atteint à cet anniversaire.
+D
+ensité de population
+La
+ densité d’une population est le rapport de l’effectif de la population à la superficie de l’unité
+géographique considérée. Elle s’exprime en nombre d’habitants au km².
+R
+apport de masculinité
+Le
+ rapport de masculinité est l’effectif d’hommes rapporté à celui des femmes. Partant de 100
+femmes comme base, on calcule le nombre d’hommes correspondant dans une population donnée.
+Ce nombre d’hommes pour 100 femmes est le rapport de masculinité.
+2.
+1. ETAT DE LA POPULATION
+Le
+ volume de la population de la Boucle du Mouhoun s’élève à 1 901 269 habitants au 5e RGPH.
+Elle se compose de 946  183 hommes et de 955  086 femmes. Selon le milieu de résidence et à
+l’image du pays, l ’effectif de la population rurale de la région de la Boucle du Mouhoun est
+nettement plus important que celui de la population urbaine. De même, les femmes sont plus
+nombreuses que les hommes quel que soit le milieu de résidence (tableau 2.1).
+T
+ableau 2.1: Répartition de l’effectif de population par milieu de résidence selon le sexe en 2019
+M
+ilieu de résidence 2
+019
+M
+asculi
+n F
+éminin E
+nsemble
+U
+rbain 90 272 92 947 183 219
+R
+ural 855 911 862 139 1 718 050
+E
+nsemble 9
+46 183 9
+55 086 1 9
+01 269
+E
+n termes d’évolution d’effectifs, la population de la région est restée en constante hausse depuis
+
+--- page 30 ----------------------------------------------------
+____
+__
+_
+________
+_______________________________________________________________________
+8
+|
+RGPH 2019
+-
+Monographi
+e
+de la Boucle du Mouhoun
+1985. Elle est passée de 911
+736 habitants en 1985
+à
+1
+442
+749 ha
+bitants en 2006 pour atteindre
+1
+901
+269 habitants en 2019
+(tableau 2.2)
+.
+Considérant le milieu de résidence, l’effectif de la population de la région de la Boucle du Mouhoun
+résidant en milieu urbain est passé de 83
+612 habitants en 1996
+à
+183
+219 habitan
+ts en 2019.
+L
+’
+effectif de la population du milieu urbain a augment
+é
+plus rapidement qu
+e celui du
+milieu rural.
+En effet, il a été multiplié par 2,2 en 23 ans
+,
+tandis qu’en milieu rural l’effectif de population a été
+multiplié par 1,6. Néanmoins,
+l’effectif
+de
+la population vivant
+en
+milieu rural reste
+plus
+important
+quel que soit le recensement (tableau 2.2).
+Tableau
+2
+.
+2
+:
+Evolution
+des effectifs de la population par milieu de résidence de 1985 à 2019
+Milieu
+de résidence
+1985**
+1996*
+2006
+2019
+Urbain
+-
+83
+612
+121
+923
+183
+219
+Rural
+-
+1
+090
+844
+1
+320
+826
+1
+718
+050
+Ensemble
+911
+736
+1
+174
+456
+1
+442
+749
+1
+901
+269
+*reconstitution de la région à partir des provinces de
+1996
+**reconstitution de la région à partir
+des départements de 1985
+La répartition des effectifs de population
+par
+province indique que l
+a province du
+Mouhoun est la
+plus peuplée avec 391 561 habitants
+,
+tandis que le Nayala demeure la moins peuplée avec 223 151
+habitants.
+A l’image de la région,
+les femmes sont plus nombreuses que les hommes au niveau des différentes
+provinces à l’exception de la Kossi où le rapport de masculinité indique 103 hommes pour 100
+femmes.
+La province du Sourou compte autant d’hommes que de femmes.
+Au niveau régional, ce
+rapport est de 99 hommes pour 100 femmes (tableau 2.3).
+Tableau
+2
+.
+3
+: Répartition (%) des effectifs de la population par province selon le sexe
+Province
+Sexe
+Poids de chaque
+Province (%)
+Rapport de
+masculini
+té
+Homme
+Femme
+Ensemble
+Balé
+148
+040
+149
+428
+297
+468
+15,6
+99
+Banwa
+169
+820
+177
+169
+346
+989
+18,3
+96
+Kossi
+180
+802
+176
+287
+357
+089
+18,8
+103
+Mouhoun
+194
+617
+196
+944
+391
+561
+20,6
+99
+Nayala
+110
+674
+112
+477
+223
+151
+11,7
+98
+Sourou
+142
+230
+142
+781
+285
+011
+15,0
+100
+Ensemble
+946
+183
+955
+086
+1
+901
+269
+100
+99
+Au niveau des communes, Solenzo demeure la plus peuplée avec une proportion de 8,4% de la
+population
+de
+la région. Elle est suivie de Dédougou avec 6,5% de la population. Son
+o
+et Madouba
+sont les communes les moins peuplées de la région
+avec un poids démographique de 0,5%.
+Les rapports de masculinité varient d’une commune à l’autre et se situent à 99 hommes pour 100
+femmes dans l’ensemble de la région (tableau 2.4).
+
+--- page 31 ----------------------------------------------------
+________
+_____
+________________________________________________
+_____
+____________________
+RGPH 2019
+-
+Monographie de la Boucle du Mouhoun
+|
+9
+Tableau
+2
+.
+4
+: Répartiti
+on (%) des effectifs de la population et rapport de masculinité selon la
+commune
+Commune
+Effectif
+Poids de chaque
+Rapport de masculinité
+Bagassi
+42
+424
+2,2
+97,4
+Bana
+19
+787
+1,0
+106,4
+Boromo
+40
+229
+2,1
+99,4
+Fara
+61
+001
+3,2
+96,1
+Oury
+35
+964
+1,9
+102,9
+Pa
+27
+011
+1,4
+93,5
+Pompo
+ï
+14
+067
+0,7
+104,7
+Poura
+19
+056
+1,0
+98,0
+Siby
+18
+559
+1,0
+103,2
+Yaho
+19
+370
+1,0
+98,4
+Balavé
+24
+103
+1,3
+98,2
+Kouka
+73
+747
+3,9
+91,2
+Sami
+13
+596
+0,7
+97,5
+Sanaba
+38
+037
+2,0
+100,1
+Solenzo
+158
+763
+8,4
+96,1
+Tansila
+38
+743
+2,0
+97,6
+Barani
+54
+748
+2,9
+102,7
+Bomborokuy
+19
+904
+1,0
+102,0
+Bourasso
+20
+115
+1,1
+101,2
+Djibasso
+63
+283
+3,3
+101,8
+Dokuy
+40
+588
+2,1
+103,1
+Doumbala
+33
+326
+1,8
+99,5
+Kombori
+15
+118
+0,8
+94,1
+Madouba
+10
+150
+0,5
+101,0
+Nouna
+89
+742
+4,7
+104,2
+Sono
+10
+115
+0,5
+120,0
+Bondokuy
+62
+214
+3,3
+98,8
+Dédougou
+123
+973
+6,5
+95,6
+Douroula
+18
+418
+1,0
+103,0
+Kona
+27
+164
+1,4
+103,2
+Ouarkoye
+44
+616
+2,3
+95,9
+Safané
+62
+048
+3,3
+103,8
+Tchériba
+53
+128
+2,8
+99,8
+Gassan
+44
+139
+2,3
+104,0
+Gossina
+26
+241
+1,4
+92,5
+Kougny
+22
+323
+1,2
+104,7
+Toma
+39
+109
+2,1
+97,5
+Yaba
+41
+381
+2,2
+94,8
+Yé
+49
+958
+2,6
+97,8
+Di
+38
+087
+2,0
+104,9
+Gomboro
+12
+656
+0,7
+93,0
+Kassoum
+25
+694
+1,4
+104,5
+Kiembara
+39
+289
+2,1
+94,7
+Lanfiéra
+25
+486
+1,3
+105,3
+Lankoué
+21
+910
+1,2
+93,2
+Toéni
+32
+708
+1,7
+101,0
+Tougan
+89
+181
+4,7
+98,8
+Boucle du Mouhoun
+1
+901
+269
+100
+,0
+99,1
+Depuis 1985, la densité de la population est en constante hausse dans la région. Elle est passée
+de 26
+,4 habitants au kilomètre carré (hbts/km²) en 1985 à 42,0 hbts/km² en 2006 puis à 55,2
+hbts/km² en 2019 (graphique 2.1).
+Dans l’intervalle de temps considéré, la densité a plus que
+doublé.
+
+--- page 32 ----------------------------------------------------
+____
+__
+_
+________
+_______________________________________________________________________
+10
+|
+RGPH 2019
+-
+Monographi
+e
+de la Boucle du Mouhoun
+Graphique
+2
+.
+1
+:
+Evolution de la densité (hbts/km²) de la population de 1985 à 2019
+Au sein des communes de la région de
+la Boucle du Mouhoun
+, la plupart des densités sont
+inférieures à
+10
+0 hbts/km²
+à l’exception des communes
+de
+Kouka, Di, Bana et Poura o
+ù
+l’on observe
+de
+fortes concentrations de populations
+.
+L
+es
+commune
+s
+de
+To
+é
+ni et
+de
+Sami
+enregistre
+nt
+l
+es
+plus
+faible
+s
+densité
+s
+de la région avec
+moins de 2
+5 h
+bts/
+km² (carte
+n°3)
+.
+Carte n°
+3
+:
+Carte de densité des populations (hbts/km
+2
+) des c
+ommunes de la région de la Boucle du
+Mouhoun
+26,4
+35,6
+42,0
+55,2
+0
+10
+20
+30
+40
+50
+60
+1985
+1996
+2006
+2019
+Densité de population
+Année
+
+--- page 33 ----------------------------------------------------
+________
+_____
+________________________________________________
+_____
+____________________
+RGPH 2019
+-
+Monographie de la Boucle du Mouhoun
+|
+11
+2.2.
+STRUCTURE PAR SEXE E
+T PAR AGE
+La structure par sexe et par âge de la population de la région de la Bouche du Mouhoun présente
+des effectifs élevés aux jeunes âges à l’image de celle du pays. Plus l’âge de la p
+opulation
+augmente, plus l’effectif diminue. L’analyse selon le milieu de résidence présente les mêmes
+tendances observées au niveau de la région.
+L’âge moyen de la population de la région de la Boucle du Mouhoun est de 21,4 ans et est
+légèrement plus élev
+é chez les femmes (21,9 ans) que chez les hommes (21,0 ans). En outre, la
+population urbaine est en moyenne plus âgée (23,1 ans) que celle
+du
+milieu rural (21,3 ans).
+Quant à l’âge médian, il est de 15,5 ans dans la région de la Boucle du Mouhoun et est lé
+gèrement
+plus élevé chez les femmes (16,5 ans) que chez les hommes (15,0 ans). Il est aussi plus élevé en
+milieu urbain (18,7
+ans
+) qu’en milieu rural (15,0
+ans
+) (tableau 2.5).
+Tableau
+2
+.
+5
+: Effectif de la po
+pulation par groupe d'âge selon le milieu de résidence et le sexe
+Groupe d'âge
+Rural
+Urbain
+Ensemble
+M
+F
+M+F
+M
+F
+M+F
+M
+F
+M+F
+0
+-
+4
+144
+950
+142
+651
+287
+601
+11
+061
+11
+187
+22
+248
+156
+011
+153
+838
+309
+849
+5
+-
+9
+151
+448
+145
+015
+296
+463
+11
+080
+11
+597
+22
+677
+162
+528
+156
+612
+319
+140
+10
+-
+14
+123
+163
+109
+065
+232
+228
+10
+929
+12
+324
+23
+253
+134
+092
+121
+389
+255
+481
+15
+-
+19
+90
+536
+79
+344
+169
+880
+11
+787
+12
+992
+24
+779
+102
+323
+92
+336
+194
+659
+20
+-
+24
+62
+941
+70
+118
+133
+059
+10
+388
+10
+523
+20
+911
+73
+329
+80
+641
+153
+970
+25
+-
+29
+53
+408
+63
+510
+116
+918
+7
+214
+7
+576
+14
+790
+60
+622
+71
+086
+131
+708
+30
+-
+34
+49
+738
+56
+208
+105
+946
+6
+633
+6
+359
+12
+992
+56
+371
+62
+567
+118
+938
+35
+-
+39
+40
+924
+45
+196
+86
+120
+5
+262
+5
+018
+10
+280
+46
+186
+50
+214
+96
+400
+40
+-
+44
+32
+553
+36
+071
+68
+624
+4
+246
+3
+640
+7
+886
+36
+799
+39
+711
+76
+510
+45
+-
+49
+25
+891
+27
+955
+53
+846
+3
+275
+2
+803
+6
+078
+29
+166
+30
+758
+59
+924
+50
+-
+54
+22
+151
+24
+323
+46
+474
+2
+529
+2
+461
+4
+990
+24
+680
+26
+784
+51
+464
+55
+-
+59
+17
+483
+18
+444
+35
+927
+1
+904
+1
+848
+3
+752
+19
+387
+20
+292
+39
+679
+60
+-
+64
+13
+912
+15
+594
+29
+506
+1
+480
+1
+509
+2
+989
+15
+392
+17
+103
+32
+495
+65
+-
+69
+9
+977
+9
+799
+19
+776
+968
+1
+066
+2
+034
+10
+945
+10
+865
+21
+810
+70
+-
+74
+7
+646
+8
+195
+15
+841
+733
+899
+1
+632
+8
+37
+9
+9
+094
+17
+473
+75
+-
+79
+4
+293
+4
+515
+8
+808
+369
+510
+879
+4
+662
+5
+025
+9
+687
+80
+-
+84
+2
+432
+3
+136
+5
+568
+220
+336
+556
+2
+652
+3
+472
+6
+124
+85
+-
+89
+1
+071
+1
+312
+2
+383
+108
+141
+249
+1
+179
+1
+453
+2
+632
+90
+-
+94
+568
+695
+1
+263
+31
+87
+118
+599
+782
+1
+381
+95 ou +
+826
+993
+1
+819
+55
+7
+1
+126
+881
+1
+064
+1
+945
+Total
+855
+911
+862
+139
+1
+718
+05
+90
+272
+92
+947
+183
+21
+946
+183
+955
+086
+1
+901
+26
+Age moyen
+20,7
+21,8
+21,3
+23,2
+22,9
+23,1
+21
+21,9
+21,4
+Age médian
+14,3
+16,0
+15,0
+19,0
+18,3
+18,7
+15,0
+16,5
+15,5
+La pyramide des âges des effectifs de la
+population de la région de la Boucle du Mouhoun
+ressemble à celle du pays, modèle des pays en développement avec une base large (niveau élevé
+de fécondité) et un sommet effilé (niveau élevé de mortalité). Elle met en évidence la jeunesse de
+la population d
+e la région. En outre, les hommes sont plus nombreux que les femmes avant l’âge
+de 20 ans. Passé cet âge
+,
+la situation inverse est constatée avec des femmes plus nombreuses.
+Cela peut être mis en relation avec un exode rural plus
+fréquent
+chez les hommes.
+
+--- page 34 ----------------------------------------------------
+____
+__
+_
+________
+_______________________________________________________________________
+12
+|
+RGPH 2019
+-
+Monographi
+e
+de la Boucle du Mouhoun
+Graphique
+2
+.
+2
+:
+Pyramide des âges des effectifs de la population de la Boucle du Mouhoun par
+groupe d’âge
+La structure par âge des populations rurale
+s
+et urbaine
+s
+de la région de la Boucle du Mouhoun
+est
+présentée par le graphique 2.3. La pyramide du milieu rural indique une population plus nombreuse
+avec ses barres
+plus
+longues. Sa base élargie traduit aussi une forte jeunesse de cette population.
+La population urbaine est moins importante (avec ses
+barres plus courtes) que celle
+du
+rural. Elle
+présente des effectifs de population assez identiques des groupes
+d’âge
+0
+-
+4 ans à 15
+-
+19 ans.
+Graphique
+2
+.
+3
+:
+Pyramide des âges de la population urbaine et rur
+ale
+180
+160
+140
+120
+100
+80
+60
+40
+20
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0-4
+5-9
+10-14
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70-74
+75-79
+80-84
+85-89
+90-94
+95 ou +
+Effectif de population (en milliers)
+Groupe d'âge
+Homme
+Femme
+160
+140
+120
+100
+80
+60
+40
+20
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0-4
+5-9
+10-14
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70-74
+75-79
+80-84
+85-89
+90-94
+95 ou +
+Effectif de population (en milliers)
+Groupe d'âge
+Urbain Femme
+Urbain Homme
+Rural Femme
+Rural Homme
+Homme
+Femme
+
+--- page 35 ----------------------------------------------------
+________
+_____
+________________________________________________
+_____
+____________________
+RGPH 2019
+-
+Monographie de la Boucle du Mouhoun
+|
+13
+CONCLUSION
+Ce
+tte analyse de
+l’état et la structure de la population de la région de la Boucle du Mouhoun a
+montré que
+le volume de celle
+-
+ci
+est en hausse constante au fil du temps selon les recensements.
+Cette population est très jeune dans sa majo
+rité à l’image de celle du pays avec un âge moyen de
+21,4 ans. La densité de population dans la région est de 55,2 hbts/km². Elle varie de 23,2 hbts/km²
+dans la commune de To
+é
+ni à 186,8 hbts/km² dans celle de Poura. La population de la région de la
+Boucle
+du Mouhoun est
+en
+majorité féminine au regard du rapport de masculinité qui est de 99,1
+hommes pour 100 femmes.
+
+--- page 36 ----------------------------------------------------
+
