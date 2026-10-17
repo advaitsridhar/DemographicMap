@@ -1,5 +1,4 @@
-page: https://censusinfo.capmas.gov.eg/
-  unreachable: URLError: <urlopen error [Errno -5] No address associated with hostname>
-page: https://www.capmas.gov.eg/
-  1,385 bytes
-  0 matching link(s)
+page: https://www.ons.dz/collections/
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+page: https://www.ons.dz/
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
