@@ -525,9 +525,11 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
             f"ETH-2022-{sid}", labels[sid], level="admin2", parent="ETH", country="ETH",
             match_by="shape_id", shape_id=sid,
             population=measure(total, year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
-            population_note=(f"The statistics office's projections for July 2022, from the 2007 "
-                             f"census, for the {len(codes)} weredas that lie within the zone as "
-                             "drawn, added up."),
+            population_note=(
+                "The statistics office's projection for July 2022, from the 2007 census, for "
+                "the one wereda that lies within the zone as drawn." if len(codes) == 1 else
+                f"The statistics office's projections for July 2022, from the 2007 census, for "
+                f"the {len(codes)} weredas that lie within the zone as drawn, added up."),
             sources=cite))
     # A region drawn as a single zone takes the region's projection.
     written = {r["shape_id"] for r in records if r["level"] == "admin2"}
