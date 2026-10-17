@@ -1,25 +1,23 @@
 
-=== HDX dataset: cod-ps-cod ===
-    title: Democratic Republic of the Congo - Subnational Population Statistics
-    org:   ocha-dr-congo
+=== HDX dataset: cod-ps-caf ===
+    title: Central African Republic - Subnational Population Statistics
+    org:   ocha-car
     licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
-    notes: Democratic Republic of the Congo administrative level 0 (country), 1 (province), 2 (district) sex and age disaggregated population statistics by year. These tables are suitable for database or GIS linkage to the [RDC - Administrative Boundaries (levels 0 - 2)](https://data.humdata.org/dataset/cod-ab-cod).  For year 2019 and 2020, please see caveats.
-    9 resource(s):
-      XLSX   drc-hpc-projection-population-2024.xlsx
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/9509b41f-efb2-4305-ac43-1e735e3efc60/download/drc-hpc-projection-population-2024.xlsx
-      XLSX   COD_AdminBoundaries_TabularData.xlsx
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/86338230-9346-4bf0-9f17-de5919847097/download/cod_adminboundaries_tabulardata.xlsx
-      CSV    cod_admpop_adm0_2020.csv
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/fa85e725-30c5-4f9a-aefc-2e8db0db36fa/download/cod_admpop_adm0_2020.csv
-      CSV    cod_admpop_adm1_2020.csv
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/44bafdcb-e234-4fa2-9d1a-278715384408/download/cod_admpop_adm1_2020.csv
-      CSV    cod_admpop_adm2_2020.csv
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/bf8edc01-c28a-470d-9720-cb2d9435dfdf/download/cod_admpop_adm2_2020.csv
-      XLSX   cod_admpop_2019.xlsx
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/b9564196-4b41-4f2f-94a2-69b9e90f4d3c/download/cod_admpop_2019.xlsx
-      CSV    cod_admpop_adm0_2019.csv
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/f8eac9d2-eecf-4a9d-8e76-db1e87fb2dfb/download/cod_admpop_adm0_2019.csv
-      CSV    cod_admpop_adm1_2019.csv
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/7bfac373-4fc8-40f9-b8c3-03dd363a0802/download/cod_admpop_adm1_2019.csv
-      CSV    cod_admpop_adm2_2019.csv
-             https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/2a1ea089-8476-4e61-927c-9ff0db68413a/download/cod_admpop_adm2_2019.csv
+    notes: Population projection based on the general census of 2003. Latest projection for 2025.  See caveats. Data available for:  2025, 2022, 2021, 2015
+    8 resource(s):
+      XLSX   Projection population-2025.xlsx
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/d2ecb660-f273-433b-9020-e67509cf98db/download/ocha-car-projection-population-2025-icasees.xlsx
+      XLSX   CAF_AdminBoundaries_TabularData.xlsx
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/21266160-de65-4572-be8c-4ae26358b365/download/caf_adminboundaries_tabulardata.xlsx
+      XLSX   car_population_2022
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/9d55fa81-e8e1-4853-b59d-a09f6cb853fe/download/population-hno-2023-1.xlsx
+      XLSX   icasees_cartocensitaire2021_formatocha_public_V2.xlsx
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx
+      XLS    CAR_DATA_160214_POPULATION.xls
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fe8001fd-674b-4347-90b4-63e57824d7c5/download/car_data_160214_population.xls
+      CSV    caf_admpop_adm1_2015_v2.csv
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/58403047-f30e-4719-94b0-8d6f7e0f6942/download/caf_admpop_adm1_2015_v2.csv
+      CSV    caf_admpop_adm2_2015_v2.csv
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/2b74b781-c889-4cb9-9624-418577809c1e/download/caf_admpop_adm2_2015_v2.csv
+      CSV    caf_admpop_adm3_2015_v2.csv
+             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/17c5c468-fb12-4114-8286-3feb2069ab0a/download/caf_admpop_adm3_2015_v2.csv
