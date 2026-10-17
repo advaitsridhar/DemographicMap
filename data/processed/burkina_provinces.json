@@ -368,6 +368,52 @@
     "sex_ratio_note": "The 2019 census's count of the province: 85,055 men and 94,368 women."
   },
   {
+    "id": "BFA-RGPH2019-kadiogo",
+    "level": "admin2",
+    "name": "Kadiogo",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.1, the region's count, the province being the whole region)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.1, the region's count, the province being the whole region)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "67063806B99988316808523",
+    "sex_ratio_note": "The 2019 census's count of the province: 1,489,512 men and 1,540,872 women."
+  },
+  {
     "id": "BFA-RGPH2019-boulgou",
     "level": "admin2",
     "name": "Boulgou",
@@ -964,6 +1010,236 @@
     "match_by": "shape_id",
     "shape_id": "67063806B75605811528327",
     "sex_ratio_note": "The 2019 census's count of the province: 146,469 men and 165,576 women."
+  },
+  {
+    "id": "BFA-RGPH2019-gnagna",
+    "level": "admin2",
+    "name": "Gnagna",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "67063806B53557788130503",
+    "sex_ratio_note": "The 2019 census's count of the province: 329,534 men and 346,942 women."
+  },
+  {
+    "id": "BFA-RGPH2019-gourma",
+    "level": "admin2",
+    "name": "Gourma",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 935,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "67063806B98154706729521",
+    "sex_ratio_note": "The 2019 census's count of the province: 211,335 men and 225,975 women."
+  },
+  {
+    "id": "BFA-RGPH2019-komonjdjari",
+    "level": "admin2",
+    "name": "Komonjdjari",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1033,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "67063806B37049013397139",
+    "sex_ratio_note": "The 2019 census's count of the province: 53,671 men and 51,933 women."
+  },
+  {
+    "id": "BFA-RGPH2019-kompienga",
+    "level": "admin2",
+    "name": "Kompienga",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "67063806B63358793036390",
+    "sex_ratio_note": "The 2019 census's count of the province: 58,389 men and 59,293 women."
+  },
+  {
+    "id": "BFA-RGPH2019-tapoa",
+    "level": "admin2",
+    "name": "Tapoa",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, population by province and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "67063806B60723724569169",
+    "sex_ratio_note": "The 2019 census's count of the province: 299,750 men and 305,983 women."
   },
   {
     "id": "BFA-RGPH2019-houet",
@@ -1608,189 +1884,5 @@
     "match_by": "shape_id",
     "shape_id": "67063806B32901667163906",
     "sex_ratio_note": "The 2019 census's count of the province: 88,190 men and 83,404 women."
-  },
-  {
-    "id": "BFA-RGPH2019-bougouriba",
-    "level": "admin2",
-    "name": "Bougouriba",
-    "parent": "BFA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "value": 954,
-      "unit": "males_per_1000_females",
-      "year": 2019,
-      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "sex_ratio",
-        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)",
-        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
-        "license": "INSD publication (reuse with attribution)",
-        "year": 2019
-      }
-    ],
-    "country": "BFA",
-    "match_by": "shape_id",
-    "shape_id": "67063806B9563364372336",
-    "sex_ratio_note": "The 2019 census's count of the province: 75,001 men and 78,652 women."
-  },
-  {
-    "id": "BFA-RGPH2019-ioba",
-    "level": "admin2",
-    "name": "Ioba",
-    "parent": "BFA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "value": 961,
-      "unit": "males_per_1000_females",
-      "year": 2019,
-      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "sex_ratio",
-        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)",
-        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
-        "license": "INSD publication (reuse with attribution)",
-        "year": 2019
-      }
-    ],
-    "country": "BFA",
-    "match_by": "shape_id",
-    "shape_id": "67063806B47797635439115",
-    "sex_ratio_note": "The 2019 census's count of the province: 130,361 men and 135,595 women."
-  },
-  {
-    "id": "BFA-RGPH2019-noumbiel",
-    "level": "admin2",
-    "name": "Noumbiel",
-    "parent": "BFA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "value": 993,
-      "unit": "males_per_1000_females",
-      "year": 2019,
-      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "sex_ratio",
-        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)",
-        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
-        "license": "INSD publication (reuse with attribution)",
-        "year": 2019
-      }
-    ],
-    "country": "BFA",
-    "match_by": "shape_id",
-    "shape_id": "67063806B78350075830190",
-    "sex_ratio_note": "The 2019 census's count of the province: 49,272 men and 49,643 women."
-  },
-  {
-    "id": "BFA-RGPH2019-poni",
-    "level": "admin2",
-    "name": "Poni",
-    "parent": "BFA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "value": 895,
-      "unit": "males_per_1000_females",
-      "year": 2019,
-      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "sex_ratio",
-        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.3, population by province and sex)",
-        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
-        "license": "INSD publication (reuse with attribution)",
-        "year": 2019
-      }
-    ],
-    "country": "BFA",
-    "match_by": "shape_id",
-    "shape_id": "67063806B8041269423759",
-    "sex_ratio_note": "The 2019 census's count of the province: 168,544 men and 188,374 women."
   }
 ]
