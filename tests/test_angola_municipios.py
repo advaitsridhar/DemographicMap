@@ -298,9 +298,15 @@ class National(unittest.TestCase):
         pages, texts = report_pages()
         rep = am.read_report("Bengo", pages, texts)
         total = rep.tables["ethnicity"][0][1]
-        national = [{"name": "Bengo", "ethnicity": [
-            {"group": "Bakongo", "pct": 1.0, "count": total["Bakongo"]},
+        # A few per cent apart, or one group apart, is the two publications.
+        near = [{"name": "Bengo", "ethnicity": [
+            {"group": "Bakongo", "pct": 1.0, "count": total["Bakongo"] * 2},
             {"group": "Ambundu", "pct": 1.0, "count": total["Ambundu"] + 5_000}]}]
+        self.assertEqual(am.compare_national([rep], near), [])
+        # Two columns under each other's headings move two groups at once.
+        national = [{"name": "Bengo", "ethnicity": [
+            {"group": "Bakongo", "pct": 1.0, "count": total["Ambundu"]},
+            {"group": "Ambundu", "pct": 1.0, "count": total["Bakongo"]}]}]
         problems = am.compare_national([rep], national)
         self.assertEqual(len(problems), 1)
         self.assertEqual(problems[0][:2], ("Bengo", "ethnicity"))

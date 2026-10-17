@@ -1007,12 +1007,23 @@ def compare_national(reports: list[Report], national_rows: list[dict[str, Any]]
             mine = by_shape.get(shape, {}).get(name)
             if not mine or not theirs:
                 continue
+            # The provincial reports and the national one differ by a few per
+            # cent in most groups (and Cabinda's "no religion" by a fifth), so a
+            # group that departs is not itself a fault. A column read under the
+            # wrong heading moves several groups at once: two or more groups of
+            # some size more than a tenth off refuses the table.
+            total = mine.get("TOTAL") or sum(v for k, v in mine.items() if k != "TOTAL")
+            off = []
             for group, count in theirs.items():
-                if count is None or group not in mine:
+                if count is None or group not in mine or count < 0.005 * total:
                     continue
-                if abs(mine[group] - count) > max(0.01 * count, 50):
-                    problems.append((shape, name, f"{shape} {name} {group}: provincial "
-                                                  f"{mine[group]:,}, national {count:,}"))
+                ratio = mine[group] / count if count else 0.0
+                if abs(ratio - 1) > 0.10:
+                    off.append(f"{group} {mine[group]:,} against {count:,}")
+            if len(off) > 1:
+                problems.append((shape, name, f"{shape} {name}: " + "; ".join(off)))
+            elif off:
+                log(f"  national check: {shape} {name}: one group apart, kept: {off[0]}")
     return problems
 
 
