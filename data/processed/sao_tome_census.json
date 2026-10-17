@@ -1,0 +1,557 @@
+[
+  {
+    "id": "STP-RGPH2012-43174148B36740863505441",
+    "level": "admin2",
+    "name": "Água Grande",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 69772,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 20.1,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 940,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 57.4,
+        "count": 39888
+      },
+      {
+        "group": "No religion",
+        "pct": 18.7,
+        "count": 12998
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.7,
+        "count": 3966
+      },
+      {
+        "group": "Adventist",
+        "pct": 4.7,
+        "count": 3241
+      },
+      {
+        "group": "Maná Church",
+        "pct": 3.0,
+        "count": 2094
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 3.0,
+        "count": 2104
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 2.5,
+        "count": 1752
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.5,
+        "count": 1030
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.9,
+        "count": 651
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.9,
+        "count": 618
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 517
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.6,
+        "count": 431
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 164
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Água Grande), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital__%C3%81GUA-GRANDE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B36740863505441",
+    "population_note": "The resident population of Água Grande district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 69,454 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 69,454 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B76706884828518",
+    "level": "admin2",
+    "name": "Mé-Zóchi",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44763,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Mé-Zóchi), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_M%C3%89-Z%C3%93CHI.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B76706884828518",
+    "population_note": "The resident population of Mé-Zóchi district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B99779095511190",
+    "level": "admin2",
+    "name": "Cantagalo",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17169,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1040,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Cantagalo), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_CANTAGALO.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B99779095511190",
+    "population_note": "The resident population of Cantagalo district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B37019359222323",
+    "level": "admin2",
+    "name": "Caué",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6062,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1085,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Caué), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_CAU%C3%89.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B37019359222323",
+    "population_note": "The resident population of Caué district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B20195011652309",
+    "level": "admin2",
+    "name": "Lembá",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14676,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1068,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lembá), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_LEMB%C3%81.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B20195011652309",
+    "population_note": "The resident population of Lembá district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B25004726463593",
+    "level": "admin2",
+    "name": "Lobata",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19414,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lobata), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_LOBATA.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B25004726463593",
+    "population_note": "The resident population of Lobata district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B82261817076051",
+    "level": "admin2",
+    "name": "Príncipe",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7344,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1046,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Príncipe), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_REGI%C3%83O%20AUT%C3%93NOMA%20DO%20PR%C3%8DNCIPE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B82261817076051",
+    "population_note": "The resident population of the Autonomous Region of Príncipe at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-19237168B40253326356618",
+    "level": "admin1",
+    "name": "São Tomé",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 171856,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Água Grande), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital__%C3%81GUA-GRANDE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Mé-Zóchi), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_M%C3%89-Z%C3%93CHI.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Cantagalo), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_CANTAGALO.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Caué), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_CAU%C3%89.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lembá), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_LEMB%C3%81.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lobata), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_LOBATA.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "19237168B40253326356618",
+    "population_note": "The resident population of São Tomé province, its six districts added up at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  },
+  {
+    "id": "STP-RGPH2012-19237168B82261817076051",
+    "level": "admin1",
+    "name": "Príncipe",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7344,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1046,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census asked which languages each person speaks, several answers allowed (in Água Grande 98.6% speak Portuguese and 36.8% Forro), so its answers do not divide the population into shares and none are shown."
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Príncipe), Quadros 2, 5 and 6",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_REGI%C3%83O%20AUT%C3%93NOMA%20DO%20PR%C3%8DNCIPE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "19237168B82261817076051",
+    "population_note": "The resident population of the Autonomous Region of Príncipe at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted."
+  }
+]
