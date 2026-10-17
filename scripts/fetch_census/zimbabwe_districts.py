@@ -170,6 +170,10 @@ def parse(pages: list[str]) -> dict[str, Any]:
         for ln in lines:
             hit = ROW.match(ln)
             if not hit:
+                # A line with figures that is no ward and no total is shown,
+                # so a sum that fails can be traced to the page.
+                if re.search(r"\d,\d{3}", ln):
+                    log(f"    {current['name']}: line not read: {ln!r}")
                 continue
             label = hit.group("label")
             if label.startswith("Ward "):
@@ -177,6 +181,8 @@ def parse(pages: list[str]) -> dict[str, Any]:
             elif label == "Total":
                 current.update({k: v for k, v in row_of(hit, current["name"], province).items()
                                 if k in ("men", "women", "total", "households")})
+            else:
+                log(f"    {current['name']}: line not read: {ln!r}")
     check(provinces, districts)
     return {"provinces": provinces, "districts": districts}
 
