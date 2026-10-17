@@ -1,0 +1,989 @@
+[
+  {
+    "id": "UGA-2002-17295835B48340970483027",
+    "level": "admin1",
+    "name": "Central Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 41.2,
+        "count": 2706572
+      },
+      {
+        "group": "Anglican",
+        "pct": 31.0,
+        "count": 2034885
+      },
+      {
+        "group": "Muslim",
+        "pct": 18.4,
+        "count": 1212273
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 5.9,
+        "count": 385273
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.9,
+        "count": 124094
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.4,
+        "count": 94480
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 14767
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "17295835B48340970483027",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of the Central Region's people by religion (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-17295835B57878138064711",
+    "level": "admin1",
+    "name": "Eastern Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 43.0,
+        "count": 2665047
+      },
+      {
+        "group": "Catholic",
+        "pct": 29.6,
+        "count": 1835614
+      },
+      {
+        "group": "Muslim",
+        "pct": 17.0,
+        "count": 1052839
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 6.1,
+        "count": 380129
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.7,
+        "count": 169342
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.0,
+        "count": 59467
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 40486
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "17295835B57878138064711",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of the Eastern Region's people by religion (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-17295835B80141219017784",
+    "level": "admin1",
+    "name": "Northern Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 58.6,
+        "count": 3144872
+      },
+      {
+        "group": "Anglican",
+        "pct": 23.1,
+        "count": 1237383
+      },
+      {
+        "group": "Muslim",
+        "pct": 7.6,
+        "count": 406465
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.1,
+        "count": 275747
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 2.8,
+        "count": 150256
+      },
+      {
+        "group": "No religion",
+        "pct": 2.3,
+        "count": 125257
+      },
+      {
+        "group": "Adventist",
+        "pct": 0.4,
+        "count": 22337
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "17295835B80141219017784",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of the Northern Region's people by religion (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-17295835B91329899113986",
+    "level": "admin1",
+    "name": "Western Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 45.2,
+        "count": 2845506
+      },
+      {
+        "group": "Catholic",
+        "pct": 40.6,
+        "count": 2555536
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.5,
+        "count": 284544
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 3.4,
+        "count": 213989
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.2,
+        "count": 202020
+      },
+      {
+        "group": "Adventist",
+        "pct": 2.6,
+        "count": 162074
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 31878
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "17295835B91329899113986",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of the Western Region's people by religion (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B16286500452212",
+    "level": "admin2",
+    "name": "Kampala",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 34.1,
+        "count": 405070
+      },
+      {
+        "group": "Anglican",
+        "pct": 30.9,
+        "count": 366919
+      },
+      {
+        "group": "Muslim",
+        "pct": 22.6,
+        "count": 268787
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 9.0,
+        "count": 106729
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 20675
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.4,
+        "count": 16446
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 3169
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B16286500452212",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Kampala District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B88376902859288",
+    "level": "admin2",
+    "name": "Kiboga",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 39.6,
+        "count": 90690
+      },
+      {
+        "group": "Catholic",
+        "pct": 34.4,
+        "count": 78986
+      },
+      {
+        "group": "Muslim",
+        "pct": 12.1,
+        "count": 27839
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 6.9,
+        "count": 15736
+      },
+      {
+        "group": "Adventist",
+        "pct": 4.1,
+        "count": 9326
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.6,
+        "count": 5930
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 790
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B88376902859288",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Kiboga District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B79895845203755",
+    "level": "admin2",
+    "name": "Buruli",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 60.8,
+        "count": 77189
+      },
+      {
+        "group": "Catholic",
+        "pct": 18.2,
+        "count": 23138
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 8.6,
+        "count": 10899
+      },
+      {
+        "group": "Muslim",
+        "pct": 7.4,
+        "count": 9428
+      },
+      {
+        "group": "Adventist",
+        "pct": 3.5,
+        "count": 4486
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 1274
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 634
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B79895845203755",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Nakasongola District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B53582052488113",
+    "level": "admin2",
+    "name": "Bukooli",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Bugiri District, which was this county alone in 2002, has its religion published in the 2002 census, but the county as drawn here does not keep the district's lines in the counts taken since, so it is not shown to be the district's ground and no count is given for it."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B53582052488113"
+  },
+  {
+    "id": "UGA-2002-47994165B10893310093346",
+    "level": "admin2",
+    "name": "Samia-Bugwe",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 39.8,
+        "count": 89586
+      },
+      {
+        "group": "Catholic",
+        "pct": 31.9,
+        "count": 71820
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 11.2,
+        "count": 25240
+      },
+      {
+        "group": "Muslim",
+        "pct": 9.9,
+        "count": 22322
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.3,
+        "count": 14173
+      },
+      {
+        "group": "Adventist",
+        "pct": 0.6,
+        "count": 1267
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 479
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B10893310093346",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Busia District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B29778202541114",
+    "level": "admin2",
+    "name": "Bunya",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Mayuge District, which was this county alone in 2002, has its religion published in the 2002 census, but the county as drawn here does not keep the district's lines in the counts taken since, so it is not shown to be the district's ground and no count is given for it."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B29778202541114"
+  },
+  {
+    "id": "UGA-2002-47994165B33231894396929",
+    "level": "admin2",
+    "name": "East Moyo",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 82.5,
+        "count": 166880
+      },
+      {
+        "group": "Anglican",
+        "pct": 8.0,
+        "count": 16153
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.6,
+        "count": 11273
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.8,
+        "count": 3665
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.1,
+        "count": 2290
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 1723
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 239
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B33231894396929",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Adjumani District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B72229648359475",
+    "level": "admin2",
+    "name": "Aringa",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Yumbe District, which was this county alone in 2002, has its religion published in the 2002 census, but the county as drawn here does not keep the district's lines in the counts taken since, so it is not shown to be the district's ground and no count is given for it."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B72229648359475"
+  },
+  {
+    "id": "UGA-2002-47994165B70493584211425",
+    "level": "admin2",
+    "name": "Bufumbira",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 46.4,
+        "count": 102231
+      },
+      {
+        "group": "Catholic",
+        "pct": 42.6,
+        "count": 93732
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 5.0,
+        "count": 11001
+      },
+      {
+        "group": "No religion",
+        "pct": 2.2,
+        "count": 4816
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.8,
+        "count": 3907
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 2822
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.8,
+        "count": 1693
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B70493584211425",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Kisoro District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  },
+  {
+    "id": "UGA-2002-47994165B13656364891086",
+    "level": "admin2",
+    "name": "Kinkiizi",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Anglican",
+        "pct": 56.7,
+        "count": 115970
+      },
+      {
+        "group": "Catholic",
+        "pct": 36.0,
+        "count": 73608
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.7,
+        "count": 5564
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 3460
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.7,
+        "count": 3396
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.0,
+        "count": 2089
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 553
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
+        "year": 2002,
+        "license": "Uganda Bureau of Statistics publication (reuse with attribution)"
+      }
+    ],
+    "country": "UGA",
+    "match_by": "shape_id",
+    "shape_id": "47994165B13656364891086",
+    "religion_year": 2002,
+    "religion_note": "The 2002 census's count of Kanungu District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+  }
+]
