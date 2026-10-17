@@ -1,177 +1,37 @@
-  read https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx: 1,759,157 bytes, sha256 17fb2f59b82d6ab4490078427f6779ca1284250a1035a854d31e6bb109e9fdee
-  13 first-order areas and 93 zones, making 73,750,932, every row's groups and sexes making its total; listed without a count: ['OROMĪYA, FINFINNE ZURIA SPECIAL ZONE']
-  bahirdarspecialwereda: counted apart and placed in no polygon -- the city lies on the line between West Gojam and North Gonder
-  maokomospecialwereda: counted apart and placed in no polygon -- its land lies across the line between Asosa and West Wellega
-  zones of the workbook on no polygon: []
-  admin1 Addis Ababa: 2,739,551, median 24.0, sex ratio 910
-  admin1 Afar: 1,390,273, median 17.1, sex ratio 1260
-  admin1 Amhara: 17,221,976, median 18.0, sex ratio 1007
-  admin1 Beneshangul Gumu: 784,345, median 17.0, sex ratio 1034
-  admin1 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin1 Gambela: 307,096, median 18.2, sex ratio 1085
-  admin1 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin1 Oromia: 26,993,933, median 16.0, sex ratio 1015
-  admin1 SNNPR: 14,929,548, median 15.9, sex ratio 990
-  admin1 Somali: 4,445,219, median 17.1, sex ratio 1253
-  admin1 Tigray: 4,316,988, median 17.7, sex ratio 971
-  admin2 Afder: 570,629, median 15.9, sex ratio 1330
-  admin2 Agnuak: 135,242, median 18.8, sex ratio 1032
-  admin2 Alaba: 232,325, median 16.7, sex ratio 1020
-  admin2 Arsi: 2,637,657, median 15.4, sex ratio 1007
-  admin2 Asosa: 310,822, median 17.5, sex ratio 1046
-  admin2 Awi/Agew: 982,942, median 17.0, sex ratio 1002
-  admin2 Bale: 1,402,492, median 15.2, sex ratio 1036
-  admin2 Basketo: 56,689, median 14.8, sex ratio 1013
-  admin2 Bench Maji: 652,531, median 15.6, sex ratio 982
-  admin2 Borena: 962,489, median 14.5, sex ratio 1024
-  admin2 Central: 1,245,824, median 17.6, sex ratio 971
-  admin2 Dawro: 489,577, median 14.3, sex ratio 1037
-  admin2 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin2 Doolo: 306,488, median 17.6, sex ratio 1342
-  admin2 East Gojam: 2,153,937, median 17.8, sex ratio 981
-  admin2 East Harerge: 2,723,850, median 15.4, sex ratio 1032
-  admin2 East Shewa: 1,576,554, median 18.8, sex ratio 1044
-  admin2 East Wellega: 1,213,503, median 16.9, sex ratio 999
-  admin2 Eastern: 755,343, median 17.2, sex ratio 909
-  admin2 Fafan: 967,652, median 17.8, sex ratio 1193
-  admin2 Gamo Gofa: 1,593,104, median 16.4, sex ratio 992
-  admin2 Gedio: 847,434, median 15.0, sex ratio 1005
-  admin2 Guji: 1,389,800, median 13.8, sex ratio 1022
-  admin2 Gurage: 1,279,646, median 17.7, sex ratio 946
-  admin2 Hadiya: 1,231,196, median 16.7, sex ratio 988
-  admin2 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin2 Horo Guduru: 570,040, median 16.5, sex ratio 1003
-  admin2 Ilubabor: 1,271,609, median 16.4, sex ratio 1004
-  admin2 Jarar: 478,168, median 18.3, sex ratio 1275
-  admin2 Jimma: 2,607,115, median 16.7, sex ratio 1012
-  admin2 KT: 680,837, median 16.6, sex ratio 978
-  admin2 Keffa: 874,716, median 15.6, sex ratio 975
-  admin2 Kelem Wellega: 797,666, median 16.7, sex ratio 1016
-  admin2 Kemashi: 101,543, median 16.7, sex ratio 1061
-  admin2 Konta: 90,846, median 15.2, sex ratio 968
-  admin2 Korahe: 312,713, median 18.8, sex ratio 1320
-  admin2 Liben: 539,821, median 14.2, sex ratio 1226
-  admin2 Majang: 59,248, median 19.1, sex ratio 1066
-  admin2 Metekel: 321,919, median 16.9, sex ratio 1018
-  admin2 Nogob: 348,409, median 17.9, sex ratio 1295
-  admin2 North Gonder: 2,929,628, median 17.5, sex ratio 1029
-  admin2 North Shewa(R3): 1,837,490, median 18.8, sex ratio 1022
-  admin2 North Shewa(R4): 1,431,305, median 17.6, sex ratio 1005
-  admin2 North Western: 736,805, median 17.5, sex ratio 999
-  admin2 North Wollo: 1,500,303, median 18.7, sex ratio 1007
-  admin2 Nuer: 112,606, median 17.1, sex ratio 1163
-  admin2 Oromia: 457,278, median 17.7, sex ratio 989
-  admin2 Region 14: 2,739,551, median 24.0, sex ratio 910
-  admin2 Segen Peoples': 582,757, median 15.1, sex ratio 963
-  admin2 Selti: 750,398, median 16.1, sex ratio 943
-  admin2 Shabelle: 464,253, median 16.5, sex ratio 1257
-  admin2 Sheka: 199,314, median 18.0, sex ratio 1029
-  admin2 Sidama: 3,212,944, median 15.2, sex ratio 1023
-  admin2 Siti: 457,086, median 17.4, sex ratio 1169
-  admin2 South Gonder: 2,051,738, median 17.7, sex ratio 1030
-  admin2 South Omo: 573,435, median 15.2, sex ratio 999
-  admin2 South West Shewa: 1,101,129, median 17.2, sex ratio 1021
-  admin2 South Wollo: 2,518,862, median 19.1, sex ratio 983
-  admin2 Southern: 1,222,418, median 18.3, sex ratio 971
-  admin2 Special Woreda: 34,998, median 16.6, sex ratio 1024
-  admin2 Wag Himra: 426,213, median 17.3, sex ratio 1007
-  admin2 West Arsi: 1,964,038, median 14.5, sex ratio 983
-  admin2 West Gojam: 2,106,596, median 17.4, sex ratio 1009
-  admin2 West Harerge: 1,871,706, median 15.1, sex ratio 1050
-  admin2 West Shewa: 2,122,565, median 16.5, sex ratio 998
-  admin2 West Wellega: 1,350,415, median 16.8, sex ratio 989
-  admin2 Western: 356,598, median 18.1, sex ratio 1049
-  admin2 Wolayita: 1,501,112, median 15.9, sex ratio 971
-  admin2 Yem: 80,687, median 17.1, sex ratio 1011
-  admin2 Zone 1: 410,790, median 17.7, sex ratio 1207
-  admin2 Zone 2: 350,111, median 15.7, sex ratio 1263
-  admin2 Zone 3: 198,751, median 18.4, sex ratio 1214
-  admin2 Zone 4: 246,822, median 17.1, sex ratio 1327
-  admin2 Zone 5: 183,799, median 17.5, sex ratio 1342
-  11 of 11 regions and 74 of 74 zones written
-  wrote data/processed/ethiopia_census.json (171 kB)
-  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/2ec96e53-b38f-4994-9a8c-5bbaa4c49e82/download/eth_admpop_adm1_2022_v2.csv: 5,201 characters
-  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/3f8150d4-6d5d-4659-a0a8-586e4689ae65/download/eth_admpop_adm3_2022_v2.csv: 338,607 characters
-  projection weredas matched to no outline, in zone ET0101, placed with the zone's other weredas: ['Laelay Adiabo (ET010102, 136,058)', 'Tselemti (ET010106, 164,957)', 'Indasilassie town (ET010108, 95,491)', 'Selekleka (ET010109, 14,679)', 'Adi Hageray (ET010112, 12,852)', 'Dima (TG) (ET010115, 32,504)']
-  projection weredas matched to no outline, in zone ET0102, placed with the zone's other weredas: ['Edaga arbi (ET010203, 63,635)', 'Tahtay Mayechew (ET010206, 122,245)', 'Kola Temben (ET010208, 152,207)', 'Abi Adi town (ET010211, 32,609)']
-  projection weredas matched to no outline, in zone ET0103, whose weredas lie in ['57463737B91204154361244', 'straddling']: ['Kelete Awelallo (ET010306, 117,238)']
-  projection weredas matched to no outline, in zone ET0105, placed with the zone's other weredas: ['Setit Humera (ET010504, 42,383)']
-  projection weredas matched to no outline, in zone ET0107, placed with the zone's other weredas: ['Mekelle (ET010701, 186,272)']
-  projection weredas matched to no outline, in zone ET0203, placed with the zone's other weredas: ['Gelalu (ET020305, 8,486)']
-  projection weredas matched to no outline, in zone ET0304, whose weredas lie in ['57463737B48822238288228', '57463737B67745192438967', '57463737B70829133861950']: ['Tulu Awlia (ET030428, 4,308)', 'Mekane Selame (ET030498, 17,762)']
-  projection weredas matched to no outline, in zone ET0305, whose weredas lie in ['57463737B14712300908991', '57463737B29739464578805']: ['Mehale Meda town (ET030597, 23,676)']
-  projection weredas matched to no outline, in zone ET0408, placed with the zone's other weredas: ['Bekoji town (ET040894, 35,060)']
-  projection weredas matched to no outline, in zone ET0410, placed with the zone's other weredas: ['Aweday town (ET041099, 15,183)']
-  projection weredas matched to no outline, in zone ET0417, placed with the zone's other weredas: ['Bishan Guracha (ET041798, 26,592)']
-  projection weredas matched to no outline, in zone ET0420, whose weredas lie in ['57463737B12311921356322', '57463737B31651758241956', '57463737B78639560237753', 'straddling']: ['Lege Tafo-Lege Dadi town (ET042004, 22,227)', 'Sululta town (ET042005, 12,659)', 'Dukem (ET042008, 13,366)', 'Sebeta town (ET042009, 97,498)', 'Gelana (Finfine) (ET042098, 15,634)']
-  projection weredas matched to no outline, in zone ET0421, placed with the zone's other weredas: ['Dawe Serer (ET042199, 59,300)']
-  projection weredas matched to no outline, in zone ET0509, whose weredas lie in ['57463737B43250517747981', '57463737B84149246133198']: ['Quarsadula (ET050905, 33,677)']
-  projection weredas matched to no outline, in zone ET0603, placed with the zone's other weredas: ['Assosa (ET060303, 171,985)']
-  projection weredas matched to no outline, in zone ET0604, placed with the zone's other weredas: ['Mizyiga (ET060405, 21,956)']
-  projection weredas matched to no outline, in zone ET0706, placed with the zone's other weredas: ['Kawo Koisha (ET070620, 43,939)', 'Bayera Koisha (ET070622, 22,762)']
-  projection weredas matched to no outline, in zone ET0707, whose weredas lie in ['57463737B95170801436908', 'straddling']: ['Boko Dawula (ET070710, 24,109)']
-  projection weredas matched to no outline, in zone ET0710, placed with the zone's other weredas: ['Ezo /Kogota (ET071007, 40,612)', 'Chencha (ET071010, 26,262)', 'Kemba (ET071011, 120,052)', 'Gerese (ET071013, 159,945)']
-  projection weredas matched to no outline, in zone ET0715, placed with the zone's other weredas: ['Bulike town (ET071508, 14,758)']
-  projection weredas matched to no outline, in zone ET0724, placed with the zone's other weredas: ['Yem SP Woreda (ET072401, 67,586)']
-  projection weredas matched to no outline, in zone ET1104, placed with the zone's other weredas: ['Isara (ET110405, 88,283)']
-  projection weredas matched to no outline, in zone ET1600, placed with the zone's other weredas: ['Hawasa town (ET160018, 16,010)']
-  Liben: not written -- 8 weredas, zones holding weredas matched to no outline ['ET0509']
-  North Shewa(R3): not written -- 29 weredas, zones holding weredas matched to no outline ['ET0305']
-  North Wollo: not written -- 20 weredas, zones holding weredas matched to no outline ['ET0304']
-  Oromia: not written -- 10 weredas, zones holding weredas matched to no outline ['ET0305']
-  South Wollo: not written -- 26 weredas, zones holding weredas matched to no outline ['ET0304']
-  Special Woreda: not written -- 1 weredas, zones holding weredas matched to no outline ['ET0304']
-  projection admin1 Addis Ababa: 3,773,999
-  projection admin1 Afar: 1,989,997
-  projection admin1 Amhara: 22,530,515
-  projection admin1 Beneshangul Gumu: 1,187,997
-  projection admin1 Dire Dawa: 521,000
-  projection admin1 Gambela: 492,002
-  projection admin1 Hareri: 270,000
-  projection admin1 Oromia: 39,075,002
-  projection admin1 SNNPR: 20,691,549
-  projection admin1 Somali: 6,355,003
-  projection admin1 Tigray: 5,649,587
-  projection admin2 Agnuak: 241,290
-  projection admin2 Alaba: 241,565
-  projection admin2 Arsi: 3,766,075
-  projection admin2 Asosa: 576,297
-  projection admin2 Awi/Agew: 1,641,176
-  projection admin2 Bale: 1,546,787
-  projection admin2 Basketo: 79,236
-  projection admin2 Bench Maji: 929,586
-  projection admin2 Borena: 1,438,397
-  projection admin2 Dawro: 830,837
-  projection admin2 East Wellega: 1,870,321
-  projection admin2 Gamo Gofa: 2,313,954
-  projection admin2 Guji: 2,180,882
-  projection admin2 Hadiya: 1,942,784
-  projection admin2 Horo Guduru: 780,424
-  projection admin2 Ilubabor: 1,767,139
-  projection admin2 Jimma: 4,197,372
-  projection admin2 KT: 989,687
-  projection admin2 Keffa: 1,232,450
-  projection admin2 Kelem Wellega: 1,184,070
-  projection admin2 Kemashi: 110,115
-  projection admin2 Konta: 126,874
-  projection admin2 Majang: 86,891
-  projection admin2 Metekel: 501,585
-  projection admin2 North Gonder: 3,681,195
-  projection admin2 North Western: 902,719
-  projection admin2 Nuer: 163,821
-  projection admin2 Region 14: 3,773,999
-  projection admin2 Segen Peoples': 748,072
-  projection admin2 Sheka: 333,699
-  projection admin2 Sidama: 3,987,456
-  projection admin2 Southern: 1,322,029
-  projection admin2 Wag Himra: 558,306
-  projection admin2 West Arsi: 2,725,861
-  projection admin2 West Harerge: 2,789,190
-  projection admin2 West Wellega: 1,791,335
-  projection admin2 Western: 525,923
-  projection admin2 Wolayita: 2,311,101
-  projection admin2 Yem: 67,586
-  projection admin2 Dire Dawa: 521,000
-  projection admin2 Hareri: 270,000
-  projection: 11 regions and 41 zones written
-  wrote data/processed/ethiopia_projection.json (72 kB)
+  read https://web.archive.org/web/20240814133631id_/https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555: 10,525,457 bytes, sha256 7a9c1ec3f7458c69f042da9f4789c668fc82a2264cab8644b80d60b12f05fefa
+  the country's median age: 35.5
+  admin1 Anse Boile: 4,595, ratio 1318, median 35.4, [{'group': 'Seychellois Creole', 'pct': 92.4, 'count': 3441}], [{'group': 'Catholic', 'pct': 76.7, 'count': 2961}]
+  admin1 Anse Etoil: 5,477, ratio 1140, median 35.5, [{'group': 'Seychellois Creole', 'pct': 82.7, 'count': 4167}], [{'group': 'Catholic', 'pct': 67.1, 'count': 3489}]
+  admin1 Anse Royal: 4,552, ratio 1087, median 36.1, [{'group': 'Seychellois Creole', 'pct': 87.4, 'count': 3682}], [{'group': 'Catholic', 'pct': 70.6, 'count': 3067}]
+  admin1 Anse aux Pins: 3,898, ratio 1059, median 35.0, [{'group': 'Seychellois Creole', 'pct': 92.4, 'count': 3207}], [{'group': 'Catholic', 'pct': 77.3, 'count': 2792}]
+  admin1 Au Cap: 5,168, ratio 1165, median 35.5, [{'group': 'Seychellois Creole', 'pct': 82.1, 'count': 3907}], [{'group': 'Catholic', 'pct': 68.6, 'count': 3206}]
+  admin1 Baie Lazar: 4,265, ratio 1308, median 35.9, [{'group': 'Seychellois Creole', 'pct': 86.6, 'count': 3086}], [{'group': 'Catholic', 'pct': 77.1, 'count': 2838}]
+  admin1 Baie Saint: 4,272, ratio 1271, median 34.5, [{'group': 'Seychellois Creole', 'pct': 91.5, 'count': 3250}], [{'group': 'Catholic', 'pct': 64.5, 'count': 2383}]
+  admin1 Beau Vallo: 4,740, ratio 1088, median 36.0, [{'group': 'Seychellois Creole', 'pct': 81.1, 'count': 3126}], [{'group': 'Catholic', 'pct': 71.7, 'count': 2854}]
+  admin1 Bel Air: 2,619, ratio 1061, median 38.7, [{'group': 'Seychellois Creole', 'pct': 82.2, 'count': 1870}], [{'group': 'Catholic', 'pct': 65.5, 'count': 1528}]
+  admin1 Bel Ombre: 3,823, ratio 1062, median 36.4, [{'group': 'Seychellois Creole', 'pct': 84.1, 'count': 2783}], [{'group': 'Catholic', 'pct': 68.9, 'count': 2370}]
+  admin1 Cascade: 6,659, ratio 2490, median 35.3, [{'group': 'Seychellois Creole', 'pct': 64.6, 'count': 3188}], [{'group': 'Catholic', 'pct': 59.0, 'count': 2951}]
+  admin1 Glacis: 3,803, ratio 1095, median 38.8, [{'group': 'Seychellois Creole', 'pct': 85.8, 'count': 2958}], [{'group': 'Catholic', 'pct': 76.0, 'count': 2673}]
+  admin1 Grand'Anse Mahé: 3,425, ratio 1057, median 34.4, [{'group': 'Seychellois Creole', 'pct': 89.9, 'count': 2759}], [{'group': 'Catholic', 'pct': 73.6, 'count': 2336}]
+  admin1 Grand'Anse Praslin: 3,610, ratio 1224, median 36.2, [{'group': 'Seychellois Creole', 'pct': 88.0, 'count': 2706}], [{'group': 'Catholic', 'pct': 53.3, 'count': 1703}]
+  admin1 La Digue a: 3,537, ratio 1453, median 36.8, [{'group': 'Seychellois Creole', 'pct': 83.9, 'count': 2371}], [{'group': 'Catholic', 'pct': 70.0, 'count': 2050}]
+  admin1 La Rivière: 3,508, ratio 997, median 35.6, [{'group': 'Seychellois Creole', 'pct': 89.1, 'count': 2845}], [{'group': 'Catholic', 'pct': 70.8, 'count': 2355}]
+  admin1 Les Mamell: 2,215, ratio 1096, median 36.6, [{'group': 'Seychellois Creole', 'pct': 91.9, 'count': 1774}], [{'group': 'Catholic', 'pct': 74.4, 'count': 1492}]
+  admin1 Mont Buxto: 2,778, ratio 1006, median 38.0, [{'group': 'Seychellois Creole', 'pct': 93.1, 'count': 2372}], [{'group': 'Catholic', 'pct': 74.7, 'count': 1964}]
+  admin1 Mont Fleur: 3,506, ratio 1199, median 36.3, [{'group': 'Seychellois Creole', 'pct': 83.5, 'count': 2340}], [{'group': 'Catholic', 'pct': 71.4, 'count': 2033}]
+  admin1 Outer Islands: 1,075, ratio 13333, median 32.1, The census report's tables of first language at home (Table , The census report's tables of first language at home (Table 
+  admin1 Plaisance: 3,685, ratio 1095, median 35.8, [{'group': 'Seychellois Creole', 'pct': 90.1, 'count': 2918}], [{'group': 'Catholic', 'pct': 74.6, 'count': 2512}]
+  admin1 Pointe La: 3,267, ratio 1149, median 33.8, [{'group': 'Seychellois Creole', 'pct': 92.7, 'count': 2740}], [{'group': 'Catholic', 'pct': 77.0, 'count': 2373}]
+  admin1 Port Glaud: 2,773, ratio 1224, median 34.7, [{'group': 'Seychellois Creole', 'pct': 95.3, 'count': 2150}], [{'group': 'Catholic', 'pct': 76.8, 'count': 1788}]
+  admin1 Roche Caïm: 3,157, ratio 1156, median 34.1, [{'group': 'Seychellois Creole', 'pct': 79.5, 'count': 1923}], [{'group': 'Catholic', 'pct': 61.5, 'count': 1554}]
+  admin1 Saint Loui: 3,267, ratio 1116, median 36.2, [{'group': 'Seychellois Creole', 'pct': 84.7, 'count': 2331}], [{'group': 'Catholic', 'pct': 65.1, 'count': 1873}]
+  admin1 Takamaka: 3,528, ratio 1389, median 36.1, [{'group': 'Seychellois Creole', 'pct': 82.1, 'count': 2488}], [{'group': 'Catholic', 'pct': 73.4, 'count': 2306}]
+  admin2 Central 1 Mahe: 12,172, ratio 1043, median 37.0, [{'group': 'Seychellois Creole', 'pct': 87.5, 'count': 9418}], [{'group': 'Catholic', 'pct': 69.2, 'count': 7720}]
+  admin2 Central 2 Mahe: 12,563, ratio 1139, median 35.6, [{'group': 'Seychellois Creole', 'pct': 86.2, 'count': 8955}], [{'group': 'Catholic', 'pct': 70.6, 'count': 7591}]
+  admin2 East Mahe: 27,072, ratio 1382, median 35.4, [{'group': 'Seychellois Creole', 'pct': 82.2, 'count': 19212}], [{'group': 'Catholic', 'pct': 70.0, 'count': 16695}]
+  admin2 La Digue: 3,133, ratio 1292, median 36.5, [{'group': 'Seychellois Creole', 'pct': 85.1, 'count': 2310}], [{'group': 'Catholic', 'pct': 70.6, 'count': 1989}]
+  admin2 North Mahe: 17,843, ratio 1100, median 36.5, [{'group': 'Seychellois Creole', 'pct': 83.3, 'count': 13034}], [{'group': 'Catholic', 'pct': 70.6, 'count': 11386}]
+  admin2 Other Islands: 1,479, ratio 8860, median 34.0, The census report's tables of first language at home (Table , The census report's tables of first language at home (Table 
+  admin2 Praslin: 7,882, ratio 1249, median 35.3, [{'group': 'Seychellois Creole', 'pct': 89.9, 'count': 5956}], [{'group': 'Catholic', 'pct': 59.3, 'count': 4086}]
+  admin2 West Mahe: 15,058, ratio 1233, median 35.2, [{'group': 'Seychellois Creole', 'pct': 90.7, 'count': 11436}], [{'group': 'Catholic', 'pct': 76.1, 'count': 9923}]
+  wrote data/processed/seychelles_census.json (148 kB)
