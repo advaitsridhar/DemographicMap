@@ -121,8 +121,8 @@ OUTER, FOURTH = "outerislands", ("Gujarati", "Hindu")
 GARBLED_NOTE = ("The census report's tables of first language at home (Table B3.1a) and religion "
                 "(Table B4.1) put {n:,} of the Outer Islands' {of:,} people in the fourth column "
                 "of each, Gujarati in one and Hindu in the other, with the same figure island by "
-                "island in both (all 353 on Platte, all 110 on Darros), which reads as a coding "
-                "error rather than a count; {which} shown.")
+                "island in both (all 353 on Platte, all 110 on Darros), which looks like a "
+                "coding error rather than a count; {which} shown.")
 MEDIAN_NOTE =("Interpolated within the age group that holds the middle person, from the 2022 "
                "census's population by five-year age group (Table A2.1).")
 TABLE_24 = "Table 2.4"
