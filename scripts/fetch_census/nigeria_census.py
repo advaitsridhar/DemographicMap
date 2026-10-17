@@ -80,6 +80,9 @@ VOL3 = "https://datacatalog.ihsn.org/catalog/3340/download/48521"
 SOURCE = ("National Population Commission, 2006 Population and Housing Census, Priority "
           "Table Volume IV, Population Distribution by Age and Sex (State and Local "
           "Government Area), Table DS5")
+SOURCE3 = ("National Population Commission, 2006 Population and Housing Census, Priority "
+           "Table Volume III, Population Distribution by Sex, State, LGA and Senatorial "
+           "District")
 LICENCE = "National Population Commission publication (reuse with attribution)"
 YEAR = 2006
 NATIONAL = (140_431_790, 71_345_488, 69_086_302)
@@ -397,6 +400,8 @@ def check(book: dict[str, Any]) -> dict[int, list[str]]:
                 raise SystemExit(f"nigeria_census: {s['table']['name']}'s areas make {made:,} "
                                  f"in column {col}, not {s['table']['total'][col]:,}")
         for t in [s["table"], *s["areas"]]:
+            if t.get("from_vol3"):
+                continue
             p = problems(t)
             if p:
                 bad[id(t)] = p
@@ -447,10 +452,12 @@ def name_from_vol3(book: dict[str, Any], vol3: dict[str, list[tuple[str, int, in
             by_counts.setdefault((p, m, f), []).append(name)
         unmatched = []
         areas = [a for a in s["areas"] if not a.get("unplaced")]
+        matched: set[tuple[int, int, int]] = set()
         for a in areas:
             names = by_counts.get(tuple(a["total"]), [])
             if len(names) == 1:
                 a["vol3"] = names[0]
+                matched.add(tuple(a["total"]))
                 if not set(keys(names[0])) & set(keys(a["name"])):
                     said.append(f"{s['table']['name']}: Volume IV's {a['name']!r} "
                                 f"{a['total']} is Volume III's {names[0]!r}")
@@ -459,6 +466,14 @@ def name_from_vol3(book: dict[str, Any], vol3: dict[str, list[tuple[str, int, in
         if unmatched:
             said.append(f"{s['table']['name']}: no single Volume III row has the counts of "
                         f"{unmatched}")
+        # An area Volume IV prints no table for (Kaduna's Kaura): its count and
+        # sexes from Volume III, and no ages.
+        for name, m, f, p in rows:
+            if (p, m, f) not in matched and len(areas) < len(rows):
+                s["areas"].append({"name": name, "vol3": name, "page": None, "total": (p, m, f),
+                                   "groups": [], "from_vol3": True})
+                said.append(f"{s['table']['name']}: Volume IV prints no table for Volume III's "
+                            f"{name!r} {(p, m, f)}; its count and sexes are read from Volume III")
         if len(rows) != len(areas):
             said.append(f"{s['table']['name']}: Volume III lists {len(rows)} areas, "
                         f"Volume IV {len(areas)}")
@@ -553,6 +568,19 @@ def area_note(a: dict[str, Any], drawn_name: str) -> str:
 
 def fields(t: dict[str, Any], wrong: list[str] | None, note: str) -> dict[str, Any]:
     total, men, women = t["total"]
+    if t.get("from_vol3"):
+        return {
+            "population": measure(total, year=YEAR, source=SOURCE3),
+            "population_note": note,
+            "sex_ratio": measure(round(100 * men / women, 1), unit=UNIT, year=YEAR,
+                                 source=SOURCE3),
+            "median_age": gap(NOT_AVAILABLE, "The 2006 census's volume of ages by local "
+                                             "government area (Priority Table Volume IV) "
+                                             "prints no table for this area, so no median age "
+                                             "is shown."),
+            "sources": [{"field": "population/sex_ratio", "name": SOURCE3, "url": VOL3,
+                         "license": LICENCE, "year": YEAR}],
+        }
     out: dict[str, Any] = {
         "population": measure(total, year=YEAR, source=SOURCE),
         "population_note": note,
