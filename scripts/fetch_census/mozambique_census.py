@@ -51,6 +51,7 @@ import argparse
 import hashlib
 import io
 import re
+from difflib import SequenceMatcher
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
@@ -62,6 +63,7 @@ LICENCE = "Instituto Nacional de Estatística de Moçambique publication (reuse 
 YEAR = 2017
 NATIONAL = 26_899_105
 SLACK = 10                          # people a province's units may miss its total line by
+SPELLING = 0.8                      # how alike a misprinted label and its polygon must be
 OUT = "mozambique_census.json"
 
 # Each province: its line in the country's Quadro 3, the map's first-level
@@ -430,6 +432,25 @@ def bind(table: dict[str, dict[str, Any]], shapes: list[dict[str, Any]], provinc
             left.append(name)
             continue
         out.setdefault(hit["id"], []).append(name)
+    # A label left over is paired with the polygon left over that is closest
+    # to it in spelling, where each is the other's closest and they agree to
+    # SPELLING (Tete's table prints Moatize as "Maoatize" and Zumbu as "Zumbo").
+    free = [s for s in shapes if s["id"] not in out]
+    def close(a: str, b: str) -> float:
+        return SequenceMatcher(None, a, b).ratio()
+    for name in list(left):
+        want = candidates(name)[-1]
+        best = max(free, key=lambda s: close(want, key(s["name"])), default=None)
+        if best is None or close(want, key(best["name"])) < SPELLING:
+            continue
+        rival = max(left, key=lambda n: close(candidates(n)[-1], key(best["name"])))
+        if rival != name:
+            continue
+        log(f"    {province}: {name} read as the map's {best['name']} "
+            f"({close(want, key(best['name'])):.2f})")
+        out[best["id"]] = [name]
+        free.remove(best)
+        left.remove(name)
     if left:
         raise SystemExit(f"mozambique_census: {province}: no polygon for {left}; the map draws "
                          f"{sorted(s['name'] for s in shapes)}")
