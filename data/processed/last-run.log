@@ -1,17 +1,4 @@
-== pdft https://anad.inseed.td/index.php/catalog/26/download/158 (?i)(d.partement|religion|ethni|tableau) 30
-  HTTP 200 application/octet-stream 85,604 bytes Content-Disposition=attachment; filename="RAP_Rapport_genere_de_la_documentation_RGPH2_TCD_2009.pdf"
-  8 pages
-  p6: Deuxième Recensement Général de la Population et de l'Habitat - Aperçu / aux Délégués Sous-Préfectoraux. Délégués Sous-Préfectoraux : Ils coordonnent, au niveau de leurs sous- / préfectures respectives, l'ensemble des activités du recensement. Ils sont placés sous l'autorité du Délégué
-== pdft https://anad.inseed.td/index.php/catalog/26/download/160 (?i)(d.partement|religion|ethni|tableau) 30
-  HTTP 200 application/octet-stream 199,872 bytes Content-Disposition=attachment; filename="QST_Questionnaire_RGPH2_TCD_2009.pdf"
-  6 pages
-  p1: REPUBLIQUE DU TCHAD / Unité – Travail – Progrès / MINISTERE DES FINANCES, DE MINISTERE DE L’ADMINISTRATION
-  p2: B – CARACTERISTIQUES INDIVIDUELLES / TOUS AGES / N° D’ NOM et LIEN DE SITUA- DATE DE AGE LIEU DE ETHNIE ou
-== pdft https://anad.inseed.td/index.php/catalog/26/download/154 (?i)(d.partement|religion|ethni) 60
-  HTTP 200 application/octet-stream 26,427,795 bytes Content-Disposition=attachment; filename="RAP_Rapport_Resultats_par_sous_prefecture_RGPH2_TCD_2009.pdf"
-  122 pages
-  (no match)
-== pdft https://anad.inseed.td/index.php/catalog/26/download/155 (?i)(d.partement|religion|ethni) 60
-  HTTP 200 application/octet-stream 30,643,046 bytes Content-Disposition=attachment; filename="RAP_Rapport_Resultats_par_sous_prefecture_arabe_RGPH2_TCD_2009.pdf"
-  138 pages
-  (no match)
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  313 counties, 25,132 points, 46,236,953 people
+  wrote data/processed/uganda_county_points.json (1349 kB)
