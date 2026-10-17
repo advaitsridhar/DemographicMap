@@ -1,53 +1,17 @@
-gabon_census: https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf: 2,461,517 bytes, sha256 017f3bb741957d68b6cdc9ceeee6fa7f24bdd7ebaf20716031a63c046797357d
-  Départements du Gabon: 50 departments with a seat
-  Abanga-Bignè: 14,941 (Abanga-Bigne), seat Ndjolé
-  Basse-Banio: 7,192 (Basse-Banio), seat Mayumba
-  Bayi-Brikolo: 1,998 (Bayi-Brikolo), seat Aboumi
-  Bendjè: 140,747 (Bendjé), seat Port-Gentil
-  Boumi-Louetsi: 13,223 (Boumi-Louetsi), seat Mbigou
-  Djouè: 2,178 (Djoue), seat Onga
-  Djouori-Agnili: 4,210 (Djouori-Agnili), seat Bongoville
-  Dola: 6,979 (Dola), seat Ndendé
-  Douigni: 5,235 (Douigny), seat Moabi
-  Doutsita: 4,623 (Doutsila), seat Mabanda
-  Douya-Onoyè: 37,699 (Douya-Onoye), seat Mouila
-  Etimbouè: 5,723 (Etimboué), seat Omboué
-  Haut-Komo: 3,403 (Haut-Como), seat Médouneu
-  Haut-Ntem: 10,838 (Haut-Ntem), seat Minvoul
-  Haute-Banio: 1,413 (Haute-Banio), seat Ndindi
-  Ivindo: 31,073 (Ivindo), seat Makokou
-  Komo: 17,575 (Komo), seat Kango
-  Komo-Mondah: 169,396 (Komo-Mondah + Owendo), seat Ntoum
-  Komo-Ocèan: 553 (Komo-Océan), seat Ndzomoe
-  Lèbombi-Leyou: 64,569 (Lebombi-Leyou), seat Moanda
-  Lèkabi-Lèwolo: 4,914 (Lekabi-Lewolo), seat Ngouoni
-  Lèkoko: 4,920 (Lekoko), seat Bakoumba
-  Lèkoni-Lèkori: 10,028 (Lekoni-Lekori), seat Akiéni
-  Libreville: 703,940 (Libreville), seat Libreville
-  Lolo-Bouenguidi: 30,643 (Lolo-Bouenguidi), seat Koulamoutou
-  Lombo-Bouenguidi: 4,635 (Lombo-Bouenguidi), seat Pana
-  Lopè: 12,382 (Lopé), seat Booué
-  Louetsi-Bibaka: 2,734 (Louetsi-Bibaka), seat Malinga
-  Louetsi-Wano: 9,750 (Louetsi-Wano), seat Lébamba
-  Mongo: 2,602 (Mongo), seat Moulengui-Binza
-  Mougalaba: 1,490 (Mougalaba), seat Guiétsou
-  Mougoutsi: 31,789 (Mougoutsi), seat Tchibanga
-  Mpassa: 129,694 (Mpassa), seat Franceville
-  Mouloundou: 27,750 (Mulundu), seat Lastoursville
-  Mvoung: 4,022 (Mvoung), seat Ovan
-  Ndolou: 5,727 (Ndolou), seat Mandji
-  Ndougou: 11,092 (Ndougou), seat Gamba
-  Noya: 4,225 (Noya), seat Cocobeach
-  Ntem: 49,712 (Ntem), seat Bitam
-  Offouè-Onoyè: 2,743 (Offoué-Onoye), seat Iboundji
-  Ogoouè et Lacs: 54,346 (Ogooué et Lacs), seat Lambaréné
-  Ogoouè-Lètili: 2,791 (Ogooué-Letili), seat Boumango
-  Ogoulou: 8,361 (Ogoulou), seat Mimongo
-  Okano: 16,630 (Okano), seat Mitzic
-  Plateaux: 9,054 (Plateaux), seat Lékoni
-  Sèbè-Brikolo: 16,443 (Sebe-Brikolo), seat Okondja
-  Tsamba-Magotsi: 14,875 (Tsamba-Magotsi), seat Fougamou
-  Woleu: 74,403 (Woleu), seat Oyem
-  Zadiè: 15,816 (Zadié), seat Mékambo
-  9 provinces and 49 department polygons written
-  wrote data/processed/gabon_census.json (121 kB)
+  read https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx: 1,048,885 bytes, sha256 2ec126bc1dbf0e9424b6498b9f92a4e56e10d5ed4aa24266c7447868452e4351
+  D2: [('portlouis', 'PORT LOUIS DISTRICT-Wholly Urban'), ('pamplemousses', 'PAMPLEMOUSSES DISTRICT-Wholly Rural'), ('rivieredurempart', 'R. DU REMPART DISTRICT-Wholly Rural'), ('flacq', 'FLACQ DISTRICT-Wholly Rural'), ('grandport', 'GRAND PORT DISTRICT-Wholly Rural'), ('savanne', 'SAVANNE DISTRICT-Wholly Rural'), ('plaineswilhems', 'PLAINES WILHEMS DISTRICT'), ('moka', 'MOKA DISTRICT'), ('blackriver', 'BLACK RIVER DISTRICT'), ('rodrigues', 'ISLAND OF RODRIGUES')]
+  D6: [('portlouis', 'PORT LOUIS DISTRICT-Wholly Urban'), ('pamplemousses', 'PAMPLEMOUSSES DISTRICT-Wholly Rural'), ('rivieredurempart', 'R. DU REMPART DISTRICT-Wholly Rural'), ('flacq', 'FLACQ DISTRICT-Wholly Rural'), ('grandport', 'GRAND PORT DISTRICT-Wholly Rural'), ('savanne', 'SAVANNE DISTRICT-Wholly Rural'), ('plaineswilhems', 'PLAINES WILHEMS DISTRICT'), ('moka', 'MOKA DISTRICT'), ('blackriver', 'BLACK RIVER DISTRICT'), ('rodrigues', 'ISLAND OF RODRIGUES - Wholly Rural')]
+  D9: [('portlouis', 'PORT LOUIS DISTRICT-Wholly Urban'), ('pamplemousses', 'PAMPLEMOUSSES DISTRICT-Wholly Rural'), ('rivieredurempart', 'R. DU REMPART DISTRICT-Wholly Rural'), ('flacq', 'FLACQ DISTRICT-Wholly Rural'), ('grandport', 'GRAND PORT DISTRICT-Wholly Rural'), ('savanne', 'SAVANNE DISTRICT-Wholly Rural'), ('plaineswilhems', 'PLAINES WILHEMS DISTRICT'), ('moka', 'MOKA DISTRICT'), ('blackriver', 'BLACK RIVER DISTRICT'), ('rodrigues', 'ISLAND OF RODRIGUES - Wholly Rural')]
+  Agaléga: None, ratio None, median None, -
+  Black River: 87701, ratio 1069, median 35.4, [{'group': 'Roman Catholic', 'pct': 46.7, 'count': 40693}, {'group': 'Hindu', 'pct': 33.4, 'count': 29065}]
+  Flacq: 138529, ratio 972, median 37.9, [{'group': 'Hindu', 'pct': 66.5, 'count': 91825}, {'group': 'Roman Catholic', 'pct': 15.0, 'count': 20652}]
+  Grand Port: 110783, ratio 958, median 38.8, [{'group': 'Hindu', 'pct': 61.2, 'count': 67613}, {'group': 'Roman Catholic', 'pct': 18.7, 'count': 20635}]
+  Moka: 85538, ratio 1007, median 38.7, [{'group': 'Hindu', 'pct': 55.4, 'count': 47143}, {'group': 'Islam', 'pct': 24.3, 'count': 20714}]
+  Pamplemousses: 140856, ratio 984, median 37.3, [{'group': 'Hindu', 'pct': 55.2, 'count': 77369}, {'group': 'Roman Catholic', 'pct': 19.1, 'count': 26798}]
+  Plaines Wilhems: 340780, ratio 942, median 40.8, [{'group': 'Hindu', 'pct': 44.3, 'count': 149521}, {'group': 'Roman Catholic', 'pct': 25.7, 'count': 86797}]
+  Port Louis: 106332, ratio 953, median 37.9, [{'group': 'Islam', 'pct': 41.1, 'count': 43463}, {'group': 'Roman Catholic', 'pct': 30.6, 'count': 32350}]
+  Rivière du Rempart: 111195, ratio 974, median 38.8, [{'group': 'Hindu', 'pct': 64.1, 'count': 70988}, {'group': 'Roman Catholic', 'pct': 15.7, 'count': 17410}]
+  Rodrigues: 43604, ratio 956, median 29.9, [{'group': 'Roman Catholic', 'pct': 87.8, 'count': 38220}, {'group': 'Other Christian', 'pct': 7.6, 'count': 3309}]
+  Savanne: 67779, ratio 997, median 38.0, [{'group': 'Hindu', 'pct': 52.9, 'count': 35723}, {'group': 'Islam', 'pct': 21.8, 'count': 14734}]
+  St. Brandon: None, ratio None, median None, -
+  wrote data/processed/mauritius_census.json (110 kB)
