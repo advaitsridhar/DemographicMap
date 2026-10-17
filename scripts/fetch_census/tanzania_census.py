@@ -29,6 +29,17 @@ fall together. Kahama and Katavi's districts, split three and four ways since
 The first level is the 2012 regions too: Songwe, made from Mbeya in 2016, is
 drawn inside it, and Mbeya's polygon takes both regions' counts and says so.
 
+Songwe District Council, made from Chunya in 2016, is drawn apart from it, and
+OCHA's table projects the two as the one district of 2012: they are tested
+together against it (JOINT_COD) and each takes its own count.
+
+**Median age.** The census's Age and Sex Distribution Report (Volume 2a)
+prints everyone by single year of age, to 79 and 80 and over, for every region
+and council. Each table's single years and sexes must make its total, and the
+total must be Volume 1a's count of the same unit; a polygon's median is
+interpolated within the single year that holds its middle person, from the
+tables of the councils (or regions) it adds up.
+
 Usage:
     python -m scripts.fetch_census.tanzania_census
 """
@@ -44,6 +55,7 @@ from collections import defaultdict
 from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from .cod_ps_age import grouped_median
 
 URL = ("https://www.nbs.go.tz/uploads/statistics/documents/"
        "en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf")
@@ -111,9 +123,12 @@ LEFT_OUT = {
     "Kahama Township Authority": "see Kahama",
     "Mpanda": "Katavi's districts were split into Mpanda, Nsimbo, Tanganyika and Mpimbwe",
     "Mpanda Urban": "see Mpanda", "Mlele": "see Mpanda",
-    "Chunya": "Songwe district was made from Chunya in 2016 and is drawn on its own",
-    "Songwe": "see Chunya",
 }
+# Polygons whose councils OCHA's 2020 table projects as one district of 2012:
+# Songwe District Council was made from Chunya in 2016, the boundary file draws
+# the two apart, and OCHA's "Chunya" is the district before the split (Songwe
+# has no row of its own). The two 2022 counts are tested together against it.
+JOINT_COD = {"Chunya": ("Chunya", "Songwe")}
 # OCHA's units for polygons no rule names.
 COD_NAMES = {"Tanga Urban": "TANGA", "Mtwara Urban": "MTWARA MIKINDANI",
              "Kigoma Urban": "KIGOMA UJIJI MUNICIPAL", "Mafinga Township Authority": "MAFINGA",
@@ -265,19 +280,136 @@ def cod_for(name: str, cod: dict[str, int]) -> int | None:
     return cod.get(upper)
 
 
-def fields(row: dict[str, Any], note: str) -> dict[str, Any]:
-    return {"population": measure(row["total"], year=YEAR, source=SOURCE),
-            "population_note": note,
-            "sex_ratio": measure(round(1000 * row["men"] / row["women"]),
-                                 unit="males_per_1000_females", year=YEAR, source=SOURCE),
-            "sources": [{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
-                         "license": LICENCE, "year": YEAR}]}
+def fields(row: dict[str, Any], note: str, ages: list[dict[str, Any]] | None = None
+           ) -> dict[str, Any]:
+    """The record's figures; ``ages`` are the age tables of the units it adds up, if read."""
+    out = {"population": measure(row["total"], year=YEAR, source=SOURCE),
+           "population_note": note,
+           "sex_ratio": measure(round(1000 * row["men"] / row["women"]),
+                                unit="males_per_1000_females", year=YEAR, source=SOURCE),
+           "sources": [{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
+                        "license": LICENCE, "year": YEAR}]}
+    if ages:
+        value = age_median(ages)
+        if value is not None:
+            out["median_age"] = measure(value, unit="years", year=YEAR, source=AGE_SOURCE)
+            out["median_age_note"] = (
+                "Interpolated within the single year of age that holds the middle person, from "
+                "the 2022 census's count of everyone by single year of age"
+                + (f", of {' and '.join(a['name'] for a in ages)} together." if len(ages) > 1
+                   else "."))
+            out["sources"].append({"field": "median_age", "name": AGE_SOURCE, "url": AGE_URL,
+                                   "license": LICENCE, "year": YEAR})
+    return out
+
+
+# The Age and Sex Distribution Report (Volume 2a) prints, for the country, every
+# region and every council, everyone by single year of age to 79 and 80 and
+# over, by sex and by rural and urban residence. A table opens
+#
+#   Table 02. 1: Monduli District Council: Population Distribution by Age, Sex ...
+#
+# and runs over two pages, its header repeated; a row reads "17 3,947 1,789
+# 2,158 ..." (both sexes, men, women, then rural and urban).
+AGE_URL = ("https://www.nbs.go.tz/uploads/statistics/documents/"
+           "en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf")
+AGE_SOURCE = ("National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, "
+              "Age and Sex Distribution Report, Volume 2a")
+AGE_TABLE = re.compile(r"^Table\s+\d+\s*\.\s*\d+\s*:\s*(?P<name>.+?)\s*:\s*Population Distribution "
+                       r"by Age", re.I)
+AGE_ROW = re.compile(r"^(?P<age>\d{1,2}|80\s*\+|Total)\s+(?P<both>\d[\d,]*)\s+(?P<men>\d[\d,]*)\s+"
+                     r"(?P<women>\d[\d,]*)(?:\s|$)")
+
+
+def parse_ages(lines: list[str]) -> dict[str, dict[str, Any]]:
+    """{"regions": {key: table}, "councils": {key: table}}, each table checked: its single
+    years make its total, and its men and women make it too."""
+    out: dict[str, dict[str, Any]] = {"regions": {}, "councils": {}}
+    current: dict[str, Any] | None = None
+
+    def close(table: dict[str, Any] | None) -> None:
+        if table is None:
+            return
+        name = table["name"]
+        if table["total"] is None or len(table["ages"]) != 81:
+            raise SystemExit(f"tanzania_census: the age table of {name} has "
+                             f"{len(table['ages'])} single years and total {table['total']}")
+        made = sum(table["ages"].values())
+        if made != table["total"] or table["men"] + table["women"] != table["total"]:
+            raise SystemExit(f"tanzania_census: {name}'s single years make {made:,} and its sexes "
+                             f"{table['men'] + table['women']:,}, against {table['total']:,}")
+        lower = name.lower()
+        if lower.startswith("tanzania"):
+            return
+        if lower.endswith(" region"):
+            out["regions"][region_key(name)] = table
+        elif COUNCIL.search(re.sub(r"(?i)\s+council$", "", name)) or lower.endswith(" council"):
+            out["councils"][council_key(name)] = table
+        else:
+            raise SystemExit(f"tanzania_census: an age table of {name!r}, neither region nor "
+                             "council")
+
+    for raw in lines:
+        line = " ".join(raw.split())
+        head = AGE_TABLE.match(line)
+        if head:
+            name = head.group("name").replace("Distict", "District")
+            if current is None or current["name"] != name:
+                close(current)
+                current = {"name": name, "total": None, "men": 0, "women": 0, "ages": {}}
+            continue
+        hit = AGE_ROW.match(line)
+        if not hit or current is None:
+            continue
+        both, men, women = (number(hit.group(k)) for k in ("both", "men", "women"))
+        if men + women != both:
+            raise SystemExit(f"tanzania_census: {current['name']}, age {hit.group('age')}: "
+                             f"{men:,} men and {women:,} women do not make {both:,}")
+        age = hit.group("age").replace(" ", "")
+        if age == "Total":
+            current.update(total=both, men=men, women=women)
+        else:
+            key = 80 if age == "80+" else int(age)
+            if key in current["ages"] and current["ages"][key] != both:
+                raise SystemExit(f"tanzania_census: {current['name']}, age {age} printed twice")
+            current["ages"][key] = both
+    close(current)
+    return out
+
+
+def age_median(tables: list[dict[str, Any]]) -> float | None:
+    """The median of several age tables added together, single year by single year."""
+    groups = [(a, a, sum(t["ages"][a] for t in tables)) for a in range(80)]
+    groups.append((80, None, sum(t["ages"][80] for t in tables)))
+    return grouped_median(groups)
+
+
+def check_ages(ages: dict[str, dict[str, Any]], table: dict[str, Any]) -> list[str]:
+    """Each age table's total must be the Volume 1a count of the same unit."""
+    report = []
+    for kind in ("regions", "councils"):
+        for key, row in table[kind].items():
+            got = ages[kind].get(key)
+            if got is None:
+                report.append(f"no age table for {row['name']}")
+            elif (got["total"], got["men"], got["women"]) != (row["total"], row["men"],
+                                                              row["women"]):
+                raise SystemExit(f"tanzania_census: {row['name']}: the age table counts "
+                                 f"{got['total']:,} ({got['men']:,} men), Volume 1a "
+                                 f"{row['total']:,} ({row['men']:,} men)")
+    return report
 
 
 def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
-          cod: dict[str, int]) -> tuple[list[dict[str, Any]], list[str]]:
+          cod: dict[str, int], ages: dict[str, dict[str, Any]] | None = None
+          ) -> tuple[list[dict[str, Any]], list[str]]:
     records: list[dict[str, Any]] = []
     report: list[str] = []
+    ages = ages or {"regions": {}, "councils": {}}
+
+    def aged(kind: str, keys: list[str]) -> list[dict[str, Any]] | None:
+        found = [ages[kind].get(k) for k in keys]
+        return found if found and all(found) else None
     first = {label(u["name"]): u for u in admin1}
     by_polygon: dict[str, list[str]] = defaultdict(list)
     for key, row in table["regions"].items():
@@ -300,7 +432,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
                       "inside it.")
         records.append(record(f"TZA-2022-{'-'.join(keys)}", shape["name"], level="admin1",
                               parent="TZA", country="TZA", match_by="shape_id",
-                              shape_id=shape["id"], **fields(row, note)))
+                              shape_id=shape["id"], **fields(row, note, aged("regions", keys))))
     # Second level, region by region.
     plans: dict[str, dict[str, Any]] = {}
     unread = table.get("unread") or {}
@@ -329,6 +461,21 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             if c in used:
                 report.append(f"{c} taken by both {used[c]} and {name}")
             used[c] = name
+    # A group OCHA projects as one district: its 2022 counts are added up and
+    # set against the one row, and every member takes the group's ratio.
+    for owner, members in JOINT_COD.items():
+        group = [plans[m] for m in members if m in plans]
+        if len(group) != len(members) or not plans[owner]["cod"]:
+            for m in members:
+                if m in plans:
+                    report.append(f"{m}: its group {members} is not all bound; not written")
+                    plans.pop(m)
+            continue
+        combined = sum(p["row"]["total"] for p in group)
+        for m in members:
+            plans[m]["joint"] = (combined, plans[owner]["cod"], members)
+        for m in members:
+            plans[m]["cod"] = None
     # Each region's ratio of 2022 counts to OCHA's 2020 projection.
     ratio: dict[str, float] = {}
     for keys in region_of_shape.values():
@@ -339,7 +486,12 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
     failed = set()
     for name, plan in plans.items():
         expected = ratio.get(plan["regions"][0])
-        if plan["cod"] and expected:
+        if plan.get("joint") and expected:
+            combined, cod_value, members = plan["joint"]
+            plan["ratio"] = combined / cod_value / expected
+            if not 1 / TOLERANCE <= plan["ratio"] <= TOLERANCE:
+                failed |= set(members)
+        elif plan["cod"] and expected:
             own = plan["row"]["total"] / plan["cod"]
             plan["ratio"] = own / expected
             if not 1 / TOLERANCE <= own / expected <= TOLERANCE:
@@ -382,7 +534,8 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
                     + ", added up: the councils made since 2012 from the one drawn here.")
         records.append(record(f"TZA-2022-{shape['id']}", shape["name"], level="admin2",
                               parent="TZA", country="TZA", match_by="shape_id",
-                              shape_id=shape["id"], **fields(plan["row"], note)))
+                              shape_id=shape["id"],
+                              **fields(plan["row"], note, aged("councils", plan["councils"]))))
     spare = sorted(c["name"] for k, c in table["councils"].items() if k not in used)
     report.append(f"councils not placed: {spare}")
     return records, report
@@ -407,9 +560,20 @@ def cod_rows() -> dict[str, int]:
     return out
 
 
+def read_ages(blob: bytes) -> dict[str, dict[str, Any]]:
+    import pdfplumber                               # noqa: PLC0415
+    lines: list[str] = []
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages[80:]:
+            lines += (page.extract_text() or "").splitlines()
+    return parse_ages(lines)
+
+
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
+    ap.parse_args()
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if not blob.startswith(b"%PDF"):
         raise SystemExit(f"tanzania_census: {URL} is not a PDF: {blob[:80]!r}")
@@ -418,9 +582,19 @@ def main() -> int:
     table = read(blob)
     log(f"  {len(table['regions'])} regions and {len(table['councils'])} councils, making "
         f"{NATIONAL:,}")
+    age_blob = http_get(AGE_URL, binary=True, cache=False, timeout=600)
+    if not age_blob.startswith(b"%PDF"):
+        raise SystemExit(f"tanzania_census: {AGE_URL} is not a PDF: {age_blob[:80]!r}")
+    log(f"  read {AGE_URL}: {len(age_blob):,} bytes, sha256 "
+        f"{hashlib.sha256(age_blob).hexdigest()}")
+    ages = read_ages(age_blob)
+    log(f"  age tables: {len(ages['regions'])} regions and {len(ages['councils'])} councils, "
+        "each one's single years and sexes making its total")
+    for line in check_ages(ages, table):
+        log("  " + line)
     admin1 = json.loads((SITE / "admin1" / "TZA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "TZA.units.json").read_text())
-    records, report = build(table, admin1, admin2, cod_rows())
+    records, report = build(table, admin1, admin2, cod_rows(), ages)
     for line in report:
         log("  " + line)
     for r in records:
