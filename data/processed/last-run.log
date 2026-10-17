@@ -1,713 +1,179 @@
-probe_pdf: https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf
-  20,745,926 bytes
-  168 pages
-probe_pdf: 168 pages, 13 mention ['médian', 'mediane', 'cercle']
+probe_pdf: https://inseed.tg/wp-content/uploads/2023/09/Depliant-Resultats-Definitifs_RGPH5_02Avril2023.pdf
+  849,027 bytes
+  2 pages
+probe_pdf: 3 pages, 1 mention ['préfecture', 'Golfe', 'Kozah']
 === front matter ===
-MINISTERE DE L’ECONOMIE ET DES FINANCES
-INSTITUT NATIONAL DE LA STATISTIQUE (INSTAT)
-BUREAU CENTRAL DU RECENSEMENT (BCR)
-CINQUIEME RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT
-(RGPH5)
-REPUBLIQUE DU MALI
-Un Peuple - Un But - Une Foi
-RAPPORT D’ANALYSE DES DONNEES DU RGPH5
-THEME : ETAT ET STRUCTURE DE LA POPULATION
-Rédigé par : Amadou Balla KONE, Démographe, INSTAT
-Décembre 2024
+Population des préfectures par sexe Population des villes du Togo
+Sexe
+Région / Préfecture Ensemble
+Masculin Féminin REPUBLIQUE TOGOLAISE
+Grand Lomé 1 060 504 1 127 872 2 188 376
+Ministère de la Planification du
+Golfe 631 567 674 114 1 305 681
+Développement et de la Coopération
+Agoè-Nyivé 428 937 453 758 882 695
+Maritime sans Grand
+642 876 703 739 1 346 615
+Lomé
+Zio 242 367 257 665 500 032
+Yoto 82 859 91 992 174 851
+Bas-Mono 44 366 50 494 94 860
+5ème RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT
+Lacs 115 468 125 779 241 247
+Vo 104 485 119 926 224 411 (RGPH-5)
+Avé 53 331 57 883 111 214
+Plateaux 806 154 829 792 1 635 946
+Ogou 124 073 129 394 253 467
+Moyen-Mono 41 413 49 092 90 505
+Haho 148 029 157 067 305 096
+Résultats définitifs
+Agou 42 449 43 344 85 793
+Kloto 71 161 74 825 145 986
+du RGPH-5 de
+Kpélé 40 129 40 810 80 939
+Danyi 20 512 19 728 40 240 Novembre 2022
+Wawa 51 383 49 917 101 300
+Akébou 37 236 36 594 73 830
+Amou 56 543 57 629 114 172
+Nous sommes
+Anié 89 897 90 261 180 158
+Est-Mono 83 329 81 131 164 460 8 095 498
+Centrale 397 336 398 193 795 529
+Tchaoudjo 119 126 121 234 240 360
+habitants au Togo
+Tchamba 100 980 99 605 200 585
+Blitta 81 602 81 670 163 272
+Sotouboua 69 140 69 724 138 864
+Mô 26 488 25 960 52 448
+Kara 488 225 497 287 985 512
+Kozah 141 188 142 550 283 738
+Assoli 33 246 33 148 66 394
+Bassar 76 235 75 830 152 065
+Dankpen 91 567 94 095 185 662
+Kéran 63 731 64 956 128 687
+Doufelgou 40 973 43 794 84 767
+Binah 41 285 42 914 84 199
+Institut National de la Statistique et des Etudes
+Savanes 549 415 594 105 1 143 520
+Economiques et Démographiques (INSEED)
+Tône 185 480 203 295 388 775
+Cinkassé 62 574 66 385 128 959
+59 rue de la Kozah, Immeuble INSEED/CENETI,
+Kpendjal-Ouest 58 175 65 155 123 330
+BP 118 Lomé Togo
+Kpendjal 43 035 45 330 88 365
+Oti-Sud 73 332 77 044 150 376 Tél. : (228) 22 21 62 24 / (228) 22 21 27 75
+Oti 60 638 64 210 124 848
+Email : inseed@inseed.tg
+Tandjoaré 66 181 72 686 138 867
+Site web : www.inseed.tg
+Togo 3 944 510 4 150 988 8 095 498
+[433 words in 65 rows]
 
 
-
-INSTAT-BCR-Résultats du RGPH5        
-I
- 
-        I 
- 
- 
-CARTE DES REGIONS ADMINISTRATIVES DU MALI 
- 
- 
- 
- 
-  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-CARTE DES REGIONS ADMINISTRATIVES DU MALI
-INSTAT-BCR-Résultats du RGPH5        
-II
- 
-        II 
- 
-TABLE DES MATIERES 
- 
-LISTE DES TABLEAUX ........................................................................................................................................... V 
-LISTE DES GRAPHIQUES ................................................................................................................................... VIII 
-LISTE DES CARTES .............................................................................................................................................. IX 
-LISTE DES TABLEAUX EN ANNEXES ................................................................................................................... X 
-DEFINITION DES SIGLES ET ABREVIATIONS ..................................................................................................... XI 
-AVANT PROPOS .................................................................................................................................................. XIII 
-PERSONNEL DU RGPH5-2022 ........................................................................................................................... XV 
-TABLEAU SYNOPTIQUE DES PRINCIPAUX RESULTATS ............................................................................. XXIII 
-RESUME ............................................................................................................................................................. XXV 
-INTRODUCTION ...................................................................................................................................................... 1 
-CHAPITRE I : CONTEXTE ET ASPECTS METHODOLOGIQUES ........................................................................ 3 
-1.1. CONTEXTE .................................................................................................................................................. 3 
-1.1.2. Contexte administratif ........................................................................................................................... 5 
-1.1.3. Contexte historique et culturel .............................................................................................................. 5 
-1.1.4. Contexte démographique et politique de population ............................................................................. 6 
-1.1.4.1. Contexte démographique ............................................................................................................... 6 
-1.1.4.2. Politique de population ................................................................................................................... 7 
-1.1.5. Contexte économique ........................................................................................................................... 8 
-1.1.6. Contexte sécuritaire .............................................................................................................................. 9 
-1.2. ASPECTS METHODOLOGIQUES ............................................................................................................... 9 
-1.2.1. Définition des concepts de base ......................................................................................................... 10 
-1.2.2. Définition des indicateurs d’analyse .................................................................................................... 12 
-1.2.3. Estimation de la population des zones non couvertes par le dénombrement ..................................... 13 
-1.2.4. Évaluation de la qualité des données ................................................................................................. 14 
-1.2.4.1. Évaluation interne ......................................................................................................................... 14 
-1.2.4.2. Évaluation externe ........................................................................................................................ 21 
-1.3. VUE D’ENSEMBLE .................................................................................................................................... 22 
-CHAPITRE II : VOLUME ET REPARTITION SPATIALE DE LA POPULATION ET DES MENAGES ................ 23 
-2.1. VOLUME GLOBAL DE LA POPULATION .................................................................................................. 23 
-2.2. RÉPARTITION SPATIALE DE LA POPULATION ...................................................................................... 24 
-2.2.1. Population résidente par milieu de résidence ..................................................................................... 24 
-2.2.2. Population résidente par région .......................................................................................................... 24 
-2.2.3. Évolution de la population de 1976 à 2022 ......................................................................................... 26 
-2.2.4. Densité de la population ..................................................................................................................... 27 
-2.2.5. Population par région selon le milieu de résidence (taux d’urbanisation) ........................................... 27 
-2.3. LIEU DE NAISSANCE ET STABILITE RESIDENTIELLE DE LA POPULATION ....................................... 30 
-2.3.1. Lieu de naissance ............................................................................................................................... 30 
-2.3.2. Stabilité résidentielle de la population ................................................................................................. 31 
-2.4. VOLUME GLOBAL ET REPARTITION SPATIALE DES MENAGES ORDINAIRES ................................. 32 
-2.4.1. Effectif des ménages ordinaires par milieu et par région selon le sexe du chef de ménage .............. 32 
-2.4.1.1. Nombre de ménages ordinaires par région .................................................................................. 32 
-2.4.1.2. Taille moyenne des ménages ordinaires par milieu de résidence ............................................... 33 
-2.4.1.3. Effectifs et taille moyenne des ménages ordinaires par région .................................................... 34 
-2.4.2. Effectif des ménages ordinaires par région selon le Type de population ........................................... 35 
-2.5. VUE D’ENSEMBLE .................................................................................................................................... 36 
-CHAPITRE III : STRUCTURE PAR AGE ET SEXE DE LA POPULATION .......................................................... 37 
-3.1. STRUCTURE DE LA POPULATION RESIDENTE PAR GROUPES D’AGES QUINQUENNAUX ET SEXE
- ........................................................................................................................................................................... 37 
-3.1.1. Structure de la population résidente par groupes d’âges quinquennaux selon le sexe ...................... 37 
-3.1.2. Structure de  la population résidente urbaine et rurale des ménages ordinaires par groupes d’âge 
-quinquennaux et le sexe ............................................................................................................................... 39 
-3.1.3. Structure de la population résidente de Bamako et autres villes par groupes d’âge quinquennaux et le 
-sexe .............................................................................................................................................................. 41 
-INSTAT-BCR-Résultats du RGPH5        
-III
- 
-        III 
- 
-3.2. AGE MOYEN ET AGE MEDIAN DE LA POPULATION ............................................................................. 43 
-3.3. STRUCTURE DE LA POPULATION TOTALE PAR GRANDS GROUPES D’AGE CLASSIQUES ........... 45 
-3.3.1 Structure de la population totale par grands groupes d’âges classiques par région, milieu de résidence 
-et sexe .......................................................................................................................................................... 45 
-3.3.1.1. Structure de la population par milieu de résidence selon les grands groupes d’âge et le rapport 
-de dépendance démographique ................................................................................................................ 45 
-3.3.1.2. Structure de la population par région selon les grands groupes d’âge et le rapport de 
-dépendance démographique ..................................................................................................................... 46 
-3.3.2. Évolution de la structure par grands groupes d’âge de la population ................................................. 48 
-3.4. STRUCTURE DE LA POPULATION PAR GROUPES D’AGE OPERATIONNELS ................................... 49 
-3.4.1. Structure de la population par groupes d’âge opérationnels selon le milieu de résidence ................. 49 
-3.4.2. Structure de la population par groupe d’âge opérationnels selon la région de résidence .................. 51 
-3.5. VUE D’ENSEMBLE .................................................................................................................................... 54 
-CHAPITRE IV : CARACTERISTIQUES SOCIODEMOGRAPHIQUES ................................................................. 55 
-4.1. ETAT MATRIMONIAL DE LA POPULATION AGEE DE 12 ANS OU PLUS .............................................. 55 
-4.1.1. Population de « 12 ans ou plus » par état matrimonial selon le milieu de résidence ......................... 55 
-4.1.2. Etat matrimonial de la population de 12 ans ou plus selon la région .................................................. 56 
-4.2. STRUCTURE DE LA POPULATION SELON CERTAINES CARACTERISTIQUES PHYSIQUES ............ 60 
-4.2.1. P opulation par certaines caractéristiques physiques (albinos, bossu et nain) selon le milieu de 
-résidence ...................................................................................................................................................... 60 
-4.2.2. Certaines caractéristiques physiques (albinos, bossu et nain) selon la région ................................... 60 
-4.3. STRUCTURE DE LA POPULATION SELON LE STATUT DE HANDICAP ............................................... 61 
-4.3.1. Statut de handicap majeur par milieu de résidence ............................................................................ 61 
-4.3.2. Statut de handicap majeur par région ................................................................................................. 62 
-4.3.3. Population des personnes vivant avec un handicap majeur par milieu de résidence ......................... 63 
-4.3.4. Population des personnes vivant avec un handicap majeur par région .............................................. 63 
-4.3.5. Population vivant avec un handicap majeur par type de handicap selon le milieu de résidence ....... 65 
-4.4. REPARTITION DE LA POPULATION PAR TYPE DE POPULATION ET DEPLACEMENT POUR CAUSE 
-D’INSECURITE ................................................................................................................................................. 66 
-4.4.1. Population des ménages ordinaires par type de population selon la région ....................................... 66 
-4.4.2. Population des ménages ordinaires qui se sont déplacés pour cause d’insécurité ............................ 67 
-4.5. SURVIE DES PARENTS ET COHABITATION AVEC LES ENFANTS ...................................................... 68 
-4.5.1. Survie des parents .............................................................................................................................. 68 
-4.5.1.1. Survie du père .............................................................................................................................. 68 
-4.5.1.2. Survie de la mère ......................................................................................................................... 70 
-4.5.2. Cohabitation avec les deux parents (suivie des deux parents) ........................................................... 72 
-4.5.2.1. Répartition de la population par groupe d’âge selon la survie des deux parents ......................... 72 
-4.5.2.2. Répartition de la population par survie de deux parents selon le milieu de résidence ................. 73 
-4.5.2.3. Répartition de la population par survie de deux parents selon la région ...................................... 73 
-4.6. VUE D’ENSEMBLE .................................................................................................................................... 74 
-CHAPITRE V : CARACTERISTIQUES SOCIOECONOMIQUES .......................................................................... 76 
-5.1. STRUCTURE DE LA POPULATION SELON LE STATUT PAR RAPPORT A L’ACTIVITE ...................... 76 
-5.1.1. Structure de la population de 6 ans ou plus par groupe d’âge selon le statut par rapport à l’activité . 76 
-5.1.2. Structure de la population de 15 ans ou plus par statut par rapport à l’activité selon le milieu de 
-résidence. ..................................................................................................................................................... 77 
-5.1.3. Structure de la population âgée de 15 ans ou plus par statut par rapport à l’activité selon la région . 77 
-5.2. STRUCTURE DE LA POPULATION AGEE DE 15 ANS OU PLUS OCCUPEE SELON LA SITUATION 
-DANS L’EMPLOI ............................................................................................................................................... 79 
-5.2.1. Structure de la population de 15 ans ou plus occupée par situation dans l’emploi selon le milieu de 
-résidence ...................................................................................................................................................... 79 
-5.2.2. Structure de la population de 15 ans ou plus occupée par situation dans l’emploi selon la région .... 79 
-5.3. STRUCTURE DE LA POPULATION OCCUPEE SELON LE SECTEUR D’ACTIVITE .............................. 80 
-5.3.1. Structure de la population âgée de 15 ans ou plus occupée par milieu de résidence selon le secteur 
-d’activité ........................................................................................................................................................ 80 
-5.3.2. Structure de la population âgée de 15 ans ou plus occupée par secteur d’activité selon région ....... 81 
-INSTAT-BCR-Résultats du RGPH5        
-IV
- 
-        IV 
- 
-5.4. STRUCTURE DE LA POPULATION OCCUPEE PAR GRANDS GROUPES DE PROFESSION ............. 82 
-5.4.1. Structure de la population occupée de 15 ans ou plus par grands groupes de profession selon le milieu 
-et le sexe ...................................................................................................................................................... 82 
-5.4.2. Structure de la population occupée de 15 ans ou plus par grands groupes de profession selon la région
- ...................................................................................................................................................................... 83 
-5.5. VUE D’ENSEMBLE .................................................................................................................................... 84 
-CHAPITRE VI : CARACTERISTIQUES SOCIOCULTURELLES ET DE CITOYENNETE ................................... 86 
-6.1. FREQUENTATION SCOLAIRE ET INSTRUCTION ................................................................................... 86 
-6.1.1. Fréquentation scolaire ........................................................................................................................ 86 
-6.1.1.1. Fréquentation scolaire par milieu de résidence ............................................................................ 86 
-6.1.1. 2. Fréquentation scolaire par région de résidence .......................................................................... 87 
-6.1.2. Niveau d’instruction de la population .................................................................................................. 90 
-6.1.2.1. Niveau d’instruction par milieu de résidence ................................................................................ 90 
-6.1.2.2. Niveau d’instruction par région ..................................................................................................... 90 
-6.2. STATUT D’ALPHABETISATION DE LA POPULATION ............................................................................. 91 
-6.3. POSSESSION D’UN ACTE DE NAISSANCE ET ENROLEMENT AU RAVEC ......................................... 94 
-6.3.1. Possession d’un acte de naissance .................................................................................................... 94 
-6.3.1.1. Possession d’un acte de naissance par milieu de résidence ....................................................... 94 
-6.3.1.2. Possession d’un acte de naissance par région ............................................................................ 95 
-6.3.1.3. Possession d’un acte de naissance par groupe d’âge quinquennaux ......................................... 96 
-6.3.2. Enrôlement au RAVEC ....................................................................................................................... 97 
-6.3.2.1. Taux d’enrôlement au RAVEC par milieu de résidence ............................................................... 97 
-6.3.2.2. Taux d’enrôlement au RAVEC par région .................................................................................... 98 
-6.4. APPARTENANCE RELIGIEUSE DE LA POPULATION .......................................................................... 100 
-6.4.1. Population de résidente par milieu selon la religion .......................................................................... 100 
-6.4.2. Population de résidente par région selon la religion ......................................................................... 100 
-6.4.3. Évolution de la répartition de la population selon la religion ............................................................. 101 
-6.5. ETHNIE, LANGUE MATERNELLE ET LANGUE PARLEE ...................................................................... 101 
-
-=== pages mentioning ['médian', 'mediane', 'cercle'] (first 20) ===
-
---- page 9 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-V
-        V
-LISTE DES TABLEAUX
-Tableau 1.1: Nombre de cercles, d’arrondissements et de communes par région. ................................................. 5
-Tableau 1.2: Répartition de la population estimée des zones non couvertes par le dénombrement par région selon
-le milieu de résidence. ............................................................................................................................................ 14
-Tableau 1.3 : Taux (%) d’omission par région. ....................................................................................................... 15
-Tableau 1.4: Coefficient de redressement par région. ........................................................................................... 16
-Tableau 1.5: Taux (%) de réponse de l’âge, du sexe et de la possession d’acte de naissance de la population des
-ménages ordinaires. ............................................................................................................................................... 16
-Tableau 1.6: Indices de Whipple, Myers, Bâchi et ICNU selon le sexe. ................................................................. 20
-Tableau 1.7: Répartition de la population recensée par statut de résidence selon le sexe, le Rapport de Masculinité
-(RM) et le pourcentage des femmes. ..................................................................................................................... 21
-Tableau 1.8: Effectif de la population du Mali et taux d’accroissement entre les différents recensements. ........... 21
-Tableau 1.9: Comparaison des données du RGPH5 aux estimations des projections en 2022. ........................... 22
-Tableau 2.1: Répartition de la population résidente par lieu d’habitation selon le sexe, le poids, le RM et le
-pourcentage des femmes. ………………………………………………………………………………………………….23
-Tableau 2.2: Répartition de la population résidente par milieu de résidence selon le sexe, RM et pourcentage des
-femmes. .................................................................................................................................................................. 24
-Tableau 2.3: Répartition de la population résidente par région  selon le sexe, le poids démographique, RM et le
-pourcentage des femmes. ...................................................................................................................................... 25
-Tableau 2.4: Evolution des effectifs de la population et taux d’a
-
---- page 17 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-XIII
-        XIII
-AVANT PROPOS
-Le Recensement général de la population et de l'habitation est une opération d’envergure et d'importance
-nationales qui fournit des informations détaillées permettant de prendre en compte plus efficacement les
-questions de population dans l’élaboration, le  suivi et l’évaluation des politiques et programmes de
-développement. Il permet de déterminer l’effectif de la population, sa répartition spatiale, ses
-caractéristiques sociodémographiques, culturelles et économiques ainsi que les conditions de vie , du
-niveau national au niveau géographique le plus fin (région, cercle, arrondissement, commune,
-quartier/village/fraction, urbain/rural).
-La réalisation du cinquième Recensement général de la po pulation et de l’habitat (RGPH5) en 2022
-répond aux besoins du Mali en informations statistiques actualisées. Institué par la loi n° 98-020 du 9
-mars 1998, il s’agit de la cinquième opération du genre, après celles de 1976, 1987,1998 et 2009, reflétant
-l’engagement des autorités de notre pays à organiser tous les dix ans ce type d’opération, conformément
-aux recommandations de la Commission statistiques des Nations unies.
-Dans un contexte de développement durable et de planification stratégique, ce recensement s'inscrit dans
-une démarche d’information des décideurs, des partenaires au développement ; et de l’ensemble des
-citoyens sur les réalités sociales et économiques du te rritoire. Les informations recueillies serviront de
-base pour concevoir et ajuster des politiques publiques adaptées aux besoins réels des population s ;
-dans les domaines de l’éducation, de la santé, des infrastructures et de l’aménagement du territoire. Elles
-permettront également d’établir une image statistique détaillée du Mali en 2022  pour un meilleur suivi et
-évaluation des différentes politiques et stratégies, comme le Cadre stratégique pour la relance
-économique et le développement durable (CREDD), les Objectifs de développement durable (ODD),
-l’Agenda 2063 « l’Afrique que nous voulons » et les engagements ; pris lors de la Conférence
-internationale sur la population et le développement (CIPD) au-delà de 2014.
-À la différence des précédents recensemen ts du Mali, l’utilisation des nouvelles technologies de
-l’information et de la communication (TIC) et l’usage des tablettes comme outils de collecte des données
-a constitué une innovation majeure pour le RGPH5, réalisé dans un contexte sanitaire et sécuritaire
-difficile. Toutefoi
-
---- page 24 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-XX
-SUPERVISEURS REGIONAUX, DRPSIAP
-N° PRENOMS NOMS REGION
-1 Boubacrine TRAORE KAYES
-2 Ibrahim NAFA KAYES
-3 Sékou DIARRA KOULIKORO
-4 Drissa DIALLO KOULIKORO
-5 Siaka DIALLO SIKASSO
-6 Brama MARIKO SIKASSO
-7 Souleymane KABORE SEGOU
-8 Baba DIAWARA SEGOU
-11 Namory TRAORE MOPTI
-12 Amadou KONE MOPTI
-21 Lamine COULIBALY TOMBOUCTOU
-22 Ibrahim BAGNA TOMBOUCTOU
-9 Amadou SOGOBA GAO
-10 Oumar DEMBELE GAO
-13 Lousseyni TIELA KIDAL
-14 Ibrahim Mazou TOURE KIDAL
-15 Abdoul Aziz N’Daya CISSE TAOUDENNI
-16 Ahmed OULD SAKHY TAOUDENNI
-17  Ag Almostapha MIYARATA MENAKA
-18 Boubacar HAMADI MENAKA
-19 Abdramane TRAORE BAMAKO
-20 Aïchata BOUARE BAMAKO
-SUPERVISEURS LOCAUX, SLPSIAP
-N° PRENOMS NOMS TITRE CERCLE REGION
-1 Abdoulaye SIBY Chef SLPSIAP KAYES KAYES
-2 Makan KANTE Chef SLPSIAP BAFOULABE KAYES
-3 Boubacar DIARRA Chef SLPSIAP DIEMA KAYES
-4 Bouacar KONE Chef SLPSIAP KENIEBA KAYES
-5 Amadou Dit M’Bara DIALLO Chef SLPSIAP KITA KAYES
-6 Seydou COULIBALY Chef SLPSIAP NIORO KAYES
-7 Baly DABO Chef SLPSIAP YELEMANE KAYES
-8 Sidi CISSE Chef SLPSIAP KOULIKORO KOULIKORO
-9 Moussa KONE Chef SLPSIAP BANAMBA KOULIKORO
-10 Abdoulaye COULIBALY Chef SLPSIAP DIOÏLA KOULIKORO
-11 Mamourou DOUMBIA Chef SLPSIAP KANGABA KOULIKORO
-12 Yaya DIALLO Chef SLPSIAP KATI KOULIKORO
-13 Djelimory Dit S DIABATE Chef SLPSIAP KOLOKANI KOULIKORO
-14 Ibrahima Samba MAIGA Chef SLPSIAP NARA KOULIKORO
-15 Yamoussa BOUARE Chef SLPSIAP SIKASSO SIKASSO
-16 Since KEITA Chef SLPSIAP BOUGOUNI SIKASSO
-17 Boubacar SIDIBE Chef SLPSIAP KADIOLO SIKASSO
-18 Souleymane TRAORE Chef SLPSIAP KOLONDIEBA SIKASSO
-19 Amadou MAIGA Chef SLPSIAP KOUTIALA SIKASSO
-
---- page 25 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-XXI
-N° PRENOMS NOMS TITRE CERCLE REGION
-20 Moussa TRAORE Chef SLPSIAP YANFOLILA SIKASSO
-21 Moussa BOUARE Chef SLPSIAP YOROSSO SIKASSO
-22 Mamadou KONATE Chef SLPSIAP SEGOU SEGOU
-23 Daouda KONE Chef SLPSIAP BAROUELI SEGOU
-24 Ali SANOGO Chef SLPSIAP BLA SEGOU
-25 Sidiki KOUMA Chef SLPSIAP MACINA SEGOU
-26 Jean Paul KONE Chef SLPSIAP NIONO SEGOU
-27 Emile Ibrahim CAMARA Chef SLPSIAP SAN SEGOU
-28 Badra Aliou DOUMBIA Chef SLPSIAP TOMINIAN SEGOU
-29 Mamadou COULIBALY Chef SLPSIAP MOPTI MOPTI
-30 Boukary TRAORE Chef SLPSIAP BANDIAGARA MOPTI
-31 Mamadou DOUMBIA Chef SLPSIAP BANKASS MOPTI
-32 Idrissa CISSE Chef SLPSIAP DJENNÉ MOPTI
-33 Abdoulaye DAO Chef SLPSIAP DOUENZA MOPTI
-34 Moise KAMATE Chef SLPSIAP KORO MOPTI
-35 Abdramane DIAKITE Chef SLPSIAP TENEKOU MOPTI
-36 Ibrahim BOCOUM Chef SLPSIAP YOUWAROU MOPTI
-37 Oumar SIDIBE Chef SLPSIAP TOMBOUCTOU TOMBOUCTOU
-38 Yacouba KANE Chef SLPSIAP DIRE TOMBOUCTOU
-39 Hama TEMBINE Chef SLPSIAP GOUNDAM TOMBOUCTOU
-40 Daouda GUINDO Chef SLPSIAP GOURMA RHAROUS TOMBOUCTOU
-41 Yacouba DIARRA Chef SLPSIAP NIAFUNKE TOMBOUCTOU
-42 Issa FANE Chef SLPSIAP GAO GAO
-43 Amirou TOGO Chef SLPSIAP ANSONGO GAO
-44 Lassine COULIBALY Chef SLPSIAP BOUREM GAO
-45 Abdou HAIDARA Chef SLPSIAP KIDAL KIDAL
-46 Ismaila N DIANE Chef SLPSIAP ABEIBARA KIDAL
-47 Agaly AG EKAWEL Chef SLPSIAP ACHIBOGHO KIDAL
-48 Malamine COULIBALY Chef SLPSIAP TESSALIT KIDAL
-49 Yaya SAMAKE Chef SLPSIAP TIN-ESSAKO KIDAL
-50 Allim MOHAMED Chef SLPSIAP TAOUDENNI TAOUDENNI
-51 Lalla Mint SIDI MOHAMED Chef SLPSIAP ACHOURAT TAOUDENNI
-52 Ali OULD NAJIM Chef SLPSIAP AL-OURCHE TAOUDENNI
-53 Sidi Boubacar OULD MOHAMED SALAH Chef SLPSIAP ARAOUANE TAOUDENNI
-54 Mohamed Lamine OULD MOHAMED Chef SLPSIAP BOUJBEHA TAOUDENNI
-55 Oussama DRISSI Chef SLPSIAP FOUM ELBA TAOUDENNI
-56 Hamza SALIHOU Chef SLPSIAP MENAKA MENAKA
-57 Habiboulah HAMA MAIGA Chef SLPSIAP ANDÉRAMBOUKANE MENAKA
-58 Assaleh AG AFOUDNEMONY Chef SLPSIAP INEKAR MENAKA
-59 Ilaji  AG HOUZEIFATA Chef SLPSIAP TIDERMENE MENAKA
-60 Hawa SISSOKO Chef SLPSIAP COMMUNE 1 BAMAKO
-61 Boureima GOITA Chef SLPSIAP COMMUNE 2 BAMAKO
-62 Massaran SANGARE Chef SLPSIAP COMMUNE 3 BAMAKO
-63 Awa KONATE Chef SLPSIAP COMMUNE 4 BAMAKO
-64 Madina DIAMOUTENE Chef SLPSIAP COMMUNE 5 BAMAKO
-65 Fatimata DEMBELE Chef SLPSIAP COMMUNE 6 BAMAKO
-
---- page 28 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-XXIV
-Population de moins de 5 ans (0 – 4 ans) 3 844 765
-Population de 1 – 4 ans 3 142 301
-Population de 3 – 6 ans 3 138 169
-Population de moins de 15 ans (0 – 14 ans) 10 067 334
-Population de 7 - 12 ans 3 706 415
-Population de 12 - 19 ans 3 832 526
-Population de 13 - 15 ans 1 505 942
-Population de 16 - 18 ans 1 346 414
-Population de 15 - 24 ans 4 099 722
-Population de 15 - 34 ans 6 840 603
-Population de 15 - 39 ans 7 862 215
-Population de 15 - 59 ans 10 297 206
-Population de 15 – 64 ans 10 663 415
-Population de 65 ans ou plus 616 838
-Population de moins de 18 ans (0-17 ans) 11 441 311
-Population malienne de 18 ans ou plus 9 906 276
-Population de femmes en âge de procréer (15-49 ans) 4 873 964
-Age moyen de la population (en années) 21,3
-Age médian de la population (en années) 16,5
-ETAT MATRIMONIAL
-Proportion de célibataires (%) 35,4
--   Homme 43,5
--  Femme 27,7
-- Urbain 41,7
-- Rural 32,0
-Proportion de polygames (%) 18,2
-- Homme 12,8
-- Femme 23,2
--  Urbain 11,7
-- Rural 21,6
-ALPHABETISATION
-Taux d’alphabétisation des 15 ans ou plus (%) 34,6
-- Homme 39,6
-- Femme 29,8
-- Urbain 58,4
-- Rural 22,2
-POPULATION ETRANGERE
-Effectif total de la population étrangère 94 919
-- Effectif de la population étrangère masculine 46 954
-- Effectif de la population étrangère féminine 47 965
-Proportion d’étrangers (%) 0,4
-- Burkina Faso 26 824
-- Côte d’Ivoire 20 668
-- Guinée 14 758
-- Niger 4 426
-- Mauritanie 1 553
-- Sénégal 5 717
-- Algérie 278
-- Autres pays africains 17 397
-- Autres pays non africains 2 236
-- Nationalité non déclarée 1 062
-
---- page 35 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-4
-                                                                                                                                        4
-par an. Le Sahel est par excellence la zone de l’élevage transhumant. Le delta intérieur du Niger est une
-vaste zone humide située en plein sahel. La présence permanente d’eau dans ce delta offre de grandes
-opportunités d’irrigation, de pêche et de pâturage en saison sèche. Cett e zone de transition (entre les
-zones sahélienne et soudanienne) a beaucoup souffert des sécheresses des années 1970 et 1980.
-La zone soudanienne : La zone soudanienne couvre environ 14  % du territoire national. Elle se divise
-aussi en deux sous zones : La zone soudanienne nord et la zone soudanienne sud. La pluviométrie y est
-comprise entre 500 et 1100 mm par an. Elle s’étend sur le centre et une grande partie du sud du pays.
-La production végétale y est relativement importante. Cette zone est de plus en plus occupée pa r les
-troupeaux des régions Nord qui fuient la précarité climatique.
-La zone soudano guinéenne  : Cette zone couvre environ 11 % du territoire national. La pluviométrie
-moyenne annuelle y est supérieur e à 1200 mm. Elle est localisée dans l’extrême sud et su d-ouest du
-pays, notamment dans les régions de Sikasso et de Kayes. La zone soudano-guinéenne conserve encore
-une riche diversité biologique. Le potenti el végétal y est important et la faune variée. C’est la zone de
-production Agricole par excellence.
-L’hydrographie est essentiellement constituée par les bassins du Haut Sénégal et du Niger. Le Mali est
-arrosé par deux grands fleuves et leurs affluents : le Niger et le Sénégal.
-Le fleuve Niger long de 4200 km dont environ 1 800 km au Mali, prend sa source dans le Fouta- Djalon
-en Guinée et rejoint l’Océan atlantique au Nigéria. Ses deux principaux affluents sont le Sankarani et le
-Bani. Le fleuve Niger traverse le District de Bamako et les régions de Koulikoro, Ségou, Mopti,
-Tombouctou et Gao. Le delta intérieur du fleuve Niger d’une superficie de 40  000 Km², inonde de
-septembre à décembre 20 000 km² de plaine. A la décrue, il devient une immense prairie parsemée de
-lacs dont le Débo, le Korientze, le Walado et plus en avant, le lac Faguibine qui s’étend sur 650 km².
-Le fleuve Sénégal issu de la rencontre à Bafoulabé du Bafing et du Bakoy est long de 1700 km dont 794
-km au Mali et traverse la région de Kayes.
-Il faut aussi souligner la présence du S ourou dans le cercle de Bankass un affluent
-
---- page 36 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-5
-                                                                                                                                        5
-1.1.2. Contexte administratif
-Conformément à la loi N o 2023-007 du 13 mars 2023 portant création des collectivités territoriales en
-république du Mali, le pays est administrativement divisé en 19 régions et un district correspondant à la
-capitale. En outre, le Mali compte 159 cercles, 481 arrondissements et 815 communes dont 29 urbaines
-selon cette même loi. Le district de Bamako est actuellement divisé en sept (7) arrondissements.
-Tableau 1.1: Nombre de cercles, d’arrondissements et de communes par région.
-Région Cercle Arrondissement Commune Urbaine Rurale Total
-Kayes 10 33 5 60 65
-Koulikoro 8 29 3 58 61
-Sikasso 8 21 1 52 53
-Ségou 11 35 2 76 78
-Mopti 8 34 2 48 50
-Tombouctou 13 34 3 50 53
-Gao 16 41 1 43 44
-Kidal 9 29 1 29 30
-Taoudenni 6 30 0 30 30
-Ménaka 6 18 1 27 28
-Nioro 6 14 2 29 31
-Kita 6 14 3 30 33
-Dioïla 6 13 0 23 23
- Nara 6 12 0 14 14
-Bougouni 10 30 1 56 57
-Koutiala 8 22 1 45 46
-San 7 17 1 41 42
-Douentza 6 18 1 23 24
-Bandiagara 9 30 1 52 53
-Bamako - 7 - - -
-Total 159 481 29 786 815
-1.1.3. Contexte historique et culturel
-Le Mali a accédé à l’indépendance le 22 septembre 1960 devenant ainsi un pays souverain et autonome.
-Cette dénomination tire son origine du nom de l’un des grands empires que l’Afrique de l’Ouest a connus
-: l’Empire du Mali.
-Le pays est sans doute le berceau de nombreuses civilisations qui ont donné naissance à plusieurs
-empires et royaumes parmi lesquels on peut citer :
-- l’Empire du Ghana (VII éme-XII éme siècles) ;
-- l’Empire du Mali (XIII éme-XV éme siècles) ;
-- l’Empire Songhaï (XV éme -XVI éme siècles) ;
-- les Royaumes Bambara de Ségou et du Kaarta (XVII éme -XVIII éme siècles)
-- l’Empire Toucouleur de El-Hadj Omar Tall (XIX éme siècle)
-- le Royaume Sénoufo de Sikasso (XIX éme siècle).
-
---- page 41 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-10
-                                                                                                                                        10
-1.2.1. Définition des concepts de base
-Région : La région est la plus grande subdi vision administrative du territoire. Elle est placée sous
-l’autorité d’un Gouverneur. Actuellement, le Mali compte 19 régions plus le district de Bamako (la
-Capitale) qui a rang de région.
-Cercle : Le cercle est la deuxième entité administrative du Mali. Le pays est subdivisé en 15 cercles (voir
-Tableau 1.1 au Chapitre 1).
-Commune : La Commune est la troisième entité administrative du Mali. Le pays compte 815 communes
-dont 29 communes urbaines et 786 communes rurales (voir Tableau 1.1 au Chapitre 1).
-Village : Un village est une agglomération rurale reconnue par l’autorité administrative ayant à sa tête un
-chef de village. A un village peuvent être rattachés des hameaux.
-Fraction : Est considérée comme fraction, une partie d’une population menant une vie nomade reconnue
-par l’autorité administrative. A une fraction peuvent être rattachés des points de regroupement ou des
-campements.
-Milieu de résidence : Le milieu de résidence renvoie au secteur d’habitat de la population. Dans le cadre
-du dénombrement du RGPH5, le milieu de résidence correspond au type de commune (commune
-urbaine/commune rurale) tel que défini par la loi n°2023 - 007 du 13 mars 2023 portant création des
-collectivités territoriales en République du Mali.
-Section d’Enumération : La SE est une zone de dénombrement de la population définie lors des travaux
-cartographiques et attribuée à un Agent Recenseur. Cette zone compte entre 500 et 700 habitants environ
-en milieu urbain et entre 700 et 1100 habitants en milieu rural. Elle doit avoir une délimitation claire pour
-être facilement repérable sur le terrain. En milieu rural, une section d’énumération peut être constituée
-d’un village, d’une partie d’un village ou de plusieurs villages. En milieu urbain, une section d’énumération
-peut être constituée d’un secteur, d’une partie d’un secteur ou de plusieurs secteurs du quartier. Chaque
-SE porte un numéro d’identification de 4 chiffres.
-District de Dénombrement (DD)  : Le DD est une aire géographique, sans sign ification administrative,
-constituée en moyenne de six (06) Sections d’Enumération. Il est placé sous la responsabilité d’un Chef
-d’Equipe qui aura en moyenne six (06) Agents Recenseurs.
-Ménage ordinaire : Un ménage ordinaire est un individ
-
---- page 44 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-13
-                                                                                                                                        13
-Poids démographique : C’est la proportion (en %) de la population d’une catégorie donnée, par exemple
-une région, dans la population totale.
-Taille moyenne de ménages :  exprime le nombre moyen de personnes par ménage. Elle est o btenue
-en divisant l’effectif de la population totale des ménages ordinaires par le nombre de ménages ordinaires.
-Age moyen : représente la somme des différents âges des individus de la population pondérée par les
-effectifs (au numérateur) rapporté à la somme totale des effectifs de la population (au dénominateur).
-Age médian : L’âge médian est un âge généralement différent de la moyenne et séparant cette
-population en deux parties égales. La moitié des individus a un âge en dessous de cet âge (médian) et
-l’autre moitié a un âge au-dessus.
-Stabilité résidentielle : est le fait qu’une personne n’a jamais quitté sa commune de naissance c'est-à-
-dire qu’au moment du recensement on retrouve la personne dans la commune où elle est née et qu’elle
-n’a jamais effectué une migration de plus de six mois.
-Emploi : Une personne est pourvue d’un emploi dès lors qu’elle effectue un tra vail rémunéré pendant
-une période de référence.
-Taux d’urbanisation : C’est le pourcentage de la population vivant en milieu urbain.
-Période intercensitaire : C’est la période entre deux recensements de la population.
-Taux d’accroissement intercensitaire : Ce taux exprime l’accroissement annuel moyen pour la
-période séparant deux recensements généraux et est calculé suivant la formule ci-après :
-r = (Pt/Po)1/t -1 où Pt = Population recensée au temps t
-Po= Population recensée au temps 0
-t = Nombre d’années entre les deux recensements
-r = Taux d’accroissement annuel moyen.
-1.2.3. Estimation de la population des zones non couvertes par le dénombrement
-Il convient de rappeler que bien que le RGPH5 ait été conçu pour être entièrement numérique, les
-tablettes n'ont finalement été utilisées que dans les  zones relativement sécurisées du sud (Zone CAPI).
-Dans les zones moins sécurisées mais accessibles des régions du Nord, ainsi que dans la région de
-Mopti, les cercles de Macina et Niono ( région de Ségou), et les cercles de Banamba et Nara (région de
-Koulikoro) (Zone PAPI), le questionnaire papier a été utilisé. Toutefois, certaines localités n'ont pas pu
-être dénombrées en raison de l'insécurité. Ave
-
---- page 45 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-14
-                                                                                                                                        14
-La modélisation a permis d’estimer ainsi les effectifs de la population par région et milieu de résidence
-des zones non couvertes par le dénombrement général. Cette estimation a concerné 1 087 Sections
-d’Enumération (SE) pour une population estimée à 941 335 habitants. Comme on pouvait s’y attendre, la
-quasi-totalité (935 960 individus, soit, 99,4 % de l’ensemble de la population estimée) vit en milieu rural.
-Tableau 1.2: Répartition de la population estimée des zones non couvertes par le
-dénombrement par région selon le milieu de résidence.
-Région de résidence Milieu de résidence Urbain Rural Ensemble
-Koulikoro -  1 786   1 786
-Nara -   28 873    28 873
-Bougouni -  1 078   1 078
-Koutiala -   12 508    12 508
-Ségou - 228 421  228 421
-Mopti  2 151    87 969    90 120
-Douentza  620  154 359  154 979
-Bandiagara -  986   986
-Tombouctou  556  279 836  280 392
-Gao -   44 795    44 795
-Kidal  2 048   1 696   3 744
-Ménaka -   93 653    93 653
-Ensemble  5 375  935 960  941 335
- 1.2.4. Évaluation de la qualité des données
- 1.2.4.1. Évaluation interne
-A. Evaluation à partir de l’EPC
-Un recensement comporte inéluctablement des erreurs. L’importan t est d’en déterminer l’ampleur et les
-causes afin d’évaluer le degré d’exactitude des données collectées et prendre les dispositions qui
-s’imposent. Il convient donc d’évaluer les données collectées au terme d’un recensement pour apprécier
-le degré de con fiance à leur accorder et affiner davantage les str atégies de mise en œuvre des futurs
-recensements et enquêtes statistiques.
-Les méthodes d’évaluation de la qualité d’un RGPH sont nombreuses : analyse démographique,
-comparaison avec des sources administratives ou avec d’autres recensements et enquêtes par interview
-parmi lesquelles on note l’Enquête Post Censitaire (EPC). L’EPC est pratiquement la seule méthode
-fiable d’évaluation de l’erreur de couverture du recensement dans les pays en développement en
-l’absence d’un système performant d’enregistrement de la population et de ses mouvements.
-Ainsi, l’EPC a été réalisée du 01 au 31 décembre 2022. Pour des raisons pratiques, il a été convenu de
-la réaliser dans la zone CAPI notamment dans les régions de Kayes, Koulikoro (sans les cercles de
-Banamba et Nara), Sikasso, Ségou (sans les cercles de Niono et Macina) et Bamako.
-L’objectif général de l’EPC était
-
---- page 46 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-15
-                                                                                                                                        15
-• déterminer le niveau de couverture du dénombrement général des individus.
-A l’issue de la collecte, de l’exploitation et de l’analyse des données de cette enquête, les taux de
-couverture et d’omission du dénombrement par région et pour l’ensemble de la zone CAPI ont été
-obtenus. Les effectifs de la population issus du fichier brut du dénombrement général ont été ajustés
-suivant l’ordre de grandeur des taux d’omission calculés à partir des données de l’EPC.
-  a) Examen des taux d’omission
-Lors du traitement des données de l’EPC, les taux de couverture et d’omission ont été calculés pour
-chaque région dans la zone CAPI. Le taux d’omission est de 4,9 % au niveau national. En d’autres termes,
-dans l’ensemble, le taux de couverture du RGPH5 est de 95,1 %. Selon les normes des Nations Unies6,
-si le taux d’omission (T) ne dépasse pas 5 % il n’est pas impérativement nécessaire d’effectuer un
-ajustement des données. Toutefois, le choix de procéder à un ajustement est laissé à la discrétion de
-l'équipe de traitement et d'analyse des données du recensement, en tenant compte des évaluations
-internes et externes (taux de croissance intercensitaires, projections démographiques, etc.). Les données
-par région montrent des taux d’omission élevés à Sikasso (6,8 %), Koulikoro (5,2 %) et Kayes (5,1 %).
-Tableau 1.3 : Taux (%) d’omission par région.
-Région Taux d'omission (%)
-Kayes 5,1
-Koulikoro 5,2
-Sikasso 6,8
-Ségou 2,9
-Bamako 3,4
-Ensemble 4,9
-b) Redressement des données à partir des résultats de l’EPC
-L’Enquête Post-Censitaire (EPC) a permis de disposer des coefficients permettant d’ajuster les données
-issues du dénombrement général. Ces coefficients sont définis comme l’inverse des taux de couverture.
-Etant donné que l’EPC a été réalisée seulement dans la zone CAPI, pour des raisons pratiques, l’équipe
-technique a décidé d’appliquer le coefficient de redressement le plus élevé (1,068) sur toutes les données
-de la zone PAPI car les omissions sont censées importantes dans cette dernière zone.  Ainsi, le coefficient
-de redressement (1,068) des données de la région de Sikasso a été appliqué sur les données des régions
-de Mopti, Tombouctou, Gao, Kidal, Taoudenni et Ménaka. En plus de ces régions, ce même coefficient a
-permis d’ajuster les données des cercles de Banamba, Nara (région  de Koulikoro), Niono et M
-
---- page 74 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-43
-                                                                                                                                        43
-Dans l’ensemble, le rapport de masculinité est de 97,8 hommes pour 100 femmes à Bamako contre 99,1
-hommes pour 100 femmes dans autres villes urbaines du pays. Ce qui signifie que le déficit d’homme est
-légèrement important à Bamako que les autres villes.
-Le profil observé entre les milieux urbain et rural est similaire à celle observée entre Bamako et les autres
-centres urbains du pays. Toutefois, les écarts entre Bamako et les autres villes urbaines sont moins
-importants que ceux observés entre le milieu urbain et rural. Comme précédemment décrit, les deux
-rapports de masculinités selon les groupes d’âges dégagent trois tendances  : d’abord, la courbe de
-Bamako est au-dessous de celle des autres centres urbains du pays pour la tranche d’âge 0-25 ans, ce
-qui signifie que la proportion des femmes est plus élevée à Bamako que les autres villes urbaines pour
-cette tranche d’âge. Ensuite, la courbe du rapport de masculinité de Bamako est au-dessus de celle des
-autres villes pour la tranche d’âge 25-70 ans. Ce qui signifie qu’il y a plus d’homme s à Bamako que de
-femmes pour cette tranche d’âge de la population comparativement aux autres villes du pays. Cette
-situation pourrait s'expliquer par le déplacement des hommes de cette tranche d’âge active vers la
-capitale, Bamako, à la recherche d'activités économiques plus rentables. Enfin, on observe que la courbe
-du rapport de masculinité des autres villes dépasse celle de Bamako à partir de 70 ans ou plus.
-Graphique 3.6: Rapport de masculinité de la population de Bamako et autres villes
-des ménages ordinaires.
-3.2. AGE MOYEN ET AGE MEDIAN DE LA POPULATION
-Les résultats présentés dans le tableau 3.4 donne l’âge moyen et l’âge médian de la population totale
-recensée dans les ménages ordinaires. Ces deux indicateurs mettent en évidence l’extrême jeunesse de
-la population malienne. En effet, la moitié de la population a moins de 17 ans. Cette information est encore
-confirmée si l’on utilise l’âge moyen de la population qui est de 21,3 ans pour l’ensemble de la population
-des ménages ordinaires. L’âge moyen des hommes (21,2 ans) est quasiment similaire à celui des femmes
-(21,4 ans) dans les ménages ordinaires . Cependant, la moitié de la population masculine est âgée de
-moins de 16 ans contre 17 ans pour celle de la population féminine.
- Les résultat
-
---- page 75 ----------------------------------------------------
-INSTAT-BCR-Résultats du RGPH5
-44
-                                                                                                                                        44
-l’âge moyen. S’agissant de l’âge médian pour les deux milieux, on note qu’il est plus élevé en milieu
-urbain (18 ans) qu’en milieu rural (16 ans). Cela signifie que la population est plus jeune en milieu rural
-qu’en milieu urbain. Cette tendance pourrait s'expliquer d’une part, par la forte fécondité en milieu rural
-par rapport au milieu urbain8 et d’autre part, par l’exode rural (déplacement de la population de 15-64 ans
-vers les centres urbains) où il y a plus d’opportunités d’emplois décents.
-Tableau 3.4: Age moyen et âge médian de la population  résidente des ménages
-ordinaires par région et par milieu de résidence selon le sexe.
-Lieu de
+(Hbts/Km2)
+Population par sexe Population par région et par sexe Densité de population
+Sexe
+8 095 498 habitants Région Ensemble
+Masculin Féminin
+Grand Lomé 1 060 504 1 127 872 2 188 376
+Densité au niveau national :
+Maritime sans
+143 hbts/km2
+642 876 703 739 1 346 615
+Grand Lomé
+Plateaux 806 154 829 792 1 635 946
+Centrale 397 336 398 193 795 529
+3 944 510 hommes 4 150 988 femmes
+Kara 488 225 497 287 985 512
+(48,7 %) (51,3 %)
+Savanes 549 415 594 105 1 143 520
+Togo 3 944 510 4 150 988 8 095 498
+Taux d’urbanisation par région
+Population par milieu de résidence
+Urbain Rural
+3473792 4621706
+43% 57%
+Evolution de la population de 1960 à 2022
+Population par milieu de résidence et sexe
+Sexe
+Milieu de
+Ensemble
 résidence
-Age moyen Age médian
-Masculin Féminin Ensemble Masculin Féminin Ensemble
-Région
-Kayes 20,8 21,3 21,1 16 17 17
-Koulikoro 20,8 21,2 21,0 16 17 16
-Sikasso 20,7 21,3 21,0 16 17 16
-Ségou 21,3 21,8 21,5 16 17 17
-Mopti 22,4 22,2 22,3 16 18 17
-Tombouctou 22,6 22,1 22,3 17 19 18
-Gao 21,9 21,5 21,7 16 18 17
-Kidal 23,5 22,5 23,0 19 21 20
-Taoudenni 24,2 23,7 24,0 20 22 21
-Ménaka 21,1 20,8 21,0 15 19 17
-Nioro 20,0 21,2 20,6 14 16 15
-Kita 19,6 20,6 20,1 14 16 15
-Dioïla 21,0 21,8 21,4 16 17 16
-Nara 20,0 20,7 20,3 13 16 15
-Bougouni 20,3 21,0 20,7 15 16 16
-Koutiala 20,1 21,0 20,5 15 16 15
-San 21,0 22,0 21,5 15 17 16
-Douentza 22,5 22,0 22,2 17 18 17
-Bandiagara 20,7 21,7 21,2 14 16 15
-Bamako 22,4 21,4 21,9 19 19 19
-Milieu de résidence
-Urbain  22,3 21,4 21,9 19 18 18
-Rural 20,8 21,4 21,1 15 17 16
-Ensemble 21,2 21,4 21,3 16 17 17
-8 Selon les données de l’EDSM-VI de 2018, l’ISF est de 4,9 enfants par femme en milieu urbain contre 6,8 en
-milieu rural au Mali.
+Masculin Féminin
+Urbain 1 689 674 1 784 118 3 473 792
+Rural 2 254 836 2 366 870 4 621 706
+Togo 3 944 510 4 150 988 8 095 498
+Entre 2010 et 2022, la population togolaise s’est accrue en moyenne de 2,3% par année. A ce rythme, elle doublera dans 31 ans
+[193 words in 34 rows]
+
+
+=== pages mentioning ['préfecture', 'Golfe', 'Kozah'] (first 10) ===
+
+--- page 1 ----------------------------------------------------
+Population des préfectures par sexe Population des villes du Togo
+Sexe
+Région / Préfecture Ensemble
+Masculin Féminin REPUBLIQUE TOGOLAISE
+Grand Lomé 1 060 504 1 127 872 2 188 376
+Ministère de la Planification du
+Golfe 631 567 674 114 1 305 681
+Développement et de la Coopération
+Agoè-Nyivé 428 937 453 758 882 695
+Maritime sans Grand
+642 876 703 739 1 346 615
+Lomé
+Zio 242 367 257 665 500 032
+Yoto 82 859 91 992 174 851
+Bas-Mono 44 366 50 494 94 860
+5ème RECENSEMENT GENERAL DE LA POPULATION ET DE L’HABITAT
+Lacs 115 468 125 779 241 247
+Vo 104 485 119 926 224 411 (RGPH-5)
+Avé 53 331 57 883 111 214
+Plateaux 806 154 829 792 1 635 946
+Ogou 124 073 129 394 253 467
+Moyen-Mono 41 413 49 092 90 505
+Haho 148 029 157 067 305 096
+Résultats définitifs
+Agou 42 449 43 344 85 793
+Kloto 71 161 74 825 145 986
+du RGPH-5 de
+Kpélé 40 129 40 810 80 939
+Danyi 20 512 19 728 40 240 Novembre 2022
+Wawa 51 383 49 917 101 300
+Akébou 37 236 36 594 73 830
+Amou 56 543 57 629 114 172
+Nous sommes
+Anié 89 897 90 261 180 158
+Est-Mono 83 329 81 131 164 460 8 095 498
+Centrale 397 336 398 193 795 529
+Tchaoudjo 119 126 121 234 240 360
+habitants au Togo
+Tchamba 100 980 99 605 200 585
+Blitta 81 602 81 670 163 272
+Sotouboua 69 140 69 724 138 864
+Mô 26 488 25 960 52 448
+Kara 488 225 497 287 985 512
+Kozah 141 188 142 550 283 738
+Assoli 33 246 33 148 66 394
+Bassar 76 235 75 830 152 065
+Dankpen 91 567 94 095 185 662
+Kéran 63 731 64 956 128 687
+Doufelgou 40 973 43 794 84 767
+Binah 41 285 42 914 84 199
+Institut National de la Statistique et des Etudes
+Savanes 549 415 594 105 1 143 520
+Economiques et Démographiques (INSEED)
+Tône 185 480 203 295 388 775
+Cinkassé 62 574 66 385 128 959
+59 rue de la Kozah, Immeuble INSEED/CENETI,
+Kpendjal-Ouest 58 175 65 155 123 330
+BP 118 Lomé Togo
+Kpendjal 43 035 45 330 88 365
+Oti-Sud 73 332 77 044 150 376 Tél. : (228) 22 21 62 24 / (228) 22 21 27 75
+Oti 60 638 64 210 124 848
+Email : inseed@inseed.tg
+Tandjoaré 66 181 72 686 138 867
+Site web : www.inseed.tg
+Togo 3 944 510 4 150 988 8 095 498
+[433 words in 65 rows]
