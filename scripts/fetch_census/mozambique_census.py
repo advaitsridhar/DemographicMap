@@ -25,7 +25,8 @@ figures come from the country's Quadro 3.
 unit, Maputo: its figures are the two added together. A province's Quadro 3
 lists its cities ("CIDADE DE PEMBA") and districts ("DISTRITO DE ANCUABE");
 each is matched to the polygon of its name within its province, a city also
-under its bare name (Maxixe, Nacala). Where one polygon takes both a district
+under its bare name (Maxixe, Nacala). The island district of Ibo is on no
+polygon (``UNDRAWN``). Where one polygon takes both a district
 and a city of its name, it gets the two added together and says so. Maputo
 City's seven municipal districts are one polygon, Cidade De Maputo, and get
 the city's total.
@@ -179,7 +180,14 @@ LANGUAGES = {
     "ingles": "English",
     # Spellings of single provinces' tables.
     "coti": "Koti", "elomwue": "Lomwe", "lolomalolo": "Lolo", "lolo": "Lolo",
+    "xitshwa": "Tswa", "bitonga": "Gitonga", "chichopi": "Chopi", "cicopichichopi": "Chopi",
+    "kiswalhili": "Swahili", "cishona": "Shona", "cimanika": "Manyika", "chitewe": "Tewe",
+    "chibalke": "Balke",
 }
+# Census districts the map does not draw: the Quirimbas islands of Ibo are on
+# no polygon (none of the map's polygons holds Ibo, Matemo or Quirimba
+# island), so the district's count is on none.
+UNDRAWN = {"DISTRITO DE IBO"}
 UNSTATED_LANGUAGES = ("mudo", "desconhecid", "naosabe", "nenhum")
 
 RELIGION_NOTE = ("INE publishes the 2017 census's religion for each province (Quadro 11 of the "
@@ -408,6 +416,9 @@ def bind(table: dict[str, dict[str, Any]], shapes: list[dict[str, Any]], provinc
     for name in names:
         hit = next((by_key[c] for c in candidates(name) if c in by_key), None)
         if hit is None:
+            if name in UNDRAWN:
+                log(f"    {province}: {name} is on no polygon of the map")
+                continue
             left.append(name)
             continue
         out.setdefault(hit["id"], []).append(name)
