@@ -193,9 +193,10 @@ def leaflet_rows(text: str) -> list[tuple[str, tuple[int, int, int]]]:
     rows = []
     text = re.sub(r"[\u00a0\u2009\u202f]", " ", text)
     for line in text.splitlines():
-        # The growth rate may be negative (Zagnanado's).
-        m = re.match(r"^\s*([^\d]+?)\s+(\d[\d ]*\d)\s+(-?\d+,\d+)(?:\s+(\d+,\d+))?\s*$",
-                     line)
+        # The growth rate may be negative (Zagnanado's), its sign a hyphen, a
+        # minus or a dash, set apart or not.
+        m = re.match(r"^\s*([^\d]+?)\s+(\d[\d ]*\d)\s+([-\u2212\u2013]?\s?\d+,\d+)"
+                     r"(?:\s+(\d+,\d+))?\s*$", line)
         if not m:
             continue
         tokens = m.group(2).split()
@@ -274,6 +275,22 @@ def main() -> int:
             # Littoral is the one commune of Cotonou, and its leaflet has no
             # row apart from the department's.
             found[communes[0]["name"]] = whole[0][1]
+        missing = [c["name"] for c in communes if c["name"] not in found]
+        for name in missing:
+            key2 = fold(COMMUNE_NAMES.get(fold(name), name))[:5]
+            log(f"    {name}: not read; its lines: "
+                f"{[line for line in text.splitlines() if key2 in fold(line)][:3]}")
+        derived = None
+        if len(missing) == 1 and len(communes) > 1:
+            # One commune's row not read: the department's count less its
+            # other communes', when every figure of theirs is read.
+            rest = [sum(v[i] for v in found.values()) for i in range(3)]
+            left = tuple(whole[0][1][i] - rest[i] for i in range(3))
+            if left[0] > 0 and left[1] > 0 and left[2] > 0 and left[1] + left[2] == left[0]:
+                derived = missing[0]
+                found[derived] = left
+                log(f"    {derived}: the department's count less its other communes': "
+                    f"{left[0]:,} ({left[1]:,} men, {left[2]:,} women)")
         if len(found) != len(communes) or sum(v[0] for v in found.values()) != d["total"]:
             problems.append(f"{shape['name']}: the leaflet gives {sorted(found)} of "
                             f"{sorted(c['name'] for c in communes)}, making "
@@ -289,8 +306,13 @@ def main() -> int:
                 country="BEN", match_by="shape_id", shape_id=c["id"],
                 sex_ratio=measure(round(1000 * men / women_n), unit="males_per_1000_females",
                                   year=YEAR, source=source),
-                sex_ratio_note=(f"The 2013 census's count of the commune: {men:,} men and "
-                                f"{women_n:,} women."),
+                sex_ratio_note=(
+                    f"The 2013 census's count of the commune, {men:,} men and {women_n:,} "
+                    f"women: the department's {whole[0][1][1]:,} men and {whole[0][1][2]:,} "
+                    f"women less those of its other {len(communes) - 1} communes, as the "
+                    "leaflet gives them." if c["name"] == derived else
+                    f"The 2013 census's count of the commune: {men:,} men and {women_n:,} "
+                    "women."),
                 sources=[{"field": "sex_ratio", "name": source, "url": url,
                           "license": LICENCE, "year": YEAR}]))
     for line in problems:
