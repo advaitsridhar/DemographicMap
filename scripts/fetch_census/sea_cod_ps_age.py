@@ -374,24 +374,17 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
                 median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
                 **composition_gaps(iso3, level)))
             continue
-        # The twins placed by their seats are the two polygons the dataset's
-        # population reached nowhere else (its own reader matches by name), so
-        # their head count is written with them, from the same row.
-        pcode_col = next((c for c in row if re.fullmatch(r"(?i)adm(?:in)?_?2_?pcode", c)), None)
-        twin = level == "admin2" and (iso3, str(row.get(pcode_col) or "").strip()) in SEATS
-        total = (number(row.get(cols["totals"]["T"])) if "T" in cols["totals"]
-                 else (women or 0) + (men or 0))
+        # The twins placed by their seats get their ages and sex ratio from
+        # their own rows, and no head count: Thailand's districts show the
+        # population register through Wikidata, and the build places the
+        # register's two Bang Sai items by their points (ROW_SHAPES). The
+        # projection's 42,665 and 12,067 for 2023 had stood on the two as "a
+        # projection, as every other district's head count here is", beside
+        # 926 districts showing the register.
         out.append(record(
             f"{iso3}-CODPSAGE-{level}-{fold(unit['name'])}-{unit['id'][-6:]}", unit["name"],
             level=level, parent=iso3, country=iso3, match_by="shape_id", shape_id=unit["id"],
             aliases=[name] if key(name) != key(unit["name"]) else None,
-            population=({"value": int(round(total)), "year": year, "source": source}
-                        if twin and total else None),
-            population_note=(f"OCHA's COD-PS for the country, reference year {year}: a "
-                             f"projection, as every other district's head count here is; this "
-                             f"one shares its romanised name with another district of its "
-                             f"province and was placed by its district office.{basis}"
-                             if twin and total else None),
             median_age={"value": figures["median"], "unit": "years", "year": year,
                         "source": source},
             median_age_note=(
@@ -403,8 +396,7 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
             sex_ratio_note=(f"Males per 100 females in OCHA's COD-PS for the country, "
                             f"reference year {year}: a projection, not a count."
                             f"{unusual_ratio(men, women, level)}{basis}"),
-            sources=[{"field": ("population/median_age/sex_ratio" if twin
-                                else "median_age/sex_ratio"), "name": source,
+            sources=[{"field": "median_age/sex_ratio", "name": source,
                       "url": cod_ps.DATASET_PAGE.format(stub=stub), "year": year,
                       "license": licence}],
             **composition_gaps(iso3, level)))

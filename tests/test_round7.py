@@ -383,6 +383,54 @@ class TwinsShowOneFigure(unittest.TestCase):
         self.assertIn("Minsk City population: 2,018,281 on the division gives way to "
                       "1,995,091", " ".join(filled))
 
+    def test_a_figure_in_front_of_the_same_census_a_level_up_reaches_the_division(self):
+        # The Australian Capital Territory took Wikidata's 481,700 for 2024 in
+        # front of the 2021 census's 454,499; Unincorporated ACT, the whole
+        # territory, shows the same census's 453,890 for its one area.
+        abs_ = "Australian Bureau of Statistics, Census of Population and Housing 2021"
+        parent = {"id": "P", "name": "Australian Capital Territory", "parent": "AUS",
+                  "population": {"value": 481_700, "year": 2024, "source": "Wikidata (CC0)",
+                                 be.RESTATED_FROM: {"value": 454_499, "year": 2021,
+                                                    "source": abs_}},
+                  "sources": [{"field": "capital/coordinates/population",
+                               "name": "Wikidata"}]}
+        child = {"id": "C", "name": "Unincorporated ACT", "parent": "P",
+                 "population": {"value": 453_890, "year": 2021, "source": abs_},
+                 "sources": [{"field": "population/religion", "name": abs_}]}
+        good = {"inside": 0.99, "share": 0.99, "spill": 0.0, "spill_by": None,
+                "cover": [], "peopled": False}
+        filled, refused = be.fill_sole_children({"AUS": [parent]}, {"AUS": [child]},
+                                                {"C": good}, {})
+        self.assertEqual(refused, [])
+        self.assertEqual((child["population"]["value"], child["population"]["year"]),
+                         (481_700, 2024))
+        self.assertEqual(child["population"][be.RESTATED_FROM]["value"], 453_890)
+        self.assertEqual(child["population_note"],
+                         "This is Australian Capital Territory's only division and covers "
+                         "the same ground, so both show this figure.")
+        self.assertEqual(child["sources"], [{"field": "religion", "name": abs_},
+                                            {"field": "population", "name": "Wikidata"}])
+        self.assertIn("453,890 on the division gives way to 481,700", " ".join(filled))
+
+    def test_only_the_same_sources_count_of_the_same_year_close_by(self):
+        census = {"value": 454_499, "year": 2021, "source": "ABS census"}
+        newer = {"value": 481_700, "year": 2024, "source": "Wikidata (CC0)",
+                 be.RESTATED_FROM: census}
+        self.assertTrue(be.put_in_front_of_count(newer, {**census, "value": 453_890}))
+        self.assertTrue(be.put_in_front_of_count(newer, dict(census)))
+        for other in ({**census, "value": 440_000},           # 3% off: other ground
+                      {**census, "year": 2016},               # another census
+                      {**census, "value": 453_890, "source": "Another office"},
+                      {"value": 453_890, "year": 2021, "source": "Wikidata (CC0)"}):
+            self.assertFalse(be.put_in_front_of_count(newer, other), other)
+        self.assertFalse(be.put_in_front_of_count(dict(census), census))
+
+    def test_the_act_is_declared_the_divisions_only_unit(self):
+        evidence, from_codes, own_ground = be.sole_child_evidence(
+            "AUS", {"name": "Australian Capital Territory"}, {"name": "Unincorporated ACT"}, {})
+        self.assertTrue(evidence)
+        self.assertEqual((from_codes, own_ground), (False, False))
+
 
 class UnionsAcrossFiles(unittest.TestCase):
     """A polygon drawn as a municipio was before a newer one was made out of it."""
@@ -764,6 +812,29 @@ class LaosDistrictsOfOneName(unittest.TestCase):
             self.assertEqual(row["population"]["year"], 2024)
         # Two Phonthongs, two polygons.
         self.assertEqual(len({shape for shape, _ in placed.values()}), 3)
+
+
+class ThailandsTwoBangSais(unittest.TestCase):
+    """The register's two Bang Sai items bind by id, each to its own polygon."""
+
+    def test_each_item_lands_on_its_own_polygon(self):
+        import json
+        rows = {r["id"]: r for r in json.loads(
+            (be.PROCESSED / "wikidata_admin2.json").read_text()) if r.get("country") == "THA"}
+        placed = be.ROW_SHAPES["wikidata_admin2.json"]
+        self.assertEqual(set(placed), {"THA-WD-Q475250", "THA-WD-Q475251"})
+        for rid, (shape, label) in placed.items():
+            self.assertEqual(rows[rid]["name"], label)
+            self.assertEqual(rows[rid]["parent_name"], "Phra Nakhon Si Ayutthaya")
+        # Two items of one name in one province, so neither joins by name;
+        # the points are what tell them apart: บางไทร's on the Chao Phraya,
+        # บางซ้าย's by the Suphan Buri line, each inside one polygon only.
+        self.assertEqual(len({shape for shape, _ in placed.values()}), 2)
+        east, west = rows["THA-WD-Q475250"], rows["THA-WD-Q475251"]
+        self.assertGreater(east["coordinates"][0], 100.41)
+        self.assertLess(west["coordinates"][0], 100.37)
+        self.assertEqual(placed["THA-WD-Q475250"][0], "78962969B26505935473539")
+        self.assertEqual(placed["THA-WD-Q475251"][0], "78962969B611560347556")
 
 
 

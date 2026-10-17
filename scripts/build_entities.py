@@ -3009,6 +3009,14 @@ ROW_PARENTS: dict[str, dict[str, str]] = {
 # districts kept the 2015 census beside siblings on OCHA's 2024 projection.
 # Each P-code's province digits say which polygon is the row's: LA06 is Luang
 # Prabang, LA16 Champasak. (Vientiane's Viengkham, LA1009, joins by name.)
+#
+# Phra Nakhon Si Ayutthaya draws two districts named Bang Sai, บางไทร and
+# บางซ้าย, and Wikidata's two items, both "Bang Sai" in the province, met on
+# both polygons and joined neither, so the two showed OCHA's projection beside
+# 926 districts on the population register. Each item's point lies inside one
+# of the two polygons and outside the other (measured on the boundary file):
+# Q475250, 48,065 in 2018, at 14.21N 100.50E in บางไทร's, and Q475251, 19,366,
+# at 14.32N 100.30E in บางซ้าย's.
 ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
     "cod_ps_admin2.json": {
         "TZA-CODPS-TZ0203": ("72390352B90906351205470", "Arusha Urban"),
@@ -3016,6 +3024,10 @@ ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
         "LAO-CODPS-LA0610": ("54806243B97421577673591", "Viengkham"),
         "LAO-CODPS-LA0612": ("54806243B14812805317737", "Phonthong"),
         "LAO-CODPS-LA1606": ("54806243B67434402908614", "Phonthong"),
+    },
+    "wikidata_admin2.json": {
+        "THA-WD-Q475250": ("78962969B26505935473539", "Bang Sai"),
+        "THA-WD-Q475251": ("78962969B611560347556", "Bang Sai"),
     },
 }
 
@@ -5777,7 +5789,8 @@ def country_from_sole_unit(admin0: list[dict[str, Any]],
     Western Sahara was the case until the Factbook reader took the figure its
     profile gives in an older layout ("652,271 (July 2020 est.)", with no
     total under it; fetch_factbook.build_record): its one unit carries the
-    UN's 2021 estimate, and the country now shows the Factbook's.
+    UN's 2021 estimate, and the country now shows the Factbook's, its note
+    giving the unit's (note_population_gaps, check_rollups.ONE_DIVISION).
     The disputed areas, each drawn as a country of one unit, are left alone:
     their record already says why nothing is joined to them, and that is what
     the panel shows. A country whose population is not applicable keeps that.
@@ -5815,8 +5828,10 @@ def note_population_gaps(admin0: list[dict[str, Any]],
     A first-level unit and the second-level divisions drawn inside it, or a
     country and its first level, are two answers to one question, and where
     every division carries a figure the two can be compared. Where they differ
-    by more than a sixth (``check_rollups.GAP``) and nothing on the record
-    already names the divisions' total or the difference, the parent's note
+    by more than a sixth (``check_rollups.GAP``), or a parent drawn as one
+    division differs from it beyond rounding (``check_rollups.ONE_DIVISION``),
+    and nothing on the record already names the divisions' total or the
+    difference, the parent's note
     says what its divisions add up to, from what and for when, and the reason
     the figures themselves give -- the divisions counted years apart from the
     parent, by no more than growth over those years makes, or two sources'
@@ -5852,8 +5867,9 @@ def population_disagreements(admin0: list[dict[str, Any]],
                              admin2_by_country: dict[str, list[dict[str, Any]]]
                              ) -> Iterator[tuple[str, dict[str, Any], dict[str, Any], float, str]]:
     """Each parent whose complete divisions differ from its population by more
-    than ``check_rollups.GAP``: (country, parent, the divisions' sum, the
-    parent's figure, what its divisions are called).
+    than ``check_rollups.GAP``, or beyond rounding where it is drawn as one
+    division (``check_rollups.ONE_DIVISION``): (country, parent, the
+    divisions' sum, the parent's figure, what its divisions are called).
 
     A first-level unit against the non-water divisions drawn inside it, outside
     the countries whose second level does not cover their first
@@ -5874,7 +5890,7 @@ def population_disagreements(admin0: list[dict[str, Any]],
             own = published(parent.get("population"))
             summed = check_rollups.complete_sum(kids.get(parent["id"], []))
             if own is not None and summed is not None \
-                    and check_rollups.disagrees(own, summed["total"]):
+                    and check_rollups.disagrees(own, summed["total"], summed["n"]):
                 yield iso3, parent, summed, own, "divisions"
     for country in admin0:
         iso3 = country.get("id")
@@ -5883,7 +5899,7 @@ def population_disagreements(admin0: list[dict[str, Any]],
         own = published(country.get("population"))
         summed = check_rollups.complete_sum(admin1_by_country[iso3])
         if own is not None and summed is not None \
-                and check_rollups.disagrees(own, summed["total"]):
+                and check_rollups.disagrees(own, summed["total"], summed["n"]):
             yield iso3, country, summed, own, "first-level divisions"
 
 
@@ -5905,7 +5921,8 @@ def check_population_gaps_said(admin0: list[dict[str, Any]],
                                              summed["total"])]
     if unsaid:
         raise SystemExit(f"{len(unsaid)} populations differ from their divisions' sum by "
-                         f"more than {check_rollups.GAP:.0%} with nothing said about it: "
+                         f"more than {check_rollups.GAP:.0%} (beyond rounding from one "
+                         f"division) with nothing said about it: "
                          + "; ".join(unsaid[:10]))
 
 
@@ -6142,6 +6159,29 @@ def put_in_front_of(value: Any, count: Any) -> bool:
     was = value.get(RESTATED_FROM) if isinstance(value, dict) else None
     return (isinstance(was, dict) and published(was) is not None
             and published(was) == published(count) and vintage(was) == vintage(count))
+
+
+# One census can count one ground a little differently at two levels: the ABS
+# counts 454,499 people in the Australian Capital Territory in 2021 and 453,890
+# in Unincorporated ACT, its one area and the whole territory -- the 609
+# between them are counted in the territory but not in the area.
+SAME_COUNT = 0.01
+
+
+def put_in_front_of_count(value: Any, count: Any) -> bool:
+    """put_in_front_of, or ``value`` put in front of the same source's count of
+    the same year as ``count`` and within SAME_COUNT of it: one census counting
+    one ground at two levels. The Australian Capital Territory took Wikidata's
+    481,700 for 2024 in front of the census's 454,499, and its only division
+    kept the census's 453,890 for the same ground."""
+    if put_in_front_of(value, count):
+        return True
+    was = value.get(RESTATED_FROM) if isinstance(value, dict) else None
+    before, now = published(was), published(count)
+    return (bool(before) and now is not None and vintage(was) is not None
+            and vintage(was) == vintage(count)
+            and str(was.get("source") or "") == str(count.get("source") or "")
+            and abs(now / before - 1) <= SAME_COUNT)
 
 
 def twin_population(first: dict[str, Any], second: dict[str, Any]
@@ -10168,6 +10208,12 @@ SOLE_CHILD_DECLARED: dict[tuple[str, str], tuple[str, str, bool]] = {
     # Ombella-M'Poko as well, so it fails the share; its figures are the
     # commune's.
     ("CAF", "Bangui"): ("Bangui", "Bangui is one commune, with nothing below it", True),
+    # The Australian Capital Territory has no local government; the census's
+    # local government areas give it one, Unincorporated ACT, which is the
+    # whole territory, drawn on the same outline.
+    ("AUS", "Australian Capital Territory"): (
+        "Unincorporated ACT", "Unincorporated ACT is the whole territory, which has no "
+                              "local government", False),
 }
 
 # Gate 5, row by row: a parent figure a source publishes for other ground
@@ -10700,9 +10746,11 @@ def fill_sole_children(admin1_by_country: dict[str, list[dict[str, Any]]],
         # other record shows is that count's successor on both, as for a
         # polygon drawn twice (twin_population): Minsk City showed Wikidata's
         # 1,995,091 for 2026 in front of the 2019 census, and its only
-        # division the census's 2,018,281 beside the same ground.
+        # division the census's 2,018,281 beside the same ground. So is one put
+        # in front of the same census's count of the same ground a level up or
+        # down (put_in_front_of_count).
         for newer, older in ((parent, child), (child, parent)):
-            if not put_in_front_of(newer.get("population"), older.get("population")):
+            if not put_in_front_of_count(newer.get("population"), older.get("population")):
                 continue
             if newer is parent and parent_not_its_ground(iso3, parent, "population"):
                 continue

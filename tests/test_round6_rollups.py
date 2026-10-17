@@ -493,7 +493,8 @@ class NotePopulationGaps(unittest.TestCase):
 
     def test_close_or_explained_parents_are_left_alone(self):
         parent = unit("P", "Close", 1000, 2020)
-        kids = [unit("K", "Kid", 900, 2020, "X", parent="P")]
+        kids = [unit("K1", "Kid", 450, 2020, "X", parent="P"),
+                unit("K2", "Kid", 450, 2020, "X", parent="P")]
         be.note_population_gaps([], {"A": [parent]}, {"A": kids})
         self.assertNotIn("population_note", parent)
         parent = unit("P", "Said", 1000, 2020)
@@ -579,6 +580,33 @@ class NotePopulationGaps(unittest.TestCase):
                                         "(OCHA's common operational dataset, 2020), 32% below"))
         self.assertTrue(note.endswith("the two are different sources' figures for the same "
                                       "year."))
+
+    def test_one_division_is_compared_beyond_rounding(self):
+        # Western Sahara: the Factbook's 652,271 for 2020, and the UN's
+        # 565,581 for 2021 on the one unit drawn over the territory -- 13%
+        # apart, under the gap a sum of many divisions is allowed.
+        country = {"id": "ESH", "name": "Western Sahara", "population": {
+            "value": 652_271, "year": 2020,
+            "source": "CIA World Factbook (public domain), factbook.json mirror"}}
+        sole = unit("DIS020", "Western Sahara", 565_581, 2021,
+                    "English Wikipedia, Western Sahara (infobox, which displays the UN's "
+                    "World Population Prospects figure)", parent="ESH")
+        a0, a1 = [country], {"ESH": [sole]}
+        self.assertEqual(len(be.note_population_gaps(a0, a1, {})), 1)
+        self.assertEqual(country["population_note"],
+                         "The one first-level division drawn on this map carries 565,581 "
+                         "(Wikipedia, 2021), 13% below this figure.")
+        be.check_population_gaps_said(a0, a1, {})
+        # Within what rounding makes, nothing is said; two divisions are a sum,
+        # held to the wider gap.
+        close = unit("P", "Glarus", 42_371, 2025, "Eurostat")
+        kid = unit("K", "Glarus", 42_451, 2025, "Federal Statistical Office", parent="P")
+        be.note_population_gaps([], {"CHE": [close]}, {"CHE": [kid]})
+        self.assertNotIn("population_note", close)
+        self.assertTrue(cr.disagrees(1000, 990, 1))
+        self.assertFalse(cr.disagrees(1000, 996, 1))
+        self.assertFalse(cr.disagrees(1000, 900, 2))
+        self.assertFalse(cr.disagrees(1000, 900))
 
     def test_a_first_level_kept_over_its_divisions_says_why(self):
         # rollups-48: Zimbabwe's provinces keep the 2022 census over OCHA's
