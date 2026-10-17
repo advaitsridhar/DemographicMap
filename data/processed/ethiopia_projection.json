@@ -1901,7 +1901,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1135757,
+      "value": 1322029,
       "year": 2022,
       "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
     },
@@ -1932,7 +1932,7 @@
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B99888121280160",
-    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 20 weredas that lie within the zone as drawn, added up."
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 21 weredas that lie within the zone as drawn, added up."
   },
   {
     "id": "ETH-2022-57463737B2754129791816",
@@ -2203,5 +2203,140 @@
     "match_by": "shape_id",
     "shape_id": "57463737B13273048506325",
     "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 22 weredas that lie within the zone as drawn, added up."
+  },
+  {
+    "id": "ETH-2022-57463737B71172530098060",
+    "level": "admin2",
+    "name": "Yem",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 67586,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B71172530098060",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 1 weredas that lie within the zone as drawn, added up."
+  },
+  {
+    "id": "ETH-2022-57463737B22109266514860",
+    "level": "admin2",
+    "name": "Dire Dawa",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 521000,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B22109266514860",
+    "population_note": "The statistics office's projection for July 2022, from the 2007 census, for the region, which is drawn as this one zone."
+  },
+  {
+    "id": "ETH-2022-57463737B51121866066295",
+    "level": "admin2",
+    "name": "Hareri",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 270000,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B51121866066295",
+    "population_note": "The statistics office's projection for July 2022, from the 2007 census, for the region, which is drawn as this one zone."
   }
 ]
