@@ -106,6 +106,15 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
                  "license": "CC BY-SA 4.0"}
     seated = 0
     for u in admin2:
+        if key(u["name"]) == "ndjamena":
+            # The capital's province is one department, the city itself.
+            records.append(record(
+                f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
+                match_by="shape_id", shape_id=u["id"], capital="N'Djamena",
+                capital_note=("N'Djamena province is a single department, the city of "
+                              "N'Djamena, whose seat is the city itself.")))
+            seated += 1
+            continue
         seat = seat_of.get(key(u["name"]))
         if not seat:
             report.append(f"    {u['name']}: no seat named")

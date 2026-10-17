@@ -79,6 +79,8 @@ WIKI_TITLE = "Départements du Gabon"
 WIKI_URL = "https://fr.wikipedia.org/wiki/D%C3%A9partements_du_Gabon"
 # Communes drawn as departments of their own, which are their own seats.
 OWN_SEAT = frozenset({"Libreville"})
+# The census's department names (folded) the article spells otherwise.
+WIKI_ALIASES = {"lebombileyou": "lemboumbileyou", "ogooueetlacs": "ogooueetdeslacs"}
 
 AGE_GAP = ("The 2013 census's published results give ages for the whole country and by urban "
            "or rural residence only, not by province or department.")
@@ -246,7 +248,8 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
                     f"up: {parts[1]} is drawn here inside {name}.")
         extra: dict[str, Any] = {}
         sources = list(cite)
-        found = (seat_of or {}).get(fold(ALIASES.get(name, name))) or (seat_of or {}).get(fold(name))
+        found = ((seat_of or {}).get(fold(ALIASES.get(name, name))) or (seat_of or {}).get(fold(name))
+                 or (seat_of or {}).get(WIKI_ALIASES.get(fold(name), "")))
         if name in OWN_SEAT:
             extra["capital"] = name
             extra["capital_note"] = (f"{name} is a commune drawn as a department of its own; its "
