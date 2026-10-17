@@ -24,6 +24,8 @@ zip, xls, csv, cdx, pdf), and these are added:
     sheet:URL~~NAME[~~ROWS[~~COLS]] one sheet's rows (NAME may be its number, 1-based)
     attrs:URL~~ATTR[~~N[~~CHARS]]  every value of one HTML attribute on the page
                                    (a chart widget's data-chart_data), unescaped
+    heads:URL~~FROM~~TO            a HEAD request for each number FROM..TO put in
+                                   place of NUM in URL: status, type, size, file name
 
 The workflow splits the command on whitespace and xargs reads quotes and
 backslashes, so no part may hold a space, a quote or a backslash: a regex
@@ -129,6 +131,28 @@ def probe(arg: str) -> None:
             f = line.split(" ")
             if len(f) >= 7:
                 say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
+        return
+    if mode == "heads":
+        import urllib.error                         # noqa: PLC0415
+        import urllib.request                       # noqa: PLC0415
+        low, high = int(extra[0]), int(extra[1])
+        for number in range(low, min(high, low + 600) + 1):
+            target = url.replace("NUM", str(number))
+            req = urllib.request.Request(base.uri(target), method="HEAD",
+                                         headers={"User-Agent": base.USER_AGENT})
+            try:
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    h = dict(resp.headers)
+                    status = resp.status
+            except urllib.error.HTTPError as exc:
+                status, h = exc.code, dict(exc.headers or {})
+            except Exception as exc:                # noqa: BLE001 -- reported
+                say(f"  {number}: {type(exc).__name__}: {str(exc)[:80]}")
+                continue
+            if status >= 400:
+                continue
+            say(f"  {number}: HTTP {status} {h.get('Content-Type', '?')} "
+                f"{h.get('Content-Length', '?')} {h.get('Content-Disposition', '')[:150]}")
         return
     if mode not in ("json", "keys", "pdfp", "pdfg", "pdft", "sheets", "sheet", "attrs"):
         say(f"?? unknown mode in {arg!r}")
