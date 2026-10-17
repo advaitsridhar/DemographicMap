@@ -31,6 +31,28 @@ class CoteDivoire(unittest.TestCase):
         f = cc.page_facts(text)
         self.assertEqual((f["men"], f["women"], f["total"]), (699_816, 653_084, 1_352_900))
 
+    def test_seat_before_departments(self):
+        # Constructed from Gbêkê's page: a heading that names the region's seat
+        # before its departments' seats, as Gbôklé's does, and no sentence.
+        text = GBEKE.replace("Sa capitale est Bouaké.", "").replace(
+            "CHEF LIEU DE DEPARTEMENT : BEOUMI, BOTRO, SAKASSOU CHEF LIEU DE REGION : BOUAKE",
+            "CHEF LIEU DE REGION : BOUAKE CHEF LIEU DE DEPARTEMENT : BEOUMI, BOTRO, SAKASSOU")
+        self.assertEqual(cc.page_facts(text)["seat"], "Bouake")
+
+    def test_shares_worded_otherwise(self):
+        # Constructed sentences in the wordings the regional pages use.
+        for sentence, want in [
+            ("Nationalité : La population est composée de 76,5 % d’Ivoiriens et de 23,5 % "
+             "de non-Ivoiriens. Urbanisation", (76.5, 23.5)),
+            ("Nationalité : 59,9% d'Ivoiriens contre 40,1% de non Ivoiriens.", (59.9, 40.1)),
+            ("Nationalité : La population est composée à 92% d’Ivoiriens et 8% non "
+             "ivoiriens.", (92.0, 8.0)),
+            ("Nationalité : La population compte 12,0% de non-ivoiriens et 88,0% "
+             "d'ivoiriens.", (88.0, 12.0)),
+            ("Nationalité : 59,9% d'Ivoiriens et 41,1% de non Ivoiriens.", None),
+        ]:
+            self.assertEqual(cc.shares("x " + sentence), want, sentence)
+
     def test_build(self):
         f = cc.page_facts(GBEKE)
         hambol = dict(f, men=300_000, women=290_000, total=590_000, seat="Katiola")

@@ -33,6 +33,7 @@ import argparse
 import html
 import json
 import re
+import time
 import unicodedata
 from typing import Any
 
@@ -40,6 +41,9 @@ from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, reco
 
 SITE_URL = "https://rp2021.anstat.ci/"
 ARCHIVE = "https://web.archive.org/web/2026/" + SITE_URL
+# The capture as the site served it, without the archive's own frame.
+ARCHIVE_RAW = "https://web.archive.org/web/2026id_/" + SITE_URL
+PAUSE = 3
 SOURCE = ("Agence Nationale de la Statistique (ANStat) de Côte d'Ivoire, Recensement Général de "
           "la Population et de l'Habitat (RGPH) 2021, regional monograph page, Tableau "
           "synoptique de la région")
@@ -138,32 +142,61 @@ def synoptic(text: str) -> dict[str, Any]:
                     continue
                 if None not in (t[1], m[1], w[1]) and abs(m[1] + w[1] - t[1]) > 1:
                     continue
-                mean = re.search(r"Age moyen de la population\s+([\d,]+)\s+([\d,]+)", text)
+                mean = re.search(r"(?i)[AÂ]ge\s+moyen\s+de\s+la\s+population\s+"
+                                 r"([\d,]+)\s+([\d,]+)", text)
                 return {"men": m[0], "women": w[0], "total": t[0],
                         "mean": mean.group(2).replace(",", ".") if mean else None}
     raise SystemExit("cote_divoire_census: the synoptic table's sexes do not make its total")
 
 
+def shares(text: str) -> tuple[float, float] | None:
+    """(Ivorian %, non-Ivorian %) from the page's sentence on nationality, however
+    worded ("composée à 91,1% d'Ivoiriens et 8,9% non ivoiriens", "de 76,5 %
+    d'Ivoiriens et de 23,5 % de non-Ivoiriens"...): its first two percentages, the
+    one followed by "non" being the other nationals' share, and the two making 100."""
+    at = re.search(r"(?i)Nationalit[ée]\s*:", text)
+    if not at:
+        return None
+    sentence = text[at.end():at.end() + 260]
+    found = list(re.finditer(r"(\d+(?:[,.]\d+)?)\s*%", sentence))[:2]
+    if len(found) != 2:
+        return None
+    own = other = None
+    for m in found:
+        value = float(m.group(1).replace(",", "."))
+        after = fold(sentence[m.end():m.end() + 24])
+        if after.startswith(("non", "denon", "dnon", "dentrangers", "detrangers", "detranger")):
+            other = value
+        elif re.match(r"(?:d|de|des)?ivoirien", after):
+            own = value
+    if own is None or other is None or abs(own + other - 100) > 0.5:
+        return None
+    return own, other
+
+
 def page_facts(text: str) -> dict[str, Any]:
     facts = synoptic(text)
-    # The seat as the page's heading prints it, in capitals; spelled as the
-    # page's sentence spells it where the two are the same name.
-    head = re.search(r"CHEF[ -]LIEU DE R[EÉ]GION\s*:\s*(.+?)\s+POPULATION\b", text)
+    # The seat as the page's heading prints it, in capitals (the heading lists
+    # the departments' seats before or after it); spelled as the page's
+    # sentence spells it where the two are the same name.
+    head = re.search(r"CHEF[ -]LIEU\s+DE\s+(?:LA\s+)?R[EÉ]GION\s*:\s*(.+?)"
+                     r"\s*(?=CHEF[ -]LIEU|POPULATION\b)", text)
     said = re.search(r"Sa capitale est ([^.]+?)\s*(?:\.|CHEF)", text)
-    seat = head.group(1).strip() if head else None
+    seat = head.group(1).strip(" ,;") if head else None
     if said and (seat is None or fold(said.group(1)) == fold(seat)):
         seat = said.group(1).strip()
     elif seat and seat.isupper():
         seat = seat.title()
+    if seat and (len(seat) > 40 or ":" in seat):
+        seat = None                        # more than a name was taken
     facts["seat"] = seat
-    own = re.search(r"([\d]+[,.]\d+)\s*%\s*d.\s*Ivoiriens", text)
-    other = re.search(r"([\d]+[,.]\d+)\s*%\s*(?:de\s+)?non[- ]?\s*ivoiriens", text, re.I)
-    facts["ivorian"] = None
-    if own and other:
-        shares = (float(own.group(1).replace(",", ".")), float(other.group(1).replace(",", ".")))
-        if abs(sum(shares) - 100) <= 0.5:
-            facts["ivorian"] = shares
+    facts["ivorian"] = shares(text)
     return facts
+
+
+def around(text: str, pattern: str, width: int = 260) -> str:
+    m = re.search(pattern, text)
+    return text[max(0, m.start() - 40):m.start() + width] if m else "(nothing)"
 
 
 def nationality(shares: tuple[float, float], unit: str) -> dict[str, Any]:
@@ -245,8 +278,20 @@ def main() -> int:
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.parse_args()
     facts = {}
-    for slug in PAGES:
-        body = http_get(ARCHIVE + slug + "/", cache=False, timeout=120)
+    for n, slug in enumerate(PAGES):
+        if n:
+            time.sleep(PAUSE)              # the Internet Archive refuses a hurried client
+        body = None
+        for url in (ARCHIVE_RAW + slug + "/", ARCHIVE + slug + "/"):
+            try:
+                body = http_get(url, cache=False, timeout=90, retries=3)
+                break
+            except Exception as err:  # noqa: BLE001 -- the other address, then the next page
+                log(f"  {slug}: {url}: {type(err).__name__}: {err}")
+                time.sleep(4 * PAUSE)
+        if body is None:
+            log(f"  {slug}: not reached; left out")
+            continue
         text = strip(body if isinstance(body, str) else body.decode("utf-8", "replace"))
         try:
             f = page_facts(text)
@@ -256,6 +301,12 @@ def main() -> int:
             continue
         log(f"  {slug}: {f['total']:,} ({f['men']:,} men), seat {f['seat']}, mean age "
             f"{f['mean']}, Ivorians {f['ivorian']}")
+        if not f["seat"]:
+            log(f"    its heading: {around(text, r'(?i)chef[ -]lieu|sa capitale')}")
+        if not f["ivorian"]:
+            log(f"    its nationality: {around(text, r'(?i)nationalit|ivoiriens')}")
+        if not f["mean"]:
+            log(f"    its ages: {around(text, r'(?i)ge moyen')}")
         facts[slug] = f
     made = sum(f["total"] for f in facts.values())
     if len(facts) == len(PAGES) and abs(made - NATIONAL[2]) > 50:
