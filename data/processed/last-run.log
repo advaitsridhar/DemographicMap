@@ -1,358 +1,151 @@
-probe_pdf: https://datacatalog.ihsn.org/catalog/3340/download/48522
-  34,215,383 bytes
-  371 pages
-probe_pdf: 371 pages, 3 mention ['Ibadan', 'Atakunmosa', 'Emuoha']
-=== front matter ===
-FFeeddeerraall  RReeppuubblliicc  ooff  NNiiggeerriiaa  
- 
-2006 Population and Housing Census 
- 
-PRIORITY TABLE 
-Volume IV 
- 
-PPOOPPUULLAATTIIOONN  DDIISSTTRRIIBBUUTTIIOONN    
-BBYY  AAGGEE  &&  SSEEXX  
-(STATE & LOCAL GOVERNMENT AREA) 
- 
-National Population Commission 
-Abuja, Nigeria 
-April, 2010 
- 
- 
- 
-All enquiries to be addressed to: 
- 
-The Chairman, 
-National Population Commission, 
-No. 1, Masaka Close 
-Plot 2031,Off Olusegun Obasanjo Way, 
-(P.M.B 0281, Garki) 
-Wuse, Zone 7, – Abuja 
- 
-Tel. +234 09 5230775 
-Fax. +234 09 5231024 
- 
-e-mail – natpopcom@yahoo.com 
-Website:www.population.gov.ng 
- 
-
-i 
- 
-Federal Republic of Nigeria 
-2006 Population and Housing Census 
- 
-PRIORITY TABLE 
-Volume IV 
- 
-POPULATION DISTRIBUTION BY AGE & SEX 
-(STATE & LOCAL GOVERNMENT AREA) 
-Table DS5 
- 
- 
-National Population Commission 
-Abuja, Nigeria 
-April, 2010  
- 
-ii 
- 
-Preface 
-It is a popular saying that population is not only about total figures but more importantly about its distribution across age  and sex.  
-These two variables determine the structure and composition of the population including its potenti al to grow.  The main mission of a 
-population census is to tell the story of the living conditions of the people at a particular time and give insight into how these conditions 
-can be ameliorated.  Definitely, there is no way the total story can be told if  the age and sex structure of the population is not taken into 
-consideration. 
-It is in recognition of this fact that the National Population Commission not only collected variables on the age and sex of respondents 
-during the 2006 Population and Housing Ce nsus as it is consistent with global practices but also ensured that these data have been 
-separately processed, analysed a s being disseminated through this publication.  The volume presents the Population Distribution of 
-Nigeria by Age and Sex as captured during the 2006 Census.  The data has been presented for each of the states and the Federal Capital 
-Territory and the Local Government Areas of the Federation in five year age groups. 
-It is hoped that the publication of this volume will enhance the usefulness of the 2006 Census data for planning purposes.  The data can 
-serve as the nation’s indispensable guide in the march towards sustainable development.  The essence of development is to make concrete 
-improvement in the living conditions of the people.  Since the people have different needs and potentials across sex and age divides, 
-planning for development must therefore be gender sensitive and reflect the various needs of the different age groups in the society.  This 
-is the best way any development can be for all. 
-It is our hope that planners in all sectors of our nation life will avail themselves of the rare insights offered into Nigeri a’s population 
-structure by this publication and similar one s that have been produced under the 2006 Census Data Dissemination series in order to 
-make development planning more responsive. 
-The Commission is grateful to individuals, state and local governments as well as the development partners who all contributed to the 
-successful conduct of the 2006 Census. 
- 
-Chief Samu’ila Danko Makama, CON 
-Chairman 
-National Population Commission 
+== js https://census.statssa.gov.za/ [A-Z][A-Za-z]+/(list|get)[A-Za-z]* 400 0
+  HTTP 200 text/html 57,280 bytes
+  10 scripts; inline hits:
+  (no match)
+  -- https://www.googletagmanager.com/gtag/js?id=G-LM1F2DPCMY HTTP 200 535,366 bytes
+  (no match)
+  -- https://census.statssa.gov.za/assets/js/code.jquery.com_jquery-3.7.0.min.js HTTP 200 87,462 bytes
+  (no match)
+  -- https://census.statssa.gov.za/assets/js/popper.min.js HTTP 200 19,188 bytes
+  (no match)
+  -- https://census.statssa.gov.za/assets/js/bootstrap@4.0.0_dist_js_bootstrap.min.js HTTP 200 48,944 bytes
+  (no match)
+  -- https://census.statssa.gov.za/assets/js/bootstrap.bundle.min.js HTTP 200 80,420 bytes
+  (no match)
+  -- https://maps.googleapis.com/maps/api/js HTTP 200 320,678 bytes
+  (no match)
+  -- https://census.statssa.gov.za/runtime.086133a9b001a2eb.js HTTP 200 1,265 bytes
+  (no match)
+  -- https://census.statssa.gov.za/polyfills.966f32341c832d01.js HTTP 200 34,706 bytes
+  (no match)
+  -- https://census.statssa.gov.za/scripts.f139441cd30c00b8.js HTTP 200 278,199 bytes
+  (no match)
+  -- https://census.statssa.gov.za/main.c3756bb39a090c83.js HTTP 200 19,172,187 bytes
+  ~ TimeSerieses/getAll
+  ~ TimeSerieses/getCurrent
+  ~ GeoLevels/getAll
+  ~ Provinces/getById
+  ~ Provinces/getAll
+  ~ Districts/getAll
+  ~ Districts/getById
+  ~ Districts/listByProvince
+  ~ Municipalities/getAll
+  ~ Municipalities/getById
+  ~ Municipalities/listByProvince
+  ~ Municipalities/listByDistrict
+  ~ MainPlaces/getAll
+  ~ MainPlaces/getById
+  ~ MainPlaces/listByMunicipality
+  ~ DsPopulationGroups/listDsByParams
+  ~ DsPopulationGroups/getDsPopulationGroupsReport
+  ~ DsAgeGroups/listDsByParams
+  ~ DsAgeGroups/getDsAgeGroupsReport
+  ~ DsLanguages/listDsByParams
+  ~ DsLanguages/getDsLanguagesReport
+  ~ DsMaritalStatuses/listDsByParams
+  ~ DsMaritalStatuses/getDsMaritalStatusesReport
+  ~ DsHighestLevelEducations/listDsByParams
+  ~ DsHighestLevelEducations/getDsHighestLevelEducationsReport
+  ~ DsSexes/listDsByParams
+  ~ DsSexes/getDsSexesReport
+  ~ DsSingleAges/listDsByParams
+  ~ DsSingleAges/getDsSingleAgesReport
+  ~ DsMains/listDsByParams
+  ~ DsAccessToInternets/getAll
+  ~ DsAccessToInternets/getDsAccessToInternetsReport
+  ~ DsTenureStatuses/listDsByParams
+  ~ DsTenureStatuses/getDsTenureStatusesReport
+  ~ DsMainSourceOfWaters/listDsByParams
+  ~ DsMainSourceOfWaters/getDsMainSourceOfWatersReport
+  ~ DsAccessToPipedWaters/getAll
+  ~ DsAccessToPipedWaters/getDsAccessToPipedWatersReport
+  ~ DsMainToiletFacilitys/listDsByParams
+  ~ DsMainToiletFacilitys/getDsMainToiletFacilitysReport
+  ~ DsRefuseDisposals/listDsByParams
+  ~ DsRefuseDisposals/getDsRefuseDisposalsReport
+  ~ DsIncomeCategories/listDsByParams
+  ~ DsIncomeCategories/getDsIncomeCategoriesReport
+  ~ DsAgriculturalActivities/listDsByParams
+  ~ DsAgriculturalActivities/getDsAgriculturalActivitiesReport
+  ~ Rankings/getAll
+  ~ Rankings/listRelatedplaces
+  ~ Rankings/listRelatedplacesNational
+  ~ Rankings/listKeyStatistics
+  ~ Rankings/listRelatedplacesByProvince
+  ~ KeyIndicators/getAll
+  ~ KeyIndicators/listKeyIndicators
+  ~ DsEnergyForCookings/getAll
+  ~ DsEnergyForCookings/getDsEnergyForCookingsReport
+  ~ DsEnergyForLightings/getAll
+  ~ DsEnergyForLightings/getDsEnergyForLightingsReport
+  ~ DsHouseholdGoods/listDsByParams
+  ~ DsHouseholdGoods/getDsHouseholdGoodsReport
+  ~ DsSchoolAttendences/listDsByParams
+  ~ DsSchoolAttendences/getDsSchoolAttendencesReport
+  ~ DsTypeOfMainDwellings/getAll
+  ~ DsTypeOfMainDwellings/getDsTypeOfMainDwellingsReport
+  ~ Themes/getAll
+  ~ Sliders/getall
+  ~ sliders/getByTimeseries
+  ~ Products/getByTimeseries
+== json https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/KeyIndicators/listKeyIndicators/1/5/DC44 4000
+  HTTP 200 application/json; charset=utf-8 1,066 bytes
+[
+ {
+  "rankingId": 1,
+  "rankingDesc": "Total population",
+  "displayPercentage": false,
+  "valueCurrent": 936462,
+  "displayValue": "936 462",
+  "valuePrevious": 801344,
+  "displayValuePrevious": "801 344"
+ },
+ {
+  "rankingId": 2,
+  "rankingDesc": "Male",
+  "displayPercentage": true,
+  "valueCurrent": 46.9,
+  "displayValue": "46,9%",
+  "valuePrevious": 46.0,
+  "displayValuePrevious": "46,0%"
+ },
+ {
+  "rankingId": 3,
+  "rankingDesc": "Female",
+  "displayPercentage": true,
+  "valueCurrent": 53.1,
+  "displayValue": "53,1%",
+  "valuePrevious": 54.0,
+  "displayValuePrevious": "54,0%"
+ },
+ {
+  "rankingId": 4,
+  "rankingDesc": "Educational institution attendance (5-24 years)",
+  "displayPercentage": true,
+  "valueCurrent": 80.3,
+  "displayValue": "80,3%",
+  "valuePrevious": 81.1,
+  "displayValuePrevious": "81,1%"
+ },
+ {
+  "rankingId": 5,
+  "rankingDesc": "Households in formal dwellings",
+  "displayPercentage": true,
+  "valueCurrent": 70.7,
+  "displayValue": "70,7%",
+  "valuePrevious": 41.0,
+  "displayValuePrevious": "41,0%"
+ },
+ {
+  "rankingId": 6,
+  "rankingDesc": "Access to piped water in the dwelling",
+  "displayPercentage": true,
+  "valueCurrent": 22.1,
+  "displayValue": "22,1%",
+  "valuePrevious": 5.8,
+  "displayValuePrevious": "5,8%"
+ }
+]
+== json https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/swagger/v1/swagger.json 30000
+  HTTP 404 ? 0 bytes
   
-iii 
- 
-Notes 
- 
-This section provides information on the arrangement of this publication and explanation of some concepts used. 
-This volume presents data on the population distribution by age and sex canvassed in the 2006 Census.  It 
-contains tables on the Distribution of Population by Age and Sex for all  36 states and the FCT arranged in 
-alphabetical order.  Under each state, the corresponding tables for the Local Government Areas are presented. 
-Find below explanations of some of the concepts used in this publication: 
-Sex:  This is the gender of the respondents and it can either be male or female 
-Age:  This is calculated in completed year or age at last birthday. 
- 
-  
-iv 
- 
-Other Publications in the  
-Priority Table Series 
-Volume 
-No. Volume Title 
-I Priority Tables (Summary) 
-II Distribution of Households by Housing Characteristics and Amenities 
-III Distribution of Population by State and Sex 
-
-=== pages mentioning ['Ibadan', 'Atakunmosa', 'Emuoha'] (first 4) ===
-
---- page 10 ----------------------------------------------------
-viii
-Osun
-A BOLUWADURO, BORIPE, IFEDAYO, IFELODUN, ILA, IREPODUN, OBOKUN, ODO-OTIN, OLORUNDA, OROLU, OSOGBO,
-B ATAKUMOSA EAST, ATAKUMOSA WEST, IFE CENTRAL, IFE EAST, IFE NORTH, IFE SOUTH, ILESHA EAST, ILESHA WEST, ORIADE,
-C AIYEDADE, AIYEDIRE, EDE NORTH, EDE SOUTH, EGBEDORE, EJIGBO, IREWOLE, ISOKAN, IWO, OLA-OLUWA,
-Oyo
-A AFIJIO, AKINYELE, ATIBA, EGBEDA, LAGELU, OGO OLUWA, OLUYOLE, ONA-ARA, OYO EAST, OYO WEST, SURULERE,
-B
-ATIGBO, IREPO, ISEYIN, ITESIWAJU, IWAJOWA, KAJOLA,
-OGBOMOSHO NORTH, OGBOMOSHO SOUTH, OLORUNSOGO,
-ORELOPE, ORI IRE, SAKI EAST, SAKI WEST,
-C
-IBADAN CENTRAL [IBADAN NORTH EAST], IBADAN NORTH,
-IBADAN NORTH WEST, IBADAN SOUTH EAST, IBADAN SOUTH
-WEST, IBARAPA CENTRAL, IBARAPA EAST, IBARAPA NORTH, IDO,
-S
-o
-u
-t
-h
-E
-a
-s
-t
-Abia
-A AROCHUKWU, BENDE, ISIUKWUATO, OHAFIA, UMU-NNEOCHI,
-B IKWUANO, ISIALA-NGWA NORTH, ISIALA-NGWA SOUTH, OSISIOMA NGWA, UMUAHIA NORTH, UMUAHIA SOUTH,
-C ABA NORTH, ABA SOUTH, OBI NGWA, UGWUNAGBO, UKWA EAST, UKWA WEST,
-Anambra
-A ANAMBRA EAST, ANAMBRA WEST, AYAMELUM, OGBARU, ONITSHA NORTH, ONITSHA SOUTH, OYI,
-B ANAOCHA, AWKA NORTH, AWKA SOUTH, DUNUKOFIA, IDEMILI NORTH, IDEMILI SOUTH, NJIKOKA,
-C AGUATA, EKWUSIGO, IHIALA, NNEWI NORTH, NNEWI SOUTH, ORUMBA NORTH, ORUMBA SOUTH,
-Ebonyi
-A ABAKALIKI, EBONYI, IZZI, OHAUKWU,
-B EZZA NORTH, EZZA SOUTH, IKWO, ISHIELU,
-C AFIKPO NORTH, AFIKPO SOUTH, IVO, OHAOZARA, ONICHA,
-Enugu
-A ENUGU EAST, ENUGU NORTH, ENUGU SOUTH, ISI-UZO, NKANU EAST, NKANU WEST,
-B ANINRI, AWGU, EZEAGU, OJI-RIVER, UDI,
-C IGBO-ETITI, IGBO-EZE NORTH, IGBO-EZE SOUTH, NSUKKA, UDENU, UZO-UWANI,
-Imo
-A
-ABOH-MBAISE, AHIAZU-MBAISE, EZINIHITTE, IKEDURU,
-MBAITOLI, NGOR-OKPALA, OWERRI NORTH, OWERRI WEST,
-OWERRI-MUNICIPAL,
-B IDEATO NORTH, IDEATO SOUTH, ISU, NJABA, NKWERRE, NWANGELE, OGUTA, OHAJI/EGBEMA, ORLU, ORSU, ORU EAST,
-ORU WEST,
-C EHIME-MBANO, IHITTE/UBOMA, ISIALA MBANO, OBOWO, OKIGWE, UNUIMO,
-S
-o
-u
-t
-h
-S
-o
-u
-t
-h
-Akwa Ibom
-A ETINAN, IBESIKPO ASUTAN, IBIONO IBOM, ITU, NSIT ATAI, NSIT IBOM, NSIT UBIUM, URUAN, UYO,
-B ABAK, ESSIEN UDIM, ETIM EKPO, IKA, IKONO, IKOT EKPENE, INI, OBOT AKARA, ORUK ANAM, UKANAFUN,
-C
-EASTERN OBOLO, EKET, ESIT-EKET, IBENO, IKOT ABASI, MBO,
-MKPAT ENIN, OKOBO, ONNA, ORON, UDUNG UKO, URUE-
-OFFONG/ORUKO,
-Bayelsa
-A BRASS, NEMBE, OGBIA,
-B KOLOKUMA/OPOKUMA, SOUTHERN IJAW, YENEGOA,
-C EKEREMOR, SAGBAMA,
-Cross River
-A BEKWARA, OBANLIKU, OBUDU, OGOJA, YALA,
-B ABI, BOKI, ETUNG, IKOM, OBUBRA, YAKURR,
-C AKAMKPA, AKPABUYO, BAKASSI, BIASE, CALABAR-MUNICIPAL, CALABAR SOUTH, ODUKPANI,
-Delta
-A ETHIOPE EAST, ETHIOPE WEST, OKPE, SA
-
---- page 304 ----------------------------------------------------
-Table DS5:  Population by Five Year Age Groups and Sex                                                 294
-Table DS5: Distribution of Population by Five
-Year Age Groups and Sex
-Age
-Groups
-Sex
--
--
-Total Males Females
-IBADAN CENTRAL [IBADAN NORTH EAST]
-TOTAL 331,444 163,844 167,600
-0 - 4 44,089 22,396 21,693
-5 - 9 41,584 21,334 20,250
-10 - 14 37,199 18,984 18,215
-15 - 19 33,857 17,031 16,826
-20 - 24 33,564 15,958 17,606
-25 - 29 32,029 14,642 17,387
-30 - 34 24,296 11,354 12,942
-35 - 39 18,724 8,999 9,725
-40 - 44 15,934 7,900 8,034
-45 - 49 12,390 6,412 5,978
-50 - 54 10,928 5,340 5,588
-55 - 59 6,200 3,303 2,897
-60 - 64 7,171 3,463 3,708
-65 - 69 3,952 2,067 1,885
-70 - 74 3,736 1,945 1,791
-75 - 79 1,901 968 933
-80 - 84 1,970 862 1,108
-85+ 1,920 886 1,034
-Table DS5: Distribution of Population by Five
-Year Age Groups and Sex
-Age
-Groups
-Sex
--
--
-Total Males Females
-IBADAN NORTH
-TOTAL 308,119 152,608 155,511
-0 - 4 38,779 19,647 19,132
-5 - 9 35,346 17,709 17,637
-10 - 14 31,529 15,455 16,074
-15 - 19 29,041 13,981 15,060
-20 - 24 34,131 16,394 17,737
-25 - 29 33,862 16,403 17,459
-30 - 34 24,043 12,019 12,024
-35 - 39 18,356 9,222 9,134
-40 - 44 15,034 7,563 7,471
-45 - 49 11,894 6,295 5,599
-50 - 54 10,815 5,319 5,496
-55 - 59 6,765 3,678 3,087
-60 - 64 6,525 3,182 3,343
-65 - 69 3,839 2,020 1,819
-70 - 74 3,256 1,600 1,656
-75 - 79 1,641 800 841
-80 - 84 1,671 687 984
-85+ 1,592 634 958
-Table DS5: Distribution of Population by Five
-Year Age Groups and Sex
-Age
-Groups
-Sex
--
--
-Total Males Females
-IBADAN NORTH WEST
-TOTAL 154,029 75,410 78,619
-0 - 4 19,530 9,883 9,647
-5 - 9 18,165 9,045 9,120
-10 - 14 16,182 8,063 8,119
-15 - 19 15,269 7,401 7,868
-20 - 24 16,269 7,755 8,514
-25 - 29 15,251 7,295 7,956
-30 - 34 11,472 5,488 5,984
-35 - 39 8,989 4,400 4,589
-40 - 44 7,503 3,735 3,768
-45 - 49 6,015 3,085 2,930
-50 - 54 5,517 2,615 2,902
-55 - 59 3,396 1,825 1,571
-60 - 64 3,580 1,637 1,943
-65 - 69 2,060 1,049 1,011
-70 - 74 1,889 893 996
-75 - 79 999 488 511
-80 - 84 1,013 398 615
-85+ 930 355 575
-
---- page 305 ----------------------------------------------------
-Table DS5:  Population by Five Year Age Groups and Sex                                                 295
-Table DS5: Distribution of Population by Five
-Year Age Groups and Sex
-Age
-Groups
-Sex
--
--
-Total Males Females
-IBADAN SOUTH EAST
-TOTAL 266,457 130,334 136,123
-0 - 4 39,389 19,842 19,547
-5 - 9 34,543 17,592 16,951
-10 - 14 29,300 14,756 14,544
-15 - 19 24,474 12,319 12,155
-20 - 24 23,886 11,044 12,842
-25 - 29 25,339 11,073 14,266
-30 - 34 21,074 9,913 11,161
-35 - 39 16,138 7,939 8,199
-40 - 44 12,816 6,497 6,319
-45 - 49 9,494 5,015 4,479
-50 - 54 8,322 3,963 4,359
-55 - 59 4,886 2,577 2,309
-60 - 64 5,975 2,706 3,269
-65 - 69 3,269 1,651 1,618
-70 - 74 2,949 1,448 1,501
-75 - 79 1,453 691 762
-80 - 84 1,618 664 954
-85+ 1,532 644 888
-Table DS5: Distribution of Population by Five
-Year Age Groups and Sex
-Age
-Groups
-Sex
--
--
-Total Males Females
-IBADAN SOUTH WEST
-TOTAL 283,098 139,622 143,476
-0 - 4 34,323 17,311 17,012
-5 - 9 32,171 16,222 15,949
-10 - 14 29,637 14,537 15,100
-15 - 19 27,150 13,431 13,719
-20 - 24 28,801 14,034 14,767
-25 - 29 28,099 13,383 14,716
-30 - 34 21,903 10,649 11,254
-35 - 39 17,880 8,906 8,974
-40 - 44 14,734 7,597 7,137
-45 - 49 11,520 5,951 5,569
-50 - 54 10,076 4,813 5,263
-55 - 59 6,581 3,419 3,162
-60 - 64 6,699 3,063 3,636
-65 - 69 4,136 2,096 2,040
-70 - 74 3,610 1,736 1,874
-75 - 79 2,036 1,040 996
-80 - 84 1,904 724 1,180
-85+ 1,838 710 1,128
-Table DS5: Distribution of Population by Five
-Year Age Groups and Sex
-Age
-Groups
-Sex
--
--
-Total Males Females
-IBARAPA CENTRAL
-TOTAL 103,243 52,094 51,149
-0 - 4 12,245 6,267 5,978
-5 - 9 13,403 7,008 6,395
-10 - 14 12,129 6,332 5,797
-15 - 19 11,787 6,062 5,725
-20 - 24 10,179 4,990 5,189
-25 - 29 8,884 4,056 4,828
-30 - 34 6,813 3,047 3,766
-35 - 39 5,818 2,610 3,208
-40 - 44 5,295 2,738 2,557
-45 - 49 4,282 2,237 2,045
-50 - 54 3,580 1,983 1,597
-55 - 59 2,086 1,025 1,061
-60 - 64 2,234 1,275 959
-65 - 69 1,290 698 592
-70 - 74 1,228 678 550
-75 - 79 636 311 325
-80 - 84 657 349 308
-85+ 697 428 269
