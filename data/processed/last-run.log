@@ -1,8 +1,51 @@
-  Ali-Sabieh: 76,414, its parts making it
-  Arta: 48,922, its parts making it
-  Dikhil: 66,196, its parts making it
-  Djibouti: 767,250, its parts making it
-  Obock: 47,382, its parts making it
-  Tadjourah: 60,645, its parts making it
-  wrote data/processed/djibouti_census.json (30 kB)
-  6 regions and 11 second-level units written
+  read https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf: 15,016,674 bytes, sha256 6f41eee70eefd764efaea876e0b13546666a69c5b91c1f50e5d9b38c3f78d1b9
+  31 regions and 195 councils, making 61,741,120
+  read https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf: 32,333,406 bytes, sha256 849a2d3627c90572d497b3f9ea54698597799c1d1ab36f6eb50788731c1d637c
+  age tables: 30 regions and 194 councils, each one's single years and sexes making its total
+  age table left out: Dodoma Region: 81 single years read, total None
+  age table left out: Bariadi District Council: single years make 1,077,615 and sexes 383,385, against 383,385
+  no age table for Dodoma Region
+  no age table for Bariadi District Council
+  Dodoma Region: ages from its 8 councils' tables added up
+  Kahama: left out -- Kahama's councils were redrawn as Kahama, Ushetu and Msalala in 2012-2018
+  Kahama Township Authority: left out -- see Kahama
+  Mlele: left out -- see Mpanda
+  Mpanda: left out -- Katavi's districts were split into Mpanda, Nsimbo, Tanganyika and Mpimbwe
+  Mpanda Urban: left out -- see Mpanda
+  Chunya: outline checked by area (17,505 km2); no ratio test
+  Songwe: outline checked by area (16,070 km2); no ratio test
+  against the region's ratio: Iramba 0.68, Buhigwe 0.71, Lindi 0.73, Kigoma Urban 0.76, Kaskazini B 0.80, Momba 0.82, Mafia 0.83, Sumbawanga 0.85, Lushoto 0.85, Chato 0.85, Karagwe 0.86, Bagamoyo 0.86, Bukoba Urban 0.86, Gairo 0.86, Kondoa 0.87, Ukerewe 0.87, Micheweni 0.87, Ileje 0.87, Babati 0.88, Urambo 0.88, Mufindi 0.89, Butiam 0.89, Biharamulo 0.89, Nyang'hwale 0.89, Karatu 0.89, Songea Urban 0.90, Uvinza 0.90, Meatu 0.90, Mbulu 0.90, Mbozi 0.90, Iringa Urban 0.91, Kibaha Urban 0.91, Mpwapwa 0.91, Kwimba 0.91, Kibaha 0.91, Mjini 0.91, Longido 0.91, Uyui 0.92, Newala 0.92, Ludewa 0.92, Bunda 0.92, Serengeti 0.92, Musoma Urban 0.93, Korogwe 0.93, Same 0.93, Monduli 0.93, Wanging'ombe 0.94, Nyasa 0.94, Kishapu 0.94, Singida 0.95, Mbinga 0.95, Kongwa 0.95, Kiteto 0.96, Sengerema 0.96, Kyela 0.96, Sumbawanga Urban 0.96, Chamwino 0.96, Chemba 0.96, Kisarawe 0.96, Chake Chake 0.97, Maswa 0.97, Bahi 0.97, Hai 0.97, Mvomero 0.97, Kaliua 0.97, Temeke 0.97, Kusini 0.97, Kigoma 0.98, Geita 0.98, Siha 0.98, Morogoro Urban 0.98, Nachingwea 0.98, Handeni Mji 0.98, Kilosa 0.99, Mtwara 0.99, Itilima 0.99, Meru 0.99, Mkinga 0.99, Rungwe 0.99, Kilolo 0.99, Handeni 0.99, Misungwi 0.99, Igunga 0.99, Muleba 1.00, Masasi 1.00, Rufiji 1.00, Kilombero 1.00, Kinondoni 1.00, Muheza 1.00, Rombo 1.01, Mbeya 1.01, Kati 1.01, Arusha 1.01, Mwanga 1.01, Masasi Township Authority 1.01, Tandahimba 1.02, Rorya 1.02, Makete 1.02, Hanang 1.02, Liwale 1.02, Busega 1.02, Ilala 1.03, Shinyanga Urban 1.03, Magharibi 1.03, Nzega 1.03, Korogwe Township Authority 1.03, Shinyanga 1.03, Kasulu Township Authority 1.04, Mbeya Urban 1.04, Mkoani 1.04, Moshi 1.04, Nkasi 1.04, Nanyumbu 1.04, Nyamagana 1.04, Moshi Urban 1.04, Tunduru 1.05, Kyerwa 1.05, Morogoro 1.05, Makambako Township Authority 1.05, Bukoba 1.05, Missenyi 1.05, Njombe 1.05, Iringa 1.05, Ikungi 1.06, Namtumbo 1.06, Lindi Urban 1.06, Tabora Urban 1.06, Kilindi 1.07, Arusha Urban 1.07, Njombe Urban 1.07, Manyoni 1.08, Musoma 1.08, Ruangwa 1.08, Mtwara Urban 1.08, Bariadi 1.09, Ngorongoro 1.10, Kibondo 1.12, Magu 1.13, Pangani 1.13, Singida Urban 1.13, Ulanga 1.14, Wete 1.14, Kilwa 1.14, Songea 1.16, Mbarali 1.17, Ilemela 1.18, Kaskazini A 1.19, Kakonko 1.19, Tarime 1.20, Dodoma Urban 1.26, Tanga Urban 1.26, Bukombe 1.26, Mbogwe 1.26, Sikonge 1.27, Babati Urban 1.27, Simanjiro 1.32, Tunduma 1.35, Kalambo 1.35, Ngara 1.35, Mkuranga 1.37, Kasulu 1.38, Mkalama 1.48, Mafinga Township Authority 1.57
+  ['Mafinga Township Authority', 'Mufindi']: drawn from one district, at 0.89 and 1.57 of their region's ratio; not written
+  ['Babati', 'Babati Urban']: drawn from one district, at 0.88 and 1.27 of their region's ratio; not written
+  ['Mbozi', 'Momba', 'Tunduma']: drawn from one district, at 0.82 and 1.35 of their region's ratio; not written
+  ['Lindi', 'Lindi Urban']: drawn from one district, at 0.73 and 1.06 of their region's ratio; not written
+  ['Iramba', 'Mkalama']: drawn from one district, at 0.68 and 1.48 of their region's ratio; not written
+  ['Buhigwe', 'Kasulu', 'Kasulu Township Authority']: drawn from one district, at 0.71 and 1.38 of their region's ratio; not written
+  ['Kalambo', 'Sumbawanga', 'Sumbawanga Urban']: drawn from one district, at 0.85 and 1.35 of their region's ratio; not written
+  ['Kaskazini A', 'Kaskazini B']: drawn from one district, at 0.80 and 1.19 of their region's ratio; not written
+  Babati: 375,200 against OCHA's 435066, 0.88 of its region's ratio; not written
+  Babati Urban: 129,572 against OCHA's 103789, 1.27 of its region's ratio; not written
+  Buhigwe: 240,005 against OCHA's 337504, 0.71 of its region's ratio; not written
+  Iramba: 328,912 against OCHA's 433723, 0.68 of its region's ratio; not written
+  Kalambo: 316,783 against OCHA's 215192, 1.35 of its region's ratio; not written
+  Kaskazini A: 157,369 against OCHA's 128663, 1.19 of its region's ratio; not written
+  Kaskazini B: 99,921 against OCHA's 121062, 0.80 of its region's ratio; not written
+  Kasulu: 537,767 against OCHA's 391170, 1.38 of its region's ratio; not written
+  Kasulu Township Authority: 238,321 against OCHA's 230686, 1.04 of its region's ratio; not written
+  Lindi: 166,493 against OCHA's 189871, 0.73 of its region's ratio; not written
+  Lindi Urban: 174,126 against OCHA's 137397, 1.06 of its region's ratio; not written
+  Mafinga Township Authority: 122,329 against OCHA's 70282, 1.57 of its region's ratio; not written
+  Mbozi: 510,599 against OCHA's 572168, 0.90 of its region's ratio; not written
+  Mkalama: 255,514 against OCHA's 156340, 1.48 of its region's ratio; not written
+  Momba: 259,781 against OCHA's 320763, 0.82 of its region's ratio; not written
+  Mufindi: 288,996 against OCHA's 293544, 0.89 of its region's ratio; not written
+  Sumbawanga: 494,330 against OCHA's 532432, 0.85 of its region's ratio; not written
+  Sumbawanga Urban: 303,986 against OCHA's 290863, 0.96 of its region's ratio; not written
+  Tunduma: 219,309 against OCHA's 164868, 1.35 of its region's ratio; not written
+  councils not placed: ['Kahama Municipal Council', 'Mlele District Council', 'Mpanda Municipal Council', 'Mpimbwe District Council', 'Msalala District Council', 'Nsimbo District Council', 'Tanganyika District Council', 'Ushetu District Council']
+  Dar es Salaam: 5,383,728
+  Ilala: 1,649,912
+  Kinondoni: 2,069,240
+  Temeke: 1,664,576
+  30 of 30 regions and 146 of 170 districts written
+  wrote data/processed/tanzania_census.json (422 kB)
