@@ -1,7 +1,8 @@
 """Seychelles' 2022 census by district, from the National Bureau of
-Statistics' report, Tables 2.4, B3.1a and B4.1 (scripts/fetch_census/seychelles_census)."""
+Statistics' report, Tables 2.4, A2.1, A2.2, B3.1a and B4.1 (scripts/fetch_census/seychelles_census)."""
 
 import unittest
+from unittest import mock
 
 from scripts.fetch_census import seychelles_census as sc
 
@@ -159,6 +160,328 @@ Remire 4 - - - 4 - - - -
 94"""
 
 
+# Tables A2.1 and A2.2 (pp. 89-90, printed rotated) as the text layer gives them: a line's name a word
+# or two a line, then its 22 figures one a line, bottom up; four of their lines and the title.
+AGES_BOTH = """Outer
+Islands
+988
+2
+1
+-
+-
+29
+228
+162
+175
+145
+109
+76
+39
+16
+6
+-
+-
+-
+-
+-
+-
+-
+La
+Digue
+3,133
+36
+174
+195
+195
+156
+164
+259
+290
+315
+272
+256
+234
+199
+143
+82
+52
+42
+37
+25
+5
+2
+La
+Digue &
+Inner
+Islands
+3,624
+39
+176
+199
+196
+160
+192
+322
+383
+397
+348
+318
+269
+225
+152
+83
+52
+42
+39
+25
+5
+2
+Cascade
+6,659
+66
+234
+292
+291
+288
+469
+764
+865
+891
+748
+529
+414
+288
+190
+132
+79
+56
+37
+17
+5
+4
+(Both
+Sexes)
+102,612
+1,213
+5,185
+6,655
+6,521
+5,981
+6,517
+8,746
+9,606
+9,474
+8,777
+7,476
+6,713
+6,050
+4,883
+3,330
+2,150
+1,409
+1,010
+587
+254
+75
+Region/District
+Total
+Less
+than
+1
+Year
+01-04
+05-09
+10-14
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70-74
+75-79
+80-84
+85-89
+90-94
+95+
+Table
+A2.1:
+Population
+of
+Seychelles
+by
+age
+group,
+region/district
+(Both
+sexes),
+2022"""
+AGES_MEN = """Outer
+Islands
+923
+1
+1
+-
+-
+27
+219
+153
+152
+134
+105
+75
+36
+15
+5
+-
+-
+-
+-
+-
+-
+-
+La
+Digue
+1,766
+17
+84
+98
+102
+80
+98
+159
+194
+196
+176
+146
+127
+103
+77
+40
+22
+24
+15
+8
+-
+-
+La
+Digue &
+Inner
+Islands
+2,172
+19
+85
+100
+102
+83
+117
+210
+276
+266
+242
+197
+158
+124
+84
+40
+22
+24
+15
+8
+-
+-
+Cascade
+4,751
+34
+115
+132
+137
+166
+357
+623
+725
+754
+611
+389
+293
+170
+105
+55
+42
+28
+13
+1
+1
+-
+(Male)
+56,226
+621
+2,643
+3,420
+3,208
+3,088
+3,786
+5,272
+6,009
+6,023
+5,221
+4,198
+3,519
+2,977
+2,417
+1,635
+1,026
+607
+329
+155
+60
+12
+Region/District
+Total
+Less
+than
+1
+Year
+01-04
+05-09
+10-14
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70-74
+75-79
+80-84
+85-89
+90-94
+95+
+Table
+A2.2:
+Population
+of
+Seychelles
+by
+age
+group,
+region/district,
+(Male),
+2022"""
+# Table 2.4's men and women for the same three districts.
+TABLE24 = {"cascade": (6_659, 4_751), "ladigueandinnerislands": (3_537, 2_095),
+           "outerislands": (1_075, 1_000)}
+
 class SeychellesCensusTest(unittest.TestCase):
     def test_the_tables_add_up(self):
         table = sc.parse(TEXT)
@@ -182,6 +505,73 @@ class SeychellesCensusTest(unittest.TestCase):
         table = {k: v for k, v in sc.parse(TEXT).items() if k in ("anseboileau", "cascade")}
         with self.assertRaises(SystemExit):
             sc.build(table, [{"id": "a", "name": "Anse Boile"}])
+
+
+    def small(self):
+        """The full tables cut to three districts, with the country patched to match."""
+        table = {k: v for k, v in sc.parse(TEXT).items() if k in TABLE24}
+        for k, (total, men) in TABLE24.items():
+            self.assertEqual((table[k]["total"], table[k]["men"]), (total, men))
+        return table
+
+    def test_the_rotated_age_tables(self):
+        rows = sc.age_rows(AGES_BOTH)
+        self.assertEqual(rows["ladigue"][0][0], 3_133)
+        self.assertEqual(rows["ladigueandinnerislands"][0][0], 3_624)
+        self.assertEqual(len(rows["cascade"][0]), 22)
+        table = self.small()
+        with mock.patch.object(sc, "DISTRICTS", ("Cascade", "La Digue and Inner Islands",
+                                                 "Outer Islands")), \
+                mock.patch.object(sc, "NATIONAL", 6_659 + 3_624 + 988), \
+                mock.patch.object(sc, "NATIONAL_MEN", 4_751 + 2_172 + 923):
+            age = sc.ages(AGES_BOTH, AGES_MEN, table)
+        # Table A2.1 places 87 islanders (77 men) in La Digue and Inner Islands
+        # that Table 2.4 counts in the Outer Islands.
+        self.assertEqual(age["ladigueandinnerislands"]["moved"], 87)
+        self.assertEqual(age["outerislands"]["moved"], -87)
+        self.assertEqual(age["cascade"]["moved"], 0)
+        self.assertEqual(sc.median(age["cascade"]["groups"]), 35.3)
+        self.assertEqual(age["ladigue"]["men"], 1_766)
+
+    def test_a_district_off_its_count_is_refused(self):
+        table = self.small()
+        table["cascade"] = {**table["cascade"], "total": 6_600}
+        with mock.patch.object(sc, "DISTRICTS", ("Cascade", "La Digue and Inner Islands",
+                                                 "Outer Islands")), \
+                mock.patch.object(sc, "NATIONAL", 6_659 + 3_624 + 988), \
+                mock.patch.object(sc, "NATIONAL_MEN", 4_751 + 2_172 + 923), \
+                self.assertRaises(SystemExit):
+            sc.ages(AGES_BOTH, AGES_MEN, table)
+
+    def test_the_second_level_polygons(self):
+        table = self.small()
+        with mock.patch.object(sc, "DISTRICTS", ("Cascade", "La Digue and Inner Islands",
+                                                 "Outer Islands")), \
+                mock.patch.object(sc, "NATIONAL", 6_659 + 3_624 + 988), \
+                mock.patch.object(sc, "NATIONAL_MEN", 4_751 + 2_172 + 923), \
+                mock.patch.object(sc, "GROUPS2", {"eastmahe": ("Cascade",)}):
+            age = sc.ages(AGES_BOTH, AGES_MEN, table)
+            recs = {r["shape_id"]: r for r in sc.build2(
+                table, age, sc.island_composition(TEXT),
+                [{"id": "e", "name": "East Mahe"}, {"id": "l", "name": "La Digue"},
+                 {"id": "o", "name": "Other Islands"}])}
+        self.assertEqual(recs["e"]["population"]["value"], 6_659)
+        self.assertEqual(recs["e"]["median_age"]["value"], 35.3)
+        self.assertEqual(recs["l"]["population"]["value"], 3_133)
+        self.assertEqual(recs["l"]["sex_ratio"]["value"], round(1000 * 1_766 / 1_367))
+        self.assertEqual(recs["l"]["religion"][0]["group"], "Catholic")
+        self.assertEqual(recs["o"]["population"]["value"], 3_624 + 988 - 3_133)
+        # The Outer Islands' fourth columns (Gujarati, Hindu) agree island by
+        # island: their language and religion are withheld, with the reason.
+        self.assertIn("coding error", recs["o"]["language"]["note"])
+        self.assertEqual(recs["o"]["religion"]["status"], "not_available")
+
+    def test_the_outer_islands_are_shown_once_the_columns_differ(self):
+        table = self.small()
+        self.assertIsNotNone(sc.garbled(table, "neither is"))
+        table["outerislands"] = {**table["outerislands"],
+                                 "religion": {**table["outerislands"]["religion"], "Hindu": 5}}
+        self.assertIsNone(sc.garbled(table, "neither is"))
 
 
 if __name__ == "__main__":
