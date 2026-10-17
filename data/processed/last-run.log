@@ -1,57 +1,179 @@
-  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/384b93cf-ede0-4e05-9f36-a8e8e09b21a7/download/kenya-population-by-sex-and-county.csv: 1,933 characters, sha256 fbd40719108ebf30b7dc821312e20fc0c75ba03cdc4003bf0b6328c3c6d8d0cf
-  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/b7edfdb4-2a07-4332-8796-2f00968aff0e/download/distribution-of-population-by-age-sex-county-and-sub-county-kenya-2019-census-volume-iii.csv: 1,662,176 characters, sha256 5a0261bd87543a08225dfa8bccb8ed67f43f4e4dedb8b5fcc61a53884f2291ea
-  Volume I: 47 counties making 47,564,296; Volume III: 47 counties and 345 sub-counties, every row checked
-  ages not read for KWALE, ALL: 101 single years making 866,790 against 866802; []
-  ages not read for KWALE, KINANGO: 96 single years making 78,119 against None; []
-  ages not read for KWALE, its sub-counties make 772,583, not 866,802: none of them is used
-  ages not read for NYERI, MUKURWEINI: 101 single years making 89,131 against 89131; ["age 5-9: ['15-Aug', '4467', '9078']", "age 10 -14: ['23-Jun', '4593', '9516']"]
-  ages not read for NYERI, MT. KENYA FOREST: 100 single years making 186 against 188; ['age 10: sexes make 1, not 2']
-  BARINGO: 6 constituencies, 7 sub-counties (['baringocentral', 'baringonorth', 'eastpokot', 'koibatek', 'marigat', 'mogotio', 'tiatyeast']); not written
-  BOMET: 6 constituencies, 5 sub-counties (['bometcentral', 'bometeast', 'chepalungu', 'konoin', 'sotik']); not written
-  BUNGOMA: 9 constituencies, 12 sub-counties (['bumula', 'bungomacentral', 'bungomaeast', 'bungomanorth', 'bungomasouth', 'bungomawest', 'cheptais', 'kimilili', 'mtelgon', 'mtelgonforest', 'tongaren', 'webuyewest']); not written
-  BUSIA: 7 constituencies, 7 sub-counties (['bunyala', 'busia', 'butula', 'nambale', 'samia', 'tesonorth', 'tesosouth']); not written
-  ELGEYO-MARAKWET: 4 constituencies are its sub-counties of the same names (454,468 of 454,468)
-  EMBU: 4 constituencies, 6 sub-counties (['embueast', 'embunorth', 'embuwest', 'mbeerenorth', 'mbeeresouth', 'mtkenyaforest']); not written
-  GARISSA: 6 constituencies, 7 sub-counties (['balambala', 'dadaab', 'fafi', 'garissa', 'hulugho', 'ijara', 'lagdera']); not written
-  HOMA BAY: 8 constituencies, 8 sub-counties (['homabay', 'ndhiwa', 'rachuonyoeast', 'rachuonyonorth', 'rachuonyosouth', 'rangwe', 'subanorth', 'subasouth']); not written
-  ISIOLO: 2 constituencies, 3 sub-counties (['garbatulla', 'isiolo', 'merti']); not written
-  KAJIADO: 5 constituencies, 6 sub-counties (['isinya', 'kajiadocentral', 'kajiadonorth', 'kajiadowest', 'loitokitok', 'mashuuru']); not written
-  KAKAMEGA: 12 constituencies, 13 sub-counties (['butere', 'kakamegacentral', 'kakamegaeast', 'kakameganorth', 'kakamegasouth', 'khwisero', 'likuyani', 'lugari', 'matete', 'matungu', 'mumiaseast', 'mumiaswest', 'navakholo']); not written
-  KERICHO: 5 constituencies, 6 sub-counties (['belgut', 'bureti', 'kerichoeast', 'kipkelion', 'londiani', 'soinsigowet']); not written
-  KIAMBU: 12 constituencies, 13 sub-counties (['gatundunorth', 'gatundusouth', 'githunguri', 'juja', 'kabete', 'kiambaa', 'kiambu', 'kikuyu', 'lari', 'limuru', 'ruiru', 'thikaeast', 'thikawest']); not written
-  KILIFI: 7 constituencies, 9 sub-counties (['chonyi', 'ganze', 'kaloleni', 'kauma', 'kilifinorth', 'kilifisouth', 'magarini', 'malindi', 'rabai']); not written
-  KIRINYAGA: 4 constituencies, 6 sub-counties (['kirinyagacentral', 'kirinyagaeast', 'kirinyagawest', 'mtkenyafore', 'mweaeast', 'mweawest']); not written
-  KISII: 9 constituencies, 11 sub-counties (['etago', 'gucha', 'guchasouth', 'kenyenya', 'kisiicentral', 'kisiisouth', 'kitutucentral', 'marani', 'masabasouth', 'nyamache', 'sameta']); not written
-  KISUMU: 7 constituencies are its sub-counties of the same names (1,155,551 of 1,155,551)
-  KITUI: 8 constituencies, 18 sub-counties (['ikutha', 'katulani', 'kisasi', 'kituicentral', 'kituiwest', 'kyuso', 'loweryatta', 'matinyani', 'migwani', 'mumoni', 'mutitu', 'mutitunorth', 'mutomo', 'mwingicentral', 'mwingieast', 'nzambani', 'thagicu', 'tseikuru']); not written
-  KWALE: its sub-county rows do not make it; not written
-  LAIKIPIA: 3 constituencies, 5 sub-counties (['laikipiacentral', 'laikipiaeast', 'laikipianorth', 'laikipiawest', 'nyahururu']); not written
-  LAMU: 2 constituencies are its sub-counties of the same names (143,916 of 143,916)
-  MACHAKOS: 8 constituencies, 9 sub-counties (['athiriver', 'kalama', 'kangundo', 'kathiani', 'machakos', 'masinga', 'matungulu', 'mwala', 'yatta']); not written
-  MAKUENI: 6 constituencies, 9 sub-counties (['kathonzweni', 'kibwezi', 'kilungu', 'makindu', 'makueni', 'mboonieast', 'mbooniwest', 'mukaa', 'nzaui']); not written
-  MANDERA: 6 constituencies, 7 sub-counties (['banisa', 'kotulo', 'lafey', 'manderacentral', 'manderaeast', 'manderanorth', 'manderawest']); not written
-  MARSABIT: 4 constituencies, 7 sub-counties (['loiyangalani', 'marsabitcentral', 'marsabitnorth', 'marsabitsouth', 'moyale', 'northhorr', 'sololo']); not written
-  MERU: 9 constituencies, 13 sub-counties (['buurieast', 'buuriwest', 'igembecentral', 'igembenorth', 'igembesouth', 'imentinorth', 'imentisouth', 'merucentral', 'merunationalpark', 'mtkenyaforest', 'tiganiacentral', 'tiganiaeast', 'tiganiawest']); not written
-  MIGORI: 8 constituencies are its sub-counties of the same names (1,116,401 of 1,116,401)
-  MOMBASA: 6 constituencies are its sub-counties of the same names (1,208,303 of 1,208,303)
-  MURANG'A: 7 constituencies, 9 sub-counties (['aberdareforest', 'gatanga', 'kahuro', 'kandara', 'kangema', 'kigumo', 'mathioya', 'murangaeast', 'murangasouth']); not written
-  NAIROBI: 17 constituencies, 11 sub-counties (['dagoretti', 'embakasi', 'kamukunji', 'kasarani', 'kibra', 'langata', 'makadara', 'mathare', 'njiru', 'starehe', 'westlands']); not written
-  NAKURU: 11 constituencies, 11 sub-counties (['gilgil', 'kuresoinorth', 'kuresoisouth', 'molo', 'naivasha', 'nakurueast', 'nakurunorth', 'nakuruwest', 'njoro', 'rongai', 'subukia']); not written
-  NANDI: 6 constituencies, 6 sub-counties (['chesumei', 'nandicentral', 'nandieast', 'nandinorth', 'nandisouth', 'tinderet']); not written
-  NAROK: 6 constituencies, 7 sub-counties (['mauforest', 'narokeast', 'naroknorth', 'naroksouth', 'narokwest', 'transmaraeast', 'transmarawest']); not written
-  NYAMIRA: 4 constituencies, 5 sub-counties (['borabu', 'manga', 'masabanorth', 'nyamiranorth', 'nyamirasouth']); not written
-  NYANDARUA: 5 constituencies, 8 sub-counties (['aberdarenationa', 'kinangop', 'kipipiri', 'mirangine', 'nyandaruacentra', 'nyandaruanorth', 'nyandaruasouth', 'nyandaruawest']); not written
-  NYERI: 6 constituencies, 10 sub-counties (['aberdareforest', 'kienieast', 'kieniwest', 'mathiraeast', 'mathirawest', 'mtkenyaforest', 'mukurweini', 'nyericentral', 'nyerisouth', 'tetu']); not written
-  SAMBURU: 3 constituencies, 3 sub-counties (['samburucentral', 'samburueast', 'samburunorth']); not written
-  SIAYA: 6 constituencies, 6 sub-counties (['bondo', 'gem', 'rarieda', 'siaya', 'ugenya', 'ugunja']); not written
-  TAITA/ TAVETA: 4 constituencies, 4 sub-counties (['mwatate', 'taita', 'taveta', 'voi']); not written
-  TANA RIVER: 3 constituencies, 3 sub-counties (['tanadelta', 'tananorth', 'tanariver']); not written
-  THARAKA-NITHI: 3 constituencies, 6 sub-counties (['igambangombe', 'maara', 'merusouth', 'mtkenyaforest', 'tharakanorth', 'tharakasouth']); not written
-  TRANS NZOIA: 5 constituencies, 5 sub-counties (['endebess', 'kiminini', 'kwanza', 'transnzoiaeast', 'transnzoiawest']); not written
-  TURKANA: 6 constituencies, 7 sub-counties (['kibish', 'loima', 'turkanacentral', 'turkanaeast', 'turkananorth', 'turkanasouth', 'turkanawest']); not written
-  UASIN GISHU: 6 constituencies are its sub-counties of the same names (1,163,158 of 1,163,158)
-  VIHIGA: 5 constituencies are its sub-counties of the same names (589,984 of 590,001)
-  WAJIR: 6 constituencies, 8 sub-counties (['buna', 'eldas', 'habaswein', 'tarbaj', 'wajireast', 'wajirnorth', 'wajirsouth', 'wajirwest']); not written
-  WEST POKOT: 4 constituencies, 5 sub-counties (['kipkomo', 'pokotcentral', 'pokotnorth', 'pokotsouth', 'westpokot']); not written
-  47 counties and 38 of 290 constituencies with figures
-  wrote data/processed/kenya_census.json (614 kB)
+  read https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx: 1,759,157 bytes, sha256 17fb2f59b82d6ab4490078427f6779ca1284250a1035a854d31e6bb109e9fdee
+  13 first-order areas and 93 zones, making 73,750,932, every row's groups and sexes making its total; listed without a count: ['OROMĪYA, FINFINNE ZURIA SPECIAL ZONE']
+  bahirdarspecialwereda: counted apart and placed in no polygon -- the city lies on the line between West Gojam and North Gonder
+  maokomospecialwereda: counted apart and placed in no polygon -- its land lies across the line between Asosa and West Wellega
+  zones of the workbook on no polygon: []
+  admin1 Addis Ababa: 2,739,551, median 24.0, sex ratio 910
+  admin1 Afar: 1,390,273, median 17.1, sex ratio 1260
+  admin1 Amhara: 17,221,976, median 18.0, sex ratio 1007
+  admin1 Beneshangul Gumu: 784,345, median 17.0, sex ratio 1034
+  admin1 Dire Dawa: 341,834, median 20.6, sex ratio 1006
+  admin1 Gambela: 307,096, median 18.2, sex ratio 1085
+  admin1 Hareri: 183,415, median 20.2, sex ratio 1013
+  admin1 Oromia: 26,993,933, median 16.0, sex ratio 1015
+  admin1 SNNPR: 14,929,548, median 15.9, sex ratio 990
+  admin1 Somali: 4,445,219, median 17.1, sex ratio 1253
+  admin1 Tigray: 4,316,988, median 17.7, sex ratio 971
+  admin2 Afder: 570,629, median 15.9, sex ratio 1330
+  admin2 Agnuak: 135,242, median 18.8, sex ratio 1032
+  admin2 Alaba: 232,325, median 16.7, sex ratio 1020
+  admin2 Arsi: 2,637,657, median 15.4, sex ratio 1007
+  admin2 Asosa: 310,822, median 17.5, sex ratio 1046
+  admin2 Awi/Agew: 982,942, median 17.0, sex ratio 1002
+  admin2 Bale: 1,402,492, median 15.2, sex ratio 1036
+  admin2 Basketo: 56,689, median 14.8, sex ratio 1013
+  admin2 Bench Maji: 652,531, median 15.6, sex ratio 982
+  admin2 Borena: 962,489, median 14.5, sex ratio 1024
+  admin2 Central: 1,245,824, median 17.6, sex ratio 971
+  admin2 Dawro: 489,577, median 14.3, sex ratio 1037
+  admin2 Dire Dawa: 341,834, median 20.6, sex ratio 1006
+  admin2 Doolo: 306,488, median 17.6, sex ratio 1342
+  admin2 East Gojam: 2,153,937, median 17.8, sex ratio 981
+  admin2 East Harerge: 2,723,850, median 15.4, sex ratio 1032
+  admin2 East Shewa: 1,576,554, median 18.8, sex ratio 1044
+  admin2 East Wellega: 1,213,503, median 16.9, sex ratio 999
+  admin2 Eastern: 755,343, median 17.2, sex ratio 909
+  admin2 Fafan: 967,652, median 17.8, sex ratio 1193
+  admin2 Gamo Gofa: 1,593,104, median 16.4, sex ratio 992
+  admin2 Gedio: 847,434, median 15.0, sex ratio 1005
+  admin2 Guji: 1,389,800, median 13.8, sex ratio 1022
+  admin2 Gurage: 1,279,646, median 17.7, sex ratio 946
+  admin2 Hadiya: 1,231,196, median 16.7, sex ratio 988
+  admin2 Hareri: 183,415, median 20.2, sex ratio 1013
+  admin2 Horo Guduru: 570,040, median 16.5, sex ratio 1003
+  admin2 Ilubabor: 1,271,609, median 16.4, sex ratio 1004
+  admin2 Jarar: 478,168, median 18.3, sex ratio 1275
+  admin2 Jimma: 2,607,115, median 16.7, sex ratio 1012
+  admin2 KT: 680,837, median 16.6, sex ratio 978
+  admin2 Keffa: 874,716, median 15.6, sex ratio 975
+  admin2 Kelem Wellega: 797,666, median 16.7, sex ratio 1016
+  admin2 Kemashi: 101,543, median 16.7, sex ratio 1061
+  admin2 Konta: 90,846, median 15.2, sex ratio 968
+  admin2 Korahe: 312,713, median 18.8, sex ratio 1320
+  admin2 Liben: 539,821, median 14.2, sex ratio 1226
+  admin2 Majang: 59,248, median 19.1, sex ratio 1066
+  admin2 Metekel: 321,919, median 16.9, sex ratio 1018
+  admin2 Nogob: 348,409, median 17.9, sex ratio 1295
+  admin2 North Gonder: 2,929,628, median 17.5, sex ratio 1029
+  admin2 North Shewa(R3): 1,837,490, median 18.8, sex ratio 1022
+  admin2 North Shewa(R4): 1,431,305, median 17.6, sex ratio 1005
+  admin2 North Western: 736,805, median 17.5, sex ratio 999
+  admin2 North Wollo: 1,500,303, median 18.7, sex ratio 1007
+  admin2 Nuer: 112,606, median 17.1, sex ratio 1163
+  admin2 Oromia: 457,278, median 17.7, sex ratio 989
+  admin2 Region 14: 2,739,551, median 24.0, sex ratio 910
+  admin2 Segen Peoples': 582,757, median 15.1, sex ratio 963
+  admin2 Selti: 750,398, median 16.1, sex ratio 943
+  admin2 Shabelle: 464,253, median 16.5, sex ratio 1257
+  admin2 Sheka: 199,314, median 18.0, sex ratio 1029
+  admin2 Sidama: 3,212,944, median 15.2, sex ratio 1023
+  admin2 Siti: 457,086, median 17.4, sex ratio 1169
+  admin2 South Gonder: 2,051,738, median 17.7, sex ratio 1030
+  admin2 South Omo: 573,435, median 15.2, sex ratio 999
+  admin2 South West Shewa: 1,101,129, median 17.2, sex ratio 1021
+  admin2 South Wollo: 2,518,862, median 19.1, sex ratio 983
+  admin2 Southern: 1,222,418, median 18.3, sex ratio 971
+  admin2 Special Woreda: 34,998, median 16.6, sex ratio 1024
+  admin2 Wag Himra: 426,213, median 17.3, sex ratio 1007
+  admin2 West Arsi: 1,964,038, median 14.5, sex ratio 983
+  admin2 West Gojam: 2,106,596, median 17.4, sex ratio 1009
+  admin2 West Harerge: 1,871,706, median 15.1, sex ratio 1050
+  admin2 West Shewa: 2,122,565, median 16.5, sex ratio 998
+  admin2 West Wellega: 1,350,415, median 16.8, sex ratio 989
+  admin2 Western: 356,598, median 18.1, sex ratio 1049
+  admin2 Wolayita: 1,501,112, median 15.9, sex ratio 971
+  admin2 Yem: 80,687, median 17.1, sex ratio 1011
+  admin2 Zone 1: 410,790, median 17.7, sex ratio 1207
+  admin2 Zone 2: 350,111, median 15.7, sex ratio 1263
+  admin2 Zone 3: 198,751, median 18.4, sex ratio 1214
+  admin2 Zone 4: 246,822, median 17.1, sex ratio 1327
+  admin2 Zone 5: 183,799, median 17.5, sex ratio 1342
+  11 of 11 regions and 74 of 74 zones written
+  wrote data/processed/ethiopia_census.json (171 kB)
+  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/2ec96e53-b38f-4994-9a8c-5bbaa4c49e82/download/eth_admpop_adm1_2022_v2.csv: 5,201 characters
+  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/3f8150d4-6d5d-4659-a0a8-586e4689ae65/download/eth_admpop_adm3_2022_v2.csv: 338,607 characters
+  projection weredas with no outline, in zone ET0101: ['Laelay Adiabo (ET010102, 136,058)', 'Tselemti (ET010106, 164,957)', 'Dima (TG) (ET010115, 32,504)', 'May Tsebri town (ET010116, 17,417)']
+  projection weredas with no outline, in zone ET0104: ['Raya Alamata (ET010407, 33,603)', 'Ofla (ET010408, 143,785)', 'Korem town (ET010410, 33,996)', 'Alamata town (ET010411, 67,209)', 'Zata (ET010413, 51,692)', 'Chercher (ET010414, 4,574)']
+  projection weredas with no outline, in zone ET0105: ['Kafta Humera (ET010501, 131,473)', 'Welkait (ET010502, 166,963)', 'Tsegede (TG) (ET010503, 94,561)', 'Setit Humera (ET010504, 42,383)', 'May Kadra (ET010505, 20,865)', 'Dansha town (ET010506, 14,611)', 'Awra (TG) (ET010507, 32,535)', 'Korarit (ET010508, 21,739)', 'May Gaba (ET010509, 793)']
+  projection weredas with no outline, in zone ET0201: ['Gerani (ET020110, 17,595)']
+  projection weredas with no outline, in zone ET0307: ['Semen Achefer (ET030701, 232,695)', 'Bahirdar Zuria (ET030702, 217,799)', 'Yilmana Densa (ET030703, 274,383)', 'Mecha (ET030704, 53,633)', 'Bahir Dar town (ET030712, 332,856)', 'Debub Achefer (ET030713, 148,676)', 'Debub Mecha (ET030715, 106,120)', 'Gonje (ET030718, 69,567)', 'Dure Bete (ET030719, 25,220)', 'Merawi town (ET030797, 40,094)', 'Adete town (ET030799, 41,102)']
+  projection weredas with no outline, in zone ET0410: ['Aweday town (ET041099, 15,183)']
+  projection weredas with no outline, in zone ET0411: ['Meda Welabu (ET041113, 135,763)']
+  projection weredas with no outline, in zone ET0412: ['Arero (ET041208, 67,911)', 'Dhas (ET041220, 25,048)', 'Wachile (ET041298, 27,961)']
+  projection weredas with no outline, in zone ET0414: ['Liben (ET041407, 87,769)', 'Gora Dola (ET041413, 78,471)', 'Negele town (ET041414, 69,659)', 'Gumi Idalo (ET041497, 15,677)']
+  projection weredas with no outline, in zone ET0417: ['Bishan Guracha (ET041798, 26,592)']
+  projection weredas with no outline, in zone ET0420: ['Sululta (ET042013, 161,577)', 'Welmera (ET042014, 117,158)', 'Mulo (ET042016, 49,649)', 'Sendafa town (ET042018, 24,294)', 'Holeta town (ET042020, 46,041)', 'Gelana (Finfine) (ET042098, 15,634)']
+  projection weredas with no outline, in zone ET0421: ['Dawe Serer (ET042199, 59,300)']
+  projection weredas with no outline, in zone ET0509: ['Quarsadula (ET050905, 33,677)']
+  projection weredas with no outline, in zone ET0701: ['Kebena (ET070101, 66,996)', 'Sodo (ET070105, 95,025)', 'Meskan (ET070106, 74,431)', 'Mareko (ET070107, 91,345)', 'Butajira town (ET070115, 85,799)', 'Bui town (ET070117, 17,850)', 'Misrak Meskan (ET070118, 32,982)', 'Debub Sodo (ET070119, 13,165)']
+  projection weredas with no outline, in zone ET0703: ['Tembaro (ET070301, 144,831)']
+  projection weredas with no outline, in zone ET0705: ['Wenago (ET070501, 160,452)', 'Yirgachefe (ET070502, 144,472)', 'Kochere (ET070503, 180,555)', 'Bule (ET070504, 141,642)', 'Dila Zuria (ET070505, 125,911)', 'Gedeb (ET070506, 99,570)', 'Dila town (ET070507, 151,682)', 'Chelelektu town (ET070508, 17,731)', 'Rape (ET070509, 49,464)', 'Churso (ET070510, 53,250)', 'Gedeb town (ET070511, 22,923)', 'Yirgachefe town (ET070512, 38,807)']
+  projection weredas with no outline, in zone ET0706: ['Boloso Sore (ET070601, 293,741)', 'Damot Gale (ET070602, 224,356)', 'Damot Woide (ET070603, 123,996)', 'Humbo (ET070604, 168,477)', 'Sodo Zuria (ET070605, 208,093)', 'Kindo Koyesha (ET070606, 69,735)', 'Ofa (ET070607, 139,843)', 'Boloso Bombe (ET070608, 73,003)', 'Damot Sore (ET070609, 136,647)', 'Kindo Daddaye (ET070610, 126,631)', 'Damot Pullasa (ET070611, 141,384)', 'Duguna Fango (ET070612, 127,810)', 'Sodo Town (ET070613, 194,977)', 'Areka town (ET070614, 80,693)', 'Boditi town (ET070615, 61,983)', 'Tebela town (ET070616, 16,019)', 'Gesuba town (ET070617, 13,927)', 'Gununo Hamus town (ET070618, 15,700)', 'Hobicha Abaya (ET070619, 4,018)', 'Kawo Koisha (ET070620, 43,939)', 'Abela Abaya (ET070621, 23,367)', 'Bayera Koisha (ET070622, 22,762)']
+  projection weredas with no outline, in zone ET0707: ['Salamago (ET070701, 37,227)', 'South Ari (ET070702, 101,946)', 'North Ari (ET070703, 56,717)', 'Hamer (ET070704, 80,315)', 'Bena Tsemay (ET070705, 70,487)', 'Dasenech /Kuraz (ET070706, 70,466)', 'Malie (ET070707, 109,508)', 'Nyngatom (ET070708, 22,562)', 'Jinka town (ET070709, 51,954)', 'Boko Dawula (ET070710, 24,109)', 'Wub Ari (ET070711, 26,660)']
+  projection weredas with no outline, in zone ET0710: ['Selamber town (ET071003, 13,150)', 'Boreda (ET071004, 90,472)', 'Mirab Abaya (ET071005, 103,416)', 'Chencha Zuriya (ET071006, 88,099)', 'Ezo /Kogota (ET071007, 40,612)', 'Dita (ET071008, 111,283)', 'Daramalo (ET071009, 107,765)', 'Chencha (ET071010, 26,262)', 'Kemba (ET071011, 120,052)', 'Kemba town (ET071012, 12,084)', 'Gerese (ET071013, 159,945)', 'Bonke (ET071014, 211,690)', 'Arba Minch Zuria (ET071015, 210,444)', 'Gacho Baba (ET071016, 63,617)', 'Kucha Alpha (ET071017, 16,193)', 'Garda Marta (ET071018, 31,246)', 'Kucha (ET071019, 79,633)', 'Arba Minch town (ET071021, 192,043)']
+  projection weredas with no outline, in zone ET0712: ['Alle Special (ET071205, 53,450)']
+  projection weredas with no outline, in zone ET0713: ['Karat town (ET071301, 14,815)', 'Segen Zuria (ET071302, 46,210)', 'Karat Zuria (ET071303, 74,428)', 'Kena (ET071304, 78,269)']
+  projection weredas with no outline, in zone ET0715: ['Melekoza (ET071501, 158,224)', 'Denba Gofa (ET071502, 103,816)', 'Zala (ET071503, 97,863)', 'Uba Debre Tsehay (ET071504, 94,129)', 'Gezei Gofa (ET071505, 45,543)', "O'yida (ET071506, 42,606)", 'Sawla town (ET071507, 58,303)', 'Bulike town (ET071508, 14,758)', 'Melo Gada (ET071509, 20,706)']
+  projection weredas with no outline, in zone ET0716: ['Basketo SP Woreda (ET071601, 79,236)']
+  projection weredas with no outline, in zone ET0721: ['Amaro (ET072102, 201,929)']
+  projection weredas with no outline, in zone ET0722: ['Burji Special (ET072203, 79,337)']
+  projection weredas with no outline, in zone ET0723: ['Derashe Special (ET072304, 199,634)']
+  projection weredas with no outline, in zone ET1600: ['Shebe Dino (ET160001, 314,391)', 'Hawassa Zuria (ET160002, 159,208)', 'Arbegona (ET160003, 182,404)', 'Dale (ET160004, 349,464)', 'Aleta Wendo (ET160005, 139,585)', 'Dara (ET160006, 212,330)', 'Hulla (ET160007, 173,556)', 'Bensa (ET160008, 335,529)', 'Aroresa (ET160009, 221,588)', 'Boricha (ET160010, 333,469)', 'Gorche (ET160011, 138,734)', 'Malga (ET160012, 145,595)', 'Wonosho (ET160013, 117,311)', 'Chire (ET160014, 157,094)', 'Bursa (ET160015, 135,503)', 'Aleta Chuko (ET160016, 221,256)', 'Bona Zuria (ET160017, 162,814)', 'Hawasa town (ET160018, 16,010)', 'Wondo-Genet (ET160019, 86,047)', 'Yirgalem town (ET160020, 77,904)', 'Aleta Wondo town (ET160021, 56,645)', 'Leku town (ET160022, 30,321)', 'Hawela (ET160023, 3,551)', 'Bura (ET160024, 1,805)', 'Dara Otilicho (ET160025, 3,451)', 'Teticha (ET160026, 2,784)', 'Chirone (ET160027, 1,418)', 'Shafamo (ET160028, 2,221)', 'Chabe Gambeltu (ET160029, 2,558)', 'Daye town (ET160030, 29,653)', 'Hokko (ET160031, 3,281)', 'Bilate Zuria (ET160032, 4,035)', 'Darara (ET160033, 4,211)', 'Daella (ET160034, 1,374)', 'Chuko town (ET160035, 14,524)', 'Wondo-Genet town (ET160036, 17,552)', 'Loka Abaya (ET160037, 128,280)']
+  Arsi: not written -- weredas without a projection ['ET040895'], zones holding weredas without an outline []
+  Asosa: not written -- weredas without a projection ['ET060310', 'ET060311'], zones holding weredas without an outline []
+  Bale: not written -- weredas without a projection ['ET042203', 'ET042204'], zones holding weredas without an outline ['ET0421', 'ET0411']
+  Basketo: not written -- weredas without a projection ['ET080401', 'ET080402'], zones holding weredas without an outline []
+  Bench Maji: not written -- weredas without a projection ['ET110309', 'ET110310', 'ET110509', 'ET110510', 'ET110511'], zones holding weredas without an outline []
+  Borena: not written -- weredas without a projection ['ET042207', 'ET042208', 'ET042209'], zones holding weredas without an outline ['ET0412']
+  Gamo Gofa: not written -- weredas without a projection ['ET080201', 'ET080202', 'ET080203', 'ET080204', 'ET080205', 'ET080206', 'ET080207', 'ET080208', 'ET080209', 'ET080210', 'ET080211', 'ET080212', 'ET080213', 'ET080214', 'ET080215', 'ET080216', 'ET080217', 'ET080218', 'ET080219', 'ET080220', 'ET080301', 'ET080302', 'ET080303', 'ET080304', 'ET080305', 'ET080306', 'ET080307', 'ET080308', 'ET080309', 'ET080310', 'ET080311'], zones holding weredas without an outline []
+  Guji: not written -- weredas without a projection ['ET041503', 'ET042201', 'ET042202', 'ET042205', 'ET042206'], zones holding weredas without an outline ['ET0414']
+  Horo Guduru: not written -- weredas without a projection ['ET041913'], zones holding weredas without an outline []
+  KT: not written -- weredas without a projection ['ET072601'], zones holding weredas without an outline ['ET0703']
+  Keffa: not written -- weredas without a projection ['ET110215', 'ET110216', 'ET110217'], zones holding weredas without an outline []
+  Konta: not written -- weredas without a projection ['ET110602', 'ET110603', 'ET110604', 'ET110605'], zones holding weredas without an outline []
+  Liben: not written -- weredas without a projection [], zones holding weredas without an outline ['ET0509']
+  North Gonder: not written -- weredas without a projection ['ET031403', 'ET031404'], zones holding weredas without an outline []
+  North Shewa(R3): not written -- weredas without a projection ['ET030528'], zones holding weredas without an outline []
+  North Western: not written -- weredas without a projection ['ET990201', 'ET990202', 'ET990203'], zones holding weredas without an outline ['ET0101']
+  Segen Peoples': not written -- weredas without a projection ['ET080601', 'ET080701', 'ET080702', 'ET080801', 'ET080802', 'ET080901', 'ET080902', 'ET080903', 'ET080904', 'ET080905', 'ET081001'], zones holding weredas without an outline []
+  Sidama: not written -- weredas without a projection ['ET160101', 'ET160201', 'ET160202', 'ET160203', 'ET160204', 'ET160205', 'ET160206', 'ET160207', 'ET160208', 'ET160209', 'ET160210', 'ET160301', 'ET160302', 'ET160303', 'ET160304', 'ET160305', 'ET160306', 'ET160307', 'ET160401', 'ET160402', 'ET160403', 'ET160404', 'ET160405', 'ET160406', 'ET160407', 'ET160408', 'ET160409', 'ET160410', 'ET160501', 'ET160502', 'ET160503', 'ET160504', 'ET160505', 'ET160506', 'ET160507', 'ET160508', 'ET160509'], zones holding weredas without an outline []
+  South Wollo: not written -- weredas without a projection ['ET030430'], zones holding weredas without an outline []
+  Southern: not written -- weredas without a projection ['ET010702', 'ET010703', 'ET010704', 'ET010705', 'ET010706', 'ET010707', 'ET990301', 'ET990302', 'ET990303', 'ET990304', 'ET990305', 'ET990306'], zones holding weredas without an outline ['ET0104']
+  West Arsi: not written -- weredas without a projection ['ET041713'], zones holding weredas without an outline ['ET0417']
+  Western: not written -- weredas without a projection ['ET990101', 'ET990102', 'ET990103', 'ET990104', 'ET990105', 'ET990106', 'ET990107', 'ET990108', 'ET990109'], zones holding weredas without an outline []
+  Wolayita: not written -- weredas without a projection ['ET080101', 'ET080102', 'ET080103', 'ET080104', 'ET080105', 'ET080106', 'ET080107', 'ET080108', 'ET080109', 'ET080110', 'ET080111', 'ET080112', 'ET080113', 'ET080114', 'ET080115', 'ET080116', 'ET080117', 'ET080118', 'ET080119', 'ET080120', 'ET080121', 'ET080122', 'ET080123'], zones holding weredas without an outline []
+  Yem: not written -- weredas without a projection ['ET072402', 'ET072403', 'ET072404'], zones holding weredas without an outline []
+  projection admin1 Addis Ababa: 3,773,999
+  projection admin1 Afar: 1,989,997
+  projection admin1 Amhara: 22,530,515
+  projection admin1 Beneshangul Gumu: 1,187,997
+  projection admin1 Dire Dawa: 521,000
+  projection admin1 Gambela: 492,002
+  projection admin1 Hareri: 270,000
+  projection admin1 Oromia: 39,075,002
+  projection admin1 SNNPR: 20,691,549
+  projection admin1 Somali: 6,355,003
+  projection admin1 Tigray: 5,649,587
+  projection admin2 Agnuak: 241,290
+  projection admin2 Alaba: 241,565
+  projection admin2 Awi/Agew: 1,641,176
+  projection admin2 Dawro: 830,837
+  projection admin2 East Wellega: 1,870,321
+  projection admin2 Hadiya: 1,942,784
+  projection admin2 Ilubabor: 1,767,139
+  projection admin2 Jimma: 4,197,372
+  projection admin2 Kelem Wellega: 1,184,070
+  projection admin2 Kemashi: 110,115
+  projection admin2 Majang: 86,891
+  projection admin2 Metekel: 501,585
+  projection admin2 North Wollo: 2,007,528
+  projection admin2 Nuer: 163,821
+  projection admin2 Oromia: 575,817
+  projection admin2 Region 14: 3,773,999
+  projection admin2 Sheka: 333,699
+  projection admin2 Special Woreda: 41,718
+  projection admin2 Wag Himra: 558,306
+  projection admin2 West Harerge: 2,789,190
+  projection admin2 West Wellega: 1,791,335
+  projection: 11 regions and 21 zones written
+  wrote data/processed/ethiopia_projection.json (44 kB)
