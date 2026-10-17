@@ -803,7 +803,8 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         usable = set.intersection(*(u["fields"] for u in units))
         parts = [p for u in units for p in u["parts"]]
         rows = [r for u in units for r in u["rows"]]
-        if parts and len(parts) == 1 and len(units) == 1 and fold(parts[0]) == fold(names[0]):
+        if not parts or (len(parts) == 1 and len(units) == 1
+                         and fold(parts[0]) == fold(names[0])):
             tail = ""
         elif len(parts) == 1:
             tail = (f" The census tabulates the municipalities of 2024, in which {names[0]} "
@@ -887,20 +888,81 @@ def compare_national(reports: list[Report], national_rows: list[dict[str, Any]])
     return problems
 
 
+# Linked from the census's site as Relatorio_Provincial_<stem>_Censo2024.pdf; some
+# of those links answer 404, and the reports are also published under the
+# province's name alone (BENGO.pdf).
+ALTERNATES = {"Uige": ("UIGE", "Uíge", "UÍGE"), "Zaire": ("ZAIRE",),
+              "Cuanza_Sul": ("CUANZA_SUL", "Cuanza-Sul", "CUANZA-SUL"),
+              "Cuando_Cubango": ("CUANDO", "Cuando", "CUANDO_CUBANGO")}
+
+
+def fetch_report(stem: str) -> bytes:
+    import urllib.parse                              # noqa: PLC0415
+    tried = []
+    for name in (f"Relatorio_Provincial_{stem}_Censo2024", *ALTERNATES.get(stem, ()),
+                 stem.upper()):
+        url = "https://censo2024.ine.gov.ao/" + urllib.parse.quote(name) + ".pdf"
+        try:
+            blob = http_get(url, binary=True, cache=False, timeout=600)
+        except Exception as exc:                      # noqa: BLE001
+            tried.append(f"{name}: {exc}")
+            continue
+        if blob[:4] == b"%PDF":
+            return blob
+        tried.append(f"{name}: not a PDF")
+    raise RuntimeError("; ".join(tried))
+
+
+def survey(stem: str, blob: bytes) -> None:
+    """Where each table is: every "Quadro" heading on the report's pages, and for
+    the tables by municipality, the first rows as pdfplumber lays them out."""
+    import pdfplumber                                # noqa: PLC0415
+    from pypdf import PdfReader                      # noqa: PLC0415
+    reader = PdfReader(io.BytesIO(blob))
+    log(f"== {stem}: {len(reader.pages)} pages")
+    keys = ("municipio", "etnic", "lingua", "religi", "etari", "2014")
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for i, page in enumerate(reader.pages):
+            if i < 14:
+                continue
+            raw = page.extract_text() or ""
+            heads = [" ".join(line.split())[:120] for line in raw.splitlines()
+                     if line.strip().lower().startswith("quadro")]
+            if not heads:
+                continue
+            log(f"  p{i + 1}: " + " || ".join(heads))
+            if not any(k in squeeze(" ".join(heads)) for k in keys):
+                continue
+            for block in blocks_of(rows_of(pdf.pages[i].extract_words(
+                    use_text_flow=False, keep_blank_chars=False))):
+                widths = sorted({len(r.figures()) for r in block.data})
+                labels = [r.label for r in block.data[:4]]
+                log(f"      block {block.title[:70]!r}: {len(block.data)} rows, widths {widths}, "
+                    f"first {labels}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
     parser.add_argument("--only", default="", help="report stems, comma-separated")
+    parser.add_argument("--survey", action="store_true",
+                        help="print where each table is, and write nothing")
     args = parser.parse_args()
     import pdfplumber                                # noqa: PLC0415
     stems = [s for s in REPORTS if not args.only or s in args.only.split(",")]
+    if args.survey:
+        for stem in stems:
+            try:
+                survey(stem, fetch_report(stem))
+            except Exception as exc:                  # noqa: BLE001
+                log(f"== {stem}: {type(exc).__name__}: {exc}")
+        return 0
     reports: list[Report] = []
     failed: list[str] = []
     for stem in stems:
-        url = URL.format(stem=stem)
         try:
-            blob = http_get(url, binary=True, cache=False, timeout=600)
+            blob = fetch_report(stem)
             texts = page_texts(blob)
             wanted = {i for i, t in enumerate(texts)
                       if any(k in t for k in ("residentepormunicipiosegundoosexo",
