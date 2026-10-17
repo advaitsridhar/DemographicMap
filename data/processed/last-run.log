@@ -1,14 +1,38 @@
-  read https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx: 1,048,885 bytes, sha256 2ec126bc1dbf0e9424b6498b9f92a4e56e10d5ed4aa24266c7447868452e4351
-  D2: [('portlouis', 'PORT LOUIS DISTRICT-Wholly Urban'), ('pamplemousses', 'PAMPLEMOUSSES DISTRICT-Wholly Rural'), ('rivieredurempart', 'R. DU REMPART DISTRICT-Wholly Rural'), ('flacq', 'FLACQ DISTRICT-Wholly Rural'), ('grandport', 'GRAND PORT DISTRICT-Wholly Rural'), ('savanne', 'SAVANNE DISTRICT-Wholly Rural'), ('plaineswilhems', 'PLAINES WILHEMS DISTRICT'), ('moka', 'MOKA DISTRICT'), ('blackriver', 'BLACK RIVER DISTRICT'), ('rodrigues', 'ISLAND OF RODRIGUES')]
-  D6: [('portlouis', 'PORT LOUIS DISTRICT-Wholly Urban'), ('pamplemousses', 'PAMPLEMOUSSES DISTRICT-Wholly Rural'), ('rivieredurempart', 'R. DU REMPART DISTRICT-Wholly Rural'), ('flacq', 'FLACQ DISTRICT-Wholly Rural'), ('grandport', 'GRAND PORT DISTRICT-Wholly Rural'), ('savanne', 'SAVANNE DISTRICT-Wholly Rural'), ('plaineswilhems', 'PLAINES WILHEMS DISTRICT'), ('moka', 'MOKA DISTRICT'), ('blackriver', 'BLACK RIVER DISTRICT'), ('rodrigues', 'ISLAND OF RODRIGUES - Wholly Rural')]
-  D9: [('portlouis', 'PORT LOUIS DISTRICT-Wholly Urban'), ('pamplemousses', 'PAMPLEMOUSSES DISTRICT-Wholly Rural'), ('rivieredurempart', 'R. DU REMPART DISTRICT-Wholly Rural'), ('flacq', 'FLACQ DISTRICT-Wholly Rural'), ('grandport', 'GRAND PORT DISTRICT-Wholly Rural'), ('savanne', 'SAVANNE DISTRICT-Wholly Rural'), ('plaineswilhems', 'PLAINES WILHEMS DISTRICT'), ('moka', 'MOKA DISTRICT'), ('blackriver', 'BLACK RIVER DISTRICT'), ('rodrigues', 'ISLAND OF RODRIGUES - Wholly Rural')]
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/mauritius_census.py", line 285, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/mauritius_census.py", line 278, in main
-    log(f"  {r['name']}: {r['population']['value']:,}, ratio {r['sex_ratio']['value']}, "
-                          ~~~~~~~~~~~~~~~^^^^^^^^^
-KeyError: 'value'
+angola_seats: 1,522,816 characters; 18 provinces, 160 municipalities with a seat
+  bengo: ambriz -> Ambriz; bulaatumba -> Bula Atumba; dembosquibaxe -> Quibaxe; nambuangongo -> Muxaluando; pangoaluquem -> Pango Aluquém
+  benguela: baiafarta -> Baía Farta; balombo -> Balombo; benguela -> Benguela; bocoio -> Bocoio; caimbambo -> Caimbambo; catumbela -> Catumbela; chongoroi -> Chongorói; cubal -> Cubal; ganda -> Ganda; lobito -> Lobito
+  bie: andulo -> Andulo; camacupa -> Camacupa; catabola -> Catabola; chinguar -> Chinguar; chitembo -> Chitembo; cuemba -> Cuemba; cuito -> Cuito; cunhinga -> Cunhinga; nharea -> Nharêa
+  cabinda: belize -> Belize; bucozau -> Buco Zau; cabinda -> Cabinda; cacongo -> Lândana
+  cuandocubango: calai -> Calai; cuangar -> Cuangar; cuchi -> Cuchi; cuitocuanavale -> Cuito Cuanavale; dirico -> Dirico; mavinga -> Mavinga; menongue -> Menongue; nancova -> Nancova; rivungo -> Rivungo
+  cuanzanorte: ambaca -> Camabatela; banga -> Banga; bolongongo -> Bolongongo; cambambe -> Dondo; cazengo -> Ndalatando; golungoalto -> Golungo Alto; lucala -> Lucala; ngonguembo -> Quilombo dos Dembos; quiculungo -> Quiculungo; sambacaju -> Samba Cajú
+  cuanzasul: amboim -> Gabela; cassongue -> Cassongue; cela -> Wacu Kungo; conda -> Conda; ebo -> Ebo; libolo -> Calulo; mussende -> Mussende; portoamboim -> Porto Amboim; quibala -> Quibala; quilenda -> Quilenda; sumbe -> Sumbe
+  cunene: cahama -> Cahama; cuanhama -> Ondjiva; curoca -> Oncócua; cuvelai -> Mukolongodjo; namacunde -> Namacunde; ombandja -> Xangongo
+  huambo: bailundo -> Bailundo; caala -> Caála; cachiungo -> Cachiungo; chicalacholoanga -> Chicala; chinjenje -> Chinjenje; huambo -> Huambo; londuimbali -> Londuimbali; longonjo -> Longonjo; mungo -> Mungo; ukuma -> Ucuma
+  huila: caconda -> Caconda; cacula -> Cacula; caluquembe -> Caluquembe; chibia -> Chibia; chicomba -> Chicomba; chipindo -> Chipindo; cuvango -> Cuvango; gambos -> Chiange; humpata -> Humpata; jamba -> Jamba; lubango -> Lubango; matala -> Matala; quilengues -> Quilengues; quipungo -> Quipungo
+  luanda: belas -> Belas; cacuaco -> Cacuaco; cazenga -> Cazenga; icoloebengo -> Catete; kilambakiaxi -> Kilamba Kiaxi; luanda -> Ingombota; quissama -> Muxima; talatona -> Talatona; viana -> Viana
+  lundanorte: cambulo -> Cambulo; capendacamulemba -> Capenda Camulemba; caungula -> Caungula; chitato -> Dundo; cuango -> Cuango; cuilo -> Cuilo; lovua -> Lóvua; lubalo -> Lubalo; lucapa -> Lucapa; xamuteba -> Xá Muteba
+  lundasul: cacolo -> Cacolo; dala -> Dala; muconda -> Muconda; saurimo -> Saurimo
+  malanje: cacuso -> Cacuso; cahombo -> Cahombo; calandula -> Calandula; cambundicatembo -> Cambundi Catembo; cangandala -> Cangandala; kiwabanzoji -> Kiwaba Nzoji; kundadyabaze -> Kunda dya Baze; luquembo -> Luquembo; marimba -> Marimba; massango -> Massango; mucari -> Caculama; quela -> Quela; quirima -> Quirima
+  moxico: altozambeze -> Cazombo; bundas -> Lumbala Nguimbo; camanongue -> Camanongue; cameia -> Lumege; leua -> Léua; luacano -> Luacano; luau -> Luau; luchazes -> Cangamba; moxico -> Luena
+  namibe: bibala -> Bibala; camucuio -> Camucuio; namibe -> Moçâmedes; tombwa -> Tômbwa; virei -> Virei
+  uige: altocauale -> Cangola; ambuila -> Nova Ambuíla; bembe -> Bembe; buengas -> Nova Esperança; bungo -> Bungo; damba -> Damba; dangequitexe -> Quitexe; maqueladozombo -> Maquela do Zombo; milunga -> Milunga; mucaba -> Mucaba; negage -> Negage; pombo -> Sanza Pombo; puri -> Puri; quimbele -> Quimbele; songo -> Songo; uige -> Uíge
+  zaire: cuimba -> Cuimba; mbanzacongo -> Mbanza Kongo; noqui -> Nóqui; nzeto -> Nzeto; soyo -> Soyo; tomboco -> Tomboco
+  140 of 157 municipality polygons given a seat
+    Cangola: no municipality of the law ([])
+    Catchiungo: no municipality of the law ([])
+    Cunda-dia-Baze: no municipality of the law ([])
+    Dande: no municipality of the law ([])
+    Ecunha (Ekunha): no municipality of the law ([])
+    Kiuaba-N'Zoji: no municipality of the law ([])
+    Londuimbale: no municipality of the law ([])
+    Luena: no municipality of the law ([])
+    Malanje: no municipality of the law ([])
+    Ombadja: no municipality of the law ([])
+    Pango-Aluquem: no municipality of the law ([])
+    Quiculongo: no municipality of the law ([])
+    Quitexe: no municipality of the law ([])
+    Sanza Pombo: no municipality of the law ([])
+    Seles (Uku Seles): no municipality of the law ([])
+    Tchikala-Tcholohanga: no municipality of the law ([])
+    Tchinjenje: no municipality of the law ([])
+  wrote data/processed/angola_seats.json (147 kB)
