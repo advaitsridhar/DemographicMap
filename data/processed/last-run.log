@@ -1,35 +1,378 @@
-equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
-  Annobón: 5,314; men 48.9%; nationals 98.3%
-    ANNOBON: 5,314 (Annobón)
-  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
-    BANEY: 29,366 (Baney)
-    MALABO: 271,008 (Malabo)
-  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
-    LUBA: 26,331 (Luba)
-    RIABA: 8,343 (Riaba)
-  Centro Sur: 141,986; men 51.2%; nationals 89.9%
-    ACURENAM: 23,614 (Acurenam, drawn whole)
-    BICURGA: not shown (not a district)
-    EVINAYONG: not shown (Evinayong)
-    NIEFANG: not shown (Niefang)
-    NKIMI: not shown (not a district)
-  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
-    EBEBIYIN: 94,019 (Ebibeyin, drawn whole)
-    MICOMISENG: not shown (Micomiseng)
-    NKUE: not shown (not a district)
-    NSOC NSOMO: 37,920 (Nsok Nsomo, drawn whole)
-  Litoral: 367,348; men 52.3%; nationals 87.7%
-    BATA: not shown (Bata)
-    BITICA: not shown (not a district)
-    COGO: 29,341 (Cogo, drawn whole)
-    MACHINDA: not shown (not a district)
-    MBINI: not shown (Mbini)
-  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
-    ACONIBE: 24,346 (Aconibe, drawn whole)
-    AYENE: not shown (not a district)
-    AÑISOC: not shown (Añisok)
-    MONGOMO: not shown (Mongomo)
-    MONGOMOYEN: not shown (not a district)
-    NSORK: 16,421 (Nsork, drawn whole)
-  wrote data/processed/equatorial_guinea_census.json (85 kB)
-  7 provinces and 25 district polygons written
+angola_municipios: Cabinda: 10,651,448 bytes, 197 pages, 17 read; province 'Cabinda' (903370, 448053, 455317); 10 municipalities of 2024, 4 of 2016; ethnicity 27 rows, language 27 rows, religion 13 rows, age_broad 0 rows, age_other 0 rows
+    2016: Cabinda 771,354; Cacongo(ex_Lândana) 53,692; Buco Zau 49,706; Belize 28,618
+    2024: Cabinda 585,240; Cacongo 41,716; Buco Zau 32,210; Belize 19,445; Tando Zinze 26,937; Ngoio 61,630; Liambo 97,547; Massabi 11,976; Necuto 17,495; Miconje 9,173
+angola_municipios: Zaire: 9,386,162 bytes, 194 pages, 13 read; province 'Zaire' (682658, 336999, 345659); 11 municipalities of 2024, 6 of 2016; ethnicity 36 rows, language 36 rows, religion 14 rows, age_broad 0 rows, age_other 36 rows
+    2016: Soyo 232,058; Mbanza Kongo 234,945; Nzeto 67,120; Tomboco 39,513; Cuimba 75,574; Nóqui 33,447
+    2024: Soyo 221,555; Mbanza Kongo 221,141; Nzeto 52,135; Tomboco 39,513; Cuimba 67,778; Nóqui 16,949; Quindeje 14,986; Serra de Canda 7,796; Luvo 13,804; Lufíco 16,498; Quêlo 10,503
+  retry 1/4 after 2s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 4/4 after 16s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 1/4 after 2s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 4/4 after 16s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+angola_municipios: Uige: RuntimeError: Relatorio_Provincial_Uige_Censo2024.pdf: HTTP Error 404: Not Found; UIGE.pdf: HTTP Error 404: Not Found; U%C3%ADge.pdf: GET failed after 4 retries: https://censo2024.ine.gov.ao/U%C3%ADge.pdf; U%C3%8DGE.pdf: GET failed after 4 retries: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf; UIGE.pdf: HTTP Error 404: Not Found; Relatorio_Provincial_Uige_Censo2024.pdf: HTTP Error 404: NOT FOUND
+angola_municipios: Bengo: 9,729,481 bytes, 207 pages, 17 read; province 'Bengo' (716335, 359163, 357172); 12 municipalities of 2024, 6 of 2016; ethnicity 39 rows, language 39 rows, religion 15 rows, age_broad 39 rows, age_other 39 rows
+    2016: Dande 418,274; Dembos 70,700; Nambuangongo 117,872; Bula-Atumba 36,172; Ambriz 54,309; Pango Aluquém 19,008
+    2024: Dande 145,798; Quibaxe 44,435; Nambuangongo 52,435; Bula-Atumba 36,172; Ambriz 54,309; Pango Aluquém 19,008; Quicunzo 13,761; Muxaluando 51,676; Úcua 41,654; Piri 26,265; Panguila 158,068; Barra do Dande 72,754
+angola_municipios: Luanda: 11,766,168 bytes, 212 pages, 13 read; province 'Luanda' (8665510, 4263902, 4401607); 16 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 42 rows, religion 19 rows, age_broad 0 rows, age_other 42 rows
+    2016: 
+    2024: Ingombota 144,911; Sambizanga 177,808; Maianga 727,681; Cacuaco 875,071; Cazenga 823,025; Viana 865,863; Belas 381,861; Kilamba Kiaxi 1,120,781; Talatona 292,919; Mulenvos 882,014; Camama 667,094; Kilamba 493,593; Hoji ya Henda 642,050; Rangel 190,569; Samba 364,986; Mussulo 15,283
+angola_municipios: Icolo_e_Bengo: 10,234,578 bytes, 187 pages, 12 read; province 'Icole e Bengo' (1523457, 747445, 776013); 7 municipalities of 2024, 0 of 2016; ethnicity 25 rows, language 25 rows, religion 10 rows, age_broad 24 rows, age_other 25 rows
+    2016: 
+    2024: Catete 67,173; Quiçama 30,476; Sequele 608,623; Calumbo 652,270; Cabo Ledo 23,089; Bom Jesus 35,372; Cabiri 106,456
+angola_municipios: Cuanza_Norte: 12,271,003 bytes, 228 pages, 21 read; province 'Cuanza Norte' (659097, 324984, 334113); 17 municipalities of 2024, 0 of 2016; ethnicity 51 rows, language 51 rows, religion 20 rows, age_broad 53 rows, age_other 51 rows
+    2016: 
+    2024: Cazengo 248,171; Golungo Alto 43,503; Cambambe 100,199; Samba Cajú 34,491; Ambaca 56,989; Lucala 31,817; Banga 9,630; Bolongongo 11,576; Quiculungo 16,320; Ngonguembo 9,996; Terreiro 4,863; Tango 14,892; Luínga 24,916; Cêrca 10,478; Caculo Cabaça 3,439; Aldeia Nova 3,394; Massangano 34,421
+angola_municipios: Cuanza_Sul: RuntimeError: Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf: HTTP Error 404: Not Found; CUANZA_SUL.pdf: HTTP Error 404: Not Found; Cuanza-Sul.pdf: HTTP Error 404: Not Found; CUANZA-SUL.pdf: HTTP Error 404: Not Found; CUANZA_SUL.pdf: HTTP Error 404: Not Found; Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf: HTTP Error 404: NOT FOUND
+angola_municipios: Malanje: 12,495,120 bytes, 267 pages, 22 read; province '' (1298254, 638368, 659880); 27 municipalities of 2024, 0 of 2016; ethnicity 77 rows, language 77 rows, religion 30 rows, age_broad 77 rows, age_other 77 rows
+    2016: 
+    2024: Calandula 65,593; Malanje 377,603; Cacuso 60,495; Massango 27,685; Marimba 14,967; Quela 14,623; Quirima 35,615; Cangandala 50,618; Cahombo 20,774; Kunda dya Baze 14,843; Cambundi Catembo 48,543; Caculama 34,864; Kiwaba Nzoji 21,139; Luquembo 45,868; Quihuhu 24,943; Milando 6,550; Xandel 10,295; Muquixe 10,514; Capunda 20,508; Mbanji ya Ngola 14,071; Cambo Suinginge 6,852; Quitapa 2,956; Cateco Cangola 25,950; Cuale 27,435; Pungu a Ndongo 17,582; Ngola Luiji 19,723; Quêssua 277,645
+angola_municipios: Lunda_Norte: 12,248,205 bytes, 225 pages, 15 read; province 'Lunda Norte' (1742217, 898545, 843673); 19 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 22 rows, religion 22 rows, age_broad 51 rows, age_other 0 rows
+    2016: 
+    2024: Cuilo 32,243; Caungula 27,945; Dundo 240,410; Lubalo 46,429; Capenda Camulemba 99,612; Cuango 62,552; Lucapa 298,129; Cambulo 230,965; Xá Muteba 40,053; Lóvua 47,414; Luangue 17,708; Chitato 43,328; Mussungue 114,131; Canzar 47,981; Camaxilo 24,628; Luremo 27,171; Xá Cassau 12,856; Cassanje Calucala 61,686; Cafunfo 266,976
+angola_municipios: Lunda_Sul: 10,703,082 bytes, 189 pages, 12 read; province 'Lunda Sul' (893936, 448936, 445000); 14 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 0 rows, religion 0 rows, age_broad 0 rows, age_other 0 rows
+    2016: 
+    2024: Saurimo 221,538; Muconda 28,892; Cacolo 38,153; Dala 40,960; Chiluage 20,419; Alto Chicapa 4,123; Luma Cassai 11,244; Sombo 2,737; Cassengo 322,831; Cassai-Sul 15,607; Cazage 10,743; Muangueji 153,402; Muriege 11,494; Xassengue 11,793
+angola_municipios: Moxico: 9,272,947 bytes, 193 pages, 13 read; province '' (574251, 280848, 293407); 12 municipalities of 2024, 0 of 2016; ethnicity 15 rows, language 15 rows, religion 15 rows, age_broad 37 rows, age_other 35 rows
+    2016: 
+    2024: Luena 359,847; Cangamba 13,877; Cangumbe 9,689; Lumbala Nguimbo 40,702; Lucusse 17,360; Lutuai 2,741; Alto Cuito 7,915; Lutembo 22,228; Léua 37,918; Ninda 9,246; Chiúme 10,645; Camanongue 42,083
+angola_municipios: Moxico_Leste: 8,638,914 bytes, 171 pages, 11 read; province 'Moxico Leste' (411074, 200923, 210151); 9 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 0 rows, religion 12 rows, age_broad 0 rows, age_other 23 rows
+    2016: 
+    2024: Luau 156,975; Cazombo 100,313; Luacano 27,801; Cameia 41,266; Lago Dilolo 40,882; Macondo 14,466; Lóvua do Zambeze 8,578; Nana Candundo 13,445; Caianda 7,347
+angola_municipios: Bie: 12,543,746 bytes, 229 pages, 22 read; province 'Bíe' (2264874, 1090904, 1173970); 19 municipalities of 2024, 9 of 2016; ethnicity 0 rows, language 60 rows, religion 0 rows, age_broad 0 rows, age_other 0 rows
+    2016: Cuito 632,664; Cunhinga (Vouga) 116,163; Chinguar 230,187; Andulo 411,688; N'harea 218,329; Camacupa 240,586; Cuemba 78,776; Chitembo 136,354; Catabola (ex. Nova Sintra) 200,126
+    2024: Andulo 285,306; Chitembo 100,889; Cuito 579,498; Camacupa 209,416; Chinguar 230,187; Catabola 142,413; Cunhinga 73,419; Cuemba 70,603; Nharêa 157,008; Calucinga 126,383; Lúbia 61,321; Cambândua 31,941; Chicala 21,225; Belo Horizonte 42,744; Mumbué 35,464; Luando 8,173; Chipeta 57,713; Ringoma 17,807; Umpulo 13,363
+angola_municipios: Huambo: 10,518,385 bytes, 225 pages, 12 read; province 'Huambo' (2691902, 1296018, 1395883); 17 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 34 rows, religion 0 rows, age_broad 0 rows, age_other 53 rows
+    2016: 
+    2024: Bailundo 258,073; Huambo 836,293; Londuimbali 77,736; Caála 263,415; Chicala Choloanga 59,829; Cachiungo 153,450; Mungo 166,141; Longonjo 76,193; Ucuma 91,293; Ecunha 214,643; Chinjenje 46,575; Bimbe 105,829; Cuíma 103,237; Sambo 78,696; Chilata 50,566; Alto Hama 47,989; Galanga 61,943
+angola_municipios: Benguela: 12,972,468 bytes, 224 pages, 15 read; province 'Benguela' (2597638, 1246173, 1351465); 23 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 26 rows, religion 26 rows, age_broad 56 rows, age_other 0 rows
+    2016: 
+    2024: Benguela 380,048; Ganda 165,651; Lobito 380,689; Catumbela 168,774; Bocoio 161,009; Balombo 120,272; Cubal 229,379; Baia Farta 95,994; Caimbambo 79,511; Chongorói 110,326; Egito Praia 33,243; Biópio 8,228; Chila 17,474; Chindumbo 32,013; Dombe Grande 42,918; Canhamela 31,082; Catengue 17,646; Bolonguera 18,970; Iambala 74,760; Capupa 72,802; Babaera 76,056; Chicuma 40,717; Navegantes 240,075
+angola_municipios: Namibe: 10,262,554 bytes, 192 pages, 12 read; province 'Namibe' (815708, 399859, 415849); 9 municipalities of 2024, 5 of 2016; ethnicity 0 rows, language 0 rows, religion 12 rows, age_broad 30 rows, age_other 28 rows
+    2016: Moçâmedes 439,693; Tômbwa 128,536; Bibala 119,295; Virei 54,034; Camucuio 74,150
+    2024: Moçâmedes 345,987; Tômbwa 123,620; Bibala 119,295; Virei 54,034; Camucuio 42,073; Lucira 28,354; Cacimbas 32,077; Sacomar 65,692; Iona 4,576
+angola_municipios: Huila: 13,364,734 bytes, 240 pages, 15 read; province 'Huíla' (3302866, 1599066, 1703799); 23 municipalities of 2024, 0 of 2016; ethnicity 26 rows, language 0 rows, religion 0 rows, age_broad 0 rows, age_other 65 rows
+    2016: 
+    2024: Caconda 226,236; Gambos 109,738; Humpata 114,051; Lubango 890,384; Cuvango 38,416; Quipungo 171,979; Chibia 136,328; Quilengues 133,264; Caluquembe 266,372; Matala 233,399; Jamba Mineira 76,485; Chipindo 103,482; Chicomba 158,724; Cacula 78,498; Galangue 56,565; Dongo 48,647; Capelongo 77,215; Capunda Cavilongo 118,392; Viti Vivali 33,106; Chituto 68,334; Hoque 86,835; Chicungo 33,299; Palanca 43,115
+angola_municipios: Cunene: 12,137,509 bytes, 203 pages, 14 read; province 'Cunene' (1806417, 867639, 938777); 14 municipalities of 2024, 6 of 2016; ethnicity 35 rows, language 0 rows, religion 17 rows, age_broad 38 rows, age_other 36 rows
+    2016: Ombadja 529,241; Cuanhama 701,420; Curoca 71,142; Cahama 140,925; Cuvelai 124,834; Namacunde 238,855
+    2024: Ombadja 247,338; Cuanhama 500,288; Curoca 35,717; Chitado 35,425; Cahama 140,925; Cuvelai 76,582; Namacunde 138,859; Nehone 181,969; Cafima 19,163; Chissuata 7,996; Mupa 40,257; Chiéde 99,996; Humbe 198,400; Naulila 83,504
+angola_municipios: Cubango: 11,233,995 bytes, 183 pages, 14 read; province 'Cubango' (570447, 278701, 291746); 11 municipalities of 2024, 0 of 2016; ethnicity 31 rows, language 31 rows, religion 14 rows, age_broad 0 rows, age_other 31 rows
+    2016: 
+    2024: Menongue 382,635; Cuchi 30,231; Cuangar 12,681; Calai 27,932; Nancova 8,460; Mavengue 2,465; Savate 17,192; Longa 28,014; Chinguanja 7,226; Cutato 31,419; Caiundo 22,193
+angola_municipios: Cuando_Cubango: 10,848,231 bytes, 178 pages, 9 read; province 'Cuando' (138770, 70751, 68019); 9 municipalities of 2024, 0 of 2016; ethnicity 0 rows, language 24 rows, religion 12 rows, age_broad 0 rows, age_other 24 rows
+    2016: 
+    2024: Mavinga 24,757; Cuito Cuanavale 49,794; Dirico 7,043; Rivungo 19,789; Luíana 9,330; Luengue 5,313; Dima 5,865; Xipundo 11,240; Mucusso 5,639
+  national check: Benguela religion Catholic: provincial 1,697,297, national 1,746,890
+  national check: Benguela religion Evangelical: provincial 180,402, national 184,038
+  national check: Benguela religion Adventist: provincial 137,427, national 141,308
+  national check: Benguela religion Protestant: provincial 88,643, national 90,966
+  national check: Benguela religion No religion: provincial 149,908, national 83,806
+  national check: Benguela religion Not stated: provincial 19,714, national 20,431
+  national check: Benguela religion Universal Church of the Kingdom of God: provincial 11,619, national 11,867
+  national check: Benguela religion Other religion: provincial 8,074, national 10,318
+  national check: Cabinda ethnicity Not stated: provincial 184,731, national 181,965
+  national check: Cabinda ethnicity Kwoi: provincial 4,593, national 4,406
+  national check: Cabinda language Portuguese: provincial 463,066, national 458,171
+  national check: Cabinda language Umbundu: provincial 8,833, national 8,735
+  national check: Cabinda religion Catholic: provincial 416,986, national 421,981
+  national check: Cabinda religion Protestant: provincial 109,076, national 111,152
+  national check: Cabinda religion No religion: provincial 105,313, national 85,996
+  national check: Cabinda religion Not stated: provincial 25,566, national 26,342
+  national check: Cabinda religion Other religion: provincial 12,694, national 13,398
+  national check: Cabinda religion Universal Church of the Kingdom of God: provincial 8,329, national 8,495
+  national check: Cabinda religion Adventist: provincial 7,363, national 7,464
+  national check: Cabinda religion New Apostolic: provincial 6,742, national 6,895
+  national check: Cabinda religion Tocoist: provincial 3,331, national 3,400
+  national check: Cuando Cubango language Other languages: provincial 5,782, national 15,242
+  national check: Cuando Cubango language Not stated: provincial 3,199, national 5,252
+  national check: Cuando Cubango language Khoisan: provincial 1,168, national 1,357
+  national check: Cuando Cubango language Kwanyama: provincial 1,239, national 1,393
+  national check: Cuando Cubango language Fiote: provincial 811, national 912
+  national check: Cuando Cubango language Humbi: provincial 642, national 699
+  national check: Cuando Cubango language Luvale: provincial 274, national 352
+  national check: Cuando Cubango religion Catholic: provincial 238,370, national 299,504
+  national check: Cuando Cubango religion Protestant: provincial 74,304, national 101,764
+  national check: Cuando Cubango religion Evangelical: provincial 10,890, national 71,798
+  national check: Cuando Cubango religion No religion: provincial 6,156, national 36,805
+  national check: Cuando Cubango religion New Apostolic: provincial 17,879, national 24,254
+  national check: Cuando Cubango religion Adventist: provincial 3,738, national 20,034
+  national check: Cuando Cubango religion Other religion: provincial 3,020, national 13,605
+  national check: Cuando Cubango religion Bom Deus Church: provincial 4,103, national 4,962
+  national check: Cuando Cubango religion Baptist: provincial 340, national 2,996
+  national check: Cuando Cubango religion Jehovah's Witnesses: provincial 326, national 3,605
+  national check: Cuando Cubango religion Universal Church of the Kingdom of God: provincial 2,822, national 3,226
+  national check: Cuando Cubango religion Methodist: provincial 137, national 2,494
+  national check: Cuando Cubango religion Islam: provincial 816, national 1,060
+  national check: Cuando Cubango religion Tocoist: provincial 980, national 1,337
+  national check: Cuando Cubango religion Animist: provincial 554, national 734
+  national check: Cuando Cubango religion Josafat Church: provincial 689, national 747
+  national check: Cuando Cubango religion Judaism: provincial 591, national 825
+  national check: Cuando Cubango religion Kimbanguist: provincial 797, national 906
+  national check: Cuando Cubango religion Mensagem dos Últimos Tempos Church: provincial 3, national 382
+  national check: Luanda language Not stated: provincial 8,838, national 62,705
+  national check: Luanda language Fiote: provincial 4,935, national 32,593
+  national check: Luanda language Other languages: provincial 2,924, national 22,315
+  national check: Luanda language Humbi: provincial 289, national 1,507
+  national check: Luanda language Khoisan: provincial 631, national 3,848
+  national check: Luanda language Luvale: provincial 484, national 4,202
+  national check: Luanda religion Catholic: provincial 3,517,051, national 3,566,834
+  national check: Luanda religion Protestant: provincial 279,872, national 283,472
+  national check: Luanda religion Universal Church of the Kingdom of God: provincial 200,685, national 204,247
+  national check: Luanda religion Kimbanguist: provincial 126,500, national 128,856
+  national check: Luanda religion Tocoist: provincial 111,228, national 112,956
+  national check: Luanda religion New Apostolic: provincial 95,419, national 97,133
+  national check: Luanda religion Josafat Church: provincial 62,877, national 64,082
+  national check: Luanda religion Islam: provincial 56,435, national 58,107
+  national check: Luanda religion Animist: provincial 6,397, national 6,530
+  national check: Luanda religion Judaism: provincial 7,905, national 8,045
+  national check: Lunda Norte religion Catholic: provincial 276,406, national 283,001
+  national check: Lunda Norte religion Protestant: provincial 238,925, national 245,394
+  national check: Lunda Norte religion New Apostolic: provincial 61,765, national 63,608
+  national check: Lunda Norte religion Islam: provincial 44,114, national 45,658
+  national check: Lunda Norte religion Kimbanguist: provincial 25,181, national 25,960
+  national check: Lunda Norte religion Universal Church of the Kingdom of God: provincial 17,825, national 18,315
+  national check: Lunda Norte religion Tocoist: provincial 9,375, national 9,628
+  national check: Lunda Norte religion Judaism: provincial 6,554, national 6,775
+  national check: Lunda Norte religion Animist: provincial 5,327, national 5,521
+  national check: Lunda Norte religion Josafat Church: provincial 4,049, national 4,162
+  national check: Malanje language Other languages: provincial 7,552, national 6,721
+  national check: Moxico religion Bom Deus Church: provincial 2,490, national 8,432
+  national check: Namibe religion Catholic: provincial 343,464, national 354,066
+  national check: Namibe religion Protestant: provincial 15,042, national 15,374
+  national check: Namibe religion Universal Church of the Kingdom of God: provincial 7,721, national 7,913
+  national check: Namibe religion New Apostolic: provincial 3,003, national 3,087
+  Benguela: religion left out, its provincial table not the national report's
+  Cabinda: ethnicity left out, its provincial table not the national report's
+  Cabinda: language left out, its provincial table not the national report's
+  Cabinda: religion left out, its provincial table not the national report's
+  Cuando Cubango: language left out, its provincial table not the national report's
+  Cuando Cubango: religion left out, its provincial table not the national report's
+  Luanda: language left out, its provincial table not the national report's
+  Luanda: religion left out, its provincial table not the national report's
+  Lunda Norte: religion left out, its provincial table not the national report's
+  Malanje: language left out, its provincial table not the national report's
+  Moxico: religion left out, its provincial table not the national report's
+  Namibe: religion left out, its provincial table not the national report's
+  Cabinda: language p101: Urbana: figure 88 at 518 fits no column; Urbana: figure 77 at 574 fits no column; Urbana: figure 5620 at 638 fits no column
+  Cabinda: religion p106: header not read (7 columns)
+  Cabinda: age_broad p70: Luali: figure 811 at 328 fits no column; Luali: figure 919 at 392 fits no column; Inhuca: figure 98 at 468 fits no column
+  Cabinda: age_broad p72: Luali: figure 811 at 206 fits no column; Luali: figure 441 at 273 fits no column; Luali: figure 370 at 335 fits no column
+  Cabinda: age_broad: not found
+  Cabinda: age_other p71: Dinge: figure 962 at 287 fits no column; Luali: figure 988 at 235 fits no column; Luali: figure 222 at 287 fits no column
+  Cabinda: age_other: not found
+  Cabinda: ethnicity: communes of necuto pass its total
+  Cabinda: language: communes of necuto pass its total
+  Cabinda: age_broad: municipalities not found: Cabinda, Cacongo, Buco Zau, Belize, Tando Zinze, Ngoio, Liambo, Massabi, Necuto, Miconje
+  Cabinda: age_other: municipalities not found: Cabinda, Cacongo, Buco Zau, Belize, Tando Zinze, Ngoio, Liambo, Massabi, Necuto, Miconje
+  Cabinda: religion: cabinda's groups make 452,413, not 557,577
+  Cabinda: religion: cacongo's groups make 32,118, not 39,253
+  Cabinda: religion: bucozau's groups make 26,818, not 30,482
+  Cabinda: religion: belize's groups make 17,056, not 18,473
+  Cabinda: religion: tandozinze's groups make 23,835, not 25,593
+  Cabinda: religion: ngoio's groups make 45,821, not 58,525
+  Cabinda: religion: liambo's groups make 76,910, not 93,460
+  Cabinda: religion: massabi's groups make 9,442, not 11,239
+  Cabinda: religion: necuto's groups make 13,706, not 16,441
+  Cabinda: religion: miconje's groups make 7,626, not 8,629
+  Cabinda: Cabinda = Cabinda + Tando Zinze + Ngoio + Liambo; Cacongo(ex_Lândana) = Cacongo + Massabi; Buco Zau = Buco Zau + Necuto; Belize = Belize + Miconje
+  Zaire: language p96: header not read (9 columns)
+  Zaire: religion p99: header not read (11 columns)
+  Zaire: age_broad: not found
+  Zaire: ethnicity: communes of mbanzakongo pass its total
+  Zaire: language: communes of mbanzakongo pass its total
+  Zaire: age_broad: municipalities not found: Soyo, Mbanza Kongo, Nzeto, Tomboco, Cuimba, Nóqui, Quindeje, Serra de Canda, Luvo, Lufíco, Quêlo
+  Zaire: age_other: communes of tomboco pass its total
+  Zaire: religion: soyo's groups make 151,990, not 209,990
+  Zaire: religion: mbanzakongo's groups make 111,629, not 209,950
+  Zaire: religion: nzeto's groups make 34,048, not 49,295
+  Zaire: religion: tomboco's groups make 29,537, not 37,021
+  Zaire: religion: cuimba's groups make 41,488, not 63,664
+  Zaire: religion: noqui's groups make 12,419, not 15,839
+  Zaire: religion: quindeje's groups make 11,572, not 14,014
+  Zaire: religion: serradecanda's groups make 5,844, not 7,343
+  Zaire: religion: luvo's groups make 6,310, not 12,938
+  Zaire: religion: lufico's groups make 13,228, not 15,503
+  Zaire: religion: quelo's groups make 8,754, not 9,839
+  Zaire: Soyo = Soyo + Quêlo; Mbanza Kongo = Mbanza Kongo + Luvo; Nzeto = Nzeto + Quindeje; Tomboco = Tomboco; Cuimba = Cuimba + Serra de Canda; Nóqui = Nóqui + Lufíco
+  Bengo: religion p107: header not read (13 columns)
+  Bengo: ethnicity: communes of nambuangongo pass its total
+  Bengo: language: communes of nambuangongo pass its total
+  Bengo: religion: dande's groups make 57,335, not 138,560
+  Bengo: religion: quibaxe's groups make 9,386, not 42,451
+  Bengo: religion: nambuangongo's groups make 33,205, not 49,490
+  Bengo: religion: bulaatumba's groups make 9,573, not 33,926
+  Bengo: religion: ambriz's groups make 20,415, not 52,001
+  Bengo: religion: pangoaluquem's groups make 7,654, not 17,956
+  Bengo: religion: quicunzo's groups make 10,635, not 12,689
+  Bengo: religion: muxaluando's groups make 34,866, not 48,332
+  Bengo: religion: ucua's groups make 14,704, not 39,460
+  Bengo: religion: piri's groups make 8,472, not 24,995
+  Bengo: religion: panguila's groups make 45,650, not 150,602
+  Bengo: religion: barradodande's groups make 22,603, not 68,885
+  Bengo: Dande = Dande + Úcua + Panguila + Barra do Dande; Dembos = Quibaxe + Piri; Nambuangongo = Nambuangongo + Quicunzo + Muxaluando; Bula-Atumba = Bula-Atumba; Ambriz = Ambriz; Pango Aluquém = Pango Aluquém
+  Luanda: no table on the 2016 municipalities
+  Luanda: ethnicity: not found
+  Luanda: language p104: header not read (8 columns)
+  Luanda: religion p108: header not read (11 columns)
+  Luanda: age_broad: not found
+  Icolo_e_Bengo: no table on the 2016 municipalities
+  Icolo_e_Bengo: religion p98: header not read (11 columns)
+  Cuanza_Norte: no table on the 2016 municipalities
+  Cuanza_Norte: the 2016 municipalities make 1,221,789 (total 1,221,789), not 659,097; table left out
+  Cuanza_Norte: religion p112: header not read (11 columns)
+  Cuanza_Norte: age_broad p76: header not read (9 columns)
+  Cuanza_Norte: age_broad p77: header not read (9 columns)
+  Malanje: no table on the 2016 municipalities
+  Malanje: province: 1,298,254 is not 638,368 men and 659,880 women
+  Malanje: the 2016 municipalities make 1,298,250 (total 1,298,250), not 1,298,254; table left out
+  Malanje: religion p120: header not read (11 columns)
+  Lunda_Norte: no table on the 2016 municipalities
+  Lunda_Norte: ethnicity p105: header not read (8 columns)
+  Lunda_Norte: ethnicity p106: header not read (7 columns)
+  Lunda_Norte: ethnicity: not found
+  Lunda_Norte: religion p112: header not read (11 columns)
+  Lunda_Norte: age_other p77: header not read (7 columns)
+  Lunda_Norte: age_other: not found
+  Lunda_Sul: no table on the 2016 municipalities
+  Lunda_Sul: ethnicity p93: header not read (7 columns)
+  Lunda_Sul: ethnicity p93: header not read (8 columns)
+  Lunda_Sul: ethnicity: not found
+  Lunda_Sul: language: Muconda has no figure under Humbi
+  Lunda_Sul: religion p98: header not read (12 columns)
+  Lunda_Sul: religion: Alto Chicapa has no figure under Bom Deus Church
+  Lunda_Sul: age_broad: not found
+  Lunda_Sul: age_other p71: header not read (7 columns)
+  Lunda_Sul: age_other p72: header not read (7 columns)
+  Lunda_Sul: age_other: not found
+  Moxico: no table on the 2016 municipalities
+  Moxico: province: 574,251 is not 280,848 men and 293,407 women
+  Moxico: religion p102: header not read (12 columns)
+  Moxico_Leste: no table on the 2016 municipalities
+  Moxico_Leste: ethnicity: not found
+  Moxico_Leste: language: not found
+  Moxico_Leste: age_broad p62: header not read (9 columns)
+  Moxico_Leste: age_broad: not found
+  Bie: ethnicity: Caiuera has no figure under Other
+  Bie: religion p110: header not read (11 columns)
+  Bie: religion: Belo Horizonte has no figure under Bom Deus Church
+  Bie: age_broad p72: header not read (9 columns)
+  Bie: age_broad: not found
+  Bie: age_other: not found
+  Bie: ethnicity: municipalities not found: Andulo, Chitembo, Cuito, Camacupa, Chinguar, Catabola, Cunhinga, Cuemba, Nharêa, Calucinga, Lúbia, Cambândua, Chicala, Belo Horizonte, Mumbué, Luando, Chipeta, Ringoma, Umpulo
+  Bie: language: communes of andulo pass its total
+  Bie: religion: municipalities not found: Andulo, Chitembo, Cuito, Camacupa, Chinguar, Catabola, Cunhinga, Cuemba, Nharêa, Calucinga, Lúbia, Cambândua, Chicala, Belo Horizonte, Mumbué, Luando, Chipeta, Ringoma, Umpulo
+  Bie: age_broad: municipalities not found: Andulo, Chitembo, Cuito, Camacupa, Chinguar, Catabola, Cunhinga, Cuemba, Nharêa, Calucinga, Lúbia, Cambândua, Chicala, Belo Horizonte, Mumbué, Luando, Chipeta, Ringoma, Umpulo
+  Bie: age_other: municipalities not found: Andulo, Chitembo, Cuito, Camacupa, Chinguar, Catabola, Cunhinga, Cuemba, Nharêa, Calucinga, Lúbia, Cambândua, Chicala, Belo Horizonte, Mumbué, Luando, Chipeta, Ringoma, Umpulo
+  Bie: Cuito = Cuito + Cambândua + Chicala; Cunhinga (Vouga) = Cunhinga + Belo Horizonte; Chinguar = Chinguar; Andulo = Andulo + Calucinga; N'harea = Nharêa + Lúbia; Camacupa = Camacupa + Ringoma + Umpulo; Cuemba = Cuemba + Luando; Chitembo = Chitembo + Mumbué; Catabola (ex. Nova Sintra) = Catabola + Chipeta
+  Huambo: no table on the 2016 municipalities
+  Huambo: the 2016 municipalities make 4,935,543 (total 4,935,543), not 2,691,902; table left out
+  Huambo: ethnicity: not found
+  Huambo: religion p109: header not read (13 columns)
+  Huambo: religion: not found
+  Huambo: age_broad: not found
+  Benguela: no table on the 2016 municipalities
+  Benguela: ethnicity p105: header not read (8 columns)
+  Benguela: ethnicity: Chindumbo has no figure under Other
+  Benguela: religion p111: header not read (8 columns)
+  Benguela: age_other p77: header not read (7 columns)
+  Benguela: age_other p78: header not read (6 columns)
+  Benguela: age_other: not found
+  Namibe: ethnicity p95: header not read (15 columns)
+  Namibe: ethnicity: not found
+  Namibe: language: not found
+  Namibe: religion p101: header not read (12 columns)
+  Namibe: crosswalk: 0 assignments add up
+  Namibe: ethnicity: municipalities not found: Moçâmedes, Tômbwa, Bibala, Virei, Camucuio, Lucira, Cacimbas, Sacomar, Iona
+  Namibe: language: municipalities not found: Moçâmedes, Tômbwa, Bibala, Virei, Camucuio, Lucira, Cacimbas, Sacomar, Iona
+  Namibe: age_broad: communes of camucuio pass its total
+  Namibe: age_other: communes of camucuio pass its total
+  Namibe: religion: mocamedes's groups make 179,634, not 328,346
+  Namibe: religion: tombwa's groups make 50,152, not 115,073
+  Namibe: religion: bibala's groups make 52,509, not 110,917
+  Namibe: religion: virei's groups make 10,524, not 50,384
+  Namibe: religion: camucuio's groups make 19,521, not 38,821
+  Namibe: religion: lucira's groups make 15,417, not 26,842
+  Namibe: religion: cacimbas's groups make 21,150, not 29,049
+  Namibe: religion: sacomar's groups make 32,252, not 61,554
+  Namibe: religion: iona's groups make 565, not 4,289
+  Huila: no table on the 2016 municipalities
+  Huila: the 2016 municipalities make 3,275,939 (total 3,275,939), not 3,302,866; table left out
+  Huila: language: not found
+  Huila: religion p115: header not read (12 columns)
+  Huila: religion: not found
+  Huila: age_broad p77: header not read (9 columns)
+  Huila: age_broad: not found
+  Cunene: language: not found
+  Cunene: religion p105: header not read (11 columns)
+  Cunene: age_broad p74: header not read (9 columns)
+  Cunene: ethnicity: communes of cahama pass its total
+  Cunene: language: municipalities not found: Ombadja, Cuanhama, Curoca, Chitado, Cahama, Cuvelai, Namacunde, Nehone, Cafima, Chissuata, Mupa, Chiéde, Humbe, Naulila
+  Cunene: religion: ombadja's groups make 157,592, not 231,703
+  Cunene: religion: cuanhama's groups make 360,777, not 470,833
+  Cunene: religion: curoca's groups make 10,577, not 33,663
+  Cunene: religion: chitado's groups make 16,860, not 32,985
+  Cunene: religion: cahama's groups make 83,713, not 130,526
+  Cunene: religion: cuvelai's groups make 52,506, not 70,729
+  Cunene: religion: namacunde's groups make 85,858, not 130,244
+  Cunene: religion: nehone's groups make 159,986, not 169,044
+  Cunene: religion: cafima's groups make 16,796, not 17,788
+  Cunene: religion: chissuata's groups make 5,946, not 7,407
+  Cunene: religion: mupa's groups make 35,958, not 37,495
+  Cunene: religion: chiede's groups make 77,103, not 93,840
+  Cunene: religion: humbe's groups make 143,330, not 184,059
+  Cunene: religion: naulila's groups make 50,679, not 78,361
+  Cunene: Ombadja = Ombadja + Humbe + Naulila; Cuanhama = Cuanhama + Nehone + Cafima; Curoca = Curoca + Chitado; Cahama = Cahama; Cuvelai = Cuvelai + Chissuata + Mupa; Namacunde = Namacunde + Chiéde
+  Cubango: no table on the 2016 municipalities
+  Cubango: ethnicity p91: header not read (8 columns)
+  Cubango: religion p97: header not read (11 columns)
+  Cubango: age_broad p69: header not read (9 columns)
+  Cubango: age_broad: not found
+  Cuando_Cubango: no table on the 2016 municipalities
+  Cuando_Cubango: ethnicity: not found
+  Cuando_Cubango: language p89: header not read (9 columns)
+  Cuando_Cubango: religion p93: header not read (13 columns)
+  Cuando_Cubango: age_broad: not found
+  Cacongo(ex_Lândana) (Cabinda): no polygon of its own
+  Cunhinga (Vouga) (Bié): no polygon of its own
+  Catabola (ex. Nova Sintra) (Bié): no polygon of its own
+  Lobito: drawn with Lobito and Catumbela, not all of them read
+  Chitato: drawn with Chitato and Lóvua, not all of them read
+  Ambriz: 54,309 (Ambriz; from Ambriz; age_broad, age_other)
+  Andulo: 411,688 (Andulo; from Andulo, Calucinga; no tables)
+  Belize: 28,618 (Belize; from Belize, Miconje; no tables)
+  Bibala: 119,295 (Bibala; from -; no tables)
+  Buco Zau: 49,706 (Buco Zau; from Buco Zau, Necuto; no tables)
+  Bula-Atumba: 36,172 (Bula-Atumba; from Bula-Atumba; age_broad, age_other)
+  Cabinda: 771,354 (Cabinda; from Cabinda, Tando Zinze, Ngoio, Liambo; no tables)
+  Cahama: 140,925 (Cahama; from Cahama; age_broad, age_other)
+  Camacupa: 240,586 (Camacupa; from Camacupa, Ringoma, Umpulo; no tables)
+  Camucuio: 74,150 (Camucuio; from -; no tables)
+  Chinguar: 230,187 (Chinguar; from Chinguar; no tables)
+  Chitembo: 136,354 (Chitembo; from Chitembo, Mumbué; no tables)
+  Cuanhama: 701,420 (Cuanhama; from Cuanhama, Nehone, Cafima; age_broad, age_other)
+  Cuemba: 78,776 (Cuemba; from Cuemba, Luando; no tables)
+  Cuimba: 75,574 (Cuimba; from Cuimba, Serra de Canda; no tables)
+  Cuito: 632,664 (Cuito; from Cuito, Cambândua, Chicala; no tables)
+  Curoca: 71,142 (Curoca; from Curoca, Chitado; age_broad, age_other)
+  Cuvelai: 124,834 (Cuvelai; from Cuvelai, Chissuata, Mupa; age_broad, age_other)
+  Dande: 418,274 (Dande; from Dande, Úcua, Panguila, Barra do Dande; age_broad, age_other)
+  Dembos-Quibaxe: 70,700 (Dembos; from Quibaxe, Piri; age_broad, age_other)
+  Mbanza Congo: 234,945 (Mbanza Kongo; from Mbanza Kongo, Luvo; no tables)
+  N'Zeto: 67,120 (Nzeto; from Nzeto, Quindeje; no tables)
+  N'harea: 218,329 (N'harea; from Nharêa, Lúbia; no tables)
+  Namacunde: 238,855 (Namacunde; from Namacunde, Chiéde; age_broad, age_other)
+  Nambuangongo: 117,872 (Nambuangongo; from Nambuangongo, Quicunzo, Muxaluando; age_broad, age_other)
+  Namibe: 439,693 (Moçâmedes; from -; no tables)
+  Noqui: 33,447 (Nóqui; from Nóqui, Lufíco; no tables)
+  Ombadja: 529,241 (Ombadja; from Ombadja, Humbe, Naulila; age_broad, age_other)
+  Soyo: 232,058 (Soyo; from Soyo, Quêlo; no tables)
+  Tomboco: 39,513 (Tomboco; from Tomboco; no tables)
+  Tombwa: 128,536 (Tômbwa; from -; no tables)
+  Virei: 54,034 (Virei; from -; no tables)
+  16 provinces; 32 municipality polygons with a count, 0 with ethnic groups, 11 with a median age; 126 second-level records
+  the provinces make 32,258,781
+  reports not read: Uige, Cuanza_Sul
+  wrote data/processed/angola_municipios.json (247 kB)
