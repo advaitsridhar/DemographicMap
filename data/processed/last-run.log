@@ -1,41 +1,35 @@
-page: https://inseed.tg/
-  363,474 bytes
-  4 matching link(s)
-  - Cycle 2030 des Recensements Généraux de la Population et de l’Habitat 
-    https://inseed.tg/cycle-2030-des-recensements-generaux-de-la-population-et-de-lhabitat-des-experts-en-atelier-regional-a-lome/
-  - .menu-item-6026.menu-item-has-label > a > .menu-label{background-color
-    https://inseed.tg/depliant-et-communique-rgph/
-  - 
-    https://inseed.tg/wp-content/uploads/2021/04/Guide-utilisation-publications-INSEED_2.pdf
-  - Rapport général du Recensement Général des Entreprises au Togo
-    https://inseed.tg/download/1702/?tmstv=1792181133
-page: https://inseed.tg/rgph-5/
-  229,411 bytes
-  10 matching link(s)
-  - 
-    https://inseed.tg/rgph-5/
-  - Cycle 2030 des Recensements Généraux de la Population et de l’Habitat 
-    https://inseed.tg/cycle-2030-des-recensements-generaux-de-la-population-et-de-lhabitat-des-experts-en-atelier-regional-a-lome/
-  - .menu-item-6026.menu-item-has-label > a > .menu-label{background-color
-    https://inseed.tg/depliant-et-communique-rgph/
-  - RGPH5
-    https://inseed.tg/category/rgph5/
-  - 
-    https://inseed.tg/wp-content/uploads/2022/10/Img-3-lancement-rgph5.png
-  - Facebook
-    https://www.facebook.com/sharer/sharer.php?u=https://inseed.tg/rgph-5-communique-de-presse-sur-le-5eme-recensement-general-de-la-population-et-de-lhabitat/
-  - Twitter
-    https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20RGPH-5%20-%20Communiqu%C3%A9%20de%20presse%20sur%20le%205%C3%A8me%20recensement%20g%C3%A9n%C3%A9ral%20de%20la%20population%20et%20de%20l%E2%80%99habitat%20-%20https://inseed.tg/rgph-5-communique-de-presse-sur-le-5eme-recensement-general-de-la-population-et-de-lhabitat/
-  - RGPH-5 : Journée de sensibilisation des Parlementaires pour mobilisati
-    https://inseed.tg/rgph-5-journee-de-sensibilisation-des-parlementaires-pour-mobilisation-massive-des-populations-a-se-faire-recenser/
-  - RGPH-5 : Suivi des opérations de Dénombrement sur le terrain par la Re
-    https://inseed.tg/rgph5-suivi-des-operations-de-denombrement-sur-le-terrain-par-la-representante-residente-de-lunfpa/
-  - Annuler la réponse
-    https://inseed.tg/rgph-5-communique-de-presse-sur-le-5eme-recensement-general-de-la-population-et-de-lhabitat/#respond
-page: https://inseed.tg/publications/
-  169,847 bytes
-  2 matching link(s)
-  - Cycle 2030 des Recensements Généraux de la Population et de l’Habitat 
-    https://inseed.tg/cycle-2030-des-recensements-generaux-de-la-population-et-de-lhabitat-des-experts-en-atelier-regional-a-lome/
-  - .menu-item-6026.menu-item-has-label > a > .menu-label{background-color
-    https://inseed.tg/depliant-et-communique-rgph/
+== get https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/2ec96e53-b38f-4994-9a8c-5bbaa4c49e82/download/eth_admpop_adm1_2022_v2.csv
+  5,203 bytes, begins b'\xef\xbb\xbfadmin1Name_en'
+  text: ﻿admin1Name_en,admin1Pcode,admin0Name_en,admin0Pcode,T_TL,M_TL,F_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_15_17,T_18_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65plus,M_00_04,M_05_09,M_10_14,M_15_19,M_15_17,M_18_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65plus,F_00_04,F_05_09,F_10_14,F_15_19,F_15_17,F_18_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65plus Tigray,ET01,Ethiopia,ET,5649587,2777801,2871786,752790,803204,843955,656076,477295,178781,480311,377136,294510,301990,227678,211634,172226,133767,101492,292817,370133,394921,414958,322581,234678,87903,236160,185431,144805,148483,111945,104057,84681,65771,49902,143973,382657,408283,428997,333495,242618,90877,244151,191705,149705,153507,115733,107577,87546,67996,51590,148844 Afar,ET02,Ethiopia,ET,1989997,1083584,906413,327046,348948,262587,209462,152384,57078,166329,157077,123516,105936,79631,59996,45955,31704,22279,49531,178081,190007,142982,114055,82975,31080,90569,85531,67256,57684,43361,32669,25023,17263,12131,26971,148964,158940,119604,95406,69408,25998,75760,71546,56260,48252,36271,27327,20932,14441,10148,22561 Amhara,ET03,Ethiopia,ET,22530515,11289837,11240678,2797788,2985156,3187607,2553372,1857578,695794,1789393,1796181,1236551,1277778,916270,887852,737148,605054,553173,1207194,1401946,1495834,1597281,1279472,930816,348656,896648,900050,619624,640283,459134,444895,369378,303187,277190,604914,1395842,1489321,1590326,1273901,926763,347138,892744,896131,616926,637495,457135,442957,367770,301867,275983,602280 Oromia,ET04,Ethiopia,ET,39075002,19548351,19526651,5981785,6382384,5953358,4181816,3042271,1139545,2883867,2809654,2139507,2269737,1504538,1147222,950241,737082,678648,1455165,2992553,3192964,2978332,2092069,1521980,570089,1442734,1405607,1070348,1135499,752687,573930,475384,368745,339512,727987,2989231,3189420,2975026,2089747,1520291,569456,1441133,1404047,1069159,1134238,751851,573292,474857,368336,339135,727179 Somali,ET05,Ethiopia,ET,6355003,3390846,2964157,1137580,1213763,1042257,659338,479668,179670,399063,394924,327010,279004,265775,164953,184791,75687,81635,129224,606980,647629,556118,351803,255937,95866,212928,210720,174483,148868,141810,88014,98599,40384,43558,68950,530600,566134,486139,307534,223731,83803,186134,184204,152527,130135,123965,76939,86192,35303,38077,60274 Benishangul Gumz,ET06,Ethiopia,ET,1187997,602571,585426,177975,189893,158345,135718,98735,36983,101937,98070,69013,75154,42961,39594,32275,18182,21798,27081,90271,96317,80315,68838,50080,18758,51704,49743,35005,38120,21790,20083,16370,9222,11056,13736,87703,93577,78030,66880,48655,18225,50233,48327,34009,37035,21170,19511,15905,8960,10742,13345 SNNP,ET07,Ethiopia,ET,13250645,6534167,6716478,2018879,2154083,1983563,1445838,1051847,393991,915193,1018431,794074,776279,528777,429134,332788,279927,230742,342935,995551,1062223,978136,712972,518687,194285,451300,502210,391574,382799,260751,211615,164105,138038,113784,169108
+== get https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/3f8150d4-6d5d-4659-a0a8-586e4689ae65/download/eth_admpop_adm3_2022_v2.csv
+  338,609 bytes, begins b'\xef\xbb\xbfadmin3Name_en'
+  text: ﻿admin3Name_en,admin3Pcode,admin2Name_en,admin2Pcode,admin1Name_en,admin1Pcode,admin0Name_en,admin0Pcode,T_TL,M_TL,F_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_15_17,T_18_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65plus,M_00_04,M_05_09,M_10_14,M_15_19,M_15_17,M_18_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65plus,F_00_04,F_05_09,F_10_14,F_15_19,F_15_17,F_18_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65plus Tahtay Adiyabo,ET010101,North Western,ET0101,Tigray,ET01,Ethiopia,ET,107741,54300,53441,14356,15318,16095,12511,9102,3409,9160,7192,5616,5759,4342,4036,3284,2551,1936,5584,7235,7720,8112,6305,4587,1718,4616,3625,2831,2903,2188,2034,1655,1286,975,2814,7121,7598,7983,6206,4515,1691,4543,3567,2786,2857,2154,2002,1629,1265,960,2770 Laelay Adiabo,ET010102,North Western,ET0101,Tigray,ET01,Ethiopia,ET,136058,67212,68846,18129,19343,20325,15801,11495,4306,11567,9083,7093,7273,5483,5097,4148,3221,2444,7052,8956,9556,10040,7805,5678,2127,5714,4487,3504,3593,2709,2518,2049,1591,1207,3484,9174,9788,10284,7995,5816,2179,5853,4596,3589,3680,2774,2579,2099,1630,1237,3568 Zana,ET010103,North Western,ET0101,Tigray,ET01,Ethiopia,ET,15127,7029,8098,2016,2151,2260,1757,1278,479,1286,1010,789,809,610,567,461,358,272,784,937,999,1050,816,594,222,598,469,366,376,283,263,214,166,126,364,1079,1151,1210,940,684,256,688,541,422,433,326,303,247,192,145,420 Tahtay Koraro,ET010104,North Western,ET0101,Tigray,ET01,Ethiopia,ET,78165,38774,39391,10415,11113,11677,9078,6604,2474,6645,5218,4075,4178,3150,2928,2383,1851,1404,4051,5167,5513,5792,4503,3276,1227,3296,2588,2021,2073,1563,1452,1182,918,697,2010,5249,5600,5884,4575,3328,1247,3349,2630,2053,2106,1587,1476,1201,933,708,2042 Asgede,ET010105,North Western,ET0101,Tigray,ET01,Ethiopia,ET,62171,31380,30792,8284,8839,9287,7219,5252,1967,5286,4150,3241,3323,2506,2329,1895,1472,1117,3222,4181,4461,4688,3644,2651,993,2668,2095,1636,1677,1265,1175,957,743,564,1626,4103,4378,4600,3575,2601,974,2618,2055,1605,1646,1241,1153,939,729,553,1596 Tselemti,ET010106,North Western,ET0101,Tigray,ET01,Ethiopia,ET,164957,82797,82160,21980,23452,24642,19156,13936,5220,14024,11012,8599,8818,6648,6179,5029,3906,2963,8550,11032,11771,12369,9615,6995,2620,7039,5527,4316,4426,3337,3102,2524,1960,1487,4291,10948,11681,12273,9541,6941,2600,6985,5485,4283,4392,3311,3078,2505,1945,1476,4258 Sheraro town,ET010107,North Western,ET0101,Tigray,ET01,Ethiopia,ET,34471,17235,17236,4593,4901,5149,4003,2912,1091,2931,2301,1797,1843,1389,1291,1051,816,619,1787,2297,2450,2575,2001,1456,545,1465,1151,898,921,695,646,525,408,310,893,2297,2450,2575,2001,1456,545,1465,1151,899,921,695,646,525,408,310,893 Indasilassie town,ET010108,North Western,ET0101,Tigray,ET01,Ethiopia,ET,95491,46169,49322,12724,13576,14265,11089,8067,3022,8118,6374,4978,5104,3848,3577,2911,2261,1715,4949,6152,6564,6897,5362,3901,1461,3925,3082,2407,2468,1861,1729,1407,1093,829,2393,6572,7012,7368,5728,4
+== get https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/fe9b1d7a-b7cf-4614-9105-970816191d45/download/table_eth_codps_2026.xlsx
+  146,900 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\x13\xa3'
+  https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/fe9b1d7a-b7cf-4614-9105-970816191d45/download/table_eth_codps_2026.xlsx: 2 sheets: READ ME | COD_PS
+  -- sheet 'READ ME': 19 rows x 24 cols
+    r0: Step1 - get the latst pr |  |  |  |  |  |  | Step2 - include special  |  |  |  |  |  |  |  |  |  |  | Step3 - find growth rate | 
+    r1: Population projection Ju |  |  |  |  |  |  | Added to their respectiv |  |  |  |  |  | July 2025 Projection |  |  |  |  |  | 
+    r2: admin1Pcode | Admin1 | Male | Female | Total |  |  | Special Enumeration area | Region | Male | Female | Total |  | Region | Male | Female | Total |  | Admin1 | 2025 HNRP projection
+    r3: ET01 | Tigray | 2983000 | 3052000 | 6035000 |  |  | Meda Welabu | Oromia | 2750 | 2713 | 5463 |  | Oromia | 21382000 | 21307000 | 42689000 |  | Tigray | 4866336
+    r4: ET02 | Afar | 1170000 | 991000 | 2161000 |  |  | Mulo | Oromia | 406 | 492 | 898 |  | Somali | 3671000 | 3286000 | 6957000 |  | Contested | 1069663
+    r5: ET03 | Amhara | 11968000 | 11911000 | 23879000 |  |  |  |  | 3156 | 3205 | 6361 |  | Tigray | 2983000 | 3052000 | 6035000 |  | Afar | 2119999
+    r6: ET04 | Oromia | 21385156 | 21310205 | 42695361 |  |  | Moyale | Somali | 43851 | 38129 | 81980 |  |  |  |  |  |  | Amhara | 23549003
+    r7: ET05 | Somali | 3747843 | 3349796 | 7097639 |  |  | Afdem | Somali | 32992 | 25667 | 58659 |  |  |  |  |  |  | Oromia | 41790020
+    r8: ET06 | Benishangul-Gumuz | 667000 | 648000 | 1315000 |  |  |  |  | 76843 | 63796 | 140639 |  |  |  |  |  |  | Somali | 6808000
+    r9: ET07 | Central Ethiopia | 3207059 | 3339158 | 6546217 |  |  |  |  |  |  |  |  |  |  |  |  |  | Benishangul-Gumuz | 1283005
+    r10: ET08 | South Ethiopia | 3918643 | 4008155 | 7926798 |  |  | Contested | Zone/Woreda | Male | Female | Total |  |  |  |  |  |  | Central Ethiopia | 6408865
+    r11: ET11 | South West Ethiopia | 1745590 | 1774011 | 3519601 |  |  |  | Western Tigray | 259627 | 242131 | 501758 |  |  |  |  |  |  | South Ethiopia | 7760611
+  -- sheet 'COD_PS': 1152 rows x 14 cols
+    r0: admin3Name | admin3_pcod | admin2_name | admin2_pcod | admin1_name | Male | Female | Total | Boys (<18) | Girls (<18) | Adult men (18-59) | Adult women (18-59) | Elderly men (60+) | Elderly women (60+)
+    r1: Tahtay Adiyabo | ET010101 | North Western | ET0101 | Tigray | 36423 | 35875 | 72298 | 17545 | 17281 | 16336 | 16090 | 2542 | 2504
+    r2: Zana | ET010103 | North Western | ET0101 | Tigray | 26275 | 27108 | 53383 | 12657 | 13058 | 11784 | 12158 | 1834 | 1892
+    r3: Tahtay Koraro | ET010104 | North Western | ET0101 | Tigray | 40557 | 41154 | 81711 | 19536 | 19824 | 18190 | 18458 | 2831 | 2872
+    r4: Asgede | ET010105 | North Western | ET0101 | Tigray | 39090 | 38098 | 77188 | 18830 | 18352 | 17532 | 17087 | 2728 | 2659
+    r5: Sheraro town | ET010107 | North Western | ET0101 | Tigray | 19674 | 19649 | 39323 | 9477 | 9465 | 8824 | 8813 | 1373 | 1371
+    r6: Shire Endaslasie town | ET010108 | North Western | ET0101 | Tigray | 52703 | 56232 | 108935 | 25387 | 27087 | 23638 | 25220 | 3678 | 3925
+    r7: Laelay Koraro | ET010109 | North Western | ET0101 | Tigray | 52393 | 54051 | 106444 | 25238 | 26037 | 23498 | 24242 | 3657 | 3772
+    r8: Seyemti Adyabo | ET010110 | North Western | ET0101 | Tigray | 25279 | 25904 | 51183 | 12177 | 12478 | 11338 | 11618 | 1764 | 1808
+    r9: Adi Daero | ET010111 | North Western | ET0101 | Tigray | 45731 | 46861 | 92592 | 22029 | 22573 | 20510 | 21017 | 3192 | 3271
+    r10: Maekel Adiyabo | ET010112 | North Western | ET0101 | Tigray | 20936 | 20620 | 41556 | 10085 | 9933 | 9390 | 9248 | 1461 | 1439
+    r11: Tsimbla | ET010113 | North Western | ET0101 | Tigray | 45099 | 43953 | 89052 | 21724 | 21172 | 20227 | 19713 | 3148 | 3068
