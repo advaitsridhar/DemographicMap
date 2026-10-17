@@ -1,14 +1,242 @@
-== cdxf ins-congo.cg/ (?i)(rgph|recensement|pdf|resultat) 80
-  HTTP 500: 0 captures
-== cdxf cnsee.org/ (?i)(rgph|recensement|pdf) 80
-  HTTP 500: 0 captures
-== head https://ins-congo.cg/ 
-  HTTP 200 text/html 122,901 bytes
-  title: Accueil | Institut National de la statistique
-  (no match)
-== head https://www.cnsee.org/ 
-  HTTP 200 text/html; charset=UTF-8 207,717 bytes
-  title: CNSEE BUSINESS : Entreprise, Finance, Immobilier
-== text https://ins-congo.cg/ 1200
-  HTTP 200 text/html 122,901 bytes
-  Accueil | Institut National de la statistique Drag Recherches de documents, Staistiques, Etudes ou Enquetes. Contact info Email contact@ins-congo.cg Téléphone 00 (242) 282 38 40 Adresse Brazzaville, République du Congo Suivez-nous Confiance sur nos partenaires Découvrez nous maintenant Lun - Mar : 9:00 - 18:00 contact@ins-congo.cg FR | EN Accueil Statistiques Statistiques économiques Comptes nationaux Statistiques d'entreprises Statistiques des prix Statistiques commerce extérieur Autres Statistiques économiques Statistiques démographiques et sociales Recensement général de la population et des logements Projection démographique Enquête démographique et de santé Statistique état civil Autres Statistiques démographiques Statistiques sur les conditions de vie des ménages Statistiques sur l'emploi et le travail Recensement des populations économiquement vulnérable Recensement général de l'offre éducative Autres statistiques sociales Statistiques agricoles Recensement général de l'agriculture Enquêtes de productions animales et végétale Autres Statistiques agricoles Statistique sectorielle Enquêtes et études Recensement Enquêtes Autres Enquêtes Missions des experts Etudes Rapports thém
+probe_pdf: https://www.gbosdata.org/downloads-file/213-census-2013-spatial-distribution-report
+  8,702,036 bytes
+  373 pages
+probe_pdf: 373 pages, 1 mention ['Foni', 'Jeshwang', 'Bakau', 'median']
+=== front matter ===
+ 
+ 
+ 
+ 
+
+ii 
+ 
+Table of Contents 
+List of Tables ......................................................................................................................................... iii 
+List of Figures ....................................................................................................................................... iv 
+List of Annexes ..................................................................................................................................... iv 
+List of Abbreviations and Acronyms ..................................................................................................... v 
+Concepts and Definitions ...................................................................................................................... vi 
+Preface ................................................................................................................................................. viii 
+Executive Summary .............................................................................................................................. ix 
+CHAPTER 1: INTRODUCTION .......................................................................................................... 1 
+1.1 Background.................................................................................................................................... 1 
+1.2   Methodology .................................................................................................................................. 1 
+1.3 Limitations ..................................................................................................................................... 2 
+CHAPTER 2: SPATIAL DISTRIBUTION OF THE POPULATION AND SOCIO-CULTURAL 
+CHARACTERISTICS ................................................................................................................... 3 
+2.1 Population size, growth and percentage distribution ........................................................................ 3 
+2.1.1 Percentage distribution of population size and growth rate by LGA ................................... 4 
+2.1.2 Percentage distribution of population by LGA ..................................................................... 5 
+2.1.3 Distribution of the population by sex and residence ............................................................. 5 
+2.1.4 Distribution of the population by religion ............................................................................ 6 
+2.2 Population density ......................................................................................................................... 6 
+2.3 Population by age and sex ............................................................................................................. 6 
+2.4 Distribution of the population ..................................................................................................... 10 
+2.4.1 Population distribution by residence and LGA ................................................................... 10 
+2.5 Sex ratio ....................................................................................................................................... 11 
+2.5.1 Sex ratio by Local Government Area ................................................................................. 11 
+CHAPTER 3: ETHINICITY AND NATIONALITY .......................................................................... 12 
+3.1 Population distribution by ethnicity ............................................................................................ 12 
+3.2 Population distribution by ethnicity and LGA ............................................................................ 13 
+3.3.1 Non-Gambian population ................................................................................................... 13 
+3.3.2 Distribution of the population by nationality and LGA ...................................................... 13 
+3.3.3 Distribution of non-Gambians by nationality ..................................................................... 14 
+CHAPTER 4: MARITAL STATUS AND TYPE OF UNION ............................................................ 15 
+4.1 Population aged 12 years and over by marital status and sex ...................................................... 15 
+4.2 Population aged 12 years and over by marital status, sex and residence..................................... 16 
+4.3 Female Gambian teenage population (12-19 years) by marital status      and ethnicity .............. 17 
+4.4 Gambian population aged (12-19 years) by educational attainment and marital status .............. 17 
+4.5 Type of union .............................................................................................................................. 18 
+4.6 Ever married population aged 12 years and over by type of union and educational attainment . 18 
+4.7 Ever-married economically active population aged 12 years and over by type of union, sex and 
+occupation.................................................................................................................................... 19 
+4.8 Currently married population aged 12 years and over by sex, age group and type of union ...... 19 
+4.9 Currently married population aged 12 years and over by LGA, sex and type of union .............. 20 
+CHAPTER 5: CONCLUSION ............................................................................................................. 21 
+References ............................................................................................................................................ 22 
+Annexes ................................................................................................................................................ 23 
+ 
+iii 
+ 
+List of Tables 
+ 
+Table 2.1.2: Percentage distribution of the population by LGA and sex................................................................ 5 
+Table 2.1.3: Percentage distribution of the population by residence and sex ......................................................... 5 
+Table 2.3: Percentage distribution of the population by five-year age group and sex ............................................ 7 
+Table 2.4.1: Percentage distribution of the population by LGA and Residence .................................................. 10 
+Table 2.5.1: Population by Local Government Area and Sex Ratio..................................................................... 11 
+Table 3.1.1: Percentage distribution of the Gambian Population by Ethnicity 1973,1983,1993,2003 and 2013 
+Censuses ..................................................................................................................................................... 12 
+Table 3.2: Percentage Distribution of Gambians by Ethnicity and LGA ............................................................. 13 
+Table 4.1: Percentage distribution of the population by marital status and sex, 1983, 1993, 2003, and 2013 
+Censuses ..................................................................................................................................................... 16 
+Table 4.2: Percentage Distribution of Population (12 years and over) by Marital Status .................................... 16 
+Table 4.4: Percentage distribution of Gambian teenage population (12-19 years) by educational attainment and 
+marital Status .............................................................................................................................................. 17 
+Table 4.5: Percentage distribution of ever-married population aged 12 years and over by type of union and sex
+ .................................................................................................................................................................... 18 
+Table 4.6 Percentage distribution of ever married population aged 12 years and over by type of union, sex and 
+educational attainment ................................................................................................................................ 18 
+Table 4.7: Percentage distribution of ever-married economically active population aged 12 years and over by 
+type of union, sex and occupation .............................................................................................................. 19 
+  
+  
+iv 
+ 
+List of Figures 
+ 
+Figure 2.3 A & B: Percentage Distribution of age-sex population pyramid, Population & Housing Census 2013, 
+The Gambia ………..………………………………………………………………..…………………………………………………….….…….9 
+Figure 4.1: Proportion of Population (12 years and over) by marital Status, 2013 Census………………………………15 
+Figure 4.8: Percentage distribution of currently married Population aged 12 years and over by sex, Age group 
+and type of union……………………………………………………………………………………….…………………………………….…. 20 
+ 
+ 
+List of Annexes 
+ 
+Annex A: Population of The Gambia, 1901 to 2013 ............................................................................ 23 
+Annex B: Population count and share from 1973 -2013 by LGA  .................................................... 24 
+Annex C: Non-Gambian population by LGA and Nationality ............................................................. 27 
+Annex D: Gambian teenage population aged 12-19 years by marital status and ethnicity .................. 28 
+Annex E: Currently married population aged 12 years and over by sex, Age group, LGA and type of 
+union ............................................................................................................................................ 29 
+Annex F: Population by residence, sex, five-year age group, and Local Government Area ............... 31 
+Annex G: Population of The Gambia by sex, five-year age group, ethnicity and Local Government 
+Area ............................................................................................................................................. 40 
+Annex H: Population by Five-year age group, Sex, Religion and Local Government Area .............. 109 
+Annex I: Population aged 12 years and Over by Single and Five-year age groups, Sex, Marital Status, 
+LGA and Residence ................................................................................................................... 172 
+Annex J: Population aged 12 years and Over by Sex, Marital Status, Local Government Area, 
+Residence and Educational Attainment ..................................................................................... 238 
+Annex K: Marital Status of the Teenage Population Aged (13-19) by Educational Attainment ....... 263 
+Annex L: Currently Married Population aged 12 years and Over by Five-year age group, Sex, Type of 
+union and Residence .................................................................................................................. 287 
+Annex M: Ever married population aged 12 years and over by type of union, sex and educational 
+attainment .................................................................................................................................. 356 
+Annex N: Ever married economically active population aged 12 years and over by type of union, sex 
+and occupation ........................................................................................................................... 359 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+v 
+ 
+List of Abbreviations and Acronyms 
+ 
+ 
+GBoS   Gambia Bureau of Statistics 
+IEC                   Information, Education and Communication 
+KPA                 Kilimanjaro Plan of Action 
+LGA   Local Government Area  
+NPCS               National Population Commission Secretariat  
+UN   United Nations 
+UNFPA            United Nations Population Fund 
+ 
+  
+vi 
+ 
+Concepts and Definitions 
+ 
+Population Census: A population census is the total process  of collecting, compiling, 
+evaluating, analyzing and publishing or otherwise disseminating demographic, economic and 
+social data pertaining to all persons in a country or in a well delimited part of a country at a 
+specified time. 
+ 
+De factor count: Count of all persons present in a country/locality on census night. 
+ 
+De Jure count: Count of all persons usually resident in a country/locality as of census night  
+ 
+Inter-censal period: The period between two censuses. For most developing countries, this 
+period is 10 years. 
+ 
+Migration is a form of geographic or spatial mobility involving a change of usual residence 
+between clearly defined geographic units. Some changes of residence are temporal and do not 
+involve change of usual residence. Other changes of residence although permanent are short 
+distant movement. These raise the question of who a migrant is. In other words, one has to 
+consider the time, distance travelled and intention in deciding who qualifies to be called a 
+migrant. In the analysis of the 2 013 Population and Housing Census, two forms of migration 
+were looked at namely: internal migration and international (external) migration. 
+ 
+Population Density: The total population of a given area divided  by that land area. It 
+measures the number of persons per square kilometre.  
+ 
+Average Annual Growth Rate: Average rate of growth of the population per annum. 
+ 
+Urban: According to the 2013 Population and Housing Census, a settlement is consi dered 
+urban if it satisfies most of the following: 
+ 
+ Has commercial importance 
+ Has institutional importance 
+ Majority of the population should be non-agricultural in occupation 
+ Population should be 5,000 and above 
+ Density should be high 
+ Some degree of infrastructure should be available 
+ 
+Rural: All settlements that do not meet the criteria described above are considered rural. 
+ 
+  
+vii 
+ 
+Household: This consists of a person or group of persons who live together in the same 
+house or compound, share the same house-keeping and catering arrangements. It is important 
+to remember that memb ers of a household may not necessarily be related (by blood or 
+marriage) as for instance, maid-servants can be household members.  
+ 
+Sex Ratio: Sex ratio is the number of males per 100 females in a given population. Sex ratio 
+less than 100 indicates that th ere are relatively more female, whilst a sex ratio greater than 
+100 indicates that there are relatively more males than females. In general, sex ratios below 
+90 or above 110 are usually the result of migration, abnormally high levels of mortality 
+caused by wars or disease epidemics, under count or over count of one of the sexes etc. 
+ 
+  
+viii 
+ 
+Preface 
+ 
+This is Volume 5  of the 20 13 Population and Housing Census report. The main objective of 
+
+=== pages mentioning ['Foni', 'Jeshwang', 'Bakau', 'median'] (first 20) ===
+
+--- page 16 ----------------------------------------------------
+6
+2.1.4 Distribution of the population by religion
+According to the 2013 Census, the population of The Gambia is predominantly Muslim (96 .0
+per cent) followed by Christianity (3.8 per cent). Traditionalist and people who practice other
+religions each accounted for 0.1 per cent.
+2.2 Population density
+In 2013, the overall population density was estimated at 17 3.9 persons per square kilometre ,
+one of the highest in the S ub-Saharan Africa. Over the years, the population density of The
+Gambia has increased from 64 persons per square kilometre in 19 83 to 97 persons per square
+kilometre in 19 93 and further increased from 127 persons per square kilometre in 2003 to
+173.9 persons per square kilometre in 2013.
+Banjul, Kanifing and Brikama LGAs had the highest population densities . In 2013, the
+population density of Kanifing (4, 991.8 persons per square kilometre) surpasse d that of
+Banjul (2 ,539.2 persons per square kilometre) , while  the Brikama LGA had a population
+density of 390.4 persons per square kilometre. Unlike Kanifing, where the population density
+continues to rise,  Banjul's population density has been declining  in the past three decades.
+This could be attributed to the fact tha t the city is  an island and there is no more room for
+human settlement , thus, there has been migration of people from  Banjul to Kanifing  and
+Brikama (refer to annex, Table B.3).
+2.3 Population by age and sex
+The demographic significance of age and sex cannot be over -emphasized. These variables
+determine the future demographic trends and are in turn influenced by the dynamics of
+population (i.e. fertility, mortality and migration).
+During the census information on  age and sex of persons were collected.  The person’s age
+was recorded in complete years as at 15 th April 2013. For persons who did not know their
+ages, a calendar of events was used to assist them estimate their ages. This was meant to
+reduce the incidence of people who reported they don’t kn ow their ages and also to improve
+on the coverage and accuracy of age reporting.
+According to the 2013 Census, The Gambia has an overall median age of 18.2 years with
+17.8 and 18.5 years respectively for males and fem ales. The median  age divides the
+population into two halves i.e. the age at which 50 .0 per cent of the population are above and
+50.0 per cent are below. These low median ages mean that the country has a relatively young
+population.
