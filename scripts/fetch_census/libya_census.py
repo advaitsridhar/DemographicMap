@@ -147,7 +147,7 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
     names, _ = uscb.columns(rows)
     at = {n: i for i, n in enumerate(names) if n}
     groups = columns(names)
-    out: dict[str, Any] = {"national": None, "shabiyat": {}, "below": {}}
+    out: dict[str, Any] = {"national": None, "shabiyat": {}, "below": {}, "baladiyat": []}
     for row in rows[2:]:
         level = number(row[at["ADM_LEVEL"]])
         if level is None:
@@ -173,6 +173,8 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
             if fold(name) in out["shabiyat"]:
                 raise SystemExit(f"libya_census: shabiyah {name} printed twice")
             out["shabiyat"][fold(name)] = unit
+        elif level == 2:
+            out["baladiyat"].append(unit)
         elif level == 3:
             out["below"].setdefault(fold(unit["shabiyah"]), []).append(total)
     check(out)
@@ -260,6 +262,10 @@ def main() -> int:
     for key, unit in sorted(table["shabiyat"].items()):
         log(f"  {unit['name']:24} {unit['total']:>10,}  median {grouped_median(unit['groups'])}"
             f"  men/1000 women {round(1000 * unit['men'] / unit['women'])}")
+        # Its baladiyat, so the ground each shabiyah counts can be compared
+        # with the polygon it is bound to.
+        log("      " + "; ".join(f"{b['name']} {b['total']:,}"
+                                 for b in table["baladiyat"] if fold(b["shabiyah"]) == key))
     drawn = {level: json.loads((SITE / level / "LBY.units.json").read_text())
              for level in ("admin1", "admin2")}
     records = build(table, drawn)

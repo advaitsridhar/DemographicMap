@@ -21,10 +21,13 @@ and a few in French, some with stray direction marks and Persian letters. A
 delegation is matched within its governorate on its Arabic or its French name,
 both folded (hamza forms, ta marbuta, alef maqsura and Persian letters read as
 the Arabic letter, marks and spaces dropped), then on the closest spelling
-where each is the other's best. Delegations INS counts that the map does not
-draw (``CARVED``: created since 2014 out of one drawn delegation) are added to
-the polygon of the delegation they came from, age group by age group, and say
-so. Everything left over is logged, both sides.
+where each is the other's best (``DELEGATIONS`` declares the few that need a
+label). INS counts 279 delegations in 2024 where the map draws the 264 of
+2014: each of the fifteen made since is put back on the polygon of the 2014
+delegation its sectors belonged to, sector by sector, from INS's 2014 table
+of the population by sector (``SECTORS_2014``), and the polygon's figures are
+the two delegations added together, age group by age group, which its note
+says. Everything left over is logged, both sides.
 
 Usage:
     python -m scripts.fetch_census.tunisia_census
@@ -60,13 +63,26 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 # alone does not join them.
 GOVERNORATES = {"lekef": "El Kef", "mannouba": "Manouba", "jandouba": "Jendouba",
                 "zaghouane": "Zaghouan", "mednine": "Médenine"}
-# Delegations INS counts that the map does not draw, created since 2014 out of
-# one delegation it does draw: (governorate code, INS delegation code) -> the
-# INS delegation code whose polygon holds it. Filled from the run's log.
-CARVED: dict[tuple[str, str], str] = {}
+# The 2014 census's population by sector (secteur, imada), each under its
+# delegation as drawn in 2014: what places the sectors of a delegation made
+# since then on the polygon of the delegation they were part of.
+SECTORS_2014 = ("https://www.ins.tn/sites/default/files-ftp3/files/2021-03/"
+                "fr_population_logement_menages_par_secteurs_2014.xlsx")
+REGIONS = {"tunisie", "nordest", "nordouest", "centreest", "centreouest", "sudest",
+           "sudouest", "grandtunis", "districttunis"}
 # INS's delegation (governorate code, delegation code) -> the map's label,
-# where neither name folds to the label and no spelling is close enough.
-DELEGATIONS: dict[tuple[str, str], str] = {}
+# where neither name folds to the label and no spelling is close enough. The
+# label is looked for in the governorate first and then in the whole country:
+# Ouled Chamekh is Mahdia's, and its polygon is filed under Sousse.
+DELEGATIONS: dict[tuple[str, str], str] = {
+    ("11", "1153"): "باب بحر",                 # Bab el Bhar
+    ("11", "1162"): "الزهور",                  # Ezzouhour (Tunis)
+    ("22", "2251"): "Jendouba Sud",            # Jendouba, the delegation of the town
+    ("22", "2259"): "Balta Bouawene",
+    ("31", "3166"): "الزاوية قصيبة الثريات",    # Zaouia-Ksiba-Thrayet
+    ("33", "3353"): "والد شامخ",               # Ouled Chamekh
+    ("42", "4253"): "الزهور",                  # Ezzouhour (Kasserine)
+}
 # A pair left over is bound on its closest spelling at this similarity or more.
 SPELLING = 0.82
 AGE = re.compile(r"^\s*(\d{1,3})\s*-\s*(\d{1,3})\s*$")
@@ -132,8 +148,11 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
         raise SystemExit(f"tunisia_census: the sheet has no {missing}; it has {header}")
     govs: dict[str, dict[str, Any]] = {}
     dels: dict[str, dict[str, Any]] = {}
+    secs: dict[str, dict[str, Any]] = {}
     labels: set[str] = set()
     total = 0
+    sector_code = at.get("Code_secteur_D")
+    sector_name = at.get("Secteurs")
     for row in rows[1:]:
         cells = list(row) + [None] * len(header)
         gcode = str(cells[at["Code_Gouvernorat"]] or "").strip()
@@ -147,8 +166,10 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
         labels.add(label)
         people = number(cells[at["Population"]])
         total += people
-        for table, code, fr, ar in ((govs, gcode, "Gouvernorat", "الولاية"),
-                                     (dels, dcode, "Délégations", "المعتمدية")):
+        scode = str(cells[sector_code] or "").strip() if sector_code is not None else ""
+        levels = [(govs, gcode, "Gouvernorat", "الولاية"),
+                  (dels, dcode, "Délégations", "المعتمدية")]
+        for table, code, fr, ar in levels:
             unit = table.setdefault(code, {"code": code, "fr": str(cells[at[fr]] or "").strip(),
                                            "ar": str(cells[at[ar]] or "").strip(),
                                            "gov": gcode, "M": 0, "F": 0,
@@ -158,6 +179,13 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
                                  f"{unit['gov']} and {gcode}")
             unit[sex] += people
             unit["ages"][label] += people
+        if scode:
+            sec = secs.setdefault(scode, {"code": scode, "gov": gcode, "del": dcode,
+                                          "fr": str(cells[sector_name] or "").strip()
+                                          if sector_name is not None else scode,
+                                          "M": 0, "F": 0, "ages": defaultdict(int)})
+            sec[sex] += people
+            sec["ages"][label] += people
     groups = sorted({bounds(lab) + (lab,) for lab in labels}, key=lambda g: g[0])
     edge = 0
     for low, high, lab in groups:
@@ -169,11 +197,94 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
         raise SystemExit("tunisia_census: no open-ended last age group")
     if total != NATIONAL:
         raise SystemExit(f"tunisia_census: the sectors make {total:,}, not INS's {NATIONAL:,}")
-    for table in (govs, dels):
+    for table in (govs, dels, secs):
         for unit in table.values():
             unit["total"] = unit["M"] + unit["F"]
             unit["groups"] = [(lo, hi, unit["ages"].get(lab, 0)) for lo, hi, lab in groups]
-    return {"governorates": govs, "delegations": dels, "groups": groups}
+    return {"governorates": govs, "delegations": dels, "sectors": secs, "groups": groups}
+
+
+def read_2014(rows: list[list[Any]]) -> dict[str, dict[str, str]]:
+    """{governorate (folded): {sector (folded): its 2014 delegation (folded)}}.
+
+    The sheet lists the country, its regions, each governorate ("Gouvernorat
+    de ..."), each delegation ("Délégation de ...") and the delegation's
+    sectors, in that order, one row each; the whole population is in the
+    'Ensemble milieux' block's first column. Each delegation's sectors must
+    make it (a row that is a region heading would not)."""
+    out: dict[str, dict[str, str]] = defaultdict(dict)
+    gov = deleg = None
+    totals: dict[tuple[str, str], int] = {}
+    made: dict[tuple[str, str], int] = defaultdict(int)
+    for row in rows:
+        cells = list(row) + [None] * 16
+        name = str(cells[0] or "").strip()
+        if not name:
+            continue
+        people = cells[11]
+        if not isinstance(people, (int, float)):
+            continue
+        key = fold(name)
+        if re.match(r"(?i)^gouvernorat\s+d", name):
+            gov, deleg = latin(re.sub(r"(?i)^gouvernorat\s+d[e']\s*", "", name)), None
+            continue
+        if re.match(r"(?i)^d[ée]l[ée]gation\s+d", name):
+            deleg = latin(name)
+            totals[(gov or "", deleg)] = int(people)
+            continue
+        if key in REGIONS or gov is None or deleg is None:
+            continue
+        out[gov][key] = deleg
+        made[(gov, deleg)] += int(people)
+    off = [f"{g}/{d}: sectors {made[(g, d)]:,} against {t:,}" for (g, d), t in totals.items()
+           if made[(g, d)] != t]
+    if off:
+        log(f"  2014 sectors that do not make their delegation: {off[:12]}")
+    return out
+
+
+def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict[str, dict[str, str]],
+           report: list[str]) -> dict[str, list[str]]:
+    """Polygon id -> the 2024 sectors of delegations it holds that the map does
+    not draw, each placed by the 2014 delegation its sector belonged to."""
+    bound_codes = {c for codes in held.values() for c in codes}
+    by_name: dict[tuple[str, str], str] = {}
+    for sid, codes in held.items():
+        for code in codes:
+            unit = table["delegations"][code]
+            by_name[(unit["gov"], latin(unit["fr"]))] = sid
+    gov_fold = {code: latin(u["fr"]) for code, u in table["governorates"].items()}
+    extra: dict[str, list[str]] = defaultdict(list)
+    for code, unit in sorted(table["delegations"].items()):
+        if code in bound_codes:
+            continue
+        mine = [s for s in table["sectors"].values() if s["del"] == code]
+        known = sectors_2014.get(gov_fold[unit["gov"]], {})
+        placed: dict[str, str] = {}
+        for sec in mine:
+            old = known.get(fold(sec["fr"]))
+            sid = by_name.get((unit["gov"], old)) if old else None
+            if sid:
+                placed[sec["code"]] = sid
+        homes = set(placed.values())
+        if len(homes) == 1 and len(placed) < len(mine):
+            # A sector renamed or made since 2014 goes where all its
+            # delegation's other sectors went.
+            home = next(iter(homes))
+            for sec in mine:
+                placed.setdefault(sec["code"], home)
+        if len(placed) != len(mine) or not mine:
+            report.append(f"  delegation {code} {unit['fr']} ({unit['total']:,}): "
+                          f"{len(mine) - len(placed)} of its {len(mine)} sectors not found in "
+                          f"2014: {[s['fr'] for s in mine if s['code'] not in placed]}")
+            continue
+        for sec_code, sid in placed.items():
+            extra[sid].append(sec_code)
+        names = sorted({next(iter(n for (g, n), s in by_name.items() if s == sid))
+                        for sid in set(placed.values())})
+        report.append(f"  delegation {code} {unit['fr']} ({unit['total']:,}), made since 2014: "
+                      f"its {len(mine)} sectors were part of {names}")
+    return extra
 
 
 def figures(unit: dict[str, Any]) -> dict[str, Any]:
@@ -209,20 +320,34 @@ def bind_governorates(govs: dict[str, dict[str, Any]], admin1: list[dict[str, An
 def bind_delegations(dels: dict[str, dict[str, Any]], admin2: list[dict[str, Any]],
                      govs: dict[str, dict[str, Any]], report: list[str]
                      ) -> dict[str, list[str]]:
-    """Polygon id -> the INS delegation codes it holds."""
+    """Polygon id -> the INS delegation code it holds. A delegation INS
+    counts and the map does not draw is left out here and logged."""
     held: dict[str, list[str]] = {}
-    carved = {d for (_, d) in CARVED}
+    taken: set[str] = set()
+    # Declared labels first, the governorate's polygons before the country's.
+    for (gcode, code), label in DELEGATIONS.items():
+        if code not in dels:
+            raise SystemExit(f"tunisia_census: DELEGATIONS names {code}, which INS does not count")
+        gshape = govs[gcode]
+        hits = [s for s in admin2 if s["parent"] == gshape["id"] and fold(s["name"]) == fold(label)]
+        if not hits:
+            hits = [s for s in admin2 if fold(s["name"]) == fold(label)]
+        if len(hits) != 1 or hits[0]["id"] in taken:
+            raise SystemExit(f"tunisia_census: {len(hits)} polygons labelled {label!r} for {code}")
+        held[hits[0]["id"]] = [code]
+        taken.add(hits[0]["id"])
+    declared = {code for (_, code) in DELEGATIONS}
     for gcode, gshape in govs.items():
-        shapes = [s for s in admin2 if s["parent"] == gshape["id"]]
-        mine = {c: u for c, u in dels.items() if u["gov"] == gcode and c not in carved}
-        free = {s["id"]: s for s in shapes}
+        free = {s["id"]: s for s in admin2
+                if s["parent"] == gshape["id"] and s["id"] not in taken}
+        mine = {c: u for c, u in dels.items() if u["gov"] == gcode and c not in declared}
         left: dict[str, dict[str, Any]] = {}
         for code, unit in sorted(mine.items()):
-            label = DELEGATIONS.get((gcode, code))
-            keys = {fold(label)} if label else {fold(unit["ar"]), latin(unit["fr"])}
+            keys = {fold(unit["ar"]), latin(unit["fr"])}
             hits = [s for s in free.values() if fold(s["name"]) in keys]
             if len(hits) == 1:
                 held[hits[0]["id"]] = [code]
+                taken.add(hits[0]["id"])
                 del free[hits[0]["id"]]
             else:
                 left[code] = unit
@@ -233,30 +358,32 @@ def bind_delegations(dels: dict[str, dict[str, Any]], admin2: list[dict[str, Any
             return max(SequenceMatcher(None, fold(unit["ar"]), name).ratio(),
                        SequenceMatcher(None, latin(unit["fr"]), name).ratio())
         for code, unit in sorted(left.items()):
-            if not free:
-                break
-            best = max(free.values(), key=lambda s: ratio(unit, s))
-            back = max(left.values(), key=lambda u: ratio(u, best))
-            if ratio(unit, best) >= SPELLING and back is unit:
+            best = max(free.values(), key=lambda s: ratio(unit, s), default=None)
+            back = (max(left.values(), key=lambda u: ratio(u, best))
+                    if best is not None else None)
+            if best is not None and ratio(unit, best) >= SPELLING and back is unit:
                 report.append(f"  {gshape['name']}: {unit['fr']} / {unit['ar']} bound to "
                               f"{best['name']!r} by spelling ({ratio(unit, best):.2f})")
                 held[best["id"]] = [code]
+                taken.add(best["id"])
                 del free[best["id"]]
             else:
                 report.append(f"  {gshape['name']}: delegation {code} {unit['fr']} / "
-                              f"{unit['ar']} ({unit['M'] + unit['F']:,}) has no polygon")
+                              f"{unit['ar']} ({unit['M'] + unit['F']:,}) has no polygon of "
+                              f"its own")
         for shape in free.values():
             report.append(f"  {gshape['name']}: polygon {shape['name']!r} has no delegation")
-    for (gcode, code), into in CARVED.items():
-        host = next((sid for sid, codes in held.items() if into in codes), None)
-        if host is None:
-            raise SystemExit(f"tunisia_census: {code} is declared carved from {into}, "
-                             "which is bound to no polygon")
-        held[host].append(code)
     return held
 
 
-def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+def display(name: str) -> str:
+    """INS writes its French names in lower case after the first letter."""
+    return " ".join(w if any(c.isupper() for c in w) else w.capitalize()
+                    for w in str(name).split())
+
+
+def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          sectors_2014: dict[str, dict[str, str]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
     govs = bind_governorates(table["governorates"], admin1)
@@ -266,17 +393,33 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
     for code, shape in sorted(govs.items()):
         unit = table["governorates"][code]
         records.append(unit_record(f"TUN-RGPH2024-{code}", shape, "admin1", unit, sources,
-                                   f"the governorate of {unit['fr']}"))
+                                   f"the governorate of {display(unit['fr'])}"))
     held = bind_delegations(table["delegations"], admin2, govs, report)
+    extra = carved(table, held, sectors_2014 or {}, report)
+    # A polygon some of whose 2014 ground the 2024 census counts in a new
+    # delegation it could not be given whole is left without figures: the
+    # delegation it is bound to no longer covers it.
+    unplaced = {code for code, unit in table["delegations"].items()
+                if code not in {c for codes in held.values() for c in codes}
+                and not any(s["del"] == code for sid in extra for s in
+                            (table["sectors"][x] for x in extra[sid]))}
     labels = {s["id"]: s for s in admin2}
     for sid, codes in sorted(held.items()):
         units = [table["delegations"][c] for c in codes]
-        unit = units[0] if len(units) == 1 else merge(units)
-        what = (f"the delegation of {units[0]['fr']}" if len(units) == 1 else
-                f"the delegation of {units[0]['fr']} as drawn in 2014, which the 2024 census "
-                f"counts as {', '.join(u['fr'] for u in units[:-1])} and {units[-1]['fr']}")
+        added = [table["sectors"][x] for x in extra.get(sid, [])]
+        unit = units[0] if not added else merge(units + added)
+        name = display(units[0]["fr"])
+        if added:
+            new = sorted({display(table["delegations"][s["del"]]["fr"]) for s in added})
+            what = (f"the delegation of {name} as drawn in 2014; the 2024 census counts its "
+                    f"ground as {name} and {' and '.join(new)}, made a delegation since, "
+                    f"which are added together here")
+        else:
+            what = f"the delegation of {name}"
         records.append(unit_record(f"TUN-RGPH2024-{'-'.join(codes)}", labels[sid], "admin2",
                                    unit, sources, what))
+    if unplaced:
+        report.append(f"  delegations neither drawn nor placed: {sorted(unplaced)}")
     return records, report
 
 
@@ -318,9 +461,16 @@ def main() -> int:
         f = figures(unit)
         log(f"  {unit['gov']} {code} {unit['fr']} | {unit['ar']} | {unit['total']:,} | "
             f"median {f['median']} | men/1000 women {f['ratio']}")
+    old = http_get(SECTORS_2014, binary=True, cache=False, timeout=180)
+    if old[:2] != b"PK":
+        raise SystemExit(f"tunisia_census: {SECTORS_2014} is not a workbook: {old[:80]!r}")
+    sheet = openpyxl.load_workbook(io.BytesIO(old), read_only=True, data_only=True).worksheets[0]
+    sectors_2014 = read_2014([list(r) for r in sheet.iter_rows(values_only=True)])
+    log(f"  2014: {sum(len(v) for v in sectors_2014.values()):,} sectors in "
+        f"{len(sectors_2014)} governorates")
     admin1 = json.loads((SITE / "admin1" / "TUN.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "TUN.units.json").read_text())
-    records, report = build(table, admin1, admin2)
+    records, report = build(table, admin1, admin2, sectors_2014)
     for line in report:
         log(line)
     bound = sum(1 for r in records if r["level"] == "admin2")
