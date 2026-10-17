@@ -1,455 +1,57 @@
-== Cabinda p101: 37 rows
-  block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern'
-    columns at [199, 282, 345, 421, 479, 535, 591, 654, 718, 784]
-    col 0: Número de pessoas com 2 ou mais anos
-    col 1: Português
-    col 2: Oxikwanhama (Kwanhama)
-    col 3: Ifyoti (Fiote)
-    col 4: Língua Muhumbi
-    col 5: materna agrupada Luvale
-    col 6: Khoisan
-    col 7: Línguas estrangeiras
-    col 8: Outras línguas
-    col 9: Não sabe
-    row 'Cabinda': 859674@199 463066@282 365@345 340753@421 450@479 90@535 82@591 5881@654 2395@718 3914@784
-    row 'Urbana': 750589@200 425518@283 236@345 275113@421 408@479 88@518 77@574 5620@638 2256@719 3722@783
-    row 'Rural': 109085@200 37549@283 129@345 65640@421 41@479 2@516 5@572 261@636 139@719 192@783
-    row 'Cabinda': 557577@200 325239@283 173@345 189470@421 437@479 88@535 46@591 4217@655 1645@719 2362@783
-    row 'Cabinda': 557577@200 325239@283 173@345 189470@421 437@479 88@535 46@591 4217@655 1645@719 2362@783
-    row 'Cacongo': 39253@200 17778@283 114@345 20470@421 2@479 0@535 0@591 87@655 224@719 73@783
-    misfit: Urbana: figure 88 at 518 fits no column
-    misfit: Urbana: figure 77 at 574 fits no column
-    misfit: Urbana: figure 5620 at 638 fits no column
-    misfit: Rural: figure 2 at 516 fits no column
-    misfit: Rural: figure 5 at 572 fits no column
-    misfit: Rural: figure 261 at 636 fits no column
-== Cabinda p106: 39 rows
-  block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re'
-    columns at [328, 400, 456, 534, 602, 658, 723]
-    col 0: População com 2 mais anos
-    col 1: Kimbanguista
-    col 2: Josafat
-    col 3: Assembleia de Deus Pentecostal
-    col 4: Testemunha de Jeová
-    col 5: Metodista
-    col 6: Evangélica
-    row 'Cabinda': 859674@328 19308@400 1624@456 64084@534 8291@602 1774@658 58852@723
-    row 'Urbana': 750589@329 16391@401 1559@457 62102@535 7974@603 1685@659 52175@724
-    row 'Rural': 109085@329 2917@401 64@457 1982@535 317@603 89@659 6677@724
-    row 'Cabinda': 557577@329 12384@401 1122@457 47143@535 5848@603 1252@659 37414@724
-    row 'Cacongo': 39253@329 529@401 120@457 1175@535 241@603 107@659 4963@724
-    row 'Buco Zau': 30482@329 700@401 0@457 550@535 213@603 56@659 2147@724
-  block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re'
-    columns at [311, 367, 424, 495, 553, 612, 691]
-    col 0: População com 2 mais anos
-    col 1: Adventista
-    col 2: Baptista
-    col 3: Mensagem dos últimos Tempos
-    col 4: Sem religião
-    col 5: Outra religião
-    col 6: Não sabe/ Não respondeu
-    row 'Cabinda': 859674@311 7363@367 77@424 3800@495 105313@553 12694@612 25566@691
-    row 'Urbana': 750589@312 6532@368 75@424 3615@495 97424@553 9946@612 24119@692
-    row 'Rural': 109085@312 831@368 2@424 185@495 7889@553 2748@612 1447@692
-    row 'Cabinda': 557577@312 5654@368 47@424 2378@495 77612@553 7169@612 18308@692
-    row 'Cacongo': 39253@312 177@368 6@424 272@495 3324@553 2019@612 699@692
-    row 'Buco Zau': 30482@312 180@368 0@424 146@495 2154@553 164@612 525@692
-== Cabinda p70: 36 rows
-  block 'Quadro 1.4 - População por área de residência, municípios e comunas, segundo os grandes gr'
-    columns at [270, 335, 398, 475]
-    col 0: Total
-    col 1: etários, 2024 0 - 14 anos
-    col 2: 15 - 64 anos
-    col 3: 65 ou mais anos
-    row 'Cabinda': 903370@270 328634@335 553691@398 21045@475
-    row 'Urbama': 787740@270 282556@335 489780@399 15405@475
-    row 'Rural': 115630@270 46078@332 63911@397 5640@473
-    row 'Homens': 448053@270 165210@335 273394@399 9449@473
-    row 'Mulheres': 455317@270 163424@335 280297@399 11596@475
-    row 'Cabinda': 585240@270 208830@335 365229@399 11181@475
-    misfit: Luali: figure 811 at 328 fits no column
-    misfit: Luali: figure 919 at 392 fits no column
-    misfit: Inhuca: figure 98 at 468 fits no column
-== Cabinda p71: 34 rows
-  block 'Quadro 1.5 - População por área de residência, municípios e comunas, segundo outros grupos'
-    columns at [194, 242, 295, 351, 406, 463, 525]
-    col 0: Total
-    col 1: 0 - 19 anos
-    col 2: 20 - 29 anos
-    col 3: 30 - 54 anos
-    col 4: 55 - 64 anos
-    col 5: 65 - 74 anos
-    col 6: 75 - ou mais
-    row 'Cabinda': 903370@194 427091@242 183946@295 240224@351 31064@406 13862@463 7183@525
-    row 'Urbana': 787740@195 369912@242 166184@295 212008@351 24231@406 10185@463 5220@525
-    row 'Rural': 115630@195 57179@240 17762@292 28216@349 6833@404 3678@461 1963@525
-    row 'Cabinda': 585240@194 273361@242 125504@295 157505@351 17689@406 7491@461 3690@525
-    row 'Cabinda': 585240@194 273361@242 125504@295 157505@351 17689@406 7491@461 3690@525
-    row 'Cacongo': 41716@192 21803@240 6419@290 10007@349 1955@404 971@458 562@522
-    misfit: Dinge: figure 962 at 287 fits no column
-    misfit: Luali: figure 988 at 235 fits no column
-    misfit: Luali: figure 222 at 287 fits no column
-    misfit: Luali: figure 400 at 344 fits no column
-    misfit: Luali: figure 73 at 456 fits no column
-    misfit: Inhuca: figure 354 at 287 fits no column
-== Zaire p96: 45 rows
-  block 'Quadro 6.2 População por província e área de residência, segundo a língua materna,'
-    columns at [283, 347, 397, 461, 511, 566, 619, 678, 733]
-    col 0: População com 2 mais anos
-    col 1: Oxikwanhama (Kwanhama)
-    col 2: Ifyoti (Fiote)
-    col 3: Muhumbi
-    col 4: Língua Luvale
-    col 5: materna Khoisan
-    col 6: Línguas Estangeiras
-    col 7: Outras línguas
-    col 8: Não sabe
-    row 'Zaire': 645395@283 197@347 1596@397 28@461 97@511 126@566 5660@619 668@678 694@733
-    row 'Urbana': 491740@283 167@347 1528@397 17@461 73@511 114@566 4720@619 541@678 583@733
-    row 'Rural': 153655@283 30@347 68@397 10@461 24@511 12@566 940@619 127@678 111@733
-    row 'Soyo': 209990@283 74@347 1355@397 22@461 7@511 20@566 2510@619 417@678 352@733
-    row 'Soyo': 206481@283 74@347 1355@397 22@461 7@511 20@566 2509@619 412@678 351@733
-    row 'Pedra de Feitiço': 3509@283 0@347 0@397 0@461 0@511 0@566 1@619 6@678 2@733
-== Zaire p99: 43 rows
-  block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re'
-    columns at [227, 284, 328, 383, 423, 458, 511, 568, 616, 664, 720, 768]
-    col 0: População com ou mais anos
-    col 1: Católica
-    col 2: Bom Deus
-    col 3: Islâmica/ Muçulmana
-    col 4: Animista
-    col 5: Judaica
-    col 6: Protestante
-    col 7: Universal do reino de Deus
-    col 8: Nova apostólica
-    col 9: Tocoísta
-    col 10: Kimbanguista
-    col 11: Josafat
-    row 'Zaire': 645395@227 242853@284 4087@328 2103@383 7782@423 765@458 70840@511 4283@568 17246@616 14286@664 60869@720 1709@768
-    row 'Urbana': 491740@227 173485@284 3428@328 1907@383 4665@423 622@458 50359@511 3877@568 13954@616 11263@664 41760@720 1345@768
-    row 'Rural': 153655@227 69368@284 659@328 195@383 3117@423 143@458 20481@511 406@568 3292@616 3022@664 19109@720 364@768
-    row 'Soyo': 209990@227 96310@284 1068@328 702@383 1493@423 235@458 22296@511 1670@568 3480@616 4844@664 19308@720 584@768
-    row 'Mbanza Kongo': 209950@227 60511@284 1342@328 835@383 1826@423 308@458 18409@511 1776@568 7478@616 2716@664 15804@720 624@768
-    row 'Nzeto': 49295@227 15628@284 556@328 125@383 30@423 65@458 8533@511 308@568 752@616 3931@664 4070@720 50@768
-  block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re'
-    columns at [208, 285, 337, 385, 433, 481, 529, 611, 659, 707, 781]
-    col 0: População com 2 ou mais anos
-    col 1: Assembleia de Deus Pentecostal
-    col 2: Testemunha de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Baptista
-    col 7: Mensagem dos últimos Tempos
-    col 8: Sem religião
-    col 9: Outra religião
-    col 10: Não sabe/ Não respondeu
-    row 'Zaire': 645395@208 45226@285 7468@337 2939@385 48610@433 4673@481 149@529 4503@611 38452@659 49184@707 17369@781
-    row 'Urbana': 491740@208 39947@285 6615@337 2454@385 40155@433 4198@481 138@529 4016@611 32867@659 39914@707 14769@781
-    row 'Rural': 153655@208 5278@285 853@337 485@385 8455@433 475@481 10@529 486@611 5585@659 9270@707 2600@781
-    row 'Soyo': 209990@208 16155@285 3175@337 812@385 12008@433 1830@481 88@529 1478@611 6792@659 11015@707 4648@781
-    row 'Mbanza Kongo': 209950@208 18110@285 1903@337 1404@385 20996@433 1662@481 42@529 1804@611 21186@659 23109@707 8104@781
-    row 'Nzeto': 49295@208 3181@285 1228@337 193@385 5178@433 392@481 1@529 72@611 2021@659 1634@707 1345@781
-== Cuanza_Norte p33: 39 rows
-  block 'Quadro 11 - População residente por município, segundo o sexo,'
-    columns at [227, 283, 348, 409, 471, 543]
-    col 0: Total
-    col 1: Censo 2014 Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Censo 2024 Homens
-    col 5: Mulheres
-    row 'Cuanza Norte': 443386@227 217060@283 226326@348 659097@409 324984@471 334113@543
-    row 'Cazengo': 171743@227 83051@283 88691@348 248171@409 121147@471 127025@543
-    row 'Golungo Alto': 33834@227 16650@283 17184@348 43503@409 21307@471 22196@543
-    row 'Cambambe': 90766@227 45664@283 45103@348 100199@409 49388@471 50811@543
-    row 'Samba Cajú': 21918@227 10944@283 10974@348 34491@409 17208@471 17284@543
-    row 'Ambaca': 61769@227 29345@283 32423@348 56989@409 27564@471 29425@543
-== Cuanza_Norte p112: 28 rows
-  block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re'
-    columns at [226, 289, 355, 411, 467, 525, 570, 629, 670, 711, 768]
-    col 0: População com ou mais anos
-    col 1: Assembleia de Deus Pentecostal
-    col 2: Testemunha de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Baptista
-    col 7: Mensagem dos últimos Tempos
-    col 8: Sem religião
-    col 9: Outra religião
-    col 10: Não sabe/ Não respondeu
-    row 'Cuanza Norte': 619011@226 40321@289 21681@355 33462@411 8670@467 30621@525 678@570 125@629 68182@670 3662@711 16741@768
-    row 'Urbana': 420152@226 30900@289 17683@355 18304@411 5327@467 14401@525 368@570 112@629 49825@670 2338@711 11954@768
-    row 'Rural': 198859@226 9421@289 3999@355 15158@411 3343@467 16219@525 311@570 13@629 18357@670 1324@711 4788@768
-    row 'Cazengo': 234072@226 17811@289 11598@355 6986@411 3263@467 7415@525 160@570 99@629 32524@670 885@710 7493@768
-    row 'Golungo Alto': 40618@226 2856@289 1974@355 2633@411 242@467 304@525 8@570 0@629 5044@670 91@710 993@768
-    row 'Cambambe': 94862@226 10922@289 2594@355 7486@411 792@467 1707@525 1@570 3@629 10001@670 925@710 2387@768
-== Cuanza_Norte p76: 41 rows
-  block 'Quadro 1.6 - População por área de residência, municípios e comunas, segundo os grandes gr'
-    columns at [265, 317, 388, 460, 531, 602, 661, 724, 788]
-    col 0: Total
-    col 1: 0 - 14 anos Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Grupos etários 15 - 64 anos Homens
-    col 5: Mulheres
-    col 6: 65 Total
-    col 7: ou mais anos Homens
-    col 8: Mulheres
-    row 'Cuanza Norte': 272645@265 137875@317 134769@388 364538@460 178563@531 185974@602 21915@661 8546@724 13369@788
-    row 'Urbana': 185156@265 92888@317 92267@388 249659@460 121203@531 128456@602 11135@661 4362@724 6773@788
-    row 'Rural': 87489@265 44987@317 42502@388 114879@460 57360@531 57519@602 10779@661 4183@724 6596@788
-    row 'Cazengo': 99873@265 49941@317 49931@388 142362@460 68956@531 73406@602 5937@661 2250@724 3687@788
-    row 'Ndalatando': 97759@265 48874@317 48885@388 139125@460 67360@531 71766@602 5564@661 2096@724 3468@788
-    row 'Caculo Camuiza': 2114@265 1068@317 1046@388 3236@460 1596@531 1640@602 373@661 154@724 219@788
-== Huambo p34: 41 rows
-  block 'Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e'
-    columns at [231, 283, 345, 410, 475, 540]
-    col 0: Total
-    col 1: Censo 2014 Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Censo 2024 Homens
-    col 5: Mulheres
-    row 'Huambo': 2019555@231 958140@283 1061414@345 2691902@410 1296018@475 1395883@540
-    row 'Bailundo': 294494@231 138631@283 155863@345 258073@410 124399@475 133674@540
-    row 'Huambo': 713134@231 341759@283 371375@345 836293@410 401758@475 434535@540
-    row 'Londuimbali': 134254@231 62271@283 71982@345 77736@410 37393@475 40343@540
-    row 'Caála': 279792@231 133539@283 146254@345 263415@410 127115@475 136300@540
-    row 'Chicala-Choloanga': 103646@231 48979@283 54667@345 59829@410 28777@475 31052@540
-== Huila p33: 50 rows
-  block 'Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e'
-    columns at [250, 298, 346, 394, 442, 485]
-    col 0: Total
-    col 1: Censo 2014 Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Censo 2024 Homens
-    col 5: Mulheres
-    row 'Caconda': 167820@250 80051@298 87768@346 226236@394 110562@442 115674@485
-    row 'Gambos': 79462@250 36337@298 43125@346 109738@394 51486@442 58252@485
-    row 'Humpata': 89144@250 42500@298 46644@346 152986@394 73420@442 79566@485
-    row 'Lubango': 776249@250 373465@298 402784@346 978715@394 470518@442 508197@485
-    row 'Cuvango': 78544@250 37765@298 40777@346 94982@394 46498@442 48483@485
-    row 'Quipungo': 158918@250 72776@298 86142@346 171979@394 82857@442 89122@485
-== Lunda_Sul p93: 56 rows
-  block 'Quadro 6.1 - População com 2 ou mais anos por município e área de residência, segundo grup'
-    columns at [199, 264, 342, 398, 455, 511, 562]
-    col 0: Quicongo (Kikongu ou Congolês conguês
-    col 1: Quimbundu (Kimbundu ou Tymbundu)
-    col 2: Lunda-Quioco (Lunda-kioko ou Lunda-Tchokwe Tshokwe)
-    col 3: Umbundu (ou Ovimbundu)
-    col 4: Nhaneca- Humbe (Nyaneka- Lumkumbi)
-    col 5: Ambó (Vahambo tanbé designado Xikwanyama)
-    col 6: Helelo, Herero (Tchielelo, Tjiherero)
-    row 'Lunda Sul': 23134@199 161823@264 604435@342 29023@398 8487@455 330@511 46@562
-    row 'Urbana': 19544@199 138055@264 455469@342 11801@398 1715@455 300@511 38@562
-    row 'Rural': 3590@199 23767@264 148967@342 17222@398 6771@455 31@511 9@562
-    row 'Saurimo': 6336@199 37993@264 156896@342 3675@398 991@455 23@511 24@562
-    row 'Muconda': 27@199 9974@264 16411@342 90@398 0@511 0@562
-    row 'Cacolo': 110@199 1993@264 32955@342 289@398 14@455 1@511
-  block 'Quadro 6.1 - População com 2 ou mais anos por município e área de residência, segundo grup'
-    columns at [202, 247, 284, 329, 388, 441, 493, 561]
-    col 0: Cuangar
-    col 1: Khoisan
-    col 2: Vátua
-    col 3: Kwoi
-    col 4: Xindonga (Oshindonga)
-    col 5: Não sabe
-    col 6: Outra Etnia
-    col 7: Número de pessoas com 2 ou mais anos
-    row 'Lunda Sul': 103@202 77@247 19@284 173@329 31@388 8193@441 4710@493 840585@561
-    row 'Urbana': 56@202 63@247 9@284 55@329 24@388 6360@441 2690@493 636179@561
-    row 'Rural': 47@202 14@247 10@284 118@329 7@388 1834@441 2020@493 204406@561
-    row 'Saurimo': 21@202 23@247 9@284 7@329 7@388 1862@441 884@493 208749@561
-    row 'Muconda': 0@202 0@247 0@284 0@329 0@388 14@441 19@493 26536@561
-    row 'Cacolo': 1@388 81@441 80@493 35525@561
-== Lunda_Sul p98: 26 rows
-  block 'Quadro 7. 1 - População com 2 ou mais anos por município e área de residência, segundo a r'
-    columns at [220, 257, 310, 370, 419, 468, 518, 558, 617, 663, 701, 762]
-    col 0: População com 2 ou mais anos
-    col 1: Josafat
-    col 2: Assembleia de Deus Pentecostal
-    col 3: Testemunhas de Jeová
-    col 4: Metodista
-    col 5: Evangélica
-    col 6: Adventista
-    col 7: Baptista
-    col 8: Mensagem dos Últimos Tempos
-    col 9: Sem religião
-    col 10: Outra religião
-    col 11: Não sabe/ Não respondeu
-    row 'Lunda Sul': 840585@220 2555@257 74307@310 6116@370 8784@419 57933@468 81003@518 550@558 4981@617 220747@663 9424@701 31091@762
-    row 'Urbana': 636179@220 2260@257 63619@310 5509@370 5938@419 43459@468 58341@518 488@558 4541@617 172697@663 7656@701 23668@762
-    row 'Rural': 204406@220 295@256 10688@310 607@370 2846@419 14473@468 22662@518 61@558 441@617 48050@663 1768@701 7422@762
-    row 'Saurimo': 208749@220 935@256 21566@310 1674@370 2454@419 16376@468 18310@518 158@558 1425@617 48864@663 2281@701 6614@762
-    row 'Muconda': 26536@220 25@256 2652@310 51@370 414@418 1440@468 1634@518 156@617 12120@663 516@701 638@762
-    row 'Cacolo': 35525@220 74@256 2060@310 343@370 130@418 2392@468 1489@518 13@558 467@617 8241@663 146@701 1652@762
-== Lunda_Sul p71: 48 rows
-  block 'Quadro 1.3 - População por grupos etários quinquenais,'
-    columns at [316, 378, 448]
-    col 0: Total
-    col 1: Homens
-    col 2: Mulheres
-    row 'Luanda Sul': 893936@316 448936@378 445000@448
-    row '0-4 anos': 128979@316 64474@378 64505@448
-    row '5-9 anos': 114417@316 57471@378 56946@448
-    row '10-14 anos': 109856@316 54810@378 55045@448
-    row '15-19 anos': 104745@316 52450@378 52295@448
-    row '20-24 anos': 86738@316 42061@378 44677@448
-  block 'Quadro 1.4 - População por município, segundo outros grupos etários,'
-    columns at [190, 242, 298, 354, 413, 472, 554]
-    col 0: Total
-    col 1: 0 - 19 anos
-    col 2: 20 - 29 anos
-    col 3: 30 - 54 anos
-    col 4: 55 - 64 anos
-    col 5: 65 - 74 anos
-    col 6: 75 - ou mais anos
-    row 'Lunda Sul': 893936@190 457997@242 156119@298 195437@354 38874@413 26287@472 19223@554
-    row 'Urbana': 675102@190 344642@242 122735@298 147993@354 26907@413 18513@472 14312@554
-    row 'Rural': 218834@190 113354@242 33384@298 47444@354 11967@413 7774@472 4911@554
-    row 'Mona Quimbundo': 13926@190 6094@242 1887@298 3497@354 1113@413 829@472 506@554
-    row 'Saurimo': 207612@190 102934@242 36855@298 46634@354 9288@413 6934@472 4966@554
-    row 'Muconda': 28892@190 16499@242 4745@298 5804@354 923@413 549@472 374@554
-== Luanda p104: 51 rows
-  block 'Quadro 6.2 - População por província e área de residência, segundo a língua materna,'
-    columns at [207, 248, 292, 333, 375, 423, 464, 505]
-    col 0: População com 2 ou mais anos
-    col 1: Ifyoti (Fiote)
-    col 2: Muhumbi
-    col 3: Língua Luvale
-    col 4: materna Khoisan
-    col 5: agrupada Línguas Estangeiras
-    col 6: Outras línguas
-    col 7: Não sabe
-    row 'Luanda': 8329381@207 27658@248 1219@292 3718@333 3217@375 49597@423 19391@464 53867@505
-    row 'Urbana': 8272251@208 27609@249 1180@292 3682@334 3103@375 49493@424 19286@465 53581@506
-    row 'Rural': 57130@208 49@249 39@292 36@334 114@375 104@424 105@465 287@506
-    row 'Ingombota': 140595@208 483@249 17@292 61@334 30@375 1166@424 577@465 617@506
-    row 'Ingombota': 140595@208 483@249 17@292 61@334 30@375 1166@424 577@465 617@506
-    row 'Sambizanga': 171188@208 302@249 8@292 14@334 12@375 963@424 452@465 1414@506
-== Luanda p108: 28 rows
-  block 'Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a re'
-    columns at [211, 270, 333, 387, 441, 496, 549, 606, 660, 712, 766]
-    col 0: População com 2 ou mais anos
-    col 1: Assembleia de Deus Pentecostal
-    col 2: Testemunha de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Baptista
-    col 7: Mensagem dos últimos Tempos
-    col 8: Sem religião
-    col 9: Outra religião
-    col 10: Não sabe/ Não respondeu
-    row 'Luanda': 8329381@211 1476556@270 390092@333 238814@387 338851@441 337362@496 18147@549 14079@606 1244883@660 86108@712 233099@766
-    row 'Urbana': 8272251@212 1471414@271 389535@334 238245@387 336485@441 333933@497 17343@549 14015@606 1235993@659 85683@712 231484@767
-    row 'Rural': 57130@212 5142@271 557@334 569@387 2366@441 3429@497 804@549 64@606 8891@659 425@712 1615@767
-    row 'Ingombota': 140595@212 16302@271 4831@334 2218@387 3859@441 4439@497 234@549 133@606 15762@659 812@712 3610@767
-    row 'Sambizanga': 171188@212 18128@271 7961@334 4269@387 3490@441 7313@497 105@549 51@606 26134@659 974@712 4906@767
-    row 'Maianga': 699055@212 117072@271 32555@334 29998@387 22467@441 29011@497 1556@549 414@606 92416@659 6771@712 18852@767
-== Benguela p105: 36 rows
-  block 'Quadro 6.1 - População com 2 ou mais anos por município e área de residência, segundo grup'
-    columns at [233, 304, 375, 469, 546, 617, 710, 781]
-    col 0: Número de pessoas com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Quimbundu (Kimbundu ou Tymbundu)
-    col 3: Lunda-Quioco (Lunda- kioko ou Lunda-Tchokwe Tshokwe)
-    col 4: Umbundu (ou Ovimbundu)
-    col 5: Nhaneca-Humbe (Nyaneka- Lumkumbi)
-    col 6: Ambó (Vahambo tanbé designado Xikwanyama)
-    col 7: Helelo, Herero (Tchielelo, Tjiherero)
-    row 'Benguela': 2441194@233 20965@304 124204@375 6020@469 2174214@546 25803@617 903@710 931@781
-    row 'Urbana': 1466989@233 17241@304 77126@375 5308@469 1287974@546 5410@618 531@710 177@781
-    row 'Rural': 974205@233 3724@304 47078@375 711@469 886240@546 20393@617 372@710 754@781
-    row 'Benguela': 362022@233 4589@304 19391@375 1856@469 310713@546 956@617 127@710 80@781
-    row 'Ganda': 154424@233 828@304 4691@375 101@469 147286@546 18@617 7@710 2@781
-    row 'Lobito': 363663@233 4943@304 20426@375 1224@469 318812@546 490@617 87@710 40@781
-== Benguela p111: 73 rows
-  block 'Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a re'
-    columns at [217, 265, 313, 367, 414, 450, 500, 555]
-    col 0: Total da população com 2 ou mais anos
-    col 1: Católica
-    col 2: 2024 Bom Deus
-    col 3: Islâmica/ Muçulmana
-    col 4: Animista
-    col 5: Judaica
-    col 6: Protestante
-    col 7: Universal do reino de Deus
-    row 'Benguela': 2441194@217 1697297@265 3829@313 1543@367 690@414 976@450 88643@500 11619@555
-    row 'Urbana': 1466989@217 906635@265 3458@313 1154@367 402@414 763@450 54932@500 11224@555
-    row 'Rural': 974205@217 790662@265 371@313 389@366 288@414 213@450 33711@500 395@555
-    row 'Benguela': 362022@217 215504@265 644@313 335@366 67@414 133@450 12671@500 3925@555
-    row 'Ganda': 154424@217 125542@265 153@313 56@366 38@414 28@450 4367@500 26@555
-    row 'Lobito': 363663@217 206430@265 485@313 324@366 96@414 170@450 11797@500 3644@555
-  block 'Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a re'
-    columns at [211, 259, 304, 360, 397, 451, 511, 559]
-    col 0: Total da população com 2 ou mais anos
-    col 1: Nova Apostólica
-    col 2: 2024 Tocoísta
-    col 3: Kimbanguista
-    col 4: Josafat
-    col 5: Assembleia de Deus Pentecostal
-    col 6: Testemunhas de Jeová
-    col 7: Metodista
-    row 'Benguela': 2441194@211 9463@259 28405@304 828@360 4180@397 77065@451 12884@511 5149@559
-    row 'Urbana': 1466989@211 8563@259 24378@304 778@360 3940@397 73054@451 12609@511 4755@559
-    row 'Rural': 974205@211 900@259 4027@304 50@360 240@397 4010@451 275@510 394@558
-    row 'Benguela': 362022@211 1861@259 5887@304 263@360 1374@397 18903@451 3616@511 1334@559
-    row 'Ganda': 154424@211 85@259 1310@304 0@360 14@397 782@451 249@510 164@558
-    row 'Lobito': 363663@211 2519@259 8425@304 226@360 1172@397 26882@451 3843@511 1023@559
-== Benguela p77: 60 rows
-  block 'Quadro 1.5 - População por província, segundo outros grupos etários,'
-    columns at [206, 260, 312, 367, 421, 481, 551]
-    col 0: Total
-    col 1: 0 - 19 anos
-    col 2: 20 - 29 anos
-    col 3: 30 - 54 anos
-    col 4: 55 - 64 anos
-    col 5: 65 - 74 anos
-    col 6: 75 - ou mais anos
-    row 'Benguela': 2597638@206 1406836@260 451343@312 538092@367 107596@421 60274@481 33498@551
-    row 'Urbana': 1545159@206 813142@260 283318@312 343256@367 59179@421 30625@481 15640@551
-    row 'Rural': 1052479@206 593694@260 168025@312 194836@367 48417@421 29649@481 17858@551
-    row 'Benguela': 380048@206 193041@260 72807@312 86444@367 15338@421 8218@481 4199@552
-    row 'Benguela': 380048@206 193041@260 72807@312 86444@367 15338@421 8218@481 4199@552
-    row 'Ganda': 165651@206 93464@260 25115@312 31257@367 8421@421 4839@481 2555@552
-== Lunda_Norte p105: 34 rows
-  block 'Quadro 6. 1- População com 2 ou mais anos por município e área de residência, segundo grup'
-    columns at [244, 321, 404, 472, 562, 644, 715, 758]
-    col 0: (Kikongu conguês
-    col 1: Quimbundu (Kimbundu ou Tymbundu)
-    col 2: Lunda-Quioco (Lunda-kioko ou Lunda-Tchokwe Tshokwe)
-    col 3: Umbundu (ou Ovimbundu)
-    col 4: Nhaneca-Humbe (Nyaneka-Lumkumbi)
-    col 5: Ambó (Vahambo tanbé designado Xikwanyama)
-    col 6: Helelo, Herero (Tchielelo, Tjiherero)
-    col 7: Cuangar
-    row 'Lunda Norte': 61900@244 172963@321 1286523@404 9484@472 950@562 298@644 92@715 297@758
-    row 'Urbana': 46444@244 117236@321 958653@404 7133@472 684@562 225@644 68@715 178@758
-    row 'Rural': 15456@244 55727@321 327870@404 2352@472 265@562 72@644 24@715 119@758
-    row 'Cuilo': 111@244 798@321 28610@404 52@472 9@562 2@644 2@715 0@758
-    row 'Caungula': 127@244 1616@321 24234@404 33@472 12@562 0@644 0@715 0@758
-    row 'Dundo': 6608@244 11956@321 197294@404 1191@472 159@562 56@644 12@715 19@758
-== Lunda_Norte p112: 31 rows
-  block 'Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a re'
-    columns at [214, 300, 366, 420, 475, 530, 576, 633, 675, 717, 781]
-    col 0: População com 2 ou mais anos
-    col 1: Assembleia de Deus Pentecostal
-    col 2: Testemunhas de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Baptista
-    col 7: Mensagem dos Últimos Tempos
-    col 8: Sem religião
-    col 9: Outra religião
-    col 10: Não sabe/ Não respondeu
-    row 'Lunda Norte': 1627111@214 143510@300 30457@366 19478@420 148510@475 40373@530 763@576 26531@633 372401@675 58066@717 67451@781
-    row 'Urbana': 1193103@214 119668@300 25013@366 11228@420 116631@475 31549@530 656@576 20253@633 281311@675 44447@717 50288@781
-    row 'Rural': 434008@214 23842@300 5444@366 8250@420 31879@475 8825@530 107@576 6278@633 91089@675 13619@717 17163@781
-    row 'Cuilo': 30004@214 805@300 75@366 26@420 2049@475 245@530 2@576 37@633 5878@675 49@717 491@781
-    row 'Caungula': 26049@214 600@300 139@366 38@420 5284@475 123@530 24@576 67@633 6600@675 287@717 786@781
-    row 'Dundo': 224376@214 30223@300 4065@366 2241@420 19486@475 8430@530 19@576 3731@633 49952@675 12039@717 11840@781
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/384b93cf-ede0-4e05-9f36-a8e8e09b21a7/download/kenya-population-by-sex-and-county.csv: 1,933 characters, sha256 fbd40719108ebf30b7dc821312e20fc0c75ba03cdc4003bf0b6328c3c6d8d0cf
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/b7edfdb4-2a07-4332-8796-2f00968aff0e/download/distribution-of-population-by-age-sex-county-and-sub-county-kenya-2019-census-volume-iii.csv: 1,662,176 characters, sha256 5a0261bd87543a08225dfa8bccb8ed67f43f4e4dedb8b5fcc61a53884f2291ea
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/ddddbe91-b5fa-4449-a50d-846401e701c4/download/distribution-of-population-by-sex-and-sub-county-2019-census-volume-ii.csv: 15,543 characters, sha256 d0eb422395ba0eae64dc0cc4ed61d36a5c913503f91c28b52cea63d5ecaacd75
+  Volume I: 47 counties making 47,564,296; Volume II: 349 sub-counties making their counties; Volume III: 47 counties and 345 sub-counties, 341 of them agreeing with Volume II's men and women
+  ages not read for KWALE, ALL: single years 12 short of its total; taken as ages not stated
+  ages not read for KWALE, KINANGO: 96 single years making 78,119 against None; []
+  ages not read for KWALE, its sub-counties make 772,583, not 866,802: none of them is used
+  ages not read for NYERI, MT. KENYA FOREST: 100 single years making 186 against 188; ['age 10: sexes make 1, not 2']
+  BARINGO: 3 of 6 constituencies from the crosswalk (['Baringo North', 'Eldama Ravine', 'Mogotio'])
+  BOMET: 2 of 6 constituencies from the crosswalk (['Bomet East', 'Buret'])
+  BUNGOMA: 9 constituencies, 12 sub-counties (['bumula', 'bungomacentral', 'bungomaeast', 'bungomanorth', 'bungomasouth', 'bungomawest', 'cheptais', 'kimilili', 'mtelgon', 'mtelgonforest', 'tongaren', 'webuyewest']); not written
+  BUSIA: 7 of 7 constituencies from the crosswalk (['Budalangi', 'Butula', 'Funyula', 'Matayos', 'Nambale', 'Teso North', 'Teso South'])
+  ELGEYO-MARAKWET: 4 constituencies are its sub-counties of the same names (454,468 of 454,468)
+  EMBU: 2 of 4 constituencies from the crosswalk (['Gachoka', 'Siakago'])
+  GARISSA: 6 constituencies, 7 sub-counties (['balambala', 'dadaab', 'fafi', 'garissa', 'hulugho', 'ijara', 'lagdera']); not written
+  HOMA BAY: 8 of 8 constituencies from the crosswalk (['Homa Bay', 'Kabondo Kasipul', 'Karachuonyo', 'Kasipul', 'Ndhiwa', 'Rangwe', 'Suba North', 'Suba South'])
+  ISIOLO: 2 of 2 constituencies from the crosswalk (['Isiolo North', 'Isiolo South'])
+  KAJIADO: 5 of 5 constituencies from the crosswalk (['Kajiado Central', 'Kajiado East', 'Kajiado North', 'Kajiado South', 'Kajiado West'])
+  KAKAMEGA: 8 of 12 constituencies from the crosswalk (['Butere', 'Ikolomani', 'Khwisero', 'Lugari', 'Malava', 'Matungu', 'Navakholo', 'Shinyalu'])
+  KERICHO: 2 of 5 constituencies from the crosswalk (['Kipkelion West', 'Sigowet/Soin'])
+  KIAMBU: 4 of 12 constituencies from the crosswalk (['Githunguri', 'Kiambu', 'Kikuyu', 'Limuru'])
+  KILIFI: 7 constituencies, 9 sub-counties (['chonyi', 'ganze', 'kaloleni', 'kauma', 'kilifinorth', 'kilifisouth', 'magarini', 'malindi', 'rabai']); not written
+  KIRINYAGA: 4 constituencies, 6 sub-counties (['kirinyagacentral', 'kirinyagaeast', 'kirinyagawest', 'mtkenyafore', 'mweaeast', 'mweawest']); not written
+  KISII: 9 constituencies, 11 sub-counties (['etago', 'gucha', 'guchasouth', 'kenyenya', 'kisiicentral', 'kisiisouth', 'kitutucentral', 'marani', 'masabasouth', 'nyamache', 'sameta']); not written
+  KISUMU: 7 constituencies are its sub-counties of the same names (1,155,551 of 1,155,551)
+  KITUI: 8 constituencies, 18 sub-counties (['ikutha', 'katulani', 'kisasi', 'kituicentral', 'kituiwest', 'kyuso', 'loweryatta', 'matinyani', 'migwani', 'mumoni', 'mutitu', 'mutitunorth', 'mutomo', 'mwingicentral', 'mwingieast', 'nzambani', 'thagicu', 'tseikuru']); not written
+  KWALE: 1 of 4 constituencies from the crosswalk (['Matuga'])
+  LAIKIPIA: 3 constituencies, 5 sub-counties (['laikipiacentral', 'laikipiaeast', 'laikipianorth', 'laikipiawest', 'nyahururu']); not written
+  LAMU: 2 constituencies are its sub-counties of the same names (143,916 of 143,916)
+  MACHAKOS: 8 of 8 constituencies from the crosswalk (['Kangundo', 'Kathiani', 'Machakos Town', 'Masinga', 'Matungulu', 'Mavoko', 'Mwala', 'Yatta'])
+  MAKUENI: 2 of 6 constituencies from the crosswalk (['Kilome', 'Mbooni'])
+  MANDERA: 1 of 6 constituencies from the crosswalk (['Mandera East'])
+  MARSABIT: 1 of 4 constituencies from the crosswalk (['Moyale'])
+  MERU: 1 of 9 constituencies from the crosswalk (['Tigania West'])
+  MIGORI: 8 constituencies are its sub-counties of the same names (1,116,401 of 1,116,401)
+  MOMBASA: 6 constituencies are its sub-counties of the same names (1,208,303 of 1,208,303)
+  MURANG'A: 7 constituencies, 9 sub-counties (['aberdareforest', 'gatanga', 'kahuro', 'kandara', 'kangema', 'kigumo', 'mathioya', 'murangaeast', 'murangasouth']); not written
+  NAIROBI: 3 of 17 constituencies from the crosswalk (['Kibra', 'Makadara', 'Mathare'])
+  NAKURU: 1 of 11 constituencies from the crosswalk (['Kuresoi North'])
+  NANDI: 6 of 6 constituencies from the crosswalk (['Aldai', 'Chesumei', 'Emgwen', 'Mosop', 'Nandi Hills', 'Tinderet'])
+  NAROK: 3 of 6 constituencies from the crosswalk (['Kilgoris', 'Narok East', 'Narok West'])
+  NYAMIRA: 4 constituencies, 5 sub-counties (['borabu', 'manga', 'masabanorth', 'nyamiranorth', 'nyamirasouth']); not written
+  NYANDARUA: 5 constituencies, 8 sub-counties (['aberdarenationa', 'kinangop', 'kipipiri', 'mirangine', 'nyandaruacentra', 'nyandaruanorth', 'nyandaruasouth', 'nyandaruawest']); not written
+  NYERI: 2 of 6 constituencies from the crosswalk (['Mukurweni', 'Nyeri Town'])
+  SAMBURU: 1 of 3 constituencies from the crosswalk (['Samburu East'])
+  SIAYA: 6 of 6 constituencies from the crosswalk (['Alego Usonga', 'Bondo', 'Gem', 'Rarieda', 'Ugenya', 'Ugunja'])
+  TAITA/ TAVETA: 4 constituencies, 4 sub-counties (['mwatate', 'taita', 'taveta', 'voi']); not written
+  TANA RIVER: 3 of 3 constituencies from the crosswalk (['Bura', 'Galole', 'Garsen'])
+  THARAKA-NITHI: 3 constituencies, 6 sub-counties (['igambangombe', 'maara', 'merusouth', 'mtkenyaforest', 'tharakanorth', 'tharakasouth']); not written
+  TRANS NZOIA: 5 of 5 constituencies from the crosswalk (['Cherangany', 'Endebess', 'Kiminini', 'Kwanza', 'Saboti'])
+  TURKANA: 1 of 6 constituencies from the crosswalk (['Turkana East'])
+  UASIN GISHU: 6 constituencies are its sub-counties of the same names (1,163,158 of 1,163,158)
+  VIHIGA: 5 constituencies are its sub-counties of the same names (589,984 of 590,001)
+  WAJIR: 1 of 6 constituencies from the crosswalk (['Wajir South'])
+  WEST POKOT: 4 of 4 constituencies from the crosswalk (['Kacheliba', 'Kapenguria', 'Pokot South', 'Sigor'])
+  47 counties and 131 of 290 constituencies with figures
+  wrote data/processed/kenya_census.json (1015 kB)
