@@ -45,7 +45,9 @@ to a hundredth of a percent (Limpopo's five make 6,572,665 against 6,572,721:
 each count is weighted and rounded on its own); the provinces make the
 census's 62,027,503, to the same rounding. A district's population groups and
 age groups make its total less the people whose group or age was not given,
-never more and never short by more than ``UNSTATED`` of it; each province's
+never short by more than ``UNSTATED`` of it and never more than the weighting's
+rounding over it (``OVER``: Nkangala's age groups make 1,588,777 against
+1,588,684, each of the 36 cells weighted and rounded on its own); each province's
 districts make its groups and ages to the same rounding. Districts are matched
 to the boundary file's within their province, by name, and every polygon must
 get exactly one district and every district one polygon.
@@ -88,6 +90,9 @@ ROUNDING = 0.0001
 # How far a district's population groups or age groups may fall short of its
 # total: the people whose group or age the census did not record.
 UNSTATED = 0.01
+# How far a district's groups or ages may exceed its total: each cell is
+# weighted and rounded on its own (Nkangala's ages, 93 people over 1,588,684).
+OVER = 0.001
 OUT = "south_africa_districts.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -201,8 +206,9 @@ def median_of(ages: dict[int, tuple[int, int]]) -> float | None:
 
 
 def check_parts(name: str, total: int, parts: int, what: str) -> None:
-    """A district's groups or ages make its total less the unstated, never more."""
-    if parts > total + SLACK or parts < total * (1 - UNSTATED):
+    """A district's groups or ages make its total less the unstated, and never
+    more than the weighting's rounding over it."""
+    if parts > total + max(SLACK, OVER * total) or parts < total * (1 - UNSTATED):
         raise SystemExit(f"south_africa_districts: {name}: its {what} make {parts:,} "
                          f"against a total of {total:,}")
 
@@ -300,6 +306,9 @@ def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]])
         mine = [d for d in districts if d["province"] == name]
         made = sum(d["total"] for d in mine)
         allowed = max(SLACK * len(mine), ROUNDING * p["total"])
+        # A population group or an age group is a sum of smaller weighted
+        # cells, each rounded on its own, so it may miss by up to OVER.
+        loose = max(SLACK * len(mine), OVER * p["total"])
         if not mine or abs(made - p["total"]) > allowed:
             raise SystemExit(f"south_africa_districts: {name}'s districts make {made:,}, "
                              f"not {p['total']:,}")
@@ -308,13 +317,13 @@ def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]])
         if p.get("groups") and all(d.get("groups") for d in mine):
             for g in GROUPS:
                 got = sum(d["groups"][g] for d in mine)
-                if abs(got - p["groups"][g]) > allowed:
+                if abs(got - p["groups"][g]) > loose:
                     raise SystemExit(f"south_africa_districts: {name}'s districts make "
                                      f"{got:,} {GROUPS[g]}, not {p['groups'][g]:,}")
         if p.get("ages") and all(d.get("ages") for d in mine):
             for a in AGE_GROUPS:
                 got = sum(sum(d["ages"][a]) for d in mine)
-                if abs(got - sum(p["ages"][a])) > allowed:
+                if abs(got - sum(p["ages"][a])) > loose:
                     raise SystemExit(f"south_africa_districts: {name}'s districts make "
                                      f"{got:,} in age group {a}, not {sum(p['ages'][a]):,}")
 

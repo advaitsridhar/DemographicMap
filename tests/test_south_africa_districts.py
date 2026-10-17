@@ -37,6 +37,7 @@ class SouthAfricaDistrictAgesTest(unittest.TestCase):
     def test_groups_and_ages_make_the_total_less_the_unstated(self):
         za.check_parts("x", 1000, 995, "groups")
         za.check_parts("x", 1000, 1002, "groups")                 # rounding
+        za.check_parts("Nkangala", 1_588_684, 1_588_777, "age groups")  # weighting
         with self.assertRaises(SystemExit):
             za.check_parts("x", 1000, 980, "groups")
         with self.assertRaises(SystemExit):
