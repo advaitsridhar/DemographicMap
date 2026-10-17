@@ -82,21 +82,24 @@ LANGUAGES = {
     "kanjad": "Jaad", "jalunga": "Yalunka", "bayot": "Bayot", "womey": "Wamey",
     "saafisaafi": "Saafi-Saafi", "noon": "Noon", "laalaa": "Lehar", "ndut": "Ndut",
     "paloor": "Palor", "badiaranke": "Badiaranke", "baynunk": "Bainouk",
-    "francais": "French", "tourka": "Tourka",
+    "francais": "French", "tourka": "Tourka", "languesetrangere": "Other foreign languages",
     "autreslanguesafricaines": "Other African languages",
     "languesetrangeres": "Other foreign languages",
     "autreslanguesetrangeresnonafricaines": "Other non-African foreign languages",
     "langagedessignessourdmuet": "Sign language", "languedessignes": "Sign language",
     "nd": "Not stated", "nondeclare": "Not stated",
 }
-N = r"\d{1,3}(?:[  ]\d{3})+|\d+"
-P = r"\d{1,3},\d+|100|0"
+# A count, its thousands set apart by a space of any width (Matam's report
+# uses the thin space), and a share, printed with or without its decimal.
+N = r"\d{1,3}(?:[    ]\d{3})+|\d+"
+P = r"\d{1,3},\d+|\d{1,3}"
 ROW6 = re.compile(rf"^(?P<label>\D+?)\s+(?P<m>{N})\s+(?P<mp>{P})\s+(?P<f>{N})\s+(?P<fp>{P})"
                   rf"\s+(?P<t>{N})\s+(?P<tp>{P})\s*$")
 ROW3 = re.compile(rf"^(?P<label>\D+?)\s+(?P<mp>{P})\s+(?P<fp>{P})\s+(?P<tp>{P})\s*$")
 TITLE_LANG = re.compile(r"(?i)principale\s+langue\s+couramment")
 TITLE_MEDIAN = re.compile(r"(?i)[aâ]ges?\s+moyens?\s+et\s+(?:[aâ]ge\s+)?m[ée]dian")
-MEDIAN_ROW = re.compile(r"(?i)^\s*(?:[aâ]ge\s+)?m[ée]dian(?:e)?\s*(?:\(ans\))?\s+((?:\d+\s*)+)$")
+MEDIAN_ROW = re.compile(r"(?i)^\s*(?:[aâ]ge\s+)?m[ée]dian(?:e)?\s*(?:\(ans\))?\s+"
+                        r"((?:\d+(?:,\d+)?\s*)+)$")
 TABLE_NO = re.compile(r"(?i)tableau\s*([IVX]+\s*[-\u2013\u2011.]\s*\d+|\d+(?:\.\d+)+)")
 
 
@@ -149,7 +152,7 @@ def parse_median(text: str) -> tuple[int, str]:
         for row in lines[i + 1:i + 14]:
             m = MEDIAN_ROW.match(row)
             if m:
-                values = [int(v) for v in m.group(1).split()]
+                values = ages(m.group(1))
                 if len(values) not in (3, 6, 9) or not 14 <= values[-1] <= 35:
                     raise SystemExit(f"senegal_regional_reports: the median row reads {values}")
                 return values[-1], table_number(line)
@@ -157,10 +160,19 @@ def parse_median(text: str) -> tuple[int, str]:
     # table of these reports has, is the table.
     rows = [line for line in lines if MEDIAN_ROW.match(line)]
     if rows:
-        values = [int(v) for v in MEDIAN_ROW.match(rows[0]).group(1).split()]
+        values = ages(MEDIAN_ROW.match(rows[0]).group(1))
         if len(values) in (3, 6, 9) and 14 <= values[-1] <= 35:
             return values[-1], ""
     raise SystemExit("senegal_regional_reports: no median-age table")
+
+
+def ages(cells: str) -> list[int | float]:
+    """A median row's figures: whole years, or with a decimal ("17,0")."""
+    out: list[int | float] = []
+    for cell in cells.split():
+        value = float(cell.replace(",", "."))
+        out.append(int(value) if value.is_integer() else value)
+    return out
 
 
 def language_label(label: str) -> str:
@@ -233,12 +245,19 @@ def parse_language(text: str) -> tuple[dict[str, float], str, str]:
 
 
 def departments_in_broad_groups(text: str) -> bool:
-    """The report's age table by department holds the three broad groups only."""
-    for page in text.split("\f"):
-        if not re.search(r"(?i)groupes?\s+d.[aâ]ges?\s+selon\s+le\s+d[ée]partement", page):
-            continue
-        if re.search(r"(?i)moins\s+de\s+15", page) and re.search(r"(?i)65\s+ans\s+et\s+plus", page):
-            return not re.search(r"(?im)^\s*(?:5\s*-\s*9|10\s*-\s*14)\s", page)
+    """The report's age table by department holds the three broad groups only:
+    the table itself, from its title to its source line (a chart or the
+    region's five-year table may share its page)."""
+    for title in re.finditer(r"(?i)groupes?\s+d.[aâ]ges?\s+(?:quinquennaux\s+)?selon\s+le\s+"
+                             r"d[ée]partement", text):
+        rest = text[title.end():title.end() + 2500]
+        if is_contents(rest.split("\n", 1)[0]) or re.match(r"[^\n]*\.{4,}", rest):
+            continue                       # the list of tables
+        end = re.search(r"(?i)\bsource\s*:", rest)
+        table = rest[:end.start()] if end else rest[:1500]
+        if re.search(r"(?i)moins\s+de\s*\n?\s*15", table) and \
+                re.search(r"(?i)65\s+ans\s+et\s+plus", table):
+            return not re.search(r"(?im)^\s*(?:5\s*-\s*9|10\s*-\s*14)\s", table)
     return False
 
 
