@@ -15,6 +15,11 @@ Each argument is one probe, ``mode:url`` with ``~~`` parts after it:
     geo:URL[~~N]     every polygon of every GeoJSON file in the zip (or the
                      GeoJSON) at URL: its name and code properties and about N
                      points on a regular grid inside it (default 30)
+    pts:URL          every point of every GeoJSON file in the zip (or the
+                     GeoJSON) at URL: its name and code properties and where
+                     it is (OCHA's boundary sets carry their units' capitals)
+    hdx:NAME[,NAME]  each HDX dataset's title, licence, the start of its notes
+                     and its resources
 
 Usage:
     python -m scripts.fetch_census.sahel_probe geo:https://example.org/boundaries.geojson.zip~~30
@@ -103,6 +108,43 @@ def probe_geo(url: str, n: int) -> None:
             say("P " + ";".join(f"{x:.4f},{y:.4f}" for x, y in pts))
 
 
+POINT_KEEP = re.compile(r"(?i)name|pcode|ref|type|level|capital|status")
+
+
+def probe_points(url: str) -> None:
+    blob = http_get(url, binary=True, cache=False, timeout=300)
+    assert isinstance(blob, bytes)
+    say(f"== {url}: {len(blob):,} bytes")
+    for name, collection in features(blob):
+        feats = [f for f in collection.get("features") or []
+                 if (f.get("geometry") or {}).get("type") == "Point"]
+        if not feats:
+            continue
+        say(f"-- {name}: {len(feats)} points")
+        for f in feats:
+            x, y = f["geometry"]["coordinates"][:2]
+            props = {k: v for k, v in (f.get("properties") or {}).items()
+                     if POINT_KEEP.search(k) and v not in (None, "")}
+            say(f"Q {x:.5f},{y:.5f} " + json.dumps(props, ensure_ascii=False, sort_keys=True))
+
+
+def probe_hdx(names: str) -> None:
+    for name in names.split(","):
+        url = "https://data.humdata.org/api/3/action/package_show?id=" + name.strip()
+        try:
+            body = http_get(url, cache=False, timeout=120)
+            package = json.loads(body)["result"]
+        except Exception as err:  # noqa: BLE001 -- the probe reports and goes on
+            say(f"== {name}: {type(err).__name__}: {err}")
+            continue
+        say(f"== {name}: {package.get('title')}")
+        say(f"   licence: {package.get('license_id')} ({package.get('license_title')}), "
+            f"isopen={package.get('isopen')}")
+        say("   notes: " + re.sub(r"\s+", " ", package.get("notes") or "")[:600])
+        for r in package.get("resources") or []:
+            say(f"   - {r.get('format')} {r.get('name')}: {r.get('url')}")
+
+
 def main(argv: list[str]) -> int:
     if not argv:
         print(__doc__)
@@ -112,6 +154,10 @@ def main(argv: list[str]) -> int:
         parts = rest.split("~~")
         if mode == "geo":
             probe_geo(parts[0], int(parts[1]) if len(parts) > 1 and parts[1] else 30)
+        elif mode == "pts":
+            probe_points(parts[0])
+        elif mode == "hdx":
+            probe_hdx(parts[0])
         else:
             raise SystemExit(f"sahel_probe: unknown mode {mode!r}")
     return 0
