@@ -335,9 +335,15 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         else:
             figures = wil[wilaya]
             note = "The 2023 census's count for the wilaya."
+        seat = {}
+        if wilaya == "Nouakchott":
+            seat["capital"] = gap(NOT_AVAILABLE, (
+                "The polygon is the city of Nouakchott, three wilayas since 2014 "
+                "(Nouakchott-Ouest, Nouakchott-Nord and Nouakchott-Sud), each with a seat of "
+                "its own."))
         records.append(record(f"MRT-RGPH2023-{fold(wilaya)}", shape["name"], level="admin1",
                               parent="MRT", country="MRT", match_by="shape_id",
-                              shape_id=shape["id"], **fields(figures, note)))
+                              shape_id=shape["id"], **seat, **fields(figures, note)))
     used: set[tuple[str, str]] = set()
     for shape in admin2:
         k = fold(shape["name"])

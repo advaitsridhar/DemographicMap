@@ -39,6 +39,7 @@ class MauritaniaLeaflet(unittest.TestCase):
         self.assertIn("Adel Bagrou 72,855", by[("admin2", "Amourj")]["population_note"])
         self.assertEqual(by[("admin1", "Nouakchott")]["population"]["value"],
                          204_881 + 614_465 + 627_415)
+        self.assertIn("three wilayas since 2014", by[("admin1", "Nouakchott")]["capital"]["note"])
         self.assertEqual(by[("admin1", "Inchiri")]["population"]["value"], 29_484 + 7_382)
         self.assertEqual(by[("admin1", "Dakhlet Nouadhibou")]["population"]["value"], 177_077)
         self.assertNotIn("value", by[("admin2", "Ksar")]["population"])

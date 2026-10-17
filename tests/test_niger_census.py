@@ -51,6 +51,9 @@ class NigerReads(unittest.TestCase):
         self.assertEqual(merged["sex_ratio"]["value"], round(1000 * men / women))
         self.assertIn("together", merged["median_age_note"])
         self.assertEqual(by[("admin1", "Niamey")]["religion"][0]["group"], "Islam")
+        self.assertIn("Tahoua and Agadez", merged["capital"]["note"])
+        self.assertIn("capital district", by[("admin1", "Niamey")]["capital"]["note"])
+        self.assertNotIn("note", by[("admin1", "Maradi")]["capital"])
         city = by[("admin2", "Tahoua Ville")]
         self.assertEqual(city["sex_ratio"]["value"], round(1000 * 74_096 / 75_402))
 

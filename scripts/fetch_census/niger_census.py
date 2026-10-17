@@ -21,7 +21,9 @@ and Zinder with Diffa as single first-level polygons. Each takes its two
 regions' counts added: men and women, every five-year age group, every
 religion. Its median age is the median of the added age groups, interpolated
 within the group holding the middle person, and so is every other polygon's;
-each is checked against the report's whole-year median for its regions.
+each is checked against the report's whole-year median for its regions. The
+two, and Niamey (the capital district, a city rather than a region with a
+seat), say why they show no capital.
 
 **Checks before anything is written.** Every department's men and women make
 its total; the departments make their region and the regions make the
@@ -43,7 +45,8 @@ import re
 import unicodedata
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
+                      write_json)
 from .cod_ps_age import grouped_median
 
 URL = "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf"
@@ -275,9 +278,16 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
              if both else "The median of the region's five-year age groups (Tableaux A2 to A4)")
             + ", interpolated within the group holding the middle person; the report gives "
             + reported + " in whole years.")
+        seat: dict[str, Any] = {}
+        if both:
+            seat["capital"] = gap(NOT_AVAILABLE, f"The polygon is two regions, {shown}, each with "
+                                                 "a seat of its own.")
+        elif regions == ["NIAMEY"]:
+            seat["capital"] = gap(NOT_AVAILABLE, "Niamey is the capital district, the city "
+                                                 "itself, not a region with a seat apart.")
         records.append(record(
             f"NER-RGPH2012-{fold(shape['name'])}", shape["name"], level="admin1", parent="NER",
-            country="NER", match_by="shape_id", shape_id=shape["id"],
+            country="NER", match_by="shape_id", shape_id=shape["id"], **seat,
             sources=[{**src, "field": "sex_ratio/median_age/religion"}],
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE + ", Tableau 6"),
