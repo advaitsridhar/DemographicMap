@@ -125,6 +125,9 @@ class Areas(unittest.TestCase):
         tripoli = [r for r in records if r["shape_id"] == lc.SHAPES["tarabulus"]][0]
         self.assertEqual(tripoli["population"]["status"], "not_available")
         self.assertIn("Sidi as Sayih", tripoli["population"]["note"])
+        # The reason gives way to no encyclopaedia's figure for other ground.
+        self.assertTrue(tripoli["population"]["displaces_undated"])
+        self.assertEqual(tripoli["population"]["displaces_before"], lc.DISPLACES_BEFORE)
         sabha = [r for r in records if r["shape_id"] == lc.SHAPES["sabha"]][0]
         self.assertEqual(sabha["name"], "label-sabha")
         self.assertEqual(sabha["sex_ratio"]["unit"], "males_per_1000_females")

@@ -119,6 +119,9 @@ MOVED: dict[tuple[str, str], str] = {
 }
 # Areas left without figures, and why: three of the census's Al Jafarah
 # baladiyat could lie in either.
+# An encyclopaedia's figure older than this year, or undated, gives way to an
+# UNSURE area's reason: none of them is for the ground drawn.
+DISPLACES_BEFORE = 2026
 UNSURE: dict[str, str] = {
     key: ("The 2006 census counts this area's people in baladiyat of which three -- Sidi as "
           "Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line "
@@ -282,8 +285,14 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
                  f"2001 division; the area shown is the shabiyah of {name} as drawn in 2007, "
                  f"which holds {held}." if held else "")
         if key in UNSURE:
-            fields: dict[str, Any] = {f: gap(NOT_AVAILABLE, UNSURE[key] + where)
-                                      for f in ("population", "median_age", "sex_ratio")}
+            fields = {f: gap(NOT_AVAILABLE, UNSURE[key] + where)
+                      for f in ("population", "median_age", "sex_ratio")}
+            # The encyclopaedia's figures on these two outlines are for other
+            # ground (Jafara's 2020 548,855 counts Janzur and the baladiyat
+            # around it, which lie in Az Zawiyah's outline; the undated 267,031
+            # is the 2001 district of Tajura' alone): the reason displaces them.
+            fields["population"]["displaces_before"] = DISPLACES_BEFORE
+            fields["population"]["displaces_undated"] = True
         else:
             parts = areas[key]
             unit = merged(parts)
@@ -326,9 +335,12 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
                              "url": uscb.dataset_url(DATASET), "year": YEAR,
                              "license": LICENCE}]}
         for level in drawn:
+            # The outline's own label is this area's other name: another
+            # source's row on the outline by that label is the same place.
+            aliases = [labels[sid]] if labels[sid] != name else None
             records.append(record(f"LBY-2006-{key}-{level}", name, level=level, parent="LBY",
                                   country="LBY", match_by="shape_id", shape_id=sid,
-                                  codes={"uscb": census["name"]}, **fields))
+                                  aliases=aliases, codes={"uscb": census["name"]}, **fields))
     return records
 
 
