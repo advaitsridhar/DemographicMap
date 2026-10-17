@@ -1,90 +1,88 @@
-  read https://statistics.gov.rw/sites/default/files/documents/2025-02/PHC5-2022_Main_Indicators.xlsx: 581,274 bytes, sha256 b73aa381fd3145405251b87b15e5a2926b0038e3b2d2d837b92b81b9630d06f9
-  read https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx: 172,094 bytes, sha256 12f28a74ae2c18708ab59e1cfa8e16d83eab6e8ba1a310bc4f11940f9a281a97
-  Table 1: 5 provinces and 30 districts making 13,246,394; Table 6: nationality by province; Tables 4.3 and 4.4: 35 medians
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf: 3,435,910 bytes, sha256 5dc7b994003401aef6c6f147beebf35c23c169c5ffe84d33d72bcdf46d15143e
-  Nyarugenge: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Gasabo.pdf: 3,903,714 bytes, sha256 122ac3945d5969fd401de3a63e92d22ced184fb26dbb3f95307fe2137b1aec20
-  read https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf: 3,186,983 bytes, sha256 b7725bd4b180eadc62539a052a40fa473fb267558674a78ddaeb63a39b4956b0
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyanza.pdf: 3,566,397 bytes, sha256 3c12ed96edc4a5ee7e5556080836c960b9b66cfc9ef825e0059dee944f8c8303
-  Nyanza: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Gisagara.pdf: 3,649,762 bytes, sha256 b0ea57fb7e9118fbeac0f0c4a68a54c0c18e9558ac48a4a92c76ad8304facf07
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyaruguru.pdf: 4,009,664 bytes, sha256 d170c89c6e2f713acb4957c8fc8bfd7f457211c481abd4745a6d101541a807bc
-  read https://statistics.gov.rw/sites/default/files/2025-05/Huye.pdf: 3,822,794 bytes, sha256 fdc37b763c781d81f6582f910e6b00c1f4eb62e43de92019b36dc92e904e4c6f
-  Huye: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyamagabe.pdf: 4,251,824 bytes, sha256 9d242b2b6908219de0d6ce99a8154aef2766afbfcd7ee036b8963235d73289b0
-  read https://statistics.gov.rw/sites/default/files/2025-05/Ruhango.pdf: 3,346,583 bytes, sha256 c017abdedc1bb0dec9db4aa3da11db1c590401d4aff36e634eaf4eaa1639ca52
-  read https://statistics.gov.rw/sites/default/files/2025-05/Muhanga.pdf: 3,473,927 bytes, sha256 60c9e1271516f16f08b966f712dee037c730224d34215994fc19605f030ca9b4
-  Muhanga: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Kamonyi.pdf: 3,437,483 bytes, sha256 4822fae9d4105af8eb401ad38ea28cb536e92ecd65061a4d0dea246770f5dc94
-  Kamonyi: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Karongi.pdf: 3,403,202 bytes, sha256 3e44cae0ced8a054fbf88a80329c69ac07945a24f39bd1fa5f550fffb0a6c15a
-  read https://statistics.gov.rw/sites/default/files/2025-05/Rutsiro.pdf: 4,802,154 bytes, sha256 852afa00685a81d0c98fa62824fdb909742e081a42cbf7311d062811edbed72c
-  Rutsiro: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Rubavu.pdf: 4,408,890 bytes, sha256 c29e1eb8d2df15d53b3fedb14c70ab0ed96ab0a5f13c9f5b9727ddc200f09d84
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyabihu.pdf: 3,973,333 bytes, sha256 dd7872c2cb3bfce6eb7db93c356ecb39c1ac1f7f0f438abfd0d50d4001f8f415
-  Nyabihu: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Ngororero.pdf: 5,126,952 bytes, sha256 80d57e349f5370792de32b3cacac7a3fe1ddc757373cf33365afd44adad97580
-  Ngororero: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Rusizi.pdf: 5,156,624 bytes, sha256 9ae1ffe8c0aff9f2c230ddd9f0ae98a27f7c071b7ba3cfcf4583a93896314b30
-  Rusizi: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyamasheke.pdf: 4,854,227 bytes, sha256 82ef49a6813f35e344474f11a113b0fb4fd7f0269b9e18e1b92b4f20edc459d1
-  read https://statistics.gov.rw/sites/default/files/2025-05/Rulindo.pdf: 4,250,477 bytes, sha256 7d665abe8acd90c0da212f114af3aa560c5e7a745d45989501f432eb4efcecee
-  Rulindo: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Gakenke.pdf: 4,422,683 bytes, sha256 bbfa6d050d3288bd170e03c9227dadda168ffbc1d502a58dc982ae35f45139b7
-  Gakenke: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Musanze.pdf: 3,951,829 bytes, sha256 f289bdd5a745bc07c71cb4b24e23e0e57cc91f7ed7f4791e784865c5f85c878a
-  https://statistics.gov.rw/sites/default/files/2025-05/Burera.pdf: HTTPError
-  read https://statistics.gov.rw/sites/default/files/2025-05/BURERA.pdf: 4,207,245 bytes, sha256 05e13bc86d7db64a27cea15af14835ebbf867476917aee88520d159acc5f6a56
-  read https://statistics.gov.rw/sites/default/files/2025-05/Gicumbi.pdf: 4,861,984 bytes, sha256 01f812b041b73bb15ed3da63a395d5c3156e7d49baebd03197805169501c1d8b
-  Gicumbi: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Rwamagana.pdf: 3,683,628 bytes, sha256 d16aa074a2fae073d1c5326d41ca05b97d2f0c51cb41177edb40798e5fb370e8
-  Rwamagana: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Nyagatare.pdf: 4,458,533 bytes, sha256 6dcb9997fe0c511b6010ab3124f34a0d8c4698135552b1c0a714daa8f4facd60
-  Nyagatare: no nationality row agreeing with Table 1 in its profile
-  read https://statistics.gov.rw/sites/default/files/2025-05/Gatsibo.pdf: 3,782,781 bytes, sha256 38facaafb4c31fec594cf5eb9b786bd62566bb4bb7fccebdc3791cc0ef96423e
-  read https://statistics.gov.rw/sites/default/files/2025-05/Kayonza.pdf: 3,691,120 bytes, sha256 c58ed3a55d8461ee143e24134066acc2be13dab8257f4ba78b006ba0b074bb0a
-  Kayonza: no nationality row agreeing with Table 1 in its profile
-  https://statistics.gov.rw/sites/default/files/2025-05/Kirehe.pdf: HTTPError
-  read https://statistics.gov.rw/sites/default/files/2025-05/KIREHE.pdf: 3,552,990 bytes, sha256 c0548f77f3e0f4b19d5ffead0e38f8257cda5409774d5e58a96c9c92e1836510
-  read https://statistics.gov.rw/sites/default/files/2025-05/Ngoma.pdf: 4,994,013 bytes, sha256 655d6f0683eba477a9e31add79d76b50b3be31271b8abcaea76fd6a69cfe93c2
-  Ngoma: no nationality row agreeing with Table 1 in its profile
-  https://statistics.gov.rw/sites/default/files/2025-05/Bugesera.pdf: HTTPError
-  read https://statistics.gov.rw/sites/default/files/2025-05/BUGESERA.pdf: 3,966,542 bytes, sha256 dd6345a3cd62cc4b0d15131a6852145980efb23286f2897472453ae4c78fa32c
-  Bugesera: no nationality row agreeing with Table 1 in its profile
-  religion read whole for 30 of 30 districts, nationality for 13
-  admin1 City of Kigali: 1,745,555, median 23.0, sex ratio 1038, religion led by Catholic, foreign nationals 20554
-  admin2 Nyarugenge: 374,319, median 23.0, sex ratio 1097, religion led by Catholic, foreign nationals -
-  admin2 Gasabo: 879,505, median 22.0, sex ratio 1019, religion led by Catholic, foreign nationals 10529
-  admin2 Kicukiro: 491,731, median 23.0, sex ratio 1027, religion led by Catholic, foreign nationals 6749
-  admin1 Southern Province: 3,002,699, median 20.0, sex ratio 932, religion led by Catholic, foreign nationals 18208
-  admin2 Nyanza: 365,718, median 20.0, sex ratio 955, religion led by Adventist, foreign nationals -
-  admin2 Gisagara: 397,051, median 19.0, sex ratio 908, religion led by Catholic, foreign nationals 7891
-  admin2 Nyaruguru: 318,126, median 19.0, sex ratio 915, religion led by Catholic, foreign nationals 454
-  admin2 Huye: 381,900, median 22.0, sex ratio 978, religion led by Catholic, foreign nationals -
-  admin2 Nyamagabe: 371,501, median 20.0, sex ratio 907, religion led by Catholic, foreign nationals 6743
-  admin2 Ruhango: 359,121, median 20.0, sex ratio 920, religion led by Catholic, foreign nationals 210
-  admin2 Muhanga: 358,433, median 22.0, sex ratio 939, religion led by Catholic, foreign nationals -
-  admin2 Kamonyi: 450,849, median 21.0, sex ratio 933, religion led by Catholic, foreign nationals -
-  admin1 Western Province: 2,896,484, median 19.0, sex ratio 916, religion led by Catholic, foreign nationals 15671
-  admin2 Karongi: 373,869, median 20.0, sex ratio 913, religion led by Adventist, foreign nationals 10760
-  admin2 Rutsiro: 369,180, median 19.0, sex ratio 916, religion led by Catholic, foreign nationals -
-  admin2 Rubavu: 546,683, median 19.0, sex ratio 957, religion led by Catholic, foreign nationals 2780
-  admin2 Nyabihu: 319,047, median 19.0, sex ratio 888, religion led by Catholic, foreign nationals -
-  admin2 Ngororero: 367,955, median 19.0, sex ratio 869, religion led by Catholic, foreign nationals -
-  admin2 Rusizi: 485,529, median 19.0, sex ratio 949, religion led by Catholic, foreign nationals -
-  admin2 Nyamasheke: 434,221, median 19.0, sex ratio 893, religion led by Pentecostal, foreign nationals 215
-  admin1 Northern Province: 2,038,511, median 20.0, sex ratio 913, religion led by Catholic, foreign nationals 2307
-  admin2 Rulindo: 360,144, median 21.0, sex ratio 913, religion led by Catholic, foreign nationals -
-  admin2 Gakenke: 365,292, median 21.0, sex ratio 896, religion led by Catholic, foreign nationals -
-  admin2 Musanze: 476,522, median 20.0, sex ratio 912, religion led by Catholic, foreign nationals 1142
-  admin2 Burera: 387,729, median 19.0, sex ratio 910, religion led by Catholic, foreign nationals 470
-  admin2 Gicumbi: 448,824, median 20.0, sex ratio 931, religion led by Catholic, foreign nationals -
-  admin1 Eastern Province: 3,563,145, median 19.0, sex ratio 948, religion led by Catholic, foreign nationals 60635
-  admin2 Rwamagana: 484,953, median 21.0, sex ratio 1011, religion led by Catholic, foreign nationals -
-  admin2 Nyagatare: 653,861, median 19.0, sex ratio 951, religion led by Catholic, foreign nationals -
-  admin2 Gatsibo: 551,164, median 19.0, sex ratio 922, religion led by Catholic, foreign nationals 8856
-  admin2 Kayonza: 457,156, median 19.0, sex ratio 940, religion led by Catholic, foreign nationals -
-  admin2 Kirehe: 460,860, median 19.0, sex ratio 928, religion led by Catholic, foreign nationals 44039
-  admin2 Ngoma: 404,048, median 19.0, sex ratio 912, religion led by Catholic, foreign nationals -
-  admin2 Bugesera: 551,103, median 19.0, sex ratio 971, religion led by Catholic, foreign nationals -
-  wrote data/processed/rwanda_census.json (187 kB)
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Resultats%20globaux/Doc_principaux_indicateurs.xlsx: 117,480 bytes, sha256 14c5547d8a90678559a0de71f6521e69e315543e50ab5c92c687922f562c9e6d
+  national median 16.6 (the departments' groups pooled: 16.6)
+  Alibori: 867,463, median 14.5, 989 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Alibori_final.pdf: 149,511 bytes, sha256 09ef9095101713679feb375bd91ccb8137cbeb791d31f737bdfc3333a4c8a1e8
+    Banikoara: 246,575 (122,445 men, 124,130 women)
+    Gogounou: 117,523 (58,018 men, 59,505 women)
+    Kandi: 179,290 (88,998 men, 90,292 women)
+    Karimama: 66,353 (33,149 men, 33,204 women)
+    Malanville: 168,641 (83,681 men, 84,960 women)
+    Segbana: 89,081 (45,066 men, 44,015 women)
+  Atakora: 772,262, median 14.8, 971 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atacora_finale.pdf: 242,134 bytes, sha256 b5eb842910b8be7aecca961273469aca6e9ad8802935752cb46bbdc74d2dd900
+  Atlantique: 1,398,229, median 18.0, 965 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atlantique_final.pdf: 227,176 bytes, sha256 41f6443d0e8355d0e228b4e6b1e22adee0a209bdaa3c50f78aa4f909f7c20a42
+    Abomey-Calavi: 656,358 (323,574 men, 332,784 women)
+    Allada: 127,512 (62,148 men, 65,364 women)
+    Kpomasse: 67,648 (33,353 men, 34,295 women)
+    Ouidah: 162,034 (78,596 men, 83,438 women)
+    So-Ava: 118,547 (60,020 men, 58,527 women)
+    Toffo: 101,585 (49,068 men, 52,517 women)
+    Tori-Bossito: 57,632 (28,284 men, 29,348 women)
+    Ze: 106,913 (51,704 men, 55,209 women)
+  Borgou: 1,214,249, median 15.1, 1000 men per 1,000 women
+  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Borgou_final.pdf :: <urlopen error timed out>
+  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Borgou_final.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Borgou_final.pdf: 223,264 bytes, sha256 eba2116dda84a66302c14de3c184c9726d84961056a71ea9ec35d80e39a88c1c
+    Bembereke: 131,255 (66,270 men, 64,985 women)
+    Kalale: 168,882 (84,078 men, 84,804 women)
+    N'dali: 113,604 (57,643 men, 55,961 women)
+    Nikki: 151,232 (75,339 men, 75,893 women)
+    Parakou: 255,478 (127,328 men, 128,150 women)
+    Perere: 78,988 (39,139 men, 39,849 women)
+    Sinende: 91,672 (45,640 men, 46,032 women)
+    Tchaourou: 223,138 (111,576 men, 111,562 women)
+  Collines: 717,477, median 16.5, 972 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Collines_final.pdf: 193,765 bytes, sha256 0657a26727637fbeb249f28c38d15e186a3dbcaedc510c7c0700aeacc3ff8d2f
+    Bante: 107,181 (52,516 men, 54,665 women)
+    Dassa-Zoume: 112,122 (54,366 men, 57,756 women)
+    Glazoue: 124,431 (61,070 men, 63,361 women)
+    Ouesse: 142,017 (71,594 men, 70,423 women)
+    Savalou: 144,549 (70,289 men, 74,260 women)
+    Save: 87,177 (43,757 men, 43,420 women)
+  Donga: 543,130, median 16.3, 994 men per 1,000 women
+  Kouffo: 745,328, median 15.2, 879 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf: 199,975 bytes, sha256 40a022871bc3e255d38547d14e2826fb81a3bf51bdbefa32019b78e7695b1f88
+    Aplahoue: 171,109 (79,678 men, 91,431 women)
+    Djakotomey: 134,028 (62,384 men, 71,644 women)
+    Dogbo: 103,057 (49,289 men, 53,768 women)
+    Klouekanme: 128,597 (59,541 men, 69,056 women)
+    Lalo: 119,926 (56,529 men, 63,397 women)
+    Toviklin: 88,611 (41,153 men, 47,458 women)
+  Littoral: 679,012, median 21.5, 923 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Littoral_final.pdf: 169,899 bytes, sha256 890d1d75674cf53b583d1d42dbfea5e51c42c541535b76a74b596666527fd31d
+  Mono: 497,243, median 17.2, 945 men per 1,000 women
+  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Mono_final.pdf :: <urlopen error timed out>
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Mono_final.pdf: 204,401 bytes, sha256 9515b9986445b9cdda10184e4f8c5debac7987987082042862e4bc4a3ed3c53d
+    Athieme: 56,483 (27,562 men, 28,921 women)
+    Bopa: 96,281 (46,785 men, 49,496 women)
+    Come: 79,989 (38,507 men, 41,482 women)
+    Grand-Popo: 57,636 (28,237 men, 29,399 women)
+    Houeyogbe: 101,893 (49,187 men, 52,706 women)
+    Lokossa: 104,961 (51,276 men, 53,685 women)
+  Oueme: 1,100,404, median 17.9, 946 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Ou%C3%A9m%C3%A9%20-%20final.pdf: 248,797 bytes, sha256 61f052434f619bdcaf975274817382557eea62d93f8f605f811155684d9e7964
+    Adjarra: 97,424 (47,415 men, 50,009 women)
+    Adjohoun: 75,323 (36,385 men, 38,938 women)
+    Aguegues: 44,562 (22,198 men, 22,364 women)
+    Akpo-Misserete: 127,249 (62,267 men, 64,982 women)
+    Avrankou: 128,050 (62,298 men, 65,752 women)
+    Bonou: 44,349 (21,360 men, 22,989 women)
+    Dangbo: 96,426 (47,281 men, 49,145 women)
+    Porto-Novo: 264,320 (126,016 men, 138,304 women)
+    Seme-Kpodji: 222,701 (109,594 men, 113,107 women)
+  Plateau: 622,372, median 16.9, 931 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Plateau_final.pdf: 160,557 bytes, sha256 5dc786b1d47429dbd27880b6b2724db189dc02754625f3be7cb6360893729db0
+    Adja-Ouere: 116,282 (56,856 men, 59,426 women)
+    Ifangni: 110,973 (53,124 men, 57,849 women)
+    Ketou: 157,352 (76,827 men, 80,525 women)
+    Pobe: 123,677 (59,481 men, 64,196 women)
+    Sakete: 114,088 (53,777 men, 60,311 women)
+  Zou: 851,580, median 16.7, 916 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Zou_Final.pdf: 239,862 bytes, sha256 af9e4ddda6ecf13fa2b4387811168c29726dd3fbc1a068f27a2f5bc3e9dff2af
+  Atakora: the leaflet gives ['Boukombe', 'Kerou', 'Kouande', 'Materi', 'Natitingou', 'Pehunco', 'Tanguieta', 'Toucountouna'] of ['Boukombe', 'Kerou', 'Kobli', 'Kouande', 'Materi', 'Natitingou', 'Pehunco', 'Tanguieta', 'Toucountouna'], making 704,659 of 772,262; its rows: [('BENIN', (10008749, 4887820, 5120929)), ('ATACORA', (772262, 380448, 391814)), ('Boukoumbé', (82450, 40479, 41971)), ('Cobly', (67603, 32784, 34819)), ('Kérou', (100197, 49963, 50234)), ('Kouandé', (111540, 55558, 55982)), ('Matéri', (113958, 55676, 58282)), ('Natitingou', (103843, 50968, 52875)), ('Péhunco', (78217, 39147, 39070)), ('Tanguiéta', (74675, 36431, 38244)), ('Toucountouna', (39779, 19442, 20337))]
+  Donga: benin_census: instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf: https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf is not the file: b''
+  Littoral: the leaflet gives [] of ['Cotonou'], making 0 of 679,012; its rows: [('BENIN', (10008749, 4887820, 5120929)), ('LITTORAL', (679012, 325872, 353140))]
+  Zou: the leaflet gives ['Abomey', 'Agbangnizoun', 'Bohicon', 'Cove', 'Djidja', 'Ouinhi', 'Za-Kpota', 'Zogbodomey'] of ['Abomey', 'Agbangnizoun', 'Bohicon', 'Cove', 'Djidja', 'Ouinhi', 'Za-Kpota', 'Zagnanado', 'Zogbodomey'], making 796,519 of 851,580; its rows: [('BENIN', (10008749, 4887820, 5120929)), ('ZOU', (851580, 407030, 444550)), ('Abomey', (92266, 43538, 48728)), ('Agbangnizoun', (72549, 34782, 37767)), ('Bohicon', (171781, 81404, 90377)), ('Covè', (51247, 24508, 26739)), ('Djidja', (123542, 59794, 63748)), ('Ouinhi', (59381, 28969, 30412)), ('Za-Kpota', (132818, 61945, 70873)), ('Zogbodomey', (92935, 45273, 47662))]
+  12 departments and 54 communes written
+  wrote data/processed/benin_census.json (121 kB)
