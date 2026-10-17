@@ -56,7 +56,7 @@ YEAR = 2022
 NATIONAL = 15_178_957
 OUT = "zimbabwe_districts.json"
 
-NUM = r"(?:\d{1,3}(?:,\d{3})+|\d+)"          # "1190" is printed without its comma once
+NUM = r"(?:\d{1,3}(?:,\d{3})+|\d+|-)"        # "1190" without its comma once; "-" for none
 ROW = re.compile(rf"^(?P<label>.*?)\s+(?P<m>{NUM})\s+(?P<f>{NUM})\s+(?P<t>{NUM})\s+(?P<h>{NUM})$")
 # The text layer sometimes puts a line's four figures and its label on lines
 # of their own ("5,243 6,057 11,300 2,302" and then "Ward 23"): joined again.
@@ -123,7 +123,7 @@ AGE_NOTE = ("The 2022 census's published tables give ages for the country and by
 
 
 def number(text: str) -> int:
-    return int(text.replace(",", ""))
+    return 0 if text == "-" else int(text.replace(",", ""))
 
 
 def base(name: str) -> str:
@@ -172,7 +172,8 @@ def parse(pages: list[str]) -> dict[str, Any]:
             if not hit:
                 # A line with figures that is no ward and no total is shown,
                 # so a sum that fails can be traced to the page.
-                if re.search(r"\d,\d{3}", ln) or ln.startswith("Ward "):
+                if (re.search(r"\d,\d{3}", ln) or ln.startswith("Ward ")) and \
+                        not ln.startswith("Ward Male"):
                     log(f"    {current['name']}: line not read: {ln!r}")
                 continue
             label = hit.group("label")

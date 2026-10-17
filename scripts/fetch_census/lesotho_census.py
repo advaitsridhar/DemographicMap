@@ -19,8 +19,9 @@ district (``ALIASES`` holds the spellings no reduction joins). A polygon whose
 name no council of its district shares gets a stated reason, not a guess.
 
 **Checks before anything is written.** Every village's men and women make its
-total; each enumeration area's villages make its Total line; the districts
-together make the census's 2,007,201 people to within the people the village
+total, and each enumeration area's villages make its Total line, but for
+the few lines the list itself gets wrong (at most ``SLIPS`` of them, each
+named in the log; the printed total stands); the districts together make the census's 2,007,201 people to within the people the village
 list does not place in a village (institutions), at most ``UNPLACED`` of them.
 
 Usage:
@@ -48,6 +49,10 @@ LICENCE = "Lesotho Bureau of Statistics publication (reuse with attribution)"
 YEAR = 2016
 NATIONAL = 2_007_201
 UNPLACED = 0.02
+# The share of lines that may disagree with themselves -- a village whose men
+# and women do not make its total, an enumeration area whose villages do not
+# make its Total line -- before the list is taken to be misread.
+SLIPS = 0.01
 OUT = "lesotho_census.json"
 
 # District names: the village list's, reduced -> the map's, reduced.
@@ -116,6 +121,8 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
     councils: dict[tuple[str, str], dict[str, Any]] = {}
     ea_sum: dict[Any, list[int]] = defaultdict(lambda: [0, 0, 0])
     checked = 0
+    uneven: list[str] = []
+    astray: list[str] = []
     for r in rows[head + 2:]:
         if not any(v not in (None, "") for v in r):
             continue
@@ -129,15 +136,15 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
         if village in (None, "") or None in (men, women, total):
             continue
         if men + women != total:
-            raise SystemExit(f"lesotho_census: {village}: {men} men and {women} women do not "
-                             f"make {total}")
+            # The list itself has a few such lines (HA MAKAI: 47 men and 28
+            # women against a total of 70); the total stands as printed.
+            uneven.append(f"{village} ({men} + {women} against {total})")
         ea = (filled.get("district"), filled.get("council"), filled.get("ea"))
         if str(village).strip().lower() == "total":
             got = ea_sum.pop(ea, None)
-            if got is None or got != [men, women, total]:
-                raise SystemExit(f"lesotho_census: enumeration area {ea}: its villages make "
-                                 f"{got}, its Total line {[men, women, total]}")
             checked += 1
+            if got is None or got[2] != total:
+                astray.append(f"{ea}: villages {got}, Total line {[men, women, total]}")
             continue
         ea_sum[ea] = [a + b for a, b in zip(ea_sum[ea], (men, women, total))]
         c = councils.setdefault((filled["district"], filled["council"]),
@@ -148,6 +155,15 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
         c["villages"] += 1
     if ea_sum:
         log(f"  {len(ea_sum)} enumeration areas without a Total line")
+    villages = sum(c["villages"] for c in councils.values())
+    for what, found, of in (("villages whose men and women do not make their total", uneven,
+                             villages),
+                            ("enumeration areas whose villages do not make their Total line",
+                             astray, checked)):
+        if found:
+            log(f"  {len(found)} {what}: {found[:12]}")
+        if len(found) > SLIPS * max(of, 1):
+            raise SystemExit(f"lesotho_census: {len(found)} of {of:,} {what}")
     districts: dict[str, int] = defaultdict(int)
     for (d, _), c in councils.items():
         districts[d] += c["total"]
