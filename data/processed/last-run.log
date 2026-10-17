@@ -1,264 +1,100 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  P01 GEZIRA: its age groups make 3,549,025 of 3,549,026 (rounding)
-  P01 KASSALA: its age groups make 1,769,886 of 1,769,887 (rounding)
-  P01 KHARTOUM: 2,725,185 men and 2,456,002 women against 5,181,186 (rounding)
-  P01 KHARTOUM: its age groups make 5,181,187 of 5,181,186 (rounding)
-  P01 NORTH DARFUR: its age groups make 2,089,799 of 2,089,801 (rounding)
-  P01 NORTH KORDOFAN: its age groups make 2,888,970 of 2,888,969 (rounding)
-  P01 RED SEA: its age groups make 1,368,329 of 1,368,330 (rounding)
-  P01 SENNAR: its age groups make 1,272,765 of 1,272,766 (rounding)
-  P01 SOUTH DARFUR: 2,104,363 men and 1,950,239 women against 4,054,603 (rounding)
-  P01 SOUTH DARFUR: its age groups make 4,054,602 of 4,054,603 (rounding)
-  P01 SOUTH KORDOFAN: its age groups make 1,389,075 of 1,389,076 (rounding)
-  P01 WHITE NILE: 834,286 men and 879,073 women against 1,713,360 (rounding)
-  retabulation: 18 states, 173 localities, 30,894,000 people; P01: 15 states of 2008
-  state BLUE NILE: 832,112 as drawn in 2020, 816048 in P01; no census median
-  BLUE NILE: 6 localities, 7 polygons
-    AL TADAMON -> 'At Tadamon - BN' by spelling (0.80)
-    AR RUSERIS -> 'Ar Rusayris' by spelling (0.84)
-    ED DAMAZIN -> 'Ed Damazine' by spelling (0.95)
-    GAISAN -> 'Geisan' by spelling (0.83)
-    KURMUK -> 'Al Kurmuk' by spelling (0.86)
-    polygon 'Wad Al Mahi': no locality
-  state CENTRAL DARFUR: 553,515 as drawn in 2020, no in P01; no census median
-  CENTRAL DARFUR: 7 localities, 9 polygons
-    AZOOM (61,283): no polygon (closest 'Azum', 0.67)
-    BINDISSI (140,509): no polygon (closest 'Bendasi', 0.67)
-    MUGJAR -> 'Mukjar' by spelling (0.83)
-    NAIRTATY (23,059): no polygon (closest 'Bendasi', 0.40)
-    OM DUKHON -> 'Um Dukhun' by spelling (0.75)
-    ZALINGEI -> 'Zalingi' by spelling (0.93)
-    polygon 'Azum': no locality
-    polygon 'Bendasi': no locality
-    polygon 'Gharb Jabal Marrah': no locality
-    polygon 'Shamal Jabal Marrah': no locality
-    polygon 'Wasat Jabal Marrah': no locality
-  state EAST DARFUR: 1,216,719 as drawn in 2020, no in P01; no census median
-  EAST DARFUR: 9 localities, 9 polygons
-    ADEELA -> 'Adila' by spelling (0.73)
-    AL FIRDOSE -> 'Al Firdous' by spelling (0.89)
-    ASALAYA -> 'Assalaya' by spelling (0.93)
-    ED DAEIN (137,103): no polygon (closest "Ad Du'ayn", 0.57)
-    SHIAIRYYA -> "Shia'ria" by spelling (0.75)
-    YASEEN (78,073): no polygon (closest 'Yassin', 0.67)
-    polygon "Ad Du'ayn": no locality
-    polygon 'Yassin': no locality
-  state GEDAREF: 1,348,378 as drawn in 2020, 1334947 in P01; no census median
-  GEDAREF: 12 localities, 12 polygons
-    AL FASHAQAA -> 'Al Fashaga' by spelling (0.84)
-    AL FĀW -> 'Al Fao' by spelling (0.80)
-    AL MAFĀZAH -> 'Al Mafaza' by spelling (0.94)
-    ALRRAHA -> 'Ar Rahad' by spelling (0.86)
-    BASUNDA -> 'Basundah' by spelling (0.93)
-    GEDAREF (269,395): no polygon (closest 'Wasat Al Gedaref', 0.67)
-    GEDAREF CENTRAL (111,669): no polygon (closest 'Wasat Al Gedaref', 0.50)
-    GEDAREF NORTH (71,365): no polygon (closest 'Wasat Al Gedaref', 0.54)
-    QALA‘ AN NAḨL -> "Gala'a Al Nahal" by spelling (0.73)
-    QALLĀBĀT EAST (113,061): no polygon (closest 'Galabat Ash-Shargiah', 0.53)
-    QALLĀBĀT WEST (91,875): no polygon (closest 'Galabat Ash-Shargiah', 0.47)
-    QURAYSHAH (83,394): no polygon (closest 'Al Qureisha', 0.63)
-    polygon 'Al Butanah': no locality
-    polygon 'Al Galabat Al Gharbyah - Kassab': no locality
-    polygon 'Al Qureisha': no locality
-    polygon 'Galabat Ash-Shargiah': no locality
-    polygon 'Madeinat Al Gedaref': no locality
-    polygon 'Wasat Al Gedaref': no locality
-  state GEZIRA: 3,575,280 as drawn in 2020, 3549026 in P01; no census median
-  GEZIRA: 7 localities, 8 polygons
-    AL GARA (218,478): no polygon (closest 'Um Algura', 0.71)
-    EL MEILIG (401,930): no polygon (closest 'Al Kamlin', 0.50)
-    GEZIRA EAST (463,154): no polygon (closest 'Sharg Al Jazirah', 0.42)
-    GEZIRA SOUTH (555,250): no polygon (closest 'Sharg Al Jazirah', 0.48)
-    WAD MEDANI (423,863): no polygon (closest 'Medani Al Kubra', 0.55)
-    polygon 'Al Kamlin': no locality
-    polygon 'Al Qurashi': no locality
-    polygon 'Janub Al Jazirah': no locality
-    polygon 'Medani Al Kubra': no locality
-    polygon 'Sharg Al Jazirah': no locality
-    polygon 'Um Algura': no locality
-  state KASSALA: 1,789,806 as drawn in 2020, 1769887 in P01; no census median
-  KASSALA: 11 localities, 11 polygons
-    AL DALTA NORTH (91,851): no polygon (closest 'Reifi Shamal Ad Delta', 0.40)
-    AROMA RURAL (102,759): no polygon (closest 'Reifi Aroma', 0.50)
-    HALFĀ AL GADĪDAH -> 'Halfa Aj Jadeedah' by spelling (0.76)
-    HAMASHKOREEB (255,288): no polygon (closest 'Reifi Hamashkureib', 0.69)
-    KASSALA (298,529): no polygon (closest 'Reifi Kassla', 0.67)
-    KASSALA RURAL (154,630): no polygon (closest 'Reifi Kassla', 0.52)
-    KASSALA WEST (79,376): no polygon (closest 'Reifi Kassla', 0.55)
-    KHASHM AL QIRBAH (98,939): no polygon (closest 'Reifi Khashm Elgirba', 0.69)
-    NAHR ATBARA -> 'Reifi Nahr Atbara' by spelling (0.80)
-    TALKOOK (274,978): no polygon (closest 'Reifi Telkok', 0.56)
-    WAD AL ḨULAYWAH (84,681): no polygon (closest 'Reifi Wad Elhilaiw', 0.55)
-    polygon 'Madeinat Kassala': no locality
-    polygon 'Reifi Aroma': no locality
-    polygon 'Reifi Gharb Kassala': no locality
-    polygon 'Reifi Hamashkureib': no locality
-    polygon 'Reifi Kassla': no locality
-    polygon 'Reifi Khashm Elgirba': no locality
-    polygon 'Reifi Shamal Ad Delta': no locality
-    polygon 'Reifi Telkok': no locality
-    polygon 'Reifi Wad Elhilaiw': no locality
-  state KHARTOUM: 5,274,321 as drawn in 2020, 5181186 in P01; no census median
-  KHARTOUM: 7 localities, 7 polygons
-    JABAL AWLYA (942,429): no polygon (closest 'Jebel Awlia', 0.70)
-    KARARI -> 'Karrari' by spelling (0.92)
-    KHARTOUM NORTH (608,817): no polygon (closest 'Sharg An Neel', 0.33)
-    OMDURMAN -> 'Um Durman' by spelling (0.88)
-    SHAREQ AL NEEL -> 'Sharg An Neel' by spelling (0.78)
-    UMM BADDA -> 'Um Bada' by spelling (0.86)
-    polygon 'Bahri': no locality
-    polygon 'Jebel Awlia': no locality
-  state NORTH DARFUR: 2,113,626 as drawn in 2020, 2089801 in P01; no census median
-  NORTH DARFUR: 14 localities, 17 polygons
-    AILLIET (67,413): no polygon (closest 'Melit', 0.50)
-    AL KOAMA -> 'Al Koma' by spelling (0.92)
-    AL MĀLIḨAH -> 'Al Malha' by spelling (0.88)
-    AL SIRAIF (156,985): no polygon (closest 'Al Lait', 0.57)
-    AŢ ŢUWAYSHAH (71,468): no polygon (closest 'At Tawisha', 0.70)
-    DAR EL SALAM -> 'Dar As Salam' by spelling (0.80)
-    EL FASHER -> 'Al Fasher' by spelling (0.88)
-    KABKĀBĪYAH -> 'Kebkabiya' by spelling (0.84)
-    KALAMANDO -> 'Kelemando' by spelling (0.78)
-    MELLIT -> 'Melit' by spelling (0.91)
-    ŢAWĪLAH -> 'Tawila' by spelling (0.92)
-    UMM KADDĀDAH -> 'Um Kadadah' by spelling (0.90)
-    polygon 'Al Lait': no locality
-    polygon 'As Serief': no locality
-    polygon 'At Tawisha': no locality
-    polygon 'At Tina': no locality
-    polygon 'Kernoi': no locality
-    polygon 'Um Baru': no locality
-  state NORTHERN: 699,065 as drawn in 2020, 686098 in P01; no census median
-  NORTHERN: 7 localities, 7 polygons
-    AGORI (79,547): no polygon (closest 'Al Golid', 0.67)
-    BERGEIG (87,319): no polygon (closest 'Al Burgaig', 0.62)
-    DALQŪ (42,133): no polygon (closest 'Al Burgaig', 0.43)
-    MARAWĪ (157,729): no polygon (closest 'Al Burgaig', 0.53)
-    WĀDĪ ḨALFĀ’ (33,631): no polygon (closest 'Halfa', 0.71)
-    polygon 'Al Burgaig': no locality
-    polygon 'Al Golid': no locality
-    polygon 'Delgo': no locality
-    polygon 'Halfa': no locality
-    polygon 'Merwoe': no locality
-  state NORTH KORDOFAN: 2,039,495 as drawn in 2020, 2888969 in P01; no census median
-  NORTH KORDOFAN: 8 localities, 8 polygons
-    BĀRAH -> 'Bara' by spelling (0.89)
-    BĀRAH WEST (177,949): no polygon (closest 'Gharb Bara', 0.44)
-    JABRAT ELSHIEKH (231,208): no polygon (closest 'Gebrat Al Sheikh', 0.71)
-    OM DAMA HAJ AHMAD -> 'Um Dam Haj Ahmed' by spelling (0.81)
-    SAWDIRĪ (271,465): no polygon (closest 'Soudari', 0.57)
-    SHEEKAN -> 'Sheikan' by spelling (0.86)
-    UMM RUWABA -> 'Um Rawaba' by spelling (0.82)
-    polygon 'Gebrat Al Sheikh': no locality
-    polygon 'Gharb Bara': no locality
-    polygon 'Soudari': no locality
-  state RED SEA: 1,396,110 as drawn in 2020, 1368330 in P01; no census median
-  RED SEA: not written, on claimed ground: ['ḨALĀ’IB']
-  RED SEA: 9 localities, 9 polygons
-    AL GHANIB -> 'Al Ganab' by spelling (0.80)
-    DĒRUDĒB (66,983): no polygon (closest 'Dordieb', 0.71)
-    GEBEIT (34,965): no polygon (closest 'Agig', 0.40)
-    HILLAT ‘AGIG (78,992): no polygon (closest 'Agig', 0.57)
-    TOKĀR -> 'Tawkar' by spelling (0.73)
-    polygon 'Agig': no locality
-    polygon 'Dordieb': no locality
-    polygon "Jubayt Elma'aadin": no locality
-  state RIVER NILE: 1,120,441 as drawn in 2020, 1097356 in P01; no census median
-  RIVER NILE: 6 localities, 7 polygons
-    BERBER (152,377): no polygon (closest 'Barbar', 0.67)
-    ED DAMER (284,148): no polygon (closest 'Ad Damar', 0.71)
-    EL MATAMA -> 'Al Matama' by spelling (0.88)
-    MADENT ATBARA (134,586): no polygon (closest 'Atbara', 0.67)
-    polygon 'Ad Damar': no locality
-    polygon 'Al Buhaira': no locality
-    polygon 'Atbara': no locality
-    polygon 'Barbar': no locality
-  state SENNAR: 1,285,058 as drawn in 2020, 1272766 in P01; no census median
-  SENNAR: 7 localities, 7 polygons
-    AD DINDAR -> 'Ad Dinder' by spelling (0.88)
-    SENNAR SHAREQ (227,399): no polygon (closest 'Sharg Sennar', 0.52)
-    SINGA -> 'Sinja' by spelling (0.80)
-    polygon 'Sharg Sennar': no locality
-  state SOUTH DARFUR: 2,876,875 as drawn in 2020, 4054603 in P01; no census median
-  SOUTH DARFUR: 20 localities, 21 polygons
-    AL RADOM -> 'Al Radoum' by spelling (0.93)
-    AL SUNTA -> 'As Sunta' by spelling (0.86)
-    ALSSALAM -> 'As Salam - SD' by spelling (0.82)
-    BILAIL (86,310): no polygon (closest 'Beliel', 0.50)
-    DAMASOA -> 'Damso' by spelling (0.83)
-    DITO (204,375): no polygon (closest 'Nitega', 0.40)
-    ID-ALFURSAAN -> 'Ed Al Fursan' by spelling (0.86)
-    JABAL-MARRA EAST (11,953): no polygon (closest 'Sharg Aj Jabal', 0.38)
-    KATEELA -> 'Kateila' by spelling (0.86)
-    KUBBUM -> 'Kubum' by spelling (0.91)
-    MARSHANG -> 'Mershing' by spelling (0.75)
-    NITAIFA (102,162): no polygon (closest 'Nitega', 0.62)
-    NYALA (536,289): no polygon (closest 'Nyala Janoub', 0.62)
-    RAHAD AL BARDĪ -> 'Rehaid Albirdi' by spelling (0.80)
-    SHATTĀY -> 'Shattaya' by spelling (0.93)
-    TULLUS -> 'Tulus' by spelling (0.91)
-    UMM DAFOG -> 'Um Dafoug' by spelling (0.88)
-    polygon 'Beliel': no locality
-    polygon 'Gereida': no locality
-    polygon 'Nitega': no locality
-    polygon 'Nyala Janoub': no locality
-    polygon 'Nyala Shimal': no locality
-    polygon 'Sharg Aj Jabal': no locality
-  state SOUTH KORDOFAN: 867,918 as drawn in 2020, 1389076 in P01; no census median
-  SOUTH KORDOFAN: 15 localities, 17 polygons
-    ABU JIBEHA (133,813): no polygon (closest 'Abu Jubayhah', 0.70)
-    AL ‘ABBĀSIYYA -> 'Abassiya' by spelling (0.74)
-    AL GAWZ (93,282): no polygon (closest 'Talawdi', 0.62)
-    AL TADAMUN (68,300): no polygon (closest 'At Tadamon - SK', 0.70)
-    ALLEERI -> 'Al Leri' by spelling (0.92)
-    ALRIF ALSHARGIU -> 'Ar Reif Ash Shargi' by spelling (0.76)
-    DALLAMI -> 'Delami' by spelling (0.77)
-    HABILA -> 'Habila - SK' by spelling (0.86)
-    OM DOARAIN (4,763): no polygon (closest 'Um Durein', 0.59)
-    QADIR (37,747): no polygon (closest 'Ghadeer', 0.50)
-    RASHĀD -> 'Ar Rashad' by spelling (0.86)
-    TALODI -> 'Talawdi' by spelling (0.77)
-    polygon 'Abu Jubayhah': no locality
-    polygon 'Al Buram': no locality
-    polygon 'Al Quoz': no locality
-    polygon 'At Tadamon - SK': no locality
-    polygon 'Ghadeer': no locality
-    polygon 'Heiban': no locality
-    polygon 'Um Durein': no locality
-  state WEST DARFUR: 754,710 as drawn in 2020, 1292714 in P01; no census median
-  WEST DARFUR: 7 localities, 8 polygons
-    AL KURAYNIK (99,703): no polygon (closest 'Kereneik', 0.56)
-    EL GENEINA -> 'Ag Geneina' by spelling (0.78)
-    FORO BURUNGA -> 'Foro Baranga' by spelling (0.82)
-    HABĪLAH -> 'Habila - WD' by spelling (0.80)
-    polygon 'Jebel Moon': no locality
-    polygon 'Kereneik': no locality
-  state WEST KORDOFAN: 1,419,983 as drawn in 2020, no in P01; no census median
-  WEST KORDOFAN: not written, on claimed ground: ['ABYEI']
-  WEST KORDOFAN: 11 localities, 13 polygons
-    AL UḐAYYAH (140,307): no polygon (closest 'Al Idia', 0.53)
-    ALSSUNOOT -> 'As Sunut' by spelling (0.75)
-    ASSALAM -> 'As Salam - WK' by spelling (0.88)
-    BABANŪSAH -> 'Babanusa' by spelling (0.94)
-    GHUBAYSH -> 'Ghubaish' by spelling (0.88)
-    KHUWAYY (92,151): no polygon (closest 'Al Khiwai', 0.53)
-    polygon 'Al Dibab': no locality
-    polygon 'Al Idia': no locality
-    polygon 'Al Khiwai': no locality
-    polygon 'Al Meiram': no locality
-  state WHITE NILE: 1,730,588 as drawn in 2020, 1713360 in P01; no census median
-  WHITE NILE: 8 localities, 9 polygons
-    AD DIWEM -> 'Ad Diwaim' by spelling (0.80)
-    AJ JABALEN -> 'Aj Jabalain' by spelling (0.84)
-    AL QIŢENA (245,183): no polygon (closest 'Al Gitaina', 0.71)
-    ALSSALAM (106,419): no polygon (closest 'As Salam / Ar Rawat', 0.64)
-    KŪSTĪ -> 'Kosti' by spelling (0.80)
-    RAḨMAH (118,919): no polygon (closest 'Um Rimta', 0.31)
-    TANDALTĪ -> 'Tendalti' by spelling (0.88)
-    polygon 'Al Gitaina': no locality
-    polygon 'As Salam / Ar Rawat': no locality
-    polygon 'Guli': no locality
-    polygon 'Um Rimta': no locality
-  18 states and 110 of 189 localities bound
-  wrote data/processed/sudan_census.json (204 kB)
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  read https://www.ons.dz/collections/pop3_national.pdf: 505,663 bytes, sha256 084ab4775e11e0d0146c1ed59881ad85c6c99a2739bcb08fed5f8bdf0af823ba
+  a row printed with its label once for 2 wilayas, read in threes: '85 ans & + 1414 1509 2923 1692 1583 3274'
+  Adrar: rounding in the office's cells: groups make 399,711 against 399,714; rows ['35-39 ans -1', '45-49 ans +1', '70-74 ans +1', '75-79 ans +1', '80-84 ans +1']
+  Chlef: rounding in the office's cells: groups make 1,002,088 against 1,002,088; rows ['20-24 ans -1', '35-39 ans -1', '75-79 ans +1']
+  Oum El Bouaghi: rounding in the office's cells: groups make 621,612 against 621,612; rows ['0-4 Ans -1', '10-14 ans +1', '35-39 ans +1', '40-44 ans -1', '80-84 ans -1', 'Total -1']
+  Batna: rounding in the office's cells: groups make 1,119,791 against 1,119,791; rows ['5-9 ans -1', '15-19 ans +1', '25-29 ans -1', '55-59 ans +1', '60-64 ans -1', '75-79 ans +1', '80-84 ans -1', '85 ans & + -1', 'Total +1']
+  Béjaia: rounding in the office's cells: groups make 912,576 against 912,577; rows ['0-4 Ans -1', '15-19 ans +1', '20-24 ans +1', '25-29 ans -1', '50-54ans +1', '85 ans & + -1']
+  Biskra: rounding in the office's cells: groups make 721,355 against 721,356; rows ['15-19 ans +1', '35-39 ans +1', '45-49 ans -1', 'Total +1']
+  Béchar: rounding in the office's cells: groups make 270,064 against 270,061; rows ['45-49 ans -1', '50-54ans -1', '65-69 ans -1', '80-84 ans -1', '85 ans & + +1', 'Total +1']
+  Blida: rounding in the office's cells: groups make 1,002,938 against 1,002,937; rows ['0-4 Ans -1', '5-9 ans -1', '10-14 ans -1', '20-24 ans +1', '55-59 ans +1', '60-64 ans +1', '65-69 ans +1']
+  Bouira: rounding in the office's cells: groups make 695,583 against 695,583; rows ['15-19 ans -1', '20-24 ans -1', '25-29 ans -1', '35-39 ans +1', '45-49 ans -1', '50-54ans -1', '60-64 ans +1', '65-69 ans -1', '75-79 ans +1', '85 ans & + +1', 'Total -1']
+  Tamanrasset: rounding in the office's cells: groups make 176,639 against 176,637; rows ['0-4 Ans -1', '5-9 ans +1', '20-24 ans +1', '35-39 ans -1', '40-44 ans -1', '75-79 ans -1', 'Total -1']
+  Tébessa: rounding in the office's cells: groups make 648,704 against 648,703; rows ['0-4 Ans -1', '25-29 ans +1', '35-39 ans -1', '75-79 ans -1', '80-84 ans -1']
+  Tlemcen: rounding in the office's cells: groups make 949,133 against 949,135; rows ['25-29 ans -1', '40-44 ans +1', '65-69 ans +1']
+  Tiaret: rounding in the office's cells: groups make 846,824 against 846,823; rows ['5-9 ans -1', '30-34 ans -1', '40-44 ans -1', '70-74 ans +1', '75-79 ans -1', '80-84 ans +1', '85 ans & + -1', 'ND +1']
+  Tizi Ouzou: rounding in the office's cells: groups make 1,127,605 against 1,127,607; rows ['25-29 ans +1', '75-79 ans -1', '80-84 ans +1', 'ND +1']
+  Alger: rounding in the office's cells: groups make 2,988,146 against 2,988,145; rows ['5-9 ans +1', '20-24 ans -1', '35-39 ans +1', '60-64 ans -1']
+  Djelfa: rounding in the office's cells: groups make 1,092,184 against 1,092,184; rows ['0-4 Ans +1', '5-9 ans +1', '35-39 ans -1', '70-74 ans -1']
+  Jijel: rounding in the office's cells: groups make 636,951 against 636,948; rows ['80-84 ans -1']
+  Sétif: rounding in the office's cells: groups make 1,489,980 against 1,489,979; rows ['10-14 ans +1', '25-29 ans -1', '30-34 ans +1', '35-39 ans +1', '55-59 ans +1', '60-64 ans +1', '65-69 ans +1', '85 ans & + -1', 'ND +1']
+  Saida: rounding in the office's cells: groups make 330,643 against 330,641; rows ['15-19 ans +1', '40-44 ans +1', '45-49 ans -1', '75-79 ans -1', 'ND -1', 'Total +1']
+  Skikda: rounding in the office's cells: groups make 898,681 against 898,680; rows ['0-4 Ans +1', '15-19 ans -1', '30-34 ans -1', '60-64 ans -1', '75-79 ans -1', 'ND -1']
+  Sidi Bel Abbes: rounding in the office's cells: groups make 604,742 against 604,744; rows ['5-9 ans +1', '10-14 ans +1', '60-64 ans +1', '70-74 ans +1', '85 ans & + -1']
+  Annaba: rounding in the office's cells: groups make 609,501 against 609,499; rows ['15-19 ans -1', '25-29 ans -1', '30-34 ans +1', '65-69 ans +1', '70-74 ans -1', '75-79 ans -1']
+  Guelma: rounding in the office's cells: groups make 482,430 against 482,430; rows ['5-9 ans -1', '10-14 ans -1', '30-34 ans -1', '55-59 ans -1', '70-74 ans +1', 'Total +1']
+  Constantine: rounding in the office's cells: groups make 938,474 against 938,475; rows ['0-4 Ans +1', '25-29 ans +1', '35-39 ans -1', '65-69 ans -1']
+  Médéa: rounding in the office's cells: groups make 819,933 against 819,932; rows ['30-34 ans +1', '35-39 ans -1']
+  Mostaganem: rounding in the office's cells: groups make 737,120 against 737,118; rows ['10-14 ans -1', '15-19 ans +1', '60-64 ans +1', '75-79 ans -1', '85 ans & + -1']
+  M’Sila: rounding in the office's cells: groups make 990,590 against 990,591; rows ['20-24 ans +1', '85 ans & + +1']
+  Mascara: rounding in the office's cells: groups make 784,073 against 784,073; rows ['40-44 ans +1', '60-64 ans +1', '75-79 ans +1']
+  Ouargla: rounding in the office's cells: groups make 558,559 against 558,558; rows ['0-4 Ans -1', '15-19 ans +1', '25-29 ans -1', '30-34 ans -1', '45-49 ans +1', '70-74 ans +1', '80-84 ans -1', 'ND -1']
+  Oran: rounding in the office's cells: groups make 1,454,077 against 1,454,078; rows ['0-4 Ans +1', '25-29 ans +1', '60-64 ans +1', '65-69 ans -1', '80-84 ans +1']
+  El Bayadh: rounding in the office's cells: groups make 228,625 against 228,624; rows ['0-4 Ans -1', '10-14 ans -1', '35-39 ans -1', '45-49 ans +1', '65-69 ans -1', '70-74 ans -1', '75-79 ans -1']
+  Illizi: rounding in the office's cells: groups make 52,332 against 52,333; rows ['30-34 ans +1', '35-39 ans -1', '40-44 ans +1', '55-59 ans -1', '70-74 ans +1', 'ND -1', 'Total -1']
+  Boumerdes: rounding in the office's cells: groups make 802,084 against 802,083; rows ['0-4 Ans -1', '25-29 ans -1', '55-59 ans -1', '60-64 ans +1', '70-74 ans -1', '80-84 ans -1', 'ND +1']
+  El Tarf: rounding in the office's cells: groups make 408,412 against 408,414; rows ['0-4 Ans +1', '10-14 ans +1', '50-54ans +1', '65-69 ans -1', '75-79 ans +1', '80-84 ans -1', 'ND -1', 'Total -1']
+  Tindouf: rounding in the office's cells: groups make 49,149 against 49,149; rows ['0-4 Ans -1', '5-9 ans +1', '10-14 ans -1', '15-19 ans -1', '30-34 ans +1', '50-54ans -1']
+  Tissemsilt: rounding in the office's cells: groups make 294,476 against 294,476; rows ['0-4 Ans +1', '30-34 ans +1', '45-49 ans +1', '70-74 ans -1', '80-84 ans -1', '85 ans & + -1']
+  El Oued: rounding in the office's cells: groups make 647,546 against 647,548; rows ['0-4 Ans +1', '15-19 ans +1', '30-34 ans -1', '50-54ans +1', '65-69 ans +1', '80-84 ans +1']
+  Khenchela: rounding in the office's cells: groups make 386,683 against 386,683; rows ['5-9 ans -1', '15-19 ans +1', '25-29 ans +1', '40-44 ans +1', '75-79 ans -1', 'Total +1']
+  Souk Ahras: rounding in the office's cells: groups make 438,126 against 438,127; rows ['0-4 Ans -1', '40-44 ans -1', '65-69 ans -1', '85 ans & + +1']
+  Tipaza: rounding in the office's cells: groups make 591,008 against 591,010; rows ['30-34 ans +1', '40-44 ans +1', 'ND +1']
+  Mila: rounding in the office's cells: groups make 766,885 against 766,886; rows ['10-14 ans -1', '20-24 ans -1', '25-29 ans +1', '50-54ans +1']
+  Ain Defla: rounding in the office's cells: groups make 766,013 against 766,013; rows ['30-34 ans +1', '55-59 ans +1', '80-84 ans +1', 'Total -1']
+  Naama: rounding in the office's cells: groups make 192,891 against 192,891; rows ['0-4 Ans -1', '10-14 ans +1', '15-19 ans +1', '55-59 ans -1', 'ND +1']
+  Ain Témouchent: rounding in the office's cells: groups make 371,238 against 371,239; rows ['10-14 ans -1', '15-19 ans -1', '35-39 ans +1', '50-54ans +1', '70-74 ans -1', 'ND +1']
+  Ghardaia: rounding in the office's cells: groups make 363,597 against 363,598; rows ['10-14 ans -1', '45-49 ans +1', 'ND +1', 'Total +1']
+  Relizane: rounding in the office's cells: groups make 726,181 against 726,180; rows ['65-69 ans -1', '80-84 ans -1', 'ND +1']
+   1 Adrar                     399,714  median 21.6  men/1000 women 1041  ND 70
+   2 Chlef                   1,002,088  median 23.9  men/1000 women 1006  ND 1406
+   3 Laghouat                  455,602  median 22.5  men/1000 women 1042  ND 697
+   4 Oum El Bouaghi            621,612  median 24.2  men/1000 women 1021  ND 505
+   5 Batna                   1,119,791  median 23.9  men/1000 women 1020  ND 526
+   6 Béjaia                    912,577  median 27.1  men/1000 women 1042  ND 1570
+   7 Biskra                    721,356  median 22.6  men/1000 women 1024  ND 304
+   8 Béchar                    270,061  median 24.6  men/1000 women 1006  ND 2
+   9 Blida                   1,002,937  median 25.9  men/1000 women 1033  ND 1314
+  10 Bouira                    695,583  median 25.6  men/1000 women 1032  ND 1057
+  11 Tamanrasset               176,637  median 20.6  men/1000 women 1058  ND 593
+  12 Tébessa                   648,703  median 23.9  men/1000 women 1011  ND 144
+  13 Tlemcen                   949,135  median 27.5  men/1000 women 1033  ND 196
+  14 Tiaret                    846,823  median 24.1  men/1000 women 1019  ND 146
+  15 Tizi Ouzou              1,127,607  median 28.4  men/1000 women 1004  ND 1941
+  16 Alger                   2,988,145  median 28.7  men/1000 women 1008  ND 7993
+  17 Djelfa                  1,092,184  median 20.5  men/1000 women 1061  ND 1670
+  18 Jijel                     636,948  median 24.5  men/1000 women 1015  ND 220
+  19 Sétif                   1,489,979  median 24.3  men/1000 women 1031  ND 737
+  20 Saida                     330,641  median 25.7  men/1000 women 1017  ND 36
+  21 Skikda                    898,680  median 25.8  men/1000 women 1014  ND 458
+  22 Sidi Bel Abbes            604,744  median 27.3  men/1000 women 1018  ND 189
+  23 Annaba                    609,499  median 28.6  men/1000 women 1002  ND 318
+  24 Guelma                    482,430  median 26.9  men/1000 women 1010  ND 106
+  25 Constantine               938,475  median 26.7  men/1000 women 1004  ND 378
+  26 Médéa                     819,932  median 24.8  men/1000 women 1038  ND 1177
+  27 Mostaganem                737,118  median 24.9  men/1000 women 1008  ND 267
+  28 M’Sila                    990,591  median 22.5  men/1000 women 1039  ND 159
+  29 Mascara                   784,073  median 25.6  men/1000 women 1035  ND 887
+  30 Ouargla                   558,558  median 21.6  men/1000 women 1030  ND 953
+  31 Oran                    1,454,078  median 27.3  men/1000 women 1003  ND 1760
+  32 El Bayadh                 228,624  median 23.4  men/1000 women 1020  ND 282
+  33 Illizi                     52,333  median 21.4  men/1000 women 1173  ND 145
+  34 Bordj Bou Arreridj        628,475  median 23.9  men/1000 women 1043  ND 346
+  35 Boumerdes                 802,083  median 26.2  men/1000 women 1054  ND 1116
+  36 El Tarf                   408,414  median 27.2  men/1000 women 997  ND 93
+  37 Tindouf                    49,149  median 23.1  men/1000 women 1035  ND 42
+  38 Tissemsilt                294,476  median 23.9  men/1000 women 1030  ND 74
+  39 El Oued                   647,548  median 20.4  men/1000 women 1037  ND 1241
+  40 Khenchela                 386,683  median 24.0  men/1000 women 1023  ND 145
+  41 Souk Ahras                438,127  median 26.0  men/1000 women 999  ND 96
+  42 Tipaza                    591,010  median 26.1  men/1000 women 1023  ND 1094
+  43 Mila                      766,886  median 24.2  men/1000 women 1017  ND 228
+  44 Ain Defla                 766,013  median 24.0  men/1000 women 1031  ND 754
+  45 Naama                     192,891  median 24.4  men/1000 women 1039  ND 132
+  46 Ain Témouchent            371,239  median 28.2  men/1000 women 1022  ND 335
+  47 Ghardaia                  363,598  median 22.4  men/1000 women 1038  ND 705
+  48 Relizane                  726,180  median 24.5  men/1000 women 1018  ND 367
+  48 wilayas making 34,080,030; 48 records
+  wrote data/processed/algeria_census.json (103 kB)
