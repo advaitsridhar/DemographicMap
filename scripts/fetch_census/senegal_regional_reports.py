@@ -171,7 +171,7 @@ def language_label(label: str) -> str:
 
 
 SPACES = re.compile(r"[\s   ]+")
-CELL = re.compile(r"^\d+(?:,\d+)?$")
+CELL = re.compile(r"^(?:\d+(?:,\d+)?|-)$")          # "-" is a cell with no one in it
 
 
 def split_row(row: str) -> tuple[str, list[str]]:
@@ -186,6 +186,8 @@ def split_row(row: str) -> tuple[str, list[str]]:
 
 def counts(cells: list[str], i: int) -> list[tuple[int, int]]:
     """(value, end) for each way a count can be read from cells[i:]."""
+    if i < len(cells) and cells[i] == "-":
+        return [(0, i + 1)]
     if i >= len(cells) or not cells[i].isdigit():
         return []
     if len(cells[i]) > 3:
@@ -198,6 +200,8 @@ def counts(cells: list[str], i: int) -> list[tuple[int, int]]:
 
 
 def share(cells: list[str], i: int) -> tuple[float, int] | None:
+    if i < len(cells) and cells[i] == "-":
+        return 0.0, i + 1
     if i < len(cells) and re.match(r"^\d{1,3}(?:,\d+)?$", cells[i]):
         value = percent(cells[i])
         if value <= 100:
@@ -423,8 +427,7 @@ def build(reports: list[dict[str, Any]], admin1: list[dict[str, Any]],
             median_age=gap(NOT_AVAILABLE, (
                 f"The 2023 census's report for the {rr['region']} region gives each "
                 "department's population in three broad age groups only (under 15, 15 to 64, "
-                "65 and over), and no median age can be taken from them; no other table of "
-                "the census gives a department's ages.")),
+                "65 and over), from which no median age can be taken.")),
             sources=[{"field": "median_age", "name": source_name(rr["region"], ""),
                       "url": rr["url"], "page": PAGE, "license": LICENCE, "year": YEAR}]))
     return records, report

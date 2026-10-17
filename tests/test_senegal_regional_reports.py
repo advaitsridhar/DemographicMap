@@ -186,5 +186,19 @@ class SenegalRegionalReportsRun4(unittest.TestCase):
         self.assertIsNone(sr.row_figures("945 0,3 891 0,2 1 839 0,3".split()))
 
 
+# Run 5's log: Fatick's language table, whose empty cells are dashes.
+FATICK_TABLE_11 = "Tableau II- 11 : Répartition (%) de la population résidente de 3 ans ou plus par principale \nlangue couramment parlée selon le sexe  \nPRINCIPALE LANGUE \nCOURAMMENT PARLÉE \nMASCULIN FÉMININ ENSEMBLE \nEffectif % Effectif % Effectif % \nLangage des signes (Sourd-Muet) 1 217 0,3 1 138 0,3 2 355 0,3 \nwolof 134 238 34,3 141 671 35,1 275 908 34,7 \npulaar 30 753 7,9 29 790 7,4 60 543 7,6 \nsereer 208 178 53,2 213 397 52,9 421 575 53,1 \njoola 1 639 0,4 1 806 0,4 3 445 0,4 \nmàndienka 8 581 2,2 9 346 2,3 17 927 2,3 \nsóninke 1 923 0,5 1 980 0,5 3 903 0,5 \nhasaniya (maure) 81 0,0 69 0,0 150 0,0 \nbalant 104 0,0 103 0,0 207 0,0 \nmànkaañ 166 0,0 196 0,0 362 0,0 \nmànjaku 186 0,0 183 0,0 369 0,0 \nmënik 22 0,0 24 0,0 46 0,0 \noniyan - 0,0 3 0,0 3 0,0 \nguñuun 1 0,0 1 0,0 2 0,0 \nkanjad 4 0,0 2 0,0 6 0,0 \njalunga - 0,0 2 0,0 2 0,0 \nbayot 3 0,0 4 0,0 7 0,0 \nRGPH-5 :Rapport de présentation des résultats\n  Région de Fatick\n35\n \n   35  \nPRINCIPALE LANGUE \nCOURAMMENT PARLÉE \nMASCULIN FÉMININ ENSEMBLE \nEffectif % Effectif % Effectif % \nwomey 2 0,0 - 0,0 2 0,0 \nautres langues africaines 2 702 0,7 2 516 0,6 5 217 0,7 \ntourka 136 0,0 142 0,0 279 0,0 \nlangues étrangère 200 0,1 101 0,0 301 0,0 \nfrançais 648 0,2 491 0,1 1 139 0,1 \nautres langues étrangères non africaines 359 0,1 305 0,1 664 0,1 \nTotal 391 141 100,0 403 271 100,0 794 412 100,0 \nSource : ANSD. RGPH-5, 2023 \n POSSESSION D’UN ACTE DE NAISSANCE \nAu niveau régional, la majorité de la population possède un bulletin de naissance (62,8%). \nCependant, une proportion notable de la population détient un jugement supplétif (18,7%) et 4,5% \nne possèdent pas d’acte de naissance. \nL'analyse par groupe d’âge révèle que la possession d'un bulletin de naissance est plus élevée \n"
+
+
+class SenegalRegionalReportsRun5(unittest.TestCase):
+    def test_dashes_are_empty_cells(self):
+        rows, kind, number = sr.parse_language(FATICK_TABLE_11)
+        self.assertEqual(kind, "count")
+        self.assertEqual(rows["Serer"], 421_575)
+        self.assertEqual(rows["Wamey"], 2)
+        self.assertEqual(rows["Bassari"], 3)
+        self.assertAlmostEqual(sum(rows.values()), 794_412, delta=2 * len(rows))
+
+
 if __name__ == "__main__":
     unittest.main()
