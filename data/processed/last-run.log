@@ -1,9 +1,15 @@
-mali: INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population
-  17,708,018 bytes
-  70 pages
-  annex tables on pages ethnicity 55, language 56
-  religion: 20 regions, 21,347,586 people
-  ethnicity: 20 regions, 21,200,119 people
-  language: 20 regions, 19,144,632 people
-  9 shapes
-  wrote data/processed/mali_rgph5_region.json (69 kB)
+  read https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf: 16,069,809 bytes, sha256 16f5ee5b4fea25fb0d24c5e853823171f4e07dd3d049c9c5260488c07ebf209e
+  10 provinces and 116 districts, making 19,693,423
+  the country's median age: 18.3 from Table 5.1, 18.3 from the bands
+  census districts not drawn: []
+  province polygon 'Central': the sum of its drawn districts (2,391,803): The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province.
+  province polygon 'Eastern': the sum of its drawn districts (2,321,898): The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga.
+  province polygon 'Lusaka': the sum of its drawn districts (3,172,603): The 2022 census's final counts for the 7 districts drawn here, added up: Lusaka Province's districts and Chirundu, which the census counts under Southern Province.
+  province polygon 'Muchinga': the sum of its drawn districts (1,062,997): The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province.
+  province polygon 'Southern': the sum of its drawn districts (2,178,638): The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central).
+  SHANG'OMBO DISTRICT: 74,654
+  SENANGA DISTRICT: 113,124
+  SESHEKE DISTRICT: 73,204
+  WESTERN PROVINCE: 1,375,604
+  116 of 116 districts and 10 of 10 provinces written
+  wrote data/processed/zambia_census.json (287 kB)

@@ -6537,7 +6537,9 @@
       "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Table 5.2)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.6,
+      "year": 2022,
+      "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)"
     },
     "sex_ratio": {
       "value": 986,
@@ -6561,12 +6563,20 @@
         "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
         "license": "Zambia Statistics Agency publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)",
+        "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
+        "license": "Zambia Statistics Agency publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "ZMB",
     "match_by": "shape_id",
     "shape_id": "6923714B60407914126357",
-    "population_note": "The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province."
+    "population_note": "The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province.",
+    "median_age_note": "Interpolated within the age band that holds the middle person, from the 2022 census's counts of the people under 16, 18 and 19 in the districts drawn here (Summary Report Volume II, Tables 5.3, 5.4 and 5.6); the census's median by province (Table 5.1) is for the province as the census draws it."
   },
   {
     "id": "ZMB-2022-province-copperbelt",
@@ -6643,7 +6653,9 @@
       "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Table 5.2)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.7,
+      "year": 2022,
+      "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)"
     },
     "sex_ratio": {
       "value": 975,
@@ -6667,12 +6679,20 @@
         "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
         "license": "Zambia Statistics Agency publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)",
+        "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
+        "license": "Zambia Statistics Agency publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "ZMB",
     "match_by": "shape_id",
     "shape_id": "6923714B50523150920038",
-    "population_note": "The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga."
+    "population_note": "The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga.",
+    "median_age_note": "Interpolated within the age band that holds the middle person, from the 2022 census's counts of the people under 16, 18 and 19 in the districts drawn here (Summary Report Volume II, Tables 5.3, 5.4 and 5.6); the census's median by province (Table 5.1) is for the province as the census draws it."
   },
   {
     "id": "ZMB-2022-province-luapula",
@@ -6749,7 +6769,8 @@
       "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Table 5.2)"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The census gives the median age of the province as it draws it (Summary Report Volume II, Table 5.1), not of the districts drawn here, and its district tables count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): half or more of these districts' people are 19 or older, and the tables give no finer band above 19 than 19 to 34, so no median age is computed for this polygon."
     },
     "sex_ratio": {
       "value": 939,
@@ -6797,7 +6818,9 @@
       "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Table 5.2)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.4,
+      "year": 2022,
+      "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)"
     },
     "sex_ratio": {
       "value": 973,
@@ -6821,12 +6844,20 @@
         "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
         "license": "Zambia Statistics Agency publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)",
+        "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
+        "license": "Zambia Statistics Agency publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "ZMB",
     "match_by": "shape_id",
     "shape_id": "6923714B61233419501629",
-    "population_note": "The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province."
+    "population_note": "The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province.",
+    "median_age_note": "Interpolated within the age band that holds the middle person, from the 2022 census's counts of the people under 16, 18 and 19 in the districts drawn here (Summary Report Volume II, Tables 5.3, 5.4 and 5.6); the census's median by province (Table 5.1) is for the province as the census draws it."
   },
   {
     "id": "ZMB-2022-province-northwestern",
@@ -6961,7 +6992,9 @@
       "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Table 5.2)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.0,
+      "year": 2022,
+      "source": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)"
     },
     "sex_ratio": {
       "value": 956,
@@ -6985,12 +7018,20 @@
         "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
         "license": "Zambia Statistics Agency publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "Zambia Statistics Agency, 2022 Census of Population and Housing, final results (Summary Report Volume II, Tables 5.3, 5.4 and 5.6)",
+        "url": "https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf",
+        "license": "Zambia Statistics Agency publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "ZMB",
     "match_by": "shape_id",
     "shape_id": "6923714B34072001548912",
-    "population_note": "The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central)."
+    "population_note": "The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central).",
+    "median_age_note": "Interpolated within the age band that holds the middle person, from the 2022 census's counts of the people under 16, 18 and 19 in the districts drawn here (Summary Report Volume II, Tables 5.3, 5.4 and 5.6); the census's median by province (Table 5.1) is for the province as the census draws it."
   },
   {
     "id": "ZMB-2022-province-western",
