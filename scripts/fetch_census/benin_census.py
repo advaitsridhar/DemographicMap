@@ -46,9 +46,10 @@ from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .cod_ps_age import grouped_median
 
 # The Internet Archive's captures, nearest these years (Donga's leaflet answers
-# empty at the first).
+# empty at the first three).
 ARCHIVES = ["https://web.archive.org/web/2024id_/", "https://web.archive.org/web/2021id_/",
-            "https://web.archive.org/web/2018id_/"]
+            "https://web.archive.org/web/2018id_/", "https://web.archive.org/web/2016id_/",
+            "https://web.archive.org/web/2019id_/", "https://web.archive.org/web/2022id_/"]
 FOLDER = ("instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/"
           "resultats%20finaux/")
 WORKBOOK = FOLDER + "Resultats%20globaux/Doc_principaux_indicateurs.xlsx"
@@ -195,8 +196,9 @@ def leaflet_rows(text: str) -> list[tuple[str, tuple[int, int, int]]]:
     for line in text.splitlines():
         # The growth rate may be negative (Zagnanado's), its sign a hyphen, a
         # minus or a dash, set apart or not.
-        m = re.match(r"^\s*([^\d]+?)\s+(\d[\d ]*\d)\s+([-\u2212\u2013]?\s?\d+,\d+)"
-                     r"(?:\s+(\d+,\d+))?\s*$", line)
+        # The weight may be set with a space after its comma ("6, 5": Zagnanado's).
+        m = re.match(r"^\s*([^\d]+?)\s+(\d[\d ]*\d)\s+([-\u2212\u2013]?\s?\d+,\s?\d+)"
+                     r"(?:\s+(\d+,\s?\d+))?\s*$", line)
         if not m:
             continue
         tokens = m.group(2).split()

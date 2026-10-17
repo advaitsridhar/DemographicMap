@@ -75,6 +75,9 @@ class BeninCensus(unittest.TestCase):
             line = f"Zagnanado 55 061 26 617 28 444 56 000 27 000 29 000 {sign}0,15 6,5"
             self.assertEqual(dict(bc.leaflet_rows(line)).get("Zagnanado"),
                              (55_061, 26_617, 28_444), repr(sign))
+        # Zagnanado's line as run 3 printed it: its weight set as "6, 5".
+        rows = dict(bc.leaflet_rows("Zagnanado 55 061 26 817 28 244 36 756 17 886 18 870 3,64 6, 5 "))
+        self.assertEqual(rows["Zagnanado"], (55_061, 26_817, 28_244))
         # A name with hyphens is still read whole.
         rows = dict(bc.leaflet_rows("Za-Kpota 132 818 61 945 70 873 90 000 40 000 50 000 3,5 15,6"))
         self.assertEqual(rows["Za-Kpota"], (132_818, 61_945, 70_873))
