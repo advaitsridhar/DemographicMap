@@ -86,5 +86,37 @@ class MadagascarCensusTest(unittest.TestCase):
             self.table((broken, PAGE_2, PAGE_3))
 
 
+T5_LEFT = "1 748 565 1 945 898 3 694 463 1 370 326 1 532 171 2 902 497 1 117 634 1 244 013 2 361 647"
+T5_RIGHT = "3 456 309 3 620 781 7 077 090 660 873 654 131 1 315 004"
+T6_LEFT = "7 333 914 7 741 875 15 075 789 6 425 945 6 805 588 13 231 533 4 677 380"
+T6_RIGHT = "4 859 690 9 537 070 1 296 239 1 317 246 2 613 485 560 198 584 778 1 144 976"
+
+
+def age_pages():
+    names = ["MADAGASCAR"] + list(mg.REGION_NAMES)
+    t5 = "Tableau 5. Effectif\n18-24 ans 19-24 ans\n" + "\n".join(f"{n} {T5_LEFT}" for n in names)
+    t5r = "25- 49 ans 50- 59 ans\n" + "\n".join(T5_RIGHT for _ in names) + "\nDECEMBRE 2020 15"
+    t6 = "Tableau 6. Effectif\n15 ans et plus\n" + "\n".join(f"{n} {T6_LEFT}" for n in names)
+    t6r = "25 ans et plus\n" + "\n".join(T6_RIGHT for _ in names) + "\nDECEMBRE 2020 17"
+    return ["Tableau 4. x", "y", t5, t5r, t6, t6r]
+
+
+class MadagascarAgesTest(unittest.TestCase):
+    def test_triples_are_read_where_every_one_adds_up(self):
+        got = mg.triples((T6_LEFT + " " + T6_RIGHT).split())
+        self.assertEqual(got[2], (4_677_380, 4_859_690, 9_537_070))
+        self.assertEqual(len(got), 5)
+
+    def test_the_countrys_median_falls_where_instat_puts_it(self):
+        ages = mg.region_ages(age_pages())
+        self.assertEqual(ages["MADAGASCAR"]["19"], 9_537_070 + 2_902_497)
+        self.assertEqual(mg.median_from(25_674_196, ages["MADAGASCAR"]), 18.5)
+        self.assertIn("Haute Matsiatra", ages)
+
+    def test_a_median_outside_the_bands_is_refused(self):
+        with self.assertRaises(SystemExit):
+            mg.median_from(100, {"15": 99, "18": 90, "19": 80, "20": 70, "25": 60})
+
+
 if __name__ == "__main__":
     unittest.main()
