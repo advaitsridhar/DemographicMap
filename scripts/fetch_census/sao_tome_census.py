@@ -106,32 +106,36 @@ def pages_text(blob: bytes) -> list[str]:
         return [(page.extract_text() or "") for page in pdf.pages]
 
 
-def residents(pages: list[str]) -> dict[str, tuple[int, int, int]]:
-    """Quadro 2 of the national report: district -> (total, men, women) residents."""
-    out: dict[str, tuple[int, int, int]] = {}
-    keys = {fold(d): d for d in DISTRICTS}
-    keys[fold("Região Autónoma do Príncipe")] = "Príncipe"
-    keys[fold("R. A. Príncipe")] = "Príncipe"
-    started = False
-    current = None
+def residents(pages: list[str]) -> tuple[int, int, int, int] | None:
+    """A district report's Quadro 2: (total, men, women, of them in ordinary dwellings).
+
+    Each district's report prints only its own district in Quadro 2, so the
+    first resident line of the table is the district's: total, men and women
+    in all dwellings, then the same in ordinary and in collective dwellings.
+    """
     for page in pages:
         # The table itself, not the contents page that names it.
-        if "Quadro 2" in page and "População Residente (RP+RA)" in page:
-            started = True
-        if not started:
+        if "Quadro 2" not in page or "Residente (RP+RA)" not in page:
             continue
         for line in page.splitlines():
-            key = fold(line)
-            for k, name in keys.items():
-                if key == k or (key.startswith(k) and not numbers(line)):
-                    current = name
-            if line.strip().startswith("População Residente (RP+RA)") and current:
+            if "Residente (RP+RA)" in line and "População" in line:
                 figures = numbers(line)
-                if len(figures) >= 3 and current not in out:
-                    out[current] = tuple(figures[:3])
-        if len(out) == len(DISTRICTS):
-            break
-    return out
+                if len(figures) >= 6 and figures[1] + figures[2] == figures[0]:
+                    return figures[0], figures[1], figures[2], figures[3]
+    return None
+
+
+def national_residents(pages: list[str]) -> int | None:
+    """The national report's Quadro 1: residents in all dwellings."""
+    for page in pages:
+        if "Quadro 1" not in page:
+            continue
+        found = [numbers(line) for line in page.splitlines()
+                 if "Residente (RP+RA)" in line and "População" in line]
+        found = [f for f in found if len(f) >= 3 and f[1] + f[2] == f[0]]
+        if found:
+            return max(f[0] for f in found)
+    return None
 
 
 def ages(pages: list[str]) -> tuple[int, list[list[Any]]] | None:
@@ -212,32 +216,37 @@ def fields(res: tuple[int, int, int] | None, age: tuple[int, list] | None,
 
 def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict], list[str]]:
     report: list[str] = []
-    res = residents(national)
-    for name in DISTRICTS:
-        if name not in res:
-            raise SystemExit(f"sao_tome_census: Quadro 2 has no row read for {name}")
-        total, men, women = res[name]
-        if men + women != total:
-            raise SystemExit(f"sao_tome_census: {name}'s residents {total:,} are not its men and "
-                             f"women {men + women:,}")
+    res: dict[str, tuple[int, int, int]] = {}
     data: dict[str, dict[str, Any]] = {}
-    for name, pages in reports.items():
+    for name in DISTRICTS:
+        pages = reports.get(name)
+        if pages is None:
+            raise SystemExit(f"sao_tome_census: no report read for {name}")
+        found = residents(pages)
+        if found is None:
+            raise SystemExit(f"sao_tome_census: {name}'s Quadro 2 has no resident line read")
+        total, men, women, ordinary = found
+        res[name] = (total, men, women)
         age = ages(pages)
+        if age and age[0] != ordinary:
+            raise SystemExit(f"sao_tome_census: {name}'s ages cover {age[0]:,}, its residents of "
+                             f"ordinary dwellings are {ordinary:,}")
         rel = religion(pages, age[0]) if age else None
         data[name] = {"age": age, "religion": rel}
-        report.append(f"  {name}: residents {res[name][0]:,}; ordinary dwellings "
-                      f"{age[0] if age else '?':,}; religion "
+        report.append(f"  {name}: residents {total:,} ({men:,} men); ordinary dwellings "
+                      f"{ordinary:,}; religion "
                       + (f"{sum(rel.values()):,} in {len(rel)} answers" if rel else "not read"))
-    sources = [{"field": "population/sex_ratio", "name": SOURCE + ", Resultados Nacionais, Quadro 2",
-                "url": NATIONAL, "year": YEAR, "license": LICENCE}]
+    whole = national_residents(national)
+    made = sum(r[0] for r in res.values())
+    report.append(f"  the districts' residents make {made:,}; the national line {whole}")
+    if whole is not None and whole != made:
+        raise SystemExit(f"sao_tome_census: districts make {made:,}, the country {whole:,}")
     records: list[dict[str, Any]] = []
     for name, (file, sid) in DISTRICTS.items():
         d = data.get(name, {})
-        cite = list(sources)
-        if d.get("age") or d.get("religion"):
-            cite.append({"field": "median_age/religion",
-                         "name": SOURCE + f", Resultado Distrital ({name}), Quadros 5 and 6",
-                         "url": BASE + file, "year": YEAR, "license": LICENCE})
+        cite = [{"field": "population/sex_ratio/median_age/religion",
+                 "name": SOURCE + f", Resultado Distrital ({name}), Quadros 2, 5 and 6",
+                 "url": BASE + file, "year": YEAR, "license": LICENCE}]
         where = "the Autonomous Region of Príncipe" if name == "Príncipe" else f"{name} district"
         records.append(record(f"STP-RGPH2012-{sid}", name, level="admin2", parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
@@ -260,16 +269,15 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
                    for k in RELIGION_FIRST + RELIGION_SECOND}
         where = ("the Autonomous Region of Príncipe" if province == "Príncipe"
                  else "São Tomé province, its six districts added up")
-        cite = list(sources) + [{"field": "median_age/religion",
-                                 "name": SOURCE + ", Resultados Distritais, Quadros 5 and 6",
-                                 "url": BASE, "year": YEAR, "license": LICENCE}]
+        cite = [{"field": "population/sex_ratio/median_age/religion",
+                 "name": SOURCE + f", Resultado Distrital ({m}), Quadros 2, 5 and 6",
+                 "url": BASE + DISTRICTS[m][0], "year": YEAR, "license": LICENCE}
+                for m in members]
         records.append(record(f"STP-RGPH2012-{sid}", province, level="admin1", parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
                               sources=cite,
                               **fields((total, men, women), agegroups, rel, where)))
         report.append(f"  province {province}: {total:,}")
-    made = sum(r[0] for r in res.values())
-    report.append(f"  districts' residents make {made:,}")
     return records, report
 
 
