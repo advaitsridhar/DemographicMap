@@ -24,7 +24,10 @@ district aged 0-18 (Table 5.3), 16 and over (Table 5.4) and 18 and over
 middle person is between 16 and 19 its median is interpolated within that
 band (16-17 or 18), and where it is under 16 or 19 and over -- bands the tables
 do not split -- the district says so instead of carrying a figure. Each
-band's districts make their province and the provinces the country.
+band's districts make their province and the provinces the country. A
+first-level polygon drawn otherwise than the census's province (below) takes
+its median from the bands of the districts drawn in it, the same way, since
+Table 5.1's is the census province's.
 
 **Binding.** Districts are matched to the map's second level by name across
 the whole country, since district names are unique and the boundary file files
@@ -266,6 +269,39 @@ BAND_NOTES = {
                "people are 19 or older, and the tables give no finer band above 19 than 19 to "
                "34, so no median age is computed for it."),
 }
+# A province drawn otherwise than the census draws it: Table 5.1's median is
+# the census province's, so the polygon's comes from its districts' bands.
+SUMMED_NOTE = ("Interpolated within the age band that holds the middle person, from the 2022 "
+               "census's counts of the people under 16, 18 and 19 in the districts drawn here "
+               "(Summary Report Volume II, Tables 5.3, 5.4 and 5.6); the census's median by "
+               "province (Table 5.1) is for the province as the census draws it.")
+SUMMED_GAP = {
+    "under16": ("The census gives the median age of the province as it draws it (Summary Report "
+                "Volume II, Table 5.1), not of the districts drawn here, and its district tables "
+                "count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): more than half "
+                "of these districts' people are under 16, and no table splits the ages below "
+                "that, so no median age is computed for this polygon."),
+    "from19": ("The census gives the median age of the province as it draws it (Summary Report "
+               "Volume II, Table 5.1), not of the districts drawn here, and its district tables "
+               "count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): half or more of "
+               "these districts' people are 19 or older, and the tables give no finer band above "
+               "19 than 19 to 34, so no median age is computed for this polygon."),
+}
+
+
+def summed_median(table: dict[str, Any], districts: list[str]) -> dict[str, Any]:
+    """The median age of several districts together, from their bands, or a
+    stated reason; nothing where the bands were not read."""
+    bands = table.get("bands")
+    if not bands or not districts:
+        return {}
+    total = sum(table["districts"][d]["total"] for d in districts)
+    value, where = band_median(total, *(sum(bands[b]["districts"][d] for d in districts)
+                                        for b in ("under19", "from16", "from18")))
+    if value is None:
+        return {"median_age": {"status": "not_available", "note": SUMMED_GAP[where]}}
+    return {"median_age": measure(value, year=YEAR, source=BAND_SOURCE),
+            "median_age_note": SUMMED_NOTE}
 
 
 def median_fields(table: dict[str, Any], level: str, k: str) -> dict[str, Any]:
@@ -437,11 +473,15 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         # Lusaka is a province and a district: the level is in the id, so no
         # table keyed by a row's id can reach both.
         values = fields(row, note)
-        # The median is the census province's, so only where the polygon is it.
-        extra = median_fields(table, "admin1", k) if sorted(here) == own else {}
-        if extra:
+        # Table 5.1's median is the census province's, so only where the
+        # polygon is it; elsewhere the drawn districts' bands give it.
+        if sorted(here) == own:
+            extra, cited = median_fields(table, "admin1", k), AGE_SOURCE
+        else:
+            extra, cited = summed_median(table, here), BAND_SOURCE
+        if extra.get("median_age", {}).get("value") is not None:
             values["sources"] = values["sources"] + [
-                {"field": "median_age", "name": AGE_SOURCE, "url": URL, "license": LICENCE,
+                {"field": "median_age", "name": cited, "url": URL, "license": LICENCE,
                  "year": YEAR}]
         records.append(record(f"ZMB-2022-province-{k}", shape["name"], level="admin1", parent="ZMB",
                               country="ZMB", match_by="shape_id", shape_id=shape["id"],

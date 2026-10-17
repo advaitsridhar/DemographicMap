@@ -76,6 +76,21 @@ class ZambiaAgesTest(unittest.TestCase):
         self.assertIn("more than half of this district's people are under 16", reason["note"])
         self.assertEqual(zc.median_fields({}, "admin2", "senanga"), {})
 
+    def test_a_province_drawn_otherwise_takes_its_districts_bands(self):
+        table = {"districts": {"a": {"total": 1000}, "b": {"total": 1000}},
+                 "bands": {"under19": {"districts": {"a": 560, "b": 470}},
+                           "from16": {"districts": {"a": 560, "b": 700}},
+                           "from18": {"districts": {"a": 480, "b": 650}}}}
+        # Together: 2,000 people, 740 under 16, 870 under 18, 1,030 under 19 --
+        # the 1,000th person is 130 of the 160 aged 18.
+        got = zc.summed_median(table, ["a", "b"])
+        self.assertEqual(got["median_age"]["value"], round(18 + 130 / 160, 1))
+        self.assertIn("districts drawn here", got["median_age_note"])
+        alone = zc.summed_median(table, ["b"])["median_age"]
+        self.assertEqual(alone["status"], "not_available")
+        self.assertIn("19 or older", alone["note"])
+        self.assertEqual(zc.summed_median({}, ["a"]), {})
+
 
 if __name__ == "__main__":
     unittest.main()
