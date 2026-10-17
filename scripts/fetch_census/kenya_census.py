@@ -132,13 +132,23 @@ def read_vol3(text: str) -> dict[str, dict[str, Any]]:
     for row in rows[1:]:
         if len(row) < 6 or not row[0].strip():
             continue
-        county, sub, age = row[0].strip(), row[1].strip(), row[2].strip()
-        male, female, total = (number(c) for c in row[3:6])
+        # A sub-county name with a comma in it, unquoted, spills into the next
+        # column: the last three cells are always the counts and the one
+        # before them the age.
+        county, age = row[0].strip(), row[-4].strip()
+        sub = ",".join(row[1:-4]).strip()
         unit = units.setdefault((county, sub), {"county": county, "name": sub, "ages": {},
-                                                "unstated": 0, "total": None})
+                                                "unstated": 0, "total": None, "bad": []})
+        try:
+            male, female, total = (number(c) for c in row[-3:])
+        except ValueError:
+            # A cell a spreadsheet turned into a date ("15-Aug"): the unit fails
+            # its sums below and is left out, never read with the row missing.
+            unit["bad"].append(f"age {age}: {row[-3:]}")
+            continue
         if male + female != total:
-            raise SystemExit(f"kenya_census: {county}, {sub}, age {age}: sexes make "
-                             f"{male + female:,}, not {total:,}")
+            unit["bad"].append(f"age {age}: sexes make {male + female:,}, not {total:,}")
+            continue
         if age.lower() == "total":
             unit.update(total=total, male=male, female=female)
         elif AGE.match(age):
@@ -151,18 +161,24 @@ def read_vol3(text: str) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     for (county, sub), unit in units.items():
         made = sum(unit["ages"].values()) + unit["unstated"]
-        if unit["total"] is None or made != unit["total"] or len(unit["ages"]) != 101:
-            raise SystemExit(f"kenya_census: {county}, {sub}: {len(unit['ages'])} single years "
-                             f"making {made:,} against {unit['total']}")
-        entry = out.setdefault(fold(county), {"name": county, "all": None, "subs": {}})
+        entry = out.setdefault(fold(county), {"name": county, "all": None, "subs": {},
+                                              "unread": []})
+        if (unit["bad"] or unit["total"] is None or made != unit["total"]
+                or len(unit["ages"]) != 101):
+            # Its count still stands where Volume II gives it; its ages do not.
+            entry["unread"].append(f"{sub}: {len(unit['ages'])} single years making {made:,} "
+                                   f"against {unit['total']}; {unit['bad'][:3]}")
+            unit["ages_ok"] = False
+        else:
+            unit["ages_ok"] = True
         if sub.upper() == "ALL":
             entry["all"] = unit
         else:
             entry["subs"][fold(sub)] = unit
     for key, entry in out.items():
-        if entry["all"] is None:
-            raise SystemExit(f"kenya_census: {entry['name']} has no county row")
-        made = sum(u["total"] for u in entry["subs"].values())
+        if entry["all"] is None or entry["all"]["total"] is None:
+            raise SystemExit(f"kenya_census: {entry['name']} has no county total")
+        made = sum(u["total"] or 0 for u in entry["subs"].values())
         if made != entry["all"]["total"]:
             raise SystemExit(f"kenya_census: {entry['name']}'s sub-counties make {made:,}, "
                              f"not {entry['all']['total']:,}")
@@ -177,6 +193,8 @@ def median(units: list[dict[str, Any]]) -> float | None:
 
 
 def age_fields(units: list[dict[str, Any]], of: str) -> dict[str, Any]:
+    if not all(u.get("ages_ok") for u in units):
+        return {}
     value = median(units)
     if value is None:
         return {}
@@ -338,6 +356,9 @@ def main() -> int:
     vol3 = read_vol3(fetch(VOL3))
     log(f"  Volume I: 47 counties making {NATIONAL:,}; Volume III: {len(vol3)} counties and "
         f"{sum(len(e['subs']) for e in vol3.values())} sub-counties, every row checked")
+    for entry in vol3.values():
+        for line in entry["unread"]:
+            log(f"  ages not read for {entry['name']}, {line}")
     admin1 = json.loads((SITE / "admin1" / "KEN.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "KEN.units.json").read_text())
     records, shape_of = county_records(vol1, vol3, admin1)
