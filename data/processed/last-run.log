@@ -1,3 +1,70 @@
-  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/384b93cf-ede0-4e05-9f36-a8e8e09b21a7/download/kenya-population-by-sex-and-county.csv: 1,933 characters, sha256 fbd40719108ebf30b7dc821312e20fc0c75ba03cdc4003bf0b6328c3c6d8d0cf
-  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/b7edfdb4-2a07-4332-8796-2f00968aff0e/download/distribution-of-population-by-age-sex-county-and-sub-county-kenya-2019-census-volume-iii.csv: 1,662,176 characters, sha256 5a0261bd87543a08225dfa8bccb8ed67f43f4e4dedb8b5fcc61a53884f2291ea
-kenya_census: KWALE's sub-counties make 772,583, not 866,802
+  Tombali: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf: 666,188 bytes, sha256 7a0dd26616b771d601e265a4b92474c10b4e4f2520ca44394064e76dd87291e6
+  Tombali: region (91089, 44099, 46990); sectors Catió 26,999, Cacine 15,648, Komo 8,777, Bedanda 24,293, Quebo 15,372
+  Quinara: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf: 598,031 bytes, sha256 b6759aeb668e51ae22a92e22d187a6dad96034e678fc5dc10950dd5e518b7c82
+  Quinara: region (60777, 29854, 30923); sectors Buba 17,123, Tite 14,862, Fulacunda 11,275, Empada 17,517, Quinara 17,123
+  Oio: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf: 833,713 bytes, sha256 55f151cfe319bda60abeea750a9109991dbd7dff5a3539b22b583debcf81d4cf
+  Oio: region (215259, 103194, 112065); sectors Mansoa 46,046, Farim 48,264, Bissorã 56,585, Nhacra 20,639, Mansaba 43,725
+  Biombo: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf: 511,049 bytes, sha256 67d358b24e0d89a2fcf569ade09f6ca07d0414bb985c6b581d521a004a08e5cc
+  Biombo: region (93039, 43747, 49292); sectors Prabis 33,024, Quinhamel 42,659, Safim 17,356
+  Bolama: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf: 565,001 bytes, sha256 4c5934d8e780cb90e74b17199b4199333c2f84b8bcd1edfbdf3c1a78befe4587
+  Bolama: region (32424, 15770, 16654); sectors Bolama 10,206, Bubaque 11,204, Uno 6,751, Caravela 4,263
+  Bafatá: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf: 919,070 bytes, sha256 c70ec1833f551a480ebd5d19b79adbc0fc61b45fe37511fefe53f1f613bb6b7b
+  Bafatá: region (200884, 97231, 103653); sectors Bambadinca 31,834, Gã-mamudo 24,564, Cossé 14,554, Contuboel 44,048, Bafatá 68,956, Xitole 16,928
+  Gabú: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf: 814,827 bytes, sha256 77dd9c3d1942a699890d197ab055e3bf90884a7f633b40c4077af0f1e69575e3
+  Gabú: region (205608, 99591, 106017); sectors Gabú 81,495, Pitche 45,594, Boé 10,878, Pirada 29,837, Sonaco 37,804
+  Cacheu: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf: 913,086 bytes, sha256 cb9126295e1057660975725fdf11f125f2e0cd738f52f8a1cbd1c86139f4d3e2
+  Cacheu: region (185053, 88132, 96921); sectors São Domingos 29,116, Bula 29,557, Cacheu 18,563, Bigene 51,412, Canchungo 43,709, Caió 12,696
+  Bissau: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/SAB_RGPH_2009.pdf: 563,140 bytes, sha256 93f5b5bffd8f0521281fa35f49f942a7f2ff51ced9c2c011fbc47dbb02401b2a
+  Bissau: region (365097, 181208, 183889); sectors Sector-4 56,934, Sector-3 49,198, Sector-5 41,929, Sector-1 24,326, Sector-7 74,167, Sector-8 25,258, Sector-6 67,812, Sector-2 25,473
+  read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf: 3,150,955 bytes, sha256 6aa4acf8e8ab5a90659890530a3db5d034cc2605434ceca10eed00fcb0a47fc4
+  read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf: 2,725,536 bytes, sha256 9c08fc0f4e54a3a3fb67eddd15764c2b678cdace350cec3413d3908e80e04563
+  Tombali: median 17.9, 90,128 nationals
+  Quinara: median 16.8, 60,624 nationals
+  Oio: median 17.4, 214,791 nationals
+  Biombo: median 17.9, 92,665 nationals
+  Bolama: median 18.7, 32,140 nationals
+  Bafatá: median 16.6, 200,242 nationals
+  Gabú: median 16.3, 204,814 nationals
+  Cacheu: median 18.8, 184,124 nationals
+  Bissau: median 20.2, 362,699 nationals
+    Setor de Catie: 35,776 (catio, komo)
+    Setor de Bedanda: 24,293 (bedanda)
+    Setor de Cacine: 15,648 (cacine)
+    Setor de Quebo: 15,372 (quebo)
+    Setor de Buba: 17,123 (buba)
+    Setor de Empada: 17,517 (empada)
+    Setor de Fulacunda: 11,275 (fulacunda)
+    Setor de Tite: 14,862 (tite)
+    Setor de Bissora: 56,585 (bissora)
+    Setor de Farim: 48,264 (farim)
+    Setor de Mansaba: 43,725 (mansaba)
+    Setor de Mansoa: 46,046 (mansoa)
+    Setor de Nhacra: 20,639 (nhacra)
+    Setor de Quinh: 42,659 (quinhamel)
+    Setor de Safim: 17,356 (safim)
+    Setor de Prabis: 33,024 (prabis)
+    Setor de Bolama: 10,206 (bolama)
+    Setor de Bubaque: 11,204 (bubaque)
+    Setor de Caravela: 4,263 (caravela)
+    Setor de Uno: 6,751 (uno)
+    Setor de Bafata: 68,956 (bafata)
+    Setor de Bambadinca: 31,834 (bambadinca)
+    Setor de Galomaro: 14,554 (cosse)
+    Setor de Gamamundo: 24,564 (gamamudo)
+    Setor de Xitole: 16,928 (xitole)
+    Contuboel: 44,048 (contuboel)
+    Setor de Gabv: 81,495 (gabu)
+    Setor de Madina do Bo˒: 10,878 (boe)
+    Setor de Pirada: 29,837 (pirada)
+    Setor de Pitche: 45,594 (pitche)
+    Setor de Sonaco: 37,804 (sonaco)
+    Setor de Bigene: 51,412 (bigene)
+    Setor de Bula: 29,557 (bula)
+    Setor de Cacheu: 18,563 (cacheu)
+    Setor de Canghungo: 43,709 (canchungo)
+    Setor de Sto Domingos: 29,116 (saodomingos)
+    Caió: 12,696 on neither of its two polygons
+    Bissau Autonomous Sector: 365,097 (sector1, sector2, sector3, sector4, sector5, sector6, sector7, sector8)
+  regions read make 1,449,230
+  9 regions and 39 sector polygons written
+  wrote data/processed/guinea_bissau_census.json (136 kB)
