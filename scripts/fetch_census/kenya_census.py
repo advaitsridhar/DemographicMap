@@ -139,6 +139,11 @@ def read_vol3(text: str) -> dict[str, dict[str, Any]]:
         sub = ",".join(row[1:-4]).strip()
         unit = units.setdefault((county, sub), {"county": county, "name": sub, "ages": {},
                                                 "unstated": 0, "total": None, "bad": []})
+        # Five-year rows ("0 - 4", "10 -14") repeat the single years and are
+        # not read: a spreadsheet turned some of their cells into dates.
+        if not (age.lower() in ("total", "not stated") or AGE.match(age)
+                or age.replace(" ", "") == "100+"):
+            continue
         try:
             male, female, total = (number(c) for c in row[-3:])
         except ValueError:
@@ -157,12 +162,21 @@ def read_vol3(text: str) -> dict[str, dict[str, Any]]:
             unit["ages"][100] = total
         elif age.lower() == "not stated":
             unit["unstated"] = total
-        # Five-year rows ("0 - 4", "10 -14") repeat the single years and are left.
     out: dict[str, dict[str, Any]] = {}
     for (county, sub), unit in units.items():
         made = sum(unit["ages"].values()) + unit["unstated"]
         entry = out.setdefault(fold(county), {"name": county, "all": None, "subs": {},
                                               "unread": []})
+        # Kwale's county row's single years fall 12 people short of its
+        # 866,802 (its "not stated" row is missing): a gap this small moves no
+        # median and is not a misread table, so it is logged and allowed.
+        short = (unit["total"] or 0) - made
+        if unit["total"] and not unit["bad"] and len(unit["ages"]) == 101 \
+                and 0 < short <= max(20, unit["total"] // 10_000):
+            entry["unread"].append(f"{sub}: single years {short:,} short of its total; "
+                                   "taken as ages not stated")
+            unit["unstated"] += short
+            made = unit["total"]
         if (unit["bad"] or unit["total"] is None or made != unit["total"]
                 or len(unit["ages"]) != 101):
             # Its count still stands where Volume II gives it; its ages do not.

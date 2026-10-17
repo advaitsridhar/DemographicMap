@@ -392,7 +392,7 @@ def projection_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, 
 def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, dict[str, Any]],
                        page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
                        ) -> tuple[list[dict[str, Any]], list[str]]:
-    from .ethiopia_zones import ACCEPTED, PLACED, UNPLACED  # noqa: PLC0415
+    from .ethiopia_zones import ACCEPTED, NAMES, PLACED  # noqa: PLC0415
     cite = [{"field": "population", "name": PROJECTION_SOURCE, "url": page,
              "year": PROJECTION_YEAR, "license": LICENCE}]
     records, report = [], []
@@ -412,22 +412,44 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
                               population=measure(total, year=PROJECTION_YEAR,
                                                  source=PROJECTION_SOURCE),
                               population_note=note, sources=cite))
-    known = {c for codes in PLACED.values() for c in codes} | set(UNPLACED)
+    # The projection's wereda codes are those of 2021; the outlines' are later,
+    # and the regions made from SNNPR in 2023 recoded its weredas. A wereda is
+    # its outline where the two share a code and a name, else the one outline
+    # of its name not taken by another.
+    home = {c: sid for sid, codes in PLACED.items() for c in codes}
+    by_name: dict[str, list[str]] = defaultdict(list)
+    for code, name in NAMES.items():
+        by_name[fold(name)].append(code)
+
+    def same(a: str, b: str) -> bool:
+        fa, fb = fold(a), fold(b)
+        return bool(fa and fb) and (fa == fb or fa in fb or fb in fa)
+
+    outline: dict[str, str] = {}
+    for code, row in weredas.items():
+        if code in NAMES and same(NAMES[code], row["name"]):
+            outline[code] = code
+    claimed = set(outline.values())
+    for code, row in weredas.items():
+        if code not in outline:
+            hits = [c for c in by_name.get(fold(row["name"]), []) if c not in claimed]
+            if len(hits) == 1:
+                outline[code] = hits[0]
+                claimed.add(hits[0])
     unknown_zones = defaultdict(list)
     for code, row in weredas.items():
-        if code not in known:
+        if code not in outline:
             unknown_zones[row["zone"]].append(f"{row['name']} ({code}, {row['total']:,})")
     for zone, rows in sorted(unknown_zones.items()):
-        report.append(f"projection weredas with no outline, in zone {zone}: {rows}")
+        report.append(f"projection weredas matched to no outline, in zone {zone}: {rows}")
     labels = {s["id"]: s["name"].strip() for s in admin2}
     for sid in sorted(ACCEPTED, key=lambda s: labels.get(s, s)):
-        codes = PLACED[sid]
-        missing = [c for c in codes if c not in weredas]
-        zones = {weredas[c]["zone"] for c in codes if c in weredas}
-        blind = [z for z in zones if z in unknown_zones]
-        if missing or blind or sid not in labels:
-            report.append(f"{labels.get(sid, sid)}: not written -- weredas without a projection "
-                          f"{missing}, zones holding weredas without an outline {blind}")
+        codes = [c for c in weredas if c in outline and home.get(outline[c]) == sid]
+        zones = {weredas[c]["zone"] for c in codes}
+        blind = sorted(z for z in zones if z in unknown_zones)
+        if not codes or blind or sid not in labels:
+            report.append(f"{labels.get(sid, sid)}: not written -- {len(codes)} weredas, zones "
+                          f"holding weredas matched to no outline {blind}")
             continue
         total = sum(weredas[c]["total"] for c in codes)
         records.append(record(
