@@ -262,6 +262,15 @@ def parse(text: str) -> dict[str, Any]:
         i = 0
         while i < len(rows):
             name, figures = rows[i]
+            # Nouakchott's moughataas are one commune each, printed on one line
+            # with the name twice: "Ksar Ksar 29 043 28 715 57 758".
+            words = name.split()
+            half = len(words) // 2
+            if words and len(words) % 2 == 0 and words[:half] == words[half:]:
+                name = " ".join(words[:half])
+                out[key(name)] = {"name": name, "figures": figures, "communes": [name]}
+                i += 1
+                continue
             acc, j, communes = (0, 0, 0), i + 1, []
             while j < len(rows) and acc[2] < figures[2] - 2:
                 acc = tuple(acc[k] + rows[j][1][k] for k in range(3))

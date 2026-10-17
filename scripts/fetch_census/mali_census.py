@@ -240,6 +240,7 @@ def parse_annex(text: str) -> dict[str, dict[str, Any]]:
     """Tableaux A.02-A.21: {region: {"groups": [(low, high or None, total)],
     "men": m, "women": w, "total": t}} for the population of ordinary households."""
     out: dict[str, dict[str, Any]] = {}
+    problems: list[str] = []
     for m in ANNEX_TITLE.finditer(text):
         number = int(m.group(1) + m.group(2))
         name = REGION_BY_FOLD.get(fold(m.group(3)))
@@ -247,7 +248,12 @@ def parse_annex(text: str) -> dict[str, dict[str, Any]]:
             continue
         groups: list[tuple[int, int | None, int]] = []
         men = women = total = None
-        for line in text[m.end():].splitlines():
+        for n, line in enumerate(text[m.end():].splitlines()):
+            # The list of tables names every annex table too, with no figures
+            # under it: a title whose first age group is not right below it is
+            # an entry in that list, not the table.
+            if not groups and n > 15:
+                break
             a, o, e = AGE_ROW.match(line), OPEN_ROW.match(line), ALL_ROW.match(line)
             if a:
                 t = first_triple(a.group("rest"), slack=2)
@@ -264,18 +270,22 @@ def parse_annex(text: str) -> dict[str, dict[str, Any]]:
                 if t:
                     men, women, total = t
                     break
-        if total is None or not groups or groups[0][0] != 0 or groups[-1][1] is not None:
-            raise SystemExit(f"mali_census: Tableau A.{number:02d} ({name}) reads "
-                             f"{len(groups)} groups and no total")
+        if not groups:
+            continue
+        if total is None or groups[0][0] != 0 or groups[-1][1] is not None:
+            problems.append(f"Tableau A.{number:02d} ({name}) reads {len(groups)} groups and "
+                            "no total")
+            continue
         made = sum(g[2] for g in groups)
         if abs(made - total) > len(groups):
-            raise SystemExit(f"mali_census: Tableau A.{number:02d} ({name}): groups make "
-                             f"{made:,}, not {total:,}")
+            problems.append(f"Tableau A.{number:02d} ({name}): groups make {made:,}, not "
+                            f"{total:,}")
+            continue
         out[name] = {"groups": groups, "men": men, "women": women, "total": total,
                      "table": f"Tableau A.{number:02d}"}
     missing = [r for r in REGIONS if r not in out]
     if missing:
-        raise SystemExit(f"mali_census: the annex lacks {missing}")
+        raise SystemExit(f"mali_census: the annex lacks {missing}: {problems}")
     return out
 
 
