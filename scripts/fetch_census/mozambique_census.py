@@ -188,6 +188,12 @@ LANGUAGES = {
 # no polygon (none of the map's polygons holds Ibo, Matemo or Quirimba
 # island), so the district's count is on none.
 UNDRAWN = {"DISTRITO DE IBO"}
+# Lines of a province's Quadro 3 whose label is not the district's name:
+# Nampula's prints "Ilha de" before Mogincual and Mossuril (as before Ilha de
+# Moçambique, the line above them) and calls Nacala's city Nacala-Porto.
+LABEL_ALIASES = {"DISTRITO DE ILHA DE MOGINCUAL": "mogincual",
+                 "DISTRITO DE ILHA DE MOSSURIL": "mossuril",
+                 "DISTRITO DE NACALA-PORTO": "nacala"}
 UNSTATED_LANGUAGES = ("mudo", "desconhecid", "naosabe", "nenhum")
 
 RELIGION_NOTE = ("INE publishes the 2017 census's religion for each province (Quadro 11 of the "
@@ -400,6 +406,8 @@ def read_q22(rows: list[list[Any]]) -> dict[str, int]:
 def candidates(name: str) -> list[str]:
     """The keys a census unit may be drawn under: a district by its name, a
     city by its full name and its bare one."""
+    if name in LABEL_ALIASES:
+        return [LABEL_ALIASES[name]]
     bare = re.sub(r"(?i)^(cidade|distrito)(\s+municipal)?\s+(de|da|do|das|dos)?\s*", "", name)
     if re.match(r"(?i)^cidade\b", name):
         return [key(name), key(bare)]
@@ -425,6 +433,10 @@ def bind(table: dict[str, dict[str, Any]], shapes: list[dict[str, Any]], provinc
     if left:
         raise SystemExit(f"mozambique_census: {province}: no polygon for {left}; the map draws "
                          f"{sorted(s['name'] for s in shapes)}")
+    # Two units share a polygon only as a city and a district of one name.
+    for sid, labels in out.items():
+        if len(labels) > 1 and len({candidates(n)[-1] for n in labels}) != 1:
+            raise SystemExit(f"mozambique_census: {province}: {labels} on one polygon")
     return out
 
 

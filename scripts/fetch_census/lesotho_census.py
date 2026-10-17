@@ -247,9 +247,13 @@ def bind(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
     left: list[dict[str, Any]] = []
     for shape in admin2:
         d = district_of.get(shape.get("parent"))
-        want = council_key(shape["name"])
-        want = ALIASES.get(want, want)
-        hits = [c for c in table["councils"] if c[0] == d and council_key(c[1]) == want]
+        # The polygon's own name first, and its alias only where no council of
+        # the district has that name (Berea has a council called Maseru).
+        hits: list[tuple[str, str]] = []
+        for want in dict.fromkeys([council_key(shape["name"]),
+                                   ALIASES.get(council_key(shape["name"]))]):
+            if want and not hits:
+                hits = [c for c in table["councils"] if c[0] == d and council_key(c[1]) == want]
         if len(hits) == 1:
             bound[shape["id"]] = hits[0]
         else:
