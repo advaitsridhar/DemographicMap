@@ -83,10 +83,18 @@ NEW_PREFECTURES = {"mambere": "mamberekadei", "limpende": "ouhampende", "ouhamfa
 # 71 km2 city (measured on the CGAZ polygons).
 PLACED = {("bangui", "begoua"): ("ombellampoko", "bimbo")}
 
-# 2003 sub-prefecture names the boundary file spells otherwise.
-SP_ALIASES = {"Aba": "Abba", "Bossemptele": "Bossemtélé", "Nanga-Boguila": "Nagha Boguila",
-              "Ndjoukou": "Djoukou", "Dede Mokouba": "Dédé-Mokouba", "Kaga Bandoro": "Kaga-Bandoro",
-              "Ouanda Djalle": "Ouanda-Djallé", "Dede-Mokouba": "Dédé-Mokouba"}
+# Sub-prefecture names the boundary file spells otherwise, as the 2003 census
+# writes them (car_prefecture's list) and as OCHA's table does -- Djemah,
+# Dede-Makouba, and Bantangafo, a doubled letter. Keyed by the folded name.
+SP_ALIASES = {fold(k): v for k, v in {
+    "Aba": "Abba", "Bossemptele": "Bossemtélé", "Nanga-Boguila": "Nagha Boguila",
+    "Ndjoukou": "Djoukou", "Djemah": "Djéma", "Dede-Makouba": "Dédé-Mokouba",
+    "Bantangafo": "Batangafo"}.items()}
+
+
+def spelled(name: str) -> str:
+    """A sub-prefecture's name as the boundary file writes it."""
+    return SP_ALIASES.get(fold(name), name)
 # The fixed proportion of men in every unit of the mapping table, and how far
 # a unit may sit from it (rounding of whole people) before the table is taken
 # to describe sexes after all.
@@ -312,10 +320,13 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
     pref_poly = {fold(u["name"]): u for u in admin1}
     bangui1 = pref_poly.get("bangui")
     bangui2 = next((u for u in admin2 if bangui1 and u["parent"] == bangui1["id"]), None)
-    departments = {code: (e["name"], next((u["name"] for k, u in pref_poly.items()
-                                           if k == fold(e["pref"])), ""))
+
+    def parent_name(pref: str) -> str:
+        return pref_poly[fold(pref)]["name"] if fold(pref) in pref_poly else ""
+
+    departments = {code: (spelled(e["name"]), parent_name(e["pref"]))
                    for code, e in by_sp.items() if fold(e["pref"]) != "bangui"}
-    bound, missing = bind(departments, admin2, parents, SP_ALIASES)
+    bound, missing = bind(departments, admin2, parents)
     report += [f"  not bound to a polygon: {m}" for m in missing]
     if missing:
         raise SystemExit("car_census: sub-prefectures left without a polygon: " + ", ".join(missing))
@@ -324,6 +335,17 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
         groups[sid].append(code)
     if bangui2:
         groups[bangui2["id"]] = [code for code, e in by_sp.items() if fold(e["pref"]) == "bangui"]
+    # The independent assignment, put on the same polygons.
+    uscb_departments = {f"{p}/{s}": (spelled(s), parent_name(p))
+                        for (p, s) in mine if p != "bangui"}
+    uscb_bound, uscb_missing = bind(uscb_departments, admin2, parents)
+    report += [f"  own crosswalk, not bound to a polygon: {m}" for m in uscb_missing]
+    mine_by_poly: dict[str, int] = defaultdict(int)
+    for key, sid in uscb_bound.items():
+        p, s = key.split("/")
+        mine_by_poly[sid] += mine[(p, s)]
+    if bangui2:
+        mine_by_poly[bangui2["id"]] = mine.get(("bangui", "bangui"), 0)
 
     cite_count = [{"field": "population", "name": COUNT_SOURCE,
                    "url": f"https://data.humdata.org/dataset/{OCHA_DATASET}", "year": COUNT_YEAR,
@@ -336,8 +358,7 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
         shape = shapes2[sid]
         total = sum(by_sp[c]["total"] for c in codes)
         pref = fold(by_sp[codes[0]]["pref"])
-        sp = fold(by_sp[codes[0]]["name"]) if len(codes) == 1 else "bangui"
-        theirs = mine.get((pref, sp))
+        theirs = mine_by_poly.get(sid)
         if theirs != total:
             disagree.append(f"{shape['name']}: OCHA's 2003 communes {total:,}, the 2021 "
                             f"communes by name {theirs}")
