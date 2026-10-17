@@ -174,6 +174,12 @@ def build(found: list[dict[str, Any]], districts: int, admin1: list[dict[str, An
             median_age=gap(NOT_AVAILABLE, AGE_GAP)))
         report.append(f"  {poly['name']}: {dep['total']:,} ({dep['men']:,} men, {dep['women']:,} women)")
     drawn = {u["id"]: u for u in admin2}
+    # What each polygon's reason rests on: the census's count of today's
+    # districts, and GeoNames' towns inside the polygon.
+    reasons = [{"field": "population/sex_ratio/median_age", "name": SOURCE, "url": ADMIN,
+                "year": YEAR, "license": LICENCE},
+               {"field": "population/capital", "name": "GeoNames, populated places",
+                "url": "https://www.geonames.org/", "license": "CC BY 4.0"}]
     for sid, (label, places) in FACTS.items():
         u = drawn.get(sid)
         if u is None or u["name"] != label:
@@ -183,7 +189,8 @@ def build(found: list[dict[str, Any]], districts: int, admin1: list[dict[str, An
         records.append(record(
             f"COG-RGPH2023-{sid}", label, level="admin2", parent="COG", country="COG",
             match_by="shape_id", shape_id=sid, population=gap(NOT_AVAILABLE, note),
-            median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note), sources=[],
+            median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note),
+            sources=reasons,
             capital=gap(NOT_AVAILABLE, f"The name this polygon is drawn under, {label}, is out "
                                        f"of place here, so no district's seat is shown.")))
     report.append(f"  {sum(r['level'] == 'admin2' for r in records)} second-level polygons given "
