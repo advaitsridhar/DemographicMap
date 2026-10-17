@@ -153,6 +153,28 @@ class ReligionAndLanguageByProvince(unittest.TestCase):
         self.assertEqual(region["language"][0], {"group": "Mooré", "pct": 53.4})
         self.assertNotIn("value", boulgou["sex_ratio"])   # no Tableau 2.3 in this text
 
+    def test_heading_repeated_over_a_page(self):
+        # Constructed from Sud-Ouest's second block as run 4 logged it: the
+        # heading stands again before the rows the next page carries.
+        text = ("Tableau 3.3: Répartition (%) de la population de 3 ans ou plus selon les "
+                "principales langues parlées par sexe et la province Principales langues "
+                "parlées Noumbiel Ensemble M F M + F M F M + F Dagara 60,0 60,0 60,0 "
+                "50,0 50,0 50,0 Principales langues par- lées Noumbiel Ensemble M F M + F "
+                "M F M + F Dyan 40,0 40,0 40,0 50,0 50,0 50,0 Ensemble 100,0 100,0 100,0 "
+                "100,0 100,0 100,0")
+        out = bp.language_table(text, ["Noumbiel", "Poni"])
+        self.assertEqual(out["Noumbiel"], {"Dagara": 60.0, "Dyan": 40.0})
+
+    def test_region_tables_after_the_list_of_tables(self):
+        listing = ("Tableau 3.1: Répartition (%) de la population par religion selon le sexe "
+                   "....... 17 Tableau 3.2: Répartition (%) de la population de 3 ans ou plus "
+                   "par principale langue parlée selon le milieu de résidence ...... 19 ")
+        body = ("Tableau 3.1: Répartition (%) de la population par religion selon le sexe "
+                "Religion Masculin Féminin Ensemble Animiste 0,4 0,2 0,3 Musulman 61,9 60,5 "
+                "61,2 Catholique 30,7 31,8 31,3 Protestant 6,7 7,2 6,9 Autre 0,2 0,1 0,2 "
+                "Sans religion 0,2 0,1 0,1 Ensemble 100,0 100,0 100,0 ")
+        self.assertEqual(bp.region_religion(listing + body)["Islam"], 61.2)
+
     def test_every_label_is_named(self):
         for label in ("Fulfudé (ou peulh)", "Fulfudé/peulh", "Kasséna (ou kassem)",
                       "San (ou samogho ou samo)", "Autres l angues", "Haoussa", "Gourounsi"):

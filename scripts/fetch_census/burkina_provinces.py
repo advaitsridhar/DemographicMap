@@ -430,6 +430,17 @@ def language_table(text: str, provinces: list[str]) -> dict[str, dict[str, float
                     break
                 name = language_name(text_label)
                 if name is None:
+                    # A block that runs over a page repeats its heading there
+                    # ("Principales langues par- lées Noumbiel Ensemble M F ...
+                    # Dyan"): the heading's words go, the language stays.
+                    for k in range(1, len(label)):
+                        if all(fold(t) in HEADING | SEXES | {"", "par", "lees"}
+                               or province_of(t, provinces) or fold(t) in TOTALS
+                               for t in label[:k]):
+                            name = language_name(" ".join(label[k:]))
+                            if name:
+                                break
+                if name is None:
                     log(f"    a language not named: {text_label!r}")
                     block = {}
                     break
@@ -448,11 +459,18 @@ def region_languages(text: str) -> dict[str, float]:
     """The region's principal languages, Tableau 3.2's last column (all residents
     of both sexes): for a region of one province, the province's."""
     flat = re.sub(r"\s+", " ", text)
-    m = re.search(r"(?i)principales?\s+langues?\s+parl\s*[ée]es?\s+selon\s+le\s+milieu", flat)
-    if not m:
-        return {}
-    stop = re.compile(r"Tableau\s*3\s*\.?\s*[3-9]\s*:|Source\s*:|Graphique").search(flat, m.end())
-    toks = tokens_of(flat[m.end():stop.start() if stop else len(flat)])
+    # The title is also in the list of tables: each place it stands is tried.
+    for m in re.finditer(r"(?i)principales?\s+langues?\s+parl\s*[ée]es?\s+selon\s+le\s+milieu",
+                         flat):
+        stop = re.compile(r"Tableau\s*3\s*\.?\s*[3-9]\s*:|Source\s*:|Graphique").search(
+            flat, m.end())
+        found = residence_languages(tokens_of(flat[m.end():stop.start() if stop else len(flat)]))
+        if found:
+            return found
+    return {}
+
+
+def residence_languages(toks: list[str]) -> dict[str, float]:
     out: dict[str, float] = {}
     i = 0
     while i < len(toks):
@@ -479,10 +497,14 @@ def region_languages(text: str) -> dict[str, float]:
 def region_religion(text: str) -> dict[str, float]:
     """The region's religions, Tableau 3.1's last column (both sexes)."""
     flat = re.sub(r"\s+", " ", text)
-    m = re.search(r"(?i)par\s+religion\s+selon\s+le\s+sexe", flat)
-    if not m:
-        return {}
-    toks = tokens_of(flat[m.end():m.end() + 600])
+    for m in re.finditer(r"(?i)par\s+religion\s+selon\s+le\s+sexe", flat):
+        found = sex_religions(tokens_of(flat[m.end():m.end() + 600]))
+        if found:
+            return found
+    return {}
+
+
+def sex_religions(toks: list[str]) -> dict[str, float]:
     labels = {"animiste": "Animist", "musulman": "Islam", "catholique": "Catholic",
               "protestant": "Protestant", "autre": "Other religion", "autres": "Other religion",
               "sansreligion": "No religion"}
