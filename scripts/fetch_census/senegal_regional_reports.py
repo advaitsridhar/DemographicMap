@@ -34,6 +34,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import hashlib
 import io
 import json
@@ -89,13 +90,6 @@ LANGUAGES = {
     "langagedessignessourdmuet": "Sign language", "languedessignes": "Sign language",
     "nd": "Not stated", "nondeclare": "Not stated",
 }
-# A count, its thousands set apart by a space of any width (Matam's report
-# uses the thin space), and a share, printed with or without its decimal.
-N = r"\d{1,3}(?:[    ]\d{3})+|\d+"
-P = r"\d{1,3},\d+|\d{1,3}"
-ROW6 = re.compile(rf"^(?P<label>\D+?)\s+(?P<m>{N})\s+(?P<mp>{P})\s+(?P<f>{N})\s+(?P<fp>{P})"
-                  rf"\s+(?P<t>{N})\s+(?P<tp>{P})\s*$")
-ROW3 = re.compile(rf"^(?P<label>\D+?)\s+(?P<mp>{P})\s+(?P<fp>{P})\s+(?P<tp>{P})\s*$")
 TITLE_LANG = re.compile(r"(?i)principale\s+langue\s+couramment")
 TITLE_MEDIAN = re.compile(r"(?i)[aâ]ges?\s+moyens?\s+et\s+(?:[aâ]ge\s+)?m[ée]dian")
 MEDIAN_ROW = re.compile(r"(?i)^\s*(?:[aâ]ge\s+)?m[ée]dian(?:e)?\s*(?:\(ans\))?\s+"
@@ -106,10 +100,6 @@ TABLE_NO = re.compile(r"(?i)tableau\s*([IVX]+\s*[-\u2013\u2011.]\s*\d+|\d+(?:\.\
 def fold(text: Any) -> str:
     s = unicodedata.normalize("NFKD", str(text or ""))
     return "".join(c for c in s.lower() if c.isalpha() and not unicodedata.combining(c))
-
-
-def integer(text: str) -> int:
-    return int(re.sub(r"\D", "", text))
 
 
 def percent(text: str) -> float:
@@ -124,8 +114,6 @@ def is_contents(line: str) -> bool:
 # The words of a table's title and header lines, which are not a row's label.
 HEADER = re.compile(r"(?i)^(sexe|masculin|f[ée]minin|effectif|source|principale\s+langue)|"
                     r"selon\s+le|tableau|r[ée]partition|couramment\s+parl")
-NUMBERS_ONLY = re.compile(rf"^(?:{N})\s+(?:{P})\s+(?:{N})\s+(?:{P})\s+(?:{N})\s+(?:{P})\s*$|"
-                          rf"^(?:{P})\s+(?:{P})\s+(?:{P})\s*$")
 TOTALS = {"total", "ensemble"}
 
 
@@ -182,6 +170,67 @@ def language_label(label: str) -> str:
     return re.sub(r"\s+", " ", label).strip()
 
 
+SPACES = re.compile(r"[\s   ]+")
+CELL = re.compile(r"^\d+(?:,\d+)?$")
+
+
+def split_row(row: str) -> tuple[str, list[str]]:
+    """(the label, the figures' tokens): the figures are the row's trailing
+    run of numbers, a count's thousands set apart by any width of space."""
+    tokens = SPACES.split(row.strip())
+    k = len(tokens)
+    while k and CELL.match(tokens[k - 1]):
+        k -= 1
+    return " ".join(tokens[:k]), tokens[k:]
+
+
+def counts(cells: list[str], i: int) -> list[tuple[int, int]]:
+    """(value, end) for each way a count can be read from cells[i:]."""
+    if i >= len(cells) or not cells[i].isdigit():
+        return []
+    if len(cells[i]) > 3:
+        return [(int(cells[i]), i + 1)]
+    out, j = [(int(cells[i]), i + 1)], i + 1
+    while j < len(cells) and len(cells[j]) == 3 and cells[j].isdigit():
+        j += 1
+        out.append((int("".join(cells[i:j])), j))
+    return out
+
+
+def share(cells: list[str], i: int) -> tuple[float, int] | None:
+    if i < len(cells) and re.match(r"^\d{1,3}(?:,\d+)?$", cells[i]):
+        value = percent(cells[i])
+        if value <= 100:
+            return value, i + 1
+    return None
+
+
+def row_figures(cells: list[str]) -> tuple[float, str] | None:
+    """The row's figure and its kind: the total count where the cells read as
+    men, share, women, share, total, share with men and women making the total
+    ("count"), or the last of three shares ("pct"). A share of 100 printed
+    without its decimal can be read as a count's last three digits, so every
+    reading is tried and only one the men and women make is taken. The
+    census's counts are weighted for its coverage survey and each cell is
+    rounded on its own, so men and women may miss the total by a person or two
+    (Dakar's Hassaniya: 568 + 447 against 1,014)."""
+    for men, a in counts(cells, 0):
+        p = share(cells, a)
+        if not p:
+            continue
+        for women, b in counts(cells, p[1]):
+            q = share(cells, b)
+            if not q:
+                continue
+            for both, c in counts(cells, q[1]):
+                r = share(cells, c)
+                if r and r[1] == len(cells) and abs(men + women - both) <= 2:
+                    return float(both), "count"
+    if len(cells) == 3 and all(share(cells, i) for i in range(3)):
+        return percent(cells[2]), "pct"
+    return None
+
+
 def parse_language(text: str) -> tuple[dict[str, float], str, str]:
     """({language: count or percentage}, "count" or "pct", the table's number)."""
     lines = text.splitlines()
@@ -202,28 +251,23 @@ def parse_language(text: str) -> tuple[dict[str, float], str, str]:
                 continue
             # A label that wraps puts its figures on a line of their own:
             # "Langage des signes" / "(Sourd-Muet)" / "2813 0,7 2894 0,7 5707 0,7".
-            if carry and NUMBERS_ONLY.match(row):
-                row, carry = f"{carry} {row}", ""
-            m6, m3 = ROW6.match(row), ROW3.match(row)
-            m = m6 or m3
-            if not m:
+            label, cells = split_row(row)
+            if not cells:
                 if not re.search(r"\d", row):
                     carry = (carry + " " + row).strip()
                 continue
-            label = (carry + " " + m.group("label")).strip()
+            if not label and not carry:
+                continue                   # a page number
+            figures = row_figures(cells)
+            if figures is None:
+                if label and fold(label) in TOTALS:
+                    raise SystemExit(f"senegal_regional_reports: {label!r}: no men, women and "
+                                     f"total that agree in {' '.join(cells)}")
+                carry = ""
+                continue
+            label = (carry + " " + label).strip()
             carry = ""
-            if m6:
-                # The census's counts are weighted for its coverage survey and
-                # each cell is rounded on its own, so men and women may miss
-                # the row's total by a person or two (Dakar's Hassaniya:
-                # 568 + 447 against 1,014).
-                men, women, both = (integer(m6.group(k)) for k in ("m", "f", "t"))
-                if abs(men + women - both) > 2:
-                    raise SystemExit(f"senegal_regional_reports: {label!r}: {men:,} + "
-                                     f"{women:,} is not {both:,}")
-                value, this = float(both), "count"
-            else:
-                value, this = percent(m3.group("tp")), "pct"
+            value, this = figures
             if kind and this != kind:
                 raise SystemExit(f"senegal_regional_reports: {label!r} mixes counts and shares")
             kind = this
@@ -255,8 +299,10 @@ def departments_in_broad_groups(text: str) -> bool:
             continue                       # the list of tables
         end = re.search(r"(?i)\bsource\s*:", rest)
         table = rest[:end.start()] if end else rest[:1500]
-        if re.search(r"(?i)moins\s+de\s*\n?\s*15", table) and \
-                re.search(r"(?i)65\s+ans\s+et\s+plus", table):
+        # "Moins de 15 ans" or "- de 15 ans"; "65 ans et plus", "65 ans ou
+        # plus" or "65 ans et +", however the lines break.
+        if re.search(r"(?i)(?:moins|-)\s*de\s+15", table) and \
+                re.search(r"(?i)65\s+ans\s+(?:et|ou)\s+(?:plus|\+)", table):
             return not re.search(r"(?im)^\s*(?:5\s*-\s*9|10\s*-\s*14)\s", table)
     return False
 
@@ -384,14 +430,29 @@ def build(reports: list[dict[str, Any]], admin1: list[dict[str, Any]],
     return records, report
 
 
+def read_or_why(region: str) -> dict[str, Any] | str:
+    """The report read, or why it could not be (a worker's failure is the
+    region's alone)."""
+    try:
+        return read(region)
+    except BaseException as err:  # noqa: BLE001 -- a worker never takes the run down
+        return f"{type(err).__name__}: {err}"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.parse_args()
     reports = []
-    for region in REPORTS:
-        rr = read(region)
+    # Four reports at a time: one after another, the fourteen ran the job out
+    # of time (each is 12 to 17 MB, and its text layer is slow to extract).
+    with concurrent.futures.ProcessPoolExecutor(max_workers=4) as pool:
+        done = list(pool.map(read_or_why, REPORTS))
+    for region, rr in zip(REPORTS, done):
+        if isinstance(rr, str):
+            log(f"  {region}: not read: {rr}")
+            continue
         top = sorted(rr["language"].items(), key=lambda kv: -kv[1])[:4]
         log(f"  {region}: median {rr['median']} ({rr['median_table']}); language "
             f"{rr['kind']} ({rr['language_table']}): "

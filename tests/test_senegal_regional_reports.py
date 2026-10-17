@@ -135,5 +135,56 @@ class SenegalRegionalReportsRun3(unittest.TestCase):
         self.assertAlmostEqual(sum(rows.values()), 705_259, delta=10)
 
 
+# Run 4's log: the department tables of Matam and Sédhiou, and the language
+# tables of Thiès and Kaffrine (Kaffrine's as far as the log shows it, its
+# total row constructed from its rows), as the runner printed them.
+MATAM_DEPARTMENTS = "Tableau II-6 : Répartition de la population résidente par groupes d’âges selon le département et le milieu \nde résidence \nGroupe d'âges \nMatam Kanel Ranérou Ferlo \nUrbain Rural Ensemble Urbain Rural Ensemble Urbain Rural Ensemble \n- de 15 ans 56\u2009974 105\u2009988 162\u2009962 46\u2009840 105\u2009453 152\u2009292 2\u2009093 47\u2009128 49\u2009221 \n15-64 ans 82\u2009499 126\u2009800 209\u2009299 61\u2009636 115\u2009595 177\u2009231 2\u2009470 48\u2009508 50\u2009979 \n65 ans et + 5\u2009196 9\u2009429 14\u2009626 4\u2009476 7\u2009519 11\u2009995 85 2\u2009941 3\u2009026 \nTotal 144\u2009670 242\u2009217 386\u2009887 112\u2009951 228\u2009567 341\u2009518 4\u2009648 98\u2009577 103\u2009225 \n- de 15 ans 39,4 43,8 42,1 41,5 46,1 44,6 45,0 47,8 47,7 \n15-64 ans 57,0 52,3 54,1 54,6 50,6 51,9 53,1 49,2 49,4 \n65 ans et + 3,6 3,9 3,8 4,0 3,3 3,5 1,8 3,0 2,9 \nEnsemble 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 \nRapport de \ndépendance \ndémographique \n  84,8   92,7   102,5 \nSource : ANSD. RGPH-5, 2023 \nII.2.2.5. Répartition spatiale de la population \nLa répartition de la population résidente dans la région de Matam révèle des inégalités \nnotables à l’échelle départementale. En effet, le département de Matam concentre à lui seul \nprès de la moitié de la population régionale, avec 46,5% des effectifs. À l’ opposé, le \ndépartement de Ranérou Ferlo, le plus vaste de la région, ne détient que 12,4% de la \npopulation. Le département de Kanel occupe une position intermédiaire, abritant 41,1% de \nla population régionale. \nLes résultats du RGPH -5 au niveau régional présentent un rapport de masculinité de 106  \nhommes pour 100 femmes. Cet indicateur reflète une tendance générale à la prédominance \ndu sexe masculin dans la région, tout en mettant en évidence des disparités observées \nentre les départements. En effet, le département de Matam affiche le rapport de masculinité \nRGPH-5 :Rapport de présentation des résultats\n  Région de Matam\n33\n \n \n \n \nle plus élevé, avec 109 hommes pour 100 femmes, suivi du département de Ranérou Ferlo \n(108 hommes pour 100 femmes). Pour le département de Kanel, le rapport de masculinité \nest légèrement supérieur à l'équilibre, avec 103 hommes pour 100 femmes. \nTableau II-7 : Répartition de la population résidente par département selon le sexe, le poids \ndémographique et le rapport de masculinité \nDépartement Effectif de la population Poids démographique (%) Rapport de masculinité (%) Homme Femme Ensemble \nMatam 201\u2009425 185\u2009462 386\u2009887 46,5 109 \nKanel 173\u2009057 168\u2009461 341\u2009518 41,1 103 \nRanérou \n"
+
+SEDHIOU_DEPARTMENTS = "Tableau II-6 : Répartition de la population résidente par groupes d’âges selon le \ndépartement et le milieu de résidence  \nGroupes d'âge Moins de \n15 ans \n15-64 \nans \n65 ans \nou \nplus \nTotal % moins \nde 15 \nans \n% 15-64 \nans \n% 65 \nans ou \nplus \nTotal RDD \nSédhiou \nUrbain 18 031 25 044 1 523 44 598 40,4 56,2 3,4 100 78 \nRural 68 324 75 700 4 673 148 697 45,9 50,9 3,1 100 96 \nEnsemble 86 355 100 744 6 196 193 295 44,7 52,1 3,2 100 92 \nBounkiling \nUrbain 17 144 21 920 979 40 043 42,8 54,7 2,4 100 83 \nRural 79 676 83 370 4 783 167 830 47,5 49,7 2,8 100 101 \nEnsemble 96 820 105 290 5 763 207 873 46,6 50,7 2,8 100 97 \nGoudomp \nUrbain 19 760 25 205 1 419 46 383 42,6 54,3 3,1 100 84 \nRural 67 258 70 196 4 261 141 715 47,5 49,5 3,0 100 102 \nEnsemble 87 018 95 401 5 679 188 098 46,3 50,7 3,0 100 97 \nEnsemble \nUrbain 54 935 72 169 3 921 131 024 41,9 55,1 3,0 100 81,6 \nRural 215 258 229 266 13 717 458 242 47 50 3,0 100 99,9 \nEnsemble 270 193 301 435 17 638 589 266 45,9 51,2 3,0 100 95,5 \nSource : ANSD. RGPH-5, 2023  \nRGPH-5 :Rapport de présentation des résultats\n  Région de Sédhiou\n25\n \n  \n  \n     ANALYSE DU RAPPORT DE MASCULINITE PAR AGE \nLes résultats du RGPH-5 mettent en évidence la jeunesse de la population de la région de \nSédhiou au regard de la structure par âge. En effet, l’essentiel des plus grands effectifs de \npopulation se trouvent en deçà de 20 ans. Les enfants de m oins de 15 ans représentent \n"
+
+THIES_TABLE = "Tableau 0-2 : Répartition (%) de la population résidente de 3 ans ou plus par principale \nlangue couramment parlée selon le sexe \nPrincipale langue \ncouramment parlée \nSexe \nMasculin Féminin Ensemble \nEffectif % Effectif % Effectif % \nLangage des signes (Sourd-\nMuet) 2012 0,2 1735 0,2 3747 0,2 \nwolof 730578 66,9 739600 67,9 1470178 67,4 \npulaar 101710 9,3 95100 8,7 196810 9,0 \nsereer 222700 20,4 220460 20,2 443160 20,3 \njoola 9859 0,9 10215 0,9 20074 0,9 \nmàndienka 3857 0,4 3614 0,3 7470 0,3 \nsóninke 3094 0,3 3018 0,3 6113 0,3 \nhasaniya (maure) 304 0,0 235 0,0 539 0,0 \nbalant 1872 0,2 1633 0,1 3504 0,2 \nmànkaañ 1298 0,1 1371 0,1 2669 0,1 \nmànjaku 1630 0,1 1859 0,2 3489 0,2 \nmënik 117 0,0 97 0,0 214 0,0 \noniyan 73 0,0 52 0,0 124 0,0 \nguñuun 37 0,0 36 0,0 74 0,0 \nkanjad 43 0,0 44 0,0 86 0,0 \njalunga 13 0,0 16 0,0 29 0,0 \nbayot 118 0,0 99 0,0 217 0,0 \nwomey 14 0,0 15 0,0 29 0,0 \nautres langues africaines 4831 0,4 4300 0,4 9131 0,4 \ntourka 53 0,0 48 0,0 101 0,0 \nlangues étrangère 968 0,1 605 0,1 1574 0,1 \nfrançais 5171 0,5 4391 0,4 9562 0,4 \nautres langues étrangères non \nafricaines 1176 0,1 968 0,1 2144 0,1 \nTotal 1 091 529 100,0 1 089 510 100 2 181 039 100,0 \nSource : ANSD. RGPH-5, 2023 \n \nI.4.3. Possession d’un acte de naissance \nAu niveau régional, la majorité de la population possède un bulletin de naissance (75,7%). \nCependant, une proportion notable de la population détient un jugement supplétif (10,7%) et \n2,8% ne possèdent pas d’acte de naissance. \nL'analyse par groupe d’âge révèle que la possession d'un bulletin de naissance est plus élevée \nchez les moins d’un an enfants, avec un taux de 82,8% et diminuant progressivement avec \nl'âge. La proportion de personnes possédant un jugement supplétif est plus élevée chez les \n75-79 ans (20,5%).  \n \n \n"
+
+KAFFRINE_TABLE = 'Tableau II-12 : Répartition (%) de la population résidente de 3 ans ou plus par principale langue couramment parlée \nselon le sexe \nPrincipale \nlangue \ncouramment \nparlée \nSexe \nMasculin Féminin Ensemble \nEffectif Proportion (%) Effectif Proportion (%) Effectif Proportion (%) \nLangage des \nsignes (Sourd-\nMuet) \n945 0,3 891 0,2 1 836 0,3 \nWolof 257 253 73,7 273 129 76,3 530 382 75,0 \nRGPH-5 :Rapport de présentation des résultats\n38\n  Région de Kaffrine\n38 \n \nPrincipale \nlangue \ncouramment \nparlée \nSexe \nMasculin Féminin Ensemble \nEffectif Proportion (%) Effectif Proportion (%) Effectif Proportion (%) \nPulaar 67 892 19,4 62 775 17,5 130 667 18,5 \nSereer 17 022 4,9 15 282 4,3 32 304 4,6 \nJoola 346 0,1 294 0,1 641 0,1 \nMàndienka 1 392 0,4 1 402 0,4 2794 0,4 \nSóninke 664 0,2 678 0,2 1343 0,2 \nHasaniya \n(maure) 81 0 62 0 142 0,0 \nBalant 29 0 31 0 61 0,0 \nMànkaañ 17 0 22 0 40 0,0 \nMànjaku 22 0 12 0 34 0,0 \nMënik 2 0 2 0 4 0,0 \nOniyan 3 0 2 0 5 0,0 \nGuñuun 0 0 1 0 1 0,0 \nKanjad 9 0 9 0 18 0,0 \nJalunga 2 0 2 0 4 0,0 \nBayot 4 0 0 0 4 0,0 \nWomey 1 0 1 0 2 0,0 \nAutres langues \nafricaines 2 356 0,7 2 286 0,6 4 643 0,7 \n'
+
+
+class SenegalRegionalReportsRun4(unittest.TestCase):
+    def test_department_tables_worded_otherwise(self):
+        self.assertTrue(sr.departments_in_broad_groups(MATAM_DEPARTMENTS))
+        self.assertTrue(sr.departments_in_broad_groups(SEDHIOU_DEPARTMENTS))
+
+    def test_a_share_of_100_is_not_a_count(self):
+        rows, kind, _ = sr.parse_language(THIES_TABLE)
+        self.assertEqual(kind, "count")
+        self.assertAlmostEqual(sum(rows.values()), 2_181_039, delta=2 * len(rows))
+
+    def test_a_table_over_two_pages(self):
+        # Its rows run onto the next page under a repeated header; the total
+        # row is constructed: the rows' men and women as printed, and the two
+        # together.
+        men = sum([945, 257_253, 67_892, 17_022, 346, 1_392, 664, 81, 29, 17, 22, 2, 3, 0, 9,
+                   2, 4, 1, 2_356])
+        women = sum([891, 273_129, 62_775, 15_282, 294, 1_402, 678, 62, 31, 22, 12, 2, 2, 1, 9,
+                     2, 0, 1, 2_286])
+
+        def spaced(n):
+            return f"{n:,}".replace(",", " ")
+        text = (KAFFRINE_TABLE + f"Total {spaced(men)} 100 {spaced(women)} 100 "
+                f"{spaced(men + women)} 100\n")
+        got, kind, _ = sr.parse_language(text)
+        self.assertEqual(kind, "count")
+        self.assertEqual(got["Wolof"], 530_382)
+        self.assertEqual(got["Pulaar"], 130_667)
+        self.assertEqual(got["Sign language"], 1_836)
+        self.assertEqual(len(got), 19)
+
+    def test_row_figures(self):
+        self.assertEqual(sr.row_figures("1 091 529 100,0 1 089 510 100 2 181 039 100,0".split()),
+                         (2_181_039.0, "count"))
+        self.assertEqual(sr.row_figures("349 197 100 357 509 100 706 706 100".split()),
+                         (706_706.0, "count"))
+        self.assertEqual(sr.row_figures("73,7 76,3 75,0".split()), (75.0, "pct"))
+        self.assertIsNone(sr.row_figures("945 0,3 891 0,2 1 839 0,3".split()))
+
+
 if __name__ == "__main__":
     unittest.main()
