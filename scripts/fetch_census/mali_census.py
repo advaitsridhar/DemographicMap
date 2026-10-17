@@ -28,6 +28,13 @@ within the five-year group holding the middle person, from the annex's groups
 added together, after each part's interpolated median is checked against the
 report's within a year.
 
+**The regions the regions of 2023 cross** (Koulikoro, Sikasso, Ségou, Mopti
+and the District of Bamako) take the 2009 census's median age and sex ratio
+of the region as it stood then -- the map's -- from the US Census Bureau's
+tables of that census (HDX), where the Bureau gives its groups and sexes;
+the District of Bamako, drawn as one cercle, gives that cercle the same
+figures. Where it does not, they say why none is shown.
+
 **The cercles.** The 2022 census is published by region only. The US Census
 Bureau's tables of the 2009 census (HDX) list the 50 cercles the map draws and
 leave their ages blank (read, in case a later release fills them: their median
@@ -50,6 +57,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import difflib
 import hashlib
 import io
 import json
@@ -310,10 +318,13 @@ def check_medians(annex: dict[str, dict[str, Any]], medians: dict[str, int]) -> 
 
 
 def region_records(sexes: dict[str, tuple[int, int, int]], medians: dict[str, int],
-                   annex: dict[str, dict[str, Any]], admin1: list[dict[str, Any]]
+                   annex: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
+                   region_facts: dict[str, dict[str, Any]] | None = None
                    ) -> tuple[list[dict[str, Any]], list[str]]:
     records, report = [], []
     src = {"name": SOURCE, "url": URL, "page": PAGE, "license": LICENCE, "year": YEAR}
+    src_2009 = {"name": SOURCE_2009, "url": uscb.dataset_url(DATASET), "year": YEAR_2009,
+                "license": "CC BY-IGO, published via HDX"}
     for shape in admin1:
         key = fold(shape["name"])
         if key in MADE_OF:
@@ -350,15 +361,16 @@ def region_records(sexes: dict[str, tuple[int, int, int]], medians: dict[str, in
             log(f"  {shape['name']}: {total:,} ({' + '.join(parts)}), "
                 f"{round(1000 * men / women)} men per 1,000 women, median {median}")
         elif key in CROSSED:
-            reason = (f"The 2022 census counts the regions of 2023, and their lines cross this "
-                      f"region's: {CROSSED[key]}. Its sex ratio and median age cannot be put "
-                      "together from the census's tables of the regions of 2023.")
+            facts = facts_2009(region_facts or {}, key)
             records.append(record(
                 f"MLI-RGPH5-region-{key}", shape["name"], level="admin1", parent="MLI",
                 country="MLI", match_by="shape_id", shape_id=shape["id"],
-                median_age=gap(NOT_AVAILABLE, reason), sex_ratio=gap(NOT_AVAILABLE, reason),
-                sources=[{**src, "field": "median_age/sex_ratio"}]))
-            report.append(f"{shape['name']}: not the ground of any regions of 2023")
+                **crossed_fields(key, facts),
+                sources=[{**(src_2009 if facts else src), "field": "median_age/sex_ratio"}]))
+            report.append(f"{shape['name']}: not the ground of any regions of 2023"
+                          + (f"; the 2009 census's median {facts['median']} and "
+                             f"{round(1000 * facts['men'] / facts['women'])} men per 1,000 "
+                             "women" if facts else "; no 2009 figures"))
         else:
             report.append(f"region polygon {shape['name']!r}: not placed")
     return records, report
@@ -380,11 +392,24 @@ def read_2009(book) -> dict[str, Any]:
             group_cols.append((80, None, i))
     group_cols.sort()
     cercles, regions, blank = [], {}, []
+    region_facts: dict[str, dict[str, Any]] = {}
     for row in rows[2:]:
         level = uscb.number(row[at["ADM_LEVEL"]])
         total = uscb.number(row[at["BTOTL"]])
         if level == 1 and total:
-            regions[str(row[at["ADM1_NAME"]]).strip()] = int(total)
+            region = str(row[at["ADM1_NAME"]]).strip()
+            regions[region] = int(total)
+            # The regions as they stood in 2009 -- the map's -- with their
+            # groups and sexes, where the Bureau gives them and they add up.
+            men, women = uscb.number(row[at["MTOTL"]]), uscb.number(row[at["FTOTL"]])
+            groups = [(lo, hi, uscb.number(row[i])) for lo, hi, i in group_cols]
+            unstated = (uscb.number(row[at["B_NS"]]) if "B_NS" in at else 0.0) or 0.0
+            if (men is not None and women is not None and women
+                    and all(g[2] is not None for g in groups)
+                    and abs(men + women - total) <= 1
+                    and abs(sum(g[2] for g in groups) + unstated - total) <= 1):
+                region_facts[region] = {"median": grouped_median(groups), "men": int(men),
+                                        "women": int(women), "total": int(total)}
         if level != 2:
             continue
         name = str(row[at["ADM2_NAME"]]).strip()
@@ -407,7 +432,42 @@ def read_2009(book) -> dict[str, Any]:
         made = sum(c["total"] for c in cercles if c["region"] == region)
         if cercles and made and made != total:
             raise SystemExit(f"mali_census: 2009 {region}'s cercles make {made:,}, not {total:,}")
-    return {"cercles": cercles, "regions": regions, "blank": blank}
+    return {"cercles": cercles, "regions": regions, "blank": blank,
+            "region_facts": region_facts}
+
+
+def facts_2009(region_facts: dict[str, dict[str, Any]], key: str) -> dict[str, Any] | None:
+    """The 2009 census's figures for the map's region (folded name)."""
+    for name, facts in region_facts.items():
+        if fold(name).replace("koulikoro", "koulikouro") == key:
+            return facts
+    return None
+
+
+def crossed_fields(key: str, facts: dict[str, Any] | None, one_cercle: bool = False
+                   ) -> dict[str, Any]:
+    """A crossed region's median age and sex ratio: the 2009 census's for the
+    region as drawn here where the Bureau gives them, or the reason none is
+    shown."""
+    unit = "district" if key == "bamako" else "region"
+    why = (f"The 2022 census counts the regions of 2023, and their lines cross this "
+           f"{unit}'s: {CROSSED[key]}.")
+    if facts is None:
+        reason = why + (" Its sex ratio and median age cannot be put together from the "
+                        "census's tables of the regions of 2023.")
+        return {"median_age": gap(NOT_AVAILABLE, reason), "sex_ratio": gap(NOT_AVAILABLE, reason)}
+    drawn = (f"the {unit} as drawn here, as it stood before 2023"
+             + (", drawn as one cercle" if one_cercle else ""))
+    return {
+        "median_age": measure(facts["median"], unit="years", year=YEAR_2009, source=SOURCE_2009),
+        "median_age_note": (f"The 2009 census's count of {drawn}, by five-year age group: the "
+                            "median is interpolated within the group holding the middle person. "
+                            + why),
+        "sex_ratio": measure(round(1000 * facts["men"] / facts["women"]),
+                             unit="males_per_1000_females", year=YEAR_2009, source=SOURCE_2009),
+        "sex_ratio_note": (f"The 2009 census's count of {drawn}: {facts['men']:,} men and "
+                           f"{facts['women']:,} women. " + why),
+    }
 
 
 def cercle_records(data: dict[str, Any], admin1: list[dict[str, Any]],
@@ -486,18 +546,60 @@ def copied(data: dict[str, Any]) -> bool:
     return bool(data["cercles"]) and same >= 0.8 * len(data["cercles"])
 
 
+def paired(data: dict[str, Any] | None, admin2: list[dict[str, Any]],
+           parents: dict[str, str]) -> dict[str, dict[str, Any]]:
+    """{the map's cercle id: the projection's row}: by region and name, and,
+    where a region has exactly one cercle left unmatched on each side, those
+    two -- the projection spells a cercle otherwise -- when the region has
+    that one cercle only or the two names are alike."""
+    rows = (data or {}).get("cercles", [])
+    by_key = {(fold(c["region"]), fold(c["name"])): c for c in rows}
+    out = {}
+    for shape in admin2:
+        c = by_key.get((parents.get(shape["parent"], ""), fold(shape["name"])))
+        if c is not None:
+            out[shape["id"]] = c
+    used = {id(c) for c in out.values()}
+    for region in {parents.get(s["parent"], "") for s in admin2}:
+        mine = [s for s in admin2 if parents.get(s["parent"], "") == region]
+        left = [s for s in mine if s["id"] not in out]
+        spare = [c for c in rows if fold(c["region"]) == region and id(c) not in used]
+        if len(left) == 1 and len(spare) == 1 and (
+                len(mine) == 1 or difflib.SequenceMatcher(
+                    None, fold(left[0]["name"]), fold(spare[0]["name"])).ratio() >= 0.5):
+            out[left[0]["id"]] = spare[0]
+    return out
+
+
 def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]],
-                       admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+                       admin2: list[dict[str, Any]],
+                       region_facts: dict[str, dict[str, Any]] | None = None
+                       ) -> tuple[list[dict[str, Any]], list[str]]:
     """Every cercle: the reason it has no median age, and the 2018 projection's
-    sex ratio where the projection gives the cercle its own."""
+    sex ratio where the projection gives the cercle its own. A crossed region
+    drawn as one cercle (the District of Bamako) gives that cercle the 2009
+    census's figures it has itself, the same ground."""
     parents = {s["id"]: fold(s["name"]).replace("koulikouro", "koulikoro") for s in admin1}
-    by_key = {(fold(c["region"]), fold(c["name"])): c for c in (data or {}).get("cercles", [])}
+    regions = {s["id"]: fold(s["name"]) for s in admin1}
+    rows = paired(data, admin2, parents)
     records, report = [], []
     src = {"name": SOURCE_2018, "url": uscb.dataset_url(DATASET), "year": 2018,
            "license": "CC BY-IGO, published via HDX"}
+    src_2009 = {"name": SOURCE_2009, "url": uscb.dataset_url(DATASET), "year": YEAR_2009,
+                "license": "CC BY-IGO, published via HDX"}
     for shape in admin2:
         key = (parents.get(shape["parent"], ""), fold(shape["name"]))
-        c = by_key.get(key)
+        region = regions.get(shape["parent"], "")
+        alone = sum(1 for s in admin2 if s["parent"] == shape["parent"]) == 1
+        facts = facts_2009(region_facts or {}, region) if alone and region in CROSSED else None
+        if facts is not None:
+            records.append(record(f"MLI-cercle-{key[0]}-{key[1]}", shape["name"], level="admin2",
+                                  parent="MLI", country="MLI", match_by="shape_id",
+                                  shape_id=shape["id"],
+                                  **crossed_fields(region, facts, one_cercle=True),
+                                  sources=[{**src_2009, "field": "median_age/sex_ratio"}]))
+            continue
+        c = rows.get(shape["id"])
         fields: dict[str, Any] = {"median_age": gap(NOT_AVAILABLE, NO_CERCLE_AGES)}
         if c is not None:
             fields.update(
@@ -538,14 +640,16 @@ def main() -> int:
             f"interpolated {grouped_median(annex[region]['groups'])}")
     admin1 = json.loads((SITE / "admin1" / "MLI.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "MLI.units.json").read_text())
-    records, report = region_records(sexes, medians, annex, admin1)
 
     url = uscb.workbook_url(DATASET)
     book = openpyxl.load_workbook(io.BytesIO(http_get(url, binary=True, cache=False)),
                                   read_only=True, data_only=True)
     data = read_2009(book)
     log(f"  2009: {len(data['cercles'])} cercles with figures, {len(data['blank'])} blank, "
-        f"{len(data['regions'])} regions")
+        f"{len(data['regions'])} regions, {len(data['region_facts'])} with ages and sexes")
+    for name, f in sorted(data["region_facts"].items()):
+        log(f"    2009 {name}: {f['total']:,} ({f['men']:,} men), median {f['median']}")
+    records, report = region_records(sexes, medians, annex, admin1, data["region_facts"])
     if data["cercles"]:
         more, why = cercle_records(data, admin1, admin2)
     else:
@@ -555,7 +659,20 @@ def main() -> int:
             projection = None
         else:
             log(f"  2018 projection: {len(projection['cercles'])} cercles by sex")
-        more, why = projection_records(projection, admin1, admin2)
+            parents = {s["id"]: fold(s["name"]).replace("koulikouro", "koulikoro")
+                       for s in admin1}
+            pairs = paired(projection, admin2, parents)
+            for shape in admin2:
+                c = pairs.get(shape["id"])
+                if c is not None and fold(c["name"]) != fold(shape["name"]):
+                    log(f"  cercle polygon {shape['name']!r}: the projection's {c['name']!r}, "
+                        f"the one cercle of {c['region']} left on each side")
+            taken = {id(c) for c in pairs.values()}
+            spare = [f"{c['region']}/{c['name']}" for c in projection["cercles"]
+                     if id(c) not in taken]
+            if spare:
+                log(f"  the projection's cercles not placed: {spare}")
+        more, why = projection_records(projection, admin1, admin2, data["region_facts"])
     records += more
     report += why
     for line in report:

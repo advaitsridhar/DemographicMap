@@ -86,5 +86,52 @@ class MaliCensus(unittest.TestCase):
         self.assertEqual(len([line for line in report if "no 2009 row" in line]), 48)
 
 
+# Constructed figures for the 2009 regions (the map's), as read_2009 keeps them.
+FACTS_2009 = {"BAMAKO": {"median": 19.4, "men": 905_000, "women": 905_366, "total": 1_810_366},
+              "KOULIKORO": {"median": 15.6, "men": 1_200_000, "women": 1_218_305,
+                            "total": 2_418_305}}
+
+
+class MaliRegionsOfBefore(unittest.TestCase):
+    def test_crossed_regions_take_the_2009_census(self):
+        sexes, medians, annex = mc.parse_sexes(TEXT), mc.parse_medians(TEXT), mc.parse_annex(TEXT)
+        records, report = mc.region_records(sexes, medians, annex, ADMIN1, FACTS_2009)
+        by = {r["name"]: r for r in records}
+        koulikoro = by["Koulikouro"]
+        self.assertEqual(koulikoro["median_age"]["value"], 15.6)
+        self.assertEqual(koulikoro["median_age"]["year"], 2009)
+        self.assertEqual(koulikoro["sex_ratio"]["value"], round(1000 * 1_200_000 / 1_218_305))
+        self.assertIn("as it stood before 2023", koulikoro["sex_ratio_note"])
+        self.assertIn("Ouélessébougou", koulikoro["median_age_note"])
+        self.assertIn("2009", koulikoro["sources"][0]["name"])
+        self.assertIn("district as drawn here", by["Bamako"]["median_age_note"])
+        # No count: the 2022 census's crosses the ground and 2009's is older
+        # than the figures the map has.
+        self.assertNotIn("value", koulikoro["population"])
+        # A crossed region the Bureau gives no figures for still says why.
+        self.assertIn("cannot be put together", by["Mopti"]["median_age"]["note"])
+
+    def test_bamako_drawn_as_one_cercle(self):
+        data = {"regions": {}, "cercles": []}
+        records, _ = mc.projection_records(data, ADMIN1, ADMIN2, FACTS_2009)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(by["Bamako"]["median_age"]["value"], 19.4)
+        self.assertIn("drawn as one cercle", by["Bamako"]["sex_ratio_note"])
+        # Kati, in a crossed region of several cercles, takes nothing from it.
+        self.assertNotIn("value", by["Kati"].get("sex_ratio", {}))
+
+    def test_a_cercle_spelt_otherwise_is_paired_within_its_region(self):
+        gao = next(s for s in ADMIN1 if s["name"] == "Gao")
+        cercles = [s for s in ADMIN2 if s["parent"] == gao["id"]]
+        data = {"regions": {}, "cercles": [
+            {"name": "ANSONGHO" if c["name"] == "Ansongo" else c["name"].upper(),
+             "region": "GAO", "men": 100.0, "women": 100.0} for c in cercles]}
+        parents = {s["id"]: mc.fold(s["name"]).replace("koulikouro", "koulikoro") for s in ADMIN1}
+        pairs = mc.paired(data, ADMIN2, parents)
+        ansongo = next(c for c in cercles if c["name"] == "Ansongo")
+        self.assertEqual(pairs[ansongo["id"]]["name"], "ANSONGHO")
+        self.assertEqual(len([c for c in cercles if c["id"] in pairs]), len(cercles))
+
+
 if __name__ == "__main__":
     unittest.main()
