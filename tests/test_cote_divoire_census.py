@@ -125,5 +125,30 @@ class CoteDivoireRun3(unittest.TestCase):
         self.assertEqual(cc.page_facts(text)["mean"], "23")
 
 
+class PageMemory(unittest.TestCase):
+    """A page the archive refuses keeps the figures an earlier run read from it."""
+
+    def test_a_reading_comes_back_as_it_was_read(self):
+        memory = {}
+        f = cc.page_facts(GBEKE)
+        cc.remember(memory, "region-gbeke-mono", f, "https://example.org/gbeke", "2026-10-17")
+        self.assertEqual(memory["region-gbeke-mono"]["read"], "2026-10-17")
+        back = cc.recalled(json_roundtrip(memory), "region-gbeke-mono")
+        self.assertEqual(back, {k: f[k] for k in ("men", "women", "total", "mean", "seat",
+                                                  "ivorian")})
+
+    def test_a_reading_whose_sexes_do_not_make_its_total_is_not_used(self):
+        memory = {"region-x-mono": {"men": 300_000, "women": 290_000, "total": 600_000,
+                                    "mean": "22", "seat": None, "ivorian": None}}
+        self.assertIsNone(cc.recalled(memory, "region-x-mono"))
+        self.assertIsNone(cc.recalled(memory, "region-y-mono"))
+        self.assertIsNone(cc.recalled({"region-x-mono": "garbled"}, "region-x-mono"))
+
+
+def json_roundtrip(value):
+    import json
+    return json.loads(json.dumps(value))
+
+
 if __name__ == "__main__":
     unittest.main()

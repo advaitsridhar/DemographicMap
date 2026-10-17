@@ -27,6 +27,11 @@ total, for 2021 and for 1998; the national column is the census's 29,389,150;
 the regions make the country within the table's rounding; every region and
 district on the map is found once.
 
+The archive refuses connections in bursts: a page not reached is tried again
+in two later passes, and a page still refused keeps the figures an earlier run
+read from it (kept, with the day they were read, in
+cote_divoire_census_pages.json beside the output).
+
 Usage:
     python -m scripts.fetch_census.cote_divoire_census
 """
@@ -55,6 +60,10 @@ LICENCE = "ANStat publication (reuse with attribution)"
 YEAR = 2021
 NATIONAL = (15_344_990, 14_044_160, 29_389_150)
 OUT = "cote_divoire_census.json"
+# Each page's reading, kept from run to run: the archive refuses connections in
+# bursts, and a page it refuses this time keeps the figures read from it before.
+MEMORY = "cote_divoire_census_pages.json"
+PASSES, REST = 3, 90
 SITE = PROCESSED.parent.parent / "site" / "data"
 
 # The census site's page for each region, and the map's name for it (folded).
@@ -294,42 +303,101 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
     return records, report
 
 
+def remember(memory: dict[str, Any], slug: str, f: dict[str, Any], url: str,
+             day: str) -> None:
+    """Keep a page's reading, so that a later run the archive refuses can use it."""
+    memory[slug] = {"men": f["men"], "women": f["women"], "total": f["total"],
+                    "mean": f["mean"], "seat": f["seat"],
+                    "ivorian": list(f["ivorian"]) if f["ivorian"] else None,
+                    "url": url, "read": day}
+
+
+def recalled(memory: dict[str, Any], slug: str) -> dict[str, Any] | None:
+    """An earlier run's reading of a page, checked as a fresh one would be."""
+    kept = memory.get(slug)
+    if not isinstance(kept, dict):
+        return None
+    try:
+        men, women, total = int(kept["men"]), int(kept["women"]), int(kept["total"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    if abs(men + women - total) > 1 or total < 50_000:
+        return None
+    ivorian = kept.get("ivorian")
+    return {"men": men, "women": women, "total": total, "mean": kept.get("mean"),
+            "seat": kept.get("seat"),
+            "ivorian": (float(ivorian[0]), float(ivorian[1])) if ivorian else None}
+
+
+def fetch(slug: str) -> tuple[str | None, str | None]:
+    """The page as the archive's raw capture, or its framed one, and the address used."""
+    for url in (ARCHIVE_RAW + slug + "/", ARCHIVE + slug + "/"):
+        try:
+            body = http_get(url, cache=False, timeout=90, retries=3)
+            return (body if isinstance(body, str) else body.decode("utf-8", "replace")), url
+        except Exception as err:  # noqa: BLE001 -- the other address, then the next page
+            log(f"  {slug}: {url}: {type(err).__name__}: {err}")
+            time.sleep(4 * PAUSE)
+    return None, None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.parse_args()
+    try:
+        memory = json.loads((PROCESSED / MEMORY).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        memory = {}
+    if not isinstance(memory, dict):
+        memory = {}
+    day = time.strftime("%Y-%m-%d", time.gmtime())
     facts = {}
-    for n, slug in enumerate(PAGES):
-        if n:
-            time.sleep(PAUSE)              # the Internet Archive refuses a hurried client
-        body = None
-        for url in (ARCHIVE_RAW + slug + "/", ARCHIVE + slug + "/"):
+    pending = list(PAGES)
+    for attempt in range(PASSES):
+        if attempt:
+            log(f"  pass {attempt + 1}: {len(pending)} pages not reached; trying them again "
+                f"after {REST} s")
+            time.sleep(REST)
+        missed = []
+        for n, slug in enumerate(pending):
+            if n:
+                time.sleep(PAUSE)          # the Internet Archive refuses a hurried client
+            body, url = fetch(slug)
+            if body is None:
+                missed.append(slug)
+                continue
+            text = strip(body)
             try:
-                body = http_get(url, cache=False, timeout=90, retries=3)
-                break
-            except Exception as err:  # noqa: BLE001 -- the other address, then the next page
-                log(f"  {slug}: {url}: {type(err).__name__}: {err}")
-                time.sleep(4 * PAUSE)
-        if body is None:
+                f = page_facts(text)
+            except SystemExit as err:
+                at = text.find("Tableau Synoptique")
+                log(f"  {slug}: {err} :: {text[at:at + 700] if at >= 0 else text[:300]}")
+                continue
+            log(f"  {slug}: {f['total']:,} ({f['men']:,} men), seat {f['seat']}, mean age "
+                f"{f['mean']}, Ivorians {f['ivorian']}")
+            if not f["seat"]:
+                log(f"    its heading: {around(text, r'(?i)chef[ -]lieu|sa capitale')}")
+            if not f["ivorian"]:
+                log(f"    its nationality: {around(text, r'(?i)nationalit|ivoiriens')}")
+            if not f["mean"]:
+                log(f"    its ages: {around(text, r'(?i)ge moyen')}")
+            facts[slug] = f
+            remember(memory, slug, f, url or "", day)
+        pending = missed
+        if not pending:
+            break
+    for slug in pending:
+        f = recalled(memory, slug)
+        if f is None:
             log(f"  {slug}: not reached; left out")
             continue
-        text = strip(body if isinstance(body, str) else body.decode("utf-8", "replace"))
-        try:
-            f = page_facts(text)
-        except SystemExit as err:
-            at = text.find("Tableau Synoptique")
-            log(f"  {slug}: {err} :: {text[at:at + 700] if at >= 0 else text[:300]}")
-            continue
-        log(f"  {slug}: {f['total']:,} ({f['men']:,} men), seat {f['seat']}, mean age "
-            f"{f['mean']}, Ivorians {f['ivorian']}")
-        if not f["seat"]:
-            log(f"    its heading: {around(text, r'(?i)chef[ -]lieu|sa capitale')}")
-        if not f["ivorian"]:
-            log(f"    its nationality: {around(text, r'(?i)nationalit|ivoiriens')}")
-        if not f["mean"]:
-            log(f"    its ages: {around(text, r'(?i)ge moyen')}")
+        log(f"  {slug}: not reached; its reading of {memory[slug].get('read')} kept: "
+            f"{f['total']:,} ({f['men']:,} men), seat {f['seat']}, mean age {f['mean']}, "
+            f"Ivorians {f['ivorian']}")
         facts[slug] = f
+    write_json(PROCESSED / MEMORY, {slug: memory[slug] for slug in PAGES if slug in memory})
     made = sum(f["total"] for f in facts.values())
     if len(facts) == len(PAGES) and abs(made - NATIONAL[2]) > 50:
         raise SystemExit(f"cote_divoire_census: the regions make {made:,}, not {NATIONAL[2]:,}")
