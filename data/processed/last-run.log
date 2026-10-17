@@ -1,2 +1,21 @@
-usage: niger_census.py [-h]
-niger_census.py: error: unrecognized arguments: --help-free-run=2
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/384b93cf-ede0-4e05-9f36-a8e8e09b21a7/download/kenya-population-by-sex-and-county.csv: 1,933 characters, sha256 fbd40719108ebf30b7dc821312e20fc0c75ba03cdc4003bf0b6328c3c6d8d0cf
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/b7edfdb4-2a07-4332-8796-2f00968aff0e/download/distribution-of-population-by-age-sex-county-and-sub-county-kenya-2019-census-volume-iii.csv: 1,662,176 characters, sha256 5a0261bd87543a08225dfa8bccb8ed67f43f4e4dedb8b5fcc61a53884f2291ea
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 356, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 338, in main
+    vol3 = read_vol3(fetch(VOL3))
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 136, in read_vol3
+    male, female, total = (number(c) for c in row[3:6])
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 136, in <genexpr>
+    male, female, total = (number(c) for c in row[3:6])
+                           ^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 93, in number
+    return int(float(text)) if text not in ("", "-", "_") else 0
+               ^^^^^^^^^^^
+ValueError: could not convert string to float: '15-Aug'
