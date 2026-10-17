@@ -1,23 +1,52 @@
-
-=== HDX dataset: cod-ps-caf ===
-    title: Central African Republic - Subnational Population Statistics
-    org:   ocha-car
-    licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
-    notes: Population projection based on the general census of 2003. Latest projection for 2025.  See caveats. Data available for:  2025, 2022, 2021, 2015
-    8 resource(s):
-      XLSX   Projection population-2025.xlsx
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/d2ecb660-f273-433b-9020-e67509cf98db/download/ocha-car-projection-population-2025-icasees.xlsx
-      XLSX   CAF_AdminBoundaries_TabularData.xlsx
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/21266160-de65-4572-be8c-4ae26358b365/download/caf_adminboundaries_tabulardata.xlsx
-      XLSX   car_population_2022
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/9d55fa81-e8e1-4853-b59d-a09f6cb853fe/download/population-hno-2023-1.xlsx
-      XLSX   icasees_cartocensitaire2021_formatocha_public_V2.xlsx
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx
-      XLS    CAR_DATA_160214_POPULATION.xls
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fe8001fd-674b-4347-90b4-63e57824d7c5/download/car_data_160214_population.xls
-      CSV    caf_admpop_adm1_2015_v2.csv
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/58403047-f30e-4719-94b0-8d6f7e0f6942/download/caf_admpop_adm1_2015_v2.csv
-      CSV    caf_admpop_adm2_2015_v2.csv
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/2b74b781-c889-4cb9-9624-418577809c1e/download/caf_admpop_adm2_2015_v2.csv
-      CSV    caf_admpop_adm3_2015_v2.csv
-             https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/17c5c468-fb12-4114-8286-3feb2069ab0a/download/caf_admpop_adm3_2015_v2.csv
+== text https://inseed.td/index.php/component/jdownloads/send/7-documents-et-publications-demographique/63-rapport-resultats2 1500
+  HTTP 200 text/html 3,239 bytes
+  INSEED - Institut National de la Statistique et des Études Économiques et Démographiques
+== cdxf inseed.td/ (?i)(rgph|resultat|recensement|structure|projection|jdownloads) 90
+  HTTP 500: 0 captures
+== cdxf inseed-tchad.org/ (?i)(rgph|resultat|recensement|pdf) 60
+  HTTP 500: 0 captures
+== links https://anad.inseed.td/index.php/catalog/26/related-materials . 80
+  HTTP 200 text/html; charset=UTF-8 97,562 bytes
+  https://anad.inseed.td/index.php/auth/login  [Connexion]
+  https://anad.inseed.td/index.php  []
+  https://anad.inseed.td/index.php/catalog/26/related-materials#index.html  [Microdata Library]
+  https://anad.inseed.td/index.php  [Archive Nationale de Données du TCHAD]
+  https://anad.inseed.td/index.php/home  [Accueil]
+  https://anad.inseed.td/index.php/catalog  [Catalogue de données]
+  https://anad.inseed.td/index.php/citations  [Citations]
+  https://anad.inseed.td/index.php/politique-dacc  [Politique d'accès]
+  https://anad.inseed.td/index.php/nos-partenaires  [Nos Partenaires]
+  https://anad.inseed.td/index.php/contact  [Contact]
+  https://anad.inseed.td/index.php/  [Accueil]
+  https://anad.inseed.td/index.php/catalog  [Catalogue de données central]
+  https://anad.inseed.td/index.php/catalog/26  [TCD-INSEED-RGPH2-2009-V1.0]
+  https://anad.inseed.td/index.php/catalog/central  []
+  https://anad.inseed.td/index.php/catalog/SEC_DEM  [Enquêtes Démographiques]
+  https://anad.inseed.td/index.php/catalog/SEC_EDU  [Education et Formations professionnelles]
+  https://anad.inseed.td/index.php/catalog/26/pdf-documentation  [Documentation au format PDF]
+  https://anad.inseed.td/index.php/metadata/export/26/ddi  [DDI/XML]
+  https://anad.inseed.td/index.php/metadata/export/26/json  [JSON]
+  https://anad.inseed.td/index.php/catalog/26/study-description  [Description de l'étude]
+  https://anad.inseed.td/index.php/catalog/26/related-materials  [Informations connexes]
+  https://anad.inseed.td/index.php/catalog/26/data-dictionary  [Dictionnaire de données]
+  https://anad.inseed.td/index.php/catalog/26/get-microdata  [Télécharger les microdonnées]
+  https://anad.inseed.td/index.php/catalog/26/download/160  [Télécharger [PDF, 195.19 KB]]
+  https://anad.inseed.td/index.php/catalog/26/download/160  [https://anad.inseed.td/index.php/catalog/26/download/160]
+  https://anad.inseed.td/index.php/catalog/26/download/156  [Télécharger [PDF, 6.61 MB]]
+  https://anad.inseed.td/index.php/catalog/26/download/156  [https://anad.inseed.td/index.php/catalog/26/download/156]
+  https://anad.inseed.td/index.php/catalog/26/download/157  [Télécharger [PDF, 2.95 MB]]
+  https://anad.inseed.td/index.php/catalog/26/download/157  [https://anad.inseed.td/index.php/catalog/26/download/157]
+  https://anad.inseed.td/index.php/catalog/26/download/158  [Télécharger [PDF, 83.6 KB]]
+  https://anad.inseed.td/index.php/catalog/26/download/158  [https://anad.inseed.td/index.php/catalog/26/download/158]
+  https://anad.inseed.td/index.php/catalog/26/download/155  [Télécharger [PDF, 29.22 MB]]
+  https://anad.inseed.td/index.php/catalog/26/download/155  [https://anad.inseed.td/index.php/catalog/26/download/155]
+  https://anad.inseed.td/index.php/catalog/26/download/154  [Télécharger [PDF, 25.2 MB]]
+  https://anad.inseed.td/index.php/catalog/26/download/154  [https://anad.inseed.td/index.php/catalog/26/download/154]
+  https://anad.inseed.td/index.php/catalog/26/download/153  [Télécharger [PDF, 51.27 MB]]
+  https://anad.inseed.td/index.php/catalog/26/download/153  [https://anad.inseed.td/index.php/catalog/26/download/153]
+  https://anad.inseed.td/index.php/catalog/26/download/152  [Télécharger [PDF, 50.84 MB]]
+  https://anad.inseed.td/index.php/catalog/26/download/152  [https://anad.inseed.td/index.php/catalog/26/download/152]
+  https://anad.inseed.td/index.php/catalog/26/download/159  [Télécharger [PDF, 495.47 KB]]
+  https://anad.inseed.td/index.php/catalog/26/download/159  [https://anad.inseed.td/index.php/catalog/26/download/159]
+  https://anad.inseed.td/index.php  [Archive Nationale de Données du TCHAD]
+  (42 links shown)
