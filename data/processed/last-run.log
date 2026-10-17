@@ -1,17 +1,175 @@
-== chart 807: 10000 rows; columns ['Zone', 'Milieu', 'Sexe', "Titre de l'indicateur", "Valeurs de l'indicateur"]
-  query: SELECT COALESCE(libelle_fr, '') || COALESCE(' -> ' || libelle_prov, '') || COALESCE(' -> ' || libelle_commune, '') AS "Zone", "Milieu" AS "Milieu", "Sexe" AS "Sexe", "Key(Nom indicateur)" AS "Titre de l'indicateur", SUM("Value(valeur indicateur)") AS "Valeurs de l'indicateur" FROM public.lot1_rgph WHERE "Key(Nom indicateur)" IN ('Population municipale') GROUP BY COALESCE(libelle_fr, '') || COALESCE(' -> ' || libelle_prov, '') || COALESCE(' -> ' || libelle_commune, ''), "Milieu", "Sexe", "Key(Nom indicateur)" ORDER BY "Valeurs de l'indicateur" DESC LIMIT 10000;
-  3 rows match 'mahbass':
-    {"Zone": "Guelmim-Oued Noun -> Assa-Zag -> Al Mahbass", "Milieu": "Urbain", "Sexe": "Féminin", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
-    {"Zone": "Guelmim-Oued Noun -> Assa-Zag -> Al Mahbass", "Milieu": "Urbain", "Sexe": "Masculin", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
-    {"Zone": "Guelmim-Oued Noun -> Assa-Zag -> Al Mahbass", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
-  1 indicators:
-     10000  'Population municipale'  values 5619.0..36490591.0
-  depth 0: 115 rows, 13 zones
-    {"Zone": "Royaume du Maroc", "Milieu": "Ensemble", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": 36490591.0}
-    {"Zone": "Royaume du Maroc", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": 22921202.0}
-  depth 1: 645 rows, 75 zones
-    {"Zone": "Rabat-Salé-Kénitra -> Rabat", "Milieu": "Rural", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
-    {"Zone": "Casablanca-Settat -> Casablanca", "Milieu": "Rural", "Sexe": "Féminin", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
-  depth 2: 9240 rows, 1531 zones
-    {"Zone": "Marrakech-Safi -> Essaouira -> Mejji", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
-    {"Zone": "Fès-Meknès -> Boulemane -> El Mers", "Milieu": "Urbain", "Sexe": "Ensemble", "Titre de l'indicateur": "Population municipale", "Valeurs de l'indicateur": null}
+probe_pdf: https://www.hcp.ma/file/245583/
+  6,809,359 bytes
+Ignoring wrong pointing object 143 0 (offset 0)
+Ignoring wrong pointing object 260 0 (offset 0)
+Ignoring wrong pointing object 781 0 (offset 0)
+Ignoring wrong pointing object 1162 0 (offset 0)
+Ignoring wrong pointing object 1194 0 (offset 0)
+  46 pages
+probe_pdf: 46 pages, 2 mention ['médian', 'médiane', 'quinquennal']
+=== front matter ===
+LES PROVINCES
+DU SUD DU ROYAUME
+DONNÉES DÉMOGRAPHIQUES
+Septembre 2025 
+
+« Aujourd’hui, nous tendons des passerelles entre le passé et le présent en
+s’attachant avec une égale opiniâtreté à défendre notre intégrité territoriale.
+Nous nous y engageons avec la même clarté d’esprit, la même ambition, mus par
+le même sens de l’engagement responsable et du travail sérieux, tant sur le plan
+onusien qu’au niveau interne. 
+… En outre, nous ne ménageons aucun effort pour assurer le développement de
+nos Provinces du Sud, dans le cadre du nouveau modèle de développement. Car
+nous voulons que le Sahara marocain renoue avec sa vocation séculaire : être le
+trait d’union précurseur entre le Maroc et sa profondeur africaine, géographique
+et historique. 
+En parallèle, la mise en œuvre opérationnelle de la régionalisation avancée
+contribue à faire émerger une véritable élite politique, qui assure une
+représentation démocratique effective des habitants du Sahara et qui, dans un
+climat de liberté et de stabilité, les met en capacité d’exercer leur droit à une
+gestion autonome de leurs affaires locales et à un développement intégré de leur
+région. » 
+Extrait du Discours Royal à l'occasion de la 43ème anniversaire de la Marche
+Verte 06/11/2018
+2
+SOMMAIRE
+I
+II
+Population des provinces du Sud : état des lieux, profils et
+évolution 
+Dynamique de la population des provinces du Sud 
+Introduction 
+1.1 
+2.1 
+1.2
+2.2
+1.3
+2.3
+2.4
+2.5
+Les ménages : taille de plus en plus réduite  
+Nuptialité dans les régions du Sud : dynamiques contrastées et enjeux
+démographiques majeurs
+Population : état des lieux 
+Dépendance démographique
+Profils démographiques
+Régions du Sud : la fécondité en déclin, un marqueur de transformation sociale  
+Population à besoins spécifiques  
+Mortalité et espérance de vie à la naissance
+5
+28
+4
+31
+29
+12
+7
+34
+18
+39
+42
+3
+
+=== pages mentioning ['médian', 'médiane', 'quinquennal'] (first 6) ===
+
+--- page 21 ----------------------------------------------------
+Entre 2014 et 2024, la structure d’âge agrégée des trois
+provinces du Sud s’est sensiblement modifiée. La part des
+personnes de moins de 15 ans a reculé de 28,5 % à 27,4 % entre
+2014 et 2024 contre 28,7% à 26,5% à l’échelle du Royaume,
+tandis que celle des personnes âgées de 60 ans et plus a
+progressé de 7,1 % en 2014 à 10,2 % en 2024 (de 9,4% à 13,8% à
+l’échelle nationale). En termes d’effectifs, le nombre de
+personnes âgées de moins de 15 ans demeure stable autour de
+280 000 personnes soit 3% de l’ensemble des enfants de moins
+de 15 ans au Maroc, alors que le nombre des personnes âgées de
+60 ans et plus dépasse désormais le seuil des 100 000 personnes
+(près de 104 000) soit 2% de cette catégorie de population au
+Maroc.
+Dans la région de Guelmim-Oued Noun, la proportion des
+personnes de moins de 15 ans a reculé de 28,0 % à 26,7 % entre
+2014 et 2024, tandis que celle des personnes âgées de 60 ans et
+plus a fortement progressé de 9,7% à 14,1 %. L’âge médian y
+gagne plus de quatre points, passant de 27,0 ans à 31,3 ans, ce
+qui place cette région en tête des trois régions du Sud en ce qui
+concerne le vieillissement de la population.
+L’âge médian est passé d’environ 26,6 ans en 2014 à 29,5 ans en
+2024. Cette évolution s’inscrit dans un contexte de forte
+concentration urbaine dans le sens où 85% des habitants des
+régions du Sud résident en milieu urbain, où les personnes âgées
+de moins de 15 ans représentent 28,2 % de la population totale
+contre 9,0 % pour les personnes âgées de 60 ans et plus. En
+milieu rural, abritant 153 000 habitants, ces proportions sont
+respectivement de 22,4 % et de 17,0 %.
+Si la part des enfants reste légèrement plus élevée en zones
+urbaines (27,3 %) qu’en zones rurales (25,1%), la situation
+s’inverse pour les personnes âgées, dans le sens où 19,3% des
+ruraux ont 60 ans ou plus contre 11,9 % des citadins, indiquant
+une concentration des personnes âgées dans les zones
+intérieures de la région caractérisées par une faible densité de
+population.
+Répartition de la population par groupes d’âge
+Figure 11 : Évolution de la structure de la population des Provinces du Sud selon les
+groupes d’âge entre 2014 et 2024
+ Source : HCP, RGPH 2014 et 2024
+0-14 ans
+28.5%
+7.1%
+60 ans et plus
+64.4%
+15-59 ans
+0-14 ans
+27.4%
+10.2%
+60 ans et plus
+62.4%
+15-59 ans
+2014
+2024
+20
+
+--- page 22 ----------------------------------------------------
+Selon les données contenues dans le graphique ci-dessus, la
+région de Laâyoune - Sakia El Hamra présente un profil plus
+jeune. En effet, au moment où la part des moins de quinze ans
+dans cette région a reculé, entre 2014 et 2024, de 29,2 % à
+28,7 %, celle des personnes âgées de 60 ans et plus a augmenté
+de 5,3 % à 8,6 %. L’âge médian passe, quant à lui, de 26,1 à 28,5
+ans, reflétant à la fois un léger ralentissement des naissances et
+des gains de survie aux âges avancés.
+La dynamique est différente dans la région de Dakhla - Oued
+Ed-Dahab. La part des enfants de moins de quinze ans a reculé
+entre 2014 et 2024 passant de 28,7 % à 26,2 %. Celle des
+personnes âgées de 60 ans et plus s’est élevée de 3,1 % à 4,8%,
+confirmant le maintien d’une large fenêtre démographique.
+L’âge médian n’a progressé que de 2 ans et demeure le plus bas
+au niveau des trois régions du Sud (26,5 ans en 2014 et 28,4 ans
+en 2024). L’urbanisation quasi généralisée façonne une
+structure très jeune dans les villes avec une proportion de 28,5 %
+d’enfants de moins de 15 ans et de 5,2 % de personnes âgées de
+60 ans et plus dans l’agglomération de Dakhla, contre
+seulement 5,1 % d’enfants de moins de 15 ans et 3,5 % de
+seniors (personnes âgées de 60 ans et plus) dans un milieu rural
+résiduel prédominé par les adultes âgés de 20 à 34 ans attirés
+par les activités agro-pastorales et halieutiques .
+Malgré une évolution tendant vers un profil démographique
+plus mature, les rythmes de transformation demeurent
+différenciés d’une région à l’autre, reflétant des dynamiques de
+fécondité et des mouvements migratoires propres à chacune des
+trois régions du Sud du Royaume.
+Figure 12 : Évolution de la structure de la population des provinces du Sud selon les
+groupes d’âge entre 2014 et 2024
+ Source : HCP, RGPH 2014 et 2024
+Guelmim-Oued Noun
+Laâyoune - Sakia El Hamra
+Dakhla - Oued Ed-dahab
+La décennie 2014-2024 a profondément modifié la répartition
+du statut matrimonial dans les trois régions du Sud. En effet,
+parmi la population âgée de 15 ans et plus, la part des
+célibataires a reculé de 55,5 % à 35,2 % (moins de 20 points),
+alors que celle des personnes mariées s’est élevée de 39,5 % à
+56,9 % (plus 17 points).
+Les taux de divorces, qui restent relativement dans l’ensemble
+de bas niveaux, doublent pratiquement, passant de 2,0 % à 3,9
+%. La proportion des veufs passe, quant à elle, de 3,0 % à 4,0 %.
+Cette redistribution traduit à la fois l’accès massif des cohortes
+nées dans les années 1990-2000 à la nupti
