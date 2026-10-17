@@ -1,65 +1,340 @@
-  read https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf: 15,016,674 bytes, sha256 6f41eee70eefd764efaea876e0b13546666a69c5b91c1f50e5d9b38c3f78d1b9
-  31 regions and 195 councils, making 61,741,120
-  read https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf: 32,333,406 bytes, sha256 849a2d3627c90572d497b3f9ea54698597799c1d1ab36f6eb50788731c1d637c
-  age tables: 30 regions and 190 councils, each one's single years and sexes making its total
-  age table left out: Kongwa District Council: 40 single years read, total None
-  age table left out: Bariadi District Council: single years make 1,077,615 and sexes 383,385, against 383,385
-  no age table for Dodoma Region
-  no age table for Kondoa District Council
-  no age table for Kondoa Town Council
-  no age table for Mpwapwa District Council
-  no age table for Kongwa District Council
-  no age table for Lindi District Council
-  no age table for Mtwara Municipal Council
-  no age table for Busokelo District Council
-  no age table for Missenyi District Council
-  no age table for Wanging'ombe District Council
-  no age table for Bariadi District Council
-  no age table for Nyang'hwale District Council
-  no age table for Kaskazini A District Council
-  no age table for Kaskazini B Town Council
-  no age table for Kati Town Council
-  no age table for Wete Town Council
-  no age table for Chake Chake Town Council
-  Kahama: left out -- Kahama's councils were redrawn as Kahama, Ushetu and Msalala in 2012-2018
-  Kahama Township Authority: left out -- see Kahama
-  Mlele: left out -- see Mpanda
-  Mpanda: left out -- Katavi's districts were split into Mpanda, Nsimbo, Tanganyika and Mpimbwe
-  Mpanda Urban: left out -- see Mpanda
-  against the region's ratio: Iramba 0.68, Buhigwe 0.71, Lindi 0.73, Kigoma Urban 0.76, Kaskazini B 0.80, Momba 0.82, Mafia 0.83, Sumbawanga 0.85, Lushoto 0.85, Chato 0.85, Karagwe 0.86, Bagamoyo 0.86, Bukoba Urban 0.86, Gairo 0.86, Kondoa 0.87, Ukerewe 0.87, Micheweni 0.87, Ileje 0.87, Babati 0.88, Urambo 0.88, Mufindi 0.89, Butiam 0.89, Biharamulo 0.89, Nyang'hwale 0.89, Karatu 0.89, Songea Urban 0.90, Uvinza 0.90, Meatu 0.90, Mbulu 0.90, Mbozi 0.90, Iringa Urban 0.91, Kibaha Urban 0.91, Mpwapwa 0.91, Kwimba 0.91, Kibaha 0.91, Mjini 0.91, Longido 0.91, Uyui 0.92, Newala 0.92, Ludewa 0.92, Bunda 0.92, Serengeti 0.92, Musoma Urban 0.93, Korogwe 0.93, Same 0.93, Monduli 0.93, Wanging'ombe 0.94, Nyasa 0.94, Kishapu 0.94, Singida 0.95, Mbinga 0.95, Kongwa 0.95, Kiteto 0.96, Sengerema 0.96, Kyela 0.96, Sumbawanga Urban 0.96, Chamwino 0.96, Chemba 0.96, Kisarawe 0.96, Chake Chake 0.97, Maswa 0.97, Bahi 0.97, Hai 0.97, Mvomero 0.97, Kaliua 0.97, Temeke 0.97, Kusini 0.97, Kigoma 0.98, Geita 0.98, Siha 0.98, Morogoro Urban 0.98, Nachingwea 0.98, Handeni Mji 0.98, Kilosa 0.99, Mtwara 0.99, Itilima 0.99, Meru 0.99, Mkinga 0.99, Rungwe 0.99, Kilolo 0.99, Handeni 0.99, Misungwi 0.99, Igunga 0.99, Muleba 1.00, Masasi 1.00, Rufiji 1.00, Kilombero 1.00, Kinondoni 1.00, Muheza 1.00, Rombo 1.01, Mbeya 1.01, Kati 1.01, Arusha 1.01, Mwanga 1.01, Masasi Township Authority 1.01, Tandahimba 1.02, Rorya 1.02, Makete 1.02, Hanang 1.02, Liwale 1.02, Busega 1.02, Ilala 1.03, Shinyanga Urban 1.03, Magharibi 1.03, Nzega 1.03, Korogwe Township Authority 1.03, Shinyanga 1.03, Kasulu Township Authority 1.04, Mbeya Urban 1.04, Mkoani 1.04, Moshi 1.04, Nkasi 1.04, Nanyumbu 1.04, Nyamagana 1.04, Moshi Urban 1.04, Tunduru 1.05, Kyerwa 1.05, Morogoro 1.05, Makambako Township Authority 1.05, Bukoba 1.05, Missenyi 1.05, Njombe 1.05, Iringa 1.05, Ikungi 1.06, Namtumbo 1.06, Lindi Urban 1.06, Tabora Urban 1.06, Kilindi 1.07, Arusha Urban 1.07, Njombe Urban 1.07, Manyoni 1.08, Musoma 1.08, Ruangwa 1.08, Mtwara Urban 1.08, Bariadi 1.09, Ngorongoro 1.10, Kibondo 1.12, Magu 1.13, Pangani 1.13, Singida Urban 1.13, Ulanga 1.14, Wete 1.14, Kilwa 1.14, Songea 1.16, Mbarali 1.17, Ilemela 1.18, Kaskazini A 1.19, Kakonko 1.19, Tarime 1.20, Dodoma Urban 1.26, Tanga Urban 1.26, Bukombe 1.26, Mbogwe 1.26, Sikonge 1.27, Babati Urban 1.27, Simanjiro 1.32, Tunduma 1.35, Kalambo 1.35, Ngara 1.35, Mkuranga 1.37, Kasulu 1.38, Chunya 1.46, Songwe 1.46, Mkalama 1.48, Mafinga Township Authority 1.57
-  ['Mafinga Township Authority', 'Mufindi']: drawn from one district, at 0.89 and 1.57 of their region's ratio; not written
-  ['Babati', 'Babati Urban']: drawn from one district, at 0.88 and 1.27 of their region's ratio; not written
-  ['Mbozi', 'Momba', 'Tunduma']: drawn from one district, at 0.82 and 1.35 of their region's ratio; not written
-  ['Lindi', 'Lindi Urban']: drawn from one district, at 0.73 and 1.06 of their region's ratio; not written
-  ['Iramba', 'Mkalama']: drawn from one district, at 0.68 and 1.48 of their region's ratio; not written
-  ['Buhigwe', 'Kasulu', 'Kasulu Township Authority']: drawn from one district, at 0.71 and 1.38 of their region's ratio; not written
-  ['Kalambo', 'Sumbawanga', 'Sumbawanga Urban']: drawn from one district, at 0.85 and 1.35 of their region's ratio; not written
-  ['Kaskazini A', 'Kaskazini B']: drawn from one district, at 0.80 and 1.19 of their region's ratio; not written
-  Babati: 375,200 against OCHA's 435066, 0.88 of its region's ratio; not written
-  Babati Urban: 129,572 against OCHA's 103789, 1.27 of its region's ratio; not written
-  Buhigwe: 240,005 against OCHA's 337504, 0.71 of its region's ratio; not written
-  Chunya: 344,471 against OCHA's None, 1.46 of its region's ratio; not written
-  Iramba: 328,912 against OCHA's 433723, 0.68 of its region's ratio; not written
-  Kalambo: 316,783 against OCHA's 215192, 1.35 of its region's ratio; not written
-  Kaskazini A: 157,369 against OCHA's 128663, 1.19 of its region's ratio; not written
-  Kaskazini B: 99,921 against OCHA's 121062, 0.80 of its region's ratio; not written
-  Kasulu: 537,767 against OCHA's 391170, 1.38 of its region's ratio; not written
-  Kasulu Township Authority: 238,321 against OCHA's 230686, 1.04 of its region's ratio; not written
-  Lindi: 166,493 against OCHA's 189871, 0.73 of its region's ratio; not written
-  Lindi Urban: 174,126 against OCHA's 137397, 1.06 of its region's ratio; not written
-  Mafinga Township Authority: 122,329 against OCHA's 70282, 1.57 of its region's ratio; not written
-  Mbozi: 510,599 against OCHA's 572168, 0.90 of its region's ratio; not written
-  Mkalama: 255,514 against OCHA's 156340, 1.48 of its region's ratio; not written
-  Momba: 259,781 against OCHA's 320763, 0.82 of its region's ratio; not written
-  Mufindi: 288,996 against OCHA's 293544, 0.89 of its region's ratio; not written
-  Songwe: 229,129 against OCHA's None, 1.46 of its region's ratio; not written
-  Sumbawanga: 494,330 against OCHA's 532432, 0.85 of its region's ratio; not written
-  Sumbawanga Urban: 303,986 against OCHA's 290863, 0.96 of its region's ratio; not written
-  Tunduma: 219,309 against OCHA's 164868, 1.35 of its region's ratio; not written
-  councils not placed: ['Kahama Municipal Council', 'Mlele District Council', 'Mpanda Municipal Council', 'Mpimbwe District Council', 'Msalala District Council', 'Nsimbo District Council', 'Tanganyika District Council', 'Ushetu District Council']
-  Dar es Salaam: 5,383,728
-  Ilala: 1,649,912
-  Kinondoni: 2,069,240
-  Temeke: 1,664,576
-  30 of 30 regions and 144 of 170 districts written
-  wrote data/processed/tanzania_census.json (408 kB)
+probe_pdf: https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf
+  20,745,926 bytes
+  168 pages
+probe_pdf: 168 pages, printing [55, 56, 57, 58, 148, 149]
+
+--- page 55 ----------------------------------------------------
+INSTAT-BCR-Résultats du RGPH5
+24
+                                                                                                                                        24
+2.2. RÉPARTITION SPATIALE DE LA POPULATION
+2.2.1. Population résidente par milieu de résidence
+La population résidente du Mali en 2022 est de 22 395 489 habitants dont 15 600 681 de résidents en
+milieu rural (soit 69,7 %). Autrement dit, sept personnes sur dix au Mali en 2022 vivent en milieu rural.
+L’effectif des femmes est évalué à 11 138 934 individus soit 49,7 % de la population totale. Le tableau2.2
+montre aussi que la proportion des femmes est un peu plus importante en milieu urbain qu’en milieu rural
+avec respectivement 50,2 % et 49,5 %.
+Tableau 2.2: Répartition de la population résidente par milieu de résidence selon
+le sexe, RM et pourcentage des femmes.
+Milieu de
+résidence
+Sexe Poids
+démographique
+(%)
+RM % Femmes   Masculin Féminin Ensemble
+Urbain 3 381 845 3 412 963 6 794 808 30,3 99,1 50,2
+Rural 7 874 710 7 725 971 15 600 681 69,7 101,9 49,5
+Ensemble  11 256 555 11 138 934 22 395 489 100,0 101,1 49,7
+2.2.2. Population résidente par région
+L’actuel découpage administratif du territoire résulte de la Loi N°2023 - 006 du 13 mars 2023 portant
+création des circonscriptions administratives en république du Mali et subdivise le pays en 19 régions et
+un district correspondant à la capitale du pays.
+Les résultats du RGPH 5 montrent que la population est inégalement répartie entre les 19 régions
+administratives et le district du pays. Le district de Bamako, où réside une population de 4 227 569
+habitants, soit 18,9 % de l’ensemble de la population est le plus peuplé. La région de Ségou avec 11,0 %
+est la région la plus peuplée après le district de Bamako. Par contre, la région de Kidal reste la moins
+peuplée avec 83 192 habitants, soit 0,4 % de l’ensemble de la population (Tableau 2.3 et Graphique 2.1).
+Toutes les régions du Nord (Tombouctou, Gao, Kidal, Taoudenni et Ménaka) et du Centre (Mopti,
+Douentza, Bandiagara) ont chacune moins d’un million d’habitants. Par contr e, dans le Sud, les régions
+ayant moins d’un million d’habitants sont : Nioro, Kita, Dioïla, Nara et San. Ces quatre (04) régions sont
+toutes des régions nouvellement créées. Par ailleurs, quatre régions ont une population entre un et deux
+millions d’habitants (Kayes, Sikasso, Bougouni et Koutiala). Les régions de Koulikoro, Ségou et le district
+de Bamako ont chacune plus de deux millions d’habitants.
+La proportion des femmes est plus faible dans les régions de Taoudenni (44,9 %), Kidal (45,6 %), Ménaka
+(46,6 %), Tombouctou (48,2 %), Mopti (48,4 %) et Gao (48,6 %) (Graphique 2.2). Par contre, on observe
+des proportions plus élevées des femmes dans les régions de Koutiala (51,0 %), Nioro (50,8 %), Bamako
+(50,4 %) et Sikasso (50,4 %) (Tableau 2.3 et Graphique 2.2).
+
+--- page 56 ----------------------------------------------------
+INSTAT-BCR-Résultats du RGPH5
+25
+                                                                                                                                        25
+Tableau 2.3: Répartition de la population résidente par région selon le sexe, le
+poids démographique, RM et le pourcentage des femmes.
+Région Sexe Poids (%) démographique RM % Femmes Masculin Féminin Ensemble
+Kayes 921 044 919 285 1 840 329 8,2 100,2 50,0
+Koulikoro 1 142 015 1 113 142 2 255 157 10,1 102,6 49,4
+Sikasso 760 239 772 884 1 533 123 6,8 98,4 50,4
+Ségou 1 231 931 1 223 332 2 455 263 11,0 100,7 49,8
+Mopti 483 089 452 490 935 579 4,2 106,8 48,4
+Tombouctou 504 864 469 414 974 278 4,4 107,6 48,2
+Gao 373 996 353 521 727 517 3,2 105,8 48,6
+Kidal 45 229 37 963 83 192 0,4 119,1 45,6
+Taoudenni 55 284 45 074 100 358 0,4 122,7 44,9
+Ménaka 170 205 148 671 318 876 1,4 114,5 46,6
+Nioro 333 731 344 330 678 061 3,0 96,9 50,8
+Kita 340 853 340 818 681 671 3,0 100,0 50,0
+Dioïla 338 396 337 569 675 965 3,0 100,2 49,9
+Nara 154 080 153 697 307 777 1,4 100,2 49,9
+Bougouni 794 189 776 790 1 570 979 7,0 102,2 49,4
+Koutiala 573 069 596 813 1 169 882 5,2 96,0 51,0
+San 418 353 402 454 820 807 3,7 104,0 49,0
+Douentza 87 186 83 003 170 189 0,8 105,0 48,8
+Bandiagara 433 502 435 414 868 916 3,9 99,6 50,1
+Bamako 2 095 300 2 132 269 4 227 569 18,9 98,3 50,4
+Ensemble 11 256 555 11 138 934 22 395 489 100,0 101,1 49,7
+Graphique 2.1 : Poids démographique de la population (%) par région.
+0,4
+0,4
+0,8
+1,4
+1,4
+3
+3
+3
+3,2
+3,7
+3,9
+4,2
+4,4
+5,2
+6,8
+7
+8,2
+10,1
+11
+18,9
+0 2 4 6 8 10 12 14 16 18 20
+Kidal
+Taoudenni
+Douentza
+Ménaka
+Nara
+Nioro
+Kita
+Dioïla
+Gao
+San
+Bandiagara
+Mopti
+Tombouctou
+Koutiala
+Sikasso
+Bougouni
+Kayes
+Koulikoro
+Ségou
+Bamako
+
+--- page 57 ----------------------------------------------------
+INSTAT-BCR-Résultats du RGPH5
+26
+                                                                                                                                        26
+Graphique 2.2: Proportion (%) des femmes par région.
+2.2.3. Évolution de la population de 1976 à 2022
+Le graphique 2.3 illustre l’évolution de la population malienne de 1976 à 2022. Comme il faut s’y attendre,
+le volume de la population du Mali n’a cessé d’augmenter depuis la date du premier recensement (1976).
+Il a passé de 6 394 918 habitants en 1976 à 7 696 348 habitants en 1987, ce qui correspond à un taux
+d’accroissement annuel moyen de 1,7 %. Puis de 7 696 348 habitants en 1987 à 9 810 911 habitants en
+1998 pour atteindre 14 528 662 habitants en 2009. Enfin, la population malienne est passé e de 14 528
+662 habitants en 2009  à 22 395 489 habitants en 2022. Cette évolution correspond à un taux
+d’accroissement intercensitaire (2009-2022) annuel moyen de 3,3 %. Si ce taux d’accroissement annuel
+moyen se maintient, la population malienne se doublera dans 21 ans. En comparaison à la période 1998-
+2009 au cours de laquelle, le taux d’accroissement intercensitaire annuel moyen était de 3,6 %, le rythme
+d’accroissement démographique a légèrement baissé. On note aussi qu’exceptée la période 2009-2022,
+le taux d’accroissement annuel intercensitaire est plus important en milieu urbain qu’en milieu rural. Celui
+du milieu urbain de la période (2,2 %) est dû à une nouvelle définition de l’urbain.
+Au regard de la tendance obser vée entre 1976 et 2022, on assiste à une multiplication par 3,5 de la
+population du Mali.
+Tableau 2. 4: Evolution des effectifs  de la population et  taux d’accroissement
+moyen annuel par milieu de résidence entre les différents recensements.
+Milieu de
+résidence
+Population résidente Taux d’accroissement intercensitaire
+1976 1987 1998 2009 2022 1976 -1987 1987 -1998 1998 – 2009 2009 -2022
+Urbain  1 076 829  1 690 289  2 645 416 5 079 662  6 794 808 4,2 4,2 6,1 2,2
+Rural 5 318 089  6 006 059 7 165 494 9 449 000  15 600 681 1,1 1,6 2,3 3,9
+Ensemble  6 394 918  7 696 348  9 810 911 14 528 662  22 395 489 1,7  2,2  3,6  3,3
+44,9
+45,6
+46,6
+48,2
+48,4
+48,6
+48,8
+49,0
+49,4
+49,4
+49,7
+49,8
+49,9
+49,9
+50,0
+50,0
+50,1
+50,4
+50,4
+50,8
+51,0
+44,0 45,0 46,0 47,0 48,0 49,0 50,0 51,0 52,0
+Taoudenni
+Kidal
+Ménaka
+Tombouctou
+Mopti
+Gao
+Douentza
+San
+Koulikoro
+Bougouni
+Mali
+Ségou
+Nara
+Dioïla
+Kayes
+Kita
+Bandiagara
+Sikasso
+Bamako
+Nioro
+Koutiala
+
+--- page 58 ----------------------------------------------------
+INSTAT-BCR-Résultats du RGPH5
+27
+                                                                                                                                        27
+Graphique 2.3: Évolution de l’effectif de la population du Mali de 1976 à 2022.
+2.2.4. Densité de la population
+Le graphique 2.4 illustre l’évolution de la densité de la population malienne entre 1976 et 2022. Comme
+on peut s’y attendre, suite à l’évolution continue de la population malienne depuis le premier recensement
+en 1976, la densité de la population malienne ne cesse d’accroitre. Ainsi, elle est passée d’environ cinq
+(5) habitants au kilomètre carré en 1976 à dix-huit (18) personnes au kilomètre carré en 2022.
+Graphique 2.4: Evolution de la densité de population du Mali (hbts/km2) de 1976 à
+2022.
+2.2.5. Population par région selon le milieu de résidence (taux d’urbanisation)
+Pour le calcul du taux d’urbanisation lors des différents recensements réalisés au Mali, une à deux
+définitions ont été utilisées selon l’année du recensement. La première considère comme urbaine, toutes
+les localités classées comme urbaines par les collectivités territoriales et toute localité ayant au moins
+5000 habitants (RGP-1976 et RGPH-1987) ; et la seconde, considère seulement comme urbaines, toutes
+les localités classées comme urbaines par les collectivités territoriales (RGPH-1998 au RGPH-2022).
+Dans cette section c’est la deuxième définition qui a été retenue au RGPH5.
+La distribution de la population par milieu de résidence  permet de mesurer le degré d’urbanisation du
+Mali. Les résultats du recensement montrent qu’ au Mali la population urbaine est estimée à 6 794 808
+habitants soit un taux d’urbanisation de 30,3 %. Quant aux taux d’urbanisation par région, ceux du district
+de Bamako et de Kidal sont les plus élevés (respectivement 100 % et 32,7 %) contrairement aux régions
+6 394 918 7 696 348
+9 810 911
+14 528 662
+22 395 489
+0
+5 000  000
+10 000  000
+15 000  000
+20 000  000
+25 000  000
+1976 1987 1998 2009 2022
+Efectifs de population
+Années de recensement
+5,2 6,2
+7,9
+11,7
+18,0
+0,0
+5,0
+10,0
+15,0
+20,0
+RGP 1976 RGPH 1987 RGPH 1998 RGPH 2009 RGPH 2022
+Densite de population
+Années de recensement
+
+--- page 148 ----------------------------------------------------
+INSTAT-BCR-Résultats du RGPH5
+XXIX
+                                                                                                                                 XXIX
+ANNEXES
+ANNEXE I : STRUCTURES DE LA POPULATION DES REGIONS PAR
+GROUPES D’AGE
+Tableau A.01: Répartition de la population résidente des ménages ordinaires15 par
+région selon le milieu de résidence et le sexe.
+Région Urbain Rural Ensemble Masculin Féminin Ensemble Masculin Féminin Ensemble Masculin Féminin Ensemble
+Kayes 124 357  124 767  249 125  784 694  792 745  1 577 440  909 052  917 512  1 826 564
+Koulikoro 131 172  136 374  267 546   1 004 123  974 485  1 978 607   1 135 295   1 110 859  2 246 154
+Sikasso 217 865  221 290  439 154  538 711  550 533  1 089 244  756 575  771 822  1 528 398
+Ségou 153 740  158 805  312 546  947 840  948 461  1 896 302   1 101 581   1 107 267  2 208 847
+Mopti 105 477  106 000  211 477  324 973  305 759  630 732  430 450  411 759  842 209
+Tombouctou 75 121  72 817  147 938  288 702  257 079  545 781  363 823  329 897  693 719
+Gao 72 910  70 001  142 911  277 018  259 982  537 000  349 928  329 983  679 911
+Kidal 13 333  11 845  25 178  29 920  24 225   54 145  43 253  36 071   79 324
+Taoudenni - - - 54 854  44 646   99 499  54 854  44 646   99 499
+Ménaka 23 887  21 246  45 133  99 398  80 693  180 090  123 285  101 938  225 223
+Nioro 30 506  31 442  61 948  294 780  312 237  607 018  325 287  343 679  668 966
+Kita 55 454  57 674  113 128  284 314  282 938  567 252  339 768  340 611  680 380
+Dioïla - - - 337 000  337 420  674 419  337 000  337 420  674 419
+Nara - - - 139 615  139 289  278 904  139 615  139 289  278 904
+Bougouni 56 407  56 649  113 056  735 403  719 074  1 454 477  791 810  775 723  1 567 533
+Koutiala 105 586  109 719  215 305  457 598  480 472  938 071  563 184  590 191  1 153 375
+San 57 603  58 452  116 056  355 786  343 343  699 129  413 389  401 796  815 185
+Douentza 20 878  21 343  42 221  54 101  50 907  105 008  74 979  72 250  147 229
+Bandiagara 15 865  15 252  31 117  341 545  347 617  689 162  357 410  362 869  720 279
+Bamako  2 082 278   2 129 190   4 211 468  - - -  2 082 278   2 129 190  4 211 468
+Ensemble  3 342 440   3 402 866   6 745 306   7 350 376   7 251 905  14 602 280  10 692 816  10 654 771   21 347 587
+Tableau A.02: Répartition de la population résidente des ménages ordinaires de la
+région de Kayes par groupes d’âges quinquennaux selon le sexe, le poids
+démographique, le RM et le pourcentage des femmes.
+Groupes
+d'âge
+Sexe Poids (%)
+démographique  RM  % des femmes Homme Femme Ensemble
+0-4 ans  169 369  159 744  329 112  18,0 106,0 48,5
+5-9 ans  154 440  145 405  299 845  16,4 106,2 48,5
+10-14 ans  124 724  117 139  241 863  13,2 106,5 48,4
+15-19 ans  96 000  98 762  194 763  10,7 97,2 50,7
+20-24 ans  74 128  87 144  161 272  8,8 85,1 54,0
+25-29 ans  55 376  68 073  123 449  6,8 81,3 55,1
+30-34 ans  51 158  60 703  111 861  6,1 84,3 54,3
+35-39 ans  43 053  43 808  86 861  4,8 98,3 50,4
+15 15 Estimation de la population des zones non couvertes par le dénombrement : 941 335 personnes
+
+--- page 149 ----------------------------------------------------
+INSTAT-BCR-Résultats du RGPH5
+XXX
+                                                                                                                                 XXX
+Groupes
+d'âge
+Sexe Poids (%)
+démographique  RM  % des femmes Homme Femme Ensemble
+40-44 ans  35 247  34 688  69 936  3,8 101,6 49,6
+45-49 ans  25 139  23 798  48 937  2,7 105,6 48,6
+50-54 ans  22 365  21 624  43 990  2,4 103,4 49,2
+55-59 ans  15 936  15 005  30 941  1,7 106,2 48,5
+60-64 ans  14 834  14 557  29 391  1,6 101,9 49,5
+65-69 ans  10 291  9 355  19 646  1,1 110,0 47,6
+70-74 ans  7 706  7 568  15 274  0,8 101,8 49,5
+75-79 ans  4 795  4 636  9 431  0,5 103,4 49,2
+80-84 ans  2 741  3 195  5 936  0,3 85,8 53,8
+85-89 ans  1 101  1 190  2 291  0,1 92,6 51,9
+90-94 ans  444   709  1 153  0,1 62,5 61,5
+95-99 ans  153   266   419  0,0 57,7 63,4
+100 ans +  49   143   192  0,0 34,6 74,3
+Ensemble  909 052  917 512   1 826 564  100,0 99,1 50,2
+Tableau A.03: Répartition de la population résidente des ménages ordinaires de la
+région de Koulikoro 16par groupes d’âge s quinquennaux selon le sexe, le poids
+démographique, le RM et le pourcentage des femmes.
+Groupes
+d'âge
+Sexe Poids (%)
+démographique  RM  % des femmes Homme Femme Ensemble
+0-4 ans 217 583  203 976  421 559  18,8 106,7 48,4
+5-9 ans 191 917  177 017  368 934  16,4 108,4 48,0
+10-14 ans 151 838  135 611  287 449  12,8 112,0 47,2
+15-19 ans 114 594  116 325  230 919  10,3 98,5 50,4
+20-24 ans 90 816  106 071  196 887  8,8 85,6 53,9
+25-29 ans 70 758  80 133  150 891  6,7 88,3 53,1
+30-34 ans 66 415  72 102  138 517  6,2 92,1 52,1
+35-39 ans 53 074  51 746  104 821  4,7 102,6 49,4
+40-44 ans 45 026  43 247  88 273  3,9 104,1 49,0
+45-49 ans 32 593  28 506  61 100  2,7 114,3 46,7
+50-54 ans 28 260  26 466  54 726  2,4 106,8 48,4
+55-59 ans 19 772  18 939  38 711  1,7 104,4 48,9
+60-64 ans 18 561  17 839  36 400  1,6 104,1 49,0
+65-69 ans 13 248  11 639  24 887  1,1 113,8 46,8
+70-74 ans 9 464  9 384  18 847  0,8 100,8 49,8
+75-79 ans 5 934  5 431  11 365  0,5 109,2 47,8
+80-84 ans 3 260  3 637  6 897  0,3 89,6 52,7
+85-89 ans 1 238  1 388  2 627  0,1 89,2 52,9
+90-94 ans  582   893  1 475  0,1 65,2 60,5
+95-99 ans  262   319   581  0,0 81,9 55,0
+100 ans +  100   190   290  0,0 52,8 65,4
+Ensemble 1 135 295  1 110 859  2 246 154  100,0 102,2 49,5
+16 Estimation de la population des zones non couvertes par le dénombrement : 1 786 personnes
