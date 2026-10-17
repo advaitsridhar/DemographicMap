@@ -35,6 +35,17 @@ below. Three cases are not one sector to one polygon:
 Bissau's eight urban sectors are one polygon at both levels: it takes the
 SAB's total.
 
+**The regions' ages and compositions.** Two of the census's thematic reports
+are read for the nine first-level polygons: *Estado e Estrutura da
+População*, whose Quadro 9 B gives each region's median age, and
+*Características Socioculturais*, whose annex Quadros 2 and 3 count the
+population of Guinean nationality by ethnic group and by religion in each
+region. Each region's groups must make the same total in both tables, and
+the regions the country's 1,442,227. Neither report goes below the region,
+and the principal language spoken ("dialecto") is tabulated by ethnic group
+and by urban or rural residence only, so the sectors and the regions' language
+say so instead.
+
 Usage:
     python -m scripts.fetch_census.guinea_bissau_census
 """
@@ -58,6 +69,40 @@ SOURCE = ("Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento
 LICENCE = "INE Guinea-Bissau publication (reuse with attribution)"
 YEAR = 2009
 OUT = "guinea_bissau_census.json"
+# The census's thematic reports, and what each is cited as.
+ESTADO = BASE + "estado_estrura_pop.pdf"
+SOCIO = BASE + "caracteristicas_socio_cultural.pdf"
+ESTADO_SOURCE = ("Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da "
+                 "População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B")
+SOCIO_SOURCE = ("Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da "
+                "População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3")
+NATIONALS = 1_442_227
+# Region names as the thematic tables print them (folded) -> REGIONS' keys.
+THEMATIC_REGIONS = {"tombali": "Tombali", "quinara": "Quinara", "oio": "Oio", "biombo": "Biombo",
+                    "bbijagos": "Bolama", "bafata": "Bafatá", "bafara": "Bafatá", "gabu": "Gabú",
+                    "cacheu": "Cacheu", "sab": "Bissau"}
+ETHNIC = {"semetnia": "No ethnic group", "balanta": "Balanta", "fula": "Fula",
+          "mandinga": "Mandinga", "manjaco": "Manjaco", "mancanha": "Mancanha", "papel": "Papel",
+          "bijagos": "Bijago", "beafada": "Beafada", "felupe": "Felupe",
+          "mansoanca": "Mansoanca", "balantamane": "Balanta Mane", "nalu": "Nalu",
+          "sussu": "Susu", "saracule": "Soninke", "nd": "Not stated"}
+FAITHS = {"animista": "Animist", "muculmana": "Islam", "cristao": "Christianity",
+          "outrareligiao": "Other religion", "semreligiao": "No religion", "nd": "Not stated"}
+REGION_ORDER = ["Tombali", "Quinara", "Oio", "Biombo", "Bolama", "Bafatá", "Gabú", "Cacheu",
+                "Bissau"]
+SECTOR_GAPS = {
+    "median_age": ("The 2009 census publishes median age by region only (Estado e Estrutura da "
+                   "População, Quadro 9 B), not by sector."),
+    "religion": ("The 2009 census tabulates religion by region only (Características "
+                 "Socioculturais), not by sector."),
+    "ethnicity": ("The 2009 census tabulates ethnic group by region only (Características "
+                  "Socioculturais), not by sector."),
+    "language": ("The 2009 census tabulates the principal language spoken by ethnic group and "
+                 "by urban or rural residence only, not by region or sector."),
+}
+REGION_LANGUAGE = ("The 2009 census tabulates the principal language spoken (Características "
+                   "Socioculturais, Quadros 4 to 8) by ethnic group and by urban or rural "
+                   "residence only, not by region.")
 SITE = PROCESSED.parent.parent / "site" / "data"
 
 # Each region's PDF, the region's polygon, and its sectors (folded) -> polygon ids.
@@ -237,6 +282,134 @@ def check(table: dict[str, Any], region: str, wanted: set[str]) -> str | None:
     return None
 
 
+def parse_medians(text: str) -> dict[str, float]:
+    """Quadro 9 B: {region: median age}, the regions in the order its header prints."""
+    for page in text.split("\f"):
+        if "Quadro 9 B" not in page:
+            continue
+        lines = [ln.strip() for ln in page.split("Quadro 9 B")[-1].splitlines()]
+        head = next((ln for ln in lines if ln.startswith("Região ")), None)
+        row = next((ln for ln in lines if ln.startswith("Idade mediana ")
+                    and re.search(r"\d,\d", ln)), None)
+        if not head or not row:
+            continue
+        names = [THEMATIC_REGIONS.get(fold(n)) for n in head.split()[1:]]
+        values = [float(v.replace(",", ".")) for v in re.findall(r"\d+,\d+", row)]
+        if None in names or len(names) != 9 or len(values) != 9:
+            raise SystemExit(f"guinea_bissau_census: Quadro 9 B reads {head!r} / {row!r}")
+        return dict(zip(names, values))
+    raise SystemExit("guinea_bissau_census: no page carries Quadro 9 B with its rows")
+
+
+def parse_by_region(text: str, marker: str, labels: dict[str, str]
+                    ) -> tuple[dict[str, dict[str, int]], list[tuple[str, str, int, int]]]:
+    """An annex table of Guinean nationals by group and region: ({region:
+    {group: people}}, corrections). Its rows print the country's count, then
+    each region's count and share; only the counts (the figures without a
+    decimal comma) are read. Every row's regions must make its country and
+    every region's rows its total -- except where one cell is misprinted: a
+    row short by exactly what one region's column is short by has that cell
+    put right, and the correction is returned (group, region, printed, used)."""
+    for page in text.split("\f"):
+        if marker not in page or "Tombali" not in page:
+            continue
+        rows: dict[str, list[int]] = {}
+        totals: list[int] | None = None
+        for line in page.splitlines():
+            m = re.match(r"^\s*([A-Za-zÀ-ÿ ]+?)\s+(\d.*)$", line)
+            if not m:
+                continue
+            counts = [int(t) for t in m.group(2).split() if t.isdigit()]
+            if len(counts) < 10:
+                continue
+            if fold(m.group(1)) == "total":
+                totals = counts[:10]
+            elif fold(m.group(1)) in labels:
+                group = labels[fold(m.group(1))]
+                rows[group] = [a + b for a, b in zip(rows.get(group, [0] * 10), counts[:10])]
+        corrections: list[tuple[str, str, int, int]] = []
+        short_rows = {g: c[0] - sum(c[1:]) for g, c in rows.items() if c[0] != sum(c[1:])}
+        if short_rows:
+            if totals is None or totals[0] != NATIONALS or sum(totals[1:]) != NATIONALS:
+                raise SystemExit(f"guinea_bissau_census: {sorted(short_rows)} do not add up and "
+                                 f"the {marker!r} table has no total row to settle them")
+            short_cols = {i: totals[i] - sum(c[i] for c in rows.values()) for i in range(1, 10)}
+            short_cols = {i: d for i, d in short_cols.items() if d}
+            for group, deficit in short_rows.items():
+                hits = [i for i, d in short_cols.items() if d == deficit]
+                if len(hits) != 1:
+                    raise SystemExit(f"guinea_bissau_census: {group}'s row is {deficit:,} short "
+                                     "and no one region is short by as much")
+                i = hits.pop()
+                printed = rows[group][i]
+                rows[group][i] += deficit
+                del short_cols[i]
+                corrections.append((group, REGION_ORDER[i - 1], printed, rows[group][i]))
+            if short_cols:
+                raise SystemExit(f"guinea_bissau_census: regions {sorted(short_cols)} stay short")
+        out: dict[str, dict[str, int]] = {r: {} for r in REGION_ORDER}
+        for group, counts in rows.items():
+            for region, people in zip(REGION_ORDER, counts[1:]):
+                out[region][group] = people
+        made = sum(sum(g.values()) for g in out.values())
+        if made != NATIONALS:
+            raise SystemExit(f"guinea_bissau_census: the {marker!r} table makes {made:,}, not "
+                             f"{NATIONALS:,}")
+        return out, corrections
+    raise SystemExit(f"guinea_bissau_census: no page carries {marker!r}")
+
+
+def thematic_tables(estado: str, socio: str) -> dict[str, Any]:
+    ethnicity, fixed_e = parse_by_region(socio, "região por etnia", ETHNIC)
+    religion, fixed_r = parse_by_region(socio, "região por religião", FAITHS)
+    out = {"median": parse_medians(estado), "ethnicity": ethnicity, "religion": religion,
+           "corrections": {"ethnicity": fixed_e, "religion": fixed_r}}
+    for region in REGION_ORDER:
+        a, b = sum(out["ethnicity"][region].values()), sum(out["religion"][region].values())
+        if a != b:
+            raise SystemExit(f"guinea_bissau_census: {region}'s ethnic groups make {a:,}, its "
+                             f"religions {b:,}")
+    return out
+
+
+def misprints(field: str, region: str, thematic: dict[str, Any]) -> str:
+    """What the note says about a cell of the region's put right."""
+    out = ""
+    for group, where, printed, used in thematic.get("corrections", {}).get(field, []):
+        if where == region:
+            out += (f" The table prints the {group} of {region} as {printed:,}, which leaves both "
+                    f"the {group} row and {region}'s column {used - printed:,} short of the "
+                    f"totals it prints; {used:,}, the figure that makes both, is used.")
+    return out
+
+
+def thematic_fields(region: str, thematic: dict[str, Any]) -> dict[str, Any]:
+    """The region's median age, religion and ethnicity, with the sources they
+    come from, and the reason its language is not shown."""
+    from ._shared import shares                       # noqa: PLC0415
+    people = sum(thematic["religion"][region].values())
+    universe = f"the {people:,} people of Guinean nationality the census counted in the region"
+    return {
+        "median_age": measure(thematic["median"][region], unit="years", year=YEAR,
+                              source=ESTADO_SOURCE),
+        "religion": shares(thematic["religion"][region], total=people),
+        "religion_year": YEAR,
+        "religion_note": (f"Religion practised, of {universe}; 15.9% of the country's nationals "
+                          "did not answer the question, shown as not stated."
+                          + misprints("religion", region, thematic)),
+        "ethnicity": shares(thematic["ethnicity"][region], total=people),
+        "ethnicity_year": YEAR,
+        "ethnicity_note": f"Ethnic group, of {universe}." + misprints("ethnicity", region,
+                                                                      thematic),
+        "language": gap(NOT_AVAILABLE, REGION_LANGUAGE),
+        "extra_sources": [
+            {"field": "median_age", "name": ESTADO_SOURCE, "url": ESTADO, "license": LICENCE,
+             "year": YEAR},
+            {"field": "religion/ethnicity", "name": SOCIO_SOURCE, "url": SOCIO,
+             "license": LICENCE, "year": YEAR}],
+    }
+
+
 def cited(region: str) -> list[dict[str, Any]]:
     """The region's own PDF, as the source of a record written from it."""
     return [{"field": "population/sex_ratio", "name": SOURCE,
@@ -251,7 +424,8 @@ def fields(total: int, men: int, women: int, note: str, region: str) -> dict[str
 
 
 def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+          admin2: list[dict[str, Any]], thematic: dict[str, Any] | None = None
+          ) -> tuple[list[dict[str, Any]], list[str]]:
     first = {u["id"]: u for u in admin1}
     second = {u["id"]: u for u in admin2}
     records: list[dict[str, Any]] = []
@@ -269,12 +443,16 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         if poly is None:
             raise SystemExit(f"guinea_bissau_census: no first-level polygon {spec['polygon']}")
         total, men, women = table["region"]
+        own = fields(total, men, women, f"The 2009 census's resident population of {region}"
+                     + (" (the Autonomous Sector of Bissau)." if region == "Bissau" else
+                        " region."), region)
+        if thematic:
+            extra = thematic_fields(region, thematic)
+            own["sources"] = own["sources"] + extra.pop("extra_sources")
+            own.update(extra)
         records.append(record(
             f"GNB-2009-{fold(region)}", poly["name"], level="admin1", parent="GNB", country="GNB",
-            match_by="shape_id", shape_id=poly["id"],
-            **fields(total, men, women, f"The 2009 census's resident population of {region}"
-                     + (" (the Autonomous Sector of Bissau)." if region == "Bissau" else
-                        " region."), region)))
+            match_by="shape_id", shape_id=poly["id"], **own))
         by_polygon: dict[str, list[str]] = {}
         for key, sid in spec["sectors"].items():
             if sid is not None:
@@ -297,9 +475,11 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 note = f"The 2009 census's resident population of {SEAT[sid]}"
             else:
                 note = f"The 2009 census's resident population of {rows[0]['name']} sector."
+            gaps = ({k: gap(NOT_AVAILABLE, v) for k, v in SECTOR_GAPS.items()}
+                    if thematic else {})
             records.append(record(f"GNB-2009-{sid}", shape["name"], level="admin2", parent="GNB",
                                   country="GNB", match_by="shape_id", shape_id=sid,
-                                  **fields(total, men, women, note, region)))
+                                  **fields(total, men, women, note, region), **gaps))
             report.append(f"  {shape['name']}: {total:,} ({', '.join(keys)})")
         if region == "Cacheu":
             caio = table["sectors"]["caio"]
@@ -325,8 +505,10 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
+    ap.parse_args()
     tables: dict[str, dict[str, Any]] = {}
     for region, spec in REGIONS.items():
         url = BASE + spec["file"]
@@ -347,7 +529,19 @@ def main() -> int:
             + ", ".join(f"{s['name']} {s['total']:,}" for s in t["sectors"].values()))
     admin1 = json.loads((SITE / "admin1" / "GNB.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "GNB.units.json").read_text())
-    records, report = build(tables, admin1, admin2)
+    texts = []
+    for url in (ESTADO, SOCIO):
+        blob = http_get(url, binary=True, cache=False, timeout=300)
+        if not blob.startswith(b"%PDF"):
+            raise SystemExit(f"guinea_bissau_census: {url} is not a PDF: {blob[:60]!r}")
+        log(f"  read {url}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
+        from pypdf import PdfReader                  # noqa: PLC0415
+        texts.append("\f".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages))
+    thematic = thematic_tables(*texts)
+    for region in REGION_ORDER:
+        log(f"  {region}: median {thematic['median'][region]}, "
+            f"{sum(thematic['religion'][region].values()):,} nationals")
+    records, report = build(tables, admin1, admin2, thematic)
     for line in report:
         log("  " + line)
     log(f"  {sum(1 for r in records if r['level'] == 'admin1')} regions and "
