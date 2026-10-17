@@ -1,10 +1,848 @@
-  read https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf: 1,883,934 bytes, sha256 4ba09a999d25f7d568eb8f236091e5c5ca9298e3c66922a3e9c14874fef36f30
-Cannot set line width because b'' is an invalid float value
-  Dossa: 974 men per 1,000 women, median 14.9, Islam 98.9%
-  Maradi: 968 men per 1,000 women, median 13.3, Islam 99.3%
-  Niamey: 991 men per 1,000 women, median 18.6, Islam 97.4%
-  Tahoua/Agadez: 1004 men per 1,000 women, median 14.4, Islam 99.3%
-  Tillaberi: 978 men per 1,000 women, median 14.8, Islam 98.6%
-  Zinder/Diffa: 1003 men per 1,000 women, median 13.6, Islam 99.3%
-  6 first-level polygons and 67 departments bound
-  wrote data/processed/niger_census.json (118 kB)
+  Volume IV: 34,215,383 bytes, sha256 af4ef18f3c7c546054299343767686e4709e6295b0666c73a2062024cd271148
+  371 pages
+  page 244: 'LAGOS': rows read by position although printed as ['4 - 9 957,993 480,544 477,449']
+  page 244: 'AGEGE': rows read by position although printed as ['4 - 9 51,141 25,713 25,428']
+  page 244: 'AJEROMI-IFELODUN': rows read by position although printed as ['4 - 9 75,298 38,131 37,167']
+  page 245: 'ALIMOSHO': rows read by position although printed as ['4 - 9 154,888 78,075 76,813']
+  page 245: 'AMUWO-ODOFIN': rows read by position although printed as ['4 - 9 29,820 14,791 15,029']
+  page 245: 'APAPA': rows read by position although printed as ['4 - 9 21,762 10,850 10,912']
+  page 246: 'BADAGRY': rows read by position although printed as ['4 - 9 29,570 14,831 14,739']
+  page 246: 'EPE': rows read by position although printed as ['4 - 9 22,037 11,350 10,687']
+  page 246: 'ETI-OSA': rows read by position although printed as ['4 - 9 24,048 11,962 12,086']
+  page 247: 'IBEJU/LEKKI': rows read by position although printed as ['4 - 9 14,926 7,821 7,105']
+  page 247: 'IFAKO-IJAYE': rows read by position although printed as ['4 - 9 46,111 23,027 23,084']
+  page 247: 'IKEJA': rows read by position although printed as ['4 - 9 26,798 13,354 13,444']
+  page 248: 'IKORODU': rows read by position although printed as ['4 - 9 62,964 31,617 31,347']
+  page 248: 'KOSOFE': rows read by position although printed as ['4 - 9 67,237 33,652 33,585']
+  page 248: 'LAGOS ISLAND': rows read by position although printed as ['4 - 9 18,170 8,961 9,209']
+  page 249: 'LAGOS MAINLAND': rows read by position although printed as ['4 - 9 31,355 15,650 15,705']
+  page 249: 'MUSHIN': rows read by position although printed as ['4 - 9 61,501 30,651 30,850']
+  page 249: 'OJO': rows read by position although printed as ['4 – 9 70,882 35,405 35,477']
+  page 250: 'OSHODI-ISOLO': rows read by position although printed as ['4 - 9 63,062 31,427 31,635']
+  page 250: 'SHOMOLU': rows read by position although printed as ['4 - 9 39,221 19,541 19,680']
+  page 250: 'SURULERE': rows read by position although printed as ['4 - 9 47,202 23,735 23,467']
+  page 260: 'NIGER': rows read by position although printed as ['4 - 9 628,204 324,455 303,749']
+  page 260: 'Agaie': rows read by position although printed as ['4 - 9 20,735 10,808 9,927']
+  page 260: 'Agwara': rows read by position although printed as ['4 - 9 9,391 4,854 4,537']
+  page 261: 'Bida': rows read by position although printed as ['4 - 9 28,658 15,133 13,525']
+  page 261: 'Borgu': rows read by position although printed as ['4 - 9 27,511 14,000 13,511']
+  page 261: 'Bosso': rows read by position although printed as ['4 - 9 22,395 11,253 11,142']
+  page 262: 'Chanchaga': rows read by position although printed as ['4 - 9 27,946 13,966 13,980']
+  page 262: 'Edati': rows read by position although printed as ['4 - 9 24,806 12,900 11,906']
+  page 262: 'Gbako': rows read by position although printed as ['4 - 9 21,011 10,989 10,022']
+  page 263: 'Gurara': rows read by position although printed as ['4 - 9 14,733 7,652 7,081']
+  page 263: 'Katcha': rows read by position although printed as ['4 - 9 20,010 10,392 9,618']
+  page 263: 'Kontagora': rows read by position although printed as ['4 - 9 23,489 11,800 11,689']
+  page 264: 'Lapai': rows read by position although printed as ['4 - 9 18,656 9,895 8,761']
+  page 264: 'Lavun': rows read by position although printed as ['4 - 9 32,826 17,282 15,544']
+  page 264: 'Magama': rows read by position although printed as ['4 - 9 30,346 15,539 14,807']
+  page 265: 'Mariga': rows read by position although printed as ['4 - 9 33,099 17,052 16,047']
+  page 265: 'Mashegu': rows read by position although printed as ['4 - 9 35,698 18,150 17,548']
+  page 265: 'Mokwa': rows read by position although printed as ['4 - 9 39,223 20,534 18,689']
+  page 266: 'Muya': rows read by position although printed as ['4 - 9 16,848 8,804 8,044']
+  page 266: 'Paikoro': rows read by position although printed as ['4 - 9 25,862 13,123 12,739']
+  page 266: 'Rafi': rows read by position although printed as ['4 - 9 29,900 15,417 14,483']
+  page 267: 'Rijau': rows read by position although printed as ['4 - 9 28,173 14,768 13,405']
+  page 267: 'Shiroro': rows read by position although printed as ['4 - 9 38,106 19,494 18,612']
+  page 267: 'Suleja': rows read by position although printed as ['4 - 9 32,657 17,041 15,616']
+  page 268: 'Tafa': rows read by position although printed as ['4 - 9 12,660 6,629 6,031']
+  page 268: 'Wushishi': rows read by position although printed as ['4 - 9 13,465 6,980 6,485']
+  798 tables read
+STATE p16 'ABIA STATE' (2845380, 1430298, 1415082) median 21.2 17 areas 
+   p16 'Aba North LGA' (106844, 53016, 53828) median 22.2 
+   p16 'Aba South LGA' (427421, 220541, 206880) median 21.8 
+   p17 'Arochukwu LGA' (169339, 85695, 83644) median 20.9 
+   p17 'Bende LGA' (192621, 95675, 96946) median 21.8 
+   p17 'Ikwuano LGA' (137897, 70509, 67388) median 21.1 
+   p18 'Isiala-Ngwa North LGA' (154083, 76261, 77822) median 20.8 
+   p18 'Isiala-Ngwa South LGA' (136650, 67205, 69445) median 20.7 
+   p18 'Isiukwuato LGA' (115794, 56660, 59134) median 21.9 
+   p19 'Obi Ngwa LGA' (181894, 89593, 92301) median 20.7 
+   p19 'Ohafia LGA' (245987, 124416, 121571) median 20.5 
+   p19 'Osisioma Ngwa LGA' (220662, 110790, 109872) median 21.0 
+   p20 'Ugwunagbo LGA' (85371, 42801, 42570) median 20.2 
+   p20 'Ukwa East LGA' (58139, 29410, 28729) median 20.2 
+   p20 'Ukwa West LGA' (87367, 44149, 43218) median 20.8 
+   p21 'Umuahia North LGA' (223134, 112595, 110539) median 21.8 
+   p21 'Umuahia South LGA' (139058, 68950, 70108) median 22.0 
+   p21 'Umu-Nneochi LGA' (163119, 82032, 81087) median 20.9 
+STATE p24 'ADAMAWA STATE' (3178950, 1607270, 1571680) median 17.6 21 areas 
+   p24 'Demsa LGA' (178407, 89511, 88896) median 17.1 
+   p24 'Fufore LGA' (209460, 105626, 103834) median 17.2 
+   p25 'Ganye LGA' (169948, 85798, 84150) median 17.5 
+   p25 'Girei LGA' (129855, 66906, 62949) median 17.6 
+   p25 'Gombi LGA' (147787, 74399, 73388) median 17.1 
+   p26 'Guyuk LGA' (176505, 89440, 87065) median 17.1 
+   p26 'Hong LGA' (169183, 83736, 85447) median 17.8 
+   p26 'Jada LGA' (168445, 82882, 85563) median 18.3 
+   p27 'Lamurde LGA' (111254, 56495, 54759) median 17.3 
+   p27 'Madagali LGA' (135142, 67134, 68008) median 17.1 
+   p27 'Maiha LGA' (110175, 55622, 54553) median 16.3 
+   p28 'Mayo-Belwa LGA' (152803, 75399, 77404) median 18.3 
+   p28 'Michika LGA' (155238, 75036, 80202) median 17.6 
+   p28 'Mubi North LGA' (151515, 78059, 73456) median 17.7 
+   p29 'Mubi South LGA' (129956, 66553, 63403) median 17.2 
+   p29 'Numan LGA' (91549, 47512, 44037) median 18.8 
+   p29 'Shelleng LGA' (148490, 75143, 73347) median 16.1 
+   p30 'Song LGA' (195188, 97228, 97960) median 17.1 
+   p30 'Toungo LGA' (52179, 26598, 25581) median 18.0 
+   p30 'Yola North LGA' (199674, 108379, 91295) median 19.8 
+   p31 'Yola South LGA' (196197, 99814, 96383) median 18.0 
+STATE p34 'AKWA IBOM STATE' (3902051, 1983202, 1918849) median 20.5 31 areas 
+   p34 'Abak LGA' (139069, 70305, 68764) median 20.1 
+   p34 'Eastern Obolo LGA' (59970, 30229, 29741) median 19.9 
+   p35 'Eket LGA' (172856, 89006, 83850) median 20.8 
+   p35 'Esit-Eket  LGA' (63358, 32189, 31169) median 20.4 
+   p35 'Essien Udim LGA' (193257, 97888, 95369) median 20.1 
+   p36 'Etim Ekpo LGA' (105922, 53514, 52408) median 20.1 
+   p36 'Etinan  LGA' (168924, 85760, 83164) median 20.5 
+   p36 'Ibeno LGA' (74840, 40006, 34834) median 20.9 
+   p37 'Ibesikpo Asutan LGA' (137127, 69681, 67446) median 20.2 
+   p37 'Ibiono Ibom  LGA' (188605, 96106, 92499) median 20.2 
+   p37 'Ika LGA' (72772, 36996, 35776) median 20.4 
+   p38 'Ikono LGA' (131673, 66080, 65593) median 20.1 
+   p38 'Ikot Abasi  LGA' (132608, 67806, 64802) median 20.5 
+   p38 'Ikot Ekpene LGA' (141408, 71738, 69670) median 21.1 
+   p39 'Ini LGA' (99084, 50108, 48976) median 20.2 
+   p39 'Itu LGA' (127856, 65410, 62446) median 20.4 
+   p39 'Mbo LGA' (102173, 52351, 49822) median 20.0 
+   p40 'Mkpat Enin LGA' (177293, 89283, 88010) median 20.3 
+   p40 'Nsit Atai  LGA' (73395, 37186, 36209) median 20.2 
+   p40 'Nsit Ibom  LGA' (108095, 55197, 52898) median 20.2 
+   p41 'Nsit Ubium  LGA' (127083, 64674, 62409) median 20.2 
+   p41 'Obot Akara  LGA' (147286, 74392, 72894) median 20.3 
+   p41 'Okobo LGA' (102753, 52395, 50358) median 20.1 
+   p42 'Onna LGA' (123193, 61413, 61780) median 20.2 
+   p42 'Oron  LGA' (87209, 44545, 42664) median 20.1 
+   p42 'Oruk Anam LGA' (171839, 86863, 84976) median 20.5 
+   p43 'Udung Uko LGA' (53060, 27613, 25447) median 20.7 
+   p43 'Ukanafun  LGA' (125473, 63308, 62165) median 20.3 
+   p43 'Uruan LGA' (117169, 59254, 57915) median 20.1 
+   p44 'Urue-Offong/Oruko LGA' (70740, 36208, 34532) median 20.3 
+   p44 'Uyo  LGA' (305961, 155698, 150263) median 21.6 
+STATE p47 'ANAMBRA STATE' (4177828, 2117984, 2059844) median 21.2 21 areas 
+   p47 'Aguata LGA' (369972, 187262, 182710) median 21.4 
+   p47 'Anambra East LGA' (152149, 77539, 74610) median 21.1 
+   p48 'Anambra West LGA' (167303, 85833, 81470) median 19.9 
+   p48 'Anaocha LGA' (284215, 142961, 141254) median 20.9 
+   p48 'Awka North LGA' (112192, 57219, 54973) median 20.7 
+   p49 'Awka South LGA' (189654, 96902, 92752) median 21.8 
+   p49 'Ayamelum LGA' (158152, 81065, 77087) median 20.3 
+   p49 'Dunukofia LGA' (96517, 49476, 47041) median 21.0 
+   p50 'Ekwusigo LGA' (158429, 80053, 78376) median 20.9 
+   p50 'Idemili North LGA' (431005, 219223, 211782) median 21.2 
+   p50 'Idemili South LGA' (206816, 105830, 100986) median 21.4 
+   p51 'Ihiala LGA' (302277, 152200, 150077) median 21.0 
+   p51 'Njikoka LGA' (148394, 73869, 74525) median 21.3 
+   p51 'Nnewi North LGA' (155443, 77517, 77926) median 21.5 
+   p52 'Nnewi South LGA' (233362, 118532, 114830) median 20.9 
+   p52 'Ogbaru LGA' (223317, 115678, 107639) median 21.4 
+   p52 'Onitsha North LGA' (125918, 61588, 64330) median 21.8 
+   p53 'Onitsha South LGA' (137191, 71348, 65843) median 22.7 
+   p53 'Orumba North LGA' (172773, 84996, 87777) median 21.7 
+   p53 'Orumba South LGA' (184548, 93199, 91349) median 20.2 
+   p54 'Oyi LGA' (168201, 85694, 82507) median 20.8 
+STATE p57 'BAUCHI STATE' (4653066, 2369266, 2283800) median 16.0 20 areas 
+   p57 'Alkaleri LGA' (328284, 166936, 161348) median 16.1 
+   p57 'Bauchi LGA' (493730, 252420, 241310) median 16.5 
+   p58 'Bogoro LGA' (83809, 41776, 42033) median 16.9 
+   p58 'Damban LGA' (150212, 75978, 74234) median 15.8 
+   p58 'Darazo LGA' (249946, 126741, 123205) median 15.3 
+   p59 'Dass LGA' (90114, 46695, 43419) median 16.3 
+   p59 'Gamawa LGA' (284411, 145510, 138901) median 16.1 
+   p59 'Ganjuwa LGA' (278471, 140402, 138069) median 15.5 
+   p60 'Giade LGA' (156022, 79628, 76394) median 15.9 
+   p60 'Itas/Gadau LGA' (228527, 114808, 113719) median 16.0 
+   p60 'Jama’are LGA' (117482, 60941, 56541) median 16.0 
+   p61 'Katagum LGA' (293020, 152552, 140468) median 16.2 
+   p61 'Kirfi LGA' (145636, 75337, 70299) median 15.3 
+   p61 'Misau LGA' (261410, 135704, 125706) median 15.9 
+   p62 'Ningi LGA' (385997, 196528, 189469) median 15.8 
+   p62 'Shira LGA' (233999, 118888, 115111) median 16.1 
+   p62 'Tafawa-Balewa LGA' (221310, 110372, 110938) median 16.2 
+   p63 'Toro LGA' (346000, 172921, 173079) median 15.9 
+   p63 'Warji LGA' (114983, 58054, 56929) median 15.9 
+   p63 'Zaki LGA' (189703, 97075, 92628) median 16.2 
+STATE p66 'BAYELSA STATE' (1704515, 874083, 830432) median 20.2 8 areas 
+   p66 'Brass LGA' (184127, 94359, 89768) median 20.4 
+   p66 'Ekeremor LGA' (269588, 137753, 131835) median 19.6 
+   p67 'Kolokuma/ Opokuma LGA' (79266, 39952, 39314) median 19.8 
+   p67 'Nembe LGA' (130966, 66768, 64198) median 20.0 
+   p67 'Ogbia LGA' (179606, 92015, 87591) median 19.9 
+   p68 'Sagbama LGA' (186869, 95667, 91202) median 20.2 
+   p68 'Southern Ijaw LGA' (321808, 165329, 156479) median 20.3 
+   p68 'Yenegoa LGA' (352285, 182240, 170045) median 20.8 
+STATE p71 'BENUE STATE' (4253641, 2144043, 2109598) median 16.8 23 areas 
+   p71 'Ado LGA' (184389, 92367, 92022) median 16.3 
+   p71 'Aguta LGA' (115597, 58478, 57119) median 16.2 
+   p72 'Apa LGA' (96780, 48658, 48122) median 16.3 
+   p72 'Bukuru LGA' (206215, 103655, 102560) median 16.3 
+   p72 'Gboko LGA' (361325, 180669, 180656) median 17.5 
+   p73 'Guma LGA' (194164, 97318, 96846) median 16.1 
+   p73 'Gwer East LGA' (168660, 85287, 83373) median 16.6 
+   p73 'Gwer West LGA' (122313, 61764, 60549) median 16.1 
+   p74 'Katsina Ala LGA' (225471, 114093, 111378) median 16.7 
+   p74 'Konshisha LGA' (226492, 114192, 112300) median 16.5 
+   p74 'Kwande LGA' (248642, 125442, 123200) median 16.7 
+   p75 'Logo LGA' (169570, 86069, 83501) median 16.4 
+   p75 'Makurdi LGA' (300377, 154138, 146239) median 18.7 
+   p75 'Obi LGA' (98707, 49143, 49564) median 16.3 
+   p76 'Ogbadibo LGA' (130988, 64847, 66141) median 16.9 
+   p76 'Ohimini LGA' (70688, 35876, 34812) median 16.7 
+   p76 'Oju LGA' (168491, 84220, 84271) median 17.3 
+   p77 'Okpokwu LGA' (175596, 89193, 86403) median 16.8 
+   p77 'Oturkpo LGA' (266411, 136612, 129799) median 17.4 
+   p77 'Tarka LGA' (79280, 39783, 39497) median 16.1 
+   p78 'Ukum LGA' (216983, 108728, 108255) median 16.4 
+   p78 'Ushongo LGA' (191935, 96062, 95873) median 16.4 
+   p78 'Vandeikya LGA' (234567, 117449, 117118) median 16.5 
+STATE p81 'BORNO STATE' (4171104, 2163358, 2007746) median 16.9 27 areas 
+   p81 'ABADAM' (100065, 53749, 46316) median 17.6 
+   p81 'ASKIRA/UBA' (143313, 72676, 70637) median 17.0 
+   p82 'BAMA' (270119, 136524, 133595) median 17.6 
+   p82 'BAYO' (79078, 39287, 39791) median 16.1 
+   p82 'BIU' (175760, 90609, 85151) median 16.7 
+   p83 'CHIBOK' (66333, 33952, 32381) median 16.1 
+   p83 'DAMBOA' (233200, 125873, 107327) median 16.3 
+   p83 'DIKWA' (105042, 55160, 49882) median 15.9 
+   p84 'GUBIO' (151286, 78893, 72393) median 16.5 
+   p84 'GUZAMALA' (95991, 50254, 45737) median 17.9 
+   p84 'GWOZA' (276568, 143407, 133161) median 16.7 
+   p85 'HAWUL' (120733, 59611, 61122) median 17.1 
+   p85 'JERE' (209107, 107714, 101393) median 17.7 
+   p85 'KAGA' (89996, 47150, 42846) median 17.2 
+   p86 'KALA/BALGE' (60834, 31260, 29574) median 16.1 
+   p86 'KONDUGA' (157322, 80017, 77305) median 18.3 
+   p86 'KUKAWA' (203343, 109287, 94056) median 17.4 
+   p87 'KWAYA KUSAR' (56704, 29007, 27697) median 16.7 
+   p87 'MAFA' (103600, 53351, 50249) median 17.2 
+   p87 'MAGUMERI' (140257, 72510, 67747) median 17.2 
+   p88 'MAIDUGURI' (540016, 282409, 257607) median 17.0 
+   p88 'MARTE' (129409, 67777, 61632) median 16.8 
+   p88 'MOBBAR' (116633, 61426, 55207) median 16.9 
+   p89 'MONGUNO' (109834, 57146, 52688) median 17.1 
+   p89 'NGALA' (236498, 122127, 114371) median 15.6 
+   p89 'NGANZAI' (99074, 50822, 48252) median 16.1 
+   p90 'SHANI' (100989, 51360, 49629) median 15.9 
+STATE p93 'CROSS RIVER STATE' (2892988, 1471967, 1421021) median 20.1 18 areas 
+   p93 'ABI' (144317, 73077, 71240) median 20.4 
+   p93 'AKAMKPA' (149705, 76921, 72784) median 19.8 
+   p94 'AKPABUYO' (272262, 141602, 130660) median 19.6 
+   p94 'BAKASSI' (31641, 18175, 13466) median 21.4 
+   p94 'BEKWARA' (105497, 52914, 52583) median 19.9 
+   p95 'BIASE' (168113, 85625, 82488) median 19.9 
+   p95 'BOKI' (186611, 95154, 91457) median 20.0 
+   p95 'CALABAR SOUTH' (191515, 94584, 96931) median 21.7 
+   p96 'CALABAR-MUNICIPAL' (183681, 93092, 90589) median 21.7 
+   p96 'ETUNG' (80036, 41089, 38947) median 19.8 
+   p96 'IKOM' (163691, 82646, 81045) median 19.3 
+   p97 'OBANLIKU' (109633, 55998, 53635) median 20.3 
+   p97 'OBUBRA' (172543, 87153, 85390) median 19.7 
+   p97 'OBUDU' (161457, 81537, 79920) median 19.8 
+   p98 'ODUKPANI' (192884, 100697, 92187) median 20.0 
+   p98 'OGOJA' (171574, 86802, 84772) median 19.7 
+   p98 'YAKURR' (196271, 99485, 96786) median 20.3 
+   p99 'YALA' (211557, 105416, 106141) median 19.0 
+STATE p102 'DELTA STATE' (4112445, 2069309, 2043136) median 20.6 25 areas 
+   p102 'ANIOCHA NORTH' (104062, 52448, 51614) median 21.5 
+   p102 'ANIOCHA SOUTH' (142045, 69224, 72821) median 21.0 
+   p103 'BOMADI' (86016, 43435, 42581) median 20.1 
+   p103 'BURUTU' (207977, 106169, 101808) median 20.2 
+   p103 'ETHIOPE EAST' (200942, 101596, 99346) median 20.6 
+   p104 'ETHIOPE WEST' (202712, 102750, 99962) median 19.9 
+   p104 'IKA NORTH EAST' (182819, 91431, 91388) median 21.0 
+   p104 'IKA SOUTH' (167060, 82214, 84846) median 21.0 
+   p105 'ISOKO NORTH' (143559, 71948, 71611) median 20.3 
+   p105 'ISOKO SOUTH' (235147, 119167, 115980) median 20.4 
+   p105 'NDOKWA EAST' (103224, 52306, 50918) median 20.5 
+   p106 'NDOKWA WEST' (150024, 73842, 76182) median 20.4 
+   p106 'OKPE' (128398, 65270, 63128) median 20.0 
+   p106 'OSHIMILI NORTH' (118540, 58101, 60439) median 20.3 
+   p107 'OSHIMILI SOUTH' (150032, 76078, 73954) median 22.1 
+   p107 'PATANI' (67391, 34307, 33084) median 19.8 
+   p107 'SAPELE' (174273, 86167, 88106) median 20.2 
+   p108 'UDU' (142480, 71813, 70667) median 20.1 
+   p108 'UGHELLI NORTH' (320687, 160550, 160137) median 20.0 
+   p108 'UGHELLI SOUTH' (212638, 107730, 104908) median 19.7 
+   p109 'UKWUANI' (119034, 58890, 60144) median 20.4 
+   p109 'UVWIE' (188728, 93999, 94729) median 21.6 
+   p109 'WARRI NORTH' (136149, 70446, 65703) median 20.1 
+   p110 'WARRI SOUTH' (311970, 158402, 153568) median 21.3 
+   p110 'WARRI SOUTH WEST' (116538, 61026, 55512) median 20.7 
+STATE p113 'EBONYI STATE' (2176947, 1064156, 1112791) median 18.7 13 areas 
+   p113 'ABAKALIKI' (149683, 72518, 77165) median 18.0 
+   p113 'AFIKPO NORTH' (156649, 80632, 76017) median 20.5 
+   p114 'AFIKPO SOUTH' (157542, 79093, 78449) median 20.3 
+   p114 'EBONYI' (127226, 60388, 66838) median 17.4 
+   p114 'EZZA NORTH' (146149, 70341, 75808) median 18.2 
+   p115 'EZZA SOUTH' (133625, 66373, 67252) median 19.3 
+   p115 'IKWO' (214969, 99855, 115114) median 16.7 
+   p115 'ISHIELU' (152581, 72671, 79910) median 19.0 
+   p116 'IVO' (121363, 62049, 59314) median 20.7 
+   p116 'IZZI' (236679, 112832, 123847) median 16.2 
+   p116 'OHAOZARA' (148317, 75093, 73224) median 20.1 
+   p117 'OHAUKWU' (195555, 94479, 101076) median 18.1 
+   p117 'ONICHA' (236609, 117832, 118777) median 19.8 
+STATE p120 'EDO STATE' (3233366, 1633946, 1599420) median 21.0 18 areas 
+   p120 'AKOKO-EDO' (261567, 132184, 129383) median 20.1 
+   p120 'EGOR' (340287, 168925, 171362) median 21.6 
+   p121 'ESAN CENTRAL' (105242, 53017, 52225) median 20.3 
+   p121 'ESAN NORTH EAST' (121989, 61647, 60342) median 20.4 
+   p121 'ESAN SOUTH EAST' (166309, 84587, 81722) median 20.2 
+   p122 'ESAN WEST' (127718, 65312, 62406) median 22.0 
+   p122 'ETSAKO CENTRAL' (94228, 47708, 46520) median 20.2 
+   p122 'ETSAKO EAST' (147335, 72477, 74858) median 19.1 
+   p123 'ETSAKO WEST' (198975, 100986, 97989) median 20.8 
+   p123 'IGUEBEN' (70276, 35132, 35144) median 20.5 
+   p123 'IKPOBA-OKHA' (372080, 184725, 187355) median 20.8 
+   p124 'OREDO' (374515, 188895, 185620) median 22.8 
+   p124 'ORHIONMWON' (183994, 92433, 91561) median 20.8 
+   p124 'OVIA NORTH EAST' (155344, 80433, 74911) median 21.8 
+   p125 'OVIA SOUTH WEST' (138072, 72113, 65959) median 20.5 
+   p125 'OWAN EAST' (154630, 78890, 75740) median 19.8 
+   p125 'OWAN WEST' (99056, 50755, 48301) median 20.7 
+   p126 'UHUNMWONDE' (121749, 63727, 58022) median 21.6 
+STATE p129 'EKITI STATE' (2398957, 1215487, 1183470) median 20.3 16 areas 
+   p129 'ADO EKITI' (313690, 162563, 151127) median 21.6 
+   p129 'AIYEKIRE' (147999, 75342, 72657) median 19.6 
+   p130 'EFON' (87187, 43587, 43600) median 19.6 
+   p130 'EKITI EAST' (138340, 70022, 68318) median 20.4 
+   p130 'EKITI SOUTH WEST' (165087, 83416, 81671) median 20.4 
+   p131 'EKITI WEST' (179600, 91241, 88359) median 20.4 
+   p131 'EMURE' (94264, 47767, 46497) median 21.0 
+   p131 'IDO-OSI' (160001, 81461, 78540) median 19.1 
+   p132 'IJERO' (221873, 112363, 109510) median 20.6 
+   p132 'IKERE' (148558, 69252, 79306) median 20.2 
+   p132 'IKOLE' (170414, 86873, 83541) median 19.9 
+   p133 'ILEJEMEJI' (43459, 22010, 21449) median 20.0 
+   p133 'IREPODUN/IFELODUN' (131330, 66289, 65041) median 19.9 
+   p133 'ISE/ORUN' (113951, 57743, 56208) median 20.0 
+   p134 'MOBA' (145408, 75747, 69661) median 19.3 
+   p134 'OYE' (137796, 69811, 67985) median 20.1 
+STATE p137 'ENUGU' (3267837, 1596042, 1671795) median 21.2 6 areas 
+   p137 'ANINRI' (136221, 66225, 69996) median 20.1 
+   p137 'AWGU' (197292, 96132, 101160) median 22.2 
+   p138 'ENUGU EAST' (277119, 131214, 145905) median 20.7 
+   p140 'NKANU EAST' (153591, 75008, 78583) median 21.3 
+   p141 'OJI-RIVER' (128741, 61719, 67022) median 23.2 
+   p142 'UZO-UWANI' (127150, 63759, 63391) median 20.4 
+STATE p145 'GOMBE' (2365040, 1244228, 1120812) median 16.1 11 areas 
+   p145 'AKKO' (337435, 177515, 159920) median 15.9 
+   p145 'BALANGA' (211490, 108494, 102996) median 16.0 
+   p146 'BILLIRI' (202680, 103201, 99479) median 16.3 
+   p146 'DUKKU' (207658, 107583, 100075) median 15.9 
+   p146 'FUNAKAYE' (237687, 132054, 105633) median 15.7 
+   p147 'GOMBE' (266844, 146721, 120123) median 16.9 
+   p147 'KALTUNGO' (160392, 80177, 80215) median 16.6 
+   p147 'KWAMI' (193995, 99778, 94217) median 15.8 
+   p148 'NAFADA' (140185, 79009, 61176) median 16.2 
+   p148 'SHOMGOM' (150948, 76450, 74498) median 16.3 
+   p148 'YAMALTU/DEBA' (255726, 133246, 122480) median 16.1 
+STATE p151 'IMO' (3927563, 1976471, 1951092) median 21.0 27 areas 
+   p151 'ABOH-MBAISE' (194779, 98480, 96299) median 21.2 
+   p151 'AHIAZU-MBAISE' (170824, 86326, 84498) median 21.3 
+   p152 'EHIME-MBANO' (130575, 65237, 65338) median 20.3 
+   p152 'EZINIHITTE' (168767, 84725, 84042) median 21.3 
+   p152 'IDEATO NORTH' (156161, 78753, 77408) median 20.5 
+   p153 'IDEATO SOUTH' (159654, 81125, 78529) median 20.2 
+   p153 'IHITTE/UBOMA' (119419, 60492, 58927) median 20.6 
+   p153 'IKEDURU' (149737, 75025, 74712) median 22.3 
+   p154 'ISIALA MBANO' (197921, 100835, 97086) median 20.5 
+   p154 'ISU' (164328, 84299, 80029) median 19.8 
+   p154 'MBAITOLI' (237474, 118959, 118515) median 21.1 
+   p155 'NGOR-OKPALA' (157858, 78829, 79029) median 21.4 
+   p155 'NJABA' (143485, 72401, 71084) median 20.2 
+   p155 'NKWERRE' (80270, 40845, 39425) median 21.5 
+   p156 'NWANGELE' (127691, 65022, 62669) median 20.6 
+   p156 'OBOWO' (117432, 58204, 59228) median 20.2 
+   p156 'OGUTA' (142340, 72549, 69791) median 21.1 
+   p157 'O OHAJI/EGBEMA' (182891, 92604, 90287) median 20.4 
+   p157 'OKIGWE' (132701, 67660, 65041) median 21.0 
+   p157 'ORLU' (142792, 69632, 73160) median 20.5 
+   p158 'ORSU' (120224, 60490, 59734) median 20.8 
+   p158 'ORU EAST' (111743, 56148, 55595) median 21.1 
+   p158 'ORU WEST' (115704, 59108, 56596) median 19.5 
+   p159 'OWERRI NORTH' (176334, 87094, 89240) median 22.2 
+   p159 'OWERRI WEST' (101754, 49968, 51786) median 23.1 
+   p159 'OWERRI-MUNICIPAL' (125337, 60882, 64455) median 22.9 
+   p160 'UNUIMO' (99368, 50779, 48589) median 20.7 
+STATE p163 'JIGAWA' (4361002, 2198076, 2162926) median 16.4 27 areas 
+   p163 'AUYO' (132268, 67409, 64859) median 16.0 
+   p163 'BABURA' (212955, 106373, 106582) median 7.6 ['4 age groups where 18 were expected']
+   p164 'BIRINIWA' (142015, 73864, 68151) median 16.4 
+   p164 'BIRNIN KUDU' (314108, 153997, 160111) median 16.7 
+   p164 'BUJI' (97284, 48984, 48300) median 15.7 
+   p165 'DUTSE' (251135, 125773, 125362) median 16.6 
+   p165 'GAGARAWA' (82153, 41529, 40624) median 16.3 
+   p165 'GARKI' (150261, 74730, 75531) median 16.9 
+   p166 'GUMEL' (106371, 54865, 51506) median 16.5 
+   p166 'GURI' (113363, 58426, 54937) median 16.5 
+   p166 'GWARAM' (271368, 137785, 133583) median 16.1 
+   p167 'GWIWA' (128730, 64760, 63970) median 16.4 
+   p167 'HADEJIA' (104286, 54171, 50115) median 16.2 
+   p167 'JAHUN' (229882, 113694, 116188) median 16.7 
+   p168 'KAFIN HAUSA' (267284, 135012, 132272) median 16.7 
+   p168 'KAUGAMA' (128981, 64592, 64389) median 16.1 
+   p168 'KAZAURE' (161161, 82513, 78648) median 16.3 
+   p169 'KIRI KASAMMA' (192583, 98430, 94153) median 16.5 
+   p169 'KIYAWA' (172952, 87862, 85090) median 16.3 
+   p169 'MAIGATARI' (177057, 89722, 87335) median 16.3 
+   p170 'MALAM MADORI' (164791, 85165, 79626) median 16.2 
+   p170 'MIGA' (127876, 63067, 6480) median 16.4 ['men 63,067 and women 6,480 make 69,547, not the total 127,876', 'the age groups of women make 64,809, not 6,480']
+   p170 'RINGIM' (192407, 95581, 96826) median 17.3 
+   p171 'RONI' (77414, 39618, 37796) median 16.3 
+   p171 'SULE-TANKARKAR' (134813, 65985, 68828) median 17.3 
+   p171 'TAURA' (131861, 66107, 65754) median 15.9 
+   p172 'YANKWASHI' (95643, 48062, 47581) median 15.9 
+STATE p175 'KADUNA STATE' (6113503, 3090438, 3023065) median 16.9 22 areas 
+   p175 'BIRNIN-GWARI' (258581, 130919, 127662) median 15.6 
+   p175 'CHIKUN' (372272, 187433, 184839) median 18.9 
+   p176 'GIWA' (292384, 145608, 146776) median 15.5 
+   p176 'IGABI' (430753, 217414, 213339) median 16.1 
+   p176 'IKARA' (194723, 95598, 99125) median 16.1 
+   p177 'JABA' (155973, 77415, 78558) median 16.5 
+   p177 'JEMA’Á' (278202, 140724, 137478) median 16.8 
+   p177 'KACHIA' (252568, 127624, 124944) median 16.8 
+   p178 'KADUNA NORTH' (364575, 187075, 177500) median 19.2 
+   p178 'KADUNA SOUTH' (402731, 204969, 197762) median 19.0 
+   p178 'KAGARKO' (239058, 121041, 118017) median 16.5 
+   p179 'KAJURU' (109810, 54506, 55304) median 16.6 
+   p179 'KAURU' (221276, 111119, 110157) median 15.8 
+   p179 'KUBAU' (280704, 141528, 139176) median 16.0 
+   p180 'KUDAN' (138956, 71704, 67252) median 15.6 
+   p180 'LERE' (339740, 170396, 169344) median 16.0 
+   p180 'MAKARFI' (146574, 73292, 73282) median 16.4 
+   p181 'MAKARFI' (291358, 149111, 142247) median 17.8 
+   p181 'SANGA' (151485, 76482, 75003) median 17.1 
+   p181 'SOBA' (291173, 145145, 146028) median 15.9 
+   p182 'ZANGON KATAF' (318991, 161870, 157121) median 16.5 
+   p182 'ZARIA' (406990, 210900, 196090) median 16.8 
+STATE p185 'KANO' (9401288, 4947952, 4453336) median 16.4 44 areas 
+   p185 'AJINGI' (172610, 86605, 86005) median 16.4 
+   p185 'ALBASU' (187639, 94862, 92777) median 16.3 
+   p186 'BAGWAI' (161533, 83511, 78022) median 15.9 
+   p186 'BEBEJI' (191916, 97351, 94565) median 16.1 
+   p186 'BICHI' (278309, 139346, 138963) median 16.1 
+   p187 'BUNKURE' (174467, 87185, 87282) median 16.0 
+   p187 'DALA' (418759, 237943, 180816) median 16.6 
+   p187 'DAMBATTA' (210474, 105538, 104936) median 16.5 
+   p188 'DAWAKIN KUDU' (225497, 116109, 109388) median 16.9 
+   p188 'DAWAKIN TOFA' (246197, 126390, 119807) median 15.8 
+   p188 'DOGUWA' (150645, 77849, 72796) median 15.9 
+   p189 'FAGGE' (200095, 111859, 88236) median 19.0 
+   p189 'GABASAWA' (211204, 107869, 103335) median 16.2 
+   p189 'GARKO' (161966, 82025, 79941) median 16.2 
+   p190 'GARUM MALLAM' (118622, 71515, 47107) median 21.1 
+   p190 'GAYA' (207419, 105199, 102220) median 16.0 
+   p190 'GEZAWA' (282328, 143380, 138948) median 16.1 
+   p191 'GWALE' (357827, 219201, 138626) median 16.3 
+   p191 'GWARZO' (183624, 94669, 88955) median 16.0 
+   p191 'KABO' (153158, 83156, 70002) median 16.0 
+   p192 'KANO MUNICIPAL' (371243, 219636, 151607) median 17.4 
+   p192 'KARAYE' (144045, 71727, 72318) median 15.5 
+   p192 'KIBIYA' (138618, 70942, 67676) median 15.8 
+   p193 'KIRU' (267168, 140565, 126603) median 15.7 
+   p193 'KUMBOTSO' (294391, 166171, 128220) median 16.5 
+   p193 'KUNCHI' (110170, 55221, 54949) median 16.4 
+   p194 'KURA' (143094, 76921, 66173) median 16.2 
+   p194 'MADOBI' (137685, 71095, 66590) median 15.9 
+   p194 'MAKODA' (220094, 110014, 110080) median 16.2 
+   p195 'MINJIBIR' (219611, 108218, 111393) median 16.2 
+   p195 'NASARAWA' (596411, 323740, 272671) median 16.9 
+   p195 'RANO' (148276, 75997, 72279) median 15.7 
+   p196 'RIMIN GADO' (103371, 53245, 50126) median 15.7 
+   p196 'ROGO' (227607, 113104, 114503) median 15.5 
+   p196 'SHANONO' (139128, 68466, 70662) median 15.7 
+   p197 'SUMAILA' (250379, 125162, 125217) median 16.6 
+   p197 'TAKAI' (202639, 100269, 102370) median 16.9 
+   p197 'TARAUNI' (221844, 122069, 99775) median 17.0 
+   p198 'TOFA' (98603, 49870, 48733) median 15.7 
+   p198 'TSANYAWA' (157730, 80638, 77092) median 15.6 
+   p198 'TUDUN WADA' (228658, 113791, 114867) median 16.0 
+   p199 'UNGOGO' (365737, 192372, 173365) median 15.9 
+   p199 'WARAWA' (131858, 66800, 65058) median 16.6 
+   p199 'WUDIL' (188639, 100357, 88282) median 16.9 
+STATE p202 'KATSINA' (5801584, 2948279, 2853305) median 15.8 33 areas 
+   p202 'BAKORI' (149516, 72714, 76802) median 15.7 
+   p202 'BATAGARAWA' (189059, 96693, 92366) median 16.2 
+   p203 'BATSARI' (207874, 104279, 103595) median 15.5 
+   p203 'BAURE' (202941, 102127, 100814) median 15.9 
+   p203 'BINDAWA' (151002, 76925, 74077) median 16.0 
+   p204 'CHARANCHI' (136989, 70040, 66949) median 15.7 
+   p204 'DAN MUSA' (113190, 58031, 55159) median 15.9 
+   p204 'DANDUME' (145323, 74222, 71101) median 15.6 
+   p205 'DANJA' (125481, 63663, 61818) median 15.6 
+   p205 'DAURA' (224884, 115576, 109308) median 16.1 
+   p205 'DUTSI' (120902, 61430, 59472) median 15.7 
+   p206 'DUTSIN-MA' (169829, 88202, 81627) median 15.9 
+   p206 'FASKARI' (194400, 97963, 96437) median 15.7 
+   p206 'FUNTUA' (225156, 117789, 107367) median 15.8 
+   p207 'INGAWA' (169148, 86061, 83087) median 16.1 
+   p207 'JIBIA' (167435, 85149, 82286) median 15.3 
+   p207 'KAFUR' (209360, 104620, 104740) median 15.3 
+   p208 'KAITA' (182405, 93190, 89215) median 16.1 
+   p208 'KANKARA' (243259, 121815, 121444) median 15.5 
+   p208 'KANKIA' (151395, 77061, 74334) median 16.0 
+   p209 'KATSINA' (318132, 168906, 149226) median 15.6 
+   p209 'KURFI' (116700, 59021, 57679) median 15.3 
+   p210 "MAI'ADUA" (201800, 103107, 98693) median 15.9 
+   p210 'MALUMFASHI' (182891, 92420, 90471) median 15.7 
+   p210 'MANI' (176301, 88007, 88294) median 15.5 
+   p211 'MASHI' (171070, 84105, 86965) median 15.8 
+   p211 'MATAZU' (113814, 57587, 56227) median 16.1 
+   p211 'MUSAWA' (170006, 85788, 84218) median 15.7 
+   p212 'RIMI' (154092, 77059, 77033) median 15.9 
+   p212 'SABUWA' (140679, 72106, 68573) median 15.5 
+   p212 'SAFANA' (185207, 93410, 91797) median 15.6 
+   p213 'SANDAMU' (136944, 68512, 68432) median 16.1 
+   p213 'ZANGO' (156052, 79771, 76281) median 16.2 
+STATE p216 'KEBBI' (3256541, 1631629, 1624912) median 2.5 21 areas ['1 age groups where 18 were expected']
+   p216 'ALEIRO' (67078, 34368, 32710) median 2.5 ['1 age groups where 18 were expected']
+   p216 'AREWA-DANDI' (189728, 94825, 94903) median 2.5 ['1 age groups where 18 were expected']
+   p217 'ARGUNGU' (200248, 99658, 100590) median 2.5 ['1 age groups where 18 were expected']
+   p217 'AUGIE' (116368, 58185, 58183) median 2.5 ['1 age groups where 18 were expected']
+   p217 'BAGUDO' (238014, 118733, 119281) median 2.5 ['1 age groups where 18 were expected']
+   p218 'BIRNIN KEBBI' (268620, 135426, 133194) median 2.5 ['1 age groups where 18 were expected']
+   p218 'BUNZA' (123547, 61309, 62238) median 2.5 ['1 age groups where 18 were expected']
+   p218 'DANDI' (146211, 72907, 73304) median 2.5 ['1 age groups where 18 were expected']
+   p219 'FAKAI' (119772, 60441, 59331) median 2.5 ['1 age groups where 18 were expected']
+   p219 'GWANDU' (151077, 74610, 76467) median 2.5 ['1 age groups where 18 were expected']
+   p219 'JEGA' (197757, 98936, 98821) median 2.5 ['1 age groups where 18 were expected']
+   p220 'KALGO' (84928, 42262, 42666) median 2.5 ['1 age groups where 18 were expected']
+   p220 'KOKO/BESSE' (154818, 78419, 76399) median 2.5 ['1 age groups where 18 were expected']
+   p220 'MAIYAMA' (173759, 85728, 88031) median 2.5 ['1 age groups where 18 were expected']
+   p221 'NGASKI' (126102, 62480, 63622) median 2.5 ['1 age groups where 18 were expected']
+   p221 'SAKABA' (91728, 46194, 45534) median 2.5 ['1 age groups where 18 were expected']
+   p221 'SHANGA' (127142, 63478, 63664) median 2.5 ['1 age groups where 18 were expected']
+   p222 'SURU' (148474, 72912, 75562) median 2.5 ['1 age groups where 18 were expected']
+   p222 'WASAGU/DANKO' (265271, 131388, 133883) median 2.5 ['1 age groups where 18 were expected']
+   p222 'YAURI' (100564, 53016, 47548) median 2.5 ['1 age groups where 18 were expected']
+   p223 'ZURU' (165335, 86354, 78981) median 2.5 ['1 age groups where 18 were expected']
+STATE p226 'KOGI STATE' (3314043, 1672903, 1641140) median 17.2 21 areas 
+   p226 'ADAVI' (217219, 108891, 108328) median 16.6 
+   p226 'AJAOKUTA' (122432, 62995, 59437) median 17.4 
+   p227 'ANKPA' (266176, 133705, 132471) median 16.8 
+   p227 'BASSA' (139687, 70293, 69394) median 17.2 
+   p227 'DEKINA' (260968, 131394, 129574) median 17.1 
+   p228 'IBAJI' (127572, 64423, 63149) median 16.5 
+   p228 'IDAH' (79755, 40141, 39614) median 17.7 
+   p228 'IGALAMELA-ODOLU' (147048, 74489, 72559) median 17.9 
+   p229 'IJUMU' (118593, 59582, 59011) median 17.0 
+   p229 'KABBA/BUNU' (144579, 72639, 71940) median 17.2 
+   p229 'es KOGI' (115100, 58864, 5623) median 16.7 ['men 58,864 and women 5,623 make 64,487, not the total 115,100', 'ages 0-4: men and women make 12,740, not 22,581', 'the age groups of women make 46,395, not 5,623']
+   p230 'LOKOJA' (196643, 101145, 95498) median 19.1 
+   p230 'MOPA-MURO' (43760, 22311, 21449) median 17.9 
+   p230 'OFU' (191480, 96671, 94809) median 16.8 
+   p231 'OGORI/MAGONGO' (39807, 20051, 19756) median 17.5 
+   p231 'OKEHI' (223574, 112879, 110695) median 16.7 
+   p231 'OKENE' (325623, 163935, 161688) median 16.8 
+   p232 'OLAMABOLO' (158490, 78439, 80051) median 17.3 
+   p232 'OMALA' (107968, 54366, 53602) median 16.7 
+   p232 'YAGBA EAST' (147641, 74619, 73022) median 17.7 
+   p233 'YAGBA WEST' (139928, 71071, 68857) median 17.6 
+STATE p236 'KWARA STATE' (2365353, 1193783, 1171570) median 18.1 16 areas 
+   p236 'ASA' (124668, 62751, 61917) median 16.9 
+   p236 'BARUTEN' (206679, 104727, 101952) median 16.5 
+   p237 'EDU' (201642, 104040, 97602) median 17.1 
+   p237 'EKITI' (54399, 27611, 26788) median 18.3 
+   p237 'IFELODUN' (204975, 103650, 101325) median 17.2 
+   p238 'ILORIN EAST' (207462, 104801, 102661) median 19.3 
+   p238 'ILORIN SOUTH' (209251, 103606, 105645) median 20.2 
+   p238 'ILORIN WEST' (365221, 180387, 184834) median 20.0 
+   p239 'IREPODUN' (147594, 73554, 74040) median 17.8 
+   p239 'ISIN' (59481, 30088, 29393) median 17.5 
+   p239 'KAIAMA' (124015, 64901, 59114) median 16.8 
+   p240 'MORO' (108715, 54860, 53855) median 18.0 
+   p240 'OFFA' (88975, 44813, 44162) median 17.4 
+   p240 'OKE-ERO' (56970, 28358, 28612) median 16.5 
+   p241 'OYUN' (94454, 47890, 46564) median 18.2 
+   p241 'PATEGI' (110852, 57746, 53106) median 16.9 
+STATE p244 'LAGOS' (9113605, 4719125, 4394480) median 23.4 20 areas 
+   p244 'AGEGE' (461743, 238456, 223287) median 23.0 
+   p244 'AJEROMI-IFELODUN' (687316, 352273, 335043) median 22.3 
+   p245 'ALIMOSHO' (1319571, 665750, 653821) median 22.3 
+   p245 'AMUWO-ODOFIN' (328975, 173742, 155233) median 24.2 
+   p245 'APAPA' (222986, 123163, 99823) median 24.1 
+   p246 'BADAGRY' (237731, 119821, 117910) median 21.3 
+   p246 'EPE' (181734, 91925, 89809) median 20.9 
+   p246 'ETI-OSA' (283791, 158858, 124933) median 25.6 
+   p247 'IBEJU/LEKKI' (117793, 60729, 57064) median 21.2 
+   p247 'IFAKO-IJAYE' (427737, 219109, 208628) median 23.7 
+   p247 'IKEJA' (317614, 171782, 145832) median 25.3 
+   p248 'IKORODU' (527917, 268463, 259454) median 22.0 
+   p248 'KOSOFE' (682772, 358935, 323837) median 24.1 
+   p248 'LAGOS ISLAND' (212700, 110042, 102658) median 25.1 
+   p249 'LAGOS MAINLAND' (326700, 170568, 156132) median 23.9 
+   p249 'MUSHIN' (631857, 326873, 304984) median 24.2 
+   p249 'OJO' (609173, 315401, 293772) median 21.7 
+   p250 'OSHODI-ISOLO' (629061, 325207, 303854) median 23.6 
+   p250 'SHOMOLU' (403569, 207519, 196050) median 24.1 
+   p250 'SURULERE' (502865, 260509, 242356) median 24.4 
+STATE p253 'NASARAWA' (1869377, 943801, 925576) median 2.5 13 areas ['1 age groups where 18 were expected']
+   p253 'AKWANGA' (111902, 56135, 55767) median 2.5 ['1 age groups where 18 were expected']
+   p253 'AWE' (113083, 57326, 55757) median 2.5 ['1 age groups where 18 were expected']
+   p254 'DOMA' (138991, 71395, 67596) median 2.5 ['1 age groups where 18 were expected']
+   p254 'KARU' (216230, 109515, 106715) median 2.5 ['1 age groups where 18 were expected']
+   p254 'KEANA' (81801, 40873, 40928) median 2.5 ['1 age groups where 18 were expected']
+   p255 'KEFFI' (92550, 47527, 45023) median 2.5 ['1 age groups where 18 were expected']
+   p255 'KOKONA' (108558, 54379, 54179) median 2.5 ['1 age groups where 18 were expected']
+   p255 'LAFIA' (329922, 165631, 164291) median 2.5 ['1 age groups where 18 were expected']
+   p256 'NASARAWA' (187220, 95105, 92115) median 2.5 ['1 age groups where 18 were expected']
+   p256 'NASARAWA-EGGON' (148405, 74543, 73862) median 2.5 ['1 age groups where 18 were expected']
+   p256 'OBI' (148977, 74675, 74302) median 2.5 ['1 age groups where 18 were expected']
+   p257 'TOTO' (119051, 59884, 59167) median 2.5 ['1 age groups where 18 were expected']
+   p257 'WAMBA' (72687, 36813, 35874) median 2.5 ['1 age groups where 18 were expected']
+STATE p260 'NIGER' (3954772, 2004350, 1950422) median 16.5 25 areas 
+   p260 'Agaie' (132098, 66703, 65395) median 16.1 
+   p260 'Agwara' (57347, 29293, 28054) median 15.8 
+   p261 'Bida' (185553, 93741, 91812) median 16.7 
+   p261 'Borgu' (172835, 87327, 85508) median 16.6 
+   p261 'Bosso' (148136, 75033, 73103) median 17.0 
+   p262 'Chanchaga' (202151, 105265, 96886) median 18.6 
+   p262 'Edati' (159818, 80615, 79203) median 16.2 
+   p262 'Gbako' (126845, 63871, 62974) median 16.0 
+   p263 'Gurara' (90879, 45153, 45726) median 16.5 
+   p263 'Katcha' (120893, 60526, 60367) median 16.2 
+   p263 'Kontagora' (151968, 77782, 74186) median 17.2 
+   p264 'Lapai' (117021, 59974, 57047) median 16.2 
+   p264 'Lavun' (209777, 107146, 102631) median 16.4 
+   p264 'Magama' (181470, 90740, 90730) median 15.9 
+   p265 'Mariga' (199600, 100899, 98701) median 16.2 
+   p265 'Mashegu' (215197, 107909, 107288) median 16.0 
+   p265 'Mokwa' (242858, 123467, 119391) median 16.2 
+   p266 'Muya' (103461, 52584, 50877) median 16.2 
+   p266 'Paikoro' (158178, 79399, 78779) median 16.7 
+   p266 'Rafi' (186118, 94395, 91723) median 16.2 
+   p267 'Rijau' (176199, 88875, 87324) median 16.2 
+   p267 'Shiroro' (235665, 118640, 117025) median 16.7 
+   p267 'Suleja' (215075, 112030, 103045) median 17.4 
+   p268 'Tafa' (83874, 41524, 42350) median 16.2 
+   p268 'Wushishi' (81756, 41459, 40297) median 15.9 
+STATE p271 'OGUN' (3751140, 1864907, 1886233) median 21.1 20 areas 
+   p271 'ABEOKUTA NORTH' (198793, 96463, 102330) median 21.1 
+   p271 'ABEOKUTA SOUTH' (250295, 119977, 130318) median 21.3 
+   p272 'ADO-ODO/OTA' (527242, 261523, 265719) median 21.0 
+   p272 'EGBADO NORTH' (183844, 89880, 93964) median 19.8 
+   p272 'EGBADO SOUTH' (168336, 81666, 86670) median 20.3 
+   p273 'EWEKORO' (55093, 28212, 26881) median 21.7 
+   p273 'IFO' (539170, 269206, 269964) median 21.4 
+   p273 'IJEBU EAST' (109321, 56981, 52340) median 21.5 
+   p274 'IJEBU NORTH' (280520, 141074, 139446) median 21.6 
+   p274 'IJEBU NORTH EAST' (68800, 34581, 34219) median 21.8 
+   p274 'IJEBU ODE' (157161, 76466, 80695) median 21.8 
+   p275 'IKENNE' (119117, 60607, 58510) median 20.6 
+   p275 'IMEKO-AFON' (82952, 41850, 41102) median 19.5 
+   p275 'IPOKIA' (150387, 74649, 75738) median 20.3 
+   p276 'OBAFEMI-OWODE' (235071, 118574, 116497) median 22.0 
+   p276 'ODEDA' (109522, 55200, 54322) median 21.0 
+   p276 'ODOGBOLU' (125657, 63838, 61819) median 20.8 
+   p277 'OGUN WARTERSIDE' (74222, 37412, 36810) median 20.2 
+   p277 'REMO NORTH' (59752, 29893, 29859) median 21.1 
+   p277 'SHAGAMU' (255885, 126855, 129030) median 21.2 
+STATE p280 'ONDO' (3460877, 1745057, 1715820) median 20.3 18 areas 
+   p280 'AKOKO NORTH EAST' (179092, 92456, 86636) median 20.2 
+   p280 'AKOKO NORTH WEST' (211867, 107076, 104791) median 20.6 
+   p281 'AKOKO SOUTH EAST' (82443, 42175, 40268) median 19.2 
+   p281 'AKOKO SOUTH WEST' (228383, 114733, 113650) median 20.6 
+   p281 'AKURE NORTH' (130765, 66526, 64239) median 20.4 
+   p282 'AKURE SOUTH' (360268, 178672, 181596) median 21.7 
+   p282 'ESE-ODO' (158256, 79812, 78444) median 20.1 
+   p282 'IDANRE' (129795, 67531, 62264) median 20.4 
+   p283 'IFEDORE' (176372, 89574, 86798) median 19.9 
+   p283 'ILAJE' (289838, 146859, 142979) median 20.3 
+   p283 'ILE-OLUJI-OKEIGBO' (171876, 87104, 84772) median 19.8 
+   p284 'IRELE' (144136, 72861, 71275) median 19.6 
+   p284 'ODIGBO' (232287, 116299, 115988) median 19.8 
+   p284 'OKITIPUPA' (234138, 117594, 116544) median 19.9 
+   p285 'ONDO EAST' (76092, 38851, 37241) median 19.5 
+   p285 'ONDO WEST' (288868, 141759, 147109) median 20.7 
+   p285 'OSE' (144139, 73119, 71020) median 20.0 
+   p286 'OWO' (222262, 112056, 110206) median 20.6 
+STATE p289 'OSUN' (3416959, 1734149, 1682810) median 20.7 30 areas 
+   p289 'AIYEDADE' (149569, 76032, 73537) median 20.9 
+   p289 'AIYEDIRE' (76309, 38299, 38010) median 20.0 
+   p290 'ATAKUMOSA EAST' (76105, 38945, 37160) median 20.8 
+   p290 'ATAKUMOSA WEST' (68350, 34859, 33491) median 21.2 
+   p290 'BOLUWADURO' (70954, 36045, 34909) median 20.2 
+   p291 'BORIPE' (138742, 71052, 67690) median 20.5 
+   p291 'EDE NORTH' (83818, 42282, 41536) median 20.9 
+   p291 'EDE SOUTH' (75489, 38233, 37256) median 20.0 
+   p292 'EGBEDORE' (73969, 37302, 36667) median 20.6 
+   p292 'EJIGBO' (132515, 67437, 65078) median 20.0 
+   p292 'IFE CENTRAL' (167204, 88403, 78801) median 23.1 
+   p293 'IFE EAST' (188614, 95106, 93508) median 20.7 
+   p293 'IFE NORTH' (153274, 76852, 76422) median 20.4 
+   p293 'IFE SOUTH' (134490, 68450, 66040) median 21.3 
+   p294 'IFEDAYO' (37508, 19227, 18281) median 20.5 
+   p294 'IFELODUN' (96444, 48567, 47877) median 20.1 
+   p294 'ILA' (62054, 31488, 30566) median 20.7 
+   p295 'ILESHA EAST' (105416, 52721, 52695) median 21.1 
+   p295 'ILESHA WEST' (106809, 52985, 53824) median 21.4 
+   p295 'IREPODUN' (119590, 60553, 59037) median 20.3 
+   p296 'IREWOLE' (142806, 71730, 71076) median 20.5 
+   p296 'ISOKAN' (102060, 51304, 50756) median 20.3 
+   p296 'IWO' (191348, 96419, 94929) median 20.2 
+   p297 'OBOKUN' (116850, 59587, 57263) median 20.5 
+   p297 'ODO-OTIN' (132078, 67956, 64122) median 19.6 
+   p297 'OLA-OLUWA' (76227, 39233, 36994) median 20.4 
+   p298 'OLORUNDA' (131649, 66684, 64965) median 20.3 
+   p298 'ORIADE' (148379, 75213, 73166) median 20.5 
+   p298 'OROLU' (102832, 52790, 50042) median 20.2 
+   p299 'OSOGBO' (155507, 78395, 77112) median 20.5 
+STATE p302 'OYO STATE' (5580894, 2802432, 2778462) median 20.9 33 areas 
+   p302 'AFIJIO' (132184, 66434, 65750) median 22.4 
+   p302 'AKINYELE' (211811, 105594, 106217) median 21.3 
+   p303 'ATIBA' (168246, 84266, 83980) median 19.6 
+   p303 'ATIGBO' (109965, 56747, 53218) median 19.5 
+   p303 'EGBEDA' (283643, 137527, 146116) median 20.9 
+   p304 'IBADAN CENTRAL [IBADAN NORTH EAST]' (331444, 163844, 167600) median 21.3 
+   p304 'IBADAN NORTH' (308119, 152608, 155511) median 22.8 
+   p304 'IBADAN NORTH WEST' (154029, 75410, 78619) median 22.4 
+   p305 'IBADAN SOUTH EAST' (266457, 130334, 136123) median 21.2 
+   p305 'IBADAN SOUTH WEST' (283098, 139622, 143476) median 23.2 
+   p305 'IBARAPA CENTRAL' (103243, 52094, 51149) median 21.0 
+   p306 'IBARAPA EAST' (117182, 59315, 57867) median 20.8 
+   p306 'IBARAPA NORTH' (100293, 51272, 49021) median 20.1 
+   p306 'IDO' (104087, 52465, 51622) median 21.5 
+   p307 'IREPO' (121240, 62601, 58639) median 18.6 
+   p307 'ISEYIN' (255619, 129268, 126351) median 20.3 
+   p307 'ITESIWAJU' (127391, 65820, 61571) median 20.2 
+   p308 'IWAJOWA' (102847, 52472, 50375) median 19.9 
+   p308 'KAJOLA' (200528, 101188, 99340) median 20.5 
+   p308 'LAGELU' (148133, 74220, 73913) median 21.4 
+   p309 'OGBOMOSHO NORTH' (198859, 103418, 95441) median 21.3 
+   p309 'OGBOMOSHO SOUTH' (100379, 50862, 49517) median 20.5 
+   p309 'OGO OLUWA' (65198, 33403, 31795) median 20.4 
+   p310 'OLORUNSOGO' (81339, 41795, 39544) median 19.9 
+   p310 'OLUYOLE' (203461, 102371, 101090) median 20.9 
+   p310 'ONA-ARA' (265571, 130615, 134956) median 19.7 
+   p311 'ORELOPE' (104004, 52996, 51008) median 20.3 
+   p311 'ORI IRE' (149408, 76465, 72943) median 19.8 
+   p311 'OYO EAST' (124095, 62147, 61948) median 20.8 
+   p312 'OYO WEST' (136457, 68897, 67560) median 20.3 
+   p312 'SAKI EAST' (108957, 56014, 52943) median 19.8 
+   p312 'SAKI WEST' (273268, 138677, 134591) median 19.8 
+   p313 'SURULERE' (140339, 71671, 68668) median 19.9 
+STATE p316 'PLATEAU' (3206531, 1598998, 1607533) median 17.8 17 areas 
+   p316 'BARIKIN LADI' (179805, 90913, 88892) median 17.6 
+   p316 'BASSA' (189834, 94725, 95109) median 17.5 
+   p317 'BOKKOS' (179550, 88560, 90990) median 17.3 
+   p317 'JOS EAST' (88301, 44980, 43321) median 17.5 
+   p317 'JOS NORTH' (437217, 220856, 216361) median 19.0 
+   p318 'JOS SOUTH' (311392, 157067, 154325) median 19.8 
+   p318 'KANAM' (167619, 81162, 86457) median 16.2 
+   p318 'KANKE' (124268, 61376, 62892) median 17.3 
+   p319 'LANGTANG NORTH' (142316, 70203, 72113) median 17.9 
+   p319 'LANGTANG SOUTH' (105173, 53111, 52062) median 17.1 
+   p319 'MANGU' (300520, 148590, 151930) median 17.7 
+   p320 'MIKANG' (96388, 47584, 48804) median 16.5 
+   p320 'PANKSHIN' (190114, 95376, 94738) median 18.1 
+   p320 "QUA'AN PAN" (197276, 96800, 100476) median 17.0 
+   p321 'RIYOM' (131778, 66248, 65530) median 16.6 
+   p321 'SHENDAM' (205119, 101951, 103168) median 17.7 
+   p321 'WASE' (159861, 79496, 80365) median 16.4 
+STATE p324 'RIVERS' (5198716, 2673026, 2525690) median 21.1 23 areas 
+   p324 'ABUA/ODUAL' (282410, 145243, 137167) median 20.2 
+   p324 'AHOADA EAST' (166324, 85467, 80857) median 20.2 
+   p325 'AHOADA WEST' (249232, 127906, 121326) median 20.3 
+   p325 'AKUKU TORU' (161103, 82949, 78154) median 20.7 
+   p325 'ANDONI' (217924, 111946, 105978) median 20.1 
+   p326 'ASARI-TORU' (219787, 112283, 107504) median 21.1 
+   p326 'BONNY' (214983, 116340, 98643) median 22.5 
+   p326 'DEGEMA' (249467, 128041, 121426) median 20.4 
+   p327 'ELEME' (190194, 98345, 91849) median 20.7 
+   p327 'EMOHUA' (201057, 102634, 98423) median 20.1 
+   p327 'ETCHE' (249939, 127869, 122070) median 20.8 
+   p328 'GOKANA' (233813, 118222, 115591) median 20.4 
+   p328 'IKWERRE' (188930, 97575, 91355) median 21.0 
+   p328 'KHANA' (292924, 147315, 145609) median 20.5 
+   p329 'OBIA/AKPOR' (462350, 238951, 223399) median 22.6 
+   p329 'OGBA/EGBEMA/NDONI' (283294, 145326, 137968) median 20.4 
+   p329 'OGU/BOLO' (75282, 38552, 36730) median 20.2 
+   p330 'OKRIKA' (222285, 113962, 108323) median 20.6 
+   p330 'OMUMMA' (100388, 50853, 49535) median 20.9 
+   p330 'OPOBO/NKORO' (152833, 77556, 75277) median 20.6 
+   p331 'OYIGBO' (125331, 63434, 61897) median 20.6 
+   p331 'PORT-HARCOURT' (538558, 280703, 257855) median 22.8 
+   p331 'TAI' (120308, 61554, 58754) median 20.4 
+STATE p334 'SOKOTO' (3702676, 1863713, 1838963) median 16.3 23 areas 
+   p334 'BINJI' (104274, 52949, 51325) median 15.7 
+   p334 'BODINGA' (174302, 87844, 86458) median 16.4 
+   p335 'DANGE-SHUNI' (193443, 97709, 95734) median 16.6 
+   p335 'GADA' (249051, 122232, 126819) median 16.4 
+   p335 'GORONYO' (182118, 90639, 91479) median 16.1 
+   p336 'GUDU' (95400, 48125, 47275) median 15.9 
+   p336 'GWADABAWA' (231569, 116300, 115269) median 16.0 
+   p336 'ILLELA' (150133, 74949, 75184) median 16.5 
+   p337 'ISA' (150268, 73474, 76794) median 16.0 
+   p337 'KEBBE' (123154, 62338, 60816) median 15.7 
+   p337 'KWARE' (134084, 66778, 67306) median 16.7 
+   p338 'RABAH' (149152, 75001, 74151) median 16.2 
+   p338 'SABON BIRNI' (207470, 99397, 108073) median 17.1 
+   p338 'SHAGARI' (156907, 79438, 77469) median 15.4 
+   p339 'SILAME' (104601, 53091, 51510) median 16.1 
+   p339 'SOKOTO NORTH' (233012, 124134, 108878) median 16.4 
+   p339 'SOKOTO SOUTH' (197686, 103207, 94479) median 17.5 
+   p340 'TAMBUWAL' (225917, 113495, 112422) median 15.6 
+   p340 'TANGAZA' (114770, 55309, 59461) median 16.3 
+   p340 'TURETA' (68414, 34567, 33847) median 15.4 
+   p341 'WAMAKKO' (179246, 91466, 87780) median 17.9 
+   p341 'WURNO' (162403, 81854, 80549) median 16.2 
+   p341 'YABO' (115302, 59417, 55885) median 15.1 
+STATE p344 'TARABA' (2294800, 1171931, 1122869) median 17.1 15 areas 
+   p344 'ARDO-KOLA' (87784, 44533, 43251) median 17.5 
+   p345 'BALI' (211024, 107979, 103045) median 16.9 
+   p345 'DONGA' (133105, 67582, 65523) median 16.6 
+   p345 'GASHAKA' (87166, 45587, 41579) median 17.4 
+   p346 'GASSOL' (245086, 126856, 118230) median 16.7 
+   p346 'IBI' (84302, 42654, 41648) median 17.2 
+   p346 'JALINGO' (140318, 71997, 68321) median 18.4 
+   p347 'KARIM-LAMIDO' (193924, 98315, 95609) median 16.5 
+   p347 'KURMI' (91282, 46383, 44899) median 16.9 
+   p347 'LAU' (95190, 48582, 46608) median 17.5 
+   p348 'SARDAUNA' (224357, 112060, 112297) median 16.7 
+   p348 'TAKUM' (134576, 68062, 66514) median 16.7 
+   p348 'USSA' (90889, 46558, 44331) median 16.9 
+   p349 'WUKARI' (238283, 124285, 113998) median 17.6 
+   p349 'YORRO' (89865, 45633, 44232) median 18.0 
+STATE p352 'YOBE' (2321339, 1205034, 1116305) median 16.6 17 areas 
+   p352 'BADE' (139804, 73709, 66095) median 16.6 
+   p352 'BURSARI' (109692, 56381, 53311) median 17.2 
+   p353 'DAMATURU' (87706, 48361, 39345) median 17.3 
+   p353 'FIKA' (136736, 69175, 67561) median 16.2 
+   p353 'FUNE' (301954, 150896, 151058) median 15.6 
+   p354 'GEIDAM' (155740, 82482, 73258) median 17.5 
+   p354 'GUJBA' (129797, 72310, 57487) median 16.0 
+   p354 'GULANI' (103516, 51686, 51830) median 16.6 
+   p355 'JAKUSKO' (232458, 120728, 111730) median 16.6 
+   p355 'KARASUWA' (105514, 55385, 50129) median 16.4 
+   p355 'MACHINA' (60994, 31771, 29223) median 17.7 
+   p356 'NANGERE' (87517, 44470, 43047) median 15.3 
+   p356 'NGURU' (150699, 80827, 69872) median 16.9 
+   p356 'POTISKUM' (204866, 105388, 99478) median 15.9 
+   p357 'TARMUA' (77667, 40612, 37055) median 17.7 
+   p357 'YUNUSARI' (125940, 64918, 61022) median 17.8 
+   p357 'YUSUFARI' (110739, 55935, 54804) median 18.2 
+STATE p360 'ZAMFARA' (3278873, 1641623, 1637250) median 16.1 14 areas 
+   p360 'ANKA' (143637, 72456, 71181) median 16.0 
+   p360 'BAKURA' (187141, 92369, 94772) median 15.9 
+   p361 'BIRNIN MAGAJI' (184083, 90824, 93259) median 16.1 
+   p361 'BUKKUYUM' (216348, 108812, 107536) median 14.8 
+   p361 'BUNGUDU' (258644, 128831, 129813) median 16.5 
+   p362 'GUMMI' (206721, 102686, 104035) median 16.6 
+   p362 'GUSAU' (383712, 198682, 185030) median 16.5 
+   p362 'KAURA NAMODA' (285363, 145548, 139815) median 15.9 
+   p363 'MARADUN' (207563, 106403, 101160) median 15.7 
+   p363 'MARU' (293141, 146920, 146221) median 16.1 
+   p363 'SHINKAFI' (135964, 66512, 69452) median 16.4 
+   p364 'TALATA MAFARA' (215650, 107516, 108134) median 16.4 
+   p364 'TSAFE' (266929, 129010, 137919) median 15.6 
+   p364 'ZURMI' (293977, 145054, 148923) median 16.2 
+STATE p367 'FCT ABUJA' (1406239, 733172, 673067) median None 6 areas ['0 age groups where 18 were expected']
+   p367 'ABAJI' (58642, 28860, 29782) median None ['0 age groups where 18 were expected']
+   p367 'ABUJA MUNICIPAL [AMAC]' (776298, 415951, 360347) median None ['0 age groups where 18 were expected']
+   p368 'BWARI' (229274, 115346, 113928) median None ['0 age groups where 18 were expected']
+   p368 'GWAGWALADA' (158618, 80182, 78436) median None ['0 age groups where 18 were expected']
+   p368 'KUJE' (97233, 49420, 47813) median None ['0 age groups where 18 were expected']
+   p369 'KWALI' (86174, 43413, 42761) median None ['0 age groups where 18 were expected']
+nigeria_census: 760 local government areas, not 774
