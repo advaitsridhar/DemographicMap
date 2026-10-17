@@ -19,6 +19,9 @@ zip, xls, csv, cdx, pdf), and these are added:
     pdfg:URL~~REGEX[~~N]           pdfplumber lines matching REGEX, with page numbers
     pdft:URL~~REGEX[~~N]           the pages whose text matches REGEX: their first
                                    lines (titles), to find which page holds a table
+    sheets:URL                     every sheet of a workbook (or of the first
+                                   workbook in a zip): name, size, first text cells
+    sheet:URL~~NAME[~~ROWS[~~COLS]] one sheet's rows (NAME may be its number, 1-based)
 
 The workflow splits the command on whitespace and xargs reads quotes and
 backslashes, so no part may hold a space, a quote or a backslash: a regex
@@ -63,6 +66,39 @@ def get(url: str, timeout: int = 300) -> tuple[int, str, dict, bytes]:
     return status, final, headers, body
 
 
+def workbook_rows(body: bytes) -> list[tuple[str, list[list]]]:
+    """[(sheet name, rows)] of a workbook, or of the first workbook in a zip."""
+    if body[:2] == b"PK":
+        import zipfile                              # noqa: PLC0415
+        with zipfile.ZipFile(io.BytesIO(body)) as zf:
+            names = zf.namelist()
+            if "[Content_Types].xml" not in names:
+                inner = [n for n in names if n.lower().endswith((".xlsx", ".xls", ".xlsm"))]
+                if not inner:
+                    raise ValueError(f"zip holds no workbook: {names[:10]}")
+                say(f"  zip member {inner[0]} ({len(names)} members)")
+                body = zf.read(inner[0])
+    out: list[tuple[str, list[list]]] = []
+    if body[:2] == b"PK":
+        import openpyxl                             # noqa: PLC0415
+        wb = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+        for ws in wb.worksheets:
+            out.append((ws.title, [["" if v is None else v for v in row]
+                                   for row in ws.iter_rows(values_only=True)]))
+    else:
+        import xlrd                                 # noqa: PLC0415
+        wb = xlrd.open_workbook(file_contents=body)
+        for sh in wb.sheets():
+            out.append((sh.name, [sh.row_values(r) for r in range(sh.nrows)]))
+    return out
+
+
+def cell(value: object, width: int = 22) -> str:
+    if isinstance(value, float) and value.is_integer():
+        value = int(value)
+    return " ".join(str(value).split())[:width]
+
+
 def probe(arg: str) -> None:
     mode, _, rest = arg.partition(":")
     if mode in base.MODES:
@@ -92,12 +128,38 @@ def probe(arg: str) -> None:
             if len(f) >= 7:
                 say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
         return
-    if mode not in ("json", "keys", "pdfp", "pdfg", "pdft"):
+    if mode not in ("json", "keys", "pdfp", "pdfg", "pdft", "sheets", "sheet"):
         say(f"?? unknown mode in {arg!r}")
         return
     status, final, headers, body = get(url)
     if status >= 400 or status < 0:
         say("  " + base.strip(base.decode(body, headers))[:400])
+        return
+    if mode in ("sheets", "sheet"):
+        sheets = workbook_rows(body)
+        if mode == "sheets":
+            for number, (name, rows) in enumerate(sheets, 1):
+                texts = [cell(v, 70) for row in rows[:8] for v in row
+                         if isinstance(v, str) and v.strip()][:3]
+                width = max((len(r) for r in rows), default=0)
+                say(f"  {number:>3} {name!r} {len(rows)}x{width}: " + " / ".join(texts))
+            return
+        want = extra[0] if extra else "1"
+        rows_n = int(extra[1]) if len(extra) > 1 else 60
+        cols_n = int(extra[2]) if len(extra) > 2 else 24
+        chosen = [s for s in sheets if s[0] == want] or \
+            ([sheets[int(want) - 1]] if want.isdigit() and int(want) <= len(sheets) else [])
+        if not chosen:
+            say(f"  no sheet {want!r}; sheets: {[s[0] for s in sheets][:60]}")
+            return
+        name, rows = chosen[0]
+        say(f"  sheet {name!r}: {len(rows)} rows")
+        for i, row in enumerate(rows[:rows_n]):
+            cells = [cell(v) for v in row[:cols_n]]
+            while cells and not cells[-1]:
+                cells.pop()
+            if cells:
+                say(f"  {i + 1:>4}: " + " | ".join(cells))
         return
     if mode in ("json", "keys"):
         try:
