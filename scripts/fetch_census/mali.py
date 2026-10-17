@@ -14,11 +14,18 @@ before it ships.
 
 **Twenty regions into nine shapes.** The report tabulates the 2023 layout of
 19 regions and the District of Bamako. The boundary file draws the 2012
-layout of eight regions and Bamako, and every new region was carved whole out
+layout of eight regions and Bamako, and every new region was carved mostly out
 of one old one (Kita and Nioro from Kayes, Dioïla and Nara from Koulikoro,
 Bougouni and Koutiala from Sikasso, San from Ségou, Bandiagara and Douentza
 from Mopti, Taoudénit from Tombouctou, Ménaka from Gao), so the old region is
-the sum of the new ones. Every table prints percentages and each region's
+the sum of the new ones -- exactly for Kayes, Tombouctou, Gao and Kidal, and
+nearly for the rest: OCHA's 2025 boundaries of the 2023 regions and cercles,
+placed on the map's polygons point by point, put the cercle of Ouélessébougou
+and part of Sélingué (Koulikoro) in Bougouni, part of Bla (Ségou) in Koutiala,
+part of Ténenkou (Mopti) in Ségou as Nampala, and draw the District of Bamako
+of 2023 over ground of the Kati cercle. Shares move little when a cercle
+changes hands, so those five shapes keep the summed shares and say what the
+sum takes in or leaves out (CROSSED). Every table prints percentages and each region's
 population, and the sum is taken on counts rebuilt from the two -- a percent
 of a stated population -- never on percentages, which cannot be added.
 
@@ -85,6 +92,27 @@ MERGED_NOTE = {
     + " regions of the 2023 layout, summed"
     for shape in set(REGIONS.values())
     if sum(1 for s in REGIONS.values() if s == shape) > 1
+}
+# Where the regions of 2023 do not follow the shape's lines exactly (OCHA's 2025
+# boundaries of the 2023 regions and cercles, placed on the map's polygons
+# point by point): the shares are those of the regions summed, which take in a
+# little ground drawn elsewhere or leave a little out.
+CROSSED = {
+    "Koulikoro": ("The Bougouni region of 2023 took in the cercle of Ouélessébougou and part of "
+                  "Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 "
+                  "ground drawn here in the Kati cercle, so the regions summed here leave "
+                  "those out."),
+    "Sikasso": ("The regions summed here also take in ground drawn in Koulikoro (the cercle of "
+                "Ouélessébougou and part of Sélingué, now in Bougouni) and in Ségou (part of "
+                "the cercle of Bla, now in Koutiala)."),
+    "Ségou": ("The regions summed here leave out part of the cercle of Bla (now in Koutiala) "
+              "and take in part of the cercle of Ténenkou, drawn in Mopti (now the cercle of "
+              "Nampala)."),
+    "Mopti": ("The regions summed here leave out part of the cercle of Ténenkou, now the "
+              "cercle of Nampala in the Ségou region."),
+    "Bamako": ("The District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units "
+               "about three times the size of the district drawn here, over ground drawn here "
+               "in the Kati cercle; the shares are the larger district's."),
 }
 
 RELIGIONS = ["Islam", "Christianity", "Animist", "No religion", "Other religion"]
@@ -365,6 +393,8 @@ def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[di
                     f"applied to the other.")
             if shape in MERGED_NOTE:
                 note += f" This shape is {MERGED_NOTE[shape]}."
+            if shape in CROSSED:
+                note += " " + CROSSED[shape]
             values[f"{field}_note"] = note
             values[f"{field}_year"] = YEAR
         records.append(record(
