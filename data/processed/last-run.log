@@ -1,114 +1,45 @@
 
-======================================================================
-democratic-republic-of-the-congo-subnational-boundaries-and-tabular-data: 297,896 bytes, 7 sheets
-
---- Metadata: 93 rows ---
-  Metadata: Democratic Republic of the Congo
-  Contents
-  One metadata tab describing 3 geospatial boundary files and 5 tables, 
-  Geospatial Boundary Metadata
-  National Boundary (CD_GEOG_ADM0_2019_uscb_202103)
-  Title | Democratic Republic of the Congo: National Boundary
-  Tags | Geospatial Boundaries, Democratic Republic of the Congo, National Boun
-  Summary | The U.S. Census Bureau is providing national and subnational feature c
-  Description | National boundary feature class of Democratic Republic of the Congo fo
-  Credits | Geospatial Boundaries: International boundaries coincide with the Larg
-  Use Limitations | The international boundaries are derived from the Large Scale Internat
-  Place Keywords | Democratic Republic of the Congo, Country
-  Temporal Keywords | 2020
-  Theme Keywords | National Boundaries
-  Supplemental Information | The geodatabase feature class contains 1 polygon representing Democrat
-  First-Order Administrative Divisions (CD_GEOG_ADM1_2019_uscb_202103)
-  Title | Democratic Republic of the Congo: First-Order Administrative Divisions
-  Tags | Geospatial Boundaries, Democratic Republic of the Congo, First-Order A
-  Summary | The U.S. Census Bureau is providing national and subnational feature c
-  Description | First-order administrative divisions feature class of Democratic Repub
-
---- Data Dictionary: 253 rows ---
-  Data Dictionary: Democratic Republic of the Congo
-  Standard Geographic Fields
-  Field Name | Field Alias | Field Description | Field Data Source
-  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2020; DRC National Institute of Statis
-  GEO_CONCAT | Administrative name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
-  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
-  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
-  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., provinces. | U.S. Board on Geographic Names, 2020; DRC National Institute of Statis
-  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., districts. | U.S. Board on Geographic Names, 2020; DRC National Institute of Statis
-  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
-  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
-  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2020
-  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2020
-  NSO_CODE | National statistical office code | Code used by the DRC National Institute of Statistics for a subnationa | DRC National Institute of Statistics, 2019
-  NSO_NAME | National statistical office name | Name used by the DRC National Institute of Statistics for a subnationa | DRC National Institute of Statistics, 2019
-  Population Estimates
-  ES19_BTOTL | Both sexes total, 2019 estimate | Total population estimate (both sexes), 2019. Original field name: "T_ | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-  ES19_B0004 | Both sexes 0 to 4, 2019 estimate | Total population estimate age 0 - 4 (both sexes), 2019. Original field | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-  ES19_B0519 | Both sexes 5 to 19, 2019 estimate | Total population estimate age 5 - 19 (both sexes), 2019. Original fiel | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-  ES19_B2064 | Both sexes 20 to 64, 2019 estimate | Total population estimate age 20 - 64 (both sexes), 2019. Original fie | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-
---- Population Estimates: 191 rows, sexed=False ---
-  ADM_LEVEL 0: 1 areas  DEMOCRATIC REPUBLIC OF THE CONGO
-  ADM_LEVEL 1: 26 areas  KWANGO, KWILU, MAI-NDOMBE, KONGO CENTRAL, ÉQUATEUR, MONGALA, NORD-UBANGI, SUD-UBANGI, TSHUAPA, KASAÏ, KASAÏ CENTRAL, KASAÏ ORIENTAL, SANKURU, LOMAMI, HAUT-KATANGA, HAUT-LOMAMI, LUALABA, TANGANYIKA, KINSHASA, MANIEMA, NORD-KIVU, BAS-UÉLÉ, HAUT-UÉLÉ, ITURI, TSHOPO, SUD-KIVU
-  ADM_LEVEL 2: 164 areas  KENGE, FESHI, KAHEMBA, KASONGO-LUNDA, POPOKABAKA, BANDUNDU, BAGATA, KIKWIT, ...
-  denominator: none found
-  30 group columns:
-    ES19_BTOTL  ->  'Both sexes total, 2019 estimate'
-    ES19_B0004  ->  'Both sexes 0 to 4, 2019 estimate'
-    ES19_B0519  ->  'Both sexes 5 to 19, 2019 estimate'
-    ES19_B2064  ->  'Both sexes 20 to 64, 2019 estimate'
-    ES19_B65PL  ->  'Both sexes 65 and older, 2019 estimate'
-    ES19_MTOTL  ->  'Males total, 2019 estimate'
-    ES19_M0004  ->  'Males 0 to 4, 2019 estimate'
-    ES19_M0519  ->  'Males 5 to 19, 2019 estimate'
-    ES19_M2064  ->  'Males 20 to 64, 2019 estimate'
-    ES19_M65PL  ->  'Males 65 and older, 2019 estimate'
-    ES19_FTOTL  ->  'Females total, 2019 estimate'
-    ES19_F0004  ->  'Females 0 to 4, 2019 estimate'
-    ES19_F0519  ->  'Females 5 to 19, 2019 estimate'
-    ES19_F2064  ->  'Females 20 to 64, 2019 estimate'
-    ES19_F65PL  ->  'Females 65 and older, 2019 estimate'
-    ES20_BTOTL  ->  'Both sexes total, 2020 estimate'
-    ES20_B0004  ->  'Both sexes 0 to 4, 2020 estimate'
-    ES20_B0519  ->  'Both sexes 5 to 19, 2020 estimate'
-    ES20_B2064  ->  'Both sexes 20 to 64, 2020 estimate'
-    ES20_B65PL  ->  'Both sexes 65 and older, 2020 estimate'
-    ES20_MTOTL  ->  'Males total, 2020 estimate'
-    ES20_M0004  ->  'Males 0 to 4, 2020 estimate'
-    ES20_M0519  ->  'Males 5 to 19, 2020 estimate'
-    ES20_M2064  ->  'Males 20 to 64, 2020 estimate'
-    ...and 6 more
-    ES19_BTOTL says: Both sexes total, 2019 estimate | Total population estimate (both sexes), 2019. Original field name: "T_2019." (January 1, 2019) | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-    ES19_B0004 says: Both sexes 0 to 4, 2019 estimate | Total population estimate age 0 - 4 (both sexes), 2019. Original field name: "T_00_04_2019." (January 1, 2019) | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-    ES19_B0519 says: Both sexes 5 to 19, 2019 estimate | Total population estimate age 5 - 19 (both sexes), 2019. Original field name: "T_05_19_2019." (January 1, 2019) | Subnational Population Statistics, 2019, cod_admpop_2019.xlsx
-
-  whole country: DEMOCRATIC REPUBLIC OF THE CONGO (level 0) no published total
-    ES19_BTOTL     Both sexes total, 2019 estimate       99,921,753    0.00%
-    ES19_B0004     Both sexes 0 to 4, 2019 estimate      19,343,574    0.00%
-    ES19_B0519     Both sexes 5 to 19, 2019 estimate     38,695,329    0.00%
-    ES19_B2064     Both sexes 20 to 64, 2019 estimate    39,123,417    0.00%
-    ES19_B65PL     Both sexes 65 and older, 2019 esti     2,759,433    0.00%
-    ES19_MTOTL     Males total, 2019 estimate            49,987,571    0.00%
-    ES19_M0004     Males 0 to 4, 2019 estimate            9,814,175    0.00%
-    ES19_M0519     Males 5 to 19, 2019 estimate          19,632,544    0.00%
-    ES19_M2064     Males 20 to 64, 2019 estimate         19,278,152    0.00%
-    ES19_M65PL     Males 65 and older, 2019 estimate      1,262,700    0.00%
-    ES19_FTOTL     Females total, 2019 estimate          49,934,182    0.00%
-    ES19_F0004     Females 0 to 4, 2019 estimate          9,529,399    0.00%
-    ES19_F0519     Females 5 to 19, 2019 estimate        19,062,785    0.00%
-    ES19_F2064     Females 20 to 64, 2019 estimate       19,845,265    0.00%
-    ES19_F65PL     Females 65 and older, 2019 estimat     1,496,733    0.00%
-    ES20_BTOTL     Both sexes total, 2020 estimate      103,273,769    0.00%
-    ES20_B0004     Both sexes 0 to 4, 2020 estimate      20,001,010    0.00%
-    ES20_B0519     Both sexes 5 to 19, 2020 estimate     39,999,177    0.00%
-    ES20_B2064     Both sexes 20 to 64, 2020 estimate    40,426,104    0.00%
-    ES20_B65PL     Both sexes 65 and older, 2020 esti     2,847,478    0.00%
-    ES20_MTOTL     Males total, 2020 estimate            51,664,481    0.00%
-    ES20_M0004     Males 0 to 4, 2020 estimate           10,147,364    0.00%
-    ES20_M0519     Males 5 to 19, 2020 estimate          20,293,436    0.00%
-    ES20_M2064     Males 20 to 64, 2020 estimate         19,920,596    0.00%
-    ES20_M65PL     Males 65 and older, 2020 estimate      1,303,085    0.00%
-    ES20_FTOTL     Females total, 2020 estimate          51,609,288    0.00%
-    ES20_F0004     Females 0 to 4, 2020 estimate          9,853,646    0.00%
-    ES20_F0519     Females 5 to 19, 2020 estimate        19,705,741    0.00%
-    ES20_F2064     Females 20 to 64, 2020 estimate       20,505,508    0.00%
-    ES20_F65PL     Females 65 and older, 2020 estimat     1,544,393    0.00%
+=== HDX dataset: cod-ps-cmr ===
+    title: Cameroon - Subnational Population Statistics
+    org:   unfpa
+    licence: license_id='cc-by'  license_title='Creative Commons Attribution International (CC BY)'  isopen=True
+    notes: Cameroon population statistics disaggregated by administrative levels (0-2), sex and age, projected for the year 2025. The dataset also includes historical data.  REFERENCE YEAR 2025  These tables are suitable for database or GIS linkage to the [Cameroon - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-cmr) and [Cameroon - Subnational Edge-matched Administrative
+    19 resource(s):
+      XLSX   CMR_admpop_2025.xlsx
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/845f2655-6348-4554-8570-04d9556cded6/download/copy-of-cmr_admpop_2025.xlsx
+      CSV    CMR_admpop2_2025.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/c23633c8-f033-44bd-b43b-e8a1bc487784/download/copy-of-cmr_admpop_met_2025.csv
+      CSV    CMR_admpop_adm1_2025.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/09be4b94-28bb-4921-a7e0-19967c178230/download/copy-of-cmr_admpop_adm1_2025.csv
+      CSV    CMR_admpop_adm0_2025.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/e4b2b236-5b8c-462f-989d-993eee4b3be3/download/copy-of-cmr_admpop_adm0_2025.csv
+      PDF    CMR-COD-PS-2025-Explanatory-Note.pdf
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/0510df39-c506-4389-9699-381563380a92/download/copy-of-cmr-cod-ps-2025-explanatory-note.pdf
+      XLSX   cmr_admpop_2024.xlsx
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/247800e6-85a8-407a-ad50-4084b1e45464/download/cmr_admpop_2024.xlsx
+      CSV    cmr_admpop_met_2024.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/5395c330-9f4a-4d73-b4be-a3917d1ba2ce/download/cmr_admpop_met_2024.csv
+      CSV    cmr_admpop_adm1_2024.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/07b7f2eb-79cf-489a-a726-d6092deb83e9/download/cmr_admpop_adm1_2024.csv
+      CSV    cmr_admpop_adm0_2024.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/11eb6616-a3eb-4319-b8a0-cc22f00f8fe7/download/cmr_admpop_adm0_2024.csv
+      PDF    CMR-COD-PS-2024-Explanatory-Note.pdf
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/55fde51e-8666-45b2-b372-55a662d8dba6/download/cmr-cod-ps-2024-explanatory-note.pdf
+      PDF    CMR_CODPS_QA_2023.pdf
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ae611bf1-72d9-4996-9284-5d5e961bfe1e/download/cmr_codps_qa_2023.pdf
+      XLSX   CMR_AdminBoundaries_TabularData.xlsx
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/6241f609-f0cd-4b24-9e92-897c6f292ee2/download/cmr_adminboundaries_tabulardata.xlsx
+      XLSX   cmr_admpop_2023.xlsx
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/21819ce3-93a7-4bba-8617-b2e7d3a0e5f6/download/cmr_admpop_2023.xlsx
+      CSV    cmr_admpop_adm0_2023.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ea12b969-31d8-471a-bfef-36ccd0f9a985/download/cmr_admpop_adm0_2023.csv
+      CSV    cmr_admpop_adm1_2023.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/75d2954c-8f50-47d1-b48f-8d6dc589b663/download/cmr_admpop_adm1_2023.csv
+      XLSX   CMR_admpop_2025.xlsx
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/9c934b68-72c2-4025-b921-7a6912547b8b/download/copy-of-cmr_admpop_2025.xlsx
+      CSV    CMR_admpop_2025_adm2.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/661d9852-aa86-41fc-829e-751cae8b73db/download/copy-of-cmr_admpop_met_2025.csv
+      CSV    CMR_admpop_2025_adm1.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/05743711-fcd8-43d1-845c-9ed08b5a1ebb/download/copy-of-cmr_admpop_adm1_2025.csv
+      CSV    cmr_admpop_adm0_2025.csv
+             https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/99cef7a9-ae62-41bb-be80-423553f72bde/download/copy-of-cmr_admpop_adm0_2025.csv
