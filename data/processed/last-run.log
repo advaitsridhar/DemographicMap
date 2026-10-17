@@ -1,21 +1,2 @@
-
-=== HDX dataset: cod-ps-sen ===
-    title: Senegal - Subnational Population Statistics
-    org:   unfpa
-    licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
-    notes: Senegal administrative level 0-1 sex and age disaggregated 2022 projected population statistics  REFERENCE YEAR:  2022  These tables are suitable for database or GIS linkage to the [Senegal - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-sen) layers using the ADM0 and ADM1_PCODE fields.
-    7 resource(s):
-      PDF    sen_codps_qa_2023.pdf
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/5d1923e2-9d3b-4a86-84f4-1749752090bc/download/sen_codps_qa_2023.pdf
-      XLSX   sen_admpop_2023.xlsx
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/ea843806-5922-49f8-a3ed-e2879973ac73/download/sen_admpop_2023.xlsx
-      CSV    sen_admpop_adm0_2022.csv
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/95302f67-c84f-4416-a88d-223ec4531ba6/download/sen_admpop_adm0_2022.csv
-      CSV    sen_admpop_adm1_2022.csv
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/7ee68aac-145f-4e50-b152-39da723d83e6/download/sen_admpop_adm1_2022.csv
-      XLSX   sen_admpop_2021.xlsx
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/d0f1b819-58db-4b70-85c3-7f1155e0397d/download/sen_admpop_2021.xlsx
-      XLSX   sen_admgz_anat_20240520.xlsx
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/43a9022e-be69-4542-962e-f6a8bad042cb/download/sen_admgz_anat_20240520.xlsx
-      XLSX   SEN_AdminBoundaries_TabularData.xlsx
-             https://data.humdata.org/dataset/c686be28-1858-44e9-a44b-598ce32ca20b/resource/bc54275c-c47b-46b3-9c2a-ac97fa0e57c7/download/sen_adminboundaries_tabulardata.xlsx
+usage: ethiopia_census.py [-h]
+ethiopia_census.py: error: unrecognized arguments: --run=2
