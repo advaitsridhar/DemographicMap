@@ -1,0 +1,167 @@
+#!/usr/bin/env python3
+"""Read-only probes for Southern Africa and the Indian Ocean.
+
+South Africa, Namibia, Botswana, Zimbabwe, Zambia, Malawi, Mozambique, Lesotho,
+Eswatini, Madagascar, Mauritius, Comoros and Seychelles publish their census
+tables as report PDFs, workbooks and a few JSON services, from hosts that do
+not all answer an automated client. This prints what is there before a reader
+is written. Nothing is written and nothing is committed; the output is the log.
+
+Each argument is one probe, ``mode:url`` with optional ``~~`` parts after it.
+Every mode of ``surveys_probe`` works here (head, text, grep, links, js, post,
+zip, xls, csv, cdx, pdf), and these are added:
+
+    cdxf:URLPREFIX~~REGEX[~~N]     Internet Archive captures under a prefix whose
+                                   address matches REGEX (newest per address)
+    json:URL[~~N]                  a JSON answer, indented, its first N characters
+    keys:URL[~~N]                  a JSON list's first item's keys and N items' values
+    pdfp:URL~~PAGES[~~WIDTH]       pdfplumber's text of the pages given (3-7,12)
+    pdfg:URL~~REGEX[~~N]           pdfplumber lines matching REGEX, with page numbers
+    pdft:URL~~REGEX[~~N]           the pages whose text matches REGEX: their first
+                                   lines (titles), to find which page holds a table
+
+The workflow splits the command on whitespace and xargs reads quotes and
+backslashes, so no part may hold a space, a quote or a backslash: a regex
+says ``[ ]`` or ``.`` instead.
+
+Usage:
+    python -m scripts.fetch_census.southern_africa_probe json:https://example.org/api
+"""
+
+from __future__ import annotations
+
+import io
+import json
+import re
+import sys
+import urllib.parse
+
+from . import surveys_probe as base
+
+
+def say(line: str) -> None:
+    print(line, flush=True)
+
+
+def pages_of(spec: str, count: int) -> list[int]:
+    out: list[int] = []
+    for part in spec.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            lo, hi = part.split("-", 1)
+            out.extend(range(int(lo), min(int(hi), count) + 1))
+        else:
+            out.append(int(part))
+    return [p for p in out if 1 <= p <= count]
+
+
+def get(url: str, timeout: int = 300) -> tuple[int, str, dict, bytes]:
+    status, final, headers, body = base.fetch(url, timeout=timeout)
+    base.summary(url, status, final, headers, body)
+    return status, final, headers, body
+
+
+def probe(arg: str) -> None:
+    mode, _, rest = arg.partition(":")
+    if mode in base.MODES:
+        base.probe(arg)
+        return
+    parts = rest.split("~~")
+    url, extra = parts[0], parts[1:]
+    say(f"== {mode} {url} {' '.join(extra)}")
+    if mode == "cdxf":
+        rx = extra[0] if extra else ".*"
+        n = int(extra[1]) if len(extra) > 1 else 80
+        q = ("https://web.archive.org/cdx/search/cdx?url=" + urllib.parse.quote(url, safe="")
+             + "&matchType=prefix&filter=statuscode:200&collapse=urlkey"
+             + "&filter=" + urllib.parse.quote("original:.*" + rx + ".*", safe="")
+             + "&limit=" + str(max(n * 3, 200)))
+        status, _, headers, body = base.fetch(q, timeout=180)
+        lines = base.decode(body, headers).splitlines()
+        say(f"  HTTP {status}: {len(lines)} captures")
+        for line in lines[:n]:
+            f = line.split(" ")
+            if len(f) >= 7:
+                say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
+        return
+    if mode not in ("json", "keys", "pdfp", "pdfg", "pdft"):
+        say(f"?? unknown mode in {arg!r}")
+        return
+    status, final, headers, body = get(url)
+    if status >= 400 or status < 0:
+        say("  " + base.strip(base.decode(body, headers))[:400])
+        return
+    if mode in ("json", "keys"):
+        try:
+            payload = json.loads(base.decode(body, headers))
+        except ValueError:
+            say("  not JSON: " + base.strip(base.decode(body[:3000], headers))[:600])
+            return
+        if mode == "json":
+            n = int(extra[0]) if extra else 4000
+            say(json.dumps(payload, indent=1, ensure_ascii=False)[:n])
+            return
+        n = int(extra[0]) if extra else 10
+        items = payload if isinstance(payload, list) else next(
+            (v for v in payload.values() if isinstance(v, list)), [payload]) \
+            if isinstance(payload, dict) else [payload]
+        say(f"  {len(items)} items")
+        if items and isinstance(items[0], dict):
+            say(f"  keys: {list(items[0])}")
+        for item in items[:n]:
+            say("  " + json.dumps(item, ensure_ascii=False)[:300])
+        return
+    if body[:4] != b"%PDF":
+        say("  not a PDF: " + base.strip(base.decode(body[:3000], headers))[:400])
+        return
+    import pdfplumber                               # noqa: PLC0415
+    with pdfplumber.open(io.BytesIO(body)) as pdf:
+        count = len(pdf.pages)
+        say(f"  {count} pages")
+        if mode == "pdfp":
+            width = int(extra[1]) if len(extra) > 1 else 220
+            for number in pages_of(extra[0] if extra else "1", count):
+                text = pdf.pages[number - 1].extract_text() or ""
+                say(f"  --- page {number} ---")
+                for line in text.splitlines():
+                    say("  " + line[:width])
+            return
+        rx = re.compile(extra[0] if extra else ".", re.I)
+        n = int(extra[1]) if len(extra) > 1 else 60
+        shown = 0
+        for number, page in enumerate(pdf.pages, 1):
+            text = page.extract_text() or ""
+            if mode == "pdft":
+                if rx.search(text):
+                    head = [line for line in text.splitlines() if line.strip()][:3]
+                    say(f"  p{number}: " + " / ".join(h[:120] for h in head))
+                    shown += 1
+            else:
+                for line in text.splitlines():
+                    if rx.search(line):
+                        say(f"  p{number}: {line[:220]}")
+                        shown += 1
+                        if shown >= n:
+                            break
+            if shown >= n:
+                break
+        if not shown:
+            say("  (no match)")
+
+
+def main(argv: list[str]) -> int:
+    if not argv or argv[0] in ("-h", "--help"):
+        say(__doc__ or "")
+        return 0
+    for arg in argv:
+        try:
+            probe(arg)
+        except Exception as exc:  # noqa: BLE001 - one failed probe must not stop the rest
+            say(f"  !! {type(exc).__name__}: {str(exc)[:300]}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
