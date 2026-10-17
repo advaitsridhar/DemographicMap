@@ -45,7 +45,7 @@ class CoteDivoire(unittest.TestCase):
         self.assertIn("mean age (26 years)", gbeke["median_age"]["note"])
         district = by[("admin1", "Valle Du Bandama")]
         self.assertEqual(district["population"]["value"], 1_352_900 + 590_000)
-        self.assertEqual(len(report), 31 + 13)
+        self.assertEqual(len(report), 31 + 13)  # 31 regions unread; 13 districts not whole
 
 
 if __name__ == "__main__":

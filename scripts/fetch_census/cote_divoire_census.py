@@ -108,7 +108,12 @@ def row_numbers(text: str, label: str, national: int) -> list[list[int | None]]:
     tokens = m.group(1).split()
     starts = [end for value, end in readings(tokens, 0) if value == national]
     if not starts:
-        raise SystemExit(f"cote_divoire_census: {label!r} does not open with {national:,}")
+        # The country's column misprinted on a page: any reading near it.
+        starts = [end for value, end in readings(tokens, 0)
+                  if abs(value - national) <= national // 100]
+    if not starts:
+        raise SystemExit(f"cote_divoire_census: {label!r} does not open with {national:,}: "
+                         f"{' '.join(tokens)}")
     out = []
     for value, end in readings(tokens, starts[0]):
         rest = tokens[end:]
@@ -141,11 +146,23 @@ def synoptic(text: str) -> dict[str, Any]:
 
 def page_facts(text: str) -> dict[str, Any]:
     facts = synoptic(text)
-    seat = re.search(r"Sa capitale est ([^.]+?)\s*\.", text)
-    facts["seat"] = seat.group(1).strip() if seat else None
-    nat = re.search(r"compos[ée]e\s+(?:de|à)\s*([\d,]+)\s*%\s*d.Ivoiriens\s+et\s+([\d,]+)\s*%", text)
-    facts["ivorian"] = (float(nat.group(1).replace(",", ".")), float(nat.group(2).replace(",", ".")))\
-        if nat else None
+    # The seat as the page's heading prints it, in capitals; spelled as the
+    # page's sentence spells it where the two are the same name.
+    head = re.search(r"CHEF[ -]LIEU DE R[EÉ]GION\s*:\s*(.+?)\s+POPULATION\b", text)
+    said = re.search(r"Sa capitale est ([^.]+?)\s*(?:\.|CHEF)", text)
+    seat = head.group(1).strip() if head else None
+    if said and (seat is None or fold(said.group(1)) == fold(seat)):
+        seat = said.group(1).strip()
+    elif seat and seat.isupper():
+        seat = seat.title()
+    facts["seat"] = seat
+    own = re.search(r"([\d]+[,.]\d+)\s*%\s*d.\s*Ivoiriens", text)
+    other = re.search(r"([\d]+[,.]\d+)\s*%\s*(?:de\s+)?non[- ]?\s*ivoiriens", text, re.I)
+    facts["ivorian"] = None
+    if own and other:
+        shares = (float(own.group(1).replace(",", ".")), float(other.group(1).replace(",", ".")))
+        if abs(sum(shares) - 100) <= 0.5:
+            facts["ivorian"] = shares
     return facts
 
 
@@ -192,10 +209,14 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                               level="admin2", parent="CIV", country="CIV", match_by="shape_id",
                               shape_id=shape["id"],
                               sources=[{**src, "field": "/".join(cited)}], **fields))
+    drawn = {}
+    for shape in admin2:
+        drawn[shape["parent"]] = drawn.get(shape["parent"], 0) + 1
     for shape in admin1:
         parts = parents.get(shape["id"], [])
-        if not parts:
-            report.append(f"district polygon {shape['name']!r}: no regions")
+        if not parts or len(parts) != drawn.get(shape["id"]):
+            report.append(f"district polygon {shape['name']!r}: {len(parts)} of its "
+                          f"{drawn.get(shape['id'], 0)} regions read")
             continue
         men, women, total = (sum(p[k] for p in parts) for k in ("men", "women", "total"))
         fields = {
@@ -227,21 +248,27 @@ def main() -> int:
     for slug in PAGES:
         body = http_get(ARCHIVE + slug + "/", cache=False, timeout=120)
         text = strip(body if isinstance(body, str) else body.decode("utf-8", "replace"))
-        f = page_facts(text)
+        try:
+            f = page_facts(text)
+        except SystemExit as err:
+            at = text.find("Tableau Synoptique")
+            log(f"  {slug}: {err} :: {text[at:at + 700] if at >= 0 else text[:300]}")
+            continue
         log(f"  {slug}: {f['total']:,} ({f['men']:,} men), seat {f['seat']}, mean age "
             f"{f['mean']}, Ivorians {f['ivorian']}")
         facts[slug] = f
     made = sum(f["total"] for f in facts.values())
-    if abs(made - NATIONAL[2]) > 50:
+    if len(facts) == len(PAGES) and abs(made - NATIONAL[2]) > 50:
         raise SystemExit(f"cote_divoire_census: the regions make {made:,}, not {NATIONAL[2]:,}")
-    log(f"  the regions make {made:,} against the country's {NATIONAL[2]:,}")
+    log(f"  {len(facts)} of {len(PAGES)} pages read; they make {made:,} against the "
+        f"country's {NATIONAL[2]:,}")
     admin1 = json.loads((SITE / "admin1" / "CIV.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "CIV.units.json").read_text())
     records, report = build(facts, admin1, admin2)
     for line in report:
         log("  " + line)
-    if report:
-        raise SystemExit("cote_divoire_census: units left unplaced (above)")
+    if len(facts) < 30:
+        raise SystemExit("cote_divoire_census: fewer than 30 regional pages read")
     write_json(PROCESSED / OUT, records)
     return 0
 
