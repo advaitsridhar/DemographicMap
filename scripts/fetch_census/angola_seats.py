@@ -125,7 +125,8 @@ def build(found: dict[str, dict[str, str]], admin1: list[dict[str, Any]],
         records.append(record(f"AGO-LEI1816-{u['id']}", u["name"], level="admin2", parent="AGO",
                               country="AGO", match_by="shape_id", shape_id=u["id"],
                               capital=seat, sources=cite))
-    report.insert(0, f"  {len(records)} of {len(admin2)} municipality polygons given a seat")
+    seated = sum(isinstance(r["capital"], str) for r in records)
+    report.insert(0, f"  {seated} of {len(admin2)} municipality polygons given a seat")
     return records, report
 
 

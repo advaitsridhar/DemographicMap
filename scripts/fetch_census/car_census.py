@@ -505,6 +505,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dump", action="store_true", help="print the OCHA sheet's rows, write nothing")
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
     args = ap.parse_args()
     import openpyxl                                  # noqa: PLC0415
     ocha_url = ocha_workbook_url()
