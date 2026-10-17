@@ -1,11 +1,13 @@
-
-=== HDX dataset: libya-subnational-boundaries-and-tabular-data ===
-    title: Libya Subnational Population and Housing Data Tables with Administrative Boundaries, Based on National Census and Surveys
-    org:   us-census-bureau
-    licence: license_id='cc-by'  license_title='Creative Commons Attribution International (CC BY)'  isopen=True
-    notes: The geodatabase contains boundaries for the national and first-order administrative divisions aligned to the Large Scale International Boundaries dataset from the U.S. Department of State, as well as points for the second- and third-order administrative divisions. The feature classes are suitable for linking to the attribute data provided.  The tabular data contain total population for 2012 (est
-    2 resource(s):
-      Geodatabase Libya.gdb.zip
-             https://data.humdata.org/dataset/bb33e978-7b11-4d0d-a3f0-5bf50360985a/resource/5773bb2a-64e9-4b9a-84ba-f2eeebb1be3a/download/libya.gdb.zip
-      XLSX   Libya_uscb_202304.xlsx
-             https://data.humdata.org/dataset/bb33e978-7b11-4d0d-a3f0-5bf50360985a/resource/2f7ad947-0f64-4930-aecd-ac0b0692e89f/download/libya_uscb_202304.xlsx
+== grep https://www.nsomalawi.mw/census/2018 api/download/[0-9]+/[A-Za-z0-9_.%()-]{1,160} 200 0
+  HTTP 200 text/html; charset=utf-8 3,679,956 bytes
+  ~ api/download/406/NSO_Strategic-Plan-2017-2022.pdf
+  ~ api/download/407/National-Statistical-System-Strategic-Plan-2019-2023.pdf
+  ~ api/download/408/NSO_and_NSS_Malawi_strategy_review_report.pdf
+  ~ api/download/409/Compendium-of-Statistical-Concepts-and-Definition_Malawi_April-2023_FINAL.pdf
+  ~ api/download/410/Malawi-Statistical-Quality-Assurance-Framework_April-2023_FINAL.pdf
+  ~ api/download/411/Code-of-Practice-for-Official-Statistics_Malawi_FINAL.pdf
+== grep https://www.nsomalawi.mw/census/2018 (?i)census[A-Za-z0-9_.%()-]{0,80}(pdf|xlsx|zip) 100 0
+  HTTP 200 text/html; charset=utf-8 3,679,980 bytes
+  (no match)
+== cdxf nsomalawi.mw/ (?i)(census_2018|census.2018|2018.*main|main.report|2018_mphc|mphc) 200
+  HTTP 504: 7 captures
