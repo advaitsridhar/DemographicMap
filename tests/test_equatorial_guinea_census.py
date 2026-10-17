@@ -103,6 +103,8 @@ class Build(unittest.TestCase):
         self.assertIn("309,345", bata["note"])
         self.assertIn("Bitica and Machinda", bata["note"])
         self.assertIn("not one", by["NKUE"]["population"]["note"])
+        self.assertIn("not a district", by["NKUE"]["ethnicity"]["note"])
+        self.assertIn("may not be the whole of Bata district", by["BATA"]["ethnicity"]["note"])
         self.assertIn("Kié-Ntem", by["NKUE"]["population"]["note"])
         for r in records:
             for field in ("population", "sex_ratio", "median_age"):

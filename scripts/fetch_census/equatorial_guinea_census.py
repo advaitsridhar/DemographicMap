@@ -283,10 +283,21 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
                        f"districts ({listed}), whose counts include it, and no count of {label} "
                        f"alone is published.")
             population = {**gap(NOT_AVAILABLE, why), "displaces_before": YEAR}
+            if census:
+                share = (f"The 2015 census publishes the shares of Equatorial Guinean and "
+                         f"foreign nationals by district, and this polygon may not be the whole "
+                         f"of {census} district (see its population), so the district's shares "
+                         f"are not shown on it; no ethnic group is published.")
+            else:
+                share = (f"The 2015 census publishes the shares of Equatorial Guinean and "
+                         f"foreign nationals by district, and {label} is a municipality within "
+                         f"one of {shown}'s districts, not a district, so none is shown for it; "
+                         f"no ethnic group is published.")
             records.append(record(
                 f"GNQ-CGPV2015-{sid}", u["name"], level="admin2", parent="GNQ", country="GNQ",
                 match_by="shape_id", shape_id=sid, sources=cite, population=population,
-                sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP)))
+                sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
+                ethnicity=gap(NOT_AVAILABLE, share)))
             report.append(f"    {u['name']}: not shown ({census or 'not a district'})")
     return records, report
 
