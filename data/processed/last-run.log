@@ -1,61 +1,46 @@
-probe_pdf: https://www.statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1523, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 1117, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 1395, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.statistics.gov.rw'. (_ssl.c:1016)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1364, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.statistics.gov.rw'. (_ssl.c:1016)>
+  read https://web.archive.org/web/20200101164030id_/http://www.ine.gov.mz/iv-rgph-2017/mocambique/populacao/quadro-3-populacao-por-idade-segundo-provincia-area-de-residencia-e-sexo-mocambique-2017.xlsx: 18,486 bytes, sha256 e4cbf635de7a7d2ba20da6aaae408a2ed82c3718df222e912cd38340208c76c5
+  read https://web.archive.org/web/20191220233923id_/http://www.ine.gov.mz/iv-rgph-2017/niassa/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-niassa-2017.xlsx: 20,289 bytes, sha256 b956b103d9355f656d59d3d3b2c289056e538e4b7b13f510db3dbe076ead2513
+  read https://web.archive.org/web/20191114002733id_/http://www.ine.gov.mz/iv-rgph-2017/niassa/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-do-niassa-2017.xlsx: 24,024 bytes, sha256 2956e8a6eb933c91c81575a5ad014e90fda813f462fea353b181dcebac03fa56
+  read https://web.archive.org/web/20191220234322id_/http://www.ine.gov.mz/iv-rgph-2017/niassa/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-do-niassa-2017.xlsx: 24,993 bytes, sha256 64e878c6c9f7110fb04a0be6900249045ef9f53ae265706b674a9e3c4ef8b69a
+  read https://web.archive.org/web/20191114004502id_/http://www.ine.gov.mz/iv-rgph-2017/cabo-delgado/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-cabo-delgado-2017.xlsx: 21,478 bytes, sha256 d0b54f6a0cf61f6eaff10db41ea5279122a7eba8bab10f0cc99e2b81c6b62224
+  read https://web.archive.org/web/20191114004834id_/http://www.ine.gov.mz/iv-rgph-2017/cabo-delgado/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-cabo-delgado-2017.xlsx: 24,530 bytes, sha256 7ffd272b55c428df84cc8bf5665e0528e923fdfe0f8b8d0946bc7fbbd511d582
+  read https://web.archive.org/web/20191114005018id_/http://www.ine.gov.mz/iv-rgph-2017/cabo-delgado/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-cabo-delgado-2017.xlsx: 25,059 bytes, sha256 de7d70f303f9bbe300f49c4168d0e01ac9b104d886e210e4a6d56cf01c2a2da0
+  read https://web.archive.org/web/20191114010934id_/http://www.ine.gov.mz/iv-rgph-2017/nampula/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-nampula-2017.xlsx: 24,176 bytes, sha256 96d1a52cacdfacc7950161e01ee780c6d68086a203deda950ca977255ca18d6d
+  read https://web.archive.org/web/20191114011052id_/http://www.ine.gov.mz/iv-rgph-2017/nampula/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-nampula-2017.xlsx: 25,367 bytes, sha256 392a739b423476cfc98fd767a8a1d36b52938c63f1c7558a4e6c513b1b5e26f9
+  read https://web.archive.org/web/20191114013404id_/http://www.ine.gov.mz/iv-rgph-2017/nampula/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-nampula-2017.xlsx: 25,234 bytes, sha256 8b484551b490da99398536a1f49c248da5888c5220618f7cbad2963907d5462f
+  read https://web.archive.org/web/20191114013455id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-zambezia-2017.xlsx: 26,058 bytes, sha256 19c71fd73127aff9ebe3b0ee896c5cd627127dcda7e6c0991680a480863b14b7
+  read https://web.archive.org/web/20191114013816id_/http://www.ine.gov.mz/iv-rgph-2017/zambezia/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-zambezia-2017.xlsx: 24,337 bytes, sha256 feb3c2a0b8b17d4c6e878a50ef5ef93cb29e2a9edf297476469d3bef67a72af2
+  read https://web.archive.org/web/20191114015524id_/http://www.ine.gov.mz/iv-rgph-2017/tete/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-tete-2017.xlsx: 20,530 bytes, sha256 167350d954563c7c641d6ff987d38e21d6418c18fb719abbc7705d467e57e5ab
+    TETE's units make 2,551,824 total against its total line's 2,551,826
+    TETE's units make 1,245,814 men against its total line's 1,245,815
+    TETE's units make 1,306,010 women against its total line's 1,306,011
+  read https://web.archive.org/web/20191114015723id_/http://www.ine.gov.mz/iv-rgph-2017/tete/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-tete-2017.xlsx: 25,076 bytes, sha256 7f8a7effe883eaf43e57a552e438c4ed49d378266269e122bd9b9c6d899eb108
+  read https://web.archive.org/web/20191114015921id_/http://www.ine.gov.mz/iv-rgph-2017/tete/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-tete-2017.xlsx: 24,174 bytes, sha256 9e01c62b85e67536c4bb2ebf050904711acdfd60b0d5328f204003d35c380d57
+  read https://web.archive.org/web/20191114023411id_/http://www.ine.gov.mz/iv-rgph-2017/manica/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-manica-2017.xlsx: 19,056 bytes, sha256 61208130418e86a58bd172bab4d26226b845155e860c17f3d86709fd622d2b92
+  read https://web.archive.org/web/20191114023623id_/http://www.ine.gov.mz/iv-rgph-2017/manica/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-manica-2017.xlsx: 24,642 bytes, sha256 f8a8bcd19b00ae5da9cf409006f16ba1196bb4f6483f2da62937a1c86b50c2bf
+  read https://web.archive.org/web/20191114024417id_/http://www.ine.gov.mz/iv-rgph-2017/manica/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-manica-2017.xlsx: 26,332 bytes, sha256 ef9ba0c3e8c7a8ef4216b8a219fd784ba64fee97d0aad34b0c797fca589068ba
+  read https://web.archive.org/web/20191114025715id_/http://www.ine.gov.mz/iv-rgph-2017/sofala/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-provincia-de-sofala-2017.xlsx: 19,321 bytes, sha256 d92ccf4c925755af358f23c4d0875bdffd42a140f1750ab9bb15ba8fc62fd0cf
+  read https://web.archive.org/web/20191114025815id_/http://www.ine.gov.mz/iv-rgph-2017/sofala/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-sofala-2017.xlsx: 59,470 bytes, sha256 bf58451c47b686f450c7199167974a90484b1a36720eeba4cce195e409cdc836
+  read https://web.archive.org/web/20191114030145id_/http://www.ine.gov.mz/iv-rgph-2017/sofala/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna.xlsx: 24,501 bytes, sha256 e6e3e531f02fb7876e72244b9d51bbd7dce74d63c85f9d4452f39962927842e9
+  read https://web.archive.org/web/20191114031532id_/http://www.ine.gov.mz/iv-rgph-2017/inhambane/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-sexo-provincia-de-inhambane-2017.xlsx: 19,299 bytes, sha256 df146b30f7e70e8f97e8240163830de0b1ca46f9b4f2113d10d5c4e231f3163d
+  read https://web.archive.org/web/20191114031616id_/http://www.ine.gov.mz/iv-rgph-2017/inhambane/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-provincia-de-inhambane-2017.xlsx: 25,211 bytes, sha256 b3ef1eb9de6ceabb2302b47d306195539d6366e87ab8e68ac66691b0094e38d6
+  read https://web.archive.org/web/20191114032438id_/http://www.ine.gov.mz/iv-rgph-2017/inhambane/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-de-inhambane-2017.xlsx: 24,648 bytes, sha256 df8df063b1a5cfc058722a46b3402cd7282e0d52403fd961795b502f67de669f
+  read https://web.archive.org/web/20200101130915id_/http://www.ine.gov.mz/iv-rgph-2017/gaza/quadro-3-populacao-por-idade-segundo-area-de-residencia-distrito-e-se.xlsx: 19,351 bytes, sha256 ced494e8ff88df31e53847441f8f206363308387352535af86618684efc3ba17
+  read https://web.archive.org/web/20191114035423id_/http://www.ine.gov.mz/iv-rgph-2017/gaza/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-s.xlsx: 23,656 bytes, sha256 14a173f8e069b96bf6f960e55910ba9991a0019ebdac8d4eef0e86587239036e
+  read https://web.archive.org/web/20191114042343id_/http://www.ine.gov.mz/iv-rgph-2017/gaza/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-provincia-gaza-2017.xlsx: 22,048 bytes, sha256 9e26d485a6488318650fa5eab5aacb98979d0cfa22244f35b6ee5a0ac73da4ff
+  retry 1/2 after 2s :: https://web.archive.org/web/20191015090808id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20191015090808id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
+    https://web.archive.org/web/20191015090808id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx: RuntimeError: GET failed after 2 retries: https://web.archive.org/web/20191015090808id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segun
+  retry 1/2 after 2s :: https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
+    https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx: RuntimeError: GET failed after 2 retries: https://web.archive.org/web/2019id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrit
+  retry 1/2 after 2s :: https://web.archive.org/web/2020id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/2020id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx :: <urlopen error [Errno 104] Connection reset by peer>
+  read https://web.archive.org/web/2020id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-3-populacao-por-idade-segundo-distrito-area-de-residencia-e-sexo-maputo-provincia-2017.xlsx: 16,888 bytes, sha256 c45498053070137b4a24c5438a8fd296ca89408e52ab0295885b5e89f7948afc
+  read https://web.archive.org/web/20191114043021id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-11-populacao-por-religiao-segundo-area-de-residencia-idade-e-sexo-maputo-provincia-2017.xlsx: 23,870 bytes, sha256 a93d1a59dbef508b900433ca2b80f556fb54e1114b43c487225913633c37dd47
+  read https://web.archive.org/web/20191114045042id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-provincia/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-area-de-residencia-sexo-e-lingua-materna-maputo-provincia-2017.xlsx: 22,881 bytes, sha256 97fd5cbcafa26ce1c8dfa03f141adafa9026eecc8be3e9cdf3c18615d867b362
+  read https://web.archive.org/web/20200101134750id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-cidade/quadro-3-populacao-por-idade-segundo-distrito-e-sexo-maputo-cidade-2017.xlsx: 14,934 bytes, sha256 2a0340587182eee1f8ceaa7664b5cbe510511cbe7ae2423e106e3fa66c551acd
+  read https://web.archive.org/web/20191114050516id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-cidade/quadro-11-populacao-por-religiao-segundo-idade-e-sexo-maputo-cidade-2017.xlsx: 14,147 bytes, sha256 e2d9174a9dcbe9da3451715ce0d91908cda7662069f8e2026a5c99268622f07e
+  read https://web.archive.org/web/20191114050625id_/http://www.ine.gov.mz/iv-rgph-2017/maputo-cidade/quadro-22-populacao-de-5-anos-e-mais-por-idade-segundo-sexo-e-lingua-materna-maputo-cidade-2017.xlsx: 15,484 bytes, sha256 7c73420bc1cb69c318ca6efc73b533917494082b0fc4481fff15719e4c464c05
+    CABO DELGADO: DISTRITO DE IBO is on no polygon of the map
+mozambique_census: NAMPULA: no polygon for ['DISTRITO DE ILHA DE MOGINCUAL', 'DISTRITO DE ILHA DE MOSSURIL', 'DISTRITO DE NACALA-PORTO']; the map draws ['Angoche', 'Cidade De Nampula', 'Erati', 'Ilha De Moçambique', 'Lalaua', 'Larde', 'Liúpo', 'Malema', 'Meconta', 'Mecuburi', 'Memba', 'Mogincual', 'Mogovolas', 'Moma', 'Monapo', 'Mossuril', 'Muecate', 'Murrupula', 'Nacala', 'Nacala-A-Velha', 'Nacaroa', 'Rapale', 'Ribaue']
