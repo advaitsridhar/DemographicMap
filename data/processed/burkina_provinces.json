@@ -1188,12 +1188,74 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.1, the region's count, the province being the whole region)"
     },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 61.2
+      },
+      {
+        "group": "Catholic",
+        "pct": 31.3
+      },
+      {
+        "group": "Protestant",
+        "pct": 6.9
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1
+      }
+    ],
+    "language": [
+      {
+        "group": "Mooré",
+        "pct": 80.6
+      },
+      {
+        "group": "French",
+        "pct": 9.9
+      },
+      {
+        "group": "Dioula",
+        "pct": 2.9
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.1
+      },
+      {
+        "group": "Fulfulde",
+        "pct": 1.5
+      },
+      {
+        "group": "Bissa",
+        "pct": 0.9
+      },
+      {
+        "group": "Gurunsi",
+        "pct": 0.7
+      },
+      {
+        "group": "Gourmantché",
+        "pct": 0.5
+      },
+      {
+        "group": "Samo",
+        "pct": 0.4
+      },
+      {
+        "group": "Dagara",
+        "pct": 0.3
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -1204,12 +1266,113 @@
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
         "license": "INSD publication (reuse with attribution)",
         "year": 2019
+      },
+      {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 3.1, the region's religions, the province being the whole region)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 3.2, the region's languages, the province being the whole region)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
       }
     ],
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "67063806B99988316808523",
-    "sex_ratio_note": "The 2019 census's count of the province: 1,489,512 men and 1,540,872 women."
+    "sex_ratio_note": "The 2019 census's count of the province: 1,489,512 men and 1,540,872 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region tabulates them for the region, which is this one province.",
+    "language_year": 2019,
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph tabulates it for the region, which is this one province."
+  },
+  {
+    "id": "BFA-RGPH2019-region-centre",
+    "level": "admin1",
+    "name": "Centre",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Mooré",
+        "pct": 80.6
+      },
+      {
+        "group": "French",
+        "pct": 9.9
+      },
+      {
+        "group": "Dioula",
+        "pct": 2.9
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.1
+      },
+      {
+        "group": "Fulfulde",
+        "pct": 1.5
+      },
+      {
+        "group": "Bissa",
+        "pct": 0.9
+      },
+      {
+        "group": "Gurunsi",
+        "pct": 0.7
+      },
+      {
+        "group": "Gourmantché",
+        "pct": 0.5
+      },
+      {
+        "group": "Samo",
+        "pct": 0.4
+      },
+      {
+        "group": "Dagara",
+        "pct": 0.3
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 3.2, principal language spoken by residence)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "92566538B14190085014946",
+    "language_year": 2019,
+    "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
   {
     "id": "BFA-RGPH2019-boulgou",
@@ -5463,9 +5626,40 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Birifor",
+        "pct": 31.9
+      },
+      {
+        "group": "Dagara",
+        "pct": 26.7
+      },
+      {
+        "group": "Lobi",
+        "pct": 20.5
+      },
+      {
+        "group": "Mooré",
+        "pct": 10.1
+      },
+      {
+        "group": "Fulfulde",
+        "pct": 6.8
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.7
+      },
+      {
+        "group": "Dioula",
+        "pct": 1.6
+      },
+      {
+        "group": "French",
+        "pct": 0.7
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -5483,6 +5677,13 @@
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
         "license": "INSD publication (reuse with attribution)",
         "year": 2019
+      },
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 3.3, principal languages spoken by sex and province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
       }
     ],
     "country": "BFA",
@@ -5490,7 +5691,9 @@
     "shape_id": "67063806B78350075830190",
     "sex_ratio_note": "The 2019 census's count of the province: 49,272 men and 49,643 women.",
     "religion_year": 2019,
-    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal."
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
+    "language_year": 2019,
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
   {
     "id": "BFA-RGPH2019-poni",
@@ -5621,5 +5824,92 @@
     "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
+  },
+  {
+    "id": "BFA-RGPH2019-region-sudouest",
+    "level": "admin1",
+    "name": "Sud-Ouest",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Dagara",
+        "pct": 35.7
+      },
+      {
+        "group": "Lobi",
+        "pct": 25.1
+      },
+      {
+        "group": "Birifor",
+        "pct": 13.9
+      },
+      {
+        "group": "Mooré",
+        "pct": 12.8
+      },
+      {
+        "group": "Fulfulde",
+        "pct": 2.9
+      },
+      {
+        "group": "Dioula",
+        "pct": 2.7
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.6
+      },
+      {
+        "group": "Dyan",
+        "pct": 1.8
+      },
+      {
+        "group": "Kaansa",
+        "pct": 1.1
+      },
+      {
+        "group": "French",
+        "pct": 0.8
+      },
+      {
+        "group": "Dogosé",
+        "pct": 0.6
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      }
+    ],
+    "country": "BFA",
+    "match_by": "shape_id",
+    "shape_id": "92566538B26761698110708",
+    "language_year": 2019,
+    "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   }
 ]
