@@ -1,21 +1,156 @@
-sao_tome_census: national report 5,499,132 bytes, sha256 7f5b8a49c6adcee58cfe02cda30af3e1cf34e5326814b6b346580ffcce4b3825
-  Água Grande: 2,183,673 bytes, sha256 692169a48990ea6faad80341f0b66bdf40ca2cbc430ea4ade2380660d931ecaf
-  Mé-Zóchi: 4,979,700 bytes, sha256 551333d7bb260d162d225c2801a11768395299a188ae2c2aa8bf8bd1a82ddd4f
-  Cantagalo: 4,846,246 bytes, sha256 e4e939b1d5c14a68d9fec45c44088ef4b7e2e5d3e3b0403d6aebf132d754a206
-  Caué: 4,653,913 bytes, sha256 174c2382d26eab1fa785abafbcd2f6bb9486a573d89dd49024bfb2271f694356
-  Lembá: 4,804,716 bytes, sha256 50e798d71663aa6c9f944a95bc59805fa51a77ad8aae83f07030fb442ee61d92
-  Lobata: 4,860,805 bytes, sha256 75942c7d4f10e8f6277b485e1ce61577837c36ffcdfecbc048db77806d3456d3
-  Príncipe: 5,024,841 bytes, sha256 159cc00638976ea29ccdf2529ce51d793c561e0f5bb93e03a8be2edddc2c56cf
-  Água Grande: residents 69,772 (33,805 men); ordinary dwellings 69,454; religion 69,454 in 13 answers
-  Mé-Zóchi: residents 44,763 (22,257 men); ordinary dwellings 44,752; religion 44,752 in 13 answers
-  Cantagalo: residents 17,169 (8,754 men); ordinary dwellings 17,161; religion 17,161 in 13 answers
-  Caué: residents 6,062 (3,154 men); ordinary dwellings 6,031; religion 6,031 in 13 answers
-  Lembá: residents 14,676 (7,579 men); ordinary dwellings 14,652; religion 14,652 in 13 answers
-  Lobata: residents 19,414 (9,883 men); ordinary dwellings 19,365; religion 19,365 in 13 answers
-  Príncipe: residents 7,344 (3,755 men); ordinary dwellings 7,324; religion 7,324 in 13 answers
-  the districts' residents make 179,200; the national line 179200
-  province São Tomé: 171,856
-  province Príncipe: 7,344
-  religion, the districts added up: Catholic 55.7%, No religion 21.2%, Other religion 5.0%, Adventist 4.1%, Assembly of God 3.4%, New Apostolic 2.9%, Maná Church 2.3%, Universal Church of the Kingdom of God 2.0%, Jehovah's Witnesses 1.2%, God Is Love Pentecostal Church 0.8%, Not stated 0.7%, Church of World Messianity 0.4%, Don't know 0.3%
-  wrote data/processed/sao_tome_census.json (38 kB)
-  9 records written
+== pdfp https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome2_17-2021.pdf 12-15
+  HTTP 200 application/pdf 11,459,529 bytes
+  280 pages
+  --- page 12 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Tableau 4. Effectif de la population des groupes d’âges fonctionnels de 10 à 49 ans des programmes de Santé,
+  recensée dans les ménages ordinaires par Région, selon l’âge et le sexe
+  10-14 ans 10-19 ans 10- 24 ans 15- 17 ans
+  Région
+  Masculin Féminin Ensemble Masculin Féminin Ensemble Masculin Féminin Ensemble Masculin
+  MADAGASCAR 1 703 839 1 661 622 3 365 461 3 242 739 3 299 794 6 542 533 4 360 373 4 543 807 8 904 180 907 969
+  Analamanga 201 503 203 832 405 335 409 372 430 825 840 197 589 141 623 214 1 212 355 122 814
+  Vakinankaratra 145 893 140 634 286 527 269 295 260 945 530 240 354 358 347 907 702 265 75 562
+  Itasy 62 215 59 901 122 116 118 167 114 885 233 052 159 612 156 329 315 941 33 799
+  Bongolava 46 484 44 843 91 327 88 512 87 497 176 009 120 296 120 403 240 699 24 689
+  Haute Matsiatra 106 249 105 030 211 279 200 834 201 012 401 846 265 780 267 351 533 131 56 620
+  Amoron'i Mania 62 380 59 895 122 275 113 553 109 672 223 225 145 799 144 304 290 103 31 532
+  Vatovavy Fitovinany 98 714 95 466 194 180 189 511 189 886 379 397 249 248 259 561 508 809 51 558
+  Ihorombe 27 904 27 287 55 191 52 341 54 757 107 098 69 146 74 381 143 527 14 512
+  Atsimo Atsinanana 73 425 69 116 142 541 135 699 134 452 270 151 175 797 181 934 357 731 36 288
+  Atsinanana 89 203 90 537 179 740 177 101 186 826 363 927 243 136 261 816 504 952 49 937
+  Analanjirofo 71 388 68 900 140 288 147 527 149 095 296 622 201 022 208 601 409 623 44 293
+  Alaotra Mangoro 82 899 81 719 164 618 158 163 158 013 316 176 212 701 215 686 428 387 44 770
+  Boeny 58 653 57 584 116 237 112 565 118 163 230 728 154 316 166 414 320 730 31 326
+  Sofia 105 739 102 271 208 010 202 098 204 580 406 678 266 537 278 069 544 606 55 992
+  Betsiboka 25 995 25 422 51 417 49 908 52 071 101 979 67 542 71 725 139 267 13 773
+  Melaky 21 256 20 222 41 478 39 213 40 699 79 912 50 738 55 056 105 794 10 647
+  Atsimo Andrefana 128 451 122 388 250 839 227 266 236 804 464 070 297 400 322 049 619 449 59 575
+  Androy 64 864 60 284 125 148 112 805 114 162 226 967 146 134 157 701 303 835 28 614
+  Anosy 55 982 53 060 109 042 102 628 105 484 208 112 136 274 145 796 282 070 27 634
+  Menabe 47 955 45 080 93 035 89 520 90 829 180 349 117 809 124 973 242 782 24 644
+  Diana 52 106 53 754 105 860 100 261 109 389 209 650 140 900 156 190 297 090 27 835
+  Sava 74 581 74 397 148 978 146 400 149 748 296 148 196 687 204 347 401 034 41 555
+  Source : MDG, INSTAT - rGPH2018
+  12 DECEMBRE 2020
+  --- page 13 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  15- 17 ans 15- 19 ans 15-24 ans 15-49 ans
+  Féminin Ensemble Masculin Féminin Ensemble Masculin Féminin Ensemble Masculin Féminin Ensemble
+  936 287 1 844 256 1 538 900 1 638 172 3 177 072 2 656 534 2 882 185 5 538 719 6 112 843 6 502 966 12 615 809
+  133 320 256 134 207 869 226 993 434 862 387 638 419 382 807 020 958 015 1 009 714 1 967 729
+  72 106 147 668 123 402 120 311 243 713 208 465 207 273 415 738 485 465 490 136 975 601
+  32 740 66 539 55 952 54 984 110 936 97 397 96 428 193 825 220 572 218 649 439 221
+  24 338 49 027 42 028 42 654 84 682 73 812 75 560 149 372 165 264 160 831 326 095
+  57 094 113 714 94 585 95 982 190 567 159 531 162 321 321 852 344 807 357 800 702 607
+  29 773 61 305 51 173 49 777 100 950 83 419 84 409 167 828 184 145 194 483 378 628
+  51 239 102 797 90 797 94 420 185 217 150 534 164 095 314 629 324 842 357 558 682 400
+  15 741 30 253 24 437 27 470 51 907 41 242 47 094 88 336 97 091 102 557 199 648
+  36 277 72 565 62 274 65 336 127 610 102 372 112 818 215 190 215 947 244 443 460 390
+  54 039 103 976 87 898 96 289 184 187 153 933 171 279 325 212 366 051 389 629 755 680
+  45 272 89 565 76 139 80 195 156 334 129 634 139 701 269 335 298 105 313 270 611 375
+  44 476 89 246 75 264 76 294 151 558 129 802 133 967 263 769 307 431 312 157 619 588
+  33 804 65 130 53 912 60 579 114 491 95 663 108 830 204 493 226 792 246 184 472 976
+  56 891 112 883 96 359 102 309 198 668 160 798 175 798 336 596 355 301 379 616 734 917
+  15 027 28 800 23 913 26 649 50 562 41 547 46 303 87 850 96 526 99 169 195 695
+  11 447 22 094 17 957 20 477 38 434 29 482 34 834 64 316 68 787 74 869 143 656
+  64 928 124 503 98 815 114 416 213 231 168 949 199 661 368 610 385 594 434 286 819 880
+  28 774 57 388 47 941 53 878 101 819 81 270 97 417 178 687 163 140 201 528 364 668
+  29 661 57 295 46 646 52 424 99 070 80 292 92 736 173 028 177 440 199 255 376 695
+  25 665 50 309 41 565 45 749 87 314 69 854 79 893 149 747 165 343 179 053 344 396
+  31 380 59 215 48 155 55 635 103 790 88 794 102 436 191 230 219 928 240 788 460 716
+  42 295 83 850 71 819 75 351 147 170 122 106 129 950 252 056 286 257 296 991 583 248
+  DECEMBRE 2020 13
+  --- page 14 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  Tableau 5. Effectif de la population des groupes d’âges fonctionnels de 18 à 59 ans des programmes de Santé,
+  recensée dans les ménages ordinaires par Région, selon l’âge et le sexe
+  18-24 ans 19-24 ans 20-24 ans
+  Région
+  Masculin Féminin Ensemble Masculin Féminin Ensemble Masculin Féminin Ensemble
+  MADAGASCAR 1 748 565 1 945 898 3 694 463 1 370 326 1 532 171 2 902 497 1 117 634 1 244 013 2 361 647
+  Analamanga 264 824 286 062 550 886 218 891 235 881 454 772 179 769 192 389 372 158
+  Vakinankaratra 132 903 135 167 268 070 106 181 108 498 214 679 85 063 86 962 172 025
+  Itasy 63 598 63 688 127 286 51 349 51 653 103 002 41 445 41 444 82 889
+  Bongolava 49 123 51 222 100 345 39 160 40 824 79 984 31 784 32 906 64 690
+  Haute Matsiatra 102 911 105 227 208 138 81 596 83 677 165 273 64 946 66 339 131 285
+  Amoron'i Mania 51 887 54 636 106 523 40 341 43 017 83 358 32 246 34 632 66 878
+  Vatovavy Fitovinany 98 976 112 856 211 832 73 898 86 040 159 938 59 737 69 675 129 412
+  Ihorombe 26 730 31 353 58 083 20 485 24 048 44 533 16 805 19 624 36 429
+  Atsimo Atsinanana 66 084 76 541 142 625 48 894 57 628 106 522 40 098 47 482 87 580
+  Atsinanana 103 996 117 240 221 236 81 399 92 559 173 958 66 035 74 990 141 025
+  Analanjirofo 85 341 94 429 179 770 66 005 73 681 139 686 53 495 59 506 113 001
+  Alaotra Mangoro 85 032 89 491 174 523 66 862 71 301 138 163 54 538 57 673 112 211
+  Boeny 64 337 75 026 139 363 50 642 58 866 109 508 41 751 48 251 90 002
+  Sofia 104 806 118 907 223 713 78 512 90 326 168 838 64 439 73 489 137 928
+  Betsiboka 27 774 31 276 59 050 21 534 24 339 45 873 17 634 19 654 37 288
+  Melaky 18 835 23 387 42 222 14 235 17 875 32 110 11 525 14 357 25 882
+  Atsimo Andrefana 109 374 134 733 244 107 83 931 103 157 187 088 70 134 85 245 155 379
+  Androy 52 656 68 643 121 299 40 767 53 842 94 609 33 329 43 539 76 868
+  Anosy 52 658 63 075 115 733 40 766 48 997 89 763 33 646 40 312 73 958
+  Menabe 45 210 54 228 99 438 34 319 41 529 75 848 28 289 34 144 62 433
+  Diana 60 959 71 056 132 015 48 838 56 962 105 800 40 639 46 801 87 440
+  Sava 80 551 87 655 168 206 61 721 67 471 129 192 50 287 54 599 104 886
+  Source : MDG, INSTAT - rGPH2018
+  14 DECEMBRE 2020
+  --- page 15 ---
+  RÉSULTATS GLOBAUX DU RGPH-3 DE 2018 DE MADAGASCAR, INSTAT-CCER
+  25- 49 ans 50- 59 ans
+  Masculin Féminin Ensemble Masculin Féminin Ensemble
+  3 456 309 3 620 781 7 077 090 660 873 654 131 1 315 004
+  570 377 590 332 1 160 709 116 911 122 382 239 293
+  277 000 282 863 559 863 57 605 58 171 115 776
+  123 175 122 221 245 396 25 437 24 719 50 156
+  91 452 85 271 176 723 16 510 14 369 30 879
+  185 276 195 479 380 755 34 924 37 377 72 301
+  100 726 110 074 210 800 21 424 24 282 45 706
+  174 308 193 463 367 771 32 979 32 925 65 904
+  55 849 55 463 111 312 9 331 7 593 16 924
+  113 575 131 625 245 200 20 976 20 714 41 690
+  212 118 218 350 430 468 39 512 40 399 79 911
+  168 471 173 569 342 040 32 815 32 861 65 676
+  177 629 178 190 355 819 34 946 33 911 68 857
+  131 129 137 354 268 483 24 456 22 905 47 361
+  194 503 203 818 398 321 34 778 33 397 68 175
+  54 979 52 866 107 845 8 883 7 888 16 771
+  39 305 40 035 79 340 6 961 5 486 12 447
+  216 645 234 625 451 270 38 795 33 858 72 653
+  81 870 104 111 185 981 15 825 18 011 33 836
+  97 148 106 519 203 667 17 742 16 978 34 720
+  95 489 99 160 194 649 16 116 13 146 29 262
+  131 134 138 352 269 486 23 951 23 427 47 378
+  164 151 167 041 331 192 29 996 29 332 59 328
+  DECEMBRE 2020 15
+== pdfg https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome1_17-2021.pdf (?i)(m.dian|Tableau.14) 30
+  HTTP 200 application/pdf 8,260,657 bytes
+  192 pages
+  p15: Tableau 14. Age moyen et âge médian de la population par sexe ...........................................................................................27
+  p15: Tableau 15. Age moyen, âge médian et effectif de la population étrangère .........................................................................27
+  p16: Tableau 28. Age médian du chef de ménage par milieu de résidence et sexe, selon la région ...................................43
+  p19: Tableau A2-16 Age médian de la population (en années) par milieu de résidence et par sexe .........................................111
+  p21: Tableau A2-65 Age Moyen et Age Médian au Premier Mariage (en années) par sexe, selon le milieu de
+  p21: Tableau A2-69 Age Moyen et Age Médian au Premier Mariage (en années) par sexe, selon le milieu de
+  p21: Tableau A2-88 Age moyen et Age médian des migrants selon le sexe et le statut migratoire ...........................................128
+  p58: a. Âge moyen et âge médian de la population
+  p58: Le tableau 14 montre que la population de Madagascar est jeune En revanche, au regard du tableau 15, les âges moyen et médian
+  p58: qu’une personne sur deux à moins de 18 ans, qui est l’âge médian. aussi relativement jeune, respectivement 25,6 et 22 ans.
+  p58: Que ce soit pour l’âge moyen ou pour l’âge médian, la différence
+  p59: population Malagasy, les âges moyen et médian de la population
+  p59: Tableau 14. Age moyen et âge médian de la population par sexe
+  p59: MADAGASCAR Age moyen Age médian Age moyen Age médian Age moyen Age médian
+  p59: Tableau 15. Age moyen, âge médian et effectif de la population étrangère
+  p59: Age moyen Age médian Effectif
+  p70: Quant à l’âge de majorité, selon par exemple, la Loi n° 2016 – 018, chiffre est confirmé par l’âge médian que nous avons présenté plus
+  p72: âgé de 38,0 ans (âge médian). Généralement, les femmes chefs Mania (8 ans chacune).
+  p72: traduisant ainsi un écart de 3 ans par rapport à l’âge médian. Près de neuf chefs de ménage sur dix (86,7 %) sont de population
+  p72: écart d’âge médian entre chefs de ménages des deux sexes est ans ou plus et les 1,4 % sont des enfants âgés de 12 à 17 ans dont
+  p75: Tableau 28. Age médian du chef de ménage par milieu de résidence et sexe, selon la région
+  p91: tandis que 4,2 % se sont déclarés au chômage soit, 430 992 (15) Age médian de la population active occupée
+  p111: La population urbaine est caractérisée par une forte proportion de de 24,5 ans et l’âge médian de 21 ans. Le rapport de masculinité
+  p143: Tableau A2-16 Age médian de la population (en années) par milieu de résidence et par sexe
+  p156: Tableau A2-65 Age Moyen et Age Médian au Premier Mariage (en années) par sexe, selon le milieu de
+  p156: Age Moyen Age Médian
+  p156: Tableau A2-69 Age Moyen et Age Médian au Premier Mariage (en années) par sexe, selon le milieu de
+  p156: Age Moyen Age Médian
+  p160: Tableau A2-88 Age moyen et Age médian des migrants selon le sexe et le statut migratoire
+  p160: Statut migratoire Age Moyen Age Médiane
