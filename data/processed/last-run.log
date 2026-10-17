@@ -1,15 +1,19 @@
 
-=== HDX dataset: cod-ab-mli ===
-    title: Mali - Subnational Administrative Boundaries
-    org:   ocha-fiss
+=== HDX dataset: cod-ps-mli ===
+    title: Mali - Subnational Population Statistics
+    org:   ocha-mali
     licence: license_id='cc-by-igo'  license_title='Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)'  isopen=False
-    notes: Mali administrative level 0-2 boundaries (COD-AB) dataset version 03.      This dataset is structured into 2 levels:   - Admin 1: 20 Région   - Admin 2: 160 Cercle         Note: The normal administrative level 2 feature type(s) are region (20 features) and cercle (160units).         Dates associated with this dataset:   - 10 June 2025: dataset reviewed for accuracy and completeness   - 04 Septembe
-    4 resource(s):
-      Geodatabase mli_admin_boundaries.gdb.zip
-             https://data.humdata.org/dataset/d2ec62bb-5a93-436d-8297-88b3ee9b6818/resource/78f15074-f58c-45c5-b074-57addf0b457e/download/mli_admin_boundaries.gdb.zip
-      SHP    mli_admin_boundaries.shp.zip
-             https://data.humdata.org/dataset/d2ec62bb-5a93-436d-8297-88b3ee9b6818/resource/dd90570d-e4af-48b1-a56f-ee80ba75afa0/download/mli_admin_boundaries.shp.zip
-      GeoJSON mli_admin_boundaries.geojson.zip
-             https://data.humdata.org/dataset/d2ec62bb-5a93-436d-8297-88b3ee9b6818/resource/f5502554-402b-405b-8967-8182d306a4d1/download/mli_admin_boundaries.geojson.zip
-      XLSX   mli_admin_boundaries.xlsx
-             https://data.humdata.org/dataset/d2ec62bb-5a93-436d-8297-88b3ee9b6818/resource/3374291a-7d3b-4fdc-99bb-f3932b45aa41/download/mli_admin_boundaries.xlsx
+    notes: Population of Mali 2018, disaggregated by admin 1 to 3 and by gender  REFERENCE YEAR:  2018  These tables are suitable for database or GIS linkage to the [Mali - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-mli) layers.  Projection based on 2009 population census  Update history  8 August 2019 Addition of CSV files  7 March 2018 Initial upload  Ver
+    6 resource(s):
+      XLSX   MLI_AdminBoundaries_TabularData.xlsx
+             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/dfbc914d-ecd6-4642-8e18-01ca6d2e3b5d/download/mli_adminboundaries_tabulardata.xlsx
+      XLS    Mali_Population_communes_sexe_2018.xls
+             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/074b6e23-3241-40a9-bd49-d8fc3d4d959e/download/mali_population_communes_sexe_2018.xls
+      CSV    mli_pop_adm0_v2.csv
+             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/6f243ba2-4d4a-4663-a7c4-e917dbbde73a/download/mli_pop_adm0_v2.csv
+      CSV    mli_pop_adm1_v2.csv
+             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/0bd515ae-613c-400f-a84c-ea203cc529be/download/mli_pop_adm1_v2.csv
+      CSV    mli_pop_adm2_v2.csv
+             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/af0c935f-d507-4252-945c-9d1a6cc1b598/download/mli_pop_adm2_v2.csv
+      CSV    mli_pop_adm3_v2.csv
+             https://data.humdata.org/dataset/ce21c7db-d8f0-40f8-adc2-452d2d2d105c/resource/6a73b827-302d-47be-94a9-580fa73011b5/download/mli_pop_adm3_v2.csv
