@@ -80,8 +80,12 @@ class LesothoCensusTest(unittest.TestCase):
         recs = {r["shape_id"]: r for r in ls.build(self.table(), ADMIN1, ADMIN2)}
         self.assertEqual(recs["u"]["population"]["value"], 156 + 172)
         self.assertEqual(recs["m"]["sex_ratio"]["value"], round(1000 * 50 / 55))
-        self.assertNotIn("x", recs)             # a Butha-Buthe drawn in Leribe: no guess
-        self.assertIn("villages, added up", recs["n"]["population_note"])
+        # A Butha-Buthe drawn in Leribe: no guess, a stated reason.
+        self.assertEqual(recs["x"]["population"]["status"], "not_available")
+        self.assertIn("No council of this name", recs["x"]["population"]["note"])
+        self.assertIn("2 enumeration areas and 3 villages added up", recs["n"]["population_note"])
+        self.assertIn("Botha-Bothe Urban Council (Botha-Bothe district)",
+                      recs["u"]["population_note"])
         self.assertEqual(recs["n"]["median_age"]["status"], "not_available")
 
 

@@ -73,12 +73,21 @@ DISTRICTS = {"bothabothe": "buthabuthedistrict", "berea": "bereadistrict",
 # list's, reduced, where the spellings differ.
 ALIASES: dict[str, str] = {
     "buthabuthe": "bothabothe",
+    # The urban councils, under the names of their towns on the map.
+    "tayateyaneng": "berea", "leribe": "hlotse", "maseru": "maserumunicipality",
+    # Spellings.
+    "makeoana": "makeoane", "maoamafubelu": "mamafubelu", "tsuilitsuili": "tsoilitsoili",
+    "mphokojoana": "mphokojoane", "mjanyane": "mtjanyane",
 }
 
 AGE_NOTE = ("The 2016 census's village list gives each village's households, men and women, "
             "not their ages, so no median age is published for this council.")
 COMPOSITION_NOTE = ("The 2016 census's village list, the census table that reaches this "
                     "council, gives each village's households, men and women and nothing else.")
+
+
+def plural(n: int, word: str) -> str:
+    return f"{n:,} {word}" + ("" if n == 1 else "s")
 
 
 def council_key(name: str) -> str:
@@ -136,6 +145,9 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
     astray: list[str] = []
     areas = {"with": 0, "without": 0}
     current: dict[str, Any] | None = None
+    # One name for each district, whichever spelling comes first ("Qacha's
+    # Nek" is also written "Qacha 's Nek").
+    canon: dict[str, str] = {}
 
     def close(area: dict[str, Any] | None, line: list[int] | None) -> None:
         if area is None:
@@ -148,8 +160,9 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
             figures = line
             if area["sum"] != line:
                 astray.append(f"{area['key']}: villages {area['sum']}, Total line {line}")
-        c = councils.setdefault(area["key"][:2], {"men": 0, "women": 0, "total": 0,
-                                                  "villages": 0, "areas": 0})
+        district = canon.setdefault(key(area["key"][0]), area["key"][0])
+        c = councils.setdefault((district, area["key"][1]),
+                                {"men": 0, "women": 0, "total": 0, "villages": 0, "areas": 0})
         for i, f in enumerate(("men", "women", "total")):
             c[f] += figures[i]
         c["villages"] += area["villages"]
@@ -265,14 +278,34 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             "language": gap(NOT_AVAILABLE, COMPOSITION_NOTE),
             "ethnicity": gap(NOT_AVAILABLE, COMPOSITION_NOTE)}
     out = []
+    district_of = {}
+    for d in table["districts"]:
+        want = DISTRICTS.get(key(d), key(d) + "district")
+        for s in admin1:
+            if key(s["name"]) == want:
+                district_of[s["id"]] = d
+    for shape in left:
+        d = district_of.get(shape.get("parent"))
+        if d is None:
+            continue
+        note = (f"No council of this name is in the 2016 census's village list for {d} "
+                f"district, so no census count is shown for this polygon.")
+        out.append(record(f"LSO-2016-{key(d)}-{council_key(shape['name'])}", shape["name"],
+                          level="admin2", parent="LSO", country="LSO", match_by="shape_id",
+                          shape_id=shape["id"], sources=SOURCES,
+                          population=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note),
+                          **gaps))
     for shape in admin2:
         if shape["id"] not in bound:
             continue
         d, c = bound[shape["id"]]
         data = table["councils"][(d, c)]
-        note = (f"The 2016 census's count for {c} council ({d} district): its "
-                f"{data['areas']:,} enumeration areas, {data['villages']:,} villages, added "
-                f"up.")
+        named = c if re.search(r"(?i)\b(council|municipality)$", c) else f"{c} council"
+        note = (f"The 2016 census's count for {named} ({d} district)"
+                + (f", drawn here as {shape['name']}" if council_key(c) != council_key(
+                    shape["name"]) else "")
+                + f": its {plural(data['areas'], 'enumeration area')} and "
+                  f"{plural(data['villages'], 'village')} added up.")
         out.append(record(f"LSO-2016-{key(d)}-{key(c)}", shape["name"], level="admin2",
                           parent="LSO", country="LSO", match_by="shape_id",
                           shape_id=shape["id"], sources=SOURCES,
