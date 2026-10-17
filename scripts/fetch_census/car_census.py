@@ -122,6 +122,9 @@ SEX_GAP = ("The 2021 census mapping's table splits every unit's count into men a
 AGE_GAP = ("The statistics office's 2016 estimates by age stop at the 17 prefectures and its "
            "2021 mapping counts carry no ages, so no median age is published for the "
            "sub-prefecture.")
+SEAT_GAP = ("No published list of the sub-prefectures' seats has been found, so none is "
+            "shown; the census tables name the sub-prefectures and their communes, not their "
+            "seats.")
 
 
 def table(rows: list[list[Any]]) -> list[dict[str, Any]]:
@@ -446,7 +449,7 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
             match_by="shape_id", shape_id=sid, population=pop,
             **({"population_note": note} if note else {}),
             sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
-            sources=cite_count))
+            capital=gap(NOT_AVAILABLE, SEAT_GAP), sources=cite_count))
         report.append(f"  {shape['name']}: {total:,} ({len(units)} communes of 2021"
                       + ("" if whole else f"; 2021 sub-prefectures {', '.join(sps21)}") + ")"
                       + (" -- withheld" if suspect else ""))

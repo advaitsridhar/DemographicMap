@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .binding import fold
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -118,6 +118,13 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
         seat = seat_of.get(key(u["name"]))
         if not seat:
             report.append(f"    {u['name']}: no seat named")
+            records.append(record(
+                f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
+                match_by="shape_id", shape_id=u["id"],
+                capital=gap(NOT_AVAILABLE, (
+                    "The list of Chad's departments and their seats (English Wikipedia, "
+                    "Departments of Chad) gives no seat for this department, and no other "
+                    "published list of the departments' seats has been found."))))
             continue
         records.append(record(
             f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",

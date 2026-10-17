@@ -82,6 +82,8 @@ class Reasons(unittest.TestCase):
         self.assertIn("within Songololo territory's figure", bangu["population"]["note"])
         # Kinshasa is its province's one unit, and takes the province's reasons.
         self.assertIn("5,220,436", by[("admin2", "Kinshasa")]["sex_ratio"]["note"])
+        self.assertEqual(by[("admin2", "Kinshasa")]["capital"], "Kinshasa")
+        self.assertIn("city-province", by[("admin2", "Kinshasa")]["capital_note"])
 
     def test_town_premise_checked(self):
         admin1, admin2 = units()

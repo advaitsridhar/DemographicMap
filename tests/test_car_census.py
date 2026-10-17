@@ -58,6 +58,11 @@ class Crosswalk(unittest.TestCase):
         c21["communes"][0]["men"] = 60
         self.assertEqual(cc.fixed_split(c21), 1)
 
+    def test_seat_reason_names_no_process(self):
+        self.assertIn("seats", cc.SEAT_GAP)
+        for word in ("read", "fetch", "adapter", "build"):
+            self.assertNotIn(word, cc.SEAT_GAP.lower())
+
     def test_suspect_duplicate(self):
         self.assertIn(fold("Dédé-Mokouba"), cc.SUSPECT)
         self.assertIn("23,708", cc.SUSPECT[fold("Dédé-Mokouba")])

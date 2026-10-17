@@ -267,6 +267,12 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
             fields["capital_note"] = (f"{shape['name']} is a city administered apart from the "
                                       f"territories of {shown}; its seat is the city itself.")
             cities += 1
+        else:
+            # The province's one unit is the city that is the province.
+            fields["capital"] = shape["name"]
+            fields["capital_note"] = (f"{shown} is a city-province, one city, whose seat is the "
+                                      f"city itself.")
+            cities += 1
         city = next((c for c, t in CITIES_COUNTED_IN.items() if t == shape["name"]), None)
         if city:
             ocha = next((x for x in adm2 if fold(x["admin2Name_fr"]) == fold(city)), None)

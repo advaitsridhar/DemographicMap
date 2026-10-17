@@ -38,7 +38,7 @@ class Seats(unittest.TestCase):
         self.assertEqual(by[("admin1", "Salamat")]["population"]["year"], 2023)
         self.assertEqual(by[("admin2", "Bahr-Azoum")]["capital"], "Am Timan")
         self.assertEqual(by[("admin2", "N'Djaména")]["capital"], "N'Djamena")
-        self.assertNotIn(("admin2", "Fouli"), by)
+        self.assertIn("gives no seat for this department", by[("admin2", "Fouli")]["capital"]["note"])
         self.assertTrue(any("Fouli: no seat named" in line for line in report))
 
     def test_too_few_people_refused(self):

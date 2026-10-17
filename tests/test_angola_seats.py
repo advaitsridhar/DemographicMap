@@ -14,6 +14,8 @@ PAGE = """<h2 id=a>CAPÍTULO II PROVÍNCIA DE CABINDA<a href=#a aria-label="Link
 <p>O Município do Moxico, com sede na Cidade do Luena, tem como limites</p>
 <h2>CAPÍTULO VI PROVÍNCIA DE LUANDA</h2>
 <p>O Município de Luanda, com sede na Ingombota, tem como limites</p>
+<h2>CAPÍTULO XVI PROVÍNCIA DO HUAMBO</h2>
+<p>O Municípo de Ecunha, com sede em Ecunha, tem como limites geográficos</p>
 <p>A Comuna do Bailundo, com sede no Bailundo, tem</p>"""
 
 
@@ -24,6 +26,7 @@ class Seats(unittest.TestCase):
         self.assertEqual(found["bengo"]["dande"], "Caxito")
         self.assertEqual(found["moxico"]["luena"], "Luena")        # drawn under its seat's name
         self.assertNotIn("bailundo", found.get("luanda", {}))       # a commune, not a municipality
+        self.assertEqual(found["huambo"]["ecunha"], "Ecunha")       # the law spells it Municípo
 
     def test_build(self):
         found = an.seats(an.text_of(PAGE))
@@ -41,7 +44,7 @@ class Seats(unittest.TestCase):
         self.assertEqual(by["Dande"], "Caxito")
         self.assertEqual(by["Pango-Aluquem"], "Pango Aluquém")     # filed under another province
         self.assertEqual(by["Luena"], "Luena")
-        self.assertNotIn("Luanda", by)
+        self.assertIn("no one seat", by["Luanda"]["note"])
         self.assertTrue(any("several municipalities" in line for line in report))
 
 

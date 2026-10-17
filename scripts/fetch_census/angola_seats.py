@@ -25,7 +25,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
 from .binding import fold
 
 URL = "https://lex.ao/docs/assembleia-nacional/2016/lei-n-o-18-16-de-17-de-outubro/"
@@ -47,7 +47,7 @@ ALIASES = {"mbanzakongo": "mbanzacongo", "quicama": "quissama", "kiwabanzoji": "
 # be one municipality's of several: Luanda's is drawn with the city's others.
 SEVERAL = frozenset({"luanda"})
 CHAPTER = re.compile(r"CAP[ÍI]TULO\s+[IVXLC]+\s+PROV[ÍI]NCIA\s+D[AEO]S?\s+(.+)", re.I)
-SEAT = re.compile(r"O\s+Munic[íi]pio\s+d[eoa]s?\s+(?P<name>[^,]{2,60}?),?\s*com\s+[Ss]ede\s+"
+SEAT = re.compile(r"O\s+Munic[íi]pi?o\s+d[eoa]s?\s+(?P<name>[^,]{2,60}?),?\s*com\s+[Ss]ede\s+"
                   r"(?:em|na|no|nas|nos)\s+(?:(?:[Cc]idade|[Vv]ila|[Ll]ocalidade|[Pp]ovoa[çc][ãa]o|"
                   r"[Aa]ldeia|[Ss]ede)\s+(?:d[eoa]s?\s+)?)?(?P<seat>[^,;:]{2,60}?)"
                   r"(?:\s*[,;:]|\s+tem\s)")
@@ -103,6 +103,13 @@ def build(found: dict[str, dict[str, str]], admin1: list[dict[str, Any]],
         keys = polygon_keys(u["name"])
         if keys & SEVERAL:
             report.append(f"    {u['name']}: drawn over several municipalities; left out")
+            records.append(record(
+                f"AGO-LEI1816-{u['id']}", u["name"], level="admin2", parent="AGO",
+                country="AGO", match_by="shape_id", shape_id=u["id"],
+                capital=gap(NOT_AVAILABLE, (
+                    "This polygon is drawn over Luanda municipality and parts of the city's "
+                    "other municipalities, each with a seat of its own under Lei n.º 18/16, so "
+                    "no one seat is shown."))))
             continue
         laws = found.get(provinces.get(u["parent"], ""), {})
         hits = {k: v for k, v in laws.items() if k in keys}
