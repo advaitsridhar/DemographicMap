@@ -1,19 +1,4 @@
-
-=== HDX dataset: cod-ps-civ ===
-    title: Côte d'Ivoire - Subnational Population Statistics
-    org:   ocha-rowca
-    licence: license_id='hdx-other'  license_title='Other'  isopen=False  license_other='humanitarian use only'
-    notes: Côte d'Ivoire administrative level 0 (country), 1 (district / autonomous city), 2 (region), and 3 (department) 2019 projected population statistics  These tables are suitable for database or GIS linkage to the [Côte d'Ivoire administrative level 0-3 boundary polygons, lines, and points shapefiles, geodatabase, KMZ files, and gazetteer](https://data.humdata.org/dataset/cod-ab-civ) boundaries.
-    6 resource(s):
-      XLSX   CIV_AdminBoundaries_TabularData.xlsx
-             https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/8a6dacf4-c8ec-42ce-8c79-e7e4f8003db7/download/civ_adminboundaries_tabulardata.xlsx
-      XLSX   civ_population_statistic_2019_unfpa_v2.xlsx
-             https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/ef28ddcc-2cfc-44e3-93ba-f1a1cab8df8f/download/civ_population_statistic_2019_unfpa_v2.xlsx
-      CSV    civ_admpop_adm0_v2.csv
-             https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/d01eaae3-a9d2-4bfa-90b5-768c76a95d4b/download/civ_admpop_adm0_v2.csv
-      CSV    civ_admpop_adm1_v2.csv
-             https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/47ef99b4-b040-4a90-9f91-775a641d585c/download/civ_admpop_adm1_v2.csv
-      CSV    civ_admpop_adm2_v2.csv
-             https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/ac365c06-3d22-4b0d-9890-fc2613ab2b2e/download/civ_admpop_adm2_v2.csv
-      CSV    civ_admpop_adm3_v2.csv
-             https://data.humdata.org/dataset/53d768e8-7a66-438c-abcb-8393fa74adf8/resource/c49a74aa-9630-4755-9184-b0e5cafa092c/download/civ_admpop_adm3_v2.csv
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+usage: probe_hdx.py [-h] [--search SEARCH] [--seed SEED] [--rows ROWS]
+                    [--org ORG] [--match MATCH] [--dataset DATASET]
+probe_hdx.py: error: argument --search: expected one argument
