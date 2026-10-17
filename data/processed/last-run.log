@@ -1,3 +1,21 @@
-  Volume IV: 34,215,383 bytes, sha256 af4ef18f3c7c546054299343767686e4709e6295b0666c73a2062024cd271148
-  371 pages
-nigeria_census: page 244: 'LAGOS': group '4 - 9 957,993 480,544 477,449' where 5-9 was expected
+    read Provinces/getAll/: answer sha256 a68951e7b5bad48d89934754c7069b010da27df1e01168d8acd49fb50bfb5dc6
+    read KeyIndicators/listKeyIndicators/1/2/2: answer sha256 8f7e3efb34620a93e00611beaf286f0b18f7433372329875cf418e973d17a434
+    read DsPopulationGroups/listDsByParams/1/2/2: answer sha256 052aa98eedce2dd0106ff5a0c8d90d73368e1f75f2ea2329694d79d65af5410c
+    read DsAgeGroups/listDsByParams/1/2/2: answer sha256 9eb771835250a691b434a6fbc03b1766631713ace2ee3b3342f7f8529e5bdc0c
+    read DsMains/listDsByParams/1/2/2: answer sha256 25d08caade0c6c5dcd412f5cb192ae9eaea0d9d9582aa1257e048fccf10fcfd3
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_africa_districts.py", line 455, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_africa_districts.py", line 436, in main
+    table = read()
+            ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_africa_districts.py", line 250, in read
+    check_numbering(name, ages, summary(PROVINCE, p["provinceId"]))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_africa_districts.py", line 180, in summary
+    return rows[0] if rows else {}
+           ~~~~^^^
+KeyError: 0
