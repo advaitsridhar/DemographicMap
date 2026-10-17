@@ -72,6 +72,10 @@ PROVINCE = re.compile(r"^province\s+(?:du|de\s+la|de\s+l['’]|des|de)\s*", re.I
 HEADER = re.compile(r"^(tableau|circonscription|population|administrative|r[ée]partition|sexe$|"
                     r"rapport|d[ée]partement\s+et\s+par|arrondissement/district|l['’]?\s*$)", re.I)
 
+# The table's department names the map spells otherwise (folded keys, '&' read as 'et').
+DRAWN_AS = {"nyongetsoo": "Nyong-et-So", "kadey": "Kadei", "ngoketundjia": "Ngo-ketunjia",
+            "koupeetmanengouba": "Kupe-Manenguba"}
+
 AGE_GAP = ("BUCREP's tables of the 2005 census by department count each department's residents "
            "by sex and by urban or rural residence, not by age, so no median age is published "
            "for the department.")
@@ -262,6 +266,16 @@ def seats(wikitext: str) -> dict[str, str]:
     return out
 
 
+def spelled(name: str) -> str:
+    """A department as the table names it, '&' written out: 'MBAM & KIM' -> 'Mbam Et Kim'."""
+    return re.sub(r"\s*&\s*", " et ", name).title()
+
+
+def seat_key(name: str) -> str:
+    """A name with its 'et' dropped, so Koupé-Manengouba meets Koupe & Manengouba."""
+    return fold(re.sub(r"(?i)[\s-]+et[\s-]+", " ", name))
+
+
 def ratio(m: int, f: int) -> int:
     return round(1000 * m / f)
 
@@ -300,23 +314,25 @@ def build(tables_: dict[str, dict[str, Any]], seat_of: dict[str, str],
                       f"{len(s['departments'])} departments")
         for dep, (figures, _arrs) in s["departments"].items():
             code = f"{key}:{dep}"
-            departments[code] = (dep.title(), region)
+            departments[code] = (spelled(dep), region)
             counts[code] = figures
-    bound, missing = bind(departments, admin2, parents)
+    aliases = {name: DRAWN_AS[fold(name)] for name, _r in departments.values()
+               if fold(name) in DRAWN_AS}
+    bound, missing = bind(departments, admin2, parents, aliases)
     if missing:
         raise SystemExit("cameroon_census: departments with no polygon: " + ", ".join(missing))
     shapes = {u["id"]: u for u in admin2}
     unbound = sorted(u["name"] for u in admin2 if u["id"] not in set(bound.values()))
     if unbound:
         raise SystemExit("cameroon_census: polygons no department reached: " + ", ".join(unbound))
-    seat_keys = {fold(k): v for k, v in seat_of.items()}
+    seat_keys = {seat_key(k): v for k, v in seat_of.items()}
     for code, sid in sorted(bound.items(), key=lambda kv: kv[0]):
         t, m, f = counts[code]
         shape = shapes[sid]
         dep_name = departments[code][0]
         extra: dict[str, Any] = {"median_age": gap(NOT_AVAILABLE, AGE_GAP)}
         sources = list(cite)
-        seat = seat_keys.get(fold(dep_name)) or seat_keys.get(fold(shape["name"]))
+        seat = seat_keys.get(seat_key(dep_name)) or seat_keys.get(seat_key(shape["name"]))
         if seat:
             extra["capital"] = seat
             sources.append({"field": "capital", "name": f"French Wikipedia, {WIKI_TITLE}",
