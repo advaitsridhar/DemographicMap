@@ -1,100 +1,166 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  read https://www.ons.dz/collections/pop3_national.pdf: 505,663 bytes, sha256 084ab4775e11e0d0146c1ed59881ad85c6c99a2739bcb08fed5f8bdf0af823ba
-  a row printed with its label once for 2 wilayas, read in threes: '85 ans & + 1414 1509 2923 1692 1583 3274'
-  Adrar: rounding in the office's cells: groups make 399,711 against 399,714; rows ['35-39 ans -1', '45-49 ans +1', '70-74 ans +1', '75-79 ans +1', '80-84 ans +1']
-  Chlef: rounding in the office's cells: groups make 1,002,088 against 1,002,088; rows ['20-24 ans -1', '35-39 ans -1', '75-79 ans +1']
-  Oum El Bouaghi: rounding in the office's cells: groups make 621,612 against 621,612; rows ['0-4 Ans -1', '10-14 ans +1', '35-39 ans +1', '40-44 ans -1', '80-84 ans -1', 'Total -1']
-  Batna: rounding in the office's cells: groups make 1,119,791 against 1,119,791; rows ['5-9 ans -1', '15-19 ans +1', '25-29 ans -1', '55-59 ans +1', '60-64 ans -1', '75-79 ans +1', '80-84 ans -1', '85 ans & + -1', 'Total +1']
-  Béjaia: rounding in the office's cells: groups make 912,576 against 912,577; rows ['0-4 Ans -1', '15-19 ans +1', '20-24 ans +1', '25-29 ans -1', '50-54ans +1', '85 ans & + -1']
-  Biskra: rounding in the office's cells: groups make 721,355 against 721,356; rows ['15-19 ans +1', '35-39 ans +1', '45-49 ans -1', 'Total +1']
-  Béchar: rounding in the office's cells: groups make 270,064 against 270,061; rows ['45-49 ans -1', '50-54ans -1', '65-69 ans -1', '80-84 ans -1', '85 ans & + +1', 'Total +1']
-  Blida: rounding in the office's cells: groups make 1,002,938 against 1,002,937; rows ['0-4 Ans -1', '5-9 ans -1', '10-14 ans -1', '20-24 ans +1', '55-59 ans +1', '60-64 ans +1', '65-69 ans +1']
-  Bouira: rounding in the office's cells: groups make 695,583 against 695,583; rows ['15-19 ans -1', '20-24 ans -1', '25-29 ans -1', '35-39 ans +1', '45-49 ans -1', '50-54ans -1', '60-64 ans +1', '65-69 ans -1', '75-79 ans +1', '85 ans & + +1', 'Total -1']
-  Tamanrasset: rounding in the office's cells: groups make 176,639 against 176,637; rows ['0-4 Ans -1', '5-9 ans +1', '20-24 ans +1', '35-39 ans -1', '40-44 ans -1', '75-79 ans -1', 'Total -1']
-  Tébessa: rounding in the office's cells: groups make 648,704 against 648,703; rows ['0-4 Ans -1', '25-29 ans +1', '35-39 ans -1', '75-79 ans -1', '80-84 ans -1']
-  Tlemcen: rounding in the office's cells: groups make 949,133 against 949,135; rows ['25-29 ans -1', '40-44 ans +1', '65-69 ans +1']
-  Tiaret: rounding in the office's cells: groups make 846,824 against 846,823; rows ['5-9 ans -1', '30-34 ans -1', '40-44 ans -1', '70-74 ans +1', '75-79 ans -1', '80-84 ans +1', '85 ans & + -1', 'ND +1']
-  Tizi Ouzou: rounding in the office's cells: groups make 1,127,605 against 1,127,607; rows ['25-29 ans +1', '75-79 ans -1', '80-84 ans +1', 'ND +1']
-  Alger: rounding in the office's cells: groups make 2,988,146 against 2,988,145; rows ['5-9 ans +1', '20-24 ans -1', '35-39 ans +1', '60-64 ans -1']
-  Djelfa: rounding in the office's cells: groups make 1,092,184 against 1,092,184; rows ['0-4 Ans +1', '5-9 ans +1', '35-39 ans -1', '70-74 ans -1']
-  Jijel: rounding in the office's cells: groups make 636,951 against 636,948; rows ['80-84 ans -1']
-  Sétif: rounding in the office's cells: groups make 1,489,980 against 1,489,979; rows ['10-14 ans +1', '25-29 ans -1', '30-34 ans +1', '35-39 ans +1', '55-59 ans +1', '60-64 ans +1', '65-69 ans +1', '85 ans & + -1', 'ND +1']
-  Saida: rounding in the office's cells: groups make 330,643 against 330,641; rows ['15-19 ans +1', '40-44 ans +1', '45-49 ans -1', '75-79 ans -1', 'ND -1', 'Total +1']
-  Skikda: rounding in the office's cells: groups make 898,681 against 898,680; rows ['0-4 Ans +1', '15-19 ans -1', '30-34 ans -1', '60-64 ans -1', '75-79 ans -1', 'ND -1']
-  Sidi Bel Abbes: rounding in the office's cells: groups make 604,742 against 604,744; rows ['5-9 ans +1', '10-14 ans +1', '60-64 ans +1', '70-74 ans +1', '85 ans & + -1']
-  Annaba: rounding in the office's cells: groups make 609,501 against 609,499; rows ['15-19 ans -1', '25-29 ans -1', '30-34 ans +1', '65-69 ans +1', '70-74 ans -1', '75-79 ans -1']
-  Guelma: rounding in the office's cells: groups make 482,430 against 482,430; rows ['5-9 ans -1', '10-14 ans -1', '30-34 ans -1', '55-59 ans -1', '70-74 ans +1', 'Total +1']
-  Constantine: rounding in the office's cells: groups make 938,474 against 938,475; rows ['0-4 Ans +1', '25-29 ans +1', '35-39 ans -1', '65-69 ans -1']
-  Médéa: rounding in the office's cells: groups make 819,933 against 819,932; rows ['30-34 ans +1', '35-39 ans -1']
-  Mostaganem: rounding in the office's cells: groups make 737,120 against 737,118; rows ['10-14 ans -1', '15-19 ans +1', '60-64 ans +1', '75-79 ans -1', '85 ans & + -1']
-  M’Sila: rounding in the office's cells: groups make 990,590 against 990,591; rows ['20-24 ans +1', '85 ans & + +1']
-  Mascara: rounding in the office's cells: groups make 784,073 against 784,073; rows ['40-44 ans +1', '60-64 ans +1', '75-79 ans +1']
-  Ouargla: rounding in the office's cells: groups make 558,559 against 558,558; rows ['0-4 Ans -1', '15-19 ans +1', '25-29 ans -1', '30-34 ans -1', '45-49 ans +1', '70-74 ans +1', '80-84 ans -1', 'ND -1']
-  Oran: rounding in the office's cells: groups make 1,454,077 against 1,454,078; rows ['0-4 Ans +1', '25-29 ans +1', '60-64 ans +1', '65-69 ans -1', '80-84 ans +1']
-  El Bayadh: rounding in the office's cells: groups make 228,625 against 228,624; rows ['0-4 Ans -1', '10-14 ans -1', '35-39 ans -1', '45-49 ans +1', '65-69 ans -1', '70-74 ans -1', '75-79 ans -1']
-  Illizi: rounding in the office's cells: groups make 52,332 against 52,333; rows ['30-34 ans +1', '35-39 ans -1', '40-44 ans +1', '55-59 ans -1', '70-74 ans +1', 'ND -1', 'Total -1']
-  Boumerdes: rounding in the office's cells: groups make 802,084 against 802,083; rows ['0-4 Ans -1', '25-29 ans -1', '55-59 ans -1', '60-64 ans +1', '70-74 ans -1', '80-84 ans -1', 'ND +1']
-  El Tarf: rounding in the office's cells: groups make 408,412 against 408,414; rows ['0-4 Ans +1', '10-14 ans +1', '50-54ans +1', '65-69 ans -1', '75-79 ans +1', '80-84 ans -1', 'ND -1', 'Total -1']
-  Tindouf: rounding in the office's cells: groups make 49,149 against 49,149; rows ['0-4 Ans -1', '5-9 ans +1', '10-14 ans -1', '15-19 ans -1', '30-34 ans +1', '50-54ans -1']
-  Tissemsilt: rounding in the office's cells: groups make 294,476 against 294,476; rows ['0-4 Ans +1', '30-34 ans +1', '45-49 ans +1', '70-74 ans -1', '80-84 ans -1', '85 ans & + -1']
-  El Oued: rounding in the office's cells: groups make 647,546 against 647,548; rows ['0-4 Ans +1', '15-19 ans +1', '30-34 ans -1', '50-54ans +1', '65-69 ans +1', '80-84 ans +1']
-  Khenchela: rounding in the office's cells: groups make 386,683 against 386,683; rows ['5-9 ans -1', '15-19 ans +1', '25-29 ans +1', '40-44 ans +1', '75-79 ans -1', 'Total +1']
-  Souk Ahras: rounding in the office's cells: groups make 438,126 against 438,127; rows ['0-4 Ans -1', '40-44 ans -1', '65-69 ans -1', '85 ans & + +1']
-  Tipaza: rounding in the office's cells: groups make 591,008 against 591,010; rows ['30-34 ans +1', '40-44 ans +1', 'ND +1']
-  Mila: rounding in the office's cells: groups make 766,885 against 766,886; rows ['10-14 ans -1', '20-24 ans -1', '25-29 ans +1', '50-54ans +1']
-  Ain Defla: rounding in the office's cells: groups make 766,013 against 766,013; rows ['30-34 ans +1', '55-59 ans +1', '80-84 ans +1', 'Total -1']
-  Naama: rounding in the office's cells: groups make 192,891 against 192,891; rows ['0-4 Ans -1', '10-14 ans +1', '15-19 ans +1', '55-59 ans -1', 'ND +1']
-  Ain Témouchent: rounding in the office's cells: groups make 371,238 against 371,239; rows ['10-14 ans -1', '15-19 ans -1', '35-39 ans +1', '50-54ans +1', '70-74 ans -1', 'ND +1']
-  Ghardaia: rounding in the office's cells: groups make 363,597 against 363,598; rows ['10-14 ans -1', '45-49 ans +1', 'ND +1', 'Total +1']
-  Relizane: rounding in the office's cells: groups make 726,181 against 726,180; rows ['65-69 ans -1', '80-84 ans -1', 'ND +1']
-   1 Adrar                     399,714  median 21.6  men/1000 women 1041  ND 70
-   2 Chlef                   1,002,088  median 23.9  men/1000 women 1006  ND 1406
-   3 Laghouat                  455,602  median 22.5  men/1000 women 1042  ND 697
-   4 Oum El Bouaghi            621,612  median 24.2  men/1000 women 1021  ND 505
-   5 Batna                   1,119,791  median 23.9  men/1000 women 1020  ND 526
-   6 Béjaia                    912,577  median 27.1  men/1000 women 1042  ND 1570
-   7 Biskra                    721,356  median 22.6  men/1000 women 1024  ND 304
-   8 Béchar                    270,061  median 24.6  men/1000 women 1006  ND 2
-   9 Blida                   1,002,937  median 25.9  men/1000 women 1033  ND 1314
-  10 Bouira                    695,583  median 25.6  men/1000 women 1032  ND 1057
-  11 Tamanrasset               176,637  median 20.6  men/1000 women 1058  ND 593
-  12 Tébessa                   648,703  median 23.9  men/1000 women 1011  ND 144
-  13 Tlemcen                   949,135  median 27.5  men/1000 women 1033  ND 196
-  14 Tiaret                    846,823  median 24.1  men/1000 women 1019  ND 146
-  15 Tizi Ouzou              1,127,607  median 28.4  men/1000 women 1004  ND 1941
-  16 Alger                   2,988,145  median 28.7  men/1000 women 1008  ND 7993
-  17 Djelfa                  1,092,184  median 20.5  men/1000 women 1061  ND 1670
-  18 Jijel                     636,948  median 24.5  men/1000 women 1015  ND 220
-  19 Sétif                   1,489,979  median 24.3  men/1000 women 1031  ND 737
-  20 Saida                     330,641  median 25.7  men/1000 women 1017  ND 36
-  21 Skikda                    898,680  median 25.8  men/1000 women 1014  ND 458
-  22 Sidi Bel Abbes            604,744  median 27.3  men/1000 women 1018  ND 189
-  23 Annaba                    609,499  median 28.6  men/1000 women 1002  ND 318
-  24 Guelma                    482,430  median 26.9  men/1000 women 1010  ND 106
-  25 Constantine               938,475  median 26.7  men/1000 women 1004  ND 378
-  26 Médéa                     819,932  median 24.8  men/1000 women 1038  ND 1177
-  27 Mostaganem                737,118  median 24.9  men/1000 women 1008  ND 267
-  28 M’Sila                    990,591  median 22.5  men/1000 women 1039  ND 159
-  29 Mascara                   784,073  median 25.6  men/1000 women 1035  ND 887
-  30 Ouargla                   558,558  median 21.6  men/1000 women 1030  ND 953
-  31 Oran                    1,454,078  median 27.3  men/1000 women 1003  ND 1760
-  32 El Bayadh                 228,624  median 23.4  men/1000 women 1020  ND 282
-  33 Illizi                     52,333  median 21.4  men/1000 women 1173  ND 145
-  34 Bordj Bou Arreridj        628,475  median 23.9  men/1000 women 1043  ND 346
-  35 Boumerdes                 802,083  median 26.2  men/1000 women 1054  ND 1116
-  36 El Tarf                   408,414  median 27.2  men/1000 women 997  ND 93
-  37 Tindouf                    49,149  median 23.1  men/1000 women 1035  ND 42
-  38 Tissemsilt                294,476  median 23.9  men/1000 women 1030  ND 74
-  39 El Oued                   647,548  median 20.4  men/1000 women 1037  ND 1241
-  40 Khenchela                 386,683  median 24.0  men/1000 women 1023  ND 145
-  41 Souk Ahras                438,127  median 26.0  men/1000 women 999  ND 96
-  42 Tipaza                    591,010  median 26.1  men/1000 women 1023  ND 1094
-  43 Mila                      766,886  median 24.2  men/1000 women 1017  ND 228
-  44 Ain Defla                 766,013  median 24.0  men/1000 women 1031  ND 754
-  45 Naama                     192,891  median 24.4  men/1000 women 1039  ND 132
-  46 Ain Témouchent            371,239  median 28.2  men/1000 women 1022  ND 335
-  47 Ghardaia                  363,598  median 22.4  men/1000 women 1038  ND 705
-  48 Relizane                  726,180  median 24.5  men/1000 women 1018  ND 367
-  48 wilayas making 34,080,030; 48 records
-  wrote data/processed/algeria_census.json (103 kB)
+== pdft https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_M%C3%89-Z%C3%93CHI.pdf (?i)(quadro|religi|idade) 80
+  HTTP 200 application/pdf 4,979,700 bytes
+  135 pages
+  p4: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / ÍNDICE / Introdução………………………..7
+  p5: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 12: População residente de 3 anos ou mais segundo sexo e grupos etários por / frequência escolar………………………..57
+  p6: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 24: Repartição da população residente nos alojamentos familiares desempregada / que já trabalhou com 15 anos ou mais segundo sexo e grupos etários por aptidão para ler
+  p7: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 39: Distribuição dos alojamentos segundo existência de energia elétrica por sexo / do responsável……………………………121
+  p8: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / INTRODUÇÃO / O IV Recenseamento Geral da População e da Habitação 2012 (doravante designado
+  p9: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / O INE aproveita esta oportunidade, para apresentar os seus agradecimentos a todos quanto / contribuíram para o sucesso desta operação de entre os quais: as Autarquias Locais, as Igrejas, as
+  p10: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / PRINCIPAIS SIGLAS E ABREVIATURAS UTILIZADAS / IV RGPH – 2012 – IV Recenseamento Geral da População e da Habitação 2012
+  p11: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / NOMENCLATURA UTILIZADA NO IV RECENSEAMENTO GERAL DA / POPULAÇÃO E DA HABITAÇÃO 2012 (IV RGPH 2012)
+  p15: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / CONCEITOS / Distritos – a lei da divisão político-administrativa de 21 de Novembro de 1980 divide o
+  p16: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Simultaneidade - cada unidade estatística deve ser recenseada num momento mais próximo / possível da data de referência e os dados recolhidos terão um período de referência bem definido.
+  p17: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 /  Alojamento particular permanente ocupado - é aquele alojamento que, na data de / referência, estava ocupado por pessoas residentes e no qual foi realizada a entrevista.
+  p18: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / do alojamento, o material predominante na cobertura do alojamento, o material predominante na / construção do piso (soalho) do alojamento, informações relativas ao período no qual foi
+  p19: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / União de facto (união consensual, amantizado) – para pessoa que vive na companhia de cônjuge / com quem não contraiu casamento civil e/ou religioso. Considere esta opção para os que vivem
+  p20: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Desempregado (a) e já trabalhou – para pessoa que está desempregada, mas já teve um / trabalho.
+  p22: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / 1. ESTADO E ESTRUTURA DA POPULAÇÃO / Quadro 1: População recenseada segundo situação de residência e distrito por tipo de alojamento
+  p23: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 2: População recenseada segundo situação de residência e distrito por tipo de alojamento / Condição Total Alojamentos particulares Alojamentos coletivos
+  p25: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 3: Número de Alojamentos1 e Estabelecimentos / Mé-Zóchi
+  p26: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 4: Repartição da população residente segundo idade simples por sexo e distrito / Idades Mé -Zóchi Urbano Rural
+  p27: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 4: Repartição da população residente segundo idade simples por sexo (continuação...) / Idades Mé -Zóchi Urbano Rural
+  p29: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 5: Repartição da população residente segundo sexo por grupos etários quinquenais / Grupos Mé -Zóchi Urbano Rural
+  p30: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião / Grupos Religião
+  p31: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p32: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p33: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p34: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p35: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p36: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p37: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p38: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 7: Repartição da população residente segundo sexo e grupos etarios, por nacionalidade (S. Tomé, / dupla nacionalidade e estrangeira)
+  p39: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 7: Repartição da população residente segundo sexo e grupos etários, por nacionalidade (S. Tomé, / dupla nacionalidade e estrangeira) (continuação…)
+  p40: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 8: Repartição da população residente segundo sexo e nacionalidade por religião / Religião
+  p41: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 8: Repartição da população residente segundo sexo e nacionalidade por religião (continuação…) / Religião
+  p42: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários por país / de nacionalidade
+  p43: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p44: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p45: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p46: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p47: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p48: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p49: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p50: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / 2. EDUCAÇÃO / Quadro 10: População residente segundo sexo e grupos etários por língua falada
+  p51: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Grupos Português Fôrro Angolar Lunguié
+  p52: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Grupos Português Fôrro Angolar Lunguié
+  p53: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Grupos Português Fôrro Angolar Lunguié
+  p54: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p55: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p56: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p57: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p58: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 11: População residente de 5 anos e mais segundo sexo e grupos etários por aptidão para ler e / escrever
+  p59: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 11: População residente de 5 anos e mais segundo sexo e grupos etários por aptidão para ler e / escrever (continuação…)
+  p60: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 12: População residente de 3 anos ou mais segundo sexo e grupos etários por frequência escolar / Grupos Total A frequentar Frequentou Nunca frequentou
+  p61: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 12: População residente de 3 anos ou mais segundo sexo e grupos etários por frequência escolar / (continuação…)
+  p62: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos ou mais segundo nível de instrução por grupos etários / Grupos Nivel ou grau e classe que frequenta ou frequentou
+  p63: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos e mais sem instrução e que frequenta ou frequentou um / estabelecimento de ensino segundo nível ou grau e classe que frequenta ou frequentou (continuação…)
+  p64: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos e mais sem instrução e que frequenta ou frequentou um / estabelecimento de ensino segundo nível ou grau e classe que frequenta ou frequentou (continuação…)
+  p65: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos e mais sem instrução e que frequenta ou frequentou um / estabelecimento de ensino segundo nível ou grau e classe que frequenta ou frequentou (continuação…)
+  p66: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução
+  p67: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução (continuação…)
+  p68: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução (continuação…)
+  p69: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução (continuação…)
+  p70: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino
+  p71: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino e grupos etários por classe que frequenta (continuação…)
+  p72: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino e grupos etários por classe que frequenta (continuação…)
+  p73: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino e grupos etários por classe que frequenta (continuação…)
+  p74: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários
+  p75: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p76: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p77: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p78: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p79: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p80: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p81: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p82: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p83: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p84: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p85: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p86: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p87: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p88: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p89: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / 3. CARACTERÍSTICAS ECONÓMICAS / Quadro 17: Repartição da população residente de 10 anos e mais segundo sexo e grupos etários por
+== pdft https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_LOBATA.pdf (?i)(quadro|religi|idade) 80
+  HTTP 200 application/pdf 4,860,805 bytes
+  129 pages
+  p4: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / ÍNDICE / Introdução…………………………………………………………………………………………7
+  p5: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 11: População residente de 5 anos e mais segundo sexo e grupos etários por / aptidão para ler e escrever………………………………………………………………..51
+  p6: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 24: Repartição da população residente nos alojamentos familiares desempregada / que já trabalhou com 15 anos ou mais segundo sexo e grupos etários por aptidão para ler
+  p7: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 39: Distribuição dos alojamentos segundo existência de energia elétrica por sexo / do responsável…………………………………………………………………………..117
+  p8: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / INTRODUÇÃO / O IV Recenseamento Geral da População e da Habitação 2012 (doravante designado
+  p9: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / O INE aproveita esta oportunidade, para apresentar os seus agradecimentos a todos quanto / contribuíram para o sucesso desta operação de entre os quais: as Autarquias Locais, as Igrejas, as
+  p10: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / PRINCIPAIS SIGLAS E ABREVIATURAS UTILIZADAS / IV RGPH – 2012 – IV Recenseamento Geral da População e da Habitação 2012
+  p12: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / NOMENCLATURA UTILIZADA NO IV RECENSEAMENTO GERAL DA / POPULAÇÃO E DA HABITAÇÃO 2012 (IV RGPH 2012)
+  p16: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / CONCEITOS / Distritos – a lei da divisão político-administrativa de 21 de Novembro de 1980 divide o
+  p17: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Simultaneidade - cada unidade estatística deve ser recenseada num momento mais próximo / possível da data de referência e os dados recolhidos terão um período de referência bem definido.
+  p18: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 /  Alojamento particular permanente - é aquele com a finalidade de servir / exclusivamente para habitação e que, na data de referência, servia de moradia para uma
+  p19: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / particulares, com objectivo de colher informações sobre a existência do parque habitacional, as / condições de moradia e os níveis de qualidade de vida das famílias Santomenses. De entre as
+  p20: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Só casamento religioso – para pessoa que vive na companhia de cônjuge com quem é casada / somente no religioso em qualquer religião ou culto.
+  p21: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / caça, pesca e aquicultura, destinada somente a alimentação de pelo menos um membro do / alojamento.
+  p24: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / 1. ESTADO E ESTRUTURA DA POPULAÇÃO / Quadro 1: População recenseada segundo situação de residência e distrito por tipo de alojamento
+  p25: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 2: População recenseada segundo situação de residência e distrito por tipo de alojamento / Condição Total Alojamentos particulares Alojamentos coletivos
+  p26: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 3: Número de Alojamentos1 e Estabelecimentos / Lobata
+  p27: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 4: Repartição da população residente segundo idade simples por sexo e distrito / Idades Lobata Urbano Rural
+  p28: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 4: Repartição da população residente segundo idade simples por sexo (continuação...) / Idades Lobata Urbano Rural
+  p29: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 5: Repartição da população residente segundo sexo por grupos etários quinquenais / Grupos Lobata Urbano Rural
+  p30: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião / Grupos Religião
+  p31: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p32: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p33: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p34: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p35: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p36: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p37: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 6: Repartição da população residente segundo sexo e grupos etários por Religião (continuação…) / Grupos Religião
+  p38: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 7: Repartição da população residente segundo sexo e grupos etarios, por nacionalidade (S. Tomé, / dupla nacionalidade e estrangeira)
+  p39: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 7: Repartição da população residente segundo sexo e grupos etários, por nacionalidade (S. Tomé, / dupla nacionalidade e estrangeira) (continuação…)
+  p40: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 8: Repartição da população residente segundo sexo e nacionalidade por religião / Religião
+  p41: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 8: Repartição da população residente segundo sexo e nacionalidade por religião (continuação…) / Religião
+  p42: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários por país / de nacionalidade
+  p43: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p44: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p45: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 9: Repartição da população residente de nacionalidade estrangeira segundo sexo e grupos etários / por país de nacionalidade (continuação…)
+  p46: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / 1. EDUCAÇÃO / Quadro 10: População residente segundo sexo e grupos etários por língua falada
+  p47: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Grupos Português Fôrro Angolar Lunguié
+  p48: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Grupos Português Fôrro Angolar Lunguié
+  p49: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Grupos Português Fôrro Angolar Lunguié
+  p50: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p51: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p52: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p53: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 10: População residente segundo sexo e grupos etários por língua falada (continuação…) / Outra(s) língua(s)
+  p54: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 11: População residente de 5 anos e mais segundo sexo e grupos etários por aptidão para ler e escrever / Grupos Total Sabe ler e escrever Sabe somente ler Não sabe ler nem escrever
+  p55: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 11: População residente de 5 anos e mais segundo sexo e grupos etários por aptidão para ler e / escrever (continuação…)
+  p56: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 12: População residente de 3 anos ou mais segundo sexo e grupos etários por frequência escolar / Grupos Total A frequentar Frequentou Nunca frequentou
+  p57: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 12: População residente de 3 anos ou mais segundo sexo e grupos etários por frequência escolar / (continuação…)
+  p58: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos ou mais segundo nível de instrução por grupos etários / Grupos Nivel ou grau e classe que frequenta ou frequentou
+  p59: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos e mais sem instrução e que frequenta ou frequentou um / estabelecimento de ensino segundo nível ou grau e classe que frequenta ou frequentou (continuação…)
+  p60: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos e mais sem instrução e que frequenta ou frequentou um / estabelecimento de ensino segundo nível ou grau e classe que frequenta ou frequentou (continuação…)
+  p61: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 13: População residente de 3 anos e mais sem instrução e que frequenta ou frequentou um / estabelecimento de ensino segundo nível ou grau e classe que frequenta ou frequentou (continuação…)
+  p62: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução
+  p63: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução (continuação…)
+  p64: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução (continuação…)
+  p65: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 14: População residente de 3 anos ou mais que frequenta um estabelecimento de ensino segundo / sexo e grupos etários por nível de instrução (continuação…)
+  p66: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino
+  p67: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino e grupos etários por classe que frequenta (continuação…)
+  p68: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino e grupos etários por classe que frequenta (continuação…)
+  p69: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 15: População residente de 3 anos e mais que frequenta um estabelecimento de ensino segundo / nível de ensino e grupos etários por classe que frequenta (continuação…)
+  p70: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários
+  p71: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p72: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p73: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p74: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p75: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p76: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p77: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p78: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p79: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p80: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p81: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p82: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p83: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p84: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 16: População residente de 22 anos ou mais que frequentou o nível superior, mestrado e doutorado / e que concluiu o nível (P26=1) segundo sexo e nome do curso superior por grupos etários (continuação…)
+  p85: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / 2. CARACTERÍSTICAS ECONÓMICAS / Quadro 17: Repartição da população residente de 10 anos e mais segundo sexo e grupos etários por condição
+  p86: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 17: Repartição da população residente de 10 anos e mais segundo sexo e grupos etários por / condição perante atividade económica
+  p87: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 18: Repartição da população residente Empregada com 15 anos ou mais segundo sexo e grupos / etários por nível de instrução
+  p88: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 18 A: Repartição da população residente Desempregada com 15 anos ou mais segundo sexo e / grupos etários por nível de instrução
+  p89: Resultado Distrital do IV Recenseamento Geral da População e da Habitação 2012 / Quadro 18 B: Repartição da população residente Inactiva com 15 anos ou mais segundo sexo e grupos / etários por nível de instrução
