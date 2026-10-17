@@ -1,46 +1,105 @@
-  20,745,926 bytes
-  read https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf: 20,745,926 bytes, sha256 4d41cfc2e5431f96c426f379260311c99925f8b6177b8823f4c0afb306207854
-  Kayes: 1,840,329 (921,044 men), median 17, annex 1,826,564 in ordinary households, interpolated 16.1
-  Koulikoro: 2,255,157 (1,142,015 men), median 16, annex 2,246,154 in ordinary households, interpolated 16.0
-  Sikasso: 1,533,123 (760,239 men), median 16, annex 1,528,398 in ordinary households, interpolated 15.8
-  Ségou: 2,455,263 (1,231,931 men), median 17, annex 2,208,847 in ordinary households, interpolated 16.2
-  Mopti: 935,579 (483,089 men), median 17, annex 842,209 in ordinary households, interpolated 17.0
-  Tombouctou: 974,278 (504,864 men), median 18, annex 693,719 in ordinary households, interpolated 17.4
-  Gao: 727,517 (373,996 men), median 17, annex 679,911 in ordinary households, interpolated 16.8
-  Kidal: 83,192 (45,229 men), median 20, annex 79,324 in ordinary households, interpolated 19.5
-  Taoudenni: 100,358 (55,284 men), median 21, annex 99,499 in ordinary households, interpolated 20.2
-  Ménaka: 318,876 (170,205 men), median 17, annex 225,223 in ordinary households, interpolated 16.4
-  Nioro: 678,061 (333,731 men), median 15, annex 668,966 in ordinary households, interpolated 14.5
-  Kita: 681,671 (340,853 men), median 15, annex 680,380 in ordinary households, interpolated 14.5
-  Dioïla: 675,965 (338,396 men), median 16, annex 674,419 in ordinary households, interpolated 15.9
-  Nara: 307,777 (154,080 men), median 15, annex 278,904 in ordinary households, interpolated 14.3
-  Bougouni: 1,570,979 (794,189 men), median 16, annex 1,567,533 in ordinary households, interpolated 15.2
-  Koutiala: 1,169,882 (573,069 men), median 15, annex 1,153,375 in ordinary households, interpolated 14.9
-  San: 820,807 (418,353 men), median 16, annex 815,185 in ordinary households, interpolated 15.5
-  Douentza: 170,189 (87,186 men), median 17, annex 147,229 in ordinary households, interpolated 16.8
-  Bandiagara: 868,916 (433,502 men), median 15, annex 720,279 in ordinary households, interpolated 14.7
-  Bamako: 4,227,569 (2,095,300 men), median 19, annex 4,211,468 in ordinary households, interpolated 18.3
-  2009: 0 cercles with figures, 50 blank, 9 regions, 9 with ages and sexes
-    2009 BAMAKO: 1,810,366 (907,643 men), median 19.1
-    2009 GAO: 542,304 (271,619 men), median 16.2
-    2009 KAYES: 1,993,615 (983,183 men), median 15.5
-    2009 KIDAL: 67,739 (36,335 men), median 18.0
-    2009 KOULIKORO: 2,422,108 (1,201,061 men), median 15.5
-    2009 MOPTI: 2,036,209 (1,007,009 men), median 15.9
-    2009 SIKASSO: 2,643,179 (1,303,903 men), median 15.1
-    2009 SÉGOU: 2,338,349 (1,156,665 men), median 15.7
-    2009 TOMBOUCTOU: 674,793 (337,572 men), median 17.0
-  Gao: 1,046,393 (Gao + Ménaka), 1084 men per 1,000 women, median 16.7
-  Kayes: 3,200,061 (Kayes + Kita + Nioro), 995 men per 1,000 women, median 15.4
-  Kidal: 83,192 (Kidal), 1191 men per 1,000 women, median 20.0
-  Tombouctou: 1,074,636 (Tombouctou + Taoudenni), 1089 men per 1,000 women, median 17.7
-  2018 projection: 50 cercles by sex
-  cercle polygon 'Ansongo': the projection's 'ANSANGO', the one cercle of GAO left on each side
-  cercle polygon 'Bamako': the projection's 'DISTRICT DE BAMAKO', the one cercle of BAMAKO left on each side
-  Bamako: not the ground of any regions of 2023; the 2009 census's median 19.1 and 1005 men per 1,000 women
-  Koulikouro: not the ground of any regions of 2023; the 2009 census's median 15.5 and 984 men per 1,000 women
-  Mopti: not the ground of any regions of 2023; the 2009 census's median 15.9 and 978 men per 1,000 women
-  Segou: not the ground of any regions of 2023; the 2009 census's median 15.7 and 979 men per 1,000 women
-  Sikasso: not the ground of any regions of 2023; the 2009 census's median 15.1 and 974 men per 1,000 women
-  9 regions and 50 cercles written
-  wrote data/processed/mali_census.json (118 kB)
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Resultats%20globaux/Doc_principaux_indicateurs.xlsx: 117,480 bytes, sha256 14c5547d8a90678559a0de71f6521e69e315543e50ab5c92c687922f562c9e6d
+  national median 16.6 (the departments' groups pooled: 16.6)
+  Alibori: 867,463, median 14.5, 989 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Alibori_final.pdf: 149,511 bytes, sha256 09ef9095101713679feb375bd91ccb8137cbeb791d31f737bdfc3333a4c8a1e8
+    Banikoara: 246,575 (122,445 men, 124,130 women)
+    Gogounou: 117,523 (58,018 men, 59,505 women)
+    Kandi: 179,290 (88,998 men, 90,292 women)
+    Karimama: 66,353 (33,149 men, 33,204 women)
+    Malanville: 168,641 (83,681 men, 84,960 women)
+    Segbana: 89,081 (45,066 men, 44,015 women)
+  Atakora: 772,262, median 14.8, 971 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atacora_finale.pdf: 242,134 bytes, sha256 b5eb842910b8be7aecca961273469aca6e9ad8802935752cb46bbdc74d2dd900
+    Boukombe: 82,450 (40,479 men, 41,971 women)
+    Kerou: 100,197 (49,963 men, 50,234 women)
+    Kobli: 67,603 (32,784 men, 34,819 women)
+    Kouande: 111,540 (55,558 men, 55,982 women)
+    Materi: 113,958 (55,676 men, 58,282 women)
+    Natitingou: 103,843 (50,968 men, 52,875 women)
+    Pehunco: 78,217 (39,147 men, 39,070 women)
+    Tanguieta: 74,675 (36,431 men, 38,244 women)
+    Toucountouna: 39,779 (19,442 men, 20,337 women)
+  Atlantique: 1,398,229, median 18.0, 965 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atlantique_final.pdf: 227,176 bytes, sha256 41f6443d0e8355d0e228b4e6b1e22adee0a209bdaa3c50f78aa4f909f7c20a42
+    Abomey-Calavi: 656,358 (323,574 men, 332,784 women)
+    Allada: 127,512 (62,148 men, 65,364 women)
+    Kpomasse: 67,648 (33,353 men, 34,295 women)
+    Ouidah: 162,034 (78,596 men, 83,438 women)
+    So-Ava: 118,547 (60,020 men, 58,527 women)
+    Toffo: 101,585 (49,068 men, 52,517 women)
+    Tori-Bossito: 57,632 (28,284 men, 29,348 women)
+    Ze: 106,913 (51,704 men, 55,209 women)
+  Borgou: 1,214,249, median 15.1, 1000 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Borgou_final.pdf: 223,264 bytes, sha256 eba2116dda84a66302c14de3c184c9726d84961056a71ea9ec35d80e39a88c1c
+    Bembereke: 131,255 (66,270 men, 64,985 women)
+    Kalale: 168,882 (84,078 men, 84,804 women)
+    N'dali: 113,604 (57,643 men, 55,961 women)
+    Nikki: 151,232 (75,339 men, 75,893 women)
+    Parakou: 255,478 (127,328 men, 128,150 women)
+    Perere: 78,988 (39,139 men, 39,849 women)
+    Sinende: 91,672 (45,640 men, 46,032 women)
+    Tchaourou: 223,138 (111,576 men, 111,562 women)
+  Collines: 717,477, median 16.5, 972 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Collines_final.pdf: 193,765 bytes, sha256 0657a26727637fbeb249f28c38d15e186a3dbcaedc510c7c0700aeacc3ff8d2f
+    Bante: 107,181 (52,516 men, 54,665 women)
+    Dassa-Zoume: 112,122 (54,366 men, 57,756 women)
+    Glazoue: 124,431 (61,070 men, 63,361 women)
+    Ouesse: 142,017 (71,594 men, 70,423 women)
+    Savalou: 144,549 (70,289 men, 74,260 women)
+    Save: 87,177 (43,757 men, 43,420 women)
+  Donga: 543,130, median 16.3, 994 men per 1,000 women
+  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error timed out>
+  retry 1/3 after 2s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/3 after 4s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 3/3 after 8s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error timed out>
+  Kouffo: 745,328, median 15.2, 879 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf: 199,975 bytes, sha256 40a022871bc3e255d38547d14e2826fb81a3bf51bdbefa32019b78e7695b1f88
+    Aplahoue: 171,109 (79,678 men, 91,431 women)
+    Djakotomey: 134,028 (62,384 men, 71,644 women)
+    Dogbo: 103,057 (49,289 men, 53,768 women)
+    Klouekanme: 128,597 (59,541 men, 69,056 women)
+    Lalo: 119,926 (56,529 men, 63,397 women)
+    Toviklin: 88,611 (41,153 men, 47,458 women)
+  Littoral: 679,012, median 21.5, 923 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Littoral_final.pdf: 169,899 bytes, sha256 890d1d75674cf53b583d1d42dbfea5e51c42c541535b76a74b596666527fd31d
+    Cotonou: 679,012 (325,872 men, 353,140 women)
+  Mono: 497,243, median 17.2, 945 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Mono_final.pdf: 204,401 bytes, sha256 9515b9986445b9cdda10184e4f8c5debac7987987082042862e4bc4a3ed3c53d
+    Athieme: 56,483 (27,562 men, 28,921 women)
+    Bopa: 96,281 (46,785 men, 49,496 women)
+    Come: 79,989 (38,507 men, 41,482 women)
+    Grand-Popo: 57,636 (28,237 men, 29,399 women)
+    Houeyogbe: 101,893 (49,187 men, 52,706 women)
+    Lokossa: 104,961 (51,276 men, 53,685 women)
+  Oueme: 1,100,404, median 17.9, 946 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Ou%C3%A9m%C3%A9%20-%20final.pdf: 248,797 bytes, sha256 61f052434f619bdcaf975274817382557eea62d93f8f605f811155684d9e7964
+    Adjarra: 97,424 (47,415 men, 50,009 women)
+    Adjohoun: 75,323 (36,385 men, 38,938 women)
+    Aguegues: 44,562 (22,198 men, 22,364 women)
+    Akpo-Misserete: 127,249 (62,267 men, 64,982 women)
+    Avrankou: 128,050 (62,298 men, 65,752 women)
+    Bonou: 44,349 (21,360 men, 22,989 women)
+    Dangbo: 96,426 (47,281 men, 49,145 women)
+    Porto-Novo: 264,320 (126,016 men, 138,304 women)
+    Seme-Kpodji: 222,701 (109,594 men, 113,107 women)
+  Plateau: 622,372, median 16.9, 931 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Plateau_final.pdf: 160,557 bytes, sha256 5dc786b1d47429dbd27880b6b2724db189dc02754625f3be7cb6360893729db0
+    Adja-Ouere: 116,282 (56,856 men, 59,426 women)
+    Ifangni: 110,973 (53,124 men, 57,849 women)
+    Ketou: 157,352 (76,827 men, 80,525 women)
+    Pobe: 123,677 (59,481 men, 64,196 women)
+    Sakete: 114,088 (53,777 men, 60,311 women)
+  Zou: 851,580, median 16.7, 916 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Zou_Final.pdf: 239,862 bytes, sha256 af9e4ddda6ecf13fa2b4387811168c29726dd3fbc1a068f27a2f5bc3e9dff2af
+    Abomey: 92,266 (43,538 men, 48,728 women)
+    Agbangnizoun: 72,549 (34,782 men, 37,767 women)
+    Bohicon: 171,781 (81,404 men, 90,377 women)
+    Cove: 51,247 (24,508 men, 26,739 women)
+    Djidja: 123,542 (59,794 men, 63,748 women)
+    Ouinhi: 59,381 (28,969 men, 30,412 women)
+    Za-Kpota: 132,818 (61,945 men, 70,873 women)
+    Zagnanado: 55,061 (26,817 men, 28,244 women)
+    Zogbodomey: 92,935 (45,273 men, 47,662 women)
+  Donga: benin_census: instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf is not the file: b''
+  12 departments and 73 communes written
+  wrote data/processed/benin_census.json (154 kB)
