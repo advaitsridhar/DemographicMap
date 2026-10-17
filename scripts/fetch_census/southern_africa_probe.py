@@ -74,9 +74,15 @@ def probe(arg: str) -> None:
     if mode == "cdxf":
         rx = extra[0] if extra else ".*"
         n = int(extra[1]) if len(extra) > 1 else 80
+        # The archive compiles the filter as one expression, and a global
+        # flag such as (?i) is refused anywhere but at its start (HTTP 500).
+        flags = ""
+        while rx.startswith("(?") and ")" in rx and rx[2:rx.index(")")].isalpha():
+            flags += rx[:rx.index(")") + 1]
+            rx = rx[rx.index(")") + 1:]
         q = ("https://web.archive.org/cdx/search/cdx?url=" + urllib.parse.quote(url, safe="")
              + "&matchType=prefix&filter=statuscode:200&collapse=urlkey"
-             + "&filter=" + urllib.parse.quote("original:.*" + rx + ".*", safe="")
+             + "&filter=" + urllib.parse.quote("original:" + flags + ".*" + rx + ".*", safe="")
              + "&limit=" + str(max(n * 3, 200)))
         status, _, headers, body = base.fetch(q, timeout=180)
         lines = base.decode(body, headers).splitlines()
