@@ -460,7 +460,7 @@ def age_fields(units: list[dict[str, Any]], of: str) -> dict[str, Any]:
     return {"median_age": measure(value, unit="years", year=YEAR, source=SOURCE3),
             "median_age_note": (
                 "Interpolated within the single year of age that holds the middle person, "
-                f"from the 2019 census's count of everyone by single year of age{of}"
+                f"from the 2019 census's count of men and women by single year of age{of}"
                 + (f", leaving out the {unstated:,} whose age was not stated." if unstated
                    else "."))}
 
