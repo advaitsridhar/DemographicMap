@@ -1,49 +1,22 @@
-== links https://www.citypopulation.de/en/congo/admin/ congo/admin/ 40
-  HTTP 200 text/html; charset=UTF-8 56,616 bytes
-  https://www.citypopulation.de/en/congo/admin/04__bouenza/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0405__boko_songho/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0408x__kayes/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0409__kingoué/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0407__loudima/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0410__mabombo/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0403x__madingou/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0406__mfouati/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0404__mouyondzi/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0411__tsiaki/  [→]
-  https://www.citypopulation.de/en/congo/admin/bouenza/0412__yamba/  [→]
-  https://www.citypopulation.de/en/congo/admin/11__brazzaville/  [→]
-  https://www.citypopulation.de/en/congo/admin/brazzaville/1101__brazzaville/  [→]
-  https://www.citypopulation.de/en/congo/admin/brazzaville/1102__ile_mbamou/  [→]
-  https://www.citypopulation.de/en/congo/admin/07__cuvette/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0711__bokoma/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0705__boundji/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0707__loukoléla/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0704__makoua/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0706__mossaka/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0708__ngoko/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0709__ntokou/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0702x__owando/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0703__oyo/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette/0710__tchikapika/  [→]
-  https://www.citypopulation.de/en/congo/admin/08__cuvette_ouest/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette_ouest/0806__etoumbi/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette_ouest/0802x__ewo/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette_ouest/0803__kéllé/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette_ouest/0807__mbama/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette_ouest/0804__mbomo/  [→]
-  https://www.citypopulation.de/en/congo/admin/cuvette_ouest/0805__okoyo/  [→]
-  https://www.citypopulation.de/en/congo/admin/01__kouilou/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0102__hinda/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0105__kakamoeka/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0101__loango/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0103__madingo_kayes/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0104__mvouti/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0106__nzambi/  [→]
-  https://www.citypopulation.de/en/congo/admin/03__lékoumou/  [→]
-  (40 links shown)
-== grep https://www.citypopulation.de/en/congo/admin/ (?i)(source|preliminary|institut|census.2023) 12 200
-  HTTP 200 text/html; charset=UTF-8 56,616 bytes
-  ~ ipt src="/js/countries/congo.js"></script> <script src="/jquery/jquery-3.7.1.min.js"></script> <script src="/js/cp_data_m.js"></script> <script src="/js/cp_phpbase_v3.js"></script> <script>load_resources()</script> <script src="/js/cp_menu.js"></script> <style> article#admtable { top: 46%; } div#admmap { height: 46%; } @media all and (min-width: 914px) { article#admtable { top: 26px; left: ca
-  ~ d class="rname">Congo</td><td class="rstatus">Republic</td><td class="rpop">6,142,180</td><td class="sc"></td></tr> </tbody> </table> </section> <section id="sourcesection"> <p class="source"><strong>Source:</strong> Institut National de la Statistique (INS), Republique du Congo.</p> <p class="expl"><strong>Explanation:</strong> The population figures are preliminary. Area figures of districts are calcu
-  ~ ongo</td><td class="rstatus">Republic</td><td class="rpop">6,142,180</td><td class="sc"></td></tr> </tbody> </table> </section> <section id="sourcesection"> <p class="source"><strong>Source:</strong> Institut National de la Statistique (INS), Republique du Congo.</p> <p class="expl"><strong>Explanation:</strong> The population figures are preliminary. Area figures of districts are calculated using geospat
-  ~ sourcesection"> <p class="source"><strong>Source:</strong> Institut National de la Statistique (INS), Republique du Congo.</p> <p class="expl"><strong>Explanation:</strong> The population figures are preliminary. Area figures of districts are calculated using geospatial data.</p> </section> <hr id="hraddinfo"> <section id="addinfos"> <h3>Further information about the population structure:</h3> <div id="chart
+sao_tome_census: national report 5,499,132 bytes, sha256 7f5b8a49c6adcee58cfe02cda30af3e1cf34e5326814b6b346580ffcce4b3825
+  Água Grande: 2,183,673 bytes, sha256 692169a48990ea6faad80341f0b66bdf40ca2cbc430ea4ade2380660d931ecaf
+  Mé-Zóchi: 4,979,700 bytes, sha256 551333d7bb260d162d225c2801a11768395299a188ae2c2aa8bf8bd1a82ddd4f
+  Cantagalo: 4,846,246 bytes, sha256 e4e939b1d5c14a68d9fec45c44088ef4b7e2e5d3e3b0403d6aebf132d754a206
+  Caué: 4,653,913 bytes, sha256 174c2382d26eab1fa785abafbcd2f6bb9486a573d89dd49024bfb2271f694356
+  Lembá: 4,804,716 bytes, sha256 50e798d71663aa6c9f944a95bc59805fa51a77ad8aae83f07030fb442ee61d92
+  Lobata: 4,860,805 bytes, sha256 75942c7d4f10e8f6277b485e1ce61577837c36ffcdfecbc048db77806d3456d3
+  Príncipe: 5,024,841 bytes, sha256 159cc00638976ea29ccdf2529ce51d793c561e0f5bb93e03a8be2edddc2c56cf
+  Districts of São Tomé and Príncipe: 7 districts with a seat
+  Água Grande: residents 69,772 (33,805 men); ordinary dwellings 69,454; religion 69,454 in 13 answers; languages asked of 67,295: Portuguese 66,359, Forro 24,745, Angolar 2,426, Lung'ie 783, Cape Verdean Creole 3,637, French 7,308, English 5,782, Other languages 2,034
+  Mé-Zóchi: residents 44,763 (22,257 men); ordinary dwellings 44,752; religion 44,752 in 13 answers; languages asked of 43,340: Portuguese 42,672, Forro 17,317, Angolar 1,822, Lung'ie 212, Cape Verdean Creole 1,519, French 2,295, English 1,538, Other languages 1,210
+  Cantagalo: residents 17,169 (8,754 men); ordinary dwellings 17,161; religion 17,161 in 13 answers; languages asked of 16,622: Portuguese 16,376, Forro 7,209, Angolar 1,703, Lung'ie 71, Cape Verdean Creole 2,319, French 694, English 390, Other languages 209
+  Caué: residents 6,062 (3,154 men); ordinary dwellings 6,031; religion 6,031 in 13 answers; languages asked of 5,856: Portuguese 5,755, Forro 788, Angolar 2,762, Lung'ie 17, Cape Verdean Creole 267, French 97, English 59, Other languages 308
+  Lembá: residents 14,676 (7,579 men); ordinary dwellings 14,652; religion 14,652 in 13 answers; languages asked of 14,148: Portuguese 13,846, Forro 4,276, Angolar 2,075, Lung'ie 58, Cape Verdean Creole 1,437, French 323, English 161, Other languages 128
+  Lobata: residents 19,414 (9,883 men); ordinary dwellings 19,365; religion 19,365 in 13 answers; languages asked of 18,671: Portuguese 18,323, Forro 7,498, Angolar 413, Lung'ie 87, Cape Verdean Creole 3,280, French 696, English 410, Other languages 236
+  Príncipe: residents 7,344 (3,755 men); ordinary dwellings 7,324; religion 7,324 in 13 answers; languages asked of 7,083: Portuguese 6,892, Forro 874, Angolar 176, Lung'ie 525, Cape Verdean Creole 2,195, French 284, English 216, Other languages 59
+  the districts' residents make 179,200; the national line 179200
+  province São Tomé: 171,856
+  province Príncipe: 7,344
+  religion, the districts added up: Catholic 55.7%, No religion 21.2%, Other religion 5.0%, Adventist 4.1%, Assembly of God 3.4%, New Apostolic 2.9%, Maná Church 2.3%, Universal Church of the Kingdom of God 2.0%, Jehovah's Witnesses 1.2%, God Is Love Pentecostal Church 0.8%, Not stated 0.7%, Church of World Messianity 0.4%, Don't know 0.3%
+  wrote data/processed/sao_tome_census.json (47 kB)
+  9 records written
