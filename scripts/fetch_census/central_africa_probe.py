@@ -13,6 +13,8 @@ zip, xls, csv, cdx, pdf), and these are added:
 
     cdxf:URLPREFIX~~REGEX[~~N]     Internet Archive captures under a prefix whose
                                    address matches REGEX (newest per address)
+    cdxm:URLPREFIX~~MIMETYPE[~~N]  Internet Archive captures under a prefix of one
+                                   media type (application/pdf), newest per address
     wbav:URL                       the Internet Archive's closest capture of URL
     pdfp:URL~~PAGES[~~WIDTH]       pdfplumber's text of the pages given (3-7,12)
     pdfl:URL~~PAGES[~~WIDTH]       the same pages rebuilt row by row from the words'
@@ -94,6 +96,21 @@ def probe(arg: str) -> None:
         q = ("https://web.archive.org/cdx/search/cdx?url=" + urllib.parse.quote(url, safe="")
              + "&matchType=prefix&filter=statuscode:200&collapse=urlkey"
              + "&filter=" + urllib.parse.quote("original:.*" + rx + ".*", safe="")
+             + "&limit=" + str(max(n * 3, 200)))
+        status, _, headers, body = base.fetch(q, timeout=180)
+        lines = base.decode(body, headers).splitlines()
+        say(f"  HTTP {status}: {len(lines)} captures")
+        for line in lines[:n]:
+            f = line.split(" ")
+            if len(f) >= 7:
+                say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
+        return
+    if mode == "cdxm":
+        mime = extra[0] if extra else "application/pdf"
+        n = int(extra[1]) if len(extra) > 1 else 80
+        q = ("https://web.archive.org/cdx/search/cdx?url=" + urllib.parse.quote(url, safe="")
+             + "&matchType=prefix&filter=statuscode:200&collapse=urlkey"
+             + "&filter=mimetype:" + urllib.parse.quote(mime, safe="")
              + "&limit=" + str(max(n * 3, 200)))
         status, _, headers, body = base.fetch(q, timeout=180)
         lines = base.decode(body, headers).splitlines()
