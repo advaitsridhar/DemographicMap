@@ -367,9 +367,123 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Serer",
+        "pct": 53.1,
+        "count": 421575
+      },
+      {
+        "group": "Wolof",
+        "pct": 34.7,
+        "count": 275908
+      },
+      {
+        "group": "Pulaar",
+        "pct": 7.6,
+        "count": 60543
+      },
+      {
+        "group": "Mandinka",
+        "pct": 2.3,
+        "count": 17927
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.7,
+        "count": 5217
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.5,
+        "count": 3903
+      },
+      {
+        "group": "Jola",
+        "pct": 0.4,
+        "count": 3445
+      },
+      {
+        "group": "Sign language",
+        "pct": 0.3,
+        "count": 2355
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 1139
+      },
+      {
+        "group": "Other non-African foreign languages",
+        "pct": 0.1,
+        "count": 664
+      },
+      {
+        "group": "Balanta",
+        "pct": 0.0,
+        "count": 207
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bayot",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Bedik",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Guñuun",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hassaniya",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Jaad",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Manjak",
+        "pct": 0.0,
+        "count": 369
+      },
+      {
+        "group": "Mankanya",
+        "pct": 0.0,
+        "count": 362
+      },
+      {
+        "group": "Other foreign languages",
+        "pct": 0.0,
+        "count": 301
+      },
+      {
+        "group": "Tourka",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Wamey",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -381,12 +495,22 @@
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "field": "language",
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick, Tableau II-11",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023
       }
     ],
     "country": "SEN",
     "match_by": "shape_id",
     "shape_id": "71046170B84527172065489",
-    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years."
+    "median_age_note": "The 2023 census's median age of the region's residents, which its regional report gives in whole years.",
+    "language_year": 2023,
+    "language_note": "The principal language usually spoken by residents aged 3 and over, as the 2023 census tabulates it for the region."
   },
   {
     "id": "SEN-RGPH5-RR-kaffrine",
@@ -1643,14 +1767,14 @@
         "count": 24056
       },
       {
+        "group": "Muet)",
+        "pct": 1.2,
+        "count": 5964
+      },
+      {
         "group": "Other African languages",
         "pct": 1.2,
         "count": 6234
-      },
-      {
-        "group": "Sign language",
-        "pct": 1.2,
-        "count": 5964
       },
       {
         "group": "Other non-African foreign languages",
@@ -2285,7 +2409,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2329,7 +2453,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2373,7 +2497,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2417,7 +2541,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2461,7 +2585,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2505,7 +2629,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2549,7 +2673,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2593,7 +2717,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2637,7 +2761,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2681,7 +2805,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2725,7 +2849,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Fatick region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2769,7 +2893,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2813,7 +2937,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2857,7 +2981,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2901,7 +3025,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2945,7 +3069,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2989,7 +3113,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3033,7 +3157,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3077,7 +3201,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3121,7 +3245,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3165,7 +3289,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3209,7 +3333,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3253,7 +3377,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3297,7 +3421,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3341,7 +3465,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Louga region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3385,7 +3509,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaffrine region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3429,7 +3553,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3473,7 +3597,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Diourbel region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3517,7 +3641,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3561,7 +3685,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3605,7 +3729,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kaolack region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3649,7 +3773,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3693,7 +3817,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3737,7 +3861,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3781,7 +3905,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Matam region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3825,7 +3949,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Dakar region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3869,7 +3993,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Saint-Louis region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3913,7 +4037,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -3957,7 +4081,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kédougou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -4001,7 +4125,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Sédhiou region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -4045,7 +4169,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Tambacounda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -4089,7 +4213,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -4133,7 +4257,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Thiès region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -4177,7 +4301,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Kolda region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
@@ -4221,7 +4345,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), and no median age can be taken from them; no other table of the census gives a department's ages."
+      "note": "The 2023 census's report for the Ziguinchor region gives each department's population in three broad age groups only (under 15, 15 to 64, 65 and over), from which no median age can be taken."
     },
     "sex_ratio": {
       "status": "not_available"
