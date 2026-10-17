@@ -1,14 +1,250 @@
-sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
-  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
-    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
-    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
-  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
-  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  wrote data/processed/sea_cod_ps_age.json (5141 kB)
-  wrote sea_cod_ps_age.json: 1196 records
+cod_ps_age: 82 dataset(s) for 87 countries
+  cod-ps-ago (AGO)
+    admin1: 18 unit(s) from ago_admpop_2024.xlsx ago_admpop_adm1_2024_ (18 of 18 names match this map's admin1 (against 7 at admin2)); 0 left out
+    admin2: 161 unit(s) from ago_admpop_2024.xlsx ago_admpop_adm2_2024_ (156 of 161 names match this map's admin2 (against 7 at admin1)); 0 left out
+  cod-ps-arg (ARG)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-atg (ATG)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-bdi (BDI)
+    admin1: 18 unit(s) from bdi_admpop_2022_v2.xlsx BDI_admpop_adm1_2022_ (18 of 18 names match this map's admin1 (against 13 at admin2)); 0 left out
+    admin2: 119 unit(s) from bdi_admpop_2022_v2.xlsx BDI_admpop_adm2_119_2022_ (108 of 117 names match this map's admin2 (against 13 at admin1)); 0 left out
+  cod-ps-ben (BEN)
+    admin1: 12 unit(s) from ben_admpop_2024.xlsx ben_admpop_adm1_2024 (2)_ (10 of 12 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 77 unit(s) from ben_admpop_2024.xlsx ben_admpop_adm2_2024_ (77 of 77 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-bfa (BFA)
+    admin1: 13 unit(s) from bfa_admpop_2023_5yr.xlsx bfa_admpop_adm1_2023_ (13 of 13 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 45 unit(s) from bfa_admpop_2023_5yr.xlsx bfa_admpop_adm2_2023_ (43 of 45 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-bhs (BHS)
+    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+  cod-ps-blz (BLZ)
+    admin1: 6 unit(s) from blz_admpop_v2.xlsx blz_adm1_pop_v2_ (6 of 6 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-bol (BOL)
+    admin1: 9 unit(s) from bol_admpop_2022.xlsx bol_admpop_adm1_2022_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-bra (BRA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-brb (BRB)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-bwa (BWA)
+    admin1: 17 unit(s) from bwa_admpop_2023.xlsx bwa_admpop_adm1_2023_ (10 of 17 names match this map's admin1 (against 5 at admin2)); 0 left out
+    refused bwa_admpop_2023.xlsx bwa_admpop_adm2_2023_: its names match 11 of this map's districts and 6 of its first-level units, out of 28; too few of either to say which level this file describes
+    refused bwa_admpop_2023.xlsx bwa_admpop_adm3_2023_: its names match 9 of this map's districts and 2 of its first-level units, out of 510; too few of either to say which level this file describes
+  cod-ps-caf (CAF)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-chl (CHL)
+    admin1: 16 unit(s) from chl_admpop_2022.xlsx chl_admpop_adm1_2022_ (16 of 16 names match this map's admin1 (against 3 at admin2)); 0 left out
+    admin2: 56 unit(s) from chl_admpop_2022.xlsx chl_admpop_adm2_2022_ (54 of 56 names match this map's admin2 (against 3 at admin1)); 0 left out
+    refused chl_admpop_2022.xlsx chl_admpop_adm3_2022_: its names match 27 of this map's districts and 5 of its first-level units, out of 344; too few of either to say which level this file describes
+  cod-ps-civ (CIV)
+    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+  cod-ps-cmr (CMR)
+    admin1: 10 unit(s) from CMR_admpop_adm1_2025.csv (9 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
+    refused CMR_admpop2_2025.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
+  cod-ps-cod (COD)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-col (COL)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-com (COM)
+    refused com_admpop_2017.xlsx com_admpop_adm1_2017_: its names match 0 of this map's districts and 0 of its first-level units, out of 3; too few of either to say which level this file describes
+  cod-ps-cpv (CPV)
+    admin1: 22 unit(s) from cpv_admpop_2022B.xlsx cpv_admpop_adm1_2022_ (20 of 22 names match this map's admin1 (against 3 at admin2)); 0 left out
+  cod-ps-cri (CRI)
+    admin1: 7 unit(s) from cri_admpop_unfpa_2021.xlsx cri_admpop_adm1_2021_ (7 of 7 names match this map's admin1 (against 6 at admin2)); 0 left out
+    admin2: 81 unit(s) from cri_admpop_unfpa_2021.xlsx cri_admpop_adm2_2021_ (79 of 81 names match this map's admin2 (against 6 at admin1)); 0 left out
+    refused cri_admpop_adm3_unfpa2021.csv: its names match 51 of this map's districts and 5 of its first-level units, out of 380; too few of either to say which level this file describes
+  cod-ps-cub (CUB)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-dji (DJI)
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-dma (DMA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-dom (DOM)
+    refused dom_admpop_2023.xlsx dom_admpop_adm1_2023_: its names match 2 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
+    admin1: 32 unit(s) from dom_admpop_2023.xlsx dom_admpop_adm2_2023_ (28 of 32 names match this map's admin1 (against 8 at admin2)); 0 left out
+  cod-ps-ecu (ECU)
+    admin1: 25 unit(s) from ecu_admpop_2020.xlsx ecu_admpop_adm1_2020_ (21 of 25 names match this map's admin1 (against 12 at admin2)); 0 left out
+  cod-ps-egy (EGY)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-eri (ERI)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-eth (ETH)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-gab (GAB)
+    admin1: 9 unit(s) from gab_admpop_2022.xlsx gab_adminpop_adm1_2022_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-gha (GHA)
+    admin1: 16 unit(s) from gha_admpop_2021.xlsx gha_admpop_adm1_2021_ (15 of 16 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 260 unit(s) from gha_admpop_2021.xlsx gha_admpop_adm2_2021_ (260 of 260 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-gin (GIN)
+    refused gin_admpop_adm1_2024.csv: its names match 8 of this map's districts and 8 of its first-level units, out of 8; too few of either to say which level this file describes
+    admin2: 34 unit(s) from gin_admpop_2024.xlsx GIN_ADM2_POP_2024_ (34 of 34 names match this map's admin2 (against 8 at admin1)); 0 left out
+  cod-ps-gmb (GMB)
+    admin1: 8 unit(s) from gmb_popadm_2021.xlsx GMB_ADM1_POP_2021_ (8 of 8 names match this map's admin1 (against 2 at admin2)); 0 left out
+  cod-ps-grd (GRD)
+    refused grd_admpop_2011.xlsx grd_admpop_adm1_2011_: its names match 6 of this map's districts and 6 of its first-level units, out of 7; too few of either to say which level this file describes
+  cod-ps-gtm (GTM)
+    admin1: 22 unit(s) from gtm_admpop_adm1_2024.csv (22 of 22 names match this map's admin1 (against 14 at admin2)); 0 left out
+    admin2: 340 unit(s) from gtm_admpop_adm2_2024.csv (334 of 334 names match this map's admin2 (against 14 at admin1)); 0 left out
+  cod-ps-guy (GUY)
+    admin1: 10 unit(s) from guy_admpop_2021.xlsx guy_admpop_adm1_2021_ (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
+    refused guy_admpop_2021.xlsx guy_admpop_adm2_2021_: its names match 0 of this map's districts and 0 of its first-level units, out of 125; too few of either to say which level this file describes
+  cod-ps-hnd (HND)
+    admin1: 18 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm1_2024_ (17 of 18 names match this map's admin1 (against 8 at admin2)); 0 left out
+    admin2: 298 unit(s) from hnd_admpop_2024.xlsx hnd_admpop_adm2_2024_ (266 of 269 names match this map's admin2 (against 8 at admin1)); 0 left out
+  cod-ps-hti (HTI)
+    refused hti_admpop_adm1_2024.csv: its names match 0 of this map's districts and 2 of its first-level units, out of 10; too few of either to say which level this file describes
+    refused hti_admpop_adm2_2024.csv: its names match 32 of this map's districts and 0 of its first-level units, out of 140; too few of either to say which level this file describes
+  cod-ps-jam (JAM)
+    admin1: 14 unit(s) from jam_adm_pop.xlsx jam_adm1_pop_ (14 of 14 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-ken (KEN)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-kna (KNA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-lbr (LBR)
+    admin1: 15 unit(s) from lbr_admpop_adm1_2020_v2.csv (15 of 15 names match this map's admin1 (against 0 at admin2)); 0 left out
+    left out Commonwealth 2: 2 rows carry the name
+    left out Commonwealth 2: 2 rows carry the name
+    left out Kpi: its age groups add up to 2,076, not 2,091
+    left out Wlogba: its age groups add up to 894, not 899
+    admin2: 132 unit(s) from lbr_admpop_adm2_2020_v2.csv (135 of 135 names match this map's admin2 (against 0 at admin1)); 2 left out
+  cod-ps-lca (LCA)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-lso (LSO)
+    admin1: 10 unit(s) from lso_admpop_2022.xlsx lso_admpop_adm1_2022_ (10 of 10 names match this map's admin1 (against 9 at admin2)); 0 left out
+  cod-ps-mar (MAR)
+    left out Province d El Kelaat Es Sraghna: women 26,349 and men 271,904 do not add up to 535,753
+    admin2: 30 unit(s) from mar_admpop_adm2eq_2014.csv (20 of 31 names match this map's admin2 (against 0 at admin1)); 1 left out
+  cod-ps-mdg (MDG)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-mex (MEX)
+    admin1: 32 unit(s) from mex_admpop_adm1_2024.csv (30 of 32 names match this map's admin1 (against 17 at admin2)); 0 left out
+    left out San Juan Mixtepec: 2 rows carry the name
+    left out San Juan Mixtepec: 2 rows carry the name
+    left out San Pedro Mixtepec: 2 rows carry the name
+    left out San Pedro Mixtepec: 2 rows carry the name
+    admin2: 2471 unit(s) from mex_admpop_adm2_2024.csv (2303 of 2328 names match this map's admin2 (against 16 at admin1)); 0 left out
+  cod-ps-mli (MLI)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-moz (MOZ)
+    admin1: 11 unit(s) from moz_admpop_adm1_2025.csv (10 of 11 names match this map's admin1 (against 1 at admin2)); 0 left out
+    left out Ilha Licom: no female or male total
+    left out Ilha Risunodo: no female or male total
+    left out Lago Niassa: no female or male total
+    left out Maquival: no female or male total
+    admin2: 155 unit(s) from moz_admpop_adm2_2025.csv (156 of 159 names match this map's admin2 (against 1 at admin1)); 4 left out
+  cod-ps-mrt (MRT)
+    admin1: 13 unit(s) from mrt_admpop_2022.xlsx mrt_admpop_adm1_2022_ (10 of 13 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-mus (MUS)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-mwi (MWI)
+    admin1: 3 unit(s) from MWI_ADM2_POP_2023.xlsx mwi_admpop_adm1_2023_ (3 of 3 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 32 unit(s) from MWI_ADM2_POP_2023.xlsx mwi_admpop_adm2_2023_ (26 of 32 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-nam (NAM)
+    left out Erongo: its age groups add up to 244,767, not 15,022
+    left out Hardap: its age groups add up to 116,460, not 13,650
+    left out Karas: its age groups add up to 93,817, not 13,519
+    left out Kavango East: its age groups add up to 184,765, not 16,266
+    left out Kavango West: its age groups add up to 83,805, not 30,297
+    left out Khomas: its age groups add up to 543,385, not 17,800
+    left out Kunene: its age groups add up to 121,291, not 26,756
+    left out Ohangwena: its age groups add up to 278,322, not 25,846
+    left out Omaheke: its age groups add up to 82,679, not 12,963
+    left out Omusati: its age groups add up to 272,421, not 15,305
+    left out Oshana: its age groups add up to 207,294, not 18,609
+    left out Oshikoto: its age groups add up to 223,570, not 35,175
+    left out Otjozondjupa: its age groups add up to 173,603, not 27,856
+    left out Zambezi: its age groups add up to 111,337, not 14,878
+    admin1: 0 unit(s) from nam_admpop_2023.xlsx nam_admpop_adm1_2023_ (11 of 14 names match this map's admin1 (against 1 at admin2)); 14 left out
+    admin2: 107 unit(s) from nam_admpop_2023.xlsx nam_admpop_adm2_2023_ (96 of 107 names match this map's admin2 (against 1 at admin1)); 0 left out
+  cod-ps-ner (NER)
+    admin2: 8 unit(s) from ner_admpop_adm1_2024.csv (7 of 8 names match this map's admin2 (against 3 at admin1)); 0 left out
+    refused ner_admpop_adm2_2024.csv: admin2 already read
+    refused ner_admpop_adm3_2024.csv: its names match 58 of this map's districts and 1 of its first-level units, out of 264; too few of either to say which level this file describes
+  cod-ps-nga (NGA)
+    admin1: 37 unit(s) from nga_admpop_2022.xlsx nga_admpop_adm1_2022_ (36 of 37 names match this map's admin1 (against 7 at admin2)); 0 left out
+    admin2: 773 unit(s) from nga_admpop_2020.xlsx nga_admpop_adm2_2020_ (736 of 768 names match this map's admin2 (against 7 at admin1)); 0 left out
+  cod-ps-nic (NIC)
+    left out Las Minas: 2 rows carry the name
+    left out Las Minas: 2 rows carry the name
+    admin1: 15 unit(s) from NIC_ADM2_pop_2020.xlsx nic_admpop_adm1_2020_ (15 of 16 names match this map's admin1 (against 10 at admin2)); 0 left out
+    admin2: 153 unit(s) from NIC_ADM2_pop_2020.xlsx nic_admpop_adm2_2020_ (152 of 153 names match this map's admin2 (against 10 at admin1)); 0 left out
+  cod-ps-pan (PAN)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-per (PER)
+    left out Lima: the whole department, Metropolitan Lima inside it
+    admin1: 24 unit(s) from per_admpop_2024.xlsx per_admpop_adm1_2024_ (24 of 25 names match this map's admin1 (against 17 at admin2)); 0 left out
+  cod-ps-pry (PRY)
+    admin1: 18 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm1_2023_ (17 of 18 names match this map's admin1 (against 5 at admin2)); 0 left out
+    left out San Carlos del Apa: women 287 and men 454 do not add up to 750
+    left out Dr. Bottrell: women 864 and men 925 do not add up to 1,798
+    left out Desmochados: women 932 and men 865 do not add up to 1,808
+    left out Villa Franca: women 727 and men 775 do not add up to 1,510
+    admin2: 246 unit(s) from pry_admpop_2023.xlsx pry_admpop_adm2_2023_ (221 of 249 names match this map's admin2 (against 6 at admin1)); 4 left out
+  cod-ps-rwa (RWA)
+    refused rwa_admpop_2023.xlsx rwa_admpop_adm1_2023_: its names match 0 of this map's districts and 4 of its first-level units, out of 5; too few of either to say which level this file describes
+    admin2: 30 unit(s) from rwa_admpop_2023.xlsx rwa_admpop_adm2_2023_ (30 of 30 names match this map's admin2 (against 0 at admin1)); 0 left out
+    refused rwa_admpop_2023.xlsx rwa_admpop_adm3_2023_: its names match 14 of this map's districts and 0 of its first-level units, out of 379; too few of either to say which level this file describes
+  cod-ps-sdn (SDN)
+    unreadable: sdn_admpop_2025.xlsx: HTTPError: HTTP Error 404: Not Found
+    admin1: 18 unit(s) from sdn_admpop_adm1_2025.csv (17 of 18 names match this map's admin1 (against 2 at admin2)); 0 left out
+    admin2: 188 unit(s) from sdn_admpop_adm2_2025.csv (187 of 187 names match this map's admin2 (against 2 at admin1)); 0 left out
+  cod-ps-sen (SEN)
+    refused sen_admpop_2023.xlsx sen_admpop_adm1_2022_: its names match 14 of this map's districts and 14 of its first-level units, out of 14; too few of either to say which level this file describes
+  cod-ps-sle (SLE)
+    refused sle_admpop_adm1_2020_v2.csv: its names match 0 of this map's districts and 3 of its first-level units, out of 4; too few of either to say which level this file describes
+    refused sle_admpop_adm3_2020_v2.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 166; too few of either to say which level this file describes
+  cod-ps-slv (SLV)
+    admin1: 14 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm1_2024_ (14 of 14 names match this map's admin1 (against 10 at admin2)); 0 left out
+    admin2: 262 unit(s) from slv_admpop_2024.xlsx slv_admpop_adm2_2024_ (247 of 254 names match this map's admin2 (against 10 at admin1)); 0 left out
+    refused slv_admpop_adm3_2024.csv: admin2 already read
+  cod-ps-som (SOM)
+    refused: licence Other -- license_id='hdx-other', isopen=False, license_other='Restricted for use only in HRP and Humanitarian Operations.'
+  cod-ps-ssd (SSD)
+    admin1: 10 unit(s) from ssd_admpop_2022_v2.xlsx ssd_admpop_adm1_2022_ (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 78 unit(s) from ssd_admpop_2022_v2.xlsx ssd_admpop_adm2_2022_ (77 of 78 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-stp (STP)
+    refused stp_admpop_2022.xlsx stp_admpop_adm1_2022_: its names match 0 of this map's districts and 2 of its first-level units, out of 2; too few of either to say which level this file describes
+    admin2: 7 unit(s) from stp_admpop_2022.xlsx stp_admpop_adm2_2022_ (5 of 7 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-sur (SUR)
+    admin1: 10 unit(s) from sur_admpop_adm1_v2.csv (10 of 10 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 62 unit(s) from sur_admpop_adm2_v2.csv (44 of 60 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-swz (SWZ)
+    admin1: 4 unit(s) from swz_admpop_2022.xlsx swz_admpop_adm1_2022_ (4 of 4 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-syc (SYC)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-tcd (TCD)
+    admin1: 23 unit(s) from tcd_admpop_2023.xlsx tcd_admpop_adm1_2023_ (22 of 23 names match this map's admin1 (against 4 at admin2)); 0 left out
+    admin2: 70 unit(s) from tcd_admpop_2021.xlsx tcd_admpop_adm2_2021_ (70 of 70 names match this map's admin2 (against 4 at admin1)); 0 left out
+  cod-ps-tgo (TGO)
+    admin1: 5 unit(s) from TGO_ADM2_POP_2021.xlsx tgo_admpop_adm1_2021_ (5 of 5 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 37 unit(s) from TGO_ADM2_POP_2021.xlsx tgo_admpop_adm2_2021_ (37 of 37 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-tto (TTO)
+    refused tto_admpop_2011.xlsx tto_admpop_adm1_2011_: its names match 13 of this map's districts and 13 of its first-level units, out of 15; too few of either to say which level this file describes
+  cod-ps-tun (TUN)
+    refused tun_admpop_2020.xlsx tun_admpop_adm1_2020_: its names match 0 of this map's districts and 0 of its first-level units, out of 6; too few of either to say which level this file describes
+    admin1: 24 unit(s) from tun_admpop_2020.xlsx tun_admpop_adm2_2020_ (22 of 24 names match this map's admin1 (against 0 at admin2)); 0 left out
+  cod-ps-tza (TZA)
+    admin1: 31 unit(s) from tza_admpop_2020_v2.xlsx tza_admpop_adm1_2020_v2_ (26 of 31 names match this map's admin1 (against 12 at admin2)); 0 left out
+    admin2: 169 unit(s) from tza_admpop_2020_v2.xlsx tza_admpop_adm2_2020_v2_ (140 of 169 names match this map's admin2 (against 12 at admin1)); 0 left out
+  cod-ps-uga (UGA)
+    admin1: 4 unit(s) from uga_admpop_2023.xlsx uga_admpop_adm1_2023_ (4 of 4 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 135 unit(s) from uga_admpop_2023.xlsx uga_admpop_adm2_2023_ (56 of 135 names match this map's admin2 (against 0 at admin1)); 0 left out
+  cod-ps-ury (URY)
+    admin1: 19 unit(s) from ury_admpop_2023.xlsx ury_admpop_adm1_2023_ (19 of 19 names match this map's admin1 (against 2 at admin2)); 0 left out
+  cod-ps-vct (VCT)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-ven (VEN)
+    admin1: 24 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm1_2011_ (22 of 24 names match this map's admin1 (against 9 at admin2)); 0 left out
+    admin2: 335 unit(s) from ven_admpop_2011_v2.xlsx ven_admpop_adm2_2011_ (271 of 273 names match this map's admin2 (against 8 at admin1)); 0 left out
+  cod-ps-zaf (ZAF)
+    admin1: 9 unit(s) from zaf_admpop_2020.xlsx zaf_admpop_adm1_2020_ (9 of 9 names match this map's admin1 (against 0 at admin2)); 0 left out
+    admin2: 52 unit(s) from zaf_admpop_2020.xlsx zaf_admpop_adm2_2020_ (43 of 52 names match this map's admin2 (against 0 at admin1)); 0 left out
+    refused zaf_admpop_2020.xlsx zaf_admpop_adm3_2020_: its names match 9 of this map's districts and 0 of its first-level units, out of 232; too few of either to say which level this file describes
+  cod-ps-zmb (ZMB)
+    no table with a full breakdown by sex and five-year age group
+  cod-ps-zwe (ZWE)
+    admin1: 10 unit(s) from zwe_admpop_2023.xlsx zwe_admpop_adm1_2023_ (10 of 10 names match this map's admin1 (against 3 at admin2)); 0 left out
+    admin2: 91 unit(s) from zwe_admpop_2023.xlsx zwe_admpop_adm2_2023_ (91 of 91 names match this map's admin2 (against 3 at admin1)); 0 left out
+  written: AGO 179, BDI 137, BEN 89, BFA 58, BLZ 6, BOL 9, BWA 17, CHL 72, CMR 10, CPV 22, CRI 88, DOM 32, ECU 25, GAB 9, GHA 276, GIN 34, GMB 8, GTM 362, GUY 10, HND 316, JAM 14, LBR 147, LSO 10, MAR 30, MEX 2503, MOZ 166, MRT 13, MWI 35, NAM 107, NER 8, NGA 810, NIC 168, PER 24, PRY 264, RWA 30, SDN 206, SLV 276, SSD 88, STP 7, SUR 72, SWZ 4, TCD 93, TGO 42, TUN 24, TZA 200, UGA 139, URY 19, VEN 359, ZAF 61, ZWE 101
+  wrote data/processed/cod_ps_age.json (23929 kB)
