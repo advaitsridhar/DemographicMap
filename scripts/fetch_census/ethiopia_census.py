@@ -137,6 +137,17 @@ def groups_of(row: list[Any], at: dict[str, int]) -> list[tuple[int, int | None,
     return sorted(groups, key=lambda g: g[0])
 
 
+def missing(row: list[Any], at: dict[str, int]) -> bool:
+    """Whether a row carries the workbook's missing marker (a negative count) for its total.
+
+    The Bureau writes -999 where it has no figure for an area, as the religion
+    sheet does for four areas; no census reports a negative number of people,
+    so any negative total is the marker whatever its value.
+    """
+    total = number(row[at["BTOTL"]])
+    return total is None or total < 0
+
+
 def area(row: list[Any], at: dict[str, int], where: str) -> dict[str, Any]:
     """One row's count, sexes and age groups, after its sums are checked."""
     groups = groups_of(row, at)
@@ -168,11 +179,18 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
     for column in ("ADM_LEVEL", "ADM1_NAME", "ADM2_NAME", "BTOTL", "MTOTL", "FTOTL"):
         if column not in at:
             raise SystemExit(f"ethiopia_census: the Age-Sex sheet has no {column} column")
-    out: dict[str, Any] = {"national": None, "regions": {}, "zones": {}, "labels": {}}
+    out: dict[str, Any] = {"national": None, "regions": {}, "zones": {}, "labels": {},
+                           "missing": []}
     for row in rows[2:]:
         level = number(row[at["ADM_LEVEL"]])
         region = str(row[at["ADM1_NAME"]] or "").strip()
         zone = str(row[at["ADM2_NAME"]] or "").strip()
+        if level in (0, 1, 2) and missing(row, at):
+            # An area the workbook lists without a count: its people, if any,
+            # are in its parent's row and its siblings', which the sums below
+            # still have to close on.
+            out["missing"].append(", ".join(n for n in (region, zone) if n) or "Ethiopia")
+            continue
         if level == 0:
             out["national"] = area(row, at, "Ethiopia")
         elif level == 1:
@@ -197,12 +215,17 @@ def check(table: dict[str, Any]) -> None:
     made = sum(r["total"] for r in table["regions"].values())
     if made != NATIONAL:
         raise SystemExit(f"ethiopia_census: the first-order areas make {made:,}, not {NATIONAL:,}")
+    problems = []
     for key, region in table["regions"].items():
         zones = [z for (r, _), z in table["zones"].items() if r == key]
         for field in ("total", "men", "women"):
-            if sum(z[field] for z in zones) != region[field]:
-                raise SystemExit(f"ethiopia_census: {table['labels'][key]}'s {len(zones)} zones "
-                                 f"do not make its {field}")
+            made = sum(z[field] for z in zones)
+            if made != region[field]:
+                problems.append(f"{table['labels'][key]}'s {len(zones)} zones make {made:,} "
+                                f"of its {field}, not {region[field]:,}")
+    if problems:
+        raise SystemExit("ethiopia_census: " + "; ".join(problems)
+                         + f" (listed without a count: {table['missing']})")
 
 
 def median(figures: dict[str, Any]) -> float | None:
@@ -310,7 +333,8 @@ def main() -> int:
         raise SystemExit(f"ethiopia_census: the workbook's metadata never names {YEAR}")
     table = parse(uscb.sheet_rows(book, "Age-Sex"))
     log(f"  {len(table['regions'])} first-order areas and {len(table['zones'])} zones, making "
-        f"{NATIONAL:,}, every row's groups and sexes making its total")
+        f"{NATIONAL:,}, every row's groups and sexes making its total; listed without a "
+        f"count: {table['missing']}")
     admin1 = json.loads((SITE / "admin1" / "ETH.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "ETH.units.json").read_text())
     records, report = plan(table, admin1, admin2)
