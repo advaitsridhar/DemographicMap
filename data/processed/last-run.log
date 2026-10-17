@@ -1,37 +1,43 @@
-  https://www.gbosdata.org/downloads-file/7-census-2013-directory-of-settlement: 5,374,999 bytes, sha256 1aae59bb5f601697d0c63d320007f442112cd50a2ecbf20ce7819a16165f2e3e
-  83 pages
-  Brikama/Kombo North: settlements make 339,434, the district 339,377
-  Brikama/Kombo Central: settlements make 140,142, the district 140,029
-  Mansakonko/Kiang Central: settlements make 8,829, the district 8,661
-  Mansakonko/Kiang East: settlements make 7,051, the district 6,801
-  Mansakonko/Jarra West: settlements make 26,364, the district 26,214
-  Mansakonko/Jarra East: settlements make 17,810, the district 16,034
-  Kerewan/Illiasa: settlements make 48,807, the district 48,620
-  Kuntaur/Lower Saloum: settlements make 15,546, the district 15,446
-  Janjanbureh/Niamina West: settlements make 7,345, the district 7,141
-  Janjanbureh/Lower Fuladu West: settlements make 40,026, the district 39,804
-  Janjanbureh/Upper Fuladu West: settlements make 44,235, the district 44,047
-  Basse/Wuli West: settlements make 21,898, the district 21,826
-  Basse/Sandu: settlements make 23,711, the district 23,659
-  Banjul: (31054, 14251): Banjul Central 11,562, Banjul North 11,285, Banjul South 8,207
-  Kanifing: (377134, 187973): Kanifing 377,134
-  Brikama: (688744, 344123): Kombo North 339,377, Kombo South 106,780, Kombo Central 140,029, Kombo East 42,330, Foni Brefet 14,523, Foni Bintang Karanai 17,119, Foni Kansala 14,125, Foni Bondali 7,578, Foni Jarrol 6,883
-  Mansakonko: (81042, 42270): Kiang West 14,990, Kiang Central 8,661, Kiang East 6,801, Jarra West 26,214, Jarra Central 8,342, Jarra East 16,034
-  Kerewan: (220080, 114168): Lower Niumi 57,088, Upper Niumi 30,880, Jokadu 22,312, Lower Badibu 17,961, Central Badibu 19,491, Illiasa 48,620, Sabach Sanjar 23,728
-  Kuntaur: (96703, 51018): Lower Saloum 15,446, Upper Saloum 18,673, Nianija 9,876, Niani 28,343, Sami 24,365
-  Janjanbureh: (125204, 65204): Niamina Dankunku 6,083, Niamina West 7,141, Niamina East 24,340, Lower Fuladu West 39,804, Janjanbureh 3,789, Upper Fuladu West 44,047
-  Basse: (237220, 124419): Jimara 43,461, Basse 49,102, Tumana 37,206, Kantora 38,354, Wuli West 21,826, Wuli East 23,612, Sandu 23,659
-  https://www.gbosdata.org/downloads-file/544-2024-gphc-preliminary-report: 3,055,164 bytes, sha256 4277026e8648d41aaca9f60be8e90ee0182aa76863bdc74821307f18d902a5b7
-  25 pages
-  https://www.gbosdata.org/downloads-file/213-census-2013-spatial-distribution-report: 8,702,036 bytes, sha256 ce2f76a591968e36cf031445665f7e40c5bb20505b4f40c8c8ef9771680e21ab
-  Annex H: Kerewan's table of both sexes totals 50,188; its tables of men and of women, which make 220,080, are added instead
-  Banjul: 2024 (26461, 14192, 12269), median 2013 24.2, religion 2013 [29423, 1504, 12, 64, 51]
-  Kanifing: 2024 (379348, 185138, 194210), median 2013 21.1, religion 2013 [345546, 29036, 309, 1996, 247]
-  Brikama: 2024 (1151128, 570310, 580818), median 2013 18.4, religion 2013 [654198, 33168, 602, 329, 447]
-  Mansakonko: 2024 (90624, 44309, 46315), median 2013 16.5, religion 2013 [80434, 540, 9, 39, 20]
-  Kerewan: 2024 (248475, 119651, 128824), median 2013 16.3, religion 2013 [217191, 2763, 32, 32, 62]
-  Kuntaur: 2024 (118104, 56938, 61166), median 2013 15.4, religion 2013 [95992, 673, 3, 7, 28]
-  Janjanbureh: 2024 (147412, 71494, 75918), median 2013 16.4, religion 2013 [124254, 817, 25, 34, 74]
-  Basse: 2024 (261160, 124261, 136899), median 2013 16.1, religion 2013 [235821, 1137, 36, 185, 41]
-  56 records
-  wrote data/processed/gambia_census.json (140 kB)
+== pdft https://censo2024.ine.gov.ao/BENGO.pdf (?i)(quadro.6|quadro.9|quadro.10|etnia|grupo.etnol) 40
+  HTTP 200 application/pdf 9,729,481 bytes
+  207 pages
+  p6: L / ISTA DE MAPAS, CARTOGRAMAS, QUADROS E GRÁFICOS / MAPAS
+  p10: 6. LÍNGUA MATERNA / Quadro 6.1 - População de 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 ................................. 96 / Quadro 6.2 - População por província e área de residência, segundo a língua Materna .......................... 100
+  p11: Quadro 8.14 - População com 18 ou mais anos por província e área de residência, segundo o nível de ensino / concluído, 2024 ........................................................................................................ / Quadro 8.15 - Taxa líquida de frequência do ensino primário e secundário por província e área de residência,
+  p12: Quadro 9.18 - Agregados familiares por província e área de residência, segundo o tipo de núcleo familiar, / 2024 ................................................................................................................... / Quadro 9.19 - Agregados familiares por grupo etário, segundo o sexo do chefe, 2024 ............................ 159
+  p26: Quadro 4 - Taxa de subcobertura líquida dos agregados familiares por área de residência / 95% Intervalo de Confiança / Área de residência Taxa de Subcobertura (%) Erro padrão
+  p31: 7. P / OPULAÇÃO / 7.1 População total
+  p32: de homens e 49,2% de mulheres, Úcua com 50,3% de homens e 49,7% de mulheres, Piri com 50,6% de / homens e 49,4% de mulheres. / Gráfico 2 - Distribuição percentual da população residente por município, segundo o sexo, 2024
+  p48: Gráfico 18 – Línguas maternas mais faladas, 2024 / Português 48,6 / Kimbundu 32,8
+  p97: Quadro 6.1 - População de 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 / Grupo_Étnico da população com 2 ou mais anos / Município e área de População com 2 Quicongo (Kikongu Quimbundo Lunda-Quioco (Lunda- Nhaneca- Ambó (Vahambo Helelo,
+  p98: Quadro 6.1 - População de 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 / Grupo_Étnico da população com 2 ou mais anos / Município e área de População com 2 Quicongo (Kikongu Quimbundo Lunda-Quioco (Lunda- Nhaneca- Ambó (Vahambo Helelo,
+  p99: Quadro 6.1- População de 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 / Grupo_Étnico da população com 2 ou mais anos / População com 2 ou
+  p100: Quadro 6.1- População de 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 / Grupo_Étnico da população com 2 ou mais anos / População com 2 ou
+  p101: Quadro 6.2 - População por província e área de residência, segundo a língua Materna / Língua materna agrupada / Número de pessoas com 2
+  p104: Quadro 6.2 - População por província e área de residência, segundo a língua Materna / Número de pessoas com Língua materna agrupada / Município e área de residência
+  p135: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20 / Área de residência, Total de Principal tipo de Iluminação / município e comuna a fa g m re i g li a a d re o s s El r e e c d tr e ic p id ú a b d li e c a d a Gerador Painel solar
+  p136: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20 / Área de residência, Total de Principal tipo de Iluminação / município e comuna a fa g m re i g li a a d re o s s El r e e c d tr e ic p id ú a b d li e c a d a Gerador Painel solar
+  p137: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu / Área de residência, município e Total de Principal fonte de energia/combustível utilizado para cozinhar / comuna
+  p138: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu / Área de residência, município e Total de Principal fonte de energia/combustível utilizado para cozinhar / comuna
+  p139: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho / normalmente dentro ou fora de casa, 2024 / Tipo de sanitario
+  p140: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho / normalmente dentro ou fora de casa, 2024 / Tipo de sanitario
+  p141: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho / normalmente dentro ou fora de casa, 2024 / Tipo de sanitario
+  p142: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho / normalmente dentro ou fora de casa, 2024 / Tipo de sanitario
+  p143: Quadro 9.4 - Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que  / Total de Principal modo de tratamento habitual que se da a água para beber / Á co r m ea u d n e a residência, município e a fa g m re i g li a a d re o s s Ferve D li e x s ív in ia fe ( t o a u c
+  p144: Quadro 9.4 - Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que  / Total de Principal modo de tratamento habitual que se da a água para beber / Á co r m ea u d n e a residência, município e a fa g m re i g li a a d re o s s Ferve D li e x s ív in ia fe ( t o a u c
+  p145: Quadro 9.5 - Agregados familiares por área de residência, município e comuna, / segundo a situação de partilha da casa de banho, 2024 / Agregados que partilham a casa de banho
+  p146: Quadro 9.6 - Agregados familiares por área de residência, município e comuna, segundo o acesso a água / da rede pública, 2024 / Acesso a Água da rede pública
+  p147: Quadro 9.7 - Agregados familiares por área de residência, município e / comuna, segundo situação se a água utilizada para beber provém da / mesma fonte, 2024
+  p148: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte / utilizada para abastecimento de água, 2024 / Principal fonte utilizado para abastecimento de água
+  p149: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte / utilizada para abastecimento de água, 2024 / Principal fonte utilizado para abastecimento de água
+  p150: Quadro 9.9 - Agregados familiares por área de residência, município e comuna, / segundo a posse de parcela/lavra ou a prática da actividade agrícola, 2024 / Situação de posse de parcela/lavra ou prática de
+  p151: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da lavra/ pa / Regime de ocupação da lavra/parcela / Total de agregados
+  p152: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da lavra/ pa / Regime de ocupação da lavra/parcela / Total de agregados
+  p153: Quadro 9.11 - Agregados familiares por área de residência, município e comuna, segundo / a situação de criação de animais por algum membro nos últimos 12 meses, 2024 / Situação de criação de animais por conta
+  p154: Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna, segundo / o tipo de animais criados nos últimos 12 meses, 2024 / Total de agregados
+  p155: Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de actividade / piscatória praticada, 2024 / Tipo de actividade piscatória praticada
+  p156: Quadro 9.14 - Agregados familiares por área de residência, município e comuna, segundo a posse de bens que funcionam em  / Bens que funcionam / Total de
+  p157: Quadro 9.14 - Agregados familiares por área de residência, município e comuna, segundo a posse de bens que funcionam em  / Bens que funcionam / Total de
+  p158: Quadro 9.15 - Agregados familiares por área de residência, município e / comuna, segundo a situação se recebe algum tipo de apoio social / Situação se o agregado recebe
+  p159: Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade / que prestou o apoio social, 2024 / Total de Agregados Entidade que prestou apoio social
+  p160: Quadro 9.17 - Agregados familiares por área de residência, município e / comuna, segundo o sexo do chefe, 2024 / Área de residência, Total de agregados Sexo do Chefe
