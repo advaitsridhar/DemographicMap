@@ -47,6 +47,21 @@ class BurkinaProvinces(unittest.TestCase):
         table = bp.province_table(text, ["Gnagna", "Komonjdjari"])
         self.assertEqual(table["Komonjdjari"], (500, 600, 1_100))
 
+    def test_no_total_row(self):
+        # Constructed: a table without its total row is taken when its
+        # provinces make the region's own count, and refused otherwise.
+        text = ("Tableau 2.3 : Répartition des effectifs de la population par province "
+                "selon le sexe Province Homme Femme Ensemble "
+                "Ioba 130 361 135 595 265 956 Poni 168 544 188 374 356 918 "
+                "Au niveau des communes")
+        names = ["Ioba", "Poni"]
+        table = bp.province_table(text, names, (298_905, 323_969, 622_874))
+        self.assertEqual(table["Poni"], (168_544, 188_374, 356_918))
+        with self.assertRaises(SystemExit):
+            bp.province_table(text, names, (298_905, 323_970, 622_875))
+        with self.assertRaises(SystemExit):
+            bp.province_table(text, names)
+
     def test_regional_total(self):
         # The Centre monograph's list of tables, then its Tableau 2.1 as the
         # runner printed it (title wrapped before the year; narrow spaces

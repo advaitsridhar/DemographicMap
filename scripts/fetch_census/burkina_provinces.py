@@ -15,8 +15,9 @@ The Centre region is the one province of Kadiogo, and its monograph's regional
 count by sex (Tableau 2.1) is the province's.
 
 **Checks before anything is written.** Every province's men and women make
-its total; each region's provinces make the region's total row; every province
-on the map is found once.
+its total; each region's provinces make the table's total row, or, where the
+table has none, the region's count by sex in Tableau 2.1; every province on the
+map is found once. A region whose table fails a check keeps what it had.
 
 Usage:
     python -m scripts.fetch_census.burkina_provinces
@@ -113,11 +114,13 @@ def total_row(tokens: list[str]) -> list[tuple[int, int, int]]:
             for t in [triple_at(tokens, i + 1)] if t]
 
 
-def province_table(text: str, provinces: list[str]) -> dict[str, tuple[int, int, int]]:
+def province_table(text: str, provinces: list[str],
+                   region: tuple[int, int, int] | None = None) -> dict[str, tuple[int, int, int]]:
     """{province (the map's name): (men, women, total)} from the table of the
-    region's population by province and sex. A province named otherwise than on
-    the map is taken from a row whose label is close to its name, and only when
-    the provinces then make the table's own total row."""
+    region's population by province and sex, taken only when the provinces make
+    the table's own total row, or the region's count by sex (Tableau 2.1) where
+    the table has none. A province named otherwise than on the map is taken from
+    a row whose label is close to its name."""
     flat = re.sub(r"\s+", " ", text)
     out: dict[str, tuple[int, int, int]] = {}
     seen = ""
@@ -159,9 +162,10 @@ def province_table(text: str, provinces: list[str]) -> dict[str, tuple[int, int,
         if len(found) == len(provinces):
             sums = tuple(sum(v[k] for v in found.values()) for k in range(3))
             totals = total_row(tokens)
-            if sums in totals:
+            if sums in totals or (not totals and sums == region):
                 return found
-            seen = (f"; its provinces make {sums}, and its total rows say {totals}")
+            seen = (f"; its provinces make {sums}, its total rows say {totals} and the "
+                    f"region's count {region}")
             continue
         out = out if len(out) >= len(found) else found
         seen = seen or f"; the table's lines: {' '.join(tokens[:160])}"
@@ -225,7 +229,11 @@ def main() -> int:
                 table = {names[0]: regional_total(text)}
                 where = "Tableau 2.1, the region's count, the province being the whole region"
             else:
-                table = province_table(text, names)
+                try:
+                    count = regional_total(text)
+                except SystemExit:
+                    count = None
+                table = province_table(text, names, count)
                 where = "Tableau 2.3, population by province and sex"
         except SystemExit as err:
             log(f"  {region}: {err}; its provinces are left as they are")
