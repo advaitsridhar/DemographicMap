@@ -6856,9 +6856,80 @@ def joined_here(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
         fields[field] = {"n": len(carrying), "sources": cited_names(
             [src for r in carrying for src in r.get("sources", [])
              if field in cited_fields(src)])}
+    for field in SCALAR_REASON_FIELDS:
+        carrying = [r for r in live if isinstance(r.get(field), dict) and "value" in r[field]]
+        fields[field] = {"n": len(carrying), "sources": cited_names(
+            [src for r in carrying for src in r.get("sources", [])
+             if field in cited_fields(src)])}
     return {"sources": listed(cited_names([src for r in matched
                                            for src in r.get("sources", [])])),
             "matched": len(matched), "units": len(live), "fields": fields}
+
+
+def country_phrase(country: str) -> str:
+    """A country's name as a sentence carries it mid-way: "The Gambia" and
+    "The Bahamas" lower-cased, and "the" before a name that takes one: "the
+    units of the DRC", "of the United States"."""
+    country = re.sub(r"^The ", "the ", country)
+    if re.search(r"^(?:United |Central African |Federated |Holy See\b|Isle of )"
+                 r"|^(?:Comoros|DRC|Maldives|Netherlands|Philippines)$|\bIslands(?: \(|$)",
+                 country):
+        country = f"the {country}"
+    return country
+
+
+# A bare population, median age or sex ratio, in the words the panel prints:
+# what the sources used give at this level, as for the compositions above.
+# Nothing here claims a census did not count ages or sexes -- every census
+# does -- only where the figures shown come from and how far they reach.
+# Before this pass 5,700 median ages, 5,300 sex ratios and 850 populations
+# went out bare, nearly all of them in Africa.
+SCALAR_REASON_FIELDS = {"population": "population", "median_age": "median age",
+                        "sex_ratio": "sex ratio"}
+SCALAR_ELSEWHERE = (
+    "No {field} figure has been found for this unit. {carriers} {give} it for "
+    "{n} of the {units} units of {country} at this level, not for this one.")
+SCALAR_NOWHERE = (
+    "None of the sources used for the units of {country} at this level "
+    "({sources}) gives a {field} for them, and no figure has been found for "
+    "this unit.")
+
+
+def say_why_scalar_empty(entity: dict[str, Any], country: str,
+                         joined: dict[str, Any] | None = None) -> str | None:
+    """Give every bare population, median age and sex ratio its reason.
+
+    The scalar counterpart of say_why_empty, run beside it at the very end:
+    it only names what every earlier pass left bare, and never overwrites a
+    figure, a note or a status. Returns which case applied, or None.
+    """
+    case = None
+    country = country_phrase(country)
+    for field, word in SCALAR_REASON_FIELDS.items():
+        value = entity.get(field)
+        if not (isinstance(value, dict) and value.get("status")
+                and not value.get("note")):
+            continue
+        reach = ((joined or {}).get("fields") or {}).get(field) or {"n": 0, "sources": []}
+        if entity.get("disputed"):
+            note, case = DISPUTED_GAP, "disputed"
+        elif joined and reach["n"]:
+            named = [named_source(name) for name in reach["sources"]] or ["a source"]
+            named[0] = named[0][:1].upper() + named[0][1:]
+            note = SCALAR_ELSEWHERE.format(
+                field=word, carriers=listed(named),
+                give="give" if len(named) > 1 else "gives",
+                n=f"{reach['n']:,}", country=country, units=f"{joined['units']:,}")
+            case = "others at this level carry it"
+        elif joined and joined["matched"]:
+            note = SCALAR_NOWHERE.format(country=country, sources=joined["sources"],
+                                         field=word)
+            case = "no unit at this level carries it"
+        else:
+            note = NO_SOURCE_READ.format(country=country, field=word)
+            case = "no source read"
+        entity[field] = gap(value["status"], note)
+    return case
 
 
 def say_why_empty(entity: dict[str, Any], country: str,
@@ -6876,13 +6947,7 @@ def say_why_empty(entity: dict[str, Any], country: str,
     Returns which case applied, for the build log to count, or None.
     """
     case = None
-    # "The Gambia" and "The Bahamas" mid-sentence, and "the" before a name
-    # that takes one: "the units of the DRC", "of the United States".
-    country = re.sub(r"^The ", "the ", country)
-    if re.search(r"^(?:United |Central African |Federated |Holy See\b|Isle of )"
-                 r"|^(?:Comoros|DRC|Maldives|Netherlands|Philippines)$|\bIslands(?: \(|$)",
-                 country):
-        country = f"the {country}"
+    country = country_phrase(country)
     for field in COMPOSITION_FIELDS:
         value = entity.get(field)
         if not (isinstance(value, dict) and value.get("status")
@@ -13034,6 +13099,7 @@ def main() -> int:
     # it existed, 83% of them on units no adapter had ever touched.
     country_name = {r["id"]: r.get("name") or r["id"] for r in admin0}
     why: dict[str, int] = defaultdict(int)
+    why_scalar: dict[str, int] = defaultdict(int)
     for table in (admin1_by_country, admin2_by_country):
         for iso3, rows in table.items():
             joined = joined_here(rows)
@@ -13041,10 +13107,17 @@ def main() -> int:
                 case = say_why_empty(entity, country_name.get(iso3, iso3), joined)
                 if case:
                     why[case] += 1
+                case = say_why_scalar_empty(entity, country_name.get(iso3, iso3), joined)
+                if case:
+                    why_scalar[case] += 1
     if why:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why.items(), key=lambda kv: -kv[1])))
+    if why_scalar:
+        log("  every bare population, median age and sex ratio now says why: "
+            + ", ".join(f"{n} units where {k}" for k, n in
+                        sorted(why_scalar.items(), key=lambda kv: -kv[1])))
     # After the reasons are written, since it reads them.
     answered = sum(drop_answered_hint(entity)
                    for table in (admin1_by_country, admin2_by_country)
