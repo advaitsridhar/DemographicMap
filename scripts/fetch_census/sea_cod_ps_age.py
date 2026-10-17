@@ -174,6 +174,18 @@ COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
             "automated requests."),
     },
 }
+# The report those sentences measure, in the sources of every unit that says
+# them. The panel prints a note as plain text, and the visitor's wording gives
+# no web address there ("as in Ranong's report, for example"), so the address
+# is the source list's, where it is a link. Keyed by country: another
+# country's gaps would need their own report.
+COMPOSITION_SOURCES: dict[str, dict[str, Any]] = {
+    "THA": {"name": ("National Statistical Office, 2000 Population and Housing Census, "
+                     "Ranong final report: tables 1-4 and key indicators (via the Internet "
+                     "Archive's copy)"),
+            "url": f"https://{RANONG_2000}", "year": 2000,
+            "license": "Open Government Data of Thailand (NSO publication)"},
+}
 
 
 # How much of a dataset's methodology line a note quotes. Thailand's runs past
@@ -220,6 +232,16 @@ def unusual_ratio(men: float, women: float, level: str) -> str:
 def composition_gaps(iso3: str, level: str) -> dict[str, Any]:
     return {field: gap(NOT_AVAILABLE, note)
             for field, note in COMPOSITION_GAPS.get((iso3, level), {}).items()}
+
+
+def composition_sources(iso3: str, level: str) -> list[dict[str, Any]]:
+    """The report the composition gaps measure, cited for the fields they leave
+    empty; nothing where this reader says nothing of a unit's composition."""
+    fields = COMPOSITION_GAPS.get((iso3, level))
+    report = COMPOSITION_SOURCES.get(iso3)
+    if not fields or report is None:
+        return []
+    return [{"field": "/".join(f"{field} (why empty)" for field in fields), **report}]
 
 
 def key(name: Any) -> str:
@@ -372,6 +394,7 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
                 unit["name"], level=level, parent=iso3, country=iso3, match_by="shape_id",
                 shape_id=unit["id"], aliases=[name] if key(name) != key(unit["name"]) else None,
                 median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                sources=composition_sources(iso3, level),
                 **composition_gaps(iso3, level)))
             continue
         # The twins placed by their seats get their ages and sex ratio from
@@ -398,7 +421,7 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
                             f"{unusual_ratio(men, women, level)}{basis}"),
             sources=[{"field": "median_age/sex_ratio", "name": source,
                       "url": cod_ps.DATASET_PAGE.format(stub=stub), "year": year,
-                      "license": licence}],
+                      "license": licence}, *composition_sources(iso3, level)],
             **composition_gaps(iso3, level)))
     log(f"  {iso3} {level}: {len(out)} units from {table['label']} ({year}); {refused} "
         f"refused by the checks; rows on no polygon ({len(left)}): {'; '.join(left[:40])}; "

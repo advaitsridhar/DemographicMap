@@ -134,7 +134,9 @@ class SpellingAndSeatTest(unittest.TestCase):
             self.assertIn("value", r["sex_ratio"])
             self.assertNotIn("value", r.get("population") or {})
             self.assertFalse(r.get("population_note"))
-            self.assertEqual([src["field"] for src in r["sources"]], ["median_age/sex_ratio"])
+            fields = [src["field"] for src in r["sources"]]
+            self.assertEqual(fields[0], "median_age/sex_ratio")
+            self.assertNotIn("population", " ".join(fields))
 
 
 class RecordsTest(unittest.TestCase):
@@ -207,7 +209,9 @@ class RecordsTest(unittest.TestCase):
             self.assertNotIn("value", recs[0][field])
             self.assertIn("45.0 males per 100 females", recs[0][field]["note"])
             self.assertIn("stat.bora.dopa.go.th", recs[0][field]["note"])
-        self.assertEqual(recs[0]["sources"], [])
+        # No figure of OCHA's is shown, so OCHA is not cited; the report the
+        # composition gaps measure is.
+        self.assertEqual(recs[0]["sources"], s.composition_sources("THA", "admin2"))
 
 
 THA_METHOD = (
@@ -271,6 +275,36 @@ class CompositionGapsTest(unittest.TestCase):
                             for g in gaps.values()))
         self.assertEqual(set(s.composition_gaps("THA", "admin1")), {"language"})
         self.assertEqual(s.composition_gaps("LAO", "admin2"), {})
+
+    def test_the_report_the_gaps_measure_is_cited_where_they_are_said(self):
+        # The visitor's notes name Ranong's report without its address; the
+        # source list carries the address, as a link.
+        (district,) = s.composition_sources("THA", "admin2")
+        self.assertEqual(district["field"], "religion (why empty)/language (why empty)/"
+                                            "ethnicity (why empty)")
+        self.assertEqual(district["url"], "https://web.archive.org/web/20110615044445/"
+                                          "http://web.nso.go.th/pop2000/finalrep/tables/"
+                                          "ranong/ranong1.xls")
+        self.assertIn("Ranong final report", district["name"])
+        self.assertNotIn(".xls", district["name"])
+        self.assertEqual(district["year"], 2000)
+        (province,) = s.composition_sources("THA", "admin1")
+        self.assertEqual(province["field"], "language (why empty)")
+        self.assertEqual(s.composition_sources("LAO", "admin2"), [])
+        self.assertEqual(s.composition_sources("KHM", "admin1"), [])
+
+    def test_a_bound_district_cites_both_its_figures_and_its_gaps(self):
+        cols_ = columns()
+        table = {"label": "x adm2_", "level": "2", "columns": cols_,
+                 "rows": [row("Lampang", "Ko Kha")], "method": THA_METHOD}
+        with mock.patch.object(s, "drawn", fake_drawn), \
+                mock.patch.object(s, "locate", return_value={}):
+            recs = s.level_records("THA", "cod-ps-tha", "CC BY-IGO", "2", 2023, table,
+                                   age_columns(cols_))
+        fields = [src["field"] for src in recs[0]["sources"]]
+        self.assertEqual(fields, ["median_age/sex_ratio", "religion (why empty)/language "
+                                                          "(why empty)/ethnicity (why empty)"])
+        self.assertEqual(recs[0]["sources"][1]["url"], s.composition_sources("THA", "admin2")[0]["url"])
 
 
 if __name__ == "__main__":
