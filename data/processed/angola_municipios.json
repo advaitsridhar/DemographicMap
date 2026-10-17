@@ -1618,7 +1618,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Baia Farta and Dombe Grande are added together for Baía Farta as it stood under Lei n.º 18/16. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Baia Farta and Dombe Grande are added together for Baía Farta as it stood under Lei n.º 18/16. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Baia Farta and Dombe Grande are added together for Baía Farta as it stood under Lei n.º 18/16. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806."
   },
   {
     "id": "AGO-RGPH2024-91424787B68553415961222",
@@ -1892,7 +1892,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Balombo and Chindumbo, which together are Balombo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Balombo and Chindumbo, which together are Balombo as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Balombo and Chindumbo, which together are Balombo as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Balombo and Chindumbo, added together."
   },
   {
@@ -1912,7 +1912,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 1021,
@@ -2164,7 +2167,8 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Belize and Miconje, which together are Belize as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Belize and Miconje, which together are Belize as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Belize and Miconje, which together are Belize as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Belize and Miconje, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B89506184943811",
@@ -2468,7 +2472,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Benguela and Navegantes are added together for Benguela as it stood under Lei n.º 18/16. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Benguela and Navegantes are added together for Benguela as it stood under Lei n.º 18/16. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Benguela and Navegantes are added together for Benguela as it stood under Lei n.º 18/16. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Benguela and Navegantes, added together. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16."
   },
   {
@@ -2502,9 +2506,103 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Nyaneka",
+        "pct": 46.8,
+        "count": 51904
+      },
+      {
+        "group": "Portuguese",
+        "pct": 17.9,
+        "count": 19858
+      },
+      {
+        "group": "Umbundu",
+        "pct": 15.6,
+        "count": 17254
+      },
+      {
+        "group": "Humbi",
+        "pct": 13.8,
+        "count": 15269
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.2,
+        "count": 3562
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.9,
+        "count": 980
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 732
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.5,
+        "count": 510
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.4,
+        "count": 401
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.2,
+        "count": 179
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.1,
+        "count": 72
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Luvale",
+        "pct": 0.1,
+        "count": 110
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Nyaneka-Humbe",
@@ -2587,6 +2685,8 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
@@ -2871,7 +2971,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Bocoio and Chila, which together are Bocoio as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Bocoio and Chila, which together are Bocoio as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Bocoio and Chila, which together are Bocoio as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Bocoio and Chila, added together."
   },
   {
@@ -2891,7 +2991,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 1002,
@@ -3153,7 +3256,8 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Buco Zau and Necuto, which together are Buco Zau as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Buco Zau and Necuto, which together are Buco Zau as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Buco Zau and Necuto, which together are Buco Zau as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Buco Zau and Necuto, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B37538296064397",
@@ -3447,7 +3551,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 982,
@@ -3729,7 +3836,8 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cabinda, Tando Zinze, Ngoio and Liambo, which together are Cabinda as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cabinda, Tando Zinze, Ngoio and Liambo, which together are Cabinda as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cabinda, Tando Zinze, Ngoio and Liambo, which together are Cabinda as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cabinda, Tando Zinze, Ngoio and Liambo, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B11681042656002",
@@ -3949,7 +4057,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cacolo, Alto Chicapa and Xassengue, which together are Cacolo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cacolo, Alto Chicapa and Xassengue, which together are Cacolo as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cacolo, Alto Chicapa and Xassengue, which together are Cacolo as it stood under Lei n.º 18/16, are added together. The provincial report counts 9,424 people of Lunda Sul province under another religion, the census's national report 10,592."
   },
   {
     "id": "AGO-RGPH2024-91424787B63087440838187",
@@ -3968,10 +4076,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 956,
@@ -3982,12 +4087,170 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Umbundu",
+        "pct": 69.9,
+        "count": 147733
+      },
+      {
+        "group": "Portuguese",
+        "pct": 27.7,
+        "count": 58596
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 1.0,
+        "count": 2060
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.4,
+        "count": 816
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.4,
+        "count": 813
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.3,
+        "count": 542
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 406
+      },
+      {
+        "group": "Humbi",
+        "pct": 0.1,
+        "count": 140
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1,
+        "count": 131
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Ovimbundu",
+        "pct": 93.9,
+        "count": 198358
+      },
+      {
+        "group": "Ambundu",
+        "pct": 3.1,
+        "count": 6525
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 1.1,
+        "count": 2423
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 1539
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.6,
+        "count": 1296
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.4,
+        "count": 803
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 282
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -4001,7 +4264,10 @@
     "match_by": "shape_id",
     "shape_id": "91424787B63087440838187",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group."
   },
   {
     "id": "AGO-RGPH2024-91424787B26700352984519",
@@ -4020,7 +4286,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 983,
@@ -4277,7 +4546,59 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cacongo and Massabi, which together are Cacongo(ex_Lândana) as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cacongo and Massabi, which together are Cacongo(ex_Lândana) as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cacongo and Massabi, which together are Cacongo(ex_Lândana) as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cacongo and Massabi, added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B27553841432178",
+    "level": "admin2",
+    "name": "Cacuso",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 102812,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 976,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Cacuso as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Cacuso as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Cacuso as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B27553841432178",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted."
   },
   {
     "id": "AGO-RGPH2024-91424787B18183137750299",
@@ -4296,7 +4617,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 14.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 918,
@@ -4502,7 +4826,59 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B12567733179879",
+    "level": "admin2",
+    "name": "Cahombo",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33096,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1023,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Cahombo as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Cahombo as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Cahombo as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B12567733179879",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted."
   },
   {
     "id": "AGO-RGPH2024-91424787B46456959244307",
@@ -4768,7 +5144,206 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Caimbambo, Canhamela and Catengue, which together are Caimbambo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caimbambo, Canhamela and Catengue, which together are Caimbambo as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caimbambo, Canhamela and Catengue, which together are Caimbambo as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B81710003756648",
+    "level": "admin2",
+    "name": "Calandula",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 118978,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 19.4,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 939,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Adventist",
+        "pct": 40.3,
+        "count": 44887
+      },
+      {
+        "group": "Catholic",
+        "pct": 36.6,
+        "count": 40761
+      },
+      {
+        "group": "No religion",
+        "pct": 9.3,
+        "count": 10403
+      },
+      {
+        "group": "Methodist",
+        "pct": 6.7,
+        "count": 7424
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.5,
+        "count": 2814
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.5,
+        "count": 1700
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 1111
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 0.6,
+        "count": 616
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 0.5,
+        "count": 569
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.3,
+        "count": 352
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 234
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.1,
+        "count": 77
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.1,
+        "count": 154
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.1,
+        "count": 143
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 95.3,
+        "count": 106122
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 2.3,
+        "count": 2557
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 1324
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.9,
+        "count": 1018
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 230
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.1,
+        "count": 71
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B81710003756648",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Calandula, Cateco Cangola and Cuale, which together are Calandula as it stood under Lei n.º 18/16, are added together.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Calandula, Cateco Cangola and Cuale, which together are Calandula as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Calandula, Cateco Cangola and Cuale, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B2752331386063",
@@ -5267,7 +5842,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cambulo and Canzar, which together are Cambulo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cambulo and Canzar, which together are Cambulo as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cambulo and Canzar, which together are Cambulo as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cambulo and Canzar, added together."
   },
   {
@@ -5301,9 +5876,98 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Nyaneka",
+        "pct": 54.5,
+        "count": 37018
+      },
+      {
+        "group": "Humbi",
+        "pct": 20.0,
+        "count": 13575
+      },
+      {
+        "group": "Portuguese",
+        "pct": 9.8,
+        "count": 6626
+      },
+      {
+        "group": "Umbundu",
+        "pct": 8.8,
+        "count": 5947
+      },
+      {
+        "group": "Other languages",
+        "pct": 5.3,
+        "count": 3566
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.1,
+        "count": 728
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.2,
+        "count": 127
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.1,
+        "count": 95
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.1,
+        "count": 76
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Luvale",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Nyaneka-Humbe",
@@ -5386,7 +6050,233 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Camucuio and Cacimbas, which together are Camucuio as it stood under Lei n.º 18/16, are added together.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Camucuio and Cacimbas, which together are Camucuio as it stood under Lei n.º 18/16, are added together.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Camucuio and Cacimbas, added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B16698787972109",
+    "level": "admin2",
+    "name": "Cangandala",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 50618,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 18.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 49.0,
+        "count": 23228
+      },
+      {
+        "group": "No religion",
+        "pct": 26.7,
+        "count": 12636
+      },
+      {
+        "group": "Adventist",
+        "pct": 4.5,
+        "count": 2133
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.4,
+        "count": 1592
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 3.3,
+        "count": 1557
+      },
+      {
+        "group": "Methodist",
+        "pct": 2.8,
+        "count": 1324
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 2.7,
+        "count": 1277
+      },
+      {
+        "group": "Evangelical",
+        "pct": 2.2,
+        "count": 1025
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.1,
+        "count": 998
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 1.5,
+        "count": 713
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.6,
+        "count": 261
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 143
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.3,
+        "count": 120
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.2,
+        "count": 108
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.2,
+        "count": 79
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 70
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 54
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 68.5,
+        "count": 32468
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.6,
+        "count": 6907
+      },
+      {
+        "group": "Bakongo",
+        "pct": 5.3,
+        "count": 2502
+      },
+      {
+        "group": "Other",
+        "pct": 5.1,
+        "count": 2423
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 4.2,
+        "count": 1971
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 2.2,
+        "count": 1030
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B16698787972109",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
     "id": "AGO-RGPH2024-91424787B15683694525911",
@@ -5680,7 +6570,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
@@ -6135,7 +7025,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Caungula and Camaxilo, which together are Caungula as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caungula and Camaxilo, which together are Caungula as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caungula and Camaxilo, which together are Caungula as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Caungula and Camaxilo, added together."
   },
   {
@@ -6155,10 +7045,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.0,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 980,
@@ -6169,12 +7056,170 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Umbundu",
+        "pct": 47.2,
+        "count": 69204
+      },
+      {
+        "group": "Portuguese",
+        "pct": 25.6,
+        "count": 37570
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 20.5,
+        "count": 30038
+      },
+      {
+        "group": "Humbi",
+        "pct": 4.7,
+        "count": 6946
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.7,
+        "count": 954
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.6,
+        "count": 876
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4,
+        "count": 515
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.2,
+        "count": 328
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.1,
+        "count": 113
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 116
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Mandarin",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Ovimbundu",
+        "pct": 62.3,
+        "count": 91465
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 27.0,
+        "count": 39625
+      },
+      {
+        "group": "Ambundu",
+        "pct": 6.7,
+        "count": 9847
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 1.1,
+        "count": 1631
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 1388
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.7,
+        "count": 971
+      },
+      {
+        "group": "Other",
+        "pct": 0.7,
+        "count": 1082
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.2,
+        "count": 311
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.2,
+        "count": 223
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.1,
+        "count": 176
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -6188,7 +7233,10 @@
     "match_by": "shape_id",
     "shape_id": "91424787B36301106441136",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group."
   },
   {
     "id": "AGO-RGPH2024-91424787B39722780012320",
@@ -6377,10 +7425,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.2,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 951,
@@ -6391,12 +7436,155 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Umbundu",
+        "pct": 67.5,
+        "count": 64593
+      },
+      {
+        "group": "Portuguese",
+        "pct": 27.7,
+        "count": 26477
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.7,
+        "count": 1650
+      },
+      {
+        "group": "Ngangela",
+        "pct": 1.6,
+        "count": 1533
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.9,
+        "count": 850
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 0.3,
+        "count": 250
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.1,
+        "count": 128
+      },
+      {
+        "group": "Humbi",
+        "pct": 0.1,
+        "count": 55
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 110
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Mandarin",
+        "pct": 0.0,
+        "count": 22
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Ovimbundu",
+        "pct": 84.8,
+        "count": 81201
+      },
+      {
+        "group": "Ambundu",
+        "pct": 10.4,
+        "count": 9920
+      },
+      {
+        "group": "Other",
+        "pct": 2.3,
+        "count": 2160
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 995
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.6,
+        "count": 615
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.5,
+        "count": 440
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.4,
+        "count": 340
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -6410,7 +7598,10 @@
     "match_by": "shape_id",
     "shape_id": "91424787B45982790117633",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group."
   },
   {
     "id": "AGO-RGPH2024-91424787B90607964239215",
@@ -6715,7 +7906,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Dundo, Chitato, Mussungue and Lóvua, which together are Chitato and Lóvua as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Dundo, Chitato, Mussungue and Lóvua, which together are Chitato and Lóvua as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Dundo, Chitato, Mussungue and Lóvua, which together are Chitato and Lóvua as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Dundo, Chitato, Mussungue and Lóvua, added together."
   },
   {
@@ -7210,7 +8401,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Chongorói and Bolonguera, which together are Chongoroi as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Chongorói and Bolonguera, which together are Chongoroi as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Chongorói and Bolonguera, which together are Chongoroi as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Chongorói and Bolonguera, added together."
   },
   {
@@ -7515,7 +8706,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cuango, Luremo and Cafunfo, which together are Cuango as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuango, Luremo and Cafunfo, which together are Cuango as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuango, Luremo and Cafunfo, which together are Cuango as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cuango, Luremo and Cafunfo, added together."
   },
   {
@@ -7535,7 +8726,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 912,
@@ -7650,83 +8844,9 @@
         "count": 108
       }
     ],
-    "language": [
-      {
-        "group": "Kwanyama",
-        "pct": 70.6,
-        "count": 469853
-      },
-      {
-        "group": "Portuguese",
-        "pct": 10.0,
-        "count": 66794
-      },
-      {
-        "group": "Umbundu",
-        "pct": 8.0,
-        "count": 53007
-      },
-      {
-        "group": "Nyaneka",
-        "pct": 3.7,
-        "count": 24458
-      },
-      {
-        "group": "Ngangela",
-        "pct": 2.4,
-        "count": 15972
-      },
-      {
-        "group": "Humbi",
-        "pct": 1.9,
-        "count": 12368
-      },
-      {
-        "group": "Kimbundu",
-        "pct": 0.9,
-        "count": 5853
-      },
-      {
-        "group": "Chokwe",
-        "pct": 0.8,
-        "count": 5481
-      },
-      {
-        "group": "Other languages",
-        "pct": 0.7,
-        "count": 4740
-      },
-      {
-        "group": "Kikongo",
-        "pct": 0.5,
-        "count": 3226
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.2,
-        "count": 1558
-      },
-      {
-        "group": "Fiote",
-        "pct": 0.1,
-        "count": 472
-      },
-      {
-        "group": "Foreign languages",
-        "pct": 0.1,
-        "count": 441
-      },
-      {
-        "group": "Khoisan",
-        "pct": 0.1,
-        "count": 798
-      },
-      {
-        "group": "Luvale",
-        "pct": 0.0,
-        "count": 50
-      }
-    ],
+    "language": {
+      "status": "not_available"
+    },
     "ethnicity": {
       "status": "not_available"
     },
@@ -7743,10 +8863,9 @@
     "match_by": "shape_id",
     "shape_id": "91424787B85678158059981",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "language_year": 2024,
-    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cuanhama, Nehone and Cafima, which together are Cuanhama as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuanhama, Nehone and Cafima, which together are Cuanhama as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuanhama, Nehone and Cafima, which together are Cuanhama as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cuanhama, Nehone and Cafima, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B94223013824021",
@@ -8040,7 +9159,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cubal, Iambala and Capupa, which together are Cubal as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cubal, Iambala and Capupa, which together are Cubal as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cubal, Iambala and Capupa, which together are Cubal as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cubal, Iambala and Capupa, added together."
   },
   {
@@ -8485,7 +9604,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
@@ -8980,6 +10099,200 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cuito, Cambândua and Chicala, which together are Cuito as it stood under Lei n.º 18/16, are added together."
   },
   {
+    "id": "AGO-RGPH2024-91424787B4961383306768",
+    "level": "admin2",
+    "name": "Cunda-dia-Baze",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21392,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 18.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 31.6,
+        "count": 6258
+      },
+      {
+        "group": "Catholic",
+        "pct": 29.1,
+        "count": 5764
+      },
+      {
+        "group": "Adventist",
+        "pct": 7.3,
+        "count": 1456
+      },
+      {
+        "group": "Protestant",
+        "pct": 6.1,
+        "count": 1217
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 5.6,
+        "count": 1106
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.9,
+        "count": 764
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 3.4,
+        "count": 674
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 3.2,
+        "count": 636
+      },
+      {
+        "group": "Methodist",
+        "pct": 2.3,
+        "count": 463
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 2.2,
+        "count": 429
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.9,
+        "count": 375
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6,
+        "count": 327
+      },
+      {
+        "group": "Animist",
+        "pct": 0.4,
+        "count": 70
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 86
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.3,
+        "count": 61
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.3,
+        "count": 58
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.2,
+        "count": 34
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 92.8,
+        "count": 18404
+      },
+      {
+        "group": "Bakongo",
+        "pct": 4.2,
+        "count": 841
+      },
+      {
+        "group": "Other",
+        "pct": 1.0,
+        "count": 198
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 0.8,
+        "count": 153
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.6,
+        "count": 126
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 95
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B4961383306768",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Kunda dya Baze and Milando, which together are Kunda dya Baze as it stood under Lei n.º 18/16, are added together.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Kunda dya Baze and Milando, which together are Kunda dya Baze as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Kunda dya Baze and Milando, added together."
+  },
+  {
     "id": "AGO-RGPH2024-91424787B32669130254170",
     "level": "admin2",
     "name": "Cunhinga",
@@ -9161,7 +10474,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 15.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 964,
@@ -9372,7 +10688,8 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Curoca and Chitado, which together are Curoca as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Curoca and Chitado, which together are Curoca as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Curoca and Chitado, which together are Curoca as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Curoca and Chitado, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B73167637219088",
@@ -9391,10 +10708,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 959,
@@ -9405,12 +10719,165 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Ngangela",
+        "pct": 46.6,
+        "count": 40841
+      },
+      {
+        "group": "Umbundu",
+        "pct": 27.6,
+        "count": 24194
+      },
+      {
+        "group": "Portuguese",
+        "pct": 21.5,
+        "count": 18895
+      },
+      {
+        "group": "Chokwe",
+        "pct": 1.6,
+        "count": 1394
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 1016
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 0.5,
+        "count": 395
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 448
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.3,
+        "count": 279
+      },
+      {
+        "group": "Humbi",
+        "pct": 0.2,
+        "count": 134
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Ovimbundu",
+        "pct": 37.7,
+        "count": 33095
+      },
+      {
+        "group": "Other",
+        "pct": 29.8,
+        "count": 26097
+      },
+      {
+        "group": "Not stated",
+        "pct": 20.1,
+        "count": 17640
+      },
+      {
+        "group": "Ambundu",
+        "pct": 4.6,
+        "count": 4048
+      },
+      {
+        "group": "Cuangar",
+        "pct": 3.1,
+        "count": 2694
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 2.5,
+        "count": 2227
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 1.5,
+        "count": 1353
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.4,
+        "count": 315
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.2,
+        "count": 165
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -9424,7 +10891,10 @@
     "match_by": "shape_id",
     "shape_id": "91424787B73167637219088",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cuvango and Galangue, added together."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Cuvango and Galangue, which together are Cuvango as it stood under Lei n.º 18/16, are added together.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Cuvango and Galangue, which together are Cuvango as it stood under Lei n.º 18/16, are added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B91850178309544",
@@ -9443,7 +10913,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 15.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 944,
@@ -9573,7 +11046,8 @@
     "shape_id": "91424787B91850178309544",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuvelai, Chissuata and Mupa, which together are Cuvelai as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuvelai, Chissuata and Mupa, which together are Cuvelai as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Cuvelai, Chissuata and Mupa, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B38882855808197",
@@ -10238,10 +11712,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.1,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 884,
@@ -10252,12 +11723,155 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Nyaneka",
+        "pct": 83.7,
+        "count": 85778
+      },
+      {
+        "group": "Portuguese",
+        "pct": 12.6,
+        "count": 12957
+      },
+      {
+        "group": "Humbi",
+        "pct": 1.2,
+        "count": 1274
+      },
+      {
+        "group": "Umbundu",
+        "pct": 0.9,
+        "count": 879
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.5,
+        "count": 541
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 520
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.2,
+        "count": 189
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2,
+        "count": 158
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 93.5,
+        "count": 95768
+      },
+      {
+        "group": "Ambundu",
+        "pct": 2.3,
+        "count": 2343
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.5,
+        "count": 1500
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 1.5,
+        "count": 1533
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.4,
+        "count": 435
+      },
+      {
+        "group": "Herero",
+        "pct": 0.3,
+        "count": 330
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.2,
+        "count": 202
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.1,
+        "count": 136
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 102
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.1,
+        "count": 115
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -10271,7 +11885,10 @@
     "match_by": "shape_id",
     "shape_id": "91424787B65882215003042",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group."
   },
   {
     "id": "AGO-RGPH2024-91424787B85498389381711",
@@ -10560,7 +12177,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Ganda, Babaera and Chicuma, which together are Ganda as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ganda, Babaera and Chicuma, which together are Ganda as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ganda, Babaera and Chicuma, which together are Ganda as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Ganda, Babaera and Chicuma, added together."
   },
   {
@@ -10580,10 +12197,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.9,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 982,
@@ -10594,12 +12208,180 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 29.7,
+        "count": 34317
+      },
+      {
+        "group": "Ngangela",
+        "pct": 26.5,
+        "count": 30624
+      },
+      {
+        "group": "Umbundu",
+        "pct": 15.3,
+        "count": 17612
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 13.2,
+        "count": 15211
+      },
+      {
+        "group": "Chokwe",
+        "pct": 6.4,
+        "count": 7408
+      },
+      {
+        "group": "Other languages",
+        "pct": 4.7,
+        "count": 5385
+      },
+      {
+        "group": "Humbi",
+        "pct": 2.3,
+        "count": 2660
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.7,
+        "count": 765
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 718
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.3,
+        "count": 397
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.1,
+        "count": 139
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.1,
+        "count": 111
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Luvale",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Mandarin",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Ovimbundu",
+        "pct": 26.9,
+        "count": 31040
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 18.1,
+        "count": 20854
+      },
+      {
+        "group": "Other",
+        "pct": 17.1,
+        "count": 19771
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.4,
+        "count": 16648
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 7.4,
+        "count": 8545
+      },
+      {
+        "group": "Ambundu",
+        "pct": 5.9,
+        "count": 6808
+      },
+      {
+        "group": "Cuangar",
+        "pct": 4.7,
+        "count": 5406
+      },
+      {
+        "group": "Bakongo",
+        "pct": 2.4,
+        "count": 2787
+      },
+      {
+        "group": "Ovambo",
+        "pct": 1.6,
+        "count": 1828
+      },
+      {
+        "group": "Herero",
+        "pct": 0.9,
+        "count": 984
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.4,
+        "count": 474
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.2,
+        "count": 255
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 27
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -10613,7 +12395,199 @@
     "match_by": "shape_id",
     "shape_id": "91424787B29193645971076",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Jamba Mineira and Dongo, added together."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Jamba Mineira and Dongo, which together are Jamba as it stood under Lei n.º 18/16, are added together.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Jamba Mineira and Dongo, which together are Jamba as it stood under Lei n.º 18/16, are added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B74971894264507",
+    "level": "admin2",
+    "name": "Kiuaba-N'Zoji",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21139,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 18.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 1011,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 45.9,
+        "count": 9149
+      },
+      {
+        "group": "Adventist",
+        "pct": 22.7,
+        "count": 4526
+      },
+      {
+        "group": "Methodist",
+        "pct": 9.4,
+        "count": 1866
+      },
+      {
+        "group": "Protestant",
+        "pct": 8.0,
+        "count": 1599
+      },
+      {
+        "group": "No religion",
+        "pct": 7.2,
+        "count": 1434
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.8,
+        "count": 368
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 1.3,
+        "count": 259
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 1.2,
+        "count": 230
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2,
+        "count": 232
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.4,
+        "count": 73
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.3,
+        "count": 67
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 17
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.1,
+        "count": 15
+      },
+      {
+        "group": "Animist",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 95.2,
+        "count": 18951
+      },
+      {
+        "group": "Bakongo",
+        "pct": 1.5,
+        "count": 308
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 1.5,
+        "count": 291
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3,
+        "count": 268
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 64
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B74971894264507",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
     "id": "AGO-RGPH2024-91424787B28058724982941",
@@ -10918,7 +12892,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Lobito, Egito Praia, Catumbela and Biópio, which together are Lobito and Catumbela as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lobito, Egito Praia, Catumbela and Biópio, which together are Lobito and Catumbela as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lobito, Egito Praia, Catumbela and Biópio, which together are Lobito and Catumbela as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Lobito, Egito Praia, Catumbela and Biópio, added together."
   },
   {
@@ -11178,7 +13152,7 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Lubalo and Luangue, which together are Lubalo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lubalo and Luangue, which together are Lubalo as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lubalo and Luangue, which together are Lubalo as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Lubalo and Luangue, added together."
   },
   {
@@ -11483,8 +13457,523 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Lucapa and Xá Cassau, which together are Lucapa as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lucapa and Xá Cassau, which together are Lucapa as it stood under Lei n.º 18/16, are added together.",
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lucapa and Xá Cassau, which together are Lucapa as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Lucapa and Xá Cassau, added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B85219322931866",
+    "level": "admin2",
+    "name": "Luquembo",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66376,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 17.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 51.5,
+        "count": 31710
+      },
+      {
+        "group": "No religion",
+        "pct": 20.3,
+        "count": 12504
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.0,
+        "count": 4289
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 5.0,
+        "count": 3104
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.4,
+        "count": 2685
+      },
+      {
+        "group": "Adventist",
+        "pct": 3.7,
+        "count": 2275
+      },
+      {
+        "group": "Evangelical",
+        "pct": 2.7,
+        "count": 1643
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 2.5,
+        "count": 1511
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 0.8,
+        "count": 466
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 362
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.5,
+        "count": 303
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.3,
+        "count": 168
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.3,
+        "count": 205
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 86
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.1,
+        "count": 44
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 66
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.1,
+        "count": 39
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 63.4,
+        "count": 39040
+      },
+      {
+        "group": "Not stated",
+        "pct": 20.9,
+        "count": 12872
+      },
+      {
+        "group": "Other",
+        "pct": 9.1,
+        "count": 5597
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 3.9,
+        "count": 2415
+      },
+      {
+        "group": "Bakongo",
+        "pct": 1.9,
+        "count": 1163
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 0.7,
+        "count": 459
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B85219322931866",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Luquembo and Capunda, which together are Luquembo as it stood under Lei n.º 18/16, are added together.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Luquembo and Capunda, which together are Luquembo as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Luquembo and Capunda, added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B32489723581228",
+    "level": "admin2",
+    "name": "Malanje",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 650236,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Malanje as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Malanje as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Malanje as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B32489723581228",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B67542854590924",
+    "level": "admin2",
+    "name": "Marimba",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23566,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Marimba as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Marimba as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Marimba as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B67542854590924",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B44714892855770",
+    "level": "admin2",
+    "name": "Massango",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 52627,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 16.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 964,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 31.5,
+        "count": 15360
+      },
+      {
+        "group": "Adventist",
+        "pct": 30.5,
+        "count": 14860
+      },
+      {
+        "group": "No religion",
+        "pct": 9.9,
+        "count": 4805
+      },
+      {
+        "group": "Protestant",
+        "pct": 8.3,
+        "count": 4045
+      },
+      {
+        "group": "Evangelical",
+        "pct": 7.1,
+        "count": 3475
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 3.7,
+        "count": 1793
+      },
+      {
+        "group": "Baptist",
+        "pct": 2.5,
+        "count": 1218
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 1.2,
+        "count": 607
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 1.2,
+        "count": 608
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 593
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 0.6,
+        "count": 288
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.6,
+        "count": 312
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 206
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.3,
+        "count": 142
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.3,
+        "count": 140
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.3,
+        "count": 144
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.2,
+        "count": 100
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Animist",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Bakongo",
+        "pct": 51.7,
+        "count": 25226
+      },
+      {
+        "group": "Ambundu",
+        "pct": 43.3,
+        "count": 21126
+      },
+      {
+        "group": "Other",
+        "pct": 3.0,
+        "count": 1466
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.8,
+        "count": 859
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 0.1,
+        "count": 66
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B44714892855770",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Massango and Quihuhu, which together are Massango as it stood under Lei n.º 18/16, are added together.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Massango and Quihuhu, which together are Massango as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Massango and Quihuhu, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B96825353351701",
@@ -11503,10 +13992,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
-      "unit": "years",
-      "year": 2024,
-      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+      "status": "not_available"
     },
     "sex_ratio": {
       "value": 927,
@@ -11517,12 +14003,180 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Nyaneka",
+        "pct": 30.5,
+        "count": 88312
+      },
+      {
+        "group": "Umbundu",
+        "pct": 26.9,
+        "count": 77765
+      },
+      {
+        "group": "Portuguese",
+        "pct": 22.9,
+        "count": 66182
+      },
+      {
+        "group": "Humbi",
+        "pct": 8.0,
+        "count": 23289
+      },
+      {
+        "group": "Ngangela",
+        "pct": 4.1,
+        "count": 11782
+      },
+      {
+        "group": "Chokwe",
+        "pct": 3.8,
+        "count": 10902
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.6,
+        "count": 4583
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 1.1,
+        "count": 3072
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 1296
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.3,
+        "count": 993
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.2,
+        "count": 631
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.1,
+        "count": 391
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.1,
+        "count": 148
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 117
+      },
+      {
+        "group": "Luvale",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 41.7,
+        "count": 120667
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 38.1,
+        "count": 110455
+      },
+      {
+        "group": "Ambundu",
+        "pct": 6.1,
+        "count": 17558
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 5.0,
+        "count": 14430
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.7,
+        "count": 10756
+      },
+      {
+        "group": "Other",
+        "pct": 3.3,
+        "count": 9621
+      },
+      {
+        "group": "Bakongo",
+        "pct": 1.0,
+        "count": 3037
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.3,
+        "count": 916
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.3,
+        "count": 935
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.2,
+        "count": 505
+      },
+      {
+        "group": "Herero",
+        "pct": 0.1,
+        "count": 300
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.1,
+        "count": 203
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 118
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -11536,7 +14190,10 @@
     "match_by": "shape_id",
     "shape_id": "91424787B96825353351701",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Matala and Capelongo, added together."
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Matala and Capelongo, which together are Matala as it stood under Lei n.º 18/16, are added together.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Matala and Capelongo, which together are Matala as it stood under Lei n.º 18/16, are added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B74689305986886",
@@ -11838,6 +14495,220 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Mbanza Kongo and Luvo, which together are Mbanza Kongo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Mbanza Kongo and Luvo, which together are Mbanza Kongo as it stood under Lei n.º 18/16, are added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B90267506609693",
+    "level": "admin2",
+    "name": "Mucari",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 45378,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 17.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 999,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 33.2,
+        "count": 13978
+      },
+      {
+        "group": "No religion",
+        "pct": 23.5,
+        "count": 9909
+      },
+      {
+        "group": "Adventist",
+        "pct": 10.0,
+        "count": 4232
+      },
+      {
+        "group": "Methodist",
+        "pct": 6.1,
+        "count": 2565
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 5.6,
+        "count": 2362
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.7,
+        "count": 1970
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 4.3,
+        "count": 1804
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 4.2,
+        "count": 1772
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.2,
+        "count": 1343
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.9,
+        "count": 792
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 1.5,
+        "count": 630
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.1,
+        "count": 448
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.3,
+        "count": 108
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 55
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 81.8,
+        "count": 34453
+      },
+      {
+        "group": "Bakongo",
+        "pct": 6.3,
+        "count": 2653
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 3.9,
+        "count": 1644
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.3,
+        "count": 1404
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 3.0,
+        "count": 1248
+      },
+      {
+        "group": "Other",
+        "pct": 1.6,
+        "count": 676
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B90267506609693",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Caculama and Muquixe, which together are Mucari as it stood under Lei n.º 18/16, are added together.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caculama and Muquixe, which together are Mucari as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Caculama and Muquixe, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B56866030403615",
@@ -12368,7 +15239,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 966,
@@ -12579,7 +15453,8 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Namacunde and Chiéde, which together are Namacunde as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Namacunde and Chiéde, which together are Namacunde as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Namacunde and Chiéde, which together are Namacunde as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Namacunde and Chiéde, added together."
   },
   {
     "id": "AGO-RGPH2024-91424787B85725666887647",
@@ -12893,7 +15768,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 953,
@@ -12902,17 +15780,192 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "religion": {
-      "status": "not_available",
-      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Moçâmedes as it stood before (Lei n.º 18/16), so its own figures for these are not published."
+      "status": "not_available"
     },
-    "language": {
-      "status": "not_available",
-      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Moçâmedes as it stood before (Lei n.º 18/16), so its own figures for these are not published."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2024 census publishes ethnic group, mother tongue and religion only for the municipalities created in 2024, which do not match Moçâmedes as it stood before (Lei n.º 18/16), so its own figures for these are not published."
-    },
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 47.3,
+        "count": 197306
+      },
+      {
+        "group": "Umbundu",
+        "pct": 35.1,
+        "count": 146395
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 6.9,
+        "count": 28777
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 2.4,
+        "count": 9840
+      },
+      {
+        "group": "Humbi",
+        "pct": 2.0,
+        "count": 8154
+      },
+      {
+        "group": "Ngangela",
+        "pct": 1.5,
+        "count": 6366
+      },
+      {
+        "group": "Kikongo",
+        "pct": 1.0,
+        "count": 4130
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 4141
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 0.9,
+        "count": 3696
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.8,
+        "count": 3177
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 2933
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.2,
+        "count": 814
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.1,
+        "count": 329
+      },
+      {
+        "group": "Luvale",
+        "pct": 0.1,
+        "count": 277
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 132
+      },
+      {
+        "group": "Mandarin",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 86
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Ovimbundu",
+        "pct": 58.5,
+        "count": 243946
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 12.9,
+        "count": 53603
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.9,
+        "count": 41070
+      },
+      {
+        "group": "Ambundu",
+        "pct": 7.0,
+        "count": 29112
+      },
+      {
+        "group": "Other",
+        "pct": 4.0,
+        "count": 16468
+      },
+      {
+        "group": "Bakongo",
+        "pct": 3.1,
+        "count": 12937
+      },
+      {
+        "group": "Herero",
+        "pct": 2.2,
+        "count": 9299
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 1.3,
+        "count": 5532
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.9,
+        "count": 3745
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.1,
+        "count": 388
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.1,
+        "count": 287
+      },
+      {
+        "group": "Kwoi",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Vátua",
+        "pct": 0.0,
+        "count": 181
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio/median_age/religion/language/ethnicity",
@@ -12925,7 +15978,12 @@
     "country": "AGO",
     "match_by": "shape_id",
     "shape_id": "91424787B32970526214853",
-    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted."
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Moçâmedes, Lucira and Sacomar are added together for Moçâmedes as it stood under Lei n.º 18/16. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Moçâmedes, Lucira and Sacomar are added together for Moçâmedes as it stood under Lei n.º 18/16. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Moçâmedes, Lucira and Sacomar, added together. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B72729996019257",
@@ -13210,7 +16268,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 15.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 914,
@@ -13421,7 +16482,426 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Ombadja, Humbe and Naulila, which together are Ombadja as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ombadja, Humbe and Naulila, which together are Ombadja as it stood under Lei n.º 18/16, are added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ombadja, Humbe and Naulila, which together are Ombadja as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Ombadja, Humbe and Naulila, added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B39192527318793",
+    "level": "admin2",
+    "name": "Quela",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24918,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 18.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 1016,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 34.3,
+        "count": 8016
+      },
+      {
+        "group": "No religion",
+        "pct": 26.6,
+        "count": 6206
+      },
+      {
+        "group": "Not stated",
+        "pct": 8.0,
+        "count": 1874
+      },
+      {
+        "group": "Adventist",
+        "pct": 6.3,
+        "count": 1468
+      },
+      {
+        "group": "Methodist",
+        "pct": 5.2,
+        "count": 1206
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 4.1,
+        "count": 968
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 3.4,
+        "count": 797
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.3,
+        "count": 761
+      },
+      {
+        "group": "Evangelical",
+        "pct": 2.1,
+        "count": 494
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 2.0,
+        "count": 461
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 1.6,
+        "count": 369
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 220
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.6,
+        "count": 146
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.4,
+        "count": 91
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.3,
+        "count": 72
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.3,
+        "count": 66
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.2,
+        "count": 40
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 39
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 25
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Ambundu",
+        "pct": 87.4,
+        "count": 20425
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.1,
+        "count": 1185
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 2.8,
+        "count": 650
+      },
+      {
+        "group": "Bakongo",
+        "pct": 2.5,
+        "count": 580
+      },
+      {
+        "group": "Other",
+        "pct": 1.3,
+        "count": 294
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 0.9,
+        "count": 204
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Herero",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B39192527318793",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Quela and Xandel, which together are Quela as it stood under Lei n.º 18/16, are added together.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Quela and Xandel, which together are Quela as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Quela and Xandel, added together."
+  },
+  {
+    "id": "AGO-RGPH2024-91424787B65383538427912",
+    "level": "admin2",
+    "name": "Quirima",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 35615,
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "median_age": {
+      "value": 14.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "sex_ratio": {
+      "value": 959,
+      "unit": "males_per_1000_females",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 49.6,
+        "count": 16161
+      },
+      {
+        "group": "Protestant",
+        "pct": 26.8,
+        "count": 8721
+      },
+      {
+        "group": "No religion",
+        "pct": 10.7,
+        "count": 3499
+      },
+      {
+        "group": "Evangelical",
+        "pct": 5.4,
+        "count": 1771
+      },
+      {
+        "group": "Adventist",
+        "pct": 2.3,
+        "count": 737
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.9,
+        "count": 630
+      },
+      {
+        "group": "Assemblies of God (Pentecostal)",
+        "pct": 1.3,
+        "count": 411
+      },
+      {
+        "group": "Bom Deus Church",
+        "pct": 0.8,
+        "count": 246
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 104
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.2,
+        "count": 65
+      },
+      {
+        "group": "Tocoist",
+        "pct": 0.2,
+        "count": 74
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 24
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 30
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.1,
+        "count": 32
+      },
+      {
+        "group": "Animist",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Josafat Church",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kimbanguist",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Mensagem dos Últimos Tempos Church",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other",
+        "pct": 39.5,
+        "count": 12874
+      },
+      {
+        "group": "Lunda-Chokwe",
+        "pct": 35.6,
+        "count": 11587
+      },
+      {
+        "group": "Ambundu",
+        "pct": 14.4,
+        "count": 4687
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.2,
+        "count": 3004
+      },
+      {
+        "group": "Bakongo",
+        "pct": 0.7,
+        "count": 239
+      },
+      {
+        "group": "Ovimbundu",
+        "pct": 0.5,
+        "count": 150
+      },
+      {
+        "group": "Nyaneka-Humbe",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Cuangar",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ndonga",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ovambo",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language/ethnicity",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports",
+        "url": "https://censo2024.ine.gov.ao/",
+        "year": 2024,
+        "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B65383538427912",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "religion_year": 2024,
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed.",
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
     "id": "AGO-RGPH2024-91424787B32640595944585",
@@ -14062,9 +17542,103 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 50.1,
+        "count": 59824
+      },
+      {
+        "group": "Umbundu",
+        "pct": 39.6,
+        "count": 47270
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 3.5,
+        "count": 4150
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 3.2,
+        "count": 3768
+      },
+      {
+        "group": "Humbi",
+        "pct": 0.8,
+        "count": 898
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.7,
+        "count": 877
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 737
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.5,
+        "count": 655
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.3,
+        "count": 405
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.2,
+        "count": 272
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 297
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.1,
+        "count": 60
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.1,
+        "count": 96
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Luvale",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Mandarin",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Ovimbundu",
@@ -14152,6 +17726,8 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Tômbwa and Iona are added together for Tômbwa as it stood under Lei n.º 18/16. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group. The census tabulates the municipalities of 2024: Tômbwa and Iona are added together for Tômbwa as it stood under Lei n.º 18/16. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Tômbwa and Iona, added together. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16."
   },
   {
@@ -14185,9 +17761,88 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Umbundu",
+        "pct": 37.1,
+        "count": 18683
+      },
+      {
+        "group": "Nyaneka",
+        "pct": 20.2,
+        "count": 10194
+      },
+      {
+        "group": "Kwanyama",
+        "pct": 12.5,
+        "count": 6289
+      },
+      {
+        "group": "Other languages",
+        "pct": 8.8,
+        "count": 4450
+      },
+      {
+        "group": "Portuguese",
+        "pct": 8.0,
+        "count": 4006
+      },
+      {
+        "group": "Luvale",
+        "pct": 5.0,
+        "count": 2514
+      },
+      {
+        "group": "Humbi",
+        "pct": 4.6,
+        "count": 2327
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.9,
+        "count": 1438
+      },
+      {
+        "group": "Khoisan",
+        "pct": 0.4,
+        "count": 185
+      },
+      {
+        "group": "Kimbundu",
+        "pct": 0.3,
+        "count": 143
+      },
+      {
+        "group": "Ngangela",
+        "pct": 0.2,
+        "count": 82
+      },
+      {
+        "group": "Chokwe",
+        "pct": 0.1,
+        "count": 32
+      },
+      {
+        "group": "Fiote",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Creole",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kikongo",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Lingala",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Other",
@@ -14275,6 +17930,8 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
+    "language_year": 2024,
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups; foreign languages are one group.",
     "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
   },
   {
