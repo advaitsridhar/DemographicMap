@@ -30,10 +30,13 @@ were districts', Mityana's with Busujju in it and Serere's with Kasilo.)
 and men per 1,000 women, and the median age, interpolated within the age
 group that holds the middle person from the dashboard's groups made disjoint
 (0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over). The
-regions are the sums of their counties.
+regions are the sums of their districts: the dashboard draws one county,
+Chekwi in Nakapiripirit, without figures, so its counties make 78,864 fewer
+people than the census counted, while its districts make the census's count.
 
 **Checks.** Each unit's sexes make its total and its age groups make it too;
-the units make the country's total.
+the districts make the country's total, and each district's counties make the
+district but where one is drawn without figures.
 
 Usage:
     python -m scripts.fetch_census.uganda_census --points
@@ -211,35 +214,41 @@ def age_groups(total: int, ages: dict[str, int], where: str) -> list[tuple[int, 
     return groups
 
 
-def read_units() -> list[dict[str, Any]]:
-    """Every 2024 county, city division and municipality: codes, names, sexes, age groups."""
+def layer(level: str) -> dict[str, dict[str, Any]]:
+    """The dashboard's units at one level, from its map layer, which carries each unit's
+    figures: {code: {code, name, district, region, male, female, total}}. A unit drawn
+    twice (Rubaga division has a sliver of 0.1 km2 besides its outline) is one unit
+    when its figures agree; a unit drawn without figures is logged and left out."""
+    data = fetch_json(f"{API}/get_geospatial_data.php?level={level}")
     units: dict[str, dict[str, Any]] = {}
-    for sub in fetch_json(f"{API}/get_subregions.php"):
-        for district in fetch_json(f"{API}/get_districts.php?subregion_code={sub['code']}"):
-            for c in fetch_json(f"{API}/get_counties.php?district_code={district['code']}"):
-                male, female, total = (count(c.get(k))
-                                       for k in ("male_popn", "female_popn", "total_popn"))
-                if (male, female, total) == (None, None, None):
-                    # The list still names a few counties of before 2024 with no
-                    # figures (Chekwii, now Chekwii East and Chekwii West).
-                    log(f"  listed without figures: {c.get('name')} ({c.get('code')}), "
-                        f"{district['name']}")
-                    continue
-                if None in (male, female, total) or male + female != total:
-                    raise SystemExit(f"uganda_census: {c.get('name')}: {male} men and {female} "
-                                     f"women against {total}")
-                if str(c["code"]) in units:
-                    raise SystemExit(f"uganda_census: county code {c['code']} listed twice")
-                units[str(c["code"])] = {"code": str(c["code"]), "name": c["name"],
-                                         "district": district["name"],
-                                         "region": str(c.get("region_code") or ""),
-                                         "male": male, "female": female, "total": total}
-    made = sum(u["total"] for u in units.values())
-    if made != NATIONAL:
-        raise SystemExit(f"uganda_census: the counties make {made:,}, not the census's "
-                         f"{NATIONAL:,}")
+    for feature in (data.get("geojson") or data).get("features") or []:
+        pop = (feature.get("properties") or {}).get("population_data") or {}
+        code = str(pop.get("code") or "")
+        male, female, total = (count(pop.get(k)) for k in ("male_popn", "female_popn",
+                                                            "total_popn"))
+        if not code or (male, female, total) == (None, None, None):
+            log(f"  {level} drawn without figures: {pop.get('name') or feature['properties']}")
+            continue
+        if None in (male, female, total) or male + female != total:
+            raise SystemExit(f"uganda_census: {pop.get('name')}: {male} men and {female} women "
+                             f"against {total}")
+        unit = {"code": code, "name": pop.get("name"),
+                "district": str(pop.get("district_code") or code),
+                "region": str(pop.get("region_code") or ""),
+                "male": male, "female": female, "total": total}
+        seen = units.get(code)
+        if seen is not None:
+            if [seen[k] for k in ("male", "female", "total")] != [male, female, total]:
+                raise SystemExit(f"uganda_census: {level} {code} drawn twice with two counts")
+            continue
+        units[code] = unit
+    return units
+
+
+def add_ages(units: dict[str, dict[str, Any]], level: int) -> None:
+    """Each unit's age groups from its profile (level 1 a district, 2 a county)."""
     for code, unit in sorted(units.items()):
-        profile = fetch_json(f"{API}/get_profile_data.php?level=2&location_code={code}"
+        profile = fetch_json(f"{API}/get_profile_data.php?level={level}&location_code={code}"
                              "&format=detailed")
         tables = (profile.get("data") or {}).values()
         found = [t for t in tables if str(t.get("table_name")) == "Age Groups"]
@@ -251,7 +260,28 @@ def read_units() -> list[dict[str, Any]]:
         except ValueError as err:
             unit["groups"] = None
             log(f"  ages not read: {err}")
-    return list(units.values())
+
+
+def read_units() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Every 2024 district, and every county, city division and municipality: codes,
+    names, sexes, age groups. The districts must make the census's count, and each
+    district's counties must make the district, but where a county of it is drawn
+    without figures (Chekwi, in Nakapiripirit)."""
+    districts = layer("district")
+    counties = layer("county")
+    made = sum(u["total"] for u in districts.values())
+    if made != NATIONAL:
+        raise SystemExit(f"uganda_census: the districts make {made:,}, not the census's "
+                         f"{NATIONAL:,}")
+    for code, district in sorted(districts.items()):
+        inside = [c for c in counties.values() if c["district"] == code]
+        got = sum(c["total"] for c in inside)
+        if got != district["total"]:
+            log(f"  {district['name']}: its {len(inside)} counties with figures make {got:,} of "
+                f"its {district['total']:,}")
+    add_ages(districts, 1)
+    add_ages(counties, 2)
+    return list(districts.values()), list(counties.values())
 
 
 def title(name: str) -> str:
@@ -277,29 +307,31 @@ def fields(units: list[dict[str, Any]], note: str) -> dict[str, Any]:
             out["median_age"] = measure(value, unit="years", year=YEAR, source=SOURCE)
             out["median_age_note"] = (
                 "Interpolated within the age group that holds the middle person, from the 2024 "
-                "census's counts in the age groups it publishes for each county (0-4, 5-14, "
-                "15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over)"
-                + (", added up over the units named." if len(units) > 1 else "."))
+                "census's counts in the age groups it publishes for each district and county "
+                "(0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over)"
+                + (", added up over the units the population note names." if len(units) > 1
+                   else "."))
     return out
 
 
-def build(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
+          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+          ) -> tuple[list[dict[str, Any]], list[str]]:
     from .uganda_counties import PLACED, STRADDLING  # noqa: PLC0415
     by_code = {u["code"]: u for u in units}
     records, report = [], []
     regions = {s["name"].strip(): s for s in admin1}
     for code, label in REGION_NAMES.items():
-        members = [u for u in units if u["region"] == code]
+        members = [u for u in districts if u["region"] == code]
         shape = regions.get(label)
         if not members or shape is None:
-            raise SystemExit(f"uganda_census: region {code} ({label}): {len(members)} units, "
+            raise SystemExit(f"uganda_census: region {code} ({label}): {len(members)} districts, "
                              f"polygon {bool(shape)}")
         records.append(record(
             f"UGA-2024-{shape['id']}", shape["name"].strip(), level="admin1", parent="UGA",
             country="UGA", match_by="shape_id", shape_id=shape["id"],
             **fields(members, f"The 2024 census's counts for the region's {len(members)} "
-                              "counties, cities and municipalities, added up.")))
+                              "districts, added up.")))
     labels = {s["id"]: s["name"].strip() for s in admin2}
     used: dict[str, str] = {}
     for sid, codes in PLACED.items():
@@ -359,13 +391,15 @@ def main() -> int:
     args = ap.parse_args()
     if args.points:
         return write_points()
-    units = read_units()
-    total = sum(u["total"] for u in units)
-    log(f"  {len(units)} counties, cities and municipalities, {total:,} people, "
-        f"{sum(1 for u in units if u.get('groups'))} with their age groups")
+    districts, units = read_units()
+    log(f"  {len(districts)} districts making {NATIONAL:,}, "
+        f"{sum(1 for u in districts if u.get('groups'))} with their age groups; {len(units)} "
+        f"counties, cities and municipalities with figures, making "
+        f"{sum(u['total'] for u in units):,}, {sum(1 for u in units if u.get('groups'))} with "
+        "their age groups")
     admin1 = json.loads((SITE / "admin1" / "UGA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "UGA.units.json").read_text())
-    records, report = build(units, admin1, admin2)
+    records, report = build(districts, units, admin1, admin2)
     for line in report:
         log("  " + line)
     for r in records:

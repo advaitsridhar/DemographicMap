@@ -61,6 +61,66 @@ def vol1_row(name, vol3_entry, intersex=0):
             "total": a["total"] + intersex}
 
 
+def vol2_text(vol3, vol1, intersex):
+    """Volume II's rows: each county with Volume I's total, then its sub-counties with
+    Volume III's men and women and the intersex persons given for them."""
+    out = io.StringIO()
+    w = csv.writer(out)
+    w.writerow(["Distribution of Population by Sex, Number of Households ...", "", "", ""])
+    w.writerow(["Sub County", "Total", "Male ", "Female"])
+    w.writerow(["KENYA", sum(r["total"] for r in vol1.values()), 0, 0])
+    for key, row in vol1.items():
+        w.writerow([row["name"].upper(), f"{row['total']:,}", row["male"], row["female"]])
+        for sub, unit in vol3[key]["subs"].items():
+            extra = intersex.get(sub, 0)
+            w.writerow([unit["name"], f"{unit['total'] + extra:,}", unit["male"], unit["female"]])
+    return out.getvalue()
+
+
+def with_vol2(vol3, vol1, intersex):
+    """Volume II read for these counties and joined to Volume III."""
+    vol2 = kc.read_vol2(vol2_text(vol3, vol1, intersex), vol1, counties=len(vol1))
+    kc.attach_vol2(vol2, vol3, vol1)
+    return vol2
+
+
+class ReadVol2Test(unittest.TestCase):
+    def setUp(self):
+        self.vol3 = kc.read_vol3(table({("KERICHO", "BURETI"): ages(10),
+                                        ("KERICHO", "BELGUT"): ages(20)}))
+        self.vol1 = {"kericho": vol1_row("Kericho", self.vol3["kericho"], intersex=3)}
+
+    def test_everyone_counts_the_intersex_persons_too(self):
+        with_vol2(self.vol3, self.vol1, {"bureti": 1, "belgut": 2})
+        self.assertEqual(self.vol3["kericho"]["subs"]["bureti"]["everyone"], 401)
+        self.assertEqual(self.vol3["kericho"]["subs"]["belgut"]["everyone"], 802)
+
+    def test_all_47_counties_are_expected_by_default(self):
+        with self.assertRaises(SystemExit):
+            kc.read_vol2(vol2_text(self.vol3, self.vol1, {"bureti": 1, "belgut": 2}), self.vol1)
+
+    def test_men_and_women_must_agree_with_volume_iii(self):
+        text = vol2_text(self.vol3, self.vol1, {"bureti": 1, "belgut": 2})
+        vol2 = kc.read_vol2(text, self.vol1, counties=1)
+        vol2["kericho"]["bureti"]["male"] += 1
+        kc.attach_vol2(vol2, self.vol3, self.vol1)
+        self.assertNotIn("everyone", self.vol3["kericho"]["subs"]["bureti"])
+        self.assertIn("everyone", self.vol3["kericho"]["subs"]["belgut"])
+        self.assertTrue(any("Volume II has" in line for line in self.vol3["kericho"]["unread"]))
+
+    def test_sub_counties_must_make_the_county(self):
+        text = vol2_text(self.vol3, self.vol1, {"bureti": 1})      # two intersex missing
+        with self.assertRaises(SystemExit):
+            kc.read_vol2(text, self.vol1, counties=1)
+
+    def test_a_name_volume_iii_cuts_short_still_matches(self):
+        vol3 = kc.read_vol3(table({("NYANDARUA", "NYANDARUA CENTRA"): ages(10)}))
+        vol1 = {"nyandarua": vol1_row("Nyandarua", vol3["nyandarua"])}
+        text = vol2_text(vol3, vol1, {}).replace("NYANDARUA CENTRA,", "NYANDARUA CENTRAL,")
+        kc.attach_vol2(kc.read_vol2(text, vol1, counties=1), vol3, vol1)
+        self.assertEqual(vol3["nyandarua"]["subs"]["nyandaruacentra"]["everyone"], 400)
+
+
 class ReadVol3Test(unittest.TestCase):
     def test_single_years_sexes_and_totals_are_read(self):
         vol3 = kc.read_vol3(table({("KERICHO", "BURETI"): ages(10), ("KERICHO", "BELGUT"): ages(20)}))
@@ -104,17 +164,23 @@ class CountyRecordsTest(unittest.TestCase):
         self.vol1 = {"kericho": vol1_row("Kericho", self.vol3["kericho"], intersex=3),
                      "bomet": vol1_row("Bomet", self.vol3["bomet"], intersex=1)}
         self.admin1 = [{"id": "K1", "name": "Kericho"}, {"id": "B1", "name": "Bomet"}]
+        with_vol2(self.vol3, self.vol1, {"bureti": 2, "belgut": 1, "sotik": 1})
 
     def test_a_moved_sub_county_is_added_to_one_polygon_and_taken_from_the_other(self):
         records, shape_of = kc.county_records(self.vol1, self.vol3, self.admin1)
         by = {r["name"]: r for r in records}
-        bureti = self.vol3["kericho"]["subs"]["bureti"]["total"]
+        bureti = self.vol3["kericho"]["subs"]["bureti"]["everyone"]
+        self.assertEqual(bureti, self.vol3["kericho"]["subs"]["bureti"]["total"] + 2)
         self.assertEqual(by["Bomet"]["population"]["value"], self.vol1["bomet"]["total"] + bureti)
         self.assertEqual(by["Kericho"]["population"]["value"],
                          self.vol1["kericho"]["total"] - bureti)
-        self.assertIn("Bureti sub-county of Kericho County", by["Bomet"]["population_note"])
-        self.assertIn("less Bureti sub-county", by["Kericho"]["population_note"])
-        self.assertIn("3 intersex persons", by["Kericho"]["population_note"])
+        self.assertEqual(by["Bomet"]["population_note"],
+                         "The 2019 census's counts of everyone in Bomet County and in Bureti "
+                         "sub-county of Kericho County, added up: the county is drawn here with "
+                         "Bureti's ground.")
+        self.assertEqual(by["Kericho"]["population_note"],
+                         "The 2019 census's count of everyone in Kericho County less Bureti "
+                         "sub-county, which is drawn here within Bomet County.")
         self.assertEqual(shape_of, {"K1": "kericho", "B1": "bomet"})
         # Kericho without Bureti is Belgut alone: 30 a year to 39, so the middle
         # person is 20 years into the run.
@@ -138,9 +204,10 @@ class ConstituencyTest(unittest.TestCase):
             ("KERICHO", "BURETI"): ages(10), ("KERICHO", "KIPKELION"): ages(30),
             ("BOMET", "SOTIK"): ages(20), ("BOMET", "BOMET EAST"): ages(6),
             ("BOMET", "KONOIN"): ages(8), ("BOMET", "MAU FOREST"): ages(2, 0)}))
-        self.vol1 = {"kericho": vol1_row("Kericho", self.vol3["kericho"]),
+        self.vol1 = {"kericho": vol1_row("Kericho", self.vol3["kericho"], intersex=1),
                      "bomet": vol1_row("Bomet", self.vol3["bomet"])}
         self.admin1 = [{"id": "K1", "name": "Kericho"}, {"id": "B1", "name": "Bomet"}]
+        with_vol2(self.vol3, self.vol1, {"bureti": 1})
         self.admin2 = [{"id": "c1", "name": "Buret", "parent": "B1"},
                        {"id": "c2", "name": "Bomet East", "parent": "B1"},
                        {"id": "c3", "name": "Konoin", "parent": "B1"},
@@ -159,7 +226,9 @@ class ConstituencyTest(unittest.TestCase):
 
     def test_crosswalk_entries_are_written_and_the_rest_say_why(self):
         by, report = self.build()
-        self.assertEqual(by["Buret"]["population"]["value"], 400)
+        # Bureti's 400 men and women and its one intersex person.
+        self.assertEqual(by["Buret"]["population"]["value"], 401)
+        self.assertEqual(by["Buret"]["sex_ratio"]["value"], 1000)
         self.assertEqual(by["Buret"]["population_note"],
                          "The 2019 census's count for Bureti sub-county of Kericho County, which "
                          "is this constituency's ground.")

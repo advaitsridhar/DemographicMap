@@ -11,8 +11,10 @@ a clean client). Three are read here:
 * Volume III, *Distribution of Population by Age, Sex, County and Sub-County*:
   everyone by single year of age (to 99, then 100 and over, and "not stated")
   and by sex, for every county ("ALL") and every sub-county.
-* Volume II, *Distribution of Population by Sex and Sub County*, as a check on
-  the sub-county totals.
+* Volume II, *Distribution of Population by Sex, Number of Households, Land
+  Area, Population Density and Sub County*: everyone by sex for every
+  sub-county, its totals counting intersex persons as well. Its totals are the
+  constituencies' head counts, and its men and women must be Volume III's.
 
 **Counties.** Population is Volume I's count of everyone, intersex persons
 included; the sex ratio is men per 1,000 women; the median age is interpolated
@@ -380,6 +382,67 @@ def read_vol3(text: str) -> dict[str, dict[str, Any]]:
     return out
 
 
+def read_vol2(text: str, vol1: dict[str, dict[str, int]], counties: int = 47
+              ) -> dict[str, dict[str, dict[str, int]]]:
+    """{county key: {sub-county fold: {total, male, female}}} from Volume II's table of
+    population by sex and sub-county, whose totals count intersex persons too. A
+    county's row is the one with its name and Volume I's total; the rows after it, to
+    the next county's, are its sub-counties, and they must make it."""
+    rows = list(csv.reader(io.StringIO(text)))
+    start = next((i for i, r in enumerate(rows) if r and r[0].strip().lower() == "sub county"),
+                 None)
+    if start is None:
+        raise SystemExit("kenya_census: Volume II's table has no 'Sub County' header row")
+    out: dict[str, dict[str, dict[str, int]]] = {}
+    current = None
+    for row in rows[start + 1:]:
+        if len(row) < 4 or not row[0].strip():
+            continue
+        name = row[0].strip()
+        total, male, female = (number(c) for c in row[1:4])
+        key = re.sub(r"city$", "", fold(name))
+        if key == "kenya":
+            continue
+        if key in vol1 and total == vol1[key]["total"]:
+            current = out.setdefault(key, {})
+            continue
+        if current is None:
+            raise SystemExit(f"kenya_census: Volume II's {name} comes before any county")
+        current[fold(name)] = {"name": name, "total": total, "male": male, "female": female}
+    for key, subs in out.items():
+        made = sum(s["total"] for s in subs.values())
+        if made != vol1[key]["total"]:
+            raise SystemExit(f"kenya_census: Volume II's sub-counties of {vol1[key]['name']} make "
+                             f"{made:,}, not {vol1[key]['total']:,}")
+    if len(out) != counties:
+        raise SystemExit(f"kenya_census: Volume II gives {len(out)} counties, not {counties}")
+    return out
+
+
+def attach_vol2(vol2: dict[str, dict[str, dict[str, int]]], vol3: dict[str, dict[str, Any]],
+                vol1: dict[str, dict[str, int]]) -> None:
+    """Give each Volume III sub-county its Volume II count of everyone (``everyone``),
+    where the two volumes' men and women agree. Volume III cuts long names short
+    ("NYANDARUA CENTRA"), so a name may match the one Volume II name it begins."""
+    by_name = {re.sub(r"city$", "", k): v for k, v in vol3.items()}
+    for key in vol1:
+        entry = vol3.get(key) or by_name.get(key)
+        subs2 = vol2.get(key, {})
+        for sub, unit in entry["subs"].items():
+            hit = subs2.get(sub)
+            if hit is None:
+                starts = [s for s in subs2 if s.startswith(sub)]
+                hit = subs2[starts[0]] if len(starts) == 1 else None
+            if hit is None or unit["total"] is None:
+                continue
+            if (hit["male"], hit["female"]) != (unit["male"], unit["female"]):
+                entry["unread"].append(f"{unit['name']}: Volume II has {hit['male']:,} men and "
+                                       f"{hit['female']:,} women, Volume III {unit['male']:,} "
+                                       f"and {unit['female']:,}")
+                continue
+            unit["everyone"] = hit["total"]
+
+
 def median(units: list[dict[str, Any]]) -> float | None:
     """The median of several units' single years added together, ages not stated left out."""
     groups = [(a, a, sum(u["ages"][a] for u in units)) for a in range(100)]
@@ -440,25 +503,24 @@ def county_records(vol1: dict[str, dict[str, int]], vol3: dict[str, dict[str, An
                 "The 2019 census's count of everyone in the county.")
         for (home, sub), into in MOVED.items():
             part = tables[home]["subs"].get(sub)
-            if part is None or part["total"] is None:
-                raise SystemExit(f"kenya_census: {home}/{sub}: no such sub-county row")
+            if part is None or part["total"] is None or "everyone" not in part:
+                raise SystemExit(f"kenya_census: {home}/{sub}: no such sub-county in both "
+                                 "Volumes II and III")
             name, home_name = title(part["name"]), title(vol1[home]["name"])
             if into == key:
-                total, male, female = (total + part["total"], male + part["male"],
+                total, male, female = (total + part["everyone"], male + part["male"],
                                        female + part["female"])
                 units, of = units + [part], f", of the county and {name} together"
-                note = (f"The 2019 census's counts for {shape['name']} County ({row['intersex']:,} "
-                        f"intersex persons included) and for {name} sub-county of {home_name} "
-                        f"County, added up: the county is drawn here with {name}'s ground.")
+                note = (f"The 2019 census's counts of everyone in {shape['name']} County and in "
+                        f"{name} sub-county of {home_name} County, added up: the county is "
+                        f"drawn here with {name}'s ground.")
             elif home == key:
-                total, male, female = (total - part["total"], male - part["male"],
+                total, male, female = (total - part["everyone"], male - part["male"],
                                        female - part["female"])
                 units, of = [less(ages["all"], part)], f", of the county without {name}"
                 note = (f"The 2019 census's count of everyone in {shape['name']} County less "
                         f"{name} sub-county, which is drawn here within "
-                        f"{title(vol1[into]['name'])} County. The county's {row['intersex']:,} "
-                        "intersex persons, whom the census gives only by county, are all counted "
-                        "here.")
+                        f"{title(vol1[into]['name'])} County.")
         moved = total != row["total"]
         records.append(record(
             f"KEN-2019-{shape['id']}", shape["name"], level="admin1", parent="KEN",
@@ -556,7 +618,10 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
                                             "license": LICENCE}]))
             continue
         units = [by_key[home]["subs"][sub] for home, sub in taken]
-        total = sum(u["total"] for u in units)
+        if any("everyone" not in u for u in units):
+            raise SystemExit(f"kenya_census: {shape['name']}: a sub-county of {taken} has no "
+                             "Volume II count agreeing with Volume III")
+        total = sum(u["everyone"] for u in units)
         male, female = sum(u["male"] for u in units), sum(u["female"] for u in units)
         names = [title(u["name"]) for u in units]
         if len(units) == 1:
@@ -603,8 +668,13 @@ def main() -> int:
         return write_cod_points(COD_AB, 2, POINTS)
     vol1 = read_vol1(fetch(VOL1))
     vol3 = read_vol3(fetch(VOL3))
-    log(f"  Volume I: 47 counties making {NATIONAL:,}; Volume III: {len(vol3)} counties and "
-        f"{sum(len(e['subs']) for e in vol3.values())} sub-counties, every row checked")
+    vol2 = read_vol2(fetch(VOL2), vol1)
+    attach_vol2(vol2, vol3, vol1)
+    log(f"  Volume I: 47 counties making {NATIONAL:,}; Volume II: "
+        f"{sum(len(s) for s in vol2.values())} sub-counties making their counties; Volume III: "
+        f"{len(vol3)} counties and {sum(len(e['subs']) for e in vol3.values())} sub-counties, "
+        f"{sum(1 for e in vol3.values() for u in e['subs'].values() if 'everyone' in u)} of them "
+        "agreeing with Volume II's men and women")
     for entry in vol3.values():
         for line in entry["unread"]:
             log(f"  ages not read for {entry['name']}, {line}")

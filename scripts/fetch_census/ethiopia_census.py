@@ -393,6 +393,14 @@ def projection_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, 
 # western weredas are ET99 in the outlines; SNNPR's (ET07) went to Sidama (ET16),
 # South West Ethiopia (ET11) and South Ethiopia (ET08), and kept ET07 in Central.
 REGION_FAMILY = {"ET01": {"ET01", "ET99"}, "ET07": {"ET07", "ET08", "ET11", "ET16"}}
+# Zones the map draws that are a whole region: {zone label: projection regions}.
+PROJECTION_WHOLE = {"Region 14": ["addisababa"], "Dire Dawa": ["diredawa"],
+                    "Hareri": ["harari"]}
+# The projection's region codes within each region the map draws.
+REGION_CODES = {"Tigray": {"ET01"}, "Afar": {"ET02"}, "Amhara": {"ET03"}, "Oromia": {"ET04"},
+                "Somali": {"ET05"}, "Beneshangul Gumu": {"ET06"},
+                "SNNPR": {"ET07", "ET11", "ET16"}, "Gambela": {"ET12"}, "Hareri": {"ET13"},
+                "Addis Ababa": {"ET14"}, "Dire Dawa": {"ET15"}}
 
 
 def bare(name: str) -> str:
@@ -477,23 +485,37 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
         if code in outline:
             drawn_of[row["zone"]].add(home.get(outline[code], "straddling"))
     placed_by_zone: dict[str, list[str]] = defaultdict(list)
+    unlocated: set[str] = set()
     for zone, codes in sorted(unknown_zones.items()):
         inside = drawn_of.get(zone, set())
         names = [f"{weredas[c]['name']} ({c}, {weredas[c]['total']:,})" for c in codes]
+        if not inside:
+            # A zone none of whose weredas matched by name (Mekelle, one wereda in
+            # the projection and seven sub-cities in the outlines) is found by its
+            # code among the outlines', where the code is the same.
+            inside = {home.get(c, "straddling") for c in NAMES if c[:6] == zone}
         if len(inside) == 1 and "straddling" not in inside:
             placed_by_zone[next(iter(inside))] += codes
             report.append(f"projection weredas matched to no outline, in zone {zone}, placed "
                           f"with the zone's other weredas: {names}")
         else:
+            if not inside:
+                unlocated.add(zone[:4])
             report.append(f"projection weredas matched to no outline, in zone {zone}, whose "
                           f"weredas lie in {sorted(inside)}: {names}")
     labels = {s["id"]: s["name"].strip() for s in admin2}
+    region_of = {s["id"]: s["name"].strip() for s in admin1}
     for sid in sorted(ACCEPTED, key=lambda s: labels.get(s, s)):
         codes = [c for c in weredas if c in outline and home.get(outline[c]) == sid]
         codes += placed_by_zone.get(sid, [])
         zones = {weredas[c]["zone"] for c in codes}
         blind = sorted(z for z in zones if z in unknown_zones
                        and any(c not in codes for c in unknown_zones[z]))
+        # A zone of 2022 that could not be found at all may lie in any drawn zone of
+        # its region, so none of them is written.
+        parent = next((s["parent"] for s in admin2 if s["id"] == sid), None)
+        lost = sorted(unlocated & REGION_CODES.get(region_of.get(parent, ""), set()))
+        blind += [f"a zone of region {r} not found" for r in lost]
         if not codes or blind or sid not in labels:
             report.append(f"{labels.get(sid, sid)}: not written -- {len(codes)} weredas, zones "
                           f"holding weredas matched to no outline {blind}")
@@ -506,6 +528,20 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
             population_note=(f"The statistics office's projections for July 2022, from the 2007 "
                              f"census, for the {len(codes)} weredas that lie within the zone as "
                              "drawn, added up."),
+            sources=cite))
+    # A region drawn as a single zone takes the region's projection.
+    written = {r["shape_id"] for r in records if r["level"] == "admin2"}
+    for shape in admin2:
+        keys = PROJECTION_WHOLE.get(shape["name"].strip())
+        if not keys or shape["id"] in written:
+            continue
+        total = sum(regions[k]["total"] for k in keys)
+        records.append(record(
+            f"ETH-2022-{shape['id']}", shape["name"].strip(), level="admin2", parent="ETH",
+            country="ETH", match_by="shape_id", shape_id=shape["id"],
+            population=measure(total, year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
+            population_note=("The statistics office's projection for July 2022, from the 2007 "
+                             "census, for the region, which is drawn as this one zone."),
             sources=cite))
     return records, report
 
