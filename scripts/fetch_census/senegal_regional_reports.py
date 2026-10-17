@@ -251,7 +251,9 @@ def read(region: str) -> dict[str, Any]:
         raise SystemExit(f"senegal_regional_reports: {url} is not a PDF: {blob[:60]!r}")
     log(f"  {region}: read {url}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     reader = PdfReader(io.BytesIO(blob))
-    text = "\f".join((page.extract_text() or "") for page in reader.pages)
+    # The state and structure chapter is within the first 80 pages of every
+    # report; reading the rest (up to 200 pages, slowly) ran the job out of time.
+    text = "\f".join((page.extract_text() or "") for page in reader.pages[:80])
     return parsed(region, text, url)
 
 
