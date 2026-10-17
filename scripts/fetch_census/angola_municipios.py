@@ -896,45 +896,56 @@ def main() -> int:
     import pdfplumber                                # noqa: PLC0415
     stems = [s for s in REPORTS if not args.only or s in args.only.split(",")]
     reports: list[Report] = []
+    failed: list[str] = []
     for stem in stems:
         url = URL.format(stem=stem)
-        blob = http_get(url, binary=True, cache=False, timeout=600)
-        texts = page_texts(blob)
-        wanted = {i for i, t in enumerate(texts)
-                  if any(k in t for k in ("residentepormunicipiosegundoosexo",
-                                          "porgruposetariosquinquenais",
-                                          *(s["key"] for s in TABLES.values())))}
-        pages: list[list[Row]] = [[] for _ in texts]
-        with pdfplumber.open(io.BytesIO(blob)) as pdf:
-            for i in sorted(wanted):
-                words = pdf.pages[i].extract_words(use_text_flow=False, keep_blank_chars=False)
-                pages[i] = rows_of(words)
-        rep = read_report(stem, pages, texts)
+        try:
+            blob = http_get(url, binary=True, cache=False, timeout=600)
+            texts = page_texts(blob)
+            wanted = {i for i, t in enumerate(texts)
+                      if any(k in t for k in ("residentepormunicipiosegundoosexo",
+                                              "porgruposetariosquinquenais",
+                                              *(s["key"] for s in TABLES.values())))}
+            pages: list[list[Row]] = [[] for _ in texts]
+            with pdfplumber.open(io.BytesIO(blob)) as pdf:
+                for i in sorted(wanted):
+                    words = pdf.pages[i].extract_words(use_text_flow=False,
+                                                       keep_blank_chars=False)
+                    pages[i] = rows_of(words)
+            rep = read_report(stem, pages, texts)
+        except Exception as exc:                      # noqa: BLE001
+            failed.append(stem)
+            log(f"angola_municipios: {stem}: {type(exc).__name__}: {exc}")
+            continue
         reports.append(rep)
         log(f"angola_municipios: {stem}: {len(blob):,} bytes, {len(texts)} pages, "
             f"{len(wanted)} read; province {rep.province!r} {rep.total}; "
             f"{len(rep.new)} municipalities of 2024, {len(rep.old)} of 2016; "
             + ", ".join(f"{k} {len(v)} rows" for k, v in rep.tables.items()))
-        log(f"    2016: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.old))
-        log(f"    2024: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.new))
-    national = json.loads((PROCESSED / "angola_province.json").read_text(encoding="utf-8")) \
-        if (PROCESSED / "angola_province.json").exists() else []
+        log("    2016: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.old))
+        log("    2024: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.new))
+    path = PROCESSED / "angola_province.json"
+    national = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
     disagree = compare_national(reports, national)
-    for line in disagree[:40]:
+    for line in disagree[:60]:
         log(f"  national check: {line}")
-    if disagree:
-        raise SystemExit(f"angola_municipios: {len(disagree)} provincial compositions differ "
-                         f"from the national report's")
     admin1 = json.loads((SITE / "admin1" / "AGO.units.json").read_text(encoding="utf-8"))
     admin2 = json.loads((SITE / "admin2" / "AGO.units.json").read_text(encoding="utf-8"))
     records, lines = build(reports, admin1, admin2)
     for line in lines:
         log(line)
-    a1 = sum(r["level"] == "admin1" for r in records)
     a2 = [r for r in records if r["level"] == "admin2"]
-    log(f"  {a1} provinces; {sum(not isinstance(r['population'], dict) or 'value' in r['population'] for r in a2)} "
-        f"municipality polygons with a count; {len(a2)} admin2 records")
-    log(f"  country: {sum(r['population']['value'] for r in records if r['level'] == 'admin1'):,}")
+    log(f"  {sum(r['level'] == 'admin1' for r in records)} provinces; "
+        f"{sum('value' in r['population'] for r in a2)} municipality polygons with a count, "
+        f"{sum(isinstance(r['ethnicity'], list) for r in a2)} with ethnic groups, "
+        f"{sum('value' in r['median_age'] for r in a2)} with a median age; "
+        f"{len(a2)} second-level records")
+    log(f"  the provinces make {sum(r['population']['value'] for r in records if r['level'] == 'admin1'):,}")
+    if failed:
+        raise SystemExit(f"angola_municipios: reports not read: {', '.join(failed)}")
+    if disagree:
+        raise SystemExit(f"angola_municipios: {len(disagree)} provincial compositions differ "
+                         f"from the national report's")
     write_json(PROCESSED / OUT, records)
     return 0
 
