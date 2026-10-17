@@ -1,247 +1,81 @@
-== sheet https://cms.nsomalawi.mw/api/download/277/Series-A.-Population-Tables.xlsx A1 60 12
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 558,785 bytes Content-Disposition=attachment; filename=Series-A.-Population-Tables.xlsx
-  sheet 'A1': 1003 rows
-     1: Table A1: Population o
-     2: Region and District | 2018 |  |  | 2008
-     4:  | Total | Male | Female | Total | Male | Female
-     5: Malawi | 17563749 | 8521460 | 9042289 | 13029498 | 6370935 | 6658563
-     7: Northern | 2289780 | 1114497 | 1175283 | 1679491 | 819491 | 860000
-     8: Chitipa | 234927 | 114392 | 120535 | 176835 | 85712 | 91123
-     9: Karonga | 365028 | 176197 | 188831 | 264112 | 128070 | 136042
-    10: Nkhata Bay | 284681 | 139341 | 145340 | 215429 | 105292 | 110137
-    11: Rumphi | 229161 | 112652 | 116509 | 166460 | 82268 | 84192
-    12: Mzimba | 940184 | 455867 | 484317 | 718402 | 348906 | 369496
-    13: Likoma | 14527 | 7200 | 7327 | 10714 | 5110 | 5604
-    14: Mzuzu City | 221272 | 108848 | 112424 | 127539 | 64133 | 63406
-    16: Central | 7523340 | 3679556 | 3843784 | 5497252 | 2715440 | 2781812
-    17: Kasungu | 842953 | 417295 | 425658 | 623592 | 312194 | 311398
-    18: Nkhotakota | 393077 | 192615 | 200462 | 299240 | 148677 | 150563
-    19: Ntchisi | 317069 | 154843 | 162226 | 222374 | 109297 | 113077
-    20: Dowa | 772569 | 378160 | 394409 | 559849 | 276084 | 283765
-    21: Salima | 478346 | 231931 | 246415 | 337928 | 165455 | 172473
-    22: Lilongwe | 1637583 | 795428 | 842155 | 1232972 | 605474 | 627498
-    23: Mchinji | 602305 | 296786 | 305519 | 454584 | 227620 | 226964
-    24: Dedza | 830512 | 395882 | 434630 | 625828 | 300310 | 325518
-    25: Ntcheu | 659608 | 319415 | 340193 | 471353 | 226396 | 244957
-    26: Lilongwe City | 989318 | 497201 | 492117 | 669532 | 343933 | 325599
-    28: Southern | 7750629 | 3727407 | 4023222 | 5852755 | 2836004 | 3016751
-    29: Mangochi | 1148611 | 545500 | 603111 | 796036 | 382230 | 413806
-    30: Machinga | 735438 | 350742 | 384696 | 494835 | 238455 | 256380
-    31: Zomba | 746724 | 356718 | 390006 | 578766 | 277068 | 301698
-    32: Chiradzulu | 356875 | 169679 | 187196 | 287604 | 135975 | 151629
-    33: Blantyre | 451220 | 218464 | 232756 | 339406 | 164745 | 174661
-    34: Mwanza | 130949 | 63534 | 67415 | 92237 | 44600 | 47637
-    35: Thyolo | 721456 | 340759 | 380697 | 590472 | 281815 | 308657
-    36: Mulanje | 684107 | 325115 | 358992 | 523949 | 247570 | 276379
-    37: Phalombe | 429450 | 207006 | 222444 | 315185 | 150445 | 164740
-    38: Chikwawa | 564684 | 276890 | 287794 | 437892 | 218514 | 219378
-    39: Nsanje | 299168 | 143578 | 155590 | 241107 | 118759 | 122348
-    40: Balaka | 438379 | 209274 | 229105 | 316574 | 152335 | 164239
-    41: Neno | 138291 | 67357 | 70934 | 108339 | 52751 | 55588
-    42: Zomba City | 105013 | 51619 | 53394 | 81501 | 40842 | 40659
-    43: Blantyre City | 800264 | 401172 | 399092 | 648852 | 329900 | 318952
-== sheet https://cms.nsomalawi.mw/api/download/277/Series-A.-Population-Tables.xlsx A6 70 26
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 558,785 bytes Content-Disposition=attachment; filename=Series-A.-Population-Tables.xlsx
-  sheet 'A6': 806 rows
-     1: Table A6: Population b
-     2: Age Group | Northern
-     3:  | Northern Total | Chitipa | Karonga | Nkhata Bay | Rumphi | Mzimba | Likoma | Mzuzu City
-     4: Total | 2289780 | 234927 | 365028 | 284681 | 229161 | 940184 | 14527 | 221272
-     5: Less than 1 Year | 63749 | 6313 | 9919 | 8140 | 6503 | 27132 | 308 | 5434
-     6: 1-4 | 255335 | 25492 | 40512 | 31883 | 26086 | 108824 | 1363 | 21175
-     7: 5-9 | 339840 | 36269 | 55280 | 41422 | 34042 | 143746 | 1837 | 27244
-     8: 10-14 | 340115 | 35726 | 56429 | 43797 | 34144 | 139084 | 1936 | 28999
-     9: 15-19 | 274854 | 28094 | 44672 | 36044 | 27228 | 110362 | 1798 | 26656
-    10: 20-24 | 219632 | 21979 | 34564 | 27359 | 21512 | 86444 | 1547 | 26227
-    11: 25-29 | 154384 | 15796 | 24225 | 17762 | 15213 | 59481 | 1198 | 20709
-    12: 30-34 | 139341 | 13812 | 22517 | 15975 | 13915 | 53457 | 1094 | 18571
-    13: 35-39 | 117574 | 11381 | 18798 | 13712 | 12155 | 45462 | 885 | 15181
-    14: 40-44 | 94666 | 9576 | 15029 | 11223 | 9568 | 37885 | 675 | 10710
-    15: 45-49 | 69657 | 7703 | 10698 | 8514 | 7239 | 28565 | 481 | 6457
-    16: 50-54 | 57721 | 6130 | 8377 | 7342 | 5688 | 25187 | 358 | 4639
-    17: 55-59 | 43661 | 4438 | 6355 | 5473 | 4335 | 19665 | 279 | 3116
-    18: 60-64 | 34645 | 3233 | 5061 | 4579 | 3437 | 15722 | 197 | 2416
-    19: 65-69 | 28236 | 2914 | 4099 | 3698 | 2681 | 13177 | 181 | 1486
-    20: 70-74 | 20607 | 2123 | 3202 | 2826 | 2084 | 9275 | 109 | 988
-    21: 75-79 | 16346 | 1872 | 2441 | 2199 | 1506 | 7638 | 107 | 583
-    22: 80-84 | 9750 | 1070 | 1535 | 1362 | 943 | 4401 | 90 | 349
-    23: 85-89 | 6591 | 655 | 948 | 947 | 578 | 3201 | 49 | 213
-    24: 90+ | 3076 | 351 | 367 | 424 | 304 | 1476 | 35 | 119
-    27: Age Group | Central
-    28:  | Central Total | Kasungu | Nklhotakota | Ntchisi | Dowa | Salima | Lilongwe | Mchinji | Dedza | Ntcheu | Lilongwe City
-    29: Total | 7523340 | 842953 | 393077 | 317069 | 772569 | 478346 | 1637583 | 602305 | 830512 | 659608 | 989318
-    30: Less than 1 Year | 221667 | 24183 | 12765 | 9495 | 21355 | 15761 | 49641 | 17014 | 24551 | 19034 | 27868
-    31: 1-4 | 867523 | 97230 | 48885 | 37714 | 84116 | 61548 | 191632 | 71639 | 96697 | 76174 | 101888
-    32: 5-9 | 1110160 | 131897 | 61171 | 48166 | 112082 | 75384 | 242497 | 93243 | 124764 | 97537 | 123419
-    33: 10-14 | 1067422 | 123609 | 57564 | 46556 | 112517 | 69411 | 234763 | 88404 | 118697 | 94861 | 121040
-    34: 15-19 | 856872 | 97557 | 46268 | 35948 | 89067 | 54560 | 185488 | 68232 | 93616 | 76299 | 109837
-    35: 20-24 | 728581 | 79268 | 36764 | 29709 | 73282 | 42614 | 153739 | 56623 | 76463 | 62149 | 117970
-    36: 25-29 | 548577 | 57510 | 26385 | 21774 | 55344 | 32187 | 113238 | 42471 | 57907 | 44521 | 97240
-    37: 30-34 | 493164 | 52657 | 23873 | 19665 | 49555 | 29002 | 101965 | 38810 | 51099 | 40115 | 86423
-    38: 35-39 | 417081 | 45263 | 19992 | 16462 | 40732 | 24765 | 86893 | 31550 | 43366 | 35919 | 72139
-    39: 40-44 | 319416 | 35072 | 15343 | 13030 | 33368 | 18394 | 69531 | 24303 | 34507 | 26951 | 48917
-    40: 45-49 | 234183 | 25915 | 11434 | 9453 | 25645 | 14331 | 53441 | 18924 | 26551 | 19227 | 29262
-    41: 50-54 | 166790 | 19719 | 8336 | 7166 | 18847 | 9427 | 37280 | 13459 | 18548 | 15094 | 18914
-    42: 55-59 | 131943 | 15405 | 6547 | 5785 | 15150 | 7696 | 30058 | 10668 | 15499 | 12636 | 12499
-    43: 60-64 | 97503 | 11554 | 4907 | 4245 | 11131 | 5739 | 21893 | 7867 | 11582 | 10086 | 8499
-    44: 65-69 | 95337 | 9838 | 4677 | 4366 | 10871 | 6263 | 22534 | 6857 | 12636 | 11242 | 6053
-    45: 70-74 | 58819 | 6118 | 2822 | 2562 | 6772 | 3731 | 14795 | 4445 | 8205 | 6142 | 3227
-    46: 75-79 | 51858 | 5012 | 2459 | 2242 | 6066 | 3541 | 13331 | 3794 | 7928 | 5376 | 2109
-    47: 80-84 | 24995 | 2446 | 1233 | 1269 | 2957 | 1757 | 6273 | 1718 | 3484 | 2873 | 985
-    48: 85-89 | 21521 | 1888 | 1105 | 1004 | 2613 | 1527 | 5829 | 1498 | 3034 | 2317 | 706
-    49: 90+ | 9928 | 812 | 547 | 458 | 1099 | 708 | 2762 | 786 | 1378 | 1055 | 323
-    51: Age Group |  |  |  |  |  |  |  | Southern
-    52:  | Southern Total | Mangochi | Machinga | Zomba | Chiradzulu | Blantyre | Mwanza | Thyolo | Mulanje | Phalombe | Chikwawa | Nsanje | Balaka | Neno | Zomba City | Blantyre City
-    53: Total | 7750629 | 1148611 | 735438 | 746724 | 356875 | 451220 | 130949 | 721456 | 684107 | 429450 | 564684 | 299168 | 438379 | 138291 | 105013 | 800264
-    54: Less than 1 Year | 237386 | 41919 | 25237 | 21770 | 9498 | 12651 | 3718 | 19308 | 20001 | 13197 | 18173 | 9410 | 13640 | 4419 | 2658 | 21787
-    55: 1-4 | 906746 | 159893 | 98641 | 84885 | 36645 | 47927 | 15534 | 74654 | 74015 | 50445 | 68607 | 37542 | 52645 | 16757 | 10057 | 78499
-    56: 5-9 | 1182878 | 191298 | 126674 | 116532 | 50640 | 63501 | 19219 | 106475 | 101489 | 69549 | 87150 | 48426 | 69588 | 20873 | 12786 | 98678
-    57: 10-14 | 1125766 | 164816 | 110227 | 112578 | 51409 | 64836 | 18697 | 110834 | 103884 | 66702 | 79089 | 42841 | 66509 | 20357 | 13705 | 99282
-    58: 15-19 | 904219 | 129962 | 82459 | 87170 | 42355 | 54455 | 15301 | 87179 | 82074 | 50352 | 64655 | 34913 | 51897 | 15818 | 12759 | 92870
-    59: 20-24 | 703363 | 95417 | 60188 | 65405 | 32371 | 43724 | 13181 | 63194 | 60298 | 36651 | 50816 | 25541 | 37453 | 13096 | 11895 | 94133
-    60: 25-29 | 526450 | 72855 | 46074 | 47646 | 23828 | 31132 | 9455 | 45178 | 43437 | 27259 | 38740 | 19624 | 27090 | 9140 | 9613 | 75379
-    61: 30-34 | 474721 | 63341 | 40139 | 43759 | 21800 | 28049 | 8129 | 43091 | 42173 | 26111 | 33530 | 15700 | 24538 | 8286 | 8833 | 67242
-    62: 35-39 | 434343 | 56777 | 36086 | 41455 | 21026 | 26513 | 7469 | 40623 | 38857 | 22627 | 31454 | 15171 | 23001 | 7525 | 7701 | 58058
-    63: 40-44 | 315518 | 40052 | 25287 | 29738 | 15486 | 20309 | 5371 | 31929 | 28710 | 16243 | 23032 | 11385 | 16871 | 5602 | 5005 | 40498
-    64: 45-49 | 232028 | 32512 | 20687 | 22010 | 11542 | 14316 | 3812 | 23724 | 20180 | 11678 | 17964 | 9217 | 12494 | 4125 | 3273 | 24494
-    65: 50-54 | 163301 | 22239 | 13527 | 16033 | 8679 | 10378 | 2745 | 17389 | 14741 | 8240 | 12180 | 6144 | 9326 | 3141 | 2354 | 16185
-    66: 55-59 | 131317 | 18610 | 11735 | 13412 | 7275 | 7955 | 2189 | 13734 | 12197 | 6902 | 9595 | 5063 | 7692 | 2318 | 1531 | 11109
-    67: 60-64 | 102770 | 14053 | 8862 | 10907 | 5863 | 6540 | 1548 | 10705 | 10022 | 5361 | 7182 | 4230 | 6338 | 1839 | 1063 | 8257
-    68: 65-69 | 116978 | 16399 | 10932 | 13064 | 7061 | 7462 | 1734 | 12322 | 11943 | 6937 | 7981 | 4661 | 7376 | 1921 | 808 | 6377
-    69: 70-74 | 65362 | 9400 | 6016 | 6908 | 3824 | 4001 | 982 | 7101 | 6865 | 3678 | 4696 | 2941 | 4068 | 1102 | 417 | 3363
-    70: 75-79 | 56514 | 8830 | 5782 | 5977 | 3231 | 3121 | 845 | 5828 | 5611 | 3427 | 4358 | 2850 | 3357 | 877 | 290 | 2130
-== sheet https://cms.nsomalawi.mw/api/download/281/Series-E.-Social-Tables.xlsx E4 46 16
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 113,997 bytes Content-Disposition=attachment; filename=Series-E.-Social-Tables.xlsx
-  sheet 'E4': 46 rows
-     1: Table E4: Malawian Pop
-     2: Region and District |  | Tribe
-     3:  | Total | Chewa | Tumbuka | Lomwe | Tonga | Yao | Sena | Nkhonde | Ngoni | Lambya | Sukwa | Mang'anja | Nyanja | Other
-     4: Malawi | 17506538 | 6020944 | 1614577 | 3302634 | 310031 | 2321763 | 670908 | 174430 | 1819347 | 106769 | 93456 | 559885 | 324272 | 187522
-     6: Northern | 2284078 | 158249 | 1310914 | 30040 | 218758 | 25928 | 3878 | 156893 | 89173 | 97035 | 61746 | 3241 | 12754 | 115469
-     7: Chitipa | 234234 | 2539 | 57301 | 200 | 296 | 138 | 57 | 1245 | 655 | 71106 | 36089 | 99 | 127 | 64382
-     8: Karonga | 364152 | 9010 | 151943 | 1306 | 1997 | 1848 | 296 | 138355 | 3176 | 9018 | 12034 | 216 | 179 | 34774
-     9: Nkhata Bay | 284168 | 18888 | 55906 | 3826 | 188173 | 2458 | 427 | 3409 | 3090 | 1867 | 1874 | 477 | 427 | 3346
-    10: Rumphi | 228694 | 11376 | 196809 | 3978 | 1189 | 2839 | 320 | 1845 | 5553 | 2604 | 575 | 329 | 182 | 1095
-    11: Mzimba | 937864 | 85325 | 734487 | 12757 | 9567 | 10530 | 1316 | 2982 | 58675 | 4160 | 8811 | 1253 | 581 | 7420
-    12: Likoma | 14439 | 1327 | 444 | 163 | 1316 | 201 | 16 | 60 | 173 | 12 | 7 | 28 | 10649 | 43
-    13: Mzuzu City | 220527 | 29784 | 114024 | 7810 | 16220 | 7914 | 1446 | 8997 | 17851 | 8268 | 2356 | 839 | 609 | 4409
-    15: Central | 7486594 | 5351396 | 236695 | 229244 | 63888 | 367915 | 36242 | 11108 | 1091623 | 6430 | 30806 | 30263 | 14711 | 16273
-    16: Kasungu | 841333 | 657285 | 133141 | 13051 | 1651 | 15073 | 1131 | 767 | 15852 | 672 | 109 | 1151 | 443 | 1007
-    17: Nkhotakota | 392617 | 297747 | 15129 | 8402 | 41019 | 7636 | 6761 | 1631 | 9126 | 707 | 212 | 1574 | 1808 | 865
-    18: Ntchisi | 316839 | 310138 | 1188 | 1036 | 164 | 884 | 96 | 50 | 2911 | 66 | 12 | 114 | 79 | 101
-    19: Dowa | 751947 | 690553 | 4412 | 3970 | 516 | 4773 | 422 | 297 | 44070 | 225 | 51 | 493 | 168 | 1997
-    20: Salima | 477823 | 348220 | 4654 | 9653 | 2320 | 90848 | 1947 | 538 | 14061 | 236 | 33 | 1332 | 3431 | 550
-    21: Lilongwe | 1635620 | 1545939 | 7356 | 16450 | 1306 | 23754 | 2052 | 480 | 33595 | 348 | 122 | 2034 | 703 | 1481
-    22: Mchinji | 601147 | 536351 | 3394 | 6866 | 417 | 12619 | 884 | 352 | 37366 | 203 | 46 | 591 | 206 | 1852
-    23: Dedza | 829469 | 535017 | 2408 | 6064 | 580 | 78301 | 1797 | 306 | 171072 | 205 | 29772 | 2608 | 443 | 896
-    24: Ntcheu | 658468 | 15230 | 1661 | 21664 | 563 | 15196 | 3642 | 471 | 595432 | 347 | 23 | 2109 | 845 | 1285
-    25: Lilongwe City | 981331 | 414916 | 63352 | 142088 | 15352 | 118831 | 17510 | 6216 | 168138 | 3421 | 426 | 18257 | 6585 | 6239
-    27: Southern | 7735866 | 511299 | 66968 | 3043350 | 27385 | 1927920 | 630788 | 6429 | 638551 | 3304 | 904 | 526381 | 296807 | 55780
-    28: Mangochi | 1146608 | 91368 | 10807 | 108549 | 6020 | 829069 | 6942 | 541 | 48517 | 244 | 48 | 6334 | 35779 | 2390
-    29: Machinga | 734519 | 47338 | 1846 | 201824 | 1104 | 424511 | 5010 | 110 | 6689 | 83 | 23 | 5177 | 39864 | 940
-    30: Zomba | 745668 | 43613 | 2319 | 314025 | 1072 | 173394 | 4154 | 212 | 15572 | 153 | 78 | 27162 | 161867 | 2047
-    31: Chiradzulu | 356518 | 11584 | 928 | 247044 | 435 | 66291 | 1432 | 86 | 15131 | 44 | 15 | 5996 | 6826 | 706
-    32: Blantyre | 450715 | 57851 | 4779 | 99263 | 1703 | 80917 | 14280 | 386 | 114778 | 208 | 64 | 70141 | 2907 | 3438
-    33: Mwanza | 130770 | 77546 | 681 | 5489 | 150 | 1793 | 1376 | 117 | 39741 | 54 | 11 | 2990 | 149 | 673
-    34: Thyolo | 720676 | 8032 | 1813 | 556605 | 861 | 15000 | 8326 | 438 | 23614 | 86 | 65 | 88819 | 1525 | 15492
-    35: Mulanje | 683027 | 4679 | 1101 | 565339 | 514 | 25724 | 2566 | 134 | 3150 | 68 | 48 | 75242 | 2240 | 2222
-    36: Phalombe | 428931 | 2113 | 498 | 406762 | 315 | 1635 | 451 | 33 | 1044 | 18 | 6 | 1215 | 14684 | 157
-    37: Chikwawa | 564099 | 41664 | 2281 | 41207 | 1863 | 6291 | 274356 | 415 | 8173 | 99 | 133 | 172409 | 688 | 14520
-    38: Nsanje | 298566 | 2830 | 509 | 21744 | 1254 | 2191 | 250855 | 140 | 1488 | 25 | 15 | 14978 | 80 | 2457
-    39: Balaka | 437835 | 21860 | 2498 | 110220 | 962 | 162757 | 10403 | 334 | 105834 | 140 | 138 | 9215 | 12154 | 1320
-    40: Neno | 138151 | 13209 | 673 | 18061 | 187 | 2961 | 2808 | 161 | 91794 | 126 | 12 | 6566 | 267 | 1326
-    41: Zomba City | 104655 | 13359 | 4363 | 32399 | 1095 | 21551 | 2149 | 579 | 10991 | 342 | 60 | 6247 | 10833 | 687
-    42: Blantyre City | 795128 | 74253 | 31872 | 314819 | 9850 | 113835 | 45680 | 2743 | 152035 | 1614 | 188 | 33890 | 6944 | 7405
-== sheet https://cms.nsomalawi.mw/api/download/281/Series-E.-Social-Tables.xlsx E5 60 29
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 113,997 bytes Content-Disposition=attachment; filename=Series-E.-Social-Tables.xlsx
-  sheet 'E5': 122 rows
-     1: Table E5. Population o
-     2: Area | Denomination
-     3:  | Total | Catholic | CCAP | Seventh Day Adventist/ | Anglican | Pentecostal | Other Christian Denomi | Islam | Traditional | Other Denomination | No Religion
-     4: Malawi | 17563749 | 3028435 | 2498969 | 1644829 | 410633 | 1332420 | 4666337 | 2426754 | 186284 | 992304 | 376784
-     6: Northern | 2289780 | 413710 | 484596 | 258834 | 42882 | 125453 | 717705 | 31571 | 36800 | 170911 | 7318
-     7: Chitipa | 234927 | 37152 | 47699 | 13712 | 2518 | 19336 | 87051 | 181 | 636 | 25386 | 1256
-     8: Karonga | 365028 | 63816 | 60270 | 24939 | 5798 | 31062 | 132529 | 5035 | 2649 | 37190 | 1740
-     9: Nkhata Bay | 284681 | 16210 | 37866 | 40928 | 12032 | 15882 | 137473 | 3079 | 1808 | 18150 | 1253
-    10: Rumphi | 229161 | 43921 | 52112 | 34528 | 2139 | 9309 | 72648 | 2957 | 970 | 10158 | 419
-    11: Mzimba | 940184 | 214131 | 224259 | 108216 | 6071 | 34011 | 238049 | 10996 | 30522 | 71920 | 2009
-    12: Likoma | 14527 | 251 | 408 | 504 | 10835 | 1212 | 800 | 329 | - | 156 | 32
-    13: Mzuzu City | 221272 | 38229 | 61982 | 36007 | 3489 | 14641 | 49155 | 8994 | 215 | 7951 | 609
-    15: Central | 7523340 | 1519874 | 1330021 | 526576 | 234943 | 515381 | 1962874 | 516200 | 130282 | 493619 | 293570
-    16: Kasungu | 842953 | 189910 | 169891 | 47699 | 13958 | 48626 | 260409 | 18769 | 2632 | 79174 | 11885
-    17: Nkhotakota | 393077 | 25262 | 31088 | 30028 | 60058 | 23508 | 102116 | 94487 | 1147 | 19850 | 5533
-    18: Ntchisi | 317069 | 39039 | 61482 | 11269 | 68054 | 16103 | 75290 | 1556 | 5292 | 25752 | 13232
-    19: Dowa | 772569 | 201872 | 173393 | 31083 | 11197 | 48495 | 199151 | 7038 | 7292 | 59396 | 33652
-    20: Salima | 478346 | 49501 | 65160 | 36749 | 8569 | 24283 | 109616 | 146605 | 3318 | 22162 | 12383
-    21: Lilongwe | 1637583 | 270262 | 312235 | 123874 | 22536 | 129946 | 470317 | 27992 | 45154 | 111297 | 123970
-    22: Mchinji | 602305 | 228882 | 80831 | 22910 | 8822 | 32146 | 148184 | 14200 | 6250 | 46596 | 13484
-    23: Dedza | 830512 | 226593 | 137244 | 32418 | 12864 | 48260 | 152033 | 78868 | 50938 | 50301 | 40993
-    24: Ntcheu | 659608 | 117603 | 69638 | 88192 | 5987 | 58900 | 231415 | 15987 | 4883 | 45639 | 21364
-    25: Lilongwe City | 989318 | 170950 | 229059 | 102354 | 22898 | 85114 | 214343 | 110698 | 3376 | 33452 | 17074
-    27: Southern | 7750629 | 1094851 | 684352 | 859419 | 132808 | 691586 | 1985758 | 1878983 | 19202 | 327774 | 75896
-    28: Mangochi | 1148611 | 62365 | 37082 | 36490 | 37028 | 24232 | 92665 | 834644 | 934 | 20236 | 2935
-    29: Machinga | 735438 | 51658 | 37508 | 15974 | 5794 | 14404 | 100059 | 492560 | 550 | 15468 | 1463
-    30: Zomba | 746724 | 127339 | 77755 | 62727 | 13157 | 45500 | 243063 | 147123 | 878 | 26271 | 2911
-    31: Chiradzulu | 356875 | 94685 | 46334 | 30080 | 5456 | 26876 | 96248 | 40342 | 1116 | 14109 | 1629
-    32: Blantyre | 451220 | 74963 | 59135 | 68710 | 8180 | 37492 | 135412 | 35955 | 2206 | 24962 | 4205
-    33: Mwanza | 130949 | 31217 | 5271 | 27489 | 561 | 7272 | 44048 | 1678 | 1153 | 6046 | 6214
-    34: Thyolo | 721456 | 127888 | 40795 | 154860 | 7159 | 82020 | 233398 | 15291 | 2093 | 49165 | 8787
-    35: Mulanje | 684107 | 108094 | 119820 | 74715 | 6883 | 77560 | 215130 | 38135 | 2796 | 34527 | 6447
-    36: Phalombe | 429450 | 53076 | 36815 | 47603 | 8674 | 35223 | 206034 | 7867 | 2550 | 27769 | 3839
-    37: Chikwawa | 564684 | 64775 | 19282 | 99456 | 6208 | 121180 | 178942 | 9451 | 2131 | 44841 | 18418
-    38: Nsanje | 299168 | 23463 | 6126 | 31086 | 3059 | 99151 | 100450 | 5825 | 827 | 19745 | 9436
-    39: Balaka | 438379 | 79971 | 29991 | 34452 | 10218 | 23001 | 92876 | 152298 | 641 | 12857 | 2074
-    40: Neno | 138291 | 33205 | 6289 | 40171 | 3402 | 9616 | 30695 | 2029 | 677 | 10128 | 2079
-    41: Zomba City | 105013 | 18556 | 21250 | 12029 | 3440 | 10033 | 22004 | 14877 | 37 | 2330 | 457
-    42: Blantyre City | 800264 | 143596 | 140899 | 123577 | 13589 | 78026 | 194734 | 80908 | 613 | 19320 | 5002
-    44: Males | 8521460 | 1463480 | 1194852 | 781459 | 194724 | 626458 | 2220697 | 1167070 | 104404 | 482437 | 285879
-    46: Northern | 1114497 | 200210 | 231180 | 126654 | 21073 | 60410 | 350455 | 17209 | 17518 | 83921 | 5867
-    47: Chitipa | 114392 | 17815 | 22953 | 6880 | 1252 | 9127 | 42709 | 105 | 309 | 12264 | 978
-    48: Karonga | 176197 | 30440 | 28667 | 12338 | 2913 | 14908 | 63828 | 2661 | 1249 | 17821 | 1372
-    49: Nkhata Bay | 139341 | 8294 | 18089 | 20093 | 5796 | 7613 | 66910 | 1737 | 869 | 8882 | 1058
-    50: Rumphi | 112652 | 21629 | 25027 | 16920 | 1057 | 4559 | 35917 | 1646 | 514 | 5042 | 341
-    51: Mzimba | 455867 | 102988 | 106007 | 52621 | 3086 | 16617 | 116628 | 6019 | 14464 | 35846 | 1591
-    52: Likoma | 7200 | 152 | 199 | 260 | 5287 | 568 | 425 | 205 | - | 75 | 29
-    53: Mzuzu City | 108848 | 18892 | 30238 | 17542 | 1682 | 7018 | 24038 | 4836 | 113 | 3991 | 498
-    55: Central | 3679556 | 736430 | 634202 | 247364 | 110767 | 238639 | 921268 | 254716 | 76346 | 239049 | 220775
-    56: Kasungu | 417295 | 92860 | 82192 | 23278 | 6827 | 23182 | 127690 | 10000 | 1553 | 39489 | 10224
-    57: Nkhotakota | 192615 | 12861 | 15265 | 14499 | 28649 | 11356 | 49749 | 45401 | 602 | 9873 | 4360
-    58: Ntchisi | 154843 | 18612 | 29023 | 5205 | 31805 | 7349 | 34447 | 845 | 4466 | 12384 | 10707
-    59: Dowa | 378160 | 96265 | 81701 | 14321 | 5282 | 22754 | 93344 | 3714 | 5223 | 29142 | 26414
-    60: Salima | 231931 | 24058 | 31083 | 17192 | 4057 | 11486 | 52202 | 69810 | 2078 | 10786 | 9179
-== sheets https://cms.nsomalawi.mw/api/download/286/Series-I.-Housing-and-Household-Tables.xlsx 
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 196,495 bytes Content-Disposition=attachment; filename=Series-I.-Housing-and-Household-Tables.xlsx
-    1 'List of Tables' 33x13: Table I1: Number of Households by Region, District and Sex of Househol / Table I2: Number of Housing Units, Type of Housing Unit, Region and Di / Table I3: Population by Type of Dwelling Unit, Region and District, 20
-    2 'Table I1' 42x4: Table I1: Number of Households by Region, District and Sex of Househol / Region and District / Households
-    3 'Table I2' 42x5: Table I2: Number of Housing Units, Type of Housing Unit, Region and Di / Region and District / Total housing Units
-    4 'Table I3' 42x5: Table I3: Population by Type of Dwelling Unit, Region and District, 20 / Region and District / Population
-    5 'Table I4' 43x7: Table I4: Number of Housing Units by Type of Occupancy, Region and Dis / Region and District / Total
-    6 'Table I5' 42x6: Table I5: Population by Type of Occupancy, Region and District, 2018 / Region and District / Total
-    7 'Table I6' 42x8: Table I6. Number of Sleeping Rooms by Households Region and District 2 / Region and District / Total
-    8 'Table I7' 42x8: Table I7: Population by Number of Sleeping Rooms in Dwelling Units by  / Region and District / Total
-    9 'Table I8' 42x8: Table I8. Number of Rooms in Dwelling Units by Region and District, 20 / Region and District / Total
-   10 'Table I9' 43x8: Table I9. Number of Sleeping Rooms in Dwelling Units by Region and Dis / Region and District / Total
-   11 'Table I10' 87x10: Table I10: Number of Households by Main Source of Energy for Lighting, / Region and District / Total
-   12 'Table I11' 43x10: Table I11: Population by Main Source of Energy for Lighting, Region an / Region and District / Total
-   13 'Table I12' 43x11: Table I12: Number of Households by Main Source of Energy for Cooking a / Region and District / Total
-   14 'Table I13' 43x11: Table I13: Population by main Source of Energy for Cooking and Heating / Region and District / Total
-   15 'Table I14' 149x13: Table I14: Number of Households by main Source of Drinking Water for H / Region and District / Total
-   16 'Table I15' 43x13: Table I15: Population by Source of Drinking Water in Dry Season by Reg / Region and District / Total
-   17 'Table I16' 39x13: Table I16: Number of Households by Source of Drinking Water in Wet Sea / Region and District / Total
-   18 'Table I17' 42x13: Table I17: Population by Source of Water in Wet Season, Region and Dis / Region and District / Total
-   19 'Table I18' 42x31: Table I18: Number of Household Ownership of Assets and Access to Inter / Region and District / Total
-   20 'Table I19' 42x31: Table I19: Population by Ownership of Assets and Access to Internet, R / Region and District / Household Ownership of Assests
-   21 'Table I20' 42x10: Table I20: Number of Households by Type of Toilet Facility Region and  / Region and District / Total
-   22 'Table I21' 42x10: Table I21: Population by Type of Toilet Facility used Region and Distr / Region and District / Total
-   23 'Table I22' 42x9: Table I22: Number of Households with Livestock, Malawi, Region, and Di / Region and District / Number of Households
-   24 'Table I23' 42x13: Table I23: Population of Livestock by Region and District, 2018 / Region and District / Number of Households With Livestock
-   25 'Table I24' 42x15: Table I24: Households by Source of Livelihood Region and District, 201 / Region and District / Households
-   26 'Table I25' 42x15: Table I25: Population by Source of Livelihood Region and District, 201 / Region and District / Population
-   27 'Table I26' 42x9: Table I26: Number of Households Received Assistance and Source of Assi / Region and District / Number of Households
-   28 'Table I27' 42x9: Table I27: Population that Received Assistance and Source of Assistanc / Region and District / Population
-   29 'Table I28' 42x12: Table I28: Number of Households Saving and Method of Saving Region and / Region and District / Number of Households
-   30 'Table I29' 42x12: Table I29: Population Saving and Method of Saving Region and District, / Region and District / Population
-   31 'Table I30' 42x9: Table I30: Number of Households Access to Credit by Source of Credit R / Region and District / Total Number of Households
-   32 'Table I31' 42x9: Table I31: Population in Regular Households Access to Credit by Source / Region and District / Total Number of Households
-   33 'Table I32' 42x14: Table I32: Households by Method of Waste Disposal Region and District, / Region and District / Total
-   34 'Table I33' 39x14: Table I33: Population in Households by Method of Waste Disposal, 2018 / Region and District / Method of Waste Disposal
+car_census: https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx: 66,575 bytes, sha256 e7bc08f1f7fa2b5a8914089e0744ad07e9419fadeca018a982f495e8171b6274
+car_census: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx: 401,471 bytes, sha256 a8bda4dbb6baef97c7cc39ec8e3ea94c6a066a9d54072be0f0fa57f3071934dc
+PrevCommune: 178 communes of the 2003 frame, 6,091,097 people; the national line 6,091,097
+mapping table: 0 of 280 units depart from the fixed 49% share of men
+  the same count, 8,825, for Lissa (Grimari) and Pouyamba (Grimari)
+  the same count, 23,708, for Mobaye (Mobaye) and Haute-Kadéi (Dede Mocouba) (Dede-Makouba)
+  Boali: 62,071 (1 communes of 2003)
+  Djoukou: 46,627 (2 communes of 2003)
+  Gamboula: 41,196 (1 communes of 2003)
+  Baboua: 77,278 (5 communes of 2003)
+  Nola: 24,416 (2 communes of 2003)
+  Bria: 102,356 (3 communes of 2003)
+  Batangafo: 88,407 (5 communes of 2003)
+  Dédé-Mokouba: 23,708 (1 communes of 2003)
+  Mongoumba: 33,894 (1 communes of 2003)
+  Carnot: 178,257 (2 communes of 2003)
+  Bozoum: 75,139 (5 communes of 2003)
+  Bouar: 175,054 (7 communes of 2003)
+  Mbaïki: 259,397 (8 communes of 2003)
+  Bambouti: 310 (1 communes of 2003)
+  Mala: 19,680 (1 communes of 2003)
+  Zangba: 50,815 (2 communes of 2003)
+  Ouanda-Djallé: 6,921 (1 communes of 2003)
+  Berbérati: 189,813 (5 communes of 2003)
+  Kembé: 46,050 (2 communes of 2003)
+  Bambari: 216,534 (5 communes of 2003)
+  Boganda: 19,823 (1 communes of 2003)
+  Bogangolo: 9,801 (1 communes of 2003)
+  Rafaï: 21,936 (1 communes of 2003)
+  Zémio: 29,420 (1 communes of 2003)
+  Bamingui: 10,284 (1 communes of 2003)
+  Obo: 20,100 (2 communes of 2003)
+  Gadzi: 72,071 (2 communes of 2003)
+  Boganangone: 39,115 (1 communes of 2003)
+  Markounda: 37,399 (1 communes of 2003)
+  Bayanga: 18,556 (1 communes of 2003)
+  Satéma: 37,097 (1 communes of 2003)
+  Ippy: 59,290 (3 communes of 2003)
+  Mbrès: 33,323 (1 communes of 2003)
+  Bocaranga: 102,297 (3 communes of 2003)
+  Birao: 76,267 (2 communes of 2003)
+  Kouango: 107,763 (3 communes of 2003)
+  Gambo: 33,294 (2 communes of 2003)
+  Bangui: 812,407 (8 communes of 2003)
+  Bakouma: 28,703 (1 communes of 2003)
+  Baoro: 58,207 (2 communes of 2003)
+  Bouca: 80,531 (4 communes of 2003)
+  Dékoa: 57,254 (3 communes of 2003)
+  Alindao: 125,040 (5 communes of 2003)
+  Amada-Gaza: 15,151 (1 communes of 2003)
+  Nana-Bakassa: 55,642 (1 communes of 2003)
+  Ouango: 62,662 (2 communes of 2003)
+  Sibut: 60,181 (2 communes of 2003)
+  Mingala: 39,672 (3 communes of 2003)
+  Koui: 41,551 (1 communes of 2003)
+  Bossembélé: 58,504 (2 communes of 2003)
+  Bossemtélé: 24,328 (1 communes of 2003)
+  Yalinga: 4,562 (1 communes of 2003)
+  Kabo: 56,541 (2 communes of 2003)
+  Bangassou: 111,208 (4 communes of 2003)
+  Boda: 64,013 (2 communes of 2003)
+  Ndélé: 71,824 (2 communes of 2003)
+  Sosso-Nakombo: 18,449 (1 communes of 2003)
+  Ouadda: 21,424 (2 communes of 2003)
+  Bambio: 24,664 (1 communes of 2003)
+  Yaloké: 82,678 (2 communes of 2003)
+  Bimbo: 612,869 (1 communes of 2003)
+  Bossangoa: 167,214 (6 communes of 2003)
+  Grimari: 51,275 (4 communes of 2003)
+  Damara: 56,755 (1 communes of 2003)
+  Paoua: 307,172 (9 communes of 2003)
+  Kaga-Bandoro: 175,498 (5 communes of 2003)
+  Ngaoundaye: 134,979 (5 communes of 2003)
+  Djéma: 2,484 (1 communes of 2003)
+  Bakala: 11,492 (1 communes of 2003)
+  Abba: 31,257 (2 communes of 2003)
+  Mobaye: 81,498 (2 communes of 2003)
+  Nagha Boguila: 37,649 (1 communes of 2003)
+  disagreement: Nola: OCHA's 2003 communes 24,416, the 2021 communes by name 95550
+  disagreement: Mbaïki: OCHA's 2003 communes 259,397, the 2021 communes by name 188263
+car_census: OCHA's assignment and the commune names disagree on 2 polygons
