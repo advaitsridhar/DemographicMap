@@ -1,6 +1,7 @@
-probe_pdf: https://inseed.td/index.php/component/jdownloads/send/7-documents-et-publications-demographique/318-etat-structures-population-rgph2009
-  3,239 bytes
-invalid pdf header: b'<!doc'
+probe_pdf: https://instatgabon.org/uploads/folder_1/RESULTATS-GLOBAUX-RGPL2013-OK_DECEMBRE-2015-1.pdf
+  77,386 bytes
+invalid pdf header: b'<styl'
+EOF marker not found
 EOF marker not found
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
