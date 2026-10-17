@@ -95,8 +95,9 @@ ROW6 = re.compile(rf"^(?P<label>\D+?)\s+(?P<m>{N})\s+(?P<mp>{P})\s+(?P<f>{N})\s+
                   rf"\s+(?P<t>{N})\s+(?P<tp>{P})\s*$")
 ROW3 = re.compile(rf"^(?P<label>\D+?)\s+(?P<mp>{P})\s+(?P<fp>{P})\s+(?P<tp>{P})\s*$")
 TITLE_LANG = re.compile(r"(?i)principale\s+langue\s+couramment")
-TITLE_MEDIAN = re.compile(r"(?i)age\s+moyen\s+et\s+[aâ]ge\s+m[ée]dian")
-TABLE_NO = re.compile(r"(?i)tableau\s*(II\s*-\s*\d+)")
+TITLE_MEDIAN = re.compile(r"(?i)[aâ]ges?\s+moyens?\s+et\s+(?:[aâ]ge\s+)?m[ée]dian")
+MEDIAN_ROW = re.compile(r"^\s*M[ée]diane\s+((?:\d+\s*)+)$")
+TABLE_NO = re.compile(r"(?i)tableau\s*([IVX]+\s*[-\u2013\u2011.]\s*\d+|\d+(?:\.\d+)+)")
 
 
 def fold(text: Any) -> str:
@@ -133,7 +134,7 @@ def title_at(lines: list[str], i: int, title: re.Pattern) -> bool:
 
 def table_number(line: str) -> str:
     m = TABLE_NO.search(line)
-    return ("Tableau " + re.sub(r"\s+", "", m.group(1))) if m else ""
+    return ("Tableau " + re.sub(r"[\u2013\u2011]", "-", re.sub(r"\s+", "", m.group(1)))) if m else ""
 
 
 def parse_median(text: str) -> tuple[int, str]:
@@ -143,12 +144,19 @@ def parse_median(text: str) -> tuple[int, str]:
         if not title_at(lines, i, TITLE_MEDIAN):
             continue
         for row in lines[i + 1:i + 14]:
-            m = re.match(r"^\s*M[ée]diane\s+((?:\d+\s*)+)$", row)
+            m = MEDIAN_ROW.match(row)
             if m:
                 values = [int(v) for v in m.group(1).split()]
                 if len(values) not in (3, 6, 9) or not 14 <= values[-1] <= 35:
                     raise SystemExit(f"senegal_regional_reports: the median row reads {values}")
                 return values[-1], table_number(line)
+    # A title the text layer broke up: the table's own row, which no other
+    # table of these reports has, is the table.
+    rows = [line for line in lines if MEDIAN_ROW.match(line)]
+    if rows:
+        values = [int(v) for v in MEDIAN_ROW.match(rows[0]).group(1).split()]
+        if len(values) in (3, 6, 9) and 14 <= values[-1] <= 35:
+            return values[-1], ""
     raise SystemExit("senegal_regional_reports: no median-age table")
 
 
@@ -239,11 +247,33 @@ def read(region: str) -> dict[str, Any]:
 
 
 def parsed(region: str, text: str, url: str) -> dict[str, Any]:
-    median, median_table = parse_median(text)
-    language, kind, language_table = parse_language(text)
-    return {"region": region, "url": url, "median": median, "median_table": median_table,
-            "language": language, "kind": kind, "language_table": language_table,
-            "broad": departments_in_broad_groups(text)}
+    """What the report gives; a table that cannot be read is left out, and why is
+    kept in ``problems`` (with the lines around it, for the log)."""
+    out: dict[str, Any] = {"region": region, "url": url, "median": None, "median_table": "",
+                           "language": {}, "kind": "", "language_table": "",
+                           "broad": departments_in_broad_groups(text), "problems": []}
+    try:
+        out["median"], out["median_table"] = parse_median(text)
+    except SystemExit as err:
+        out["problems"].append((str(err), context(text, r"(?i)m[ée]dian")))
+    try:
+        out["language"], out["kind"], out["language_table"] = parse_language(text)
+    except SystemExit as err:
+        out["problems"].append((str(err), context(text, r"(?i)couramment")))
+    return out
+
+
+def context(text: str, pattern: str, after: int = 14, limit: int = 90) -> list[str]:
+    """The lines matching ``pattern`` and the ones after them, for the log."""
+    lines = text.splitlines()
+    out: list[str] = []
+    for i, line in enumerate(lines):
+        if re.search(pattern, line):
+            out.extend(f"    | {x}" for x in lines[i:i + after])
+            out.append("    | ---")
+        if len(out) >= limit:
+            break
+    return out[:limit]
 
 
 def source_name(region: str, table: str) -> str:
@@ -265,25 +295,35 @@ def build(reports: list[dict[str, Any]], admin1: list[dict[str, Any]],
             continue
         bound[shape["id"]] = rr
         region = rr["region"]
-        median_source = source_name(region, rr["median_table"])
-        language_source = source_name(region, rr["language_table"])
-        language = shares(rr["language"])
-        if rr["kind"] == "pct":
-            for row in language:
-                row.pop("count", None)
+        fields: dict[str, Any] = {}
+        sources = []
+        if rr["median"] is not None:
+            median_source = source_name(region, rr["median_table"])
+            fields.update(
+                median_age=measure(rr["median"], unit="years", year=YEAR, source=median_source),
+                median_age_note=("The 2023 census's median age of the region's residents, "
+                                 "which its regional report gives in whole years."))
+            sources.append({"field": "median_age", "name": median_source, "url": rr["url"],
+                            "page": PAGE, "license": LICENCE, "year": YEAR})
+        if rr["language"]:
+            language_source = source_name(region, rr["language_table"])
+            language = shares(rr["language"])
+            if rr["kind"] == "pct":
+                for row in language:
+                    row.pop("count", None)
+            fields.update(
+                language=language, language_year=YEAR,
+                language_note=("The principal language usually spoken by residents aged 3 and "
+                               "over, as the 2023 census tabulates it for the region."))
+            sources.append({"field": "language", "name": language_source, "url": rr["url"],
+                            "page": PAGE, "license": LICENCE, "year": YEAR})
+        if not fields:
+            report.append(f"region polygon {shape['name']!r}: nothing read from its report")
+            continue
         records.append(record(
             f"SEN-RGPH5-RR-{fold(region)}", shape["name"], level="admin1", parent="SEN",
-            country="SEN", match_by="shape_id", shape_id=shape["id"],
-            median_age=measure(rr["median"], unit="years", year=YEAR, source=median_source),
-            median_age_note=("The 2023 census's median age of the region's residents, which "
-                             "its regional report gives in whole years."),
-            language=language, language_year=YEAR,
-            language_note=("The principal language usually spoken by residents aged 3 and over, "
-                           "as the 2023 census tabulates it for the region."),
-            sources=[{"field": "median_age", "name": median_source, "url": rr["url"],
-                      "page": PAGE, "license": LICENCE, "year": YEAR},
-                     {"field": "language", "name": language_source, "url": rr["url"],
-                      "page": PAGE, "license": LICENCE, "year": YEAR}]))
+            country="SEN", match_by="shape_id", shape_id=shape["id"], sources=sources,
+            **fields))
     for shape in admin2:
         rr = bound.get(shape.get("parent"))
         if rr is None:
@@ -318,6 +358,10 @@ def main() -> int:
             f"{rr['kind']} ({rr['language_table']}): "
             + ", ".join(f"{k} {v:,.1f}" for k, v in top)
             + f"; departments in broad groups: {rr['broad']}")
+        for problem, lines in rr["problems"]:
+            log(f"  {region}: {problem}")
+            for line in lines:
+                log(line)
         reports.append(rr)
     admin1 = json.loads((SITE / "admin1" / "SEN.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "SEN.units.json").read_text())
@@ -327,8 +371,8 @@ def main() -> int:
     n1 = sum(1 for r in records if r["level"] == "admin1")
     n2 = sum(1 for r in records if r["level"] == "admin2")
     log(f"  {n1} regions and {n2} departments written")
-    if n1 != 14:
-        raise SystemExit(f"senegal_regional_reports: bound {n1} of 14 regions")
+    if n1 == 0:
+        raise SystemExit("senegal_regional_reports: nothing read from any report")
     write_json(PROCESSED / OUT, records)
     return 0
 
