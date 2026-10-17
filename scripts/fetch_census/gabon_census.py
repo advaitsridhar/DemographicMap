@@ -28,8 +28,14 @@ Douigni, Doutsila as Doutsita).
 The report gives ages nationally and by residence only (Tableau 7), so no
 department or province has a median age from it.
 
+**Capitals.** French Wikipedia's *Départements du Gabon* names each
+department's seat (*chef-lieu*) beside its 2013 count; a seat is written only
+where that count is the census's own for the department, which keeps off the
+row that gives Libreville's count under Akanda's name. Libreville, a commune
+drawn as a department of its own, is its own seat.
+
 Usage:
-    python -m scripts.fetch_census.gabon_census
+    python -m scripts.fetch_census.gabon_census [--run LABEL]
 """
 
 from __future__ import annotations
@@ -39,11 +45,16 @@ import hashlib
 import io
 import json
 import re
+import sys
 import unicodedata
+from pathlib import Path
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .binding import bind, fold
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from probe_wikitable import tables  # noqa: E402
 
 URL = "https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf"
 YEAR = 2013
@@ -63,6 +74,11 @@ ALIASES = {"Mulundu": "Mouloundou", "Haut-Como": "Haut-Komo", "Douigny": "Douign
 DRAWN_INSIDE = {"Owendo": "Komo-Mondah"}
 RANK = re.compile(r"^\d+(?:er|ère|ème|e)$")
 GROUP = re.compile(r"^\d{1,3}$")
+
+WIKI_TITLE = "Départements du Gabon"
+WIKI_URL = "https://fr.wikipedia.org/wiki/D%C3%A9partements_du_Gabon"
+# Communes drawn as departments of their own, which are their own seats.
+OWN_SEAT = frozenset({"Libreville"})
 
 AGE_GAP = ("The 2013 census's published results give ages for the whole country and by urban "
            "or rural residence only, not by province or department.")
@@ -151,6 +167,26 @@ def check(table: dict[str, Any]) -> list[str]:
     return problems
 
 
+def seats(wikitext: str) -> dict[str, tuple[str, int | None]]:
+    """Department (folded) -> (seat, the article's 2013 count), from its table."""
+    out: dict[str, tuple[str, int | None]] = {}
+    for table in tables(wikitext):
+        if not table:
+            continue
+        head = [fold(c) for c in table[0]]
+        name = next((i for i, c in enumerate(head) if c in ("nom", "departement")), None)
+        seat = next((i for i, c in enumerate(head) if c.startswith("cheflieu")), None)
+        count = next((i for i, c in enumerate(head) if c.startswith("population")), None)
+        if name is None or seat is None:
+            continue
+        for row in table[1:]:
+            if len(row) <= max(name, seat):
+                continue
+            digits = re.sub(r"\D", "", row[count]) if count is not None and len(row) > count else ""
+            out[fold(row[name])] = (row[seat].strip(), int(digits) if digits else None)
+    return out
+
+
 def figures_fields(men: int, women: int, total: int, note: str) -> dict[str, Any]:
     return {"population": measure(total, year=YEAR, source=SOURCE), "population_note": note,
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
@@ -159,7 +195,8 @@ def figures_fields(men: int, women: int, total: int, note: str) -> dict[str, Any
             "median_age": gap(NOT_AVAILABLE, AGE_GAP)}
 
 
-def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          seat_of: dict[str, tuple[str, int | None]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
     cite = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
@@ -207,17 +244,32 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             listed = " and ".join(f"{p} ({counts[p][2]:,})" for p in parts)
             note = (f"The resident population at the 2013 census of {listed} departments, added "
                     f"up: {parts[1]} is drawn here inside {name}.")
+        extra: dict[str, Any] = {}
+        sources = list(cite)
+        found = (seat_of or {}).get(fold(ALIASES.get(name, name))) or (seat_of or {}).get(fold(name))
+        if name in OWN_SEAT:
+            extra["capital"] = name
+            extra["capital_note"] = (f"{name} is a commune drawn as a department of its own; its "
+                                     f"seat is the city itself.")
+        elif found and found[0] and found[1] == counts[name][2] and found[0] not in ("s.o.", "-"):
+            extra["capital"] = found[0]
+            sources.append({"field": "capital", "name": f"French Wikipedia, {WIKI_TITLE}",
+                            "url": WIKI_URL, "license": "CC BY-SA 4.0"})
         records.append(record(f"GAB-RGPL2013-{sid}", shape["name"], level="admin2", parent="GAB",
-                              country="GAB", match_by="shape_id", shape_id=sid, sources=cite,
-                              **figures_fields(men, women, total, note)))
-        report.append(f"  {shape['name']}: {total:,} ({' + '.join(parts)})")
+                              country="GAB", match_by="shape_id", shape_id=sid, sources=sources,
+                              **figures_fields(men, women, total, note), **extra))
+        report.append(f"  {shape['name']}: {total:,} ({' + '.join(parts)}), seat "
+                      f"{extra.get('capital', '-')}")
     return records, report
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     import pdfplumber                               # noqa: PLC0415
+    from .europe_wiki import fetch as wiki_fetch     # noqa: PLC0415
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     log(f"gabon_census: {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
@@ -230,7 +282,10 @@ def main() -> int:
         raise SystemExit("gabon_census: Tableau 6 does not add up as read")
     admin1 = json.loads((SITE / "admin1" / "GAB.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "GAB.units.json").read_text())
-    records, report = build(table, admin1, admin2)
+    wikitext, landed = wiki_fetch(WIKI_TITLE, "fr")
+    seat_of = seats(wikitext)
+    log(f"  {landed}: {len(seat_of)} departments with a seat")
+    records, report = build(table, admin1, admin2, seat_of)
     for line in report:
         log(line)
     log(f"  {sum(r['level'] == 'admin1' for r in records)} provinces and "

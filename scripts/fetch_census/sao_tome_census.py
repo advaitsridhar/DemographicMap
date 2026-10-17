@@ -25,6 +25,10 @@ up, Principe the region.
   Portuguese and 36.8% Forro -- so the shares add up to more than 100 and the
   record says so (``language_basis``).
 
+**Capitals.** English Wikipedia's *Districts of São Tomé and Príncipe*
+names each district's seat beside its 2012 census count; the row is the one
+whose count is the district's in Quadro 2.
+
 **Checks.** Quadro 2's men and women make its total; every age table's groups
 make its total; every religion row makes the district's total; the districts'
 residents make the national line; and each religion column, added over the
@@ -41,11 +45,16 @@ import hashlib
 import io
 import json
 import re
+import sys
 import unicodedata
+from pathlib import Path
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json
 from .cod_ps_age import grouped_median
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from probe_wikitable import tables  # noqa: E402
 
 BASE = ("https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/"
         "Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/")
@@ -85,6 +94,28 @@ AGE_ROWS = [f"{lo}-{lo + 4}" for lo in range(0, 80, 5)] + ["80"]
 NUMBER = re.compile(r"^\d{1,3}(?:\.\d{3})*$")
 
 LANGUAGE_BASIS = "languages spoken (multi-response)"
+WIKI_TITLE = "Districts of São Tomé and Príncipe"
+WIKI_URL = "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe"
+
+
+def seats(wikitext: str) -> dict[int, str]:
+    """2012 census count -> seat, from the article's table of districts."""
+    out: dict[int, str] = {}
+    for table in tables(wikitext):
+        if not table:
+            continue
+        head = [fold(c) for c in table[0]]
+        seat = next((i for i, c in enumerate(head) if c == "capital"), None)
+        count = next((i for i, c in enumerate(head) if c.startswith("population") and "2012" in c),
+                     None)
+        if seat is None or count is None:
+            continue
+        for row in table[1:]:
+            if len(row) > max(seat, count):
+                digits = re.sub(r"\D", "", row[count])
+                if digits and row[seat].strip():
+                    out[int(digits)] = row[seat].strip()
+    return out
 
 
 def fold(text: str) -> str:
@@ -322,7 +353,8 @@ def fields(res: tuple[int, int, int] | None, age: tuple[int, list] | None,
     return out
 
 
-def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict], list[str]]:
+def build(national: list[str], reports: dict[str, list[str]],
+          seat_of: dict[int, str] | None = None) -> tuple[list[dict], list[str]]:
     report: list[str] = []
     res: dict[str, tuple[int, int, int]] = {}
     data: dict[str, dict[str, Any]] = {}
@@ -383,10 +415,16 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
                  "name": SOURCE + f", Resultado Distrital ({name}), Quadros 2, 5, 6 and 10",
                  "url": BASE + file, "year": YEAR, "license": LICENCE}]
         where = "the Autonomous Region of Príncipe" if name == "Príncipe" else f"{name} district"
+        extra: dict[str, Any] = {}
+        seat = (seat_of or {}).get(res[name][0])
+        if seat:
+            extra["capital"] = seat
+            cite = cite + [{"field": "capital", "name": f"English Wikipedia, {WIKI_TITLE}",
+                            "url": WIKI_URL, "license": "CC BY-SA 4.0"}]
         records.append(record(f"STP-RGPH2012-{sid}", name, level="admin2", parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
                               sources=cite, **fields(res[name], d.get("age"), d.get("religion"),
-                                                      where, d.get("language"))))
+                                                      where, d.get("language")), **extra))
     for province, (sid, members) in PROVINCES.items():
         total = sum(res[m][0] for m in members)
         men = sum(res[m][1] for m in members)
@@ -447,7 +485,11 @@ def main() -> int:
             continue
         log(f"  {name}: {len(body):,} bytes, sha256 {hashlib.sha256(body).hexdigest()}")
         reports[name] = pages_text(body)
-    records, report = build(national, reports)
+    from .europe_wiki import fetch as wiki_fetch     # noqa: PLC0415
+    wikitext, landed = wiki_fetch(WIKI_TITLE, "en")
+    seat_of = seats(wikitext)
+    log(f"  {landed}: {len(seat_of)} districts with a seat")
+    records, report = build(national, reports, seat_of)
     for line in report:
         log(line)
     nat = {}
