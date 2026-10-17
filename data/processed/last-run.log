@@ -1,23 +1,4 @@
-  read https://www.nada.inseed-comores.org/index.php/catalog/8/download/70: 3,141,911 bytes, sha256 6a769b068c63c789c2eef852c579c15b59605230cc65693003e971145c17294d
-  3 islands, 18 prefectures, 54 communes
-  admin2 Djando: 9348, ratio 1037; The 2017 census's count for the prefecture of Djando.
-  admin2 Domoni: 69905, ratio 1002; The 2017 census's count for the prefecture of Domoni.
-  admin2 Fomboni: 30835, ratio 1076; The 2017 census's count for the prefecture of Fomboni.
-  admin2 Hamahamet-Mboinkou: 36648, ratio 970; The 2017 census's count for the prefecture of Hamahamet Mboinkou.
-  admin2 Hambou: 22777, ratio 1003; The 2017 census's count for the prefecture of Hambou.
-  admin2 Itsandra-Hamanvou: 57335, ratio 1012; The 2017 census's count for the prefecture of Itsandra Hamanvou.
-  admin2 Kartala: None, ratio None; 
-  admin2 Mbadjini Est: 35312, ratio 972; The 2017 census's count for the prefecture of Mbadjini Est.
-  admin2 Mbadjini Ouest: 23599, ratio 966; The 2017 census's count for the prefecture of Mbadjini Ouest.
-  admin2 Mitsamiouli-Mboudé: 56162, ratio 995; The 2017 census's counts for the prefectures of Mitsamiouli and Mboude added together: the map draws them as one.
-  admin2 Moroni-Bambao: 121236, ratio 1042; The 2017 census's count for the prefecture of Moroni Bambao.
-  admin2 Mrémani: 65449, ratio 977; The 2017 census's count for the prefecture of Mremani.
-  admin2 Mutsamudu: 63828, ratio 1037; The 2017 census's count for the prefecture of Mutsamudu.
-  admin2 Nioumachioi: 11384, ratio 1069; The 2017 census's count for the prefecture of Nioumachoua.
-  admin2 Oichili-Dimani: 26298, ratio 964; The 2017 census's count for the prefecture of Oichili Dimani.
-  admin2 Ouani: 68886, ratio 1038; The 2017 census's count for the prefecture of Ouani.
-  admin2 Sima: 59314, ratio 1038; The 2017 census's counts for the prefectures of Sima and Moya added together: the map draws them as one.
-  admin1 Moheli: 51567, ratio 1067; The 2017 census's count for the island of Mwali (Mohéli).
-  admin1 Anjouan: 327382, ratio 1017; The 2017 census's count for the island of Ndzuwani (Anjouan).
-  admin1 Grande Comore: 379367, ratio 1004; The 2017 census's count for the island of Ngazidja (Grande Comore).
-  wrote data/processed/comoros_census.json (41 kB)
+cameroon_census: 507,338 bytes, sha256 bf484b0b1c66849f786ddc03800aabbeb03784ccc0f93e75b5482bbfdbd3ec8f
+  the ten provinces make 17,463,836 residents
+  Départements du Cameroun: 61 departments with a seat
+cameroon_census: departments with no polygon: Mbam & Inoubou (centre:MBAM & INOUBOU), Mbam & Kim (centre:MBAM & KIM), Mefou & Afamba (centre:MEFOU & AFAMBA), Mefou & Akono (centre:MEFOU & AKONO), Nyong & Kelle (centre:NYONG & KELLE), Nyong & Mfoumou (centre:NYONG & MFOUMOU), Nyong & So'O (centre:NYONG & SO'O), Boumba & Ngoko (est:BOUMBA & NGOKO), Kadey (est:KADEY), Lom & Djerem (est:LOM & DJEREM), Ngo - Ketundjia (nordouest:NGO - KETUNDJIA), Dja & Lobo (sud:DJA & LOBO), Koupe & Manengouba (sudouest:KOUPE & MANENGOUBA)
