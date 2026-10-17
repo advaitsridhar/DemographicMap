@@ -1,64 +1,410 @@
-== xlsx https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx . 12 24
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/fb2c7f59-3b51-4218-9049-2eddb61a404b/icasees_cartocensitaire2021_formatocha_public_v2.xlsx?AWSAccessKeyId=ASIAXYC32WNAZU3LQJAM&Signature=g%2FIY%2F2xX3DU8P27SJDcO3Ua6bEM%3D&x-amz-security-token=FwoGZXIvYXdzEEwaDJppLIHp5tyhwsHHyyLBAZUJCEGztCU8xymJsjbPWPVv7nK4MVeOGIJSPIKvVzTFeHbyLHbOyOpkZhtJnZcV5lXRDKd8TSmx6ceegEZsond1W3qnEf%2FdQ8ArUSpPlj70OJ%2Buc%2BeXPvRjvRTKW8ioLr4LMdSC7VXvQvR2Eecx%2BX2Mbtp9fCBXu2KoUtWfSrd1lrT19h0XmGdTcawxb6lpAqKspTSZVNzzBEmRPkTMg62bgYbb7UaxUMB6qqxj0DlJkFm4ltZTuDQ5IYsibZQGvBsooIHP1gYyLeSR%2FWt42qYamSnXIK2i8w%2Bgb8v1OmfS8MQ76WySW1HcyiU6SwFa4c0lonyfJg%3D%3D&Expires=1792262638 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 66,575 bytes
-  sheet 'PrevCommune' 179x15
-    Pcode1 | PrevPréfecture | Pcode2 | PrevSous-préfectur | Pcode3 | PrevCommune | F_U | M_U | F_R | M_R | F_TL | M_TL | T_U | T_R | T_TL
-    CF51 | Bamingui-Bangoran | CF512 | Bamingui | CF5121 | Vassako (Bamingui) | 0 | 0 | 5244.84 | 5039.16 | 5244.84 | 5039.16 | 0 | 10284 | 10284
-    CF51 | Bamingui-Bangoran | CF511 | Ndélé | CF5111 | Dar'el-Kouti | 13806.210000000001 | 13264.789999999999 | 19876.74 | 19097.26 | 33682.95 | 32362.05 | 27071 | 38974 | 66045
-    CF51 | Bamingui-Bangoran | CF511 | Ndélé | CF5112 | Mbolo-Kpata | 0 | 0 | 2947.29 | 2831.71 | 2947.29 | 2831.71 | 0 | 5779 | 5779
-    CF71 | Bangui | CF711 | 1er arrondissement | CF7111 | 1er  arrondissemen | 3947.91 | 3793.09 | 0 | 0 | 3947.91 | 3793.09 | 7741 | 0 | 7741
-    CF71 | Bangui | CF712 | 2e arrondissement | CF7112 | 2è  arrondissement | 33796.17 | 32470.829999999998 | 0 | 0 | 33796.17 | 32470.829999999998 | 66267 | 0 | 66267
-    CF71 | Bangui | CF713 | 3e arrondissement | CF7113 | 3è  arrondissement | 40671.99 | 39077.01 | 0 | 0 | 40671.99 | 39077.01 | 79749 | 0 | 79749
-    CF71 | Bangui | CF714 | 4e arrondissement | CF7114 | 4è  arrondissement | 82835.22 | 79586.78 | 0 | 0 | 82835.22 | 79586.78 | 162422 | 0 | 162422
-    CF71 | Bangui | CF715 | 5e arrondissement | CF7115 | 5è  arrondissement | 78540 | 75460 | 0 | 0 | 78540 | 75460 | 154000 | 0 | 154000
-    CF71 | Bangui | CF716 | 6e arrondissement | CF7116 | 6è  arrondissement | 61701.33 | 59281.67 | 0 | 0 | 61701.33 | 59281.67 | 120983 | 0 | 120983
-    CF71 | Bangui | CF717 | 7e arrondissmentt | CF7117 | 7è  arrondissement | 50460.42 | 48481.58 | 0 | 0 | 50460.42 | 48481.58 | 98942 | 0 | 98942
-    CF71 | Bangui | CF718 | 8e arrondissement | CF7118 | 8è  arrondissement | 62374.53 | 59928.47 | 0 | 0 | 62374.53 | 59928.47 | 122303 | 0 | 122303
-  sheet 'NewCommune' 182x19
-    NewPréfecture | Pcode1 | PrevPréfecture | NewSous-préfecture | Pcode2 | PrevSous-préfectur | Commune | Pcode3 | PrevCommune | ComAdminBoundary | M_U | F_U | T_U | M_R | F_R | T_R | M_TL | F_TL | T_TL
-    Bamingui-Bangoran | CF51 | Bamingui-Bangoran | Baminigui | CF512 | Bamingui | Vassako (Bamingui) | CF5121 | Vassako (Bamingui) | Yes | 0 | 0 | 0 | 5039.16 | 5244.84 | 10284 | 5039.16 | 5244.84 | 10284
-    Bamingui-Bangoran | CF51 | Bamingui-Bangoran | Ndélé | CF511 | Ndélé | Dar'el-Kouti | CF5111 | Dar'el-Kouti | Yes | 13264.789999999999 | 13806.210000000001 | 27071 | 19097.26 | 19876.74 | 38974 | 32362.05 | 33682.95 | 66045
-    Bamingui-Bangoran | CF51 | Bamingui-Bangoran | Ndélé | CF511 | Ndélé | Mbolo-Kpata | CF5112 | Mbolo-Kpata | Yes | 0 | 0 | 0 | 2831.71 | 2947.29 | 5779 | 2831.71 | 2947.29 | 5779
-    Bangui | CF71 | Bangui | 1er arrondissement | CF711 | 1er arrondissement | 1er  arrondissemen | CF7111 | 1er  arrondissemen | Yes | 3793.09 | 3947.91 | 7741 | 0 | 0 | 0 | 3793.09 | 3947.91 | 7741
-    Bangui | CF71 | Bangui | 2e arrondissement | CF712 | 2e arrondissement | 2e  arrondissement | CF7112 | 2è  arrondissement | Yes | 32470.829999999998 | 33796.17 | 66267 | 0 | 0 | 0 | 32470.829999999998 | 33796.17 | 66267
-    Bangui | CF71 | Bangui | 3e arrondissement | CF713 | 3e arrondissement | 3e  arrondissement | CF7113 | 3è  arrondissement | Yes | 39077.01 | 40671.99 | 79749 | 0 | 0 | 0 | 39077.01 | 40671.99 | 79749
-    Bangui | CF71 | Bangui | 4e arrondissement | CF714 | 4e arrondissement | 4e  arrondissement | CF7114 | 4è  arrondissement | Yes | 79586.78 | 82835.22 | 162422 | 0 | 0 | 0 | 79586.78 | 82835.22 | 162422
-    Bangui | CF71 | Bangui | 5e arrondissement | CF715 | 5e arrondissement | 5e  arrondissement | CF7115 | 5è  arrondissement | Yes | 75460 | 78540 | 154000 | 0 | 0 | 0 | 75460 | 78540 | 154000
-    Bangui | CF71 | Bangui | 6e arrondissement | CF716 | 6e arrondissement | 6e  arrondissement | CF7116 | 6è  arrondissement | Yes | 59281.67 | 61701.33 | 120983 | 0 | 0 | 0 | 59281.67 | 61701.33 | 120983
-    Bangui | CF71 | Bangui | 7e arrondissmentt | CF717 | 7e arrondissmentt | 7e  arrondissement | CF7117 | 7è  arrondissement | Yes | 48481.58 | 50460.42 | 98942 | 0 | 0 | 0 | 48481.58 | 50460.42 | 98942
-    Bangui | CF71 | Bangui | 8e arrondissement | CF718 | 8e arrondissement | 8e  arrondissement | CF7118 | 8è  arrondissement | Yes | 59928.47 | 62374.53 | 122303 | 0 | 0 | 0 | 59928.47 | 62374.53 | 122303
-== xlsx https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/d2ecb660-f273-433b-9020-e67509cf98db/download/ocha-car-projection-population-2025-icasees.xlsx . 12 24
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/d2ecb660-f273-433b-9020-e67509cf98db/ocha-car-projection-population-2025-icasees.xlsx?AWSAccessKeyId=ASIAXYC32WNAZU3LQJAM&Signature=iBTr6yp%2Bjzdxby%2FhS70o959KAjA%3D&x-amz-security-token=FwoGZXIvYXdzEEwaDJppLIHp5tyhwsHHyyLBAZUJCEGztCU8xymJsjbPWPVv7nK4MVeOGIJSPIKvVzTFeHbyLHbOyOpkZhtJnZcV5lXRDKd8TSmx6ceegEZsond1W3qnEf%2FdQ8ArUSpPlj70OJ%2Buc%2BeXPvRjvRTKW8ioLr4LMdSC7VXvQvR2Eecx%2BX2Mbtp9fCBXu2KoUtWfSrd1lrT19h0XmGdTcawxb6lpAqKspTSZVNzzBEmRPkTMg62bgYbb7UaxUMB6qqxj0DlJkFm4ltZTuDQ5IYsibZQGvBsooIHP1gYyLeSR%2FWt42qYamSnXIK2i8w%2Bgb8v1OmfS8MQ76WySW1HcyiU6SwFa4c0lonyfJg%3D%3D&Expires=1792262640 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 22,728 bytes
-  sheet 'Population_HNRP 2026' 86x14
-    Préfecture | Admin1_Pcode | Sous-Préfecture | Admin2_Pcode | Scope analysis | Projection_2025_ic | H_2025 | F_2025 | IDP_Site | IDP_FA | Retourne | Refug_Dem_Asile | Hôte | Autre_Hôte
-    Bangui | CF71 | Bangui Centre | CF711 | Oui | 243097.20222493203 | 116361.55635131794 | 126735.64587361409 | 0 | 35911 | 0 | 3318 | 36464.5803337398 | 167403.62189119222
-    Bangui | CF71 | Bangui Fleuve | CF713 | Oui | 550323.2888683849 | 263419.21586514096 | 286904.073003244 | 734 | 46864 | 4315 | 211 | 55032.32888683849 | 443166.9599815464
-    Bangui | CF71 | Bangui Kaga | CF712 | Oui | 572373.2071208335 | 273973.6886512991 | 298399.51846953435 | 0 | 6481 | 895 | 0 | 17171.196213625004 | 547826.0109072084
-    Bangui | CF71 | Bangui Rapide | CF714 | Oui | 121106.0599433412 | 57968.95023721462 | 63137.10970612657 | 0 | 385 | 40 | 0 | 1211.060599433412 | 119469.99934390778
-    Nana-Mambéré | CF22 | Aba | CF224 | non | 33625.00883203433 | 16811.10285781724 | 16813.90597421708 | 0 | 1620 | 0 | 0 | 1681.2504416017164 | 30323.75839043261
-    Basse-Kotto | CF61 | Alindao | CF612 | Oui | 131218.53165891586 | 65962.27289445844 | 65256.258764457445 | 10572 | 3112 | 1055 | 0 | 19682.77974883738 | 96796.75191007848
-    Mambéré | CF24 | Amada-Gaza | CF242 | non | 20319.338680526896 | 10158.917714016812 | 10160.420966510084 | 0 | 1189 | 219 | 0 | 2031.9338680526898 | 16879.404812474208
-    Vakaga | CF53 | Am-Dafock | CF534 | Oui | 10768.163447810073 | 5625.915057828474 | 5142.248389981599 | 0 | 0 | 0 | 10501 | 267.1634478100732 | 0
-    Nana-Mambéré | CF22 | Baboua | CF223 | non | 82555.24309808959 | 41274.1804799736 | 41281.06261811598 | 0 | 3443 | 0 | 0 | 4127.76215490448 | 74984.4809431851
-    Ouaka | CF43 | Bakala | CF432 | non | 12227.737303776788 | 6084.76392705229 | 6142.973376724499 | 119 | 93 | 274 | 0 | 611.3868651888395 | 11130.35043858795
-    Mbomou | CF62 | Bakouma | CF625 | Oui | 30410.49533979052 | 15526.399280329591 | 14884.096059460926 | 3344 | 4192 | 4732 | 0 | 9123.148601937155 | 9019.346737853364
-== xlsx https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/9509b41f-efb2-4305-ac43-1e735e3efc60/download/drc-hpc-projection-population-2024.xlsx . 10 24
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/9509b41f-efb2-4305-ac43-1e735e3efc60/drc-hpc-projection-population-2024.xlsx?AWSAccessKeyId=ASIAXYC32WNAZU3LQJAM&Signature=9m0yYTJHy9DAmV%2Fc0ueoxVVsINQ%3D&x-amz-security-token=FwoGZXIvYXdzEEwaDJppLIHp5tyhwsHHyyLBAZUJCEGztCU8xymJsjbPWPVv7nK4MVeOGIJSPIKvVzTFeHbyLHbOyOpkZhtJnZcV5lXRDKd8TSmx6ceegEZsond1W3qnEf%2FdQ8ArUSpPlj70OJ%2Buc%2BeXPvRjvRTKW8ioLr4LMdSC7VXvQvR2Eecx%2BX2Mbtp9fCBXu2KoUtWfSrd1lrT19h0XmGdTcawxb6lpAqKspTSZVNzzBEmRPkTMg62bgYbb7UaxUMB6qqxj0DlJkFm4ltZTuDQ5IYsibZQGvBsooIHP1gYyLeSR%2FWt42qYamSnXIK2i8w%2Bgb8v1OmfS8MQ76WySW1HcyiU6SwFa4c0lonyfJg%3D%3D&Expires=1792262641 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 611,970 bytes
-  sheet '001_population_health_zone_zs' 527x56
-    Province | Code Province | Territoire | Code Terrtoire | Zone de sante | Pcode ZS | Population 2024 | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme | Homme
-    Kinshasa | CD10 | Kinshasa | CD1000 | Bandalungwa | CD1000ZS01 | 337289 | 35458.180703 | 29011.238757000003 | 22903.609545 | 14081.478461 | 8448.8870766 | 95821.91608160001 | 5632.591384400001 | 12215.258424000001 | 11027.663855 | 9840.069286 | 9670.412919 | 8143.505616 | 5768.316478000001 | 4580.721909000001 | 2544.8455050000002 | 69423.38537640001 | 2035.876404
-    Kinshasa | CD10 | Kinshasa | CD1000 | Barumbu | CD1000ZS02 | 281886 | 29633.829522 | 24245.860518 | 19141.46883 | 11768.458614000001 | 7061.0751684 | 80082.23403839998 | 4707.3834456 | 10208.783376000001 | 9216.26277 | 8223.742164 | 8081.953506 | 6805.855584 | 4820.814372 | 3828.2937660000002 | 2126.82987 | 58019.9188536 | 1701.463896
-    Kinshasa | CD10 | Kinshasa | CD1000 | Binza Meteo | CD1000ZS03 | 745289 | 78349.996703 | 64104.542757 | 50608.849545 | 31115.070461 | 18669.042276599997 | 211732.43128159997 | 12446.0281844 | 26991.386424000004 | 24367.223855 | 21743.061285999996 | 21368.180919 | 17994.257616000003 | 12745.932478 | 10121.769909000002 | 5623.205505 | 153401.0461764 | 4498.564404000001
-    Kinshasa | CD10 | Kinshasa | CD1000 | Binza Ozone | CD1000ZS04 | 694614 | 73022.685978 | 59745.833982000004 | 47167.76367 | 28999.439886 | 17399.6639316 | 197335.94756159998 | 11599.7759544 | 25156.140624000003 | 22710.404730000002 | 20264.668835999997 | 19915.277994 | 16770.760416 | 11879.288628 | 9433.552734 | 5240.86263 | 142970.7325464 | 4192.690104
-    Kinshasa | CD10 | Kinshasa | CD1000 | Biyela | CD1000ZS05 | 417747 | 43916.48886899999 | 35931.67271100001 | 28367.110035 | 17440.519503000003 | 10464.3117018 | 118679.58331679998 | 6976.2078012 | 15129.125352000001 | 13658.238165 | 12187.350977999999 | 11977.224237 | 10086.083568 | 7144.309194 | 5673.422007000001 | 3151.901115 | 85983.8624172 | 2521.520892
-    Kinshasa | CD10 | Kinshasa | CD1000 | Bumbu | CD1000ZS06 | 769113 | 80854.542351 | 66153.716469 | 52226.618265000005 | 32109.698637 | 19265.819182199997 | 218500.6962672 | 12843.879454799999 | 27854.196408000003 | 25146.149535 | 22438.102661999998 | 22051.238823 | 18569.464272 | 13153.370526 | 10445.323653000001 | 5802.957585 | 158304.6829188 | 4642.366068
-    Kinshasa | CD10 | Kinshasa | CD1000 | Gombe | CD1000ZS07 | 165407 | 17388.741689000002 | 14227.152291 | 11231.962335 | 6905.576843000001 | 4143.346105799999 | 46991.20242079999 | 2762.2307372 | 5990.379912000001 | 5407.981865 | 4825.583818 | 4742.384097 | 3993.586608 | 2828.7905140000003 | 2246.392467 | 1247.995815 | 34045.3258332 | 998.396652
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kalamu I | CD1000ZS08 | 270729 | 28460.927582999997 | 23286.213477000005 | 18383.852745 | 11302.665021 | 6781.5990126 | 76912.59281759999 | 4521.0660084 | 9804.721464 | 8851.484655 | 7898.247845999999 | 7762.071159 | 6536.480976 | 4630.007358 | 3676.7705490000003 | 2042.650305 | 55723.5003204 | 1634.120244
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kalamu II | CD1000ZS09 | 241639 | 25402.783153 | 20784.095307 | 16408.496295 | 10088.186611000001 | 6052.9119666 | 68648.2867216 | 4035.2746444000004 | 8751.198024000001 | 7900.387105 | 7049.576186 | 6928.031769 | 5834.1320160000005 | 4132.510178 | 3281.6992590000004 | 1823.166255 | 49735.975436400004 | 1458.5330040000001
-== csv https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/bf8edc01-c28a-470d-9720-cb2d9435dfdf/download/cod_admpop_adm2_2020.csv 6
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/bf8edc01-c28a-470d-9720-cb2d9435dfdf/cod_admpop_adm2_2020.csv?AWSAccessKeyId=ASIAXYC32WNAZU3LQJAM&Signature=4j%2Fjrlv86B1Bd4HMkuQ6BBeMiF4%3D&x-amz-security-token=FwoGZXIvYXdzEEwaDJppLIHp5tyhwsHHyyLBAZUJCEGztCU8xymJsjbPWPVv7nK4MVeOGIJSPIKvVzTFeHbyLHbOyOpkZhtJnZcV5lXRDKd8TSmx6ceegEZsond1W3qnEf%2FdQ8ArUSpPlj70OJ%2Buc%2BeXPvRjvRTKW8ioLr4LMdSC7VXvQvR2Eecx%2BX2Mbtp9fCBXu2KoUtWfSrd1lrT19h0XmGdTcawxb6lpAqKspTSZVNzzBEmRPkTMg62bgYbb7UaxUMB6qqxj0DlJkFm4ltZTuDQ5IYsibZQGvBsooIHP1gYyLeSR%2FWt42qYamSnXIK2i8w%2Bgb8v1OmfS8MQ76WySW1HcyiU6SwFa4c0lonyfJg%3D%3D&Expires=1792262643 text/csv 30,854 bytes
-    ﻿admin2Name_fr | admin2Pcode | admin1Name_fr | admin1Pcode | admin0Name_fr | REMARK | F_00_04 | M_00_04 | F_05_19 | M_05_19 | F_adulte | M_adulte | F_agee | M_agee | T_00_04 | T_05_19 | T_adulte | T_agee | F_TL | M_TL
-    Kinshasa | CD1000 | Kinshasa | CD10 | République démocrati |  | 1035155 | 1041110 | 1927889 | 1949724 | 1929874 | 1916476 | 68481 | 54586 | 2076265 | 3877613 | 3846350 | 123067 | 5220436 | 4704348
-    Matadi | CD2001 | Kongo-Central | CD20 | République démocrati |  | 35432 | 34990 | 70303 | 69317 | 60340 | 65118 | 4097 | 5900 | 70422 | 139620 | 125458 | 9997 | 176141 | 163899
-    Boma | CD2002 | Kongo-Central | CD20 | République démocrati |  | 18580 | 18348 | 36865 | 36348 | 31641 | 34146 | 2149 | 3094 | 36928 | 73213 | 65787 | 5243 | 92363 | 85944
-    Moanda | CD2003 | Kongo-Central | CD20 | République démocrati |  | 37091 | 36628 | 73595 | 72562 | 63165 | 68166 | 4289 | 6176 | 73719 | 146157 | 131331 | 10465 | 184387 | 171573
-    Lukula | CD2005 | Kongo-Central | CD20 | République démocrati |  | 35521 | 35078 | 70480 | 69491 | 60492 | 65281 | 4108 | 5915 | 70599 | 139971 | 125773 | 10023 | 176583 | 164311
+== pdfl https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf 30-37,50-51 260
+  HTTP 200 application/pdf 2,461,517 bytes
+  97 pages
+  --- page 30 ---
+  3
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Tableau 1 : Effectif de la population résidente du Gabon en octobre 2013 par sexe, nationalité et milieu de
+  résidence
+  Population par milieu de résidence et Effectif
+  nationalité Hommes Femmes Ensemble
+  Population totale 934 072 877 007 1 811 079
+  Population par milieu de résidence
+  Population urbaine 813 098 764 548 1 577 646
+  Population rurale 120 974 112 459 233 433
+  Nationalité
+  Population gabonaise 706 417 752 047 1 458 464
+  Population étrangère 179 687 107 692 287 379
+  Population de nationalité non déclarée 47 968 17 268 65 236
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  Une population à dominante masculine
+  À la naissance, le rapport de masculinité est généralement de 103 garçons pour 100 filles. La
+  mortalité des garçons étant plus élevée que celle des filles, le rapport de masculinité diminue avec
+  l’âge et les femmes deviennent majoritaires.
+  Contrairement à cette tendance habituelle, la population gabonaise compte en 2013 plus d’hommes
+  (52 %) que de femmes (48 %). Cette situation reflète les caractéristiques d’un pays d’immigration. En
+  effet, dans la population de nationalité gabonaise, la parité de sexe est à l’avantage de la population
+  féminine (48 % de sexe masculin contre 52 % des Gabonaises). Par contre dans la population des
+  étrangers on compte 62,5 % d’hommes contre 37,5 % de femmes.
+  Tableau 2 : Pourcentages d’hommes et de femmes dans la population résidente du Gabon par milieu de
+  résidence et par nationalité
+  Population par Population Par milieu de résidence Par nationalité
+  milieu de totale Population Population Population Population Population de
+  résidence et urbaine rurale gabonaise étrangère nationalité non
+  nationalité déclarée
+  % d’hommes 51,6 51,5 51,8 48,4 62,5 73,5
+  % de femmes 48,4 48,5 48,2 51,6 37,5 26,5
+  Total 100 100 100 100 100 100
+  Effectif total 1 811 079 1 577 646 233 433 1 458 464 287 379 65 236
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  Le déséquilibre urbain rural observé depuis 1960 s’est accentué, faisant du Gabon le pays le
+  plus urbanisé d’Afrique Centrale
+  Près de 87 % de la population résidente vit dans les centres urbains et occupe 1,1 % du territoire
+  national. Le taux d’urbanisation était de 73 % en 1993.
+  Cette situation explique pour l’essentiel, le caractère urbain des indicateurs démographiques du
+  Gabon, présentés plus loin.
+  --- page 31 ---
+  4
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Tableau 3 : Population résidente du Gabon en octobre 2013 par sexe
+  Population par milieu de résidence Effectif
+  Hommes Femmes Ensemble
+  Pourcentage vivant en milieu urbain (Taux
+  87,0 87,2 87,1
+  d’urbanisation)
+  Pourcentage vivant en milieu rurale
+  13,0 12,8 12,9
+  Total
+  100,0 100,0 100,0
+  Effectif de la population 934 072 877 007 1 811 079
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  Avec un taux d’urbanisation de 87 % le Gabon apparaît ainsi comme le pays le plus urbanisé de la
+  sous-région Afrique Centrale (dont le taux moyen est de et 40 %) et parmi les plus urbanisé d’Afrique.
+  Le taux d’urbanisation du Gabon est plus de deux fois supérieur à celui du continent qui est de 40%.
+  Graphique 1 : Taux d’urbanisation du Gabon en 2013 comparé à ceux d’autres pays
+  2.2 Volume global de la population en 2013 et rythment d’accroissement depuis 1960
+  L’effectif de la population du Gabon a été multiplié par quatre depuis l’indépendance (1960)
+  La population du Gabon est passée de 447 864 en 1960 à 1 014 976 habitants en 1993, puis à
+  1 811 079 habitants en 2013. Cette évolution correspond à un taux d’accroissement démographique
+  annuel moyen, c’est-à-dire un rythme annuel moyen d’accroissement entre les deux recensements de
+  2,5% entre 1993 et 2013 et 2,9% entre 1993 et 2013.
+  --- page 32 ---
+  5
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Tableau 4 : Taux d’accroissement de la population entre les recensements de 1960, 1993 et 2013
+  Période intercensitaire
+  Taux d’accroissement
+  1960-1993 1960-2013 1993-2013
+  Total Accroissement global 126,6 304,4 78,4
+  intercensitaire (%)
+  Taux d'accroissement intercensitaire 2,5 2,7 2,9
+  annuel moyen (%)
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  La population doublera d’effectif en 24 ans
+  Entre 1993 et 2013 La population du Gabon s’est accrue de 2,9 % en moyenne par an. Cet
+  accroissement de la population est dû, d’une part, à un accroissement naturel (différence entre les
+  naissances et les décès) de 2,5 % et, d’autre part, à un accroissement dû à la migration nette
+  (différence entre le nombre des immigrants et celui des émigrants) de 0,4 %.
+  En d’autres termes, entre 1993 et 2013, la population s’est accrue de 43 000 habitants en moyenne
+  chaque année dont 32 000 par l’accroissement naturel et 11 000 par le solde migratoire.
+  Si cette tendance est maintenue jusqu’en 2037, soit 24 ans plus tard, le Gabon compterait un peu plus
+  de 3,6 millions d’habitants.
+  La taille moyenne de ménages ordinaires a diminué avec la recrudescence des ménages
+  nucléaires
+  Au total, 1 757 620 résidents ont été dénombrés dans 431 471 ménages ordinaires, le reste dans des
+  ménages collectifs (internat, casernes, orphelinat, etc.) ou dans la rue. Parmi les ménages ordinaires,
+  72 % sont dirigés par les hommes et 27 % par les femmes.
+  La taille moyenne des ménages est de 4,1 personnes. Ceci marque un changement net par rapport à
+  5,2 personnes par ménages de 1993. Ceci est une conséquence de l’augmentation des ménages
+  formés par les familles nucléaires et des ménages d’une personne que l’on observe dans les centres
+  urbains.
+  2.3 Répartition spatiale de la population
+  Une population très inégalement répartie : 87 % de la population (les citadins) occupe 1,1 % du
+  territoire national (superficie du milieu urbain)
+  En 2013, la population résidente du Gabon était de 1 811 079 habitants. La densité de la population
+  sur le territoire national (267 667 km2) est passée de 3,8 habitants/km2 en 1993 à 6,8 habitants/km2
+  en 2013.
+  La population, très majoritairement urbaine, est concentrée dans la superficie urbaine qui ne
+  représente que 1,1 % du territoire national.
+  --- page 33 ---
+  6
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Graphique 2 : Concentration de la population sur une petite partie du territoire national
+  La moitié de la population est réside dans une seule des 9 provinces du pays (l’Estuaire)
+  La population gabonaise est répartie de manière très inégale entre les 9 provinces que compte le
+  pays. En effet, la population des provinces varie d’un minimum de moins de 53.000 habitants à la
+  Nyanga à un maximum de près de 900.000 dans l’Estuaire.
+  Tableau 5 : Répartition de la population résidente du Gabon par province selon le sexe et densité
+  Province Rang
+  Sexe
+  Densité
+  Hommes Femmes Ensemble (Hab/Km2)
+  456 848 438 841 895 689 1er
+  Estuaire 43,2
+  137 690 113 109 250 799 2ème
+  Haut-Ogooué 6,9
+  35 239 34 048 69 287 6ème
+  Moyen-Ogooué 3,7
+  50 616 50 222 100 838 5ème
+  Ngounié 2,7
+  26 095 26 759 52 854 9ème
+  Nyanga 2,5
+  32 663 30 630 63 293 8ème
+  Ogooué-Ivindo 1,4
+  35 306 30 465 65 771 7ème
+  Ogooué-Lolo 2,6
+  81 033 76 529 157 562 3ème
+  Ogooué-Maritime 6,9
+  78 221 76 765 154 986 4ème
+  Woleu-Ntem 4,0
+  933 711 877 368 1 811 079 1er
+  Gabon 6,8
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  L’inégale répartition est encore plus marquée au niveau départemental comme le montre le tableau ci-
+  dessous :
+  --- page 34 ---
+  7
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Tableau 6 : Répartition de la population résidente du Gabon par département selon le sexe et densité
+  Province / Effectif de la population par sexe Rang du
+  Département Hommes Femmes Ensemble département Densité
+  dans la province (Hab/Km2)
+  Libreville 359 688 344 252 703 940 1er 3724,6
+  Komo-Mondah 45 692 44 404 90 096 2ème 48,9
+  Komo 8 923 8 652 17 575 4ème 1,7
+  Noya 2 128 2 097 4 225 5ème 1,0
+  Komo-Océan 351 202 553 6ème 0,1
+  Owendo 40 066 39 234 79 300 3ème 809,2
+  ESTUAIRE 456 848 438 841 895 689 43,2
+  Mpassa 74 633 55 061 129 694 1er 24,6
+  Lebombi-Leyou 33 610 30 959 64 569 2ème 22,5
+  Sebe-Brikolo 9 103 7 340 16 443 3ème 2,1
+  Lekoko 2 551 2 369 4 920 6ème 1,3
+  Ogooué-Letili 1 387 1 404 2 791 9ème 1,6
+  Djouori-Agnili 2 064 2 146 4 210 8ème 1,8
+  Lekoni-Lekori 5 325 4 703 10 028 4ème 7,1
+  Plateaux 4 518 4 536 9 054 5ème 1,6
+  Djoue 995 1 183 2 178 10ème 0,9
+  Lekabi-Lewolo 2 600 2 314 4 914 7ème 4,1
+  Bayi-Brikolo 904 1 094 1 998 10ème 1,2
+  HAUT-OGOOUE 137 690 113 109 250 799 6,9
+  Ogooué et Lacs 27 243 27 103 54 346 1er 4,9
+  Abanga-Bigne 7 996 6 945 14 941 2ème 2,0
+  MOYEN-OGOOUE 35 239 34 048 69 287 3,7
+  Douya-Onoye 19 618 18 081 37 699 1er 16,4
+  Tsamba-Magotsi 7 604 7 271 14 875 2ème 1,4
+  Boumi-Louetsi 6 157 7 066 13 223 3ème 3,7
+  Ogoulou 4 139 4 222 8 361 5ème 1,0
+  Dola 3 492 3 487 6 979 6ème 2,9
+  Ndolou 3 049 2 678 5 727 7ème 1,3
+  Louetsi-Wano 4 673 5 077 9 750 4ème 12,0
+  Louetsi-Bibaka 1 296 1 438 2 734 8ème 0,8
+  Mougalaba 588 902 1 490 9ème 0,6
+  NGOUNIE 50 616 50 222 100 838 2,7
+  Mougoutsi 15 293 16 496 31 789 1er 9,3
+  Basse-Banio 3 636 3 556 7 192 2ème 1,9
+  Douigny 2 412 2 823 5 235 3ème 2,1
+  Doutsila 2 284 2 339 4 623 4ème 1,5
+  Haute-Banio 1 022 391 1 413 6ème 0,8
+  Mongo 1 448 1 154 2 602 5ème 0,4
+  NYANGA 26 095 26 759 52 854 2,5
+  Ivindo 15 833 15 240 31 073 1er 1,6
+  Lopé 7 014 5 368 12 382 3ème 1,0
+  Zadié 7 863 7 953 15 816 2ème 1,5
+  Mvoung 1 953 2 069 4 022 4ème 0,9
+  OGOOUE-IVINDO 32 663 30 630 63 293 1,4
+  Mulundu 14 245 13 505 27 750 2ème 2,0
+  Lombo-Bouenguidi 2 263 2 372 4 635 3ème 2,9
+  Offoué-Onoye 1 325 1 418 2 743 4ème 0,8
+  Lolo-Bouenguidi 17 473 13 170 30 643 1er 4,7
+  OGOOUE-LOLO 35 306 30 465 65 771 2,6
+  Bendjé 72 272 68 475 140 747 1er 20,1
+  Ndougou 5 719 5 373 11 092 2ème 1,4
+  Etimboué 3 042 2 681 5 723 3ème 0,7
+  OGOOUE- 81 033 76 529 157 562 6,9
+  MARITIME
+  Woleu 37 251 37 152 74 403 1er 8,6
+  Ntem 25 240 24 472 49 712 2ème 20,8
+  Haut-Ntem 5 247 5 591 10 838 4ème 0,7
+  Okano 8 833 7 797 16 630 3ème 1,7
+  Haut-Como 1 650 1 753 3 403 5ème 1,5
+  WOLEU-N'TEM 78 221 76 765 154 986 4,0
+  TOTAL GABON 933 711 877 368 1 811 079 6,8
+  --- page 35 ---
+  8
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  2.4 Composition de la population par sexe et âge
+  Une population jeune et une structure par âge perturbée par l’immigration des jeunes adultes
+  L’examen de l’âge moyen et de l’âge médian montre que la population gabonaise est relativement
+  jeune. L’âge moyen de la est de 26 ans, alors que la moitié de cette la population a moins de 22 ans.
+  L’âge moyen des hommes ne diffère pas beaucoup de celui des femmes.
+  La moyenne d’âge est beaucoup plus élevée en milieu rural ou elle dépasse 32 ans contre 25 en
+  milieu urbain.
+  Tableau 7 : Age moyen et âge médian de la population résidente par sexe et milieu de résidence
+  Milieu de résidence Age moyen (ans) Age médian (ans)
+  Hommes Femmes Ensemble Hommes Femmes Ensemble
+  Gabon 26,0 25,9 25,9 24 22 23
+  Milieu de résidence
+  Urbain 25,2 24,6 24,9 23 22 22
+  Rural 31,0 34,3 32,6 27 30 28
+  Nationalité
+  Gabonaise 24,1 26,0 25,1 20 22 21
+  Etrangère 32,2 25,5 29,7 33 25 30
+  Non déclaré 29,8 25,6 28,7 26 23 25
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  Le Gabon est en pleine transition d’une population très jeune vers une population de jeunes.
+  L’allure générale de la pyramide des âges de la population gabonaise en 2013 est caractéristique de
+  celle des pays à forte proportion des jeunes : base élargie et rétrécissement progressif au fur et à
+  mesure que l’on avance vers les âges élevés. Elle révèle une fécondité et une mortalité relativement
+  importantes.
+  Cette pyramide est légèrement protubérante à gauche. Ce qui confirme le rapport de masculinité en
+  faveur des hommes. Elle présente un gonflement entre 20-34 ans et ce, quel que soit le sexe, l’effet
+  d’une immigration de jeunes.
+  Aux âges avancés, on note, comme dans la plupart des pays, que la mortalité des hommes est plus
+  élevée que celle chez des femmes. Le rapport de masculinité le confirme. Il est en dessous de 100,
+  dès 55 ans.
+  --- page 36 ---
+  9
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Graphique 3 : Pyramide des âges et milieu de résidence Gabon en 2013
+  La pyramide de la population urbaine suit les allures de la pyramide de la population totale, ce qui
+  reflète le caractère urbain de la population gabonaise, dû à un faible effectif s de la population rurale
+  des deux sexes.
+  Comparativement à la plupart des pays africains, le Gabon présente un taux d’urbanisation assez
+  élevé. Cette comparaison montre que son taux (87%) est deux fois plus élevé que la moyenne
+  africaine qui se situe à 40% et celle de la sous-région Afrique Centrale (42 %). Le graphique 3 permet
+  de l’illustrer.
+  Graphique 4 : Pyramide des âges et milieu de résidence Gabon en 2013
+  --- page 37 ---
+  10
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Le Gabon est entré dans la fenêtre d’opportunité pour bénéficier du bonus démographique
+  Les conditions pour bénéficier d’un dividende démographique positif (bonus démographique) sont
+  réunies au Gabon.
+   Les moins de 15 ans représentent 34 % de la population totale ;
+   La population d’âges actifs constitue 62 % de la population totale ;
+   Les 60 ans et plus, 5,5 % et 65 ans 3,9 % de la population totale.
+   La part de la population potentiellement active a augmenté passant de 55,6 % en 1993 à
+  60,4 % en 2013.
+  La population de moins de 30 ans représente 64,1 % en 2013. La baisse continue de la mortalité
+  (surtout celle des enfants) et la stabilité de la fécondité ont conduit à de fortes augmentations des
+  naissances et des effectifs de jeunes.
+  La population potentiellement active (15-64 ans) est plus nombreuse que la population potentiellement
+  inactive (moins de 15 ans et 65 ans et plus). Le taux de dépendance démographique observé est 62,2
+  dont 59,9 en milieu urbain et 79,5 en milieu rural.
+  Le niveau de rapport de dépendance au Gabon reste élevé, ce qui signifie que les conditions pour
+  bénéficier d’un dividende démographique positif (bonus démographique) sont réunies au Gabon.
+  Ainsi, le pays devrait prioriser les investissements sur le capital humain des jeunes, car le Gabon
+  s’approche du point ou le dividende démographique est possible.
+  Près de trois centaines de centenaires au Gabon en 2013
+  Le RGPL-2013 a dénombré 82 375 personnes du troisième âge (60-79 ans). Ce qui représente 4,6%
+  de la population totale. La population du quatrième âge (80 ans et plus) est estimée à 15 406 (moins
+  de 1%) résidents. On a compté dans ce dernier groupe 291 habitants de 100 ans et plus, dont 192
+  centenaires de sexe féminin et 99 de sexe masculin.
+  Population des groupes d’âges fonctionnels
+  Les effectifs des groupes d’âges fonctionnel issus du recensement servent avant tout à définir
+  l’importance numérique de la population cible des programmes et des plans nationaux de
+  développement socio-économique.
+  Tableau 8 : La population des groupes d’âges fonctionnels
+  Groupe Spécification Effectifs
+  d’âges (ans) Masculin Féminin Ensemble
+  0-5 Population vaccinale - Programme de santé
+  124 713 119 637 244 350
+  infanto-juvénile (PEV…)
+  3-5 Population d’âge préscolaire - Programme de
+  67 351 65 896 133 247
+  Préscolarisation et de santé préscolaire
+  6-16 Population scolarisable - Scolarisation obligatoire 207 521 205 938 413 459
+  0-17 Population des enfants 378 517 431 740 810 257
+  12-19 Population cible de la sante de reproduction des
+  181 012 181 396 362 408
+  adolescentes
+  15-24 Population des adolescents 346 956 328 762 675 718
+  15-34 Population des Jeunes 370 480 363 236 733 716
+  15-49 Programme de santé de la reproduction des
+  --- 459700 459 700
+  femmes
+  18 et + Population en âge de voter 378 517 431 740 810 257
+  Source : RGPL-2013, Direction Générale de Statistique, Octobre 2015
+  --- page 50 ---
+  23
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Tableau 24 : Répartition de la population résidente étrangère par province selon le sexe
+  Province de Effectif Pourcentage
+  résidence Hommes Femmes Ensemble Hommes Femmes Ensemble
+  Estuaire 111162 70254 181416 61,9 65,2 63,1
+  Haut-Ogooué 24358 10503 34861 13,6 9,8 12,1
+  Moyen-Ogooué 3769 1733 5502 2,1 1,6 1,9
+  Ngounié 3314 2074 5388 1,8 1,9 1,9
+  Nyanga 2130 1678 3808 1,2 1,6 1,3
+  Ogooué-Ivindo 1521 712 2233 ,8 ,7 ,8
+  Ogooué-Lolo 1724 893 2617 1,0 ,8 ,9
+  Ogooué-Maritime 15006 9395 24401 8,4 8,7 8,5
+  Woleu-Ntem 16703 10450 27153 9,3 9,7 9,4
+  Gabon 179687 107692 287379 100,0 100,0 100,0
+  En termes de pourcentage des migrants dans la population résidente totale, le Woleu-Ntem et
+  l’Ogooué Maritime se positionnent, en plus de l’Estuaire et de Haut-Ogooué, comme des
+  destinations privilégiées de la migration internationale.
+  Tableau 25 : Pourcentage d’étrangers dans la population totale résidence des provinces selon le sexe
+  Sexe
+  Province Hommes Femmes Ensemble
+  Estuaire 24,3 16,0 20,3
+  Haut-Ogooué 17,7 9,3 13,9
+  Moyen-Ogooué 10,7 5,1 7,9
+  Ngounié 6,5 4,1 5,3
+  Nyanga 8,1 6,3 7,2
+  Ogooué-Ivindo 4,7 2,3 3,5
+  Ogooué-Lolo 4,9 2,9 4,0
+  Ogooué-Maritime 18,5 12,3 15,5
+  Woleu-Ntem 21,3 13,6 17,5
+  Gabon 19,2 12,3 15,9
+  Au total 1 % des Gabonais sont nés à l’étranger (12.400). Un quart des étrangers au Gabon
+  sont nés au Gabon (70.600). Autrement dit, ce sont des migrants de seconde génération.
+  Tableau 26 : Répartition de la population résidente selon la nationalité et le pays de résidence par sexe
+  Nationalité et pays de Effectif Pourcentage
+  naissance Hommes Femmes Ensemble Hommes Femmes Ensemble
+  Gabonais
+  Gabon 698584 744385 1442969 98,9 99,0 98,9
+  Etranger 6257 6191 12448 0,9 0,8 0,9
+  Pays de naissance non
+  1576 1471 3047 0,2 0,2 0,2
+  déclaré
+  Total 706417 752047 1458464 100,0 100,0 100,0
+  Etrangers
+  Gabon 35095 35544 70639 19,5 33,0 24,6
+  Etranger 143800 71755 215555 80,0 66,6 75,0
+  Pays de naissance non
+  792 393 1185 0,4 0,4 0,4
+  déclaré
+  Total 179687 107692 287379 100,0 100,0 100,0
+  --- page 51 ---
+  24
+  Recensement Général de la Population et des Logements de 2013 du Gabon (RGPL2013)
+  Nationalité non déclarée
+  Gabon 3450 3570 7020 7,2 20,7 10,8
+  Etranger 618 358 976 1,3 2,1 1,5
+  Pays de naissance non
+  43900 13340 57240 91,5 77,3 87,7
+  déclaré
+  Total 47968 17268 65236 100,0 100,0 100,0
+  Ensemble
+  Gabon 737129 783499 1520628 78,9 89,3 84,0
+  Etranger 150675 78304 228979 16,1 8,9 12,6
+  Pays de naissance non
+  46268 15204 61472 5,0 1,7 3,4
+  déclaré
+  Total 934072 877007 1811079 100,0 100,0 100,0
+  2.12 Le statut et condition de la femme
+  Le Gabon compte 877 007 femmes sur une population totale de 1 811 079, soit 48,4 %. Bien que représentant
+  près de la moitié de la population gabonaise, les femmes ne jouent toujours pas un rôle à la mesure
+  leur poids démographique, surtout dans les sphères de décision et dans le marché du travail. Une
+  bonne partie de ce décalage s’explique par les iniquités de genre qui prenne racine dans la
+  socialisation même de la population.
+  Pour analyser le statut et la condition de la femme nous allons recourir à une grille d’analyse qui
+  compare les femmes aux hommes sur les indicateurs de pouvoir social (« Capacités ») et de pouvoir
+  économiques « Opportunités »).
+  Au Gabon les femmes performent mieux que les hommes sur la plupart des indicateurs de
+  santé et d’éducation, mais moins bien sur le marché du travail où elles sont moins bien payé
+  que les hommes et moins souvent employeurs.
+  Tableau 27 : Quelques indicateurs Du statut et de la condition de la femme au Gabon
+  Sexe Indice de Parité en
+  Femmes Hommes parité faveur de :
+  Pouvoir social « Capacités »
+  Education
+  Taux de scolarisation primaire 88,7 % 87,7 % 101 % Femmes
+  Taux de scolarisation secondaire 56,5 % 52,4 % 108 % Femmes
+  Taux de scolarisation supérieur
+  Taux d’abandon primaire 1,6 % 2,4 % 66 % Femmes
+  Achèvement des études primaires 43,7 % 41,3 % 106 Femmes
+  Alphabétisation : Aptitude à lire et écrire 85,2 % 84,1 % 101 Femmes
+  Santé
+  Mortalité des moins de 5 ans 55,1 % 66,0 % 83 % Femmes
+  Indice de santé infantile 38,0 % 43,0 % 88 % Femmes
+  Pouvoir économique « Opportunités »
+  Revenus : Moins que le SMIG 19,8 % 9,8 % 202% Hommes
+  Revenus : Moins que 150.000 47,9 % 33 % 145% Hommes
+  Accès aux ressources
+  Propriétaire de son logement 43,2 % 31,0 % 139 % Femmes
+  Possède un titre foncier 14,8 % 14,2 % 104 Femmes
+  Employeurs 1,6 % 2,5 % 64 % Hommes
+  Pouvoir politique « Pouvoir d’action »
