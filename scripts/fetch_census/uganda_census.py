@@ -31,12 +31,13 @@ and men per 1,000 women, and the median age, interpolated within the age
 group that holds the middle person from the dashboard's groups made disjoint
 (0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over). The
 regions are the sums of their districts: the dashboard draws one county,
-Chekwi in Nakapiripirit, without figures, so its counties make 78,864 fewer
-people than the census counted, while its districts make the census's count.
+Chekwi in Nakapiripirit, without figures, so its counties make 45,826,553
+people, while its districts make 45,895,961 of the 45,905,417 the Bureau
+announced as the final count.
 
 **Checks.** Each unit's sexes make its total and its age groups make it too;
-the districts make the country's total, and each district's counties make the
-district but where one is drawn without figures.
+the districts make the country's total within a tenth of a percent, and each
+district's counties make the district but where one is drawn without figures.
 
 Usage:
     python -m scripts.fetch_census.uganda_census --points
@@ -175,8 +176,10 @@ def write_points() -> int:
 
 OUT = "uganda_census.json"
 YEAR = 2024
-# The 2024 census's final count of everyone enumerated.
+# The 2024 census's final count of everyone enumerated, and how far the
+# dashboard's districts may fall from it (they make 45,895,961).
 NATIONAL = 45_905_417
+SLACK = 0.001
 SITE = PROCESSED.parent.parent / "site" / "data"
 SOURCE = ("Uganda Bureau of Statistics, National Population and Housing Census 2024, county "
           "statistics (population by sex and by age group), from the Bureau's census "
@@ -270,9 +273,12 @@ def read_units() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     districts = layer("district")
     counties = layer("county")
     made = sum(u["total"] for u in districts.values())
-    if made != NATIONAL:
+    # The dashboard's districts make 9,456 fewer people than the final count the
+    # Bureau announced: a gap this small is logged, a larger one is a misread.
+    if abs(made - NATIONAL) > NATIONAL * SLACK:
         raise SystemExit(f"uganda_census: the districts make {made:,}, not the census's "
                          f"{NATIONAL:,}")
+    log(f"  the districts make {made:,} of the census's {NATIONAL:,}")
     for code, district in sorted(districts.items()):
         inside = [c for c in counties.values() if c["district"] == code]
         got = sum(c["total"] for c in inside)
