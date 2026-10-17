@@ -407,6 +407,7 @@ def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[di
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.parse_args()
     import io
     from pypdf import PdfReader
