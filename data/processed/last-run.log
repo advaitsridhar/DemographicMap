@@ -1,50 +1,24 @@
-  read https://web.archive.org/web/20221113190955id_/https://www.bos.gov.ls/New%20Folder/Copy%20of%20Demography/2016%20POPULATION%20CENSUS%20VILLAGE%20LIST.zip: 1,116,444 bytes, sha256 9cdb569a497195f5e05e179ce1abc5f27fd157ba10d8c07fbeb338fb79c1bab4
-  40 lines whose men and women do not make their total: ['HA MAKAI (47 + 28 against 70)', 'Total (223 + 191 against 409)', 'MALEHLAKANA (72 + 63 against 137)', 'Total (298 + 317 against 617)', 'TETETE HA SEKHONYANA (206 + 209 against 406)', 'Total (271 + 294 against 556)', 'HA LUKASE (195 + 232 against 423)', 'HA LESUPI LEJOE-MOTHO  (155 + 343 against 734)', 'KHOMO-NALA HA SENYOKOTHO  (258 + 263 against 522)', 'Total (265 + 235 against 490)', 'Total (234 + 284 against 540)', 'LETSOAPANG HA MONKI (170 + 177 against 860)']
-  69 enumeration areas whose villages do not make their Total line: ["('Leribe', 'Matsoku', '2060132023'): villages [269, 292, 557], Total line [269, 288, 557]", "('Leribe', 'Matsoku', '2060133016'): villages [213, 195, 408], Total line [220, 200, 420]", "('Leribe', 'Matsoku', '2060133020'): villages [270, 271, 541], Total line [265, 265, 530]", "('Leribe', 'Matsoku', '2060133027'): villages [214, 198, 412], Total line [214, 202, 416]", "('Leribe', 'Matsoku', '2060133028'): villages [236, 426, 898], Total line [236, 213, 449]", "('Leribe', 'Bolahla', '2070223035'): villages [348, 334, 683], Total line [349, 334, 683]", "('Leribe', 'Mamafubelu', '2090413022'): villages [291, 286, 577], Total line [293, 291, 584]", "('Leribe', 'Menkhoaneng', '2100523043'): villages [393, 382, 775], Total line [389, 377, 766]", "('Leribe', 'Sephokong', '2120713003'): villages [325, 287, 612], Total line [433, 472, 905]", "('Leribe', 'Sephokong', '2120713029'): villages [262, 234, 496], Total line [265, 235, 490]", "('Leribe', 'Hlotse', '2131211016'): villages [234, 284, 518], Total line [234, 284, 540]", "('Leribe', 'Hlotse', '2131211017'): villages [189, 203, 905], Total line [189, 203, 392]"]
-  district ['Berea']: 262,739 in the list, 262616 in the census's district table
-  district ['Botha-Bothe']: 118,176 in the list, 118242 in the census's district table
-  district ['Leribe']: 338,115 in the list, 337521 in the census's district table
-  district ['Mafeteng']: 178,372 in the list, 178222 in the census's district table
-  district ['Maseru']: 522,277 in the list, 519186 in the census's district table
-  district ["Mohale's Hoek"]: 163,907 in the list, 165590 in the census's district table
-  district ['Mokhotlong']: 100,442 in the list, 100442 in the census's district table
-  district ["Qacha 's Nek", "Qacha's Nek"]: 74,547 in the list, 74566 in the census's district table
-  district ['Quthing']: 115,274 in the list, 115469 in the census's district table
-  district ['Thaba-Tseka']: 135,213 in the list, 135347 in the census's district table
-  10,965 villages in 80 councils; 5,675 enumeration areas with a Total line, 3 without; 2,009,062 people
-  district Berea: 262,739
-  district Botha-Bothe: 118,176
-  district Leribe: 338,115
-  district Mafeteng: 178,372
-  district Maseru: 522,277
-  district Mohale's Hoek: 163,907
-  district Mokhotlong: 100,442
-  district Qacha 's Nek: 74,547
-  district Quthing: 115,274
-  district Thaba-Tseka: 135,213
-    council on no polygon: Berea / Berea (26,054)
-    council on no polygon: Berea / Makeoane (22,797)
-    council on no polygon: Leribe / Hlotse (41,986)
-    council on no polygon: Leribe / Mamafubelu (28,068)
-    council on no polygon: Leribe / Tsoili-Tsoili (22,361)
-    council on no polygon: Maseru / Maseru Municipality (284,294)
-    council on no polygon: Maseru / Mazenod (17,193)
-    council on no polygon: Mokhotlong / Mphokojoane (25,648)
-    council on no polygon: Qacha's Nek / Qacha's Nek (15,092)
-    council on no polygon: Qacha's Nek / Qanya (15,320)
-    council on no polygon: Quthing / Mtjanyane (8,980)
-    council on no polygon: Quthing / Tsitsong (21,075)
-    council on no polygon: Thaba-Tseka / Nts'upe (1,664)
-    polygon with no council: 'Maoa-Mafubelu (in Leribe)
-    polygon with no council: Leribe (in Leribe)
-    polygon with no council: Makeoana (in Berea)
-    polygon with no council: Maseru (Maseru District) (in Maseru)
-    polygon with no council: Mjanyane (in Quthing)
-    polygon with no council: Mphaki (in Quthing)
-    polygon with no council: Mphokojoana (in Mokhotlong)
-    polygon with no council: Qanya (in Qacha 's Nek)
-    polygon with no council: Tayateyaneng (in Berea)
-    polygon with no council: Thota-ea-Moli (in Maseru)
-    polygon with no council: Tsuili-Tsuili (in Leribe)
-  67 councils written
-  wrote data/processed/lesotho_census.json (142 kB)
+  Final Results: 4,437,754 bytes, sha256 c98c94c727d20a5d67105faf6d3eadcbeb90fad097b2a72a0ccc5e04c24a7469
+  Thematic report: 8,502,541 bytes, sha256 b2ea66322a7b0cd3b81c16f2c2c6dc86b81b83b67e9aa708c37c96e80982eb80
+  92 pages
+  75 pages
+  Appendix B: Gounwolaila (17986, 9513, 8473) printed under Grand Cape Mount County belongs to Gbarpolu County
+  Appendix B: Gounwolaila (17986, 9513, 8473) printed again under Margibi County: dropped
+  Other African, nationally: 155,971
+  Bomi: (133705, 68574, 65131), median 22.2, religion {'Christian': 58.5, 'Muslim': 39.4, 'Traditional African Religion': 0.1, 'Other religion': 0.0, 'No religion': 2.0}, ethnic groups make 100.1%: [{'group': 'Gola', 'pct': 47.6}, {'group': 'Kpelle', 'pct': 15.1}, {'group': 'Vai', 'pct': 8.7}]
+  Bong: (467561, 235208, 232353), median 22.0, religion {'Christian': 93.8, 'Muslim': 3.3, 'Traditional African Religion': 0.4, 'Other religion': 0.0, 'No religion': 2.4}, ethnic groups make 100.1%: [{'group': 'Kpelle', 'pct': 83.1}, {'group': 'Bassa', 'pct': 3.5}, {'group': 'Mano', 'pct': 3.0}]
+  Gbarpolu: (95995, 51121, 44874), median 23.1, religion {'Christian': 78.9, 'Muslim': 18.4, 'Traditional African Religion': 0.3, 'Other religion': 0.0, 'No religion': 2.4}, ethnic groups make 99.9%: [{'group': 'Kpelle', 'pct': 48.7}, {'group': 'Gola', 'pct': 13.7}, {'group': 'Belle', 'pct': 12.3}]
+  Grand Bassa: (293689, 150280, 143409), median 21.6, religion {'Christian': 95.9, 'Muslim': 1.4, 'Traditional African Religion': 0.4, 'Other religion': 0.1, 'No religion': 2.2}, ethnic groups make 100.1%: [{'group': 'Bassa', 'pct': 77.6}, {'group': 'Kpelle', 'pct': 11.9}, {'group': 'Other African', 'pct': 2.3}]
+  Grand Cape Mount: (178867, 96757, 82110), median 23.3, religion {'Christian': 24.6, 'Muslim': 73.1, 'Traditional African Religion': 0.1, 'Other religion': 0.1, 'No religion': 2.2}, ethnic groups make 99.5%: [{'group': 'Vai', 'pct': 38.7}, {'group': 'Gola', 'pct': 24.2}, {'group': 'Mende', 'pct': 13.6}]
+  Grand Gedeh: (216692, 115295, 101397), median 23.3, religion {'Christian': 91.1, 'Muslim': 5.0, 'Traditional African Religion': 0.7, 'Other religion': 0.2, 'No religion': 3.0}, ethnic groups make 99.7%: [{'group': 'Krahn', 'pct': 76.2}, {'group': 'Grebo', 'pct': 5.5}, {'group': 'Other African', 'pct': 4.2}]
+  Grand Kru: (109342, 56999, 52343), median 21.1, religion {'Christian': 94.6, 'Muslim': 1.3, 'Traditional African Religion': 0.9, 'Other religion': 0.1, 'No religion': 3.1}, ethnic groups make 99.9%: [{'group': 'Grebo', 'pct': 60.5}, {'group': 'Kru', 'pct': 29.9}, {'group': 'Other African', 'pct': 2.1}]
+  Lofa: (367376, 183100, 184276), median 20.8, religion {'Christian': 64.6, 'Muslim': 30.3, 'Traditional African Religion': 1.8, 'Other religion': 0.0, 'No religion': 3.2}, ethnic groups make 100.2%: [{'group': 'Kissi', 'pct': 26.0}, {'group': 'Gbandi', 'pct': 23.2}, {'group': 'Lorma', 'pct': 22.8}]
+  Margibi: (304946, 152699, 152247), median 21.3, religion {'Christian': 94.7, 'Muslim': 3.5, 'Traditional African Religion': 0.1, 'Other religion': 0.0, 'No religion': 1.6}, ethnic groups make 99.9%: [{'group': 'Kpelle', 'pct': 43.9}, {'group': 'Bassa', 'pct': 22.7}, {'group': 'Lorma', 'pct': 5.2}]
+  Maryland: (172587, 86867, 85720), median 20.4, religion {'Christian': 94.8, 'Muslim': 1.9, 'Traditional African Religion': 0.6, 'Other religion': 0.0, 'No religion': 2.7}, ethnic groups make 100.2%: [{'group': 'Grebo', 'pct': 82.1}, {'group': 'Kru', 'pct': 8.6}, {'group': 'Other African', 'pct': 3.3}]
+  Montserrado: (1920965, 942559, 978406), median 21.9, religion {'Christian': 84.6, 'Muslim': 13.3, 'Traditional African Religion': 0.1, 'Other religion': 0.1, 'No religion': 2.0}, ethnic groups make 99.6%: [{'group': 'Kpelle', 'pct': 19.4}, {'group': 'Bassa', 'pct': 15.4}, {'group': 'Grebo', 'pct': 7.8}]
+  Nimba: (621841, 312018, 309823), median 19.5, religion {'Christian': 92.7, 'Muslim': 1.2, 'Traditional African Religion': 1.5, 'Other religion': 0.1, 'No religion': 4.6}, ethnic groups make 100.0%: [{'group': 'Gio', 'pct': 47.1}, {'group': 'Mano', 'pct': 42.0}, {'group': 'Krahn', 'pct': 2.0}]
+  River Cess: (90819, 47717, 43102), median 21.1, religion {'Christian': 96.5, 'Muslim': 1.1, 'Traditional African Religion': 0.1, 'Other religion': 0.0, 'No religion': 2.3}, ethnic groups make 99.6%: [{'group': 'Bassa', 'pct': 84.9}, {'group': 'Kru', 'pct': 4.1}, {'group': 'Kpelle', 'pct': 2.3}]
+  River Gee: (124653, 65471, 59182), median 21.5, religion {'Christian': 94.3, 'Muslim': 2.1, 'Traditional African Religion': 0.4, 'Other religion': 0.0, 'No religion': 3.2}, ethnic groups make 99.5%: [{'group': 'Grebo', 'pct': 88.0}, {'group': 'Other African', 'pct': 3.6}, {'group': 'Gio', 'pct': 1.7}]
+  Sinoe: (151149, 79362, 71787), median 21.4, religion {'Christian': 95.0, 'Muslim': 2.3, 'Traditional African Religion': 0.3, 'Other religion': 0.1, 'No religion': 2.4}, ethnic groups make 99.9%: [{'group': 'Kru', 'pct': 50.9}, {'group': 'Sapo', 'pct': 23.4}, {'group': 'Grebo', 'pct': 8.6}]
+  151 records: 80 districts with a 2022 count
+  wrote data/processed/liberia_census.json (338 kB)
