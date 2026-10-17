@@ -1,52 +1,16 @@
 congo_census: 12 department pages, 92 districts and communes listed
-  retry 1/4 after 2s :: https://www.citypopulation.de/en/congo/admin/03__lékoumou/ :: 'ascii' codec can't encode character '\xe9' in position 25: ordinal not in range(128)
-  retry 2/4 after 4s :: https://www.citypopulation.de/en/congo/admin/03__lékoumou/ :: 'ascii' codec can't encode character '\xe9' in position 25: ordinal not in range(128)
-  retry 3/4 after 8s :: https://www.citypopulation.de/en/congo/admin/03__lékoumou/ :: 'ascii' codec can't encode character '\xe9' in position 25: ordinal not in range(128)
-  retry 4/4 after 16s :: https://www.citypopulation.de/en/congo/admin/03__lékoumou/ :: 'ascii' codec can't encode character '\xe9' in position 25: ordinal not in range(128)
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1052, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1362, in _send_request
-    self.putrequest(method, url, **skips)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1200, in putrequest
-    self._output(self._encode_request(request))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1280, in _encode_request
-    return request.encode('ascii')
-           ^^^^^^^^^^^^^^^^^^^^^^^
-UnicodeEncodeError: 'ascii' codec can't encode character '\xe9' in position 25: ordinal not in range(128)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/congo_census.py", line 218, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/congo_census.py", line 199, in main
-    dep = department(http_get(url, binary=True, cache=False, timeout=120).decode("utf-8", "replace"))
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1073, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://www.citypopulation.de/en/congo/admin/03__lékoumou/
+  the departments make 6,142,180
+  Kouilou: 97,362 (52,111 men, 45,251 women)
+  Niari: 334,863 (160,761 men, 174,102 women)
+  Lékoumou: 100,559 (50,313 men, 50,246 women)
+  Bouenza: 363,850 (180,914 men, 182,936 women)
+  Pool: 394,532 (197,707 men, 196,825 women)
+  Plateaux: 283,421 (137,918 men, 145,503 women)
+  Cuvette: 316,599 (153,648 men, 162,951 women)
+  Cuvette-Ouest: 119,328 (58,280 men, 61,048 women)
+  Sangha: 209,701 (113,359 men, 96,342 women)
+  Likouala: 355,570 (174,270 men, 181,300 women)
+  Brazzaville: 2,145,783 (1,061,708 men, 1,084,075 women)
+  Pointe-Noire: 1,420,612 (708,953 men, 711,659 women)
+  46 second-level polygons given reasons
+  wrote data/processed/congo_census.json (103 kB)
