@@ -336,5 +336,132 @@ class National(unittest.TestCase):
         self.assertTrue(any("not all its reports read" in line for line in lines))
 
 
+def report(new, old, short=0, stem="Bengo"):
+    rep = am.Report(stem)
+    rep.new = [(n, t, round(t * 0.48), t - round(t * 0.48)) for n, t in new]
+    rep.old = old
+    rep.total = tuple(sum(r[j] for r in rep.new) for j in (1, 2, 3))
+    rep.short = short
+    return rep
+
+
+def sexed(name, t, m, f):
+    return (name, t, m, f)
+
+
+class Rounding(unittest.TestCase):
+    def test_communes_a_person_off_their_municipality(self):
+        rep = am.Report("Cabinda")
+        rep.new = [("Necuto", 16_441, 8_000, 8_441), ("Miconje", 8_629, 4_300, 4_329)]
+        rows = [("Cabinda", {"TOTAL": 25_070}), ("Necuto", {"TOTAL": 16_441}),
+                ("Necuto", {"TOTAL": 14_099}), ("Inhuca", {"TOTAL": 2_343}),
+                ("Miconje", {"TOTAL": 8_629}), ("Miconje", {"TOTAL": 8_629})]
+        got = am.municipalities(rep, "religion", rows)
+        self.assertEqual(set(got), {"necuto", "miconje"})
+        self.assertEqual(rep.problems, [])
+
+    def test_communes_far_past_their_municipality_are_refused(self):
+        rep = am.Report("Cabinda")
+        rep.new = [("Necuto", 16_441, 8_000, 8_441), ("Miconje", 8_629, 4_300, 4_329)]
+        rows = [("Cabinda", {"TOTAL": 25_070}), ("Necuto", {"TOTAL": 16_441}),
+                ("Necuto", {"TOTAL": 14_099}), ("Inhuca", {"TOTAL": 2_443}),
+                ("Miconje", {"TOTAL": 8_629}), ("Miconje", {"TOTAL": 8_629})]
+        self.assertEqual(am.municipalities(rep, "religion", rows), {})
+
+
+class Cells(unittest.TestCase):
+    def page(self, dande):
+        page = Page()
+        page.title("Quadro 7.1 - População com 2 ou mais anos por área de residência e "
+                   "município, segundo a religião ou espiritualidade, 2024")
+        page.head([("População com 2 ou mais anos", 180), ("Católica", 270),
+                   ("Protestante", 335)])
+        rights = [240.0, 310.0, 380.0]
+        page.row("Bengo", [300, 200, 100], rights)
+        page.row("Dande", dande, rights[:len(dande)])
+        page.row("Dembos", [200, 100, 100], rights)
+        return [am.rows_of(page.words)], [page.text()]
+
+    def test_an_empty_cell_is_nobody_when_the_row_adds_up(self):
+        pages, texts = self.page([100, 100])
+        rep = am.Report("Bengo")
+        rows = dict(am.read_table(rep, "religion", am.TABLES["religion"], pages, texts))
+        self.assertEqual(rows["Dande"], {"TOTAL": 100, "Catholic": 100, "Protestant": 0})
+
+    def test_an_empty_cell_that_loses_people_refuses_the_table(self):
+        pages, texts = self.page([100, 60])
+        rep = am.Report("Bengo")
+        self.assertEqual(am.read_table(rep, "religion", am.TABLES["religion"], pages, texts),
+                         [])
+        self.assertTrue(any("no figure" in p for p in rep.problems))
+
+    def test_broad_age_groups_printed_by_sex(self):
+        page = Page()
+        page.title("Quadro 1.6 - População por área de residência, municípios e comunas, "
+                   "segundo os grandes grupos etários e sexo, 2024")
+        rights = [250.0 + 60 * k for k in range(9)]
+        page.head([("0 - 14 anos", 270), ("15 - 64 anos", 450), ("65 ou mais", 630)])
+        page.head([(w, r - 40) for w, r in zip(["Total", "Homens", "Mulheres"] * 3, rights)])
+        page.row("Bengo", [600, 290, 310, 360, 170, 190, 40, 20, 20], rights)
+        page.row("Dande", [600, 290, 310, 360, 170, 190, 40, 20, 20], rights)
+        rep = am.Report("Bengo")
+        rows = dict(am.read_table(rep, "age_broad", am.TABLES["age_broad"],
+                                  [am.rows_of(page.words)], [page.text()]))
+        self.assertEqual(rows["Dande"], {"0-14": 600, "15-64": 360, "65+": 40, "TOTAL": 1000})
+
+    def test_names_with_brackets(self):
+        self.assertIn("cacongo", am.census_keys("Cacongo(ex_Lândana)"))
+        self.assertIn("catabola", am.census_keys("Catabola (ex. Nova Sintra)"))
+        admin2 = [{"id": "c", "name": "Cunhinga", "parent": "Z"},
+                  {"id": "k", "name": "Cuito", "parent": "Z"}]
+        poly = am.polygon_for("Cunhinga (Vouga)", "Bié", admin2, {"Z": "bie"})
+        self.assertEqual(poly["id"], "c")
+
+
+class OldDivision(unittest.TestCase):
+    def test_a_table_of_namesakes_is_not_the_old_division(self):
+        pages, texts = report_pages()
+        old = next(i for i, t in enumerate(texts) if "censos2014e2024" in t)
+        page = Page()
+        page.title("Quadro 11 - População residente por município, segundo o sexo, "
+                   "Censos 2014 e 2024")
+        page.head([("Censo 2014", 250), ("Censo 2024", 430)])
+        r6 = [260.0, 320.0, 380.0, 440.0, 500.0, 560.0]
+        page.row("Bengo", [252_586, 125_695, 126_890, 488_974, 241_952, 247_023], r6)
+        page.row("Dande", [222_528, 111_188, 111_340, *NEW[0][1:]], r6)
+        page.row("Quibaxe", [30_058, 14_507, 15_550, *NEW[4][1:]], r6)
+        pages[old], texts[old] = am.rows_of(page.words), page.text()
+        rep = am.read_report("Bengo", pages, texts)
+        self.assertEqual(rep.old, [])
+        self.assertEqual(rep.namesakes, 4)
+        records, _ = am.build([rep], ADMIN1, ADMIN2)
+        dande = next(r for r in records if r["name"] == "Dande")
+        self.assertIn("leaves out the 4 others", dande["religion"]["note"])
+        self.assertNotIn("value", dande["population"])
+
+    def test_straddling_municipalities_within_two_per_cent(self):
+        rep = report([("A", 1_000), ("B", 500), ("C", 300), ("D", 200)],
+                     [("A", 1_492, 716, 776), ("C", 508, 244, 264)])
+        got = am.crosswalk_parts(rep)
+        self.assertEqual(got["a"], (["A", "B"], False))
+        self.assertEqual(got["c"], (["C", "D"], False))
+        # A table that does not make its province is believed only where exact.
+        rep = report([("A", 1_000), ("B", 500), ("C", 300), ("D", 200)],
+                     [("A", 1_492, 716, 776), ("C", 508, 244, 264)], short=10)
+        self.assertEqual(am.crosswalk_parts(rep), {})
+
+    def test_each_old_municipality_on_its_own(self):
+        rep = report([("Dande", 1_000), ("Panguila", 500), ("Quibaxe", 310), ("Piri", 200),
+                      ("Coxe", 77)],
+                     [("Dande", 1_500, 720, 780), ("Dembos", 450, 216, 234)], short=137)
+        got = am.crosswalk_parts(rep)
+        self.assertEqual(got, {"dande": (["Dande", "Panguila"], True)})
+        records, _ = am.build([rep], ADMIN1, ADMIN2)
+        by = {r["name"]: r for r in records if r["level"] == "admin2"}
+        self.assertEqual(by["Dande"]["population"]["value"], 1_500)
+        self.assertNotIn("value", by["Dembos-Quibaxe"]["population"])
+        self.assertIn("do not match Dembos", by["Dembos-Quibaxe"]["ethnicity"]["note"])
+
+
 if __name__ == "__main__":
     unittest.main()
