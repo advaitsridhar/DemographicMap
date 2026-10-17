@@ -1148,9 +1148,7 @@
     "level": "admin2",
     "name": "Kinshasa",
     "parent": "COD",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Kinshasa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1185,7 +1183,8 @@
     ],
     "country": "COD",
     "match_by": "shape_id",
-    "shape_id": "63176286B79360907689545"
+    "shape_id": "63176286B79360907689545",
+    "capital_note": "Kinshasa is a city-province, one city, whose seat is the city itself."
   },
   {
     "id": "COD-GAPS-63176286B7026545207042",
