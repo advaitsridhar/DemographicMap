@@ -1,10 +1,35 @@
-  read https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf: 1,883,934 bytes, sha256 4ba09a999d25f7d568eb8f236091e5c5ca9298e3c66922a3e9c14874fef36f30
-Cannot set line width because b'' is an invalid float value
-  Dossa: 974 men per 1,000 women, median 14.9, Islam 98.9%
-  Maradi: 968 men per 1,000 women, median 13.3, Islam 99.3%
-  Niamey: 991 men per 1,000 women, median 18.6, Islam 97.4%
-  Tahoua/Agadez: 1004 men per 1,000 women, median 14.4, Islam 99.3%
-  Tillaberi: 978 men per 1,000 women, median 14.8, Islam 98.6%
-  Zinder/Diffa: 1003 men per 1,000 women, median 13.6, Islam 99.3%
-  6 first-level polygons and 67 departments bound
-  wrote data/processed/niger_census.json (119 kB)
+equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
+  Annobón: 5,314; men 48.9%; nationals 98.3%
+    ANNOBON: 5,314 (Annobón)
+  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
+    BANEY: 29,366 (Baney)
+    MALABO: 271,008 (Malabo)
+  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
+    LUBA: 26,331 (Luba)
+    RIABA: 8,343 (Riaba)
+  Centro Sur: 141,986; men 51.2%; nationals 89.9%
+    ACURENAM: not shown (Acurenam)
+    BICURGA: not shown (not a district)
+    EVINAYONG: not shown (Evinayong)
+    NIEFANG: not shown (Niefang)
+    NKIMI: not shown (not a district)
+  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
+    EBEBIYIN: not shown (Ebibeyin)
+    MICOMISENG: not shown (Micomiseng)
+    NKUE: not shown (not a district)
+    NSOC NSOMO: not shown (Nsok Nsomo)
+  Litoral: 367,348; men 52.3%; nationals 87.7%
+    BATA: not shown (Bata)
+    BITICA: not shown (not a district)
+    COGO: not shown (Cogo)
+    MACHINDA: not shown (not a district)
+    MBINI: not shown (Mbini)
+  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
+    ACONIBE: not shown (Aconibe)
+    AYENE: not shown (not a district)
+    AÑISOC: not shown (Añisok)
+    MONGOMO: not shown (Mongomo)
+    MONGOMOYEN: not shown (not a district)
+    NSORK: not shown (Nsork)
+  wrote data/processed/equatorial_guinea_census.json (75 kB)
+  7 provinces and 25 district polygons written
