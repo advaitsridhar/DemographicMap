@@ -112,6 +112,15 @@ class ZimbabweDistrictsTest(unittest.TestCase):
         with self.assertRaises(SystemExit):
             zw.build(self.table(), ADMIN1, extra)
 
+    def test_figures_split_from_their_label_are_joined_again(self):
+        lines = ["Chipinge Rural District", "Ward 22 5,448 6,376 11,824 2,517",
+                 "5,243 6,057 11,300 2,302", "Ward 23", "14,013 17,147 31,160 7,321", "Ward 24",
+                 "174,277 200,982 375,259 84,046", "Total", "7"]
+        self.assertEqual(zw.joined_lines(lines),
+                         ["Chipinge Rural District", "Ward 22 5,448 6,376 11,824 2,517",
+                          "Ward 23 5,243 6,057 11,300 2,302", "Ward 24 14,013 17,147 31,160 7,321",
+                          "Total 174,277 200,982 375,259 84,046", "7"])
+
     def test_visitor_notes_say_nothing_about_how_the_map_is_made(self):
         for r in zw.build(self.table(), ADMIN1, ADMIN2):
             text = " ".join(str(r.get(k)) for k in r if k.endswith("note")) + " ".join(

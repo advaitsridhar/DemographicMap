@@ -58,6 +58,42 @@ OUT = "zimbabwe_districts.json"
 
 NUM = r"\d{1,3}(?:,\d{3})*"
 ROW = re.compile(rf"^(?P<label>.*?)\s+(?P<m>{NUM})\s+(?P<f>{NUM})\s+(?P<t>{NUM})\s+(?P<h>{NUM})$")
+# The text layer sometimes puts a line's four figures and its label on lines
+# of their own ("5,243 6,057 11,300 2,302" and then "Ward 23"): joined again.
+FIGURES = re.compile(rf"^{NUM}\s+{NUM}\s+{NUM}\s+{NUM}$")
+LABEL = re.compile(r"^(?:Ward \d+|Total)$")
+
+
+def joined_lines(lines: list[str]) -> list[str]:
+    """The page's lines with each split figure line put back on its label."""
+    out: list[str] = []
+    figures: str | None = None
+    label: str | None = None
+    for ln in lines:
+        if FIGURES.match(ln):
+            if label is not None:
+                out.append(f"{label} {ln}")
+                label = None
+            else:
+                if figures is not None:
+                    out.append(figures)
+                figures = ln
+        elif LABEL.match(ln):
+            if figures is not None:
+                out.append(f"{ln} {figures}")
+                figures = None
+            else:
+                label = ln
+        else:
+            for held in (figures, label):
+                if held is not None:
+                    out.append(held)
+            figures = label = None
+            out.append(ln)
+    for held in (figures, label):
+        if held is not None:
+            out.append(held)
+    return out
 PROVINCES = ("Bulawayo", "Manicaland", "Mashonaland Central", "Mashonaland East",
              "Mashonaland West", "Matabeleland North", "Matabeleland South", "Midlands",
              "Masvingo", "Harare")
@@ -110,7 +146,7 @@ def parse(pages: list[str]) -> dict[str, Any]:
     province: str | None = None
     current: dict[str, Any] | None = None
     for text in pages:
-        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+        lines = joined_lines([ln.strip() for ln in text.splitlines() if ln.strip()])
         if not lines:
             continue
         if any(ln.startswith("Population Distribution by Province") for ln in lines[:2]):
