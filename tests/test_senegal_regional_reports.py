@@ -200,5 +200,15 @@ class SenegalRegionalReportsRun5(unittest.TestCase):
         self.assertAlmostEqual(sum(rows.values()), 794_412, delta=2 * len(rows))
 
 
+class SenegalRegionalReportsRun6(unittest.TestCase):
+    def test_sign_language_cut_by_a_heading_or_a_page(self):
+        # The labels run 6 wrote for Kaolack, Ziguinchor and Sédhiou.
+        for label in ("Pourcentage (%) Langage des signes (Sourd-Muet)",
+                      "des signes (Sourd- Muet)", "Muet)", "Langage des signes (Sourd -"):
+            self.assertEqual(sr.language_label(label), "Sign language", label)
+        self.assertEqual(sr.language_label("sereer"), "Serer")
+        self.assertEqual(sr.language_label("Màndienka"), "Mandinka")
+
+
 if __name__ == "__main__":
     unittest.main()

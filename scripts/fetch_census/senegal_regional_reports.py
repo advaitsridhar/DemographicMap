@@ -167,6 +167,12 @@ def language_label(label: str) -> str:
     key = fold(label)
     if key in LANGUAGES:
         return LANGUAGES[key]
+    # "Langage des signes (Sourd-Muet)" wraps over two or three lines, and a
+    # column heading or a page break can cut it: "Pourcentage (%) Langage des
+    # signes (Sourd-Muet)" (Kaolack), "des signes (Sourd- Muet)" (Ziguinchor),
+    # "Muet)" (Sédhiou).
+    if "signe" in key or "muet" in key:
+        return "Sign language"
     return re.sub(r"\s+", " ", label).strip()
 
 
