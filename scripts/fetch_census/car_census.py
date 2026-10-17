@@ -281,20 +281,26 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
           admin2: list[dict[str, Any]], ocha_url: str, uscb_url: str
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
+
+    def fail(message: str) -> None:
+        """Stop, after printing what was found: the log is how a refusal is read."""
+        for line in report:
+            log(line)
+        raise SystemExit(f"car_census: {message}")
+
     country = c21["country"]["total"] if c21.get("country") else None
     made = sum(c["total"] for c in prev)
     report.append(f"PrevCommune: {len(prev)} communes of the 2003 frame, {made:,} people; "
                   f"the national line {country:,}" if country else f"PrevCommune: {made:,}")
     if country is not None and made != country:
-        raise SystemExit(f"car_census: the 2003-frame communes make {made:,}, the country "
-                         f"{country:,}")
+        fail(f"the 2003-frame communes make {made:,}, the country {country:,}")
     off = fixed_split(c21)
     units = len(c21["prefectures"]) + len(c21["sps"]) + len(c21["communes"])
     report.append(f"mapping table: {off} of {units} units depart from the fixed "
                   f"{FIXED_MALE_SHARE:.0%} share of men")
     if off > 0.05 * units:
-        raise SystemExit("car_census: the mapping table now gives units their own sexes; "
-                         "read its sex ratios instead of withholding them")
+        fail("the mapping table now gives units their own sexes; read its sex ratios instead "
+             "of withholding them")
     # Duplicate figures, named for anyone reading the run.
     seen: dict[int, list[str]] = defaultdict(list)
     for c in prev:
@@ -329,7 +335,7 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
     bound, missing = bind(departments, admin2, parents)
     report += [f"  not bound to a polygon: {m}" for m in missing]
     if missing:
-        raise SystemExit("car_census: sub-prefectures left without a polygon: " + ", ".join(missing))
+        fail("sub-prefectures left without a polygon: " + ", ".join(missing))
     groups: dict[str, list[str]] = defaultdict(list)
     for code, sid in bound.items():
         groups[sid].append(code)
@@ -391,8 +397,7 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
         report.append(f"  {shape['name']}: {total:,} ({len(communes)} communes of 2003)")
     report += [f"  disagreement: {d}" for d in disagree]
     if disagree:
-        raise SystemExit(f"car_census: OCHA's assignment and the commune names disagree on "
-                         f"{len(disagree)} polygons")
+        fail(f"OCHA's assignment and the commune names disagree on {len(disagree)} polygons")
 
     own, why = own_structures(ages)
     report += why
