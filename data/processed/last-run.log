@@ -1,204 +1,1267 @@
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-cod caveats 3 1800
-  HTTP 200 application/json;charset=utf-8 23,675 bytes
-  ~ {"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "caveats": "For the year 2019, 2020: \r\n1.\tAll age and sex disaggregations are based on estimated ratios at the administrative level 1 (province level). The sum of these ratios varies from 100% to a maximum of 1.16%\r\n\r\n2.\tTotals along administrative feature rows may differ due to rounding and the ratio errors mentioned above. The maximum difference is 0.12%\r\n", "cod_level": "cod-standard", "creator_user_id": "84e567b6-1d09-4f7e-96f5-b69c09028cbc", "data_update_frequency": "365", "dataset_date": "[2019-01-01T00:00:00 TO 2024-09-30T23:59:59]", "dataset_preview": "first_resource", "dataset_source": "Health Zone population statistics developed by the DRC IM Working Group", "due_date": "2025-09-30T23:59:59", "has_geodata": false, "has_showcases": false, "id": "d1160fa9-1d58-4f96-9df5-edbff2e80895", "is_requestdata_type": false, "isopen": false, "last_modified": "2024-12-17T15:28:25.680060", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "84e567b6-1d09-4f7e-96f5-b69c09028cbc", "metadata_created": "2019-09-12T12:06:43.317940", "metadata_modified": "2026-05-22T13:59:10.165325", "methodology": "Other", "methodology_other": "2019 and 2020 population estimates were obtained from the \u201cdrc_zs_population_2019_2020\u201d spreadsheet available in the \u201cRDC - Statistiques des populations par zones de sant\u00e9\u201d HDX dataset.\r\n\r\nMost administrative level 2 (district) features contain one or more complete zones de sant\u00e9 (health zones), thus enabling summation of the contained zone de sant\u00e9 populations. For instance, the 2019 population for \u2018Matadi\u2019 (CD2001) is summed from the populati
-== csv https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/44bafdcb-e234-4fa2-9d1a-278715384408/download/cod_admpop_adm1_2020.csv 30
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/44bafdcb-e234-4fa2-9d1a-278715384408/cod_admpop_adm1_2020.csv?AWSAccessKeyId=ASIAXYC32WNAZU3LQJAM&Signature=HRCD4%2FPvAX93WyiAXGzdpolEhaU%3D&x-amz-security-token=FwoGZXIvYXdzEEwaDJppLIHp5tyhwsHHyyLBAZUJCEGztCU8xymJsjbPWPVv7nK4MVeOGIJSPIKvVzTFeHbyLHbOyOpkZhtJnZcV5lXRDKd8TSmx6ceegEZsond1W3qnEf%2FdQ8ArUSpPlj70OJ%2Buc%2BeXPvRjvRTKW8ioLr4LMdSC7VXvQvR2Eecx%2BX2Mbtp9fCBXu2KoUtWfSrd1lrT19h0XmGdTcawxb6lpAqKspTSZVNzzBEmRPkTMg62bgYbb7UaxUMB6qqxj0DlJkFm4ltZTuDQ5IYsibZQGvBsooIHP1gYyLeSR%2FWt42qYamSnXIK2i8w%2Bgb8v1OmfS8MQ76WySW1HcyiU6SwFa4c0lonyfJg%3D%3D&Expires=1792264040 text/csv 5,113 bytes
-    ﻿admin1Name_fr | admin1Pcode | admin1RefName | admin1AltName1_fr | admin1AltName2_fr | admin0Name_fr | admin0Pcode | F_00_04 | M_00_04 | F_05_19 | M_05_19 | F_adulte | M_adulte | F_agee | M_agee | T_00_04 | T_05_19 | T_adulte | T_agee | F_TL
-    Bas-Uele | CD52 | <Null> | <Null> | <Null> | République démocrati | CD | 96557 | 101359 | 219021 | 229953 | 287394 | 277979 | 29131 | 23381 | 197916 | 448974 | 565373 | 52512 | 609165
-    Equateur | CD41 | <Null> | <Null> | <Null> | République démocrati | CD | 218095 | 226788 | 458477 | 473660 | 498888 | 487622 | 49350 | 35267 | 444883 | 932137 | 986510 | 84617 | 1224568
-    Haut-Katanga | CD71 | <Null> | <Null> | <Null> | République démocrati | CD | 639241 | 651752 | 1225695 | 1247971 | 1117071 | 1094186 | 69876 | 58278 | 1290993 | 2473666 | 2211257 | 128154 | 3057372
-    Haut-Lomami | CD73 | <Null> | <Null> | <Null> | République démocrati | CD | 426787 | 435139 | 818329 | 833199 | 745805 | 730528 | 46651 | 38909 | 861926 | 1651528 | 1476333 | 85560 | 2139023
-    Haut-Uele | CD53 | <Null> | <Null> | <Null> | République démocrati | CD | 139580 | 146523 | 316615 | 332418 | 415454 | 401843 | 42112 | 33799 | 286103 | 649033 | 817297 | 75911 | 942719
-    Ituri | CD54 | <Null> | <Null> | <Null> | République démocrati | CD | 428751 | 450076 | 972546 | 1021089 | 1276152 | 1234343 | 129354 | 103820 | 878827 | 1993635 | 2510495 | 233174 | 2850858
-    Kasaï | CD92 | Kasai | <Null> | <Null> | République démocrati | CD | 402794 | 419192 | 879946 | 910273 | 883091 | 855684 | 78851 | 62002 | 821986 | 1790219 | 1738775 | 140853 | 2219522
-    Kasaï-Central | CD91 | Kasai-Central | <Null> | <Null> | République démocrati | CD | 429284 | 446761 | 937815 | 970136 | 941168 | 911958 | 84038 | 66081 | 876045 | 1907951 | 1853126 | 150119 | 2475624
-    Kasaï-Oriental | CD82 | Kasai-Oriental | <Null> | <Null> | République démocrati | CD | 543498 | 556490 | 1063177 | 1094575 | 1017976 | 1000924 | 82283 | 53323 | 1099988 | 2157752 | 2018900 | 135606 | 2668771
-    Kinshasa | CD10 | <Null> | <Null> | <Null> | République démocrati | CD | 1035155 | 1041110 | 1927889 | 1949724 | 1929874 | 1916476 | 68481 | 54586 | 2076265 | 3877613 | 3846350 | 123067 | 5220436
-    Kongo-Central | CD20 | <Null> | <Null> | <Null> | République démocrati | CD | 418794 | 413571 | 830960 | 819302 | 713199 | 769667 | 48430 | 69735 | 832365 | 1650262 | 1482866 | 118165 | 2081918
-    Kwango | CD31 | <Null> | <Null> | <Null> | République démocrati | CD | 236066 | 250609 | 476645 | 503598 | 500212 | 467743 | 40995 | 31467 | 486675 | 980243 | 967955 | 72462 | 1281247
-    Kwilu | CD32 | <Null> | <Null> | <Null> | République démocrati | CD | 472460 | 501566 | 953955 | 1007899 | 1001125 | 936141 | 82047 | 62979 | 974026 | 1961854 | 1937266 | 145026 | 2589379
-    Lomami | CD81 | <Null> | <Null> | <Null> | République démocrati | CD | 400797 | 410378 | 784027 | 807182 | 750695 | 738119 | 60678 | 39322 | 811175 | 1591209 | 1488814 | 100000 | 2023940
-    Lualaba | CD72 | <Null> | <Null> | <Null> | République démocrati | CD | 245602 | 250407 | 470921 | 479481 | 429186 | 420394 | 26846 | 22390 | 496009 | 950402 | 849580 | 49236 | 1212180
-    Maï-Ndombe | CD33 | Mai-Ndombe | <Null> | <Null> | République démocrati | CD | 181343 | 192515 | 366154 | 386860 | 384259 | 359316 | 31493 | 24172 | 373858 | 753014 | 743575 | 55665 | 903346
-    Maniema | CD63 | <Null> | <Null> | <Null> | République démocrati | CD | 245330 | 252055 | 456649 | 487891 | 578721 | 531789 | 39680 | 47458 | 497385 | 944540 | 1110510 | 87138 | 1326178
-    Mongala | CD44 | <Null> | <Null> | <Null> | République démocrati | CD | 224587 | 233540 | 472126 | 487762 | 513738 | 502138 | 50819 | 36318 | 458127 | 959888 | 1015876 | 87137 | 1266061
-    Nord-Kivu | CD61 | <Null> | <Null> | <Null> | République démocrati | CD | 1008705 | 1043522 | 1938555 | 1999999 | 2061956 | 1943163 | 112649 | 132616 | 2052227 | 3938554 | 4005119 | 245265 | 5263695
-    Nord-Ubangi | CD43 | <Null> | <Null> | <Null> | République démocrati | CD | 140892 | 146510 | 296183 | 305992 | 322288 | 315010 | 31881 | 22784 | 287402 | 602175 | 637298 | 54665 | 745202
-    Sankuru | CD83 | <Null> | <Null> | <Null> | République démocrati | CD | 205572 | 210486 | 402134 | 414009 | 385038 | 378590 | 31123 | 20168 | 416058 | 816143 | 763628 | 51291 | 1036050
-    Sud-Kivu | CD62 | <Null> | <Null> | <Null> | République démocrati | CD | 696996 | 714048 | 1321521 | 1344255 | 1438752 | 1391859 | 98048 | 103732 | 1411044 | 2665776 | 2830611 | 201780 | 3573790
-    Sud-Ubangi | CD42 | <Null> | <Null> | <Null> | République démocrati | CD | 255791 | 265990 | 537725 | 555533 | 585119 | 571907 | 57880 | 41363 | 521781 | 1093258 | 1157026 | 99243 | 1387396
-    Tanganyika | CD74 | <Null> | <Null> | <Null> | République démocrati | CD | 330834 | 337310 | 634351 | 645878 | 578132 | 566289 | 36163 | 30163 | 668144 | 1280229 | 1144421 | 66326 | 1632856
-    Tshopo | CD51 | <Null> | <Null> | <Null> | République démocrati | CD | 241360 | 253365 | 547481 | 574811 | 718393 | 694858 | 72817 | 58445 | 494725 | 1122292 | 1413251 | 131262 | 1576422
-    Tshuapa | CD45 | <Null> | <Null> | <Null> | République démocrati | CD | 188775 | 196302 | 396844 | 409986 | 431822 | 422070 | 42717 | 30527 | 385077 | 806830 | 853892 | 73244 | 1059947
-== csv https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/bf8edc01-c28a-470d-9720-cb2d9435dfdf/download/cod_admpop_adm2_2020.csv 170
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/bf8edc01-c28a-470d-9720-cb2d9435dfdf/cod_admpop_adm2_2020.csv?AWSAccessKeyId=ASIAXYC32WNAZU3LQJAM&Signature=KJblrr9uPdYmqf49RKoNbzMfMM8%3D&x-amz-security-token=FwoGZXIvYXdzEEwaDJppLIHp5tyhwsHHyyLBAZUJCEGztCU8xymJsjbPWPVv7nK4MVeOGIJSPIKvVzTFeHbyLHbOyOpkZhtJnZcV5lXRDKd8TSmx6ceegEZsond1W3qnEf%2FdQ8ArUSpPlj70OJ%2Buc%2BeXPvRjvRTKW8ioLr4LMdSC7VXvQvR2Eecx%2BX2Mbtp9fCBXu2KoUtWfSrd1lrT19h0XmGdTcawxb6lpAqKspTSZVNzzBEmRPkTMg62bgYbb7UaxUMB6qqxj0DlJkFm4ltZTuDQ5IYsibZQGvBsooIHP1gYyLeSR%2FWt42qYamSnXIK2i8w%2Bgb8v1OmfS8MQ76WySW1HcyiU6SwFa4c0lonyfJg%3D%3D&Expires=1792264045 text/csv 30,854 bytes
-    ﻿admin2Name_fr | admin2Pcode | admin1Name_fr | admin1Pcode | admin0Name_fr | REMARK | F_00_04 | M_00_04 | F_05_19 | M_05_19 | F_adulte | M_adulte | F_agee | M_agee | T_00_04 | T_05_19 | T_adulte | T_agee | F_TL | M_TL
-    Kinshasa | CD1000 | Kinshasa | CD10 | République démocrati |  | 1035155 | 1041110 | 1927889 | 1949724 | 1929874 | 1916476 | 68481 | 54586 | 2076265 | 3877613 | 3846350 | 123067 | 5220436 | 4704348
-    Matadi | CD2001 | Kongo-Central | CD20 | République démocrati |  | 35432 | 34990 | 70303 | 69317 | 60340 | 65118 | 4097 | 5900 | 70422 | 139620 | 125458 | 9997 | 176141 | 163899
-    Boma | CD2002 | Kongo-Central | CD20 | République démocrati |  | 18580 | 18348 | 36865 | 36348 | 31641 | 34146 | 2149 | 3094 | 36928 | 73213 | 65787 | 5243 | 92363 | 85944
-    Moanda | CD2003 | Kongo-Central | CD20 | République démocrati |  | 37091 | 36628 | 73595 | 72562 | 63165 | 68166 | 4289 | 6176 | 73719 | 146157 | 131331 | 10465 | 184387 | 171573
-    Lukula | CD2005 | Kongo-Central | CD20 | République démocrati |  | 35521 | 35078 | 70480 | 69491 | 60492 | 65281 | 4108 | 5915 | 70599 | 139971 | 125773 | 10023 | 176583 | 164311
-    Tshela | CD2007 | Kongo-Central | CD20 | République démocrati |  | 45011 | 44449 | 89309 | 88056 | 76653 | 82722 | 5205 | 7495 | 89460 | 177365 | 159375 | 12700 | 223759 | 208208
-    Seke-Banza | CD2009 | Kongo-Central | CD20 | République démocrati |  | 26671 | 26339 | 52921 | 52178 | 45421 | 49017 | 3084 | 4441 | 53010 | 105099 | 94438 | 7525 | 132589 | 123375
-    Luozi | CD2010 | Kongo-Central | CD20 | République démocrati |  | 27739 | 27393 | 55039 | 54267 | 47239 | 50979 | 3208 | 4619 | 55132 | 109306 | 98218 | 7827 | 137896 | 128312
-    Songololo | CD2011 | Kongo-Central | CD20 | République démocrati |  | 35985 | 35536 | 71399 | 70398 | 61281 | 66133 | 4161 | 5992 | 71521 | 141797 | 127414 | 10153 | 178887 | 166455
-    Bangu | CD2012 | Kongo-Central | CD20 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Mbanza-Ngungu | CD2013 | Kongo-Central | CD20 | République démocrati |  | 75712 | 74768 | 150226 | 148118 | 128936 | 139145 | 8756 | 12607 | 150480 | 298344 | 268081 | 21363 | 376381 | 350224
-    Kasangulu | CD2015 | Kongo-Central | CD20 | République démocrati |  | 26165 | 25839 | 51916 | 51188 | 44559 | 48087 | 3026 | 4357 | 52004 | 103104 | 92646 | 7383 | 130073 | 121033
-    Madimba | CD2017 | Kongo-Central | CD20 | République démocrati |  | 45864 | 45292 | 91003 | 89726 | 78106 | 84290 | 5304 | 7637 | 91156 | 180729 | 162396 | 12941 | 228002 | 212156
-    Inkisi | CD2018 | Kongo-Central | CD20 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Kimvula | CD2019 | Kongo-Central | CD20 | République démocrati |  | 9023 | 8911 | 17904 | 17653 | 15366 | 16583 | 1043 | 1502 | 17934 | 35557 | 31949 | 2545 | 44857 | 41739
-    Kenge | CD3102 | Kwango | CD31 | République démocrati |  | 67082 | 71214 | 135446 | 143105 | 142143 | 132916 | 11649 | 8942 | 138296 | 278551 | 275059 | 20591 | 364086 | 348411
-    Feshi | CD3103 | Kwango | CD31 | République démocrati |  | 36397 | 38639 | 73489 | 77645 | 77123 | 72117 | 6321 | 4852 | 75036 | 151134 | 149240 | 11173 | 197543 | 189038
-    Kahemba | CD3105 | Kwango | CD31 | République démocrati |  | 40559 | 43058 | 81894 | 86525 | 85943 | 80365 | 7043 | 5406 | 83617 | 168419 | 166308 | 12449 | 220136 | 210658
-    Kasongo-Lunda | CD3107 | Kwango | CD31 | République démocrati |  | 73406 | 77928 | 148215 | 156596 | 155543 | 145447 | 12748 | 9785 | 151334 | 304811 | 300990 | 22533 | 398409 | 381257
-    Popokabaka | CD3108 | Kwango | CD31 | République démocrati |  | 18622 | 19770 | 37601 | 39727 | 39460 | 36898 | 3234 | 2482 | 38392 | 77328 | 76358 | 5716 | 101073 | 96721
-    Bandundu | CD3201 | Kwilu | CD32 | République démocrati |  | 19107 | 20284 | 38580 | 40761 | 40487 | 37859 | 3318 | 2547 | 39391 | 79341 | 78346 | 5865 | 104719 | 98225
-    Bagata | CD3202 | Kwilu | CD32 | République démocrati |  | 47878 | 50828 | 96672 | 102139 | 101452 | 94867 | 8314 | 6382 | 98706 | 198811 | 196319 | 14696 | 262403 | 246129
-    Kikwit | CD3203 | Kwilu | CD32 | République démocrati |  | 47662 | 50598 | 96235 | 101677 | 100994 | 94438 | 8277 | 6353 | 98260 | 197912 | 195432 | 14630 | 261217 | 245018
-    Bulungu | CD3204 | Kwilu | CD32 | République démocrati |  | 116670 | 123857 | 235570 | 248891 | 247218 | 231171 | 20261 | 15552 | 240527 | 484461 | 478389 | 35813 | 639422 | 599768
-    Idiofa | CD3206 | Kwilu | CD32 | République démocrati |  | 119843 | 127226 | 241978 | 255661 | 253943 | 237459 | 20812 | 15975 | 247069 | 497639 | 491402 | 36787 | 656815 | 616082
-    Mangai | CD3208 | Kwilu | CD32 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Dibaya-Lubwe | CD3209 | Kwilu | CD32 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Gungu | CD3210 | Kwilu | CD32 | République démocrati |  | 51490 | 54662 | 103965 | 109844 | 109106 | 102024 | 8942 | 6864 | 106152 | 213809 | 211130 | 15806 | 282199 | 264698
-    Masi-Manimba | CD3212 | Kwilu | CD32 | République démocrati |  | 69810 | 74111 | 140955 | 148926 | 147925 | 138323 | 12123 | 9306 | 143921 | 289881 | 286248 | 21429 | 382604 | 358876
-    Inongo | CD3302 | Maï-Ndombe | CD33 | République démocrati |  | 38418 | 40785 | 77571 | 81958 | 81407 | 76123 | 6672 | 5121 | 79203 | 159529 | 157530 | 11793 | 191378 | 216677
-    Kiri | CD3303 | Maï-Ndombe | CD33 | République démocrati |  | 19169 | 20350 | 38705 | 40893 | 40618 | 37982 | 3329 | 2555 | 39519 | 79598 | 78600 | 5884 | 95489 | 108112
-    Oshwe | CD3304 | Maï-Ndombe | CD33 | République démocrati |  | 33828 | 35912 | 68303 | 72166 | 71681 | 67028 | 5875 | 4509 | 69740 | 140469 | 138709 | 10384 | 168513 | 190789
-    Nioki | CD3305 | Maï-Ndombe | CD33 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Kutu | CD3306 | Maï-Ndombe | CD33 | République démocrati |  | 38389 | 40754 | 77513 | 81896 | 81346 | 76065 | 6667 | 5117 | 79143 | 159409 | 157411 | 11784 | 191233 | 216514
-    Kwamouth | CD3307 | Maï-Ndombe | CD33 | République démocrati |  | 12706 | 13489 | 25655 | 27105 | 26923 | 25175 | 2206 | 1694 | 26195 | 52760 | 52098 | 3900 | 63293 | 71660
-    Bolobo | CD3308 | Maï-Ndombe | CD33 | République démocrati |  | 14105 | 14974 | 28480 | 30091 | 29888 | 27948 | 2450 | 1880 | 29079 | 58571 | 57836 | 4330 | 70264 | 79553
-    Yumbi | CD3310 | Maï-Ndombe | CD33 | République démocrati |  | 12173 | 12923 | 24578 | 25968 | 25793 | 24119 | 2114 | 1623 | 25096 | 50546 | 49912 | 3737 | 60637 | 68653
-    Mushie | CD3311 | Maï-Ndombe | CD33 | République démocrati |  | 12555 | 13328 | 25349 | 26783 | 26603 | 24876 | 2180 | 1673 | 25883 | 52132 | 51479 | 3853 | 62539 | 70807
-    Mbandaka | CD4101 | Equateur | CD41 | République démocrati |  | 36356 | 37805 | 76427 | 78958 | 83164 | 81286 | 8227 | 5879 | 74161 | 155385 | 164450 | 14106 | 204133 | 204133
-    Bikoro | CD4102 | Equateur | CD41 | République démocrati |  | 30841 | 32070 | 64834 | 66981 | 70548 | 68955 | 6979 | 4987 | 62911 | 131815 | 139503 | 11966 | 173167 | 173167
-    Lukolela | CD4103 | Equateur | CD41 | République démocrati |  | 17163 | 17847 | 36080 | 37275 | 39261 | 38374 | 3884 | 2775 | 35010 | 73355 | 77635 | 6659 | 96369 | 96369
-    Bomongo | CD4104 | Equateur | CD41 | République démocrati |  | 18430 | 19165 | 38744 | 40027 | 42159 | 41207 | 4170 | 2980 | 37595 | 78771 | 83366 | 7150 | 103484 | 103484
-    Makanza | CD4105 | Equateur | CD41 | République démocrati |  | 11722 | 12189 | 24642 | 25458 | 26814 | 26208 | 2652 | 1896 | 23911 | 50100 | 53022 | 4548 | 65817 | 65817
-    Basankusu | CD4107 | Equateur | CD41 | République démocrati |  | 35690 | 37113 | 75027 | 77512 | 81640 | 79796 | 8076 | 5771 | 72803 | 152539 | 161436 | 13847 | 200393 | 200393
-    Bolomba | CD4108 | Equateur | CD41 | République démocrati |  | 43045 | 44761 | 90489 | 93485 | 98464 | 96241 | 9740 | 6961 | 87806 | 183974 | 194705 | 16701 | 241690 | 241690
-    Ingende | CD4109 | Equateur | CD41 | République démocrati |  | 24848 | 25838 | 52234 | 53964 | 56838 | 55555 | 5622 | 4018 | 50686 | 106198 | 112393 | 9640 | 139515 | 139515
-    Gemena | CD4202 | Sud-Ubangi | CD42 | République démocrati |  | 110588 | 114997 | 232478 | 240177 | 252968 | 247256 | 25024 | 17883 | 225585 | 472655 | 500224 | 42907 | 599822 | 642045
-    Budjala | CD4203 | Sud-Ubangi | CD42 | République démocrati |  | 57238 | 59520 | 120326 | 124311 | 130931 | 127975 | 12952 | 9256 | 116758 | 244637 | 258906 | 22208 | 310455 | 332310
-    Kungu | CD4204 | Sud-Ubangi | CD42 | République démocrati |  | 43492 | 45226 | 91429 | 94457 | 99487 | 97241 | 9841 | 7033 | 88718 | 185886 | 196728 | 16874 | 235898 | 252503
-    Libenge | CD4205 | Sud-Ubangi | CD42 | République démocrati |  | 37181 | 38664 | 78162 | 80751 | 85052 | 83131 | 8413 | 6012 | 75845 | 158913 | 168183 | 14425 | 201669 | 215865
-    Zongo | CD4206 | Sud-Ubangi | CD42 | République démocrati |  | 7292 | 7583 | 15330 | 15837 | 16681 | 16304 | 1650 | 1179 | 14875 | 31167 | 32985 | 2829 | 39552 | 42337
-    Gbadolite | CD4301 | Nord-Ubangi | CD43 | République démocrati |  | 14159 | 14724 | 29766 | 30752 | 32389 | 31658 | 3204 | 2290 | 28883 | 60518 | 64047 | 5494 | 74891 | 84114
-    Mobayi-Mbongo | CD4302 | Nord-Ubangi | CD43 | République démocrati |  | 10974 | 11412 | 23070 | 23834 | 25103 | 24536 | 2483 | 1775 | 22386 | 46904 | 49639 | 4258 | 58044 | 65192
-    Yakoma | CD4304 | Nord-Ubangi | CD43 | République démocrati |  | 32208 | 33492 | 67707 | 69949 | 73675 | 72011 | 7288 | 5208 | 65700 | 137656 | 145686 | 12496 | 170352 | 191330
-    Businga | CD4305 | Nord-Ubangi | CD43 | République démocrati |  | 49365 | 51333 | 103774 | 107211 | 112921 | 110371 | 11170 | 7983 | 100698 | 210985 | 223292 | 19153 | 261099 | 293251
-    Bosobolo | CD4306 | Nord-Ubangi | CD43 | République démocrati |  | 34186 | 35549 | 71866 | 74246 | 78200 | 76434 | 7736 | 5528 | 69735 | 146112 | 154634 | 13264 | 180816 | 203082
-    Lisala | CD4402 | Mongala | CD44 | République démocrati |  | 63444 | 65973 | 133371 | 137788 | 145126 | 141849 | 14356 | 10259 | 129417 | 271159 | 286975 | 24615 | 357650 | 354801
-    Bumba | CD4404 | Mongala | CD44 | République démocrati |  | 89424 | 92989 | 187987 | 194213 | 204556 | 199937 | 20235 | 14461 | 182413 | 382200 | 404493 | 34696 | 504109 | 500093
-    Bongandanga | CD4405 | Mongala | CD44 | République démocrati |  | 71719 | 74578 | 150768 | 155761 | 164056 | 160352 | 16228 | 11598 | 146297 | 306529 | 324408 | 27826 | 404302 | 401080
-    Boende | CD4502 | Tshuapa | CD45 | République démocrati |  | 25789 | 26817 | 54214 | 56010 | 58993 | 57660 | 5836 | 4170 | 52606 | 110224 | 116653 | 10006 | 144803 | 144803
-    Befale | CD4503 | Tshuapa | CD45 | République démocrati |  | 29312 | 30481 | 61620 | 63660 | 67051 | 65537 | 6633 | 4740 | 59793 | 125280 | 132588 | 11373 | 164582 | 164582
-    Djolu | CD4504 | Tshuapa | CD45 | République démocrati |  | 33941 | 35294 | 71351 | 73714 | 77640 | 75887 | 7680 | 5489 | 69235 | 145065 | 153527 | 13169 | 190575 | 190575
-    Ikela | CD4505 | Tshuapa | CD45 | République démocrati |  | 31425 | 32678 | 66062 | 68250 | 71885 | 70262 | 7111 | 5082 | 64103 | 134312 | 142147 | 12193 | 176449 | 176449
-    Bokungu | CD4506 | Tshuapa | CD45 | République démocrati |  | 55962 | 58193 | 117642 | 121538 | 128011 | 125120 | 12663 | 9049 | 114155 | 239180 | 253131 | 21712 | 314215 | 314215
-    Monkoto | CD4507 | Tshuapa | CD45 | République démocrati |  | 12346 | 12839 | 25955 | 26814 | 28242 | 27604 | 2794 | 1997 | 25185 | 52769 | 55846 | 4791 | 69323 | 69323
-    Kisangani | CD5101 | Tshopo | CD51 | République démocrati |  | 68272 | 71668 | 154863 | 162593 | 203207 | 196550 | 20598 | 16532 | 139940 | 317456 | 399757 | 37130 | 445912 | 447700
-    Ubundu | CD5102 | Tshopo | CD51 | République démocrati |  | 25341 | 26601 | 57481 | 60350 | 75426 | 72955 | 7645 | 6136 | 51942 | 117831 | 148381 | 13781 | 165512 | 166175
-    Opala | CD5103 | Tshopo | CD51 | République démocrati |  | 21403 | 22468 | 48549 | 50973 | 63705 | 61618 | 6457 | 5183 | 43871 | 99522 | 125323 | 11640 | 139793 | 140353
-    Isangi | CD5105 | Tshopo | CD51 | République démocrati |  | 45818 | 48097 | 103930 | 109118 | 136375 | 131907 | 13823 | 11095 | 93915 | 213048 | 268282 | 24918 | 299256 | 300456
-    Yangambi | CD5106 | Tshopo | CD51 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Yahuma | CD5107 | Tshopo | CD51 | République démocrati |  | 14819 | 15556 | 33614 | 35292 | 44107 | 42662 | 4471 | 3588 | 30375 | 68906 | 86769 | 8059 | 96788 | 97175
-    Basoko | CD5109 | Tshopo | CD51 | République démocrati |  | 27751 | 29131 | 62947 | 66089 | 82598 | 79892 | 8372 | 6720 | 56882 | 129036 | 162490 | 15092 | 181251 | 181977
-    Banalia | CD5110 | Tshopo | CD51 | République démocrati |  | 20873 | 21911 | 47347 | 49711 | 62128 | 60093 | 6297 | 5054 | 42784 | 97058 | 122221 | 11351 | 136332 | 136878
-    Bafwasende | CD5111 | Tshopo | CD51 | République démocrati |  | 17083 | 17933 | 38750 | 40685 | 50847 | 49181 | 5154 | 4137 | 35016 | 79435 | 100028 | 9291 | 111578 | 112025
-    Buta | CD5202 | Bas-Uele | CD52 | République démocrati |  | 21560 | 22632 | 48905 | 51346 | 64172 | 62070 | 6505 | 5221 | 44192 | 100251 | 126242 | 11726 | 136020 | 146179
-    Aketi | CD5204 | Bas-Uele | CD52 | République démocrati |  | 16940 | 17782 | 38425 | 40343 | 50420 | 48769 | 5111 | 4102 | 34722 | 78768 | 99189 | 9213 | 106872 | 114854
-    Bondo | CD5206 | Bas-Uele | CD52 | République démocrati |  | 20747 | 21779 | 47061 | 49410 | 61753 | 59730 | 6259 | 5024 | 42526 | 96471 | 121483 | 11283 | 130892 | 140668
-    Ango | CD5207 | Bas-Uele | CD52 | République démocrati |  | 8543 | 8968 | 19378 | 20345 | 25427 | 24594 | 2577 | 2069 | 17511 | 39723 | 50021 | 4646 | 53895 | 57920
-    Poko | CD5208 | Bas-Uele | CD52 | République démocrati |  | 18503 | 19423 | 41970 | 44065 | 55072 | 53267 | 5582 | 4480 | 37926 | 86035 | 108339 | 10062 | 116731 | 125449
-    Bambesa | CD5209 | Bas-Uele | CD52 | République démocrati |  | 10264 | 10775 | 23282 | 24444 | 30550 | 29549 | 3097 | 2485 | 21039 | 47726 | 60099 | 5582 | 64755 | 69591
-    Dingila | CD5210 | Bas-Uele | CD52 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Isiro | CD5301 | Haut-Uele | CD53 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Rungu | CD5302 | Haut-Uele | CD53 | République démocrati |  | 28453 | 29868 | 64540 | 67762 | 84688 | 81914 | 8584 | 6890 | 58321 | 132302 | 166602 | 15474 | 192168 | 180251
-    Niangara | CD5303 | Haut-Uele | CD53 | République démocrati |  | 9317 | 9781 | 21135 | 22190 | 27733 | 26824 | 2811 | 2256 | 19098 | 43325 | 54557 | 5067 | 62929 | 59027
-    Dungu | CD5305 | Haut-Uele | CD53 | République démocrati |  | 15817 | 16604 | 35878 | 37669 | 47078 | 45536 | 4772 | 3830 | 32421 | 73547 | 92614 | 8602 | 106827 | 100202
-    Aba | CD5306 | Haut-Uele | CD53 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Faradje | CD5307 | Haut-Uele | CD53 | République démocrati |  | 29730 | 31208 | 67437 | 70803 | 88489 | 85590 | 8970 | 7199 | 60938 | 138240 | 174079 | 16169 | 200793 | 188340
-    Watsa | CD5309 | Haut-Uele | CD53 | République démocrati |  | 22915 | 24055 | 51980 | 54574 | 68207 | 65972 | 6914 | 5549 | 46970 | 106554 | 134179 | 12463 | 154770 | 145171
-    Wamba | CD5311 | Haut-Uele | CD53 | République démocrati |  | 33348 | 35007 | 75645 | 79420 | 99259 | 96007 | 10061 | 8075 | 68355 | 155065 | 195266 | 18136 | 225232 | 211264
-    Bunia | CD5401 | Ituri | CD54 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Irumu | CD5402 | Ituri | CD54 | République démocrati |  | 77053 | 80886 | 174782 | 183506 | 229344 | 221831 | 23247 | 18658 | 157939 | 358288 | 451175 | 41905 | 512344 | 496207
-    Mambasa | CD5403 | Ituri | CD54 | République démocrati |  | 28814 | 30247 | 65359 | 68621 | 85763 | 82953 | 8693 | 6977 | 59061 | 133980 | 168716 | 15670 | 191589 | 185555
-    Mongwalu | CD5404 | Ituri | CD54 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Djugu | CD5405 | Ituri | CD54 | République démocrati |  | 139091 | 146009 | 315504 | 331252 | 413997 | 400433 | 41964 | 33680 | 285100 | 646756 | 814430 | 75644 | 924848 | 895718
-    Mahagi | CD5407 | Ituri | CD54 | République démocrati |  | 107117 | 112445 | 242976 | 255104 | 318828 | 308382 | 32317 | 25938 | 219562 | 498080 | 627210 | 58255 | 712244 | 689812
-    Aru | CD5409 | Ituri | CD54 | République démocrati |  | 76676 | 80489 | 173925 | 182606 | 228220 | 220744 | 23133 | 18567 | 157165 | 356531 | 448964 | 41700 | 509833 | 493775
-    Ariwara | CD5410 | Ituri | CD54 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Ingbokolo | CD5411 | Ituri | CD54 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Goma | CD6101 | Nord-Kivu | CD61 | République démocrati |  | 94091 | 97339 | 180827 | 186558 | 192338 | 181257 | 10508 | 12370 | 191430 | 367385 | 373595 | 22878 | 490993 | 464247
-    Nyiragongo | CD6102 | Nord-Kivu | CD61 | République démocrati |  | 47046 | 48669 | 90413 | 93279 | 96169 | 90628 | 5254 | 6185 | 95715 | 183692 | 186797 | 11439 | 245497 | 232123
-    Masisi | CD6103 | Nord-Kivu | CD61 | République démocrati |  | 203338 | 210357 | 390780 | 403166 | 415656 | 391709 | 22708 | 26733 | 413695 | 793946 | 807365 | 49441 | 1061073 | 1003271
-    Walikale | CD6104 | Nord-Kivu | CD61 | République démocrati |  | 63846 | 66050 | 122702 | 126591 | 130512 | 122993 | 7130 | 8394 | 129896 | 249293 | 253505 | 15524 | 333168 | 315019
-    Lubero | CD6105 | Nord-Kivu | CD61 | République démocrati |  | 158116 | 163574 | 303871 | 313503 | 323214 | 304594 | 17658 | 20788 | 321690 | 617374 | 627808 | 38446 | 825091 | 780145
-    Oïcha | CD6107 | Nord-Kivu | CD61 | République démocrati |  | 153331 | 158624 | 294676 | 304016 | 313434 | 295376 | 17123 | 20159 | 311955 | 598692 | 608810 | 37282 | 800124 | 756537
-    Beni | CD6109 | Nord-Kivu | CD61 | République démocrati |  | 41521 | 42954 | 79796 | 82325 | 84875 | 79986 | 4637 | 5459 | 84475 | 162121 | 164861 | 10096 | 216667 | 204864
-    Butembo | CD6110 | Nord-Kivu | CD61 | République démocrati |  | 78993 | 81719 | 151810 | 156622 | 161474 | 152171 | 8822 | 10385 | 160712 | 308432 | 313645 | 19207 | 412205 | 389751
-    Rutshuru | CD6111 | Nord-Kivu | CD61 | République démocrati |  | 168423 | 174236 | 323680 | 333939 | 344284 | 324449 | 18809 | 22143 | 342659 | 657619 | 668733 | 40952 | 878877 | 831000
-    Bukavu | CD6201 | Sud-Kivu | CD62 | République démocrati |  | 95010 | 97334 | 180141 | 183240 | 196121 | 189729 | 13365 | 14140 | 192344 | 363381 | 385850 | 27505 | 487156 | 481345
-    Kabare | CD6202 | Sud-Kivu | CD62 | République démocrati |  | 103074 | 105596 | 195431 | 198793 | 212767 | 205833 | 14500 | 15340 | 208670 | 394224 | 418600 | 29840 | 528504 | 522199
-    Shabunda | CD6203 | Sud-Kivu | CD62 | République démocrati |  | 67031 | 68671 | 127092 | 129278 | 138366 | 133856 | 9429 | 9976 | 135702 | 256370 | 272222 | 19405 | 343694 | 339595
-    Kalehe | CD6205 | Sud-Kivu | CD62 | République démocrati |  | 84054 | 86110 | 159368 | 162110 | 173506 | 167851 | 11824 | 12510 | 170164 | 321478 | 341357 | 24334 | 430980 | 425839
-    Idjwi | CD6206 | Sud-Kivu | CD62 | République démocrati |  | 28247 | 28938 | 53557 | 54478 | 58308 | 56407 | 3974 | 4204 | 57185 | 108035 | 114715 | 8178 | 144834 | 143106
-    Walungu | CD6207 | Sud-Kivu | CD62 | République démocrati |  | 75827 | 77682 | 143770 | 146243 | 156524 | 151422 | 10667 | 11285 | 153509 | 290013 | 307946 | 21952 | 388797 | 384159
-    Uvira | CD6208 | Sud-Kivu | CD62 | République démocrati |  | 85375 | 87464 | 161874 | 164659 | 176234 | 170490 | 12010 | 12706 | 172839 | 326533 | 346724 | 24716 | 437756 | 432534
-    Fizi | CD6210 | Sud-Kivu | CD62 | République démocrati |  | 83742 | 85791 | 158776 | 161508 | 172861 | 167227 | 11780 | 12463 | 169533 | 320284 | 340088 | 24243 | 429379 | 424258
-    Baraka | CD6211 | Sud-Kivu | CD62 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Mwenga | CD6212 | Sud-Kivu | CD62 | République démocrati |  | 74636 | 76462 | 141512 | 143946 | 154065 | 149044 | 10499 | 11108 | 151098 | 285458 | 303109 | 21607 | 382690 | 378125
-    Kamituga | CD6213 | Sud-Kivu | CD62 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Kindu | CD6301 | Maniema | CD63 | République démocrati |  | 26947 | 27686 | 50158 | 53590 | 63567 | 58412 | 4358 | 5213 | 54633 | 103748 | 121979 | 9571 | 145668 | 143930
-    Kailo | CD6302 | Maniema | CD63 | République démocrati |  | 14654 | 15056 | 27277 | 29143 | 34569 | 31765 | 2370 | 2835 | 29710 | 56420 | 66334 | 5205 | 79216 | 78272
-    Punia | CD6303 | Maniema | CD63 | République démocrati |  | 17643 | 18127 | 32841 | 35088 | 41620 | 38245 | 2854 | 3413 | 35770 | 67929 | 79865 | 6267 | 95375 | 94238
-    Lubutu | CD6305 | Maniema | CD63 | République démocrati |  | 20700 | 21268 | 38531 | 41167 | 48831 | 44871 | 3348 | 4004 | 41968 | 79698 | 93702 | 7352 | 111900 | 110566
-    Pangi | CD6307 | Maniema | CD63 | République démocrati |  | 38706 | 39767 | 72046 | 76975 | 91305 | 83901 | 6260 | 7487 | 78473 | 149021 | 175206 | 13747 | 209232 | 206737
-    Kalima | CD6308 | Maniema | CD63 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Kabambare | CD6309 | Maniema | CD63 | République démocrati |  | 44410 | 45627 | 82662 | 88318 | 104760 | 96264 | 7183 | 8591 | 90037 | 170980 | 201024 | 15774 | 240064 | 237201
-    Namoya | CD6310 | Maniema | CD63 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Kasongo | CD6311 | Maniema | CD63 | République démocrati |  | 62777 | 64497 | 116851 | 124845 | 148087 | 136078 | 10154 | 12144 | 127274 | 241696 | 284165 | 22298 | 339352 | 335305
-    Kibombo | CD6313 | Maniema | CD63 | République démocrati |  | 19493 | 20027 | 36283 | 38765 | 45982 | 42253 | 3153 | 3771 | 39520 | 75048 | 88235 | 6924 | 105371 | 104114
-    Lubumbashi | CD7101 | Haut-Katanga | CD71 | République démocrati |  | 280132 | 285614 | 537131 | 546892 | 489528 | 479500 | 30621 | 25539 | 565746 | 1084023 | 969028 | 56160 | 1339818 | 1334470
-    Kipushi | CD7102 | Haut-Katanga | CD71 | République démocrati |  | 35135 | 35822 | 67368 | 68593 | 61398 | 60140 | 3841 | 3203 | 70957 | 135961 | 121538 | 7044 | 168043 | 167373
-    Sakania | CD7104 | Haut-Katanga | CD71 | République démocrati |  | 27797 | 28341 | 53299 | 54268 | 48576 | 47580 | 3038 | 2534 | 56138 | 107567 | 96156 | 5572 | 132949 | 132419
-    Kambove | CD7105 | Haut-Katanga | CD71 | République démocrati |  | 105554 | 107620 | 202392 | 206070 | 184455 | 180676 | 11538 | 9623 | 213174 | 408462 | 365131 | 21161 | 504845 | 502830
-    Likasi | CD7106 | Haut-Katanga | CD71 | République démocrati |  | 16719 | 17047 | 32058 | 32641 | 29217 | 28619 | 1828 | 1524 | 33766 | 64699 | 57836 | 3352 | 79966 | 79647
-    Kasenga | CD7107 | Haut-Katanga | CD71 | République démocrati |  | 72580 | 74001 | 139167 | 141696 | 126834 | 124236 | 7934 | 6617 | 146581 | 280863 | 251070 | 14551 | 347139 | 345753
-    Mitwaba | CD7108 | Haut-Katanga | CD71 | République démocrati |  | 34453 | 35127 | 66060 | 67261 | 60206 | 58972 | 3766 | 3141 | 69580 | 133321 | 119178 | 6907 | 164781 | 164123
-    Pweto | CD7109 | Haut-Katanga | CD71 | République démocrati |  | 66871 | 68180 | 128220 | 130550 | 116857 | 114463 | 7310 | 6097 | 135051 | 258770 | 231320 | 13407 | 319831 | 318555
-    Kolwezi | CD7201 | Lualaba | CD72 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Mutshatsha | CD7202 | Lualaba | CD72 | République démocrati |  | 63729 | 64976 | 122195 | 124416 | 111366 | 109084 | 6966 | 5810 | 128705 | 246611 | 220450 | 12776 | 314538 | 293852
-    Lubudi | CD7203 | Lualaba | CD72 | République démocrati |  | 60684 | 61871 | 116356 | 118471 | 106044 | 103872 | 6633 | 5532 | 122555 | 234827 | 209916 | 12165 | 299507 | 279811
-    Kasaji | CD7204 | Lualaba | CD72 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Dilolo | CD7205 | Lualaba | CD72 | République démocrati |  | 52256 | 53278 | 100196 | 102017 | 91316 | 89446 | 5712 | 4764 | 105534 | 202213 | 180762 | 10476 | 257911 | 240949
-    Sandoa | CD7206 | Lualaba | CD72 | République démocrati |  | 40159 | 40945 | 77002 | 78402 | 70178 | 68740 | 4390 | 3661 | 81104 | 155404 | 138918 | 8051 | 198208 | 185174
-    Kapanga | CD7207 | Lualaba | CD72 | République démocrati |  | 28774 | 29337 | 55172 | 56175 | 50282 | 49252 | 3145 | 2623 | 58111 | 111347 | 99534 | 5768 | 142016 | 132676
-    Kamina | CD7302 | Haut-Lomami | CD73 | République démocrati |  | 72612 | 74033 | 139227 | 141757 | 126888 | 124289 | 7937 | 6620 | 146645 | 280984 | 251177 | 14557 | 363924 | 329265
-    Kaniama | CD7303 | Haut-Lomami | CD73 | République démocrati |  | 33511 | 34167 | 64255 | 65422 | 58560 | 57361 | 3663 | 3055 | 67678 | 129677 | 115921 | 6718 | 167955 | 151959
-    Kabongo | CD7304 | Haut-Lomami | CD73 | République démocrati |  | 87532 | 89245 | 167835 | 170885 | 152961 | 149827 | 9568 | 7980 | 176777 | 338720 | 302788 | 17548 | 438703 | 396921
-    Malemba-Nkulu | CD7305 | Haut-Lomami | CD73 | République démocrati |  | 108539 | 110663 | 208115 | 211897 | 189671 | 185786 | 11864 | 9895 | 219202 | 420012 | 375457 | 21759 | 543991 | 492182
-    Bukama | CD7306 | Haut-Lomami | CD73 | République démocrati |  | 124593 | 127031 | 238897 | 243238 | 217725 | 213265 | 13619 | 11359 | 251624 | 482135 | 430990 | 24978 | 624450 | 564979
-    Kalemie | CD7402 | Tanganyika | CD74 | République démocrati |  | 75596 | 77076 | 144950 | 147584 | 132104 | 129398 | 8263 | 6892 | 152672 | 292534 | 261502 | 15155 | 373110 | 348573
-    Kaoze | CD7403 | Tanganyika | CD74 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Moba | CD7404 | Tanganyika | CD74 | République démocrati |  | 56596 | 57704 | 108518 | 110490 | 98901 | 96875 | 6186 | 5160 | 114300 | 219008 | 195776 | 11346 | 279333 | 260962
-    Manono | CD7406 | Tanganyika | CD74 | République démocrati |  | 81822 | 83423 | 156888 | 159739 | 142984 | 140054 | 8944 | 7460 | 165245 | 316627 | 283038 | 16404 | 403838 | 377280
-    Kabalo | CD7407 | Tanganyika | CD74 | République démocrati |  | 29373 | 29948 | 56321 | 57344 | 51329 | 50278 | 3211 | 2678 | 59321 | 113665 | 101607 | 5889 | 144972 | 135439
-    Kongolo | CD7409 | Tanganyika | CD74 | République démocrati |  | 57275 | 58396 | 109821 | 111817 | 100088 | 98038 | 6261 | 5222 | 115671 | 221638 | 198126 | 11483 | 282686 | 264095
-    Nyunzu | CD7410 | Tanganyika | CD74 | République démocrati |  | 30172 | 30763 | 57853 | 58904 | 52726 | 51646 | 3298 | 2751 | 60935 | 116757 | 104372 | 6049 | 148917 | 139123
-    Kabinda | CD8102 | Lomami | CD81 | République démocrati |  | 74200 | 75973 | 145147 | 149434 | 138976 | 136648 | 11233 | 7280 | 150173 | 294581 | 275624 | 18513 | 374693 | 364347
-    Mwene-Ditu | CD8103 | Lomami | CD81 | République démocrati |  | 74550 | 76332 | 145832 | 150139 | 139632 | 137293 | 11286 | 7314 | 150882 | 295971 | 276925 | 18600 | 376460 | 366065
-    Luilu | CD8104 | Lomami | CD81 | République démocrati |  | 95262 | 97539 | 186348 | 191852 | 178426 | 175437 | 14422 | 9346 | 192801 | 378200 | 353863 | 23768 | 481052 | 467769
-    Kamiji | CD8105 | Lomami | CD81 | République démocrati |  | 11005 | 11269 | 21529 | 22164 | 20613 | 20268 | 1666 | 1080 | 22274 | 43693 | 40881 | 2746 | 55575 | 54041
-    Ngandajika | CD8106 | Lomami | CD81 | République démocrati |  | 85629 | 87676 | 167505 | 172452 | 160384 | 157697 | 12964 | 8401 | 173305 | 339957 | 318081 | 21365 | 432409 | 420468
-    Lubao | CD8108 | Lomami | CD81 | République démocrati |  | 60151 | 61589 | 117666 | 121141 | 112664 | 110776 | 9107 | 5901 | 121740 | 238807 | 223440 | 15008 | 303751 | 295364
-    Mbuji-Mayi | CD8201 | Kasaï-Oriental | CD82 | République démocrati |  | 344126 | 352352 | 673171 | 693051 | 644551 | 633754 | 52099 | 33761 | 696478 | 1366222 | 1278305 | 85860 | 1689783 | 1737768
-    Tshilenge | CD8202 | Kasaï-Oriental | CD82 | République démocrati |  | 58920 | 60328 | 115258 | 118662 | 110358 | 108509 | 8920 | 5781 | 119248 | 233920 | 218867 | 14701 | 289319 | 297534
-    Lukalaba | CD8204 | Kasaï-Oriental | CD82 | République démocrati | Population is reflec | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    Miabi | CD8205 | Kasaï-Oriental | CD82 | République démocrati |  | 38433 | 39352 | 75181 | 77402 | 71985 | 70779 | 5819 | 3771 | 77785 | 152583 | 142764 | 9590 | 188719 | 194078
-    Kabeya-Kamwanga | CD8207 | Kasaï-Oriental | CD82 | République démocrati |  | 21155 | 21661 | 41384 | 42606 | 39624 | 38961 | 3203 | 2076 | 42816 | 83990 | 78585 | 5279 | 103881 | 106831
-    Lupatapata | CD8208 | Kasaï-Oriental | CD82 | République démocrati |  | 36273 | 37140 | 70956 | 73051 | 67939 | 66801 | 5491 | 3559 | 73413 | 144007 | 134740 | 9050 | 178112 | 183169
-    Katanda | CD8209 | Kasaï-Oriental | CD82 | République démocrati |  | 44591 | 45657 | 87227 | 89803 | 83519 | 82120 | 6751 | 4375 | 90248 | 177030 | 165639 | 11126 | 218957 | 225174
-    Lusambo | CD8302 | Sankuru | CD83 | République démocrati |  | 33595 | 34398 | 65717 | 67658 | 62923 | 61869 | 5086 | 3296 | 67993 | 133375 | 124792 | 8382 | 169311 | 165296
+probe_pdf: https://datacatalog.ihsn.org/catalog/3340/download/48522
+  34,215,383 bytes
+  371 pages
+probe_pdf: 371 pages, printing [137, 138, 139, 140, 141, 142, 143, 144, 163, 170, 216, 217, 229, 253, 367, 368, 369]
+
+--- page 137 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 127
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+ENUGU
+TOTAL 3,267,837 1,596,042 1,671,795
+0 - 4 384,464 193,220 191,244
+5 - 9 388,105 199,678 188,427
+10 - 14 390,545 198,961 191,584
+15 - 19 386,973 186,343 200,630
+20 - 24 347,324 159,694 187,630
+25 - 29 274,943 120,888 154,055
+30 - 34 202,745 86,046 116,699
+35 - 39 172,734 74,530 98,204
+40 - 44 162,507 78,073 84,434
+45 - 49 138,563 71,230 67,333
+50 - 54 123,141 64,972 58,169
+55 - 59 70,887 38,892 31,995
+60 - 64 78,234 41,992 36,242
+65 - 69 44,809 24,153 20,656
+70 - 74 42,906 25,032 17,874
+75 - 79 19,891 10,909 8,982
+80 - 84 20,196 10,889 9,307
+85+ 18,870 10,540 8,330
+Table DS5: Distribution of Population by Five
+Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+ANINRI
+TOTAL 136,221 66,225 69,996
+0 - 4 16,626 8,423 8,203
+5 - 9 17,615 9,190 8,425
+10 - 14 16,951 8,790 8,161
+15 - 19 16,755 8,125 8,630
+20 - 24 12,621 6,002 6,619
+25 - 29 10,061 4,336 5,725
+30 - 34 7,798 3,182 4,616
+35 - 39 6,849 2,741 4,108
+40 - 44 6,612 2,963 3,649
+45 - 49 5,662 2,657 3,005
+50 - 54 5,167 2,596 2,571
+55 - 59 3,028 1,535 1,493
+60 - 64 3,623 1,892 1,731
+65 - 69 1,985 1,075 910
+70 - 74 1,960 1,104 856
+75 - 79 957 520 437
+80 - 84 1,068 554 514
+85+ 883 540 343
+Table DS5: Distribution of Population by Five
+Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+AWGU
+TOTAL 197,292 96,132 101,160
+0 - 4 23,053 11,366 11,687
+5 - 9 21,724 11,125 10,599
+10 - 14 23,112 12,435 10,677
+15 - 19 22,226 11,423 10,803
+20 - 24 19,398 9,600 9,798
+25 - 29 14,812 6,555 8,257
+30 - 34 12,153 4,978 7,175
+35 - 39 10,931 4,373 6,558
+40 - 44 10,194 4,630 5,564
+45 - 49 9,979 4,822 5,157
+50 - 54 8,248 3,940 4,308
+55 - 59 4,838 2,380 2,458
+60 - 64 5,325 2,521 2,804
+65 - 69 3,642 1,731 1,911
+70 - 74 3,096 2,037 1,059
+75 - 79 1,585 674 911
+80 - 84 1,382 722 660
+85+ 1,594 820 774
+
+--- page 138 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 128
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+ENUGU EAST
+TOTAL 277,119 131,214 145,905
+0 - 4 35,856 17,334 18,522
+5 - 9 31,867 16,020 15,847
+10 - 14 33,686 15,977 17,709
+15 - 19 32,789 14,414 18,375
+20 - 24 31,372 13,371 18,001
+25 - 29 24,349 10,337 14,012
+30 - 34 17,909 7,353 10,556
+35 - 39 15,314 6,863 8,451
+40 - 44 13,181 6,631 6,550
+45 - 49 11,810 6,774 5,036
+50 - 54 9,225 5,044 4,181
+55 - 59 5,910 3,434 2,476
+60 - 64 5,174 2,833 2,341
+65 - 69 3,109 1,914 1,195
+70 - 74 2,348 1,312 1,036
+75 - 79 1,193 650 543
+80 - 84 1,131 502 629
+85+ 896 451 445
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total Sex
+Males Females
+ENUGU NORTH
+TOTAL 242,14
+0
+118,895 123,245
+0 - 4 25,559 13,221 12,338
+5 - 9 22,660 11,341 11,319
+10 - 14 26,147 12,123 14,024
+15 - 19 27,278 12,050 15,228
+20 - 24 38,036 16,862 21,174
+25 - 29 27,972 13,430 14,542
+30 - 34 15,797 7,513 8,284
+35 - 39 12,948 6,158 6,790
+40 - 44 11,220 5,838 5,382
+45 - 49 10,018 5,836 4,182
+50 - 54 8,332 4,875 3,457
+55 - 59 5,270 3,384 1,886
+60 - 64 3,985 2,329 1,656
+65 - 69 2,474 1,440 1,034
+70 - 74 1,911 1,126 785
+75 - 79 959 561 398
+80 - 84 846 435 411
+85+ 728 373 355
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+ENUGU SOUTH
+TOTAL 198,03
+2
+93,758 104,274
+0 - 4 24,160 11,834 12,326
+5 - 9 21,806 10,752 11,054
+10 - 14 23,582 10,791 12,791
+15 - 19 22,743 9,717 13,026
+20 - 24 24,172 10,716 13,456
+25 - 29 18,915 8,255 10,660
+30 - 34 12,716 5,588 7,128
+35 - 39 10,812 4,790 6,022
+40 - 44 9,875 5,092 4,783
+45 - 49 8,694 4,897 3,797
+50 - 54 6,634 3,764 2,870
+55 - 59 4,180 2,469 1,711
+60 - 64 3,317 1,777 1,540
+65 - 69 2,152 1,205 947
+70 - 74 1,738 946 792
+75 - 79 936 448 488
+80 - 84 784 352 432
+85+ 816 365 451
+
+--- page 139 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 129
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+EZEAGU
+TOTAL 170,60
+3
+84,466 86,137
+0 - 4 18,729 9,363 9,366
+5 - 9 19,580 10,215 9,365
+10 - 14 20,054 10,558 9,496
+15 - 19 20,331 10,147 10,184
+20 - 24 16,150 7,577 8,573
+25 - 29 13,787 6,125 7,662
+30 - 34 10,647 4,509 6,138
+35 - 39 9,041 3,919 5,122
+40 - 44 8,846 4,242 4,604
+45 - 49 7,332 3,653 3,679
+50 - 54 7,018 3,627 3,391
+55 - 59 4,283 2,278 2,005
+60 - 64 4,956 2,695 2,261
+65 - 69 2,731 1,416 1,315
+70 - 74 2,892 1,687 1,205
+75 - 79 1,355 787 568
+80 - 84 1,417 799 618
+85+ 1,454 869 585
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+IGBO-ETITI
+TOTAL 208,33
+3
+105,262 103,071
+0 - 4 25,353 13,003 12,350
+5 - 9 27,243 14,265 12,978
+10 - 14 25,679 13,560 12,119
+15 - 19 24,665 12,833 11,832
+20 - 24 20,046 9,781 10,265
+25 - 29 17,062 7,550 9,512
+30 - 34 13,367 5,785 7,582
+35 - 39 11,558 5,045 6,513
+40 - 44 10,498 5,243 5,255
+45 - 49 8,528 4,485 4,043
+50 - 54 7,771 4,307 3,464
+55 - 59 3,754 2,082 1,672
+60 - 64 4,848 2,689 2,159
+65 - 69 2,445 1,377 1,068
+70 - 74 2,398 1,476 922
+75 - 79 1,029 559 470
+80 - 84 1,080 616 464
+85+ 1,009 606 403
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+IGBO-EZE NORTH
+TOTAL 258,82
+9
+126,069 132,760
+0 - 4 33,711 17,157 16,554
+5 - 9 35,177 18,344 16,833
+10 - 14 32,787 17,104 15,683
+15 - 19 30,569 14,901 15,668
+20 - 24 23,998 10,937 13,061
+25 - 29 19,757 8,264 11,493
+30 - 34 15,646 6,395 9,251
+35 - 39 13,548 5,620 7,928
+40 - 44 12,814 5,891 6,923
+45 - 49 10,481 5,122 5,359
+50 - 54 9,219 4,828 4,391
+55 - 59 4,910 2,662 2,248
+60 - 64 6,018 3,161 2,857
+65 - 69 2,886 1,564 1,322
+70 - 74 2,973 1,659 1,314
+75 - 79 1,424 840 584
+80 - 84 1,517 833 684
+85+ 1,394 787 607
+
+--- page 140 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 130
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+IGBO-EZE SOUTH
+TOTAL 147,36
+4
+72,619 74,745
+0 - 4 18,200 9,248 8,952
+5 - 9 19,124 9,948 9,176
+10 - 14 17,995 9,363 8,632
+15 - 19 17,236 8,604 8,632
+20 - 24 14,350 6,718 7,632
+25 - 29 11,900 5,166 6,734
+30 - 34 9,257 3,874 5,383
+35 - 39 7,879 3,390 4,489
+40 - 44 7,520 3,592 3,928
+45 - 49 6,027 3,003 3,024
+50 - 54 5,442 2,894 2,548
+55 - 59 2,833 1,544 1,289
+60 - 64 3,595 1,921 1,674
+65 - 69 1,779 892 887
+70 - 74 1,846 1,039 807
+75 - 79 697 394 303
+80 - 84 914 537 377
+85+ 770 492 278
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+ISI-UZO
+TOTAL 148,59
+7
+72,497 76,100
+0 - 4 17,919 9,325 8,594
+5 - 9 18,783 9,684 9,099
+10 - 14 17,558 9,248 8,310
+15 - 19 17,967 8,872 9,095
+20 - 24 15,349 6,667 8,682
+25 - 29 11,662 4,820 6,842
+30 - 34 8,816 3,662 5,154
+35 - 39 7,787 3,227 4,560
+40 - 44 7,346 3,362 3,984
+45 - 49 6,234 3,066 3,168
+50 - 54 5,696 3,022 2,674
+55 - 59 3,160 1,667 1,493
+60 - 64 3,740 2,092 1,648
+65 - 69 2,158 1,191 967
+70 - 74 2,026 1,209 817
+75 - 79 824 472 352
+80 - 84 821 466 355
+85+ 751 445 306
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+NKANU EAST
+TOTAL 153,591 75,008 78,583
+0 - 4 18,208 9,175 9,033
+5 - 9 19,039 9,877 9,162
+10 - 14 18,243 9,426 8,817
+15 - 19 17,700 8,651 9,049
+20 - 24 13,637 6,424 7,213
+25 - 29 11,356 4,860 6,496
+30 - 34 9,052 3,705 5,347
+35 - 39 7,927 3,257 4,670
+40 - 44 8,051 3,700 4,351
+45 - 49 6,784 3,267 3,517
+50 - 54 6,415 3,173 3,242
+55 - 59 3,777 2,023 1,754
+60 - 64 4,654 2,514 2,140
+65 - 69 2,702 1,487 1,215
+70 - 74 2,606 1,555 1,051
+75 - 79 1,161 677 484
+80 - 84 1,250 687 563
+85+ 1,029 550 479
+
+--- page 141 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 131
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+NKANU WEST
+TOTAL 147,38
+5
+72,706 74,679
+0 - 4 15,033 7,614 7,419
+5 - 9 16,263 8,359 7,904
+10 - 14 17,842 9,190 8,652
+15 - 19 18,087 8,783 9,304
+20 - 24 14,911 7,111 7,800
+25 - 29 12,249 5,472 6,777
+30 - 34 8,894 3,821 5,073
+35 - 39 7,682 3,281 4,401
+40 - 44 7,426 3,520 3,906
+45 - 49 6,606 3,275 3,331
+50 - 54 5,905 3,046 2,859
+55 - 59 3,645 1,988 1,657
+60 - 64 4,128 2,211 1,917
+65 - 69 2,686 1,474 1,212
+70 - 74 2,478 1,505 973
+75 - 79 1,241 753 488
+80 - 84 1,198 671 527
+85+ 1,111 632 479
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+NSUKKA
+TOTAL 309,44
+8
+149,418 160,030
+0 - 4 34,724 17,380 17,344
+5 - 9 36,472 18,712 17,760
+10 - 14 37,630 18,991 18,639
+15 - 19 39,810 18,595 21,215
+20 - 24 37,306 16,940 20,366
+25 - 29 26,191 11,645 14,546
+30 - 34 17,930 7,365 10,565
+35 - 39 14,734 6,221 8,513
+40 - 44 14,456 6,752 7,704
+45 - 49 11,922 5,976 5,946
+50 - 54 11,293 5,833 5,460
+55 - 59 6,212 3,413 2,799
+60 - 64 7,487 4,034 3,453
+65 - 69 3,842 2,077 1,765
+70 - 74 4,186 2,460 1,726
+75 - 79 1,692 954 738
+80 - 84 1,842 1,087 755
+85+ 1,719 983 736
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+OJI-RIVER
+TOTAL 128,741 61,719 67,022
+0 - 4 14,086 6,879 7,207
+5 - 9 14,145 7,292 6,853
+10 - 14 14,008 7,258 6,750
+15 - 19 14,359 6,822 7,537
+20 - 24 12,177 5,460 6,717
+25 - 29 10,209 4,413 5,796
+30 - 34 8,348 3,406 4,942
+35 - 39 7,047 3,110 3,937
+40 - 44 6,801 3,251 3,550
+45 - 49 5,846 2,886 2,960
+50 - 54 5,748 2,841 2,907
+55 - 59 3,354 1,732 1,622
+60 - 64 3,897 1,887 2,010
+65 - 69 2,651 1,280 1,371
+70 - 74 2,457 1,244 1,213
+75 - 79 1,222 668 554
+80 - 84 1,222 667 555
+85+ 1,164 623 541
+
+--- page 142 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 132
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total Sex
+Males Females
+UDENU
+TOTAL 178,68
+7
+88,381 90,306
+0 - 4 21,754 11,058 10,696
+5 - 9 22,677 11,815 10,862
+10 - 14 22,010 11,404 10,606
+15 - 19 21,365 10,619 10,746
+20 - 24 17,645 8,341 9,304
+25 - 29 14,513 6,295 8,218
+30 - 34 11,236 4,872 6,364
+35 - 39 9,394 4,113 5,281
+40 - 44 8,887 4,308 4,579
+45 - 49 7,264 3,690 3,574
+50 - 54 6,589 3,482 3,107
+55 - 59 3,557 1,883 1,674
+60 - 64 4,233 2,300 1,933
+65 - 69 2,175 1,137 1,038
+70 - 74 2,394 1,427 967
+75 - 79 1,022 533 489
+80 - 84 1,043 573 470
+85+ 929 531 398
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total Sex
+Males Females
+UDI
+TOTAL 238,30
+5
+117,914 120,391
+0 - 4 26,266 13,129 13,137
+5 - 9 27,619 14,291 13,328
+10 - 14 27,683 14,539 13,144
+15 - 19 27,603 13,885 13,718
+20 - 24 23,817 11,210 12,607
+25 - 29 20,176 8,951 11,225
+30 - 34 15,096 6,615 8,481
+35 - 39 12,770 5,595 7,175
+40 - 44 12,011 5,882 6,129
+45 - 49 10,250 5,234 5,016
+50 - 54 9,594 5,041 4,553
+55 - 59 5,814 3,073 2,741
+60 - 64 6,136 3,320 2,816
+65 - 69 3,806 2,010 1,796
+70 - 74 3,960 2,167 1,793
+75 - 79 1,923 1,030 893
+80 - 84 1,925 966 959
+85+ 1,856 976 880
+Table DS5: Distribution of Population by
+Five Year Age Groups and Sex
+Age
+Groups Total Sex
+Males Females
+UZO-UWANI
+TOTAL 127,150 63,759 63,391
+0 - 4 15,227 7,711 7,516
+5 - 9 16,311 8,448 7,863
+10 - 14 15,578 8,204 7,374
+15 - 19 15,490 7,902 7,588
+20 - 24 12,339 5,977 6,362
+25 - 29 9,972 4,414 5,558
+30 - 34 8,083 3,423 4,660
+35 - 39 6,513 2,827 3,686
+40 - 44 6,769 3,176 3,593
+45 - 49 5,126 2,587 2,539
+50 - 54 4,845 2,659 2,186
+55 - 59 2,362 1,345 1,017
+60 - 64 3,118 1,816 1,302
+65 - 69 1,586 883 703
+70 - 74 1,637 1,079 558
+75 - 79 671 389 282
+80 - 84 756 422 334
+85+ 767 497 270
+
+--- page 143 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 133
+GOMBE STATE
+
+--- page 144 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 134
+Distribution of Population by Single Years of Age and Sex
+GOMBE STATE
+AGE
+Single Years BOTH SEXES MALE FEMALE
+TOTAL 2,365,040 1,244,228 1,120,812
+0 50,372 28,083 22,289
+1 96,654 49,990 46,664
+2 107,115 54,940 52,175
+3 95,531 48,381 47,150
+4 110,817 57,044 53,773
+5 80,340 43,163 37,177
+6 80,432 42,880 37,552
+7 66,914 36,317 30,597
+8 83,363 44,810 38,553
+9 63,212 35,859 27,353
+10 84,117 47,458 36,659
+11 37,485 22,097 15,388
+12 64,661 36,859 27,802
+13 50,366 28,765 21,601
+14 52,517 29,835 22,682
+15 63,807 35,861 27,946
+16 45,502 25,379 20,123
+17 45,042 24,442 20,600
+18 66,206 33,331 32,875
+19 35,298 18,879 16,419
+20 104,258 46,860 57,398
+21 23,531 12,455 11,076
+22 36,697 17,296 19,401
+23 25,233 12,527 12,706
+24 20,802 10,192 10,610
+25 81,196 33,706 47,490
+26 21,542 10,311 11,231
+27 30,278 14,425 15,853
+28 35,397 16,621 18,776
+29 19,706 9,690 10,016
+30 93,633 44,264 49,369
+31 10,161 5,121 5,040
+32 20,794 10,631 10,163
+33 10,830 5,844 4,986
+34 8,717 4,618 4,099
+35 55,348 28,135 27,213
+36 10,440 5,382 5,058
+37 14,121 7,522 6,599
+38 16,287 8,802 7,485
+39 10,354 5,953 4,401
+40 65,942 34,960 30,982
+41 6,017 3,383 2,634
+42 10,588 5,936 4,652
+43 6,060 3,327 2,733
+44 4,055 2,321 1,734
+45 34,051 19,517 14,534
+46 5,829 3,434 2,395
+47 7,431 4,175 3,256
+48 8,780 5,122 3,658
+49 5,578 3,445 2,133
+50 43,633 24,057 19,576
+51 3,346 1,970 1,376
+52 5,918 3,433 2,485
+53 3,299 1,946 1,353
+54 2,586 1,555 1,031
+55 13,673 7,903 5,770
+56 3,367 2,167 1,200
+57 3,659 2,234 1,425
+58 3,316 1,990 1,326
+59 2,098 1,309 789
+60 25,193 14,131 11,062
+61 1,830 1,062 768
+62 2,969 1,637 1,332
+63 1,777 977 800
+64 1,324 697 627
+65 8,095 4,548 3,547
+66 1,320 798 522
+67 2,347 1,398 949
+68 1,746 940 806
+69 1,057 564 493
+70 15,112 8,722 6,390
+71 1,020 633 387
+72 1,747 1,003 744
+73 1,009 591 418
+74 779 453 326
+75 4,654 2,892 1,762
+76 905 577 328
+77 1,147 674 473
+78 1,307 792 515
+79 631 379 252
+80 8,373 4,571 3,802
+81 639 338 301
+82 1,052 573 479
+83 507 279 228
+84 449 254 195
+85+ 9,749 5,833 3,916
+
+--- page 163 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 153
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+JIGAWA
+TOTAL 4,361,002 2,198,076 2,162,926
+0 - 4 878,581 458,193 420,388
+5 - 9 711,232 369,700 341,532
+10 - 14 471,390 249,086 222,304
+15 - 19 414,059 201,054 213,005
+20 - 24 362,456 144,224 218,232
+25 - 29 334,889 136,193 198,696
+30 - 34 293,884 136,266 157,618
+35 - 39 196,698 101,061 95,637
+40 - 44 199,089 106,550 92,539
+45 - 49 106,705 62,025 44,680
+50 - 54 134,323 78,140 56,183
+55 - 59 40,076 23,913 16,163
+60 - 64 78,426 46,516 31,910
+65 - 69 20,988 11,996 8,992
+70 - 74 49,738 31,489 18,249
+75 - 79 12,475 7,511 4,964
+80 - 84 33,070 20,190 12,880
+85+ 22,923 13,969 8,954
+Table DS5: Distribution of Population by Five Year
+Age Groups and Sex
+ Age Groups Total
+Sex
+Males Females
+AUYO
+TOTAL 132,268 67,409 64,859
+0 - 4 27,119 14,247 12,872
+5 - 9 21,791 11,459 10,332
+10 - 14 14,640 7,857 6,783
+15 - 19 12,762 6,380 6,382
+20 - 24 11,089 4,546 6,543
+25 - 29 10,346 4,272 6,074
+30 - 34 8,708 4,063 4,645
+35 - 39 6,187 3,262 2,925
+40 - 44 5,724 3,107 2,617
+45 - 49 3,209 1,854 1,355
+50 - 54 3,885 2,221 1,664
+55 - 59 1,045 648 397
+60 - 64 1,945 1,122 823
+65 - 69 610 357 253
+70 - 74 1,413 889 524
+75 - 79 331 207 124
+80 - 84 893 546 347
+85+ 571 372 199
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+  Age Groups Total
+Sex
+Males Females
+BABURA
+TOTAL 212,955 106,373 106,582
+0 - 4 42,550 21,976 20,574
+5 - 9 34,753 18,027 16,726
+10 - 14 23,132 12,055 11,077
+15 - 19 20,267 9,815 10,452
+G23720 -
+24
+17,598 6,983 10,615
+25 - 29 16,299 6,631 9,668
+30 - 34 14,153 6,508 7,645
+35 - 39 9,524 4,748 4,776
+40 - 44 9,800 5,141 4,659
+45 - 49 5,371 3,015 2,356
+50 - 54 6,776 3,804 2,972
+55 - 59 1,858 1,051 807
+60 - 64 3,922 2,308 1,614
+65 - 69 1,023 590 433
+70 - 74 2,530 1,607 923
+75 - 79 562 346 216
+80 - 84 1,745 1,071 674
+85+ 1,092 697 395
+
+--- page 170 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 160
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+  Age Groups Total
+Sex
+Males Females
+MALAM MADORI
+TOTAL 164,791 85,165 79,626
+0 - 4 32,743 17,073 15,670
+5 - 9 26,912 14,161 12,751
+10 - 14 18,434 9,955 8,479
+15 - 19 17,487 8,953 8,534
+20 - 24 13,931 6,298 7,633
+25 - 29 12,874 5,460 7,414
+30 - 34 10,587 4,943 5,644
+35 - 39 7,345 3,886 3,459
+40 - 44 7,043 3,899 3,144
+45 - 49 3,989 2,449 1,540
+50 - 54 4,629 2,692 1,937
+55 - 59 1,555 998 557
+60 - 64 2,675 1,642 1,033
+65 - 69 732 407 325
+70 - 74 1,653 1,027 626
+75 - 79 436 253 183
+80 - 84 1,016 621 395
+85+ 750 448 302
+Table DS5: Distribution of Population by Five
+Year Age Groups and Sex
+Age
+Groups Total
+Sex
+Males
+MIGA
+TOTAL 127,876 63,067 64,80
+9
+0 - 4 25,804 13,187 12,617
+5 - 9 21,320 10,827 10,493
+10 - 14 13,500 6,972 6,528
+15 - 19 11,862 5,667 6,195
+20 - 24 10,610 4,130 6,480
+25 - 29 9,722 3,654 6,068
+30 - 34 8,897 4,034 4,863
+35 - 39 5,669 2,864 2,805
+40 - 44 5,953 3,120 2,833
+45 - 49 2,953 1,677 1,276
+50 - 54 4,114 2,378 1,736
+55 - 59 987 575 412
+60 - 64 2,281 1,412 869
+65 - 69 522 302 220
+70 - 74 1,380 913 467
+75 - 79 329 192 137
+80 - 84 1,137 680 457
+85+ 836 483 353
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+RINGIM
+TOTAL 192,407 95,581 96,826
+0 - 4 37,666 19,369 18,297
+5 - 9 30,978 15,908 15,070
+10 - 14 19,618 10,284 9,334
+15 - 19 17,199 8,274 8,925
+20 - 24 15,520 5,928 9,592
+25 - 29 14,562 5,682 8,880
+30 - 34 13,448 5,974 7,474
+35 - 39 8,481 4,199 4,282
+40 - 44 9,604 5,023 4,581
+45 - 49 4,801 2,691 2,110
+50 - 54 6,734 3,937 2,797
+55 - 59 2,022 1,175 847
+60 - 64 4,284 2,597 1,687
+65 - 69 933 577 356
+70 - 74 2,791 1,727 1,064
+75 - 79 616 381 235
+80 - 84 1,880 1,128 752
+85+ 1,270 727 543
+
+--- page 216 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 206
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+KEBBI
+TOTAL 3,256,541 1,631,629 1,624,912
+0 - 4 657,356 338,324 319,032
+05-Sep 554,765 282,976 271,789
+Oct-14 365,442 193,155 172,287
+15 - 19 309,524 152,035 157,489
+20 - 24 271,242 109,723 161,519
+25 - 29 264,111 111,765 152,346
+30 - 34 205,841 96,676 109,165
+35 - 39 146,369 76,017 70,352
+40 - 44 134,943 69,990 64,953
+45 - 49 77,947 45,970 31,977
+50 - 54 88,950 49,304 39,646
+55 - 59 36,350 23,046 13,304
+60 - 64 54,190 31,058 23,132
+65 - 69 19,187 11,323 7,864
+70 - 74 29,833 16,980 12,853
+75 - 79 9,938 5,984 3,954
+80 - 84 17,451 9,654 7,797
+85+ 13,102 7,649 5,453
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+ALEIRO
+TOTAL 67,078 34,368 32,710
+0 - 4 13,382 6,873 6,509
+05-Sep 11,575 5,993 5,582
+Oct-14 8,002 4,433 3,569
+15 - 19 6,633 3,452 3,181
+20 - 24 5,487 2,416 3,071
+25 - 29 5,289 2,239 3,050
+30 - 34 4,315 2,032 2,283
+35 - 39 2,981 1,543 1,438
+40 - 44 2,755 1,469 1,286
+45 - 49 1,539 885 654
+50 - 54 1,780 1,033 747
+55 - 59 667 437 230
+60 - 64 1,135 684 451
+65 - 69 360 215 145
+70 - 74 548 330 218
+75 - 79 164 89 75
+80 - 84 283 137 146
+85+ 183 108 75
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+AREWA-DANDI
+TOTAL 189,728 94,825 94,903
+0 - 4 39,092 20,248 18,844
+05-Sep 32,287 16,575 15,712
+Oct-14 20,440 10,758 9,682
+15 - 19 18,002 8,672 9,330
+20 - 24 16,072 6,422 9,650
+25 - 29 15,584 6,646 8,938
+30 - 34 12,106 5,651 6,455
+35 - 39 8,456 4,345 4,111
+40 - 44 7,713 4,022 3,691
+45 - 49 4,572 2,614 1,958
+50 - 54 4,895 2,631 2,264
+55 - 59 2,130 1,317 813
+60 - 64 3,089 1,745 1,344
+65 - 69 1,067 646 421
+70 - 74 1,740 1,058 682
+75 - 79 554 322 232
+80 - 84 1,069 631 438
+85+ 860 522 338
+
+--- page 217 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 207
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+ARGUNGU
+TOTAL 200,248 99,658 100,590
+0 - 4 39,841 20,265 19,576
+05-Sep 33,849 17,254 16,595
+Oct-14 23,017 12,422 10,595
+15 - 19 19,519 9,857 9,662
+20 - 24 16,995 7,086 9,909
+25 - 29 16,588 6,770 9,818
+30 - 34 12,419 5,570 6,849
+35 - 39 9,037 4,572 4,465
+40 - 44 8,221 4,134 4,087
+45 - 49 4,784 2,754 2,030
+50 - 54 5,394 3,015 2,379
+55 - 59 2,259 1,431 828
+60 - 64 3,273 1,812 1,461
+65 - 69 1,085 600 485
+70 - 74 1,666 889 777
+75 - 79 592 355 237
+80 - 84 1,018 513 505
+85+ 691 359 332
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+AUGIE
+TOTAL 116,368 58,185 58,183
+0 - 4 23,724 12,240 11,484
+05-Sep 19,787 10,208 9,579
+Oct-14 12,613 6,619 5,994
+15 - 19 10,814 5,214 5,600
+20 - 24 9,536 3,663 5,873
+25 - 29 9,383 3,867 5,516
+30 - 34 7,767 3,586 4,181
+35 - 39 5,359 2,823 2,536
+40 - 44 5,125 2,676 2,449
+45 - 49 2,843 1,731 1,112
+50 - 54 3,374 1,900 1,474
+55 - 59 1,195 788 407
+60 - 64 1,973 1,160 813
+65 - 69 770 470 300
+70 - 74 947 565 382
+75 - 79 294 179 115
+80 - 84 518 288 230
+85+ 346 208 138
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+BAGUDO
+TOTAL 238,014 118,733 119,281
+0 - 4 47,798 24,383 23,415
+05-Sep 41,457 20,875 20,582
+Oct-14 25,673 13,646 12,027
+15 - 19 21,794 10,391 11,403
+20 - 24 19,563 7,394 12,169
+25 - 29 19,256 8,095 11,161
+30 - 34 15,735 7,426 8,309
+35 - 39 10,737 5,692 5,045
+40 - 44 10,255 5,419 4,836
+45 - 49 5,760 3,545 2,215
+50 - 54 6,880 3,839 3,041
+55 - 59 2,534 1,622 912
+60 - 64 4,136 2,514 1,622
+65 - 69 1,394 873 521
+70 - 74 2,298 1,347 951
+75 - 79 696 456 240
+80 - 84 1,228 734 494
+85+ 820 482 338
+
+--- page 229 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 219
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age
+Groups Total
+Sex
+Males Females
+IJUMU
+TOTAL 118,593 59,582 59,011
+0 - 4 23,180 11,767 11,413
+5 - 9 17,866 9,273 8,593
+10 - 14 13,513 7,117 6,396
+15 - 19 12,131 6,125 6,006
+20 - 24 10,401 4,722 5,679
+25 - 29 9,695 4,173 5,522
+30 - 34 7,201 3,194 4,007
+35 - 39 5,748 2,899 2,849
+40 - 44 4,950 2,589 2,361
+45 - 49 3,506 1,945 1,561
+50 - 54 3,220 1,782 1,438
+55 - 59 1,649 901 748
+60 - 64 1,955 1,164 791
+65 - 69 1,060 610 450
+70 - 74 976 547 429
+75 - 79 495 268 227
+80 - 84 515 230 285
+85+ 532 276 256
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+  Age Groups Total
+Sex
+Males Females
+KABBA/BUNU
+TOTAL 144,579 72,639 71,940
+0 - 4 27,022 13,781 13,241
+5 - 9 21,465 11,053 10,412
+10 - 14 17,214 8,742 8,472
+15 - 19 15,275 7,523 7,752
+20 - 24 12,598 5,758 6,840
+25 - 29 11,939 5,291 6,648
+30 - 34 9,253 4,376 4,877
+35 - 39 7,068 3,537 3,531
+40 - 44 6,086 3,214 2,872
+45 - 49 4,420 2,497 1,923
+50 - 54 3,956 2,184 1,772
+55 - 59 1,879 1,074 805
+60 - 64 2,326 1,346 980
+65 - 69 1,175 628 547
+70 - 74 1,261 733 528
+75 - 79 493 252 241
+80 - 84 576 322 254
+85+ 573 328 245
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+  Age Groups Total
+Sex
+Males Femal
+es
+KOGI
+TOTAL 115,100 58,864 56,23
+6
+0 - 4 22,581 11,647 10,93
+4
+5 - 9 17,731 9,355 8,376
+10 - 14 13,216 7,136 6,080
+15 - 19 11,597 6,000 5,597
+20 - 24 9,962 4,444 5,518
+25 - 29 9,397 4,050 5,347
+30 - 34 7,518 3,523 3,995
+35 - 39 5,604 2,813 2,791
+40 - 44 4,904 2,624 2,280
+45 - 49 3,281 1,912 1,369
+50 - 54 3,136 1,834 1,302
+55 - 59 1,235 663 572
+60 - 64 1,778 943 835
+65 - 69 719 444 275
+70 - 74 880 550 330
+75 - 79 506 309 197
+80 - 84 492 266 226
+85+ 563 351 212
+
+--- page 253 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 243
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+NASARAWA
+TOTAL 1,869,377 943,801 925,576
+0 - 4 357,522 181,092 176,430
+‘5 - 9 285,050 146,756 138,294
+‘10 - 14 213,432 111,852 101,580
+15 - 19 193,989 97,223 96,766
+20 - 24 172,379 76,673 95,706
+25 - 29 162,129 71,445 90,684
+30 - 34 121,682 58,717 62,965
+35 - 39 90,871 47,415 43,456
+40 - 44 75,908 40,736 35,172
+45 - 49 51,892 30,089 21,803
+50 - 54 46,385 26,201 20,184
+55 - 59 20,975 12,235 8,740
+60 - 64 24,924 13,554 11,370
+65 - 69 12,468 6,755 5,713
+70 - 74 14,199 8,246 5,953
+75 - 79 6,837 3,781 3,056
+80 - 84 8,885 4,906 3,979
+85+ 9,850 6,125 3,725
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+AKWANGA
+TOTAL 111,902 56,135 55,767
+0 - 4 18,990 9,548 9,442
+‘5 - 9 16,115 8,169 7,946
+‘10 - 14 12,837 6,577 6,260
+15 - 19 12,389 6,143 6,246
+20 - 24 11,499 5,361 6,138
+25 - 29 10,256 4,785 5,471
+30 - 34 7,034 3,429 3,605
+35 - 39 5,486 2,795 2,691
+40 - 44 4,581 2,327 2,254
+45 - 49 3,487 1,953 1,534
+50 - 54 2,768 1,521 1,247
+55 - 59 1,472 855 617
+60 - 64 1,511 739 772
+65 - 69 879 482 397
+70 - 74 883 482 401
+75 - 79 501 286 215
+80 - 84 545 291 254
+85+ 669 392 277
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups Total
+Sex
+Males Females
+AWE
+TOTAL 113,083 57,326 55,757
+0 - 4 23,440 11,968 11,472
+‘5 - 9 18,021 9,437 8,584
+‘10 - 14 13,074 6,937 6,137
+15 - 19 11,390 5,809 5,581
+20 - 24 9,702 4,340 5,362
+25 - 29 8,999 3,880 5,119
+30 - 34 6,988 3,238 3,750
+35 - 39 5,146 2,605 2,541
+40 - 44 4,442 2,344 2,098
+45 - 49 3,050 1,728 1,322
+50 - 54 3,002 1,730 1,272
+55 - 59 1,139 634 505
+60 - 64 1,702 960 742
+65 - 69 622 332 290
+70 - 74 826 492 334
+75 - 79 357 167 190
+80 - 84 592 348 244
+85+ 591 377 214
+
+--- page 367 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 357
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+FCT ABUJA
+TOTAL 1,406,239 733,172 673,067
+0 4 220,366 109,835 110,531
+5 9 176,321 87,371 88,950
+1014 138,839 66,550 72,289
+15 19 121,784 57,324 64,460
+20 24 147,107 67,709 79,398
+25 29 174,444 88,153 86,291
+30 34 130,489 71,290 59,199
+35 39 99,000 59,132 39,868
+40 44 68,394 42,561 25,833
+45 49 48,598 32,964 15,634
+50 54 31,025 20,351 10,674
+55 59 16,434 11,196 5,238
+60 64 11,482 6,840 4,642
+65 69 6,307 3,614 2,693
+70 74 5,348 2,785 2,563
+75 79 2,737 1,491 1,246
+80 84 3,510 1,776 1,734
+85+ 4,054 2,230 1,824
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+ABAJI
+TOTAL 58,642 28,860 29,782
+0 4 10,769 5,303 5,466
+5 9 9,030 4,483 4,547
+1014 7,151 3,447 3,704
+15 19 6,332 2,885 3,447
+20 24 5,054 2,133 2,921
+25 29 5,092 2,168 2,924
+30 34 3,998 1,960 2,038
+35 39 3,216 1,783 1,433
+40 44 2,360 1,377 983
+45 49 1,572 970 602
+50 54 1,304 787 517
+55 59 619 359 260
+60 64 679 393 286
+65 69 382 202 180
+70 74 392 227 165
+75 79 186 126 60
+80 84 231 121 110
+85+ 275 136 139
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+ABUJA MUNICIPAL [AMAC]
+TOTAL 776,298 415,951 360,347
+0 4 111,932 55,982 55,950
+5 9 87,085 43,079 44,006
+1014 68,743 32,110 36,633
+15 19 61,975 28,567 33,408
+20 24 87,202 41,495 45,707
+25 29 108,969 58,352 50,617
+30 34 80,494 46,521 33,973
+35 39 59,519 36,779 22,740
+40 44 40,131 25,743 14,388
+45 49 29,288 20,440 8,848
+50 54 17,584 12,042 5,542
+55 59 9,569 6,887 2,682
+60 64 5,381 3,366 2,015
+65 69 2,805 1,663 1,142
+70 74 1,980 1,020 960
+75 79 1,038 545 493
+80 84 1,238 611 627
+85+ 1,365 749 616
+
+--- page 368 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 358
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+BWARI
+TOTAL 229,274 115,346 113,928
+0 4 38,208 19,095 19,113
+5 9 29,423 14,443 14,980
+1014 23,695 10,637 13,058
+15 19 19,415 8,549 10,866
+20 24 22,234 9,717 12,517
+25 29 27,683 12,646 15,037
+30 34 21,366 11,017 10,349
+35 39 16,503 9,725 6,778
+40 44 11,190 7,166 4,024
+45 49 7,557 5,271 2,286
+50 54 4,472 2,864 1,608
+55 59 2,277 1,495 782
+60 64 1,657 899 758
+65 69 927 498 429
+70 74 887 402 485
+75 79 413 196 217
+80 84 689 349 340
+85+ 678 377 301
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+GWAGWALADA
+TOTAL 158,618 80,182 78,436
+0 4 27,460 13,565 13,895
+5 9 22,849 11,326 11,523
+1014 17,230 8,832 8,398
+15 19 14,673 7,177 7,496
+20 24 17,254 7,629 9,625
+25 29 16,635 7,811 8,824
+30 34 11,861 5,766 6,095
+35 39 9,545 5,337 4,208
+40 44 6,937 3,995 2,942
+45 49 4,791 3,067 1,724
+50 54 3,228 2,075 1,153
+55 59 1,729 1,121 608
+60 64 1,502 884 618
+65 69 843 500 343
+70 74 712 362 350
+75 79 344 196 148
+80 84 422 207 215
+85+ 603 332 271
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+KUJE
+TOTAL 97,233 49,420 47,813
+0 4 16,879 8,290 8,589
+5 9 14,426 7,232 7,194
+1014 11,680 6,115 5,565
+15 19 10,513 5,383 5,130
+20 24 8,202 3,741 4,461
+25 29 8,662 4,083 4,579
+30 34 6,923 3,425 3,498
+35 39 5,441 2,989 2,452
+40 44 4,058 2,256 1,802
+45 49 2,856 1,694 1,162
+50 54 2,234 1,293 941
+55 59 1,185 684 501
+60 64 1,121 584 537
+65 69 757 397 360
+70 74 733 408 325
+75 79 442 245 197
+80 84 503 254 249
+85+ 618 347 271
+
+--- page 369 ----------------------------------------------------
+Table DS5:  Population by Five Year Age Groups and Sex                                                 359
+Table DS5: Distribution of Population by Five Year Age
+Groups and Sex
+Age Groups
+Sex
+Total Males Females
+KWALI
+TOTAL 86,174 43,413 42,761
+0 4 15,118 7,600 7,518
+5 9 13,508 6,808 6,700
+1014 10,340 5,409 4,931
+15 19 8,876 4,763 4,113
+20 24 7,161 2,994 4,167
+25 29 7,403 3,093 4,310
+30 34 5,847 2,601 3,246
+35 39 4,776 2,519 2,257
+40 44 3,718 2,024 1,694
+45 49 2,534 1,522 1,012
+50 54 2,203 1,290 913
+55 59 1,055 650 405
+60 64 1,142 714 428
+65 69 593 354 239
+70 74 644 366 278
+75 79 314 183 131
+80 84 427 234 193
+85+ 515 289 226
