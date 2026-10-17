@@ -106,23 +106,49 @@ def pages_text(blob: bytes) -> list[str]:
         return [(page.extract_text() or "") for page in pdf.pages]
 
 
-def residents(pages: list[str]) -> tuple[int, int, int, int] | None:
-    """A district report's Quadro 2: (total, men, women, of them in ordinary dwellings).
+DISTRICT_KEYS = {**{fold(d): d for d in DISTRICTS},
+                 fold("Região Autónoma do Príncipe"): "Príncipe", fold("R. A. Príncipe"): "Príncipe"}
 
-    Each district's report prints only its own district in Quadro 2, so the
-    first resident line of the table is the district's: total, men and women
-    in all dwellings, then the same in ordinary and in collective dwellings.
+
+def heading(line: str) -> str | None:
+    """The district a block heading names: a short line naming one district,
+    and not the page header's "Instituto ... de São Tomé e Príncipe"."""
+    key = fold(line)
+    if not key or "saotome" in key or "instituto" in key or "total" in key:
+        return None
+    hits = {name for k, name in DISTRICT_KEYS.items() if k in key and len(key) <= len(k) + 16}
+    return hits.pop() if len(hits) == 1 else None
+
+
+def residents(pages: list[str]) -> dict[str, tuple[int, int, int, int]]:
+    """Quadro 2: district -> (total, men, women, of them in ordinary dwellings).
+
+    The table lists the districts one block after another, each block headed
+    by a line naming the district and carrying no figures; a block's resident
+    line gives total, men and women in all dwellings, then the same in
+    ordinary and in collective dwellings.
     """
+    out: dict[str, tuple[int, int, int, int]] = {}
+    current = None
     for page in pages:
         # The table itself, not the contents page that names it.
         if "Quadro 2" not in page or "Residente (RP+RA)" not in page:
             continue
         for line in page.splitlines():
-            if "Residente (RP+RA)" in line and "População" in line:
-                figures = numbers(line)
+            figures = numbers(line)
+            if not figures:
+                current = heading(line) or current
+                continue
+            if "Residente (RP+RA)" in line and current and current not in out:
                 if len(figures) >= 6 and figures[1] + figures[2] == figures[0]:
-                    return figures[0], figures[1], figures[2], figures[3]
-    return None
+                    out[current] = (figures[0], figures[1], figures[2], figures[3])
+    return out
+
+
+def quadro2_lines(pages: list[str]) -> list[str]:
+    """The table's lines, printed when it cannot be read."""
+    return [line for page in pages if "Quadro 2" in page and "Residente (RP+RA)" in page
+            for line in page.splitlines()][:80]
 
 
 def national_residents(pages: list[str]) -> int | None:
@@ -218,14 +244,20 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
     report: list[str] = []
     res: dict[str, tuple[int, int, int]] = {}
     data: dict[str, dict[str, Any]] = {}
+    table = residents(national)
+    if set(table) != set(DISTRICTS):
+        for line in quadro2_lines(national):
+            log(f"    | {line}")
+        raise SystemExit(f"sao_tome_census: Quadro 2 read for {sorted(table)} only")
     for name in DISTRICTS:
         pages = reports.get(name)
         if pages is None:
             raise SystemExit(f"sao_tome_census: no report read for {name}")
-        found = residents(pages)
-        if found is None:
-            raise SystemExit(f"sao_tome_census: {name}'s Quadro 2 has no resident line read")
-        total, men, women, ordinary = found
+        own = residents(pages).get(name)
+        if own is not None and own != table[name]:
+            raise SystemExit(f"sao_tome_census: {name}'s report prints {own}, the national "
+                             f"report {table[name]}")
+        total, men, women, ordinary = table[name]
         res[name] = (total, men, women)
         age = ages(pages)
         if age and age[0] != ordinary:
