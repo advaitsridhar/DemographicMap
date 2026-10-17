@@ -25,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import difflib
 import hashlib
 import io
 import json
@@ -98,11 +99,28 @@ def triple_at(tokens: list[str], start: int) -> tuple[int, int, int] | None:
     return None
 
 
+def close(label: str, name: str) -> bool:
+    """A label that is another spelling of the province's name: the same first
+    three letters and most of the rest (Komondjari, Komandjoari...)."""
+    a, b = fold(label), fold(name)
+    return (len(a) >= 4 and a[:3] == b[:3]
+            and difflib.SequenceMatcher(None, a, b).ratio() >= 0.75)
+
+
+def total_row(tokens: list[str]) -> list[tuple[int, int, int]]:
+    """Every (men, women, total) that follows an Ensemble or Total label."""
+    return [t for i, token in enumerate(tokens) if fold(token) in ("ensemble", "total")
+            for t in [triple_at(tokens, i + 1)] if t]
+
+
 def province_table(text: str, provinces: list[str]) -> dict[str, tuple[int, int, int]]:
     """{province (the map's name): (men, women, total)} from the table of the
-    region's population by province and sex."""
+    region's population by province and sex. A province named otherwise than on
+    the map is taken from a row whose label is close to its name, and only when
+    the provinces then make the table's own total row."""
     flat = re.sub(r"\s+", " ", text)
     out: dict[str, tuple[int, int, int]] = {}
+    seen = ""
     spellings = {name: [name] + SPELLINGS.get(fold(name), []) for name in provinces}
     for title in re.finditer(r"(?i)par\s+province\s+selon\s+le\s+sexe", flat):
         window = flat[title.end():title.end() + 3000]
@@ -121,22 +139,48 @@ def province_table(text: str, provinces: list[str]) -> dict[str, tuple[int, int,
                         if triple:
                             found[name] = triple
                             break
+        for name in provinces:
+            if name in found or len(name.split()) > 1:
+                continue
+            for i in range(len(tokens)):
+                taken = set(found.values())
+                for width in (1, 2):
+                    words = tokens[i:i + width]
+                    if any(not w[:1].isalpha() for w in words):
+                        continue
+                    label = "".join(words)
+                    triple = triple_at(tokens, i + width)
+                    if triple and triple not in taken and close(label, name):
+                        log(f"    {name} is the table's {' '.join(tokens[i:i + width])}")
+                        found[name] = triple
+                        break
+                if name in found:
+                    break
         if len(found) == len(provinces):
-            return found
+            sums = tuple(sum(v[k] for v in found.values()) for k in range(3))
+            totals = total_row(tokens)
+            if sums in totals:
+                return found
+            seen = (f"; its provinces make {sums}, and its total rows say {totals}")
+            continue
         out = out if len(out) >= len(found) else found
-    raise SystemExit(f"burkina_provinces: the province table gives {sorted(out)} of {provinces}")
+        seen = seen or f"; the table's lines: {' '.join(tokens[:160])}"
+    raise SystemExit(f"burkina_provinces: the province table gives {sorted(out)} of "
+                     f"{provinces}{seen}")
 
 
 def regional_total(text: str) -> tuple[int, int, int]:
-    """The region's men, women and total (Tableau 2.1's Ensemble row)."""
+    """The region's men, women and total (Tableau 2.1's Ensemble row): the first
+    title of the table that is not the list of tables' entry for it."""
     flat = re.sub(r"\s+", " ", text)
-    m = re.search(r"(?i)milieu\s+de\s+r[ée]sidence\s+selon\s+le\s+sexe\s+en\s+2019(.{0,1500})", flat)
-    tokens = (m.group(1) if m else "").split()
-    for i, token in enumerate(tokens):
-        if fold(token) == "ensemble":
-            triple = triple_at(tokens, i + 1)
-            if triple:
-                return triple
+    for m in re.finditer(r"(?i)milieu\s+de\s+r[ée]sidence\s+selon\s+le\s+sexe\s+en\s+2019", flat):
+        window = flat[m.end():m.end() + 1500]
+        if re.match(r"\s*\.{3,}|\s*_{3,}", window):
+            continue                       # the list of tables
+        tokens = window.split()
+        rows = total_row(tokens)
+        if rows:
+            return rows[0]
     raise SystemExit("burkina_provinces: no regional count by sex")
 
 

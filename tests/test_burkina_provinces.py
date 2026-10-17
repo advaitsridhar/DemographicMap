@@ -28,6 +28,43 @@ class BurkinaProvinces(unittest.TestCase):
         with self.assertRaises(SystemExit):
             bp.province_table(PAGE, ["Bale", "Tapoa"])
 
+    def test_total_row_must_agree(self):
+        # The Boucle's table with Sourou's women made one more: the provinces
+        # no longer make the Ensemble row, and nothing is taken.
+        names = ["Bale", "Banwa", "Kossi", "Mouhoun", "Nayala", "Sourou"]
+        altered = PAGE.replace("Sourou\n142\n230\n142\n781\n285\n011",
+                               "Sourou\n142\n230\n142\n782\n285\n012")
+        with self.assertRaises(SystemExit):
+            bp.province_table(CONTENTS + altered, names)
+
+    def test_close_spelling(self):
+        # Constructed: a province the table spells otherwise than the map,
+        # taken because its label is close and the rows make the total.
+        text = ("Tableau 2.3 : Répartition des effectifs de la population par province "
+                "selon le sexe Province Homme Femme Ensemble "
+                "Gnagna 1 000 1 200 2 200 Komondjoari 500 600 1 100 "
+                "Ensemble 1 500 1 800 3 300")
+        table = bp.province_table(text, ["Gnagna", "Komonjdjari"])
+        self.assertEqual(table["Komonjdjari"], (500, 600, 1_100))
+
+    def test_regional_total(self):
+        # The Centre monograph's list of tables, then its Tableau 2.1 as the
+        # runner printed it (title wrapped before the year; narrow spaces
+        # between the thousands).
+        text = ("Tableau 2.1 : Répartition de l’effectif de population par milieu de "
+                "résidence selon le sexe en 2019  ............  8 \n"
+                "Tableau 2.2 : Répartition (%) des effectifs de la population par commune "
+                "selon le sexe  ..........................  9 \n"
+                "Tableau 2.1 : Répartition de l’effectif de population par milieu de "
+                "résidence selon le sexe en\n2019\n"
+                "Milieu de résidence Sexe Masculin Féminin Ensemble\n"
+                "Urbain        1 183 557        1 231 709        "
+                "2 415 266\n"
+                "Rural           305 955            309 163            615 118\n"
+                "Ensemble        1 489 512        1 540 872        "
+                "3 030 384\n")
+        self.assertEqual(bp.regional_total(text), (1_489_512, 1_540_872, 3_030_384))
+
 
 if __name__ == "__main__":
     unittest.main()
