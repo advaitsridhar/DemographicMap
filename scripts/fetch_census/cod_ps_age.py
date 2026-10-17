@@ -32,7 +32,15 @@ and five-year age group as Latin America's do, so the same reading covers them.
 - the median falls inside a closed group, never the open-ended one.
 A unit failing any of these is left out and the log says why. Which of the
 map's levels a table describes is measured by its names against the map's own
-(cod_ps.which_level), not taken from the file's "adm2".
+(cod_ps.which_level), not taken from the file's "adm2"; a table much shorter
+than the level its names land on is that level's namesakes and is refused.
+
+**Checks, per table, after:** a projection is often split below the country
+by applying one age structure to every unit, or each region's to its
+districts. Such a median is the country's or the region's on a unit never
+measured for it, so it is withdrawn and the record says why
+(drop_copied_structures): Liberia's counties, Burkina Faso's provinces,
+Chad's departments, Paraguay's districts.
 
 Usage:
     python -m scripts.fetch_census.cod_ps_age [--only PER,VEN]
@@ -49,7 +57,7 @@ from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
 from .cod_ps import (DATASET_PAGE, HEADERS, TIMEOUT, catalogue, dataset_year, is_usable,
-                     iso3, licence, name_column, reference_year, which_level)
+                     iso3, licence, name_column, reference_year, shape_names, which_level)
 
 OUT = "cod_ps_age.json"
 
@@ -173,6 +181,133 @@ def grouped_median(counts: list[tuple[int, int | None, float]]) -> float | None:
             return round(low + (half - before) / people * (high - low + 1), 1)
         before += people
     return None
+
+
+# Two units whose age proportions agree this closely in every five-year group
+# (percentage points) have one structure between them, applied to both:
+# measured across 87 countries' tables, distinct units differ by a point or
+# more somewhere, while Liberia's counties all sit within 0.02 of the national
+# proportions and Burkina Faso's provinces within 0.002 of their regions'.
+COPY_TOLERANCE = 0.3
+# A second-level table copies its parents when this share of its units carry
+# their parent's proportions. One unit alone can match its parent honestly --
+# a city that is nearly all of its province -- so the test is the table's.
+COPY_SHARE = 0.8
+
+
+def namesake_level(cod_level: str, level: str, names: list[str], drawn: int) -> str | None:
+    """Why a table is refused when its names match a level by namesake, or None.
+
+    The file says which level it is and the names may say otherwise. That can
+    be true -- Romania's "adm2" is its judete, this map's first level -- but a
+    table far shorter than the level it lands on is the other level matching
+    by namesake: Niger's eight regions, on the departments named after their
+    capitals, would have worn the regions' figures (and kept the real
+    department table out).
+    """
+    declared = {"1": "admin1", "2": "admin2"}.get(cod_level)
+    distinct = len({n for n in names if n})
+    if declared and declared != level and 3 * distinct < drawn:
+        return (f"the file names its {distinct} rows as {declared} units; they match "
+                f"{level} names only as namesakes (the map draws {drawn} there)")
+    return None
+
+
+def age_shares(groups: list[list[Any]]) -> list[float] | None:
+    total = sum(people for _, _, people in groups)
+    return [100.0 * people / total for _, _, people in groups] if total else None
+
+
+def same_structure(a: list[list[Any]], b: list[list[Any]]) -> bool:
+    if [g[:2] for g in a] != [g[:2] for g in b]:
+        return False
+    sa, sb = age_shares(a), age_shares(b)
+    return bool(sa and sb) and max(abs(x - y) for x, y in zip(sa, sb)) < COPY_TOLERANCE
+
+
+def withdraw(rec: dict[str, Any], field: str, note: str) -> None:
+    """Replace a figure that is not the unit's own with the reason."""
+    rec[field] = {"status": "not_available", "note": note}
+    rec.pop(f"{field}_note", None)
+    if field == "median_age":
+        rec.pop("age_groups", None)
+    fields = [f for f in ("median_age", "sex_ratio") if isinstance(rec.get(f), dict)
+              and "value" in rec[f]]
+    for source in rec.get("sources", []):
+        source["field"] = "/".join(fields) or source["field"]
+    if not fields:
+        rec["sources"] = []
+
+
+def drop_copied_structures(code: str, out: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Withdraw medians (and ratios) a table gives its units from elsewhere.
+
+    A projection is often split below the country by applying one age
+    structure to every unit, or each region's to its districts. The median
+    of such a unit is the country's or the region's, put on a unit that was
+    never measured for it: never copy a region's figure onto its children.
+    Two cases, each a property of the whole table:
+
+    - every unit carries the same proportions as the table as a whole:
+      no unit's median is its own (its sex ratio may still be, and stays);
+    - most second-level units carry their first-level parent's proportions:
+      their medians are the parent's, and so are the ratios that match the
+      parent's to within 2 per 1,000.
+    """
+    by_level: dict[str, list[dict[str, Any]]] = {}
+    for rec in out:
+        if rec.get("age_groups"):
+            by_level.setdefault(rec["level"], []).append(rec)
+    for level, recs in sorted(by_level.items()):
+        if len(recs) < 3:
+            continue
+        whole: dict[tuple[int, Any], float] = {}
+        for rec in recs:
+            for low, high, people in rec["age_groups"]:
+                whole[(low, high)] = whole.get((low, high), 0.0) + people
+        aggregate = [[low, high, n] for (low, high), n in whole.items()]
+        if all(same_structure(rec["age_groups"], aggregate) for rec in recs):
+            year = recs[0]["median_age"]["year"]
+            log(f"    {level}: all {len(recs)} units carry the same age proportions "
+                f"(within {COPY_TOLERANCE} points in every group): medians withdrawn")
+            word = "first" if level == "admin1" else "second"
+            for rec in recs:
+                withdraw(rec, "median_age",
+                         f"OCHA's population table for this country (reference year {year}) "
+                         f"gives all its {word}-level divisions the same age proportions, so "
+                         f"no median age of this division's own can be taken from it.")
+    parents = {rec["name"]: rec for rec in out
+               if rec["level"] == "admin1" and rec.get("age_groups")}
+    children = [rec for rec in out if rec["level"] == "admin2" and rec.get("age_groups")
+                and rec.get("parent_name") in parents]
+    copies = [rec for rec in children
+              if same_structure(rec["age_groups"], parents[rec["parent_name"]]["age_groups"])]
+    if children and len(copies) >= COPY_SHARE * len(children):
+        year = children[0]["median_age"]["year"]
+        # The sexes are split separately from the ages, and Paraguay's table
+        # copies the one and not the other: its districts carry their
+        # department's ages and their own share of men. So the ratios go only
+        # when they too are copied, table-wide.
+        same_ratio = [rec for rec in children
+                      if abs(rec["sex_ratio"]["value"]
+                             - parents[rec["parent_name"]]["sex_ratio"]["value"]) <= 2]
+        ratios_copied = len(same_ratio) >= COPY_SHARE * len(children)
+        for rec in children:
+            if ratios_copied:
+                withdraw(rec, "sex_ratio",
+                         f"OCHA's population table for this country (reference year {year}) "
+                         f"gives each second-level division the proportions of men and women "
+                         f"of the first-level division it lies in, so no sex ratio of this "
+                         f"division's own can be taken from it.")
+            withdraw(rec, "median_age",
+                     f"OCHA's population table for this country (reference year {year}) gives "
+                     f"each second-level division the age proportions of the first-level "
+                     f"division it lies in, so no median age of this division's own can be "
+                     f"taken from it.")
+        log(f"    admin2: {len(copies)} of {len(children)} units carry their parent's age "
+            f"proportions and {len(same_ratio)} its sex ratio: all {len(children)} medians "
+            + (f"and sex ratios withdrawn" if ratios_copied else "withdrawn, the sex ratios kept"))
+    return out
 
 
 def unit_figures(row: dict[str, Any], cols: dict[str, Any]) -> tuple[dict[str, Any] | None, str]:
@@ -302,6 +437,10 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         if level is None or level in claimed:
             log(f"    refused {table['label']}: {why if level is None else level + ' already read'}")
             continue
+        namesakes = namesake_level(cod_level, level, names, len(shape_names(code, level)))
+        if namesakes:
+            log(f"    refused {table['label']}: {namesakes}")
+            continue
         claimed.add(level)
         parent_col = name_column(table["columns"], "1")
         pcode_col = next((c for c in table["columns"]
@@ -375,7 +514,7 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
             written += 1
         log(f"    {level}: {written} unit(s) from {table['label']} ({why}); "
             f"{refused} left out")
-    return out
+    return drop_copied_structures(code, out)
 
 
 def main() -> int:
