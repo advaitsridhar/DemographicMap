@@ -183,7 +183,9 @@ def build(found: list[dict[str, Any]], districts: int, admin1: list[dict[str, An
         records.append(record(
             f"COG-RGPH2023-{sid}", label, level="admin2", parent="COG", country="COG",
             match_by="shape_id", shape_id=sid, population=gap(NOT_AVAILABLE, note),
-            median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note), sources=[]))
+            median_age=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note), sources=[],
+            capital=gap(NOT_AVAILABLE, f"The name this polygon is drawn under, {label}, is out "
+                                       f"of place here, so no district's seat is shown.")))
     report.append(f"  {sum(r['level'] == 'admin2' for r in records)} second-level polygons given "
                   f"reasons")
     return records, report

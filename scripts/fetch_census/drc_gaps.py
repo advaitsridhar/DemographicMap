@@ -305,9 +305,40 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
             f"COD-GAPS-{polys[0]['id']}", town, level="admin2", parent="COD", country="COD",
             match_by="shape_id", shape_id=polys[0]["id"], sources=cite,
             population=gap(NOT_AVAILABLE, note), median_age=gap(NOT_AVAILABLE, note),
-            sex_ratio=gap(NOT_AVAILABLE, note)))
+            sex_ratio=gap(NOT_AVAILABLE, note), **own_seat(town)))
         report.append(f"  town {town}: counted in {counted_in}")
+    # The towns another declaration explains: only their seat, which is the town.
+    for town in sorted(DECLARED_ELSEWHERE):
+        polys = by_name.get(town, [])
+        if len(polys) == 1:
+            records.append(record(
+                f"COD-GAPS-{polys[0]['id']}", town, level="admin2", parent="COD", country="COD",
+                match_by="shape_id", shape_id=polys[0]["id"], sources=[], **own_seat(town)))
+    # Cities OCHA counts in a territory, which carry a figure of their own from elsewhere.
+    for city, territory in CITIES_COUNTED_IN.items():
+        polys = by_name.get(city, [])
+        ocha = [x for x in adm2 if fold(x["admin2Name_fr"]) == fold(city)]
+        says = (ocha[0].get("REMARK") or "").strip() if len(ocha) == 1 else ""
+        target = by_code.get(says.rsplit(" ", 1)[-1], {}).get("admin2Name_fr", "")
+        if len(polys) != 1 or fold(target) != fold(territory):
+            report.append(f"  city {city}: OCHA says {says!r}; left out")
+            continue
+        why = (f"OCHA's 2020 estimate for the DRC counts the people of the city of {city} within "
+               f"{territory} territory, with that territory's estimated ratios, and gives the "
+               f"city no ages or sexes of its own, so no median age or sex ratio is shown here.")
+        records.append(record(
+            f"COD-GAPS-{polys[0]['id']}", city, level="admin2", parent="COD", country="COD",
+            match_by="shape_id", shape_id=polys[0]["id"], sources=cite,
+            median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+            **own_seat(city, "city")))
+        report.append(f"  city {city}: counted in {territory}")
     return records, report
+
+
+def own_seat(name: str, kind: str = "town") -> dict[str, Any]:
+    """A town or city drawn as a polygon of its own is its own seat."""
+    return {"capital": name,
+            "capital_note": f"This polygon is the {kind} of {name}, whose seat is the {kind} itself."}
 
 
 def main() -> int:
