@@ -210,13 +210,26 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
-    ap.parse_args()
+    ap.add_argument("--dump", default="", help="log each monograph's pages on religion and "
+                    "languages by province instead of writing anything (a label)")
+    args = ap.parse_args()
     admin1 = json.loads((SITE / "admin1" / "BFA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "BFA.units.json").read_text())
     regions = {u["id"]: u["name"] for u in admin1}
     provinces: dict[str, list[dict[str, Any]]] = {}
     for u in admin2:
         provinces.setdefault(regions[u["parent"]], []).append(u)
+    if args.dump:
+        for region, shapes in sorted(provinces.items()):
+            url, text = read(region)
+            names = [fold(s["name"]) for s in shapes]
+            for n, page in enumerate(text.split("\f")):
+                flat = fold(page)
+                about = ("religion" in flat or "musulman" in flat or "langue" in flat)
+                if about and sum(1 for name in names if name in flat) >= min(2, len(names)):
+                    log(f"=== {region} page {n + 1} ===")
+                    log(page[:5000])
+        return 0
     records = []
     for region, shapes in sorted(provinces.items()):
         url, text = read(region)
