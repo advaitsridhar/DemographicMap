@@ -20,6 +20,10 @@ Venezuela's is the 2011 census itself. So these fill gaps and never replace a
 census's own median or ratio: the build lists this file in FILL_ONLY, whatever
 year either figure is for.
 
+Africa's units were emptier still: of its 778 first-level units 17 had a
+median age and 111 a sex ratio. Most of its countries' datasets split by sex
+and five-year age group as Latin America's do, so the same reading covers them.
+
 **Checks, per unit, before anything is written:**
 - the age groups start at 0 and run without a gap to an open-ended last group;
 - they add up to the unit's total, allowing only for a column of people of
@@ -55,6 +59,14 @@ AMERICAS = frozenset({
     "ARG", "ATG", "BHS", "BLZ", "BOL", "BRA", "BRB", "CHL", "COL", "CRI", "CUB", "DMA",
     "DOM", "ECU", "GRD", "GTM", "GUY", "HND", "HTI", "JAM", "KNA", "LCA", "MEX", "NIC",
     "PAN", "PER", "PRY", "SLV", "SUR", "TTO", "URY", "VCT", "VEN"})
+# Africa, the owner's next region (17 October 2026).
+AFRICA = frozenset({
+    "AGO", "BDI", "BEN", "BFA", "BWA", "CAF", "CIV", "CMR", "COD", "COG", "COM", "CPV",
+    "DJI", "DZA", "EGY", "ERI", "ETH", "GAB", "GHA", "GIN", "GMB", "GNB", "GNQ", "KEN",
+    "LBR", "LBY", "LSO", "MAR", "MDG", "MLI", "MOZ", "MRT", "MUS", "MWI", "NAM", "NER",
+    "NGA", "RWA", "SDN", "SEN", "SLE", "SOM", "SSD", "STP", "SWZ", "SYC", "TCD", "TGO",
+    "TUN", "TZA", "UGA", "ZAF", "ZMB", "ZWE"})
+DEFAULT = AMERICAS | AFRICA
 
 # A table, by the file's own name for its level: "per_admpop_adm1_2022",
 # "CMR_admpop2_2025.csv".
@@ -369,9 +381,9 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--only", default="",
-                    help="comma-separated ISO3s; default the Americas")
+                    help="comma-separated ISO3s; default the Americas and Africa")
     args = ap.parse_args()
-    only = {x.upper() for x in args.only.split(",") if x} or AMERICAS
+    only = {x.upper() for x in args.only.split(",") if x} or DEFAULT
     packages = [p for p in catalogue() if iso3(p) in only]
     log(f"cod_ps_age: {len(packages)} dataset(s) for {len(only)} countries")
     out: list[dict[str, Any]] = []

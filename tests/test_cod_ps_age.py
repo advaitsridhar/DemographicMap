@@ -105,5 +105,15 @@ class UnitFigures(unittest.TestCase):
         self.assertIn("do not add up", why)
 
 
+class Coverage(unittest.TestCase):
+    def test_the_default_run_reads_the_americas_and_africa(self):
+        # A run with no --only rewrites the whole file, so a default that
+        # dropped either region would empty its units on the next refresh.
+        self.assertTrue(cpa.AMERICAS <= cpa.DEFAULT)
+        self.assertTrue(cpa.AFRICA <= cpa.DEFAULT)
+        self.assertEqual(len(cpa.AFRICA), 54)
+        self.assertFalse(cpa.AMERICAS & cpa.AFRICA)
+
+
 if __name__ == "__main__":
     unittest.main()
