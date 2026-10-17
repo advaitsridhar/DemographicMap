@@ -179,6 +179,11 @@ def quadro2_lines(pages: list[str]) -> list[str]:
             for line in page.splitlines()][:80]
 
 
+def table_lines(pages: list[str], title: str, limit: int = 60) -> list[str]:
+    """The first lines of the pages holding a table, printed when it cannot be read."""
+    return [line for page in pages if title in page for line in page.splitlines()][:limit]
+
+
 def national_residents(pages: list[str]) -> int | None:
     """The national report's Quadro 1: residents in all dwellings."""
     for page in pages:
@@ -193,7 +198,12 @@ def national_residents(pages: list[str]) -> int | None:
 
 
 def ages(pages: list[str]) -> tuple[int, list[list[Any]]] | None:
-    """Quadro 5 of a district report: (total, [[low, high, people], ...])."""
+    """Quadro 5 of a district report: (total, [[low, high, people], ...]).
+
+    Each row gives total, men and women for the district, then (outside the
+    all-urban Água Grande) the same for its urban and its rural part; the
+    district's three come first.
+    """
     for page in pages:
         if "Quadro 5" not in page or "quinquenais" not in page:
             continue
@@ -201,7 +211,7 @@ def ages(pages: list[str]) -> tuple[int, list[list[Any]]] | None:
         total = None
         for line in page.splitlines():
             figures = numbers(line)
-            if len(figures) != 3 or figures[1] + figures[2] != figures[0]:
+            if len(figures) not in (3, 6, 9) or figures[1] + figures[2] != figures[0]:
                 continue
             label = line.strip().split()[0]
             if label == "Total":
@@ -288,10 +298,18 @@ def build(national: list[str], reports: dict[str, list[str]]) -> tuple[list[dict
         total, men, women, ordinary = table[name]
         res[name] = (total, men, women)
         age = ages(pages)
-        if age and age[0] != ordinary:
+        if age is None:
+            for line in table_lines(pages, "Quadro 5"):
+                log(f"    | {line}")
+            raise SystemExit(f"sao_tome_census: no age table read for {name}")
+        if age[0] != ordinary:
             raise SystemExit(f"sao_tome_census: {name}'s ages cover {age[0]:,}, its residents of "
                              f"ordinary dwellings are {ordinary:,}")
-        rel = religion(pages, age[0]) if age else None
+        rel = religion(pages, age[0])
+        if rel is None:
+            for line in table_lines(pages, "Quadro 6"):
+                log(f"    | {line}")
+            raise SystemExit(f"sao_tome_census: no religion row read for {name}")
         data[name] = {"age": age, "religion": rel}
         report.append(f"  {name}: residents {total:,} ({men:,} men); ordinary dwellings "
                       f"{ordinary:,}; religion "
