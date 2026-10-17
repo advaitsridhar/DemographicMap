@@ -142,6 +142,24 @@ class TablesTest(unittest.TestCase):
         bad = PROFILE.replace("100 98.63 1.37", "100 97.63 2.37")
         self.assertIsNone(rc.read_nationality(bad, "Kicukiro"))
 
+    def test_shares_to_one_decimal_and_a_title_broken_after_nationality(self):
+        # Nyarugenge's profile prints the shares to one decimal; Huye's breaks
+        # the title after "Nationality".
+        text = ("Table 2.  1Distribution (count and %) of the resident population of Nyarugenge "
+                "District by Nationality\nand sector\n"
+                "Sectors Count Percentage Total Rwandan Foreigner Total Rwandan Foreigner\n"
+                "Rwanda 13,246,394 13,129,019 117,375 100 99.1 0.9\n"
+                "Nyarugenge district 374,319 371,043 3,276 100 99.1 0.9\n"
+                "Nyarugenge 16,665 15,945 720 100 95.7 4.3\n")
+        self.assertEqual(rc.read_nationality(text, "Nyarugenge", 374319),
+                         {"Rwandan": 371043, "Foreign nationals": 3276, "_total": 374319})
+        # Without the word "district", the sector of the same name is not taken
+        # for it, its count not being the district's.
+        bare = text.replace("Nyarugenge district 374,319", "Nyarugenge 374,319")
+        self.assertEqual(rc.read_nationality(bare, "Nyarugenge", 374319)["_total"], 374319)
+        sector_only = "\n".join(line for line in bare.splitlines() if "374,319" not in line)
+        self.assertIsNone(rc.read_nationality(sector_only, "Nyarugenge", 374319))
+
 
 class BuildTest(unittest.TestCase):
     def test_records_for_every_polygon(self):

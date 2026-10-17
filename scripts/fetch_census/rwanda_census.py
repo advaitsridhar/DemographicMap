@@ -212,35 +212,58 @@ def read_religion(text: str, district: str) -> dict[str, int] | None:
 NATIONALITY_TABLE = re.compile(r"nationality\s+and\s+sector", re.I)
 
 
-def read_nationality(text: str, district: str) -> dict[str, int] | None:
+def printed(share: str, exact: float) -> bool:
+    """Whether a share printed to however many decimals is the exact one rounded."""
+    decimals = len(share.split(".")[1]) if "." in share else 0
+    return abs(exact - float(share)) <= 0.5 * 10 ** -decimals + 1e-9
+
+
+def read_nationality(text: str, district: str, total: int | None = None
+                     ) -> dict[str, int] | None:
     """The district's own row of its profile's Table 2.1 -- everyone, Rwandans,
     foreigners, then 100 and the two shares -- as {"Rwandan": n, "Foreign
     nationals": n, "_total": n}; None if no such row follows the table's title
     or its figures do not agree with each other.
 
-    The title also appears in the list of tables, with no rows after it; the
-    religion table's own district row has three counts too (everyone, urban,
-    rural) but then 100 three times, not the two shares.
+    The title also appears in the list of tables, with no rows after it, and
+    some profiles break it after "Nationality", so two lines are read
+    together. The religion table's own district row has three counts too
+    (everyone, urban, rural) but then 100 three times, not the two shares; the
+    sex table's comes under another title. The shares are printed to one
+    decimal in some profiles and two in others. Where ``total`` is given (Table
+    1's count), a row without the word "district" is taken too if it counts
+    exactly that many people: a sector can share the district's name, never its
+    count.
     """
     lines = [line.strip() for line in text.splitlines() if line.strip()]
-    number = r"(\d[\d,]*)"
+    number = r"(\d{1,3}(?:, ?\d{3})+|\d+)"
     share = r"(\d{1,2}(?:\.\d+)?)"
-    row = re.compile(rf"^{re.escape(district)}\s+district\s+{number}\s+{number}\s+{number}"
-                     rf"\s+100(?:\.0+)?\s+{share}\s+{share}\s*$", re.I)
+    tail = rf"\s+{number}\s+{number}\s+{number}\s+100(?:\.0+)?\s+{share}\s+{share}\s*$"
+    named = re.compile(rf"^{re.escape(district)}\s+district{tail}", re.I)
+    bare = re.compile(rf"^{re.escape(district)}{tail}", re.I)
     for i, line in enumerate(lines):
-        if not NATIONALITY_TABLE.search(line):
+        if not NATIONALITY_TABLE.search(" ".join(lines[i:i + 2])):
             continue
-        for candidate in lines[i + 1:i + 12]:
-            hit = row.match(candidate)
+        for candidate in lines[i + 1:i + 14]:
+            hit = named.match(candidate) or (bare.match(candidate) if total else None)
             if not hit:
                 continue
-            total, own, foreign = (int(hit.group(k).replace(",", "")) for k in (1, 2, 3))
-            if own + foreign != total or total <= 0 \
-                    or abs(100 * own / total - float(hit.group(4))) > 0.01 \
-                    or abs(100 * foreign / total - float(hit.group(5))) > 0.01:
-                return None
-            return {"Rwandan": own, "Foreign nationals": foreign, "_total": total}
+            count, own, foreign = (int(re.sub(r"[, ]", "", hit.group(k))) for k in (1, 2, 3))
+            if count <= 0 or own + foreign != count \
+                    or not printed(hit.group(4), 100 * own / count) \
+                    or not printed(hit.group(5), 100 * foreign / count):
+                continue
+            if total is not None and count != total:
+                continue
+            return {"Rwandan": own, "Foreign nationals": foreign, "_total": count}
     return None
+
+
+def nationality_lines(text: str, district: str) -> list[str]:
+    """The lines a failed read leaves to look at: those starting with the
+    district's name and holding figures."""
+    return [line.strip() for line in text.splitlines()
+            if line.strip().lower().startswith(district.lower()) and re.search(r"\d", line)][:4]
 
 
 def profile_text(name: str) -> tuple[str, str] | None:
@@ -274,10 +297,12 @@ def religions(table1: dict[str, dict[str, int]]
                 continue
             text, url = got
             urls[d] = url
-            nationality = read_nationality(text, d)
-            if nationality is None or nationality.pop("_total") != table1[d]["total"]:
-                log(f"  {d}: no nationality row agreeing with Table 1 in its profile")
+            nationality = read_nationality(text, d, table1[d]["total"])
+            if nationality is None:
+                log(f"  {d}: no nationality row agreeing with Table 1 in its profile; lines "
+                    f"starting with its name: {nationality_lines(text, d)}")
             else:
+                nationality.pop("_total")
                 nations[d] = nationality
             counts = read_religion(text, d)
             if counts is None:
