@@ -1,8 +1,3 @@
-== pdft https://anad.inseed.td/index.php/catalog/26/download/152 (?i)(d.partement|religion|ethni) 60
-  HTTP 200 application/octet-stream 53,307,259 bytes Content-Disposition=attachment; filename="RAP_Rapport_Resultats_globaux_definitifs_RGPH2_TCD_2009.pdf"
-  158 pages
-  (no match)
-== pdft https://anad.inseed.td/index.php/catalog/26/download/153 (?i)(d.partement|religion|ethni) 60
-  HTTP 200 application/octet-stream 53,764,582 bytes Content-Disposition=attachment; filename="RAP_Rapport_Resultats_globaux_definitifs_arabe_RGPH2_TCD_2009.pdf"
-  178 pages
-  (no match)
+  read https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf: 1,883,934 bytes, sha256 4ba09a999d25f7d568eb8f236091e5c5ca9298e3c66922a3e9c14874fef36f30
+Cannot set line width because b'' is an invalid float value
+niger_census: Tableau 6 lacks ['MARADI', 'NIAMEY', 'TAHOUA', 'TILLABERI', 'ZINDER']
