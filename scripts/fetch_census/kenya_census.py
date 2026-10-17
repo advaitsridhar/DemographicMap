@@ -179,9 +179,12 @@ def read_vol3(text: str) -> dict[str, dict[str, Any]]:
         if entry["all"] is None or entry["all"]["total"] is None:
             raise SystemExit(f"kenya_census: {entry['name']} has no county total")
         made = sum(u["total"] or 0 for u in entry["subs"].values())
-        if made != entry["all"]["total"]:
-            raise SystemExit(f"kenya_census: {entry['name']}'s sub-counties make {made:,}, "
-                             f"not {entry['all']['total']:,}")
+        # A county whose sub-county rows do not make it (Kwale's Kinango rows
+        # are missing from the CSV) gives no constituency anything.
+        entry["subs_ok"] = made == entry["all"]["total"]
+        if not entry["subs_ok"]:
+            entry["unread"].append(f"its sub-counties make {made:,}, not "
+                                   f"{entry['all']['total']:,}: none of them is used")
     return out
 
 
@@ -260,6 +263,9 @@ def constituency_plans(vol3: dict[str, dict[str, Any]], admin2: list[dict[str, A
             continue
         entry = next((e for e in vol3.values() if e.get("key") == key), None)
         subs = entry["subs"]
+        if not entry["subs_ok"]:
+            report.append(f"{entry['name']}: its sub-county rows do not make it; not written")
+            continue
         crosswalk = CROSSWALK.get(key)
         if crosswalk:
             taken = {s: crosswalk.get(s["name"].strip()) for s in shapes}

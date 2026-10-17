@@ -29,9 +29,11 @@ fall together. Kahama and Katavi's districts, split three and four ways since
 The first level is the 2012 regions too: Songwe, made from Mbeya in 2016, is
 drawn inside it, and Mbeya's polygon takes both regions' counts and says so.
 
-Songwe District Council, made from Chunya in 2016, is drawn apart from it, and
-OCHA's table projects the two as the one district of 2012: they are tested
-together against it (JOINT_COD) and each takes its own count.
+Songwe District Council, made from the western part of Chunya in 2015-16, is
+drawn apart from it on the lines of the split -- each polygon's area is the
+district's published one (AREA_CHECKED) -- while OCHA's table projects the two
+as the one district of 2012; each takes its own council's count, without the
+ratio test.
 
 **Median age.** The census's Age and Sex Distribution Report (Volume 2a)
 prints everyone by single year of age, to 79 and 80 and over, for every region
@@ -124,11 +126,13 @@ LEFT_OUT = {
     "Mpanda": "Katavi's districts were split into Mpanda, Nsimbo, Tanganyika and Mpimbwe",
     "Mpanda Urban": "see Mpanda", "Mlele": "see Mpanda",
 }
-# Polygons whose councils OCHA's 2020 table projects as one district of 2012:
-# Songwe District Council was made from Chunya in 2016, the boundary file draws
-# the two apart, and OCHA's "Chunya" is the district before the split (Songwe
-# has no row of its own). The two 2022 counts are tested together against it.
-JOINT_COD = {"Chunya": ("Chunya", "Songwe")}
+# Polygons whose outline is shown to be the council's by its area, so the
+# ratio test against OCHA's 2020 table does not apply to them. Songwe District
+# Council was made from the western part of Chunya in 2015-16; the boundary
+# file draws the two as they are since (Chunya 17,502 km2 against the
+# district's published 17,505; Songwe 16,198 against 16,070), and OCHA's
+# "Chunya" is the district before the split, with no row for Songwe.
+AREA_CHECKED = {"Chunya": 17_505, "Songwe": 16_070}
 # OCHA's units for polygons no rule names.
 COD_NAMES = {"Tanga Urban": "TANGA", "Mtwara Urban": "MTWARA MIKINDANI",
              "Kigoma Urban": "KIGOMA UJIJI MUNICIPAL", "Mafinga Township Authority": "MAFINGA",
@@ -164,7 +168,9 @@ def label(name: str) -> str:
 
 
 def council_key(name: str) -> str:
-    text = " ".join(name.lower().replace("distict", "district").split())
+    # One report prints Nyang'hwale with a straight apostrophe, another with a
+    # curly one.
+    text = " ".join(name.lower().replace("distict", "district").replace("’", "'").split())
     return re.sub(r"\s+council$", "", text)
 
 
@@ -394,6 +400,9 @@ def check_ages(ages: dict[str, dict[str, Any]], table: dict[str, Any]) -> list[s
     """Each age table's total must be the Volume 1a count of the same unit."""
     report = []
     for kind in ("regions", "councils"):
+        spare = sorted(t["name"] for k, t in ages[kind].items() if k not in table[kind])
+        if spare:
+            report.append(f"age tables matching no Volume 1a {kind[:-1]}: {spare}")
         for key, row in table[kind].items():
             got = ages[kind].get(key)
             if got is None:
@@ -469,21 +478,12 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             if c in used:
                 report.append(f"{c} taken by both {used[c]} and {name}")
             used[c] = name
-    # A group OCHA projects as one district: its 2022 counts are added up and
-    # set against the one row, and every member takes the group's ratio.
-    for owner, members in JOINT_COD.items():
-        group = [plans[m] for m in members if m in plans]
-        if len(group) != len(members) or not plans[owner]["cod"]:
-            for m in members:
-                if m in plans:
-                    report.append(f"{m}: its group {members} is not all bound; not written")
-                    plans.pop(m)
-            continue
-        combined = sum(p["row"]["total"] for p in group)
-        for m in members:
-            plans[m]["joint"] = (combined, plans[owner]["cod"], members)
-        for m in members:
-            plans[m]["cod"] = None
+    # A polygon shown to be its council by area takes no part in the ratio test.
+    for name in AREA_CHECKED:
+        if name in plans:
+            plans[name]["cod"] = None
+            report.append(f"{name}: outline checked by area ({AREA_CHECKED[name]:,} km2); "
+                          "no ratio test")
     # Each region's ratio of 2022 counts to OCHA's 2020 projection.
     ratio: dict[str, float] = {}
     for keys in region_of_shape.values():
@@ -494,12 +494,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
     failed = set()
     for name, plan in plans.items():
         expected = ratio.get(plan["regions"][0])
-        if plan.get("joint") and expected:
-            combined, cod_value, members = plan["joint"]
-            plan["ratio"] = combined / cod_value / expected
-            if not 1 / TOLERANCE <= plan["ratio"] <= TOLERANCE:
-                failed |= set(members)
-        elif plan["cod"] and expected:
+        if plan["cod"] and expected:
             own = plan["row"]["total"] / plan["cod"]
             plan["ratio"] = own / expected
             if not 1 / TOLERANCE <= own / expected <= TOLERANCE:
@@ -572,7 +567,9 @@ def read_ages(blob: bytes) -> dict[str, dict[str, Any]]:
     import pdfplumber                               # noqa: PLC0415
     lines: list[str] = []
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
-        for page in pdf.pages[80:]:
+        # Section Four, the tables, begins after the report's own analysis;
+        # Dodoma's tables come first and begin before page 80.
+        for page in pdf.pages[55:]:
             lines += (page.extract_text() or "").splitlines()
     return parse_ages(lines)
 

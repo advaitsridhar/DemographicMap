@@ -372,7 +372,8 @@ def projection_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, 
     regions = {}
     for row in table(r"adm1_2022_v2\.csv$"):
         total, men, women = (count(row, k) for k in ("T_TL", "M_TL", "F_TL"))
-        if men + women != total:
+        # The projection's cells are rounded one by one: a person either way.
+        if abs(men + women - total) > 2:
             raise SystemExit(f"ethiopia_census: {row['admin1Name_en']}: sexes make "
                              f"{men + women:,}, not {total:,}")
         regions[fold(row["admin1Name_en"])] = {"name": row["admin1Name_en"], "total": total}
