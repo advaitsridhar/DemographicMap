@@ -65,8 +65,8 @@ WIKI_URL = "https://fr.wikipedia.org/wiki/D%C3%A9partements_du_Cameroun"
 PROVINCES = {"adamaoua": "Adamaoua", "centre": "Centre", "est": "East",
              "extremenord": "Far North", "littoral": "Littoral", "nord": "North",
              "nordouest": "North-West", "ouest": "West", "sud": "South", "sudouest": "South-West"}
-FIGURES = re.compile(r"^(?P<label>.*?)\s*(?P<t>\d+)\s+(?P<m>\d+)\s+(?P<f>\d+)\s+"
-                     r"(?P<r>\d+(?:[,.]\d+)?|-|#\S+)\s*$")
+RATIO = re.compile(r"^(?:\d+(?:[,.]\d+)?|-|#\S+)$")
+DIGITS = re.compile(r"^\d+$")
 DEPARTMENT = re.compile(r"^d[ée]partement\s+(?:du|de\s+la|de\s+l['’]|des|de)\s*", re.I)
 PROVINCE = re.compile(r"^province\s+(?:du|de\s+la|de\s+l['’]|des|de)\s*", re.I)
 HEADER = re.compile(r"^(tableau|circonscription|population|administrative|r[ée]partition|sexe$|"
@@ -75,6 +75,47 @@ HEADER = re.compile(r"^(tableau|circonscription|population|administrative|r[ée]
 AGE_GAP = ("BUCREP's tables of the 2005 census by department count each department's residents "
            "by sex and by urban or rural residence, not by age, so no median age is published "
            "for the department.")
+
+
+def split3(groups: list[str]) -> list[tuple[int, int, int]]:
+    """Every way to read digit groups as total, men and women with men + women = total.
+
+    A figure is a leading group followed by groups of exactly three digits:
+    the table mostly prints 10465 but sometimes 10 465.
+    """
+    out = []
+    n = len(groups)
+    for i in range(1, n - 1):
+        for j in range(i + 1, n):
+            parts = [groups[:i], groups[i:j], groups[j:]]
+            if any(any(len(g) != 3 for g in p[1:]) for p in parts):
+                continue
+            t, m, f = (int("".join(p)) for p in parts)
+            if m + f == t:
+                out.append((t, m, f))
+    return out
+
+
+def figures(line: str) -> tuple[str, tuple[int, int, int]] | None:
+    """(label, (total, men, women)) for a line ending in figures and a ratio.
+
+    The label keeps as many of its own trailing numbers as it can ("YAOUNDE 3",
+    "DOUALA 1"): the fewest digit groups that read as three figures adding up
+    are the figures.
+    """
+    tokens = line.split()
+    if len(tokens) < 4 or not RATIO.match(tokens[-1]):
+        return None
+    body = tokens[:-1]
+    k = len(body)
+    while k > 0 and DIGITS.match(body[k - 1]):
+        k -= 1
+    groups = body[k:]
+    for start in range(len(groups) - 3, -1, -1):
+        found = split3(groups[start:])
+        if len(found) == 1:
+            return " ".join(body[:k] + groups[:start]), found[0]
+    return None
 
 
 def plain(text: str) -> str:
@@ -96,14 +137,14 @@ def entries(lines: list[str]) -> list[tuple[str, int, int, int]]:
         line = " ".join(raw.split())
         if not line:
             continue
-        m = FIGURES.match(line)
-        if m:
-            label = m.group("label").strip()
+        read = figures(line)
+        if read:
+            label, (t, m, f) = read
             if not label and before:
                 label, open_end = before, True
             else:
                 open_end = False
-            out.append([label, int(m.group("t")), int(m.group("m")), int(m.group("f"))])
+            out.append([label, t, m, f])
             before = None
             continue
         if HEADER.match(plain(line)) and not open_end:
@@ -135,7 +176,7 @@ def segments(pages: list[str]) -> list[tuple[str, str, list[str]]]:
                 current, title = [], line
                 continue
             if current is not None:
-                if len(title) < 200 and not FIGURES.match(" ".join(line.split())) and not current:
+                if len(title) < 200 and not figures(line) and not current:
                     title += " " + line
                 current.append(line)
     if current is not None:
