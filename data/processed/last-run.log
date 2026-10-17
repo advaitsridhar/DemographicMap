@@ -1,95 +1,15 @@
-probe_pdf: https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf
-  3,186,983 bytes
-  108 pages
-probe_pdf: 108 pages, 2 mention ['median', 'religion', 'Catholic', 'Adventist', 'Muslim']
-=== front matter ===
- 
-  
-
-ii 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Ministry of Finance and Economic Planning 
-National Institute of Statistics of Rwanda 
- 
-  
-Fifth Population and Housing Census, Rwanda, 2022 
-District Profile 
-Kicukiro 
- 
- 
-September 2023 
-  
-  
-  
-  
-  
- 
-  
-  
-  
-  
-  
-
-iii 
- 
-  
-  
-  
-  
-  
-  
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
- 
-The Fifth Rwanda Population and Housing Census (RPHC2022) was implemented by the 
-National Institute of Statistics of Rwanda (NISR). Field work was conducted from August 16th 
-
-=== pages mentioning ['median', 'religion', 'Catholic', 'Adventist', 'Muslim'] (first 30) ===
-
---- page 23 ----------------------------------------------------
-Nyarugunga 49,247 48,389 858 100 98.26 1.74
-Source: Fifth Rwanda Population and Housing Census, 2022 (NISR)
-2.1.2 Religious affiliation of the resident population of Kicukiro district
-In Kicukiro district, Christianity is the predominant religion : 35.82% are catholic,
-22.91% are ADEPR, 10.35 % are protestant, 9.97 % are Adventists , other Christians
-represent 9.98% . O ther religious represented are Muslim ( 3.96%) and Jehovah
-witness are (1.07%) while 2.7% of the resident population declared themselves to be
-without religion. The table below displays details.
-
---- page 24 ----------------------------------------------------
-Rwanda 13,246,394 3,701,245 9,545,149
-City of Kigali 1,745,555 1,517,168 228,387
-Kicukiro district 491,731 487,200 4,531 100 100 100
-Catholic 176,152 173,667 2,485 35.82 35.65 54.84
-ADEPR 112,670 111,494 1,176 22.91 22.88 25.95
-Protestant 50,883 50,579 304 10.35 10.38 6.71
-Adventist 49,036 48,680 356 9.97 9.99 7.86
-Other Christians 49,090 49,028 62 9.98 10.06 1.37
-Muslim 19,479 19,438 41 3.96 3.99 0.90
-Jehovah witness 5,272 5,261 11 1.07 1.08 0.24
-Traditional/Animist 161 161   0.03 0.03
-Other religion 14,527 14,511 16 2.95 2.98 0.35
-No Religion 13,280 13,200 80 2.70 2.71 1.77
-Not stated 1,181 1,181   0.24 0.24
-Source: Fifth Rwanda Population and Housing Census, 2022 (NISR)
-2.2 Marital Status of the resident population of Kicukiro district
+  read https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf: 16,069,809 bytes, sha256 16f5ee5b4fea25fb0d24c5e853823171f4e07dd3d049c9c5260488c07ebf209e
+  10 provinces and 116 districts, making 19,693,423
+  the country's median age: 18.3 from Table 5.1, 18.3 from the bands
+  census districts not drawn: []
+  province polygon 'Central': the sum of its drawn districts (2,391,803): The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province.
+  province polygon 'Eastern': the sum of its drawn districts (2,321,898): The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga.
+  province polygon 'Lusaka': the sum of its drawn districts (3,172,603): The 2022 census's final counts for the 7 districts drawn here, added up: Lusaka Province's districts and Chirundu, which the census counts under Southern Province.
+  province polygon 'Muchinga': the sum of its drawn districts (1,062,997): The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province.
+  province polygon 'Southern': the sum of its drawn districts (2,178,638): The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central).
+  SHANG'OMBO DISTRICT: 74,654
+  SENANGA DISTRICT: 113,124
+  SESHEKE DISTRICT: 73,204
+  WESTERN PROVINCE: 1,375,604
+  116 of 116 districts and 10 of 10 provinces written
+  wrote data/processed/zambia_census.json (283 kB)
