@@ -230,14 +230,17 @@ def read_nationality(text: str, district: str, total: int | None = None
     together. The religion table's own district row has three counts too
     (everyone, urban, rural) but then 100 three times, not the two shares; the
     sex table's comes under another title. The shares are printed to one
-    decimal in some profiles and two in others. Where ``total`` is given (Table
-    1's count), a row without the word "district" is taken too if it counts
-    exactly that many people: a sector can share the district's name, never its
-    count.
+    decimal in some profiles and two in others, and where hardly anyone is
+    foreign the Rwandans' share rounds to 100 (Gakenke: 365,194 of 365,292,
+    "100.0" and "0.0"); the religion row's three hundreds still cannot pass,
+    since its urban and rural shares cannot both round to 100. Where ``total``
+    is given (Table 1's count), a row without the word "district" is taken too
+    if it counts exactly that many people: a sector can share the district's
+    name, never its count.
     """
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     number = r"(\d{1,3}(?:, ?\d{3})+|\d+)"
-    share = r"(\d{1,2}(?:\.\d+)?)"
+    share = r"(\d{1,3}(?:\.\d+)?)"
     tail = rf"\s+{number}\s+{number}\s+{number}\s+100(?:\.0+)?\s+{share}\s+{share}\s*$"
     named = re.compile(rf"^{re.escape(district)}\s+district{tail}", re.I)
     bare = re.compile(rf"^{re.escape(district)}{tail}", re.I)

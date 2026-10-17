@@ -160,6 +160,31 @@ class TablesTest(unittest.TestCase):
         sector_only = "\n".join(line for line in bare.splitlines() if "374,319" not in line)
         self.assertIsNone(rc.read_nationality(sector_only, "Nyarugenge", 374319))
 
+    def test_a_rwandan_share_that_rounds_to_100(self):
+        # Gakenke's and Ngororero's profiles, where foreigners are a few dozen
+        # and the Rwandans' share prints as 100 (to one decimal, or none).
+        gakenke = ("Table 2. 1 Distribution (Count and %) of the resident population of Gakenke "
+                   "district by\nNationality and Sector.\n"
+                   " Sectors Count Percentage (%)\n"
+                   "Total Rwandan Foreigners Total Rwandan Foreigners\n"
+                   "Rwanda 13,246,394 13,129,019 117,375 100.0 99.1 0.9\n"
+                   "Northern Province 2,038,511 2,036,204 2,307 100.0 99.9 0.1\n"
+                   "Gakenke district 365,292 365,194 98 100.0 100.0 0.0\n"
+                   "Busengo 21,392 21,386 6 100.0 100.0 0.0\n")
+        self.assertEqual(rc.read_nationality(gakenke, "Gakenke", 365292),
+                         {"Rwandan": 365194, "Foreign nationals": 98, "_total": 365292})
+        ngororero = ("Table 2.  1  Distribution (count and %) of the resident population of "
+                     "Ngororero district by\nNationality and sector\n"
+                     "Total Rwandan Foreigners Total Rwandan Foreigners\n"
+                     "Ngororero district 367,955 367,883 72 100 100 0.0\n")
+        self.assertEqual(rc.read_nationality(ngororero, "Ngororero", 367955)["Foreign nationals"],
+                         72)
+        # A religion row under the same title -- everyone, urban, rural, then
+        # 100 three times -- still reads as none: its two "shares" cannot both
+        # be 100.
+        religion = ngororero.replace("367,883 72 100 100 0.0", "16,412 351,543 100 100 100")
+        self.assertIsNone(rc.read_nationality(religion, "Ngororero", 367955))
+
 
 class BuildTest(unittest.TestCase):
     def test_records_for_every_polygon(self):
