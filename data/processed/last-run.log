@@ -1,3 +1,21 @@
-  https://data.humdata.org/dataset/cb58fa1f-687d-4cac-81a7-655ab1efb2d0/resource/0518da1b-42d1-4624-ad64-768cb69f9d40/download/eth_admin_boundaries.geojson.zip: 23,754,149 bytes; members ['eth_admin3_gzt.csv', 'eth_adminpoints.geojson', 'eth_admin1.geojson', 'eth_admin0.geojson', 'eth_adminlines.geojson', 'eth_admincapitals.geojson', 'eth_admin2.geojson', 'eth_admin3.geojson']; level 3: ['eth_admin3.geojson']
-  cod-ab-eth level 3: 1148 units, 45,239 points
-  wrote data/processed/ethiopia_wereda_points.json (2740 kB)
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/384b93cf-ede0-4e05-9f36-a8e8e09b21a7/download/kenya-population-by-sex-and-county.csv: 1,933 characters, sha256 fbd40719108ebf30b7dc821312e20fc0c75ba03cdc4003bf0b6328c3c6d8d0cf
+  read https://open.africa/dataset/9b94fe50-9d75-4b92-be00-6354c6e6cc88/resource/b7edfdb4-2a07-4332-8796-2f00968aff0e/download/distribution-of-population-by-age-sex-county-and-sub-county-kenya-2019-census-volume-iii.csv: 1,662,176 characters, sha256 5a0261bd87543a08225dfa8bccb8ed67f43f4e4dedb8b5fcc61a53884f2291ea
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 355, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 337, in main
+    vol3 = read_vol3(fetch(VOL3))
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 135, in read_vol3
+    male, female, total = (number(c) for c in row[3:6])
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 135, in <genexpr>
+    male, female, total = (number(c) for c in row[3:6])
+                           ^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/kenya_census.py", line 92, in number
+    return int(float(text)) if text not in ("", "-") else 0
+               ^^^^^^^^^^^
+ValueError: could not convert string to float: '_'
