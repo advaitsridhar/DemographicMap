@@ -1,38 +1,22 @@
-chad_departments: OCHA's 2023 table, 23 provinces
-  Departments of Chad: 62 names with a seat
-  Bahr el Gazel: 412,808
-  Batha: 763,062
-  Borkou: 159,353
-  Chari-Baguirmi: 918,084
-  Ennedi-Est: 174,805
-  Ennedi-Ouest: 99,126
-  Guéra: 709,893
-  Hadjer-Lamis: 908,127
-  Kanem: 550,092
-  Lac: 705,362
-  Logone Occidental: 1,115,244
-  Logone Oriental: 1,239,738
-  Mandoul: 1,025,580
-  Mayo-Kebbi Est: 1,264,762
-  Mayo-Kebbi Ouest: 932,156
-  Moyen-Chari: 969,006
-  N'Djamena Region: 1,801,264
-  Ouaddaï: 1,168,288
-  Salamat: 496,719
-  Sila: 645,792
-  Tandjilé: 1,104,153
-  Tibesti: 42,784
-  Wadi Fira: 827,551
-  the provinces make 18,033,749
-    Barh-El-Gazel Ouest: no seat named
-    Fada: no seat named
-    Fouli: no seat named
-    Kaya: no seat named
-    Mayo-Binder: no seat named
-    Mourtcha: no seat named
-    Mégri: no seat named
-    Tandjilé Centre: no seat named
-    Wadi Hawar: no seat named
-  61 of 70 departments with a seat
-  wrote data/processed/chad_departments.json (92 kB)
-  93 records written
+angola_seats: 1,522,816 characters; 18 provinces, 164 municipalities with a seat
+  bengo: ambriz -> Ambriz; bulaatumba -> Bula Atumba; dande -> Caxito; dembosquibaxe -> Quibaxe; nambuangongo -> Muxaluando; pangoaluquem -> Pango Aluquém
+  benguela: baiafarta -> Baía Farta; balombo -> Balombo; benguela -> Benguela; bocoio -> Bocoio; caimbambo -> Caimbambo; catumbela -> Catumbela; chongoroi -> Chongorói; cubal -> Cubal; ganda -> Ganda; lobito -> Lobito
+  bie: andulo -> Andulo; camacupa -> Camacupa; catabola -> Catabola; chinguar -> Chinguar; chitembo -> Chitembo; cuemba -> Cuemba; cuito -> Cuito; cunhinga -> Cunhinga; nharea -> Nharêa
+  cabinda: belize -> Belize; bucozau -> Buco Zau; cabinda -> Cabinda; cacongo -> Lândana
+  cuandocubango: calai -> Calai; cuangar -> Cuangar; cuchi -> Cuchi; cuitocuanavale -> Cuito Cuanavale; dirico -> Dirico; mavinga -> Mavinga; menongue -> Menongue; nancova -> Nancova; rivungo -> Rivungo
+  cuanzanorte: ambaca -> Camabatela; banga -> Banga; bolongongo -> Bolongongo; cambambe -> Dondo; cazengo -> Ndalatando; golungoalto -> Golungo Alto; lucala -> Lucala; ngonguembo -> Quilombo dos Dembos; quiculongo -> Quiculungo; sambacaju -> Samba Cajú
+  cuanzasul: amboim -> Gabela; cassongue -> Cassongue; cela -> Wacu Kungo; conda -> Conda; ebo -> Ebo; libolo -> Calulo; mussende -> Mussende; portoamboim -> Porto Amboim; quibala -> Quibala; quilenda -> Quilenda; seles -> Seles; sumbe -> Sumbe
+  cunene: cahama -> Cahama; cuanhama -> Ondjiva; curoca -> Oncócua; cuvelai -> Mukolongodjo; namacunde -> Namacunde; ombadja -> Xangongo
+  huambo: bailundo -> Bailundo; caala -> Caála; catchiungo -> Cachiungo; ecunha -> Ecunha; huambo -> Huambo; londuimbale -> Londuimbali; longonjo -> Longonjo; mungo -> Mungo; tchikalatcholohanga -> Chicala; tchinjenje -> Chinjenje; ukuma -> Ucuma
+  huila: caconda -> Caconda; cacula -> Cacula; caluquembe -> Caluquembe; chibia -> Chibia; chicomba -> Chicomba; chipindo -> Chipindo; cuvango -> Cuvango; gambos -> Chiange; humpata -> Humpata; jamba -> Jamba; lubango -> Lubango; matala -> Matala; quilengues -> Quilengues; quipungo -> Quipungo
+  luanda: belas -> Belas; cacuaco -> Cacuaco; cazenga -> Cazenga; icoloebengo -> Catete; kilambakiaxi -> Kilamba Kiaxi; luanda -> Ingombota; quissama -> Muxima; talatona -> Talatona; viana -> Viana
+  lundanorte: cambulo -> Cambulo; capendacamulemba -> Capenda Camulemba; caungula -> Caungula; chitato -> Dundo; cuango -> Cuango; cuilo -> Cuilo; lovua -> Lóvua; lubalo -> Lubalo; lucapa -> Lucapa; xamuteba -> Xá Muteba
+  lundasul: cacolo -> Cacolo; dala -> Dala; muconda -> Muconda; saurimo -> Saurimo
+  malanje: cacuso -> Cacuso; cahombo -> Cahombo; calandula -> Calandula; cambundicatembo -> Cambundi Catembo; cangandala -> Cangandala; cundadiabaze -> Kunda dya Baze; kiuabanzoji -> Kiwaba Nzoji; luquembo -> Luquembo; malanje -> Malanje; marimba -> Marimba; massango -> Massango; mucari -> Caculama; quela -> Quela; quirima -> Quirima
+  moxico: altozambeze -> Cazombo; bundas -> Lumbala Nguimbo; camanongue -> Camanongue; cameia -> Lumege; leua -> Léua; luacano -> Luacano; luau -> Luau; luchazes -> Cangamba; luena -> Luena
+  namibe: bibala -> Bibala; camucuio -> Camucuio; namibe -> Moçâmedes; tombwa -> Tômbwa; virei -> Virei
+  uige: ambuila -> Nova Ambuíla; bembe -> Bembe; buengas -> Nova Esperança; bungo -> Bungo; cangola -> Cangola; damba -> Damba; maqueladozombo -> Maquela do Zombo; milunga -> Milunga; mucaba -> Mucaba; negage -> Negage; puri -> Puri; quimbele -> Quimbele; quitexe -> Quitexe; sanzapombo -> Sanza Pombo; songo -> Songo; uige -> Uíge
+  zaire: cuimba -> Cuimba; mbanzacongo -> Mbanza Kongo; noqui -> Nóqui; nzeto -> Nzeto; soyo -> Soyo; tomboco -> Tomboco
+  157 of 157 municipality polygons given a seat
+    Luanda: drawn over several municipalities; left out
+  wrote data/processed/angola_seats.json (165 kB)

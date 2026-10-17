@@ -3200,6 +3200,46 @@
     "shape_id": "91424787B423531810897"
   },
   {
+    "id": "AGO-LEI1816-91424787B26929322337008",
+    "level": "admin2",
+    "name": "Ecunha (Ekunha)",
+    "parent": "AGO",
+    "capital": "Ecunha",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "capital",
+        "name": "Lei n.º 18/16, de 17 de Outubro, Lei da Divisão Político-Administrativa (Assembleia Nacional de Angola)",
+        "url": "https://lex.ao/docs/assembleia-nacional/2016/lei-n-o-18-16-de-17-de-outubro/",
+        "year": 2016,
+        "license": "Legislation of the Republic of Angola, as lex.ao publishes it"
+      }
+    ],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B26929322337008"
+  },
+  {
     "id": "AGO-LEI1816-91424787B65882215003042",
     "level": "admin2",
     "name": "Gambos(Chiange)",
@@ -3758,6 +3798,41 @@
     "country": "AGO",
     "match_by": "shape_id",
     "shape_id": "91424787B19142680780947"
+  },
+  {
+    "id": "AGO-LEI1816-91424787B55521153380221",
+    "level": "admin2",
+    "name": "Luanda",
+    "parent": "AGO",
+    "capital": {
+      "status": "not_available",
+      "note": "This polygon is drawn over Luanda municipality and parts of the city's other municipalities, each with a seat of its own under Lei n.º 18/16, so no one seat is shown."
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "AGO",
+    "match_by": "shape_id",
+    "shape_id": "91424787B55521153380221"
   },
   {
     "id": "AGO-LEI1816-91424787B20373206504825",
