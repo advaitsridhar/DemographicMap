@@ -121,6 +121,10 @@ ALIASES: dict[tuple[str, str], str] = {
 }
 # The census area whose figures fit no polygon: Bakassi as it stood in 2006.
 NOT_DRAWN = {("crossriver", "bakassi")}
+# Tables of people a state's total counts outside all its areas.
+UNPLACED = {"disputedareas"}
+UNPLACED_NOTE = ("The count includes {n:,} people whom the census counts in areas it marks as "
+                 "disputed, outside all of the state's local government areas.")
 BAKASSI = ("The 2006 census counted Bakassi local government area while it held the Bakassi "
            "peninsula, which passed to Cameroon in 2008; this polygon is the part left on the "
            "Nigerian side, around Ikang, and no figure is published for it alone.")
@@ -257,6 +261,12 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
                 and all(FIGURE.match(t) for t in lines[k][1].split()):
             figures.extend(lines[k][1].split())
             k += 1
+        restored = False
+        if len(figures) == 2:
+            # Zing's TOTAL row prints its men and women and no total: the total
+            # is their sum, which the age groups' sums then check.
+            figures = [f"{number(figures[0]) + number(figures[1])}", *figures]
+            restored = True
         if len(figures) != 3:
             log(f"  page {page}: a TOTAL row with figures {figures} is not read")
             i += 1
@@ -292,6 +302,8 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
                  "single_before": after_single}
         if misprints:
             table["misprints"] = misprints
+        if restored:
+            table["misprints"] = [*table.get("misprints", []), "no total printed: men plus women"]
         tables.append(table)
         after_single = False
         i = k
@@ -326,20 +338,34 @@ def organise(tables: list[dict[str, Any]]) -> dict[str, Any]:
     every other table is an area of the state before it. A state table whose
     name is not one of the 37 is refused rather than guessed at."""
     nation, states = None, []
+    expect_state, pending = False, []
     for t in tables:
         name = t["name"].upper()
-        if t.get("single_before") and name == "NIGERIA":
+        expect_state = expect_state or t.get("single_before")
+        if key(name) in UNPLACED:
+            # Taraba's "*DISPUTED AREAS", printed between the state's single
+            # years and its five-year table: counted in the state's total and
+            # in none of its areas.
+            t["unplaced"] = True
+            if expect_state:
+                pending.append(t)
+            elif states:
+                states[-1]["areas"].append(t)
+            continue
+        if expect_state and name == "NIGERIA":
             nation = t
-        elif t.get("single_before"):
+        elif expect_state:
             if state_key(name) not in STATE_KEYS:
                 raise SystemExit(f"nigeria_census: page {t['page']}: {t['name']!r} follows a "
                                  "page of single years but is no state")
-            states.append({"table": t, "areas": []})
+            states.append({"table": t, "areas": pending})
+            pending = []
         elif not states:
             raise SystemExit(f"nigeria_census: {t['name']!r} (page {t['page']}) comes "
                              "before any state")
         else:
             states[-1]["areas"].append(t)
+        expect_state = False
     if nation is None:
         raise SystemExit("nigeria_census: no table for Nigeria")
     return {"nation": nation, "states": states}
@@ -354,7 +380,7 @@ def check(book: dict[str, Any]) -> dict[int, list[str]]:
     if len(book["states"]) != 37:
         raise SystemExit(f"nigeria_census: {len(book['states'])} states, not 37: "
                          f"{[s['table']['name'] for s in book['states']]}")
-    areas = sum(len(s["areas"]) for s in book["states"])
+    areas = sum(1 for s in book["states"] for a in s["areas"] if not a.get("unplaced"))
     if areas != 774:
         counts = {s["table"]["name"]: len(s["areas"]) for s in book["states"]}
         raise SystemExit(f"nigeria_census: {areas} local government areas, not 774: {counts}")
@@ -420,7 +446,8 @@ def name_from_vol3(book: dict[str, Any], vol3: dict[str, list[tuple[str, int, in
         for name, m, f, p in rows:
             by_counts.setdefault((p, m, f), []).append(name)
         unmatched = []
-        for a in s["areas"]:
+        areas = [a for a in s["areas"] if not a.get("unplaced")]
+        for a in areas:
             names = by_counts.get(tuple(a["total"]), [])
             if len(names) == 1:
                 a["vol3"] = names[0]
@@ -432,9 +459,9 @@ def name_from_vol3(book: dict[str, Any], vol3: dict[str, list[tuple[str, int, in
         if unmatched:
             said.append(f"{s['table']['name']}: no single Volume III row has the counts of "
                         f"{unmatched}")
-        if len(rows) != len(s["areas"]):
+        if len(rows) != len(areas):
             said.append(f"{s['table']['name']}: Volume III lists {len(rows)} areas, "
-                        f"Volume IV {len(s['areas'])}")
+                        f"Volume IV {len(areas)}")
     return said
 
 
@@ -486,7 +513,8 @@ def bind(book: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[s
             continue
         k = ALIASES.get((sk, k), k)
         state = states_by_key.get(sk)
-        found = [a for a in (state["areas"] if state else []) if k in area_keys(a)]
+        found = [a for a in (state["areas"] if state else [])
+                 if k in area_keys(a) and not a.get("unplaced")]
         # A name both volumes agree on wins over one only Volume IV prints.
         if len(found) > 1:
             found = [a for a in found if k in keys(a.get("vol3") or "")] or found
@@ -500,6 +528,7 @@ def bind(book: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[s
                          f"{left}")
     unused = sorted(f"{s['table']['name']}: {a['name']} ({a.get('vol3')})"
                     for s in book["states"] for a in s["areas"] if id(a) not in used
+                    and not a.get("unplaced")
                     and (state_key(s["table"]["name"]), key(a["name"])) not in NOT_DRAWN)
     if unused:
         raise SystemExit(f"nigeria_census: census areas on no polygon: {unused}")
@@ -578,6 +607,10 @@ def build(book: dict[str, Any], bad: dict[int, list[str]], admin1: list[dict[str
         note = f"The 2006 census's count for {named}."
         if sk == "crossriver" and bakassi is not None:
             note += " " + CROSS_RIVER.format(n=bakassi["total"][0])
+        unplaced = sum(a["total"][0] for a in by_polygon[shape["id"]]["areas"]
+                       if a.get("unplaced"))
+        if unplaced:
+            note += " " + UNPLACED_NOTE.format(n=unplaced)
         records.append(record(
             f"NGA-NPC2006-state-{sk}", shape["name"], level="admin1", parent="NGA",
             country="NGA", match_by="shape_id", shape_id=shape["id"],
