@@ -9,23 +9,23 @@ median age or a sex ratio at either level.
 **Population, 2021.** The Institut Centrafricain des Statistiques et des
 Etudes Economiques et Sociales (ICASEES) counted the population at the mapping
 stage of the fourth census (RGPH-4 cartography, reference date 1 March 2021)
-and published it by commune. OCHA's edition of that table
-(``icasees_cartocensitaire2021_formatocha_public_V2.xlsx`` in cod-ps-caf)
-carries it twice: on the communes of 2021 and, in its sheet ``PrevCommune``, on
-the 177 communes of the 2003 frame with their P-codes -- the frame the map
-draws. A sub-prefecture polygon takes the sum of its 2003 communes; Bangui,
-whose eight arrondissements OCHA's frame lists apart, takes all eight; a
-prefecture takes its sub-prefectures.
+and published it by commune of the 2020 division, as the U.S. Census Bureau's
+workbook for the CAR tabulates it (sheet ``Population``: 20 prefectures, 79
+sub-prefectures, 181 communes). The polygons are the 2003 division's, so each
+2021 commune is found among the 2003 communes of the same name inside the
+prefecture it descends from (Mambéré, Lim-Pendé and Ouham-Fafa were made out
+of Mambéré-Kadéï, Ouham-Pendé and Ouham in 2020), a commune with no 2003
+namesake goes with its 2021 sub-prefecture's other communes, and Bégoua --
+made a sub-prefecture of Bangui in 2020, with no 2003 namesake and no
+siblings -- goes to Bimbo, whose 2003 polygon surrounds Bangui and holds it.
+A polygon takes the sum of its communes, a prefecture the sum of its polygons.
 
-That assignment is checked independently on every run against the U.S.
-Census Bureau's workbook for the CAR (the same count by 2021 commune,
-sub-prefecture and prefecture): each 2021 commune is found among the 2003
-communes of the same name inside the prefecture it descends from, a commune
-with no 2003 namesake goes with its 2021 sub-prefecture's other communes, and
-Bégoua -- made a sub-prefecture of Bangui in 2020, with no 2003 namesake and
-no siblings -- goes to Bimbo, whose 2003 polygon surrounds Bangui and holds
-it. The two assignments must agree on every polygon, and both must add up to
-the national line, or nothing is written.
+OCHA's edition of the same table (``icasees_cartocensitaire2021_formatocha_
+public_V2.xlsx`` in cod-ps-caf) assigns the count to the 2003 communes itself
+(sheet ``PrevCommune``), and the two assignments are compared polygon by
+polygon on every run. They differ only where OCHA files a commune under a
+namesake in another prefecture -- the town of Nola (Sangha-Mbaéré) under
+Lobaye's commune of Nola -- and any other difference stops the run.
 
 **No sex ratio from it.** The mapping table splits every unit's count into
 men and women in one fixed proportion (49 to 51 to the person, urban and rural
@@ -69,7 +69,11 @@ COUNT_YEAR = 2021
 AGE_YEAR = 2016
 COUNT_SOURCE = ("Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales "
                 "(ICASEES), RGPH-4: Principaux résultats de la cartographie 2021 (2022), "
-                "population by commune of the 2003 frame, as OCHA publishes it")
+                "population by commune, as OCHA publishes it")
+COUNT_SOURCE_USCB = ("Institut Centrafricain des Statistiques et des Etudes Economiques et "
+                     "Sociales (ICASEES), RGPH-4: Principaux résultats de la cartographie 2021 "
+                     "(2022), population by prefecture, sub-prefecture and commune, as tabulated "
+                     "by the U.S. Census Bureau")
 AGE_SOURCE = ("Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales "
               "(ICASEES), Annuaire statistique de la République Centrafricaine 2016 (2018), "
               "tables 110-116, as tabulated by the U.S. Census Bureau")
@@ -95,6 +99,17 @@ SP_ALIASES = {fold(k): v for k, v in {
 def spelled(name: str) -> str:
     """A sub-prefecture's name as the boundary file writes it."""
     return SP_ALIASES.get(fold(name), name)
+
+
+# A polygon whose whole count is a figure the table also prints for another
+# unit, so it cannot be taken for this ground's own: Dédé-Mokouba's one
+# commune, Haute-Kadéi, has exactly Mobaye commune's 23,708 (Basse-Kotto), in
+# both the Census Bureau's tabulation and OCHA's.
+SUSPECT = {fold("Dédé-Mokouba"): (
+    "The 2021 census mapping's table gives Haute-Kadéi, this sub-prefecture's one commune, "
+    "exactly the count it gives Mobaye commune in Basse-Kotto (23,708 people), so the figure "
+    "cannot be taken for this sub-prefecture's own and none is shown.")}
+
 # The fixed proportion of men in every unit of the mapping table, and how far
 # a unit may sit from it (rounding of whole people) before the table is taken
 # to describe sexes after all.
@@ -104,9 +119,9 @@ FIXED_SLACK = 0.0005
 SEX_GAP = ("The 2021 census mapping's table splits every unit's count into men and women in "
            "one fixed proportion (49 to 51), so it gives no sex ratio of this sub-prefecture's "
            "own; the statistics office's 2016 estimates by sex stop at the prefecture.")
-AGE_GAP = ("No table reached gives ages below the prefecture: the statistics office's 2016 "
-           "estimates by age are for the 17 prefectures, and its 2021 mapping counts carry "
-           "no ages.")
+AGE_GAP = ("The statistics office's 2016 estimates by age stop at the 17 prefectures and its "
+           "2021 mapping counts carry no ages, so no median age is published for the "
+           "sub-prefecture.")
 
 
 def table(rows: list[list[Any]]) -> list[dict[str, Any]]:
@@ -176,8 +191,8 @@ def communes_2003(rows: list[dict[str, Any]]) -> list[tuple[str, str, str]]:
 
 
 def own_crosswalk(c21: dict[str, Any], g03: list[tuple[str, str, str]]
-                  ) -> tuple[dict[tuple[str, str], int], list[str]]:
-    """2003 (pref, sp) -> its 2021 count, by commune names; and what failed."""
+                  ) -> tuple[dict[tuple[str, str], list[dict[str, Any]]], list[str]]:
+    """2003 (pref, sp) -> the 2021 communes it holds, by commune names; and what failed."""
     by_name: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
     anywhere: dict[str, list[tuple[str, str]]] = defaultdict(list)
     for pref, sp, commune in g03:
@@ -206,10 +221,10 @@ def own_crosswalk(c21: dict[str, Any], g03: list[tuple[str, str, str]]
         else:
             problems.append(f"{unit['name']} ({unit['sp']}, {unit['pref']}): no 2003 namesake "
                             f"and no one place for its siblings")
-    sums: dict[tuple[str, str], int] = defaultdict(int)
-    for i, key in placed.items():
-        sums[key] += c21["communes"][i]["total"]
-    return dict(sums), problems
+    held: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for i, key in sorted(placed.items()):
+        held[key].append(c21["communes"][i])
+    return dict(held), problems
 
 
 def fixed_split(c21: dict[str, Any]) -> int:
@@ -310,18 +325,11 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
         if len(names) > 1:
             report.append(f"  the same count, {total:,}, for {' and '.join(names)}")
 
-    # OCHA's assignment, by 2003 sub-prefecture.
-    by_sp: dict[str, dict[str, Any]] = {}
-    for c in prev:
-        entry = by_sp.setdefault(c["sp_code"], {"name": c["sp"], "pref": c["pref"],
-                                               "pref_code": c["pref_code"], "total": 0,
-                                               "communes": []})
-        entry["total"] += c["total"]
-        entry["communes"].append(c)
-    # The independent assignment from the Census Bureau's 2021 frame.
-    mine, problems = own_crosswalk(c21, g03)
-    report += [f"  own crosswalk: {p}" for p in problems]
-
+    # The assignment by commune names, from the Census Bureau's 2021 frame.
+    placement, problems = own_crosswalk(c21, g03)
+    report += [f"  crosswalk: {p}" for p in problems]
+    if problems:
+        fail(f"{len(problems)} communes of 2021 could not be placed on the 2003 frame")
     parents = {u["id"]: u["name"] for u in admin1}
     pref_poly = {fold(u["name"]): u for u in admin1}
     bangui1 = pref_poly.get("bangui")
@@ -330,74 +338,119 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
     def parent_name(pref: str) -> str:
         return pref_poly[fold(pref)]["name"] if fold(pref) in pref_poly else ""
 
-    departments = {code: (spelled(e["name"]), parent_name(e["pref"]))
-                   for code, e in by_sp.items() if fold(e["pref"]) != "bangui"}
+    departments = {f"{p}/{s}": (spelled(s), parent_name(p)) for (p, s) in placement
+                   if p != "bangui"}
     bound, missing = bind(departments, admin2, parents)
     report += [f"  not bound to a polygon: {m}" for m in missing]
     if missing:
         fail("sub-prefectures left without a polygon: " + ", ".join(missing))
-    groups: dict[str, list[str]] = defaultdict(list)
-    for code, sid in bound.items():
-        groups[sid].append(code)
     if bangui2:
-        groups[bangui2["id"]] = [code for code, e in by_sp.items() if fold(e["pref"]) == "bangui"]
-    # The independent assignment, put on the same polygons.
-    uscb_departments = {f"{p}/{s}": (spelled(s), parent_name(p))
-                        for (p, s) in mine if p != "bangui"}
-    uscb_bound, uscb_missing = bind(uscb_departments, admin2, parents)
-    report += [f"  own crosswalk, not bound to a polygon: {m}" for m in uscb_missing]
-    mine_by_poly: dict[str, int] = defaultdict(int)
-    for key, sid in uscb_bound.items():
-        p, s = key.split("/")
-        mine_by_poly[sid] += mine[(p, s)]
+        bound["bangui/bangui"] = bangui2["id"]
+    groups: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for key, sid in bound.items():
+        groups[sid].append(tuple(key.split("/")))
+    names_by_sid: dict[str, set[str]] = defaultdict(set)
+    for pref, sp, commune in g03:
+        if f"{pref}/{sp}" in bound:
+            names_by_sid[bound[f"{pref}/{sp}"]].add(commune)
+
+    # OCHA's own assignment of the same count to the 2003 communes, as a check.
+    by_sp: dict[str, dict[str, Any]] = {}
+    for c in prev:
+        entry = by_sp.setdefault(c["sp_code"], {"name": c["sp"], "pref": c["pref"], "total": 0})
+        entry["total"] += c["total"]
+    ocha_departments = {code: (spelled(e["name"]), parent_name(e["pref"]))
+                        for code, e in by_sp.items() if fold(e["pref"]) != "bangui"}
+    ocha_bound, ocha_missing = bind(ocha_departments, admin2, parents)
+    report += [f"  OCHA's table, not bound to a polygon: {m}" for m in ocha_missing]
+    ocha_by_poly: dict[str, int] = defaultdict(int)
+    for code, sid in ocha_bound.items():
+        ocha_by_poly[sid] += by_sp[code]["total"]
     if bangui2:
-        mine_by_poly[bangui2["id"]] = mine.get(("bangui", "bangui"), 0)
+        ocha_by_poly[bangui2["id"]] = sum(e["total"] for e in by_sp.values()
+                                          if fold(e["pref"]) == "bangui")
+    shapes2 = {u["id"]: u for u in admin2}
+    totals = {sid: sum(u["total"] for key in keys for u in placement[key])
+              for sid, keys in groups.items()}
+    diff = {sid: ocha_by_poly.get(sid, 0) - totals[sid] for sid in totals
+            if ocha_by_poly.get(sid, 0) != totals[sid]}
+    unexplained = []
+    for sid, d in diff.items():
+        if d > 0:
+            continue
+        # OCHA lacks -d here: a commune of that count, filed by OCHA under a
+        # polygon that has a commune of the same name and exactly d too many.
+        found = None
+        for key in groups[sid]:
+            for u in placement[key]:
+                if u["total"] != -d:
+                    continue
+                for other, e in diff.items():
+                    if e == -d and fold(u["name"]) in names_by_sid.get(other, set()):
+                        found = (u, other)
+        if found:
+            u, other = found
+            report.append(f"  OCHA's table files {u['name'].title()} ({shapes2[sid]['name']}, "
+                          f"{u['total']:,}) under {shapes2[other]['name']}'s commune of the same "
+                          f"name; the names place it here")
+        else:
+            unexplained.append(sid)
+    unexplained += [sid for sid, d in diff.items() if d > 0 and not any(
+        e == -d for e in diff.values())]
+    for sid in unexplained:
+        report.append(f"  disagreement: {shapes2[sid]['name']}: OCHA's 2003 communes "
+                      f"{ocha_by_poly.get(sid, 0):,}, the 2021 communes by name {totals[sid]:,}")
+    if unexplained:
+        fail(f"OCHA's assignment and the commune names disagree on {len(unexplained)} polygons "
+             f"for no reason found")
 
     cite_count = [{"field": "population", "name": COUNT_SOURCE,
                    "url": f"https://data.humdata.org/dataset/{OCHA_DATASET}", "year": COUNT_YEAR,
-                   "license": LICENCE}]
+                   "license": LICENCE},
+                  {"field": "population", "name": COUNT_SOURCE_USCB,
+                   "url": dataset_url(USCB_DATASET), "year": COUNT_YEAR, "license": LICENCE}]
     records: list[dict[str, Any]] = []
-    shapes2 = {u["id"]: u for u in admin2}
-    disagree = []
     pref_totals: dict[str, int] = defaultdict(int)
-    for sid, codes in sorted(groups.items()):
+    for sid, keys in sorted(groups.items()):
         shape = shapes2[sid]
-        total = sum(by_sp[c]["total"] for c in codes)
-        pref = fold(by_sp[codes[0]]["pref"])
-        theirs = mine_by_poly.get(sid)
-        if theirs != total:
-            disagree.append(f"{shape['name']}: OCHA's 2003 communes {total:,}, the 2021 "
-                            f"communes by name {theirs}")
-        pref_totals[pref] += total
-        communes = [c for code in codes for c in by_sp[code]["communes"]]
-        if not total:
-            note = (f"The 2021 census mapping counted no one in the communes of {shape['name']}.")
-            pop = gap(NOT_AVAILABLE, note)
+        units = [u for key in keys for u in placement[key]]
+        total = totals[sid]
+        pref_totals[keys[0][0]] += total
+        sps21 = sorted({u["sp"].title() for u in units})
+        whole = (len(sps21) == 1 and fold(sps21[0]) == keys[0][1]
+                 and len(units) == sum(1 for u in c21["communes"]
+                                       if fold(u["sp"]) == keys[0][1]
+                                       and fold(u["pref"]) == fold(units[0]["pref"])))
+        suspect = SUSPECT.get(fold(shape["name"]))
+        if suspect:
+            pop = gap(NOT_AVAILABLE, suspect)
+            note = None
+        elif not total:
+            pop = gap(NOT_AVAILABLE, f"The 2021 census mapping counted no one in the communes "
+                                     f"of {shape['name']}.")
+            note = None
         else:
-            pop = measure(total, year=COUNT_YEAR, source=COUNT_SOURCE)
-        if len(codes) > 1:
-            note = (f"The people counted at the mapping stage of the fourth general census "
-                    f"(RGPH-4), 1 March 2021, in Bangui's eight arrondissements together.")
-        elif len(communes) > 1:
-            names = ", ".join(f"{c['name']} {c['total']:,}" for c in communes)
-            note = (f"The people counted at the mapping stage of the fourth general census "
-                    f"(RGPH-4), 1 March 2021, in the communes of {shape['name']} as the 2003 "
-                    f"census drew it, added up ({names}); sub-prefectures made since 2003 are "
-                    f"counted inside the one they were made from.")
-        else:
-            note = (f"The people counted in {shape['name']} at the mapping stage of the fourth "
-                    f"general census (RGPH-4), 1 March 2021, on its ground as the 2003 census "
-                    f"drew it.")
+            pop = measure(total, year=COUNT_YEAR, source=COUNT_SOURCE_USCB)
+            if whole:
+                note = (f"The people counted in {shape['name']} at the mapping stage of the "
+                        f"fourth general census (RGPH-4), 1 March 2021.")
+            else:
+                listed = ", ".join(f"{u['name'].title()} {u['total']:,}" for u in units)
+                note = (f"The people counted at the mapping stage of the fourth general census "
+                        f"(RGPH-4), 1 March 2021, on {shape['name']}'s ground as the 2003 census "
+                        f"drew it, its communes added up ({listed})"
+                        + (f"; since 2020 this ground is the sub-prefectures of "
+                           f"{' and '.join(sps21)}." if len(sps21) > 1 else "."))
         records.append(record(
             f"CAF-RGPH4-{sid}", shape["name"], level="admin2", parent="CAF", country="CAF",
             match_by="shape_id", shape_id=sid, population=pop,
-            **({"population_note": note} if total else {}),
+            **({"population_note": note} if note else {}),
             sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
             sources=cite_count))
-        report.append(f"  {shape['name']}: {total:,} ({len(communes)} communes of 2003)")
-    report += [f"  disagreement: {d}" for d in disagree]
-    if disagree:
-        fail(f"OCHA's assignment and the commune names disagree on {len(disagree)} polygons")
+        report.append(f"  {shape['name']}: {total:,} ({len(units)} communes of 2021"
+                      + ("" if whole else f"; 2021 sub-prefectures {', '.join(sps21)}") + ")"
+                      + (" -- withheld" if suspect else ""))
+
 
     own, why = own_structures(ages)
     report += why
@@ -409,7 +462,7 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
             report.append(f"  prefecture {poly['name']}: no 2021 count")
             continue
         fields: dict[str, Any] = {
-            "population": measure(total, year=COUNT_YEAR, source=COUNT_SOURCE),
+            "population": measure(total, year=COUNT_YEAR, source=COUNT_SOURCE_USCB),
             "population_note": (f"The people counted in {poly['name']} at the mapping stage of "
                                 f"the fourth general census (RGPH-4), 1 March 2021, on its ground "
                                 f"as the 2003 census drew it: the sum of its sub-prefectures."),

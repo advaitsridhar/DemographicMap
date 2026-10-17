@@ -65,7 +65,7 @@ RANK = re.compile(r"^\d+(?:er|ère|ème|e)$")
 GROUP = re.compile(r"^\d{1,3}$")
 
 AGE_GAP = ("The 2013 census's published results give ages for the whole country and by urban "
-           "or rural residence only, not by department.")
+           "or rural residence only, not by province or department.")
 
 
 def three(groups: list[str]) -> tuple[int, int, int] | None:
