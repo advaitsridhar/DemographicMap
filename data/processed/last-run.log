@@ -1,115 +1,76 @@
-    read https://web.archive.org/web/20240611091530id_/https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf: 3,551,899 bytes, sha256 ba8e054db203115d9c019a38da898da429be7a28c4794616adf09653c2db4875
-  2021: Ribeira Grande: 15,128 (8,066 men, 7,062 women)
-  2021: Paul: 5,770 (3,178 men, 2,592 women)
-  2021: Porto Novo: 16,052 (8,419 men, 7,633 women)
-  2021: São Vicente: 75,845 (38,472 men, 37,373 women)
-  2021: Ribeira Brava: 6,996 (3,652 men, 3,344 women)
-  2021: Tarrafal de São Nicolau: 5,310 (2,725 men, 2,585 women)
-  2021: Sal: 33,615 (17,946 men, 15,669 women)
-  2021: Boavista: 12,798 (6,871 men, 5,927 women)
-  2021: Maio: 6,330 (3,180 men, 3,150 women)
-  2021: Tarrafal: 16,892 (8,043 men, 8,849 women)
-  2021: Santa Catarina: 37,982 (17,943 men, 20,039 women)
-  2021: Santa Cruz: 25,152 (12,450 men, 12,702 women)
-  2021: Praia: 145,378 (71,803 men, 73,575 women)
-  2021: São Domingos: 14,051 (6,915 men, 7,136 women)
-  2021: São Miguel: 12,966 (6,125 men, 6,841 women)
-  2021: São Salvador do Mundo: 7,482 (3,673 men, 3,809 women)
-  2021: São Lourenço dos Órgãos: 6,328 (3,137 men, 3,191 women)
-  2021: Ribeira Grande Santiago: 7,757 (3,829 men, 3,928 women)
-  2021: Mosteiros: 8,084 (4,073 men, 4,011 women)
-  2021: São Filipe: 20,927 (10,506 men, 10,421 women)
-  2021: Santa Catarina do Fogo: 4,743 (2,423 men, 2,320 women)
-  2021: Brava: 5,647 (2,934 men, 2,713 women)
-    read https://web.archive.org/web/20121113153850id_/http://www.ine.cv/actualise/dadostat/files/a09f3db2-05b9-434a-96d4-f313812850c9distribui%C3%A7%C3%A3o%20da%20popula%C3%A7%C3%A3o%20residente%20-%20rgph%202010.xls: 634,880 bytes, sha256 38e466499db523e4cb6482c521233c4594f5ab71dbce9f0492820199bfa13e87
-    read https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls: 463,872 bytes, sha256 1ff0ee0cc697a2708a5b9e2c204f19433c31986374e6295f5ce037dd6f958612
-    Santo%20Ant%C3%A3o.xls 132 - Santo André: JORGE LUIS (347), printed among CHÃ DE NORTE's localities, is a zone of its own: the localities before it make CHÃ DE NORTE and those after it make it
-    read https://web.archive.org/web/20131106000537id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Vicente.xls: 76,800 bytes, sha256 89be35944568264015c2a91080a75f0896df87292baa8e8bbb1c504bd3347da3
-    S%C3%A3o%20Vicente.xls: sheet 'Folha1' is no parish sheet; not read
-    read https://web.archive.org/web/20131106000907id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls: 151,552 bytes, sha256 8af338470a2d1417490cb33deb89dacc1f299267a4f58e14a8222a5d7f7c66b2
-    read https://web.archive.org/web/20131105235411id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Sal.xls: 53,248 bytes, sha256 71f353dc485317a5b423313ca8b262ed436326be648d6268ad7fe419353d7539
-    read https://web.archive.org/web/20131105235259id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Boa%20Vista.xls: 51,200 bytes, sha256 fb949964603ea7f385da9a3cc5fe66cbc49933a246ea18ea108dafc3ffc4fa71
-    read https://web.archive.org/web/20131106000710id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Maio.xls: 45,568 bytes, sha256 c70cfc11b8e936d859beb3e9b5173c61bd7f20871fef4cdc54a5ed703dd0cd1f
-    read https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls: 1,146,880 bytes, sha256 a04cca16519c04680d35f5c8d590a6ccda32d8482096a4d02f1ae472394d6094
-    Santiago.xls 711 - Santo Amaro Abade: zone TRÁS OS MONTES's localities make 74,708, not 464
-    read https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls: 214,528 bytes, sha256 41013ba84555f17c535684d9946c566d325e7f57bee9a9e774ce0627190edbf0
-    read https://web.archive.org/web/20131105235641id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Brava.xls: 94,720 bytes, sha256 8486fe0e0c77d5269d469d1f977718eb0e6eeb4d4efcf2a1c86ed08cc0a93893
-  Ribeira Grande: 4 parishes make 18,931; in private households 18,886, all residents 18,890
-  Paul: 1 parishes make 6,997; in private households 6,997, all residents 6,997
-  Porto Novo: 2 parishes make 17,906; in private households 17,951, all residents 18,028
-  S. Vicente: 1 parishes make 74,986; in private households 74,986, all residents 76,107
-  Ribeira Brava: 2 parishes make 7,564; in private households 7,564, all residents 7,580
-  Tarrafal de S. Nicolau: 1 parishes make 5,205; in private households 5,205, all residents 5,237
-  Sal: 1 parishes make 25,481; in private households 25,481, all residents 25,765
-  Boavista: 2 parishes make 8,698; in private households 8,698, all residents 9,162
-  Maio: 1 parishes make 6,943; in private households 6,943, all residents 6,952
-  Tarrafal: 1 parishes make 18,561; in private households 18,561, all residents 18,565
-  Santa Catarina: 1 parishes make 43,250; in private households 43,250, all residents 43,297
-  Santa Cruz: 1 parishes make 26,585; in private households 26,585, all residents 26,609
-  Praia: 1 parishes make 130,271; in private households 130,271, all residents 131,602
-  S. Domingos: 2 parishes make 13,699; in private households 13,699, all residents 13,808
-  Calheta de S. Miguel: 1 parishes make 15,630; in private households 15,630, all residents 15,648
-  S. Salvador do Mundo: 1 parishes make 8,643; in private households 8,643, all residents 8,677
-  S. Lourenço dos Órgãos: 1 parishes make 7,350; in private households 7,350, all residents 7,388
-  Ribeira Grande de Santiago: 2 parishes make 8,323; in private households 8,323, all residents 8,325
-  Mosteiros: 1 parishes make 9,520; in private households 9,520, all residents 9,524
-  S. Filipe: 2 parishes make 22,227; in private households 22,227, all residents 22,228
-  Santa Catarina do Fogo: 1 parishes make 5,299; in private households 5,299, all residents 5,299
-  Brava: 2 parishes make 5,971; in private households 5,971, all residents 5,995
-  the parishes make 488,040; in private households 488040.0, all residents 491683.0
-  32 parishes in 22 municipalities, making 488,040
-  admin1 Boa Vista: 12,798 (2021), 115.9 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Brava: 5,647 (2021), 108.1 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Maio: 6,330 (2021), 101.0 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Mosteiros: 8,084 (2021), 101.5 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Paul: 5,770 (2021), 122.6 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Porto Novo: 16,052 (2021), 110.3 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Praia: 145,378 (2021), 97.6 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Ribeira Brava: 6,996 (2021), 109.2 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Ribeira Grande: 15,128 (2021), 114.2 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Ribeira Grande de Santiago: 7,757 (2021), 97.5 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Sal: 33,615 (2021), 114.5 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Santa Catarina: 37,982 (2021), 89.5 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Santa Catarina do Fogo: 4,743 (2021), 104.4 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Santa Cruz: 25,152 (2021), 98.0 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 São Domingos: 14,051 (2021), 96.9 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 São Filipe: 20,927 (2021), 100.8 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 São Lourenço dos Órgãos: 6,328 (2021), 98.3 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 São Miguel: 12,966 (2021), 89.5 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 São Salvador do Mundo: 7,482 (2021), 96.4 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 São Vicente: 75,845 (2021), 102.9 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Tarrafal: 16,892 (2021), 90.9 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin1 Tarrafal de São Nicolau: 5,310 (2021), 105.4 men per 100 women; The 2021 census's count of the resident population of the municipality.
-  admin2 Nossa Senhora Da Ajuda: 8,084 (2021), 101.5 men per 100 women; The 2021 census's count for the municipality of Mosteiros, of which this is the only parish.
-  admin2 Nossa Senhora Da Conceicao: 13,328 (2010), 100.1 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Conceição, its 17 zones added up. The 1 person of São Filipe municipality who lived in collective dwellings is counted only for the municipality as a whole.
-  admin2 Nossa Senhora Da Graca: 145,378 (2021), 97.6 men per 100 women; The 2021 census's count for the municipality of Praia, of which this is the only parish.
-  admin2 Nossa Senhora Da Lapa: 1,395 (2010), 104.5 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Lapa, its 5 zones added up. The 16 people of Ribeira Brava municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Nossa Senhora Da Luz: 6,330 (2021), 101.0 men per 100 women; The 2021 census's count for the municipality of Maio, of which this is the only parish.
-  admin2 Nossa Senhora Da Luz: 4,898 (2010), 93.3 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora da Luz, its 13 zones added up. The 109 people of São Domingos municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Nossa Senhora Da Luz: 75,845 (2021), 102.9 men per 100 women; The 2021 census's count for the municipality of São Vicente, of which this is the only parish.
-  admin2 Nossa Senhora Das Dores: 33,615 (2021), 114.5 men per 100 women; The 2021 census's count for the municipality of Sal, of which this is the only parish.
-  admin2 Nossa Senhora Do Livramento: 2,425 (2010), 105.7 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora do Livramento, its 2 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives.
-  admin2 Nossa Senhora Do Monte: 1,917 (2010), 95.8 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora do Monte, its 8 zones added up. The 24 people of Brava municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Nossa Senhora Do Rosario: 6,169 (2010), 104.9 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora do Rosário, its 20 zones added up. The 16 people of Ribeira Brava municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Nossa Senhora Do Rosario: 7,361 (2010), 104.5 men per 100 women; The 2010 census's count of the people living in private households in the parish of Nossa Senhora do Rosário, its 9 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives.
-  admin2 Santa Catarina: 37,982 (2021), 89.5 men per 100 women; The 2021 census's count for the municipality of Santa Catarina, of which this is the only parish.
-  admin2 Santa Catarina Do Fogo: 4,743 (2021), 104.4 men per 100 women; The 2021 census's count for the municipality of Santa Catarina do Fogo, of which this is the only parish.
-  admin2 Santa Isabel: 8,059 (2010), 133.3 men per 100 women; The 2010 census's count of the people living in private households in the parish of Santa Isabel, its 6 zones added up. The 464 people of Boa Vista municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Santiago Maior: 25,152 (2021), 98.0 men per 100 women; The 2021 census's count for the municipality of Santa Cruz, of which this is the only parish.
-  admin2 Santissimo Nome De Jesus: 3,854 (2010), 93.3 men per 100 women; The 2010 census's count of the people living in private households in the parish of Santíssimo Nome de Jesus, its 7 zones added up. The 2 people of Ribeira Grande de Santiago municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Santo Amaro Abade: 16,892 (2021), 90.9 men per 100 women; The 2021 census's count for the municipality of Tarrafal, of which this is the only parish.
-  admin2 Santo Andre: 3,441 (2010), 115.9 men per 100 women; The 2010 census's count of the people living in private households in the parish of Santo André, its 8 zones added up. The 77 people of Porto Novo municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Porto Novo's 2 parishes make 17,906, 45 fewer than the 17,951 people in private households that INE's table by municipality gives.
-  admin2 Santo Antonio Das Pombas: 5,770 (2021), 122.6 men per 100 women; The 2021 census's count for the municipality of Paul, of which this is the only parish.
-  admin2 Santo Crucifixo: 6,764 (2010), 115.1 men per 100 women; The 2010 census's count of the people living in private households in the parish of Santo Crucifixo, its 12 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives.
-  admin2 Sao Francisco De Assis: 5,310 (2021), 105.4 men per 100 women; The 2021 census's count for the municipality of Tarrafal de São Nicolau, of which this is the only parish.
-  admin2 Sao Joao Baptista: 4,054 (2010), 99.7 men per 100 women; The 2010 census's count of the people living in private households in the parish of São João Baptista, its 12 zones added up. The 24 people of Brava municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Sao Joao Baptista: 639 (2010), 138.4 men per 100 women; The 2010 census's count of the people living in private households in the parish of São João Baptista, its 3 zones added up. The 464 people of Boa Vista municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Sao Joao Baptista: 14,465 (2010), 108.2 men per 100 women; The 2010 census's count of the people living in private households in the parish of São João Baptista, its 24 zones added up. The 77 people of Porto Novo municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Porto Novo's 2 parishes make 17,906, 45 fewer than the 17,951 people in private households that INE's table by municipality gives.
-  admin2 Sao Joao Baptista: 4,469 (2010), 87.9 men per 100 women; The 2010 census's count of the people living in private households in the parish of São João Baptista, its 14 zones added up. The 2 people of Ribeira Grande de Santiago municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Sao Lourenco: 8,899 (2010), 93.8 men per 100 women; The 2010 census's count of the people living in private households in the parish of São Lourenço, its 18 zones added up. The 1 person of São Filipe municipality who lived in collective dwellings is counted only for the municipality as a whole.
-  admin2 Sao Lourenco Dos Orgaos: 6,328 (2021), 98.3 men per 100 women; The 2021 census's count for the municipality of São Lourenço dos Órgãos, of which this is the only parish.
-  admin2 Sao Miguel Arcanjo: 12,966 (2021), 89.5 men per 100 women; The 2021 census's count for the municipality of São Miguel, of which this is the only parish.
-  admin2 Sao Nicolau Tolentino: 8,801 (2010), 94.7 men per 100 women; The 2010 census's count of the people living in private households in the parish of São Nicolau Tolentino, its 19 zones added up. The 109 people of São Domingos municipality who lived in collective dwellings are counted only for the municipality as a whole.
-  admin2 Sao Pedro Apostolo: 2,381 (2010), 110.5 men per 100 women; The 2010 census's count of the people living in private households in the parish of São Pedro Apóstolo, its 4 zones added up. The 4 people of Ribeira Grande municipality who lived in collective dwellings are counted only for the municipality as a whole. Added up this way, Ribeira Grande's 4 parishes make 18,931, 45 more than the 18,886 people in private households that INE's table by municipality gives.
-  admin2 Sao Salvador Do Mundo: 7,482 (2021), 96.4 men per 100 women; The 2021 census's count for the municipality of São Salvador do Mundo, of which this is the only parish.
-  wrote data/processed/cabo_verde_parishes.json (110 kB)
+  Volume IV: 34,215,383 bytes, sha256 af4ef18f3c7c546054299343767686e4709e6295b0666c73a2062024cd271148
+  371 pages, 812 tables read
+  Volume III: 7,394,260 bytes, sha256 01d7d8dda8c9359a126b56add6376a823857a935483718db582efe226de7a52e
+  Volume III: 747 areas in 35 states
+  Volume III: ANAMBRA STATE: no Volume III page read
+  Volume III: BENUE STATE: Volume IV's 'Aguta LGA' (115597, 58478, 57119) is Volume III's 'AGATU'
+  Volume III: BENUE STATE: Volume IV's 'Bukuru LGA' (206215, 103655, 102560) is Volume III's 'BURUKU'
+  Volume III: IMO: Volume IV's 'O OHAJI/EGBEMA' (182891, 92604, 90287) is Volume III's 'OHAJI/EGBEMA'
+  Volume III: KADUNA STATE: Volume IV's 'MAKARFI' (291358, 149111, 142247) is Volume III's 'SABON-GARI'
+  Volume III: KADUNA STATE: Volume IV prints no table for Volume III's 'KAURA' (174626, 88565, 86061); its count and sexes are read from Volume III
+  Volume III: KADUNA STATE: Volume III lists 23 areas, Volume IV 22
+  Volume III: OGUN: Volume IV's 'OGUN WARTERSIDE' (74222, 37412, 36810) is Volume III's 'OGUN WATERSIDE'
+  Volume III: FCT ABUJA: no Volume III page read
+  read by position: JIGAWA/BABURA: ['24 for 20-24']
+  read by position: KEBBI/FAKAI: ['(none) for 85-']
+  read by position: KEBBI/KALGO: ['41913 for 10-14']
+  read by position: LAGOS/LAGOS: ['4 - 9 for 5-9']
+  read by position: LAGOS/AGEGE: ['4 - 9 for 5-9']
+  read by position: LAGOS/AJEROMI-IFELODUN: ['4 - 9 for 5-9']
+  read by position: LAGOS/ALIMOSHO: ['4 - 9 for 5-9']
+  read by position: LAGOS/AMUWO-ODOFIN: ['4 - 9 for 5-9']
+  read by position: LAGOS/APAPA: ['4 - 9 for 5-9']
+  read by position: LAGOS/BADAGRY: ['4 - 9 for 5-9']
+  read by position: LAGOS/EPE: ['4 - 9 for 5-9']
+  read by position: LAGOS/ETI-OSA: ['4 - 9 for 5-9']
+  read by position: LAGOS/IBEJU/LEKKI: ['4 - 9 for 5-9']
+  read by position: LAGOS/IFAKO-IJAYE: ['4 - 9 for 5-9']
+  read by position: LAGOS/IKEJA: ['4 - 9 for 5-9']
+  read by position: LAGOS/IKORODU: ['4 - 9 for 5-9']
+  read by position: LAGOS/KOSOFE: ['4 - 9 for 5-9']
+  read by position: LAGOS/LAGOS ISLAND: ['4 - 9 for 5-9']
+  read by position: LAGOS/LAGOS MAINLAND: ['4 - 9 for 5-9']
+  read by position: LAGOS/MUSHIN: ['4 - 9 for 5-9']
+  read by position: LAGOS/OJO: ['4 – 9 for 5-9']
+  read by position: LAGOS/OSHODI-ISOLO: ['4 - 9 for 5-9']
+  read by position: LAGOS/SHOMOLU: ['4 - 9 for 5-9']
+  read by position: LAGOS/SURULERE: ['4 - 9 for 5-9']
+  read by position: NIGER/NIGER: ['4 - 9 for 5-9']
+  read by position: NIGER/Agaie: ['4 - 9 for 5-9']
+  read by position: NIGER/Agwara: ['4 - 9 for 5-9']
+  read by position: NIGER/Bida: ['4 - 9 for 5-9']
+  read by position: NIGER/Borgu: ['4 - 9 for 5-9']
+  read by position: NIGER/Bosso: ['4 - 9 for 5-9']
+  read by position: NIGER/Chanchaga: ['4 - 9 for 5-9']
+  read by position: NIGER/Edati: ['4 - 9 for 5-9']
+  read by position: NIGER/Gbako: ['4 - 9 for 5-9']
+  read by position: NIGER/Gurara: ['4 - 9 for 5-9']
+  read by position: NIGER/Katcha: ['4 - 9 for 5-9']
+  read by position: NIGER/Kontagora: ['4 - 9 for 5-9']
+  read by position: NIGER/Lapai: ['4 - 9 for 5-9']
+  read by position: NIGER/Lavun: ['4 - 9 for 5-9']
+  read by position: NIGER/Magama: ['4 - 9 for 5-9']
+  read by position: NIGER/Mariga: ['4 - 9 for 5-9']
+  read by position: NIGER/Mashegu: ['4 - 9 for 5-9']
+  read by position: NIGER/Mokwa: ['4 - 9 for 5-9']
+  read by position: NIGER/Muya: ['4 - 9 for 5-9']
+  read by position: NIGER/Paikoro: ['4 - 9 for 5-9']
+  read by position: NIGER/Rafi: ['4 - 9 for 5-9']
+  read by position: NIGER/Rijau: ['4 - 9 for 5-9']
+  read by position: NIGER/Shiroro: ['4 - 9 for 5-9']
+  read by position: NIGER/Suleja: ['4 - 9 for 5-9']
+  read by position: NIGER/Tafa: ['4 - 9 for 5-9']
+  read by position: NIGER/Wushishi: ['4 - 9 for 5-9']
+  read by position: TARABA/ZING: ['no total printed: men plus women']
+  admin2 Atakunmosa West: {'value': 68350, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 104.1, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 21.2, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for this area, which it names Atakumosa West.
+  admin2 Ibadan South East: {'value': 266457, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 95.7, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 21.2, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for Ibadan South East.
+  admin2 Kano Municipal: {'value': 371243, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 144.9, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 17.4, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for Kano Municipal.
+  admin2 Makarfi: {'value': 146574, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 100.0, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 16.4, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for Makarfi.
+  admin2 Miga: {'value': 127876, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 97.3, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 16.4, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for Miga.
+  admin2 Municipal Area Council: {'value': 776298, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 115.4, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 23.3, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for this area, which it names Abuja Municipal (AMAC).
+  admin2 Sabon Gari: {'value': 291358, 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 104.8, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 17.8, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | The 2006 census's count for Sabon-Gari.
+  admin2 Bakassi: {'status': 'not_available'} | {'status': 'not_available', 'note': 'The 2006 census counted Bakassi local government area while it held the Bakassi peninsula, which passed to Cameroon in 2008; this polygon is the part left on the Nigerian side, around Ikang, and no figure is published for it alone.'} | {'status': 'not_available', 'note': 'The 2006 census counted Bakassi local government area while it held the Bakassi peninsula, which passed to Cameroon in 2008; this polygon is the part left on the Nigerian side, around Ikang, and no figure is published for it alone.'} | None
+  admin1 Cross River: {'status': 'not_available'} | {'value': 103.6, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 20.1, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | None
+  admin1 Oyo: {'status': 'not_available'} | {'value': 100.9, 'unit': 'males_per_100_females', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | {'value': 20.9, 'unit': 'years', 'year': 2006, 'source': 'National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area), Table DS5'} | None
+  774 of 774 areas and 37 of 37 states written
+  wrote data/processed/nigeria_census.json (1640 kB)
