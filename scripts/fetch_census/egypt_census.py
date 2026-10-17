@@ -622,6 +622,20 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
                                   sex_ratio=gap(NOT_AVAILABLE, PORT_NOTE)))
             continue
         plan = plans[s["id"]]
+        if all(u["t"] == 0 for u in us) and not any(c["p2017"] for c in plan["parts"]):
+            # OCHA's 2006 table counts no one here (New Tushka) and nothing
+            # counts the unit since: no figure, and no count of 0 either.
+            other = [c["p2006"] for c in plan["parts"] if c["p2006"]]
+            later = (f", where CAPMAS's later tables put {sum(other):,} people in 2006"
+                     if other else "")
+            none = (f"The 2006 census, as OCHA publishes it, counts no one in {describe(us)}"
+                    f"{later}, and CAPMAS gives it no count since.")
+            records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
+                                  match_by="shape_id", shape_id=s["id"],
+                                  population=gap(NOT_AVAILABLE, none),
+                                  median_age=gap(NOT_AVAILABLE, none),
+                                  sex_ratio=gap(NOT_AVAILABLE, none)))
+            continue
         if len(plan["parts"]) == 1 and plan["parts"][0]["p2017"] == 0 and not plan["t2006"]:
             empty = (f"The 2017 census counted no one in {describe(us)}, a city then still "
                      "being built, and CAPMAS gives it no estimate since.")
