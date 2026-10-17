@@ -2681,6 +2681,65 @@
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
   },
   {
+    "id": "TZA-2022-72390352B92011686492741",
+    "level": "admin2",
+    "name": "Chunya",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 344471,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
+    },
+    "median_age": {
+      "value": 18.6,
+      "unit": "years",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a"
+    },
+    "sex_ratio": {
+      "value": 1050,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "TZA",
+    "match_by": "shape_id",
+    "shape_id": "72390352B92011686492741",
+    "population_note": "The 2022 census's count for Chunya District Council.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
+  },
+  {
     "id": "TZA-2022-72390352B24669678050336",
     "level": "admin2",
     "name": "Dodoma Urban",
@@ -4692,7 +4751,10 @@
       "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.8,
+      "unit": "years",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a"
     },
     "sex_ratio": {
       "value": 1023,
@@ -4716,12 +4778,20 @@
         "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf",
         "license": "NBS Tanzania publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "TZA",
     "match_by": "shape_id",
     "shape_id": "72390352B62044183520375",
-    "population_note": "The 2022 census's counts for Kondoa District Council and Kondoa Town Council, added up: the councils made since 2012 from the one drawn here."
+    "population_note": "The 2022 census's counts for Kondoa District Council and Kondoa Town Council, added up: the councils made since 2012 from the one drawn here.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age, of Kondoa District Council and Kondoa Town Council together."
   },
   {
     "id": "TZA-2022-72390352B66245716936383",
@@ -4740,7 +4810,10 @@
       "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a"
     },
     "sex_ratio": {
       "value": 935,
@@ -4764,12 +4837,20 @@
         "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf",
         "license": "NBS Tanzania publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "TZA",
     "match_by": "shape_id",
     "shape_id": "72390352B66245716936383",
-    "population_note": "The 2022 census's count for Kongwa District Council."
+    "population_note": "The 2022 census's count for Kongwa District Council.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
   },
   {
     "id": "TZA-2022-72390352B3133588656991",
@@ -7078,7 +7159,10 @@
       "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a"
     },
     "sex_ratio": {
       "value": 950,
@@ -7102,12 +7186,20 @@
         "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf",
         "license": "NBS Tanzania publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "TZA",
     "match_by": "shape_id",
     "shape_id": "72390352B74757309381442",
-    "population_note": "The 2022 census's count for Mpwapwa District Council."
+    "population_note": "The 2022 census's count for Mpwapwa District Council.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
   },
   {
     "id": "TZA-2022-72390352B92435052932896",
@@ -8177,7 +8269,10 @@
       "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 15.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a"
     },
     "sex_ratio": {
       "value": 1011,
@@ -8201,12 +8296,20 @@
         "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf",
         "license": "NBS Tanzania publication (reuse with attribution)",
         "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
       }
     ],
     "country": "TZA",
     "match_by": "shape_id",
     "shape_id": "72390352B96686223722654",
-    "population_note": "The 2022 census's count for Nyang'hwale District Council."
+    "population_note": "The 2022 census's count for Nyang'hwale District Council.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
   },
   {
     "id": "TZA-2022-72390352B51604936414420",
@@ -9375,6 +9478,65 @@
     "match_by": "shape_id",
     "shape_id": "72390352B83796809810419",
     "population_note": "The 2022 census's count for Songea Municipal Council.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
+  },
+  {
+    "id": "TZA-2022-72390352B69788666323478",
+    "level": "admin2",
+    "name": "Songwe",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 229129,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
+    },
+    "median_age": {
+      "value": 16.3,
+      "unit": "years",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a"
+    },
+    "sex_ratio": {
+      "value": 991,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Administrative Units Population Distribution Report, Volume 1a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Administrative_units_Population_Distribution_Report_Tanzania_volume1a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Tanzania), 2022 Population and Housing Census, Age and Sex Distribution Report, Volume 2a",
+        "url": "https://www.nbs.go.tz/uploads/statistics/documents/en-1705484562-Age_and_Sex_Distribution_Report_Tanzania_volume2a.pdf",
+        "license": "NBS Tanzania publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "TZA",
+    "match_by": "shape_id",
+    "shape_id": "72390352B69788666323478",
+    "population_note": "The 2022 census's count for Songwe District Council.",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of everyone by single year of age."
   },
   {
