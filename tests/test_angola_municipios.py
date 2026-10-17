@@ -303,7 +303,21 @@ class National(unittest.TestCase):
             {"group": "Ambundu", "pct": 1.0, "count": total["Ambundu"] + 5_000}]}]
         problems = am.compare_national([rep], national)
         self.assertEqual(len(problems), 1)
-        self.assertIn("Ambundu", problems[0])
+        self.assertEqual(problems[0][:2], ("Bengo", "ethnicity"))
+        self.assertIn("Ambundu", problems[0][2])
+        # The field is then left out of the province's polygons, and the rest kept.
+        records, _ = am.build([rep], ADMIN1, ADMIN2, {("Bengo", "ethnicity")})
+        dande = next(r for r in records if r["name"] == "Dande")
+        self.assertNotIsInstance(dande["ethnicity"], list)
+        self.assertIsInstance(dande["religion"], list)
+
+    def test_a_province_half_read_gets_no_total(self):
+        pages, texts = report_pages()
+        rep = am.read_report("Cubango", pages, texts)       # Cuando's report not read
+        records, lines = am.build([rep], ADMIN1 + [{"id": "CC", "name": "Cuando Cubango"}], ADMIN2)
+        self.assertFalse(any(r["level"] == "admin1" and r["name"] == "Cuando Cubango"
+                             for r in records))
+        self.assertTrue(any("not all its reports read" in line for line in lines))
 
 
 if __name__ == "__main__":
