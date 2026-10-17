@@ -1,37 +1,357 @@
-  20,745,926 bytes
-  read https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf: 20,745,926 bytes, sha256 4d41cfc2e5431f96c426f379260311c99925f8b6177b8823f4c0afb306207854
-  Kayes: 1,840,329 (921,044 men), median 17, annex 1,826,564 in ordinary households, interpolated 16.1
-  Koulikoro: 2,255,157 (1,142,015 men), median 16, annex 2,246,154 in ordinary households, interpolated 16.0
-  Sikasso: 1,533,123 (760,239 men), median 16, annex 1,528,398 in ordinary households, interpolated 15.8
-  Ségou: 2,455,263 (1,231,931 men), median 17, annex 2,208,847 in ordinary households, interpolated 16.2
-  Mopti: 935,579 (483,089 men), median 17, annex 842,209 in ordinary households, interpolated 17.0
-  Tombouctou: 974,278 (504,864 men), median 18, annex 693,719 in ordinary households, interpolated 17.4
-  Gao: 727,517 (373,996 men), median 17, annex 679,911 in ordinary households, interpolated 16.8
-  Kidal: 83,192 (45,229 men), median 20, annex 79,324 in ordinary households, interpolated 19.5
-  Taoudenni: 100,358 (55,284 men), median 21, annex 99,499 in ordinary households, interpolated 20.2
-  Ménaka: 318,876 (170,205 men), median 17, annex 225,223 in ordinary households, interpolated 16.4
-  Nioro: 678,061 (333,731 men), median 15, annex 668,966 in ordinary households, interpolated 14.5
-  Kita: 681,671 (340,853 men), median 15, annex 680,380 in ordinary households, interpolated 14.5
-  Dioïla: 675,965 (338,396 men), median 16, annex 674,419 in ordinary households, interpolated 15.9
-  Nara: 307,777 (154,080 men), median 15, annex 278,904 in ordinary households, interpolated 14.3
-  Bougouni: 1,570,979 (794,189 men), median 16, annex 1,567,533 in ordinary households, interpolated 15.2
-  Koutiala: 1,169,882 (573,069 men), median 15, annex 1,153,375 in ordinary households, interpolated 14.9
-  San: 820,807 (418,353 men), median 16, annex 815,185 in ordinary households, interpolated 15.5
-  Douentza: 170,189 (87,186 men), median 17, annex 147,229 in ordinary households, interpolated 16.8
-  Bandiagara: 868,916 (433,502 men), median 15, annex 720,279 in ordinary households, interpolated 14.7
-  Bamako: 4,227,569 (2,095,300 men), median 19, annex 4,211,468 in ordinary households, interpolated 18.3
-  Gao: 1,046,393 (Gao + Ménaka), 1084 men per 1,000 women, median 16.7
-  Kayes: 3,200,061 (Kayes + Kita + Nioro), 995 men per 1,000 women, median 15.4
-  Kidal: 83,192 (Kidal), 1191 men per 1,000 women, median 20.0
-  Tombouctou: 1,074,636 (Tombouctou + Taoudenni), 1089 men per 1,000 women, median 17.7
-  2009: 0 cercles with figures, 50 blank, 9 regions
-  2018 projection: 50 cercles by sex
-  Bamako: not the ground of any regions of 2023
-  Koulikouro: not the ground of any regions of 2023
-  Mopti: not the ground of any regions of 2023
-  Segou: not the ground of any regions of 2023
-  Sikasso: not the ground of any regions of 2023
-  cercle polygon 'Ansongo': no row in the 2018 projection
-  cercle polygon 'Bamako': no row in the 2018 projection
-  9 regions and 50 cercles written
-  wrote data/processed/mali_census.json (112 kB)
+probe_pdf: https://sierraleone.unfpa.org/sites/default/files/pub-pdf/National%20Analytical%20Report.pdf
+  12,689,945 bytes
+  584 pages
+probe_pdf: 584 pages, 237 mention ['headquarter', 'Headquarter', 'district']
+=== front matter ===
+
+
+=== pages mentioning ['headquarter', 'Headquarter', 'district'] (first 20) ===
+
+--- page 6 ----------------------------------------------------
+development programmes and policy formulation.
+The report presents the census methodology, the country’s profile and lessons learnt during the
+implementation of the 2015 Census. It provides information on key population characteristics at
+national, regional and districts as well as at rural and urban levels. It contains data on the socio-
+economic impact of the Ebola Virus Disease.
+The conduct of the 2015 Census would not have been possible without the massive mobilization
+and utilization of human, financial and material resources. We therefore wish to express our
+      ...
+messages from Statistics Sierra Leone to the general public, which greatly enhanced the conduct
+of the census. We also wish to thank the chiefs and other local authorities as well as the entire
+people of Sierra Leone for their cooperation.
+We are indebted to Statistics Sierra Leone Council, the Technical Coordinators, the District Census
+team, the field personnel, the Census Publicity Committee, the Census Command Centre, the
+Census Technical Committee and the Census Steering Committee for the roles they played in
+the implementation of the census. To the chief technical adviser, the data processing expert, the
+
+--- page 9 ----------------------------------------------------
+ 2.6.1Considerations for selection of the method for the adjustment of the age
+ sex data
+ 2.6.2 Adjusting the distribution of the total population by age–sex
+ 2.6.3 Adjusting of the age-sex distribution of the population of districts and
+           regions
+|   20
+|   20
+
+--- page 10 ----------------------------------------------------
+3.2 Sources of data and their limitations
+3.3 Population size and distribution
+ 3.3.1 Population of the regions
+ 3.3.2 Population of the districts
+ 3.3.3 Changes in distribution of the population by region and district
+ 3.3.4 Population of the chiefdoms
+3.4 Population growth
+ 3.4.1  Growth of the total population (1963-2015)
+      ...
+ 3.6.1 Distribution of total population by age
+ 3.6.2  Population of broad age groups
+ 3.6.3 Age composition of the population of the regions
+ 3.6.4 Age distribution of the population of the districts
+ 3.6.5 Age dependency ratios
+ 3.6.6 Sex composition
+3.7 Nationality
+
+--- page 11 ----------------------------------------------------
+4.3 Sources of data and their limitations
+4.4 Distribution of households
+4.5 Household size
+ 4.5.1 Household size by region and district
+ 4.5.2 Mean household size by characteristics of household head
+4.7 Household composition
+4.8 Household heads
+
+--- page 14 ----------------------------------------------------
+8.1 Introduction
+8.2. Sources of data
+8.3. Marital status for the population aged 10 years and above by residence, region and
+district
+8.4. Marital status for the population aged 10 years and above by age group and sex
+ 8.4.1. Age at marriage for females
+8.5 Marital status and employment status
+
+--- page 18 ----------------------------------------------------
+14.3 Disability status
+ 14.3.1 Distribution of the population by disability status, place of residence and sex
+ 14.3.2 Distribution of the population by disability status, region and sex
+ 14.3.3 Distribution of the population by disability status, district and sex
+14.4 Demographic characteristics of people with disabilities
+ 14.4.1 Persons with disability by place of residence
+ 14.4.2 Persons with disability by region
+ 14.4.3 Persons with disability by district
+ 14.4.4 Main disability type by place of residence and sex
+ 14.4.5 Main disability type by region and sex
+ 14.4.6 Main disability type by household size
+ 14.4.7 Type of disability by age
+ 14.4.8 Cause of disability by sex, broad age group, place of residence and region
+ 14.4.9 Cause of disability by district
+ 14.4.10 Type of disability by kind of treatment
+14.5 Socio-economic characteristics of persons with disabilities
+ 14.5.1 Literacy of persons with disabilities 10 years and older by region
+
+--- page 19 ----------------------------------------------------
+15.4 Tobacco and Alcohol Intake
+ 15.4.1 Tobacco and alcohol intake by age and sex
+ 15.4.2 Tobacco and alcohol intake by residence and sex
+ 15.4.3 Tobacco and alcohol intake by region, district and sex
+15.5 Summary, Conclusions and Recommendations
+ 15.5.1 Summary
+|  405
+
+--- page 21 ----------------------------------------------------
+Table 2.3 Distribution of the reported population by age and sex 36
+Table 2.4 Whipple’s index of digit preference by place of residence and sex
+Table 2.5 Trends in indices of digit preference by and sex, 1985 - 2015 41
+Table 2.6 Indices of digit preference by region, district and sex 42
+Table 2.7 Age ratios by age, place of residence and sex 43
+Table 2.8 Age ratio scores, sex ratio scores and age accuracy index of the total population
+Table 2.9 Male and female age ratio scores, sex ratio scores and age accuracy index of
+      ...
+Table 2.10 Age ratio scores, sex ratio scores and age accuracy index of the total
+population, 1985 - 2015
+Table 2.11 Male and female age ratio scores, sex ratio scores and UN age accuracy index
+of the population by region and district
+Table 2.12 Reported and adjusted male population by age and technique of adjustment
+Table 2.13 Reported and adjusted female population by age and technique of adjustment
+Table 2.14 Age ratio scores, sex ratio scores and age-sex accuracy index of the reported
+and adjusted population
+Table 2.15 Adjusted population and adjustment factors by age and sex
+Table A2.1 Technical note on discrepancy in some indicators
+Table A2.2 Adjusted population by age, region, district and sex
+Table 3.1 Distribution of population size by district
+Table 3.2 Population and percentage share of population by district, 1963 – 2015
+Table 3.3 Distribution of population size by chiefdom, Sierra Leone 2015
+Table 3.4 Number of chiefdoms by region, district and population size
+Table 3.5 Population size and inter-censal population growth rates, 1963-2015
+Table 3.6 Population growth rate by region and district, 1963–2015
+Table 3.7 Number of chiefdoms by region, district and annual growth rate, 2004-2015
+Table 3.8 Population density by region and district
+Table 3.9 Percentage distribution of the total population by place of residence, age and sex
+|  30
+|  34
+
+--- page 22 ----------------------------------------------------
+Table 3.10 Percentage distribution of the total population by age and sex, 1974 – 2015
+Table 3.11 Percentage distribution of the total population by age and region, 1974 - 2015
+Table 3.12 Percentage distribution of the total population by age, median age,
+dependency ratio, region and district
+Table 3.13 Age dependency ratio, 1974-2015
+Table 3.14 Dependency ratio by region, district and age
+Table 3.15 Population and sex ratio by place of residence
+Table 3.16 Sex ratios of the total population by region and district, 1963 – 2015
+Table 3.17 Number and percentage distribution of non-Sierra Leonean population by
+selected characteristics
+Table 3.18 Distribution of non-Sierra Leonean population by nationality and sex
+      ...
+Table 3.21 Population size, sex ratio and percentage distribution and of the household
+population by sex and ethnicity
+Table 3.22 Percentage distribution of the population by main language
+Table 3.23 Distribution of the household population by region, district and most
+common main language
+Table 3.24 Distribution of the household population by region, district and number of
+languages spoken
+Table 3.25 Distribution of the household population by religious affiliation
+Table A3.1 Total population by region, district and sex, 1963-2015
+Table A3.2 Total population by age group and sex, Sierra Leone 1985-2015
+Table A3.3 Selected characteristics of the population of chiefdoms, Sierra Leone
+2004-2015
+
+--- page 23 ----------------------------------------------------
+Table 4.3 Distribution and percentage change in number of households by region and
+district, 1985-2015
+Table 4.4 Distribution of households by household size, place of residence and sex of
+household head
+Table 4.5 Distribution of households and mean household size by region and district
+Table 4.6 Households, household population and mean household size by selected
+characteristics of the household head
+Table 4.7 Distribution of households by household structure, place of residence and
+sex of household head
+Table 4.8 Distribution of the households by region, district and household structure
+Table 4.9 Distribution of the household population by relationship to household head,
+place of residence and sex
+Table 4.10 Distribution of household population by region, district and relationship to
+household head
+Table 4.11 Distribution of household population by age group and relationship to
+household head
+
+--- page 25 ----------------------------------------------------
+Table 7.3 Population by region of residence during enumeration and place of birth
+Table 7.4  Lifetime in-migration, out-migration and net migration
+Table 7.5 Lifetime in-migration, out-migration and net migration by district
+Table 7.6 Population by region of residence during enumeration and region of residence
+five years before enumeration
+Table 7.7 Recent in-migration, out-migration and net migration by region
+Table 7.8 Recent in-migration, out-migration and net migration by district
+Table 7.9 Net migration, gross migration and migration effective ratios for lifetime
+and recent migration by region
+Table 7.10 Foreign-born population by country of birth
+Table 7.11 Economically active foreign-born population aged 15 years and over
+by age, sex and employment status
+Table 7.12 Urban population by sex, region and district
+Table 7.13 Trends in urbanization, 1974-2015
+Table 7.14 Urban-rural ratio by region and district
+Table 8.1 Percentage distribution of the population aged 10 years and above
+by marital status, residence and region
+Table 8.2 Percentage distribution of the population aged 10 years and above
+by district, marital status and sex
+Table 8.3 Percentage distribution of the population aged 10 years and above
+by marital status and age group
+Table 8.4 Percentage distribution of marital status for females aged 10 years
+and above by age group, total country, 1985 and 2015 Censuses
+Table 8.5 Percentage distribution of selected marital status categories by age group
+and sex
+Table 8.6 Percentage distribution of selected marital status categories by district and sex
+Table 8.7 Singulate Mean Age at Marriage (SMAM) for females, total country, residence,
+region and district, 2015 and 1985
+Table 8.8 Percentage distribution of the population aged 10 years and above by marital
+status and employment status
+|  168
+
+--- page 26 ----------------------------------------------------
+of residence and sex
+Table 9.1 Population 3 years and older by school attendance, age and sex
+Table 9.2 Population 6 years and older by school attendance, region, place of
+residence, district and sex
+Table 9.3 Population 5 years and older by school attendance, region, and sex in 1985
+and 2015
+Table 9.4 Population 6 years and older by level of education, region and sex
+      ...
+Table 9.11 Population 10 years and older by literacy status, place of residence, region,
+disctrict and sex
+Table 9.12 Comparison of 2004 and 2015 censuses literate population 10 years
+and older by region, district and sex
+|  198
+|  199
+|  200
+
+--- page 27 ----------------------------------------------------
+of residence and sex
+Table 9.1 Population 3 years and older by school attendance, age and sex
+Table 9.2 Population 6 years and older by school attendance, region, place of
+residence, district and sex
+Table 9.3 Population 5 years and older by school attendance, region, and sex in 1985
+and 2015
+Table 9.4 Population 6 years and older by level of education, region and sex
+      ...
+Table 9.11 Population 10 years and older by literacy status, place of residence, region,
+disctrict and sex
+Table 9.12 Comparison of 2004 and 2015 censuses literate population 10 years
+and older by region, district and sex
+|  198
+|  199
+|  200
+
+--- page 28 ----------------------------------------------------
+and by sex
+Table 10.2 Distribution of economically active population aged 15+ years by region
+and by sex
+Table 10.3 Distribution of economically active population aged 15+ years by district
+and sex
+Table 10.4 Distribution of economically active population aged 15 years and above
+by age group and sex
+
+--- page 29 ----------------------------------------------------
+Table 10.11b Percentage distribution of the employed population aged 15+ years
+by main employer, sex and place of residence
+Table 10.14a. Percentage distribution of the unemployed population aged 15+ years
+by district, sex and residence
+Table 14b Percentage distribution of the unemployed population aged 15+ years
+by district, sex and residence
+Table 10.15 Percentage distribution of the unemployed population aged 15 years and
+above by employment status, sex and district
+Table 10.17a Percentage distribution of the population aged 10 -14 years  by economic
+activity status, region, district and residence
+Table 10.17b Percentage distribution of the population aged 10 – 14 years by economic
+activity status, region, district and residence
+Table 11.1 Housing data items collected in population and housing censuses 1985,
+2004 and 2015
+Table 11.2 Number of houses, households and household characteristics by region
+
+--- page 32 ----------------------------------------------------
+Table 14.1 Distribution of the population by disability status, place of residence and sex
+Table 14.2 Distribution of the population by region, disability status and sex
+Table 14.3 Distribution of the population by disability status, district and sex
+Table 14.4 Distribution of persons with disability aged 15 years and over by type
+of dwelling, region and sex
+Table 14.5 Distribution of persons with disability aged 15 years and over by tenure
+status, region and sex
+Table 14.6 Disability rates by place of residence and sex
+Table 14.7 Disability rates by region and sex
+Table 14.8 Disability rates by district and sex
+Table 14.9 Distribution of the population by type of disability, place of residence and sex
+Table 14.10 Distribution of the PWDs by main type of disability by region (per cent)
+Table 14.11 Distribution of the PWDs by main type of disability, region and sex
+      ...
+Table 14.16 Distribution of population by cause of main type of disability and selected
+characteristics
+Table 14.17 Distribution of persons with disabilities by cause of main type of disability
+and district
+Table 14.18 Distribution of the population by main type of disability and type
+of treatment or rehabilitation for disability
+Table 14.19 Distribution of the population aged 10 years and above by cause of main
+
+--- page 34 ----------------------------------------------------
+Table 15.4 Distribution of the population aged 10 years and over by status of access
+to Internet facility and place of residence
+Table 15.5 Distribution of the population aged 10 years and over by status of access
+to Internet facility and district
+Table 15.6 Distribution of the population aged 10 years and over accessing the Internet
+facility by district and sex
+Table 15.7 Distribution of persons aged 10 years and over using Internet facility
+by highest educational level attained and sex
+Table 15.8 Distribution of the persons aged 10 years and over who are accessing
+      ...
+Table 15.12 Distribution of the population accessing the Internet facility by status
+of using the facility in the past one week and selected characteristics
+Table 15.13 Distribution of the population accessing the Internet facility by status
+of using the facility in the past one week and district of residence
+Table 15.14 Distribution of the persons aged 10 years and over who had used the
+Internet facility one week preceding the census by district and sex
+Table 15.15 Distribution of the persons aged 10 years and over who are using Internet
+facility by highest educational level attained
+Table 15.16 Distribution of the persons aged 10 years and over who had used the
+
+--- page 35 ----------------------------------------------------
+Table 15.19 Distribution of the population aged 10 years and over by status of tobacco
+and alcohol intake and region
+Table 15.20 Distribution of the population aged 10 years and over by status of tobacco
+and alcohol intake and district of residence
+Table 15.21 Distribution of persons aged 10 years and over using tobacco and alcohol
+ by district and sex
+Table 15.22 Distribution of persons aged 10 years and over using tobacco and alcohol
+ by highest educational level attained and sex
+Table 15.23 Distribution of the population aged 10 years and over by status of tobacco
+      ...
+Table 16.2 Distribution of the number of household members infected with Ebola
+by place of residence and region
+Table 16.3 Distribution of the population infected with Ebola by selected characteristics
+Table 16.4 Distribution of the population infected with Ebola by district and status
+Table 16.5 Distribution of children orphaned by Ebola by place of residence and region
+Table 16.6 Distribution of the economically active persons by main occupation before
+and after the Ebola outbreak
+Table 16.7 Distribution of population in working ages by impact of Ebola on personal
+income by place of residence and region
+Table 16.8 Distribution of population in working ages by impact of Ebola on a person’s
+income by district
+Table 16.9 Distribution of persons who got sick during the Ebola outbreak but did not
+seek medical attention by age and sex
+|  475
+
+--- page 36 ----------------------------------------------------
+attention by place of residence and sex
+Table 16.11Distribution of the population who got sick during the Ebola outbreak but
+did not seek medical attention by sex, region and place of residence
+Table A16.1 Distribution of the population affected by district and Ebola by status
+of patient
+Table A16.2 Distribution of the population infected by Ebola by socio-economic impact
+|  516
+
+--- page 38 ----------------------------------------------------
+Figure 12.2 Major agricultural activities undertaken by households by region
+Figure 14.1 Persons with disability by sex and place of residence (per cent)
+Figure 14.2 Persons with disability by region (percent)
+Figure 14.3 Distribution of the persons with disability by district
+Figure 14.4 Distribution of the population by second type of disability (per cent)
+Figure 14.5 Treatment and support for the persons with disability (per cent)
+Figure 15.1 Access to Internet by gender of user (per cent)
+
+... and 217 further pages match; re-run with a narrower --terms to see them.
