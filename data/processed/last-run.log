@@ -1,10 +1,668 @@
-  2006: 358 rows, 27 governorates, 72,001,642 people; licence 'Other'
-  citypopulation: 27 governorates, 380 units
-  50 of 318 pages read
-  100 of 318 pages read
-  150 of 318 pages read
-  200 of 318 pages read
-  250 of 318 pages read
-  300 of 318 pages read
-  318 pages read for the 2017 ages
-egypt_census: the age groups have no open last group
+probe_pdf: https://afro.who.int/sites/default/files/2017-05/ephs2010_final_report_v4.pdf
+  4,301,086 bytes
+  574 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ALJUHO+Calibri', '/Encoding': IndirectObject(82, 0, 139716235326544), '/FirstChar': 31, '/FontDescriptor': IndirectObject(83, 0, 139716235326544), '/LastChar': 121, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [557, 226, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 507, 507, 507, 507, 507, 507, 507, 0, 507, 507, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 459, 0, 623, 0, 0, 0, 0, 0, 646, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 525, 423, 0, 498, 0, 0, 525, 229, 0, 0, 229, 799, 525, 527, 525, 0, 349, 391, 335, 525, 0, 0, 0, 453]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ASFUIJ+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 45, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 109, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [306, 0, 0, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 0, 0, 498, 0, 0, 0, 0, 0, 0, 0, 0, 0, 459, 0, 0, 0, 0, 0, 0, 855, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 0, 0, 0, 498, 0, 0, 0, 0, 0, 0, 229, 799]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AABWMH+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 116, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [226, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 606, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 0, 0, 0, 355, 0, 347]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BKSLIU+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 48, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 109, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 459, 0, 0, 0, 0, 0, 0, 855, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 0, 0, 0, 498, 0, 0, 0, 0, 0, 0, 229, 799]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AADSYP+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 65, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 116, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [606, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 0, 0, 0, 355, 0, 347]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BKSLIU+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 48, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 109, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 459, 0, 0, 0, 0, 0, 0, 855, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 0, 0, 0, 498, 0, 0, 0, 0, 0, 0, 229, 799]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AADSYP+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 65, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 116, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [606, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 0, 0, 0, 355, 0, 347]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BKSLIU+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 121, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [226, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 498, 0, 306, 0, 0, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 0, 0, 498, 0, 0, 0, 0, 0, 0, 533, 0, 0, 459, 0, 0, 0, 0, 0, 0, 855, 646, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 0, 423, 525, 498, 0, 0, 0, 229, 0, 0, 229, 799, 525, 527, 0, 0, 349, 0, 335, 525, 0, 0, 0, 453]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AADSYP+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 117, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [226, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 606, 0, 0, 0, 0, 0, 637, 0, 0, 0, 0, 0, 0, 0, 0, 532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 538, 537, 0, 355, 0, 347, 537]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BKSLIU+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 109, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [226, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 498, 0, 306, 0, 0, 507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 459, 0, 0, 0, 0, 0, 0, 855, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 0, 0, 0, 498, 0, 0, 0, 0, 0, 0, 229, 799]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AADSYP+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 65, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 116, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [606, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 494, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 0, 0, 0, 355, 0, 347]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BKSLIU+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 48, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 57, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [507, 507, 507, 507, 507, 507, 507, 507, 0, 507]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AADSYP+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 80, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 116, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [532, 0, 0, 0, 0, 0, 0, 0, 0, 520, 0, 0, 0, 0, 0, 0, 0, 494, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 0, 0, 0, 355, 0, 347]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/BKSLIU+Calibri', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 48, '/FontDescriptor': IndirectObject(1496, 0, 139716235326544), '/LastChar': 117, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [507, 507, 507, 507, 507, 507, 507, 507, 507, 507, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 543, 0, 0, 642, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 479, 525, 0, 0, 0, 0, 0, 0, 0, 0, 0, 229, 0, 525, 0, 0, 0, 349, 0, 0, 525]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/AADSYP+Calibri-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 80, '/FontDescriptor': IndirectObject(1499, 0, 139716235326544), '/LastChar': 116, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 494, 0, 418, 0, 503, 0, 474, 0, 0, 0, 0, 0, 0, 537, 0, 0, 0, 355, 0, 347]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 574 pages, 294 mention ['median', 'Maekel', 'ratio']
+=== front matter ===
+Eritrea
+Population and 
+Health Survey 2010
+
+
+THE STATE OF ERITREA
+Eritrea 
+Population and 
+Health Survey 
+2010
+National Statistics Office 
+Asmara, Eritrea
+Fafo Institute For Applied International Studies 
+Oslo, Norway
+August, 2013
+
+This report summarizes the findings of the 2010 Eritrea Population and Health Survey (EPHS) carried out 
+by the National Statistics Office. Financial support for the survey was provided by the Norwegian Ministry 
+of Foreign Affairs (through NORAD), UNICEF, UNFPA, UNDP, WHO and the Ministry of Health. Fafo 
+AIS and Kenya Medical Research Institute provided technical assistance for the survey. The opinions 
+expressed herein are those of the authors and do not necessarily reflect the views of the funders.
+Additional information about the EPHS may be obtained from the National Statistics Office P.O. Box 5838, 
+Asmara, Eritrea (telephone: 291-1128034/7153234; e-mail:ainom.berhane@nso.gov.er).
+ 
+ 
+Suggested citation:
+National Statistics Office (NSO) [Eritrea] and Fafo AIS. 2013. Eritrea Population and Health Survey 2010. 
+Asmara, Eritrea: National Statistics Office and Fafo Institute for Appled  International Studies.
+Contents ...................................................................................................................................... iii
+Tables and Figures .....................................................................................................................ix
+MDG Indicator  ......................................................................................................................... xvii
+Preface....................................................................................................................................... xix
+Acronyms .................................................................................................................................. xxi
+Map of Eritrea........................................................................................................................... xxv
+CHAPTER 1 INTRODUCTION
+1.1 Geography, history, and the economy .................................................................1
+1.2 National health policy and strategic orientation ...................................................3
+1.3 Development of health care facilities ...................................................................4
+1.4 Development of human resources for health .......................................................5
+1.5 Objectives of the survey ......................................................................................6
+1.6 Organization and methodology of the survey ......................................................6
+CHAPTER 2 HOUSEHOLD POPULATION AND HOUSING CHARACTERISTICS
+2.1 Household Population by Age, Sex, and Residence .........................................11
+2.2 Household Composition ....................................................................................14
+2.3 Children’s Living Arrangements and Orphanhood .............................................16
+2.4 Education Levels of the Household Population .................................................18
+2.5 Marital Status of the De-facto Household Population ........................................25
+2.6 Employment Status of the Female De-jure Household Population ...................28
+2.7 Household Drinking Water .................................................................................32
+2.8 Household Sanitation Facilities .........................................................................34
+2.9 Housing Characteristics .....................................................................................35
+2.10 Household Possessions ....................................................................................38
+2.11 Wealth Quintiles .................................................................................................40
+CHAPTER 3 CHARACTERISTICS OF RESPONDENTS
+3.1 Characteristics of Survey Respondents ............................................................41
+3.2 Educational Attainment  .....................................................................................43
+3.3 Literacy ..............................................................................................................47
+3.4 Exposure to Mass Media ...................................................................................50
+3.5 Employment .......................................................................................................53
+3.6 Occupation ........................................................................................................56
+3.7 Type of Employment ..........................................................................................56
+3.8 Knowledge and Attitudes Concerning Tuberculosis ..........................................61
+3.9 Use of Tobacco  .................................................................................................64
+CONTENTS
+iv  Contents
+CHAPTER 4 FERTILITY, LEVELS, TRENDS, AND DIFFERENTIALS
+4.1 Current Fertility ..................................................................................................69
+4.2 Fertility Differences ............................................................................................72
+4.3 Fertility Trends ...................................................................................................74
+4.4 Children Ever Born and Living ...........................................................................76
+4.5 Birth Intervals .....................................................................................................77
+4.6 Age at First Birth ................................................................................................79
+4.7 Teenage Pregnancy and Motherhood ...............................................................80
+CHAPTER 5 FAMILY PLANNING
+5.1 Knowledge of Contraceptive Methods and Sources ..........................................83
+5.2 Knowledge of Contraceptive Methods by Background Characteristics .............85
+5.3 Ever Use of Contraceptive Means .....................................................................85
+5.4 Current Use of Contraception by Age ................................................................88
+5.5 Decision on Using Contraception ......................................................................91
+5.6 Current Use of Contraception by Background Characteristics ..........................93
+5.7 Number of Living Children at First Use of Contraception ..................................93
+5.8 Knowledge of the Fertile Period ........................................................................93
+5.9 Source of Modern Contraception Method ..........................................................97
+5.10 Informed Choice ................................................................................................98
+5.11 Future Use of Contraception ...........................................................................100
+5.12 Reasons for Not Intending to Use Contraceptives in Future ...........................101
+5.13 Preferred Method of Contraception for Future Use .........................................102
+5.14 Exposure to Family Planning Messages .........................................................103
+5.15 Acceptability of Family Planning Messages in Mass Media ............................105
+5.16 Men’s Attitude Towards Family Planning .........................................................107
+5.17 Discussions on Family Planning with Husband ...............................................109
+5.18 Attitudes Towards Family Planning ..................................................................109
+5.19 Contact of Nonusers with Health Care Providers ............................................112
+5.20 Husband’s/Partners Knowledge of Women’s Use of Contraception ................112
+CHAPTER 6 PROXIMATE DETERMINANTS
+6.1 Current Marital Status ......................................................................................115
+6.2 Polygyny .......................................................................................................... 117
+6.3 Age at First Marriage .......................................................................................118
+6.4 Median Age at First Marriage ..........................................................................121
+6.5 Age at First Sexual Intercourse .......................................................................123
+6.6 Median Age at First Sexual Intercourse ..........................................................124
+6.7 Recent Sexual Activity .....................................................................................126
+6.8 Postpartum Amenorrhea, Abstinence and I nsusceptibility ...............................130
+6.9 Median Duration of Postpartum Insusceptibility  
+  by Background Characteristics ....................................................................132
+6.10 Menopause ...................................................................................................... 135
+Contents  v
+CHAPTER 7 FERTILITY PREFERENCES
+7.1 Reproductive Preferences ...............................................................................137
+7.2 Desire to Limit Childbearing by Background Characteristics ...........................140
+7.3 Need For Family Planning Services ................................................................142
+7.4 Ideal Family Size .............................................................................................146
+7.5 Ideal Family Size, Unmet Need, and Status ....................................................148
+7.6 Fertility Planning ..............................................................................................150
+7.7 Wanted Fertility Rates .....................................................................................151
+CHAPTER 8 INFANT AND CHILD MORTALITY
+8.1 Assessment of Data Quality ............................................................................153
+8.2 Early Childhood Mortality Rates, Levels and Trends .......................................155
+8.3 Differentials in Mortality ...................................................................................156
+8.4 Early Childhood Mortality by Women’s Status .................................................160
+
+=== pages mentioning ['median', 'Maekel', 'ratio'] (first 30) ===
+
+--- page 6 ----------------------------------------------------
+6.1 Current Marital Status ......................................................................................115
+6.2 Polygyny .......................................................................................................... 117
+6.3 Age at First Marriage .......................................................................................118
+6.4 Median Age at First Marriage ..........................................................................121
+6.5 Age at First Sexual Intercourse .......................................................................123
+6.6 Median Age at First Sexual Intercourse ..........................................................124
+6.7 Recent Sexual Activity .....................................................................................126
+6.8 Postpartum Amenorrhea, Abstinence and I nsusceptibility ...............................130
+6.9 Median Duration of Postpartum Insusceptibility
+  by Background Characteristics ....................................................................132
+6.10 Menopause ...................................................................................................... 135
+
+--- page 11 ----------------------------------------------------
+ Table 2-6 Educational attainment of the female household population ...........................19
+ Table 2-7 Educational attainment of the male household population ..............................20
+ Table 2-8 Reason for not currently attending school .......................................................21
+ Table 2-9 School attendance ratios .................................................................................23
+ Table 2-10 Marital status of the de-facto household population ........................................26
+ Table 2-11 Employment status ..........................................................................................30
+ Table 2-12 Household drinking water ................................................................................33
+
+--- page 12 ----------------------------------------------------
+ Table 4-5 Children ever born and living ...........................................................................76
+ Table 4-6 Birth intervals ...................................................................................................78
+	 Table	4	7	 Age	at	first	birth ................................................................................................79
+	 Table	4	8	 Median	age	at	first	birth
+ Table 4-9 Teenage pregnancy and motherhood ..............................................................80
+ Figure 4-1 Total fertility rates, Eritrea compared with
+   other selected sub-Saharan countries .........................................................71
+
+--- page 13 ----------------------------------------------------
+ Table 6-2 Number of co-wives .......................................................................................117
+ Table 6-3 Number of men’s wives .................................................................................119
+	 Table	6-4	 Age	at	first	marriage  ......................................................................................120
+	 Table	6-5	 Median	age	at	first	marriage:	Women  ............................................................121
+	 Table	6-6	 Median	age	at	first	marriage:	Men  .................................................................122
+	 Table	6-7	 Age	at	first	sexual	intercourse  .......................................................................124
+	 Table	6-8	 Median	age	at	first	intercourse:	Women  ........................................................125
+	 Table	6-9	 Median	age	at	first	intercourse:	Men  .............................................................126
+ Table 6-10 Recent sexual activity: Women ......................................................................128
+ Table 6-11 Recent sexual activity: Men ...........................................................................131
+ Table 6-12 Postpartum amenorrhea, abstinence and insusceptibility .............................132
+ Table 6-13 Median duration of amenorrhea, postpartum
+   abstinence and postpartum insusceptibility ...............................................133
+	 Figure	6-1	 Median	age	at	first	sexual	intercourse,
+   women age 25-49, by selected sub-Saharan African countries .................127
+ Figure 6-2 Recent sexual activity for women age 25-49,
+   by selected sub-Saharan African countries ................................................129
+ Figure 6-3 Median duration of postpartum insusceptibility
+   by background characteristics....................................................................134
+ Figure 6-4 Menopausal Women age 30-49 by selected
+   sub-Saharan African countries ...................................................................135
+
+--- page 14 ----------------------------------------------------
+	 Table	9-7	 Timing	of	first	postnatal	checkup ...................................................................177
+	 Table	9-8	 Type	of	provider	of	first	postnatal	checkup ....................................................178
+ Table 9-9 Problems in accessing health care ................................................................180
+ Table 9-10 Delivery preparations .....................................................................................181
+ Table 9-11 Pregnancy complications ...............................................................................183
+ Table 9-12 Duration of labor ............................................................................................184
+ Table 9-13 Prevalence and treatment of delivery complication .......................................185
+ Table 9-14 Means of transportation and time taken to reach
+   health facility for delivery ............................................................................186
+
+--- page 15 ----------------------------------------------------
+ Table 11-1 Nutritional status of children ..........................................................................220
+ Table 11-2 Initial breastfeeding........................................................................................226
+ Table 11-3 Breastfeeding status by child’s age ...............................................................228
+ Table 11-4 Median duration and frequency of breastfeeding ..........................................230
+ Table 11-5 Foods and liquids consumed by children in the day or
+    night preceding the interview ....................................................................232
+ Table 11-6 Infant and young child feeding (IYCF) practices ............................................234
+
+--- page 18 ----------------------------------------------------
+ Table B.1 List of selected variables for sampling errors, EPHS 2010 ...........................389
+ Table B.2 Eritrea ............................................................................................................390
+ Table B.3 Debubawi Keih Bahri .....................................................................................391
+ Table B.4 Maekel ...........................................................................................................392
+ Table B.5 Semenawi Keih Bahri ....................................................................................393
+ Table B.6 Anseba...........................................................................................................394
+ Table B.7 Gash-Barka....................................................................................................395
+
+--- page 19 ----------------------------------------------------
+4.     Prevalence of underweight children under 5 years of age1 38.1 39.4 38.8
+2. Achieve universal
+primary education
+6.     Net enrolment ratio in primary education2 56.6 55.7 56.2
+8.     Literacy rate of 15-24 year-olds3 89.4 81.5 85.2
+3. Promote gender
+equality and
+empower women
+9.     Ratio of girls to boys in primary, middle, and secondary education na4 na 89.2
+9A.   Ratio of girls to boys in primary education na na 96.4
+9B.   Ratio of girls to boys in middle education na na 88.1
+9C.   Ratio of girls to boys in secondary education na na 78.0
+10.   Ratio of literate women to men, 15-24 year olds na na 91.2
+11.   Share of women in wage employment in the non-agricultural sector5 na na 24.0
+4. Reduce Child
+Mortality
+      ...
+15.   Percentage of 1 year-old children immunized against measles 91.6 91.3 91.4
+5. Improve maternal
+health
+16.   Maternal Mortality Ratio (per 100,000 live births) na na 486
+17.   Percentage of births attended by skilled health personnel6 34.4 33.8 34.1
+6. Combat HIV/AIDS,
+malaria, and other
+      ...
+19B.  Percentage of population aged 15-24 years with comprehensive correct
+knowledge of HIV/AIDS9 33.8 24.7 27.9
+19C. Contraceptive prevalence rate (Currently married women and men age 15-49) 16.3  8.4 10.6
+20.   Ratio of school attendances of orphans to school attendance of non-orphans aged
+10-14 years 89.5 104.1 95.3
+22A.	Percentage	of	children	under	five	sleeping	under	Insecticide	 Treated	Net	(ITN)10 28.4 27.4 27.9
+22A.		Percentage	of	children	under	five	in	malaria	regions	(Anseba,	Gash-Barka,
+      ...
+29.   Percentage of population using solid fuels 13 40.4 95.5 76.3
+30.  Percentage of population with sustainable access to an improved water source 14 72.9 49.9 57.9
+31.   Percentage of population with access to improved sanitation 15 25.8  3.5 11.3
+1 Proportion of children age 0-59 months who are below -2 standard deviation (SD) from the median of the WHO Growth Standards in weight-for-age
+2  EPHS data are based on reported attendance, not enrolment
+3 Refers to respondents who attended middle school or higher or who can read a whole or part of a sentence
+4 na=not applicable
+
+--- page 21 ----------------------------------------------------
+individuals who contributed immensely to the successful completion of the EPHS2010 and the finalization
+of this report. NSO is particularly thankful to the Norwegian Government, UNFPA, UNICEF, UNDP, WHO,
+and UNAID for funding the survey and Fafo AIS of Norway for providing technical assistance throughout.
+The office would like to express its gratitude to the Ministry of Health (MOH) for close cooperation in
+the whole operation and for their significant technical and logistical inputs through the National Health
+Laboratory Department for the DBS management and processing.
+Special thanks go to KEMRI of Kenya for their contribution in training and setting up of the whole
+procedure for the DBS component. For continuity and comparison in time the EPHS2010 used the wealth
+of sound methodologies and procedures used in the previous surveys and hence the office is grateful for
+the ORC Macro International contribution. We also express our gratitude to the endeavors of government
+officials at all levels of administration that supported the survey. High appreciation and commendation goes
+to all the EPHS2010 field personnel for the commitment they showed to delivering high-quality results in
+difficult working conditions. We acknowledge with gratitude the NSO staff who made the survey successful
+through commitment and a spirit of team work.
+
+--- page 23 ----------------------------------------------------
+EPI Expanded Program on Immunization
+FGC Female Genital Cutting
+FGM Female Genital Mutilation
+GAR  Gross Attendance Ratio
+GBV Gender-based violence
+GFR General Fertility Rate
+GPI  Gender Parity Index
+
+--- page 24 ----------------------------------------------------
+MoH Ministry of Health
+MOHE Ministry  of  Health  Eritrea
+MTCT Mother to Child Transmission of HIV
+NAR  Net Attendance Ratio
+NCHS National Centre for Health Statistics
+NN Neonatal mortality
+NSO National Statistics Office
+ORC Opinion Research Company
+ORT Oral Rehydration Therapy
+PAHO Pan American Health Organization
+PGME Post Graduate Medical Education
+PHC Primary Health Care
+
+--- page 29 ----------------------------------------------------
+expanded in scope. It includes an HIV module,  questions on maternal morbidity and mortality, materials on
+malaria, data on unsafe sex as well as questions on gender issues. Compared to the EDHS2002, this survey
+also added a questionnaire for men to collect demographic and health data.
+The National Statistics Office (NSO), in collaboration with the Ministry of Health (MoH), conducted
+the survey. Financial assistance was provided by the Norwegian Government, UNFPA, UNICEF, UNDP,
+UNAIDS, and WHO. Fafo Institute for Applied International Studies (Fafo AIS) and KEMRI (Kenya
+Medical Research Institute) provided technical assistance to the survey.
+      ...
+country is bordered by the Red Sea, extending 1,212 kilometers from Ras Kasar in the north to Dar Elwa
+in the southeast. Djibouti borders Eritrea in the southeast, Ethiopia in the south, and the Sudan in the north
+and west. Administratively, the country is divided into six zobas (regions): Anseba, Debub, Debubawi Keih
+Bahri, Gash-Barka, Maekel, and Semenawi Keih Bahri (see map).
+Eritrea is a land of contrasts with land rising from below sea level to 3,000 meters above sea level.
+There are three major physiographic zones: the Western Lowlands, the Central and Northern Highlands,
+and the Eastern Lowlands (also referred to as the Coastal Plains). Temperature varies with altitude: the
+
+--- page 30 ----------------------------------------------------
+in 1872. With the opening of the Suez Canal in 1869, the European colonizers became interested in the
+Red Sea and Horn of Africa. Italy, after establishing a foothold at Assab through a maritime company,
+Compagnia Marittima Rubattino, extended its control, and declared Eritrea its first African colony in 1890.
+In 1941, Italy was defeated by the Allied forces, and Britain took over the administration of Eritrea. In 1952,
+after 10 years of British colonial rule, Eritrea was federated with Ethiopia by the United Nations against the
+will of the Eritrean people. A decade later, Ethiopia abrogated the federal arrangement of the United Nations
+and annexed Eritrea as one of its provinces. This led to the Eritrean struggle for self-determination, which
+resulted in a protracted liberation war lasting from 1961 to 1991. Two years after the end of the war, a United
+Nations supervised referendum was held to determine Eritrea’s political status; 99.8 percent of the voters
+chose independence in that referendum. Independence was formally declared in May 1993. Thereafter,
+Eritrea became a member of the United Nations and many other international and regional organizations.
+1.1.3 Economy
+The war for liberation destroyed most of Eritrea’s infrastructure and devastated its economy and environment.
+This compelled Eritrea to entirely reconstruct its social, economic, and physical infrastructure. In an effort
+to place the economy on a path of sustainable development, the government targeted the period 1998-2000
+to complete the transitional phase of rehabilitation and reconstruction. But in May 1998, under the pretext
+
+--- page 31 ----------------------------------------------------
+Ministry of Local Government and NSO estimates, the total resident population of Eritrea was about 3.2
+million as of 2010 (MND, 2010). The population is essentially rural with about 65 percent of the people
+living in the countryside. The urban population is characterized by rapid growth, partly as the result of
+returning refugees from the neighboring and other countries, and partly due to high rural-urban migration.
+The population of Eritrea is not uniformly distributed throughout the country. About 50-60 percent of the
+population lives in the Highlands. The age distribution is that of a high fertility regime in which a larger
+proportion of the population is to be found in the younger age groups than in the older age groups. It is also
+marked by migration and war in that there are too few adult males and to a somewhat lesser extent too few
+adult females. Eritrea is a multi-ethnic society with nine different ethnic groups speaking nine different
+languages and professing two major religions, namely, Christianity and Islam.
+Great efforts have been made by the National Statistics Office (NSO) to collect demographic,
+health, and socioeconomic information through surveys. The NSO in collaboration with Macro International
+conducted the 1995 and 2002 Eritrea Demographic and Health Surveys. These surveys provide detailed
+information on fertility, infant and child mortality, health, and nutritional status of women and children,
+breastfeeding, and contraceptive use, among other topics.
+
+--- page 32 ----------------------------------------------------
+were run by Catholic nuns and Italian doctors.  During this period, some Eritrean women became “nurses”
+under the apprenticeship of Catholic nuns.
+In 1941, after the British defeated the Italian forces, Eritrea was brought under a British Military
+Administration. However, this didn’t improve the health and other social services for Eritreans.  The British
+allowed the Italian administration in Eritrea to continue, enabling the Italians who remained in office to
+strengthen their land and property holdings.  As part of these, many of the Italian health professionals
+opened private hospitals and clinics again mainly for the service of Italian settlers.
+During the federation period and following the annexation of Eritrea by Ethiopia, the regime
+expanded the main hospital in Asmara in 1957 and constructed five hospitals. During the war for
+independence the Ethiopian Government increasingly neglected health service related activities for the
+public, and much-needed public health spending was diverted towards their army. Most facilities were
+destroyed, medical supplies, and other services were disrupted; trained health personnel fled the country or
+abandoned their jobs.
+In contrast to the Ethiopian regime, the Eritrean People’s Liberation Front (EPLF) took all
+the necessary measures to provide health services throughout the liberated areas.  It operated fully
+equipped hospitals and health centers, most of them placed underground because of the constant threat
+of bombing.
+Since liberation in 1991, the number of government hospitals increased from 16 to 28; the number of
+health centers (including maternal and child health care centers) increased from 4 to 63; and the number
+of health stations (including clinics) increased from 106 to 249 (MoH, 2012). Overall, the total number of
+health facilities increased from 126 in 1991 to 340 in 2010, an increase of 170 percent.  Twelve of the
+      ...
+34 drug shops, and 226 rural drug vendors spread through the country. As the result of concerted efforts to
+expand health services by building health facilities and equipping them with the necessary equipment and
+skilled health personnel, access to health care within 10 km increased from about 40 percent at the time of
+liberation to about 75 percent at the moment. About 60 percent of the population lives within five km of a
+health facility.
+
+--- page 33 ----------------------------------------------------
+Introduction  5
+1.4 d evelopment of human resources for health
+Since liberation in 1991, a variety of health training institutions were established. Among them are  three
+zonal associate nursing schools, a college of nursing and health technology, a collage of health sciences,
+Orotta School of Medicine and Dental Medicine, post graduate programs, etc. The different health schools
+have trained and/or upgraded a total of 5,404 health professionals. In 2009 the schools graduated 1,353
+      ...
+of Research and Human Resources Development. Out of the total, 140 (12 percent) were enrolled in
+6 months to a seven year fellowship program, 72 (6 percent) in internal scholarships at Asmara University,
+500 (44 percent) in computer applications, 300 (26 percent) in English language, 20 (2 percent) physicians in
+life saving surgery, and 118 (10 percent) operation theatre technicians from different hospitals were trained.
+Figure 1-1 Number of health facilities in 1991 as compared to 2010
+16 4
+106
+
+--- page 34 ----------------------------------------------------
+its training program in January 2008, with training in pediatrics, gynecology and obstetrics, and surgery.
+The first eight pediatric specialty graduates of the school graduated in 2009 with the first gradates of Orotta
+School of Medicine while the first six surgeons graduated in 2010.
+Preliminary preparations have been made to start postgraduate training programs in the fields of
+anesthesia, orthopedics, neuropsychiatry, pathology, and emergency medicine among others.
+1.5 o bjectives of the survey
+The major aim of the EPHS2010  was to provide up-to-date information on fertility and childhood mortality
+
+--- page 35 ----------------------------------------------------
+Introduction  7
+The sample for the EPHS2010 survey was selected in two stages. In the first stage, 900 clusters were
+selected among the list of clusters (Enumeration Areas in urban centers and villages in rural areas) in the country. Of
+these, 525 clusters were in rural areas and the remaining 375 were from urban areas. The selection of clusters was
+carried out through the linear systematic random sampling procedure with probability of selection proportionate
+to the number of households in each cluster. A complete household listing operation was carried out in the selected
+clusters to provide a frame for the final linear systematic random selection of households during the second stage
+of sampling. Forty households were selected from each cluster. Of these 40 households, 13 households were
+selected for the core study and 27 households for the maternal morbidity and mortality study in all zobas except
+
+--- page 37 ----------------------------------------------------
+over a period of five weeks from the first week of December, 2009 to the first week of January, 2010. A total
+of 286 field staff (226 females and 60 males) and 46 laboratory technicians were trained.
+The training was conducted following the standard DHS training procedures. It includes lectures,
+presentations, practical demonstrations, and practice interviewing in small groups in class, as well as regular
+field practice following the completion of sections.  Trainees also received training and did practice on
+anthropometric measurements. The laboratory technicians received training on Dried Blood Specimen (DBS)
+sample collection, storage, and transportation procedures. The questionnaire related training was provided by
+senior experts from NSO, guest lecturers from the Ministry of Health (MoH), and experts from Fafo-Norway,
+while the training on biomarker was offered by experts from Kenya Medical Research Institute (KEMRI).
+Fieldwork was successfully completed in 861 of the 900 sampled clusters, with 39 clusters not
+covered primarily due to reasons of inaccessibility. Complete coverage was obtained in Maekel and
+Debub. All of the clusters not covered were from rural areas of the remaining four zobas, with the majority
+belonging to Anseba. Forty-two teams, each comprised of one male interviewer and supervisor, three female
+interviewers, one female editor, and one laboratory technician were responsible for data collection that took
+
+--- page 39 ----------------------------------------------------
+AND HOUSING CHARACTERISTICS
+Key Findings
+•	 Nearly half of the population of Eritrea is under 15 years of age with a
+median age of 18 years.
+•	 Forty-seven percent of the households are female headed with the proportion
+higher in urban areas (53 percent) than in rural areas (44 percent).
+•	 Seven percent of children under age 15 are orphans.
+
+--- page 42 ----------------------------------------------------
+Characteristic
+Residence Debubawi
+Keih
+Bahri Maekel
+Semenawi
+Keih
+Bahri Anseba Gash-Barka Debub TotalUrban Rural
+      ...
+household size is presented in Table 2-2. These characteristics are important because they are associated
+with household socio-economic differences. Households headed by males make up 53 percent, a lower
+proportion than was observed in the EDHS1995 (69 percent), but similar to 2002 (53 percent). All zobas
+except Debub and Maekel have predominantly male-headed households. In Eritrea, current average
+household size is 4.8 persons, the same as in 2002 and slightly higher than in 1995 (4.4 persons). Urban
+households have on average a slightly smaller household size (4.7 persons) than rural households (4.9
+persons). Forty-one percent of households have 2-4 members. Large households (9 or more members)
+
+--- page 43 ----------------------------------------------------
+Type of disability
+Residence Debubawi
+Keih
+ Bahri Maekel
+Semenawi
+Keih Bahri Anseba Gash-Barka Debub TotalUrban Rural
+No disability  95.2  95.3  97.0  94.8  95.9  95.7  96.3  94.3  95.3
+
+--- page 44 ----------------------------------------------------
+Zoba
+Living Arrangements
+Residence Debubawi
+Keih Bahri Maekel
+Semenawi
+Keih Bahri Anseba Gash-Barka Debub TotalUrban Rural
+Foster children1   7.8   6.4 4.8   6.6   6.2   7.9   5.5   8.3    6.9
+      ...
+age, that is, younger children are more likely than older children to live with both natural parents (Table
+2-5). By residence, rural children are more likely to live with both parents than urban children (82 versus
+68 percent). Percentage of children who live with both parents is lowest in Asmara city (67 percent) and,
+among the zobas, Maekel has the least (71 percent) (Table 2-5).
+Among children with both parents alive, 12 percent of children live with only one parent with 11
+percent living with their mothers, and one percent with their fathers. Seven percent of children under age
+15 have lost either of their natural parents, and one percent has lost both of their natural parents. Among
+children under age 15 with at least one parent alive, urban children are more likely not to live with either
+parent than rural children (5 percent versus 3 percent). This proportion is higher among older children
+(10-14), children in Maekel, and those with higher wealth quintiles.
+
+--- page 45 ----------------------------------------------------
+Zoba
+Debubawi
+Keih Bahri 80.6 11.1 3.1 0.6 0.8 1.8 0.8 0.2 0.6 0.3 100.0 3.5 5.5   342
+Maekel 70.7 17.5 4.2 1.2 0.5 3.6 0.9 0.3 0.4 0.7 100.0 5.3 6.2  3,625
+Semenawi
+Keih Bahri 80.4  9.4 4.9 1.1 0.9 1.6 0.7 0.4 0.5 0.1 100.0 3.2 7.4  2,689
+Anseba 83.2  6.6 4.2 0.4 1.1 2.8 1.0 0.2 0.4 0.2 100.0 4.3 6.8  3,465
+
+--- page 46 ----------------------------------------------------
+11; it is followed by two years of middle school, and an additional four years for secondary education.
+Educational attainment in each age group is higher for males than for females (Table 2-6 and Table 2-7).
+Forty-six percent of female household members have never attended school, compared with 35 percent of
+males. The median number of years completed is two for males and 0.3 for females because the majority of
+women have never attended school.
+Rapid increases in educational attainment for both sexes can be seen from the declining proportion
+without any formal education in successively younger age groups. For example, the proportion of women
+      ...
+For example, in urban areas, 25 percent of females and 15 percent of males have no education, compared
+with 58 percent of females and 46 percent of males in rural areas. Among the zobas, the proportion of
+females and males with no education is highest in Debubawi Keih Bahri (72 and 51 percent, respectively)
+and lowest in Maekel (21 and 10 percent, respectively).
+To determine the literacy level in Eritrea, each person age six and above was asked if they could
+read and write in any language without difficulty. Accordingly, 57 percent of the population is literate with
+a significant difference in literacy level by sex (64 percent males and 52 percent females). There are marked
+
+--- page 47 ----------------------------------------------------
+Household Population and Housing Characteristics  19
+Table 2-6 Educational attainment of the female household population
+Percent distribution of the de-facto female household populations age six and over by highest level of schooling attended or completed and  median
+grade completed, according to background characteristics, Eritrea 2010
+Background
+characteristic
+      ...
+Don’t
+know/
+missing Total Number
+ Median
+years
+ completed
+Literacy
+      ...
+Zoba
+Debubawi
+Keih Bahri 71.7 13.7 2.9  5.4 1.1  3.1 1.0 0.8 0.3 100.0 314 0.0 25.6
+Maekel 20.5 20.3 3.4 18.3 4.6 20.5 6.9 5.1 0.4 100.0 4,803 5.3 77.7
+Semenawi
+Keih Bahri 60.3 21.9 3.3  8.1 1.1  3.8 0.7 0.6 0.2 100.0 2,237 0.0 38.2
+Anseba 46.2 29.9 4.3 11.8 1.9  4.7 0.6 0.5 0.1 100.0 2,964 0.0 49.7
+
+--- page 48 ----------------------------------------------------
+20  Household Population and Housing Characteristics
+Table 2-7 Educational attainment of the male household population
+Percent distribution of the de-facto male household populations age six and over by highest level of schooling attended or completed and median grade
+completed, according to background characteristics, Eritrea 2010
+Background
+characteristic
+      ...
+Don’t
+know/
+missing Total Number
+ Median
+years
+ completed
+Literacy
+      ...
+Zoba
+Debubawi
+Keih Bahri 51.1 23.2 2.8  9.1 1.1  7.6  2.1  2.8 0.2 100.0 221 0.0 48.1
+Maekel 10.0 24.3 3.3 19.7 4.1 19.6  8.0 10.5 0.5 100.0 3,416 6.0 89.3
+Semenawi
+Keih Bahri 44.0 26.7 3.4 13.2 1.6  7.3  1.5  2.0 0.4 100.0 1,790 0.4 56.5
+Anseba 37.5 31.7 4.7 14.4 2.1  6.0  1.9  1.2 0.5 100.0 2,272 1.3 59.0
+
+--- page 50 ----------------------------------------------------
+22  Household Population and Housing Characteristics
+2.4.3 School attendance ratios
+The Net Attendance Ratio (NAR) for the primary level is the percentage of the primary school-age population
+(age 7-11) attending primary school. Similarly, the NAR for middle and secondary level is the percentage
+of middle and secondary school age population (12-14 and 15-18 years, respectively) attending middle and
+secondary school. The Gross Attendance Ratio (GAR) measures attendance irrespective of the official age
+at each level. The GAR for primary, middle, and secondary school is the total number of primary, middle,
+and secondary school students (age 6-18), expressed as a percentage of the official primary, middle, and
+secondary school-age population. The GAR for a given level is nearly always higher than the NAR, because
+the GAR includes participation by those who may be older or younger than the official age range. A NAR
+of 100 percent would indicate that all those in the official age group for the level are attending at that level.
+GAR can exceed 100 percent if there is significant overage or underage participation at a given level of
+schooling. The Gender Parity Index for a given level of schooling is the ratio of GAR for females to the
+GAR for males.
+The Net Attendance Ratios, Gross Attendance Ratios, and Gender Parity Index by level of education
+and sex, according to residence and zoba are presented in Table 2-9. The NAR for the primary school age
+children currently attending primary school is 57 percent; and for middle and secondary schools 41 and 31
+percent, respectively. Urban areas have higher NAR than rural areas at all levels of schooling and urban-
+rural difference is more pronounced at middle and secondary levels. By zoba, lower NAR attendance ratios
+are observed in Debubawi Keih Bahri, Semenawi Keih Bahri, and Gash-Barka at all the three levels. NAR
+increases with an increase in the level of wealth quintile at all of the three levels and by gender.
+The Gender Parity Index assesses sex-related differences in school attendance rates and is calculated
+      ...
+that females have almost same level of attendances as do males at primary and middle levels of schooling
+and lower level of attendances at secondary level. The lower GPI for secondary school could be explained
+partly due to young women getting married and dropping out of school, especially in rural areas. At all
+levels of education, GPI is found to be the higher in urban than rural areas. By zobas, Maekel has the highest
+GPI and Debubawi Keih Bahri has the lowest GPI at all levels. The GAR is estimated at 85, 75, and 47 for
+primary, middle, and secondary levels, respectively. These show that there is a difference between the NAR
+and GAR at all three levels of education, indicating that substantial numbers of persons younger or older
+      ...
+primary school NAR, however, declined from 61 percent in 2002 to 57 percent in 2010. During those eight
+years, with the exception of Debubawi Keih Bahri, middle and secondary school attendance have increased
+in all zobas. The improvement in attendance at middle and secondary school was highest in Gash-Barka and
+lowest in Maekel. Rural areas have also shown significant improvement in middle and secondary school
+attendance during the same period. The gender breach in school attendance also narrowed during those
+eight years, especially at the primary level.
+
+--- page 51 ----------------------------------------------------
+Household Population and Housing Characteristics  23
+Continued
+Table 2-9 School attendance ratios
+Net attendance ratios (NAR) and gross attendance ratios (GAR) for the de-facto household population by sex and level of schooling; and the gender
+parity index (GPI), according to background characteristics, Eritrea 2010
+Background
+ characteristic
+Net attendance ratio1 Gross attendance ratio2
+Gender
+Parity Index3Male Female Total Male Female Total
+PRIMARY SCHOOL
+      ...
+Rural 48.2 45.8 47.1  77.2  70.8  74.2 0.92
+Zoba
+Debubawi Keih Bahri 42.3 33.0 37.8  74.2  51.8  63.2 0.70
+Maekel 83.7 78.3 81.2 112.7 107.5 110.3 0.95
+Semenawi Keih Bahri 53.5 51.3 52.5  79.3  83.2  81.0 1.05
+Anseba 60.2 58.6 59.4  95.9  94.3  95.1 0.98
+Gash-Barka 33.7 32.7 33.2  52.2  48.8  50.6 0.93
+      ...
+Rural 33.6 29.1 31.5  65.6  55.9  61.1 0.85
+Zoba
+Debubawi Keih Bahri 26.3 20.7 23.5  57.9  34.2  46.1 0.59
+Maekel 68.3 67.5 67.9 118.3 118.7 118.5 1.00
+Semenawi Keih Bahri 32.2 23.0 27.5  76.6  39.4  57.6 0.51
+Anseba 35.6 34.5 35.1  73.0  72.8  72.9 1.00
+Gash-Barka 26.1 20.8 23.7  48.0  39.4  44.2 0.82
+
+--- page 52 ----------------------------------------------------
+24  Household Population and Housing Characteristics
+Table 2-9 (Continued)
+Net attendance ratios (NAR) and gross attendance ratios (GAR) for the de-facto household population by sex and level of schooling; and the gender
+parity index (GPI), according to background characteristics, Eritrea 2010
+Background
+ characteristic
+Net attendance ratio1 Gross attendance ratio2
+Gender
+Parity Index3Male Female Total Male Female Total
+SECONDARY SCHOOL
+      ...
+Rural 21.2 15.8 18.4  36.9 21.8 28.9 0.59
+Zoba
+Debubawi Keih Bahri 19.3  6.2 12.0  47.1 10.5 26.7 0.22
+Maekel 56.7 52.9 54.7  87.1 77.2 81.9 0.89
+Semenawi Keih Bahri 27.1 12.1 20.1  42.1 24.2 33.7 0.58
+Anseba 21.6 20.4 21.0  41.9 28.3 34.5 0.68
+Gash-Barka 18.7  9.6 13.6  31.2 16.3 22.8 0.52
+      ...
+tion. The GAR for middle school is the total number of middle school students, expressed as a percentage of the official middle-school-age popula-
+tion. The GAR for secondary school is the total number of secondary school students, expressed as a percentage of the official secondary-school-
+age population. If there are significant numbers of overage and underage students at a given level of schooling, the GAR can exceed 100 percent.
+3 The Gender Parity Index for primary school is the ratio of the primary school NAR (GAR) for females to the NAR (GAR) for males. The Gender
+Parity Index for middle school is the ratio of the middle school NAR (GAR) for females to the NAR (GAR) for males. The Gender Parity Index for
+secondary school is the ratio of the secondary school NAR (GAR) for females to the NAR (GAR) for males.
+The GPI was 0.89, 0.77, and 0.71 for primary, middle, and secondary levels, respectively, in
+EDHS2002, compared with 0.96, 0.88, and 0.77 in EPHS2010. The substantial decline of primary school
+GAR from 100.5 percent in 2002 to 84.5 percent in 2010 could imply that families are sending their children
+
+... and 264 further pages match; re-run with a narrower --terms to see them.
