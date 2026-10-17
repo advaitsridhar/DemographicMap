@@ -79,7 +79,28 @@ class Building(unittest.TestCase):
         self.assertEqual(by["L1"]["sex_ratio"]["value"], 1333)
         self.assertEqual(by["S2"]["median_age"]["value"], 6.0)
         self.assertIsNone((by["S1"].get("median_age") or {}).get("value"))
-        self.assertTrue(any("claimed ground" in line for line in report))
+        # Red Sea without Halaib's 300 men and 300 women.
+        self.assertEqual(by["S1"]["sex_ratio"]["value"], 1333)
+        self.assertIn("leaves out the locality of Halaib (600 people)", by["S1"]["sex_ratio_note"])
+        self.assertTrue(any("without the claimed" in line for line in report))
+
+    def test_a_state_whose_localities_were_divided_since_gets_none(self):
+        table = sc.read_retab(retab())
+        ages = sc.read_ages(p01(1200, [500, 500, 200]))
+        admin1 = [{"id": "S1", "name": "Red Sea"}, {"id": "S2", "name": "Sinnar"}]
+        admin2 = [{"id": "L1", "name": "Port Sudan", "parent": "S1"},
+                  {"id": "L3", "name": "Sinja", "parent": "S2"},
+                  {"id": "L4", "name": "Sinja East", "parent": "S2"}]
+        records, report = sc.build(table, ages, admin1, admin2)
+        self.assertEqual({r["shape_id"] for r in records}, {"S1", "S2", "L1"})
+        self.assertTrue(any("divided since" in line for line in report))
+
+    def test_a_state_counted_far_apart_in_the_two_tables_gets_no_median(self):
+        table = sc.read_retab(retab())
+        ages = sc.read_ages(p01(1300, [520, 540, 240]))       # 1,300 against 1,200
+        admin1 = [{"id": "S2", "name": "Sinnar"}]
+        records, _ = sc.build(table, ages, admin1, [])
+        self.assertIsNone((records[0].get("median_age") or {}).get("value"))
 
 
 if __name__ == "__main__":

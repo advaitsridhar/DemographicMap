@@ -89,11 +89,8 @@ SPELLING = 0.82
 SECTOR_SPELLING = 0.8
 # A delegation made since 2014 none of whose sectors INS's 2014 table names
 # -> the 2014 delegation (as ``place_key`` writes it) whose outline holds it.
-# Rjim Maatoug, the desert settlement west of El Faouar: the 2014 table's
-# sectors of El Faouar make 17,424 of the delegation's 19,613 people, the rest
-# counted in no sector, and El Faouar's is the only outline of Kebili in that
-# part of the desert (the nearest other, Douz Sud's, lies 70 km east of it).
-HOMES_2014 = {"6357": "faouar"}
+# None is needed today: all fifteen are found sector by sector.
+HOMES_2014: dict[str, str] = {}
 AGE = re.compile(r"^\s*(\d{1,3})\s*-\s*(\d{1,3})\s*$")
 OPEN = re.compile(r"^\s*(\d{1,3})\s*(?:\+|ans?\s*et\s*plus|et\s*\+|et\s*plus)\s*$", re.I)
 ARABIC = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ة": "ه", "ى": "ي",
@@ -285,6 +282,7 @@ def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict
         mine = [s for s in table["sectors"].values() if s["del"] == code]
         known = sectors_2014.get(gov_fold[unit["gov"]], {})
         placed: dict[str, str] = {}
+        undrawn: set[str] = set()
         for sec in mine:
             old = known.get(fold(sec["fr"]))
             if old is None and known:
@@ -299,6 +297,8 @@ def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict
             sid = by_name.get((unit["gov"], old)) if old else None
             if sid:
                 placed[sec["code"]] = sid
+            elif old:
+                undrawn.add(old)
         homes = set(placed.values())
         if not placed and code in HOMES_2014:
             home = by_name.get((unit["gov"], HOMES_2014[code]))
@@ -316,9 +316,11 @@ def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict
             for sec in mine:
                 placed.setdefault(sec["code"], home)
         if len(placed) != len(mine) or not mine:
+            where = (f"; found under 2014 delegations bound to no polygon: {sorted(undrawn)}"
+                     if undrawn else "")
             report.append(f"  delegation {code} {unit['fr']} ({unit['total']:,}): "
-                          f"{len(mine) - len(placed)} of its {len(mine)} sectors not found in "
-                          f"2014: {[s['fr'] for s in mine if s['code'] not in placed]}")
+                          f"{len(mine) - len(placed)} of its {len(mine)} sectors not placed: "
+                          f"{[s['fr'] for s in mine if s['code'] not in placed]}{where}")
             continue
         for sec_code, sid in placed.items():
             extra[sid].append(sec_code)

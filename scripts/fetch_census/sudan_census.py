@@ -14,23 +14,34 @@ figures are in the US Census Bureau's subnational tables for HDX
   sex, for the 15 northern states as they stood in 2008.
 
 **What is written**, as the census's own figures, which stand in front of the
-2025 projections: men per 1,000 women for every state and every locality the
-map draws that the retabulation names, and the median age for every state
-whose ground has not changed since 2008 -- a state whose 2008 count in Table
-P01 is the same as the retabulation's count of the state as drawn in 2020, to
-within the two people the Bureau's rounding of each cell can make. The states made since (Central and East Darfur, West Kordofan)
-and those they were taken from have no census median, and say nothing here.
+2025 projections:
+
+* men per 1,000 women for every state;
+* the median age for every state whose ground has not changed since 2008.
+  Table P01 and the retabulation count the same states 1-2% apart (P01 has
+  Khartoum's 5,181,186 people of the 5,274,321 the census counted), and the
+  states taken apart since -- West and South Darfur in 2012 for Central and
+  East Darfur, North and South Kordofan in 2013 for West Kordofan -- 30-70%
+  apart: a state P01 counts within ``SAME_GROUND`` of the retabulation is the
+  state then as now;
+* men per 1,000 women for the localities of a state whose localities the
+  retabulation and the map count alike, each bound by name, by a declared
+  label (``LOCALITIES``) or by the closest spelling where each is the other's
+  best. Where the map draws more localities than the retabulation names, some
+  have been divided since and none is written.
+
 No head count is written: the projections are of later years.
 
 **Checks before anything is written.** Every row's men and women make its
-total (to within two people of rounding) and its age groups make it too; the localities of each state make the
-state, and the states the country. Localities bind to the map's within their
-state by name, then by the closest spelling where each is the other's best;
-every pairing that is not exact is logged.
+total (to within two people of rounding) and its age groups make it too; the
+localities of each state make the state, and the states the country. Every
+pairing that is not exact is logged.
 
 **Claimed ground.** The Abyei Area, which Sudan and South Sudan both claim,
 and Hala'ib, whose triangle north of 22°N Egypt and Sudan both claim, are
-never written.
+never written: a state that holds one (West Kordofan, Red Sea) is written
+without that locality's people, which its note says, and Red Sea, whose ages
+Table P01 gives only with Hala'ib's, has no median.
 
 Usage:
     python -m scripts.fetch_census.sudan_census
@@ -61,9 +72,39 @@ AGE_SOURCE = ("Central Bureau of Statistics (Sudan), Fifth Population and Housin
               "tabulates it for HDX")
 LICENCE = "Creative Commons Attribution International (CC BY), published via HDX"
 # The retabulation's locality (folded) -> the map's label, where neither the
-# names nor the closest spelling join them. Filled from the run's log.
-LOCALITIES: dict[str, str] = {}
+# names nor the closest spelling join them; only in states whose localities
+# both count alike. "Reifi" is "rural", "Madeinat" "town of", "Sharg" "east".
+LOCALITIES: dict[str, str] = {
+    # Khartoum
+    "jabalawlya": "Jebel Awlia", "khartoumnorth": "Bahri",
+    # Kassala
+    "aldaltanorth": "Reifi Shamal Ad Delta", "aromarural": "Reifi Aroma",
+    "hamashkoreeb": "Reifi Hamashkureib", "kassala": "Madeinat Kassala",
+    "kassalarural": "Reifi Kassla", "kassalawest": "Reifi Gharb Kassala",
+    "khashmalqirbah": "Reifi Khashm Elgirba", "talkook": "Reifi Telkok",
+    "wadalhulaywah": "Reifi Wad Elhilaiw",
+    # Gedaref: the town, the centre, the two Gallabats, Qureisha; Gedaref
+    # North, the Butana plain north of the town, is the one left of twelve.
+    "gedaref": "Madeinat Al Gedaref", "gedarefcentral": "Wasat Al Gedaref",
+    "qallabateast": "Galabat Ash-Shargiah", "qallabatwest": "Al Galabat Al Gharbyah - Kassab",
+    "qurayshah": "Al Qureisha", "gedarefnorth": "Al Butanah",
+    # Red Sea
+    "derudeb": "Dordieb", "gebeit": "Jubayt Elma'aadin", "hillatagig": "Agig",
+    # Northern: Golid's seat is at Agori, the one left of seven.
+    "bergeig": "Al Burgaig", "dalqu": "Delgo", "marawi": "Merwoe", "wadihalfa": "Halfa",
+    "agori": "Al Golid",
+    # North Kordofan
+    "barahwest": "Gharb Bara", "jabratelshiekh": "Gebrat Al Sheikh", "sawdiri": "Soudari",
+    # East Darfur
+    "eddaein": "Ad Du'ayn", "yaseen": "Yassin",
+    # Sennar
+    "sennarshareq": "Sharg Sennar",
+}
 CLAIMED = ("abyei", "halaib", "halayeb")
+# How far apart Table P01 and the retabulation may count a state for its ground
+# to be taken as unchanged since 2008 (they are 0.7-2.1% apart for the eleven
+# states not divided since, 30-70% for the four that were).
+SAME_GROUND = 0.03
 # The most of a state's people Table P01 may leave without a stated age
 # before the table is taken to be misread rather than incomplete.
 UNSTATED_SHARE = 0.05
@@ -79,6 +120,23 @@ OPEN = re.compile(r"^([BMF])(\d{2})PL$")
 def fold(text: Any) -> str:
     stripped = unicodedata.normalize("NFKD", str(text or ""))
     return "".join(c for c in stripped.lower() if c.isalpha() and not unicodedata.combining(c))
+
+
+def display(name: str) -> str:
+    """The Bureau's capitals in title case, its transliteration marks kept."""
+    words = []
+    for w in str(name).lower().split():
+        at = next((i for i, c in enumerate(w) if c.isalpha()), 0)
+        words.append(w[:at] + w[at:at + 1].upper() + w[at + 1:])
+    return " ".join(words)
+
+
+def claim(name: str) -> str:
+    """Where a claimed locality lies, for a visitor's note."""
+    if "abyei" in fold(name):
+        return "in the Abyei Area, which Sudan and South Sudan both claim"
+    return ("which reaches onto the triangle north of the 22nd parallel that Sudan and Egypt "
+            "both claim")
 
 
 def number(value: Any) -> int | None:
@@ -248,40 +306,54 @@ def build(retab: dict[str, Any], ages: dict[str, dict[str, Any]],
         if shape is None:
             report.append(f"  state {unit['name']}: no polygon")
             continue
+        mine = [u for u in retab["localities"] if fold(u["state"]) == key]
+        units = [u for u in mine if not any(c in fold(u["name"]) for c in CLAIMED)]
+        claimed = [u for u in mine if u not in units]
+        men = unit["men"] - sum(u["men"] for u in claimed)
+        women = unit["women"] - sum(u["women"] for u in claimed)
+        title = display(unit["name"])
+        without = ""
+        if claimed:
+            without = " " + " ".join(
+                f"It leaves out the locality of {display(u['name'])} ({u['total']:,} people), "
+                f"{claim(u['name'])}." for u in claimed)
+            report.append(f"  {unit['name']}: written without the claimed "
+                          f"{[u['name'] for u in claimed]}")
         fields: dict[str, Any] = {
-            "sex_ratio": measure(round(1000 * unit["men"] / unit["women"]),
+            "sex_ratio": measure(round(1000 * men / women),
                                  unit="males_per_1000_females", year=YEAR, source=RETAB_SOURCE),
-            "sex_ratio_note": (f"Men per 1,000 women at the 2008 census in {unit['name'].title()} "
-                               f"as drawn in 2020: {unit['men']:,} men and {unit['women']:,} "
-                               f"women."),
+            "sex_ratio_note": (f"Men per 1,000 women at the 2008 census in {title} as drawn in "
+                               f"2020: {men:,} men and {women:,} women.{without}"),
             "sources": [{**retab_src, "field": "sex_ratio"}]}
         p01 = ages.get(key)
-        if p01 and abs(p01["total"] - unit["total"]) <= SLACK:
+        if p01 and claimed:
+            report.append(f"  state {unit['name']}: P01 counts it with {claimed[0]['name']}; "
+                          f"no census median")
+        elif p01 and abs(p01["total"] / unit["total"] - 1) <= SAME_GROUND:
             median = grouped_median(p01["groups"])
             fields["median_age"] = measure(median, unit="years", year=YEAR, source=AGE_SOURCE)
             unstated = (f" The {p01['unstated']:,} people whose age was not stated are left "
                         "out of it." if p01.get("unstated") else "")
             fields["median_age_note"] = (
                 "Interpolated within the five-year age group that holds the middle person, "
-                f"from the 2008 census's count of everyone in the state by five-year age group "
-                f"({p01['total']:,} people, the state then as now).{unstated}")
+                f"from the 2008 census's table of the state's people by five-year age group "
+                f"({p01['total']:,} people of the {unit['total']:,} it counted; the state "
+                f"then as now).{unstated}")
             fields["sources"].append({**age_src, "field": "median_age"})
             report.append(f"  state {unit['name']}: unchanged since 2008 "
-                          f"({unit['total']:,}); median {median}")
+                          f"({p01['total']:,} in P01 of {unit['total']:,}); median {median}")
         else:
             report.append(f"  state {unit['name']}: {unit['total']:,} as drawn in 2020, "
-                          f"{p01['total'] if p01 else 'no'} in P01; no census median")
+                          f"{p01['total'] if p01 else 'none'} in P01; no census median")
         records.append(record(f"SDN-2008-{key}", shape["name"], level="admin1", parent="SDN",
                               country="SDN", match_by="shape_id", shape_id=shape["id"],
                               **fields))
-        shapes = [s for s in admin2 if s["parent"] == shape["id"]]
-        units = [u for u in retab["localities"] if fold(u["state"]) == key
-                 and not any(c in fold(u["name"]) for c in CLAIMED)]
-        claimed = [u["name"] for u in retab["localities"] if fold(u["state"]) == key
-                   and any(c in fold(u["name"]) for c in CLAIMED)]
-        if claimed:
-            report.append(f"  {unit['name']}: not written, on claimed ground: {claimed}")
-        shapes = [s for s in shapes if not any(c in fold(s["name"]) for c in CLAIMED)]
+        shapes = [s for s in admin2 if s["parent"] == shape["id"]
+                  and not any(c in fold(s["name"]) for c in CLAIMED)]
+        if len(units) != len(shapes):
+            report.append(f"  {unit['name']}: {len(units)} localities in 2008, {len(shapes)} "
+                          f"drawn; divided since, none written")
+            continue
         report.append(f"  {unit['name']}: {len(units)} localities, {len(shapes)} polygons")
         for code, polygon in pair(units, shapes, report).items():
             loc = next(u for u in units if u["code"] == code)
@@ -291,7 +363,7 @@ def build(retab: dict[str, Any], ages: dict[str, dict[str, Any]],
                 sex_ratio=measure(round(1000 * loc["men"] / loc["women"]),
                                   unit="males_per_1000_females", year=YEAR, source=RETAB_SOURCE),
                 sex_ratio_note=(f"Men per 1,000 women at the 2008 census in the locality of "
-                                f"{loc['name'].title()} as drawn in 2020: {loc['men']:,} men "
+                                f"{display(loc['name'])} as drawn in 2020: {loc['men']:,} men "
                                 f"and {loc['women']:,} women."),
                 codes={"uscb": code},
                 sources=[{**retab_src, "field": "sex_ratio"}]))
