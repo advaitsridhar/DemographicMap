@@ -107,6 +107,8 @@ ZEMAM = "zemamout"
 # The kism of Hala'ib, in the triangle Egypt and Sudan both claim.
 CLAIMED = {"3108"}
 PLAIN, SCALED, SEARCH = 0.02, 0.03, 0.01
+# Men per 1,000 women at which a unit's note says why (Tura's 2,700).
+INSTITUTIONS = 1500
 SCALE_LIMIT = 0.05
 PAUSE = 0.4
 AR = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ة": "ه", "ى": "ي", "ـ": None,
@@ -490,10 +492,15 @@ def notes_2017(parts: list[dict[str, Any]], pyr: list[tuple[int, int | None, int
     men, women = sum(p[2] for p in pyr), sum(p[3] for p in pyr)
     groups = [(lo, hi, m + f) for lo, hi, m, f in pyr]
     median = grouped_median(groups)
-    out = {"sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
-                                year=2017, source=SOURCE_2017),
+    ratio = round(1000 * men / women)
+    out = {"sex_ratio": measure(ratio, unit="males_per_1000_females", year=2017,
+                                source=SOURCE_2017),
            "sex_ratio_note": f"Men per 1,000 women at the 2017 census: {men:,} men and "
                              f"{women:,} women."}
+    if ratio >= INSTITUTIONS and men + women >= 1000:
+        out["sex_ratio_note"] += (" The census counts the people who live in barracks, "
+                                  "camps and prisons where they are, and a share of men "
+                                  "this high usually comes from such places.")
     if median is not None:
         out["median_age"] = measure(median, unit="years", year=2017, source=SOURCE_2017)
         out["median_age_note"] = ("Interpolated within the ten-year age group that holds the "
