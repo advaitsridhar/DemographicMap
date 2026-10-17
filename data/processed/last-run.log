@@ -1,4 +1,6 @@
-  read https://www.instat.mg/documents/upload/main/INSTAT_RGPH3-Definitif-ResultatsGlogaux-Tome2_17-2021.pdf: 11,459,529 bytes, sha256 20d572315f7415ab08bf3ba56ce2162082b310962148900442a0a20e404a3b09
-  22 regions, 114 districts
-  the country's median age from the bands: 18.5 (INSTAT, Tome 1: 18)
-madagascar_census: the median of 900,235 lies outside 15-25 ({15: 463508, 18: 520896, 19: 547586, 20: 565327, 25: 642195})
+usage: probe_pdf.py [-h] [--url URL] [--aia] [--boxes] [--layout]
+                    [--terms TERMS] [--contents CONTENTS]
+                    [--max-pages MAX_PAGES] [--excerpt EXCERPT]
+                    [--pages PAGES] [--tables] [--context CONTEXT]
+                    [text]
+probe_pdf.py: error: unrecognized arguments: group
