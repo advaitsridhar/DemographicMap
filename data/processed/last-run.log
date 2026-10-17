@@ -1,26 +1,2 @@
-== sheets https://cms.nsomalawi.mw/api/download/277/Series-A.-Population-Tables.xlsx 
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 558,785 bytes Content-Disposition=attachment; filename=Series-A.-Population-Tables.xlsx
-    1 'List of Tables' 996x25: Table A1: Population of Malawi by Sex at National, Regional and Distri / Table A2: Population of Malawi by Household Residential Status by Age  / Table A3: Population of Malawi by Sex for Urban/Rural at National, Reg
-    2 'A1' 1003x23: Table A1: Population of Malawi by Sex at National, Regional and Distri / Region and District / Total
-    3 'A2' 992x26: Table A2: Population of Malawi by Household Residential Status by Age  / Age Group / Household Residential Status
-    4 'A3' 1002x26: Table A3: Population of Malawi by Sex for Urban/Rural at National, Reg / Region and District / Total
-    5 'A4' 895x26: Table A4: Population of Malawi by Region, Age, 2018 / Age Group / Malawi
-    6 'A5' 1134x26: Table A5: Population of Malawi in single years by Urban/Rural and Sex, / Age in single Years / National
-    7 'A6' 806x26: Table A6: Population by Age Group at Regional and District levels, 201 / Age Group / Northern
-    8 'A7' 443x21: Table A7: Population by 5 year age group, region, district and traditi / Area / Total
-    9 'A8' 15x10: Table A8. Non-Malawian Population by Nationality, Urban and Rural, 201 / Nationality / Non Malawian Nationals
-== sheets https://cms.nsomalawi.mw/api/download/281/Series-E.-Social-Tables.xlsx 
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 113,997 bytes Content-Disposition=attachment; filename=Series-E.-Social-Tables.xlsx
-    1 'List of Tables' 9x1: Table E1: Population Aged 0-17 with and without Birth Certificates by  / Table E2: Population Aged 16 Years and Over with and without National  / Table E3: Malawian Population by Tribe, Region, Urban and Rural, 2018
-    2 'E1 ' 62x10: Table E1: Population Aged 0-17 with and without Birth Certificates by  / Age / Total
-    3 'E2' 158x13: Table E2: Population Aged 16 Years and Over with and without National  / Age / Total
-    4 'E3' 42x15: Table E3: Malawian Population by Tribe, Region, Urban and Rural, 2018 / Area and Sex / Total
-    5 'E4' 46x16: Table E4: Malawian Population byTribe, Region and District, 2018 / Region and District / Tribe
-    6 'E5' 122x29: Table E5. Population of Malawi by Denomination, Region, and District,  / Area / Denomination
-    7 'E6' 45x16: Table E6: Population aged 12 years and over by Age Group, Marital Stat / Age Group / Both Sexes
-    8 'E7' 78x32: Table E7: Population aged 12 years and over by Marital Status, Sex, Re / Table E8. / Population (12 Years and Over) by Marital Status, Sex, Age Group, Regi
-    9 'E8' 44x23: Table E8. Total Population of Age 12 years and above by Age at First M / Age Group / Age of First Marriage
-   10 'E9' 122x23: Table E9: Population Ever married aged 12 years and over by Region, Di / Current Age / Age of First Marriage
-== zip https://cms.nsomalawi.mw/api/download/359/Likoma.zip 
-  HTTP 200 application/zip 840,835 bytes Content-Disposition=attachment; filename=Likoma.zip
-     1,040,630  Likoma/Constituency_Report_Likoma Islands.pdf
+usage: car_census.py [-h] [--dump]
+car_census.py: error: unrecognized arguments: --dump-free
