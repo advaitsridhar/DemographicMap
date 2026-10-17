@@ -27,6 +27,7 @@ import argparse
 import html
 import json
 import re
+import urllib.parse
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
@@ -127,7 +128,9 @@ def links(page: str) -> tuple[list[str], int]:
     hrefs = set(re.findall(r'href="([^"]*?/en/congo/admin/[^"]+)"', page))
     deps = sorted({h for h in hrefs if re.search(r"/admin/\d{2}__[^/]+/?$", h)})
     districts = {h for h in hrefs if re.search(r"/admin/[^/]+/\d{4}x?__[^/]+/?$", h)}
-    return [h if h.startswith("http") else HOST + h for h in deps], len(districts)
+    full = [h if h.startswith("http") else HOST + h for h in deps]
+    # Lékoumou's address has an accent, which a request line cannot carry as is.
+    return [urllib.parse.quote(html.unescape(u), safe=":/%") for u in full], len(districts)
 
 
 def town_note(label: str, places: tuple[tuple[str, str], ...], districts: int) -> str:
