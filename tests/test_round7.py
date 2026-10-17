@@ -391,7 +391,7 @@ class TwinsShowOneFigure(unittest.TestCase):
         parent = {"id": "P", "name": "Australian Capital Territory", "parent": "AUS",
                   "population": {"value": 481_700, "year": 2024, "source": "Wikidata (CC0)",
                                  be.RESTATED_FROM: {"value": 454_499, "year": 2021,
-                                                    "source": abs_}},
+                                                    "source": abs_ + " (G01)"}},
                   "sources": [{"field": "capital/coordinates/population",
                                "name": "Wikidata"}]}
         child = {"id": "C", "name": "Unincorporated ACT", "parent": "P",
@@ -418,6 +418,10 @@ class TwinsShowOneFigure(unittest.TestCase):
                  be.RESTATED_FROM: census}
         self.assertTrue(be.put_in_front_of_count(newer, {**census, "value": 453_890}))
         self.assertTrue(be.put_in_front_of_count(newer, dict(census)))
+        # The table a source names is no other source.
+        self.assertTrue(be.put_in_front_of_count(
+            {**newer, be.RESTATED_FROM: {**census, "source": "ABS census (G01)"}},
+            {**census, "value": 453_890}))
         for other in ({**census, "value": 440_000},           # 3% off: other ground
                       {**census, "year": 2016},               # another census
                       {**census, "value": 453_890, "source": "Another office"},

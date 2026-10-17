@@ -6213,14 +6213,21 @@ def put_in_front_of_count(value: Any, count: Any) -> bool:
     the same year as ``count`` and within SAME_COUNT of it: one census counting
     one ground at two levels. The Australian Capital Territory took Wikidata's
     481,700 for 2024 in front of the census's 454,499, and its only division
-    kept the census's 453,890 for the same ground."""
+    kept the census's 453,890 for the same ground. The source is compared
+    without the table it names: the territory's count is the census's G01
+    profile, "... Census of Population and Housing 2021 (G01)", and the
+    area's the same census without the table named."""
     if put_in_front_of(value, count):
         return True
     was = value.get(RESTATED_FROM) if isinstance(value, dict) else None
     before, now = published(was), published(count)
+
+    def publication(figure: Any) -> str:
+        return re.sub(r"\s*\([^()]*\)", "", str(figure.get("source") or "")).strip()
+
     return (bool(before) and now is not None and vintage(was) is not None
-            and vintage(was) == vintage(count)
-            and str(was.get("source") or "") == str(count.get("source") or "")
+            and vintage(was) == vintage(count) and publication(was)
+            and publication(was) == publication(count)
             and abs(now / before - 1) <= SAME_COUNT)
 
 
