@@ -1,10 +1,2 @@
-page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022
-  unreachable: HTTPError: HTTP Error 404: Not Found
-page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=1
-  unreachable: HTTPError: HTTP Error 404: Not Found
-page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=2
-  unreachable: HTTPError: HTTP Error 404: Not Found
-page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=3
-  unreachable: HTTPError: HTTP Error 404: Not Found
-page: https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022?page=4
-  unreachable: HTTPError: HTTP Error 404: Not Found
+  read https://web.archive.org/web/20241104035225id_/https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf: 20,479,297 bytes, sha256 1363c816008eca631a07c30691713625f37614fdeeb01adaeb2bae18e9a3d3e0
+namibia_census: lines not read: [('Oshikoto', 'youth')]
