@@ -256,6 +256,13 @@ def squeeze(text: str) -> str:
     return "".join(c for c in stripped.lower() if c.isalnum() or c in "-+")
 
 
+DASHES = frozenset({"-", "–", "—"})
+
+
+def numeric(token: str) -> bool:
+    return token.isdigit() or token in DASHES
+
+
 @dataclass
 class Row:
     top: float
@@ -266,15 +273,22 @@ class Row:
         return " ".join(t for _, _, t in self.label_words())
 
     def label_words(self) -> list[tuple[float, float, str]]:
-        last = max((i for i, (_, _, t) in enumerate(self.words) if not t.isdigit()), default=-1)
+        last = max((i for i, (_, _, t) in enumerate(self.words) if not numeric(t)), default=-1)
         return self.words[:last + 1]
 
     def figures(self) -> list[tuple[float, float, int]]:
-        """Digit groups after the label, joined into figures by the gaps between them."""
-        last = max((i for i, (_, _, t) in enumerate(self.words) if not t.isdigit()), default=-1)
+        """Digit groups after the label, joined into figures by the gaps between them;
+        a dash, which the reports print for none, is a nought."""
+        last = max((i for i, (_, _, t) in enumerate(self.words) if not numeric(t)), default=-1)
         out: list[tuple[float, float, int]] = []
         run: list[tuple[float, float, str]] = []
         for x0, x1, t in self.words[last + 1:]:
+            if t in DASHES:
+                if run:
+                    out.append((run[0][0], run[-1][1], int("".join(r[2] for r in run))))
+                    run = []
+                out.append((x0, x1, 0))
+                continue
             if run and len(t) == 3 and x0 - run[-1][1] <= GAP:
                 run.append((x0, x1, t))
                 continue
@@ -304,7 +318,8 @@ def rows_of(words: list[dict[str, Any]] | list[tuple[float, float, float, str]])
     merged: list[Row] = []
     for row in rows:
         row.words.sort()
-        alone = all(t.isdigit() for _, _, t in row.words)
+        alone = all(numeric(t) for _, _, t in row.words) and any(
+            t.isdigit() for _, _, t in row.words)
         if alone and merged and row.top - merged[-1].top <= ORPHAN_REACH \
                 and re.search(r"[^\W\d_]", merged[-1].label):
             merged[-1].words = sorted(merged[-1].words + row.words)
@@ -361,6 +376,24 @@ def values(block: Block, row: Row) -> list[int | None]:
         j = min(range(len(block.columns)), key=lambda k: abs(block.columns[k] - x1))
         out[j] = value
     return out
+
+
+def header_texts(block: Block) -> list[str]:
+    """The header words above each column, left to right."""
+    cols = block.columns
+    widest = max((x1 - x0 for r in block.data for x0, x1, _ in r.figures()
+                  if abs(x1 - cols[0]) <= COLUMN_REACH), default=30)
+    left = cols[0] - widest - 20
+    texts = [""] * len(cols)
+    for row in block.header:
+        for x0, x1, t in row.words:
+            centre = (x0 + x1) / 2
+            if centre < left:
+                continue
+            j = next((k for k, c in enumerate(cols) if centre <= c + 8), None)
+            if j is not None:
+                texts[j] += " " + t
+    return [t.strip() for t in texts]
 
 
 def label_columns(block: Block, spec: dict[str, tuple[str, ...]]) -> list[str] | None:
@@ -522,7 +555,8 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                 labels = last.labels
             if labels is None:
                 rep.problems.append(f"{name} p{i + 1}: header not read "
-                                    f"({len(block.columns)} columns)")
+                                    f"({len(block.columns)} columns: "
+                                    + " | ".join(t[:40] for t in header_texts(block)) + ")")
                 continue
             block.labels = labels
             last = block
@@ -1011,6 +1045,27 @@ def survey(stem: str, blob: bytes) -> None:
                     f"first {labels}")
 
 
+def debug(stem: str, blob: bytes, numbers: list[int]) -> None:
+    """Each block on the pages given: its columns, the header above each, its rows."""
+    import pdfplumber                                # noqa: PLC0415
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for n in numbers:
+            rows = rows_of(pdf.pages[n - 1].extract_words(use_text_flow=False,
+                                                          keep_blank_chars=False))
+            log(f"== {stem} p{n}: {len(rows)} rows")
+            for block in blocks_of(rows):
+                bad = assign_columns(block)
+                log(f"  block {block.title[:90]!r}")
+                log(f"    columns at {[round(c) for c in block.columns]}")
+                for j, t in enumerate(header_texts(block)):
+                    log(f"    col {j}: {t[:120]}")
+                for r in block.data[:6]:
+                    log(f"    row {r.label!r}: "
+                        + " ".join(f"{v}@{x1:.0f}" for _, x1, v in r.figures()))
+                for line in bad[:6]:
+                    log(f"    misfit: {line}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -1018,9 +1073,19 @@ def main() -> int:
     parser.add_argument("--only", default="", help="report stems, comma-separated")
     parser.add_argument("--survey", action="store_true",
                         help="print where each table is, and write nothing")
+    parser.add_argument("--debug", default="",
+                        help="Stem:page,page;Stem:page -- print those pages' blocks, write nothing")
     args = parser.parse_args()
     import pdfplumber                                # noqa: PLC0415
     stems = [s for s in REPORTS if not args.only or s in args.only.split(",")]
+    if args.debug:
+        for part in args.debug.split(";"):
+            stem, _, numbers = part.partition(":")
+            try:
+                debug(stem, fetch_report(stem), [int(n) for n in numbers.split(",") if n])
+            except Exception as exc:                  # noqa: BLE001
+                log(f"== {stem}: {type(exc).__name__}: {exc}")
+        return 0
     if args.survey:
         for stem in stems:
             try:
