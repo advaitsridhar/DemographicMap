@@ -123,7 +123,9 @@ MOUGHATAAS: dict[str, tuple[str, list[str]]] = {
     "selibabi": ("Guidimakha", ["selibaby", "wompou"]),
 }
 # The census's spellings that fold differently from the ones above.
-SPELLINGS = {"timbedra": "timbedra", "fdeirick": "fderick", "zoueirat": "zouerate",
+SPELLINGS = {"birmogrein": "birmoghrein", "fdeirik": "fderick", "zoueratt": "zouerate",
+             "tidjikdja": "tidjikja",
+             "timbedra": "timbedra", "fdeirick": "fderick", "zoueirat": "zouerate",
              "zouerat": "zouerate", "birmoughrein": "birmoghrein", "tidjikja": "tidjikja",
              "tijikja": "tidjikja", "moudjeria": "moudjeria", "tichitt": "tichit",
              "lexeibe": "lexeiba", "lexeibeun": "lexeiba", "lexeibaun": "lexeiba",

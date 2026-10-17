@@ -28,12 +28,14 @@ within the five-year group holding the middle person, from the annex's groups
 added together, after each part's interpolated median is checked against the
 report's within a year.
 
-**The cercles.** The 2022 census is published by region only. The 2009 census
-(RGPH 2009) counted everyone by sex and five-year age group in each of the 50
-cercles the map draws, as the US Census Bureau's subnational tables give it
-(HDX); where that table carries the cercles, their median age and sex ratio
-are written from it, and the people whose age was not stated are left out of
-the median. Their populations are left to newer figures.
+**The cercles.** The 2022 census is published by region only. The US Census
+Bureau's tables of the 2009 census (HDX) list the 50 cercles the map draws and
+leave their ages blank (read, in case a later release fills them: their median
+age and sex ratio would then be written). So every cercle says why it has no
+median age, and takes its sex ratio from INSTAT's projection for 2018 by sex
+(OCHA's common operational dataset, in the same workbook) unless that
+projection gives the cercles their region's split, which is tested. Their
+populations are left to the figures the map has.
 
 **Checks before anything is written.** Every row's men and women make its
 total (the annex's counts are adjusted and may miss by a person); the regions
@@ -442,6 +444,77 @@ def cercle_records(data: dict[str, Any], admin1: list[dict[str, Any]],
     return records, report
 
 
+SOURCE_2018 = ("Institut National de la Statistique (INSTAT) du Mali, population projection for "
+               "2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population "
+               "Statistics), as the US Census Bureau tabulates it for HDX")
+NO_CERCLE_AGES = ("The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to "
+                  "A.21), for the regions of 2023, and the 2009 census's tables of ages as the US "
+                  "Census Bureau gives them stop at the region; no median age is published for "
+                  "the cercle.")
+
+
+def read_projection(book) -> dict[str, Any]:
+    """The 2018 projection's men and women by cercle and by region."""
+    rows = uscb.sheet_rows(book, "Population Projections")
+    names, _ = uscb.columns(rows)
+    at = {n: i for i, n in enumerate(names) if n}
+    cercles, regions = [], {}
+    for row in rows[2:]:
+        level = uscb.number(row[at["ADM_LEVEL"]])
+        men, women = uscb.number(row[at["EST_M_18"]]), uscb.number(row[at["EST_F_18"]])
+        if men is None or women is None or not women:
+            continue
+        region = str(row[at["ADM1_NAME"]]).strip()
+        if level == 1:
+            regions[region] = (men, women)
+        elif level == 2:
+            cercles.append({"name": str(row[at["ADM2_NAME"]]).strip(), "region": region,
+                            "men": men, "women": women})
+    return {"cercles": cercles, "regions": regions}
+
+
+def copied(data: dict[str, Any]) -> bool:
+    """Whether the projection gives the cercles their region's split by sex: an
+    office that projects a region and shares it out by one ratio publishes the
+    region's ratio for every cercle, which is not the cercle's own."""
+    same = 0
+    for c in data["cercles"]:
+        parent = data["regions"].get(c["region"])
+        if parent and abs(c["men"] / (c["men"] + c["women"])
+                          - parent[0] / (parent[0] + parent[1])) < 0.0005:
+            same += 1
+    return bool(data["cercles"]) and same >= 0.8 * len(data["cercles"])
+
+
+def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]],
+                       admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    """Every cercle: the reason it has no median age, and the 2018 projection's
+    sex ratio where the projection gives the cercle its own."""
+    parents = {s["id"]: fold(s["name"]).replace("koulikouro", "koulikoro") for s in admin1}
+    by_key = {(fold(c["region"]), fold(c["name"])): c for c in (data or {}).get("cercles", [])}
+    records, report = [], []
+    src = {"name": SOURCE_2018, "url": uscb.dataset_url(DATASET), "year": 2018,
+           "license": "CC BY-IGO, published via HDX"}
+    for shape in admin2:
+        key = (parents.get(shape["parent"], ""), fold(shape["name"]))
+        c = by_key.get(key)
+        fields: dict[str, Any] = {"median_age": gap(NOT_AVAILABLE, NO_CERCLE_AGES)}
+        if c is not None:
+            fields.update(
+                sex_ratio=measure(round(1000 * c["men"] / c["women"]),
+                                  unit="males_per_1000_females", year=2018, source=SOURCE_2018),
+                sex_ratio_note=("INSTAT's projection of the cercle's men and women for 2018, "
+                                "made from the 2009 census; the 2022 census gives sexes by "
+                                "region only."),
+                sources=[{**src, "field": "sex_ratio"}])
+        elif data is not None:
+            report.append(f"cercle polygon {shape['name']!r}: no row in the 2018 projection")
+        records.append(record(f"MLI-cercle-{key[0]}-{key[1]}", shape["name"], level="admin2",
+                              parent="MLI", country="MLI", match_by="shape_id",
+                              shape_id=shape["id"], **fields))
+    return records, report
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -475,8 +548,16 @@ def main() -> int:
         f"{len(data['regions'])} regions")
     if data["cercles"]:
         more, why = cercle_records(data, admin1, admin2)
-        records += more
-        report += why
+    else:
+        projection = read_projection(book)
+        if copied(projection):
+            log("  the 2018 projection gives the cercles their regions' split by sex: not used")
+            projection = None
+        else:
+            log(f"  2018 projection: {len(projection['cercles'])} cercles by sex")
+        more, why = projection_records(projection, admin1, admin2)
+    records += more
+    report += why
     for line in report:
         log("  " + line)
     log(f"  {sum(1 for r in records if r['level'] == 'admin1')} regions and "

@@ -53,6 +53,25 @@ class MaliCensus(unittest.TestCase):
             self.assertIn("regions of 2023", by[name]["median_age"]["note"])
         self.assertEqual(len(report), 5)
 
+    def test_projection(self):
+        data = {"regions": {"KAYES": (1_300_000.0, 1_310_000.0)},
+                "cercles": [{"name": "KÉNIÉBA", "region": "KAYES", "men": 130_000.0,
+                             "women": 120_000.0},
+                            {"name": "KAYES", "region": "KAYES", "men": 300_000.0,
+                             "women": 310_000.0}]}
+        self.assertFalse(mc.copied(data))
+        records, report = mc.projection_records(data, ADMIN1, ADMIN2)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(len(records), 50)
+        self.assertEqual(by["Kenieba"]["sex_ratio"]["value"], round(1000 * 130 / 120))
+        self.assertIn("by region only", by["Kenieba"]["median_age"]["note"])
+        self.assertNotIn("value", by["Bamako"]["sex_ratio"])
+        self.assertEqual(len(report), 48)
+        shared = {"regions": {"KAYES": (100.0, 100.0)},
+                  "cercles": [{"name": n, "region": "KAYES", "men": 50.0, "women": 50.0}
+                              for n in ("A", "B", "C")]}
+        self.assertTrue(mc.copied(shared))
+
     def test_cercles(self):
         data = {"cercles": [
             {"name": "KÉNIÉBA", "region": "KAYES", "median": 15.2, "men": 100, "women": 98,
