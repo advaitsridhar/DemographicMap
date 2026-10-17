@@ -27,9 +27,11 @@ households (page 160), and Harare Urban's wards there begin at Ward 02
 and Harare Urban the rest of its page (``HARARE_RURAL_WARD``).
 
 **Checks before anything is written.** Every line's men and women make its
-total; each district's wards make its total line, in men, women, people and
-households; each province's districts make the province's line on the first
-page; the provinces make the country's 15,178,957.
+total; each district's wards make its total line, in men, women and people;
+each province's districts make the province's line on the first page; the
+provinces make the country's 15,178,957. Households are checked the same way
+and a disagreement is only logged: they are not written (Mashonaland
+Central's districts make 337,985 households against the province's 337,778).
 
 Usage:
     python -m scripts.fetch_census.zimbabwe_districts
@@ -213,6 +215,11 @@ def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]])
         for field in ("men", "women", "total", "households"):
             made = sum(w[field] for w in d["wards"])
             if made != d[field]:
+                # Households are not written; a table that disagrees on them
+                # alone is named in the log, not refused.
+                if field == "households":
+                    log(f"    {d['name']}'s wards make {made:,} households, not {d[field]:,}")
+                    continue
                 raise SystemExit(f"zimbabwe_districts: {d['name']}'s {len(d['wards'])} wards "
                                  f"make {made:,} {field}, not {d[field]:,}")
     for p in PROVINCES:
@@ -220,6 +227,10 @@ def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]])
         for field in ("men", "women", "total", "households"):
             made = sum(d[field] for d in mine)
             if made != provinces[p][field]:
+                if field == "households":
+                    log(f"    {p}'s districts make {made:,} households, not "
+                        f"{provinces[p][field]:,}")
+                    continue
                 raise SystemExit(f"zimbabwe_districts: {p}'s {len(mine)} districts make "
                                  f"{made:,} {field}, not {provinces[p][field]:,}")
 

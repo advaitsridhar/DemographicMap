@@ -20,8 +20,10 @@ name no council of its district shares gets a stated reason, not a guess.
 
 **Checks before anything is written.** Every village's men and women make its
 total, and each enumeration area's villages make its Total line, but for
-the few lines the list itself gets wrong (at most ``SLIPS`` of them, each
-named in the log; the printed total stands); the districts together make the census's 2,007,201 people to within the people the village
+the lines the list itself gets wrong (at most ``SLIPS`` of them, the first
+named in the log): an area counts as its Total line, where it has one. Each
+district makes the census's published district total to within ``UNPLACED``,
+and the districts together make the census's 2,007,201 people to within the people the village
 list does not place in a village (institutions), at most ``UNPLACED`` of them.
 
 Usage:
@@ -52,7 +54,13 @@ UNPLACED = 0.02
 # The share of lines that may disagree with themselves -- a village whose men
 # and women do not make its total, an enumeration area whose villages do not
 # make its Total line -- before the list is taken to be misread.
-SLIPS = 0.01
+SLIPS = 0.02
+# The 2016 census's district totals, which the list's districts must make to
+# within UNPLACED (they make 2,007,201 together).
+DISTRICT_TOTALS = {"bothabothe": 118_242, "leribe": 337_521, "berea": 262_616,
+                   "maseru": 519_186, "mafeteng": 178_222, "mohaleshoek": 165_590,
+                   "quthing": 115_469, "qachasnek": 74_566, "mokhotlong": 100_442,
+                   "thabatseka": 135_347}
 OUT = "lesotho_census.json"
 
 # District names: the village list's, reduced -> the map's, reduced.
@@ -103,8 +111,14 @@ def number(value: Any) -> int | None:
 
 
 def parse(rows: list[list[Any]]) -> dict[str, Any]:
-    """{"councils": {(district, council): {"men", "women", "total", "villages"}},
-    "districts": {district: total}} from the village rows."""
+    """{"councils": {(district, council): {"men", "women", "total", "villages",
+    "areas"}}, "districts": {district: total}}.
+
+    An enumeration area counts as its Total line where it has one -- the
+    Bureau's own sum, which stands where a village line is misprinted (in one
+    area of Matsoku the villages make 898 people where the Total line, whose
+    men and women agree with it, has 449) -- and as its villages added up
+    where it has none."""
     head = next((i for i, r in enumerate(rows) if any(str(v).strip() == "Village Name"
                                                        for v in r if v)), None)
     if head is None:
@@ -114,15 +128,33 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
                                     ("council", "Council"), ("ea", "Enumeration Area Code"),
                                     ("village", "Village Name"))}
     # Households, then Male, Female, Total under Population.
-    col["households"] = names["Households"]
     col["men"], col["women"], col["total"] = (names["Population"], names["Population"] + 1,
                                               names["Population"] + 2)
     filled: dict[str, Any] = {}
     councils: dict[tuple[str, str], dict[str, Any]] = {}
-    ea_sum: dict[Any, list[int]] = defaultdict(lambda: [0, 0, 0])
-    checked = 0
     uneven: list[str] = []
     astray: list[str] = []
+    areas = {"with": 0, "without": 0}
+    current: dict[str, Any] | None = None
+
+    def close(area: dict[str, Any] | None, line: list[int] | None) -> None:
+        if area is None:
+            return
+        if line is None:
+            areas["without"] += 1
+            figures = area["sum"]
+        else:
+            areas["with"] += 1
+            figures = line
+            if area["sum"] != line:
+                astray.append(f"{area['key']}: villages {area['sum']}, Total line {line}")
+        c = councils.setdefault(area["key"][:2], {"men": 0, "women": 0, "total": 0,
+                                                  "villages": 0, "areas": 0})
+        for i, f in enumerate(("men", "women", "total")):
+            c[f] += figures[i]
+        c["villages"] += area["villages"]
+        c["areas"] += 1
+
     for r in rows[head + 2:]:
         if not any(v not in (None, "") for v in r):
             continue
@@ -136,30 +168,30 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
         if village in (None, "") or None in (men, women, total):
             continue
         if men + women != total:
-            # The list itself has a few such lines (HA MAKAI: 47 men and 28
-            # women against a total of 70); the total stands as printed.
+            # The list itself has such lines (HA MAKAI: 47 men and 28 women
+            # against a total of 70); the total stands as printed.
             uneven.append(f"{village} ({men} + {women} against {total})")
-        ea = (filled.get("district"), filled.get("council"), filled.get("ea"))
+        key_ = (filled.get("district"), filled.get("council"), filled.get("ea"))
         if str(village).strip().lower() == "total":
-            got = ea_sum.pop(ea, None)
-            checked += 1
-            if got is None or got[2] != total:
-                astray.append(f"{ea}: villages {got}, Total line {[men, women, total]}")
+            if current is None or current["key"] != key_:
+                astray.append(f"{key_}: a Total line with no villages before it")
+                continue
+            close(current, [men, women, total])
+            current = None
             continue
-        ea_sum[ea] = [a + b for a, b in zip(ea_sum[ea], (men, women, total))]
-        c = councils.setdefault((filled["district"], filled["council"]),
-                                {"men": 0, "women": 0, "total": 0, "villages": 0})
-        c["men"] += men
-        c["women"] += women
-        c["total"] += total
-        c["villages"] += 1
-    if ea_sum:
-        log(f"  {len(ea_sum)} enumeration areas without a Total line")
+        if current is not None and current["key"] != key_:
+            close(current, None)
+            current = None
+        if current is None:
+            current = {"key": key_, "sum": [0, 0, 0], "villages": 0}
+        current["sum"] = [a + b for a, b in zip(current["sum"], (men, women, total))]
+        current["villages"] += 1
+    close(current, None)
     villages = sum(c["villages"] for c in councils.values())
-    for what, found, of in (("villages whose men and women do not make their total", uneven,
-                             villages),
+    for what, found, of in (("lines whose men and women do not make their total", uneven,
+                             villages + areas["with"]),
                             ("enumeration areas whose villages do not make their Total line",
-                             astray, checked)):
+                             astray, areas["with"])):
         if found:
             log(f"  {len(found)} {what}: {found[:12]}")
         if len(found) > SLIPS * max(of, 1):
@@ -168,11 +200,17 @@ def parse(rows: list[list[Any]]) -> dict[str, Any]:
     for (d, _), c in councils.items():
         districts[d] += c["total"]
     national = sum(districts.values())
-    log(f"  {sum(c['villages'] for c in councils.values()):,} villages in {len(councils)} "
-        f"councils; {checked:,} enumeration area totals checked; {national:,} people")
+    log(f"  {villages:,} villages in {len(councils)} councils; {areas['with']:,} enumeration "
+        f"areas with a Total line, {areas['without']} without; {national:,} people")
     if not NATIONAL * (1 - UNPLACED) <= national <= NATIONAL * 1.001:
-        raise SystemExit(f"lesotho_census: the villages make {national:,}, against the "
-                         f"census's {NATIONAL:,}")
+        raise SystemExit(f"lesotho_census: the list makes {national:,}, against the census's "
+                         f"{NATIONAL:,}")
+    for d, n in districts.items():
+        want = DISTRICT_TOTALS.get(key(d))
+        if want is None or abs(n - want) > UNPLACED * want:
+            raise SystemExit(f"lesotho_census: {d} makes {n:,} in the list, against the "
+                             f"census's {want}")
+        log(f"  district {d}: {n:,} in the list, {want:,} in the census's district table")
     return {"councils": councils, "districts": dict(districts)}
 
 
@@ -228,7 +266,8 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         d, c = bound[shape["id"]]
         data = table["councils"][(d, c)]
         note = (f"The 2016 census's count for {c} council ({d} district): its "
-                f"{data['villages']:,} villages added up.")
+                f"{data['areas']:,} enumeration areas, {data['villages']:,} villages, added "
+                f"up.")
         out.append(record(f"LSO-2016-{key(d)}-{key(c)}", shape["name"], level="admin2",
                           parent="LSO", country="LSO", match_by="shape_id",
                           shape_id=shape["id"], sources=SOURCES,

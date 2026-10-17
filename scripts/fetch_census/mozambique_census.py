@@ -33,7 +33,8 @@ the city's total.
 **Checks before anything is written.** Every unit's men and women make its
 total, its age groups make it too, and its population of 15 and over is its
 age groups from 15; a province's districts and cities make its total, which
-is the country's Quadro 3 line for it. A Quadro 11 line's religions and its
+is the country's Quadro 3 line for it (to ``SLACK`` people: Tete's districts
+make 2,551,824 against 2,551,826, and the difference is logged). A Quadro 11 line's religions and its
 unknown make its total, and its total is the province's; a Quadro 22 line's
 languages make its total, which is the province's people aged 5 and over.
 Every polygon of a province with a Quadro 3 gets one unit or more, and every
@@ -59,6 +60,7 @@ SOURCE = "INE Moçambique, IV Recenseamento Geral da População e Habitação 2
 LICENCE = "Instituto Nacional de Estatística de Moçambique publication (reuse with attribution)"
 YEAR = 2017
 NATIONAL = 26_899_105
+SLACK = 10                          # people a province's units may miss its total line by
 OUT = "mozambique_census.json"
 
 # Each province: its line in the country's Quadro 3, the map's first-level
@@ -175,6 +177,8 @@ LANGUAGES = {
     "cibarwe": "Barwe", "cinsenga": "Nsenga", "cikunda": "Kunda", "cibalke": "Balke",
     "isizulu": "Zulu", "cizulu": "Zulu", "xiswati": "Swati", "siswati": "Swati",
     "ingles": "English",
+    # Spellings of single provinces' tables.
+    "coti": "Koti", "elomwue": "Lomwe", "lolomalolo": "Lolo", "lolo": "Lolo",
 }
 UNSTATED_LANGUAGES = ("mudo", "desconhecid", "naosabe", "nenhum")
 
@@ -297,10 +301,15 @@ def check_province(name: str, table: dict[str, dict[str, Any]],
         raise SystemExit(f"mozambique_census: Quadro 3 of {name} has no total or no units")
     for field in ("total", "men", "women"):
         made = sum(u[field] for u in units_)
-        if made != total[field] or total[field] != national[field]:
+        # INE's own tables miss by a person or two here and there (Tete's
+        # districts make 2,551,824 against its total line's 2,551,826).
+        if abs(made - total[field]) > SLACK or total[field] != national[field]:
             raise SystemExit(f"mozambique_census: {name}'s units make {made:,} {field}, its "
                              f"total line {total[field]:,}, the country's table "
                              f"{national[field]:,}")
+        if made != total[field]:
+            log(f"    {name}'s units make {made:,} {field} against its total line's "
+                f"{total[field]:,}")
 
 
 def header_texts(rows: list[list[Any]], stop: int) -> dict[int, str]:
@@ -363,7 +372,7 @@ def read_q22(rows: list[list[Any]]) -> dict[str, int]:
             continue
         if k.startswith("outraslinguasmoc"):
             group = "Other Mozambican languages"
-        elif k.startswith("outraslinguasest"):
+        elif k.startswith(("outraslinguasest", "outaslinguasest")):
             group = "Other foreign languages"
         else:
             group = LANGUAGES.get(k)

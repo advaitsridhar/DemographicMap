@@ -59,7 +59,10 @@ ADMIN2 = [{"id": "n", "name": "Ngoajane", "parent": "B"},
 
 class LesothoCensusTest(unittest.TestCase):
     def table(self, **kw):
-        with mock.patch.object(ls, "NATIONAL", TOTAL):
+        districts = {"bothabothe": sum(m + f for d, *_, m, f in VILLAGES[:4]),
+                     "leribe": sum(m + f for d, *_, m, f in VILLAGES[4:])}
+        with mock.patch.object(ls, "NATIONAL", TOTAL), \
+                mock.patch.object(ls, "DISTRICT_TOTALS", districts):
             return ls.parse(ls.rows_of(workbook(**kw)))
 
     def test_villages_are_added_up_by_council(self):
@@ -78,7 +81,7 @@ class LesothoCensusTest(unittest.TestCase):
         self.assertEqual(recs["u"]["population"]["value"], 156 + 172)
         self.assertEqual(recs["m"]["sex_ratio"]["value"], round(1000 * 50 / 55))
         self.assertNotIn("x", recs)             # a Butha-Buthe drawn in Leribe: no guess
-        self.assertIn("villages added up", recs["n"]["population_note"])
+        self.assertIn("villages, added up", recs["n"]["population_note"])
         self.assertEqual(recs["n"]["median_age"]["status"], "not_available")
 
 
