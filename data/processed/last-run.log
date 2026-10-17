@@ -1,35 +1,61 @@
-equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
-  Annobón: 5,314; men 48.9%; nationals 98.3%
-    ANNOBON: 5,314 (Annobón)
-  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
-    BANEY: 29,366 (Baney)
-    MALABO: 271,008 (Malabo)
-  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
-    LUBA: 26,331 (Luba)
-    RIABA: 8,343 (Riaba)
-  Centro Sur: 141,986; men 51.2%; nationals 89.9%
-    ACURENAM: not shown (Acurenam)
-    BICURGA: not shown (not a district)
-    EVINAYONG: not shown (Evinayong)
-    NIEFANG: not shown (Niefang)
-    NKIMI: not shown (not a district)
-  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
-    EBEBIYIN: not shown (Ebibeyin)
-    MICOMISENG: not shown (Micomiseng)
-    NKUE: not shown (not a district)
-    NSOC NSOMO: not shown (Nsok Nsomo)
-  Litoral: 367,348; men 52.3%; nationals 87.7%
-    BATA: not shown (Bata)
-    BITICA: not shown (not a district)
-    COGO: not shown (Cogo)
-    MACHINDA: not shown (not a district)
-    MBINI: not shown (Mbini)
-  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
-    ACONIBE: not shown (Aconibe)
-    AYENE: not shown (not a district)
-    AÑISOC: not shown (Añisok)
-    MONGOMO: not shown (Mongomo)
-    MONGOMOYEN: not shown (not a district)
-    NSORK: not shown (Nsork)
-  wrote data/processed/equatorial_guinea_census.json (70 kB)
-  7 provinces and 25 district polygons written
+probe_pdf: https://www.statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1523, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 1117, in _create
+    self.do_handshake()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/ssl.py", line 1395, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.statistics.gov.rw'. (_ssl.c:1016)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
+    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
+    blob = fetch_blob(url, aia=aia)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
+    with urllib.request.urlopen(req, timeout=90) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1364, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.statistics.gov.rw'. (_ssl.c:1016)>
