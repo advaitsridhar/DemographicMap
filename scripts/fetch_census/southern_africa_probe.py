@@ -65,7 +65,15 @@ def pages_of(spec: str, count: int) -> list[int]:
 
 
 def get(url: str, timeout: int = 300) -> tuple[int, str, dict, bytes]:
-    status, final, headers, body = base.fetch(url, timeout=timeout)
+    """One fetch; the Internet Archive's intermittent server errors are tried
+    again, twice, after a pause."""
+    import time                                     # noqa: PLC0415
+    for wait in (15, 45, None):
+        status, final, headers, body = base.fetch(url, timeout=timeout)
+        if not (status in (500, 502, 503, 504) and "archive.org" in url and wait):
+            break
+        say(f"  HTTP {status} from the archive; again in {wait} s")
+        time.sleep(wait)
     base.summary(url, status, final, headers, body)
     return status, final, headers, body
 
