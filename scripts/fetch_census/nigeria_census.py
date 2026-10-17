@@ -121,6 +121,23 @@ yobe zamfara""".split())
 # within the same state; each checked against both volumes' spellings.
 ALIASES: dict[tuple[str, str], str] = {
     ("abujafederalcapitalterritory", "municipalareacouncil"): "abujamunicipal",
+    # Spellings.
+    ("abia", "isuikwuato"): "isiukwuato", ("abia", "obinwga"): "obingwa",
+    ("bauchi", "dambam"): "damban", ("crossriver", "bekwarra"): "bekwara",
+    ("edo", "iguegben"): "igueben", ("ekiti", "ilejemeje"): "ilejemeji",
+    ("imo", "mbatoli"): "mbaitoli", ("imo", "onuimo"): "unuimo",
+    ("jigawa", "kirikasama"): "kirikasamma", ("kano", "garunmalam"): "garummallam",
+    ("kano", "nassarawa"): "nasarawa", ("kebbi", "bagudu"): "bagudo",
+    ("kogi", "olamaboro"): "olamabolo", ("nasarawa", "nasarawaegon"): "nasarawaeggon",
+    ("niger", "munya"): "muya", ("osun", "atakunmosaeast"): "atakumosaeast",
+    ("osun", "atakunmosawest"): "atakumosawest", ("osun", "ayedade"): "aiyedade",
+    ("osun", "ayedire"): "aiyedire", ("plateau", "barkinladi"): "barikinladi",
+    ("rivers", "emuoha"): "emohua", ("rivers", "obioakpor"): "obiaakpor",
+    ("yobe", "tarmuwa"): "tarmua", ("zamfara", "birninmagajikiyaw"): "birninmagaji",
+    # Names the census uses for areas since renamed: Atisbo was Atigbo, and
+    # Yewa North and South were Egbado North and South.
+    ("oyo", "atisbo"): "atigbo", ("ogun", "yewanorth"): "egbadonorth",
+    ("ogun", "yewasouth"): "egbadosouth",
 }
 # The census area whose figures fit no polygon: Bakassi as it stood in 2006.
 NOT_DRAWN = {("crossriver", "bakassi")}
@@ -285,6 +302,13 @@ def parse_tables(pages: list[str]) -> list[dict[str, Any]]:
         while k < len(lines) and len(rows) < len(GROUPS):
             text = lines[k][1]
             r = ROW.match(text)
+            # A row whose figures run on to the next line ("0 - 4 20,746" then
+            # "10,793 9,953"): read the two lines as one.
+            if not r and k + 1 < len(lines) and lines[k + 1][1].split() \
+                    and all(FIGURE.match(t) for t in lines[k + 1][1].split()):
+                r = ROW.match(f"{text} {lines[k + 1][1]}")
+                if r:
+                    k += 1
             if r and not text.upper().startswith("TOTAL"):
                 rows.append((r.group("label"), (number(r.group("a")), number(r.group("b")),
                                                 number(r.group("c")))))
