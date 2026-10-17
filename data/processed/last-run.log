@@ -1,15 +1,262 @@
-  read https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf: 16,069,809 bytes, sha256 16f5ee5b4fea25fb0d24c5e853823171f4e07dd3d049c9c5260488c07ebf209e
-  10 provinces and 116 districts, making 19,693,423
-  the country's median age: 18.3 from Table 5.1, 18.3 from the bands
-  census districts not drawn: []
-  province polygon 'Central': the sum of its drawn districts (2,391,803): The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province.
-  province polygon 'Eastern': the sum of its drawn districts (2,321,898): The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga.
-  province polygon 'Lusaka': the sum of its drawn districts (3,172,603): The 2022 census's final counts for the 7 districts drawn here, added up: Lusaka Province's districts and Chirundu, which the census counts under Southern Province.
-  province polygon 'Muchinga': the sum of its drawn districts (1,062,997): The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province.
-  province polygon 'Southern': the sum of its drawn districts (2,178,638): The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central).
-  SHANG'OMBO DISTRICT: 74,654
-  SENANGA DISTRICT: 113,124
-  SESHEKE DISTRICT: 73,204
-  WESTERN PROVINCE: 1,375,604
-  116 of 116 districts and 10 of 10 provinces written
-  wrote data/processed/zambia_census.json (283 kB)
+== get https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx
+  172,094 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\x9d>'
+  https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx: 37 sheets: Table of Contents | Table 3.1 | Table 3.2 | Table 3.3 | Table 3.3  | Table 3.4 | Table 3.5 | Table 3.6 | Table 3.7 | Table 3.8 | Table 3.9 | Table 3.10 | Table 3.11 | Table 3.12 | Table 3.13 | Table 4.1 | Table 4.2 | Table 4.3 | Table 4.4  | Table 4.5 | Table 4.6 | Table 4.7 | Table 5.1  | Table 5.2 | Table C1 | Table C2 | Table C3 | Table C4 | Table C5 | Table C6 | Table C7 | Table C8 | Table C9 | Table C10 | Table C11 | Table C12 | Table D1
+  -- sheet 'Table of Contents': 40 rows x 17 cols
+    r0:  |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Theme2: Population size,stru |  |  |  |  |  |  |  |  |  | 
+    r2:  |  |  |  |  |  |  |  |  |  |  | 
+    r3: Table 3.1: De Jure and De Fa |  |  |  |  |  |  |  |  |  |  | 
+    r4: Table 3.2 : Enumerated popul |  |  |  |  |  |  |  |  |  |  | 
+    r5: Table 3. 3 Evolution between |  |  |  |  |  |  |  |  |  |  | 
+  -- sheet 'Table 3.1': 12 rows x 17 cols
+    r0: Table 3.1: De Jure and De Fa |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province | Dejure population; i.e., Res |  |  | Defacto Population (Present  |  |  | Difference between de jure a |  |  |  | 
+    r2:  |  |  |  |  |  |  |  |  |  |  | 
+    r3:  | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r4: Rwanda | 13246394 | 6429326 | 6817068 | 13015684 | 6253197 | 6762487 | 230710 | 176129 | 54581 |  | 
+    r5: Kigali City | 1745555 | 888882 | 856673 | 1758206 | 888039 | 870167 | -12651 | 843 | -13494 |  | 
+  -- sheet 'Table 3.2': 12 rows x 17 cols
+    r0: Table 3.2 : Enumerated popul |  |  |  |  |  |  |  |  |  |  | 
+    r1: Sex | Private + Institutional Hous | Private + Institutional Hous | Private + Institutional Hous | Private Households | Private | Private | Institutional Households | Institutional | Institutional |  | 
+    r2:  | Present Residents | Absent Residents | Visitors | Present Residents | Absent Residents | Visitors | Present Residents | Absent Residents | Visitors |  | 
+    r3: Rwanda |  |  |  |  |  |  |  |  |  |  | 
+    r4: Both Sexes | 12598485 | 647909 | 417199 | 12455630 | 644970 | 414188 | 142855 | 2939 | 3011 |  | 
+    r5: Male | 6042153 | 387173 | 211044 | 5915536 | 384913 | 209139 | 126617 | 2260 | 1905 |  | 
+  -- sheet 'Table 3.3': 17 rows x 5 cols
+    r0:  | Table 3.3: Evolution between |  |  | 
+    r1:  |  |  |  | 
+    r2:  | Year of census and annual gr | Rwanda |  | 
+    r3:  |  | Both sexes | Male | Female
+    r4:  | Year of census |  |  | 
+    r5:  | 1978 | 4831527 | 2363177 | 2468350
+  -- sheet 'Table 3.3 ': 19 rows x 6 cols
+    r0:  |  |  |  |  | 
+    r1:  | Table 3. 3 Evolution between |  |  |  | 
+    r2:  |  |  |  |  | 
+    r3:  | Year of census and annual gr | Rwanda |  |  | 
+    r4:  |  | Total | Male | Female | 
+    r5:  | Year of census |  |  |  | 
+  -- sheet 'Table 3.4': 16 rows x 17 cols
+    r0:  | Table 3.4: Resident populati |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence and Sex | Counts |  |  | % |  |  |  |  |  | 
+    r2:  |  | Private+Institutional Househ | Private households | Institutional households | Private households (%) | Institutional households (%) | Total |  |  |  | 
+    r3:  | Rwanda |  |  |  |  |  |  |  |  |  | 
+    r4:  | Both Sexes | 13246394 | 13100600 | 145794 | 98.8993683865964 | 1.1128803260919347 | 100.01224871268833 |  |  |  | 
+    r5:  | Male | 6429326 | 6300449 | 128877 | 97.9954819525406 | 2.0455208827180416 | 100.04100283525864 |  |  |  | 
+  -- sheet 'Table 3.5': 14 rows x 17 cols
+    r0:  | Table 3.5: Private household |  |  |  |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  |  |  |  | 
+    r2:  | Area of residence | Number of private households | Corresponding population | Household size |  |  |  |  |  |  | 
+    r3:  | Rwanda | 3312743 | 13246394 | 4.03432649273168 |  |  |  |  |  |  | 
+    r4:  | Place of residence |  |  |  |  |  |  |  |  |  | 
+    r5:  | Urban | 964287 | 3701245 | 3.83320055916987 |  |  |  |  |  |  | 
+  -- sheet 'Table 3.6': 16 rows x 17 cols
+    r0: Table 3.6: Evolution between |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence |  |  |  |  |  |  |  |  |  | 
+    r2:  | Rwanda | urban | Rural |  |  |  |  |  |  |  | 
+    r3: Year of census |  |  |  |  |  |  |  |  |  |  | 
+    r4: 1978 | 1 055 950 | 48 643 | 1 007 307 |  |  |  |  |  |  |  | 
+    r5: 1991 | 1 502 153 | 90 198 | 1 411 955 |  |  |  |  |  |  |  | 
+  -- sheet 'Table 3.7': 12 rows x 17 cols
+    r0:  | Table 3.7: Resident populati |  |  |  |  |  |  |  |  |  | 
+    r1:  | Sex | Area of Residence (count) |  |  | Area of Residence (%) |  |  |  |  |  | 
+    r2:  |  | Rwanda | Urban | Rural | Rwanda | Urban | Rural |  |  |  | 
+    r3:  | Both Sexes | 13246394 | 3701245 | 9545149 | 100 | 27.941528841736098 | 72.0584711582639 |  |  |  | 
+    r4:  | Male | 6429326 | 1854525 | 4574801 | 100 | 28.84478093038057 | 71.15521906961942 |  |  |  | 
+    r5:  | Female | 6817068 | 1846720 | 4970348 | 100 | 27.08965203222265 | 72.91034796777734 |  |  |  | 
+  -- sheet 'Table 3.8': 41 rows x 17 cols
+    r0: Table 3.8 : Size and percent |  |  |  |  |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  |  |  |  | 
+    r2: Province and District | Count |  |  | % |  |  |  |  |  |  | 
+    r3:  | Total | Urban | Rural | Total | Urban | Rural |  |  |  |  | 
+    r4: RWANDA | 13246394 | 3701245 | 9545149 | 100 | 27.9415288417361 | 72.0584711582639 |  |  |  |  | 
+    r5: City of Kigali | 1745555 | 1517168 | 228387 | 100 | 86.91608113178903 | 13.08391886821097 |  |  |  |  | 
+  -- sheet 'Table 3.9': 12 rows x 17 cols
+    r0: Table 3.9: Resident Populati |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province | Total | Total | Total | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r2:  | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes |  | 
+    r3: RWANDA | 6429326 | 6817068 | 13246394 | 1854525 | 1846720 | 3701245 | 4574801 | 4970348 | 9545149 |  | 
+    r4: Kigali City | 888882 | 856673 | 1745555 | 771661 | 745507 | 1517168 | 117221 | 111166 | 228387 |  | 
+    r5: South | 1448455 | 1554244 | 3002699 | 223963 | 220143 | 444106 | 1224492 | 1334101 | 2558593 |  | 
+  -- sheet 'Table 3.10': 40 rows x 17 cols
+    r0: Table3.10: Distribution of t |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and District | Sex (count) |  |  | Sex (%) |  |  |  |  |  |  | 
+    r2:  | Both Sexes | Male | Female | Both Sexes | Male | Female |  |  |  |  | 
+    r3: RWANDA | 13246394 | 6429326 | 6817068 | 100 | 48.536424328009566 | 51.46357567199043 |  |  |  |  | 
+    r4: Kigali City | 1745555 | 888882 | 856673 | 100 | 50.9226005482497 | 49.0773994517503 |  |  |  |  | 
+    r5: Nyarugenge | 374319 | 195780 | 178539 | 100 | 52.30298221570372 | 47.69701778429628 |  |  |  |  | 
+  -- sheet 'Table 3.11': 40 rows x 17 cols
+    r0: Table 3.11: Size of the popu |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and Disrict | Total | Total | Total | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r2:  | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female |  | 
+    r3: RWANDA | 13246394 | 6429326 | 6817068 | 3701245 | 1854525 | 1846720 | 9545149 | 4574801 | 4970348 |  | 
+    r4: Kigali City | 1745555 | 888882 | 856673 | 1517168 | 771661 | 745507 | 228387 | 117221 | 111166 |  | 
+    r5: Nyarugenge | 374319 | 195780 | 178539 | 315899 | 162043 | 153856 | 58420 | 33737 | 24683 |  | 
+  -- sheet 'Table 3.12': 12 rows x 18 cols
+    r0: Table 3.12: Distribution in  |  |  |  |  |  |  |  |  |  |  | 
+    r1: Size Interval | sectors(Counts) | Sectors(%) | Population Size By Sex |  |  |  |  |  |  |  | 
+    r2:  |  | sectors(%) | Male | Female | Both Sexes |  |  |  |  |  | 
+    r3: 10,000-29,999 | 231 | 55.52884615384615 | 2434442 | 2660394 | 5094836 |  |  |  |  |  | 
+    r4: 30,000-49,999 | 140 | 33.65384615384615 | 2472846 | 2642972 | 5115818 |  |  |  |  |  | 
+    r5: 50,000-69,999 | 26 | 6.25 | 742433 | 724552 | 1466985 |  |  |  |  |  | 
+  -- sheet 'Table 3.13': 45 rows x 17 cols
+    r0: Table 3.13 : Physiological p |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and District | Population size | Population density (Inhabita |  |  |  |  |  |  |  |  | 
+    r2:  |  |  |  |  |  |  |  |  |  |  | 
+    r3: RWANDA | 13246394 | 502.93849191282555 |  |  |  |  |  |  |  |  | 
+    r4: City of Kigali | 1745555 | 2400.9057846726755 |  |  |  |  |  |  |  |  | 
+    r5: Nyarugenge | 374319 | 2830.411281504319 |  |  |  |  |  |  |  |  | 
+  -- sheet 'Table 4.1': 24 rows x 16 cols
+    r0:  | Table 4.1 : Resident populat |  |  |  |  |  |  |  |  |  | 
+    r1:  | 5 Years Age Group | Area of Residence |  |  |  |  |  |  |  |  | 
+    r2:  |  | Total | Total | Total | Urban | Urban | Urban | Rural | Rural | Rural | 
+    r3:  |  | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female | 
+    r4:  | Rwanda | 13246394 | 6429326 | 6817068 | 3701245 | 1854525 | 1846720 | 9545149 | 4574801 | 4970348 | 
+    r5:  | 0-4 | 1708460 | 856228 | 852232 | 476206 | 238913 | 237293 | 1232254 | 617315 | 614939 | 
+  -- sheet 'Table 4.2': 24 rows x 17 cols
+    r0: Table 4.2 : Sex ratios of th |  |  |  |  |  |  |  |  |  |  | 
+    r1: 5-years age-group (Years) | Area of Residence |  |  |  |  |  |  |  |  |  | 
+    r2:  | Rwanda | Urban | Rural |  |  |  |  |  |  |  | 
+    r3: Rwanda | 94.31218817239318 | 100.42264122335818 | 92.04186507665057 |  |  |  |  |  |  |  | 
+    r4: 0-4 | 100.46888640651841 | 100.68270029035833 | 100.38637978726345 |  |  |  |  |  |  |  | 
+    r5: 5-9 | 100.20917490939294 | 100.63435369404061 | 100.0646544229 |  |  |  |  |  |  |  | 
+  -- sheet 'Table 4.3': 28 rows x 17 cols
+    r0:  | Table 4.3: Mean and median a |  |  |  |  |  |  |  |  |  | 
+    r1:  | Province and Area of residen | Mean Age |  |  | Median Age |  |  |  |  |  | 
+    r2:  |  | Male | Female | Both Sexes | Male | Female | Both Sexes |  |  |  | 
+    r3:  | RWANDA |  |  |  |  |  |  |  |  |  | 
+    r4:  | Urban | 24.0400048529947 | 24.01202293796569 | 24.02604339891037 | 22 | 21 | 22 |  |  |  | 
+    r5:  | Rural | 23.57246315194912 | 25.93297752994358 | 24.80162970740425 | 18 | 20 | 19 |  |  |  | 
+  -- sheet 'Table 4.4 ': 42 rows x 17 cols
+    r0:  | Table 4.4 : Mean and median  |  |  |  |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  |  |  |  | 
+    r2:  | Province and District | Mean Age |  |  | Median Age |  |  |  |  |  | 
+    r3:  |  | Male | Female | Both Sexes | Male | Female | Both Sexes |  |  |  | 
+    r4:  | RWANDA |  |  |  |  |  |  |  |  |  | 
+    r5:  | Total | 23.7073245313739 | 25.41259761527976 | 24.58491903532388 | 19 | 21 | 20 |  |  |  | 
+  -- sheet 'Table 4.5': 12 rows x 17 cols
+    r0: Table 4.5: Age dependency ra |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province | Area of Residence |  |  |  |  |  |  |  |  |  | 
+    r2:  | Urban | Rural | Total |  |  |  |  |  |  |  | 
+    r3: RWANDA | 67.89696771202564 | 94.45255584490405 | 86.22263416354066 |  |  |  |  |  |  |  | 
+    r4: Kigali City | 56.00987987438329 | 84.10437474305337 | 59.188261204612715 |  |  |  |  |  |  |  | 
+    r5: South | 70.60068608130793 | 95.18415758802801 | 91.11107575198258 |  |  |  |  |  |  |  | 
+  -- sheet 'Table 4.6': 12 rows x 17 cols
+    r0: Table 4.6: Age dependency ra |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province | Area of Residence |  |  |  |  |  |  |  |  |  | 
+    r2:  | Urban | Rural | Total |  |  |  |  |  |  |  | 
+    r3: RWANDA | 58.41773373629238 | 76.72042376692448 | 71.19393035666883 |  |  |  |  |  |  |  | 
+    r4: Kigali City | 49.447440614272274 | 70.43424400946247 | 51.894642129921294 |  |  |  |  |  |  |  | 
+    r5: South | 58.9692374877401 | 75.9142084148358 | 73.18390998840134 |  |  |  |  |  |  |  | 
+  -- sheet 'Table 4.7': 31 rows x 17 cols
+    r0:  | Table4.7: Number and populat |  |  |  |  |  |  |  |  |  | 
+    r1:  |  | Population | Population | Population | Percent | Percent | Percent |  |  |  | 
+    r2:  |  | Both sexes | Male | Female | Both sexes | Male | Female |  |  |  | 
+    r3:  | Total Resident Population | 13246394 | 6429326 | 6817068 | 100 | 48.53642432800957 | 51.46357567199043 |  |  |  | 
+    r4:  | <1 | 339900 | 170246 | 169654 | 2.565981353113912 | 1.28522524696155 | 1.280756106152361 |  |  |  | 
+    r5:  | <5 | 1708460 | 856228 | 852232 | 12.89754781565458 | 6.463857258058306 | 6.433690557596279 |  |  |  | 
+  -- sheet 'Table 5.1 ': 19 rows x 11 cols
+    r0: Table 5.1: Resident populati |  |  |  |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  |  |  | 
+    r2:  |  |  |  |  |  |  |  |  |  | 
+    r3: Nationality | Rwanda (Counts) |  |  | Percentage (%) | Urban(counts) |  |  | Rural (Counts) |  | 
+    r4:  | Male | Female | Total |  | Male | Female | Total | Male | Female | Total
+    r5: Rwanda | 6369410 | 6759609 | 13129019 | 99.11 | 1832608 | 1829437 | 3662045 | 4536802 | 4930172 | 9466974
+  -- sheet 'Table 5.2': 42 rows x 17 cols
+    r0: Table 5.2: Foreign populatio |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and District | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence |  |  |  |  | 
+    r2:  | Counts |  |  | Population share (% ) |  |  |  |  |  |  | 
+    r3:  | Total | Urban | Rural | Total | Urban | Rural |  |  |  |  | 
+    r4:  |  |  |  |  |  |  |  |  |  |  | 
+    r5: Rwanda | 534574 | 219526 | 315048 | 100 | 100 | 100 |  |  |  |  | 
+  -- sheet 'Table C1': 28 rows x 17 cols
+    r0: Table C 1 Resident populatio |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and Area of Residen | Present Residents(PR) | Present Residents(PR) | Present Residents(PR) | Absent Residents (AR) | Absent Residents (AR) | Absent Residents (AR) | Visitors (Vis) | Visitors (Vis) | Visitors (Vis) |  | 
+    r2:  | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes |  | 
+    r3: RWANDA |  |  |  |  |  |  |  |  |  |  | 
+    r4: Urban | 1743810 | 1770792 | 3514602 | 110715 | 75928 | 186643 | 92069 | 88257 | 180326 |  | 
+    r5: Rural | 4298343 | 4785540 | 9083883 | 276458 | 184808 | 461266 | 118975 | 117898 | 236873 |  | 
+  -- sheet 'Table C2': 40 rows x 17 cols
+    r0: Table C 2 Enumerated populat |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and Area of Residen | Present Residents(PR) | Present Residents(PR) | Present Residents(PR) | Absent Residents (AR) | Absent Residents (AR) | Absent Residents (AR) | Visitors (Vis) | Visitors (Vis) | Visitors (Vis) |  | 
+    r2:  | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes |  | 
+    r3: RWANDA | 6042153 | 6556332 | 12598485 | 387173 | 260736 | 647909 | 211044 | 206155 | 417199 |  | 
+    r4: City of Kigali |  |  |  |  |  |  |  |  |  |  | 
+    r5: Nyarugenge | 186901 | 172086 | 358987 | 8879 | 6453 | 15332 | 10574 | 9406 | 19980 |  | 
+  -- sheet 'Table C3': 43 rows x 17 cols
+    r0: Table C 3 Enumerated populat |  |  |  |  |  |  |  |  |  |  | 
+    r1: Province and Area of Residen | Total private + Institutiona | Total private + Institutiona | Total private + Institutiona | Private | Private | Private | Institutional | Institutional | Institutional |  | 
+    r2:  | Present Residents (PR) | Absent Residents (AR) | Visitors (Vis) | Present Residents (PR) | Absent Residents (AR) | Visitors (Vis) | Present Residents (PR) | Absent Residents (AR) | Visitors (Vis) |  | 
+    r3: RWANDA | 12598485 | 647909 | 417199 | 12455630 | 644970 | 414188 | 142855 | 2939 | 3011 |  | 
+    r4: City of Kigali |  |  |  |  |  |  |  |  |  |  | 
+    r5: Nyarugenge | 358987 | 15332 | 19980 | 344325 | 15198 | 19847 | 14662 | 134 | 133 |  | 
+  -- sheet 'Table C4': 116 rows x 16 cols
+    r0: Table C 4 Resident populatio |  |  |  |  |  |  |  |  |  |  | 
+    r1: Age(Years) | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r2:  | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes |  | 
+    r3: 0 | 170246 | 169654 | 339900 | 49493 | 49314 | 98807 | 120753 | 120340 | 241093 |  | 
+    r4: 1 | 163361 | 161904 | 325265 | 46117 | 45911 | 92028 | 117244 | 115993 | 233237 |  | 
+    r5: 2 | 168408 | 167231 | 335639 | 47070 | 46699 | 93769 | 121338 | 120532 | 241870 |  | 
+  -- sheet 'Table C5': 118 rows x 17 cols
+    r0: Table C 5 Resident populatio |  |  |  |  |  |  |  |  |  |  | 
+    r1: Age(Years) | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r2:  | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes |  | 
+    r3: 0 | 2.647960299415522 | 2.488665215016192 | 2.565981353113912 | 2.668769631037597 | 2.670356090798822 | 2.669561188194783 | 2.639524648175954 | 2.421158438000719 | 2.525817040676892 |  | 
+    r4: 1 | 2.54087286910012 | 2.374979976728998 | 2.455498454900254 | 2.486728407543711 | 2.486083434413446 | 2.486406601022088 | 2.56282185826225 | 2.333699773134597 | 2.443513453797316 |  | 
+    r5: 2 | 2.619372543871628 | 2.453122075355564 | 2.533814108201824 | 2.538116229223117 | 2.528753682204124 | 2.533444827348635 | 2.65231208964062 | 2.42502134659384 | 2.533957301242757 |  | 
+  -- sheet 'Table C6': 24 rows x 17 cols
+    r0: Table C6 Resident population |  |  |  |  |  |  |  |  |  |  | 
+    r1: 5-Years Age Group (Years) | Total | Total | Total | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r2:  | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes |  | 
+    r3: 0-4 | 13.31753903908434 | 12.50144490270597 | 12.89754781565458 | 12.88270581415726 | 12.84943034136198 | 12.86610316258448 | 13.49381098762547 | 12.37215180908862 | 12.90974085370485 |  | 
+    r4: 5-9 | 13.21116708034404 | 12.43373250787582 | 12.81107145084164 | 11.66800124020976 | 11.64345434066886 | 11.65575367207521 | 13.83673300762153 | 12.72735832581542 | 13.25905965428093 |  | 
+    r5: 10-14 | 12.06614814678864 | 11.37695853994708 | 11.7114665319482 | 9.619660020760033 | 9.859372292496968 | 9.739263410014738 | 13.05790131636327 | 11.9408138021724 | 12.47621173854908 |  | 
+  -- sheet 'Table C7': 24 rows x 17 cols
+    r0: Table C7 Resident population |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence |  | 
+    r2:  | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r3: Age group | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r4: Total | 1745555 | 888882 | 856673 | 1517168 | 771661 | 745507 | 228387 | 117221 | 111166 |  | 
+    r5: 0-4 | 219065 | 110151 | 108914 | 189291 | 95176 | 94115 | 29774 | 14975 | 14799 |  | 
+  -- sheet 'Table C8': 24 rows x 17 cols
+    r0: Table C8 Resident population |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence |  | 
+    r2:  | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r3: Age group | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r4: Total | 3002699 | 1448455 | 1554244 | 444106 | 223963 | 220143 | 2558593 | 1224492 | 1334101 |  | 
+    r5: 0-4 | 374250 | 187557 | 186693 | 53648 | 26917 | 26731 | 320602 | 160640 | 159962 |  | 
+  -- sheet 'Table C9': 24 rows x 17 cols
+    r0: Table C9 Resident population |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence |  | 
+    r2:  | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r3: Age group | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r4: Total | 2896484 | 1384635 | 1511849 | 640307 | 312001 | 328306 | 2256177 | 1072634 | 1183543 |  | 
+    r5: 0-4 | 380824 | 190262 | 190562 | 87028 | 43710 | 43318 | 293796 | 146552 | 147244 |  | 
+  -- sheet 'Table C10': 24 rows x 17 cols
+    r0: Table C10 Resident populatio |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence |  | 
+    r2:  | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r3: Age group | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r4: Total | 2038511 | 972960 | 1065551 | 353729 | 170807 | 182922 | 1684782 | 802153 | 882629 |  | 
+    r5: 0-4 | 249828 | 125037 | 124791 | 45255 | 22580 | 22675 | 204573 | 102457 | 102116 |  | 
+  -- sheet 'Table C11': 24 rows x 17 cols
+    r0: Table C11 Resident populatio |  |  |  |  |  |  |  |  |  |  | 
+    r1:  | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence | Area of residence |  | 
+    r2:  | Rwanda | Rwanda | Rwanda | Urban | Urban | Urban | Rural | Rural | Rural |  | 
+    r3: Age group | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r4: Total | 3563145 | 1734394 | 1828751 | 745935 | 376093 | 369842 | 2817210 | 1358301 | 1458909 |  | 
+    r5: 0-4 | 484493 | 243221 | 241272 | 100984 | 50530 | 50454 | 383509 | 192691 | 190818 |  | 
+  -- sheet 'Table C12': 45 rows x 17 cols
+    r0: Table C 12 Resident populati |  |  |  |  |  |  |  |  |  |  | 
+    r1: Sex and Nationality | Counts | Frequency | Frequency | Percent(%) | Percent | Percent |  |  |  |  | 
+    r2:  | Total | Urban | Rural | Total | Urban | Rural |  |  |  |  | 
+    r3: Male |  |  |  |  |  |  |  |  |  |  | 
+    r4: Rwanda | 6369410 | 1832608 | 4536802 | 99.06808271971276 | 98.81818794570039 | 99.16938463552842 |  |  |  |  | 
+    r5: Burundi | 23230 | 5870 | 17360 | 0.3613131454214641 | 0.3165230989067281 | 0.3794700578232802 |  |  |  |  | 
+  -- sheet 'Table D1': 485 rows x 17 cols
+    r0:  |  |  |  |  |  |  |  |  |  |  | 
+    r1: Table D1: Distribution of th |  |  |  |  |  |  |  |  |  |  | 
+    r2: Province and District | Area of residence |  |  |  |  |  |  |  |  |  | 
+    r3:  | Total |  |  | Urban |  |  | Rural |  |  |  | 
+    r4:  | Both sexes | Male | Female | Both sexes | Male | Female | Both sexes | Male | Female |  | 
+    r5:  |  |  |  |  |  |  |  |  |  |  | 
