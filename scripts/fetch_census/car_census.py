@@ -2,33 +2,45 @@
 """Central African Republic -- the 2021 census mapping's count, and 2016 ages.
 
 The map draws the 17 prefectures and 72 sub-prefectures of the 2003 census
-(RGPH03), whose religion, language and ethnicity car_prefecture.json already
-reads from the U.S. Census Bureau's workbook for the CAR on HDX. The same
-workbook carries two more sheets this reads:
+(RGPH03), whose religion, language and ethnicity car_prefecture.json reads.
+Their populations were OCHA's 2015 projection (69 of 72), and nothing gave a
+median age or a sex ratio at either level.
 
-* **Population**: the Institut Centrafricain des Statistiques et des Etudes
-  Economiques et Sociales (ICASEES), *RGPH-4: Principaux résultats de la
-  cartographie 2021* (2022) -- the people counted at the mapping stage of the
-  fourth census, by sex, as of 1 March 2021, for 20 prefectures, 79
-  sub-prefectures and 181 communes. That is a count by the statistics office,
-  newer than OCHA's 2015 projection on the sub-prefectures, and the only sex
-  ratio anywhere for the country's units.
-* **Age-Sex**: ICASEES, *Annuaire statistique de la République Centrafricaine
-  2016* (2018), tables 110-116: the administrative population by prefecture,
-  sex and five-year age group at 31 December 2016 -- an estimate, which gives
-  the 17 prefectures a median age where nothing else does, provided each
-  prefecture has an age structure of its own (tested below).
+**Population, 2021.** The Institut Centrafricain des Statistiques et des
+Etudes Economiques et Sociales (ICASEES) counted the population at the mapping
+stage of the fourth census (RGPH-4 cartography, reference date 1 March 2021)
+and published it by commune. OCHA's edition of that table
+(``icasees_cartocensitaire2021_formatocha_public_V2.xlsx`` in cod-ps-caf)
+carries it twice: on the communes of 2021 and, in its sheet ``PrevCommune``, on
+the 177 communes of the 2003 frame with their P-codes -- the frame the map
+draws. A sub-prefecture polygon takes the sum of its 2003 communes; Bangui,
+whose eight arrondissements OCHA's frame lists apart, takes all eight; a
+prefecture takes its sub-prefectures.
 
-**2021 onto 2003.** In 2020 three prefectures were made out of old ones
-(Mambéré, Lim-Pendé, Ouham-Fafa) and seven sub-prefectures out of old ones.
-Communes carry the lineage: each of the 2021 communes is found among the 2003
-census's communes of the same name inside the old prefecture it descends from,
-and so in its 2003 sub-prefecture -- the polygon. A 2021 commune with no 2003
-namesake takes the 2003 sub-prefecture its own 2021 sub-prefecture's other
-communes all lie in; where they do not all lie in one, the polygons concerned
-get no figure and say why. A 2003 sub-prefecture is the sum of the 2021
-communes it holds; the sums are checked against every 2021 sub-prefecture and
-prefecture the table prints whole.
+That assignment is checked independently on every run against the U.S.
+Census Bureau's workbook for the CAR (the same count by 2021 commune,
+sub-prefecture and prefecture): each 2021 commune is found among the 2003
+communes of the same name inside the prefecture it descends from, a commune
+with no 2003 namesake goes with its 2021 sub-prefecture's other communes, and
+Bégoua -- made a sub-prefecture of Bangui in 2020, with no 2003 namesake and
+no siblings -- goes to Bimbo, whose 2003 polygon surrounds Bangui and holds
+it. The two assignments must agree on every polygon, and both must add up to
+the national line, or nothing is written.
+
+**No sex ratio from it.** The mapping table splits every unit's count into
+men and women in one fixed proportion (49 to 51 to the person, urban and rural
+alike), so it describes no unit's sexes; the run checks that this is still so
+and says it on every record.
+
+**Prefectures' ages and sexes, 2016.** ICASEES's *Annuaire statistique de la
+République Centrafricaine 2016* (2018), tables 110-116, gives the
+administrative population of each of the 17 prefectures by sex and five-year
+age group at 31 December 2016 -- an estimate, not a count -- as the Census
+Bureau's workbook tabulates it (sheet ``Age-Sex``). A median is taken by
+interpolation within the five-year group holding the middle person, and only
+for a prefecture whose age proportions are its own: one that shares them with
+the country or with another prefecture to within COPY_TOLERANCE points in
+every group is left out (cod_ps_age's test).
 
 Usage:
     python -m scripts.fetch_census.car_census [--dump]
@@ -43,33 +55,50 @@ import json
 from collections import defaultdict
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, http_json, log, measure, record, write_json
 from .binding import bind, fold
-from .cod_ps_age import grouped_median, same_structure
+from .cod_ps_age import COPY_TOLERANCE, grouped_median, same_structure
 from .uscb import dataset_url, number, sheet_rows, workbook_url
 
-DATASET = "car-subnational-boundaries-and-tabular-data"
+USCB_DATASET = "car-subnational-boundaries-and-tabular-data"
+OCHA_DATASET = "cod-ps-caf"
+HDX_API = "https://data.humdata.org/api/3/action"
 OUT = "car_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 COUNT_YEAR = 2021
 AGE_YEAR = 2016
 COUNT_SOURCE = ("Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales "
-                "(ICASEES), RGPH-4: Principaux résultats de la cartographie 2021 (2022), as "
-                "tabulated by the U.S. Census Bureau")
+                "(ICASEES), RGPH-4: Principaux résultats de la cartographie 2021 (2022), "
+                "population by commune of the 2003 frame, as OCHA publishes it")
 AGE_SOURCE = ("Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales "
               "(ICASEES), Annuaire statistique de la République Centrafricaine 2016 (2018), "
               "tables 110-116, as tabulated by the U.S. Census Bureau")
 LICENCE = "CC BY-IGO, published via HDX"
 
-# The 2021 prefectures made in 2020 out of 2003 ones, as their communes show
-# (checked on every run: each new prefecture's communes must all be found in
-# the one old prefecture named here).
+# The 2021 prefectures made in 2020 out of 2003 ones (checked on every run).
 NEW_PREFECTURES = {"mambere": "mamberekadei", "limpende": "ouhampende", "ouhamfafa": "ouham"}
+# A 2021 commune with no 2003 namesake and no siblings to place it by, and the
+# 2003 sub-prefecture whose polygon holds it: Bégoua, 12 km north of Bangui's
+# centre, inside the 3,037 km2 polygon drawn as Bimbo, which surrounds the
+# 71 km2 city (measured on the CGAZ polygons).
+PLACED = {("bangui", "begoua"): ("ombellampoko", "bimbo")}
 
-# The 2003 census's sub-prefecture names the boundary file spells otherwise
-# (car_prefecture's own list, read off the two sets of leftovers).
+# 2003 sub-prefecture names the boundary file spells otherwise.
 SP_ALIASES = {"Aba": "Abba", "Bossemptele": "Bossemtélé", "Nanga-Boguila": "Nagha Boguila",
-              "Ndjoukou": "Djoukou"}
+              "Ndjoukou": "Djoukou", "Dede Mokouba": "Dédé-Mokouba", "Kaga Bandoro": "Kaga-Bandoro",
+              "Ouanda Djalle": "Ouanda-Djallé", "Dede-Mokouba": "Dédé-Mokouba"}
+# The fixed proportion of men in every unit of the mapping table, and how far
+# a unit may sit from it (rounding of whole people) before the table is taken
+# to describe sexes after all.
+FIXED_MALE_SHARE = 0.49
+FIXED_SLACK = 0.0005
+
+SEX_GAP = ("The 2021 census mapping's table splits every unit's count into men and women in "
+           "one fixed proportion (49 to 51), so it gives no sex ratio of this sub-prefecture's "
+           "own; the statistics office's 2016 estimates by sex stop at the prefecture.")
+AGE_GAP = ("No table reached gives ages below the prefecture: the statistics office's 2016 "
+           "estimates by age are for the 17 prefectures, and its 2021 mapping counts carry "
+           "no ages.")
 
 
 def table(rows: list[list[Any]]) -> list[dict[str, Any]]:
@@ -79,26 +108,48 @@ def table(rows: list[list[Any]]) -> list[dict[str, Any]]:
             if any(v not in (None, "") for v in row)]
 
 
+def plain(rows: list[list[Any]]) -> list[dict[str, Any]]:
+    """An OCHA sheet: one header row."""
+    names = ["" if v is None else str(v).strip() for v in rows[0]]
+    return [{n: v for n, v in zip(names, row) if n} for row in rows[1:]
+            if any(v not in (None, "") for v in row)]
+
+
 def level(row: dict[str, Any]) -> int | None:
     value = number(row.get("ADM_LEVEL"))
     return int(value) if value is not None else None
 
 
 def text(row: dict[str, Any], key: str) -> str:
-    return str(row.get(key) or "").strip()
+    return " ".join(str(row.get(key) or "").split())
+
+
+def prev_communes(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """OCHA's PrevCommune sheet: the 2021 count on each 2003 commune."""
+    out = []
+    for row in rows:
+        total = number(row.get("T_TL"))
+        if total is None or not text(row, "Pcode3"):
+            continue
+        out.append({"pref_code": text(row, "Pcode1"), "pref": text(row, "PrevPréfecture"),
+                    "sp_code": text(row, "Pcode2"), "sp": text(row, "PrevSous-préfecture"),
+                    "code": text(row, "Pcode3"), "name": text(row, "PrevCommune"),
+                    "total": int(round(total)),
+                    "men": number(row.get("M_TL")) or 0.0, "women": number(row.get("F_TL")) or 0.0})
+    return out
 
 
 def counts_2021(rows: list[dict[str, Any]]) -> dict[str, Any]:
-    """The Population sheet: {"prefectures": {...}, "sps": {...}, "communes": [...]}."""
+    """The USCB Population sheet: the same count on the 2021 frame."""
     out: dict[str, Any] = {"country": None, "prefectures": {}, "sps": {}, "communes": []}
     for row in rows:
-        lvl = level(row)
         figures = tuple(number(row.get(k)) for k in ("POP_BTOTL", "POP_MTOTL", "POP_FTOTL"))
         if any(f is None for f in figures):
             continue
         total, men, women = (int(f) for f in figures)
         unit = {"name": text(row, "AREA_NAME"), "pref": text(row, "ADM1_NAME"),
                 "sp": text(row, "ADM2_NAME"), "total": total, "men": men, "women": women}
+        lvl = level(row)
         if lvl == 0:
             out["country"] = unit
         elif lvl == 1:
@@ -110,66 +161,62 @@ def counts_2021(rows: list[dict[str, Any]]) -> dict[str, Any]:
     return out
 
 
-def communes_2003(rows: list[dict[str, Any]]) -> dict[str, Any]:
-    """The 2003-vintage hierarchy, from a 2003 census sheet: prefectures, sps, communes."""
-    prefs: dict[str, str] = {}
-    sps: dict[tuple[str, str], str] = {}
-    communes: list[tuple[str, str, str]] = []
-    for row in rows:
-        lvl = level(row)
-        if lvl == 1:
-            prefs[fold(text(row, "AREA_NAME"))] = text(row, "AREA_NAME")
-        elif lvl == 2:
-            sps[(fold(text(row, "ADM1_NAME")), fold(text(row, "AREA_NAME")))] = text(row, "AREA_NAME")
-        elif lvl == 3:
-            communes.append((fold(text(row, "ADM1_NAME")), fold(text(row, "ADM2_NAME")),
-                             fold(text(row, "AREA_NAME"))))
-    return {"prefs": prefs, "sps": sps, "communes": communes}
+def communes_2003(rows: list[dict[str, Any]]) -> list[tuple[str, str, str]]:
+    """(prefecture, sub-prefecture, commune), folded, from a 2003-vintage sheet."""
+    return [(fold(text(r, "ADM1_NAME")), fold(text(r, "ADM2_NAME")), fold(text(r, "AREA_NAME")))
+            for r in rows if level(r) == 3]
 
 
-def crosswalk(c21: dict[str, Any], g03: dict[str, Any]) -> tuple[dict, list[str]]:
-    """2003 (pref, sp) -> its 2021 communes, and what could not be placed."""
-    old_of = {k: NEW_PREFECTURES.get(k, k) for k in c21["prefectures"]}
+def own_crosswalk(c21: dict[str, Any], g03: list[tuple[str, str, str]]
+                  ) -> tuple[dict[tuple[str, str], int], list[str]]:
+    """2003 (pref, sp) -> its 2021 count, by commune names; and what failed."""
     by_name: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
-    for pref, sp, commune in g03["communes"]:
+    anywhere: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for pref, sp, commune in g03:
         by_name[(pref, commune)].append((pref, sp))
+        anywhere[commune].append((pref, sp))
     placed: dict[int, tuple[str, str]] = {}
-    problems: list[str] = []
     for i, unit in enumerate(c21["communes"]):
-        old = old_of.get(fold(unit["pref"]))
-        hits = by_name.get((old, fold(unit["name"])), [])
+        pref, name = fold(unit["pref"]), fold(unit["name"])
+        if (pref, name) in PLACED:
+            placed[i] = PLACED[(pref, name)]
+            continue
+        hits = by_name.get((NEW_PREFECTURES.get(pref, pref), name), [])
+        if len(hits) != 1:
+            hits = anywhere.get(name, []) if not hits else hits
         if len(hits) == 1:
             placed[i] = hits[0]
-    # A new prefecture's communes must all come from the one old prefecture.
-    for new, old in NEW_PREFECTURES.items():
-        here = [i for i, u in enumerate(c21["communes"]) if fold(u["pref"]) == new]
-        if not here:
-            problems.append(f"no 2021 commune under prefecture {new}")
-        if not any(i in placed for i in here):
-            problems.append(f"none of {new}'s communes found in {old}")
-    # A commune with no 2003 namesake: by its 2021 sub-prefecture's others.
+    problems: list[str] = []
     for i, unit in enumerate(c21["communes"]):
-        if i in placed:
+        if i in placed or not unit["total"]:
             continue
+        key = (fold(unit["pref"]), fold(unit["sp"]))
         siblings = {placed[j] for j, u in enumerate(c21["communes"])
-                    if j in placed and (fold(u["pref"]), fold(u["sp"]))
-                    == (fold(unit["pref"]), fold(unit["sp"]))}
+                    if j in placed and (fold(u["pref"]), fold(u["sp"])) == key}
         if len(siblings) == 1:
             placed[i] = siblings.pop()
-            log(f"    {unit['name']} ({unit['sp']}, {unit['pref']}): no 2003 namesake; "
-                f"placed with its sub-prefecture's other communes in {placed[i][1]}")
         else:
-            problems.append(f"{unit['name']} ({unit['sp']}, {unit['pref']}): no 2003 namesake, "
-                            f"and its sub-prefecture's communes lie in {sorted(siblings) or 'none'}")
-    held: dict[tuple[str, str], list[int]] = defaultdict(list)
+            problems.append(f"{unit['name']} ({unit['sp']}, {unit['pref']}): no 2003 namesake "
+                            f"and no one place for its siblings")
+    sums: dict[tuple[str, str], int] = defaultdict(int)
     for i, key in placed.items():
-        held[key].append(i)
-    return {"held": held, "unplaced": [i for i in range(len(c21["communes"])) if i not in placed]}, problems
+        sums[key] += c21["communes"][i]["total"]
+    return dict(sums), problems
 
 
-def age_table(rows: list[dict[str, Any]]) -> dict[str, list[list[Any]]]:
-    """{prefecture (folded): [[low, high, people], ...]} from the Age-Sex sheet."""
-    out: dict[str, list[list[Any]]] = {}
+def fixed_split(c21: dict[str, Any]) -> int:
+    """How many units of the mapping table depart from the fixed 49:51 split."""
+    off = 0
+    for unit in [*c21["prefectures"].values(), *c21["sps"].values(), *c21["communes"]]:
+        if unit["total"] and abs(unit["men"] / unit["total"] - FIXED_MALE_SHARE) > max(
+                FIXED_SLACK, 1.5 / unit["total"]):
+            off += 1
+    return off
+
+
+def age_table(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """{prefecture (folded): {"groups": [[low, high, people]...], "men", "women"}}."""
+    out: dict[str, dict[str, Any]] = {}
     for row in rows:
         if level(row) != 1:
             continue
@@ -180,197 +227,226 @@ def age_table(rows: list[dict[str, Any]]) -> dict[str, list[list[Any]]]:
                 break
             groups.append([low, low + 4, cell])
         last = number(row.get("B80PL"))
-        if len(groups) != 16 or last is None:
+        men, women, total = (number(row.get(k)) for k in ("MTOTL", "FTOTL", "BTOTL"))
+        if len(groups) != 16 or last is None or not men or not women or not total:
             continue
         groups.append([80, None, last])
-        out[fold(text(row, "AREA_NAME"))] = groups
+        out[fold(text(row, "AREA_NAME"))] = {"name": text(row, "AREA_NAME"), "groups": groups,
+                                             "men": men, "women": women, "total": total}
     return out
 
 
-def build(book_rows: dict[str, list[dict[str, Any]]], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]], url: str) -> tuple[list[dict[str, Any]], list[str]]:
+def own_structures(ages: dict[str, dict[str, Any]]) -> tuple[set[str], list[str]]:
+    """The prefectures whose age proportions are their own, and the report."""
+    whole: dict[tuple[int, Any], float] = defaultdict(float)
+    for entry in ages.values():
+        for low, high, people in entry["groups"]:
+            whole[(low, high)] += people
+    national = [[lo, hi, n] for (lo, hi), n in whole.items()]
     report: list[str] = []
-    c21 = counts_2021(book_rows["Population"])
-    g03 = communes_2003(book_rows["Ethnicity"])
-    report.append(f"2021: {len(c21['prefectures'])} prefectures, {len(c21['sps'])} "
-                  f"sub-prefectures, {len(c21['communes'])} communes; 2003: {len(g03['prefs'])} "
-                  f"prefectures, {len(g03['sps'])} sub-prefectures, {len(g03['communes'])} communes")
-    # The table's own consistency: communes make their sub-prefecture, and
-    # sub-prefectures their prefecture, wherever both are printed.
-    bad = []
-    for key, sp in c21["sps"].items():
-        parts = [u for u in c21["communes"] if (fold(u["pref"]), fold(u["sp"])) == key]
-        if parts and sum(u["total"] for u in parts) != sp["total"]:
-            bad.append(f"{sp['name']}: communes {sum(u['total'] for u in parts):,}, "
-                       f"printed {sp['total']:,}")
-    for key, pref in c21["prefectures"].items():
-        parts = [u for (p, _), u in c21["sps"].items() if p == key]
-        if parts and sum(u["total"] for u in parts) != pref["total"]:
-            bad.append(f"{pref['name']}: sub-prefectures {sum(u['total'] for u in parts):,}, "
-                       f"printed {pref['total']:,}")
-    for unit in [*c21["sps"].values(), *c21["prefectures"].values(), *c21["communes"]]:
-        if unit["men"] + unit["women"] != unit["total"]:
-            bad.append(f"{unit['name']}: men and women {unit['men'] + unit['women']:,}, "
-                       f"total {unit['total']:,}")
-    report += [f"  table: {b}" for b in bad]
-    walk, problems = crosswalk(c21, g03)
-    report += [f"  crosswalk: {p}" for p in problems]
+    copied: set[str] = set()
+    keys = sorted(ages)
+    for k in keys:
+        if same_structure(ages[k]["groups"], national):
+            copied.add(k)
+            report.append(f"  ages: {ages[k]['name']} carries the national proportions")
+    for i, a in enumerate(keys):
+        for b in keys[i + 1:]:
+            if same_structure(ages[a]["groups"], ages[b]["groups"]):
+                copied |= {a, b}
+                report.append(f"  ages: {ages[a]['name']} and {ages[b]['name']} share one "
+                              f"structure (within {COPY_TOLERANCE} points)")
+    return set(keys) - copied, report
 
-    # The map's polygons for the 2003 sub-prefectures.
+
+def ocha_workbook_url() -> str:
+    body = http_json(f"{HDX_API}/package_show?id={OCHA_DATASET}")
+    found = [r for r in body["result"].get("resources", [])
+             if "cartocensitaire" in str(r.get("name") or "").lower()]
+    if not found:
+        raise SystemExit(f"car_census: {OCHA_DATASET} no longer carries the 2021 mapping table")
+    return found[0]["url"]
+
+
+def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, str, str]],
+          ages: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
+          admin2: list[dict[str, Any]], ocha_url: str, uscb_url: str
+          ) -> tuple[list[dict[str, Any]], list[str]]:
+    report: list[str] = []
+    country = c21["country"]["total"] if c21.get("country") else None
+    made = sum(c["total"] for c in prev)
+    report.append(f"PrevCommune: {len(prev)} communes of the 2003 frame, {made:,} people; "
+                  f"the national line {country:,}" if country else f"PrevCommune: {made:,}")
+    if country is not None and made != country:
+        raise SystemExit(f"car_census: the 2003-frame communes make {made:,}, the country "
+                         f"{country:,}")
+    off = fixed_split(c21)
+    units = len(c21["prefectures"]) + len(c21["sps"]) + len(c21["communes"])
+    report.append(f"mapping table: {off} of {units} units depart from the fixed "
+                  f"{FIXED_MALE_SHARE:.0%} share of men")
+    if off > 0.05 * units:
+        raise SystemExit("car_census: the mapping table now gives units their own sexes; "
+                         "read its sex ratios instead of withholding them")
+    # Duplicate figures, named for anyone reading the run.
+    seen: dict[int, list[str]] = defaultdict(list)
+    for c in prev:
+        if c["total"] >= 1000:
+            seen[c["total"]].append(f"{c['name']} ({c['sp']})")
+    for total, names in sorted(seen.items()):
+        if len(names) > 1:
+            report.append(f"  the same count, {total:,}, for {' and '.join(names)}")
+
+    # OCHA's assignment, by 2003 sub-prefecture.
+    by_sp: dict[str, dict[str, Any]] = {}
+    for c in prev:
+        entry = by_sp.setdefault(c["sp_code"], {"name": c["sp"], "pref": c["pref"],
+                                               "pref_code": c["pref_code"], "total": 0,
+                                               "communes": []})
+        entry["total"] += c["total"]
+        entry["communes"].append(c)
+    # The independent assignment from the Census Bureau's 2021 frame.
+    mine, problems = own_crosswalk(c21, g03)
+    report += [f"  own crosswalk: {p}" for p in problems]
+
     parents = {u["id"]: u["name"] for u in admin1}
     pref_poly = {fold(u["name"]): u for u in admin1}
-    pref_poly.setdefault("ombellampoko", next((u for u in admin1 if fold(u["name"]).startswith(
-        "ombellam")), None))
-    departments = {}
-    for (pref, sp), name in g03["sps"].items():
-        poly = pref_poly.get(pref)
-        departments[f"{pref}/{sp}"] = (name.title() if name.isupper() else name,
-                                       poly["name"] if poly else "")
-    aliases = {k.title() if k.isupper() else k: v for k, v in SP_ALIASES.items()}
-    bound, missing = bind(departments, admin2, parents,
-                          {**aliases, **{k.upper(): v for k, v in SP_ALIASES.items()}})
+    bangui1 = pref_poly.get("bangui")
+    bangui2 = next((u for u in admin2 if bangui1 and u["parent"] == bangui1["id"]), None)
+    departments = {code: (e["name"], next((u["name"] for k, u in pref_poly.items()
+                                           if k == fold(e["pref"])), ""))
+                   for code, e in by_sp.items() if fold(e["pref"]) != "bangui"}
+    bound, missing = bind(departments, admin2, parents, SP_ALIASES)
     report += [f"  not bound to a polygon: {m}" for m in missing]
+    if missing:
+        raise SystemExit("car_census: sub-prefectures left without a polygon: " + ", ".join(missing))
+    groups: dict[str, list[str]] = defaultdict(list)
+    for code, sid in bound.items():
+        groups[sid].append(code)
+    if bangui2:
+        groups[bangui2["id"]] = [code for code, e in by_sp.items() if fold(e["pref"]) == "bangui"]
 
+    cite_count = [{"field": "population", "name": COUNT_SOURCE,
+                   "url": f"https://data.humdata.org/dataset/{OCHA_DATASET}", "year": COUNT_YEAR,
+                   "license": LICENCE}]
     records: list[dict[str, Any]] = []
-    cite_count = [{"field": "population/sex_ratio", "name": COUNT_SOURCE, "url": url,
-                   "year": COUNT_YEAR, "license": LICENCE}]
     shapes2 = {u["id"]: u for u in admin2}
-    for code, sid in sorted(bound.items(), key=lambda kv: kv[0]):
-        pref, sp = code.split("/")
+    disagree = []
+    pref_totals: dict[str, int] = defaultdict(int)
+    for sid, codes in sorted(groups.items()):
         shape = shapes2[sid]
-        idx = walk["held"].get((pref, sp), [])
-        if not idx:
-            note = (f"No commune counted at the 2021 census mapping can be placed in "
-                    f"{shape['name']} as the 2003 census drew it, so no 2021 count is shown.")
-            records.append(record(f"CAF-RGPH4-{sid}", shape["name"], level="admin2",
-                                  parent="CAF", country="CAF", match_by="shape_id",
-                                  shape_id=sid, population=gap(NOT_AVAILABLE, note),
-                                  sex_ratio=gap(NOT_AVAILABLE, note), sources=cite_count))
-            report.append(f"  {shape['name']}: no 2021 commune")
-            continue
-        units = [c21["communes"][i] for i in idx]
-        total = sum(u["total"] for u in units)
-        men = sum(u["men"] for u in units)
-        women = sum(u["women"] for u in units)
-        sps21 = sorted({u["sp"] for u in units})
-        # The 2021 sub-prefectures this polygon takes, each whole or in part.
-        same = (len(sps21) == 1 and fold(sps21[0]) == sp
-                and len(idx) == sum(1 for u in c21["communes"] if (fold(u["pref"]),
-                                    fold(u["sp"])) == (fold(units[0]["pref"]), fold(units[0]["sp"]))))
-        if same:
-            note = (f"The people counted in {shape['name']} sub-prefecture at the mapping stage "
-                    f"of the fourth general census (RGPH-4), 1 March 2021.")
+        total = sum(by_sp[c]["total"] for c in codes)
+        pref = fold(by_sp[codes[0]]["pref"])
+        sp = fold(by_sp[codes[0]]["name"]) if len(codes) == 1 else "bangui"
+        theirs = mine.get((pref, sp))
+        if theirs != total:
+            disagree.append(f"{shape['name']}: OCHA's 2003 communes {total:,}, the 2021 "
+                            f"communes by name {theirs}")
+        pref_totals[pref] += total
+        communes = [c for code in codes for c in by_sp[code]["communes"]]
+        if not total:
+            note = (f"The 2021 census mapping counted no one in the communes of {shape['name']}.")
+            pop = gap(NOT_AVAILABLE, note)
         else:
-            parts = ", ".join(f"{u['name']} ({u['sp']})" for u in units)
+            pop = measure(total, year=COUNT_YEAR, source=COUNT_SOURCE)
+        if len(codes) > 1:
+            note = (f"The people counted at the mapping stage of the fourth general census "
+                    f"(RGPH-4), 1 March 2021, in Bangui's eight arrondissements together.")
+        elif len(communes) > 1:
+            names = ", ".join(f"{c['name']} {c['total']:,}" for c in communes)
             note = (f"The people counted at the mapping stage of the fourth general census "
                     f"(RGPH-4), 1 March 2021, in the communes of {shape['name']} as the 2003 "
-                    f"census drew it, added up: {parts}. Sub-prefectures made since 2003 are "
-                    f"drawn here inside the ones they were made from.")
+                    f"census drew it, added up ({names}); sub-prefectures made since 2003 are "
+                    f"counted inside the one they were made from.")
+        else:
+            note = (f"The people counted in {shape['name']} at the mapping stage of the fourth "
+                    f"general census (RGPH-4), 1 March 2021, on its ground as the 2003 census "
+                    f"drew it.")
         records.append(record(
             f"CAF-RGPH4-{sid}", shape["name"], level="admin2", parent="CAF", country="CAF",
-            match_by="shape_id", shape_id=sid,
-            population=measure(total, year=COUNT_YEAR, source=COUNT_SOURCE),
-            population_note=note,
-            sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
-                              year=COUNT_YEAR, source=COUNT_SOURCE),
-            sex_ratio_note=("Men per 1,000 women counted at the mapping stage of the fourth "
-                            "general census (RGPH-4), 1 March 2021."),
+            match_by="shape_id", shape_id=sid, population=pop,
+            **({"population_note": note} if total else {}),
+            sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
             sources=cite_count))
-        report.append(f"  {shape['name']}: {total:,} ({len(units)} communes"
-                      + ("" if same else f"; 2021 sub-prefectures {', '.join(sps21)}") + ")")
+        report.append(f"  {shape['name']}: {total:,} ({len(communes)} communes of 2003)")
+    report += [f"  disagreement: {d}" for d in disagree]
+    if disagree:
+        raise SystemExit(f"car_census: OCHA's assignment and the commune names disagree on "
+                         f"{len(disagree)} polygons")
 
-    # Prefectures: the 2021 prefectures each old one became, summed.
-    ages = age_table(book_rows["Age-Sex"])
-    if ages:
-        whole: dict[tuple[int, Any], float] = defaultdict(float)
-        for groups in ages.values():
-            for low, high, people in groups:
-                whole[(low, high)] += people
-        national = [[lo, hi, n] for (lo, hi), n in whole.items()]
-        copied = [k for k, g in ages.items() if same_structure(g, national)]
-        report.append(f"  ages: {len(ages)} prefectures; {len(copied)} carry the national "
-                      f"proportions within the copy tolerance: {copied}")
-        if len(copied) >= 0.8 * len(ages):
-            report.append("  ages: the table gives its prefectures one structure; medians withheld")
-            ages = {}
-    cite_age = [{"field": "median_age", "name": AGE_SOURCE, "url": url, "year": AGE_YEAR,
-                 "license": LICENCE}]
-    for old in sorted({NEW_PREFECTURES.get(k, k) for k in c21["prefectures"]}):
-        poly = pref_poly.get(old)
-        if poly is None:
-            report.append(f"  prefecture {old}: no polygon")
+    own, why = own_structures(ages)
+    report += why
+    cite_age = [{"field": "median_age/sex_ratio", "name": AGE_SOURCE,
+                 "url": dataset_url(USCB_DATASET), "year": AGE_YEAR, "license": LICENCE}]
+    for key, poly in sorted(pref_poly.items()):
+        total = pref_totals.get(key)
+        if not total:
+            report.append(f"  prefecture {poly['name']}: no 2021 count")
             continue
-        parts = [u for k, u in c21["prefectures"].items() if NEW_PREFECTURES.get(k, k) == old]
-        total = sum(u["total"] for u in parts)
-        men = sum(u["men"] for u in parts)
-        women = sum(u["women"] for u in parts)
-        if len(parts) == 1:
-            note = (f"The people counted in {poly['name']} prefecture at the mapping stage of "
-                    f"the fourth general census (RGPH-4), 1 March 2021.")
-        else:
-            names = " and ".join(f"{u['name'].title()} ({u['total']:,})" for u in parts)
-            note = (f"The people counted at the mapping stage of the fourth general census "
-                    f"(RGPH-4), 1 March 2021, in {names}: the prefecture made in 2020 out of "
-                    f"{poly['name']} is drawn here inside it.")
         fields: dict[str, Any] = {
             "population": measure(total, year=COUNT_YEAR, source=COUNT_SOURCE),
-            "population_note": note,
-            "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
-                                 year=COUNT_YEAR, source=COUNT_SOURCE),
-            "sex_ratio_note": ("Men per 1,000 women counted at the mapping stage of the fourth "
-                               "general census (RGPH-4), 1 March 2021."),
+            "population_note": (f"The people counted in {poly['name']} at the mapping stage of "
+                                f"the fourth general census (RGPH-4), 1 March 2021, on its ground "
+                                f"as the 2003 census drew it: the sum of its sub-prefectures."),
             "sources": list(cite_count)}
-        groups = ages.get(old)
-        median = grouped_median([tuple(g) for g in groups]) if groups else None
-        if median is not None:
-            fields["median_age"] = {"value": median, "unit": "years", "year": AGE_YEAR,
-                                    "source": AGE_SOURCE}
-            fields["median_age_note"] = (
-                "Interpolated within the five-year age group that holds the middle person, "
-                "from the statistics office's administrative population by age at 31 December "
-                "2016, an estimate rather than a count.")
+        entry = ages.get(key)
+        if entry:
+            fields["sex_ratio"] = measure(round(1000 * entry["men"] / entry["women"]),
+                                          unit="males_per_1000_females", year=AGE_YEAR,
+                                          source=AGE_SOURCE)
+            fields["sex_ratio_note"] = ("Men per 1,000 women in the statistics office's "
+                                        "administrative population at 31 December 2016, an "
+                                        "estimate rather than a count.")
+            median = grouped_median([tuple(g) for g in entry["groups"]]) if key in own else None
+            if median is not None:
+                fields["median_age"] = {"value": median, "unit": "years", "year": AGE_YEAR,
+                                        "source": AGE_SOURCE}
+                fields["median_age_note"] = (
+                    "Interpolated within the five-year age group that holds the middle person, "
+                    "from the statistics office's administrative population by age at 31 "
+                    "December 2016, an estimate rather than a count.")
+            else:
+                fields["median_age"] = gap(NOT_AVAILABLE, (
+                    "The statistics office's 2016 estimates give this prefecture the same age "
+                    "proportions as another prefecture or the country, so no median age of its "
+                    "own can be taken from them."))
             fields["sources"] += cite_age
         records.append(record(f"CAF-RGPH4-{poly['id']}", poly["name"], level="admin1",
                               parent="CAF", country="CAF", match_by="shape_id",
                               shape_id=poly["id"], **fields))
         report.append(f"  prefecture {poly['name']}: {total:,}"
-                      + (f", median age {median}" if median is not None else ""))
-    if c21["country"]:
-        report.append(f"  country line {c21['country']['total']:,}; prefectures make "
-                      f"{sum(u['total'] for u in c21['prefectures'].values()):,}")
+                      + (f"; 2016: {entry['men'] / entry['women'] * 1000:.0f} men per 1,000 "
+                         f"women, median {fields['median_age'].get('value')}" if entry else ""))
     return records, report
-
-
-def dump(book_rows: dict[str, list[dict[str, Any]]]) -> None:
-    for name in ("Population", "Ethnicity", "Age-Sex"):
-        log(f"--- {name}")
-        for row in book_rows[name]:
-            lvl = level(row)
-            figures = " ".join(str(row.get(k, "")) for k in
-                               ("POP_BTOTL", "POP_MTOTL", "POP_FTOTL", "BTOTL", "MTOTL", "FTOTL")
-                               if k in row)
-            log(f"  {lvl} | {text(row, 'ADM1_NAME')} | {text(row, 'ADM2_NAME')} | "
-                f"{text(row, 'ADM3_NAME')} | {text(row, 'AREA_NAME')} | {figures}")
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--dump", action="store_true", help="print the sheets' rows, write nothing")
+    ap.add_argument("--dump", action="store_true", help="print the OCHA sheet's rows, write nothing")
     args = ap.parse_args()
     import openpyxl                                  # noqa: PLC0415
-    url = workbook_url(DATASET)
-    blob = http_get(url, binary=True, cache=False, timeout=300)
-    log(f"car_census: {url}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
+    ocha_url = ocha_workbook_url()
+    blob = http_get(ocha_url, binary=True, cache=False, timeout=300)
+    log(f"car_census: {ocha_url}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
-    book_rows = {name: table(sheet_rows(book, name))
-                 for name in ("Population", "Ethnicity", "Age-Sex")}
+    prev = prev_communes(plain(sheet_rows(book, "PrevCommune")))
+    uscb_url = workbook_url(USCB_DATASET)
+    ublob = http_get(uscb_url, binary=True, cache=False, timeout=300)
+    log(f"car_census: {uscb_url}: {len(ublob):,} bytes, sha256 {hashlib.sha256(ublob).hexdigest()}")
+    ubook = openpyxl.load_workbook(io.BytesIO(ublob), read_only=True, data_only=True)
+    c21 = counts_2021(table(sheet_rows(ubook, "Population")))
+    g03 = communes_2003(table(sheet_rows(ubook, "Ethnicity")))
+    ages = age_table(table(sheet_rows(ubook, "Age-Sex")))
     if args.dump:
-        dump(book_rows)
+        for c in prev:
+            log(f"  {c['pref_code']} {c['pref']} | {c['sp_code']} {c['sp']} | {c['code']} "
+                f"{c['name']} | {c['total']}")
+        for k, e in ages.items():
+            log(f"  {e['name']}: {e['groups']}")
         return 0
     admin1 = json.loads((SITE / "admin1" / "CAF.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "CAF.units.json").read_text())
-    records, report = build(book_rows, admin1, admin2, dataset_url(DATASET))
+    records, report = build(prev, c21, g03, ages, admin1, admin2, ocha_url, uscb_url)
     for line in report:
         log(line)
     log(f"  {sum(r['level'] == 'admin1' for r in records)} prefectures and "
