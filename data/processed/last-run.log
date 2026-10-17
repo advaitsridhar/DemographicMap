@@ -1,171 +1,90 @@
-== Cuanza_Norte p33: 39 rows
-  block 'Quadro 11 - População residente por município, segundo o sexo,'
-    columns at [227, 283, 348, 409, 471, 543]
-    col 0: Total
-    col 1: Censo 2014 Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Censo 2024 Homens
-    col 5: Mulheres
-    row 'Cuanza Norte': 443386@227 217060@283 226326@348 659097@409 324984@471 334113@543
-    row 'Cazengo': 171743@227 83051@283 88691@348 248171@409 121147@471 127025@543
-    row 'Golungo Alto': 33834@227 16650@283 17184@348 43503@409 21307@471 22196@543
-    row 'Cambambe': 90766@227 45664@283 45103@348 100199@409 49388@471 50811@543
-    row 'Samba Cajú': 21918@227 10944@283 10974@348 34491@409 17208@471 17284@543
-    row 'Ambaca': 61769@227 29345@283 32423@348 56989@409 27564@471 29425@543
-    row 'Lucala': 22674@227 11114@283 1560@348 31817@409 16001@471 15816@543
-    row 'Banga': 10354@227 5285@283 5069@348 9630@409 4952@471 4679@543
-    row 'Bolongongo': 13019@227 6365@283 6655@348 11576@409 5738@471 5839@543
-    row 'Quiculungo': 9732@227 4827@283 4905@348 16320@409 8177@471 8143@543
-    row 'Ngonguembo': 7576@227 3814@283 3761@348 9996@409 5163@471 4832@543
-== Huambo p34: 41 rows
-  block 'Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e'
-    columns at [231, 283, 345, 410, 475, 540]
-    col 0: Total
-    col 1: Censo 2014 Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Censo 2024 Homens
-    col 5: Mulheres
-    row 'Huambo': 2019555@231 958140@283 1061414@345 2691902@410 1296018@475 1395883@540
-    row 'Bailundo': 294494@231 138631@283 155863@345 258073@410 124399@475 133674@540
-    row 'Huambo': 713134@231 341759@283 371375@345 836293@410 401758@475 434535@540
-    row 'Londuimbali': 134254@231 62271@283 71982@345 77736@410 37393@475 40343@540
-    row 'Caála': 279792@231 133539@283 146254@345 263415@410 127115@475 136300@540
-    row 'Chicala-Choloanga': 103646@231 48979@283 54667@345 59829@410 28777@475 31052@540
-    row 'Cachiungo': 120677@231 57129@283 63548@345 153450@410 73649@475 79801@540
-    row 'Mungo': 113417@231 52965@283 60452@345 166141@410 80451@475 85690@540
-    row 'Longonjo': 92103@231 43510@283 48593@345 76193@410 36613@475 39580@540
-    row 'Ucuma': 43508@231 26088@283 28965@345 91293@410 44331@475 46963@540
-    row 'Ecunha': 82541@231 39033@283 43508@345 214643@410 103503@475 111140@540
-    row 'Chinjenje': 30443@231 14237@283 16206@345 46575@410 22235@475 24340@540
-== Huila p33: 50 rows
-  block 'Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e'
-    columns at [250, 298, 346, 394, 442, 485]
-    col 0: Total
-    col 1: Censo 2014 Homens
-    col 2: Mulheres
-    col 3: Total
-    col 4: Censo 2024 Homens
-    col 5: Mulheres
-    row 'Caconda': 167820@250 80051@298 87768@346 226236@394 110562@442 115674@485
-    row 'Gambos': 79462@250 36337@298 43125@346 109738@394 51486@442 58252@485
-    row 'Humpata': 89144@250 42500@298 46644@346 152986@394 73420@442 79566@485
-    row 'Lubango': 776249@250 373465@298 402784@346 978715@394 470518@442 508197@485
-    row 'Cuvango': 78544@250 37765@298 40777@346 94982@394 46498@442 48483@485
-    row 'Quipungo': 158918@250 72776@298 86142@346 171979@394 82857@442 89122@485
-    row 'Chibia': 190670@250 88857@298 101813@346 262498@394 126666@442 135832@485
-    row 'Quilengues': 75334@250 35645@298 39689@346 133264@394 65033@442 68232@485
-    row 'Caluquembe': 179931@250 86328@298 93603@346 266372@394 130265@442 136107@485
-    row 'Matala': 262764@250 124331@298 138433@346 310614@394 149444@442 161169@485
-    row 'Jamba': 105089@250 50002@298 55087@346 125133@394 61990@442 63143@485
-    row 'Chipindo': 64714@250 30933@298 33781@346 103482@394 50440@442 53041@485
-    row 'Chicomba': 131807@250 62838@298 68969@346 158724@394 78570@442 80153@485
-    row 'Cacula': 136977@250 64759@298 72218@346 181216@394 88196@442 93020@485
-== Cabinda p97: 38 rows
-  block 'Quadro 6. 1 - População de 2 ou mais anos por residência, município e comuna, segundo grup'
-    columns at [188, 274, 367, 474, 544]
-    col 0: População com ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Grupo Étnico da população Quimbundo (Kimbundu ou Tymbundu)
-    col 3: com 2 ou mais anos Lunda-Quioco (Lunda-kioko ou Lunda-Tchokwe Tshokwe)
-    col 4: Umbundo (ou Ovimbundo)
-    row 'Cabinda': 859674@188 445084@274 68969@367 7564@474 15301@544
-    row 'Urbana': 750589@189 382716@276 63020@368 7237@474 11765@545
-    row 'Rural': 109085@189 62368@276 5949@368 328@474 3536@545
-    row 'Cabinda': 557577@189 274215@276 51039@368 7079@474 12610@545
-    row 'Cabinda': 557577@189 274215@276 51039@368 7079@474 12610@545
-    row 'Cacongo': 39253@189 22308@276 786@368 8@474 109@545
-    row 'Lândana': 32605@189 16612@276 515@368 8@474 47@545
-    row 'Dinge': 6648@189 5696@276 271@368 0@474 62@545
-    row 'Buco Zau': 30482@189 15146@276 1093@368 57@474 927@545
-    row 'Buco Zau': 30482@189 15146@276 1093@368 57@474 927@545
-    row 'Belize': 18473@189 11140@276 477@368 2@474 38@545
-    row 'Belize': 16708@189 10971@276 427@368 0@474 38@545
-    row 'Luali': 1765@189 169@275 50@368 2@474 0@545
-    row 'Tando Zinze': 25593@189 13476@276 1757@368 6@474 127@545
-    row 'Tando Zinze': 18541@189 10681@276 1414@368 2@474 11@545
-    row 'Malembo': 7052@189 2796@276 343@368 5@474 116@545
-    row 'Ngoio': 58525@189 32860@276 2890@368 252@474 640@545
-    row 'Ngoio': 58525@189 32860@276 2890@368 252@474 640@545
-    row 'Liambo': 93460@189 50709@276 9971@368 138@474 781@545
-    row 'Liambo': 93460@189 50709@276 9971@368 138@474 781@545
-    row 'Massabi': 11239@189 8388@276 318@368 5@474 31@545
-    row 'Massabi': 11239@189 8388@276 318@368 5@474 31@545
-    row 'Necuto': 16441@189 11199@276 415@368 13@474 28@545
-    row 'Necuto': 14099@189 10197@276 369@368 2@474 16@545
-    row 'Inhuca': 2343@189 1002@276 46@368 11@474 13@545
-    row 'Miconje': 8629@189 5642@276 223@368 5@474 8@545
-    row 'Miconje': 8629@189 5642@276 223@368 5@474 8@545
-== Cabinda p98: 36 rows
-  block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo grupo'
-    columns at [172, 260, 356, 448, 491, 541]
-    col 0: População com 2 ou mais anos
-    col 1: Nhaneca-Humbe (Nyaneka-Lumkumbi)
-    col 2: Grupo Étnico Ambó (Vahambo tanbé designado Xikwanyama)
-    col 3: da população com 2 ou mais Helelo, Herero (Tchielelo, Tjiherero)
-    col 4: anos Cuangar
-    col 5: Khoisan
-    row 'Cabinda': 859674@172 5615@260 198@356 210@448 188@491 213@541
-    row 'Urbana': 750589@173 4579@260 97@356 137@448 143@491 170@542
-    row 'Rural': 109085@173 1036@260 101@356 73@448 45@491 43@542
-    row 'Cabinda': 557577@173 5500@260 78@356 123@448 141@491 158@542
-    row 'Cabinda': 557577@173 5500@260 78@356 123@448 141@491 158@542
-    row 'Cacongo': 39253@173 9@260 93@356 0@449 2@491 0@542
-    row 'Lândana': 32605@173 6@260 0@356 0@449 2@491 0@542
-    row 'Dinge': 6648@173 3@260 93@356 0@449 0@491 0@542
-    row 'Buco Zau': 30482@173 13@259 3@356 0@449 6@491 9@542
-    row 'Buco Zau': 30482@173 13@259 3@356 0@449 6@491 9@542
-    row 'Belize': 18473@173 2@260 0@356 2@449 0@491 2@542
-    row 'Belize': 16708@173 2@260 0@356 2@449 0@491 0@542
-    row 'Luali': 1765@173 0@260 0@356 0@449 0@491 2@542
-    row 'Tando Zinze': 25593@173 3@260 2@356 2@449 3@491 3@542
-    row 'Tando Zinze': 18541@173 2@260 2@356 2@449 2@491 2@542
-    row 'Malembo': 7052@173 2@260 0@356 0@449 2@491 2@542
-    row 'Ngoio': 58525@173 47@259 6@356 8@449 6@491 22@542
-    row 'Ngoio': 58525@173 47@259 6@356 8@449 6@491 22@542
-    row 'Liambo': 93460@173 38@259 16@356 77@448 27@491 16@542
-    row 'Liambo': 93460@173 38@259 16@356 77@448 27@491 16@542
-    row 'Massabi': 11239@173 0@260 0@356 0@449 3@491 0@542
-    row 'Massabi': 11239@173 0@260 0@356 0@449 3@491 0@542
-    row 'Necuto': 16441@173 2@260 0@356 0@449 0@491 2@542
-    row 'Necuto': 14099@173 0@260 0@356 0@449 0@491 0@542
-    row 'Inhuca': 2343@173 2@260 0@356 0@449 0@491 2@542
-    row 'Miconje': 8629@173 1@260 0@356 0@449 0@491 2@542
-    row 'Miconje': 8629@173 1@260 0@356 0@449 0@491 2@542
-== Cabinda p99: 37 rows
-  block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo grupo'
-    columns at [250, 298, 345, 414, 483, 531]
-    col 0: População com 2 mais anos
-    col 1: tribos, Vátua
-    col 2: 2024 Grupo Étnico Kwoi
-    col 3: da população com Xindonga (Oshindonga)
-    col 4: 2 ou mais anos Não sabe
-    col 5: Outra Etnia
-    row 'Cabinda': 859674@250 73@298 4593@345 153@414 184731@483 126782@531
-    row 'Urbana': 750589@251 62@298 4168@346 137@414 165024@484 111335@532
-    row 'Rural': 109085@251 11@298 426@346 16@414 19707@484 15447@532
-    row 'Cabinda': 557577@251 52@298 3791@346 113@414 127739@484 74939@532
-    row 'Cabinda': 557577@251 52@298 3791@346 113@414 127739@484 74939@532
-    row 'Cacongo': 39253@251 0@298 2@346 5@414 8414@484 7517@532
-    row 'Lândana': 32605@251 0@298 2@346 5@414 8408@484 7001@532
-    row 'Dinge': 6648@251 0@298 0@346 0@414 6@484 516@532
-    row 'Buco Zau': 30482@251 0@298 6@346 2@414 5885@484 7334@532
-    row 'Buco Zau': 30482@251 0@298 6@346 2@414 5885@484 7334@532
-    row 'Belize': 18473@251 0@298 2@346 6@414 3286@484 3518@532
-    row 'Belize': 16708@251 0@298 2@346 5@414 2434@484 2828@532
-    row 'Luali': 1765@251 0@298 0@346 2@414 851@484 691@532
-    row 'Tando Zinze': 25593@251 8@298 187@346 2@414 6268@484 3750@532
-    row 'Tando Zinze': 18541@251 0@298 0@346 0@414 3502@484 2924@532
-    row 'Malembo': 7052@251 8@298 187@346 2@414 2765@484 826@532
-    row 'Ngoio': 58525@251 6@298 489@346 13@414 9165@484 12119@532
-    row 'Ngoio': 58525@251 6@298 489@346 13@414 9165@484 12119@532
-    row 'Liambo': 93460@251 6@298 116@346 6@414 17529@484 14029@532
-    row 'Liambo': 93460@251 6@298 116@346 6@414 17529@484 14029@532
-    row 'Massabi': 11239@251 0@298 0@346 5@414 1707@484 783@532
-    row 'Massabi': 11239@251 0@298 0@346 5@414 1707@484 783@532
-    row 'Necuto': 16441@251 0@298 0@346 0@414 2624@484 2159@532
-    row 'Necuto': 14099@251 0@298 0@346 0@414 2053@484 1463@532
-    row 'Inhuca': 2343@251 0@298 0@346 0@414 571@484 697@532
-    row 'Miconje': 8629@251 0@298 0@346 2@414 2113@484 634@532
-    row 'Miconje': 8629@251 0@298 0@346 2@414 2113@484 634@532
+  read https://statistics.gov.rw/sites/default/files/documents/2025-02/PHC5-2022_Main_Indicators.xlsx: 581,274 bytes, sha256 b73aa381fd3145405251b87b15e5a2926b0038e3b2d2d837b92b81b9630d06f9
+  read https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx: 172,094 bytes, sha256 12f28a74ae2c18708ab59e1cfa8e16d83eab6e8ba1a310bc4f11940f9a281a97
+  Table 1: 5 provinces and 30 districts making 13,246,394; Table 6: nationality by province; Tables 4.3 and 4.4: 35 medians
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf: 3,435,910 bytes, sha256 5dc7b994003401aef6c6f147beebf35c23c169c5ffe84d33d72bcdf46d15143e
+  Nyarugenge: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gasabo.pdf: 3,903,714 bytes, sha256 122ac3945d5969fd401de3a63e92d22ced184fb26dbb3f95307fe2137b1aec20
+  read https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf: 3,186,983 bytes, sha256 b7725bd4b180eadc62539a052a40fa473fb267558674a78ddaeb63a39b4956b0
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyanza.pdf: 3,566,397 bytes, sha256 3c12ed96edc4a5ee7e5556080836c960b9b66cfc9ef825e0059dee944f8c8303
+  Nyanza: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gisagara.pdf: 3,649,762 bytes, sha256 b0ea57fb7e9118fbeac0f0c4a68a54c0c18e9558ac48a4a92c76ad8304facf07
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyaruguru.pdf: 4,009,664 bytes, sha256 d170c89c6e2f713acb4957c8fc8bfd7f457211c481abd4745a6d101541a807bc
+  read https://statistics.gov.rw/sites/default/files/2025-05/Huye.pdf: 3,822,794 bytes, sha256 fdc37b763c781d81f6582f910e6b00c1f4eb62e43de92019b36dc92e904e4c6f
+  Huye: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyamagabe.pdf: 4,251,824 bytes, sha256 9d242b2b6908219de0d6ce99a8154aef2766afbfcd7ee036b8963235d73289b0
+  read https://statistics.gov.rw/sites/default/files/2025-05/Ruhango.pdf: 3,346,583 bytes, sha256 c017abdedc1bb0dec9db4aa3da11db1c590401d4aff36e634eaf4eaa1639ca52
+  read https://statistics.gov.rw/sites/default/files/2025-05/Muhanga.pdf: 3,473,927 bytes, sha256 60c9e1271516f16f08b966f712dee037c730224d34215994fc19605f030ca9b4
+  Muhanga: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Kamonyi.pdf: 3,437,483 bytes, sha256 4822fae9d4105af8eb401ad38ea28cb536e92ecd65061a4d0dea246770f5dc94
+  Kamonyi: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Karongi.pdf: 3,403,202 bytes, sha256 3e44cae0ced8a054fbf88a80329c69ac07945a24f39bd1fa5f550fffb0a6c15a
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rutsiro.pdf: 4,802,154 bytes, sha256 852afa00685a81d0c98fa62824fdb909742e081a42cbf7311d062811edbed72c
+  Rutsiro: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rubavu.pdf: 4,408,890 bytes, sha256 c29e1eb8d2df15d53b3fedb14c70ab0ed96ab0a5f13c9f5b9727ddc200f09d84
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyabihu.pdf: 3,973,333 bytes, sha256 dd7872c2cb3bfce6eb7db93c356ecb39c1ac1f7f0f438abfd0d50d4001f8f415
+  Nyabihu: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Ngororero.pdf: 5,126,952 bytes, sha256 80d57e349f5370792de32b3cacac7a3fe1ddc757373cf33365afd44adad97580
+  Ngororero: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rusizi.pdf: 5,156,624 bytes, sha256 9ae1ffe8c0aff9f2c230ddd9f0ae98a27f7c071b7ba3cfcf4583a93896314b30
+  Rusizi: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyamasheke.pdf: 4,854,227 bytes, sha256 82ef49a6813f35e344474f11a113b0fb4fd7f0269b9e18e1b92b4f20edc459d1
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rulindo.pdf: 4,250,477 bytes, sha256 7d665abe8acd90c0da212f114af3aa560c5e7a745d45989501f432eb4efcecee
+  Rulindo: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gakenke.pdf: 4,422,683 bytes, sha256 bbfa6d050d3288bd170e03c9227dadda168ffbc1d502a58dc982ae35f45139b7
+  Gakenke: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Musanze.pdf: 3,951,829 bytes, sha256 f289bdd5a745bc07c71cb4b24e23e0e57cc91f7ed7f4791e784865c5f85c878a
+  https://statistics.gov.rw/sites/default/files/2025-05/Burera.pdf: HTTPError
+  read https://statistics.gov.rw/sites/default/files/2025-05/BURERA.pdf: 4,207,245 bytes, sha256 05e13bc86d7db64a27cea15af14835ebbf867476917aee88520d159acc5f6a56
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gicumbi.pdf: 4,861,984 bytes, sha256 01f812b041b73bb15ed3da63a395d5c3156e7d49baebd03197805169501c1d8b
+  Gicumbi: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rwamagana.pdf: 3,683,628 bytes, sha256 d16aa074a2fae073d1c5326d41ca05b97d2f0c51cb41177edb40798e5fb370e8
+  Rwamagana: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyagatare.pdf: 4,458,533 bytes, sha256 6dcb9997fe0c511b6010ab3124f34a0d8c4698135552b1c0a714daa8f4facd60
+  Nyagatare: no nationality row agreeing with Table 1 in its profile
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gatsibo.pdf: 3,782,781 bytes, sha256 38facaafb4c31fec594cf5eb9b786bd62566bb4bb7fccebdc3791cc0ef96423e
+  read https://statistics.gov.rw/sites/default/files/2025-05/Kayonza.pdf: 3,691,120 bytes, sha256 c58ed3a55d8461ee143e24134066acc2be13dab8257f4ba78b006ba0b074bb0a
+  Kayonza: no nationality row agreeing with Table 1 in its profile
+  https://statistics.gov.rw/sites/default/files/2025-05/Kirehe.pdf: HTTPError
+  read https://statistics.gov.rw/sites/default/files/2025-05/KIREHE.pdf: 3,552,990 bytes, sha256 c0548f77f3e0f4b19d5ffead0e38f8257cda5409774d5e58a96c9c92e1836510
+  read https://statistics.gov.rw/sites/default/files/2025-05/Ngoma.pdf: 4,994,013 bytes, sha256 655d6f0683eba477a9e31add79d76b50b3be31271b8abcaea76fd6a69cfe93c2
+  Ngoma: no nationality row agreeing with Table 1 in its profile
+  https://statistics.gov.rw/sites/default/files/2025-05/Bugesera.pdf: HTTPError
+  read https://statistics.gov.rw/sites/default/files/2025-05/BUGESERA.pdf: 3,966,542 bytes, sha256 dd6345a3cd62cc4b0d15131a6852145980efb23286f2897472453ae4c78fa32c
+  Bugesera: no nationality row agreeing with Table 1 in its profile
+  religion read whole for 30 of 30 districts, nationality for 13
+  admin1 City of Kigali: 1,745,555, median 23.0, sex ratio 1038, religion led by Catholic, foreign nationals 20554
+  admin2 Nyarugenge: 374,319, median 23.0, sex ratio 1097, religion led by Catholic, foreign nationals -
+  admin2 Gasabo: 879,505, median 22.0, sex ratio 1019, religion led by Catholic, foreign nationals 10529
+  admin2 Kicukiro: 491,731, median 23.0, sex ratio 1027, religion led by Catholic, foreign nationals 6749
+  admin1 Southern Province: 3,002,699, median 20.0, sex ratio 932, religion led by Catholic, foreign nationals 18208
+  admin2 Nyanza: 365,718, median 20.0, sex ratio 955, religion led by Adventist, foreign nationals -
+  admin2 Gisagara: 397,051, median 19.0, sex ratio 908, religion led by Catholic, foreign nationals 7891
+  admin2 Nyaruguru: 318,126, median 19.0, sex ratio 915, religion led by Catholic, foreign nationals 454
+  admin2 Huye: 381,900, median 22.0, sex ratio 978, religion led by Catholic, foreign nationals -
+  admin2 Nyamagabe: 371,501, median 20.0, sex ratio 907, religion led by Catholic, foreign nationals 6743
+  admin2 Ruhango: 359,121, median 20.0, sex ratio 920, religion led by Catholic, foreign nationals 210
+  admin2 Muhanga: 358,433, median 22.0, sex ratio 939, religion led by Catholic, foreign nationals -
+  admin2 Kamonyi: 450,849, median 21.0, sex ratio 933, religion led by Catholic, foreign nationals -
+  admin1 Western Province: 2,896,484, median 19.0, sex ratio 916, religion led by Catholic, foreign nationals 15671
+  admin2 Karongi: 373,869, median 20.0, sex ratio 913, religion led by Adventist, foreign nationals 10760
+  admin2 Rutsiro: 369,180, median 19.0, sex ratio 916, religion led by Catholic, foreign nationals -
+  admin2 Rubavu: 546,683, median 19.0, sex ratio 957, religion led by Catholic, foreign nationals 2780
+  admin2 Nyabihu: 319,047, median 19.0, sex ratio 888, religion led by Catholic, foreign nationals -
+  admin2 Ngororero: 367,955, median 19.0, sex ratio 869, religion led by Catholic, foreign nationals -
+  admin2 Rusizi: 485,529, median 19.0, sex ratio 949, religion led by Catholic, foreign nationals -
+  admin2 Nyamasheke: 434,221, median 19.0, sex ratio 893, religion led by Pentecostal, foreign nationals 215
+  admin1 Northern Province: 2,038,511, median 20.0, sex ratio 913, religion led by Catholic, foreign nationals 2307
+  admin2 Rulindo: 360,144, median 21.0, sex ratio 913, religion led by Catholic, foreign nationals -
+  admin2 Gakenke: 365,292, median 21.0, sex ratio 896, religion led by Catholic, foreign nationals -
+  admin2 Musanze: 476,522, median 20.0, sex ratio 912, religion led by Catholic, foreign nationals 1142
+  admin2 Burera: 387,729, median 19.0, sex ratio 910, religion led by Catholic, foreign nationals 470
+  admin2 Gicumbi: 448,824, median 20.0, sex ratio 931, religion led by Catholic, foreign nationals -
+  admin1 Eastern Province: 3,563,145, median 19.0, sex ratio 948, religion led by Catholic, foreign nationals 60635
+  admin2 Rwamagana: 484,953, median 21.0, sex ratio 1011, religion led by Catholic, foreign nationals -
+  admin2 Nyagatare: 653,861, median 19.0, sex ratio 951, religion led by Catholic, foreign nationals -
+  admin2 Gatsibo: 551,164, median 19.0, sex ratio 922, religion led by Catholic, foreign nationals 8856
+  admin2 Kayonza: 457,156, median 19.0, sex ratio 940, religion led by Catholic, foreign nationals -
+  admin2 Kirehe: 460,860, median 19.0, sex ratio 928, religion led by Catholic, foreign nationals 44039
+  admin2 Ngoma: 404,048, median 19.0, sex ratio 912, religion led by Catholic, foreign nationals -
+  admin2 Bugesera: 551,103, median 19.0, sex ratio 971, religion led by Catholic, foreign nationals -
+  wrote data/processed/rwanda_census.json (187 kB)

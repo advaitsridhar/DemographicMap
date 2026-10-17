@@ -85,7 +85,8 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": [
       {
@@ -111,6 +112,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -226,10 +234,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -243,6 +253,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -348,11 +365,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 98.8,
+        "count": 868976
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.2,
+        "count": 10529
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -369,8 +396,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gasabo.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gasabo.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -382,7 +423,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B56607574087647",
@@ -470,11 +514,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 98.6,
+        "count": 484982
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.4,
+        "count": 6749
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -491,8 +545,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -504,7 +572,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-91480417B18399648061901",
@@ -592,7 +663,8 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": [
       {
@@ -618,6 +690,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -733,10 +812,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -750,6 +831,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -855,11 +943,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 98.0,
+        "count": 389160
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.0,
+        "count": 7891
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -876,8 +974,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gisagara.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gisagara.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -889,7 +1001,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B69204186902764",
@@ -977,11 +1092,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 317672
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 454
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -998,8 +1123,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyaruguru.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyaruguru.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -1011,7 +1150,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B50862047870193",
@@ -1099,10 +1241,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -1116,6 +1260,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -1221,11 +1372,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 98.2,
+        "count": 364758
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.8,
+        "count": 6743
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1242,8 +1403,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyamagabe.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyamagabe.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -1255,7 +1430,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B52583425373362",
@@ -1343,11 +1521,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 358911
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 210
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1364,8 +1552,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Ruhango.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Ruhango.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -1377,7 +1579,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B71619932434084",
@@ -1465,10 +1670,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -1482,6 +1689,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -1587,10 +1801,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -1604,6 +1820,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -1709,7 +1932,8 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": [
       {
@@ -1735,6 +1959,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -1850,11 +2081,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 97.1,
+        "count": 363109
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.9,
+        "count": 10760
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1871,8 +2112,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Karongi.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Karongi.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -1884,7 +2139,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B49553879902836",
@@ -1972,10 +2230,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -1989,6 +2249,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -2094,11 +2361,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.5,
+        "count": 543903
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 2780
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2115,8 +2392,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rubavu.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Rubavu.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -2128,7 +2419,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B61881490568352",
@@ -2216,10 +2510,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -2233,6 +2529,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -2338,10 +2641,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -2355,6 +2660,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -2460,10 +2772,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -2477,6 +2791,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -2582,11 +2903,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 100.0,
+        "count": 434006
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 215
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2603,8 +2934,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyamasheke.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyamasheke.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -2616,7 +2961,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-91480417B74917756285357",
@@ -2704,7 +3052,8 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": [
       {
@@ -2730,6 +3079,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -2845,10 +3201,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -2862,6 +3220,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -2967,10 +3332,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -2984,6 +3351,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -3089,11 +3463,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.8,
+        "count": 475380
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 1142
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -3110,8 +3494,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Musanze.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Musanze.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -3123,7 +3521,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B41980105768775",
@@ -3211,11 +3612,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 99.9,
+        "count": 387259
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 470
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -3232,8 +3643,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/BURERA.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/BURERA.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -3245,7 +3670,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B99169436422336",
@@ -3333,10 +3761,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -3350,6 +3780,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -3455,7 +3892,8 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": [
       {
@@ -3481,6 +3919,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -3596,10 +4041,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -3613,6 +4060,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -3718,10 +4172,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -3735,6 +4191,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -3840,11 +4303,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 98.4,
+        "count": 542308
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.6,
+        "count": 8856
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -3861,8 +4334,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gatsibo.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/Gatsibo.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -3874,7 +4361,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B59170295238138",
@@ -3962,10 +4452,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -3979,6 +4471,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -4084,11 +4583,21 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Rwandan",
+        "pct": 90.4,
+        "count": 416821
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 9.6,
+        "count": 44039
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -4105,8 +4614,22 @@
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
       {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
         "field": "religion",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), religious affiliation of the resident population",
+        "url": "https://statistics.gov.rw/sites/default/files/2025-05/KIREHE.pdf",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, District Profiles (2023), Table 2.1, resident population by nationality",
         "url": "https://statistics.gov.rw/sites/default/files/2025-05/KIREHE.pdf",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
@@ -4118,7 +4641,10 @@
     "population_note": "The 2022 census's count of everyone resident in the district.",
     "median_age_note": "The 2022 census's median age of the resident population, as the Institute prints it, in whole years.",
     "religion_year": 2022,
-    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories."
+    "religion_note": "The 2022 census's count of the resident population by religious affiliation. 'Pentecostal' is the census's ADEPR, the Association of Pentecostal Churches of Rwanda; 'Protestant' and 'Adventist' are its own separate categories.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "The 2022 census's count of the resident population by nationality, Rwandan or foreign; the census asks no ethnicity."
   },
   {
     "id": "RWA-2022-39286606B28964371534134",
@@ -4206,10 +4732,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -4223,6 +4751,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
@@ -4328,10 +4863,12 @@
       }
     ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2022 census published literacy by language -- the languages people aged 15 and over can read and write -- and not the languages they speak, so no language composition is given."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Rwanda's 2022 census asks no ethnicity."
     },
     "sources": [
       {
@@ -4345,6 +4882,13 @@
         "field": "median_age",
         "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Thematic Report: Population Size, Structure and Spatial Distribution, Tables 4.3 and 4.4",
         "url": "https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/fifth-population-and-housing-census-2022/rphc5-thematic-reports/rphc5-thematic-report-population-size-structure-and-distribution",
+        "year": 2022,
+        "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
+      },
+      {
+        "field": "language",
+        "name": "National Institute of Statistics of Rwanda, Fifth Population and Housing Census 2022, Main Indicators Report, Table 8",
+        "url": "https://statistics.gov.rw/fifth-population-and-housing-census-2022/main-indicators-5th-rwanda-population-and-housing-census-phc",
         "year": 2022,
         "license": "National Institute of Statistics of Rwanda publication (reuse with attribution)"
       },
