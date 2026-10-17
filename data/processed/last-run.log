@@ -1,4 +1,1501 @@
-page: https://www.ons.dz/collections/
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-page: https://www.ons.dz/
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+probe_pdf: https://sierraleone.unfpa.org/sites/default/files/pub-pdf/National%20Analytical%20Report.pdf
+  12,689,945 bytes
+  584 pages
+probe_pdf: 584 pages, 73 mention ['median', 'Kailahun']
+=== front matter ===
+STATISTICS SIERRA LEONE (SSL)
+OCTOBER 2017
+Sierra Leone 2015
+Population and Housing Census
+national analytical report
+Sierra Leone 2015
+Population and Housing Census
+National analytical report
+ii  
+Sierra Leone 2015
+Population and Housing Census
+National analytical report
+ iii
+DISCLAIMER
+  
+Statistics Sierra Leone cannot be held responsible for errors, or any consequences 
+arising from the use of information contained in this report. All rights reserved. This 
+document may be freely quoted or reproduced, in part or in full, provided that the source 
+is acknowledged. 
+We wish to thank the Government of Sierra Leone for the financial 
+and oversight support to the project. Special thanks goes to our 
+development partners DFID, Irish Aid, UNFPA and UNDP for providing 
+the funds, technical support and guidance in  the implementation of 
+the Census project. 
+iv  
+   Lead Writers    
+ 
+Chapter One  Mr. Ibrahim J. Sannoh & 
+   Mr. Peter S. Bangura 
+Chapter Two  Mr. Andrew Lutakome Mukulu
+Chapter Three
+Chapter Four
+Chapter Five  Ms. Angela Msosa
+Chapter Six
+Chapter Seven
+Chapter Eight  Dr. Pelad P Namfua
+Chapter Nine
+Chapter Ten
+Chapter Eleven  Dr. Delali Margaret Badasu
+Chapter Twelve  Dr. Marjorie Ethel Arthur
+Chapter Thirteen 
+Chapter Fourteen Mr. Johnson Lubega Kagugube
+Chapter Fifteen
+Chapter Sixteen
+Technical Editor  Prof. Emmanuel O. Tawiah
+LIST OF CONTRIBUTORS
+  SSL Counterparts   
+  
+  Mr. Sahr E. Yambasu, 
+  Mr. Samuel L.M. Bangura, 
+  Mr. Edward Y. Kargbo
+  
+  Mr. Mahawa Kondeh
+  Ms. Pamela Isatu Kamara
+  Mr. Emanuel Musa
+  Mr. Momodu M. Kamara
+  Ms. Agnes Bangura
+ v
+The 2015 Population and Housing Census is the fifth modern census conducted in Sierra Leone 
+since independence. It was conducted between 5 and 18  December 2015 with 4th December as 
+census night. Data collection was completed on 18 December 2015 and data processing ended 
+in October 2016. 
+The main objective of the census was to provide quality and timely statistical information for 
+development planning, policy formulation and service delivery, as well as for monitoring and 
+evaluation of development programmes and plans. To facilitate proper use of the data, a set of 
+statistical tables were produced, according to the census tabulation plan. Further and detailed 
+analysis of the data was then carried out and analytical and thematic reports produced and 
+widely disseminated.
+This analytical report is one of a series of publications that have been released since the 
+provisional results and the summary of the final results were released in 2016. It contains 
+statistical tables which could be used by ministries, departments and agencies, local councils, 
+development partners and even the private sector to monitor progress in the implementation of 
+development programmes and policy formulation. 
+The report presents the census methodology, the country’s profile and lessons learnt during the 
+implementation of the 2015 Census. It provides information on key population characteristics at 
+national, regional and districts as well as at rural and urban levels. It contains data on the socio-
+economic impact of the Ebola Virus Disease. 
+The conduct of the 2015 Census would not have been possible without the massive mobilization 
+and utilization of human, financial and material resources. We therefore wish to express our 
+profound gratitude to institutions and organizations that contributed to the planning, organization, 
+funding and implementation of the census.
+We particularly wish to thank the Government of Sierra Leone and its development partners, 
+especially UNFPA, DFID,  Irish Aid and UNDP for providing funds and other logistical support 
+required for the census. Our sincere appreciation goes to the National Electoral Commission and 
+UNDP for providing some of the vehicles which were used during the cartographic mapping. We 
+acknowledge the contribution of the security forces for providing the required security during 
+the entire enumeration process.
+We are grateful to the media and civil societies for publicizing the census activities and conveying 
+messages from Statistics Sierra Leone to the general public, which greatly enhanced the conduct 
+of the census. We also wish to thank the chiefs and other local authorities as well as the entire 
+people of Sierra Leone for their cooperation. 
+We are indebted to Statistics Sierra Leone Council, the Technical Coordinators, the District Census 
+team, the field personnel, the Census Publicity Committee, the Census Command Centre, the 
+Census Technical Committee and the Census Steering Committee for the roles they played in 
+the implementation of the census. To the chief technical adviser, the data processing expert, the 
+cartographic expert and the communications specialist who were engaged in the various aspects 
+of the census, we are most grateful. We also wish to express our sincere appreciation to the 
+international and national monitors who monitored the census process.
+Acknowledgements 
+vi  
+We are very grateful to all the authors of the various chapters of the national analytical 
+report.We wish to appreciate the contributions of UNFPA’s census technical team for their 
+support and advice, especially, the coordination role of the census technical specialist, in 
+the preparation of the 17 thematic reports and the national analytical report.
+Finally, we wish to express our appreciation to all staff of Statistics Sierra Leone for their 
+dedication and commitment throughout the entire process.
+ vii
+CHAPTER 1: INTRODUCTION, COUNTRY PROFILE AND CENSUS METHODOLOGY  
+1.1 Introduction   
+1.2 The profile of Sierra Leone    
+1.3 Population censuses in Sierra Leone 
+1.4 Uses of census data 
+1.5 Background and justification of the 2015 population and housing census 
+ 1.5.1 Background 
+ 1.5.2 Justification 
+1.6 Funding and implementation strategy  
+1.7 Census methodology 
+ 1.7.1 Introduction 
+ 1.7.2 Pre-enumeration activities 
+  1.7.2.1 The legal basis for the census 
+  1.7.2.2 Establishment of the census administrative structure 
+  1.7.2.3 Census Secretariat and committees 
+  1.7.2.3.a The Census Secretariat  
+  1.7.2.3. b Census committees 
+ 1.7.3 The cartographic mapping programme 
+ 1.7.4 Field mapping activities  
+  1.7.4.1 Maps digitizing and preparation 
+ 1.7.5 Development of census instruments 
+ 1.7.6 Pilot census implementation 
+ 1.7.7 Acquisition and distribution of census materials 
+ 1.7.8  Census publicity and advocacy programme (education activities) 
+ 1.7.9 Recruitment and training of field staff 
+  1.7.9.1 Short-listing requirements and recruitment 
+  1.7.9.2 Training of field staff and house listing exercise 
+ 1.7.10   Census enumeration 
+ 1.7.11 Receipt of census material in the field 
+ 1.7.12 Enumeration and field work 
+ 1.7.13 Supervision and field monitoring 
+|   07
+|   07
+|   07
+|   08
+|   08
+|   09
+|   09
+|   10
+|   10
+|   11
+|   11
+|   11
+|   11
+|   11
+|   12
+|   12
+|   13
+|   13
+|   14
+|   15
+|   15
+|   16
+|   16
+|   16
+|   17
+|   17
+|   18
+|   18
+|   18
+|   19
+|   19
+Contents
+viii  
+  1.7.14 Retrieval of census materials 
+  1.7.15 Post-enumeration activities (PEA) 
+1.8 Lessons learnt and challenges 
+1.9 Summary, conclusion and recommendations 
+ 1.9.2  Conclusion 
+ 1.9.3  Recommendations 
+References  28
+CHAPTER 2: EVALUATION AND ADJUSTMENT OF AGE–SEX DATA  
+2.1 Introduction 
+2.2 Sources of data on sex and age 
+2.3 Analysis of sex ratios 
+ 2.3.1 Sex ratios, 1963 - 2015 
+ 2.3.2 Sex ratios of surviving census population 
+ 2.3.3 Sex ratios for the population in five-year age groups 
+2.4 Detecting errors in age misreporting 
+ 2.4.1 Visual inspection methods 
+ 2.4.2 Population of infants 
+ 2.4.3 Population in single years of age   
+ 2.4.4 Population of extreme old age and centenarians 
+ 2.4.5 Population pyramid 
+2.5 Measuring errors in age reporting 
+ 2.5.1 Indices of digit preference 
+ 2.5.2 Analysis of age ratios 
+ 2.5.3 The United Nations age-sex accuracy index 
+ 2.5.4 Spatial differentials in quality of reporting age-sex data 
+2.6 Adjustment of the age–sex data  
+ 2.6.1Considerations for selection of the method for the adjustment of the age 
+ sex data 
+ 2.6.2 Adjusting the distribution of the total population by age–sex 
+ 2.6.3 Adjusting of the age-sex distribution of the population of districts and                                                                                                                                              
+           regions 
+|   20
+|   20
+|   22
+|   25
+|   25
+|   26
+|   28
+|   29
+|   29
+|   29
+|   30
+|   31
+|   31
+|  32
+|   33
+|   33
+|   33
+|   33
+|   34
+|   37
+|   39
+|   39
+|   43
+|   44
+|   47
+|   48
+|   48
+|   51
+|   53
+Contents
+ ix
+2.7 Summary, conclusions and recommendations 
+  2.7.1 Summary 
+  2.7.2 Conclusion 
+  2.7.3 Recommendations 
+References 
+Appendix 
+CHAPTER 3: POPULATION SIZE, COMPOSITION AND AGE-SEX DISTRIBUTION 
+3.1 Introduction 
+3.2 Sources of data and their limitations 
+3.3 Population size and distribution 
+ 3.3.1 Population of the regions 
+ 3.3.2 Population of the districts 
+ 3.3.3 Changes in distribution of the population by region and district 
+ 3.3.4 Population of the chiefdoms 
+3.4 Population growth 
+ 3.4.1  Growth of the total population (1963-2015) 
+ 3.4.2  Growth of the sub-national population (1974-2015) 
+
+=== pages mentioning ['median', 'Kailahun'] (first 30) ===
+
+--- page 22 ----------------------------------------------------
+Table 3.10 Percentage distribution of the total population by age and sex, 1974 – 2015
+Table 3.11 Percentage distribution of the total population by age and region, 1974 - 2015
+Table 3.12 Percentage distribution of the total population by age, median age,
+dependency ratio, region and district
+Table 3.13 Age dependency ratio, 1974-2015
+Table 3.14 Dependency ratio by region, district and age
+Table 3.15 Population and sex ratio by place of residence
+Table 3.16 Sex ratios of the total population by region and district, 1963 – 2015
+Table 3.17 Number and percentage distribution of non-Sierra Leonean population by
+selected characteristics
+Table 3.18 Distribution of non-Sierra Leonean population by nationality and sex
+Table 3.19 Distribution of the household population by region, place of birth and place
+of enumeration
+Table 3.20 Classification of ethnic groups by population size
+Table 3.21 Population size, sex ratio and percentage distribution and of the household
+population by sex and ethnicity
+Table 3.22 Percentage distribution of the population by main language
+Table 3.23 Distribution of the household population by region, district and most
+common main language
+Table 3.24 Distribution of the household population by region, district and number of
+languages spoken
+Table 3.25 Distribution of the household population by religious affiliation
+Table A3.1 Total population by region, district and sex, 1963-2015
+Table A3.2 Total population by age group and sex, Sierra Leone 1985-2015
+Table A3.3 Selected characteristics of the population of chiefdoms, Sierra Leone
+2004-2015
+Table 4.1 Number of households and household population,1985-2015
+Table 4.2 Distribution of households by region and place of residence
+|  80
+|  81
+|  82
+|  83
+|  83
+|  85
+|  86
+|  87
+|  88
+|  89
+|  90
+|  91
+|  92
+|  93
+|  94
+|  95
+|  99
+ |  100
+|  102
+|  111
+|  111
+List of tables
+xxii
+
+--- page 50 ----------------------------------------------------
+The current constitution of Sierra Leone was
+adopted in 1991, though it has been amended
+several times. Since independence to the
+present, Sierra Leonean politics has been
+dominated by two major political parties; the
+Sierra Leone People’s Party (SLPP) and the All
+People’s Congress (APC).
+Sixteen ethnic groups inhabit Sierra Leone,
+each with its own language and customs.
+The two largest and most influential are the
+Temne and the Mende people. The Temne
+are predominantly found in the north of the
+country, while the Mende are predominant in
+the southeast. It is a Muslim majority country,
+with the overall Muslim population at 78 per
+cent of the population, though there is an
+influential Christian minority at about 21 per
+cent. Sierra Leone is regarded as one of the
+most religiously tolerant nations in the world
+where Muslims and Christians live and work
+side-by-side in peace.
+Sierra Leone has relied on mining, especially
+diamonds, for its economic base. It is also
+among the largest producers of titanium and
+bauxite, a major producer of gold and has one
+of the world’s largest deposits of rutile. The
+country is home to the third-largest natural
+harbour in the world. It is a member of many
+international organizations including the United
+Nations, the African Union, the Economic
+Community of West African States (ECOWAS),
+the Mano River Union, the Commonwealth of
+Nations, the African Development Bank and the
+Organization of Islamic Cooperation.
+1.3 Population censuses in
+Sierra Leone
+The first population count in Sierra Leone
+was undertaken in 1802 in what is now the
+Western Area. However, the first modern
+population census to cover the whole country,
+was conducted in April 1963. Since then,
+four more censuses have been undertaken in
+December 1974, December 1985, December
+2004 and December 2015 respectively. It is
+worth noting that because of the difference in
+the methodology used in the censuses prior
+to 1963, the population totals of the country
+prior to 1963 cannot be compared with those
+of recent censuses.
+Due to the improvement of the census
+methodology in the 1963 population census,
+a reliable and trustworthy population figure of
+2,180,355 was accepted for informed consent
+and further improvement on the other censuses
+continued.
+The 2004 Census collected information on
+many demographic and socio-economic
+characteristics and recorded a total population
+of 4,976,871 persons, with a sex ratio of 94. Its
+preliminary report was published in February
+2005 and the analytical report finalized in July
+2006.
+Following the decennial census programme, the
+next census was expected in December 2014.
+However, following the spread of the Ebola
+epidemic from Guinea and Liberia to Sierra
+Leone, with the first case recorded in May
+2014 in Kailahun District, a recommendation
+was made by Statistics Sierra Leone (SSL)
+to the Government of Sierra Leone that the
+main field enumeration should be shifted
+from December 2014 to April 2015. But as the
+epidemic intensified, it was further postponed
+to December 2015. The Government of
+Sierra Leone accepted and announced both
+postponements.
+The population of Sierra Leone has grown
+from 2,180,355 in 1963 to 2,735,159 in 1974,
+4,976,871 and 7,092,113 in 2004 and 2015
+respectively.
+1.4 Uses of census data
+Population data are needed on a continuing
+basis for policy formulation and implementation,
+monitoring and evaluation of the country’s
+population programme and development
+planning. The uses of population and housing
+cens
+
+--- page 84 ----------------------------------------------------
+Table 2.6 Indices of digit preference by region, district and sex
+Region/ district
+Whipple’s index Myer’s index Bachi’s index
+Total Male Female Total Male Female Total Male Female
+Total country 2.48 2.40 2.55 49.9 47.2 52.4 31.6 30.0 33.0
+Eastern 2.80 2.72 2.87 59.1 56.7 61.5 37.7 36.1 39.2
+Kailahun 3.02 2.95 3.08 66.2 63.6 68.7 41.9 40.9 42.9
+Kenema 2.71 2.64 2.77 55.3 53.0 57.5 36.0 34.7 37.3
+Kono 2.69 2.60 2.78 56.5 54.2 58.8 35.3 33.3 37.5
+Northern 2.71 2.63 2.78 57.4 54.2 60.3 36.0 34.4 37.4
+Bombali 2.50 2.42 2.57 51.4 48.2 54.3 32.0 30.4 33.5
+Kambia 2.86 2.80 2.90 62.9 59.8 65.4 39.0 38.1 39.8
+Koinadugu 2.75 2.71 2.79 57.9 56.1 59.6 36.6 35.9 37.2
+Port Loko 2.68 2.58 2.76 56.4 52.6 59.9 35.6 33.5 37.3
+Tonkolili 2.87 2.76 2.96 61.7 58.3 64.9 39.0 36.9 41.0
+Southern 2.63 2.56 2.69 54.2 51.4 56.7 34.5 33.1 35.9
+Bo 2.46 2.39 2.53 48.5 45.6 51.1 31.4 29.8 32.9
+Bonthe 2.75 2.72 2.77 58.7 56.7 60.6 36.9 36.1 37.6
+Moyamba 2.66 2.57 2.74 56.2 52.6 59.5 35.0 33.0 36.7
+Pujehun 2.82 2.78 2.86 59.7 57.8 61.5 38.3 37.5 39.1
+Western 1.76 1.76 1.77 27.7 27.1 28.3 17.7 17.4 18.1
+Western Area
+Rural 1.98 1.97 2.00 34.0 33.1 34.9 21.5 21.3 22.5
+Western Area
+Urban 1.68 1.68 1.68 25.2 24.8 25.7 16.2 16.0 16.6
+Table 2.6 presents the overall indices of digit preference by region and district. The Whipple’s
+Indices for all the regions were greater than 1.75 implying that the age data for all regions are
+classified as ‘very rough’. Among the districts, the Western Area Urban district had the lowest
+Whipple’s Index (1.68), thus its age data are categorized as approximate. The rest of the districts
+had their index bigger than 1.75, implying that the data were ‘very rough’. Kailahun district had
+the worst quality of data with an overall index of 3.02.
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+42
+
+--- page 89 ----------------------------------------------------
+2.5.4 Spatial differentials in quality of reporting age-sex data
+The UNAAI was used to analyse regional and district differentials in the quality of the age data
+reporting. Table 2.11 shows that the Western Region had the best quality age-sex data with an
+AAI of 37.2 while the Eastern Region had the worst quality with an index of 78.5. The indices for
+the Northern and Southern regions were 59.4 and 6.6 respectively.
+The Western Area Urban district had the lowest AAI (37.2), thus having its data rated as
+‘inaccurate’. The AAI for the rest of the districts were greater than 40, hence their age-sex data
+was rated as ‘highly inaccurate’.  Nine out of the 14 districts had age-sex data with an AAI higher
+than 60.  The districts of the Eastern region had the worst quality of age-sex data with their AAI
+lying between 70 and 90. These are followed by districts in the Northern Region, while those of
+the Eastern Region had the best - although the quality was also not accurate.
+Table 2.11 Male and female age ratio scores, sex ratio
+scores and UN age accuracy index of the population
+by region and district
+Region/district Age ratio score for males Age ratio score for females Sex ratio score Age-sex accuracy index
+Total country 12.8 17.3 8.3 54.9
+Eastern 15.0 21.2 14.1 78.5
+Kailahun 17.6 24.2 13.4 82.1
+Kenema 14.7 19.8 12.3 71.5
+Kono 15.1 19.7 17.5 87.2
+Northern 15.3 18.9 8.4 59.4
+Bombali 12.4 15.8 7.5 50.8
+Kambia 16.5 20.6 9.9 66.6
+Koinadugu 18.0 20.8 9.9 68.4
+Port Loko 14.8 17.7 8.6 58.3
+Tonkolili 16.9 22.3 10.2 69.8
+Southern 13.8 18.6 9.7 61.6
+Bo 12.3 17.0 9.4 57.5
+Bonthe 15.0 19.0 9.9 63.7
+Moyamba 13.0 16.9 10.5 61.4
+Pujehun 17.2 23.3 12.0 76.6
+Western 7.5 9.7 6.7 37.2
+Western Area rural 7.1 11.8 8.4 44.1
+Western Area urban 7.9 8.9 6.8 37.2
+Source: Statistics Sierra Leone, 2015
+Population and Housing Census
+ 47
+
+--- page 99 ----------------------------------------------------
+Table A2.2 Adjusted population by age, region, district and sex
+Age group
+Eastern region Kailahun
+Both sexes Male Female Both sexes Male Female
+All ages 1,642,370 814,441 827,929 526,379 260,586 265,793
+0-4 239,493 117,406 122,087 75,746 36,872 38,874
+5-9 233,842 117,097 116,745 76,281 38,563 37,718
+10-14 224,393 114,098 110,295 75,061 39,017 36,044
+15-19 195,953 97,649 98,304 65,066 33,285 31,781
+20-24 150,665 68,557 82,108 47,341 22,111 25,230
+25-29 125,536 55,870 69,666 38,765 17,365 21,400
+30-34 107,886 49,080 58,806 33,700 14,714 18,986
+35-39 89,625 42,894 46,731 27,966 12,699 15,267
+40-44 71,732 39,200 32,532 22,299 11,796 10,503
+45-49 55,583 31,900 23,683 17,193 9,564 7,629
+50-54 37,220 21,527 15,693 11,285 6,268 5,017
+55-59 28,310 16,223 12,087 8,659 4,732 3,927
+60-64 23,991 12,751 11,240 7,737 3,889 3,848
+65-69 18,964 9,848 9,116 6,226 3,073 3,153
+70-74 14,243 7,386 6,857 4,707 2,353 2,354
+75-79 9,830 5,368 4,462 3,181 1,731 1,450
+80 + 15,104 7,587 7,517 5,166 2,554 2,612
+ 57
+
+--- page 110 ----------------------------------------------------
+3.3.2 Population of the districts
+The Western Area Urban district (Freetown City) was the most populous district in the country in
+2015, with a population of 1.1 million persons, contributing 14.9 per cent of the total population
+(Table 3.1). Bonthe district was the least populous, with only 200,781 persons. Eight out of the 14
+districts had a population of 500,000 persons or more, and these collectively contributed 70.9 per
+cent of the total population.
+Table 3.1 Distribution of population size by district
+Population size District Number of districts Population Share of the population
+Total country 14 7,092,113 100.0
+1,000,000 or more Western Area Urban 1 1,055,964 14.9
+700,000 – 999,999 0 0  0.0
+600,000 – 699,999 Port Loko, Kenema, Bombali 3 1,831,811 25.8
+500,000 – 599,999 Bo, Tonkolili, Kailahun, Kono 4 2,139,392 30.2
+400,000 – 499,999 Western Area Rural, Koinadugu 2 853,642 12.0
+300,000 – 399,999 Pjehun, Kambia, Moyamba 3 1,010,523 14.2
+Less than 300,000 Bonthe 1 200,781  2.8
+3.3.3 Changes in distribution of the population by region and district
+The Western Region’s share of the population has steadily increased from 8.9 per cent in 1963
+to 21.2 per cent in 2015, while that for the Northern Region has declined from 35.8 per cent in
+1985 to 35.4 per cent in 2015 (Table 3.2). The Eastern and Southern regions did not show any
+systematic pattern of change in their shares over the five censuses.
+The share of the Western Area Urban district (Freetown City) increased up to 15.5 per cent in
+2004 before declining back down to 14.9 per cent of the total population in 2015, while the
+Western Area Rural district increased throughout the five censuses. On the other hand, Bonthe
+district experienced a decline in its share of the national population throughout all the censuses.
+The rest of the districts did not show a consistent pattern.
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+68
+
+--- page 111 ----------------------------------------------------
+Table 3.2 Population and percentage share of population
+by district, 1963 – 2015
+Region/district Population in 2015 Share of the total population
+1963 1974 1985 2004 2015
+ Total country 7,092,113 100.0 100.0 100.0 100.0 100.0
+Eastern 1,642,370 25.0 28.4 27.3 23.9 23.2
+Kailahun 526,379 6.9 6.6 6.7 7.2 7.4
+Kenema 609,891 10.4 9.7 9.6 10.0 8.6
+Kono 506,100 7.7 12.0 11.1 6.7 7.1
+Northern 2,508,201 41.2 38.2 35.8 35.1 35.4
+Bombali 606,544 9.1 8.5 9.0 8.2 8.6
+Kambia 345,474 6.3 5.7 5.3 5.4 4.9
+Koinadugu 409,372 5.9 5.8 5.2 5.3 5.8
+Port Loko 615,376 11.3 10.7 9.4 9.1 8.7
+Tonkolili 531,435 8.5 7.5 6.9 7.0 7.5
+Southern 1,441,308 24.9 21.8 21.1 22.0 20.3
+Bo 575,478 9.6 8.0 7.6 9.3 8.1
+Bonthe 200,781 3.7 3.2 3.0 2.8 2.8
+Moyamba 318,588 7.7 6.9 7.1 5.2 4.5
+Pujehun 346,461 3.9 3.8 3.3 4.6 4.9
+Western 1,500,234 8.9 11.6 15.8 19.0 21.2
+Western Area
+Rural 444,270 3.1 1.5 2.4 3.5 6.3
+Western Area
+Urban 1,055,964 5.9 10.1 13.4 15.5 14.9
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, 2004 Population and Housing Census Report
+3.3.4 Population of the chiefdoms
+At the time of the 2015 Census, Sierra Leone was divided into 166 chiefdoms. The number of
+chiefdoms per district varied between 4 for Western Area Rural district and 17 for Kenema district.
+Table 3.3 shows that the population of the chiefdoms was quite varied.  There were 11 chiefdoms
+with a population of more than 100,000 persons each, collectively constituting 27.8 per cent of the
+population. The 13 chiefdoms with less than 10,000 persons each constituted 1.3 per cent. Thirty-
+five of the chiefdoms had a population of between 30,000 and 40,000 persons, with 17.1 per cent
+of the population. The population of the individual chiefdoms ranged from 3,584 for Langrama
+chiefdom in Keneman district to 447,840 persons for East 3 chiefdom in Western Area Urban district
+(see Appendix Table A3.3).
+ 69
+
+--- page 112 ----------------------------------------------------
+Table 3.3 Distribution of population size by chiefdom, Sierra Leone 2015
+Population size Number of chiefdoms Population Share of the population
+All sizes 166    7,092,113 100.0
+More than 100,000 11    1,972,469 27.8
+50,000 - 100,000 28    1,919,455 27.1
+40,000 - 50,000 14       629,021 8.9
+30,000 - 40,000 35    1,209,696 17.1
+20,000 -30,000 32       792,135 11.2
+10,000 - 20,000 33       475,306 6.7
+Less than 10,000 13          94,031 1.3
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Table 3.4 shows that the chiefdoms of the Western Region were highly populous with 12 out
+the 14 chiefdoms each having 50,000 persons or more. Conversely, the Western Region had 25
+out of its 54 chiefdoms having less than 25,000 persons each and another 25 chiefdoms had
+between 20,000 and 50,000 persons. The Northern Region had 33 of its 54 chiefdoms having
+between 20,000 and 50,000 persons.
+The share of the chiefdom population to the population of the district was quite varied. Waterloo
+chiefdom contributed 48.2 per cent of the population of Western Area Rural district, closely
+followed by East 3 chiefdom which contributed 42.5 per cent of population of Western Area
+Urban district. The rest of the chiefdoms contributed less than one third of their respective
+district populations. The smallest contributors were Langarama and Nomo chiefdoms which
+contributed 0.6 and 0.9 per cent respectively of the Kenema district population (see Appendix
+Table A3.3).
+Table 3.4 Number of chiefdoms by region, district
+and population size
+Region/district Number of chiefdoms Population size
+ Less than 20,000 20,000 - 50,000  More than 50,000
+ Total country 166 46 81 39
+Eastern 46 16 21 9
+Kailahun 14 1 9 4
+Kenema 17 7 8 2
+Kono 15 8 4 3
+70
+
+--- page 116 ----------------------------------------------------
+Table 3.6 Population growth rate by region and district, 1963–2015
+Region/
+district Average annual growth rate Percentage change in population
+1963 - 1974 1974 - 1985 1985 - 2004 2004 - 2015 Doubling time 1985 – 2004 2004 - 2015
+Sierra Leone 2.1 2.3 1.8 3.2 21.4 41.6 42.5
+Eastern 3.2 1.9 1.1 2.9 23.7 24.0 37.8
+Kailahun 1.7 2.4 2.2 3.5 19.7 53.2 47.0
+Kenema 1.4 2.1 2.1 1.8 37.4 47.7 22.5
+Kono 6.1 1.5 -0.8 3.7 18.4 -13.9 50.9
+Northern 1.4 1.7 1.7 3.3 20.9 38.6 43.7
+Bombali 1.5 2.8 1.3 3.6 19.2 28.5 48.5
+Kambia 1.1 1.6 2.0 2.2 31.0 45.2 27.7
+Koinadugu 1.9 1.3 2.0 3.9 17.6 45.0 54.0
+Port Loko 1.5 1.1 1.7 2.8 24.9 37.8 35.6
+Tonkolili 1.0 1.5 1.9 3.9 17.8 42.8 53.1
+Southern 0.9 2.0 2.0 2.5 27.4 47.4 31.9
+Bo 0.3 1.9 2.9 2.0 35.1 72.6 24.1
+Bonthe 0.8 1.7 1.5 3.3 20.9 32.9 43.7
+Moyamba 1.1 2.6 0.2 1.8 38.0 4.1 22.1
+Pujehun 1.7 1.2 3.5 3.8 18.2 94.9 51.7
+Western 4.4 5.1 2.8 4.2 16.5 70.9 58.4
+Western
+Area Rural -4.7 6.8 3.8 8.5 8.1 106.3 155.0
+Western
+Area Urban 7.0 4.8 2.6 2.8 24.3 64.5 36.6
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, 2004 Population and Housing Census Report
+Table 3.7 shows that most of the chiefdoms (87 out of 166) experienced a growth rate between
+2004 and 2015.  However, a substantial number (79 out of 166) experienced a negative growth
+rate.  This is not surprising given that chiefdoms are small administrative units with small
+populations and hence their population growth rates are sensitive to changes brought about by
+internal migration. This is even more pronounced given that the 2004 Census took place soon
+after the Civil War when some persons were possibly still  displaced from their homes.
+74
+
+--- page 117 ----------------------------------------------------
+Table 3.7 Number of chiefdoms by region, district
+and annual growth rate, 2004-2015
+Region/district Annual growth rate (%)
+ Less than 0%  0 - 3.2%  More than 3.2%
+Total country 79 75 12
+Eastern 11 25 10
+Kailahun 3 10 1
+Kenema 6 4 7
+Kono 2 11 2
+Northern 27 27 0
+Bombali 6 8 0
+Kambia 5 2 0
+Koinadugu 4 7 0
+Port Loko 7 4 0
+Tonkolili 5 6 0
+Southern 34 18 2
+Bo 10 5 1
+Bonthe 6 6 0
+Moyamba 11 2 1
+Pujehun 7 5 0
+Western 7 5 0
+Western Area
+Rural 0 4 0
+Western Area
+Urban 7 1 0
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+3.5 Area and population density
+Population density is used in illustrating the relationship between the population and natural
+resources. In this case, it is computed as number of persons per square kilometre of land area.
+Sierra Leone has a total land area of 72,929 square kilometres. The population density of Sierra
+Leone increased from 38 persons per square kilometre in 1974 to 97 persons per square kilometre
+in 2015, as shown in Figure 3.3. The population density of Sierra Leone in 2015 was much higher
+than for neighbouring countries Liberia (40.4) and Guinea (51.1), as well as for the continent as
+a whole (39.1).
+ 75
+
+--- page 118 ----------------------------------------------------
+Figure 3.3 Population density (persons per square kilometre), 1974-2015
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, 2008, Annual Statistical Digest 2005/2006
+Table 3.8 shows that nearly half of the land area (49.6 per cent) was in the Northern Region,
+while the Western Region had only 1.0 per cent.  The Southern and Eastern regions collectively
+constituted half of the land area of the country. Koinadugu and Bombali districts were the
+largest districts with 17.1 and 11.4 per cent of the land area.  The rest of the districts had less
+than 10 per cent of the land area, the smallest being Western Area Urban district with 0.1 per
+cent of the country’s land area.
+The population density in 2015 varied widely between regions and districts. The population
+density for the regions varied between 69 for the Northern Region and 2,156 for the Western
+Region. The population densities for the Southern and Eastern regions were 71 and 104
+persons per square kilometre.
+The districts in the Western Region had very high population densities of 12,878 for Western
+Area Urban and 724 for Western Area Rural. However, the population density was much lower
+for the other districts, ranging between 33 for Koinadugu district and 133 for Kailahun district.
+Six out of the 14 districts had population densities higher than the national average (97.2
+persons per square kilometre).
+76
+
+--- page 119 ----------------------------------------------------
+Table 3.8 Population density by region and district
+Region/district
+Land area
+(sq.kms.) Share
+of land area
+Share of land area Share of the population Population density
+Total country 72,929 100.0 100.0 97
+Eastern 15,740 21.6 23.2 104
+Kailahun 3,959 5.4 7.4 133
+Kenema 6,368 8.7 8.6 96
+Kono 5,413 7.4 7.1 93
+Northern 36,208 49.6 35.4 69
+Bombali 8,289 11.4 8.6 73
+Kambia 3,032 4.2 4.9 114
+Koinadugu 12,443 17.1 5.8 33
+Port Loko 5,978 8.2 8.7 103
+Tonkolili 6,466 8.9 7.5 83
+Southern 20,287 27.8 20.3 71
+Bo 5,488 7.5 8.1 105
+Bonthe 3,613 5.0 2.8 56
+Moyamba 6,987 9.6 4.5 46
+Pujehun 4,199 5.8 4.9 83
+Western 696 1.0 21.2 2,156
+Western Area
+Rural 614 0.8 6.3 724
+Western Area
+Urban 82 0.1 14.9 12,878
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+3.6 Age and sex composition
+The current age and sex composition of the population is determined by its past fertility,
+mortality and migration patterns. Most demographic and socio-economic analysis use
+population grouped in 5-year age groups, and hence these are used in the study of the
+age composition of the population. This is in line with the United Nations Principles and
+Recommendations for Population and Housing Censuses, which recommends tabulating
+the total population by single ages and in five-year age groups for the country and major
+administrative divisions.
+ 77
+
+--- page 120 ----------------------------------------------------
+3.6.1 Distribution of total population by age
+Table 3.9 presents the age distribution of the 2015 Sierra Leone census population by age
+group, place of residence and sex. It was observed in Chapter 2 that the population of the
+age group 0–4 years is smaller than that of the age group 5–9 years. This is contrary to the
+expected pattern given the recent demographic trends in the country, and therefore points
+to under enumeration or age shifting. The female population had another ‘trough’ for the
+age group 10–14 years while the one for males appears for the age group 30–34 years.
+Thereafter the population of either sex follows the expected pattern.
+The median age is the age that divides the age distribution of the population into two groups
+of equal-size. The median age for the total population in 2015 was 18.7 years, and was
+slightly higher for females (19.1 years) compared to males (18.4 years).  Similarly, the median
+age for the urban population (20.1 years) was higher than that for the rural population (17.6
+years). The higher median age for the urban population is partly due to rural-urban migration
+of population in the middle ages. The rural-urban difference in the median age is higher
+among males (3.9 years) than females (1.3 years).  This is partly because there are more
+male than female migrants.
+Table 3.9 Percentage distribution of the total population
+by place of residence, age and sex
+Age
+Total Rural Urban
+Total Male Female Total Male Female Total Male Female
+All ages 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0
+0–4 13.2 13.4 13.0 14.5 14.9 14.2 11.3 11.4 11.3
+5–9 15.6 15.9 15.4 17.5 18.2 16.8 13.0 12.7 13.4
+10–14 11.9 12.4 11.5 11.9 12.9 10.9 12.0 11.6 12.4
+15–19 12.3 12.3 12.3 11.6 11.8 11.4 13.4 13.1 13.6
+20–24 9.3 8.8 9.8 7.9 7.1 8.6 11.5 11.2 11.7
+25–29 8.6 8.0 9.2 7.7 6.6 8.7 9.9 9.8 9.9
+30–34 6.1 5.7 6.5 5.8 5.0 6.5 6.6 6.8 6.5
+35–39 5.9 5.8 6.1 5.8 5.4 6.1 6.2 6.3 6.1
+40–44 4.2 4.4 4.0 4.2 4.2 4.2 4.3 4.7 3.8
+45–49 3.4 3.8 3.0 3.4 3.8 3.0 3.4 3.8 3.0
+50–54 2.6 2.8 2.4 2.6 2.8 2.5 2.6 2.8 2.4
+55–59 1.6 1.7 1.4 1.5 1.7 1.4 1.6 1.7 1.4
+60–64 1.6 1.5 1.6 1.7 1.6 1.8 1.4 1.4 1.4
+65–69 1.0 1.0 1.0 1.1 1.1 1.1 1.0 1.0 1.0
+70–74 0.9 0.9 1.0 1.0 1.0 1.1 0.7 0.7 0.8
+78
+
+--- page 121 ----------------------------------------------------
+Table 3.9 Percentage distribution of the total population
+by place of residence, age and sex (continued)
+Age
+Total Rural Urban
+Total Male Female Total Male Female Total Male Female
+75–79 0.6 0.6 0.5 0.6 0.7 0.6 0.5 0.4 0.5
+80–84 0.4 0.4 0.5 0.5 0.5 0.6 0.3 0.2 0.4
+85–89 0.2 0.2 0.2 0.3 0.3 0.3 0.2 0.1 0.2
+90–94 0.1 0.1 0.2 0.2 0.2 0.2 0.1 0.1 0.1
+95–99 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.0 0.1
+100 + 0.1 0.1 0.1 0.1 0.1 0.1 0.0 0.0 0.1
+Median age 18.7 18.4 19.1 17.6 16.7 18.5 20.1 20.6 19.8
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+3.6.2  Population of broad age groups
+Socio-economic planning usually requires data for some special categories of population, for
+example: children aged under 5 years; women of reproductive age (15-49 years): the working
+age (15 - 64 years) population; and the population out of the labour force, that is persons aged
+65 years and over.
+The relative sizes of these broad age groups for Sierra Leone are shown in Table 3.10. The table
+depicts a generally young population age structure, with 40.8 per cent of the population aged
+below 15 years, 3.5 per cent aged 65 years and above, while the working-age population (15–64
+years) constituted 55.7 per cent.  This is quite like the age distribution for Africa in 2015, whose
+respective shares were 40.7, 55.8 and 3.5 per cent.
+The table also reveals some minor differences in the age structure of the male and female
+populations. The males had a slightly higher proportion of children less than 15 years (41.7 per
+cent) compared to females (39.9 per cent), while the females had higher proportions of older
+ages, probably due to higher male mortality. The women of reproductive age (15-49 years)
+constituted 50.9 per cent of the female population in 2015.  This, coupled with a high fertility
+rate, will inevitably result in further population growth.
+Comparing the age distributions for 2015 with those from the previous censuses, it can be seen
+that the share of the working age-group (15-64 years) is increasing, especially amongst the age
+group 15-24 years. This has resulted in a decline of the median age from 20.4 years in 1974 to
+18.7 years in 2015.  If this increase in the share of the working age population is sustained, then
+Sierra Leone is likely to benefit from the demographic dividend.
+ 79
+
+--- page 122 ----------------------------------------------------
+Table 3.10 Percentage distribution of the total population
+by age and sex, 1974 – 2015
+Year/sex 0–4 0–14 15–24 25–49 50–64 65 + All ages Median age
+1974
+Total 16.1 40.6 16.2 30.1 7.7 5.3 100.0 20.4
+Male 16.0 41.4 14.9 29.7 8.4 5.6 100.0 20.4
+Female 16.2 39.8 17.5 30.5 7.1 5.1 100.0 20.5
+1985
+Total 16.5 41.5 17.6 27.9 7.3 5.8 100.0 19.4
+Male 16.8 42.8 16.3 26.9 7.8 6.2 100.0 18.9
+Female 16.1 40.2 18.8 28.9 6.9 5.3 100.0 19.8
+2004
+Total 15.3 41.7 19.3 28.6 6.1 4.4 100.0 18.8
+Male 15.6 43.1 18.8 27.6 6.1 4.3 100.0 18.2
+Female 14.9 40.4 19.7 29.5 6.0 4.4 100.0 19.4
+2015
+Total 13.2 40.8 21.7 28.3 5.8 3.5 100.0 18.7
+Male 13.4 41.7 21.2 27.7 6.1 3.3 100.0 18.4
+Female 13.0 39.9 22.1 28.8 5.5 3.6 100.0 19.1
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, Annual Statistical Digest 2005/06
+3.6.3 Age composition of the population of the regions
+Table 3.11 presents selected summary measures of the age distribution of the population of the
+regions. The age distribution for the Eastern, Northern and Southern regions have remained
+similar over the past four censuses. However, the age distribution for the Western Region has
+changed over time, the biggest change coming between 2004 and 2015.
+The share of children aged 14 years and under has been decreasing but that of the adolescents
+(15-24) has been increasing since 1985 for the Eastern, Southern and Western regions, while the
+Northern Region showed no clear pattern. The share of the population aged 50 years and above
+was less than 20 per cent for all the regions and for all censuses.
+In 2015, the Western Region had a median age of 21.5 years, which was higher compared to the
+other three regions. The median ages for the other regions fell between 18 and 18.3 years - very
+close to the national average of 18.7 years.
+80
+
+--- page 123 ----------------------------------------------------
+Table 3.11 Percentage distribution of the total population
+by age and region, 1974 - 2015
+Region/year Broad age groups (years)
+0-14 15-24 25-49 50-64 65+    All ages Median age
+Eastern
+1974 40.6 21.3 25.0 8.7 4.3 100.0 21.7
+1985 43.8 20.2 22.1 10.1 3.8 100.0 20.0
+2004 42.2 20.7 23.6 9.4 4.0 100.0 19.4
+2015 41.3 21.9 24.3 9.1 3.4 100.0 18.3
+Northern
+1974 40.0 22.0 25.1 8.6 4.3 100.0 18.1
+1985 41.8 21.1 23.0 10.4 3.7 100.0 18.2
+2004 40.9 21.5 24.1 9.5 4.0 100.0 17.7
+2015 43.8 20.3 23.2 9.1 3.7 100.0 17.6
+Southern
+1974 41.2 21.4 24.8 8.4 4.2 100.0 24.2
+1985 44.3 19.8 22.2 9.9 3.8 100.0 21.1
+2004 42.7 20.6 23.5 9.1 4.0 100.0 18.7
+2015 42.2 20.7 23.6 9.4 4.0 100.0 18.2
+Western
+1974 40.2 18.5 25.3 10.5 5.5 100.0 19.8
+1985 46.0 16.9 21.6 11.1 4.5 100.0 19.1
+2004 43.0 17.7 23.5 10.8 5.0 100.0 20.4
+2015 34.0 24.6 29.4 9.3 2.7 100.0 21.5
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, Annual Statistical Digest 2005/06
+3.6.4 Age distribution of the population of the districts
+All the districts of the Eastern, Northern and Southern regions had more than 40 per cent of
+their population aged less than 15 years. The districts of the Western Region had the lowest
+share of the population aged 65 years and above. The Western Area Urban district had the
+highest median age of 22.0 years, while Western Area Rural district had a median age of 20.2
+years (Table 3.12). The rest of the districts had median ages between 16 and 19 years.
+Koinadigu district stands out with the youngest age distribution with a median age of 16.8
+years, the highest proportion of children less than 15 years (45.1 per cent) and the second
+lowest proportion of population aged 65 years and over (2.7 per cent).
+ 81
+
+--- page 124 ----------------------------------------------------
+Table 3.12 Percentage distribution of the total population
+by age, median age, dependency ratio, region and district
+Region/district Age groups (years)
+0-14 15-24 25-49 50-64 65+    Total Median age
+Total country 40.8 21.7 24.9 9.2 3.5 100.0 18.7
+Eastern 41.3 21.9 24.3 9.1 3.4 100.0 18.3
+Kailahun 41.6 22.5 23.5 8.9 3.5 100.0 18.0
+Kenema 40.3 22.1 24.8 9.4 3.5 100.0 18.8
+Kono 42.1 21.1 24.6 9.0 3.3 100.0 18.1
+Northern 43.8 20.3 23.2 9.1 3.7 100.0 17.6
+Bombali 42.2 20.8 23.4 9.5 4.1 100.0 18.3
+Kambia 44.7 19.4 22.6 9.2 4.1 100.0 17.3
+Koinadugu 45.1 22.4 21.8 8.2 2.7 100.0 16.8
+Port Loko 43.2 18.9 24.2 9.6 4.0 100.0 18.1
+Tonkolili 44.8 20.1 23.3 8.6 3.2 100.0 17.2
+Southern 42.2 20.7 23.6 9.4 4.0 100.0 18.2
+Bo 40.9 21.5 24.1 9.5 4.0 100.0 18.7
+Bonthe 42.7 20.6 23.5 9.1 4.0 100.0 18.0
+Moyamba 43.0 17.7 23.5 10.8 5.0 100.0 18.4
+Pujehun 43.2 22.3 23.1 8.2 3.2 100.0 17.5
+Western 34.0 24.6 29.4 9.3 2.7 100.0 21.5
+Western Area
+Rural 37.3 23.5 27.7 8.9 2.6 100.0 20.2
+Western Area
+Urban 32.6 25.1 30.1 9.5 2.7 100.0 22.0
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+3.6.5 Age dependency ratios
+The age dependency ratio jointly considers variations in the proportions of children, older persons,
+and persons of ‘working age’. The dependent population are the children aged 0-14 years and
+older persons aged 65 years and over, while the working age population is aged 15-64 years.
+The dependency ratio relates the sum of population in ages 0-14 years and 65 years and over
+to the population aged 15-64 years, multiplied by a constant, usually 100. Separate calculations
+can be made of the child dependency ratio or the old age dependency ratio by restricting the
+numerator only to ages under 15 years, or to 65 years and over.
+82
+
+--- page 125 ----------------------------------------------------
+Table 3.13 shows that the overall age dependency ratio from the 2015 Census was 79.5, implying
+that there were approximately four dependents for every five persons of working age. The trend
+over the past four censuses shows that between 1974 and 1985, the dependency ratio increased
+from 78.1 to 89.4 and then declined steadily to 79.5 per cent in 2015. This same pattern is
+observed for both child and old person dependency ratios.
+The children aged less than 15 years of age constituted the bulk of the dependent population.
+The contribution of children to the dependency burden was very high in 1974 (96.4 per cent)
+but dropped drastically to 87.8 per cent in 1985. It has since been increasing to 90.6 in 2004 and
+92.2 in 2015.  The enormous difference between the 1974 Census and the subsequent ones is
+likely to be due to poorer quality age data from the 1974 Census.
+Table 3.13 Age dependency ratio, 1974-2015
+Census year Age dependency ratio
+Overall Child Older persons   Contribution of children
+1974 78.1 75.3 2.8 96.4
+1985 89.4 78.5 10.9 87.8
+2004 85.4 77.3 8.1 90.6
+2015 79.5 73.3 6.2 92.2
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, Annual Statistical Digest 2005/06
+The dependency ratios for the regions and districts for the 1985 and 2005 censuses are presented
+in Table 3.14. In 2015, the dependency ratio was highest in Northern Region (90.4 per cent) and
+lowest for the Western Region (57.9 per cent).  The dependency ratios for the Southern Region
+(85.9) and the Eastern Region (80.8) are closer to that for the Northern Region. Among the
+districts, the dependency ratio was highest for Kambia district (95.3 per cent) and lowest for the
+districts of the Western Region. Western Area Urban district had a dependency ratio of 54.6 per
+cent while that of the Western Area Rural district was 66.4 per cent.
+Table 3.14 Dependency ratio by region, district and age
+Region/
+district
+1985 2015
+Total Child Old age Total Child Old age
+All ages 89.4 78.5 10.9 79.5 73.3 6.2
+Eastern *** *** *** 80.8 74.6 6.2
+Kailahun 94.5 80.4 14.1 82.2 75.9 6.3
+Kenema 82.6 71.8 10.8 77.8 71.6 6.2
+Kono 77.4 71.2 6.2 82.9 76.9 6.0
+ 83
+
+--- page 128 ----------------------------------------------------
+Table 3.16 Sex ratios of the total population by region
+and district, 1963 – 2015
+Region/district Sex ratio Change in sex ratio (percentage points)
+1963 1974 1985 2004 2015 1985 - 2004 2004 - 2015
+ Total country 98.4 98.8 98.7 94.2 96.9 -4.5 2.7
+Eastern *** *** *** 100.6 98.4 *** -2.2
+Kailahun 87.3 92.0 93.6 93.6 98.0 0.0 4.4
+Kenema 117.4 104.5 104.3 102.3 97.5 -2.0 -4.8
+Kono 118.1 125.8 111.8 106.0 99.8 -5.8 -6.2
+Northern *** *** *** 89.2 95.4 *** 6.2
+Bombali 85.2 87.7 97.6 92.6 95.7 -5.0 3.1
+Kambia 92.3 90.7 91.3 89.6 92.0 -1.7 2.4
+Koinadugu 93.2 91.9 91.5 88.3 99.8 -3.2 11.5
+Port Loko 95.5 93.2 92.2 88.2 92.1 3.9
+Tonkolili 89.3 90.5 96.6 87.2 98.1 10.9
+Southern *** *** *** 93.2 95.0 *** 1.8
+Bo 103.8 94.8 96.8 95.7 95.1 -1.1 -0.6
+Bonthe 95.6 95.4 96.7 92.4 97.3 -4.3 4.9
+Moyamba 94.1 93.6 93.7 89.9 93.2 -3.8 3.3
+Pujehun 88.9 91.0 92.1 92.7 95.1 0.6 2.4
+Western 111.4 111.1 107.6 97.2 99.9 -10.4 2.7
+Western Area
+Rural *** *** *** 94.8 99.3 *** 4.5
+Western Area
+Urban *** *** *** 97.8 100.1 *** 2.3
+*** Data not available
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+Statistics Sierra Leone, 2004 Population and Housing Census Report
+3.7 Nationality
+The 2015 Census collected information on the nationality of both household and non-household
+population. It found that 7,052,112 (99.4 percent) were Sierra Leoneans while 40,001 (0.6
+percent) were non-Sierra Leoneans.
+Table 3.17 shows that 58.4 per cent of the non-Sierra Leonean population were male, while
+41.6 per cent were female. The table further shows that more than half (51.4 per cent) of the
+non-Sierra Leonean population were of the working ages of 25-64 years, with children below 15
+years making up only 24.1 per cent of the population.
+86
+
+--- page 135 ----------------------------------------------------
+Table 3.23 Distribution of the household population
+by region, district and most common main language
+Percentage distribution
+Region/district
+Most
+spoken
+language
+%
+Second
+most
+spoken
+language
+%
+Third most
+spoken
+language
+% Others Total
+Total country Mende 29.2 Temne 26.2 Krio 17.9 26.8 100.0
+Eastern Mende 53.0 Kono 17.6 Kissi 9.1 20.3 100.0
+Kailahun Mende 69.8 Kissi 22.0 Krio 3.0 5.2 100.0
+Kenema Mende 80.2 Krio 7.2 Temne 3.9 8.7 100.0
+Kono Kono 56.0 Krio 11.1 Temne 7.4 25.6 100.0
+Northern Temne 55.3 Limba 11.4 Koranko 9.5 23.8 100.0
+Bombali Temne 42.8 Limba 20.0 Krio 11.8 25.4 100.0
+Kambia Temne 53.7 Susu 20.6 Limba 15.7 10.0 100.0
+Koinadugu Koranko 49.3 Limba 14.2 Fullah 11.2 25.2 100.0
+Port Loko Temne 81.7 Krio 6.2 Susu 3.7 8.3 100.0
+Tonkolili Temne 80.3 Limba 6.9 Koranko 6.4 6.3 100.0
+Southern Mende 76.4 Temne 6.9 Krio 6.0 10.2 100.0
+Bo Mende 76.5 Krio 10.7 Temne 5.0 7.8 100.0
+Bonthe Mende 80.4 Sherbro 12.0 Krio 2.8 4.7 100.0
+Moyamba Mende 54.8 Temne 20.7 Sherbro 12.5 12.0 100.0
+Pujehun Mende 93.8 Krio 2.2 Time 0.6 3.4 100.0
+Western Krio 59.9 Temne 20.3 Mende 5.3 14.5 100.0
+Western Area Rural Krio 38.4 Temne 34.6 Mende 7.1 19.8 100.0
+Western Area Urban Krio 69.0 Temne 14.2 Mende 4.6 12.2 100.0
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+The findings in Table 3.24 show that 65 per cent of the population speak at least two local
+languages while 27.7 per cent speak only one local language. Only 0.1 per cent of the population
+speak only an international language.  This is mainly due to the very small proportion (0.6 per
+cent) of the population who are non-Sierra Leoneans. There was a small proportion (5.4 per
+cent) who spoke a mixture of local and foreign languages.
+The Western Region had 18.1 per cent of the population speak a mixture of both local and
+foreign languages, compared to less than 4 per cent for the other districts or regions. The
+pattern by districts is fairly similar to the country as a whole, except for Bonthe and Pejehun
+districts which have higher proportions of persons who speak only one local language (45.6 and
+46.4 per cent respectively).
+ 93
+
+--- page 136 ----------------------------------------------------
+Table 3.24 Distribution of the household population by region,
+district and number of languages spoken
+Percentage distribution
+Region/district One local language Two local languages International languages Mixed languages Others Total
+Total country 27.7 65.0 0.1 5.4 1.7 100.0
+Eastern 25.0 71.4 0.0 2.5 1.2 100.0
+Kailahun 33.6 62.8 0.1 2.3 1.3 100.0
+Kenema 27.1 69.3 0.0 2.7 1.0 100.0
+Kono 13.5 82.8 0.0 2.4 1.3 100.0
+Northern 29.2 67.1 0.0 1.4 2.3 100.0
+Bombali 21.3 74.2 0.0 2.2 2.2 100.0
+Kambia 34.3 61.6 0.0 0.9 3.2 100.0
+Koinadugu 24.3 73.8 0.0 0.7 1.2 100.0
+Port Loko 32.7 62.6 0.0 1.4 3.3 100.0
+Tonkolili 34.5 62.7 0.0 1.5 1.3 100.0
+Southern 34.9 60.5 0.1 2.5 2.1 100.0
+Bo 28.4 66.8 0.1 3.1 1.6 100.0
+Bonthe 45.6 49.9 0.0 2.8 1.7 100.0
+Moyamba 27.1 67.9 0.0 1.1 3.8 100.0
+Pujehun 46.4 49.3 0.1 2.7 1.5 100.0
+Western 21.5 59.0 0.3 18.1 1.1 100.0
+Western Area Rural 18.1 67.0 0.2 13.1 1.6 100.0
+Western Area Urban 23.0 55.6 0.3 20.3 0.9 100.0
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+3.11 Religious affiliation
+Religion can be defined as a belief in, and reverence for, supernatural powers. It is a system
+of thought, feeling and action that is shared by a group and that gives the members an object
+of devotion and a code of behaviour by which individuals may judge the personal and social
+consequences of their actions. It is a frame of reference by which individuals relate to their
+group and the universe.
+The 2015 Census collected information on the religious affiliation of all household populations.
+Table 3.25 shows that Islam was the most dominant faith (77 per cent) of the Sierra Leonean
+household population. Those of the Christian faith combined were 21.9 per cent of the household
+population.  A small proportion (0.3 per cent) reported having ‘no religion’. There were no
+differences in the distribution of the population of the religious groups by sex.
+94
+
+--- page 139 ----------------------------------------------------
+The population density of Sierra Leone was
+much higher than those for the neighbouring
+countries of Liberia and Guinea, as well as for
+Africa. The population density was not uniform
+across the country.  Koinadugu district was
+sparsely populated with a population density
+of only 33 persons per square kilometer, while
+Western Area Urban district, which had the least
+share of the land area and the biggest share
+of the population, had a population density of
+12,878 persons per square kilometre.
+Prior to the civil of 1991 to 2002, the population
+of Sierra Leone was almost numerically
+balanced between the sexes, with the sex
+ratios close to 100.  The 2004 Census, which
+was conducted after the Civil War, gave a lower
+sex ratio of 94.2 males per 100 females.  The
+2015 Census gave a higher sex ratio of 96.9
+males per 100 females, but still lower than
+those of the pre-war era.
+The age composition shows that the population
+is quite young with 40.8 per cent of the
+population being aged below 15 years and
+only 3.5 per cent aged 65 years and above.
+The working-age population (15-64 years)
+constituted 55.7 per cent. The median age of
+the population was 18.7 years, a decrease from
+19.4 years in 1985. The age distribution of
+Sierra Leone was quite like the age distribution
+for Africa as whole in 2015.
+Between 2004 and 2015, the share of the
+working age population increased from 53.9
+to 55.7 per cent.  Most of this increase was
+among the population aged 15–24 years. The
+increase in the proportion of the population in
+the working age group resulted in a decrease
+in the dependency ratio from 89.4 per cent
+in 1985 to 79.5 per cent in 2015. The age
+structure of the Western Region was quite
+different from the rest of the country. The
+region had its population concentrated in the
+working ages, leading to its median age being
+higher than the other three regions.
+Most of the population of were of Sierra
+Leonean origin, with only 40,001 out of the 7.1
+enumerated population (0.6 per cent) being
+non-Sierra Leoneans. The majority (72.9 per
+cent) of the non-Sierra Leoneans were from
+neighbouring countries of Guinea Republic,
+Liberia and Nigeria.
+Sierra Leone has 15 local ethnic groups,
+but nearly three-quarters of the population
+belonged to the three dominant ethnic groups
+namely Mende, Temne and Limba, and the
+most dominant main languages were Mende,
+Temne and Krio. The Mende language was
+the most commonly spoken main language in
+Southern and Eastern regions, while Temne
+was most commonly spoken in the Northern
+Region and Krio was most dominant in the
+Western Region. More than three-quarters of
+the population were of the Islamic faith.
+3.12.2 Conclusion
+The population of Sierra Leone has continued to
+grow, with the rate of growth varying between
+districts.  The rapid growth of the Western
+Region has led to a shift in the fifty-year
+old pattern of distribution of the population,
+with the Southern Region becoming the least
+populous region.
+The age distribution of Sierra Leonean
+population is becoming younger, arising out
+of an increased share of the working age
+population, especially adolescents (15–24
+years). This has led to a reduction in the overall
+and child dependency burden.  This provides
+potential for the country to reap the benefits
+of the demographic dividend.
+The population of Sierra Leone is homogeneous
+in terms of nationality, ethnicity, languages
+spoken and religion. This eases the process
+of implementing changes for socio-economic
+development.
+3.12.3 Re
+
+--- page 141 ----------------------------------------------------
+Table A3.1 Total population by region, district and sex, 1963-2015
+Percentage distribution 2015 Census
+Region/district 1963 1974 1985 2004 Total Male Female
+Sierra Leone 2,180,355 2,735,159 3,515,812 4,976,871 7,092,113 3,490,978 3,601,135
+Eastern 545,579 775,931 960,551 1,191,539 1,642,370 814,441 827,929
+Kailahun 150,236 180,365 233,839 358,190 526,379 260,586 265,793
+Kenema 227,428 266,636 337,055 497,948 609,891 301,104 308,787
+Kono 167,915 328,930 389,657 335,401 506,100 252,751 253,349
+Northern 897,566 1,046,158 1,259,641 1,745,553 2,508,201 1,224,828 1,283,373
+Bombali 198,776 233,626 317,729 408,390 606,544 296,683 309,861
+Kambia 137,806 155,341 186,231 270,462 345,474 165,541 179,933
+Koinadugu 129,061 158,626 183,286 265,758 409,372 204,498 204,874
+Port Loko 247,463 292,244 329,344 453,746 615,376 294,954 320,422
+Tonkolili 184,460 206,321 243,051 347,197 531,435 263,152 268,283
+Southern 542,187 596,758 741,377 1,092,657 1,441,308 702,151 739,157
+Bo 209,754 217,711 268,671 463,668 575,478 280,569 294,909
+Bonthe 80,139 87,561 105,107 139,687 200,781 99,014 101,767
+Moyamba 167,425 188,745 250,514 260,910 318,588 153,699 164,889
+Pujehun 84,869 102,741 117,185 228,392 346,461 168,869 177,592
+Western 195,023 316,312 554,243 947,122 1,500,234 749,558 750,676
+Western Area
+Rural 67,106 40,065 84,467 174,249 444,270 221,351 222,919
+Western Area
+Urban 127,917 276,247 469,776 772,873 1,055,964 528,207 527,757
+APPENDIX
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+ 99
+
+--- page 144 ----------------------------------------------------
+Table A3.3 Selected characteristics of the population of chiefdoms,
+Sierra Leone 2004-2015
+District/
+chiefdom
+ 2004
+Population
+ 2015
+Population
+ Sex
+ratio
+ Share of
+the district
+population
+Percentage
+change
+ Annual
+growth rate
+Sierra Leone 4,976,871 7,092,113 96.8 42.5 3.2
+Kailahun
+Dea 9,876 13,414 98.4 2.5 35.8 2.8
+Jawie 42,639 50,951 95.8 9.7 19.5 1.6
+Kissi Kama 12,972 20,421 99.8 3.9 57.4 4.1
+Kissi Teng 30,455 45,149 103.3 8.6 48.2 3.6
+Kissi Tongi 33,457 50,950 102.6 9.7 52.3 3.8
+Kpeje Bongre 12,700 25,169 91.5 4.8 98.2 6.2
+Kpeje West 13,010 27,544 105.4 5.2 111.7 6.8
+Luawa 65,500 81,044 91.0 15.4 23.7 1.9
+Malema 23,298 37,095 104.8 7.0 59.2 4.2
+Mandu 19,708 30,984 91.3 5.9 57.2 4.1
+Njaluahun 37,484 61,216 102.3 11.6 63.3 4.5
+Penguia 12,518 26,272 100.9 5.0 109.9 6.7
+Upper Bambara 28,438 26,848 91.0 5.1 -5.6 -0.5
+Yawei 16,135 29,322 96.7 5.6 81.7 5.4
+Kenema
+Dama 26,157 30,751 91.8 5.0 17.6 1.5
+Dodo 14,194 22,858 105.6 3.7 61.0 4.3
+Gaura 17,361 18,217 91.6 3.0 4.9 0.4
+Gorama Mende 32,539 43,359 99.4 7.1 33.3 2.6
+Kandu
+Lekpeama 21,743 18,229 103.6 3.0 -16.2 -1.6
+Koya 10,184 13,482 99.7 2.2 32.4 2.6
+Langrama 4,356 3,584 87.5 0.6 -17.7 -1.8
+Lower
+Bambara 78,389 76,281 105.7 12.5 -2.7 -0.2
+Malegohun 12,224 20,544 98.5 3.4 68.1 4.7
+Niawa 8,496 7,815 88.1 1.3 -8.0 -0.8
+Nomo 4,105 5,491 107.0 0.9 33.8 2.6
+102
+
+--- page 154 ----------------------------------------------------
+Table 4.3 shows that among the districts, Western Area Urban district had the largest share of
+households (18.2 per cent) in 2015, while Bonthe district had the lowest share in 2015 (2.6 per
+cent). The rest of the districts had between 4 and 9 per cent of the households.
+Between 2004 and 2015, Western Area Rural district experienced the highest increase in the
+number of households (204 per cent), leading to an increase in its share from 3.7 per cent
+in 2004 to 7.2 per cent in 2015. The other districts with substantial relative increases in the
+number of households between 2004 and 2015 were Western Area Urban district (71.4 per
+cent), Bombali (71.1 per cent) and Port Loko (70.3 per cent).
+The rest of the districts had increases during 2004 to 2015 of between 26 and 65 per cent.
+Kenema district had the lowest relative increase in the number of households of 26.2 per cent.
+Most districts had a higher relative increase in the number of households during the period
+2004 to 2015 compared to the period 1985 to 2004. The only exceptions to this were Kono and
+Moyamba districts.
+Table 4.3 Distribution and percentage change in number
+of households by region and district, 1985-2015
+Region/district Number of households in 2015 Distribution of households Percentage change
+1985 2004 2015 1985-2004 2004-2015
+Total 1,265,468 100.0 100.0 100.0 68.8 54.4
+Eastern 281,201 29.3 25.9 22.2 52.7 32.4
+Kailahun 83,348 7.5 7.9 6.6 82.6 28.4
+Kenema 111,734 11.1 10.8 8.8 67.8 26.2
+Kono 86,119 10.7 7.2 6.8 16.1 46.4
+Northern 414,377 30.8 31.9 32.7 78.3 58.6
+Bombali 105,902 7.3 7.6 8.4 78.3 71.1
+Kambia 53,826 4.5 4.5 4.3 74.3 44.9
+Koinadugu 56,108 6.7 5.3 4.4 38.2 28.4
+Port Loko 111,701 6.2 8.0 8.8 122.8 70.3
+Tonkolili 86,840 6.2 6.4 6.9 79.5 64.3
+Southern 248,655 24.0 22.2 19.6 60.0 36.5
+Bo 102,723 9.2 9.2 8.1 72.8 35.5
+Bonthe 32,538 3.5 3.1 2.6 51.5 27.7
+Moyamba 61,880 7.0 5.5 4.9 35.9 36.8
+Pujehun 51,514 3.9 4.3 4.1 90.9 44.5
+Western 321,235 15.9 20.0 25.4 117.0 95.6
+Western Area
+Rural 91,284 1.9 3.7 7.2 236.7 203.7
+Western Area
+Urban 229,951 14.1 16.4 18.2 101.0 71.4
+112
+
+--- page 156 ----------------------------------------------------
+The mean household size for the Sierra Leonean population has been declining consistently
+overtime from 6.6 persons in 1985 to 6.0 persons in 2004 and 5.6 persons in 2015. The mean
+household size in 2015 was smaller for urban areas (5.1 persons) compared to the rural areas
+(6.0 persons), as well as for female-headed households (5.3 persons) compared to male-headed
+households (5.7 persons). There is a very small difference (0.1 persons) in mean household size
+by sex of household head in the urban areas compared to the one for rural areas (0.8 persons).
+4.5.1 Household size by region and district
+Household sizes tend to differ by place of residence and geographical location. Table 4.5 shows
+that single-person households were more common in the Western Region (12.4 per cent)
+compared to the other three regions.  The Northern Region had the least proportion of single-
+person households (3.9 per cent). The districts of the Western Region had high shares of single-
+person households.  Among the 12 districts of the other three regions, six districts of Port Loko,
+Kono, Bombali, Kenema, Bo and Moyamba had single-person households, constituting between
+five and nine persons of their total households.
+Koinadugu district had about one quarter (24.6 per cent) of its households having 10 or more
+persons. This was closely followed by Pejehun district with 21.0 per cent of the households
+having 10 or more persons. The rest of the districts had less than 20 per cent of their households
+with 10 persons or more. The districts of Moyamba, Western Area Rural and Western Area Urban
+had less than 10 per cent of their households with 10 or more persons.
+Wide variability was observed in the mean household size of the districts. Generally, the districts
+of the Eastern and Northern regions (except Kenema and Port Loko districts) had mean household
+sizes bigger than the national average (5.6 persons), while those of the Western Region had
+mean household sizes lower than the national average. The Southern Region had half of the
+districts with household sizes bigger than the national average.
+Table 4.5 Distribution of households and mean household size
+by region and district
+Region/district Number of persons in the household Mean household size
+1 2 - 3 4 - 5 6 - 7 8 - 9 10+ Total
+Total 6.4 20.3 27.7 21.3 12.7 11.6 100.0 5.6
+Eastern 4.5 16.8 28.3 24.0 14.8 11.6 100.0 5.8
+Kailahun 2.0 11.8 26.7 27.3 19.6 12.7 100.0 6.3
+Kenema 5.8 21.1 30.4 21.3 11.3 10.1 100.0 5.5
+Kono 5.3 16.2 27.2 24.3 14.7 12.4 100.0 5.9
+Northern 3.9 16.3 27.5 23.5 15.2 13.7 100.0 6.0
+Bombali 5.8 18.5 28.1 23.0 13.2 11.4 100.0 5.7
+Kambia 2.5 14.8 27.0 23.8 15.3 16.6 100.0 6.4
+Koinadugu 1.0 6.4 18.9 25.9 23.2 24.6 100.0 7.3
+Port Loko 5.2 21.8 30.3 20.8 11.3 10.5 100.0 5.5
+Tonkolili 2.3 13.8 29.0 25.9 17.4 11.6 100.0 6.1
+114
+
+--- page 161 ----------------------------------------------------
+Table 4.8 Distribution of the households by region, district
+and household structure
+Region/
+district
+Single-person
+households
+Nuclear
+households
+Extended
+households
+Composite
+households Total
+Total 6.4 38.6 49.9 5.1 100.0
+Eastern 4.5 43.5 47.5 4.5 100.0
+Kailahun 2.0 44.3 49.6 4.1 100.0
+Kenema 5.8 43.6 46.0 4.7 100.0
+Kono 5.3 42.6 47.5 4.6 100.0
+Northern 3.9 38.1 52.8 5.3 100.0
+Bombali 5.8 37.5 51.6 5.1 100.0
+Kambia 2.5 34.3 56.7 6.5 100.0
+Koinadugu 1.0 38.6 54.6 5.8 100.0
+Port Loko 5.2 39.8 50.5 4.5 100.0
+Tonkolili 2.3 38.9 53.4 5.4 100.0
+Southern 5.2 39.6 50.2 5.0 100.0
+Bo 6.6 37.4 50.9 5.0 100.0
+Bonthe 3.0 42.1 50.3 4.6 100.0
+Moyamba 6.8 39.9 48.1 5.2 100.0
+Pujehun 2.0 42.1 51.1 4.8 100.0
+Western 12.4 34.2 47.9 5.4 100.0
+Western Area
+Rural 9.5 37.8 47.2 5.6 100.0
+Western Area
+Urban 13.6 32.8 48.2 5.4 100.0
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+4.7 Household composition
+Individuals typically live in domestic groups or households whose members share characteristics,
+including the resources they can access, and acknowledge the same authority hierarchy. The
+characteristics of the household head are believed to have a strong bearing on the demographic,
+social, health and economic processes of the other household members. The 2015 Census
+collected information on the relationship of the household members to the household head. The
+household head was defined as ‘the person whom the members of the household accept as their
+head’.
+The household members are categorized into three broad groups: members of the family
+nucleus, other relatives (not members of the family nucleus) and those ‘not related’ to the
+household head. For the purposes of this report, only the family nucleus of the household head
+is considered, because it is the only one that can be identified from the data.
+ 119
+
+--- page 163 ----------------------------------------------------
+Table 4.10 shows that the composition of the households in Eastern, Northern and Southern
+regions is similar to the country as a whole. The Western Region had a slightly different household
+composition with higher proportions of household heads (21.5 per cent) and ‘other relatives’
+(30.2 per cent). The wide variation in household composition between the Western Region and
+the other regions reflects the effects of the high urbanization levels.
+In general, the composition of the population of the households among districts is quite similar.
+However, the composition of the household population in Koinadugu and Pujehun districts was
+different from the rest of the districts, with very low proportions of household heads (13.7
+and 14.9 per cent respectively) and spouses (9.8 and 10.5 per cent respectively) and high
+proportions of ‘son/daughter’ (51.0 and 48.4 per cent respectively). This is not surprising given
+that these two districts had high proportions of extended households.
+Table 4.10 Distribution of household population by region,
+district and relationship to household head
+Region/district Relationship to household head
+Head Spouse Child Other relative Not related Total household population
+Total 17.9 11.6 42.4 26.5 1.7 100.0
+Eastern 17.1 11.7 46.3 23.4 1.5 100.0
+Kailahun 15.9 10.8 49.1 22.9 1.3 100.0
+Kenema 18.3 12.5 43.3 24.1 1.7 100.0
+Kono 17.0 11.6 47.0 22.9 1.5 100.0
+Northern 16.6 11.6 44.0 26.3 1.5 100.0
+Bombali 17.5 11.4 42.9 26.7 1.6 100.0
+Kambia 15.6 12.3 41.9 28.5 1.7 100.0
+Koinadugu 13.7 9.8 51.0 24.0 1.4 100.0
+Port Loko 18.2 12.7 40.9 26.9 1.3 100.0
+Tonkolili 16.3 11.5 44.7 25.8 1.6 100.0
+Southern 17.3 11.5 43.1 26.5 1.6 100.0
+Bo 17.9 11.4 40.7 28.4 1.6 100.0
+Bonthe 16.2 11.9 45.9 24.6 1.4 100.0
+Moyamba 19.5 12.8 39.7 26.0 2.0 100.0
+Pujehun 14.9 10.5 48.4 24.8 1.5 100.0
+Western 21.5 11.4 34.8 30.2 2.1 100.0
+Western Area
+Rural 20.6 12.2 37.2 27.8 2.1 100.0
+Western Area
+Urban 21.9 11.0 33.8 31.2 2.1 100.0
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+ 121
+
+--- page 164 ----------------------------------------------------
+Table 4.11 shows the distribution of the household population by age and relationship to the
+household head. Most of the household heads (61.8 per cent) were aged 25-49 years while the
+equivalent share for the spouses was 69.6 per cent. Conversely, most of the children (91 per
+cent) and ‘other relatives’ (73.6 per cent) were aged less than 25 years.
+The median age for the household heads was 42.4 years, which was 9.5 years older than that
+of the spouses (32.9 years). The children and the ‘other relatives’ were much younger than the
+heads or spouses with median ages of 10.7 and 16.2 years respectively.
+Table 4.11 Distribution of household population by age group
+and relationship to household head
+Relationship to household head
+Age group
+Total
+household
+population
+Household
+head Spouse Child Other relative Not related
+Total 100.0 100.0 100.0 100.0 100.0 100.0
+0 - 14 41.0 0.0 0.2 66.4 46.1 29.4
+0 2.5 0.0 0.0 4.1 2.4 3.9
+1 - 4 10.8 0.0 0.0 18.0 11.6 4.4
+5 - 9 15.7 0.0 0.0 25.3 17.9 10.1
+10 - 14 12.0 0.0 0.2 18.9 14.1 11.0
+15 - 24 21.6 6.2 19.6 24.6 27.5 32.0
+15 - 19 12.3 1.2 4.9 16.4 16.2 16.0
+20 - 24 9.3 5.0 14.7 8.2 11.3 16.0
+ 25 - 49 28.2 61.8 69.6 8.7 18.4 33.3
+ 25 - 29 8.6 11.0 20.7 4.6 7.6 13.3
+ 30 - 34 6.1 11.7 16.3 2.2 4.1 7.9
+ 35 - 39 5.9 15.1 16.1 1.1 3.0 5.7
+ 40 - 44 4.2 12.4 9.7 0.5 2.2 4.0
+ 45 - 49 3.4 11.6 6.7 0.2 1.6 2.5
+ 50 - 64 5.8 20.4 8.5 0.2 3.8 3.6
+ 50 - 54 2.6 9.1 4.4 0.1 1.5 1.8
+ 55 - 59 1.6 5.7 2.1 0.0 1.0 0.9
+ 60 - 64 1.6 5.5 1.9 0.0 1.4 0.9
+122
+
+--- page 165 ----------------------------------------------------
+Table 4.11 Distribution of household population by age group
+and relationship to household head (continued)
+Relationship to household head
+Age group
+Total
+household
+population
+Household
+head Spouse Child Other relative Not related
+ 65 and over 3.5 11.7 2.1 0.0 4.2 1.6
+ 65 - 69 1.0 3.8 0.9 0.0 0.9 0.5
+ 70 - 74 0.9 3.1 0.6 0.0 1.1 0.5
+ 75 - 79 0.6 2.0 0.3 0.0 0.7 0.2
+ 80+ 1.0 2.8 0.3 0.0 1.5 0.4
+Median age 18.7 42.4 32.9 10.7 16.2 21.4
+Source: Statistics Sierra Leone, 2015 Population and Housing Census
+4.8 Household heads
+It is generally believed that the characteristics of the household head have a strong influence
+on the behaviour of the entire household, as well as the way household resources are utilized
+and disbursed within the household, and the way households are networked for exchange of
+resources with other households. An analysis of the characteristics of household heads is crucial
+to understanding the behaviour of households and, subsequently, the entire population.
+4.8.1 Household heads by sex and place of residence
+The distribution of the household heads is presented in Figure 4.2. It is seen that household
+headship is male dominated with 71.9 per cent of the household heads being males as compared
+to 28.1 per cent females. The male domination was observed for both rural and urban areas.
+Figure 4.2 Distribution of households by place of residence and sex of household head
+Source: Statistics Sierra
+Leone, 2015 Population
+and Housing Census
+ 123
+
+... and 43 further pages match; re-run with a narrower --terms to see them.
