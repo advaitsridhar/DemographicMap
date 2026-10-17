@@ -83,14 +83,14 @@
         "count": 57721
       },
       {
-        "group": "Senufo",
-        "pct": 1.1,
-        "count": 39873
-      },
-      {
         "group": "Minianka",
         "pct": 1.1,
         "count": 42531
+      },
+      {
+        "group": "Senufo",
+        "pct": 1.1,
+        "count": 39873
       },
       {
         "group": "Bozo",
@@ -108,11 +108,6 @@
         "count": 14810
       },
       {
-        "group": "Tamasheq",
-        "pct": 0.3,
-        "count": 9873
-      },
-      {
         "group": "Other African languages",
         "pct": 0.3,
         "count": 9873
@@ -121,6 +116,11 @@
         "group": "Other foreign language",
         "pct": 0.3,
         "count": 11392
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.3,
+        "count": 9873
       },
       {
         "group": "Hassaniya",
@@ -133,14 +133,14 @@
         "count": 7594
       },
       {
-        "group": "Samogo",
-        "pct": 0.2,
-        "count": 6455
-      },
-      {
         "group": "Other non-African language",
         "pct": 0.2,
         "count": 6075
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.2,
+        "count": 6455
       },
       {
         "group": "Other Mali languages",
@@ -148,9 +148,9 @@
         "count": 5696
       },
       {
-        "group": "Kunabere",
+        "group": "Arabic",
         "pct": 0.0,
-        "count": 379
+        "count": 759
       },
       {
         "group": "Hausa",
@@ -158,9 +158,9 @@
         "count": 1139
       },
       {
-        "group": "Arabic",
+        "group": "Kunabere",
         "pct": 0.0,
-        "count": 759
+        "count": 379
       }
     ],
     "ethnicity": [
@@ -225,14 +225,14 @@
         "count": 35423
       },
       {
-        "group": "Moor",
-        "pct": 0.7,
-        "count": 27922
-      },
-      {
         "group": "Dafing",
         "pct": 0.7,
         "count": 30839
+      },
+      {
+        "group": "Moor",
+        "pct": 0.7,
+        "count": 27922
       },
       {
         "group": "Kakolo",
@@ -245,19 +245,14 @@
         "count": 15419
       },
       {
-        "group": "Somono",
-        "pct": 0.4,
-        "count": 17086
-      },
-      {
         "group": "Other non-Malian ethnic group",
         "pct": 0.4,
         "count": 17503
       },
       {
-        "group": "Tuareg",
-        "pct": 0.3,
-        "count": 14169
+        "group": "Somono",
+        "pct": 0.4,
+        "count": 17086
       },
       {
         "group": "Samogo",
@@ -265,12 +260,17 @@
         "count": 13752
       },
       {
-        "group": "Hausa",
+        "group": "Tuareg",
+        "pct": 0.3,
+        "count": 14169
+      },
+      {
+        "group": "Arab",
         "pct": 0.1,
         "count": 2083
       },
       {
-        "group": "Arab",
+        "group": "Hausa",
         "pct": 0.1,
         "count": 2083
       }
@@ -285,11 +285,11 @@
     ],
     "country": "MLI",
     "aliases": [],
-    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other.",
+    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. The District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle; the shares are the larger district's.",
     "religion_year": 2022,
-    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other.",
+    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. The District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle; the shares are the larger district's.",
     "ethnicity_year": 2022,
-    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other.",
+    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. The District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle; the shares are the larger district's.",
     "language_year": 2022
   },
   {
@@ -376,19 +376,14 @@
         "count": 5247
       },
       {
-        "group": "Samogo",
-        "pct": 0.4,
-        "count": 3028
-      },
-      {
         "group": "Bozo",
         "pct": 0.4,
         "count": 3353
       },
       {
-        "group": "Malinke",
-        "pct": 0.3,
-        "count": 2276
+        "group": "Samogo",
+        "pct": 0.4,
+        "count": 3028
       },
       {
         "group": "Dogon",
@@ -401,9 +396,9 @@
         "count": 2582
       },
       {
-        "group": "Maraka/Soninke",
-        "pct": 0.1,
-        "count": 589
+        "group": "Malinke",
+        "pct": 0.3,
+        "count": 2276
       },
       {
         "group": "Bobo",
@@ -411,9 +406,19 @@
         "count": 874
       },
       {
+        "group": "Maraka/Soninke",
+        "pct": 0.1,
+        "count": 589
+      },
+      {
         "group": "Other foreign language",
         "pct": 0.1,
         "count": 487
+      },
+      {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 20
       },
       {
         "group": "Khassonke",
@@ -421,19 +426,9 @@
         "count": 264
       },
       {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 243
-      },
-      {
         "group": "Kunabere",
         "pct": 0.0,
         "count": 81
-      },
-      {
-        "group": "Dafing",
-        "pct": 0.0,
-        "count": 20
       },
       {
         "group": "Minianka",
@@ -449,6 +444,11 @@
         "group": "Other non-African language",
         "pct": 0.0,
         "count": 386
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 243
       }
     ],
     "ethnicity": [
@@ -488,14 +488,14 @@
         "count": 3409
       },
       {
-        "group": "Moor",
-        "pct": 0.3,
-        "count": 2938
-      },
-      {
         "group": "Hausa",
         "pct": 0.3,
         "count": 2714
+      },
+      {
+        "group": "Moor",
+        "pct": 0.3,
+        "count": 2938
       },
       {
         "group": "Dogon",
@@ -508,29 +508,9 @@
         "count": 1839
       },
       {
-        "group": "Malinke",
-        "pct": 0.1,
-        "count": 695
-      },
-      {
-        "group": "Soninke",
-        "pct": 0.1,
-        "count": 650
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.1,
-        "count": 560
-      },
-      {
         "group": "Bobo",
         "pct": 0.1,
         "count": 560
-      },
-      {
-        "group": "Samogo",
-        "pct": 0.1,
-        "count": 605
       },
       {
         "group": "Kakolo",
@@ -538,14 +518,34 @@
         "count": 762
       },
       {
-        "group": "Khassonke",
-        "pct": 0.0,
-        "count": 134
+        "group": "Malinke",
+        "pct": 0.1,
+        "count": 695
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 605
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.1,
+        "count": 560
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.1,
+        "count": 650
       },
       {
         "group": "Dafing",
         "pct": 0.0,
         "count": 22
+      },
+      {
+        "group": "Khassonke",
+        "pct": 0.0,
+        "count": 134
       },
       {
         "group": "Minianka",
@@ -664,9 +664,9 @@
         "count": 19605
       },
       {
-        "group": "Sonrhai/Djerma",
+        "group": "Bozo",
         "pct": 0.3,
-        "count": 9467
+        "count": 8330
       },
       {
         "group": "Dogon",
@@ -674,14 +674,9 @@
         "count": 7929
       },
       {
-        "group": "Bozo",
+        "group": "Sonrhai/Djerma",
         "pct": 0.3,
-        "count": 8330
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.2,
-        "count": 6874
+        "count": 9467
       },
       {
         "group": "Mossi",
@@ -694,9 +689,9 @@
         "count": 5365
       },
       {
-        "group": "Tamasheq",
-        "pct": 0.1,
-        "count": 2072
+        "group": "Senufo",
+        "pct": 0.2,
+        "count": 6874
       },
       {
         "group": "Bobo",
@@ -724,9 +719,9 @@
         "count": 2191
       },
       {
-        "group": "Samogo",
-        "pct": 0.0,
-        "count": 998
+        "group": "Tamasheq",
+        "pct": 0.1,
+        "count": 2072
       },
       {
         "group": "Arabic",
@@ -737,6 +732,11 @@
         "group": "Other African languages",
         "pct": 0.0,
         "count": 1326
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 998
       }
     ],
     "ethnicity": [
@@ -786,14 +786,9 @@
         "count": 17737
       },
       {
-        "group": "Songhai/Zarma",
+        "group": "Bozo",
         "pct": 0.4,
-        "count": 11735
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.4,
-        "count": 13897
+        "count": 13115
       },
       {
         "group": "Dogon",
@@ -801,9 +796,14 @@
         "count": 11316
       },
       {
-        "group": "Bozo",
+        "group": "Senufo",
         "pct": 0.4,
-        "count": 13115
+        "count": 13897
+      },
+      {
+        "group": "Songhai/Zarma",
+        "pct": 0.4,
+        "count": 11735
       },
       {
         "group": "Bobo",
@@ -811,19 +811,9 @@
         "count": 5162
       },
       {
-        "group": "Tuareg",
-        "pct": 0.1,
-        "count": 2276
-      },
-      {
         "group": "Dafing",
         "pct": 0.1,
         "count": 2706
-      },
-      {
-        "group": "Samogo",
-        "pct": 0.1,
-        "count": 1968
       },
       {
         "group": "Mossi",
@@ -831,24 +821,34 @@
         "count": 3519
       },
       {
-        "group": "Somono",
-        "pct": 0.1,
-        "count": 2400
-      },
-      {
         "group": "Other non-Malian ethnic group",
         "pct": 0.1,
         "count": 4110
       },
       {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 1174
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 1968
+      },
+      {
+        "group": "Somono",
+        "pct": 0.1,
+        "count": 2400
+      },
+      {
+        "group": "Tuareg",
+        "pct": 0.1,
+        "count": 2276
       },
       {
         "group": "Arab",
         "pct": 0.0,
         "count": 133
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 1174
       }
     ],
     "sources": [
@@ -947,14 +947,14 @@
         "count": 1010
       },
       {
-        "group": "Malinke",
-        "pct": 0.2,
-        "count": 115
-      },
-      {
         "group": "Dogon",
         "pct": 0.2,
         "count": 144
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.2,
+        "count": 115
       },
       {
         "group": "Bobo",
@@ -962,14 +962,19 @@
         "count": 101
       },
       {
+        "group": "Other non-African language",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
         "group": "Samogo",
         "pct": 0.1,
         "count": 79
       },
       {
-        "group": "Other non-African language",
-        "pct": 0.1,
-        "count": 57
+        "group": "Bozo",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Fula/fulfulbe",
@@ -978,11 +983,6 @@
       },
       {
         "group": "Khassonke",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
-        "group": "Senufo",
         "pct": 0.0,
         "count": 21
       },
@@ -997,7 +997,7 @@
         "count": 7
       },
       {
-        "group": "Bozo",
+        "group": "Other African languages",
         "pct": 0.0,
         "count": 7
       },
@@ -1007,12 +1007,12 @@
         "count": 7
       },
       {
-        "group": "Other African languages",
+        "group": "Other foreign language",
         "pct": 0.0,
-        "count": 7
+        "count": 21
       },
       {
-        "group": "Other foreign language",
+        "group": "Senufo",
         "pct": 0.0,
         "count": 21
       }
@@ -1054,11 +1054,6 @@
         "count": 143
       },
       {
-        "group": "Soninke",
-        "pct": 0.1,
-        "count": 28
-      },
-      {
         "group": "Bobo",
         "pct": 0.1,
         "count": 28
@@ -1069,9 +1064,9 @@
         "count": 80
       },
       {
-        "group": "Malinke",
-        "pct": 0.0,
-        "count": 17
+        "group": "Soninke",
+        "pct": 0.1,
+        "count": 28
       },
       {
         "group": "Fula",
@@ -1079,24 +1074,29 @@
         "count": 11
       },
       {
-        "group": "Khassonke",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Hausa",
         "pct": 0.0,
         "count": 5
       },
       {
+        "group": "Khassonke",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Malinke",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
         "group": "Other non-Malian ethnic group",
         "pct": 0.0,
         "count": 11
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 17
       }
     ],
     "sources": [
@@ -1210,24 +1210,14 @@
         "count": 13063
       },
       {
-        "group": "Senufo",
-        "pct": 0.3,
-        "count": 7496
-      },
-      {
         "group": "Bozo",
         "pct": 0.3,
         "count": 7867
       },
       {
-        "group": "Khassonke",
-        "pct": 0.1,
-        "count": 3510
-      },
-      {
-        "group": "Tamasheq",
-        "pct": 0.1,
-        "count": 2626
+        "group": "Senufo",
+        "pct": 0.3,
+        "count": 7496
       },
       {
         "group": "Dafing",
@@ -1235,14 +1225,14 @@
         "count": 2309
       },
       {
+        "group": "Khassonke",
+        "pct": 0.1,
+        "count": 3510
+      },
+      {
         "group": "Mossi",
         "pct": 0.1,
         "count": 2886
-      },
-      {
-        "group": "Samogo",
-        "pct": 0.1,
-        "count": 1524
       },
       {
         "group": "Other Mali languages",
@@ -1255,9 +1245,19 @@
         "count": 1816
       },
       {
-        "group": "Kunabere",
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 1524
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.1,
+        "count": 2626
+      },
+      {
+        "group": "Arabic",
         "pct": 0.0,
-        "count": 274
+        "count": 475
       },
       {
         "group": "Hausa",
@@ -1265,9 +1265,9 @@
         "count": 659
       },
       {
-        "group": "Arabic",
+        "group": "Kunabere",
         "pct": 0.0,
-        "count": 475
+        "count": 274
       },
       {
         "group": "Other African languages",
@@ -1317,14 +1317,14 @@
         "count": 31381
       },
       {
-        "group": "Songhai/Zarma",
-        "pct": 0.9,
-        "count": 28999
-      },
-      {
         "group": "Minianka",
         "pct": 0.9,
         "count": 28837
+      },
+      {
+        "group": "Songhai/Zarma",
+        "pct": 0.9,
+        "count": 28999
       },
       {
         "group": "Bobo",
@@ -1357,19 +1357,9 @@
         "count": 6186
       },
       {
-        "group": "Tuareg",
-        "pct": 0.1,
-        "count": 3538
-      },
-      {
         "group": "Dafing",
         "pct": 0.1,
         "count": 4603
-      },
-      {
-        "group": "Samogo",
-        "pct": 0.1,
-        "count": 3047
       },
       {
         "group": "Mossi",
@@ -1382,14 +1372,24 @@
         "count": 4156
       },
       {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 625
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 3047
+      },
+      {
+        "group": "Tuareg",
+        "pct": 0.1,
+        "count": 3538
       },
       {
         "group": "Arab",
         "pct": 0.0,
         "count": 514
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 625
       }
     ],
     "sources": [
@@ -1404,11 +1404,11 @@
     "aliases": [
       "Koulikouro"
     ],
-    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Koulikoro, Dioïla, Nara regions of the 2023 layout, summed.",
+    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Koulikoro, Dioïla, Nara regions of the 2023 layout, summed. The Bougouni region of 2023 took in the cercle of Ouélessébougou and part of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 ground drawn here in the Kati cercle, so the regions summed here leave those out.",
     "religion_year": 2022,
-    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Koulikoro, Dioïla, Nara regions of the 2023 layout, summed.",
+    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Koulikoro, Dioïla, Nara regions of the 2023 layout, summed. The Bougouni region of 2023 took in the cercle of Ouélessébougou and part of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 ground drawn here in the Kati cercle, so the regions summed here leave those out.",
     "ethnicity_year": 2022,
-    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Koulikoro, Dioïla, Nara regions of the 2023 layout, summed.",
+    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Koulikoro, Dioïla, Nara regions of the 2023 layout, summed. The Bougouni region of 2023 took in the cercle of Ouélessébougou and part of Sélingué, drawn here in Koulikoro, and the District of Bamako of 2023 ground drawn here in the Kati cercle, so the regions summed here leave those out.",
     "language_year": 2022
   },
   {
@@ -1510,19 +1510,14 @@
         "count": 4947
       },
       {
-        "group": "Hassaniya",
-        "pct": 0.2,
-        "count": 2514
-      },
-      {
         "group": "Dafing",
         "pct": 0.2,
         "count": 2822
       },
       {
-        "group": "Samogo",
+        "group": "Hassaniya",
         "pct": 0.2,
-        "count": 2592
+        "count": 2514
       },
       {
         "group": "Other Mali languages",
@@ -1530,19 +1525,9 @@
         "count": 2350
       },
       {
-        "group": "Senufo",
-        "pct": 0.1,
-        "count": 2126
-      },
-      {
-        "group": "Minianka",
-        "pct": 0.1,
-        "count": 1404
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.1,
-        "count": 1191
+        "group": "Samogo",
+        "pct": 0.2,
+        "count": 2592
       },
       {
         "group": "Arabic",
@@ -1550,9 +1535,24 @@
         "count": 816
       },
       {
+        "group": "Hausa",
+        "pct": 0.1,
+        "count": 1191
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.1,
+        "count": 1404
+      },
+      {
         "group": "Other African languages",
         "pct": 0.1,
         "count": 793
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.1,
+        "count": 2126
       },
       {
         "group": "Khassonke",
@@ -1637,11 +1637,6 @@
         "count": 7632
       },
       {
-        "group": "Senufo",
-        "pct": 0.3,
-        "count": 4399
-      },
-      {
         "group": "Minianka",
         "pct": 0.3,
         "count": 4815
@@ -1652,9 +1647,9 @@
         "count": 4457
       },
       {
-        "group": "Moor",
-        "pct": 0.2,
-        "count": 2748
+        "group": "Senufo",
+        "pct": 0.3,
+        "count": 4399
       },
       {
         "group": "Dafing",
@@ -1662,9 +1657,14 @@
         "count": 3038
       },
       {
-        "group": "Khassonke",
+        "group": "Moor",
+        "pct": 0.2,
+        "count": 2748
+      },
+      {
+        "group": "Arab",
         "pct": 0.1,
-        "count": 1415
+        "count": 913
       },
       {
         "group": "Hausa",
@@ -1672,9 +1672,9 @@
         "count": 1460
       },
       {
-        "group": "Arab",
+        "group": "Khassonke",
         "pct": 0.1,
-        "count": 913
+        "count": 1415
       },
       {
         "group": "Other non-Malian ethnic group",
@@ -1697,11 +1697,11 @@
     ],
     "country": "MLI",
     "aliases": [],
-    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Mopti, Bandiagara, Douentza regions of the 2023 layout, summed.",
+    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Mopti, Bandiagara, Douentza regions of the 2023 layout, summed. The regions summed here leave out part of the cercle of Ténenkou, now the cercle of Nampala in the Ségou region.",
     "religion_year": 2022,
-    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Mopti, Bandiagara, Douentza regions of the 2023 layout, summed.",
+    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Mopti, Bandiagara, Douentza regions of the 2023 layout, summed. The regions summed here leave out part of the cercle of Ténenkou, now the cercle of Nampala in the Ségou region.",
     "ethnicity_year": 2022,
-    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Mopti, Bandiagara, Douentza regions of the 2023 layout, summed.",
+    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Mopti, Bandiagara, Douentza regions of the 2023 layout, summed. The regions summed here leave out part of the cercle of Ténenkou, now the cercle of Nampala in the Ségou region.",
     "language_year": 2022
   },
   {
@@ -1793,14 +1793,14 @@
         "count": 61151
       },
       {
-        "group": "Maraka/Soninke",
-        "pct": 0.5,
-        "count": 18733
-      },
-      {
         "group": "Bozo",
         "pct": 0.5,
         "count": 19608
+      },
+      {
+        "group": "Maraka/Soninke",
+        "pct": 0.5,
+        "count": 18733
       },
       {
         "group": "Sonrhai/Djerma",
@@ -1811,11 +1811,6 @@
         "group": "Dafing",
         "pct": 0.2,
         "count": 7664
-      },
-      {
-        "group": "Tamasheq",
-        "pct": 0.1,
-        "count": 2910
       },
       {
         "group": "Mossi",
@@ -1833,9 +1828,9 @@
         "count": 2602
       },
       {
-        "group": "Khassonke",
-        "pct": 0.0,
-        "count": 1883
+        "group": "Tamasheq",
+        "pct": 0.1,
+        "count": 2910
       },
       {
         "group": "Hassaniya",
@@ -1843,24 +1838,29 @@
         "count": 1577
       },
       {
-        "group": "Kunabere",
-        "pct": 0.0,
-        "count": 513
-      },
-      {
         "group": "Hausa",
         "pct": 0.0,
         "count": 822
       },
       {
-        "group": "Other Mali languages",
+        "group": "Khassonke",
         "pct": 0.0,
-        "count": 1605
+        "count": 1883
+      },
+      {
+        "group": "Kunabere",
+        "pct": 0.0,
+        "count": 513
       },
       {
         "group": "Other African languages",
         "pct": 0.0,
         "count": 1266
+      },
+      {
+        "group": "Other Mali languages",
+        "pct": 0.0,
+        "count": 1605
       }
     ],
     "ethnicity": [
@@ -1940,19 +1940,9 @@
         "count": 4413
       },
       {
-        "group": "Tuareg",
-        "pct": 0.1,
-        "count": 4597
-      },
-      {
         "group": "Mossi",
         "pct": 0.1,
         "count": 5443
-      },
-      {
-        "group": "Somono",
-        "pct": 0.1,
-        "count": 4183
       },
       {
         "group": "Other non-Malian ethnic group",
@@ -1960,14 +1950,24 @@
         "count": 4027
       },
       {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 1186
+        "group": "Somono",
+        "pct": 0.1,
+        "count": 4183
+      },
+      {
+        "group": "Tuareg",
+        "pct": 0.1,
+        "count": 4597
       },
       {
         "group": "Arab",
         "pct": 0.0,
         "count": 271
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 1186
       },
       {
         "group": "Kakolo",
@@ -1985,11 +1985,11 @@
     ],
     "country": "MLI",
     "aliases": [],
-    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Sikasso, Bougouni, Koutiala regions of the 2023 layout, summed.",
+    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Sikasso, Bougouni, Koutiala regions of the 2023 layout, summed. The regions summed here also take in ground drawn in Koulikoro (the cercle of Ouélessébougou and part of Sélingué, now in Bougouni) and in Ségou (part of the cercle of Bla, now in Koutiala).",
     "religion_year": 2022,
-    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Sikasso, Bougouni, Koutiala regions of the 2023 layout, summed.",
+    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Sikasso, Bougouni, Koutiala regions of the 2023 layout, summed. The regions summed here also take in ground drawn in Koulikoro (the cercle of Ouélessébougou and part of Sélingué, now in Bougouni) and in Ségou (part of the cercle of Bla, now in Koutiala).",
     "ethnicity_year": 2022,
-    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Sikasso, Bougouni, Koutiala regions of the 2023 layout, summed.",
+    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Sikasso, Bougouni, Koutiala regions of the 2023 layout, summed. The regions summed here also take in ground drawn in Koulikoro (the cercle of Ouélessébougou and part of Sélingué, now in Bougouni) and in Ségou (part of the cercle of Bla, now in Koutiala).",
     "language_year": 2022
   },
   {
@@ -2101,19 +2101,14 @@
         "count": 17994
       },
       {
-        "group": "Senufo",
-        "pct": 0.2,
-        "count": 4624
-      },
-      {
         "group": "Hassaniya",
         "pct": 0.2,
         "count": 4861
       },
       {
-        "group": "Samogo",
-        "pct": 0.1,
-        "count": 2426
+        "group": "Senufo",
+        "pct": 0.2,
+        "count": 4624
       },
       {
         "group": "Other Mali languages",
@@ -2126,6 +2121,21 @@
         "count": 1433
       },
       {
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 2426
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 544
+      },
+      {
         "group": "Khassonke",
         "pct": 0.0,
         "count": 1139
@@ -2134,16 +2144,6 @@
         "group": "Kunabere",
         "pct": 0.0,
         "count": 859
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 544
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 272
       },
       {
         "group": "Other African languages",
@@ -2203,14 +2203,14 @@
         "count": 49314
       },
       {
-        "group": "Songhai/Zarma",
-        "pct": 1.5,
-        "count": 44641
-      },
-      {
         "group": "Dafing",
         "pct": 1.5,
         "count": 44262
+      },
+      {
+        "group": "Songhai/Zarma",
+        "pct": 1.5,
+        "count": 44641
       },
       {
         "group": "Mossi",
@@ -2238,24 +2238,24 @@
         "count": 14035
       },
       {
-        "group": "Samogo",
-        "pct": 0.3,
-        "count": 8397
-      },
-      {
         "group": "Kakolo",
         "pct": 0.3,
         "count": 8258
       },
       {
-        "group": "Khassonke",
-        "pct": 0.1,
-        "count": 2744
+        "group": "Samogo",
+        "pct": 0.3,
+        "count": 8397
       },
       {
         "group": "Hausa",
         "pct": 0.1,
         "count": 1865
+      },
+      {
+        "group": "Khassonke",
+        "pct": 0.1,
+        "count": 2744
       },
       {
         "group": "Other non-Malian ethnic group",
@@ -2280,11 +2280,11 @@
     "aliases": [
       "Segou"
     ],
-    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Ségou, San regions of the 2023 layout, summed.",
+    "religion_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Tableau 2.03: the resident population by religion as the census asks it (Musulman, Chrétien, Animiste, Sans religion, Autre religion). The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Ségou, San regions of the 2023 layout, summed. The regions summed here leave out part of the cercle of Bla (now in Koutiala) and take in part of the cercle of Ténenkou, drawn in Mopti (now the cercle of Nampala).",
     "religion_year": 2022,
-    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Ségou, San regions of the 2023 layout, summed.",
+    "ethnicity_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 5: the 22 ethnies the census names, of the Malian population (the report's Autre ethnie non malienne is kept as a group; foreign nationals are outside the table). Bamanan/Bambara is shown as Bambara, Peulh as Fula, Souraka/Maure as Moor, Tamasheq/Touareg as Tuareg. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Ségou, San regions of the 2023 layout, summed. The regions summed here leave out part of the cercle of Bla (now in Koutiala) and take in part of the cercle of Ténenkou, drawn in Mopti (now the cercle of Nampala).",
     "ethnicity_year": 2022,
-    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Ségou, San regions of the 2023 layout, summed.",
+    "language_note": "INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population. Annex Tableau 6: langue maternelle as the census groups it, of the 19.1 million people the table covers against a resident population of 21.3 million; the report does not state the table's age floor. Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as Maraka/Soninke, the forms the 2009 census used on this map. The report prints each region's shares to two decimals and its population, and the counts here are the one applied to the other. This shape is the report's Ségou, San regions of the 2023 layout, summed. The regions summed here leave out part of the cercle of Bla (now in Koutiala) and take in part of the cercle of Ténenkou, drawn in Mopti (now the cercle of Nampala).",
     "language_year": 2022
   },
   {
@@ -2371,6 +2371,11 @@
         "count": 3702
       },
       {
+        "group": "Dogon",
+        "pct": 0.2,
+        "count": 1253
+      },
+      {
         "group": "Malinke",
         "pct": 0.2,
         "count": 1627
@@ -2379,11 +2384,6 @@
         "group": "Maraka/Soninke",
         "pct": 0.2,
         "count": 1097
-      },
-      {
-        "group": "Dogon",
-        "pct": 0.2,
-        "count": 1253
       },
       {
         "group": "Bobo",
@@ -2411,24 +2411,19 @@
         "count": 481
       },
       {
+        "group": "Dafing",
+        "pct": 0.0,
+        "count": 163
+      },
+      {
         "group": "Khassonke",
         "pct": 0.0,
         "count": 263
       },
       {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 145
-      },
-      {
         "group": "Kunabere",
         "pct": 0.0,
         "count": 91
-      },
-      {
-        "group": "Dafing",
-        "pct": 0.0,
-        "count": 163
       },
       {
         "group": "Minianka",
@@ -2444,6 +2439,11 @@
         "group": "Other non-African language",
         "pct": 0.0,
         "count": 63
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 145
       }
     ],
     "ethnicity": [
@@ -2483,11 +2483,6 @@
         "count": 8472
       },
       {
-        "group": "Soninke",
-        "pct": 0.2,
-        "count": 1461
-      },
-      {
         "group": "Dogon",
         "pct": 0.2,
         "count": 1679
@@ -2498,9 +2493,9 @@
         "count": 1599
       },
       {
-        "group": "Malinke",
-        "pct": 0.1,
-        "count": 780
+        "group": "Soninke",
+        "pct": 0.2,
+        "count": 1461
       },
       {
         "group": "Bobo",
@@ -2513,24 +2508,19 @@
         "count": 592
       },
       {
-        "group": "Mossi",
-        "pct": 0.1,
-        "count": 671
-      },
-      {
         "group": "Kakolo",
         "pct": 0.1,
         "count": 998
       },
       {
-        "group": "Khassonke",
-        "pct": 0.0,
-        "count": 365
+        "group": "Malinke",
+        "pct": 0.1,
+        "count": 780
       },
       {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 316
+        "group": "Mossi",
+        "pct": 0.1,
+        "count": 671
       },
       {
         "group": "Dafing",
@@ -2538,17 +2528,12 @@
         "count": 79
       },
       {
+        "group": "Khassonke",
+        "pct": 0.0,
+        "count": 365
+      },
+      {
         "group": "Minianka",
-        "pct": 0.0,
-        "count": 207
-      },
-      {
-        "group": "Samogo",
-        "pct": 0.0,
-        "count": 108
-      },
-      {
-        "group": "Somono",
         "pct": 0.0,
         "count": 207
       },
@@ -2556,6 +2541,21 @@
         "group": "Other non-Malian ethnic group",
         "pct": 0.0,
         "count": 138
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 316
+      },
+      {
+        "group": "Somono",
+        "pct": 0.0,
+        "count": 207
       }
     ],
     "sources": [
