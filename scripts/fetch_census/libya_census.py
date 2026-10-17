@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Libya -- the 2006 census by shabiyah: head count, median age and sex ratio.
+"""Libya -- the 2006 census: head count, median age and sex ratio for the areas drawn.
 
 The Bureau of Statistics and Census counted Libya on 15 April 2006 and
 published, in the census's Table (10), the total resident population --
@@ -11,24 +11,32 @@ later count exists: the 2012 figures beside it in the same workbook are the
 Bureau's National Population Survey, a sample, and the population figures
 since are estimates.
 
-**What is written**, for every shabiyah, at both levels of the map (which
-draws the 22 shabiyat twice, with the same outlines and the same ids): the
-2006 count, the median age interpolated within the five-year group holding
-the middle person, and men per 1,000 women.
+**The areas drawn are not quite the census's shabiyat.** The map draws 22
+areas, twice (both levels, the same outlines and ids), and five carry the
+names of districts of the 2001 division (Ajdabiya, Al Qubbah, Ghadamis,
+Mizdah, Tajura' wa an Nawahi al Arba) where the census's shabiyat are Al
+Wahat, Darnah, Nalut, Al Jabal al Gharbi and Tripoli. Placing each baladiyah's
+seat (GeoNames) in the outlines shows where the two differ: the outline
+labelled Al Marj holds Al Abyar and Tocra, which the census counts with
+Benghazi; Al Jabal al Akhdar holds Al Abraq (the census's Darnah); Al Marqab
+holds Zliten (the census's Misrata); Az Zawiyah holds Janzur, Al Mayah, Az
+Zahra and As Sawani (the census's Al Jafarah); and the outline labelled
+Tajura' wa an Nawahi al Arba holds Garabulli and Qasr Khiyar (the census's Al
+Marqab) and Qasr bin Ghashir (Al Jafarah) besides Tripoli.
 
-**The labels.** Seventeen of the boundary file's 22 labels are the shabiyat's
-own names. Five are the names of districts of the 2001 division, put on the
-polygons of the 2007 shabiyat that took them in: the polygon labelled Al
-Qubbah holds Derna, labelled Ajdabiya holds Ajdabiya and the oases of Jalu,
-Awjila and Marada (Al Wahat), Ghadamis holds Nalut and Ghadames (Nalut),
-Mizdah holds Gharyan, Yafran and Mizda (Al Jabal al Gharbi), and Tajura' wa
-an Nawahi al Arba holds Tripoli. Each is bound by its shape id to the
-shabiyah it draws (``SHAPES``) and carries that shabiyah's name.
+**What is written.** Every area is the sum of the census's baladiyat whose
+seats lie in it, age group by age group (``MOVED`` declares the baladiyat
+that lie outside their census shabiyah), so its count, its median age --
+interpolated within the five-year group holding the middle person -- and its
+men per 1,000 women are the census's own for that ground. Two areas are left
+without figures and say why (``UNSURE``): the outline labelled Tajura' wa an
+Nawahi al Arba and Al Jifarah, between which three baladiyat of the census's
+Al Jafarah (Sidi as Sayih, Suq al Khamis, As Sabiah) cannot be placed.
 
 **Checks before anything is written.** Every row's age groups and its men and
 women make its total; the 22 shabiyat make the national row, 5,657,692; each
-shabiyah's mahallat make it; every shabiyah is bound to exactly one polygon
-and every polygon to one shabiyah.
+shabiyah's baladiyat and its mahallat make it; every baladiyah lands on one
+area; every drawn area is bound to one record.
 
 Usage:
     python -m scripts.fetch_census.libya_census
@@ -44,7 +52,7 @@ import unicodedata
 from typing import Any
 
 from . import uscb
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import PROCESSED, NOT_AVAILABLE, gap, http_get, log, measure, record, write_json
 
 DATASET = "libya-subnational-boundaries-and-tabular-data"
 YEAR = 2006
@@ -57,8 +65,7 @@ SOURCE = ("Bureau of Statistics and Census Libya, General Population Census 2006
 LICENCE = "Creative Commons Attribution International (CC BY), published via HDX"
 
 # The census's shabiyah (folded, as the Bureau spells it) -> the boundary
-# file's shape id. Established by the polygons' extent: each holds its
-# shabiyah's seat and towns (see the module docstring).
+# file's shape id of the area that holds its seat.
 SHAPES: dict[str, str] = {
     "albutnan": "10800210B28216506156245",
     "darnah": "10800210B44488917334986",             # labelled Al Qubbah
@@ -83,10 +90,10 @@ SHAPES: dict[str, str] = {
     "ghat": "10800210B26344076542723",
     "murzuq": "10800210B53073192190863",
 }
-# The five polygons whose label is a district of the 2001 division: the name
-# of the 2007 shabiyah each draws, and what that shabiyah holds, for the note.
-# Every other polygon keeps the boundary file's label, which is its
-# shabiyah's own name in another spelling.
+# The five areas whose label is a district of the 2001 division: the name of
+# the census's shabiyah each draws, and what that shabiyah holds, for the
+# note. Every other area keeps its label, its shabiyah's name in another
+# spelling.
 RELABELLED: dict[str, tuple[str, str]] = {
     "darnah": ("Darnah", "Derna and Al Qubbah"),
     "alwahat": ("Al Wahat", "Ajdabiya and the oases of Jalu, Awjila and Marada"),
@@ -94,6 +101,31 @@ RELABELLED: dict[str, tuple[str, str]] = {
     "aljabalalgharbi": ("Al Jabal al Gharbi", "Gharyan, Yafran and Mizda"),
     "nalut": ("Nalut", "Nalut and Ghadames"),
 }
+# Baladiyat whose seat lies in an area other than their census shabiyah's,
+# by GeoNames' point for the seat: (shabiyah, baladiyah), folded -> the
+# shabiyah key of the area that holds it.
+MOVED: dict[tuple[str, str], str] = {
+    ("banghazi", "alibyar"): "almarj",            # Al Abyar, 32.19N 20.60E
+    ("banghazi", "tukrah"): "almarj",             # Tocra, 32.53N 20.58E
+    ("darnah", "alabraq"): "aljabalalakhdar",     # Al Abraq
+    ("misratah", "zlitan"): "almarqab",           # Zliten, 32.47N 14.57E
+    ("almarqab", "alqarabulli"): "tarabulus",     # Garabulli, 32.75N 13.71E
+    ("almarqab", "qasralkhayar"): "tarabulus",    # Qasr Khiyar, 32.70N 13.85E
+    ("aljafarah", "qasrbinghashir"): "tarabulus",
+    ("aljafarah", "janzur"): "azzawiyah",         # Janzur, 32.82N 13.01E
+    ("aljafarah", "almayah"): "azzawiyah",
+    ("aljafarah", "azzahra"): "azzawiyah",
+    ("aljafarah", "sawanibinadam"): "azzawiyah",  # As Sawani, 32.72N 13.07E
+}
+# Areas left without figures, and why: three of the census's Al Jafarah
+# baladiyat could lie in either.
+UNSURE: dict[str, str] = {
+    key: ("The 2006 census counts this area's people in baladiyat of which three -- Sidi as "
+          "Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line "
+          "between the areas shown as Al Jifarah and as Tripoli, which do not follow the "
+          "census's shabiyat; no count for this area as shown can be made from them, so none "
+          "is shown.")
+    for key in ("tarabulus", "aljafarah")}
 GROUP = re.compile(r"^([BMF])(\d{2})(\d{2})$")
 OPEN = re.compile(r"^([BMF])(\d{2})PL$")
 
@@ -143,7 +175,7 @@ def columns(names: list[str]) -> dict[str, list[tuple[int, int | None, int]]]:
 
 
 def read(rows: list[list[Any]]) -> dict[str, Any]:
-    """The national row, the shabiyat and their mahallat from the Age-Sex sheet."""
+    """The national row, the shabiyat, their baladiyat and their mahallat."""
     names, _ = uscb.columns(rows)
     at = {n: i for i, n in enumerate(names) if n}
     groups = columns(names)
@@ -193,15 +225,46 @@ def check(table: dict[str, Any]) -> None:
         raise SystemExit("libya_census: the shabiyat are not the 22 bound here: "
                          f"{sorted(set(table['shabiyat']) ^ set(SHAPES))}")
     for key, unit in table["shabiyat"].items():
-        below = table["below"].get(key)
-        if below and sum(below) != unit["total"]:
-            raise SystemExit(f"libya_census: {unit['name']}'s mahallat make {sum(below):,}, "
-                             f"not {unit['total']:,}")
+        for what, parts in (("mahallat", table["below"].get(key)),
+                            ("baladiyat", [b["total"] for b in table["baladiyat"]
+                                           if fold(b["shabiyah"]) == key])):
+            if parts and sum(parts) != unit["total"]:
+                raise SystemExit(f"libya_census: {unit['name']}'s {what} make "
+                                 f"{sum(parts):,}, not {unit['total']:,}")
+
+
+def compose(table: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+    """Area (its shabiyah key) -> the census's baladiyat whose seats lie in it."""
+    areas: dict[str, list[dict[str, Any]]] = {key: [] for key in SHAPES}
+    used: set[tuple[str, str]] = set()
+    for unit in table["baladiyat"]:
+        home = fold(unit["shabiyah"])
+        key = (home, fold(unit["name"]))
+        if key in MOVED:
+            used.add(key)
+        areas[MOVED.get(key, home)].append(unit)
+    stale = sorted(set(MOVED) - used)
+    if stale:
+        raise SystemExit(f"libya_census: MOVED names baladiyat the census does not: {stale}")
+    if sum(b["total"] for parts in areas.values() for b in parts) != NATIONAL:
+        raise SystemExit("libya_census: the areas do not make the national total")
+    return areas
+
+
+def merged(parts: list[dict[str, Any]]) -> dict[str, Any]:
+    return {"total": sum(p["total"] for p in parts), "men": sum(p["men"] for p in parts),
+            "women": sum(p["women"] for p in parts),
+            "groups": [(lo, hi, sum(p["groups"][i][2] for p in parts))
+                       for i, (lo, hi, _) in enumerate(parts[0]["groups"])]}
+
+
+def display(name: str) -> str:
+    return " ".join(w.capitalize() if w.isupper() else w for w in str(name).split())
 
 
 def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
           ) -> list[dict[str, Any]]:
-    """One record per shabiyah and level, bound by shape id."""
+    """One record per area and level, bound by shape id."""
     for level, shapes in drawn.items():
         ids = {s["id"] for s in shapes}
         wanted = set(SHAPES.values())
@@ -209,36 +272,63 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
             raise SystemExit(f"libya_census: the map's {level} polygons are not the 22 "
                              f"bound here: {sorted(ids ^ wanted)}")
     labels = {s["id"]: s["name"] for shapes in drawn.values() for s in shapes}
+    areas = compose(table)
     records = []
-    for key, unit in sorted(table["shabiyat"].items()):
+    for key in sorted(SHAPES):
         sid = SHAPES[key]
-        median = grouped_median(unit["groups"])
-        ratio = round(1000 * unit["men"] / unit["women"])
+        census = table["shabiyat"][key]
         name, held = RELABELLED.get(key, (labels[sid], ""))
         where = (f" {labels[sid]}, a name this area is also given, was a district of the "
                  f"2001 division; the area shown is the shabiyah of {name} as drawn in 2007, "
                  f"which holds {held}." if held else "")
-        pop_note = (f"The 2006 census count of {name}, Libyans and non-Libyans resident on "
-                    f"15 April 2006: {unit['men']:,} men and {unit['women']:,} women.{where}")
+        if key in UNSURE:
+            fields: dict[str, Any] = {f: gap(NOT_AVAILABLE, UNSURE[key] + where)
+                                      for f in ("population", "median_age", "sex_ratio")}
+        else:
+            parts = areas[key]
+            unit = merged(parts)
+            gained = [p for p in parts if fold(p["shabiyah"]) != key]
+            lost = [b for b in table["baladiyat"] if fold(b["shabiyah"]) == key
+                    and all(b is not p for p in parts)]
+            if gained or lost:
+                diff = []
+                if gained:
+                    diff.append("with " + ", ".join(
+                        f"{display(p['name'])} ({p['total']:,}), which the census counts with "
+                        f"{display(table['shabiyat'][fold(p['shabiyah'])]['name'])}"
+                        for p in gained))
+                if lost:
+                    diff.append("without " + ", ".join(
+                        f"{display(b['name'])} ({b['total']:,})" for b in lost)
+                        + ", which lie outside it")
+                what = (f"the census's shabiyah of {display(census['name'])} "
+                        f"({census['total']:,}) " + " and ".join(diff) +
+                        "; added up from the census's baladiyat whose seats lie in the area "
+                        "shown")
+            else:
+                what = f"the shabiyah of {name}"
+            median = grouped_median(unit["groups"])
+            fields = {
+                "population": measure(unit["total"], year=YEAR, source=SOURCE),
+                "population_note": (f"The 2006 census count of {what}, Libyans and "
+                                    f"non-Libyans resident on 15 April 2006: {unit['men']:,} "
+                                    f"men and {unit['women']:,} women.{where}"),
+                "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
+                "median_age_note": ("Interpolated within the five-year age group that holds "
+                                    "the middle person, from the 2006 census's count of "
+                                    "everyone resident by five-year age group."),
+                "sex_ratio": measure(round(1000 * unit["men"] / unit["women"]),
+                                     unit="males_per_1000_females", year=YEAR, source=SOURCE),
+                "sex_ratio_note": (f"Men per 1,000 women among everyone the 2006 census "
+                                   f"counted as resident here, Libyans and non-Libyans: "
+                                   f"{unit['men']:,} men and {unit['women']:,} women."),
+                "sources": [{"field": "population/median_age/sex_ratio", "name": SOURCE,
+                             "url": uscb.dataset_url(DATASET), "year": YEAR,
+                             "license": LICENCE}]}
         for level in drawn:
-            records.append(record(
-                f"LBY-2006-{key}-{level}", name, level=level, parent="LBY", country="LBY",
-                match_by="shape_id", shape_id=sid,
-                population=measure(unit["total"], year=YEAR, source=SOURCE),
-                population_note=pop_note,
-                median_age=measure(median, unit="years", year=YEAR, source=SOURCE),
-                median_age_note=("Interpolated within the five-year age group that holds the "
-                                 "middle person, from the 2006 census's count of everyone "
-                                 "resident by five-year age group."),
-                sex_ratio=measure(ratio, unit="males_per_1000_females", year=YEAR,
-                                  source=SOURCE),
-                sex_ratio_note=(f"Men per 1,000 women among everyone the 2006 census counted "
-                                f"as resident, Libyans and non-Libyans: {unit['men']:,} men "
-                                f"and {unit['women']:,} women."),
-                codes={"uscb": unit["name"]},
-                sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE,
-                          "url": uscb.dataset_url(DATASET), "year": YEAR,
-                          "license": LICENCE}]))
+            records.append(record(f"LBY-2006-{key}-{level}", name, level=level, parent="LBY",
+                                  country="LBY", match_by="shape_id", shape_id=sid,
+                                  codes={"uscb": census["name"]}, **fields))
     return records
 
 
@@ -252,20 +342,14 @@ def main() -> int:
     meta = " ".join(str(c) for r in uscb.sheet_rows(book, "Metadata") for c in r if c)
     if str(YEAR) not in meta:
         raise SystemExit("libya_census: the workbook's metadata never names 2006")
-    # What the Population sheet's 2020 figure is, from the workbook's own
-    # dictionary, so the log says why it is or is not used.
-    for row in uscb.sheet_rows(book, "Data Dictionary"):
-        cells = [str(c).strip() for c in row if c is not None]
-        if cells and any("2020" in c for c in cells):
-            log("  dictionary: " + " | ".join(c[:300] for c in cells))
     table = read(uscb.sheet_rows(book, "Age-Sex"))
-    for key, unit in sorted(table["shabiyat"].items()):
-        log(f"  {unit['name']:24} {unit['total']:>10,}  median {grouped_median(unit['groups'])}"
-            f"  men/1000 women {round(1000 * unit['men'] / unit['women'])}")
-        # Its baladiyat, so the ground each shabiyah counts can be compared
-        # with the polygon it is bound to.
-        log("      " + "; ".join(f"{b['name']} {b['total']:,}"
-                                 for b in table["baladiyat"] if fold(b["shabiyah"]) == key))
+    areas = compose(table)
+    for key, parts in sorted(areas.items()):
+        unit = merged(parts)
+        log(f"  {key:18} {unit['total']:>10,}  median {grouped_median(unit['groups'])}  "
+            f"men/1000 women {round(1000 * unit['men'] / unit['women'])}"
+            + ("  (left without figures)" if key in UNSURE else "") + "  <- "
+            + "; ".join(f"{p['name']} {p['total']:,}" for p in parts))
     drawn = {level: json.loads((SITE / level / "LBY.units.json").read_text())
              for level in ("admin1", "admin2")}
     records = build(table, drawn)

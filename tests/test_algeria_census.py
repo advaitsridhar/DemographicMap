@@ -34,9 +34,16 @@ class Parsing(unittest.TestCase):
         self.assertEqual(table[2]["total"], 226926)
 
     def test_men_and_women_must_make_the_total(self):
-        bad = PAGE.replace("24567 23287 47854", "24567 23287 47855")
+        bad = PAGE.replace("24567 23287 47854", "24567 23287 47954")
         with self.assertRaises(SystemExit):
             ac.parse([bad])
+
+    def test_a_cell_rounded_on_its_own_is_kept_and_noted(self):
+        """Chlef's 20-24 row: 61,818 men, 62,127 women, 123,946 in all."""
+        near = PAGE.replace("24567 23287 47854", "24567 23287 47855")
+        table = ac.parse([near])
+        self.assertEqual(table[1]["groups"][0], (0, 4, 47855))
+        self.assertEqual(table[1]["rounding"], ["0-4 Ans -1"])
 
     def test_the_check_wants_all_48_and_unbroken_groups(self):
         with self.assertRaises(SystemExit):

@@ -64,6 +64,9 @@ LICENCE = "Creative Commons Attribution International (CC BY), published via HDX
 # names nor the closest spelling join them. Filled from the run's log.
 LOCALITIES: dict[str, str] = {}
 CLAIMED = ("abyei", "halaib", "halayeb")
+# The most of a state's people Table P01 may leave without a stated age
+# before the table is taken to be misread rather than incomplete.
+UNSTATED_SHARE = 0.05
 SPELLING = 0.72
 GROUP = re.compile(r"^([BMF])(\d{2})(\d{2})$")
 OPEN = re.compile(r"^([BMF])(\d{2})PL$")
@@ -161,12 +164,23 @@ def read_ages(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
         name = str(row[at["AREA_NAME"]] or "").strip()
         total, men, women = (number(row[at[k]]) for k in ("BTOTL", "MTOTL", "FTOTL"))
         groups = [(lo, hi, number(row[i]) or 0) for lo, hi, i in cols["B"]]
-        if None in (total, men, women) or men + women != total or \
-                sum(n for _, _, n in groups) != total:
-            raise SystemExit(f"sudan_census: P01 {name}: its groups and sexes do not make "
-                             f"{total}")
+        if None in (total, men, women) or men + women != total:
+            raise SystemExit(f"sudan_census: P01 {name}: men {men}, women {women}, "
+                             f"total {total}")
+        aged = sum(n for _, _, n in groups)
+        by_sex = [sum(number(row[i]) or 0 for _, _, i in cols[s]) for s in "MF"]
+        # People whose age was not stated are in the total and in no group:
+        # they are left out of the median, and must be few.
+        unstated = total - aged
+        if unstated < 0 or unstated > UNSTATED_SHARE * total:
+            raise SystemExit(f"sudan_census: P01 {name}: its age groups make {aged:,} of "
+                             f"{total:,} (men {by_sex[0]:,} of {men:,}, women {by_sex[1]:,} "
+                             f"of {women:,})")
+        if unstated:
+            log(f"  P01 {name}: {unstated:,} of {total:,} of no stated age (men "
+                f"{men - by_sex[0]:,}, women {women - by_sex[1]:,})")
         out[fold(name)] = {"name": name, "total": total, "men": men, "women": women,
-                           "groups": groups}
+                           "groups": groups, "unstated": unstated}
     return out
 
 
@@ -232,10 +246,12 @@ def build(retab: dict[str, Any], ages: dict[str, dict[str, Any]],
         if p01 and p01["total"] == unit["total"]:
             median = grouped_median(p01["groups"])
             fields["median_age"] = measure(median, unit="years", year=YEAR, source=AGE_SOURCE)
+            unstated = (f" The {p01['unstated']:,} people whose age was not stated are left "
+                        "out of it." if p01.get("unstated") else "")
             fields["median_age_note"] = (
                 "Interpolated within the five-year age group that holds the middle person, "
                 f"from the 2008 census's count of everyone in the state by five-year age group "
-                f"({p01['total']:,} people, the state then as now).")
+                f"({p01['total']:,} people, the state then as now).{unstated}")
             fields["sources"].append({**age_src, "field": "median_age"})
             report.append(f"  state {unit['name']}: unchanged since 2008 "
                           f"({unit['total']:,}); median {median}")

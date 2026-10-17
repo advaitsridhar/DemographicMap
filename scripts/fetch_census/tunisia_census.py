@@ -85,6 +85,8 @@ DELEGATIONS: dict[tuple[str, str], str] = {
 }
 # A pair left over is bound on its closest spelling at this similarity or more.
 SPELLING = 0.82
+# A sector of a new delegation is found in 2014 under another spelling at this.
+SECTOR_SPELLING = 0.8
 AGE = re.compile(r"^\s*(\d{1,3})\s*-\s*(\d{1,3})\s*$")
 OPEN = re.compile(r"^\s*(\d{1,3})\s*(?:\+|ans?\s*et\s*plus|et\s*\+|et\s*plus)\s*$", re.I)
 ARABIC = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ة": "ه", "ى": "ي",
@@ -263,6 +265,15 @@ def carved(table: dict[str, Any], held: dict[str, list[str]], sectors_2014: dict
         placed: dict[str, str] = {}
         for sec in mine:
             old = known.get(fold(sec["fr"]))
+            if old is None and known:
+                # A sector spelt differently in the two censuses ("Zanouch",
+                # "Zannouch"): the closest name of the governorate's 2014
+                # sectors, where it is close.
+                best = max(known, key=lambda k: SequenceMatcher(None, fold(sec["fr"]), k).ratio())
+                score = SequenceMatcher(None, fold(sec["fr"]), best).ratio()
+                if score >= SECTOR_SPELLING:
+                    old = known[best]
+                    report.append(f"    sector {sec['fr']} read as 2014's {best} ({score:.2f})")
             sid = by_name.get((unit["gov"], old)) if old else None
             if sid:
                 placed[sec["code"]] = sid

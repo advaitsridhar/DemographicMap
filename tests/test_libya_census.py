@@ -1,8 +1,9 @@
-"""Libya's 2006 census reader: the 22 shabiyat, their checks and their polygons."""
+"""Libya's 2006 census reader: the shabiyat, their baladiyat, and the areas drawn."""
 
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -33,75 +34,114 @@ def row(names, name, shabiyah, level, per_band_m, per_band_f):
     return [values.get(n) for n in names]
 
 
+def sheet():
+    """Every shabiyah of SHAPES with one baladiyah of its own name and one
+    mahallah; Banghazi with a second baladiyah, Tukrah, of the men only."""
+    names = header()
+    rows = [names, names]   # the sheet's two header rows: names, then aliases
+    per = 3
+    total = 0
+    for key in sorted(lc.SHAPES):
+        if key == "banghazi":
+            rows.append(row(names, key.upper(), key.upper(), 1, per + 1, per))
+            rows.append(row(names, key.upper(), key.upper(), 2, per, per))
+            rows.append(row(names, "TUKRAH", key.upper(), 2, 1, 0))
+            rows.append(row(names, key.upper() + " MAHALLAH", key.upper(), 3, per + 1, per))
+            total += (2 * per + 1) * (len(BANDS) + 1)
+            continue
+        rows.append(row(names, key.upper(), key.upper(), 1, per, per))
+        rows.append(row(names, key.upper(), key.upper(), 2, per, per))
+        rows.append(row(names, key.upper() + " MAHALLAH", key.upper(), 3, per, per))
+        total += 2 * per * (len(BANDS) + 1)
+    level = names.index("ADM_LEVEL")
+    shabiyat = [r for r in rows[2:] if r[level] == 1]
+    national = [sum(r[i] for r in shabiyat) if isinstance(shabiyat[0][i], int) else None
+                for i in range(len(names))]
+    national[names.index("AREA_NAME")], national[level] = "LIBYA", 0
+    rows.insert(2, national)
+    return rows, total
+
+
 class Reading(unittest.TestCase):
-    def sheet(self, extra_men=0):
-        names = header()
-        rows = [names, names]   # the sheet's two header rows: names, then aliases
-        keys = sorted(lc.SHAPES)
-        per = 3
-        total = 0
-        for key in keys:
-            rows.append(row(names, key.upper(), key.upper(), 1, per, per))
-            rows.append(row(names, key.upper() + " MAHALLAH", key.upper(), 3, per, per))
-            total += 2 * per * (len(BANDS) + 1)
-        rows.insert(2, row(names, "LIBYA", "", 0, per * len(keys), per * len(keys)))
-        return rows, total
+    def read(self, total, rows):
+        with mock.patch.object(lc, "NATIONAL", total):
+            return lc.read(rows)
 
     def test_the_shabiyat_are_read_and_checked(self):
-        rows, total = self.sheet()
-        saved = lc.NATIONAL
-        lc.NATIONAL = total
-        try:
-            table = lc.read(rows)
-        finally:
-            lc.NATIONAL = saved
+        rows, total = sheet()
+        table = self.read(total, rows)
         self.assertEqual(len(table["shabiyat"]), 22)
+        self.assertEqual(len(table["baladiyat"]), 23)
         unit = table["shabiyat"]["darnah"]
         self.assertEqual(unit["men"], unit["women"])
         # Eighteen equal groups: the middle person closes the ninth, 40-44.
         self.assertEqual(lc.grouped_median(unit["groups"]), 45.0)
 
     def test_a_wrong_national_total_stops_the_run(self):
-        rows, total = self.sheet()
-        saved = lc.NATIONAL
-        lc.NATIONAL = total + 1
-        try:
-            with self.assertRaises(SystemExit):
-                lc.read(rows)
-        finally:
-            lc.NATIONAL = saved
+        rows, total = sheet()
+        with self.assertRaises(SystemExit):
+            self.read(total + 1, rows)
 
-    def test_records_bind_by_shape_and_rename_the_five_relabelled(self):
-        rows, total = self.sheet()
-        saved = lc.NATIONAL
-        lc.NATIONAL = total
-        try:
-            table = lc.read(rows)
-        finally:
-            lc.NATIONAL = saved
+
+class Areas(unittest.TestCase):
+    def table(self):
+        rows, total = sheet()
+        with mock.patch.object(lc, "NATIONAL", total):
+            return lc.read(rows), total
+
+    def shapes(self):
         shapes = [{"id": sid, "name": f"label-{key}"} for key, sid in lc.SHAPES.items()]
-        shapes[[k for k in lc.SHAPES].index("darnah")]["name"] = "Al Qubbah"
-        records = lc.build(table, {"admin1": shapes, "admin2": shapes})
+        for s in shapes:
+            if s["id"] == lc.SHAPES["darnah"]:
+                s["name"] = "Al Qubbah"
+        return shapes
+
+    def test_a_moved_baladiyah_is_counted_where_its_seat_lies(self):
+        table, total = self.table()
+        moved = {("banghazi", "tukrah"): "almarj"}
+        with mock.patch.object(lc, "NATIONAL", total), mock.patch.object(lc, "MOVED", moved), \
+                mock.patch.object(lc, "UNSURE", {}):
+            shapes = self.shapes()
+            records = lc.build(table, {"admin1": shapes, "admin2": shapes})
         self.assertEqual(len(records), 44)
+        marj = [r for r in records if r["shape_id"] == lc.SHAPES["almarj"]][0]
+        benghazi = [r for r in records if r["shape_id"] == lc.SHAPES["banghazi"]][0]
+        per_area = 2 * 3 * (len(BANDS) + 1)
+        self.assertEqual(marj["population"]["value"], per_area + len(BANDS) + 1)
+        self.assertEqual(benghazi["population"]["value"], per_area)
+        self.assertIn("which the census counts with Banghazi", marj["population_note"])
+        self.assertIn("without Tukrah", benghazi["population_note"])
+        self.assertGreater(marj["sex_ratio"]["value"], 1000)
+        self.assertEqual(benghazi["sex_ratio"]["value"], 1000)
+
+    def test_relabelled_areas_take_their_shabiyah_name_and_unsure_ones_say_why(self):
+        table, total = self.table()
+        with mock.patch.object(lc, "NATIONAL", total), mock.patch.object(lc, "MOVED", {}):
+            shapes = self.shapes()
+            records = lc.build(table, {"admin1": shapes, "admin2": shapes})
         darnah = [r for r in records if r["shape_id"] == lc.SHAPES["darnah"]]
         self.assertEqual({r["name"] for r in darnah}, {"Darnah"})
         self.assertIn("Al Qubbah, a name this area is also given", darnah[0]["population_note"])
+        tripoli = [r for r in records if r["shape_id"] == lc.SHAPES["tarabulus"]][0]
+        self.assertEqual(tripoli["population"]["status"], "not_available")
+        self.assertIn("Sidi as Sayih", tripoli["population"]["note"])
         sabha = [r for r in records if r["shape_id"] == lc.SHAPES["sabha"]][0]
         self.assertEqual(sabha["name"], "label-sabha")
         self.assertEqual(sabha["sex_ratio"]["unit"], "males_per_1000_females")
-        self.assertEqual(sabha["sex_ratio"]["value"], 1000)
+
+    def test_a_moved_baladiyah_the_census_does_not_have_stops_the_run(self):
+        table, total = self.table()
+        with mock.patch.object(lc, "NATIONAL", total), \
+                mock.patch.object(lc, "MOVED", {("banghazi", "nowhere"): "almarj"}):
+            with self.assertRaises(SystemExit):
+                lc.compose(table)
 
     def test_a_polygon_set_that_is_not_the_22_stops_the_run(self):
-        rows, total = self.sheet()
-        saved = lc.NATIONAL
-        lc.NATIONAL = total
-        try:
-            table = lc.read(rows)
-        finally:
-            lc.NATIONAL = saved
-        shapes = [{"id": sid, "name": key} for key, sid in lc.SHAPES.items()][:21]
-        with self.assertRaises(SystemExit):
-            lc.build(table, {"admin1": shapes})
+        table, total = self.table()
+        shapes = self.shapes()[:21]
+        with mock.patch.object(lc, "MOVED", {}):
+            with self.assertRaises(SystemExit):
+                lc.build(table, {"admin1": shapes})
 
 
 if __name__ == "__main__":

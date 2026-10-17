@@ -50,7 +50,10 @@ SOURCE = ("Southern Sudan Centre for Census, Statistics and Evaluation, 5th Suda
 LICENCE = "Creative Commons Attribution International (CC BY), published via HDX"
 # The census's county (folded) -> the map's label, where the two differ by
 # more than spelling folds away. Filled from the run's log.
-COUNTIES: dict[str, str] = {}
+COUNTIES: dict[str, str] = {
+    "pijicanal": "Canal/Pigi",
+    "lopa": "Lafon",            # Lopa/Lafon county, seat Lafon
+}
 CLAIMED = ("abyei",)
 GROUP = re.compile(r"^([BMF])(\d{2})(\d{2})$")
 OPEN = re.compile(r"^([BMF])(\d{2})PL$")
@@ -176,8 +179,8 @@ def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any
         median_age=measure(f["median"], unit="years", year=YEAR, source=SOURCE)
         if f["median"] is not None else None,
         median_age_note=(f"Interpolated within the five-year age group that holds the middle "
-                         f"person, from the 2008 census's count of everyone in {what} by "
-                         f"five-year age group: {unit['total']:,} people."),
+                         f"person, from the 2008 census's count by five-year age group of "
+                         f"everyone in {what}: {unit['total']:,} people."),
         sex_ratio=measure(f["ratio"], unit="males_per_1000_females", year=YEAR, source=SOURCE),
         sex_ratio_note=(f"Men per 1,000 women at the 2008 census in {what}: {unit['men']:,} "
                         f"men and {unit['women']:,} women."),
@@ -198,7 +201,26 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             report.append(f"state {unit['name']!r}: no polygon")
             continue
         state_of[key] = shape
-        records.append(unit_record(f"SSD-2008-{key}", shape, "admin1", unit, unit["name"].title()))
+        # A state that counted a county of the claimed Abyei Area (Warrap)
+        # is written without it: the map draws the Abyei Area apart.
+        claimed = [c for c in table["counties"] if fold(c["state"]) == key
+                   and any(w in fold(c["name"]) for w in CLAIMED)]
+        what = unit["name"].title()
+        if claimed:
+            kept = [c for c in table["counties"] if fold(c["state"]) == key and c not in claimed]
+            if len({tuple(g[:2] for g in c["groups"]) for c in kept}) != 1:
+                raise SystemExit(f"south_sudan_census: {unit['name']}'s counties are not read "
+                                 "in one set of age groups")
+            unit = {**unit, "total": sum(c["total"] for c in kept),
+                    "men": sum(c["men"] for c in kept), "women": sum(c["women"] for c in kept),
+                    "groups": [(lo, hi, sum(c["groups"][i][2] for c in kept))
+                               for i, (lo, hi, _) in enumerate(kept[0]["groups"])]}
+            what = (f"{what} without "
+                    + " and ".join(f"{c['name'].title()} County ({c['total']:,} people)"
+                                   for c in claimed)
+                    + ", in the Abyei Area, which Sudan and South Sudan both claim")
+            report.append(f"state {unit['name']!r}: written without {[c['name'] for c in claimed]}")
+        records.append(unit_record(f"SSD-2008-{key}", shape, "admin1", unit, what))
     free = {s["id"]: s for s in admin2}
     for unit in table["counties"]:
         key = fold(unit["name"])

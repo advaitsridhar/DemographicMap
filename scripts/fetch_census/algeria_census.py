@@ -54,6 +54,10 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 # Wilayas the map labels without an ISO 3166-2 code: the office's number ->
 # the map's label.
 UNCODED = {42: "Tipaza"}
+# How far a row's men and women may miss its printed total: the office rounds
+# each cell on its own (Chlef's 20-24 row prints 61,818 men, 62,127 women and
+# 123,946 in all).
+SLACK = 2
 HEADER = re.compile(r"([A-Za-zÀ-ÿ'’. -]+?)\s*\(\s*(\d{1,2})\s*\)")
 ROW = re.compile(r"(?i)(\d{1,2}\s*-\s*\d{1,2}\s*ans|85\s*ans\s*&\s*\+|ND|Total)"
                  r"\s+(\d[\d ]*?\d|\d)\s+(\d[\d ]*?\d|\d)\s+(\d[\d ]*?\d|\d)(?=\s|$)")
@@ -110,9 +114,13 @@ def parse(pages: list[str]) -> dict[int, dict[str, Any]]:
             for number, (label, men, women, total) in zip(current, cells):
                 unit = out[number]
                 m, f, t = count(men), count(women), count(total)
-                if m + f != t:
+                # The office's cells are rounded one by one: a row's sexes
+                # can miss its total by a person or two, never by more.
+                if abs(m + f - t) > SLACK:
                     raise SystemExit(f"algeria_census: {unit['name']} {label}: {m:,} men and "
                                      f"{f:,} women do not make {t:,}")
+                if m + f != t:
+                    unit.setdefault("rounding", []).append(f"{label} {m + f - t:+d}")
                 kind = label_bounds(label)
                 if kind == "nd":
                     unit["nd"] = t
@@ -136,9 +144,12 @@ def check(table: dict[int, dict[str, Any]]) -> None:
         if not groups or groups[-1][1] is not None:
             raise SystemExit(f"algeria_census: {unit['name']} has no open-ended last group")
         made = sum(n for _, _, n in groups) + (unit["nd"] or 0)
-        if unit["total"] is None or made != unit["total"]:
+        if unit["total"] is None or abs(made - unit["total"]) > SLACK * (len(groups) + 1):
             raise SystemExit(f"algeria_census: {unit['name']}'s groups make {made:,}, not "
                              f"{unit['total']}")
+        if made != unit["total"] or unit.get("rounding"):
+            log(f"  {unit['name']}: rounding in the office's cells: groups make {made:,} "
+                f"against {unit['total']:,}; rows {unit.get('rounding', [])}")
     whole = sum(u["total"] for u in table.values())
     if whole != NATIONAL:
         raise SystemExit(f"algeria_census: the wilayas make {whole:,}, not {NATIONAL:,}")
