@@ -19,35 +19,97 @@ class Capitals(unittest.TestCase):
         records, report = sc.build(iso, points, "page", admin1, admin2)
         return {r["shape_id"]: r for r in records}, report, admin2
 
+    def named(self, records):
+        return {r["name"]: r["capital"] for r in records.values()
+                if isinstance(r["capital"], str)}
+
+    def told(self, records):
+        return {r["name"]: r["capital"]["note"] for r in records.values()
+                if isinstance(r["capital"], dict)}
+
     def test_togo(self):
         records, report, admin2 = self.build("TGO")
-        by = {r["name"]: r["capital"] for r in records.values()}
+        by = self.named(records)
         self.assertEqual(by["Amou"], "Amlame")
         self.assertEqual(by["Zio"], "Tsevie")
-        self.assertNotIn("Kozah", by)
+        self.assertEqual(by["Kozah"], "Kara")       # the layer has Kara and Kozah
         self.assertNotIn("Bas-Mono", by)
-        self.assertTrue(any("Kozah: left out" in line for line in report))
+        self.assertTrue(any("Bas-Mono: left out" in line for line in report))
+        notes = self.told(records)
+        self.assertIn("name Athiémé, a town in Benin across the Mono, for it.", notes["Bas-Mono"])
+        self.assertTrue(notes["Bas-Mono"].startswith(
+            f"OCHA's administrative boundaries for Togo, which give the seats of {len(by) + 0}"))
+        self.assertTrue(notes["Akébou"].endswith("give none for this prefecture."))
 
     def test_cabo_verde_parishes_of_one_name(self):
         records, report, admin2 = self.build("CPV")
-        named = {(r["name"], r["capital"]) for r in records.values()}
+        named = {(r["name"], r["capital"]) for r in records.values()
+                 if isinstance(r["capital"], str)}
         self.assertIn(("Nossa Senhora Da Luz", "Mindelo"), named)
         self.assertIn(("Nossa Senhora Da Luz", "Vila do Maio"), named)
         # Only Sao Nicolau's parish of the name has a point: Santo Antao's takes none.
-        rosario = [r["capital"] for r in records.values() if r["name"] == "Nossa Senhora Do Rosario"]
+        rosario = [r["capital"] for r in records.values() if r["name"] == "Nossa Senhora Do Rosario"
+                   and isinstance(r["capital"], str)]
         self.assertEqual(rosario, ["Ribeira Brava"])
 
     def test_guinea_bissau_and_niger(self):
         records, _, _ = self.build("GNB")
-        by = {r["name"]: r["capital"] for r in records.values()}
+        by = self.named(records)
         self.assertEqual(by["Setor de Gabv"], "Gabu")
         self.assertEqual(by["Setor de Caiv"], "Caio")
         self.assertNotIn("Setor de Boe", by)
+        # The polygon drawn as Boé is misplaced: nothing is said there either.
+        self.assertNotIn("Setor de Boe", self.told(records))
         records, report, _ = self.build("NER")
-        by = {r["name"]: r["capital"] for r in records.values()}
+        by = self.named(records)
         self.assertEqual(by.get("Abala"), "Abala")
         self.assertNotIn("Kollo", by)     # its seat point is named "Kollo Carre"
-        self.assertNotIn("Tahoua", by)
+        self.assertIn("only the seats of its communes", self.told(records)["Kollo"])
+        self.assertEqual(by.get("Tahoua"), "Tahoua")   # the city drawn beside it
+        self.assertEqual(by.get("Tillabéri"), "Tillabéri")   # the layer's "Tillabery"
+
+    def test_seats_the_name_rules_miss(self):
+        # Points as the runner printed them (layer unit, commune, point).
+        def point(unit, commune, name):
+            return {"adm1_name": "R", "adm2_name": unit, "adm3_name": commune, "name": name,
+                    "_xy": [0, 0]}
+        points = [point("Konni", "Birni N'Konni", "Birni N'Konni"),
+                  point("Konni", "Bazaga", "Bagaza Koli"),
+                  point("Matameye", "Kantche", "Kantche"),
+                  point("Matameye", "Matameye", "Matamaye"),
+                  point("Madarounfa", "Maradi Arrondissement 1", "Maradi"),
+                  point("Madarounfa", "Madarounfa", "Madarounfa"),
+                  point("Tahoua", "Tahoua Arrondissement 1", "Tahoua"),
+                  point("Tagazar", "Balleyara", "Balleyara")]
+        silent = {"status": "not_available"}
+        admin1 = [{"id": "R", "name": "R"}]
+        admin2 = [{"id": f"u{i}", "name": n, "parent": "R", "capital": silent}
+                  for i, n in enumerate(["Birni-N'Konni", "Kantché", "Maradi", "Tahoua Ville",
+                                         "Balléyara", "Madarounfa", "Loga"])]
+        records, report = sc.build("NER", points, "page", admin1, admin2)
+        by = {r["name"]: r["capital"] for r in records}
+        self.assertEqual(by["Birni-N'Konni"], "Birni-N'Konni")
+        self.assertEqual(by["Kantché"], "Matamèye")   # not the commune of Kantché
+        self.assertEqual(by["Maradi"], "Maradi")
+        self.assertEqual(by["Tahoua Ville"], "Tahoua")
+        self.assertEqual(by["Balléyara"], "Balléyara")
+        self.assertEqual(by["Madarounfa"], "Madarounfa")
+        self.assertEqual(by["Loga"]["note"], (
+            "OCHA's administrative boundaries for Niger, which give the seats of 6 of its 7 "
+            "departments, give none for this department."))
+        self.assertTrue(all("sources" not in r or r["sources"] == []
+                            for r in records if isinstance(r["capital"], dict)))
+
+    def test_provinces_renamed_in_2025(self):
+        points = [{"adm1_name": "Oubri", "adm2_name": "Bassitenga", "adm3_name": "<Null>",
+                   "name": "Ziniaré", "_xy": [0, 0]},
+                  {"adm1_name": "Oubri", "adm2_name": "Bassitenga", "adm3_name": "Absouya",
+                   "name": "Absouya", "_xy": [0, 0]}]
+        admin2 = [{"id": "o", "name": "Oubritenga", "parent": "P",
+                   "capital": {"status": "not_available"}}]
+        records, _ = sc.build("BFA", points, "page", [{"id": "P", "name": "Plateau-Central"}],
+                              admin2)
+        self.assertEqual([r["capital"] for r in records], ["Ziniaré"])
 
     def test_first_level_same_ground(self):
         # Burkina Faso's layer names the regions of 2025 (points as the layer
