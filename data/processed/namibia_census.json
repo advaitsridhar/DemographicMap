@@ -1,0 +1,665 @@
+[
+  {
+    "id": "NAM-2023-region-caprivi",
+    "level": "admin1",
+    "name": "Caprivi",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 142373,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 20.3,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B30097931647986",
+    "population_note": "The 2023 census's count for Zambezi, drawn here as Caprivi.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-erongo",
+    "level": "admin1",
+    "name": "Erongo",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 240206,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 27.3,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B21847191895972",
+    "population_note": "The 2023 census's count for Erongo.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-hardap",
+    "level": "admin1",
+    "name": "Hardap",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106680,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 25.1,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B64734184432756",
+    "population_note": "The 2023 census's count for Hardap.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-karas",
+    "level": "admin1",
+    "name": "Karas",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 109893,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 27.2,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B69863127771221",
+    "population_note": "The 2023 census's count for //Kharas, drawn here as Karas.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-kavango",
+    "level": "admin1",
+    "name": "Kavango",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 341687,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 17.7,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 899,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B58776074421066",
+    "population_note": "The 2023 census's counts for Kavango East and Kavango West added together: the map draws them as one region, as before 2013.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-khomas",
+    "level": "admin1",
+    "name": "Khomas",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 494605,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 26.5,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 951,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B65893852220593",
+    "population_note": "The 2023 census's count for Khomas.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-kunene",
+    "level": "admin1",
+    "name": "Kunene",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 120762,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 19.4,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B88093492826661",
+    "population_note": "The 2023 census's count for Kunene.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-ohangwena",
+    "level": "admin1",
+    "name": "Ohangwena",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 337729,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 17.1,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 897,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B57415159388793",
+    "population_note": "The 2023 census's count for Ohangwena.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-omaheke",
+    "level": "admin1",
+    "name": "Omaheke",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 102881,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 22.7,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 1120,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B27729008722613",
+    "population_note": "The 2023 census's count for Omaheke.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-omusati",
+    "level": "admin1",
+    "name": "Omusati",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 316671,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 18.8,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 869,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B39435403846115",
+    "population_note": "The 2023 census's count for Omusati.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-oshana",
+    "level": "admin1",
+    "name": "Oshana",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 230801,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 23.3,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 858,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B34649017289630",
+    "population_note": "The 2023 census's count for Oshana.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-oshikoto",
+    "level": "admin1",
+    "name": "Oshikoto",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 257302,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 20.5,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B4413577706595",
+    "population_note": "The 2023 census's count for Oshikoto.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  },
+  {
+    "id": "NAM-2023-region-otjozondjupa",
+    "level": "admin1",
+    "name": "Otjozondjupa",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 220811,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "median_age": {
+      "value": 23.1,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.3 and 2.4"
+    },
+    "sex_ratio": {
+      "value": 1053,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Tables 2.2 to 2.4",
+        "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "33880854B88782591640533",
+    "population_note": "The 2023 census's count for Otjozondjupa.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
+  }
+]
