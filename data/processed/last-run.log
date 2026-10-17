@@ -1,16 +1,53 @@
-  read https://web.archive.org/web/20241104035225id_/https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf: 20,479,297 bytes, sha256 1363c816008eca631a07c30691713625f37614fdeeb01adaeb2bae18e9a3d3e0
-  the country's median age: 22.2
-  Caprivi: 142,373, ratio 967, median 20.3; The 2023 census's count for Zambezi, drawn here as Caprivi.
-  Erongo: 240,206, ratio 1038, median 27.3; The 2023 census's count for Erongo.
-  Hardap: 106,680, ratio 1038, median 25.1; The 2023 census's count for Hardap.
-  Karas: 109,893, ratio 1027, median 27.2; The 2023 census's count for //Kharas, drawn here as Karas.
-  Kavango: 341,687, ratio 899, median 17.7; The 2023 census's counts for Kavango East and Kavango West added together: the map draws them as one region, as before 2013.
-  Khomas: 494,605, ratio 951, median 26.5; The 2023 census's count for Khomas.
-  Kunene: 120,762, ratio 1006, median 19.4; The 2023 census's count for Kunene.
-  Ohangwena: 337,729, ratio 897, median 17.1; The 2023 census's count for Ohangwena.
-  Omaheke: 102,881, ratio 1120, median 22.7; The 2023 census's count for Omaheke.
-  Omusati: 316,671, ratio 869, median 18.8; The 2023 census's count for Omusati.
-  Oshana: 230,801, ratio 858, median 23.3; The 2023 census's count for Oshana.
-  Oshikoto: 257,302, ratio 980, median 20.5; The 2023 census's count for Oshikoto.
-  Otjozondjupa: 220,811, ratio 1053, median 23.1; The 2023 census's count for Otjozondjupa.
-  wrote data/processed/namibia_census.json (24 kB)
+gabon_census: https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf: 2,461,517 bytes, sha256 017f3bb741957d68b6cdc9ceeee6fa7f24bdd7ebaf20716031a63c046797357d
+  Départements du Gabon: 50 departments with a seat
+  Abanga-Bignè: 14,941 (Abanga-Bigne), seat Ndjolé
+  Basse-Banio: 7,192 (Basse-Banio), seat Mayumba
+  Bayi-Brikolo: 1,998 (Bayi-Brikolo), seat Aboumi
+  Bendjè: 140,747 (Bendjé), seat Port-Gentil
+  Boumi-Louetsi: 13,223 (Boumi-Louetsi), seat Mbigou
+  Djouè: 2,178 (Djoue), seat Onga
+  Djouori-Agnili: 4,210 (Djouori-Agnili), seat Bongoville
+  Dola: 6,979 (Dola), seat Ndendé
+  Douigni: 5,235 (Douigny), seat Moabi
+  Doutsita: 4,623 (Doutsila), seat Mabanda
+  Douya-Onoyè: 37,699 (Douya-Onoye), seat Mouila
+  Etimbouè: 5,723 (Etimboué), seat Omboué
+  Haut-Komo: 3,403 (Haut-Como), seat Médouneu
+  Haut-Ntem: 10,838 (Haut-Ntem), seat Minvoul
+  Haute-Banio: 1,413 (Haute-Banio), seat Ndindi
+  Ivindo: 31,073 (Ivindo), seat Makokou
+  Komo: 17,575 (Komo), seat Kango
+  Komo-Mondah: 169,396 (Komo-Mondah + Owendo), seat Ntoum
+  Komo-Ocèan: 553 (Komo-Océan), seat Ndzomoe
+  Lèbombi-Leyou: 64,569 (Lebombi-Leyou), seat -
+  Lèkabi-Lèwolo: 4,914 (Lekabi-Lewolo), seat Ngouoni
+  Lèkoko: 4,920 (Lekoko), seat Bakoumba
+  Lèkoni-Lèkori: 10,028 (Lekoni-Lekori), seat Akiéni
+  Libreville: 703,940 (Libreville), seat Libreville
+  Lolo-Bouenguidi: 30,643 (Lolo-Bouenguidi), seat Koulamoutou
+  Lombo-Bouenguidi: 4,635 (Lombo-Bouenguidi), seat Pana
+  Lopè: 12,382 (Lopé), seat Booué
+  Louetsi-Bibaka: 2,734 (Louetsi-Bibaka), seat Malinga
+  Louetsi-Wano: 9,750 (Louetsi-Wano), seat Lébamba
+  Mongo: 2,602 (Mongo), seat Moulengui-Binza
+  Mougalaba: 1,490 (Mougalaba), seat Guiétsou
+  Mougoutsi: 31,789 (Mougoutsi), seat Tchibanga
+  Mpassa: 129,694 (Mpassa), seat Franceville
+  Mouloundou: 27,750 (Mulundu), seat Lastoursville
+  Mvoung: 4,022 (Mvoung), seat Ovan
+  Ndolou: 5,727 (Ndolou), seat Mandji
+  Ndougou: 11,092 (Ndougou), seat Gamba
+  Noya: 4,225 (Noya), seat Cocobeach
+  Ntem: 49,712 (Ntem), seat Bitam
+  Offouè-Onoyè: 2,743 (Offoué-Onoye), seat Iboundji
+  Ogoouè et Lacs: 54,346 (Ogooué et Lacs), seat -
+  Ogoouè-Lètili: 2,791 (Ogooué-Letili), seat Boumango
+  Ogoulou: 8,361 (Ogoulou), seat Mimongo
+  Okano: 16,630 (Okano), seat Mitzic
+  Plateaux: 9,054 (Plateaux), seat Lékoni
+  Sèbè-Brikolo: 16,443 (Sebe-Brikolo), seat Okondja
+  Tsamba-Magotsi: 14,875 (Tsamba-Magotsi), seat Fougamou
+  Woleu: 74,403 (Woleu), seat Oyem
+  Zadiè: 15,816 (Zadié), seat Mékambo
+  9 provinces and 49 department polygons written
+  wrote data/processed/gabon_census.json (121 kB)
