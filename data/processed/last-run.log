@@ -1,28 +1,163 @@
-probe_pdf: https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf
-  2,452 bytes
-invalid pdf header: b'<!DOC'
-EOF marker not found
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
-    reader = PdfReader(io.BytesIO(blob))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 154, in __init__
-    self._initialize_stream(stream)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 179, in _initialize_stream
-    self.read(stream)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 712, in read
-    self._find_eof_marker(stream)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 857, in _find_eof_marker
-    line = read_previous_line(stream)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_utils.py", line 411, in read_previous_line
-    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
-pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+page: https://www.gbosdata.org/downloads/157-2024-population-and-housing-census
+  27,720 bytes
+  130 matching link(s)
+  - Menu
+    https://www.gbosdata.org/downloads/157-2024-population-and-housing-census
+  - Downloads
+    https://www.gbosdata.org/downloads
+  - Census
+    https://www.gbosdata.org/downloads/25-census
+  - Population and Housing Census
+    https://www.gbosdata.org/downloads/155-population-and-housing-census
+  - 2013 Population and Housing Census
+    https://www.gbosdata.org/downloads/158-2013-population-and-housing-census
+  - Economic Census
+    https://www.gbosdata.org/downloads/156-economic-census
+  - 2024 Economic Census
+    https://www.gbosdata.org/downloads/159-2024-economic-census
+  - 2014 Economic Census
+    https://www.gbosdata.org/downloads/160-2014-economic-census
+  - Quarterly GDP
+    https://www.gbosdata.org/downloads/125-quarterly-gdp
+  - 2013/Q1 - 2022/Q4
+    https://www.gbosdata.org/downloads/126-2013-q1-2022-q4
+  - 2023/Q1 - 2023/Q4
+    https://www.gbosdata.org/downloads/128-2023-q1-2023-q4
+  - 2024/Q1 - 2024/Q4
+    https://www.gbosdata.org/downloads/144-2024-q1-2024-q4
+  - 2025/Q1 - 2025/Q4
+    https://www.gbosdata.org/downloads/151-2025-q1-2025-q4
+  - Annual GDP
+    https://www.gbosdata.org/downloads/2-annual-gdp
+  - GDP 2012
+    https://www.gbosdata.org/downloads/20-gdp-2012
+  - GDP 2016
+    https://www.gbosdata.org/downloads/19-gdp-2016
+  - GDP 2017
+    https://www.gbosdata.org/downloads/42-gdp-2017
+  - GDP 2018
+    https://www.gbosdata.org/downloads/49-gdp-2018
+  - GDP 2019
+    https://www.gbosdata.org/downloads/69-gdp-2019
+  - GDP 2020
+    https://www.gbosdata.org/downloads/109-gdp-2020
+  - GDP 2021
+    https://www.gbosdata.org/downloads/113-gdp-2021
+  - GDP 2022
+    https://www.gbosdata.org/downloads/145-gdp-2022
+  - GDP 2023
+    https://www.gbosdata.org/downloads/146-gdp-2023
+  - GDP 2024
+    https://www.gbosdata.org/downloads/147-gdp-2024
+  - GDP 2025
+    https://www.gbosdata.org/downloads/166-gdp-2025
+  - Surveys
+    https://www.gbosdata.org/downloads/1-surveys
+  - The Gambia Demographic & Health Survey
+    https://www.gbosdata.org/downloads/71-the-gambia-demographic-health-survey
+  - The 2013 Gambia Demographic and Health Survey
+    https://www.gbosdata.org/downloads/72-the-2013-gambia-demographic-and-health-survey
+  - Reports/Fact Sheets
+    https://www.gbosdata.org/downloads/73-reports-fact-sheets
+  - Microdata & Survey Documentations
+    https://www.gbosdata.org/downloads/74-microdata-survey-documentations
+  - The 2019/20 Gambia Demographic and Health Survey
+    https://www.gbosdata.org/downloads/75-the-2019-20-gambia-demographic-and-health-surve
+  - Reports/Fact Sheets
+    https://www.gbosdata.org/downloads/76-reports-fact-sheets
+  - Microdata & Survey Documentations
+    https://www.gbosdata.org/downloads/77-microdata-survey-documentations
+  - The Gambia Multiple Indicator Cluster Survey
+    https://www.gbosdata.org/downloads/52-the-gambia-multiple-indicator-cluster-survey
+  - MICS 1
+    https://www.gbosdata.org/downloads/53-mics-1
+  - MICS 2
+    https://www.gbosdata.org/downloads/54-mics-2
+  - MICS 3
+    https://www.gbosdata.org/downloads/55-mics-3
+  - MICS 4
+    https://www.gbosdata.org/downloads/56-mics-4
+  - MICS 6
+    https://www.gbosdata.org/downloads/57-mics-6
+  - The MICS Survey Findings Report
+    https://www.gbosdata.org/downloads/58-the-mics-survey-findings-report
+  - The MICS6 Microdata
+    https://www.gbosdata.org/downloads/59-the-mics6-microdata
+  - The Gambia Labour Force Survey
+    https://www.gbosdata.org/downloads/130-the-gambia-labour-force-survey
+  - The 2018 GLFS
+    https://www.gbosdata.org/downloads/131-the-2018-glfs
+  - GLFS 2023 (Q1)
+    https://www.gbosdata.org/downloads/132-glfs-2023-q1-
+  - GLFS 2025 (Q1)
+    https://www.gbosdata.org/downloads/161-glfs-2025-q1-
+  - GLFS 2026
+    https://www.gbosdata.org/downloads/164-glfs-2026
+  - GLFS 2026 (Q1)
+    https://www.gbosdata.org/downloads/165-glfs-2026-q1-
+  - The Gambia Integrated Household Survey (IHS)
+    https://www.gbosdata.org/downloads/134-the-gambia-integrated-household-survey-ihs-
+  - IHS 2003/2004
+    https://www.gbosdata.org/downloads/135-ihs-2003-2004
+  - IHS 2010
+    https://www.gbosdata.org/downloads/136-ihs-2010
+  - IHS 2015/2016
+    https://www.gbosdata.org/downloads/137-ihs-2015-2016
+  - IHS 2020
+    https://www.gbosdata.org/downloads/138-ihs-2020
+  - The Gambia Food Security Surveys
+    https://www.gbosdata.org/downloads/162-the-gambia-food-security-surveys
+  - Malaria Indicator Survey (MIS)
+    https://www.gbosdata.org/downloads/38-malaria-indicator-survey-mis-
+  - The Gambia SDGs Surveys
+    https://www.gbosdata.org/downloads/152-the-gambia-sdgs-surveys
+  - The 2021 SDGs Monitoring Survey
+    https://www.gbosdata.org/downloads/153-the-2021-sdgs-monitoring-survey
+  - The 2025 SDGs Monitoring Survey
+    https://www.gbosdata.org/downloads/154-the-2025-sdgs-monitoring-survey
+  - The User Satisfaction Survey
+    https://www.gbosdata.org/downloads/48-the-user-satisfaction-survey
+  - Disability Survey
+    https://www.gbosdata.org/downloads/9-disability-survey
+  - Poverty Studies
+    https://www.gbosdata.org/downloads/15-poverty-studies
+  - Baseline Survey
+    https://www.gbosdata.org/downloads/7-baseline-survey
+  - Consumer Price Index (CPI)
+    https://www.gbosdata.org/downloads/3-consumer-price-index-cpi-
+  - CPI 2016
+    https://www.gbosdata.org/downloads/21-cpi-2016
+  - CPI 2017
+    https://www.gbosdata.org/downloads/31-cpi-2017
+  - CPI 2018
+    https://www.gbosdata.org/downloads/32-cpi-2018
+  - CPI 2019
+    https://www.gbosdata.org/downloads/51-cpi-2019
+  - CPI 2020
+    https://www.gbosdata.org/downloads/65-cpi-2020
+  - CPI 2021
+    https://www.gbosdata.org/downloads/106-cpi-2021
+  - CPI 2022
+    https://www.gbosdata.org/downloads/111-cpi-2022
+  - CPI 2023
+    https://www.gbosdata.org/downloads/117-cpi-2023
+  - CPI 2024
+    https://www.gbosdata.org/downloads/133-cpi-2024
+  - CPI 2025
+    https://www.gbosdata.org/downloads/149-cpi-2025
+  - Consumer Price Index (CPI) Computation Methodology
+    https://www.gbosdata.org/downloads/107-consumer-price-index-cpi-computation-methodolo
+  - Producer Price Index (PPI)
+    https://www.gbosdata.org/downloads/4-producer-price-index-ppi-
+  - PPI 2012
+    https://www.gbosdata.org/downloads/22-ppi-2012
+  - PPI 2013
+    https://www.gbosdata.org/downloads/23-ppi-2013
+  - PPI 2014
+    https://www.gbosdata.org/downloads/33-ppi-2014
+  - PPI 2015
+    https://www.gbosdata.org/downloads/34-ppi-2015
+  - PPI 2016
+    https://www.gbosdata.org/downloads/35-ppi-2016
+  - PPI 2017
+    https://www.gbosdata.org/downloads/36-ppi-2017
