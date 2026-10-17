@@ -1,46 +1,40 @@
-probe_xlsx: https://www.ins.tn/sites/default/files-ftp3/files/2025-05/Population_Secteur_Age_Sexe_Dynamique.xlsx
-  9,247,324 bytes
-  3 sheet(s): Tableau Croisé Dynamique FR, Tableau Croisé Dynamique AR, Population
-
---- sheet 'Tableau Croisé Dynamique FR' (2097 rows x 53 cols) --------------------
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  Population par Secteur, Tranch
-
---- sheet 'Tableau Croisé Dynamique AR' (2097 rows x 53 cols) --------------------
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  عدد السكان حسب العمادة، الفئة 
-
---- sheet 'Population' (70722 rows x 21 cols) --------------------
-  Code_Département | District | الإقليم | Code_Gouvernorat | Gouvernorat | الولاية | Code_Delegation | Délégations | المعتمدية | Code_secteur_D | Secteurs | العمادة | Code_Secteur_Secteur | رمز العمادة_العمادة | ID_Sexe | Sexe | الجنس | Classe_Age | Tranche d'âge | الفئة العمرية | Population
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 1 | 00-04 | 00-04 | 23
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 2 | 05-09 | 05-09 | 29
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 3 | 10-14 | 10-14 | 52
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 4 | 15-19 | 15-19 | 74
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 5 | 20-24 | 20-24 | 79
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 6 | 25-29 | 25-29 | 43
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 7 | 30-34 | 30-34 | 66
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 8 | 35-39 | 35-39 | 73
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 9 | 40-44 | 40-44 | 91
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 10 | 45-49 | 45-49 | 87
-  2 | District 2 | إقليم 2 | 11 | Tunis | تونس | 1151 | Carthage | قرطاج | 115151 | Sidi bou said | سيدي بوسعيد | 115151-Sidi bou said | 115151-سيدي بوسعيد | M | Masculin | ذكر | 11 | 50-54 | 50-54 | 96
-
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+page: https://www.ons.dz/collections/population.html
+  68,129 bytes
+  1 matching link(s)
+  - Retour
+    https://www.ons.dz/collections/collections%20statistiques.htm
+page: https://www.ons.dz/
+  38,925 bytes
+  15 matching link(s)
+  - 1. Indice des prix à la Consommation - Juillet 2026 -
+    https://www.ons.dz/IMG/pdf/IPC_juillet2026.pdf
+  - 2. Les répertoires des agents économique et sociaux - Personnes Physiq
+    https://www.ons.dz/IMG/pdf/Prsphys_S2_2023.pdf
+  - 3. Les répertoires des agents économique et sociaux - Personnes Physiq
+    https://www.ons.dz/IMG/pdf/Prsphys_S2_2022.pdf
+  - 4. Enquête sur la situation et les perspectives dans l’industrie au 2 
+    https://www.ons.dz/IMG/pdf/industrie2T2025.pdf
+  - 5. Les Comptes Nationaux Trimestriels au 2 éme trimestre 2025 -
+    https://www.ons.dz/IMG/pdf/CNT2T2025.pdf
+  - 6. Indices du commerce extérieur de marchandises 1 er semestre 2025 -
+    https://www.ons.dz/IMG/pdf/indice_commerce_exterieur_s1_2025.pdf
+  - 7. Indice de la Production Industrielle au 2 éme trimestre 2025 -
+    https://www.ons.dz/IMG/pdf/I.IPI2T2025.pdf
+  - 8. Indice des Prix à la Production Industrielle au 2 éme trimestre 202
+    https://www.ons.dz/IMG/pdf/IPPI2T2025.pdf
+  - 9. Les Comptes Economiques de 2021 à 2024 -
+    https://www.ons.dz/IMG/pdf/comptes_econoniques__2021_2024.pdf
+  - 10. Indices du commerce extérieur de marchandises 1 er trimestre 2025 
+    https://www.ons.dz/IMG/pdf/commerce_ext1T2025base2019.pdf
+  - 11. Indices du commerce extérieur de marchandises - Année 2024 - (Base
+    https://www.ons.dz/IMG/pdf/commerce_ext_base2019anne2024.pdf
+  - 12. Les Tableaux des Ressources et des Emplois 2021 - 2023 (Base 2001)
+    https://www.ons.dz/IMG/pdf/TRE2021_2023.pdf
+  - Calendrier des Publications Année 2025
+    https://www.ons.dz/IMG/pdf/CalendrierONS_2025.pdf
+  - Résultats de l'Exploitation Exhaustive
+    http://www.ons.dz/collections
+  - RGPH2020
+    http://www.ons.dz/rgph2020
