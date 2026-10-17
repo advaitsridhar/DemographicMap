@@ -1,15 +1,46 @@
-== grep https://lex.ao/docs/assembleia-nacional/2016/lei-n-o-18-16-de-17-de-outubro/ (?i)(sede|munic.pio.de) 40 200
-  HTTP 200 text/html 1,567,206 bytes
-  ~  13/84, de 16 de Junho, que anexa os Municípios de Bula Atumba, Dembos (Quibaxe) e Pango Aluquém à Província do Bengo (desanexados da Província do Cuanza-Norte), Lei n.º 17/11, de 21 de Abril, cria o Município de Belas na Província de Luanda, Lei n.º 29/11, de 1 de Setembro, Lei de Alteração da Divisão Político-Administrativa das Províncias de Luanda e Bengo, Lei n.º 32/11, de 5 de Outubro, cria o Município d
-  ~ ngola é constituído por 18 Províncias, 164 Municípios, 518 Comunas e 44 Distritos Urbanos.</li> <li class="">A Capital da República de Angola é a Cidade de Luanda.</li> <li class="">As denominações e sedes de Província são as seguintes:<!-- --> <ul> <li class="">a)- Província de Cabinda, com sede na Cidade de Cabinda;</li> <li class="">b)- Província do Zaire, com sede na Cidade de Mbanza Kongo;</li> <
-  ~ om a República Democrática do Congo): o Oceano Atlântico desde o marco de fronteira D até à baliza A, situada na ponta Chamba.</li> </ul> <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=secção-ii-município-de-cabinda>SECÇÃO II MUNICÍPIO DE CABINDA<a href=#secção-ii-município-de-cabinda class=hash-link aria-label="Link direto para SECÇÃO II MUNICÍPIO DE CABINDA" title="Link direto para SECÇÃO II MUNICÍPIO 
-  ~ ongo): o Oceano Atlântico desde o marco de fronteira D até à baliza A, situada na ponta Chamba.</li> </ul> <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=secção-ii-município-de-cabinda>SECÇÃO II MUNICÍPIO DE CABINDA<a href=#secção-ii-município-de-cabinda class=hash-link aria-label="Link direto para SECÇÃO II MUNICÍPIO DE CABINDA" title="Link direto para SECÇÃO II MUNICÍPIO DE CABINDA" translate=no>​</a><
-  ~ eto para Artigo 22.º (Limites Geográficos do Município de Nóqui)" title="Link direto para Artigo 22.º (Limites Geográficos do Município de Nóqui)" translate=no>​</a></h3> <p>O Município de Nóqui, com Sede em Nóqui, tem como limites geográficos a linha de fronteira com a República Democrática do Congo no rio Zaire, desde o meridiano da ponta nordeste da Ilha de Sacra Mecaba (ou Sacra Mbaca) até ser int
-  ~ nascente: a linha que une esta nascente à do rio Canzuanze: o curso do rio Canzuanze até a sua confluência no rio Ngola Luiji.</li> </ul> <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=secção-iv-municipio-de-cacuso>SECÇÃO IV MUNICIPIO DE CACUSO<a href=#secção-iv-municipio-de-cacuso class=hash-link aria-label="Link direto para SECÇÃO IV MUNICIPIO DE CACUSO" title="Link direto para SECÇÃO IV MUNICIPIO DE C
-  ~  nascente à do rio Canzuanze: o curso do rio Canzuanze até a sua confluência no rio Ngola Luiji.</li> </ul> <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=secção-iv-municipio-de-cacuso>SECÇÃO IV MUNICIPIO DE CACUSO<a href=#secção-iv-municipio-de-cacuso class=hash-link aria-label="Link direto para SECÇÃO IV MUNICIPIO DE CACUSO" title="Link direto para SECÇÃO IV MUNICIPIO DE CACUSO" translate=no>​</a></h2>
-  ~ -label="Link direto para Artigo 319.º (Limites Geográficos do Município de Menongue)" title="Link direto para Artigo 319.º (Limites Geográficos do Município de Menongue)" translate=no>​</a></h3> <p>O Municipio de Menongue, com sede em Menongue, tem como limites geográficos o curso do rio Cuelei, desde a confluência do rio Cuceque até ao ponto onde o seu curso inflecte para leste (junto da nascente do rio Luâm
-== links https://lex.ao/docs/assembleia-nacional/2016/lei-n-o-18-16-de-17-de-outubro/ (?i)(pdf|anexo|download) 30
-  HTTP 200 text/html 1,567,206 bytes
-  (0 links shown)
-== cdxm lex.ao/ application/pdf 40
-  HTTP 200: 0 captures
+== get https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx
+  172,094 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\x9d>'
+  https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx: 37 sheets: Table of Contents | Table 3.1 | Table 3.2 | Table 3.3 | Table 3.3  | Table 3.4 | Table 3.5 | Table 3.6 | Table 3.7 | Table 3.8 | Table 3.9 | Table 3.10 | Table 3.11 | Table 3.12 | Table 3.13 | Table 4.1 | Table 4.2 | Table 4.3 | Table 4.4  | Table 4.5 | Table 4.6 | Table 4.7 | Table 5.1  | Table 5.2 | Table C1 | Table C2 | Table C3 | Table C4 | Table C5 | Table C6 | Table C7 | Table C8 | Table C9 | Table C10 | Table C11 | Table C12 | Table D1
+  -- sheet 'Table 4.4 ': 42 rows x 17 cols
+    r0:  | Table 4.4 : Mean and |  |  |  |  |  |  | 
+    r1:  |  |  |  |  |  |  |  | 
+    r2:  | Province and Distric | Mean Age |  |  | Median Age |  |  | 
+    r3:  |  | Male | Female | Both Sexes | Male | Female | Both Sexes | 
+    r4:  | RWANDA |  |  |  |  |  |  | 
+    r5:  | Total | 23.7073245313739 | 25.41259761527976 | 24.58491903532388 | 19 | 21 | 20 | 
+    r6:  | Kigali City |  |  |  |  |  |  | 
+    r7:  | Nyarugenge | 24.92924200633364 | 23.95226813189275 | 24.46325460369364 | 24 | 22 | 23 | 
+    r8:  | Gasabo | 23.90285301146205 | 23.52866471649851 | 23.71756044593265 | 23 | 22 | 22 | 
+    r9:  | Kicukiro | 24.60168596832788 | 23.99929930425034 | 24.3044733807712 | 24 | 22 | 23 | 
+    r10:  | South |  |  |  |  |  |  | 
+    r11:  | Nyanza | 24.86046628788939 | 26.67975068556125 | 25.79107126255749 | 19 | 21 | 20 | 
+    r12:  | Gisagara | 22.95034001005477 | 26.17412992704939 | 24.63985986686849 | 17 | 20 | 19 | 
+    r13:  | Nyaruguru | 23.4083958415581 | 25.96853369927654 | 24.74546563311392 | 18 | 20 | 19 | 
+    r14:  | Huye | 25.52816651576044 | 27.17695722670313 | 26.36158942131448 | 21 | 22 | 22 | 
+    r15:  | Nyamagabe | 24.534214174565 | 27.05099190865404 | 25.85374736541759 | 19 | 22 | 20 | 
+    r16:  | Ruhango | 24.65900427668278 | 27.51689881031947 | 26.14735423436669 | 19 | 22 | 20 | 
+    r17:  | Muhanga | 25.78602655300521 | 27.68588557391596 | 26.76564657830055 | 21 | 23 | 22 | 
+    r18:  | Kamonyi | 24.66920071701062 | 26.71071549517959 | 25.72552451042367 | 20 | 22 | 21 | 
+    r19:  | West |  |  |  |  |  |  | 
+    r20:  | Karongi | 23.82850849414574 | 26.49255060065899 | 25.22122187183211 | 18 | 21 | 20 | 
+    r21:  | Rutsiro | 23.11369533932396 | 25.42964573753646 | 24.32243350127309 | 18 | 20 | 19 | 
+    r22:  | Rubavu | 22.09394348650762 | 23.21399937004266 | 22.66635143218282 | 18 | 19 | 19 | 
+    r23:  | Nyabihu | 22.27172290633829 | 25.1165852936825 | 23.77843076411939 | 18 | 20 | 19 | 
+    r24:  | Ngororero | 22.98147487797036 | 25.8538879577429 | 24.51848187957767 | 17 | 20 | 19 | 
+    r25:  | Rusizi | 23.22073291431568 | 24.95273039666323 | 24.10934259333634 | 18 | 20 | 19 | 
+    r26:  | Nyamasheke | 23.41862656083726 | 25.92802239245214 | 24.74413259607435 | 17 | 20 | 19 | 
+    r27:  | North |  |  |  |  |  |  | 
+    r28:  | Rulindo | 24.3934966162154 | 26.60432831461271 | 25.54939135456928 | 20 | 22 | 21 | 
+    r29:  | Gakenke | 24.91491309385863 | 27.26895771490254 | 26.15667466027178 | 20 | 22 | 21 | 
+    r30:  | Musanze | 23.28591976774875 | 25.35548715396778 | 24.36813410503607 | 20 | 21 | 20 | 
+    r31:  | Burera | 23.03663776774794 | 25.44125313505496 | 24.29527324497265 | 19 | 20 | 19 | 
+    r32:  | Gicumbi | 24.38012098581721 | 26.23898724374556 | 25.34278247152559 | 20 | 21 | 20 | 
+    r33:  | East |  |  |  |  |  |  | 
+    r34:  | Rwamagana | 24.31844508068287 | 25.07562230727445 | 24.69497662660093 | 21 | 21 | 21 | 
+    r35:  | Nyagatare | 22.48886867038966 | 23.97295305277795 | 23.24950104074108 | 18 | 19 | 19 | 
+    r36:  | Gatsibo | 23.04256582255985 | 25.08551706818555 | 24.10526268043631 | 18 | 20 | 19 | 
+    r37:  | Kayonza | 22.94334561612659 | 24.79685882532625 | 23.8990104034509 | 18 | 20 | 19 | 
+    r38:  | Kirehe | 22.97459900885179 | 24.85623408072874 | 23.95080284685154 | 18 | 20 | 19 | 
+    r39:  | Ngoma | 23.50253217102532 | 25.83319768322229 | 24.721533085178 | 18 | 20 | 19 | 
+    r40:  | Bugesera | 22.86744662354311 | 23.98337475637885 | 23.43367936665197 | 19 | 19 | 19 | 
+    r41:  | Source: Rwanda 5th P |  |  |  |  |  |  | 
