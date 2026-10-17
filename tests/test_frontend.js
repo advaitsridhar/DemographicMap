@@ -298,6 +298,35 @@ function factTilesCarryTheirStatedReason() {
   assert.ok(/class="fact-label">Population<button type="button" class="info"/.test(html),
             "the note belongs to the tile's own label");
 
+  // A figure's own note, carried inside it, reaches its tile too: after the
+  // note beside it, and once only where that note already says it.
+  rendered.length = 0;
+  const beside = "The office estimate for 1 January 2026: Zugdidi Municipality.";
+  const own = "The outline also takes in villages past the Enguri, who are not in this figure.";
+  context.window.Dashboard.render({
+    id: "GEO-TEST", level: "admin2", name: "Zugdidi", country: "GEO",
+    population: { value: 98300, year: 2026, note: own },
+    population_note: beside,
+  }, container);
+  assert.ok(container.innerHTML.includes(`${beside} ${own}`),
+            "a figure's own note must reach its tile, after the note beside it");
+  rendered.length = 0;
+  context.window.Dashboard.render({
+    id: "SAU-TEST", level: "admin1", name: "Najran Region", country: "SAU",
+    population: { value: 592300, year: 2022, note: own },
+    population_note: `${own} Its divisions add up to less.`,
+  }, container);
+  assert.strictEqual(container.innerHTML.split(own).length, 2,
+                     "a note the note beside it already holds is not said twice");
+  rendered.length = 0;
+  context.window.Dashboard.render({
+    id: "YEM-TEST", level: "admin2", name: "Somewhere", country: "YEM",
+    population: { value: 1000, year: 2004, note: own },
+  }, container);
+  assert.ok(/class="fact-label">Population<button type="button" class="info"/.test(
+              container.innerHTML) && container.innerHTML.includes(own),
+            "a figure whose only note is its own still gets the info button");
+
   // And a gap with nothing written about it must not grow an empty bubble.
   rendered.length = 0;
   context.window.Dashboard.render({

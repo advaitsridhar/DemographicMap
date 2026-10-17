@@ -132,8 +132,11 @@ class Annex(unittest.TestCase):
         self.assertIsNone(reason)
         self.assertIn("Table 2.1", gewogs["Barshong"])
         self.assertIsNone(gewogs["Kilkhorthang"])
-        self.assertEqual(bt.age_gap(gewogs["Barshong"])["median_age"]["status"],
-                         "not_available")
+        gap = bt.age_gap(gewogs["Barshong"])["median_age"]
+        self.assertEqual(gap["status"], "not_available")
+        # The reason is the census's, in a visitor's words, not the map's.
+        self.assertIn("would not be the census's own", gap["note"])
+        self.assertNotIn("this map", gap["note"])
 
     def test_a_missing_year_declines_the_dzongkhag(self):
         pages, totals = report()

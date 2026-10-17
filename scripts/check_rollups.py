@@ -5,11 +5,12 @@ A first-level unit's population and the populations of the second-level
 divisions drawn inside it are two answers to one question. Where every
 non-water division carries a figure, their total is comparable with the
 unit's own, and the two should agree; the same holds for a country and its
-first level. When they disagree by more than ``GAP`` (15%), the reader is
-owed a sentence in the parent's population note saying what the divisions add
-up to, and why where the figures show it -- older children under a newer
-figure, two sources' figures for one year, ground the map draws elsewhere.
-This lists every such disagreement whose parent says nothing about it.
+first level. When they disagree by more than ``GAP`` (15%), or a parent
+drawn as one division differs from it beyond rounding (``ONE_DIVISION``), the
+reader is owed a sentence in the parent's population note saying what the
+divisions add up to, and why where the figures show it -- older children under
+a newer figure, two sources' figures for one year, ground the map draws
+elsewhere. This lists every such disagreement whose parent says nothing about it.
 
 The build writes that sentence itself (build_entities.note_population_gaps)
 using the same helpers, and stops before writing if any disagreement is left
@@ -42,6 +43,12 @@ GAP = 0.15
 # How close a number in a note must come to a total for the note to be
 # taken as naming it: the sum of rounded or slightly later figures.
 NAMED = 0.005
+# A parent drawn as one division is compared with that division's figure, not
+# a sum of many, and any difference beyond what rounding makes is said: Western
+# Sahara's 652,271 for 2020 and its one unit's 565,581 for 2021 are 13% apart,
+# which GAP let by with nothing said on either record; the Vatican's 1,000 and
+# its one unit's 882, 12%.
+ONE_DIVISION = NAMED
 # The most a population is taken to grow, or to shrink, in a year, for the
 # years between two figures to be given as why they differ. Regions growing
 # faster than any country -- N'Djamena 4.6% a year from 2012 to 2021, Peru's
@@ -149,8 +156,11 @@ def notes_of(entity: dict[str, Any]) -> list[str]:
             str(pop.get("note") or "") if isinstance(pop, dict) else ""]
 
 
-def disagrees(own: float, total: float) -> bool:
-    return bool(own) and abs(total / own - 1) > GAP
+def disagrees(own: float, total: float, n: int | None = None) -> bool:
+    """Whether ``n`` divisions totalling ``total`` are further from ``own``
+    than a note may leave unsaid: GAP, or ONE_DIVISION for a parent drawn as
+    one division."""
+    return bool(own) and abs(total / own - 1) > (ONE_DIVISION if n == 1 else GAP)
 
 
 def growth_explains(own: float, own_year: int, total: float, year: int) -> bool:
@@ -236,7 +246,8 @@ def load(data: Path) -> tuple[list[dict[str, Any]], dict[str, list[dict[str, Any
 
 
 def disagreements(data: Path = SITE_DATA, *, every: bool = False) -> list[dict[str, Any]]:
-    """Every parent whose complete divisions differ from it by more than GAP.
+    """Every parent whose complete divisions differ from it by more than GAP
+    (ONE_DIVISION where it is drawn as one division).
 
     ``every`` keeps the ones a note already explains; by default only the
     unexplained ones are returned.
@@ -248,7 +259,8 @@ def disagreements(data: Path = SITE_DATA, *, every: bool = False) -> list[dict[s
               children: list[dict[str, Any]]) -> None:
         own = published(parent.get("population"))
         summed = complete_sum(children)
-        if own is None or summed is None or not disagrees(own, summed["total"]):
+        if own is None or summed is None or not disagrees(own, summed["total"],
+                                                          summed["n"]):
             return
         ok = explained(notes_of(parent), own, summed["total"])
         if ok and not every:
@@ -307,7 +319,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{mark:11} {row['iso3']} {row['level']} {row['name']}: "
               f"{row['n']} divisions add up to {row['sum']:,.0f} against "
               f"{row['own']:,.0f} (x{row['ratio']})")
-    print(f"{bad} unexplained disagreements over {GAP:.0%}", file=sys.stderr)
+    print(f"{bad} unexplained disagreements over {GAP:.0%} "
+          f"({ONE_DIVISION:.1%} for a parent drawn as one division)", file=sys.stderr)
     return 1 if bad else 0
 
 

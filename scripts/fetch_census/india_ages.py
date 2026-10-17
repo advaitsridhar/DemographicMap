@@ -71,10 +71,30 @@ from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .india_census import (
     BOUNDARY_ARTEFACTS, CREATED_AFTER_2011, DISTRICT_ALIASES, NATIONAL_CONTROLS,
     NEW_DISTRICT_ALIASES, SPLIT_STATES, STATE_IN_2011, SUBDIVIDED_SINCE_2011,
-    created_reason, inherited_note, lost_territory, lost_territory_reason,
+    TEHSIL_SPLITS, created_reason, inherited_note, lost_territory, lost_territory_reason,
     subdivided_inherited_note, subdivided_reason,
 )
 from .south_asia_common import agree, fold, load_units, median_single
+
+
+def tehsil_reason(state: str, name: str, year: int) -> str | None:
+    """Why a district made of whole 2011 tehsils has no median age.
+
+    Palghar (2014) is Thane's eight northern tehsils, and india_census.py gives
+    it their own 2011 counts (TEHSIL_SPLITS). created_reason says no census
+    figure exists for such a district and that its predecessor's shape carries
+    the undivided row -- false of both: Palghar shows its tehsils' count, and
+    Thane the count of the seven it kept. What is missing is only the ages,
+    because C-13 is published by district and not by tehsil.
+    """
+    split = TEHSIL_SPLITS.get((fold(state), fold(name)))
+    if not split:
+        return None
+    return (f"{name} did not exist at the 2011 census: it was created in {year}, out of "
+            f"{split['from']}. Its population, sex ratio and religion here are the census's "
+            f"own counts for its {len(split['tehsils'])} tehsils, added together, but table "
+            f"C-13, which gives the census's single years of age, is published by district "
+            f"and not by tehsil, so no median age can be worked out for {name}.")
 
 YEAR = 2011
 NADA = "https://censusindia.gov.in/nada/index.php/catalog"
@@ -360,6 +380,17 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             by_code[district.zfill(3)] = shape
     lost = lost_territory()
     lost_keys = {(fold(s), fold(d)): v for (s, d), v in lost.items()}
+    # A district india_census splits by tehsil (TEHSIL_SPLITS: Thane, which
+    # Palghar was cut from) carries on its shape only the tehsils it kept, and
+    # the district made of the others carries theirs: the two together are the
+    # C-13 row, which is what the binding check below compares.
+    split_off: dict[tuple[str, str], int] = collections.Counter()
+    for (_, split_name), split in TEHSIL_SPLITS.items():
+        shape = next((s for s in shapes2
+                      if fold(s.get("site_name") or s.get("name")) == split_name), None)
+        counted = census_population(shape) if shape else None
+        if counted is not None:
+            split_off[(split["state_code"], split["district_code"])] += counted
     main: list[dict[str, Any]] = []
     successors: list[dict[str, Any]] = []
     tally = collections.Counter()
@@ -385,6 +416,8 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             tally["2011 district with no shape (subdivided since)"] += 1
             continue
         counted = census_population(shape)
+        if counted is not None:
+            counted += split_off.get((state, district), 0)
         if counted is not None and counted != unit["total"][0]:
             raise SystemExit(
                 f"india_ages: {name} (code {district}) has {unit['total'][0]:,} "
@@ -467,7 +500,8 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
                 f"IND-AGE-NEW-{fold(state)}-{fold(name)}", label, level="admin2",
                 parent="IND", country="IND", match_by="shape_id", shape_id=shape["id"],
                 median_age={"status": "not_available",
-                            "note": created_reason(name, year, predecessors)}))
+                            "note": tehsil_reason(state, name, year)
+                            or created_reason(name, year, predecessors)}))
             tally["district created since 2011"] += 1
             parts = [predecessor(state_now, state_then, p) for p in predecessors]
             if all(parts):

@@ -1,21 +1,14 @@
-  read https://www.hcp.ma/file/242341/: 166,693 bytes, sha256 7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  12 regions and 75 provinces and prefectures, making 36,828,330
-  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
-  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
-  'Oued Ed-Dahab Province': a piece across the line, written as a gap
-  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
-  'Tarfaya Province': part of a province across the line, written as a gap
-  HCP provinces not drawn: []
-  Province d'Ouezzane: 274,577
-  Préfecture d'Oujda-Angad: 572,454
-  Préfecture de Skhirate-Témara: 783,475
-  Province d'Errachidia: 427,572
-  Province de Tarfaya: Commune de Tarfaya 11,030 (115370105)
-  Province de Tarfaya: Commune de Daoura 902 (115370303)
-  Province de Tarfaya: Commune d'El Hagounia 561 (115370305)
-  Province de Tarfaya: Commune d'Akhfennir 2,841 (115370501)
-  Province de Tarfaya: Commune de Tah 894 (115370507)
-  10 regions and 69 of 72 provinces bound
-  wrote data/processed/morocco_rgph2024.json (137 kB)
+sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
+  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
+    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
+    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
+  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
+  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  wrote data/processed/sea_cod_ps_age.json (5141 kB)
+  wrote sea_cod_ps_age.json: 1196 records

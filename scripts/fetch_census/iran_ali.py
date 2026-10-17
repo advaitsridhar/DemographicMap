@@ -866,17 +866,17 @@ def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
         text.append(
             f"{unit.unweighted:,} further "
             f"{'settlement carries' if unit.unweighted == 1 else 'settlements carry'} "
-            f"a language and no population in either census year; there is no "
-            f"weight to give them and none was invented, so they are excluded.")
+            f"a language and no population in either census year, so "
+            f"{'it is' if unit.unweighted == 1 else 'they are'} left out of the shares.")
     if unit.refused:
         worst = sorted(unit.refused, key=lambda r: -r[1])[:3]
         named = "; ".join(f"{place} ({people:,} people): {why}"
                           for place, people, why in worst)
+        one = len(unit.refused) == 1
         text.append(
             f"{len(unit.refused)} settlement "
-            f"{'estimate' if len(unit.refused) == 1 else 'estimates'} could not "
-            f"be read as shares and {'was' if len(unit.refused) == 1 else 'were'} "
-            f"refused rather than guessed at -- {named}"
+            f"{'estimate is' if one else 'estimates are'} left out, as "
+            f"{'it does' if one else 'they do'} not give shares that add to 100 -- {named}"
             f"{f'; and {len(unit.refused) - 3} more' if len(unit.refused) > 3 else ''}.")
     if unit.uninhabited:
         text.append(

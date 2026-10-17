@@ -129,6 +129,25 @@ def age_columns(columns: list[str]) -> dict[str, Any] | None:
             "unstated": unstated}
 
 
+# How much of a dataset's methodology line a note quotes: whole sentences up
+# to about this length. A quotation cut at a fixed length ended mid-word --
+# Honduras's "...Then, muncipality-...", El Salvador's "...the ADM-1
+# projectio..." -- in 1,245 notes.
+QUOTE_LENGTH = 300
+
+
+def method_quote(method: str) -> str:
+    """The methodology line's opening sentences, whole, up to QUOTE_LENGTH;
+    the first sentence whole however long it is."""
+    text = " ".join(str(method or "").split())
+    quoted = ""
+    for sentence in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'(])", text):
+        if quoted and len(quoted) + 1 + len(sentence) > QUOTE_LENGTH:
+            break
+        quoted = f"{quoted} {sentence}".strip()
+    return quoted
+
+
 def grouped_median(counts: list[tuple[int, int | None, float]]) -> float | None:
     """The median of ``(low, high, people)`` groups; None if it is in the open one."""
     base = sum(n for _, _, n in counts)
@@ -174,7 +193,7 @@ def unit_figures(row: dict[str, Any], cols: dict[str, Any]) -> tuple[dict[str, A
     if median is None:
         return None, "the middle person is in the open-ended age group"
     return {"median": median, "ratio": round(1000 * men / women), "unstated": unstated,
-            "aged": aged}, ""
+            "aged": aged, "groups": counts}, ""
 
 
 def tables(package: dict[str, Any]) -> list[dict[str, Any]]:
@@ -277,8 +296,8 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                           if (m := PCODE.match(c.strip())) and m.group(1) == cod_level), None)
         source = (f"OCHA, Common Operational Dataset -- population statistics ({stub}), "
                   f"reference year {year}")
-        basis = (f" The office's method: \"{method[:220].rstrip()}"
-                 f"{'...' if len(method) > 220 else ''}\"" if method else "")
+        quote = method_quote(method)
+        basis = f" The office's method: \"{quote}\"" if quote else ""
         written = refused = 0
         seen: set[str] = set()
         # A name is ambiguous only within one parent: Mexico has a Benito
@@ -333,7 +352,14 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                                 f"projection.{basis}"),
                 sources=[{"field": "median_age/sex_ratio", "name": source,
                           "url": DATASET_PAGE.format(stub=stub), "year": year,
-                          "license": licence(package)}]))
+                          "license": licence(package)}],
+                # The groups the median is taken from, so that units the map
+                # draws as one can have theirs added and a median taken of
+                # the whole (the build's pool_rows): Mexico's municipios drawn
+                # with those made out of them since. [low, high, people], the
+                # last group open (high null). Read by the build, not shown.
+                age_groups=[[low, high, round(people, 1)]
+                            for low, high, people in figures["groups"]]))
             written += 1
         log(f"    {level}: {written} unit(s) from {table['label']} ({why}); "
             f"{refused} left out")

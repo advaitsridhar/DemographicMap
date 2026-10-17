@@ -450,6 +450,21 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         note = a1["AGO"][0]["population"]["note"]
         self.assertIn("drawn inside it (OCHA's common operational dataset).", note)
 
+    def test_the_sum_cites_what_it_adds_up(self):
+        # Moxico listed Wikidata for its population, whose figure was left
+        # out, and nothing for OCHA's municipalities, which the sum adds up.
+        a1, a2 = self.tables([515629, 129054])
+        ocha = {"field": "population", "name": "OCHA COD-PS", "url": "u"}
+        for kid in a2["AGO"]:
+            kid["population"]["source"] = "OCHA COD-PS, reference year 2024"
+            kid["sources"] = [dict(ocha), {"field": "capital", "name": "GeoNames"},
+                              {"field": "population/capital", "name": "Wikidata", "url": "w"}]
+        a1["AGO"][0]["sources"] = [{"field": "population/capital/coordinates",
+                                    "name": "Wikidata"}]
+        be.fill_parent_populations(a1, a2)
+        self.assertEqual(a1["AGO"][0]["sources"],
+                         [{"field": "capital/coordinates", "name": "Wikidata"}, ocha])
+
     def test_one_division_without_a_figure_leaves_the_gap(self):
         a1, a2 = self.tables([515629, None])
         self.assertEqual(be.fill_parent_populations(a1, a2), [])
@@ -865,16 +880,16 @@ class EveryBareFieldSaysWhy(unittest.TestCase):
 
     def test_a_unit_no_adapter_touched_says_nothing_was_read(self):
         # 83% of the bare fields: no adapter row at all. The reason is that
-        # nothing was fetched -- and it says so, and says it is not a claim
-        # about the census.
+        # no source used gives the figure -- and it says so, without a claim
+        # about the census or about how the map was made.
         e = self.bare()
         self.assertEqual(be.say_why_empty(e, "Portugal"),
                          "no source read")
         for f in ("religion", "language", "ethnicity"):
             self.assertEqual(e[f]["status"], common.NOT_AVAILABLE)
-            self.assertIn("No unit-level source has been read for Portugal",
-                          e[f]["note"])
-            self.assertIn("not a claim about what the census asks", e[f]["note"])
+            self.assertEqual(e[f]["note"],
+                             f"No {f} figure is shown: none of the sources used here "
+                             f"gives figures for the units of Portugal at this level.")
 
     def test_a_matched_unit_names_the_source_and_what_it_lacks(self):
         e = self.bare()
@@ -882,18 +897,26 @@ class EveryBareFieldSaysWhy(unittest.TestCase):
         e["religion"] = [{"group": "Christianity", "pct": 90.0}]
         e["sources"] = [{"field": "religion", "name": "Afrobarometer"}]
         be.say_why_empty(e, "Lesotho")
-        self.assertIn("Afrobarometer", e["language"]["note"])
-        self.assertIn("carries religion and not language", e["language"]["note"])
+        self.assertEqual(e["language"]["note"],
+                         "The sources used for this unit (Afrobarometer) give its religion "
+                         "but not its language, and no language figure has been found for "
+                         "it. That says nothing about whether the census asks.")
         # The composition it did carry is untouched.
         self.assertIsInstance(e["religion"], list)
 
     def test_a_matched_unit_with_no_composition_says_so(self):
         e = self.bare()
         e["match"] = "adapter:name"
-        e["sources"] = [{"field": "population", "name": "Wikidata"}]
+        e["sources"] = [{"field": "population", "name": "Wikidata"},
+                        {"field": "population", "name": "OCHA, Common Operational Dataset "
+                                                        "-- population statistics (cod-ps-x)"}]
         self.assertEqual(be.say_why_empty(e, "Micronesia"),
                          "source carries no composition")
-        self.assertIn("carries no composition", e["religion"]["note"])
+        self.assertEqual(e["religion"]["note"],
+                         "None of the sources used for this unit (OCHA's common operational "
+                         "dataset and Wikidata) gives its religion, language or ethnicity, "
+                         "and no figure has been found for it. That says nothing about "
+                         "whether the census asks.")
 
     def test_the_country_level_reason_becomes_the_field_reason(self):
         e = self.bare()
@@ -902,11 +925,11 @@ class EveryBareFieldSaysWhy(unittest.TestCase):
         self.assertEqual(e["ethnicity"]["note"],
                          "The census publishes these nationally only.")
 
-    def test_a_disputed_unit_says_no_source_is_joined(self):
+    def test_a_disputed_unit_says_no_source_gives_the_figure(self):
         e = self.bare()
         e["disputed"] = True
         be.say_why_empty(e, "X")
-        self.assertIn("no demographic source is joined", e["religion"]["note"])
+        self.assertEqual(e["religion"]["note"], be.DISPUTED_GAP)
 
     def test_a_field_that_already_has_a_reason_is_never_touched(self):
         # The policy's paragraph, an adapter's own note, a composition: all
@@ -918,53 +941,88 @@ class EveryBareFieldSaysWhy(unittest.TestCase):
         self.assertEqual(e["religion"]["note"], "Never asked, and here is why.")
         self.assertIsInstance(e["language"], list)
         # Only ethnicity was bare, so only ethnicity was written.
-        self.assertIn("No unit-level source", e["ethnicity"]["note"])
+        self.assertIn("No ethnicity figure is shown", e["ethnicity"]["note"])
 
-    def test_an_unmatched_unit_beside_matched_siblings_blames_the_join(self):
+    def test_a_unit_beside_units_that_carry_the_field_names_who_gives_it(self):
         # Bulgaria's Sofia oblast. Twenty-seven of its twenty-eight units
-        # carry Wikidata; this one matched no row, because "Sofia Oblast"
-        # could reach neither "Sofia" nor "Sofia City" without reaching both.
-        # Telling the reader "no unit-level source has been read for Bulgaria"
-        # is false, and false in the direction that hides the bug: it blames
-        # the absence of a source for what is an unmatched row.
+        # carry Wikidata; this one does not, because "Sofia Oblast" could
+        # reach neither "Sofia" nor "Sofia City" without reaching both.
+        # Telling the reader no source gives the field is false, and false in
+        # the direction that hides the miss.
         rows = [self.bare() for _ in range(28)]
+        for row in rows[1:]:
+            row["match"] = "adapter:name"
+            row["religion"] = [{"group": "Orthodox", "pct": 80.0}]
+            row["sources"] = [{"field": "religion/population", "name": "Wikidata"}]
+        joined = be.joined_here(rows)
+        self.assertEqual(joined["matched"], 27)
+        self.assertEqual(joined["units"], 28)
+        self.assertEqual(joined["fields"]["religion"], {"n": 27, "sources": ["Wikidata"]})
+        self.assertEqual(be.say_why_empty(rows[0], "Bulgaria", joined),
+                         "no unit at this level carries it")
+        self.assertEqual(rows[0]["religion"]["note"],
+                         "No religion figure has been found for this unit. Wikidata gives "
+                         "it for 27 of the 28 units of Bulgaria at this level, not for "
+                         "this one.")
+        self.assertEqual(rows[0]["language"]["note"],
+                         "None of the sources used for the units of Bulgaria at this level "
+                         "(Wikidata) gives language, and no figure has been found for this "
+                         "unit. That says nothing about whether the census asks.")
+
+    def test_counts_in_the_thousands_are_written_with_separators(self):
+        # "for 3220 of the 3231 units of the United States" read as a code.
+        rows = [self.bare() for _ in range(1200)]
+        for row in rows[1:]:
+            row["match"] = "adapter:name"
+            row["religion"] = [{"group": "Christian", "pct": 70.0}]
+            row["sources"] = [{"field": "religion", "name": "Wikidata"}]
+        be.say_why_empty(rows[0], "Testland", be.joined_here(rows))
+        self.assertIn("for 1,199 of the 1,200 units of Testland", rows[0]["religion"]["note"])
+
+    def test_a_unit_with_figures_of_its_own_is_not_said_to_be_missed(self):
+        # Libya's Al Butnan shows Wikipedia's population: its sources give no
+        # religion, and neither do its siblings'.
+        rows = [self.bare() for _ in range(3)]
+        rows[0]["population"] = {"value": 159536, "source": "English Wikipedia"}
+        rows[0]["sources"] = [{"field": "population", "name": "Wikipedia"}]
         for row in rows[1:]:
             row["match"] = "adapter:name"
             row["sources"] = [{"field": "population", "name": "Wikidata"}]
         joined = be.joined_here(rows)
-        self.assertEqual(joined, {"sources": "Wikidata",
-                                  "matched": 27, "units": 28})
-        self.assertEqual(be.say_why_empty(rows[0], "Bulgaria", joined),
-                         "unit matched no row")
+        be.say_why_empty(rows[0], "The Gambia", joined)
         note = rows[0]["religion"]["note"]
-        self.assertIn("A unit-level source was read for Bulgaria", note)
-        self.assertIn("Wikidata", note)
-        self.assertIn("27 of its 28 units were joined", note)
-        self.assertIn("this unit matched no row", note.lower())
-        self.assertNotIn("No unit-level source has been read", note)
+        self.assertEqual(note, "None of the sources used for the units of the Gambia at "
+                               "this level (Wikidata) gives religion, and no figure has been "
+                               "found for this unit. That says nothing about whether the "
+                               "census asks.")
+        for word in ("joined", "matched", "fetched", "read", "row"):
+            self.assertNotIn(word, note)
 
     def test_a_country_nothing_reached_still_says_nothing_was_read(self):
-        # The counts must not turn an untouched country into a join failure:
-        # with no sibling matched there is no join to blame.
+        # The counts must not turn an untouched country into a miss: with no
+        # sibling carrying anything there is nothing to compare.
         rows = [self.bare() for _ in range(6)]
         joined = be.joined_here(rows)
         self.assertEqual(joined["matched"], 0)
         self.assertEqual(be.say_why_empty(rows[0], "Chad", joined),
                          "no source read")
-        self.assertIn("No unit-level source has been read for Chad",
+        self.assertIn("none of the sources used here gives figures for the units of Chad",
                       rows[0]["religion"]["note"])
 
-    def test_disputed_units_are_not_counted_as_units_the_join_missed(self):
+    def test_disputed_units_are_not_counted_as_units_the_sources_missed(self):
         # A disputed shape carries no source by design and gets its own
-        # sentence, so counting it would understate how complete the join is
+        # sentence, so counting it would understate how far the sources reach
         # and put a number in the note that no reader could reconcile.
         rows = [self.bare() for _ in range(3)]
         rows[0]["disputed"] = True
         for row in rows[1:]:
             row["match"] = "adapter:name"
+            row["religion"] = [{"group": "A", "pct": 100.0}]
             row["sources"] = [{"field": "religion", "name": "Wikidata"}]
-        self.assertEqual(be.joined_here(rows),
-                         {"sources": "Wikidata", "matched": 2, "units": 2})
+        joined = be.joined_here(rows)
+        self.assertEqual((joined["sources"], joined["matched"], joined["units"]),
+                         ("Wikidata", 2, 2))
+        self.assertEqual(joined["fields"]["religion"]["n"], 2)
 
 
 class CollectionPolicyPropagation(unittest.TestCase):
@@ -2603,7 +2661,7 @@ class ADivisionCountingSomethingElse(unittest.TestCase):
         note = self.roll(self.parent(), self.kids())["religion_note"]
         self.assertIn("Odd counts sectarian affiliation rather than what the "
                       "others count", note)
-        self.assertIn("its own record carries that figure", note)
+        self.assertIn("its own figure is shown on it", note)
 
     def test_which_basis_is_usual_does_not_depend_on_the_hash_seed(self):
         # CI and a local run disagreed about which of two equally-sized
@@ -4036,10 +4094,26 @@ class BhutanGewogJoin(unittest.TestCase):
         rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
         sipsu = rows[("Tashichhoeling", "Samtse")]
         self.assertIn("Sipsu", sipsu["aliases"])
-        self.assertIn("draws this gewog as Sipsu", sipsu["population_note"])
+        self.assertIn("The census calls this gewog Tashichhoeling, and the map draws it "
+                      "as Sipsu", sipsu["population_note"])
+        # Said as the visitor sees it, not as the join was made.
+        for row in self.gewogs:
+            self.assertNotIn("identified by", row["population_note"], row["name"])
         self.assertIn("reference point", sipsu["population_note"])
         yangtse = rows[("Yangtse", "Trashi Yangtse")]
         self.assertIn("elimination", yangtse["population_note"])
+        self.assertIn("The census calls this gewog Yangtse", yangtse["population_note"])
+
+    def test_the_two_left_in_trashi_yangtse_say_there_were_two(self):
+        # Two gewogs and two polygons were left there, told apart by the
+        # map's labels; "the one polygon and the one gewog left" was false.
+        rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
+        for name in ("Tongmajangsa", "Yangtse"):
+            note = rows[(name, "Trashi Yangtse")]["population_note"]
+            self.assertNotIn("the one polygon and the one gewog left", note)
+            self.assertIn("Tomzhangtshen is Tongmajangsa", note)
+        daga = rows[("Darkar", "Wangdue Phodrang")]["population_note"]
+        self.assertIn("the one polygon and the one gewog left", daga)
 
     def test_every_gewog_shape_is_claimed_exactly_once(self):
         # The whole point, where the geometry is at hand to check it: 205
@@ -5075,17 +5149,22 @@ class RollUpVintage(unittest.TestCase):
         self.assertEqual(parent["population"]["year"], 2022)
         self.assertIn("8,325,666", parent["population_note"])
 
-    def test_a_same_year_published_population_gives_way_to_the_children(self):
+    def test_a_country_population_is_filled_and_never_replaced(self):
         # Finland's nineteen regions total 5,652,881 for 2025 from Statistics
-        # Finland's register; the country carried 5,550,449 for 2025 from the
-        # Factbook. An itemised count against a general estimate, with the
-        # language shares already taken from the register.
-        # That is a country's estimate, so roll_up_countries says so.
-        parent = {"population": {"value": 5_550_449, "year": 2025}}
+        # Finland's register; the country shows the Factbook's 5,550,449 for
+        # 2025, as every country shows the Factbook's estimate.
+        # roll_up_countries says so, and a newer sum does not replace it either.
+        for year in (2025, 2026):
+            parent = {"population": {"value": 5_550_449, "year": 2025}}
+            be.roll_up_field(parent, [self.kid(5_652_881, year)], "religion",
+                             whole_country=True, fill_population_only=True)
+            self.assertEqual(parent["population"], {"value": 5_550_449, "year": 2025})
+            self.assertNotIn("population_note", parent)
+        # A country with none takes the sum.
+        parent = {"population": {"status": "not_available"}}
         be.roll_up_field(parent, [self.kid(5_652_881, 2025)], "religion",
-                         whole_country=True, restate_same_year=True)
+                         whole_country=True, fill_population_only=True)
         self.assertEqual(parent["population"]["value"], 5_652_881)
-        self.assertIn("5,550,449", parent["population_note"])
 
     def test_a_first_level_count_of_the_same_year_is_not_replaced_by_a_sum(self):
         # Kinmen's five drawn townships added up to 136,611 against the
@@ -5704,7 +5783,7 @@ class DerivedValues(unittest.TestCase):
                          {"A": 50.0, "B": 50.0})
         self.assertEqual(pooled["population"]["value"], 400)
         self.assertEqual(pooled["population"]["year"], 2020)
-        self.assertIn("Pooled from the rows published for Kavango East and Kavango West",
+        self.assertIn("Pooled from the figures published for Kavango East and Kavango West",
                       pooled["religion_note"])
         self.assertEqual(len(pooled["sources"]), 1)
 
@@ -5750,8 +5829,11 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual(pooled["wikidata_admin1.json"]["population"]["value"], 1196509)
         self.assertIn("The sum of the figures published for Thessalia and Sterea",
                       pooled["eurostat_nuts2.json"]["population_note"])
-        # A median does not sum; Thessaly's is not the administration's.
-        self.assertNotIn("median_age", pooled["eurostat_nuts2.json"])
+        # A median does not sum; Thessaly's is not the administration's, and
+        # the field says why it has none rather than carrying either part's.
+        median = pooled["eurostat_nuts2.json"]["median_age"]
+        self.assertNotIn("value", median)
+        self.assertIn("Thessalia and Sterea Elláda separately", median["note"])
 
     def test_a_declared_split_states_a_gap_rather_than_copying(self):
         # Bueng Kan was part of Nong Khai in 2000. Nong Khai's religion then
@@ -8894,8 +8976,12 @@ class CountryDetail(unittest.TestCase):
             total = sum(g["pct"] for g in groups)
             self.assertGreater(total, 99.0, f"{row['country']} sums to {total}")
             self.assertLess(total, 101.0, f"{row['country']} sums to {total}")
-            for group in groups:
-                self.assertIn("count", group, group)
+            # Counts on every group, or shares alone, as the Factbook's lines
+            # are: CBS publishes the Netherlands' survey shares and no counts.
+            counted = ["count" in group for group in groups]
+            self.assertTrue(all(counted) or not any(counted), row["country"])
+            if not any(counted):
+                self.assertIn("survey estimate", row.get("basis", ""), row["country"])
             self.assertIn("year", row,
                           f"{row['country']} substitutes figures and does not "
                           f"say what year they are")

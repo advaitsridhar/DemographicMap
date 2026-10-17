@@ -55,7 +55,7 @@ from .india_census import (
     CATALOG, CREATED_AFTER_2011, DISTRICT_ALIASES, NEW_DISTRICT_ALIASES,
     MERGED_STATES, SPLIT_STATES, STATE_ALIASES, STATE_IN_2011, SUBDIVIDED_SINCE_2011,
     fold_state, merged_state_note,
-    created_reason, inherited_note, lost_territory, lost_territory_reason,
+    created_reason, inherited_note, lost_territory, lost_territory_reason, no_figure,
     split_note, subdivided_inherited_note, subdivided_reason, without_counts,
 )
 
@@ -434,7 +434,7 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
                     # top of india_census's explained one is how East Jaintia
                     # Hills came to show an unexplained blank for religion
                     # beside a fully explained blank for language.
-                    population=gap(NOT_AVAILABLE, estimate),
+                    population=gap(NOT_AVAILABLE, no_figure(estimate)),
                     religion=gap(NOT_AVAILABLE, estimate),
                     language=groups or gap(NOT_AVAILABLE, reason),
                     language_note=estimate if groups else None,
@@ -565,7 +565,7 @@ def new_districts(measured: dict[tuple[str, str], dict[str, float]]
                 # religion is a value and survives, but its population is a gap
                 # with a reason, and that reason would be rubbed out on the way
                 # through. Same trap as the branch above, one level up.
-                population=gap(NOT_AVAILABLE, estimate),
+                population=gap(NOT_AVAILABLE, no_figure(estimate)),
                 religion=gap(NOT_AVAILABLE, estimate),
                 language=groups or gap(NOT_AVAILABLE),
                 language_note=estimate,

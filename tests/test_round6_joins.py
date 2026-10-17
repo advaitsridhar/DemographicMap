@@ -157,10 +157,11 @@ class Declarations(unittest.TestCase):
                     self.assertEqual(drawn[shape_id]["name"], label)
         for (iso3, name), spec in be.ROW_UNIONS.items():
             drawn = shapes(iso3)
-            data = rows(spec["file"])
-            for rid in spec["rows"]:
-                if data:
-                    self.assertIn(rid, data, f"{iso3} {name}: {rid}")
+            for filename, wanted in be.union_groups(spec):
+                data = rows(filename)
+                for rid in wanted:
+                    if data:
+                        self.assertIn(rid, data, f"{iso3} {name}: {rid}")
             for level, shape_id in spec["shapes"]:
                 if drawn:
                     self.assertEqual(drawn[(level, shape_id)]["name"], name)
@@ -254,14 +255,23 @@ class LoadAdapters(unittest.TestCase):
         clear = [{"id": "KHM-CG-KH2107", "name": "Samraong", "country": "KHM",
                   "level": "admin2"}]
         census = [{"id": "PRY-INE-x", "name": "x", "country": "PRY", "level": "admin2"}]
+        georgia = [{"id": "GEO-GEOSTAT-92138335B56355921545740", "name": "Zugdidi",
+                    "country": "GEO", "level": "admin2",
+                    "population": {"value": 98300, "year": 2026},
+                    "population_note": "Geostat's estimate for 1 January 2026.",
+                    "median_age": {"value": 40.9, "year": 2014},
+                    "sex_ratio": {"value": 91.1, "year": 2014},
+                    "ethnicity": [{"group": "Georgian", "pct": 99.0}]}]
         (path / "cod_ps_admin2.json").write_text(json.dumps(cod))
         (path / "clear_global_language.json").write_text(json.dumps(clear))
         (path / "paraguay_census.json").write_text(json.dumps(census))
+        (path / "georgia.json").write_text(json.dumps(georgia))
         self.patches = [
             mock.patch.object(be, "PROCESSED", path),
             mock.patch.object(be, "ADAPTER_FILES", ["paraguay_census.json",
                                                     "clear_global_language.json",
-                                                    "cod_ps_admin2.json"]),
+                                                    "cod_ps_admin2.json",
+                                                    "georgia.json"]),
             mock.patch.object(be, "SUPERSEDED_ROWS",
                               {"cod_ps_admin2.json": {"PRY": "paraguay_census.json"}}),
         ]
@@ -288,7 +298,28 @@ class LoadAdapters(unittest.TestCase):
         self.assertIn("ARUSHA CITY", row["aliases"])
 
     def test_note(self):
-        self.assertIn("Cacula", self.loaded["AGO-CODPS-AO09077"]["population"]["note"])
+        # Beside the figure: the sentence is about the polygon, and the figure
+        # may be copied to other records.
+        row = self.loaded["AGO-CODPS-AO09077"]
+        self.assertIn("Cacula", row["population_note"])
+        self.assertNotIn("note", row["population"])
+
+    def test_notes_after_the_rows_own_and_on_lists_too(self):
+        row = self.loaded["GEO-GEOSTAT-92138335B56355921545740"]
+        self.assertTrue(row["population_note"].startswith(
+            "Geostat's estimate for 1 January 2026. The outline drawn here also takes in "
+            "the villages along the Enguri"), row["population_note"])
+        self.assertTrue(row["population_note"].endswith("who are not in this figure."))
+        for field in ("median_age", "sex_ratio"):
+            self.assertTrue(row[f"{field}_note"].endswith(
+                "whom the 2014 census did not count."), field)
+        self.assertTrue(row["ethnicity_note"].endswith("whom the 2002 census did not count."))
+
+    def test_a_sentence_for_a_field_the_row_lacks_stops_the_run(self):
+        notes = {"cod_ps_admin2.json": {"AGO-CODPS-AO09077": {"median_age": "x."}}}
+        with mock.patch.object(be, "ROW_NOTES", notes), mock.patch.object(be, "log"), \
+                self.assertRaises(SystemExit):
+            be.load_adapters()
 
     def test_a_pooled_part_survives_its_countrys_superseding(self):
         self.assertIn("PRY-CODPS-PY1302", self.loaded)
@@ -559,12 +590,26 @@ def drawn_index(iso3: str):
 
 
 def join(row: dict, iso3: str):
-    """What the build's second-level matcher does with one adapter row."""
+    """What the build's matcher for the row's level does with one adapter row.
+
+    A first-level row goes to the first-level shapes, as in the build: Huế's
+    Wikidata row (wikidata_admin1.json) is the province Thừa Thiên Huế, and
+    the second-level matcher would hand it Huế city's district instead.
+    """
     a2, a1, a1_exact, names = drawn_index(iso3)
     key = {"name": row.get("name") or "", "aliases": row.get("aliases") or [],
            "parent_name": row.get("parent_name"),
            "parent_aliases": row.get("parent_aliases") or [],
            "point": be.row_point(row)}
+    if row.get("level") == "admin1":
+        admin1 = [dict(u, name=u.get("shape_name") or u["name"])
+                  for (level, _), u in shapes(iso3).items() if level == "admin1"]
+        by_key: dict = {}
+        for e in admin1:
+            by_key.setdefault(be.norm(e["name"]), []).append(e)
+        be.add_known_as(by_key, admin1)
+        entity, how = be.match_name(key, be.settle(by_key, [key["name"], *key["aliases"]]))
+        return entity, how, names
     entity, how = be.match_admin2(key, a2, a1, a1_exact)
     return entity, how, names
 

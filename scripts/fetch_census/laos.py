@@ -679,6 +679,11 @@ def build(units: dict[Any, dict[str, Any]], level: str) -> list[dict[str, Any]]:
             fields["sex_ratio"] = measure(round(1000.0 * unit["female"] / unit["male"]),
                                           unit="females_per_1000_males", year=YEAR,
                                           source=SOURCE)
+            # Cited for the ratio too: without it, the 166 units' census ratios
+            # were cited to nothing of their own, and to OCHA's 2024 table,
+            # whose ratio they do not show.
+            fields["sources"].append({"field": "sex_ratio", "name": SOURCE,
+                                      "url": LANDING, "license": LICENCE})
         if level == "province":
             out.append(record(f"LAO-{slugify(name)}", name, level="admin1",
                               parent="LAO", **fields))

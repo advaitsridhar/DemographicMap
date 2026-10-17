@@ -48,6 +48,9 @@ from common import (  # noqa: E402
 )
 
 REPO = "https://github.com/factbook/factbook.json"
+# A population given as the field's whole text: a count and its estimate's
+# date (build_record).
+BARE_POPULATION = re.compile(r"\d{1,3}(?:,\d{3})* \((?:[A-Z][a-z]+ )?\d{4} est\.\)")
 MIRROR = "https://raw.githubusercontent.com/factbook/factbook.json/master"
 LOCAL = RAW / "factbook"
 REGIONS = [
@@ -461,6 +464,16 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         name = text_at(profile, "Government", "Country name", "conventional long form") or gec.upper()
 
     pop_text = text_at(profile, "People and Society", "Population", "total")
+    if pop_text is None:
+        # Western Sahara's profile is in the older layout: the figure is the
+        # field's own text, "652,271 (July 2020 est.)", with no "total" under
+        # it. Taken only in that form, a count and its estimate's date: the
+        # other profiles without a total are prose whose first number is no
+        # population -- Antarctica's "no permanent inhabitants, but ... 56
+        # countries have signed", Akrotiri's "(2020) approximately 18,195".
+        bare = text_at(profile, "People and Society", "Population")
+        if bare and BARE_POPULATION.fullmatch(bare.strip()):
+            pop_text = bare
     pop = parse_number(pop_text)
     capital, capital_coords = parse_capital(profile)
     largest, cities = parse_major_urban(profile)
@@ -639,9 +652,9 @@ def factbook_notes(iso3: str | None, fields: dict[str, tuple[Any, str | None]]) 
     for field, (value, text) in fields.items():
         reason = collection_policy(iso3, field)
         if reason and isinstance(value, list) and value:
-            quoted = re.sub(r"\s+", " ", text or "").strip()
-            if len(quoted) > 300:
-                quoted = quoted[:297].rsplit(" ", 1)[0] + "..."
+            # Cut, where it must be, at a whole item: a plain cut ended
+            # Uruguay's list "atheist 1.3%,..." and Bolivia's "none...".
+            quoted = clip(text, 300)
             what = ("figure shown is the CIA World Factbook's estimate" if has_shares(value)
                     else "list shown is the CIA World Factbook's, with no shares")
             notes[f"{field}_note"] = f"{reason} The {what}, which reads: \"{quoted}\"."

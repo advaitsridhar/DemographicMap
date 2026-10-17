@@ -278,9 +278,13 @@ class TreeAndBuild(unittest.TestCase):
         self.assertLess(files.index("thailand_ethnicity.json"),
                         files.index("japan_prefecture.json"))
 
-    def test_thailand_stays_a_documented_gap_that_names_the_model(self):
+    def test_thailand_stays_a_documented_gap_that_names_the_count_shown(self):
+        # The nationality count replaces the model on all 76 provinces
+        # (thailand_nationality.json), so the reason names the count and says
+        # nothing of a model no record shows.
         self.assertIn("THA", be.ADAPTER_GAPS)
-        self.assertIn("modelled", be.ADAPTER_GAPS["THA"])
+        self.assertIn("Thai and foreign nationals", be.ADAPTER_GAPS["THA"])
+        self.assertNotIn("modelled", be.ADAPTER_GAPS["THA"])
         self.assertNotIn("THA", common.NOT_COLLECTED_POLICY)
 
     def test_the_build_script_runs_it(self):

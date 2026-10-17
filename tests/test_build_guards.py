@@ -246,6 +246,28 @@ class ASurveyNeverReplacesACount(unittest.TestCase):
                                  "religion_year": 2017})
         self.assertEqual(e["religion"], self.survey)
 
+    def test_a_transcribed_survey_stands_behind_the_office_s_own(self):
+        # nl.wikipedia's provincial infoboxes copy CBS's survey estimates.
+        # Drenthe's carries the 2021/2025 workbook's figures under a 2016
+        # citation; CBS's own workbook stands, whichever is read first.
+        for order in ((("netherlands_religion_survey.json", self.survey, 2025),
+                       ("netherlands_province.json", self.census, 2025)),
+                      (("netherlands_province.json", self.census, 2025),
+                       ("netherlands_religion_survey.json", self.survey, 2025)),
+                      (("netherlands_religion_survey.json", self.survey, 2025),
+                       ("netherlands_province.json", self.census, 2015))):
+            e = {"religion": {"status": "not_available"}, "sources": []}
+            for source, shares, year in order:
+                self.b.merge_adapter(e, {"_source": source, "religion": shares,
+                                         "religion_year": year})
+            self.assertEqual(e["religion"], self.survey, order)
+
+    def test_a_transcribed_survey_still_stands_behind_a_count(self):
+        e = self.counted()
+        self.b.merge_adapter(e, {"_source": "netherlands_province.json",
+                                 "religion": self.survey, "religion_year": 2025})
+        self.assertEqual(e["religion"], self.census)
+
 
 class TwoRowsOnOnePolygon(unittest.TestCase):
     """The build refuses two places on one shape, not two sources on one place."""

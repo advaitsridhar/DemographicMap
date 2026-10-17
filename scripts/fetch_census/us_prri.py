@@ -387,12 +387,15 @@ DELIMITERS = (",", "\t", ";", "|")
 def normalise(name: str) -> str:
     """A county name reduced to the part two sources have to agree on.
 
-    PRRI writes "Autauga County, AL" and the map writes "Autauga County,
-    Alabama"; 'Doña Ana' and 'Dona Ana' are the same place too. Only ever used
-    to decide whether a name *disagrees* with the one already on the map --
-    never to make a join.
+    PRRI writes "Autauga County, AL" and the map writes "Autauga"; 'Doña Ana'
+    and 'Dona Ana' are the same place too. PRRI also keeps the Census Bureau's
+    lowercase "city" after an independent city ("Baltimore city, MD",
+    "Alexandria city, VA") where the map writes "Baltimore"; a capitalised
+    "City" is part of a name ("Carson City", "James City County") and stays.
+    Only ever used to decide whether a name *disagrees* with the one already
+    on the map -- never to make a join.
     """
-    name = name.split(",")[0]
+    name = re.sub(r" city$", "", name.split(",")[0].strip())
     name = name.replace("ñ", "n").replace("Ñ", "N")
     name = re.sub(r"\b(County|Parish|Borough|Census Area|Municipality|City and "
                   r"Borough|Municipio|Planning Region)\b", " ", name, flags=re.I)
@@ -1019,9 +1022,10 @@ def aggregate_note(parts: int, kind: str) -> str:
             f"40,000 adults on Ipsos's KnowledgePanel; small-area estimates "
             f"rather than an enumeration, describing adults rather than all "
             f"residents. Replaces the 2020 U.S. Religion Census adherent "
-            f"counts this unit carried, which reached about 48.6% of the "
-            f"population and could not distinguish the unaffiliated from the "
-            f"unreported. PRRI's categories cross race with religion; the "
+            f"counts this unit carried; those counts reach about 48.6% of the "
+            f"population nationally (27% to 76% by state) and cannot "
+            f"distinguish the unaffiliated from the unreported. PRRI's "
+            f"categories cross race with religion; the "
             f"Protestant and Catholic categories are summed into "
             f"Protestantism and Catholicism and the racial detail is dropped "
             f"rather than filed under religion.")
@@ -1057,26 +1061,34 @@ def build(counties: dict[str, dict[str, float]],
                 for node, pct in sorted(counties[fips].items(),
                                         key=lambda kv: (-kv[1], kv[0]))
                 if round(pct, 1) > 0]
+        # The universe binds each county to its shape, and the binding travels
+        # with the name: matched by name alone, Baltimore city and Baltimore
+        # County are two "Baltimore"s in Maryland, and the build refuses both.
+        bound = ({"match_by": "shape_id", "shape_id": home["shape_id"]}
+                 if home.get("match_by") == "shape_id" and home.get("shape_id")
+                 else {})
         records.append(record(
             f"USA-{fips}", home["name"],
             level="admin2", parent=home.get("parent", "USA"), country="USA",
             codes=home.get("codes"),
             parent_name=home.get("parent_name"),
+            **bound,
             religion=rows or gap(NOT_AVAILABLE),
             religion_year=year,
             religion_basis="self-identification",
             religion_note=(
                 f"{SOURCE}, published as the 2023 PRRI Census of American "
                 f"Religion; the released table's own year column reads {year}, "
-                f"which is the year recorded here. Self-reported religious "
+                f"the year shown here. Self-reported religious "
                 f"identity among adults, modelled to county level from a "
                 f"national random sample of 40,000 adults on Ipsos's "
                 f"KnowledgePanel (national margin of error +/-0.7 points); "
                 f"these are small-area estimates, not an enumeration, and they "
                 f"describe adults rather than all residents. Replaces the 2020 "
-                f"U.S. Religion Census adherent counts this county carried, "
-                f"which reached about 48.6% of the population and could not "
-                f"distinguish the unaffiliated from the unreported. PRRI's "
+                f"U.S. Religion Census adherent counts this county carried; "
+                f"those counts reach about 48.6% of the population nationally "
+                f"(27% to 76% by state) and cannot distinguish the unaffiliated "
+                f"from the unreported. PRRI's "
                 f"categories cross race with religion; the five Protestant and "
                 f"three Catholic categories are summed into Protestantism and "
                 f"Catholicism and the racial detail is dropped rather than "

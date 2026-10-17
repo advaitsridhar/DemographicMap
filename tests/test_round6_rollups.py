@@ -141,13 +141,24 @@ class SupersededProjections(unittest.TestCase):
               "GEO": "georgia.json", "GTM": "guatemala_census.json",
               "DOM": "dominican_census.json"}
 
-    def test_the_census_files_supersede_the_projection(self):
-        rows = be.SUPERSEDED_ROWS["cod_ps_admin2.json"]
+    def test_the_census_files_supersede_or_hold_the_projection(self):
+        # Since round 7 a projection from the office's own census is held
+        # behind it and stands where it is newer and the same ground
+        # (HELD_ROWS); one from an older census than the office counted is
+        # still dropped.
+        dropped = be.SUPERSEDED_ROWS["cod_ps_admin2.json"]
+        held = be.HELD_ROWS["cod_ps_admin2.json"]
         for iso3, file in self.WANTED.items():
-            self.assertEqual(rows.get(iso3), file, iso3)
+            self.assertEqual(dropped.get(iso3) or held.get(iso3), file, iso3)
             self.assertIn(file, be.ADAPTER_FILES, file)
+        # Costa Rica's projection is from the 2011 census, and the 2022 one
+        # the provinces show counted fewer: it is dropped again.
+        self.assertEqual({iso3 for iso3 in self.WANTED if iso3 in held},
+                         {"LAO", "PHL", "NIC", "MEX"})
+        self.assertEqual(dropped["CRI"], "costa_rica_census.json")
         # Myanmar keeps one vintage at both levels.
-        self.assertNotIn("MMR", rows)
+        self.assertNotIn("MMR", dropped)
+        self.assertNotIn("MMR", held)
 
     def test_every_drawn_unit_bound_by_shape_has_a_count_or_a_reason(self):
         for iso3 in ("PHL", "PRY", "NIC", "CRI", "GEO"):
@@ -276,11 +287,32 @@ class CountryCounts(unittest.TestCase):
     def test_visitor_notes_name_no_files_or_code(self):
         rows = json.loads(CURATED.read_text(encoding="utf-8"))["rows"]
         for row in rows:
-            if row["country"] in ("TKM", "KWT", "OMN", "MDV", "PRY", "GTM", "XKX", "MCO",
-                                  "MDA", "GEO", "BTN", "LAO", "UKR", "ERI") and \
-                    row["field"] in ("population", "median_age", "sex_ratio"):
-                for bad in (".json", ".py", "adapter", "build", "SUPERSEDED", "cod-ps"):
+            if row["field"] in ("population", "median_age", "sex_ratio"):
+                for bad in (".json", ".py", "adapter", "build", "SUPERSEDED", "cod-ps",
+                            "check row", "curated"):
                     self.assertNotIn(bad, row["note"], (row["country"], bad))
+
+    def test_every_country_shows_the_factbooks_estimate(self):
+        # A census or register count curated for a country stands beside the
+        # Factbook's estimate, for the first level's sums to be checked
+        # against, and its note names the year of the estimate shown and the
+        # count itself.
+        factbook = {r["id"]: r.get("population")
+                    for r in processed("admin0.json") if isinstance(r, dict)}
+        rows = [r for r in json.loads(CURATED.read_text(encoding="utf-8"))["rows"]
+                if r["field"] == "population"]
+        counts = [r for r in rows if "value" in r]
+        self.assertEqual(len(counts), 17)
+        for row in counts:
+            self.assertEqual(row.get("use"), "check", row["country"])
+            self.assertIn(f"{row['value']:,}", row["note"], row["country"])
+        for row in rows:
+            shown = factbook[row["country"]]
+            if row["note"].startswith("The Factbook's estimate"):
+                self.assertTrue(row["note"].startswith(
+                    f"The Factbook's estimate for {shown['year']}"), row["country"])
+            else:
+                self.assertNotIn("value", row, row["country"])
 
 
 # --------------------------------------------------------------------------
@@ -461,7 +493,8 @@ class NotePopulationGaps(unittest.TestCase):
 
     def test_close_or_explained_parents_are_left_alone(self):
         parent = unit("P", "Close", 1000, 2020)
-        kids = [unit("K", "Kid", 900, 2020, "X", parent="P")]
+        kids = [unit("K1", "Kid", 450, 2020, "X", parent="P"),
+                unit("K2", "Kid", 450, 2020, "X", parent="P")]
         be.note_population_gaps([], {"A": [parent]}, {"A": kids})
         self.assertNotIn("population_note", parent)
         parent = unit("P", "Said", 1000, 2020)
@@ -547,6 +580,33 @@ class NotePopulationGaps(unittest.TestCase):
                                         "(OCHA's common operational dataset, 2020), 32% below"))
         self.assertTrue(note.endswith("the two are different sources' figures for the same "
                                       "year."))
+
+    def test_one_division_is_compared_beyond_rounding(self):
+        # Western Sahara: the Factbook's 652,271 for 2020, and the UN's
+        # 565,581 for 2021 on the one unit drawn over the territory -- 13%
+        # apart, under the gap a sum of many divisions is allowed.
+        country = {"id": "ESH", "name": "Western Sahara", "population": {
+            "value": 652_271, "year": 2020,
+            "source": "CIA World Factbook (public domain), factbook.json mirror"}}
+        sole = unit("DIS020", "Western Sahara", 565_581, 2021,
+                    "English Wikipedia, Western Sahara (infobox, which displays the UN's "
+                    "World Population Prospects figure)", parent="ESH")
+        a0, a1 = [country], {"ESH": [sole]}
+        self.assertEqual(len(be.note_population_gaps(a0, a1, {})), 1)
+        self.assertEqual(country["population_note"],
+                         "The one first-level division drawn on this map carries 565,581 "
+                         "(Wikipedia, 2021), 13% below this figure.")
+        be.check_population_gaps_said(a0, a1, {})
+        # Within what rounding makes, nothing is said; two divisions are a sum,
+        # held to the wider gap.
+        close = unit("P", "Glarus", 42_371, 2025, "Eurostat")
+        kid = unit("K", "Glarus", 42_451, 2025, "Federal Statistical Office", parent="P")
+        be.note_population_gaps([], {"CHE": [close]}, {"CHE": [kid]})
+        self.assertNotIn("population_note", close)
+        self.assertTrue(cr.disagrees(1000, 990, 1))
+        self.assertFalse(cr.disagrees(1000, 996, 1))
+        self.assertFalse(cr.disagrees(1000, 900, 2))
+        self.assertFalse(cr.disagrees(1000, 900))
 
     def test_a_first_level_kept_over_its_divisions_says_why(self):
         # rollups-48: Zimbabwe's provinces keep the 2022 census over OCHA's
@@ -670,7 +730,7 @@ class StatedPopulationGaps(unittest.TestCase):
         self.assertEqual(sorted(said), ["ATA Antarctica", "SDN Abyei PCA"])
         self.assertEqual(ata["population"], reason)
         self.assertEqual(ata["median_age"]["status"], "not_applicable")
-        self.assertEqual(abyei["population"]["note"], be.DISPUTED_NOTE)
+        self.assertEqual(abyei["population"]["note"], be.DISPUTED_GAP)
         self.assertNotIn("note", other["population"])
 
     def test_a_gap_that_already_says_why_is_kept(self):
@@ -678,6 +738,17 @@ class StatedPopulationGaps(unittest.TestCase):
         abyei["population"]["note"] = "Its own reason."
         be.state_population_gaps([], {"SDN": [abyei]})
         self.assertEqual(abyei["population"]["note"], "Its own reason.")
+
+    def test_the_ages_take_the_population_s_own_reason(self):
+        # Sudan's "Abyei PCA" is an edge of the Abyei Area, not the disputed
+        # ground the CGAZ note describes, and its population says so.
+        abyei = unit("B", "Abyei PCA")
+        abyei["population"]["note"] = "This polygon is 41 km2 at the edge of the Abyei Area."
+        abyei.update(median_age={"status": "not_available"},
+                     sex_ratio={"status": "not_available"})
+        be.state_population_gaps([], {"SDN": [abyei]})
+        for field in ("median_age", "sex_ratio"):
+            self.assertEqual(abyei[field]["note"], abyei["population"]["note"], field)
 
 
 class CountryFromSoleUnit(unittest.TestCase):

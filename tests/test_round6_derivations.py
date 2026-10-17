@@ -62,8 +62,8 @@ class SoleChildren(unittest.TestCase):
         self.assertEqual(refused, [])
         self.assertEqual(len(filled), 6)
         self.assertEqual(child["population"]["value"], 130271)
-        # Beside the figure, where the panel reads a figure's note; a note
-        # inside a figure is shown only for a gap.
+        # Beside the figure, not inside it: a note inside a figure travels
+        # with the figure wherever it is copied, and this one is the child's.
         self.assertIn("is Praia's only division and covers the same ground",
                       child["population_note"])
         self.assertNotIn("note", child["population"])
@@ -92,7 +92,7 @@ class SoleChildren(unittest.TestCase):
                            population={"value": 1000 + i, "year": 2008}) for i in range(3)]}
         a2 = {"DZA": [unit(f"C{i}", f"W{i}", f"P{i}") for i in range(3)]}
         a2["DZA"][0]["population"] = common.gap(NA, (
-            "The Wikidata item joined here by name gives 88,266 (2008), which is 22% of "
+            "Wikidata gives 88,266 (2008) for a place of this name, which is 22% of "
             "W0's 399,714, though it is the only division drawn under W0. It is probably "
             "the town of this name rather than this unit, so its figure is left out."))
         filled, refused = be.fill_sole_children(a1, a2, {f"C{i}": GOOD for i in range(3)}, {})
@@ -647,8 +647,8 @@ class TownFigureWording(unittest.TestCase):
                       {"id": "D", "name": "Other", "parent": "P", "population": {"value": 1}}]}
         self.assertEqual(be.refuse_town_figures(a1, a2), 1)
         note = a2["DJI"][0]["population"]["note"]
-        self.assertTrue(note.startswith("The Wikidata item joined here by name gives 603,900 "
-                                        "(2018), the figure of the city of Djibouti. This "
+        self.assertTrue(note.startswith("Wikidata gives 603,900 (2018) for a place of this "
+                                        "name, the figure of the city of Djibouti. This "
                                         "polygon, filed under Arta, holds the city"))
         self.assertNotIn("the unit it lies in", note)
         self.assertTrue(note.endswith("It is left out."))

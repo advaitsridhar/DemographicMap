@@ -34,8 +34,8 @@ draws the 65 posts of 2015, so no post needs joining for this.
 **Two divisions differ from the boundary file's.** The map draws the thirteen
 municipalities and 65 posts of before 2022. Atauro became the fourteenth
 municipality in 2022: its people are added into Dili's polygon, which holds
-them (as ``timor.py`` does for the population). Ermera's Hatulia became
-Hatulia A and Hatulia B, whose sucos are the old post's; and Lautém's Lore,
+them (as ``timor.py`` does for the population). Ermera's Hatulia was
+divided into Hatulia A and Hatulia B; and Lautém's Lore,
 the sucos Lore I and Lore II, was cut out of Lospalos. The polygons "Hatolia"
 and "Lospalos" therefore take the two 2022 posts each now holds, added
 together, with their population; every other post is matched by name (and by
@@ -75,8 +75,8 @@ SOURCE_POST = timor.POPULATION_SOURCE
 JOINED = {"Hatolia": ["Hatulia A", "Hatulia B"], "Lospalos": ["Lospalos", "Lore"]}
 JOINED_NOTE = {
     "Hatolia": ("The boundary file draws Ermera's Hatulia as it was before the 2022 census "
-                "divided it into Hatulia A and Hatulia B, whose sucos are the old post's; "
-                "the two posts' counts are added together for it."),
+                "divided it into Hatulia A and Hatulia B; the two posts' counts are added "
+                "together for it."),
     "Lospalos": ("The boundary file draws Lautém's Lospalos as it was before Lore -- the "
                  "sucos Lore I and Lore II -- became a post of its own in the 2022 census; "
                  "the two posts' counts are added together for it."),

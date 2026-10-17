@@ -62,9 +62,9 @@ difference: it reads the 2015 volume's table 20 -- one sheet per municipality,
 post, suco and aldeia in a single column, the level marked by indentation and
 recovered instead from the arithmetic, since each unit's count is the sum of
 the units under it -- and compares it with basic table 4.01 suco by suco. Two
-municipalities changed. Ermera's Hatulia is Hatulia A and Hatulia B, whose
-eight and five sucos are the old post's twelve with its Hatulia Vila spelled
-Hatolia Vila; Lautém has six posts where it had five, the new one being Lore.
+municipalities changed. Ermera's Hatulia is now Hatulia A and Hatulia B, with
+eight sucos and five (the old post had twelve, and Hatolia Vila matches none of
+them by name); Lautém has six posts where it had five, the new one being Lore.
 Every post of those two
 municipalities says so in its population note, because a boundary file drawn on
 the older division is the one case where a row here could be joined to a shape
@@ -680,15 +680,20 @@ POST_POPULATION_NOTE = ("The 2022 census's count for the administrative post, fr
 # municipalities changed, and a row of one of them is the only row here that a
 # boundary file can join to a shape covering different ground -- which is said
 # on the row rather than left to be discovered.
+# The probe matches 2022's sucos to 2015's by name: seven of Hatulia A's eight
+# and all five of Hatulia B's were in 2015's Hatulia, which had twelve, and the
+# eighth, Hatolia Vila, matches none under its new spelling. That is thirteen
+# names for twelve sucos, so the note gives the 2022 counts and not the 2015
+# ones it once said these add up to.
 CHANGED_DIVISION = {
     "Ermera": ("The 2022 census divides Ermera into six administrative posts where the "
-               "2015 round divided it into five: the twelve sucos of the old Hatulia are "
-               "Hatulia A's eight and Hatulia B's five here. A boundary drawn on the "
-               "older division has one shape where this file has two."),
+               "2015 round divided it into five: the old post of Hatulia is now two, "
+               "Hatulia A with eight sucos and Hatulia B with five. The map follows the "
+               "older division and draws Hatulia as one shape, where the 2022 census has "
+               "two posts."),
     "Lautém": ("The 2022 census divides Lautém into six administrative posts -- Iliomar, "
                "Lautém, Lore, Lospalos, Luro and Tutuala -- where the 2015 round named no "
-               "Lore. A boundary drawn on the older division covers more ground than "
-               "whichever of these rows it is joined to."),
+               "Lore."),
 }
 
 

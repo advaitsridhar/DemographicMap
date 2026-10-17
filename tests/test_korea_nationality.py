@@ -286,6 +286,16 @@ class TheRecords(unittest.TestCase):
             self.assertIn("F-4", r["ethnicity_note"])
             self.assertFalse(common.is_estimate(r["ethnicity"]))
 
+    def test_the_population_names_and_cites_the_two_registers(self):
+        # It read "resident-registered Koreans plus registered foreigners" where
+        # a source's name belongs, and nothing was cited for it.
+        for r in self.records:
+            self.assertEqual(r["population"]["source"], m.REGISTERS)
+            self.assertEqual(r["population_note"], m.REGISTERS_NOTE)
+            cited = [s["name"] for s in r["sources"]
+                     if "population" in s["field"].split("/")]
+            self.assertEqual(cited, [m.MOJ_SOURCE, m.MOIS_SOURCE], r["name"])
+
     def test_a_district_drawn_under_another_province_says_so(self):
         by = {(r["parent_name"], r["name"]): r for r in self.records if r["level"] == "admin2"}
         # The map files it under Seoul (the build's DECLARED_PARENTS), so the

@@ -687,9 +687,17 @@ CENTRAL_AFRICAN_REPUBLIC = Country(
     # column that did not match it, and the evidence that nothing is being
     # wrongly included or excluded is stronger without one: all three sheets
     # reconcile to within a single person of their own published totals.
+    # The ethnicity table's note is the country's; religion and language say
+    # what their own tables hold rather than repeating it.
     topics=(Topic("Ethnicity", "ethnicity"),
-            Topic("Religion", "religion"),
-            Topic("Language", "language")),
+            Topic("Religion", "religion", note=(
+                "2003 census (RGPH03), the census's own religion table, in its "
+                "five categories: Muslim, Catholic, Protestant, another "
+                "religion, and no religion.")),
+            Topic("Language", "language", note=(
+                "2003 census (RGPH03), the census's own language table, in its "
+                "own list: the local languages one by one, Sango, Arabic and "
+                "Fulah, and its 'other local language' and 'other language'."))),
     # 17 of 17 prefectures and 68 of 72 sub-prefectures reach a shape on their
     # own name. These four are the whole of the disagreement, read off the two
     # lists of leftovers -- four rows with no shape against four shapes with no
@@ -706,10 +714,10 @@ CENTRAL_AFRICAN_REPUBLIC = Country(
           "\"Ethnie-Nationalité\", which codes residents who are not "
           "Central African by nationality rather than by ethnic group: "
           "Cameroonian, Chadian, French and Lebanese sit in the same column "
-          "set as Gbaya and Banda. Those categories are 1.8% of the "
-          "population between them and the nine local groups are 96.1%, so "
-          "this is an ethnicity table with a foreign tail rather than the "
-          "nationality table Syria's sheet turned out to be -- and dropping "
+          "set as Gbaya and Banda. Nationally those categories are 1.8% of "
+          "the population between them and the nine local groups 96.1%, so "
+          "this is an ethnicity table with a foreign tail rather than a "
+          "nationality table such as Syria's -- and dropping "
           "the tail would stop the composition summing to the population it "
           "is a composition of. One local category, Hausa, is written "
           "\"Haoussa/Musulman\" in the original, defining an ethnic group "

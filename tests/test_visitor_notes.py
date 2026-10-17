@@ -42,10 +42,9 @@ class CountryFiguresThatCountOtherGround(unittest.TestCase):
         israel = {"id": "ISR", "population": {"value": 9_402_617, "year": 2024,
                                               "source": "CIA World Factbook"}}
         antarctica = {"id": "ATA", "population": {"status": "not_available"}}
-        counted = quiet(be.apply_country_figures, [israel, antarctica],
-                        {"ISR": [r for r in self.rows() if r["country"] == "ISR"],
-                         "ATA": [r for r in self.rows() if r["country"] == "ATA"]})
-        self.assertEqual(counted, set())
+        quiet(be.apply_country_figures, [israel, antarctica],
+              {"ISR": [r for r in self.rows() if r["country"] == "ISR"],
+               "ATA": [r for r in self.rows() if r["country"] == "ATA"]})
         self.assertEqual(israel["population"]["value"], 9_402_617)
         self.assertIn("East Jerusalem", israel["population_note"])
         self.assertEqual(antarctica["population"]["status"], "not_applicable")
@@ -180,6 +179,17 @@ class PlainWording(unittest.TestCase):
                          "A person answers once. geoBoundaries draws Nepal's map.")
         self.assertIn("isopen", record["url"])     # not a visitor's text
 
+    def test_a_cut_quotation_ends_at_a_whole_item(self):
+        for cut, whole in (
+                ('which reads: "Roman Catholic 36.5%, agnostic 0.3%, atheist 1.3%,...".',
+                 'which reads: "Roman Catholic 36.5%, agnostic 0.3%, atheist 1.3%...".'),
+                ('which reads: "Believer 0.9%, other 4.8%, agnostic 0.6%, none...".',
+                 'which reads: "Believer 0.9%, other 4.8%, agnostic 0.6%...".'),
+                ('which reads: "Spanish (official), English, Chinese (Yue and Hakka),...".',
+                 'which reads: "Spanish (official), English, Chinese (Yue and Hakka)...".')):
+            self.assertEqual(be.plain_wording(cut), whole)
+            self.assertEqual(be.plain_wording(whole), whole)
+
     def test_a_server_s_answer_is_not_quoted(self):
         self.assertEqual(
             be.plain_wording("but that workbook could not be read: the bureau's server "
@@ -194,7 +204,7 @@ class PlainWording(unittest.TestCase):
 
     def test_thailand_s_reason_names_no_reader(self):
         self.assertNotIn("automated", be.ADAPTER_GAPS["THA"])
-        self.assertIn("modelled", be.ADAPTER_GAPS["THA"])
+        self.assertIn("nationals", be.ADAPTER_GAPS["THA"])
 
 
 if __name__ == "__main__":

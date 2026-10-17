@@ -76,5 +76,18 @@ class TestReasons(unittest.TestCase):
         self.assertIn("not shown", note)
 
 
+class TehsilDistricts(unittest.TestCase):
+    """Palghar is whole 2011 tehsils: it has counts, and only its ages are missing."""
+
+    def test_palghar_says_what_is_missing(self):
+        note = ia.tehsil_reason("Maharashtra", "Palghar", 2014)
+        self.assertIn("own counts for its 8 tehsils", note)
+        self.assertIn("published by district and not by tehsil", note)
+        self.assertNotIn("no census figure exists", note)
+
+    def test_a_district_not_made_of_tehsils_keeps_the_created_reason(self):
+        self.assertIsNone(ia.tehsil_reason("Telangana", "Jangaon", 2016))
+
+
 if __name__ == "__main__":
     unittest.main()

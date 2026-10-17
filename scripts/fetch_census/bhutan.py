@@ -459,22 +459,33 @@ SEX_RATIO_REFUSED = (
     "Table 2.1 prints {male:,} males and {female:,} females against a total "
     "of {total:,} for this row -- {diff:+,} -- so the two halves are not the "
     "whole that is published beside them. The head count is the report's own "
-    "and stands; a ratio derived from figures the census does not itself add "
-    "up would be this map's arithmetic, not Bhutan's measurement.")
+    "and stands; a ratio from halves that do not add up to the published whole "
+    "would not be the census's own.")
 # The two ways a gewog reaches a polygon the boundary file labels differently,
 # said on the record itself. In the southern dzongkhags the label is usually
 # the Nepali-origin name the place carried before the renamings; elsewhere it
 # is another romanisation of the same word. Either way the name is not what
 # made the join, and the note says what did.
 RENAMED_NOTE = (
-    " The boundary file draws this gewog as {label}. The polygon was "
-    "identified by this gewog's own reference point falling inside it and by "
-    "Wikidata placing that gewog in this dzongkhag, not by either spelling.")
+    " The census calls this gewog {name}, and the map draws it as {label}. The "
+    "polygon is shown as this gewog because the gewog's own reference point "
+    "falls inside it and Wikidata places the gewog in this dzongkhag, not "
+    "because of either spelling.")
 CLOSURE_NOTE = (
-    " The boundary file draws this gewog as {label}. This gewog has no "
-    "reference point to place it with, so the polygon was identified by "
-    "elimination: every other gewog of {dzongkhag} is matched, and this is "
-    "the one polygon and the one gewog left.")
+    " The census calls this gewog {name}, and the map draws it as {label}. The "
+    "gewog has no reference point to place it with, so the polygon is shown as "
+    "this gewog by elimination: every other gewog of {dzongkhag} has its own "
+    "polygon, and this is the one polygon and the one gewog left.")
+# Trashi Yangtse is the one dzongkhag with two gewogs left over, and the
+# boundary file's own labels tell the two apart (see BY_CLOSURE): "the one
+# polygon and the one gewog left" is not true of them, so they say this.
+TWO_LEFT = {"Trashi Yangtse": (
+    " The census calls this gewog {name}, and the map draws it as {label}. "
+    "Neither Tongmajangsa nor Yangtse has a "
+    "reference point to place it with; once every other gewog of Trashi Yangtse "
+    "has its own polygon, these two are left by elimination, and the map's labels "
+    "tell them apart: Tomzhangtshen is Tongmajangsa (also spelled Tomzhang), and "
+    "Trashiyangtse, the dzongkhag's own name, is Yangtse.")}
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
@@ -1818,8 +1829,8 @@ def age_gap(reason: str) -> dict[str, Any]:
     """A median this run declined, with the reason in place of the figure."""
     return {"median_age": gap(NOT_AVAILABLE, (
         "2017 census: the report's annex has the age table, but " + reason
-        + "; a median from figures that do not reconcile would be this map's "
-          "arithmetic rather than the census's."))}
+        + "; a median from figures that do not reconcile would not be the "
+          "census's own."))}
 
 
 def fetch(url: str) -> bytes:
@@ -2034,14 +2045,14 @@ def main() -> int:
             bound = SHAPE_BOUND.get(where)
             note = POPULATION_NOTE + GEWOG_NOTE
             if bound:
-                note += RENAMED_NOTE.format(label=SHAPE_LABELS[bound])
+                note += RENAMED_NOTE.format(name=name, label=SHAPE_LABELS[bound])
                 log(f"    {dzongkhag}/{name} -> shape {bound} "
                     f"(labelled {SHAPE_LABELS[bound]!r})")
             elif where in GEWOG_BY_POINT:
                 label = GEWOG_BY_POINT[where][0]
-                template = (CLOSURE_NOTE if where in BY_CLOSURE
+                template = (TWO_LEFT.get(dzongkhag, CLOSURE_NOTE) if where in BY_CLOSURE
                             else RENAMED_NOTE)
-                note += template.format(label=label, dzongkhag=dzongkhag)
+                note += template.format(name=name, label=label, dzongkhag=dzongkhag)
                 log(f"    {dzongkhag}/{name} -> labelled {label!r}"
                     + ("  (by the two lists closing, not by a point)"
                        if where in BY_CLOSURE else ""))

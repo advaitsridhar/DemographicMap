@@ -29,8 +29,9 @@ Measured on the CGAZ polygons, 10 October 2026:
 * Maquival (613.5 km2) borders Nicoadala (24.2 km), Namacurra (49.1 km) and
   Quelimane city (23.6 km).
 * Nigeria's Bakassi is 256 km2 around Ikang; the peninsula lies in Cameroon.
-* Sudan's "Abyei PCA" is 40.8 km2 in two pieces; the boundary file draws the
-  Abyei Area itself (10,654 km2) as disputed ground of its own.
+* Sudan's "Abyei PCA" is 40.6 km2 in two pieces (37.4 and 3.2), and the
+  second-level "Abyei PCA area" 36.6 km2 (34.4 and 2.2); the boundary file
+  draws the Abyei Area itself (10,654 km2) as disputed ground of its own.
 
 Usage:
     python -m scripts.fetch_census.stated_gaps
@@ -79,11 +80,20 @@ def no_ess_respondents(prefixes: tuple[str, ...]) -> Callable[[], str | None]:
     return check
 
 
-def town(name: str, territory: str) -> str:
+def town(name: str, territory: str, language: bool = True) -> str:
+    """Why a town drawn inside its territory shows nothing. ``language`` False
+    where the territory itself has no language shares to point to: Isangi has
+    a population and no row in CLEAR Global's language data."""
+    if language:
+        return (f"This polygon is the town of {name}, drawn inside {territory} territory. "
+                f"The population statistics and language data used for the DRC count its "
+                f"people within {territory}'s figures, shown on that territory's polygon, and "
+                "none counts the town apart, so no figures are shown here.")
     return (f"This polygon is the town of {name}, drawn inside {territory} territory. The "
-            f"population statistics and language data read for the DRC count its people "
-            f"within {territory}'s figures, shown on that territory's polygon, and none counts "
-            "the town apart, so no figures are shown here.")
+            f"population statistics used for the DRC count its people within {territory}'s "
+            f"figure, shown on that territory's polygon, and no language data covers "
+            f"{territory} or the town; none counts the town apart, so no figures are shown "
+            "here.")
 
 
 CLEAR_IRQ = ("CLEAR Global's tabulation of Iraq's 1997 census, the source of the language "
@@ -107,10 +117,10 @@ DECLARED: list[tuple[str, str, str, str, tuple[str, ...], str,
     ("COD", "admin2", "63176286B47747519497786", "Kaoze", ALL,
      town("Kaoze", "Moba"), None),
     ("COD", "admin2", "63176286B49026377824569", "Yangambi", ALL,
-     town("Yangambi", "Isangi"), None),
+     town("Yangambi", "Isangi", language=False), None),
     ("COD", "admin2", "63176286B71096802464930", "Nioki", ALL,
      ("This polygon is the town of Nioki, drawn on the edge of Kutu and Mushie "
-      "territories. The population statistics and language data read for the DRC count "
+      "territories. The population statistics and language data used for the DRC count "
       "its people within its territory's figures, shown on the territories' polygons, and "
       "none counts the town apart, so no figures are shown here."), None),
     ("COD", "admin2", "63176286B55786633055845", "Kungu", ("language",),
@@ -142,7 +152,7 @@ DECLARED: list[tuple[str, str, str, str, tuple[str, ...], str,
       "No statistics read for either country count it, so no figures are shown here."),
      None),
     ("SDN", "admin2", "16777658B69119058579524", "Abyei PCA area", ("population", "language"),
-     ("This polygon is 41 km2 in two pieces at the edge of the Abyei Area, which Sudan and "
+     ("This polygon is 37 km2 in two pieces at the edge of the Abyei Area, which Sudan and "
       "South Sudan both claim and which the boundary file draws apart as disputed ground. "
       "No statistics read for either country count it, so no figures are shown here."),
      None),
