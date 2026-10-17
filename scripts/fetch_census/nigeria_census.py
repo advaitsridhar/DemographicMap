@@ -11,9 +11,10 @@ same areas' men, women and persons beside their senatorial district and land
 area. The IHSN survey catalogue keeps both volumes (catalogue entry 3340, the
 census's NGA_2006_PHC_v01_M); the Commission's own site no longer serves them.
 
-Written for each local government area the map draws and for each state:
-population, sex ratio (males per 100 females) and the median age,
-interpolated within the five-year group that holds the middle person.
+Written for each local government area the map draws: population, sex ratio
+(males per 100 females) and the median age, interpolated within the
+five-year group that holds the middle person. For each state: the sex ratio
+and the median age (see state_fields for why not the count).
 
 **What the figures are worth here.** The count is twenty years old. OCHA's
 COD-PS table carries the Commission's own projection of every area to 2020,
@@ -653,21 +654,37 @@ def build(book: dict[str, Any], bad: dict[int, list[str]], admin1: list[dict[str
     for shape in admin1:
         t = by_polygon[shape["id"]]["table"]
         sk = state_key(t["name"])
-        bare = re.sub(r"(?i)\s+state$", "", t["name"])
-        named = ("the Federal Capital Territory" if sk == "abujafederalcapitalterritory"
-                 else f"{title(bare)} State")
-        note = f"The 2006 census's count for {named}."
+        extra = ""
         if sk == "crossriver" and bakassi is not None:
-            note += " " + CROSS_RIVER.format(n=bakassi["total"][0])
+            extra = " " + CROSS_RIVER.format(n=bakassi["total"][0])
         unplaced = sum(a["total"][0] for a in by_polygon[shape["id"]]["areas"]
                        if a.get("unplaced"))
         if unplaced:
-            note += " " + UNPLACED_NOTE.format(n=unplaced)
+            extra += " " + UNPLACED_NOTE.format(n=unplaced)
         records.append(record(
             f"NGA-NPC2006-state-{sk}", shape["name"], level="admin1", parent="NGA",
             country="NGA", match_by="shape_id", shape_id=shape["id"],
-            **fields(t, bad.get(id(t)), note)))
+            **state_fields(t, bad.get(id(t)), extra)))
     return records
+
+
+def state_fields(t: dict[str, Any], wrong: list[str] | None, extra: str) -> dict[str, Any]:
+    """A state's sex ratio and median age, and not its 2006 count: every state
+    has a newer one (its areas' 2020 projections added up, or a 2016
+    projection), and the 2006 count in front of them held the newer figures
+    off where they grew faster than one population's growth is taken to run
+    (the Federal Capital Territory's, 1,406,239 to 4,834,747)."""
+    out = fields(t, wrong, "")
+    out.pop("population", None)
+    out.pop("population_note", None)
+    for src in out["sources"]:
+        src["field"] = "sex_ratio/median_age"
+    extra = extra.replace("This count", "The count")
+    if extra and "value" in out["sex_ratio"]:
+        out["sex_ratio_note"] = "From the 2006 census's count of the state's men and women." + extra
+    if extra and "value" in out["median_age"]:
+        out["median_age_note"] = MEDIAN_NOTE + extra
+    return out
 
 
 def read(dump: bool = False) -> dict[str, Any]:

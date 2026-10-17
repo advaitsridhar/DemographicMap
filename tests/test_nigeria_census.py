@@ -324,5 +324,31 @@ class NameTest(unittest.TestCase):
             self.assertNotEqual(drawn, census)
 
 
+class StateTest(unittest.TestCase):
+    """A state carries the census's sex ratio and median age, not its count."""
+
+    TABLE = {"total": (400, 210, 190),
+             "groups": [(0, 4, 160, 85, 75), (5, 9, 120, 62, 58), (10, 14, 80, 42, 38),
+                        (15, 19, 40, 21, 19)] + [(a, a + 4, 0, 0, 0) for a in range(20, 85, 5)]
+             + [(85, None, 0, 0, 0)]}
+
+    def test_no_count_and_the_figures_kept(self):
+        f = n.state_fields(self.TABLE, None, "")
+        self.assertNotIn("population", f)
+        self.assertNotIn("population_note", f)
+        self.assertEqual(f["sex_ratio"]["value"], 110.5)
+        self.assertEqual(f["median_age"]["value"], 6.7)
+        self.assertEqual(f["sources"][0]["field"], "sex_ratio/median_age")
+        self.assertNotIn("sex_ratio_note", f)
+
+    def test_what_the_count_includes_rides_on_the_figures(self):
+        extra = " " + n.UNPLACED_NOTE.format(n=19_964)
+        f = n.state_fields(self.TABLE, None, extra)
+        self.assertIn("19,964 people", f["sex_ratio_note"])
+        self.assertTrue(f["median_age_note"].startswith(n.MEDIAN_NOTE))
+        cross = n.state_fields(self.TABLE, None, " " + n.CROSS_RIVER.format(n=31_641))
+        self.assertIn("The count includes Bakassi", cross["sex_ratio_note"])
+
+
 if __name__ == "__main__":
     unittest.main()
