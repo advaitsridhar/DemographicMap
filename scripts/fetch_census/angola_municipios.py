@@ -88,6 +88,11 @@ REPORTS: dict[str, str] = {
     "Cunene": "Cunene", "Cubango": "Cuando Cubango", "Cuando_Cubango": "Cuando Cubango",
 }
 
+# The provinces as drawn whose reports print no table on the 2016 division:
+# Luanda's and Icolo e Bengo's, Moxico's and Moxico Leste's (Moxico's table said
+# to be on Lei 18/16 lists the 2024 municipalities), Cubango's and Cuando's.
+NO_2016_TABLE = frozenset({"Luanda", "Moxico", "Cuando Cubango"})
+
 # The 2024 provinces as their reports name them (Cuando's report is filed as
 # Cuando_Cubango), for the notes.
 SHOWN = {"Uige": "Uíge", "Icolo_e_Bengo": "Icolo e Bengo", "Cuanza_Norte": "Cuanza Norte",
@@ -165,6 +170,9 @@ NOT_DESCRIBED: dict[str, str] = {
 }
 
 GAP = 4.0          # points: digit groups of one figure sit closer than this
+# The words of a total's column: "População com 2 ou mais anos", "Número de
+# pessoas com 2 ou mais anos", "Total da população com 2 ou mais anos", "Total".
+TOTAL_KEYS = ("populacaocom", "pessoascom", "2oumaisanos", "total")
 ROW_TOLERANCE = 2.0
 ORPHAN_REACH = 12.0
 COLUMN_REACH = 6.0
@@ -199,7 +207,7 @@ LANGUAGE = {
     "Humbi": ("muhumbi", "humbi"),
     "Luvale": ("luvale",),
     "Khoisan": ("khoisan",),
-    "Foreign languages": ("estrangeir",),
+    "Foreign languages": ("estrangeir", "estangeir"),
     "Other languages": ("outras",),
     "Not stated": ("naosabe",),
 }
@@ -222,8 +230,8 @@ RELIGION = {
     "Baptist": ("baptista",),
     "Jehovah's Witnesses": ("testemunha", "jeova"),
     "Mensagem dos Últimos Tempos Church": ("mensagem", "tempos"),
-    "No religion": ("sem",),
-    "Other religion": ("outra",),
+    "No religion": ("semreligiao",),
+    "Other religion": ("outrareligiao", "outra"),
     "Not stated": ("naosabe", "respondeu"),
 }
 AGE_BROAD = {"0-14": ("0-14",), "15-64": ("15-64",), "65+": ("65ou", "65e", "65+")}
@@ -232,7 +240,7 @@ AGE_OTHER = {"0-19": ("0-19",), "20-29": ("20-29",), "30-54": ("30-54",), "55-64
 
 # Each table: the words of its heading (squeezed, accents dropped) and its labels.
 TABLES: dict[str, dict[str, Any]] = {
-    "ethnicity": {"key": "gruposetnicos", "labels": ETHNIC},
+    "ethnicity": {"key": ("gruposetnicos", "gruposetinicos", "outribos"), "labels": ETHNIC},
     "language": {"key": "segundoalinguamaterna", "labels": LANGUAGE},
     "religion": {"key": "segundoareligiaoouespiritualidade", "labels": RELIGION},
     "age_broad": {"key": "grandesgrupos", "labels": AGE_BROAD},
@@ -249,6 +257,11 @@ NOTES = {
     "religion": ("The 2024 census's count of the population aged 2 and over by declared "
                  "religion, the denominations kept apart as printed."),
 }
+
+
+def keys_of(spec: dict[str, Any]) -> tuple[str, ...]:
+    key = spec["key"]
+    return key if isinstance(key, tuple) else (key,)
 
 
 def squeeze(text: str) -> str:
@@ -355,16 +368,22 @@ def blocks_of(rows: list[Row]) -> list[Block]:
     return [b for b in out if b.data]
 
 
+def reach(columns: list[float]) -> float:
+    gaps = [b - a for a, b in zip(columns, columns[1:])]
+    return max(COLUMN_REACH, 0.45 * min(gaps)) if gaps else COLUMN_REACH
+
+
 def assign_columns(block: Block) -> list[str]:
     """Columns from the row with the most figures; every figure must sit on one."""
     template = max(block.data, key=lambda r: len(r.figures()))
     block.columns = [x1 for _, x1, _ in template.figures()]
+    near = reach(block.columns)
     problems = []
     for row in block.data:
         seen = set()
         for _, x1, value in row.figures():
             j = min(range(len(block.columns)), key=lambda k: abs(block.columns[k] - x1))
-            if abs(block.columns[j] - x1) > COLUMN_REACH or j in seen:
+            if abs(block.columns[j] - x1) > near or j in seen:
                 problems.append(f"{row.label}: figure {value} at {x1:.0f} fits no column")
             seen.add(j)
     return problems
@@ -411,13 +430,18 @@ def label_columns(block: Block, spec: dict[str, tuple[str, ...]]) -> list[str] |
             j = next((k for k, c in enumerate(cols) if centre <= c + 8), None)
             if j is not None:
                 texts[j] += " " + t
-    labels = ["TOTAL"]
-    for text in texts[1:]:
+    labels: list[str] = []
+    for j, text in enumerate(texts):
         s = squeeze(text)
         hits = [lab for lab, keys in spec.items() if any(k in s for k in keys)]
-        if len(hits) != 1:
+        if any(k in s for k in TOTAL_KEYS) and not hits:
+            labels.append("TOTAL")
+        elif len(hits) == 1:
+            labels.append(hits[0])
+        elif j == 0 and not hits:
+            labels.append("TOTAL")         # its header printed left of the column
+        else:
             return None
-        labels.append(hits[0])
     if len(set(labels)) != len(labels):
         return None
     return labels
@@ -540,10 +564,10 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
     order: list[tuple[str, ...]] = []
     last: Block | None = None
     for i, text in enumerate(texts):
-        if spec["key"] not in text:
+        if not any(k in text for k in keys_of(spec)):
             continue
         for block in blocks_of(pages[i]):
-            if spec["key"] not in squeeze(block.title):
+            if not any(k in squeeze(block.title) for k in keys_of(spec)):
                 continue
             bad = assign_columns(block)
             if bad:
@@ -587,6 +611,9 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                                         f"groups ({row['TOTAL']} vs {v})")
                     return []
                 row[lab] = v
+        if "TOTAL" not in row:
+            rep.problems.append(f"{name}: no column group carries the total")
+            return []
         out.append((label, row))
     return out
 
@@ -922,7 +949,7 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
     # The polygons no census figure describes say so.
     stated = dict(NOT_DESCRIBED)
     read = {rep.stem for rep in reports if rep.total}
-    for shape in sorted(set(REPORTS.values()) - with_old):
+    for shape in sorted(NO_2016_TABLE - with_old):
         stems = [s for s, m in REPORTS.items() if m == shape]
         if not all(s in read for s in stems):
             continue                       # a report not read says nothing of the rest
@@ -1059,7 +1086,7 @@ def debug(stem: str, blob: bytes, numbers: list[int]) -> None:
                 log(f"    columns at {[round(c) for c in block.columns]}")
                 for j, t in enumerate(header_texts(block)):
                     log(f"    col {j}: {t[:120]}")
-                for r in block.data[:6]:
+                for r in block.data[:6 if len(block.data) > 30 else 30]:
                     log(f"    row {r.label!r}: "
                         + " ".join(f"{v}@{x1:.0f}" for _, x1, v in r.figures()))
                 for line in bad[:6]:
@@ -1100,9 +1127,9 @@ def main() -> int:
             blob = fetch_report(stem)
             texts = page_texts(blob)
             wanted = {i for i, t in enumerate(texts)
-                      if any(k in t for k in ("residentepormunicipiosegundoosexo",
-                                              "porgruposetariosquinquenais",
-                                              *(s["key"] for s in TABLES.values())))}
+                      if any(k in t for k in (*SEX_TABLES, "porgruposetariosquinquenais",
+                                              *(k for s in TABLES.values()
+                                                for k in keys_of(s))))}
             pages: list[list[Row]] = [[] for _ in texts]
             with pdfplumber.open(io.BytesIO(blob)) as pdf:
                 for i in sorted(wanted):

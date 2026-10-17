@@ -311,6 +311,16 @@ class National(unittest.TestCase):
         self.assertNotIsInstance(dande["ethnicity"], list)
         self.assertIsInstance(dande["religion"], list)
 
+    def test_only_provinces_known_to_lack_the_2016_table_say_so(self):
+        pages, texts = report_pages()
+        rep = am.read_report("Bengo", pages, texts)
+        rep.old = []                                    # as if its 2016 table were not read
+        records, _ = am.build([rep], ADMIN1, ADMIN2)
+        for r in records:
+            for field in ("ethnicity", "language", "religion"):
+                note = (r.get(field) or {}).get("note", "") if isinstance(r.get(field), dict) else ""
+                self.assertNotIn("only by the municipalities", note)
+
     def test_a_province_half_read_gets_no_total(self):
         pages, texts = report_pages()
         rep = am.read_report("Cubango", pages, texts)       # Cuando's report not read
