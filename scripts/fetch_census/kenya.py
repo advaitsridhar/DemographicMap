@@ -59,6 +59,18 @@ PAGE = "https://open.africa/dataset/2019-kenya-population-and-housing-census"
 # The boundary file's spelling where it differs from the county's own name.
 ALIASES = {"Tharaka-Nithi": ["Tharaka"]}
 
+# Counties drawn on other ground than the census counted them: the map's Bomet
+# polygon takes in Bureti, a sub-county of Kericho (kenya_census.MOVED), and
+# Volume IV gives religion by county only, so the shares are said to be the
+# counties' as counted.
+GROUND = {
+    "Bomet": (" These are the shares of Bomet County as the census counted it; the county is "
+              "drawn here with Bureti sub-county of Kericho County as well, whose people the "
+              "census gives by religion only within Kericho's figures."),
+    "Kericho": (" These are the shares of Kericho County as the census counted it, Bureti "
+                "sub-county included, which is drawn here within Bomet County."),
+}
+
 # Source labels that a reader would not recognise as written.
 RELABEL = {
     "No religion /Atheists": "No religion",
@@ -118,10 +130,9 @@ def main() -> int:
             population=measure(total, year=YEAR, source=SOURCE) if total else gap(NOT_AVAILABLE),
             religion=rows or gap(NOT_AVAILABLE),
             religion_year=dated(rows, YEAR),
-            religion_note=(f"{SOURCE}. A census count of all residents, replacing the "
-                           f"Afrobarometer survey estimate this county carried before. "
-                           f"'Protestant' and 'Evangelical Churches' are KNBS's own "
-                           f"separate categories and are kept apart."),
+            religion_note=("The 2019 census's count of all residents by religion. 'Protestant' "
+                           "and 'Evangelical Churches' are KNBS's own separate categories and "
+                           "are kept apart." + GROUND.get(name, "")),
             sources=[{"field": "religion", "name": SOURCE, "url": PAGE, "license": LICENCE}],
         ))
     log(f"  {len(records)} counties")

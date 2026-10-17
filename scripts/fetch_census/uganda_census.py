@@ -398,7 +398,7 @@ def main() -> int:
     if args.points:
         return write_points()
     districts, units = read_units()
-    log(f"  {len(districts)} districts making {NATIONAL:,}, "
+    log(f"  {len(districts)} districts making {sum(u['total'] for u in districts):,}, "
         f"{sum(1 for u in districts if u.get('groups'))} with their age groups; {len(units)} "
         f"counties, cities and municipalities with figures, making "
         f"{sum(u['total'] for u in units):,}, {sum(1 for u in units if u.get('groups'))} with "
