@@ -319,8 +319,10 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
+    ap.parse_args()
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if not blob.startswith(b"%PDF"):
         raise SystemExit(f"niger_census: {URL} is not a PDF: {blob[:60]!r}")

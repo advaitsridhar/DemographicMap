@@ -566,8 +566,10 @@ def laid_out_page(blob: bytes, title: str) -> str:
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
+    ap.parse_args()
     blob_2025 = fetch(URL_2025)
     text_2025 = pdf_text(blob_2025)
     layout_2025 = laid_out_page(blob_2025, "Tableau 2 : Age moyen et âge médian")
