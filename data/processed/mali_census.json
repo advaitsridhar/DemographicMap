@@ -435,5 +435,2331 @@
     "shape_id": "92416918B34817349162892",
     "population_note": "The 2022 census counts the region as drawn here as the regions of 2023 made from it: Tombouctou 974,278 and Taoudenni 100,358 (Tableau 2.3), added here.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2022 census's count of the population of ordinary households by five-year age group (Tableaux A.02 to A.21), of the regions of Tombouctou and Taoudenni of 2023 together."
+  },
+  {
+    "id": "MLI-cercle-kidal-abeibara",
+    "level": "admin2",
+    "name": "Abeibara",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1141,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B20562192673680",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-gao-ansongo",
+    "level": "admin2",
+    "name": "Ansongo",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B56917716124995"
+  },
+  {
+    "id": "MLI-cercle-kayes-bafoulabe",
+    "level": "admin2",
+    "name": "Bafoulabe",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B35923162225659",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-bamako-bamako",
+    "level": "admin2",
+    "name": "Bamako",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B70420899930674"
+  },
+  {
+    "id": "MLI-cercle-koulikoro-banamba",
+    "level": "admin2",
+    "name": "Banamba",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 992,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B21738268784100",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-bandiagara",
+    "level": "admin2",
+    "name": "Bandiagara",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 936,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B93084007572424",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-bankass",
+    "level": "admin2",
+    "name": "Bankass",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B46110396602069",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-baroueli",
+    "level": "admin2",
+    "name": "Baroueli",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B94232083808790",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-bla",
+    "level": "admin2",
+    "name": "Bla",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B53903332689390",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-bougouni",
+    "level": "admin2",
+    "name": "Bougouni",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B95704920034733",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-gao-bourem",
+    "level": "admin2",
+    "name": "Bourem",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 947,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B86504284097699",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kayes-diema",
+    "level": "admin2",
+    "name": "Diema",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 938,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B21360544825560",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-koulikoro-dioila",
+    "level": "admin2",
+    "name": "Dioila",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B3838133103629",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-tombouctou-dire",
+    "level": "admin2",
+    "name": "Dire",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 991,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B18441291459751",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-djenne",
+    "level": "admin2",
+    "name": "Djenne",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 972,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B86660589431001",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-douentza",
+    "level": "admin2",
+    "name": "Douentza",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1023,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B88686388091277",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-gao-gao",
+    "level": "admin2",
+    "name": "Gao",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B84061132695750",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-tombouctou-goundam",
+    "level": "admin2",
+    "name": "Goundam",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 990,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B20620148277365",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-tombouctou-gourmarharous",
+    "level": "admin2",
+    "name": "Gourma-Rharous",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 965,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B81360088660364",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-kadiolo",
+    "level": "admin2",
+    "name": "Kadiolo",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1063,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B46210070398927",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-koulikoro-kangaba",
+    "level": "admin2",
+    "name": "Kangaba",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B95674786747910",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-koulikoro-kati",
+    "level": "admin2",
+    "name": "Kati",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B85176458631238",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kayes-kayes",
+    "level": "admin2",
+    "name": "Kayes",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1014,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B46590111149246",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kayes-kenieba",
+    "level": "admin2",
+    "name": "Kenieba",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 995,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B58532098111230",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kidal-kidal",
+    "level": "admin2",
+    "name": "Kidal",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1168,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B1219027063836",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kayes-kita",
+    "level": "admin2",
+    "name": "Kita",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B18522946307375",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-koulikoro-kolokani",
+    "level": "admin2",
+    "name": "Kolokani",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B69551700582235",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-kolondieba",
+    "level": "admin2",
+    "name": "Kolondieba",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 944,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B25086326483325",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-koro",
+    "level": "admin2",
+    "name": "Koro",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B21763479745041",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-koulikoro-koulikoro",
+    "level": "admin2",
+    "name": "Koulikoro",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B42356193702634",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-koutiala",
+    "level": "admin2",
+    "name": "Koutiala",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 960,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B20399394700191",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-macina",
+    "level": "admin2",
+    "name": "Macina",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 964,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B71452714760112",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-gao-menaka",
+    "level": "admin2",
+    "name": "Menaka",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1121,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B3742503303790",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-mopti",
+    "level": "admin2",
+    "name": "Mopti",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B6997954969747",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-koulikoro-nara",
+    "level": "admin2",
+    "name": "Nara",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 975,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B7074311745372",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-tombouctou-niafunke",
+    "level": "admin2",
+    "name": "Niafunke",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B8185774675652",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-niono",
+    "level": "admin2",
+    "name": "Niono",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 988,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B49172345831470",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kayes-nioro",
+    "level": "admin2",
+    "name": "Nioro",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 959,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B70352921020870",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-san",
+    "level": "admin2",
+    "name": "San",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 987,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B15709511390037",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-segou",
+    "level": "admin2",
+    "name": "Segou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 979,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B86377774430631",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-sikasso",
+    "level": "admin2",
+    "name": "Sikasso",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 966,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B43266503533040",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-tenenkou",
+    "level": "admin2",
+    "name": "Tenenkou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B19754802458169",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kidal-tessalit",
+    "level": "admin2",
+    "name": "Tessalit",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1119,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B10282848961107",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kidal-tinessako",
+    "level": "admin2",
+    "name": "Tin-Essako",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1211,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B78830545080626",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-tombouctou-tombouctou",
+    "level": "admin2",
+    "name": "Tombouctou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1049,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B54989133575544",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-segou-tominian",
+    "level": "admin2",
+    "name": "Tominian",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 1009,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B14979931376640",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-yanfolila",
+    "level": "admin2",
+    "name": "Yanfolila",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B66933927430110",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-kayes-yelimane",
+    "level": "admin2",
+    "name": "Yelimane",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 932,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B99329075829336",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-sikasso-yorosso",
+    "level": "admin2",
+    "name": "Yorosso",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 975,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B52464298998123",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
+  },
+  {
+    "id": "MLI-cercle-mopti-youwarou",
+    "level": "admin2",
+    "name": "Youwarou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2022 census's reports give ages by region only (Tableaux 3.4 and A.02 to A.21), for the regions of 2023, and the 2009 census's tables of ages as the US Census Bureau gives them stop at the region; no median age is published for the cercle."
+    },
+    "sex_ratio": {
+      "value": 990,
+      "unit": "males_per_1000_females",
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "MLI",
+    "match_by": "shape_id",
+    "shape_id": "8926073B44950387084983",
+    "sex_ratio_note": "INSTAT's projection of the cercle's men and women for 2018, made from the 2009 census; the 2022 census gives sexes by region only."
   }
 ]

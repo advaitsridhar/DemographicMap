@@ -1,4 +1,37 @@
-== grep https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fitem%20%3FitemLabel%20%3FclassLabel%20%3FcapLabel%20WHERE%20%7B%20%3Fitem%20wdt%3AP17%20wd%3AQ929%3B%20wdt%3AP36%20%3Fcap%3B%20wdt%3AP31%20%3Fclass.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22fr%2Cen%22.%20%7D%20%7D itemLabel.{0,300} 200 10
-  HTTP 200 ? 13,384 bytes
-  ~  "item", "itemLabel", "classLabel", "capLabel" ] }, "r
-  ~ }, "itemLabel" : { "
+  20,745,926 bytes
+  read https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf: 20,745,926 bytes, sha256 4d41cfc2e5431f96c426f379260311c99925f8b6177b8823f4c0afb306207854
+  Kayes: 1,840,329 (921,044 men), median 17, annex 1,826,564 in ordinary households, interpolated 16.1
+  Koulikoro: 2,255,157 (1,142,015 men), median 16, annex 2,246,154 in ordinary households, interpolated 16.0
+  Sikasso: 1,533,123 (760,239 men), median 16, annex 1,528,398 in ordinary households, interpolated 15.8
+  Ségou: 2,455,263 (1,231,931 men), median 17, annex 2,208,847 in ordinary households, interpolated 16.2
+  Mopti: 935,579 (483,089 men), median 17, annex 842,209 in ordinary households, interpolated 17.0
+  Tombouctou: 974,278 (504,864 men), median 18, annex 693,719 in ordinary households, interpolated 17.4
+  Gao: 727,517 (373,996 men), median 17, annex 679,911 in ordinary households, interpolated 16.8
+  Kidal: 83,192 (45,229 men), median 20, annex 79,324 in ordinary households, interpolated 19.5
+  Taoudenni: 100,358 (55,284 men), median 21, annex 99,499 in ordinary households, interpolated 20.2
+  Ménaka: 318,876 (170,205 men), median 17, annex 225,223 in ordinary households, interpolated 16.4
+  Nioro: 678,061 (333,731 men), median 15, annex 668,966 in ordinary households, interpolated 14.5
+  Kita: 681,671 (340,853 men), median 15, annex 680,380 in ordinary households, interpolated 14.5
+  Dioïla: 675,965 (338,396 men), median 16, annex 674,419 in ordinary households, interpolated 15.9
+  Nara: 307,777 (154,080 men), median 15, annex 278,904 in ordinary households, interpolated 14.3
+  Bougouni: 1,570,979 (794,189 men), median 16, annex 1,567,533 in ordinary households, interpolated 15.2
+  Koutiala: 1,169,882 (573,069 men), median 15, annex 1,153,375 in ordinary households, interpolated 14.9
+  San: 820,807 (418,353 men), median 16, annex 815,185 in ordinary households, interpolated 15.5
+  Douentza: 170,189 (87,186 men), median 17, annex 147,229 in ordinary households, interpolated 16.8
+  Bandiagara: 868,916 (433,502 men), median 15, annex 720,279 in ordinary households, interpolated 14.7
+  Bamako: 4,227,569 (2,095,300 men), median 19, annex 4,211,468 in ordinary households, interpolated 18.3
+  Gao: 1,046,393 (Gao + Ménaka), 1084 men per 1,000 women, median 16.7
+  Kayes: 3,200,061 (Kayes + Kita + Nioro), 995 men per 1,000 women, median 15.4
+  Kidal: 83,192 (Kidal), 1191 men per 1,000 women, median 20.0
+  Tombouctou: 1,074,636 (Tombouctou + Taoudenni), 1089 men per 1,000 women, median 17.7
+  2009: 0 cercles with figures, 50 blank, 9 regions
+  2018 projection: 50 cercles by sex
+  Bamako: not the ground of any regions of 2023
+  Koulikouro: not the ground of any regions of 2023
+  Mopti: not the ground of any regions of 2023
+  Segou: not the ground of any regions of 2023
+  Sikasso: not the ground of any regions of 2023
+  cercle polygon 'Ansongo': no row in the 2018 projection
+  cercle polygon 'Bamako': no row in the 2018 projection
+  9 regions and 50 cercles written
+  wrote data/processed/mali_census.json (112 kB)
