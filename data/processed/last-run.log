@@ -1,31 +1,95 @@
-  read https://web.archive.org/web/20221113190955id_/https://www.bos.gov.ls/New%20Folder/Copy%20of%20Demography/2016%20POPULATION%20CENSUS%20VILLAGE%20LIST.zip: 1,116,444 bytes, sha256 9cdb569a497195f5e05e179ce1abc5f27fd157ba10d8c07fbeb338fb79c1bab4
-  40 lines whose men and women do not make their total: ['HA MAKAI (47 + 28 against 70)', 'Total (223 + 191 against 409)', 'MALEHLAKANA (72 + 63 against 137)', 'Total (298 + 317 against 617)', 'TETETE HA SEKHONYANA (206 + 209 against 406)', 'Total (271 + 294 against 556)', 'HA LUKASE (195 + 232 against 423)', 'HA LESUPI LEJOE-MOTHO  (155 + 343 against 734)', 'KHOMO-NALA HA SENYOKOTHO  (258 + 263 against 522)', 'Total (265 + 235 against 490)', 'Total (234 + 284 against 540)', 'LETSOAPANG HA MONKI (170 + 177 against 860)']
-  69 enumeration areas whose villages do not make their Total line: ["('Leribe', 'Matsoku', '2060132023'): villages [269, 292, 557], Total line [269, 288, 557]", "('Leribe', 'Matsoku', '2060133016'): villages [213, 195, 408], Total line [220, 200, 420]", "('Leribe', 'Matsoku', '2060133020'): villages [270, 271, 541], Total line [265, 265, 530]", "('Leribe', 'Matsoku', '2060133027'): villages [214, 198, 412], Total line [214, 202, 416]", "('Leribe', 'Matsoku', '2060133028'): villages [236, 426, 898], Total line [236, 213, 449]", "('Leribe', 'Bolahla', '2070223035'): villages [348, 334, 683], Total line [349, 334, 683]", "('Leribe', 'Mamafubelu', '2090413022'): villages [291, 286, 577], Total line [293, 291, 584]", "('Leribe', 'Menkhoaneng', '2100523043'): villages [393, 382, 775], Total line [389, 377, 766]", "('Leribe', 'Sephokong', '2120713003'): villages [325, 287, 612], Total line [433, 472, 905]", "('Leribe', 'Sephokong', '2120713029'): villages [262, 234, 496], Total line [265, 235, 490]", "('Leribe', 'Hlotse', '2131211016'): villages [234, 284, 518], Total line [234, 284, 540]", "('Leribe', 'Hlotse', '2131211017'): villages [189, 203, 905], Total line [189, 203, 392]"]
-  district ['Berea']: 262,739 in the list, 262616 in the census's district table
-  district ['Botha-Bothe']: 118,176 in the list, 118242 in the census's district table
-  district ['Leribe']: 338,115 in the list, 337521 in the census's district table
-  district ['Mafeteng']: 178,372 in the list, 178222 in the census's district table
-  district ['Maseru']: 522,277 in the list, 519186 in the census's district table
-  district ["Mohale's Hoek"]: 163,907 in the list, 165590 in the census's district table
-  district ['Mokhotlong']: 100,442 in the list, 100442 in the census's district table
-  district ["Qacha's Nek"]: 74,547 in the list, 74566 in the census's district table
-  district ['Quthing']: 115,274 in the list, 115469 in the census's district table
-  district ['Thaba-Tseka']: 135,213 in the list, 135347 in the census's district table
-  10,965 villages in 79 councils; 5,675 enumeration areas with a Total line, 3 without; 2,009,062 people
-  district Berea: 262,739
-  district Botha-Bothe: 118,176
-  district Leribe: 338,115
-  district Mafeteng: 178,372
-  district Maseru: 522,277
-  district Mohale's Hoek: 163,907
-  district Mokhotlong: 100,442
-  district Qacha's Nek: 74,547
-  district Quthing: 115,274
-  district Thaba-Tseka: 135,213
-    council on no polygon: Maseru / Mazenod (17,193)
-    council on no polygon: Quthing / Tsitsong (21,075)
-    council on no polygon: Thaba-Tseka / Nts'upe (1,664)
-    polygon with no council: Mphaki (in Quthing)
-    polygon with no council: Thota-ea-Moli (in Maseru)
-  78 councils written
-  wrote data/processed/lesotho_census.json (166 kB)
+probe_pdf: https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf
+  3,186,983 bytes
+  108 pages
+probe_pdf: 108 pages, 2 mention ['median', 'religion', 'Catholic', 'Adventist', 'Muslim']
+=== front matter ===
+ 
+  
+
+ii 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ministry of Finance and Economic Planning 
+National Institute of Statistics of Rwanda 
+ 
+  
+Fifth Population and Housing Census, Rwanda, 2022 
+District Profile 
+Kicukiro 
+ 
+ 
+September 2023 
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+
+iii 
+ 
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+The Fifth Rwanda Population and Housing Census (RPHC2022) was implemented by the 
+National Institute of Statistics of Rwanda (NISR). Field work was conducted from August 16th 
+
+=== pages mentioning ['median', 'religion', 'Catholic', 'Adventist', 'Muslim'] (first 30) ===
+
+--- page 23 ----------------------------------------------------
+Nyarugunga 49,247 48,389 858 100 98.26 1.74
+Source: Fifth Rwanda Population and Housing Census, 2022 (NISR)
+2.1.2 Religious affiliation of the resident population of Kicukiro district
+In Kicukiro district, Christianity is the predominant religion : 35.82% are catholic,
+22.91% are ADEPR, 10.35 % are protestant, 9.97 % are Adventists , other Christians
+represent 9.98% . O ther religious represented are Muslim ( 3.96%) and Jehovah
+witness are (1.07%) while 2.7% of the resident population declared themselves to be
+without religion. The table below displays details.
+
+--- page 24 ----------------------------------------------------
+Rwanda 13,246,394 3,701,245 9,545,149
+City of Kigali 1,745,555 1,517,168 228,387
+Kicukiro district 491,731 487,200 4,531 100 100 100
+Catholic 176,152 173,667 2,485 35.82 35.65 54.84
+ADEPR 112,670 111,494 1,176 22.91 22.88 25.95
+Protestant 50,883 50,579 304 10.35 10.38 6.71
+Adventist 49,036 48,680 356 9.97 9.99 7.86
+Other Christians 49,090 49,028 62 9.98 10.06 1.37
+Muslim 19,479 19,438 41 3.96 3.99 0.90
+Jehovah witness 5,272 5,261 11 1.07 1.08 0.24
+Traditional/Animist 161 161   0.03 0.03
+Other religion 14,527 14,511 16 2.95 2.98 0.35
+No Religion 13,280 13,200 80 2.70 2.71 1.77
+Not stated 1,181 1,181   0.24 0.24
+Source: Fifth Rwanda Population and Housing Census, 2022 (NISR)
+2.2 Marital Status of the resident population of Kicukiro district
