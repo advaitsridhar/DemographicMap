@@ -3,6 +3,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -180,6 +181,29 @@ def json_roundtrip(value):
     import json
     return json.loads(json.dumps(value))
 
+
+class Recall(unittest.TestCase):
+    """--recall writes the records from the kept readings, asking the archive nothing."""
+
+    def test_recall_asks_the_archive_nothing(self):
+        if not (cc.PROCESSED / cc.MEMORY).exists() or not (cc.SITE / "admin1" / "CIV.units.json").exists():
+            self.skipTest("the kept readings or the map's units are not in this checkout")
+        written = {}
+
+        def keep(path, data, *args, **kwargs):
+            written[Path(path).name] = data
+
+        def refuse(slug):
+            raise AssertionError(f"the archive was asked for {slug}")
+
+        with mock.patch.object(cc, "fetch", refuse), mock.patch.object(cc, "write_json", keep), \
+                mock.patch.object(cc, "log"), \
+                mock.patch.object(sys, "argv", ["cote_divoire_census", "--recall"]):
+            self.assertEqual(cc.main(), 0)
+        records = written[cc.OUT]
+        lagunes = [r for r in records if r["level"] == "admin1" and r["name"] == "Lagunes"]
+        self.assertEqual([r["capital"] for r in lagunes], ["Dabou"])
+        self.assertEqual(len([r for r in records if r["level"] == "admin2"]), 33)
 
 if __name__ == "__main__":
     unittest.main()

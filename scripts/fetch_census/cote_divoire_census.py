@@ -33,10 +33,12 @@ district on the map is found once.
 The archive refuses connections in bursts: a page not reached is tried again
 in two later passes, and a page still refused keeps the figures an earlier run
 read from it (kept, with the day they were read, in
-cote_divoire_census_pages.json beside the output).
+cote_divoire_census_pages.json beside the output). With --recall every page
+keeps its earlier reading and the archive is not asked at all: for a change to
+how the records are written, not to what the pages say.
 
 Usage:
-    python -m scripts.fetch_census.cote_divoire_census
+    python -m scripts.fetch_census.cote_divoire_census [--recall]
 """
 
 from __future__ import annotations
@@ -395,7 +397,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
-    ap.parse_args()
+    ap.add_argument("--recall", action="store_true",
+                    help="write the records from every page's kept reading, asking the "
+                         "archive for none (a change to how the records are written)")
+    args = ap.parse_args()
     try:
         memory = json.loads((PROCESSED / MEMORY).read_text(encoding="utf-8"))
     except (OSError, ValueError):
@@ -405,7 +410,7 @@ def main() -> int:
     day = time.strftime("%Y-%m-%d", time.gmtime())
     facts = {}
     pending = list(PAGES)
-    for attempt in range(PASSES):
+    for attempt in range(0 if args.recall else PASSES):
         if attempt:
             log(f"  pass {attempt + 1}: {len(pending)} pages not reached; trying them again "
                 f"after {REST} s")
@@ -443,7 +448,8 @@ def main() -> int:
         if f is None:
             log(f"  {slug}: not reached; left out")
             continue
-        log(f"  {slug}: not reached; its reading of {memory[slug].get('read')} kept: "
+        log(f"  {slug}: {'recalled' if args.recall else 'not reached'}; its reading of "
+            f"{memory[slug].get('read')} kept: "
             f"{f['total']:,} ({f['men']:,} men), seat {f['seat']}, mean age {f['mean']}, "
             f"Ivorians {f['ivorian']}")
         facts[slug] = f
