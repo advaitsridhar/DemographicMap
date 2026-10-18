@@ -1,52 +1,28 @@
-  read https://web.archive.org/web/20221113190955id_/https://www.bos.gov.ls/New%20Folder/Copy%20of%20Demography/2016%20POPULATION%20CENSUS%20VILLAGE%20LIST.zip: 1,116,444 bytes, sha256 9cdb569a497195f5e05e179ce1abc5f27fd157ba10d8c07fbeb338fb79c1bab4
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233001: Thaba-Tseka | Lebakeng | Nts'upe | 10700233001 | Mountains | Rural | HA MORAMANG | 113 | 252 | 303 | 555
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233001: HA RAMAEPHO | 18 | 38 | 52 | 90
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233001: Total | 131 | 290 | 355 | 645
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233002: 10700233002 | Mountains | Rural | HA SEFAHA | 70 | 185 | 221 | 406
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233002: Total | 70 | 185 | 221 | 406
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233003: 10700233003 | Mountains | Rural | HA MAHAMO | 5 | 10 | 20 | 30
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233003: MAPHOTONG | 96 | 263 | 244 | 507
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233003: MECHACHANE | 12 | 38 | 38 | 76
-    show Thaba-Tseka / Lebakeng / Nts'upe / EA 10700233003: Total | 113 | 311 | 302 | 613
-    show district berea: enumeration areas begin ['31', '32']
-    show district bothabothe: enumeration areas begin ['01', '10']
-    show district leribe: enumeration areas begin ['20', '21']
-    show district mafeteng: enumeration areas begin ['54', '55']
-    show district maseru: enumeration areas begin ['43', '44']
-    show district mohaleshoek: enumeration areas begin ['65', '66']
-    show district mokhotlong: enumeration areas begin ['97', '98']
-    show district qachasnek: enumeration areas begin ['86', '87']
-    show district quthing: enumeration areas begin ['76']
-    show district thabatseka: enumeration areas begin ['10']
-    show council ntsupe in qachasnek (Lebakeng): enumeration areas begin ['8700']
-    show council ntsupe in thabatseka (Lebakeng): enumeration areas begin ['1070']
-  40 lines whose men and women do not make their total: ['HA MAKAI (47 + 28 against 70)', 'Total (223 + 191 against 409)', 'MALEHLAKANA (72 + 63 against 137)', 'Total (298 + 317 against 617)', 'TETETE HA SEKHONYANA (206 + 209 against 406)', 'Total (271 + 294 against 556)', 'HA LUKASE (195 + 232 against 423)', 'HA LESUPI LEJOE-MOTHO  (155 + 343 against 734)', 'KHOMO-NALA HA SENYOKOTHO  (258 + 263 against 522)', 'Total (265 + 235 against 490)', 'Total (234 + 284 against 540)', 'LETSOAPANG HA MONKI (170 + 177 against 860)']
-  69 enumeration areas whose villages do not make their Total line: ["('Leribe', 'Matsoku', '2060132023'): villages [269, 292, 557], Total line [269, 288, 557]", "('Leribe', 'Matsoku', '2060133016'): villages [213, 195, 408], Total line [220, 200, 420]", "('Leribe', 'Matsoku', '2060133020'): villages [270, 271, 541], Total line [265, 265, 530]", "('Leribe', 'Matsoku', '2060133027'): villages [214, 198, 412], Total line [214, 202, 416]", "('Leribe', 'Matsoku', '2060133028'): villages [236, 426, 898], Total line [236, 213, 449]", "('Leribe', 'Bolahla', '2070223035'): villages [348, 334, 683], Total line [349, 334, 683]", "('Leribe', 'Mamafubelu', '2090413022'): villages [291, 286, 577], Total line [293, 291, 584]", "('Leribe', 'Menkhoaneng', '2100523043'): villages [393, 382, 775], Total line [389, 377, 766]", "('Leribe', 'Sephokong', '2120713003'): villages [325, 287, 612], Total line [433, 472, 905]", "('Leribe', 'Sephokong', '2120713029'): villages [262, 234, 496], Total line [265, 235, 490]", "('Leribe', 'Hlotse', '2131211016'): villages [234, 284, 518], Total line [234, 284, 540]", "('Leribe', 'Hlotse', '2131211017'): villages [189, 203, 905], Total line [189, 203, 392]"]
-  district ['Berea']: 262,739 in the list, 262616 in the census's district table
-  district ['Botha-Bothe']: 118,176 in the list, 118242 in the census's district table
-  district ['Leribe']: 338,115 in the list, 337521 in the census's district table
-  district ['Mafeteng']: 178,372 in the list, 178222 in the census's district table
-  district ['Maseru']: 522,277 in the list, 519186 in the census's district table
-  district ["Mohale's Hoek"]: 163,907 in the list, 165590 in the census's district table
-  district ['Mokhotlong']: 100,442 in the list, 100442 in the census's district table
-  district ["Qacha's Nek"]: 74,547 in the list, 74566 in the census's district table
-  district ['Quthing']: 115,274 in the list, 115469 in the census's district table
-  district ['Thaba-Tseka']: 135,213 in the list, 135347 in the census's district table
-  10,965 villages in 79 councils; 5,675 enumeration areas with a Total line, 3 without; 2,009,062 people
-  district Berea: 262,739
-  district Botha-Bothe: 118,176
-  district Leribe: 338,115
-  district Mafeteng: 178,372
-  district Maseru: 522,277
-  district Mohale's Hoek: 163,907
-  district Mokhotlong: 100,442
-  district Qacha's Nek: 74,547
-  district Quthing: 115,274
-  district Thaba-Tseka: 135,213
-    council on no polygon: Maseru / Mazenod (17,193)
-    council on no polygon: Quthing / Tsitsong (21,075)
-    council on no polygon: Thaba-Tseka / Nts'upe (1,664)
-    polygon with no council: Mphaki (in Quthing)
-    polygon with no council: Thota-ea-Moli (in Maseru)
-  78 councils written
-  wrote data/processed/lesotho_census.json (166 kB)
+  read https://www.nada.inseed-comores.org/index.php/catalog/8/download/70: 3,141,911 bytes, sha256 6a769b068c63c789c2eef852c579c15b59605230cc65693003e971145c17294d
+  3 islands, 18 prefectures, 54 communes
+  'Shicomor 677 246 45 808 291 870 339 569': the islands make 677,247, the total is 677,246
+  'Français 254 813 19 074 91 453 144 285': the islands make 254,812, the total is 254,813
+  mwali: [('Comorian nationals', 99.6), ('Foreign nationals', 0.4)], [('Comorian', 88.8), ('French', 37.0), ('Arabic', 5.6), ('English', 4.3), ('Malagasy', 1.8), ('Swahili', 0.6)]
+  ndzuwani: [('Comorian nationals', 99.6), ('Foreign nationals', 0.4)], [('Comorian', 89.2), ('French', 27.9), ('Arabic', 5.4), ('English', 3.5), ('Malagasy', 1.6), ('Swahili', 0.3)]
+  ngazidja: [('Comorian nationals', 99.4), ('Foreign nationals', 0.6)], [('Comorian', 89.5), ('French', 38.0), ('Arabic', 7.8), ('English', 5.4), ('Malagasy', 3.3), ('Swahili', 0.8)]
+  admin2 Djando: 9348, ratio 1037; The 2017 census's count for the prefecture of Djando.
+  admin2 Domoni: 69905, ratio 1002; The 2017 census's count for the prefecture of Domoni.
+  admin2 Fomboni: 30835, ratio 1076; The 2017 census's count for the prefecture of Fomboni.
+  admin2 Hamahamet-Mboinkou: 36648, ratio 970; The 2017 census's count for the prefecture of Hamahamet Mboinkou.
+  admin2 Hambou: 22777, ratio 1003; The 2017 census's count for the prefecture of Hambou.
+  admin2 Itsandra-Hamanvou: 57335, ratio 1012; The 2017 census's count for the prefecture of Itsandra Hamanvou.
+  admin2 Kartala: None, ratio None; 
+  admin2 Mbadjini Est: 35312, ratio 972; The 2017 census's count for the prefecture of Mbadjini Est.
+  admin2 Mbadjini Ouest: 23599, ratio 966; The 2017 census's count for the prefecture of Mbadjini Ouest.
+  admin2 Mitsamiouli-Mboudé: 56162, ratio 995; The 2017 census's counts for the prefectures of Mitsamiouli and Mboude added together: the map draws them as one.
+  admin2 Moroni-Bambao: 121236, ratio 1042; The 2017 census's count for the prefecture of Moroni Bambao.
+  admin2 Mrémani: 65449, ratio 977; The 2017 census's count for the prefecture of Mremani.
+  admin2 Mutsamudu: 63828, ratio 1037; The 2017 census's count for the prefecture of Mutsamudu.
+  admin2 Nioumachioi: 11384, ratio 1069; The 2017 census's count for the prefecture of Nioumachoua.
+  admin2 Oichili-Dimani: 26298, ratio 964; The 2017 census's count for the prefecture of Oichili Dimani.
+  admin2 Ouani: 68886, ratio 1038; The 2017 census's count for the prefecture of Ouani.
+  admin2 Sima: 59314, ratio 1038; The 2017 census's counts for the prefectures of Sima and Moya added together: the map draws them as one.
+  admin1 Moheli: 51567, ratio 1067; The 2017 census's count for the island of Mwali (Mohéli).
+  admin1 Anjouan: 327382, ratio 1017; The 2017 census's count for the island of Ndzuwani (Anjouan).
+  admin1 Grande Comore: 379367, ratio 1004; The 2017 census's count for the island of Ngazidja (Grande Comore).
+  wrote data/processed/comoros_census.json (53 kB)
