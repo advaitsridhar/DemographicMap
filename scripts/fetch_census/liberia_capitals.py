@@ -44,8 +44,10 @@ def why(p: dict[str, Any], a: dict[str, Any] | None, quiet: bool
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    ap.parse_args()
     polys = unseated("LBR")
     items, got = read_units(polys, TITLES)
     records, said = bind("LBR", polys, items, got, why)

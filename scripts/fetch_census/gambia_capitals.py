@@ -63,8 +63,10 @@ def kanifing_part(p: dict[str, Any]) -> dict[str, Any]:
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    ap.parse_args()
     records: list[dict[str, Any]] = []
     for level in ("admin1", "admin2"):
         polys = unseated("GMB", level)

@@ -772,6 +772,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dump", action="store_true", help="print the tables read and stop")
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
     args = ap.parse_args()
     book = read(dump=args.dump)
     if args.dump:

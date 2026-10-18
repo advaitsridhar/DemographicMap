@@ -461,6 +461,7 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dump", nargs="*", metavar="ISO3",
                     help="print what each article says for these countries, and stop")
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
     args = ap.parse_args()
     if args.dump is not None:
         for iso3 in args.dump or ["NGA"]:
