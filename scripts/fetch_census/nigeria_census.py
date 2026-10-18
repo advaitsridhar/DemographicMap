@@ -646,6 +646,20 @@ def fields(t: dict[str, Any], wrong: list[str] | None, note: str) -> dict[str, A
     return out
 
 
+def not_drawn_record(shape: dict[str, Any]) -> dict[str, Any]:
+    """The polygon drawn as Bakassi: the census area of that name is not its
+    ground. The reasons rest on the volume's table for the area, cited: the
+    median age's and sex ratio's here, and the population's, which the
+    project's stated reasons give ("Bakassi's only census count, 31,641 in
+    2006, ...") and which quotes the same table."""
+    return record(
+        f"NGA-NPC2006-notdrawn-{key(shape['name'])}", shape["name"], level="admin2",
+        parent="NGA", country="NGA", match_by="shape_id", shape_id=shape["id"],
+        median_age=gap(NOT_AVAILABLE, BAKASSI), sex_ratio=gap(NOT_AVAILABLE, BAKASSI),
+        sources=[{"field": "population note/median_age/sex_ratio", "name": SOURCE,
+                  "url": VOL4, "license": LICENCE, "year": YEAR}])
+
+
 def build(book: dict[str, Any], bad: dict[int, list[str]], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_polygon, bound, not_drawn = bind(book, admin1, admin2)
@@ -659,15 +673,7 @@ def build(book: dict[str, Any], bad: dict[int, list[str]], admin1: list[dict[str
             f"NGA-NPC2006-{state_key(s['table']['name'])}-{key(a.get('vol3') or a['name'])}",
             shape["name"], level="admin2", parent="NGA", country="NGA", match_by="shape_id",
             shape_id=shape["id"], **fields(a, bad.get(id(a)), area_note(a, shape["name"]))))
-    # The polygon drawn as Bakassi: the census area of that name is not its
-    # ground. The reason rests on the volume's table for the area, cited.
-    for shape in not_drawn:
-        records.append(record(
-            f"NGA-NPC2006-notdrawn-{key(shape['name'])}", shape["name"], level="admin2",
-            parent="NGA", country="NGA", match_by="shape_id", shape_id=shape["id"],
-            median_age=gap(NOT_AVAILABLE, BAKASSI), sex_ratio=gap(NOT_AVAILABLE, BAKASSI),
-            sources=[{"field": "median_age/sex_ratio", "name": SOURCE, "url": VOL4,
-                      "license": LICENCE, "year": YEAR}]))
+    records += [not_drawn_record(shape) for shape in not_drawn]
     bakassi = next((a for s in book["states"] for a in s["areas"]
                     if (state_key(s["table"]["name"]), key(a["name"])) in NOT_DRAWN), None)
     for shape in admin1:

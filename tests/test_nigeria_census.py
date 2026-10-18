@@ -377,5 +377,20 @@ class StateTest(unittest.TestCase):
                            self.BAKASSI, {id(self.BAKASSI): ["men and women do not add up"]})
 
 
+class NotDrawnTest(unittest.TestCase):
+    def test_bakassi_polygon_gives_reasons_and_cites_the_table_they_rest_on(self):
+        r = n.not_drawn_record({"id": "59680162B77398299052023", "name": "Bakassi"})
+        self.assertEqual(r["shape_id"], "59680162B77398299052023")
+        for field in ("median_age", "sex_ratio"):
+            self.assertEqual(r[field]["note"], n.BAKASSI)
+        # The population's reason (the project's stated reasons) quotes the
+        # same table's 31,641: the volume is cited for that note too.
+        (src,) = r["sources"]
+        self.assertEqual(src["field"], "population note/median_age/sex_ratio")
+        self.assertEqual(src["url"], n.VOL4)
+        self.assertEqual(src["year"], 2006)
+        self.assertNotIn("value", r.get("population") or {})
+
+
 if __name__ == "__main__":
     unittest.main()
