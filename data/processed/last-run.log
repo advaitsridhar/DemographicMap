@@ -1,20 +1,22 @@
-sierra_leone_mtphc: 17 rows of districts read: Bo (463668, 575478, 756975), Bombali (270923, 422960, 387236), Bonthe (139687, 200781, 297561), Falaba (130753, 205353, 166205), Kailahun (358190, 526379, 550435), Kambia (270462, 345474, 367699), Karene (210884, 285546, 290313), Kenema (497948, 609891, 772472), Koinadugu (135005, 204019, 206133), Kono (335401, 506100, 620703), Moyamba (260910, 318588, 346771), Port Loko (388236, 530865, 528038), Pujehun (228392, 346461, 429574), Tonkolili (339290, 513984, 557257), Western Area Rural (174249, 444270, 662156), Western Area Urban (772873, 1055964, 609174), Sierra Leone (4976871, 7092113, 7548702)
-  admin1 Eastern: 1,943,610
-  admin1 Northern: 2,502,881
-  admin1 Southern: 1,830,881
-  admin1 Western Area: 1,271,330
-  admin2 Kailahun: 550,435
-  admin2 Kenema: 772,472
-  admin2 Kono: 620,703
-  admin2 Kambia: 367,699
-  admin2 Bo: 756,975
-  admin2 Bonthe: 297,561
-  admin2 Moyamba: 346,771
-  admin2 Pujehun: 429,574
-  admin2 Western Area Rural: 662,156
-  admin2 Western Area Urban: 609,174
-  admin2 Koinadugu: 372,338
-  admin2 Tonkolili: 569,052
-  admin2 Bombali: 562,437
-  admin2 Port Loko: 631,355
-  wrote data/processed/sierra_leone_mtphc.json (26 kB)
+  read https://www.hcp.ma/file/242341/: 166,693 bytes, sha256 7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  12 regions and 75 provinces and prefectures, making 36,828,330
+  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
+  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
+  'Oued Ed-Dahab Province': a piece across the line, written as a gap
+  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
+  'Tarfaya Province': part of a province across the line, written as a gap
+  HCP provinces not drawn: []
+  Province d'Ouezzane: 274,577
+  Préfecture d'Oujda-Angad: 572,454
+  Préfecture de Skhirate-Témara: 783,475
+  Province d'Errachidia: 427,572
+  Province d'Assa-Zag: Commune d'Al Mahbass 19,139 (100710501), across the line, taken out of Province d'Assa-Zag (53,298)
+  Province de Tarfaya: Commune de Tarfaya 11,030 (115370105)
+  Province de Tarfaya: Commune de Daoura 902 (115370303)
+  Province de Tarfaya: Commune d'El Hagounia 561 (115370305)
+  Province de Tarfaya: Commune d'Akhfennir 2,841 (115370501)
+  Province de Tarfaya: Commune de Tah 894 (115370507)
+  10 regions and 69 of 72 provinces bound
+  wrote data/processed/morocco_rgph2024.json (168 kB)
