@@ -1,28 +1,44 @@
-drc_gaps: OCHA's tables: 26 provinces, 189 territories, cities and towns
-  Territoire (république démocratique du Congo): 145 territories with a seat
-  Oïcha: no seat written (This polygon is the territory of Beni, which OCHA's populati...)
-  164 territories and cities given reasons (144 territories with a seat, 19 cities)
-  town Aba: counted in Faradje
-  town Ariwara: counted in Aru
-  town Bangu: counted in Songololo
-  town Baraka: counted in Fizi
-  town Bena-Dibele: counted in Kole
-  town Dibaya-Lubwe: counted in Idiofa
-  town Ingbokolo: counted in Aru
-  town Inkisi: counted in Madimba
-  town Isiro: counted in Rungu
-  town Kalima: counted in Pangi
-  town Kamituga: counted in Mwenga
-  town Mangai: counted in Idiofa
-  town Mongwalu: counted in Djugu
-  town Namoya: counted in Kabambare
-  town Tshumbe: counted in Kole
-  city Bunia: counted in Irumu
-  city Kolwezi: counted in Mutshatsha
-  city Tshikapa: counted in Kamonia
-  wrote data/processed/drc_gaps.json (392 kB)
-  26 provinces and 189 second-level polygons written
-  001_population_health_zone_zs: 519 health zones in 164 territories and cities, 117,808,872 people
-  2024: CD3106 Kasongo-Lunda: no 2020 unit of that code on a polygon
-  2024: 163 territories and cities, 116,912,196 people
-  wrote data/processed/drc_hpc.json (226 kB)
+chad_departments: OCHA's 2023 table, 23 provinces
+  Departments of Chad: 62 names with a seat, 66 listed
+  2024: 70 departments; against 2021, x1.1104 at the median
+  ages: Chari-Baguirmi and Hadjer-Lamis alike (0.26 points at most), not one structure
+  ages: Ennedi Est and Ennedi Ouest share one structure (0.0022 points at most) and one sex ratio (1139)
+  ages: Mayo-Kebbi Est and Mayo-Kebbi Ouest alike (0.27 points at most), not one structure
+  ages: Mayo-Kebbi Est and Tandjilé alike (0.27 points at most), not one structure
+  ages: Guéra's 10-14 group is 3.6 times its 5-9 group
+  Bahr el Gazel: 412,808
+  Batha: 763,062
+  Borkou: 159,353
+  Chari-Baguirmi: 918,084
+  Ennedi-Est: 174,805 (median_age, sex_ratio withdrawn)
+  Ennedi-Ouest: 99,126 (median_age, sex_ratio withdrawn)
+  Guéra: 709,893 (median_age withdrawn)
+  Hadjer-Lamis: 908,127
+  Kanem: 550,092
+  Lac: 705,362
+  Logone Occidental: 1,115,244
+  Logone Oriental: 1,239,738
+  Mandoul: 1,025,580
+  Mayo-Kebbi Est: 1,264,762
+  Mayo-Kebbi Ouest: 932,156
+  Moyen-Chari: 969,006
+  N'Djamena Region: 1,801,264
+  Ouaddaï: 1,168,288
+  Salamat: 496,719
+  Sila: 645,792
+  Tandjilé: 1,104,153
+  Tibesti: 42,784
+  Wadi Fira: 827,551
+  the provinces make 18,033,749
+    Barh-El-Gazel Ouest: no seat named (not listed)
+    Fada: no seat named
+    Fouli: no seat named (not listed)
+    Kaya: no seat named (not listed)
+    Mayo-Binder: no seat named (not listed)
+    Mourtcha: no seat named
+    Mégri: no seat named (not listed)
+    Tandjilé Centre: no seat named (not listed)
+    Wadi Hawar: no seat named
+  61 of 70 departments with a seat
+  wrote data/processed/chad_departments.json (132 kB)
+  93 records written

@@ -196,10 +196,14 @@
       "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "OCHA's population table for Chad (reference year 2023) gives Ennedi Est and Ennedi Ouest the same age proportions, to within 0.05 of a point in every five-year group: one structure applied to both provinces, so no median age of Ennedi Est's own can be taken from it.",
+      "displaces_before": 2024
     },
     "sex_ratio": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "OCHA's population table for Chad (reference year 2023) gives Ennedi Est and Ennedi Ouest the same age proportions, to within 0.05 of a point in every five-year group, and the same proportion of men (1,139 per 1,000 women): one structure applied to both provinces, so no sex ratio of Ennedi Est's own can be taken from it.",
+      "displaces_before": 2024
     },
     "religion": {
       "status": "not_available"
@@ -212,7 +216,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/median_age note/sex_ratio note",
         "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023",
         "url": "https://data.humdata.org/dataset/cod-ps-tcd",
         "year": 2023,
@@ -241,10 +245,14 @@
       "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "OCHA's population table for Chad (reference year 2023) gives Ennedi Ouest and Ennedi Est the same age proportions, to within 0.05 of a point in every five-year group: one structure applied to both provinces, so no median age of Ennedi Ouest's own can be taken from it.",
+      "displaces_before": 2024
     },
     "sex_ratio": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "OCHA's population table for Chad (reference year 2023) gives Ennedi Ouest and Ennedi Est the same age proportions, to within 0.05 of a point in every five-year group, and the same proportion of men (1,139 per 1,000 women): one structure applied to both provinces, so no sex ratio of Ennedi Ouest's own can be taken from it.",
+      "displaces_before": 2024
     },
     "religion": {
       "status": "not_available"
@@ -257,7 +265,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/median_age note/sex_ratio note",
         "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023",
         "url": "https://data.humdata.org/dataset/cod-ps-tcd",
         "year": 2023,
@@ -286,7 +294,9 @@
       "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "OCHA's population table for Chad (reference year 2023) gives Guéra 266,841 people aged 10 to 14 against 74,311 aged 5 to 9, 3.6 times as many, which no population's ages are, so no median age is taken from it.",
+      "displaces_before": 2024
     },
     "sex_ratio": {
       "status": "not_available"
@@ -302,7 +312,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/median_age note",
         "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023",
         "url": "https://data.humdata.org/dataset/cod-ps-tcd",
         "year": 2023,
@@ -1044,7 +1054,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 181007,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1067,11 +1079,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B4539380481876"
+    "shape_id": "50815135B4539380481876",
+    "population_note": "OCHA's projected population of Abdi for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B13353907786726",
@@ -1083,7 +1103,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 110128,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1106,11 +1128,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B13353907786726"
+    "shape_id": "50815135B13353907786726",
+    "population_note": "OCHA's projected population of Aboudéia for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B86536624745263",
@@ -1122,7 +1152,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 225938,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1145,11 +1177,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B86536624745263"
+    "shape_id": "50815135B86536624745263",
+    "population_note": "OCHA's projected population of Abtouyour for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B96833037498211",
@@ -1161,7 +1201,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 133701,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1184,11 +1226,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B96833037498211"
+    "shape_id": "50815135B96833037498211",
+    "population_note": "OCHA's projected population of Am-Djarass for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B12284790062818",
@@ -1200,7 +1250,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 483734,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1223,11 +1275,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B12284790062818"
+    "shape_id": "50815135B12284790062818",
+    "population_note": "OCHA's projected population of Assoungha for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B83477967363059",
@@ -1239,7 +1299,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 350099,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1262,11 +1324,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B83477967363059"
+    "shape_id": "50815135B83477967363059",
+    "population_note": "OCHA's projected population of Baguirmi for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B73615292321578",
@@ -1278,7 +1348,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 310249,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1301,11 +1373,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B73615292321578"
+    "shape_id": "50815135B73615292321578",
+    "population_note": "OCHA's projected population of Bahr-Azoum for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B48101754695472",
@@ -1317,7 +1397,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 523252,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1340,11 +1422,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B48101754695472"
+    "shape_id": "50815135B48101754695472",
+    "population_note": "OCHA's projected population of Bahr-Köh for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B23579173703051",
@@ -1356,7 +1446,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 89615,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1379,11 +1471,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B23579173703051"
+    "shape_id": "50815135B23579173703051",
+    "population_note": "OCHA's projected population of Barh-El-Gazel Nord for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B59767652467514",
@@ -1392,13 +1492,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) does not include this department, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 102415,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1415,10 +1517,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B59767652467514"
+    "shape_id": "50815135B59767652467514",
+    "population_note": "OCHA's projected population of Barh-El-Gazel Ouest for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B11223303174297",
@@ -1430,7 +1541,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 234694,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1453,11 +1566,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B11223303174297"
+    "shape_id": "50815135B11223303174297",
+    "population_note": "OCHA's projected population of Barh-El-Gazel Sud for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B19223233714044",
@@ -1469,7 +1590,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 366887,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1492,11 +1615,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B19223233714044"
+    "shape_id": "50815135B19223233714044",
+    "population_note": "OCHA's projected population of Barh-Sara for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B50589595383303",
@@ -1508,7 +1639,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 139763,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1531,11 +1664,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B50589595383303"
+    "shape_id": "50815135B50589595383303",
+    "population_note": "OCHA's projected population of Barh-Signaka for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B79604505945545",
@@ -1547,7 +1688,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 290994,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1570,11 +1713,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B79604505945545"
+    "shape_id": "50815135B79604505945545",
+    "population_note": "OCHA's projected population of Batha Est for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B78939282341988",
@@ -1586,7 +1737,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 319036,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1609,11 +1762,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B78939282341988"
+    "shape_id": "50815135B78939282341988",
+    "population_note": "OCHA's projected population of Batha Ouest for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B98948114650625",
@@ -1625,7 +1786,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 286743,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1648,11 +1811,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B98948114650625"
+    "shape_id": "50815135B98948114650625",
+    "population_note": "OCHA's projected population of Biltine for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B4564368173337",
@@ -1664,7 +1835,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 115288,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1687,11 +1860,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B4564368173337"
+    "shape_id": "50815135B4564368173337",
+    "population_note": "OCHA's projected population of Borkou for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B13621547433724",
@@ -1703,7 +1884,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 42517,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1726,11 +1909,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B13621547433724"
+    "shape_id": "50815135B13621547433724",
+    "population_note": "OCHA's projected population of Borkou Yala for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B55510615891344",
@@ -1742,7 +1933,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 305325,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1765,11 +1958,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B55510615891344"
+    "shape_id": "50815135B55510615891344",
+    "population_note": "OCHA's projected population of Chari for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B80092252042653",
@@ -1781,7 +1982,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 378596,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1804,11 +2007,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B80092252042653"
+    "shape_id": "50815135B80092252042653",
+    "population_note": "OCHA's projected population of Dababa for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B82618270305421",
@@ -1820,7 +2031,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 312154,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1843,11 +2056,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B82618270305421"
+    "shape_id": "50815135B82618270305421",
+    "population_note": "OCHA's projected population of Dagana for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B35128958764518",
@@ -1859,7 +2080,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 304272,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1882,11 +2105,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B35128958764518"
+    "shape_id": "50815135B35128958764518",
+    "population_note": "OCHA's projected population of Dar-Tama for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B90510100968968",
@@ -1898,7 +2129,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 181452,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1921,11 +2154,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B90510100968968"
+    "shape_id": "50815135B90510100968968",
+    "population_note": "OCHA's projected population of Djourf Al Ahmar for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B21432441174008",
@@ -1937,7 +2178,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 182107,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1960,11 +2203,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B21432441174008"
+    "shape_id": "50815135B21432441174008",
+    "population_note": "OCHA's projected population of Dodjé for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B99861554638026",
@@ -1973,13 +2224,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) names this department but gives no seat for it, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 66337,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -1996,10 +2249,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B99861554638026"
+    "shape_id": "50815135B99861554638026",
+    "population_note": "OCHA's projected population of Fada for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B60006364885554",
@@ -2011,7 +2273,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 178149,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2034,11 +2298,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B60006364885554"
+    "shape_id": "50815135B60006364885554",
+    "population_note": "OCHA's projected population of Fitri for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B95453652867262",
@@ -2047,13 +2319,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) does not include this department, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 120254,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2070,10 +2344,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B95453652867262"
+    "shape_id": "50815135B95453652867262",
+    "population_note": "OCHA's projected population of Fouli for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B5443465425830",
@@ -2085,7 +2368,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 182570,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2108,11 +2393,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B5443465425830"
+    "shape_id": "50815135B5443465425830",
+    "population_note": "OCHA's projected population of Grande Sido for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B88319439398100",
@@ -2124,7 +2417,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 157541,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2147,11 +2442,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B88319439398100"
+    "shape_id": "50815135B88319439398100",
+    "population_note": "OCHA's projected population of Guéni for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B83117027765697",
@@ -2163,7 +2466,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 232704,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2186,11 +2491,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B83117027765697"
+    "shape_id": "50815135B83117027765697",
+    "population_note": "OCHA's projected population of Guéra for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B49730685193773",
@@ -2202,7 +2515,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 248717,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2225,11 +2540,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B49730685193773"
+    "shape_id": "50815135B49730685193773",
+    "population_note": "OCHA's projected population of Haraze-Al-Biar for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B51440340925469",
@@ -2241,7 +2564,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 94355,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2264,11 +2589,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B51440340925469"
+    "shape_id": "50815135B51440340925469",
+    "population_note": "OCHA's projected population of Haraze-Mangueigne for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B59741228858752",
@@ -2280,7 +2613,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 386953,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2303,11 +2638,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B59741228858752"
+    "shape_id": "50815135B59741228858752",
+    "population_note": "OCHA's projected population of Kabbia for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B90270246712933",
@@ -2319,7 +2662,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 261569,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2342,11 +2687,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B90270246712933"
+    "shape_id": "50815135B90270246712933",
+    "population_note": "OCHA's projected population of Kanem for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B89390943871593",
@@ -2355,13 +2708,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) does not include this department, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 65468,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2378,10 +2733,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B89390943871593"
+    "shape_id": "50815135B89390943871593",
+    "population_note": "OCHA's projected population of Kaya for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B66817745888418",
@@ -2393,7 +2757,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 680904,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2416,11 +2782,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B66817745888418"
+    "shape_id": "50815135B66817745888418",
+    "population_note": "OCHA's projected population of Kimiti for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B20529104749764",
@@ -2432,7 +2806,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 237018,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2455,11 +2831,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B20529104749764"
+    "shape_id": "50815135B20529104749764",
+    "population_note": "OCHA's projected population of Kobé for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B98764858098702",
@@ -2471,7 +2855,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 172529,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2494,11 +2880,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B98764858098702"
+    "shape_id": "50815135B98764858098702",
+    "population_note": "OCHA's projected population of Kouh Est for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B27112556056018",
@@ -2510,7 +2904,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 84292,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2533,11 +2929,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B27112556056018"
+    "shape_id": "50815135B27112556056018",
+    "population_note": "OCHA's projected population of Kouh Ouest for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B28220035440725",
@@ -2549,7 +2953,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 239931,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2572,11 +2978,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B28220035440725"
+    "shape_id": "50815135B28220035440725",
+    "population_note": "OCHA's projected population of La Nya for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B51143570982343",
@@ -2588,7 +3002,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 184006,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2611,11 +3027,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B51143570982343"
+    "shape_id": "50815135B51143570982343",
+    "population_note": "OCHA's projected population of La Nya Pendé for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B99305267844407",
@@ -2627,7 +3051,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 273150,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2650,11 +3076,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B99305267844407"
+    "shape_id": "50815135B99305267844407",
+    "population_note": "OCHA's projected population of La Pendé for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B94662216566844",
@@ -2666,7 +3100,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 297116,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2689,11 +3125,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B94662216566844"
+    "shape_id": "50815135B94662216566844",
+    "population_note": "OCHA's projected population of Lac Iro for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B81119267829848",
@@ -2705,7 +3149,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 299156,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2728,11 +3174,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B81119267829848"
+    "shape_id": "50815135B81119267829848",
+    "population_note": "OCHA's projected population of Lac Léré for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B84328468709684",
@@ -2744,7 +3198,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 567578,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2767,11 +3223,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B84328468709684"
+    "shape_id": "50815135B84328468709684",
+    "population_note": "OCHA's projected population of Lac Wey for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B30125763845581",
@@ -2783,7 +3247,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 310163,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2806,11 +3272,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B30125763845581"
+    "shape_id": "50815135B30125763845581",
+    "population_note": "OCHA's projected population of Loug-Chari for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B65244945482941",
@@ -2822,7 +3296,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 189235,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2845,11 +3321,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B65244945482941"
+    "shape_id": "50815135B65244945482941",
+    "population_note": "OCHA's projected population of Mamdi for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B23154120961269",
@@ -2861,7 +3345,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 261247,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2884,11 +3370,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B23154120961269"
+    "shape_id": "50815135B23154120961269",
+    "population_note": "OCHA's projected population of Mandoul Occidental for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B49309888435923",
@@ -2900,7 +3394,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 432518,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2923,11 +3419,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B49309888435923"
+    "shape_id": "50815135B49309888435923",
+    "population_note": "OCHA's projected population of Mandoul Oriental for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B54463089232866",
@@ -2939,7 +3443,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 128065,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2962,11 +3468,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B54463089232866"
+    "shape_id": "50815135B54463089232866",
+    "population_note": "OCHA's projected population of Mangalmé for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B24188788926450",
@@ -2975,13 +3489,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) does not include this department, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 93946,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -2998,10 +3514,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B24188788926450"
+    "shape_id": "50815135B24188788926450",
+    "population_note": "OCHA's projected population of Mayo-Binder for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B64807508580818",
@@ -3013,7 +3538,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 399023,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3036,11 +3563,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B64807508580818"
+    "shape_id": "50815135B64807508580818",
+    "population_note": "OCHA's projected population of Mayo-Boneye for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B58245995276010",
@@ -3052,7 +3587,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 572810,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3075,11 +3612,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B58245995276010"
+    "shape_id": "50815135B58245995276010",
+    "population_note": "OCHA's projected population of Mayo-Dallah for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B13713715101650",
@@ -3091,7 +3636,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 138750,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3114,11 +3661,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B13713715101650"
+    "shape_id": "50815135B13713715101650",
+    "population_note": "OCHA's projected population of Mayo-Lemié for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B57632005694692",
@@ -3130,7 +3685,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 385418,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3153,11 +3710,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B57632005694692"
+    "shape_id": "50815135B57632005694692",
+    "population_note": "OCHA's projected population of Mont Illi for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B14191552615898",
@@ -3169,7 +3734,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 372790,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3192,11 +3759,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B14191552615898"
+    "shape_id": "50815135B14191552615898",
+    "population_note": "OCHA's projected population of Monts de Lam for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B12013942151217",
@@ -3205,13 +3780,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) names this department but gives no seat for it, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 35720,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3228,10 +3805,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B12013942151217"
+    "shape_id": "50815135B12013942151217",
+    "population_note": "OCHA's projected population of Mourtcha for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B12471481376218",
@@ -3240,13 +3826,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) does not include this department, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 34304,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3263,10 +3851,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B12471481376218"
+    "shape_id": "50815135B12471481376218",
+    "population_note": "OCHA's projected population of Mégri for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B39277656442366",
@@ -3278,7 +3875,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 1819401,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3295,11 +3894,20 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
     "shape_id": "50815135B39277656442366",
-    "capital_note": "N'Djamena province is a single department, the city of N'Djamena, whose seat is the city itself."
+    "capital_note": "N'Djamena province is a single department, the city of N'Djamena, whose seat is the city itself.",
+    "population_note": "OCHA's projected population of N'Djaména for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B58104899779962",
@@ -3311,7 +3919,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 272523,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3334,11 +3944,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B58104899779962"
+    "shape_id": "50815135B58104899779962",
+    "population_note": "OCHA's projected population of Ngourkosso for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B74780249962770",
@@ -3350,7 +3968,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 155340,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3373,11 +3993,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B74780249962770"
+    "shape_id": "50815135B74780249962770",
+    "population_note": "OCHA's projected population of Nord Kanem for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B92277339053304",
@@ -3389,7 +4017,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 556596,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3412,11 +4042,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B92277339053304"
+    "shape_id": "50815135B92277339053304",
+    "population_note": "OCHA's projected population of Ouara for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B85738495348243",
@@ -3428,7 +4066,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 549008,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3451,11 +4091,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B85738495348243"
+    "shape_id": "50815135B85738495348243",
+    "population_note": "OCHA's projected population of Tandjile Ouest for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B21537967756666",
@@ -3464,13 +4112,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) does not include this department, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 151335,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3487,10 +4137,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B21537967756666"
+    "shape_id": "50815135B21537967756666",
+    "population_note": "OCHA's projected population of Tandjilé Centre for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B89886025568853",
@@ -3502,7 +4161,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 437870,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3525,11 +4186,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B89886025568853"
+    "shape_id": "50815135B89886025568853",
+    "population_note": "OCHA's projected population of Tandjilé Est for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B39039287340708",
@@ -3541,7 +4210,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 24375,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3564,11 +4235,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B39039287340708"
+    "shape_id": "50815135B39039287340708",
+    "population_note": "OCHA's projected population of Tibesti Est for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B44379234996248",
@@ -3580,7 +4259,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 18799,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3603,11 +4284,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B44379234996248"
+    "shape_id": "50815135B44379234996248",
+    "population_note": "OCHA's projected population of Tibesti Ouest for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B97156808183777",
@@ -3619,7 +4308,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 152398,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3642,11 +4333,19 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B97156808183777"
+    "shape_id": "50815135B97156808183777",
+    "population_note": "OCHA's projected population of Wadi Bissam for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B62585523695590",
@@ -3655,13 +4354,15 @@
     "parent": "TCD",
     "capital": {
       "status": "not_available",
-      "note": "The list of Chad's departments and their seats (English Wikipedia, Departments of Chad) gives no seat for this department, and no other published list of the departments' seats has been found."
+      "note": "English Wikipedia's list of Chad's departments and their seats (Departments of Chad) names this department but gives no seat for it, and no other published list of the departments' seats has been found."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 46957,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3678,10 +4379,19 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      }
+    ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B62585523695590"
+    "shape_id": "50815135B62585523695590",
+    "population_note": "OCHA's projected population of Wadi Hawar for 2024 (cod-ps-tcd)."
   },
   {
     "id": "TCD-SEAT-50815135B86238137663719",
@@ -3693,7 +4403,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 354780,
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024"
     },
     "median_age": {
       "status": "not_available"
@@ -3716,10 +4428,18 @@
         "name": "English Wikipedia, Departments of Chad",
         "url": "https://en.wikipedia.org/wiki/Departments_of_Chad",
         "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-tcd",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "TCD",
     "match_by": "shape_id",
-    "shape_id": "50815135B86238137663719"
+    "shape_id": "50815135B86238137663719",
+    "population_note": "OCHA's projected population of Wayi for 2024 (cod-ps-tcd)."
   }
 ]
