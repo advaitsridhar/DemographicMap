@@ -2799,8 +2799,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+      "value": 18.6,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
     },
     "sex_ratio": {
       "value": 991,
@@ -2823,13 +2825,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age"
       }
     ],
     "country": "NER",
     "match_by": "shape_id",
     "shape_id": "23599985B37846693808008",
-    "sex_ratio_note": "The 2012 census counted 511,166 men and 515,682 women in the city of Niamey."
+    "sex_ratio_note": "The 2012 census counted 511,166 men and 515,682 women in the city of Niamey.",
+    "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Niamey 19 in whole years. The region is this one department."
   },
   {
     "id": "NER-RGPH2012-tillaberi-ouallam",
