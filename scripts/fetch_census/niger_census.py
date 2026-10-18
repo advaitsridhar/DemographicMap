@@ -338,11 +338,11 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
                  and sum(1 for (r, _) in table["departments"] if r == regions[0]) == 1)
         if whole:
             median, median_note = medians[shape["parent"]]
-            ages: dict[str, Any] = {
+            age_fields: dict[str, Any] = {
                 "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
                 "median_age_note": median_note + " The region is this one department."}
         else:
-            ages = {"median_age": gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)}
+            age_fields = {"median_age": gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)}
         records.append(record(
             f"NER-RGPH2012-{hits[0][0].lower()}-{key}", shape["name"], level="admin2",
             parent="NER", country="NER", match_by="shape_id", shape_id=shape["id"],
@@ -353,7 +353,7 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
                             + (f"the city of {shape['name'].replace(' Ville', '')}."
                                if name.startswith("VILLE DE") else
                                f"the department of {shape['name']}.")),
-            **ages))
+            **age_fields))
     left = sorted(f"{r}/{n}" for (r, n) in by_name if (r, n) not in used)
     if left:
         report.append(f"departments not bound: {left}")
