@@ -212,6 +212,19 @@ class TableFaults(unittest.TestCase):
         self.assertEqual(fields["sex_ratio"]["status"], "not_available")
         self.assertIn("keying error", fields["sex_ratio"]["note"])
 
+    def test_a_village_of_impossible_sexes_withholds_the_2006_ratio(self):
+        rows = [unit("25", "Somewhere", "مركز مكان ما", 120000, 61000, 59000)]
+        cp_units = {"2599": cp_unit("2599", "مركز مكان ما", 150000, 200000, 210000)}
+        units, plan = plan_for(rows, cp_units, 3444967, 3387545)
+        keyed = [{"district": 1, "sub": "درنكة", "code": 250315, "m": 2491, "f": 22740,
+                  "t": 25231}]
+        fields = ec.outline_record({"id": "S", "name": "Somewhere"}, units, plan, {},
+                                   "https://hdx", "lic", keyed)
+        self.assertEqual(fields["population"]["year"], 2006)
+        self.assertIn("cannot both be right", fields["population_note"])
+        self.assertEqual(fields["sex_ratio"]["status"], "not_available")
+        self.assertIn("2,491 men and 22,740 women", fields["sex_ratio"]["note"])
+
     def test_keyed_sub_district_rows(self):
         header = ["gov en", "gov ar", "gov", "dist en", "dist ar", "dist", "sub ar", "sub",
                   "m", "f", "t"]

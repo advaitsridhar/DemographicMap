@@ -8,8 +8,10 @@ Census Bureau's subnational tables for HDX carry that table whole, summed to
 the 100 baladiyat and the 22 shabiyat of the time, with the census's own codes
 (``libya-subnational-boundaries-and-tabular-data``, sheet ``Age-Sex``). No
 later count exists: the 2012 figures beside it in the same workbook are the
-Bureau's National Population Survey, a sample, and the population figures
-since are estimates.
+Bureau's National Population Survey, a sample. The same workbook estimates
+each shabiyah's population for 2020 (sheet ``Population``), and counts
+Libyans and non-Libyans by mahallah at the 2006 census (sheet
+``Households``).
 
 **The areas drawn are not quite the census's shabiyat.** The map draws 22
 areas, twice (both levels, the same outlines and ids), and five carry the
@@ -27,11 +29,16 @@ Marqab) and Qasr bin Ghashir (Al Jafarah) besides Tripoli.
 **What is written.** Every area is the sum of the census's baladiyat whose
 seats lie in it, age group by age group (``MOVED`` declares the baladiyat
 that lie outside their census shabiyah), so its count, its median age --
-interpolated within the five-year group holding the middle person -- and its
-men per 1,000 women are the census's own for that ground. Two areas are left
-without figures and say why (``UNSURE``): the outline labelled Tajura' wa an
-Nawahi al Arba and Al Jifarah, between which three baladiyat of the census's
-Al Jafarah (Sidi as Sayih, Suq al Khamis, As Sabiah) cannot be placed.
+interpolated within the five-year group holding the middle person -- its men
+per 1,000 women, and its Libyans and non-Libyans (as ethnicity, on the basis
+of nationality) are the census's own for that ground. An area that is its
+census shabiyah unchanged takes the 2020 estimate as its population, the
+2006 count in the note; an area put together from baladiyat of other
+shabiyat keeps the 2006 count, since the estimate is for other ground. Two
+areas are left without figures and say why (``UNSURE``): the outline
+labelled Tajura' wa an Nawahi al Arba and Al Jifarah, between which three
+baladiyat of the census's Al Jafarah (Sidi as Sayih, Suq al Khamis, As
+Sabiah) cannot be placed.
 
 **Checks before anything is written.** Every row's age groups and its men and
 women make its total; the 22 shabiyat make the national row, 5,657,692; each
@@ -52,7 +59,8 @@ import unicodedata
 from typing import Any
 
 from . import uscb
-from ._shared import PROCESSED, NOT_AVAILABLE, gap, http_get, log, measure, record, write_json
+from ._shared import (PROCESSED, NOT_AVAILABLE, gap, http_get, log, measure, record, shares,
+                      write_json)
 
 DATASET = "libya-subnational-boundaries-and-tabular-data"
 YEAR = 2006
@@ -62,6 +70,10 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 SOURCE = ("Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): "
           "total resident population (Libyans and non-Libyans) by mahallah, age group and sex, "
           "as the US Census Bureau tabulates it for HDX")
+SOURCE_NATIONALITY = ("Bureau of Statistics and Census Libya, General Population Census 2006, "
+                      "Libyan and non-Libyan population by mahallah, as the US Census Bureau "
+                      "tabulates it for HDX")
+ESTIMATE_YEAR = 2020
 LICENCE = "Creative Commons Attribution International (CC BY), published via HDX"
 
 # The census's shabiyah (folded, as the Bureau spells it) -> the boundary
@@ -236,6 +248,60 @@ def check(table: dict[str, Any]) -> None:
                                  f"{sum(parts):,}, not {unit['total']:,}")
 
 
+def dictionary(rows: list[list[Any]]) -> dict[str, list[str]]:
+    """The data dictionary: field name -> [alias, description, data source]."""
+    out: dict[str, list[str]] = {}
+    for row in rows:
+        cells = ["" if v is None else str(v).strip() for v in row]
+        if cells and cells[0] and len(cells) >= 4:
+            out.setdefault(cells[0], cells[1:4])
+    return out
+
+
+def read_estimates(rows: list[list[Any]]) -> tuple[dict[str, int], str]:
+    """Each shabiyah's estimated population for 2020 (folded name -> people),
+    and the field it is read from. The shabiyat must make the country."""
+    names, aliases = uscb.columns(rows)
+    at = {n: i for i, n in enumerate(names) if n}
+    col = uscb.denominator(names, aliases)
+    if col is None or str(ESTIMATE_YEAR) not in aliases[col]:
+        raise SystemExit(f"libya_census: no {ESTIMATE_YEAR} estimate column in the Population "
+                         f"sheet: {aliases[col] if col is not None else None}")
+    out: dict[str, int] = {}
+    national = None
+    for row in rows[2:]:
+        level = number(row[at["ADM_LEVEL"]])
+        value = number(row[col])
+        if level == 0:
+            national = value
+        elif level == 1 and value is not None:
+            out[fold(row[at["AREA_NAME"]])] = value
+    if not national or sum(out.values()) != national:
+        raise SystemExit(f"libya_census: the {ESTIMATE_YEAR} estimates make "
+                         f"{sum(out.values()):,}, not the country's {national}")
+    return out, names[col]
+
+
+def read_nationality(rows: list[list[Any]]) -> dict[tuple[str, str], tuple[int, int]]:
+    """(shabiyah, baladiyah), folded -> (Libyans, non-Libyans) at the 2006 census,
+    from the Households sheet's baladiyah rows."""
+    names, _ = uscb.columns(rows)
+    at = {n: i for i, n in enumerate(names) if n}
+    for field in ("HH_PLBN", "HH_PNLN", "ADM_LEVEL", "AREA_NAME", "ADM1_NAME"):
+        if field not in at:
+            raise SystemExit(f"libya_census: the Households sheet has no {field}")
+    out: dict[tuple[str, str], tuple[int, int]] = {}
+    for row in rows[2:]:
+        if number(row[at["ADM_LEVEL"]]) != 2:
+            continue
+        libyans, others = number(row[at["HH_PLBN"]]), number(row[at["HH_PNLN"]])
+        if libyans is None or others is None:
+            raise SystemExit(f"libya_census: {row[at['AREA_NAME']]}: no Libyan or non-Libyan "
+                             "count")
+        out[(fold(row[at["ADM1_NAME"]]), fold(row[at["AREA_NAME"]]))] = (libyans, others)
+    return out
+
+
 def compose(table: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
     """Area (its shabiyah key) -> the census's baladiyat whose seats lie in it."""
     areas: dict[str, list[dict[str, Any]]] = {key: [] for key in SHAPES}
@@ -265,7 +331,14 @@ def display(name: str) -> str:
     return " ".join(w.capitalize() if w.isupper() else w for w in str(name).split())
 
 
-def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
+def listed(items: list[str]) -> str:
+    """'A', 'A and B', 'A, B and C'."""
+    return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
+
+
+def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]],
+          estimates: dict[str, int] | None = None, source_2020: str = "",
+          nationality: dict[tuple[str, str], tuple[int, int]] | None = None
           ) -> list[dict[str, Any]]:
     """One record per area and level, bound by shape id."""
     for level, shapes in drawn.items():
@@ -276,17 +349,24 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
                              f"bound here: {sorted(ids ^ wanted)}")
     labels = {s["id"]: s["name"] for shapes in drawn.values() for s in shapes}
     areas = compose(table)
+    estimates = estimates or {}
     records = []
     for key in sorted(SHAPES):
         sid = SHAPES[key]
         census = table["shabiyat"][key]
         name, held = RELABELLED.get(key, (labels[sid], ""))
+        parts = areas[key]
+        gained = [p for p in parts if fold(p["shabiyah"]) != key]
+        lost = [b for b in table["baladiyat"] if fold(b["shabiyah"]) == key
+                and all(b is not p for p in parts)]
+        recomposed = bool(gained or lost) or key in UNSURE
+        # An area that is not its census shabiyah exactly is only close to it.
         where = (f" {labels[sid]}, a name this area is also given, was a district of the "
-                 f"2001 division; the area shown is the shabiyah of {name} as drawn in 2007, "
-                 f"which holds {held}." if held else "")
+                 f"2001 division; the area shown {'is close to' if recomposed else 'is'} the "
+                 f"shabiyah of {name} as drawn in 2007, which holds {held}." if held else "")
         if key in UNSURE:
             fields = {f: gap(NOT_AVAILABLE, UNSURE[key] + where)
-                      for f in ("population", "median_age", "sex_ratio")}
+                      for f in ("population", "median_age", "sex_ratio", "ethnicity")}
             # The encyclopaedia's figures on these two outlines are for other
             # ground (Jafara's 2020 548,855 counts Janzur and the baladiyat
             # around it, which lie in Az Zawiyah's outline; the undated 267,031
@@ -294,11 +374,7 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
             fields["population"]["displaces_before"] = DISPLACES_BEFORE
             fields["population"]["displaces_undated"] = True
         else:
-            parts = areas[key]
             unit = merged(parts)
-            gained = [p for p in parts if fold(p["shabiyah"]) != key]
-            lost = [b for b in table["baladiyat"] if fold(b["shabiyah"]) == key
-                    and all(b is not p for p in parts)]
             if gained or lost:
                 diff = []
                 if gained:
@@ -307,21 +383,22 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
                         f"{display(table['shabiyat'][fold(p['shabiyah'])]['name'])}"
                         for p in gained))
                 if lost:
-                    diff.append("without " + ", ".join(
-                        f"{display(b['name'])} ({b['total']:,})" for b in lost)
-                        + ", which lie outside it")
+                    diff.append("without " + listed(
+                        [f"{display(b['name'])} ({b['total']:,})" for b in lost])
+                        + (", which lies outside it" if len(lost) == 1
+                           else ", which lie outside it"))
                 what = (f"the census's shabiyah of {display(census['name'])} "
                         f"({census['total']:,}) " + " and ".join(diff) +
                         "; added up from the census's baladiyat whose seats lie in the area "
                         "shown")
             else:
                 what = f"the shabiyah of {name}"
+            counted = (f"Libyans and non-Libyans resident on 15 April 2006: {unit['men']:,} men "
+                       f"and {unit['women']:,} women")
             median = grouped_median(unit["groups"])
             fields = {
                 "population": measure(unit["total"], year=YEAR, source=SOURCE),
-                "population_note": (f"The 2006 census count of {what}, Libyans and "
-                                    f"non-Libyans resident on 15 April 2006: {unit['men']:,} "
-                                    f"men and {unit['women']:,} women.{where}"),
+                "population_note": f"The 2006 census count of {what}, {counted}.{where}",
                 "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
                 "median_age_note": ("Interpolated within the five-year age group that holds "
                                     "the middle person, from the 2006 census's count of "
@@ -334,6 +411,42 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
                 "sources": [{"field": "population/median_age/sex_ratio", "name": SOURCE,
                              "url": uscb.dataset_url(DATASET), "year": YEAR,
                              "license": LICENCE}]}
+            if key in estimates and not recomposed:
+                # The newest figure for the shabiyah's own ground.
+                fields["population"] = measure(estimates[key], year=ESTIMATE_YEAR,
+                                               source=source_2020)
+                fields["population_note"] = (
+                    f"The estimate for {ESTIMATE_YEAR} of the shabiyah of {name}; the 2006 "
+                    f"census counted {unit['total']:,}, {counted}.{where}")
+                fields["sources"] = [
+                    {"field": "population", "name": source_2020,
+                     "url": uscb.dataset_url(DATASET), "year": ESTIMATE_YEAR,
+                     "license": LICENCE},
+                    {"field": "median_age/sex_ratio", "name": SOURCE,
+                     "url": uscb.dataset_url(DATASET), "year": YEAR, "license": LICENCE}]
+            elif key in estimates:
+                fields["population_note"] += (
+                    f" The estimates made since, for {ESTIMATE_YEAR}, are of the census's "
+                    "shabiyat, not of this area, so the 2006 count is shown.")
+            if nationality:
+                missing = [p["name"] for p in parts
+                           if (fold(p["shabiyah"]), fold(p["name"])) not in nationality]
+                if missing:
+                    raise SystemExit(f"libya_census: no Libyan and non-Libyan counts for "
+                                     f"{missing}")
+                libyans = sum(nationality[(fold(p["shabiyah"]), fold(p["name"]))][0]
+                              for p in parts)
+                others = sum(nationality[(fold(p["shabiyah"]), fold(p["name"]))][1]
+                             for p in parts)
+                fields["ethnicity"] = shares({"Libyan": libyans, "Foreign nationals": others})
+                fields["ethnicity_basis"] = "nationality"
+                fields["ethnicity_year"] = YEAR
+                fields["ethnicity_note"] = (
+                    f"Nationality at the 2006 census: {libyans:,} Libyans and {others:,} "
+                    "residents of other nationalities.")
+                fields["sources"].append({"field": "ethnicity", "name": SOURCE_NATIONALITY,
+                                          "url": uscb.dataset_url(DATASET), "year": YEAR,
+                                          "license": LICENCE})
         for level in drawn:
             # The outline's own label is this area's other name: another
             # source's row on the outline by that label is the same place.
@@ -364,9 +477,27 @@ def main() -> int:
             f"men/1000 women {round(1000 * unit['men'] / unit['women'])}"
             + ("  (left without figures)" if key in UNSURE else "") + "  <- "
             + "; ".join(f"{p['name']} {p['total']:,}" for p in parts))
+    words = dictionary(uscb.sheet_rows(book, "Data Dictionary"))
+    estimates, field = read_estimates(uscb.sheet_rows(book, "Population"))
+    said = words.get(field, ["", "", ""])
+    log(f"  {ESTIMATE_YEAR} estimates ({field}): {said}")
+    publisher = ("US Census Bureau" if "census bureau" in said[2].lower() or not said[2]
+                 else said[2].split(",")[0].strip())
+    source_2020 = (f"{publisher}, population estimate for {ESTIMATE_YEAR} by shabiyah, in the US "
+                   "Census Bureau's subnational tables of Libya for HDX")
+    nationality = read_nationality(uscb.sheet_rows(book, "Households"))
+    log(f"  Libyans and non-Libyans: {words.get('HH_PLBN')} / {words.get('HH_PNLN')}")
+    for key in sorted(estimates):
+        census = table["shabiyat"].get(key) or {"total": 0}
+        log(f"  {key:18} {ESTIMATE_YEAR}: {estimates[key]:>10,}   2006: {census['total']:>10,}")
+    for b in table["baladiyat"]:
+        lib = nationality.get((fold(b["shabiyah"]), fold(b["name"])))
+        if lib and sum(lib) != b["total"]:
+            log(f"  {b['name']}: Libyans and non-Libyans make {sum(lib):,}, the age table "
+                f"{b['total']:,}")
     drawn = {level: json.loads((SITE / level / "LBY.units.json").read_text())
              for level in ("admin1", "admin2")}
-    records = build(table, drawn)
+    records = build(table, drawn, estimates, source_2020, nationality)
     log(f"  {len(table['shabiyat'])} shabiyat making {table['national']['total']:,}; "
         f"{len(records)} records")
     write_json(PROCESSED / OUT, records)

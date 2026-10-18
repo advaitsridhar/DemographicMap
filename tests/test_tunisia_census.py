@@ -95,6 +95,35 @@ class Reading(unittest.TestCase):
         self.assertEqual(by_shape["P2"]["sex_ratio"]["value"], 1000)
         self.assertTrue(any("made since 2014" in line for line in report))
 
+    def test_a_new_delegation_split_between_two_polygons_says_which_part(self):
+        tc.NATIONAL = 2 * 17 * (10 + 20 + 5 + 3)
+        t = tc.read(rows_for([
+            ("11", "Tunis", "تونس", "1151", "Carthage", "قرطاج", "115151", "Sidi bou said", 10),
+            ("11", "Tunis", "تونس", "1152", "La medina", "المدينة", "115251", "Medina", 20),
+            ("11", "Tunis", "تونس", "1172", "Nouvelle", "جديدة", "117251", "Amilcar", 5),
+            ("11", "Tunis", "تونس", "1172", "Nouvelle", "جديدة", "117252", "Souk", 3),
+        ]))
+        admin1 = [{"id": "G1", "name": "Tunis"}]
+        admin2 = [{"id": "P1", "name": "Carthage", "parent": "G1"},
+                  {"id": "P2", "name": "المدينة", "parent": "G1"}]
+        sectors_2014 = {"tunis": {"sidibousaid": "carthage", "amilcar": "carthage",
+                                  "medina": "medina", "souk": "medina"}}
+        saved = dict(tc.DELEGATIONS)
+        tc.DELEGATIONS.clear()
+        try:
+            records, _ = tc.build(t, admin1, admin2, sectors_2014)
+        finally:
+            tc.DELEGATIONS.update(saved)
+        by_shape = {r["shape_id"]: r for r in records if r["level"] == "admin2"}
+        self.assertIn(f"the part of Nouvelle ({2 * 17 * 5:,} people) that had been Carthage's",
+                      by_shape["P1"]["population_note"])
+        self.assertIn(f"the part of Nouvelle ({2 * 17 * 3:,} people) that had been La Medina's",
+                      by_shape["P2"]["population_note"])
+        self.assertIn("Nouvelle was made a delegation since", by_shape["P2"]["population_note"])
+
+    def test_a_name_cut_at_twenty_characters_is_written_whole(self):
+        self.assertEqual(tc.FRENCH["3166"], "Zaouia-Ksiba-Thrayet")
+
     def test_a_new_delegation_that_cannot_be_placed_stops_the_run(self):
         t = self.table()
         admin1 = [{"id": "G1", "name": "Tunis"}]

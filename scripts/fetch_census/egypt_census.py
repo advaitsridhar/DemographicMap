@@ -43,9 +43,11 @@ median age says why there is none.
 **OCHA's table has keying errors** that leave a row's total whole: Beni Suef's
 markaz holds a village of 4,696 men and 43,731 women. The ground test fails on
 such a row and not on the ground, so ``SAME_GROUND`` declares the outlines
-whose row is shown wrong by CAPMAS's own count of 2006, and no ratio of men to
-women is written from 2006 where it is far below every other unit's
-(``LOW``) -- OCHA's sub-district rows that cannot be right are logged.
+whose row is shown wrong by CAPMAS's own count of 2006 (each a sub-district
+row set right by one digit), and no ratio of men to women is written from
+2006 where it is far below every other unit's (``LOW``) or where the unit's
+sub-district rows hold one with three times as many women as men -- OCHA's
+sub-district rows that cannot be right are logged (``keyed_rows``).
 
 **Ratios from few people.** No ratio of men to women is written from fewer
 than ``FEW`` people (the Marina kism's 41 men and 1 woman in 2006); a ratio of
@@ -153,6 +155,18 @@ SAME_GROUND = {
     # count is OCHA's without a block of 135,720 men, not other ground; Cairo's
     # other kisms agree (Sharabiyya and Zawiya al-Hamra to the person).
     ("01", "قسم النزهة"): "OCHA's row holds 135,720 more men than CAPMAS's count of the kism",
+    # The keyed rows the run logs (``keyed_rows``), each set right by one digit,
+    # bring OCHA's count to CAPMAS's own count of 2006 of today's markaz:
+    # Fariskur's al-Ubaydiya, 1,643 men and 31,648 women (with 1,648 women the
+    # markaz holds 200,235; CAPMAS 200,432) -- the 29,803 above; Abu Tisht's
+    # al-Awamir al-Gharbiya, 16,666 men and 1,979 women (with 1,666 men, 359,375;
+    # CAPMAS 359,443); Awlad Saqr's Ibrahim Hassan, 8,685 men and 1,389 women
+    # (with 1,685 men, 175,868; CAPMAS 175,665); Asyut's Dronka, 2,491 men and
+    # 22,740 women (with 22,491 men, 397,063; CAPMAS 399,288, the governorate's
+    # tables 1.7% apart).
+    ("27", "مركز أبو طشت"): "OCHA's sub-district 270318 holds 16,666 men and 1,979 women",
+    ("13", "مركز أولاد صقر"): "OCHA's sub-district 131902 holds 8,685 men and 1,389 women",
+    ("25", "مركز أسيوط"): "OCHA's sub-district 250315 holds 2,491 men and 22,740 women",
 }
 # Two outlines labelled North Coast, both filed under Matrouh: the eastern one
 # continues Burg al-Arab's side (Alexandria's) of the boundary at 29.38°E, the
@@ -716,8 +730,13 @@ def page_url(unit: dict[str, Any]) -> str:
 
 
 def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dict[str, Any],
-                   pyramids: dict[str, list], hdx_url: str, hdx_licence: str) -> dict[str, Any]:
+                   pyramids: dict[str, list], hdx_url: str, hdx_licence: str,
+                   keyed: list[dict[str, Any]] = ()) -> dict[str, Any]:
+    """``keyed``: OCHA's sub-district rows of these units with three times as
+    many women as men or more, which no village of Egypt holds; with one, the
+    2006 table's men and women for the unit are not used."""
     parts = plan["parts"]
+    wrong = "; ".join(f"{k['sub']} with {k['m']:,} men and {k['f']:,} women" for k in keyed)
     fields: dict[str, Any] = {"sources": []}
     what = describe(units)
     pyr = [pyramids.get(c["code"]) for c in parts]
@@ -775,13 +794,21 @@ def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dic
             f"The 2006 census count of {what} as drawn then: {plural(m, 'man', 'men')} and "
             f"{plural(f, 'woman', 'women')}. "
             + later(parts, m + f, "CAPMAS's later figures"))
+        if wrong:
+            fields["population_note"] += (f" The table's rows for its villages include {wrong}, "
+                                          "which cannot both be right, so this count may be out "
+                                          "by thousands.")
         fields["median_age"] = gap(NOT_AVAILABLE, (
             "The 2006 census's tables by kism and markaz give no ages. "
             + later(parts, m + f, "the 2017 census's ages")))
         fields["sources"].append({"field": "population", "name": SOURCE_2006,
                                   "url": hdx_url, "year": 2006, "license": hdx_licence})
     # Men per 1,000 women from 2006, where 2017's cannot be used.
-    if m is not None and f is not None:
+    if m is not None and f is not None and wrong:
+        fields["sex_ratio"] = gap(NOT_AVAILABLE, (
+            f"The 2006 census table's rows for {what} include {wrong}, which cannot both be "
+            "right, so no ratio of men to women is given from it."))
+    elif m is not None and f is not None:
         got = ratio_fields(m, f, 2006, SOURCE_2006, f" in {what} as drawn then")
         fields.update(got)
         if "sex_ratio_note" in got:
@@ -799,8 +826,13 @@ PORT_NOTE = "Egypt's census tables list this port police district with no popula
 def build(cp: dict[str, Any], districts: list[dict[str, Any]],
           provinces: dict[str, dict[str, int]], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]], pages: dict[str, str], hdx_url: str,
-          hdx_licence: str) -> tuple[list[dict[str, Any]], list[str]]:
+          hdx_licence: str, keyed: list[dict[str, Any]] | None = None
+          ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
+    impossible: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    for k in keyed or []:
+        if k["f"] >= 3 * k["m"]:
+            impossible[k["district"]].append(k)
     by_iso = {s.get("iso_3166_2"): s for s in admin1 if s.get("iso_3166_2")}
     by_label = {s["name"]: s for s in admin1}
     gov_shape = {}
@@ -886,7 +918,8 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
                 plan = {**plan, "same": True}
                 report.append(f"  {s['name']!r}: no 2006 count; bound to "
                               f"{plan['parts'][0]['name']} by name")
-        fields = outline_record(s, us, plan, pyramids, hdx_url, hdx_licence)
+        fields = outline_record(s, us, plan, pyramids, hdx_url, hdx_licence,
+                                [k for u in us for c in u["codes"] for k in impossible[c]])
         if not fields.get("population"):
             report.append(f"  {s['name']!r}: nothing to write")
             continue
@@ -1077,6 +1110,7 @@ def main() -> int:
     districts, provinces = read_hdx(book)
     log(f"  2006: {len(districts)} rows, {len(provinces)} governorates, "
         f"{sum(p['t'] for p in provinces.values()):,} people; licence {hdx_licence!r}")
+    keyed: list[dict[str, Any]] = []
     if "Sub-District" in book.sheetnames:
         keyed = keyed_rows([list(r) for r in book["Sub-District"].iter_rows(values_only=True)])
         log(f"  2006 sub-districts with more than twice as many of one sex as the other "
@@ -1098,7 +1132,7 @@ def main() -> int:
     admin2 = json.loads((SITE / "admin2" / "EGY.units.json").read_text())
     # First pass without pages, to know which units' pages are wanted.
     records, report = build(cp, districts, provinces, admin1, admin2, {},
-                            uscb.dataset_url(HDX_DATASET), hdx_licence)
+                            uscb.dataset_url(HDX_DATASET), hdx_licence, keyed)
     wanted = sorted({c for r in records if r["level"] == "admin2"
                      and (r.get("population") or {}).get("year") in (2017, 2023)
                      for c in r["codes"]["capmas"]} | set(cp["govs"]) | CLAIMED)
@@ -1107,7 +1141,7 @@ def main() -> int:
     pages = fetch_pages([c for c in wanted if hrefs.get(c)], hrefs)
     log(f"  {len(pages)} pages read for the 2017 ages")
     records, report = build(cp, districts, provinces, admin1, admin2, pages,
-                            uscb.dataset_url(HDX_DATASET), hdx_licence)
+                            uscb.dataset_url(HDX_DATASET), hdx_licence, keyed)
     for line in report:
         log(line)
     a2 = [r for r in records if r["level"] == "admin2"]

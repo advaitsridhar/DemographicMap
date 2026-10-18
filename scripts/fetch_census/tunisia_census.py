@@ -26,8 +26,10 @@ label). INS counts 279 delegations in 2024 where the map draws the 264 of
 2014: each of the fifteen made since is put back on the polygon of the 2014
 delegation its sectors belonged to, sector by sector, from INS's 2014 table
 of the population by sector (``SECTORS_2014``), and the polygon's figures are
-the two delegations added together, age group by age group, which its note
-says. Everything left over is logged, both sides.
+the delegation and those sectors added together, age group by age group,
+which its note says -- the whole of a new delegation, or the part of it that
+had been the polygon's (El Hichria was made from sectors of both Sidi Bouzid
+Est and Sidi Bouzid Ouest). Everything left over is logged, both sides.
 
 Usage:
     python -m scripts.fetch_census.tunisia_census
@@ -83,6 +85,11 @@ DELEGATIONS: dict[tuple[str, str], str] = {
     ("33", "3353"): "والد شامخ",               # Ouled Chamekh
     ("42", "4253"): "الزهور",                  # Ezzouhour (Kasserine)
 }
+# French names INS's workbook cuts at twenty characters ("Zaouia - ksiba - thr"):
+# INS delegation code -> the name in full.
+FRENCH = {"1356": "Bou Mhel El Bassatine", "1552": "Dar Chaabane El Fehri",
+          "3154": "Sousse Sidi Abdelhamid", "3166": "Zaouia-Ksiba-Thrayet",
+          "3263": "Sayada-Lamta-Bou Hajar"}
 # A pair left over is bound on its closest spelling at this similarity or more.
 SPELLING = 0.82
 # A sector of a new delegation is found in 2014 under another spelling at this.
@@ -420,6 +427,11 @@ def bind_delegations(dels: dict[str, dict[str, Any]], admin2: list[dict[str, Any
     return held
 
 
+def listed(items: list[str]) -> str:
+    """'A', 'A and B', 'A, B and C'."""
+    return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
+
+
 def display(name: str) -> str:
     """INS writes its French names in lower case after the first letter."""
     return " ".join(w if any(c.isupper() for c in w) else w.capitalize()
@@ -453,16 +465,32 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
         raise SystemExit(f"tunisia_census: delegations neither drawn nor placed: "
                          f"{sorted(unplaced)}")
     labels = {s["id"]: s for s in admin2}
+
+    def name_of(code: str) -> str:
+        return FRENCH.get(code) or display(table["delegations"][code]["fr"])
     for sid, codes in sorted(held.items()):
         units = [table["delegations"][c] for c in codes]
         added = [table["sectors"][x] for x in extra.get(sid, [])]
         unit = units[0] if not added else merge(units + added)
-        name = display(units[0]["fr"])
+        name = name_of(codes[0])
         if added:
-            new = sorted({display(table["delegations"][s["del"]]["fr"]) for s in added})
+            # A delegation made since goes whole onto this polygon, or only
+            # the part of it that had been this delegation's.
+            by_new: dict[str, list[dict[str, Any]]] = defaultdict(list)
+            for s in added:
+                by_new[s["del"]].append(s)
+            pieces = []
+            for dcode, secs in sorted(by_new.items()):
+                every = [s for s in table["sectors"].values() if s["del"] == dcode]
+                pieces.append(name_of(dcode) if len(secs) == len(every) else
+                              f"the part of {name_of(dcode)} "
+                              f"({sum(s['M'] + s['F'] for s in secs):,} people) that had been "
+                              f"{name}'s")
+            new = [name_of(d) for d in sorted(by_new)]
             what = (f"the delegation of {name} as drawn in 2014; the 2024 census counts its "
-                    f"ground as {name} and {' and '.join(new)}, made a delegation since, "
-                    f"which are added together here")
+                    f"ground as {listed([name] + pieces)}, added together here; "
+                    f"{listed(new)} {'was' if len(new) == 1 else 'were'} made "
+                    f"{'a delegation' if len(new) == 1 else 'delegations'} since")
         else:
             what = f"the delegation of {name}"
         records.append(unit_record(f"TUN-RGPH2024-{'-'.join(codes)}", labels[sid], "admin2",

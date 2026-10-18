@@ -132,6 +132,60 @@ class Areas(unittest.TestCase):
         self.assertEqual(sabha["name"], "label-sabha")
         self.assertEqual(sabha["sex_ratio"]["unit"], "males_per_1000_females")
 
+    def test_one_baladiyah_left_out_lies_outside_it(self):
+        table, total = self.table()
+        moved = {("banghazi", "tukrah"): "almarj"}
+        with mock.patch.object(lc, "NATIONAL", total), mock.patch.object(lc, "MOVED", moved), \
+                mock.patch.object(lc, "UNSURE", {}):
+            shapes = self.shapes()
+            records = lc.build(table, {"admin1": shapes, "admin2": shapes})
+        benghazi = [r for r in records if r["shape_id"] == lc.SHAPES["banghazi"]][0]
+        self.assertIn("without Tukrah (18), which lies outside it", benghazi["population_note"])
+
+    def test_the_2020_estimate_for_a_shabiyah_drawn_unchanged(self):
+        table, total = self.table()
+        moved = {("banghazi", "tukrah"): "almarj"}
+        estimates = {key: 1000 + i for i, key in enumerate(sorted(lc.SHAPES))}
+        nationality = {(lc.fold(b["shabiyah"]), lc.fold(b["name"])): (b["total"] - 1, 1)
+                       for b in table["baladiyat"]}
+        with mock.patch.object(lc, "NATIONAL", total), mock.patch.object(lc, "MOVED", moved), \
+                mock.patch.object(lc, "UNSURE", {}):
+            shapes = self.shapes()
+            records = lc.build(table, {"admin1": shapes, "admin2": shapes}, estimates,
+                               "US Census Bureau, population estimate for 2020", nationality)
+        by = {r["shape_id"]: r for r in records if r["level"] == "admin1"}
+        sabha = by[lc.SHAPES["sabha"]]
+        self.assertEqual(sabha["population"]["value"], estimates["sabha"])
+        self.assertEqual(sabha["population"]["year"], 2020)
+        self.assertIn("the 2006 census counted", sabha["population_note"])
+        self.assertEqual(sabha["median_age"]["year"], 2006)
+        benghazi = by[lc.SHAPES["banghazi"]]          # without Tukrah: other ground
+        self.assertEqual(benghazi["population"]["year"], 2006)
+        self.assertIn("not of this area", benghazi["population_note"])
+        self.assertEqual(sabha["ethnicity_basis"], "nationality")
+        self.assertEqual([g["group"] for g in sabha["ethnicity"]], ["Libyan", "Foreign nationals"])
+        darnah = by[lc.SHAPES["darnah"]]
+        self.assertIn("the area shown is the shabiyah of Darnah", darnah["population_note"])
+
+    def test_a_recomposed_relabelled_area_is_only_close_to_its_shabiyah(self):
+        table, total = self.table()
+        moved = {("banghazi", "tukrah"): "darnah"}
+        with mock.patch.object(lc, "NATIONAL", total), mock.patch.object(lc, "MOVED", moved), \
+                mock.patch.object(lc, "UNSURE", {}):
+            shapes = self.shapes()
+            records = lc.build(table, {"admin1": shapes, "admin2": shapes})
+        darnah = [r for r in records if r["shape_id"] == lc.SHAPES["darnah"]][0]
+        self.assertIn("is close to the shabiyah of Darnah", darnah["population_note"])
+
+    def test_the_estimates_must_make_the_country(self):
+        names = ["AREA_NAME", "ADM_LEVEL", "POP2020"]
+        aliases = ["Name", "Level", "Total population, 2020 estimate"]
+        rows = [names, aliases, ["LIBYA", 0, 30], ["SABHA", 1, 10], ["GHAT", 1, 20]]
+        self.assertEqual(lc.read_estimates(rows)[0], {"sabha": 10, "ghat": 20})
+        rows[2][2] = 31
+        with self.assertRaises(SystemExit):
+            lc.read_estimates(rows)
+
     def test_a_moved_baladiyah_the_census_does_not_have_stops_the_run(self):
         table, total = self.table()
         with mock.patch.object(lc, "NATIONAL", total), \
