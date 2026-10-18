@@ -9,8 +9,8 @@ Kuntaur says it is "the seat of the Kuntaur Local Government Area", and its
 article on Nianija district that the district's capital is Chamen. This
 reads the article on each unit the map shows no seat for, with
 nigeria_capitals' reader: an LGA's through the title in ``TITLES``, a
-district's through its Wikidata item or ``TITLES``, and writes the seat
-where the article names one, or the reason, citing the revision read.
+district's through its Wikidata item, and writes the seat where the article
+names one, or the reason, citing the revision read.
 
 The five parts Kanifing municipality is drawn as (Bakau, Jeshwang and three
 of Serrekunda) are not census districts -- the census counts the
@@ -23,15 +23,14 @@ Usage:
 from __future__ import annotations
 
 import argparse
-from typing import Any
+from typing import Any, Callable
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
-from .gambia_census import DIRECTORY, KANIFING_PARTS, LICENCE, SPATIAL, SRC_DIR
-from .nigeria_capitals import bind, cite, read_units, unseated
+from .gambia_census import DIRECTORY, KANIFING_PARTS, LICENCE, SPATIAL, SRC_DIR, SRC_SPATIAL
+from .nigeria_capitals import articles, bind, cite, read_units, unseated
 
 OUT = "gambia_capitals.json"
-SRC_SPATIAL = ("Gambia Bureau of Statistics, 2013 Population and Housing Census, Volume 5: "
-               "Spatial Distribution")
+LISTING = "Subdivisions of the Gambia"
 # (LGA, or "GMB" for an LGA itself, polygon) -> the English article on it.
 TITLES: dict[tuple[str, str], str] = {
     ("GMB", "Kuntaur"): "Kuntaur",
@@ -39,17 +38,23 @@ TITLES: dict[tuple[str, str], str] = {
 }
 
 
-def why(p: dict[str, Any], a: dict[str, Any] | None, quiet: bool
-        ) -> tuple[str, list[dict[str, Any]]]:
-    unit = "local government area" if p["level"] == "admin1" else "district"
+def why_for(listing: dict[str, Any] | None
+            ) -> Callable[[dict[str, Any], dict[str, Any] | None, bool],
+                          tuple[str, list[dict[str, Any]]]]:
     census = {"field": "capital", "name": SRC_SPATIAL, "url": SPATIAL, "license": LICENCE,
               "year": 2013}
-    if a is not None:
-        return (f"English Wikipedia's article on {a['title']} names no seat for the {unit}, and "
-                "the 2013 census's report on spatial distribution names none.",
-                [cite(a), census])
-    return (f"English Wikipedia has no article on this {unit}, and the 2013 census's report on "
-            "spatial distribution names no seats.", [census])
+
+    def why(p: dict[str, Any], a: dict[str, Any] | None, quiet: bool
+            ) -> tuple[str, list[dict[str, Any]]]:
+        unit = "local government area" if p["level"] == "admin1" else "district"
+        if a is not None:
+            return (f"English Wikipedia's article on {a['title']} names no seat for the {unit}, "
+                    "and the 2013 census's report on spatial distribution names none.",
+                    [cite(a), census])
+        return (f"The 2013 census's report on spatial distribution names no seat for this {unit}, "
+                "nor does English Wikipedia's list of the Gambia's subdivisions, which gives the "
+                "regions' capitals.", [census] + ([cite(listing)] if listing else []))
+    return why
 
 
 def kanifing_part(p: dict[str, Any]) -> dict[str, Any]:
@@ -67,6 +72,7 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
     ap.parse_args()
+    why = why_for(articles([LISTING]).get(LISTING))
     records: list[dict[str, Any]] = []
     for level in ("admin1", "admin2"):
         polys = unseated("GMB", level)

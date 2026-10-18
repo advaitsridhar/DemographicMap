@@ -67,6 +67,25 @@ CASES = [
      "district.", "Kakata"),
     ("Konobo", "Konobo District", "The administrative seat of the District is [[Ziah Town]].",
      "Ziah Town"),
+    ("Igabi", "Igabi", "'''Igabi''' is a LGA.\n== History ==\nThe current local government's "
+     "capital is Turunku.", "Turunku"),
+    ("Orumba South", "Orumba South", "'''Orumba South''' is a LGA.\n== Towns ==\nUmunze is the "
+     "headquarters of Orumba South.", "Umunze"),
+    ("Kparblee", "Kparblee District", "'''Kparblee District''' is a district.\n== Towns ==\n"
+     "The headquarters of Kparblee Administrative District is Youkorway Old Town which has a "
+     "population of a little over two thousand people.", "Youkorway Old Town"),
+    ("Gbehlay-Geh", "Gbehlageh District", "'''Gbehlageh District''' is a district.\n== "
+     "Geography ==\nGbehlay-Geh District is headquartered in Karnplay City.", "Karnplay City"),
+    ("Sanniquellie Mahn", "Sanniquellie-Mahn District", "'''Sanniquellie-Mahn''' is a district "
+     "of Nimba County. Its capital lies at [[Sanniquellie]].", "Sanniquellie"),
+    ("Nsukka", "Nsukka", "'''Nsukka''' is a town in Enugu State.\n== Government ==\nThe "
+     "headquarters of this Local government is located there at Ugwu Asho!", "Nsukka"),
+    ("Orumba North", "Orumba Nord", "'''Orumba Nord''' est une zone de gouvernement local. "
+     "Créée le , son chef-lieu est la ville d'Ajali (ou Ajalli).", "Ajali"),
+    # "Its capital" in another clause is not the area's: the area named in
+    # "of" decides, and the next match is tried.
+    ("Kaduna North", "Kaduna North", "'''Kaduna North''' is a LGA. It is the capital of "
+     "Kaduna State and its headquarters are in the town of Doka.", "Doka"),
 ]
 
 
@@ -109,15 +128,37 @@ class SeatTest(unittest.TestCase):
                       "text": "Its headquarters are in the town of [[Iragbiji]]."},
                "p2": {"title": "Igabi", "revid": 2, "timestamp": "2026-10-14T08:33:59Z",
                       "text": "'''Igabi''' is a Local Government Area in Kaduna State."}}
-        records, _ = nc.bind("NGA", polys, items, got, nc.nigeria_why)
+        listing = {"title": "Local government areas of Nigeria", "revid": 9,
+                   "timestamp": "2026-09-04T16:54:41Z"}
+        records, _ = nc.bind("NGA", polys, items, got, nc.nigeria_why(listing))
         by = {r["shape_id"]: r for r in records}
         self.assertEqual(by["p1"]["capital"], "Iragbiji")
         self.assertEqual(by["p1"]["sources"][0]["url"],
                          "https://en.wikipedia.org/w/index.php?title=Boripe&oldid=1")
         self.assertIn("article on Igabi names no headquarters", by["p2"]["capital"]["note"])
         self.assertIn("Wikidata names none", by["p2"]["capital"]["note"])
-        self.assertIn("no article on this local government area", by["p3"]["capital"]["note"])
+        self.assertEqual(by["p3"]["capital"]["note"],
+                         "The 2006 census's tables name no headquarters for this local "
+                         "government area, nor does English Wikipedia's list of Nigeria's local "
+                         "government areas.")
+        self.assertIn("oldid=9", by["p3"]["sources"][-1]["url"])
         self.assertTrue(all(r["match_by"] == "shape_id" for r in records))
+
+    def test_the_french_article_where_the_english_names_nothing(self):
+        polys = [{"id": "p1", "name": "Orumba North", "wikidata": "Q1", "level": "admin2",
+                  "parent": "Anambra"}]
+        items = {"Q1": {"sitelinks": {"enwiki": "Orumba North", "frwiki": "Orumba Nord"},
+                        "P36": []}}
+        got = {"p1": {"title": "Orumba North", "revid": 1, "timestamp": "2026-09-30T10:19:46Z",
+                      "text": "'''Orumba North''' is a LGA.",
+                      "fr": {"title": "Orumba Nord", "revid": 2,
+                             "timestamp": "2025-03-03T09:34:14Z",
+                             "text": "'''Orumba Nord''' est une zone de gouvernement local. "
+                                     "Son chef-lieu est la ville d'Ajali (ou Ajalli)."}}}
+        (r,), _ = nc.bind("NGA", polys, items, got, nc.nigeria_why(None))
+        self.assertEqual(r["capital"], "Ajali")
+        self.assertEqual(r["sources"][0]["name"], "French Wikipedia, Orumba Nord")
+        self.assertIn("fr.wikipedia.org", r["sources"][0]["url"])
 
 
 if __name__ == "__main__":

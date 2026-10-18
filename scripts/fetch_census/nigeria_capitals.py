@@ -57,18 +57,20 @@ TITLES: dict[tuple[str, str], str] = {
     ("Osun", "Ilesha East"): "Ilesa East",
     ("Abia", "Obi Nwga"): "Obingwa",
     ("Benue", "Oturkpo"): "Otukpo",
+    ("Kano", "Nassarawa"): "Nasarawa, Kano State",
+    ("Anambra", "Orumba South"): "Orumba South",
 }
 # Polygons not read: the ground is not the article's area.
 NOT_READ = {("Cross River", "Bakassi")}
 
 # Infobox parameters that name a seat, and the labels a seat_type may carry.
-SEAT_PARAMS = ("seat", "headquarters", "hq", "capital", "admin_center")
+SEAT_PARAMS = ("seat", "headquarters", "hq", "capital", "admin_center", "chef-lieu")
 SEAT_LABELS = ("headquarter", "seat", "capital", "admin", "secretariat")
 
 # A place's name: capitalised words, joined by spaces, hyphens or a slash
 # ("Oke-Ila Orangun", "Uromi/Uzea", "Unguwa Uku").
 PLACE = r"(?P<x>[A-Z][\w'’\-]*(?:[ /\-][A-Z][\w'’\-]*){0,3})"
-KEY = r"(?i:headquarters?|secretariat|seat)"
+KEY = r"(?i:headquarters?|secretariat|seat|capital)"
 # In the opening, where "its" is the area.
 OPENING = (
     re.compile(r"\b(?i:its|the)(?: [\w' ]{0,40}?)? (?i:administrative |local government "
@@ -76,8 +78,8 @@ OPENING = (
                r"|lie)(?: (?i:located|situated|sited|based))? (?i:in|at)(?: (?i:the))?"
                r"(?: (?i:ancient |old |historic |state )?(?i:town|city|village|community|suburb"
                r"|locality|area|capital|quarter))?(?: (?i:of))? " + PLACE),
-    re.compile(r"\b(?i:with|has|having) (?:(?i:its) )?(?:[\w ]{0,30} )?" + KEY
-               + r" (?i:in|at)(?: (?i:the) (?i:town|city) (?i:of))? " + PLACE),
+    re.compile(r"\b(?i:with|has|having) (?:(?i:its) )?(?:[\w ]{0,30} )?(?i:headquarters?|seat)"
+               r" (?i:in|at)(?: (?i:the) (?i:town|city) (?i:of))? " + PLACE),
     re.compile(r"\b(?i:headquartered) (?i:in|at) " + PLACE),
     re.compile(r"\b(?i:capital of which is) " + PLACE),
     re.compile(PLACE + r" is the (?i:district )?capital(?=,| and|\.)"),
@@ -85,20 +87,34 @@ OPENING = (
     re.compile(r"\b(?i:its|the) (?i:headquarters) (?i:is|are) (?:(?i:at|on) )?[A-Z][\w ]*"
                r"(?i:street|road|avenue|close|way)[^.]*?, " + PLACE),
 )
-# Anywhere in the article, naming the unit.
+# Anywhere in the article, naming the unit in "of": "The headquarters of
+# Kparblee Administrative District is Youkorway Old Town", "Umunze is the
+# headquarters of Orumba South", "Gbehlay-Geh District is headquartered in
+# Karnplay City", "The current local government's capital is Turunku".
 NAMED = (
-    re.compile(r"\b(?i:the )?(?i:capital|seat|headquarters?|administrative seat) of the "
-               r"(?P<of>(?i:LGA|local government area|local government|district)) "
-               r"(?i:is|are) " + PLACE),
-    re.compile(PLACE + r" is (?:also )?the (?i:administrative )?(?i:headquarters|seat) of "
-               r"(?:the )?(?P<of>[^.]*?(?i:LGA|local government area|local government|district))"),
+    re.compile(r"\b(?i:the )?(?i:capital|seat|headquarters?|administrative seat|secretariat) of "
+               r"(?:the )?(?P<of>[^.,;]{1,60}?) (?i:is|are)(?: (?i:located|situated|based))?"
+               r"(?: (?i:in|at))? " + PLACE),
+    re.compile(PLACE + r" is (?:also )?the (?i:administrative )?(?i:headquarters|seat|capital) of "
+               r"(?:the )?(?P<of>[^.,;]{1,80})"),
+    re.compile(r"(?P<of>[A-Z][\w'’\- ]{2,60}?) (?i:is|was) (?i:headquartered) (?i:in|at) "
+               + PLACE),
+    re.compile(r"\b(?P<of>(?i:local government|LGA|district))(?:'s|’s) (?i:capital|seat"
+               r"|headquarters) (?i:is|are)(?: (?i:at|in))? " + PLACE),
 )
 # The article's own place said to be the seat: "The town is the seat of the
 # Kuntaur Local Government Area", "Idanre ... is a historic town ..., and the
 # headquarters of the Idanre Local Government Area".
-SUBJECT = re.compile(r"\b(?:is|and) (?:also )?the (?i:administrative )?(?i:seat|headquarters) "
-                     r"of (?:the )?(?P<of>[^.]*?(?i:local government area|local government|LGA"
-                     r"|district))")
+SUBJECT = re.compile(r"\b(?:is|and) (?:also )?the (?i:administrative )?(?i:seat|headquarters"
+                     r"|capital) of (?:the )?(?P<of>[^.]*?(?i:local government area|local "
+                     r"government|LGA|district))")
+# A town's article that puts the unit's headquarters "there": Nsukka's "The
+# headquarters of this Local government is located there".
+THERE = re.compile(r"\b(?i:the headquarters of this local government(?: area)?) (?i:is|are)"
+                   r"(?: (?i:located|situated))? (?i:there)\b")
+# French Wikipedia's "son chef-lieu est la ville d'Ajali".
+CHEF_LIEU = re.compile(r"\bchef-lieu (?:est|:) (?:(?:la ville|le village|la localité) d(?:e |'))?"
+                       + PLACE)
 
 
 def fold(s: str) -> str:
@@ -298,24 +314,49 @@ def seats(text: str, title: str, names: list[str]) -> dict[str, str]:
             found["infobox"] = clean(box[key])
             break
     opening, rest = parts(text)
+    own = names + [title_base(title)]
     for pattern in OPENING:
-        m = pattern.search(opening)
-        if m and (not m.groupdict().get("of") or names_unit(m.group("of"), names + [title])):
+        m = first(pattern, opening, lambda m: not m.groupdict().get("of")
+                  or names_unit(m.group("of"), own))
+        if m:
             found["opening"] = clean(m.group("x"))
             break
     for pattern in NAMED:
         for words in (opening, rest):
-            m = pattern.search(words)
-            if m and names_unit(m.group("of"), names + [title_base(title)]):
+            m = first(pattern, words, lambda m: names_unit(m.group("of"), own))
+            if m:
                 found.setdefault("named", clean(m.group("x")))
     for words in (opening, rest):
         for m in SUBJECT.finditer(words):
             stop = words.rfind(". ", 0, m.start())
             subject = words[0 if stop < 0 else stop + 2:m.start()]
             if re.match(rf"(?:The town|It|{re.escape(title_base(title))})\b", subject) and \
-                    names_unit(m.group("of"), names + [title_base(title)]):
+                    names_unit(m.group("of"), own):
                 found.setdefault("subject", title_base(title))
+        m = THERE.search(words)
+        if m and re.match(rf"{re.escape(title_base(title))}\b", opening):
+            found.setdefault("subject", title_base(title))
+    m = CHEF_LIEU.search(opening)
+    if m:
+        found.setdefault("opening", clean(m.group("x")))
     return found
+
+
+def first(pattern: re.Pattern[str], text: str, good: Callable[[re.Match[str]], bool]
+          ) -> re.Match[str] | None:
+    """The first match that ``good`` accepts, trying again from the next
+    character after one it refuses ("the capital of Kaduna State and its
+    headquarters are in the town of Doka" is refused, "its headquarters are in
+    the town of Doka" taken)."""
+    at = 0
+    while at <= len(text):
+        m = pattern.search(text, at)
+        if m is None:
+            return None
+        if good(m):
+            return m
+        at = m.start() + 1
+    return None
 
 
 def same_place(a: str, b: str) -> bool:
@@ -361,14 +402,24 @@ def unseated(iso3: str, level: str = "admin2") -> list[dict[str, Any]]:
 
 def read_units(polys: list[dict[str, Any]], titles: dict[tuple[str, str], str]
                ) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
-    """({qid: item}, {polygon id: article}) for the polygons given."""
-    items = wikidata_items([p["wikidata"] for p in polys])
-    want = {}
+    """({qid: item}, {polygon id: English article}) for the polygons given;
+    each article carries the French one, where the item links one, under
+    "fr"."""
+    items = wikidata_items([p["wikidata"] for p in polys], ("enwiki", "frwiki"))
+    want, want_fr = {}, {}
     for p in polys:
-        want[p["id"]] = titles.get((p["parent"], p["name"])) or items.get(
-            p["wikidata"] or "", {}).get("sitelinks", {}).get("enwiki")
+        links = items.get(p["wikidata"] or "", {}).get("sitelinks", {})
+        want[p["id"]] = titles.get((p["parent"], p["name"])) or links.get("enwiki")
+        want_fr[p["id"]] = links.get("frwiki")
     got = articles([t for t in want.values() if t])
-    return items, {pid: got[t] for pid, t in want.items() if t and t in got}
+    got_fr = articles([t for t in want_fr.values() if t], "fr")
+    out = {}
+    for p in polys:
+        en = got.get(want[p["id"]] or "")
+        fr = got_fr.get(want_fr[p["id"]] or "")
+        if en or fr:
+            out[p["id"]] = dict(en or {}, fr=fr)
+    return items, out
 
 
 def bind(iso3: str, polys: list[dict[str, Any]], items: dict[str, dict[str, Any]],
@@ -378,13 +429,25 @@ def bind(iso3: str, polys: list[dict[str, Any]], items: dict[str, dict[str, Any]
     """One record per polygon: its seat, or ``why`` there is none."""
     records, said = [], []
     for p in polys:
-        a = got.get(p["id"])
+        both = got.get(p["id"]) or {}
+        a = both if both.get("title") else None
+        fr = both.get("fr")
         quiet = not items.get(p["wikidata"] or "", {}).get("P36")
         rid = f"{iso3}-SEAT-{p['id']}"
         where = dict(level=p["level"], parent=iso3, country=iso3, match_by="shape_id",
                      shape_id=p["id"])
+        found = seats(a["text"], a["title"], [p["name"]]) if a else {}
+        if not found and fr:
+            # The French article, where the English one names nothing: Orumba
+            # North's gives its chef-lieu.
+            seat = choose(seats(fr["text"], fr["title"], [p["name"]]))
+            if seat:
+                records.append(record(rid, p["name"], capital=seat,
+                                      sources=[cite(fr, lang="fr")], **where))
+                said.append(f"{p['parent']} / {p['name']}: {seat} (French article "
+                            f"{fr['title']!r} rev {fr['revid']})")
+                continue
         if a is not None:
-            found = seats(a["text"], a["title"], [p["name"]])
             seat = choose(found)
             if seat:
                 records.append(record(rid, p["name"], capital=seat, sources=[cite(a)], **where))
@@ -406,18 +469,32 @@ def bind(iso3: str, polys: list[dict[str, Any]], items: dict[str, dict[str, Any]
     return records, said
 
 
-def nigeria_why(p: dict[str, Any], a: dict[str, Any] | None, quiet: bool
-                ) -> tuple[str, list[dict[str, Any]]]:
+LISTING = "Local government areas of Nigeria"
+
+
+def nigeria_why(listing: dict[str, Any] | None
+                ) -> Callable[[dict[str, Any], dict[str, Any] | None, bool],
+                              tuple[str, list[dict[str, Any]]]]:
+    """The reason an area shows no seat, citing what it rests on: the area's
+    article where it has one, else English Wikipedia's list of the areas
+    (``listing``, the revision read), and the census's tables."""
     census = {"field": "capital", "name": CENSUS, "url": VOL4,
               "license": "National Population Commission publication (reuse with attribution)",
               "year": 2006}
-    also = ", Wikidata names none," if quiet else ""
-    if a is not None:
-        return (f"English Wikipedia's article on {a['title']} names no headquarters for the "
-                f"local government area{also} and the 2006 census's tables name none.",
-                [cite(a), census])
-    return (f"English Wikipedia has no article on this local government area{also} and the "
-            "2006 census's tables name no headquarters.", [census])
+
+    def why(p: dict[str, Any], a: dict[str, Any] | None, quiet: bool
+            ) -> tuple[str, list[dict[str, Any]]]:
+        also = ", Wikidata names none," if quiet and p.get("wikidata") else ""
+        if a is not None:
+            return (f"English Wikipedia's article on {a['title']} names no headquarters for the "
+                    f"local government area{also} and the 2006 census's tables name none.",
+                    [cite(a), census])
+        tail = ("and neither Wikidata nor English Wikipedia's list of Nigeria's local government "
+                "areas names one" if also else
+                "nor does English Wikipedia's list of Nigeria's local government areas")
+        return ("The 2006 census's tables name no headquarters for this local government area, "
+                f"{tail}.", [census] + ([cite(listing)] if listing else []))
+    return why
 
 
 def dump(iso3: str) -> None:
@@ -469,7 +546,8 @@ def main() -> int:
         return 0
     polys = [p for p in unseated("NGA") if (p["parent"], p["name"]) not in NOT_READ]
     items, got = read_units(polys, TITLES)
-    records, said = bind("NGA", polys, items, got, nigeria_why)
+    listing = articles([LISTING]).get(LISTING)
+    records, said = bind("NGA", polys, items, got, nigeria_why(listing))
     for line in said:
         log(f"  {line}")
     seated = sum(1 for r in records if isinstance(r["capital"], str))
