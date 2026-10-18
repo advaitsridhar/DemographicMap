@@ -354,7 +354,11 @@ def fields(res: tuple[int, int, int] | None, age: tuple[int, list] | None,
 
 
 def build(national: list[str], reports: dict[str, list[str]],
-          seat_of: dict[int, str] | None = None) -> tuple[list[dict], list[str]]:
+          seat_of: dict[int, str] | None = None,
+          labels: dict[str, str] | None = None) -> tuple[list[dict], list[str]]:
+    """Records for the districts and provinces; ``labels`` gives each polygon's
+    own name, which the records keep (the census's spelling is in the notes)."""
+    labels = labels or {}
     report: list[str] = []
     res: dict[str, tuple[int, int, int]] = {}
     data: dict[str, dict[str, Any]] = {}
@@ -421,7 +425,8 @@ def build(national: list[str], reports: dict[str, list[str]],
             extra["capital"] = seat
             cite = cite + [{"field": "capital", "name": f"English Wikipedia, {WIKI_TITLE}",
                             "url": WIKI_URL, "license": "CC BY-SA 4.0"}]
-        records.append(record(f"STP-RGPH2012-{sid}", name, level="admin2", parent="STP",
+        records.append(record(f"STP-RGPH2012-{sid}", labels.get(sid, name), level="admin2",
+                              parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
                               sources=cite, **fields(res[name], d.get("age"), d.get("religion"),
                                                       where, d.get("language")), **extra))
@@ -451,7 +456,8 @@ def build(national: list[str], reports: dict[str, list[str]],
                  "name": SOURCE + f", Resultado Distrital ({m}), Quadros 2, 5, 6 and 10",
                  "url": BASE + DISTRICTS[m][0], "year": YEAR, "license": LICENCE}
                 for m in members]
-        records.append(record(f"STP-RGPH2012-{sid}", province, level="admin1", parent="STP",
+        records.append(record(f"STP-RGPH2012-{sid}", labels.get(sid, province), level="admin1",
+                              parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
                               sources=cite,
                               **fields((total, men, women), agegroups, rel, where, lang)))
@@ -464,8 +470,13 @@ def main() -> int:
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
     parser.parse_args()
-    drawn = {u["id"] for level in ("admin1", "admin2")
-             for u in json.loads((SITE / level / "STP.units.json").read_text())}
+    # Each polygon's own label (the boundary file's, kept as shape_name where a
+    # build has renamed it): a record bound to a shape gives it the record's
+    # name, and the census's spellings (Mé-Zóchi, Lembá, Príncipe for Pagué)
+    # would rename the polygons the map's other tables name.
+    labels = {u["id"]: u.get("shape_name") or u["name"] for level in ("admin1", "admin2")
+              for u in json.loads((SITE / level / "STP.units.json").read_text())}
+    drawn = set(labels)
     wanted = {sid for _f, sid in DISTRICTS.values()} | {sid for sid, _m in PROVINCES.values()}
     if wanted - drawn:
         raise SystemExit(f"sao_tome_census: polygons no longer drawn: {sorted(wanted - drawn)}")
@@ -489,7 +500,7 @@ def main() -> int:
     wikitext, landed = wiki_fetch(WIKI_TITLE, "en")
     seat_of = seats(wikitext)
     log(f"  {landed}: {len(seat_of)} districts with a seat")
-    records, report = build(national, reports, seat_of)
+    records, report = build(national, reports, seat_of, labels)
     for line in report:
         log(line)
     nat = {}

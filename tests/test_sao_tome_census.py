@@ -107,6 +107,19 @@ class Build(unittest.TestCase):
         self.assertEqual(by_name[("admin2", "Água Grande")]["median_age"]["value"], 20.1)
         self.assertTrue(all(r["match_by"] == "shape_id" for r in records))
 
+    def test_records_keep_the_polygons_own_names(self):
+        table = st.residents([QUADRO_2])
+        reports = {name: synthetic(name, table[name][3]) for name in st.DISTRICTS}
+        reports["Água Grande"] = AGUA_GRANDE
+        national = [QUADRO_2, "Quadro 1: População\nPopulação Residente (RP+RA) 179.200 89.187 90.013"]
+        labels = {st.DISTRICTS["Mé-Zóchi"][1]: "Mé-zóxi",
+                  st.PROVINCES["São Tomé"][0]: "São Tomé Province"}
+        records, _ = st.build(national, reports, None, labels)
+        names = {r["name"] for r in records}
+        self.assertIn("Mé-zóxi", names)
+        self.assertIn("São Tomé Province", names)
+        self.assertNotIn("Mé-Zóchi", names)
+
     def test_districts_must_make_the_country(self):
         table = st.residents([QUADRO_2])
         reports = {name: synthetic(name, table[name][3]) for name in st.DISTRICTS}
