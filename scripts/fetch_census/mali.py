@@ -391,11 +391,12 @@ def best(page_tables: list[list[list[str]]], groups: dict[str, str]
 
 def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[dict[str, Any]]:
     per_shape = {field: summed(rows) for field, rows in fields.items()}
-    src = [{"field": "religion/ethnicity/language", "name": SOURCE, "url": URL,
-            "license": LICENCE}]
     records: list[dict[str, Any]] = []
     from common import slugify
     for shape in sorted(set(REGIONS.values())):
+        # A shape whose shares give way to a reason cites the report for the reason.
+        cited = "/".join(f"{field} note" if shape in LARGER else field for field in per_shape)
+        src = [{"field": cited, "name": SOURCE, "url": URL, "license": LICENCE}]
         values: dict[str, Any] = {}
         for field in per_shape:
             if shape in LARGER:

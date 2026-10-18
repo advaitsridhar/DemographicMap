@@ -280,6 +280,10 @@ class TwentyRegionsSumIntoNineShapes(unittest.TestCase):
             self.assertEqual(by["Bamako"][field]["status"], "not_available")
             self.assertIn("redrawn in 2023", by["Bamako"][field]["note"])
             self.assertNotIn(f"{field}_note", by["Bamako"])
+        # The report is cited for the reason, not for shares the shape does not show.
+        self.assertEqual([s["field"] for s in by["Bamako"]["sources"]],
+                         ["religion note/ethnicity note/language note"])
+        self.assertEqual([s["field"] for s in kayes["sources"]], ["religion/ethnicity/language"])
 
 
 if __name__ == "__main__":

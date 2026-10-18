@@ -144,8 +144,10 @@ def redrawn(table: dict[str, Any], shape: dict[str, Any]) -> dict[str, Any]:
               for f in ("population", "sex_ratio")}
     return record(f"SEN-RGPH5-{key(shape['name'])}", shape["name"], level="admin2", parent="SEN",
                   country="SEN", match_by="shape_id", shape_id=shape["id"],
-                  sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
-                            "page": PAGE, "license": LICENCE, "year": YEAR}], **stated)
+                  # The census is cited for the reason, which quotes its counts.
+                  sources=[{"field": "population note/sex_ratio note", "name": SOURCE,
+                            "url": URL, "page": PAGE, "license": LICENCE, "year": YEAR}],
+                  **stated)
 
 
 def build(table: dict[str, Any], admin1: list[dict[str, Any]],
@@ -191,8 +193,10 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
+    ap.parse_args()
     import openpyxl                                 # noqa: PLC0415
     blob = http_get(URL, binary=True, cache=False, timeout=120, aia=True)
     if blob[:2] != b"PK":
