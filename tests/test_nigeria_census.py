@@ -325,29 +325,56 @@ class NameTest(unittest.TestCase):
 
 
 class StateTest(unittest.TestCase):
-    """A state carries the census's sex ratio and median age, not its count."""
+    """A state carries the census's count, sex ratio and median age; Cross
+    River's are its table less Bakassi's."""
 
-    TABLE = {"total": (400, 210, 190),
+    TABLE = {"name": "LAGOS", "total": (400, 210, 190),
              "groups": [(0, 4, 160, 85, 75), (5, 9, 120, 62, 58), (10, 14, 80, 42, 38),
                         (15, 19, 40, 21, 19)] + [(a, a + 4, 0, 0, 0) for a in range(20, 85, 5)]
              + [(85, None, 0, 0, 0)]}
+    BAKASSI = {"name": "BAKASSI", "total": (40, 24, 16),
+               "groups": [(0, 4, 20, 12, 8), (5, 9, 10, 6, 4), (10, 14, 10, 6, 4)]
+               + [(a, a + 4, 0, 0, 0) for a in range(15, 85, 5)] + [(85, None, 0, 0, 0)]}
 
-    def test_no_count_and_the_figures_kept(self):
-        f = n.state_fields(self.TABLE, None, "")
-        self.assertNotIn("population", f)
-        self.assertNotIn("population_note", f)
+    def test_the_count_and_the_figures(self):
+        f = n.state_fields(self.TABLE, None, "lagos", 0, None, {})
+        self.assertEqual(f["population"]["value"], 400)
+        self.assertEqual(f["population"]["year"], 2006)
+        self.assertEqual(f["population_note"], "The 2006 census's count for Lagos State.")
         self.assertEqual(f["sex_ratio"]["value"], 110.5)
         self.assertEqual(f["median_age"]["value"], 6.7)
-        self.assertEqual(f["sources"][0]["field"], "sex_ratio/median_age")
+        self.assertEqual(f["sources"][0]["field"], "population/sex_ratio/median_age")
         self.assertNotIn("sex_ratio_note", f)
+        fct = n.state_fields(dict(self.TABLE, name="FCT ABUJA"), None,
+                             "abujafederalcapitalterritory", 0, None, {})
+        self.assertEqual(fct["population_note"],
+                         "The 2006 census's count for the Federal Capital Territory.")
 
-    def test_what_the_count_includes_rides_on_the_figures(self):
-        extra = " " + n.UNPLACED_NOTE.format(n=19_964)
-        f = n.state_fields(self.TABLE, None, extra)
-        self.assertIn("19,964 people", f["sex_ratio_note"])
+    def test_what_the_count_includes_rides_on_every_figure(self):
+        f = n.state_fields(dict(self.TABLE, name="TARABA"), None, "taraba", 19_964, None, {})
+        for note in ("population_note", "sex_ratio_note"):
+            self.assertIn("19,964 people", f[note])
         self.assertTrue(f["median_age_note"].startswith(n.MEDIAN_NOTE))
-        cross = n.state_fields(self.TABLE, None, " " + n.CROSS_RIVER.format(n=31_641))
-        self.assertIn("The count includes Bakassi", cross["sex_ratio_note"])
+        self.assertIn("19,964 people", f["median_age_note"])
+
+    def test_cross_river_less_bakassi(self):
+        table = dict(self.TABLE, name="CROSS RIVER")
+        f = n.state_fields(table, None, "crossriver", 0, self.BAKASSI, {})
+        self.assertEqual(f["population"]["value"], 360)
+        self.assertEqual(f["sex_ratio"]["value"], round(100 * 186 / 174, 1))
+        self.assertIn("less Bakassi local government area, whose 40 people",
+                      f["population_note"])
+        self.assertIn("24 men and 16 women", f["sex_ratio_note"])
+        self.assertIn("less Bakassi", f["median_age_note"])
+        # The groups are subtracted one by one: the median moves.
+        self.assertEqual(f["median_age"]["value"], n.median(n.without(table, self.BAKASSI)
+                                                           ["groups"]))
+        self.assertNotEqual(f["median_age"]["value"], 6.7)
+
+    def test_bakassi_that_does_not_add_up_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            n.state_fields(dict(self.TABLE, name="CROSS RIVER"), None, "crossriver", 0,
+                           self.BAKASSI, {id(self.BAKASSI): ["men and women do not add up"]})
 
 
 if __name__ == "__main__":

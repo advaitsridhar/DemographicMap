@@ -11,15 +11,18 @@ same areas' men, women and persons beside their senatorial district and land
 area. The IHSN survey catalogue keeps both volumes (catalogue entry 3340, the
 census's NGA_2006_PHC_v01_M); the Commission's own site no longer serves them.
 
-Written for each local government area the map draws: population, sex ratio
-(males per 100 females) and the median age, interpolated within the
-five-year group that holds the middle person. For each state: the sex ratio
-and the median age (see state_fields for why not the count).
+Written for each local government area the map draws and for each state:
+population, sex ratio (males per 100 females) and the median age,
+interpolated within the five-year group that holds the middle person.
 
 **What the figures are worth here.** The count is twenty years old. OCHA's
 COD-PS table carries the Commission's own projection of every area to 2020,
 from this census, and a population figure from here only fills where nothing
-newer is shown. The sex ratio and the median age are the census's own
+newer is shown. A state's count is the one its newer figures (its areas'
+2020 projections added up, a 2016 projection) are weighed against: they take
+its place where the years between could make the one the other, and a state
+whose newer figures change faster than a population does keeps its count and
+says what they come to. The sex ratio and the median age are the census's own
 measurement and stand in front of the projection's: a projection carries the
 census's structure forward, it does not measure it again.
 
@@ -47,8 +50,11 @@ offered to the boundary file; every disagreement is logged.
 **Bakassi.** The 2006 census counted Bakassi local government area while it
 still held the Bakassi peninsula, which passed to Cameroon in 2008. The
 polygon drawn under that name is the 256 km2 left on the Nigerian side, so the
-area's figures are not written on it, and Cross River's note says that its
-2006 count includes the peninsula's people.
+area's figures are not written on it. Cross River's count, sex ratio and
+median age are the state's table less Bakassi's, group by group: the
+peninsula's people are not counted across the border, and the people of the
+part left on the Nigerian side, whom the census does not count apart, are
+left out with them, as the notes say.
 
 **Checks before anything is written.** Every table: men and women make the
 total, in the total and in every age group, and the age groups make the
@@ -149,9 +155,19 @@ UNPLACED_NOTE = ("The count includes {n:,} people whom the census counts in area
 BAKASSI = ("The 2006 census counted Bakassi local government area while it held the Bakassi "
            "peninsula, which passed to Cameroon in 2008; this polygon is the part left on the "
            "Nigerian side, around Ikang, and no figure is published for it alone.")
-CROSS_RIVER = ("This count includes Bakassi local government area as it stood in 2006, with "
-               "the Bakassi peninsula that passed to Cameroon in 2008 ({n:,} people in the "
-               "whole area).")
+# Cross River less Bakassi: what each of the state's three figures leaves out.
+CROSS_RIVER_COUNT = (
+    "The 2006 census's count for Cross River State less Bakassi local government area, whose "
+    "{n:,} people the census counted with the Bakassi peninsula, which passed to Cameroon in "
+    "2008. The people of the part of Bakassi left on the Nigerian side, for which the census "
+    "publishes no figure of its own, are left out with them.")
+CROSS_RIVER_SEXES = (
+    "From the 2006 census's count of the state's men and women less Bakassi local government "
+    "area's {m:,} men and {f:,} women, counted with the peninsula that passed to Cameroon in "
+    "2008.")
+CROSS_RIVER_AGES = (
+    " The state's people by age are counted less Bakassi local government area's, counted "
+    "with the peninsula that passed to Cameroon in 2008.")
 MEDIAN_NOTE = ("Interpolated within the five-year age group that holds the middle person, "
                "from the 2006 census's count by age.")
 
@@ -643,47 +659,85 @@ def build(book: dict[str, Any], bad: dict[int, list[str]], admin1: list[dict[str
             f"NGA-NPC2006-{state_key(s['table']['name'])}-{key(a.get('vol3') or a['name'])}",
             shape["name"], level="admin2", parent="NGA", country="NGA", match_by="shape_id",
             shape_id=shape["id"], **fields(a, bad.get(id(a)), area_note(a, shape["name"]))))
-    # The polygon drawn as Bakassi: the census area of that name is not its ground.
+    # The polygon drawn as Bakassi: the census area of that name is not its
+    # ground. The reason rests on the volume's table for the area, cited.
     for shape in not_drawn:
         records.append(record(
             f"NGA-NPC2006-notdrawn-{key(shape['name'])}", shape["name"], level="admin2",
             parent="NGA", country="NGA", match_by="shape_id", shape_id=shape["id"],
-            median_age=gap(NOT_AVAILABLE, BAKASSI), sex_ratio=gap(NOT_AVAILABLE, BAKASSI)))
+            median_age=gap(NOT_AVAILABLE, BAKASSI), sex_ratio=gap(NOT_AVAILABLE, BAKASSI),
+            sources=[{"field": "median_age/sex_ratio", "name": SOURCE, "url": VOL4,
+                      "license": LICENCE, "year": YEAR}]))
     bakassi = next((a for s in book["states"] for a in s["areas"]
                     if (state_key(s["table"]["name"]), key(a["name"])) in NOT_DRAWN), None)
     for shape in admin1:
         t = by_polygon[shape["id"]]["table"]
         sk = state_key(t["name"])
-        extra = ""
-        if sk == "crossriver" and bakassi is not None:
-            extra = " " + CROSS_RIVER.format(n=bakassi["total"][0])
         unplaced = sum(a["total"][0] for a in by_polygon[shape["id"]]["areas"]
                        if a.get("unplaced"))
-        if unplaced:
-            extra += " " + UNPLACED_NOTE.format(n=unplaced)
         records.append(record(
             f"NGA-NPC2006-state-{sk}", shape["name"], level="admin1", parent="NGA",
             country="NGA", match_by="shape_id", shape_id=shape["id"],
-            **state_fields(t, bad.get(id(t)), extra)))
+            **state_fields(t, bad.get(id(t)), sk, unplaced,
+                           bakassi if sk == "crossriver" else None, bad)))
     return records
 
 
-def state_fields(t: dict[str, Any], wrong: list[str] | None, extra: str) -> dict[str, Any]:
-    """A state's sex ratio and median age, and not its 2006 count: every state
-    has a newer one (its areas' 2020 projections added up, or a 2016
-    projection), and the 2006 count in front of them held the newer figures
-    off where they grew faster than one population's growth is taken to run
-    (the Federal Capital Territory's, 1,406,239 to 4,834,747)."""
-    out = fields(t, wrong, "")
-    out.pop("population", None)
-    out.pop("population_note", None)
-    for src in out["sources"]:
-        src["field"] = "sex_ratio/median_age"
-    extra = extra.replace("This count", "The count")
-    if extra and "value" in out["sex_ratio"]:
-        out["sex_ratio_note"] = "From the 2006 census's count of the state's men and women." + extra
-    if extra and "value" in out["median_age"]:
-        out["median_age_note"] = MEDIAN_NOTE + extra
+def without(t: dict[str, Any], part: dict[str, Any]) -> dict[str, Any]:
+    """A state's table less one of its areas', group by group."""
+    if len(t["groups"]) != len(GROUPS) or len(part["groups"]) != len(GROUPS):
+        raise SystemExit(f"nigeria_census: {t['name']} less {part['name']}: a table without "
+                         "its eighteen age groups")
+    total = tuple(a - b for a, b in zip(t["total"], part["total"]))
+    groups = [(lo, hi, a - b, am - bm, af - bf)
+              for (lo, hi, a, am, af), (_, _, b, bm, bf) in zip(t["groups"], part["groups"])]
+    if min(total) < 0 or any(min(g[2:]) < 0 for g in groups):
+        raise SystemExit(f"nigeria_census: {t['name']} less {part['name']} leaves a negative "
+                         "count")
+    return {**t, "total": total, "groups": groups}
+
+
+def state_name(t: dict[str, Any], sk: str) -> str:
+    bare = re.sub(r"(?i)\s+state$", "", t["name"])
+    return ("the Federal Capital Territory" if sk == "abujafederalcapitalterritory"
+            else f"{title(bare)} State")
+
+
+def state_fields(t: dict[str, Any], wrong: list[str] | None, sk: str, unplaced: int,
+                 bakassi: dict[str, Any] | None, bad: dict[int, list[str]]) -> dict[str, Any]:
+    """A state's count, sex ratio and median age from its table.
+
+    Every state has a newer population (its areas' 2020 projections added up,
+    or a 2016 projection), and the build weighs those against this count:
+    where the years between could make the one the other the newer figure is
+    shown, and where they could not -- the Federal Capital Territory's areas
+    add up to 4,834,747 for 2020 against 1,406,239 counted in 2006, 9.2% a
+    year -- the count stays and the state's note says what its areas add up
+    to. Cross River's table is taken less Bakassi's (see the module's
+    docstring); Taraba's includes the people counted in disputed areas, and
+    each of its figures says so."""
+    if bakassi is not None:
+        if bad.get(id(bakassi)) or bakassi.get("from_vol3") or wrong:
+            raise SystemExit("nigeria_census: Cross River's or Bakassi's table does not add "
+                             "up, so the state cannot be taken less Bakassi")
+        t = without(t, bakassi)
+        wrong = problems(t) or None
+    out = fields(t, wrong, f"The 2006 census's count for {state_name(t, sk)}.")
+    if bakassi is not None:
+        _, m, f = bakassi["total"]
+        out["population_note"] = CROSS_RIVER_COUNT.format(n=bakassi["total"][0])
+        if "value" in out["sex_ratio"]:
+            out["sex_ratio_note"] = CROSS_RIVER_SEXES.format(m=m, f=f)
+        if "value" in out["median_age"]:
+            out["median_age_note"] = MEDIAN_NOTE + CROSS_RIVER_AGES
+    if unplaced:
+        extra = " " + UNPLACED_NOTE.format(n=unplaced)
+        out["population_note"] += extra
+        if "value" in out["sex_ratio"]:
+            out["sex_ratio_note"] = ("From the 2006 census's count of the state's men and "
+                                     "women." + extra)
+        if "value" in out["median_age"]:
+            out["median_age_note"] = MEDIAN_NOTE + extra
     return out
 
 
