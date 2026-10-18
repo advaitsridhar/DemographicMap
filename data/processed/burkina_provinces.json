@@ -1838,9 +1838,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 78.4
+      },
+      {
+        "group": "Catholic",
+        "pct": 19.4
+      },
+      {
+        "group": "Animist",
+        "pct": 1.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.0
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -1879,6 +1898,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
@@ -1890,6 +1916,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B14953893434288",
     "sex_ratio_note": "The 2019 census's count of the province: 230,860 men and 245,194 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -1916,9 +1944,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 60.8
+      },
+      {
+        "group": "Animist",
+        "pct": 24.3
+      },
+      {
+        "group": "Catholic",
+        "pct": 11.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.3
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -1969,6 +2016,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
@@ -1980,6 +2034,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B10845212636131",
     "sex_ratio_note": "The 2019 census's count of the province: 244,053 men and 269,743 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2006,9 +2062,32 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 66.6
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.9
+      },
+      {
+        "group": "Animist",
+        "pct": 12.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.9
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -2047,6 +2126,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
@@ -2058,6 +2144,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B54692073140068",
     "sex_ratio_note": "The 2019 census's count of the province: 412,501 men and 472,318 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2167,10 +2255,32 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Centre-Ouest region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 45.4
+      },
+      {
+        "group": "Islam",
+        "pct": 38.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 8.9
+      },
+      {
+        "group": "Animist",
+        "pct": 7.1
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -2209,6 +2319,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
@@ -2220,6 +2337,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B25202403935187",
     "sex_ratio_note": "The 2019 census's count of the province: 309,020 men and 380,689 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2246,10 +2365,32 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Centre-Ouest region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 48.9
+      },
+      {
+        "group": "Islam",
+        "pct": 24.9
+      },
+      {
+        "group": "Animist",
+        "pct": 12.7
+      },
+      {
+        "group": "Protestant",
+        "pct": 11.0
+      },
+      {
+        "group": "No religion",
+        "pct": 2.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4
+      }
+    ],
     "language": [
       {
         "group": "Gurunsi",
@@ -2284,6 +2425,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
@@ -2295,6 +2443,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B51289395143870",
     "sex_ratio_note": "The 2019 census's count of the province: 180,492 men and 211,125 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2321,10 +2471,32 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Centre-Ouest region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 68.2
+      },
+      {
+        "group": "Catholic",
+        "pct": 14.7
+      },
+      {
+        "group": "Animist",
+        "pct": 9.6
+      },
+      {
+        "group": "Protestant",
+        "pct": 6.7
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -2363,6 +2535,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
@@ -2374,6 +2553,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B75900195473972",
     "sex_ratio_note": "The 2019 census's count of the province: 163,452 men and 173,626 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2400,10 +2581,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Centre-Ouest region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 70.0
+      },
+      {
+        "group": "Catholic",
+        "pct": 16.3
+      },
+      {
+        "group": "Animist",
+        "pct": 7.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 6.1
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -2442,6 +2641,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
@@ -2453,6 +2659,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B63771125198412",
     "sex_ratio_note": "The 2019 census's count of the province: 115,623 men and 126,108 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2546,9 +2754,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 53.2
+      },
+      {
+        "group": "Catholic",
+        "pct": 37.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.4
+      },
+      {
+        "group": "Animist",
+        "pct": 3.4
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -2583,6 +2810,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
@@ -2594,6 +2828,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B75312427459337",
     "sex_ratio_note": "The 2019 census's count of the province: 131,925 men and 148,945 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2620,9 +2856,32 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 33.4
+      },
+      {
+        "group": "Animist",
+        "pct": 24.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 23.1
+      },
+      {
+        "group": "Catholic",
+        "pct": 17.8
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6
+      }
+    ],
     "language": [
       {
         "group": "Kassena",
@@ -2677,6 +2936,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
@@ -2688,6 +2954,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B90465948144495",
     "sex_ratio_note": "The 2019 census's count of the province: 95,844 men and 99,972 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -2714,9 +2982,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 68.1
+      },
+      {
+        "group": "Catholic",
+        "pct": 27.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.1
+      },
+      {
+        "group": "Animist",
+        "pct": 0.9
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -2763,6 +3050,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
@@ -2774,6 +3068,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B75605811528327",
     "sex_ratio_note": "The 2019 census's count of the province: 146,469 men and 165,576 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -4017,10 +4313,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Nord region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 97.8
+      },
+      {
+        "group": "Catholic",
+        "pct": 1.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.5
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -4063,6 +4377,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
@@ -4074,6 +4395,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B11896750408185",
     "sex_ratio_note": "The 2019 census's count of the province: 96,647 men and 101,545 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -4100,10 +4423,32 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Nord region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 49.4
+      },
+      {
+        "group": "Catholic",
+        "pct": 22.5
+      },
+      {
+        "group": "Animist",
+        "pct": 20.1
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.7
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -4142,6 +4487,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
@@ -4153,6 +4505,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B82563699600395",
     "sex_ratio_note": "The 2019 census's count of the province: 212,580 men and 245,350 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -4179,10 +4533,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Nord region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 96.5
+      },
+      {
+        "group": "Catholic",
+        "pct": 2.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.6
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -4225,6 +4597,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
@@ -4236,6 +4615,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B65280418727437",
     "sex_ratio_note": "The 2019 census's count of the province: 401,110 men and 424,865 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
@@ -4262,10 +4643,28 @@
       "year": 2019,
       "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.3, population by province and sex)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2019 census's monograph of the Nord region charts religion by province (Graphique 3.2) without printing the figures, and tabulates it for the region only (Tableau 3.1)."
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 88.5
+      },
+      {
+        "group": "Catholic",
+        "pct": 7.7
+      },
+      {
+        "group": "Animist",
+        "pct": 2.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.3
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3
+      }
+    ],
     "language": [
       {
         "group": "Mooré",
@@ -4308,6 +4707,13 @@
         "year": 2019
       },
       {
+        "field": "religion",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Graphique 3.2, the religions of each province)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 3.3, principal languages spoken by sex and province)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
@@ -4319,6 +4725,8 @@
     "match_by": "shape_id",
     "shape_id": "67063806B77925181323544",
     "sex_ratio_note": "The 2019 census's count of the province: 112,405 men and 127,613 women.",
+    "religion_year": 2019,
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
   },
