@@ -1,34 +1,127 @@
-probe_pdf: https://civlii.laws.africa/en/akn/ci/act/decree/2011/263/fra@2024-12-05/source
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
+probe_pdf: https://www.gouv.ci/uploads/publications/ccm%2028-09-11_vf.pdf
+  110,405 bytes
+  14 pages
+probe_pdf: 14 pages, 0 mention ['Lagunes', 'Dabou', 'chef-lieu']
+=== front matter ===
+1 
+ 
+  
+République de Côte d’Ivoire  
+Union - Discipline – Travail  
+ 
+COMMUNIQUE  DU CONSEIL DES MINISTRES   
+du Mercredi 28 /09/2011  
+Ce Mercredi 28 Septembre 2011, un Conseil des Ministres s’est 
+tenu de 10h à 12h30 à la Fondation Félix Houphouët- Boigny 
+pour la Recherche de la Paix à Yamoussoukro, sous l a 
+présidence de Son Excellence Monsieur Alassane OUAT TARA, 
+Président de la République, Chef d’État. 
+L’ordre du jour de cette réunion portait sur les po ints principaux 
+suivants : 
+ 
+I/- Ordonnances et Décrets  
+ 
+II/- Mesures individuelles 
+ 
+III/- Présentation de Communications 
+  
+I/ Ordonnances et Décrets    
+1-  Au titre du Ministre d’Etat, Garde des sceaux, Ministre 
+de la Justice  
+le Conseil a adopté deux  ordonnances :  
+- La 1 ère  est  relative à l’enregistrement des naissances et  
+des décès survenus durant la crise  post- électoral e, entre 
+le 30 novembre 2010 et le 31 juillet 2011.  
+L’établissement des actes de l’état civil, notammen t les actes 
+de naissances et de décès a été fortement perturbé et dans 
+
+2 
+ 
+certains cas paralysé, en raison de la fermeture de s centres 
+d’état civil dus aux actes de violence qui ont émai llé cette 
+période.  La présente ordonnance a pour but de remé dier à 
+cette situation en autorisant les enregistrements d e naissances 
+et de décès survenus entre le 30 novembre 2010 et l e 31 juillet 
+2011.  
+ 
+- La 2 nde  ordonnance  porte suspension des délais de 
+procédure en raison de la crise socio-politique 
+survenue en Côte d’Ivoire  
+ 
+La crise socio-politique survenue en Côte d’Ivoire,  dans la 
+période allant de janvier à mars 2011, ayant pertur bé le 
+fonctionnement normal du service public de la justi ce, les délais 
+de procédures fixés par les textes en vigueur , pou r cette 
+période , notamment aux fins de saisine , de prescr iption , de 
+péremption d’instance , d’exercice de voies de reco urs et 
+d’exécution des décisions , dans toutes les procédu res 
+judiciaires , contentieuses ou non , sont suspendues .  
+Avec la présente ordonnance, les actes de procédure  qui 
+devraient normalement intervenir pendant cette péri ode 
+peuvent à nouveau être introduits, sans forclusion,  et les délais 
+administratifs recommencer à courir, à compter du 1 er  octobre 
+2011.  
+ 
+ 
+2- Au titre du Ministre d’Etat, Ministre de l’intérieur  
+le conseil a adopté deux  ordonnances et deux Décrets:  
+ 
+1- Une ordonnance d’orientation sur l’organisation 
+générale de l’administration ivoirienne. 
+3 
+ 
+La loi n° 2001- 476 du 09 aout 2001 d’orientation s ur 
+l’organisation générale de l’administration territo riale a fixé le 
+cadre d’organisation et de gestion des entités admi nistratives 
+territoriales. Aux termes de ces dispositions, les circonscriptions 
+administratives déconcentrées sont organisées autou r de la 
+région, du département, de la sous- préfecture et d u village. 
+Quant aux entités décentralisées, elles sont struct urées à 
+travers 5 types de collectivités que sont la région , le district, le 
+département, la ville et la commune.  
+ 
+L’ordonnance prise ce jour propose 3 points de modi fication 
+substantiels qui concernent :  
+- la suppression du département en tant qu’entité 
+décentralisée et donc la suppression des Conseils 
+Généraux, 
+-  la suppression du district en tant qu’entité décentralisée ;  
+-  la suppression de la ville en tant qu’entité décentralisée  
+- la fixation d’un nouveau type d’entité territoria le 
+déconcentrée dénommée le district, constituée d’un 
+regroupement de régions.  
+Les mesures prises sont fondées sur la nécessité de  réduire le 
+nombre de collectivités qui sont apparues comme sou rces 
+d’inertie en raison de nombreux conflits de rattach ements 
+territoriaux consécutifs à leur création.  
+ 
+Dans le contexte qui commande d’aller plus résolume nt vers 
+une organisation favorisant l’efficacité et le déve loppement, il 
+est apparu que la région et la commune se présenten t comme 
+les deux types de collectivités appropriées pour pr omouvoir le 
+développement local et assurer la pleine implicatio n des 
+populations dans la gestion de leurs   affaires.  
+ 
+4 
+ 
+Quant au district, au terme de la présente réforme,  il  est une 
+entité territoriale déconcentrée regroupant plusieu rs régions 
+pour ce qui a trait à son ressort territorial et do nt la mission est 
+de conduire entre autres les grands projets d’aména gement 
+suprarégional de faire émerger les potentialités éc onomiques et 
+culturelles des grands ensembles ainsi constitués.  
+ 
+Le Ministre d’Etat, Ministre de l’intérieur, fera d ans les 
+prochains jours, une communication plus précise sur  les 
+changements induits par l’ordonnance prise. 
+ 
+- La 2 ème  ordonnance porte réorganisation du territoire 
+national en 12 districts, 2 districts autonomes et 30 
+régions.  
+ 
+Tirant les conséquences de l’ordonnance évoquée ci- dessus, le 
+Ministre d’Etat, Ministre de l’Intérieur a proposé la 
+réorganisation du territoire national en 12 Distric ts, 2 Districts 
+autonomes, 30 Régions, 95 Départements, 497 Sous 
+
+=== pages mentioning ['Lagunes', 'Dabou', 'chef-lieu'] (first 6) ===
