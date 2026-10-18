@@ -1,105 +1,115 @@
-  read https://www.zimstat.co.zw/wp-content/uploads//Census/2022_Population_Distribution_by_District_Ward_SexandHouseholds_23012023.pdf: 2,324,853 bytes, sha256 8c941b3c126b2c4f36c4581620867e3ad22613cf2c0b3ff3f392bce8bf5f2d0c
-    Mashonaland Central's districts make 337,985 households, not 337,778
-  90 districts in 10 provinces, making 15,178,957
-  admin2 Beitbridge: 94,001; The 2022 census's count for Beitbridge Rural District.
-  admin2 Beitbridge Urban: 58,574; The 2022 census's count for Beitbridge Urban District.
-  admin2 Bikita: 176,835; The 2022 census's count for Bikita District.
-  admin2 Bindura: 169,841; The 2022 census's count for Bindura Rural District.
-  admin2 Bindura Urban: 51,394; The 2022 census's count for Bindura Urban District.
-  admin2 Binga: 159,982; The 2022 census's count for Binga District.
-  admin2 Bubi: 74,084; The 2022 census's count for Bubi District.
-  admin2 Buhera: 271,920; The 2022 census's count for Buhera District.
-  admin2 Bulawayo: 665,952; The 2022 census's count for Bulawayo Urban District, drawn here as Bulawayo.
-  admin2 Bulilima: 85,600; The 2022 census's count for Bulilima District.
-  admin2 Centenary/ Muzarabani: 134,076; The 2022 census's count for Muzarabani District, drawn here as Centenary/ Muzarabani.
-  admin2 Chegutu: 178,911; The 2022 census's count for Chegutu Rural District.
-  admin2 Chegutu Urban: 66,260; The 2022 census's count for Chegutu Urban District.
-  admin2 Chikomba: 123,932; The 2022 census's count for Chikomba District.
-  admin2 Chimanimani: 153,619; The 2022 census's count for Chimanimani District.
-  admin2 Chinhoyi: 103,657; The 2022 census's count for Chinhoyi Urban, drawn here as Chinhoyi.
-  admin2 Chipinge: 375,259; The 2022 census's count for Chipinge Rural District.
-  admin2 Chipinge Urban: 34,959; The 2022 census's count for Chipinge Urban District.
-  admin2 Chiredzi: 303,503; The 2022 census's count for Chiredzi Rural District.
-  admin2 Chiredzi Urban: 40,457; The 2022 census's count for Chiredzi Urban District.
-  admin2 Chirumhanzu: 95,272; The 2022 census's count for Chirumanzu District, drawn here as Chirumhanzu.
-  admin2 Chitungwiza: 371,246; The 2022 census's count for Chitungwiza Urban District, drawn here as Chitungwiza.
-  admin2 Chivi: 172,979; The 2022 census's count for Chivi Districts.
-  admin2 Epworth: 206,368; The 2022 census's count for Epworth.
-  admin2 Gokwe North: 249,723; The 2022 census's count for Gokwe North District.
-  admin2 Gokwe South: 317,554; The 2022 census's count for Gokwe South District.
-  admin2 Gokwe South Urban: 33,073; The 2022 census's count for Gokwe Town Centre, drawn here as Gokwe South Urban.
-  admin2 Goromonzi: 386,203; The 2022 census's count for Goromonzi District.
-  admin2 Guruve: 153,606; The 2022 census's count for Guruve District.
-  admin2 Gutu: 208,149; The 2022 census's count for Gutu District.
-  admin2 Gwanda: 124,548; The 2022 census's count for Gwanda Rural District.
-  admin2 Gwanda Urban: 27,143; The 2022 census's count for Gwanda Urban District.
-  admin2 Gweru: 121,712; The 2022 census's count for Gweru Rural District.
-  admin2 Gweru Urban: 161,294; The 2022 census's count for Gweru Urban District.
-  admin2 Harare: 1,491,754; The 2022 census's count for Harare Urban District, less its Ward 01: ZIMSTAT's preliminary report lists that ward as Harare Rural District, which is shown on its own polygon.
-  admin2 Harare Rural: 357,863; The 2022 census's count for Harare Rural District, a single ward: ZIMSTAT's final tables print it as Ward 01 of Harare Urban District, and its preliminary report lists it as Harare Rural District (357,860 people at that stage).
-  admin2 Hurungwe: 390,897; The 2022 census's count for Hurungwe District.
-  admin2 Hwange: 69,357; The 2022 census's count for Hwange Rural District.
-  admin2 Hwange Urban: 40,241; The 2022 census's count for Hwange Urban District.
-  admin2 Hwedza: 74,870; The 2022 census's count for Hwedza District.
-  admin2 Insiza: 122,903; The 2022 census's count for Insiza District.
-  admin2 Kadoma Urban: 117,381; The 2022 census's count for Kadoma District, drawn here as Kadoma Urban.
-  admin2 Kariba: 45,774; The 2022 census's count for Kariba Rural District.
-  admin2 Kariba Urban: 27,910; The 2022 census's count for Kariba Urban District.
-  admin2 Karoi: 37,564; The 2022 census's count for Karoi Town Council.
-  admin2 Kwekwe: 197,062; The 2022 census's count for Kwekwe Rural District.
-  admin2 Kwekwe Urban: 119,863; The 2022 census's count for Kwekwe Urban District.
-  admin2 Lupane: 107,248; The 2022 census's count for Lupane District.
-  admin2 Makonde: 209,960; The 2022 census's count for Makonde District.
-  admin2 Makoni: 288,441; The 2022 census's count for Makoni District.
-  admin2 Mangwe: 65,562; The 2022 census's count for Mangwe District.
-  admin2 Marondera: 136,173; The 2022 census's count for Marondera Rural District.
-  admin2 Marondera Urban: 66,204; The 2022 census's count for Marondera Urban District.
-  admin2 Masvingo: 238,103; The 2022 census's count for Masvingo Rural District.
-  admin2 Masvingo Urban: 90,286; The 2022 census's count for Masvingo Urban District.
-  admin2 Matobo: 95,694; The 2022 census's count for Matobo District.
-  admin2 Mazowe: 293,363; The 2022 census's count for Mazowe District.
-  admin2 Mberengwa: 208,458; The 2022 census's count for Mberengwa District.
-  admin2 Mbire: 83,720; The 2022 census's count for Mbire District.
-  admin2 Mhondoro-Ngezi: 140,994; The 2022 census's count for Mhondoro-Ngezi District.
-  admin2 Mount Darwin: 240,728; The 2022 census's count for Mount Darwin District.
-  admin2 Mudzi: 158,478; The 2022 census's count for Mudzi District.
-  admin2 Murehwa: 205,440; The 2022 census's count for Murehwa District.
-  admin2 Mutare: 306,760; The 2022 census's count for Mutare Rural District.
-  admin2 Mutare Urban: 224,804; The 2022 census's count for Mutare Urban District.
-  admin2 Mutasa: 197,808; The 2022 census's count for Mutasa District.
-  admin2 Mutoko: 161,091; The 2022 census's count for Mutoko District.
-  admin2 Mvurwi: 15,646; The 2022 census's count for Mvurwi District.
-  admin2 Mwenezi: 209,327; The 2022 census's count for Mwenezi District.
-  admin2 Nkayi: 112,471; The 2022 census's count for Nkayi District.
-  admin2 Norton: 87,039; The 2022 census's count for Norton Town Council.
-  admin2 Nyanga: 146,227; The 2022 census's count for Nyanga District.
-  admin2 Plumtree: 14,460; The 2022 census's count for Plumtree District.
-  admin2 Redcliff: 41,526; The 2022 census's count for Redcliff.
-  admin2 Rusape: 37,906; The 2022 census's count for Rusape Town Council.
-  admin2 Rushinga: 76,876; The 2022 census's count for Rushinga District.
-  admin2 Ruwa: 94,078; The 2022 census's count for Ruwa Local Board.
-  admin2 Sanyati: 139,235; The 2022 census's count for Sanyati District.
-  admin2 Seke: 200,478; The 2022 census's count for Seke District.
-  admin2 Shamva: 165,641; The 2022 census's count for Shamva District.
-  admin2 Shurugwi: 98,315; The 2022 census's count for Shurugwi Rural District.
-  admin2 Shurugwi Town: 23,304; The 2022 census's count for Shurugwi Urban District, drawn here as Shurugwi Town.
-  admin2 Tsholotsho: 115,782; The 2022 census's count for Tsholotsho District.
-  admin2 Umguza: 113,265; The 2022 census's count for Umguza District.
-  admin2 Umzingwane: 71,860; The 2022 census's count for Umzingwane District.
-  admin2 Uzumba Maramba Pfungwe: 124,226; The 2022 census's count for Uzumba Maramba Pfungwe District.
-  admin2 Victoria Falls: 35,215; The 2022 census's count for Victoria Falls.
-  admin2 Zaka: 198,889; The 2022 census's count for Zaka District.
-  admin2 Zvimba: 348,002; The 2022 census's count for Zvimba District.
-  admin2 Zvishavane: 85,035; The 2022 census's count for Zvishavane Rural District.
-  admin2 Zvishavane Urban: 59,714; The 2022 census's count for Zvishavane Urban District.
-  admin1 Bulawayo: 665,952; The 2022 census's count for Bulawayo Province.
-  admin1 Manicaland: 2,037,703; The 2022 census's count for Manicaland Province.
-  admin1 Mashonaland Central: 1,384,891; The 2022 census's count for Mashonaland Central Province.
-  admin1 Mashonaland East: 1,731,173; The 2022 census's count for Mashonaland East Province.
-  admin1 Mashonaland West: 1,893,584; The 2022 census's count for Mashonaland West Province.
-  admin1 Matabeleland North: 827,645; The 2022 census's count for Matabeleland North Province.
-  admin1 Matabeleland South: 760,345; The 2022 census's count for Matabeleland South Province.
-  admin1 Midlands: 1,811,905; The 2022 census's count for Midlands Province.
-  admin1 Masvingo: 1,638,528; The 2022 census's count for Masvingo Province.
-  admin1 Harare: 2,427,231; The 2022 census's count for Harare Province.
-  wrote data/processed/zimbabwe_districts.json (253 kB)
+probe_pdf: https://www.hcp.ma/file/244701/
+  1,694,585 bytes
+  54 pages
+probe_pdf: 54 pages, 1 mention ['quinquennal', 'médian', 'masculinité']
+=== front matter ===
+ 
+   
+CARACTÉRISTIQUES DÉMOGRAPHIQUES  
+ 
+ET SOCIOÉCONOMIQUES DE LA POPULATION  
+PROVINCE DE TÉTOUAN  
+Direction Régionale de Tanger-Tétouan-Al Hoceima 
+Mai 2025  
+ 
+
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Caractéristiques démographiques  
+et socioéconomiques de la population  
+ 
+ 
+Recensement Général 
+ de la Population et de l’Habitat  
+2024 
+ 
+ 
+ 
+Province de Tétouan 
+  
+
+ 
+ 
+ 
+5 
+Sommaire 
+ 
+
+=== pages mentioning ['quinquennal', 'médian', 'masculinité'] (first 6) ===
+
+--- page 44 ----------------------------------------------------
+44
+ Province de Tétouan Région TTA
+Milieu  Masculin Féminin Ensemble Masculin Féminin Ensemble
+Urbain
+Population légale   440 054   2 638 815
+Population municipale 215 361 220 672 436 033 1 317 880 1 308 308 2 626 188
+Sexe (%) 49,4 50,6 100 50,2 49,8 100
+Âge quinquennal (%)
+0-4 ans 6,9 6,3 6,6 8,1 7,5 7,8
+5-9 ans 8,9 8,2 8,5 9,5 9,0 9,2
+10-14 ans 9,2 8,6 8,9 9,2 8,8 9,0
+15-19 ans 7,9 7,7 7,8 7,7 7,5 7,6
+20-24 ans 7,0 7,3 7,2 7,7 8,0 7,9
+25-29 ans 6,5 7,1 6,8 7,8 8,3 8,1
+30-34 ans 7,5 7,9 7,7 8,4 8,5 8,5
+35-39 ans 7,7 7,6 7,7 7,9 8,0 8,0
+40-44 ans 7,3 7,3 7,3 7,2 7,1 7,1
+45-49 ans 6,2 6,4 6,3 5,8 5,9 5,9
+50-54 ans 5,7 5,8 5,8 5,1 5,2 5,2
+55-59 ans 4,9 5,3 5,1 4,1 4,4 4,2
+60-64 ans 5,0 5,2 5,1 4,1 4,4 4,2
+65-69 ans 3,7 3,5 3,6 3,0 2,9 3,0
+70-74 ans 2,6 2,4 2,5 2,1 2,0 2,1
+75 ans ou plus 3,0 3,4 3,2 2,2 2,5 2,4
+Rural
+Population légale   171 874   1 391 407
+Population municipale 89 057 82 797 171 854 717 614 664 853 1 382 467
+Sexe (%) 51,8 48,2 100 51,9 48,1 100
+Âge quinquennal (%)
+0-4 ans 8,8 8,7 8,7 8,8 8,9 8,8
+5-9 ans 10,0 10,3 10,2 10,2 10,3 10,2
+10-14 ans 10,0 10,4 10,2 10,2 10,2 10,2
+15-19 ans 9,0 9,2 9,1 8,6 8,6 8,6
+20-24 ans 8,0 7,8 7,9 7,4 7,2 7,3
+25-29 ans 7,5 7,2 7,4 7,1 6,8 7,0
+30-34 ans 7,6 7,6 7,6 7,7 7,4 7,6
+35-39 ans 7,2 7,3 7,3 7,8 7,4 7,6
+40-44 ans 6,4 6,6 6,5 6,8 6,4 6,6
+45-49 ans 5,4 5,3 5,3 5,5 5,4 5,4
+50-54 ans 4,7 4,8 4,7 4,6 4,8 4,7
+55-59 ans 3,8 3,8 3,8 3,8 4,1 3,9
+60-64 ans 3,8 3,7 3,7 3,9 4,2 4,1
+65-69 ans 2,6 2,5 2,6 2,8 2,9 2,9
+70-74 ans 2,1 1,9 2,0 2,1 2,2 2,1
+75 ans ou plus 3,1 3,0 3,1 2,7 3,2 2,9
+Ensemble
+Population légale   611 928   4 030 222
+Population municipale 304 418 303 469 607 887 2 035 494 1 973 161 4 008 655
+Sexe (%) 50,1 49,9 100 50,8 49,2 100
+Âge quinquennal (%)
+0-4 ans 7,5 7,0 7,2 8,4 8,0 8,2
+5-9 ans 9,2 8,7 9,0 9,7 9,4 9,6
+10-14 ans 9,5 9,1 9,3 9,5 9,2 9,4
+15-19 ans 8,3 8,1 8,2 8,0 7,9 7,9
+20-24 ans 7,3 7,4 7,4 7,6 7,8 7,7
+25-29 ans 6,8 7,1 7,0 7,6 7,8 7,7
+30-34 ans 7,5 7,8 7,6 8,2 8,1 8,2
+35-39 ans 7,5 7,6 7,5 7,9 7,8 7,8
+40-44 ans 7,0 7,1 7,0 7,0 6,9 7,0
+45-49 ans 6,0 6,1 6,0 5,7 5,8 5,7
+50-54 ans 5,4 5,6 5,5 5,0 5,1 5,0
+55-59 ans 4,6 4,9 4,7 4,0 4,3 4,1
+60-64 ans 4,7 4,8 4,7 4,0 4,3 4,2
+65-69 ans 3,4 3,3 3,3 3,0 2,9 2,9
+70-74 ans 2,4 2,3 2,4 2,1 2,1 2,1
+75 ans ou plus 3,0 3,3 3,1 2,4 2,7 2,6
