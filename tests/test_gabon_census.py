@@ -63,5 +63,21 @@ class Seats(unittest.TestCase):
         self.assertIn("2013 census", by["Libreville"]["population_note"])
 
 
+class Projection(unittest.TestCase):
+    def test_ochas_2022_provinces(self):
+        names = ["Estuaire", "Haut-Ogooué", "Moyen-Ogooué", "Ngounié", "Nyanga",
+                 "Ogooué-Ivindo", "Ogooué-Lolo", "Ogooué-Maritime", "Woleu-Ntem"]
+        admin1 = [unit(n[:3], n, "GAB") for n in names]
+        rows = [{"ADM1_FR": "Woleu-N'tem" if n == "Woleu-Ntem" else n, "T_TL": "250000"}
+                for n in names]
+        records, report = gc.projection(rows, admin1)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(by["Woleu-Ntem"]["population"]["value"], 250_000)
+        self.assertEqual(by["Estuaire"]["population"]["year"], 2022)
+        self.assertNotIn("value", by["Estuaire"]["sex_ratio"])
+        with self.assertRaises(SystemExit):
+            gc.projection(rows[:8], admin1)
+
+
 if __name__ == "__main__":
     unittest.main()

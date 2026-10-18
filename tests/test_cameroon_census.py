@@ -98,6 +98,61 @@ class Tables(unittest.TestCase):
         self.assertIn("by age", by["Djerem"]["median_age"]["note"].replace("not by age", "by age"))
 
 
+def ocha_row(groups, **names):
+    """A row as OCHA's 2025 tables lay it out: totals and five-year groups by sex."""
+    row = dict(names)
+    lows = list(range(0, 80, 5))
+    for low, people in zip(lows + [80], groups):
+        col = f"{low:02d}_{low + 4:02d}" if low < 80 else "80Plus"
+        row[f"M_{col}"] = str(people // 2)
+        row[f"F_{col}"] = str(people - people // 2)
+    row["M_TL"] = str(sum(int(v) for k, v in row.items() if k.startswith("M_")))
+    row["F_TL"] = str(sum(int(v) for k, v in row.items() if k.startswith("F_")))
+    row["T_TL"] = str(int(row["M_TL"]) + int(row["F_TL"]))
+    return row
+
+
+class Projection(unittest.TestCase):
+    """OCHA's 2025 regions and metropolises: the newer populations, Wouri's and Mfoundi's ages."""
+
+    REGIONS = ["Adamaoua", "Centre", "East", "Far North", "Littoral", "North", "North-West",
+               "West", "South", "South-West"]
+
+    def inputs(self, city_groups):
+        young = [300_000 - 15_000 * i for i in range(17)]
+        adm1 = [ocha_row(young, ADM1_FR=fr, ADM1_EN=en, ADM1_PCODE=f"CM{i:03d}")
+                for i, (fr, en) in enumerate([("Adamaoua", "Adamawa"), ("Centre", "Centre"),
+                                              ("Est", "East"), ("Extrême-Nord", "Far North"),
+                                              ("Littoral", "Littoral"), ("Nord", "North"),
+                                              ("Nord-Ouest", "North-West"), ("Ouest", "West"),
+                                              ("Sud", "South"), ("Sud-Ouest", "South-West")], 1)]
+        met = [ocha_row(city_groups, ADM1_PCODE="CM005", ADM2_FR="Wouri", ADM2_PCODE="CM005004",
+                        Metropolis="Ville de Douala")]
+        admin1 = [{"id": n, "name": n} for n in self.REGIONS]
+        admin2 = [unit("W", "Wouri", "Littoral")]
+        return adm1, met, admin1, admin2
+
+    def test_regions_and_a_metropolis_with_its_own_ages(self):
+        city = [200_000, 190_000, 190_000, 190_000, 180_000, 170_000, 150_000, 130_000,
+                110_000, 90_000, 70_000, 50_000, 35_000, 25_000, 15_000, 10_000, 8_000]
+        records, report = cc.projection(*self.inputs(city))
+        by = {(r["level"], r["name"]): r for r in records}
+        self.assertEqual(by[("admin1", "Centre")]["population"]["year"], 2025)
+        wouri = by[("admin2", "Wouri")]
+        self.assertEqual(wouri["population"]["value"], sum(city))
+        self.assertIn("city of Douala", wouri["population_note"])
+        self.assertIn("value", wouri["median_age"])
+        # The census's sex ratio stands: none is written from the projection.
+        self.assertNotIn("value", wouri["sex_ratio"])
+
+    def test_a_metropolis_with_its_regions_ages_gets_no_median(self):
+        young = [300_000 - 15_000 * i for i in range(17)]
+        records, report = cc.projection(*self.inputs([g // 3 for g in young]))
+        wouri = next(r for r in records if r["name"] == "Wouri")
+        self.assertNotIn("value", wouri["median_age"])
+        self.assertTrue(any("no median (its region's age proportions)" in line for line in report))
+
+
 class Names(unittest.TestCase):
     def test_spelling(self):
         self.assertEqual(cc.spelled("MBAM & KIM"), "Mbam Et Kim")

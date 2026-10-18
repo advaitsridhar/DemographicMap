@@ -34,6 +34,11 @@ where that count is the census's own for the department, which keeps off the
 row that gives Libreville's count under Akanda's name. Libreville, a commune
 drawn as a department of its own, is its own seat.
 
+**2022.** OCHA's Common Operational Dataset for Gabon (cod-ps-gab) gives the
+nine provinces' projected population for 2022 (gab_admpop_adm1_2022). It is
+written to gabon_projection.json, whose populations, the newer figures,
+stand in front of the 2013 counts; the census's sex ratios stand.
+
 Usage:
     python -m scripts.fetch_census.gabon_census [--run LABEL]
 """
@@ -64,6 +69,14 @@ SOURCE = ("Direction Générale de la Statistique du Gabon, Résultats globaux d
           "Général de la Population et des Logements de 2013 (RGPL-2013), Tableau 6")
 LICENCE = "Official statistics publication of the Gabonese Republic, as UNFPA Gabon publishes it"
 NATIONAL = 1_811_079
+OCHA_ADM1 = ("https://data.humdata.org/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/"
+             "b6496825-f574-44ea-bbb2-c4fd3e8d5ac8/download/gab_admpop_adm1_2022.csv")
+OCHA_YEAR = 2022
+OCHA = (f"OCHA, Common Operational Dataset -- population statistics (cod-ps-gab), reference "
+        f"year {OCHA_YEAR}")
+OCHA_URL = "https://data.humdata.org/dataset/cod-ps-gab"
+OCHA_LICENCE = "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+PROJECTION_OUT = "gabon_projection.json"
 
 PROVINCES = ("ESTUAIRE", "HAUT-OGOOUE", "MOYEN-OGOOUE", "NGOUNIE", "NYANGA", "OGOOUE-IVINDO",
              "OGOOUE-LOLO", "OGOOUE-MARITIME", "WOLEU-N'TEM")
@@ -266,11 +279,41 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
     return records, report
 
 
+def projection(rows: list[dict[str, str]], admin1: list[dict[str, Any]]
+               ) -> tuple[list[dict[str, Any]], list[str]]:
+    """OCHA's 2022 provinces: each province's projected population."""
+    first = {fold(u["name"]): u for u in admin1}
+    cite = [{"field": "population", "name": OCHA, "url": OCHA_URL, "year": OCHA_YEAR,
+             "license": OCHA_LICENCE}]
+    records: list[dict[str, Any]] = []
+    report: list[str] = []
+    total = 0
+    for row in rows:
+        names = [row.get(k) for k in ("ADM1_FR", "ADM1_EN", "ADM1_NAME", "admin1Name_fr")
+                 if row.get(k)]
+        poly = next((first[fold(n)] for n in names if fold(n) in first), None)
+        if poly is None or not row.get("T_TL"):
+            raise SystemExit(f"gabon_census: OCHA's province {names} has no polygon")
+        people = int(float(row["T_TL"]))
+        total += people
+        records.append(record(
+            f"GAB-CODPS{OCHA_YEAR}-{poly['id']}", poly["name"], level="admin1", parent="GAB",
+            country="GAB", match_by="shape_id", shape_id=poly["id"], sources=cite,
+            population=measure(people, year=OCHA_YEAR, source=OCHA),
+            population_note=f"OCHA's projected population of {poly['name']} for {OCHA_YEAR}."))
+        report.append(f"  2022: {poly['name']}: {people:,}")
+    if len(records) != 9 or not 1_811_079 < total < 3_500_000:
+        raise SystemExit(f"gabon_census: OCHA's 2022 table: {len(records)} provinces, {total:,}")
+    report.append(f"  2022: the provinces make {total:,}")
+    return records, report
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
     parser.parse_args()
+    import csv                                      # noqa: PLC0415
     import pdfplumber                               # noqa: PLC0415
     from .europe_wiki import fetch as wiki_fetch     # noqa: PLC0415
     blob = http_get(URL, binary=True, cache=False, timeout=300)
@@ -294,6 +337,12 @@ def main() -> int:
     log(f"  {sum(r['level'] == 'admin1' for r in records)} provinces and "
         f"{sum(r['level'] == 'admin2' for r in records)} department polygons written")
     write_json(PROCESSED / OUT, records)
+    text = http_get(OCHA_ADM1, binary=True, cache=False, timeout=180).decode("utf-8-sig", "replace")
+    rows = [{(k or "").strip(): v for k, v in r.items()} for r in csv.DictReader(io.StringIO(text))]
+    projected, lines = projection(rows, admin1)
+    for line in lines:
+        log(line)
+    write_json(PROCESSED / PROJECTION_OUT, projected)
     return 0
 
 

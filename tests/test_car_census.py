@@ -69,6 +69,50 @@ class Crosswalk(unittest.TestCase):
         self.assertEqual(cc.spelled("Dede-Makouba"), "Dédé-Mokouba")
 
 
+class Twins(unittest.TestCase):
+    """Counts the table gives two communes are said where they are counted."""
+
+    def setUp(self):
+        def unit(name, total):
+            return {"name": name.upper(), "total": total}
+        self.groups = {"M": [("bassekotto", "mobaye")], "D": [("mamberekadei", "dedemokouba")],
+                       "G": [("ouaka", "grimari")]}
+        self.placement = {("bassekotto", "mobaye"): [unit("Mobaye", 23_708), unit("Zangba", 57_790)],
+                          ("mamberekadei", "dedemokouba"): [unit("Haute-Kadéi", 23_708)],
+                          ("ouaka", "grimari"): [unit("Lissa", 8_825), unit("Pouyamba", 8_825),
+                                                 unit("Grimari", 33_625)]}
+        self.shapes = {"M": {"name": "Mobaye"}, "D": {"name": "Dédé-Mokouba"},
+                       "G": {"name": "Grimari"}}
+        self.prefectures = {"bassekotto": {"name": "Basse-Kotto"},
+                            "mamberekadei": {"name": "Mambéré-Kadéï"}, "ouaka": {"name": "Ouaka"}}
+        self.pref_of = {sid: keys[0][0] for sid, keys in self.groups.items()}
+        self.twins = cc.twin_counts(self.groups, self.placement)
+
+    def test_both_twins_are_found(self):
+        self.assertEqual(set(self.twins), {23_708, 8_825})
+
+    def test_the_sub_prefectures_say_so(self):
+        mobaye = cc.twin_sentence("M", self.twins, self.shapes, self.prefectures, self.pref_of)
+        self.assertIn("Haute-Kadéi, a commune of Dédé-Mokouba in Mambéré-Kadéï", mobaye)
+        self.assertIn("cannot be told", mobaye)
+        grimari = cc.twin_sentence("G", self.twins, self.shapes, self.prefectures, self.pref_of)
+        self.assertIn("Lissa and Pouyamba, the same count (8,825 people each)", grimari)
+
+    def test_the_prefectures_say_what_their_sums_include(self):
+        mk = cc.twin_sentence_prefecture("mamberekadei", self.twins, self.shapes,
+                                         self.prefectures, self.pref_of)
+        self.assertIn("includes the 23,708 people the 2021 mapping's table gives Haute-Kadéi (Dédé-Mokouba)", mk)
+        self.assertIn("shows no 2021 count for that reason", mk)
+        self.assertIn("Mobaye (Mobaye, Basse-Kotto)", mk)
+        bk = cc.twin_sentence_prefecture("bassekotto", self.twins, self.shapes,
+                                         self.prefectures, self.pref_of)
+        self.assertIn("Mobaye (Mobaye)", bk)
+        self.assertNotIn("shows no 2021 count", bk)
+        ouaka = cc.twin_sentence_prefecture("ouaka", self.twins, self.shapes, self.prefectures,
+                                            self.pref_of)
+        self.assertIn("Lissa (Grimari) and Pouyamba (Grimari)", ouaka)
+
+
 class Ages(unittest.TestCase):
     def row(self, name, shares, men=490, women=510):
         row = {"ADM_LEVEL": 1, "AREA_NAME": name, "MTOTL": men, "FTOTL": women,

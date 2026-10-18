@@ -85,6 +85,67 @@ class Reasons(unittest.TestCase):
         self.assertEqual(by[("admin2", "Kinshasa")]["capital"], "Kinshasa")
         self.assertIn("city-province", by[("admin2", "Kinshasa")]["capital_note"])
 
+    def test_reasons_cite_notes_only(self):
+        admin1, admin2 = units()
+        records, _ = dg.build(dg.rows_of(ADM1), dg.rows_of(ADM2), dg.seats(WIKI), admin1, admin2)
+        for r in records:
+            for src in r["sources"]:
+                if src["name"] == dg.OCHA:
+                    self.assertTrue(all(p.endswith(" note") for p in src["field"].split("/")),
+                                    (r["name"], src["field"]))
+
+    def test_seats_only_for_listed_territories_and_known_cities(self):
+        admin1 = [{"id": "E", "name": "Equateur"}, {"id": "N", "name": "North Kivu"}]
+        admin2 = [{"id": n, "name": n, "parent": p, "point": [18.0 + i * 0.1, 0.0]}
+                  for i, (n, p) in enumerate([("Makanza", "E"), ("Bikoro", "E"), ("Nowhere", "E"),
+                                              ("Oïcha", "N"), ("Beni", "N"), ("Lubero", "N")])]
+        rows = [H2] + [f"{n},{c},{p},{pc},,1,1,1,1,1,1,1,1,1,1,1,1,4,4"
+                       for n, c, p, pc in (("Makanza", "CD4105", "Equateur", "CD41"),
+                                           ("Bikoro", "CD4102", "Equateur", "CD41"),
+                                           ("Nowhere", "CD4199", "Equateur", "CD41"),
+                                           ("Oïcha", "CD6107", "Nord-Kivu", "CD61"),
+                                           ("Beni", "CD6109", "Nord-Kivu", "CD61"),
+                                           ("Lubero", "CD6105", "Nord-Kivu", "CD61"))]
+        wiki = """{| class="wikitable"
+! Pcode !! Territoire !! Chef-lieu !! Province
+|-
+| 4105 || Mankanza || Makanza || Équateur
+|-
+| 4102 || Bikoro || Bikoro || Équateur
+|-
+| 6109 || Beni || Beni || Nord-Kivu
+|-
+| 6105 || Lubero || Lubero || Nord-Kivu
+|}"""
+        records, report = dg.build([], dg.rows_of("\n".join(rows)), dg.seats(wiki), admin1, admin2)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(by["Makanza"]["capital"], "Makanza")
+        self.assertNotIn("capital_note", by["Makanza"])
+        self.assertEqual(by["Beni"]["capital"], "Beni")
+        self.assertIn("city administered apart", by["Beni"]["capital_note"])
+        self.assertEqual(by["Oïcha"]["capital"]["status"], "not_available")
+        self.assertIn("territory of Beni", by["Oïcha"]["capital"]["note"])
+        self.assertNotIn("capital", {k for k, v in by["Nowhere"].items()
+                                     if isinstance(v, str)})
+        self.assertTrue(any("Nowhere" in line and "no seat written" in line for line in report))
+
+    def test_the_2024_projection_by_territory(self):
+        admin1, admin2 = units()
+        sheet = [["Province", "Code Province", "Territoire", "Code Terrtoire", "Zone de sante",
+                  "Pcode ZS", "Population 2024"],
+                 ["Kongo-Central", "CD20", "Matadi", "CD2001", "Matadi", "CD2001ZS01", 351301],
+                 ["Kongo-Central", "CD20", "Matadi", "CD2001", "Nzanza", "CD2001ZS02", 311532],
+                 ["Kongo-Central", "CD20", "Songololo", "CD2011", "Kimpese", "CD2011ZS01", 400000]]
+        sums = dg.hpc_sums(sheet)
+        self.assertEqual(sums["CD2001"]["total"], 662_833)
+        self.assertEqual(sums["CD2001"]["zones"], 2)
+        held, _ = dg.hpc_build(sums, dg.rows_of(ADM2), admin1, admin2)
+        by = {r["name"]: r for r in held}
+        self.assertEqual(by["Matadi"]["population"]["value"], 662_833)
+        self.assertEqual(by["Matadi"]["population"]["year"], 2024)
+        self.assertIn("2 health zones", by["Matadi"]["population_note"])
+        self.assertEqual(by["Matadi"]["match_by"], "shape_id")
+
     def test_town_premise_checked(self):
         admin1, admin2 = units()
         moved = ADM2.replace("Population is reflected in CD2011", "Population is reflected in CD2001")

@@ -25,6 +25,17 @@ department's seat (*préfecture*); it is read for the capital alone.
 
 The table gives no ages, so no department has a median age from it.
 
+**2025.** OCHA's Common Operational Dataset for Cameroon (cod-ps-cmr) gives
+the ten regions' projected population for 2025 (cmr_admpop_adm1_2025) and the
+two metropolises' (cmr_admpop_met_2025: the city of Douala, which is Wouri,
+and the city of Yaoundé, which is Mfoundi, bound by their P-codes CM005004
+and CM002007), with five-year age groups by sex. They are written to
+cameroon_projection.json: the populations, which as the newer figures stand
+in front of the 2005 counts, and for Wouri and Mfoundi a median age taken
+from their own age groups, where those are not their region's (the copy
+test of cod_ps_age), to fill the median the census does not give. No sex
+ratio is written from them: the census's stands.
+
 Usage:
     python -m scripts.fetch_census.cameroon_census [--run LABEL]
 """
@@ -77,8 +88,27 @@ DRAWN_AS = {"nyongetsoo": "Nyong-et-So", "kadey": "Kadei", "ngoketundjia": "Ngo-
             "koupeetmanengouba": "Kupe-Manenguba"}
 
 AGE_GAP = ("BUCREP's tables of the 2005 census by department count each department's residents "
-           "by sex and by urban or rural residence, not by age, so no median age is published "
-           "for the department.")
+           "by sex and by urban or rural residence, not by age, so the census gives no median "
+           "age for the department.")
+
+# OCHA's 2025 tables (cod-ps-cmr): the regions, and the two metropolises.
+OCHA_DATASET = "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd"
+OCHA_ADM1 = (OCHA_DATASET + "/resource/09be4b94-28bb-4921-a7e0-19967c178230/download/"
+             "copy-of-cmr_admpop_adm1_2025.csv")
+OCHA_MET = (OCHA_DATASET + "/resource/c23633c8-f033-44bd-b43b-e8a1bc487784/download/"
+            "copy-of-cmr_admpop_met_2025.csv")
+OCHA_YEAR = 2025
+OCHA = (f"OCHA, Common Operational Dataset -- population statistics (cod-ps-cmr), reference "
+        f"year {OCHA_YEAR}")
+OCHA_URL = "https://data.humdata.org/dataset/cod-ps-cmr"
+OCHA_LICENCE = "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+PROJECTION_OUT = "cameroon_projection.json"
+# The metropolises by P-code: the department each is, as the table's ADM2_FR names it.
+METROPOLISES = {"CM005004": "Wouri", "CM002007": "Mfoundi"}
+# OCHA's region names (ADM1_FR, ADM1_EN) -> the map's first-level names.
+OCHA_REGIONS = {**PROVINCES, "adamawa": "Adamaoua", "east": "East", "farnorth": "Far North",
+                "north": "North", "northwest": "North-West", "west": "West", "south": "South",
+                "southwest": "South-West"}
 
 
 def split3(groups: list[str]) -> list[tuple[int, int, int]]:
@@ -291,8 +321,10 @@ def build(tables_: dict[str, dict[str, Any]], seat_of: dict[str, str],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
-    cite = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
-             "license": LICENCE}]
+    cite_region = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
+                    "license": LICENCE}]
+    # A department's median-age reason rests on the same table.
+    cite = [{**cite_region[0], "field": "population/sex_ratio/median_age note"}]
     parents = {u["id"]: u["name"] for u in admin1}
     first = {u["name"]: u for u in admin1}
     records: list[dict[str, Any]] = []
@@ -307,7 +339,7 @@ def build(tables_: dict[str, dict[str, Any]], seat_of: dict[str, str],
             raise SystemExit(f"cameroon_census: no first-level polygon named {region}")
         records.append(record(
             f"CMR-RGPH2005-{poly['id']}", poly["name"], level="admin1", parent="CMR",
-            country="CMR", match_by="shape_id", shape_id=poly["id"], sources=cite,
+            country="CMR", match_by="shape_id", shape_id=poly["id"], sources=cite_region,
             **fields(t, m, f, f"The resident population of the {region} region at the 2005 "
                               f"census, its departments added up.")))
         report.append(f"  {region}: {t:,} ({m:,} men, {f:,} women), "
@@ -347,11 +379,84 @@ def build(tables_: dict[str, dict[str, Any]], seat_of: dict[str, str],
     return records, report
 
 
+def projection(adm1_rows: list[dict[str, str]], met_rows: list[dict[str, str]],
+               admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+               ) -> tuple[list[dict[str, Any]], list[str]]:
+    """OCHA's 2025 regions and metropolises: populations, and the metropolises'
+    medians where their age groups are not their region's."""
+    from .cod_ps_age import age_columns, same_structure, unit_figures  # noqa: PLC0415
+    report: list[str] = []
+    records: list[dict[str, Any]] = []
+    cite = [{"field": "population", "name": OCHA, "url": OCHA_URL, "year": OCHA_YEAR,
+             "license": OCHA_LICENCE}]
+    first = {u["name"]: u for u in admin1}
+    cols1 = age_columns(list(adm1_rows[0].keys())) if adm1_rows else None
+    regions: dict[str, Any] = {}
+    total = 0
+    for row in adm1_rows:
+        name = (OCHA_REGIONS.get(fold(row.get("ADM1_FR") or ""))
+                or OCHA_REGIONS.get(fold(row.get("ADM1_EN") or "")))
+        poly = first.get(name or "")
+        if poly is None:
+            raise SystemExit(f"cameroon_census: OCHA's region {row.get('ADM1_FR')!r} has no polygon")
+        people = int(float(row["T_TL"]))
+        total += people
+        regions[str(row.get("ADM1_PCODE") or "").strip()] = (
+            unit_figures(row, cols1)[0] if cols1 else None)
+        records.append(record(
+            f"CMR-CODPS{OCHA_YEAR}-{poly['id']}", poly["name"], level="admin1", parent="CMR",
+            country="CMR", match_by="shape_id", shape_id=poly["id"], sources=cite,
+            population=measure(people, year=OCHA_YEAR, source=OCHA),
+            population_note=(f"OCHA's projected population of the {name} region for "
+                             f"{OCHA_YEAR}.")))
+        report.append(f"  2025: {name}: {people:,}")
+    if len(records) != 10 or not 20_000_000 < total < 45_000_000:
+        raise SystemExit(f"cameroon_census: OCHA's 2025 table: {len(records)} regions, {total:,}")
+    report.append(f"  2025: the regions make {total:,}")
+    by_name = {fold(u["name"]): u for u in admin2}
+    cols2 = age_columns(list(met_rows[0].keys())) if met_rows else None
+    for row in met_rows:
+        code = str(row.get("ADM2_PCODE") or "").strip()
+        dep = METROPOLISES.get(code)
+        if dep is None or fold(row.get("ADM2_FR") or "") != fold(dep):
+            report.append(f"  2025: metropolis {code} {row.get('ADM2_FR')!r} not bound")
+            continue
+        poly = by_name.get(fold(dep))
+        if poly is None:
+            raise SystemExit(f"cameroon_census: no polygon for {dep}")
+        city = re.sub(r"(?i)^ville\s+de\s+", "", str(row.get("Metropolis") or dep)).strip()
+        people = int(float(row["T_TL"]))
+        fields: dict[str, Any] = {
+            "population": measure(people, year=OCHA_YEAR, source=OCHA),
+            "population_note": (f"OCHA's projected population of the city of {city} for "
+                                f"{OCHA_YEAR}; the city is the {dep} department.")}
+        found = unit_figures(row, cols2)[0] if cols2 else None
+        region = regions.get(str(row.get("ADM1_PCODE") or "").strip())
+        sources = list(cite)
+        if found and region and not same_structure(found["groups"], region["groups"]):
+            fields["median_age"] = {"value": found["median"], "unit": "years",
+                                    "year": OCHA_YEAR, "source": OCHA}
+            fields["median_age_note"] = (
+                f"Interpolated within the five-year age group that holds the middle person, "
+                f"from OCHA's projected population of the city of {city} by age for "
+                f"{OCHA_YEAR}: a projection, not a count.")
+            sources = [{**cite[0], "field": "population/median_age"}]
+            report.append(f"  2025: {dep} ({city}): {people:,}, median {found['median']}")
+        else:
+            why = "its region's age proportions" if found else "no ages"
+            report.append(f"  2025: {dep} ({city}): {people:,}; no median ({why})")
+        records.append(record(
+            f"CMR-CODPS{OCHA_YEAR}-{poly['id']}", poly["name"], level="admin2", parent="CMR",
+            country="CMR", match_by="shape_id", shape_id=poly["id"], sources=sources, **fields))
+    return records, report
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
     parser.parse_args()
+    import csv                                      # noqa: PLC0415
     import pdfplumber                               # noqa: PLC0415
     from .europe_wiki import fetch as wiki_fetch     # noqa: PLC0415
     blob = http_get(URL, binary=True, cache=False, timeout=300)
@@ -382,6 +487,15 @@ def main() -> int:
     write_json(PROCESSED / OUT, records)
     log(f"  {sum(r['level'] == 'admin1' for r in records)} regions and "
         f"{sum(r['level'] == 'admin2' for r in records)} departments written")
+
+    def csv_rows(url: str) -> list[dict[str, str]]:
+        text = http_get(url, binary=True, cache=False, timeout=180).decode("utf-8-sig", "replace")
+        return [{(k or "").strip(): v for k, v in r.items()} for r in csv.DictReader(io.StringIO(text))]
+
+    projected, lines = projection(csv_rows(OCHA_ADM1), csv_rows(OCHA_MET), admin1, admin2)
+    for line in lines:
+        log(line)
+    write_json(PROCESSED / PROJECTION_OUT, projected)
     return 0
 
 

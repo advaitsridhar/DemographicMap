@@ -37,7 +37,22 @@ true leaves its record out and says so in the log.
 
 **Capitals.** French Wikipedia's *Territoire (république démocratique du
 Congo)* lists each territory with its OCHA code and its seat (*chef-lieu*);
-the seat is written for the territory it names.
+the seat is written for the territory it names, by name and province (the
+article's codes are not all OCHA's), Makanza under the article's spelling,
+Mankanza. The cities OCHA lists beside the territories (CITIES) are their
+own seats, Beni among them although the article names a territory Beni:
+OCHA's Beni is the city, and its territory of Beni is the polygon "Oïcha",
+whose seat sources place at Beni or at Oïcha, so none is written. A unit
+neither listed nor a city gets no seat and is logged.
+
+**2024.** OCHA's humanitarian planning projection for 2024
+(drc-hpc-projection-population-2024.xlsx, in cod-ps-cod) gives every health
+zone's population with its territory's code; added up by territory, it is a
+2024 figure for each of the 164 territories and cities. It is written to
+drc_hpc.json, whose rows the build holds behind OCHA's 2020 table
+(HELD_ROWS) and shows where the change from 2020 is one a population makes:
+the workbook raises each province's 2020 figures by one factor, from 4.8% a
+year down (Ituri) to 18% a year up (Kongo-Central).
 
 Usage:
     python -m scripts.fetch_census.drc_gaps [--run LABEL]
@@ -54,7 +69,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .binding import bind, fold
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -63,6 +78,12 @@ from probe_wikitable import tables  # noqa: E402
 DATASET = "https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895"
 ADM1 = DATASET + "/resource/44bafdcb-e234-4fa2-9d1a-278715384408/download/cod_admpop_adm1_2020.csv"
 ADM2 = DATASET + "/resource/bf8edc01-c28a-470d-9720-cb2d9435dfdf/download/cod_admpop_adm2_2020.csv"
+HPC = (DATASET + "/resource/9509b41f-efb2-4305-ac43-1e735e3efc60/download/"
+       "drc-hpc-projection-population-2024.xlsx")
+HPC_YEAR = 2024
+HPC_SOURCE = ("OCHA, Common Operational Dataset -- population statistics (cod-ps-cod), "
+              "humanitarian planning projection for 2024 by health zone")
+HPC_OUT = "drc_hpc.json"
 OUT = "drc_gaps.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-cod), reference year 2020"
@@ -90,6 +111,19 @@ CITIES_COUNTED_IN = {"Bunia": "Irumu", "Kolwezi": "Mutshatsha", "Tshikapa": "Kam
 DECLARED_ELSEWHERE = frozenset({"Tshimbulu", "Lukalaba", "Dingila", "Kasaji", "Kaoze",
                                 "Yangambi", "Nioki"})
 COPY_TOLERANCE = 1e-3
+# OCHA's names of territories the article spells otherwise (folded).
+SEAT_ALIASES = {"makanza": "mankanza"}
+# The cities OCHA's table lists beside the territories, each its own seat
+# (folded). Beni is the city: OCHA names the territory of Beni after Oïcha.
+CITIES = frozenset({"matadi", "boma", "bandundu", "kikwit", "mbandaka", "zongo", "gbadolite",
+                    "kisangani", "goma", "butembo", "beni", "bukavu", "kindu", "lubumbashi",
+                    "likasi", "mweneditu", "mbujimayi", "kananga"})
+# OCHA units that are a territory under another name, and why no seat is written.
+NO_SEAT = {
+    "oicha": ("This polygon is the territory of Beni, which OCHA's population tables name "
+              "Oïcha; published sources place the territory's seat either at Beni, a city "
+              "drawn apart as a polygon of its own, or at Oïcha, so no seat is shown."),
+}
 
 
 def rows_of(text: str) -> list[dict[str, str]]:
@@ -193,8 +227,9 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
     records: list[dict[str, Any]] = []
-    cite = [{"field": "median_age/sex_ratio", "name": OCHA, "url": OCHA_URL, "year": 2020,
-             "license": OCHA_LICENCE}]
+    # OCHA's table is what the reasons rest on; it gives none of these figures.
+    cite = [{"field": "median_age note/sex_ratio note", "name": OCHA, "url": OCHA_URL,
+             "year": 2020, "license": OCHA_LICENCE}]
     by_key = {fold(u["name"]): u for u in admin1}
     parents = {u["id"]: u["name"] for u in admin1}
 
@@ -255,24 +290,31 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
         else:
             fields = territory_fields(shown)
         sources = list(cite)
-        seat = seat_of.get((fold(r["admin2Name_fr"]), fold(province)))
-        if seat:
-            fields["capital"] = seat
-            seated += 1
-            sources.append(seat_cite)
-        elif len(siblings) > 1:
-            # Not among the territories: one of the cities OCHA lists beside them,
-            # whose seat is the city itself.
-            fields["capital"] = shape["name"]
-            fields["capital_note"] = (f"{shape['name']} is a city administered apart from the "
-                                      f"territories of {shown}; its seat is the city itself.")
-            cities += 1
-        else:
+        name_key = fold(r["admin2Name_fr"])
+        seat = seat_of.get((SEAT_ALIASES.get(name_key, name_key), fold(province)))
+        if len(siblings) == 1:
             # The province's one unit is the city that is the province.
             fields["capital"] = shape["name"]
             fields["capital_note"] = (f"{shown} is a city-province, one city, whose seat is the "
                                       f"city itself.")
             cities += 1
+        elif name_key in CITIES:
+            # One of the cities OCHA lists beside the territories, whose seat is
+            # the city itself (the article's territory of Beni is not OCHA's Beni).
+            fields["capital"] = shape["name"]
+            fields["capital_note"] = (f"{shape['name']} is a city administered apart from the "
+                                      f"territories of {shown}; its seat is the city itself.")
+            cities += 1
+        elif name_key in NO_SEAT:
+            fields["capital"] = gap(NOT_AVAILABLE, NO_SEAT[name_key])
+            report.append(f"  {shape['name']}: no seat written ({NO_SEAT[name_key][:60]}...)")
+        elif seat:
+            fields["capital"] = seat
+            seated += 1
+            sources.append(seat_cite)
+        else:
+            report.append(f"  {shape['name']} ({province}): neither a listed territory nor a "
+                          f"known city; no seat written")
         city = next((c for c, t in CITIES_COUNTED_IN.items() if t == shape["name"]), None)
         if city:
             ocha = next((x for x in adm2 if fold(x["admin2Name_fr"]) == fold(city)), None)
@@ -281,9 +323,11 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
                 report.append(f"  {city}: OCHA no longer counts it in {shape['name']} ({says!r})")
             else:
                 fields["population_note"] = (
-                    f"OCHA's 2020 estimate for {shape['name']} territory includes the people of the "
+                    f"OCHA's estimate for {shape['name']} territory includes the people of the "
                     f"city of {city}, which is drawn as a polygon of its own and shown there with a "
                     f"figure of its own, so {city}'s people are counted in both.")
+                sources = [{**src, "field": f"{src['field']}/population note"}
+                           if src["name"] == OCHA else src for src in sources]
         records.append(record(f"COD-GAPS-{sid}", shape["name"], level="admin2", parent="COD",
                               country="COD", match_by="shape_id", shape_id=sid,
                               sources=sources, **fields))
@@ -309,7 +353,8 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
         note = town_note(town, touching, counted_in)
         records.append(record(
             f"COD-GAPS-{polys[0]['id']}", town, level="admin2", parent="COD", country="COD",
-            match_by="shape_id", shape_id=polys[0]["id"], sources=cite,
+            match_by="shape_id", shape_id=polys[0]["id"],
+            sources=[{**cite[0], "field": "population note/median_age note/sex_ratio note"}],
             population=gap(NOT_AVAILABLE, note), median_age=gap(NOT_AVAILABLE, note),
             sex_ratio=gap(NOT_AVAILABLE, note), **own_seat(town)))
         report.append(f"  town {town}: counted in {counted_in}")
@@ -338,6 +383,72 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
             median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
             **own_seat(city, "city")))
         report.append(f"  city {city}: counted in {territory}")
+    return records, report
+
+
+def hpc_sums(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+    """The 2024 workbook's health zones added up by territory code:
+    {code: {"name", "province", "total", "zones"}}."""
+    head = [str(c or "").strip() for c in rows[0]]
+    code_col = next(i for i, h in enumerate(head) if fold(h).startswith("codeterr"))
+    name_col = head.index("Territoire")
+    prov_col = head.index("Province")
+    pop_col = next(i for i, h in enumerate(head) if fold(h) == f"population{HPC_YEAR}")
+    out: dict[str, dict[str, Any]] = {}
+    for row in rows[1:]:
+        if len(row) <= pop_col or not row[code_col]:
+            continue
+        value = row[pop_col]
+        if not isinstance(value, (int, float)):
+            continue
+        entry = out.setdefault(str(row[code_col]).strip(), {
+            "name": str(row[name_col] or "").strip(), "province": str(row[prov_col] or "").strip(),
+            "total": 0.0, "zones": 0})
+        entry["total"] += value
+        entry["zones"] += 1
+    return out
+
+
+def hpc_build(sums: dict[str, dict[str, Any]], adm2: list[dict[str, str]],
+              admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+              ) -> tuple[list[dict[str, Any]], list[str]]:
+    """Each territory's and city's 2024 sum, on the polygon OCHA's 2020 row of the same
+    code reaches; the build holds these behind the 2020 figures (HELD_ROWS)."""
+    by_key = {fold(u["name"]): u for u in admin1}
+    parents = {u["id"]: u["name"] for u in admin1}
+
+    def map_province(name: str) -> dict[str, Any] | None:
+        key = fold(name)
+        return by_key.get(fold(PROVINCE_AS.get(key, ""))) or by_key.get(key)
+
+    counted = {r["admin2Pcode"]: r for r in adm2 if not (r.get("REMARK") or "").strip()}
+    units = {code: (r["admin2Name_fr"], (map_province(r["admin1Name_fr"]) or {}).get("name", ""))
+             for code, r in counted.items()}
+    bound, _ = bind(units, admin2, parents)
+    shapes = {u["id"]: u for u in admin2}
+    records: list[dict[str, Any]] = []
+    report: list[str] = []
+    for code, entry in sorted(sums.items()):
+        sid = bound.get(code)
+        if sid is None:
+            report.append(f"  2024: {code} {entry['name']}: no 2020 unit of that code on a polygon")
+            continue
+        name = shapes[sid]["name"]
+        if name in TOWNS or name in DECLARED_ELSEWHERE:
+            continue
+        zones = entry["zones"]
+        records.append(record(
+            f"COD-HPC{HPC_YEAR}-{sid}", name, level="admin2", parent="COD", country="COD",
+            match_by="shape_id", shape_id=sid,
+            population=measure(round(entry["total"]), year=HPC_YEAR, source=HPC_SOURCE),
+            population_note=(f"OCHA's projected population of {name} for {HPC_YEAR}, made for "
+                             f"humanitarian planning: its "
+                             + (f"{zones} health zones' figures added up."
+                                if zones > 1 else "health zone's figure.")),
+            sources=[{"field": "population", "name": HPC_SOURCE, "url": OCHA_URL,
+                      "year": HPC_YEAR, "license": OCHA_LICENCE}]))
+    report.append(f"  2024: {len(records)} territories and cities, "
+                  f"{sum(r['population']['value'] for r in records):,} people")
     return records, report
 
 
@@ -371,6 +482,17 @@ def main() -> int:
     write_json(PROCESSED / OUT, records)
     log(f"  {sum(r['level'] == 'admin1' for r in records)} provinces and "
         f"{sum(r['level'] == 'admin2' for r in records)} second-level polygons written")
+    import openpyxl                                  # noqa: PLC0415
+    blob = http_get(HPC, binary=True, cache=False, timeout=300)
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    sheet = next(ws for ws in book.worksheets if "health_zone" in ws.title)
+    sums = hpc_sums([list(r) for r in sheet.iter_rows(values_only=True)])
+    log(f"  {sheet.title}: {sum(e['zones'] for e in sums.values())} health zones in "
+        f"{len(sums)} territories and cities, {sum(e['total'] for e in sums.values()):,.0f} people")
+    held, lines = hpc_build(sums, adm2, admin1, admin2)
+    for line in lines:
+        log(line)
+    write_json(PROCESSED / HPC_OUT, held)
     return 0
 
 

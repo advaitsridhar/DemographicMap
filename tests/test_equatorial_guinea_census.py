@@ -115,6 +115,38 @@ class Build(unittest.TestCase):
                 value = r[field]
                 self.assertTrue("value" in value or value.get("note"), (r["name"], field))
 
+    def test_each_source_is_cited_for_what_the_record_gives(self):
+        provinces, _ = eg.read(PAGES)
+        admin1, admin2 = units()
+        records, _ = eg.build(provinces, admin1, admin2)
+        for r in records:
+            for src in r["sources"]:
+                for part in src["field"].split("/"):
+                    field = part.removesuffix(" note")
+                    given = not isinstance(r.get(field), dict) or "value" in r[field] \
+                        or isinstance(r.get(field), list)
+                    if not part.endswith(" note"):
+                        self.assertTrue(given, (r["name"], src["name"], part))
+                # An encyclopaedia supports a note, never a figure or a share.
+                if "Wikipedia" in src["name"] and src["field"] != "capital":
+                    self.assertTrue(all(p.endswith(" note") for p in src["field"].split("/")),
+                                    (r["name"], src["field"]))
+        by = {r["name"]: r for r in records}
+        # A district drawn whole whose note names no municipality does not cite the article.
+        self.assertFalse(any("Wikipedia" in s["name"] for s in by["ACURENAM"]["sources"]))
+        self.assertTrue(any("Wikipedia" in s["name"] for s in by["COGO"]["sources"]))
+
+    def test_annobon_has_its_province_seat_and_the_age_note_names_the_yearbook(self):
+        provinces, _ = eg.read(PAGES)
+        admin1, admin2 = units()
+        records, _ = eg.build(provinces, admin1, admin2)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(by["ANNOBON"]["capital"], "San Antonio de Palé")
+        self.assertTrue(any(s["field"] == "capital" for s in by["ANNOBON"]["sources"]))
+        self.assertEqual(by["MALABO"]["capital"]["status"], "not_available")
+        self.assertIn("Anuario Estadístico de Guinea Ecuatorial 2020",
+                      by["MALABO"]["median_age"]["note"])
+
 
 if __name__ == "__main__":
     unittest.main()

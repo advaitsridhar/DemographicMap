@@ -104,11 +104,17 @@ def spelled(name: str) -> str:
 # A polygon whose whole count is a figure the table also prints for another
 # unit, so it cannot be taken for this ground's own: Dédé-Mokouba's one
 # commune, Haute-Kadéi, has exactly Mobaye commune's 23,708 (Basse-Kotto), in
-# both the Census Bureau's tabulation and OCHA's.
+# both the Census Bureau's tabulation and OCHA's. Which of the two is the copy
+# cannot be told (the table splits every unit 49 to 51, so that the men and
+# the women agree too says nothing more). The sentence goes on the population
+# as its reason, and beside it as its note: OCHA's 2015 projection for
+# Dédé-Mokouba (the shared patch's alias) is shown in its place, and the note
+# says why the 2021 count is not.
 SUSPECT = {fold("Dédé-Mokouba"): (
     "The 2021 census mapping's table gives Haute-Kadéi, this sub-prefecture's one commune, "
-    "exactly the count it gives Mobaye commune in Basse-Kotto (23,708 people), so the figure "
-    "cannot be taken for this sub-prefecture's own and none is shown.")}
+    "exactly the count it gives Mobaye commune in Basse-Kotto (23,708 people), and which of "
+    "the two is a copy of the other cannot be told, so that count cannot be taken for this "
+    "sub-prefecture's own and is not shown here.")}
 
 # The fixed proportion of men in every unit of the mapping table, and how far
 # a unit may sit from it (rounding of whole people) before the table is taken
@@ -238,6 +244,75 @@ def fixed_split(c21: dict[str, Any]) -> int:
                 FIXED_SLACK, 1.5 / unit["total"]):
             off += 1
     return off
+
+
+def twin_counts(groups: dict[str, list[tuple[str, str]]],
+                placement: dict[tuple[str, str], list[dict[str, Any]]]
+                ) -> dict[int, list[tuple[str, dict[str, Any]]]]:
+    """Counts of 1,000 or more the table gives two communes or more: {count: [(polygon,
+    commune)]}. Mobaye's and Haute-Kadéi's 23,708, Lissa's and Pouyamba's 8,825."""
+    by_count: dict[int, list[tuple[str, dict[str, Any]]]] = defaultdict(list)
+    for sid, keys in sorted(groups.items()):
+        for key in keys:
+            for unit in placement[key]:
+                if unit["total"] >= 1000:
+                    by_count[unit["total"]].append((sid, unit))
+    return {count: found for count, found in by_count.items() if len(found) > 1}
+
+
+def twin_sentence(sid: str, twins: dict[int, list[tuple[str, dict[str, Any]]]],
+                  shapes: dict[str, dict[str, Any]], prefectures: dict[str, dict[str, Any]],
+                  pref_of: dict[str, str]) -> str:
+    """What a sub-prefecture's note says of its communes that share a count with another."""
+    out = []
+    for count, found in sorted(twins.items()):
+        mine = [u for s, u in found if s == sid]
+        others = [(s, u) for s, u in found if s != sid]
+        if not mine:
+            continue
+        if not others:
+            names = " and ".join(u["name"].title() for u in mine)
+            out.append(f"The 2021 mapping's table gives two of its communes, {names}, the same "
+                       f"count ({count:,} people each); one may be a copy of the other, and both "
+                       f"are counted here.")
+            continue
+        s, other = others[0]
+        pref = prefectures.get(pref_of.get(s, ""), {}).get("name", "")
+        out.append(f"The 2021 mapping's table gives its commune of {mine[0]['name'].title()} "
+                   f"exactly the count it gives {other['name'].title()}, a commune of "
+                   f"{shapes[s]['name']} in "
+                   f"{pref} ({count:,} people); which of the two is a copy of the other cannot "
+                   f"be told, and {mine[0]['name'].title()}'s is counted here.")
+    return " ".join(out)
+
+
+def twin_sentence_prefecture(key: str, twins: dict[int, list[tuple[str, dict[str, Any]]]],
+                             shapes: dict[str, dict[str, Any]],
+                             prefectures: dict[str, dict[str, Any]],
+                             pref_of: dict[str, str]) -> str:
+    """What a prefecture's note says of the shared counts its sum includes."""
+    out = []
+    for count, found in sorted(twins.items()):
+        mine = [(s, u) for s, u in found if pref_of.get(s) == key]
+        others = [(s, u) for s, u in found if pref_of.get(s) != key]
+        if not mine:
+            continue
+        if not others:
+            names = " and ".join(f"{u['name'].title()} ({shapes[s]['name']})" for s, u in mine)
+            out.append(f"The sum includes two communes the 2021 mapping's table gives the same "
+                       f"count, {names}, {count:,} people each; one may be a copy of the other.")
+            continue
+        s, unit = mine[0]
+        o, other = others[0]
+        where = prefectures.get(pref_of.get(o, ""), {}).get("name", "")
+        withheld = SUSPECT.get(fold(shapes[s]["name"]))
+        out.append(f"The sum includes the {count:,} people the 2021 mapping's table gives "
+                   f"{unit['name'].title()} ({shapes[s]['name']}), the same count it gives "
+                   f"{other['name'].title()} ({shapes[o]['name']}, {where}); which of the two "
+                   f"is a copy of the other cannot be told"
+                   + (f", and {shapes[s]['name']} itself shows no 2021 count for that reason."
+                      if withheld else "."))
+    return " ".join(out)
 
 
 def age_table(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -414,6 +489,11 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
                    "url": dataset_url(USCB_DATASET), "year": COUNT_YEAR, "license": LICENCE}]
     records: list[dict[str, Any]] = []
     pref_totals: dict[str, int] = defaultdict(int)
+    twins = twin_counts(groups, placement)
+    for count, found in sorted(twins.items()):
+        report.append(f"  twins: {count:,} for " + " and ".join(
+            f"{u['name'].title()} ({shapes2[sid]['name']})" for sid, u in found))
+    pref_of = {sid: keys[0][0] for sid, keys in groups.items()}
     for sid, keys in sorted(groups.items()):
         shape = shapes2[sid]
         units = [u for key in keys for u in placement[key]]
@@ -425,9 +505,18 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
                                        if fold(u["sp"]) == keys[0][1]
                                        and fold(u["pref"]) == fold(units[0]["pref"])))
         suspect = SUSPECT.get(fold(shape["name"]))
+        sources = cite_count
+        seat: dict[str, Any] = {"capital": gap(NOT_AVAILABLE, SEAT_GAP)}
+        if bangui2 and sid == bangui2["id"]:
+            # Bangui's one division is the city, which is also the prefecture.
+            seat = {"capital": "Bangui",
+                    "capital_note": ("This polygon is the city of Bangui, which is also the "
+                                     "prefecture drawn one level up; its seat is the city "
+                                     "itself.")}
         if suspect:
             pop = gap(NOT_AVAILABLE, suspect)
-            note = None
+            note = suspect
+            sources = [{**src, "field": "population note"} for src in cite_count]
         elif not total:
             pop = gap(NOT_AVAILABLE, f"The 2021 census mapping counted no one in the communes "
                                      f"of {shape['name']}.")
@@ -444,12 +533,15 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
                         f"drew it, its communes added up ({listed})"
                         + (f"; since 2020 this ground is the sub-prefectures of "
                            f"{' and '.join(sps21)}." if len(sps21) > 1 else "."))
+            twin = twin_sentence(sid, twins, shapes2, pref_poly, pref_of)
+            if twin:
+                note = f"{note} {twin}"
         records.append(record(
             f"CAF-RGPH4-{sid}", shape["name"], level="admin2", parent="CAF", country="CAF",
             match_by="shape_id", shape_id=sid, population=pop,
             **({"population_note": note} if note else {}),
             sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
-            capital=gap(NOT_AVAILABLE, SEAT_GAP), sources=cite_count))
+            sources=sources, **seat))
         report.append(f"  {shape['name']}: {total:,} ({len(units)} communes of 2021"
                       + ("" if whole else f"; 2021 sub-prefectures {', '.join(sps21)}") + ")"
                       + (" -- withheld" if suspect else ""))
@@ -464,11 +556,13 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
         if not total:
             report.append(f"  prefecture {poly['name']}: no 2021 count")
             continue
+        twin = twin_sentence_prefecture(key, twins, shapes2, pref_poly, pref_of)
         fields: dict[str, Any] = {
             "population": measure(total, year=COUNT_YEAR, source=COUNT_SOURCE_USCB),
             "population_note": (f"The people counted in {poly['name']} at the mapping stage of "
                                 f"the fourth general census (RGPH-4), 1 March 2021, on its ground "
-                                f"as the 2003 census drew it: the sum of its sub-prefectures."),
+                                f"as the 2003 census drew it: the sum of its sub-prefectures' "
+                                f"counts in the table." + (f" {twin}" if twin else "")),
             "sources": list(cite_count)}
         entry = ages.get(key)
         if entry:

@@ -1,6 +1,7 @@
-"""Chad's provinces for 2023 and its departments' seats, on small inputs (no network)."""
+"""Chad's provinces for 2023, their ages, the departments' 2024 figures and seats (no network)."""
 
 import unittest
+from unittest import mock
 
 from scripts.fetch_census import chad_departments as cd
 
@@ -16,6 +17,25 @@ WIKI = """{| class="wikitable sortable"
 | [[Wadi Hawar Department|Wadi Hawar]] || || ||
 |}"""
 
+LOWS = list(range(0, 80, 5))
+
+
+def province(name, groups, men_share=0.5):
+    """An OCHA row: five-year groups 0-4 ... 75-79 and 80+, split by sex."""
+    row = {"ADM1_NAME": name}
+    total = sum(groups)
+    for low, people in zip(LOWS + [80], groups):
+        col = f"{low:02d}_{low + 4:02d}" if low < 80 else "80Plus"
+        row[f"M_{col}"] = str(round(people * men_share))
+        row[f"F_{col}"] = str(people - round(people * men_share))
+    row["M_TL"] = str(sum(int(row[k]) for k in row if k.startswith("M_") and k != "M_TL"))
+    row["F_TL"] = str(sum(int(row[k]) for k in row if k.startswith("F_") and k != "F_TL"))
+    row["T_TL"] = str(total)
+    return row
+
+
+YOUNG = [1000 - 50 * i for i in range(17)]
+
 
 class Seats(unittest.TestCase):
     def test_names_and_seats(self):
@@ -24,6 +44,8 @@ class Seats(unittest.TestCase):
         self.assertEqual(seat_of[cd.key("Bahr-Azoum")], "Am Timan")    # Bahr and Barh made one
         self.assertEqual(seat_of[cd.key("Grande Sido")], "Maro")
         self.assertNotIn(cd.key("Wadi Hawar"), seat_of)
+        _, listed = cd.listed_seats(WIKI)
+        self.assertIn(cd.key("Wadi Hawar"), listed)
 
     def test_build(self):
         adm1 = [{"ADM1_NAME": "N'Djamena", "T_TL": "18000000"},
@@ -31,20 +53,76 @@ class Seats(unittest.TestCase):
         admin1 = [{"id": "N", "name": "N'Djamena Region"}, {"id": "S", "name": "Salamat"}]
         admin2 = [{"id": "a", "name": "Bahr-Azoum", "parent": "S"},
                   {"id": "b", "name": "N'Djaména", "parent": "N"},
-                  {"id": "c", "name": "Fouli", "parent": "S"}]
-        records, report = cd.build(adm1, cd.seats(WIKI), admin1, admin2)
+                  {"id": "c", "name": "Fouli", "parent": "S"},
+                  {"id": "d", "name": "Wadi Hawar", "parent": "S"}]
+        seat_of, listed = cd.listed_seats(WIKI)
+        records, report = cd.build(adm1, seat_of, admin1, admin2, listed)
         by = {(r["level"], r["name"]): r for r in records}
         self.assertEqual(by[("admin1", "Salamat")]["population"]["value"], 496_719)
         self.assertEqual(by[("admin1", "Salamat")]["population"]["year"], 2023)
         self.assertEqual(by[("admin2", "Bahr-Azoum")]["capital"], "Am Timan")
         self.assertEqual(by[("admin2", "N'Djaména")]["capital"], "N'Djamena")
-        self.assertIn("gives no seat for this department", by[("admin2", "Fouli")]["capital"]["note"])
+        # A department the list leaves out, and one it names without a seat.
+        self.assertIn("does not include this department",
+                      by[("admin2", "Fouli")]["capital"]["note"])
+        self.assertIn("names this department but gives no seat",
+                      by[("admin2", "Wadi Hawar")]["capital"]["note"])
         self.assertTrue(any("Fouli: no seat named" in line for line in report))
 
     def test_too_few_people_refused(self):
         with self.assertRaises(SystemExit):
             cd.build([{"ADM1_NAME": "Salamat", "T_TL": "496719"}], {},
                      [{"id": "S", "name": "Salamat"}], [])
+
+
+class Structures(unittest.TestCase):
+    """Ennedi Est and Ennedi Ouest carry one structure; Guéra's 10-14 group is impossible."""
+
+    def rows(self):
+        other = [1000 - 40 * i for i in range(17)]
+        guera = list(YOUNG)
+        guera[2] = 3 * guera[1]
+        return [province("Ennedi Est", [2 * g for g in YOUNG], 0.53),
+                province("Ennedi Ouest", YOUNG, 0.53),
+                province("Batha", other, 0.49),
+                province("Guéra", guera, 0.49)]
+
+    def test_copied_and_impossible_structures_are_withdrawn(self):
+        out, report = cd.structures(self.rows())
+        self.assertEqual(set(out[cd.key("Ennedi Est")]), {"median_age", "sex_ratio"})
+        self.assertIn("Ennedi Ouest", out[cd.key("Ennedi Est")]["median_age"])
+        self.assertEqual(set(out[cd.key("Guéra")]), {"median_age"})
+        self.assertIn("3.0 times as many", out[cd.key("Guéra")]["median_age"])
+        self.assertNotIn(cd.key("Batha"), out)
+
+    def test_the_reasons_displace_ochas_figures(self):
+        admin1 = [{"id": k, "name": n} for k, n in
+                  (("E", "Ennedi Est"), ("W", "Ennedi Ouest"), ("B", "Batha"), ("G", "Guéra"))]
+        with mock.patch.object(cd, "NATIONAL_MIN", 0):
+            records, _ = cd.build(self.rows(), {}, admin1, [])
+        by = {r["name"]: r for r in records}
+        self.assertEqual(by["Guéra"]["median_age"]["displaces_before"], cd.YEAR + 1)
+        self.assertNotIn("displaces_before", by["Batha"]["median_age"])
+        self.assertNotIn("note", by["Batha"]["median_age"])
+        self.assertIn("median_age note", by["Ennedi Est"]["sources"][0]["field"])
+
+
+class Departments2024(unittest.TestCase):
+    def test_the_2024_table_and_its_one_proportion(self):
+        rows = [["ADM1_NAME", "ADM1_Pcode", "ADM2_NAME", "ADM2_Pcode", "Population_Projection_2024"],
+                ["Salamat", "TD15", "Bahr-Azoum", "TD1501", 310249.44],
+                ["Barh-El-Gazel", "TD19", "Barh-El-Gazel Oues", "TD1903", 102414.6]]
+        admin2 = [{"id": "a", "name": "Bahr-Azoum"}, {"id": "b", "name": "Barh-El-Gazel Ouest"}]
+        previous = {cd.key("Bahr-Azoum"): 279_400, cd.key("Barh-El-Gazel Ouest"): 92_224}
+        counts, report = cd.departments_2024(rows, previous, admin2)
+        self.assertEqual(counts["a"]["value"], 310_249)
+        self.assertEqual(counts["b"]["year"], 2024)
+        self.assertIn("the same proportion (11.0%)", counts["a"]["note"])
+        records, _ = cd.build([{"ADM1_NAME": "Salamat", "T_TL": "18000000"}], {},
+                              [{"id": "S", "name": "Salamat"}], admin2, set(), counts)
+        dep = next(r for r in records if r["name"] == "Bahr-Azoum")
+        self.assertEqual(dep["population"]["value"], 310_249)
+        self.assertEqual(dep["population"]["year"], 2024)
 
 
 if __name__ == "__main__":

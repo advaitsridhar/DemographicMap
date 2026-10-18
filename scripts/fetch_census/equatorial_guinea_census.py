@@ -92,10 +92,20 @@ MUNICIPALITIES: dict[str, tuple[str, ...]] = {
 # The polygons drawn for a municipality, and the district each lies in.
 APART = {"bicurga": "Evinayong", "nkimi": "Niefang", "nkue": "Micomiseng",
          "machinda": "Bata", "bitica": "Mbini", "ayene": "Añisok", "mongomoyen": "Mongomo"}
+# The article gives no figure: only which municipalities make each district,
+# which the notes name. It is cited for those notes, and only where a note
+# names them.
+WIKI_URL = "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"
 MUNICIPALITIES_SOURCE = {
-    "field": "population/ethnicity", "license": "CC BY-SA 4.0",
+    "field": "population note/ethnicity note", "license": "CC BY-SA 4.0",
     "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial (districts' municipalities)",
-    "url": "https://es.wikipedia.org/wiki/Organizaci%C3%B3n_territorial_de_Guinea_Ecuatorial"}
+    "url": WIKI_URL}
+# Annobón is one district, the whole province, and the article's table of the
+# provinces names the province's capital: San Antonio de Palé.
+SEATS = {"annobon": "San Antonio de Palé"}
+SEAT_SOURCE = {"field": "capital", "license": "CC BY-SA 4.0",
+               "name": "Spanish Wikipedia, Organización territorial de Guinea Ecuatorial "
+                       "(provinces and their capitals)", "url": WIKI_URL}
 NUMBER = re.compile(r"^\d{1,3}(?:\.\d{3})*$")
 SHARE = re.compile(r"^(?:\d+(?:,\d+)?|-)$")
 
@@ -106,8 +116,9 @@ WORDS = ("no", "one", "two", "three", "four", "five", "six", "seven", "eight", "
 
 def words(n: int) -> str:
     return WORDS[n] if 0 <= n < len(WORDS) else f"{n:,}"
-AGE_GAP = ("INEGE publishes the 2015 census's ages for the whole country only (the yearbook's "
-           "population pyramid), not by province or district, so no median age is shown.")
+AGE_GAP = ("INEGE's Anuario Estadístico de Guinea Ecuatorial 2020 prints the 2015 census's ages "
+           "for the whole country only (its population pyramid), not by province or district, "
+           "so no median age is shown.")
 SEAT_GAP = ("No published list of the districts' and municipalities' seats has been found; "
             "the census tables name the districts, not their seats.")
 SEX_GAP = ("INEGE publishes the 2015 census's shares of men and women by province, not by "
@@ -231,11 +242,16 @@ def nationality(nat: float, foreign: float, where: str) -> dict[str, Any]:
                                f"nationality is shown in place of ethnicity.")}
 
 
+def cited(fields: str) -> list[dict[str, Any]]:
+    """The yearbook, cited for the fields a record takes from it ("population",
+    "sex_ratio note"...)."""
+    return [{"field": fields, "name": SOURCE + ", Tablas 20, 21 and 23", "url": URL,
+             "year": YEAR, "license": LICENCE}]
+
+
 def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
           ) -> tuple[list[dict[str, Any]], list[str]]:
-    cite = [{"field": "population/sex_ratio/ethnicity",
-             "name": SOURCE + ", Tablas 20, 21 and 23", "url": URL, "year": YEAR,
-             "license": LICENCE}]
+    cite = cited("population/sex_ratio/ethnicity/median_age note")
     first = {fold(u["name"]): u for u in admin1}
     records: list[dict[str, Any]] = []
     report: list[str] = []
@@ -273,7 +289,12 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
             if exact:
                 d = p["districts"][census]
                 sexes: dict[str, Any] = {"sex_ratio": gap(NOT_AVAILABLE, SEX_GAP)}
+                fields = "population/ethnicity/sex_ratio note/median_age note"
+                seat: dict[str, Any] = {}
+                if fold(u["name"]) in SEATS:
+                    seat = {"capital": SEATS[fold(u["name"])]}
                 if len(p["districts"]) == 1:
+                    fields = "population/sex_ratio/ethnicity/median_age note"
                     # The district is the whole province: the province's shares are its own.
                     sexes = {"sex_ratio": measure(round(1000 * p["men"] / p["women"]),
                                                   unit="males_per_1000_females", year=YEAR,
@@ -284,10 +305,11 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
                                                 f"which {census} district is the whole.")}
                 records.append(record(
                     f"GNQ-CGPV2015-{sid}", u["name"], level="admin2", parent="GNQ",
-                    country="GNQ", match_by="shape_id", shape_id=sid, sources=cite,
+                    country="GNQ", match_by="shape_id", shape_id=sid,
+                    sources=cited(fields) + ([SEAT_SOURCE] if seat else []),
                     population=measure(d["total"], year=YEAR, source=SOURCE),
                     population_note=f"The population of {census} district at the 2015 census.",
-                    median_age=gap(NOT_AVAILABLE, AGE_GAP), **sexes,
+                    median_age=gap(NOT_AVAILABLE, AGE_GAP), **sexes, **seat,
                     **nationality(d["nationals"], d["foreigners"], f"{census} district")))
                 report.append(f"    {u['name']}: {d['total']:,} ({census})")
                 continue
@@ -304,10 +326,13 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
                 if len(towns) > 1:
                     note += (f", which is the municipalities of "
                              f"{', '.join(towns[:-1])} and {towns[-1]}")
+                named_towns = ([{**MUNICIPALITIES_SOURCE, "field": "population note"}]
+                               if len(towns) > 1 else [])
                 records.append(record(
                     f"GNQ-CGPV2015-{sid}", u["name"], level="admin2", parent="GNQ",
                     country="GNQ", match_by="shape_id", shape_id=sid,
-                    sources=cite + [MUNICIPALITIES_SOURCE],
+                    sources=cited("population/ethnicity/sex_ratio note/median_age note")
+                    + named_towns,
                     population=measure(d["total"], year=YEAR, source=SOURCE),
                     population_note=note + ".",
                     median_age=gap(NOT_AVAILABLE, AGE_GAP),
@@ -340,7 +365,9 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
             population = {**gap(NOT_AVAILABLE, why), "displaces_before": YEAR}
             records.append(record(
                 f"GNQ-CGPV2015-{sid}", u["name"], level="admin2", parent="GNQ", country="GNQ",
-                match_by="shape_id", shape_id=sid, sources=cite + [MUNICIPALITIES_SOURCE],
+                match_by="shape_id", shape_id=sid,
+                sources=cited("population note/ethnicity note/sex_ratio note/median_age note")
+                + [MUNICIPALITIES_SOURCE],
                 population=population, sex_ratio=gap(NOT_AVAILABLE, SEX_GAP),
                 median_age=gap(NOT_AVAILABLE, AGE_GAP), ethnicity=gap(NOT_AVAILABLE, share)))
             report.append(f"    {u['name']}: not shown ({census or 'not a district'})")
