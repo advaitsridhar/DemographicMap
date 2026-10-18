@@ -71,5 +71,25 @@ class AcrossTheLine(unittest.TestCase):
                 mr.across_communes(self.table, 10151)
 
 
+class TarfayaAcrossTheLine(unittest.TestCase):
+    ROWS = [("Ensemble du territoire national", 75, 0, None),
+            ("Région de Laâyoune-Sakia El Hamra", 75, 0, 11),
+            ("Province de Tarfaya", 75, 0, 11537),
+            ("Commune de Tarfaya", 40, 0, 115370105),
+            ("Commune de Daoura", 20, 0, 115370303),
+            ("Commune d'El Hagounia", 5, 0, 115370305),
+            ("Commune d'Akhfennir", 10, 0, 115370501)]
+
+    def test_both_communes_south_of_the_line_are_named(self):
+        with mock.patch.object(mr, "NATIONAL", 75):
+            table = mr.read(workbook(self.ROWS))
+        admin1 = [{"id": "R11", "name": "Laâyoune-Sakia El Hamra"}]
+        admin2 = [{"id": "t", "name": "Tarfaya Province", "parent": "R11"}]
+        records, _ = mr.build(table, admin1, admin2)
+        note = {r["shape_id"]: r for r in records}["t"]["population"]["note"]
+        self.assertIn("(75 people), the commune of Daoura (20 people) and that of El Hagounia "
+                      "(5 people) south of that line among them", note)
+
+
 if __name__ == "__main__":
     unittest.main()

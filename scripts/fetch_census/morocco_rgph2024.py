@@ -94,6 +94,10 @@ PART_ACROSS = {
     "Tarfaya Province": ("Tarfaya", "the part of Tarfaya province north of the Western "
                                     "Sahara line", ("daoura",)),
 }
+# Further communes of such a province across the line, named beside those when
+# the workbook has them (main() checks that HCP's does): El Hagounia, which
+# Wikipedia places at 27.43°N 12.39°W, south of 27°40'N like Daoura.
+ALSO_ACROSS = {"Tarfaya Province": ("elhagounia",)}
 # Communes across the line in provinces drawn whole otherwise, outside the two
 # regions the line cuts: HCP's province name -> its communes there, folded. HCP
 # counts Al Mahbass in Assa-Zag province (Guelmim-Oued Noun); Mahbès, at about
@@ -286,14 +290,19 @@ def part_across(table: dict[str, Any], label: str) -> str:
         raise SystemExit(f"morocco_rgph2024: {province} province's {len(communes)} communes make "
                          f"{made:,}, not its {row['total']:,}")
     named = []
-    for name in across:
+    for name in across + ALSO_ACROSS.get(label, ()):
         found = [c for c in communes if name in latin(c["name"])]
+        if not found and name not in across:
+            continue
         if len(found) != 1:
             raise SystemExit(f"morocco_rgph2024: {province} province has {len(found)} communes "
                              f"named {name!r}: {[c['name'] for c in communes]}")
         named.append(f"{display_commune(found[0]['name'])} ({found[0]['total']:,} people)")
-    which = ("the commune of " + named[0] if len(named) == 1 else
-             "the communes of " + ", ".join(named[:-1]) + " and " + named[-1])
+    # 'the commune of Daoura (902 people) and that of El Hagounia (561 people)'
+    which = "the commune of " + named[0]
+    if len(named) > 1:
+        rest = ["that of " + n for n in named[1:]]
+        which += (", " + ", ".join(rest[:-1]) if len(rest) > 1 else "") + " and " + rest[-1]
     return (f"This polygon is {part}. The 2024 census counts {province} province whole "
             f"({row['total']:,} people), {which} south of that line among them, and no figure "
             "for the part north of it alone has been read, so none is shown here.")
@@ -437,6 +446,14 @@ def main() -> int:
     table = read(blob)
     log(f"  {len(table['regions'])} regions and {len(table['provinces'])} provinces and "
         f"prefectures, making {table['national']:,}")
+    # The further communes across the line must be in HCP's own workbook.
+    for label, names in ALSO_ACROSS.items():
+        province = PART_ACROSS[label][0]
+        codes = [c for c, p in table["provinces"].items() if key(p["name"]) == key(province)]
+        for name in names:
+            if sum(1 for k, c in table["communes"].items()
+                   if k // 10_000 in codes and name in latin(c["name"])) != 1:
+                raise SystemExit(f"morocco_rgph2024: no single commune {name!r} in {province}")
     admin1 = json.loads((SITE / "admin1" / "MAR.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "MAR.units.json").read_text())
     records, report = build(table, admin1, admin2)

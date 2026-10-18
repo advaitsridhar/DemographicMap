@@ -94,6 +94,48 @@ class Series(unittest.TestCase):
         self.assertEqual(groups[0], (0, 4, 7.3))
         self.assertEqual(groups[-1], (75, None, 4.0))
 
+    def milieu_table(self, ages):
+        """Urban, rural and both milieux, men, women and both, at each age."""
+        rows = []
+        for (label, share) in ages:
+            urban, rural = share - 0.2, share + 0.6
+            rows.append(f"{label} " + " ".join(
+                f"{v:.1f}".replace(".", ",") for v in
+                (urban + 0.1, urban - 0.1, urban, rural + 0.1, rural - 0.1, rural,
+                 share + 0.1, share - 0.1, share)))
+        return rows
+
+    def test_a_table_by_milieu_and_sex_gives_both_milieux_column(self):
+        ages = list(zip(["0-4ans"] + LABELS[1:15] + ["75 et+"], RABAT))
+        # A table by sex only, further on, is not the one read.
+        text = "\n".join(["Figure 7 : Population par milieu de résidence, sexe et âge"]
+                         + self.milieu_table(ages) + ["0-4 ans 1 1 1"])
+        groups = ma.read_series(text)
+        self.assertEqual([s for _, _, s in groups], RABAT)
+        self.assertEqual(groups[-1][:2], (75, None))
+
+    def test_a_table_by_milieu_that_does_not_add_up_stops_the_run(self):
+        ages = list(zip(["0-4ans"] + LABELS[1:15] + ["75 et+"], RABAT))
+        rows = self.milieu_table(ages)
+        # Both milieux put before the urban: the last column is the rural's.
+        cut = rows[3].split()
+        values = cut[2:]
+        rows[3] = " ".join(cut[:2] + values[6:] + values[:6])
+        with self.assertRaises(SystemExit):
+            ma.read_series("\n".join(rows))
+
+    def test_decimals_with_points_and_one_broken_by_a_space(self):
+        self.assertEqual(ma.values_of("3.0 3.7 3. 4 5.3 5.9 5.7 4.5 5.2 4.9"),
+                         [3.0, 3.7, 3.4, 5.3, 5.9, 5.7, 4.5, 5.2, 4.9])
+        self.assertEqual(ma.values_of("7,7 7 7,3"), [7.7, 7.0, 7.3])
+
+    def test_a_note_named_in_its_own_spelling(self):
+        names = ("Préfecture d'Agadir-Ida-Ou-Tanane", "Préfecture d'Inezgane-Aït Melloul")
+        self.assertEqual(ma.named_in(["", "Préfecture d’Inzegane Ait Melloul"], names),
+                         ["Préfecture d'Inezgane-Aït Melloul"])
+        self.assertEqual(ma.named_in(["", "Préfecture d’Agadir Ida Outanane"], names),
+                         ["Préfecture d'Agadir-Ida-Ou-Tanane"])
+
     def test_shares_that_do_not_make_the_dashboard_s_stop_the_run(self):
         groups = [(*ma.bounds(label), share) for label, share in zip(LABELS, RABAT)]
         ma.broad_check("Rabat", groups, {(0, 14): 17.2, (60, None): 21.7})

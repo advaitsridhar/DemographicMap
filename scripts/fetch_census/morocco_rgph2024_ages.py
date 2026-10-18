@@ -14,7 +14,9 @@ which no median can be had. Its regional directorates publish more:
   region side by side (``ANNEXES``: five provinces of Tanger-Tétouan-Al
   Hoceima);
 * notes on the region and each province of Souss-Massa, with a table of the
-  population by five-year age group and sex (``SERIES``).
+  population by five-year age group, milieu and sex, or by age and sex only
+  (``SERIES``); from a table by milieu, both milieux' column is taken once
+  every row is seen to add up.
 
 From those shares (to 0.1%) the median is interpolated within the five-year
 group that holds the middle person.
@@ -74,8 +76,9 @@ ANNEXES = {
     "Préfecture de M'diq-Fnideq": "https://www.hcp.ma/file/244697/",
 }
 # Souss-Massa's regional directorate publishes one such note for the region and
-# each province, its table "Répartition selon le groupe d'âges quinquennal"
-# giving men, women and both: note -> the unit's HCP name, or names to tell two
+# each province, with a table of the population by milieu, sex and five-year
+# age group (the region's and Taroudannt's, "Répartition selon le groupe d'âges
+# quinquennal", by sex only): note -> the unit's HCP name, or names to tell two
 # prefectures apart by the note's own words.
 SERIES = {
     "https://www.hcp.ma/region-agadir/attachment/2802780/": ("Région de Souss-Massa",),
@@ -88,6 +91,9 @@ SERIES = {
     "https://www.hcp.ma/region-agadir/attachment/2802862/": ("Province de Tata",),
     "https://www.hcp.ma/region-agadir/attachment/2802786/": ("Province de Tiznit",),
 }
+# A note's own spelling of its unit, folded, where it is not HCP's: the note on
+# Inezgane-Aït Melloul writes "Inzegane Ait Melloul".
+SPELLINGS = {"Préfecture d'Inezgane-Aït Melloul": ("inzeganeaitmelloul",)}
 SERIES_TITLE = ("RGPH 2024, caractéristiques démographiques et socio-économiques de la "
                 "population, notes de la région de Souss-Massa et de ses préfectures et provinces")
 SERIES_LANDING = ("https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-"
@@ -186,6 +192,13 @@ def read_workbook(rows: list[list[Any]]) -> dict[int, dict[str, Any]]:
     return out
 
 
+def values_of(text: str) -> list[float]:
+    """'7,7 7 7,3' or '9.3 7.9 8.6' -> the numbers; a decimal the text breaks
+    with a space ('3. 4') is mended first."""
+    text = re.sub(r"(\d)[.,]\s+(\d)", r"\1.\2", text)
+    return [float(v.replace(",", ".")) for v in re.findall(r"\d+(?:[.,]\d+)?", text)]
+
+
 def read_annex(text: str) -> tuple[list, list]:
     """(the province's groups, the region's groups) from a provincial note's
     annex: the block headed Ensemble, rows '0-4 ans 7,5 7,0 7,2 8,4 8,0 8,2' --
@@ -198,8 +211,7 @@ def read_annex(text: str) -> tuple[list, list]:
             continue
         m = ROW.match(line)
         b = bounds(m.group(1)) if m else None
-        values = ([float(v.replace(",", ".")) for v in re.findall(r"\d+(?:,\d+)?", m.group(2))]
-                  if m else [])
+        values = values_of(m.group(2)) if m else []
         if b is None or len(values) != 6:
             run = None
             continue
@@ -218,23 +230,49 @@ def read_annex(text: str) -> tuple[list, list]:
             [(b[0], b[1], v[5]) for b, v in whole[0]])
 
 
+def between(total: float, one: float, other: float) -> bool:
+    """A share of two groups together lies between theirs, to within the
+    rounding of shares given to 0.1."""
+    return min(one, other) - 0.101 <= total <= max(one, other) + 0.101
+
+
 def read_series(text: str) -> list[tuple[int, int | None, float]]:
-    """The first whole table of five-year groups with men, women and both
-    ('0-4 ans 7,7 7,0 7,3' ... '75ans et + 3,9 4,1 4'): both sexes' shares."""
+    """Both sexes' shares by five-year group in a note: from its first whole
+    table by milieu and sex ('0-4 ans 6,9 6,5 6,7 7,8 7,5 7,7 7,0 6,6 6,8':
+    urban men, women and both, rural, then both milieux), the last column; in
+    a note without one, from its first whole table of men, women and both
+    ('0-4 ans 7,7 7,0 7,3' ... '75ans et + 3,9 4,1 4'), the third."""
+    tables: dict[int, list] = {3: [], 9: []}
     run: list = []
+    width = None
     for line in text.splitlines():
         m = ROW.match(line)
         b = bounds(m.group(1)) if m else None
-        values = ([float(v.replace(",", ".")) for v in re.findall(r"\d+(?:,\d+)?", m.group(2))]
-                  if m else [])
-        if b is None or len(values) != 3:
-            run = []
+        values = values_of(m.group(2)) if m else []
+        if b is None or len(values) not in tables:
+            run, width = [], None
             continue
         if b[0] == 0:
-            run = []
-        run.append((b[0], b[1], values[2]))
-        if b[1] is None and run[0][0] == 0:
-            return run
+            run, width = [], len(values)
+        if width != len(values):
+            run, width = [], None
+            continue
+        run.append((b, values))
+        if b[1] is None:
+            tables[width].append(run)
+            run, width = [], None
+    if tables[9]:
+        rows = tables[9][0]
+        for (low, _), v in rows:
+            # Each third column the total of the two before it, and the last
+            # three the totals of the first six: then the last is everyone's.
+            if not (all(between(v[3 * k + 2], v[3 * k], v[3 * k + 1]) for k in range(3))
+                    and all(between(v[6 + k], v[k], v[3 + k]) for k in range(3))):
+                raise SystemExit(f"morocco_rgph2024_ages: the note's table by milieu and sex "
+                                 f"does not add up at age {low}: {v}")
+        return [(b[0], b[1], v[8]) for b, v in rows]
+    if tables[3]:
+        return [(b[0], b[1], v[2]) for b, v in tables[3][0]]
     raise SystemExit("morocco_rgph2024_ages: no whole table of five-year ages in the note")
 
 
@@ -284,6 +322,16 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
                           parent="MAR", country="MAR", match_by="shape_id",
                           shape_id=rec["shape_id"], codes={"hcp": str(code)}, **fields))
     return out, report
+
+
+def named_in(pages: list[str], names: tuple[str, ...]) -> list[str]:
+    """The note's own unit among ``names``, by the name its first two pages
+    give it (HCP's spelling, or the note's own from SPELLINGS)."""
+    if len(names) == 1:
+        return list(names)
+    opening = legal.latin(" ".join(pages[:2]))
+    return [n for n in names
+            if any(s in opening for s in (legal.key(n),) + SPELLINGS.get(n, ()))]
 
 
 def pdf_pages(blob: bytes) -> list[str]:
@@ -340,8 +388,7 @@ def gather(table: dict[str, Any]) -> dict[str, dict[str, Any]]:
         blob = http_get(url, binary=True, cache=False, timeout=180)
         pages = pdf_pages(blob)
         # The note's own name for its unit, where two are possible.
-        opening = legal.latin(" ".join(pages[:2]))
-        named = [n for n in names if legal.key(n) in opening] if len(names) > 1 else list(names)
+        named = named_in(pages, names)
         if len(named) != 1:
             raise SystemExit(f"morocco_rgph2024_ages: {url} names {named or 'none'} of {names}")
         groups = read_series("\n".join(pages))
