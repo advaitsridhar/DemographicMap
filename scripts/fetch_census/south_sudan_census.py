@@ -12,9 +12,12 @@ tabular-data``, sheet ``Age-Sex``).
 **What is written**: for each state and each county the map draws, the median
 age interpolated within the five-year group holding the middle person, and
 men per 1,000 women -- the census's own, which stand in front of the
-projections OCHA's population tables give for 2022. No head count is written:
-the projections are of later years and the population figure is the most
-recent one.
+projections OCHA's population tables give for 2022. The census's head count
+is not the population written: for each county that is OCHA's estimate for
+2025, the most recent figure, from the estimates workbook of its population
+dataset (``cod-ps-ssd``, sheet ``Pop_Stats_Summary``, column ``Population -
+2025``), bound by the county's P-code (the Abyei Area's row is never read);
+the 2008 count is kept in the note.
 
 **Checks before anything is written.** Every row's age groups make its total,
 its men and women make it too, and the counties of each state make the state.
@@ -50,6 +53,16 @@ SOURCE = ("Southern Sudan Centre for Census Statistics and Evaluation (SSCCSE), 
           "Population and Housing Census 2008, population by five-year age group and sex, as the "
           "US Census Bureau tabulates it for HDX")
 LICENCE = "Creative Commons Attribution International (CC BY), published via HDX"
+# OCHA's county estimates for 2025, from its population dataset's estimates
+# workbook (the build's own OCHA tables are of 2022).
+ESTIMATES = "cod-ps-ssd"
+ESTIMATE_YEAR = 2025
+ESTIMATE_FILE = re.compile(r"population_estimates_data\.xlsx$", re.I)
+ESTIMATE_SHEET = "Pop_Stats_Summary"
+ESTIMATE_COLUMN = f"Population - {ESTIMATE_YEAR}"
+SOURCE_2025 = ("OCHA, Common Operational Dataset -- population statistics (cod-ps-ssd), South "
+               "Sudan population estimates by county for 2025")
+LICENCE_2025 = "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
 # The census's county (folded) -> the map's label, where the two differ by
 # more than spelling folds away. Filled from the run's log.
 COUNTIES: dict[str, str] = {
@@ -172,12 +185,80 @@ def figures(unit: dict[str, Any]) -> dict[str, Any]:
             "ratio": round(1000 * unit["men"] / unit["women"])}
 
 
+def read_estimates(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+    """County P-code -> {"name", "other", "state", "population"} from OCHA's
+    estimates sheet, the Abyei Area's row left out."""
+    head = next((i for i, r in enumerate(rows)
+                 if {"Admin2_Pcode", ESTIMATE_COLUMN} <= {str(c or "").strip() for c in r}), None)
+    if head is None:
+        raise SystemExit(f"south_sudan_census: no column {ESTIMATE_COLUMN!r} by Admin2_Pcode")
+    at = {str(c or "").strip(): j for j, c in enumerate(rows[head])}
+    out: dict[str, dict[str, Any]] = {}
+    for r in rows[head + 1:]:
+        code = str(r[at["Admin2_Pcode"]] or "").strip()
+        value = r[at[ESTIMATE_COLUMN]]
+        if not code or value in (None, ""):
+            continue
+        name = str(r[at["Admin2"]] or "").strip()
+        if any(c in fold(name) or c in fold(r[at["Admin1"]]) for c in CLAIMED):
+            continue
+        try:
+            people = round(float(value))
+        except (TypeError, ValueError):
+            raise SystemExit(f"south_sudan_census: {code} {name}: {value!r} is no number")
+        if code in out or people <= 0:
+            raise SystemExit(f"south_sudan_census: {code} {name}: twice, or {people}")
+        other = str(r[at["Admin2_Alternate_Name"]] or "").strip() \
+            if "Admin2_Alternate_Name" in at else ""
+        out[code] = {"name": name, "other": other, "population": people,
+                     "state": str(r[at["Admin1"]] or "").strip()}
+    return out
+
+
+def bind_estimates(estimates: dict[str, dict[str, Any]], admin2: list[dict[str, Any]],
+                   report: list[str]) -> dict[str, dict[str, Any]]:
+    """The map's county id -> its estimate: by P-code, else by the one county
+    of that name. Every county drawn must have one, or the run stops."""
+    out: dict[str, dict[str, Any]] = {}
+    left = dict(estimates)
+    for shape in admin2:
+        code = (shape.get("codes") or {}).get("pcode")
+        if code in left:
+            out[shape["id"]] = left.pop(code)
+    for shape in admin2:
+        if shape["id"] in out:
+            continue
+        hits = [c for c, e in left.items()
+                if fold(shape["name"]) in (fold(e["name"]), fold(e["other"]))]
+        if len(hits) == 1:
+            out[shape["id"]] = left.pop(hits[0])
+            report.append(f"estimate for {shape['name']!r} bound by name")
+    missing = [s["name"] for s in admin2 if s["id"] not in out]
+    for code, e in sorted(left.items()):
+        report.append(f"estimate {code} {e['name']} ({e['population']:,}): no county drawn")
+    if missing:
+        raise SystemExit(f"south_sudan_census: no {ESTIMATE_YEAR} estimate for {missing}")
+    return out
+
+
 def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any],
-                what: str) -> dict[str, Any]:
+                what: str, estimate: dict[str, Any] | None = None) -> dict[str, Any]:
     f = figures(unit)
+    extra: dict[str, Any] = {}
+    sources = [{"field": "median_age/sex_ratio", "name": SOURCE,
+                "url": uscb.dataset_url(DATASET), "year": YEAR, "license": LICENCE}]
+    if estimate:
+        extra = {"population": measure(estimate["population"], year=ESTIMATE_YEAR,
+                                       source=SOURCE_2025),
+                 "population_note": (f"OCHA's estimate of the population of {what} for "
+                                     f"{ESTIMATE_YEAR}; the 2008 census counted "
+                                     f"{unit['total']:,}.")}
+        sources.append({"field": "population", "name": SOURCE_2025,
+                        "url": uscb.dataset_url(ESTIMATES), "year": ESTIMATE_YEAR,
+                        "license": LICENCE_2025})
     return record(
         rid, shape["name"], level=level, parent="SSD", country="SSD",
-        match_by="shape_id", shape_id=shape["id"],
+        match_by="shape_id", shape_id=shape["id"], **extra,
         median_age=measure(f["median"], unit="years", year=YEAR, source=SOURCE)
         if f["median"] is not None else None,
         median_age_note=(f"Interpolated within the five-year age group that holds the middle "
@@ -187,14 +268,15 @@ def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any
         sex_ratio_note=(f"Men per 1,000 women at the 2008 census in {what}: {unit['men']:,} "
                         f"men and {unit['women']:,} women."),
         codes={"uscb": unit["code"]},
-        sources=[{"field": "median_age/sex_ratio", "name": SOURCE,
-                  "url": uscb.dataset_url(DATASET), "year": YEAR, "license": LICENCE}])
+        sources=sources)
 
 
-def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          estimates: dict[str, dict[str, Any]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
     records: list[dict[str, Any]] = []
+    bound = bind_estimates(estimates, admin2, report) if estimates else {}
     states = {fold(s["name"]): s for s in admin1}
     state_of: dict[str, dict[str, Any]] = {}
     for key, unit in sorted(table["states"].items()):
@@ -240,10 +322,48 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
         shape = hits[0]
         del free[shape["id"]]
         records.append(unit_record(f"SSD-2008-{unit['code']}", shape, "admin2", unit,
-                                   f"{unit['name'].title()} County"))
+                                   f"{unit['name'].title()} County", bound.get(shape["id"])))
     for shape in free.values():
         report.append(f"polygon {shape['name']!r}: no county")
     return records, report
+
+
+def estimate_sheets() -> dict[str, list[list[Any]]]:
+    """Every sheet's rows in the newest estimates workbook OCHA's population
+    dataset carries."""
+    import openpyxl                                 # noqa: PLC0415
+    found = sorted((r for r in uscb.package(ESTIMATES).get("resources", [])
+                    if ESTIMATE_FILE.search(r.get("name") or "")),
+                   key=lambda r: r.get("name") or "", reverse=True)
+    if not found:
+        raise SystemExit(f"south_sudan_census: {ESTIMATES} carries no estimates workbook")
+    log(f"  estimates: {found[0].get('name')} ({found[0]['url']})")
+    blob = http_get(found[0]["url"], binary=True, cache=False, timeout=180)
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    if ESTIMATE_SHEET not in book.sheetnames:
+        raise SystemExit(f"south_sudan_census: no sheet {ESTIMATE_SHEET} in {found[0].get('name')}")
+    return {name: [list(r) for r in book[name].iter_rows(values_only=True)]
+            for name in book.sheetnames}
+
+
+def check_states(estimates: dict[str, dict[str, Any]], rows: list[list[Any]]) -> int:
+    """Each state's counties must make the total the workbook's summary gives
+    it, to within rounding; the number of states checked."""
+    totals = {fold(r[0]): float(r[1]) for r in rows[1:]
+              if len(r) > 1 and r[0] and isinstance(r[1], (int, float))
+              and "total" not in fold(r[0])}
+    checked = 0
+    for key, total in totals.items():
+        mine = [e["population"] for e in estimates.values() if fold(e["state"]) == key]
+        made = sum(mine)
+        if any(c in key for c in CLAIMED):
+            continue
+        # Each county's figure rounded to a whole person.
+        if abs(made - total) > 1 + len(mine) / 2:
+            raise SystemExit(f"south_sudan_census: the counties of {key} make {made:,}, the "
+                             f"summary {total:,.0f}")
+        checked += 1
+    return checked
 
 
 def main() -> int:
@@ -264,9 +384,15 @@ def main() -> int:
         f = figures(unit)
         log(f"  {unit['state'][:24]:24} {unit['name'][:28]:28} {unit['total']:>9,}  median "
             f"{f['median']}  men/1000 women {f['ratio']}")
+    sheets = estimate_sheets()
+    estimates = read_estimates(sheets[ESTIMATE_SHEET])
+    states = next((rows for name, rows in sheets.items() if "state" in name.lower()), [])
+    log(f"  {len(estimates)} counties' estimates for {ESTIMATE_YEAR}, making "
+        f"{sum(e['population'] for e in estimates.values()):,} without the Abyei Area; "
+        f"{check_states(estimates, states)} states' totals made by their counties")
     admin1 = json.loads((SITE / "admin1" / "SSD.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "SSD.units.json").read_text())
-    records, report = build(table, admin1, admin2)
+    records, report = build(table, admin1, admin2, estimates)
     for line in report:
         log("  " + line)
     log(f"  {sum(r['level'] == 'admin1' for r in records)} states and "

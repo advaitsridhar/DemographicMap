@@ -73,5 +73,48 @@ class Building(unittest.TestCase):
                          "Southern Sudan Centre for Census Statistics and Evaluation (SSCCSE)")
 
 
+ESTIMATES = [
+    ["Admin1", "Admin1_Pcode", "Admin2", "Admin2_Alternate_Name", "Admin2_Pcode",
+     "Population - 2025"],
+    ["Abyei Administrative Area", "SS00", "Abyei Administrative Area", "", "SS0001", "145358"],
+    ["Warrap", "SS08", "Twic", "", "SS0801", "300000.4"],
+    ["Lakes", "SS04", "Lafon", "Lopa/Lafon", "SS0499", "120000.6"]]
+
+
+class Estimates(unittest.TestCase):
+    def test_the_abyei_row_is_never_read(self):
+        got = ss.read_estimates(ESTIMATES)
+        self.assertEqual(sorted(got), ["SS0499", "SS0801"])
+        self.assertEqual(got["SS0801"]["population"], 300000)
+
+    def test_counties_take_the_2025_estimate_by_p_code_or_name(self):
+        table = Building().table()
+        admin1 = [{"id": "W", "name": "Warrap"}, {"id": "L", "name": "Lakes"}]
+        admin2 = [{"id": "T", "name": "Twic", "parent": "W", "codes": {"pcode": "SS0801"}},
+                  {"id": "F", "name": "Lafon", "parent": "L", "codes": {"pcode": "SS0402"}}]
+        records, report = ss.build(table, admin1, admin2, ss.read_estimates(ESTIMATES))
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["T"]["population"], {"value": 300000, "year": 2025,
+                                                 "source": ss.SOURCE_2025})
+        self.assertEqual(by["F"]["population"]["value"], 120001)       # bound by name
+        self.assertIn("for 2025; the 2008 census counted 40.", by["F"]["population_note"])
+        self.assertNotIn("value", by["W"]["population"])     # the states are summed by the map
+        self.assertEqual(ss.SOURCE_2025.split(",")[0], "OCHA")
+        self.assertTrue(any("bound by name" in line for line in report))
+
+    def test_a_county_without_an_estimate_stops_the_run(self):
+        admin2 = [{"id": "X", "name": "Nowhere", "parent": "W", "codes": {"pcode": "SS0999"}}]
+        with self.assertRaises(SystemExit):
+            ss.bind_estimates(ss.read_estimates(ESTIMATES), admin2, [])
+
+    def test_counties_that_do_not_make_their_state_stop_the_run(self):
+        estimates = ss.read_estimates(ESTIMATES)
+        self.assertEqual(ss.check_states(estimates, [["State", "Sum"], ["Warrap", 300000.4],
+                                                     ["Abyei Administrative Area", 145358],
+                                                     ["Grand Total", 1]]), 1)
+        with self.assertRaises(SystemExit):
+            ss.check_states(estimates, [["State", "Sum"], ["Warrap", 310000]])
+
+
 if __name__ == "__main__":
     unittest.main()
