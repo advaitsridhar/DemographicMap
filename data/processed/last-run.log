@@ -1,2 +1,4 @@
-  read https://web.archive.org/web/20251225150927id_/https://www.insbu.bi/documents/recensements/Chapitre-1.xlsx: 88,562 bytes, sha256 87b0336fa730916a07fa2d3dc702a26fe2ae6354c3743fd01c019e683603da44
-burundi_census: Tableaux 1.6 and 1.4 disagree: [({'name': 'VYANDA', 'male': 14476, 'female': 15209, 'total': 29685}, {'name': 'Vyanda', 'male': 14476, 'female': 15209, 'total': 29685}), ({'name': 'KARUSI', 'male': 210225, 'female': 226218, 'total': 436443}, {'name': 'KARUZI', 'male': 210225, 'female': 226218, 'total': 436443}), ({'name': 'Ruhororo', 'male': 29318, 'female': 33019, 'total': 62337}, {'name': 'RUHORORO', 'male': 29318, 'female': 33019, 'total': 62337})]
+  read https://web.archive.org/web/20251008162910id_/https://www.ubos.org/wp-content/uploads/2025/10/NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx: 9,356,925 bytes
+  workbook: APAA (9,456) has no county rows
+  147 districts making 45,905,417, 312 counties, 2207 sub-counties (2207 with their age groups)
+  wrote data/processed/uganda_subcounties.json (1134 kB)
