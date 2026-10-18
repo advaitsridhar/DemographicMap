@@ -79,7 +79,8 @@ class MidTermTest(unittest.TestCase):
         self.assertIn("609,174", bombali)
         self.assertTrue(m.note("Kailahun", {"districts": ["Kailahun"]})
                         .startswith("The 2021 Mid-Term Population and Housing Census's count "
-                                    "for Kailahun District, as citypopulation.de tabulates it."))
+                                    "for Kailahun District. The mid-term census's results were "
+                                    "disputed"))
 
 
 if __name__ == "__main__":

@@ -175,9 +175,8 @@ def note(name: str, spec: dict[str, Any]) -> str:
         else:
             how = ("counts for Port Loko District and for the five chiefdoms of Karene District "
                    "made out of Port Loko in 2017 added together")
-        return (f"{lead} {how}, as citypopulation.de tabulates them: the district as the 2015 "
-                f"census counted it. {DISPUTED}")
-    return f"{lead} count for {label}, as citypopulation.de tabulates it. {DISPUTED}"
+        return f"{lead} {how}: the district as the 2015 census counted it. {DISPUTED}"
+    return f"{lead} count for {label}. {DISPUTED}"
 
 
 def build(units: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
@@ -200,8 +199,8 @@ def build(units: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             country="SLE", match_by="shape_id", shape_id=shape["id"], sources=cite,
             population=measure(sum(figures[d] for d in districts), year=YEAR, source=SOURCE),
             population_note=(f"The 2021 Mid-Term Population and Housing Census's counts for the "
-                             f"districts that made up {label} in 2015 added together{later}, as "
-                             f"citypopulation.de tabulates them. {DISPUTED}")))
+                             f"districts that made up {label} in 2015 added together{later}. "
+                             f"{DISPUTED}")))
     for name, spec in FROM_2017.items():
         shape = drawn2[name]
         records.append(record(
