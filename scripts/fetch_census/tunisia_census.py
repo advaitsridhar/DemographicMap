@@ -487,26 +487,26 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
                               f"({sum(s['M'] + s['F'] for s in secs):,} people) that had been "
                               f"{name}'s")
             new = [name_of(d) for d in sorted(by_new)]
-            what = (f"the delegation of {name} as drawn in 2014; the 2024 census counts its "
-                    f"ground as {listed([name] + pieces)}, added together here; "
-                    f"{listed(new)} {'was' if len(new) == 1 else 'were'} made "
-                    f"{'a delegation' if len(new) == 1 else 'delegations'} since")
+            what = f"the delegation of {name} as drawn in 2014"
+            more = (f"The 2024 census counts this ground as {listed([name] + pieces)}, added "
+                    f"together here; {listed(new)} {'was' if len(new) == 1 else 'were'} made "
+                    f"{'a delegation' if len(new) == 1 else 'delegations'} since.")
         else:
-            what = f"the delegation of {name}"
+            what, more = f"the delegation of {name}", ""
         records.append(unit_record(f"TUN-RGPH2024-{'-'.join(codes)}", labels[sid], "admin2",
-                                   unit, sources, what))
+                                   unit, sources, what, more))
     return records, report
 
 
 def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any],
-                sources: list[dict[str, Any]], what: str) -> dict[str, Any]:
+                sources: list[dict[str, Any]], what: str, more: str = "") -> dict[str, Any]:
     f = figures(unit)
     return record(
         rid, shape["name"], level=level, parent="TUN", country="TUN",
         match_by="shape_id", shape_id=shape["id"],
         population=measure(unit["total"], year=YEAR, source=SOURCE),
         population_note=(f"The 2024 census count of {what}: {unit['M']:,} men and "
-                         f"{unit['F']:,} women."),
+                         f"{unit['F']:,} women." + (f" {more}" if more else "")),
         median_age=measure(f["median"], unit="years", year=YEAR, source=SOURCE)
         if f["median"] is not None else None,
         median_age_note=("Interpolated within the five-year age group that holds the middle "

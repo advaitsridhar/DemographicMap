@@ -120,6 +120,12 @@ class Reading(unittest.TestCase):
         self.assertIn(f"the part of Nouvelle ({2 * 17 * 3:,} people) that had been La Medina's",
                       by_shape["P2"]["population_note"])
         self.assertIn("Nouvelle was made a delegation since", by_shape["P2"]["population_note"])
+        # The men and women counted are the polygon's, said before the parts.
+        men = by_shape["P2"]["population"]["value"] // 2
+        self.assertTrue(by_shape["P2"]["population_note"].startswith(
+            f"The 2024 census count of the delegation of La Medina as drawn in 2014: {men:,} men "
+            f"and {men:,} women. The 2024 census counts this ground as La Medina and the part"))
+        self.assertTrue(by_shape["P2"]["population_note"].endswith("since."))
 
     def test_a_name_cut_at_twenty_characters_is_written_whole(self):
         self.assertEqual(tc.FRENCH["3166"], "Zaouia-Ksiba-Thrayet")
