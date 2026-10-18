@@ -104,6 +104,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--text", default=None, help="a saved probe_pdf dump instead of the PDF")
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     args = ap.parse_args()
     log(f"burkina: {SOURCE}")
     text = Path(args.text).read_text(encoding="utf-8") if args.text else fetch_text(URL)
