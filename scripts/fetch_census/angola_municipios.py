@@ -2086,18 +2086,25 @@ def inspect(stem: str, blob: bytes) -> None:
             hits = [i for i, t in enumerate(texts) if any(k in t for k in keys_of(spec))
                     and not t.count("quadro") > 12]       # not the list of tables
             log(f"== {stem} {name}: pages {[i + 1 for i in hits]}")
+            if name == "medians":
+                # The pages whose own words hold Quadro 1.7's heading, word by word.
+                hits = [i for i in hits if MEDIAN_KEY in squeeze(" ".join(
+                    w["text"] for w in pdf.pages[i].extract_words()))]
+                log(f"  heading on pages {[i + 1 for i in hits]}")
             for i in hits[:5]:
                 rows = rows_of(pdf.pages[i].extract_words(use_text_flow=False,
                                                           keep_blank_chars=False))
                 if name == "medians":
                     title, entries = median_entries(rows)
                     at = next((k for k, r in enumerate(rows)
-                               if "mediana" in squeeze(words_of(r))), None)
-                    columns = [round(min(c)) for c in decimal_columns(rows)]
-                    log(f"  p{i + 1}: title {title[:90]!r}; first 'mediana' row "
-                        f"{words_of(rows[at])[:90] if at is not None else None!r}; figure "
-                        f"columns at {columns}; {len(entries)} entries: "
+                               if MEDIAN_KEY in squeeze(words_of(r))), None)
+                    clusters = decimal_columns(rows[at + 1:] if at is not None else rows)
+                    log(f"  p{i + 1}: title {title[:90]!r}; heading row {at}; figure columns "
+                        f"{[(round(min(c)), round(max(c)), len(c)) for c in clusters]}; "
+                        f"{len(entries)} entries: "
                         + "; ".join(f"{lab}={m}" for lab, m in entries[:45]))
+                    for r in rows[(at or 0):(at or 0) + 14]:
+                        log("    " + " ".join(f"{t}[{x0:.0f}-{x1:.0f}]" for x0, x1, t in r.words))
                     continue
                 for block in blocks_of(rows, lead=True, singles=True):
                     bad = assign_columns(block)
