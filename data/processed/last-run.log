@@ -1,236 +1,73 @@
-  read https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx: 1,759,157 bytes, sha256 17fb2f59b82d6ab4490078427f6779ca1284250a1035a854d31e6bb109e9fdee
-  13 first-order areas and 93 zones, making 73,750,932, every row's groups and sexes making its total; listed without a count: ['OROMĪYA, FINFINNE ZURIA SPECIAL ZONE']
-  bahirdarspecialwereda: counted apart and placed in no polygon -- the city lies on the line between West Gojam and North Gonder
-  zones of the workbook on no polygon: []
-  admin1 Addis Ababa: 2,739,551, median 24.0, sex ratio 910
-  admin1 Afar: 1,390,273, median 17.1, sex ratio 1260
-  admin1 Amhara: 17,221,976, median 18.0, sex ratio 1007
-  admin1 Beneshangul Gumu: 784,345, median 17.0, sex ratio 1034
-  admin1 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin1 Gambela: 307,096, median 18.2, sex ratio 1085
-  admin1 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin1 Oromia: 26,993,933, median 16.0, sex ratio 1015
-  admin1 SNNPR: 14,929,548, median 15.9, sex ratio 990
-  admin1 Somali: 4,445,219, median 17.1, sex ratio 1253
-  admin1 Tigray: 4,316,988, median 17.7, sex ratio 971
-  admin2 Afder: 570,629, median 15.9, sex ratio 1330
-  admin2 Agnuak: 135,242, median 18.8, sex ratio 1032
-  admin2 Alaba: 232,325, median 16.7, sex ratio 1020
-  admin2 Arsi: 2,637,657, median 15.4, sex ratio 1007
-  admin2 Asosa: 360,883, median 17.1, sex ratio 1040
-  admin2 Awi/Agew: 982,942, median 17.0, sex ratio 1002
-  admin2 Bale: 1,402,492, median 15.2, sex ratio 1036
-  admin2 Basketo: 56,689, median 14.8, sex ratio 1013
-  admin2 Bench Maji: 652,531, median 15.6, sex ratio 982
-  admin2 Borena: 962,489, median 14.5, sex ratio 1024
-  admin2 Central: 1,245,824, median 17.6, sex ratio 971
-  admin2 Dawro: 489,577, median 14.3, sex ratio 1037
-  admin2 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin2 Doolo: 306,488, median 17.6, sex ratio 1342
-  admin2 East Gojam: 2,153,937, median 17.8, sex ratio 981
-  admin2 East Harerge: 2,723,850, median 15.4, sex ratio 1032
-  admin2 East Shewa: 1,576,554, median 18.8, sex ratio 1044
-  admin2 East Wellega: 1,213,503, median 16.9, sex ratio 999
-  admin2 Eastern: 755,343, median 17.2, sex ratio 909
-  admin2 Fafan: 967,652, median 17.8, sex ratio 1193
-  admin2 Gamo Gofa: 1,593,104, median 16.4, sex ratio 992
-  admin2 Gedio: 847,434, median 15.0, sex ratio 1005
-  admin2 Guji: 1,389,800, median 13.8, sex ratio 1022
-  admin2 Gurage: 1,279,646, median 17.7, sex ratio 946
-  admin2 Hadiya: 1,231,196, median 16.7, sex ratio 988
-  admin2 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin2 Horo Guduru: 570,040, median 16.5, sex ratio 1003
-  admin2 Ilubabor: 1,271,609, median 16.4, sex ratio 1004
-  admin2 Jarar: 478,168, median 18.3, sex ratio 1275
-  admin2 Jimma: 2,607,115, median 16.7, sex ratio 1012
-  admin2 KT: 680,837, median 16.6, sex ratio 978
-  admin2 Keffa: 874,716, median 15.6, sex ratio 975
-  admin2 Kelem Wellega: 797,666, median 16.7, sex ratio 1016
-  admin2 Kemashi: 101,543, median 16.7, sex ratio 1061
-  admin2 Konta: 90,846, median 15.2, sex ratio 968
-  admin2 Korahe: 312,713, median 18.8, sex ratio 1320
-  admin2 Liben: 539,821, median 14.2, sex ratio 1226
-  admin2 Majang: 59,248, median 19.1, sex ratio 1066
-  admin2 Metekel: 321,919, median 16.9, sex ratio 1018
-  admin2 Nogob: 348,409, median 17.9, sex ratio 1295
-  admin2 North Gonder: 2,929,628, median 17.5, sex ratio 1029
-  admin2 North Shewa(R3): 1,837,490, median 18.8, sex ratio 1022
-  admin2 North Shewa(R4): 1,431,305, median 17.6, sex ratio 1005
-  admin2 North Western: 736,805, median 17.5, sex ratio 999
-  admin2 North Wollo: 1,500,303, median 18.7, sex ratio 1007
-  admin2 Nuer: 112,606, median 17.1, sex ratio 1163
-  admin2 Oromia: 457,278, median 17.7, sex ratio 989
-  admin2 Region 14: 2,739,551, median 24.0, sex ratio 910
-  admin2 Segen Peoples': 582,757, median 15.1, sex ratio 963
-  admin2 Selti: 750,398, median 16.1, sex ratio 943
-  admin2 Shabelle: 464,253, median 16.5, sex ratio 1257
-  admin2 Sheka: 199,314, median 18.0, sex ratio 1029
-  admin2 Sidama: 3,212,944, median 15.2, sex ratio 1023
-  admin2 Siti: 457,086, median 17.4, sex ratio 1169
-  admin2 South Gonder: 2,051,738, median 17.7, sex ratio 1030
-  admin2 South Omo: 573,435, median 15.2, sex ratio 999
-  admin2 South West Shewa: 1,101,129, median 17.2, sex ratio 1021
-  admin2 South Wollo: 2,518,862, median 19.1, sex ratio 983
-  admin2 Southern: 1,222,418, median 18.3, sex ratio 971
-  admin2 Special Woreda: 34,998, median 16.6, sex ratio 1024
-  admin2 Wag Himra: 426,213, median 17.3, sex ratio 1007
-  admin2 West Arsi: 1,964,038, median 14.5, sex ratio 983
-  admin2 West Gojam: 2,106,596, median 17.4, sex ratio 1009
-  admin2 West Harerge: 1,871,706, median 15.1, sex ratio 1050
-  admin2 West Shewa: 2,122,565, median 16.5, sex ratio 998
-  admin2 West Wellega: 1,350,415, median 16.8, sex ratio 989
-  admin2 Western: 356,598, median 18.1, sex ratio 1049
-  admin2 Wolayita: 1,501,112, median 15.9, sex ratio 971
-  admin2 Yem: 80,687, median 17.1, sex ratio 1011
-  admin2 Zone 1: 410,790, median 17.7, sex ratio 1207
-  admin2 Zone 2: 350,111, median 15.7, sex ratio 1263
-  admin2 Zone 3: 198,751, median 18.4, sex ratio 1214
-  admin2 Zone 4: 246,822, median 17.1, sex ratio 1327
-  admin2 Zone 5: 183,799, median 17.5, sex ratio 1342
-  11 of 11 regions and 74 of 74 zones written
-  wrote data/processed/ethiopia_census.json (173 kB)
-  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/2ec96e53-b38f-4994-9a8c-5bbaa4c49e82/download/eth_admpop_adm1_2022_v2.csv: 5,201 characters
-  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/3f8150d4-6d5d-4659-a0a8-586e4689ae65/download/eth_admpop_adm3_2022_v2.csv: 338,607 characters
-  projection weredas matched to no outline, in zone ET0101, placed with the zone's other weredas: ['Laelay Adiabo (ET010102, 136,058)', 'Tselemti (ET010106, 164,957)', 'Selekleka (ET010109, 14,679)', 'Adi Hageray (ET010112, 12,852)', 'Dima (TG) (ET010115, 32,504)']
-  projection weredas matched to no outline, in zone ET0102, placed with the zone's other weredas: ['Edaga arbi (ET010203, 63,635)']
-  projection weredas matched to no outline, in zone ET0105, placed with the zone's other weredas: ['Setit Humera (ET010504, 42,383)']
-  projection weredas matched to no outline, in zone ET0107, placed with the zone's other weredas: ['Mekelle (ET010701, 186,272)']
-  projection weredas matched to no outline, in zone ET0304, whose weredas lie in ['57463737B48822238288228', '57463737B67745192438967', '57463737B70829133861950']: ['Tulu Awlia (ET030428, 4,308)']
-  projection weredas matched to no outline, in zone ET0410, placed with the zone's other weredas: ['Aweday town (ET041099, 15,183)']
-  projection weredas matched to no outline, in zone ET0417, placed with the zone's other weredas: ['Bishan Guracha (ET041798, 26,592)']
-  projection weredas matched to no outline, in zone ET0420, whose weredas lie in ['57463737B12311921356322', '57463737B31651758241956', '57463737B78639560237753', 'straddling']: ['Lege Tafo-Lege Dadi town (ET042004, 22,227)', 'Sululta town (ET042005, 12,659)', 'Dukem (ET042008, 13,366)', 'Sebeta town (ET042009, 97,498)', 'Gelana (Finfine) (ET042098, 15,634)']
-  projection weredas matched to no outline, in zone ET0421, placed with the zone's other weredas: ['Dawe Serer (ET042199, 59,300)']
-  projection weredas matched to no outline, in zone ET0509, whose weredas lie in ['57463737B43250517747981', '57463737B84149246133198']: ['Quarsadula (ET050905, 33,677)']
-  projection weredas matched to no outline, in zone ET0603, placed with the zone's other weredas: ['Assosa (ET060303, 171,985)']
-  projection weredas matched to no outline, in zone ET0706, placed with the zone's other weredas: ['Kawo Koisha (ET070620, 43,939)', 'Bayera Koisha (ET070622, 22,762)']
-  projection weredas matched to no outline, in zone ET0707, whose weredas lie in ['57463737B95170801436908', 'straddling']: ['Boko Dawula (ET070710, 24,109)']
-  projection weredas matched to no outline, in zone ET0710, placed with the zone's other weredas: ['Ezo /Kogota (ET071007, 40,612)', 'Chencha (ET071010, 26,262)', 'Kemba (ET071011, 120,052)', 'Gerese (ET071013, 159,945)']
-  projection weredas matched to no outline, in zone ET0715, placed with the zone's other weredas: ['Bulike town (ET071508, 14,758)']
-  projection weredas matched to no outline, in zone ET0724, placed with the zone's other weredas: ['Yem SP Woreda (ET072401, 67,586)']
-  projection weredas matched to no outline, in zone ET1104, placed with the zone's other weredas: ['Isara (ET110405, 88,283)']
-  projection weredas matched to no outline, in zone ET1600, placed with the zone's other weredas: ['Hawasa town (ET160018, 16,010)']
-  Afder: not written -- 12 weredas, zones holding weredas matched to no outline ['ET0509']
-  Agnuak: 241,290 from 8 weredas; about 4,834 left out, 0 taken in from beyond (named: ['Anfilo'], [])
-  Alaba: not written -- of its sum 241,565, weredas straddling its line leave out about 2,861 (['Adilo']) and take in about 23,805 from beyond it (['Wera Djo', 'Wera', 'Atote Ulo'])
-  Arsi: 3,766,075 from 27 weredas; about 117,342 left out, 67,855 taken in from beyond (named: ['Daro Lebu', 'Adama Tulu Jido Kombolcha'], ['Dodota', 'Munessa'])
-  Asosa: 576,297 from 10 weredas; about 9,283 left out, 11,544 taken in from beyond (named: ['Begi', 'Mana Sibu'], ['Bilidigilu', 'Maokomo Special'])
-  Awi/Agew: 1,641,176 from 16 weredas; about 12,064 left out, 18,866 taken in from beyond (named: [], [])
-  Bale: 1,546,787 from 21 weredas; about 13,793 left out, 13,102 taken in from beyond (named: [], [])
-  Basketo: not written -- of its sum 79,236, weredas straddling its line leave out about 7,373 (['North Ari']) and take in about 19,809 from beyond it (['Basketo SP Woreda'])
-  Bench Maji: 929,586 from 15 weredas; about 36,215 left out, 21,744 taken in from beyond (named: ['Chena', 'Yeki'], ['Shay Bench', 'Gidi Bench'])
-  Borena: not written -- of its sum 1,438,397, weredas straddling its line leave out about 172,835 (['Kercha', 'Dila town', 'Kochere', 'Gedeb']) and take in about 16,710 from beyond it (['Melka Soda', 'Abaya', 'Suro Berguda'])
-  Central: 1,624,997 from 24 weredas; about 66,814 left out, 20,914 taken in from beyond (named: ['Enderta', 'Geraleta'], [])
-  Dawro: 830,837 from 12 weredas; about 9,469 left out, 19,675 taken in from beyond (named: [], ['Tocha', 'Loma'])
-  Dire Dawa: 500,339 from 12 weredas; about 13,816 left out, 16,531 taken in from beyond (named: ['Malka Jabti /M.Jebdu)'], ['Aseliso', 'Wahil'])
-  Doolo: not written -- of its sum 478,289, weredas straddling its line leave out about 99,737 (['Gashamo', 'Marsin', 'Lehel-Yucub', 'Shilabo']) and take in about 2,491 from beyond it (['Warder'])
-  East Gojam: 2,902,200 from 26 weredas; about 56,712 left out, 33,869 taken in from beyond (named: ['Gonje', 'Dega Damot'], [])
-  East Harerge: 3,770,510 from 24 weredas; about 33,125 left out, 61,056 taken in from beyond (named: [], ['Melka Balo'])
-  East Shewa: not written -- of its sum 2,108,044, weredas straddling its line leave out about 141,237 (['Akaki', 'Dodota', 'Ziway Dugda', 'Akaki Kality']) and take in about 113,827 from beyond it (['Adama Tulu Jido Kombolcha', 'Boset', 'Fentale', 'Gimbichu'])
-  East Wellega: 1,870,321 from 18 weredas; about 55,785 left out, 24,879 taken in from beyond (named: ['Limu Seka'], [])
-  Eastern: 1,212,668 from 17 weredas; about 49,525 left out, 13,796 taken in from beyond (named: ['Geraleta', 'Aheferom', 'Emba Sieneti'], ['Agulae'])
-  Fafan: not written -- of its sum 891,334, weredas straddling its line leave out about 52,261 (['Harshin', 'Dembel', 'Koran /Mulla', 'Ararso']) and take in about 20,793 from beyond it (['Harawo', 'Gursum (SM)', 'Tuliguled', 'Shabeeley'])
-  Gamo Gofa: 2,313,954 from 27 weredas; about 44,088 left out, 21,963 taken in from beyond (named: ['Basketo SP Woreda'], [])
-  Gedio: not written -- of its sum 935,207, weredas straddling its line leave out about 177,117 (['Dila town', 'Gedeb', 'Dara', 'Abaya']) and take in about 44,450 from beyond it (['Kochere', 'Wenago', 'Dila Zuria', 'Gedeb town'])
-  Guji: 2,180,882 from 21 weredas; about 24,349 left out, 105,114 taken in from beyond (named: ['Gedeb'], ['Kercha', 'Bore'])
-  Gurage: not written -- of its sum 1,642,049, weredas straddling its line leave out about 111,610 (['Siltie', 'Alicho Woriro', 'Mierab Azenet Berbere', 'Ameka']) and take in about 20,034 from beyond it (['Endiguagn', 'Sodo', 'Cheha', 'Kebena'])
-  Hadiya: not written -- of its sum 1,942,784, weredas straddling its line leave out about 89,158 (['Tembaro', 'Doyogena', 'Damot Pullasa', 'Kacha Bira']) and take in about 109,630 from beyond it (['Duna', 'Misrak Badawacho', 'Mirab Badowach', 'Analemmo'])
-  Hareri: not written -- of its sum 268,314, weredas straddling its line leave out about 692 (['Dire Teyara']) and take in about 17,645 from beyond it (['Erer (HR)', 'Abadir', 'Sofi', 'Jinela'])
-  Horo Guduru: 780,424 from 12 weredas; about 36,729 left out, 26,332 taken in from beyond (named: ['Bako Tibe', 'Ginde Beret', 'Mida Kegn', 'Cheliya'], ['Jimma Rare', 'Abe Dongoro'])
-  Ilubabor: not written -- of its sum 1,767,139, weredas straddling its line leave out about 31,280 (['Setema', 'Gumay', 'Saylem', 'Gimbi']) and take in about 104,930 from beyond it (['Dedesa', 'Darimu', 'Yayu', 'Alge Sachi'])
-  Jarar: not written -- of its sum 508,973, weredas straddling its line leave out about 311,393 (['Harshin', 'Gashamo', 'Gunagado', 'Garbo']) and take in about 3,959 from beyond it (['Ararso', 'Goljano'])
-  Jimma: 4,197,372 from 22 weredas; about 70,953 left out, 86,742 taken in from beyond (named: ['Dedesa'], [])
-  KT: not written -- of its sum 989,687, weredas straddling its line leave out about 102,076 (['Boloso Sore', 'Duna', 'Misrak Badawacho', 'Wera']) and take in about 63,253 from beyond it (['Tembaro', 'Doyogena', 'Hadero Tunto', 'Adilo'])
-  Keffa: 1,232,450 from 14 weredas; about 59,382 left out, 49,656 taken in from beyond (named: ['Yeki', 'Shay Bench', 'Dedo', 'Gera'], ['Chena', 'Gesha'])
-  Kelem Wellega: 1,184,070 from 12 weredas; about 20,358 left out, 47,912 taken in from beyond (named: ['Darimu'], ['Dale Sadi', 'Lalo Kile', 'Gawo Kebe'])
-  Kemashi: not written -- of its sum 110,115, weredas straddling its line leave out about 25,463 (['Sasiga', 'Bilidigilu', 'Kiltu Kara', 'Limu (OR)']) and take in about 4,320 from beyond it (['Kamashi', 'Mizyiga', 'Zayi', 'Sedal'])
-  Konta: not written -- of its sum 126,874, weredas straddling its line leave out about 13,908 (['Melekoza', 'Tocha', 'Cheta', 'Adiyio']) and take in about 7,612 from beyond it (['Konta'])
-  Korahe: not written -- of its sum 386,189, weredas straddling its line leave out about 216,845 (['Gunagado', 'Shilabo', 'Marsin', 'Garbo']) and take in about 6,462 from beyond it (['Debeweyin', 'Goglo'])
-  Liben: not written -- 8 weredas, zones holding weredas matched to no outline ['ET0509']
-  Majang: not written -- of its sum 86,891, weredas straddling its line leave out about 7,561 (['Yeki', 'Masha']) and take in about 1,738 from beyond it (['Godere', 'Mengesh'])
-  Metekel: 501,585 from 8 weredas; about 3,751 left out, 6,787 taken in from beyond (named: ['Jawi'], ['Wembera'])
-  Nogob: not written -- of its sum 419,149, weredas straddling its line leave out about 44,532 (['Dihun', 'Sagag', 'Ayun', 'Garbo']) and take in about 2,366 from beyond it (['Babile (SM)', 'Lagahida'])
-  North Gonder: not written -- of its sum 3,681,195, weredas straddling its line leave out about 272,063 (['Bahir Dar town', 'Bahirdar Zuria', 'Fogera', 'Libokemekem']) and take in about 15,880 from beyond it (['Telemt', 'Addi Arekay', 'West Belesa', 'East Belesa'])
-  North Shewa(R3): 2,472,078 from 30 weredas; about 71,533 left out, 68,782 taken in from beyond (named: ['Boset', 'Kimbibit', 'Jama'], ['Antsokiya', 'Mida Woremo', 'Eferatana Gidem'])
-  North Shewa(R4): not written -- 18 weredas, zones holding weredas matched to no outline ['ET0420']
-  North Western: 902,719 from 16 weredas; about 17,758 left out, 4,033 taken in from beyond (named: ['Telemt', 'Welkait'], [])
-  North Wollo: not written -- 20 weredas, zones holding weredas matched to no outline ['ET0304']
-  Nuer: 163,821 from 5 weredas; about 0 left out, 1,394 taken in from beyond (named: [], [])
-  Oromia: not written -- of its sum 575,817, weredas straddling its line leave out about 34,231 (['Antsokiya', 'Eferatana Gidem', 'Argoba', 'Telalek']) and take in about 18,247 from beyond it (['Dewa Cheffa', 'Jilye Tumuga', 'Bati', 'Dewa Harewa'])
-  Region 14: not written -- of its sum 3,773,999, weredas straddling its line leave out about 0 ([]) and take in about 246,201 from beyond it (['Kolfe Keraniyo', 'Gulele', 'Nifas Silk Lafto', 'Akaki Kality'])
-  Segen Peoples': 748,072 from 8 weredas; about 7,512 left out, 7,645 taken in from beyond (named: ['Arba Minch Zuria'], ['Amaro'])
-  Selti: not written -- of its sum 1,054,885, weredas straddling its line leave out about 59,993 (['Analemmo', 'Kibet town', 'Shashogo', 'Wera Djo']) and take in about 80,060 from beyond it (['Siltie', 'Alicho Woriro', 'Mierab Azenet Berbere', 'Sankura'])
-  Shabelle: not written -- of its sum 465,824, weredas straddling its line leave out about 160,375 (['Adadle', 'Mustahil', 'Kelafo', 'Shilabo']) and take in about 17,511 from beyond it (['Ferfer', 'Danan', 'Salahad', 'Higloley'])
-  Sheka: not written -- of its sum 333,699, weredas straddling its line leave out about 21,378 (['Gesha', 'Bita', 'Didu', 'Godere']) and take in about 41,165 from beyond it (['Yeki', 'Masha', 'Anderacha'])
-  Sidama: 3,987,456 from 37 weredas; about 102,724 left out, 53,683 taken in from beyond (named: ['Dila town', 'Bore'], [])
-  Siti: not written -- of its sum 670,906, weredas straddling its line leave out about 53,227 (['Harawo', 'Aseliso', 'Meta', 'Malka Jabti /M.Jebdu)']) and take in about 13,496 from beyond it (['Dembel', 'Miesso'])
-  South Gonder: 2,719,447 from 21 weredas; about 26,842 left out, 132,445 taken in from beyond (named: [], ['Fogera', 'Libokemekem', 'Dera (AM)'])
-  South Omo: not written -- 9 weredas, zones holding weredas matched to no outline ['ET0707']
-  South West Shewa: not written -- 12 weredas, zones holding weredas matched to no outline ['ET0420']
-  South Wollo: not written -- 27 weredas, zones holding weredas matched to no outline ['ET0304']
-  Southern: 1,322,029 from 21 weredas; about 21,890 left out, 37,514 taken in from beyond (named: ['Raya Kobo'], ['Enderta'])
-  Special Woreda: not written -- 1 weredas, zones holding weredas matched to no outline ['ET0304']
-  Wag Himra: 558,306 from 9 weredas; about 13,245 left out, 9,159 taken in from beyond (named: ['Lasta'], ['Abergele (AM)'])
-  West Arsi: 2,725,861 from 17 weredas; about 77,746 left out, 66,412 taken in from beyond (named: ['Munessa', 'Arbegona'], ['Shashemene town', 'Wondo'])
-  West Gojam: not written -- of its sum 2,473,486, weredas straddling its line leave out about 235,883 (['Bahirdar Zuria', 'Gonje', 'Bibugn', 'Ayehu Guwagusa']) and take in about 123,611 from beyond it (['Bahir Dar town', 'Semen Achefer', 'Dega Damot', 'Dembecha'])
-  West Harerge: 2,789,190 from 17 weredas; about 53,936 left out, 64,273 taken in from beyond (named: ['Melka Balo'], ['Daro Lebu'])
-  West Shewa: not written -- 26 weredas, zones holding weredas matched to no outline ['ET0420']
-  West Wellega: 1,791,335 from 23 weredas; about 68,894 left out, 17,707 taken in from beyond (named: ['Dale Sadi', 'Lalo Kile'], [])
-  Western: 525,923 from 9 weredas; about 3,730 left out, 8,936 taken in from beyond (named: ['Asgede'], ['Welkait', 'Tsegede (TG)'])
-  Wolayita: 2,311,101 from 22 weredas; about 32,938 left out, 62,194 taken in from beyond (named: [], ['Boloso Sore'])
-  Yem: not written -- of its sum 67,586, weredas straddling its line leave out about 10,235 (['Sekoru', 'Gibe']) and take in about 0 from beyond it ([])
-  Zone 1: 702,893 from 12 weredas; about 33,078 left out, 11,177 taken in from beyond (named: ['Euwa', 'Bidu'], ['Dubti', 'Adar'])
-  Zone 2: 453,697 from 8 weredas; about 21,141 left out, 13,271 taken in from beyond (named: ['Megale', 'Saesie'], ['Kunneba', 'Bidu', 'Erebti'])
-  Zone 3: not written -- of its sum 296,168, weredas straddling its line leave out about 47,366 (['Dalefage', 'Mieso', 'Ankober', 'Hadelela']) and take in about 2,733 from beyond it (['Arguba', 'Awash'])
-  Zone 4: not written -- of its sum 226,026, weredas straddling its line leave out about 62,795 (['Euwa', 'Megale', 'Dubti', 'Erebti']) and take in about 1,348 from beyond it (['Gulina'])
-  Zone 5: not written -- of its sum 162,266, weredas straddling its line leave out about 33,985 (['Dalefage', 'Adar', 'Jilye Tumuga']) and take in about 10,696 from beyond it (['Hadelela', 'Dawe', 'Samurobi', 'Telalek'])
-  projection admin1 Addis Ababa: 3,773,999
-  projection admin1 Afar: 1,989,997
-  projection admin1 Amhara: 22,530,515
-  projection admin1 Beneshangul Gumu: 1,187,997
-  projection admin1 Dire Dawa: 521,000
-  projection admin1 Gambela: 492,002
-  projection admin1 Hareri: 270,000
-  projection admin1 Oromia: 39,075,002
-  projection admin1 SNNPR: 20,691,549
-  projection admin1 Somali: 6,355,003
-  projection admin1 Tigray: 5,649,587
-  projection admin2 Agnuak: 241,290
-  projection admin2 Arsi: 3,766,075
-  projection admin2 Asosa: 576,297
-  projection admin2 Awi/Agew: 1,641,176
-  projection admin2 Bale: 1,546,787
-  projection admin2 Bench Maji: 929,586
-  projection admin2 Central: 1,624,997
-  projection admin2 Dawro: 830,837
-  projection admin2 Dire Dawa: 500,339
-  projection admin2 East Gojam: 2,902,200
-  projection admin2 East Harerge: 3,770,510
-  projection admin2 East Wellega: 1,870,321
-  projection admin2 Eastern: 1,212,668
-  projection admin2 Gamo Gofa: 2,313,954
-  projection admin2 Guji: 2,180,882
-  projection admin2 Horo Guduru: 780,424
-  projection admin2 Jimma: 4,197,372
-  projection admin2 Keffa: 1,232,450
-  projection admin2 Kelem Wellega: 1,184,070
-  projection admin2 Metekel: 501,585
-  projection admin2 North Shewa(R3): 2,472,078
-  projection admin2 North Western: 902,719
-  projection admin2 Nuer: 163,821
-  projection admin2 Segen Peoples': 748,072
-  projection admin2 Sidama: 3,987,456
-  projection admin2 South Gonder: 2,719,447
-  projection admin2 Southern: 1,322,029
-  projection admin2 Wag Himra: 558,306
-  projection admin2 West Arsi: 2,725,861
-  projection admin2 West Harerge: 2,789,190
-  projection admin2 West Wellega: 1,791,335
-  projection admin2 Western: 525,923
-  projection admin2 Wolayita: 2,311,101
-  projection admin2 Zone 1: 702,893
-  projection admin2 Zone 2: 453,697
-  projection admin2 Hareri: 270,000
-  projection admin2 Region 14: 3,773,999
-  projection: 11 regions and 37 zones written
-  wrote data/processed/ethiopia_projection.json (71 kB)
-  wrote data/processed/ethiopia_projection_weredas.json (179 kB)
+  read https://statistics.gov.rw/sites/default/files/documents/2025-02/PHC5-2022_Main_Indicators.xlsx: 581,274 bytes, sha256 b73aa381fd3145405251b87b15e5a2926b0038e3b2d2d837b92b81b9630d06f9
+  read https://statistics.gov.rw/sites/default/files/documents/2025-02/Population_size_structure_and_spatial%20Distribution_Thematic%20Report.xlsx: 172,094 bytes, sha256 12f28a74ae2c18708ab59e1cfa8e16d83eab6e8ba1a310bc4f11940f9a281a97
+  Table 1: 5 provinces and 30 districts making 13,246,394; Table 6: nationality by province; Tables 4.3 and 4.4: 35 medians
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf: 3,435,910 bytes, sha256 5dc7b994003401aef6c6f147beebf35c23c169c5ffe84d33d72bcdf46d15143e
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gasabo.pdf: 3,903,714 bytes, sha256 122ac3945d5969fd401de3a63e92d22ced184fb26dbb3f95307fe2137b1aec20
+  read https://statistics.gov.rw/sites/default/files/2025-05/Kicukiro.pdf: 3,186,983 bytes, sha256 b7725bd4b180eadc62539a052a40fa473fb267558674a78ddaeb63a39b4956b0
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyanza.pdf: 3,566,397 bytes, sha256 3c12ed96edc4a5ee7e5556080836c960b9b66cfc9ef825e0059dee944f8c8303
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gisagara.pdf: 3,649,762 bytes, sha256 b0ea57fb7e9118fbeac0f0c4a68a54c0c18e9558ac48a4a92c76ad8304facf07
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyaruguru.pdf: 4,009,664 bytes, sha256 d170c89c6e2f713acb4957c8fc8bfd7f457211c481abd4745a6d101541a807bc
+  read https://statistics.gov.rw/sites/default/files/2025-05/Huye.pdf: 3,822,794 bytes, sha256 fdc37b763c781d81f6582f910e6b00c1f4eb62e43de92019b36dc92e904e4c6f
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyamagabe.pdf: 4,251,824 bytes, sha256 9d242b2b6908219de0d6ce99a8154aef2766afbfcd7ee036b8963235d73289b0
+  read https://statistics.gov.rw/sites/default/files/2025-05/Ruhango.pdf: 3,346,583 bytes, sha256 c017abdedc1bb0dec9db4aa3da11db1c590401d4aff36e634eaf4eaa1639ca52
+  read https://statistics.gov.rw/sites/default/files/2025-05/Muhanga.pdf: 3,473,927 bytes, sha256 60c9e1271516f16f08b966f712dee037c730224d34215994fc19605f030ca9b4
+  read https://statistics.gov.rw/sites/default/files/2025-05/Kamonyi.pdf: 3,437,483 bytes, sha256 4822fae9d4105af8eb401ad38ea28cb536e92ecd65061a4d0dea246770f5dc94
+  read https://statistics.gov.rw/sites/default/files/2025-05/Karongi.pdf: 3,403,202 bytes, sha256 3e44cae0ced8a054fbf88a80329c69ac07945a24f39bd1fa5f550fffb0a6c15a
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rutsiro.pdf: 4,802,154 bytes, sha256 852afa00685a81d0c98fa62824fdb909742e081a42cbf7311d062811edbed72c
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rubavu.pdf: 4,408,890 bytes, sha256 c29e1eb8d2df15d53b3fedb14c70ab0ed96ab0a5f13c9f5b9727ddc200f09d84
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyabihu.pdf: 3,973,333 bytes, sha256 dd7872c2cb3bfce6eb7db93c356ecb39c1ac1f7f0f438abfd0d50d4001f8f415
+  read https://statistics.gov.rw/sites/default/files/2025-05/Ngororero.pdf: 5,126,952 bytes, sha256 80d57e349f5370792de32b3cacac7a3fe1ddc757373cf33365afd44adad97580
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rusizi.pdf: 5,156,624 bytes, sha256 9ae1ffe8c0aff9f2c230ddd9f0ae98a27f7c071b7ba3cfcf4583a93896314b30
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyamasheke.pdf: 4,854,227 bytes, sha256 82ef49a6813f35e344474f11a113b0fb4fd7f0269b9e18e1b92b4f20edc459d1
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rulindo.pdf: 4,250,477 bytes, sha256 7d665abe8acd90c0da212f114af3aa560c5e7a745d45989501f432eb4efcecee
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gakenke.pdf: 4,422,683 bytes, sha256 bbfa6d050d3288bd170e03c9227dadda168ffbc1d502a58dc982ae35f45139b7
+  read https://statistics.gov.rw/sites/default/files/2025-05/Musanze.pdf: 3,951,829 bytes, sha256 f289bdd5a745bc07c71cb4b24e23e0e57cc91f7ed7f4791e784865c5f85c878a
+  https://statistics.gov.rw/sites/default/files/2025-05/Burera.pdf: HTTPError
+  read https://statistics.gov.rw/sites/default/files/2025-05/BURERA.pdf: 4,207,245 bytes, sha256 05e13bc86d7db64a27cea15af14835ebbf867476917aee88520d159acc5f6a56
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gicumbi.pdf: 4,861,984 bytes, sha256 01f812b041b73bb15ed3da63a395d5c3156e7d49baebd03197805169501c1d8b
+  read https://statistics.gov.rw/sites/default/files/2025-05/Rwamagana.pdf: 3,683,628 bytes, sha256 d16aa074a2fae073d1c5326d41ca05b97d2f0c51cb41177edb40798e5fb370e8
+  read https://statistics.gov.rw/sites/default/files/2025-05/Nyagatare.pdf: 4,458,533 bytes, sha256 6dcb9997fe0c511b6010ab3124f34a0d8c4698135552b1c0a714daa8f4facd60
+  read https://statistics.gov.rw/sites/default/files/2025-05/Gatsibo.pdf: 3,782,781 bytes, sha256 38facaafb4c31fec594cf5eb9b786bd62566bb4bb7fccebdc3791cc0ef96423e
+  read https://statistics.gov.rw/sites/default/files/2025-05/Kayonza.pdf: 3,691,120 bytes, sha256 c58ed3a55d8461ee143e24134066acc2be13dab8257f4ba78b006ba0b074bb0a
+  https://statistics.gov.rw/sites/default/files/2025-05/Kirehe.pdf: HTTPError
+  read https://statistics.gov.rw/sites/default/files/2025-05/KIREHE.pdf: 3,552,990 bytes, sha256 c0548f77f3e0f4b19d5ffead0e38f8257cda5409774d5e58a96c9c92e1836510
+  read https://statistics.gov.rw/sites/default/files/2025-05/Ngoma.pdf: 4,994,013 bytes, sha256 655d6f0683eba477a9e31add79d76b50b3be31271b8abcaea76fd6a69cfe93c2
+  https://statistics.gov.rw/sites/default/files/2025-05/Bugesera.pdf: HTTPError
+  read https://statistics.gov.rw/sites/default/files/2025-05/BUGESERA.pdf: 3,966,542 bytes, sha256 dd6345a3cd62cc4b0d15131a6852145980efb23286f2897472453ae4c78fa32c
+  religion read whole for 30 of 30 districts, nationality for 30
+  admin1 City of Kigali: 1,745,555, median 23.0, sex ratio 1038, religion led by Catholic, foreign nationals 20554
+  admin2 Nyarugenge: 374,319, median 23.0, sex ratio 1097, religion led by Catholic, foreign nationals 3276
+  admin2 Gasabo: 879,505, median 22.0, sex ratio 1019, religion led by Catholic, foreign nationals 10529
+  admin2 Kicukiro: 491,731, median 23.0, sex ratio 1027, religion led by Catholic, foreign nationals 6749
+  admin1 Southern Province: 3,002,699, median 20.0, sex ratio 932, religion led by Catholic, foreign nationals 18208
+  admin2 Nyanza: 365,718, median 20.0, sex ratio 955, religion led by Adventist, foreign nationals 1067
+  admin2 Gisagara: 397,051, median 19.0, sex ratio 908, religion led by Catholic, foreign nationals 7891
+  admin2 Nyaruguru: 318,126, median 19.0, sex ratio 915, religion led by Catholic, foreign nationals 454
+  admin2 Huye: 381,900, median 22.0, sex ratio 978, religion led by Catholic, foreign nationals 974
+  admin2 Nyamagabe: 371,501, median 20.0, sex ratio 907, religion led by Catholic, foreign nationals 6743
+  admin2 Ruhango: 359,121, median 20.0, sex ratio 920, religion led by Catholic, foreign nationals 210
+  admin2 Muhanga: 358,433, median 22.0, sex ratio 939, religion led by Catholic, foreign nationals 551
+  admin2 Kamonyi: 450,849, median 21.0, sex ratio 933, religion led by Catholic, foreign nationals 318
+  admin1 Western Province: 2,896,484, median 19.0, sex ratio 916, religion led by Catholic, foreign nationals 15671
+  admin2 Karongi: 373,869, median 20.0, sex ratio 913, religion led by Adventist, foreign nationals 10760
+  admin2 Rutsiro: 369,180, median 19.0, sex ratio 916, religion led by Catholic, foreign nationals 187
+  admin2 Rubavu: 546,683, median 19.0, sex ratio 957, religion led by Catholic, foreign nationals 2780
+  admin2 Nyabihu: 319,047, median 19.0, sex ratio 888, religion led by Catholic, foreign nationals 365
+  admin2 Ngororero: 367,955, median 19.0, sex ratio 869, religion led by Catholic, foreign nationals 72
+  admin2 Rusizi: 485,529, median 19.0, sex ratio 949, religion led by Catholic, foreign nationals 1292
+  admin2 Nyamasheke: 434,221, median 19.0, sex ratio 893, religion led by Pentecostal, foreign nationals 215
+  admin1 Northern Province: 2,038,511, median 20.0, sex ratio 913, religion led by Catholic, foreign nationals 2307
+  admin2 Rulindo: 360,144, median 21.0, sex ratio 913, religion led by Catholic, foreign nationals 219
+  admin2 Gakenke: 365,292, median 21.0, sex ratio 896, religion led by Catholic, foreign nationals 98
+  admin2 Musanze: 476,522, median 20.0, sex ratio 912, religion led by Catholic, foreign nationals 1142
+  admin2 Burera: 387,729, median 19.0, sex ratio 910, religion led by Catholic, foreign nationals 470
+  admin2 Gicumbi: 448,824, median 20.0, sex ratio 931, religion led by Catholic, foreign nationals 378
+  admin1 Eastern Province: 3,563,145, median 19.0, sex ratio 948, religion led by Catholic, foreign nationals 60635
+  admin2 Rwamagana: 484,953, median 21.0, sex ratio 1011, religion led by Catholic, foreign nationals 1042
+  admin2 Nyagatare: 653,861, median 19.0, sex ratio 951, religion led by Catholic, foreign nationals 1441
+  admin2 Gatsibo: 551,164, median 19.0, sex ratio 922, religion led by Catholic, foreign nationals 8856
+  admin2 Kayonza: 457,156, median 19.0, sex ratio 940, religion led by Catholic, foreign nationals 665
+  admin2 Kirehe: 460,860, median 19.0, sex ratio 928, religion led by Catholic, foreign nationals 44039
+  admin2 Ngoma: 404,048, median 19.0, sex ratio 912, religion led by Catholic, foreign nationals 567
+  admin2 Bugesera: 551,103, median 19.0, sex ratio 971, religion led by Catholic, foreign nationals 4025
+  wrote data/processed/rwanda_census.json (199 kB)
