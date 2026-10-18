@@ -1,29 +1,28 @@
-congo_census: 12 department pages, 92 districts and communes listed
-  Kouilou: 6 districts and communes listed, making 97,362 of 97,362: Hinda 19,264; Kakamoeka 8,729; Loango 39,531; Madingo-Kayes 8,574; Mvouti 19,132; Nzambi 2,132
-  Niari: 14 districts and communes listed, making 334,863 of 334,863: Banda 7,403; Divénié 12,268; Kibangou 13,430; Kimongo 18,929; Londéla-Kayes 10,108; Louvakou ( incl. Dolisie commune ) 209,889; Makabana 11,436; Mayoko 8,098; Mbinda 3,956; Moungoundou-Nord 1,845; Moungoundou-Sud 4,710; Moutamba ( incl. Mossendjo commune ) 22,936; Nyanga 6,642; Yaya 3,213
-  Lékoumou: 5 districts and communes listed, making 100,559 of 100,559: Bambama 4,407; Komono 12,078; Mayéyé 13,239; Sibiti ( incl. Sibiti commune ) 54,254; Zanaga 16,581
-  Bouenza: 10 districts and communes listed, making 363,850 of 363,850: Boko-Songho 11,563; Kayes ( incl. Nkayi commune ) 114,622; Kingoué 14,399; Loudima 36,644; Mabombo 12,145; Madingou ( incl. Madingou commune ) 81,254; Mfouati 33,017; Mouyondzi 37,863; Tsiaki 10,966; Yamba 11,377
-  Pool: 13 districts and communes listed, making 394,532 of 394,532: Boko 15,330; Goma Tsé-Tsé 42,537; Ignié ( incl. Kintélé commune ) 108,294; Kimba 8,092; Kindamba 19,894; Kinkala ( incl. Kinkala commune ) 50,528; Louingui 11,933; Loumo 5,592; Mayama 5,893; Mbandza-Ndounga 10,003; Mindouli 63,954; Ngabé 45,442; Vindza 7,040
-  Plateaux: 11 districts and communes listed, making 283,421 of 283,421: Abala 13,326; Allembé 6,208; Djambala ( incl. Djambala commune ) 29,583; Gamboma 76,073; Lékana 15,257; Makotimpoko 41,242; Mbon 5,711; Mpouya 17,603; Ngo 34,183; Ollombo 26,854; Ongogni 17,381
-  Cuvette: 10 districts and communes listed, making 316,599 of 316,599: Bokoma 4,588; Boundji 27,577; Loukoléla 42,676; Makoua 40,004; Mossaka 46,605; Ngoko 5,103; Ntokou 5,909; Owando ( incl. Owando commune ) 64,358; Oyo 70,287; Tchikapika 9,492
-  Cuvette-Ouest: 6 districts and communes listed, making 119,328 of 119,328: Etoumbi 18,748; Ewo ( incl. Ewo commune ) 42,975; Kéllé 15,748; Mbama 12,619; Mbomo 13,197; Okoyo 16,041
-  Sangha: 6 districts and communes listed, making 209,701 of 209,701: Kabo ( incl. Pokola commune ) 38,443; Mokéko ( incl. Ouesso commune ) 108,808; Ngbala 9,019; Pikounda 9,418; Sembé 18,661; Souanké 25,352
-  Likouala: 7 districts and communes listed, making 355,570 of 355,570: Bétou 126,956; Bouanéla 16,359; Dongou 44,027; Enyellé 51,188; Epena 32,110; Impfondo ( incl. Impfondo commune ) 54,789; Liranga 30,141
-  Brazzaville: 2 districts and communes listed, making 2,145,783 of 2,145,783: Brazzaville 2,138,236; Ile Mbamou 7,547
-  Pointe-Noire: 2 districts and communes listed, making 1,420,612 of 1,420,612: Pointe-Noire 1,398,812; Tchiamba-Nzassi 21,800
-  the departments make 6,142,180
-  Tchiamba-Nzassi: 21,800 counted under Pointe-Noire, drawn in Kouilou; its men and women not given apart
-  Kouilou: 119,162 (52,111 men, 45,251 women); as counted 97,362
-  Niari: 334,863 (160,761 men, 174,102 women)
-  Lékoumou: 100,559 (50,313 men, 50,246 women)
-  Bouenza: 363,850 (180,914 men, 182,936 women)
-  Pool: 394,532 (197,707 men, 196,825 women)
-  Plateaux: 283,421 (137,918 men, 145,503 women)
-  Cuvette: 316,599 (153,648 men, 162,951 women)
-  Cuvette-Ouest: 119,328 (58,280 men, 61,048 women)
-  Sangha: 209,701 (113,359 men, 96,342 women)
-  Likouala: 355,570 (174,270 men, 181,300 women)
-  Brazzaville: 2,145,783 (1,061,708 men, 1,084,075 women)
-  Pointe-Noire: 1,398,812 (708,953 men, 711,659 women); as counted 1,420,612
-  46 second-level polygons given reasons
-  wrote data/processed/congo_census.json (152 kB)
+drc_gaps: OCHA's tables: 26 provinces, 189 territories, cities and towns
+  Territoire (république démocratique du Congo): 145 territories with a seat
+  Oïcha: no seat written (This polygon is the territory of Beni, which OCHA's populati...)
+  164 territories and cities given reasons (144 territories with a seat, 19 cities)
+  town Aba: counted in Faradje
+  town Ariwara: counted in Aru
+  town Bangu: counted in Songololo
+  town Baraka: counted in Fizi
+  town Bena-Dibele: counted in Kole
+  town Dibaya-Lubwe: counted in Idiofa
+  town Ingbokolo: counted in Aru
+  town Inkisi: counted in Madimba
+  town Isiro: counted in Rungu
+  town Kalima: counted in Pangi
+  town Kamituga: counted in Mwenga
+  town Mangai: counted in Idiofa
+  town Mongwalu: counted in Djugu
+  town Namoya: counted in Kabambare
+  town Tshumbe: counted in Kole
+  city Bunia: counted in Irumu
+  city Kolwezi: counted in Mutshatsha
+  city Tshikapa: counted in Kamonia
+  wrote data/processed/drc_gaps.json (392 kB)
+  26 provinces and 189 second-level polygons written
+  001_population_health_zone_zs: 519 health zones in 164 territories and cities, 117,808,872 people
+  2024: CD3106 Kasongo-Lunda: no 2020 unit of that code on a polygon
+  2024: 163 territories and cities, 116,912,196 people
+  wrote data/processed/drc_hpc.json (226 kB)
