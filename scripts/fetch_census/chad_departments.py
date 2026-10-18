@@ -20,8 +20,11 @@
   COHORT_JUMP times the one below it among the young.
 * **Departments.** OCHA's 2024 table (tchad_populationdutchad_20240102.xlsx,
   Population_Projection_2024) gives every department a projected figure; it
-  raises each department's 2021 figure by one proportion (checked here
-  against cod_ps_admin2's 2021 rows, and said on each record).
+  raises each province's 2021 department figures by one proportion (checked
+  here against cod_ps_admin2's 2021 rows, and said on each record): 11.0% in
+  all but Sila, whose two departments it raises by 48.7%. The figures go to
+  chad_departments_2024.json, which the build holds behind OCHA's 2021 table
+  (HELD_ROWS) and shows where the change is one a population makes.
 * **Seats.** English Wikipedia's *Departments of Chad* names each
   department's capital; it is written for the department it names, matched by
   name across the country (no two departments share one). A department the
@@ -56,6 +59,8 @@ ADM2_2024 = (DATASET + "/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/
              "tchad_populationdutchad_20240102.xlsx")
 YEAR = 2023
 OUT = "chad_departments.json"
+# The departments' 2024 figures, which the build holds behind OCHA's 2021 table.
+OUT_2024 = "chad_departments_2024.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-tcd), reference year 2023"
 OCHA_URL = "https://data.humdata.org/dataset/cod-ps-tcd"
@@ -175,11 +180,12 @@ def departments_2024(rows: list[list[Any]], previous: dict[str, int], admin2: li
     """Polygon id -> the 2024 figure and its note; and the report."""
     head = [str(c or "").strip() for c in rows[0]]
     name_col = head.index("ADM2_NAME")
+    prov_col = head.index("ADM1_NAME")
     pop_col = next(i for i, h in enumerate(head) if h.lower().startswith("population_proj"))
     year_found = re.search(r"(20\d\d)", head[pop_col])
     year = int(year_found.group(1)) if year_found else 2024
     polys = {key(u["name"]): u for u in admin2}
-    figures: dict[str, tuple[str, int]] = {}
+    figures: dict[str, tuple[str, int, str]] = {}
     report: list[str] = []
     for row in rows[1:]:
         name = str(row[name_col] or "").strip() if len(row) > name_col else ""
@@ -190,27 +196,49 @@ def departments_2024(rows: list[list[Any]], previous: dict[str, int], admin2: li
         if k not in polys:
             report.append(f"  2024: {name}: no polygon")
             continue
-        figures[polys[k]["id"]] = (polys[k]["name"], round(value))
-    ratios = {sid: v / previous[k] for sid, (n, v) in figures.items()
-              if (k := key(n)) in previous and previous[k]}
-    factor = statistics.median(ratios.values()) if ratios else None
-    uniform = bool(ratios) and all(abs(r - factor) <= 0.001 for r in ratios.values())
-    report.append(f"  2024: {len(figures)} departments; against 2021, x{factor:.4f}"
-                  + (" for every one" if uniform else " at the median") if factor else
-                  f"  2024: {len(figures)} departments")
+        figures[polys[k]["id"]] = (polys[k]["name"], round(value), str(row[prov_col] or ""))
+    # The proportion each province's departments are raised by, where it is one.
+    by_province: dict[str, list[float]] = {}
+    for sid, (n, v, province) in figures.items():
+        if key(n) in previous and previous[key(n)]:
+            by_province.setdefault(province, []).append(v / previous[key(n)])
+    factors = {p: statistics.median(r) for p, r in by_province.items()
+               if max(r) - min(r) <= 0.002}
+    for province, ratios in sorted(by_province.items()):
+        report.append(f"  2024: {province}: x{statistics.median(ratios):.4f} against 2021"
+                      + ("" if province in factors else " (not one proportion)"))
+    report.append(f"  2024: {len(figures)} departments")
     out: dict[str, dict[str, Any]] = {}
-    for sid, (name, value) in figures.items():
+    for sid, (name, value, province) in figures.items():
         note = f"OCHA's projected population of {name} for {year} (cod-ps-tcd)"
-        if uniform:
-            note += (f", which raises every department's {year - 3} projection by the same "
-                     f"proportion ({100 * (factor - 1):.1f}%)")
+        if province in factors:
+            note += (f", which raises the {year - 3} projections of all of "
+                     f"{province.replace('Guera', 'Guéra')}'s departments by one proportion "
+                     f"({100 * (factors[province] - 1):.1f}%)")
         out[sid] = {"value": value, "year": year, "note": note + "."}
     return out, report
 
 
+def held_2024(counts: dict[str, dict[str, Any]], admin2: list[dict[str, Any]]
+              ) -> list[dict[str, Any]]:
+    """The 2024 figures as rows the build holds behind OCHA's 2021 table (HELD_ROWS) and
+    shows where the change is one a population makes."""
+    names = {u["id"]: u["name"] for u in admin2}
+    out = []
+    for sid, found in sorted(counts.items()):
+        source = OCHA.replace(str(YEAR), str(found["year"]))
+        out.append(record(
+            f"TCD-CODPS{found['year']}-{sid}", names[sid], level="admin2", parent="TCD",
+            country="TCD", match_by="shape_id", shape_id=sid,
+            population=measure(found["value"], year=found["year"], source=source),
+            population_note=found["note"],
+            sources=[{"field": "population", "name": source, "url": OCHA_URL,
+                      "year": found["year"], "license": OCHA_LICENCE}]))
+    return out
+
+
 def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]], listed: set[str] | None = None,
-          counts_2024: dict[str, dict[str, Any]] | None = None
+          admin2: list[dict[str, Any]], listed: set[str] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
     records: list[dict[str, Any]] = []
@@ -249,25 +277,15 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
     seat_cite = {"field": "capital", "name": f"English Wikipedia, {WIKI_TITLE}", "url": WIKI_URL,
                  "license": "CC BY-SA 4.0"}
     listed = listed if listed is not None else set(seat_of)
-    counts_2024 = counts_2024 or {}
     seated = 0
     for u in admin2:
-        extra: dict[str, Any] = {}
-        sources: list[dict[str, Any]] = []
-        if u["id"] in counts_2024:
-            found = counts_2024[u["id"]]
-            extra = {"population": measure(found["value"], year=found["year"],
-                                           source=OCHA.replace("2023", str(found["year"]))),
-                     "population_note": found["note"]}
-            sources.append({**cite[0], "name": OCHA.replace("2023", str(found["year"])),
-                            "year": found["year"]})
         if key(u["name"]) == "ndjamena":
             # The capital's province is one department, the city itself.
             records.append(record(
                 f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
-                match_by="shape_id", shape_id=u["id"], capital="N'Djamena", sources=sources,
+                match_by="shape_id", shape_id=u["id"], capital="N'Djamena",
                 capital_note=("N'Djamena province is a single department, the city of "
-                              "N'Djamena, whose seat is the city itself."), **extra))
+                              "N'Djamena, whose seat is the city itself.")))
             seated += 1
             continue
         seat = seat_of.get(key(u["name"]))
@@ -285,13 +303,12 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
                           + ("" if key(u["name"]) in listed else " (not listed)"))
             records.append(record(
                 f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
-                match_by="shape_id", shape_id=u["id"], sources=sources,
-                capital=gap(NOT_AVAILABLE, why_not), **extra))
+                match_by="shape_id", shape_id=u["id"],
+                capital=gap(NOT_AVAILABLE, why_not)))
             continue
         records.append(record(
             f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
-            match_by="shape_id", shape_id=u["id"], capital=seat,
-            sources=[seat_cite] + sources, **extra))
+            match_by="shape_id", shape_id=u["id"], capital=seat, sources=[seat_cite]))
         seated += 1
     report.append(f"  {seated} of {len(admin2)} departments with a seat")
     return records, report
@@ -322,11 +339,14 @@ def main() -> int:
     counts_2024, why = departments_2024(rows, previous, admin2)
     for line in why:
         log(line)
-    records, report = build(adm1, seat_of, admin1, admin2, listed, counts_2024)
+    records, report = build(adm1, seat_of, admin1, admin2, listed)
     for line in report:
         log(line)
     write_json(PROCESSED / OUT, records)
     log(f"  {len(records)} records written")
+    held = held_2024(counts_2024, admin2)
+    write_json(PROCESSED / OUT_2024, held)
+    log(f"  {len(held)} departments' 2024 figures written to {OUT_2024}")
     return 0
 
 

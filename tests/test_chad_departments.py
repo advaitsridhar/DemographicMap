@@ -108,21 +108,31 @@ class Structures(unittest.TestCase):
 
 
 class Departments2024(unittest.TestCase):
-    def test_the_2024_table_and_its_one_proportion(self):
+    def test_the_2024_table_and_each_provinces_proportion(self):
         rows = [["ADM1_NAME", "ADM1_Pcode", "ADM2_NAME", "ADM2_Pcode", "Population_Projection_2024"],
                 ["Salamat", "TD15", "Bahr-Azoum", "TD1501", 310249.44],
-                ["Barh-El-Gazel", "TD19", "Barh-El-Gazel Oues", "TD1903", 102414.6]]
-        admin2 = [{"id": "a", "name": "Bahr-Azoum"}, {"id": "b", "name": "Barh-El-Gazel Ouest"}]
-        previous = {cd.key("Bahr-Azoum"): 279_400, cd.key("Barh-El-Gazel Ouest"): 92_224}
+                ["Salamat", "TD15", "Aboudéia", "TD1502", 110127.8],
+                ["Barh-El-Gazel", "TD19", "Barh-El-Gazel Oues", "TD1903", 102414.6],
+                ["Sila", "TD21", "Kimiti", "TD2101", 680903.7]]
+        admin2 = [{"id": "a", "name": "Bahr-Azoum"}, {"id": "b", "name": "Barh-El-Gazel Ouest"},
+                  {"id": "c", "name": "Aboudéia"}, {"id": "k", "name": "Kimiti"}]
+        previous = {cd.key("Bahr-Azoum"): 279_400, cd.key("Barh-El-Gazel Ouest"): 92_224,
+                    cd.key("Aboudéia"): 99_182, cd.key("Kimiti"): 457_997}
         counts, report = cd.departments_2024(rows, previous, admin2)
         self.assertEqual(counts["a"]["value"], 310_249)
         self.assertEqual(counts["b"]["year"], 2024)
-        self.assertIn("the same proportion (11.0%)", counts["a"]["note"])
-        records, _ = cd.build([{"ADM1_NAME": "Salamat", "T_TL": "18000000"}], {},
-                              [{"id": "S", "name": "Salamat"}], admin2, set(), counts)
-        dep = next(r for r in records if r["name"] == "Bahr-Azoum")
+        self.assertIn("all of Salamat's departments by one proportion (11.0%)", counts["a"]["note"])
+        self.assertIn("by one proportion (48.7%)", counts["k"]["note"])
+        held = cd.held_2024(counts, admin2)
+        dep = next(r for r in held if r["name"] == "Bahr-Azoum")
         self.assertEqual(dep["population"]["value"], 310_249)
         self.assertEqual(dep["population"]["year"], 2024)
+        self.assertEqual(dep["match_by"], "shape_id")
+        # The seats' records carry no population of their own.
+        records, _ = cd.build([{"ADM1_NAME": "Salamat", "T_TL": "18000000"}], {},
+                              [{"id": "S", "name": "Salamat"}], admin2, set())
+        seat = next(r for r in records if r["name"] == "Bahr-Azoum")
+        self.assertNotIn("value", seat["population"])
 
 
 if __name__ == "__main__":
