@@ -338,11 +338,67 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
     return records, report
 
 
+CITIES = {"Ville de Maradi": "Maradi", "Ville de Zinder": "Zinder"}
+
+
+def check_cities() -> None:
+    """Log whether OCHA's 2024 table gives the cities of Maradi and Zinder their
+    region's age proportions: each city's five-year groups against every row of
+    the regions' table (ner_admpop_adm1_2024), and against the departments'
+    common structure, by cod_ps_age's own test (COPY_TOLERANCE)."""
+    from .cod_ps import get, name_column
+    from .cod_ps_age import COPY_TOLERANCE, age_columns, age_shares, same_structure, tables, \
+        unit_figures
+
+    package = get("package_show", id="cod-ps-ner")
+    figures: dict[str, dict[str, dict[str, Any]]] = {"1": {}, "2": {}}
+    for table in tables(package):
+        cols = age_columns(table["columns"])
+        if cols is None or table["level"] not in figures:
+            continue
+        name_col = name_column(table["columns"], table["level"])
+        log(f"  {table['label']}: {len(table['rows'])} rows, names in {name_col}")
+        for row in table["rows"]:
+            got, why = unit_figures(row, cols)
+            name = str(row.get(name_col) or "").strip()
+            if got:
+                figures[table["level"]][name] = got
+            else:
+                log(f"    {name}: {why}")
+    regions, departments = figures["1"], figures["2"]
+
+    def shown(groups: list[Any]) -> str:
+        return " ".join(f"{s:.2f}" for s in (age_shares(groups) or [])[:6])
+
+    for name, got in sorted(regions.items()):
+        log(f"  region {name}: median {got['median']}, shares {shown(got['groups'])} ...")
+    for city, region in CITIES.items():
+        mine = next((g for n, g in departments.items() if fold(n) == fold(city)), None)
+        if mine is None:
+            log(f"  {city}: not in the departments' table ({sorted(departments)[:5]} ...)")
+            continue
+        log(f"  {city}: median {mine['median']}, shares {shown(mine['groups'])} ...")
+        for name, got in sorted(regions.items()):
+            gap_ = max(abs(a - b) for a, b in zip(age_shares(mine["groups"]) or [],
+                                                     age_shares(got["groups"]) or []))
+            log(f"    against region {name}: largest difference {gap_:.3f} points; same "
+                f"structure (under {COPY_TOLERANCE}): {same_structure(mine['groups'], got['groups'])}")
+        alike = sum(1 for n, g in departments.items() if fold(n) != fold(city)
+                    and same_structure(mine["groups"], g["groups"]))
+        log(f"    alike to {alike} of the other {len(departments) - 1} departments")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
-    ap.parse_args()
+    ap.add_argument("--check-cities", default="", dest="check_cities",
+                    help="log whether OCHA's 2024 table gives the cities of Maradi and Zinder "
+                    "their region's age proportions, instead of writing anything (a label)")
+    args = ap.parse_args()
+    if args.check_cities:
+        check_cities()
+        return 0
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if not blob.startswith(b"%PDF"):
         raise SystemExit(f"niger_census: {URL} is not a PDF: {blob[:60]!r}")
