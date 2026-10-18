@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Egypt -- governorates, kisms and markazes: CAPMAS's 2017 census and 2023
-estimate, and its 2006 census where the units have been redrawn since.
+estimate, and its 2006 census where today's units cannot be matched to 2006's.
 
 The Central Agency for Public Mobilization and Statistics (CAPMAS) took the
 Population, Housing and Establishments Census on 28 March 2017 and estimates
 the population of every kism and markaz each year. Its own site serves none of
-this to a reader outside Egypt; citypopulation.de tabulates it from CAPMAS
-(``URL``): every governorate, kism, markaz and police district with its counts
-at the 1996, 2006 and 2017 censuses and the estimate for 1 July 2023, and for
-each, on its own page, the 2017 census's count of everyone by sex and ten-year
-age group. OCHA publishes on HDX the 2006 census's count of every kism and
-markaz by sex (``HDX_DATASET``).
+this to a reader outside Egypt; City Population (Thomas Brinkhoff) tabulates it
+from CAPMAS (``URL``): every governorate, kism, markaz and police district with
+its counts at the 1996, 2006 and 2017 censuses and the estimate for 1 July
+2023, and for each, on its own page, the 2017 census's count of everyone by sex
+and ten-year age group. OCHA publishes on HDX the 2006 census's count of every
+kism and markaz by sex (``HDX_DATASET``).
 
 **The outlines are 2006's.** The map's 364 second-level outlines are the kisms
 and markazes of the 2006 census -- their labels are the English names of
@@ -19,26 +19,43 @@ Muntaza 1 and 2, Amriya 1 and 2, Raml 1 and 2. Each outline is bound to the
 2006 unit of its label (in its governorate, or in another where the outline is
 filed under the wrong one), a kism and a markaz of one name by size, and the
 2006 unit to the units CAPMAS counts today by their Arabic names: the same
-name, the parts numbered since ("قسم أول/ثان ..."), and, where those fall
-short of the 2006 count, the one or two units of other names whose 2006 people
-make up the rest (``carve``).
+name, the parts numbered since ("قسم أول/ثان ..."), a unit renamed since
+(``RENAMED``), and, where those fall short of the 2006 count, the one or two
+units of other names whose 2006 people make up the rest (``carve``).
 
 **The ground test.** CAPMAS's counts of today's units at the 2006 census,
 added up, must make the 2006 unit's own count -- to within 2%, or to within 3%
 once scaled by the governorate's two 2006 totals where those differ by less
-than 5% (the two tabulations of 2006 differ by about 1% nationally). An
-outline that passes is written with today's figures:
+than 5% (the two tabulations of 2006 differ by about 1% nationally), or to
+within ``SLACK_PEOPLE`` people (a unit of a few dozen people in 2006, which a
+guard post more or less puts out by a quarter). An outline that passes is
+written with today's figures:
 
 * the population: CAPMAS's estimate for 1 July 2023 (the 2017 count in the
   note);
 * the median age, interpolated within the ten-year group that holds the middle
   person, and men per 1,000 women, from the 2017 census by sex and age.
 
-An outline that does not -- its 2006 unit has been redrawn in a way that does
-not follow its outline -- is written with the 2006 census's own count and men
-per 1,000 women, and its median age says why there is none.
+An outline that does not is written with the 2006 census's own count and men
+per 1,000 women, its notes say how far the two tables of 2006 disagree, and its
+median age says why there is none.
 
-The governorates are written the same way from their own rows and pages.
+**OCHA's table has keying errors** that leave a row's total whole: Beni Suef's
+markaz holds a village of 4,696 men and 43,731 women. The ground test fails on
+such a row and not on the ground, so ``SAME_GROUND`` declares the outlines
+whose row is shown wrong by CAPMAS's own count of 2006, and no ratio of men to
+women is written from 2006 where it is far below every other unit's
+(``LOW``) -- OCHA's sub-district rows that cannot be right are logged.
+
+**Ratios from few people.** No ratio of men to women is written from fewer
+than ``FEW`` people (the Marina kism's 41 men and 1 woman in 2006); a ratio of
+``HIGH`` or more says where such a share of men usually comes from.
+
+The governorates are written the same way from their own rows and pages. Where
+the governorate outline drawn holds other governorates' kisms and markazes, or
+leaves out its own (``DRAWN_IN``), its notes say which; where those come to a
+tenth of the governorate's people or more, its figures are refused there with
+the reason, since they describe other ground.
 
 **Not written.** The fourteen outlines labelled Zemam Out -- the land outside
 the zimam, the bounds of the towns and villages, which no census table counts
@@ -73,16 +90,21 @@ BASE = "https://www.citypopulation.de"
 HDX_DATASET = "egypt-population-statistics-0"
 OUT = "egypt_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
-SOURCE_2017 = ("Central Agency for Public Mobilization and Statistics (CAPMAS), Population, "
-               "Housing and Establishments Census 2017: population by sex and ten-year age "
-               "group, as citypopulation.de tabulates it")
-SOURCE_2023 = ("Central Agency for Public Mobilization and Statistics (CAPMAS), population "
-               "estimate for 1 July 2023, as citypopulation.de tabulates it")
-SOURCE_2006 = ("Central Agency for Public Mobilization and Statistics (CAPMAS), Population, "
-               "Housing and Establishments Census 2006: population by sex of every kism and "
-               "markaz, as OCHA publishes it on HDX")
-CP_NAME = "citypopulation.de (Thomas Brinkhoff), after CAPMAS"
-CP_LICENCE = "citation of citypopulation.de required"
+CAPMAS = "Central Agency for Public Mobilization and Statistics (CAPMAS)"
+CP = "as City Population (Thomas Brinkhoff) tabulates it"
+# Each publication by its own name: the figure card shows the publisher (the
+# text before the first comma), the sources list each publication once.
+SOURCE_2023 = (f"{CAPMAS}, population estimate for 1 July 2023 of every governorate, kism "
+               f"and markaz, {CP}")
+SOURCE_2017_COUNT = (f"{CAPMAS}, Population, Housing and Establishments Census 2017, population "
+                     f"of every governorate, kism and markaz, {CP}")
+SOURCE_2017 = (f"{CAPMAS}, Population, Housing and Establishments Census 2017, population by "
+               f"sex and ten-year age group, {CP}")
+SOURCE_2006_CP = (f"{CAPMAS}, Population, Housing and Establishments Census 2006, population of "
+                  f"the units counted since, {CP}")
+SOURCE_2006 = (f"{CAPMAS}, Population, Housing and Establishments Census 2006, population by "
+               "sex of every kism and markaz, as OCHA publishes it on HDX")
+CP_LICENCE = "citation of City Population (citypopulation.de) required"
 # CAPMAS's governorate code -> the map's ISO 3166-2 code; two outlines carry no
 # code and are found by label (``UNCODED``).
 GOV_ISO = {"01": "EG-C", "02": "EG-ALX", "03": "EG-PTS", "04": "EG-SUZ", "11": "EG-DT",
@@ -92,23 +114,91 @@ GOV_ISO = {"01": "EG-C", "02": "EG-ALX", "03": "EG-PTS", "04": "EG-SUZ", "11": "
            "28": "EG-ASN", "29": "EG-LX", "31": "EG-BA", "32": "EG-WAD", "33": "EG-MT",
            "34": "EG-SIN", "35": "EG-JS"}
 UNCODED = {"EG-GH": "Gharbiyya Governorate", "EG-MT": "Matrouh Governorate"}
+GOV_EN = {"01": "Cairo", "02": "Alexandria", "03": "Port Said", "04": "Suez", "11": "Damietta",
+          "12": "Dakahlia", "13": "Sharqia", "14": "Qalyubia", "15": "Kafr el-Sheikh",
+          "16": "Gharbia", "17": "Monufia", "18": "Beheira", "19": "Ismailia", "21": "Giza",
+          "22": "Beni Suef", "23": "Faiyum", "24": "Minya", "25": "Asyut", "26": "Sohag",
+          "27": "Qena", "28": "Aswan", "29": "Luxor", "31": "Red Sea", "32": "New Valley",
+          "33": "Matrouh", "34": "North Sinai", "35": "South Sinai"}
 # A 2006 unit whose rows OCHA's table labels with another unit's English name
 # (gov code, Arabic name) -> the label of its outline: Shaykh Zayed and Awsim,
 # both labelled Waraq; 6th of October's two kisms, whose labels a spreadsheet
 # read as dates ("06-Oct-01").
 RELABEL = {("21", "قسم الشيخ زايد"): "Shaykh Zayed", ("21", "مركز أوسيم"): "Auseem",
            ("21", "قسم أول 6 أكتوبر"): "6 October-1", ("21", "قسم ثان 6 أكتوبر"): "6 October-2"}
+# A 2006 unit CAPMAS counts under another name since (gov code, its Arabic
+# name in OCHA's table) -> (today's Arabic name, the 2006 unit's English name).
+# Marina al-Alamein's tourist kism is today's kism of al-Alamayn: each is the
+# one unit of Matrouh the other table lacks, and both tables count about fifty
+# people there in 2006 (OCHA 42, CAPMAS 52).
+RENAMED = {("33", "قسم مارينا العلمين السياحية"): ("قسم العلمين", "Marina al-Alamein")}
+# 2006 units whose row in OCHA's table is shown wrong by CAPMAS's own count of
+# 2006, so that the ground test fails on the row and not on the ground (gov
+# code, Arabic name) -> the evidence. Each takes today's figures.
+SAME_GROUND = {
+    # Sub-district 220202, al-Hakamina: 4,696 men and 43,731 women, a 4 keyed in
+    # front of 3,731 (107 men per 1,000 women in one village). Without it the
+    # markaz holds 152,303 men and 144,951 women, 297,254 people; CAPMAS's 2006
+    # count of today's markaz is 298,047. Every other markaz of Beni Suef agrees
+    # between the two tables to within 0.05%.
+    ("22", "مركز بنى سويف"): "OCHA's sub-district 220202 holds 4,696 men and 43,731 women",
+    # 100,724 men and 129,511 women, 778 per 1,000; CAPMAS's 2006 count of
+    # today's markaz is 200,432, which with OCHA's men leaves 99,708 women, 1,010
+    # men per 1,000 as in the markazes around it. Damietta's other units agree
+    # between the two tables to within 0.7%, and its OCHA total exceeds CAPMAS's
+    # by 26,578 where nearly every governorate's falls short.
+    ("11", "مركز فارسكور"): "OCHA's row holds 29,803 more women than CAPMAS's count allows",
+    # 216,280 men and 81,386 women, 2,657 per 1,000; CAPMAS's 2006 count of the
+    # kism is 161,946 -- OCHA's women and 80,560 men, 990 per 1,000. CAPMAS's
+    # count is OCHA's without a block of 135,720 men, not other ground; Cairo's
+    # other kisms agree (Sharabiyya and Zawiya al-Hamra to the person).
+    ("01", "قسم النزهة"): "OCHA's row holds 135,720 more men than CAPMAS's count of the kism",
+}
 # Two outlines labelled North Coast, both filed under Matrouh: the eastern one
 # continues Burg al-Arab's side (Alexandria's) of the boundary at 29.38°E, the
 # western one Al-Hammam's (Matrouh's). Shape id -> (gov code, Arabic name).
 SHAPES = {"37247803B38142631960117": ("02", "الساحل الشمالى_جزء"),
           "37247803B36627997079635": ("33", "قسم الساحل الشمالى-جزء")}
+# Kisms and markazes whose outline lies in another governorate's outline as
+# the first level draws it: most of the outline's area, and every town of it
+# GeoNames places, fall in the other polygon. Shape id -> the governorate code
+# of the first-level outline that holds it.
+DRAWN_IN = {
+    "37247803B95427647060127": "29",   # Qus (Qena's): wholly in Luxor's outline
+    "37247803B87719226438942": "29",   # Naqada (Qena's): 98%, and the town, in Luxor's
+    "37247803B29149830762978": "27",   # Isna (Luxor's): Esna town in Qena's
+    "37247803B51665438591487": "14",   # Marg (Cairo's): 95% in Qalyubia's
+    "37247803B59541002076203": "14",   # Al Salam (Cairo's): 56% in Qalyubia's
+    "37247803B72756565577460": "21",   # Zamalik (Cairo's): 98% in Giza's
+    "37247803B47496652532681": "01",   # 10 Ramadan 1 (Sharqia's): wholly in Cairo's
+    "37247803B42052057109088": "33",   # Burg al-Arab (Alexandria's): 70%, and the town
+    "37247803B38142631960117": "33",   # North Coast, Alexandria's part: 98% in Matrouh's
+    "37247803B87041728070842": "11",   # Minya al-Nasr (Dakahlia's): 58%, and its towns
+    "37247803B60942546572959": "26",   # Al-Ghanayem (Asyut's): 55%, and the town, in Sohag's
+    "37247803B67659065091710": "32",   # Guhayna al-Gharbiyya (Sohag's): 70%, and Juhayna
+    "37247803B45887361748458": "32",   # Suhag City (Sohag's new city): wholly in New Valley's
+}
+# The share of a governorate's people in kisms and markazes its outline holds
+# or lacks at which its figures are refused there.
+GOV_LARGE = 0.10
+# A statement of other ground displaces an encyclopaedia's older or undated
+# figure for the governorate outline: theirs are CAPMAS's governorates too.
+DISPLACES_BEFORE = 2026
 ZEMAM = "zemamout"
 # The kism of Hala'ib, in the triangle Egypt and Sudan both claim.
 CLAIMED = {"3108"}
 PLAIN, SCALED, SEARCH = 0.02, 0.03, 0.01
-# Men per 1,000 women at which a unit's note says why (Tura's 2,700).
-INSTITUTIONS = 1500
+SLACK_PEOPLE = 50
+# No ratio of men to women from fewer people than this.
+FEW = 1000
+# Men per 1,000 women at which a note says where such a share comes from.
+HIGH = 1250
+# Below this, for a unit of more than BIG people, a 2006 ratio is not written:
+# no unit of Egypt that size counts so few men (the next lowest is 869).
+LOW, BIG = 900, 50_000
+HIGH_NOTE = (" The census counts people where they live, and a share of men this high usually "
+             "comes from men living apart from their families: workers in hostels, staff "
+             "housing and camps, soldiers in barracks, and prisoners.")
 SCALE_LIMIT = 0.05
 PAUSE = 0.4
 AR = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ة": "ه", "ى": "ي", "ـ": None,
@@ -117,6 +207,10 @@ ORDINALS = {"اول": 1, "ثان": 2, "ثاني": 2, "ثالث": 3, "رابع": 
             "سابع": 7, "ثامن": 8}
 KINDS = (("قسم شرطه", "kism"), ("قسم", "kism"), ("مركز", "markaz"),
          ("اداره شرطه", "police"), ("شرطه", "police"), ("مدينه", "city"))
+# City Population's status of a unit -> its kind, one and many.
+STATUS_KINDS = (("kism", "kism", "kisms"), ("markaz", "markaz", "markazes"),
+                ("new city", "new city", "new cities"),
+                ("police", "police district", "police districts"), ("area", "area", "areas"))
 
 
 # ---------------------------------------------------------------- names
@@ -164,6 +258,16 @@ def count(text: str) -> int | None:
     return int(digits) if digits else None
 
 
+def plural(n: int, one: str, many: str) -> str:
+    return f"{n:,} {one if n == 1 else many}"
+
+
+def listed(items: list[str]) -> str:
+    """'A', 'A and B', 'A, B and C'."""
+    items = list(items)
+    return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
+
+
 # ------------------------------------------------------- citypopulation
 
 def strip_tags(html: str) -> str:
@@ -175,6 +279,28 @@ def clean(name: str) -> str:
     (Baris police district) -> 'Bārīs'."""
     name = re.sub(r"\s*\[.*?\]", "", str(name)).strip()
     return re.sub(r"^Shurṭah\s+", "", name)
+
+
+def part_kind(unit: dict[str, Any]) -> tuple[str, str]:
+    status = str(unit.get("status") or "").lower()
+    for word, one, many in STATUS_KINDS:
+        if status.startswith(word):
+            return one, many
+    return "unit", "units"
+
+
+def describe_parts(parts: list[dict[str, Any]]) -> str:
+    """Today's units by kind and name: 'the kism and the markaz of Abū Tīj',
+    'the markazes of Al-Ḥusayniyah, Munshāh Abū 'Umar and Ṣān al-Ḥajar'."""
+    names = [clean(c["name"]) for c in parts]
+    kinds = [part_kind(c) for c in parts]
+    if len(set(names)) == 1 and len(set(kinds)) == len(kinds):
+        return " and ".join(f"the {one}" for one, _ in kinds) + f" of {names[0]}"
+    groups: dict[tuple[str, str], list[str]] = {}
+    for kind, name in zip(kinds, names):
+        groups.setdefault(kind, []).append(name)
+    return listed([f"the {one} of {ns[0]}" if len(ns) == 1 else f"the {many} of {listed(ns)}"
+                   for (one, many), ns in groups.items()])
 
 
 def parse_admin(html: str) -> dict[str, Any]:
@@ -290,6 +416,29 @@ def read_hdx(book: Any) -> tuple[list[dict[str, Any]], dict[str, dict[str, int]]
     return districts, provinces
 
 
+def keyed_rows(rows: list[list[Any]]) -> list[dict[str, Any]]:
+    """OCHA's sub-district rows whose men and women cannot both be right:
+    more than twice as many of one sex as of the other among 1,000 people or
+    more. A digit keyed in front of a count makes them, and the row's total,
+    made from the two, is as wrong (al-Hakamina, Beni Suef: 4,696 men and
+    43,731 women). Columns: governorate, district and sub-district names and
+    codes, men, women, total."""
+    out = []
+    for r in rows[1:]:
+        if not r or len(r) < 11:
+            continue
+        try:
+            men, women, total = (int(round(float(v))) for v in r[8:11])
+            district = int(r[5])
+        except (TypeError, ValueError):
+            continue
+        if total >= 1000 and (men > 2 * women or women > 2 * men):
+            out.append({"district": district, "district_ar": str(r[4]).strip(),
+                        "sub": str(r[6]).strip(), "code": r[7], "m": men, "f": women,
+                        "t": total})
+    return out
+
+
 def units_2006(districts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """OCHA's rows grouped into the 2006 units they count, by governorate and
     Arabic name, each with the English labels its rows carry."""
@@ -307,6 +456,12 @@ def units_2006(districts: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     "f": sum(r["f"] or 0 for r in rows) if known else None,
                     "t": sum(r["t"] or 0 for r in rows) if known else None})
     return out
+
+
+def lookup(table: dict[tuple[str, str], Any], unit: dict[str, Any]) -> Any:
+    """A unit's entry in a table keyed (gov code, Arabic name)."""
+    return next((v for (g, a), v in table.items() if g == unit["gov"] and arkey(a) == unit["key"]),
+                None)
 
 
 # -------------------------------------------------------------- binding
@@ -384,11 +539,14 @@ def named(unit: dict[str, Any], cp_units: dict[str, dict[str, Any]],
     not a number another 2006 unit of the name already had: 2006's '10th of
     Ramadan' is today's first kism, its second was 2006's too), or the same
     name of another kind -- in its governorate; else the same name and kind in
-    the one governorate that has it (a markaz moved from Qena to Luxor)."""
-    kind, ordinal, base = unit["key"]
+    the one governorate that has it (a markaz moved from Qena to Luxor). A
+    unit renamed since (``RENAMED``) is looked up by its name today."""
+    renamed = lookup(RENAMED, unit)
+    key = arkey(renamed[0]) if renamed else unit["key"]
+    kind, ordinal, base = key
     pool = [c for c in cp_units.values() if c["gov"] == unit["gov"]]
-    same = [c for c in pool if unit["key"] in keys(c["ar"])]
-    if same:
+    same = [c for c in pool if key in keys(c["ar"])]
+    if same or renamed:
         return same
     if ordinal is None:
         parts = [c for c in pool if any(k[0] == kind and k[2] == base and k[1]
@@ -398,7 +556,7 @@ def named(unit: dict[str, Any], cp_units: dict[str, dict[str, Any]],
     loose = [c for c in pool if any(k[2] == base and k[1] == ordinal for k in keys(c["ar"]))]
     if loose:
         return loose
-    moved = [c for c in cp_units.values() if unit["key"] in keys(c["ar"])]
+    moved = [c for c in cp_units.values() if key in keys(c["ar"])]
     return moved if len({c["gov"] for c in moved}) == 1 else []
 
 
@@ -411,11 +569,13 @@ def factor(gov: str, cp_govs: dict[str, dict[str, Any]], provinces: dict[str, di
 
 
 def same_ground(t2006: int | None, parts: list[dict[str, Any]], k: float,
-                plain: float = PLAIN, scaled: float = SCALED) -> tuple[bool, float] | None:
+                plain: float = PLAIN, scaled: float = SCALED, slack: int = SLACK_PEOPLE
+                ) -> tuple[bool, float] | None:
     if not t2006 or not parts or any(c["p2006"] is None for c in parts):
         return None
-    r = sum(c["p2006"] for c in parts) / t2006
-    return (abs(r - 1) <= plain or abs(r / k - 1) <= scaled), r
+    made = sum(c["p2006"] for c in parts)
+    r = made / t2006
+    return (abs(r - 1) <= plain or abs(r / k - 1) <= scaled or abs(made - t2006) <= slack), r
 
 
 def carve(t2006: int, parts: list[dict[str, Any]], free: list[dict[str, Any]], k: float
@@ -425,7 +585,7 @@ def carve(t2006: int, parts: list[dict[str, Any]], free: list[dict[str, Any]], k
     for n in (1, 2):
         best = None
         for extra in itertools.combinations(free, n):
-            test = same_ground(t2006, parts + list(extra), k, SEARCH, SEARCH)
+            test = same_ground(t2006, parts + list(extra), k, SEARCH, SEARCH, 0)
             if test and test[0]:
                 err = abs(test[1] / k - 1)
                 if best is None or err < best[0]:
@@ -458,6 +618,10 @@ def compose(bound: dict[str, list[dict[str, Any]]], cp: dict[str, Any],
         k = factor(gov, cp["govs"], provinces)
         test = same_ground(t2006, parts, k)
         how = ""
+        declared = [lookup(SAME_GROUND, u) for u in units if lookup(SAME_GROUND, u)]
+        if declared and test:
+            test = (True, test[1])
+            how = f"; declared the same ground: {'; '.join(declared)}"
         if test and not test[0] and test[1] < 1:
             free = [c for c in cp["units"].values() if c["gov"] == gov and not claimed[c["code"]]
                     and c["code"] not in taken and c["p2006"] and c["code"] not in CLAIMED]
@@ -468,7 +632,9 @@ def compose(bound: dict[str, list[dict[str, Any]]], cp: dict[str, Any],
                 test = same_ground(t2006, parts, k)
                 how = f"; with {[c['name'] for c in extra]}, made from it since"
         out[sid] = {"parts": parts, "same": bool(test and test[0]),
-                    "ratio": test[1] if test else None, "t2006": t2006}
+                    "ratio": test[1] if test else None, "t2006": t2006,
+                    "declared": bool(declared),
+                    "renamed": any(lookup(RENAMED, u) for u in units)}
         report.append(f"    {units[0]['ar']} ({t2006}) -> {[c['name'] for c in parts]} "
                       f"2006 {[c['p2006'] for c in parts]}"
                       f"{'' if test is None else f' ratio {test[1]:.3f}'}"
@@ -487,20 +653,34 @@ def describe(units: list[dict[str, Any]]) -> str:
     return " and ".join(f"the {kind_word(u)} of {u['display']}" for u in units)
 
 
-def notes_2017(parts: list[dict[str, Any]], pyr: list[tuple[int, int | None, int, int]]
-               ) -> dict[str, Any]:
+def ratio_fields(men: int, women: int, year: int, source: str, where: str = ""
+                 ) -> dict[str, Any]:
+    """Men per 1,000 women and its note, or why there is none."""
+    people = men + women
+    if people < FEW or not women:
+        return {"sex_ratio": gap(NOT_AVAILABLE, (
+            f"The {year} census counted only {plural(people, 'person', 'people')} here "
+            f"({plural(men, 'man', 'men')} and {plural(women, 'woman', 'women')}), too few for "
+            "a ratio of men to women to describe the unit."))}
+    ratio = round(1000 * men / women)
+    if year == 2006 and people > BIG and ratio < LOW:
+        return {"sex_ratio": gap(NOT_AVAILABLE, (
+            f"The 2006 census table gives {men:,} men and {women:,} women here, {ratio:,} men "
+            "per 1,000 women -- far fewer men than any other unit of Egypt of its size, more "
+            "likely a keying error in the table than a count, so no ratio is given."))}
+    note = f"Men per 1,000 women at the {year} census{where}: {men:,} men and {women:,} women."
+    if ratio >= HIGH:
+        note += HIGH_NOTE
+    return {"sex_ratio": measure(ratio, unit="males_per_1000_females", year=year,
+                                 source=source),
+            "sex_ratio_note": note}
+
+
+def notes_2017(pyr: list[tuple[int, int | None, int, int]]) -> dict[str, Any]:
     men, women = sum(p[2] for p in pyr), sum(p[3] for p in pyr)
     groups = [(lo, hi, m + f) for lo, hi, m, f in pyr]
     median = grouped_median(groups)
-    ratio = round(1000 * men / women)
-    out = {"sex_ratio": measure(ratio, unit="males_per_1000_females", year=2017,
-                                source=SOURCE_2017),
-           "sex_ratio_note": f"Men per 1,000 women at the 2017 census: {men:,} men and "
-                             f"{women:,} women."}
-    if ratio >= INSTITUTIONS and men + women >= 1000:
-        out["sex_ratio_note"] += (" The census counts the people who live in barracks, "
-                                  "camps and prisons where they are, and a share of men "
-                                  "this high usually comes from such places.")
+    out = ratio_fields(men, women, 2017, SOURCE_2017)
     if median is not None:
         out["median_age"] = measure(median, unit="years", year=2017, source=SOURCE_2017)
         out["median_age_note"] = ("Interpolated within the ten-year age group that holds the "
@@ -509,67 +689,104 @@ def notes_2017(parts: list[dict[str, Any]], pyr: list[tuple[int, int | None, int
     return out
 
 
+def later(parts: list[dict[str, Any]], t2006: int, what: str) -> str:
+    """Why today's units' figures are not taken: how the two 2006 tables
+    disagree, or that one gives no count to compare."""
+    if not parts:
+        return "CAPMAS's later tables have no unit of this name."
+    them = "it" if len(parts) == 1 else "them"
+    missing = [c for c in parts if c["p2006"] is None]
+    if len(missing) == len(parts):
+        return (f"CAPMAS's later tables give no count at the 2006 census for "
+                f"{describe_parts(parts)}, the {'unit' if len(parts) == 1 else 'units'} of "
+                f"this name today, to compare with this one, so {what} for {them} "
+                "are not taken for this outline.")
+    if missing:
+        return (f"CAPMAS's later tables name {describe_parts(parts)} here today and give no "
+                f"count at the 2006 census for {describe_parts(missing)} to compare with this "
+                f"one, so {what} for them are not taken for this outline.")
+    made = sum(c["p2006"] for c in parts)
+    return (f"CAPMAS's later tables put {made:,} people in {describe_parts(parts)} at the 2006 "
+            f"census, against {t2006:,} in this count, so {what} for {them} are not taken for "
+            "this outline.")
+
+
+def page_url(unit: dict[str, Any]) -> str:
+    return BASE + urllib.parse.quote(unit["href"])
+
+
 def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dict[str, Any],
                    pyramids: dict[str, list], hdx_url: str, hdx_licence: str) -> dict[str, Any]:
     parts = plan["parts"]
     fields: dict[str, Any] = {"sources": []}
     what = describe(units)
     pyr = [pyramids.get(c["code"]) for c in parts]
+    m = sum(u["m"] for u in units) if all(u["m"] is not None for u in units) else None
+    f = sum(u["f"] for u in units) if all(u["f"] is not None for u in units) else None
     have_now = plan["same"] and parts and all(c["p2017"] for c in parts)
     if have_now:
         p2017 = sum(c["p2017"] for c in parts)
         since = ""
-        if len(parts) > 1:
-            since = (f" CAPMAS counts that ground today as {len(parts)} units ("
-                     f"{', '.join(clean(c['name']) for c in parts)}), added together here.")
+        if plan.get("renamed") and m is not None and f is not None:
+            p2006 = sum(c["p2006"] or 0 for c in parts)
+            ground = (f"{describe_parts(parts)}, which the 2006 census counted as {what} "
+                      f"({plural(m, 'man', 'men')} and {plural(f, 'woman', 'women')}; CAPMAS's "
+                      f"later tables put {plural(p2006, 'person', 'people')} there in 2006)")
+        else:
+            ground = f"{what} as drawn in 2006"
+            if len(parts) > 1:
+                since = (f" CAPMAS counts that ground today as {describe_parts(parts)}, added "
+                         "together here.")
         if all(c["p2023"] for c in parts):
             fields["population"] = measure(sum(c["p2023"] for c in parts), year=2023,
                                            source=SOURCE_2023)
-            fields["population_note"] = (f"CAPMAS's estimate for 1 July 2023 of {what} as "
-                                         f"drawn in 2006; the 2017 census counted "
-                                         f"{p2017:,}.{since}")
+            fields["population_note"] = (f"CAPMAS's estimate for 1 July 2023 of {ground}; the "
+                                         f"2017 census counted {p2017:,}.{since}")
+            fields["sources"].append({"field": "population", "name": SOURCE_2023,
+                                      "url": page_url(parts[0]), "year": 2023,
+                                      "license": CP_LICENCE})
         else:
-            fields["population"] = measure(p2017, year=2017, source=SOURCE_2017)
-            fields["population_note"] = f"The 2017 census count of {what} as drawn in 2006.{since}"
-        fields["sources"].append({"field": "population", "name": CP_NAME,
-                                  "url": BASE + urllib.parse.quote(parts[0]["href"]),
-                                  "year": 2023, "license": CP_LICENCE})
-        if all(pyr) and all(abs(sum(m + f for _, _, m, f in p) - c["p2017"]) <= 5
+            fields["population"] = measure(p2017, year=2017, source=SOURCE_2017_COUNT)
+            fields["population_note"] = f"The 2017 census count of {ground}.{since}"
+            fields["sources"].append({"field": "population", "name": SOURCE_2017_COUNT,
+                                      "url": page_url(parts[0]), "year": 2017,
+                                      "license": CP_LICENCE})
+        if all(pyr) and all(abs(sum(a + b for _, _, a, b in p) - c["p2017"]) <= 5
                             for p, c in zip(pyr, parts)):
-            fields.update(notes_2017(parts, add(pyr)))
-            fields["sources"].append({"field": "median_age/sex_ratio", "name": CP_NAME,
-                                      "url": BASE + urllib.parse.quote(parts[0]["href"]),
-                                      "year": 2017, "license": CP_LICENCE})
+            fields.update(notes_2017(add(pyr)))
+            fields["sources"].append({"field": "median_age/sex_ratio", "name": SOURCE_2017,
+                                      "url": page_url(parts[0]), "year": 2017,
+                                      "license": CP_LICENCE})
             return fields
         fields["median_age"] = gap(NOT_AVAILABLE, (
             "The 2017 census's count by age is not tabulated for this ground, and the 2006 "
             "census's tables by kism and markaz give no ages."))
+        if plan.get("declared"):
+            # OCHA's row is the one shown wrong: its sexes are not used either.
+            fields["sex_ratio"] = gap(NOT_AVAILABLE, (
+                "The 2017 census's count by sex is not tabulated for this ground, and the 2006 "
+                "census table's men and women for it do not agree with CAPMAS's own count."))
+            return fields
     else:
-        m = sum(u["m"] for u in units) if all(u["m"] is not None for u in units) else None
-        f = sum(u["f"] for u in units) if all(u["f"] is not None for u in units) else None
         if m is None or f is None:
             return fields
         fields["population"] = measure(m + f, year=2006, source=SOURCE_2006)
-        later = (f" CAPMAS's later counts are of {', '.join(clean(c['name']) for c in parts)} "
-                 "as redrawn since, which do not follow this outline." if parts else
-                 " CAPMAS's later tables have no unit of this ground.")
-        fields["population_note"] = (f"The 2006 census count of {what} as drawn then: "
-                                     f"{m:,} men and {f:,} women.{later}")
+        fields["population_note"] = (
+            f"The 2006 census count of {what} as drawn then: {plural(m, 'man', 'men')} and "
+            f"{plural(f, 'woman', 'women')}. "
+            + later(parts, m + f, "CAPMAS's later figures"))
         fields["median_age"] = gap(NOT_AVAILABLE, (
-            "The 2006 census's tables by kism and markaz give no ages, and the 2017 census's "
-            "ages are of the units as redrawn since, which do not follow this outline."))
-        fields["sources"].append({"field": "population", "name": "OCHA (HDX), after CAPMAS",
+            "The 2006 census's tables by kism and markaz give no ages. "
+            + later(parts, m + f, "the 2017 census's ages")))
+        fields["sources"].append({"field": "population", "name": SOURCE_2006,
                                   "url": hdx_url, "year": 2006, "license": hdx_licence})
     # Men per 1,000 women from 2006, where 2017's cannot be used.
-    m = sum(u["m"] for u in units) if all(u["m"] is not None for u in units) else None
-    f = sum(u["f"] for u in units) if all(u["f"] is not None for u in units) else None
-    if m and f:
-        fields["sex_ratio"] = measure(round(1000 * m / f), unit="males_per_1000_females",
-                                      year=2006, source=SOURCE_2006)
-        fields["sex_ratio_note"] = (f"Men per 1,000 women at the 2006 census in {what} as "
-                                    f"drawn then: {m:,} men and {f:,} women.")
-        fields["sources"].append({"field": "sex_ratio", "name": "OCHA (HDX), after CAPMAS",
-                                  "url": hdx_url, "year": 2006, "license": hdx_licence})
+    if m is not None and f is not None:
+        got = ratio_fields(m, f, 2006, SOURCE_2006, f" in {what} as drawn then")
+        fields.update(got)
+        if "sex_ratio_note" in got:
+            fields["sources"].append({"field": "sex_ratio", "name": SOURCE_2006,
+                                      "url": hdx_url, "year": 2006, "license": hdx_licence})
     return fields
 
 
@@ -623,13 +840,30 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
             continue
         plan = plans[s["id"]]
         if all(u["t"] == 0 for u in us) and not any(c["p2017"] for c in plan["parts"]):
-            # OCHA's 2006 table counts no one here (New Tushka) and nothing
-            # counts the unit since: no figure, and no count of 0 either.
-            other = [c["p2006"] for c in plan["parts"] if c["p2006"]]
-            later = (f", where CAPMAS's later tables put {sum(other):,} people in 2006"
-                     if other else "")
-            none = (f"The 2006 census, as OCHA publishes it, counts no one in {describe(us)}"
-                    f"{later}, and CAPMAS gives it no count since.")
+            # OCHA's 2006 table carries 0 for the unit (New Tushka) and nothing
+            # counts it since: CAPMAS's own 2006 count, where it has one.
+            other = [c for c in plan["parts"] if c["p2006"]]
+            if other:
+                why = (f"CAPMAS's tables give {describe_parts(other)} a count at the 2006 census "
+                       "without its sexes or ages, and no count since; OCHA's table of the 2006 "
+                       "census carries 0 for it.")
+                records.append(record(
+                    rid, s["name"], level="admin2", parent="EGY", country="EGY",
+                    match_by="shape_id", shape_id=s["id"],
+                    codes={"capmas_2006": [c for u in us for c in u["codes"]],
+                           "capmas": [c["code"] for c in other]},
+                    population=measure(sum(c["p2006"] for c in other), year=2006,
+                                       source=SOURCE_2006_CP),
+                    population_note=(f"CAPMAS's count of {describe_parts(other)} at the 2006 "
+                                     "census; OCHA's table of the 2006 census carries 0 for it, "
+                                     "and CAPMAS gives it no count since."),
+                    median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                    sources=[{"field": "population", "name": SOURCE_2006_CP,
+                              "url": page_url(other[0]), "year": 2006,
+                              "license": CP_LICENCE}]))
+                continue
+            none = (f"OCHA's table of the 2006 census carries 0 for {describe(us)}, and CAPMAS "
+                    "gives it no count.")
             records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
                                   match_by="shape_id", shape_id=s["id"],
                                   population=gap(NOT_AVAILABLE, none),
@@ -661,21 +895,80 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
                               codes={"capmas_2006": [c for u in us for c in u["codes"]],
                                      "capmas": [c["code"] for c in plan["parts"]]},
                               **fields))
-    records += governorates(cp, gov_shape, pyramids, report)
+    records += governorates(cp, gov_shape, pyramids, plans, report)
     return records, report
 
 
 def display(unit: dict[str, Any], cp_units: dict[str, dict[str, Any]]) -> str:
-    """A 2006 unit's name as CAPMAS's table today writes it, else OCHA's label."""
-    for c in cp_units.values():
-        if c["gov"] == unit["gov"] and unit["key"] in keys(c["ar"]):
+    """A 2006 unit's name as CAPMAS's table today writes it -- its own, or the
+    name its numbered parts share (2006's kism of Al-Minyā, today's Al-Minyā 1,
+    2 and 3) -- else OCHA's label without a kind word ('Kesm Al-minya')."""
+    renamed = lookup(RENAMED, unit)
+    if renamed:
+        return renamed[1]
+    kind, _, base = unit["key"]
+    pool = [c for c in cp_units.values() if c["gov"] == unit["gov"]]
+    for c in pool:
+        if unit["key"] in keys(c["ar"]):
             return clean(c["name"])
-    return sorted(r["en"] for r in unit["rows"])[0]
+    for c in pool:
+        if any(k[0] == kind and k[2] == base and k[1] for k in keys(c["ar"])):
+            return re.sub(r"\s+\d+(\s*&\s*\d+)*$", "", clean(c["name"]))
+    label = sorted(r["en"] for r in unit["rows"])[0]
+    return re.sub(r"^(kesm|qism|kism|markaz|markz)\s+", "", label, flags=re.I)
+
+
+def drawn_elsewhere(cp: dict[str, Any], plans: dict[str, dict[str, Any]]
+                    ) -> tuple[dict[str, list], dict[str, list]]:
+    """Per governorate: today's units its first-level outline holds that CAPMAS
+    counts in another ({gov: [(unit, its gov)]}), and its own units another's
+    outline holds ({gov: [(unit, the gov drawn)]})."""
+    inn: dict[str, list] = defaultdict(list)
+    out: dict[str, list] = defaultdict(list)
+    for sid, there in DRAWN_IN.items():
+        for c in (plans.get(sid) or {}).get("parts", []):
+            if c["gov"] != there and c.get("p2023"):
+                inn[there].append((c, c["gov"]))
+                out[c["gov"]].append((c, there))
+    return inn, out
+
+
+def drawn_text(gov: str, inn: dict[str, list], out: dict[str, list]) -> tuple[str, int]:
+    """What the governorate's outline holds of others' units and lacks of its
+    own, and the larger of the two in people (2023)."""
+    holds, lacks, held, lacked = [], [], 0, 0
+    by_home: dict[str, list] = defaultdict(list)
+    for c, home in inn.get(gov, []):
+        by_home[home].append(c)
+    for home, cs in sorted(by_home.items()):
+        held += sum(c["p2023"] for c in cs)
+        holds.append(f"{describe_parts(cs)} ({counts(cs)}), which CAPMAS counts in "
+                     f"{GOV_EN[home]}")
+    by_there: dict[str, list] = defaultdict(list)
+    for c, there in out.get(gov, []):
+        by_there[there].append(c)
+    for there, cs in sorted(by_there.items()):
+        lacked += sum(c["p2023"] for c in cs)
+        lacks.append(f"{describe_parts(cs)} ({counts(cs)}), whose "
+                     f"{'outline lies' if len(cs) == 1 else 'outlines lie'} wholly or mostly "
+                     f"within the one drawn for {GOV_EN[there]}")
+    said = []
+    if holds:
+        said.append("holds " + "; and ".join(holds))
+    if lacks:
+        said.append("leaves out " + "; and ".join(lacks))
+    return "; and it ".join(said), max(held, lacked)
+
+
+def counts(cs: list[dict[str, Any]]) -> str:
+    return listed([f"{c['p2023']:,}" for c in cs]) + " people in 2023"
 
 
 def governorates(cp: dict[str, Any], gov_shape: dict[str, dict[str, Any]],
-                 pyramids: dict[str, list], report: list[str]) -> list[dict[str, Any]]:
+                 pyramids: dict[str, list], plans: dict[str, dict[str, Any]],
+                 report: list[str]) -> list[dict[str, Any]]:
     out = []
+    inn, lack = drawn_elsewhere(cp, plans)
     for gov, row in sorted(cp["govs"].items()):
         shape = gov_shape[gov]
         pyr = pyramids.get(gov)
@@ -697,23 +990,53 @@ def governorates(cp: dict[str, Any], gov_shape: dict[str, dict[str, Any]],
                 "claim." for c in claimed)
         aswan = (" Egypt's count does not include Bir Tawil, the uninhabited land south of the "
                  "22nd parallel that neither Egypt nor Sudan claims." if gov == "28" else "")
+        drawn, moved = drawn_text(gov, inn, lack)
         fields: dict[str, Any] = {
             "population": measure(p2023, year=2023, source=SOURCE_2023),
             "population_note": (f"CAPMAS's estimate for 1 July 2023; the 2017 census counted "
                                 f"{p2017:,}.{less}{aswan}"),
-            "sources": [{"field": "population", "name": CP_NAME,
-                         "url": BASE + urllib.parse.quote(row["href"]), "year": 2023,
-                         "license": CP_LICENCE}]}
+            "sources": [{"field": "population", "name": SOURCE_2023,
+                         "url": page_url(row), "year": 2023, "license": CP_LICENCE}]}
         if pyr and abs(sum(m + f for _, _, m, f in pyr) - p2017) <= 5:
-            fields.update(notes_2017([], pyr))
+            fields.update(notes_2017(pyr))
             if less:
-                fields["sex_ratio_note"] += less
-                fields["median_age_note"] += less
-            fields["sources"].append({"field": "median_age/sex_ratio", "name": CP_NAME,
-                                      "url": BASE + urllib.parse.quote(row["href"]),
-                                      "year": 2017, "license": CP_LICENCE})
+                for key in ("sex_ratio_note", "median_age_note"):
+                    if key in fields:
+                        fields[key] += less
+            fields["sources"].append({"field": "median_age/sex_ratio", "name": SOURCE_2017,
+                                      "url": page_url(row), "year": 2017,
+                                      "license": CP_LICENCE})
         else:
             report.append(f"  governorate {row['name']}: no 2017 ages")
+        if drawn and moved >= GOV_LARGE * p2023:
+            # The outline drawn is other ground than CAPMAS's governorate by a
+            # tenth of its people or more: its figures are said, not shown.
+            other = (f"but the outline drawn here is not that governorate's ground: it {drawn}. "
+                     "The governorate's figures do not describe this outline.")
+            refused = {"population": gap(NOT_AVAILABLE, (
+                f"CAPMAS's estimate for 1 July 2023 puts {p2023:,} people in {GOV_EN[gov]} "
+                f"governorate (the 2017 census counted {p2017:,}), {other}"))}
+            refused["population"]["displaces_before"] = DISPLACES_BEFORE
+            refused["population"]["displaces_undated"] = True
+            if isinstance(fields.get("median_age"), dict) and "value" in fields["median_age"]:
+                refused["median_age"] = gap(NOT_AVAILABLE, (
+                    f"The 2017 census puts the median age of {GOV_EN[gov]} governorate at "
+                    f"{fields['median_age']['value']} years, {other}"))
+            if isinstance(fields.get("sex_ratio"), dict) and "value" in fields["sex_ratio"]:
+                men, women = sum(p[2] for p in pyr), sum(p[3] for p in pyr)
+                refused["sex_ratio"] = gap(NOT_AVAILABLE, (
+                    f"The 2017 census counted {men:,} men and {women:,} women in "
+                    f"{GOV_EN[gov]} governorate, {fields['sex_ratio']['value']:,} men per "
+                    f"1,000 women, {other}"))
+            report.append(f"  governorate {GOV_EN[gov]}: refused, the outline {drawn}")
+            fields = refused
+        elif drawn:
+            said = (f" The outline drawn here is not quite the governorate's ground: it "
+                    f"{drawn}.")
+            for key in ("population_note", "median_age_note", "sex_ratio_note"):
+                if key in fields:
+                    fields[key] += said
+            report.append(f"  governorate {GOV_EN[gov]}: noted, the outline {drawn}")
         out.append(record(f"EGY-CAPMAS-{gov}", shape["name"], level="admin1", parent="EGY",
                           country="EGY", match_by="shape_id", shape_id=shape["id"],
                           codes={"capmas": gov}, **fields))
@@ -752,6 +1075,13 @@ def main() -> int:
     districts, provinces = read_hdx(book)
     log(f"  2006: {len(districts)} rows, {len(provinces)} governorates, "
         f"{sum(p['t'] for p in provinces.values()):,} people; licence {hdx_licence!r}")
+    if "Sub-District" in book.sheetnames:
+        keyed = keyed_rows([list(r) for r in book["Sub-District"].iter_rows(values_only=True)])
+        log(f"  2006 sub-districts with more than twice as many of one sex as the other "
+            f"(1,000 people or more): {len(keyed)}")
+        for k in keyed:
+            log(f"    {k['district']} {k['district_ar']} / {k['sub']} ({k['code']}): "
+                f"{k['m']:,} men, {k['f']:,} women, {k['t']:,}")
     html = http_get(URL, cache=False, timeout=120)
     cp = parse_admin(html)
     log(f"  citypopulation: {len(cp['govs'])} governorates, {len(cp['units'])} units")
@@ -783,6 +1113,9 @@ def main() -> int:
         f"{len(admin2)} outlines: "
         f"{Counter((r.get('population') or {}).get('year') for r in a2)} by year of the count; "
         f"{sum(bool((r.get('median_age') or {}).get('value')) for r in a2)} with a median")
+    ratios = sorted((r["sex_ratio"]["value"], r["name"]) for r in records
+                    if "value" in (r.get("sex_ratio") or {}))
+    log(f"  men per 1,000 women run from {ratios[0]} to {ratios[-1]}")
     write_json(PROCESSED / OUT, records)
     return 0
 
