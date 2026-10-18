@@ -107,6 +107,15 @@ class ReligionAndLanguageByProvince(unittest.TestCase):
         out = bp.religion_charts(CENTRE_NORD_CHARTLESS, ["Bam", "Namentenga", "Sanmatenga"])
         self.assertEqual(out, {"_seen": {}})
 
+    def test_another_chart_of_the_provinces_is_not_the_religions(self):
+        # Constructed: a literacy chart by province (no religion legend by it)
+        # beside the picture of the religions' chart.
+        literacy = (" 45,1 30,2 38,0 0 10 20 30 40 50 BAM NAMENTENGA SANMATENGA Taux "
+                    "d'alphabétisation (%) ")
+        out = bp.religion_charts(CENTRE_NORD_CHARTLESS + literacy,
+                                 ["Bam", "Namentenga", "Sanmatenga"])
+        self.assertEqual(out, {"_seen": {}})
+
     def test_glued_figures(self):
         self.assertEqual(bp.tokens_of("22,320,5 0,40,9 29 ,0 0, 1 100 , 0"),
                          ["22,3", "20,5", "0,4", "0,9", "29,0", "0,1", "100,0"])

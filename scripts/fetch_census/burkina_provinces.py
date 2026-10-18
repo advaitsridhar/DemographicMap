@@ -305,8 +305,13 @@ def religion_charts(text: str, provinces: list[str]) -> dict[str, dict[str, floa
         while b >= 0 and is_number(toks[b]):
             vals.insert(0, value(toks[b]))
             b -= 1
-        for c in cats:
-            out["_seen"][c] = 1.0
+        # A chart of the provinces is the religions' only if their legend
+        # stands by it: the monographs chart nationality, literacy and work
+        # by province too.
+        near = fold(" ".join(toks[max(0, b - 40):k + 40]))
+        if "musulman" in near or "animiste" in near:
+            for c in cats:
+                out["_seen"][c] = 1.0
         n = 6 * len(cats)
         if cats and len(vals) >= n:
             vals = vals[-n:]
