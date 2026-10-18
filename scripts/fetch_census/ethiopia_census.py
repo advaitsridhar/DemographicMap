@@ -47,10 +47,11 @@ zone polygon takes the sum of the weredas that lie within it, from the
 placement in ``ethiopia_zones`` (OCHA's wereda outlines against the polygons).
 A zone's sum is written where it is the zone's ground but for slivers: the
 people of the weredas that straddle its line, estimated from the share of each
-one's outline on either side (``ethiopia_zones.SHARES``), are no more than one
-in twenty of the sum, both the people of the zone's ground the sum leaves out
-and the people beyond its line the sum takes in; the note names any straddling
-wereda that brings in more than one in two hundred. A zone whose weredas the
+one's outline lying more than 2 km across it (``ethiopia_zones.SHARES``; nearer
+the line, two drawings of it disagree), are no more than one in twenty of the
+sum, both the people of the zone's ground the sum leaves out and the people
+beyond its line the sum takes in; the note names any straddling wereda that
+brings in more than one in two hundred. A zone whose weredas the
 table and the outlines do not both know is left to the 2007 count. (OCHA's
 own zone table is by the zones of 2022, and where one of them is a drawn
 zone's ground, its weredas are that zone's sum here.) The projection's sex and age split are not read: a census's own figure
@@ -603,14 +604,16 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
     for code in (c for codes in placed_by_zone.values() for c in codes):
         weredas[code]["drawn"] = next(s for s, cs in placed_by_zone.items() if code in cs)
 
-    def share(code: str, sid: str) -> float:
-        """How much of a projection wereda's outline lies in a zone polygon."""
-        o = weredas[code].get("outline")
-        if o is None:
-            return 1.0 if weredas[code].get("drawn") == sid else 0.0
-        if o in SHARES:
-            return SHARES[o].get(sid, 0.0)
-        return 1.0 if home.get(o) == sid else 0.0
+    def inside(code: str, sid: str) -> float:
+        """How much of a projection wereda's outline lies more than 2 km inside a
+        zone polygon it is not placed in (SHARES)."""
+        return SHARES.get(weredas[code].get("outline") or "", {}).get(sid, 0.0)
+
+    def beyond_line(code: str, sid: str) -> float:
+        """How much of the outline of a wereda placed in ``sid`` lies more than 2 km
+        inside other zone polygons."""
+        return sum(v for k, v in SHARES.get(weredas[code].get("outline") or "", {}).items()
+                   if k != sid)
 
     for sid in sorted(labels, key=lambda s: labels[s]):
         codes = [c for c in weredas if c in outline and home.get(outline[c]) == sid]
@@ -631,11 +634,13 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
         total = sum(weredas[c]["total"] for c in codes)
         # The people of the zone's ground in weredas placed elsewhere or nowhere,
         # and the people of its weredas beyond its line, each wereda's people
-        # spread evenly over its outline.
-        taken_in = sorted(((share(c, sid) * w["total"], c) for c, w in weredas.items()
-                           if c not in codes and share(c, sid) > 0), reverse=True)
-        beyond = sorted((((1 - share(c, sid)) * weredas[c]["total"], c) for c in codes
-                         if share(c, sid) < 1), reverse=True)
+        # spread evenly over its outline, and only the outline's parts more than
+        # 2 km from the line counted (nearer it, two drawings of one line
+        # disagree).
+        taken_in = sorted(((inside(c, sid) * w["total"], c) for c, w in weredas.items()
+                           if c not in codes and inside(c, sid) > 0), reverse=True)
+        beyond = sorted(((beyond_line(c, sid) * weredas[c]["total"], c) for c in codes
+                         if beyond_line(c, sid) > 0), reverse=True)
         left_out = sum(n for n, _ in taken_in)
         spilled = sum(n for n, _ in beyond)
         if left_out > SLIVER * total or spilled > SLIVER * total:

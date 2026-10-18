@@ -284,10 +284,14 @@ def main() -> int:
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     t16 = read_rows([list(r) for r in book["ETA6"].iter_rows(values_only=True)])
     t14 = read_rows([list(r) for r in book["ETA4"].iter_rows(values_only=True)], (7, 8, 9))
-    if [(r["name"], r["total"]) for r in t16] != [(r["name"], r["total"]) for r in t14]:
-        diff = [(a, b) for a, b in zip(t16, t14) if (a["name"], a["total"]) != (b["name"],
-                                                                                 b["total"])]
-        raise SystemExit(f"burundi_census: Tableaux 1.6 and 1.4 disagree: {diff[:5]}")
+    # Row by row the same people; the two sheets spell some names apart
+    # ("KARUSI" and "KARUZI", "VYANDA" and "Vyanda").
+    figures = [(r["male"], r["female"], r["total"]) for r in t16]
+    if figures != [(r["male"], r["female"], r["total"]) for r in t14]:
+        diff = [(a, b) for a, b in zip(t16, t14)
+                if (a["male"], a["female"], a["total"]) != (b["male"], b["female"], b["total"])]
+        raise SystemExit(f"burundi_census: Tableaux 1.6 and 1.4 disagree: {diff[:5]} "
+                         f"({len(t16)} and {len(t14)} rows)")
     table = provinces(t16)
     log(f"  Tableau 1.6: {len(table)} provinces and "
         f"{sum(len(p['communes']) for p in table.values())} communes making "
