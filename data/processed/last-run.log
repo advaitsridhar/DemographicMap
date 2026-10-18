@@ -1,70 +1,112 @@
-  Tombali: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf: 666,188 bytes, sha256 7a0dd26616b771d601e265a4b92474c10b4e4f2520ca44394064e76dd87291e6
-  Tombali: region (91089, 44099, 46990); sectors Komo 8,777, Bedanda 24,293, Quebo 15,372, Cacine 15,648, Catió 26,999
-  Quinara: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf: 598,031 bytes, sha256 b6759aeb668e51ae22a92e22d187a6dad96034e678fc5dc10950dd5e518b7c82
-  Quinara: region (60777, 29854, 30923); sectors Fulacunda 11,275, Quinara 17,123, Tite 14,862, Buba 17,123, Empada 17,517
-  Oio: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf: 833,713 bytes, sha256 55f151cfe319bda60abeea750a9109991dbd7dff5a3539b22b583debcf81d4cf
-  Oio: region (215259, 103194, 112065); sectors Mansaba 43,725, Farim 48,264, Bissorã 56,585, Mansoa 46,046, Nhacra 20,639
-  Biombo: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf: 511,049 bytes, sha256 67d358b24e0d89a2fcf569ade09f6ca07d0414bb985c6b581d521a004a08e5cc
-  Biombo: region (93039, 43747, 49292); sectors Prabis 33,024, Safim 17,356, Quinhamel 42,659
-  Bolama: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf: 565,001 bytes, sha256 4c5934d8e780cb90e74b17199b4199333c2f84b8bcd1edfbdf3c1a78befe4587
-  Bolama: region (32424, 15770, 16654); sectors Bolama 10,206, Bubaque 11,204, Caravela 4,263, Uno 6,751
-  Bafatá: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf: 919,070 bytes, sha256 c70ec1833f551a480ebd5d19b79adbc0fc61b45fe37511fefe53f1f613bb6b7b
-  Bafatá: region (200884, 97231, 103653); sectors Xitole 16,928, Bafatá 68,956, Cossé 14,554, Bambadinca 31,834, Contuboel 44,048, Gã-mamudo 24,564
-  Gabú: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf: 814,827 bytes, sha256 77dd9c3d1942a699890d197ab055e3bf90884a7f633b40c4077af0f1e69575e3
-  Gabú: region (205608, 99591, 106017); sectors Pitche 45,594, Boé 10,878, Gabú 81,495, Sonaco 37,804, Pirada 29,837
-  Cacheu: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf: 913,086 bytes, sha256 cb9126295e1057660975725fdf11f125f2e0cd738f52f8a1cbd1c86139f4d3e2
-  Cacheu: region (185053, 88132, 96921); sectors São Domingos 29,116, Bigene 51,412, Bula 29,557, Caió 12,696, Cacheu 18,563, Canchungo 43,709
-  Bissau: read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/SAB_RGPH_2009.pdf: 563,140 bytes, sha256 93f5b5bffd8f0521281fa35f49f942a7f2ff51ced9c2c011fbc47dbb02401b2a
-  Bissau: region (365097, 181208, 183889); sectors Sector-1 24,326, Sector-4 56,934, Sector-6 67,812, Sector-8 25,258, Sector-5 41,929, Sector-2 25,473, Sector-7 74,167, Sector-3 49,198
-  read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf: 3,150,955 bytes, sha256 6aa4acf8e8ab5a90659890530a3db5d034cc2605434ceca10eed00fcb0a47fc4
-  read https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf: 2,725,536 bytes, sha256 9c08fc0f4e54a3a3fb67eddd15764c2b678cdace350cec3413d3908e80e04563
-  Tombali: median 17.9, 90,128 nationals
-  Quinara: median 16.8, 60,624 nationals
-  Oio: median 17.4, 214,791 nationals
-  Biombo: median 17.9, 92,665 nationals
-  Bolama: median 18.7, 32,140 nationals
-  Bafatá: median 16.6, 200,242 nationals
-  Gabú: median 16.3, 204,814 nationals
-  Cacheu: median 18.8, 184,124 nationals
-  Bissau: median 20.2, 362,699 nationals
-    Setor de Catie: 35,776 (catio, komo)
-    Setor de Bedanda: 24,293 (bedanda)
-    Setor de Cacine: 15,648 (cacine)
-    Setor de Quebo: 15,372 (quebo)
-    Setor de Buba: 17,123 (buba)
-    Setor de Empada: 17,517 (empada)
-    Setor de Fulacunda: 11,275 (fulacunda)
-    Setor de Tite: 14,862 (tite)
-    Setor de Bissora: 56,585 (bissora)
-    Setor de Farim: 48,264 (farim)
-    Setor de Mansaba: 43,725 (mansaba)
-    Setor de Mansoa: 46,046 (mansoa)
-    Setor de Nhacra: 20,639 (nhacra)
-    Setor de Quinh: 42,659 (quinhamel)
-    Setor de Safim: 17,356 (safim)
-    Setor de Prabis: 33,024 (prabis)
-    Setor de Bolama: 10,206 (bolama)
-    Setor de Bubaque: 11,204 (bubaque)
-    Setor de Caravela: 4,263 (caravela)
-    Setor de Uno: 6,751 (uno)
-    Setor de Bafata: 68,956 (bafata)
-    Setor de Bambadinca: 31,834 (bambadinca)
-    Setor de Galomaro: 14,554 (cosse)
-    Setor de Gamamundo: 24,564 (gamamudo)
-    Setor de Xitole: 16,928 (xitole)
-    Contuboel: 44,048 (contuboel)
-    Setor de Gabv: 81,495 (gabu)
-    Setor de Madina do Bo˒: 10,878 (boe)
-    Setor de Pirada: 29,837 (pirada)
-    Setor de Pitche: 45,594 (pitche)
-    Setor de Sonaco: 37,804 (sonaco)
-    Setor de Bigene: 51,412 (bigene)
-    Setor de Bula: 29,557 (bula)
-    Setor de Cacheu: 18,563 (cacheu)
-    Setor de Canghungo: 43,709 (canchungo)
-    Setor de Sto Domingos: 29,116 (saodomingos)
-    Caió: 12,696 on neither of its two polygons
-    Bissau Autonomous Sector: 365,097 (sector1, sector2, sector3, sector4, sector5, sector6, sector7, sector8)
-  regions read make 1,449,230
-  9 regions and 39 sector polygons written
-  wrote data/processed/guinea_bissau_census.json (136 kB)
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Resultats%20globaux/Doc_principaux_indicateurs.xlsx: 117,480 bytes, sha256 14c5547d8a90678559a0de71f6521e69e315543e50ab5c92c687922f562c9e6d
+  national median 16.6 (the departments' groups pooled: 16.6)
+  Alibori: 867,463, median 14.5, 989 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Alibori_final.pdf: 149,511 bytes, sha256 09ef9095101713679feb375bd91ccb8137cbeb791d31f737bdfc3333a4c8a1e8
+    Banikoara: 246,575 (122,445 men, 124,130 women)
+    Gogounou: 117,523 (58,018 men, 59,505 women)
+    Kandi: 179,290 (88,998 men, 90,292 women)
+    Karimama: 66,353 (33,149 men, 33,204 women)
+    Malanville: 168,641 (83,681 men, 84,960 women)
+    Segbana: 89,081 (45,066 men, 44,015 women)
+  Atakora: 772,262, median 14.8, 971 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atacora_finale.pdf: 242,134 bytes, sha256 b5eb842910b8be7aecca961273469aca6e9ad8802935752cb46bbdc74d2dd900
+    Boukombe: 82,450 (40,479 men, 41,971 women)
+    Kerou: 100,197 (49,963 men, 50,234 women)
+    Kobli: 67,603 (32,784 men, 34,819 women)
+    Kouande: 111,540 (55,558 men, 55,982 women)
+    Materi: 113,958 (55,676 men, 58,282 women)
+    Natitingou: 103,843 (50,968 men, 52,875 women)
+    Pehunco: 78,217 (39,147 men, 39,070 women)
+    Tanguieta: 74,675 (36,431 men, 38,244 women)
+    Toucountouna: 39,779 (19,442 men, 20,337 women)
+  Atlantique: 1,398,229, median 18.0, 965 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atlantique_final.pdf: 227,176 bytes, sha256 41f6443d0e8355d0e228b4e6b1e22adee0a209bdaa3c50f78aa4f909f7c20a42
+    Abomey-Calavi: 656,358 (323,574 men, 332,784 women)
+    Allada: 127,512 (62,148 men, 65,364 women)
+    Kpomasse: 67,648 (33,353 men, 34,295 women)
+    Ouidah: 162,034 (78,596 men, 83,438 women)
+    So-Ava: 118,547 (60,020 men, 58,527 women)
+    Toffo: 101,585 (49,068 men, 52,517 women)
+    Tori-Bossito: 57,632 (28,284 men, 29,348 women)
+    Ze: 106,913 (51,704 men, 55,209 women)
+  Borgou: 1,214,249, median 15.1, 1000 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Borgou_final.pdf: 223,264 bytes, sha256 eba2116dda84a66302c14de3c184c9726d84961056a71ea9ec35d80e39a88c1c
+    Bembereke: 131,255 (66,270 men, 64,985 women)
+    Kalale: 168,882 (84,078 men, 84,804 women)
+    N'dali: 113,604 (57,643 men, 55,961 women)
+    Nikki: 151,232 (75,339 men, 75,893 women)
+    Parakou: 255,478 (127,328 men, 128,150 women)
+    Perere: 78,988 (39,139 men, 39,849 women)
+    Sinende: 91,672 (45,640 men, 46,032 women)
+    Tchaourou: 223,138 (111,576 men, 111,562 women)
+  Collines: 717,477, median 16.5, 972 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Collines_final.pdf: 193,765 bytes, sha256 0657a26727637fbeb249f28c38d15e186a3dbcaedc510c7c0700aeacc3ff8d2f
+    Bante: 107,181 (52,516 men, 54,665 women)
+    Dassa-Zoume: 112,122 (54,366 men, 57,756 women)
+    Glazoue: 124,431 (61,070 men, 63,361 women)
+    Ouesse: 142,017 (71,594 men, 70,423 women)
+    Savalou: 144,549 (70,289 men, 74,260 women)
+    Save: 87,177 (43,757 men, 43,420 women)
+  Donga: 543,130, median 16.3, 994 men per 1,000 women
+  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 3/3 after 8s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/3 after 2s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/3 after 4s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 3/3 after 8s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
+  Kouffo: 745,328, median 15.2, 879 men per 1,000 women
+  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 3/3 after 8s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf :: <urlopen error [Errno 111] Connection refused>
+  read https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf: 199,975 bytes, sha256 40a022871bc3e255d38547d14e2826fb81a3bf51bdbefa32019b78e7695b1f88
+    Aplahoue: 171,109 (79,678 men, 91,431 women)
+    Djakotomey: 134,028 (62,384 men, 71,644 women)
+    Dogbo: 103,057 (49,289 men, 53,768 women)
+    Klouekanme: 128,597 (59,541 men, 69,056 women)
+    Lalo: 119,926 (56,529 men, 63,397 women)
+    Toviklin: 88,611 (41,153 men, 47,458 women)
+  Littoral: 679,012, median 21.5, 923 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Littoral_final.pdf: 169,899 bytes, sha256 890d1d75674cf53b583d1d42dbfea5e51c42c541535b76a74b596666527fd31d
+    Cotonou: 679,012 (325,872 men, 353,140 women)
+  Mono: 497,243, median 17.2, 945 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Mono_final.pdf: 204,401 bytes, sha256 9515b9986445b9cdda10184e4f8c5debac7987987082042862e4bc4a3ed3c53d
+    Athieme: 56,483 (27,562 men, 28,921 women)
+    Bopa: 96,281 (46,785 men, 49,496 women)
+    Come: 79,989 (38,507 men, 41,482 women)
+    Grand-Popo: 57,636 (28,237 men, 29,399 women)
+    Houeyogbe: 101,893 (49,187 men, 52,706 women)
+    Lokossa: 104,961 (51,276 men, 53,685 women)
+  Oueme: 1,100,404, median 17.9, 946 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Ou%C3%A9m%C3%A9%20-%20final.pdf: 248,797 bytes, sha256 61f052434f619bdcaf975274817382557eea62d93f8f605f811155684d9e7964
+    Adjarra: 97,424 (47,415 men, 50,009 women)
+    Adjohoun: 75,323 (36,385 men, 38,938 women)
+    Aguegues: 44,562 (22,198 men, 22,364 women)
+    Akpo-Misserete: 127,249 (62,267 men, 64,982 women)
+    Avrankou: 128,050 (62,298 men, 65,752 women)
+    Bonou: 44,349 (21,360 men, 22,989 women)
+    Dangbo: 96,426 (47,281 men, 49,145 women)
+    Porto-Novo: 264,320 (126,016 men, 138,304 women)
+    Seme-Kpodji: 222,701 (109,594 men, 113,107 women)
+  Plateau: 622,372, median 16.9, 931 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Plateau_final.pdf: 160,557 bytes, sha256 5dc786b1d47429dbd27880b6b2724db189dc02754625f3be7cb6360893729db0
+    Adja-Ouere: 116,282 (56,856 men, 59,426 women)
+    Ifangni: 110,973 (53,124 men, 57,849 women)
+    Ketou: 157,352 (76,827 men, 80,525 women)
+    Pobe: 123,677 (59,481 men, 64,196 women)
+    Sakete: 114,088 (53,777 men, 60,311 women)
+  Zou: 851,580, median 16.7, 916 men per 1,000 women
+  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Zou_Final.pdf: 239,862 bytes, sha256 af9e4ddda6ecf13fa2b4387811168c29726dd3fbc1a068f27a2f5bc3e9dff2af
+    Abomey: 92,266 (43,538 men, 48,728 women)
+    Agbangnizoun: 72,549 (34,782 men, 37,767 women)
+    Bohicon: 171,781 (81,404 men, 90,377 women)
+    Cove: 51,247 (24,508 men, 26,739 women)
+    Djidja: 123,542 (59,794 men, 63,748 women)
+    Ouinhi: 59,381 (28,969 men, 30,412 women)
+    Za-Kpota: 132,818 (61,945 men, 70,873 women)
+    Zagnanado: 55,061 (26,817 men, 28,244 women)
+    Zogbodomey: 92,935 (45,273 men, 47,662 women)
+  Donga: benin_census: instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf: RuntimeError: GET failed after 3 retries: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf
+  12 departments and 73 communes written
+  wrote data/processed/benin_census.json (156 kB)
