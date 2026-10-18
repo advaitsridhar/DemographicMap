@@ -77,7 +77,7 @@
     "shape_id": "87150794B47488127174201",
     "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Dosso 15 in whole years.",
     "religion_year": 2012,
-    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11), those who gave none counted as not stated."
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
   },
   {
     "id": "NER-RGPH2012-maradi",
@@ -157,17 +157,14 @@
     "shape_id": "87150794B5839560144768",
     "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Maradi 13 in whole years.",
     "religion_year": 2012,
-    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11), those who gave none counted as not stated."
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
   },
   {
     "id": "NER-RGPH2012-niamey",
     "level": "admin1",
     "name": "Niamey",
     "parent": "NER",
-    "capital": {
-      "status": "not_available",
-      "note": "Niamey is the capital district, the city itself, not a region with a seat apart."
-    },
+    "capital": "Niamey",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -230,7 +227,7 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio/median_age/religion"
+        "field": "sex_ratio/median_age/religion/capital"
       }
     ],
     "country": "NER",
@@ -238,7 +235,7 @@
     "shape_id": "87150794B29979307394387",
     "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Niamey 19 in whole years.",
     "religion_year": 2012,
-    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11), those who gave none counted as not stated."
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
   },
   {
     "id": "NER-RGPH2012-tahouaagadez",
@@ -320,7 +317,7 @@
     "sex_ratio_note": "The regions of Tahoua and Agadez added together.",
     "median_age_note": "The regions of Tahoua and Agadez together, as the polygon draws them: the median of their populations added five-year group by five-year group (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Tahoua 14, Agadez 16 in whole years.",
     "religion_year": 2012,
-    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11), those who gave none counted as not stated; the regions of Tahoua and Agadez added together."
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated; the regions of Tahoua and Agadez added together."
   },
   {
     "id": "NER-RGPH2012-tillaberi",
@@ -400,7 +397,7 @@
     "shape_id": "87150794B24708462658640",
     "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Tillabéri 15 in whole years.",
     "religion_year": 2012,
-    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11), those who gave none counted as not stated."
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
   },
   {
     "id": "NER-RGPH2012-zinderdiffa",
@@ -482,7 +479,7 @@
     "sex_ratio_note": "The regions of Zinder and Diffa added together.",
     "median_age_note": "The regions of Zinder and Diffa together, as the polygon draws them: the median of their populations added five-year group by five-year group (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Zinder 14, Diffa 14 in whole years.",
     "religion_year": 2012,
-    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11), those who gave none counted as not stated; the regions of Zinder and Diffa added together."
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated; the regions of Zinder and Diffa added together."
   },
   {
     "id": "NER-RGPH2012-tillaberi-abala",

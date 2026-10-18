@@ -1,17 +1,10 @@
-burkina: INSD, Cinquième Recensement Général de la Population et de l'Habitation (RGPH 2019), Volume des tableaux statistiques, Tableau I.22
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/burkina.py", line 119, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/burkina.py", line 109, in main
-    text = Path(args.text).read_text(encoding="utf-8") if args.text else fetch_text(URL)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/pathlib.py", line 1058, in read_text
-    with self.open(mode='r', encoding=encoding, errors=errors) as f:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/pathlib.py", line 1044, in open
-    return io.open(self, mode, buffering, encoding, errors, newline)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'none-fix2'
+  read https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf: 1,883,934 bytes, sha256 4ba09a999d25f7d568eb8f236091e5c5ca9298e3c66922a3e9c14874fef36f30
+Cannot set line width because b'' is an invalid float value
+  Dossa: 974 men per 1,000 women, median 14.9, Islam 98.9%
+  Maradi: 968 men per 1,000 women, median 13.3, Islam 99.3%
+  Niamey: 991 men per 1,000 women, median 18.6, Islam 97.4%
+  Tahoua/Agadez: 1004 men per 1,000 women, median 14.4, Islam 99.3%
+  Tillaberi: 978 men per 1,000 women, median 14.8, Islam 98.6%
+  Zinder/Diffa: 1003 men per 1,000 women, median 13.6, Islam 99.3%
+  6 first-level polygons and 67 departments bound
+  wrote data/processed/niger_census.json (133 kB)
