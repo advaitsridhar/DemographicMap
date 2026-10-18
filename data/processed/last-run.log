@@ -1,44 +1,64 @@
-chad_departments: OCHA's 2023 table, 23 provinces
-  Departments of Chad: 62 names with a seat, 66 listed
-  2024: 70 departments; against 2021, x1.1104 at the median
-  ages: Chari-Baguirmi and Hadjer-Lamis alike (0.26 points at most), not one structure
-  ages: Ennedi Est and Ennedi Ouest share one structure (0.0022 points at most) and one sex ratio (1139)
-  ages: Mayo-Kebbi Est and Mayo-Kebbi Ouest alike (0.27 points at most), not one structure
-  ages: Mayo-Kebbi Est and Tandjilé alike (0.27 points at most), not one structure
-  ages: Guéra's 10-14 group is 3.6 times its 5-9 group
-  Bahr el Gazel: 412,808
-  Batha: 763,062
-  Borkou: 159,353
-  Chari-Baguirmi: 918,084
-  Ennedi-Est: 174,805 (median_age, sex_ratio withdrawn)
-  Ennedi-Ouest: 99,126 (median_age, sex_ratio withdrawn)
-  Guéra: 709,893 (median_age withdrawn)
-  Hadjer-Lamis: 908,127
-  Kanem: 550,092
-  Lac: 705,362
-  Logone Occidental: 1,115,244
-  Logone Oriental: 1,239,738
-  Mandoul: 1,025,580
-  Mayo-Kebbi Est: 1,264,762
-  Mayo-Kebbi Ouest: 932,156
-  Moyen-Chari: 969,006
-  N'Djamena Region: 1,801,264
-  Ouaddaï: 1,168,288
-  Salamat: 496,719
-  Sila: 645,792
-  Tandjilé: 1,104,153
-  Tibesti: 42,784
-  Wadi Fira: 827,551
-  the provinces make 18,033,749
-    Barh-El-Gazel Ouest: no seat named (not listed)
-    Fada: no seat named
-    Fouli: no seat named (not listed)
-    Kaya: no seat named (not listed)
-    Mayo-Binder: no seat named (not listed)
-    Mourtcha: no seat named
-    Mégri: no seat named (not listed)
-    Tandjilé Centre: no seat named (not listed)
-    Wadi Hawar: no seat named
-  61 of 70 departments with a seat
-  wrote data/processed/chad_departments.json (132 kB)
-  93 records written
+gabon_census: https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf: 2,461,517 bytes, sha256 017f3bb741957d68b6cdc9ceeee6fa7f24bdd7ebaf20716031a63c046797357d
+  Départements du Gabon: 50 departments with a seat
+  Abanga-Bignè: 14,941 (Abanga-Bigne), seat Ndjolé
+  Basse-Banio: 7,192 (Basse-Banio), seat Mayumba
+  Bayi-Brikolo: 1,998 (Bayi-Brikolo), seat Aboumi
+  Bendjè: 140,747 (Bendjé), seat Port-Gentil
+  Boumi-Louetsi: 13,223 (Boumi-Louetsi), seat Mbigou
+  Djouè: 2,178 (Djoue), seat Onga
+  Djouori-Agnili: 4,210 (Djouori-Agnili), seat Bongoville
+  Dola: 6,979 (Dola), seat Ndendé
+  Douigni: 5,235 (Douigny), seat Moabi
+  Doutsita: 4,623 (Doutsila), seat Mabanda
+  Douya-Onoyè: 37,699 (Douya-Onoye), seat Mouila
+  Etimbouè: 5,723 (Etimboué), seat Omboué
+  Haut-Komo: 3,403 (Haut-Como), seat Médouneu
+  Haut-Ntem: 10,838 (Haut-Ntem), seat Minvoul
+  Haute-Banio: 1,413 (Haute-Banio), seat Ndindi
+  Ivindo: 31,073 (Ivindo), seat Makokou
+  Komo: 17,575 (Komo), seat Kango
+  Komo-Mondah: 169,396 (Komo-Mondah + Owendo), seat Ntoum
+  Komo-Ocèan: 553 (Komo-Océan), seat Ndzomoe
+  Lèbombi-Leyou: 64,569 (Lebombi-Leyou), seat Moanda
+  Lèkabi-Lèwolo: 4,914 (Lekabi-Lewolo), seat Ngouoni
+  Lèkoko: 4,920 (Lekoko), seat Bakoumba
+  Lèkoni-Lèkori: 10,028 (Lekoni-Lekori), seat Akiéni
+  Libreville: 703,940 (Libreville), seat Libreville
+  Lolo-Bouenguidi: 30,643 (Lolo-Bouenguidi), seat Koulamoutou
+  Lombo-Bouenguidi: 4,635 (Lombo-Bouenguidi), seat Pana
+  Lopè: 12,382 (Lopé), seat Booué
+  Louetsi-Bibaka: 2,734 (Louetsi-Bibaka), seat Malinga
+  Louetsi-Wano: 9,750 (Louetsi-Wano), seat Lébamba
+  Mongo: 2,602 (Mongo), seat Moulengui-Binza
+  Mougalaba: 1,490 (Mougalaba), seat Guiétsou
+  Mougoutsi: 31,789 (Mougoutsi), seat Tchibanga
+  Mpassa: 129,694 (Mpassa), seat Franceville
+  Mouloundou: 27,750 (Mulundu), seat Lastoursville
+  Mvoung: 4,022 (Mvoung), seat Ovan
+  Ndolou: 5,727 (Ndolou), seat Mandji
+  Ndougou: 11,092 (Ndougou), seat Gamba
+  Noya: 4,225 (Noya), seat Cocobeach
+  Ntem: 49,712 (Ntem), seat Bitam
+  Offouè-Onoyè: 2,743 (Offoué-Onoye), seat Iboundji
+  Ogoouè et Lacs: 54,346 (Ogooué et Lacs), seat Lambaréné
+  Ogoouè-Lètili: 2,791 (Ogooué-Letili), seat Boumango
+  Ogoulou: 8,361 (Ogoulou), seat Mimongo
+  Okano: 16,630 (Okano), seat Mitzic
+  Plateaux: 9,054 (Plateaux), seat Lékoni
+  Sèbè-Brikolo: 16,443 (Sebe-Brikolo), seat Okondja
+  Tsamba-Magotsi: 14,875 (Tsamba-Magotsi), seat Fougamou
+  Woleu: 74,403 (Woleu), seat Oyem
+  Zadiè: 15,816 (Zadié), seat Mékambo
+  9 provinces and 49 department polygons written
+  wrote data/processed/gabon_census.json (121 kB)
+  2022: Estuaire: 1,132,882
+  2022: Haut-Ogooué: 317,227
+  2022: Moyen-Ogooué: 87,642
+  2022: Ngounié: 127,550
+  2022: Nyanga: 66,857
+  2022: Ogooué-Ivindo: 80,062
+  2022: Ogooué-Lolo: 83,182
+  2022: Ogooué-Maritime: 199,274
+  2022: Woleu-Ntem: 196,039
+  2022: the provinces make 2,290,715
+  wrote data/processed/gabon_projection.json (11 kB)
