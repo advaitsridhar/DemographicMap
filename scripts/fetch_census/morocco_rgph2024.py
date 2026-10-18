@@ -225,17 +225,18 @@ def fields(row: dict[str, Any], what: str, less: list[dict[str, Any]] = ()) -> d
     if less:
         without = (" without " + " and ".join(
             f"the commune of {display_commune(c['name'])} ({c['total']:,} people)"
-            for c in less) + ", which lies south of the Western Sahara line")
-    note = (f"The legal population of {what}{without} in the 2024 census (RGPH, September "
-            f"2024): {moroccans:,} Moroccans and {foreigners:,} foreign residents.")
+            for c in less) + (", which lies" if len(less) == 1 else ", which lie")
+            + " south of the Western Sahara line")
+    note = (f"The legal population of {what} in the 2024 census (RGPH, September "
+            f"2024){without}: {moroccans:,} Moroccans and {foreigners:,} foreign residents.")
     return {"population": measure(total, year=YEAR, source=SOURCE),
             "population_note": note,
             # Nationality, which the census counts, on the ethnicity field.
             "ethnicity": shares({"Moroccan": moroccans, "Foreign nationals": foreigners}),
             "ethnicity_basis": "nationality",
             "ethnicity_year": YEAR,
-            "ethnicity_note": (f"Nationality, from the legal population of {what}{without} in "
-                               f"the 2024 census: {moroccans:,} Moroccans and {foreigners:,} "
+            "ethnicity_note": (f"Nationality, from the legal population of {what} in the 2024 "
+                               f"census{without}: {moroccans:,} Moroccans and {foreigners:,} "
                                "foreign residents."),
             "codes": {"hcp": str(row["code"])},
             "sources": [{"field": "population/ethnicity", "name": SOURCE, "url": LANDING,

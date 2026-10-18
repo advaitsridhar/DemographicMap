@@ -240,10 +240,13 @@ def build(chart: dict[str, Any], table: dict[str, Any], admin1: list[dict[str, A
         women = found["women"] - sum(c["women"] for _, c in less)
         without = ""
         if less:
+            # HCP's own name of the province ("Province d'Assa-Zag") says its kind.
             without = (" without " + " and ".join(
                 f"the commune of {c['name']} ({c['men'] + c['women']:,} people"
-                + (f", in {p} province" if rec["level"] == "admin1" else "") + ")"
-                for p, c in less) + ", which lies south of the Western Sahara line")
+                + (f", in the {p}" if rec["level"] == "admin1" else "") + ")"
+                for p, c in less)
+                + (", which lies" if len(less) == 1 else ", which lie")
+                + " south of the Western Sahara line")
         fields: dict[str, Any] = {
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
@@ -270,9 +273,9 @@ def build(chart: dict[str, Any], table: dict[str, Any], admin1: list[dict[str, A
             fields["language_year"] = YEAR
             fields["language_note"] = (
                 f"Mother tongue at the 2024 census: the shares of the population of "
-                f"{row['name']}{without} whose mother tongue is Arabic and Amazigh (Tachelhit, "
-                "Tamazight or Tarifit). The two need not make 100%: the rest have another "
-                "mother tongue.")
+                f"{row['name']} whose mother tongue is Arabic and Amazigh (Tachelhit, "
+                f"Tamazight or Tarifit){',' + without if without else ''}. The two need not "
+                "make 100%: the rest have another mother tongue.")
             fields["sources"].append({"field": "language", "name": SOURCE_TONGUE,
                                       "url": LANDING, "license": LICENCE, "year": YEAR})
         out.append(record(

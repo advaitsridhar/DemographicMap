@@ -64,7 +64,7 @@ GUELMIM = rows(("Royaume du Maroc", None, None, "Masculin", 100.0),
                ("Guelmim-Oued Noun", "Assa-Zag", "Al Mahbass", "Masculin", 10.0),
                ("Guelmim-Oued Noun", "Assa-Zag", "Al Mahbass", "Féminin", 0.0))
 GTABLE = {"regions": {10: {"name": "Guelmim-Oued Noun", "code": 10}},
-          "provinces": {10151: {"name": "Assa-Zag", "code": 10151},
+          "provinces": {10151: {"name": "Province d'Assa-Zag", "code": 10151},
                         10261: {"name": "Guelmim", "code": 10261}}}
 ARABIC, AMAZIGH = list(ms.TONGUES)
 
@@ -95,7 +95,9 @@ class AcrossTheLine(unittest.TestCase):
         self.assertEqual(by["A"]["sex_ratio"]["value"], 1000)         # 30 men, 30 women
         self.assertIn("without the commune of Al Mahbass", by["A"]["sex_ratio_note"])
         self.assertEqual(by["R"]["sex_ratio"]["value"], 900)          # 90 men, 100 women
-        self.assertIn("in Assa-Zag province", by["R"]["sex_ratio_note"])
+        self.assertIn("(10 people, in the Province d'Assa-Zag), which lies south",
+                      by["R"]["sex_ratio_note"])
+        self.assertNotIn("province)", by["R"]["sex_ratio_note"])
 
     def test_mother_tongues_without_the_commune(self):
         by = self.build()
@@ -103,6 +105,10 @@ class AcrossTheLine(unittest.TestCase):
         # 70 people, 56 Arabic and 14 Amazigh; less Al Mahbass's 10 Arabic speakers.
         self.assertEqual(shares, {"Arabic": 76.7, "Amazigh": 23.3})
         self.assertEqual(by["A"]["language_basis"], "mother tongue")
+        # The line has no mother tongue: the commune is named after the languages.
+        self.assertIn("Tamazight or Tarifit), without the commune of Al Mahbass (10 people), "
+                      "which lies south of the Western Sahara line. The two",
+                      by["A"]["language_note"])
         self.assertEqual(by["R"]["language"], {"status": "not_available"})   # none answered
 
 
