@@ -1,11 +1,3 @@
-angola_municipios: Cabinda: Relatorio_Provincial_Cabinda_Censo2024.pdf, 10,651,448 bytes, 197 pages, 32 read; province 'Cabinda' (903370, 448053, 455317); 10 municipalities of 2024, 4 of 2016; ethnicity 27 rows, language 27 rows, religion 13 rows, age_broad 29 rows, age_other 27 rows; Quadros {'new': '10', 'old': '11', 'five_year': '1.3', 'medians': '1.7', 'ethnicity': '6.1', 'language': '6.2', 'religion': '7.1', 'age_broad': '1.4', 'age_other': '1.5'}
-    2016: Cabinda 771,354; Cacongo(ex_Lândana) 53,692; Buco Zau 49,706; Belize 28,618
-    2024: Cabinda 585,240; Cacongo 41,716; Buco Zau 32,210; Belize 19,445; Tando Zinze 26,937; Ngoio 61,630; Liambo 97,547; Massabi 11,976; Necuto 17,495; Miconje 9,173
-    median ages (Quadro 1.7): province 21.0; Cabinda 21.0; Cacongo 18.0; Buco Zau 20.0; Belize 19.0; Tando Zinze 21.0; Ngoio 20.0; Liambo 22.0; Massabi 22.0; Necuto 18.0; Miconje 18.0
-angola_municipios: Zaire: ZAIRE.pdf, 9,386,162 bytes, 194 pages, 32 read; province 'Zaire' (682658, 336999, 345659); 11 municipalities of 2024, 6 of 2016; ethnicity 36 rows, language 36 rows, religion 14 rows, age_broad 38 rows, age_other 36 rows; Quadros {'new': '10', 'old': '11', 'five_year': '1.3', 'medians': '1.7', 'ethnicity': '6.1', 'language': '6.2', 'religion': '7.1', 'age_broad': '1.4', 'age_other': '1.5'}
-    2016: Soyo 232,058; Mbanza Kongo 234,945; Nzeto 67,120; Tomboco 39,513; Cuimba 75,574; Nóqui 33,447
-    2024: Soyo 221,555; Mbanza Kongo 221,141; Nzeto 52,135; Tomboco 39,513; Cuimba 67,778; Nóqui 16,949; Quindeje 14,986; Serra de Canda 7,796; Luvo 13,804; Lufíco 16,498; Quêlo 10,503
-    median ages (Quadro 1.7): province 20.0; Soyo 21.0; Mbanza Kongo 19.0; Nzeto 19.0; Tomboco 18.0; Cuimba 17.0; Nóqui 21.0; Quindeje 21.0; Serra de Canda 23.0; Luvo 24.0; Lufíco 21.0; Quêlo 22.0
   retry 1/4 after 2s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
   retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
   retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
@@ -14,38 +6,504 @@ angola_municipios: Zaire: ZAIRE.pdf, 9,386,162 bytes, 194 pages, 32 read; provin
   retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
   retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
   retry 4/4 after 16s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
-== Uige p112: 0 rows
-== Uige p78: 50 rows
-  retry 1/4 after 2s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-== Cuanza_Sul p76: 60 rows
-  block 'Quadro 1.6 - População por município e área de residência,'
-    columns at [211, 249, 292, 335, 373, 416, 450, 489, 531]
+== Uige ethnicity: pages [48, 107]
+  p48 block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [452, 478]
+    col 0: Censo 2024 Nª
+    col 1: %
+    row 'Número de pessoas com 2 ou mais anos': 1895001@452 100@478
+  p107 block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo os gr': 26 rows, columns at [178, 231, 283, 336, 389, 441, 498, 550, 589, 627, 658, 686, 743, 784, 820]
+    col 0: População com 2 ou mais anos
+    col 1: Quicongo (Kikongu ou Congolês conguês
+    col 2: Quimbundo (Kimbundu ou Tymbundu)
+    col 3: Lunda- Quioco (Lunda- kioko ou Lunda- Tchokwe Tshokwe)
+    col 4: Umbundo (ou Ovimbundo)
+    col 5: Grupo Nhaneca- Humbe (Nyaneka- Lumkumbi)
+    col 6: étnico da população Ambó (Vahambo tanbé designado Xikwanyama)
+    col 7: com 2 ou Helelo, Herero (Tchielelo, Tjiherero)
+    col 8: mais anos Cuangar
+    col 9: Khoisan
+    col 10: Vátua
+    col 11: Kwoi
+    col 12: Xindonga (Oshindonga)
+    col 13: Não sabe
+    col 14: Outra Etnia
+    row 'Uíge': 1895001@178 1598111@231 199191@283 833@336 4810@389 216@441 102@498 32@550 33@589 200@627 20@658 37@686 96@743 70534@784 20787@820
+    row 'Urbana': 983256@178 842098@231 81388@283 641@336 3532@389 166@441 84@498 24@550 16@589 21@627 8@658 23@686 67@743 47141@784 8045@820
+    row 'Rural': 911745@178 756012@231 117803@283 192@336 1277@389 50@441 18@498 8@550 17@589 179@627 12@658 13@686 29@743 23393@784 12742@820
+    row 'Dange Quitexe': 37289@178 21369@231 13344@283 22@336 371@389 3@441 0@498 0@550 1@589 1@627 0@658 0@686 0@743 1851@784 327@820
+    row 'Bungo': 56230@178 52489@231 644@283 3@336 18@389 3@441 0@498 1@550 4@589 1@627 4@658 4@686 1@743 1366@784 1693@820
+    row 'Ambuíla': 20105@178 18500@231 701@283 7@336 77@389 0@441 1@498 3@550 0@589 0@627 0@658 0@686 0@743 162@784 655@820
+    row 'Negage': 176980@178 109731@231 43589@283 180@336 984@389 24@441 8@498 4@550 13@589 11@627 9@658 5@686 24@743 17866@784 4531@820
+== Uige language: pages [108]
+  p108 block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern': 26 rows, columns at [189, 231, 274, 316, 368, 409, 462, 506, 562, 593, 634, 665, 701, 754, 789, 818]
+    col 0: Número de pessoas com 2 ou mais anos
+    col 1: Português
+    col 2: Kimbundu
+    col 3: Umbundu
+    col 4: Cokue (Chokwe/ Kioko)
+    col 5: Kikongo
+    col 6: Olunyaneka (Nhaneka)
+    col 7: Língua materna Nganguela
+    col 8: agrupada Oxikwanhama (Kwanhama)
+    col 9: Ifyoti (Fiote)
+    col 10: Muhumbi
+    col 11: Luvale
+    col 12: Khoisan
+    col 13: Línguas estrangeiras
+    col 14: Outras línguas
+    col 15: Não sabe
+    row 'Cunene': 1895001@189 924899@231 104216@274 2666@316 581@368 851336@409 608@462 101@506 362@562 299@593 16@634 12@665 42@701 7683@754 473@789 1710@818
+    row 'Urbana': 983256@189 573196@231 33441@274 1997@316 471@368 366581@414 256@462 76@506 221@562 252@593 15@634 9@665 28@701 5278@754 311@789 1122@818
+    row 'Rural': 911745@189 351703@231 70775@274 668@316 110@368 484755@414 352@462 24@506 141@562 47@593 1@634 3@665 14@701 2405@754 161@789 587@818
+    row 'Dange Quitexe': 37289@189 19419@231 9630@274 239@316 12@368 7852@414 32@462 1@506 8@561 26@593 1@634 0@665 1@701 8@754 9@789 23@818
+    row 'Bungo': 56230@189 31885@231 144@274 15@316 5@368 24129@414 3@462 1@506 7@561 0@593 0@634 0@665 0@701 43@754 30@789 4@818
+    row 'Ambuíla': 20105@189 8634@231 95@274 42@316 11254@414 0@462 0@506 3@561 0@593 0@634 0@665 1@701 167@754 72@789 304@818
+    row 'Negage': 176980@189 86879@231 34383@274 741@316 123@368 54120@414 101@462 16@506 23@561 42@593 3@634 1@665 4@701 4@754 5@789 211@818
+== Uige religion: pages [111]
+  p111 block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re': 26 rows, columns at [215, 256, 302, 366, 410, 449, 508, 569, 617, 663, 731, 770]
+    col 0: População com 2 ou mais anos
+    col 1: Católica
+    col 2: Bom Deus
+    col 3: Islâmica/ Muçulmana
+    col 4: Animista
+    col 5: Judaica
+    col 6: Protestante
+    col 7: Universal do reino de Deus
+    col 8: Nova apostólica
+    col 9: Tocoísta
+    col 10: Kimbanguista
+    col 11: Josafat
+    row 'Uíge': 1895001@215 639566@256 10665@302 4865@366 4419@410 3429@449 176770@508 12545@569 46176@617 117921@663 141139@731 3852@770
+    row 'Urbana': 983256@215 340826@256 7468@302 2972@366 2761@410 1849@449 79248@508 9296@569 25846@617 52130@663 56344@731 2992@770
+    row 'Rural': 911745@215 298741@256 3197@302 1892@366 1658@410 1580@449 97522@508 3249@569 20330@617 65790@663 84795@731 860@770
+    row 'Dange Quitexe': 37289@215 14230@256 349@302 21@366 23@410 60@449 2656@508 90@569 214@617 521@663 540@730 152@770
+    row 'Bungo': 56230@215 12418@256 152@302 8@366 5@410 36@449 11604@508 74@569 195@617 9374@663 1077@731 7@770
+    row 'Ambuíla': 20105@215 4650@256 219@302 13@366 4@410 16@449 2274@508 35@569 365@617 514@663 1193@731 8@770
+    row 'Negage': 176980@215 63110@256 1410@302 403@366 407@410 269@449 23395@508 1456@569 1626@617 11042@663 4968@731 632@770
+== Uige age_broad: pages [71, 72]
+  p71 block 'Quadro 1.4 - População por província, segundo grandes grupos etários,': 53 rows, columns at [295, 363, 431, 517]
     col 0: Total
-    col 1: 0 - 14 anos Homens
-    col 2: Mulheres
-    col 3: Grupos Total
-    col 4: etários 15 - 64 anos Homens
-    col 5: Mulheres
-    col 6: 65 Total
-    col 7: ou mais Homens
-    col 8: anos Mulheres
-    row 'Quissongo': 2890@211 1514@249 1376@292 3295@335 1709@373 1585@416 337@450 165@489 172@531
-    row 'Quissongo': 2890@211 1514@249 1376@292 3295@335 1709@373 1585@416 337@450 165@489 172@531
-    row 'Condé': 38583@211 19261@249 19322@292 43452@335 20302@373 23150@416 3106@451 1412@489 1694@531
-    row 'Condé': 38583@211 19261@249 19322@292 43452@335 20302@373 23150@416 3106@451 1412@489 1694@531
-    row 'Sanga': 18407@211 9324@249 9083@292 20287@335 10092@373 10195@416 1062@451 543@489 519@531
-    row 'Sanga': 18407@211 9324@249 9083@292 20287@335 10092@373 10195@416 1062@451 543@489 519@531
-    row 'Pambangala': 39514@211 19642@249 19872@292 19092@335 19092@373 21531@416 1253@451 1253@489 1443@531
-    row 'Pambangala': 39514@211 19642@249 19872@292 19092@335 19092@373 21531@416 1253@451 1253@489 1443@531
-    row 'Gangula(Kuvu)': 12085@211 6135@249 5951@292 15225@335 6959@373 8266@416 1033@451 395@489 638@531
-    row 'Gangula(Kuvu)': 12085@211 6135@249 5951@292 15225@335 6959@373 8266@416 1033@451 395@489 638@531
-    row 'Gungo': 8717@211 4406@249 4312@292 11576@335 5682@373 5894@416 1153@451 580@489 573@531
-    row 'Gungo': 8717@211 4406@249 4312@292 11576@335 5682@373 5894@416 1153@451 580@489 573@531
-    row 'Amboiva': 37187@211 18510@249 18677@292 34384@335 16315@373 18069@416 2348@451 985@489 1364@531
-    row 'Amboiva': 37187@211 18510@249 18677@292 34384@335 16315@373 18069@416 2348@451 985@489 1364@531
-    row 'Boa Entrada(Cadá)': 19421@211 9828@249 9593@292 22127@335 10705@373 11422@416 1647@451 712@489 935@531
-    row 'Boa Entrada(Cadá)': 19421@211 9828@249 9593@292 22127@335 10705@373 11422@416 1647@451 712@489 935@531
-== Moxico p73: 43 rows
+    col 1: 0 - 14 anos
+    col 2: 15 - 64 anos
+    col 3: 65 ou mais anos
+    row 'Uíge': 2017921@295 883783@363 1050167@431 83971@517
+    row 'Urbana': 1042302@295 451957@363 556421@431 33923@517
+    row 'Rural': 975620@295 431826@363 493746@431 50048@517
+    row 'Dange Quitexe': 40044@295 17418@363 20838@431 1788@517
+    row 'Quitexe': 31141@295 13374@363 16389@431 1378@517
+    row 'Aldeia Viçosa': 8903@295 4044@363 4448@431 411@517
+    row 'Bungo': 60462@295 29776@363 27600@431 3086@517
+  p72 block 'Quadro 1.4 - População por província, segundo grandes grupos etários,': 23 rows, columns at [295, 363, 431, 517]
+    col 0: Total
+    col 1: 0 - 14 anos
+    col 2: 15 - 64 anos
+    col 3: 65 ou mais anos
+    row 'Nova Esperança': 70778@295 34592@363 32821@431 3364@517
+    row 'Nova Esperança': 44136@295 21881@363 20328@431 1927@517
+    row 'Buenga-Sul': 15985@295 7784@363 7368@431 833@517
+    row 'Cuílo Camboso': 10657@295 4927@363 5126@431 604@517
+    row 'Sacandica': 53940@295 21727@363 30310@431 1904@517
+    row 'Sacandica': 9691@295 3493@363 5867@431 331@517
+    row 'Béu': 39295@295 16571@363 21520@431 1204@517
+== Uige age_other: pages [73, 74]
+  p73 block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 45 rows, columns at [216, 264, 312, 360, 408, 456, 504]
+    col 0: Total
+    col 1: 0 - 19 anos
+    col 2: 20 - 29 anos
+    col 3: 30 - 54 anos
+    col 4: 55 - 64 anos
+    col 5: 65 - 74 anos
+    col 6: 75 - ou mais anos
+    row 'Uíge': 2017921@216 1127314@264 312850@312 415668@360 78117@408 53164@456 30808@504
+    row 'Urbana': 1042302@216 592632@264 170166@312 211351@360 34229@408 21915@456 12009@504
+    row 'Rural': 975620@216 534682@264 142685@312 204317@360 43888@408 31249@456 18799@504
+    row 'Dange Quitexe': 40044@216 21783@264 6189@312 8655@360 1629@408 1202@456 586@504
+    row 'Quitexe': 31141@216 16870@264 4805@312 6776@360 1312@408 923@456 455@504
+    row 'Aldeia Viçosa': 8903@216 4912@264 1384@312 1879@360 317@408 279@456 131@504
+    row 'Bungo': 60462@216 36813@264 7305@312 10743@360 2515@408 1958@456 1128@504
+  p74 block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 30 rows, columns at [216, 264, 312, 360, 408, 456, 504]
+    col 0: Total
+    col 1: 0 - 19 anos
+    col 2: 20 - 29 anos
+    col 3: 30 - 54 anos
+    col 4: 55 - 64 anos
+    col 5: 65 - 74 anos
+    col 6: 75 - ou mais anos
+    row 'Uíge': 773099@216 432557@264 128656@312 160850@360 25116@408 16505@456 9416@504
+    row 'Uíge': 622039@216 347780@264 106201@312 129284@360 19597@408 12152@456 7025@504
+    row 'Cancungo': 73330@216 41212@264 11124@312 15662@360 2497@408 1837@456 998@504
+    row 'Casseche': 39918@216 22782@264 5910@312 8222@360 1312@408 1152@456 539@504
+    row 'Luanga': 37813@216 20783@264 5421@312 7682@360 1709@408 1365@456 854@504
+    row 'Mucaba': 59467@216 35554@264 7366@312 11096@360 2479@408 1963@456 1010@504
+    row 'Mucaba': 52454@216 31467@264 6455@312 9773@360 2190@408 1717@456 852@504
+== Uige medians: pages [5, 8, 19, 20, 21, 38, 78]
+  heading on pages [5, 38, 78]
+  p5: title '7.2.1 Idade média e mediana da população..................................................'; heading row 29; figure columns []; 0 entries: 
+    7.2.1[113-134] Idade[140-163] média[165-190] e[193-197] mediana[200-235] da[237-248] população.............................................................................................[250-527] 38[529-539]
+    7.2.2[113-134] População[140-183] jovem[185-209] e[212-216] idosa[219-240] .................................................................................................................[242-527] 39[529-539]
+    7.3[99-112] Estado[114-142] civil[144-160] .................................................................................................................................................[161-527] 41[529-539]
+    7.4.[99-114] Registo[117-146] civil[149-164] ...............................................................................................................................................[166-527] 42[529-539]
+    7.5.[99-114] Apoio[119-143] social[145-168] ..............................................................................................................................................[169-527] 44[529-539]
+    7.6.[99-114] Deficiência[119-163] ................................................................................................................................................[164-527] 45[529-539]
+    7.7.[99-114] Orfandade[118-162] nas[164-178] crianças[180-213] com[215-233] 0[235-240] -17[242-256] anos[258-277] ...................................................................................................[277-527] 46[529-539]
+    7.8.[99-114] Língua[118-145] materna.........................................................................................................................................[147-527] 47[529-539]
+    7.9.[99-114] Grupo[118-144] étnico[146-171] .............................................................................................................................................[171-527] 48[529-539]
+    7.10.[99-119] Albinismo[124-164] ...............................................................................................................................................[166-527] 48[529-539]
+    7.11.[99-119] Religião[122-154] ...................................................................................................................................................[156-527] 49[529-539]
+  p38: title '7.2.1 Idade média e mediana da população'; heading row 0; figure columns [(278, 278, 5), (342, 342, 5), (419, 419, 5), (495, 495, 5)]; 0 entries: 
+    7.2.1[103-128] Idade[139-167] média[170-201] e[204-210] mediana[212-256] da[258-271] população[274-326]
+    A[85-91] idade[94-119] média[122-149] corresponde[152-209] ao[211-222] valor[225-247] médio[250-278] das[281-296] idades[299-328] das[330-346] pessoas[348-384] na[386-397] população.[400-449] A[452-458] idade[461-486] mediana[488-527] é[530-535]
+    o[85-91] valor[94-116] que[119-136] divide[139-166] a[169-174] população[177-224] em[227-241] duas[244-265] partes[268-296] iguais:[299-328] metade[330-365] é[368-373] mais[376-397] jovem[400-428] e[430-436] metade[439-473] é[476-482] mais[485-506] velha.[508-535]
+    Estas[85-108] medidas[111-149] permitem[152-196] avaliar[200-229] se[232-242] uma[245-265] população[268-315] é[318-323] predominantemente[326-420] jovem,[423-453] de[456-468] meia-idade[471-521] ou[524-536]
+    idosa.[85-112]
+    Em[85-99] 2024,[102-127] a[130-135] idade[138-163] média[166-194] da[196-207] população[210-257] residente[259-302] no[305-316] Uíge[319-339] aumentou[342-388] para[391-411] 22[414-425] anos,[428-452] o[455-461] mesmo[463-496] verifica-[499-536]
+    se[85-95] para[98-118] a[122-127] idade[130-155] mediana[159-197] em[201-215] 17[218-229] anos.[233-257] A[260-266] análise[270-301] por[304-320] sexo[323-343] revela[347-374] que[378-395] a[398-403] idade[406-431] média[435-462] das[466-481] mulheres[484-526] é[530-535]
+    ligeiramente[85-142] superior[144-182] à[184-189] dos[192-208] homens.[210-249]
+    Quadro[175-207] 12[209-219] -[222-225] População[227-270] por[273-287] área[289-307] de[310-320] residência[322-365] e[367-372] sexo,[374-396] 2014[398-418] e[421-426] 2024[428-448]
+    Censo[272-293] 2014[294-311] Censo[411-431] 2024[433-449]
+    Área[129-145] de[147-155] residência[157-191] e[192-196] Sexo[198-214]
+    Idade[245-263] Média[265-286] Idade[305-324] Mediana[326-355] Idade[377-396] Média[398-419] Idade[445-464] Mediana[465-495]
+    Uíge[129-144] 20,7[264-278] 14,0[328-342] 22,4[405-419] 17,0[481-495]
+    Área[129-145] de[147-155] residência[157-191]
+  p78: title 'Quadro 1.7 - Idade média e mediana da população por área de residência e sexo'; heading row 0; figure columns [(229, 229, 24), (296, 296, 24), (474, 474, 27), (541, 541, 27), (719, 719, 2), (740, 740, 25), (786, 786, 2), (807, 807, 25)]; 0 entries: 
+    Quadro[269-300] 1.7[303-315] -[318-321] Idade[323-346] média[349-375] e[377-382] mediana[384-420] da[422-433] população[435-478] por[481-495] área[497-515] de[518-528] residência[530-573] e[575-580] sexo[582-601]
+    Média[211-232] Mediana[274-303] Média[456-477] Mediana[519-549] Média[701-723] Mediana[764-794]
+    Uíge[91-106] 22,4[214-229] 17,0[281-296] Lêmboa[344-370] 25,2[460-474] 18,0[527-541] Luanga[589-612] 23,6[705-719] 17,0[772-786]
+    Área[91-106] de[108-116] residência[118-152] Petecusso[344-377] 25,1[460-474] 20,0[527-541] Mucaba[581-608] 22,0[705-719] 15,0[772-786]
+    Urbana[99-123] 21,7[214-229] 17,0[281-296] Sanza[336-355] Pombo[357-380] 22,8[460-474] 16,0[527-541] Mucaba[589-615] 21,9[726-740] 15,0[793-807]
+    Rural[99-116] 23,2[214-229] 17,0[281-296] Sanza[344-363] Pombo[364-388] 22,4[460-474] 16,0[527-541] Uando[589-611] Mucaba[612-639] 22,6[726-740] 15,0[793-807]
+    Sexo[91-106] Alfândega[344-376] 21,7[460-474] 15,0[527-541] Nova[581-598] Esperança[600-634] 21,6[726-740] 15,0[793-807]
+    Homens[99-126] 21,9[214-229] 16,0[281-296] Cuílo[344-360] Pombo[362-385] 25,0[460-474] 19,0[527-541] Nova[589-606] Esperança[608-641] 21,1[726-740] 15,0[793-807]
+    Mulheres[99-129] 22,9[214-229] 18,0[281-296] Uamba[344-367] 24,4[460-474] 17,0[527-541] Buenga-Sul[589-626] 22,1[726-740] 15,0[793-807]
+    Bembe[336-359] 26,6[460-474] 19,0[527-541] Cuílo[589-605] Camboso[607-637] 22,9[726-740] 16,0[793-807]
+    Municíppios[99-138]
+    Bembe[344-367] 26,5[460-474] 19,0[527-541] Sacandica[581-614] 23,2[726-740] 20,0[793-807]
+    Dange[91-112] Quitexe[114-140] 22,7[214-229] 17,0[281-296]
+    Mabaia[344-368] 26,7[460-474] 20,0[527-541] Sacandica[589-621] 23,8[726-740] 21,0[793-807]
+== Moxico ethnicity: pages [46, 97]
+  p46 block 'Quadro 20 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [434, 512]
+    col 0: Censo 2024
+    col 1: %
+    row 'Número de pessoas com 2 ou mais anos': 541777@434 100@512
+  p97 block 'Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou tribos,': 15 rows, columns at [190, 241, 291, 354, 411, 461, 517, 562]
+    col 0: P o p u l a ç ã o c o m 2 o u m a i s a n o s
+    col 1: Q u i c o n g o (K i k o n g u o u Congolês conguês
+    col 2: Q u i m b u n d o (K i m b u n d u o u Tymbundu)
+    col 3: Grupo Étnico da L u n d a - Q u i o c o ( L u n d a - k io k o o u L u n d a - Tchokwe Tsh
+    col 4: população com 2 U m b u n d o ( o u O vi m b u n d o )
+    col 5: ou mais anos N h a n e c a - H u m b e ( N y a n e k a - Lumkumbi)
+    col 6: A m b ó (Va h a m b o ta n b é designado Xikwanyama)
+    col 7: H e l e l o , H e r e r o (T ch i e l e l o , Tjiherero)
+    row 'Moxico': 541777@190 8009@241 33958@291 373455@354 19253@411 2514@461 943@517 222@562
+    row 'Urbana': 375668@190 7048@241 23877@291 275195@354 17709@411 1866@461 492@517 122@562
+    row 'Rural': 166109@190 962@241 10082@291 98260@354 1543@411 647@461 451@517 100@562
+    row 'Luena': 340536@190 6267@241 23485@291 260956@354 17480@411 1234@461 557@517 154@562
+    row 'Cangamba': 12902@190 16@240 936@291 1352@354 172@411 7@461 0@517 0@562
+    row 'Cangumbe': 9135@190 13@240 451@291 8107@354 83@411 9@461 1@517 1@562
+    row 'Lumbala Nguimbo': 38400@190 901@241 1264@291 7956@354 394@411 2@461 13@517 2@562
+  p97 block 'Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou tribos,': 15 rows, columns at [196, 250, 299, 339, 386, 451, 499, 559]
+    col 0: População com 2 ou mais anos
+    col 1: Cuangar
+    col 2: Khoisan
+    col 3: Grupo Étnico Vátua
+    col 4: da população Kwoi
+    col 5: com 2 ou mais anos Xindonga (Oshindonga)
+    col 6: Não sabe
+    col 7: Outra Etnia
+    row 'Moxico': 541777@196 377@250 968@299 142@339 20@386 204@451 45337@499 56375@559
+    row 'Urbana': 375668@196 226@250 897@299 121@339 17@386 171@451 26413@499 21515@559
+    row 'Rural': 166109@196 151@250 71@299 21@339 4@386 33@451 18924@499 34860@559
+    row 'Luena': 340536@196 36@250 894@299 119@339 13@386 37@451 19871@499 9434@559
+    row 'Cangamba': 12902@196 195@250 36@299 1@339 1@386 0@451 590@499 9597@559
+    row 'Cangumbe': 9135@196 0@250 0@299 0@339 0@386 0@451 426@499 44@559
+    row 'Lumbala Nguimbo': 38400@196 124@250 4@299 0@339 4@386 108@451 8866@499 18763@559
+== Moxico language: pages [98]
+  p98 block 'Quadro 6. 2 - População por município e área de residência, segundo a língua Materna': 15 rows, columns at [183, 231, 279, 326, 396, 441, 495, 541]
+    col 0: População com ou mais anos
+    col 1: Português
+    col 2: Kimbundu
+    col 3: Umbundu
+    col 4: Língua materna agrupada Cokue (Chokwe/Kioko)
+    col 5: Kikongo
+    col 6: Olunyaneka (Nhaneka)
+    col 7: Nganguela
+    row 'Moxico': 541777@183 95429@231 3398@279 18743@326 302571@396 1071@441 456@495 82287@541
+    row 'Urbana': 375668@183 80686@231 2909@279 17132@326 211426@396 981@441 320@495 36023@541
+    row 'Rural': 166109@183 14743@231 489@279 1611@326 91145@396 90@441 137@495 46265@541
+    row 'Luena': 340536@183 76843@231 2795@279 16924@326 202775@396 973@441 262@495 17291@541
+    row 'Cangamba': 12902@183 1578@231 12@279 146@326 1029@396 2@441 3@495 9822@541
+    row 'Cangumbe': 9135@183 887@231 12@279 74@326 7735@396 0@441 0@495 401@541
+    row 'Lumbala Nguimbo': 38400@183 2608@231 119@279 450@326 3875@396 49@441 51@495 26360@541
+  p98 block 'Quadro 6. 2 - População por município e área de residência, segundo a língua Materna': 15 rows, columns at [172, 233, 268, 316, 353, 392, 452, 496, 537]
+    col 0: População co m 2 o u m a is a n o s
+    col 1: O x i kw a n h am a ( K w an h a m a)
+    col 2: I f y o t i ( F i o t e )
+    col 3: Muhumbi
+    col 4: Língua mater Luvale
+    col 5: na agrupada Khoisan
+    col 6: l ín g u as est r a n ge ir as
+    col 7: O u t ra s l ín g u a s
+    col 8: Não sabe
+    row 'Moxico': 541777@172 278@233 675@268 72@316 27733@353 81@392 344@452 6550@496 2086@537
+    row 'Urbana': 375668@172 226@233 553@268 43@316 23161@353 45@392 306@452 1104@496 750@537
+    row 'Rural': 166109@172 53@232 122@268 29@316 4572@353 36@392 38@452 5446@496 1336@537
+    row 'Luena': 340536@172 204@233 532@268 35@316 20352@353 33@392 275@452 707@496 535@537
+    row 'Cangamba': 12902@172 0@232 0@268 0@316 167@353 33@392 0@452 97@496 12@537
+    row 'Cangumbe': 9135@172 1@232 2@268 0@316 18@353 0@392 0@452 5@496 0@537
+    row 'Lumbala Nguimbo': 38400@172 26@232 7@268 15@316 1563@353 8@392 32@452 2936@496 299@537
+== Moxico religion: pages [101, 102]
+  p101 block 'Quadro 7. 1- População com 2 ou mais anos por província e área de residência, segundo a re': 15 rows, columns at [213, 274, 336, 398, 443, 497, 559, 620, 677, 733, 795]
+    col 0: Total da população com ou mais anos
+    col 1: Católica
+    col 2: Islâmica/ Muçulmana
+    col 3: Animista
+    col 4: Judaica
+    col 5: Protestante
+    col 6: Universal do reino de Deus
+    col 7: Nova apostolica
+    col 8: Tocoísta
+    col 9: Kimbanguista
+    col 10: Josafat
+    row 'Moxico': 541777@213 112334@274 1027@336 823@398 1372@443 112668@497 3807@559 29209@620 1575@677 1673@733 931@795
+    row 'Urbana': 375668@213 78113@274 839@336 712@398 1001@443 64294@497 3242@559 17055@620 1324@677 1424@733 705@795
+    row 'Rural': 166109@213 34221@274 189@336 111@398 372@443 48374@497 565@559 12154@620 251@677 249@733 224@795
+    row 'Luena': 337755@213 75045@274 730@336 565@398 800@443 57744@497 2954@559 12593@620 1121@677 1182@733 827@795
+    row 'Cangamba': 12902@213 3369@274 2@336 7@398 19@443 2584@497 59@558 573@620 1@677 2@733 2@795
+    row 'Cangumbe': 9135@213 2855@274 9@336 12@398 44@443 3552@497 16@558 156@620 47@677 11@733 3@795
+    row 'Lumbala Nguimbo': 38400@213 4906@274 89@336 51@398 68@443 9531@497 133@559 6608@620 26@677 46@733 7@795
+  p102 block 'Quadro 7. 1- População com 2 ou mais anos por província e área de residência, segundo a re': 15 rows, columns at [185, 248, 310, 365, 422, 469, 514, 552, 614, 660, 702, 764]
+    col 0: Total da população com ou mais anos
+    col 1: Assembleia de Deus pentecostal
+    col 2: Testemunha de Jeová
+    col 3: Metodista
+    col 4: Evangélica
+    col 5: Adventista
+    col 6: Bom Deus
+    col 7: Baptista
+    col 8: Mensagem dos ultimos Tempos
+    col 9: Sem religião
+    col 10: Outra
+    col 11: Não sabe/ Não respondeu
+    row 'Moxico': 541777@185 37304@248 3221@310 4158@365 45817@422 83788@469 5942@514 551@552 1079@614 64432@660 12724@702 17340@764
+    row 'Urbana': 375668@185 33398@248 2796@310 3622@365 30346@422 61028@469 5131@514 484@552 1033@614 46767@660 9479@702 12874@764
+    row 'Rural': 166109@185 3906@248 423@310 536@365 15471@422 22759@469 810@514 66@552 46@614 17665@660 3251@702 4466@764
+    row 'Luena': 337755@185 31517@248 2350@310 3424@365 25900@422 54520@469 4891@514 489@552 983@614 42577@660 6422@702 11121@764
+    row 'Cangamba': 12902@185 378@248 14@310 19@365 4450@422 429@469 66@514 29@552 1@614 671@660 173@702 54@764
+    row 'Cangumbe': 9135@185 347@248 25@310 113@365 317@422 310@469 112@514 0@552 1@614 887@660 19@702 302@764
+    row 'Lumbala Nguimbo': 38400@185 1408@248 459@310 54@365 4118@422 4829@469 32@514 1@552 46@614 1287@660 3442@702 1260@764
+== Moxico age_broad: pages [70]
+  p70 block 'Quadro 1. 4 - População por município, segundo grandes grupos etários,': 37 rows, columns at [275, 333, 406, 498]
+    col 0: Total
+    col 1: 0 - 14 anos
+    col 2: 15-64 anos
+    col 3: 65 ou mais anos
+    row 'Moxico': 574253@275 235549@333 318787@406 19917@498
+    row 'Urbana': 397185@275 162742@333 222412@406 12031@498
+    row 'Rural': 177067@275 72806@333 96376@406 7885@498
+    row 'Homens': 280847@275 116882@333 154285@406 9681@498
+    row 'Mulheres': 293405@275 118667@333 164502@406 10236@498
+    row 'Luena': 359847@275 146665@333 201558@406 11624@498
+    row 'Luena': 356880@275 145232@333 200105@406 11543@498
+== Moxico age_other: pages [71]
+  p71 block 'Quadro 1. 5 - População por província, segundo outros grupos etários,': 35 rows, columns at [202, 254, 306, 358, 410, 462, 546]
+    col 0: Total
+    col 1: 0-19 anos
+    col 2: 20-29 anos
+    col 3: 30-54 anos
+    col 4: 55-64 anos
+    col 5: 65-74 anos
+    col 6: 75 ou mais anos
+    row 'Moxico': 574253@202 308416@254 104186@306 121085@358 20649@410 11801@462 8116@546
+    row 'Urbana': 397185@202 215292@254 74082@306 82791@358 12989@410 7105@462 4926@546
+    row 'Rural': 177067@202 93124@254 30104@306 38294@358 7660@410 4696@462 3190@546
+    row 'Luena': 359847@202 194184@254 65954@306 75787@358 12299@410 6854@462 4770@546
+    row 'Luena': 356880@202 192438@254 65437@306 75251@358 12211@410 6805@462 4737@546
+    row 'Cassongo': 2967@202 1746@254 516@306 536@358 88@410 48@462 33@546
+    row 'Cangamba': 13877@202 8020@254 2036@306 2782@358 496@410 274@462 270@546
+== Moxico medians: pages [5, 8, 17, 18, 34, 35, 73]
+  heading on pages [5, 34, 73]
+  p5: title '7.2.1. Idade Média e Mediana da População ................................................'; heading row 28; figure columns []; 0 entries: 
+    7.2.1.[85-108] Idade[113-136] Média[138-164] e[167-171] Mediana[174-210] da[212-222] População[224-266] .......................................................................................................[267-527] 34[529-539]
+    7.2.2.[85-108] População[113-156] Jovem[158-184] e[186-191] Idosa[193-215] ...........................................................................................................................[217-527] 35[529-539]
+    7.3[85-97] Estado[106-134] Civil…….[136-169] .[170-173] .............................................................................................................................................[174-529] 38[529-540]
+    7.4[85-97] Registo[106-136] civil…...[139-169] ..............................................................................................................................................[171-529] 39[529-540]
+    7.5[85-97] Bilhete[106-135] de[137-147] identidade[150-193] .....................................................................................................................................[194-529] 41[529-540]
+    7.6[85-97] Apoio[106-130] social……..[133-174] ............................................................................................................................................[176-529] 43[529-540]
+    7.7[85-97] Deficiência……….[106-174] ............................................................................................................................................[176-529] 43[529-540]
+    7.8[85-97] Orfandade[106-150] nas[152-166] Crianças[168-202] com[205-222] 0[224-229] -17[232-245] Anos[247-267] .......................................................................................................[270-529] 45[529-540]
+    7.9[85-97] Língua[106-133] Materna[135-170] ..............................................................................................................................................[171-529] 46[529-540]
+    7.10[85-102] Grupo[106-132] Étnico[134-160] ..............................................................................................................................................[171-529] 46[529-540]
+    7.11[85-102] Albinismo………[106-167] ..............................................................................................................................................[171-529] 47[529-540]
+    7.12[85-102] Religião……………[106-173] .............................................................................................................................................[174-529] 48[529-540]
+    7.13[85-102] Educação……………[106-180] ..........................................................................................................................................[181-529] 49[529-540]
+    7.13.1[85-110] População[120-163] com[165-183] 15[185-195] ou[197-208] mais[210-229] anos[231-250] que[253-268] sabe[270-289] ler[292-302] e[305-310] escrever[312-346] em[349-362] falta[364-382] pop[384-400] dos[402-417] 15[419-429] ou[431-442] mais[444-463] ..........................[464-529] 49[529-540]
+  p34: title '7.2.1. Idade Média e Mediana da População'; heading row 12; figure columns [(359, 359, 5), (505, 505, 5)]; 0 entries: 
+    7.2.1.[57-85] Idade[93-121] Média[124-155] e[158-164] Mediana[167-211] da[214-226] População[229-281]
+    A[57-63] idade[65-90] média[92-120] corresponde[123-179] ao[181-192] valor[195-217] médio[219-248] das[250-265] idades[268-297] das[299-314] pessoas[317-352] na[354-365] população.[368-417] A[419-426] idade[428-453] mediana[455-494] é[496-502] o[504-510] valor[512-534] que[536-553]
+    divide[57-84] a[86-91] população[93-140] em[142-156] duas[159-180] partes[182-210] iguais:[212-241] metade[243-278] é[280-285] mais[287-308] jovem[310-338] e[340-346] metade[348-382] é[384-390] mais[392-413] velha.[415-442] Estas[444-467] medidas[469-507] permitem[509-554]
+    avaliar[57-86] se[89-99] uma[101-121] população[123-170] é[173-178] predominantemente[180-274] jovem,[276-307] de[309-320] meia-idade[323-373] ou[376-387] idosa.[390-416]
+    Em[57-71] 2024,[73-98] a[101-106] idade[109-133] média[136-164] da[166-177] população[180-227] residente[229-271] no[274-285] Moxico[288-321] atingiu[323-354] 22[357-368] anos,[370-394] ao[397-408] passo[410-436] que[438-455] a[458-463] idade[465-490] mediana[493-532] é[534-540] de[542-554]
+    18[57-68] anos.[70-94] A[97-103] análise[106-137] por[139-155] sexo[157-177] indica[180-206] que[209-226] a[229-234] idade[236-261] mediana[264-303] das[305-320] mulheres[323-365] é[367-373] igual[375-397] à[399-404] dos[407-423] homens.[425-464]
+    Quadro[184-215] 11[217-227] -[230-233] População[235-278] por[281-295] área[297-315] de[318-328] residência[330-373] e[375-380] sexo,[382-404] 2024[406-426]
+    Censo[375-395] 2024[397-413]
+    Área[106-121] de[123-131] residência[133-167] e[169-173] Sexo[175-190]
+    Idade[309-328] Média[329-351] Idade[421-440] Mediana[442-471]
+    Moxico[106-130] 22,4[344-359] 18,0[491-505]
+    Área[106-121] de[123-131] residência[133-167]
+    Urbana[114-138] 22,0[345-359] 18,0[491-505]
+    Rural[114-131] 23,3[345-359] 18,0[491-505]
+  p73: title 'Quadro 1.7 - Idade média e mediana da população por área de residência e sexo, 2024'; heading row 0; figure columns [(351, 351, 1), (370, 370, 36), (423, 423, 1), (447, 447, 36)]; 7 entries: Média=None; Área de Residência=None; Sexo=None; Município/Comuna=None; 73 Resultados Definitivos=None; Mediana=None; do RGPH 2024 – Província do Moxico=None
+    Quadro[126-158] 1.7[160-173] -[175-178] Idade[180-204] média[206-232] e[234-239] mediana[241-277] da[280-290] população[292-336] por[338-352] área[354-373] de[375-385] residência[388-430] e[432-437] sexo,[440-461] 2024[463-484]
+    Média[331-352] Mediana[399-429]
+    Moxico[163-188] 22,37[332-351] 18,00[405-423]
+    Área[163-179] de[181-189] Residência[191-226]
+    Urbana[163-187] 21,97[352-370] 18,00[429-447]
+    Rural[163-180] 23,28[352-370] 18,00[429-447]
+    Sexo[163-179]
+    Homens[163-190] 22,28[352-370] 18,00[429-447]
+    Mulheres[163-194] 22,46[352-370] 18,00[429-447]
+    Município/Comuna[163-228]
+    Luena[163-183] 22,2[356-370] 18,0[433-447]
+    Luena[171-191] 22,2[356-370] 18,0[433-447]
+    Cassongo[171-202] 20,0[356-370] 15,0[433-447]
+    Cangamba[163-198] 21,6[356-370] 16,0[433-447]
+== Huambo ethnicity: pages [49, 101]
+  p49 block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [415, 457]
+    col 0: Censo N.º
+    col 1: 2024 %
+    row 'População com 2 ou mais anos': 2504547@415 100@457
+  p101 block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo grupo': 27 rows, columns at [216, 260, 306, 354, 407, 454, 508, 550, 585, 619, 646, 672, 721, 762, 800]
+    col 0: População com 2 ou mais anos
+    col 1: Quicongo (Kikongu ou Congolês conguês
+    col 2: Quimbundo (Kimbundu ou Tymbundu)
+    col 3: Lunda- Quioco (Lunda- kioko ou Lunda- Tchokwe Tshokwe)
+    col 4: Umbundo (ou Ovimbundo)
+    col 5: Nhaneca- Humbe (Nyaneka- Lumkumbi)
+    col 6: Grupo_Étnico da população Ambó (Vahambo tanbé designado Xikwanyama)
+    col 7: com 2 ou Helelo, Herero (Tchielelo, Tjiherero)
+    col 8: mais anos Cuangar
+    col 9: Khoisan
+    col 10: Vátua
+    col 11: Kwoi
+    col 12: Xindonga (Oshindonga)
+    col 13: Não sabe
+    col 14: Outra Etnia
+    row 'Huambo': 2504547@216 17009@260 278939@306 7598@354 2178615@407 2692@454 419@508 119@550 98@585 42@619 22@646 35@672 46@721 15597@762 3315@800
+    row 'Urbana': 1218000@216 10465@260 157918@306 6392@354 1028119@407 2030@454 369@508 103@550 73@585 34@619 18@646 33@672 38@721 10321@762 2087@800
+    row 'Rural': 1286546@216 6544@260 121020@306 1206@354 1150496@407 662@454 50@508 16@550 24@585 8@619 5@646 2@672 8@721 5276@762 1229@800
+    row 'Bailundo': 239892@216 2185@260 49286@306 301@354 187486@407 88@454 14@508 1@550 9@585 1@619 1@646 1@672 0@721 369@762 147@800
+    row 'Bailundo': 130246@216 1300@260 40884@306 230@354 87492@407 59@454 13@508 1@550 9@585 1@619 1@646 1@672 0@721 169@762 86@800
+    row 'Lunge': 54810@216 377@260 5293@306 36@354 48869@407 20@454 1@508 0@550 0@585 0@619 0@646 0@672 0@721 165@762 47@800
+    row 'Luvemba': 54836@216 509@260 3109@306 35@354 51125@407 9@454 0@508 0@550 0@585 0@619 0@646 0@672 0@721 35@762 14@800
+== Huambo language: pages [103, 105]
+  p103 block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern': 34 rows, columns at [243, 301, 358, 424, 504, 557, 626, 690, 764]
+    col 0: Número de pessoas com 2 ou mais anos
+    col 1: Português
+    col 2: Kimbundu
+    col 3: Umbundu
+    col 4: Língua materna Cokue (Chokwe/Kioko)
+    col 5: agrupada Kikongo
+    col 6: Olunyaneka (Nhaneka)
+    col 7: Nganguela
+    col 8: Oxikwanhama (Kwanhama)
+    row 'Huambo': 2504547@243 1268250@301 9685@358 1204089@424 4060@504 2186@557 1150@626 6925@690 430@764
+    row 'Urbana': 1218000@243 717262@301 7103@358 479021@424 3669@504 2041@557 977@626 1512@690 375@764
+    row 'Rural': 1286546@243 550988@301 2582@358 725067@424 391@505 145@557 173@626 5413@690 55@764
+    row 'Bailundo': 239892@243 136771@301 759@358 101582@424 91@505 49@557 25@626 175@690 11@764
+    row 'Bailundo': 130246@243 88915@301 588@358 40365@424 86@505 43@557 17@626 100@690 11@764
+    row 'Lunge': 54810@243 22988@301 86@358 31482@424 4@505 1@557 0@626 29@690 0@764
+    row 'Luvemba': 54836@243 24868@301 85@358 29734@424 1@505 5@557 7@626 46@690 0@764
+  p105 block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern': 53 rows, columns at [241, 285, 329, 361, 398, 450, 491, 540]
+    col 0: de pessoas 2 ou mais anos
+    col 1: Ifyoti (Fiote)
+    col 2: Muhumbi
+    col 3: Língua Luvale
+    col 4: materna Khoisan
+    col 5: agrupada Línguas estrangeiras
+    col 6: Outras línguas
+    col 7: Não sabe
+    row 'Huambo': 2504547@241 1322@285 127@329 141@361 73@398 1198@450 2306@491 2605@540
+    row 'Urbana': 1218000@241 1275@285 91@329 134@361 66@398 1053@450 1854@491 1566@540
+    row 'Rural': 1286546@241 47@285 36@329 7@361 7@398 145@450 452@491 1038@540
+    row 'Bailundo': 239892@241 31@285 3@329 1@361 0@398 34@450 113@491 246@540
+    row 'Bailundo': 130246@241 30@285 1@329 1@361 0@398 30@450 37@491 20@540
+    row 'Lunge': 54810@241 1@285 2@329 0@361 0@398 0@450 70@491 147@540
+    row 'Luvemba': 54836@241 0@285 0@329 0@361 0@398 5@450 6@491 80@540
+== Huambo religion: pages [109]
+  p109 block 'Quadro 7.1 - População com 2 ou mais anos por província e área de residência, segundo a re': 20 rows, columns at [213, 260, 302, 352, 393, 428, 478, 526, 573, 612, 668, 714, 770]
+    col 0: População com 2 ou mais anos
+    col 1: Católica
+    col 2: Bom Deus
+    col 3: Islâmica/ Muçulmana
+    col 4: Animista
+    col 5: Judaica
+    col 6: Protestante
+    col 7: Universal do reino de Deus
+    col 8: Nova apostólica
+    col 9: Tocoísta
+    col 10: Kimbanguista
+    col 11: Josafat
+    col 12: Assembleia de Deus Pentecostal
+    row 'Huambo': 2504547@213 1347106@260 3990@302 2382@352 683@393 1561@428 292070@478 4157@526 58780@573 5495@612 756@668 1003@714 85869@770
+    row 'Urbana': 1218000@213 589427@260 2887@302 1750@352 408@393 709@428 137611@478 3224@526 26897@573 3457@612 594@668 819@714 60343@770
+    row 'Rural': 1286546@213 757679@260 1103@302 632@352 275@393 852@428 154459@478 933@526 31883@573 2038@612 163@668 184@714 25527@770
+    row 'Bailundo': 239892@213 124368@260 230@302 193@352 79@393 179@428 29020@478 304@526 6629@573 501@612 46@668 57@714 5899@770
+    row 'Huambo': 788380@213 372407@260 1850@302 1310@352 207@393 420@428 95544@478 2569@526 20271@573 2065@612 516@668 689@714 55222@770
+    row 'Londuimbali': 71617@213 41663@260 155@302 23@352 30@393 18@428 4949@478 18@526 1148@573 612@612 0@668 2@714 1457@770
+    row 'Caála': 246415@213 134128@260 195@302 266@352 56@393 71@428 17159@478 424@526 2460@573 139@612 80@668 79@714 3664@770
+== Huambo age_broad: pages [72]
+  p72 block 'Quadro 1.4 - População por província, por área de residência,': 55 rows, columns at [278, 340, 402, 464]
+    col 0: Total
+    col 1: 0 - 14 anos
+    col 2: 15-64 anos
+    col 3: 65 ou mais anos
+    row 'Huambo': 2691902@278 1211338@340 1393009@402 87554@464
+    row 'Urbana': 1297752@278 566877@340 696285@402 34590@464
+    row 'Rural': 1394150@278 644461@340 696724@402 52964@464
+    row 'Homens': 1296018@278 603918@340 655627@402 36474@464
+    row 'Mulheres': 1395883@278 607420@340 737383@402 51081@464
+    row 'Bailundo': 258073@278 112712@340 136636@402 8725@464
+    row 'Bailundo': 139150@278 60429@340 74871@402 3850@464
+== Huambo age_other: pages [73]
+  p73 block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 53 rows, columns at [211, 268, 325, 374, 424, 473, 544]
+    col 0: Total
+    col 1: 0-19 anos
+    col 2: 20-29 anos
+    col 3: 30-54 anos
+    col 4: 55-64 anos
+    col 5: 65-74 anos
+    col 6: 75 ou mais anos
+    row 'Huambo': 2691902@211 1542517@268 443303@325 509667@374 108861@424 57716@473 29838@544
+    row 'Urbana': 1297752@211 735453@268 228812@325 254187@374 44710@424 22752@473 11838@544
+    row 'Rural': 1394150@211 807064@268 214491@325 255480@374 64151@424 34964@473 18000@544
+    row 'Bailundo': 258073@211 143390@268 45032@325 50017@374 10909@424 5923@473 2802@544
+    row 'Bailundo': 139150@211 77827@268 25267@325 27244@374 4962@424 2625@473 1225@544
+    row 'Lunge': 59310@211 32218@268 10281@325 11496@374 2963@424 1643@473 709@544
+    row 'Luvemba': 59613@211 33345@268 9484@325 11276@374 2984@424 1655@473 868@544
+== Huambo medians: pages [5, 19, 20, 21, 38, 39]
+  heading on pages [5, 38]
+  p5: title '7.2.1 Idade média e mediana da população .................................................'; heading row 28; figure columns []; 0 entries: 
+    7.2.1[106-127] Idade[135-157] média[160-185] e[187-192] mediana[194-230] da[232-242] população[245-287] ...............................................................................................[287-527] 37[529-539]
+    7.2.2[106-127] População[135-177] jovem[179-204] e[206-211] idosa[213-235] ...................................................................................................................[237-527] 38[529-539]
+    7.3.[96-111] Estado[121-147] civil[149-164] ............................................................................................................................................................[164-529] 40[529-539]
+    7.4.[96-111] Registo[121-149] civil[151-166] ...........................................................................................................................................................[166-529] 42[529-539]
+    7.5.[96-111] Apoio[121-144] social[146-167] ..........................................................................................................................................................[168-529] 45[529-539]
+    7.6.[96-111] Deficiência[121-163] ............................................................................................................................................................[164-529] 45[529-539]
+    7.7.[96-111] Orfandade[121-162] nas[164-178] crianças[180-211] com[213-230] 0[232-237] -17[239-252] anos[254-273] .............................................................................................................[274-529] 47[529-539]
+    7.8.[96-111] Língua[121-146] materna[148-181] ....................................................................................................................................................[183-529] 47[529-539]
+    7.9.[96-111] Grupo[121-145] étnico[147-172] ........................................................................................................................................................[173-529] 48[529-539]
+  p38: title '7.2.1 Idade média e mediana da população'; heading row 12; figure columns [(224, 224, 5), (297, 297, 5), (376, 376, 5), (451, 451, 1), (463, 463, 5)]; 0 entries: 
+    7.2.1[121-146] Idade[157-185] média[188-219] e[222-228] mediana[230-274] da[277-289] população[292-344]
+    A[85-91] idade[94-119] média[121-149] corresponde[151-208] ao[210-221] valor[223-246] médio[248-276] das[279-294] idades[297-326] das[328-343] pessoas[346-381] na[383-394] população.[397-446] A[448-455] idade[457-482] mediana[484-523] é[526-531] o[533-539]
+    valor[85-107] que[110-127] divide[129-156] a[158-163] população[165-212] em[214-229] duas[231-252] partes[254-282] iguais:[284-313] metade[315-350] é[352-357] mais[359-380] jovem[383-410] e[412-418] metade[420-454] é[457-462] mais[464-485] velha.[487-514] Estas[516-539]
+    medidas[85-123] permitem[125-170] avaliar[172-202] se[204-214] uma[217-236] população[239-286] é[288-294] predominantemente[296-389] jovem,[392-422] de[425-436] meia-idade[438-489] ou[491-503] idosa.[505-532]
+    Em[85-99] 2024,[102-127] a[130-135] idade[138-163] média[165-193] da[196-207] população[210-256] residente[259-301] no[304-316] Huambo[319-357] aumentou[360-406] para[409-429] 21,4[432-451] anos,[454-478] ao[480-491] passo[494-520] que[522-539]
+    a[85-90] idade[93-118] mediana[120-159] aumentou[162-208] para[210-231] 16[233-244] anos.[247-271] A[273-280] análise[282-313] por[316-331] sexo[334-354] revela[356-384] que[386-404] a[406-411] idade[414-439] média[441-469] das[471-487] mulheres[489-531] é[534-539]
+    ligeiramente[85-142] superior[144-181] à[184-189] dos[192-208] homens.[210-249]
+    Quadro[176-207] 12[210-220] -[222-225] População[227-271] por[273-287] área[289-308] de[310-321] residência[323-365] e[367-373] sexo,[375-396] 2014[399-419] e[421-426] 2024[428-449]
+    Área[93-110] de[112-122] residência[124-162] e[164-169] Censo[228-251] 2014[253-271] Censo[389-412] 2024[414-432]
+    Sexo[122-140]
+    Idade[192-214] Média[216-239] Idade[261-282] Mediana[284-317] Idade[344-365] Média[367-391] Idade[427-448] Mediana[450-484]
+    Huambo[90-122] 20,1[208-224] 15,0[281-297] 21,4[360-376] 16,0[447-463]
+    Área[90-108] de[110-119] residência[122-160]
+    Urbana[99-126] 19,6[208-224] 16,0[281-297] 21,2[360-376] 17,0[447-463]
