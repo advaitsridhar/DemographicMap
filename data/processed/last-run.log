@@ -1,4 +1,149 @@
-  read https://web.archive.org/web/20251008162910id_/https://www.ubos.org/wp-content/uploads/2025/10/NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx: 9,356,925 bytes
-  workbook: APAA (9,456) has no county rows
-  147 districts making 45,905,417, 312 counties, 2207 sub-counties (2207 with their age groups)
-  wrote data/processed/uganda_subcounties.json (1134 kB)
+  read https://web.archive.org/web/20251225150927id_/https://www.insbu.bi/documents/recensements/Chapitre-1.xlsx: 88,562 bytes, sha256 87b0336fa730916a07fa2d3dc702a26fe2ae6354c3743fd01c019e683603da44
+  Tableau 1.6: 17 provinces and 129 communes making 8,053,574, each province's communes making its row; Tableau 1.4 agrees
+  Buhiga (Karuzi): the census's BUHUGA
+  Bukinanyan (Cibitoke): the census's BUKINANYANA
+  Bwambarang (Kirundo): the census's BWAMBARANGWE
+  Kanyosha1 (Bujumbura Rural): the census's KANYOSHA
+  Mpinga-Kay (Rutana): the census's MPINGA
+  Mugongoman (Bujumbura Rural): the census's MUGONGOMANGA
+  Nyabitsind (Ruyigi): the census's NYABITSINDA
+  Nyanrusang (Gitega): the census's NYARUSANGE
+  admin2 Bisoro: 927 men per 1,000 women
+  admin2 Bubanza: 1011 men per 1,000 women
+  admin2 Bugabira: 919 men per 1,000 women
+  admin2 Buganda: 974 men per 1,000 women
+  admin2 Bugarama: 956 men per 1,000 women
+  admin2 Bugendana: 916 men per 1,000 women
+  admin2 Bugenyuzi: 928 men per 1,000 women
+  admin2 Buhiga: 958 men per 1,000 women
+  admin2 Buhinyuza: 928 men per 1,000 women
+  admin2 Bukemba: 1044 men per 1,000 women
+  admin2 Bukeye: 898 men per 1,000 women
+  admin2 Bukinanyan: 973 men per 1,000 women
+  admin2 Bukirasazi: 916 men per 1,000 women
+  admin2 Burambi: 965 men per 1,000 women
+  admin2 Buraza: 911 men per 1,000 women
+  admin2 Bururi: 957 men per 1,000 women
+  admin2 Busiga: 944 men per 1,000 women
+  admin2 Busoni: 949 men per 1,000 women
+  admin2 Butaganzwa: 874 men per 1,000 women
+  admin2 Butaganzwa: 982 men per 1,000 women
+  admin2 Butezi: 955 men per 1,000 women
+  admin2 Butihinda: 941 men per 1,000 women
+  admin2 Buyengero: 985 men per 1,000 women
+  admin2 Bwambarang: 935 men per 1,000 women
+  admin2 Bweru: 950 men per 1,000 women
+  admin2 Cankuzo: 964 men per 1,000 women
+  admin2 Cendajuru: 959 men per 1,000 women
+  admin2 Gahombo: 909 men per 1,000 women
+  admin2 Gashikanwa: 914 men per 1,000 women
+  admin2 Gashoho: 933 men per 1,000 women
+  admin2 Gasorwe: 924 men per 1,000 women
+  admin2 Gatara: 939 men per 1,000 women
+  admin2 Gihanga: 1213 men per 1,000 women
+  admin2 Giharo: 934 men per 1,000 women
+  admin2 Giheta: 882 men per 1,000 women
+  admin2 Gihogazi: 915 men per 1,000 women
+  admin2 Gisagara: 940 men per 1,000 women
+  admin2 Gishubi: 881 men per 1,000 women
+  admin2 Gisozi: 932 men per 1,000 women
+  admin2 Gisuru: 988 men per 1,000 women
+  admin2 Gitanga: 962 men per 1,000 women
+  admin2 Gitaramuka: 929 men per 1,000 women
+  admin2 Gitega: 993 men per 1,000 women
+  admin2 Giteranyi: 962 men per 1,000 women
+  admin2 Gitobe: 916 men per 1,000 women
+  admin2 Isale: 967 men per 1,000 women
+  admin2 Itaba: 899 men per 1,000 women
+  admin2 Kabarore: 949 men per 1,000 women
+  admin2 Kabezi: 895 men per 1,000 women
+  admin2 Kanyosha1: 940 men per 1,000 women
+  admin2 Kayanza: 968 men per 1,000 women
+  admin2 Kayogoro: 985 men per 1,000 women
+  admin2 Kayokwe: 908 men per 1,000 women
+  admin2 Kibago: 1019 men per 1,000 women
+  admin2 Kigamba: 978 men per 1,000 women
+  admin2 Kiganda: 898 men per 1,000 women
+  admin2 Kinyinya: 948 men per 1,000 women
+  admin2 Kiremba: 952 men per 1,000 women
+  admin2 Kirundo: 956 men per 1,000 women
+  admin2 Mabanda: 999 men per 1,000 women
+  admin2 Mabayi: 1000 men per 1,000 women
+  admin2 Makamba: 978 men per 1,000 women
+  admin2 Makebuko: 858 men per 1,000 women
+  admin2 Marangara: 991 men per 1,000 women
+  admin2 Matana: 943 men per 1,000 women
+  admin2 Matongo: 948 men per 1,000 women
+  admin2 Mbuye: 876 men per 1,000 women
+  admin2 Mishiha: 985 men per 1,000 women
+  admin2 Mpanda: 990 men per 1,000 women
+  admin2 Mpinga-Kay: 923 men per 1,000 women
+  admin2 Mubimbi: 969 men per 1,000 women
+  admin2 Mugamba: 924 men per 1,000 women
+  admin2 Mugina: 969 men per 1,000 women
+  admin2 Mugongoman: 982 men per 1,000 women
+  admin2 Muha: 1225 men per 1,000 women
+  admin2 Muhanga: 905 men per 1,000 women
+  admin2 Muhuta: 1054 men per 1,000 women
+  admin2 Mukaza: 1396 men per 1,000 women
+  admin2 Mukike: 933 men per 1,000 women
+  admin2 Muramvya: 976 men per 1,000 women
+  admin2 Muruta: 923 men per 1,000 women
+  admin2 Murwi: 1021 men per 1,000 women
+  admin2 Musigati: 997 men per 1,000 women
+  admin2 Musongati: 941 men per 1,000 women
+  admin2 Mutaho: 897 men per 1,000 women
+  admin2 Mutambu: 913 men per 1,000 women
+  admin2 Mutimbuzi: 1062 men per 1,000 women
+  admin2 Mutumba: 944 men per 1,000 women
+  admin2 Muyinga: 977 men per 1,000 women
+  admin2 Mwakiro: 940 men per 1,000 women
+  admin2 Mwumba: 959 men per 1,000 women
+  admin2 Ndava: 884 men per 1,000 women
+  admin2 Ngozi: 1039 men per 1,000 women
+  admin2 Ntahangwa: 1172 men per 1,000 women
+  admin2 Ntega: 922 men per 1,000 women
+  admin2 Nyabihanga: 865 men per 1,000 women
+  admin2 Nyabikere: 933 men per 1,000 women
+  admin2 Nyabiraba: 1070 men per 1,000 women
+  admin2 Nyabitsind: 961 men per 1,000 women
+  admin2 Nyamurenza: 951 men per 1,000 women
+  admin2 Nyanrusang: 914 men per 1,000 women
+  admin2 Nyanza-Lac: 1009 men per 1,000 women
+  admin2 Rango: 915 men per 1,000 women
+  admin2 Rugazi: 1212 men per 1,000 women
+  admin2 Rugombo: 994 men per 1,000 women
+  admin2 Ruhororo: 888 men per 1,000 women
+  admin2 Rumonge: 1018 men per 1,000 women
+  admin2 Rusaka: 883 men per 1,000 women
+  admin2 Rutana: 967 men per 1,000 women
+  admin2 Rutegama: 888 men per 1,000 women
+  admin2 Rutovu: 923 men per 1,000 women
+  admin2 Ruyigi: 987 men per 1,000 women
+  admin2 Ryansoro: 868 men per 1,000 women
+  admin2 Shombo: 894 men per 1,000 women
+  admin2 Songa: 957 men per 1,000 women
+  admin2 Tangara: 912 men per 1,000 women
+  admin2 Vugizo: 946 men per 1,000 women
+  admin2 Vumbi: 943 men per 1,000 women
+  admin2 Vyanda: 952 men per 1,000 women
+  admin1 Bubanza: 1067 men per 1,000 women
+  admin1 Bujumbura Mairie: 1238 men per 1,000 women
+  admin1 Bujumbura Rural: 973 men per 1,000 women
+  admin1 Bururi: 943 men per 1,000 women
+  admin1 Cankuzo: 964 men per 1,000 women
+  admin1 Cibitoke: 988 men per 1,000 women
+  admin1 Gitega: 915 men per 1,000 women
+  admin1 Karuzi: 929 men per 1,000 women
+  admin1 Kayanza: 929 men per 1,000 women
+  admin1 Kirundo: 936 men per 1,000 women
+  admin1 Makamba: 991 men per 1,000 women
+  admin1 Muramvya: 913 men per 1,000 women
+  admin1 Muyinga: 950 men per 1,000 women
+  admin1 Mwaro: 894 men per 1,000 women
+  admin1 Ngozi: 957 men per 1,000 women
+  admin1 Rumonge: 1004 men per 1,000 women
+  admin1 Rutana: 954 men per 1,000 women
+  admin1 Ruyigi: 971 men per 1,000 women
+  18 of 18 provinces and 119 of 119 communes written
+  wrote data/processed/burundi_census.json (213 kB)
