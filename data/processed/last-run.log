@@ -6,911 +6,812 @@
   retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
   retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
   retry 4/4 after 16s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
-== Uige ethnicity: pages [48, 107]
-  p48 block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [452, 478]
-    col 0: Censo 2024 Nª
-    col 1: %
-    row 'Número de pessoas com 2 ou mais anos': 1895001@452 100@478
-  p107 block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo os gr': 26 rows, columns at [178, 231, 283, 336, 389, 441, 498, 550, 589, 627, 658, 686, 743, 784, 820]
-    col 0: População com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Quimbundo (Kimbundu ou Tymbundu)
-    col 3: Lunda- Quioco (Lunda- kioko ou Lunda- Tchokwe Tshokwe)
-    col 4: Umbundo (ou Ovimbundo)
-    col 5: Grupo Nhaneca- Humbe (Nyaneka- Lumkumbi)
-    col 6: étnico da população Ambó (Vahambo tanbé designado Xikwanyama)
-    col 7: com 2 ou Helelo, Herero (Tchielelo, Tjiherero)
-    col 8: mais anos Cuangar
-    col 9: Khoisan
-    col 10: Vátua
-    col 11: Kwoi
-    col 12: Xindonga (Oshindonga)
-    col 13: Não sabe
-    col 14: Outra Etnia
-    row 'Uíge': 1895001@178 1598111@231 199191@283 833@336 4810@389 216@441 102@498 32@550 33@589 200@627 20@658 37@686 96@743 70534@784 20787@820
-    row 'Urbana': 983256@178 842098@231 81388@283 641@336 3532@389 166@441 84@498 24@550 16@589 21@627 8@658 23@686 67@743 47141@784 8045@820
-    row 'Rural': 911745@178 756012@231 117803@283 192@336 1277@389 50@441 18@498 8@550 17@589 179@627 12@658 13@686 29@743 23393@784 12742@820
-    row 'Dange Quitexe': 37289@178 21369@231 13344@283 22@336 371@389 3@441 0@498 0@550 1@589 1@627 0@658 0@686 0@743 1851@784 327@820
-    row 'Bungo': 56230@178 52489@231 644@283 3@336 18@389 3@441 0@498 1@550 4@589 1@627 4@658 4@686 1@743 1366@784 1693@820
-    row 'Ambuíla': 20105@178 18500@231 701@283 7@336 77@389 0@441 1@498 3@550 0@589 0@627 0@658 0@686 0@743 162@784 655@820
-    row 'Negage': 176980@178 109731@231 43589@283 180@336 984@389 24@441 8@498 4@550 13@589 11@627 9@658 5@686 24@743 17866@784 4531@820
-== Uige language: pages [108]
-  p108 block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern': 26 rows, columns at [189, 231, 274, 316, 368, 409, 462, 506, 562, 593, 634, 665, 701, 754, 789, 818]
-    col 0: Número de pessoas com 2 ou mais anos
-    col 1: Português
-    col 2: Kimbundu
-    col 3: Umbundu
-    col 4: Cokue (Chokwe/ Kioko)
-    col 5: Kikongo
-    col 6: Olunyaneka (Nhaneka)
-    col 7: Língua materna Nganguela
-    col 8: agrupada Oxikwanhama (Kwanhama)
-    col 9: Ifyoti (Fiote)
-    col 10: Muhumbi
-    col 11: Luvale
-    col 12: Khoisan
-    col 13: Línguas estrangeiras
-    col 14: Outras línguas
-    col 15: Não sabe
-    row 'Cunene': 1895001@189 924899@231 104216@274 2666@316 581@368 851336@409 608@462 101@506 362@562 299@593 16@634 12@665 42@701 7683@754 473@789 1710@818
-    row 'Urbana': 983256@189 573196@231 33441@274 1997@316 471@368 366581@414 256@462 76@506 221@562 252@593 15@634 9@665 28@701 5278@754 311@789 1122@818
-    row 'Rural': 911745@189 351703@231 70775@274 668@316 110@368 484755@414 352@462 24@506 141@562 47@593 1@634 3@665 14@701 2405@754 161@789 587@818
-    row 'Dange Quitexe': 37289@189 19419@231 9630@274 239@316 12@368 7852@414 32@462 1@506 8@561 26@593 1@634 0@665 1@701 8@754 9@789 23@818
-    row 'Bungo': 56230@189 31885@231 144@274 15@316 5@368 24129@414 3@462 1@506 7@561 0@593 0@634 0@665 0@701 43@754 30@789 4@818
-    row 'Ambuíla': 20105@189 8634@231 95@274 42@316 11254@414 0@462 0@506 3@561 0@593 0@634 0@665 1@701 167@754 72@789 304@818
-    row 'Negage': 176980@189 86879@231 34383@274 741@316 123@368 54120@414 101@462 16@506 23@561 42@593 3@634 1@665 4@701 4@754 5@789 211@818
-== Uige religion: pages [111]
-  p111 block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re': 26 rows, columns at [215, 256, 302, 366, 410, 449, 508, 569, 617, 663, 731, 770]
-    col 0: População com 2 ou mais anos
-    col 1: Católica
-    col 2: Bom Deus
-    col 3: Islâmica/ Muçulmana
-    col 4: Animista
-    col 5: Judaica
-    col 6: Protestante
-    col 7: Universal do reino de Deus
-    col 8: Nova apostólica
-    col 9: Tocoísta
-    col 10: Kimbanguista
-    col 11: Josafat
-    row 'Uíge': 1895001@215 639566@256 10665@302 4865@366 4419@410 3429@449 176770@508 12545@569 46176@617 117921@663 141139@731 3852@770
-    row 'Urbana': 983256@215 340826@256 7468@302 2972@366 2761@410 1849@449 79248@508 9296@569 25846@617 52130@663 56344@731 2992@770
-    row 'Rural': 911745@215 298741@256 3197@302 1892@366 1658@410 1580@449 97522@508 3249@569 20330@617 65790@663 84795@731 860@770
-    row 'Dange Quitexe': 37289@215 14230@256 349@302 21@366 23@410 60@449 2656@508 90@569 214@617 521@663 540@730 152@770
-    row 'Bungo': 56230@215 12418@256 152@302 8@366 5@410 36@449 11604@508 74@569 195@617 9374@663 1077@731 7@770
-    row 'Ambuíla': 20105@215 4650@256 219@302 13@366 4@410 16@449 2274@508 35@569 365@617 514@663 1193@731 8@770
-    row 'Negage': 176980@215 63110@256 1410@302 403@366 407@410 269@449 23395@508 1456@569 1626@617 11042@663 4968@731 632@770
-== Uige age_broad: pages [71, 72]
-  p71 block 'Quadro 1.4 - População por província, segundo grandes grupos etários,': 53 rows, columns at [295, 363, 431, 517]
-    col 0: Total
-    col 1: 0 - 14 anos
-    col 2: 15 - 64 anos
-    col 3: 65 ou mais anos
-    row 'Uíge': 2017921@295 883783@363 1050167@431 83971@517
-    row 'Urbana': 1042302@295 451957@363 556421@431 33923@517
-    row 'Rural': 975620@295 431826@363 493746@431 50048@517
-    row 'Dange Quitexe': 40044@295 17418@363 20838@431 1788@517
-    row 'Quitexe': 31141@295 13374@363 16389@431 1378@517
-    row 'Aldeia Viçosa': 8903@295 4044@363 4448@431 411@517
-    row 'Bungo': 60462@295 29776@363 27600@431 3086@517
-  p72 block 'Quadro 1.4 - População por província, segundo grandes grupos etários,': 23 rows, columns at [295, 363, 431, 517]
-    col 0: Total
-    col 1: 0 - 14 anos
-    col 2: 15 - 64 anos
-    col 3: 65 ou mais anos
-    row 'Nova Esperança': 70778@295 34592@363 32821@431 3364@517
-    row 'Nova Esperança': 44136@295 21881@363 20328@431 1927@517
-    row 'Buenga-Sul': 15985@295 7784@363 7368@431 833@517
-    row 'Cuílo Camboso': 10657@295 4927@363 5126@431 604@517
-    row 'Sacandica': 53940@295 21727@363 30310@431 1904@517
-    row 'Sacandica': 9691@295 3493@363 5867@431 331@517
-    row 'Béu': 39295@295 16571@363 21520@431 1204@517
-== Uige age_other: pages [73, 74]
-  p73 block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 45 rows, columns at [216, 264, 312, 360, 408, 456, 504]
-    col 0: Total
-    col 1: 0 - 19 anos
-    col 2: 20 - 29 anos
-    col 3: 30 - 54 anos
-    col 4: 55 - 64 anos
-    col 5: 65 - 74 anos
-    col 6: 75 - ou mais anos
-    row 'Uíge': 2017921@216 1127314@264 312850@312 415668@360 78117@408 53164@456 30808@504
-    row 'Urbana': 1042302@216 592632@264 170166@312 211351@360 34229@408 21915@456 12009@504
-    row 'Rural': 975620@216 534682@264 142685@312 204317@360 43888@408 31249@456 18799@504
-    row 'Dange Quitexe': 40044@216 21783@264 6189@312 8655@360 1629@408 1202@456 586@504
-    row 'Quitexe': 31141@216 16870@264 4805@312 6776@360 1312@408 923@456 455@504
-    row 'Aldeia Viçosa': 8903@216 4912@264 1384@312 1879@360 317@408 279@456 131@504
-    row 'Bungo': 60462@216 36813@264 7305@312 10743@360 2515@408 1958@456 1128@504
-  p74 block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 30 rows, columns at [216, 264, 312, 360, 408, 456, 504]
-    col 0: Total
-    col 1: 0 - 19 anos
-    col 2: 20 - 29 anos
-    col 3: 30 - 54 anos
-    col 4: 55 - 64 anos
-    col 5: 65 - 74 anos
-    col 6: 75 - ou mais anos
-    row 'Uíge': 773099@216 432557@264 128656@312 160850@360 25116@408 16505@456 9416@504
-    row 'Uíge': 622039@216 347780@264 106201@312 129284@360 19597@408 12152@456 7025@504
-    row 'Cancungo': 73330@216 41212@264 11124@312 15662@360 2497@408 1837@456 998@504
-    row 'Casseche': 39918@216 22782@264 5910@312 8222@360 1312@408 1152@456 539@504
-    row 'Luanga': 37813@216 20783@264 5421@312 7682@360 1709@408 1365@456 854@504
-    row 'Mucaba': 59467@216 35554@264 7366@312 11096@360 2479@408 1963@456 1010@504
-    row 'Mucaba': 52454@216 31467@264 6455@312 9773@360 2190@408 1717@456 852@504
-== Uige medians: pages [5, 8, 19, 20, 21, 38, 78]
-  p5: title '7.2.1 Idade média e mediana da população..................................................'; first 'mediana' row '7.2.1 Idade média e mediana da população..................................................'; figure columns at []; 0 entries: 
-  p8: title ''; first 'mediana' row 'Gráfico 7 – Idade mediana por município, 2024 ............................................'; figure columns at []; 0 entries: 
-  p19: title ''; first 'mediana' row None; figure columns at [144, 173, 190, 299, 342, 406, 468, 494, 535]; 0 entries: 
-  p20: title ''; first 'mediana' row '1.4 Idade mediana da população 14,0 17,0'; figure columns at [470, 527]; 0 entries: 
-  p21: title ''; first 'mediana' row '1.4 Idade mediana da população 17,0 17,0 17,0 16,0 18,0'; figure columns at [388, 426, 476, 515, 560]; 0 entries: 
-  retry 1/4 after 2s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/2026id_/https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf :: <urlopen error [Errno 111] Connection refused>
-== Cuanza_Sul ethnicity: pages [49, 103, 104]
-  p49 block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [454, 504]
-    col 0: Censo N.º
-    col 1: 2024 %
-    row 'Número de pessoas com 2 ou mais anos': 2156365@454 100@504
-  p103 block 'Quadro 6.1 - População de 2 ou mais anos por município e área de residência, segundo grupo': 27 rows, columns at [193, 245, 306, 371, 427, 494, 562]
-    col 0: Total da população com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: étnicos/tribos, Quimbundo (Kimbundu ou Tymbundu)
-    col 3: 2024 Grupo_Étnico da Lunda-Quioco (Lunda-kioko ou Lunda-Tchokwe Tshokwe)
-    col 4: população com 2 ou Umbundo (ou Ovimbundo)
-    col 5: mais anos Nhaneca-Humbe (Nyaneka- Lumkumbi)
-    col 6: Ambó (Vahambo tanbé designado Xikwanyama)
-    row 'Cuanza Sul': 2156365@193 39628@245 974894@306 3529@371 863373@427 2374@494 740@562
-    row 'Urbana': 899122@193 24058@245 434995@306 2285@371 297714@427 1732@494 123@562
-    row 'Rural': 1257243@193 15570@245 539898@306 1244@371 565658@427 642@494 617@562
-    row 'Sumbe': 227276@193 6273@245 82367@306 829@371 83546@427 286@494 49@562
-    row 'Calulo': 81572@193 1822@245 75046@306 51@370 1586@427 25@494 23@562
-    row 'Gabela': 211244@193 5443@245 133625@306 198@371 17955@427 88@494 17@562
-    row 'Cassongue': 134072@193 1396@245 9231@306 127@371 118436@427 54@494 7@562
-  p104 block 'Quadro 6.1 - População de 2 ou mais anos por município e área de residência, segundo grupo': 27 rows, columns at [170, 229, 274, 311, 343, 376, 435, 482, 536]
-    col 0: Total da população com 2 ou mais anos
-    col 1: Helelo, Herero (Tchielelo, Tjiherero)
-    col 2: étnicos/tribos, Cuangar
-    col 3: 2024 Grupo_Étnico Khoisan
-    col 4: da Vátua
-    col 5: população com Kwoi
-    col 6: 2 ou mais anos Xindonga (Oshindonga)
-    col 7: Não sabe
-    col 8: Outra Etnia
-    row 'Cuanza Sul': 2156365@170 119@229 101@274 326@311 52@343 814@376 205@435 247643@482 22568@536
-    row 'Urbana': 899122@170 45@229 74@274 108@311 14@343 118@376 124@435 128292@482 9440@536
-    row 'Rural': 1257243@170 73@229 27@274 219@311 38@343 696@376 81@434 119351@482 13128@536
-    row 'Sumbe': 227276@170 21@229 31@274 66@311 4@343 49@375 57@434 52328@482 1370@536
-    row 'Calulo': 81572@170 1@229 0@274 3@311 1@343 1@375 0@434 2366@483 647@536
-    row 'Gabela': 211244@170 3@229 17@274 9@311 1@343 154@376 38@434 49372@482 4325@536
-    row 'Cassongue': 134072@170 0@229 0@274 1@311 0@343 0@375 1@434 4711@483 106@536
-== Cuanza_Sul language: pages [105, 106]
-  p105 block 'Quadro 6.2 - População por município e área de residência, segundo a língua materna,': 27 rows, columns at [219, 271, 325, 376, 452, 496, 555, 610, 678, 717, 768, 806]
-    col 0: Número de pessoas com 2 ou mais anos
-    col 1: Português
-    col 2: Kimbundu
-    col 3: Umbundu
-    col 4: Cokue (Chokwe/Kioko)
-    col 5: Língua Kikongo
-    col 6: materna agrupada Olunyaneka (Nhaneka)
-    col 7: Nganguela
-    col 8: Oxikwanhama (Kwanhama)
-    col 9: Ifyoti (Fiote)
-    col 10: Muhumbi
-    col 11: Luvale
-    row 'Cuanza Sul': 2156365@219 1037110@271 628444@325 456222@376 1532@452 4350@496 3618@555 1508@610 357@678 448@717 84@768 60@806
-    row 'Urbana': 899122@219 483911@271 236484@325 156777@376 1068@452 3422@496 1750@555 684@610 155@678 384@717 45@768 42@806
-    row 'Rural': 1257243@219 553198@271 391960@325 299445@376 464@452 928@496 1868@555 825@610 202@678 64@717 39@768 18@806
-    row 'Sumbe': 227276@219 117954@271 47512@325 51132@376 571@452 907@496 225@555 212@610 60@678 124@717 16@768 32@806
-    row 'Calulo': 81572@219 55344@271 25413@325 317@376 28@452 220@496 114@555 4@610 20@678 11@717 0@768 0@806
-    row 'Gabela': 211244@219 123749@271 77663@325 6775@376 51@452 285@496 254@555 63@610 7@678 16@717 6@768 0@806
-    row 'Cassongue': 134072@219 57544@271 2212@325 73241@376 14@452 134@496 63@555 101@610 10@678 13@717 11@768 1@806
-  p106 block 'Quadro 6.2 - População por município e área de residência, segundo a língua materna,': 27 rows, columns at [246, 294, 352, 390, 437, 489, 535, 574, 613, 657, 696, 740, 778]
-    col 0: Número de pessoas 2 ou mais anos
-    col 1: Khoisan
-    col 2: Mandarim
-    col 3: Inglês
-    col 4: Francês
-    col 5: Língua Espanhol
-    col 6: materna Alemão
-    col 7: agrupada Russo
-    col 8: Árabe
-    col 9: Lingala
-    col 10: Criolo
-    col 11: Outras línguas
-    col 12: Não sabe
-    row 'Cuanza Sul': 2156365@246 233@294 17@352 177@390 237@437 89@489 11@535 11@574 136@613 429@657 29@696 2958@740 18304@778
-    row 'Urbana': 899122@246 59@294 14@352 146@390 197@437 88@489 1@535 7@574 133@613 307@657 27@696 1299@740 12123@778
-    row 'Rural': 1257243@246 174@294 3@352 31@390 40@437 1@489 10@535 4@574 3@613 123@657 3@696 1659@740 6181@778
-    row 'Sumbe': 227276@246 28@294 6@352 54@390 37@437 17@489 4@574 37@613 71@657 11@696 469@740 7800@778
-    row 'Calulo': 81572@246 0@294 0@352 1@390 3@437 8@489 0@535 0@574 6@613 22@657 3@696 35@739 22@778
-    row 'Gabela': 211244@246 28@294 1@352 23@390 54@437 1@489 0@535 0@574 21@613 38@657 0@696 345@740 1865@778
-    row 'Cassongue': 134072@246 0@294 0@352 1@390 3@437 0@489 0@535 0@574 8@613 21@657 0@696 25@739 669@778
-== Cuanza_Sul religion: pages [109, 110]
-  p109 block 'Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a re': 27 rows, columns at [224, 277, 327, 367, 405, 458, 500, 545]
-    col 0: da população com 2 ou mais anos
-    col 1: Católica
-    col 2: espiritualidade, Islâmica/ Muçulmana
-    col 3: 2024 Animista
-    col 4: Judaica
-    col 5: Protestante
-    col 6: Universal do reino de Deus
-    col 7: Nova apostolica
-    row 'Cuanza Sul': 2156365@224 736374@277 1713@327 994@367 1229@405 73566@458 8325@500 15343@545
-    row 'Urbana': 899122@224 304972@277 1180@327 598@367 622@405 25047@458 6589@500 5426@545
-    row 'Rural': 1257243@224 431402@277 533@327 396@367 607@405 48519@458 1736@500 9917@545
-    row 'Sumbe': 227276@224 93744@277 302@327 163@367 108@405 3556@458 2385@500 873@545
-    row 'Calulo': 81572@224 38221@277 63@327 24@367 51@405 2400@458 727@500 383@545
-    row 'Gabela': 211244@224 41204@277 168@327 132@367 124@405 4421@458 1247@500 320@545
-    row 'Cassongue': 134072@224 66395@277 42@327 47@367 65@405 9092@458 143@500 1107@545
-  p110 block 'Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a re': 27 rows, columns at [169, 210, 268, 304, 355, 409, 455, 502, 549, 589, 625, 674, 714, 754, 810]
-    col 0: Total da população com 2 ou mais anos
-    col 1: Tocoísta
-    col 2: Kimbanguista
-    col 3: Josafat
-    col 4: Assembleia de Deus pentecostal
-    col 5: Testemunha de Jeová
-    col 6: Metodista
-    col 7: Evangélica
-    col 8: Adventista
-    col 9: Baptista
-    col 10: Bom Deus
-    col 11: Mensagem dos últimos Tempos
-    col 12: Sem religião
-    col 13: Outra religião
-    col 14: Não sabe/ Não respondeu
-    row 'Cuanza Sul': 2156365@169 17215@210 1716@268 5047@304 320305@355 8868@409 22113@455 80461@502 148824@549 1926@589 11961@625 1028@674 537977@714 89222@754 72158@810
-    row 'Urbana': 899122@169 8259@210 1061@268 3674@304 151740@355 7222@409 11111@455 38920@502 66731@549 1203@589 8829@625 922@674 183699@718 40264@754 31057@810
-    row 'Rural': 1257243@169 8956@210 656@268 1373@304 168565@355 1647@409 11002@455 41541@502 82093@549 723@589 3132@625 106@674 354278@718 48958@754 41102@810
-    row 'Sumbe': 227276@169 956@210 225@268 1723@304 36221@355 1351@409 1727@455 9690@502 18796@549 508@589 2096@625 461@674 32717@718 11932@754 7743@810
-    row 'Calulo': 81572@169 441@210 156@268 130@304 7016@355 1429@409 1513@455 2907@502 680@549 3@588 2842@625 27@673 17740@718 2555@754 2264@810
-    row 'Gabela': 211244@169 636@210 126@268 523@304 59067@355 913@409 1685@455 4999@502 5328@549 106@589 452@625 124@674 68875@718 11786@754 9008@810
-    row 'Cassongue': 134072@169 65@210 28@268 131@304 2740@355 208@409 106@455 9258@502 25279@549 36@588 229@625 8@673 16974@718 370@754 1749@810
-== Cuanza_Sul age_broad: pages [72]
-  p72 block 'Quadro 1.4 - População por município, segundo grandes grupos etários,': 63 rows, columns at [300, 361, 416, 487]
-    col 0: Total
-    col 1: 0 - 14 anos
-    col 2: 15-64 anos
-    col 3: 65 ou mais anos
-    row 'Cuanza Sul': 2327981@300 1066994@361 1183407@416 77581@487
-    row 'Urbana': 958860@300 423869@361 511016@416 23975@487
-    row 'Rural': 1369121@300 643124@361 672391@416 53606@487
-    row 'Sumbe': 240257@300 97932@361 136951@416 5374@487
-    row 'Sumbe': 227999@300 92917@361 130111@416 4971@487
-    row 'Quicombo': 12258@300 5015@361 6840@417 404@487
-    row 'Calulo': 87169@300 38003@361 45940@416 3226@487
-== Cuanza_Sul age_other: pages [73, 74]
-  p73 block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 53 rows, columns at [179, 243, 292, 342, 392, 448, 512]
-    col 0: Total
-    col 1: 0-19 anos
-    col 2: 20-29 anos
-    col 3: 30-54 anos
-    col 4: 55-64 anos
-    col 5: 65-74 anos
-    col 6: 75 ou mais anos
-    row 'Cuanza Sul': 2327981@179 1335948@243 374848@292 447925@342 91680@392 50260@448 27321@512
-    row 'Urbana': 958860@179 545863@243 164452@292 192365@342 32205@392 15206@448 8769@512
-    row 'Rural': 1369121@179 790084@243 210396@292 255560@342 59475@392 35054@448 18551@512
-    row 'Sumbe': 240257@179 129771@243 45209@292 51985@342 7918@392 3436@448 1938@512
-    row 'Sumbe': 227999@179 123335@243 42927@292 49366@342 7400@392 3140@448 1830@512
-    row 'Quicombo': 12258@179 6436@243 2282@292 2618@342 519@392 296@448 107@512
-    row 'Calulo': 87169@179 48193@243 14094@292 17808@342 3849@392 2098@448 1128@512
-  p74 block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 10 rows, columns at [207, 271, 321, 370, 420, 477, 541]
-    col 0: Total
-    col 1: 0-19 anos
-    col 2: 20-29 anos
-    col 3: 30-54 anos
-    col 4: 55-64 anos
-    col 5: 65-74 anos
-    col 6: 75 ou mais anos
-    row 'Pambangala': 82834@207 49336@271 13253@321 14257@370 3292@420 1689@477 1008@541
-    row 'Pambangala': 82834@207 49336@271 13253@321 14257@370 3292@420 1689@477 1008@541
-    row 'Gangula(Kuvu)': 28343@207 15410@271 3995@321 6651@370 1254@420 664@477 369@541
-    row 'Gangula(Kuvu)': 28343@207 15410@271 3995@321 6651@370 1254@420 664@477 369@541
-    row 'Gungo': 21446@207 10903@271 3929@321 4338@370 1123@420 662@477 490@541
-    row 'Gungo': 21446@207 10903@271 3929@321 4338@370 1123@420 662@477 490@541
-    row 'Amboiva': 73920@207 45538@271 11016@321 12301@370 2717@420 1566@477 782@541
-== Cuanza_Sul medians: pages [4, 18, 19, 20, 37, 38, 76]
-  p4: title '7.2.1 Idade média e mediana da população .................................................'; first 'mediana' row '7.2.1 Idade média e mediana da população .................................................'; figure columns at []; 0 entries: 
-  p18: title ''; first 'mediana' row None; figure columns at [131, 202, 432, 456, 508]; 0 entries: 
-  p19: title ''; first 'mediana' row '1.4 Idade mediana da população - 16,0'; figure columns at [495, 547]; 0 entries: 
-  p20: title ''; first 'mediana' row '1.4 Idade mediana da população 16,0 17,0 16,0 16,0 17,0'; figure columns at [349, 393, 435, 474, 523]; 0 entries: 
-  p37: title '7.2.1 Idade média e mediana da população'; first 'mediana' row '7.2.1 Idade média e mediana da população'; figure columns at [141, 184, 234, 284, 332, 384, 434, 484]; 0 entries: 
-== Huambo ethnicity: pages [49, 101]
-  p49 block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [415, 457]
-    col 0: Censo N.º
-    col 1: 2024 %
-    row 'População com 2 ou mais anos': 2504547@415 100@457
-  p101 block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo grupo': 27 rows, columns at [216, 260, 306, 354, 407, 454, 508, 550, 585, 619, 646, 672, 721, 762, 800]
-    col 0: População com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Quimbundo (Kimbundu ou Tymbundu)
-    col 3: Lunda- Quioco (Lunda- kioko ou Lunda- Tchokwe Tshokwe)
-    col 4: Umbundo (ou Ovimbundo)
-    col 5: Nhaneca- Humbe (Nyaneka- Lumkumbi)
-    col 6: Grupo_Étnico da população Ambó (Vahambo tanbé designado Xikwanyama)
-    col 7: com 2 ou Helelo, Herero (Tchielelo, Tjiherero)
-    col 8: mais anos Cuangar
-    col 9: Khoisan
-    col 10: Vátua
-    col 11: Kwoi
-    col 12: Xindonga (Oshindonga)
-    col 13: Não sabe
-    col 14: Outra Etnia
-    row 'Huambo': 2504547@216 17009@260 278939@306 7598@354 2178615@407 2692@454 419@508 119@550 98@585 42@619 22@646 35@672 46@721 15597@762 3315@800
-    row 'Urbana': 1218000@216 10465@260 157918@306 6392@354 1028119@407 2030@454 369@508 103@550 73@585 34@619 18@646 33@672 38@721 10321@762 2087@800
-    row 'Rural': 1286546@216 6544@260 121020@306 1206@354 1150496@407 662@454 50@508 16@550 24@585 8@619 5@646 2@672 8@721 5276@762 1229@800
-    row 'Bailundo': 239892@216 2185@260 49286@306 301@354 187486@407 88@454 14@508 1@550 9@585 1@619 1@646 1@672 0@721 369@762 147@800
-    row 'Bailundo': 130246@216 1300@260 40884@306 230@354 87492@407 59@454 13@508 1@550 9@585 1@619 1@646 1@672 0@721 169@762 86@800
-    row 'Lunge': 54810@216 377@260 5293@306 36@354 48869@407 20@454 1@508 0@550 0@585 0@619 0@646 0@672 0@721 165@762 47@800
-    row 'Luvemba': 54836@216 509@260 3109@306 35@354 51125@407 9@454 0@508 0@550 0@585 0@619 0@646 0@672 0@721 35@762 14@800
-== Huambo language: pages [103, 105]
-  p103 block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern': 34 rows, columns at [243, 301, 358, 424, 504, 557, 626, 690, 764]
-    col 0: Número de pessoas com 2 ou mais anos
-    col 1: Português
-    col 2: Kimbundu
-    col 3: Umbundu
-    col 4: Língua materna Cokue (Chokwe/Kioko)
-    col 5: agrupada Kikongo
-    col 6: Olunyaneka (Nhaneka)
-    col 7: Nganguela
-    col 8: Oxikwanhama (Kwanhama)
-    row 'Huambo': 2504547@243 1268250@301 9685@358 1204089@424 4060@504 2186@557 1150@626 6925@690 430@764
-    row 'Urbana': 1218000@243 717262@301 7103@358 479021@424 3669@504 2041@557 977@626 1512@690 375@764
-    row 'Rural': 1286546@243 550988@301 2582@358 725067@424 391@505 145@557 173@626 5413@690 55@764
-    row 'Bailundo': 239892@243 136771@301 759@358 101582@424 91@505 49@557 25@626 175@690 11@764
-    row 'Bailundo': 130246@243 88915@301 588@358 40365@424 86@505 43@557 17@626 100@690 11@764
-    row 'Lunge': 54810@243 22988@301 86@358 31482@424 4@505 1@557 0@626 29@690 0@764
-    row 'Luvemba': 54836@243 24868@301 85@358 29734@424 1@505 5@557 7@626 46@690 0@764
-  p105 block 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua matern': 53 rows, columns at [241, 285, 329, 361, 398, 450, 491, 540]
-    col 0: de pessoas 2 ou mais anos
-    col 1: Ifyoti (Fiote)
-    col 2: Muhumbi
-    col 3: Língua Luvale
-    col 4: materna Khoisan
-    col 5: agrupada Línguas estrangeiras
-    col 6: Outras línguas
-    col 7: Não sabe
-    row 'Huambo': 2504547@241 1322@285 127@329 141@361 73@398 1198@450 2306@491 2605@540
-    row 'Urbana': 1218000@241 1275@285 91@329 134@361 66@398 1053@450 1854@491 1566@540
-    row 'Rural': 1286546@241 47@285 36@329 7@361 7@398 145@450 452@491 1038@540
-    row 'Bailundo': 239892@241 31@285 3@329 1@361 0@398 34@450 113@491 246@540
-    row 'Bailundo': 130246@241 30@285 1@329 1@361 0@398 30@450 37@491 20@540
-    row 'Lunge': 54810@241 1@285 2@329 0@361 0@398 0@450 70@491 147@540
-    row 'Luvemba': 54836@241 0@285 0@329 0@361 0@398 5@450 6@491 80@540
-== Huambo religion: pages [109]
-  p109 block 'Quadro 7.1 - População com 2 ou mais anos por província e área de residência, segundo a re': 20 rows, columns at [213, 260, 302, 352, 393, 428, 478, 526, 573, 612, 668, 714, 770]
-    col 0: População com 2 ou mais anos
-    col 1: Católica
-    col 2: Bom Deus
-    col 3: Islâmica/ Muçulmana
-    col 4: Animista
-    col 5: Judaica
-    col 6: Protestante
-    col 7: Universal do reino de Deus
-    col 8: Nova apostólica
-    col 9: Tocoísta
-    col 10: Kimbanguista
-    col 11: Josafat
-    col 12: Assembleia de Deus Pentecostal
-    row 'Huambo': 2504547@213 1347106@260 3990@302 2382@352 683@393 1561@428 292070@478 4157@526 58780@573 5495@612 756@668 1003@714 85869@770
-    row 'Urbana': 1218000@213 589427@260 2887@302 1750@352 408@393 709@428 137611@478 3224@526 26897@573 3457@612 594@668 819@714 60343@770
-    row 'Rural': 1286546@213 757679@260 1103@302 632@352 275@393 852@428 154459@478 933@526 31883@573 2038@612 163@668 184@714 25527@770
-    row 'Bailundo': 239892@213 124368@260 230@302 193@352 79@393 179@428 29020@478 304@526 6629@573 501@612 46@668 57@714 5899@770
-    row 'Huambo': 788380@213 372407@260 1850@302 1310@352 207@393 420@428 95544@478 2569@526 20271@573 2065@612 516@668 689@714 55222@770
-    row 'Londuimbali': 71617@213 41663@260 155@302 23@352 30@393 18@428 4949@478 18@526 1148@573 612@612 0@668 2@714 1457@770
-    row 'Caála': 246415@213 134128@260 195@302 266@352 56@393 71@428 17159@478 424@526 2460@573 139@612 80@668 79@714 3664@770
-== Huambo age_broad: pages [72]
-  p72 block 'Quadro 1.4 - População por província, por área de residência,': 55 rows, columns at [278, 340, 402, 464]
-    col 0: Total
-    col 1: 0 - 14 anos
-    col 2: 15-64 anos
-    col 3: 65 ou mais anos
-    row 'Huambo': 2691902@278 1211338@340 1393009@402 87554@464
-    row 'Urbana': 1297752@278 566877@340 696285@402 34590@464
-    row 'Rural': 1394150@278 644461@340 696724@402 52964@464
-    row 'Homens': 1296018@278 603918@340 655627@402 36474@464
-    row 'Mulheres': 1395883@278 607420@340 737383@402 51081@464
-    row 'Bailundo': 258073@278 112712@340 136636@402 8725@464
-    row 'Bailundo': 139150@278 60429@340 74871@402 3850@464
-== Huambo age_other: pages [73]
-  p73 block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 53 rows, columns at [211, 268, 325, 374, 424, 473, 544]
-    col 0: Total
-    col 1: 0-19 anos
-    col 2: 20-29 anos
-    col 3: 30-54 anos
-    col 4: 55-64 anos
-    col 5: 65-74 anos
-    col 6: 75 ou mais anos
-    row 'Huambo': 2691902@211 1542517@268 443303@325 509667@374 108861@424 57716@473 29838@544
-    row 'Urbana': 1297752@211 735453@268 228812@325 254187@374 44710@424 22752@473 11838@544
-    row 'Rural': 1394150@211 807064@268 214491@325 255480@374 64151@424 34964@473 18000@544
-    row 'Bailundo': 258073@211 143390@268 45032@325 50017@374 10909@424 5923@473 2802@544
-    row 'Bailundo': 139150@211 77827@268 25267@325 27244@374 4962@424 2625@473 1225@544
-    row 'Lunge': 59310@211 32218@268 10281@325 11496@374 2963@424 1643@473 709@544
-    row 'Luvemba': 59613@211 33345@268 9484@325 11276@374 2984@424 1655@473 868@544
-== Huambo medians: pages [5, 19, 20, 21, 38, 39]
-  p5: title '7.2.1 Idade média e mediana da população .................................................'; first 'mediana' row '7.2.1 Idade média e mediana da população .................................................'; figure columns at []; 0 entries: 
-  p19: title ''; first 'mediana' row None; figure columns at [339, 410, 468]; 0 entries: 
-  p20: title ''; first 'mediana' row '1.4 Idade mediana da população 15,0 16,0'; figure columns at [471, 527]; 0 entries: 
-  p21: title ''; first 'mediana' row '1.4 Idade mediana da população 16,0 17,0 16,0 16,0 17,0'; figure columns at [366, 410, 456, 504, 550]; 0 entries: 
-  p38: title '7.2.1 Idade média e mediana da população'; first 'mediana' row '7.2.1 Idade média e mediana da população'; figure columns at [107, 224, 297, 376, 451, 463]; 0 entries: 
-== Moxico ethnicity: pages [46, 97]
-  p46 block 'Quadro 20 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [434, 512]
-    col 0: Censo 2024
-    col 1: %
-    row 'Número de pessoas com 2 ou mais anos': 541777@434 100@512
-  p97 block 'Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou tribos,': 15 rows, columns at [190, 241, 291, 354, 411, 461, 517, 562]
-    col 0: P o p u l a ç ã o c o m 2 o u m a i s a n o s
-    col 1: Q u i c o n g o (K i k o n g u o u Congolês conguês
-    col 2: Q u i m b u n d o (K i m b u n d u o u Tymbundu)
-    col 3: Grupo Étnico da L u n d a - Q u i o c o ( L u n d a - k io k o o u L u n d a - Tchokwe Tsh
-    col 4: população com 2 U m b u n d o ( o u O vi m b u n d o )
-    col 5: ou mais anos N h a n e c a - H u m b e ( N y a n e k a - Lumkumbi)
-    col 6: A m b ó (Va h a m b o ta n b é designado Xikwanyama)
-    col 7: H e l e l o , H e r e r o (T ch i e l e l o , Tjiherero)
-    row 'Moxico': 541777@190 8009@241 33958@291 373455@354 19253@411 2514@461 943@517 222@562
-    row 'Urbana': 375668@190 7048@241 23877@291 275195@354 17709@411 1866@461 492@517 122@562
-    row 'Rural': 166109@190 962@241 10082@291 98260@354 1543@411 647@461 451@517 100@562
-    row 'Luena': 340536@190 6267@241 23485@291 260956@354 17480@411 1234@461 557@517 154@562
-    row 'Cangamba': 12902@190 16@240 936@291 1352@354 172@411 7@461 0@517 0@562
-    row 'Cangumbe': 9135@190 13@240 451@291 8107@354 83@411 9@461 1@517 1@562
-    row 'Lumbala Nguimbo': 38400@190 901@241 1264@291 7956@354 394@411 2@461 13@517 2@562
-  p97 block 'Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou tribos,': 15 rows, columns at [196, 250, 299, 339, 386, 451, 499, 559]
-    col 0: População com 2 ou mais anos
-    col 1: Cuangar
-    col 2: Khoisan
-    col 3: Grupo Étnico Vátua
-    col 4: da população Kwoi
-    col 5: com 2 ou mais anos Xindonga (Oshindonga)
-    col 6: Não sabe
-    col 7: Outra Etnia
-    row 'Moxico': 541777@196 377@250 968@299 142@339 20@386 204@451 45337@499 56375@559
-    row 'Urbana': 375668@196 226@250 897@299 121@339 17@386 171@451 26413@499 21515@559
-    row 'Rural': 166109@196 151@250 71@299 21@339 4@386 33@451 18924@499 34860@559
-    row 'Luena': 340536@196 36@250 894@299 119@339 13@386 37@451 19871@499 9434@559
-    row 'Cangamba': 12902@196 195@250 36@299 1@339 1@386 0@451 590@499 9597@559
-    row 'Cangumbe': 9135@196 0@250 0@299 0@339 0@386 0@451 426@499 44@559
-    row 'Lumbala Nguimbo': 38400@196 124@250 4@299 0@339 4@386 108@451 8866@499 18763@559
-== Moxico language: pages [98]
-  p98 block 'Quadro 6. 2 - População por município e área de residência, segundo a língua Materna': 15 rows, columns at [183, 231, 279, 326, 396, 441, 495, 541]
-    col 0: População com ou mais anos
-    col 1: Português
-    col 2: Kimbundu
-    col 3: Umbundu
-    col 4: Língua materna agrupada Cokue (Chokwe/Kioko)
-    col 5: Kikongo
-    col 6: Olunyaneka (Nhaneka)
-    col 7: Nganguela
-    row 'Moxico': 541777@183 95429@231 3398@279 18743@326 302571@396 1071@441 456@495 82287@541
-    row 'Urbana': 375668@183 80686@231 2909@279 17132@326 211426@396 981@441 320@495 36023@541
-    row 'Rural': 166109@183 14743@231 489@279 1611@326 91145@396 90@441 137@495 46265@541
-    row 'Luena': 340536@183 76843@231 2795@279 16924@326 202775@396 973@441 262@495 17291@541
-    row 'Cangamba': 12902@183 1578@231 12@279 146@326 1029@396 2@441 3@495 9822@541
-    row 'Cangumbe': 9135@183 887@231 12@279 74@326 7735@396 0@441 0@495 401@541
-    row 'Lumbala Nguimbo': 38400@183 2608@231 119@279 450@326 3875@396 49@441 51@495 26360@541
-  p98 block 'Quadro 6. 2 - População por município e área de residência, segundo a língua Materna': 15 rows, columns at [172, 233, 268, 316, 353, 392, 452, 496, 537]
-    col 0: População co m 2 o u m a is a n o s
-    col 1: O x i kw a n h am a ( K w an h a m a)
-    col 2: I f y o t i ( F i o t e )
-    col 3: Muhumbi
-    col 4: Língua mater Luvale
-    col 5: na agrupada Khoisan
-    col 6: l ín g u as est r a n ge ir as
-    col 7: O u t ra s l ín g u a s
-    col 8: Não sabe
-    row 'Moxico': 541777@172 278@233 675@268 72@316 27733@353 81@392 344@452 6550@496 2086@537
-    row 'Urbana': 375668@172 226@233 553@268 43@316 23161@353 45@392 306@452 1104@496 750@537
-    row 'Rural': 166109@172 53@232 122@268 29@316 4572@353 36@392 38@452 5446@496 1336@537
-    row 'Luena': 340536@172 204@233 532@268 35@316 20352@353 33@392 275@452 707@496 535@537
-    row 'Cangamba': 12902@172 0@232 0@268 0@316 167@353 33@392 0@452 97@496 12@537
-    row 'Cangumbe': 9135@172 1@232 2@268 0@316 18@353 0@392 0@452 5@496 0@537
-    row 'Lumbala Nguimbo': 38400@172 26@232 7@268 15@316 1563@353 8@392 32@452 2936@496 299@537
-== Moxico religion: pages [101, 102]
-  p101 block 'Quadro 7. 1- População com 2 ou mais anos por província e área de residência, segundo a re': 15 rows, columns at [213, 274, 336, 398, 443, 497, 559, 620, 677, 733, 795]
-    col 0: Total da população com ou mais anos
-    col 1: Católica
-    col 2: Islâmica/ Muçulmana
-    col 3: Animista
-    col 4: Judaica
-    col 5: Protestante
-    col 6: Universal do reino de Deus
-    col 7: Nova apostolica
-    col 8: Tocoísta
-    col 9: Kimbanguista
-    col 10: Josafat
-    row 'Moxico': 541777@213 112334@274 1027@336 823@398 1372@443 112668@497 3807@559 29209@620 1575@677 1673@733 931@795
-    row 'Urbana': 375668@213 78113@274 839@336 712@398 1001@443 64294@497 3242@559 17055@620 1324@677 1424@733 705@795
-    row 'Rural': 166109@213 34221@274 189@336 111@398 372@443 48374@497 565@559 12154@620 251@677 249@733 224@795
-    row 'Luena': 337755@213 75045@274 730@336 565@398 800@443 57744@497 2954@559 12593@620 1121@677 1182@733 827@795
-    row 'Cangamba': 12902@213 3369@274 2@336 7@398 19@443 2584@497 59@558 573@620 1@677 2@733 2@795
-    row 'Cangumbe': 9135@213 2855@274 9@336 12@398 44@443 3552@497 16@558 156@620 47@677 11@733 3@795
-    row 'Lumbala Nguimbo': 38400@213 4906@274 89@336 51@398 68@443 9531@497 133@559 6608@620 26@677 46@733 7@795
-  p102 block 'Quadro 7. 1- População com 2 ou mais anos por província e área de residência, segundo a re': 15 rows, columns at [185, 248, 310, 365, 422, 469, 514, 552, 614, 660, 702, 764]
-    col 0: Total da população com ou mais anos
-    col 1: Assembleia de Deus pentecostal
-    col 2: Testemunha de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Bom Deus
-    col 7: Baptista
-    col 8: Mensagem dos ultimos Tempos
-    col 9: Sem religião
-    col 10: Outra
-    col 11: Não sabe/ Não respondeu
-    row 'Moxico': 541777@185 37304@248 3221@310 4158@365 45817@422 83788@469 5942@514 551@552 1079@614 64432@660 12724@702 17340@764
-    row 'Urbana': 375668@185 33398@248 2796@310 3622@365 30346@422 61028@469 5131@514 484@552 1033@614 46767@660 9479@702 12874@764
-    row 'Rural': 166109@185 3906@248 423@310 536@365 15471@422 22759@469 810@514 66@552 46@614 17665@660 3251@702 4466@764
-    row 'Luena': 337755@185 31517@248 2350@310 3424@365 25900@422 54520@469 4891@514 489@552 983@614 42577@660 6422@702 11121@764
-    row 'Cangamba': 12902@185 378@248 14@310 19@365 4450@422 429@469 66@514 29@552 1@614 671@660 173@702 54@764
-    row 'Cangumbe': 9135@185 347@248 25@310 113@365 317@422 310@469 112@514 0@552 1@614 887@660 19@702 302@764
-    row 'Lumbala Nguimbo': 38400@185 1408@248 459@310 54@365 4118@422 4829@469 32@514 1@552 46@614 1287@660 3442@702 1260@764
-== Moxico age_broad: pages [70]
-  p70 block 'Quadro 1. 4 - População por município, segundo grandes grupos etários,': 37 rows, columns at [275, 333, 406, 498]
-    col 0: Total
-    col 1: 0 - 14 anos
-    col 2: 15-64 anos
-    col 3: 65 ou mais anos
-    row 'Moxico': 574253@275 235549@333 318787@406 19917@498
-    row 'Urbana': 397185@275 162742@333 222412@406 12031@498
-    row 'Rural': 177067@275 72806@333 96376@406 7885@498
-    row 'Homens': 280847@275 116882@333 154285@406 9681@498
-    row 'Mulheres': 293405@275 118667@333 164502@406 10236@498
-    row 'Luena': 359847@275 146665@333 201558@406 11624@498
-    row 'Luena': 356880@275 145232@333 200105@406 11543@498
-== Moxico age_other: pages [71]
-  p71 block 'Quadro 1. 5 - População por província, segundo outros grupos etários,': 35 rows, columns at [202, 254, 306, 358, 410, 462, 546]
-    col 0: Total
-    col 1: 0-19 anos
-    col 2: 20-29 anos
-    col 3: 30-54 anos
-    col 4: 55-64 anos
-    col 5: 65-74 anos
-    col 6: 75 ou mais anos
-    row 'Moxico': 574253@202 308416@254 104186@306 121085@358 20649@410 11801@462 8116@546
-    row 'Urbana': 397185@202 215292@254 74082@306 82791@358 12989@410 7105@462 4926@546
-    row 'Rural': 177067@202 93124@254 30104@306 38294@358 7660@410 4696@462 3190@546
-    row 'Luena': 359847@202 194184@254 65954@306 75787@358 12299@410 6854@462 4770@546
-    row 'Luena': 356880@202 192438@254 65437@306 75251@358 12211@410 6805@462 4737@546
-    row 'Cassongo': 2967@202 1746@254 516@306 536@358 88@410 48@462 33@546
-    row 'Cangamba': 13877@202 8020@254 2036@306 2782@358 496@410 274@462 270@546
-== Moxico medians: pages [5, 8, 17, 18, 34, 35, 73]
-  p5: title '7.2.1. Idade Média e Mediana da População ................................................'; first 'mediana' row '7.2.1. Idade Média e Mediana da População ................................................'; figure columns at []; 0 entries: 
-  p8: title ''; first 'mediana' row 'Gráfico 7 – Idade mediana por município, 2024 ............................................'; figure columns at []; 0 entries: 
-  p17: title ''; first 'mediana' row None; figure columns at [272, 308, 357, 386, 550]; 0 entries: 
-  p18: title ''; first 'mediana' row '1.4 Idade mediana da população 18,0 18,0 18,0 18,0 18,0'; figure columns at [374, 421, 465, 513, 570]; 0 entries: 
-  p34: title '7.2.1. Idade Média e Mediana da População'; first 'mediana' row '7.2.1. Idade Média e Mediana da População'; figure columns at [359, 505]; 0 entries: 
-== Cunene ethnicity: pages [48, 99, 100]
-  p99 block 'Quadro 6.1 - População de 2 ou mais anos por área de residência, município e comuna, segun': 24 rows, columns at [154, 206, 261, 317, 376, 431, 488, 547, 583, 619, 654, 689, 740, 780, 819]
-    col 0: População com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Quimbundo (Kimbundu ou Tymbundu)
-    col 3: Lunda-Quioco (Lunda-kioko ou Lunda- Tchokwe Tshokwe)
-    col 4: Umbundo (ou Ovimbundo)
-    col 5: Grupo Nhaneca- Humbe (Nyaneka- Lumkumbi)
-    col 6: étnico da população Ambó (Vahambo tanbé designado Xikwanyama)
-    col 7: com 2 ou mais Helelo, Herero (Tchielelo, Tjiherero)
-    col 8: anos Cuangar
-    col 9: Khoisan
-    col 10: Vátua
-    col 11: Kwoi
-    col 12: Xindonga (Oshindonga)
-    col 13: Não sabe
-    col 14: Outra Etnia
-    row 'Cunene': 1688677@154 9485@206 58791@261 25788@317 111296@376 420264@431 856871@488 87586@547 4315@583 3709@619 1766@654 143@689 998@740 47817@780 59848@819
-    row 'Urbana': 434543@154 8045@206 22720@261 11624@317 99764@376 97520@431 147762@488 3934@547 1134@583 253@619 381@654 109@689 227@740 21834@780 19236@819
-    row 'Rural': 1254134@154 1440@206 36071@261 14164@317 11532@376 322744@431 709109@488 83652@547 3181@583 3456@619 1385@654 34@689 771@740 25983@780 40611@819
-    row 'Ombadja': 231703@154 1188@206 5708@261 1478@317 13743@376 61831@431 129796@488 776@548 47@583 1094@619 115@654 65@689 59@740 5872@780 9931@819
-    row 'Xangongo': 145167@154 1105@206 3868@261 1444@317 13667@376 60466@431 54401@488 717@548 47@583 1087@619 114@654 64@689 35@740 4497@780 3655@819
-    row 'Ombala yo Mungu': 86536@154 83@206 1840@261 34@317 75@376 1365@431 75395@488 59@547 0@583 7@619 1@654 1@689 24@740 1375@780 6276@819
-    row 'Cuanhama': 470833@154 4969@206 19477@261 6370@317 62982@376 41639@431 301081@488 1021@548 844@583 1089@619 256@654 36@689 126@741 16930@780 14012@819
-  p100 block 'Quadro 6.1 - População de 2 ou mais anos por área de residência, município e comuna, segun': 11 rows, columns at [154, 206, 261, 317, 376, 431, 488, 547, 583, 619, 654, 689, 740, 780, 819]
-    col 0: População com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Quimbundo (Kimbundu ou Tymbundu)
-    col 3: Lunda-Quioco (Lunda-kioko ou Lunda- Tchokwe Tshokwe)
-    col 4: Umbundo (ou Ovimbundo)
-    col 5: Grupo Nhaneca- Humbe (Nyaneka- Lumkumbi)
-    col 6: étnico da população Ambó (Vahambo tanbé designado Xikwanyama)
-    col 7: com 2 ou mais Helelo, Herero (Tchielelo, Tjiherero)
-    col 8: anos Cuangar
-    col 9: Khoisan
-    col 10: Vátua
-    col 11: Kwoi
-    col 12: Xindonga (Oshindonga)
-    col 13: Não sabe
-    col 14: Outra Etnia
-    row 'Cunene': 1688677@154 9485@206 58791@261 25788@317 111296@376 420264@431 856871@488 87586@547 4315@583 3709@619 1766@654 143@689 998@740 47817@780 59848@819
-    row 'Chissuata': 7407@154 2@206 135@261 773@317 253@376 1702@431 507@488 0@547 2967@583 0@619 0@654 0@689 0@740 169@780 899@819
-    row 'Chissuata': 7407@154 2@206 135@261 773@317 253@376 1702@431 507@488 0@547 2967@583 0@619 0@654 0@689 0@740 169@780 899@819
-    row 'Mupa': 37495@154 33@206 722@261 796@317 98@376 75@431 35310@488 18@547 0@583 64@619 0@654 0@689 0@740 253@780 127@819
-    row 'Mupa': 37495@154 33@206 722@261 796@317 98@376 75@431 35310@488 18@547 0@583 64@619 0@654 0@689 0@740 253@780 127@819
-    row 'Chiéde': 93840@154 34@206 4137@261 155@317 91@376 171@431 88597@488 21@547 6@583 549@619 0@654 0@689 37@740 6@780 34@819
-    row 'Chiéde': 93840@154 34@206 4137@261 155@317 91@376 171@431 88597@488 21@547 6@583 549@619 0@654 0@689 37@740 6@780 34@819
-== Cunene language: pages [101, 102]
-  p101 block 'Quadro 6.2 - População por área de residência, município e comuna, segundo línguas materna': 35 rows, columns at [282, 345, 408, 471, 546, 597, 669, 738]
-    col 0: Número de pessoas 2 ou mais anos
-    col 1: Português
-    col 2: Kimbundu
-    col 3: Umbundu
-    col 4: Língua materna agrupada Cokue (Chokwe/ Kioko)
-    col 5: Kikongo
-    col 6: Olunyaneka (Nhaneka)
-    col 7: Nganguela
-    row 'Cunene': 1688677@282 151043@345 9735@408 92525@471 22472@546 5230@597 254862@669 26960@738
-    row 'Urbana': 434543@282 76302@345 8318@408 83709@471 9300@546 4146@597 58467@669 17637@738
-    row 'Rural': 1254134@282 74741@345 1416@408 8816@471 13172@546 1083@597 196395@669 9323@738
-    row 'Ombadja': 231703@282 22923@345 1045@408 11267@471 1137@546 618@596 34502@669 3185@738
-    row 'Xangongo': 145167@282 19168@345 1020@408 11210@471 1111@546 565@596 34179@669 3171@738
-    row 'Ombala yo Mungu': 86536@282 3755@345 25@408 57@471 26@546 53@596 323@669 14@738
-    row 'Cuanhama': 470833@282 56945@345 5775@408 52662@471 4720@546 2955@597 22570@669 10197@738
-  p102 block 'Quadro 6.2 - População por área de residência, município e comuna, segundo línguas materna': 37 rows, columns at [249, 331, 388, 455, 501, 558, 626, 692, 751]
-    col 0: Número de pessoas 2 ou mais anos
-    col 1: Oxikwanhama (Kwanhama)
-    col 2: Ifyoti (Fiote)
-    col 3: Muhumbi
-    col 4: Língua materna Luvale
-    col 5: agrupada Khoisan
-    col 6: Línguas estrangeiras
-    col 7: Outras línguas
-    col 8: Não sabe
-    row 'Cunene': 1688677@249 958838@331 770@388 115675@455 117@501 1932@558 938@626 39441@692 8138@751
-    row 'Área de residência': 0@626
-    row 'Urbana': 434543@249 137123@331 605@388 27332@455 86@501 100@559 641@626 8412@692 2365@751
-    row 'Rural': 1254134@249 821716@331 165@388 88343@455 31@501 1832@559 297@626 31029@692 5773@751
-    row 'Municípios / Comunas': 0@626
-    row 'Ombadja': 231703@249 123239@331 56@388 22852@455 2@501 218@559 119@626 9972@692 567@751
-    row 'Xangongo': 145167@249 48891@331 54@388 22745@455 2@501 196@559 108@626 2390@692 356@751
-== Cunene religion: pages [105]
-  p105 block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re': 17 rows, columns at [211, 259, 310, 373, 420, 460, 510, 569, 621, 666, 733, 786]
-    col 0: População com 2 ou mais anos
-    col 1: Católica
-    col 2: Bom Deus
-    col 3: Islâmica/ Muçulmana
-    col 4: Animista
-    col 5: Judaica
-    col 6: Protestante
-    col 7: Universal do reino de Deus
-    col 8: Nova apostólica
-    col 9: Tocoísta
-    col 10: Kimbanguista
-    col 11: Josafat
-    row 'Cunene': 1688677@211 1192862@259 10526@310 1224@373 526@420 454@460 35004@510 3857@569 6778@621 3583@666 654@733 2212@786
-    row 'Urbana': 434543@211 235080@259 9017@310 429@373 48@420 108@460 14285@510 2778@569 4694@621 2639@666 478@733 1526@786
-    row 'Rural': 1254134@211 957782@259 1509@310 795@373 479@420 345@460 20719@510 1079@569 2083@621 944@666 176@733 686@786
-    row 'Ombadja': 231703@211 147880@259 1299@310 144@373 44@420 38@460 5411@510 536@569 1317@621 547@666 134@733 242@786
-    row 'Cuanhama': 470833@211 338431@259 5185@310 360@373 31@420 55@460 8453@510 2001@569 2793@621 1775@666 383@733 1310@786
-    row 'Curoca': 33663@211 10047@259 225@310 2@373 0@420 6@460 108@510 69@569 8@621 59@666 29@733 24@786
-    row 'Chitado': 32985@211 16404@259 9@310 19@373 10@420 10@460 232@510 78@569 74@621 5@666 6@733 13@786
-  p105 block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re': 17 rows, columns at [196, 262, 332, 392, 452, 514, 565, 629, 680, 731, 793]
-    col 0: População com 2 ou mais anos
-    col 1: Assembleia de Deus Pentecostal
-    col 2: Testemunha de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Baptista
-    col 7: Mensagem dos últimos Tempos
-    col 8: Sem religião
-    col 9: Outra religião
-    col 10: Não sabe/ Não respondeu
-    row 'Cunene': 1688677@196 45779@262 11009@332 3328@392 172375@452 36443@514 3639@565 187@629 100676@680 26197@731 31363@793
-    row 'Urbana': 434543@196 36477@262 7712@332 2320@392 48868@452 29949@514 1733@565 22720@629 14074@680 14496@731 7664@793
-    row 'Rural': 1254134@196 9302@262 3297@332 1009@392 123507@452 6495@514 1906@565 36071@629 86603@680 11702@731 23699@793
-    row 'Ombadja': 231703@196 3856@262 911@332 616@392 49640@452 3594@514 550@565 23@629 7996@680 3752@731 3173@793
-    row 'Cuanhama': 470833@196 26081@262 4985@332 1349@392 32636@452 19622@514 849@565 108@629 11222@680 8300@731 4903@793
-    row 'Curoca': 33663@196 322@262 87@332 366@392 1274@452 666@514 6@565 0@629 16358@680 200@731 3806@793
-    row 'Chitado': 32985@196 482@262 330@332 19@392 5809@452 689@514 0@565 2@629 5876@680 1700@731 1219@793
-== Cunene age_broad: pages [72, 74]
-  p72 block 'Quadro 1.4 - População por área de residência, municípios e comunas, segundo os grandes gr': 38 rows, columns at [311, 382, 453, 524]
-    col 0: etários, Total
-    col 1: 2024 0 - 14 anos
-    col 2: 15-64 anos
-    col 3: 65 ou mais anos
-    row 'Cunene': 1806417@311 857567@382 914224@453 34625@524
-    row 'Urbana': 460653@311 195888@382 260059@453 4706@524
-    row 'Rural': 1345764@311 661680@382 654165@453 29919@524
-    row 'Homens': 867639@311 429939@382 423506@453 14195@524
-    row 'Mulheres': 938777@311 427629@382 490718@453 20430@524
-    row 'Ombadja': 247338@311 119424@382 122092@453 5822@524
-    row 'Xangongo': 155254@311 77360@382 75157@453 2736@524
-  p74 block 'Quadro 1.6 - População por área de residência, municípios e comunas, segundo os grandes gr': 36 rows, columns at [182, 230, 278, 326, 374, 422, 470, 518, 566]
-    col 0: Total
-    col 1: 0 - 14 anos Homens
-    col 2: Mulheres
-    col 3: Grupos Total
-    col 4: etários 15 - 64 anos Homens
-    col 5: Mulheres
-    col 6: 65 Total
-    col 7: ou mais anos Homens
-    col 8: Mulheres
-    row 'Cunene': 857567@182 429939@230 427629@278 914224@326 423506@374 490718@422 34625@470 14195@518 20430@566
-    row 'Urbana': 195888@182 94102@230 101786@278 260059@326 120315@374 139744@422 4706@470 2129@518 2578@566
-    row 'Rural': 661680@182 335837@230 325843@278 654165@326 303190@374 350975@422 29919@470 12066@518 17852@566
-    row 'Ombadja': 119424@182 60197@230 59226@278 122092@326 54835@374 67258@422 5822@470 2163@518 3658@566
-    row 'Xangongo': 77360@182 38556@230 38805@278 75157@326 33999@374 41158@422 2736@470 1185@518 1551@566
-    row 'Ombala yo Mungu': 42063@182 21642@230 20422@278 46935@326 20836@374 26099@422 3085@470 978@518 2107@566
-    row 'Cuanhama': 219402@182 108007@230 111394@278 272448@326 126934@374 145514@422 8439@470 3465@518 4974@566
-== Cunene age_other: pages [73]
-  p73 block 'Quadro 1.5 - População por área de residência, municípios e comunas, segundo outros grupos': 36 rows, columns at [227, 280, 329, 378, 427, 476, 525]
-    col 0: Total
-    col 1: 0-19 anos
-    col 2: 20-29 anos
-    col 3: 30-54 anos
-    col 4: 55-64 anos
-    col 5: 65-74 anos
-    col 6: 75 ou mais anos
-    row 'Cunene': 1806417@227 1080515@280 322063@329 326472@378 42741@427 18511@476 16114@525
-    row 'Urbana': 460653@227 261239@280 93761@329 92286@378 8660@427 2781@476 1925@525
-    row 'Rural': 1345764@227 819276@280 228302@329 234186@378 34081@427 15730@476 14189@525
-    row 'Ombadja': 247338@227 149486@280 40825@329 44339@378 6865@427 3128@476 2694@525
-    row 'Xangongo': 155254@227 96712@280 25456@329 26567@378 3783@427 1574@476 1162@525
-    row 'Ombala yo Mungu': 92084@227 52774@280 15370@329 17773@378 3082@427 1554@476 1532@525
-    row 'Cuanhama': 500288@227 286208@280 95234@329 99247@378 11161@427 4582@476 3856@525
-== Cunene medians: pages [5, 18, 19, 20, 37, 38, 75]
-  p5: title '7.2.1. Idade média e mediana da população ................................................'; first 'mediana' row '7.2.1. Idade média e mediana da população ................................................'; figure columns at []; 0 entries: 
-  p18: title ''; first 'mediana' row None; figure columns at [339, 414, 467]; 0 entries: 
-  p19: title ''; first 'mediana' row '1.4 Idade mediana da população 15,0 15,0'; figure columns at [470, 527]; 0 entries: 
-  p20: title ''; first 'mediana' row '1.4 Idade mediana da população 15,0 17,0 15,0 15,0 16,0'; figure columns at [366, 381, 410, 456, 473, 503, 550]; 0 entries: 
-  p37: title '7.2.1. Idade média e mediana da população'; first 'mediana' row '7.2.1. Idade média e mediana da população'; figure columns at [107, 285, 352, 420, 440, 500]; 0 entries: 
-== Icolo_e_Bengo ethnicity: pages [45, 93]
-  p45 block 'Quadro 19 - População de 2 ou mais anos por grupo étnico,': 1 rows, columns at [423, 480]
-    col 0: Censo 2024 N.º
-    col 1: %
-    row 'População com 2 ou mais anos': 1456430@423 100@480
-  p45 block 'Quadro 20 - População com albinismo por área de residência,': 3 rows, columns at [311, 385, 466, 534]
-    col 0: população
-    col 1: População Total
-    col 2: com albinismo Homens
-    col 3: Mulheres
-    row 'Icolo e Bengo': 1523457@311 24315@385 12054@466 12262@534
-    row 'Urbana': 1373789@311 22287@385 11093@466 11194@534
-    row 'Rural': 149668@311 2028@386 960@461 1068@534
-  p93 block 'Quadro 6.1 - População de 2 ou mais anos, segundo grupos étnicos ou tribos,': 25 rows, columns at [157, 200, 250, 294, 346, 394, 450, 496, 535, 572, 602, 629, 686, 722, 781]
-    col 0: População com 2 ou mais anos
-    col 1: Quicongo (Kikongu ou Congolês conguês
-    col 2: Quimbundo (Kimbundu ou Tymbundu)
-    col 3: Lunda- Quioco (Lunda- kioko ou Lunda- Tchokwe Tshokwe)
-    col 4: Umbundo (ou Ovimbundo)
-    col 5: Nhaneca- Humbe (Nyaneka- Lumkumbi)
-    col 6: Grupo_Étnico da Ambó (Vahambo tanbé designado Xikwanyama)
-    col 7: população com Helelo, Herero (Tchielelo, Tjiherero)
-    col 8: 2 ou mais Cuangar
-    col 9: anos Khoisan
-    col 10: Vátua
-    col 11: Kwoi
-    col 12: Xindonga (Oshindonga)
-    col 13: Não sabe
-    col 14: Outra Etnia
-    row 'Icolo e Bengo': 1456430@157 167781@200 765667@250 49529@294 209888@346 8532@394 1451@450 446@496 331@535 525@572 109@602 401@629 433@686 223501@722 27835@781
-    row 'Urbana': 1314011@158 162163@201 682600@251 47847@295 178997@347 7650@395 1333@451 415@497 300@535 456@572 101@602 307@629 387@686 205381@722 26074@782
-    row 'Rural': 142419@158 5618@201 83067@251 1682@295 30891@347 883@395 118@451 31@496 31@535 69@572 8@602 94@629 46@686 18121@722 1761@782
-    row 'Catete': 63972@158 2507@201 37747@251 762@295 15289@347 337@395 109@451 18@496 15@535 11@572 6@602 58@629 12@686 6291@723 811@782
-    row 'Catete': 22703@158 1109@201 13943@251 95@294 4226@347 85@395 75@451 0@497 6@535 2@572 0@602 4@630 2@686 2873@723 282@782
-    row 'Cassoneca': 23383@158 765@201 12605@251 539@295 7340@347 129@395 28@451 16@496 9@535 7@572 4@602 32@629 6@686 1678@723 224@782
-    row 'Caculo': 7489@158 366@201 4326@251 65@294 1986@347 54@395 2@451 0@497 0@535 0@572 0@602 22@629 2@686 493@723 173@782
-== Icolo_e_Bengo language: pages [94]
-  p94 block 'Quadro 6.2 - População por província e área de residência, segundo a língua Materna': 26 rows, columns at [143, 189, 234, 278, 342, 380, 430, 477, 535, 567, 612, 644, 681, 729, 763, 792]
-    col 0: Número de pessoas com 2 ou mais anos
-    col 1: Português
-    col 2: Kimbundu
-    col 3: Umbundu
-    col 4: Cokue (Chokwe/Kioko)
-    col 5: Kikongo
-    col 6: Olunyaneka (Nhaneka)
-    col 7: Língua materna Nganguela
-    col 8: agrupada Oxikwanhama (Kwanhama)
-    col 9: Ifyoti (Fiote)
-    col 10: Muhumbi
-    col 11: Luvale
-    col 12: Khoisan
-    col 13: Línguas estrangeira
-    col 14: Outras línguas
-    col 15: Não sabe
-    row 'Icolo e Bengo': 1456430@143 913852@189 294170@234 117700@278 27141@342 71057@380 6241@430 2499@477 1924@535 4935@567 289@612 484@644 631@681 3745@729 2924@763 8838@792
-    row 'Urbana': 1314011@144 834928@189 252918@234 100884@278 26076@343 69346@380 5420@431 2230@477 1762@536 4779@568 271@612 453@644 604@681 3588@730 2730@764 8022@793
-    row 'Rural': 142419@144 78924@189 41252@234 16816@278 1064@343 1710@380 821@431 270@477 162@536 156@568 18@612 31@644 27@681 157@730 195@764 815@793
-    row 'Municípios /': 0@729
-    row 'Catete': 63972@144 40233@189 13377@234 8360@278 421@343 520@381 213@431 144@477 108@536 4@569 8@612 10@644 15@681 103@730 100@764 357@793
-    row 'Catete': 22703@144 16224@189 3961@234 1978@278 26@343 167@381 33@431 31@477 67@536 0@569 4@612 0@644 4@681 43@730 28@764 136@793
-    row 'Cassoneca': 23383@144 11596@189 5762@234 4933@278 352@343 262@381 107@431 72@477 34@536 4@569 0@612 10@644 9@681 14@730 47@764 181@793
-== Icolo_e_Bengo religion: pages [97, 98]
-  p97 block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re': 10 rows, columns at [198, 247, 298, 354, 403, 446, 503, 567, 624, 674, 731, 780]
-    col 0: População com 2 ou mais anos
-    col 1: Católica
-    col 2: Bom Deus
-    col 3: Islâmica/ Muçulmana
-    col 4: Animista
-    col 5: Judaica
-    col 6: Protestante
-    col 7: Universal do reino de Deus
-    col 8: Nova apostolica
-    col 9: Tocoísta
-    col 10: Kimbanguista
-    col 11: Josafat
-    row 'Icolo e Bengo': 1456430@198 536436@247 29381@298 5545@354 1039@403 1178@446 43438@503 24420@567 13682@624 11781@674 8952@731 7631@780
-    row 'Urbana': 1314011@199 476175@248 25374@298 5255@355 963@404 1041@447 39333@504 23433@568 11694@625 10330@675 8667@731 6954@781
-    row 'Rural': 142419@199 60260@248 4007@298 290@355 76@404 137@447 4105@504 987@568 1988@625 1451@675 285@731 677@781
-    row 'Catete': 63972@199 23462@248 2343@298 234@355 15@404 49@447 2326@504 334@568 1015@625 1016@675 83@731 439@781
-    row 'Quiçama': 28676@199 10246@248 1117@298 14@355 6@404 16@447 870@504 141@568 167@625 352@675 27@731 213@781
-    row 'Sequele': 582430@199 214575@248 12557@298 2009@355 573@404 605@447 20595@504 9290@568 6227@625 4552@675 4686@731 2677@781
-    row 'Calumbo': 623997@199 225422@248 9216@298 2783@355 311@404 312@447 14706@504 13300@568 4602@625 4469@675 3743@731 3716@781
-  p98 block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a re': 10 rows, columns at [203, 267, 331, 387, 440, 487, 542, 607, 664, 727, 792]
-    col 0: População com 2 ou mais anos
-    col 1: Assembleia de Deus pentecostal
-    col 2: Testemunha de Jeová
-    col 3: Metodista
-    col 4: Evangélica
-    col 5: Adventista
-    col 6: Baptista
-    col 7: Mensagem dos ultimos Tempos
-    col 8: Sem religião
-    col 9: Outra religião
-    col 10: Não sabe/ Não respondeu
-    row 'Icolo e Bengo': 1456430@203 266466@267 70270@331 40271@387 49445@440 81827@487 3313@542 1709@607 223085@664 10638@727 42219@792
-    row 'Urbana': 1314011@204 246522@268 67500@332 35838@388 46510@440 72314@487 2905@544 1679@608 199545@664 9391@728 38883@792
-    row 'Rural': 142419@204 19944@268 2769@332 4433@388 2935@440 9514@487 408@543 30@607 23540@664 1246@728 3336@792
-    row 'Catete': 63972@204 9429@268 1359@332 2569@388 1143@440 5053@487 227@544 20@607 10205@664 362@728 2290@792
-    row 'Quiçama': 28676@204 4904@268 789@332 1525@388 552@440 843@487 98@543 0@608 5356@664 668@728 772@792
-    row 'Sequele': 582430@204 100545@268 25715@332 15417@388 25486@440 37489@487 1302@544 559@608 90477@664 4389@728 19000@792
-    row 'Calumbo': 623997@204 127953@268 37663@332 16734@388 17870@440 27754@487 1365@544 1115@608 90127@664 4062@728 16774@792
-== Icolo_e_Bengo age_broad: pages [67, 85]
-  p67 block 'Quadro 1.3 - População por grupos etários quinquenais,': 21 rows, columns at [319, 383, 449]
-    col 0: Total
-    col 1: Homens
-    col 2: Mulheres
-    row 'Icolo e Bengo': 1523457@319 747445@383 776013@449
-    row '0-4 anos': 168061@319 84198@383 83863@449
-    row '5-9 anos': 184840@319 92418@383 92422@449
-    row '10-14 anos': 199529@319 98245@383 101284@449
-    row '15-19 anos': 174728@319 84166@383 90563@449
-    row '20-24 anos': 142172@319 67602@383 74569@449
-    row '25-29 anos': 117454@319 55596@383 61858@449
-  p67 block 'Quadro 1. 4 - População por município, segundo grandes grupos etários,': 24 rows, columns at [290, 348, 401, 467]
-    col 0: Total
-    col 1: 0 - 14 anos
-    col 2: 15-64 anos
-    col 3: 65 ou mais anos
-    row 'Urbana': 1373789@290 500832@348 806249@401 66709@467
-    row 'Rural': 149668@290 51599@348 84851@401 13219@467
-    row 'Catete': 67173@290 21583@348 37953@401 7637@467
-    row 'Catete': 23828@290 8082@348 13778@401 1968@467
-    row 'Cassoneca': 24593@290 7617@348 13229@401 3746@467
-    row 'Caculo Cahango': 7824@290 2367@348 4646@401 811@467
-    row 'Caxicane': 10928@290 3517@348 6300@401 1111@467
-  p85 block 'Quadro 4.3 - Pessoas que têm albinismo por município e área de residência segundo grupo et': 25 rows, columns at [268, 323, 369, 417, 467, 510]
-    col 0: Total da população
-    col 1: Total
-    col 2: 0-4 anos
-    col 3: Grandes grupos de 5-14 anos
-    col 4: idade 15-64 anos
-    col 5: 65 ou mais
-    row 'Icolo e Bengo': 1523457@268 24315@323 2615@369 5408@417 15421@467 872@510
-    row 'Urbana': 1373789@268 22287@323 2367@369 4975@417 14233@467 713@510
-    row 'Rural': 149668@265 2028@321 248@366 433@414 1188@465 159@510
-    row 'Catete': 67173@263 1163@320 112@365 210@414 750@462 92@508
-    row 'Catete': 23828@263 551@317 39@364 74@412 412@462 26@508
-    row 'Cassoneca': 24593@263 275@317 25@364 74@412 142@462 35@508
-    row 'Caculo Cahango': 7824@261 220@317 27@364 47@412 137@462 9@506
-== Icolo_e_Bengo age_other: pages [68]
-  p68 block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 25 rows, columns at [215, 264, 313, 361, 410, 458, 527]
-    col 0: Total
-    col 1: 0-19 anos
-    col 2: 20-29 anos
-    col 3: 30-54 anos
-    col 4: 55-64 anos
-    col 5: 65-74 anos
-    col 6: 75 ou mais anos
-    row 'Icolo e Bengo': 1523457@215 727159@264 259626@313 395767@361 60978@410 48930@458 30998@527
-    row 'Urbana': 1373789@215 660742@264 234654@313 359526@361 52158@410 40528@458 26181@527
-    row 'Rural': 149668@215 66417@264 24972@313 36241@361 8819@410 8402@458 4817@527
-    row 'Catete': 67173@215 28031@264 11089@313 15638@361 4778@410 4987@458 2650@527
-    row 'Catete': 23828@215 10503@264 4678@313 5547@361 1132@410 1224@458 745@527
-    row 'Cassoneca': 24593@215 9741@264 3272@313 5452@361 2381@410 2577@458 1169@527
-    row 'Caculo Cahango': 7824@215 3171@264 1169@313 2056@361 617@410 517@458 294@527
-== Icolo_e_Bengo medians: pages [5, 8, 18, 19, 34, 70]
-  p5: title '7.2.1. Idade média e mediana da população ................................................'; first 'mediana' row '7.2.1. Idade média e mediana da população ................................................'; figure columns at []; 0 entries: 
-  p8: title ''; first 'mediana' row 'Gráfico 7 – Idade mediana por município, 2024.............................................'; figure columns at []; 0 entries: 
-  p18: title ''; first 'mediana' row None; figure columns at [191, 314, 410, 428, 480, 520]; 0 entries: 
-  p19: title ''; first 'mediana' row '1.4 Idade mediana da população 21,0 20,0 23,0 21,0 21,0'; figure columns at [368, 408, 460, 504, 554]; 0 entries: 
-  p34: title '7.2.1. Idade média e mediana da população'; first 'mediana' row '7.2.1. Idade média e mediana da população'; figure columns at [77, 344, 384, 426]; 0 entries: 
+== Uige: 247 pages
+  p18: quadros, gráficos e cartogramas, incluindo uma breve análise dos indicadores.
+  p20: Quadro 1 - Síntese dos principais indicadores, 2014 e 2024
+      block 'Quadro 1 - Síntese dos principais indicadores, 2014 e': 4 rows, widths [2], first ['N.º INDICADORES', '1.1 Total da população', '2.1 Total de agregados familiares que receberam algum tipo de apoio social', '4.6 População com 18 ou mais anos que concluiu o II Ciclo do ensino secundário']
+  p21: Quadro 2 - Síntese dos principais indicadores, 2024
+  p26: Quadro 3- Taxa de subcobertura líquida de pessoas por área de residência || Quadro 4 - Taxa de subcobertura líquida dos agregados familiares por área de residência
+  p27: Quadro 5 - Índice de erro de conteúdo para características demográficas || Quadro 6 - Probabilidade de inclusão e de omissão para as pessoas || Quadro 7 -Distribuição da população final verdadeira
+  p31: Quadro 8 - Número de municípios, comunas e localidades por província à luz da Lei
+      block 'Quadro 8 - Número de municípios, comunas e localidades por província à': 24 rows, widths [3, 4], first ['Uíge', 'Uíge', 'Bungo', 'Ambuíla']
+  p32: Quadro 9 - População residente por área de residência, segundo o sexo, 2014 e 2024
+      block 'Quadro 9 - População residente por área de residência, segundo o sexo,': 3 rows, widths [6], first ['Uíge', 'Urbana', 'Rural']
+  p33: Quadro 10 - População residente por município, segundo o sexo, Censo 2024
+      block 'Quadro 10 - População residente por município, segundo o sexo, Censo': 24 rows, widths [3], first ['Uíge', 'Dange Quitexe', 'Bungo', 'Ambuila']
+  p34: Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e 2024
+      block 'Quadro 11 - População residente por município, segundo o sexo, Censos ': 17 rows, widths [6], first ['Uíge', 'Uíge', 'Ambuíla', 'Songo']
+  p38: Quadro 12 - População por área de residência e sexo, 2014 e 2024
+  p39: Quadro 13 - População residente por grupos de idade, segundo o sexo, 2014 e 2024
+      block 'Quadro 13 - População residente por grupos de idade, segundo o sexo, 2': 5 rows, widths [6], first ['Uíge', '0 - 14 anos', '15 - 24 anos', '25 - 64 anos']
+  p41: Quadro 14 - População com 12 ou mais anos por estado civil, segundo o sexo, 2014 e 2024
+      block 'Quadro 14 - População com 12 ou mais anos por estado civil, segundo o ': 7 rows, widths [3, 6], first ['Uíge', 'Solteiro(a)', 'Casado(a) / União de facto', 'Divorciado(a)']
+  p42: Quadro 15 - População com registo de nascimento por área de residência, 2014 e 2024
+  p43: Quadro 16 - População com bilhete de identidade, 2024
+  p44: Quadro 17 - População com Bilhete de identidade por província, segundo o sexo, 2024
+  p45: Quadro 18 - Agregados familiares que receberam algum apoio social, 2024
+  p46: Quadro 19 - Distribuição da população com 5 ou mais anos por tipo de domínio funcional e
+  p47: Quadro 20 - Crianças órfãs com 0-17 anos de idade, segundo o tipo, 2014 e 2024
+  p48: Quadro 21 - População de 2 ou mais anos por grupo étnico, 2024
+      block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, widths [2], first ['Número de pessoas com 2 ou mais anos']
+  p49: Quadro 22 - População com albinismo por área de residência, 2024 || Quadro 23 - População com 2 ou mais anos de idade, segundo a
+  p52: Quadro 24 - População com 5 ou mais anos de idade, segundo a frequência escolar, 2024
+  p53: Quadro 25 - População com 5-18 anos fora do sistema de ensino por grupos etários,
+      block 'Quadro 25 - População com 5-18 anos fora do sistema de ensino por grup': 4 rows, widths [4], first ['Uíge', '5-11 anos', '12-14 anos', '15-18 anos']
+  p54: Quadro 26 - População por tipo de habitação, 2024
+  p55: Quadro 27 - Agregados familiares por município
+  p56: Quadro 28 - Agregados familiares por tamanho e média de pessoas, 2024
+  p57: Quadro 29 - Agregados familiares por tipo e localização da instalação sanitária, 2024
+  p58: Quadro 30 - Agregados familiares com acesso a água || Quadro 31 - Agregados familiares que utilizam a electricidade da rede
+  p60: Quadro 32 - Agregados familiares por posse de alguns bens, 2024 || Quadro 33 - Agregado familiar por área de residência segundo a
+  p67: Quadro 1.1 - População por área de residência e província, 2024
+  p68: Quadro 1.1 - População por área de residência e província, 2024
+  p69: Quadro 1.2 - População por idades simples, 2024
+  p70: Quadro 1.3 - População por grupos etários quinquenais, 2024
+      block 'Quadro 1.3 - População por grupos etários quinquenais,': 23 rows, widths [3], first ['Uíge', 'Urbana', 'Rural', '0-4 anos']
+  p71: Quadro 1.4 - População por província, segundo grandes grupos etários, 2024
+      block 'Quadro 1.4 - População por província, segundo grandes grupos etários,': 53 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p72: Quadro 1.4 - População por província, segundo grandes grupos etários, 2024
+      block 'Quadro 1.4 - População por província, segundo grandes grupos etários,': 23 rows, widths [4], first ['Nova Esperança', 'Nova Esperança', 'Buenga-Sul', 'Cuílo Camboso']
+  p73: Quadro 1.5 - População por município, segundo outros grupos etários, 2024
+      block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 45 rows, widths [7], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p74: Quadro 1.5 - População por município, segundo outros grupos etários, 2024
+      block 'Quadro 1.5 - População por município, segundo outros grupos etários,': 30 rows, widths [7], first ['Uíge', 'Uíge', 'Cancungo', 'Casseche']
+  p75: Quadro 1.6 - População por município e área de residência, 2024
+      block 'Quadro 1.6 - População por município e área de residência,': 30 rows, widths [9], first ['Uíge', 'Urbana', 'Rural', 'Municípios']
+  p76: Quadro 1.6 - População por município e área de residência, 2024
+      block 'Quadro 1.6 - População por município e área de residência,': 32 rows, widths [9], first ['Bembe', 'Bembe', 'Mabaia', 'Milunga']
+  p77: Quadro 1.6 - População por município e área de residência, 2024
+      block 'Quadro 1.6 - População por município e área de residência,': 15 rows, widths [9], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p78: Quadro 1.7 - Idade média e mediana da população por área de residência e sexo
+  p81: Quadro 2.1 - População com 12 ou mais anos por área de residência, município e comuna, segundo o estado civil ,
+      block 'Quadro 2.1 - População com 12 ou mais anos por área de residência, mun': 47 rows, widths [7], first ['Uíge', 'Rural', 'Urbana', 'Dange Quitexe']
+  p82: Quadro 2.1 - População com 12 ou mais anos por área de residência, município e comuna, segundo o estado civil ,
+      block 'Quadro 2.1 - População com 12 ou mais anos por área de residência, mun': 28 rows, widths [7], first ['Casseche', 'Luanga', 'Mucaba', 'Mucaba']
+  p85: Quadro 3.1 - População residente com registo de nascimento por província e área de
+  p86: Quadro 3.1 - População residente com registo de nascimento por província e área de
+  p87: Quadro 3.2 - População com registo de nascimento por grupos etários e área || Quadro 3.3 - População com 5 anos com bilhete de identidade, grupos
+      block 'Quadro 3.2 - População com registo de nascimento por grupos etários e ': 17 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', '0-4 anos']
+      block 'Quadro 3.3 - População com 5 anos com bilhete de identidade, grupos': 16 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', '5-9 anos']
+  p88: Quadro 3.4 - População com bilhete de identidade, por província e
+  p89: Quadro 3.4 - População com bilhete de identidade, por província e
+  p93: Quadro 4.1 - População com 5 ou mais anos por tipo de domínio funcional e grau de dificuldade, 2024
+  p94: Quadro 4.2 - População com albinismo por municípios, comunas e área de residência,
+      block 'Quadro 4.2 - População com albinismo por municípios, comunas e área de': 60 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p95: Quadro 4.2 - População com albinismo por municípios, comunas e área de residência,
+      block 'Quadro 4.2 - População com albinismo por municípios, comunas e área de': 15 rows, widths [4], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p96: Quadro 4.3 - Pessoas que têm albinismo por municípios, comunas e área de residência, segundo grupo
+      block 'Quadro 4.3 - Pessoas que têm albinismo por municípios, comunas e área ': 61 rows, widths [6], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p97: Quadro 4.3 - Pessoas que têm albinismo por municípios, comunas e área de residência, segundo grupo
+      block 'Quadro 4.3 - Pessoas que têm albinismo por municípios, comunas e área ': 15 rows, widths [6], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p101: Quadro 5.1 - Crianças com 0-17 anos que não vivem com os pais por província e área de residência, 2024
+  p102: Quadro 5.1 - Crianças com 0-17 anos que não vivem com os pais por província e área de residência, 2024
+  p103: Quadro 5.2 - Crianças órfãos com 0-17 anos por área de residência e grupos etários, segundo o tipo e taxa de orfandade, 
+      block 'Quadro 5.2 - Crianças órfãos com 0-17 anos por área de residência e gr': 2 rows, widths [12], first ['Urbana', 'Rural']
+  p107: Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo os grupos étnicos tribos, 2024
+      block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e c': 26 rows, widths [15], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p108: Quadro 6.2 - População por município, comuna e área de residência, segundo a língua materna, 2024
+      block 'Quadro 6.2 - População por município, comuna e área de residência, seg': 26 rows, widths [15, 16], first ['Cunene', 'Urbana', 'Rural', 'Dange Quitexe']
+  p111: Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a religião ou espiritualidade, 202
+      block 'Quadro 7.1 - População com 2 ou mais anos por área de residência e mun': 26 rows, widths [12], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p115: Quadro 8.1 - População com 15 ou mais anos que sabe ler e escrever por município e área de residência, 2024
+  p116: Quadro 8.1 - População com 15 ou mais anos que sabe ler e escrever por município e área de residência, 2024
+  p117: Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sexo
+  p118: Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sexo
+  p119: Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sexo
+  p120: Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sexo
+  p121: Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência e
+      block 'Quadro 8.4 - População com 5 ou mais anos por área de residência, muni': 25 rows, widths [10], first ['Uíge', 'Urbana', 'Rural', 'Maquela do Zombo']
+  p122: Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência e
+      block 'Quadro 8.4 - População com 5 ou mais anos por área de residência, muni': 38 rows, widths [10], first ['Quimbele', 'Quimbele', 'Icoca', 'Cangola']
+  p123: Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por área de residência,
+  p124: Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por área de residência,
+  p125: Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por área de residência,
+  p126: Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por área de residência,
+  p127: Quadro 8.7 - População com 15-18 anos por município, comuna e área de residência fora do
+      block 'Quadro 8.7 - População com 15-18 anos por município, comuna e área de ': 61 rows, widths [6], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p128: Quadro 8.7 - População com 15-18 anos por município, comuna e área de residência fora do
+      block 'Quadro 8.7 - População com 15-18 anos por município, comuna e área de ': 15 rows, widths [6], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p129: Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esco
+      block 'Quadro 8.8 - População com 5 ou mais anos por área de residência e gru': 33 rows, widths [10], first ['Uíge', '5-9 anos', '10-14 anos', '15-19 anos']
+  p130: Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esco
+      block 'Quadro 8.8 - População com 5 ou mais anos por área de residência e gru': 27 rows, widths [10], first ['65-69 anos', '70-74 anos', '75-79 anos', '80-84 anos']
+  p131: Quadro 8.9 - População com 5-18 anos por província e área de residência fora do sistema de ensino, 2024
+  p132: Quadro 8.9 - População com 5-18 anos por província e área de residência fora do sistema de ensino, 2024
+  p133: Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.10 - População com 5-18 anos por área de residência, municípi': 35 rows, widths [10], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p134: Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.10 - População com 5-18 anos por área de residência, municípi': 41 rows, widths [10], first ['Songo', 'Songo', 'Quivuenga', 'Quimbele']
+  p135: Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.11 - População com 5-11 anos por área de residência, municípi': 35 rows, widths [10], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p136: Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.11 - População com 5-11 anos por área de residência, municípi': 41 rows, widths [10], first ['Songo', 'Songo', 'Quivuenga', 'Quimbele']
+  p137: Quadro 8.12 - População com 5 ou mais anos por área de residência, município e comuna, segundo o nível de ensino a frequ
+      block 'Quadro 8.12 - População com 5 ou mais anos por área de residência, mun': 38 rows, widths [16], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p138: Quadro 8.12 - População com 5 ou mais anos por área de residência, município e comuna, segundo o nível de ensino a frequ
+      block 'Quadro 8.12 - População com 5 ou mais anos por área de residência, mun': 38 rows, widths [16], first ['Quimbele', 'Quimbele', 'Icoca', 'Cangola']
+  p139: Quadro 8.13 - População com 12-14 anos por área de residência, município e comuna, segundo a situação de
+      block 'Quadro 8.13 - População com 12-14 anos por área de residência, municíp': 50 rows, widths [10], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p140: Quadro 8.13 - População com 12-14 anos por área de residência, município e comuna, segundo a situação de
+      block 'Quadro 8.13 - População com 12-14 anos por área de residência, municíp': 26 rows, widths [10], first ['Mucaba', 'Mucaba', 'Uando Mucaba', 'Nova Esperança']
+  p141: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 35 rows, widths [8], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p142: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 41 rows, widths [8], first ['Songo', 'Songo', 'Quivuenga', 'Quimbele']
+  p143: Quadro 8.15 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.15 - População com 18 ou mais anos por área de residência, mu': 38 rows, widths [13], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p144: Quadro 8.15 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.15 - População com 18 ou mais anos por área de residência, mu': 38 rows, widths [13], first ['Quimbele', 'Quimbele', 'Icoca', 'Cangola']
+  p145: Quadro 8.16 - Taxa líquida de frequência do ensino primário por área de residência, município e comuna, segundo o
+  p146: Quadro 8.16 - Taxa líquida de frequência do ensino primário por área de residência, município e comuna, segundo o
+  p147: Quadro 8.17 - Taxa líquida de frequência do ensino secundário por área de residência, município e comuna, segundo
+  p148: Quadro 8.17 - Taxa líquida de frequência do ensino secundário por área de residência, município e comuna, segundo
+  p151: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 29 rows, widths [11], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p152: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 32 rows, widths [11], first ['Bembe', 'Bembe', 'Mabaia', 'Milunga']
+  p153: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 15 rows, widths [11], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p154: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu
+      block 'Quadro 9.2 - Agregados familiares por área de residência, município e ': 29 rows, widths [9], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p155: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu
+      block 'Quadro 9.2 - Agregados familiares por área de residência, município e ': 32 rows, widths [9], first ['Bembe', 'Bembe', 'Mabaia', 'Milunga']
+  p156: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu
+      block 'Quadro 9.2 - Agregados familiares por área de residência, município e ': 15 rows, widths [9], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p157: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 29 rows, widths [7, 8], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p158: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 32 rows, widths [7, 8], first ['Bembe', 'Bembe', 'Mabaia', 'Milunga']
+  p159: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 15 rows, widths [8], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p160: Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que s
+      block 'Quadro 9.4 -Agregados familiares por área de residência, município e c': 32 rows, widths [10], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p161: Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que s
+      block 'Quadro 9.4 -Agregados familiares por área de residência, município e c': 34 rows, widths [9, 10], first ['Milunga', 'Milunga', 'Macocola', 'Songo']
+  p162: Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que s
+      block 'Quadro 9.4 -Agregados familiares por área de residência, município e c': 10 rows, widths [10], first ['Massau', 'Massau', 'Macolo', 'Nsosso']
+  p163: Quadro 9.5 - Agregados familiares por área de residência, município e comuna, segundo a situação
+      block 'Quadro 9.5 - Agregados familiares por área de residência, município e ': 50 rows, widths [3], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p164: Quadro 9.5 - Agregados familiares por área de residência, município e comuna, segundo a situação
+      block 'Quadro 9.5 - Agregados familiares por área de residência, município e ': 26 rows, widths [3], first ['Mucaba', 'Mucaba', 'Uando Mucaba', 'Nova Esperança']
+  p165: Quadro 9.6 -Agregados familiares por área de residência, município e comuna, segundo o acesso à água da rede
+      block 'Quadro 9.6 -Agregados familiares por área de residência, município e c': 63 rows, widths [5], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p166: Quadro 9.6 -Agregados familiares por área de residência, município e comuna, segundo o acesso à água da rede
+      block 'Quadro 9.6 -Agregados familiares por área de residência, município e c': 14 rows, widths [5], first ['Uíge', 'Alto Zaza', 'Alto Zaza', 'Cuango Calumbo']
+  p167: Quadro 9.7 - Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.7 - Agregados familiares por área de residência, município e ': 61 rows, widths [3], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p168: Quadro 9.7 - Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.7 - Agregados familiares por área de residência, município e ': 15 rows, widths [3], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p169: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 38 rows, widths [7, 8], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p170: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 38 rows, widths [8], first ['Quimbele', 'Quimbele', 'Icoca', 'Cangola']
+  p171: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 53 rows, widths [6], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p172: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 23 rows, widths [6], first ['Nova Esperança', 'Nova Esperança', 'Buenga-Sul', 'Cuílo Camboso']
+  p173: Quadro 9.9 - Agregados familiares por área de residência, município e comuna, segundo a posse de parcela/lavra
+      block 'Quadro 9.9 - Agregados familiares por área de residência, município e ': 50 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p174: Quadro 9.9 - Agregados familiares por área de residência, município e comuna, segundo a posse de parcela/lavra
+      block 'Quadro 9.9 - Agregados familiares por área de residência, município e ': 26 rows, widths [4], first ['Mucaba', 'Mucaba', 'Uando Mucaba', 'Nova Esperança']
+  p175: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 41 rows, widths [4, 5], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p176: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 35 rows, widths [4, 5], first ['Cangola', 'Cangola', 'Bengo', 'Caiongo']
+  p177: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 41 rows, widths [7], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p178: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 35 rows, widths [5, 7], first ['Cangola', 'Cangola', 'Bengo', 'Caiongo']
+  p179: Quadro 9.11 - Agregados familiares por área de residência, município e comuna, segundo a situação de criação
+      block 'Quadro 9.11 - Agregados familiares por área de residência, município e': 45 rows, widths [3], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p180: Quadro 9.11 - Agregados familiares por área de residência, município e comuna, segundo a situação de criação
+      block 'Quadro 9.11 - Agregados familiares por área de residência, município e': 31 rows, widths [3], first ['Uíge', 'Uíge', 'Cancungo', 'Casseche']
+  p181: Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna, segundo o tipo de
+      block 'Quadro 9.12 - Agregados familiares criadores de animais por área de re': 45 rows, widths [7], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p182: Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna, segundo o tipo de
+      block 'Quadro 9.12 - Agregados familiares criadores de animais por área de re': 31 rows, widths [7], first ['Uíge', 'Uíge', 'Cancungo', 'Casseche']
+  p183: Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de actividade
+      block 'Quadro 9.13 - Agregados familiares por área de residência, município e': 61 rows, widths [6], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p184: Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de actividade
+      block 'Quadro 9.13 - Agregados familiares por área de residência, município e': 15 rows, widths [5, 6], first ['Quipedro', 'Quipedro', 'Alto Zaza', 'Alto Zaza']
+  p185: Quadro 9.14 - Agregados familiares por área de residência, municípios e comunas, segundo a posse de bens que funcionam e
+      block 'Quadro 9.14 - Agregados familiares por área de residência, municípios ': 38 rows, widths [11], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p186: Quadro 9.14 - Agregados familiares por área de residência, municípios e comunas, segundo a posse de bens que funcionam e
+      block 'Quadro 9.14 - Agregados familiares por área de residência, municípios ': 38 rows, widths [11], first ['Quimbele', 'Quimbele', 'Icoca', 'Cangola']
+  p187: Quadro 9.15 - Agregados familiares por área de residência, municípios e comunas, segundo o
+      block 'Quadro 9.15 - Agregados familiares por área de residência, municípios ': 45 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p188: Quadro 9.15 - Agregados familiares por área de residência, municípios e comunas, segundo o
+      block 'Quadro 9.15 - Agregados familiares por área de residência, municípios ': 31 rows, widths [4], first ['Uíge', 'Uíge', 'Cancungo', 'Casseche']
+  p189: Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade que prestou
+      block 'Quadro 9.16 - Agregados familiares por área de residência, município e': 45 rows, widths [5], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p190: Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade que prestou
+      block 'Quadro 9.16 - Agregados familiares por área de residência, município e': 31 rows, widths [5], first ['Uíge', 'Uíge', 'Cancungo', 'Casseche']
+  p191: Quadro 9.17 - Agregados familiares por área de residência,
+  p192: Quadro 9.17 - Agregados familiares por área de residência,
+  p193: Quadro 9.18 - Agregados familiares por área de residência e município, segundo o tipo de núcleo
+  p194: Quadro 9.19 - Agregados familiares por grupo etário, segundo o sexo do chefe, 2024 || Quadro 9.20 - Agregados familiares por área de residência e município, segundo o tamanho e média de pessoas
+      block 'Quadro 9.19 - Agregados familiares por grupo etário, segundo o sexo do': 1 rows, widths [6], first ['Uíge']
+  p199: Quadro 10.2 - Habitações familiares por área de residência, município e comuna, segundo o tipo de habitação, 2024
+      block 'Quadro 10.2 - Habitações familiares por área de residência, município ': 63 rows, widths [7], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p200: Quadro 10.2 - Habitações familiares por área de residência, município e comuna, segundo o tipo de habitação, 2024
+      block 'Quadro 10.2 - Habitações familiares por área de residência, município ': 13 rows, widths [7], first ['Alto Zaza', 'Alto Zaza', 'Cuango Calumbo', 'Massau']
+  p201: Quadro 10.3 - Habitações familiares por área de residência, município e comuna,
+      block 'Quadro 10.3 - Habitações familiares por área de residência, município ': 63 rows, widths [4], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p202: Quadro 10.3 - Habitações familiares por área de residência, município e comuna,
+      block 'Quadro 10.3 - Habitações familiares por área de residência, município ': 13 rows, widths [4], first ['Alto Zaza', 'Alto Zaza', 'Cuango Calumbo', 'Massau']
+  p203: Quadro 10.4 - Habitações familiares por e área de residência, município e comuna, segundo o tipo de material usado princ
+      block 'Quadro 10.4 - Habitações familiares por e área de residência, municípi': 24 rows, widths [9], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p204: Quadro 10.4 - Habitações familiares por e área de residência, município e comuna, segundo o tipo de material usado princ
+      block 'Quadro 10.4 - Habitações familiares por e área de residência, municípi': 28 rows, widths [9], first ['Sanza Pombo', 'Sanza Pombo', 'Alfândega', 'Cuílo Pombo']
+  p205: Quadro 10.4 - Habitações familiares por e área de residência, município e comuna, segundo o tipo de material usado princ
+      block 'Quadro 10.4 - Habitações familiares por e área de residência, municípi': 24 rows, widths [9], first ['Uando Mucaba', 'Nova Esperança', 'Nova Esperança', 'Buenga-Sul']
+  p206: Quadro 10.5 - Habitações familiares por área de residência, município e comuna, segundo o tipo de material
+      block 'Quadro 10.5 - Habitações familiares por área de residência, município ': 63 rows, widths [6], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p207: Quadro 10.5 - Habitações familiares por área de residência, município e comuna, segundo o tipo de material
+      block 'Quadro 10.5 - Habitações familiares por área de residência, município ': 13 rows, widths [6], first ['Alto Zaza', 'Alto Zaza', 'Cuango Calumbo', 'Massau']
+  p208: Quadro 10.6 - Habitações familiares por área de residência, município e comuna, segundo o tipo de material usado princip
+      block 'Quadro 10.6 - Habitações familiares por área de residência, município ': 24 rows, widths [8], first ['Uíge', 'Urbana', 'Rural', 'Dange Quitexe']
+  p209: Quadro 10.6 - Habitações familiares por área de residência, município e comuna, segundo o tipo de material usado princip
+      block 'Quadro 10.6 - Habitações familiares por área de residência, município ': 26 rows, widths [8], first ['Sanza Pombo', 'Sanza Pombo', 'Alfândega', 'Cuílo Pombo']
+  p210: Quadro 10.6 - Habitações familiares por área de residência, município e comuna, segundo o tipo de material usado princip
+      block 'Quadro 10.6 - Habitações familiares por área de residência, município ': 26 rows, widths [8], first ['Mucaba', 'Mucaba', 'Uando Mucaba', 'Nova Esperança']
+  p211: Quadro 10.7 - Habitações familiares por área de residência, município e comuna, segundo a médias
+  p218: Quadro 1 - Resumo da Estimativa por Sistema Duplo || Quadro 2 - Sistema de Classificações e Convenções Metodológicas do Censo 2024 || Quadro 3 - Interpretação dos Símbolos Utilizados nas Tabelas Estatísticas
+  p220: Quadro 4 - Tamanho das secções por províncias || Quadro 5 - Taxa de resposta a nível de agregados familiares
+== Cuanza_Sul: 231 pages
+  p17: quadros, gráficos e cartogramas, incluindo uma breve análise dos indicadores.
+  p19: Quadro 1 - Síntese dos principais indicadores, 2014 e 2024
+      block 'Quadro 1 - Síntese dos principais indicadores, 2014 e': 4 rows, widths [2], first ['N.º INDICADORES', '1.1 Total da população', '2.1 Total de agregados familiares que receberam algum tipo de apoio social', '4.6 População com 18 ou mais anos que concluiu o II Ciclo do ensino secundário']
+  p20: Quadro 2 - Síntese dos principais indicadores, 2024
+  p25: Quadro 3 - Taxa de subcobertura líquida de pessoas por área de residência || Quadro 4 - Taxa de subcobertura líquida dos agregados familiares por área de residência
+  p26: Quadro 5 - Índice de erro de conteúdo para características demográficas || Quadro 6 - Probabilidade de inclusão e de omissão para as pessoas || Quadro 7 -Distribuição da população final verdadeira de pessoas (milhões)
+  p30: Quadro 8 - Número de municípios, comunas e localidades por província à luz da Lei 18/16 de 17 de Outubro
+      block 'Quadro 8 - Número de municípios, comunas e localidades por província à': 25 rows, widths [4], first ['Cuanza Sul', 'Sumbe', 'Calulo', 'Gabela']
+  p31: Quadro 9 - População residente por área de residência, segundo o sexo, 2014 e 2024
+      block 'Quadro 9 - População residente por área de residência, segundo o sexo,': 3 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural']
+  p32: Quadro 10 - População residente por município, segundo o sexo, Censo 2024
+      block 'Quadro 10 - População residente por município, segundo o sexo, Censo': 25 rows, widths [3], first ['Cuanza Sul', 'Sumbe', 'Calulo', 'Gabela']
+  p33: Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e 2024
+      block 'Quadro 11 - População residente por município, segundo o sexo, Censos ': 13 rows, widths [6], first ['Cuanza Sul', 'Sumbe', 'Libolo', 'Amboim']
+  p38: Quadro 12 - População por área de residência e sexo, 2014 e 2024 || Quadro 13 - População residente por grupos de idade, segundo o sexo, 2014 e 2024
+      block 'Quadro 13 - População residente por grupos de idade, segundo o sexo, 2': 5 rows, widths [6], first ['Cuanza Sul', '0 - 14 anos', '15 - 24 anos', '25 - 64 anos']
+  p41: Quadro 14 - População de 12 anos e mais de idade por estado civil, segundo o sexo, 2014 e 2024
+      block 'Quadro 14 - População de 12 anos e mais de idade por estado civil, seg': 7 rows, widths [6], first ['Cuanza Sul', 'Solteiro(a)', 'Casado(a) / União de facto', 'Divorciado(a)']
+  p42: Quadro 15 - População com registo de nascimento por área de residência, 2014 e 2024
+  p44: Quadro 16 - População com bilhete de identidade, 2024
+  p45: Quadro 17 - População com Bilhete de identidade por município, segundo o sexo, 2024 || Quadro 18 - Agregados familiares que receberam algum apoio social, 2024
+      block 'Quadro 17 - População com Bilhete de identidade por município, segundo': 25 rows, widths [4], first ['Municípios', 'Sumbe', 'Calulo', 'Gabela']
+  p47: Quadro 19 - População com 5 ou mais anos por tipo de domínio funcional e grau de dificuldade, 2024
+  p48: Quadro 20 - Crianças órfãs com 0-17 anos de idade, segundo o tipo, 2014 e 2024
+  p49: Quadro 21 - População de 2 ou mais anos por grupo étnico, 2024
+      block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, widths [2], first ['Número de pessoas com 2 ou mais anos']
+  p50: Quadro 22 - População com albinismo por área de residência, 2024 || Quadro 23 - População com 2 ou mais anos de idade, segundo a religião declarada, 2024
+      block 'Quadro 22 - População com albinismo por área de residência,': 3 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural']
+      block 'Quadro 23 - População com 2 ou mais anos de idade, segundo a religião ': 1 rows, widths [2], first ['População com 2 ou mais anos']
+  p53: Quadro 24 - População com 5 ou mais anos de idade, segundo a frequência escolar, 2024
+  p55: Quadro 25 - População com 5-18 anos fora do sistema de ensino por grupos
+  p56: Quadro 26 - População por tipo de habitação, 2024
+  p57: Quadro 27 - Agregados familiares por Município, 2024
+  p58: Quadro 28 - Agregados familiares por tamanho e média de pessoas, 2024
+  p59: Quadro 29 - Agregados familiares por tipo e localização da instalação sanitária, 2024
+  p60: Quadro 30 - Agregados familiares com acesso a água apropriada || Quadro 31 - Agregados familiares que utilizam a eletricidade da
+  p62: Quadro 32 - Agregados familiares por posse de alguns bens, 2024 || Quadro 33 - Agregado familiar por área de residência segundo a posse de
+  p69: Quadro 1.1 - População por área de residencia e município, segundo o sexo, R GPH – 2024
+      block 'Quadro 1.1 - População por área de residencia e município, segundo o s': 63 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p70: Quadro 1.2 - População por idade simples segundo o sexo, RGPH - 2024
+  p71: Quadro 1.3 - População por grupos etários quinquenais, 2024
+      block 'Quadro 1.3 - População por grupos etários quinquenais,': 23 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', '0-4 anos']
+  p72: Quadro 1.4 - População por município, segundo grandes grupos etários, 2024
+      block 'Quadro 1.4 - População por município, segundo grandes grupos etários,': 63 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p73: Quadro 1.5 - População por província, segundo outros grupos etários, 2024
+      block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 53 rows, widths [7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p74: Quadro 1.5 - População por província, segundo outros grupos etários, 2024
+      block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 10 rows, widths [7], first ['Pambangala', 'Pambangala', 'Gangula(Kuvu)', 'Gangula(Kuvu)']
+  p75: Quadro 1.6 - População por município e área de residência, 2024
+      block 'Quadro 1.6 - População por município e área de residência,': 47 rows, widths [9], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p76: Quadro 1.6 - População por município e área de residência, 2024 || Quadro 1.7 - Idade média e mediana da população por área de residência e sexo, 2024
+      block 'Quadro 1.6 - População por município e área de residência,': 16 rows, widths [9], first ['Quissongo', 'Quissongo', 'Condé', 'Condé']
+  p79: Quadro 2.1 - População com 12 ou mais por estado civil segungo o sexo, 2024
+  p80: Quadro 2.1 - População com 12 ou mais por estado civil segungo o sexo, 2024
+  p83: Quadro 3.1 - População com registo de nascimento por município e área de residência, 2024
+      block 'Quadro 3.1 - População com registo de nascimento por município e área ': 43 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p84: Quadro 3.1 - População com registo de nascimento por município e área de residência, 2024
+      block 'Quadro 3.1 - População com registo de nascimento por município e área ': 20 rows, widths [4], first ['Quenha', 'Quenha', 'Munenga', 'Munenga']
+  p85: Quadro 3.2 - População com registo de nascimento por grupos etários e área || Quadro 3.3 - População com 5 ou mais anos com bilhete de identidade, por
+      block 'Quadro 3.2 - População com registo de nascimento por grupos etários e ': 17 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', '0-4 anos']
+      block 'Quadro 3.3 - População com 5 ou mais anos com bilhete de identidade, p': 16 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', '5-9 anos']
+  p86: Quadro 3.4 - População com bilhete de identidade, por município e área de residência, 2024
+      block 'Quadro 3.4 - População com bilhete de identidade, por município e área': 47 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p87: Quadro 3.4 - População com bilhete de identidade, por município e área de residência, 2024
+      block 'Quadro 3.4 - População com bilhete de identidade, por município e área': 16 rows, widths [4], first ['Quissongo', 'Quissongo', 'Condé', 'Condé']
+  p91: Quadro 4.1 - População com 5 ou mais anos por tipo de domínio funcional e grau de dificuldade, 2024
+  p92: Quadro 4.2 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo o sexo
+      block 'Quadro 4.2 - Pessoas que têm albinismo por municipio,comuna,área de re': 63 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p93: Quadro 4.3 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo grupo etário
+      block 'Quadro 4.3 - Pessoas que têm albinismo por municipio,comuna,área de re': 51 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p94: Quadro 4.3 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo grupo etário
+      block 'Quadro 4.3 - Pessoas que têm albinismo por municipio,comuna,área de re': 12 rows, widths [6], first ['Sanga', 'Sanga', 'Pambangala', 'Pambangala']
+  p97: Quadro 5.1- Crianças com 0-17 anos que não vivem com os pais por município e área de residência, 2024
+      block 'Quadro 5.1- Crianças com 0-17 anos que não vivem com os pais por munic': 30 rows, widths [11], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p98: Quadro 5.1- Crianças com 0-17 anos que não vivem com os pais por município e área de residência, 2024
+      block 'Quadro 5.1- Crianças com 0-17 anos que não vivem com os pais por munic': 33 rows, widths [11], first ['Quilenda', 'Quilenda', 'Ebo', 'Ebo']
+  p99: Quadro 5.2 - Crianças com 0-17 anos por grupo etário e área de residência, segundo a situação de viver junto com os pais
+  p103: Quadro 6.1 - População de 2 ou mais anos por município e área de residência, segundo grupos
+      block 'Quadro 6.1 - População de 2 ou mais anos por município e área de resid': 27 rows, widths [7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p104: Quadro 6.1 - População de 2 ou mais anos por município e área de residência, segundo grupos
+      block 'Quadro 6.1 - População de 2 ou mais anos por município e área de resid': 27 rows, widths [9], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p105: Quadro 6.2 - População por município e área de residência, segundo a língua materna, 202 4
+      block 'Quadro 6.2 - População por município e área de residência, segundo a l': 27 rows, widths [12], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p106: Quadro 6.2 - População por município e área de residência, segundo a língua materna, 2024
+      block 'Quadro 6.2 - População por município e área de residência, segundo a l': 27 rows, widths [12, 13], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p109: Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a religião ou
+      block 'Quadro 7.1 - População com 2 ou mais anos por município e área de resi': 27 rows, widths [8], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p110: Quadro 7.1 - População com 2 ou mais anos por município e área de residência, segundo a religião ou espiritualidade, 202
+      block 'Quadro 7.1 - População com 2 ou mais anos por município e área de resi': 27 rows, widths [15], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p113: Quadro 8.1- População com 15 ou mais anos que sabe ler e escrever por área de residência, município e comuna, segundo o 
+      block 'Quadro 8.1- População com 15 ou mais anos que sabe ler e escrever por ': 1 rows, widths [10], first ['Cuanza Sul']
+  p114: Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por área de residência, município e comuna, segundo o
+      block 'Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por': 1 rows, widths [10], first ['Cuanza Sul']
+  p115: Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sexo
+  p116: Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sexo
+  p117: Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sexo
+  p118: Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sexo
+  p119: Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência e
+      block 'Quadro 8.4 - População com 5 ou mais anos por área de residência, muni': 32 rows, widths [10], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p120: Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência e
+      block 'Quadro 8.4 - População com 5 ou mais anos por área de residência, muni': 32 rows, widths [10], first ['Cuanza Sul', 'Ebo', 'Ebo', 'Cassanje']
+  p121: Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por área de residência, município e comuna,
+      block 'Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por áre': 63 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p122: Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por área de residência,
+  p123: Quadro 8.7 - População com 15-18 anos fora do sistema de ensino por município e área de
+      block 'Quadro 8.7 - População com 15-18 anos fora do sistema de ensino por mu': 63 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p124: Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esco
+      block 'Quadro 8.8 - População com 5 ou mais anos por área de residência e gru': 42 rows, widths [10], first ['Cuanza Sul', '5-9 anos', '10-14 anos', '15-19 anos']
+  p125: Quadro 8.9 - População com 5-18 anos fora do sistema de ensino por município e área de
+      block 'Quadro 8.9 - População com 5-18 anos fora do sistema de ensino por mun': 63 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p126: Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.10 - População com 5-18 anos por área de residência, municípi': 38 rows, widths [10], first ['Total', 'Urbana', 'Rural', 'Sumbe']
+  p127: Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.10 - População com 5-18 anos por área de residência, municípi': 26 rows, widths [10], first ['Total', 'Lonhe', 'Lonhe', 'Cariango']
+  p128: Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.11 - População com 5-11 anos por área de residência, municípi': 38 rows, widths [10], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p129: Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.11 - População com 5-11 anos por área de residência, municípi': 26 rows, widths [10], first ['Cuanza Sul', 'Lonhe', 'Lonhe', 'Cariango']
+  p130: Quadro 8.12 - População com 5 ou mais anos por município e área de residência ,segundo o nivél de ensino a frequentar, 2
+      block 'Quadro 8.12 - População com 5 ou mais anos por município e área de res': 38 rows, widths [10], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p131: Quadro 8.12- População com 5 ou mais anos por município e área de residência ,segundo o nivél de ensino a frequentar, 20
+      block 'Quadro 8.12- População com 5 ou mais anos por município e área de resi': 26 rows, widths [10], first ['Cuanza Sul', 'Lonhe', 'Lonhe', 'Cariango']
+  p132: Quadro 8.12- População com 5 ou mais anos por município e área de residência ,segundo o n ível de ensino a
+      block 'Quadro 8.12- População com 5 ou mais anos por município e área de resi': 63 rows, widths [7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p133: Quadro 8.13 - População com 12-14 anos por área de residência, município e comuna, segundo a situação de frequência esco
+      block 'Quadro 8.13 - População com 12-14 anos por área de residência, municíp': 38 rows, widths [10], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p134: Quadro 8.13 - População com 12-14 anos por área de residência, município e comuna, segundo a situação de frequência esco
+      block 'Quadro 8.13 - População com 12-14 anos por área de residência, municíp': 26 rows, widths [10], first ['Cuanza Sul', 'Lonhe', 'Lonhe', 'Cariango']
+  p135: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 38 rows, widths [11], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p136: Quadro 8.14- População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino concluí
+      block 'Quadro 8.14- População com 18 ou mais anos por área de residência, mun': 26 rows, widths [11], first ['Cuanza Sul', 'Lonhe', 'Lonhe', 'Cariango']
+  p137: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 35 rows, widths [11], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p138: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 29 rows, widths [11], first ['Cuanza Sul', 'Conda', 'Conda', 'Cunjo']
+  p139: Quadro 8.15 -Taxa líquida de frequência do ensino primário por área de residência,município e comuna, segundo o sexo
+  p140: Quadro 8.15 -Taxa líquida de frequência do ensino primário por área de residência,município e comuna, segundo o sexo
+  p141: Quadro 8.15 -Taxa líquida de frequência do ensino primário por área de residência,município e comuna, segundo o sexo
+  p145: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 30 rows, widths [11], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p146: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 34 rows, widths [11], first ['Cuanza Sul', 'Quilenda', 'Quilenda', 'Ebo']
+  p147: Quadro 9.2 - Principal fonte de energia/combustível utilizado para cozinhar pelo agregado familiar, por município e área
+      block 'Quadro 9.2 - Principal fonte de energia/combustível utilizado para coz': 29 rows, widths [9], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p148: Quadro 9.2 - Principal fonte de energia/combustível utilizado para cozinhar pelo agregado familiar, por município e área
+      block 'Quadro 9.2 - Principal fonte de energia/combustível utilizado para coz': 27 rows, widths [9], first ['Cuanza Sul', 'Quipaxi', 'Quilenda', 'Quilenda']
+  p149: Quadro 9.2 - Principal fonte de energia/combustível utilizado para cozinhar pelo agregado familiar, por município e área
+      block 'Quadro 9.2 - Principal fonte de energia/combustível utilizado para coz': 9 rows, widths [9], first ['Cuanza Sul', 'Gangula(Kuvu)', 'Gangula(Kuvu)', 'Gungo']
+  p150: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 25 rows, widths [8], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p151: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 23 rows, widths [8], first ['Cuanza Sul', 'Waku Kungo', 'Waku Kungo', 'Mussende']
+  p152: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 17 rows, widths [8], first ['Cuanza Sul', 'Quissongo', 'Quissongo', 'Condé']
+  p153: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 22 rows, widths [8], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p154: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 22 rows, widths [8], first ['Cuanza Sul', 'Seles', 'Seles', 'Botera']
+  p155: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 21 rows, widths [8], first ['Cuanza Sul', 'Quenha', 'Quenha', 'Munenga']
+  p156: Quadro 9.4 - Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que 
+      block 'Quadro 9.4 - Agregados familiares por área de residência, município e ': 32 rows, widths [10], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p157: Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que s
+      block 'Quadro 9.4 -Agregados familiares por área de residência, município e c': 29 rows, widths [10], first ['Cuanza Sul', 'Conda', 'Conda', 'Cunjo']
+  p158: Quadro 9.5 -Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.5 -Agregados familiares por área de residência, município e c': 53 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p159: Quadro 9.5 - Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.5 - Agregados familiares por área de residência, município e ': 13 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', 'Pambangala']
+  p160: Quadro 9.6 - Agregados familiares por área de residência, município e comuna, segundo o acesso a água
+      block 'Quadro 9.6 - Agregados familiares por área de residência, município e ': 45 rows, widths [5], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p161: Quadro 9.6 - Agregados familiares por área de residência, município e comuna, segundo o acesso a água
+      block 'Quadro 9.6 - Agregados familiares por área de residência, município e ': 21 rows, widths [5], first ['Cuanza Sul', 'Quenha', 'Quenha', 'Munenga']
+  p162: Quadro 9.7 - Agregados familiares por área de residência, município e comuna, segundo
+      block 'Quadro 9.7 - Agregados familiares por área de residência, município e ': 63 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p163: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 38 rows, widths [6, 7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p164: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 26 rows, widths [7], first ['Cuanza Sul', 'Lonhe', 'Lonhe', 'Cariango']
+  p165: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 35 rows, widths [7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p166: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 31 rows, widths [7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Conda']
+  p167: Quadro 9.9 - Agregados familiares por área de residência, município e comuna, segundo a posse de
+      block 'Quadro 9.9 - Agregados familiares por área de residência, município e ': 63 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p168: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da lavra/exp
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 32 rows, widths [10, 11], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p169: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da lavra/exp
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 32 rows, widths [11], first ['Cuanza Sul', 'Ebo', 'Ebo', 'Cassanje']
+  p170: Quadro 9.11 - Agregados familiares por município e área residência, segundo a situação de
+      block 'Quadro 9.11 - Agregados familiares por município e área residência, se': 63 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p171: Quadro 9.12 - Agregados familiares criadores de animais por município e área de residência, segundo a posse do
+      block 'Quadro 9.12 - Agregados familiares criadores de animais por município ': 41 rows, widths [7], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p172: Quadro 9.12 - Agregados familiares criadores de animais por município e área de residência, segundo a posse do
+      block 'Quadro 9.12 - Agregados familiares criadores de animais por município ': 23 rows, widths [7], first ['Cuanza Sul', 'Quirimbo', 'Quirimbo', 'Quenha']
+  p173: Quadro 9.13 - Agregados familiares que praticam actividade piscatória por município e área de residência, segundo o
+      block 'Quadro 9.13 - Agregados familiares que praticam actividade piscatória ': 49 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p174: Quadro 9.13 - Agregados familiares que praticam actividade piscatória por município e área de residência, segundo o
+      block 'Quadro 9.13 - Agregados familiares que praticam actividade piscatória ': 17 rows, widths [6], first ['Cuanza Sul', 'Urbana', 'Rural', 'Condé']
+  p175: Quadro 9.14 - Posse de bens que funcionam em casa pelo agregado familiar, por município e área de residência, 2024
+      block 'Quadro 9.14 - Posse de bens que funcionam em casa pelo agregado famili': 35 rows, widths [11], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p176: Quadro 9.14 - Posse de bens que funcionam em casa pelo agregado familiar, por município e área de residência, 2024
+      block 'Quadro 9.14 - Posse de bens que funcionam em casa pelo agregado famili': 29 rows, widths [11], first ['Cuanza Sul', 'Conda', 'Conda', 'Cunjo']
+  p177: Quadro 9.15 - Apoio Social que o agregado recebe, por município e área de residência, 2024
+      block 'Quadro 9.15 - Apoio Social que o agregado recebe, por município e área': 63 rows, widths [4], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p178: Quadro 9.16 - Agregados familiares por município e área de residência, segundo a entidade que prestou o apoio
+      block 'Quadro 9.16 - Agregados familiares por município e área de residência,': 43 rows, widths [5], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p179: Quadro 9.16 - Agregados familiares por município e área de residência, segundo a entidade que prestou o apoio
+      block 'Quadro 9.16 - Agregados familiares por município e área de residência,': 21 rows, widths [5], first ['Cuanza Sul', 'Quenha', 'Quenha', 'Munenga']
+  p180: Quadro 9.17 - Agregados familiares por município e área de residência, segundo o sexo do chefe, 2024
+      block 'Quadro 9.17 - Agregados familiares por município e área de residência,': 63 rows, widths [3], first ['Cuanza Sul', 'Urbana', 'Rural', 'Sumbe']
+  p181: Quadro 9.18 - Agregados familiares por município e área de residência, segundo o tipo de núcleo, 2024 || Quadro 9.19 - Agregado familiar por grupo étário, segundo o sexo do chefe, 2024
+  p182: Quadro 9.20 - Agregados familiares por município e área de residência, segundo o tamanho e média de pessoas por
+  p185: Quadro 10.1 - População recenseada por município, segundo grupos étários, 2024
+      block 'Quadro 10.1 - População recenseada por município, segundo grupos étári': 63 rows, widths [5], first ['Cuanza sul', 'Urbana', 'Rural', 'Sumbe']
+  p186: Quadro 10.2 - Habitações familiares por município e área de residência, segundo o tipo de habitação, 2024
+      block 'Quadro 10.2 - Habitações familiares por município e área de residência': 63 rows, widths [7], first ['Cuanza sul', 'Urbana', 'Rural', 'Sumbe']
+  p187: Quadro 10.3 - Habitações familiares por município e área de residência, segundo o estado de ocupação
+      block 'Quadro 10.3 - Habitações familiares por município e área de residência': 45 rows, widths [4], first ['Cuanza sul', 'Urbana', 'Rural', 'Sumbe']
+  p188: Quadro 10.3 - Habitações familiares por município e área de residência, segundo o estado de ocupação
+      block 'Quadro 10.3 - Habitações familiares por município e área de residência': 19 rows, widths [4], first ['Cuanza sul', 'Munenga', 'Munenga', 'Quissongo']
+  p189: Quadro 10.4 - Habitações familiares por município e área de residência, segundo o tipo de material usado
+      block 'Quadro 10.4 - Habitações familiares por município e área de residência': 45 rows, widths [9], first ['Cuanza sul', 'Urbana', 'Rural', 'Sumbe']
+  p190: Quadro 10.4 - Habitações familiares por município e área de residência, segundo o tipo de material usado
+      block 'Quadro 10.4 - Habitações familiares por município e área de residência': 19 rows, widths [9], first ['Cuanza sul', 'Munenga', 'Munenga', 'Quissongo']
+  p191: Quadro 10.5 - Habitações familiares por município e área de residência, segundo o tipo de material usado
+      block 'Quadro 10.5 - Habitações familiares por município e área de residência': 45 rows, widths [7], first ['Cuanza sul', 'Urbana', 'Rural', 'Sumbe']
+  p192: Quadro 10.6 - Habitações familiares por município e área de residência, segundo o tipo de material usado
+      block 'Quadro 10.6 - Habitações familiares por município e área de residência': 21 rows, widths [7], first ['Cuanza sul', 'Urbana', 'Rural', 'Munenga']
+  p193: Quadro10.6 - Habitações familiares por município e área de residência, segundo o tipo de material usado
+      block 'Quadro10.6 - Habitações familiares por município e área de residência,': 45 rows, widths [9], first ['C uanza sul', 'Urbana', 'Rural', 'Sumbe']
+  p194: Quadro10.6 - Habitações familiares por município e área de residência, segundo o tipo de material usado principamente
+      block 'Quadro10.6 - Habitações familiares por município e área de residência,': 19 rows, widths [9], first ['Cuanza sul', 'Munenga', 'Munenga', 'Quissongo']
+  p195: Quadro 10.7 - Habitações familiares por município e área de residência, segundo a média de divisões da
+  p202: Quadro 15 Resumo da Estimativa por Sistema Duplo || Quadro 14: Sistema de Classificações e Convenções Metodológicas do Censo 2024 || Quadro 15:Interpretação dos Símbolos Utilizados nas Tabelas Estatísticas
+  p204: Quadro 16: Tamanho das secções por províncias || Quadro 15 - Taxa de resposta a nível de agregados familiares
+== Moxico: 193 pages
+  p18: Quadro 1 - Síntese dos principais indicadores, 2024
+  p23: Quadro 2 - Taxa de subcobertura líquida de pessoas por área de residência || Quadro 3 - Taxa de subcobertura líquida dos agregados familiares por área de residência
+  p24: Quadro 4 - Índice de erro de conteúdo para características demográficas || Quadro 5 - Probabilidade de inclusão e de omissão para as pessoas || Quadro 6 -Distribuição da população final verdadeira de pessoas (milhões)
+  p27: Quadro 7 - Número de municípios, comunas e localidades por província à luz
+      block 'Quadro 7 - Número de municípios, comunas e localidades por província à': 13 rows, widths [3, 4], first ['Moxico', 'Alto Cuito', 'Camanongue', 'Cangamba']
+  p28: Quadro 8 - População residente por área de residência, segundo o sexo, 2024
+  p29: Quadro 9 - População residente por município, segundo o sexo, Censo 2024
+      block 'Quadro 9 - População residente por município, segundo o sexo, Censo': 12 rows, widths [3], first ['Luena', 'Cangamba', 'Cangumbe', 'Lumbala Nguimbo']
+  p30: Quadro 10 - População residente por município, segundo o sexo, Censo 2024
+      block 'Quadro 10 - População residente por município, segundo o sexo, Censo': 13 rows, widths [3], first ['Moxico', 'Luena', 'Cangamba', 'Cangumbe']
+  p34: Quadro 11 - População por área de residência e sexo, 2024
+  p35: Quadro 12 - População residente por grupos de idade, segundo o sexo, 2024
+  p39: Quadro 13 - População com 12 ou mais anos por estado civil, segundo o sexo, 2024
+  p40: Quadro 14 - População com registo de nascimento por área de residência, 2024
+  p41: Quadro 15 - População com Bilhete de identidade por área de residência, 2024
+  p42: Quadro 16 - População com Bilhete de identidade por município, segundo o sexo, 2024
+      block 'Quadro 16 - População com Bilhete de identidade por município, segundo': 13 rows, widths [4], first ['Moxico', 'Luena', 'Lumbala Nguimbo', 'Camanongue']
+  p43: Quadro 17 - Agregados familiares que receberam algum apoio social, 2024
+  p44: Quadro 18 - População com 5 ou mais anos por tipo de domínio funcional e grau de dificuldade, 2024
+  p45: Quadro 19 - Crianças órfãs com 0-17 anos de idade, segundo o tipo, 2024
+  p46: Quadro 20 - População de 2 ou mais anos por grupo étnico, 2024
+      block 'Quadro 20 - População de 2 ou mais anos por grupo étnico,': 1 rows, widths [2], first ['Número de pessoas com 2 ou mais anos']
+  p47: Quadro 21 - População com albinismo por área de residência, 2024
+  p48: Quadro 22 - População com 2 ou mais anos de idade, segundo a religião declarada, 2024
+  p51: Quadro 23 - População com 5 ou mais anos de idade, segundo a frequência escolar, 2024
+  p53: Quadro 24 - População com 5-18 anos fora do sistema de ensino por grupos etários,
+      block 'Quadro 24 - População com 5-18 anos fora do sistema de ensino por grup': 4 rows, widths [3], first ['Moxico', '5-11 anos', '12-14 anos', '15-18 anos']
+  p54: Quadro 25 - População por tipo de habitação, 2024
+  p55: Quadro 26 - Agregados familiares por Município, 2024
+      block 'Quadro 26 - Agregados familiares por Município,': 15 rows, widths [3], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p56: Quadro 27 - Agregados familiares por tamanho e média de pessoas, 2024
+  p57: Quadro 28 - Agregados familiares por tipo e localização da instalação sanitária, 2024
+  p58: Quadro 29 - Agregados familiares com acesso a água apropriada para beber
+  p59: Quadro 30 - Agregados familiares que utilizam a eletricidade da rede pública
+  p60: Quadro 31 - Agregados familiares por posse de alguns bens, 2024
+  p61: Quadro 32 - Agregado familiar por área de residência segundo a posse de
+  p67: Quadro 1. 1 - População por área de residência, Municípios e comunas, 2024
+      block 'Quadro 1. 1 - População por área de residência, Municípios e comunas,': 35 rows, widths [3], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p68: Quadro 1. 2 - População por idades simples, 2024
+  p69: Quadro 1. 3 - População por grupos etários quinquenais, 2024
+      block 'Quadro 1. 3 - População por grupos etários quinquenais,': 23 rows, widths [3], first ['Moxico', 'Urbana', 'Rural', '0-4 anos']
+  p70: Quadro 1. 4 - População por município, segundo grandes grupos etários, 2024
+      block 'Quadro 1. 4 - População por município, segundo grandes grupos etários,': 37 rows, widths [4], first ['Moxico', 'Urbana', 'Rural', 'Homens']
+  p71: Quadro 1. 5 - População por província, segundo outros grupos etários, 2024
+      block 'Quadro 1. 5 - População por província, segundo outros grupos etários,': 35 rows, widths [7], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p72: Quadro 1.6 - População por província e área de residência, 2024
+  p73: Quadro 1.7 - Idade média e mediana da população por área de residência e sexo, 2024
+  p77: Quadro 2. 1 - População com 12 ou mais por estado civil segundo o sexo, 2024
+  p81: Quadro 3. 1 - População residente com registo de nascimento por província e área de
+  p82: Quadro 3. 2 - População residente com registo de nascimento por grupos etários segundo || Quadro 3. 3 - População residente com Bilhete de identidade por área de residência,
+      block 'Quadro 3. 2 - População residente com registo de nascimento por grupos': 18 rows, widths [2, 4], first ['sexo, RGPH', 'Moxico', 'Urbana', 'Rural']
+      block 'Quadro 3. 3 - População residente com Bilhete de identidade por área d': 16 rows, widths [4], first ['Moxico', 'Urbana', 'Rural', '5-9 anos']
+  p83: Quadro 3. 4 - População com 5 anos ou mais, residente com Bilhete de identidade
+  p87: Quadro 4. 1- Resumo sintise dos indicadores da dificiência
+  p88: Quadro 4. 2 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo o sexo
+      block 'Quadro 4. 2 - Pessoas que têm albinismo por municipio,comuna,área de r': 35 rows, widths [4], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p89: Quadro 4. 3 - Pessoas que têm albinismo por municipio,comuna,área de residência sengundo grupo etário
+      block 'Quadro 4. 3 - Pessoas que têm albinismo por municipio,comuna,área de r': 35 rows, widths [6], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p93: Quadro 5. 1 - Crianças com 0-17 anos que não vivem com os pais por área de residência, município, segundo sexo, RGPH pro
+      block 'Quadro 5. 1 - Crianças com 0-17 anos que não vivem com os pais por áre': 36 rows, widths [3, 11], first ['Popualação com', 'Moxico', 'Urbana', 'Rural']
+  p94: Quadro 5. 2 - Crianças orfãos com 0-17 anos por área de residência, grupo etário, segundo tipo e taxa de orfandade
+      block 'Quadro 5. 2 - Crianças orfãos com 0-17 anos por área de residência, gr': 9 rows, widths [3, 4, 11], first ['Município e área de População com', 'Moxico', 'Área de residência', 'Urbana']
+  p97: Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou tribos, 2024 || Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou tribos, 2024
+      block 'Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou ': 15 rows, widths [8], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+      block 'Quadro 6. 1 - População com 2 ou mais anos, segundo grupos étnicos ou ': 15 rows, widths [8], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p98: Quadro 6. 2 - População por município e área de residência, segundo a língua Materna || Quadro 6. 2 - População por município e área de residência, segundo a língua Materna
+      block 'Quadro 6. 2 - População por município e área de residência, segundo a ': 15 rows, widths [8], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+      block 'Quadro 6. 2 - População por município e área de residência, segundo a ': 15 rows, widths [9], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p101: Quadro 7. 1- População com 2 ou mais anos por província e área de residência, segundo a religião ou espiritualidade, 202
+      block 'Quadro 7. 1- População com 2 ou mais anos por província e área de resi': 15 rows, widths [11], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p102: Quadro 7. 1- População com 2 ou mais anos por província e área de residência, segundo a religião ou espiritualidade, 202
+      block 'Quadro 7. 1- População com 2 ou mais anos por província e área de resi': 15 rows, widths [12], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p105: Quadro 8. 1 - População com 15 ou mais anos que sabe ler e escrever por área de residência, município e comuna,
+  p106: Quadro 8. 2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sex
+  p107: Quadro 8. 2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sex
+  p108: Quadro 8. 3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sex
+  p109: Quadro 8. 4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência 
+      block 'Quadro 8. 4 - População com 5 ou mais anos por área de residência, mun': 35 rows, widths [10], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p110: Quadro 8. 5 - População com 5-11 anos fora do sistema de ensino por área de residência, município e
+      block 'Quadro 8. 5 - População com 5-11 anos fora do sistema de ensino por ár': 35 rows, widths [6], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p111: Quadro 8. 6 - População com 12-14 anos fora do sistema de ensino por área de residência,
+  p112: Quadro 8. 7 - População com 15-18 anos fora do sistema de ensino por área de residência, município e comuna,
+      block 'Quadro 8. 7 - População com 15-18 anos fora do sistema de ensino por á': 35 rows, widths [6], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p113: Quadro 8. 8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esc
+      block 'Quadro 8. 8 - População com 5 ou mais anos por área de residência e gr': 28 rows, widths [10], first ['Moxico', '5-9 anos', '10-14 anos', '15-19 anos']
+  p114: Quadro 8. 8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esc
+      block 'Quadro 8. 8 - População com 5 ou mais anos por área de residência e gr': 15 rows, widths [10], first ['Moxico', 'Rural', '5-9 anos', '10-14 anos']
+  p115: Quadro 8. 9 - População com 5-18 anos fora do sistema de ensino por área de residência , segundo o sexo
+  p116: Quadro 8. 10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência esco
+      block 'Quadro 8. 10 - População com 5-18 anos por área de residência, municíp': 35 rows, widths [10], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p117: Quadro 8. 11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência esco
+      block 'Quadro 8. 11 - População com 5-11 anos por área de residência, municíp': 35 rows, widths [10], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p118: Quadro 8. 12 - População com 5 ou mais anos por província e área de residência ,segundo o nivél de ensino a frequentar, 
+  p119: Quadro 8.12- População com 5 ou mais anos por província e área de residência ,segundo o nivél de ensino a frequentar,
+  p120: Quadro 8. 13 - População com 12-14 anos por área de residência, município e comuna, segundo a situação de
+      block 'Quadro 8. 13 - População com 12-14 anos por área de residência, municí': 35 rows, widths [4, 10], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p121: Quadro 8. 14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino concl
+      block 'Quadro 8. 14 - População com 18 ou mais anos por área de residência, m': 35 rows, widths [11], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p122: Quadro 8. 14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino concl
+      block 'Quadro 8. 14 - População com 18 ou mais anos por área de residência, m': 35 rows, widths [11], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p123: Quadro 8. 15 -Taxa líquida de frequência do ensino primário por área de residência,município e comuna, segundo o sexo
+  p124: Quadro 8.15 parte 1-Taxa líquida de frequência do ensino secundário por área de residência,município e comuna, segundo o
+  p127: Quadro 9. 1 - Principal tipo de iluminação utilizado pelo agregado familiar, por província e área de residência, 2024
+  p128: Quadro 9. 2 - Principal fonte de energia/combustível utilizado para cozinhar pelo agregado familiar, por província e áre
+  p129: Quadro 9. 3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banh
+      block 'Quadro 9. 3 - Agregados familiares por área de residência, município e': 35 rows, widths [8], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p130: Quadro 9. 3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banh
+      block 'Quadro 9. 3 - Agregados familiares por área de residência, município e': 35 rows, widths [8, 9], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p131: Quadro 9. 4 - Principal modo de tratamento habitual que se da a água para beber, por província e área de residência, 202
+  p132: Quadro 9. 5 - Partilha da casa de banho, por província e área de residência, 2024
+  p133: Quadro 9. 6 - Agregados familiares com acesso a água da rede pública, por província e área de residência, 2024
+  p134: Quadro 9. 7 - Água utilizada para beber provém da mesma fonte, por província e
+  p135: Quadro 9. 8 - Principal fonte utilizado pelo agregado familiar para abastecimento de água, por província e área de
+  p136: Quadro 9. 8 - Principal fonte utilizado pelo agregado familiar para abastecimento de água, por província e área de
+  p137: Quadro 9. 9 - Agregados familiares por província e área de residência, segundo a posse de parcela/lavra, 2024
+  p138: Quadro 9. 10 - Regime de ocupação da lavra/exploração (parcela) cultivada por conta própria por algum menbro do agregado
+  p139: Quadro 9. 11 - Agregados familiares por província e área residência, segundo a situação de criação de animais por
+  p140: Quadro 9. 12 - Agregados familiares criadores de animais por província e área de residência, segundo a posse do tipo
+  p141: Quadro 9. 13 - Agregados familiares que praticam actividade piscatória por província e área de residência, segundo o
+  p142: Quadro 9. 14 - Posse de bens que funcionam em casa pelo agregado familiar, por província e área de residência, 2024
+  p143: Quadro 9.15 - Apoio Social que o agregado recebe, por província e área de residência, 2024
+  p144: Quadro 9.16 - Agregados familiares por província e área de residência, segundo a entidade que prestou o apoio social,
+  p145: Quadro 9.17 - Agregados familiares por província e área de residência, segundo o sexo do chefe, 2024
+  p146: Quadro 9.18 - Agregados familiares por província e área de residência, segundo o tipo de núcleo, 2024 || Quadro 9.19 - Agregado familiar po grupo étário, segundo o sexo do chefe, 2024
+  p147: Quadro 9.20 - Agregados familiares por província e área de residência, segundo o tamanho e média de pessoas por
+  p151: Quadro 10.1 - População recenseada por município e tipo de habitação, segundo grupos étários,2024
+      block 'Quadro 10.1 - População recenseada por município e tipo de habitação, ': 35 rows, widths [5], first ['Moxico', 'Urbana', 'Rural', 'Luena']
+  p152: Quadro 10.2 - Habitações familiares por província e área de residência, segundo o tipo de habitação, 2024
+  p153: Quadro 10.3 - Habitações familiares por província e área de residência, segundo o estado de ocupação
+  p154: Quadro 10.4 - Habitações familiares por província e área de residência, segundo o tipo de material usado principalmente 
+  p155: Quadro 10.5 - Habitações familiares por província e área de residência, segundo o tipo de material usado principamente n
+  p156: Quadro 10.6 - Habitações familiares por província e área de residência, segundo o tipo de material usado principalmente 
+  p157: Quadro 10. 7 - Agregados familiares por área de residência e município, segundo a média de divisões, média de pessoas po
+  p164: Quadro 1 - Resumo da Estimativa por Sistema Duplo || Quadro 2 - Sistema de Classificações e Convenções Metodológicas do Censo 2024 || Quadro 3 - Interpretação dos Símbolos Utilizados nas Tabelas Estatísticas
+  p166: Quadro 4 - Tamanho das secções por províncias || Quadro 5 - Taxa de resposta a nível de agregados familiares
+== Huambo: 225 pages
+  p18: quadros, gráficos e cartogramas, incluindo uma breve análise dos indicadores.
+  p20: Quadro 1 - Síntese dos principais indicadores, 2014 e 2024
+      block 'Quadro 1 - Síntese dos principais indicadores, 2014 e': 4 rows, widths [2], first ['N.º INDICADORES', '1.1 Total da população', '2.1 Total de agregados familiares que receberam algum tipo de apoio social', '4.6 População com 18 ou mais anos que concluiu o II Ciclo do ensino secundário']
+  p21: Quadro 2 - Síntese dos principais indicadores, 2024
+  p26: Quadro 3 - Taxa de subcobertura líquida de pessoas por área de residência || Quadro 4 - Taxa de subcobertura líquida dos agregados familiares por área de residência
+  p27: Quadro 5 - Índice de erro de conteúdo para características demográficas || Quadro 6 - Probabilidade de inclusão e de omissão para as pessoas || Quadro 7 - Distribuição da população final verdadeira de pessoas (milhões)
+  p31: Quadro 8 - Número de municípios, comunas e bairro/aldeia por província à luz da Lei 14/24
+      block 'Quadro 8 - Número de municípios, comunas e bairro/aldeia por província': 18 rows, widths [4], first ['Huambo', 'Bailundo', 'Huambo', 'Londuimbali']
+  p32: Quadro 9 - População residente por área de residência, segundo o sexo, 2014 e 2024
+      block 'Quadro 9 - População residente por área de residência, segundo o sexo,': 3 rows, widths [6], first ['Huambo', 'Urbana', 'Rural']
+  p33: Quadro 10 - População residente por município, segundo o sexo,
+      block 'Quadro 10 - População residente por município, segundo o sexo,': 18 rows, widths [3], first ['Huambo', 'Bailundo', 'Huambo', 'Londuimbali']
+  p34: Quadro 11 - População residente por município, segundo o sexo, Censos 2014 e 2024
+      block 'Quadro 11 - População residente por município, segundo o sexo, Censos ': 12 rows, widths [6], first ['Huambo', 'Bailundo', 'Huambo', 'Londuimbali']
+  p38: Quadro 12 - População por área de residência e sexo, 2014 e 2024
+  p39: Quadro 13 - População residente por grupos de idade, segundo o sexo, 2014 e 2024
+      block 'Quadro 13 - População residente por grupos de idade, segundo o sexo, 2': 5 rows, widths [6], first ['Huambo', '0 - 14 anos', '15 - 24 anos', '25 - 64 anos']
+  p42: Quadro 14 - População com 12 ou mais anos por estado civil, segundo o sexo, 2014 e 2024
+      block 'Quadro 14 - População com 12 ou mais anos por estado civil, segundo o ': 7 rows, widths [6], first ['Huambo', 'Solteiro(a)', 'Casado(a) / União de facto', 'Divorciado(a)']
+  p43: Quadro 15 - População com registo de nascimento por área de residência, 2014 e 2024
+  p45: Quadro 16 - População com bilhete de identidade, 2024 || Quadro 17 - População com Bilhete de identidade por município, segundo o sexo, 2024
+      block 'Quadro 17 - População com Bilhete de identidade por município, segundo': 18 rows, widths [4], first ['Huambo', 'Bailundo', 'Huambo', 'Londuimbali']
+  p46: Quadro 18 - Agregados familiares que receberam algum
+  p47: Quadro 19 - Distribuição da população com 5 ou mais anos por tipo de domínio funcional e grau de
+  p48: Quadro 20 - Crianças órfãs com 0-17 anos de idade, segundo o tipo, 2014 e 2024
+  p49: Quadro 21 - População de 2 ou mais anos por grupo étnico, 2024
+      block 'Quadro 21 - População de 2 ou mais anos por grupo étnico,': 1 rows, widths [2], first ['População com 2 ou mais anos']
+  p50: Quadro 22 - População com albinismo por área de residência, 2024
+  p51: Quadro 23 - População com 2 ou mais anos de idade,
+  p53: Quadro 24 - População com 5 ou mais anos de idade, segundo a frequência escolar, 2024
+  p55: Quadro 25 - População com 5-18 anos fora do sistema de ensino por grupos etários,
+      block 'Quadro 25 - População com 5-18 anos fora do sistema de ensino por grup': 4 rows, widths [4], first ['Huambo', '5-11 anos', '12-14 anos', '15-18 anos']
+  p56: Quadro 26 - População por tipo de habitação, 2024
+  p57: Quadro 27 - Agregados familiares por município e área de residência,
+  p58: Quadro 28 - Agregados familiares por tamanho e média de pessoas, 2024
+  p59: Quadro 29 - Agregados familiares por tipo e localização da instalação sanitária, 2024
+  p60: Quadro 30 - Agregados familiares com acesso a água apropriada
+  p61: Quadro 31 - Agregados familiares que utilizam a electricidade da rede
+  p62: Quadro 32 - Agregados familiares por posse de alguns bens, 2024
+  p63: Quadro 33 - Agregado familiar por área de residência segundo a posse de
+  p69: Quadro 1.1 - População por área de residência e município, segundo o sexo, RGPH - 2024
+      block 'Quadro 1.1 - População por área de residência e município, segundo o s': 53 rows, widths [3], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p70: Quadro 1.2 - População por idade simples segundo o sexo, RGPH - 2024
+  p71: Quadro 1.3 - População por grupos etários quinquenais, 2024
+      block 'Quadro 1.3 - População por grupos etários quinquenais,': 23 rows, widths [3], first ['Huambo', 'Urbana', 'Rural', '0-4 anos']
+  p72: Quadro 1.4 - População por província, por área de residência, 2024
+  p73: Quadro 1.5 - População por província, segundo outros grupos etários, 2024
+      block 'Quadro 1.5 - População por província, segundo outros grupos etários,': 53 rows, widths [7], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p74: Quadro 1.6- População por província e área de residência, 2024
+  p79: Quadro 2.1 - População com 12 ou mais por estado civil segungo o sexo, 2024
+  p83: Quadro 3.1 - População residente com registo de nascimento por província e área de
+  p84: Quadro 3.2 - População residente com registo de nascimento por grupos || Quadro 3.3 - População residente com Bilhete de identidade por área de residência,
+  p85: Quadro 3.4 - População com 5 anos ou mais, residente com Bilhete de identidade por província,area de
+  p89: Quadro 4.1 - Resumo síntese dos indicadores da dificiência
+  p90: Quadro 4.2 - Pessoas que têm albinismo por área de residência e município segundo o sexo
+      block 'Quadro 4.2 - Pessoas que têm albinismo por área de residência e municí': 53 rows, widths [4], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p91: Quadro 4.3 - População com albinismo por área de residência, município e comuna, segundo grupo etário
+      block 'Quadro 4.3 - População com albinismo por área de residência, município': 53 rows, widths [6], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p95: Quadro 5.1 - Crianças com 0-17 anos que não vivem com os pais por área de residência, província, segundo sexo, RGPH 2024
+  p97: Quadro 5.2 - Crianças com 0-17 anos por área de residência, segundo a situação de viver junto com os pais biológicos e t
+  p101: Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo grupos étinicos tribos, 2024
+      block 'Quadro 6.1 - População de 2 ou mais anos por residência, município e c': 27 rows, widths [15], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p103: Quadro 6.2 - População por município, comuna e área de residência, segundo a língua materna, 2024
+      block 'Quadro 6.2 - População por município, comuna e área de residência, seg': 34 rows, widths [9], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p105: Quadro 6.2 - População por município, comuna e área de residência, segundo a língua materna, 2024
+      block 'Quadro 6.2 - População por município, comuna e área de residência, seg': 53 rows, widths [8], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p109: Quadro 7.1 - População com 2 ou mais anos por província e área de residência, segundo a religião ou espiritualidade, 202
+      block 'Quadro 7.1 - População com 2 ou mais anos por província e área de resi': 20 rows, widths [13], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p115: Quadro 8.1- População com 15 ou mais anos que sabe ler e escrever por área de residência, município e comuna, segundo o 
+      block 'Quadro 8.1- População com 15 ou mais anos que sabe ler e escrever por ': 27 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p117: Quadro 8. 2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sex
+  p118: Quadro 8. 2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residência, segundo o sex
+  p119: Quadro 8. 3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sex
+      block 'Quadro 8. 3 - População com 15-24 anos que sabe ler e escrever por áre': 27 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p120: Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e comuna, segundo o sexo
+      block 'Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área': 29 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Ucuma']
+  p121: Quadro 8. 4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência 
+      block 'Quadro 8. 4 - População com 5 ou mais anos por área de residência, mun': 27 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p122: Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situação de frequência e
+      block 'Quadro 8.4 - População com 5 ou mais anos por área de residência, muni': 29 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Ucuma']
+  p123: Quadro 8. 5 - População com 5-11 anos fora do sistema de ensino por área de residência, município e comuna, segundo o se
+      block 'Quadro 8. 5 - População com 5-11 anos fora do sistema de ensino por ár': 27 rows, widths [6], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p124: Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por área de residência, município e comuna, segundo o sex
+      block 'Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por áre': 29 rows, widths [6], first ['Huambo', 'Urbana', 'Rural', 'Ucuma']
+  p125: Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por área de residência, município e comuna, segundo o
+      block 'Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por ár': 53 rows, widths [6], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p126: Quadro 8.7 - População com 15-18 anos fora do sistema de ensino por área de residência, município e comuna, segundo
+      block 'Quadro 8.7 - População com 15-18 anos fora do sistema de ensino por ár': 53 rows, widths [6], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p127: Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esco
+      block 'Quadro 8.8 - População com 5 ou mais anos por área de residência e gru': 28 rows, widths [10], first ['Huambo', '5-9 anos', '10-14 anos', '15-19 anos']
+  p128: Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situação de frequência esco
+      block 'Quadro 8.8 - População com 5 ou mais anos por área de residência e gru': 15 rows, widths [10], first ['Huambo', 'Rural', '5-9 anos', '10-14 anos']
+  p129: Quadro 8.9 - População com 5-18 anos fora do sistema de ensino por área de residência , segundo o sexo
+  p130: Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.10 - População com 5-18 anos por área de residência, municípi': 31 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p131: Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.10 - População com 5-18 anos por área de residência, municípi': 25 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Ecunha']
+  p132: Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.11 - População com 5-11 anos por área de residência, municípi': 27 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p133: Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação de frequência escol
+      block 'Quadro 8.11 - População com 5-11 anos por área de residência, municípi': 30 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Lépi']
+  p134: Quadro 8. 12 - População com 5 ou mais anos por província e área de residência, segundo o nivél de ensino a frequentar, 
+  p135: Quadro 8.12- População com 5 ou mais anos por província e área de residência, segundo o nivél de ensino a frequentar, 20
+  p136: Quadro 8.12 - População com 5 ou mais anos por província e área de residência, segundo o nivél de ensino a
+  p137: Quadro 8. 13 - População com 12-14 anos por área de residência, município e comuna, segundo a situação de frequência
+      block 'Quadro 8. 13 - População com 12-14 anos por área de residência, municí': 53 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p138: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 29 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p139: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu || Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+      block 'Quadro 8.14 - População com 18 ou mais anos por área de residência, mu': 27 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Cacoma']
+  p140: Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o nível de ensino conclu
+  p142: Quadro 8.15 -Taxa líquida de frequência do ensino primário por área de residência, município e comuna, segundo o sexo
+  p143: Quadro 8.15 - Taxa líquida de frequência do ensino primário por área de residência, município e comuna, segundo o sexo
+  p144: Quadro 8.15 - Taxa líquida de frequência do ensino secundário por área de residência, município e comuna, segundo o sexo
+  p145: Quadro 8.15-Taxa líquida de frequência do ensino secundário por área de residência, município e comuna, segundo o sexo
+  p149: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 27 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p150: Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal tipo de iluminação, 20
+      block 'Quadro 9.1 - Agregados familiares por área de residência, município e ': 29 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Ucuma']
+  p151: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu
+      block 'Quadro 9.2 - Agregados familiares por área de residência, município e ': 27 rows, widths [9], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p152: Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte de energia/combu
+      block 'Quadro 9.2 - Agregados familiares por área de residência, município e ': 29 rows, widths [9], first ['Huambo', 'Urbana', 'Rural', 'Ucuma']
+  p153: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 53 rows, widths [7], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p154: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 29 rows, widths [8], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p155: Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sanitário (casa de banho
+      block 'Quadro 9.3 - Agregados familiares por área de residência, município e ': 27 rows, widths [8], first ['Huambo', 'Urbana', 'Rural', 'Cacoma']
+  p156: Quadro 9.4 - Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que 
+      block 'Quadro 9.4 - Agregados familiares por área de residência, município e ': 31 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p157: Quadro 9.4 - Agregados familiares por área de residência, município e comuna, segundo o modo de tratamento habitual que 
+      block 'Quadro 9.4 - Agregados familiares por área de residência, município e ': 25 rows, widths [10], first ['Huambo', 'Urbana', 'Rural', 'Ecunha']
+  p158: Quadro 9.5 - Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.5 - Agregados familiares por área de residência, município e ': 53 rows, widths [3], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p159: Quadro 9.6 - Agregados familiares por área de residência, município e comuna, segundo o acesso a água da
+      block 'Quadro 9.6 - Agregados familiares por área de residência, município e ': 53 rows, widths [5], first ['Cunene', 'Urbana', 'Rural', 'Bailundo']
+  p160: Quadro 9.7 - Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.7 - Agregados familiares por área de residência, município e ': 53 rows, widths [3], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p161: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 27 rows, widths [7], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p162: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 29 rows, widths [7], first ['Huambo', 'Urbana', 'Rural', 'Ucuma']
+  p163: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 29 rows, widths [4, 7], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p164: Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fonte utilizada para a
+      block 'Quadro 9.8 - Agregados familiares por área de residência, município e ': 27 rows, widths [7], first ['Huambo', 'Urbana', 'Rural', 'Cacoma']
+  p165: Quadro 9.9 - Agregados familiares por área de residência, município e comuna,
+      block 'Quadro 9.9 - Agregados familiares por área de residência, município e ': 53 rows, widths [4], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p166: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da lavra/exp
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 29 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p167: Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de ocupação da lavra/exp
+      block 'Quadro 9.10 - Agregados familiares por área de residência, município e': 27 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Cacoma']
+  p168: Quadro 9. 11 - Agregados familiares por área de residência, município e comuna, segundo a
+      block 'Quadro 9. 11 - Agregados familiares por área de residência, município ': 53 rows, widths [3], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p169: Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna, segundo o tipo de
+      block 'Quadro 9.12 - Agregados familiares criadores de animais por área de re': 53 rows, widths [7], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p170: Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de actividade
+      block 'Quadro 9.13 - Agregados familiares por área de residência, município e': 54 rows, widths [2, 5], first ['res i d ê n c i a pi sc a t ó r i a n o s ú l t im o s', 'Huambo', 'Urbana', 'Rural']
+  p171: Quadro 9.14 - Agregados familiares por área de residência, município e comuna, segundo a posse de bens que funcionam em 
+      block 'Quadro 9.14 - Agregados familiares por área de residência, município e': 31 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p172: Quadro 9.14 - Agregados familiares por área de residência, município e comuna, segundo a posse de bens que funcionam em 
+      block 'Quadro 9.14 - Agregados familiares por área de residência, município e': 25 rows, widths [11], first ['Huambo', 'Urbana', 'Rural', 'Ecunha']
+  p173: Quadro 9.15 - Agregados familiares por área de residência, município e
+      block 'Quadro 9.15 - Agregados familiares por área de residência, município e': 53 rows, widths [4], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p174: Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade que
+      block 'Quadro 9.16 - Agregados familiares por área de residência, município e': 53 rows, widths [5], first ['Huambo', 'Urbana', 'Rural', 'Bailundo']
+  p175: Quadro 9.17 - Agregados familiares por área de residência,
+  p176: Quadro 9.18 - Agregados familiares por província e área de residência, segundo o tipo de núcleo, 2024 || Quadro 9.19 - Agregados familiares por grupo étário, segundo o sexo do chefe, 2024
+      block 'Quadro 9.19 - Agregados familiares por grupo étário, segundo o sexo do': 1 rows, widths [5], first ['Huambo']
+  p177: Quadro 9.20 - Agregados familiares por província e área de residência, segundo o tamanho e média de pessoas por
+  p181: Quadro 10.1 - População recenseada por município e tipo de habitação, segundo grupos étários,2024
+      block 'Quadro 10.1 - População recenseada por município e tipo de habitação, ': 53 rows, widths [5], first ['Huambo', 'Urbano', 'Rural', 'Bailundo']
+  p182: Quadro 10.2 - Habitações familiares por município e área de residência, segundo o tipo de habitação, 2024
+      block 'Quadro 10.2 - Habitações familiares por município e área de residência': 53 rows, widths [7], first ['Huambo', 'Urbano', 'Rural', 'Bailundo']
+  p183: Quadro 10.3 - Habitações familiares por província e área de residência, segundo o estado de
+  p184: Quadro 10.4 - Habitações familiares por província e área de residência, segundo o tipo de material usado principalmente 
+  p185: Quadro 10.4 - Habitações familiares por província e área de residência, segundo o tipo de material usado principalmente 
+  p186: Quadro 10.5 - Habitações familiares por província e área de residência, segundo o tipo de material usado
+  p187: Quadro 10.6 - Habitações familiares por província e área de residência, segundo o tipo de material usado principamente n
+  p188: Quadro 10.6 - Habitações familiares por província e área de residência, segundo o tipo de material usado principamente n
+  p194: Quadro 1- Resumo da Estimativa por Sistema Duplo || Quadro 2-- Sistema de Classificações e Convenções Metodológicas do Censo 2024 || Quadro3 - Interpretação dos Símbolos Utilizados nas Tabelas Estatísticas
+  p196: Quadro 16: Tamanho das secções por províncias || Quadro 15 - Taxa de resposta a nível de agregados familiares
