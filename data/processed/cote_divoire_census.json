@@ -1612,10 +1612,7 @@
     "level": "admin1",
     "name": "Bas-Sassandra",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Gbokle (seat Sassandra), Nawa (seat Soubre) and San Pedro (seat San-Pedro), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "San-Pédro",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1650,22 +1647,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B96959932745266",
-    "population_note": "The 2021 census's counts of the district's 3 regions, added."
+    "population_note": "The 2021 census's counts of the district's 3 regions, added.",
+    "capital_note": "San-Pédro is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the San Pedro region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-comoe",
     "level": "admin1",
     "name": "Comoe",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Indenie-Djuablin (seat Abengourou) and Sud-Comoe (seat Aboisso), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Abengourou",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1700,22 +1701,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B96325295181308",
-    "population_note": "The 2021 census's counts of the district's 2 regions, added."
+    "population_note": "The 2021 census's counts of the district's 2 regions, added.",
+    "capital_note": "Abengourou is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Indenie-Djuablin region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-denguele",
     "level": "admin1",
     "name": "Denguele",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Folon (seat Minignan) and Kabadougou (seat Odienne), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Odienné",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1750,12 +1755,19 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B12160353323799",
-    "population_note": "The 2021 census's counts of the district's 2 regions, added."
+    "population_note": "The 2021 census's counts of the district's 2 regions, added.",
+    "capital_note": "Odienné is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Kabadougou region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-districtautonomedabidjan",
@@ -1796,7 +1808,7 @@
         "url": "https://rp2021.anstat.ci/",
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/capital"
       }
     ],
     "country": "CIV",
@@ -1842,7 +1854,7 @@
         "url": "https://rp2021.anstat.ci/",
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/capital"
       }
     ],
     "country": "CIV",
@@ -1854,10 +1866,7 @@
     "level": "admin1",
     "name": "Goh-Djiboua",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Goh (seat Gagnoa) and Loh-Djiboua (seat Divo), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Gagnoa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1892,22 +1901,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B34711482467037",
-    "population_note": "The 2021 census's counts of the district's 2 regions, added."
+    "population_note": "The 2021 census's counts of the district's 2 regions, added.",
+    "capital_note": "Gagnoa is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Goh region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-lacs",
     "level": "admin1",
     "name": "Lacs",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Belier (seat Toumodi), Iffou (seat Daoukro), Moronou (seat Bongouanou) and N'Zi (seat Dimbokro), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Dimbokro",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1942,22 +1955,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B20352934117266",
-    "population_note": "The 2021 census's counts of the district's 4 regions, added."
+    "population_note": "The 2021 census's counts of the district's 4 regions, added.",
+    "capital_note": "Dimbokro is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the N'Zi region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-lagunes",
     "level": "admin1",
     "name": "Lagunes",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Agneby-Tiassa (seat Agboville), Grands Ponts (seat Dabou) and Me (seat Adzope), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Dabou",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1992,22 +2009,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B73612976130091",
-    "population_note": "The 2021 census's counts of the district's 3 regions, added."
+    "population_note": "The 2021 census's counts of the district's 3 regions, added.",
+    "capital_note": "Dabou is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Grands Ponts region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-montagnes",
     "level": "admin1",
     "name": "Montagnes",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Cavally (seat Guiglo), Guemon (seat Duekoue) and Tonkpi (seat Man), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Man",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -2042,22 +2063,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B69310198422077",
-    "population_note": "The 2021 census's counts of the district's 3 regions, added."
+    "population_note": "The 2021 census's counts of the district's 3 regions, added.",
+    "capital_note": "Man is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Tonkpi region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-sassandramarahoue",
     "level": "admin1",
     "name": "Sassandra-Marahoue",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Haut-Sassandra (seat Daloa) and Marahoue (seat Bouafle), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Daloa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -2092,22 +2117,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B74959515955757",
-    "population_note": "The 2021 census's counts of the district's 2 regions, added."
+    "population_note": "The 2021 census's counts of the district's 2 regions, added.",
+    "capital_note": "Daloa is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Haut-Sassandra region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-savanes",
     "level": "admin1",
     "name": "Savanes",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Bagoue (seat Boundiali), Poro (seat Korhogo) and Tchologo (seat Ferkessedougou), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Korhogo",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -2142,22 +2171,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B28791092437733",
-    "population_note": "The 2021 census's counts of the district's 3 regions, added."
+    "population_note": "The 2021 census's counts of the district's 3 regions, added.",
+    "capital_note": "Korhogo is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Poro region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-valledubandama",
     "level": "admin1",
     "name": "Valle Du Bandama",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Gbeke (seat Bouaké) and Hambol (seat Katiola), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Bouaké",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -2192,22 +2225,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B62906982633778",
-    "population_note": "The 2021 census's counts of the district's 2 regions, added."
+    "population_note": "The 2021 census's counts of the district's 2 regions, added.",
+    "capital_note": "Bouaké is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Gbeke region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-woroba",
     "level": "admin1",
     "name": "Woroba",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Bafing (seat Touba), Bere (seat Mankono) and Worodougou (seat Seguela), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Séguéla",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -2242,22 +2279,26 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B58892240487392",
-    "population_note": "The 2021 census's counts of the district's 3 regions, added."
+    "population_note": "The 2021 census's counts of the district's 3 regions, added.",
+    "capital_note": "Séguéla is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Worodougou region on the 2021 census's pages."
   },
   {
     "id": "CIV-RGPH2021-district-zanzan",
     "level": "admin1",
     "name": "Zanzan",
     "parent": "CIV",
-    "capital": {
-      "status": "not_available",
-      "note": "The district groups the regions of Bounkani (seat Bouna) and Gontougo (seat Bondoukou), as the 2021 census's regional pages give them; they name no seat for the district itself."
-    },
+    "capital": "Bondoukou",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -2292,11 +2333,18 @@
         "license": "ANStat publication (reuse with attribution)",
         "year": 2021,
         "field": "population/sex_ratio"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of Ivory Coast",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "CIV",
     "match_by": "shape_id",
     "shape_id": "83157122B79983119233374",
-    "population_note": "The 2021 census's counts of the district's 2 regions, added."
+    "population_note": "The 2021 census's counts of the district's 2 regions, added.",
+    "capital_note": "Bondoukou is the district's seat, as English Wikipedia's table of the districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it is also the seat of the Gontougo region on the 2021 census's pages."
   }
 ]
