@@ -1,22 +1,92 @@
-  read https://www.hcp.ma/file/242341/: 166,693 bytes, sha256 7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca
 /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
   warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  12 regions and 75 provinces and prefectures, making 36,828,330
+  commune across the line: ('guelmimouednoun', 'assazag', 'almahbass') {'women': 264, 'name': 'Al Mahbass', 'zone': ('guelmimouednoun', 'assazag', 'almahbass'), 'men': 318}
+  the Kingdom {'women': 18295103, 'men': 18195488}, 12 regions, 75 provinces, 1 communes
+  mother tongues for 89 zones; the Kingdom {'Amazigh': 18.9, 'Arabic': 80.6}
   region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
   'Taroudant Province' bound to 'Province de Taroudannt' by spelling
   'Oued Ed-Dahab Province': a piece across the line, written as a gap
   "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
   'Tarfaya Province': part of a province across the line, written as a gap
   HCP provinces not drawn: []
-  Province d'Ouezzane: 274,577
-  Préfecture d'Oujda-Angad: 572,454
-  Préfecture de Skhirate-Témara: 783,475
-  Province d'Errachidia: 427,572
-  Province d'Assa-Zag: Commune d'Al Mahbass 19,139 (100710501), across the line, taken out of Province d'Assa-Zag (53,298)
-  Province de Tarfaya: Commune de Tarfaya 11,030 (115370105)
-  Province de Tarfaya: Commune de Daoura 902 (115370303)
-  Province de Tarfaya: Commune d'El Hagounia 561 (115370305)
-  Province de Tarfaya: Commune d'Akhfennir 2,841 (115370501)
-  Province de Tarfaya: Commune de Tah 894 (115370507)
-  10 regions and 69 of 72 provinces bound
-  wrote data/processed/morocco_rgph2024.json (167 kB)
+  admin1 Béni Mellal-Khénifra                     956 [('Arabic', 65.6), ('Amazigh', 34.3)]
+  admin1 Casablanca-Settat                        995 [('Arabic', 95.5), ('Amazigh', 3.6)]
+  admin1 Drâa-Tafilalet                           968 [('Amazigh', 64.0), ('Arabic', 35.9)]
+  admin1 Fez-Meknes                               987 [('Arabic', 89.6), ('Amazigh', 10.3)]
+  admin1 Guelmim-Oued Noun                        971 [('Arabic', 59.6), ('Amazigh', 40.3)]
+  admin1 Marrakech-Safi                           1017 [('Arabic', 78.1), ('Amazigh', 21.6)]
+  admin1 Oriental                                 957 [('Arabic', 67.5), ('Amazigh', 32.3)]
+  admin1 Rabat-Salé-Kenitra                       987 [('Arabic', 94.2), ('Amazigh', 5.2)]
+  admin1 Souss-Massa                              983 [('Amazigh', 56.4), ('Arabic', 43.0)]
+  admin1 Tangier-Tetouan-Al Hoceima               1032 [('Arabic', 92.4), ('Amazigh', 7.3)]
+  admin2 Al Hoceima Province                      1023 [('Amazigh', 55.2), ('Arabic', 44.7)]
+  admin2 Chefchaouen Province                     1103 [('Arabic', 99.7), ('Amazigh', 0.2)]
+  admin2 Fahs-Anjra Province                      1084 [('Arabic', 98.0), ('Amazigh', 1.9)]
+  admin2 Larache Province                         1031 [('Arabic', 98.7), ('Amazigh', 1.2)]
+  admin2 Prefecture of Tangier - Assilah          1032 [('Arabic', 95.6), ('Amazigh', 3.8)]
+  admin2 Province d'Ouezzane إقليم وزان           1022 [('Arabic', 99.8), ('Amazigh', 0.1)]
+  admin2 Préfecture de M'diq-Fnideq عمالة المضيق  995 [('Arabic', 95.8), ('Amazigh', 3.9)]
+  admin2 Tetouan Province                         1003 [('Arabic', 97.7), ('Amazigh', 2.0)]
+  admin2 Province de Berkane إقليم بركان          960 [('Arabic', 88.4), ('Amazigh', 11.4)]
+  admin2 Province de Driouch إقليم الدريوش        915 [('Amazigh', 85.7), ('Arabic', 14.2)]
+  admin2 Province de Figuig إقليم الناظور         956 [('Arabic', 62.8), ('Amazigh', 37.2)]
+  admin2 Province de Guercif إقليم جرسيف          972 [('Arabic', 65.0), ('Amazigh', 34.9)]
+  admin2 Province de Jerada إقليم جرادة           954 [('Arabic', 96.2), ('Amazigh', 3.8)]
+  admin2 Province de Nador إقليم الناظور          965 [('Amazigh', 63.7), ('Arabic', 36.2)]
+  admin2 Province de Taourirt إقليم تاوريرت       955 [('Arabic', 85.6), ('Amazigh', 14.4)]
+  admin2 Préfecture d'Oujda-Angad عمالة وجدة - أن 957 [('Arabic', 95.7), ('Amazigh', 4.0)]
+  admin2 Prefecture de Meknès عمالة مكناس         969 [('Arabic', 93.2), ('Amazigh', 6.5)]
+  admin2 Province d'El Hajeb إقليم الحاجب         999 [('Arabic', 83.5), ('Amazigh', 16.4)]
+  admin2 Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إف 969 [('Arabic', 59.0), ('Amazigh', 40.8)]
+  admin2 Province de Boulemane إقليم بولمان       985 [('Arabic', 65.3), ('Amazigh', 34.6)]
+  admin2 Province de Moulay Yacoub إقليم مولاي يع 1078 [('Arabic', 99.4), ('Amazigh', 0.5)]
+  admin2 Province de Sefrou إقليم صفرو            955 [('Arabic', 63.8), ('Amazigh', 36.2)]
+  admin2 Province de Taounate إقليم تاونات        1037 [('Arabic', 99.8), ('Amazigh', 0.1)]
+  admin2 Province de Taza اقليم تازة              975 [('Arabic', 82.4), ('Amazigh', 17.5)]
+  admin2 Préfecture de Fès عمالة فاس              976 [('Arabic', 98.4), ('Amazigh', 1.2)]
+  admin2 Prefecture of Rabat                      930 [('Arabic', 92.5), ('Amazigh', 4.6)]
+  admin2 Prefecture of Salé                       981 [('Arabic', 95.1), ('Amazigh', 4.3)]
+  admin2 Province de Kenitra إقليم القنيطرة       1005 [('Arabic', 97.7), ('Amazigh', 2.0)]
+  admin2 Province de Khémisset إقليم الخميسات     968 [('Arabic', 76.7), ('Amazigh', 23.2)]
+  admin2 Province de Sidi Kacem إقليم سيدي قاسم   1026 [('Arabic', 99.6), ('Amazigh', 0.3)]
+  admin2 Province de Sidi Slimane إقليم سيدي سليم 1006 [('Arabic', 99.2), ('Amazigh', 0.7)]
+  admin2 Préfecture de Skhirate-Témara عمالة الصخ 985 [('Arabic', 94.5), ('Amazigh', 4.8)]
+  admin2 Province d'Azilal إقليم أزيلال           1021 [('Amazigh', 83.8), ('Arabic', 16.1)]
+  admin2 Province de Beni Mellal إقليم بني ملال   926 [('Arabic', 72.2), ('Amazigh', 27.7)]
+  admin2 Province de Fquih Ben Saleh إقليم الفقيه 926 [('Arabic', 96.8), ('Amazigh', 3.1)]
+  admin2 Province de Khouribga إقليم خريبكة       947 [('Arabic', 98.7), ('Amazigh', 1.2)]
+  admin2 Province de Khénifra إقليم خنيفرة        955 [('Amazigh', 54.3), ('Arabic', 45.6)]
+  admin2 Berrechid Province                       1025 [('Arabic', 96.0), ('Amazigh', 3.9)]
+  admin2 El Jadida Province                       1033 [('Arabic', 98.6), ('Amazigh', 1.2)]
+  admin2 Médiouna Province                        1015 [('Arabic', 95.1), ('Amazigh', 4.8)]
+  admin2 Nouaceur Province                        1005 [('Arabic', 92.2), ('Amazigh', 6.5)]
+  admin2 Prefecture of Casablanca                 965 [('Arabic', 93.8), ('Amazigh', 4.6)]
+  admin2 Prefecture of Mohammédia                 991 [('Arabic', 96.0), ('Amazigh', 3.3)]
+  admin2 Province de Benslimane إقليم بن سليمان   1020 [('Arabic', 97.9), ('Amazigh', 1.9)]
+  admin2 Province de Sidi Bennour إقليم سيدي بنور 1030 [('Arabic', 99.6), ('Amazigh', 0.3)]
+  admin2 Settat Province                          1014 [('Arabic', 98.9), ('Amazigh', 0.9)]
+  admin2 Al Haouz Province                        1071 [('Amazigh', 75.4), ('Arabic', 24.5)]
+  admin2 Chichaoua Province                       1025 [('Amazigh', 60.6), ('Arabic', 39.3)]
+  admin2 Essaouira Province                       1021 [('Arabic', 63.1), ('Amazigh', 36.5)]
+  admin2 Province d'El Kelâat Es-Sraghna إقليم قل 996 [('Arabic', 97.8), ('Amazigh', 2.2)]
+  admin2 Province de Safi إقليم أسفي              1039 [('Arabic', 99.4), ('Amazigh', 0.6)]
+  admin2 Province de Youssoufia إقليم اليوسفية    1040 [('Arabic', 99.1), ('Amazigh', 0.8)]
+  admin2 Préfecture de Marrakech عمالة مراكش      977 [('Arabic', 89.1), ('Amazigh', 10.0)]
+  admin2 Rhamna Province                          1071 [('Arabic', 97.7), ('Amazigh', 2.2)]
+  admin2 Ouarzazate Province                      950 [('Amazigh', 74.8), ('Arabic', 25.1)]
+  admin2 Province d'Errachidia إقليم الرشيدية     964 [('Arabic', 64.5), ('Amazigh', 35.4)]
+  admin2 Province de Midelt إقليم ميدلت           982 [('Amazigh', 72.8), ('Arabic', 27.1)]
+  admin2 Province de Tinghir إقليم تنغير          959 [('Amazigh', 96.3), ('Arabic', 3.6)]
+  admin2 Zagora Province                          991 [('Arabic', 51.3), ('Amazigh', 48.6)]
+  admin2 Agadir Ida-Outanane Prefecture           998 [('Amazigh', 52.5), ('Arabic', 46.7)]
+  admin2 Chtouka-Ait Baha Province                1037 [('Amazigh', 66.5), ('Arabic', 32.0)]
+  admin2 Inezgane-Ait Melloul Prefecture          1002 [('Arabic', 51.7), ('Amazigh', 48.0)]
+  admin2 Tata Province                            820 [('Amazigh', 70.6), ('Arabic', 29.4)]
+  admin2 Tiznit Province                          913 [('Amazigh', 85.5), ('Arabic', 14.4)]
+  admin2 Taroudant Province                       966 [('Amazigh', 51.7), ('Arabic', 48.3)]
+  admin2 Assa-Zag Province                        988 [('Arabic', 88.6), ('Amazigh', 11.3)]
+  admin2 Guelmim Province                         958 [('Arabic', 63.8), ('Amazigh', 36.0)]
+  admin2 Province de Tan-Tan إقليم طانطان         1009 [('Arabic', 87.6), ('Amazigh', 12.4)]
+  admin2 Sidi Ifni Province                       959 [('Amazigh', 80.8), ('Arabic', 19.1)]
+  10 regions and 69 provinces written; 79 with mother tongues
+  wrote data/processed/morocco_rgph2024_sexes.json (201 kB)
