@@ -29,11 +29,11 @@ which is the region entire.
 
 Special weredas and town administrations were counted apart from the zones
 around them. Where the town and the land the census gave it stand inside one
-zone polygon, the town's rows are added to that zone's (SPECIAL); the two the
-polygons split -- Bahir Dar, on the line between West Gojam and North Gonder,
-and Mao-Komo, between Asosa and West Wellega -- are added to neither, and
-"Region 17", the workbook's thirteenth first-order area of 96,754 people, which
-it does not name, is placed nowhere.
+zone polygon, the town's rows are added to that zone's (SPECIAL), Mao-Komo's to
+Asosa's (OCHA's outline of it lies 94% in the Asosa polygon); Bahir Dar, whose
+centre lies on the line between West Gojam and North Gonder, is added to
+neither, and both zones' notes say so. "Region 17", the workbook's thirteenth
+first-order area of 96,754 people, which it does not name, is placed nowhere.
 
 **The newer head count** (``ethiopia_projection.json``). The statistics office
 (the Central Statistical Agency, since 2021 the Ethiopian Statistics Service)
@@ -44,10 +44,16 @@ from it in 2020 and 2021. Its zones are today's, and several of them are not
 the map's 2007 zones (Bale without East Bale, North Gondar without Central and
 West Gondar, the Somali region's new weredas across the old zone lines), so a
 zone polygon takes the sum of the weredas that lie within it, from the
-placement in ``ethiopia_zones`` (OCHA's wereda outlines against the polygons),
-and only where the polygon is the union of whole weredas (ACCEPTED). A zone
-whose weredas the table and the outlines do not both know is left to the 2007
-count. The projection's sex and age split are not read: a census's own figure
+placement in ``ethiopia_zones`` (OCHA's wereda outlines against the polygons).
+A zone's sum is written where it is the zone's ground but for slivers: the
+people of the weredas that straddle its line, estimated from the share of each
+one's outline on either side (``ethiopia_zones.SHARES``), are no more than one
+in twenty of the sum, both the people of the zone's ground the sum leaves out
+and the people beyond its line the sum takes in; the note names any straddling
+wereda that brings in more than one in two hundred. A zone whose weredas the
+table and the outlines do not both know is left to the 2007 count. (OCHA's
+own zone table is by the zones of 2022, and where one of them is a drawn
+zone's ground, its weredas are that zone's sum here.) The projection's sex and age split are not read: a census's own figure
 stands over a projection's, and the table applies one age structure to all the
 weredas of a zone.
 
@@ -64,6 +70,7 @@ import io
 import json
 import re
 from collections import defaultdict
+from difflib import SequenceMatcher
 from typing import Any
 
 from . import uscb
@@ -118,18 +125,57 @@ SPECIAL = {
     "Sidama": ["hawassacityadministration"],
     "Metekel": ["pawespecialwereda"],
     "Agnuak": ["etangspecialwereda"],
+    # OCHA's outline of the Mao-Komo special wereda lies 94% in the Asosa
+    # polygon (6% in West Wellega's), and the projection's Asosa holds it too.
+    "Asosa": ["maokomospecialwereda"],
 }
-# Counted apart and placed in no polygon, with the reason (logged).
+# Counted apart and placed in no polygon, with the reason (logged), and the
+# zone polygons whose notes say so: Bahir Dar's centre lies 0.3 km inside
+# North Gonder's polygon, while OCHA's outline of the town lies 81% in West
+# Gojam's.
 UNPLACED = {
     "bahirdarspecialwereda": "the city lies on the line between West Gojam and North Gonder",
-    "maokomospecialwereda": "its land lies across the line between Asosa and West Wellega",
 }
+UNPLACED_ON = {"bahirdarspecialwereda": ("West Gojam", "North Gonder")}
 # How the census names them, for the notes.
 NAMES = {
     "adamaspecialwereda": "Adama", "burayuspecialwereda": "Burayu",
     "jimmatownspecialwereda": "Jimma town", "mekeletownspecialwereda": "Mekele town",
     "hawassacityadministration": "Hawassa city", "pawespecialwereda": "the Pawe special wereda",
     "etangspecialwereda": "the Etang special wereda",
+    "maokomospecialwereda": "the Mao-Komo special wereda", "bahirdarspecialwereda": "Bahir Dar",
+}
+# Seats the map's sources give for none of these: the two chartered cities,
+# whose seat is the city itself, at both levels (each is drawn as one zone too),
+# Harari Region drawn as one zone, and SNNPR as drawn, whose seat was Hawassa.
+# {(level, polygon label): (seat, note, the source cited for it)}.
+WIKIDATA = "https://www.wikidata.org/wiki/"
+SNNPR_ARTICLE = ("https://en.wikipedia.org/wiki/"
+                 "Southern_Nations,_Nationalities,_and_Peoples%27_Region")
+CAPITALS: dict[tuple[str, str], tuple[str, str, dict[str, str]]] = {
+    ("admin1", "Addis Ababa"): (
+        "Addis Ababa", "Addis Ababa is a chartered city, whose seat is the city itself.",
+        {"name": "Wikidata", "url": WIKIDATA + "Q3624", "license": "CC0"}),
+    ("admin2", "Region 14"): (
+        "Addis Ababa", "Addis Ababa, a chartered city, is drawn as this one zone; its seat is "
+                       "the city itself.",
+        {"name": "Wikidata", "url": WIKIDATA + "Q3624", "license": "CC0"}),
+    ("admin1", "Dire Dawa"): (
+        "Dire Dawa", "Dire Dawa is a chartered city, whose seat is the city itself.",
+        {"name": "Wikidata", "url": WIKIDATA + "Q193486", "license": "CC0"}),
+    ("admin2", "Dire Dawa"): (
+        "Dire Dawa", "Dire Dawa, a chartered city, is drawn as this one zone; its seat is the "
+                     "city itself.",
+        {"name": "Wikidata", "url": WIKIDATA + "Q193486", "license": "CC0"}),
+    ("admin2", "Hareri"): (
+        "Harar", "Harari Region is drawn as this one zone; its seat is Harar.",
+        {"name": "Wikidata", "url": WIKIDATA + "Q1033855", "license": "CC0"}),
+    ("admin1", "SNNPR"): (
+        "Hawassa", "Hawassa was the region's seat until the region was divided in 2023; it is "
+                   "drawn here as it was before Sidama Region, which holds Hawassa, was made "
+                   "from it in 2020.",
+        {"name": "English Wikipedia, Southern Nations, Nationalities, and Peoples' Region",
+         "url": SNNPR_ARTICLE, "license": "CC BY-SA 4.0"}),
 }
 
 
@@ -269,6 +315,16 @@ def fields(figures: dict[str, Any], note: str, of: str = "") -> dict[str, Any]:
     return out
 
 
+def seated(level: str, label: str, out: dict[str, Any]) -> dict[str, Any]:
+    """``out`` with the polygon's seat from CAPITALS, where it has one there."""
+    seat = CAPITALS.get((level, label))
+    if seat is None:
+        return out
+    capital, note, source = seat
+    return {**out, "capital": capital, "capital_note": note,
+            "sources": [*out["sources"], {"field": "capital", **source}]}
+
+
 def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
          ) -> tuple[list[dict[str, Any]], list[str]]:
     """The records, one per polygon, and a report of what went where."""
@@ -292,7 +348,9 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
             of = ", of the region and Sidama together"
         records.append(record(f"ETH-2007-{shape['id']}", shape["name"].strip(), level="admin1",
                               parent="ETH", country="ETH", match_by="shape_id",
-                              shape_id=shape["id"], **fields(figures, note, of)))
+                              shape_id=shape["id"],
+                              **seated("admin1", shape["name"].strip(),
+                                       fields(figures, note, of))))
     placed = {"region17"}
     for shape in admin2:
         label = shape["name"].strip()
@@ -325,10 +383,21 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
                 of = f", of the zone and {' and '.join(towns)} together"
             else:
                 note = "The 2007 census's count for the zone."
+        for apart, zones in UNPLACED_ON.items():
+            if label not in zones:
+                continue
+            hits = [(r, z) for (r, z) in table["zones"] if r in regions and z == apart]
+            if len(hits) != 1:
+                raise SystemExit(f"ethiopia_census: {apart} not found once in {regions}")
+            other = next(z for z in zones if z != label)
+            note += (f" {NAMES[apart]}, which the census counted apart "
+                     f"({table['zones'][hits[0]]['total']:,} people), is in neither this "
+                     f"figure nor {other}'s: the city lies on the line between the two zones "
+                     f"as drawn, most of its area in {zones[0]}.")
         placed.update(p if isinstance(p, str) else p[1] for p in parts)
         records.append(record(f"ETH-2007-{shape['id']}", label, level="admin2", parent="ETH",
                               country="ETH", match_by="shape_id", shape_id=shape["id"],
-                              **fields(figures, note, of)))
+                              **seated("admin2", label, fields(figures, note, of))))
     for key, why in UNPLACED.items():
         report.append(f"{key}: counted apart and placed in no polygon -- {why}")
     left = sorted(labels[k] for k in table["zones"] if k[1] not in placed and k[1] not in UNPLACED
@@ -338,6 +407,17 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
 
 
 PROJECTION_OUT = "ethiopia_projection.json"
+# The projection's weredas as read, each with the outline and the zone polygon
+# it was placed in, for checking.
+PROJECTION_WEREDAS = "ethiopia_projection_weredas.json"
+# How many of a zone's people may lie in weredas straddling its line, either
+# way, and how many a straddling wereda must bring in to be named.
+SLIVER = 0.05
+NAMED = 0.005
+# A wereda whose code is the outline's, in a region whose codes were not
+# reissued, with a name this alike (Kelete Awelallo, Kilte Awulaelo).
+ALIKE = 0.7
+REISSUED = {"ET07", "ET08", "ET11", "ET16"}
 PROJECTION_YEAR = 2022
 PROJECTION_DATASET = "cod-ps-eth"
 PROJECTION_SOURCE = ("Ethiopian Statistics Service, population projection for July 2022 from the "
@@ -411,10 +491,14 @@ def bare(name: str) -> str:
     return fold(text)
 
 
+def listed(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
 def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, dict[str, Any]],
                        page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
                        ) -> tuple[list[dict[str, Any]], list[str]]:
-    from .ethiopia_zones import ACCEPTED, NAMES, PLACED  # noqa: PLC0415
+    from .ethiopia_zones import NAMES, PLACED, SHARES  # noqa: PLC0415
     cite = [{"field": "population", "name": PROJECTION_SOURCE, "url": page,
              "year": PROJECTION_YEAR, "license": LICENCE}]
     records, report = [], []
@@ -450,6 +534,14 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
     outline: dict[str, str] = {}
     for code, row in weredas.items():
         if code in NAMES and same(NAMES[code], row["name"]):
+            outline[code] = code
+    # The same code under a spelling alike (Kelete Awelallo is Kilte Awulaelo,
+    # Mehale Meda town Mehal Meda town), where the region's codes were not
+    # reissued.
+    for code, row in weredas.items():
+        if code not in outline and code in NAMES and code[:4] not in REISSUED \
+                and code not in set(outline.values()) \
+                and SequenceMatcher(None, fold(NAMES[code]), fold(row["name"])).ratio() >= ALIKE:
             outline[code] = code
     claimed = set(outline.values())
     for code, row in weredas.items():
@@ -505,7 +597,22 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
                           f"weredas lie in {sorted(inside)}: {names}")
     labels = {s["id"]: s["name"].strip() for s in admin2}
     region_of = {s["id"]: s["name"].strip() for s in admin1}
-    for sid in sorted(ACCEPTED, key=lambda s: labels.get(s, s)):
+    for code, row in weredas.items():
+        row["outline"] = outline.get(code)
+        row["drawn"] = home.get(outline[code], "straddling") if code in outline else None
+    for code in (c for codes in placed_by_zone.values() for c in codes):
+        weredas[code]["drawn"] = next(s for s, cs in placed_by_zone.items() if code in cs)
+
+    def share(code: str, sid: str) -> float:
+        """How much of a projection wereda's outline lies in a zone polygon."""
+        o = weredas[code].get("outline")
+        if o is None:
+            return 1.0 if weredas[code].get("drawn") == sid else 0.0
+        if o in SHARES:
+            return SHARES[o].get(sid, 0.0)
+        return 1.0 if home.get(o) == sid else 0.0
+
+    for sid in sorted(labels, key=lambda s: labels[s]):
         codes = [c for c in weredas if c in outline and home.get(outline[c]) == sid]
         codes += placed_by_zone.get(sid, [])
         zones = {weredas[c]["zone"] for c in codes}
@@ -517,20 +624,49 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
         lost = sorted(unlocated & REGION_CODES.get(region_of.get(parent, ""), set()))
         blind += [f"a zone of region {r} not found" for r in lost]
         if not codes or blind or sid not in labels:
-            report.append(f"{labels.get(sid, sid)}: not written -- {len(codes)} weredas, zones "
-                          f"holding weredas matched to no outline {blind}")
+            if codes or blind:
+                report.append(f"{labels.get(sid, sid)}: not written -- {len(codes)} weredas, "
+                              f"zones holding weredas matched to no outline {blind}")
             continue
         total = sum(weredas[c]["total"] for c in codes)
+        # The people of the zone's ground in weredas placed elsewhere or nowhere,
+        # and the people of its weredas beyond its line, each wereda's people
+        # spread evenly over its outline.
+        taken_in = sorted(((share(c, sid) * w["total"], c) for c, w in weredas.items()
+                           if c not in codes and share(c, sid) > 0), reverse=True)
+        beyond = sorted((((1 - share(c, sid)) * weredas[c]["total"], c) for c in codes
+                         if share(c, sid) < 1), reverse=True)
+        left_out = sum(n for n, _ in taken_in)
+        spilled = sum(n for n, _ in beyond)
+        if left_out > SLIVER * total or spilled > SLIVER * total:
+            report.append(f"{labels[sid]}: not written -- of its sum {total:,}, weredas "
+                          f"straddling its line leave out about {left_out:,.0f} "
+                          f"({[weredas[c]['name'] for _, c in taken_in[:4]]}) and take in about "
+                          f"{spilled:,.0f} from beyond it "
+                          f"({[weredas[c]['name'] for _, c in beyond[:4]]})")
+            continue
+        named_in = [weredas[c]["name"] for n, c in taken_in if n > NAMED * total]
+        named_out = [weredas[c]["name"] for n, c in beyond if n > NAMED * total]
+        note = ("The statistics office's projection for July 2022, from the 2007 census, for "
+                "the one wereda that lies within the zone as drawn." if len(codes) == 1 else
+                f"The statistics office's projections for July 2022, from the 2007 census, for "
+                f"the {len(codes)} weredas that lie within the zone as drawn, added up.")
+        if named_in:
+            note += (f" The zone as drawn also takes in part of {listed(named_in)} "
+                     f"{'wereda' if len(named_in) == 1 else 'weredas'}, whose people are not "
+                     "in this figure.")
+        if named_out:
+            note += (f" Part of {listed(named_out)} "
+                     f"{'wereda' if len(named_out) == 1 else 'weredas'}, counted here, lies "
+                     "beyond the zone's line.")
+        report.append(f"{labels[sid]}: {total:,} from {len(codes)} weredas; about "
+                      f"{left_out:,.0f} left out, {spilled:,.0f} taken in from beyond "
+                      f"(named: {named_in}, {named_out})")
         records.append(record(
             f"ETH-2022-{sid}", labels[sid], level="admin2", parent="ETH", country="ETH",
             match_by="shape_id", shape_id=sid,
             population=measure(total, year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
-            population_note=(
-                "The statistics office's projection for July 2022, from the 2007 census, for "
-                "the one wereda that lies within the zone as drawn." if len(codes) == 1 else
-                f"The statistics office's projections for July 2022, from the 2007 census, for "
-                f"the {len(codes)} weredas that lie within the zone as drawn, added up."),
-            sources=cite))
+            population_note=note, sources=cite))
     # A region drawn as a single zone takes the region's projection.
     written = {r["shape_id"] for r in records if r["level"] == "admin2"}
     for shape in admin2:
@@ -593,6 +729,8 @@ def main() -> int:
     log(f"  projection: {sum(1 for r in projected if r['level'] == 'admin1')} regions and "
         f"{sum(1 for r in projected if r['level'] == 'admin2')} zones written")
     write_json(PROCESSED / PROJECTION_OUT, projected)
+    write_json(PROCESSED / PROJECTION_WEREDAS,
+               [{"code": c, **w} for c, w in sorted(weredas.items())])
     return 0
 
 
