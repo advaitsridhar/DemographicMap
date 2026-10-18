@@ -1,28 +1,85 @@
-probe_pdf: https://web.archive.org/web/2024id_/https://www.insbu.bi/wp-content/uploads/2023/04/RGPH-RESULTATS-DEFINITIFS.pdf
-  935 bytes
-invalid pdf header: b'<!doc'
-EOF marker not found
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
-    reader = PdfReader(io.BytesIO(blob))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 154, in __init__
-    self._initialize_stream(stream)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 179, in _initialize_stream
-    self.read(stream)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 712, in read
-    self._find_eof_marker(stream)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 857, in _find_eof_marker
-    line = read_previous_line(stream)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pypdf/_utils.py", line 411, in read_previous_line
-    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
-pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+== get https://www.ubos.org/wp-content/uploads/2025/10/NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx
+  via https://web.archive.org/web/20251008162910id_/https://www.ubos.org/wp-content/uploads/2025/10/NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx
+  9,356,925 bytes, begins b'PK\x03\x04\x14\x00\x06\x00\x08\x00\x00\x00!\x00\xa38'
+  https://www.ubos.org/wp-content/uploads/2025/10/NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx: 2 sheets: Table_of_Contents | Table1
+  -- sheet 'Table1': 13527 rows x 5 cols
+    r0: i0 | Click here to go back to the T |  |  | 
+    r1: i0b | Population distribution by Sex |  |  | 
+    r2: i0b | DISTRICT | Male | Female | Total
+    r3: i1b | COUNTY |  |  | 
+    r4: i2b | SUBCOUNTY |  |  | 
+    r5: i2 | PARISH |  |  | 
+    r6: i0b | ABIM | 67976 | 76108 | 144084
+    r7: i1b | LABWOR COUNTY | 67976 | 76108 | 144084
+    r8: i2b | ABIM | 4243 | 4711 | 8954
+    r9: i3 | ABONGEPACH | 491 | 495 | 986
+    r10: i3 | ADWAL | 623 | 685 | 1308
+    r11: i3 | ANINATA | 987 | 1117 | 2104
+    r12: i3 | AREMBWOLA | 507 | 607 | 1114
+    r13: i3 | KANU | 947 | 1079 | 2026
+    r14: i3 | OIMA | 688 | 728 | 1416
+    r15: i2b | ABIM TOWN COUNCIL | 4017 | 4619 | 8636
+    r16: i3 | AGWATA WARD | 875 | 993 | 1868
+    r17: i3 | ANGWEE WARD | 1342 | 1471 | 2813
+    r18: i3 | ORINGOWELO WARD | 882 | 1096 | 1978
+    r19: i3 | WIAWER WARD | 918 | 1059 | 1977
+    r20: i2b | ABUK TOWN COUNCIL | 1970 | 2167 | 4137
+    r21: i3 | ABUK WARD | 214 | 264 | 478
+    r22: i3 | ARENGETITHOE WARD | 221 | 292 | 513
+    r23: i3 | AWOKOLEM WARD | 248 | 231 | 479
+    r24: i3 | CEMEE WARD | 501 | 570 | 1071
+    r25: i3 | DISTRICT QUARTERS WARD | 291 | 287 | 578
+    r26: i3 | OREE WARD | 495 | 523 | 1018
+    r27: i2b | ALEREK | 2553 | 2901 | 5454
+    r28: i3 | KATHIMONGOR | 449 | 493 | 942
+    r29: i3 | KULODWONG | 619 | 693 | 1312
+    r30: i3 | LOYOROIT | 670 | 813 | 1483
+    r31: i3 | OCOM | 116 | 139 | 255
+    r32: i3 | OLEM | 699 | 763 | 1462
+    r33: i2b | ALEREK TOWN COUNCIL | 2892 | 3276 | 6168
+    r34: i3 | KAWANG WARD | 841 | 919 | 1760
+    r35: i3 | OTUMPILI WARD | 1716 | 2002 | 3718
+    r36: i3 | UNIVERSITY WARD | 335 | 355 | 690
+    r37: i2b | ATUNGA | 3023 | 3361 | 6384
+    r38: i3 | APOK | 306 | 260 | 566
+    r39: i3 | ATUNGA | 698 | 772 | 1470
+    r40: i3 | ORYEOTYENE | 1069 | 1204 | 2273
+    r41: i3 | OTALABAR | 950 | 1125 | 2075
+    r42: i2b | AWACH | 7562 | 8272 | 15834
+    r43: i3 | AWACH | 1597 | 1704 | 3301
+    r44: i3 | BARLYECH | 1051 | 1308 | 2359
+    r45: i3 | GOTAPWOU | 1661 | 1780 | 3441
+    r46: i3 | OPOROTH | 3253 | 3480 | 6733
+    r47: i2b | CAMKOK | 1559 | 1550 | 3109
+    r48: i3 | ANGOROM | 350 | 358 | 708
+    r49: i3 | KOTHIDANY | 253 | 256 | 509
+    r50: i3 | OKILILING | 956 | 936 | 1892
+    r51: i2b | KIRU TOWN COUNCIL | 3787 | 4334 | 8121
+    r52: i3 | KALAKALA WARD | 1289 | 1408 | 2697
+    r53: i3 | KIRU WARD | 854 | 932 | 1786
+    r54: i3 | OYARO WARD | 1644 | 1994 | 3638
+    r55: i2b | LOTUKEI | 5786 | 6246 | 12032
+    r56: i3 | AOJAPIRO | 1211 | 1238 | 2449
+    r57: i3 | ARIDAI | 764 | 814 | 1578
+    r58: i3 | GANGMING | 1273 | 1374 | 2647
+    r59: i3 | GULOPONO | 973 | 1146 | 2119
+    r60: i3 | LOKA | 954 | 1029 | 1983
+    r61: i3 | YARAYARA | 611 | 645 | 1256
+    r62: i2b | MAGAMAGA | 3475 | 4351 | 7826
+    r63: i3 | GULOTWORO | 656 | 762 | 1418
+    r64: i3 | KOYA | 950 | 1263 | 2213
+    r65: i3 | MONYANGA | 1033 | 1281 | 2314
+    r66: i3 | WILELA | 836 | 1045 | 1881
+    r67: i2b | MORULEM | 5267 | 6040 | 11307
+    r68: i3 | ADEA | 3027 | 3316 | 6343
+    r69: i3 | AKWANGAGWEL | 867 | 1079 | 1946
+    r70: i3 | KATABOK WEST | 1373 | 1645 | 3018
+    r71: i2b | MORULEM TOWN COUNCIL | 7948 | 8689 | 16637
+    r72: i3 | ACHWAA WARD | 958 | 827 | 1785
+    r73: i3 | ANGOLEBWAL EAST | 513 | 621 | 1134
+    r74: i3 | ANGOLEBWAL WEST | 595 | 630 | 1225
+    r75: i3 | AREMO WARD | 955 | 1015 | 1970
+    r76: i3 | ARENGEPUA WARD | 451 | 518 | 969
+    r77: i3 | GOLONGER WARD | 744 | 830 | 1574
+    r78: i3 | KATABOK EAST WARD | 1053 | 1206 | 2259
+    r79: i3 | LOBOLWALA WARD | 1420 | 1529 | 2949
