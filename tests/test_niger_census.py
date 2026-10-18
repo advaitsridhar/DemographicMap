@@ -63,6 +63,14 @@ class NigerReads(unittest.TestCase):
         self.assertNotIn("gave none", niamey["religion_note"])
         city = by[("admin2", "Tahoua Ville")]
         self.assertEqual(city["sex_ratio"]["value"], round(1000 * 74_096 / 75_402))
+        # The city of Niamey is the region's one department, drawn alone: the
+        # region's ages are its own; other departments have none of their own.
+        one = by[("admin2", "Niamey")]
+        self.assertEqual(one["median_age"]["value"], niamey["median_age"]["value"])
+        self.assertTrue(one["median_age_note"].endswith("The region is this one department."))
+        self.assertEqual(one["sources"][0]["field"], "sex_ratio/median_age")
+        self.assertEqual(city["median_age"]["status"], "not_available")
+        self.assertEqual(city["sources"][0]["field"], "sex_ratio")
 
 
 if __name__ == "__main__":

@@ -40,5 +40,30 @@ class GuineaBissauThematic(unittest.TestCase):
         self.assertEqual(len(fields["extra_sources"]), 2)
 
 
+class AutonomousSector(unittest.TestCase):
+    """The Autonomous Sector of Bissau is the region and its one sector polygon."""
+
+    def test_the_region_fields_stand_on_its_one_polygon(self):
+        thematic = gb.thematic_tables(QUADRO_9B, ANNEX)
+        spec = gb.REGIONS["Bissau"]
+        sectors = {k: {"name": k, "total": 1000 * (i + 1), "men": 500 * (i + 1),
+                       "women": 500 * (i + 1)} for i, k in enumerate(spec["sectors"])}
+        total = sum(r["total"] for r in sectors.values())
+        tables = {"Bissau": {"region": (total, total // 2, total - total // 2),
+                             "sectors": sectors}}
+        admin1 = [{"id": spec["polygon"], "name": "Bissau", "parent": "GNB"}]
+        sid = next(iter(spec["sectors"].values()))
+        admin2 = [{"id": sid, "name": "Bissau Autonomous Sector", "parent": spec["polygon"]}]
+        records, _ = gb.build(tables, admin1, admin2, thematic)
+        by = {r["level"]: r for r in records}
+        sector = by["admin2"]
+        self.assertEqual(sector["median_age"]["value"], 20.2)
+        self.assertIn("which is this one polygon", sector["median_age_note"])
+        self.assertEqual(sector["religion"], by["admin1"]["religion"])
+        self.assertTrue(sector["ethnicity_note"].endswith("The region is this one polygon."))
+        self.assertEqual(sector["language"]["status"], "not_available")
+        self.assertEqual([s["field"] for s in sector["sources"]],
+                         ["population/sex_ratio", "median_age", "religion/ethnicity"])
+
 if __name__ == "__main__":
     unittest.main()

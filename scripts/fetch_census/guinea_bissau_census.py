@@ -44,7 +44,8 @@ region. Each region's groups must make the same total in both tables, and
 the regions the country's 1,442,227. Neither report goes below the region,
 and the principal language spoken ("dialecto") is tabulated by ethnic group
 and by urban or rural residence only, so the sectors and the regions' language
-say so instead.
+say so instead -- except the Autonomous Sector of Bissau, drawn as the
+region's one polygon at the second level too, which takes the region's.
 
 Usage:
     python -m scripts.fetch_census.guinea_bissau_census
@@ -475,11 +476,22 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 note = f"The 2009 census's resident population of {SEAT[sid]}"
             else:
                 note = f"The 2009 census's resident population of {rows[0]['name']} sector."
-            gaps = ({k: gap(NOT_AVAILABLE, v) for k, v in SECTOR_GAPS.items()}
-                    if thematic else {})
+            own2 = fields(total, men, women, note, region)
+            # A region drawn as one sector polygon (the Autonomous Sector of
+            # Bissau): the region's tables are the polygon's.
+            whole = sum(1 for u in admin2 if u.get("parent") == poly["id"]) == 1
+            if thematic and whole:
+                same = thematic_fields(region, thematic)
+                own2["sources"] = own2["sources"] + same.pop("extra_sources")
+                same["median_age_note"] = ("The 2009 census's median age for the region "
+                                           "(Quadro 9 B), which is this one polygon.")
+                for key in ("religion_note", "ethnicity_note"):
+                    same[key] += " The region is this one polygon."
+                own2.update(same)
+            elif thematic:
+                own2.update({k: gap(NOT_AVAILABLE, v) for k, v in SECTOR_GAPS.items()})
             records.append(record(f"GNB-2009-{sid}", shape["name"], level="admin2", parent="GNB",
-                                  country="GNB", match_by="shape_id", shape_id=sid,
-                                  **fields(total, men, women, note, region), **gaps))
+                                  country="GNB", match_by="shape_id", shape_id=sid, **own2))
             report.append(f"  {shape['name']}: {total:,} ({', '.join(keys)})")
         if region == "Cacheu":
             caio = table["sectors"]["caio"]

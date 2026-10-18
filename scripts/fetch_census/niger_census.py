@@ -17,7 +17,8 @@ every first-level polygon. No population: OCHA's 2024 projections are newer
 figures for the same departments, and the regions are their sums. Every
 department says why it has no median age: the census publishes ages by region
 only, and OCHA's 2024 table gives 65 of the 67 departments one and the same age
-structure (only the cities of Maradi and Zinder have their own).
+structure (only the cities of Maradi and Zinder have their own). The city of
+Niamey, the region's one department and drawn alone, takes the region's median.
 
 **Two polygons are two regions.** The boundary file draws Tahoua with Agadez
 and Zinder with Diffa as single first-level polygons. Each takes its two
@@ -266,6 +267,7 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
     records: list[dict[str, Any]] = []
     report: list[str] = []
     regions_of: dict[str, list[str]] = {}
+    medians: dict[str, tuple[float, str]] = {}
     for shape in admin1:
         regions = POLYGONS.get(fold(shape["name"]))
         if not regions:
@@ -288,6 +290,7 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
              if both else "The median of the region's five-year age groups (Tableaux A2 to A4)")
             + ", interpolated within the group holding the middle person; the report gives "
             + reported + " in whole years.")
+        medians[shape["id"]] = (median, median_note)
         seat: dict[str, Any] = {}
         fields = "sex_ratio/median_age/religion"
         if both:
@@ -317,6 +320,9 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
         key = DEPARTMENTS.get(fold(name), fold(name))
         by_name[(region, key)] = (name, figures)
     used: set[tuple[str, str]] = set()
+    drawn: dict[str, int] = {}
+    for shape in admin2:
+        drawn[shape.get("parent")] = drawn.get(shape.get("parent"), 0) + 1
     for shape in admin2:
         regions = regions_of.get(shape.get("parent"), [])
         key = fold(shape["name"])
@@ -326,17 +332,28 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
             continue
         used.add(hits[0])
         name, (men, women, total) = by_name[hits[0]]
+        # A region the census counts as one department, drawn as one division
+        # (the city of Niamey): the region's ages are the department's.
+        whole = (len(regions) == 1 and drawn.get(shape.get("parent")) == 1
+                 and sum(1 for (r, _) in table["departments"] if r == regions[0]) == 1)
+        if whole:
+            median, median_note = medians[shape["parent"]]
+            ages: dict[str, Any] = {
+                "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
+                "median_age_note": median_note + " The region is this one department."}
+        else:
+            ages = {"median_age": gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)}
         records.append(record(
             f"NER-RGPH2012-{hits[0][0].lower()}-{key}", shape["name"], level="admin2",
             parent="NER", country="NER", match_by="shape_id", shape_id=shape["id"],
-            sources=[{**src, "field": "sex_ratio"}],
+            sources=[{**src, "field": "sex_ratio/median_age" if whole else "sex_ratio"}],
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE + ", Tableau 6"),
             sex_ratio_note=(f"The 2012 census counted {men:,} men and {women:,} women in "
                             + (f"the city of {shape['name'].replace(' Ville', '')}."
                                if name.startswith("VILLE DE") else
                                f"the department of {shape['name']}.")),
-            median_age=gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)))
+            **ages))
     left = sorted(f"{r}/{n}" for (r, n) in by_name if (r, n) not in used)
     if left:
         report.append(f"departments not bound: {left}")
