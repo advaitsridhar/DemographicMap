@@ -1154,19 +1154,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 374375,
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "value": 536016,
+      "year": 2023,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), population estimate for 1 July 2023 of every governorate, kism and markaz, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2006 census's tables by kism and markaz give no ages. CAPMAS's later tables put 359,443 people in the markaz of Abū Ṭisht at the 2006 census, against 374,375 in this count, so the 2017 census's ages for it are not taken for this outline."
+      "value": 21.2,
+      "unit": "years",
+      "year": 2017,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "sex_ratio": {
-      "value": 1038,
+      "value": 1032,
       "unit": "males_per_1000_females",
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "year": 2017,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "religion": {
       "status": "not_available"
@@ -1180,17 +1182,17 @@
     "sources": [
       {
         "field": "population",
-        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
+        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), population estimate for 1 July 2023 of every governorate, kism and markaz, as City Population (Thomas Brinkhoff) tabulates it",
+        "url": "https://www.citypopulation.de/en/egypt/admin/qin%C4%81/2707__ab%C5%AB_%E1%B9%ADisht/",
+        "year": 2023,
+        "license": "citation of City Population (citypopulation.de) required"
       },
       {
-        "field": "sex_ratio",
-        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
+        "field": "median_age/sex_ratio",
+        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it",
+        "url": "https://www.citypopulation.de/en/egypt/admin/qin%C4%81/2707__ab%C5%AB_%E1%B9%ADisht/",
+        "year": 2017,
+        "license": "citation of City Population (citypopulation.de) required"
       }
     ],
     "country": "EGY",
@@ -1204,8 +1206,9 @@
         "2707"
       ]
     },
-    "population_note": "The 2006 census count of the markaz of Abū Ṭisht as drawn then: 190,672 men and 183,703 women. CAPMAS's later tables put 359,443 people in the markaz of Abū Ṭisht at the 2006 census, against 374,375 in this count, so CAPMAS's later figures for it are not taken for this outline.",
-    "sex_ratio_note": "Men per 1,000 women at the 2006 census in the markaz of Abū Ṭisht as drawn then: 190,672 men and 183,703 women."
+    "population_note": "CAPMAS's estimate for 1 July 2023 of the markaz of Abū Ṭisht as drawn in 2006; the 2017 census counted 463,728.",
+    "sex_ratio_note": "Men per 1,000 women at the 2017 census: 235,553 men and 228,175 women.",
+    "median_age_note": "Interpolated within the ten-year age group that holds the middle person, from the 2017 census's count of everyone by sex and ten-year age group."
   },
   {
     "id": "EGY-CAPMAS-37247803B42865985960585",
@@ -5579,19 +5582,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 377063,
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "value": 583658,
+      "year": 2023,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), population estimate for 1 July 2023 of every governorate, kism and markaz, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2006 census's tables by kism and markaz give no ages. CAPMAS's later tables put 399,288 people in the markaz of Asyūṭ at the 2006 census, against 377,063 in this count, so the 2017 census's ages for it are not taken for this outline."
+      "value": 21.1,
+      "unit": "years",
+      "year": 2017,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "sex_ratio": {
-      "value": 940,
+      "value": 1070,
       "unit": "males_per_1000_females",
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "year": 2017,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "religion": {
       "status": "not_available"
@@ -5605,17 +5610,17 @@
     "sources": [
       {
         "field": "population",
-        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
+        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), population estimate for 1 July 2023 of every governorate, kism and markaz, as City Population (Thomas Brinkhoff) tabulates it",
+        "url": "https://www.citypopulation.de/en/egypt/admin/asy%C5%ABt/2503__asy%C5%AB%E1%B9%AD/",
+        "year": 2023,
+        "license": "citation of City Population (citypopulation.de) required"
       },
       {
-        "field": "sex_ratio",
-        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
+        "field": "median_age/sex_ratio",
+        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it",
+        "url": "https://www.citypopulation.de/en/egypt/admin/asy%C5%ABt/2503__asy%C5%AB%E1%B9%AD/",
+        "year": 2017,
+        "license": "citation of City Population (citypopulation.de) required"
       }
     ],
     "country": "EGY",
@@ -5629,8 +5634,9 @@
         "2503"
       ]
     },
-    "population_note": "The 2006 census count of the markaz of Asyūṭ as drawn then: 182,659 men and 194,404 women. CAPMAS's later tables put 399,288 people in the markaz of Asyūṭ at the 2006 census, against 377,063 in this count, so CAPMAS's later figures for it are not taken for this outline.",
-    "sex_ratio_note": "Men per 1,000 women at the 2006 census in the markaz of Asyūṭ as drawn then: 182,659 men and 194,404 women."
+    "population_note": "CAPMAS's estimate for 1 July 2023 of the markaz of Asyūṭ as drawn in 2006; the 2017 census counted 516,525.",
+    "sex_ratio_note": "Men per 1,000 women at the 2017 census: 266,966 men and 249,559 women.",
+    "median_age_note": "Interpolated within the ten-year age group that holds the middle person, from the 2017 census's count of everyone by sex and ten-year age group."
   },
   {
     "id": "EGY-CAPMAS-37247803B89417957828076",
@@ -6183,19 +6189,21 @@
       "status": "not_available"
     },
     "population": {
-      "value": 182868,
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "value": 246145,
+      "year": 2023,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), population estimate for 1 July 2023 of every governorate, kism and markaz, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 2006 census's tables by kism and markaz give no ages. CAPMAS's later tables put 175,665 people in the markaz of Awlād Ṣaqr at the 2006 census, against 182,868 in this count, so the 2017 census's ages for it are not taken for this outline."
+      "value": 23.5,
+      "unit": "years",
+      "year": 2017,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "sex_ratio": {
-      "value": 1129,
+      "value": 1038,
       "unit": "males_per_1000_females",
-      "year": 2006,
-      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX"
+      "year": 2017,
+      "source": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it"
     },
     "religion": {
       "status": "not_available"
@@ -6209,17 +6217,17 @@
     "sources": [
       {
         "field": "population",
-        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
+        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), population estimate for 1 July 2023 of every governorate, kism and markaz, as City Population (Thomas Brinkhoff) tabulates it",
+        "url": "https://www.citypopulation.de/en/egypt/admin/ash_sharqiyah/1316__awl%C4%81d_%E1%B9%A3aqr/",
+        "year": 2023,
+        "license": "citation of City Population (citypopulation.de) required"
       },
       {
-        "field": "sex_ratio",
-        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2006, population by sex of every kism and markaz, as OCHA publishes it on HDX",
-        "url": "https://data.humdata.org/dataset/egypt-population-statistics-0",
-        "year": 2006,
-        "license": "HDX licence: Other"
+        "field": "median_age/sex_ratio",
+        "name": "Central Agency for Public Mobilization and Statistics (CAPMAS), Population, Housing and Establishments Census 2017, population by sex and ten-year age group, as City Population (Thomas Brinkhoff) tabulates it",
+        "url": "https://www.citypopulation.de/en/egypt/admin/ash_sharqiyah/1316__awl%C4%81d_%E1%B9%A3aqr/",
+        "year": 2017,
+        "license": "citation of City Population (citypopulation.de) required"
       }
     ],
     "country": "EGY",
@@ -6233,8 +6241,9 @@
         "1316"
       ]
     },
-    "population_note": "The 2006 census count of the markaz of Awlād Ṣaqr as drawn then: 96,964 men and 85,904 women. CAPMAS's later tables put 175,665 people in the markaz of Awlād Ṣaqr at the 2006 census, against 182,868 in this count, so CAPMAS's later figures for it are not taken for this outline.",
-    "sex_ratio_note": "Men per 1,000 women at the 2006 census in the markaz of Awlād Ṣaqr as drawn then: 96,964 men and 85,904 women."
+    "population_note": "CAPMAS's estimate for 1 July 2023 of the markaz of Awlād Ṣaqr as drawn in 2006; the 2017 census counted 226,182.",
+    "sex_ratio_note": "Men per 1,000 women at the 2017 census: 115,173 men and 111,009 women.",
+    "median_age_note": "Interpolated within the ten-year age group that holds the middle person, from the 2017 census's count of everyone by sex and ten-year age group."
   },
   {
     "id": "EGY-CAPMAS-37247803B7250727301439",
