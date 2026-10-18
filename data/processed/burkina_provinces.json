@@ -746,10 +746,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.7,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Boucle du Mouhoun (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 991,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Boucle du Mouhoun (Tableau 2.3, its provinces' count by sex added)"
     },
     "religion": {
       "status": "not_available"
@@ -805,6 +811,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Boucle du Mouhoun (Tableau 2.3, its provinces' count by sex added)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20LA%20BOUCLE%20DU%20MOUHOUN%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Boucle du Mouhoun (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20LA%20BOUCLE%20DU%20MOUHOUN%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Boucle du Mouhoun (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20LA%20BOUCLE%20DU%20MOUHOUN%205E%20RGPH.pdf",
@@ -815,6 +835,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B5930876876994",
+    "sex_ratio_note": "The 2019 census's count of the region: 946,183 men and 955,086 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -1093,10 +1115,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.5,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Cascades (Tableau 2.4)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 932,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Cascades (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -1152,6 +1180,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Cascades (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DES%20CASCADES%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Cascades (Tableau 2.4, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DES%20CASCADES%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Cascades (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DES%20CASCADES%205E%20RGPH.pdf",
@@ -1162,6 +1204,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B65696039363280",
+    "sex_ratio_note": "The 2019 census's count of the region: 391,906 men and 420,560 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.4).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -1180,7 +1224,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.5,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.3)"
     },
     "sex_ratio": {
       "value": 967,
@@ -1268,6 +1315,13 @@
         "year": 2019
       },
       {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.3, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "religion",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 3.1, the region's religions, the province being the whole region)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
@@ -1286,6 +1340,7 @@
     "match_by": "shape_id",
     "shape_id": "67063806B99988316808523",
     "sex_ratio_note": "The 2019 census's count of the province: 1,489,512 men and 1,540,872 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.3), the region being this one province.",
     "religion_year": 2019,
     "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region tabulates them for the region, which is this one province.",
     "language_year": 2019,
@@ -1306,10 +1361,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.5,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.3)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -1361,6 +1422,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 2.3, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre (Tableau 3.2, principal language spoken by residence)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%205E%20RGPH.pdf",
@@ -1371,6 +1446,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B14190085014946",
+    "sex_ratio_note": "The 2019 census's count of the region: 1,489,512 men and 1,540,872 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.3), the region being this one province.",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -1743,10 +1820,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.3,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Est (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 869,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Est (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -1802,6 +1885,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Est (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Est (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Est (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-EST%205E%20RGPH.pdf",
@@ -1812,6 +1909,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B37033565003987",
+    "sex_ratio_note": "The 2019 census's count of the region: 734,885 men and 845,623 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -1915,11 +2014,11 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "67063806B14953893434288",
-    "sex_ratio_note": "The 2019 census's count of the province: 230,860 men and 245,194 women.",
+    "sex_ratio_note": "The 2019 census's count of the province: 230,860 men and 245,194 women. Insecurity kept the census from enumerating the communes of Nasséré and Zimtanga and part of Bourzanga; the figures include their people as the census estimated them by sex and age.",
     "religion_year": 2019,
-    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal. Insecurity kept the census from enumerating the communes of Nasséré and Zimtanga and part of Bourzanga, whose people it estimated by sex and age only: these shares are of the residents it enumerated.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province. Insecurity kept the census from enumerating the communes of Nasséré and Zimtanga and part of Bourzanga, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-namentenga",
@@ -2143,11 +2242,11 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "67063806B54692073140068",
-    "sex_ratio_note": "The 2019 census's count of the province: 412,501 men and 472,318 women.",
+    "sex_ratio_note": "The 2019 census's count of the province: 412,501 men and 472,318 women. Insecurity kept the census from enumerating the communes of Barsalogho, Dablo, Namissiguima and Pensa and part of Pissila; the figures include their people as the census estimated them by sex and age.",
     "religion_year": 2019,
-    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal. Insecurity kept the census from enumerating the communes of Barsalogho, Dablo, Namissiguima and Pensa and part of Pissila, whose people it estimated by sex and age only: these shares are of the residents it enumerated.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province. Insecurity kept the census from enumerating the communes of Barsalogho, Dablo, Namissiguima and Pensa and part of Pissila, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-region-centrenord",
@@ -2164,10 +2263,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 15.7,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 899,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -2219,6 +2324,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Nord (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-NORD%205E%20RGPH_0.pdf",
@@ -2229,8 +2348,10 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B59117792838125",
+    "sex_ratio_note": "The 2019 census's count of the region: 887,414 men and 987,255 women. Insecurity kept the census from enumerating the communes of Nasséré, Zimtanga, Barsalogho, Dablo, Namissiguima and Pensa and part of Bourzanga and Pissila; the figures include their people as the census estimated them by sex and age.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5). Insecurity kept the census from enumerating the communes of Nasséré, Zimtanga, Barsalogho, Dablo, Namissiguima and Pensa and part of Bourzanga and Pissila; the figures include their people as the census estimated them by sex and age.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
+    "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it. Insecurity kept the census from enumerating the communes of Nasséré, Zimtanga, Barsalogho, Dablo, Namissiguima and Pensa and part of Bourzanga and Pissila, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-boulkiemde",
@@ -2679,10 +2800,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.4,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 862,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -2718,6 +2845,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Ouest (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE%20OUEST%205E%20RGPH.pdf",
@@ -2728,6 +2869,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B57875752774417",
+    "sex_ratio_note": "The 2019 census's count of the region: 768,587 men and 891,548 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -3088,10 +3231,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.4,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 903,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -3143,6 +3292,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Centre-Sud (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20CENTRE-SUD%205E%20RGPH.pdf",
@@ -3153,6 +3316,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B49759193106183",
+    "sex_ratio_note": "The 2019 census's count of the region: 374,238 men and 414,493 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -3769,10 +3934,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 14.7,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 962,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, its provinces' count by sex added)"
     },
     "religion": {
       "status": "not_available"
@@ -3824,6 +3995,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.3, its provinces' count by sex added)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Est (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DE%20L%27EST%205E%20RGPH.pdf",
@@ -3834,6 +4019,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B57532963969301",
+    "sex_ratio_note": "The 2019 census's count of the region: 952,679 men and 990,126 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -4222,10 +4409,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.4,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Hauts-Bassins (Tableau 2.4)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 955,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Hauts-Bassins (Tableau 2.3, its provinces' count by sex added)"
     },
     "religion": {
       "status": "not_available"
@@ -4277,6 +4470,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Hauts-Bassins (Tableau 2.3, its provinces' count by sex added)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DES%20HAUTS-BASSINS%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Hauts-Bassins (Tableau 2.4, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DES%20HAUTS-BASSINS%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Hauts-Bassins (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DES%20HAUTS-BASSINS%205E%20RGPH.pdf",
@@ -4287,6 +4494,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B19127906733451",
+    "sex_ratio_note": "The 2019 census's count of the region: 1,094,100 men and 1,145,740 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.4).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -4745,10 +4954,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.0,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.4)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 915,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -4788,6 +5003,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 2.4, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Nord (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20NORD%205E%20RGPH.pdf",
@@ -4798,6 +5027,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B60283727543208",
+    "sex_ratio_note": "The 2019 census's count of the region: 822,742 men and 899,373 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.4).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -5130,10 +5361,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.5,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Plateau Central (Tableau 2.5)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 882,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Plateau Central (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -5173,6 +5410,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Plateau Central (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20PLATEAU%20CENTRAL%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Plateau Central (Tableau 2.5, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20PLATEAU%20CENTRAL%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Plateau Central (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20PLATEAU%20CENTRAL%205E%20RGPH.pdf",
@@ -5183,6 +5434,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B74906977122081",
+    "sex_ratio_note": "The 2019 census's count of the region: 458,587 men and 520,027 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.5).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   },
@@ -5298,11 +5551,11 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "67063806B71789570765121",
-    "sex_ratio_note": "The 2019 census's count of the province: 87,166 men and 71,040 women.",
+    "sex_ratio_note": "The 2019 census's count of the province: 87,166 men and 71,040 women. Insecurity kept the census from enumerating part of Déou; the figures include their people as the census estimated them by sex and age.",
     "religion_year": 2019,
-    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal. Insecurity kept the census from enumerating part of Déou, whose people it estimated by sex and age only: these shares are of the residents it enumerated.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province. Insecurity kept the census from enumerating part of Déou, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-seno",
@@ -5538,11 +5791,11 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "67063806B70466570504467",
-    "sex_ratio_note": "The 2019 census's count of the province: 180,411 men and 183,250 women.",
+    "sex_ratio_note": "The 2019 census's count of the province: 180,411 men and 183,250 women. Insecurity kept the census from enumerating the commune of Koutougou and part of Arbinda, Baraboulé, Kelbo, Nassoumbou and Tongomael; the figures include their people as the census estimated them by sex and age.",
     "religion_year": 2019,
-    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal. Insecurity kept the census from enumerating the commune of Koutougou and part of Arbinda, Baraboulé, Kelbo, Nassoumbou and Tongomael, whose people it estimated by sex and age only: these shares are of the residents it enumerated.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province. Insecurity kept the census from enumerating the commune of Koutougou and part of Arbinda, Baraboulé, Kelbo, Nassoumbou and Tongomael, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-yagha",
@@ -5644,11 +5897,11 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "67063806B32901667163906",
-    "sex_ratio_note": "The 2019 census's count of the province: 88,190 men and 83,404 women.",
+    "sex_ratio_note": "The 2019 census's count of the province: 88,190 men and 83,404 women. Insecurity kept the census from enumerating the communes of Boundoré and Mansila; the figures include their people as the census estimated them by sex and age.",
     "religion_year": 2019,
-    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal.",
+    "religion_note": "The 2019 census's shares of the province's residents by religion, as the monograph of the region charts them by province, to one decimal. Insecurity kept the census from enumerating the communes of Boundoré and Mansila, whose people it estimated by sex and age only: these shares are of the residents it enumerated.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province."
+    "language_note": "The principal language usually spoken by the province's residents aged 3 and over, in the 2019 census, as the monograph of the region tabulates it by province. Insecurity kept the census from enumerating the communes of Boundoré and Mansila, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-region-sahel",
@@ -5665,10 +5918,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.8,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sahel (Tableau 2.4)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 1029,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sahel (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -5724,6 +5983,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sahel (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-07/MONO%20REGION%20DU%20SAHEL%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sahel (Tableau 2.4, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-07/MONO%20REGION%20DU%20SAHEL%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sahel (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-07/MONO%20REGION%20DU%20SAHEL%205E%20RGPH.pdf",
@@ -5734,8 +6007,10 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B81581720767285",
+    "sex_ratio_note": "The 2019 census's count of the region: 556,836 men and 541,341 women. Insecurity kept the census from enumerating the communes of Koutougou, Boundoré and Mansila and part of Déou, Arbinda, Baraboulé, Kelbo, Nassoumbou and Tongomael; the figures include their people as the census estimated them by sex and age.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.4). Insecurity kept the census from enumerating the communes of Koutougou, Boundoré and Mansila and part of Déou, Arbinda, Baraboulé, Kelbo, Nassoumbou and Tongomael; the figures include their people as the census estimated them by sex and age.",
     "language_year": 2019,
-    "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
+    "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it. Insecurity kept the census from enumerating the communes of Koutougou, Boundoré and Mansila and part of Déou, Arbinda, Baraboulé, Kelbo, Nassoumbou and Tongomael, whose people it estimated by sex and age only: these shares are of the residents it enumerated."
   },
   {
     "id": "BFA-RGPH2019-bougouriba",
@@ -6248,10 +6523,16 @@
       "status": "not_available"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.5,
+      "unit": "years",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.4)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 936,
+      "unit": "males_per_1000_females",
+      "year": 2019,
+      "source": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.1, population by residence and sex)"
     },
     "religion": {
       "status": "not_available"
@@ -6307,6 +6588,20 @@
     },
     "sources": [
       {
+        "field": "sex_ratio",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.1, population by residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
+        "field": "median_age",
+        "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 2.4, population by age group, residence and sex)",
+        "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
+        "license": "INSD publication (reuse with attribution)",
+        "year": 2019
+      },
+      {
         "field": "language",
         "name": "Institut National de la Statistique et de la Démographie (INSD) du Burkina Faso, Cinquième Recensement Général de la Population et de l'Habitat (RGPH) 2019, Monographie de la région Sud-Ouest (Tableau 3.3, principal languages spoken by sex and province, the region's column)",
         "url": "https://www.insd.bf/sites/default/files/2023-02/MONOGRAPHIE%20DU%20SUD%20OUEST%205E%20RGPH.pdf",
@@ -6317,6 +6612,8 @@
     "country": "BFA",
     "match_by": "shape_id",
     "shape_id": "92566538B26761698110708",
+    "sex_ratio_note": "The 2019 census's count of the region: 423,178 men and 452,264 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2019 census's count of the region's residents by five-year age group (Tableau 2.4).",
     "language_year": 2019,
     "language_note": "The principal language usually spoken by the region's residents aged 3 and over, in the 2019 census, as its monograph tabulates it."
   }
