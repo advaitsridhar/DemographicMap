@@ -49,7 +49,7 @@ def build(units: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
                 f"ERI-{shape['id']}", shape["name"].strip(), level=level, parent="ERI",
                 country="ERI", match_by="shape_id", shape_id=shape["id"],
                 median_age=stated, sex_ratio=stated,
-                sources=[{"field": "median_age/sex_ratio", "name": SURVEY, "url": URL,
+                sources=[{"field": "median_age note/sex_ratio note", "name": SURVEY, "url": URL,
                           "year": 2010, "license": "National Statistics Office publication"}]))
     return records
 

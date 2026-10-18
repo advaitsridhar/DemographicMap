@@ -621,8 +621,10 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
             continue
         composition = {field: gap(NOT_AVAILABLE, COMPOSITION)
                        for field in ("religion", "language", "ethnicity")}
-        unpublished = {"field": "religion/language/ethnicity", "name": SOURCE4, "url": PAGE,
-                       "year": YEAR, "license": LICENCE}
+        # Volume IV publishes none of the three for a constituency, so it is cited
+        # for the notes that say so, not for figures.
+        unpublished = {"field": "religion note/language note/ethnicity note", "name": SOURCE4,
+                       "url": PAGE, "year": YEAR, "license": LICENCE}
         taken = plans.get(shape["id"])
         if not taken:
             why = ("The 2019 census was published for sub-counties, and this constituency's "
@@ -633,7 +635,8 @@ def constituency_records(vol3: dict[str, dict[str, Any]], admin2: list[dict[str,
                                   parent="KEN", country="KEN", match_by="shape_id",
                                   shape_id=shape["id"], population=stated, median_age=stated,
                                   sex_ratio=stated, **composition,
-                                  sources=[{"field": "population/median_age/sex_ratio",
+                                  sources=[{"field": "population note/median_age note/"
+                                                     "sex_ratio note",
                                             "name": SOURCE2, "url": PAGE, "year": YEAR,
                                             "license": LICENCE}, unpublished]))
             continue

@@ -63,11 +63,24 @@ class CheckAgesTest(unittest.TestCase):
         report = tc.check_ages(ages, self.table)
         self.assertIn("lindi district", ages["councils"])
         summed = ages["regions"]["lindi"]
-        self.assertEqual(summed["parts"], ["Mtama District Council", "Kilwa District Council"])
+        # Named as Volume 1a names them, as the population notes do.
+        self.assertEqual(summed["parts"], ["Lindi District Council", "Kilwa District Council"])
+        self.assertEqual(ages["councils"]["lindi district"]["name"], "Lindi District Council")
         self.assertEqual(summed["total"], self.table["regions"]["lindi"]["total"])
         self.assertTrue(any("councils' tables added up" in line for line in report))
         note = tc.fields(self.table["regions"]["lindi"], "x", [summed])["median_age_note"]
         self.assertIn("its 2 councils' counts added up", note)
+
+    def test_a_median_of_two_councils_names_them_as_volume_1a_does(self):
+        busekelo = {"name": "Busekelo District Council"}
+        table = {"regions": {}, "councils": {
+            "busokelo district": {"name": "Busokelo District Council", "region": "mbeya",
+                                  "total": 3, "men": 1, "women": 2}}}
+        ages = {"regions": {}, "councils": {"busekelo district": {
+            **busekelo, "total": 3, "men": 1, "women": 2, "ages": {}}}}
+        tc.check_ages(ages, table)
+        self.assertEqual(ages["councils"]["busokelo district"]["name"],
+                         "Busokelo District Council")
 
     def test_a_table_counting_other_people_is_dropped(self):
         self.table["councils"]["kilwa district"]["total"] += 1

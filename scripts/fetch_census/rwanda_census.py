@@ -62,6 +62,9 @@ THEMATIC = (BASE + "documents/2025-02/"
 PROFILE = BASE + "2025-05/{name}.pdf"
 MAIN_PAGE = ("https://statistics.gov.rw/fifth-population-and-housing-census-2022/"
              "main-indicators-5th-rwanda-population-and-housing-census-phc")
+# The census's publication page, which lists the thirty district profiles; a
+# province's religion is its districts' profiles added up.
+PROFILES_PAGE = "https://statistics.gov.rw/datasource/fifth-population-and-housing-census-2022"
 THEMATIC_PAGE = ("https://statistics.gov.rw/data-sources/censuses/Population-and-Housing-Census/"
                  "fifth-population-and-housing-census-2022/rphc5-thematic-reports/"
                  "rphc5-thematic-report-population-size-structure-and-distribution")
@@ -337,7 +340,7 @@ def fields(name: str, table1: dict[str, dict[str, int]], medians: dict[str, floa
                      "year": YEAR, "license": LICENCE},
                     {"field": "median_age", "name": AGE_SOURCE, "url": THEMATIC_PAGE,
                      "year": YEAR, "license": LICENCE},
-                    {"field": "language", "name": LANGUAGE_SOURCE, "url": MAIN_PAGE,
+                    {"field": "language note", "name": LANGUAGE_SOURCE, "url": MAIN_PAGE,
                      "year": YEAR, "license": LICENCE}]}
     if religion:
         rows = shares(religion, total=row["total"])
@@ -350,7 +353,7 @@ def fields(name: str, table1: dict[str, dict[str, int]], medians: dict[str, floa
                                     "Pentecostal Churches of Rwanda; 'Protestant' and "
                                     "'Adventist' are its own separate categories."))
         out["sources"].append({"field": "religion", "name": RELIGION_SOURCE,
-                               "url": url or MAIN_PAGE, "year": YEAR, "license": LICENCE})
+                               "url": url or PROFILES_PAGE, "year": YEAR, "license": LICENCE})
     return out
 
 

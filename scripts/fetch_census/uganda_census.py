@@ -195,11 +195,12 @@ def workbook_rows(table1: list[tuple[str, int, list[Any]]],
     out: list[dict[str, Any]] = []
     district = county = subcounty = None
     for (label, indent, cells), (label3, _, cells3) in zip(table1, table3):
-        if label != label3:
-            raise SystemExit(f"uganda_census: Tables 1 and 3 part at {label!r} / {label3!r}")
         if indent not in LEVELS or len(cells) < 4 or count(cells[3]) is None \
                 or label.upper() in ("DISTRICT", "COUNTY", "SUBCOUNTY", "PARISH"):
             continue
+        # The tables' titles differ; their rows of figures must not.
+        if label != label3:
+            raise SystemExit(f"uganda_census: Tables 1 and 3 part at {label!r} / {label3!r}")
         male, female, total = (count(c) for c in cells[1:4])
         if None in (male, female) or male + female != total:
             raise SystemExit(f"uganda_census: workbook {label}: {male} men and {female} women "

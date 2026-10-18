@@ -251,9 +251,16 @@ class ConstituencyTest(unittest.TestCase):
             for field in ("religion", "language", "ethnicity"):
                 self.assertEqual(by[name][field]["status"], "not_available")
                 self.assertEqual(by[name][field]["note"], kc.COMPOSITION)
-            cited = [s for s in by[name]["sources"] if s["field"] == "religion/language/ethnicity"]
+            # Volume IV gives none of the three here: it is cited for the notes.
+            cited = [s for s in by[name]["sources"]
+                     if s["field"] == "religion note/language note/ethnicity note"]
             self.assertEqual([s["name"] for s in cited], [kc.SOURCE4])
+            self.assertFalse([s for s in by[name]["sources"]
+                              if "religion" in s["field"].split("/")])
         self.assertIn("religion by county", kc.COMPOSITION)
+        # A constituency with no count cites Volume II for the notes, not for figures.
+        self.assertEqual([s["field"] for s in by["Konoin"]["sources"] if s["name"] == kc.SOURCE2],
+                         ["population note/median_age note/sex_ratio note"])
 
     def test_a_crosswalk_naming_no_constituency_stops_the_run(self):
         self.crosswalk["bomet"]["Chepalungu"] = ["sotik"]

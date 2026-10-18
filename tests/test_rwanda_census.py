@@ -211,6 +211,25 @@ class BuildTest(unittest.TestCase):
                          "Rwanda's 2022 census asks no ethnicity.")
         for r in records:
             self.assertEqual(r["language"]["note"], rc.LANGUAGE)
+            # Table 8 gives no language spoken: it is cited for the note.
+            cited = [s for s in r["sources"] if s["name"] == rc.LANGUAGE_SOURCE]
+            self.assertEqual([s["field"] for s in cited], ["language note"])
+        self.assertEqual([s["url"] for s in by["Kicukiro"]["sources"]
+                          if s["field"] == "religion"], ["https://example/Kicukiro.pdf"])
+
+    def test_a_province_cites_the_profiles_page_for_its_religion(self):
+        table1 = rc.read_table1(table1_rows())
+        admin1 = json.loads((SITE / "admin1" / "RWA.units.json").read_text())
+        admin2 = json.loads((SITE / "admin2" / "RWA.units.json").read_text())
+        counts = {"Catholic": 100, "Protestant": 50}
+        districts = rc.PROVINCES["City of Kigali"]
+        faiths = {d: dict(counts) for d in districts}
+        records = rc.build(table1, rc.read_table6(TABLE6, table1),
+                           rc.read_medians(*median_rows()), faiths,
+                           {d: f"https://example/{d}.pdf" for d in districts}, admin1, admin2)
+        kigali = next(r for r in records if r["name"] == "City of Kigali")
+        self.assertEqual([s["url"] for s in kigali["sources"] if s["field"] == "religion"],
+                         [rc.PROFILES_PAGE])
 
     def build_kigali(self, nations):
         table1 = rc.read_table1(table1_rows())

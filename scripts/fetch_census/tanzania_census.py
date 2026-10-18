@@ -437,6 +437,11 @@ def check_ages(ages: dict[str, dict[str, Any]], table: dict[str, Any]) -> list[s
                               f"({got['men']:,} men), Volume 1a {row['total']:,} "
                               f"({row['men']:,} men); its age table is left out")
                 ages[kind].pop(key)
+            else:
+                # The same unit: named as Volume 1a names it, which the population
+                # note beside the median does ("Busokelo", where Volume 2a's
+                # table heading spells it "Busekelo").
+                got["name"] = row["name"]
     for key, row in table["regions"].items():
         if key in ages["regions"]:
             continue

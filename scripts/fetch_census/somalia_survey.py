@@ -21,8 +21,12 @@ region was inaccessible because of the militia, and its Table A.2 gives its men
 a median of 30 years against its women's 18.
 
 The districts the map draws are the 118 of today, and the survey's tables are
-by region: ``somalia_districts.json`` gives each district a stated reason for
-its population, median age and sex ratio.
+by region: its report estimates the population of the 18 regions only (the
+district figures that circulate were derived afterwards from UNDP's 2005
+district estimates, for the 74 districts of 1986). The 2020 Somali Health and
+Demographic Survey likewise reports ages and sexes for regions at most.
+``somalia_districts.json`` gives each district a stated reason for its
+population, median age and sex ratio.
 
 Usage:
     python -m scripts.fetch_census.somalia_survey
@@ -57,6 +61,26 @@ ALIASES = {"wgalbeed": "woqooyigalbeed", "mshabelle": "middleshebelle",
            "middleshabelle": "middleshebelle", "lshabelle": "lowershebelle",
            "lowershabelle": "lowershebelle", "mjuba": "middlejuba", "ljuba": "lowerjuba",
            "hiraan": "hiiraan"}
+# The 2020 survey, which like the 2014 one publishes ages and sexes for regions
+# at most: its main report and one report per region.
+SHDS = ("Federal Government of Somalia, Directorate of National Statistics, with UNFPA, The "
+        "Somali Health and Demographic Survey 2020 (main report and regional reports)")
+SHDS_URL = "https://somalia.unfpa.org/en/publications/somali-health-and-demographic-survey-2020"
+SHDS_YEAR = 2020
+SHDS_LICENCE = "UNFPA publication; reproduction permitted with the source acknowledged"
+# What every district says for its population, median age and sex ratio. The
+# survey's report estimates the population of the 18 regions only; the
+# district figures that circulate (HDX's "Somalia Population Data - UNFPA
+# 2014") were derived afterwards from UNDP's 2005 district estimates, and are
+# for the 74 districts of 1986, not the 118 the map draws.
+DISTRICT_POPULATION = (
+    "Somalia has published no census since 1975. The 2014 Population Estimation Survey "
+    "published estimates for the 18 regions only; none is published for a district drawn "
+    "today.")
+DISTRICT_AGES = (
+    "Somalia has published no census since 1975. The 2014 Population Estimation Survey and "
+    "the 2020 Somali Health and Demographic Survey published ages and sexes for regions at "
+    "most; neither gives them for a district.")
 # Regions the survey could not reach, with what its report says.
 UNREACHED = {"middlejuba": ("The 2014 Population Estimation Survey's report says Middle Juba "
                             "was inaccessible because of the militia, and its median age for "
@@ -131,13 +155,14 @@ def build(shares: dict[str, dict[str, float]], medians: dict[str, dict[str, int]
         raise SystemExit(f"somalia_survey: regions differ: map {sorted(set(by_key) - set(shares))}"
                          f", Table 2 {sorted(set(shares) - set(by_key))}, Table A.2 "
                          f"{sorted(set(medians) - set(by_key))}")
-    cite = [{"field": "median_age/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
-             "license": LICENCE}]
     records = []
     for k, shape in sorted(by_key.items()):
+        cite = [{"field": "median_age/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
+                 "license": LICENCE}]
         if k in UNREACHED:
             stated = gap(NOT_AVAILABLE, UNREACHED[k])
             fields: dict[str, Any] = {"median_age": stated, "sex_ratio": stated}
+            cite[0]["field"] = "median_age note/sex_ratio note"
         else:
             s, m = shares[k], medians[k]
             fields = {
@@ -164,17 +189,12 @@ def build(shares: dict[str, dict[str, float]], medians: dict[str, dict[str, int]
 
 def districts(admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """A stated reason for every district's population, median age and sex ratio."""
-    population = gap(NOT_AVAILABLE, (
-        "Somalia has published no census since 1975. The 2014 Population Estimation Survey "
-        "estimated the people of the 74 districts of 1986, and this district is drawn as one "
-        "of the 118 of today: whether it keeps the ground of a district of 1986 is not "
-        "established, so no estimate is given for it."))
-    ages = gap(NOT_AVAILABLE, (
-        "The 2014 Population Estimation Survey, Somalia's only measurement of ages and sexes "
-        "since the 1975 census, published them by region only; none is published for a "
-        "district."))
-    cite = [{"field": "population/median_age/sex_ratio", "name": SOURCE, "url": URL,
-             "year": YEAR, "license": LICENCE}]
+    population = gap(NOT_AVAILABLE, DISTRICT_POPULATION)
+    ages = gap(NOT_AVAILABLE, DISTRICT_AGES)
+    cite = [{"field": "population note/median_age note/sex_ratio note", "name": SOURCE,
+             "url": URL, "year": YEAR, "license": LICENCE},
+            {"field": "median_age note/sex_ratio note", "name": SHDS, "url": SHDS_URL,
+             "year": SHDS_YEAR, "license": SHDS_LICENCE}]
     return [record(f"SOM-PESS-{s['id']}", s["name"].strip(), level="admin2", parent="SOM",
                    country="SOM", match_by="shape_id", shape_id=s["id"], population=population,
                    median_age=ages, sex_ratio=ages, sources=cite) for s in admin2]

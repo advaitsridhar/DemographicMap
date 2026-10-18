@@ -62,24 +62,66 @@ class ReadTableTest(unittest.TestCase):
             dc.read_table(page(rows))
 
 
+def region_page(men, women, total=None):
+    """A region's page as City Population lays it out: its subdivision table,
+    then the population structure's gender table."""
+    return ("<html><table><tr><th>Name</th><th>Status</th><th>Population Census 2024-05-20</th>"
+            f"</tr><tr><td>X</td><td>Region</td><td>{total or men + women:,}</td></tr></table>"
+            "<p>Further information about the population structure:</p><table>"
+            "<tr><th colspan=2>Gender (C 2024)</th></tr>"
+            f"<tr><td>Males</td><td>{men:,}</td></tr><tr><td>Females</td><td>{women:,}</td></tr>"
+            "</table><table><tr><th colspan=2>Urbanization (C 2024)</th></tr>"
+            "<tr><td>Urban</td><td>1</td></tr></table></html>")
+
+
+class SexesTest(unittest.TestCase):
+    def test_region_pages_are_found_by_their_links(self):
+        index = ('<a href="2__ali_sabieh/">x</a> <a href="ali_sabieh/23__ali_adeh/">y</a> '
+                 '<a href="https://www.citypopulation.de/en/djibouti/admin/1__djibouti/">z</a>')
+        pages = dc.region_pages(index)
+        self.assertEqual(pages["alisabieh"],
+                         "https://www.citypopulation.de/en/djibouti/admin/2__ali_sabieh/")
+        self.assertIn("djibouti", pages)
+        self.assertNotIn("aliadeh", pages)
+
+    def test_men_and_women_must_make_the_count(self):
+        region = {"name": "Dikhil", "total": 66_196}
+        self.assertEqual(dc.read_sexes(region_page(32_959, 33_237), region), (32_959, 33_237))
+        with self.assertRaises(SystemExit):
+            dc.read_sexes(region_page(32_959, 33_337), region)
+
+
 class BuildTest(unittest.TestCase):
     def setUp(self):
         self.admin1 = json.loads((SITE / "admin1" / "DJI.units.json").read_text())
         self.admin2 = json.loads((SITE / "admin2" / "DJI.units.json").read_text())
-        self.records = dc.build(dc.read_table(page()), self.admin1, self.admin2)
+        table = dc.read_table(page())
+        for key, region in table["regions"].items():
+            men = region["total"] // 2
+            region["men"], region["women"] = men, region["total"] - men
+        table["regions"]["djibouti"].update(men=378_351, women=388_899)
+        self.records = dc.build(table, self.admin1, self.admin2)
 
-    def test_regions_carry_the_count_and_say_why_ages_are_missing(self):
+    def test_regions_carry_the_count_sex_ratio_and_say_why_ages_are_missing(self):
         by = {r["name"]: r for r in self.records if r["level"] == "admin1"}
         self.assertEqual(by["Djibouti"]["population"]["value"], 767_250)
         self.assertIn("a region of its own", by["Djibouti"]["population_note"])
         self.assertEqual(by["Obock"]["population"]["year"], 2024)
-        self.assertIn("country as a whole", by["Arta"]["median_age"]["note"])
+        self.assertEqual(by["Djibouti"]["sex_ratio"]["value"], 973)
+        self.assertIn("378,351 men", by["Djibouti"]["sex_ratio_note"])
+        self.assertIn("by region and sub-prefecture", by["Arta"]["median_age"]["note"])
+        self.assertNotIn("country as a whole", by["Arta"]["median_age"]["note"])
+        fields = {s["field"] for s in by["Arta"]["sources"]}
+        self.assertEqual(fields, {"population", "sex_ratio", "median_age note"})
 
-    def test_second_level_units_say_why_but_ali_sabeh_keeps_its_figure(self):
+    def test_second_level_units_ali_sabeh_included_say_why(self):
         by = {r["name"]: r for r in self.records if r["level"] == "admin2"}
         self.assertEqual(len(by), len(self.admin2))
         self.assertIn("not established", by["Dorra"]["population"]["note"])
-        self.assertNotIn("note", by["Ali Sabeh"]["population"])
+        self.assertIn("not established", by["Ali Sabeh"]["population"]["note"])
+        self.assertIn("no sex ratio", by["Ali Sabeh"]["sex_ratio"]["note"])
+        self.assertEqual([s["field"] for s in by["Dorra"]["sources"]],
+                         ["population note/median_age note/sex_ratio note"])
 
 
 if __name__ == "__main__":

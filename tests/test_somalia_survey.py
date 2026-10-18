@@ -115,7 +115,22 @@ class BuildTest(unittest.TestCase):
         rows = ss.districts(admin2)
         self.assertEqual(len(rows), len(admin2))
         self.assertTrue(all(r["population"]["status"] == "not_available" for r in rows))
-        self.assertIn("by region only", rows[0]["median_age"]["note"])
+        self.assertIn("for regions at most", rows[0]["median_age"]["note"])
+        self.assertIn("2020 Somali Health and Demographic Survey", rows[0]["median_age"]["note"])
+        self.assertNotIn("only measurement", rows[0]["median_age"]["note"])
+        self.assertIn("18 regions only", rows[0]["population"]["note"])
+        self.assertNotIn("74 districts", rows[0]["population"]["note"])
+        # The figures are stated, so the sources are cited for the notes.
+        self.assertEqual({s["field"] for s in rows[0]["sources"]},
+                         {"population note/median_age note/sex_ratio note",
+                          "median_age note/sex_ratio note"})
+
+    def test_middle_juba_cites_the_survey_for_its_notes(self):
+        juba = self.records["Middle Juba"]
+        self.assertEqual([s["field"] for s in juba["sources"]],
+                         ["median_age note/sex_ratio note"])
+        self.assertEqual([s["field"] for s in self.records["Awdal"]["sources"]],
+                         ["median_age/sex_ratio"])
 
     def test_notes_name_no_file_or_pipeline(self):
         banned = ("adapter", "pipeline", "fetched", "scraped", "this project", ".json",
