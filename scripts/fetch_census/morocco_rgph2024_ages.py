@@ -117,8 +117,12 @@ STATED = {
         "south of the Western Sahara line and outside the region as drawn here, and no median "
         "for the region without it is published, so none is shown."),
 }
-ONLY_SHARES = ("HCP's results dashboard and provincial atlas give this unit's 2024 ages only as "
-               "the shares under 15, 15-59 and 60 and over, from which no median can be had.")
+# Said where none of HCP's national downloads or regional directorates' pages
+# (searched for the series above, October 2026) gives the unit's five-year ages.
+ONLY_SHARES = ("No table of this unit's 2024 population by five-year age group has been found "
+               "among HCP's publications; its results dashboard and its provincial atlas give "
+               "the ages only as the shares under 15, 15-59 and 60 and over, from which no "
+               "median can be had.")
 AGE = re.compile(r"^\s*(\d{1,2})\s*-\s*(\d{1,2})\s*(?:ans)?\s*$")
 OPEN = re.compile(r"^\s*(\d{1,2})\s*(?:ans)?\s*(?:et|ou)\s*(?:plus|\+)\s*$|^\s*(\d{1,2})\s*\+\s*$",
                   re.I)
