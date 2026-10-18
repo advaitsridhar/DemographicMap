@@ -1,21 +1,381 @@
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=insbu.bi&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=20000 :: HTTP Error 503: Service Unavailable
-== cdx insbu.bi
-  20261012083911 application/pdf                1283610 https://www.insbu.bi/documents/EnquenteSanteDemographes/Rapport-Definitif-Enquete-de-Base-Sante-Mentale.pdf
-  20261012084138 application/pdf                1283643 https://www.insbu.bi/documents/EnquenteSanteDemographes/Rapport-Definitif-Enquete-de-Base-Sante-Mentale.pdf?utm_source=chatgpt.com
-  20251225150927 application/vnd.openxmlforma     79069 https://www.insbu.bi/documents/recensements/Chapitre-1.xlsx
-  20251225150936 application/vnd.openxmlforma     40892 https://www.insbu.bi/documents/recensements/Chapitre-3.xlsx
-  20251208182912 application/pdf                 567708 https://www.insbu.bi/documents/recensements/Répartition-de-la-population-issue-du-RGPH-2008.pdf
-  20251208182909 application/pdf                 316452 https://www.insbu.bi/documents/recensements/RGPH-RESULTATS-DEFINITIFS.pdf
-  20240614103117 text/html                         3499 https://www.insbu.bi/rapports-issus-des-recensements-et-enquetes/
-  20251208182855 text/html                          960 https://www.insbu.bi/recensement
-  20250610072351 text/html                          973 https://www.insbu.bi/resultatRGPHAE2024
-  20260911120148 text/html                          593 https://www.insbu.bi/resultatRGPHAE202413
-  20260121065334 text/html                          972 https://www.insbu.bi/RGPHAEDataPage
-  20251225145655 text/html                         1002 https://www.insbu.bi/wp-content/uploads/2023/04/RGPH-RESULTATS-DEFINITIFS.pdf
-  20240614103120 application/pdf                 917065 https://www.insbu.bi/wp-content/uploads/2023/07/NOTE-DE-SYNTHESE-DES-CN-DEFINITIFS-DE-2017-ET-PROVISOIRE-DE-2018-v06052021.pdf
-  20240614103101 application/pdf                 872086 https://www.insbu.bi/wp-content/uploads/2023/07/NOTE-DE-SYNTHESE-DES-CN-DEFINITIFS-DE-2018ET-PROVISOIRE-DE-2019v06052021.pdf
-  20240614103108 application/pdf                 674326 https://www.insbu.bi/wp-content/uploads/2023/07/RAPPORT-DES-COMPTES-NATIONAUX-DEFINITIFS-DE-2016-ET-PROVISOIRES-DE-2017-VF1.pdf
-  20240614103112 application/pdf                 303488 https://www.insbu.bi/wp-content/uploads/2024/02/TDR-POUR-RECRUTEMENT-DUN-CONSULTANT-STATISTICIEN-DU-RGAE-SPECIALISTE-DANS-LES-ENQUETES-ET-RECENSEMENTS-AGRICOLES.pdf
-  20240614103101 text/html                         1074 https://www.insbu.bi/wp-json/oembed/1.0/embed?url=https://www.insbu.bi/rapports-issus-des-recensements-et-enquetes/&format=xml
-  20240614103057 text/html                          628 https://www.insbu.bi/wp-json/oembed/1.0/embed?url=https://www.insbu.bi/rapports-issus-des-recensements-et-enquetes/
-  18 shown of 1351 captured under insbu.bi
+probe_pdf: https://web.archive.org/web/20251208182909id_/https://www.insbu.bi/documents/recensements/RGPH-RESULTATS-DEFINITIFS.pdf
+  343,075 bytes
+  8 pages
+probe_pdf: 8 pages, 6 mention ['Cendajuru', 'Rugazi', 'Mugongomanga', 'Masculin']
+=== front matter ===
+,.
+"
+REPUBLIQUE DU BURUNDI
+..
+CABINET DU PRESIDENT
+DECRET N° 100/ 55 DU GS'"AVRIL 2010 PORTANT PUBLICATION
+DES RESULTATS DEFINITIFS DU TROISŒMERECENSEMENT '.-
+GENERAL DE LAPOPULATION ET DE L'HABITAT DE 2008.
+,
+LE PRESIDENT DE LA REPUBLIQUE,
+, ,
+..
+Vu la Constitution de la République du Burundi,
+Vu le décret-loi nO 1/29 du 24 septembre 1982 portant délimitation des Provinces
+et des Communes de la République du Burundi tel que modifié à ce jour;
+,
+Vu le décret- loi n° 1/40 du 26 novembre 1992 portant délimitation du périmètre
+urbain de Bujumbura;
+.'
+"
+Vu la loi nO 1/006 du 10 décembre 1998 portant Création de la Province de Mwaro
+et délimitation des Provinces de Mwaro et de Murarnvya ;
+Vu la loi nO 1/004 du 23 mais 1994 portant Organisation Générale de
+l'Adnùnistration ;
+Vu le décret nO 100/104 du 21 novembre 2005 portant Réorganisation du Ministère
+de l'Iritérieur et de la SécuritéPublique; :
+"1
+Vu le décret nOi10~/222 du 17 août 2006 portant Organisation du TroisièmeRecen,sement GéI1éralde la Population et de l'~abitation ; .
+Vu le décret n° 100/238 du 22 août 2007 portant Création et Compétence du
+Comité d'Orientation du Recensement Général de la Population et de l'Habitation'
+de 2008 ;
+,
+Vu le;décret nO 100/13 du 20 janvier 2009 portant Structure,Fonctionnement et
+Missi~nsdu Gouvernementde la Républiquedu Burundi;
+Vu le décret n° 100/14du 29 janvier 2009 portant Nomination des Membres du
+Gouvernement;
+,
+'
+.
+."v.{
+"
+
+2
+DECRETE :
+Article 1: Au terme du Recensement Général de la Population et de l'Habitation
+du Burundi de 2008, la population de la République du Burundi est de
+8.053.574 habitants dont 3.964.906 hommes et 4.088.668 femmes.
+Article 2: Le document en annexe au présent décret présente la répartition de la
+population par province, par commune, et par sexc.
+Article 3: Toutes dispositions antérieures contraires au présent décret sont
+abrogées.
+Article 4: Le Ministère de l'Intérieur est chargé de la diffusion des résultats du
+Recensement Général de la Population-et de l'Habitation de 2008
+partout où besoin sera.
+Fait à Bujumbura, le 5 avril 2010,
+Pierre NKURUNZIZA.
+Dr.Yves SAHINGUVU.
+"
+PARLE' PRESIDENT DE LA REPUBLIQUE,
+"-LE PREMIER VICE-PRESIDENT
+DE LA REPUBLIQUE,
+LE MINISTRE DE L'INTERIEUR,
+. .
+....._--.
+
+MASCULIN FEMININ TOTAL
+POPULATION DU
+BURUNDI 3.964.906 4.088.668 8.053.574
+coMMùNEs MASCULIN FEMININ TOTAL
+. BUBANZA 42 062 41 616 83 678
+GUJANGA 30 339 25 005 55344
+MPANDA 29 313 29 600 58913
+MUSIGATI 41 035 41172 82 207
+RUGAZI 31719 26 162 57881
+TOTAL 174 468 163555 338 023
+COMMUNES MASCULIN FEMININ TOTAL
+BUGARAMA 14898 15584 30482
+ISALE 38 708 40 032 78 740
+KABEZI 23 180 25 899 49 079
+KANYOSHA 38 203 40 620 78 823
+MUBIMBI 20'515 21174 41 689
+MÛGONGOMANGA 13 862 14 123 27 985
+MtJHUTA 31119 29514 60 633
+MYK.lKE 11 901 12759 24 660
+MUTAMDU 20 885 22 878 43 763
+MUTIMBUZl 35 809 33 716 69 525
+NYABIRABA 26 135 24419 50 SS4
+TOTAL 275215 280718 SS5933
+Vu pour être annexé au décret nO100/$5' du 0 S- avril 2010 portant
+Publication des résultats défmitifs du Troisième Recensement
+Général de la Population et de l'Habitation de 2008.
+"
+REPARTITION DE LA POPULATION PAR PROVINCE
+ET COMMUNE SELON LE SEXE
+.
+1. BUBANZA
+2. BUJUMBURA RURAL
+"
+,
+'
+.'
+
+COMMUNES MASCULIN FEMININ TOTAL
+BURAMBI 28 068 29 099 57 167
+BURURI 40 889 42 725 83614
+BuYENOERO 29 110 29 560 58 670
+MATANA 20 763 22014 42 777
+MUOAMBA 28 383 30701 59 084
+RUMONGE 73 196 71 878 145074
+RUTOVJl 22 127 23 984 46 111
+SONGA 25351 26 480 51 831
+VYANDA 14476 15209 29 685
+TOTAL 282 363 291650 574013
+COMMUNES MASCULIN FEMININ TOTAL
+CANKUZO 23 543 24429 47972
+œNDAJURU 15887 16S71 32 4S8
+OISAGARA 27 777 29 545 S7 322
+KlOAMBA 20 156 20617 40 773
+MISHIHA 24 979 25 369 SO348
+TOTAL Il:Z341 IHi 531 228 873
+
+=== pages mentioning ['Cendajuru', 'Rugazi', 'Mugongomanga', 'Masculin'] (first 8) ===
+
+--- page 3 ----------------------------------------------------
+MASCULIN FEMININ TOTAL
+POPULATION DU
+BURUNDI 3.964.906 4.088.668 8.053.574
+coMMùNEs MASCULIN FEMININ TOTAL
+. BUBANZA 42 062 41 616 83 678
+GUJANGA 30 339 25 005 55344
+MPANDA 29 313 29 600 58913
+MUSIGATI 41 035 41172 82 207
+RUGAZI 31719 26 162 57881
+TOTAL 174 468 163555 338 023
+COMMUNES MASCULIN FEMININ TOTAL
+BUGARAMA 14898 15584 30482
+ISALE 38 708 40 032 78 740
+KABEZI 23 180 25 899 49 079
+KANYOSHA 38 203 40 620 78 823
+MUBIMBI 20'515 21174 41 689
+MÛGONGOMANGA 13 862 14 123 27 985
+MtJHUTA 31119 29514 60 633
+MYK.lKE 11 901 12759 24 660
+MUTAMDU 20 885 22 878 43 763
+MUTIMBUZl 35 809 33 716 69 525
+NYABIRABA 26 135 24419 50 SS4
+TOTAL 275215 280718 SS5933
+Vu pour être annexé au décret nO100/$5' du 0 S- avril 2010 portant
+Publication des résultats défmitifs du Troisième Recensement
+Général de la Population et de l'Habitation de 2008.
+"
+REPARTITION DE LA POPULATION PAR PROVINCE
+ET COMMUNE SELON LE SEXE
+.
+1. BUBANZA
+2. BUJUMBURA RURAL
+"
+,
+'
+.'
+
+--- page 4 ----------------------------------------------------
+COMMUNES MASCULIN FEMININ TOTAL
+BURAMBI 28 068 29 099 57 167
+BURURI 40 889 42 725 83614
+BuYENOERO 29 110 29 560 58 670
+MATANA 20 763 22014 42 777
+MUOAMBA 28 383 30701 59 084
+RUMONGE 73 196 71 878 145074
+RUTOVJl 22 127 23 984 46 111
+SONGA 25351 26 480 51 831
+VYANDA 14476 15209 29 685
+TOTAL 282 363 291650 574013
+COMMUNES MASCULIN FEMININ TOTAL
+CANKUZO 23 543 24429 47972
+œNDAJURU 15887 16S71 32 4S8
+OISAGARA 27 777 29 545 S7 322
+KlOAMBA 20 156 20617 40 773
+MISHIHA 24 979 25 369 SO348
+TOTAL Il:Z341 IHi 531 228 873
+COMMUNES MASCULIN
+'
+FEMININ TOTAL
+BUGANDA 34 069 34 976 69 045
+BUKINANYANA 37362 38 388 75 750
+MABAYI 33 177 33 190 66 367
+MUGINA 43 531 44 920 88 451
+MURWI 41 545 40 690 82 235
+RtjOOMBO 39174 39413 78 S87
+TOT4L 228 858 131 577 460 43S
+2
+3. BURURI
+4. CANKUZO . .
+, .
+"
+5. CIBITOKE "
+. '
+. .
+1!f .'
+
+--- page 5 ----------------------------------------------------
+COMMUNES ' MASCULIN FEMININ TOTAL
+BUGENDANA 51830 56557 108387
+BUKIRASAZI 15641 17073 32 714
+BURAZA 22634 24851 47485
+GIHETA 34213 38804 73017
+GlSHUBI 26 199 29728 55927
+GlTEGA 77217 77 788 155005
+ITABA 24204 2693S SI 139
+MAKEBUKO 27462 31994 S9456
+MUTAHO 30 894 34460 65 354
+NYARUSANGE 19.532 21372 40 904
+RYANSORO 166S4 19181 35835
+TOT~ 346480 378743 725223
+COMMUNES MASCULIN FEMININ TOTAL
+BUGENYUZI 39443 42495 81938
+BUHUGA 34 967 36 507 71474
+GIHOGAZI 32315 35312 67 627
+GITARAMUKA 37616 40504 78 120
+MUfUMBA 20 141 21335 41 476
+NYABIIŒRE 23 645 2S348 . 48 993
+SHOMBO 22098 24717 46815
+TOTAL 210225 226218 436443
+COMl\IUNES . MASCULIN FEMININ TOTAL
+BU,TAGANZWA 24066 27 535 51 CiOI
+GAHOMBO 18868 20765 39 633
+GATARA 31041 33 071 64 112
+"KABARORE 30 332 31971 62 303
+KAYANZA 47 827 49425 97 252
+MATONGO 34 193 36 082 70275
+MUHANGA 30629 33851 64480
+MURUTA 27791 30097 57888
+RANGO 37210 40 658 77 868
+TOTAL 281957 303455 585412
+6. GlTEGA
+7.KARUSI
+3
+. .
+"
+"
+8. KAYANZA
+rl
+,.
+..
+"
+
+--- page 6 ----------------------------------------------------
+COMMUNES MASCULIN FEMININ TOTAL
+BU.GABIRA 42 756 46 503 89 259
+BUSONI 70 809 74615 145424
+BWAMBARANGWE 32 281 34 53S 66 816
+GITOBE 27406 29 920 .~7326
+KIRUNDO 4S 510 47 600 93 110
+NTEGA 47 333 SI 332 98 665
+VUMBI 37696 39 960 77 656
+TOTAL 303 791 324 465 .628 156
+COMMUNES MASCULIN FEMININ TOTAL
+KAYOGORO 43 938 44614 88 552
+KlBAGO 22 697 22 281 44 978
+MABANDA 22 910 22 926 45 836
+MAKAMBA 46 268 47 290 93 558
+NYANZALAC 56 638 S6 114 112752
+VUGIZO 21 979 23 244 45 223
+TOTAL 114.430 216469 430 899
+COMMUNES MASCULIN FEMININ TOTAL
+BUKEYE 31 265 34 825 66 090
+KlGANDA 23 060 2S 670 48 730
+MBUVE 25 838 29 504 55 342
+MURAMVYA 40 143 41 114 81257
+RUTEOAMA 19363 21 807 4i 170
+TOTJ\L 1396" J51 910 191 589
+.
+COMMUNES. MASCULIN FEMININ TOTAL
+Bl)HINYUZA 26231 28251 54482
+BUTIHINDA 46 968 49 922 96 890
+GASHOHO 31 912 34 195 66 107
+GASORWE 39377 42621 81998
+GITERANYI 74 158 77 072 IS1 230
+MUYINGA 68 305 69 922 138227
+MWAK1RO 21 065 22410 43 475
+TOTAL 308016 324 393 632 409
+4
+9. KIRUNDO
+10. MAKAMBA
+"
+Il. MURAMVYA '.
+,,'
+, .
+12.MuYlNCA
+1.
+. .
+.'
+
+--- page 7 ----------------------------------------------------
+COMMUNES MASCULIN FEMININ TOTAL
+BISORO 16440 17735 34 175
+GISOZI 13.484 14470 27 954
+KAYOKWE 23 380 2S 747 49 127
+NDAVA 26 873 30411 57 284
+NYABIHANGA 27 972 32 339 60311
+RUSAKA 20 764 23 528 44 292
+TOTAL 128 913 144230 273 143
+COMMUNES MASCULIN FEMININ TOTAL
+BUSIGA 31629 33514 65 143
+GASHIKANWA 27 268 29818 57 086
+KIREMBA 45 527 47 809 93 336
+MARANGARA 33 765 34067 67 832
+MWUMBA 30 144 . 31440 61 584
+NGOZI 61 438 59 119 120557
+NYAMURENZA 27 879 29323 51 202
+RUHORORO 29318 33 019 62337
+TANGARA 36 069 39 571 75 640
+TOTAL
+' 323 037 337 680 660 717
+COMMUNES MASCULIN FEMININ TOTAL
+BUKEMBA 18 115 17356 35 471
+GIHARO 45 098 48 267 93 365
+GITANGA 21 435 22 292 43 727
+MPINGA 2S 3S8 27463 52 821
+Mt;1S0NGA TI - 2S 674 27 275 52 949
+RBTANA 27 129 28 048 S5 177
+TOT4L 162809 170701 333510
+13. MWARO
+14.NGOZI
+15. RUTANA
+. .
+~
+~
+111.. ,
+5
+. .
+. .
+. .
+'.
+. ,
+. . .
+- (.
+'.:.~
+.'
+
+--- page 8 ----------------------------------------------------
+COMMUNES MASCULIN FEMININ TOTAL
+BUTAGANZWA 31302 31 884 63 186
+BUTEZI 19 139 20039 39 178
+BWERU 18272 19230 37 S02
+GlSURU 49 440 SO021 99 461
+KINYINYA 2S 815 27223 53 038
+NYABITSINDA 2S 261 26 273 SI 534
+RUYIGl 28.128 28 503 56631
+TOTAL 197357 203 173 400 530
+COMMUNES MASCULIN FEMININ TOTAL
+BuTERERE 14540 13 831 28371
+BUYENZI 27 460 19903 47 363
+BWlZA 21 464 16224 37688
+CniITOKE 26 658 24241 50 899
+GIHOSHA 21 953 17550 39 503
+KAMENGE 27031 23 039 50 070
+KANYOSHA 30 589 28 592 59 181
+KINAMA 2S 880 23 896 49 776
+KININDO 12302 9618 21 920
+MUSAGA 25 837 17 898 43 735
+NGAGARA 18272 12024 30 296
+NYAKABIGA Il 732 9151 20 883
+ROHERO 112S8 6223 17481
+TOTAL 274 976 221190 497166
+16. RUYlGI
+6
+17.MAIRIE DE BUJUMBURA
+. .
+. .
+.'
+1-.
+1.11.; -
+. .
+~:.v1
+.'
