@@ -1,9 +1,419 @@
-mali: INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population
-  17,708,018 bytes
-  70 pages
-  annex tables on pages ethnicity 55, language 56
-  religion: 20 regions, 21,347,586 people
-  ethnicity: 20 regions, 21,200,119 people
-  language: 20 regions, 19,144,632 people
-  9 shapes
-  wrote data/processed/mali_rgph5_region.json (63 kB)
+  SEN: cod-ab-sen dated '[2024-05-20T00:00:00 TO 2025-10-30T23:59:59]' -> 2024
+  SEN: 55 capital points in cod-ab-sen
+    SEN Bakel [50182788B16013842146029]: Bakel (-12.45821, 14.90220)
+    SEN Bambey [50182788B75300917140294]: Bambey (-16.45543, 14.69555)
+    SEN Bignona [50182788B19391387689457]: Bignona (-16.23259, 12.80469)
+    SEN Birkelane [50182788B56779252201559]: Birkelane (-15.74525, 14.13032)
+    SEN Bounkiling [50182788B68388966372963]: Bounkiling (-15.69858, 13.03896)
+    SEN Dagana [50182788B94177495754038]: Dagana (-15.50004, 16.51791)
+    SEN Dakar [50182788B18539004609148]: Dakar (-17.43992, 14.67590)
+    SEN Diourbel [50182788B22549322426328]: Diourbel (-16.23205, 14.65427)
+    SEN Fatick [50182788B55839740763416]: Fatick (-16.42044, 14.33515)
+    SEN Foundiougne [50182788B85341589150678]: Foundiougne (-16.46975, 14.12411)
+    SEN Gossas [50182788B90737446104605]: Gossas (-16.06804, 14.49674)
+    SEN Goudiry [50182788B18390590381778]: Goudiry (-12.71678, 14.18628)
+    SEN Goudomp [50182788B48951494587639]: Goudomp (-15.87501, 12.57248)
+    SEN Guediawaye [50182788B55211093773925]: Guediawaye (-17.39247, 14.77296)
+    SEN Guinguineo [50182788B97054679922117]: Guinguineo (-15.94642, 14.26956)
+    SEN Kaffrine [50182788B43046627101076]: Kaffrine (-15.54347, 14.10127)
+    SEN Kanel [50182788B72122084264725]: Kanel (-13.17594, 15.49077)
+    SEN Kaolack [50182788B15645681951695]: Kaolack (-16.07670, 14.14280)
+    SEN Kebemer [50182788B60047071387499]: Kebemer (-16.44850, 15.37230)
+    SEN Kedougou [50182788B85082652306110]: Kedougou (-12.19141, 12.56084)
+    SEN Kolda [50182788B77977720497228]: Kolda (-14.93959, 12.89204)
+    SEN Koumpentoum [50182788B60464160168835]: Koumpentoum (-14.56323, 13.98036)
+    SEN Koungheul [50182788B42114348275286]: Koungheul (-14.80141, 13.97659)
+    SEN Linguere [50182788B14678638932037]: Linguere (-15.12018, 15.39658)
+    SEN Louga [50182788B22933374767599]: Louga (-16.22654, 15.62087)
+    SEN Malem Hodar [50182788B13883389428586]: Malem Hodar (-15.29255, 14.08708)
+    SEN Matam [50182788B95113260184043]: Matam (-13.26347, 15.65372)
+    SEN Mbacke [50182788B63857747785645]: Mbacke (-15.91037, 14.79848)
+    SEN Mbour [50182788B56533800648606]: Mbour (-16.96181, 14.42188)
+    SEN Medina Yoroufoula [50182788B71056203552440]: Medina Yoroufoula (-14.71498, 13.29328)
+    SEN Nioro Du Rip [50182788B29473400533502]: Nioro Du Rip (-15.77315, 13.74330)
+    SEN Oussouye [50182788B11051302290888]: Oussouye (-16.54488, 12.48604)
+    SEN Pikine [50182788B8601261498481]: Pikine (-17.39348, 14.75810)
+    SEN Podor [50182788B66510054428140]: Podor (-14.96044, 16.65296)
+    SEN Ranerou [50182788B34306626760019]: Ranerou (-13.96192, 15.29801)
+    SEN Rufisque [50182788B16861669195445]: Rufisque (-17.25116, 14.72442)
+    SEN Saint Louis [50182788B94115130730188]: Saint Louis (-16.49811, 16.02568)
+    SEN Salemata [50182788B75788529380727]: Salemata (-12.82078, 12.63162)
+    SEN Saraya [50182788B8770711358016]: Saraya (-11.75600, 12.83410)
+    SEN Sedhiou [50182788B34006486463131]: Sedhiou (-15.55726, 12.70556)
+    SEN Tambacounda [50182788B74600736318601]: Tambacounda (-13.67425, 13.77369)
+    SEN Thies [50182788B65872214095625]: Thiès (-16.93034, 14.79375)
+    SEN Tivaoune [50182788B62483410284412]: Tivaoune (-16.81621, 14.95361)
+    SEN Velingara [50182788B9780593325351]: Velingara (-14.11070, 13.15001)
+    SEN Ziguinchor [50182788B19119296887329]: Ziguinchor (-16.27493, 12.56517)
+  SEN: 45 of 45 empty capitals named, 0 say why none is
+  SEN: 0 of 0 empty first-level capitals named
+  NER: cod-ab-ner dated '[2023-07-20T00:00:00 TO 2025-10-30T23:59:59]' -> 2023
+  NER: 209 capital points in cod-ab-ner
+    NER Abala [23599985B96366222257755]: Abala (3.43232, 14.93087)
+    NER Abalak [23599985B73397103622086]: Abalak (6.28517, 15.45183)
+    NER Aderbissinat [23599985B52241460380538]: Aderbissinat (7.89197, 15.62000)
+    NER Aguié [23599985B59469969297601]: Aguié (7.78000, 13.51000)
+    NER Arlit [23599985B35740417673211]: Arlit (7.36000, 18.71000)
+    NER Ayérou [23599985B66518443893936]: Ayérou (0.91967, 14.73505)
+    NER Bagaroua [23599985B53990886897515]: Bagaroua (4.57897, 14.55628)
+    NER Balléyara [23599985B53989443832132]: Balléyara (2.95414, 13.78899)
+    NER Banibangou [23599985B31350615327928]: Banibangou (2.70133, 15.03948)
+    NER Bankilaré [23599985B18164013569517]: Bankilaré (0.72671, 14.57879)
+    NER Bilma [23599985B30294266740058]: Bilma (12.92127, 18.68983)
+    NER Birni-N'Konni [23599985B12101722290167]: Birni-N'Konni (5.24000, 13.80000)
+    NER Boboye [23599985B30838539224942]: Birni N'Gaoure (2.90000, 13.09000)
+    NER Bosso [23599985B85188331861732]: Bosso (13.31127, 13.69962)
+    NER Bouza [23599985B24942158565256]: Bouza (6.04420, 14.42327)
+    NER Bérmo [23599985B15241034776795]: Bérmo (6.81950, 15.14787)
+    NER Damagaram Takaya [23599985B91194911882215]: Damagaram Takaya (9.48388, 14.13713)
+    NER Diffa [23599985B49279802347692]: Diffa (12.60882, 13.31213)
+    NER Dioundiou [23599985B87103937584190]: Dioundiou (3.54448, 12.61750)
+    NER Dogondoutchi [23599985B71800364259973]: Dogondoutchi (4.02000, 13.64000)
+    NER Dosso [23599985B13950466033624]: Dosso (3.31000, 12.97100)
+    NER Dungass [23599985B10149369238340]: Dungass (9.34005, 13.06217)
+    NER Filingué [23599985B22646074094064]: Filingué (3.32000, 14.34000)
+    NER Gaya [23599985B94426243670688]: Gaya (3.44000, 11.90000)
+    NER Gazaoua [23599985B75774451533542]: Gazaoua (7.91428, 13.52573)
+    NER Gothèye [23599985B45142923275636]: Gothèye (1.56837, 13.85605)
+    NER Goudoumaria [23599985B75635581877036]: Goudoumaria (11.18807, 13.70957)
+    NER Gouré [23599985B20082731758941]: Gouré (10.26815, 13.98473)
+    NER Guidan-Roumdji [23599985B37435064601183]: Guidan-Roumdji (6.69000, 13.67000)
+    NER Iférouane [23599985B42361363165505]: Iférouane (8.42092, 19.06199)
+    NER Illéla [23599985B93785804329420]: Illéla (5.24000, 14.46000)
+    NER Ingall [23599985B91742674817727]: Ingall (6.93811, 16.78980)
+    NER Kantché [23599985B81952569357883]: Matamèye (8.47000, 13.43000)
+    NER Keita [23599985B44584919101761]: Keita (5.77288, 14.75583)
+    NER Madaoua [23599985B88186704259068]: Madaoua (5.95948, 14.07115)
+    NER Madarounfa [23599985B10786712449018]: Madarounfa (7.15000, 13.32000)
+    NER Magaria [23599985B72934105448405]: Magaria (8.91000, 13.00000)
+    NER Malbaza [23599985B4654450212041]: Malbaza (5.50757, 13.96165)
+    NER Maradi [23599985B96333695472040]: Maradi (7.09000, 13.48700)
+    NER Maïné-Soroa [23599985B74336618625682]: Maïné-Soroa (12.02912, 13.21347)
+    NER Mirriah [23599985B93207740600063]: Mirriah (9.15000, 13.71000)
+    NER N'Gourti [23599985B32057380818540]: N'Gourti (13.19605, 15.32642)
+    NER N'Guigmi [23599985B27242520162456]: N'Guigmi (13.10000, 14.24000)
+    NER Niamey [23599985B37846693808008]: Niamey (2.11700, 13.51700)
+    NER Ouallam [23599985B18642698649368]: Ouallam (2.08745, 14.31300)
+    NER Say [23599985B83200163093073]: Say (2.33000, 13.10000)
+    NER Tahoua [23599985B71026362524800]: Tahoua (5.26022, 14.89437)
+    NER Tahoua Ville [23599985B25077979802367]: Tahoua (5.26022, 14.89437)
+    NER Tanout [23599985B69081741011402]: Tanout (8.88000, 14.97000)
+    NER Tassara [23599985B43997741220428]: Tassara (5.64527, 16.80698)
+    NER Tchintabaraden [23599985B37880443282078]: Tchintabaraden (5.81000, 15.90000)
+    NER Tchirozérine [23599985B66307714151869]: Tchirozérine (7.78000, 17.21000)
+    NER Tesker [23599985B16015640173227]: Tesker (10.69243, 15.11528)
+    NER Tibiri [23599985B22885280076406]: Tibiri (3.97252, 13.08482)
+    NER Tillabéri [23599985B45975933186230]: Tillabéri (1.47000, 14.21000)
+    NER Tillia [23599985B40327375212482]: Tillia (4.78679, 16.14058)
+    NER Torodi [23599985B58853598919637]: Torodi (1.79860, 13.11807)
+    NER Téra [23599985B14211003047249]: Téra (0.74000, 14.00000)
+    NER Zinder [23599985B17840081467963]: Zinder (8.98105, 13.80923)
+  NER: 59 of 67 empty capitals named, 8 say why none is
+  NER: 0 of 4 empty first-level capitals named
+    not named: Belbédji: no point
+    not named: Dakoro: no point
+    not named: Falmèy: no point
+    not named: Kollo: no point
+    not named: Loga: no point
+    not named: Mayahi: no point
+    not named: Takeita: no point
+    not named: Tessaoua: no point
+    not named: Dossa (first level): no region of the layer is made of its units
+    not named: Niamey (first level): the region's points name []
+    not named: Tahoua/Agadez (first level): no region of the layer is made of its units
+    not named: Zinder/Diffa (first level): no region of the layer is made of its units
+  TGO: cod-ab-tgo dated '[2021-01-07T00:00:00 TO 2025-10-30T23:59:59]' -> 2021
+  TGO: 31 capital points in cod-ab-tgo
+    TGO Agou [56601680B98633254865748]: Agou (0.73334, 6.88333)
+    TGO Amou [56601680B97066679611380]: Amlame (0.90000, 7.46667)
+    TGO Assoli [56601680B59731994726086]: Bafilo (1.26666, 9.35000)
+    TGO Ave [56601680B41562196478781]: Keve (0.93334, 6.43334)
+    TGO Bassar [56601680B12598387573686]: Bassar (0.78107, 9.26022)
+    TGO Binah [56601680B44914344892125]: Pagouda (1.32777, 9.75250)
+    TGO Blitta [56601680B83789166363061]: Blitta (0.98595, 8.32336)
+    TGO Dankpen [56601680B12249670822801]: Guerin-Kouka (0.61139, 9.69056)
+    TGO Doufelgou [56601680B89390870579143]: Niamtougou (1.10527, 9.76805)
+    TGO Est-Mono [56601680B43372711183576]: Elavagnon (1.30000, 8.00000)
+    TGO Haho [56601680B64184766281932]: Notse (1.16667, 6.95000)
+    TGO Keran [56601680B30245465113687]: Kande (1.04472, 9.95778)
+    TGO Kloto [56601680B4042875560778]: Kpalime (0.63333, 6.90000)
+    TGO Kozah [56601680B44378348729827]: Kara (1.18612, 9.55111)
+    TGO Kpendjal [56601680B9516770320708]: Mandouri (0.81666, 10.85000)
+    TGO Lacs [56601680B61332506890313]: Aneho (1.60000, 6.23333)
+    TGO Lome Commune [56601680B89691125732498]: Lome (1.22278, 6.13194)
+    TGO Moyen-Mono [56601680B67578860005589]: Tohoun (1.61667, 7.03334)
+    TGO Ogou [56601680B48471181858151]: Atakpame (1.13333, 7.53334)
+    TGO Oti [56601680B17683608517106]: Mango (0.47084, 10.35916)
+    TGO Sotouboua [56601680B24632394959352]: Sotouboua (0.98399, 8.56339)
+    TGO Tandjouare [56601680B89112535430785]: Tandjouare (0.19500, 10.65583)
+    TGO Tchamba [56601680B17532793096074]: Tchamba (1.41666, 9.03333)
+    TGO Tchaoudjo [56601680B14222633765071]: Sokode (1.13333, 8.98334)
+    TGO Tone [56601680B4810153335262]: Dapaong (0.20761, 10.86226)
+    TGO Vo [56601680B43007755983133]: Vogan (1.53334, 6.33333)
+    TGO Wawa [56601680B48376088277440]: Badou (0.60000, 7.58333)
+    TGO Yoto [56601680B13855645397073]: Tabligbo (1.50000, 6.58333)
+    TGO Zio [56601680B44610096966608]: Tsevie (1.21333, 6.42611)
+  TGO: 29 of 37 empty capitals named, 8 say why none is
+  TGO: 0 of 0 empty first-level capitals named
+    not named: Akébou: no point
+    not named: Anié: no point
+    not named: Bas-Mono: left out, the layer names Athiémé, a town in Benin across the Mono
+    not named: Cinkassé: no point
+    not named: Danyi: no point
+    not named: Golfe: no point
+    not named: Kpélé: no point
+    not named: Plaine de Mô: no point
+  BEN: cod-ab-ben dated '[2019-08-16T00:00:00 TO 2025-10-30T23:59:59]' -> 2019
+  BEN: 148 capital points in cod-ab-ben
+    BEN Abomey [17685819B36696986957740]: Abomey (1.98333, 7.18333)
+    BEN Abomey-Calavi [17685819B50728061848372]: Abomey-Calavi (2.35000, 6.45000)
+    BEN Adja-Ouere [17685819B3857845768140]: Adja-Ouere (2.61667, 7.00000)
+    BEN Adjarra [17685819B66402044537068]: Adjarra (2.66667, 6.53333)
+    BEN Adjohoun [17685819B34979669430532]: Adjohoun (2.46667, 6.70000)
+    BEN Agbangnizoun [17685819B54194513987818]: Agbangnizoun (1.96667, 7.06667)
+    BEN Allada [17685819B11652159225436]: Allada (2.15000, 6.65000)
+    BEN Aplahoue [17685819B24804117588339]: Aplahoue (1.68333, 6.93333)
+    BEN Athieme [17685819B69046773697304]: Athieme (1.66667, 6.58333)
+    BEN Avrankou [17685819B15816629354661]: Avrankou (2.66667, 6.55000)
+    BEN Banikoara [17685819B57139564746449]: Banikoara (2.43333, 11.30000)
+    BEN Bante [17685819B31481778008604]: Bante (1.88333, 8.41667)
+    BEN Bassila [17685819B94511677610410]: Bassila (1.66667, 9.01667)
+    BEN Bembereke [17685819B44038505687321]: Bembereke (2.66528, 10.22889)
+    BEN Bohicon [17685819B15106537416311]: Bohicon (2.06667, 7.20000)
+    BEN Bonou [17685819B32706375807456]: Bonou (2.45000, 6.90000)
+    BEN Boukombe [17685819B99804537894120]: Boukombe (1.10611, 10.17667)
+    BEN Come [17685819B27582361148713]: Come (1.88333, 6.40000)
+    BEN Copargo [17685819B95850649576266]: Copargo (1.54806, 9.83750)
+    BEN Cotonou [17685819B58605420666587]: Cotonou (2.43333, 6.35000)
+    BEN Cove [17685819B69592983793811]: Cove (2.30000, 7.23333)
+    BEN Dangbo [17685819B52071067315918]: Dangbo (2.55000, 6.58333)
+    BEN Dassa-Zoume [17685819B57031298313635]: Dassa-Zoume (2.18333, 7.75000)
+    BEN Djakotomey [17685819B33333613616473]: Djakotomey (1.71667, 6.90000)
+    BEN Djidja [17685819B67930032483199]: Djidja (1.93333, 7.33333)
+    BEN Djougou [17685819B31222842827733]: Djougou (1.66694, 9.70500)
+    BEN Dogbo [17685819B88590181370069]: Dogbo (1.78333, 6.81667)
+    BEN Glazoue [17685819B86631365550325]: Glazoue (2.30000, 7.96667)
+    BEN Gogounou [17685819B47850119626851]: Gogounou (2.82833, 10.84306)
+    BEN Grand-Popo [17685819B53348586225757]: Grand-Popo (1.83333, 6.28333)
+    BEN Houeyogbe [17685819B14284481019860]: Houeyogbe (1.89030, 6.48414)
+    BEN Ifangni [17685819B36498320143439]: Ifangni (2.71667, 6.66667)
+    BEN Kalale [17685819B22505126398074]: Kalale (3.37861, 10.29528)
+    BEN Kandi [17685819B31910055772004]: Kandi (2.93861, 11.13417)
+    BEN Karimama [17685819B85973060374162]: Karimama (3.19056, 12.06500)
+    BEN Kerou [17685819B98321853839803]: Kerou (2.10944, 10.82500)
+    BEN Ketou [17685819B61468565661274]: Ketou (2.60000, 7.36667)
+    BEN Klouekanme [17685819B74075406499118]: Klouekanme (1.85857, 7.07988)
+    BEN Kobli [17685819B4092451643280]: Kobli (1.00944, 10.48556)
+    BEN Kouande [17685819B73911627176990]: Kouande (1.55330, 10.20931)
+    BEN Kpomasse [17685819B13654727190048]: Kpomasse (1.98449, 6.36153)
+    BEN Lalo [17685819B4559503573339]: Lalo (1.88333, 6.91667)
+    BEN Lokossa [17685819B68764251362376]: Lokossa (1.71667, 6.63333)
+    BEN Malanville [17685819B18003775101914]: Malanville (3.38583, 11.86139)
+    BEN Materi [17685819B2600041724770]: Materi (1.06333, 10.69778)
+    BEN N'dali [17685819B79860756135863]: N'dali (2.71806, 9.86083)
+    BEN Natitingou [17685819B66349454131554]: Natitingou (1.37500, 10.30667)
+    BEN Nikki [17685819B92421826245631]: Nikki (3.20444, 9.93389)
+    BEN Ouake [17685819B25851007312804]: Ouake (1.38472, 9.66167)
+    BEN Ouesse [17685819B6698534807541]: Ouesse (2.43333, 8.48333)
+    BEN Ouinhi [17685819B27727011440945]: Ouinhi (2.48333, 7.08333)
+    BEN Parakou [17685819B32176770628240]: Parakou (2.61667, 9.35000)
+    BEN Pehunco [17685819B12843899137908]: Pehunco (1.99944, 10.22917)
+    BEN Perere [17685819B73457125885179]: Perere (2.99278, 9.79944)
+    BEN Pobe [17685819B21167128046214]: Pobe (2.68333, 6.96667)
+    BEN Porto-Novo [17685819B68474195135253]: Porto-Novo (2.61667, 6.48333)
+    BEN Sakete [17685819B6397671477640]: Sakete (2.66667, 6.71667)
+    BEN Save [17685819B5479142895221]: Save (2.48333, 8.03333)
+    BEN Segbana [17685819B25902777071239]: Segbana (3.69306, 10.92778)
+    BEN Sinende [17685819B44866040554021]: Sinende (2.37917, 10.34472)
+    BEN Tanguieta [17685819B98348434447391]: Tanguieta (1.26444, 10.61972)
+    BEN Tchaourou [17685819B56321809459452]: Tchaourou (2.60000, 8.88333)
+    BEN Toffo [17685819B42315243749993]: Toffo (2.08333, 6.85000)
+    BEN Tori-Bossito [17685819B70132266072899]: Tori-Bossito (2.15000, 6.50000)
+    BEN Toucountouna [17685819B76954688832254]: Toucountouna (1.37556, 10.49861)
+    BEN Toviklin [17685819B54561297103056]: Toviklin (1.81667, 6.83333)
+    BEN Za-Kpota [17685819B78854505931864]: Za-Kpota (2.22408, 7.13180)
+    BEN Zagnanado [17685819B16235974739823]: Zagnanado (2.35000, 7.26667)
+    BEN Ze [17685819B72435311571007]: Ze (2.30000, 6.78333)
+    BEN Zogbodomey [17685819B53288119636086]: Zogbodomey (2.10000, 7.08333)
+  BEN: 70 of 77 empty capitals named, 7 say why none is
+  BEN: 0 of 0 empty first-level capitals named
+    not named: Aguegues: left out, the layer's name, Aguégué-Houédomè, is not the commune's
+    not named: Akpo-Misserete: left out, the layer's name, Agpro, is not the commune's
+    not named: Bopa: no point
+    not named: Ouidah: no point
+    not named: Savalou: no point
+    not named: Seme-Kpodji: left out, the layer's name, Sèmè, is not the commune's
+    not named: So-Ava: no point
+  GNB: cod-ab-gnb dated '[2021-06-09T00:00:00 TO 2024-10-24T23:59:59]' -> 2021
+  GNB: 37 capital points in cod-ab-gnb
+    GNB Bissau Autonomous Sector [13655514B38974563194217]: Bissau (-15.58333, 11.85000)
+    GNB Contuboel [13655514B51179315853055]: Contuboel (-14.56667, 12.36667)
+    GNB Setor de Bafata [13655514B15077734082289]: Bafata (-14.66667, 12.16667)
+    GNB Setor de Bambadinca [13655514B168355566476]: Bambadinca (-14.86666, 12.03333)
+    GNB Setor de Bedanda [13655514B48763126228848]: Bedanda (-15.11667, 11.35000)
+    GNB Setor de Bigene [13655514B76388735674013]: Bigene (-15.54167, 12.44000)
+    GNB Setor de Bissora [13655514B57740331915335]: Bissora (-15.44750, 12.22305)
+    GNB Setor de Bolama [13655514B77006902429960]: Bolama (-15.46667, 11.58334)
+    GNB Setor de Buba [13655514B37452641895852]: Buba (-15.00000, 11.58333)
+    GNB Setor de Bubaque [13655514B98496568253651]: Bubaque (-15.83333, 11.28333)
+    GNB Setor de Bula [13655514B11561761851968]: Bula (-15.70805, 12.10389)
+    GNB Setor de Cacheu [13655514B95678269815128]: Cacheu (-16.16584, 12.27056)
+    GNB Setor de Cacine [13655514B71925291750028]: Cacine (-15.01667, 11.11666)
+    GNB Setor de Caiv [13655514B8216177448850]: Caio (-16.20000, 11.93334)
+    GNB Setor de Canghungo [13655514B91246233663569]: Canchungo (-16.03333, 12.06722)
+    GNB Setor de Catie [13655514B24413703823033]: Catio (-15.25000, 11.28334)
+    GNB Setor de Empada [13655514B30693048438959]: Empada (-15.23334, 11.55000)
+    GNB Setor de Farim [13655514B57644193184055]: Farim (-15.22167, 12.48389)
+    GNB Setor de Fulacunda [13655514B9524670555472]: Fulacunda (-15.16667, 11.76667)
+    GNB Setor de Gabv [13655514B65296626482863]: Gabu (-14.21667, 12.28333)
+    GNB Setor de Galomaro [13655514B4319146558278]: Galomaro (-14.63333, 11.95000)
+    GNB Setor de Gamamundo [13655514B65726406107890]: Gamamudo (-14.73334, 12.26667)
+    GNB Setor de Madina do Bo˒ [13655514B15408487636665]: Madina do Boé (-14.21667, 11.75000)
+    GNB Setor de Mansaba [13655514B49812801634354]: Mansaba (-15.18277, 12.29194)
+    GNB Setor de Mansoa [13655514B31772276876031]: Mansoa (-15.31889, 12.07333)
+    GNB Setor de Nhacra [13655514B47112439721810]: Nhacra (-15.55000, 11.96666)
+    GNB Setor de Pirada [13655514B16168252486838]: Pirada (-14.16667, 12.66666)
+    GNB Setor de Pitche [13655514B97576906537580]: Piche (-13.95000, 12.33333)
+    GNB Setor de Prabis [13655514B53615250576563]: Prabis (-15.73889, 11.80250)
+    GNB Setor de Quebo [13655514B12793543239296]: Quebo (-14.76667, 11.53334)
+    GNB Setor de Quinh [13655514B66751603958816]: Quinhamel (-15.85000, 11.88333)
+    GNB Setor de Safim [13655514B65757043009502]: Safim (-15.65000, 11.95000)
+    GNB Setor de Sonaco [13655514B47480576799194]: Sonaco (-14.48334, 12.40000)
+    GNB Setor de Sto Domingos [13655514B91994517778696]: Sao Domingos (-16.20055, 12.40194)
+    GNB Setor de Tite [13655514B37576476310465]: Tite (-15.40000, 11.78333)
+    GNB Setor de Xitole [13655514B65471558325414]: Xitole (-14.81667, 11.73333)
+  GNB: 36 of 39 empty capitals named, 3 say why none is
+  GNB: 0 of 0 empty first-level capitals named
+    not named: Setor de Boe: left out, the polygon is not the unit its label names
+    not named: Setor de Caravela: no point
+    not named: Setor de Uno: no point
+  CPV: cod-ab-cpv dated '[2024-06-07T00:00:00 TO 2025-10-30T23:59:59]' -> 2024
+  CPV: 23 capital points in cod-ab-cpv
+    CPV Nossa Senhora Da Conceicao [66160863B39753348448887]: Sao Filipe (-24.49583, 14.89583)
+    CPV Nossa Senhora Da Graca [66160863B19025383966327]: Praia (-23.51667, 14.91666)
+    CPV Nossa Senhora Da Luz [66160863B67599039999674]: Vila do Maio (-23.21147, 15.13536)
+    CPV Nossa Senhora Da Luz [66160863B58817505266013]: Mindelo (-24.98333, 16.88333)
+    CPV Nossa Senhora Das Dores [66160863B51777192933696]: Espargos (-22.94600, 16.75600)
+    CPV Nossa Senhora Do Livramento [66160863B28688334871687]: Ponta do Sol (-25.09417, 17.20171)
+    CPV Nossa Senhora Do Monte [66160863B40523802781782]: Vila Nova Sintra (-24.71666, 14.86666)
+    CPV Nossa Senhora Do Rosario [66160863B38183693605809]: Ribeira Brava (-24.30000, 16.61667)
+    CPV Santa Catarina Do Fogo [66160863B71170562423195]: Cova Figueira (-24.30000, 14.88333)
+    CPV Santa Isabel [66160863B6342114798882]: Sal Rei (-22.91667, 16.18333)
+    CPV Santiago Maior [66160863B62302711188639]: Pedra Badejo (-23.53215, 15.13493)
+    CPV Santissimo Nome De Jesus [66160863B56005242542710]: Cidade Velha (-23.61666, 14.91667)
+    CPV Santo Amaro Abade [66160863B37752467633472]: Tarrafal (-23.75167, 15.27861)
+    CPV Santo Antonio Das Pombas [66160863B53098387752451]: Pombas (-25.02006, 17.15026)
+    CPV Sao Francisco De Assis [66160863B96931694342339]: Tarrafal de Sao Nicolau (-24.35833, 16.56667)
+    CPV Sao Joao Baptista [66160863B76154481217824]: Fundo das Figueiras (-22.73333, 16.15000)
+    CPV Sao Joao Baptista [66160863B46579427106888]: Porto Novo (-25.06660, 17.02545)
+    CPV Sao Lourenco Dos Orgaos [66160863B72941798312267]: Joao Teves (-23.58969, 15.06457)
+    CPV Sao Miguel Arcanjo [66160863B69203973191500]: Calheta de Sao Miguel (-23.60000, 15.18334)
+    CPV Sao Nicolau Tolentino [66160863B10929768356041]: Sao Domingos (-23.56667, 15.01667)
+  CPV: 20 of 32 empty capitals named, 12 say why none is
+  CPV: 0 of 0 empty first-level capitals named
+    not named: Nossa Senhora Da Ajuda: left out, the layer names Porto dos Mosteiros, a village beside the municipality's seat
+    not named: Nossa Senhora Da Lapa: no point
+    not named: Nossa Senhora Da Luz: points ['Mindelo', 'Vila do Maio']
+    not named: Nossa Senhora Do Rosario: points ['Ribeira Brava']
+    not named: Santa Catarina: points ['Assomada', 'Picos']
+    not named: Santo Andre: no point
+    not named: Santo Crucifixo: no point
+    not named: Sao Joao Baptista: points ['Fundo das Figueiras', 'Porto Novo']
+    not named: Sao Joao Baptista: points ['Fundo das Figueiras', 'Porto Novo']
+    not named: Sao Lourenco: no point
+    not named: Sao Pedro Apostolo: no point
+    not named: Sao Salvador Do Mundo: no point
+  BFA: cod-ab-bfa dated '[2025-08-01T00:00:00 TO 2025-12-16T23:59:59]' -> 2025
+  BFA: 416 capital points in cod-ab-bfa
+    BFA Bale [67063806B68807156447803]: Boromo (-2.92938, 11.74685)
+    BFA Boulgou [67063806B79770817740465]: Tenkodogo (-0.36688, 11.78063)
+    BFA Boulkiemde [67063806B25202403935187]: Koudougou (-2.36558, 12.25113)
+    BFA Comoe [67063806B6461887322435]: Banfora (-4.75685, 10.64388)
+    BFA Houet [67063806B93880456931202]: Bobo-Dioulasso (-4.29585, 11.18550)
+    BFA Kadiogo [67063806B99988316808523]: Ouagadougou (-1.52865, 12.36833)
+    BFA Kenedougou [67063806B9375485614542]: Orodara (-4.91511, 10.98214)
+    BFA Kompienga [67063806B63358793036390]: Pama (0.70989, 11.24669)
+    BFA Mouhoun [67063806B95698273817509]: Dédougou (-3.46734, 12.46191)
+    BFA Nayala [67063806B13297228427715]: Toma (-2.89643, 12.76377)
+    BFA Oubritenga [67063806B42476727458569]: Ziniaré (-1.29717, 12.58235)
+    BFA Poni [67063806B8041269423759]: Gaoua (-3.18243, 10.32921)
+    BFA Sanmatenga [67063806B54692073140068]: Kaya (-1.09113, 13.09076)
+    BFA Seno [67063806B86156352342594]: Dori (-0.03610, 14.03634)
+    BFA Yatenga [67063806B65280418727437]: Ouahigouya (-2.41795, 13.57701)
+    BFA Zoundweogo [67063806B75605811528327]: Manga (-1.07434, 11.66628)
+  BFA: 16 of 16 empty capitals named, 0 say why none is
+    BFA Centre [92566538B14190085014946] (first level, the layer's kadiogo): Ouagadougou
+    BFA Sud-Ouest [92566538B26761698110708] (first level, the layer's djoro): Gaoua
+  BFA: 2 of 2 empty first-level capitals named
+  MLI: cod-ab-mli dated '[2025-09-04T00:00:00 TO 2025-09-04T23:59:59]' -> 2025
+  MLI: 160 capital points in cod-ab-mli
+    MLI Bandiagara [8926073B93084007572424]: Bandiagara (-3.60801, 14.33900)
+    MLI Bougouni [8926073B95704920034733]: Bougouni (-7.48435, 11.40817)
+    MLI Djenne [8926073B86660589431001]: Djenne (-4.55728, 13.90577)
+    MLI Kenieba [8926073B58532098111230]: Kenieba (-11.23917, 12.84001)
+    MLI Tombouctou [8926073B54989133575544]: Tombouctou (-3.00777, 16.76619)
+  MLI: 5 of 5 empty capitals named, 0 say why none is
+  MLI: 0 of 0 empty first-level capitals named
+  MRT: cod-ab-mrt dated '[2024-03-27T00:00:00 TO 2025-10-30T23:59:59]' -> 2024
+  MRT: 42 capital points in cod-ab-mrt
+    MRT Akjoujt [47542326B26316239883363]: Akjoujt (-14.41639, 19.69694)
+    MRT Aleg [47542326B53604404291210]: Aleg (-13.92090, 17.04810)
+    MRT Amourj [47542326B9245180339851]: Amourj (-7.21850, 16.10980)
+    MRT Aoujeft [47542326B38912627875653]: Aoujeft (-13.05944, 19.96222)
+    MRT Atar [47542326B12791497255333]: Atar (-13.04986, 20.51686)
+    MRT Bababe [47542326B74593484893275]: Bababe (-13.95287, 16.33710)
+    MRT Barkeol [47542326B92526973547543]: Barkeol (-12.49849, 16.64039)
+    MRT Basseknou [47542326B79518958456259]: Basseknou (-5.94680, 15.86560)
+    MRT Boghe [47542326B52802302132146]: Boghe (-14.27058, 16.58032)
+    MRT Boumdeid [47542326B4408163770822]: Boumdeid (-11.34340, 17.44540)
+    MRT Boutilimitt [47542326B79459539986617]: Boutilimitt (-14.69440, 17.54670)
+    MRT Chinguitti [47542326B90495786476095]: Chinguitti (-12.26220, 20.44036)
+    MRT Eayoune El Atrous [47542326B47795340566920]: Eayoune El Atrous (-9.61490, 16.66140)
+    MRT El Mejrya [47542326B50345645287156]: Moudjeria (-12.33185, 17.87364)
+    MRT Guerrou [47542326B49231245131640]: Guerrou (-11.83590, 16.81770)
+    MRT Kaedi [47542326B29120201182559]: Kaedi (-13.50474, 16.14653)
+    MRT Kankossa [47542326B30732925248213]: Kankossa (-11.52701, 15.93891)
+    MRT Keur Macene [47542326B95460333313215]: Keur Macene (-16.21491, 16.53848)
+    MRT Kiffa [47542326B84598403271907]: Kiffa (-11.40453, 16.61659)
+    MRT Koubenni [47542326B43555481021158]: Koubenni (-9.36528, 15.81722)
+    MRT M'Bagne [47542326B91967865285968]: M'Bagne (-13.79258, 16.14497)
+    MRT M'bout [47542326B11221851845412]: M'bout (-12.58379, 16.02157)
+    MRT Maghama [47542326B54868139713795]: Maghama (-12.85005, 15.50915)
+    MRT Magta lahjar [47542326B18376526841546]: Magta lahjar (-13.09270, 17.50600)
+    MRT Mederdra [47542326B59245352565920]: Mederdra (-15.75611, 16.89639)
+    MRT Monguel [47542326B31251685847111]: Monguel (-13.14087, 16.42361)
+    MRT Moughataa d'Enneama [47542326B75019227159374]: Nema (-7.25350, 16.61620)
+    MRT Nouadhibou [47542326B41685059019738]: Nouadhibou (-17.03361, 20.90024)
+    MRT Ouad Naga [47542326B19423449459947]: Ouad Naga (-15.69528, 17.95250)
+    MRT Ouadane [47542326B44927668035814]: Ouadane (-11.62138, 20.92767)
+    MRT Oualata [47542326B56395627841614]: Oualata (-7.02560, 17.30140)
+    MRT Ould Yenge [47542326B88135317282644]: Ould Yenge (-11.71467, 15.54038)
+    MRT R'Kiz [47542326B92400580164100]: R'Kiz (-15.31611, 16.91111)
+    MRT Rosso [47542326B77132653245300]: Rosso (-15.91417, 16.51028)
+    MRT Selibabi [47542326B53880541156854]: Selibabi (-12.18290, 15.15895)
+    MRT Tamchekett [47542326B49487198034252]: Tamchekett (-10.67060, 17.24220)
+    MRT Tichitt [47542326B42701553126465]: Tichitt (-9.49394, 18.44134)
+    MRT Tijigja [47542326B404198781259]: Tijigja (-11.42560, 18.55500)
+    MRT Timbedgha [47542326B26087332325113]: Timbedgha (-8.16430, 16.24470)
+    MRT Tintane [47542326B49589683558539]: Tintane (-10.17370, 16.39460)
+  MRT: 40 of 57 empty capitals named, 17 say why none is
+  MRT: 0 of 1 empty first-level capitals named
+    not named: Arafat: no point
+    not named: Benichab: no point
+    not named: Bir Moghrein: no point
+    not named: Chami: no point
+    not named: Dar Naim: no point
+    not named: Djigueni: no point
+    not named: El Mina: no point
+    not named: F'Derick: left out, the layer names Zouérat, the wilaya's capital, for F'Dérik
+    not named: Ghabou: no point
+    not named: Ksar: no point
+    not named: N'beiket Lehouach: no point
+    not named: Riyadh: no point
+    not named: Sebkha: no point
+    not named: Tevragh Zein: no point
+    not named: Teyarett: no point
+    not named: Toujounine: no point
+    not named: Zoueratt: no point
+    not named: Nouakchott (first level): no region of the layer is made of its units
+  wrote data/processed/sahel_capitals.json (371 kB)

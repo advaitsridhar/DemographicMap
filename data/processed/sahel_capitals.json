@@ -10079,7 +10079,7 @@
     "level": "admin2",
     "name": "Setor de Madina do Bo˒",
     "parent": "GNB",
-    "capital": "Boe",
+    "capital": "Madina do Boé",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -10108,11 +10108,18 @@
         "url": "https://data.humdata.org/dataset/cod-ab-gnb",
         "license": "CC BY-IGO",
         "year": 2021
+      },
+      {
+        "name": "GeoNames",
+        "url": "https://www.geonames.org/2371663",
+        "license": "CC BY 4.0",
+        "field": "capital note"
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
-    "shape_id": "13655514B15408487636665"
+    "shape_id": "13655514B15408487636665",
+    "capital_note": "OCHA's administrative boundaries for Guinea-Bissau label this sector's seat with the sector's name, Boé; their point is the town of Madina do Boé, 0.6 km from where GeoNames places it."
   },
   {
     "id": "GNB-CODAB-seat-setordemansaba-634354",
