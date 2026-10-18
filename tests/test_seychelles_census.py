@@ -482,6 +482,68 @@ region/district,
 TABLE24 = {"cascade": (6_659, 4_751), "ladigueandinnerislands": (3_537, 2_095),
            "outerislands": (1_075, 1_000)}
 
+# Table A7 as the report's text layer gives it (p. 81).
+A7 = """Table A7: Population of Non-Seychellois by nationality (country), region and sex, 2022
+TOTAL Central East-South
+Nationality /
+Country Both Sexes Male Female Both Sexes Male Female Both Sexes Male Female
+Total 19,948 16,305 3,643 5,184 3,626 1,558 5,790 5,312 478
+India 8,035 7,391 644 1,691 1,412 279 3,400 3,255 145
+Sri Lanka 1,823 1,657 166 327 247 80 467 451 16
+Bangladesh 1,143 1,136 7 198 197 1 427 426 1
+Madagascar 1,078 469 609 611 236 375 146 99 47
+Kenya 1,073 631 442 426 244 182 177 136 41
+Nepal 969 897 72 283 265 18 170 154 16
+Philippines 506 242 264 185 67 118 47 27 20
+Mauritius 425 317 108 140 103 37 50 34 16
+South Africa 359 257 102 104 73 31 69 49 20
+Indonesia 297 229 68 118 107 11 19 15 4
+Other 2,792 1,747 1,045 968 578 390 425 296 129
+Missing 1,448 1,332 116 133 97 36 393 370 23
+West North
+Nationality /
+Country Both Sexes Male Female Both Sexes Male Female
+Total 2,654 2,309 345 2,969 2,130 839
+India 901 854 47 1,159 1,041 118
+Sri Lanka 443 429 14 240 202 38
+Bangladesh 219 218 1 124 123 1
+Madagascar 69 45 24 182 52 130
+Kenya 92 68 24 224 57 167
+Nepal 181 175 6 128 117 11
+Philippines 88 46 42 79 45 34
+Mauritius 103 79 24 56 45 11
+South Africa 45 34 11 48 33 15
+Indonesia 94 77 17 15 6 9
+Other 395 271 124 652 369 283
+Missing 24 13 11 62 40 22
+Praslin La Digue & Inner Islands Outer Islands
+Nationality /
+Country Both Sexes Male Female Both Sexes Male Female Both Sexes Male Female
+Total 1,330 1,123 207 1,086 913 173 935 892 43
+India 509 480 29 346 323 23 29 26 3
+Sri Lanka 164 159 5 169 157 12 13 12 1
+Bangladesh 91 89 2 77 76 1 7 7 -
+Madagascar 35 19 16 35 18 17 - - -
+Kenya 58 43 15 89 78 11 7 5 2
+Nepal 134 124 10 65 54 11 8 8 -
+Philippines 41 13 28 42 26 16 24 18 6
+Mauritius 50 36 14 13 11 2 13 9 4
+South Africa 13 9 4 23 12 11 57 47 10
+Indonesia 22 8 14 21 9 12 8 7 1
+Other 172 118 54 118 69 49 62 46 16
+Missing 41 25 16 88 80 8 707 707 -
+"""
+# The Outer Islands' lines of Tables B3.1b and C2.1 (pp. 93, 99): everyone missing.
+BLANK = """Table B3.1b: Population aged 3 years and over by main second language spoken at home by re-
+gion/district, 2022
+Region/District Creole English French Tamil None (Specify) Know Refusal Missing
+Outer Islands 985 - - - - - - - - 985
+Table C2.1: Population aged 15 years and over by highest level of education completed, sex,
+Region/District Total No Schooling Creche (1-6) (1-5) Secondary 1st Degree &higher know Refusal Missing
+Outer Islands 985 - - - - - - - - - 985
+Table C3.1: Total population aged 15 years and over by age group, sex and field of study"""
+
+
 class SeychellesCensusTest(unittest.TestCase):
     def test_the_tables_add_up(self):
         table = sc.parse(TEXT)
@@ -562,16 +624,58 @@ class SeychellesCensusTest(unittest.TestCase):
         self.assertEqual(recs["l"]["religion"][0]["group"], "Catholic")
         self.assertEqual(recs["o"]["population"]["value"], 3_624 + 988 - 3_133)
         # The Outer Islands' fourth columns (Gujarati, Hindu) agree island by
-        # island: their language and religion are withheld, with the reason.
-        self.assertIn("coding error", recs["o"]["language"]["note"])
+        # island: their language and religion are withheld, and the facts said.
+        note = recs["o"]["language"]["note"]
+        self.assertNotIn("coding error", note)
+        self.assertIn("These islands' 1,479 people include the Outer Islands' 988", note)
+        self.assertIn("the same 707 of those as Gujarati-speaking", note)
+        self.assertIn("the religion of 607 more", note)
         self.assertEqual(recs["o"]["religion"]["status"], "not_available")
+        self.assertTrue(any(s["field"] == "language note/religion note"
+                            for s in recs["o"]["sources"]))
 
     def test_the_outer_islands_are_shown_once_the_columns_differ(self):
         table = self.small()
-        self.assertIsNotNone(sc.garbled(table, "neither is"))
+        self.assertIsNotNone(sc.garbled(table, {}))
         table["outerislands"] = {**table["outerislands"],
                                  "religion": {**table["outerislands"]["religion"], "Hindu": 5}}
-        self.assertIsNone(sc.garbled(table, "neither is"))
+        self.assertIsNone(sc.garbled(table, {}))
+
+    def test_table_a7_and_the_outer_islands_evidence(self):
+        a7 = sc.parse_a7(A7)
+        self.assertEqual(a7["TOTAL"]["total"], 19_948)
+        self.assertEqual(a7["East-South"]["rows"]["Indian nationals"], 3_400)
+        self.assertEqual(a7["Outer Islands"]["rows"]["Nationality not stated"], 707)
+        self.assertEqual(a7["Outer Islands"]["row_men"]["Nationality not stated"], 707)
+        self.assertTrue(sc.blank_outer(BLANK, "Table B3.1b:"))
+        self.assertTrue(sc.blank_outer(BLANK, "Table C2.1:"))
+        self.assertFalse(sc.blank_outer(BLANK.replace("985 - - - - - - - - - 985",
+                                                      "985 10 - - - - - - - - 975"),
+                                        "Table C2.1:"))
+        with self.assertRaises(SystemExit):
+            sc.parse_a7(A7.replace("India 8,035 7,391 644", "India 8,036 7,392 644"))
+
+    def test_nationality_where_a_polygon_is_a_region(self):
+        table = self.small()
+        a7 = sc.parse_a7(A7)
+        evidence = {"a7_missing": 707, "a7_missing_men": 707,
+                    "blank": [(t, w) for t, w in sc.BLANK_TABLES if sc.blank_outer(BLANK, t)]}
+        admin1 = [{"id": "d", "name": "La Digue and Inner Islands"},
+                  {"id": "c", "name": "Cascade"}, {"id": "o", "name": "Outer Islands"}]
+        with mock.patch.object(sc, "UNDRAWN", set()):
+            recs = {r["shape_id"]: r for r in sc.build(table, admin1, None, a7, evidence)}
+        digue = recs["d"]
+        self.assertEqual(digue["ethnicity"][0], {"group": "Seychellois nationals", "pct": 70.0,
+                                                 "count": 3_624 - 1_086})
+        self.assertEqual(digue["ethnicity_basis"], "nationality")
+        self.assertIn("1,086 are non-Seychellois", digue["ethnicity_note"])
+        self.assertIn("is in the East-South region", recs["c"]["ethnicity"]["note"])
+        outer = recs["o"]
+        self.assertIn("707 have their nationality missing", outer["ethnicity"]["note"])
+        note = outer["language"]["note"]
+        self.assertIn("counts 707 men there whose nationality is missing", note)
+        self.assertIn("(Tables B3.1b and C2.1) give every one", note)
+        self.assertNotIn("coding error", note)
 
 
 if __name__ == "__main__":

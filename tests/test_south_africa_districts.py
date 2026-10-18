@@ -54,6 +54,26 @@ class SouthAfricaDistrictAgesTest(unittest.TestCase):
             za.check_groups(swapped)
 
 
+# Report 03-01-84, Table 2.3, as its text layer gives it (p. 9).
+TABLE_2_3 = """Table 2.3 - Percentage distribution of population by language spoken in the household and Metropolitan Area, Census 2022
+City of Cape City of City of Nelson City of
+Language Buffalo City Town Ekurhuleni EThekwini Johannesburg Mangaung Mandela Bay Tshwane Non-Metros
+Afrikaans 5,3 26,1 7,3 0,8 3,8 10,8 24,7 12,1 10,6
+English 10,1 30,6 8,9 28,6 13,7 1,7 13,3 6,9 8,7
+IsiNdebele 0,1 0,2 1,7 0,1 3,6 0,1 0,1 5,0 1,7
+IsiXhosa 82,4 37,4 8,5 3,1 7,0 7,4 59,5 2,2 16,3
+IsiZulu 0,3 0,5 35,7 65,6 28,9 0,6 0,3 9,0 24,4
+Sepedi 0,0 0,1 12,3 0,0 7,9 0,2 0,0 24,4 10,0
+Sesotho 0,3 0,8 10,2 0,6 11,9 64,0 0,2 5,0 7,8
+Setswana 0,0 0,2 2,6 0,0 7,7 14,3 0,0 17,8 8,3
+Sign language 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0
+SiSwati 0,0 0,0 1,2 0,0 0,6 0,1 0,0 1,3 2,8
+Tshivenda 0,0 0,1 1,7 0,0 3,5 0,0 0,0 2,5 2,5
+Xitsonga 0,1 0,2 6,7 0,0 7,4 0,1 0,1 9,2 4,7
+Other 1,3 3,8 3,3 1,1 4,0 0,7 1,6 4,5 2,1
+Total 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0"""
+
+
 class SouthAfricaDistrictRecordsTest(unittest.TestCase):
     ADMIN1 = [{"id": "K", "name": "KwaZulu-Natal"}]
     ADMIN2 = [{"id": "u", "name": "Uthungulu", "parent": "K"}]
@@ -76,9 +96,37 @@ class SouthAfricaDistrictRecordsTest(unittest.TestCase):
         self.assertEqual(district["median_age"]["value"], 25.0)
         self.assertEqual(district["median_age"]["year"], 2022)
         self.assertEqual(district["religion"]["status"], "not_available")
-        self.assertIn("by province only", district["religion"]["note"])
+        self.assertIn("for each province", district["religion"]["note"])
+        self.assertIn("not for its districts or metros", district["religion"]["note"])
         self.assertIn("Table 2.9", district["language"]["note"])
+        self.assertIn("eight metropolitan municipalities", district["language"]["note"])
         self.assertTrue(any(s["field"] == "ethnicity" for s in district["sources"]))
+        # Note-only citations name no figure field: the release, the province's
+        # profile and the report on cultural dynamics.
+        notes = [s for s in district["sources"] if s["field"] == "religion note/language note"]
+        self.assertEqual(len(notes), 3)
+        self.assertIn("Report-03-01-74", notes[1]["url"])
+
+    def test_a_metro_carries_table_2_3s_languages(self):
+        table = self.table()
+        table["districts"][0].update(code="ETH", name="eThekwini")
+        metros = za.metro_languages(TABLE_2_3)
+        recs = za.records_of(table, self.ADMIN1, [{"id": "e", "name": "eThekwini",
+                                                    "parent": "K"}], metros)
+        metro = [r for r in recs if r["level"] == "admin2"][0]
+        self.assertEqual(metro["language"][:2], [{"group": "isiZulu", "pct": 65.6},
+                                                 {"group": "English", "pct": 28.6}])
+        self.assertEqual(metro["language_year"], 2022)
+        self.assertIn("Report 03-01-84, Table 2.3", metro["language_note"])
+        self.assertEqual(metro["religion"]["status"], "not_available")
+        self.assertTrue(any(s["field"] == "language" and "03-01-84" in s["url"]
+                            for s in metro["sources"]))
+        self.assertFalse(any("language note" in s["field"] for s in metro["sources"]))
+
+    def test_table_2_3_columns_must_make_100(self):
+        self.assertEqual(len(za.metro_languages(TABLE_2_3)), 8)
+        with self.assertRaises(SystemExit):
+            za.metro_languages(TABLE_2_3.replace("English 10,1 30,6", "English 15,1 30,6"))
 
     def test_province_gets_its_median_and_nothing_else(self):
         recs = za.records_of(self.table(), self.ADMIN1, self.ADMIN2)

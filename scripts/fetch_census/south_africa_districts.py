@@ -14,11 +14,18 @@ Written for each of the 52 districts and metros: population and sex ratio
 census asks, on the ethnicity field); median age, interpolated within the
 five-year age group that holds the middle person. For each of the nine
 provinces: the median age the same way (the release prints it only as a
-chart, see south_africa.py). Religion and language say why they are empty:
-the census asked both and Statistics South Africa publishes them by province
-only -- the statistical release's Tables 2.9 and 2.10, and the provincial
-profiles (Report 03-01-7x), whose religion table is the province's and which
-print no language table -- and the service carries neither.
+chart, see south_africa.py).
+
+Language for the eight metros: Statistics South Africa's report on cultural
+dynamics (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84)
+prints, in its Table 2.3, each metro's population by the language spoken most
+often in the household, in percentages to one decimal place. The other 44
+districts' language, and every district's religion, say why they are empty:
+the census asked both, and the statistical release (P0301.4, Tables 2.9 and
+2.10), the nine provincial profiles (Reports 03-01-70 to 03-01-78, whose
+language and religion tables are each the province's) and the report on
+cultural dynamics (religion by province, Table 4.1) give them for the
+provinces, the metros' language aside; the service carries neither.
 
 **Which group is which.** The service's rows name their population group and
 age group by number only (the descriptions come back null). The numbering is
@@ -103,14 +110,46 @@ GROUPS = {1: "Black African", 2: "Coloured", 3: "Indian/Asian", 4: "White", 5: "
 AGE_GROUPS = {i: (5 * (i - 1), 5 if i < 18 else None) for i in range(1, 19)}
 
 RELIGION_NOTE = (
-    "Census 2022 asked religious affiliation, and Statistics South Africa publishes the "
-    "answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and "
-    "each province's Census 2022 provincial profile), so no figure is published for this "
-    "district.")
+    "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers "
+    "for each province -- in the statistical release (P0301.4, Table 2.10), the province's "
+    "Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, "
+    "Table 4.1) -- not for its districts or metros, so no figure is published for this one.")
 LANGUAGE_NOTE = (
     "Census 2022 asked the language spoken most often in the household, and Statistics "
-    "South Africa publishes the answers by province only (Census 2022 Statistical Release "
-    "P0301.4, Table 2.9), so no figure is published for this district.")
+    "South Africa gives the answers for each province (the statistical release P0301.4, "
+    "Table 2.9, and the province's Census 2022 provincial profile) and for the eight "
+    "metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, "
+    "so no figure is published for this district.")
+
+# Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3:
+# the language spoken most often in the household by metro, in percentages.
+CULTURAL = "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf"
+CULTURAL_NAME = "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa " \
+                "(Report 03-01-84)"
+METRO_TITLE = "Table 2.3 - Percentage distribution of population by language spoken in the " \
+              "household and Metropolitan"
+# The table's columns, in the order printed (its heads run over two lines).
+METRO_COLUMNS = ("Buffalo City", "City of Cape Town", "Ekurhuleni", "eThekwini",
+                 "City of Johannesburg", "Mangaung", "Nelson Mandela Bay", "City of Tshwane",
+                 "Non-Metros")
+METRO_HEAD = "Language Buffalo City Town Ekurhuleni EThekwini Johannesburg Mangaung " \
+             "Mandela Bay Tshwane Non-Metros"
+# The table's rows -> the names the release's provincial table uses (south_africa.py).
+METRO_LANGUAGES = {"afrikaans": "Afrikaans", "english": "English", "isindebele": "isiNdebele",
+                   "isixhosa": "isiXhosa", "isizulu": "isiZulu", "sepedi": "Sepedi",
+                   "sesotho": "Sesotho", "setswana": "Setswana",
+                   "signlanguage": "South African Sign Language", "siswati": "siSwati",
+                   "tshivenda": "Tshivenda", "xitsonga": "Xitsonga", "other": "Other"}
+METRO_NOTE = ("The language spoken most often in the household, as Census 2022 asked it, for "
+              "the metro's population, as Statistics South Africa publishes it: percentages to "
+              "one decimal place, with no counts (Census 2022: Cultural Dynamics in South "
+              "Africa, Report 03-01-84, Table 2.3).")
+# The provincial profiles (Census 2022 Provincial Profile, Reports 03-01-70 to
+# 03-01-78), by province (reduced): their language and religion tables are the
+# province's.
+PROFILES = {"westerncape": 70, "easterncape": 71, "northerncape": 72, "freestate": 73,
+            "kwazulunatal": 74, "northwest": 75, "gauteng": 76, "mpumalanga": 77,
+            "limpopo": 78}
 
 # The boundary file's reduced name -> the census's, where the district has
 # been renamed since the boundary file was drawn.
@@ -392,8 +431,61 @@ def sources_of(code: str, level: int, fields: str) -> list[dict[str, Any]]:
              "page": PAGE, "license": LICENCE, "year": YEAR}]
 
 
+def metro_languages(text: str) -> dict[str, list[tuple[str, float]]]:
+    """{metro (reduced): [(language, percentage), ...]} from Report 03-01-84's
+    Table 2.3, each column checked to make 100."""
+    lines = [" ".join(raw.split()) for raw in text.splitlines()]
+    try:
+        start = next(i for i, ln in enumerate(lines) if ln.startswith(METRO_TITLE))
+    except StopIteration:
+        raise SystemExit("south_africa_districts: no Table 2.3 in Report 03-01-84") from None
+    if METRO_HEAD not in lines[start + 1:start + 4]:
+        raise SystemExit(f"south_africa_districts: Table 2.3's columns are not "
+                         f"{METRO_COLUMNS}: {lines[start + 1:start + 4]}")
+    figures: dict[str, list[float]] = {}
+    for line in lines[start + 1:start + 30]:
+        hit = re.fullmatch(r"(?P<name>[A-Za-z ]+?)((?: \d+,\d){9})", line)
+        if not hit:
+            continue
+        label = re.sub(r"[^a-z]", "", hit.group("name").lower())
+        values = [float(v.replace(",", ".")) for v in hit.group(2).split()]
+        if label == "total":
+            break
+        if label not in METRO_LANGUAGES:
+            raise SystemExit(f"south_africa_districts: Table 2.3 row {line!r}")
+        figures[METRO_LANGUAGES[label]] = values
+    if len(figures) != len(METRO_LANGUAGES):
+        raise SystemExit(f"south_africa_districts: Table 2.3 has {sorted(figures)}")
+    out: dict[str, list[tuple[str, float]]] = {}
+    for i, metro in enumerate(METRO_COLUMNS):
+        column = [(g, v[i]) for g, v in figures.items()]
+        made = sum(v for _, v in column)
+        if abs(made - 100) > 0.5:
+            raise SystemExit(f"south_africa_districts: {metro}'s languages make {made:.1f}%")
+        if metro != "Non-Metros":
+            out[key(metro)] = sorted(((g, v) for g, v in column if v > 0),
+                                     key=lambda x: (-x[1], x[0]))
+    return out
+
+
+def cultural_text() -> str:
+    """The pages of Report 03-01-84 that hold Table 2.3."""
+    import io                                       # noqa: PLC0415
+    import pdfplumber                               # noqa: PLC0415
+    from ._shared import http_get                   # noqa: PLC0415
+    blob = http_get(CULTURAL, binary=True, cache=False, timeout=300)
+    if not blob.startswith(b"%PDF"):
+        raise SystemExit(f"south_africa_districts: {CULTURAL} is not a PDF")
+    log(f"  read {CULTURAL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        return "\n".join(pdf.pages[i].extract_text() or "" for i in range(14, 26)
+                         if i < len(pdf.pages))
+
+
 def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
-               admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+               admin2: list[dict[str, Any]],
+               metros: dict[str, list[tuple[str, float]]] | None = None
+               ) -> list[dict[str, Any]]:
     bound = bind(table["districts"], admin1, admin2)
     out = []
     for shape in admin2:
@@ -413,12 +505,32 @@ def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
             extra.update(age_fields(d["ages"]))
             sources += sources_of(d["code"], DISTRICT, "median_age")
         if d.get("groups") or d.get("ages"):
+            spoken = (metros or {}).get(key(d["name"]))
             extra["religion"] = gap(NOT_AVAILABLE, RELIGION_NOTE)
-            extra["language"] = gap(NOT_AVAILABLE, LANGUAGE_NOTE)
-            sources.append({"field": "religion note/language note",
+            if spoken:
+                extra.update(language=[{"group": g, "pct": v} for g, v in spoken],
+                             language_year=YEAR,
+                             language_basis="language spoken most often in the household",
+                             language_note=METRO_NOTE)
+                sources.append({"field": "language", "name": f"{CULTURAL_NAME}, Table 2.3",
+                                "url": CULTURAL, "license": LICENCE, "year": YEAR})
+            else:
+                extra["language"] = gap(NOT_AVAILABLE, LANGUAGE_NOTE)
+            notes = "religion note" if spoken else "religion note/language note"
+            sources.append({"field": notes,
                             "name": "Statistics South Africa, Census 2022 Statistical Release "
                                     "P0301.4", "url": RELEASE, "license": LICENCE,
                             "year": YEAR})
+            profile = PROFILES.get(key(d["province"]))
+            if profile:
+                sources.append({"field": notes,
+                                "name": f"Statistics South Africa, Census 2022 Provincial "
+                                        f"Profile: {d['province']} (Report 03-01-{profile})",
+                                "url": f"https://statssa.gov.za/publications/Report-03-01-"
+                                       f"{profile}/Report-03-01-{profile}2022.pdf",
+                                "license": LICENCE, "year": YEAR})
+            sources.append({"field": notes, "name": CULTURAL_NAME, "url": CULTURAL,
+                            "license": LICENCE, "year": YEAR})
         out.append(record(
             f"ZAF-2022-{d['code']}", shape["name"], level="admin2", parent="ZAF", country="ZAF",
             match_by="shape_id", shape_id=shape["id"],
@@ -450,7 +562,14 @@ def main() -> int:
         f"making {sum(p['total'] for p in table['provinces'].values()):,}")
     admin1 = json.loads((SITE / "admin1" / "ZAF.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "ZAF.units.json").read_text())
-    records = records_of(table, admin1, admin2)
+    metros = metro_languages(cultural_text())
+    for k, langs in sorted(metros.items()):
+        log(f"  {k}: {langs[:4]}")
+    records = records_of(table, admin1, admin2, metros)
+    written = sum(1 for r in records if isinstance(r.get("language"), list))
+    if written != 8:
+        raise SystemExit(f"south_africa_districts: {written} metros given Table 2.3's languages, "
+                         f"not 8")
     for r in records:
         if r["level"] == "admin1":
             log(f"  {r['name']}: median age {r['median_age']['value']}")

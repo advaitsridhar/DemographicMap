@@ -10,8 +10,10 @@ country, its regions and its districts:
     Table A2.2  the same for men
     Table B3.1a population aged 3 and over by main first language spoken at home
     Table B4.1  population in all households by religion
+    Table A7    the non-Seychellois by nationality, for the census's seven regions
 
-and the last three also for each inhabited island outside Mahé and Praslin.
+and A2.1, A2.2, B3.1a and B4.1 also for each inhabited island outside Mahé and
+Praslin.
 The Bureau's download refuses the runner; the Internet Archive's copy of the
 report is read. Tables A2.1 and A2.2 are printed rotated, and their text layer
 gives each line's name a word or two a line and then its figures one a line:
@@ -34,12 +36,20 @@ gets the tables' lines for the island, and the other islands their Outer
 Islands and La Digue and Inner Islands less the island of La Digue -- count,
 sex ratio, median age, first language and religion.
 
-Tables B3.1a and B4.1 put most of the Outer Islands' people in the fourth
+Nationality stands in place of ethnicity, which the census does not record,
+where a polygon is one of the seven regions of Table A7: East, North and West
+Mahé, Praslin, and La Digue and Inner Islands. The region's Seychellois are its
+people (Table B4.1's total) less its non-Seychellois. Every other polygon says
+nationality is published by region.
+
+Tables B3.1a and B4.1 put 707 of the Outer Islands' 988 people in the fourth
 column of each -- Gujarati, Hindu -- with the same figure island by island in
-both (all 353 on Platte, all 110 on Darros, 707 of 988 in all). That reads as a
-coding error, not a count: while the two columns agree so, the Outer Islands'
-language and religion, and the other islands' (mostly theirs), are withheld
-with the reason.
+both (all 353 on Platte, all 110 on Darros); Table A7 counts 707 men there as
+non-Seychellois whose nationality is missing; and Tables B3.1b (second
+language) and C2.1 (education) give every one of the Outer Islands' people as
+missing. While the two fourth columns agree so, the Outer Islands' language,
+religion and nationality, and the other islands' language and religion, are
+withheld, and the records give those facts as the reason.
 
 **Checks before anything is written.** Every line's men and women make its
 total, and its languages and religions make theirs; the districts make the
@@ -118,11 +128,37 @@ OTHER = "otherislands"             # the Outer Islands and the inner islands but
 # Outer Islands' (and so the other islands') language and religion withheld,
 # for as long as the two columns agree so.
 OUTER, FOURTH = "outerislands", ("Gujarati", "Hindu")
-GARBLED_NOTE = ("The census report's tables of first language at home (Table B3.1a) and religion "
-                "(Table B4.1) put {n:,} of the Outer Islands' {of:,} people in the fourth column "
-                "of each, Gujarati in one and Hindu in the other, with the same figure island by "
-                "island in both (all 353 on Platte, all 110 on Darros), which looks like a "
-                "coding error rather than a count; {which} shown.")
+# Table A7: the non-Seychellois by nationality (country), region and sex. Its
+# regions come in three blocks of columns, each region as both sexes, men and
+# women.
+A7_TITLE = "Table A7: Population of Non-Seychellois by nationality"
+A7_PAGE = 104                      # counted from 0
+A7_BLOCKS = (("TOTAL", "Central", "East-South"), ("West", "North"),
+             ("Praslin", "La Digue & Inner Islands", "Outer Islands"))
+A7_ROWS = {"india": "Indian nationals", "srilanka": "Sri Lankan nationals",
+           "bangladesh": "Bangladeshi nationals", "madagascar": "Malagasy nationals",
+           "kenya": "Kenyan nationals", "nepal": "Nepali nationals",
+           "philippines": "Filipino nationals", "mauritius": "Mauritian nationals",
+           "southafrica": "South African nationals", "indonesia": "Indonesian nationals",
+           "other": "Other foreign nationals", "missing": "Nationality not stated"}
+NATIONALS = "Seychellois nationals"
+# The census's regions and their districts.
+REGIONS = {"Central": ("Ile Perseverance", "English River", "Mont Buxton", "Saint Louis",
+                       "Bel Air", "Mont Fleuri", "Plaisance", "Roche Caiman", "Les Mamelles"),
+           "East-South": ("Cascade", "Pointe Larue", "Anse Aux Pins", "Au Cap", "Anse Royale",
+                          "Takamaka"),
+           "West": ("Baie Lazare", "Anse Boileau", "Grand Anse Mahé", "Port Glaud"),
+           "North": ("Belombre", "Beau Vallon", "Glacis", "Anse Etoile"),
+           "Praslin": ("Grand Anse Praslin", "Baie Sainte Anne"),
+           "La Digue & Inner Islands": ("La Digue and Inner Islands",),
+           "Outer Islands": ("Outer Islands",)}
+REGION_NAMES = {"La Digue & Inner Islands": "La Digue and Inner Islands"}
+# The map's polygons whose ground is a census region (reduced) -> the region.
+REGION_UNITS = {"eastmahe": "East-South", "northmahe": "North", "westmahe": "West",
+                "praslin": "Praslin", "ladigueandinnerislands": "La Digue & Inner Islands"}
+# Tables whose Outer Islands line gives everyone as missing, which the reason
+# for withholding the islands' language and religion quotes: (title, what).
+BLANK_TABLES = (("Table B3.1b:", "second language"), ("Table C2.1:", "education"))
 MEDIAN_NOTE =("Interpolated within the age group that holds the middle person, from the 2022 "
                "census's population by five-year age group (Table A2.1).")
 TABLE_24 = "Table 2.4"
@@ -198,6 +234,76 @@ def parse(text: str) -> dict[str, dict[str, Any]]:
     if made != NATIONAL:
         raise SystemExit(f"seychelles_census: the districts make {made:,}, not {NATIONAL:,}")
     return out
+
+
+def parse_a7(text: str) -> dict[str, dict[str, Any]]:
+    """{region: {"total", "men", "women", "rows": {group: both sexes}}} from
+    Table A7, every block's countries checked against its Total line and the
+    regions against the country's."""
+    figures = rf"((?:\s+{NUM}){{6,9}})"
+    out: dict[str, dict[str, Any]] = {}
+    block: tuple[str, ...] | None = None
+    started = False
+    for raw in text.splitlines():
+        line = " ".join(raw.split())
+        if A7_TITLE in line:
+            started = True
+            continue
+        if not started:
+            continue
+        if line.startswith("Table ") and A7_TITLE not in line:
+            break
+        heads = [b for b in A7_BLOCKS if line == " ".join(b)]
+        if heads:
+            block = heads[0]
+            continue
+        hit = re.fullmatch(rf"(?P<name>[A-Za-z][A-Za-z ]*?){figures}", line)
+        if block is None or not hit:
+            continue
+        values = [number(t) for t in hit.group(2).split()]
+        if len(values) != 3 * len(block):
+            raise SystemExit(f"seychelles_census: Table A7 line {line!r} has {len(values)} "
+                             f"figures for {block}")
+        k = key(hit.group("name"))
+        for i, region in enumerate(block):
+            both, men, women = values[3 * i:3 * i + 3]
+            if men + women != both:
+                raise SystemExit(f"seychelles_census: Table A7 {region} {k}: {men} men and "
+                                 f"{women} women, not {both}")
+            unit = out.setdefault(region, {"rows": {}})
+            if k == "total":
+                unit.update(total=both, men=men, women=women)
+            elif k in A7_ROWS:
+                unit["rows"][A7_ROWS[k]] = both
+                unit.setdefault("row_men", {})[A7_ROWS[k]] = men
+            else:
+                raise SystemExit(f"seychelles_census: Table A7 row {line!r}")
+    regions = [r for b in A7_BLOCKS for r in b if r != "TOTAL"]
+    for region in ["TOTAL", *regions]:
+        unit = out.get(region)
+        if not unit or "total" not in unit or sum(unit["rows"].values()) != unit["total"]:
+            raise SystemExit(f"seychelles_census: Table A7's {region} does not add up: {unit}")
+    if sum(out[r]["total"] for r in regions) != out["TOTAL"]["total"]:
+        raise SystemExit("seychelles_census: Table A7's regions do not make its total")
+    return out
+
+
+def blank_outer(text: str, title: str) -> bool:
+    """Whether a table's Outer Islands line gives everyone as missing: its
+    total, nothing in any column, the same total in the last."""
+    started = False
+    for raw in text.splitlines():
+        line = " ".join(raw.split())
+        if line.startswith(title):
+            started = True
+            continue
+        if started and line.startswith("Table "):
+            break
+        if started and line.startswith("Outer Islands "):
+            cells = line[len("Outer Islands "):].split()
+            return (len(cells) > 2 and cells[0] == cells[-1] and cells[0] != "-"
+                    and all(c == "-" for c in cells[1:-1]))
+    return False
 
 
 def island_composition(text: str) -> dict[str, Any]:
@@ -306,24 +412,131 @@ def compositions(parts: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def garbled(table: dict[str, dict[str, Any]], which: str) -> dict[str, Any] | None:
-    """Language and religion withheld, with the reason, while the Outer
-    Islands' fourth columns (Gujarati, Hindu) hold the same majority of them."""
+def recorded_alike(table: dict[str, dict[str, Any]]) -> int:
+    """How many of the Outer Islands' people Tables B3.1a and B4.1 both put in
+    their fourth column (Gujarati, Hindu), where that is most of them; else 0."""
     outer = table[OUTER]
     n = outer["language"].get(FOURTH[0], 0)
     if n != outer["religion"].get(FOURTH[1], 0) or 2 * n <= outer["religion_of"]:
+        return 0
+    return n
+
+
+def garbled(table: dict[str, dict[str, Any]], evidence: dict[str, Any],
+            other: dict[str, Any] | None = None) -> dict[str, Any] | None:
+    """Language and religion withheld, with the facts as the reason, while the
+    Outer Islands' fourth columns (Gujarati, Hindu) hold the same majority of
+    them. ``other``: the other islands' line, for that polygon's note."""
+    n = recorded_alike(table)
+    if not n:
         return None
-    note = GARBLED_NOTE.format(n=n, of=outer["religion_of"], which=which)
+    outer = table[OUTER]
+    alike = (f"the same {n:,} of the Outer Islands' {outer['religion_of']:,} people as "
+             f"Gujarati-speaking (Table B3.1a) and as Hindu (Table B4.1), island by island alike "
+             f"(all 353 on Platte, all 110 on Darros)")
+    more = []
+    if evidence.get("a7_missing") == n:
+        men = " men" if evidence.get("a7_missing_men") == n else ""
+        more.append(f"its table of the non-Seychellois (Table A7) counts {n:,}{men} there whose "
+                    f"nationality is missing")
+    blank = evidence.get("blank") or []
+    if blank:
+        tables = joined([t.rstrip(":").replace("Table ", "") for t, _ in blank])
+        what = joined([w for _, w in blank])
+        more.append(f"its tables of {what} (Table{'s' if len(blank) > 1 else ''} {tables}) "
+                    f"give every one of the Outer Islands' people as missing")
+    if other is None:
+        note = (f"The 2022 census report records {alike}; " + "; ".join(more) + ". With most "
+                f"of the islands' answers missing or recorded alike, neither language nor "
+                f"religion is shown.") if more else (
+                f"The 2022 census report records {alike}. With most of the islands' answers "
+                f"recorded alike, neither language nor religion is shown.")
+    else:
+        unrecorded = other["religion_of"] - sum(other["religion"].values())
+        note = (f"These islands' {other['religion_of']:,} people include the Outer Islands' "
+                f"{outer['religion_of']:,}, and the 2022 census report records "
+                + alike.replace(f" of the Outer Islands' {outer['religion_of']:,} people",
+                                " of those")
+                + (f"; {more[0]}" if more and more[0].startswith("its table of the non") else "")
+                + f"; the religion of {unrecorded:,} more of these islands' people is missing "
+                  f"or could not be classified. With most of these islands' answers missing or "
+                  f"recorded alike, neither language nor religion is shown.")
     return {"language": gap(NOT_AVAILABLE, note), "religion": gap(NOT_AVAILABLE, note)}
 
 
+def region_of(k: str) -> str:
+    """The census region a district (reduced) is in."""
+    for region, districts in REGIONS.items():
+        if k in {district_key(d) for d in districts}:
+            return region
+    raise SystemExit(f"seychelles_census: no region for {k}")
+
+
+def nationality(region: str, people: int, a7: dict[str, dict[str, Any]] | None,
+                where: str) -> dict[str, Any]:
+    """A region's people by nationality, in place of ethnicity (Table A7)."""
+    if not a7:
+        return {}
+    unit = a7[region]
+    counts = {NATIONALS: people - unit["total"], **unit["rows"]}
+    top = sorted(((n, g) for g, n in unit["rows"].items()
+                  if n and g not in ("Other foreign nationals", "Nationality not stated")),
+                 key=lambda x: (-x[0], x[1]))[:3]
+    listed = joined([f"{n:,} {g.replace(' nationals', '')}" for n, g in top])
+    return {"ethnicity": shares({g: n for g, n in counts.items() if n}, total=people),
+            "ethnicity_year": YEAR, "ethnicity_basis": "nationality",
+            "ethnicity_note": (
+                f"Nationality, not ethnicity: the 2022 census records no ethnic group, and its "
+                f"report counts each region's non-Seychellois by nationality (Table A7). "
+                f"{where}: of its {people:,} people (Table B4.1), {unit['total']:,} are "
+                f"non-Seychellois, the most of them {listed}; the rest are Seychellois.")}
+
+
+def no_nationality(k: str, a7: dict[str, dict[str, Any]] | None) -> dict[str, Any]:
+    """Why a polygon that is not one of Table A7's regions has no nationality."""
+    if not a7:
+        return {}
+    if k == OUTER:
+        missing = a7[REGIONS_OF_OUTER]["rows"].get("Nationality not stated", 0)
+        note = (f"Nationality, which the 2022 census report gives by region in place of ethnic "
+                f"group (Table A7), is not shown: of the {a7[REGIONS_OF_OUTER]['total']:,} "
+                f"people it counts as non-Seychellois on the Outer Islands, {missing:,} have "
+                f"their nationality missing, the same number its tables of language and "
+                f"religion record alike as Gujarati-speaking and Hindu.")
+    elif k == OTHER:
+        note = ("The 2022 census report gives nationality by region (Table A7), and these "
+                "islands are parts of two regions, the Outer Islands and La Digue and Inner "
+                "Islands, so no figure is shown for them; it records no ethnic group.")
+    elif k == ISLAND:
+        note = ("The 2022 census report gives nationality by region (Table A7), for La Digue "
+                "and Inner Islands as a whole and not for the island of La Digue alone, and "
+                "records no ethnic group.")
+    elif k in GROUPS2:
+        note = ("The 2022 census report gives nationality by region (Table A7); these "
+                "districts are part of the Central region, which takes in districts drawn "
+                "elsewhere, so no figure is shown for them, and it records no ethnic group.")
+    else:
+        note = (f"The 2022 census report gives nationality by region (Table A7: this district "
+                f"is in the {REGION_NAMES.get(region_of(k), region_of(k))} region), not by "
+                f"district, and records no ethnic group.")
+    return {"ethnicity": gap(NOT_AVAILABLE, note)}
+
+
+REGIONS_OF_OUTER = "Outer Islands"
+
+
 def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
-          age: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+          age: dict[str, dict[str, Any]] | None = None,
+          a7: dict[str, dict[str, Any]] | None = None,
+          evidence: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     fields = [("population/sex_ratio", TABLE_24), ("language", "Table B3.1a"),
               ("religion", "Table B4.1")]
     if age:
         fields.insert(1, ("median_age", "Table A2.1"))
     sources = sources_of(*fields)
+    withheld = sources_of(*[f for f in fields if f[0] not in ("language", "religion")],
+                          ("language note/religion note",
+                           "Tables A7, B3.1a, B3.1b, B4.1 and C2.1"))
     out = []
     used = []
     for shape in admin1:
@@ -339,10 +552,19 @@ def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             extra = {"median_age": measure(median(age[k]["groups"]), year=YEAR,
                                            source=f"{SOURCE}, Table A2.1"),
                      "median_age_note": moved_note(k, table, age)}
-        comp = (garbled(table, "neither is") if k == OUTER else None) or compositions([d])
+        comp = (garbled(table, evidence or {}) if k == OUTER else None) or compositions([d])
+        cited = withheld if isinstance(comp.get("language"), dict) else sources
+        if k in REGION_UNITS:
+            ethnic = nationality(REGION_UNITS[k], d["religion_of"], a7,
+                                 f"{shape['name']} is one of the census's regions as well as "
+                                 f"a district")
+            cited = cited + (sources_of(("ethnicity", "Table A7")) if ethnic else [])
+        else:
+            ethnic = no_nationality(k, a7)
+            cited = cited + (sources_of(("ethnicity note", "Table A7")) if ethnic else [])
         out.append(record(
             f"SYC-2022-{k}", shape["name"], level="admin1", parent="SYC", country="SYC",
-            match_by="shape_id", shape_id=shape["id"], sources=sources,
+            match_by="shape_id", shape_id=shape["id"], sources=cited, **ethnic,
             population=measure(d["total"], year=YEAR, source=f"{SOURCE}, {TABLE_24}"),
             population_note=f"The 2022 census's count for {d['name']}.",
             sex_ratio=sex_ratio(d["men"], d["women"], year=YEAR, source=f"{SOURCE}, {TABLE_24}"),
@@ -378,7 +600,9 @@ def islands(age: dict[str, dict[str, Any]], table: dict[str, dict[str, Any]],
 
 
 def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
-           isle: dict[str, Any], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+           isle: dict[str, Any], admin2: list[dict[str, Any]],
+           a7: dict[str, dict[str, Any]] | None = None,
+           evidence: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     out = []
     seen = set()
     rest = islands(age, table, isle)
@@ -391,12 +615,27 @@ def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
             total = sum(d["total"] for d in parts)
             if sum(groups) != total:
                 raise SystemExit(f"seychelles_census: {shape['name']}'s ages make {sum(groups)}")
+            if k in REGION_UNITS and a7:
+                region = REGION_UNITS[k]
+                if {district_key(n) for n in GROUPS2[k]} != {district_key(n)
+                                                             for n in REGIONS[region]}:
+                    raise SystemExit(f"seychelles_census: {shape['name']} is not the "
+                                     f"{region} region")
+                ethnic = nationality(region, sum(d["religion_of"] for d in parts), a7,
+                                     f"{shape['name']}, its {len(parts)} districts, is the "
+                                     f"census's {REGION_NAMES.get(region, region)} region")
+                extra_src = sources_of(("ethnicity", "Table A7")) if ethnic else []
+            elif k in REGION_UNITS:
+                ethnic, extra_src = {}, []
+            else:
+                ethnic = no_nationality(k, a7)
+                extra_src = sources_of(("ethnicity note", "Table A7")) if ethnic else []
             out.append(record(
                 f"SYC-2022-{k}", shape["name"], level="admin2", parent="SYC", country="SYC",
-                match_by="shape_id", shape_id=shape["id"],
+                match_by="shape_id", shape_id=shape["id"], **ethnic,
                 sources=sources_of(("population/sex_ratio", TABLE_24),
                                    ("median_age", "Table A2.1"), ("language", "Table B3.1a"),
-                                   ("religion", "Table B4.1")),
+                                   ("religion", "Table B4.1")) + extra_src,
                 population=measure(total, year=YEAR, source=f"{SOURCE}, {TABLE_24}"),
                 population_note=(f"The 2022 census's counts for the {len(parts)} districts the map "
                                  f"draws as one added together: {joined(list(GROUPS2[k]))}."),
@@ -411,20 +650,25 @@ def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
                          "other than La Digue added together: the tables' Outer Islands and La "
                          "Digue and Inner Islands, less the island of La Digue, which they give "
                          "apart.")
+            comp = (garbled(table, evidence or {}, row) if k == OTHER else None) \
+                or compositions([row])
+            withheld = isinstance(comp.get("language"), dict)
+            ethnic = no_nationality(k, a7)
             out.append(record(
                 f"SYC-2022-{k}", shape["name"], level="admin2", parent="SYC", country="SYC",
-                match_by="shape_id", shape_id=shape["id"],
+                match_by="shape_id", shape_id=shape["id"], **ethnic,
                 sources=sources_of(("population/sex_ratio/median_age", "Tables A2.1 and A2.2"),
-                                   ("language", "Table B3.1a"), ("religion", "Table B4.1")),
+                                   *((("language note/religion note",
+                                       "Tables A7, B3.1a, B4.1"),) if withheld else
+                                     (("language", "Table B3.1a"), ("religion", "Table B4.1"))))
+                + (sources_of(("ethnicity note", "Table A7")) if ethnic else []),
                 population=measure(row["total"], year=YEAR, source=f"{SOURCE}, Table A2.1"),
                 population_note=what,
                 sex_ratio=sex_ratio(row["men"], row["total"] - row["men"], year=YEAR,
                                     source=f"{SOURCE}, Tables A2.1 and A2.2"),
                 median_age=measure(median(row["groups"]), year=YEAR,
                                    source=f"{SOURCE}, Table A2.1"),
-                median_age_note=MEDIAN_NOTE,
-                **((garbled(table, "as they are most of these islands' people, neither is")
-                    if k == OTHER else None) or compositions([row]))))
+                median_age_note=MEDIAN_NOTE, **comp))
         else:
             raise SystemExit(f"seychelles_census: no census figures for {shape['name']!r}")
         seen.add(k)
@@ -434,10 +678,11 @@ def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
 
 
 def texts_of(blob: bytes) -> tuple[str, str, str]:
-    """The pages of Tables 2.4, B3.1a and B4.1, and those of A2.1 and A2.2."""
+    """The pages of Tables 2.4, A7, B3.1a, B3.1b, B4.1 and C2.1, and those of
+    A2.1 and A2.2."""
     import pdfplumber                               # noqa: PLC0415
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
-        pages = list(range(30, 45)) + list(range(110, 125))
+        pages = list(range(30, 45)) + [A7_PAGE] + list(range(110, 125))
         text = "\n".join(pdf.pages[i].extract_text() or "" for i in pages if i < len(pdf.pages))
         both, men = (pdf.pages[i].extract_text() or "" for i in AGE_PAGES)
     return text, both, men
@@ -453,14 +698,21 @@ def main() -> int:
     age = ages(both, men, table)
     log(f"  the country's median age: "
         f"{median([sum(g) for g in zip(*(age[district_key(d)]['groups'] for d in DISTRICTS))])}")
-    records = (build(table, units("SYC", "admin1"), age)
-               + build2(table, age, island_composition(text), units("SYC", "admin2")))
+    a7 = parse_a7(text)
+    evidence = {"a7_missing": a7["Outer Islands"]["rows"].get("Nationality not stated"),
+                "a7_missing_men": a7["Outer Islands"]["row_men"].get("Nationality not stated"),
+                "blank": [(t, w) for t, w in BLANK_TABLES if blank_outer(text, t)]}
+    log(f"  Table A7: {[(r, u['total']) for r, u in a7.items()]}; Outer Islands' "
+        f"evidence: {evidence}")
+    records = (build(table, units("SYC", "admin1"), age, a7, evidence)
+               + build2(table, age, island_composition(text), units("SYC", "admin2"), a7,
+                        evidence))
     for r in records:
         first = {f: r[f][:1] if isinstance(r[f], list) else r[f].get("note", "")[:60]
-                 for f in ("language", "religion")}
+                 for f in ("language", "religion", "ethnicity")}
         log(f"  {r['level']} {r['name']}: {r['population']['value']:,}, ratio "
             f"{r['sex_ratio']['value']}, median {r['median_age']['value']}, "
-            f"{first['language']}, {first['religion']}")
+            f"{first['language']}, {first['religion']}, {first['ethnicity']}")
     write_json(PROCESSED / OUT, records)
     return 0
 

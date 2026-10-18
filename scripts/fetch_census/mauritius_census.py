@@ -7,6 +7,7 @@ are read here, each by country, district (and island), and municipal ward or
 village council area:
 
     D2  resident population by age group and sex
+    D4  resident population by nationality (by island only)
     D6  resident population by religious group
     D9  resident population by language usually spoken at home
 
@@ -18,6 +19,11 @@ Hindu, Tamil, Telugu, Marathi and Vedic) are written as one Hindu group, and
 the note says so. Agaléga and St. Brandon have no line in these tables (the
 Republic's residents in them are the two main islands'), and say so.
 
+Ethnic group has not been asked since 1972. Table D4 gives residents'
+nationality for each island, so Rodrigues carries its Mauritian and foreign
+nationals in place of ethnicity; the districts of the Island of Mauritius say
+nationality is given by island only.
+
 **The units.** Each table's blocks are found by their label: a district's
 ("PORT LOUIS DISTRICT ...") or an island's ("... RODRIGUES"); the first block
 of each is the whole unit, before its urban and rural parts or its wards.
@@ -25,6 +31,9 @@ of each is the whole unit, before its urban and rural parts or its wards.
 **Checks before anything is written.** A block's men and women make its
 total and its age groups make it too; its religions and its languages make the
 same total; the districts and islands make the Republic's 1,233,097.
+Rodrigues' Mauritian and foreign nationals and those not stated make its
+total, which is its total in Table D2, and its foreigners' countries make the
+foreigners.
 
 Usage:
     python -m scripts.fetch_census.mauritius_census
@@ -77,6 +86,16 @@ LANGUAGE = {"creole": "Mauritian Creole", "bhojpuri": "Bhojpuri", "french": "Fre
 ETHNICITY_NOTE = ("Mauritius has not asked residents' ethnic group in its census since 1972 "
                   "(the 2022 census records religion, language usually spoken at home and "
                   "language of forefathers), so there is no census figure for it.")
+DISTRICT_ETHNICITY_NOTE = ("Mauritius has not asked residents' ethnic group in its census since "
+                           "1972 (the 2022 census records religion, language usually spoken at "
+                           "home and language of forefathers), and the census's tables give "
+                           "residents' nationality by island (Volume II, Table D4), not by "
+                           "district, so there is no census figure for this district.")
+# Table D4's lines for regions of the world, each the sum of its countries.
+D4_REGIONS = {"africa", "americanorth", "northamerica", "americasouth", "southamerica",
+              "asia", "europe", "oceania"}
+# The islands whose nationality Table D4 gives and the map draws.
+NATIONALITY_UNITS = ("rodrigues",)
 AGE = re.compile(r"^(?:<\s*(?P<lt>\d+)|(?P<lo>\d+)\s*-\s*(?P<hi>\d+)|(?P<top>\d+)\s*\+)$")
 
 
@@ -92,7 +111,95 @@ def sheets(blob: bytes) -> dict[str, list[list[Any]]]:
     import openpyxl                                 # noqa: PLC0415
     wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     return {ws.title.strip(): [[cell(v) for v in r] for r in ws.iter_rows(values_only=True)]
-            for ws in wb.worksheets if ws.title.strip() in ("D2", "D6", "D9")}
+            for ws in wb.worksheets if ws.title.strip() in ("D2", "D4", "D6", "D9")}
+
+
+def read_d4(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+    """{island unit: its residents' "total", "mauritian", "foreign", "unstated"
+    and foreigners by "countries"} from Table D4's resident columns, checked."""
+    head = None
+    for row in rows[:8]:
+        if any(isinstance(v, str) and key(v).startswith("residentpopulation") for v in row):
+            head = row
+            break
+    if head is None:
+        raise SystemExit("mauritius_census: D4 has no resident population column")
+    col = next(i for i, v in enumerate(head)
+               if isinstance(v, str) and key(v).startswith("residentpopulation"))
+    out: dict[str, dict[str, Any]] = {}
+    current: dict[str, Any] | None = None
+    region = ""
+    for row in rows:
+        label = row[0] if row and isinstance(row[0], str) else ""
+        value = row[col] if col < len(row) else None
+        if label and not isinstance(value, int):
+            unit = unit_of(label) if "island" in key(label) else None
+            if unit:
+                current = out.setdefault(unit, {"label": label, "countries": {},
+                                                "regions": {}})
+            elif "island" in key(label) or "republic" in key(label):
+                current = None
+            continue
+        if current is None or not label or not isinstance(value, int):
+            continue
+        k = key(label)
+        if k in D4_REGIONS:
+            # A region's line is the sum of the countries under it.
+            region = label
+            current["regions"][region] = value
+            continue
+        if k == "total":
+            current["total"] = value
+        elif k == "mauritian":
+            current["mauritian"] = value
+        elif k == "nonmauritian":
+            current["foreign"] = value
+        elif k.startswith("othernotstated"):
+            current["unstated"] = value
+        elif k.startswith("by"):
+            continue
+        else:
+            name = label if k != "other" else f"Other ({region})"
+            current["countries"][name] = value
+            current.setdefault("in_region", {}).setdefault(region, 0)
+            current["in_region"][region] += value
+    for unit, b in out.items():
+        for region, n in b["regions"].items():
+            if b.get("in_region", {}).get(region, 0) != n:
+                raise SystemExit(f"mauritius_census: D4 {b['label']}: {region}'s countries "
+                                 f"make {b.get('in_region', {}).get(region, 0):,}, not {n:,}")
+        parts = (b.get("mauritian"), b.get("foreign"), b.get("unstated", 0))
+        if None in parts or sum(parts) != b.get("total"):
+            raise SystemExit(f"mauritius_census: D4 {b['label']}: {parts} do not make "
+                             f"{b.get('total')}")
+        if sum(b["countries"].values()) != b["foreign"]:
+            raise SystemExit(f"mauritius_census: D4 {b['label']}: its foreigners' countries "
+                             f"make {sum(b['countries'].values()):,}, not {b['foreign']:,}")
+    return out
+
+
+def possessive(name: str) -> str:
+    """Rodrigues', Port Louis's."""
+    return f"{name}'" if name.endswith("s") and not name.endswith("Louis") else f"{name}'s"
+
+
+def nationality_fields(d4: dict[str, Any], name: str) -> dict[str, Any]:
+    """An island's residents by nationality, in place of ethnicity."""
+    counts = {"Mauritian nationals": d4["mauritian"], "Foreign nationals": d4["foreign"],
+              "Nationality not stated": d4.get("unstated", 0)}
+    top = sorted(((n, c) for c, n in d4["countries"].items() if n and not c.startswith("Other")),
+                 key=lambda x: (-x[0], x[1]))[:3]
+    listed = ", ".join(f"{c} {n:,}" for n, c in top)
+    return {
+        "ethnicity": shares({g: n for g, n in counts.items() if n}, total=d4["total"]),
+        "ethnicity_year": YEAR, "ethnicity_basis": "nationality",
+        "ethnicity_note": (
+            f"Nationality, not ethnicity: Mauritius has not asked residents' ethnic group in its "
+            f"census since 1972, and the 2022 census's Table D4 gives {possessive(name)} residents by "
+            f"nationality, which is shown in its place. Of its {d4['total']:,} residents, "
+            f"{d4['mauritian']:,} are Mauritian nationals and {d4['foreign']:,} foreign "
+            f"nationals (the most by country: {listed})."),
+    }
 
 
 def unit_of(label: str) -> str | None:
@@ -201,6 +308,11 @@ def language_of(head: str) -> str:
 def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     ages, rel, lang = tables["D2"], tables["D6"], tables["D9"]
+    nationality = tables.get("D4") or {}
+    for u in NATIONALITY_UNITS:
+        if nationality and (u not in nationality or nationality[u]["total"] != ages[u]["total"]):
+            raise SystemExit(f"mauritius_census: D4 gives {u} "
+                             f"{(nationality.get(u) or {}).get('total')}, D2 {ages[u]['total']}")
     missing = [u for u in UNITS if u not in ages or u not in rel or u not in lang]
     if missing:
         raise SystemExit(f"mauritius_census: no block for {missing}")
@@ -234,9 +346,17 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
                 raise SystemExit(f"mauritius_census: {shape['name']}'s tables count "
                                  f"{a['total']}, {r['total']} and {g['total']}")
             stated = r["total"] - r["unstated"]
+            if u in nationality:
+                ethnic = nationality_fields(nationality[u], shape["name"])
+                cited = sources + [{"field": "ethnicity", "name": f"{SOURCE}, Table D4",
+                                    "url": URL, "license": LICENCE, "year": YEAR}]
+            else:
+                ethnic = {"ethnicity": gap(NOT_AVAILABLE, DISTRICT_ETHNICITY_NOTE)}
+                cited = sources + [{"field": "ethnicity note", "name": f"{SOURCE}, Table D4",
+                                    "url": URL, "license": LICENCE, "year": YEAR}]
             out.append(record(
                 f"MUS-2022-{level}-{u}", shape["name"], level=level, parent="MUS",
-                country="MUS", match_by="shape_id", shape_id=shape["id"], sources=sources,
+                country="MUS", match_by="shape_id", shape_id=shape["id"], sources=cited,
                 population=measure(a["total"], year=YEAR, source=f"{SOURCE}, Table D2"),
                 population_note=f"The 2022 census's resident population of {shape['name']}.",
                 sex_ratio=sex_ratio(a["men"], a["women"], year=YEAR,
@@ -257,7 +377,7 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
                 language_year=YEAR, language_basis="language usually spoken at home",
                 language_note=("Language usually spoken at home, as the 2022 census records it "
                                "for every resident (Table D9)."),
-                ethnicity=gap(NOT_AVAILABLE, ETHNICITY_NOTE)))
+                **ethnic))
     return out
 
 
@@ -267,11 +387,14 @@ def main() -> int:
     blob, where = fetch(URL, archive=("2024", "2025"), expect=b"PK")
     log(f"  read {where}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     raw = sheets(blob)
-    tables = {"D2": read_d2(raw["D2"]),
+    tables = {"D2": read_d2(raw["D2"]), "D4": read_d4(raw["D4"]),
               "D6": read_composition(raw["D6"], "D6", religion_of),
               "D9": read_composition(raw["D9"], "D9", language_of)}
     for name, t in tables.items():
         log(f"  {name}: {[(u, b['label']) for u, b in t.items()]}")
+    for u, b in tables["D4"].items():
+        log(f"  D4 {u}: {b['total']:,} residents, {b['mauritian']:,} Mauritian, "
+            f"{b['foreign']:,} foreign, {b.get('unstated', 0):,} not stated")
     records = build(tables, units("MUS", "admin1"), units("MUS", "admin2"))
     for r in records:
         if r["level"] == "admin1":
