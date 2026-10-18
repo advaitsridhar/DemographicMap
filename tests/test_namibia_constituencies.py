@@ -98,6 +98,19 @@ class NamibiaConstituenciesTest(unittest.TestCase):
         self.assertEqual([s["url"] for s in recs["Mashare"]["sources"]], ["east"])
         self.assertEqual([s["url"] for s in recs["Mpungu"]["sources"]], ["west"])
 
+    def test_gibeon_is_gibeon_and_daweb(self):
+        # Daweb, made in 2013, has no polygon; with Gibeon it is the polygon's
+        # 50,525 km2 to within 0.3%.
+        hardap = table(POP, [["Daweb", "6092", "40 209.89", "0.2"],
+                             ["Gibeon", "8034", "10156.39", "0.8"]])
+        regions = {"hardap": at(nc.constituencies(page(hardap)), "h")}
+        with mock.patch.object(nc, "log"):
+            recs = nc.build(regions, [{"id": "H", "name": "Hardap"}],
+                            [{"id": "8085530B21041761137658", "name": "Gibeon", "parent": "H"}])
+        self.assertEqual(recs[0]["population"]["value"], 8_034 + 6_092)
+        self.assertIn("Gibeon and Daweb constituencies added together",
+                      recs[0]["population_note"])
+
     def test_every_polygon_has_an_area(self):
         self.assertEqual(len(nc.AREAS), 103)
         self.assertTrue(all(a > 0 for _, a in nc.AREAS.values()))

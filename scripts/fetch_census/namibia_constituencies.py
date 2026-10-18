@@ -20,8 +20,14 @@ the km2, since a sliver of a town is many people. The polygons' areas
 (``AREAS``) are measured on the map's own outlines (geoBoundaries CGAZ,
 second level, on an equal-area projection), as the runner has no copy of
 them. Elsewhere OCHA's 2023 projections stay, and the log says why each
-polygon was passed over: Hardap's Gibeon is drawn over 50,525 km2 against the
-census's 10,156, Rundu Urban over 16 km2 against 156.
+polygon was passed over: Rundu Urban is drawn over 16 km2 against the
+census's 156, Kapako over 6,168 against 1,224.
+
+Those projections are the polygons' own ground: OCHA's table (cod-ps-nam) is
+of the 107 constituencies of 2003 to 2013, the 2011 census's, region by region
+the polygons' (whose labels name the constituencies made in 2003, "Epukiro and
+Otjinene", "Endola and part of Omulonga"); it is the 2023 census's 2013
+delimitation that differs from the polygons.
 
 Written: for each polygon that passes, the census's count (two constituencies
 added together where the map draws them as one), with the areas in its note.
@@ -73,7 +79,13 @@ PARTS = {"naminusluderitz": ("Nami-Nus",), "okarukambesteinhausen": ("Okorukambe
          "mosesgaroebandtobiashainyeko": ("Moses//Garoeb", "Tobias Hainyeko"),
          "johnpandenisoweto": ("John Pandeni",), "samoramachelwanaheda": ("Samora Machel",),
          "khomasdalnorth": ("Khomasdal",), "eengodi": ("Eengondi",),
-         "rundururalwestandrundururaleast": ("Rundu Rural",)}
+         "rundururalwestandrundururaleast": ("Rundu Rural",),
+         # Hardap's polygons are the 2003 delimitation's; two of its 2013
+         # constituencies have no polygon, and each is, with the constituency
+         # of the polygon's name, that polygon's ground to within 0.3%: Gibeon
+         # and Daweb 50,366 km2 against 50,525, Mariental Rural and Aranos
+         # 41,761 against 41,862. No other combination comes near.
+         "gibeon": ("Gibeon", "Daweb"), "marientalrural": ("Mariental Rural", "Aranos")}
 # Each polygon's area in km2 on the map's outlines (geoBoundaries CGAZ ADM2,
 # Lambert cylindrical equal-area on a sphere of 6,371.0088 km), by shape id,
 # with the name the map gives it.

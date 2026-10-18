@@ -523,6 +523,8 @@ def no_nationality(k: str, a7: dict[str, dict[str, Any]] | None) -> dict[str, An
 
 
 REGIONS_OF_OUTER = "Outer Islands"
+WORDS = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight",
+         9: "nine"}
 
 
 def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
@@ -622,7 +624,8 @@ def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
                     raise SystemExit(f"seychelles_census: {shape['name']} is not the "
                                      f"{region} region")
                 ethnic = nationality(region, sum(d["religion_of"] for d in parts), a7,
-                                     f"{shape['name']}, its {len(parts)} districts, is the "
+                                     f"{shape['name']}, its {WORDS.get(len(parts), len(parts))} "
+                                     f"districts, is the "
                                      f"census's {REGION_NAMES.get(region, region)} region")
                 extra_src = sources_of(("ethnicity", "Table A7")) if ethnic else []
             elif k in REGION_UNITS:
