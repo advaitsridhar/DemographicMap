@@ -67,9 +67,40 @@ class CoteDivoire(unittest.TestCase):
         self.assertIn("mean age (26 years)", gbeke["median_age"]["note"])
         district = by[("admin1", "Valle Du Bandama")]
         self.assertEqual(district["population"]["value"], 1_352_900 + 590_000)
-        self.assertIn("Gbeke (seat Bouaké) and Hambol (seat Katiola)",
-                      district["capital"]["note"])
+        # The table's seat for the district, Bouaké, is also Gbêkê's on its page.
+        self.assertEqual(district["capital"], "Bouaké")
+        self.assertIn("also the seat of the Gbeke region", district["capital_note"])
+        self.assertIn("Décret n° 2011-263", district["capital_note"])
+        self.assertEqual([s["field"] for s in district["sources"]],
+                         ["population/sex_ratio", "capital"])
+        self.assertTrue(district["sources"][1]["url"].endswith("/Districts_of_Ivory_Coast"))
         self.assertEqual(len(report), 31 + 13)  # 31 regions unread; 13 districts not whole
+        # A seat that is none of the district's regions' seats is not written.
+        facts["region-gbeke-mono"] = dict(f, seat="Sakassou")
+        records, report = cc.build(facts, ADMIN1, ADMIN2)
+        district = {(r["level"], r["name"]): r for r in records}[("admin1", "Valle Du Bandama")]
+        self.assertIn("Gbeke (seat Sakassou) and Hambol (seat Katiola)",
+                      district["capital"]["note"])
+        self.assertEqual([s["field"] for s in district["sources"]], ["population/sex_ratio"])
+        self.assertEqual(len(report), 31 + 13 + 1)
+
+    def test_lagunes_and_an_autonomous_district(self):
+        # Lagunes: Dabou, the seat of Grands Ponts; Abidjan: the city its page names.
+        f = cc.page_facts(GBEKE)
+        facts = {"region-agneby-tiassa-mono": dict(f, seat="Agboville"),
+                 "region-grands-ponts-mono": dict(f, seat="DABOU".title()),
+                 "region-la-me-mono": dict(f, seat="Adzopé"),
+                 "district-autonome-abidjan-mono": dict(f, seat="Abidjan")}
+        records, _ = cc.build(facts, ADMIN1, ADMIN2)
+        by = {(r["level"], r["name"]): r for r in records}
+        lagunes = by[("admin1", "Lagunes")]
+        self.assertEqual(lagunes["capital"], "Dabou")
+        self.assertIn("seat of the Grands Ponts region", lagunes["capital_note"])
+        abidjan = by[("admin1", "District Autonome D'Abidjan")]
+        self.assertEqual(abidjan["capital"], "Abidjan")
+        self.assertNotIn("capital_note", abidjan)
+        self.assertEqual([s["field"] for s in abidjan["sources"]],
+                         ["population/sex_ratio/capital"])
 
 
 # Run 3's log: excerpts of the regional pages where they were not yet read.

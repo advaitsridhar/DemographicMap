@@ -16,8 +16,11 @@ shares of its people on the ethnicity field under its basis (nationality: the
 census's question is nationality, and the page gives only those two shares).
 The median age says why there is none: the table gives the mean age and broad
 groups only. Each of the 14 districts takes its regions added together; the map
-draws the two autonomous districts at both levels. A district of several
-regions names them and their seats where no capital of its own is named.
+draws the two autonomous districts at both levels. The pages name no seat for a
+district of several regions: its seat is the one English Wikipedia's table of the
+districts (set up by Décret n° 2011-263 of 28 September 2011) gives it, written
+where that is also the seat of one of its regions on the census's pages; failing
+that, the district names its regions and their seats.
 Where a page prints the country's column wrongly ("29 276 660,00", "29
 389150") or a region's figure with a space misplaced ("61 2029"), the figure
 is read only as far as the men and women make it.
@@ -86,6 +89,21 @@ PAGES = {
     "region-du-worodougou-mono": "worodougou", "region-bounkani-mono": "bounkani",
     "region-gontougo-mono": "gontougo",
 }
+# The seat of each district of several regions, from the "District capital" column of
+# English Wikipedia's table of the districts, which the reorganisation of 28 September
+# 2011 set up (Décret n° 2011-263). The census's pages name the regions' seats only;
+# a district's seat is written where it is also the seat of one of its regions there.
+DISTRICT_SEATS = {
+    "bassassandra": "San-Pédro", "comoe": "Abengourou", "denguele": "Odienné",
+    "gohdjiboua": "Gagnoa", "lacs": "Dimbokro", "lagunes": "Dabou", "montagnes": "Man",
+    "sassandramarahoue": "Daloa", "savanes": "Korhogo", "valleedubandama": "Bouaké",
+    "woroba": "Séguéla", "zanzan": "Bondoukou",
+}
+# The map's spelling of a district where it differs from the table's (folded).
+MAP_SPELLING = {"valledubandama": "valleedubandama"}
+SEATS_SOURCE = {"field": "capital", "name": "English Wikipedia, Districts of Ivory Coast",
+                "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+                "license": "CC BY-SA 4.0"}
 NO_MEDIAN = ("The 2021 census's synoptic table for the {unit} gives the mean age ({mean} "
              "years) and the population in a few broad age groups (under 5, under 15, under 18, "
              "15 to 64, 60 and over, 65 and over), from which no median age can be taken.")
@@ -285,25 +303,54 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 "The 2021 census's synoptic tables give each region's mean age and broad age "
                 "groups only, from which no median age can be taken.")),
         }
+        sources = []
         if len(parts) > 1:
             fields["population_note"] = ("The 2021 census's counts of the district's "
                                          f"{len(parts)} regions, added.")
-            named = [f"{p['region']} (seat {p['seat']})" if p["seat"] else p["region"]
-                     for p in parts]
-            fields["capital"] = gap(NOT_AVAILABLE, (
-                "The district groups the regions of " + ", ".join(named[:-1]) + " and "
-                + named[-1] + ", as the 2021 census's regional pages give them; they name no "
-                "seat for the district itself."))
+            seat, region = district_seat(shape["name"], parts)
+            if seat:
+                fields["capital"] = seat
+                fields["capital_note"] = (
+                    f"{seat} is the district's seat, as English Wikipedia's table of the "
+                    "districts set up by Décret n° 2011-263 of 28 September 2011 gives it; it "
+                    f"is also the seat of the {region} region on the 2021 census's pages.")
+                sources.append(dict(SEATS_SOURCE))
+            else:
+                report.append(f"district polygon {shape['name']!r}: the table's seat "
+                              f"{DISTRICT_SEATS.get(district_key(shape['name']))!r} is none of "
+                              f"its regions' seats {[p['seat'] for p in parts]}")
+                named = [f"{p['region']} (seat {p['seat']})" if p["seat"] else p["region"]
+                         for p in parts]
+                fields["capital"] = gap(NOT_AVAILABLE, (
+                    "The district groups the regions of " + ", ".join(named[:-1]) + " and "
+                    + named[-1] + ", as the 2021 census's regional pages give them; they name "
+                    "no seat for the district itself."))
         elif parts[0]["seat"]:
             # An autonomous district is one region: its page names the city.
             fields["capital"] = parts[0]["seat"]
         cited = ["population", "sex_ratio"] + (["capital"] if isinstance(fields.get("capital"), str)
-                                                else [])
+                                                and not sources else [])
         records.append(record(f"CIV-RGPH2021-district-{fold(shape['name'])}", shape["name"],
                               level="admin1", parent="CIV", country="CIV", match_by="shape_id",
                               shape_id=shape["id"],
-                              sources=[{**src, "field": "/".join(cited)}], **fields))
+                              sources=[{**src, "field": "/".join(cited)}] + sources, **fields))
     return records, report
+
+
+def district_key(name: str) -> str:
+    key = fold(name)
+    return MAP_SPELLING.get(key, key)
+
+
+def district_seat(name: str, parts: list[dict[str, Any]]) -> tuple[str | None, str | None]:
+    """The seat the table gives a district of several regions, and the region whose seat
+    it also is on the census's pages; (None, None) unless one of them agrees."""
+    seat = DISTRICT_SEATS.get(district_key(name))
+    if seat:
+        for p in parts:
+            if p["seat"] and fold(p["seat"]) == fold(seat):
+                return seat, p["region"]
+    return None, None
 
 
 def remember(memory: dict[str, Any], slug: str, f: dict[str, Any], url: str,
