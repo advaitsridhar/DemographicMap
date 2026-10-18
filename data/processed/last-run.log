@@ -1,249 +1,149 @@
-  read https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx: 1,759,157 bytes, sha256 17fb2f59b82d6ab4490078427f6779ca1284250a1035a854d31e6bb109e9fdee
-  13 first-order areas and 93 zones, making 73,750,932, every row's groups and sexes making its total; listed without a count: ['OROMĪYA, FINFINNE ZURIA SPECIAL ZONE']
-  bahirdarspecialwereda: counted apart and placed in no polygon -- the city lies on the line between West Gojam and North Gonder
-  zones of the workbook on no polygon: []
-  admin1 Addis Ababa: 2,739,551, median 24.0, sex ratio 910
-  admin1 Afar: 1,390,273, median 17.1, sex ratio 1260
-  admin1 Amhara: 17,221,976, median 18.0, sex ratio 1007
-  admin1 Beneshangul Gumu: 784,345, median 17.0, sex ratio 1034
-  admin1 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin1 Gambela: 307,096, median 18.2, sex ratio 1085
-  admin1 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin1 Oromia: 26,993,933, median 16.0, sex ratio 1015
-  admin1 SNNPR: 14,929,548, median 15.9, sex ratio 990
-  admin1 Somali: 4,445,219, median 17.1, sex ratio 1253
-  admin1 Tigray: 4,316,988, median 17.7, sex ratio 971
-  admin2 Afder: 570,629, median 15.9, sex ratio 1330
-  admin2 Agnuak: 135,242, median 18.8, sex ratio 1032
-  admin2 Alaba: 232,325, median 16.7, sex ratio 1020
-  admin2 Arsi: 2,637,657, median 15.4, sex ratio 1007
-  admin2 Asosa: 360,883, median 17.1, sex ratio 1040
-  admin2 Awi/Agew: 982,942, median 17.0, sex ratio 1002
-  admin2 Bale: 1,402,492, median 15.2, sex ratio 1036
-  admin2 Basketo: 56,689, median 14.8, sex ratio 1013
-  admin2 Bench Maji: 652,531, median 15.6, sex ratio 982
-  admin2 Borena: 962,489, median 14.5, sex ratio 1024
-  admin2 Central: 1,245,824, median 17.6, sex ratio 971
-  admin2 Dawro: 489,577, median 14.3, sex ratio 1037
-  admin2 Dire Dawa: 341,834, median 20.6, sex ratio 1006
-  admin2 Doolo: 306,488, median 17.6, sex ratio 1342
-  admin2 East Gojam: 2,153,937, median 17.8, sex ratio 981
-  admin2 East Harerge: 2,723,850, median 15.4, sex ratio 1032
-  admin2 East Shewa: 1,576,554, median 18.8, sex ratio 1044
-  admin2 East Wellega: 1,213,503, median 16.9, sex ratio 999
-  admin2 Eastern: 755,343, median 17.2, sex ratio 909
-  admin2 Fafan: 967,652, median 17.8, sex ratio 1193
-  admin2 Gamo Gofa: 1,593,104, median 16.4, sex ratio 992
-  admin2 Gedio: 847,434, median 15.0, sex ratio 1005
-  admin2 Guji: 1,389,800, median 13.8, sex ratio 1022
-  admin2 Gurage: 1,279,646, median 17.7, sex ratio 946
-  admin2 Hadiya: 1,231,196, median 16.7, sex ratio 988
-  admin2 Hareri: 183,415, median 20.2, sex ratio 1013
-  admin2 Horo Guduru: 570,040, median 16.5, sex ratio 1003
-  admin2 Ilubabor: 1,271,609, median 16.4, sex ratio 1004
-  admin2 Jarar: 478,168, median 18.3, sex ratio 1275
-  admin2 Jimma: 2,607,115, median 16.7, sex ratio 1012
-  admin2 KT: 680,837, median 16.6, sex ratio 978
-  admin2 Keffa: 874,716, median 15.6, sex ratio 975
-  admin2 Kelem Wellega: 797,666, median 16.7, sex ratio 1016
-  admin2 Kemashi: 101,543, median 16.7, sex ratio 1061
-  admin2 Konta: 90,846, median 15.2, sex ratio 968
-  admin2 Korahe: 312,713, median 18.8, sex ratio 1320
-  admin2 Liben: 539,821, median 14.2, sex ratio 1226
-  admin2 Majang: 59,248, median 19.1, sex ratio 1066
-  admin2 Metekel: 321,919, median 16.9, sex ratio 1018
-  admin2 Nogob: 348,409, median 17.9, sex ratio 1295
-  admin2 North Gonder: 2,929,628, median 17.5, sex ratio 1029
-  admin2 North Shewa(R3): 1,837,490, median 18.8, sex ratio 1022
-  admin2 North Shewa(R4): 1,431,305, median 17.6, sex ratio 1005
-  admin2 North Western: 736,805, median 17.5, sex ratio 999
-  admin2 North Wollo: 1,500,303, median 18.7, sex ratio 1007
-  admin2 Nuer: 112,606, median 17.1, sex ratio 1163
-  admin2 Oromia: 457,278, median 17.7, sex ratio 989
-  admin2 Region 14: 2,739,551, median 24.0, sex ratio 910
-  admin2 Segen Peoples': 582,757, median 15.1, sex ratio 963
-  admin2 Selti: 750,398, median 16.1, sex ratio 943
-  admin2 Shabelle: 464,253, median 16.5, sex ratio 1257
-  admin2 Sheka: 199,314, median 18.0, sex ratio 1029
-  admin2 Sidama: 3,212,944, median 15.2, sex ratio 1023
-  admin2 Siti: 457,086, median 17.4, sex ratio 1169
-  admin2 South Gonder: 2,051,738, median 17.7, sex ratio 1030
-  admin2 South Omo: 573,435, median 15.2, sex ratio 999
-  admin2 South West Shewa: 1,101,129, median 17.2, sex ratio 1021
-  admin2 South Wollo: 2,518,862, median 19.1, sex ratio 983
-  admin2 Southern: 1,222,418, median 18.3, sex ratio 971
-  admin2 Special Woreda: 34,998, median 16.6, sex ratio 1024
-  admin2 Wag Himra: 426,213, median 17.3, sex ratio 1007
-  admin2 West Arsi: 1,964,038, median 14.5, sex ratio 983
-  admin2 West Gojam: 2,106,596, median 17.4, sex ratio 1009
-  admin2 West Harerge: 1,871,706, median 15.1, sex ratio 1050
-  admin2 West Shewa: 2,122,565, median 16.5, sex ratio 998
-  admin2 West Wellega: 1,350,415, median 16.8, sex ratio 989
-  admin2 Western: 356,598, median 18.1, sex ratio 1049
-  admin2 Wolayita: 1,501,112, median 15.9, sex ratio 971
-  admin2 Yem: 80,687, median 17.1, sex ratio 1011
-  admin2 Zone 1: 410,790, median 17.7, sex ratio 1207
-  admin2 Zone 2: 350,111, median 15.7, sex ratio 1263
-  admin2 Zone 3: 198,751, median 18.4, sex ratio 1214
-  admin2 Zone 4: 246,822, median 17.1, sex ratio 1327
-  admin2 Zone 5: 183,799, median 17.5, sex ratio 1342
-  11 of 11 regions and 74 of 74 zones written
-  wrote data/processed/ethiopia_census.json (173 kB)
-  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/2ec96e53-b38f-4994-9a8c-5bbaa4c49e82/download/eth_admpop_adm1_2022_v2.csv: 5,201 characters
-  read https://data.humdata.org/dataset/3d9b037f-5112-4afd-92a7-190a9082bd80/resource/3f8150d4-6d5d-4659-a0a8-586e4689ae65/download/eth_admpop_adm3_2022_v2.csv: 338,607 characters
-  projection weredas matched to no outline, in zone ET0101, placed with the zone's other weredas: ['Laelay Adiabo (ET010102, 136,058)', 'Tselemti (ET010106, 164,957)', 'Selekleka (ET010109, 14,679)', 'Adi Hageray (ET010112, 12,852)', 'Dima (TG) (ET010115, 32,504)']
-  projection weredas matched to no outline, in zone ET0102, placed with the zone's other weredas: ['Edaga arbi (ET010203, 63,635)']
-  projection weredas matched to no outline, in zone ET0105, placed with the zone's other weredas: ['Setit Humera (ET010504, 42,383)']
-  projection weredas matched to no outline, in zone ET0107, placed with the zone's other weredas: ['Mekelle (ET010701, 186,272)']
-  projection weredas matched to no outline, in zone ET0304, whose weredas lie in ['57463737B48822238288228', '57463737B67745192438967', '57463737B70829133861950']: ['Tulu Awlia (ET030428, 4,308)']
-  projection weredas matched to no outline, in zone ET0410, placed with the zone's other weredas: ['Aweday town (ET041099, 15,183)']
-  projection weredas matched to no outline, in zone ET0417, placed with the zone's other weredas: ['Bishan Guracha (ET041798, 26,592)']
-  projection weredas matched to no outline, in zone ET0420, whose weredas lie in ['57463737B12311921356322', '57463737B31651758241956', '57463737B78639560237753', 'straddling']: ['Lege Tafo-Lege Dadi town (ET042004, 22,227)', 'Sululta town (ET042005, 12,659)', 'Dukem (ET042008, 13,366)', 'Sebeta town (ET042009, 97,498)', 'Gelana (Finfine) (ET042098, 15,634)']
-  projection weredas matched to no outline, in zone ET0421, placed with the zone's other weredas: ['Dawe Serer (ET042199, 59,300)']
-  projection weredas matched to no outline, in zone ET0509, whose weredas lie in ['57463737B43250517747981', '57463737B84149246133198']: ['Quarsadula (ET050905, 33,677)']
-  projection weredas matched to no outline, in zone ET0603, placed with the zone's other weredas: ['Assosa (ET060303, 171,985)']
-  projection weredas matched to no outline, in zone ET0706, placed with the zone's other weredas: ['Kawo Koisha (ET070620, 43,939)', 'Bayera Koisha (ET070622, 22,762)']
-  projection weredas matched to no outline, in zone ET0707, whose weredas lie in ['57463737B95170801436908', 'straddling']: ['Boko Dawula (ET070710, 24,109)']
-  projection weredas matched to no outline, in zone ET0710, placed with the zone's other weredas: ['Ezo /Kogota (ET071007, 40,612)', 'Chencha (ET071010, 26,262)', 'Kemba (ET071011, 120,052)', 'Gerese (ET071013, 159,945)']
-  projection weredas matched to no outline, in zone ET0715, placed with the zone's other weredas: ['Bulike town (ET071508, 14,758)']
-  projection weredas matched to no outline, in zone ET0724, placed with the zone's other weredas: ['Yem SP Woreda (ET072401, 67,586)']
-  projection weredas matched to no outline, in zone ET1104, placed with the zone's other weredas: ['Isara (ET110405, 88,283)']
-  projection weredas matched to no outline, in zone ET1600, placed with the zone's other weredas: ['Hawasa town (ET160018, 16,010)']
-  Afder: not written -- 12 weredas, zones holding weredas matched to no outline ['ET0509']
-  Agnuak: 241,290 from 8 weredas; about 0 left out, 0 taken in from beyond (named: [], [])
-  Alaba: 241,565 from 4 weredas; about 0 left out, 7,360 taken in from beyond (named: [], ['Wera Djo', 'Wera'])
-  Arsi: 3,766,075 from 27 weredas; about 36,829 left out, 22,185 taken in from beyond (named: ['Adama Tulu Jido Kombolcha'], [])
-  Asosa: 576,297 from 10 weredas; about 0 left out, 2,133 taken in from beyond (named: [], [])
-  Awi/Agew: 1,641,176 from 16 weredas; about 5,154 left out, 6,096 taken in from beyond (named: [], [])
-  Bale: 1,546,787 from 21 weredas; about 0 left out, 1,556 taken in from beyond (named: [], [])
-  Basketo: not written -- of its sum 79,236, weredas straddling its line leave out about 1,134 (['North Ari']) and take in about 4,754 from beyond it (['Basketo SP Woreda'])
-  Bench Maji: 929,586 from 15 weredas; about 10,473 left out, 5,453 taken in from beyond (named: ['Yeki'], ['Shay Bench'])
-  Borena: 1,438,397 from 21 weredas; about 50,752 left out, 2,257 taken in from beyond (named: ['Kercha', 'Gedeb'], [])
-  Central: 1,624,997 from 24 weredas; about 52,919 left out, 182 taken in from beyond (named: ['Enderta', 'Geraleta'], [])
-  Dawro: 830,837 from 12 weredas; about 0 left out, 0 taken in from beyond (named: [], [])
-  Dire Dawa: 500,339 from 12 weredas; about 3,925 left out, 2,070 taken in from beyond (named: ['Malka Jabti /M.Jebdu)'], [])
-  Doolo: not written -- of its sum 478,289, weredas straddling its line leave out about 85,978 (['Gashamo', 'Marsin', 'Shilabo', 'Lehel-Yucub']) and take in about 2,491 from beyond it (['Warder'])
-  East Gojam: 2,902,200 from 26 weredas; about 21,717 left out, 0 taken in from beyond (named: [], [])
-  East Harerge: 3,770,510 from 24 weredas; about 1,792 left out, 4,986 taken in from beyond (named: [], [])
-  East Shewa: 2,108,044 from 14 weredas; about 69,399 left out, 46,858 taken in from beyond (named: ['Akaki'], ['Adama Tulu Jido Kombolcha'])
-  East Wellega: 1,870,321 from 18 weredas; about 10,944 left out, 10,124 taken in from beyond (named: [], [])
-  Eastern: 1,212,668 from 17 weredas; about 22,050 left out, 0 taken in from beyond (named: ['Geraleta'], [])
-  Fafan: not written -- of its sum 891,334, weredas straddling its line leave out about 46,462 (['Harshin', 'Dembel', 'Koran /Mulla', 'Ararso']) and take in about 9,441 from beyond it (['Harawo'])
-  Gamo Gofa: 2,313,954 from 27 weredas; about 2,377 left out, 6,923 taken in from beyond (named: [], [])
-  Gedio: not written -- of its sum 935,207, weredas straddling its line leave out about 46,844 (['Gedeb', 'Dila town']) and take in about 1,375 from beyond it (['Gedeb town'])
-  Guji: 2,180,882 from 21 weredas; about 7,236 left out, 39,419 taken in from beyond (named: [], ['Kercha'])
-  Gurage: 1,642,049 from 20 weredas; about 32,597 left out, 0 taken in from beyond (named: ['Siltie'], [])
-  Hadiya: 1,942,784 from 17 weredas; about 9,807 left out, 12,670 taken in from beyond (named: [], ['Duna'])
-  Hareri: 268,314 from 8 weredas; about 0 left out, 663 taken in from beyond (named: [], [])
-  Horo Guduru: 780,424 from 12 weredas; about 3,317 left out, 10,867 taken in from beyond (named: [], ['Abe Dongoro'])
-  Ilubabor: 1,767,139 from 24 weredas; about 13,018 left out, 34,470 taken in from beyond (named: ['Setema'], ['Darimu', 'Dedesa'])
-  Jarar: not written -- of its sum 508,973, weredas straddling its line leave out about 290,988 (['Harshin', 'Gashamo', 'Gunagado', 'Garbo']) and take in about 1,470 from beyond it (['Ararso'])
-  Jimma: 4,197,372 from 22 weredas; about 19,236 left out, 13,698 taken in from beyond (named: [], [])
-  KT: 989,687 from 11 weredas; about 13,400 left out, 9,807 taken in from beyond (named: ['Duna'], ['Doyogena'])
-  Keffa: 1,232,450 from 14 weredas; about 11,572 left out, 9,588 taken in from beyond (named: [], [])
-  Kelem Wellega: 1,184,070 from 12 weredas; about 12,109 left out, 25,489 taken in from beyond (named: ['Darimu'], ['Dale Sadi'])
-  Kemashi: not written -- of its sum 110,115, weredas straddling its line leave out about 10,304 (['Sasiga', 'Kiltu Kara', 'Gimbi']) and take in about 848 from beyond it (['Mizyiga', 'Zayi'])
-  Konta: 126,874 from 1 weredas; about 0 left out, 0 taken in from beyond (named: [], [])
-  Korahe: not written -- of its sum 386,189, weredas straddling its line leave out about 202,170 (['Gunagado', 'Shilabo', 'Marsin', 'Garbo']) and take in about 3,464 from beyond it (['Debeweyin', 'Goglo'])
-  Liben: not written -- 8 weredas, zones holding weredas matched to no outline ['ET0509']
-  Majang: not written -- of its sum 86,891, weredas straddling its line leave out about 6,119 (['Yeki']) and take in about 0 from beyond it ([])
-  Metekel: 501,585 from 8 weredas; about 2,222 left out, 0 taken in from beyond (named: [], [])
-  Nogob: not written -- of its sum 419,149, weredas straddling its line leave out about 38,104 (['Dihun', 'Sagag', 'Ayun', 'Garbo']) and take in about 0 from beyond it ([])
-  North Gonder: 3,681,195 from 35 weredas; about 165,354 left out, 3,245 taken in from beyond (named: ['Bahirdar Zuria', 'Fogera', 'Dera (AM)', 'Libokemekem', 'Bahir Dar town'], [])
-  North Shewa(R3): 2,472,078 from 30 weredas; about 13,479 left out, 9,925 taken in from beyond (named: [], [])
-  North Shewa(R4): not written -- 18 weredas, zones holding weredas matched to no outline ['ET0420']
-  North Western: 902,719 from 16 weredas; about 1,981 left out, 0 taken in from beyond (named: [], [])
-  North Wollo: not written -- 20 weredas, zones holding weredas matched to no outline ['ET0304']
-  Nuer: 163,821 from 5 weredas; about 0 left out, 0 taken in from beyond (named: [], [])
-  Oromia: 575,817 from 10 weredas; about 7,207 left out, 4,852 taken in from beyond (named: ['Antsokiya'], ['Dewa Cheffa'])
-  Region 14: 3,773,999 from 11 weredas; about 0 left out, 17,723 taken in from beyond (named: [], [])
-  Segen Peoples': 748,072 from 8 weredas; about 4,209 left out, 0 taken in from beyond (named: ['Arba Minch Zuria'], [])
-  Selti: 1,054,885 from 11 weredas; about 17,040 left out, 31,868 taken in from beyond (named: ['Kibet town'], ['Siltie'])
-  Shabelle: not written -- of its sum 465,824, weredas straddling its line leave out about 141,562 (['Adadle', 'Kelafo', 'Mustahil', 'Shilabo']) and take in about 10,480 from beyond it (['Ferfer', 'Danan', 'Higloley'])
-  Sheka: not written -- of its sum 333,699, weredas straddling its line leave out about 5,233 (['Bita', 'Gesha']) and take in about 18,357 from beyond it (['Yeki'])
-  Sidama: 3,987,456 from 37 weredas; about 241 left out, 0 taken in from beyond (named: [], [])
-  Siti: 670,906 from 9 weredas; about 14,197 left out, 10,616 taken in from beyond (named: ['Harawo'], ['Dembel'])
-  South Gonder: 2,719,447 from 21 weredas; about 1,881 left out, 79,295 taken in from beyond (named: [], ['Fogera', 'Dera (AM)', 'Libokemekem'])
-  South Omo: not written -- 9 weredas, zones holding weredas matched to no outline ['ET0707']
-  South West Shewa: not written -- 12 weredas, zones holding weredas matched to no outline ['ET0420']
-  South Wollo: not written -- 27 weredas, zones holding weredas matched to no outline ['ET0304']
-  Southern: 1,322,029 from 21 weredas; about 1,030 left out, 27,866 taken in from beyond (named: [], ['Enderta'])
-  Special Woreda: not written -- 1 weredas, zones holding weredas matched to no outline ['ET0304']
-  Wag Himra: 558,306 from 9 weredas; about 0 left out, 1,030 taken in from beyond (named: [], [])
-  West Arsi: 2,725,861 from 17 weredas; about 8,693 left out, 0 taken in from beyond (named: [], [])
-  West Gojam: not written -- of its sum 2,473,486, weredas straddling its line leave out about 194,658 (['Bahirdar Zuria', 'Gonje', 'Jawi']) and take in about 50,368 from beyond it (['Bahir Dar town', 'Semen Achefer', 'Dega Damot', 'Sekela'])
-  West Harerge: 2,789,190 from 17 weredas; about 4,986 left out, 1,128 taken in from beyond (named: [], [])
-  West Shewa: not written -- 26 weredas, zones holding weredas matched to no outline ['ET0420']
-  West Wellega: 1,791,335 from 23 weredas; about 30,912 left out, 3,551 taken in from beyond (named: ['Dale Sadi'], [])
-  Western: 525,923 from 9 weredas; about 0 left out, 435 taken in from beyond (named: [], [])
-  Wolayita: 2,311,101 from 22 weredas; about 2,714 left out, 241 taken in from beyond (named: [], [])
-  Yem: 67,586 from 1 weredas; about 0 left out, 0 taken in from beyond (named: [], [])
-  Zone 1: 702,893 from 12 weredas; about 26,601 left out, 7,139 taken in from beyond (named: ['Euwa'], [])
-  Zone 2: 453,697 from 8 weredas; about 14,233 left out, 5,016 taken in from beyond (named: ['Megale'], ['Bidu'])
-  Zone 3: not written -- of its sum 296,168, weredas straddling its line leave out about 25,975 (['Dalefage', 'Hadelela', 'Dawe', 'Samurobi']) and take in about 0 from beyond it ([])
-  Zone 4: not written -- of its sum 226,026, weredas straddling its line leave out about 47,130 (['Euwa', 'Megale', 'Dubti', 'Kori']) and take in about 0 from beyond it ([])
-  Zone 5: not written -- of its sum 162,266, weredas straddling its line leave out about 22,814 (['Dalefage', 'Adar']) and take in about 4,534 from beyond it (['Hadelela', 'Dawe', 'Samurobi'])
-  projection admin1 Addis Ababa: 3,773,999
-  projection admin1 Afar: 1,989,997
-  projection admin1 Amhara: 22,530,515
-  projection admin1 Beneshangul Gumu: 1,187,997
-  projection admin1 Dire Dawa: 521,000
-  projection admin1 Gambela: 492,002
-  projection admin1 Hareri: 270,000
-  projection admin1 Oromia: 39,075,002
-  projection admin1 SNNPR: 20,691,549
-  projection admin1 Somali: 6,355,003
-  projection admin1 Tigray: 5,649,587
-  projection admin2 Agnuak: 241,290
-  projection admin2 Alaba: 241,565
-  projection admin2 Arsi: 3,766,075
-  projection admin2 Asosa: 576,297
-  projection admin2 Awi/Agew: 1,641,176
-  projection admin2 Bale: 1,546,787
-  projection admin2 Bench Maji: 929,586
-  projection admin2 Borena: 1,438,397
-  projection admin2 Central: 1,624,997
-  projection admin2 Dawro: 830,837
-  projection admin2 Dire Dawa: 500,339
-  projection admin2 East Gojam: 2,902,200
-  projection admin2 East Harerge: 3,770,510
-  projection admin2 East Shewa: 2,108,044
-  projection admin2 East Wellega: 1,870,321
-  projection admin2 Eastern: 1,212,668
-  projection admin2 Gamo Gofa: 2,313,954
-  projection admin2 Guji: 2,180,882
-  projection admin2 Gurage: 1,642,049
-  projection admin2 Hadiya: 1,942,784
-  projection admin2 Hareri: 268,314
-  projection admin2 Horo Guduru: 780,424
-  projection admin2 Ilubabor: 1,767,139
-  projection admin2 Jimma: 4,197,372
-  projection admin2 KT: 989,687
-  projection admin2 Keffa: 1,232,450
-  projection admin2 Kelem Wellega: 1,184,070
-  projection admin2 Konta: 126,874
-  projection admin2 Metekel: 501,585
-  projection admin2 North Gonder: 3,681,195
-  projection admin2 North Shewa(R3): 2,472,078
-  projection admin2 North Western: 902,719
-  projection admin2 Nuer: 163,821
-  projection admin2 Oromia: 575,817
-  projection admin2 Region 14: 3,773,999
-  projection admin2 Segen Peoples': 748,072
-  projection admin2 Selti: 1,054,885
-  projection admin2 Sidama: 3,987,456
-  projection admin2 Siti: 670,906
-  projection admin2 South Gonder: 2,719,447
-  projection admin2 Southern: 1,322,029
-  projection admin2 Wag Himra: 558,306
-  projection admin2 West Arsi: 2,725,861
-  projection admin2 West Harerge: 2,789,190
-  projection admin2 West Wellega: 1,791,335
-  projection admin2 Western: 525,923
-  projection admin2 Wolayita: 2,311,101
-  projection admin2 Yem: 67,586
-  projection admin2 Zone 1: 702,893
-  projection admin2 Zone 2: 453,697
-  projection: 11 regions and 50 zones written
-  wrote data/processed/ethiopia_projection.json (87 kB)
-  wrote data/processed/ethiopia_projection_weredas.json (179 kB)
+  read https://web.archive.org/web/20251225150927id_/https://www.insbu.bi/documents/recensements/Chapitre-1.xlsx: 88,562 bytes, sha256 87b0336fa730916a07fa2d3dc702a26fe2ae6354c3743fd01c019e683603da44
+  Tableau 1.6: 17 provinces and 129 communes making 8,053,574, each province's communes making its row; Tableau 1.4 agrees
+  Buhiga (Karuzi): the census's BUHUGA
+  Bukinanyan (Cibitoke): the census's BUKINANYANA
+  Bwambarang (Kirundo): the census's BWAMBARANGWE
+  Kanyosha1 (Bujumbura Rural): the census's KANYOSHA
+  Mpinga-Kay (Rutana): the census's MPINGA
+  Mugongoman (Bujumbura Rural): the census's MUGONGOMANGA
+  Nyabitsind (Ruyigi): the census's NYABITSINDA
+  Nyanrusang (Gitega): the census's NYARUSANGE
+  admin2 Bisoro: 927 men per 1,000 women
+  admin2 Bubanza: 1011 men per 1,000 women
+  admin2 Bugabira: 919 men per 1,000 women
+  admin2 Buganda: 974 men per 1,000 women
+  admin2 Bugarama: 956 men per 1,000 women
+  admin2 Bugendana: 916 men per 1,000 women
+  admin2 Bugenyuzi: 928 men per 1,000 women
+  admin2 Buhiga: 958 men per 1,000 women
+  admin2 Buhinyuza: 928 men per 1,000 women
+  admin2 Bukemba: 1044 men per 1,000 women
+  admin2 Bukeye: 898 men per 1,000 women
+  admin2 Bukinanyan: 973 men per 1,000 women
+  admin2 Bukirasazi: 916 men per 1,000 women
+  admin2 Burambi: 965 men per 1,000 women
+  admin2 Buraza: 911 men per 1,000 women
+  admin2 Bururi: 957 men per 1,000 women
+  admin2 Busiga: 944 men per 1,000 women
+  admin2 Busoni: 949 men per 1,000 women
+  admin2 Butaganzwa: 874 men per 1,000 women
+  admin2 Butaganzwa: 982 men per 1,000 women
+  admin2 Butezi: 955 men per 1,000 women
+  admin2 Butihinda: 941 men per 1,000 women
+  admin2 Buyengero: 985 men per 1,000 women
+  admin2 Bwambarang: 935 men per 1,000 women
+  admin2 Bweru: 950 men per 1,000 women
+  admin2 Cankuzo: 964 men per 1,000 women
+  admin2 Cendajuru: 959 men per 1,000 women
+  admin2 Gahombo: 909 men per 1,000 women
+  admin2 Gashikanwa: 914 men per 1,000 women
+  admin2 Gashoho: 933 men per 1,000 women
+  admin2 Gasorwe: 924 men per 1,000 women
+  admin2 Gatara: 939 men per 1,000 women
+  admin2 Gihanga: 1213 men per 1,000 women
+  admin2 Giharo: 934 men per 1,000 women
+  admin2 Giheta: 882 men per 1,000 women
+  admin2 Gihogazi: 915 men per 1,000 women
+  admin2 Gisagara: 940 men per 1,000 women
+  admin2 Gishubi: 881 men per 1,000 women
+  admin2 Gisozi: 932 men per 1,000 women
+  admin2 Gisuru: 988 men per 1,000 women
+  admin2 Gitanga: 962 men per 1,000 women
+  admin2 Gitaramuka: 929 men per 1,000 women
+  admin2 Gitega: 993 men per 1,000 women
+  admin2 Giteranyi: 962 men per 1,000 women
+  admin2 Gitobe: 916 men per 1,000 women
+  admin2 Isale: 967 men per 1,000 women
+  admin2 Itaba: 899 men per 1,000 women
+  admin2 Kabarore: 949 men per 1,000 women
+  admin2 Kabezi: 895 men per 1,000 women
+  admin2 Kanyosha1: 940 men per 1,000 women
+  admin2 Kayanza: 968 men per 1,000 women
+  admin2 Kayogoro: 985 men per 1,000 women
+  admin2 Kayokwe: 908 men per 1,000 women
+  admin2 Kibago: 1019 men per 1,000 women
+  admin2 Kigamba: 978 men per 1,000 women
+  admin2 Kiganda: 898 men per 1,000 women
+  admin2 Kinyinya: 948 men per 1,000 women
+  admin2 Kiremba: 952 men per 1,000 women
+  admin2 Kirundo: 956 men per 1,000 women
+  admin2 Mabanda: 999 men per 1,000 women
+  admin2 Mabayi: 1000 men per 1,000 women
+  admin2 Makamba: 978 men per 1,000 women
+  admin2 Makebuko: 858 men per 1,000 women
+  admin2 Marangara: 991 men per 1,000 women
+  admin2 Matana: 943 men per 1,000 women
+  admin2 Matongo: 948 men per 1,000 women
+  admin2 Mbuye: 876 men per 1,000 women
+  admin2 Mishiha: 985 men per 1,000 women
+  admin2 Mpanda: 990 men per 1,000 women
+  admin2 Mpinga-Kay: 923 men per 1,000 women
+  admin2 Mubimbi: 969 men per 1,000 women
+  admin2 Mugamba: 924 men per 1,000 women
+  admin2 Mugina: 969 men per 1,000 women
+  admin2 Mugongoman: 982 men per 1,000 women
+  admin2 Muha: 1225 men per 1,000 women
+  admin2 Muhanga: 905 men per 1,000 women
+  admin2 Muhuta: 1054 men per 1,000 women
+  admin2 Mukaza: 1396 men per 1,000 women
+  admin2 Mukike: 933 men per 1,000 women
+  admin2 Muramvya: 976 men per 1,000 women
+  admin2 Muruta: 923 men per 1,000 women
+  admin2 Murwi: 1021 men per 1,000 women
+  admin2 Musigati: 997 men per 1,000 women
+  admin2 Musongati: 941 men per 1,000 women
+  admin2 Mutaho: 897 men per 1,000 women
+  admin2 Mutambu: 913 men per 1,000 women
+  admin2 Mutimbuzi: 1062 men per 1,000 women
+  admin2 Mutumba: 944 men per 1,000 women
+  admin2 Muyinga: 977 men per 1,000 women
+  admin2 Mwakiro: 940 men per 1,000 women
+  admin2 Mwumba: 959 men per 1,000 women
+  admin2 Ndava: 884 men per 1,000 women
+  admin2 Ngozi: 1039 men per 1,000 women
+  admin2 Ntahangwa: 1172 men per 1,000 women
+  admin2 Ntega: 922 men per 1,000 women
+  admin2 Nyabihanga: 865 men per 1,000 women
+  admin2 Nyabikere: 933 men per 1,000 women
+  admin2 Nyabiraba: 1070 men per 1,000 women
+  admin2 Nyabitsind: 961 men per 1,000 women
+  admin2 Nyamurenza: 951 men per 1,000 women
+  admin2 Nyanrusang: 914 men per 1,000 women
+  admin2 Nyanza-Lac: 1009 men per 1,000 women
+  admin2 Rango: 915 men per 1,000 women
+  admin2 Rugazi: 1212 men per 1,000 women
+  admin2 Rugombo: 994 men per 1,000 women
+  admin2 Ruhororo: 888 men per 1,000 women
+  admin2 Rumonge: 1018 men per 1,000 women
+  admin2 Rusaka: 883 men per 1,000 women
+  admin2 Rutana: 967 men per 1,000 women
+  admin2 Rutegama: 888 men per 1,000 women
+  admin2 Rutovu: 923 men per 1,000 women
+  admin2 Ruyigi: 987 men per 1,000 women
+  admin2 Ryansoro: 868 men per 1,000 women
+  admin2 Shombo: 894 men per 1,000 women
+  admin2 Songa: 957 men per 1,000 women
+  admin2 Tangara: 912 men per 1,000 women
+  admin2 Vugizo: 946 men per 1,000 women
+  admin2 Vumbi: 943 men per 1,000 women
+  admin2 Vyanda: 952 men per 1,000 women
+  admin1 Bubanza: 1067 men per 1,000 women
+  admin1 Bujumbura Mairie: 1238 men per 1,000 women
+  admin1 Bujumbura Rural: 973 men per 1,000 women
+  admin1 Bururi: 943 men per 1,000 women
+  admin1 Cankuzo: 964 men per 1,000 women
+  admin1 Cibitoke: 988 men per 1,000 women
+  admin1 Gitega: 915 men per 1,000 women
+  admin1 Karuzi: 929 men per 1,000 women
+  admin1 Kayanza: 929 men per 1,000 women
+  admin1 Kirundo: 936 men per 1,000 women
+  admin1 Makamba: 991 men per 1,000 women
+  admin1 Muramvya: 913 men per 1,000 women
+  admin1 Muyinga: 950 men per 1,000 women
+  admin1 Mwaro: 894 men per 1,000 women
+  admin1 Ngozi: 957 men per 1,000 women
+  admin1 Rumonge: 1004 men per 1,000 women
+  admin1 Rutana: 954 men per 1,000 women
+  admin1 Ruyigi: 971 men per 1,000 women
+  18 of 18 provinces and 119 of 119 communes written
+  wrote data/processed/burundi_census.json (217 kB)
