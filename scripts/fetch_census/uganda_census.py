@@ -206,6 +206,11 @@ def workbook_rows(table1: list[tuple[str, int, list[Any]]],
             raise SystemExit(f"uganda_census: workbook {label}: {male} men and {female} women "
                              f"against {total}")
         level = LEVELS[indent]
+        if level == "district" and label.lower() == "national":
+            # The country's row, a check on the districts'.
+            if total != NATIONAL:
+                raise SystemExit(f"uganda_census: the workbook's national row is {total:,}")
+            continue
         ages = {key: count(cells3[columns[head_]]) for head_, key in WORKBOOK_AGES.items()}
         row = {"level": level, "name": label, "male": male, "female": female, "total": total,
                "ages": ages}
@@ -235,6 +240,11 @@ def workbook_rows(table1: list[tuple[str, int, list[Any]]],
             kids = [r for r in out if r["level"] == child_level and r[key] == parent["name"]
                     and (parent_level == "district" or r["district"] == parent["district"])]
             made = sum(k["total"] for k in kids)
+            if not kids and parent_level == "district":
+                # Apaa, the ground Adjumani and Amuru both claim, is counted as a
+                # district row of its own with nothing below it.
+                log(f"  workbook: {parent['name']} ({parent['total']:,}) has no county rows")
+                continue
             if made != parent["total"]:
                 problems.append(f"{parent['name']}: its {child_level} rows make {made:,} of "
                                 f"{parent['total']:,}")
