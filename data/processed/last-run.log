@@ -1,35 +1,87 @@
-equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
-  Annobón: 5,314; men 48.9%; nationals 98.3%
-    ANNOBON: 5,314 (Annobón)
-  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
-    BANEY: 29,366 (Baney)
-    MALABO: 271,008 (Malabo)
-  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
-    LUBA: 26,331 (Luba)
-    RIABA: 8,343 (Riaba)
-  Centro Sur: 141,986; men 51.2%; nationals 89.9%
-    ACURENAM: 23,614 (Acurenam, drawn whole)
-    BICURGA: not shown (not a district)
-    EVINAYONG: not shown (Evinayong)
-    NIEFANG: not shown (Niefang)
-    NKIMI: not shown (not a district)
-  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
-    EBEBIYIN: 94,019 (Ebibeyin, drawn whole)
-    MICOMISENG: not shown (Micomiseng)
-    NKUE: not shown (not a district)
-    NSOC NSOMO: 37,920 (Nsok Nsomo, drawn whole)
-  Litoral: 367,348; men 52.3%; nationals 87.7%
-    BATA: not shown (Bata)
-    BITICA: not shown (not a district)
-    COGO: 29,341 (Cogo, drawn whole)
-    MACHINDA: not shown (not a district)
-    MBINI: not shown (Mbini)
-  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
-    ACONIBE: 24,346 (Aconibe, drawn whole)
-    AYENE: not shown (not a district)
-    AÑISOC: not shown (Añisok)
-    MONGOMO: not shown (Mongomo)
-    MONGOMOYEN: not shown (not a district)
-    NSORK: 16,421 (Nsork, drawn whole)
-  wrote data/processed/equatorial_guinea_census.json (86 kB)
-  7 provinces and 25 district polygons written
+cameroon_census: 507,338 bytes, sha256 bf484b0b1c66849f786ddc03800aabbeb03784ccc0f93e75b5482bbfdbd3ec8f
+  the ten provinces make 17,463,836 residents
+  Départements du Cameroun: 61 departments with a seat
+  Adamaoua: 884,289 (438,913 men, 445,376 women), 5 departments
+  Centre: 3,098,044 (1,552,362 men, 1,545,682 women), 10 departments
+  East: 771,755 (385,145 men, 386,610 women), 4 departments
+  Far North: 3,111,792 (1,535,247 men, 1,576,545 women), 6 departments
+  Littoral: 2,510,263 (1,260,937 men, 1,249,326 women), 4 departments
+  North: 1,687,959 (836,927 men, 851,032 women), 4 departments
+  North-West: 1,728,953 (828,862 men, 900,091 women), 7 departments
+  West: 1,720,047 (805,478 men, 914,569 women), 8 departments
+  South: 634,655 (321,343 men, 313,312 women), 4 departments
+  South-West: 1,316,079 (666,822 men, 649,257 women), 6 departments
+    Djerem (Adamaoua): 124,948, 975 men per 1,000 women, seat Tibati
+    Faro-et-Deo (Adamaoua): 82,717, 964 men per 1,000 women, seat Tignère
+    Mayo-Banyo (Adamaoua): 187,066, 953 men per 1,000 women, seat Banyo
+    Mbere (Adamaoua): 171,670, 957 men per 1,000 women, seat Meiganga
+    Vina (Adamaoua): 317,888, 1032 men per 1,000 women, seat Ngaoundéré
+    Haute-Sanaga (Centre): 100,352, 1013 men per 1,000 women, seat Nanga-Eboko
+    Lekie (Centre): 286,050, 953 men per 1,000 women, seat Monatélé
+    Mbam-et-Inoubou (Centre): 188,927, 994 men per 1,000 women, seat Bafia
+    Mbam-et-Kim (Centre): 105,511, 1042 men per 1,000 women, seat Ntui
+    Mefou-et-Afamba (Centre): 126,025, 998 men per 1,000 women, seat Mfou
+    Mefou-et-Akono (Centre): 59,017, 1019 men per 1,000 women, seat Ngoumou
+    Mfoundi (Centre): 1,881,876, 1010 men per 1,000 women, seat Yaoundé
+    Nyong-et-Kelle (Centre): 129,819, 1060 men per 1,000 women, seat Éséka
+    Nyong-et-Mfoumou (Centre): 104,507, 973 men per 1,000 women, seat Akonolinga
+    Nyong-et-So (Centre): 115,960, 981 men per 1,000 women, seat Mbalmayo
+    Boumba-Et-Ngoko (East): 115,354, 1002 men per 1,000 women, seat Yokadouma
+    Haut-Nyong (East): 196,519, 997 men per 1,000 women, seat Abong-Mbang
+    Kadei (East): 184,098, 971 men per 1,000 women, seat Batouri
+    Lom-Et-Djerem (East): 275,784, 1010 men per 1,000 women, seat Bertoua
+    Diamare (Far North): 642,227, 996 men per 1,000 women, seat Maroua
+    Logone-Et-Chari (Far North): 486,997, 1067 men per 1,000 women, seat Kousséri
+    Mayo-Danay (Far North): 529,061, 921 men per 1,000 women, seat Yagoua
+    Mayo-Kani (Far North): 404,646, 946 men per 1,000 women, seat Kaélé
+    Mayo-Sava (Far North): 348,890, 961 men per 1,000 women, seat Mora
+    Mayo-Tsanaga (Far North): 699,971, 955 men per 1,000 women, seat Mokolo
+    Moungo (Littoral): 379,241, 964 men per 1,000 women, seat Nkongsamba
+    Nkam (Littoral): 36,730, 1056 men per 1,000 women, seat Yabassi
+    Sanaga-Maritime (Littoral): 162,315, 1059 men per 1,000 women, seat Édéa
+    Wouri (Littoral): 1,931,977, 1014 men per 1,000 women, seat Douala
+    Benoue (North): 851,955, 1013 men per 1,000 women, seat Garoua
+    Faro (North): 69,477, 980 men per 1,000 women, seat Poli
+    Mayo-Louti (North): 391,326, 915 men per 1,000 women, seat Guider
+    Mayo-Rey (North): 375,201, 993 men per 1,000 women, seat Tcholliré
+    Boyo (North-West): 124,887, 827 men per 1,000 women, seat Fundong
+    Bui (North-West): 321,969, 936 men per 1,000 women, seat Kumbo
+    Donga-Mantung (North-West): 269,931, 905 men per 1,000 women, seat Nkambé
+    Menchum (North-West): 161,998, 916 men per 1,000 women, seat Wum
+    Mezam (North-West): 524,127, 945 men per 1,000 women, seat Bamenda
+    Momo (North-West): 138,693, 930 men per 1,000 women, seat Mbengwi
+    Ngo-ketunjia (North-West): 187,348, 916 men per 1,000 women, seat Ndop
+    Bamboutos (West): 292,410, 822 men per 1,000 women, seat Mbouda
+    Haut-Nkam (West): 144,786, 904 men per 1,000 women, seat Bafang
+    Hauts-Plateaux (West): 80,678, 792 men per 1,000 women, seat Baham
+    Koung-Khi (West): 65,021, 863 men per 1,000 women, seat Bandjoun
+    Menoua (West): 285,764, 822 men per 1,000 women, seat Dschang
+    Mifi (West): 301,456, 920 men per 1,000 women, seat Bafoussam
+    Nde (West): 94,849, 945 men per 1,000 women, seat Bangangté
+    Noun (West): 455,083, 932 men per 1,000 women, seat Foumban
+    Dja-Et-Lobo (South): 196,951, 1021 men per 1,000 women, seat Sangmélima
+    Mvila (South): 179,429, 1026 men per 1,000 women, seat Ebolowa
+    Ocean (South): 179,093, 1015 men per 1,000 women, seat Kribi
+    Vallee-du-Ntem (South): 79,182, 1061 men per 1,000 women, seat Ambam
+    Fako (South-West): 466,412, 1008 men per 1,000 women, seat Limbé
+    Kupe-Manenguba (South-West): 105,579, 1028 men per 1,000 women, seat Bangem
+    Lebialem (South-West): 113,736, 971 men per 1,000 women, seat Menji
+    Manyu (South-West): 181,039, 1014 men per 1,000 women, seat Mamfé
+    Meme (South-West): 326,734, 1053 men per 1,000 women, seat Kumba
+    Ndian (South-West): 122,579, 1109 men per 1,000 women, seat Mundemba
+  wrote data/processed/cameroon_census.json (173 kB)
+  10 regions and 58 departments written
+  2025: Adamaoua: 1,541,773
+  2025: Centre: 5,487,640
+  2025: East: 1,283,771
+  2025: Far North: 5,499,116
+  2025: Littoral: 4,498,867
+  2025: North: 3,485,916
+  2025: North-West: 2,428,174
+  2025: West: 2,232,838
+  2025: South: 885,734
+  2025: South-West: 2,098,489
+  2025: the regions make 29,442,318
+  2025: Wouri (Douala): 3,816,532, median 26.3
+  2025: Mfoundi (Yaoundé): 3,762,931, median 25.5
+  wrote data/processed/cameroon_projection.json (16 kB)
