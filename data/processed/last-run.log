@@ -1,386 +1,854 @@
-probe_pdf: https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/repvil09_rgph.pdf
-  14,906,236 bytes
-  318 pages
-probe_pdf: 318 pages, printing [12, 13, 14, 51, 302, 303, 304, 307, 308]
+probe_pdf: https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf
+  6,662,836 bytes
+  739 pages
+probe_pdf: 739 pages, 65 mention ['cercle']
+=== front matter ===
+REPUBLIQUE DU MALI  
+ 
+  
+Un Peuple - Un But – Une Foi  
+-----------------  
+MINISTERE DE L’ECONOMIE  
+ET DES FINANCES 
+ 
+-----------------  
+INSTITUT NATIONAL DE LA 
+STATISTIQUE 
+----------------- 
+BUREAU CENTRAL  
+DU RECENSEMENT 
+  
+ 
+ 
+ 
+RESULTATS DEFINITIFS 
+ 
+TOME 1 : 
+SERIE DEMOGRAPHIQUE  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Novembre 2011 
+ 
+ 
+4ème  RECENSEMENT GENERAL DE LA POPULATION  
+ET DE L’HABITAT DU MALI (RGPH) 
+ 
+
+
+ 
+i 
+ 
+AVANT PROPOS 
+ 
+La présente publication fait suit e aux résultats provisoires paru s en octobre 2009. Elle a pour 
+but de fournir l’ensemble des renseignements socio-économiques disponi bles à la suite de 
+l’exploitation informatique des données recueillies au cours du quatrième Recensement Général 
+de la Population et de l’Habitat mené sur l’ ensemble du territoire de la République du 1 er au 14 
+avril 2009. 
+ 
+Réalisée à la demande du Gouvernement, af in de respecter la période décennale des 
+recensements, l’opération avait comme objectifs :  
+ 
+1. de connaître l'effectif total de la population du Mali et sa répartition entre les régions, 
+cercles, communes, villages sédentaires et nomades, milieu urbain et rural ;  
+2. de connaître la structure de la population par sexe et par âge, c'est-à-dire le nombre 
+total d'hommes et de femmes par âge ;  
+3. de connaître au cours des douze derniers mois le nombre total de naissances et le 
+nombre total de décès ;  
+4. de connaître les disponibilités en logements pour les ménages et leurs conditions de 
+vie en matière d'habitation ;  
+5. d’apporter des renseignements sur les ca ractéristiques démographiques (sexe, âge, 
+mortalité, natalité, migrati ons...), économiques (profession, activité principale...) et 
+socioculturelles (situation matrimoniale, nat ionalité, alphabétisation, langue parlée...) de 
+la population. 
+ 
+Le quatrième Recensement Général de la Population et de l’Habitat à été régi par deux textes 
+législatifs qui sont : 
+ 
+1. la loi N°98 du 09 mars 1998 instituant la réalisation décennale d’un Recensement 
+Général de la Population et de l’Habitat sur toute l’étendue du territoire de la République 
+du Mali ; 
+2. le décret  N° 98-099/P-RM du 27 mars 1998 portant création des organismes chargés 
+du  Recensement Général de la Population et  de l’Habitat, notamment les commissions 
+nationales et régionales du recensement, le  Bureau Central du Recensement (BCR) et 
+les Bureaux  Régionaux du Recensement (BRR). 
+ 
+Après la mise en place des différents organes , la préparation techni que a démarré par la 
+cartographie. Cette cartographie a été réalisée  sur une durée de 11 mois et a utilisé les 
+cartes de 1998 actualisées par l’équipe du BCR su r la base du SIG à travers Map Info et les 
+fonds de cartes de l’Institut Géographique du Mali (IGM). Elle avait pour objet : 
+ 
+• la détermination des coordonnées géographiques (longitude et latitude) de toutes les 
+localités habitées ; 
+• la mise à jour des cartes des ex-arrondissements consistant à : 
+9 recenser les sites habités ; 
+9 géo référencer toutes les localités ; 
+ 
+ii 
+ 
+9 recenser toutes les infrastructures en les géo référençant ; 
+9 faire l’estimation de la population ; 
+9 faire le découpage des localités en sections d’énumération (SE) et en districts de 
+dénombrement (DD) ; 
+9 établir les croquis pour les villages de plus de 1000 habitants et plus ; 
+9 mettre au net les cartes d’arrondissement. 
+ 
+Les unités géographiques temporaires conçues pour les besoins du recensement sont le district 
+de dénombrement (DD) et la section d’énumérati on (SE) dont il est ut ile de rappeler les 
+définitions : 
+ 
+9 une SE est une aire de dénombrement c onfiée à un agent recenseur pour la 
+période du recensement. Cette aire est déterminée sur la base d'une population 
+égale à 1 100 habitants environ en milieu urbain et à 700 habitants environ en 
+milieu rural ; 
+9 un DD est une aire de dénombrement comp osée de cinq SE en moyenne et 
+confiée à un contrôleur. Ai nsi, un DD compte environ 5 500 habitants en milieu 
+urbain et 3 500 habitants en milieu rural. 
+ 
+Les unités géographiques ainsi définies ne conc ernent que la partie sédentaire du pays. En 
+zones nomades, des fiches de fractions ont été élaborées pour non seulement faire la liste des 
+fractions mais aussi les couloirs de trans humance permettant au moment du recensement de 
+savoir dans quels points de regroupement retrouver ces fractions. 
+  
+Après la cartographie, la phase préparatoire s’ est poursuivie par la conception des outils 
+techniques, l’exécution de l’enquête pilote, la sens ibilisation et la plan ification du déploiement 
+des équipes sur le terrain. 
+ 
+La phase préparatoire a été suivie de l’exécution des travaux sur le terrain qui s’est concrétisée 
+par les actions suivantes : 
+ 
+• le recrutement et la formation du personnel  de terrain. La formation s’est déroulée en 
+trois grandes étapes : la formation des super viseurs nationaux et régionaux à Bamako, 
+la formation des superviseurs locaux et des  contrôleurs au niveau des chefs lieux de 
+région et la formation des chefs d’équipe et des agents recenseurs au niveau des chefs-
+lieux des ex-arrondissements. Quant au recr utement, il a été fait par les équipes 
+régionales. Le personne l était en majorité composé des enseignants compte tenu de 
+leur nombre et de leur répartition spatiale sur le territoire national ; 
+• le dénombrement proprement dit du 1er au 14 avril 2009 ; 
+• la transmission des dossiers au BCR ; 
+• la vérification, la codification et la saisie par le BCR des fiches ré capitulatives remplies 
+par les agents de terrain et l’élaboration des  tableaux pour la publication des résultats 
+provisoires ; 
+• la publication par le BCR des résultats provisoires en octobre 2009. 
+ 
+ 
+iii 
+ 
+L’exploitation des questionnaires a démarré neuf mois  après le terrain et trois mois après la 
+publication des résultats prov isoires à cause du manque de financement. Compte tenu du 
+retard pris dans le démarrage de l’exploitati on et vu l’urgence des besoins en données du 
+RGPH, la phase exploitation a mobilisé plus de ci nq cents personnes (vérification, codification, 
+saisie et archivage) et environ quatre-vingt ordi nateurs PC pour la saisie. Les fichiers ainsi 
+obtenus ont fait l’objet d’apurement  suivi de l’analyse de la qu alité des données qui a montré 
+que les données du recensement sont bonnes et peuvent servir de base fiable pour les 
+analyses thématiques. 
+ 
+Les données issues du 4ème RGPH permettront de rédiger les 16 rapports thématiques ci-
+après :  
+ 
+1. Evaluation de la qualité des données  
+2. Etat et structure de la population  
+3. Etat matrimonial et nuptialité 
+4. Education : Instruction–A lphabétisation-Scolarisation 
+5. Caractéristiques économiques de la population 
+6. Natalité, Fécondité  
+7. Mortalité 
+8. Migration 
+9. Croissance urbaine 
+10. Ménages et habitation 
+11. Situation socioéconomique des enfants et des jeunes 
+12. Situation socioéconomique des femmes 
+13. Situation socioéconomique des personnes vivant avec un handicap 
+14. Situation socioéconomique des personnes âgées 
+15. Mesure et cartographie de la pauvreté 
+16. Projections et perspectives démographiques. 
+ 
+Outre ces 16 rapports thématiques, d’autres do cuments importants feront également l’objet 
+d’une publication à grande échelle sur divers su pports tels que : papier, CD-Rom, site internet, 
+etc. et sous différents formats (dépliants, br ochures, électronique), en vue de satisfaire les 
+besoins en informations d’un grand nombre d’utilisateurs de données sur la population. Il s’agit 
+notamment de : 3 volumes de tableaux statistiqu es, un répertoire des villages du Mali, un atlas 
+géo démographique, des monographies  régionales, les principaux indicateurs et le rapport de 
+mise en œuvre de l’opération.  
+ 
+La présente publication issue de l’exploitation des données brutes  s’inscrit dans le plan de 
+publication ci-dessus évoqué.  
+ 
+Pour permettre aux utilisateurs de mieux comprendre les résultats qui leurs sont présentés dans 
+les différentes publications, les définitions des concepts ci-dessous uti lisées par le BCR sont 
+nécessaires. 
+ 
+• Le Village est un ensemble de concessions regroupées sur un espace géographique donné 
+et qui abritent des ménages dépendant d’une même autorité locale ou chefferie. 
+ 
+iv 
+ 
+• La Concession est un espace clôturé ou non, à l'intérieur duquel sont bâtie(s) une ou 
+plusieurs constructions à usages  divers (habitations et dé pendances, édifices publics ou 
+privés etc.). Une concession est généralem ent entourée par un mur ou une haie. Elle peut 
+dans certains cas être constituée par un ensemble de constructions indépendantes, non 
+obligatoirement entourées de mur ou de haie. Elle  peut aussi se réduire à une seule 
+construction utilisée ou non à une fonction déterminée (immeuble de logements). Ainsi, 
+peuvent être considérées comme concessions des bâtiments affectés aux usages 
+administratif, public ou religieux, industriel,  commercial etc. La concession peut être 
+occupée par un ou plusieurs ménages et se cons tituer d'un ou de plusieurs logements. Elle 
+est généralement placée sous la responsabilit é d'un chef de concession (propriétaire ou 
+non).  
+• Le Ménage est un individu ou un groupe d’individus  apparentés ou non  vivant à l’intérieur 
+d’une concession sous l’autor ité d’une personne appelée chef  de ménage. Le ménage  est 
+constitué  du  chef de ménage, son ou ses épouses et leurs propres enfants non mariés, 
+avec éventuellement d’autres personnes avec ou sans lien de parenté.  
+• Le Résident  est une personne qui a passé six (6) mo is ou plus à son lieu de présence 
+actuel ou qui a l'intention de s'y installer pour une durée de plus de six (6) mois. 
+• Le Visiteur est une personne qui est dans le ménage depuis moins de six (6) mois et qui 
+n'a pas l'intention d'y rester plus de six (6) mois. Un visiteur  est donc une personne de 
+passage qui n’est pas sur son lieu de résidence habituelle.  
+• L’activité principale  désigne l’occupation principale du rant le mois ay ant précédé le 
+recensement des personnes de six ans et plus.  
+Sont considérées comme actives toutes les personnes qui travaillent (occupées) et 
+celles ne travaillant pas, mais qui recherchent un travail. 
+Sont considérées comme inactives les personnes ne cherchant pas de travail et qui 
+appartiennent à l’une des catégories suivantes : 
+− Ménagère ou Femme au foyer ; 
+− Elèves, Etudiants ; 
+− Retraités, Rentiers ;  
+− Handicapés. 
+ 
+Il faut noter que la situation d’activité prime toujours sur la situation d’inactivité : 
+− une ménagère qui travaille sur l’exploitation de son mari ou tient un petit 
+commerce si petit soit-il est considérée comme active occupée et non comme 
+ménagère ; 
+− un élève qui, après les heures de cours, aide son père ou son oncle dans l’atelier 
+de celui-ci est occupé (NB : ce n’est pas la réponse à cette question qui permet 
+de déterminer le nombre d’enfants scolarisés) ; 
+− un retraité qui profite de ses vieux jours pour tenir un commerce est un actif 
+occupé ;  
+− les agriculteurs, éleveurs, pêcheurs qui produisent pour leur subsistance, sans 
+commercialiser la moindre part de leur production, sont tout de même considérés 
+comme appartenant à la population active. 
+
+ 
+vii 
+ 
+PERSONNEL DU 4ème RGPH – 2009 
+ 
+A)  EQUIPE NATIONALE   
+ 
+ 
+1) Organisation et Exécution 
+ 
+N° d’ordre PRENOM & NOM TITRE 
+COORDINATION/SUPERVISION TECHNIQUE 
+1 Seydou Moussa TRAORE Directeur National 
+2 Mahmoud Ali SAKO Directeur National Adjoint 
+3 Mme DOUMBIA Assa GAKOU Directrice Technique 
+4 Vinima TRAORE Chef de Section Dénombrement/Analyse 
+5 Mme N’DIAYE Fatou DIA Chef de Se ction Documentation-Communication 
+6 Karamoko DIARRA Chef de Section Traitement des données 
+7 Abdoul Karim DIAWARA Chef de Section Cartographie 
+8 Soumaila YOUNOUSSOU Chef de Section Administration/Finances 
+CADRES BCR 
+1 Soumana TAGALA Statisticien 
+2 Oumar S. DIARRA Démographe 
+3 Amadou K. TALL Statisticien 
+4 Idrissa DIABATE Statisticien 
+5 Tabémon KASSOGUE Sociologue 
+6 Sidi SAMAKE Sociologue 
+7 Bandiougou SOUMAORO Anthropologue 
+8 Bouréima SINGARE Démographe 
+9 Zoumana DIARRA Statisticien 
+TECHNICIENS BCR 
+1 Fodé DIARRA Informaticien 
+2 Isidore B. CAMARA Technicien de la statistique 
+3 Moussa CISSE Technicien de la statistique 
+4 Sata KEITA Technicien de la statistique 
+5 Ibrahim B MAIGA Technicien de la statistique 
+6 Modibo SACKO  Technicien de la statistique 
+7 Mme DIAWARA Kourani dite Yayi DE MBELE Technicien de la statistique 
+8 Souleymane TRAORE Agent de saisie 
+9 Mamary TRAORE Agent de saisie 
+PERSONNEL D’APPUI 
+1 Mme COULIBALY Assitan DIAKITE  Assistante administrative 
+2 Mme KEBBE Ami DJIGA Standardiste 
+3 Djénéba SIDIBE Standardiste 
+ 
+ 
+viii 
+ 
+ 
+N° 
+d’ordre 
+PRENOM & NOM TITRE 
+SUPERVISEURS NATIONAUX 
+1 Mme DOUMBIA Assa GAKOU BCR 
+2 Vinima TRAORE BCR
+3 Abdoul Karim DIAWARA BCR
+4 Soumana TAGALA BCR
+5 Tabémon KASSOGUE BCR
+6 Sidi SAMAKE BCR
+7 Bandiougou SOUMAORO BCR
+8 Bouréima SINGARE BCR
+9 Amadou K. TALL BCR
+10 Mahady FOFANA Cadre INSTAT 
+11 Arouna SOUGANE Cadre INSTAT 
+12 Issa BOUARE Cadre INSTAT 
+13 Boubacar COULIBALY Cadre INSTAT 
+14 Mamadou BAGAYOKO Cadre INSTAT 
+15 Ibrahim B GOITA Cadre INSTAT 
+16 Lassine SIDIBE CPS EDUCATION 
+17 Ladji B SIDIBE Cadre DNP 
+18 Assekou Amadou ASCOFARE CPS Administra tion Territoriale et Fonction Publique 
+19 Dr COULIBALY Youma SALL CPS Santé et Développement Social 
+CHEFS DES BUREAUX REGIONAUX DU RECENSEMENT 
+1 Dippa TRAORE Chef  BRR Kayes 
+2  Alhassane TOURE Chef BRR Koulikoro 
+3 Harouna KONE Chef BRR Sikasso 
+4 Boureïma TANGARA Chef BRR Ségou 
+5 Hamidou Cherif  BA Chef BRR Mopti 
+6 Adama SENOU Chef BRR Tombouctou 
+7 Ibrahim Mahalmadane TOURE Chef BRR Gao 
+8 Soumaïla Ibrahim TOURE Chef BRR Kidal 
+9 Mme DEMBELE Djeneba TANGARA Chef BRR Bamako  
+ 
+ 
+ 
+ix 
+ 
+2) EXPLOITATION  
+N° d’ordre PRENOM & NOM TITRE 
+1 Seydou Moussa TRAORE Directeur National 
+2 Mme Doumbia Assa Gakou Directrice technique 
+3 Vinima TRAORE Responsable de Vérification et Codification 
+4 Karamoko Diarra Responsable de Saisie 
+5 Soumaila Younoussou Chef de Section Administration/Finances 
+6 Soumana TAGALA Superviseur Vérification et Codification 
+7 Tabémon KASSOGUE Superviseur Vérification et Codification 
+8 Sidi SAMAKE Superviseur Vé rification et Codification 
+9 Bandiougou SOUMAORO Superviseur  Vérification et Codification 
+10 Moussa CISSE Superviseur Vérification et Codification 
+11 Zoumana  DIARRA Superviseur Vérification et Codification 
+12 Dramane TRAORE Superviseur Vérification et Codification 
+13 Yacouba TRAORE Superviseur Vérification et Codification 
+14 Souleymane KANE Superviseur Vérification et Codification 
+15 Kaba SISSOKO Superviseur Vé rification et Codification 
+16 Isidore B CAMARA Chargé de l’archivage 
+17 Ibrahim B MAIGA Chargé de l’archivage 
+18 Sata KEITA Contrôleur de pré-vérification et de codification   
+19 Amadou K. TALL S uperviseur Saisie 
+20 Idrissa DIABATE Superviseur Saisie 
+21 Oumou  DIALLO Superviseur Saisie 
+22 Petony SANY Superviseur Saisie 
+23 Bokary SANKARE Superviseur Saisie 
+24 Bakary DIARRA Superviseur Saisie 
+25 Amadou FOFANA Superviseur Saisie 
+26 Djibril SABANE Superviseur Saisie 
+27 Moussa CAMARA Superviseur Saisie  
+28 Alou DIARRA Superviseur Saisie  
+29 Tiéblé DIARRA Superviseur Saisie  
+30 Cheick Oumar TRAORE Superviseur Saisie  
+31 Mariam Doussou TRAORE Superviseur Saisie  
+ 
+ 
+x 
+ 
+B)   ASSISTANCE TECHNIQUE 
+ 
+N° d’ordre PRENOM & NOM TITRE 
+1 Oumar BOCOUM Expert en Cartographie  
+2 Hamady SOW Expert Démographe 
+3 Guillaume POIREL Expert Démographe AFRISTAT 
+4 Bruno NOUATIN Expert Démographe AFRISTAT 
+5 Samuel NOUETAGNY Expert Démographe IFORD 
+6 Saïdou AMADOU Informaticien Démographe IFORD 
+7 Daniel TOLNO  Expert Démographe IFORD 
+ 
+C)   LISTE DES EXPERTS NATIONAUX (Phase dénombrement) 
+ 
+N° d’ordre PRENOM & NOM SPECIALITE 
+1 Bibi DIAWARA Démographe 
+2 Alikaou DIARRA Ingénieur de s Travaux de Statistiques 
+3 Ishaga COULIBALY Démographe 
+4 Sékouba DIARRA Démographe 
+5 Mamadou MAGASSA Inspecteur des Services Economiques 
+6 Mme KONARE Kadidia DAOU Ingéni eur des Travaux de Statistiques 
+7 Mme SIDIBE Fatoumata DICKO Démographe 
+8 Mme DIALLO M'Bodji SENE Ingéni eur des Travaux de Statistiques 
+9 Alain Michel CAMARA Démographe 
+10 Kabiné H. DIANE Ingénieur des Travaux de Statistiques 
+11 Modibo DOLO Planificateur 
+12 Balla DIALLO Démographe 
+13 Aboumediane TOURE Ingénieur des Travaux de Statistiques 
+14 Bréhima SANOGO Planificateur 
+15 Allassane MAÏGA Ingénieur des Travaux de Statistiques 
+16 Djibril DICKO Démographe 
+17 Sékou TRAORE Démographe 
+ 
+SOMMAIRE
+PAGES
+TABLEAU P ‐1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE
+MENAGES  (REGIONS,CERCLE) 1
+TABLEAU P‐2: POPULATION SUIVANT LE SEXE, L'AGE ET LA SITUATION DE RESIDENCE (REGIONS,T/R/U) 6
+TABLEAU P‐3: POPULATION RESIDENTE SUIVANT LE SEXE, L'AGE, LE MODE DE VIE ET LA CONNAISSANCE DE
+LA DATE DE NAISSANCE (REGIONS, T/R/U) 62
+TABLEAU P ‐3‐BIS: POPULATION RESIDENTE SUIVANT LE SEXE, L'AGE, LE MODE DE VIE ET LA POSSESSION
+D'UN ACTE DE NAISSANCE (REGIONS, T/R/U) 118
+TABLEAU P ‐4: POPULATION RESIDENTE PAR SEXE ET MODE DE VIE EN FONCTION DE LA TAILLE DU VILLAGE
+OU DU QUARTIER  (REGIONS, T/U/R) 174
+TABLEAU D‐1:  POPULATIOM RESIDENTE SUIVANT LE SEXE L'AGE ET LE LIEU DE NAISSANCE 184
+TABLEAU D‐2:  POPULATION RESIDENTE SELON LA DUREE DE RESIDENCE DANS LE CERCLE ET LE SEXE 240
+TABLEAU D‐3: POPULATION RESIDENTE SELON L'AGE ET LA SURVIE DES PARENTS (REGIONS,T/R/U) 242
+
+=== pages mentioning ['cercle'] (first 8) ===
+
+--- page 3 ----------------------------------------------------
+i
+AVANT PROPOS
+La présente publication fait suit e aux résultats provisoires paru s en octobre 2009. Elle a pour
+but de fournir l’ensemble des renseignements socio-économiques disponi bles à la suite de
+l’exploitation informatique des données recueillies au cours du quatrième Recensement Général
+de la Population et de l’Habitat mené sur l’ ensemble du territoire de la République du 1 er au 14
+avril 2009.
+Réalisée à la demande du Gouvernement, af in de respecter la période décennale des
+recensements, l’opération avait comme objectifs :
+1. de connaître l'effectif total de la population du Mali et sa répartition entre les régions,
+cercles, communes, villages sédentaires et nomades, milieu urbain et rural ;
+2. de connaître la structure de la population par sexe et par âge, c'est-à-dire le nombre
+total d'hommes et de femmes par âge ;
+3. de connaître au cours des douze derniers mois le nombre total de naissances et le
+nombre total de décès ;
+4. de connaître les disponibilités en logements pour les ménages et leurs conditions de
+vie en matière d'habitation ;
+5. d’apporter des renseignements sur les ca ractéristiques démographiques (sexe, âge,
+mortalité, natalité, migrati ons...), économiques (profession, activité principale...) et
+socioculturelles (situation matrimoniale, nat ionalité, alphabétisation, langue parlée...) de
+la population.
+Le quatrième Recensement Général de la Population et de l’Habitat à été régi par deux textes
+législatifs qui sont :
+1. la loi N°98 du 09 mars 1998 instituant la réalisation décennale d’un Recensement
+Général de la Population et de l’Habitat sur toute l’étendue du territoire de la République
+du Mali ;
+2. le décret  N° 98-099/P-RM du 27 mars 1998 portant création des organismes chargés
+du  Recensement Général de la Population et  de l’Habitat, notamment les commissions
+nationales et régionales du recensement, le  Bureau Central du Recensement (BCR) et
+les Bureaux  Régionaux du Recensement (BRR).
+Après la mise en place des différents organes , la préparation techni que a démarré par la
+cartographie. Cette cartographie a été réalisée  sur une durée de 11 mois et a utilisé les
+cartes de 1998 actualisées par l’équipe du BCR su r la base du SIG à travers Map Info et les
+fonds de cartes de l’Institut Géographique du Mali (IGM). Elle avait pour objet :
+• la détermination des coordonnées géographiques (longitude et latitude) de toutes les
+localités habitées ;
+• la mise à jour des cartes des ex-arrondissements consistant à :
+9 recenser les sites habités ;
+9 géo référencer toutes les localités ;
 
 --- page 12 ----------------------------------------------------
-REGION DE KAYES
-
---- page 13 ----------------------------------------------------
-- Page 4 -
-                   REPERTOIRE DES VILLAGES PAR REGION, CERCLE ET COMMUNE (RGPH 2009)
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGES
-REGION DE KAYES 1542 983 183 1 010 432 1 993 615 305 742 129 866 49,3 97,3 1 293 2,4 6,5
- CERCLE DE KAYES 323 258 395 254 777 513 172 80 763 33 258 50,4 101,4 1 589 2,4 6,4
-COM. KAYES 6 65 135 61 184 126 319 19 808 9 272 51,6 106,5 21 053 2,1 6,4
-KAYES N'DI 1 U E11,CS10,PH02 15 864 14 511 30 375 4 828 2 433 52,2 109,3 30 375 2,0 6,3
-KHASSO 1 U E01,CS01,PH01 8 286 8 203 16 489 2 706 1 085 50,3 101,0 16 489 2,5 6,1
-LAFIABOUGOU 1 U E11,CS06,PH01 13 139 12 247 25 386 4 251 2 124 51,8 107,3 25 386 2,0 6,0
-LEGAL SEGOU 1 U E07,CS06,PH01 8 364 7 991 16 355 2 425 995 51,1 104,7 16 355 2,4 6,7
-LIBERTE 1 U E06,CS05,PH02 9 431 8 902 18 333 2 438 1 074 51,4 105,9 18 333 2,3 7,5
-PLATEAU 1 U E09,CS02,PH02 10 051 9 330 19 381 3 160 1 561 51,9 107,7 19 381 2,0 6,1
-COM. BANGASSI 9 6 123 5 974 12 097 1 796 854 50,6 102,5 1 344 2,1 6,7
-BAMBELLA 1 E01,CS01 852 807 1 659 275 118 51,4 105,6 1 659 2,3 6,0
-BANGASSI GOPELA 1 E01,RDB02 840 892 1 732 210 79 48,5 94,2 1 732 2,7 8,2
-BANGASSI NANGO 1 E02,CS01,RDB03,BC01,CE01 617 669 1 286 159 64 48,0 92,2 1 286 2,5 8,1
-BANGASSI DOUDOU MAURE 1 E01,RDB02 436 413 849 163 96 51,4 105,6 849 1,7 5,2
-DIAKALEL 1 E01 1 990 1 831 3 821 547 313 52,1 108,7 3 821 1,7 7,0
-DJIGUIDIAN GOPELA 1 E01 286 289 575 80 33 49,7 99,0 575 2,4 7,2
-MADINEL 1 532 530 1 062 177 59 50,1 100,4 1 062 3,0 6,0
-SEGUE MAURE 1 E01,RDB02 357 354 711 131 66 50,2 100,8 711 2,0 5,4
-SINTHIANE 1 E01,RDB03 213 189 402 54 26 53,0 112,7 402 2,1 7,4
-COM. COLIMBINE 9 6 144 6 353 12 497 1 833 502 49,2 96,7 1 389 3,7 6,8
-DIABOUGOU 1 E01,RDB03 333 357 690 91 27 48,3 93,3 690 3,4 7,6
-DIALANE 1 E01,CS01,RDB12 1 384 1 402 2 786 401 100 49,7 98,7 2 786 4,0 6,9
-GAMERA/GOUMERA 1 E01,CS02,RDB02,BC01,CE01 805 777 1 582 254 53 50,9 103,6 1 582 4,8 6,2
-KABATE 1 E02,CS01,RDB13,BC01 1 249 1 415 2 664 350 97 46,9 88,3 2 664 3,6 7,6
-KANAMAKOUNOU 1 E01,RDB03,BC01 322 306 628 76 24 51,3 105,2 628 3,2 8,3
-KOUROUKOULA 1 E01,CS01,RDB03,BC01,CE01 460 457 917 122 33 50,2 100,7 917 3,7 7,5
-TAFACIRGA 1 E01,CS01,RDB04,BC01,CE01 921 885 1 806 302 85 51,0 104,1 1 806 3,6 6,0
-TAKOUTALLA 1 E01,CS02,RDB04 521 601 1 122 184 59 46,4 86,7 1 122 3,1 6,1
-WAHIGUILOU 1 E01,RDB03 149 153 302 53 24 49,3 97,4 302 2,2 5,7
-COM. DIAMOU 21 7 115 7 015 14 130 2 213 1 299 50,4 101,4 673 1,7 6,4
-DIAMOU 1 E02,CS02,P01,C01,M01,ST01,RDB17,BC01,CE02 1 675 1 553 3 228 524 355 51,9 107,9 3 228 1,5 6,2
-BALANDOUGOU 1 RDB01 147 144 291 54 35 50,5 102,1 291 1,5 5,4
-BOUROUKOUN 1 RDB02 180 150 330 54 42 54,5 120,0 330 1,3 6,1
-DINGUIRA ALMAMY 1 E01,RDB01 578 639 1 217 134 83 47,5 90,5 1 217 1,6 9,1
-DOUROUN 1 RDB02 199 210 409 58 37 48,7 94,8 409 1,6 7,1
-DRAMEKO 1 E01 198 204 402 58 35 49,3 97,1 402 1,7 6,9
-FANGA 1 CS01,RDB02,BC01 324 327 651 83 39 49,8 99,1 651 2,1 7,8
-FOUKARA ILE 1 140 156 296 49 22 47,3 89,7 296 2,2 6,0
-FOUKARA RIVE GAUCHE 1 E01,CS01,RDB03 201 201 402 59 37 50,0 100,0 402 1,6 6,8
-GALOUGO 1 368 352 720 124 87 51,1 104,5 720 1,4 5,8
-HAMAYA 1 RDB01 287 264 551 72 55 52,1 108,7 551 1,3 7,7
-ILLIMALO 1 E01,RDB02 347 377 724 104 49 47,9 92,0 724 2,1 7,0
-LOGOBA 1 E01,RDB02 301 289 590 96 57 51,0 104,2 590 1,7 6,1
-MAKADENIA 1 E01,RDB02 275 228 503 88 40 54,7 120,6 503 2,2 5,7
-MAKANIA 1 E01,RDB05 313 354 667 129 42 46,9 88,4 667 3,1 5,2
-MOUNDINTAKO 1 E02,CS01,RDB02 421 410 831 137 48 50,7 102,7 831 2,9 6,1
-INFRASTRUCTURES POPULATION RESIDENTE
+SOMMAIRE
+PAGES
+TABLEAU P ‐1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE
+MENAGES  (REGIONS,CERCLE) 1
+TABLEAU P‐2: POPULATION SUIVANT LE SEXE, L'AGE ET LA SITUATION DE RESIDENCE (REGIONS,T/R/U) 6
+TABLEAU P‐3: POPULATION RESIDENTE SUIVANT LE SEXE, L'AGE, LE MODE DE VIE ET LA CONNAISSANCE DE
+LA DATE DE NAISSANCE (REGIONS, T/R/U) 62
+TABLEAU P ‐3‐BIS: POPULATION RESIDENTE SUIVANT LE SEXE, L'AGE, LE MODE DE VIE ET LA POSSESSION
+D'UN ACTE DE NAISSANCE (REGIONS, T/R/U) 118
+TABLEAU P ‐4: POPULATION RESIDENTE PAR SEXE ET MODE DE VIE EN FONCTION DE LA TAILLE DU VILLAGE
+OU DU QUARTIER  (REGIONS, T/U/R) 174
+TABLEAU D‐1:  POPULATIOM RESIDENTE SUIVANT LE SEXE L'AGE ET LE LIEU DE NAISSANCE 184
+TABLEAU D‐2:  POPULATION RESIDENTE SELON LA DUREE DE RESIDENCE DANS LE CERCLE ET LE SEXE 240
+TABLEAU D‐3: POPULATION RESIDENTE SELON L'AGE ET LA SURVIE DES PARENTS (REGIONS,T/R/U) 242
+TABLEAU D‐4 : POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON L'AGE ET LE NOMBRE D'ENFANTS NES
+VIVANTS (REGIONS, T/R/U) 283
+TABLEAU D‐5 : POPULATION DU SEXE FEMININ DE DE 12 ‐ 49 ANS SELON L'AGE ET LE NOMBRE D'ENFANTS
+SURVIVANTS (REGIONS, T/R/U) 288
+TABLEAU D ‐6: POPULATION DU SEXE FEMININ DE 12 ‐49 ANS ET PLUS SELON LE NOMBRE D'ENFANTS NES
+VIVANTS ET L'APTITUDE A LIRE ET ECRIRE  (REGIONS,T/R/U) 293
+TABLEAU D‐7: POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON LE NOMBRE D'ENFANTS NES VIVANTS
+ET LE NIVEAU D'INSTRUCTION (REGIONS,T/R/U) 298
+TABLEAU D‐8 : POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON LE NOMBRE D'ENFANTS SURVIVANTS
+ET L'APTITUDE A LIRE ET ECRIRE (REGIONS,T/U/R) 308
+TABLEAU D‐9: POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON LE NOMBRE SURVIVANTS ET LE NIVEAU
+D'INSTRUCTION (REGIONS,T/R/U) 313
+TABLEAU D‐10 : POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON LA BRANCHE DE L'ACTIVITE EXERCEE
+ET LE NOMBRE D'ENFANTS NES VIVANTS  (REGIONS,T/R/U) 323
+TABLEAU D‐11 : POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON L'ACTIVITE EXERCEE ET LE NOMBRE
+D'ENFANTS SURVIVANTS (REGIONS,T/U/R) 333
+TABLEAU D ‐12 : POPULATION RESIDENTE DE 12 ‐ 49 ANS SELON LA SITUATION MATRIMONIALE ET LE
+NOMBRE D'ENFANTS NES VIVANTS (REGIONS,T/U/R) 343
+TABLEAU D‐13: POPULATION DU SEXE FEMININ DE 12 ‐ 49 ANS SELON LA SITUATION MATRIMONIALE ET LE
+NOMBRE D'ENFANTS SURVIVANTS (REGIONS,T/U/R) 350
+TABLEAU D‐14:  NAISSANCES ET DECES DES 12 DERNIERS MOIS SUIVANT LE SEXE (REGIONS, T/R/U)  357
+TABLEAU D‐15: NAISSANCES DES 12 DERNIERS MOIS SELON LE SEXE ET L'AGE DE LA MERE (REGIONS,T/R/U) 359
+TABLEAU D‐16:   DECES DES 12 DERNIERS MOIS SUIVANT LE SEXE ET L'AGE AU DECES(REGIONS, T/R/U) 362
+(xi)
 
 --- page 14 ----------------------------------------------------
-- Page 5 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-SABOUCIRE LAKAFIA 1 E01,CS01,RDB02 254 269 523 76 32 48,6 94,4 523 2,4 6,9
-TAKOUTALA 1 CS01,RDB01 226 214 440 67 47 51,4 105,6 440 1,4 6,6
-THEMATESSOU 1 E01,PH01,RDB01 431 419 850 153 108 50,7 102,9 850 1,4 5,6
-TINKIN 1 RDB03 82 89 171 33 17 48,0 92,1 171 1,9 5,2
-WASSANGARA 1 168 166 334 61 32 50,3 101,2 334 1,9 5,5
-COM. DJELEBOU 11 11 466 12 091 23 557 3 708 1 192 48,7 94,8 2 142 3,1 6,4
-AOUROU 1 E03,CS02,C01,RDB09,CE01 2 431 2 532 4 963 801 256 49,0 96,0 4 963 3,1 6,2
-DINDINAYE 1 E02,CS02,RDB01 798 879 1 677 296 69 47,6 90,8 1 677 4,3 5,7
-HOROGNEWO 1 E01,RDB03 608 556 1 164 176 72 52,2 109,4 1 164 2,4 6,6
-LEYA 1 E02,CS02,RDB12 1 331 1 429 2 760 438 145 48,2 93,1 2 760 3,0 6,3
-MELGA SONINKE 1 E01,CS01 996 1 046 2 042 283 111 48,8 95,2 2 042 2,5 7,2
-MELGA TOUCOULEUR 1 E01,CS01,RDB02 940 961 1 901 265 92 49,4 97,8 1 901 2,9 7,2
-NAHALY 1 E01,CS01,RDB12 715 816 1 531 244 55 46,7 87,6 1 531 4,4 6,3
-SAMBAWANSSI 1 E01,CS01,RDB01 493 522 1 015 156 38 48,6 94,4 1 015 4,1 6,5
-SAREYERO 1 E03,CS03,RDB06 987 982 1 969 331 111 50,1 100,5 1 969 3,0 5,9
-SERENATY 1 E01,CS01,RDB10,CE01 1 349 1 414 2 763 364 166 48,8 95,4 2 763 2,2 7,6
-TICHY AMBIDEDI 1 E01,CS01,RDB05 818 954 1 772 354 77 46,2 85,7 1 772 4,6 5,0
-COM. FALEME 8 5 141 5 017 10 158 1 855 527 50,6 102,5 1 270 3,5 5,5
-DAKASSENOU 1 E01,CS01,RDB03 616 750 1 366 190 41 45,1 82,1 1 366 4,6 7,2
-DIABOUGOU 1 E01,RDB03 415 441 856 145 31 48,5 94,1 856 4,7 5,9
-DIALAMBI 1 E03,CS02,RDB05 741 746 1 487 247 66 49,8 99,3 1 487 3,7 6,0
-DIBOLI 1 E02,CS01,PH02,M01,ST02,RDB07 1 940 1 626 3 566 811 279 54,4 119,3 3 566 2,9 4,4
-DIGUI 1 E02,CS01,RDB06 358 320 678 87 20 52,8 111,9 678 4,4 7,8
-FOUROUKARANE 1 E01,CS01,RDB03 320 374 694 128 25 46,1 85,6 694 5,1 5,4
-NAHE PEULHS 1 E01,RDB03 364 352 716 114 35 50,8 103,4 716 3,3 6,3
-SAMBA DRAMANE 1 E01,RDB03 387 408 795 133 30 48,7 94,9 795 4,4 6,0
-COM. FEGUI 1 1 999 1 934 3 933 576 132 50,8 103,4 3 933 4,4 6,8
-FEGUI 1 U E02,CS02 1 999 1 934 3 933 576 132 50,8 103,4 3 933 4,4 6,8
-COM. GORY GOPELA 5 3 939 3 927 7 866 1 074 380 50,1 100,3 1 573 2,8 7,3
-GORY GOPELA 1 E02,CS02,M01,RDB12,BC02,CE01 913 897 1 810 250 72 50,4 101,8 1 810 3,5 7,2
-BOUGOUTINTI GOPELA 1 E01,RDB04,CE01 1 353 1 361 2 714 356 127 49,9 99,4 2 714 2,8 7,6
-DAG DAG 1 E01,RDB02 260 246 506 70 26 51,4 105,7 506 2,7 7,2
-KOUMAREFARA 1 E01,RDB07 789 841 1 630 212 86 48,4 93,8 1 630 2,5 7,7
-TICHY GANSOYE 1 E01,RDB02 624 582 1 206 186 69 51,7 107,2 1 206 2,7 6,5
-COM. GOUMERA 1 1 918 1 903 3 821 440 204 50,2 100,8 3 821 2,2 8,7
-GOUMERA 1 U E02,CS02,M01,RDB08,BC01 1 918 1 903 3 821 440 204 50,2 100,8 3 821 2,2 8,7
-COM. GUIDIMAKAN KERI KAFFO 10 9 798 10 234 20 032 3 130 1 005 48,9 95,7 2 003 3,1 6,4
-AMBIDEDI R.D. 1 E03,CS02,RDB08 1 186 1 241 2 427 414 120 48,9 95,6 2 427 3,5 5,9
-BOKO DIAMBY 1 E01,CS01,RDB02 401 460 861 130 32 46,6 87,2 861 4,1 6,6
-BOKORO 1 E01,RDB04 479 478 957 183 48 50,1 100,2 957 3,8 5,2
-BOUILLAGUI 1 E02,CS02,RDB05 876 938 1 814 255 85 48,3 93,4 1 814 3,0 7,1
-GAGNY 1 E01,CS01,RDB10 1 498 1 348 2 846 453 152 52,6 111,1 2 846 3,0 6,3
-GAKOURA RD 1 E04,CS03,PH02,M01,RDB05 1 229 1 411 2 640 383 143 46,6 87,1 2 640 2,7 6,9
-GOUNALA/GOUSSELA 1 E02,CS02,RDB11 1 582 1 697 3 279 569 162 48,2 93,2 3 279 3,5 5,8
-SANSANGUE 1 E02,CS02,RDB03 1 018 1 257 2 275 298 105 44,7 81,0 2 275 2,8 7,6
-SEKEKETE GAGNY 1 131 110 241 30 24 54,4 119,1 241 1,3 8,0
-TROULA 1 E02,CS02,PH01,RDB06 1 398 1 294 2 692 415 134 51,9 108,0 2 692 3,1 6,5
+TABLEAU P-1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE MENAGES¬¬(REGIONS,CERCLE)
+HOM. FEM. HOM. FEM. HOM. FEM. HOM. FEM. Total
+MALI
+Urbain 1 598 960 1 605 582 44 711 25 474 13 463 21 021 1 643 671 1 631 056 3 274 727 520 598 268 968
+Rural 5 266 974 5 492 672 294 345 199 944 48 473 54 927 5 561 319 5 692 616 11 253 935 1 834 695 979 289
+Total 6 865 934 7 098 254 339 056 225 418 61 936 75 948 7 204 990 7 323 672 14 528 662 2 355 293 1 248 257
+REGION DE KAYES
+Urbain 133 536 134 528 6 178 3 713 1 587 2 041 139 714 138 241 277 955 42 820 19 570
+Rural 787 342 829 536 56 127 42 655 11 380 10 852 843 469 872 191 1 715 660 262 922 110 300
+Total 920 878 964 064 62 305 46 368 12 967 12 893 983 183 1 010 432 1 993 615 305 742 129 870
+CERCLE DE KAYES
+Urbain 73 790 71 226 2 680 1 433 844 1 033 76 470 72 659 149 129 23 289 10 439
+Rural 171 134 175 715 10 791 6 403 2 329 1 865 181 925 182 118 364 043 57 474 22 819
+Total 244 924 246 941 13 471 7 836 3 173 2 898 258 395 254 777 513 172 80 763 33 258
+CERCLE DE BAFOULABE
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 107 066 113 102 7 541 5 938 1 608 1 806 114 607 119 040 233 647 35 266 15 267
+Total 107 066 113 102 7 541 5 938 1 608 1 806 114 607 119 040 233 647 35 266 15 267
+CERCLE DE DIEMA
+Urbain 3 708 4 315 140 176 62 53 3 848 4 491 8 339 1 263 359
+Rural 92 548 100 139 6 094 4 652 1 299 1 359 98 642 104 791 203 433 31 687 11 197
+Total 96 256 104 454 6 234 4 828 1 361 1 412 102 490 109 282 211 772 32 950 11 556
+CERCLE DE KENIEBA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 90 271 91 898 8 022 6 859 2 006 1 513 98 293 98 757 197 050 33 295 20 782
+Total 90 271 91 898 8 022 6 859 2 006 1 513 98 293 98 757 197 050 33 295 20 782
+CERCLE DE KITA
+Urbain 25 790 27 061 1 063 634 303 425 26 853 27 695 54 548 8 390 4 787
+Rural 173 278 181 834 12 082 10 789 2 508 2 510 185 360 192 623 377 983 53 739 21 561
+Total 199 068 208 895 13 145 11 423 2 811 2 935 212 213 220 318 432 531 62 129 26 348
+CERCLE DE NIORO
+Urbain 24 660 25 471 1 930 1 234 285 471 26 590 26 705 53 295 7 954 3 343
+Rural 78 456 85 686 6 993 4 496 742 1 152 85 449 90 182 175 631 27 470 10 254
+Total 103 116 111 157 8 923 5 730 1 027 1 623 112 039 116 887 228 926 35 424 13 597
+CERCLE DE YELIMANE
+Urbain 5 588 6 455 365 236 93 59 5 953 6 691 12 644 1 924 642
+Rural 74 589 81 162 4 604 3 518 888 647 79 193 84 680 163 873 23 991 8 420
+Total 80 177 87 617 4 969 3 754 981 706 85 146 91 371 176 517 25 915 9 062
+REGION DE KOULIKORO
+Urbain 64 538 65 402 1 521 1 017 347 599 66 059 66 419 132 478 20 035 11 787
+Rural 1 069 220 1 105 077  49 551 10 778 14 711 1 135 002 1 154 628 2 289 630 345 411 179 806
+Total 1 133 758 1 170 479 67 303 50 568 11 125 15 310 1 201 061 1 221 047 2 422 108 365 446 191 593
+CERCLE DE KOULIKORO
+Urbain 20 638 20 421 305 238 155 271 20 943 20 659 41 602 6 792 4 142
+Rural 77 195 78 541 7 393 5 880 699 988 84 588 84 421 169 009 26 276 11 163
+Total 97 833 98 962 7 698 6 118 854 1 259 105 531 105 080 210 611 33 068 15 305
+CERCLE DE BANAMBA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 86 367 89 669 8 737 6 232 880 1 337 95 104 95 901 191 005 28 278 10 857
+Total 86 367 89 669 8 737 6 232 880 1 337 95 104 95 901 191 005 28 278 10 857
+CERCLE DE DIOILA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 225 436 238 087 14 875 10 539 1 872 2 626 240 311 248 626 488 937 75 028 46 677
+Total 225 436 238 087 14 875 10 539 1 872 2 626 240 311 248 626 488 937 75 028 46 677
+Concessions
+Résident présent
+Résident absent
+Visiteur
+Division administrative
+Situation de résidence
+Populati
 
---- page 51 ----------------------------------------------------
-- Page 42 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-COM. TOYA 3 5 953 6 691 12 644 1 924 642 47,1 89,0 4 215 3,0 6,6
-BENNA 1 U E02,CS01,RDB04 475 486 961 119 50 49,4 97,7 961 2,4 8,1
-BILDADJI 1 U E01,CS01,RDB11 644 764 1 408 210 70 45,7 84,3 1 408 3,0 6,7
-YAGUINE 1 U E04,CS04,PH02,M01,ST01,RDB18,BC01,CE01 4 834 5 441 10 275 1 595 522 47,0 88,8 10 275 3,1 6,4
-COM. TRINGA 4 5 966 6 576 12 542 1 917 657 47,6 90,7 3 136 2,9 6,5
-DIAKONE 1 E02,CS01,RDB09 1 117 1 256 2 373 391 152 47,1 88,9 2 373 2,6 6,1
-DIALAKA 1 E03,CS02,ST01,RDB17 1 739 1 958 3 697 573 190 47,0 88,8 3 697 3,0 6,5
-LAMBATARA 1 E02,CS02,RDB04,BC01 1 693 1 868 3 561 494 157 47,5 90,6 3 561 3,1 7,2
-MARENA 1 E02,CS02,PH01,RDB20,CE01 1 417 1 494 2 911 459 158 48,7 94,8 2 911 2,9 6,3
+--- page 15 ----------------------------------------------------
+TABLEAU P-1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE MENAGES¬¬(REGIONS,CERCLE)
+HOM. FEM. HOM. FEM. HOM. FEM. HOM. FEM. Total
+Concessions
+Résident présent
+Résident absent
+Visiteur
+Division administrative
+Situation de résidence
+Population résidente
+Ménages
+CERCLE DE KANGABA
+Urbain 3 030 3 169 104 73 4 10 3 134 3 242 6 376 762 181
+Rural 45 073 46 107 1 495 1 347 584 584 46 568 47 454 94 022 13 638 5 478
+Total 48 103 49 276 1 599 1 420 588 594 49 702 50 696 100 398 14 400 5 659
+CERCLE DE KATI
+Urbain 40 870 41 812 1 112 706 188 318 41 982 42 518 84 500 12 481 7 464
+Rural 418 233 423 558 17 102 13 360 4 770 5 964 435 335 436 918 872 253 131 584 72 986
+Total 459 103 465 370 18 214 14 066 4 958 6 282 477 317 479 436 956 753 144 065 80 450
+CERCLE DE KOLOKANI
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 107 002 112 860 6 654 5 984 1 035 1 698 113 656 118 844 232 500 32 619 15 261
+Total 107 002 112 860 6 654 5 984 1 035 1 698 113 656 118 844 232 500 32 619 15 261
+CERCLE DE NARA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 109 914 116 255 9 526 6 209 938 1 514 119 440 122 464 241 904 37 988 17 384
+Total 109 914 116 255 9 526 6 209 938 1 514 119 440 122 464 241 904 37 988 17 384
+REGION DE SIKASSO
+Urbain 207 739 208 516 6 918 3 427 1 567 2 122 214 657 211 943 426 600 66 908 34 198
+Rural 1 042 285 1 092 615 46 961 34 718 10 837 11 176 1 089 246 1 127 333 2 216 579 339 866 163 423
+Total 1 250 024 1 301 131 53 879 38 145 12 404 13 298 1 303 903 1 339 276 2 643 179 406 774 197 621
+CERCLE DE SIKASSO
+Urbain 111 355 111 106 2 816 1 341 796 1 007 114 171 112 447 226 618 36 444 17 316
+Rural 237 606 254 991 9 435 6 334 2 408 2 024 247 041 261 325 508 366 76 354 29 389
+Total 348 961 366 097 12 251 7 675 3 204 3 031 361 212 373 772 734 984 112 798 46 705
+CERCLE DE BOUGOUNI
+Urbain 28 325 28 267 1 256 690 260 354 29 581 28 957 58 538 8 579 5 275
+Rural 183 955 194 687 11 894 9 472 1 823 2 283 195 849 204 159 400 008 61 171 29 637
+Total 212 280 222 954 13 150 10 162 2 083 2 637 225 430 233 116 458 546 69 750 34 912
+CERCLE DE KADIOLO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 120 137 114 543 5 309 3 422 1 668 1 657 125 446 117 965 243 411 42 810 22 263
+Total 120 137 114 543 5 309 3 422 1 668 1 657 125 446 117 965 243 411 42 810 22 263
+CERCLE DE KOLONDIEBA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 93 073 100 387 4 743 3 259 996 1 222 97 816 103 646 201 462 30 079 14 730
+Total 93 073 100 387 4 743 3 259 996 1 222 97 816 103 646 201 462 30 079 14 730
+CERCLE DE KOUTIALA
+Urbain 68 059 69 143 2 846 1 396 511 761 70 905 70 539 141 444 21 885 11 607
+Rural 206 198 220 947 7 165 4 699 1 916 1 911 213 363 225 646 439 009 63 262 32 234
+Total 274 257 290 090 10 011 6 095 2 427 2 672 284 268 296 185 580 453 85 147 43 841
+CERCLE DE YANFOLILA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 100 504 103 091 4 767 4 355 1 155 1 053 105 271 107 446 212 717 32 355 13 380
+Total 100 504 103 091 4 767 4 355 1 155 1 053 105 271 107 446 212 717 32 355 13 380
+CERCLE DE YOROSSO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 100 812 103 969 3 648 3 177 871 1 026 104 460 107 146 211 606 33 835 21 790
+Total 100 812 103 969 3 648 3 177 871 1 026 104 460 107 146 211 606 33 835 21 790
+REGION DE SEGOU
+Urbain 98 275 98 830 2 084 1 279 592 879 100 359 100 109 200 468 31 506 19 175
+Rural 1 002 107 1 043 662 54 199 37 913 7 856 8 712 1 056 306 1 081 575 2 137 881 356 182 207 136
+Total 1 100 382 1 142 492 56 283 39 192 8 448 9 591 1 156 665 1 181 684 2 338 349 387 688 226 311
+Résultats définitifs, RGPH 2009 -
+Série Démographique
+Page 2
 
---- page 302 ----------------------------------------------------
-- Page 284 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-KAREIBANDIA 1 E05,CS03,M01,RDB11 3 146 3 089 6 235 928 613 50,5 101,8 6 235 1,5 6,7
-KOCHAKAREI 1 E03,CS02,RDB09 2 064 2 139 4 203 653 365 49,1 96,5 4 203 1,8 6,4
-KOKOROM 1 E04,CS02,RDB06 1 138 1 153 2 291 342 233 49,7 98,7 2 291 1,5 6,7
-MAGANDOUE 1 E02,CS01,RDB02 3 564 3 871 7 435 1 219 767 47,9 92,1 7 435 1,6 6,1
-M'BALDE 1 E06,CS04,M01,RDB09 433 412 845 156 115 51,2 105,1 845 1,4 5,4
-SEINA 1 E01,RDB03 708 665 1 373 261 189 51,6 106,5 1 373 1,4 5,3
-TCHINABATOU 1 * 213 186 399 71 67 53,4 114,5 399 1,1 5,6
-ZINDIGA 1 E01,RDB07 806 719 1 525 218 141 52,9 112,1 1 525 1,5 7,0
-COM. TILEMSI 15 5 227 4 623 9 850 1 463 1 413 53,1 113,1 657 1,0 6,7
-AHEL BADI 1 * 319 287 606 111 110 52,6 111,1 606 1,0 5,5
-AHELSIDIALAMINE 1 * 395 378 773 121 121 51,1 104,5 773 1,0 6,4
-IDNANE TILEMSI 1 * 132 122 254 48 48 52,0 108,2 254 1,0 5,3
-IHAYAWANE 1 * 393 314 707 118 117 55,6 125,2 707 1,0 6,0
-IKADEYANE 1 * 363 306 669 110 95 54,3 118,6 669 1,2 6,1
-IKARBAGANENE II 1 * 1 710 1 393 3 103 375 363 55,1 122,8 3 103 1,0 8,3
-IMAGRANE ABOUCRINE 1 * 305 291 596 101 96 51,2 104,8 596 1,1 5,9
-KEL AHAD 1 * 388 345 733 121 105 52,9 112,5 733 1,2 6,1
-KEL BELLA 1 * 59 39 98 18 18 60,2 151,3 98 1,0 5,4
-KEL GHALA 1 * 115 102 217 31 31 53,0 112,7 217 1,0 7,0
-KEL GUANCHACHE 1 * 193 171 364 64 64 53,0 112,9 364 1,0 5,7
-KEL TAKARAGHATE 1 * 254 236 490 79 79 51,8 107,6 490 1,0 6,2
-KEL TANDERBATEN 1 * 377 432 809 100 100 46,6 87,3 809 1,0 8,1
-KEL TONDIBI 1 * 148 140 288 42 42 51,4 105,7 288 1,0 6,9
-TAKARANGHAT ALA 1 * 76 67 143 24 24 53,1 113,4 143 1,0 6,0
-CERCLE DE ANSONGO 107 66 208 65 745 131 953 21 966 17 821 50,2 100,7 1 233 1,2 6,0
-COM. ANSONGO 9 14 707 15 384 30 091 4 841 3 778 48,9 95,6 3 343 1,3 6,2
-AFORGAL 1 * 60 50 110 13 12 54,5 120,0 110 1,1 8,5
-ANSONGO 1 E04,CS01,M01,RDB15,BC01 4 166 4 192 8 358 1 232 1 035 49,8 99,4 8 358 1,2 6,8
-BAZI GOURMA 1 E03,CS02,RDB01 2 886 3 085 5 971 1 007 792 48,3 93,5 5 971 1,3 5,9
-BAZI HAOUSSA 1 E01,CS01,RDB13 3 194 3 432 6 626 1 007 813 48,2 93,1 6 626 1,2 6,6
-MONZONGA 1 E03,CS01,RDB06 2 174 2 286 4 460 784 517 48,7 95,1 4 460 1,5 5,7
-OULAD BA ALI 1 * 151 87 238 51 51 63,4 173,6 238 1,0 4,7
-OULAD MOULOUK 1 * 140 142 282 49 41 49,6 98,6 282 1,2 5,8
-SEYNA BELLAH 1 505 539 1 044 180 135 48,4 93,7 1 044 1,3 5,8
-SEYNA SONRHAI 1 E04,CS03,RDB04 1 431 1 571 3 002 518 382 47,7 91,1 3 002 1,4 5,8
-COM. BARA 6 7 264 7 828 15 092 2 296 1 918 48,1 92,8 2 515 1,2 6,6
-ABARNAFORA IGUIBAYANE 1 * 420 466 886 133 133 47,4 90,1 886 1,0 6,7
-BANGANA FORAS 1 * 455 532 987 184 183 46,1 85,5 987 1,0 5,4
-BARA 1 E02,CS01,M01,RDB10 1 859 2 057 3 916 541 488 47,5 90,4 3 916 1,1 7,2
-KEL BOUGOU 1 * 276 293 569 98 97 48,5 94,2 569 1,0 5,8
-TABANGO 1 E02,RDB04 2 126 2 258 4 384 683 568 48,5 94,2 4 384 1,2 6,4
-TANNAL 1 E03,CS01,M01,RDB02 2 128 2 222 4 350 657 449 48,9 95,8 4 350 1,5 6,6
-COM. BOURRA 14 9 397 9 329 18 726 2 941 2 269 50,2 100,7 1 338 1,3 6,4
-BAGANABE 1 1 * 256 223 479 81 80 53,4 114,8 479 1,0 5,9
-BOUBACAR ALAMIN 1 * 318 275 593 116 115 53,6 115,6 593 1,0 5,1
+--- page 16 ----------------------------------------------------
+TABLEAU P-1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE MENAGES¬¬(REGIONS,CERCLE)
+HOM. FEM. HOM. FEM. HOM. FEM. HOM. FEM. Total
+Concessions
+Résident présent
+Résident absent
+Visiteur
+Division administrative
+Situation de résidence
+Population résidente
+Ménages
+CERCLE DE SEGOU
+Urbain 65 343 65 814 1 476 868 427 621 66 819 66 682 133 501 20 782 11 694
+Rural 262 773 275 683 14 791 9 367 1 759 1 836 277 564 285 050 562 614 92 890 49 257
+Total 328 116 341 497 16 267 10 235 2 186 2 457 344 383 351 732 696 115 113 672 60 951
+CERCLE DE BARAOUELI
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 91 705 96 706 8 409 6 046 854 947 100 114 102 752 202 866 34 460 13 840
+Total 91 705 96 706 8 409 6 046 854 947 100 114 102 752 202 866 34 460 13 840
+CERCLE DE BLA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 132 468 141 803 5 732 3 675 1 123 1 307 138 200 145 478 283 678 43 312 22 538
+Total 132 468 141 803 5 732 3 675 1 123 1 307 138 200 145 478 283 678 43 312 22 538
+CERCLE DE MACINA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 110 826 116 471 5 026 3 754 1 154 1 270 115 852 120 225 236 077 40 826 25 595
+Total 110 826 116 471 5 026 3 754 1 154 1 270 115 852 120 225 236 077 40 826 25 595
+CERCLE DE NIONO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 175 826 179 420 5 549 4 076 1 820 1 739 181 375 183 496 364 871 59 080 35 641
+Total 175 826 179 420 5 549 4 076 1 820 1 739 181 375 183 496 364 871 59 080 35 641
+CERCLE DE SAN
+Urbain 32 932 33 016 608 411 165 258 33 540 33 427 66 967 10 724 7 481
+Rural 122 701 127 538 9 452 6 955 533 682 132 153 134 493 266 646 44 757 30 834
+Total 155 633 160 554 10 060 7 366 698 940 165 693 167 920 333 613 55 481 38 315
+CERCLE DE TOMINIAN
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 105 808 106 041 5 240 4 040 613 931 111 048 110 081 221 129 40 857 29 431
+Total 105 808 106 041 5 240 4 040 613 931 111 048 110 081 221 129 40 857 29 431
+REGION DE MOPTI
+Urbain 97 234 97 608 2 977 1 679 864 960 100 211 99 287 199 498 34 370 18 686
+Rural 861 040 904 665 45 758 25 248 4 976 6 030 906 798 929 913 1 836 711 344 382 190 965
+Total 958 274 1 002 273 48 735 26 927 5 840 6 990 1 007 009 1 029 200 2 036 209 378 752 209 651
+CERCLE DE MOPTI
+Urbain 58 731 59 907 1 349 799 443 538 60 080 60 706 120 786 20 701 10 457
+Rural 116 943 122 487 6 003 2 686 717 712 122 946 125 173 248 119 47 196 27 693
+Total 175 674 182 394 7 352 3 485 1 160 1 250 183 026 185 879 368 905 67 897 38 150
+CERCLE DE BANDIAGARA
+Urbain 8 575 8 157 272 162 92 119 8 847 8 319 17 166 2 960 1 569
+Rural 135 386 149 050 7 310 4 544 604 669 142 696 153 594 296 290 58 199 37 060
+Total 143 961 157 207 7 582 4 706 696 788 151 543 161 913 313 456 61 159 38 629
+CERCLE DE BANKASS
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 126 257 128 856 5 933 3 730 907 956 132 190 132 586 264 776 44 498 20 671
+Total 126 257 128 856 5 933 3 730 907 956 132 190 132 586 264 776 44 498 20 671
+CERCLE DE DJENNE
+Urbain 12 836 12 751 484 196 38 72 13 320 12 947 26 267 4 898 3 299
+Rural 85 042 90 135 4 378 2 591 500 502 89 420 92 726 182 146 38 026 25 201
+Total 97 878 102 886 4 862 2 787 538 574 102 740 105 673 208 413 42 924 28 500
+CERCLE DE DOUENTZA
+Urbain 11 724 11 244 645 392 125 119 12 369 11 636 24 005 3 718 2 206
+Rural 105 020 106 618 7 305 3 677 335 552 112 325 110 295 222 620 44 077 23 764
+Total 116 744 117 862 7 950 4 069 460 671 124 694 121 931 246 625 47 795 25 970
+Résultats définitifs, RGPH 2009 -
+Série Démographique
+Page 3
 
---- page 303 ----------------------------------------------------
-- Page 285 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-GASSI 1 E01,RDB01,BC01 458 443 901 129 86 50,8 103,4 901 1,5 7,0
-GOLEA 1 E01,RDB03 805 927 1 732 273 213 46,5 86,8 1 732 1,3 6,3
-GOLLINGO 1 E01,CS01,M01 500 537 1 037 170 96 48,2 93,1 1 037 1,8 6,1
-HAMALKOUNTI 1 * 212 207 419 92 92 50,6 102,4 419 1,0 4,6
-KEL TAFOULANE 1 * 263 250 513 86 83 51,3 105,2 513 1,0 6,0
-KOUNSOUM 1 E03,CS02,PH01,RDB02 2 016 1 935 3 951 586 441 51,0 104,2 3 951 1,3 6,7
-LELLEHOYE 1 E04,CS03,M01,RDB02,BC02 1 490 1 450 2 940 461 355 50,7 102,8 2 940 1,3 6,4
-MAMADOU TALLATO 1 * 119 128 247 47 8 48,2 93,0 247 5,9 5,3
-SITAKAL 1 * 331 280 611 110 110 54,2 118,2 611 1,0 5,6
-TASSIGA 1 E03,CS02,M01,RDB06 1 666 1 683 3 349 516 373 49,7 99,0 3 349 1,4 6,5
-TONDITIHIO 1 E01,BC01 540 545 1 085 157 116 49,8 99,1 1 085 1,4 6,9
-YOUNI 1 E01,RDB02 423 446 869 117 101 48,7 94,8 869 1,2 7,4
-COM. OUATTAGOUNA 19 15 153 15 110 30 263 5 170 3 675 50,1 100,3 1 593 1,4 5,9
-BANGANABE 2 1 * 288 253 541 92 91 53,2 113,8 541 1,0 5,9
-BENTIA 1 E01,CS01,RDB05 1 473 1 426 2 899 489 391 50,8 103,3 2 899 1,3 5,9
-BOUBACAR EGGA 1 * 143 157 300 56 53 47,7 91,1 300 1,1 5,4
-EFRAG FRAG 1 * 427 369 796 143 126 53,6 115,7 796 1,1 5,6
-FAFA 1 E03,M01,RDB05,BC02 2 805 2 663 5 468 931 752 51,3 105,3 5 468 1,2 5,9
-IBANDZATANE 2 1 * 221 235 456 90 90 48,5 94,0 456 1,0 5,1
-KAMOGA 1 * 274 271 545 119 48 50,3 101,1 545 2,5 4,6
-KAROU 1 E03,CS01,M02,RDB06,BC01 2 861 2 789 5 650 887 554 50,6 102,6 5 650 1,6 6,4
-KEL AROKASS 1 * 413 457 870 190 190 47,5 90,4 870 1,0 4,6
-KEL EGUEF 1 * 200 243 443 107 24 45,1 82,3 443 4,5 4,1
-KEL EZIT 1 * 342 382 724 123 49 47,2 89,5 724 2,5 5,9
-KEL GUEGUELENE 1 * 53 64 117 22 6 45,3 82,8 117 3,7 5,3
-KEL SOUGHANE 1 * 333 310 643 80 80 51,8 107,4 643 1,0 8,0
-KEL TAMADAS 1 * 151 165 316 58 49 47,8 91,5 316 1,2 5,4
-LABBEZANGA 1 E02,CS01,M01,RDB02 1 831 1 861 3 692 630 347 49,6 98,4 3 692 1,8 5,9
-MELLEGUEZENE 1 * 60 71 131 29 27 45,8 84,5 131 1,1 4,5
-OUATTAGOUNA 1 E03,CS02,M01,RDB05,BC02 2 596 2 742 5 338 882 602 48,6 94,7 5 338 1,5 6,1
-PEULH GOULOBE I 1 * 376 363 739 142 141 50,9 103,6 739 1,0 5,2
-PEULH IXANANE 1 * 306 289 595 100 55 51,4 105,9 595 1,8 6,0
-COM. TALATAYE 11 7 398 6 625 14 023 2 465 2 384 52,8 111,7 1 275 1,0 5,7
-AGLITARMA 1 * 200 218 418 65 64 47,8 91,7 418 1,0 6,4
-AHEL ACHEICK SIDI ALBAKAYE 1 * 27 18 45 6 6 60,0 150,0 45 1,0 7,5
-FORGERON 1 * 656 553 1 209 212 184 54,3 118,6 1 209 1,2 5,7
-GROUPEMENT BELLA 1 * 223 194 417 62 61 53,5 114,9 417 1,0 6,7
-IBOGOLITANE 1 * 248 220 468 90 88 53,0 112,7 468 1,0 5,2
-IHANAKATANE II 1 * 2 193 1 985 4 178 751 730 52,5 110,5 4 178 1,0 5,6
-IHANAKATANE III 1 * 1 942 1 695 3 637 607 602 53,4 114,6 3 637 1,0 6,0
-KEL ABOKOT 1 * 544 443 987 179 175 55,1 122,8 987 1,0 5,5
-KEL AZAR 1 * 647 639 1 286 255 255 50,3 101,3 1 286 1,0 5,0
-KEL SOSSOTANE 1 * 484 406 890 162 148 54,4 119,2 890 1,1 5,5
-TALATAYE 1 E02,CS02,M02,RDB07 234 254 488 76 71 48,0 92,1 488 1,1 6,4
-COM. TESSIT 40 7 142 6 624 13 766 2 481 2 286 51,9 107,8 344 1,1 5,5
-ABBAGAZGAZ 1 * 219 219 438 77 77 50,0 100,0 438 1,0 5,7
-ARCROU 1 * 73 65 138 39 37 52,9 112,3 138 1,1 3,5
+--- page 17 ----------------------------------------------------
+TABLEAU P-1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE MENAGES¬¬(REGIONS,CERCLE)
+HOM. FEM. HOM. FEM. HOM. FEM. HOM. FEM. Total
+Concessions
+Résident présent
+Résident absent
+Visiteur
+Division administrative
+Situation de résidence
+Population résidente
+Ménages
+CERCLE DE KORO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 172 449 179 586 6 151 4 401 948 1 334 178 600 183 987 362 587 61 209 28 404
+Total 172 449 179 586 6 151 4 401 948 1 334 178 600 183 987 362 587 61 209 28 404
+CERCLE DE TENENKOU
+Urbain 5 368 5 549 227 130 166 112 5 595 5 679 11 274 2 093 1 155
+Rural 70 200 75 113 4 423 1 914 659 875 74 623 77 027 151 650 30 604 16 379
+Total 75 568 80 662 4 650 2 044 825 987 80 218 82 706 162 924 32 697 17 534
+CERCLE DE YOUWAROU
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 49 743 52 820 4 255 1 705 306 430 53 998 54 525 108 523 20 573 11 793
+Total 49 743 52 820 4 255 1 705 306 430 53 998 54 525 108 523 20 573 11 793
+REGION DE TOMBOUCTOU
+Urbain 42 686 42 504 1 647 715 369 357 44 333 43 219 87 552 15 264 12 386
+Rural 276 305 287 917 16 934 6 085 1 575 2 248 293 239 294 002 587 241 106 398 64 501
+Total 318 991 330 421 18 581 6 800 1 944 2 605 337 572 337 221 674 793 121 662 76 887
+CERCLE DE TOMBOUCTOU
+Urbain 27 052 26 321 863 393 221 214 27 915 26 714 54 629 9 376 7 862
+Rural 36 173 34 918 1 113 495 146 193 37 286 35 413 72 699 12 838 9 228
+Total 63 225 61 239 1 976 888 367 407 65 201 62 127 127 328 22 214 17 090
+CERCLE DE DIRE
+Urbain 9 641 9 935 552 209 95 89 10 193 10 144 20 337 3 429 2 422
+Rural 41 526 43 956 2 859 983 264 263 44 385 44 939 89 324 15 885 9 361
+Total 51 167 53 891 3 411 1 192 359 352 54 578 55 083 109 661 19 314 11 783
+CERCLE DE GOUNDAM
+Urbain 5 993 6 248 232 113 53 54 6 225 6 361 12 586 2 459 2 102
+Rural 65 723 68 590 3 350 1 080 326 453 69 073 69 670 138 743 26 271 15 035
+Total 71 716 74 838 3 582 1 193 379 507 75 298 76 031 151 329 28 730 17 137
+CERCLE DE GOURMA RHAROUS
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 50 528 55 034 3 998 1 473 426 650 54 526 56 507 111 033 19 120 12 393
+Total 50 528 55 034 3 998 1 473 426 650 54 526 56 507 111 033 19 120 12 393
+CERCLE DE NIAFUNKE
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 82 355 85 419 5 614 2 054 413 689 87 969 87 473 175 442 32 284 18 484
+Total 82 355 85 419 5 614 2 054 413 689 87 969 87 473 175 442 32 284 18 484
+REGION DE GAO
+Urbain 54 560 56 000 2 139 1 142 539 670 56 699 57 142 113 841 18 491 11 573
+Rural 206 565 209 898 8 355 3 645 1 001 1 156 214 920 213 543 428 463 71 714 55 608
+Total 261 125 265 898 10 494 4 787 1 540 1 826 271 619 270 685 542 304 90 205 67 181
+CERCLE DE GAO
+Urbain 42 343 42 005 1 250 755 316 417 43 593 42 760 86 353 13 512 8 227
+Rural 72 650 74 948 3 783 1 801 279 305 76 433 76 749 153 182 24 902 18 795
+Total 114 993 116 953 5 033 2 556 595 722 120 026 119 509 239 535 38 414 27 022
+CERCLE DE ANSONGO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 63 956 64 765 2 252 980 437 476 66 208 65 745 131 953 21 966 17 822
+Total 63 956 64 765 2 252 980 437 476 66 208 65 745 131 953 21 966 17 822
+CERCLE DE BOUREM
+Urbain 12 217 13 995 889 387 223 253 13 106 14 382 27 488 4 979 3 346
+Rural 41 955 44 882 1 542 493 160 217 43 497 45 375 88 872 15 338 10 337
+Total 54 172 58 877 2 431 880 383 470 56 603 59 757 116 360 20 317 13 683
+Résultats définitifs, RGPH 2009 -
+Série Démographique
+Page 4
 
---- page 304 ----------------------------------------------------
-- Page 286 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-BATANDI 1 * 27 28 55 10 10 49,1 96,4 55 1,0 5,5
-BELLAH HADAKATANE 1 * 832 822 1 654 259 231 50,3 101,2 1 654 1,1 6,4
-DJEL GODI 1 * 300 281 581 108 107 51,6 106,8 581 1,0 5,4
-EGUEDECH I 1 * 49 38 87 20 20 56,3 128,9 87 1,0 4,4
-EGUEDECH II 1 * 192 191 383 74 74 50,1 100,5 383 1,0 5,2
-FITILI 1 * 137 142 279 58 58 49,1 96,5 279 1,0 4,8
-FOULANE KEL GOGUI 1 * 48 51 99 19 19 48,5 94,1 99 1,0 5,2
-GASSAL 1 * 66 59 125 28 28 52,8 111,9 125 1,0 4,5
-HAROUM 1 * 152 162 314 57 55 48,4 93,8 314 1,0 5,5
-IBARGANENE 1 * 189 196 385 73 73 49,1 96,4 385 1,0 5,3
-IHADAKATANE 1 * 124 98 222 42 42 55,9 126,5 222 1,0 5,3
-IMARAD I 1 * 837 691 1 528 295 286 54,8 121,1 1 528 1,0 5,2
-IMINAHAG 1 * 51 43 94 18 18 54,3 118,6 94 1,0 5,2
-INANAZMANE 1 * 37 36 73 12 12 50,7 102,8 73 1,0 6,1
-KAKO 1 * 270 201 471 86 85 57,3 134,3 471 1,0 5,5
-KALIKA 1 * 138 130 268 51 51 51,5 106,2 268 1,0 5,3
-KEL GOSSI FOULA 1 * 141 96 237 49 49 59,5 146,9 237 1,0 4,8
-MARIKANGA 1 * 96 103 199 41 40 48,2 93,2 199 1,0 4,9
-OUDALAN CHAGAREN II 1 * 293 246 539 106 94 54,4 119,1 539 1,1 5,1
-OUDALAN KAWALAN I 1 * 410 379 789 155 150 52,0 108,2 789 1,0 5,1
-OUDALAN KAWALAN II 1 * 100 78 178 40 40 56,2 128,2 178 1,0 4,5
-SAKAREWEL 1 * 119 130 249 35 32 47,8 91,5 249 1,1 7,1
-TABAGUE 1 * 41 39 80 11 10 51,3 105,1 80 1,1 7,3
-TABAKATT 1 * 264 269 533 66 56 49,5 98,1 533 1,2 8,1
-TADJAPATE 1 * 187 168 355 64 63 52,7 111,3 355 1,0 5,5
-TANGUIBA 1 * 46 53 99 14 12 46,5 86,8 99 1,2 7,1
-TARAJABAT 1 * 155 139 294 72 72 52,7 111,5 294 1,0 4,1
-TESSIT 1 E01,CS01,PH02,M01,RDB05,BC02 368 328 696 134 26 52,9 112,2 696 5,2 5,2
-TIDJOULAF 1 * 102 106 208 24 24 49,0 96,2 208 1,0 8,7
-TIMALAMOMEN 1 * 171 153 324 63 63 52,8 111,8 324 1,0 5,1
-TINAGAGUI 1 * 391 390 781 121 112 50,1 100,3 781 1,1 6,5
-TINAN NORD 1 * 87 76 163 28 28 53,4 114,5 163 1,0 5,8
-TINISS 1 * 44 47 91 23 23 48,4 93,6 91 1,0 4,0
-TINTAGABALENE 1 * 14 11 25 4 4 56,0 127,3 25 1,0 6,3
-TINTIBIKTEN 1 * 84 94 178 20 20 47,2 89,4 178 1,0 8,9
-TOFAGADOD 1 * 156 165 321 44 44 48,6 94,5 321 1,0 7,3
-WAHIDJI 1 * 73 60 133 24 24 54,9 121,7 133 1,0 5,5
-WALIGAREY 1 * 59 41 100 17 17 59,0 143,9 100 1,0 5,9
-COM. TIN-HAMA 8 5 147 4 845 9 992 1 772 1 511 51,5 106,2 1 249 1,2 5,6
-ANGHATANE 1 * 640 632 1 272 240 173 50,3 101,3 1 272 1,4 5,3
-CHIDIHAREN 1 * 286 245 531 93 92 53,9 116,7 531 1,0 5,7
-EZAS-ZAB 1 * 731 755 1 486 243 60 49,2 96,8 1 486 4,1 6,1
-IDOURFANE ALMERDAS 1 * 350 333 683 127 127 51,2 105,1 683 1,0 5,4
-IDOURFANE ASSALAH 1 * 1 420 1 235 2 655 440 437 53,5 115,0 2 655 1,0 6,0
-IDOURFANE AWA AWA 1 * 734 730 1 464 278 275 50,1 100,5 1 464 1,0 5,3
-IDOURFANE TAZIDERT 1 * 230 230 460 87 86 50,0 100,0 460 1,0 5,3
-KEL GOUNHANE 1 * 756 685 1 441 264 261 52,5 110,4 1 441 1,0 5,5
-CERCLE DE BOUREM 114 56 603 59 757 116 360 20 317 13 683 48,6 94,7 1 021 1,5 5,7
+--- page 18 ----------------------------------------------------
+TABLEAU P-1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE MENAGES¬¬(REGIONS,CERCLE)
+HOM. FEM. HOM. FEM. HOM. FEM. HOM. FEM. Total
+Concessions
+Résident présent
+Résident absent
+Visiteur
+Division administrative
+Situation de résidence
+Population résidente
+Ménages
+CERCLE DE MENAKA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 28 004 25 303 778 371 125 158 28 782 25 674 54 456 9 508 8 654
+Total 28 004 25 303 778 371 125 158 28 782 25 674 54 456 9 508 8 654
+REGION DE KIDAL
+Urbain 13 821 11 868 175 105 91 61 13 996 11 973 25 969 4 823 4 238
+Rural 22 110 19 302 229 129 70 42 22 339 19 431 41 770 7 820 7 550
+Total 35 931 31 170 404 234 161 103 36 335 31 404 67 739 12 643 11 788
+CERCLE DE KIDAL
+Urbain 13 821 11 868 175 105 91 61 13 996 11 973 25 969 4 823 4 238
+Rural 3 999 3 444 34 20 6 3 4 033 3 464 7 497 1 280 1 266
+Total 17 820 15 312 209 125 97 64 18 029 15 437 33 466 6 103 5 504
+CERCLE DE ABEIBARA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 5 464 4 798 24 10 3 4 5 488 4 808 10 296 1 796 1 780
+Total 5 464 4 798 24 10 3 4 5 488 4 808 10 296 1 796 1 780
+CERCLE DE TESSALIT
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 8 270 7 435 154 96 59 35 8 424 7 531 15 955 3 107 2 959
+Total 8 270 7 435 154 96 59 35 8 424 7 531 15 955 3 107 2 959
+CERCLE DE TIN ESSAKO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 4 377 3 625 17 3 2 0 4 394 3 628 8 022 1 637 1 545
+Total 4 377 3 625 17 3 2 0 4 394 3 628 8 022 1 637 1 545
+DISTRICT DE BAMAKO
+Total 886 571 890 326 21 072 12 397 7 507 13 332 907 643 902 723 1 810 366 286 381 137 355
+Résultats définitifs, RGPH 2009 -
+Série Démographique
+Page 5
 
---- page 307 ----------------------------------------------------
-- Page 289 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-BORNO 1 E01,RDB01 680 721 1 401 205 152 48,5 94,3 1 401 1,3 6,8
-BOSSALIA 1 E01,RDB01 341 456 797 117 93 42,8 74,8 797 1,3 6,8
-BOTTANGA 1 E01,CS01,M01,RDB01 366 403 769 137 123 47,6 90,8 769 1,1 5,6
-CHEOUI 1 E01 356 407 763 133 104 46,7 87,5 763 1,3 5,7
-DERIENNE 1 459 493 952 112 105 48,2 93,1 952 1,1 8,5
-FIA 1 E01,RDB01 1 107 1 253 2 360 457 289 46,9 88,3 2 360 1,6 5,2
-GAMINAKOIRA 1 RDB01 167 199 366 62 44 45,6 83,9 366 1,4 5,9
-GAREYE GOUNGO 1 E01 589 707 1 296 211 133 45,4 83,3 1 296 1,6 6,1
-ICHOUREDJANE 1 * 207 194 401 82 36 51,6 106,7 401 2,3 4,9
-IDJARESSWANE 1 * 256 237 493 92 92 51,9 108,0 493 1,0 5,4
-KEL ADRAR 1 * 49 49 98 20 19 50,0 100,0 98 1,1 4,9
-KEL INALCHINAL 1 * 216 197 413 88 85 52,3 109,6 413 1,0 4,7
-KEL TABAHO (GAREYGOUNGO) 1 * 43 54 97 27 25 44,3 79,6 97 1,1 3,6
-KEL TADJIWALT 1 * 215 194 409 70 63 52,6 110,8 409 1,1 5,8
-KEL TAGHO 1 * 87 85 172 30 30 50,6 102,4 172 1,0 5,7
-KORGUEYE 1 RDB01 214 233 447 79 30 47,9 91,8 447 2,6 5,7
-TAGALIFT GOURMA 1 * 70 74 144 12 12 48,6 94,6 144 1,0 12,0
-TAGALIFT HOUASSA 1 * 61 52 113 15 15 54,0 117,3 113 1,0 7,5
-TAKAMBA 1 E02,CS01,RDB02 541 583 1 124 169 103 48,1 92,8 1 124 1,6 6,7
-TEMERA 1 E02,CS01,M01,RDB04,BC01 1 118 1 157 2 275 352 258 49,1 96,6 2 275 1,4 6,5
-TENDABESSANE 1 ** BC01,CE03 353 395 748 123 20 47,2 89,4 748 6,2 6,1
-TIERA BARIA 1 E01,CS01,RDB02 240 321 561 79 67 42,8 74,8 561 1,2 7,1
-TINSAKOU 1 RDB02 270 333 603 104 78 44,8 81,1 603 1,3 5,8
-TOME 1 * 12 18 30 5 3 40,0 66,7 30 1,7 6,0
-CERCLE DE MENAKA 75 28 782 25 674 54 456 9 508 8 654 52,9 112,1 726 1,1 5,7
-COM. MENAKA 21 11 828 10 831 22 659 3 862 3 313 52,2 109,2 1 079 1,2 5,9
-AKABARI 1 * 265 268 533 97 92 49,7 98,9 533 1,1 5,5
-ARABES II 1 * 338 316 654 129 129 51,7 107,0 654 1,0 5,1
-DAGUITAFFA 1 * 358 316 674 85 85 53,1 113,3 674 1,0 7,9
-IBOGOLITA ANSONGO 1 * 629 511 1 140 172 112 55,2 123,1 1 140 1,5 6,6
-IBOGOLITENE 1 * 765 713 1 478 257 255 51,8 107,3 1 478 1,0 5,8
-IBOHANANE 1 * 242 243 485 84 72 49,9 99,6 485 1,2 5,8
-IDOGUIRITANE 1 * 791 655 1 446 237 235 54,7 120,8 1 446 1,0 6,1
-IFOGHAS 1 * 303 268 571 110 109 53,1 113,1 571 1,0 5,2
-IGDALANE 1 * 14 15 29 4 4 48,3 93,3 29 1,0 7,3
-INARIEKIDANE 1 * 14 12 26 6 6 53,8 116,7 26 1,0 4,3
-KEL AGADECHE 1 * 50 44 94 25 25 53,2 113,6 94 1,0 3,8
-KEL AHARA I 1 * 653 557 1 210 215 213 54,0 117,2 1 210 1,0 5,6
-KEL AMOUTESS 1 * 146 165 311 62 50 46,9 88,5 311 1,2 5,0
-KEL AZAR 1 * 371 369 740 108 106 50,1 100,5 740 1,0 6,9
-KEL TAGUIWALT 1 * 53 56 109 22 22 48,6 94,6 109 1,0 5,0
-KEL TALATAYE 1 * 580 499 1 079 222 199 53,8 116,2 1 079 1,1 4,9
-KELTALOMENE 1 * 364 344 708 117 84 51,4 105,8 708 1,4 6,1
-MENAKA 1 E04,CS02,M01,ST01,RDB03,CE01 4 740 4 398 9 138 1 534 1 176 51,9 107,8 9 138 1,3 6,0
-TAMBANKORT 1 E02,CS02,RDB01,CE01 256 258 514 91 58 49,8 99,2 514 1,6 5,6
-TAMIZEGUIDA 1 * 63 57 120 21 21 52,5 110,5 120 1,0 5,7
-ZAMBOURITENE 1 * 833 767 1 600 264 260 52,1 108,6 1 600 1,0 6,1
+--- page 515 ----------------------------------------------------
+TABLEAU D-1:  POPULATIOM RESIDENTE SUIVANT LE SEXE L'AGE ET LE LIEU DE NAISSANCE
+LIEU DE NAISSANCE
+00 - 14
+ans
+15 - 59
+ans
+60 ans
+et +
+ND Total
+00 - 14
+ans
+15 - 59
+ans
+60 ans
+et +
+ND Total
+00 - 14
+ans
+15 - 59
+ans
+60 ans
+et +
+ND Total
+MALI
+Cercle ND de Kayes 106625 100654 12409 3388 223076 100675 109868 13205 4120 227868 207300 210522 25614 7508 450944
+Kayes 10778 12859 1457 528 25622 10347 12653 1453 556 25009 21125 25512 2910 1084 50631
+Bafoulabé 55394 47500 6140 3922 112956 53047 54018 6135 4954 118154 108441 101518 12275 8876 231110
+Diéma 51712 36540 5263 1183 94698 48200 47088 5251 1533 102072 99912 83628 10514 2716 196770
+Kéniéba 45345 43180 5134 2969 96628 43640 46619 5121 3864 99244 88985 89799 10255 6833 195872
+Kita 112179 91109 10762 4115 218165 105946 104521 11145 4960 226572 218125 195630 21907 9075 444737
+Nioro 57892 55306 8645 1044 122887 53602 64618 8902 1087 128209 111494 119924 17547 2131 251096
+Yélimané 42825 32141 4921 1517 81404 40538 42708 5159 2279 90684 83363 74849 10080 3796 172088
+REGION DE KAYES 482750 419289 54731 18666 975436 455995 482093 56371 23353 1017812 938745 901382 111102 42019 1993248
+Cercle ND de Koulikoro 21993 31392 3794 1020 58199 21211 32704 3385 1093 58393 43204 64096 7179 2113 116592
+Koulikoro 34770 33767 4353 1474 74364 32998 36418 4074 1800 75290 67768 70185 8427 3274 149654
+Banamba 47955 45125 6612 3401 103093 44899 51305 5946 4087 106237 92854 96430 12558 7488 209330
+Dioila 123570 102868 10688 4626 241752 119759 114185 9754 5820 249518 243329 217053 20442 10446 491270
+Kangaba 25804 24628 3099 1171 54702 25009 26762 3167 1483 56421 50813 51390 6266 2654 111123
+Kati 183362 156657 17405 7714 365138 176433 166689 17499 9654 370275 359795 323346 34904 17368 735413
+Kolokani 61421 60349 7924 776 130470 58411 68792 7254 983 135440 119832 129141 15178 1759 265910
+Nara 59160 52840 7302 2506 121808 54628 59884 6738 3024 124274 113788 112724 14040 5530 246082
+REGION DE KOULIKORO 558035 507626 61177 22688 1149526 533348 556739 57817 27944 1175848 1091383 1064365 118994 50632 2325374
+Cercle ND de Sikasso 51384 62732 5044 1272 120432 50988 59796 4805 1280 116869 102372 122528 9849 2552 237301
+Sikasso 132788 112105 12879 1846 259618 128363 127780 12501 2476 271120 261151 239885 25380 4322 530738
+Bougouni 113103 97738 11771 1772 224384 108679 108927 11595 2575 231776 221782 206665 23366 4347 456160
+Kadiolo 49101 39274 4043 424 92842 47790 42824 3916 519 95049 96891 82098 7959 943 187891
+Kolondiéba 51044 38902 4738 632 95316 48568 45962 4867 701 100098 99612 84864 9605 1333 195414
+Koutiala 146615 126234 11647 2135 286631 143645 135267 11348 2897 293157 290260 261501 22995 5032 579788
+Yanfolila 54073 45030 5312 668 105083 51680 51333 5382 991 109386 105753 96363 10694 1659 214469
+Yorosso 53920 40866 3942 656 99384 52178 44494 3679 781 101132 106098 85360 7621 1437 200516
+REGION DE SIKASSO 652028 562881 59376 9405 1283690 631891 616383 58093 12220 1318587 1283919 1179264 117469 21625 2602277
+Cercle ND de Ségou 106704 127443 13428 3214 250789 105798 136611 12113 3956 258478 212502 264054 25541 7170 509267
+Ségou 64643 71913 8088 1244 145888 63975 79208 7582 1469 152234 128618 151121 15670 2713 298122
+Baraouéli 49276 44606 6395 1049 101326 47533 49432 5741 1238 103944 96809 94038 12136 2287 205270
+Bla 71720 58471 6699 992 137882 69818 65507 6459 1390 143174 141538 123978 13158 2382 281056
+Macina 58230 53591 7154 1133 120108 56363 59320 6805 1580 124068 114593 112911 13959 2713 244176
+Niono 83603 68606 4981 1130 1
 
---- page 308 ----------------------------------------------------
-- Page 290 -
-DIVISION NBRE DE NOMBRE DE NOMBRE DE PERS. PAR MEN. PAR PERS. PAR
-ADMINISTRATIVE LOCAL. U/R NR HOMME FEMME TOTAL MENAGES CONCESS. T.M. R.M. LOCALITE CONCESS. MENAGESINFRASTRUCTURES POPULATION RESIDENTE
-COM. ALATA 17 1 597 1 259 2 856 528 478 55,9 126,8 168 1,1 5,4
-ICHARAWCHARAW 1 * 20 15 35 9 9 57,1 133,3 35 1,0 3,9
-IKARBAGUI NANE ALMOUCHAKRA 1 * 17 19 36 10 10 47,2 89,5 36 1,0 3,6
-IKARBAGUINANE TANGUABO 1 * 23 16 39 10 10 59,0 143,8 39 1,0 3,9
-IMAGHRANE II 1 * 71 65 136 20 20 52,2 109,2 136 1,0 6,8
-IMAKALKALANE 1 * 94 90 184 33 33 51,1 104,4 184 1,0 5,6
-IWARWARANE 1 * 32 22 54 9 9 59,3 145,5 54 1,0 6,0
-KEL AGHERIS II 1 * 67 56 123 28 28 54,5 119,6 123 1,0 4,4
-KEL BARDAGH 1 * 29 31 60 17 17 48,3 93,5 60 1,0 3,5
-KEL IKET 1 * 18 18 36 5 5 50,0 100,0 36 1,0 7,2
-KEL SAHENE I 1 * 102 81 183 32 31 55,7 125,9 183 1,0 5,7
-KEL SAHENE II 1 * 79 75 154 30 30 51,3 105,3 154 1,0 5,1
-KEL TABAIKORTT 1 * 160 115 275 52 51 58,2 139,1 275 1,0 5,3
-KEL TAGHAYART 1 * 95 88 183 42 42 51,9 108,0 183 1,0 4,4
-KEL TAKIMETT 1 * 155 134 289 64 17 53,6 115,7 289 3,8 4,5
-KEL TANDIRBATENE 1 * 204 135 339 56 56 60,2 151,1 339 1,0 6,1
-TANGALI 1 * 127 92 219 29 29 58,0 138,0 219 1,0 7,6
-TEDJARETT 1 * 304 207 511 82 81 59,5 146,9 511 1,0 6,2
-COM. ANDERAMBOUKANE 18 9 493 8 597 18 090 3 250 3 046 52,5 110,4 1 005 1,1 5,6
-ANDERAMBOUKANE 1 E03,CS01,M02,RDB14,BC01,CE01 2 485 2 352 4 837 815 722 51,4 105,7 4 837 1,1 5,9
-EL HADJI MOUSSA 1 * 400 330 730 154 150 54,8 121,2 730 1,0 4,7
-FEET 1 * 180 152 332 50 50 54,2 118,4 332 1,0 6,6
-IBAHAWANE 1 * 490 353 843 181 178 58,1 138,8 843 1,0 4,7
-IBALAGHANE 1 * 72 60 132 22 19 54,5 120,0 132 1,2 6,0
-ICHERIFEN 1 * 46 49 95 19 17 48,4 93,9 95 1,1 5,0
-IKARKAWANE 1 * 345 319 664 128 127 52,0 108,2 664 1,0 5,2
-INCHINANANE 1 * 1 034 982 2 016 364 340 51,3 105,3 2 016 1,1 5,5
-INFAZAZA 1 * 253 222 475 82 81 53,3 114,0 475 1,0 5,8
-KEL AGAYOK 1 * 68 67 135 23 23 50,4 101,5 135 1,0 5,9
-KEL ESSOUK 1 * 210 238 448 92 64 46,9 88,2 448 1,4 4,9
-TABAHO 1 * 2 096 1 778 3 874 690 677 54,1 117,9 3 874 1,0 5,6
-TAMIEZGUIDA BELLAH OU NIORE 1 * 326 320 646 111 108 50,5 101,9 646 1,0 5,8
-TAMIZEGUIDA IMAJORENE 1 * 314 330 644 78 76 48,8 95,2 644 1,0 8,3
-TARABANASSA 1 * 320 281 601 118 118 53,2 113,9 601 1,0 5,1
-TARGAITAMOUT WAN AGA YOR 1 * 255 219 474 117 117 53,8 116,4 474 1,0 4,1
-TARGAITTAMOUT ADDRAR 1 * 82 78 160 31 30 51,3 105,1 160 1,0 5,2
-TINAGAROFF 1 * 517 467 984 175 149 52,5 110,7 984 1,2 5,6
-COM. INEKAR 12 2 906 2 515 5 421 1 026 1 015 53,6 115,5 452 1,0 5,3
-IDRA GAGANE 1 * 202 155 357 70 70 56,6 130,3 357 1,0 5,1
-INEKAR 1 * 629 519 1 148 220 216 54,8 121,2 1 148 1,0 5,2
-KEL ABAKOT 1 * 259 227 486 89 89 53,3 114,1 486 1,0 5,5
-KEL AGUERIS 1 * 60 57 117 23 23 51,3 105,3 117 1,0 5,1
-KEL ATARAME 1 * 311 284 595 121 121 52,3 109,5 595 1,0 4,9
-KEL AYOK 1 * 466 398 864 171 164 53,9 117,1 864 1,0 5,1
-KEL BERIO 1 * 14 13 27 4 4 51,9 107,7 27 1,0 6,8
-KEL INGOUROUZA 1 * 5 5 10 2 2 50,0 100,0 10 1,0 5,0
-KEL TAITOFT 1 * 231 225 456 82 82 50,7 102,7 456 1,0 5,6
-KEL TALATAYE 1 * 21 13 34 7 7 61,8 161,5 34 1,0 4,9
+... and 57 further pages match; re-run with a narrower --terms to see them.
