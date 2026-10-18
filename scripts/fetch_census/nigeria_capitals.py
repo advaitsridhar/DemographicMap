@@ -336,7 +336,9 @@ def seats(text: str, title: str, names: list[str]) -> dict[str, str]:
         m = THERE.search(words)
         if m and re.match(rf"{re.escape(title_base(title))}\b", opening):
             found.setdefault("subject", title_base(title))
-    m = CHEF_LIEU.search(opening)
+    # The French article's chef-lieu, wherever it says it: Orumba Nord's is in
+    # its history section.
+    m = CHEF_LIEU.search(f"{opening} {rest}")
     if m:
         found.setdefault("opening", clean(m.group("x")))
     return found
