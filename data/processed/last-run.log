@@ -1,21 +1,22 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  Région de Rabat-Salé-Kénitra: median 31.6 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Kénitra: median 28.8 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Khémisset: median 32.9 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Rabat: median 39.2 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Salé: median 32.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Sidi Kacem: median 29.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Sidi Slimane: median 28.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Skhirate-Témara: median 31.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Région de Fès-Meknès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Préfecture de Meknès: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Boulemane: median 29.1 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province d'El Hajeb: median 31.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Préfecture de Fès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province d'Ifrane: median 32.8 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Sefrou: median 33.0 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Taounate: median 29.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Taza: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Moulay Yacoub: median 26.2 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-morocco_rgph2024_ages: 0 different tables of ages for the whole population in the annex
+sao_tome_census: national report 5,499,132 bytes, sha256 7f5b8a49c6adcee58cfe02cda30af3e1cf34e5326814b6b346580ffcce4b3825
+  Água Grande: 2,183,673 bytes, sha256 692169a48990ea6faad80341f0b66bdf40ca2cbc430ea4ade2380660d931ecaf
+  Mé-Zóchi: 4,979,700 bytes, sha256 551333d7bb260d162d225c2801a11768395299a188ae2c2aa8bf8bd1a82ddd4f
+  Cantagalo: 4,846,246 bytes, sha256 e4e939b1d5c14a68d9fec45c44088ef4b7e2e5d3e3b0403d6aebf132d754a206
+  Caué: 4,653,913 bytes, sha256 174c2382d26eab1fa785abafbcd2f6bb9486a573d89dd49024bfb2271f694356
+  Lembá: 4,804,716 bytes, sha256 50e798d71663aa6c9f944a95bc59805fa51a77ad8aae83f07030fb442ee61d92
+  Lobata: 4,860,805 bytes, sha256 75942c7d4f10e8f6277b485e1ce61577837c36ffcdfecbc048db77806d3456d3
+  Príncipe: 5,024,841 bytes, sha256 159cc00638976ea29ccdf2529ce51d793c561e0f5bb93e03a8be2edddc2c56cf
+  Districts of São Tomé and Príncipe: 7 districts with a seat
+  Água Grande: residents 69,772 (33,805 men); ordinary dwellings 69,454; religion 69,454 in 13 answers; languages asked of 67,295: Portuguese 66,359, Forro 24,745, Angolar 2,426, Lung'ie 783, Cape Verdean Creole 3,637, French 7,308, English 5,782, Other languages 2,034
+  Mé-Zóchi: residents 44,763 (22,257 men); ordinary dwellings 44,752; religion 44,752 in 13 answers; languages asked of 43,340: Portuguese 42,672, Forro 17,317, Angolar 1,822, Lung'ie 212, Cape Verdean Creole 1,519, French 2,295, English 1,538, Other languages 1,210
+  Cantagalo: residents 17,169 (8,754 men); ordinary dwellings 17,161; religion 17,161 in 13 answers; languages asked of 16,622: Portuguese 16,376, Forro 7,209, Angolar 1,703, Lung'ie 71, Cape Verdean Creole 2,319, French 694, English 390, Other languages 209
+  Caué: residents 6,062 (3,154 men); ordinary dwellings 6,031; religion 6,031 in 13 answers; languages asked of 5,856: Portuguese 5,755, Forro 788, Angolar 2,762, Lung'ie 17, Cape Verdean Creole 267, French 97, English 59, Other languages 308
+  Lembá: residents 14,676 (7,579 men); ordinary dwellings 14,652; religion 14,652 in 13 answers; languages asked of 14,148: Portuguese 13,846, Forro 4,276, Angolar 2,075, Lung'ie 58, Cape Verdean Creole 1,437, French 323, English 161, Other languages 128
+  Lobata: residents 19,414 (9,883 men); ordinary dwellings 19,365; religion 19,365 in 13 answers; languages asked of 18,671: Portuguese 18,323, Forro 7,498, Angolar 413, Lung'ie 87, Cape Verdean Creole 3,280, French 696, English 410, Other languages 236
+  Príncipe: residents 7,344 (3,755 men); ordinary dwellings 7,324; religion 7,324 in 13 answers; languages asked of 7,083: Portuguese 6,892, Forro 874, Angolar 176, Lung'ie 525, Cape Verdean Creole 2,195, French 284, English 216, Other languages 59
+  the districts' residents make 179,200; the national line 179200
+  province São Tomé: 171,856
+  province Príncipe: 7,344
+  religion, the districts added up: Catholic 55.7%, No religion 21.2%, Other religion 5.0%, Adventist 4.1%, Assembly of God 3.4%, New Apostolic 2.9%, Maná Church 2.3%, Universal Church of the Kingdom of God 2.0%, Jehovah's Witnesses 1.2%, God Is Love Pentecostal Church 0.8%, Not stated 0.7%, Church of World Messianity 0.4%, Don't know 0.3%
+  wrote data/processed/sao_tome_census.json (47 kB)
+  9 records written
