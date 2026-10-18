@@ -416,8 +416,9 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]],
                 fields["population"] = measure(estimates[key], year=ESTIMATE_YEAR,
                                                source=source_2020)
                 fields["population_note"] = (
-                    f"The estimate for {ESTIMATE_YEAR} of the shabiyah of {name}; the 2006 "
-                    f"census counted {unit['total']:,}, {counted}.{where}")
+                    f"The Bureau of Statistics and Census's estimate for {ESTIMATE_YEAR} of the "
+                    f"shabiyah of {name}; the 2006 census counted {unit['total']:,}, "
+                    f"{counted}.{where}")
                 fields["sources"] = [
                     {"field": "population", "name": source_2020,
                      "url": uscb.dataset_url(DATASET), "year": ESTIMATE_YEAR,
@@ -481,10 +482,13 @@ def main() -> int:
     estimates, field = read_estimates(uscb.sheet_rows(book, "Population"))
     said = words.get(field, ["", "", ""])
     log(f"  {ESTIMATE_YEAR} estimates ({field}): {said}")
-    publisher = ("US Census Bureau" if "census bureau" in said[2].lower() or not said[2]
-                 else said[2].split(",")[0].strip())
-    source_2020 = (f"{publisher}, population estimate for {ESTIMATE_YEAR} by shabiyah, in the US "
-                   "Census Bureau's subnational tables of Libya for HDX")
+    # The dictionary names the Bureau's own publication: "Demographic
+    # Indicators, 2020, Estimated Population by Regions for the Year 2020".
+    if str(ESTIMATE_YEAR) not in said[2] or "census bureau" in said[2].lower():
+        raise SystemExit(f"libya_census: the {ESTIMATE_YEAR} estimate's source reads "
+                         f"{said[2]!r}, not the Bureau's publication")
+    source_2020 = (f"Bureau of Statistics and Census Libya, {said[2]}, as the US Census Bureau "
+                   "tabulates it for HDX")
     nationality = read_nationality(uscb.sheet_rows(book, "Households"))
     log(f"  Libyans and non-Libyans: {words.get('HH_PLBN')} / {words.get('HH_PNLN')}")
     for key in sorted(estimates):

@@ -1,4 +1,5 @@
-"""Morocco's 2024 sexes by region and province, from HCP's results dashboard."""
+"""Morocco's 2024 sexes and mother tongues by region and province, from HCP's
+results dashboard's data service."""
 
 import sys
 import unittest
@@ -11,63 +12,103 @@ sys.path.insert(0, str(ROOT))
 from scripts.fetch_census import morocco_rgph2024_sexes as ms  # noqa: E402
 
 
-def body(rows):
-    data = [{"Zone": z, "Milieu": m, "Sexe": s, "Titre de l'indicateur": "Population municipale",
-             "Valeurs de l'indicateur": v} for z, m, s, v in rows]
-    return {"result": [{"colnames": ["Zone", "Milieu", "Sexe", "Titre de l'indicateur",
-                                     "Valeurs de l'indicateur"], "data": data}]}
+def rows(*spec):
+    """(region, province, commune, sex, value) -> the data service's rows."""
+    return [{"libelle_fr": r, "libelle_prov": p, "libelle_commune": c, "Sexe": s, "v": v}
+            for r, p, c, s, v in spec]
 
 
-ROWS = [("Royaume du Maroc", "Ensemble", "Masculin", 30.0),
-        ("Royaume du Maroc", "Ensemble", "Féminin", 33.0),
-        ("Royaume du Maroc", "Urbain", "Masculin", 20.0),
-        ("Oriental", "Ensemble", "Masculin", 30.0), ("Oriental", "Ensemble", "Féminin", 33.0),
-        ("Oriental -> Oujda-Angad", "Ensemble", "Masculin", 10.0),
-        ("Oriental -> Oujda-Angad", "Ensemble", "Féminin", 11.0),
-        ("Oriental -> Nador", "Ensemble", "Masculin", 20.0),
-        ("Oriental -> Nador", "Ensemble", "Féminin", 22.0),
-        ("Oriental -> Nador", "Rural", "Féminin", None),
-        ("Oriental -> Nador -> Zeghanghane", "Ensemble", "Masculin", 2.0)]
+ROWS = rows(("Royaume du Maroc", None, None, "Masculin", 30.0),
+            ("Royaume du Maroc", None, None, "Féminin", 33.0),
+            ("Oriental", None, None, "Masculin", 30.0), ("Oriental", None, None, "Féminin", 33.0),
+            ("Oriental", "Oujda-Angad", None, "Masculin", 10.0),
+            ("Oriental", "Oujda-Angad", None, "Féminin", 11.0),
+            ("Oriental", "Nador", None, "Masculin", 20.0),
+            ("Oriental", "Nador", None, "Féminin", 22.0),
+            ("Oriental", "Nador", None, "Ensemble", 42.0))
 TABLE = {"regions": {2: {"name": "Région de l'Oriental", "code": 2}},
          "provinces": {2381: {"name": "Préfecture d'Oujda-Angad", "code": 2381},
                        2411: {"name": "Province de Nador", "code": 2411}}}
 
 
-class Chart(unittest.TestCase):
+class Sexes(unittest.TestCase):
     def test_the_whole_population_by_sex_at_each_level(self):
-        chart = ms.read_chart(body(ROWS))
-        self.assertEqual(chart["kingdom"], {"men": 30, "women": 33})
+        chart = ms.read_sexes(ROWS)
+        self.assertEqual({k: chart["kingdom"][k] for k in ("men", "women")},
+                         {"men": 30, "women": 33})
         self.assertEqual(chart["regions"]["oriental"]["women"], 33)
         self.assertEqual(chart["provinces"][("oriental", "nador")]["men"], 20)
         ms.check(chart, TABLE)
 
     def test_provinces_that_do_not_make_their_region_stop_the_run(self):
-        rows = [r if r[0] != "Oriental -> Nador" or r[2] != "Masculin" else
-                ("Oriental -> Nador", "Ensemble", "Masculin", 21.0) for r in ROWS]
+        bad = [dict(r, v=21.0) if r["libelle_prov"] == "Nador" and r["Sexe"] == "Masculin"
+               else r for r in ROWS]
         with self.assertRaises(SystemExit):
-            ms.check(ms.read_chart(body(rows)), TABLE)
+            ms.check(ms.read_sexes(bad), TABLE)
 
-    def test_a_province_across_the_line_may_be_missing(self):
-        rows = ROWS + [("Dakhla-Oued Ed-Dahab", "Ensemble", "Masculin", 9.0),
-                       ("Dakhla-Oued Ed-Dahab", "Ensemble", "Féminin", 8.0),
-                       ("Dakhla-Oued Ed-Dahab -> Oued Ed-Dahab", "Ensemble", "Masculin", 8.0),
-                       ("Dakhla-Oued Ed-Dahab -> Oued Ed-Dahab", "Ensemble", "Féminin", 8.0)]
-        rows = [r if r[0] != "Royaume du Maroc" or r[1] != "Ensemble" else
-                (r[0], r[1], r[2], r[3] + (9.0 if r[2] == "Masculin" else 8.0)) for r in rows]
-        table = {"regions": {**TABLE["regions"], 12: {"name": "Dakhla-Oued Ed-Dahab"}},
-                 "provinces": {**TABLE["provinces"], 12391: {"name": "Province d'Aousserd"}}}
-        ms.check(ms.read_chart(body(rows)), table)
-
-    def test_a_province_missing_from_the_chart_stops_the_run(self):
+    def test_a_province_not_answered_stops_the_run(self):
         table = {**TABLE, "provinces": {**TABLE["provinces"],
                                         1: {"name": "Province de Berkane", "code": 1}}}
         with self.assertRaises(SystemExit):
-            ms.check(ms.read_chart(body(ROWS)), table)
+            ms.check(ms.read_sexes(ROWS), table)
+
+
+GUELMIM = rows(("Royaume du Maroc", None, None, "Masculin", 100.0),
+               ("Royaume du Maroc", None, None, "Féminin", 100.0),
+               ("Guelmim-Oued Noun", None, None, "Masculin", 100.0),
+               ("Guelmim-Oued Noun", None, None, "Féminin", 100.0),
+               ("Guelmim-Oued Noun", "Assa-Zag", None, "Masculin", 40.0),
+               ("Guelmim-Oued Noun", "Assa-Zag", None, "Féminin", 30.0),
+               ("Guelmim-Oued Noun", "Guelmim", None, "Masculin", 60.0),
+               ("Guelmim-Oued Noun", "Guelmim", None, "Féminin", 70.0),
+               ("Guelmim-Oued Noun", "Assa-Zag", "Al Mahbass", "Masculin", 10.0),
+               ("Guelmim-Oued Noun", "Assa-Zag", "Al Mahbass", "Féminin", 0.0))
+GTABLE = {"regions": {10: {"name": "Guelmim-Oued Noun", "code": 10}},
+          "provinces": {10151: {"name": "Assa-Zag", "code": 10151},
+                        10261: {"name": "Guelmim", "code": 10261}}}
+ARABIC, AMAZIGH = list(ms.TONGUES)
+
+
+class AcrossTheLine(unittest.TestCase):
+    def build(self):
+        chart = ms.read_sexes(GUELMIM)
+        ms.check(chart, GTABLE)
+        tongues = ms.read_tongues([
+            {"libelle_fr": "Guelmim-Oued Noun", "libelle_prov": "Assa-Zag",
+             "libelle_commune": None, "Titre de l'indicateur": ARABIC, "v": 80.0},
+            {"libelle_fr": "Guelmim-Oued Noun", "libelle_prov": "Assa-Zag",
+             "libelle_commune": None, "Titre de l'indicateur": AMAZIGH, "v": 20.0},
+            {"libelle_fr": "Guelmim-Oued Noun", "libelle_prov": "Assa-Zag",
+             "libelle_commune": "Al Mahbass", "Titre de l'indicateur": ARABIC, "v": 100.0},
+            {"libelle_fr": "Guelmim-Oued Noun", "libelle_prov": "Assa-Zag",
+             "libelle_commune": "Al Mahbass", "Titre de l'indicateur": AMAZIGH, "v": 0.0}])
+        bound = [{"level": "admin1", "name": "Guelmim-Oued Noun", "shape_id": "R",
+                  "codes": {"hcp": "10"}, "population": {"value": 200}},
+                 {"level": "admin2", "name": "Assa-Zag Province", "shape_id": "A",
+                  "codes": {"hcp": "10151"}, "population": {"value": 70}}]
+        with mock.patch.object(ms.legal, "build", return_value=(bound, [])):
+            records, _ = ms.build(chart, GTABLE, [], [], tongues)
+        return {r["shape_id"]: r for r in records}
+
+    def test_the_commune_across_the_line_is_taken_out(self):
+        by = self.build()
+        self.assertEqual(by["A"]["sex_ratio"]["value"], 1000)         # 30 men, 30 women
+        self.assertIn("without the commune of Al Mahbass", by["A"]["sex_ratio_note"])
+        self.assertEqual(by["R"]["sex_ratio"]["value"], 900)          # 90 men, 100 women
+        self.assertIn("in Assa-Zag province", by["R"]["sex_ratio_note"])
+
+    def test_mother_tongues_without_the_commune(self):
+        by = self.build()
+        shares = {g["group"]: g["pct"] for g in by["A"]["language"]}
+        # 70 people, 56 Arabic and 14 Amazigh; less Al Mahbass's 10 Arabic speakers.
+        self.assertEqual(shares, {"Arabic": 76.7, "Amazigh": 23.3})
+        self.assertEqual(by["A"]["language_basis"], "mother tongue")
+        self.assertEqual(by["R"]["language"], {"status": "not_available"})   # none answered
 
 
 class Building(unittest.TestCase):
     def test_bound_units_take_their_sexes_and_gaps_are_left_alone(self):
-        chart = ms.read_chart(body(ROWS))
+        chart = ms.read_sexes(ROWS)
         bound = [{"level": "admin1", "name": "Oriental", "shape_id": "R",
                   "codes": {"hcp": "2"}, "population": {"value": 63}},
                  {"level": "admin2", "name": "Province de Nador", "shape_id": "N",
@@ -80,6 +121,13 @@ class Building(unittest.TestCase):
         self.assertEqual(set(by), {"R", "N"})
         self.assertEqual(by["N"]["sex_ratio"]["value"], 909)
         self.assertIn("municipal population", by["R"]["sex_ratio_note"])
+
+    def test_two_shares_past_a_hundred_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            ms.read_tongues([{"libelle_fr": "Oriental", "Titre de l'indicateur": ARABIC,
+                              "v": 70.0},
+                             {"libelle_fr": "Oriental", "Titre de l'indicateur": AMAZIGH,
+                              "v": 40.0}])
 
 
 if __name__ == "__main__":
