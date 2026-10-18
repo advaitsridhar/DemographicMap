@@ -315,6 +315,51 @@
     "population_note": "The 2023 census's count for Epupa constituency (23,617 km² in the census's table, 23,772 km² as the map draws it)."
   },
   {
+    "id": "NAM-2023-constituency-8085530B21041761137658",
+    "level": "admin2",
+    "name": "Gibeon",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14126,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census, regional pages: population and area by constituency"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census, regional pages: population and area by constituency",
+        "url": "https://census.nsa.org.na/hardap-region/",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "8085530B21041761137658",
+    "population_note": "The 2023 census's counts for Gibeon and Daweb constituencies added together: the map draws them as one (50,366 km² in the census's tables, 50,525 km² as the map draws it)."
+  },
+  {
     "id": "NAM-2023-constituency-8085530B19115739893347",
     "level": "admin2",
     "name": "Gobabis",
@@ -763,6 +808,51 @@
     "match_by": "shape_id",
     "shape_id": "8085530B65752353592300",
     "population_note": "The 2023 census's count for Kongola constituency (5,174 km² in the census's table, 4,962 km² as the map draws it)."
+  },
+  {
+    "id": "NAM-2023-constituency-8085530B31527966584052",
+    "level": "admin2",
+    "name": "Mariental Rural",
+    "parent": "NAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 23534,
+      "year": 2023,
+      "source": "Namibia Statistics Agency, 2023 Population and Housing Census, regional pages: population and area by constituency"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Namibia Statistics Agency, 2023 Population and Housing Census, regional pages: population and area by constituency",
+        "url": "https://census.nsa.org.na/hardap-region/",
+        "license": "Namibia Statistics Agency publication (reuse with attribution)",
+        "year": 2023
+      }
+    ],
+    "country": "NAM",
+    "match_by": "shape_id",
+    "shape_id": "8085530B31527966584052",
+    "population_note": "The 2023 census's counts for Mariental Rural and Aranos constituencies added together: the map draws them as one (41,761 km² in the census's tables, 41,862 km² as the map draws it)."
   },
   {
     "id": "NAM-2023-constituency-8085530B8620298556926",

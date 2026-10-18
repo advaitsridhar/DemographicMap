@@ -1,38 +1,120 @@
-  read https://web.archive.org/web/20240814133631id_/https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555: 10,525,457 bytes, sha256 7a9c1ec3f7458c69f042da9f4789c668fc82a2264cab8644b80d60b12f05fefa
-  the country's median age: 35.5
-  Table A7: [('TOTAL', 19948), ('Central', 5184), ('East-South', 5790), ('West', 2654), ('North', 2969), ('Praslin', 1330), ('La Digue & Inner Islands', 1086), ('Outer Islands', 935)]; Outer Islands' evidence: {'a7_missing': 707, 'a7_missing_men': 707, 'blank': [('Table B3.1b:', 'second language'), ('Table C2.1:', 'education')]}
-  admin1 Anse Boile: 4,595, ratio 1318, median 35.4, [{'group': 'Seychellois Creole', 'pct': 92.4, 'count': 3441}], [{'group': 'Catholic', 'pct': 76.7, 'count': 2961}], The 2022 census report gives nationality by region (Table A7
-  admin1 Anse Etoil: 5,477, ratio 1140, median 35.5, [{'group': 'Seychellois Creole', 'pct': 82.7, 'count': 4167}], [{'group': 'Catholic', 'pct': 67.1, 'count': 3489}], The 2022 census report gives nationality by region (Table A7
-  admin1 Anse Royal: 4,552, ratio 1087, median 36.1, [{'group': 'Seychellois Creole', 'pct': 87.4, 'count': 3682}], [{'group': 'Catholic', 'pct': 70.6, 'count': 3067}], The 2022 census report gives nationality by region (Table A7
-  admin1 Anse aux Pins: 3,898, ratio 1059, median 35.0, [{'group': 'Seychellois Creole', 'pct': 92.4, 'count': 3207}], [{'group': 'Catholic', 'pct': 77.3, 'count': 2792}], The 2022 census report gives nationality by region (Table A7
-  admin1 Au Cap: 5,168, ratio 1165, median 35.5, [{'group': 'Seychellois Creole', 'pct': 82.1, 'count': 3907}], [{'group': 'Catholic', 'pct': 68.6, 'count': 3206}], The 2022 census report gives nationality by region (Table A7
-  admin1 Baie Lazar: 4,265, ratio 1308, median 35.9, [{'group': 'Seychellois Creole', 'pct': 86.6, 'count': 3086}], [{'group': 'Catholic', 'pct': 77.1, 'count': 2838}], The 2022 census report gives nationality by region (Table A7
-  admin1 Baie Saint: 4,272, ratio 1271, median 34.5, [{'group': 'Seychellois Creole', 'pct': 91.5, 'count': 3250}], [{'group': 'Catholic', 'pct': 64.5, 'count': 2383}], The 2022 census report gives nationality by region (Table A7
-  admin1 Beau Vallo: 4,740, ratio 1088, median 36.0, [{'group': 'Seychellois Creole', 'pct': 81.1, 'count': 3126}], [{'group': 'Catholic', 'pct': 71.7, 'count': 2854}], The 2022 census report gives nationality by region (Table A7
-  admin1 Bel Air: 2,619, ratio 1061, median 38.7, [{'group': 'Seychellois Creole', 'pct': 82.2, 'count': 1870}], [{'group': 'Catholic', 'pct': 65.5, 'count': 1528}], The 2022 census report gives nationality by region (Table A7
-  admin1 Bel Ombre: 3,823, ratio 1062, median 36.4, [{'group': 'Seychellois Creole', 'pct': 84.1, 'count': 2783}], [{'group': 'Catholic', 'pct': 68.9, 'count': 2370}], The 2022 census report gives nationality by region (Table A7
-  admin1 Cascade: 6,659, ratio 2490, median 35.3, [{'group': 'Seychellois Creole', 'pct': 64.6, 'count': 3188}], [{'group': 'Catholic', 'pct': 59.0, 'count': 2951}], The 2022 census report gives nationality by region (Table A7
-  admin1 Glacis: 3,803, ratio 1095, median 38.8, [{'group': 'Seychellois Creole', 'pct': 85.8, 'count': 2958}], [{'group': 'Catholic', 'pct': 76.0, 'count': 2673}], The 2022 census report gives nationality by region (Table A7
-  admin1 Grand'Anse Mahé: 3,425, ratio 1057, median 34.4, [{'group': 'Seychellois Creole', 'pct': 89.9, 'count': 2759}], [{'group': 'Catholic', 'pct': 73.6, 'count': 2336}], The 2022 census report gives nationality by region (Table A7
-  admin1 Grand'Anse Praslin: 3,610, ratio 1224, median 36.2, [{'group': 'Seychellois Creole', 'pct': 88.0, 'count': 2706}], [{'group': 'Catholic', 'pct': 53.3, 'count': 1703}], The 2022 census report gives nationality by region (Table A7
-  admin1 La Digue a: 3,537, ratio 1453, median 36.8, [{'group': 'Seychellois Creole', 'pct': 83.9, 'count': 2371}], [{'group': 'Catholic', 'pct': 70.0, 'count': 2050}], [{'group': 'Seychellois nationals', 'pct': 70.0, 'count': 2538}]
-  admin1 La Rivière: 3,508, ratio 997, median 35.6, [{'group': 'Seychellois Creole', 'pct': 89.1, 'count': 2845}], [{'group': 'Catholic', 'pct': 70.8, 'count': 2355}], The 2022 census report gives nationality by region (Table A7
-  admin1 Les Mamell: 2,215, ratio 1096, median 36.6, [{'group': 'Seychellois Creole', 'pct': 91.9, 'count': 1774}], [{'group': 'Catholic', 'pct': 74.4, 'count': 1492}], The 2022 census report gives nationality by region (Table A7
-  admin1 Mont Buxto: 2,778, ratio 1006, median 38.0, [{'group': 'Seychellois Creole', 'pct': 93.1, 'count': 2372}], [{'group': 'Catholic', 'pct': 74.7, 'count': 1964}], The 2022 census report gives nationality by region (Table A7
-  admin1 Mont Fleur: 3,506, ratio 1199, median 36.3, [{'group': 'Seychellois Creole', 'pct': 83.5, 'count': 2340}], [{'group': 'Catholic', 'pct': 71.4, 'count': 2033}], The 2022 census report gives nationality by region (Table A7
-  admin1 Outer Islands: 1,075, ratio 13333, median 32.1, The 2022 census report records the same 707 of the Outer Isl, The 2022 census report records the same 707 of the Outer Isl, Nationality, which the 2022 census report gives by region in
-  admin1 Plaisance: 3,685, ratio 1095, median 35.8, [{'group': 'Seychellois Creole', 'pct': 90.1, 'count': 2918}], [{'group': 'Catholic', 'pct': 74.6, 'count': 2512}], The 2022 census report gives nationality by region (Table A7
-  admin1 Pointe La: 3,267, ratio 1149, median 33.8, [{'group': 'Seychellois Creole', 'pct': 92.7, 'count': 2740}], [{'group': 'Catholic', 'pct': 77.0, 'count': 2373}], The 2022 census report gives nationality by region (Table A7
-  admin1 Port Glaud: 2,773, ratio 1224, median 34.7, [{'group': 'Seychellois Creole', 'pct': 95.3, 'count': 2150}], [{'group': 'Catholic', 'pct': 76.8, 'count': 1788}], The 2022 census report gives nationality by region (Table A7
-  admin1 Roche Caïm: 3,157, ratio 1156, median 34.1, [{'group': 'Seychellois Creole', 'pct': 79.5, 'count': 1923}], [{'group': 'Catholic', 'pct': 61.5, 'count': 1554}], The 2022 census report gives nationality by region (Table A7
-  admin1 Saint Loui: 3,267, ratio 1116, median 36.2, [{'group': 'Seychellois Creole', 'pct': 84.7, 'count': 2331}], [{'group': 'Catholic', 'pct': 65.1, 'count': 1873}], The 2022 census report gives nationality by region (Table A7
-  admin1 Takamaka: 3,528, ratio 1389, median 36.1, [{'group': 'Seychellois Creole', 'pct': 82.1, 'count': 2488}], [{'group': 'Catholic', 'pct': 73.4, 'count': 2306}], The 2022 census report gives nationality by region (Table A7
-  admin2 Central 1 Mahe: 12,172, ratio 1043, median 37.0, [{'group': 'Seychellois Creole', 'pct': 87.5, 'count': 9418}], [{'group': 'Catholic', 'pct': 69.2, 'count': 7720}], The 2022 census report gives nationality by region (Table A7
-  admin2 Central 2 Mahe: 12,563, ratio 1139, median 35.6, [{'group': 'Seychellois Creole', 'pct': 86.2, 'count': 8955}], [{'group': 'Catholic', 'pct': 70.6, 'count': 7591}], The 2022 census report gives nationality by region (Table A7
-  admin2 East Mahe: 27,072, ratio 1382, median 35.4, [{'group': 'Seychellois Creole', 'pct': 82.2, 'count': 19212}], [{'group': 'Catholic', 'pct': 70.0, 'count': 16695}], [{'group': 'Seychellois nationals', 'pct': 78.6, 'count': 21282}]
-  admin2 La Digue: 3,133, ratio 1292, median 36.5, [{'group': 'Seychellois Creole', 'pct': 85.1, 'count': 2310}], [{'group': 'Catholic', 'pct': 70.6, 'count': 1989}], The 2022 census report gives nationality by region (Table A7
-  admin2 North Mahe: 17,843, ratio 1100, median 36.5, [{'group': 'Seychellois Creole', 'pct': 83.3, 'count': 13034}], [{'group': 'Catholic', 'pct': 70.6, 'count': 11386}], [{'group': 'Seychellois nationals', 'pct': 83.4, 'count': 14874}]
-  admin2 Other Islands: 1,479, ratio 8860, median 34.0, These islands' 1,479 people include the Outer Islands' 988, , These islands' 1,479 people include the Outer Islands' 988, , The 2022 census report gives nationality by region (Table A7
-  admin2 Praslin: 7,882, ratio 1249, median 35.3, [{'group': 'Seychellois Creole', 'pct': 89.9, 'count': 5956}], [{'group': 'Catholic', 'pct': 59.3, 'count': 4086}], [{'group': 'Seychellois nationals', 'pct': 83.1, 'count': 6552}]
-  admin2 West Mahe: 15,058, ratio 1233, median 35.2, [{'group': 'Seychellois Creole', 'pct': 90.7, 'count': 11436}], [{'group': 'Catholic', 'pct': 76.1, 'count': 9923}], [{'group': 'Seychellois nationals', 'pct': 82.4, 'count': 12404}]
-  wrote data/processed/seychelles_census.json (175 kB)
+  kharas-reggion: 7 constituencies, 109,893 people (https://census.nsa.org.na/kharas-reggion/)
+  erongo: 7 constituencies, 240,206 people (https://census.nsa.org.na/erongo/)
+  hardap-region: 8 constituencies, 106,680 people (https://census.nsa.org.na/hardap-region/)
+  kavango-east-region: 6 constituencies, 218,421 people (https://census.nsa.org.na/kavango-east-region/)
+  kavango-west-region: 8 constituencies, 123,266 people (https://census.nsa.org.na/kavango-west-region/)
+  khomas-region: 10 constituencies, 494,605 people (https://census.nsa.org.na/khomas-region/)
+  kunene-region: 7 constituencies, 120,762 people (https://census.nsa.org.na/kunene-region/)
+  ohangwena-region: 12 constituencies, 337,729 people (https://census.nsa.org.na/ohangwena-region/)
+  omaheke-region: 7 constituencies, 102,881 people (https://census.nsa.org.na/omaheke-region/)
+  omusati-region: 12 constituencies, 316,671 people (https://census.nsa.org.na/omusati-region/)
+  oshana-region: 11 constituencies, 230,801 people (https://census.nsa.org.na/oshana-region/)
+  oshikoto-region: 11 constituencies, 226,947 people (https://census.nsa.org.na/oshikoto-region/)
+  otjozondjupa-region: 7 constituencies, 220,811 people (https://census.nsa.org.na/otjozondjupa-region/)
+  zambezi-region: 8 constituencies, 142,373 people (https://census.nsa.org.na/zambezi-region/)
+  oshikoto: the constituencies make 226,947 against the census's 257302; left out
+    Anamulenge: drawn over 355.1 km2 against the census's 394.1; left out
+    Eengodi: its region's figures are left out
+    Eenhana: drawn over 1,276.7 km2 against the census's 904.2; left out
+    Elim: drawn over 609.0 km2 against the census's 470.5; left out
+    Endola and part of Omulonga: no constituency of the census by that name (('Endola and part of Omulonga',))
+    Epembe: drawn over 1,814.3 km2 against the census's 1,198.7; left out
+    Etayi: drawn over 644.8 km2 against the census's 544.4; left out
+    Guinas: its region's figures are left out
+    John Pandeni (Soweto): drawn over 1.7 km2 against the census's 3.2; left out
+    Kabbe: drawn over 2,107.2 km2 against the census's 2,440.2; left out
+    Kahenge: no constituency of the census by that name (('Kahenge',))
+    Kapako: drawn over 6,167.6 km2 against the census's 1,224.1; left out
+    Katima Mulilo Rural: drawn over 1,913.5 km2 against the census's 1,620.0; left out
+    Katima Mulilo Urban: drawn over 23.2 km2 against the census's 44.9; left out
+    Katutura Central: drawn over 2.0 km2 against the census's 2.5; left out
+    Katutura East: drawn over 2.6 km2 against the census's 4.4; left out
+    Khomasdal North: drawn over 27.2 km2 against the census's 23.5; left out
+    Linyanti: drawn over 3,796.9 km2 against the census's 1,804.3; left out
+    Mariental Urban: drawn over 5,928.7 km2 against the census's 4,916.1; left out
+    Moses Garoeb and Tobias Hainyeko: drawn over 53.2 km2 against the census's 50.9; left out
+    Ndiyona: drawn over 8,165.9 km2 against the census's 5,232.1; left out
+    Ogongo: drawn over 811.3 km2 against the census's 677.8; left out
+    Ohangwena: drawn over 171.1 km2 against the census's 229.5; left out
+    Okaku: drawn over 243.6 km2 against the census's 224.3; left out
+    Okalongo: drawn over 656.5 km2 against the census's 529.4; left out
+    Okankolo: its region's figures are left out
+    Okongo: drawn over 4,616.6 km2 against the census's 3,822.0; left out
+    Olukonda: its region's figures are left out
+    Omatako: drawn over 26,222.5 km2 against the census's 24,370.9; left out
+    Omundaungilo: drawn over 590.2 km2 against the census's 793.5; left out
+    Omuntele: its region's figures are left out
+    Omuthiyagwiipundi: its region's figures are left out
+    Onayena: its region's figures are left out
+    Ondobe and part of Omulonga: no constituency of the census by that name (('Ondobe and part of Omulonga',))
+    Onesi: drawn over 603.6 km2 against the census's 775.5; left out
+    Ongwediva: drawn over 203.6 km2 against the census's 221.7; left out
+    Oniipa: its region's figures are left out
+    Onyaanya: its region's figures are left out
+    Opuwo: drawn over 25,817.0 km2 against the census's 23,283.1; left out
+    Oranjemund: drawn over 4,271.7 km2 against the census's 4,623.1; left out
+    Oshikango: drawn over 299.2 km2 against the census's 223.8; left out
+    Oshikuku: drawn over 277.7 km2 against the census's 424.0; left out
+    Otavi: drawn over 12,995.7 km2 against the census's 14,243.1; left out
+    Otjiwarongo: drawn over 5,930.4 km2 against the census's 6,410.7; left out
+    Part of Kalahari: no constituency of the census by that name (('Part of Kalahari',))
+    Rehoboth Rural: drawn over 10,955.4 km2 against the census's 12,056.8; left out
+    Rundu Rural West and Rundu Rural East: drawn over 2,672.0 km2 against the census's 1,068.6; left out
+    Rundu Urban: drawn over 16.0 km2 against the census's 155.8; left out
+    Samora Machel (Wanaheda): drawn over 18.0 km2 against the census's 20.3; left out
+    Sesfontein: drawn over 20,243.9 km2 against the census's 22,789.1; left out
+    Sibbinda: drawn over 1,673.4 km2 against the census's 1,857.0; left out
+    Tsumeb: its region's figures are left out
+    Walvis Bay Urban: drawn over 16.3 km2 against the census's 18.9; left out
+    Windhoek East: drawn over 166.3 km2 against the census's 218.9; left out
+  Aminius: 13,801 -- The 2023 census's count for Aminius constituency (12,994 km² in the census's table, 12,999 km² as the map draws it).
+  Arandis: 13,542 -- The 2023 census's count for Arandis constituency (13,520 km² in the census's table, 13,524 km² as the map draws it).
+  Berseba: 11,258 -- The 2023 census's count for Berseba constituency (31,725 km² in the census's table, 31,826 km² as the map draws it).
+  Daures: 14,601 -- The 2023 census's count for Daures constituency (17,787 km² in the census's table, 17,815 km² as the map draws it).
+  Engela: 30,004 -- The 2023 census's count for Engela constituency (308 km² in the census's table, 296 km² as the map draws it).
+  Epukiro and Otjinene: 20,295 -- The 2023 census's counts for Epukiro and Otjinene constituencies added together: the map draws them as one (17,346 km² in the census's tables, 17,510 km² as the map draws it).
+  Epupa: 26,491 -- The 2023 census's count for Epupa constituency (23,617 km² in the census's table, 23,772 km² as the map draws it).
+  Gibeon: 14,126 -- The 2023 census's counts for Gibeon and Daweb constituencies added together: the map draws them as one (50,366 km² in the census's tables, 50,525 km² as the map draws it).
+  Gobabis: 35,452 -- The 2023 census's count for Gobabis constituency (5,770 km² in the census's table, 5,679 km² as the map draws it).
+  Grootfontein: 36,951 -- The 2023 census's count for Grootfontein constituency (11,278 km² in the census's table, 11,299 km² as the map draws it).
+  Kalahari: 12,021 -- The 2023 census's count for Kalahari constituency (12,248 km² in the census's table, 12,250 km² as the map draws it).
+  Kamanjab: 11,349 -- The 2023 census's count for Kamanjab constituency (17,131 km² in the census's table, 17,167 km² as the map draws it).
+  Karasburg: 31,562 -- The 2023 census's counts for Karasburg East and Karasburg West constituencies added together: the map draws them as one (38,329 km² in the census's tables, 38,321 km² as the map draws it).
+  Karibib: 19,705 -- The 2023 census's count for Karibib constituency (14,536 km² in the census's table, 14,575 km² as the map draws it).
+  Keetmanshoop Rural: 8,744 -- The 2023 census's count for Keetmanshoop Rural constituency (37,922 km² in the census's table, 37,948 km² as the map draws it).
+  Keetmanshoop Urban: 27,862 -- The 2023 census's count for Keetmanshoop Urban constituency (524 km² in the census's table, 526 km² as the map draws it).
+  Khorixas: 15,506 -- The 2023 census's count for Khorixas constituency (21,328 km² in the census's table, 21,345 km² as the map draws it).
+  Kongola: 12,069 -- The 2023 census's count for Kongola constituency (5,174 km² in the census's table, 4,962 km² as the map draws it).
+  Mariental Rural: 23,534 -- The 2023 census's counts for Mariental Rural and Aranos constituencies added together: the map draws them as one (41,761 km² in the census's tables, 41,862 km² as the map draws it).
+  Mashare: 19,478 -- The 2023 census's count for Mashare constituency (9,140 km² in the census's table, 9,323 km² as the map draws it).
+  Mpungu: 21,098 -- The 2023 census's count for Mpungu constituency (7,977 km² in the census's table, 8,152 km² as the map draws it).
+  Mukwe: 39,170 -- The 2023 census's count for Mukwe constituency (5,540 km² in the census's table, 5,509 km² as the map draws it).
+  Naminus (Luderitz): 17,243 -- The 2023 census's count for Nami-Nus constituency, drawn here as Naminus (Luderitz) (48,271 km² in the census's table, 48,552 km² as the map draws it).
+  Okahandja: 46,061 -- The 2023 census's count for Okahandja constituency (5,857 km² in the census's table, 5,893 km² as the map draws it).
+  Okahao and Otamanzi: 41,308 -- The 2023 census's counts for Okahao and Otamanzi constituencies added together: the map draws them as one (14,161 km² in the census's tables, 13,962 km² as the map draws it).
+  Okakarara: 30,987 -- The 2023 census's count for Okakarara constituency (14,644 km² in the census's table, 14,683 km² as the map draws it).
+  Okarukambe (Steinhausen): 12,271 -- The 2023 census's count for Okorukambe constituency, drawn here as Okarukambe (Steinhausen) (17,457 km² in the census's table, 17,539 km² as the map draws it).
+  Okatana: 19,974 -- The 2023 census's count for Okatana constituency (427 km² in the census's table, 428 km² as the map draws it).
+  Okatyali: 4,502 -- The 2023 census's count for Okatyali constituency (558 km² in the census's table, 558 km² as the map draws it).
+  Omaruru: 13,322 -- The 2023 census's count for Omaruru constituency (8,432 km² in the census's table, 8,450 km² as the map draws it).
+  Ompundja: 4,582 -- The 2023 census's count for Ompundja constituency (466 km² in the census's table, 469 km² as the map draws it).
+  Ondangwa: 46,425 -- The 2023 census's counts for Ondangwa Rural and Ondangwa Urban constituencies added together: the map draws them as one (209 km² in the census's tables, 209 km² as the map draws it).
+  Ongenga: 27,296 -- The 2023 census's count for Ongenga constituency (315 km² in the census's table, 318 km² as the map draws it).
+  Oshakati East: 39,915 -- The 2023 census's count for Oshakati East constituency (187 km² in the census's table, 187 km² as the map draws it).
+  Oshakati West: 30,665 -- The 2023 census's count for Oshakati West constituency (239 km² in the census's table, 241 km² as the map draws it).
+  Otjombinde: 9,041 -- The 2023 census's count for Otjombinde constituency (18,929 km² in the census's table, 18,940 km² as the map draws it).
+  Outapi: 53,594 -- The 2023 census's count for Outapi constituency (950 km² in the census's table, 987 km² as the map draws it).
+  Outjo: 19,743 -- The 2023 census's count for Outjo constituency (7,468 km² in the census's table, 7,489 km² as the map draws it).
+  Rehoboth Urban East: 29,299 -- The 2023 census's count for Rehoboth East Urban constituency, drawn here as Rehoboth Urban East (288 km² in the census's table, 283 km² as the map draws it).
+  Rehoboth Urban West: 11,914 -- The 2023 census's count for Rehoboth West Urban constituency, drawn here as Rehoboth Urban West (325 km² in the census's table, 326 km² as the map draws it).
+  Ruacana: 27,261 -- The 2023 census's count for Ruacana constituency (5,377 km² in the census's table, 5,383 km² as the map draws it).
+  Swakopmund: 75,921 -- The 2023 census's count for Swakopmund constituency (196 km² in the census's table, 191 km² as the map draws it).
+  Tsandi: 34,307 -- The 2023 census's count for Tsandi constituency (2,296 km² in the census's table, 2,366 km² as the map draws it).
+  Tsumkwe: 15,357 -- The 2023 census's count for Tsumkwe constituency (28,491 km² in the census's table, 27,910 km² as the map draws it).
+  Uukwiyu: 13,033 -- The 2023 census's count for Uukwiyu constituency (300 km² in the census's table, 300 km² as the map draws it).
+  Uuvudhiya: 5,647 -- The 2023 census's count for Uuvudhiya constituency (5,825 km² in the census's table, 5,838 km² as the map draws it).
+  Walvis Bay Rural: 51,497 -- The 2023 census's count for Walvis Bay Rural constituency (9,150 km² in the census's table, 9,046 km² as the map draws it).
+  Windhoek Rural: 30,079 -- The 2023 census's count for Windhoek Rural constituency (36,418 km² in the census's table, 36,688 km² as the map draws it).
+  Windhoek West: 59,907 -- The 2023 census's count for Windhoek West constituency (208 km² in the census's table, 209 km² as the map draws it).
+  49 of 103 polygons given the census's count
+  wrote data/processed/namibia_constituencies.json (67 kB)
