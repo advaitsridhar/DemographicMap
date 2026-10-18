@@ -68,6 +68,10 @@ class Building(unittest.TestCase):
         self.assertTrue(any("Abyei" in line and "not written" in line for line in report))
         self.assertEqual(by["F"]["name"], "Lafon")
 
+    def test_the_publisher_is_whole_before_the_first_comma(self):
+        self.assertEqual(ss.SOURCE.split(",")[0],
+                         "Southern Sudan Centre for Census Statistics and Evaluation (SSCCSE)")
+
 
 if __name__ == "__main__":
     unittest.main()

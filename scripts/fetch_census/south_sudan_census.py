@@ -44,9 +44,11 @@ DATASET = "south-sudan-subnational-boundaries-and-tabular-data"
 YEAR = 2008
 OUT = "south_sudan_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
-SOURCE = ("Southern Sudan Centre for Census, Statistics and Evaluation, 5th Sudan Population and "
-          "Housing Census 2008, population by five-year age group and sex, as the US Census "
-          "Bureau tabulates it for HDX")
+# The publisher's name has no comma in it: the figure card shows the text before
+# the first one.
+SOURCE = ("Southern Sudan Centre for Census Statistics and Evaluation (SSCCSE), 5th Sudan "
+          "Population and Housing Census 2008, population by five-year age group and sex, as the "
+          "US Census Bureau tabulates it for HDX")
 LICENCE = "Creative Commons Attribution International (CC BY), published via HDX"
 # The census's county (folded) -> the map's label, where the two differ by
 # more than spelling folds away. Filled from the run's log.
