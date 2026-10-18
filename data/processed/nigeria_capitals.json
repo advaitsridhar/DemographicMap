@@ -1914,10 +1914,7 @@
     "level": "admin2",
     "name": "Orumba North",
     "parent": "NGA",
-    "capital": {
-      "status": "not_available",
-      "note": "English Wikipedia's article on Orumba North names no headquarters for the local government area, Wikidata names none, and the 2006 census's tables name none."
-    },
+    "capital": "Ajali",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1942,17 +1939,10 @@
     "sources": [
       {
         "field": "capital",
-        "name": "English Wikipedia, Orumba North",
-        "url": "https://en.wikipedia.org/w/index.php?title=Orumba_North&oldid=1377651411",
-        "year": 2026,
+        "name": "French Wikipedia, Orumba Nord",
+        "url": "https://fr.wikipedia.org/w/index.php?title=Orumba_Nord&oldid=223533567",
+        "year": 2025,
         "license": "CC BY-SA 4.0"
-      },
-      {
-        "field": "capital",
-        "name": "National Population Commission, 2006 Population and Housing Census, Priority Table Volume IV, Population Distribution by Age and Sex (State and Local Government Area)",
-        "url": "https://datacatalog.ihsn.org/catalog/3340/download/48522",
-        "license": "National Population Commission publication (reuse with attribution)",
-        "year": 2006
       }
     ],
     "country": "NGA",
