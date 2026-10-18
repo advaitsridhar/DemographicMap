@@ -64,14 +64,14 @@ class ProjectionTest(unittest.TestCase):
               {"id": "C", "name": "Zone 1", "parent": "F"}]
     regions = {"tigray": {"name": "Tigray", "total": 1000}, "afar": {"name": "Afar", "total": 50}}
 
-    def run_with(self, weredas, names, placed, accepted, shares=None):
+    def run_with(self, weredas, names, placed, accepted, shares=None, areas=None):
         with mock.patch.dict(sys.modules, {"scripts.fetch_census.ethiopia_zones":
                                            zones_module(names, placed, accepted, shares)}), \
                 mock.patch.object(ec, "PROJECTION_REGIONS",
                                   {"Tigray": ["tigray"], "Afar": ["afar"]}), \
                 mock.patch.object(ec, "PROJECTION_WHOLE", {}):
             records, report = ec.projection_records(self.regions, weredas, "https://page",
-                                                    self.admin1, self.admin2)
+                                                    self.admin1, self.admin2, areas)
         return {r["name"]: r for r in records}, report
 
     def test_weredas_matched_by_code_name_and_bare_name_are_summed_into_their_zone(self):
@@ -155,6 +155,36 @@ class ProjectionTest(unittest.TestCase):
         by, _ = self.run_with(weredas, names, placed, set(), shares)
         self.assertNotIn("North", by)       # 200 of 2,000 lie beyond its line
 
+    def test_a_sparse_zone_beside_a_crowded_wereda_is_written_where_the_sliver_is_small_in_area(self):
+        # Majang beside Yeki: one point of Yeki's 32 lies deep inside A. Spread
+        # evenly, Yeki's people there would be 30 of A's 100; its area there is
+        # 3 km2 of A's 1,000.
+        weredas = {"ET010101": {"name": "Godere", "zone": "ET0101", "total": 60},
+                   "ET010102": {"name": "Mengesh", "zone": "ET0101", "total": 40},
+                   "ET010201": {"name": "Yeki", "zone": "ET0102", "total": 1000}}
+        names = {"ET010101": "Godere", "ET010102": "Mengesh", "ET010201": "Yeki"}
+        placed = {"A": ["ET010101", "ET010102"], "B": ["ET010201"]}
+        shares = {"ET010201": {"A": 0.03}}
+        areas = {"ET010101": 600.0, "ET010102": 400.0, "ET010201": 100.0}
+        by, report = self.run_with(weredas, names, placed, set(), shares, areas)
+        self.assertEqual(by["North"]["population"]["value"], 100)
+        self.assertIn("also takes in part of Yeki wereda", by["North"]["population_note"])
+        self.assertTrue(any("a sliver by area" in line for line in report))
+        # Without the areas it is judged by people alone, and refused.
+        by, _ = self.run_with(weredas, names, placed, set(), shares)
+        self.assertNotIn("North", by)
+
+    def test_a_sliver_large_in_both_people_and_area_refuses_the_zone(self):
+        weredas = {"ET010101": {"name": "Godere", "zone": "ET0101", "total": 100},
+                   "ET010201": {"name": "Yeki", "zone": "ET0102", "total": 1000}}
+        names = {"ET010101": "Godere", "ET010201": "Yeki"}
+        placed = {"A": ["ET010101"], "B": ["ET010201"]}
+        shares = {"ET010201": {"A": 0.2}}
+        areas = {"ET010101": 100.0, "ET010201": 100.0}
+        by, report = self.run_with(weredas, names, placed, set(), shares, areas)
+        self.assertNotIn("North", by)
+        self.assertTrue(any(line.startswith("North: not written") for line in report))
+
     def test_a_zone_found_nowhere_blocks_its_region(self):
         weredas = {"ET010101": {"name": "Asgede", "zone": "ET0101", "total": 100},
                    "ET010901": {"name": "Lost", "zone": "ET0109", "total": 5},
@@ -206,6 +236,11 @@ class PlanTest(unittest.TestCase):
             self.assertIn("Bahir Dar, which the census counted apart (221,991 people)", note)
             self.assertIn(f"nor {other}'s", note)
             self.assertIn("most of its area in West Gojam", note)
+            record = self.by[("admin2", zone)]
+            self.assertIn("without Bahir Dar, which the census counted apart",
+                          record["median_age_note"])
+            self.assertIn("without Bahir Dar", record["sex_ratio_note"])
+        self.assertNotIn("sex_ratio_note", self.by[("admin2", "East Gojam")])
 
     def test_the_chartered_cities_and_snnpr_have_seats(self):
         self.assertEqual(self.by[("admin1", "Addis Ababa")]["capital"], "Addis Ababa")

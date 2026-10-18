@@ -46,17 +46,21 @@ West Gondar, the Somali region's new weredas across the old zone lines), so a
 zone polygon takes the sum of the weredas that lie within it, from the
 placement in ``ethiopia_zones`` (OCHA's wereda outlines against the polygons).
 A zone's sum is written where it is the zone's ground but for slivers: the
-people of the weredas that straddle its line, estimated from the share of each
-one's outline lying more than 2 km across it (``ethiopia_zones.SHARES``; nearer
-the line, two drawings of it disagree), are no more than one in twenty of the
-sum, both the people of the zone's ground the sum leaves out and the people
-beyond its line the sum takes in; the note names any straddling wereda that
-brings in more than one in two hundred. A zone whose weredas the
-table and the outlines do not both know is left to the 2007 count. (OCHA's
-own zone table is by the zones of 2022, and where one of them is a drawn
-zone's ground, its weredas are that zone's sum here.) The projection's sex and age split are not read: a census's own figure
-stands over a projection's, and the table applies one age structure to all the
-weredas of a zone.
+parts of the weredas that straddle its line lying more than 2 km across it
+(``ethiopia_zones.SHARES``; nearer the line, two drawings of it disagree) are
+no more than one in twenty, both the zone's ground the sum leaves out and the
+ground beyond its line the sum takes in, counted either in people (each
+wereda's people spread evenly over its outline) or in area (the outlines'
+areas). Each count is coarse where the other is not (one sampled point of a
+populous wereda weighs heavily against a sparse zone's people, but little
+against its area), so a sum within the bound by either count is written, and
+its note names any straddling wereda whose part, counted in people, is more
+than one in two hundred of the sum. A zone whose weredas the table and the
+outlines do not both know is left to the 2007 count. (OCHA's own zone table is
+by the zones of 2022, and where one of them is a drawn zone's ground, its
+weredas are that zone's sum here.) The projection's sex and age split are not
+read: a census's own figure stands over a projection's, and the table applies
+one age structure to all the weredas of a zone.
 
 Usage:
     python -m scripts.fetch_census.ethiopia_census
@@ -384,6 +388,7 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
                 of = f", of the zone and {' and '.join(towns)} together"
             else:
                 note = "The 2007 census's count for the zone."
+        without = []
         for apart, zones in UNPLACED_ON.items():
             if label not in zones:
                 continue
@@ -395,10 +400,17 @@ def plan(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[
                      f"({table['zones'][hits[0]]['total']:,} people), is in neither this "
                      f"figure nor {other}'s: the city lies on the line between the two zones "
                      f"as drawn, most of its area in {zones[0]}.")
+            without.append(NAMES[apart])
+        out = fields(figures, note, of + "".join(f", without {w}, which the census counted apart"
+                                                 for w in without))
+        if without:
+            out["sex_ratio_note"] = (f"From the 2007 census's count of the zone's men and women, "
+                                     f"without {' and '.join(without)}, which the census counted "
+                                     "apart.")
         placed.update(p if isinstance(p, str) else p[1] for p in parts)
         records.append(record(f"ETH-2007-{shape['id']}", label, level="admin2", parent="ETH",
                               country="ETH", match_by="shape_id", shape_id=shape["id"],
-                              **seated("admin2", label, fields(figures, note, of))))
+                              **seated("admin2", label, out)))
     for key, why in UNPLACED.items():
         report.append(f"{key}: counted apart and placed in no polygon -- {why}")
     left = sorted(labels[k] for k in table["zones"] if k[1] not in placed and k[1] not in UNPLACED
@@ -411,6 +423,8 @@ PROJECTION_OUT = "ethiopia_projection.json"
 # The projection's weredas as read, each with the outline and the zone polygon
 # it was placed in, for checking.
 PROJECTION_WEREDAS = "ethiopia_projection_weredas.json"
+# Points sampled over OCHA's wereda outlines, with each outline's area (--points).
+WEREDA_POINTS = "ethiopia_wereda_points.json"
 # How many of a zone's people may lie in weredas straddling its line, either
 # way, and how many a straddling wereda must bring in to be named.
 SLIVER = 0.05
@@ -497,9 +511,12 @@ def listed(names: list[str]) -> str:
 
 
 def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, dict[str, Any]],
-                       page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+                       page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+                       areas: dict[str, float] | None = None
                        ) -> tuple[list[dict[str, Any]], list[str]]:
+    """The projection's records; ``areas`` gives each wereda outline's area in km2."""
     from .ethiopia_zones import NAMES, PLACED, SHARES  # noqa: PLC0415
+    areas = areas or {}
     cite = [{"field": "population", "name": PROJECTION_SOURCE, "url": page,
              "year": PROJECTION_YEAR, "license": LICENCE}]
     records, report = [], []
@@ -615,6 +632,9 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
         return sum(v for k, v in SHARES.get(weredas[code].get("outline") or "", {}).items()
                    if k != sid)
 
+    def area(code: str) -> float:
+        return areas.get(weredas[code].get("outline") or "", 0.0)
+
     for sid in sorted(labels, key=lambda s: labels[s]):
         codes = [c for c in weredas if c in outline and home.get(outline[c]) == sid]
         codes += placed_by_zone.get(sid, [])
@@ -643,12 +663,22 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
                          if beyond_line(c, sid) > 0), reverse=True)
         left_out = sum(n for n, _ in taken_in)
         spilled = sum(n for n, _ in beyond)
-        if left_out > SLIVER * total or spilled > SLIVER * total:
+        # The same in area: the zone's weredas' outlines, the parts of others more
+        # than 2 km inside its line, and the parts of its own more than 2 km beyond.
+        ground = sum(area(c) for c in codes)
+        left_area = sum(inside(c, sid) * area(c) for _, c in taken_in)
+        spilled_area = sum(beyond_line(c, sid) * area(c) for _, c in beyond)
+        by_people = left_out <= SLIVER * total and spilled <= SLIVER * total
+        by_area = ground > 0 and left_area <= SLIVER * ground and spilled_area <= SLIVER * ground
+        shares = (f"people {left_out / total:.1%} left out, {spilled / total:.1%} beyond; area "
+                  f"{left_area / ground if ground else 1:.1%} left out, "
+                  f"{spilled_area / ground if ground else 1:.1%} beyond")
+        if not (by_people or by_area):
             report.append(f"{labels[sid]}: not written -- of its sum {total:,}, weredas "
                           f"straddling its line leave out about {left_out:,.0f} "
                           f"({[weredas[c]['name'] for _, c in taken_in[:4]]}) and take in about "
                           f"{spilled:,.0f} from beyond it "
-                          f"({[weredas[c]['name'] for _, c in beyond[:4]]})")
+                          f"({[weredas[c]['name'] for _, c in beyond[:4]]}); {shares}")
             continue
         named_in = [weredas[c]["name"] for n, c in taken_in if n > NAMED * total]
         named_out = [weredas[c]["name"] for n, c in beyond if n > NAMED * total]
@@ -666,7 +696,8 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
                      "beyond the zone's line.")
         report.append(f"{labels[sid]}: {total:,} from {len(codes)} weredas; about "
                       f"{left_out:,.0f} left out, {spilled:,.0f} taken in from beyond "
-                      f"(named: {named_in}, {named_out})")
+                      f"(named: {named_in}, {named_out}); {shares}"
+                      f"{'' if by_people else ' (a sliver by area)'}")
         records.append(record(
             f"ETH-2022-{sid}", labels[sid], level="admin2", parent="ETH", country="ETH",
             match_by="shape_id", shape_id=sid,
@@ -699,7 +730,7 @@ def main() -> int:
     args = ap.parse_args()
     if args.points:
         from .uganda_census import write_cod_points  # noqa: PLC0415
-        return write_cod_points("cod-ab-eth", 3, "ethiopia_wereda_points.json", 30)
+        return write_cod_points("cod-ab-eth", 3, WEREDA_POINTS, 30)
     import openpyxl                                 # noqa: PLC0415
     url = uscb.workbook_url(uscb.ETHIOPIA.dataset)
     blob = http_get(url, binary=True, cache=False, timeout=300)
@@ -726,7 +757,9 @@ def main() -> int:
         f"{len(admin2)} zones written")
     write_json(PROCESSED / OUT, records)
     regions, weredas, page = projection_tables()
-    projected, report = projection_records(regions, weredas, page, admin1, admin2)
+    areas = {str(u["props"]["adm3_pcode"]): float(u.get("area_km2") or 0.0)
+             for u in json.loads((PROCESSED / WEREDA_POINTS).read_text())}
+    projected, report = projection_records(regions, weredas, page, admin1, admin2, areas)
     for line in report:
         log("  " + line)
     for r in projected:
