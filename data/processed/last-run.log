@@ -1,10 +1,103 @@
-usage: east_probe.py [-h] [--match MATCH] [--match-type MATCH_TYPE]
-                     [--cdx-limit CDX_LIMIT] [--cdx-filter CDX_FILTER]
-                     [--wayback WAYBACK] [--rows ROWS] [--sheets SHEETS]
-                     [--start START] [--cols COLS] [--width WIDTH]
-                     [--grep GREP] [--indent] [--after AFTER] [--links LINKS]
-                     [--context CONTEXT] [--bytes BYTES] [--data DATA]
-                     [--hosts HOSTS] [--aia] [--sheet-match SHEET_MATCH]
-                     [--form]
-                     {cdx,get,post,head,hdx} target [target ...]
-east_probe.py: error: unrecognized arguments: --run eastfix1
+probe_page: https://www.citypopulation.de/en/djibouti/admin/3__dikhil/
+  52 lines:
+        0  ﻿
+        1  Dikhil (Region, Djibouti) - Population Statistics, Charts, Map and Location
+        2  Home → Africa → Djibouti → Administrative Division
+        3  Dikhil
+        4  Region in Djibouti
+        5  Contents: Subdivision
+        6  The population in Dikhil as well as related information and services (Wikipedia, Google, images).
+        7  The icon links to further information about a selected division including its population structure (gender, urbanization).
+        8  Name
+        9  Status
+       10  Population
+       11  Census
+       12  2024-05-20
+       13  Dikhil
+       14  Region
+       15  66,196
+       16  As-Eyla
+       17  Sub-Prefecture
+       18  14,562
+       19  →
+       20  Dikhil ( Dikhil-Ville )
+       21  City
+       22  27,722
+       23  →
+       24  Dikhil-Périphérique
+       25  Sub-Prefecture
+       26  5,538
+       27  →
+       28  Mouloud
+       29  Sub-Prefecture
+       30  5,203
+       31  →
+       32  Yoboki
+       33  Sub-Prefecture
+       34  13,171
+       35  →
+       36  Djibouti
+       37  Republic
+       38  1,066,809
+       39  Source: Institut National de la Statistique de Djibouti, INSTAD.
+       40  Explanation: The population figures are final. Area figures are calculated using geospatial data.
+       41  Further information about the population structure:
+       42  Gender (C 2024)
+       43  Males
+       44  32,959
+       45  Females
+       46  33,237
+       47  Urbanization (C 2024)
+       48  Rural
+       49  38,474
+       50  Urban
+       51  27,722
+probe_page: https://www.citypopulation.de/en/djibouti/admin/1__djibouti/
+  44 lines:
+        0  ﻿
+        1  Djibouti (City, Djibouti) - Population Statistics, Charts, Map and Location
+        2  Home → Africa → Djibouti → Administrative Division
+        3  Djibouti
+        4  City in Djibouti
+        5  Contents: Subdivision
+        6  The population in Djibouti as well as related information and services (Wikipedia, Google, images).
+        7  The icon links to further information about a selected division including its population structure (gender, urbanization).
+        8  Name
+        9  Status
+       10  Population
+       11  Census
+       12  2024-05-20
+       13  Djibouti ( Djibouti-Ville )
+       14  City
+       15  767,250
+       16  Balbala
+       17  Commune
+       18  547,129
+       19  →
+       20  Boulaos
+       21  Commune
+       22  212,074
+       23  →
+       24  Rasdika
+       25  Commune
+       26  8,047
+       27  →
+       28  Djibouti
+       29  Republic
+       30  1,066,809
+       31  Source: Institut National de la Statistique de Djibouti, INSTAD.
+       32  Explanation: The population figures are final. Area figures are calculated using geospatial data.
+       33  Further information about the population structure:
+       34  Gender (C 2024)
+       35  Males
+       36  378,351
+       37  Females
+       38  388,899
+       39  Urbanization (C 2024)
+       40  Urban
+       41  767,250
+       42  See also:
+       43  Djibouti with arrondissements
+probe_page: https://www.citypopulation.de/en/burundi/admin/cankuzo/04002__cendajuru/
+  1 lines:
+        0  ﻿
