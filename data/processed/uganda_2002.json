@@ -409,43 +409,10 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Anglican",
-        "pct": 39.6,
-        "count": 90690
-      },
-      {
-        "group": "Catholic",
-        "pct": 34.4,
-        "count": 78986
-      },
-      {
-        "group": "Muslim",
-        "pct": 12.1,
-        "count": 27839
-      },
-      {
-        "group": "Pentecostal",
-        "pct": 6.9,
-        "count": 15736
-      },
-      {
-        "group": "Adventist",
-        "pct": 4.1,
-        "count": 9326
-      },
-      {
-        "group": "Other religion",
-        "pct": 2.6,
-        "count": 5930
-      },
-      {
-        "group": "No religion",
-        "pct": 0.3,
-        "count": 790
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "Kiboga District, which was this county alone in 2002, has its religion published in the 2002 census, but the county as drawn here does not keep the district's lines in the counts taken since, so it is not shown to be the district's ground and no count is given for it."
+    },
     "language": {
       "status": "not_available"
     },
@@ -454,7 +421,7 @@
     },
     "sources": [
       {
-        "field": "religion",
+        "field": "religion note",
         "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
         "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
         "year": 2002,
@@ -463,9 +430,7 @@
     ],
     "country": "UGA",
     "match_by": "shape_id",
-    "shape_id": "47994165B88376902859288",
-    "religion_year": 2002,
-    "religion_note": "The 2002 census's count of Kiboga District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+    "shape_id": "47994165B88376902859288"
   },
   {
     "id": "UGA-2002-47994165B79895845203755",
@@ -577,7 +542,7 @@
     },
     "sources": [
       {
-        "field": "religion",
+        "field": "religion note",
         "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
         "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
         "year": 2002,
@@ -698,7 +663,7 @@
     },
     "sources": [
       {
-        "field": "religion",
+        "field": "religion note",
         "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
         "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
         "year": 2002,
@@ -729,43 +694,10 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Catholic",
-        "pct": 82.5,
-        "count": 166880
-      },
-      {
-        "group": "Anglican",
-        "pct": 8.0,
-        "count": 16153
-      },
-      {
-        "group": "Muslim",
-        "pct": 5.6,
-        "count": 11273
-      },
-      {
-        "group": "Pentecostal",
-        "pct": 1.8,
-        "count": 3665
-      },
-      {
-        "group": "Adventist",
-        "pct": 1.1,
-        "count": 2290
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.9,
-        "count": 1723
-      },
-      {
-        "group": "No religion",
-        "pct": 0.1,
-        "count": 239
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "Adjumani District, which was this county alone in 2002, has its religion published in the 2002 census, but the county as drawn here does not keep the district's lines in the counts taken since, so it is not shown to be the district's ground and no count is given for it."
+    },
     "language": {
       "status": "not_available"
     },
@@ -774,7 +706,7 @@
     },
     "sources": [
       {
-        "field": "religion",
+        "field": "religion note",
         "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
         "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
         "year": 2002,
@@ -783,9 +715,7 @@
     ],
     "country": "UGA",
     "match_by": "shape_id",
-    "shape_id": "47994165B33231894396929",
-    "religion_year": 2002,
-    "religion_note": "The 2002 census's count of Adjumani District's people by religion, the district being this county alone in 2002 (Table B7, which leaves out people enumerated in hotels); the 2014 and 2024 censuses published religion for the country as a whole only. 'Other religion' is the census's 'Other': Orthodox, Baha'i, other Christian, non-Christian and traditional religions."
+    "shape_id": "47994165B33231894396929"
   },
   {
     "id": "UGA-2002-47994165B72229648359475",
@@ -819,7 +749,7 @@
     },
     "sources": [
       {
-        "field": "religion",
+        "field": "religion note",
         "name": "Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census, Table B7: Religion by District",
         "url": "https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip",
         "year": 2002,
