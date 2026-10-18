@@ -78,6 +78,16 @@ class GhanaCapitalsTest(unittest.TestCase):
         self.assertEqual(records["d"]["capital"], "Suhum")
         self.assertEqual(records["e"]["capital"], "Sefwi Wiawso")
         self.assertEqual(records["a"]["sources"][0]["name"], "English Wikipedia, Districts of Ghana")
+        # The revision read is what is cited, by its permanent address and year.
+        from scripts.fetch_census import nigeria_capitals as nc
+        article = {"title": "Districts of Ghana", "revid": 1359154973,
+                   "timestamp": "2026-10-10T08:00:00Z"}
+        with mock.patch.object(gc, "DISTRICTS", 5):
+            records = {r["shape_id"]: r for r in gc.bind(rows, admin1, admin2, nc.cite(article))}
+        src = records["a"]["sources"][0]
+        self.assertEqual(src["url"], "https://en.wikipedia.org/w/index.php?"
+                                     "title=Districts_of_Ghana&oldid=1359154973")
+        self.assertEqual(src["year"], 2026)
 
     def test_a_polygon_left_over_stops_the_write(self):
         rows = gc.capitals(WIKITEXT)

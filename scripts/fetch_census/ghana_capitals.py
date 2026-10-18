@@ -14,7 +14,8 @@ boundary file's spellings, with ``ALIASES`` below for the article's own. The
 boundary file draws 260 districts: Guan, made in 2019 out of part of Hohoe
 Municipal, is drawn inside Hohoe's polygon, which gets Hohoe's capital. Every
 other polygon must get exactly one of the article's districts and every one of
-them but Guan a polygon, or nothing is written.
+them but Guan a polygon, or nothing is written. Each record cites the
+revision read, by its permanent address and its year.
 
 Usage:
     python -m scripts.fetch_census.ghana_capitals
@@ -26,20 +27,19 @@ import argparse
 import json
 import re
 import sys
-import urllib.parse
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, http_json, log, record, write_json
+from ._shared import PROCESSED, log, record, write_json
 from .ghana_census import ALIASES as CENSUS_ALIASES
 from .ghana_census import REGIONS, key
+from .nigeria_capitals import articles, cite
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_wikitable import tables  # noqa: E402
 
 TITLE = "Districts of Ghana"
 URL = "https://en.wikipedia.org/wiki/Districts_of_Ghana"
-API = "https://en.wikipedia.org/w/api.php"
 SOURCE = f"English Wikipedia, {TITLE}"
 LICENCE = "CC BY-SA 4.0"
 OUT = "ghana_capitals.json"
@@ -97,7 +97,11 @@ def capitals(wikitext: str) -> dict[str, list[tuple[str, str]]]:
 
 
 def bind(rows: dict[str, list[tuple[str, str]]], admin1: list[dict[str, Any]],
-         admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+         admin2: list[dict[str, Any]], source: dict[str, Any] | None = None
+         ) -> list[dict[str, Any]]:
+    """One record per drawn district: its capital, citing ``source`` (the
+    revision read)."""
+    source = source or {"field": "capital", "name": SOURCE, "url": URL, "license": LICENCE}
     region_of = {s["id"]: re.sub(r"\s+Region$", "", s["name"]) for s in admin1}
     if sorted(region_of.values()) != sorted(REGIONS):
         raise SystemExit(f"ghana_capitals: region polygons {sorted(region_of.values())}")
@@ -126,7 +130,7 @@ def bind(rows: dict[str, list[tuple[str, str]]], admin1: list[dict[str, Any]],
         records.append(record(
             f"GHA-SEAT-{shape['id']}", shape["name"], level="admin2", parent="GHA",
             country="GHA", match_by="shape_id", shape_id=shape["id"], capital=seat,
-            sources=[{"field": "capital", "name": SOURCE, "url": URL, "license": LICENCE}]))
+            sources=[dict(source)]))
     unused = sorted(f"{r}: {listed[(r, k)][0]}" for r, k in listed
                     if (r, k) not in used and (r, k) not in NOT_DRAWN)
     if left or unused:
@@ -135,26 +139,26 @@ def bind(rows: dict[str, list[tuple[str, str]]], admin1: list[dict[str, Any]],
     return records
 
 
-def fetch() -> tuple[str, int | None]:
-    q = urllib.parse.urlencode({"action": "parse", "page": TITLE, "prop": "wikitext|revid",
-                                "format": "json", "formatversion": "2", "redirects": "1"})
-    data = http_json(f"{API}?{q}", timeout=90)
-    parsed = data.get("parse") or {}
-    if not parsed.get("wikitext"):
+def fetch() -> dict[str, Any]:
+    """The article's current revision: title, revid, timestamp and wikitext."""
+    article = articles([TITLE]).get(TITLE)
+    if not article or not article.get("text"):
         raise SystemExit(f"ghana_capitals: {TITLE!r} returned no wikitext")
-    return parsed["wikitext"], parsed.get("revid")
+    return article
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
-    wikitext, revid = fetch()
-    rows = capitals(wikitext)
-    log(f"ghana_capitals: {TITLE!r}, revision {revid}: "
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    ap.parse_args()
+    article = fetch()
+    rows = capitals(article["text"])
+    log(f"ghana_capitals: {TITLE!r}, revision {article['revid']} of {article['timestamp']}: "
         + ", ".join(f"{r} {len(v)}" for r, v in rows.items()))
     admin1 = json.loads((SITE / "admin1" / "GHA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "GHA.units.json").read_text())
-    records = bind(rows, admin1, admin2)
+    records = bind(rows, admin1, admin2, cite(article))
     log(f"  {len(records)} district capitals")
     write_json(PROCESSED / OUT, records)
     return 0

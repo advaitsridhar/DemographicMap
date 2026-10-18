@@ -12,7 +12,8 @@ new districts are not drawn and give nothing.
 
 Bonthe is left out: the list names Bonthe town, on Sherbro Island, while
 Bonthe District Council sits at Mattru Jong on the mainland, so which town is
-the district's seat is not certain.
+the district's seat is not certain. Each record cites the revision read, by
+its permanent address and its year.
 
 Usage:
     python -m scripts.fetch_census.sierra_leone_capitals
@@ -23,18 +24,17 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-import urllib.parse
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, http_json, log, record, write_json
+from ._shared import PROCESSED, log, record, write_json
+from .nigeria_capitals import articles, cite
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_wikitable import tables  # noqa: E402
 
 TITLE = "Districts of Sierra Leone"
 URL = "https://en.wikipedia.org/wiki/Districts_of_Sierra_Leone"
-API = "https://en.wikipedia.org/w/api.php"
 SOURCE = f"English Wikipedia, {TITLE}"
 LICENCE = "CC BY-SA 4.0"
 OUT = "sierra_leone_capitals.json"
@@ -59,7 +59,11 @@ def capitals(wikitext: str) -> dict[str, str]:
     raise SystemExit(f"sierra_leone_capitals: {TITLE!r} has no table of districts and capitals")
 
 
-def bind(listed: dict[str, str], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def bind(listed: dict[str, str], admin2: list[dict[str, Any]],
+         source: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    """One record per drawn district the list gives a capital, citing ``source``
+    (the revision read)."""
+    source = source or {"field": "capital", "name": SOURCE, "url": URL, "license": LICENCE}
     drawn = {shape["name"]: shape for shape in admin2}
     if len(listed) != 16:
         raise SystemExit(f"sierra_leone_capitals: the list has {len(listed)} districts, not 16")
@@ -79,8 +83,7 @@ def bind(listed: dict[str, str], admin2: list[dict[str, Any]]) -> list[dict[str,
         records.append(record(
             f"SLE-SEAT-{shape['id']}", shape["name"], level="admin2", parent="SLE",
             country="SLE", match_by="shape_id", shape_id=shape["id"],
-            sources=[{"field": "capital", "name": SOURCE, "url": URL, "license": LICENCE}],
-            **fields))
+            sources=[dict(source)], **fields))
     left = sorted(set(drawn) - used - {"Bonthe"})
     if left:
         raise SystemExit(f"sierra_leone_capitals: drawn districts with no capital: {left}")
@@ -88,17 +91,18 @@ def bind(listed: dict[str, str], admin2: list[dict[str, Any]]) -> list[dict[str,
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
-    q = urllib.parse.urlencode({"action": "parse", "page": TITLE, "prop": "wikitext|revid",
-                                "format": "json", "formatversion": "2", "redirects": "1"})
-    parsed = http_json(f"{API}?{q}", timeout=90).get("parse") or {}
-    if not parsed.get("wikitext"):
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    ap.parse_args()
+    article = articles([TITLE]).get(TITLE)
+    if not article or not article.get("text"):
         raise SystemExit(f"sierra_leone_capitals: {TITLE!r} returned no wikitext")
-    listed = capitals(parsed["wikitext"])
-    log(f"sierra_leone_capitals: {TITLE!r}, revision {parsed.get('revid')}: {listed}")
+    listed = capitals(article["text"])
+    log(f"sierra_leone_capitals: {TITLE!r}, revision {article['revid']} of "
+        f"{article['timestamp']}: {listed}")
     admin2 = json.loads((SITE / "admin2" / "SLE.units.json").read_text())
-    records = bind(listed, admin2)
+    records = bind(listed, admin2, cite(article))
     log(f"  {len(records)} district capitals")
     write_json(PROCESSED / OUT, records)
     return 0

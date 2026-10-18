@@ -79,6 +79,8 @@ SRC_REL = (f"{PUBLISHER}, 2013 Population and Housing Census, Volume 5: Spatial 
            "Annex H")
 SRC_POP24 = f"{PUBLISHER}, 2024 Population and Housing Census, Preliminary Report, Table 12"
 SRC_ETH24 = f"{PUBLISHER}, 2024 Population and Housing Census, Preliminary Report, Table 8"
+SRC_SPATIAL = f"{PUBLISHER}, 2013 Population and Housing Census, Volume 5: Spatial Distribution"
+SRC_PRELIM = f"{PUBLISHER}, 2024 Population and Housing Census, Preliminary Report"
 LICENCE = "Gambia Bureau of Statistics publication (reuse with attribution)"
 NATIONAL_2013 = 1_857_181
 NATIONAL_2024 = (2_422_712, 1_186_293, 1_236_419)
@@ -587,6 +589,16 @@ def bind_districts(d2013: dict[str, dict[str, Any]], admin1: list[dict[str, Any]
     unanswered = {"median_age": gap(NOT_AVAILABLE, DISTRICT_MEDIAN),
                   "religion": gap(NOT_AVAILABLE, DISTRICT_RELIGION),
                   "ethnicity": gap(NOT_AVAILABLE, DISTRICT_ETHNICITY)}
+    # The publications those reasons rest on: the directory's age bands, the
+    # spatial report's tables by LGA, the 2024 preliminary report's.
+    reasons_cited = [
+        {"field": "median_age", "name": SRC_DIR, "url": DIRECTORY, "license": LICENCE,
+         "year": 2013},
+        {"field": "median_age/religion/ethnicity", "name": SRC_SPATIAL, "url": SPATIAL,
+         "license": LICENCE, "year": 2013},
+        {"field": "religion/ethnicity", "name": SRC_PRELIM, "url": PRELIMINARY,
+         "license": LICENCE, "year": 2024},
+    ]
     records = []
     for shape in admin2:
         lga = lga_of.get(shape["parent"])
@@ -598,7 +610,9 @@ def bind_districts(d2013: dict[str, dict[str, Any]], admin1: list[dict[str, Any]
                 f"GMB-2013-{key(shape['name'])}", shape["name"], level="admin2", parent="GMB",
                 country="GMB", match_by="shape_id", shape_id=shape["id"],
                 population=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
-                **unanswered))
+                **unanswered,
+                sources=[{"field": "population/sex_ratio", "name": SRC_DIR, "url": DIRECTORY,
+                          "license": LICENCE, "year": 2013}, *reasons_cited]))
             continue
         found = [(n, v) for n, v in d2013[lga]["districts"].items()
                  if key(n) == key(shape["name"])]
@@ -619,7 +633,7 @@ def bind_districts(d2013: dict[str, dict[str, Any]], admin1: list[dict[str, Any]
                             "directory prints no count of men, which is the difference."),
             **unanswered,
             sources=[{"field": "population/sex_ratio", "name": SRC_DIR, "url": DIRECTORY,
-                      "license": LICENCE, "year": 2013}]))
+                      "license": LICENCE, "year": 2013}, *reasons_cited]))
     return records
 
 
@@ -663,6 +677,7 @@ def read() -> dict[str, Any]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
     ap.parse_args()
     tables = read()
     for lga in LGAS:

@@ -30,19 +30,33 @@ census, and the 2022 census counts 155. Where a county's districts are the
 same in both lists, each polygon gets its district's count and sex ratio:
 Bong, Gbarpolu, Grand Cape Mount, Grand Gedeh, Maryland, Nimba, River Gee and
 Rivercess, and Grand Bassa, where Owensgrove is the one district the table
-does not print. Elsewhere the 2022 list holds districts the 2008 one does not
--- Tehr in Bomi, Penicess in Grand Kru, four more in Lofa, Kabah
-Administrative in Margibi, eleven townships in Montserrado, Jlah, Krah,
-Sarboh and Bar-Nakay in Sinoe -- and the publications do not say which drawn
-district each was made from, so no 2022 figure is put on those polygons and
-each says why.
+does not print. Elsewhere the 2022 list holds districts the 2008 census does
+not list -- Tehr in Bomi, Penicess in Grand Kru, four more in Lofa,
+Farmington and Kabah Administrative in Margibi, eleven townships in
+Montserrado, Jlah, Krah, Sarboh and Bar-Nakay in Sinoe -- or leaves out a
+district drawn here, and does not say which drawn district a new one was made
+from, so no 2022 figure is put on those polygons and each says what the list
+holds (``NOT_THE_DRAWN``).
 
 **Corrections the arithmetic makes.** Gounwolaila's row is printed under
 Grand Cape Mount and under Margibi and not under Gbarpolu; each of the first
 two counties' districts make its total only without it, and Gbarpolu's fall
 short by exactly its figures, so it is read as Gbarpolu's. Grand Bassa's
 seven printed districts fall 14,422 short of the county (7,391 men, 7,031
-women), and Owensgrove, the district missing from its table, says so.
+women), which is Owensgrove's count, the one district missing from its
+table: the same arithmetic.
+
+**The districts' ground.** Each bound district's 2022 count is set beside
+the 2008 census's count of the district of the same name, as Statoids lists
+the 2008 census report's 136 districts. A district whose count changes by
+more than a population does in the fourteen years (check_rollups' bounds:
+5% a year up, 3% down) is shown with a note giving the 2008 count and
+saying that the 2022 census's district may not be the ground drawn here.
+Most of those are the districts of county capitals and mining areas (Tchien,
+Zwedru's; Potupo, Fish Town's; Commonwealth, Robertsport's; Central
+Rivercess), and Maryland's -- Pleebo/Sodoken nearly doubled while Gwelekpoken,
+Whojah, Nyorken and Karluway Number 2 lost from a third to more than half of
+their people -- looks like ground moved between districts.
 
 **Checks.** Men and women make every total; each county's age groups make its
 total and its sexes as Table A3 prints them; the counties make Liberia,
@@ -57,11 +71,13 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 import re
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
+from check_rollups import DECLINE, GROWTH  # noqa: E402
 from probe_pdf import PAGE_BREAK, laid_out  # noqa: E402
 
 FINAL = "https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf"
@@ -79,6 +95,8 @@ SRC_REL = (f"{PUBLISHER}, 2022 Population and Housing Census, Thematic Report on
            "Size, Distribution and Structure (2024), Table 4.3")
 SRC_ETH = (f"{PUBLISHER}, 2022 Population and Housing Census, Thematic Report on Population "
            "Size, Distribution and Structure (2024), Table 4.1, with Final Results Table A7")
+SRC_THEMATIC = (f"{PUBLISHER}, 2022 Population and Housing Census, Thematic Report on Population "
+                "Size, Distribution and Structure (2024)")
 LICENCE = "LISGIS publication (reuse with attribution)"
 YEAR = 2022
 NATIONAL = (5_250_187, 2_644_027, 2_606_160)
@@ -86,6 +104,17 @@ NON_AFRICAN_PCT = 0.2          # Table 4.2's national share, the one group not d
 OUT = "liberia_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 UNIT = "males_per_100_females"
+# The 2008 census's districts, as Statoids lists the census report's 136.
+STATOIDS = "https://statoids.com/ylr.html"
+SRC_2008 = ("Liberia Institute of Statistics and Geo-Information Services (LISGIS), 2008 National "
+            "Population and Housing Census, population by district, as Statoids lists it")
+NATIONAL_2008 = 3_476_608
+YEARS_BETWEEN = 14             # March 2008 to November 2022, in whole years
+# HASC county codes -> county keys.
+HASC = {"BG": "bong", "BM": "bomi", "CM": "grandcapemount", "GB": "grandbassa",
+        "GD": "grandgedeh", "GK": "grandkru", "GP": "gbarpolu", "LF": "lofa", "MG": "margibi",
+        "MO": "montserrado", "MY": "maryland", "NI": "nimba", "RG": "rivergee",
+        "RI": "rivercess", "SI": "sinoe"}
 
 COUNTIES = ("Bomi", "Bong", "Gbarpolu", "Grand Bassa", "Grand Cape Mount", "Grand Gedeh",
             "Grand Kru", "Lofa", "Margibi", "Maryland", "Montserrado", "Nimba", "River Cess",
@@ -93,17 +122,42 @@ COUNTIES = ("Bomi", "Bong", "Gbarpolu", "Grand Bassa", "Grand Cape Mount", "Gran
 # Counties whose 2022 districts are the 2008 districts the boundary file draws.
 SAME_DISTRICTS = ("bong", "gbarpolu", "grandcapemount", "grandgedeh", "maryland", "nimba",
                   "rivergee", "rivercess", "grandbassa")
-# The districts the 2022 census counts and the 2008 one did not, by county:
-# the reason the county's drawn districts carry no 2022 figure.
-NEW_DISTRICTS = {
-    "bomi": "Tehr", "grandkru": "Penicess",
-    "lofa": "Lukambeh, Wahasa, Waum and Tengia", "margibi": "Kabah Administrative",
-    "montserrado": "eleven townships", "sinoe": "Jlah, Krah, Sarboh and Bar-Nakay",
+# What each other county's 2022 list holds against the districts drawn: the
+# reason its polygons carry no 2022 figure. Checked against Appendix B and
+# against the 2008 census's list of districts.
+NOT_THE_DRAWN = {
+    "bomi": ("B1", "the four districts drawn here and Tehr, a district the 2008 census does not "
+                   "list, without saying which drawn district it was made from"),
+    "grandkru": ("B10", "the eighteen districts drawn here and Penicess, a district the 2008 "
+                        "census does not list, without saying which drawn district it was "
+                        "made from"),
+    "lofa": ("B14", "the seven districts drawn here and Lukameh, Wahasa, Waum and Tengia, "
+                    "districts the 2008 census does not list, without saying which drawn "
+                    "districts they were made from"),
+    "margibi": ("B5", "Gibi, Kakata and Mambahn Kabah, which are drawn here, Farmington and "
+                      "Kabah Administrative, which the 2008 census does not list, and not "
+                      "Firestone, without saying which drawn districts the two new ones were "
+                      "made from"),
+    "montserrado": ("B6", "Careysburg, St. Paul River, Todee and Greater Monrovia, eleven "
+                          "townships apart from them (Paynesville, Gardnersville, New Georgia "
+                          "and others) and no Commonwealth district, without saying which "
+                          "drawn district each township lies in"),
+    "sinoe": ("B8", "sixteen of the seventeen districts drawn here, not Dugbe River, and Jlah, "
+                    "Krah, Sarboh and Bar-Nakay, districts the 2008 census does not list, "
+                    "without saying which drawn districts they were made from"),
 }
+# Names the 2022 tables print that the 2008 list does not, by county: the
+# check that NOT_THE_DRAWN's sentences still describe the tables.
+LISTED_NEW = {"bomi": {"tehr"}, "grandkru": {"penicess"},
+              "lofa": {"lukameh", "wahasa", "waum", "tengia"},
+              "margibi": {"farmington", "kabahadministrative"},
+              "sinoe": {"barnakay", "jlah", "krah", "sarboh"}}
 # (county, the boundary file's reduced name) -> the census's reduced name.
 ALIASES = {("grandbassa", "commonwealth2"): "commonwealth",
            ("grandcapemount", "commonwealth"): "commonwealthrobertsport"}
 MISSING_ROW = {("grandbassa", "owensgrove")}
+WORDS = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight",
+         9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 ETHNIC = ("Bassa", "Belle", "Dey", "Gbandi", "Gio", "Gola", "Grebo", "Kpelle", "Kissi",
           "Krahn", "Kru", "Lorma", "Mandingo", "Mano", "Mende", "Sapo", "Vai")
 RELIGIONS = ("Christian", "Muslim", "Traditional African Religion", "Other religion",
@@ -184,6 +238,8 @@ def read_districts(pages: list[str]) -> dict[str, dict[str, Any]]:
                         items[-1] = (f"{items[-1][0]} {line}", items[-1][1])
                     continue
                 name, v = found[0]
+                # A line break kept in a printed name: "Pleebo/ Sodoken".
+                name = re.sub(r"\s*/\s*", "/", name)
                 t = (int(v[0]), int(v[1]), int(v[2]))
                 if county is None:
                     county = key(name)
@@ -191,6 +247,72 @@ def read_districts(pages: list[str]) -> dict[str, dict[str, Any]]:
                 else:
                     items.append((name, t))
     return out
+
+
+def read_2008(page: str) -> dict[str, dict[str, tuple[str, int]]]:
+    """Statoids' table of the 2008 census's districts: {county key: {district
+    key: (name, population)}}, checked to be 136 districts making 3,476,608."""
+    out: dict[str, dict[str, tuple[str, int]]] = {}
+    total = count = 0
+    for row in re.findall(r"(?is)<tr\b.*?</tr>", page):
+        cells = [" ".join(html.unescape(re.sub(r"<[^>]+>", " ", c)).split())
+                 for c in re.findall(r"(?is)<t[dh]\b[^>]*>(.*?)</t[dh]>", row)]
+        if len(cells) < 3 or not re.fullmatch(r"LR\.[A-Z]{2}\.[A-Z]{2}", cells[1]) \
+                or not re.fullmatch(r"[\d,]+", cells[2]):
+            continue
+        county = HASC[cells[1].split(".")[1]]
+        pop = int(cells[2].replace(",", ""))
+        out.setdefault(county, {})[key(cells[0])] = (cells[0], pop)
+        total += pop
+        count += 1
+    if count != 136 or total != NATIONAL_2008:
+        raise SystemExit(f"liberia_census: Statoids lists {count} districts of 2008 making "
+                         f"{total:,}, not 136 making {NATIONAL_2008:,}")
+    return out
+
+
+# The 2008 list's names for districts the 2022 tables or the boundary file name
+# otherwise, reduced: (county, key) -> the 2008 key.
+NAMES_2008 = {("grandbassa", "commonwealth2"): "commonwealth",
+              ("nimba", "weegbehyimahn"): "weegbehymahn"}
+
+
+def change_note(name: str, where: str, then: int, now: int) -> str | None:
+    """The note for a district whose count changes by more than a population
+    does between the censuses, or None."""
+    rate = (now / then) ** (1 / YEARS_BETWEEN) - 1
+    if -DECLINE <= rate <= GROWTH:
+        return None
+    if rate > 0:
+        told = (f"It is {now / then:.1f} times the 2008 census's {then:,} for the district of "
+                f"that name, a rise of {rate:.1%} a year, faster than a population grows, so "
+                "the district the 2022 census counts may take in ground the 2008 census "
+                "counted in other districts.")
+    else:
+        told = (f"It is {now / then:.0%} of the 2008 census's {then:,} for the district of that "
+                f"name, a fall of {-rate:.1%} a year, faster than a population shrinks, so the "
+                "district the 2022 census counts may have lost ground to other districts since "
+                "2008.")
+    return f"The 2022 census's count for {name}, in {where}. {told}"
+
+
+def check_not_the_drawn(districts: dict[str, dict[str, Any]],
+                        d2008: dict[str, dict[str, tuple[str, int]]]) -> None:
+    """NOT_THE_DRAWN's sentences against the tables: the new names are in the
+    2022 table and not in the 2008 list, and the drawn names it says are left
+    out are left out."""
+    for c, new in LISTED_NEW.items():
+        listed = {key(n) for n, _ in districts[c]["rows"]}
+        if not new <= listed or new & set(d2008.get(c, {})):
+            raise SystemExit(f"liberia_census: {c}'s 2022 table no longer lists {sorted(new)} "
+                             f"as districts the 2008 census does not: {sorted(listed)}")
+    left_out = {"margibi": "firestone", "sinoe": "dugberiver", "montserrado": "commonwealth"}
+    for c, k in left_out.items():
+        if k in {key(n) for n, _ in districts[c]["rows"]}:
+            raise SystemExit(f"liberia_census: {c}'s 2022 table lists {k}")
+    towns = [n for n, _ in districts["montserrado"]["rows"] if key(n) not in d2008["montserrado"]]
+    if len(towns) != 11 or not all(re.search(r"(?i)township|borough", n) for n in towns):
+        raise SystemExit(f"liberia_census: Montserrado's 2022 table lists {towns} apart")
 
 
 AGE_ROW = re.compile(rf"^(?P<low>\d+)\s*(?:[-–]\s*(?P<high>\d+)|\+)\s+"
@@ -358,11 +480,12 @@ def county_fields(c: str, label: str, counties: dict, ages: dict, religion: dict
         "ethnicity_year": YEAR,
         "ethnicity_note": (
             "Ethnic group as the 2022 census counts it. The census prints each group's spread "
-            "across the counties, to one decimal, and each group's national count, so each "
-            "share here is the two multiplied over the county's population; the rounding of "
-            "that one decimal can move a large group's share in a small county by up to about "
-            "half a percentage point. Non-Africans, 0.2 per cent of Liberia, are not spread by "
-            "county and are not shown."),
+            "across the counties, to one decimal, and each group's national count except Other "
+            "African's, which is Liberia's population less the groups printed and the 0.2 per "
+            "cent who are not African; each share here is the two multiplied over the "
+            "county's population, and the rounding of that one decimal can move a large "
+            "group's share in a small county by up to about half a percentage point. "
+            "Non-Africans are not spread by county and are not shown."),
         "sources": [
             {"field": "population/sex_ratio", "name": SRC_POP, "url": FINAL,
              "archived": FINAL_CAPTURE, "license": LICENCE, "year": YEAR},
@@ -383,24 +506,39 @@ COMPOSITION_BY_COUNTY = ("The 2022 census asks {field}, and its published result
 
 
 def district_fields(name: str, t: tuple[int, int, int] | None, county_label: str,
-                    why: str | None) -> dict[str, Any]:
+                    why: str | None, note: str | None = None,
+                    then: int | None = None) -> dict[str, Any]:
+    """A district's record: its 2022 count and sex ratio, or ``why`` there are
+    none, and the reasons for the fields the census publishes by county only,
+    each citing the publication it rests on. ``note`` replaces the count's
+    note; ``then`` is the 2008 census's count of the district, given in the
+    note where the two are further apart than a population moves."""
     out: dict[str, Any] = {
         "median_age": gap(NOT_AVAILABLE, AGE_BY_COUNTY),
         "religion": gap(NOT_AVAILABLE, COMPOSITION_BY_COUNTY.format(field="religion")),
         "ethnicity": gap(NOT_AVAILABLE, COMPOSITION_BY_COUNTY.format(field="ethnicity")),
+        "sources": [{"field": "median_age/religion/ethnicity", "name": SRC_THEMATIC,
+                     "url": THEMATIC, "archived": THEMATIC_CAPTURE, "license": LICENCE,
+                     "year": YEAR},
+                    {"field": "population/sex_ratio", "name": SRC_DIST, "url": FINAL,
+                     "archived": FINAL_CAPTURE, "license": LICENCE, "year": YEAR}],
     }
     if t is None:
         out["population"] = gap(NOT_AVAILABLE, why)
         out["sex_ratio"] = gap(NOT_AVAILABLE, why)
         return out
+    moved = change_note(name, county_label, then, t[0]) if then else None
     out.update({
         "population": measure(t[0], year=YEAR, source=SRC_DIST),
-        "population_note": f"The 2022 census's count for {name}, in {county_label}.",
+        "population_note": note or moved or f"The 2022 census's count for {name}, in "
+                                            f"{county_label}.",
         "sex_ratio": measure(round(100 * t[1] / t[2], 1), unit=UNIT, year=YEAR,
                              source=SRC_DIST),
-        "sources": [{"field": "population/sex_ratio", "name": SRC_DIST, "url": FINAL,
-                     "archived": FINAL_CAPTURE, "license": LICENCE, "year": YEAR}],
     })
+    if moved and not note:
+        out["sources"].append({"field": "population note", "name": SRC_2008, "url": STATOIDS,
+                               "year": 2008, "license": "Transcription of the census report; "
+                                                        "terms of reuse not stated"})
     return out
 
 
@@ -424,6 +562,7 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dic
             match_by="shape_id", shape_id=shape["id"],
             **county_fields(c, f"{label[c]} County", counties, tables["ages"],
                             tables["religion"], tables["ethnicity"])))
+    d2008 = tables.get("districts_2008") or {}
     used: dict[str, set[str]] = {}
     for shape in admin2:
         c = county_of.get(shape["parent"])
@@ -432,25 +571,35 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dic
         k = key(shape["name"])
         k = ALIASES.get((c, k), k)
         where = f"{label[c]} County"
+        then = (d2008.get(c, {}).get(NAMES_2008.get((c, key(shape["name"])), key(shape["name"])))
+                or (None, None))[1]
+        if d2008 and c in SAME_DISTRICTS and then is None:
+            raise SystemExit(f"liberia_census: {shape['name']!r} ({c}) is not in the 2008 list")
         if c in SAME_DISTRICTS:
             found = [(n, t) for n, t in districts[c]["rows"] if key(n) == k]
             if (c, k) in MISSING_ROW and not found:
+                # The county's count less the districts printed: the same
+                # arithmetic that moves Gounwolaila.
                 d = districts[c]
                 short = tuple(d["total"][i] - sum(t[i] for _, t in d["rows"]) for i in range(3))
-                why = (f"The 2022 census's final results print no row for {shape['name']}; the "
-                       f"districts they print for {where} fall {short[0]:,} people short of the "
-                       "county's count, so no figure is shown here.")
-                fields = district_fields(shape["name"], None, where, why)
+                if min(short) <= 0 or short[1] + short[2] != short[0]:
+                    raise SystemExit(f"liberia_census: {c} less its districts leaves {short}")
+                printed = WORDS.get(len(d["rows"]), str(len(d["rows"])))
+                note = (f"The 2022 census's final results print no row for {shape['name']}; "
+                        f"this is {where}'s count less the {printed} districts they print for "
+                        f"it: {short[0]:,} people, {short[1]:,} men and {short[2]:,} women.")
+                fields = district_fields(shape["name"], short, where, None, note=note,
+                                         then=then)
             elif len(found) == 1 and found[0][0] not in used.setdefault(c, set()):
                 used[c].add(found[0][0])
-                fields = district_fields(found[0][0], found[0][1], where, None)
+                fields = district_fields(found[0][0], found[0][1], where, None, then=then)
             else:
                 raise SystemExit(f"liberia_census: {shape['name']!r} ({c}, {k}) matches "
                                  f"{found}")
         else:
-            why = (f"The 2022 census counts {where} in districts that are not those drawn here: "
-                   f"its list adds {NEW_DISTRICTS[c]}, made since the 2008 census, without "
-                   "saying which drawn district each came from, so no 2022 figure is shown.")
+            table, holds = NOT_THE_DRAWN[c]
+            why = (f"LISGIS's 2022 Final Results (Appendix B, Table {table}) list {holds}, so "
+                   "no district's 2022 count is shown.")
             fields = district_fields(shape["name"], None, where, why)
         records.append(record(
             f"LBR-2022-{c}-{key(shape['name'])}", shape["name"], level="admin2", parent="LBR",
@@ -481,12 +630,18 @@ def read() -> dict[str, Any]:
     tables["ethnicity"], other_african = ethnic_shares(
         read_ethnic_spread(p_them), read_ethnic_counts(p_final), tables["counties"])
     log(f"  Other African, nationally: {other_african:,}")
+    page = http_get(STATOIDS, binary=True, timeout=120)
+    assert isinstance(page, bytes)
+    tables["districts_2008"] = read_2008(page.decode("utf-8", "replace"))
+    check_not_the_drawn(districts, tables["districts_2008"])
     return tables
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    ap.parse_args()
     tables = read()
     for county in COUNTIES:
         c = key(county)
@@ -498,6 +653,9 @@ def main() -> int:
     admin2 = json.loads((SITE / "admin2" / "LBR.units.json").read_text())
     records = build(tables, admin1, admin2)
     bound = sum(1 for r in records if r["level"] == "admin2" and "value" in r["population"])
+    for r in records:
+        if r["level"] == "admin2" and "2008 census's" in str(r.get("population_note")):
+            log(f"  further than a population moves: {r['population_note']}")
     log(f"  {len(records)} records: {bound} districts with a 2022 count")
     write_json(PROCESSED / OUT, records)
     return 0

@@ -371,9 +371,56 @@ class LiberiaTest(unittest.TestCase):
         f = lb.district_fields("Klay", (25_720, 13_238, 12_482), "Bomi County", None)
         self.assertEqual(f["population"]["value"], 25_720)
         self.assertEqual(f["sex_ratio"]["value"], 106.1)
-        gap = lb.district_fields("Owensgrove", None, "Grand Bassa County", "why")
+        gap = lb.district_fields("Kpi", None, "Grand Kru County", "why")
         self.assertEqual(gap["population"]["note"], "why")
         self.assertIn("by county, not by district", gap["religion"]["note"])
+        # Every reason cites the publication it rests on.
+        cited = {s["field"]: s["name"] for s in gap["sources"]}
+        self.assertIn("Thematic Report", cited["median_age/religion/ethnicity"])
+        self.assertIn("Appendix B", cited["population/sex_ratio"])
+
+    def test_a_district_further_from_2008_than_a_population_moves(self):
+        f = lb.district_fields("Potupo", (31_533, 16_390, 15_143), "River Gee County", None,
+                               then=7_337)
+        self.assertIn("4.3 times the 2008 census's 7,337", f["population_note"])
+        self.assertIn("rise of 11.0% a year", f["population_note"])
+        self.assertTrue(any(s["field"] == "population note" and s["url"] == lb.STATOIDS
+                            for s in f["sources"]))
+        down = lb.change_note("Gwelekpoken", "Maryland County", 10_060, 4_366)
+        self.assertIn("43% of the 2008 census's 10,060", down)
+        self.assertIn("fall of 5.8% a year", down)
+        # Within what a population does: the plain note, and no 2008 source.
+        f = lb.district_fields("Harper", (53_091, 26_752, 26_339), "Maryland County", None,
+                               then=38_024)
+        self.assertEqual(f["population_note"], "The 2022 census's count for Harper, in Maryland "
+                                               "County.")
+        self.assertFalse(any(s["field"] == "population note" for s in f["sources"]))
+
+    def test_owensgrove_is_the_county_less_its_printed_districts(self):
+        districts = lb.read_districts([FINAL_PAGE_85])
+        d = districts["grandbassa"]
+        short = tuple(d["total"][i] - sum(t[i] for _, t in d["rows"]) for i in range(3))
+        self.assertEqual(short, (14_422, 7_391, 7_031))
+        f = lb.district_fields("Owensgrove", short, "Grand Bassa County", None, note="n")
+        self.assertEqual(f["population"]["value"], 14_422)
+        self.assertEqual(f["sex_ratio"]["value"], 105.1)
+        self.assertEqual(f["population_note"], "n")
+
+    def test_printed_names_lose_a_kept_line_break(self):
+        page = ("Table B11: Population Distribution by County, Administrative District, and Sex\n"
+                "Total Male Female\nMaryland County 172,587 86,867 85,720\n"
+                "Pleebo/ Sodoken 85,287 42,249 43,038\n")
+        rows = lb.read_districts([page])["maryland"]["rows"]
+        self.assertEqual(rows, [("Pleebo/Sodoken", (85_287, 42_249, 43_038))])
+
+    def test_the_2008_list(self):
+        rows = "".join(f"<tr><td>D{i}</td><td>LR.BG.{chr(65 + i // 26)}{chr(65 + i % 26)}</td>"
+                       f"<td>{n:,}</td></tr>" for i, n in enumerate([25_563] * 135 + [25_603]))
+        got = lb.read_2008(f"<table><tr><th>District</th><th>HASC</th><th>Population</th></tr>"
+                           f"{rows}</table>")
+        self.assertEqual(len(got["bong"]), 136)
+        with self.assertRaises(SystemExit):
+            lb.read_2008(f"<table>{rows[:-40]}</table>")
 
 
 if __name__ == "__main__":

@@ -409,6 +409,13 @@ class BindTest(unittest.TestCase):
         self.assertIn("by local government area", central["religion"]["note"])
         self.assertIn("377,134", bakau["population"]["note"])
         self.assertNotIn("value", bakau["sex_ratio"])
+        # The part's reasons cite the directory they rest on, and every
+        # district's reasons for its ages, religion and ethnicity their reports.
+        cited = {s["field"]: s["name"] for s in bakau["sources"]}
+        self.assertIn("Directory of Settlements", cited["population/sex_ratio"])
+        self.assertIn("Spatial Distribution", cited["median_age/religion/ethnicity"])
+        self.assertTrue(any(s["field"] == "religion/ethnicity" and "2024" in s["name"]
+                            for s in central["sources"]))
 
 
 if __name__ == "__main__":
