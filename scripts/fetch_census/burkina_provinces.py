@@ -578,6 +578,10 @@ def main() -> int:
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.add_argument("--dump", default="", help="log each monograph's pages on religion and "
                     "languages by province instead of writing anything (a label)")
+    ap.add_argument("--dump-ages", default="", dest="dump_ages",
+                    help="log each monograph's pages on ages (the median, the table of age "
+                    "groups) and on the ground the census did not cover, instead of writing "
+                    "anything (a label)")
     args = ap.parse_args()
     admin1 = json.loads((SITE / "admin1" / "BFA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "BFA.units.json").read_text())
@@ -585,6 +589,16 @@ def main() -> int:
     provinces: dict[str, list[dict[str, Any]]] = {}
     for u in admin2:
         provinces.setdefault(regions[u["parent"]], []).append(u)
+    if args.dump_ages:
+        about = re.compile(r"(?i)m[ée]dian|groupe\s+d.\s*[âa]ge\s+selon|couvert|ins[ée]curit|"
+                           r"d[ée]nombr|\bNC\b|estim")
+        for region in sorted(provinces):
+            url, text = read(region)
+            for n, page in enumerate(text.split("\f")):
+                if about.search(page):
+                    log(f"=== {region} page {n + 1} ===")
+                    log(page[:6000])
+        return 0
     if args.dump:
         for region, shapes in sorted(provinces.items()):
             url, text = read(region)

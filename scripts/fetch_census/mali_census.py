@@ -617,11 +617,86 @@ def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]]
     return records, report
 
 
+# INSTAT's report of each region's 2009 results (cercles by sex), where it may
+# stand: the office's share, under a few names, and its old site as the
+# Internet Archive kept it.
+SHARE = "https://instat-mali.org/laravel-filemanager/files/shares/rgph/"
+REPORTS_2009 = {
+    "Kayes": ["rkay09_rgph.pdf", "kayes"],
+    "Koulikoro": ["rkou09_rgph.pdf", "rkkro09_rgph.pdf", "rklk09_rgph.pdf", "koulikoro"],
+    "Sikasso": ["rsik09_rgph.pdf", "rsks09_rgph.pdf", "sikasso"],
+    "Ségou": ["rseg09_rgph.pdf", "rsgu09_rgph.pdf", "segou"],
+    "Mopti": ["rmop09_rgph.pdf", "rmpt09_rgph.pdf", "mopti"],
+    "Tombouctou": ["rtom09_rgph.pdf", "rtbk09_rgph.pdf", "rtmb09_rgph.pdf", "tombouctou"],
+    "Gao": ["rgao09_rgph.pdf", "gao"],
+    "Kidal": ["rkid09_rgph.pdf", "kidal"],
+    "Bamako": ["rbko09_rgph.pdf", "rbam09_rgph.pdf", "rdbk09_rgph.pdf", "bamako"],
+}
+
+
+def report_urls(names: list[str]) -> list[str]:
+    out = []
+    for name in names:
+        if name.endswith(".pdf"):
+            out += [SHARE + name, "https://web.archive.org/web/2024id_/" + SHARE + name]
+        else:
+            out += [f"https://web.archive.org/web/2011id_/http://instat.gov.ml/documentation/"
+                    f"{name}.pdf",
+                    f"https://web.archive.org/web/2011id_/http://www.instat.gov.ml/"
+                    f"documentation/{name}.pdf"]
+    return out
+
+
+def dump_2009(label: str) -> None:
+    """Log each 2009 regional report's pages on cercles, from the first address
+    that answers with a PDF, and the village directory's first pages."""
+    from pypdf import PdfReader
+
+    for region, names in REPORTS_2009.items():
+        for url in report_urls(names):
+            try:
+                blob = fetch_blob(url)
+            except Exception as err:  # noqa: BLE001 -- the next address is tried
+                log(f"  {region}: {url}: {type(err).__name__}: {err}")
+                continue
+            if not blob.startswith(b"%PDF"):
+                log(f"  {region}: {url}: not a PDF ({blob[:40]!r})")
+                continue
+            log(f"  {region}: read {url}: {len(blob):,} bytes, sha256 "
+                f"{hashlib.sha256(blob).hexdigest()}")
+            pages = [p.extract_text() or "" for p in PdfReader(io.BytesIO(blob)).pages]
+            log(f"  {region}: {len(pages)} pages")
+            for n, page in enumerate(pages[:40]):
+                if re.search(r"(?i)cercle|masculinit|hommes", page):
+                    log(f"=== {region} page {n + 1} ===")
+                    log(page[:5000])
+            break
+    for url in report_urls(["repvil09_rgph.pdf"]):
+        try:
+            blob = fetch_blob(url)
+        except Exception as err:  # noqa: BLE001
+            log(f"  village directory: {url}: {type(err).__name__}: {err}")
+            continue
+        if blob.startswith(b"%PDF"):
+            pages = [p.extract_text() or "" for p in PdfReader(io.BytesIO(blob)).pages[:12]]
+            log(f"  village directory: read {url}: {len(blob):,} bytes")
+            for n, page in enumerate(pages):
+                log(f"=== village directory page {n + 1} ===")
+                log(page[:3000])
+            break
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
-    ap.parse_args()
+    ap.add_argument("--dump-2009", default="", dest="dump_2009",
+                    help="log the 2009 regional reports' pages on cercles instead of writing "
+                    "anything (a label)")
+    args = ap.parse_args()
+    if args.dump_2009:
+        dump_2009(args.dump_2009)
+        return 0
     from pypdf import PdfReader
     import openpyxl
 
