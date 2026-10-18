@@ -245,8 +245,10 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     import openpyxl                                 # noqa: PLC0415
     blob = http_get(uscb.workbook_url(DATASET), binary=True, cache=False, timeout=180)
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)

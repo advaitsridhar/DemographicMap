@@ -1061,8 +1061,10 @@ def fetch_pages(codes: list[str], hrefs: dict[str, str]) -> dict[str, str]:
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     import openpyxl                                 # noqa: PLC0415
     package = uscb.package(HDX_DATASET)
     found = [r for r in package.get("resources", [])

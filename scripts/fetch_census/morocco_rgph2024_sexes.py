@@ -151,8 +151,10 @@ def build(chart: dict[str, Any], table: dict[str, Any], admin1: list[dict[str, A
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     blob = http_get(legal.URL, binary=True, cache=False, timeout=120)
     if blob[:2] != b"PK":
         raise SystemExit(f"morocco_rgph2024_sexes: {legal.URL} is not a workbook")

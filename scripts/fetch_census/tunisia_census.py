@@ -490,8 +490,10 @@ def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     import openpyxl                                 # noqa: PLC0415
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if blob[:2] != b"PK":

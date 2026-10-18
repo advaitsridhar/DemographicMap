@@ -345,8 +345,10 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]]
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     import openpyxl                                 # noqa: PLC0415
     url = uscb.workbook_url(DATASET)
     blob = http_get(url, binary=True, cache=False, timeout=180)
