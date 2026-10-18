@@ -1,28 +1,115 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  Région de Rabat-Salé-Kénitra: median 31.6 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Kénitra: median 28.8 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Khémisset: median 32.9 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Rabat: median 39.2 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Salé: median 32.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Sidi Kacem: median 29.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Sidi Slimane: median 28.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Skhirate-Témara: median 31.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Région de Fès-Meknès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Préfecture de Meknès: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Boulemane: median 29.1 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province d'El Hajeb: median 31.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Préfecture de Fès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province d'Ifrane: median 32.8 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Sefrou: median 33.0 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Taounate: median 29.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Taza: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Moulay Yacoub: median 26.2 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Tétouan: median 31.2; the region 29.7
-  Province d'Ouezzane: median 33.0; the region 29.7
-  Province de Larache: median 29.7; the region 29.7
-  Préfecture de Tanger-Assilah: median 29.3; the region 29.7
-  Préfecture de M'diq-Fnideq: median 29.7; the region 29.7
-  Région de Souss-Massa: median 31.2 (https://www.hcp.ma/region-agadir/attachment/2802780/)
-  Préfecture d'Agadir-Ida-Ou-Tanane: median 31.6 (https://www.hcp.ma/region-agadir/attachment/2802781/)
-morocco_rgph2024_ages: https://www.hcp.ma/region-agadir/attachment/2802782/ names none of ("Préfecture d'Agadir-Ida-Ou-Tanane", "Préfecture d'Inezgane-Aït Melloul")
+== pdf https://www.hcp.ma/region-agadir/attachment/2802782/ (?i)(inez|inzeg|melloul|tanane|pr.fecture|quinquennal|^0-4|^75) 40
+  HTTP 200 application/pdf 3,118,490 bytes
+  64 pages
+  p2: Préfecture d’Inzegane Ait Melloul 
+  p4: Aperçu Général Sur La Préfecture ........................................................................................................ 9 
+  p4: Chapitre I :  Les caractéristiques démographiques de la population de la préfecture ........................ 11 
+  p4: 2.L'urbanisation de la préfecture ...................................................................................................... 13 
+  p5: Figure 1 : Organisation administrative de la préfecture ........................................................................ 9 
+  p5: Figure 2 : Organisation administrative de la préfecture d’Inzegane Ait Melloul  .................................. 10 
+  p5: Figure 3: Population légale de la préfecture par milieu de résidence ................................................. 12 
+  p5: Figure 5: Evolution de la population de la Préfecture entre 2014 et 2024 .......................................... 13 
+  p5: Figure 7 : Population préfectorale par milieu de résidence, sexe et âge quinquennal ....................... 15 
+  p7: Caractéristiques Démographiques et Socio-économiques de la préfecture Inzegane Ait Melloul 
+  p9: Aperçu Général Sur La Préfecture 
+  p9: La préfecture d’Inzegane Ait Melloul qui a vu le jour après la restructuration de l’ex -
+  p9: communes urbaines (ou municipalités)  : Inezgane, son chef -lieu, Aït Melloul , Dcheïra El 
+  p9: En dépit de sa faible superﬁcie, la préfecture d’ Inzegane Ait Melloul est très active 
+  p9: par  ses commerces abondants. Essentie llement urbaine, la préfecture possède deux 
+  p9: grandes villes : Inzegane et Aït Melloul. La première est connue pour son commerce 
+  p9: Cette activité fait de cette préfecture une plaque tournante en termes 
+  p9: Figure 1 : Organisation administrative de la préfecture 
+  p9: InezganeAitMelloul 1 4 2 6 
+  p9: Part de la préfecture 5,9 19 1,3 3,4 
+  p10: Figure 2 : Organisation administrative de la préfecture d’Inzegane Ait Melloul 
+  p11: population de la préfecture 
+  p12: Au 1er septembre 2024, la population légale de la préfecture d'Inezgane Ait Melloul 
+  p12: Figure 3: Population légale de la préfecture par milieu de résidence 
+  p12: Préfecture 605684 31232 636916 
+  p12: Par milieu de résidence, La population de la préfecture est composée 
+  p12: Inezgane Ait Melloul
+  p13: La population légale de la préfecture d’Inzegane Ait Melloul a augmenté, entre  les  
+  p13: Figure 5: Evolution de la population de la Préfecture entre 2014 et 2024 
+  p13: 2.L'urbanisation de la préfecture 
+  p13: enregistré, au niveau de la préfecture d'inezgane Ait Melloul ( 95,1%) est supérieur 
+  p14: En  effet,  le  taux  d’urbanisation  d'inezgane Ait Melloul est  passé  de 94,9% en 2014 
+  p14: Il apparaît doncque la préfecture d'inezganeAit Melloul  connaît une urbanisation 
+  p14: par âge quinquennal, montre que la population de la préfecture d'inezganeAit Melloul est 
+  p14: Préfecture
+  p15: Figure 7 : Population préfectorale par milieu de résidence, sexe et âge quinquennal 
+  p15: 0-4ans 7,6 7,0 7,3 7,5 6,9 7,2 7,6 7,0 7,3 
+  p15: 75 et+ 2,2 2,3 2,2 2,9 3,2 3,0 2,2 2,4 2,3 
+  p17: Préfecture 
+  p17: mariage au niveau de La préfecture d'inezgane Ait Melloul est de 29,2 ans, presque le même 
+== pdf https://www.hcp.ma/region-agadir/attachment/2802781/ (?i)(inez|inzeg|melloul|tanane|pr.fecture) 12
+  HTTP 200 application/pdf 2,625,929 bytes
+  73 pages
+  p2: Préfecture d’Agadir Ida Outanane 
+  p6: Figure 1 : Population légale de la préfecture d’Agadir Ida Outanane par milieu de résidence
+  p6: Figure 4 : Evolution de la population légale de la préfecture d’Agadir Idaoutanane entre 2014 
+  p6: Figure 5 : Evolution de la population urbaine, rurale de la préfecture ................................... 14 
+  p6: Figure 8 : Pyramide des âges de la population d’Agadir Idaoutanane .................................... 17 
+  p6: Figure 18 : Taux d’analphabétisme de la préfecture selon le sexe et le milieu de résidence(%)
+  p9: Caractéristiques Démographiques et Socio-économiques de la préfecture Agadir Ida Outanane 
+  p10: Caractéristiques Démographiques et Socio-économiques de la préfecture Agadir Ida Outanane 
+  p11: Caractéristiques Démographiques et Socio-économiques de la préfecture Agadir Ida Outanane 
+  p12: Caractéristiques Démographiques et Socio-économiques de la préfecture Agadir Ida Outanane 
+  p12: Au 1er septembre 2024, la population légale de la préfecture d’Agadir Idaoutanane 
+  p12: Figure 1 : Population légale de la préfecture d’Agadir Ida  Outanane par 
+== pdf https://www.hcp.ma/region-agadir/attachment/2802783/ (?i)(chtouka|quinquennal|^0-4|^75) 16
+  HTTP 200 application/pdf 2,556,794 bytes
+  70 pages
+  p2: Province de Chtouka Ait Baha 
+  p4: Chapitre 1 : Les caractéristiques démographiques de la population de la province de Chtouka 
+  p5: Province Chtouka Ait Baha ......................................................................................................... 55 
+  p6: Figure 1 : Population légale de la province de Chtouka Ait Baha par milieu de résidence ......... 11 
+  p6: Figure 4 : Evolution de la population légale de la province de Chtouka Ait Baha entre 2014 et 
+  p6: Figure 8 : Pyramide des âges de la population de Chtouka Ait Baha .......................................... 16 
+  p8: Les Caractéristiques Démographiques et Socio-économiques - Province de Chtouka Ait Baha 
+  p9: Les Caractéristiques Démographiques et Socio-économiques - Province de Chtouka Ait Baha 
+  p10: Les Caractéristiques Démographiques et Socio-économiques - Province de Chtouka Ait Baha 
+  p10: de Chtouka Ait Baha 
+  p11: Les Caractéristiques Démographiques et Socio-économiques - Province de Chtouka Ait Baha 
+  p11: Au 1er septembre 2024, la population légale de la province de Chtouka Ait Baha  
+  p11: Figure 1 : Population légale de la province de Chtouka Ait Baha par milieu de résidence 
+  p11: La population rurale marque une forte présence au niveau de la province de Chtouka 
+  p11: Le nombre de ménages de la province de Chtouka Ait Baha est passé de 88 732 en 2014 
+  p11: Chtouka Ait Baha Autres provinces ou préfectures
+== pdf https://www.hcp.ma/region-agadir/attachment/2802862/ (?i)(tata|quinquennal|^0-4|^75) 16
+  HTTP 200 application/pdf 2,409,221 bytes
+  64 pages
+  p1: Caractéristiques Démographiques et Socio-économiques – province de Tata 
+  p2: Province de Tata  
+  p4: Chapitre1 : Les caractéristiques Démographiques de la population de la province de Tata .. 10 
+  p6: Figure 1 : Population légale de la province de tata par milieu de résidence ........................... 11 
+  p6: Figure 4 : Evolution de la population légale de la province de Tata entre 2014 et 2024. ....... 12 
+  p6: Figure 8 : Pyramide des âges de la population de Tata ........................................................... 15 
+  p8: Caractéristiques Démographiques et Socio-économiques – province de Tata 
+  p9: Caractéristiques Démographiques et Socio-économiques – province de Tata 
+  p10: Caractéristiques Démographiques et Socio-économiques – province de Tata 
+  p10: province de Tata 
+  p11: Caractéristiques Démographiques et Socio-économiques – province de Tata 
+  p11: Au 1er septembre 2024, la population légale de la province de tata comptait 111757 
+  p11: Figure 1  : Population légale de la province de tata par milieu de résidence  
+  p11: Par milieu de résidence, la province de tata se caractérise par une prédominance du 
+  p11: tata
+  p12: Caractéristiques Démographiques et Socio-économiques – province de Tata 
+== pdf https://www.hcp.ma/region-agadir/attachment/2802786/ (?i)(tiznit|quinquennal|^0-4|^75) 16
+  HTTP 200 application/pdf 3,139,659 bytes
+  73 pages
+  p2: Province de Tiznit 
+  p4: Les caractéristiques Démographiques de la population de la province Tiznit ......................................... 14 
+  p6: Figure 1 : Situation géographique de la province de Tiznit ..................................................................... 11 
+  p6: Figure 2 : Découpage admiratif de la province de Tiznit ......................................................................... 12 
+  p6: Figure 3 : Découpage communal de la province de Tiznit ....................................................................... 13 
+  p6: Figure 4 : Population légale de la Province Tiznit par milieu de résidence ............................................. 15 
+  p6: Figure 7 : Evolution de la population légale de la province de Tiznit entre 2014 et 2024 ....................... 16 
+  p6: Figure 11 : Pyramide des âges de la population de la province Tiznit ..................................................... 19 
+  p8: Caractéristiques Démographiques et Socio-économiques – province de Tiznit 
+  p9: Caractéristiques Démographiques et Socio-économiques – province de Tiznit 
+  p10: Caractéristiques Démographiques et Socio-économiques – province de Tiznit 
+  p11: Caractéristiques Démographiques et Socio-économiques – province de Tiznit 
+  p11: La province de Tiznit a été créée en 1975 et rattachée à la région de  Souss  Massa qui 
+  p11: Figure 1  : Situation géographique de la province de Tiznit  
+  p12: Caractéristiques Démographiques et Socio-économiques – province de Tiznit 
+  p12: Ce fait offre à la province de Tiznit une place particulière et le prestige en ce domaine 
