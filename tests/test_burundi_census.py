@@ -136,6 +136,7 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(cendajuru["sex_ratio"], {"value": 959, "unit": "males_per_1000_females",
                                                   "year": 2008, "source": bc.SOURCE})
         self.assertIn("2008 census", cendajuru["sex_ratio_note"])
+        self.assertIn("(15,887 men and 16,571 women)", cendajuru["sex_ratio_note"])
         self.assertEqual(self.by[("admin2", "Mabanda")]["sex_ratio"]["value"], 999)
         self.assertEqual(self.by[("admin2", "Mpinga-Kay")]["sex_ratio"]["value"], 923)
         self.assertEqual([s["field"] for s in cendajuru["sources"]], ["sex_ratio"])

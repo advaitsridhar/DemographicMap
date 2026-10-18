@@ -19,17 +19,25 @@ into Kira and Nansana, Busiro into Entebbe and Makindye-Ssabagabo...). The
 dashboard publishes each 2024 unit's outline with its figures, so which 2024
 units make each polygon is measured rather than guessed: ``--points`` writes
 points sampled evenly over every 2024 unit (``uganda_county_points.json``),
-and ``uganda_counties`` records which units each polygon is the union of
-(PLACED) and, for the others, which 2024 units cross the polygon's line
-(STRADDLING). A polygon in PLACED takes the sum of its units' figures; every
-other one says why it has none. (OCHA's COD-PS table for Uganda is by
-district, and its 54 figures that stood on county polygons of the same names
-were districts', Mityana's with Busujju in it and Serere's with Kasilo.)
+and ``uganda_counties`` (written by ``uganda_crosswalk``, whose docstring has
+the rules) records which units each polygon is the union of (PLACED), which
+polygons are whole units and sub-counties together (SETTLED: the 2024
+sub-counties of the sub-county profile tables, ``--subcounty-table``, placed
+by OCHA's sub-county outlines of 2020, ``--subcounty-points``), and, for the
+others, which 2024 units cross the polygon's line (STRADDLING). A polygon in
+PLACED or SETTLED takes the sum of its units' figures; every other one says
+why it has none. (OCHA's COD-PS table for Uganda is by district, and its 54
+figures that stood on county polygons of the same names were districts',
+Mityana's with Busujju in it and Serere's with Kasilo.)
 
 **What is written.** For each region and each placed county: the population
 and men per 1,000 women, and the median age, interpolated within the age
-group that holds the middle person from the dashboard's groups made disjoint
-(0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over). The
+group that holds the middle person, from the dashboard's overlapping groups
+(0-4, 0-17, 15 and over, 15-24, 18-30, 18 and over, 60 and over, 65 and over,
+80 and over) differenced into disjoint ones (0-4, 5-14, 15-17, 18-24, 25-30,
+31-59, 60-64, 65-79, 80 and over). A sex ratio far from the country's (below
+850 or above 1,150) says it is the census's own figure, which its dashboard
+and its sub-county profile tables both give. The
 regions are the sums of their districts: the dashboard draws one county,
 Chekwi in Nakapiripirit, without figures, so its counties make 45,826,553
 people, while its districts make 45,895,961 of the 45,905,417 the Bureau
@@ -340,6 +348,18 @@ REPORT_URL = ("https://www.ubos.org/wp-content/uploads/2024/12/"
 RELIGION = ("Uganda's 2024 and 2014 censuses published religion for the country as a whole "
             "only, and its 2002 census by district, not by county, so no count is given for "
             "this county.")
+# The polygons of the ten counties that were a district on their own in 2002,
+# whose religion uganda_2002.py writes, or why not: this file states none for
+# them.
+COUNTIES_OF_2002_DISTRICTS = frozenset({
+    "Kampala", "Kiboga", "Buruli", "Bukooli", "Samia-Bugwe", "Bunya", "East Moyo", "Aringa",
+    "Bufumbira", "Kinkiizi"})
+# A sex ratio outside this band says it is the census's own figure.
+ODD_RATIO = (850, 1150)
+# The Kalangala islands' counties, which counted far more men than women in
+# 2002 too (Table 3A: Bujumba 10,198 men and 7,137 women, Kyamuswa 10,651 and
+# 6,780).
+ISLANDS_2002 = {"BUJUMBA COUNTY": (10_198, 7_137), "KYAMUSWA COUNTY": (10_651, 6_780)}
 ETHNICITY = ("Uganda's 2024 and 2014 censuses published ethnicity for the country as a whole "
              "only, so no count is given for this {unit}.")
 # The Bureau's region codes -> the map's first-level polygons.
@@ -452,16 +472,27 @@ def title(name: str) -> str:
     return text.replace(" - ", "-")
 
 
-def fields(units: list[dict[str, Any]], note: str) -> dict[str, Any]:
+def fields(units: list[dict[str, Any]], note: str, source: str = SOURCE,
+           page: str = PAGE) -> dict[str, Any]:
     male = sum(u["male"] for u in units)
     female = sum(u["female"] for u in units)
     total = sum(u["total"] for u in units)
+    ratio = round(1000 * male / female)
     out: dict[str, Any] = {
-        "population": measure(total, year=YEAR, source=SOURCE), "population_note": note,
-        "sex_ratio": measure(round(1000 * male / female), unit="males_per_1000_females",
-                             year=YEAR, source=SOURCE),
-        "sources": [{"field": "population/median_age/sex_ratio", "name": SOURCE, "url": PAGE,
+        "population": measure(total, year=YEAR, source=source), "population_note": note,
+        "sex_ratio": measure(ratio, unit="males_per_1000_females", year=YEAR, source=source),
+        "sources": [{"field": "population/median_age/sex_ratio", "name": source, "url": page,
                      "year": YEAR, "license": LICENCE}]}
+    if not ODD_RATIO[0] <= ratio <= ODD_RATIO[1]:
+        out["sex_ratio_note"] = (
+            f"The census's own figures, {male:,} men and {female:,} women, which its "
+            "dashboard and its sub-county profile tables both give; the country counted 946 "
+            "men per 1,000 women.")
+        islands = [ISLANDS_2002[u["name"]] for u in units if u.get("name") in ISLANDS_2002]
+        if islands:
+            men, women = (sum(x) for x in zip(*islands))
+            out["sex_ratio_note"] += (f" Kalangala's islands counted far more men than women "
+                                      f"in 2002 too ({men:,} men and {women:,} women here).")
     if all(u.get("groups") for u in units):
         shape0 = [(a, b) for a, b, _ in units[0]["groups"]]
         groups = [(a, b, sum(u["groups"][i][2] for u in units)) for i, (a, b) in enumerate(shape0)]
@@ -470,40 +501,63 @@ def fields(units: list[dict[str, Any]], note: str) -> dict[str, Any]:
             out["median_age"] = measure(value, unit="years", year=YEAR, source=SOURCE)
             out["median_age_note"] = (
                 "Interpolated within the age group that holds the middle person, from the 2024 "
-                "census's counts in the age groups it publishes for each district and county "
-                "(0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64, 65-79, 80 and over)"
+                "census's counts in the overlapping age groups it publishes (0-4, 0-17, 15 "
+                "and over, 15-24, 18-30, 18 and over, 60 and over, 65 and over, 80 and over), "
+                "differenced into disjoint ones (0-4, 5-14, 15-17, 18-24, 25-30, 31-59, "
+                "60-64, 65-79, 80 and over)"
                 + (", added up over the units the population note names." if len(units) > 1
                    else "."))
     return out
 
 
-def composition(unit: str) -> dict[str, Any]:
+def composition(unit: str, religion: bool = True) -> dict[str, Any]:
     """The religion and ethnicity a census does not publish for the unit, with the
-    report that says so: a county gets both, a region its ethnicity (its religion
-    is the 2002 census's, in uganda_2002.json)."""
+    report that says so, cited for the notes: a county gets both, a region its
+    ethnicity (its religion is the 2002 census's, in uganda_2002.json), and a
+    county that was a district of its own in 2002 its ethnicity alone
+    (uganda_2002.json gives its religion, or why not)."""
     out: dict[str, Any] = {"ethnicity": gap(NOT_AVAILABLE, ETHNICITY.format(unit=unit))}
-    fields_ = ["ethnicity"]
-    if unit == "county":
+    fields_ = ["ethnicity note"]
+    if unit == "county" and religion:
         out["religion"] = gap(NOT_AVAILABLE, RELIGION)
-        fields_.insert(0, "religion")
-    # One citation per field, so a figure that later fills one of them takes
-    # its own citation's place and leaves the other's.
-    out["sources"] = [{"field": f, "name": REPORT, "url": REPORT_URL, "year": YEAR,
-                       "license": LICENCE} for f in fields_]
+        fields_.insert(0, "religion note")
+    out["sources"] = [{"field": "/".join(fields_), "name": REPORT, "url": REPORT_URL,
+                       "year": YEAR, "license": LICENCE}]
     return out
 
 
-def with_composition(extra: dict[str, Any], unit: str) -> dict[str, Any]:
-    stated = composition(unit)
+def with_composition(extra: dict[str, Any], unit: str, label: str = "") -> dict[str, Any]:
+    stated = composition(unit, religion=label not in COUNTIES_OF_2002_DISTRICTS)
     return {**extra, **{k: v for k, v in stated.items() if k != "sources"},
             "sources": list(extra.get("sources") or []) + stated["sources"]}
 
 
+def listed(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def named(members: list[dict[str, Any]], district_names: dict[str, str]) -> list[str]:
+    """The units' names, each with its district where two share a name (two
+    counties of 2024 are both called Bukoto)."""
+    names = [title(u["name"]) for u in members]
+    out = []
+    for name, u in zip(names, members):
+        district = district_names.get(u.get("district", ""))
+        if names.count(name) > 1 and district:
+            name = f"{name} ({district} District)"
+        out.append(name)
+    return out
+
+
 def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
-          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
+          admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          subcounties: list[dict[str, Any]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
-    from .uganda_counties import PLACED, STRADDLING  # noqa: PLC0415
+    from .uganda_counties import PLACED, SETTLED, STRADDLING  # noqa: PLC0415
     by_code = {u["code"]: u for u in units}
+    district_names = {u["code"]: title(u["name"]) for u in districts}
+    rows = {(r["district"], r["county"], r["name"]): r for r in (subcounties or [])
+            if r["level"] == "subcounty"}
     records, report = [], []
     regions = {s["name"].strip(): s for s in admin1}
     for code, label in REGION_NAMES.items():
@@ -531,7 +585,7 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
                 raise SystemExit(f"uganda_census: {c} placed in both {used[c]} and {sid}")
             used[c] = sid
         members = [by_code[c] for c in codes]
-        names = [title(u["name"]) for u in members]
+        names = named(members, district_names)
         if len(members) == 1:
             own = labels[sid].lower() in members[0]["name"].lower()
             note = (f"The 2024 census's count for {names[0]}"
@@ -541,18 +595,51 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
                     + ", added up: the county as drawn here is these units of 2024 together.")
         records.append(record(f"UGA-2024-{sid}", labels[sid], level="admin2", parent="UGA",
                               country="UGA", match_by="shape_id", shape_id=sid,
-                              **with_composition(fields(members, note), "county")))
+                              **with_composition(fields(members, note), "county",
+                                                 labels[sid])))
+    for sid, entry in SETTLED.items():
+        missing = [c for c in entry["counties"] if c not in by_code]
+        parts = [rows.get(tuple(k)) for k in entry["subcounties"]]
+        if missing or None in parts or sid not in labels:
+            report.append(f"{labels.get(sid, sid)}: units {missing} or sub-counties "
+                          f"{[k for k, p in zip(entry['subcounties'], parts) if p is None]} "
+                          "not in the census; not written")
+            continue
+        for c in entry["counties"]:
+            if c in used:
+                raise SystemExit(f"uganda_census: {c} placed in both {used[c]} and {sid}")
+            used[c] = sid
+        whole = [by_code[c] for c in entry["counties"]]
+        groups = [{**p, "groups": age_groups(p["total"], p["ages"], p["name"])} for p in parts]
+        by_county: dict[str, list[str]] = {}
+        for p in parts:
+            by_county.setdefault(title(p["county"]), []).append(title(p["name"]))
+        pieces = named(whole, district_names) + [
+            f"{listed(subs)}, {'a sub-county' if len(subs) == 1 else 'sub-counties'} of "
+            f"{county}" for county, subs in by_county.items()]
+        note = ("The 2024 census's counts for " + listed(pieces) + ", added up: the county as "
+                "drawn here is these units of 2024 together.")
+        extra = fields(whole + groups, note)
+        if parts:
+            extra["sources"].append({"field": "population/median_age/sex_ratio",
+                                     "name": WORKBOOK_SOURCE, "url": WORKBOOK_PAGE,
+                                     "year": YEAR, "license": LICENCE})
+        records.append(record(f"UGA-2024-{sid}", labels[sid], level="admin2", parent="UGA",
+                              country="UGA", match_by="shape_id", shape_id=sid,
+                              **with_composition(extra, "county", labels[sid])))
     for sid, crossing in STRADDLING.items():
         if sid not in labels:
             continue
         if crossing:
             names = [title(n) for n in crossing]
-            listed = (names[0] if len(names) == 1 else
-                      ", ".join(names[:-1]) + " and " + names[-1])
             why = ("The 2024 census was published for the counties, cities and municipalities "
-                   "of 2024, and the county as drawn here is not a whole number of them: "
-                   f"{listed} {'crosses' if len(names) == 1 else 'cross'} its line. No count "
-                   "is published for the county as drawn.")
+                   "of 2024 and for their sub-counties, and the county as drawn here is a whole "
+                   f"number of neither: {listed(names)} "
+                   f"{'crosses' if len(names) == 1 else 'cross'} its line, and "
+                   f"{'its' if len(names) == 1 else 'their'} sub-counties cannot all be shown "
+                   "to lie on one side of it or the other (the census publishes no sub-county "
+                   "outlines, and OCHA's of 2020 lack those made since or cross the line "
+                   "too). No count is published for the county as drawn.")
         else:
             why = ("The 2024 census counts this ground within a county that is drawn mostly "
                    "outside it; no count is published for this part alone.")
@@ -562,9 +649,11 @@ def build(districts: list[dict[str, Any]], units: list[dict[str, Any]],
                               **with_composition(
                                   {"population": stated, "median_age": stated,
                                    "sex_ratio": stated,
-                                   "sources": [{"field": "population/median_age/sex_ratio",
+                                   "sources": [{"field": "population note/median_age note/"
+                                                         "sex_ratio note",
                                                 "name": SOURCE, "url": PAGE, "year": YEAR,
-                                                "license": LICENCE}]}, "county")))
+                                                "license": LICENCE}]}, "county",
+                                  labels[sid])))
     spare = sorted(u["name"] for u in units if u["code"] not in used)
     report.append(f"2024 units on no written polygon ({len(spare)}): {spare}")
     return records, report
@@ -595,7 +684,8 @@ def main() -> int:
         "their age groups")
     admin1 = json.loads((SITE / "admin1" / "UGA.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "UGA.units.json").read_text())
-    records, report = build(districts, units, admin1, admin2)
+    subcounties = json.loads((PROCESSED / SUBCOUNTY_TABLE).read_text())
+    records, report = build(districts, units, admin1, admin2, subcounties)
     for line in report:
         log("  " + line)
     for r in records:

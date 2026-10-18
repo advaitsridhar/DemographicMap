@@ -25,11 +25,14 @@ of the 2002 districts were a single county -- Kampala, Kiboga, Nakasongola
 (East Moyo), Yumbe (Aringa), Kisoro (Bufumbira) and Kanungu (Kinkiizi) --
 which Table 3A, the population by county, shows as a district row followed by
 one county row with the same figures. Such a county's religion is its
-district's. It is written only where the drawn polygon is known to be that
-ground: where the 2024 crosswalk (``uganda_counties.PLACED``) makes the
-polygon exactly every county of the 2024 districts it holds, so that the
-district of 2002 and the polygon are the same ground counted twice. Yumbe's
-Aringa is crossed by 2024 counties (STRADDLING), and says why it has none.
+district's. It is written only where the drawn polygon is shown to be that
+ground: where the 2024 crosswalk (``uganda_counties.PLACED``) places in the
+polygon every county of the 2024 districts it holds and nothing else -- its
+tests let a neighbour's points lie within 2 km of the line, where two drawings
+of it disagree, and no farther in -- so that the district of 2002 and the
+polygon are the same ground counted twice. A polygon the crosswalk refuses
+(STRADDLING), or settles from sub-counties (SETTLED), or that holds units of
+other districts (Bunya's, with Jinja South Division), says why it has none.
 
 **Checks.** Every Table B7 row's religions make its total; each region's
 districts make its total row and the regions the national row (24,433,132,
@@ -272,10 +275,11 @@ def build(districts: dict[str, dict[str, Any]], regions: dict[str, dict[str, int
                "published in the 2002 census, but the county as drawn here does not keep the "
                "district's lines in the counts taken since, so it is not shown to be the "
                "district's ground and no count is given for it.")
+        # The table gives no religion for this ground: it is cited for the note.
         records.append(record(f"UGA-2002-{shape['id']}", shape["name"].strip(), level="admin2",
                               parent="UGA", country="UGA", match_by="shape_id",
                               shape_id=shape["id"], religion=gap(NOT_AVAILABLE, why),
-                              sources=[source]))
+                              sources=[{**source, "field": "religion note"}]))
         crossing = straddling.get(shape["id"])
         report.append(f"{shape['name']}: {title} District of 2002, not written ("
                       + (f"crossed by {crossing}" if crossing else

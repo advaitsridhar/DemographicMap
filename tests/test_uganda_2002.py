@@ -467,6 +467,11 @@ class BuildTest(unittest.TestCase):
                           by[("admin2", name)]["religion"]["note"])
         # A polygon with no placement at all is not written either.
         self.assertIn("not shown", by[("admin2", "Samia-Bugwe")]["religion"]["note"])
+        # Table B7 gives these no religion: it is cited for the note, not a figure.
+        for name in ("Aringa", "Bunya", "Samia-Bugwe"):
+            self.assertEqual([x["field"] for x in by[("admin2", name)]["sources"]],
+                             ["religion note"])
+        self.assertEqual([x["field"] for x in kampala["sources"]], ["religion"])
         self.assertEqual(len([r for r in records if r["level"] == "admin2"]), 10)
 
     def test_no_label_is_left_unmapped(self):

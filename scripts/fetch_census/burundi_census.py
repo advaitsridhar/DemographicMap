@@ -157,6 +157,13 @@ def ratio(figures: dict[str, int]) -> int:
     return round(1000 * figures["male"] / figures["female"])
 
 
+def with_counts(note: str, figures: dict[str, int]) -> str:
+    """The note with the men and women it is taken from, which show why a ratio
+    is far from even (Bujumbura's communes counted far more men than women)."""
+    return (note.rstrip(".") + f" ({figures['male']:,} men and {figures['female']:,} "
+            "women).")
+
+
 def title(name: str) -> str:
     return "-".join(part.capitalize() for part in name.lower().split("-"))
 
@@ -229,6 +236,7 @@ def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
             if fold(found[1]) != fold(label):
                 report.append(f"{label} ({province}): the census's {found[1]}")
         figures = added(rows)
+        text = with_counts(text, figures)
         records.append(record(
             f"BDI-2008-{shape['id']}", label, level="admin2", parent="BDI", country="BDI",
             match_by="shape_id", shape_id=shape["id"],
@@ -264,6 +272,7 @@ def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                         "counted by the 2008 census, without " + " and ".join(gone)
                         + ", which have been Rumonge province's since 2015.")
         figures = added(rows)
+        text = with_counts(text, figures)
         records.append(record(
             f"BDI-2008-{shape['id']}", label, level="admin1", parent="BDI", country="BDI",
             match_by="shape_id", shape_id=shape["id"],
