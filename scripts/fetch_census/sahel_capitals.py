@@ -32,7 +32,9 @@ kept -- but never a label that carries its class word (Guinea-Bissau's "Setor
 de Bambadinca"): there the point's own name stands. Seats the name rules miss
 but a checked point gives are listed in SEAT_POINTS (Niger's departments the
 layer names otherwise, its cities drawn as units of their own, Kozah's seat
-Kara, Guinea-Bissau's sector of Boé drawn under the label Madina do Boé). A
+Kara, Guinea-Bissau's sector of Boé drawn under the label Madina do Boé, whose
+seat the layer labels with the sector's name and which is the town of Madina
+do Boé, as its note says, citing GeoNames for the town). A
 unit the layer gives no seat says so: how many of the units drawn here it
 gives one, and what it has for this one (a point filed under another unit, a
 point whose name is not the unit's, a polygon that is not the unit its label
@@ -111,8 +113,8 @@ EXCLUDED = {
 # told. The polygon Guinea-Bissau's boundaries label Boé lies 1 km off the Caió
 # sector polygon, in Cacheu (its centroid 16.08 W, 11.83 N); the sector of Boé
 # is the Gabú polygon they label Madina do Boé, which holds the layer's point
-# for Boé (14.217 W, 11.75 N, the town of Boé, once Madina do Boé) and takes it
-# through SEAT_POINTS.
+# for Boé (14.217 W, 11.75 N: the town of Madina do Boé, which GeoNames places
+# 0.6 km away) and takes it through SEAT_POINTS, named as the town (SEAT_NOTES).
 NOT_THE_UNIT = {
     ("GNB", "boe"): ("This polygon, labelled Boé, is an island 1 km off the Caió sector "
                      "polygon in the Cacheu region, not the sector of Boé, which lies in the "
@@ -165,8 +167,23 @@ SEAT_POINTS = {
     ("SEN", "thies"): ("thies", "thiesouest", "Thiès"),
     ("SEN", "malemhodar"): ("malemhodar", "malemehoddar", None),
     # Guinea-Bissau's sector of Boé, drawn in Gabú under the label "Madina do
-    # Boé": the layer's point for Boé lies inside it (NOT_THE_UNIT).
-    ("GNB", "madinadobo"): ("boe", "boe", None),
+    # Boé": the layer's point for Boé lies inside it (NOT_THE_UNIT). The layer
+    # names each sector's seat by the sector; this one is the town of Madina do
+    # Boé (SEAT_NOTES).
+    ("GNB", "madinadobo"): ("boe", "boe", "Madina do Boé"),
+}
+# A seat written otherwise than the layer names it, with what the visitor is
+# told and the source of what the note adds: Guinea-Bissau's layer labels every
+# sector's seat with the sector's name (Bambadinca, Caio...), and its point for
+# Boé is the town of Madina do Boé (GeoNames 2371663, 14.2113 W, 11.7477 N,
+# 0.6 km from the layer's 14.2167 W, 11.75 N).
+SEAT_NOTES = {
+    ("GNB", "madinadobo"): (
+        "OCHA's administrative boundaries for Guinea-Bissau label this sector's seat with the "
+        "sector's name, Boé; their point is the town of Madina do Boé, 0.6 km from where "
+        "GeoNames places it.",
+        {"name": "GeoNames", "url": "https://www.geonames.org/2371663",
+         "license": "CC BY 4.0"}),
 }
 # What the second-level units are called, for the reason given where no seat is.
 UNIT_WORDS = {"SEN": ("department", "departments"), "NER": ("department", "departments"),
@@ -380,9 +397,15 @@ def build(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[
                                       sources=[{**source, "field": "capital note"}]))
             continue
         log(f"    {iso3} {u['name']} [{u['id']}]: {seat} ({xy[0]:.5f}, {xy[1]:.5f})")
+        extra: dict[str, Any] = {}
+        sources = [source]
+        if (iso3, unit_key(iso3, u["name"])) in SEAT_NOTES:
+            told, cited = SEAT_NOTES[(iso3, unit_key(iso3, u["name"]))]
+            extra["capital_note"] = told
+            sources.append({**cited, "field": "capital note"})
         records.append(record(rid, u["name"], level="admin2", parent=iso3, country=iso3,
                               match_by="shape_id", shape_id=u["id"], capital=seat,
-                              sources=[source]))
+                              sources=sources, **extra))
     return records, report
 
 

@@ -64,9 +64,13 @@ class Capitals(unittest.TestCase):
         self.assertEqual(by["Setor de Bambadinca"], "Bambadinca")
         self.assertEqual(by["Setor de Fulacunda"], "Fulacunda")
         # The sector of Boé is the Gabú polygon labelled Madina do Boé, which
-        # holds the layer's Boé point; the polygon labelled Boé is an island
-        # off Caió and says so.
-        self.assertEqual(by["Setor de Madina do Bo˒"], "Boe")
+        # holds the layer's Boé point, the town of Madina do Boé; the polygon
+        # labelled Boé is an island off Caió and says so.
+        self.assertEqual(by["Setor de Madina do Bo˒"], "Madina do Boé")
+        boe = next(r for r in records.values() if r["name"] == "Setor de Madina do Bo˒")
+        self.assertIn("label this sector's seat with the sector's name, Boé", boe["capital_note"])
+        self.assertEqual([s["field"] for s in boe["sources"]], ["capital", "capital note"])
+        self.assertEqual(boe["sources"][1]["name"], "GeoNames")
         self.assertNotIn("Setor de Boe", by)
         told = self.told(records)
         self.assertTrue(told["Setor de Boe"].startswith(
