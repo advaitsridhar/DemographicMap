@@ -11,9 +11,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 157747,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 195088,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.5,
@@ -33,13 +33,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.3,
+        "count": 150353
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.7,
+        "count": 7394
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -51,9 +74,12 @@
     "codes": {
       "uscb": "AL BUŢNĀN"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Butnan, Libyans and non-Libyans resident on 15 April 2006: 79,796 men and 77,951 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Butnan; the 2006 census counted 157,747, Libyans and non-Libyans resident on 15 April 2006: 79,796 men and 77,951 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 79,796 men and 77,951 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 79,796 men and 77,951 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 150,353 Libyans and 7,394 residents of other nationalities."
   },
   {
     "id": "LBY-2006-albutnan-admin2",
@@ -67,9 +93,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 157747,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 195088,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.5,
@@ -89,13 +115,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.3,
+        "count": 150353
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.7,
+        "count": 7394
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -107,9 +156,12 @@
     "codes": {
       "uscb": "AL BUŢNĀN"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Butnan, Libyans and non-Libyans resident on 15 April 2006: 79,796 men and 77,951 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Butnan; the 2006 census counted 157,747, Libyans and non-Libyans resident on 15 April 2006: 79,796 men and 77,951 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 79,796 men and 77,951 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 79,796 men and 77,951 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 150,353 Libyans and 7,394 residents of other nationalities."
   },
   {
     "id": "LBY-2006-aljabalalakhdar-admin1",
@@ -145,13 +197,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.5,
+        "count": 206891
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.5,
+        "count": 14425
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -163,9 +231,12 @@
     "codes": {
       "uscb": "AL JABAL AL AKHḐAR"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Al Jabal Al Akhḑar (208,408) with Al Abraq (12,908), which the census counts with Darnah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 112,865 men and 108,451 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Al Jabal Al Akhḑar (208,408) with Al Abraq (12,908), which the census counts with Darnah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 112,865 men and 108,451 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 112,865 men and 108,451 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 112,865 men and 108,451 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 206,891 Libyans and 14,425 residents of other nationalities."
   },
   {
     "id": "LBY-2006-aljabalalakhdar-admin2",
@@ -201,13 +272,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.5,
+        "count": 206891
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.5,
+        "count": 14425
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -219,9 +306,12 @@
     "codes": {
       "uscb": "AL JABAL AL AKHḐAR"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Al Jabal Al Akhḑar (208,408) with Al Abraq (12,908), which the census counts with Darnah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 112,865 men and 108,451 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Al Jabal Al Akhḑar (208,408) with Al Abraq (12,908), which the census counts with Darnah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 112,865 men and 108,451 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 112,865 men and 108,451 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 112,865 men and 108,451 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 206,891 Libyans and 14,425 residents of other nationalities."
   },
   {
     "id": "LBY-2006-aljabalalgharbi-admin1",
@@ -235,9 +325,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 302705,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 374911,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 24.1,
@@ -257,13 +347,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.5,
+        "count": 288944
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.5,
+        "count": 13761
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -278,9 +391,12 @@
     "codes": {
       "uscb": "AL JABAL AL GHARBĪ"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Jabal al Gharbi, Libyans and non-Libyans resident on 15 April 2006: 157,494 men and 145,211 women. Mizdah, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Jabal al Gharbi as drawn in 2007, which holds Gharyan, Yafran and Mizda.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Jabal al Gharbi; the 2006 census counted 302,705, Libyans and non-Libyans resident on 15 April 2006: 157,494 men and 145,211 women. Mizdah, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Jabal al Gharbi as drawn in 2007, which holds Gharyan, Yafran and Mizda.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 157,494 men and 145,211 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 157,494 men and 145,211 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 288,944 Libyans and 13,761 residents of other nationalities."
   },
   {
     "id": "LBY-2006-aljabalalgharbi-admin2",
@@ -294,9 +410,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 302705,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 374911,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 24.1,
@@ -316,13 +432,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.5,
+        "count": 288944
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.5,
+        "count": 13761
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -337,9 +476,12 @@
     "codes": {
       "uscb": "AL JABAL AL GHARBĪ"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Jabal al Gharbi, Libyans and non-Libyans resident on 15 April 2006: 157,494 men and 145,211 women. Mizdah, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Jabal al Gharbi as drawn in 2007, which holds Gharyan, Yafran and Mizda.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Jabal al Gharbi; the 2006 census counted 302,705, Libyans and non-Libyans resident on 15 April 2006: 157,494 men and 145,211 women. Mizdah, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Jabal al Gharbi as drawn in 2007, which holds Gharyan, Yafran and Mizda.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 157,494 men and 145,211 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 157,494 men and 145,211 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 288,944 Libyans and 13,761 residents of other nationalities."
   },
   {
     "id": "LBY-2006-aljafarah-admin1",
@@ -373,7 +515,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown."
     },
     "sources": [],
     "country": "LBY",
@@ -415,7 +558,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown."
     },
     "sources": [],
     "country": "LBY",
@@ -437,9 +581,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 52092,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 60853,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.9,
@@ -459,13 +603,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 90.0,
+        "count": 46899
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.0,
+        "count": 5193
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -477,9 +644,12 @@
     "codes": {
       "uscb": "AL JUFRAH"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Jufrah, Libyans and non-Libyans resident on 15 April 2006: 27,489 men and 24,603 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Jufrah; the 2006 census counted 52,092, Libyans and non-Libyans resident on 15 April 2006: 27,489 men and 24,603 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 27,489 men and 24,603 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 27,489 men and 24,603 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 46,899 Libyans and 5,193 residents of other nationalities."
   },
   {
     "id": "LBY-2006-aljufrah-admin2",
@@ -493,9 +663,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 52092,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 60853,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.9,
@@ -515,13 +685,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 90.0,
+        "count": 46899
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.0,
+        "count": 5193
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -533,9 +726,12 @@
     "codes": {
       "uscb": "AL JUFRAH"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Jufrah, Libyans and non-Libyans resident on 15 April 2006: 27,489 men and 24,603 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Jufrah; the 2006 census counted 52,092, Libyans and non-Libyans resident on 15 April 2006: 27,489 men and 24,603 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 27,489 men and 24,603 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 27,489 men and 24,603 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 46,899 Libyans and 5,193 residents of other nationalities."
   },
   {
     "id": "LBY-2006-alkufrah-admin1",
@@ -549,9 +745,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 48328,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 55495,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 21.0,
@@ -571,13 +767,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 88.5,
+        "count": 42769
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 11.5,
+        "count": 5559
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -589,9 +808,12 @@
     "codes": {
       "uscb": "AL KUFRAH"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Kufrah, Libyans and non-Libyans resident on 15 April 2006: 24,795 men and 23,533 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Kufrah; the 2006 census counted 48,328, Libyans and non-Libyans resident on 15 April 2006: 24,795 men and 23,533 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 24,795 men and 23,533 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 24,795 men and 23,533 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 42,769 Libyans and 5,559 residents of other nationalities."
   },
   {
     "id": "LBY-2006-alkufrah-admin2",
@@ -605,9 +827,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 48328,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 55495,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 21.0,
@@ -627,13 +849,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 88.5,
+        "count": 42769
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 11.5,
+        "count": 5559
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -645,9 +890,12 @@
     "codes": {
       "uscb": "AL KUFRAH"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Kufrah, Libyans and non-Libyans resident on 15 April 2006: 24,795 men and 23,533 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Kufrah; the 2006 census counted 48,328, Libyans and non-Libyans resident on 15 April 2006: 24,795 men and 23,533 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 24,795 men and 23,533 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 24,795 men and 23,533 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 42,769 Libyans and 5,559 residents of other nationalities."
   },
   {
     "id": "LBY-2006-almarj-admin1",
@@ -683,13 +931,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.0,
+        "count": 160891
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 5.0,
+        "count": 8538
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -701,9 +965,12 @@
     "codes": {
       "uscb": "AL MARJ"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Al Marj (116,716) with Al Ibyār (33,389), which the census counts with Banghāzī, Tūkrah (19,324), which the census counts with Banghāzī; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 86,682 men and 82,747 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Al Marj (116,716) with Al Ibyār (33,389), which the census counts with Banghāzī, Tūkrah (19,324), which the census counts with Banghāzī; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 86,682 men and 82,747 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 86,682 men and 82,747 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 86,682 men and 82,747 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 160,891 Libyans and 8,538 residents of other nationalities."
   },
   {
     "id": "LBY-2006-almarj-admin2",
@@ -739,13 +1006,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.0,
+        "count": 160891
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 5.0,
+        "count": 8538
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -757,9 +1040,12 @@
     "codes": {
       "uscb": "AL MARJ"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Al Marj (116,716) with Al Ibyār (33,389), which the census counts with Banghāzī, Tūkrah (19,324), which the census counts with Banghāzī; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 86,682 men and 82,747 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Al Marj (116,716) with Al Ibyār (33,389), which the census counts with Banghāzī, Tūkrah (19,324), which the census counts with Banghāzī; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 86,682 men and 82,747 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 86,682 men and 82,747 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 86,682 men and 82,747 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 160,891 Libyans and 8,538 residents of other nationalities."
   },
   {
     "id": "LBY-2006-almarqab-admin1",
@@ -795,13 +1081,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.3,
+        "count": 486651
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.7,
+        "count": 23781
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -813,9 +1115,12 @@
     "codes": {
       "uscb": "AL MARQAB"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Al Marqab (427,886) with Zlīţan (180,041), which the census counts with Mişrātah and without Qaşr Al Khayār (53,671), Al Qarabūllī (43,824), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 264,417 men and 246,015 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Al Marqab (427,886) with Zlīţan (180,041), which the census counts with Mişrātah and without Qaşr Al Khayār (53,671) and Al Qarabūllī (43,824), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 264,417 men and 246,015 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 264,417 men and 246,015 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 264,417 men and 246,015 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 486,651 Libyans and 23,781 residents of other nationalities."
   },
   {
     "id": "LBY-2006-almarqab-admin2",
@@ -851,13 +1156,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.3,
+        "count": 486651
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.7,
+        "count": 23781
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -869,9 +1190,12 @@
     "codes": {
       "uscb": "AL MARQAB"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Al Marqab (427,886) with Zlīţan (180,041), which the census counts with Mişrātah and without Qaşr Al Khayār (53,671), Al Qarabūllī (43,824), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 264,417 men and 246,015 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Al Marqab (427,886) with Zlīţan (180,041), which the census counts with Mişrātah and without Qaşr Al Khayār (53,671) and Al Qarabūllī (43,824), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 264,417 men and 246,015 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 264,417 men and 246,015 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 264,417 men and 246,015 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 486,651 Libyans and 23,781 residents of other nationalities."
   },
   {
     "id": "LBY-2006-alwahat-admin1",
@@ -885,9 +1209,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 179155,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 213728,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.6,
@@ -907,13 +1231,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 91.9,
+        "count": 164718
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 8.1,
+        "count": 14437
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -928,9 +1275,12 @@
     "codes": {
       "uscb": "AL WĀḨĀT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Wahat, Libyans and non-Libyans resident on 15 April 2006: 93,355 men and 85,800 women. Ajdabiya, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Wahat as drawn in 2007, which holds Ajdabiya and the oases of Jalu, Awjila and Marada.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Wahat; the 2006 census counted 179,155, Libyans and non-Libyans resident on 15 April 2006: 93,355 men and 85,800 women. Ajdabiya, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Wahat as drawn in 2007, which holds Ajdabiya and the oases of Jalu, Awjila and Marada.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 93,355 men and 85,800 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 93,355 men and 85,800 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 164,718 Libyans and 14,437 residents of other nationalities."
   },
   {
     "id": "LBY-2006-alwahat-admin2",
@@ -944,9 +1294,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 179155,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 213728,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.6,
@@ -966,13 +1316,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 91.9,
+        "count": 164718
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 8.1,
+        "count": 14437
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -987,9 +1360,12 @@
     "codes": {
       "uscb": "AL WĀḨĀT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Al Wahat, Libyans and non-Libyans resident on 15 April 2006: 93,355 men and 85,800 women. Ajdabiya, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Wahat as drawn in 2007, which holds Ajdabiya and the oases of Jalu, Awjila and Marada.",
+    "population_note": "The estimate for 2020 of the shabiyah of Al Wahat; the 2006 census counted 179,155, Libyans and non-Libyans resident on 15 April 2006: 93,355 men and 85,800 women. Ajdabiya, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Al Wahat as drawn in 2007, which holds Ajdabiya and the oases of Jalu, Awjila and Marada.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 93,355 men and 85,800 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 93,355 men and 85,800 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 164,718 Libyans and 14,437 residents of other nationalities."
   },
   {
     "id": "LBY-2006-annuqatalkhams-admin1",
@@ -1003,9 +1379,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 287359,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 349755,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 25.6,
@@ -1025,13 +1401,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.8,
+        "count": 269553
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.2,
+        "count": 17806
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1043,9 +1442,12 @@
     "codes": {
       "uscb": "AN NUQĀŢ AL KHAMS"
     },
-    "population_note": "The 2006 census count of the shabiyah of An Nuqat al Khams, Libyans and non-Libyans resident on 15 April 2006: 148,914 men and 138,445 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of An Nuqat al Khams; the 2006 census counted 287,359, Libyans and non-Libyans resident on 15 April 2006: 148,914 men and 138,445 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 148,914 men and 138,445 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 148,914 men and 138,445 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 269,553 Libyans and 17,806 residents of other nationalities."
   },
   {
     "id": "LBY-2006-annuqatalkhams-admin2",
@@ -1059,9 +1461,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 287359,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 349755,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 25.6,
@@ -1081,13 +1483,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.8,
+        "count": 269553
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.2,
+        "count": 17806
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1099,9 +1524,12 @@
     "codes": {
       "uscb": "AN NUQĀŢ AL KHAMS"
     },
-    "population_note": "The 2006 census count of the shabiyah of An Nuqat al Khams, Libyans and non-Libyans resident on 15 April 2006: 148,914 men and 138,445 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of An Nuqat al Khams; the 2006 census counted 287,359, Libyans and non-Libyans resident on 15 April 2006: 148,914 men and 138,445 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 148,914 men and 138,445 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 148,914 men and 138,445 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 269,553 Libyans and 17,806 residents of other nationalities."
   },
   {
     "id": "LBY-2006-azzawiyah-admin1",
@@ -1137,13 +1565,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.3,
+        "count": 508326
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.7,
+        "count": 36521
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1155,9 +1599,12 @@
     "codes": {
       "uscb": "AZ ZĀWIYAH"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Az Zāwiyah (290,637) with Sawānī Bin Ādam (46,585), which the census counts with Al Jafārah, Janzūr (126,025), which the census counts with Al Jafārah, Al Māyah (43,747), which the census counts with Al Jafārah, Az Zahrā’ (37,853), which the census counts with Al Jafārah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 285,493 men and 259,354 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Az Zāwiyah (290,637) with Sawānī Bin Ādam (46,585), which the census counts with Al Jafārah, Janzūr (126,025), which the census counts with Al Jafārah, Al Māyah (43,747), which the census counts with Al Jafārah, Az Zahrā’ (37,853), which the census counts with Al Jafārah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 285,493 men and 259,354 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 285,493 men and 259,354 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 285,493 men and 259,354 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 508,326 Libyans and 36,521 residents of other nationalities."
   },
   {
     "id": "LBY-2006-azzawiyah-admin2",
@@ -1193,13 +1640,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.3,
+        "count": 508326
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.7,
+        "count": 36521
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1211,9 +1674,12 @@
     "codes": {
       "uscb": "AZ ZĀWIYAH"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Az Zāwiyah (290,637) with Sawānī Bin Ādam (46,585), which the census counts with Al Jafārah, Janzūr (126,025), which the census counts with Al Jafārah, Al Māyah (43,747), which the census counts with Al Jafārah, Az Zahrā’ (37,853), which the census counts with Al Jafārah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 285,493 men and 259,354 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Az Zāwiyah (290,637) with Sawānī Bin Ādam (46,585), which the census counts with Al Jafārah, Janzūr (126,025), which the census counts with Al Jafārah, Al Māyah (43,747), which the census counts with Al Jafārah, Az Zahrā’ (37,853), which the census counts with Al Jafārah; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 285,493 men and 259,354 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 285,493 men and 259,354 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 285,493 men and 259,354 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 508,326 Libyans and 36,521 residents of other nationalities."
   },
   {
     "id": "LBY-2006-banghazi-admin1",
@@ -1249,13 +1715,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 92.3,
+        "count": 634641
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.7,
+        "count": 53184
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1267,9 +1749,12 @@
     "codes": {
       "uscb": "BANGHĀZĪ"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Banghāzī (740,538) without Al Ibyār (33,389), Tūkrah (19,324), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 354,634 men and 333,191 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Banghāzī (740,538) without Al Ibyār (33,389) and Tūkrah (19,324), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 354,634 men and 333,191 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 354,634 men and 333,191 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 354,634 men and 333,191 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 634,641 Libyans and 53,184 residents of other nationalities."
   },
   {
     "id": "LBY-2006-banghazi-admin2",
@@ -1305,13 +1790,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 92.3,
+        "count": 634641
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.7,
+        "count": 53184
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1323,9 +1824,12 @@
     "codes": {
       "uscb": "BANGHĀZĪ"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Banghāzī (740,538) without Al Ibyār (33,389), Tūkrah (19,324), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 354,634 men and 333,191 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Banghāzī (740,538) without Al Ibyār (33,389) and Tūkrah (19,324), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 354,634 men and 333,191 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 354,634 men and 333,191 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 354,634 men and 333,191 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 634,641 Libyans and 53,184 residents of other nationalities."
   },
   {
     "id": "LBY-2006-darnah-admin1",
@@ -1361,13 +1865,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.5,
+        "count": 143271
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.5,
+        "count": 6678
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1382,9 +1902,12 @@
     "codes": {
       "uscb": "DARNAH"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Darnah (162,857) without Al Abraq (12,908), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 75,512 men and 74,437 women. Al Qubbah, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Darnah as drawn in 2007, which holds Derna and Al Qubbah.",
+    "population_note": "The 2006 census count of the census's shabiyah of Darnah (162,857) without Al Abraq (12,908), which lies outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 75,512 men and 74,437 women. Al Qubbah, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Darnah as drawn in 2007, which holds Derna and Al Qubbah. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 75,512 men and 74,437 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 75,512 men and 74,437 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 143,271 Libyans and 6,678 residents of other nationalities."
   },
   {
     "id": "LBY-2006-darnah-admin2",
@@ -1420,13 +1943,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 95.5,
+        "count": 143271
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 4.5,
+        "count": 6678
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1441,9 +1980,12 @@
     "codes": {
       "uscb": "DARNAH"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Darnah (162,857) without Al Abraq (12,908), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 75,512 men and 74,437 women. Al Qubbah, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Darnah as drawn in 2007, which holds Derna and Al Qubbah.",
+    "population_note": "The 2006 census count of the census's shabiyah of Darnah (162,857) without Al Abraq (12,908), which lies outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 75,512 men and 74,437 women. Al Qubbah, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Darnah as drawn in 2007, which holds Derna and Al Qubbah. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 75,512 men and 74,437 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 75,512 men and 74,437 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 143,271 Libyans and 6,678 residents of other nationalities."
   },
   {
     "id": "LBY-2006-ghat-admin1",
@@ -1457,9 +1999,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 23199,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 27675,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.5,
@@ -1479,13 +2021,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 91.9,
+        "count": 21329
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 8.1,
+        "count": 1870
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1497,9 +2062,12 @@
     "codes": {
       "uscb": "GHĀT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Ghat, Libyans and non-Libyans resident on 15 April 2006: 11,940 men and 11,259 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Ghat; the 2006 census counted 23,199, Libyans and non-Libyans resident on 15 April 2006: 11,940 men and 11,259 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 11,940 men and 11,259 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 11,940 men and 11,259 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 21,329 Libyans and 1,870 residents of other nationalities."
   },
   {
     "id": "LBY-2006-ghat-admin2",
@@ -1513,9 +2081,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 23199,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 27675,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.5,
@@ -1535,13 +2103,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 91.9,
+        "count": 21329
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 8.1,
+        "count": 1870
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1553,9 +2144,12 @@
     "codes": {
       "uscb": "GHĀT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Ghat, Libyans and non-Libyans resident on 15 April 2006: 11,940 men and 11,259 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Ghat; the 2006 census counted 23,199, Libyans and non-Libyans resident on 15 April 2006: 11,940 men and 11,259 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 11,940 men and 11,259 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 11,940 men and 11,259 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 21,329 Libyans and 1,870 residents of other nationalities."
   },
   {
     "id": "LBY-2006-misratah-admin1",
@@ -1591,13 +2185,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 94.3,
+        "count": 356496
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 5.7,
+        "count": 21748
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1609,9 +2219,12 @@
     "codes": {
       "uscb": "MIŞRĀTAH"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Mişrātah (558,285) without Zlīţan (180,041), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 196,023 men and 182,221 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Mişrātah (558,285) without Zlīţan (180,041), which lies outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 196,023 men and 182,221 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 196,023 men and 182,221 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 196,023 men and 182,221 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 356,496 Libyans and 21,748 residents of other nationalities."
   },
   {
     "id": "LBY-2006-misratah-admin2",
@@ -1647,13 +2260,29 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 94.3,
+        "count": 356496
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 5.7,
+        "count": 21748
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1665,9 +2294,12 @@
     "codes": {
       "uscb": "MIŞRĀTAH"
     },
-    "population_note": "The 2006 census count of the census's shabiyah of Mişrātah (558,285) without Zlīţan (180,041), which lie outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 196,023 men and 182,221 women.",
+    "population_note": "The 2006 census count of the census's shabiyah of Mişrātah (558,285) without Zlīţan (180,041), which lies outside it; added up from the census's baladiyat whose seats lie in the area shown, Libyans and non-Libyans resident on 15 April 2006: 196,023 men and 182,221 women. The estimates made since, for 2020, are of the census's shabiyat, not of this area, so the 2006 count is shown.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 196,023 men and 182,221 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 196,023 men and 182,221 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 356,496 Libyans and 21,748 residents of other nationalities."
   },
   {
     "id": "LBY-2006-murzuq-admin1",
@@ -1681,9 +2313,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 78772,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 94088,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.1,
@@ -1703,13 +2335,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 92.1,
+        "count": 72513
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.9,
+        "count": 6259
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1721,9 +2376,12 @@
     "codes": {
       "uscb": "MURZUQ"
     },
-    "population_note": "The 2006 census count of the shabiyah of Murzuq, Libyans and non-Libyans resident on 15 April 2006: 40,453 men and 38,319 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Murzuq; the 2006 census counted 78,772, Libyans and non-Libyans resident on 15 April 2006: 40,453 men and 38,319 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,453 men and 38,319 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,453 men and 38,319 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 72,513 Libyans and 6,259 residents of other nationalities."
   },
   {
     "id": "LBY-2006-murzuq-admin2",
@@ -1737,9 +2395,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 78772,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 94088,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.1,
@@ -1759,13 +2417,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 92.1,
+        "count": 72513
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.9,
+        "count": 6259
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1777,9 +2458,12 @@
     "codes": {
       "uscb": "MURZUQ"
     },
-    "population_note": "The 2006 census count of the shabiyah of Murzuq, Libyans and non-Libyans resident on 15 April 2006: 40,453 men and 38,319 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Murzuq; the 2006 census counted 78,772, Libyans and non-Libyans resident on 15 April 2006: 40,453 men and 38,319 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,453 men and 38,319 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,453 men and 38,319 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 72,513 Libyans and 6,259 residents of other nationalities."
   },
   {
     "id": "LBY-2006-nalut-admin1",
@@ -1793,9 +2477,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 93896,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 113886,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 24.5,
@@ -1815,13 +2499,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.5,
+        "count": 87772
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.5,
+        "count": 6124
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1836,9 +2543,12 @@
     "codes": {
       "uscb": "NĀLŪT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Nalut, Libyans and non-Libyans resident on 15 April 2006: 49,271 men and 44,625 women. Ghadamis, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Nalut as drawn in 2007, which holds Nalut and Ghadames.",
+    "population_note": "The estimate for 2020 of the shabiyah of Nalut; the 2006 census counted 93,896, Libyans and non-Libyans resident on 15 April 2006: 49,271 men and 44,625 women. Ghadamis, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Nalut as drawn in 2007, which holds Nalut and Ghadames.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 49,271 men and 44,625 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 49,271 men and 44,625 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 87,772 Libyans and 6,124 residents of other nationalities."
   },
   {
     "id": "LBY-2006-nalut-admin2",
@@ -1852,9 +2562,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 93896,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 113886,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 24.5,
@@ -1874,13 +2584,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.5,
+        "count": 87772
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.5,
+        "count": 6124
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1895,9 +2628,12 @@
     "codes": {
       "uscb": "NĀLŪT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Nalut, Libyans and non-Libyans resident on 15 April 2006: 49,271 men and 44,625 women. Ghadamis, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Nalut as drawn in 2007, which holds Nalut and Ghadames.",
+    "population_note": "The estimate for 2020 of the shabiyah of Nalut; the 2006 census counted 93,896, Libyans and non-Libyans resident on 15 April 2006: 49,271 men and 44,625 women. Ghadamis, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Nalut as drawn in 2007, which holds Nalut and Ghadames.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 49,271 men and 44,625 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 49,271 men and 44,625 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 87,772 Libyans and 6,124 residents of other nationalities."
   },
   {
     "id": "LBY-2006-sabha-admin1",
@@ -1911,9 +2647,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 133206,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 153454,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.0,
@@ -1933,13 +2669,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 89.4,
+        "count": 119038
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.6,
+        "count": 14168
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -1951,9 +2710,12 @@
     "codes": {
       "uscb": "SABHĀ"
     },
-    "population_note": "The 2006 census count of the shabiyah of Sabha, Libyans and non-Libyans resident on 15 April 2006: 70,110 men and 63,096 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Sabha; the 2006 census counted 133,206, Libyans and non-Libyans resident on 15 April 2006: 70,110 men and 63,096 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 70,110 men and 63,096 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 70,110 men and 63,096 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 119,038 Libyans and 14,168 residents of other nationalities."
   },
   {
     "id": "LBY-2006-sabha-admin2",
@@ -1967,9 +2729,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 133206,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 153454,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.0,
@@ -1989,13 +2751,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 89.4,
+        "count": 119038
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 10.6,
+        "count": 14168
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2007,9 +2792,12 @@
     "codes": {
       "uscb": "SABHĀ"
     },
-    "population_note": "The 2006 census count of the shabiyah of Sabha, Libyans and non-Libyans resident on 15 April 2006: 70,110 men and 63,096 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Sabha; the 2006 census counted 133,206, Libyans and non-Libyans resident on 15 April 2006: 70,110 men and 63,096 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 70,110 men and 63,096 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 70,110 men and 63,096 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 119,038 Libyans and 14,168 residents of other nationalities."
   },
   {
     "id": "LBY-2006-surt-admin1",
@@ -2023,9 +2811,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 126339,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 170869,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.3,
@@ -2045,13 +2833,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.1,
+        "count": 117615
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.9,
+        "count": 8724
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2063,9 +2874,12 @@
     "codes": {
       "uscb": "SURT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Surt, Libyans and non-Libyans resident on 15 April 2006: 64,981 men and 61,358 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Surt; the 2006 census counted 126,339, Libyans and non-Libyans resident on 15 April 2006: 64,981 men and 61,358 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 64,981 men and 61,358 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 64,981 men and 61,358 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 117,615 Libyans and 8,724 residents of other nationalities."
   },
   {
     "id": "LBY-2006-surt-admin2",
@@ -2079,9 +2893,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 126339,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 170869,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 22.3,
@@ -2101,13 +2915,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.1,
+        "count": 117615
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.9,
+        "count": 8724
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2119,9 +2956,12 @@
     "codes": {
       "uscb": "SURT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Surt, Libyans and non-Libyans resident on 15 April 2006: 64,981 men and 61,358 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Surt; the 2006 census counted 126,339, Libyans and non-Libyans resident on 15 April 2006: 64,981 men and 61,358 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 64,981 men and 61,358 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 64,981 men and 61,358 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 117,615 Libyans and 8,724 residents of other nationalities."
   },
   {
     "id": "LBY-2006-tarabulus-admin1",
@@ -2136,17 +2976,17 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts.",
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts.",
       "displaces_before": 2026,
       "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
     },
     "religion": {
       "status": "not_available"
@@ -2155,7 +2995,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
     },
     "sources": [],
     "country": "LBY",
@@ -2181,17 +3022,17 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts.",
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts.",
       "displaces_before": 2026,
       "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
     },
     "religion": {
       "status": "not_available"
@@ -2200,7 +3041,8 @@
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2006 census counts this area's people in baladiyat of which three -- Sidi as Sayih, Suq al Khamis and As Sabiah, about 66,000 people -- lie on or near the line between the areas shown as Al Jifarah and as Tripoli, which do not follow the census's shabiyat; no count for this area as shown can be made from them, so none is shown. Tajura' wa an Nawahi al Arba, a name this area is also given, was a district of the 2001 division; the area shown is close to the shabiyah of Tripoli as drawn in 2007, which holds Tripoli with Tajura and its outskirts."
     },
     "sources": [],
     "country": "LBY",
@@ -2225,9 +3067,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 76258,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 91749,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.0,
@@ -2247,13 +3089,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 92.7,
+        "count": 70711
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.3,
+        "count": 5547
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2265,9 +3130,12 @@
     "codes": {
       "uscb": "WĀDĪ AL ḨAYĀT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Wadi al Hayaa, Libyans and non-Libyans resident on 15 April 2006: 40,462 men and 35,796 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Wadi al Hayaa; the 2006 census counted 76,258, Libyans and non-Libyans resident on 15 April 2006: 40,462 men and 35,796 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,462 men and 35,796 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,462 men and 35,796 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 70,711 Libyans and 5,547 residents of other nationalities."
   },
   {
     "id": "LBY-2006-wadialhayat-admin2",
@@ -2281,9 +3149,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 76258,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 91749,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.0,
@@ -2303,13 +3171,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 92.7,
+        "count": 70711
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 7.3,
+        "count": 5547
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2321,9 +3212,12 @@
     "codes": {
       "uscb": "WĀDĪ AL ḨAYĀT"
     },
-    "population_note": "The 2006 census count of the shabiyah of Wadi al Hayaa, Libyans and non-Libyans resident on 15 April 2006: 40,462 men and 35,796 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Wadi al Hayaa; the 2006 census counted 76,258, Libyans and non-Libyans resident on 15 April 2006: 40,462 men and 35,796 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,462 men and 35,796 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,462 men and 35,796 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 70,711 Libyans and 5,547 residents of other nationalities."
   },
   {
     "id": "LBY-2006-wadiashshati-admin1",
@@ -2337,9 +3231,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 78563,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 95294,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.4,
@@ -2359,13 +3253,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.5,
+        "count": 73443
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.5,
+        "count": 5120
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2377,9 +3294,12 @@
     "codes": {
       "uscb": "WĀDĪ ASH SHĀŢI’"
     },
-    "population_note": "The 2006 census count of the shabiyah of Ash Shati', Libyans and non-Libyans resident on 15 April 2006: 40,296 men and 38,267 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Ash Shati'; the 2006 census counted 78,563, Libyans and non-Libyans resident on 15 April 2006: 40,296 men and 38,267 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,296 men and 38,267 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,296 men and 38,267 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 73,443 Libyans and 5,120 residents of other nationalities."
   },
   {
     "id": "LBY-2006-wadiashshati-admin2",
@@ -2393,9 +3313,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 78563,
-      "year": 2006,
-      "source": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX"
+      "value": 95294,
+      "year": 2020,
+      "source": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX"
     },
     "median_age": {
       "value": 23.4,
@@ -2415,13 +3335,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Libyan",
+        "pct": 93.5,
+        "count": 73443
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 6.5,
+        "count": 5120
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio",
+        "field": "population",
+        "name": "Demographic Indicators, population estimate for 2020 by shabiyah, in the US Census Bureau's subnational tables of Libya for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2020,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "median_age/sex_ratio",
         "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Table (10): total resident population (Libyans and non-Libyans) by mahallah, age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
+        "year": 2006,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Bureau of Statistics and Census Libya, General Population Census 2006, Libyan and non-Libyan population by mahallah, as the US Census Bureau tabulates it for HDX",
         "url": "https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data",
         "year": 2006,
         "license": "Creative Commons Attribution International (CC BY), published via HDX"
@@ -2433,8 +3376,11 @@
     "codes": {
       "uscb": "WĀDĪ ASH SHĀŢI’"
     },
-    "population_note": "The 2006 census count of the shabiyah of Ash Shati', Libyans and non-Libyans resident on 15 April 2006: 40,296 men and 38,267 women.",
+    "population_note": "The estimate for 2020 of the shabiyah of Ash Shati'; the 2006 census counted 78,563, Libyans and non-Libyans resident on 15 April 2006: 40,296 men and 38,267 women.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2006 census's count of everyone resident by five-year age group.",
-    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,296 men and 38,267 women."
+    "sex_ratio_note": "Men per 1,000 women among everyone the 2006 census counted as resident here, Libyans and non-Libyans: 40,296 men and 38,267 women.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2006,
+    "ethnicity_note": "Nationality at the 2006 census: 73,443 Libyans and 5,120 residents of other nationalities."
   }
 ]
