@@ -1,103 +1,87 @@
-probe_page: https://www.citypopulation.de/en/djibouti/admin/3__dikhil/
-  52 lines:
-        0  ﻿
-        1  Dikhil (Region, Djibouti) - Population Statistics, Charts, Map and Location
-        2  Home → Africa → Djibouti → Administrative Division
-        3  Dikhil
-        4  Region in Djibouti
-        5  Contents: Subdivision
-        6  The population in Dikhil as well as related information and services (Wikipedia, Google, images).
-        7  The icon links to further information about a selected division including its population structure (gender, urbanization).
-        8  Name
-        9  Status
-       10  Population
-       11  Census
-       12  2024-05-20
-       13  Dikhil
-       14  Region
-       15  66,196
-       16  As-Eyla
-       17  Sub-Prefecture
-       18  14,562
-       19  →
-       20  Dikhil ( Dikhil-Ville )
-       21  City
-       22  27,722
-       23  →
-       24  Dikhil-Périphérique
-       25  Sub-Prefecture
-       26  5,538
-       27  →
-       28  Mouloud
-       29  Sub-Prefecture
-       30  5,203
-       31  →
-       32  Yoboki
-       33  Sub-Prefecture
-       34  13,171
-       35  →
-       36  Djibouti
-       37  Republic
-       38  1,066,809
-       39  Source: Institut National de la Statistique de Djibouti, INSTAD.
-       40  Explanation: The population figures are final. Area figures are calculated using geospatial data.
-       41  Further information about the population structure:
-       42  Gender (C 2024)
-       43  Males
-       44  32,959
-       45  Females
-       46  33,237
-       47  Urbanization (C 2024)
-       48  Rural
-       49  38,474
-       50  Urban
-       51  27,722
-probe_page: https://www.citypopulation.de/en/djibouti/admin/1__djibouti/
-  44 lines:
-        0  ﻿
-        1  Djibouti (City, Djibouti) - Population Statistics, Charts, Map and Location
-        2  Home → Africa → Djibouti → Administrative Division
-        3  Djibouti
-        4  City in Djibouti
-        5  Contents: Subdivision
-        6  The population in Djibouti as well as related information and services (Wikipedia, Google, images).
-        7  The icon links to further information about a selected division including its population structure (gender, urbanization).
-        8  Name
-        9  Status
-       10  Population
-       11  Census
-       12  2024-05-20
-       13  Djibouti ( Djibouti-Ville )
-       14  City
-       15  767,250
-       16  Balbala
-       17  Commune
-       18  547,129
-       19  →
-       20  Boulaos
-       21  Commune
-       22  212,074
-       23  →
-       24  Rasdika
-       25  Commune
-       26  8,047
-       27  →
-       28  Djibouti
-       29  Republic
-       30  1,066,809
-       31  Source: Institut National de la Statistique de Djibouti, INSTAD.
-       32  Explanation: The population figures are final. Area figures are calculated using geospatial data.
-       33  Further information about the population structure:
-       34  Gender (C 2024)
-       35  Males
-       36  378,351
-       37  Females
-       38  388,899
-       39  Urbanization (C 2024)
-       40  Urban
-       41  767,250
-       42  See also:
-       43  Djibouti with arrondissements
-probe_page: https://www.citypopulation.de/en/burundi/admin/cankuzo/04002__cendajuru/
-  1 lines:
-        0  ﻿
+== get https://www.citypopulation.de/en/djibouti/admin/
+  22,798 bytes, begins b'<!DOCTYPE html>\r'
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/2__ali_sabieh/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/ali_sabieh/23__ali_adeh/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/ali_sabieh/21__ali_sabieh/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/ali_sabieh/22__ali_sabieh_périphérique/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/ali_sabieh/24__holl_holl/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/6__arta/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/arta/61__arta/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/arta/62__arta_périphérique/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/arta/63__damerjog/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/arta/64__karta/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/3__dikhil/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/dikhil/33__as_eyla/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/dikhil/31__dikhil/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/dikhil/32__dikhil_périphérique/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/dikhil/35__mouloud/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/dikhil/34__yoboki/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/1__djibouti/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/djibouti/13__balbala/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/djibouti/12__boulaos/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/djibouti/11__rasdika/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/5__obock/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/obock/53__allaili_dadda/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/obock/54__khor_angar/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/obock/51__obock/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/obock/52__obock_périphérique/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/4__tadjourah/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/tadjourah/45__adayllou/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/tadjourah/44__dorra/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/tadjourah/46__lac_assal/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/tadjourah/43__randa/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/tadjourah/41__tadjourah/
+  link: '&#8594;' -> https://www.citypopulation.de/en/djibouti/admin/tadjourah/42__tadjourah_périphérique/
+  (77 links in all)
+  text: Djibouti: Administrative Division (Regions and Sub-Prefectures) - Population Statistics, Charts and Map Home &#8594; Africa &#8594; Djibouti Djibouti : Administrative Division Contents: Djibouti Repub
+== get https://www.citypopulation.de/en/burundi/admin/
+  31,713 bytes, begins b'<!DOCTYPE html>\r'
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/1__buhumuza/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/101__butaganzwa/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/102__butihinda/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/103__cankuzo/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/104__gisagara/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/105__gisuru/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/106__muyinga/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/buhumuza/107__ruyigi/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/2__bujumbura/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/201__bubanza/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/202__bukinanyana/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/203__cibitoke/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/204__isare/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/205__mpanda/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/206__mugere/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/207__mugina/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/208__muhuta/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/209__mukaza/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/210__ntahangwa/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/bujumbura/211__rwibaga/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/3__burunga/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/301__bururi/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/302__makamba/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/303__matana/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/304__musongati/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/305__nyanza/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/306__rumonge/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/burunga/307__rutana/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/4__butanyerera/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/401__busoni/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/402__kayanza/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/403__kiremba/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/404__kirundo/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/405__matongo/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/406__muhanga/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/407__ngozi/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/butanyerera/408__tangara/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/5__gitega/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/501__bugendana/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/502__gishubi/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/503__gitega/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/504__karusi/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/505__kiganda/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/506__muramvya/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/507__mwaro/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/508__nyabihanga/
+  link: '&#8594;' -> https://www.citypopulation.de/en/burundi/admin/gitega/509__shombo/
+  (108 links in all)
+  text: Burundi: Administrative Division (Provinces and Communes) - Population Statistics, Charts and Map Home &#8594; Africa &#8594; Burundi Burundi : Administrative Division Contents: Burundi Republic 8,053
