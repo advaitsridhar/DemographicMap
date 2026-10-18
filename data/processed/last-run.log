@@ -1,39 +1,69 @@
-  ner_admpop_adm2_2024.csv: 67 rows, names in ADM2_FR
-  ner_admpop_adm1_2024.csv: 8 rows, names in ADM1_FR
-  ner_admpop_2023.xlsx ner_admpop_adm1_2023_: 8 rows, names in ADM1_FR
-  ner_admpop_2023.xlsx ner_admpop_adm2_2023_: 67 rows, names in ADM2_FR
-  ner_admpop_adm1_2023.csv: 8 rows, names in ADM1_FR
-  ner_admpop_adm2_2023.csv: 67 rows, names in ADM2_FR
-  ner_admpop_2022.xlsx ner_admpop_adm1_2022_: 8 rows, names in ADM1_NAME
-  ner_admpop_2022.xlsx ner_admpop_adm2_2022_: 67 rows, names in ADM2_NAME
-  region Agadez: median 15.3, shares 19.53 16.32 13.53 10.99 8.75 6.86 ...
-  region Diffa: median 15.3, shares 19.53 16.32 13.52 10.99 8.75 6.86 ...
-  region Dosso: median 15.3, shares 19.53 16.32 13.53 10.99 8.75 6.86 ...
-  region Maradi: median 15.2, shares 19.65 16.37 13.64 11.06 8.71 6.81 ...
-  region Niamey: median 15.3, shares 19.53 16.32 13.53 10.99 8.75 6.86 ...
-  region Tahoua: median 15.3, shares 19.53 16.32 13.53 10.99 8.75 6.86 ...
-  region Tillaberi: median 15.3, shares 19.53 16.32 13.53 10.99 8.75 6.86 ...
-  region Tillabéri: median 15.5, shares 19.27 16.16 13.54 11.09 8.89 7.00 ...
-  region Zinder: median 15.2, shares 19.65 16.35 13.63 11.05 8.73 6.85 ...
-  Ville de Maradi: median 14.3, shares 21.05 16.76 14.02 12.38 8.78 6.35 ...
-    against region Agadez: largest difference 1.517 points; same structure (under 0.3): False
-    against region Diffa: largest difference 1.518 points; same structure (under 0.3): False
-    against region Dosso: largest difference 1.517 points; same structure (under 0.3): False
-    against region Maradi: largest difference 1.397 points; same structure (under 0.3): False
-    against region Niamey: largest difference 1.517 points; same structure (under 0.3): False
-    against region Tahoua: largest difference 1.517 points; same structure (under 0.3): False
-    against region Tillaberi: largest difference 1.517 points; same structure (under 0.3): False
-    against region Tillabéri: largest difference 1.780 points; same structure (under 0.3): False
-    against region Zinder: largest difference 1.399 points; same structure (under 0.3): False
-    alike to 0 of the other 84 departments
-  Ville de Zinder: median 14.6, shares 20.84 16.50 13.76 12.10 8.85 6.73 ...
-    against region Agadez: largest difference 1.305 points; same structure (under 0.3): False
-    against region Diffa: largest difference 1.306 points; same structure (under 0.3): False
-    against region Dosso: largest difference 1.305 points; same structure (under 0.3): False
-    against region Maradi: largest difference 1.184 points; same structure (under 0.3): False
-    against region Niamey: largest difference 1.305 points; same structure (under 0.3): False
-    against region Tahoua: largest difference 1.305 points; same structure (under 0.3): False
-    against region Tillaberi: largest difference 1.305 points; same structure (under 0.3): False
-    against region Tillabéri: largest difference 1.568 points; same structure (under 0.3): False
-    against region Zinder: largest difference 1.187 points; same structure (under 0.3): False
-    alike to 0 of the other 84 departments
+chad_departments: OCHA's 2023 table, 23 provinces
+  Departments of Chad: 62 names with a seat, 66 listed
+  2024: Barh-El-Gazel: x1.1105 against 2021
+  2024: Batha: x1.1104 against 2021
+  2024: Borkou: x1.1105 against 2021
+  2024: Chari-Baguirmi: x1.1104 against 2021
+  2024: Ennedi Est: x1.1106 against 2021
+  2024: Ennedi Ouest: x1.1105 against 2021
+  2024: Guera: x1.1104 against 2021
+  2024: Hadjer Lamis: x1.1104 against 2021
+  2024: Kanem: x1.1104 against 2021
+  2024: Lac: x1.1105 against 2021
+  2024: Logone Occidental: x1.1104 against 2021
+  2024: Logone Oriental: x1.1104 against 2021
+  2024: Mandoul: x1.1104 against 2021
+  2024: Mayo-Kebbi Est: x1.1104 against 2021
+  2024: Mayo-Kebbi Ouest: x1.1104 against 2021
+  2024: Moyen-Chari: x1.1104 against 2021
+  2024: N'Djamena: x1.1105 against 2021
+  2024: Ouaddai: x1.1104 against 2021
+  2024: Salamat: x1.1104 against 2021
+  2024: Sila: x1.4867 against 2021
+  2024: Tandjile: x1.1104 against 2021
+  2024: Tibesti: x1.1105 against 2021
+  2024: Wadi Fira: x1.1104 against 2021
+  2024: 70 departments
+  ages: Chari-Baguirmi and Hadjer-Lamis alike (0.26 points at most), not one structure
+  ages: Ennedi Est and Ennedi Ouest share one structure (0.0022 points at most) and one sex ratio (1139)
+  ages: Mayo-Kebbi Est and Mayo-Kebbi Ouest alike (0.27 points at most), not one structure
+  ages: Mayo-Kebbi Est and Tandjilé alike (0.27 points at most), not one structure
+  ages: Guéra's 10-14 group is 3.6 times its 5-9 group
+  Bahr el Gazel: 412,808
+  Batha: 763,062
+  Borkou: 159,353
+  Chari-Baguirmi: 918,084
+  Ennedi-Est: 174,805 (median_age, sex_ratio withdrawn)
+  Ennedi-Ouest: 99,126 (median_age, sex_ratio withdrawn)
+  Guéra: 709,893 (median_age withdrawn)
+  Hadjer-Lamis: 908,127
+  Kanem: 550,092
+  Lac: 705,362
+  Logone Occidental: 1,115,244
+  Logone Oriental: 1,239,738
+  Mandoul: 1,025,580
+  Mayo-Kebbi Est: 1,264,762
+  Mayo-Kebbi Ouest: 932,156
+  Moyen-Chari: 969,006
+  N'Djamena Region: 1,801,264
+  Ouaddaï: 1,168,288
+  Salamat: 496,719
+  Sila: 645,792
+  Tandjilé: 1,104,153
+  Tibesti: 42,784
+  Wadi Fira: 827,551
+  the provinces make 18,033,749
+    Barh-El-Gazel Ouest: no seat named (not listed)
+    Fada: no seat named
+    Fouli: no seat named (not listed)
+    Kaya: no seat named (not listed)
+    Mayo-Binder: no seat named (not listed)
+    Mourtcha: no seat named
+    Mégri: no seat named (not listed)
+    Tandjilé Centre: no seat named (not listed)
+    Wadi Hawar: no seat named
+  61 of 70 departments with a seat
+  wrote data/processed/chad_departments.json (94 kB)
+  93 records written
+  wrote data/processed/chad_departments_2024.json (95 kB)
+  70 departments' 2024 figures written to chad_departments_2024.json
