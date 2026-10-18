@@ -1,669 +1,797 @@
-== rows https://www.citypopulation.de/en/congo/admin/ Pointe|Tchiamba|Nzassi|Kouilou|Pool|Sangha 40
-  HTTP 200 text/html; charset=UTF-8 56,615 bytes
-  HTTP 200 56,615 bytes
-  Kouilou | Department | 97,362 | →
-  Pointe-Noire | Department | 1,420,612 | →
-  Pointe-Noire | Commune | 1,398,812 | →
-  Tchiamba-Nzassi | District | 21,800 | →
-  Pool | Department | 394,532 | →
-  Sangha | Department | 209,701 | →
-  (6 rows shown)
-== links https://www.citypopulation.de/en/congo/admin/ tchiamba|pointe|kouilou 20
-  HTTP 200 text/html; charset=UTF-8 56,616 bytes
-  javascript:sym(  [Kouilou]
-  https://www.citypopulation.de/en/congo/admin/01__kouilou/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0102__hinda/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0105__kakamoeka/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0101__loango/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0103__madingo_kayes/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0104__mvouti/  [→]
-  https://www.citypopulation.de/en/congo/admin/kouilou/0106__nzambi/  [→]
-  javascript:sym(  [Pointe-Noire]
-  https://www.citypopulation.de/en/congo/admin/12__pointe_noire/  [→]
-  javascript:sym(  [Pointe-Noire]
-  https://www.citypopulation.de/en/congo/admin/pointe_noire/1201__pointe_noire/  [→]
-  javascript:sym(  [Tchiamba-Nzassi]
-  https://www.citypopulation.de/en/congo/admin/pointe_noire/1202__tchiamba_nzassi/  [→]
-  (14 links shown)
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-tcd populationdutchad 6 700
-  HTTP 200 application/json;charset=utf-8 26,944 bytes
-  ~ type": "file.upload", "size": 8425, "state": "active", "url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/fb3d793e-57c5-4fb9-b361-8d4222fd254e/download/tcd_admpop_adm1_2023.csv", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/", "cache_last_updated": null, "cache_url": null, "created": "2024-01-04T13:14:20.559180", "datastore_active": false, "description": "LEGACY Chad 2024 Population Projections", "download_url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2024-01-04T13:14:19.981737\"}, {\"state\": \"success\", \"message\": \"File structure check completed\", \"timestamp\": \"2024-01-04T13:14:23.613489\", \"sheet_changes\": [], \"hxl_proxy_response\": {\"url_or_filename\": \"https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx\", \"format\": \"XLSX\", \"sheets\": [{\"name\": \"Feuil1\", \"is_hidden\": false, \"nrows\": 73, \"ncols\": 5, \"has_merged_cells\": false, \
-  ~ se, \"is_hxlated\": false, \"header_hash\": \"3ceef82d98e2f1335cbc7996b556215c\", \"hxl_header_hash\": null, \"headers\": [\"ADM1_NAME\", \"ADM1_Pcode\", \"ADM2_NAME\", \"ADM2_Pcode\", \"Population_Projection_2024\"], \"hxl_headers\": null}]}}]", "hash": "", "hdx_rel_url": "/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx", "id": "f026a982-b530-4e49-97a3-f54bbc5bad5d", "last_modified": "2024-01-04T13:14:20.259547", "metadata_modified": "2025-02-25T20:37:12.595634", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "Tchad_PopulationDuTchad_20240102.xlsx", "originalHash": 2015191249, "p_coded": false, "package_id": "5e60290d-0a82-48e2-9454-812b01c7d9d4", "pii": "false", "position": 5, "resource_type": "file.upload", "size": 14268, "state": "active", "url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/384ea173-1a24-4fc2-9f54-24d9e4b7e1e4/download/", "cache_last_updated": null, "cache_url": null, "created": "2022-11-30T11:34:23.540022", "datastore_active": false, "description": "LEGACY Chad Admin 
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-cmr admpop[0-9a-zA-Z_.]{0,40} 30 200
-  HTTP 200 application/json;charset=utf-8 65,152 bytes
-  ~ ve level 0-2, disaggregated by sex and age.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/845f2655-6348-4554-8570-04d9556cded6/download/copy-of-cmr_admpop_2025.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-12-30T14:17:07.989228\"}, {\"state\":
-  ~ hxlated\": false, \"header_hash\": \"d1319ef0402167ab45dd59f8c2baf057\", \"hxl_header_hash\": null, \"headers\": [\"Item\", \"Methodological_Documentation\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_adm0_2025\", \"is_hidden\": false, \"nrows\": 2, \"ncols\": 59, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"5463bde8a420dfac6a4861e174ebc91b\", \"hxl_header_hash\": null, \"headers\"
-  ~  \"T_25_29\", \"T_30_34\", \"T_35_39\", \"T_40_44\", \"T_45_49\", \"T_50_54\", \"T_55_59\", \"T_60_64\", \"T_65_69\", \"T_70_74\", \"T_75_79\", \"T_80Plus\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_adm1_2025\", \"is_hidden\": false, \"nrows\": 11, \"ncols\": 62, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"cf2c7b5a891ab32616939cb21c3e686f\", \"hxl_header_hash\": null, \"headers\
-  ~  \"T_25_29\", \"T_30_34\", \"T_35_39\", \"T_40_44\", \"T_45_49\", \"T_50_54\", \"T_55_59\", \"T_60_64\", \"T_65_69\", \"T_70_74\", \"T_75_79\", \"T_80Plus\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_met_2025\", \"is_hidden\": false, \"nrows\": 3, \"ncols\": 66, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"fd4f8dd22d08181ca01b6a52b2106535\", \"hxl_header_hash\": null, \"headers\"
-  ~ tive level 2, disaggregated by sex and age.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/c23633c8-f033-44bd-b43b-e8a1bc487784/download/copy-of-cmr_admpop_met_2025.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-12-30T14:17:12.430258\"}, {\"state\": 
-  ~ -b43b-e8a1bc487784", "last_modified": "2025-12-30T14:17:12.903211", "metadata_modified": "2025-12-30T14:17:18.496760", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "CMR_admpop2_2025.csv", "originalHash": "8750915", "p_coded": true, "package_id": "e8db7923-6cd2-4974-ad57-14a157978cfd", "pii": "false", "position": 1, "resource_type": "file.upload", "size": 1434, "state": "active", "ur
-  ~ tive level 1, disaggregated by sex and age.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/09be4b94-28bb-4921-a7e0-19967c178230/download/copy-of-cmr_admpop_adm1_2025.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-12-30T14:17:15.417430\"}, {\"state\": 
-  ~ tive level 0, disaggregated by sex and age.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/e4b2b236-5b8c-462f-989d-993eee4b3be3/download/copy-of-cmr_admpop_adm0_2025.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-12-30T14:17:19.965837\"}, {\"state\": 
-  ~ ics at adm0-2 level sex and age disaggregated 2024.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/247800e6-85a8-407a-ad50-4084b1e45464/download/cmr_admpop_2024.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-01-12T17:52:30.757582\"}, {\"state\":
-  ~ hxlated\": false, \"header_hash\": \"d1319ef0402167ab45dd59f8c2baf057\", \"hxl_header_hash\": null, \"headers\": [\"Item\", \"Methodological_Documentation\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_adm0_2024\", \"is_hidden\": false, \"nrows\": 2, \"ncols\": 59, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"5463bde8a420dfac6a4861e174ebc91b\", \"hxl_header_hash\": null, \"headers\"
-  ~  \"T_25_29\", \"T_30_34\", \"T_35_39\", \"T_40_44\", \"T_45_49\", \"T_50_54\", \"T_55_59\", \"T_60_64\", \"T_65_69\", \"T_70_74\", \"T_75_79\", \"T_80Plus\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_adm1_2024\", \"is_hidden\": false, \"nrows\": 11, \"ncols\": 62, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"cf2c7b5a891ab32616939cb21c3e686f\", \"hxl_header_hash\": null, \"headers\
-  ~  \"T_25_29\", \"T_30_34\", \"T_35_39\", \"T_40_44\", \"T_45_49\", \"T_50_54\", \"T_55_59\", \"T_60_64\", \"T_65_69\", \"T_70_74\", \"T_75_79\", \"T_80Plus\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_met_2024\", \"is_hidden\": false, \"nrows\": 3, \"ncols\": 66, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"fd4f8dd22d08181ca01b6a52b2106535\", \"hxl_header_hash\": null, \"headers\"
-  ~ stics at metropolis sex and age disaggregated 2024.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/5395c330-9f4a-4d73-b4be-a3917d1ba2ce/download/cmr_admpop_met_2024.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-01-12T17:52:34.077245\"}, {\"state\": 
-  ~ stics at adm1 level sex and age disaggregated 2024.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/07b7f2eb-79cf-489a-a726-d6092deb83e9/download/cmr_admpop_adm1_2024.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-01-12T17:52:37.805815\"}, {\"state\": 
-  ~ stics at adm0 level sex and age disaggregated 2024.", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/11eb6616-a3eb-4319-b8a0-cc22f00f8fe7/download/cmr_admpop_adm0_2024.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2025-01-12T17:52:42.495298\"}, {\"state\": 
-  ~  disaggregated projected 2023 population statistics", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/21819ce3-93a7-4bba-8617-b2e7d3a0e5f6/download/cmr_admpop_2023.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2023-06-27T18:04:31.474082\"}, {\"state\":
-  ~ hxlated\": false, \"header_hash\": \"b9a9b8acd51228875b448b5f31ad4c6e\", \"hxl_header_hash\": null, \"headers\": [\"Item\", \"Methodological Documentation\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_adm0_2023\", \"is_hidden\": false, \"nrows\": 2, \"ncols\": 58, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"d625fe674330c04047762d76f757cdfb\", \"hxl_header_hash\": null, \"headers\"
-  ~  \"T_25_29\", \"T_30_34\", \"T_35_39\", \"T_40_44\", \"T_45_49\", \"T_50_54\", \"T_55_59\", \"T_60_64\", \"T_65_69\", \"T_70_74\", \"T_75_79\", \"T_80Plus\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_adm1_2023\", \"is_hidden\": false, \"nrows\": 11, \"ncols\": 60, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"c956cbcffab1ec6406e1517ce5bf09c3\", \"hxl_header_hash\": null, \"headers\
-  ~  \"T_25_29\", \"T_30_34\", \"T_35_39\", \"T_40_44\", \"T_45_49\", \"T_50_54\", \"T_55_59\", \"T_60_64\", \"T_65_69\", \"T_70_74\", \"T_75_79\", \"T_80Plus\"], \"hxl_headers\": null}, {\"name\": \"cmr_admpop_metropolises_2023\", \"is_hidden\": false, \"nrows\": 3, \"ncols\": 61, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"24970700c7bf9be7ecd14cc22de225cf\", \"hxl_header_hash\": null, \"headers\"
-  ~  disaggregated projected 2023 population statistics", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ea12b969-31d8-471a-bfef-36ccd0f9a985/download/cmr_admpop_adm0_2023.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2023-06-27T18:04:33.636280\"}, {\"state\": 
-  ~ 23 population statistics explanatory technical note", "download_url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/75d2954c-8f50-47d1-b48f-8d6dc589b663/download/cmr_admpop_adm1_2023.csv", "format": "CSV", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2023-06-27T18:04:35.786508\"}, {\"state\": 
-  ~ ", "in_hapi": "yes", "last_modified": "2025-12-30T11:21:08.483728", "metadata_modified": "2026-01-01T06:12:41.165266", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "CMR_admpop_2025_adm2.csv", "originalHash": "8750915", "p_coded": true, "package_id": "e8db7923-6cd2-4974-ad57-14a157978cfd", "pii": "false", "position": 16, "resource_type": "file.upload", "size": 1434, "state": "active", "u
-  ~ -845c-9ed08b5a1ebb", "last_modified": "2025-12-30T11:21:11.577507", "metadata_modified": "2025-12-30T11:21:24.258533", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "CMR_admpop_2025_adm1.csv", "originalHash": "8750915", "p_coded": true, "package_id": "e8db7923-6cd2-4974-ad57-14a157978cfd", "pii": "false", "position": 17, "resource_type": "file.upload", "size": 4747, "state": "active", "u
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-gab admpop[0-9a-zA-Z_.]{0,40} 30 200
-  HTTP 200 application/json;charset=utf-8 9,714 bytes
-  ~  disaggregated projected 2022 population statistics", "download_url": "https://data.humdata.org/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/15822e2d-8ce2-4589-b458-fce99d809a7b/download/gab_admpop_2022.xlsx", "format": "XLSX", "hash": "", "hdx_rel_url": "/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/15822e2d-8ce2-4589-b458-fce99d809a7b/download/gab_admpop_2022.xlsx", "id": "15822e2d-8ce2-4589-b
-  ~  disaggregated projected 2022 population statistics", "download_url": "https://data.humdata.org/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/1f6c4b8c-16f5-469b-9d9b-84c733dfab7b/download/gab_admpop_adm0_2022.csv", "format": "CSV", "hash": "", "hdx_rel_url": "/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/1f6c4b8c-16f5-469b-9d9b-84c733dfab7b/download/gab_admpop_adm0_2022.csv", "id": "1f6c4b8c-16f5-469
-  ~  disaggregated projected 2022 population statistics", "download_url": "https://data.humdata.org/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/b6496825-f574-44ea-bbb2-c4fd3e8d5ac8/download/gab_admpop_adm1_2022.csv", "format": "CSV", "hash": "", "hdx_rel_url": "/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/b6496825-f574-44ea-bbb2-c4fd3e8d5ac8/download/gab_admpop_adm1_2022.csv", "id": "b6496825-f574-44e
-== xlsx https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx Feuil 80 5
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/f026a982-b530-4e49-97a3-f54bbc5bad5d/tchad_populationdutchad_20240102.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 14,268 bytes
-  sheet 'Feuil1' 73x5
-    ADM1_NAME | ADM1_Pcode | ADM2_NAME | ADM2_Pcode | Population_Project
-    Batha | TD01 | Batha Ouest | TD0101 | 319035.77441063547
-    Batha | TD01 | Batha Est | TD0102 | 290993.5319541022
-    Batha | TD01 | Fitri | TD0103 | 178148.9991526056
-    Borkou | TD02 | Borkou | TD0201 | 115288.05231571502
-    Borkou | TD02 | Borkou Yala | TD0202 | 42516.55028637378
-    Chari-Baguirmi | TD03 | Baguirmi | TD0301 | 350098.93653028586
-    Chari-Baguirmi | TD03 | Chari | TD0302 | 305325.1734802423
-    Chari-Baguirmi | TD03 | Loug-Chari | TD0303 | 310162.7815873737
-    Guera | TD04 | Guéra | TD0401 | 232703.52650286985
-    Guera | TD04 | Abtouyour | TD0402 | 225937.57214465627
-    Guera | TD04 | Barh-Signaka | TD0403 | 139762.60836228257
-    Guera | TD04 | Mangalmé | TD0404 | 128065.3124911192
-    Hadjer Lamis | TD05 | Dagana | TD0501 | 312154.07167354063
-    Hadjer Lamis | TD05 | Dababa | TD0502 | 378595.95105073776
-    Hadjer Lamis | TD05 | Haraze-Al-Biar | TD0503 | 248717.3793133112
-    Kanem | TD06 | Kanem | TD0601 | 261569.49004907723
-    Kanem | TD06 | Nord Kanem | TD0602 | 155339.61115543818
-    Kanem | TD06 | Wadi Bissam | TD0603 | 152398.37751140297
-    Lac | TD07 | Mamdi | TD0701 | 189235.41949538223
-    Lac | TD07 | Wayi | TD0702 | 354780.18663050456
-    Lac | TD07 | Kaya | TD0703 | 65468.06172228619
-    Lac | TD07 | Fouli | TD0704 | 120253.90310608287
-    Logone Occidental | TD08 | Lac Wey | TD0801 | 567578.1015663877
-    Logone Occidental | TD08 | Dodjé | TD0802 | 182106.82532163378
-    Logone Occidental | TD08 | Guéni | TD0803 | 157540.7757148379
-    Logone Occidental | TD08 | Ngourkosso | TD0804 | 272522.5327686792
-    Logone Oriental | TD09 | La Pendé | TD0901 | 273149.73950175813
-    Logone Oriental | TD09 | Kouh Est | TD0902 | 172529.49077666635
-    Logone Oriental | TD09 | Kouh Ouest | TD0903 | 84291.53878043668
-    Logone Oriental | TD09 | La Nya | TD0904 | 239931.07051969893
-    Logone Oriental | TD09 | La Nya Pendé | TD0905 | 184006.12752561766
-    Logone Oriental | TD09 | Monts de Lam | TD0906 | 372789.5447177652
-    Mandoul | TD10 | Mandoul Oriental | TD1001 | 432517.66411641164
-    Mandoul | TD10 | Barh-Sara | TD1002 | 366886.87470338773
-    Mandoul | TD10 | Mandoul Occidental | TD1003 | 261247.1257083047
-    Mayo-Kebbi Est | TD11 | Mayo-Boneye | TD1101 | 399023.14306055557
-    Mayo-Kebbi Est | TD11 | Kabbia | TD1102 | 386952.544593716
-    Mayo-Kebbi Est | TD11 | Mayo-Lemié | TD1103 | 138750.44076357072
-    Mayo-Kebbi Est | TD11 | Mont Illi | TD1104 | 385418.1248170402
-    Mayo-Kebbi Ouest | TD12 | Mayo-Dallah | TD1201 | 572809.7506963075
-    Mayo-Kebbi Ouest | TD12 | Lac Léré | TD1202 | 299156.160108302
-    Mayo-Kebbi Ouest | TD12 | Mayo-Binder | TD1203 | 93946.1096377412
-    Moyen-Chari | TD13 | Bahr-Koh | TD1301 | 523252.3595203576
-    Moyen-Chari | TD13 | Grande Sido | TD1302 | 182569.7178979848
-    Moyen-Chari | TD13 | Lac Iro | TD1303 | 297116.0973451135
-    Ouaddai | TD14 | Ouara | TD1401 | 556596.0534391159
-    Ouaddai | TD14 | Abdi | TD1402 | 181007.17730616254
-    Ouaddai | TD14 | Assoungha | TD1403 | 483734.2085613389
-    Salamat | TD15 | Bahr-Azoum | TD1501 | 310249.4435299112
-    Salamat | TD15 | Aboudéia | TD1502 | 110127.80450868022
-    Salamat | TD15 | Haraze-Mangueigne | TD1503 | 94355.42388948193
-    Tandjile | TD16 | Tandjilé Est | TD1601 | 437869.99492842925
-    Tandjile | TD16 | Tandjilé Ouest | TD1602 | 549007.5337969204
-    Tandjile | TD16 | Tandjilé Centre | TD1603 | 151334.8123384507
-    Wadi Fira | TD17 | Biltine | TD1701 | 286743.4761493879
-    Wadi Fira | TD17 | Dar-Tama | TD1702 | 304271.9648443541
-    Wadi Fira | TD17 | Kobé | TD1703 | 237017.52542387997
-    Wadi Fira | TD17 | Mégri | TD1704 | 34303.73197576864
-    N'Djamena | TD18 | N'Djaména | TD1801 | 1819401.4132128437
-    Barh-El-Gazel | TD19 | Barh-El-Gazel Sud | TD1901 | 234693.66123528528
-    Barh-El-Gazel | TD19 | Barh-El-Gazel Nord | TD1902 | 89614.5488135833
-    Barh-El-Gazel | TD19 | Barh-El-Gazel Oues | TD1903 | 102414.61163503269
-    Ennedi Est | TD20 | Am-Djarass | TD2001 | 133701.42852557887
-    Ennedi Est | TD20 | Wadi Hawar | TD2002 | 46956.502189173494
-    Sila | TD21 | Kimiti | TD2101 | 680903.7014590385
-    Sila | TD21 | Djourf Al Ahmar | TD2102 | 181452.27122418326
-    Tibesti | TD22 | Tibesti Est | TD2201 | 24374.91678995158
-    Tibesti | TD22 | Tibesti Ouest | TD2202 | 18799.472897207925
-    Ennedi Ouest | TD23 | Fada | TD2301 | 66336.5053146747
-    Ennedi Ouest | TD23 | Mourtcha | TD2303 | 35720.446938988774
-    
-     |  |  |  | 18893631.762015723
-== xlsx https://data.humdata.org/dataset/d1160fa9-1d58-4f96-9df5-edbff2e80895/resource/9509b41f-efb2-4305-ac43-1e735e3efc60/download/drc-hpc-projection-population-2024.xlsx . 600 8
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/9509b41f-efb2-4305-ac43-1e735e3efc60/drc-hpc-projection-population-2024.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 611,970 bytes
-  sheet '001_population_health_zone_zs' 527x56
-    Province | Code Province | Territoire | Code Terrtoire | Zone de sante | Pcode ZS | Population 2024 | Homme
-    Kinshasa | CD10 | Kinshasa | CD1000 | Bandalungwa | CD1000ZS01 | 337289 | 35458.180703
-    Kinshasa | CD10 | Kinshasa | CD1000 | Barumbu | CD1000ZS02 | 281886 | 29633.829522
-    Kinshasa | CD10 | Kinshasa | CD1000 | Binza Meteo | CD1000ZS03 | 745289 | 78349.996703
-    Kinshasa | CD10 | Kinshasa | CD1000 | Binza Ozone | CD1000ZS04 | 694614 | 73022.685978
-    Kinshasa | CD10 | Kinshasa | CD1000 | Biyela | CD1000ZS05 | 417747 | 43916.48886899999
-    Kinshasa | CD10 | Kinshasa | CD1000 | Bumbu | CD1000ZS06 | 769113 | 80854.542351
-    Kinshasa | CD10 | Kinshasa | CD1000 | Gombe | CD1000ZS07 | 165407 | 17388.741689000002
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kalamu I | CD1000ZS08 | 270729 | 28460.927582999997
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kalamu II | CD1000ZS09 | 241639 | 25402.783153
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kasa-Vubu | CD1000ZS10 | 246610 | 25925.369469999998
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kikimi | CD1000ZS11 | 477122 | 50158.404493999995
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kimbanseke | CD1000ZS12 | 522141 | 54891.116906999996
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kingabwa | CD1000ZS13 | 389193 | 40914.692511
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kingasani | CD1000ZS14 | 411284 | 43237.053068
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kinshasa | CD1000ZS15 | 310671 | 32659.910216999997
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kintambo | CD1000ZS16 | 194265 | 20422.496655
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kisenso | CD1000ZS17 | 803841 | 84505.392807
-    Kinshasa | CD10 | Kinshasa | CD1000 | Kokolo | CD1000ZS18 | 497548 | 52305.72859599999
-    Kinshasa | CD10 | Kinshasa | CD1000 | Lemba | CD1000ZS19 | 597713 | 62835.774550999995
-    Kinshasa | CD10 | Kinshasa | CD1000 | Limete | CD1000ZS20 | 348455 | 36632.028785
-    Kinshasa | CD10 | Kinshasa | CD1000 | Lingwala | CD1000ZS21 | 159680 | 16786.67936
-    Kinshasa | CD10 | Kinshasa | CD1000 | Makala | CD1000ZS22 | 570852 | 60011.958204
-    Kinshasa | CD10 | Kinshasa | CD1000 | Maluku I | CD1000ZS23 | 333867 | 35098.436108999995
-    Kinshasa | CD10 | Kinshasa | CD1000 | Maluku II | CD1000ZS24 | 122221 | 12848.727067
-    Kinshasa | CD10 | Kinshasa | CD1000 | Masina I | CD1000ZS25 | 620109 | 65190.19884299999
-    Kinshasa | CD10 | Kinshasa | CD1000 | Masina II | CD1000ZS26 | 512091 | 53834.590557
-    Kinshasa | CD10 | Kinshasa | CD1000 | Matete | CD1000ZS27 | 535270 | 56271.329289999994
-    Kinshasa | CD10 | Kinshasa | CD1000 | Mont Ngafula I | CD1000ZS28 | 458071 | 48155.630016999996
-    Kinshasa | CD10 | Kinshasa | CD1000 | Mont Ngafula II | CD1000ZS29 | 268351 | 28210.935577
-    Kinshasa | CD10 | Kinshasa | CD1000 | Ndjili | CD1000ZS30 | 597747 | 62839.348868999994
-    Kinshasa | CD10 | Kinshasa | CD1000 | Ngaba | CD1000ZS31 | 337738 | 35505.382725999996
-    Kinshasa | CD10 | Kinshasa | CD1000 | Ngiri-Ngiri | CD1000ZS32 | 301137 | 31657.629398999998
-    Kinshasa | CD10 | Kinshasa | CD1000 | Nsele | CD1000ZS33 | 326615 | 34336.055105
-    Kinshasa | CD10 | Kinshasa | CD1000 | Police | CD1000ZS34 | 237251 | 24941.485877
-    Kinshasa | CD10 | Kinshasa | CD1000 | Selembao | CD1000ZS35 | 646158 | 67928.652066
-    Kongo-Central | CD20 | Matadi | CD2001 | Matadi | CD2001ZS01 | 351301 | 36197.001137
-    Kongo-Central | CD20 | Matadi | CD2001 | Nzanza | CD2001ZS02 | 311532 | 32099.322683999995
-    Kongo-Central | CD20 | Boma | CD2002 | Boma | CD2002ZS01 | 347569 | 35812.467053
-    Kongo-Central | CD20 | Moanda | CD2003 | Boma Bungu | CD2003ZS01 | 174840 | 18014.98908
-    Kongo-Central | CD20 | Moanda | CD2003 | Kitona | CD2003ZS02 | 212461 | 21891.344057
-    Kongo-Central | CD20 | Moanda | CD2003 | Moanda | CD2003ZS03 | 306562 | 31587.228794
-    Kongo-Central | CD20 | Lukula | CD2005 | Kangu | CD2005ZS01 | 226549 | 23342.929312999997
-    Kongo-Central | CD20 | Lukula | CD2005 | Lukula | CD2005ZS02 | 437948 | 45124.848075999995
-    Kongo-Central | CD20 | Tshela | CD2007 | Kinkonzi | CD2007ZS01 | 153020 | 15766.721739999999
-    Kongo-Central | CD20 | Tshela | CD2007 | Kizu | CD2007ZS02 | 141547 | 14584.578239
-    Kongo-Central | CD20 | Tshela | CD2007 | Kuimba | CD2007ZS03 | 189517 | 19527.263129
-    Kongo-Central | CD20 | Tshela | CD2007 | Tshela | CD2007ZS04 | 194795 | 20071.092415
-    Kongo-Central | CD20 | Tshela | CD2007 | Vaku | CD2007ZS05 | 163144 | 16809.868328
-    Kongo-Central | CD20 | Seke-Banza | CD2009 | Inga | CD2009ZS01 | 176884 | 18225.596708
-    Kongo-Central | CD20 | Seke-Banza | CD2009 | Seke-Banza | CD2009ZS02 | 322057 | 33183.787109
-    Kongo-Central | CD20 | Luozi | CD2010 | Kibunzi | CD2010ZS01 | 147388 | 15186.417355999998
-    Kongo-Central | CD20 | Luozi | CD2010 | Luozi | CD2010ZS02 | 194186 | 20008.342881999997
-    Kongo-Central | CD20 | Luozi | CD2010 | Mangembo | CD2010ZS03 | 177336 | 18272.169432000002
-    Kongo-Central | CD20 | Songololo | CD2011 | Kimpese | CD2011ZS01 | 428046 | 44104.575702
-    Kongo-Central | CD20 | Songololo | CD2011 | Nsona-Mpangu | CD2011ZS02 | 245118 | 25256.223366
-    Kongo-Central | CD20 | Mbanza-Ngungu | CD2013 | Boko-Kivulu | CD2013ZS01 | 331268 | 34132.860916
-    Kongo-Central | CD20 | Mbanza-Ngungu | CD2013 | Gombe-Matadi | CD2013ZS02 | 224724 | 23154.886788
-    Kongo-Central | CD20 | Mbanza-Ngungu | CD2013 | Kimpangu | CD2013ZS03 | 279846 | 28834.492302
-    Kongo-Central | CD20 | Mbanza-Ngungu | CD2013 | Kwilu-Ngongo | CD2013ZS04 | 337793 | 34805.177340999995
-    Kongo-Central | CD20 | Mbanza-Ngungu | CD2013 | Mbanza-Ngungu | CD2013ZS05 | 242721 | 25009.243677
-    Kongo-Central | CD20 | Kasangulu | CD2015 | Masa | CD2015ZS01 | 256322 | 26410.649913999998
-    Kongo-Central | CD20 | Kasangulu | CD2015 | Sona-Bata | CD2015ZS02 | 233153 | 24023.385661
-    Kongo-Central | CD20 | Madimba | CD2017 | Kisantu | CD2017ZS01 | 395396 | 40740.417652
-    Kongo-Central | CD20 | Madimba | CD2017 | Ngidinga | CD2017ZS02 | 269208 | 27738.384695999997
-    Kongo-Central | CD20 | Madimba | CD2017 | Nselo | CD2017ZS03 | 193384 | 19925.707208
-    Kongo-Central | CD20 | Kimvula | CD2019 | Kimvula | CD2019ZS01 | 168798 | 17392.439526
-    Kwango | CD31 | Kenge | CD3102 | Boko | CD3102ZS01 | 254888 | 25889.993712
-    Kwango | CD31 | Kenge | CD3102 | Kenge | CD3102ZS02 | 345260 | 35069.43924
-    Kwango | CD31 | Kenge | CD3102 | Kimbau | CD3102ZS03 | 219279 | 22273.045146
-    Kwango | CD31 | Feshi | CD3103 | Feshi | CD3103ZS01 | 180705 | 18354.92967
-    Kwango | CD31 | Feshi | CD3103 | Kisanji | CD3103ZS02 | 143809 | 14607.255366
-    Kwango | CD31 | Feshi | CD3103 | Mwela Lembwa | CD3103ZS03 | 120083 | 12197.310641999999
-    Kwango | CD31 | Kahemba | CD3105 | Kahemba | CD3105ZS01 | 309319 | 31418.768105999996
-    Kwango | CD31 | Kahemba | CD3105 | Kajiji | CD3105ZS02 | 186129 | 18905.867045999996
-    Kwango | CD31 | Kasongo-Lunda | CD3106 | Kasongo Lunda | CD3106ZS01 | 206409 | 20965.787765999998
-    Kwango | CD31 | Kasongo-Lunda | CD3106 | Kitenda | CD3106ZS02 | 186014 | 18894.186036
-    Kwango | CD31 | Kasongo-Lunda | CD3106 | Panzi | CD3106ZS03 | 212152 | 21549.127247999997
-    Kwango | CD31 | Kasongo-Lunda | CD3106 | Tembo | CD3106ZS04 | 153855 | 15627.66777
-    Kwango | CD31 | Kasongo-Lunda | CD3106 | Wamba Lwadi | CD3106ZS05 | 138246 | 14042.199203999999
-    Kwango | CD31 | Popokabaka | CD3108 | Popokabaka | CD3108ZS01 | 227479 | 23105.951945999997
-    Kwilu | CD32 | Bandundu | CD3201 | Bandundu | CD3201ZS01 | 298403 | 30372.352549000003
-    Kwilu | CD32 | Bagata | CD3202 | Bagata | CD3202ZS01 | 266698 | 27145.322534000003
-    Kwilu | CD32 | Bagata | CD3202 | Kikongo | CD3202ZS02 | 303306 | 30871.394598000003
-    Kwilu | CD32 | Bagata | CD3202 | Sia | CD3202ZS03 | 177728 | 18089.689024000003
-    Kwilu | CD32 | Kikwit | CD3203 | Kikwit-Nord | CD3203ZS01 | 336602 | 34260.361366000005
-    Kwilu | CD32 | Kikwit | CD3203 | Kikwit-Sud | CD3203ZS02 | 407754 | 41502.425382
-    Kwilu | CD32 | Bulungu | CD3204 | Bulungu | CD3204ZS01 | 428516 | 43615.644028
-    Kwilu | CD32 | Bulungu | CD3204 | Djuma | CD3204ZS02 | 332099 | 33802.032517
-    Kwilu | CD32 | Bulungu | CD3204 | Lusanga | CD3204ZS03 | 451345 | 45939.248135
-    Kwilu | CD32 | Bulungu | CD3204 | Pay Kongila | CD3204ZS04 | 367659 | 37421.435997
-    Kwilu | CD32 | Bulungu | CD3204 | Vanga | CD3204ZS05 | 242455 | 24677.797265
-    Kwilu | CD32 | Idiofa | CD3206 | Idiofa | CD3206ZS01 | 441072 | 44893.631376000005
-    Kwilu | CD32 | Idiofa | CD3206 | Ipamu | CD3206ZS02 | 308363 | 31386.111229000002
-    Kwilu | CD32 | Idiofa | CD3206 | Kimputu | CD3206ZS03 | 306226 | 31168.600958000003
-    Kwilu | CD32 | Idiofa | CD3206 | Koshibanda | CD3206ZS04 | 287404 | 29252.841332
-    Kwilu | CD32 | Idiofa | CD3206 | Mokala | CD3206ZS05 | 336975 | 34298.326425
-    Kwilu | CD32 | Idiofa | CD3206 | Mungindu | CD3206ZS06 | 191595 | 19501.113885
-    Kwilu | CD32 | Gungu | CD3210 | Gungu | CD3210ZS01 | 366790 | 37332.98657
-    Kwilu | CD32 | Gungu | CD3210 | Kingandu | CD3210ZS02 | 164057 | 16698.213631000002
-    Kwilu | CD32 | Gungu | CD3210 | Mukedi | CD3210ZS03 | 273297 | 27816.988551000002
-    Kwilu | CD32 | Masi-Manimba | CD3212 | Masi-Manimba | CD3212ZS01 | 262009 | 26668.062047000003
-    Kwilu | CD32 | Masi-Manimba | CD3212 | Moanza | CD3212ZS02 | 302732 | 30812.971156000003
-    Kwilu | CD32 | Masi-Manimba | CD3212 | Mosango | CD3212ZS03 | 189426 | 19280.346558
-    Kwilu | CD32 | Masi-Manimba | CD3212 | Yasa-Bonga | CD3212ZS04 | 336088 | 34208.044904
-    Maï-Ndombe | CD33 | Inongo | CD3302 | Banjow Moke | CD3302ZS01 | 164278 | 16686.373572
-    Maï-Ndombe | CD33 | Inongo | CD3302 | Inongo | CD3302ZS02 | 245105 | 24896.29527
-    Maï-Ndombe | CD33 | Inongo | CD3302 | Ntandembelo | CD3302ZS03 | 119188 | 12106.401912
-    Maï-Ndombe | CD33 | Kiri | CD3303 | Kiri | CD3303ZS01 | 157087 | 15955.954937999999
-    Maï-Ndombe | CD33 | Kiri | CD3303 | Penjwa | CD3303ZS02 | 106646 | 10832.460803999998
-    Maï-Ndombe | CD33 | Oshwe | CD3304 | Bosobe | CD3304ZS01 | 179593 | 18241.979381999998
-    Maï-Ndombe | CD33 | Oshwe | CD3304 | Mimia | CD3304ZS02 | 78046 | 7927.444404
-    Maï-Ndombe | CD33 | Oshwe | CD3304 | Oshwe | CD3304ZS03 | 207780 | 21105.04572
-    Maï-Ndombe | CD33 | Kutu | CD3306 | Bokoro | CD3306ZS01 | 308919 | 31378.138505999996
-    Maï-Ndombe | CD33 | Kutu | CD3306 | Nioki | CD3306ZS02 | 219253 | 22270.404222
-    Maï-Ndombe | CD33 | Kwamouth | CD3307 | Kwamouth | CD3307ZS01 | 174811 | 17756.252513999996
-    Maï-Ndombe | CD33 | Bolobo | CD3308 | Bolobo | CD3308ZS01 | 194064 | 19711.856735999998
-    Maï-Ndombe | CD33 | Yumbi | CD3310 | Yumbi | CD3310ZS01 | 167475 | 17011.10565
-    Maï-Ndombe | CD33 | Mushie | CD3311 | Mushie | CD3311ZS01 | 172728 | 17544.673872
-    Equateur | CD41 | Mbandaka | CD4101 | Bolenge | CD4101ZS01 | 76848 | 7886.064912
-    Equateur | CD41 | Mbandaka | CD4101 | Mbandaka | CD4101ZS02 | 130114 | 13352.168565999998
-    Equateur | CD41 | Mbandaka | CD4101 | Wangata | CD4101ZS03 | 134154 | 13766.749326
-    Equateur | CD41 | Bikoro | CD4102 | Bikoro | CD4102ZS01 | 137917 | 14152.904622999999
-    Equateur | CD41 | Bikoro | CD4102 | Iboko | CD4102ZS02 | 92522 | 9494.515118
-    Equateur | CD41 | Bikoro | CD4102 | Ntondo | CD4102ZS03 | 58932 | 6047.542907999999
-    Equateur | CD41 | Lukolela | CD4103 | Irebu | CD4103ZS01 | 32575 | 3342.8139249999995
-    Equateur | CD41 | Lukolela | CD4103 | Lukolela | CD4103ZS02 | 128462 | 13182.641977999998
-    Equateur | CD41 | Bomongo | CD4104 | Bomongo | CD4104ZS01 | 98792 | 10137.936247999998
-    Equateur | CD41 | Bomongo | CD4104 | Lilanga Bobangi | CD4104ZS02 | 74135 | 7607.659565
-    Equateur | CD41 | Makanza | CD4105 | Makanza | CD4105ZS01 | 109983 | 11286.345477
-    Equateur | CD41 | Basankusu | CD4107 | Basankusu | CD4107ZS01 | 231279 | 23733.619701
-    Equateur | CD41 | Basankusu | CD4107 | Djombo | CD4107ZS02 | 103587 | 10629.994353
-    Equateur | CD41 | Bolomba | CD4108 | Bolomba | CD4108ZS01 | 247943 | 25443.662717
-    Equateur | CD41 | Bolomba | CD4108 | Lolanga Mampoko | CD4108ZS02 | 82886 | 8505.678434
-    Equateur | CD41 | Bolomba | CD4108 | Monieka | CD4108ZS03 | 73047 | 7496.010092999999
-    Equateur | CD41 | Ingende | CD4109 | Ingende | CD4109ZS01 | 136373 | 13994.460887
-    Equateur | CD41 | Ingende | CD4109 | Lotumbe | CD4109ZS02 | 96765 | 9929.927534999999
-    Sud-Ubangi | CD42 | Gemena | CD4202 | Bogosenubia | CD4202ZS01 | 179220 | 18466.291139999998
-    Sud-Ubangi | CD42 | Gemena | CD4202 | Bominenge | CD4202ZS02 | 195858 | 20180.620746
-    Sud-Ubangi | CD42 | Gemena | CD4202 | Bwamanda | CD4202ZS03 | 285637 | 29431.179568999996
-    Sud-Ubangi | CD42 | Gemena | CD4202 | Gemena | CD4202ZS04 | 420779 | 43355.805823
-    Sud-Ubangi | CD42 | Gemena | CD4202 | Tandala | CD4202ZS05 | 343379 | 35380.742023
-    Sud-Ubangi | CD42 | Budjala | CD4203 | Bangabola | CD4203ZS01 | 170957 | 17614.896409
-    Sud-Ubangi | CD42 | Budjala | CD4203 | Budjala | CD4203ZS02 | 161781 | 16669.428896999998
-    Sud-Ubangi | CD42 | Budjala | CD4203 | Bulu | CD4203ZS03 | 163212 | 16816.874843999998
-    Sud-Ubangi | CD42 | Budjala | CD4203 | Mbaya | CD4203ZS04 | 83000 | 8552.071
-    Sud-Ubangi | CD42 | Budjala | CD4203 | Ndage | CD4203ZS05 | 158536 | 16335.073831999998
-    Sud-Ubangi | CD42 | Kungu | CD4204 | Bokonzi | CD4204ZS01 | 269745 | 27793.715565
-    Sud-Ubangi | CD42 | Kungu | CD4204 | Boto | CD4204ZS02 | 22622 | 2330.903014
-    Sud-Ubangi | CD42 | Kungu | CD4204 | Kungu | CD4204ZS03 | 268007 | 27614.637259
-    Sud-Ubangi | CD42 | Libenge | CD4205 | Libenge | CD4205ZS01 | 285637 | 29431.179568999996
-    Sud-Ubangi | CD42 | Libenge | CD4205 | Mawuya | CD4205ZS02 | 193428 | 19930.240835999997
-    Sud-Ubangi | CD42 | Zongo | CD4206 | Zongo | CD4206ZS01 | 93957 | 9681.047408999999
-    Nord-Ubangi | CD43 | Gbadolite | CD4301 | Gbadolite | CD4301ZS01 | 172462 | 17769.967094
-    Nord-Ubangi | CD43 | Mobayi-Mbongo | CD4302 | Mobayi Mbongo | CD4302ZS01 | 133666 | 13772.543641999999
-    Nord-Ubangi | CD43 | Yakoma | CD4304 | Abuzi | CD4304ZS01 | 90620 | 9337.21294
-    Nord-Ubangi | CD43 | Yakoma | CD4304 | Wapinda | CD4304ZS02 | 93614 | 9645.705718000001
-    Nord-Ubangi | CD43 | Yakoma | CD4304 | Wasolo | CD4304ZS03 | 87348 | 9000.075875999999
-    Nord-Ubangi | CD43 | Yakoma | CD4304 | Yakoma | CD4304ZS04 | 120710 | 12437.59627
-    Nord-Ubangi | CD43 | Businga | CD4305 | Businga | CD4305ZS01 | 152278 | 15690.268285999999
-    Nord-Ubangi | CD43 | Businga | CD4305 | Karawa | CD4305ZS02 | 298921 | 30799.923076999996
-    Nord-Ubangi | CD43 | Businga | CD4305 | Loko | CD4305ZS03 | 150068 | 15462.556515999999
-    Nord-Ubangi | CD43 | Bosobolo | CD4306 | Bili | CD4306ZS01 | 220141 | 22682.668217
-    Nord-Ubangi | CD43 | Bosobolo | CD4306 | Bosobolo | CD4306ZS02 | 196248 | 20220.805175999998
-    Mongala | CD44 | Lisala | CD4402 | Binga | CD4402ZS01 | 270235 | 27787.724580000002
-    Mongala | CD44 | Lisala | CD4402 | Boso Manzi | CD4402ZS02 | 121651 | 12509.129028
-    Mongala | CD44 | Lisala | CD4402 | Lisala | CD4402ZS03 | 267694 | 27526.438632
-    Mongala | CD44 | Bumba | CD4404 | Bumba | CD4404ZS01 | 213657 | 21969.921996
-    Mongala | CD44 | Bumba | CD4404 | Lolo | CD4404ZS02 | 148541 | 15274.173948000001
-    Mongala | CD44 | Bumba | CD4404 | Yamaluka | CD4404ZS03 | 141505 | 14550.676140000001
-    Mongala | CD44 | Bumba | CD4404 | Yambuku | CD4404ZS04 | 290836 | 29906.084208
-    Mongala | CD44 | Bumba | CD4404 | Yamongili | CD4404ZS05 | 135141 | 13896.278748
-    Mongala | CD44 | Bongandanga | CD4405 | Bongandanga | CD4405ZS01 | 141594 | 14559.827832
-    Mongala | CD44 | Bongandanga | CD4405 | Boso Mondanda | CD4405ZS02 | 149224 | 15344.405472
-    Mongala | CD44 | Bongandanga | CD4405 | Bosondjo | CD4405ZS03 | 206923 | 21277.478244
-    Mongala | CD44 | Bongandanga | CD4405 | Pimu | CD4405ZS04 | 247874 | 25488.387672
-    Tshuapa | CD45 | Boende | CD4502 | Boende | CD4502ZS01 | 279222 | 28711.839816000003
-    Tshuapa | CD45 | Boende | CD4502 | Wema | CD4502ZS02 | 9796 | 1007.303088
-    Tshuapa | CD45 | Befale | CD4503 | Befale | CD4503ZS01 | 182120 | 18727.03536
-    Tshuapa | CD45 | Befale | CD4503 | Mompono | CD4503ZS02 | 146377 | 15051.654156
-    Tshuapa | CD45 | Djolu | CD4504 | Djolu | CD4504ZS01 | 241515 | 24834.50442
-    Tshuapa | CD45 | Djolu | CD4504 | Lingomo | CD4504ZS02 | 138861 | 14278.798908000002
-    Tshuapa | CD45 | Ikela | CD4505 | Ikela | CD4505ZS01 | 174397 | 17932.894716000003
-    Tshuapa | CD45 | Ikela | CD4505 | Mondombe | CD4505ZS02 | 177784 | 18281.173152000003
-    Tshuapa | CD45 | Bokungu | CD4506 | Bokungu | CD4506ZS01 | 206482 | 21232.131096
-    Tshuapa | CD45 | Bokungu | CD4506 | Bosanga | CD4506ZS02 | 241515 | 24834.50442
-    Tshuapa | CD45 | Bokungu | CD4506 | Yalifafo | CD4506ZS03 | 179157 | 18422.355996000002
-    Tshuapa | CD45 | Monkoto | CD4507 | Monkoto | CD4507ZS01 | 138365 | 14227.796220000002
-    Tshopo | CD51 | Kisangani | CD5101 | Kabondo | CD5101ZS01 | 164132 | 16843.061707999997
-    Tshopo | CD51 | Kisangani | CD5101 | Lubunga | CD5101ZS02 | 149247 | 15315.577893
-    Tshopo | CD51 | Kisangani | CD5101 | Makiso-Kisangani | CD5101ZS03 | 196107 | 20124.304233
-    Tshopo | CD51 | Kisangani | CD5101 | Mangobo | CD5101ZS04 | 194436 | 19952.827884
-    Tshopo | CD51 | Kisangani | CD5101 | Tshopo | CD5101ZS05 | 134026 | 13753.614093999999
-    Tshopo | CD51 | Ubundu | CD5102 | Lowa | CD5102ZS01 | 128483 | 13184.796977
-    Tshopo | CD51 | Ubundu | CD5102 | Ubundu | CD5102ZS02 | 98447 | 10102.532693
-    Tshopo | CD51 | Ubundu | CD5102 | Wanierukula | CD5102ZS03 | 84094 | 8629.642186000001
-    Tshopo | CD51 | Opala | CD5103 | Opala | CD5103ZS01 | 124390 | 12764.777409999999
-    Tshopo | CD51 | Opala | CD5103 | Yaleko | CD5103ZS02 | 138306 | 14192.823413999999
-    Tshopo | CD51 | Isangi | CD5105 | Isangi | CD5105ZS01 | 156928 | 16103.794431999999
-    Tshopo | CD51 | Isangi | CD5105 | Yabaondo | CD5105ZS02 | 164712 | 16902.580727999997
-    Tshopo | CD51 | Isangi | CD5105 | Yahisuli | CD5105ZS03 | 84092 | 8629.436947999999
-    Tshopo | CD51 | Isangi | CD5105 | Yakusu | CD5105ZS04 | 156622 | 16072.393017999999
-    Tshopo | CD51 | Yahuma | CD5107 | Yahuma | CD5107ZS01 | 181881 | 18664.446339000002
-    Tshopo | CD51 | Basoko | CD5109 | Basali | CD5109ZS01 | 84813 | 8703.425247
-    Tshopo | CD51 | Basoko | CD5109 | Basoko | CD5109ZS02 | 156601 | 16070.238019
-    Tshopo | CD51 | Basoko | CD5109 | Yalimbongo | CD5109ZS03 | 99189 | 10178.675991
-    Tshopo | CD51 | Banalia | CD5110 | Banalia | CD5110ZS01 | 140506 | 14418.585213999999
-    Tshopo | CD51 | Banalia | CD5110 | Bengamisa | CD5110ZS02 | 115685 | 11871.479014999999
-    Tshopo | CD51 | Bafwasende | CD5111 | Bafwagbogbo | CD5111ZS01 | 69370 | 7118.6800299999995
-    Tshopo | CD51 | Bafwasende | CD5111 | Bafwasende | CD5111ZS02 | 79502 | 8158.415737999999
-    Tshopo | CD51 | Bafwasende | CD5111 | Opienge | CD5111ZS03 | 60802 | 6239.440438
-    Bas-Uele | CD52 | Buta | CD5202 | Buta | CD5202ZS01 | 225960 | 23187.78924
-    Bas-Uele | CD52 | Buta | CD5202 | Titule | CD5202ZS02 | 94416 | 9688.875504
-    Bas-Uele | CD52 | Aketi | CD5204 | Aketi | CD5204ZS01 | 165845 | 17018.848055
-    Bas-Uele | CD52 | Aketi | CD5204 | Likati | CD5204ZS02 | 85877 | 8812.611862999998
-    Bas-Uele | CD52 | Bondo | CD5206 | Bili | CD5206ZS01 | 78776 | 8083.914344000001
-    Bas-Uele | CD52 | Bondo | CD5206 | Bondo | CD5206ZS02 | 132803 | 13628.111056999998
-    Bas-Uele | CD52 | Bondo | CD5206 | Monga | CD5206ZS03 | 96719 | 9925.207061000001
-    Bas-Uele | CD52 | Ango | CD5207 | Ango | CD5207ZS01 | 126942 | 13026.661098
-    Bas-Uele | CD52 | Poko | CD5208 | Poko | CD5208ZS01 | 147188 | 15104.285371999998
-    Bas-Uele | CD52 | Poko | CD5208 | Viadana | CD5208ZS02 | 127757 | 13110.295583
-    Bas-Uele | CD52 | Bambesa | CD5209 | Ganga | CD5209ZS01 | 152521 | 15651.552499
-    Haut-Uele | CD53 | Rungu | CD5302 | Isiro | CD5302ZS01 | 337644 | 34719.257231999996
-    Haut-Uele | CD53 | Rungu | CD5302 | Rungu | CD5302ZS02 | 141502 | 14550.367656
-    Haut-Uele | CD53 | Niangara | CD5303 | Niangara | CD5303ZS01 | 156906 | 16134.330168
-    Haut-Uele | CD53 | Dungu | CD5305 | Doruma | CD5305ZS01 | 94870 | 9755.29236
-    Haut-Uele | CD53 | Dungu | CD5305 | Dungu | CD5305ZS02 | 171490 | 17633.973719999998
-    Haut-Uele | CD53 | Faradje | CD5307 | Aba | CD5307ZS01 | 176098 | 18107.805144
-    Haut-Uele | CD53 | Faradje | CD5307 | Faradje | CD5307ZS02 | 157569 | 16202.505132000002
-    Haut-Uele | CD53 | Faradje | CD5307 | Makoro | CD5307ZS03 | 166983 | 17170.527924
-    Haut-Uele | CD53 | Watsa | CD5309 | Gombari | CD5309ZS01 | 153286 | 15762.092808000001
-    Haut-Uele | CD53 | Watsa | CD5309 | Watsa | CD5309ZS02 | 232610 | 23918.82108
-    Haut-Uele | CD53 | Wamba | CD5311 | Boma-Mangbetu | CD5311ZS01 | 149878 | 15411.654984000003
-    Haut-Uele | CD53 | Wamba | CD5311 | Pawa | CD5311ZS02 | 230691 | 23721.494147999998
-    Haut-Uele | CD53 | Wamba | CD5311 | Wamba | CD5311ZS03 | 181018 | 18613.718904
-    Ituri | CD54 | Irumu | CD5402 | Boga | CD5402ZS01 | 59665 | 6135.23262
-    Ituri | CD54 | Irumu | CD5402 | Bunia | CD5402ZS02 | 236011 | 24268.539108
-    Ituri | CD54 | Irumu | CD5402 | Gethy | CD5402ZS03 | 164195 | 16883.84346
-    Ituri | CD54 | Irumu | CD5402 | Komanda | CD5402ZS04 | 162677 | 16727.750556000003
-    Ituri | CD54 | Irumu | CD5402 | Nyakunde | CD5402ZS05 | 86216 | 8865.418848000001
-    Ituri | CD54 | Irumu | CD5402 | Rwampara | CD5402ZS06 | 118009 | 12134.629452
-    Ituri | CD54 | Mambasa | CD5403 | Lolwa | CD5403ZS01 | 40296 | 4143.5570880000005
-    Ituri | CD54 | Mambasa | CD5403 | Mambasa | CD5403ZS02 | 84418 | 8680.534104000002
-    Ituri | CD54 | Mambasa | CD5403 | Mandima | CD5403ZS03 | 121642 | 12508.203576000002
-    Ituri | CD54 | Mambasa | CD5403 | Nia-Nia | CD5403ZS04 | 62813 | 6458.935164
-    Ituri | CD54 | Djugu | CD5405 | Bambu | CD5405ZS01 | 130933 | 13463.578524
-    Ituri | CD54 | Djugu | CD5405 | Damas | CD5405ZS02 | 102748 | 10565.371344000001
-    Ituri | CD54 | Djugu | CD5405 | Drodro | CD5405ZS03 | 136237 | 14008.978236
-    Ituri | CD54 | Djugu | CD5405 | Fataki | CD5405ZS04 | 112899 | 11609.178372
-    Ituri | CD54 | Djugu | CD5405 | Jiba | CD5405ZS05 | 120630 | 12404.14164
-    Ituri | CD54 | Djugu | CD5405 | Kilo | CD5405ZS06 | 49206 | 5059.754568
-    Ituri | CD54 | Djugu | CD5405 | Linga | CD5405ZS07 | 129824 | 13349.542272
-    Ituri | CD54 | Djugu | CD5405 | Lita | CD5405ZS08 | 112821 | 11601.157788
-    Ituri | CD54 | Djugu | CD5405 | Mangala | CD5405ZS09 | 81562 | 8386.857336000001
-    Ituri | CD54 | Djugu | CD5405 | Mongbalu | CD5405ZS10 | 117395 | 12071.49306
-    Ituri | CD54 | Djugu | CD5405 | Nizi | CD5405ZS11 | 124683 | 12820.903524000001
-    Ituri | CD54 | Djugu | CD5405 | Rethy | CD5405ZS12 | 176330 | 18131.66124
-    Ituri | CD54 | Djugu | CD5405 | Tchomia | CD5405ZS13 | 97164 | 9991.179792
-    Ituri | CD54 | Mahagi | CD5407 | Angumu | CD5407ZS01 | 144452 | 14853.710256
-    Ituri | CD54 | Mahagi | CD5407 | Aungba | CD5407ZS02 | 139233 | 14317.050924000001
-    Ituri | CD54 | Mahagi | CD5407 | Kambala | CD5407ZS03 | 108946 | 11202.699288000002
-    Ituri | CD54 | Mahagi | CD5407 | Logo | CD5407ZS04 | 211738 | 21772.595064
-    Ituri | CD54 | Mahagi | CD5407 | Mahagi | CD5407ZS05 | 153642 | 15798.699576
-    Ituri | CD54 | Mahagi | CD5407 | Nyarambe | CD5407ZS06 | 205290 | 21109.560120000002
-    Ituri | CD54 | Mahagi | CD5407 | Rimba | CD5407ZS07 | 186054 | 19131.560712000002
-    Ituri | CD54 | Aru | CD5409 | Adi | CD5409ZS01 | 142370 | 14639.622360000001
-    Ituri | CD54 | Aru | CD5409 | Adja | CD5409ZS02 | 111183 | 11432.725524000001
-    Ituri | CD54 | Aru | CD5409 | Ariwara | CD5409ZS03 | 177163 | 18217.316963999998
-    Ituri | CD54 | Aru | CD5409 | Aru | CD5409ZS04 | 159415 | 16392.325620000003
-    Ituri | CD54 | Aru | CD5409 | Biringi | CD5409ZS05 | 107854 | 11090.411112000002
-    Ituri | CD54 | Aru | CD5409 | Laybo | CD5409ZS06 | 124735 | 12826.25058
-    Nord-Kivu | CD61 | Goma | CD6101 | Goma | CD6101ZS01 | 252395 | 25689.520285000002
-    Nord-Kivu | CD61 | Goma | CD6101 | Karisimbi | CD6101ZS02 | 616487 | 62747.896321
-    Nord-Kivu | CD61 | Nyiragongo | CD6102 | Nyiragongo | CD6102ZS01 | 434441 | 44218.708303
-    Nord-Kivu | CD61 | Masisi | CD6103 | Katoyi | CD6103ZS01 | 634495 | 64580.804585
-    Nord-Kivu | CD61 | Masisi | CD6103 | Kirotshe | CD6103ZS02 | 439622 | 44746.046026
-    Nord-Kivu | CD61 | Masisi | CD6103 | Masisi | CD6103ZS03 | 410864 | 41818.97051200001
-    Nord-Kivu | CD61 | Masisi | CD6103 | Mweso | CD6103ZS04 | 392737 | 39973.950071
-    Nord-Kivu | CD61 | Walikale | CD6104 | Itebero | CD6104ZS01 | 178509 | 18169.181547000004
-    Nord-Kivu | CD61 | Walikale | CD6104 | Kibua | CD6104ZS02 | 101836 | 10365.173588
-    Nord-Kivu | CD61 | Walikale | CD6104 | Pinga | CD6104ZS03 | 151496 | 15419.717368
-    Nord-Kivu | CD61 | Walikale | CD6104 | Walikale | CD6104ZS04 | 157748 | 16056.064684000003
-    Nord-Kivu | CD61 | Lubero | CD6105 | Alimbongo | CD6105ZS01 | 221094 | 22503.610602
-    Nord-Kivu | CD61 | Lubero | CD6105 | Biena | CD6105ZS02 | 119121 | 12124.492743
-    Nord-Kivu | CD61 | Lubero | CD6105 | Kayna | CD6105ZS03 | 352190 | 35846.95477
-    Nord-Kivu | CD61 | Lubero | CD6105 | Lubero | CD6105ZS04 | 266916 | 27167.511228
-    Nord-Kivu | CD61 | Lubero | CD6105 | Manguredjipa | CD6105ZS05 | 72629 | 7392.397507000001
-    Nord-Kivu | CD61 | Lubero | CD6105 | Masereka | CD6105ZS06 | 178135 | 18131.114705
-    Nord-Kivu | CD61 | Lubero | CD6105 | Musienene | CD6105ZS07 | 250030 | 25448.803490000002
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Kalunguta | CD6107ZS01 | 200088 | 20365.556904
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Kamango | CD6107ZS02 | 105933 | 10782.178539
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Kyondo | CD6107ZS03 | 215724 | 21957.035892
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Mabalako | CD6107ZS04 | 186641 | 18996.880903
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Mutwanga | CD6107ZS05 | 248653 | 25308.648299
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Oicha | CD6107ZS06 | 337052 | 34306.163716
-    Nord-Kivu | CD61 | Oïcha | CD6107 | Vuhovi | CD6107ZS07 | 121842 | 12401.444286
-    Nord-Kivu | CD61 | Beni | CD6109 | Beni | CD6109ZS01 | 383424 | 39026.044992
-    Nord-Kivu | CD61 | Butembo | CD6110 | Butembo | CD6110ZS01 | 317019 | 32267.144877
-    Nord-Kivu | CD61 | Butembo | CD6110 | Katwa | CD6110ZS02 | 412436 | 41978.973388
-    Nord-Kivu | CD61 | Rutshuru | CD6111 | Bambo | CD6111ZS01 | 151799 | 15450.557617
-    Nord-Kivu | CD61 | Rutshuru | CD6111 | Binza | CD6111ZS02 | 184897 | 18819.371351
-    Nord-Kivu | CD61 | Rutshuru | CD6111 | Birambizo | CD6111ZS03 | 386733 | 39362.844939
-    Nord-Kivu | CD61 | Rutshuru | CD6111 | Kibirizi | CD6111ZS04 | 285815 | 29091.108145000002
-    Nord-Kivu | CD61 | Rutshuru | CD6111 | Rutshuru | CD6111ZS05 | 285007 | 29008.867481
-    Nord-Kivu | CD61 | Rutshuru | CD6111 | Rwanguba | CD6111ZS06 | 261046 | 26570.045018
-    Sud-Kivu | CD62 | Bukavu | CD6201 | Bagira | CD6201ZS01 | 158952 | 16311.495288
-    Sud-Kivu | CD62 | Bukavu | CD6201 | Ibanda | CD6201ZS02 | 516239 | 52975.929941
-    Sud-Kivu | CD62 | Bukavu | CD6201 | Kadutu | CD6201ZS03 | 420950 | 43197.46805
-    Sud-Kivu | CD62 | Kabare | CD6202 | Kabare | CD6202ZS01 | 268306 | 27533.293414
-    Sud-Kivu | CD62 | Kabare | CD6202 | Kaniola | CD6202ZS02 | 206747 | 21216.170393
-    Sud-Kivu | CD62 | Kabare | CD6202 | Katana | CD6202ZS03 | 260554 | 26737.790925999998
-    Sud-Kivu | CD62 | Kabare | CD6202 | Miti-Murhesa | CD6202ZS04 | 298340 | 30615.35246
-    Sud-Kivu | CD62 | Kabare | CD6202 | Nyantende | CD6202ZS05 | 155227 | 15929.239512999999
-    Sud-Kivu | CD62 | Shabunda | CD6203 | Kalole | CD6203ZS01 | 151490 | 15545.75231
-    Sud-Kivu | CD62 | Shabunda | CD6203 | Lulingu | CD6203ZS02 | 202835 | 20814.724865
-    Sud-Kivu | CD62 | Shabunda | CD6203 | Mulungu | CD6203ZS03 | 189342 | 19430.086698
-    Sud-Kivu | CD62 | Shabunda | CD6203 | Shabunda | CD6203ZS04 | 229674 | 23568.916205999998
-    Sud-Kivu | CD62 | Kalehe | CD6205 | Bunyakiri | CD6205ZS01 | 261436 | 26828.300883999997
-    Sud-Kivu | CD62 | Kalehe | CD6205 | Kalehe | CD6205ZS02 | 207124 | 21254.857755999998
-    Sud-Kivu | CD62 | Kalehe | CD6205 | Kalonge | CD6205ZS03 | 196416 | 20156.013504
-    Sud-Kivu | CD62 | Kalehe | CD6205 | Minova | CD6205ZS04 | 304764 | 31274.576915999998
-    Sud-Kivu | CD62 | Idjwi | CD6206 | Idjwi | CD6206ZS01 | 325888 | 33442.300672000005
-    Sud-Kivu | CD62 | Walungu | CD6207 | Kaziba | CD6207ZS01 | 148678 | 15257.187681999998
-    Sud-Kivu | CD62 | Walungu | CD6207 | Mubumbano | CD6207ZS02 | 228505 | 23448.954595
-    Sud-Kivu | CD62 | Walungu | CD6207 | Nyangezi | CD6207ZS03 | 182306 | 18708.059414
-    Sud-Kivu | CD62 | Walungu | CD6207 | Walungu | CD6207ZS04 | 315336 | 32359.464984000002
-    Sud-Kivu | CD62 | Uvira | CD6208 | Hauts-Plateaux | CD6208ZS01 | 172846 | 17737.283674
-    Sud-Kivu | CD62 | Uvira | CD6208 | Lemera | CD6208ZS02 | 209195 | 21467.381705
-    Sud-Kivu | CD62 | Uvira | CD6208 | Ruzizi | CD6208ZS03 | 209189 | 21466.765990999997
-    Sud-Kivu | CD62 | Uvira | CD6208 | Uvira | CD6208ZS04 | 393757 | 40406.949583
-    Sud-Kivu | CD62 | Fizi | CD6210 | Fizi | CD6210ZS01 | 394111 | 40443.276709
-    Sud-Kivu | CD62 | Fizi | CD6210 | Kimbi Lulenge | CD6210ZS02 | 230175 | 23620.328325
-    Sud-Kivu | CD62 | Fizi | CD6210 | Minembwe | CD6210ZS03 | 101309 | 10396.228270999998
-    Sud-Kivu | CD62 | Fizi | CD6210 | Nundu | CD6210ZS04 | 240543 | 24684.282117
-    Sud-Kivu | CD62 | Mwenga | CD6212 | Itombwe | CD6212ZS01 | 112856 | 11581.169864
-    Sud-Kivu | CD62 | Mwenga | CD6212 | Kamituga | CD6212ZS02 | 236182 | 24236.760658
-    Sud-Kivu | CD62 | Mwenga | CD6212 | Kitutu | CD6212ZS03 | 181041 | 18578.246378999997
-    Sud-Kivu | CD62 | Mwenga | CD6212 | Mwana | CD6212ZS04 | 164512 | 16882.056928
-    Sud-Kivu | CD62 | Mwenga | CD6212 | Mwenga | CD6212ZS05 | 166495 | 17085.550405
-    Maniema | CD63 | Kindu | CD6301 | Alunguli | CD6301ZS01 | 108631 | 11034.085194
-    Maniema | CD63 | Kindu | CD6301 | Kindu | CD6301ZS02 | 248080 | 25198.47792
-    Maniema | CD63 | Kailo | CD6302 | Kailo | CD6302ZS01 | 193986 | 19703.933964
-    Maniema | CD63 | Punia | CD6303 | Ferekeni | CD6303ZS01 | 97512 | 9904.683888
-    Maniema | CD63 | Punia | CD6303 | Punia | CD6303ZS02 | 136043 | 13818.431681999999
-    Maniema | CD63 | Lubutu | CD6305 | Lubutu | CD6305ZS01 | 163523 | 16609.685202
-    Maniema | CD63 | Lubutu | CD6305 | Obokote | CD6305ZS02 | 110500 | 11223.927
-    Maniema | CD63 | Pangi | CD6307 | Kalima | CD6307ZS01 | 187074 | 19001.854476
-    Maniema | CD63 | Pangi | CD6307 | Kampene | CD6307ZS02 | 197634 | 20074.475916
-    Maniema | CD63 | Pangi | CD6307 | Pangi | CD6307ZS03 | 127662 | 12967.139987999999
-    Maniema | CD63 | Kabambare | CD6309 | Kabambare | CD6309ZS01 | 158563 | 16105.878162
-    Maniema | CD63 | Kabambare | CD6309 | Lusangi | CD6309ZS02 | 231552 | 23519.662847999996
-    Maniema | CD63 | Kabambare | CD6309 | Saramabila | CD6309ZS03 | 197756 | 20086.867944
-    Maniema | CD63 | Kasongo | CD6311 | Kasongo | CD6311ZS01 | 304155 | 30894.23997
-    Maniema | CD63 | Kasongo | CD6311 | Kunda | CD6311ZS02 | 362754 | 36846.374796
-    Maniema | CD63 | Kasongo | CD6311 | Samba | CD6311ZS03 | 164099 | 16668.191826
-    Maniema | CD63 | Kibombo | CD6313 | Kibombo | CD6313ZS01 | 142787 | 14503.446738
-    Maniema | CD63 | Kibombo | CD6313 | Tunda | CD6313ZS02 | 115246 | 11705.997204
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Kamalondo | CD7101ZS01 | 79772 | 8286.156956
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Kampemba | CD7101ZS02 | 504281 | 52381.180313000004
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Katuba | CD7101ZS03 | 314905 | 32710.127065000004
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Kenya | CD7101ZS04 | 332728 | 34561.455544000004
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Kisanga | CD7101ZS05 | 296196 | 30766.767108000004
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Kowe | CD7101ZS06 | 45448 | 4720.820104
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Lubumbashi | CD7101ZS07 | 199248 | 20696.487504
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Mumbunda | CD7101ZS08 | 334249 | 34719.446377
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Rwashi | CD7101ZS09 | 461129 | 47898.852617000004
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Tshamilemba | CD7101ZS10 | 270960 | 28145.42808
-    Haut-Katanga | CD71 | Lubumbashi | CD7101 | Vangu | CD7101ZS11 | 174594 | 18135.602562000004
-    Haut-Katanga | CD71 | Kipushi | CD7102 | Kafubu | CD7102ZS01 | 121517 | 12622.335341000002
-    Haut-Katanga | CD71 | Kipushi | CD7102 | Kipushi | CD7102ZS02 | 256446 | 26637.815358000003
-    Haut-Katanga | CD71 | Sakania | CD7104 | Sakania | CD7104ZS01 | 299028 | 31060.935444000002
-    Haut-Katanga | CD71 | Kambove | CD7105 | Kambove | CD7105ZS01 | 155738 | 16176.973274000002
-    Haut-Katanga | CD71 | Kambove | CD7105 | Kapolowe | CD7105ZS02 | 191631 | 19905.286863
-    Haut-Katanga | CD71 | Kambove | CD7105 | Kilela Balanda | CD7105ZS03 | 88010 | 9141.86273
-    Haut-Katanga | CD71 | Kambove | CD7105 | Manika | CD7105ZS04 | 588689 | 61148.892497
-    Haut-Katanga | CD71 | Kambove | CD7105 | Panda | CD7105ZS05 | 111425 | 11574.049025000002
-    Haut-Katanga | CD71 | Likasi | CD7106 | Likasi | CD7106ZS01 | 179860 | 18682.59778
-    Haut-Katanga | CD71 | Kasenga | CD7107 | Kasenga | CD7107ZS01 | 191567 | 19898.638991
-    Haut-Katanga | CD71 | Kasenga | CD7107 | Kikula | CD7107ZS02 | 296447 | 30792.839231
-    Haut-Katanga | CD71 | Kasenga | CD7107 | Lukafu | CD7107ZS03 | 111427 | 11574.256771
-    Haut-Katanga | CD71 | Kasenga | CD7107 | Kashobwe | CD7107ZS04 | 181341 | 18836.433693000003
-    Haut-Katanga | CD71 | Mitwaba | CD7108 | Mitwaba | CD7108ZS01 | 148197 | 15393.666981
-    Haut-Katanga | CD71 | Mitwaba | CD7108 | Mufunga Sampwe | CD7108ZS02 | 222426 | 23104.055898000002
-    Haut-Katanga | CD71 | Pweto | CD7109 | Kilwa | CD7109ZS01 | 400036 | 41552.939428
-    Haut-Katanga | CD71 | Pweto | CD7109 | Pweto | CD7109ZS02 | 319326 | 33169.349598
-    Lualaba | CD72 | Mutshatsha | CD7202 | Dilala | CD7202ZS01 | 540927 | 56187.710271
-    Lualaba | CD72 | Mutshatsha | CD7202 | Lualaba | CD7202ZS02 | 313153 | 32528.141569000003
-    Lualaba | CD72 | Mutshatsha | CD7202 | Mutshatsha | CD7202ZS03 | 137943 | 14328.553239
-    Lualaba | CD72 | Lubudi | CD7203 | Bunkeya | CD7203ZS01 | 98508 | 10232.321484
-    Lualaba | CD72 | Lubudi | CD7203 | Fungurume | CD7203ZS02 | 520214 | 54036.188822000004
-    Lualaba | CD72 | Lubudi | CD7203 | Kanzenze | CD7203ZS03 | 179455 | 18640.529215000002
-    Lualaba | CD72 | Lubudi | CD7203 | Lubudi | CD7203ZS04 | 146443 | 15211.473739000001
-    Lualaba | CD72 | Dilolo | CD7205 | Dilolo | CD7205ZS01 | 331981 | 34483.862413
-    Lualaba | CD72 | Dilolo | CD7205 | Kasaji | CD7205ZS02 | 481445 | 50009.136485
-    Lualaba | CD72 | Sandoa | CD7206 | Kafakumba | CD7206ZS01 | 227671 | 23648.869783000002
-    Lualaba | CD72 | Sandoa | CD7206 | Sandoa | CD7206ZS02 | 397459 | 41285.258707
-    Lualaba | CD72 | Kapanga | CD7207 | Kalamba | CD7207ZS01 | 173591 | 18031.417943
-    Lualaba | CD72 | Kapanga | CD7207 | Kapanga | CD7207ZS02 | 274314 | 28493.818122
-    Haut-Lomami | CD73 | Kamina | CD7302 | Baka | CD7302ZS01 | 38283 | 3984.571206
-    Haut-Lomami | CD73 | Kamina | CD7302 | Kamina | CD7302ZS02 | 383584 | 39924.189888
-    Haut-Lomami | CD73 | Kamina | CD7302 | Kinda | CD7302ZS03 | 108210 | 11262.71322
-    Haut-Lomami | CD73 | Kamina | CD7302 | Songa | CD7302ZS04 | 218899 | 22783.445718
-    Haut-Lomami | CD73 | Kaniama | CD7303 | Kaniama | CD7303ZS01 | 345660 | 35976.98412
-    Haut-Lomami | CD73 | Kabongo | CD7304 | Kabongo | CD7304ZS01 | 436853 | 45468.533946
-    Haut-Lomami | CD73 | Kabongo | CD7304 | Kayamba | CD7304ZS02 | 127770 | 13298.55714
-    Haut-Lomami | CD73 | Kabongo | CD7304 | Kitenge | CD7304ZS03 | 338249 | 35205.632418
-    Haut-Lomami | CD73 | Malemba-Nkulu | CD7305 | Kinkondja | CD7305ZS01 | 346497 | 36064.100754
-    Haut-Lomami | CD73 | Malemba-Nkulu | CD7305 | Lwamba | CD7305ZS02 | 162417 | 16904.686193999998
-    Haut-Lomami | CD73 | Malemba-Nkulu | CD7305 | Mukanga | CD7305ZS03 | 262034 | 27273.022788
-    Haut-Lomami | CD73 | Malemba-Nkulu | CD7305 | Mulongo | CD7305ZS04 | 348614 | 36284.442348
-    Haut-Lomami | CD73 | Bukama | CD7306 | Bukama | CD7306ZS01 | 424702 | 44203.83356399999
-    Haut-Lomami | CD73 | Bukama | CD7306 | Butumba | CD7306ZS02 | 236963 | 24663.582965999998
-    Haut-Lomami | CD73 | Bukama | CD7306 | Kabondo Dianda | CD7306ZS03 | 319907 | 33296.560374
-    Haut-Lomami | CD73 | Bukama | CD7306 | Malemba | CD7306ZS04 | 303580 | 31597.213559999997
-    Tanganyika | CD74 | Kalemie | CD7402 | Kalemie | CD7402ZS01 | 540745 | 56168.80538500001
-    Tanganyika | CD74 | Kalemie | CD7402 | Nyemba | CD7402ZS02 | 508070 | 52774.75511
-    Tanganyika | CD74 | Moba | CD7404 | Kansimba | CD7404ZS01 | 262024 | 27217.218952
-    Tanganyika | CD74 | Moba | CD7404 | Moba | CD7404ZS02 | 523185 | 54344.795505
-    Tanganyika | CD74 | Manono | CD7406 | Ankoro | CD7406ZS01 | 413886 | 42991.580478
-    Tanganyika | CD74 | Manono | CD7406 | Kiyambi | CD7406ZS02 | 268199 | 27858.634727000004
-    Tanganyika | CD74 | Manono | CD7406 | Manono | CD7406ZS03 | 453108 | 47065.68728400001
-    Tanganyika | CD74 | Kabalo | CD7407 | Kabalo | CD7407ZS01 | 407520 | 42330.32496
-    Tanganyika | CD74 | Kongolo | CD7409 | Kongolo | CD7409ZS01 | 486758 | 50561.013734
-    Tanganyika | CD74 | Kongolo | CD7409 | Mbulula | CD7409ZS02 | 307874 | 31979.796002000003
-    Tanganyika | CD74 | Nyunzu | CD7410 | Nyunzu | CD7410ZS01 | 418607 | 43481.964911
-    Lomami | CD81 | Kabinda | CD8102 | Kabinda | CD8102ZS01 | 271883 | 28127.655765
-    Lomami | CD81 | Kabinda | CD8102 | Kalonda Est | CD8102ZS02 | 224014 | 23175.36837
-    Lomami | CD81 | Kabinda | CD8102 | Ludimbi Lukula | CD8102ZS03 | 150774 | 15598.32417
-    Lomami | CD81 | Mwene-Ditu | CD8103 | Makota | CD8103ZS01 | 231879 | 23989.041944999997
-    Lomami | CD81 | Mwene-Ditu | CD8103 | Mwene Ditu | CD8103ZS02 | 417840 | 43227.6372
-    Lomami | CD81 | Luilu | CD8104 | Kalenda | CD8104ZS01 | 196263 | 20304.388665
-    Lomami | CD81 | Luilu | CD8104 | Kanda Kanda | CD8104ZS02 | 230401 | 23836.135455
-    Lomami | CD81 | Luilu | CD8104 | Luputa | CD8104ZS03 | 286296 | 29618.752679999998
-    Lomami | CD81 | Luilu | CD8104 | Wikong | CD8104ZS04 | 117271 | 12132.271305
-    Lomami | CD81 | Kamiji | CD8105 | Kamiji | CD8105ZS01 | 95916 | 9922.98978
-    Lomami | CD81 | Ngandajika | CD8106 | Kalambayi Kabanga | CD8106ZS01 | 154724 | 16006.97142
-    Lomami | CD81 | Ngandajika | CD8106 | Mulumba | CD8106ZS02 | 283888 | 29369.633039999997
-    Lomami | CD81 | Ngandajika | CD8106 | Ngandajika | CD8106ZS03 | 307666 | 31829.58603
-    Lomami | CD81 | Lubao | CD8108 | Kamana | CD8108ZS01 | 187291 | 19376.190404999998
-    Lomami | CD81 | Lubao | CD8108 | Lubao | CD8108ZS02 | 204024 | 21107.30292
-    Lomami | CD81 | Lubao | CD8108 | Tshofa | CD8108ZS03 | 132919 | 13751.135145
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Bipemba | CD8201ZS01 | 345224 | 35715.14891999999
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Bonzola | CD8201ZS02 | 193576 | 20026.40508
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Dibindi | CD8201ZS03 | 255731 | 26456.650605
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Diulu | CD8201ZS04 | 358107 | 37047.959685
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Kansele | CD8201ZS05 | 244364 | 25280.67762
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Lubilanji | CD8201ZS06 | 251463 | 26015.104665
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Lukelenge | CD8201ZS07 | 262787 | 27186.629085
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Mpokolo | CD8201ZS08 | 293580 | 30372.3189
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Muya | CD8201ZS09 | 335167 | 34674.70198499999
-    Kasaï-Oriental | CD82 | Mbuji-Mayi | CD8201 | Nzaba | CD8201ZS10 | 284639 | 29447.327745
-    Kasaï-Oriental | CD82 | Tshilenge | CD8202 | Kasansa | CD8202ZS01 | 198392 | 20524.64436
-    Kasaï-Oriental | CD82 | Tshilenge | CD8202 | Tshilenge | CD8202ZS02 | 285233 | 29508.780015
-    Kasaï-Oriental | CD82 | Miabi | CD8205 | Cilundu | CD8205ZS01 | 175062 | 18111.03921
-    Kasaï-Oriental | CD82 | Miabi | CD8205 | Miabi | CD8205ZS02 | 140400 | 14525.081999999999
-    Kasaï-Oriental | CD82 | Kabeya-Kamwanga | CD8207 | Kabeya Kamuanga | CD8207ZS01 | 173647 | 17964.650384999997
-    Kasaï-Oriental | CD82 | Lupatapata | CD8208 | Mukumbi | CD8208ZS01 | 113903 | 11783.834864999999
-    Kasaï-Oriental | CD82 | Lupatapata | CD8208 | Tshishimbi | CD8208ZS02 | 183828 | 19017.92574
-    Kasaï-Oriental | CD82 | Katanda | CD8209 | Bibanga | CD8209ZS01 | 144039 | 14901.554745
-    Kasaï-Oriental | CD82 | Katanda | CD8209 | Tshitenge | CD8209ZS02 | 221968 | 22963.69944
-    Sankuru | CD83 | Lusambo | CD8302 | Lusambo | CD8302ZS01 | 151356 | 15658.534979999999
-    Sankuru | CD83 | Lusambo | CD8302 | Ototo | CD8302ZS02 | 216014 | 22347.72837
-    Sankuru | CD83 | Lusambo | CD8302 | Pania Mutombo | CD8302ZS03 | 122645 | 12688.238475
-    Sankuru | CD83 | Lodja | CD8303 | Lodja | CD8303ZS01 | 308419 | 31907.487644999997
-    Sankuru | CD83 | Lodja | CD8303 | Omendjadi | CD8303ZS02 | 218196 | 22573.46718
-    Sankuru | CD83 | Lodja | CD8303 | Vanga Kete | CD8303ZS03 | 207017 | 21416.943735
-    Sankuru | CD83 | Kole | CD8306 | Bena Dibele | CD8306ZS01 | 143593 | 14855.413814999998
-    Sankuru | CD83 | Kole | CD8306 | Kole | CD8306ZS02 | 146824 | 15189.67692
-    Sankuru | CD83 | Lomela | CD8307 | Lomela | CD8307ZS01 | 188451 | 19496.198205
-    Sankuru | CD83 | Lomela | CD8307 | Tshudi Loto | CD8307ZS02 | 129952 | 13444.184159999999
-    Sankuru | CD83 | Katako Kombe | CD8308 | Djalo Djeka | CD8308ZS01 | 134094 | 13872.69477
-    Sankuru | CD83 | Katako Kombe | CD8308 | Katako Kombe | CD8308ZS02 | 224939 | 23271.064244999998
-    Sankuru | CD83 | Katako Kombe | CD8308 | Wembo Nyama | CD8308ZS03 | 141148 | 14602.466339999999
-    Sankuru | CD83 | Lubefu | CD8309 | Dikungu | CD8309ZS01 | 236160 | 24431.9328
-    Sankuru | CD83 | Lubefu | CD8309 | Minga | CD8309ZS02 | 267248 | 27648.141839999997
-    Sankuru | CD83 | Lubefu | CD8309 | Tshumbe | CD8309ZS03 | 162450 | 16806.26475
-    Kasaï-Central | CD91 | Kananga | CD9101 | Bobozo | CD9101ZS01 | 47144 | 4847.723232
-    Kasaï-Central | CD91 | Kananga | CD9101 | Kananga | CD9101ZS02 | 285788 | 29387.008464000002
-    Kasaï-Central | CD91 | Kananga | CD9101 | Katoka | CD9101ZS03 | 148165 | 15235.51062
-    Kasaï-Central | CD91 | Kananga | CD9101 | Lukonga | CD9101ZS04 | 285386 | 29345.671608000004
-    Kasaï-Central | CD91 | Kananga | CD9101 | Ndesha | CD9101ZS05 | 108454 | 11152.107912000001
-    Kasaï-Central | CD91 | Kananga | CD9101 | Tshikaji | CD9101ZS06 | 125738 | 12929.387064
-    Kasaï-Central | CD91 | Dibaya | CD9102 | Bunkonde | CD9102ZS01 | 119277 | 12265.015356000002
-    Kasaï-Central | CD91 | Dibaya | CD9102 | Dibaya | CD9102ZS02 | 157435 | 16188.726180000001
-    Kasaï-Central | CD91 | Dibaya | CD9102 | Lubondaie | CD9102ZS03 | 157746 | 16220.705688
-    Kasaï-Central | CD91 | Dibaya | CD9102 | Tshikula | CD9102ZS04 | 142945 | 14698.74846
-    Kasaï-Central | CD91 | Luiza | CD9104 | Luambo | CD9104ZS01 | 286094 | 29418.473832000003
-    Kasaï-Central | CD91 | Luiza | CD9104 | Luiza | CD9104ZS02 | 180409 | 18551.096652
-    Kasaï-Central | CD91 | Luiza | CD9104 | Masuika | CD9104ZS03 | 214979 | 22105.860612
-    Kasaï-Central | CD91 | Luiza | CD9104 | Yangala | CD9104ZS04 | 160737 | 16528.264236
-    Kasaï-Central | CD91 | Kazumba | CD9105 | Bilomba | CD9105ZS01 | 94796 | 9747.683088
-    Kasaï-Central | CD91 | Kazumba | CD9105 | Kalomba | CD9105ZS02 | 158245 | 16272.016860000003
-    Kasaï-Central | CD91 | Kazumba | CD9105 | Mikalayi | CD9105ZS03 | 230316 | 23682.933648
-    Kasaï-Central | CD91 | Kazumba | CD9105 | Ndekesha | CD9105ZS04 | 167134 | 17186.054952000002
-    Kasaï-Central | CD91 | Kazumba | CD9105 | Tshibala | CD9105ZS05 | 255896 | 26313.273888
-    Kasaï-Central | CD91 | Demba | CD9106 | Bena Leka | CD9106ZS01 | 292222 | 30048.603816000003
-    Kasaï-Central | CD91 | Demba | CD9106 | Demba | CD9106ZS02 | 331977 | 34136.530956
-    Kasaï-Central | CD91 | Demba | CD9106 | Mutoto | CD9106ZS03 | 135294 | 13912.011432000001
-    Kasaï-Central | CD91 | Dimbelenge | CD9107 | Bena Tshiadi | CD9107ZS01 | 119834 | 12322.290552000002
-    Kasaï-Central | CD91 | Dimbelenge | CD9107 | Katende | CD9107ZS02 | 95409 | 9810.716652000001
-    Kasaï-Central | CD91 | Dimbelenge | CD9107 | Lubunga | CD9107ZS03 | 103034 | 10594.780152000001
-    Kasaï-Central | CD91 | Dimbelenge | CD9107 | Muetshi | CD9107ZS04 | 118217 | 12156.017676000001
-    Kasaï | CD92 | Kamonia | CD9202 | Kalonda Ouest | CD9202ZS01 | 388237 | 39921.634236000005
-    Kasaï | CD92 | Kamonia | CD9202 | Kamonia | CD9202ZS02 | 306411 | 31507.630308000003
-    Kasaï | CD92 | Kamonia | CD9202 | Kamwesha | CD9202ZS03 | 360734 | 37093.55575200001
-    Kasaï | CD92 | Kamonia | CD9202 | Kanzala | CD9202ZS04 | 229387 | 23587.406436000005
-    Kasaï | CD92 | Kamonia | CD9202 | Kitangwa | CD9202ZS05 | 231318 | 23785.967304
-    Kasaï | CD92 | Kamonia | CD9202 | Mutena | CD9202ZS06 | 217671 | 22382.673588
-    Kasaï | CD92 | Kamonia | CD9202 | Nyanga | CD9202ZS07 | 117871 | 12120.439188000002
-    Kasaï | CD92 | Kamonia | CD9202 | Tshikapa | CD9202ZS08 | 347255 | 35707.53714
-    Kasaï | CD92 | Luebo | CD9204 | Luebo | CD9204ZS01 | 230813 | 23734.039164
-    Kasaï | CD92 | Luebo | CD9204 | Ndjoko-Mpunda | CD9204ZS02 | 144061 | 14813.504508000002
-    Kasaï | CD92 | Ilebo | CD9205 | Banga Lubaka | CD9205ZS01 | 148436 | 15263.377008000001
-    Kasaï | CD92 | Ilebo | CD9205 | Ilebo | CD9205ZS02 | 168665 | 17343.484620000003
-    Kasaï | CD92 | Ilebo | CD9205 | Mikope | CD9205ZS03 | 177527 | 18254.746356
-    Kasaï | CD92 | Mweka | CD9207 | Bulape | CD9207ZS01 | 161478 | 16604.459784000002
-    Kasaï | CD92 | Mweka | CD9207 | Kakenge | CD9207ZS02 | 140018 | 14397.770904
-    Kasaï | CD92 | Mweka | CD9207 | Mushenge | CD9207ZS03 | 138712 | 14263.477536
-    Kasaï | CD92 | Mweka | CD9207 | Mweka | CD9207ZS04 | 192288 | 19772.590464
-    Kasaï | CD92 | Dekese | CD9208 | Dekese | CD9208ZS01 | 138894 | 14282.192232
-    
-    
-    
-    
-    
-    
-    
-== --fix-d1  
-?? unknown mode in '--fix-d1'
+== pdfl https://censo2024.ine.gov.ao/Relatorio_Provincial_Huila_Censo2024.pdf 78-79 200
+  HTTP 200 application/pdf 13,364,734 bytes
+  240 pages
+  --- page 78 ---
+  Grupos etários
+  Área de residência,
+  0 - 14 anos 15 - 64 anos 65 ou mais anos
+  município e comuna
+  Total Homens Mulheres Total Homens Mulheres Total Homens Mulheres
+  Viti Vivali 16 150 8 168 7 981 15 394 7 081 8 313 1 562 669 893
+  Viti Vivali 16 150 8 168 7 981 15 394 7 081 8 313 1 562 669 893
+  Chituto 33 782 17 196 16 587 31 728 15 179 16 550 2 823 1 303 1 521
+  Chituto 33 782 17 196 16 587 31 728 15 179 16 550 2 823 1 303 1 521
+  Hoque 43 088 21 911 21 177 40 817 19 244 21 573 2 930 1 418 1 512
+  Hoque 43 088 21 911 21 177 40 817 19 244 21 573 2 930 1 418 1 512
+  Chicungo 15 791 8 100 7 691 16 177 7 538 8 638 1 331 642 688
+  Chicungo 15 791 8 100 7 691 16 177 7 538 8 638 1 331 642 688
+  Palanca 20 284 10 206 10 078 21 624 10 201 11 423 1 208 519 688
+  Quadro 1.7 - Idade média e mediana da população por área de residência, município e comuna, segundo o
+  sexo, 2024
+  Área de residência, Área de residência,
+  Média Mediana Média Mediana
+  município e comuna município e comuna
+  Huíla 21,5 16,0 Chipindo 20,8 16,0
+  Área de Residência Chipindo 20,9 16,0
+  Urbana 22,0 18,0 Bambi 20,6 15,0
+  Rural 21,2 15,0 Chicomba 22,2 16,0
+  Sexo Chicomba 22,1 16,0
+  Homens 20,9 16,0 Cutenda 22,4 17,0
+  Mulheres 22,0 17,0 Cacula 20,4 15,0
+  Municípios / comunas Cacula 20,5 15,0
+  Caconda 22,4 16,0 Tchicuaqueia 20,4 15,0
+  Caconda 22,4 16,0 Galangue 21,2 16,0
+  Cusse 21,8 16,0 Galangue 21,2 16,0
+  Gungue 22,7 16,0 Dongo 23,1 19,0
+  Uaba 22,7 16,0 Dongo 23,1 19,0
+  Gambos 20,3 15,0 Capelongo 21,3 16,0
+  Chiange 20,1 15,0 Capelongo 21,3 16,0
+  Chimbemba 20,4 15,0 Mulondo 21,3 16,0
+  Humpata 20,3 15,0 Capunda Cavilongo 19,8 14,0
+  Humpata 20,3 15,0 Capunda Cavilongo 19,3 14,0
+  Lubango 22,5 18,0 Quihita 21,1 15,0
+  Lubango 22,6 19,0 Viti Vivali 21,2 15,0
+  Huíla 21,1 16,0 Viti Vivali 21,2 15,0
+  Cuvango 21,9 17,0 Chituto 20,7 15,0
+  Cuvango 21,9 17,0 Chituto 20,7 15,0
+  Quipungo 21,3 16,0 Hoque 20,0 15,0
+  Quipungo 21,3 16,0 Hoque 20,0 15,0
+  Chibia 21,0 16,0 Chicungo 21,3 16,0
+  Chibia 21,3 16,0 Chicungo 21,3 16,0
+  Jau 20,1 15,0 Palanca 20,5 16,0
+  Quilengues 20,8 15,0 Palanca 20,5 16,0
+  Quilengues 21,2 16,0
+  Dinde 19,9 14,0
+  Impulo 20,9 15,0
+  Caluquembe 21,1 16,0
+  Caluquembe 21,1 16,0
+  Calepi 20,5 15,0
+  Negola 21,4 16,0
+  Matala 21,2 16,0
+  Matala 21,2 16,0
+  Jamba Mineira 21,1 16,0
+  Jamba Mineira 22,0 18,0
+  Cassinga 20,1 15,0
+  Resultados Definitivos do RGPH 2024 - Província da Huíla 78
+  --- page 79 ---
+  2. Estado Civil
+== pdfl https://censo2024.ine.gov.ao/Relatorio_Provincial_Cunene_Censo2024.pdf 75-76,101-102 260
+  HTTP 200 application/pdf 12,137,509 bytes
+  203 pages
+  --- page 75 ---
+  Quadro 1.7 - Idade média e mediana da população por área de residência,
+  município e comuna, segundo o sexo, 2024
+  Área de residência, município e
+  comuna Média Mediana
+  Cunene 19,4 15,0
+  Área de residência
+  Urbana 19,8 17,0
+  Rural 19,2 15,0
+  Sexo
+  Homens 18,8 15,0
+  Mulheres 20,1 16,0
+  Municípios
+  Ombadja 19,7 15,0
+  Xangongo 18,7 15,0
+  Ombala yo Mungu 21,2 16,0
+  Cuanhama 20,1 17,0
+  Ondjiva 20,2 17,0
+  Môngua 19,6 15,0
+  Curoca 18,0 14,0
+  Curoca 18,00 14,0
+  Chitado 18,3 15,0
+  Chitado 18,3 15,0
+  Cahama 17,5 13,0
+  Cahama 18,0 14,0
+  Otchinjau 16,8 12,0
+  Cuvelai 18,3 15,0
+  Cuvelai 18,3 15,0
+  Namacunde 20,5 17,0
+  Namacunde 20,5 17,0
+  Nehone 19,3 15,00
+  Nehone 19,8 15,0
+  Evale 18,9 14,0
+  Cafima 18,6 15,0
+  Cafima 18,6 15,0
+  Chissuata 18,1 15,0
+  Chissuata 18,1 15,0
+  Mupa 18,8 14,0
+  Mupa 18,8 14,0
+  Chiéde 20,4 16,0
+  Chiéde 20,4 16,0
+  Humbe 18,3 14,0
+  Mucope 18,1 14,0
+  Humbe 18,6 14,0
+  Naulila 19,8 15,0
+  Naulila 19,8 15,0
+  Resultados Definitivos do RGPH 2024 - Província do Cunene 74
+  --- page 76 ---
+  --- page 101 ---
+  Quadro 6.2 - População por área de residência, município e comuna, segundo línguas materna, 2024
+  Língua materna agrupada
+  Área de residência, Número de pessoas
+  Cokue (Chokwe/ Olunyaneka
+  município e comuna com 2 ou mais anos Português Kimbundu Umbundu Kikongo Nganguela
+  Kioko) (Nhaneka)
+  Cunene 1 688 677 151 043 9 735 92 525 22 472 5 230 254 862 26 960
+  Área de residência
+  Urbana 434 543 76 302 8 318 83 709 9 300 4 146 58 467 17 637
+  Rural 1 254 134 74 741 1 416 8 816 13 172 1 083 196 395 9 323
+  Municípios / Comunas
+  Ombadja 231 703 22 923 1 045 11 267 1 137 618 34 502 3 185
+  Xangongo 145 167 19 168 1 020 11 210 1 111 565 34 179 3 171
+  Ombala yo Mungu 86 536 3 755 25 57 26 53 323 14
+  Cuanhama 470 833 56 945 5 775 52 662 4 720 2 955 22 570 10 197
+  Ondjiva 378 684 53 595 5 741 52 479 4 716 2 858 22 261 10 144
+  Môngua 92 149 3 350 33 183 4 97 309 53
+  Curoca 33 663 3 128 451 1 719 103 143 6 414 104
+  Curoca 33 663 3 128 451 1 719 103 143 6 414 104
+  Chitado 32 985 1 295 25 588 12 4 4 693 79
+  Chitado 32 985 1 295 25 588 12 4 4 693 79
+  Cahama 130 526 7 667 515 4 545 290 62 32 056 767
+  Cahama 76 090 6 537 511 4 121 290 62 12 428 724
+  Otchinjau 54 436 1 130 4 423 - - 19 628 43
+  Cuvelai 70 729 4 295 364 3 031 11 617 52 30 338 2 983
+  Cuvelai 70 729 4 295 364 3 031 11 617 52 30 338 2 983
+  Namacunde 130 244 16 657 1 001 12 398 2 311 770 6 358 2 829
+  Namacunde 130 244 16 657 1 001 12 398 2 311 770 6 358 2 829
+  Nehone 169 044 8 710 66 77 5 263 75 36
+  Nehone 88 468 5 135 16 31 3 175 41 34
+  Evale 80 577 3 575 50 47 2 87 34 2
+  Cafima 25 194 1 139 12 268 756 8 1 813 5 739
+  Cafima 17 788 864 9 36 5 4 27 1 923
+  Chissuata 7 407 275 4 232 751 5 1 786 3 816
+  Mupa 37 495 1 856 21 59 829 52 46 8
+  Mupa 37 495 1 856 21 59 829 52 46 8
+  Chiéde 93 840 4 861 59 42 144 139 54 9
+  Chiéde 93 840 4 861 59 42 144 139 54 9
+  Humbe 184 059 15 564 108 1 182 28 22 98 522 385
+  Mucope 112 763 10 460 80 1 026 10 19 58 550 364
+  Humbe 71 296 5 104 28 156 19 3 39 972 21
+  Naulila 78 361 6 001 293 4 687 519 144 17 422 639
+  Naulila 78 361 6 001 293 4 687 519 144 17 422 639
+  Continua na página seguinte
+  Resultados Definitivos do RGPH 2024 - Província do Cunene 100
+  --- page 102 ---
+  Quadro 6.2 - População por área de residência, município e comuna, segundo línguas materna, 2024
+  Língua materna agrupada
+  Área de residência, Número de pessoas
+  Oxikwanhama Línguas
+  município e comuna com 2 ou mais anos Ifyoti (Fiote) Muhumbi Luvale Khoisan Outras línguas Não sabe
+  (Kwanhama) estrangeiras
+  Cunene 1 688 677 958 838 770 115 675 117 1 932 938 39 441 8 138
+  Área de residência 0
+  Urbana 434 543 137 123 605 27 332 86 100 641 8 412 2 365
+  Rural 1 254 134 821 716 165 88 343 31 1832 297 31 029 5 773
+  Municípios / Comunas 0
+  Ombadja 231 703 123 239 56 22 852 2 218 119 9 972 567
+  Xangongo 145 167 48 891 54 22 745 2 196 108 2 390 356
+  Ombala yo Mungu 86 536 74 348 2 107 0 22 12 7 582 210
+  Cuanhama 470 833 295 508 467 12 314 48 153 422 4 604 1 494
+  Ondjiva 378 684 207 558 463 12 207 48 128 415 4 587 1 482
+  Môngua 92 149 87 951 4 107 0 25 6 17 12
+  Curoca 33 663 13 438 5 234 0 11 4 5 269 2 640
+  Curoca 33 663 13 438 5 234 0 11 4 5 269 2 640
+  Chitado 32 985 22 237 8 666 2 2 4 2 084 1 286
+  Chitado 32 985 22 237 8 666 2 2 4 2 084 1 286
+  Cahama 130 526 77 649 35 3 577 0 24 23 2 484 832
+  Cahama 76 090 45 549 33 3 551 0 17 23 1 506 738
+  Otchinjau 54 436 32 099 2 26 0 8 0 978 95
+  Cuvelai 70 729 10 411 44 6 405 26 183 84 756 141
+  Cuvelai 70 729 10 411 44 6 405 26 183 84 756 141
+  Namacunde 130 244 78 770 87 7 620 12 25 165 1 044 197
+  Namacunde 130 244 78 770 87 7 620 12 25 165 1 044 197
+  Nehone 169 044 159 175 4 14 2 531 17 21 48
+  Nehone 88 468 82 560 - 4 0 413 11 19 26
+  Evale 80 577 76 615 4 10 2 118 6 1 22
+  Cafima 25 194 15 170 1 40 0 114 2 115 16
+  Cafima 17 788 14 779 - 7 0 114 2 18 0
+  Chissuata 7 407 391 1 33 0 0 0 96 16
+  Mupa 37 495 34 503 7 12 0 73 6 6 17
+  Mupa 37 495 34 503 7 12 0 73 6 6 17
+  Chiéde 93 840 87 679 10 18 0 568 21 227 8
+  Chiéde 93 840 87 679 10 18 0 568 21 227 8
+  Humbe 184 059 11 830 14 54 114 0 21 27 2 032 209
+  Mucope 112 763 1 392 1 40 381 0 21 23 264 171
+  Humbe 71 296 10 438 13 13 733 0 0 4 1 768 38
+  Naulila 78 361 29 229 31 7 810 25 9 44 10 828 683
+  Naulila 78 361 29 229 31 7 810 25 9 44 10 828 683
+  Resultados Definitivos do RGPH 2024 - Província do Cunene 101
+== pdfl https://censo2024.ine.gov.ao/Relatorio_Provincial_Cubango_Censo2024.pdf 70-71 200
+  HTTP 200 application/pdf 11,233,995 bytes
+  183 pages
+  --- page 70 ---
+  Quadro 1.7 - Idade média e mediana da população por área de
+  residência, município e comuna, segundo o sexo, 2024
+  Área de residência, município
+  Média Mediana
+  e comuna
+  Total 21,8 18,0
+  Área de Residência
+  Urbana 21,5 17,0
+  Rural 22,6 18,0
+  Sexo
+  Homens 21,7 17,0
+  Mulheres 21,9 18,0
+  Municípios / comuna
+  Menongue 21,7 18,0
+  Menongue 21,7 18,0
+  Cuchi 22,2 18,0
+  Cuchi 22,2 18,0
+  Cuangar 22,2 17,0
+  Cuangar 22,2 17,0
+  Calai 22,9 18,0
+  Calai 22,9 18,0
+  Nancova 21,4 17,0
+  Nancova 21,2 17,0
+  Rito 22,0 17,0
+  Mavengue 19,7 15,0
+  Mavengue 19,3 14,0
+  Maué 20,7 17,8
+  Savate 22,2 16,0
+  Savate 20,4 15,0
+  Bondo Caíla 24,4 18,0
+  Longa 22,8 18,0
+  Longa 23,0 19,0
+  Baixo Longa 21,4 16,0
+  Chinguanja 20,5 15,0
+  Chinguanja 20,5 15,0
+  Cutato 21,0 17,0
+  Cutato 21,1 17,0
+  Vissati 20,5 16,0
+  Caiundo 21,8 17,0
+  Caiundo 22,0 17,0
+  Jamba Cueio 21,1 16,0
+  Resultados Definitivos do RGPH 2024 – Província do Cubango 68
+  --- page 71 ---
+  2. Estado Civil
+  Resultados Definitivos do RGPH 2024 – Província do Cubango 69
+== pdfl https://censo2024.ine.gov.ao/Relatorio_Provincial_Cuando_Cubango_Censo2024.pdf 68-69 200
+  HTTP 404 text/html 1,245 bytes
+  404 - File or directory not found. Server Error 404 - File or directory not found. The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+== pdfl https://censo2024.ine.gov.ao/Relatorio_Provincial_Malanje_Censo2024.pdf 113-116 260
+  HTTP 200 application/pdf 12,495,120 bytes
+  267 pages
+  --- page 113 ---
+  Quadro 6.2 - População por província e área de residência, segundo a língua Materna
+  Língua mater na agrupada
+  Município e área de População com 2
+  residência ou mais anos Cokue Olunyaneka
+  Português Kimbundu Umbundu Kikongo Nganguela
+  (Chokwe/Kioko) (Nhaneka)
+  Malanje 1 218 763 520 959 592 397 13 558 36 536 30 613 9 378 1 878
+  Área de residência
+  Urbana 688 893 340 006 295 380 10 657 20 699 6 649 5 232 588
+  Rural 529 869 180 954 297 017 2 901 15 838 23 964 4 146 1 290
+  Municipios / Comuna
+  Calandula 61 737 25 562 35 645 184 39 75 127 5
+  Calandula 34 398 16 040 18 079 91 22 42 48 3
+  Cota 27 339 9 523 17 566 93 17 32 78 2
+  Malanje 357 768 190 977 145 725 5 011 6 790 3 100 1 197 188
+  Malanje 334 419 182 226 131 825 4 739 6 687 3 019 1 092 161
+  Lombe 23 350 8 751 13 901 271 103 81 105 27
+  Cacuso 56 342 23 240 29 977 1 083 693 417 196 100
+  Cacuso 51 218 21 286 26 885 1 056 681 412 168 100
+  Soqueco 5 124 1 954 3 092 27 12 5 29 0
+  Massango 25 655 7 884 14 572 39 8 3 041 78 0
+  Massango 25 655 7 884 14 572 39 8 3 041 78 0
+  Marimba 13 934 4 720 7 757 7 8 446 37 0
+  Marimba 5 370 2 082 2 515 2 7 10 13 0
+  Mangando 8 564 2 637 5 241 5 2 436 23 0
+  Quela 13 714 4 601 8 718 46 140 95 35 5
+  Quela 9 842 4 343 5 367 27 39 20 22 3
+  Bângalas 3 872 258 3 351 19 101 75 14 2
+  Quirima 32 577 3 020 16 396 130 12 737 44 15 32
+  Quirima 19 804 1 459 12 663 116 5 333 36 12 29
+  Sautar 12 773 1 561 3 733 14 7 403 8 4 3
+  Cangandala 47 379 22 633 16 802 917 888 69 5 752 70
+  Cangandala 33 643 15 145 11 779 830 779 67 4 767 64
+  Culamagia 10 142 6 128 2 982 23 3 2 976 0
+  Caribo 3 594 1 361 2 041 63 105 0 9 7
+  Cahombo 19 403 5 001 14 270 37 14 31 34 0
+  Cahombo 14 409 3 289 11 002 36 14 27 29 0
+  Micanda 4 994 1 713 3 269 2 0 3 5 0
+  Kunda dya Baze 494 052 157 403 335 552 7 7 211 843 0
+  Kunda dya Baze 8 889 4 993 3 788 7 7 50 15 0
+  Lemba 4 852 1 524 3 318 0 0 2 8 0
+  Cambundi Catembo 44 623 9 137 34 911 98 302 44 8 7
+  Cambundi Catembo 32 281 8 265 23 481 77 297 43 8 5
+  Dumba Cabango 12 342 872 11 430 20 5 2 0 2
+  Caculama 32 323 10 772 19 106 647 979 122 115 126
+  Caculama 20 852 7 052 12 146 577 628 66 93 85
+  Caxinga 11 471 3 720 6 960 70 352 57 22 40
+  Kiwaba Nzoji 19 914 13 175 6 589 47 35 5 36 5
+  Kiwaba Nzoji 12 665 9 472 3 139 18 7 3 15 2
+  Mufuma 7 248 3 702 3 450 29 28 2 21 3
+  Luquembo 42 734 6 036 36 103 93 97 16 15 10
+  Luquembo 37 694 5 282 31 890 91 66 14 13 10
+  Dombo wa Zanga 5 040 753 4 213 2 30 2 2 0
+  Quihuhu 23 105 3 639 229 3 0 19 201 0 0
+  Quihuhu 9 307 1 437 133 0 0 7 714 0 0
+  Quinguengue 13 797 2 202 96 3 0 11 487 0 0
+  Resultados Definitivos do RGPH 2024 - Província de Malanje 112
+  --- page 114 ---
+  Quadro 6.2 - População por província e área de residência, segundo a língua Materna
+  Língua mater na agrupada
+  Município e área de População com 2
+  residência ou mais anos Cokue Olunyaneka
+  Português Kimbundu Umbundu Kikongo Nganguela
+  (Chokwe/Kioko) (Nhaneka)
+  Milando 6 084 2 590 3 036 8 76 146 9 2
+  Milando 6 084 2 590 3 036 8 76 146 9 2
+  Xandel 9 648 4 730 4 188 30 503 19 27 0
+  Xandel 7 464 3 971 2 785 28 503 19 27 0
+  Moma 2 184 758 1 403 2 0 0 0 0
+  Muquixe 9 796 4 550 4 892 132 125 5 17 0
+  Muquixe 9 796 4 550 4 892 132 125 5 17 0
+  Capunda 18 867 3 343 13 856 47 7 10 483 944
+  Capunda 7 046 288 6 571 0 0 0 130 0
+  Quimbango 7 404 1 390 4 603 30 7 9 339 943
+  Cunga Palanga 4 417 1 665 2 682 17 0 2 13 2
+  Mbanji ya Ngola 12 999 3 204 9 724 14 8 19 17 0
+  Mbanji ya Ngola 5 030 1 014 3 979 8 0 7 12 0
+  Cabombo 7 970 2 190 5 746 5 8 12 5 0
+  Cambo Suinginge 6 312 3 241 3 063 0 2 0 5 0
+  Cambo Suinginge 6 312 3 241 3 063 0 2 0 5 0
+  Quitapa 2 714 563 352 8 1 767 0 0 0
+  Quitapa 2 714 563 352 8 1 767 0 0 0
+  Cateco Cangola 24 117 7 992 15 869 34 4 19 182 0
+  Cateco Cangola 24 117 7 992 15 869 34 4 19 182 0
+  Cuale 25 482 5 460 19 843 10 5 91 64 0
+  Cuale 25 482 5 460 19 843 10 5 91 64 0
+  Pungu a Ndongo 16 418 7 918 6 881 577 367 418 54 69
+  Pungu a Ndongo 16 418 7 918 6 881 577 367 418 54 69
+  Ngola Luiji 18 601 9 407 8 835 190 49 31 56 2
+  Ngola Luiji 14 782 7 393 7 104 152 42 26 47 2
+  Cambaxe 3 820 2 014 1 731 38 7 5 8 0
+  Quêssua 262 776 131 051 107 953 4 159 10 888 3 098 798 313
+  Quêssua 262 776 131 051 107 953 4 159 10 888 3 098 798 313
+  Resultados Definitivos do RGPH 2024 - Província de Malanje 113
+  --- page 115 ---
+  Quadro 6.2 - População por província e área de residência, segundo a língua Materna
+  População Língua materna agrupada
+  Município e área de
+  co m 2 o u O xi kw a n h am a O u t ra s
+  residência Ifyoti (Fiote) Muhumbi Luvale Khoisan Não sabe
+  m a is an o s (K w an h a m a) l ín g u a s
+  Malanje 1 218 763 261 541 41 46 326 7 552 4 678
+  Área de residência
+  Urbana 688 893 195 471 22 37 249 5 033 3 677
+  Rural 529 869 66 70 19 9 77 2 519 1 000
+  Municipios / Comuna
+  Calandula 61 737 3 2 2 4 2 29 60
+  Calandula 34 398 2 0 0 2 2 17 50
+  Cota 27 339 2 2 2 2 0 12 10
+  Malanje 357 768 108 277 15 8 76 2 793 1 504
+  Malanje 334 419 103 277 14 8 76 2 716 1 477
+  Lombe 23 350 5 0 2 0 0 78 27
+  Cacuso 56 342 7 15 2 0 7 85 520
+  Cacuso 51 218 7 15 2 0 7 80 520
+  Soqueco 5 124 0 0 0 0 0 5 0
+  Massango 25 655 0 2 0 0 0 25 7
+  Massango 25 655 0 2 0 0 0 25 7
+  Marimba 13 934 0 0 0 2 0 934 24
+  Marimba 5 370 0 0 0 0 0 728 12
+  Mangando 8 564 0 0 0 2 0 206 12
+  Quela 13 714 2 3 0 0 0 65 3
+  Quela 9 842 0 2 0 0 0 15 3
+  Bângalas 3 872 2 2 0 0 0 49 0
+  Quirima 32 577 0 5 0 3 34 64 97
+  Quirima 19 804 0 0 0 3 34 37 84
+  Sautar 12 773 0 5 0 0 0 27 14
+  Cangandala 47 379 3 7 2 2 19 126 88
+  Cangandala 33 643 2 3 2 2 19 111 72
+  Culamagia 10 142 0 2 0 0 0 10 15
+  Caribo 3 594 2 2 0 0 0 5 0
+  Cahombo 19 403 0 2 0 2 0 12 0
+  Cahombo 14 409 0 2 0 2 0 10 0
+  Micanda 4 994 0 0 0 0 0 2 0
+  Kunda dya Baze 494 052 2 0 0 0 0 22 5
+  Kunda dya Baze 8 889 2 0 0 0 0 22 5
+  Lemba 4 852 0 0 0 0 0 0 0
+  Cambundi Catembo 44 623 2 3 0 0 4 102 5
+  Cambundi Catembo 32 281 2 3 0 0 4 91 5
+  Dumba Cabango 12 342 0 0 0 0 0 12 0
+  Caculama 32 323 2 8 0 0 55 315 76
+  Caculama 20 852 2 7 0 0 55 83 57
+  Caxinga 11 471 0 2 0 0 0 232 19
+  Kiwaba Nzoji 19 914 0 0 0 0 2 12 9
+  Kiwaba Nzoji 12 665 0 0 0 0 2 4 4
+  Mufuma 7 248 0 0 0 0 0 8 5
+  Luquembo 42 734 0 2 2 0 2 221 139
+  Luquembo 37 694 0 2 2 0 2 217 104
+  Dombo wa Zanga 5 040 0 0 0 0 0 4 35
+  Quihuhu 23 105 10 0 0 0 13 5 3
+  Quihuhu 9 307 7 0 0 0 13 3 0
+  Quinguengue 13 797 3 0 0 0 0 2 3
+  Milando 6 084 0 3 0 0 0 179 36
+  Milando 6 084 0 3 0 0 0 179 36
+  Xandel 9 648 7 10 5 0 0 37 92
+  Xandel 7 464 7 10 5 0 0 35 73
+  Moma 2 184 0 0 0 0 0 2 19
+  Muquixe 9 796 3 3 0 0 37 31 0
+  Muquixe 9 796 3 3 0 0 37 31 0
+  Resultados Definitivos do RGPH 2024 - Província de Malanje 114
+  --- page 116 ---
+  Quadro 6.2 - População por província e área de residência, segundo a língua Materna
+  População Língua materna agrupada
+  Município e área de
+  co m 2 o u O xi kw a n h am a O u t ra s
+  residência Ifyoti (Fiote) Muhumbi Luvale Khoisan Não sabe
+  m a is an o s (K w an h a m a) l ín g u a s
+  Capunda 18 867 2 3 0 0 2 40 130
+  Capunda 7 046 0 0 0 0 0 20 36
+  Quimbango 7 404 2 3 0 0 2 12 66
+  Cunga Palanga 4 417 0 0 0 0 0 8 29
+  Mbanji ya Ngola 12 999 0 0 0 0 0 12 2
+  Mbanji ya Ngola 5 030 0 0 0 0 0 10 0
+  Cabombo 7 970 0 0 0 0 0 2 2
+  Cambo Suinginge 6 312 0 0 0 0 0 0 2
+  Cambo Suinginge 6 312 0 0 0 0 0 0 2
+  Quitapa 2 714 0 0 0 0 0 17 7
+  Quitapa 2 714 0 0 0 0 0 17 7
+  Cateco Cangola 24 117 2 0 0 0 0 8 9
+  Cateco Cangola 24 117 2 0 0 0 0 8 9
+  Cuale 25 482 0 0 0 0 2 5 3
+  Cuale 25 482 0 0 0 0 2 5 3
+  Pungu a Ndongo 16 418 3 14 5 2 10 32 69
+  Pungu a Ndongo 16 418 3 14 5 2 10 32 69
+  Ngola Luiji 18 601 0 3 2 0 0 17 10
+  Ngola Luiji 14 782 0 3 2 0 0 7 3
+  Cambaxe 3 820 0 0 0 0 0 10 7
+  Quêssua 262 776 105 177 7 23 63 2 362 1 779
+  Quêssua 262 776 105 177 7 23 63 2 362 1 779
+  Resultados Definitivos do RGPH 2024 - Província de Malanje 115
+== pdfl https://censo2024.ine.gov.ao/Relatorio_Provincial_Huambo_Censo2024.pdf 69-76 160
+  HTTP 200 application/pdf 10,518,385 bytes
+  225 pages
+  --- page 69 ---
+  Quadro 1.1 - População por área de residência e município, segundo o sexo, RGPH - 2024
+  Município e área de residência Total Homens Mulheres
+  Huambo 2 691 902 1 296 018 1 395 883
+  Área de residência
+  Urbana 1 297 752 623 484 674 268
+  Rural 1 394 150 672 535 721 615
+  Municípios / Comunas
+  Bailundo 258 073 124 399 133 674
+  Bailundo 139 150 66 694 72 456
+  Lunge 59 310 28 958 30 352
+  Luvemba 59 613 28 746 30 866
+  Huambo 836 293 401 758 434 535
+  Huambo 762 417 366 128 396 289
+  Calima 73 876 35 630 38 246
+  Londuimbali 77 736 37 393 40 343
+  Londuimbali 55 436 26 622 28 814
+  Ussoque 22 300 10 771 11 529
+  Caála 263 415 127 115 136 300
+  Caála 263 415 127 115 136 300
+  Chicala Choloanga 59 829 28 777 31 052
+  Chicala Choloanga 43 392 21 018 22 374
+  Mbave 16 437 7 759 8 678
+  Cachiungo 153 450 73 649 79 801
+  Cachiungo 115 353 55 467 59 885
+  Chinhama 38 097 18 181 19 916
+  Mungo 166 141 80 451 85 690
+  Mungo 95 735 46 598 49 137
+  Cambuengo 70 407 33 854 36 553
+  Longonjo 76 193 36 613 39 580
+  Longonjo 46 615 22 379 24 235
+  Lépi 29 579 14 234 15 345
+  Ucuma 91 293 44 331 46 963
+  Ucuma 53 583 26 006 27 577
+  Cacoma 23 205 11 249 11 956
+  Mundundo 14 505 7 076 7 430
+  Ecunha 214 643 103 503 111 140
+  Ecunha 129 777 62 522 67 255
+  Quipeio 84 866 40 982 43 885
+  Chinjenje 46 575 22 235 24 340
+  Chinjenje 26 960 12 879 14 081
+  Chiaca 19 614 9 356 10 259
+  Bimbe 105 829 51 108 54 721
+  Bimbe 31 322 15 232 16 090
+  Hengue 74 507 35 876 38 631
+  Cuima 103 237 50 350 52 887
+  Cuima 66 463 32 337 34 126
+  Catata 36 774 18 012 18 761
+  Sambo 78 696 38 094 40 603
+  Sambo 47 014 22 701 24 314
+  Samboto 31 682 15 393 16 289
+  Chilata 50 566 24 283 26 283
+  Chilata 50 566 24 283 26 283
+  Alto Hama 47 989 22 622 25 367
+  Alto Hama 47 989 22 622 25 367
+  Galanga 61 943 29 339 32 604
+  Galanga 39 045 18 418 20 627
+  Cumbira 22 898 10 921 11 977
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 68
+  --- page 70 ---
+  Quadro 1.2 - População por idade simples segundo o sexo, RGPH - 2024
+  Idades Idades
+  Total Homens Mulheres Total Homens Mulheres
+  Simples Simples
+  Huambo 2 691 902 1 296 018 1 395 883 47 anos 17 672 7 762 9 911
+  Idade 48 anos 18 260 8 321 9 940
+  0 anos 97 797 48 795 49 003 49 anos 21 246 9 952 11 294
+  1 ano 89 558 44 539 45 018 50 anos 16 690 7 472 9 218
+  2 anos 75 732 37 605 38 127 51 anos 14 459 6 594 7 864
+  3 anos 86 003 43 014 42 989 52 anos 13 639 6 382 7 257
+  4 anos 89 062 44 062 45 001 53 anos 11 333 5 406 5 927
+  5 anos 80 186 39 906 40 279 54 anos 14 402 6 512 7 890
+  6 anos 78 432 39 212 39 220 55 anos 13 354 6 093 7 261
+  7 anos 75 601 37 754 37 847 56 anos 12 017 5 371 6 646
+  8 anos 75 987 37 814 38 173 57 anos 10 710 4 514 6 196
+  9 anos 79 834 40 105 39 729 58 anos 11 638 5 264 6 375
+  10 anos 79 301 39 759 39 541 59 anos 11 339 5 043 6 296
+  11 anos 76 785 38 073 38 712 60 anos 11 720 5 170 6 551
+  12 anos 77 705 39 114 38 591 61 anos 9 963 4 396 5 567
+  13 anos 73 110 36 319 36 791 62 anos 9 727 4 360 5 368
+  14 anos 76 245 37 846 38 399 63 anos 8 840 4 096 4 743
+  15 anos 71 136 35 060 36 076 64 anos 9 552 4 213 5 339
+  16 anos 69 552 33 853 35 699 65 anos 7 302 3 226 4 076
+  17 anos 66 552 32 200 34 352 66 anos 6 773 2 928 3 845
+  18 anos 63 290 30 284 33 007 67 anos 6 305 2 598 3 707
+  19 anos 60 648 28 504 32 144 68 anos 6 223 2 524 3 699
+  20 anos 63 728 29 508 34 221 69 anos 6 915 2 731 4 184
+  21 anos 54 288 25 258 29 030 70 anos 5 614 2 405 3 209
+  22 anos 45 120 21 419 23 701 71 anos 4 716 2 022 2 694
+  23 anos 43 174 21 083 22 090 72 anos 4 684 2 030 2 653
+  24 anos 47 302 23 065 24 237 73 anos 4 217 1 761 2 456
+  25 anos 44 046 21 081 22 965 74 anos 4 967 1 996 2 971
+  26 anos 41 062 19 291 21 771 75 anos 3 488 1 417 2 071
+  27 anos 38 490 18 285 20 205 76 anos 2 969 1 351 1 618
+  28 anos 34 570 16 361 18 209 77 anos 2 709 1 255 1 454
+  29 anos 31 522 15 346 16 176 78 anos 2 448 1 006 1 442
+  30 anos 33 623 16 115 17 509 79 anos 2 788 1 130 1 657
+  31 anos 33 610 15 630 17 980 80 anos 2 375 1 021 1 354
+  32 anos 33 635 15 767 17 868 81 anos 2 039 863 1 176
+  33 anos 23 200 11 483 11 717 82 anos 2 218 944 1 273
+  34 anos 25 145 12 267 12 878 83 anos 2 030 836 1 194
+  35 anos 24 910 11 512 13 398 84 anos 2 043 783 1 260
+  36 anos 24 675 11 466 13 209 85 anos 682 282 400
+  37 anos 22 668 10 420 12 249 86 anos 507 172 335
+  38 anos 21 264 9 802 11 461 87 anos 483 191 292
+  39 anos 21 501 10 005 11 496 88 anos 451 161 289
+  40 anos 20 938 9 765 11 173 89 anos 504 156 347
+  41 anos 17 925 8 238 9 686 90 anos 438 161 277
+  42 anos 16 894 7 942 8 952 91 anos 230 107 123
+  43 anos 13 522 6 384 7 139 92 anos 241 59 182
+  44 anos 16 444 7 596 8 848 93 anos 188 55 133
+  45 anos 16 002 6 947 9 055 94 anos 283 84 199
+  46 anos 16 010 6 771 9 239 95 anos 724 217 507
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 69
+  --- page 71 ---
+  Quadro 1.3 - População por grupos etários quinquenais, 2024
+  Total Homens Mulheres
+  1 296 1 395
+  Huambo 2 691 902
+  018 883
+  Área de residência
+  Urbana 1 297 752 623 484 674 268
+  Rural 1 394 150 672 535 721 615
+  Grupos etários
+  0-4 anos 438 153 218 015 220 138
+  5-9 anos 390 040 194 792 195 248
+  10-14 anos 383 145 191 112 192 034
+  15-19 anos 331 178 159 901 171 278
+  20-24 anos 253 613 120 333 133 280
+  25-29 anos 189 691 90 364 99 327
+  30-34 anos 149 214 71 262 77 952
+  35-39 anos 115 018 53 205 61 813
+  40-44 anos 85 722 39 924 45 799
+  45-49 anos 89 190 39 751 49 439
+  50-54 anos 70 522 32 366 38 155
+  55-59 anos 59 059 26 285 32 773
+  60-64 anos 49 802 22 235 27 567
+  65-69 anos 33 518 14 007 19 511
+  70-74 anos 24 198 10 214 13 984
+  75-79 anos 14 401 6 159 8 242
+  80-84 anos 10 705 4 447 6 257
+  85-89 anos 2 626 963 1 663
+  90-94 anos 1 382 467 915
+  95 ou mais anos 724 217 507
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 70
+  --- page 72 ---
+  Quadro 1.4 - População por província, por área de residência, 2024
+  Município e área de 65 ou mais
+  Total 0 - 14 anos 15-64 anos
+  residência anos
+  Huambo 2 691 902 1 211 338 1 393 009 87 554
+  Área de residência
+  Urbana 1 297 752 566 877 696 285 34 590
+  Rural 1 394 150 644 461 696 724 52 964
+  Sexo
+  Homens 1 296 018 603 918 655 627 36 474
+  Mulheres 1 395 883 607 420 737 383 51 081
+  Municípios / Comunas
+  Bailundo 258 073 112 712 136 636 8 725
+  Bailundo 139 150 60 429 74 871 3 850
+  Lunge 59 310 25 483 31 476 2 352
+  Luvemba 59 613 26 800 30 290 2 523
+  Huambo 836 293 351 986 459 765 24 542
+  Huambo 762 417 319 136 421 404 21 877
+  Calima 73 876 32 850 38 360 2 666
+  Londuimbali 77 736 37 335 37 791 2 610
+  Londuimbali 55 436 26 189 27 376 1 872
+  Ussoque 22 300 11 146 10 416 739
+  Caála 263 415 119 766 137 126 6 523
+  Caála 263 415 119 766 137 126 6 523
+  Chicala Choloanga 59 829 28 127 29 008 2 694
+  Chicala 43 392 20 481 21 080 1 831
+  Mbave 16 437 7 646 7 928 863
+  Cachiungo 153 450 72 296 76 134 5 020
+  Cachiungo 115 353 54 146 57 385 3 822
+  Chinhama 38 097 18 150 18 749 1 198
+  Mungo 166 141 75 924 84 744 5 473
+  Mungo 95 735 42 588 49 781 3 365
+  Cambuengo 70 407 33 336 34 963 2 108
+  Longonjo 76 193 35 760 37 660 2 774
+  Longonjo 46 615 21 629 23 298 1 687
+  Lépi 29 579 14 130 14 361 1 087
+  Ucuma 91 293 42 637 45 014 3 642
+  Ucuma 53 583 24 749 26 750 2 083
+  Cacoma 23 205 11 181 11 167 857
+  Mundundo 14 505 6 707 7 097 702
+  Ecunha 214 643 105 038 102 551 7 054
+  Ecunha 129 777 63 707 62 083 3 987
+  Quipeio 84 866 41 331 40 468 3 067
+  Chinjenje 46 575 21 631 23 169 1 776
+  Chinjenje 26 960 12 536 13 455 969
+  Chiaca 19 614 9 094 9 714 807
+  Bimbe 105 829 51 057 51 598 3 174
+  Bimbe 31 322 14 255 16 098 969
+  Hengue 74 507 36 801 35 500 2 205
+  Cuíma 103 237 46 607 52 505 4 125
+  Cuima 66 463 30 057 33 960 2 445
+  Catata 36 774 16 549 18 545 1 679
+  Sambo 78 696 35 371 39 861 3 465
+  Sambo 47 014 21 465 23 467 2 082
+  Samboto 31 682 13 906 16 393 1 383
+  Chilata 50 566 24 344 24 352 1 870
+  Chilata 50 566 24 344 24 352 1 870
+  Alto Hama 47 989 21 882 24 398 1 709
+  Alto Hama 47 989 21 882 24 398 1 709
+  Galanga 61 943 28 868 30 699 2 376
+  Galanga 39 045 17 886 19 573 1 586
+  Cumbira 22 898 10 982 11 125 790
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 71
+  --- page 73 ---
+  Quadro 1.5 - População por província, segundo outros grupos etários, 2024
+  Município e área de
+  Total 0-19 anos 20-29 anos 30-54 anos 55-64 anos 65-74 anos 75 ou mais anos
+  residência
+  Huambo 2 691 902 1 542 517 443 303 509 667 108 861 57 716 29 838
+  Área de residência
+  Urbana 1 297 752 735 453 228 812 254 187 44 710 22 752 11 838
+  Rural 1 394 150 807 064 214 491 255 480 64 151 34 964 18 000
+  Municípios / Comunas
+  Bailundo 258 073 143 390 45 032 50 017 10 909 5 923 2 802
+  Bailundo 139 150 77 827 25 267 27 244 4 962 2 625 1 225
+  Lunge 59 310 32 218 10 281 11 496 2 963 1 643 709
+  Luvemba 59 613 33 345 9 484 11 276 2 984 1 655 868
+  Huambo 836 293 461 059 151 555 169 212 29 925 16 071 8 471
+  Huambo 762 417 419 408 139 975 154 336 26 821 14 304 7 573
+  Calima 73 876 41 651 11 580 14 876 3 104 1 767 899
+  Londuimbali 77 736 47 080 10 782 13 607 3 657 1 835 776
+  Londuimbali 55 436 33 298 7 847 9 742 2 677 1 326 545
+  Ussoque 22 300 13 781 2 935 3 865 980 509 230
+  Caála 263 415 153 725 43 900 50 655 8 612 4 244 2 279
+  Caála 263 415 153 725 43 900 50 655 8 612 4 244 2 279
+  Chicala Choloanga 59 829 35 142 8 398 10 591 3 005 1 782 912
+  Chicala 43 392 25 595 6 273 7 648 2 044 1 202 629
+  Mbave 16 437 9 546 2 124 2 942 961 580 283
+  Cachiungo 153 450 91 000 23 960 27 126 6 344 3 316 1 704
+  Cachiungo 115 353 68 233 18 065 20 502 4 731 2 566 1 256
+  Chinhama 38 097 22 767 5 895 6 624 1 613 750 448
+  Mungo 166 141 95 058 28 306 30 576 6 727 3 577 1 896
+  Mungo 95 735 53 852 16 853 17 743 3 921 2 211 1 154
+  Cambuengo 70 407 41 206 11 453 12 833 2 806 1 366 742
+  Longonjo 76 193 45 355 11 042 13 537 3 485 1 824 951
+  Longonjo 46 615 27 590 6 726 8 555 2 056 1 081 606
+  Lépi 29 579 17 765 4 316 4 981 1 429 742 345
+  Ucuma 91 293 53 443 13 629 16 416 4 163 2 275 1 367
+  Ucuma 53 583 31 167 8 043 9 829 2 460 1 271 813
+  Cacoma 23 205 13 763 3 546 3 921 1 118 598 259
+  Mundundo 14 505 8 513 2 041 2 666 584 406 296
+  Ecunha 214 643 130 005 32 238 36 111 9 235 4 692 2 362
+  Ecunha 129 777 78 950 19 896 21 607 5 337 2 688 1 299
+  Quipeio 84 866 51 055 12 342 14 505 3 897 2 005 1 063
+  Chinjenje 46 575 27 113 7 110 8 429 2 148 1 119 656
+  Chinjenje 26 960 15 778 4 129 4 859 1 225 633 336
+  Chiaca 19 614 11 335 2 981 3 570 922 486 320
+  Bimbe 105 829 62 672 16 671 19 169 4 142 2 112 1 063
+  Bimbe 31 322 17 599 5 310 6 106 1 338 686 283
+  Hengue 74 507 45 073 11 361 13 063 2 805 1 426 779
+  Cuíma 103 237 58 738 15 184 20 399 4 792 2 697 1 428
+  Cuima 66 463 37 923 9 803 13 337 2 955 1 608 837
+  Catata 36 774 20 815 5 381 7 062 1 836 1 088 591
+  Sambo 78 696 44 441 12 563 14 118 4 110 2 296 1 169
+  Sambo 47 014 26 968 7 368 8 078 2 518 1 368 714
+  Samboto 31 682 17 473 5 195 6 040 1 591 928 454
+  Chilata 50 566 30 557 6 980 9 120 2 038 1 213 658
+  Chilata 50 566 30 557 6 980 9 120 2 038 1 213 658
+  Alto Hama 47 989 27 688 6 793 9 419 2 380 1 171 538
+  Alto Hama 47 989 27 688 6 793 9 419 2 380 1 171 538
+  Galanga 61 943 36 050 9 161 11 166 3 190 1 570 807
+  Galanga 39 045 22 441 5 841 7 189 1 988 1 055 531
+  Cumbira 22 898 13 609 3 320 3 977 1 201 515 276
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 72
+  --- page 74 ---
+  Quadro 1.6- População por província e área de residência, 2024
+  Grupos etários
+  Município e área de residência 0 - 14 anos 15 - 64 anos 65 ou mais anos
+  Total Homens Mulheres Total Homens Mulheres Total Homens Mulheres
+  Huambo 1 211 338 603 918 607 420 1 393 009 655 627 737 383 87 554 36 474 51 081
+  Área de residência
+  Urbana 566 877 281 430 285 447 696 285 327 458 368 827 34 590 14 596 19 994
+  Rural 644 461 322 489 321 973 696 724 328 168 368 556 52 964 21 878 31 087
+  Municípios / Comunas
+  Bailundo 112 712 56 280 56 432 136 636 64 507 72 129 8 725 3 611 5 114
+  Bailundo 60 429 29 785 30 644 74 871 35 288 39 583 3 850 1 622 2 229
+  Lunge 25 483 12 997 12 486 31 476 15 020 16 455 2 352 941 1 411
+  Luvemba 26 800 13 498 13 302 30 290 14 200 16 090 2 523 1 049 1 474
+  Huambo 351 986 174 408 177 578 459 765 216 829 242 936 24 542 10 521 14 021
+  Huambo 319 136 158 066 161 070 421 404 198 768 222 636 21 877 9 294 12 583
+  Calima 32 850 16 342 16 509 38 360 18 061 20 300 2 666 1 228 1 438
+  Londuimbali 37 335 18 798 18 537 37 791 17 603 20 189 2 610 992 1 618
+  Londuimbali 26 189 13 183 13 006 27 376 12 712 14 664 1 872 728 1 144
+  Ussoque 11 146 5 615 5 530 10 416 4 891 5 525 739 265 474
+  Caála 119 766 59 597 60 169 137 126 64 741 72 385 6 523 2 778 3 746
+  Caála 119 766 59 597 60 169 137 126 64 741 72 385 6 523 2 778 3 746
+  Chicala Choloanga 28 127 13 961 14 166 29 008 13 667 15 341 2 694 1 149 1 545
+  Chicala 20 481 10 163 10 318 21 080 10 016 11 064 1 831 839 992
+  Mbave 7 646 3 798 3 848 7 928 3 651 4 278 863 310 553
+  Cachiungo 72 296 36 197 36 099 76 134 35 424 40 710 5 020 2 028 2 992
+  Cachiungo 54 146 27 202 26 944 57 385 26 734 30 651 3 822 1 532 2 290
+  Chinhama 18 150 8 995 9 155 18 749 8 690 10 059 1 198 496 702
+  Mungo 75 924 37 834 38 090 84 744 40 247 44 497 5 473 2 370 3 103
+  Mungo 42 588 21 524 21 064 49 781 23 606 26 176 3 365 1 468 1 897
+  Cambuengo 33 336 16 310 17 026 34 963 16 641 18 322 2 108 903 1 205
+  Longonjo 35 760 17 973 17 787 37 660 17 449 20 210 2 774 1 191 1 583
+  Longonjo 21 629 10 868 10 762 23 298 10 787 12 511 1 687 724 963
+  Lépi 14 130 7 105 7 025 14 361 6 662 7 699 1 087 467 621
+  Ucuma 42 637 21 441 21 196 45 014 21 381 23 633 3 642 1 508 2 134
+  Ucuma 24 749 12 497 12 252 26 750 12 659 14 091 2 083 850 1 234
+  Cacoma 11 181 5 598 5 583 11 167 5 307 5 860 857 344 513
+  Mundundo 6 707 3 345 3 361 7 097 3 415 3 682 702 315 387
+  Continua na página seguinte
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 73
+  --- page 75 ---
+  Grupos etários
+  Município e área de residência 0 - 14 anos 15 - 64 anos 65 ou mais anos
+  Total Homens Mulheres Total Homens Mulheres Total Homens Mulheres
+  Ecunha 105 038 52 644 52 394 102 551 48 176 54 375 7 054 2 683 4 371
+  Ecunha 63 707 31 899 31 808 62 083 29 081 33 002 3 987 1 542 2 445
+  Quipeio 41 331 20 745 20 586 40 468 19 095 21 373 3 067 1 141 1 926
+  Chinjenje 21 631 10 839 10 791 23 169 10 687 12 482 1 776 709 1 066
+  Chinjenje 12 536 6 251 6 285 13 455 6 229 7 226 969 399 570
+  Chiaca 9 094 4 588 4 506 9 714 4 457 5 256 807 310 496
+  Bimbe 51 057 25 572 25 485 51 598 24 267 27 331 3 174 1 269 1 905
+  Bimbe 14 255 7 123 7 132 16 098 7 697 8 401 969 412 557
+  Hengue 36 801 18 449 18 353 35 500 16 570 18 930 2 205 857 1 348
+  Cuíma 46 607 23 506 23 101 52 505 24 979 27 526 4 125 1 864 2 261
+  Cuima 30 057 15 114 14 943 33 960 16 121 17 839 2 445 1 102 1 343
+  Catata 16 549 8 392 8 158 18 545 8 858 9 686 1 679 762 917
+  Sambo 35 371 17 712 17 659 39 861 18 897 20 964 3 465 1 485 1 980
+  Sambo 21 465 10 752 10 713 23 467 11 087 12 380 2 082 862 1 220
+  Samboto 13 906 6 960 6 945 16 393 7 810 8 584 1 383 623 760
+  Chilata 24 344 12 030 12 314 24 352 11 465 12 887 1 870 788 1 082
+  Chilata 24 344 12 030 12 314 24 352 11 465 12 887 1 870 788 1 082
+  Alto Hama 21 882 10 859 11 022 24 398 11 130 13 268 1 709 633 1 076
+  Alto Hama 21 882 10 859 11 022 24 398 11 130 13 268 1 709 633 1 076
+  Galanga 28 868 14 267 14 601 30 699 14 179 16 519 2 376 893 1 484
+  Galanga 17 886 8 766 9 120 19 573 9 022 10 552 1 586 630 955
+  Cumbira 10 982 5 501 5 481 11 125 5 158 5 968 790 262 528
+  Resultados Definitivos do RGPH 2024 – Província do Huambo 74
+  --- page 76 ---
+== --fix-q17c  
+?? unknown mode in '--fix-q17c'
