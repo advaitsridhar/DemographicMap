@@ -1,12 +1,9 @@
-  read https://www.ansd.sn/sites/default/files/2024-11/Projections-demographiques_2023-2050.xlsx: 49,987 bytes, sha256 86e033450e376e581865edf9a39c0175f47a967a3ff697d1a0a9703e8c13a399
-  14 regions and 46 departments, making 18,126,390
-  'Pikine': drawn on its outline before Keur Massar was made from it; not bound, and its reason stated
-  'Rufisque': drawn on its outline before Keur Massar was made from it; not bound, and its reason stated
-  RGPH-5 departments not bound: ['DEPARTEMENT DE PIKINE', 'DEPARTEMENT DE RUFISQUE', 'DEPARTEMENT DE KEUR MASSAR']
-  DEPARTEMENT MEDINA YORO FOULAH: 185,456
-  DEPARTEMENT SAINT-LOUIS: 387,368
-  DEPARTEMENT DAGANA: 329,063
-  DEPARTEMENT PODOR: 486,007
-  DEPARTEMENT TIVAOUANE: 649,189
-  14 regions and 45 of 45 departments bound
-  wrote data/processed/senegal_rgph5.json (112 kB)
+mali: INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population
+  17,708,018 bytes
+  70 pages
+  annex tables on pages ethnicity 55, language 56
+  religion: 20 regions, 21,347,586 people
+  ethnicity: 20 regions, 21,200,119 people
+  language: 20 regions, 19,144,632 people
+  9 shapes
+  wrote data/processed/mali_rgph5_region.json (63 kB)
