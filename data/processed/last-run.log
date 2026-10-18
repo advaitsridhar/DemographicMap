@@ -1,21 +1,37 @@
-probe_pdf: https://www.hcp.ma/region-guelmim/docs/Assa/Recensement%20General%20de%20la%20Population%20et%20l%27%27Habitat%202024.pdf
-  28,638,675 bytes
-  13 pages
-probe_pdf: 13 pages, 0 mention ['quinquennal', 'médian', 'Mahbass']
-=== front matter ===
-Liste des indicateurs de la Région
-Guelmim-Oued Noun
-
-
-
-
-
-
-
-
-
-
-
-
-
-=== pages mentioning ['quinquennal', 'médian', 'Mahbass'] (first 6) ===
+  https://www.gbosdata.org/downloads-file/7-census-2013-directory-of-settlement: 5,374,999 bytes, sha256 1aae59bb5f601697d0c63d320007f442112cd50a2ecbf20ce7819a16165f2e3e
+  83 pages
+  Brikama/Kombo North: settlements make 339,434, the district 339,377
+  Brikama/Kombo Central: settlements make 140,142, the district 140,029
+  Mansakonko/Kiang Central: settlements make 8,829, the district 8,661
+  Mansakonko/Kiang East: settlements make 7,051, the district 6,801
+  Mansakonko/Jarra West: settlements make 26,364, the district 26,214
+  Mansakonko/Jarra East: settlements make 17,810, the district 16,034
+  Kerewan/Illiasa: settlements make 48,807, the district 48,620
+  Kuntaur/Lower Saloum: settlements make 15,546, the district 15,446
+  Janjanbureh/Niamina West: settlements make 7,345, the district 7,141
+  Janjanbureh/Lower Fuladu West: settlements make 40,026, the district 39,804
+  Janjanbureh/Upper Fuladu West: settlements make 44,235, the district 44,047
+  Basse/Wuli West: settlements make 21,898, the district 21,826
+  Basse/Sandu: settlements make 23,711, the district 23,659
+  Banjul: (31054, 14251): Banjul Central 11,562, Banjul North 11,285, Banjul South 8,207
+  Kanifing: (377134, 187973): Kanifing 377,134
+  Brikama: (688744, 344123): Kombo North 339,377, Kombo South 106,780, Kombo Central 140,029, Kombo East 42,330, Foni Brefet 14,523, Foni Bintang Karanai 17,119, Foni Kansala 14,125, Foni Bondali 7,578, Foni Jarrol 6,883
+  Mansakonko: (81042, 42270): Kiang West 14,990, Kiang Central 8,661, Kiang East 6,801, Jarra West 26,214, Jarra Central 8,342, Jarra East 16,034
+  Kerewan: (220080, 114168): Lower Niumi 57,088, Upper Niumi 30,880, Jokadu 22,312, Lower Badibu 17,961, Central Badibu 19,491, Illiasa 48,620, Sabach Sanjar 23,728
+  Kuntaur: (96703, 51018): Lower Saloum 15,446, Upper Saloum 18,673, Nianija 9,876, Niani 28,343, Sami 24,365
+  Janjanbureh: (125204, 65204): Niamina Dankunku 6,083, Niamina West 7,141, Niamina East 24,340, Lower Fuladu West 39,804, Janjanbureh 3,789, Upper Fuladu West 44,047
+  Basse: (237220, 124419): Jimara 43,461, Basse 49,102, Tumana 37,206, Kantora 38,354, Wuli West 21,826, Wuli East 23,612, Sandu 23,659
+  https://www.gbosdata.org/downloads-file/544-2024-gphc-preliminary-report: 3,055,164 bytes, sha256 4277026e8648d41aaca9f60be8e90ee0182aa76863bdc74821307f18d902a5b7
+  25 pages
+  https://www.gbosdata.org/downloads-file/213-census-2013-spatial-distribution-report: 8,702,036 bytes, sha256 ce2f76a591968e36cf031445665f7e40c5bb20505b4f40c8c8ef9771680e21ab
+  Annex H: Kerewan's table of both sexes totals 50,188; its tables of men and of women, which make 220,080, are added instead
+  Banjul: 2024 (26461, 14192, 12269), median 2013 24.2, religion 2013 [29423, 1504, 12, 64, 51]
+  Kanifing: 2024 (379348, 185138, 194210), median 2013 21.1, religion 2013 [345546, 29036, 309, 1996, 247]
+  Brikama: 2024 (1151128, 570310, 580818), median 2013 18.4, religion 2013 [654198, 33168, 602, 329, 447]
+  Mansakonko: 2024 (90624, 44309, 46315), median 2013 16.5, religion 2013 [80434, 540, 9, 39, 20]
+  Kerewan: 2024 (248475, 119651, 128824), median 2013 16.3, religion 2013 [217191, 2763, 32, 32, 62]
+  Kuntaur: 2024 (118104, 56938, 61166), median 2013 15.4, religion 2013 [95992, 673, 3, 7, 28]
+  Janjanbureh: 2024 (147412, 71494, 75918), median 2013 16.4, religion 2013 [124254, 817, 25, 34, 74]
+  Basse: 2024 (261160, 124261, 136899), median 2013 16.1, religion 2013 [235821, 1137, 36, 185, 41]
+  56 records
+  wrote data/processed/gambia_census.json (196 kB)
