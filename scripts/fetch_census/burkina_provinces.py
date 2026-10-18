@@ -20,9 +20,11 @@ religieuses par province*: the census's six classes, to one decimal) and
 tabulates the principal language spoken by residents aged 3 and over by sex
 and province (Tableau 3.3; Nord's runs on as 3.4), with the region's column.
 The chart is read from the labels its text keeps -- the values series by
-series, the axis's ticks, the provinces -- where it keeps them; four regions'
-charts (Centre-Nord, Centre-Ouest, Centre-Sud, Nord) are pictures, and their
-provinces say so. Each region also takes its own languages (the table's
+series, the axis's ticks, the provinces and the region's column (Ensemble,
+Total or the region's name) -- wherever they stand: in four monographs
+(Centre-Nord, Centre-Ouest, Centre-Sud, Nord) after the next caption. The
+provinces of a monograph whose text kept no labels would say that the chart
+prints no figures. Each region also takes its own languages (the table's
 region column, or Tableau 3.2's), a census in front of the survey's shares;
 its religion is burkina.py's.
 
@@ -275,28 +277,47 @@ def language_name(label: str) -> str | None:
     return LANGUAGES.get(full) or LANGUAGES.get(key)
 
 
-def religion_charts(text: str, provinces: list[str]) -> dict[str, dict[str, float]]:
+def ticks_end(toks: list[str], i: int) -> int:
+    """Where an axis's ticks starting at toks[i] end: 0, then at least three more
+    at a constant step (0 10 20 30 ..., 0 20 40 60 ..., 0,0 10,0 20,0 ...); i
+    where no axis starts."""
+    if toks[i] not in ("0", "0,0") or i + 3 >= len(toks) or not is_number(toks[i + 1]):
+        return i
+    step = value(toks[i + 1])
+    if step not in (5.0, 10.0, 20.0, 25.0):
+        return i
+    j = i + 1
+    while j < len(toks) and is_number(toks[j]) and value(toks[j]) == (j - i) * step:
+        j += 1
+    return j if j - i >= 4 else i
+
+
+def religion_charts(text: str, provinces: list[str],
+                    region: str | None = None) -> dict[str, dict[str, float]]:
     """{province or "Ensemble": {religion: %}} from Graphique 3.2, a bar chart whose
     labels the text keeps: the values series by series (or category by category),
-    the axis's ticks (0, 10, 20 ...), the provinces, then the six religions'
-    legend. A province's six shares must make 100 within the chart's rounding.
-    The key "_seen" lists the provinces any chart labels, read or not."""
+    the axis's ticks (0, 10, 20 ...; 0, 20, 40 ...; 0,0, 10,0 ...), the provinces
+    and the region's own column (Ensemble, Total or the region's name), then the
+    six religions' legend. A province's six shares must make 100 within the
+    chart's rounding. The key "_seen" lists the provinces a chart labels by the
+    religions' legend, read or not."""
     toks = tokens_of(text)
     out: dict[str, dict[str, float]] = {"_seen": {}}
+    whole = {"ensemble", "total"}
+    if region and len(fold(region)) >= 5:      # not "Est" or "Nord", words of the prose
+        whole.add(fold(region))
     i = 0
     while i < len(toks) - 3:
-        if not (toks[i] == "0" and toks[i + 1] == "10" and toks[i + 2] == "20"):
+        j = ticks_end(toks, i)
+        if j == i:
             i += 1
             continue
-        j, tick = i, 0
-        while j < len(toks) and toks[j] == str(tick):
-            j, tick = j + 1, tick + 10
         cats, k = [], j
         while k < len(toks):
-            p = province_of(toks[k], provinces)
+            p = None if fold(toks[k]) in whole else province_of(toks[k], provinces)
             if p:
                 cats.append(p)
-            elif fold(toks[k]) == "ensemble":
+            elif fold(toks[k]) in whole:
                 cats.append("Ensemble")
             else:
                 break
@@ -306,12 +327,14 @@ def religion_charts(text: str, provinces: list[str]) -> dict[str, dict[str, floa
             vals.insert(0, value(toks[b]))
             b -= 1
         # A chart of the provinces is the religions' only if their legend
-        # stands by it: the monographs chart nationality, literacy and work
-        # by province too.
-        near = fold(" ".join(toks[max(0, b - 40):k + 40]))
-        if "musulman" in near or "animiste" in near:
-            for c in cats:
-                out["_seen"][c] = 1.0
+        # stands by its labels: the monographs chart nationality, literacy and
+        # work by province too, and such a chart is neither read nor counted.
+        legend = fold(" ".join(toks[max(0, b - 7):b + 1] + toks[k:k + 8]))
+        if "musulman" not in legend and "animiste" not in legend:
+            i = max(k, i + 1)
+            continue
+        for c in cats:
+            out["_seen"][c] = 1.0
         n = 6 * len(cats)
         if cats and len(vals) >= n:
             vals = vals[-n:]
@@ -621,7 +644,7 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
         region_language = region_languages(text)
         languages = {names[0]: region_language} if region_language else {}
     else:
-        religions = religion_charts(text, names)
+        religions = religion_charts(text, names, region)
         charted = set(religions.pop("_seen"))
         languages = language_table(text, names)
         region_language = languages.get("Ensemble") or region_languages(text)
@@ -658,7 +681,7 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
                             "license": LICENCE, "year": YEAR})
             log(f"      religion: {listed(religions[name])[:3]}")
         elif not one and not charted & set(names):
-            # No chart of the region labels any province: the chart is a picture.
+            # No chart of the region labels any province: the text keeps no labels.
             fields["religion"] = gap(NOT_AVAILABLE, (
                 f"The 2019 census's monograph of the {region} region charts religion by "
                 "province (Graphique 3.2) without printing the figures, and tabulates it for "

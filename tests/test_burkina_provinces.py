@@ -85,7 +85,8 @@ class BurkinaProvinces(unittest.TestCase):
 # The runner's text of four monographs' pages (--dump=composition1): the
 # Cascades' chart of religions by province, the Centre-Est's table of languages
 # by province, the Boucle du Mouhoun's, whose figures the text breaks around
-# their commas, and the Centre-Nord's page where the chart is a picture.
+# their commas, and the Centre-Nord's caption of its chart, whose labels the
+# text keeps after the next caption.
 CASCADES_CHART = 'Graphique  \n3\n.\n2\n: Répartition (%) de la population des communautés religieuses par province\n \n \n \n \n9,3\n6,0\n8,5\n79,2\n89,7\n81,5\n7,3\n2,0\n6,1\n1,9\n1,2\n1,7\n0,3\n0,1\n0,2\n2,1\n1,1\n1,9\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100\nCOMOE\nLERABA\nEnsemble\nProportion\nProvince\nAnimiste\nMusulman\nCatholique\nProtestant\nAutre\nSans religion'
 
 CENTRE_EST_TABLE = 'Tableau 3.3: Répartition (%) de la population de 3 ans ou plus selon les principales langues parlées \npar sexe et la province \n  BOULGOU KOURITTENGA KOULPÉLOGO TOTAL Principales langues parlées \n  H F H+F H F H+F H F H+F H F H+F \nMooré 23,5 21,9 22,7 92 92,5 92,3 66,4 67,7 67,1 53,9 53,0 53,4 \nBissa 63,6 67 65,5 1,3 1,4 1,4 10,6 10,6 10,6 33,1 35,5 34,4 \nFulfuldé (ou peulh) 7,9 6,9 7,3 4,9 4,6 4,7 7,3 6,8 7 6,9 6,1 6,5 \nMoba 0,1 0 0 0 0 0 7,8 7,4 7,6 1,6 1,5 1,5 \nKoussassé 2,3 2,1 2,2 0 0 0 0 0 0 1,1 1 1,1 \nFrançais 1,1 0,8 0,9 1 0,9 0,9 0,3 0,2 0,2 0,9 0,7 0,8 \nGourmantché (ou gulmancéma) 0,1 0,1 0,1 0,3 0,2 0,2 3,2 3 3,1 0,8 0,7 0,7 \nKusaal 0,5 0,5 0,5 0 0 0 0 0 0 0,2 0,2 0,2 \nDioula (ou bambara) 0,2 0,1 0,2 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 \nBirifor 0,1 0,1 0,1 0 0 0 0,1 0,1 0,1 0,1 0,1 0,1 \nAutres langues  0,6 0,5 0,5 0,4 0,3 0,4 4,2 4,1 4,2 1,3 1,1 1,2 \nEnsemble 100 100 100 100 100 100 100 100 100 100 100 100'
@@ -103,13 +104,15 @@ class ReligionAndLanguageByProvince(unittest.TestCase):
         self.assertEqual(out["Leraba"]["Islam"], 89.7)
         self.assertEqual(out["Ensemble"]["No religion"], 1.9)
 
-    def test_chart_that_is_a_picture(self):
+    def test_caption_apart_from_its_labels(self):
+        # Centre-Nord's caption of Graphique 3.2 with no labels by it: the text
+        # keeps them after the next caption (CENTRE_NORD_LABELS below).
         out = bp.religion_charts(CENTRE_NORD_CHARTLESS, ["Bam", "Namentenga", "Sanmatenga"])
         self.assertEqual(out, {"_seen": {}})
 
     def test_another_chart_of_the_provinces_is_not_the_religions(self):
         # Constructed: a literacy chart by province (no religion legend by it)
-        # beside the picture of the religions' chart.
+        # beside the caption of the religions' chart.
         literacy = (" 45,1 30,2 38,0 0 10 20 30 40 50 BAM NAMENTENGA SANMATENGA Taux "
                     "d'alphabétisation (%) ")
         out = bp.religion_charts(CENTRE_NORD_CHARTLESS + literacy,
@@ -156,7 +159,7 @@ class ReligionAndLanguageByProvince(unittest.TestCase):
         boulgou = by[("admin2", "Boulgou")]
         self.assertEqual(boulgou["language"][0], {"group": "Bissa", "pct": 65.5})
         self.assertEqual(boulgou["language_year"], 2019)
-        # No chart labels these provinces: the reason says the chart is a picture.
+        # No chart labels these provinces: the reason says the chart prints none.
         self.assertIn("without printing the figures", boulgou["religion"]["note"])
         region = by[("admin1", "Centre-Est")]
         self.assertEqual(region["language"][0], {"group": "Mooré", "pct": 53.4})
@@ -188,6 +191,70 @@ class ReligionAndLanguageByProvince(unittest.TestCase):
         for label in ("Fulfudé (ou peulh)", "Fulfudé/peulh", "Kasséna (ou kassem)",
                       "San (ou samogho ou samo)", "Autres l angues", "Haoussa", "Gourounsi"):
             self.assertIsNotNone(bp.language_name(label), label)
+
+
+# The labels of the religions' charts (Graphique 3.2) of Centre-Nord,
+# Centre-Ouest, Centre-Sud and Nord as the runner's text keeps them
+# (--dump=composition1): after the next caption, with the region's column
+# named Total or for the region, ticks by 20 or with a decimal.
+CENTRE_NORD_LABELS = 'Graphique 3.3 : Répartition (%) de la population de 3 ans ou plus selon les principales langues parlées \n1,0\n24,3\n12,2 13,8\n78,4\n60,8\n66,6 67,3\n19,4\n11,4\n16,9 15,6\n1,0 3,3 3,9 3,1\n0,0\n0,0\n0,1 0,0\n0,1 0,2 0,3 0,2\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\nBAM NAMENTENGA SANMATENGA TOTAL\nAnimiste Musulman Catholique Protestant Autre Sans religion\n88,2\n7,9\n2,1 1,8\n0,0\n10,0\n20,0\n30,0\n40,0\n50,0\n60,0\n70,0'
+
+CENTRE_OUEST_CHART = 'Ouest parle principalement le Français. Le reste de la population (2,1%) ont déclaré d’autres \nlangues comme langues principalement parlées. \n  \n7,1\n12,7 9,6 7,0 8,9\n38,2\n24,9\n68,2 70,0\n45,845,4 48,9\n14,7 16,3\n35,7\n8,9 11,0 6,7 6,1 8,5\n0,1 0,4 0,1 0,0 0,20,3 2,1 0,7 0,6 0,9\n0,0\n10,0\n20,0\n30,0\n40,0\n50,0\n60,0\n70,0\n80,0\nBOULKIEMDE SANGUIE SISSILI ZIRO Ensemble\nProportion\nAnimiste Musulman Catholique Protestant Autre Sans religion'
+
+CENTRE_SUD_CHART = 'parlées sont très faibles (par moins de 1% de la population) (graphique 3.3). \n  \n3,4 \n24,4 \n0,9 \n7,6 \n53,2 \n33,4 \n68,1 \n54,2 \n37,9 \n17,8 \n27,8 28,9 \n5,4 \n23,1 \n3,1 \n8,9 \n0,0 0,6 0,0 0,2 0,1 0,8 0,1 0,3 \n0\n10\n20\n30\n40\n50\n60\n70\n80\nBAZEGA NAHOURI ZOUNDWEOGO Centre-Sud\nProportion\nProvince\nAnimiste Musulman Catholique Protestant Autre Sans religion'
+
+NORD_CHART = 'population de la région (graphique 3.3). \n  \n20,1\n0,3 0,1 2,2\n49,4\n96,5 97,8\n88,5\n22,5\n2,2 1,4 7,77,7\n0,6\n0,5\n1,30,1\n0,0 0,0 0,00,2\n0,3 0,2\n0,3\n0\n20\n40\n60\n80\n100\n120\nPASSORE YATENGA LOROUM ZONDOMA\nAnimiste Musulman Catholique Protestant Autre Sans religion'
+
+
+class ReligionChartsOfFourRegions(unittest.TestCase):
+    def test_region_column_named_total(self):
+        out = bp.religion_charts(CENTRE_NORD_LABELS, ["Bam", "Namentenga", "Sanmatenga"],
+                                 "Centre-Nord")
+        self.assertEqual(sorted(out.pop("_seen")), ["Bam", "Ensemble", "Namentenga", "Sanmatenga"])
+        self.assertEqual(out["Bam"], dict(zip(bp.RELIGIONS, [1.0, 78.4, 19.4, 1.0, 0.0, 0.1])))
+        self.assertEqual(out["Namentenga"]["Animist"], 24.3)
+        self.assertEqual(out["Sanmatenga"]["Protestant"], 3.9)
+        self.assertEqual(out["Ensemble"]["Islam"], 67.3)
+
+    def test_ticks_with_a_decimal_and_glued_figures(self):
+        out = bp.religion_charts(CENTRE_OUEST_CHART,
+                                 ["Boulkiemde", "Sanguie", "Sissili", "Ziro"], "Centre-Ouest")
+        self.assertEqual(out["Boulkiemde"]["Catholic"], 45.4)       # "45,845,4"
+        self.assertEqual(out["Sanguie"], dict(zip(bp.RELIGIONS, [12.7, 24.9, 48.9, 11.0, 0.4, 2.1])))
+        self.assertEqual(out["Ziro"]["Islam"], 70.0)
+        self.assertEqual(out["Ensemble"]["No religion"], 0.9)
+
+    def test_region_column_named_for_the_region(self):
+        out = bp.religion_charts(CENTRE_SUD_CHART, ["Bazega", "Nahouri", "Zoundweogo"],
+                                 "Centre-Sud")
+        self.assertEqual(sorted(out.pop("_seen")), ["Bazega", "Ensemble", "Nahouri", "Zoundweogo"])
+        self.assertEqual(out["Nahouri"], dict(zip(bp.RELIGIONS, [24.4, 33.4, 17.8, 23.1, 0.6, 0.8])))
+        self.assertEqual(out["Zoundweogo"]["Islam"], 68.1)
+        self.assertEqual(out["Bazega"]["Catholic"], 37.9)
+
+    def test_ticks_by_twenty(self):
+        out = bp.religion_charts(NORD_CHART, ["Loroum", "Passore", "Yatenga", "Zondoma"], "Nord")
+        self.assertEqual(out.pop("_seen"), dict.fromkeys(["Passore", "Yatenga", "Loroum",
+                                                          "Zondoma"], 1.0))
+        self.assertEqual(out["Passore"], dict(zip(bp.RELIGIONS, [20.1, 49.4, 22.5, 7.7, 0.1, 0.2])))
+        self.assertEqual(out["Loroum"]["Islam"], 97.8)
+        self.assertEqual(out["Zondoma"]["Catholic"], 7.7)            # "7,77,7"
+
+    def test_axis_ticks(self):
+        self.assertEqual(bp.ticks_end("5 0 20 40 60 80 x".split(), 1), 6)
+        self.assertEqual(bp.ticks_end("0,0 10,0 20,0 30,0 Mooré".split(), 0), 4)
+        self.assertEqual(bp.ticks_end("0 10 20 x".split(), 0), 0)        # too few
+        self.assertEqual(bp.ticks_end("0 3 6 9 12".split(), 0), 0)       # not an axis's step
+
+    def test_records_of_a_region_whose_column_is_named_for_it(self):
+        shapes = [{"id": "b", "name": "Bazega"}, {"id": "n", "name": "Nahouri"},
+                  {"id": "z", "name": "Zoundweogo"}]
+        with unittest.mock.patch.object(bp, "log"):
+            recs = bp.region_records("Centre-Sud", shapes, None, "u", CENTRE_SUD_CHART)
+        by = {r["name"]: r for r in recs}
+        self.assertEqual(sorted(by), ["Bazega", "Nahouri", "Zoundweogo"])
+        self.assertEqual(by["Nahouri"]["religion"][0], {"group": "Islam", "pct": 33.4})
+        self.assertIn("charts them by province", by["Nahouri"]["religion_note"])
 
 
 if __name__ == "__main__":
