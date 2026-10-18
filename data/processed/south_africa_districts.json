@@ -29,11 +29,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -88,9 +88,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -133,11 +147,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -192,9 +206,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -237,11 +265,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -296,9 +324,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -341,11 +383,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -400,9 +442,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: North West (Report 03-01-75)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-75/Report-03-01-752022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -445,12 +501,42 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "isiXhosa",
+        "pct": 82.4
+      },
+      {
+        "group": "English",
+        "pct": 10.1
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 5.3
+      },
+      {
+        "group": "Other",
+        "pct": 1.3
+      },
+      {
+        "group": "Sesotho",
+        "pct": 0.3
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.3
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.1
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -504,9 +590,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -517,7 +624,10 @@
     "population_note": "Census 2022's count for Buffalo City.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 973,614 people whose group the census recorded, of the 975,255 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-DC10",
@@ -549,11 +659,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -608,9 +718,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -653,11 +777,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -712,9 +836,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Western Cape (Report 03-01-70)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-70/Report-03-01-702022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -757,11 +895,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -816,9 +954,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Limpopo (Report 03-01-78)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-78/Report-03-01-782022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -861,11 +1013,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -920,9 +1072,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Western Cape (Report 03-01-70)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-70/Report-03-01-702022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -965,11 +1131,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -1024,9 +1190,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1069,12 +1249,54 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "isiXhosa",
+        "pct": 37.4
+      },
+      {
+        "group": "English",
+        "pct": 30.6
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 26.1
+      },
+      {
+        "group": "Other",
+        "pct": 3.8
+      },
+      {
+        "group": "Sesotho",
+        "pct": 0.8
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.5
+      },
+      {
+        "group": "Setswana",
+        "pct": 0.2
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.2
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.2
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.1
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -1128,9 +1350,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Western Cape (Report 03-01-70)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-70/Report-03-01-702022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1141,7 +1384,10 @@
     "population_note": "Census 2022's count for City of Cape Town.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 4,765,981 people whose group the census recorded, of the 4,772,846 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-JHB",
@@ -1173,12 +1419,58 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "isiZulu",
+        "pct": 28.9
+      },
+      {
+        "group": "English",
+        "pct": 13.7
+      },
+      {
+        "group": "Sesotho",
+        "pct": 11.9
+      },
+      {
+        "group": "Sepedi",
+        "pct": 7.9
+      },
+      {
+        "group": "Setswana",
+        "pct": 7.7
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 7.4
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 7.0
+      },
+      {
+        "group": "Other",
+        "pct": 4.0
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 3.8
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 3.6
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 3.5
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -1232,9 +1524,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Gauteng (Report 03-01-76)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-76/Report-03-01-762022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1245,7 +1558,10 @@
     "population_note": "Census 2022's count for City of Johannesburg.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 4,796,155 people whose group the census recorded, of the 4,803,262 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-TSH",
@@ -1277,12 +1593,58 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "Sepedi",
+        "pct": 24.4
+      },
+      {
+        "group": "Setswana",
+        "pct": 17.8
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 12.1
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 9.2
+      },
+      {
+        "group": "isiZulu",
+        "pct": 9.0
+      },
+      {
+        "group": "English",
+        "pct": 6.9
+      },
+      {
+        "group": "Sesotho",
+        "pct": 5.0
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 5.0
+      },
+      {
+        "group": "Other",
+        "pct": 4.5
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 2.5
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 2.2
+      },
+      {
+        "group": "siSwati",
+        "pct": 1.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -1336,9 +1698,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Gauteng (Report 03-01-76)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-76/Report-03-01-762022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1349,7 +1732,10 @@
     "population_note": "Census 2022's count for City of Tshwane.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 4,037,904 people whose group the census recorded, of the 4,040,315 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-DC40",
@@ -1381,11 +1767,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -1440,9 +1826,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: North West (Report 03-01-75)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-75/Report-03-01-752022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1485,11 +1885,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -1544,9 +1944,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: North West (Report 03-01-75)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-75/Report-03-01-752022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1589,11 +2003,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -1648,9 +2062,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Western Cape (Report 03-01-70)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-70/Report-03-01-702022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1693,11 +2121,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -1752,9 +2180,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Mpumalanga (Report 03-01-77)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-77/Report-03-01-772022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1797,12 +2239,58 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "isiZulu",
+        "pct": 35.7
+      },
+      {
+        "group": "Sepedi",
+        "pct": 12.3
+      },
+      {
+        "group": "Sesotho",
+        "pct": 10.2
+      },
+      {
+        "group": "English",
+        "pct": 8.9
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 8.5
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 7.3
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 6.7
+      },
+      {
+        "group": "Other",
+        "pct": 3.3
+      },
+      {
+        "group": "Setswana",
+        "pct": 2.6
+      },
+      {
+        "group": "Tshivenda",
+        "pct": 1.7
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 1.7
+      },
+      {
+        "group": "siSwati",
+        "pct": 1.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -1856,9 +2344,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Gauteng (Report 03-01-76)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-76/Report-03-01-762022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -1869,7 +2378,10 @@
     "population_note": "Census 2022's count for Ekurhuleni.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 4,061,890 people whose group the census recorded, of the 4,066,691 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-DC20",
@@ -1901,11 +2413,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -1960,9 +2472,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Free State (Report 03-01-73)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-73/Report-03-01-732022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2005,11 +2531,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2064,9 +2590,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Northern Cape (Report 03-01-72)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-72/Report-03-01-722022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2109,11 +2649,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2168,9 +2708,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Mpumalanga (Report 03-01-77)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-77/Report-03-01-772022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2213,11 +2767,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2272,9 +2826,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2317,11 +2885,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2376,9 +2944,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Northern Cape (Report 03-01-72)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-72/Report-03-01-722022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2421,11 +3003,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2480,9 +3062,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Free State (Report 03-01-73)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-73/Report-03-01-732022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2525,12 +3121,54 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "Sesotho",
+        "pct": 64.0
+      },
+      {
+        "group": "Setswana",
+        "pct": 14.3
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 10.8
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 7.4
+      },
+      {
+        "group": "English",
+        "pct": 1.7
+      },
+      {
+        "group": "Other",
+        "pct": 0.7
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.6
+      },
+      {
+        "group": "Sepedi",
+        "pct": 0.2
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.1
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.1
+      },
+      {
+        "group": "siSwati",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -2584,9 +3222,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Free State (Report 03-01-73)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-73/Report-03-01-732022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2597,7 +3256,10 @@
     "population_note": "Census 2022's count for Mangaung.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 809,972 people whose group the census recorded, of the 811,431 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-DC33",
@@ -2629,11 +3291,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2688,9 +3350,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Limpopo (Report 03-01-78)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-78/Report-03-01-782022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2733,11 +3409,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -2792,9 +3468,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Northern Cape (Report 03-01-72)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-72/Report-03-01-722022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2837,12 +3527,42 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "isiXhosa",
+        "pct": 59.5
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 24.7
+      },
+      {
+        "group": "English",
+        "pct": 13.3
+      },
+      {
+        "group": "Other",
+        "pct": 1.6
+      },
+      {
+        "group": "isiZulu",
+        "pct": 0.3
+      },
+      {
+        "group": "Sesotho",
+        "pct": 0.2
+      },
+      {
+        "group": "Xitsonga",
+        "pct": 0.1
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -2896,9 +3616,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -2909,7 +3650,10 @@
     "population_note": "Census 2022's count for Nelson Mandela Bay.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 1,189,107 people whose group the census recorded, of the 1,190,496 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-DC38",
@@ -2941,11 +3685,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3000,9 +3744,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: North West (Report 03-01-75)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-75/Report-03-01-752022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3045,11 +3803,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3104,9 +3862,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Mpumalanga (Report 03-01-77)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-77/Report-03-01-772022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3149,11 +3921,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3208,9 +3980,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Eastern Cape (Report 03-01-71)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-71/Report-03-01-712022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3253,11 +4039,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3312,9 +4098,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Western Cape (Report 03-01-70)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-70/Report-03-01-702022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3357,11 +4157,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3416,9 +4216,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Northern Cape (Report 03-01-72)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-72/Report-03-01-722022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3461,11 +4275,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3520,9 +4334,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Gauteng (Report 03-01-76)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-76/Report-03-01-762022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3565,11 +4393,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3624,9 +4452,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Limpopo (Report 03-01-78)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-78/Report-03-01-782022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3669,11 +4511,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3728,9 +4570,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3773,11 +4629,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3832,9 +4688,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Free State (Report 03-01-73)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-73/Report-03-01-732022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3877,11 +4747,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -3936,9 +4806,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -3981,11 +4865,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4040,9 +4924,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4085,11 +4983,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4144,9 +5042,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4189,11 +5101,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4248,9 +5160,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4293,11 +5219,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4352,9 +5278,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4397,11 +5337,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4456,9 +5396,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4501,11 +5455,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4560,9 +5514,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Limpopo (Report 03-01-78)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-78/Report-03-01-782022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4605,11 +5573,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4664,9 +5632,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Limpopo (Report 03-01-78)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-78/Report-03-01-782022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4709,11 +5691,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4768,9 +5750,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Western Cape (Report 03-01-70)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-70/Report-03-01-702022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4813,11 +5809,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4872,9 +5868,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Gauteng (Report 03-01-76)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-76/Report-03-01-762022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -4917,11 +5927,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -4976,9 +5986,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Free State (Report 03-01-73)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-73/Report-03-01-732022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -5021,11 +6045,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -5080,9 +6104,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: Northern Cape (Report 03-01-72)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-72/Report-03-01-722022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -5125,11 +6163,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -5184,9 +6222,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -5229,12 +6281,38 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
-    "language": {
-      "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
-    },
+    "language": [
+      {
+        "group": "isiZulu",
+        "pct": 65.6
+      },
+      {
+        "group": "English",
+        "pct": 28.6
+      },
+      {
+        "group": "isiXhosa",
+        "pct": 3.1
+      },
+      {
+        "group": "Other",
+        "pct": 1.1
+      },
+      {
+        "group": "Afrikaans",
+        "pct": 0.8
+      },
+      {
+        "group": "Sesotho",
+        "pct": 0.6
+      },
+      {
+        "group": "isiNdebele",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Black African",
@@ -5288,9 +6366,30 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "language",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
@@ -5301,7 +6400,10 @@
     "population_note": "Census 2022's count for eThekwini.",
     "ethnicity_year": 2022,
     "ethnicity_note": "Census 2022 population group, as counts: the 4,234,729 people whose group the census recorded, of the 4,239,901 it counts here.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from Census 2022's counts by age group and sex.",
+    "language_year": 2022,
+    "language_basis": "language spoken most often in the household",
+    "language_note": "The language spoken most often in the household, as Census 2022 asked it, for the metro's population, as Statistics South Africa publishes it: percentages to one decimal place, with no counts (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84, Table 2.3)."
   },
   {
     "id": "ZAF-2022-DC29",
@@ -5333,11 +6435,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "Census 2022 asked religious affiliation, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.10, and each province's Census 2022 provincial profile), so no figure is published for this district."
+      "note": "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers for each province -- in the statistical release (P0301.4, Table 2.10), the province's Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, Table 4.1) -- not for its districts or metros, so no figure is published for this one."
     },
     "language": {
       "status": "not_available",
-      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa publishes the answers by province only (Census 2022 Statistical Release P0301.4, Table 2.9), so no figure is published for this district."
+      "note": "Census 2022 asked the language spoken most often in the household, and Statistics South Africa gives the answers for each province (the statistical release P0301.4, Table 2.9, and the province's Census 2022 provincial profile) and for the eight metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, so no figure is published for this district."
     },
     "ethnicity": [
       {
@@ -5392,9 +6494,23 @@
         "year": 2022
       },
       {
-        "field": "religion/language note",
+        "field": "religion note/language note",
         "name": "Statistics South Africa, Census 2022 Statistical Release P0301.4",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022 Provincial Profile: KwaZulu-Natal (Report 03-01-74)",
+        "url": "https://statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf",
+        "license": "Statistics South Africa, reuse with acknowledgement of the source",
+        "year": 2022
+      },
+      {
+        "field": "religion note/language note",
+        "name": "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa (Report 03-01-84)",
+        "url": "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf",
         "license": "Statistics South Africa, reuse with acknowledgement of the source",
         "year": 2022
       }
