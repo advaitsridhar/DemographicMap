@@ -34,20 +34,24 @@ def row(names, name, shabiyah, level, per_band_m, per_band_f):
     return [values.get(n) for n in names]
 
 
-def sheet():
+def sheet(abyar=False):
     """Every shabiyah of SHAPES with one baladiyah of its own name and one
-    mahallah; Banghazi with a second baladiyah, Tukrah, of the men only."""
+    mahallah; Banghazi with a second baladiyah, Tukrah, of the men only (and
+    with ``abyar`` a third, Al Ibyar, likewise)."""
     names = header()
     rows = [names, names]   # the sheet's two header rows: names, then aliases
     per = 3
     total = 0
     for key in sorted(lc.SHAPES):
         if key == "banghazi":
-            rows.append(row(names, key.upper(), key.upper(), 1, per + 1, per))
+            extra = 2 if abyar else 1
+            rows.append(row(names, key.upper(), key.upper(), 1, per + extra, per))
             rows.append(row(names, key.upper(), key.upper(), 2, per, per))
             rows.append(row(names, "TUKRAH", key.upper(), 2, 1, 0))
-            rows.append(row(names, key.upper() + " MAHALLAH", key.upper(), 3, per + 1, per))
-            total += (2 * per + 1) * (len(BANDS) + 1)
+            if abyar:
+                rows.append(row(names, "AL IBYAR", key.upper(), 2, 1, 0))
+            rows.append(row(names, key.upper() + " MAHALLAH", key.upper(), 3, per + extra, per))
+            total += (2 * per + extra) * (len(BANDS) + 1)
             continue
         rows.append(row(names, key.upper(), key.upper(), 1, per, per))
         rows.append(row(names, key.upper(), key.upper(), 2, per, per))
@@ -141,6 +145,22 @@ class Areas(unittest.TestCase):
             records = lc.build(table, {"admin1": shapes, "admin2": shapes})
         benghazi = [r for r in records if r["shape_id"] == lc.SHAPES["banghazi"]][0]
         self.assertIn("without Tukrah (18), which lies outside it", benghazi["population_note"])
+
+    def test_baladiyat_gained_from_one_shabiyah_are_named_together(self):
+        rows, total = sheet(abyar=True)
+        moved = {("banghazi", "tukrah"): "almarj", ("banghazi", "alibyar"): "almarj"}
+        with mock.patch.object(lc, "NATIONAL", total):
+            table = lc.read(rows)
+        with mock.patch.object(lc, "NATIONAL", total), mock.patch.object(lc, "MOVED", moved), \
+                mock.patch.object(lc, "UNSURE", {}):
+            shapes = self.shapes()
+            records = lc.build(table, {"admin1": shapes, "admin2": shapes})
+        marj = [r for r in records if r["shape_id"] == lc.SHAPES["almarj"]][0]
+        self.assertIn("with Tukrah (18) and Al Ibyar (18), which the census counts with "
+                      "Banghazi; added up", marj["population_note"])
+        benghazi = [r for r in records if r["shape_id"] == lc.SHAPES["banghazi"]][0]
+        self.assertIn("without Tukrah (18) and Al Ibyar (18), which lie outside it",
+                      benghazi["population_note"])
 
     def test_the_2020_estimate_for_a_shabiyah_drawn_unchanged(self):
         table, total = self.table()

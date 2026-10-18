@@ -378,17 +378,22 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]],
             if gained or lost:
                 diff = []
                 if gained:
-                    diff.append("with " + ", ".join(
-                        f"{display(p['name'])} ({p['total']:,}), which the census counts with "
-                        f"{display(table['shabiyat'][fold(p['shabiyah'])]['name'])}"
-                        for p in gained))
+                    # The baladiyat gained, by the census shabiyah that counts them.
+                    homes: dict[str, list[str]] = {}
+                    for p in gained:
+                        home = display(table["shabiyat"][fold(p["shabiyah"])]["name"])
+                        homes.setdefault(home, []).append(f"{display(p['name'])} "
+                                                          f"({p['total']:,})")
+                    diff.append("with " + "; and ".join(
+                        f"{listed(names)}, which the census counts with {home}"
+                        for home, names in homes.items()))
                 if lost:
                     diff.append("without " + listed(
                         [f"{display(b['name'])} ({b['total']:,})" for b in lost])
                         + (", which lies outside it" if len(lost) == 1
                            else ", which lie outside it"))
                 what = (f"the census's shabiyah of {display(census['name'])} "
-                        f"({census['total']:,}) " + " and ".join(diff) +
+                        f"({census['total']:,}) " + ", and ".join(diff) +
                         "; added up from the census's baladiyat whose seats lie in the area "
                         "shown")
             else:
