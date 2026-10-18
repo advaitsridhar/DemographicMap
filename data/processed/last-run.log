@@ -1,92 +1,314 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  commune across the line: ('guelmimouednoun', 'assazag', 'almahbass') {'women': 264, 'name': 'Al Mahbass', 'zone': ('guelmimouednoun', 'assazag', 'almahbass'), 'men': 318}
-  the Kingdom {'women': 18295103, 'men': 18195488}, 12 regions, 75 provinces, 1 communes
-  mother tongues for 89 zones; the Kingdom {'Amazigh': 18.9, 'Arabic': 80.6}
-  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
-  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
-  'Oued Ed-Dahab Province': a piece across the line, written as a gap
-  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
-  'Tarfaya Province': part of a province across the line, written as a gap
-  HCP provinces not drawn: []
-  admin1 Béni Mellal-Khénifra                     956 [('Arabic', 65.6), ('Amazigh', 34.3)]
-  admin1 Casablanca-Settat                        995 [('Arabic', 95.5), ('Amazigh', 3.6)]
-  admin1 Drâa-Tafilalet                           968 [('Amazigh', 64.0), ('Arabic', 35.9)]
-  admin1 Fez-Meknes                               987 [('Arabic', 89.6), ('Amazigh', 10.3)]
-  admin1 Guelmim-Oued Noun                        971 [('Arabic', 59.6), ('Amazigh', 40.3)]
-  admin1 Marrakech-Safi                           1017 [('Arabic', 78.1), ('Amazigh', 21.6)]
-  admin1 Oriental                                 957 [('Arabic', 67.5), ('Amazigh', 32.3)]
-  admin1 Rabat-Salé-Kenitra                       987 [('Arabic', 94.2), ('Amazigh', 5.2)]
-  admin1 Souss-Massa                              983 [('Amazigh', 56.4), ('Arabic', 43.0)]
-  admin1 Tangier-Tetouan-Al Hoceima               1032 [('Arabic', 92.4), ('Amazigh', 7.3)]
-  admin2 Al Hoceima Province                      1023 [('Amazigh', 55.2), ('Arabic', 44.7)]
-  admin2 Chefchaouen Province                     1103 [('Arabic', 99.7), ('Amazigh', 0.2)]
-  admin2 Fahs-Anjra Province                      1084 [('Arabic', 98.0), ('Amazigh', 1.9)]
-  admin2 Larache Province                         1031 [('Arabic', 98.7), ('Amazigh', 1.2)]
-  admin2 Prefecture of Tangier - Assilah          1032 [('Arabic', 95.6), ('Amazigh', 3.8)]
-  admin2 Province d'Ouezzane إقليم وزان           1022 [('Arabic', 99.8), ('Amazigh', 0.1)]
-  admin2 Préfecture de M'diq-Fnideq عمالة المضيق  995 [('Arabic', 95.8), ('Amazigh', 3.9)]
-  admin2 Tetouan Province                         1003 [('Arabic', 97.7), ('Amazigh', 2.0)]
-  admin2 Province de Berkane إقليم بركان          960 [('Arabic', 88.4), ('Amazigh', 11.4)]
-  admin2 Province de Driouch إقليم الدريوش        915 [('Amazigh', 85.7), ('Arabic', 14.2)]
-  admin2 Province de Figuig إقليم الناظور         956 [('Arabic', 62.8), ('Amazigh', 37.2)]
-  admin2 Province de Guercif إقليم جرسيف          972 [('Arabic', 65.0), ('Amazigh', 34.9)]
-  admin2 Province de Jerada إقليم جرادة           954 [('Arabic', 96.2), ('Amazigh', 3.8)]
-  admin2 Province de Nador إقليم الناظور          965 [('Amazigh', 63.7), ('Arabic', 36.2)]
-  admin2 Province de Taourirt إقليم تاوريرت       955 [('Arabic', 85.6), ('Amazigh', 14.4)]
-  admin2 Préfecture d'Oujda-Angad عمالة وجدة - أن 957 [('Arabic', 95.7), ('Amazigh', 4.0)]
-  admin2 Prefecture de Meknès عمالة مكناس         969 [('Arabic', 93.2), ('Amazigh', 6.5)]
-  admin2 Province d'El Hajeb إقليم الحاجب         999 [('Arabic', 83.5), ('Amazigh', 16.4)]
-  admin2 Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إف 969 [('Arabic', 59.0), ('Amazigh', 40.8)]
-  admin2 Province de Boulemane إقليم بولمان       985 [('Arabic', 65.3), ('Amazigh', 34.6)]
-  admin2 Province de Moulay Yacoub إقليم مولاي يع 1078 [('Arabic', 99.4), ('Amazigh', 0.5)]
-  admin2 Province de Sefrou إقليم صفرو            955 [('Arabic', 63.8), ('Amazigh', 36.2)]
-  admin2 Province de Taounate إقليم تاونات        1037 [('Arabic', 99.8), ('Amazigh', 0.1)]
-  admin2 Province de Taza اقليم تازة              975 [('Arabic', 82.4), ('Amazigh', 17.5)]
-  admin2 Préfecture de Fès عمالة فاس              976 [('Arabic', 98.4), ('Amazigh', 1.2)]
-  admin2 Prefecture of Rabat                      930 [('Arabic', 92.5), ('Amazigh', 4.6)]
-  admin2 Prefecture of Salé                       981 [('Arabic', 95.1), ('Amazigh', 4.3)]
-  admin2 Province de Kenitra إقليم القنيطرة       1005 [('Arabic', 97.7), ('Amazigh', 2.0)]
-  admin2 Province de Khémisset إقليم الخميسات     968 [('Arabic', 76.7), ('Amazigh', 23.2)]
-  admin2 Province de Sidi Kacem إقليم سيدي قاسم   1026 [('Arabic', 99.6), ('Amazigh', 0.3)]
-  admin2 Province de Sidi Slimane إقليم سيدي سليم 1006 [('Arabic', 99.2), ('Amazigh', 0.7)]
-  admin2 Préfecture de Skhirate-Témara عمالة الصخ 985 [('Arabic', 94.5), ('Amazigh', 4.8)]
-  admin2 Province d'Azilal إقليم أزيلال           1021 [('Amazigh', 83.8), ('Arabic', 16.1)]
-  admin2 Province de Beni Mellal إقليم بني ملال   926 [('Arabic', 72.2), ('Amazigh', 27.7)]
-  admin2 Province de Fquih Ben Saleh إقليم الفقيه 926 [('Arabic', 96.8), ('Amazigh', 3.1)]
-  admin2 Province de Khouribga إقليم خريبكة       947 [('Arabic', 98.7), ('Amazigh', 1.2)]
-  admin2 Province de Khénifra إقليم خنيفرة        955 [('Amazigh', 54.3), ('Arabic', 45.6)]
-  admin2 Berrechid Province                       1025 [('Arabic', 96.0), ('Amazigh', 3.9)]
-  admin2 El Jadida Province                       1033 [('Arabic', 98.6), ('Amazigh', 1.2)]
-  admin2 Médiouna Province                        1015 [('Arabic', 95.1), ('Amazigh', 4.8)]
-  admin2 Nouaceur Province                        1005 [('Arabic', 92.2), ('Amazigh', 6.5)]
-  admin2 Prefecture of Casablanca                 965 [('Arabic', 93.8), ('Amazigh', 4.6)]
-  admin2 Prefecture of Mohammédia                 991 [('Arabic', 96.0), ('Amazigh', 3.3)]
-  admin2 Province de Benslimane إقليم بن سليمان   1020 [('Arabic', 97.9), ('Amazigh', 1.9)]
-  admin2 Province de Sidi Bennour إقليم سيدي بنور 1030 [('Arabic', 99.6), ('Amazigh', 0.3)]
-  admin2 Settat Province                          1014 [('Arabic', 98.9), ('Amazigh', 0.9)]
-  admin2 Al Haouz Province                        1071 [('Amazigh', 75.4), ('Arabic', 24.5)]
-  admin2 Chichaoua Province                       1025 [('Amazigh', 60.6), ('Arabic', 39.3)]
-  admin2 Essaouira Province                       1021 [('Arabic', 63.1), ('Amazigh', 36.5)]
-  admin2 Province d'El Kelâat Es-Sraghna إقليم قل 996 [('Arabic', 97.8), ('Amazigh', 2.2)]
-  admin2 Province de Safi إقليم أسفي              1039 [('Arabic', 99.4), ('Amazigh', 0.6)]
-  admin2 Province de Youssoufia إقليم اليوسفية    1040 [('Arabic', 99.1), ('Amazigh', 0.8)]
-  admin2 Préfecture de Marrakech عمالة مراكش      977 [('Arabic', 89.1), ('Amazigh', 10.0)]
-  admin2 Rhamna Province                          1071 [('Arabic', 97.7), ('Amazigh', 2.2)]
-  admin2 Ouarzazate Province                      950 [('Amazigh', 74.8), ('Arabic', 25.1)]
-  admin2 Province d'Errachidia إقليم الرشيدية     964 [('Arabic', 64.5), ('Amazigh', 35.4)]
-  admin2 Province de Midelt إقليم ميدلت           982 [('Amazigh', 72.8), ('Arabic', 27.1)]
-  admin2 Province de Tinghir إقليم تنغير          959 [('Amazigh', 96.3), ('Arabic', 3.6)]
-  admin2 Zagora Province                          991 [('Arabic', 51.3), ('Amazigh', 48.6)]
-  admin2 Agadir Ida-Outanane Prefecture           998 [('Amazigh', 52.5), ('Arabic', 46.7)]
-  admin2 Chtouka-Ait Baha Province                1037 [('Amazigh', 66.5), ('Arabic', 32.0)]
-  admin2 Inezgane-Ait Melloul Prefecture          1002 [('Arabic', 51.7), ('Amazigh', 48.0)]
-  admin2 Tata Province                            820 [('Amazigh', 70.6), ('Arabic', 29.4)]
-  admin2 Tiznit Province                          913 [('Amazigh', 85.5), ('Arabic', 14.4)]
-  admin2 Taroudant Province                       966 [('Amazigh', 51.7), ('Arabic', 48.3)]
-  admin2 Assa-Zag Province                        988 [('Arabic', 88.6), ('Amazigh', 11.3)]
-  admin2 Guelmim Province                         958 [('Arabic', 63.8), ('Amazigh', 36.0)]
-  admin2 Province de Tan-Tan إقليم طانطان         1009 [('Arabic', 87.6), ('Amazigh', 12.4)]
-  admin2 Sidi Ifni Province                       959 [('Amazigh', 80.8), ('Arabic', 19.1)]
-  10 regions and 69 provinces written; 79 with mother tongues
-  wrote data/processed/morocco_rgph2024_sexes.json (201 kB)
+probe_page: https://www.citypopulation.de/en/burundi/admin/
+  272 lines:
+        0  Burundi: Administrative Division (Provinces and Communes) - Population Statistics, Charts and Map
+        1  Home → Africa → Burundi
+        2  Burundi : Administrative Division
+        3  Contents: Burundi
+        4  Republic
+        5  8,053,574 Population [2008] – census
+        6  12,332,788 Population [2024] – census
+        7  27,834km² Area
+        8  443.1/km² Density [2024]
+        9  Contents: Provinces and Communes
+       10  The population of the provinces and communes of Burundi according to census results.
+       11  The icon links to further information about a selected division including its population structure (gender, urbanization).
+       12  Name
+       13  Status
+       14  Population
+       15  Census
+       16  2008-08-16
+       17  Population
+       18  Census
+       19  2024-08-16
+       20  Buhumuza
+       21  Province
+       22  1,261,812
+       23  2,052,261
+       24  →
+       25  Butaganzwa
+       26  Commune
+       27  70,448
+       28  109,813
+       29  →
+       30  Butihinda
+       31  Commune
+       32  314,227
+       33  434,166
+       34  →
+       35  Cankuzo
+       36  Commune
+       37  86,223
+       38  161,287
+       39  →
+       40  Gisagara
+       41  Commune
+       42  140,128
+       43  291,398
+       44  →
+       45  Gisuru
+       46  Commune
+       47  205,685
+       48  337,649
+       49  →
+       50  Muyinga
+       51  Commune
+       52  318,182
+       53  495,927
+       54  →
+       55  Ruyigi
+       56  Commune
+       57  126,919
+       58  222,021
+       59  →
+       60  Bujumbura
+       61  Province
+       62  1,874,266
+       63  3,353,555
+       64  →
+       65  Bubanza
+       66  Commune
+       67  165,885
+       68  242,978
+       69  →
+       70  Bukinanyana
+       71  Commune
+       72  173,922
+       73  269,547
+       74  →
+       75  Cibitoke
+       76  Commune
+       77  131,695
+       78  260,776
+       79  →
+       80  Isare
+       81  Commune
+       82  109,703
+       83  149,273
+       84  →
+       85  Mpanda
+       86  Commune
+       87  172,138
+       88  362,261
+       89  →
+       90  Mugere
+       91  Commune
+       92  267,569
+       93  512,881
+       94  →
+       95  Mugina
+       96  Commune
+       97  154,818
+       98  225,284
+       99  →
+      100  Muhuta
+      101  Commune
+      102  91,115
+      103  117,061
+      104  →
+      105  Mukaza
+      106  Commune
+      107  152,347
+      108  168,829
+      109  →
+      110  Ntahangwa
+      111  Commune
+      112  355,260
+      113  927,907
+      114  →
+      115  Rwibaga
+      116  Commune
+      117  99,814
+      118  116,758
+      119  →
+      120  Burunga
+      121  Province
+      122  1,351,719
+      123  2,118,551
+      124  →
+      125  Bururi
+      126  Commune
+      127  159,410
+      128  189,958
+      129  →
+      130  Makamba
+      131  Commune
+      132  227,088
+      133  370,637
+      134  →
+      135  Matana
+      136  Commune
+      137  166,989
+      138  195,269
+      139  →
+      140  Musongati
+      141  Commune
+      142  199,135
+      143  336,347
+      144  →
+      145  Nyanza
+      146  Commune
+      147  203,811
+      148  369,669
+      149  →
+      150  Rumonge
+      151  Commune
+      152  260,911
+      153  429,237
+      154  →
+      155  Rutana
+      156  Commune
+      157  134,375
+      158  227,434
+      159  →
+      160  Butanyerera
+      161  Province
+      162  1,905,622
+      163  2,530,206
+      164  →
+      165  Busoni
+      166  Commune
+      167  269,566
+      168  357,991
+      169  →
+      170  Kayanza
+      171  Commune
+      172  240,880
+      173  332,433
+      174  →
+      175  Kiremba
+      176  Commune
+      177  218,370
+      178  292,027
+      179  →
+      180  Kirundo
+      181  Commune
+      182  358,690
+      183  478,492
+      184  →
+      185  Matongo
+      186  Commune
+      187  217,225
+      188  265,900
+      189  →
+      190  Muhanga
+      191  Commune
+      192  184,974
+      193  222,791
+      194  →
+      195  Ngozi
+      196  Commune
+      197  220,854
+      198  316,808
+      199  →
+      200  Tangara
+      201  Commune
+      202  195,063
+      203  263,764
+      204  →
+      205  Gitega
+      206  Province
+      207  1,660,155
+      208  2,278,215
+      209  →
+      210  Bugendana
+      211  Commune
+      212  173,741
+      213  229,652
+      214  →
+      215  Gishubi
+      216  Commune
+      217  199,568
+      218  243,533
+      219  →
+      220  Gitega
+      221  Commune
+      222  338,617
+      223  528,528
+      224  →
+      225  Karusi
+      226  Commune
+      227  254,753
+      228  377,638
+      229  →
+      230  Kiganda
+      231  Commune
+      232  117,995
+      233  149,522
+      234  →
+      235  Muramvya
+      236  Commune
+      237  120,648
+      238  171,010
+      239  →
+      240  Mwaro
+      241  Commune
+      242  124,212
+      243  149,190
+      244  →
+      245  Nyabihanga
+      246  Commune
+      247  148,931
+      248  175,208
+      249  →
+      250  Shombo
+      251  Commune
+      252  181,690
+      253  253,934
+      254  →
+      255  Burundi
+      256  Republic
+      257  8,053,574
+      258  12,332,788
+      259  Source: L'Institut de Statistiques et d’Etudes Economiques du Burundi
+      260  Explanation: Provinces and communes according to the territorial reform of 2023. The results of the 2024 census are preliminary. Area figures are calculated using geospatial data.
+      261  Further information about the population structure:
+      262  Gender (C 2024)
+      263  Males
+      264  5,901,069
+      265  Females
+      266  6,431,719
+      267  Urbanization (C 2024)
+      268  Rural
+      269  9,255,195
+      270  Urban
+      271  3,077,593
+probe_page: https://www.citypopulation.de/en/burundi/admin/bujumbura/209__mukaza/
+  38 lines:
+        0  ﻿
+        1  Mukaza (Commune, Burundi) - Population Statistics, Charts, Map and Location
+        2  Home → Africa → Burundi → Administrative Division
+        3  Mukaza
+        4  Commune in Burundi
+        5  Contents: Population
+        6  The population development of Mukaza as well as related information and services (Wikipedia, Google, images).
+        7  Name
+        8  Status
+        9  Population
+       10  Census
+       11  2008-08-16
+       12  Population
+       13  Census
+       14  2024-08-16
+       15  Mukaza
+       16  Commune
+       17  152,347
+       18  168,829
+       19  Burundi
+       20  Republic
+       21  8,053,574
+       22  12,332,788
+       23  Source: L'Institut de Statistiques et d’Etudes Economiques du Burundi
+       24  Explanation: Provinces and communes according to the territorial reform of 2023. The results of the 2024 census are preliminary. Area figures are calculated using geospatial data.
+       25  Further information about the population structure:
+       26  Gender (C 2024)
+       27  Males
+       28  96,895
+       29  Females
+       30  71,934
+       31  Urbanization (C 2024)
+       32  Rural
+       33  36,208
+       34  Urban
+       35  122,958
+       36  Located in:
+       37  Bujumbura province
