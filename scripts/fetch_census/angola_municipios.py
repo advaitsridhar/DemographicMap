@@ -33,13 +33,22 @@ and is spread over four (Caluquembe 31%, Quilengues 26%, Quipungo 25%,
 Lubango 16% of it); four more polygons depart from the municipality of their
 name by more than 30%; and Luanda's and Icolo e Bengo's reports have no
 table on the old division. Those polygons get no census figure, and their
-compositions say why.
+compositions say why. On those eight polygons, and on Luanda's Belas,
+Cacuaco and Luanda (OTHER_GROUND), the figures published for the
+municipality of the polygon's name -- projections among them -- do not
+describe the polygon either, and its population, median age and sex ratio
+say so, in place of any such figure.
 
-**Ages.** The reports print no five-year groups below the province. The
-median of an old municipality is taken from the groups 0-14, 15-64 and 65+
-(Quadro 1.4) and 0-19, 20-29, 30-54, 55-64, 65-74, 75+ (Quadro 1.5) of its
-new municipalities, added up: 0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75+.
-A province's median comes from its five-year groups (Quadro 1.3).
+**Ages.** Each report publishes the median age of the province and of each
+2024 municipality and commune (Quadro 1.7, "Idade média e mediana"). A
+province drawn as one 2024 province shows its median as published; a
+polygon that is one 2024 municipality shows that municipality's. An old
+municipality made of several has no published median: it is taken from the
+groups 0-14, 15-64 and 65+ (Quadro 1.4) and 0-19, 20-29, 30-54, 55-64,
+65-74, 75+ (Quadro 1.5) of its new municipalities, added up (0-14, 15-19,
+20-29, 30-54, 55-64, 65-74, 75+), and its note says so. Luanda, Moxico and
+Cuando Cubango, each two 2024 provinces, take theirs from the two
+provinces' five-year groups (Quadro 1.3), added up.
 
 **Checks**, each refusing what it covers: every composition row's groups
 make its total (within 0.5%), and its two column groups carry the same
@@ -77,6 +86,8 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 URL = "https://censo2024.ine.gov.ao/Relatorio_Provincial_{stem}_Censo2024.pdf"
 SOURCE = ("INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos "
           "Resultados Definitivos, provincial reports")
+# One province's report, as a citation names it.
+SOURCE_ONE = "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos"
 LICENCE = "Official statistics publication of the Instituto Nacional de Estatística de Angola"
 
 # Report file stem -> the map's province (the 2016 division) it lies in.
@@ -137,38 +148,68 @@ NOT_DESCRIBED: dict[str, str] = {
     # Cacula has no polygon; OCHA's boundaries place it across these four.
     "91424787B79663411061170": (
         "About 28% of this polygon lies in the municipality of Cacula, which has no polygon "
-        "of its own, so the census's figures for Caluquembe do not describe it, and Cacula's, "
-        "which cover the rest of Cacula as well, do not either."),
+        "of its own, so no figure published for Caluquembe, whether the 2024 census's or a "
+        "projection, describes it; nor do Cacula's, which cover the rest of Cacula as well."),
     "91424787B76902935205568": (
         "About 19% of this polygon lies in the municipality of Cacula, which has no polygon "
-        "of its own, so the census's figures for Quilengues do not describe it, and Cacula's, "
-        "which cover the rest of Cacula as well, do not either."),
+        "of its own, so no figure published for Quilengues, whether the 2024 census's or a "
+        "projection, describes it; nor do Cacula's, which cover the rest of Cacula as well."),
     "91424787B65395745560852": (
         "About 11% of this polygon, a quarter of Cacula, lies in the municipality of Cacula, "
-        "which has no polygon of its own, so the census's figures for Quipungo do not "
-        "describe it, and Cacula's, which cover the rest of Cacula as well, do not either."),
+        "which has no polygon of its own, so no figure published for Quipungo, whether the "
+        "2024 census's or a projection, describes it; nor do Cacula's, which cover the rest "
+        "of Cacula as well."),
     "91424787B12923410016524": (
         "About 16% of this polygon lies in the municipality of Cacula, whose seat is inside it "
-        "and which has no polygon of its own, so the census's figures for Lubango do not "
-        "describe it, and Cacula's, which cover the rest of Cacula as well, do not either."),
+        "and which has no polygon of its own, so no figure published for Lubango, whether the "
+        "2024 census's or a projection, describes it; nor do Cacula's, which cover the rest of "
+        "Cacula as well."),
     # The polygon and the municipality of its name, as OCHA draws it, part ways.
     "91424787B4488869677577": (
         "Only about 39% of this polygon lies in Pango Aluquém as OCHA's boundaries of the "
-        "municipalities draw it, and about 48% in Cambambe, so the census's figures for Pango "
-        "Aluquém do not describe it."),
+        "municipalities draw it, and about 48% in Cambambe, so no figure published for Pango "
+        "Aluquém, whether the 2024 census's or a projection, describes it."),
     "91424787B64555741816921": (
         "Only about 53% of this polygon lies in Quiculungo as OCHA's boundaries of the "
-        "municipalities draw it, and the rest in Banga and Samba Cajú, so the census's figures "
-        "for Quiculungo do not describe it."),
+        "municipalities draw it, and the rest in Banga and Samba Cajú, so no figure published "
+        "for Quiculungo, whether the 2024 census's or a projection, describes it."),
     "91424787B22609176467527": (
         "About a third of Cambundi-Catembo, as OCHA's boundaries of the municipalities draw "
-        "it, lies outside this polygon, most of it in the polygon drawn as Xá-Muteba, so the "
-        "census's figures for Cambundi-Catembo do not describe it."),
+        "it, lies outside this polygon, most of it in the polygon drawn as Xá-Muteba, so no "
+        "figure published for Cambundi-Catembo, whether the 2024 census's or a projection, "
+        "describes it."),
     "91424787B55001564307677": (
         "About 27% of this polygon lies in Cambundi-Catembo, in Malanje, as OCHA's boundaries "
-        "of the municipalities draw it, so the census's figures for Xá-Muteba do not "
-        "describe it."),
+        "of the municipalities draw it, so no figure published for Xá-Muteba, whether the 2024 "
+        "census's or a projection, describes it."),
 }
+
+# Luanda's polygons drawn over more than one municipality: the census tabulates
+# Luanda only by the municipalities of 2024 (their compositions say so), and
+# the figures published for the municipality of each one's name, projections
+# among them, do not describe it either.
+OTHER_GROUND: dict[str, str] = {
+    "91424787B66059706224288": (
+        "About 63% of this polygon lies in Belas as OCHA's boundaries of the municipalities "
+        "draw it, and about 30% in Viana, which has no polygon of its own, so no figure "
+        "published for Belas, whether the 2024 census's or a projection, describes it."),
+    "91424787B14243133178966": (
+        "Only about 40% of this polygon lies in Cacuaco as OCHA's boundaries of the "
+        "municipalities draw it, about 36% in Dande, in Bengo, and about 22% in Viana, so no "
+        "figure published for Cacuaco, whether the 2024 census's or a projection, describes "
+        "it."),
+    "91424787B55521153380221": (
+        "About 55% of this polygon lies in the municipality of Luanda as OCHA's boundaries of "
+        "the municipalities draw it, and most of the rest in Cazenga, which has no polygon of "
+        "its own, Belas and Cacuaco, so no figure published for the municipality of Luanda, "
+        "whether the 2024 census's or a projection, describes it."),
+}
+GROUND_FIELDS = ("population", "median_age", "sex_ratio")
+# OCHA's boundaries of the municipalities, on which the polygons were measured.
+OCHA_BOUNDARIES = {"name": "OCHA, Angola administrative boundaries (cod-ab-ago), the "
+                           "municipalities of Lei n.º 18/16",
+                   "url": "https://data.humdata.org/dataset/cod-ab-ago", "year": 2018,
+                   "license": "Published via HDX"}
 
 GAP = 4.0          # points: digit groups of one figure sit closer than this
 # The words of a total's column: "População com 2 ou mais anos", "Número de
@@ -254,8 +295,13 @@ TABLES: dict[str, dict[str, Any]] = {
     "language": {"key": ("segundoalinguamaterna", "segundolinguasmaterna",
                          "segundoaslinguasmaternas"), "labels": LANGUAGE},
     "religion": {"key": "segundoareligiaoouespiritualidade", "labels": RELIGION},
-    "age_broad": {"key": "grandesgrupos", "labels": AGE_BROAD},
-    "age_other": {"key": "segundooutrosgruposetarios", "labels": AGE_OTHER},
+    # Zaire's, Luanda's and Cuando's broad age groups are headed "População por
+    # município, por área de residência"; Bié's other groups' heading breaks
+    # after "segundo outros grupos".
+    "age_broad": {"key": ("grandesgrupos", "pormunicipioporareaderesidencia",
+                          "porprovinciaporareaderesidencia"), "labels": AGE_BROAD},
+    "age_other": {"key": ("segundooutrosgruposetarios", "segundooutrosgrupos"),
+                  "labels": AGE_OTHER},
 }
 NOTES = {
     "ethnicity": ("The 2024 census's count of the population aged 2 and over by ethnic group "
@@ -300,9 +346,12 @@ class Row:
         last = max((i for i, (_, _, t) in enumerate(self.words) if not numeric(t)), default=-1)
         return self.words[:last + 1]
 
-    def figures(self) -> list[tuple[float, float, int]]:
+    def figures(self, columns: list[float] | None = None) -> list[tuple[float, float, int]]:
         """Digit groups after the label, joined into figures by the gaps between them;
-        a dash, which the reports print for none, is a nought."""
+        a dash, which the reports print for none, is a nought. Given the table's
+        columns (their right edges), a group that ends on one column's edge is a
+        figure of its own, however close the next group: a 1 under one column and
+        a 340 printed a few points away under the next are not 1,340."""
         last = max((i for i, (_, _, t) in enumerate(self.words) if not numeric(t)), default=-1)
         out: list[tuple[float, float, int]] = []
         run: list[tuple[float, float, str]] = []
@@ -313,7 +362,8 @@ class Row:
                     run = []
                 out.append((x0, x1, 0))
                 continue
-            if run and len(t) == 3 and x0 - run[-1][1] <= GAP:
+            if run and len(t) == 3 and x0 - run[-1][1] <= GAP \
+                    and not (columns and ends_column(run[-1][1], x1, columns)):
                 run.append((x0, x1, t))
                 continue
             if run:
@@ -326,6 +376,30 @@ class Row:
     @property
     def is_data(self) -> bool:
         return bool(re.search(r"[^\W\d_]", self.label)) and len(self.figures()) >= 2
+
+    @property
+    def is_single(self) -> bool:
+        """A labelled row with one figure that is not the page's running footer: a
+        unit with one answer only (Lunda Sul's Alto Chicapa, all of whose 3,801
+        people aged 2 and over are under one column of the second group). A unit's
+        name runs to a few words; a longer label is a line of text."""
+        said = squeeze(self.label)
+        return (bool(re.search(r"[^\W\d_]", self.label)) and len(self.figures()) == 1
+                and len(self.label.split()) <= 5
+                and not said.startswith(("resultados", "continua", "quadro", "fonte", "nota"))
+                and "rgph" not in said)
+
+
+# How close a figure's right end sits to its column's right edge, in points:
+# the reports right-align their figures.
+EDGE = 3.0
+
+
+def ends_column(prev_x1: float, next_x1: float, columns: list[float]) -> bool:
+    """Whether a digit group ending at ``prev_x1`` ends a column to the left of the
+    one the next group ends in: the two are figures of two columns."""
+    j = min(range(len(columns)), key=lambda k: abs(columns[k] - next_x1))
+    return any(abs(prev_x1 - edge) <= EDGE for edge in columns[:j])
 
 
 def rows_of(words: list[dict[str, Any]] | list[tuple[float, float, float, str]]) -> list[Row]:
@@ -361,10 +435,11 @@ class Block:
     labels: list[str] = field(default_factory=list)
 
 
-def blocks_of(rows: list[Row], lead: bool = False) -> list[Block]:
+def blocks_of(rows: list[Row], lead: bool = False, singles: bool = False) -> list[Block]:
     """A page cut at each "Quadro" heading. Rows before the first belong to none,
     or, with ``lead``, to an untitled block: a table carried over from the page
-    before (Huíla's prints its last columns on a page of their own)."""
+    before (Huíla's prints its last columns on a page of their own). With
+    ``singles``, a row of one figure inside a table's body is one of its rows."""
     out: list[Block] = []
     current: Block | None = Block("", [], []) if lead else None
     if current is not None:
@@ -376,7 +451,7 @@ def blocks_of(rows: list[Row], lead: bool = False) -> list[Block]:
             continue
         if current is None:
             continue
-        if row.is_data:
+        if row.is_data or (singles and current.data and row.is_single):
             current.data.append(row)
         elif not current.data:
             current.header.append(row)
@@ -389,24 +464,33 @@ def reach(columns: list[float]) -> float:
 
 
 def assign_columns(block: Block) -> list[str]:
-    """Columns from the row with the most figures; every figure must sit on one."""
+    """Columns from the row with the most figures; every figure must sit on one.
+    A row of one figure that sits on no column is not one of the table's rows (a
+    line of the text printed under it) and is let go."""
     template = max(block.data, key=lambda r: len(r.figures()))
     block.columns = [x1 for _, x1, _ in template.figures()]
     near = reach(block.columns)
     problems = []
+    kept = []
     for row in block.data:
         seen = set()
-        for _, x1, value in row.figures():
+        misfits = []
+        for _, x1, value in row.figures(block.columns):
             j = min(range(len(block.columns)), key=lambda k: abs(block.columns[k] - x1))
             if abs(block.columns[j] - x1) > near or j in seen:
-                problems.append(f"{row.label}: figure {value} at {x1:.0f} fits no column")
+                misfits.append(f"{row.label}: figure {value} at {x1:.0f} fits no column")
             seen.add(j)
+        if misfits and row.is_single:
+            continue
+        problems += misfits
+        kept.append(row)
+    block.data = kept
     return problems
 
 
 def values(block: Block, row: Row) -> list[int | None]:
     out: list[int | None] = [None] * len(block.columns)
-    for _, x1, value in row.figures():
+    for _, x1, value in row.figures(block.columns):
         j = min(range(len(block.columns)), key=lambda k: abs(block.columns[k] - x1))
         out[j] = value
     return out
@@ -492,6 +576,29 @@ class Report:
     # The 2016 table repeats this many 2024 municipalities of the same names and
     # leaves out the rest: it is not on the 2016 division at all.
     namesakes: int = 0
+    url: str = ""
+    # Each table read -> its number in the report ("11", "1.7", "6.1").
+    quadros: dict[str, str] = field(default_factory=dict)
+    # Quadro 1.7: the province's median age, and each 2024 municipality's
+    # (folded name -> median; None where the row is printed without figures).
+    median: float | None = None
+    medians: dict[str, float | None] = field(default_factory=dict)
+    # Rows put together from their communes: table -> municipality (folded) ->
+    # (how, the row as printed, the count taken).
+    patched: dict[str, dict[str, tuple[str, int, int]]] = field(
+        default_factory=lambda: defaultdict(dict))
+    # Rows left out: table -> municipality (folded) -> why, for the notes.
+    refusals: dict[str, dict[str, tuple[Any, ...]]] = field(
+        default_factory=lambda: defaultdict(dict))
+    # 2016 municipality (folded) -> the sets of 2024 ones that come within 2%
+    # of it, where none or more than one does: [(names, total)].
+    candidates: dict[str, list[tuple[list[str], int]]] = field(default_factory=dict)
+
+
+def quadro_of(title: str) -> str:
+    """The table's number from its heading: "Quadro 1. 7- Idade ..." -> "1.7"."""
+    m = re.match(r"\s*Quadro\s*(\d[\d.\s]*?)\s*[-–—:]", title or "")
+    return re.sub(r"\s+", "", m.group(1)).rstrip(".") if m else ""
 
 
 def sexes_add_up(total: int, men: int, women: int) -> bool:
@@ -534,9 +641,12 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
                 rep.new = [(lab, *f) for lab, f in rest]
                 rep.total = tuple(head[1]) if head else tuple(
                     sum(f[j] for _, f in rest) for j in range(3))
+                rep.quadros["new"] = quadro_of(block.title)
             elif any(k in title for k in SEX_TABLES) and widths == {6} and not old_rows:
                 old_rows = rows
+                rep.quadros["old"] = quadro_of(block.title)
             elif "porgruposetariosquinquenais" in title and not rep.five_year:
+                rep.quadros["five_year"] = quadro_of(block.title)
                 for r in block.data:
                     m = re.match(r"(\d+)\s*-\s*(\d+)\s*anos", r.label)
                     m2 = re.match(r"(\d+)\s*(?:ou|e)\s*mais", r.label)
@@ -604,11 +714,106 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
             5, len(rep.five_year)):
         rep.problems.append("the five-year groups do not make the province; left out")
         rep.five_year = []
+    medians_of(rep, pages, texts)
     if not rep.new:
         return rep
     for name, spec in TABLES.items():
         rep.tables[name] = read_table(rep, name, spec, pages, texts)
     return rep
+
+
+# Quadro 1.7, "Idade média e mediana da população": the median age of the
+# province, its municipalities and their communes, printed as "18,0".
+MEDIAN_KEY = "idademediaemediana"
+DECIMAL = re.compile(r"^\d{1,3},\d{1,2}$")
+
+
+def words_of(row: Row) -> str:
+    return " ".join(t for _, _, t in row.words)
+
+
+def median_entries(rows: list[Row]) -> tuple[str, list[tuple[str, float | None]]]:
+    """Quadro 1.7's heading and rows in reading order, each (label, median); a
+    row printed without figures (a heading, or one of Benguela's municipalities
+    of several communes) has None.
+
+    The table is printed in one column group or in two side by side (Malanje's,
+    Bié's, Huíla's). The figures' right ends gather in two columns a group,
+    média and mediana; a word that starts right of the first group's mediana
+    column belongs to the second group, which is read after the first."""
+    at = next((k for k, r in enumerate(rows) if MEDIAN_KEY in squeeze(words_of(r))), None)
+    if at is None:
+        return "", []
+    end = next((k for k in range(at + 1, len(rows))
+                if squeeze(words_of(rows[k])).startswith("quadro")), len(rows))
+    body = rows[at + 1:end]
+    ends = sorted(x1 for r in body for _, x1, t in r.words if DECIMAL.match(t))
+    clusters: list[list[float]] = []
+    for x1 in ends:
+        if clusters and x1 - clusters[-1][-1] <= 12:
+            clusters[-1].append(x1)
+        else:
+            clusters.append([x1])
+    if len(clusters) not in (2, 4):
+        return words_of(rows[at]), []
+    bound = max(clusters[1]) + 1 if len(clusters) == 4 else None
+    groups: list[list[tuple[str, float | None]]] = [[], []]
+    for row in body:
+        parts: list[list[str]] = [[], []]
+        for x0, _, t in row.words:
+            parts[1 if bound is not None and x0 > bound else 0].append(t)
+        for g, words in enumerate(parts):
+            figures = [w for w in words if DECIMAL.match(w)]
+            label = " ".join(w for w in words if not DECIMAL.match(w))
+            if len(figures) == 2:
+                groups[g].append((label, float(figures[1].replace(",", "."))))
+            elif not figures and label:
+                groups[g].append((label, None))
+    return words_of(rows[at]), groups[0] + groups[1]
+
+
+def medians_of(rep: Report, pages: list[list[Row]], texts: list[str]) -> None:
+    """The province's median age and each 2024 municipality's, from Quadro 1.7.
+
+    The province's row is the first with figures. The municipalities follow a
+    heading ("Municípios", "Município / Comuna"), each before its communes and
+    in the order of Quadro 10: each is the first row of its name after the one
+    before it, so a commune of the same name, printed after it, is passed over."""
+    for i, text in enumerate(texts):
+        if MEDIAN_KEY not in text or not pages[i]:
+            continue
+        title, entries = median_entries(pages[i])
+        first = next((k for k, (_, m) in enumerate(entries) if m is not None), None)
+        if first is None:
+            continue
+        start = next((k for k in range(first + 1, len(entries)) if entries[k][1] is None
+                      and squeeze(entries[k][0]).startswith("munic")), None)
+        if start is None:
+            start = next((k for k in range(first + 1, len(entries))
+                          if squeeze(entries[k][0]) == "mulheres"), None)
+        if start is None:
+            continue
+        rep.median = entries[first][1]
+        rep.quadros["medians"] = quadro_of(title)
+        used: set[int] = set()
+        pos = start + 1
+        for name, *_ in rep.new:
+            key = fold(name)
+            hit = next((k for k in range(pos, len(entries)) if fold(entries[k][0]) == key), None)
+            if hit is None:
+                # Printed out of Quadro 10's order: the first row of its name not taken.
+                hit = next((k for k in range(start + 1, len(entries))
+                            if k not in used and fold(entries[k][0]) == key), None)
+            if hit is None:
+                continue
+            used.add(hit)
+            rep.medians[key] = entries[hit][1]
+            pos = max(pos, hit + 1)
+        missing = [n for n, *_ in rep.new if fold(n) not in rep.medians]
+        if missing:
+            rep.problems.append(f"median ages: no row for {', '.join(missing)}")
+        return
+    rep.problems.append("median ages: Quadro 1.7 not read")
 
 
 def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Row]],
@@ -622,7 +827,7 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
         if not before and not any(k in text for k in keys_of(spec)):
             continue
         here = False
-        for block in blocks_of(pages[i], lead=before):
+        for block in blocks_of(pages[i], lead=before, singles=True):
             if block.title and not any(k in squeeze(block.title) for k in keys_of(spec)):
                 continue
             bad = assign_columns(block)
@@ -643,6 +848,8 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                                         + ")")
                 continue
             block.labels = labels
+            if block.title:
+                rep.quadros.setdefault(name, quadro_of(block.title))
             last = block
             here = True
             key = tuple(labels)
@@ -779,10 +986,17 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
     passed over. A row is a municipality's when its name is one of the report's
     municipalities not yet met and the communes since the last one have made
     that one's total; the rest are its communes. Where a municipality's
-    communes do not make it (Cunene's ethnic table leaves out Cahama's own
-    row), that municipality is left out and the walk picks up again at the
-    next row that is a municipality's by its name and by its size against the
-    municipality's residents.
+    communes do not make it, that municipality is left out and the walk picks
+    up again at the next row that is a municipality's by its name and by its
+    size against the municipality's residents.
+
+    A municipality's row that its residents rule out is not its count:
+    Cunene's mother tongues give Cafima 25,194 people aged 2 and over against
+    19,163 residents, and Malanje's give Kunda dya Baze 494,052 against 14,843.
+    Its communes' rows are added up in its place when they come to a count its
+    residents allow; and where they do so only with that row itself, the row is
+    its namesake commune's and the municipality's own was not printed
+    (Cunene's ethnic groups list Cahama's two communes and no row for Cahama).
     """
     names = {fold(n) for n, *_ in rep.new}
     residents = {fold(n): t for n, t, *_ in rep.new}
@@ -797,36 +1011,69 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
     only = len(body) == len(names) and all(fold(lab) in names for lab, _ in body)
     out: dict[str, dict[str, int]] = {}
     broken: set[str] = set()
+    met: set[str] = set()
     current: str | None = None
-    made = 0
+    own: dict[str, int] = {}
+    summed: dict[str, int] = defaultdict(int)
     communes = 0
+    placeholder = False
 
     def slack() -> int:
         # Each figure is rounded from a weighted count: Cabinda's Necuto is
         # 16,441 and its two communes 14,099 and 2,343.
         return 2 + communes
 
+    def fits(key: str, vals: dict[str, int]) -> bool:
+        return plausible(name, vals.get("TOTAL", 0), residents.get(key, 0))
+
     def close() -> None:
-        if current is not None and not only and communes \
-                and abs(made - out[current]["TOTAL"]) > slack():
-            rep.problems.append(f"{name}: communes of {current} make {made:,}, not "
-                                f"{out[current]['TOTAL']:,}; left out")
+        if current is None:
+            return
+        if placeholder:
+            alone = dict(summed)
+            joined = {k: own.get(k, 0) + summed.get(k, 0) for k in set(own) | set(summed)}
+            if communes and fits(current, alone):
+                out[current] = alone
+                rep.patched[name][current] = ("communes", own["TOTAL"], alone["TOTAL"])
+            elif communes and fits(current, joined):
+                out[current] = joined
+                rep.patched[name][current] = ("namesake", own["TOTAL"], joined["TOTAL"])
+            else:
+                rep.problems.append(f"{name}: {current}'s row counts {own['TOTAL']:,} against "
+                                    f"{residents.get(current, 0):,} residents, and its communes "
+                                    f"do not make up for it; left out")
+                rep.refusals[name][current] = ("plausible", own["TOTAL"],
+                                               residents.get(current, 0))
+                broken.add(current)
+            return
+        out[current] = own
+        if not only and communes and abs(summed["TOTAL"] - own["TOTAL"]) > slack():
+            rep.problems.append(f"{name}: communes of {current} make {summed['TOTAL']:,}, not "
+                                f"{own['TOTAL']:,}; left out")
+            rep.refusals[name][current] = ("communes", summed["TOTAL"], own["TOTAL"])
             broken.add(current)
 
     for label, vals in body:
         key = fold(label)
-        fresh = key in names and key not in out
-        ready = current is None or only or (
-            communes and abs(made - out[current]["TOTAL"]) <= slack())
-        resume = fresh and not ready and plausible(name, vals["TOTAL"], residents.get(key, 0))
+        fresh = key in names and key not in met
+        if current is None or only:
+            ready = True
+        elif placeholder:
+            ready = fresh and fits(key, vals)
+        else:
+            ready = bool(communes) and abs(summed["TOTAL"] - own["TOTAL"]) <= slack()
+        resume = fresh and not ready and fits(key, vals)
         if fresh and (ready or resume):
             close()
             current = key
-            out[key] = dict(vals)
-            made = 0
+            met.add(key)
+            own = dict(vals)
+            summed = defaultdict(int)
             communes = 0
+            placeholder = not only and not fits(key, vals)
         elif current is not None:
-            made += vals["TOTAL"]
+            for k, v in vals.items():
+                summed[k] += v
             communes += 1
         else:
             rep.problems.append(f"{name}: {label} before any municipality")
@@ -837,6 +1084,8 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
     if len(out) + len(broken) != len(names):
         missing = [n for n, *_ in rep.new if fold(n) not in out and fold(n) not in broken]
         rep.problems.append(f"{name}: municipalities not found: {', '.join(missing)}")
+        for n in missing:
+            rep.refusals[name].setdefault(fold(n), ("missing",))
     return out
 
 
@@ -986,6 +1235,14 @@ def crosswalk_parts(rep: Report) -> dict[str, tuple[list[str], bool]]:
         return out
     near = settle(True, exact)
     out.update({o: ([names[k] for k in ks], False) for o, ks in near.items()})
+    # For the notes: the sets that come within 2% of each municipality left
+    # open, among the 2024 municipalities no other has taken (none, or two).
+    taken = {k for ks in (*exact.values(), *near.values()) for k in ks}
+    left = [k for k in pool if k not in taken]
+    for o in old:
+        if o not in out:
+            rep.candidates[o] = [([names[k] for k in ks], sum(new[k][0] for k in ks))
+                                 for ks in search(o, left, True)]
     return out
 
 
@@ -1015,12 +1272,125 @@ def listed(names: list[str]) -> str:
     return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
 
 
-def unmatched(names: list[str]) -> str:
-    one = len(names) == 1
-    return (f"The 2024 census publishes ethnic group, mother tongue and religion only for the "
-            f"municipalities created in 2024, which do not match {listed(names)} as "
-            f"{'it' if one else 'they'} stood before (Lei n.º 18/16), so "
-            f"{'its' if one else 'their'} own figures for these are not published.")
+def shown_name(name: str) -> str:
+    """A municipality's name as a note shows it: the census's "Cacongo(ex_Lândana)"
+    and "Catabola (ex. Nova Sintra)" as "Cacongo (ex-Lândana)" and "Catabola
+    (ex-Nova Sintra)"."""
+    text = re.sub(r"\s*\(\s*ex[\s._-]*", " (ex-", name)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+# What each table counts, inside a sentence, and the figures its field shows.
+WHAT = {"ethnicity": "ethnic groups", "language": "mother tongues", "religion": "religions",
+        "age_broad": "broad age groups", "age_other": "age groups"}
+FIGURES = {"ethnicity": "ethnic group", "language": "mother tongue", "religion": "religion"}
+FIELD_ORDER = ("population", "sex_ratio", "median_age", "ethnicity", "language", "religion")
+AGE_GROUPS = "(0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)"
+
+
+def cite(reps: list[Report], given: list[str], noted: list[str], quadros: list[str]
+         ) -> list[dict[str, Any]]:
+    """One citation for each report: the fields the record gives, those it only
+    explains (as "<field> note"), the report's own address and its tables. A
+    province's population and sex ratio come from Quadro 10, or from the table
+    on the 2016 division where Quadro 10 was not printed ("total")."""
+    fields = [f for f in FIELD_ORDER if f in given] + [
+        f"{f} note" for f in FIELD_ORDER if f in noted and f not in given]
+    out = []
+    for rep in reps:
+        keys = [("new" if rep.new else "old") if q == "total" else q for q in quadros]
+        numbers = list(dict.fromkeys(rep.quadros[q] for q in keys if rep.quadros.get(q)))
+        tables = (f": Quadro {numbers[0]}" if len(numbers) == 1 else
+                  f": Quadros {listed(numbers)}" if numbers else "")
+        out.append({"field": "/".join(fields),
+                    "name": f"{SOURCE_ONE}, {SHOWN.get(rep.stem, rep.stem)} province report"
+                            f"{tables}",
+                    "url": rep.url or URL.format(stem=rep.stem), "year": YEAR,
+                    "license": LICENCE})
+    return out
+
+
+def unmatched(name: str, residents: int, sets: list[tuple[list[str], int]]) -> str:
+    """Why a municipality as it stood under Lei n.º 18/16 has no ethnic group,
+    mother tongue or religion: the municipalities of 2024 do not make it in one
+    way only. ``sets`` are those that come within 2% of it."""
+    unit = f"{name} as it stood under Lei n.º 18/16 ({residents:,} residents)"
+    if len(sets) > 1:
+        (a, sa), (b, sb) = sets[:2]
+        found = (f"more than one set of them comes within 2% of {unit} in its residents, "
+                 f"its men and its women: {listed(a)} {'makes' if len(a) == 1 else 'make'} "
+                 f"{sa:,}, and {listed(b)} {sb:,}")
+    elif sets:
+        (a, sa), = sets
+        found = (f"{listed(a)} {'makes' if len(a) == 1 else 'make'} {sa:,}, within 2% of "
+                 f"{unit}, but the province's other municipalities as they stood need some "
+                 f"of the same ones")
+    else:
+        found = (f"no set of them comes within 2% of {unit} in its residents, its men and "
+                 f"its women alike")
+    return ("The 2024 census publishes ethnic group, mother tongue and religion only for the "
+            f"municipalities created in 2024, and {found}, so it cannot be matched to one set "
+            "of them, and its own figures for these are not shown.")
+
+
+def short_note(rep: Report, name: str) -> str:
+    """Why a municipality of a province whose table on the 2016 division falls
+    short of the province (Huíla's) has no figure: no set of the 2024
+    municipalities makes its row exactly."""
+    total = rep.total[0] if rep.total else 0
+    return (f"The 2024 census's table of {SHOWN.get(rep.stem, rep.stem)} province's "
+            f"municipalities as they stood under Lei n.º 18/16 adds up to "
+            f"{total - rep.short:,} residents, {rep.short:,} short of the province's "
+            f"{total:,}, so only the rows that municipalities created in 2024 make exactly "
+            f"are taken, and none makes {name}'s; its figures are not shown.")
+
+
+def reason_note(rep: Report, table: str, part: str, reason: tuple[Any, ...],
+                names: list[str], stood: str) -> str:
+    """Why a table's figures are not shown for a polygon: what the table prints
+    for one of the 2024 municipalities it is made of."""
+    where = (f"In the 2024 census's table of {WHAT[table]} for "
+             f"{SHOWN.get(rep.stem, rep.stem)} province, ")
+    tail = (f", so the {FIGURES.get(table, 'age')} figures for {listed(names)} as {stood} "
+            f"under Lei n.º 18/16 are not shown.")
+    kind = reason[0]
+    if kind == "plausible":
+        return (where + f"{part}'s row counts {reason[1]:,} people, against the "
+                f"{reason[2]:,} residents the census counts there, and its communes' rows "
+                f"do not make up for it" + tail)
+    if kind == "communes":
+        return (where + f"the communes of {part} add up to {reason[1]:,} people, not the "
+                f"{reason[2]:,} printed for it" + tail)
+    if kind == "sums":
+        return (where + f"the groups of {part}'s row add up to {reason[1]:,}, not the "
+                f"{reason[2]:,} printed as its total" + tail)
+    if kind == "table":
+        return (where + f"the groups of {reason[1]} of its {reason[2]} municipalities' rows "
+                f"do not add up to their totals" + tail)
+    return where + f"no row can be told apart as {part}'s" + tail
+
+
+def patched_note(rep: Report, tables: tuple[str, ...], keys: list[str],
+                 labels: dict[str, str], sizes: dict[str, int],
+                 where: str = "that table") -> str:
+    """What was done with a 2024 municipality's row its residents rule out."""
+    out = []
+    for table in tables:
+        for k in keys:
+            got = rep.patched.get(table, {}).get(k)
+            if not got:
+                continue
+            how, printed, used = got
+            part = labels.get(k, k)
+            if how == "communes":
+                out.append(f" {part}'s own row in {where} counts {printed:,} people, against "
+                           f"its {sizes.get(k, 0):,} residents; its communes' rows, which add "
+                           f"up to {used:,}, are taken in its place.")
+            else:
+                out.append(f" {where[0].upper() + where[1:]} prints no row for the "
+                           f"municipality of {part}, only for its communes, which are added "
+                           f"up ({used:,} people).")
+    return "".join(dict.fromkeys(out))
 
 
 def median_of(parts: list[dict[str, dict[str, int]]]) -> tuple[float | None, str | None]:
@@ -1046,42 +1416,42 @@ def median_of(parts: list[dict[str, dict[str, int]]]) -> tuple[float | None, str
 
 def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
           refused: set[tuple[str, str]] | None = None,
-          apart: dict[tuple[str, str], str] | None = None
+          apart: dict[tuple[str, str], str] | None = None,
+          national: dict[tuple[str, str], str] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     """Records for the provinces and polygons; ``refused`` holds the (province as
     drawn, field) pairs whose provincial table disagrees with the national one,
-    ``apart`` the sentence for those it differs from in one group only."""
+    ``national`` the sentence that says how, and ``apart`` the sentence for
+    those it differs from in one group only."""
     refused = refused or set()
     apart = apart or {}
+    national = national or {}
     log_lines: list[str] = []
     provinces = {u["id"]: fold(u["name"]) for u in admin1}
     first = {fold(u["name"]): u for u in admin1}
     shapes = {u["id"]: u for u in admin2}
-    cite = [{"field": "population/sex_ratio/median_age/religion/language/ethnicity",
-             "name": SOURCE, "url": "https://censo2024.ine.gov.ao/", "year": YEAR,
-             "license": LICENCE}]
     # A 2016 municipality, keyed (its province as drawn, folded name): its 2024
     # counts, the 2024 municipalities it is made of, and their table rows.
     old_units: dict[tuple[str, str], dict[str, Any]] = {}
     shape_totals: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])
     shape_groups: dict[str, dict[tuple[int, int | None], int]] = defaultdict(
         lambda: defaultdict(int))
-    shape_reports: dict[str, list[str]] = defaultdict(list)
+    shape_reps: dict[str, list[Report]] = defaultdict(list)
     with_old = set()
     # Provinces as drawn whose report's table on the 2016 division only repeats
-    # the 2024 municipalities of the same names: the report's province, and how
-    # many municipalities of 2024 it leaves out.
-    repeated: dict[str, tuple[str, int]] = {}
+    # the 2024 municipalities of the same names: the report, and how many
+    # municipalities of 2024 it leaves out.
+    repeated: dict[str, tuple[Report, int]] = {}
     for rep in reports:
         shape = REPORTS[rep.stem]
         if rep.total:
             for j in range(3):
                 shape_totals[shape][j] += rep.total[j]
-            shape_reports[shape].append(SHOWN.get(rep.stem, rep.stem))
+            shape_reps[shape].append(rep)
             for low, high, n in rep.five_year:
                 shape_groups[shape][(low, high)] += n
         if rep.namesakes:
-            repeated[shape] = (SHOWN.get(rep.stem, rep.stem), rep.namesakes)
+            repeated[shape] = (rep, rep.namesakes)
         if not rep.old:
             log_lines.append(f"  {rep.stem}: no table on the 2016 municipalities")
             for p in rep.problems:
@@ -1097,18 +1467,36 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                 if not plausible(name, vals["TOTAL"], sizes.get(k, 0)):
                     rep.problems.append(f"{name}: {k}'s row counts {vals['TOTAL']:,}, against "
                                         f"{sizes.get(k, 0):,} residents; left out")
+                    rep.refusals[name][k] = ("plausible", vals["TOTAL"], sizes.get(k, 0))
                     del rows[name][k]
         valid = set()
         for name in TABLES:
-            bad = [p for k, v in rows[name].items()
-                   if name in NOTES and (p := check_composition(name, k, v))]
-            rep.problems += bad
-            if not bad and rows[name]:
+            if name not in NOTES:
+                if rows[name]:
+                    valid.add(name)
+                continue
+            # A row whose groups do not make its total is left out; when more
+            # than a third of them do not, the columns were not read right and
+            # the table is.
+            bad = {k: p for k, v in rows[name].items()
+                   if (p := check_composition(name, k, v))}
+            rep.problems += list(bad.values())
+            if bad and 3 * len(bad) > len(rows[name]):
+                for k in rows[name]:
+                    rep.refusals[name].setdefault(k, ("table", len(bad), len(rows[name])))
+                rows[name] = {}
+                continue
+            for k in bad:
+                v = rows[name].pop(k)
+                rep.refusals[name][k] = ("sums", sum(x for g, x in v.items() if g != "TOTAL"),
+                                         v["TOTAL"])
+            if rows[name]:
                 valid.add(name)
         for n, t, m, f in rep.old:
             unit = old_units.setdefault((fold(shape), fold(n)), {
-                "name": n, "counts": [0, 0, 0], "parts": [], "rows": [], "fields": set(TABLES),
-                "exact": True, "resolved": True, "counted": True, "made": 0})
+                "name": shown_name(n), "key": fold(n), "rep": rep, "counts": [0, 0, 0],
+                "parts": [], "keys": [], "rows": [], "fields": set(TABLES), "exact": True,
+                "resolved": True, "counted": True, "made": 0})
             for j, v in enumerate((t, m, f)):
                 unit["counts"][j] += v
             got = parts.get(fold(n))
@@ -1122,6 +1510,7 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
             names, exact = got
             unit["exact"] = unit["exact"] and exact
             unit["parts"] += names
+            unit["keys"] += [fold(part) for part in names]
             unit["made"] += sum(sizes[fold(part)] for part in names)
             unit["rows"] += [{name: rows[name].get(fold(part), {}) for name in TABLES}
                              for part in names]
@@ -1132,7 +1521,10 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         log_lines.append(f"  {rep.stem}: " + "; ".join(
             f"{o} = " + (" + ".join(parts[fold(o)][0]) + ("" if parts[fold(o)][1] else
                                                           " (within 2%)")
-                         if fold(o) in parts else "?") for o, *_ in rep.old))
+                         if fold(o) in parts else
+                         "? " + " | ".join(f"{' + '.join(a)} {s:,}"
+                                           for a, s in rep.candidates.get(fold(o), [])))
+            for o, *_ in rep.old))
     records: list[dict[str, Any]] = []
     # First level: the provinces as drawn, from the reports' totals.
     have = {rep.stem for rep in reports if rep.total}
@@ -1144,27 +1536,55 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         if poly is None:
             log_lines.append(f"  province {shape}: no polygon")
             continue
+        reps = shape_reps[shape]
+        given = ["population", "sex_ratio"]
+        quadros = ["total"]
         fields: dict[str, Any] = {
             "population": measure(t, year=YEAR, source=SOURCE),
             "sex_ratio": measure(ratio(m, f), unit="males_per_1000_females", year=YEAR,
                                  source=SOURCE),
             "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
         }
-        if len(shape_reports[shape]) > 1:
+        shown = [SHOWN.get(r.stem, r.stem) for r in reps]
+        if len(reps) > 1:
             fields["population_note"] = (
-                f"The 2024 census's counts for {listed(shape_reports[shape])} provinces, "
-                f"which were made out of this one in 2024, added together.")
-        flat = [(lo, hi, n) for (lo, hi), n in sorted(shape_groups[shape].items(),
-                                                       key=lambda kv: kv[0][0])]
-        if flat and abs(sum(n for *_, n in flat) - t) <= 5 * len(shape_reports[shape]):
-            med = grouped_median(flat)
+                f"The 2024 census's counts for {listed(shown)} provinces, which were made out "
+                f"of this one in 2024, added together.")
+        if len(reps) == 1 and reps[0].median is not None:
+            fields["median_age"] = measure(reps[0].median, unit="years", year=YEAR,
+                                           source=SOURCE)
+            fields["median_age_note"] = "The median age the 2024 census publishes for the province."
+            given.append("median_age")
+            quadros.append("medians")
+        else:
+            flat = [(lo, hi, n) for (lo, hi), n in sorted(shape_groups[shape].items(),
+                                                           key=lambda kv: kv[0][0])]
+            med = (grouped_median(flat) if flat and abs(sum(n for *_, n in flat) - t)
+                   <= 5 * len(reps) else None)
             if med is not None:
                 fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
-                fields["median_age_note"] = ("The median of the 2024 census's counts by "
-                                             "five-year age group.")
+                if len(reps) > 1:
+                    note = ("The median of the 2024 census's counts by five-year age group for "
+                            f"{listed(shown)} provinces, added together")
+                    if all(r.median is not None for r in reps):
+                        note += ("; the census publishes "
+                                 + listed([f"{r.median:g} years for {s}"
+                                           for r, s in zip(reps, shown)])
+                                 + ", not a median for the two together.")
+                        quadros.append("medians")
+                    else:
+                        note += "."
+                else:
+                    note = "The median of the 2024 census's counts by five-year age group."
+                    log_lines.append(f"  province {shape}: Quadro 1.7 not read; median from "
+                                     f"the five-year groups")
+                fields["median_age_note"] = note
+                given.append("median_age")
+                quadros.append("five_year")
         records.append(record(f"AGO-RGPH2024-{poly['id']}", poly["name"], level="admin1",
                               parent="AGO", country="AGO", match_by="shape_id",
-                              shape_id=poly["id"], sources=cite, **fields))
+                              shape_id=poly["id"], sources=cite(reps, given, [], quadros),
+                              **fields))
     # Second level: each polygon and the 2016 municipalities it is.
     on_polygon: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for (shape_key, key), unit in old_units.items():
@@ -1183,7 +1603,10 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         if not all(units):
             log_lines.append(f"  {poly['name']}: drawn with {listed(list(wanted))}, not all "
                              f"of them read")
-    stated = dict(NOT_DESCRIBED)
+    # Polygons no census figure describes: the note, the reports that say so,
+    # and their tables.
+    stated: dict[str, tuple[str, list[Report], list[str]]] = {
+        sid: (note, [], []) for sid, note in NOT_DESCRIBED.items()}
     for sid, units in sorted(on_polygon.items(), key=lambda kv: shapes[kv[0]]["name"]):
         poly = shapes[sid]
         if sid in NOT_DESCRIBED or not units:
@@ -1191,13 +1614,22 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         if len(units) > 1 and sid not in DRAWN_TOGETHER:
             log_lines.append(f"  {poly['name']}: {len(units)} municipalities on it; left out")
             continue
+        rep = units[0]["rep"]
+        drawn_in = REPORTS[rep.stem]
         names = [u["name"] for u in units]
+        stood = "it stood" if len(names) == 1 else "they stood"
+        sizes = {fold(n): t for n, t, *_ in rep.new}
+        labels = {fold(n): n for n, *_ in rep.new}
         if not all(u["counted"] for u in units):
-            stated[sid] = unmatched(names)
+            short = next(u for u in units if not u["counted"])
+            stated[sid] = (short_note(rep, short["name"]), [rep], ["old"])
             log_lines.append(f"  {poly['name']}: its row not made by the 2024 municipalities; "
                              f"no count")
             continue
         t, m, f = (sum(u["counts"][j] for u in units) for j in range(3))
+        given = ["population", "sex_ratio"]
+        noted: list[str] = []
+        quadros = ["old"]
         fields = {"population": measure(t, year=YEAR, source=SOURCE),
                   "sex_ratio": measure(ratio(m, f), unit="males_per_1000_females", year=YEAR,
                                        source=SOURCE),
@@ -1209,15 +1641,19 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                 + listed([f"{u['name']} ({u['counts'][0]:,})" for u in units])
                 + ", added together. " + DRAWN_TOGETHER[sid][1])
         usable = set.intersection(*(u["fields"] for u in units)) - {
-            name for shape, name in refused if fold(shape) == provinces.get(poly["parent"])}
+            name for shape, name in refused if fold(shape) == fold(drawn_in)}
         parts = [p for u in units for p in u["parts"]]
+        keys = [k for u in units for k in u["keys"]]
         rows = [r for u in units for r in u["rows"]]
         made = sum(u["made"] for u in units)
-        stood = "it stood" if len(names) == 1 else "they stood"
         if not all(u["resolved"] for u in units):
-            parts = []
+            open_unit = next(u for u in units if not u["resolved"])
+            note = unmatched(open_unit["name"], open_unit["counts"][0],
+                             rep.candidates.get(open_unit["key"], []))
+            parts, keys, rows = [], [], []
             for name in NOTES:
-                fields[name] = gap(NOT_AVAILABLE, unmatched(names))
+                fields[name] = gap(NOT_AVAILABLE, note)
+                noted.append(name)
         if all(u["exact"] for u in units):
             share = ""
         elif len(parts) == 1:
@@ -1243,6 +1679,9 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         if parts:
             for name in NOTES:
                 if name not in usable:
+                    fields[name] = gap(NOT_AVAILABLE, why_not(
+                        rep, name, keys, labels, names, stood, drawn_in, refused, national))
+                    noted.append(name)
                     continue
                 total = sum(r[name]["TOTAL"] for r in rows)
                 counts: dict[str, int] = defaultdict(int)
@@ -1253,33 +1692,29 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                 fields[name] = shares({k: v for k, v in counts.items() if v}, total=total) \
                     or gap(NOT_AVAILABLE)
                 fields[f"{name}_year"] = YEAR
-                drawn_in = next((sh for sh in set(REPORTS.values())
-                                 if fold(sh) == provinces.get(poly["parent"])), "")
-                fields[f"{name}_note"] = NOTES[name] + tail + apart.get((drawn_in, name), "")
-            if {"age_broad", "age_other"} <= usable:
-                med, why = median_of(rows)
-                if med is not None:
-                    fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
-                    fields["median_age_note"] = (
-                        "Taken from the 2024 census's counts by age group (0-14, 15-19, "
-                        "20-29, 30-54, 55-64, 65-74, 75 and over)"
-                        + (f" for {listed(parts)}, added together." if len(parts) > 1
-                           else f" for {parts[0]}." if share else ".") + share)
-                else:
-                    log_lines.append(f"  {poly['name']}: no median ({why})")
+                fields[f"{name}_note"] = (NOTES[name] + tail
+                                          + patched_note(rep, (name,), keys, labels, sizes)
+                                          + apart.get((drawn_in, name), ""))
+                given.append(name)
+                quadros.append(name)
+            median_fields(rep, units, parts, keys, rows, names, stood, share, tail, usable,
+                          labels, sizes, fields, given, quadros, log_lines, poly["name"])
         records.append(record(f"AGO-RGPH2024-{sid}", poly["name"], level="admin2", parent="AGO",
-                              country="AGO", match_by="shape_id", shape_id=sid, sources=cite,
-                              **fields))
+                              country="AGO", match_by="shape_id", shape_id=sid,
+                              sources=cite([rep], given, noted, quadros), **fields))
         log_lines.append(f"  {poly['name']}: {t:,} ({' + '.join(names)}; from "
-                         f"{', '.join(parts) or '-'}; {', '.join(sorted(usable)) or 'no tables'})")
+                         f"{', '.join(parts) or '-'}; {', '.join(sorted(usable)) or 'no tables'}"
+                         f"; median {fields.get('median_age', {}).get('value', '-')}"
+                         f"; not shown: {', '.join(n for n in NOTES if n in noted) or '-'})")
     # The polygons no census figure describes say so.
     read = {rep.stem for rep in reports if rep.total}
-    for shape, (shown, left_out) in sorted(repeated.items()):
-        note = (f"The 2024 census publishes {shown} province's figures only for the "
-                f"municipalities created in 2024; its table of the municipalities as they "
-                f"stood before repeats the 2024 municipalities of the same names and leaves "
-                f"out the {left_out} others, so none of its figures describes this polygon.")
-        stated.update({u["id"]: note for u in admin2
+    for shape, (rep, left_out) in sorted(repeated.items()):
+        note = (f"The 2024 census publishes {SHOWN.get(rep.stem, rep.stem)} province's figures "
+                f"only for the municipalities created in 2024; its table of the municipalities "
+                f"as they stood before repeats the 2024 municipalities of the same names and "
+                f"leaves out the {left_out} others, so none of its figures describes this "
+                f"polygon.")
+        stated.update({u["id"]: (note, [rep], ["old"]) for u in admin2
                        if provinces.get(u["parent"]) == fold(shape) and u["id"] not in stated})
     for shape in sorted(NO_2016_TABLE - with_old):
         stems = [s for s, m in REPORTS.items() if m == shape]
@@ -1290,24 +1725,119 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                 f"{'province' if len(names) == 1 else 'provinces'} only by the municipalities "
                 f"created in 2024, which are not the municipalities drawn here, so none of its "
                 f"figures describes this polygon.")
-        stated.update({u["id"]: note for u in admin2
+        stated.update({u["id"]: (note, shape_reps[shape], ["new"]) for u in admin2
                        if provinces.get(u["parent"]) == fold(shape) and u["id"] not in stated})
-    for sid, note in sorted(stated.items()):
+    for sid in sorted(set(stated) | set(OTHER_GROUND)):
         poly = shapes.get(sid)
         if poly is None:
             continue
-        fields = {name: gap(NOT_AVAILABLE, note) for name in NOTES}
+        fields = {}
+        sources: list[dict[str, Any]] = []
+        if sid in stated:
+            note, reps, quadros = stated[sid]
+            fields.update({name: gap(NOT_AVAILABLE, note) for name in NOTES})
+            sources += cite(reps, [], list(NOTES), quadros)
+        ground = NOT_DESCRIBED.get(sid) or OTHER_GROUND.get(sid)
+        if ground:
+            # The figures published for the municipality of its name, the
+            # projections among them, do not describe it either.
+            for name in GROUND_FIELDS:
+                fields[name] = {**gap(NOT_AVAILABLE, ground), "displaces_before": YEAR + 1,
+                                "displaces_undated": True}
+            explained = [*GROUND_FIELDS, *(NOTES if sid in NOT_DESCRIBED else ())]
+            sources.append({**OCHA_BOUNDARIES, "field": "/".join(
+                f"{f} note" for f in FIELD_ORDER if f in explained)})
         records.append(record(f"AGO-RGPH2024-{sid}", poly["name"], level="admin2", parent="AGO",
-                              country="AGO", match_by="shape_id", shape_id=sid, sources=cite,
-                              **fields))
+                              country="AGO", match_by="shape_id", shape_id=sid,
+                              sources=sources, **fields))
     return records, log_lines
 
 
+def why_not(rep: Report, name: str, keys: list[str], labels: dict[str, str],
+            names: list[str], stood: str, drawn_in: str, refused: set[tuple[str, str]],
+            national: dict[tuple[str, str], str]) -> str:
+    """The sentence for a composition the census prints but that is not shown."""
+    if (drawn_in, name) in refused:
+        return national.get((drawn_in, name)) or (
+            f"The 2024 census's provincial report for {drawn_in} and its national report give "
+            f"the province different {FIGURES[name]} figures, so the municipalities' are not "
+            f"shown.")
+    for k in keys:
+        reason = rep.refusals.get(name, {}).get(k)
+        if reason:
+            return reason_note(rep, name, labels.get(k, k), reason, names, stood)
+    return reason_note(rep, name, labels.get(keys[0], keys[0]) if keys else listed(names),
+                       ("missing",), names, stood)
+
+
+def median_fields(rep: Report, units: list[dict[str, Any]], parts: list[str], keys: list[str],
+                  rows: list[dict[str, dict[str, int]]], names: list[str], stood: str,
+                  share: str, tail: str, usable: set[str], labels: dict[str, str],
+                  sizes: dict[str, int], fields: dict[str, Any], given: list[str],
+                  quadros: list[str], log_lines: list[str], polygon: str) -> None:
+    """A polygon's median age: the census's own (Quadro 1.7) where it is one
+    municipality of 2024; otherwise taken from its municipalities' counts by age
+    group, added together, and the note says so."""
+    single = len(parts) == 1 and len(units) == 1
+    published = [rep.medians.get(k) for k in keys]
+    if single and published[0] is not None:
+        fields["median_age"] = measure(published[0], unit="years", year=YEAR, source=SOURCE)
+        fields["median_age_note"] = (f"The median age the 2024 census publishes for "
+                                     f"{parts[0]}." + (tail or share))
+        given.append("median_age")
+        quadros.append("medians")
+        return
+    if not {"age_broad", "age_other"} <= usable:
+        return
+    med, why = median_of(rows)
+    if med is None:
+        log_lines.append(f"  {polygon}: no median ({why})")
+        return
+    if single and keys[0] in rep.medians:
+        note = (f"The census prints no median age for {parts[0]} as a whole, only for its "
+                f"communes; this one is taken from its counts by age group {AGE_GROUPS}.")
+    elif single:
+        note = f"Taken from the 2024 census's counts by age group {AGE_GROUPS}."
+        log_lines.append(f"  {polygon}: no row of {parts[0]} in Quadro 1.7; median from its "
+                         f"age groups")
+    elif all(p is not None for p in published):
+        note = ("The census publishes a median age for each municipality created in 2024 ("
+                + listed([f"{p} {m:g}" for p, m in zip(parts, published)])
+                + f" years), not for {listed(names)} as {stood} under Lei n.º 18/16; this one "
+                f"is taken from their counts by age group {AGE_GROUPS}, added together.")
+        quadros.append("medians")
+    else:
+        note = (f"Taken from the 2024 census's counts by age group {AGE_GROUPS} for "
+                f"{listed(parts)}, added together; the census publishes no median age for "
+                f"{listed(names)} as {stood} under Lei n.º 18/16.")
+    fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
+    fields["median_age_note"] = note + share + patched_note(
+        rep, ("age_broad", "age_other"), keys, labels, sizes, where="the tables of age groups")
+    given.append("median_age")
+    quadros += ["age_broad", "age_other"]
+
+
+def national_note(shape: str, name: str, off: list[tuple[str, int, int]]) -> str:
+    """The sentence for a province whose provincial and national reports count a
+    composition's groups differently: the largest difference, and the next."""
+    (g, a, b), *rest = sorted(off, key=lambda o: -abs(o[1] - o[2]))
+    extra = ""
+    if rest:
+        g2, c, d = rest[0]
+        more = ", and other groups apart" if len(rest) > 1 else ""
+        extra = f" (and {c:,} against {d:,} under {QUOTED.get(g2, g2)}{more})"
+    return (f"The 2024 census's provincial report for {shape} counts {a:,} people under "
+            f"{QUOTED.get(g, g)} where its national report counts {b:,}{extra}, so the "
+            f"municipalities' {FIGURES[name]} figures are not shown.")
+
+
 def compare_national(reports: list[Report], national_rows: list[dict[str, Any]],
-                     apart: dict[tuple[str, str], str] | None = None
+                     apart: dict[tuple[str, str], str] | None = None,
+                     notes: dict[tuple[str, str], str] | None = None
                      ) -> list[tuple[str, str, str]]:
     """Each province's composition against the national report's, by group, for
-    the provinces as drawn whose every report's table was read."""
+    the provinces as drawn whose every report's table was read; ``notes`` gets
+    the sentence for each refused (province, field)."""
     problems: list[tuple[str, str, str]] = []
     by_shape: dict[str, dict[str, dict[str, int]]] = defaultdict(
         lambda: defaultdict(lambda: defaultdict(int)))
@@ -1354,19 +1884,20 @@ def compare_national(reports: list[Report], national_rows: list[dict[str, Any]],
                 ratio = mine[group] / count if count else 0.0
                 if abs(ratio - 1) > 0.10:
                     off.append(f"{group} {mine[group]:,} against {count:,}")
-                    apart_of.append((group, (mine[group], count)))
+                    apart_of.append((group, mine[group], count))
             if len(off) > 1:
                 problems.append((shape, name, f"{shape} {name}: " + "; ".join(off)))
+                if notes is not None:
+                    notes[(shape, name)] = national_note(shape, name, apart_of)
             elif off:
                 log(f"  national check: {shape} {name}: one group apart, kept: {off[0]}")
                 if apart is not None:
-                    group, counts = apart_of[0]
+                    group, mine_count, theirs_count = apart_of[0]
                     apart[(shape, name)] = (
-                        f" The provincial report counts {counts[0]:,} people of {shape} "
+                        f" The provincial report counts {mine_count:,} people of {shape} "
                         f"province under {QUOTED.get(group, group)}, the census's "
-                        f"national report {counts[1]:,}.")
+                        f"national report {theirs_count:,}.")
     return problems
-
 
 # How a group reads inside a sentence.
 QUOTED = {"No religion": "no religion", "Not stated": "no answer",
@@ -1382,23 +1913,56 @@ ALTERNATES = {"Uige": ("UIGE", "Uíge", "UÍGE"), "Zaire": ("ZAIRE",),
               "Cuando_Cubango": ("CUANDO", "Cuando", "CUANDO_CUBANGO")}
 
 
-def fetch_report(stem: str) -> bytes:
+# The census's site links Uíge's and Cuanza Sul's reports but answers 404 for
+# them. INE also publishes the provincial reports among its own publications,
+# under numbered file names; a copy is taken only when its first pages name
+# the province and the 2024 definitive results.
+INE_COPIES = {
+    "Uige": ("https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/"
+             "Publicacao_639105199780531702.pdf",
+             "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/"
+             "Publicacao_639120325078684256.pdf"),
+    "Cuanza_Sul": ("https://ine.gov.ao/Arquivos/arquivosCarregados/Carregados/"
+                   "Publicacao_639065784580611643.pdf",),
+}
+COPY_OF = {"Uige": "provinciadouige", "Cuanza_Sul": "provinciadocuanzasul"}
+
+
+def names_province(blob: bytes, stem: str) -> bool:
+    from pypdf import PdfReader                      # noqa: PLC0415
+    text = ""
+    for page in PdfReader(io.BytesIO(blob)).pages[:8]:
+        try:
+            text += page.extract_text() or ""
+        except Exception:                            # noqa: BLE001
+            continue
+    said = fold(text)
+    return COPY_OF[stem] in said and "resultadosdefinitivos" in said and "2024" in said
+
+
+def fetch_report(stem: str) -> tuple[bytes, str]:
+    """The report and the address it is cited at."""
     import urllib.parse                              # noqa: PLC0415
     tried = []
     names = (f"Relatorio_Provincial_{stem}_Censo2024", *ALTERNATES.get(stem, ()), stem.upper())
     urls = ["https://censo2024.ine.gov.ao/" + urllib.parse.quote(n) + ".pdf" for n in names]
     # The Internet Archive's copy, where the site answers 404 for a file it links.
-    urls.append("https://web.archive.org/web/2026id_/" + urls[0])
-    for url in urls:
+    archive = "https://web.archive.org/web/2026id_/" + urls[0]
+    copies = INE_COPIES.get(stem, ())
+    for url in [*urls, archive, *copies]:
         name = url.rsplit("/", 1)[-1]
         try:
             blob = http_get(url, binary=True, cache=False, timeout=600)
         except Exception as exc:                      # noqa: BLE001
             tried.append(f"{name}: {exc}")
             continue
-        if blob[:4] == b"%PDF":
-            return blob
-        tried.append(f"{name}: not a PDF")
+        if blob[:4] != b"%PDF":
+            tried.append(f"{name}: not a PDF")
+            continue
+        if url in copies and not names_province(blob, stem):
+            tried.append(f"{name}: not the 2024 report of {SHOWN.get(stem, stem)}")
+            continue
+        return blob, urls[0] if url == archive else url
     raise RuntimeError("; ".join(tried))
 
 
@@ -1467,14 +2031,14 @@ def main() -> int:
         for part in args.debug.split(";"):
             stem, _, numbers = part.partition(":")
             try:
-                debug(stem, fetch_report(stem), [int(n) for n in numbers.split(",") if n])
+                debug(stem, fetch_report(stem)[0], [int(n) for n in numbers.split(",") if n])
             except Exception as exc:                  # noqa: BLE001
                 log(f"== {stem}: {type(exc).__name__}: {exc}")
         return 0
     if args.survey:
         for stem in stems:
             try:
-                survey(stem, fetch_report(stem))
+                survey(stem, fetch_report(stem)[0])
             except Exception as exc:                  # noqa: BLE001
                 log(f"== {stem}: {type(exc).__name__}: {exc}")
         return 0
@@ -1482,12 +2046,12 @@ def main() -> int:
     failed: list[str] = []
     for stem in stems:
         try:
-            blob = fetch_report(stem)
+            blob, url = fetch_report(stem)
             texts = page_texts(blob)
             wanted = {i for i, t in enumerate(texts)
                       if any(k in t for k in (*SEX_TABLES, "porgruposetariosquinquenais",
-                                              *(k for s in TABLES.values()
-                                                for k in keys_of(s))))}
+                                              MEDIAN_KEY, *(k for s in TABLES.values()
+                                                            for k in keys_of(s))))}
             wanted |= {i + 1 for i in wanted if i + 1 < len(texts)}
             pages: list[list[Row]] = [[] for _ in texts]
             with pdfplumber.open(io.BytesIO(blob)) as pdf:
@@ -1496,21 +2060,30 @@ def main() -> int:
                                                        keep_blank_chars=False)
                     pages[i] = rows_of(words)
             rep = read_report(stem, pages, texts)
+            rep.url = url
         except Exception as exc:                      # noqa: BLE001
             failed.append(stem)
             log(f"angola_municipios: {stem}: {type(exc).__name__}: {exc}")
             continue
         reports.append(rep)
-        log(f"angola_municipios: {stem}: {len(blob):,} bytes, {len(texts)} pages, "
-            f"{len(wanted)} read; province {rep.province!r} {rep.total}; "
+        log(f"angola_municipios: {stem}: {url.rsplit('/', 1)[-1]}, {len(blob):,} bytes, "
+            f"{len(texts)} pages, {len(wanted)} read; province {rep.province!r} {rep.total}; "
             f"{len(rep.new)} municipalities of 2024, {len(rep.old)} of 2016; "
-            + ", ".join(f"{k} {len(v)} rows" for k, v in rep.tables.items()))
+            + ", ".join(f"{k} {len(v)} rows" for k, v in rep.tables.items())
+            + f"; Quadros {rep.quadros}")
         log("    2016: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.old))
         log("    2024: " + "; ".join(f"{n} {t:,}" for n, t, *_ in rep.new))
+        log(f"    median ages (Quadro {rep.quadros.get('medians', '?')}): province {rep.median}; "
+            + "; ".join(f"{n} {rep.medians.get(fold(n), '-')}" for n, *_ in rep.new))
+        for table, got in rep.patched.items():
+            for k, (how, printed, used) in got.items():
+                log(f"    {table}: {k}'s row {printed:,} replaced by its communes ({how}): "
+                    f"{used:,}")
     path = PROCESSED / "angola_province.json"
-    national = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    national_rows = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
     apart: dict[tuple[str, str], str] = {}
-    disagree = compare_national(reports, national, apart)
+    national: dict[tuple[str, str], str] = {}
+    disagree = compare_national(reports, national_rows, apart, national)
     for _, _, line in disagree[:80]:
         log(f"  national check: {line}")
     refused = {(shape, name) for shape, name, _ in disagree}
@@ -1518,7 +2091,7 @@ def main() -> int:
         log(f"  {shape}: {name} left out, its provincial table not the national report's")
     admin1 = json.loads((SITE / "admin1" / "AGO.units.json").read_text(encoding="utf-8"))
     admin2 = json.loads((SITE / "admin2" / "AGO.units.json").read_text(encoding="utf-8"))
-    records, lines = build(reports, admin1, admin2, refused, apart)
+    records, lines = build(reports, admin1, admin2, refused, apart, national)
     for line in lines:
         log(line)
     a2 = [r for r in records if r["level"] == "admin2"]

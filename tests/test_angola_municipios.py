@@ -207,6 +207,44 @@ def sex_pages():
     return [new, old, five]
 
 
+def decimal_words(top, label, left, values, rights):
+    """A row of Quadro 1.7: its label, then 'média' and 'mediana' as '22,1'."""
+    words, x = [], left
+    for part in label.split():
+        words.append((top, x, x + 5.0 * len(part), part))
+        x += 5.0 * len(part) + 3
+    for v, r in zip(values, rights):
+        text = f"{v:.1f}".replace(".", ",")
+        words.append((top, r - 4.0 * len(text), r, text))
+    return words
+
+
+# Quadro 1.7's rows for Bengo: (label, média, mediana); None for a heading.
+MEDIANS = [("Bengo", 22.1, 20.0), ("Área de residência", None, None), ("Urbana", 21.0, 19.0),
+           ("Rural", 23.0, 21.0), ("Sexo", None, None), ("Homens", 22.0, 19.0),
+           ("Mulheres", 22.2, 20.0), ("Municípios / Comunas", None, None),
+           ("Dande", 21.5, 18.0), ("Caxito", 21.0, 18.0), ("Mabubas", 23.0, 19.0),
+           ("Panguila", 20.0, 17.0), ("Panguila", 20.0, 17.0),
+           ("Barra do Dande", 23.4, 21.0), ("Barra do Dande", 23.4, 21.0),
+           ("Úcua", 22.0, 19.0), ("Úcua", 22.0, 19.0),
+           ("Quibaxe", 21.0, 17.0), ("Quibaxe", 21.2, 17.0), ("Coxe", 20.0, 16.0),
+           ("Piri", 20.5, 16.0), ("Piri", 20.5, 16.0)]
+
+
+def median_page(entries=MEDIANS):
+    page = Page()
+    page.title("Quadro 1.7 - Idade média e mediana da população por área de residência e "
+               "sexo, 2024")
+    page.head([("Média", 240), ("Mediana", 290)])
+    for label, mean, median in entries:
+        if mean is None:
+            page.head([(label, LEFT)])
+        else:
+            page.words += decimal_words(page.top, label, LEFT, (mean, median), (260.0, 320.0))
+            page.top += 12
+    return page
+
+
 def report_pages():
     pages = sex_pages()
     pages += composition_pages("Quadro 6.1 - População de 2 ou mais anos, segundo grupos "
@@ -215,6 +253,7 @@ def report_pages():
     pages += language_pages()
     pages.append(religion_page())
     pages += age_pages()
+    pages.append(median_page())
     return [am.rows_of(p.words) for p in pages], [p.text() for p in pages]
 
 
@@ -239,6 +278,15 @@ class Reading(unittest.TestCase):
         self.assertEqual(len(rep.new), 6)
         self.assertEqual(rep.old[1], ("Dembos", 70_700, 35_598, 35_102))
         self.assertEqual(len(rep.five_year), 20)
+        # Quadro 1.7: the province's median and each 2024 municipality's, not
+        # its first commune's (Dande's Caxito).
+        self.assertEqual(rep.median, 20.0)
+        self.assertEqual(rep.medians, {"dande": 18.0, "panguila": 17.0, "barradodande": 21.0,
+                                       "ucua": 19.0, "quibaxe": 17.0, "piri": 16.0})
+        self.assertEqual({k: rep.quadros[k] for k in ("new", "old", "five_year", "medians",
+                                                      "ethnicity", "religion")},
+                         {"new": "10", "old": "11", "five_year": "1.3", "medians": "1.7",
+                          "ethnicity": "6.1", "religion": "7.1"})
         eth = am.municipalities(rep, "ethnicity", rep.tables["ethnicity"])
         self.assertEqual(eth["dande"]["TOTAL"], 138_560)
         self.assertEqual(set(eth["piri"]), {"TOTAL", "Bakongo", "Ambundu", "Not stated", "Other"})
@@ -284,6 +332,47 @@ class Building(unittest.TestCase):
         self.assertEqual(dande["population"]["value"], 418_274)
         self.assertIn("Lei n.º 18/16", dande["language_note"])
 
+    def test_medians_published_and_worked_out(self):
+        pages, texts = report_pages()
+        rep = am.read_report("Bengo", pages, texts)
+        records, _ = am.build([rep], ADMIN1, ADMIN2)
+        by = {(r["level"], r["name"]): r for r in records}
+        bengo = by[("admin1", "Bengo")]
+        self.assertEqual(bengo["median_age"]["value"], 20.0)
+        self.assertEqual(bengo["median_age_note"],
+                         "The median age the 2024 census publishes for the province.")
+        # Dembos is two municipalities of 2024: no median of its own is published.
+        dembos = by[("admin2", "Dembos-Quibaxe")]
+        self.assertIn("(Quibaxe 17 and Piri 16 years), not for Dembos", dembos["median_age_note"])
+        self.assertIn("taken from their counts by age group", dembos["median_age_note"])
+
+    def test_one_municipality_shows_its_published_median(self):
+        rep = am.Report("Zaire")
+        rep.medians = {"tomboco": 16.0}
+        fields, given, quadros, lines = {}, [], [], []
+        am.median_fields(rep, [{"name": "Tomboco"}], ["Tomboco"], ["tomboco"], [{}],
+                         ["Tomboco"], "it stood", "", "", set(), {}, {}, fields, given,
+                         quadros, lines, "Tomboco")
+        self.assertEqual(fields["median_age"]["value"], 16.0)
+        self.assertEqual(fields["median_age_note"],
+                         "The median age the 2024 census publishes for Tomboco.")
+        self.assertEqual((given, quadros), (["median_age"], ["medians"]))
+
+    def test_each_record_cites_what_it_gives(self):
+        pages, texts = report_pages()
+        rep = am.read_report("Bengo", pages, texts)
+        rep.url = "https://censo2024.ine.gov.ao/Relatorio_Provincial_Bengo_Censo2024.pdf"
+        records, _ = am.build([rep], ADMIN1, ADMIN2)
+        by = {(r["level"], r["name"]): r for r in records}
+        (province,) = by[("admin1", "Bengo")]["sources"]
+        self.assertEqual(province["field"], "population/sex_ratio/median_age")
+        self.assertTrue(province["name"].endswith("Bengo province report: Quadros 10 and 1.7"))
+        self.assertEqual(province["url"], rep.url)
+        (dembos,) = by[("admin2", "Dembos-Quibaxe")]["sources"]
+        self.assertEqual(dembos["field"],
+                         "population/sex_ratio/median_age/ethnicity/language/religion")
+        self.assertIn("Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5", dembos["name"])
+
     def test_not_described_polygons_say_why(self):
         admin2 = ADMIN2 + [{"id": "91424787B4488869677577", "name": "Pango-Aluquem",
                             "parent": "N"}]
@@ -291,6 +380,34 @@ class Building(unittest.TestCase):
         pango = next(r for r in records if r["name"] == "Pango-Aluquem")
         self.assertIn("39%", pango["ethnicity"]["note"])
         self.assertNotIn("value", pango["population"])
+        # Nor do projections for Pango Aluquém: its population, median age and sex
+        # ratio say so, and put such figures aside.
+        for field in ("population", "median_age", "sex_ratio"):
+            self.assertIn("whether the 2024 census's or a projection", pango[field]["note"])
+            self.assertEqual(pango[field]["displaces_before"], am.YEAR + 1)
+            self.assertTrue(pango[field]["displaces_undated"])
+        (cited,) = pango["sources"]
+        self.assertEqual(cited["field"], "population note/sex_ratio note/median_age note/"
+                                         "ethnicity note/language note/religion note")
+        self.assertIn("cod-ab-ago", cited["url"])
+
+    def test_luanda_polygons_on_other_ground(self):
+        admin1 = ADMIN1 + [{"id": "L", "name": "Luanda"}]
+        admin2 = ADMIN2 + [{"id": "91424787B66059706224288", "name": "Belas", "parent": "L"}]
+        records, _ = am.build([], admin1, admin2)
+        belas = next(r for r in records if r["name"] == "Belas")
+        self.assertIn("about 30% in Viana", belas["population"]["note"])
+        self.assertTrue(belas["median_age"]["displaces_undated"])
+        self.assertNotIn("note", belas["religion"])      # Luanda's reports not read here
+        self.assertEqual([s["field"] for s in belas["sources"]],
+                         ["population note/sex_ratio note/median_age note"])
+
+    def test_names_as_notes_show_them(self):
+        self.assertEqual(am.shown_name("Cacongo(ex_Lândana)"), "Cacongo (ex-Lândana)")
+        self.assertEqual(am.shown_name("Catabola (ex. Nova Sintra)"), "Catabola (ex-Nova Sintra)")
+        self.assertEqual(am.shown_name("Cunhinga (Vouga)"), "Cunhinga (Vouga)")
+        self.assertEqual(am.quadro_of("Quadro 1. 7- Idade média e mediana"), "1.7")
+        self.assertEqual(am.quadro_of("Quadro 11 - População residente"), "11")
 
 
 class National(unittest.TestCase):
@@ -307,15 +424,24 @@ class National(unittest.TestCase):
         national = [{"name": "Bengo", "ethnicity": [
             {"group": "Bakongo", "pct": 1.0, "count": total["Ambundu"]},
             {"group": "Ambundu", "pct": 1.0, "count": total["Bakongo"]}]}]
-        problems = am.compare_national([rep], national)
+        notes = {}
+        problems = am.compare_national([rep], national, None, notes)
         self.assertEqual(len(problems), 1)
         self.assertEqual(problems[0][:2], ("Bengo", "ethnicity"))
         self.assertIn("Ambundu", problems[0][2])
-        # The field is then left out of the province's polygons, and the rest kept.
-        records, _ = am.build([rep], ADMIN1, ADMIN2, {("Bengo", "ethnicity")})
+        self.assertRegex(notes[("Bengo", "ethnicity")],
+                         r"^The 2024 census's provincial report for Bengo counts [\d,]+ people "
+                         r"under \w+ where its national report counts [\d,]+ \(and [\d,]+ "
+                         r"against [\d,]+ under \w+\), so the municipalities' ethnic group "
+                         r"figures are not shown\.$")
+        # The field is then left out of the province's polygons, saying why, and
+        # the rest kept.
+        records, _ = am.build([rep], ADMIN1, ADMIN2, {("Bengo", "ethnicity")}, None, notes)
         dande = next(r for r in records if r["name"] == "Dande")
-        self.assertNotIsInstance(dande["ethnicity"], list)
+        self.assertEqual(dande["ethnicity"]["note"], notes[("Bengo", "ethnicity")])
         self.assertIsInstance(dande["religion"], list)
+        self.assertIn("ethnicity note", dande["sources"][0]["field"])
+        self.assertNotIn("/ethnicity/", dande["sources"][0]["field"] + "/")
 
     def test_only_provinces_known_to_lack_the_2016_table_say_so(self):
         pages, texts = report_pages()
@@ -462,7 +588,29 @@ class OldDivision(unittest.TestCase):
         by = {r["name"]: r for r in records if r["level"] == "admin2"}
         self.assertEqual(by["Dande"]["population"]["value"], 1_500)
         self.assertNotIn("value", by["Dembos-Quibaxe"]["population"])
-        self.assertIn("do not match Dembos", by["Dembos-Quibaxe"]["ethnicity"]["note"])
+        self.assertEqual(by["Dembos-Quibaxe"]["ethnicity"]["note"],
+                         "The 2024 census's table of Bengo province's municipalities as they "
+                         "stood under Lei n.º 18/16 adds up to 1,950 residents, 137 short of the "
+                         "province's 2,087, so only the rows that municipalities created in 2024 "
+                         "make exactly are taken, and none makes Dembos's; its figures are not "
+                         "shown.")
+
+    def test_a_municipality_more_than_one_set_makes(self):
+        rep = report([("A", 40_000), ("B", 30_000), ("C", 20_000), ("D", 10_000)],
+                     [("A", 70_000, 33_600, 36_400), ("E", 30_000, 14_400, 15_600)])
+        self.assertEqual(am.crosswalk_parts(rep), {})
+        self.assertEqual(rep.candidates["a"], [(["A", "B"], 70_000), (["A", "C", "D"], 70_000)])
+        admin2 = [{"id": "pa", "name": "A", "parent": "B"}, {"id": "pe", "name": "E", "parent": "B"}]
+        records, _ = am.build([rep], ADMIN1, admin2)
+        a = next(r for r in records if r["name"] == "A")
+        self.assertEqual(a["population"]["value"], 70_000)
+        self.assertEqual(a["religion"]["note"],
+                         "The 2024 census publishes ethnic group, mother tongue and religion only "
+                         "for the municipalities created in 2024, and more than one set of them "
+                         "comes within 2% of A as it stood under Lei n.º 18/16 (70,000 residents) "
+                         "in its residents, its men and its women: A and B make 70,000, and A, C "
+                         "and D 70,000, so it cannot be matched to one set of them, and its own "
+                         "figures for these are not shown.")
 
 
 RELIGION_TITLE = ("Quadro 7.1 - População com 2 ou mais anos por área de residência e "
@@ -563,23 +711,150 @@ class Settling(unittest.TestCase):
 
 
 class Resuming(unittest.TestCase):
-    def test_the_walk_resumes_after_a_municipality_whose_row_is_missing(self):
+    def test_a_municipality_whose_own_row_is_missing_is_its_communes(self):
+        # Cunene's ethnic groups list Cahama's two communes and no row for Cahama:
+        # its namesake commune's 76,090 is too few for its 140,925 residents.
         rep = am.Report("Cunene")
         rep.new = [("Chitado", 35_425, 17_000, 18_425), ("Cahama", 140_925, 68_000, 72_925),
                    ("Cuvelai", 76_582, 37_000, 39_582)]
         rows = [("Cunene", {"TOTAL": 1_000_000}), ("Chitado", {"TOTAL": 32_985}),
-                ("Chitado", {"TOTAL": 32_985}), ("Cahama", {"TOTAL": 76_090}),
-                ("Otchinjau", {"TOTAL": 54_436}), ("Cuvelai", {"TOTAL": 70_729}),
-                ("Cuvelai", {"TOTAL": 70_729})]
+                ("Chitado", {"TOTAL": 32_985}), ("Cahama", {"TOTAL": 76_090, "Herero": 76_090}),
+                ("Otchinjau", {"TOTAL": 54_436, "Herero": 50_000, "Other": 4_436}),
+                ("Cuvelai", {"TOTAL": 70_729}), ("Cuvelai", {"TOTAL": 70_729})]
         got = am.municipalities(rep, "ethnicity", rows)
-        self.assertEqual(set(got), {"chitado", "cuvelai"})
-        self.assertTrue(any("communes of cahama" in p for p in rep.problems))
+        self.assertEqual(set(got), {"chitado", "cahama", "cuvelai"})
+        self.assertEqual(got["cahama"], {"TOTAL": 130_526, "Herero": 126_090, "Other": 4_436})
+        self.assertEqual(rep.patched["ethnicity"]["cahama"], ("namesake", 76_090, 130_526))
+
+    def test_a_misprinted_row_gives_way_to_its_communes(self):
+        # Cunene's mother tongues give Cafima 25,194 against 19,163 residents.
+        rep = am.Report("Cunene")
+        rep.new = [("Nehone", 181_969, 88_000, 93_969), ("Cafima", 19_163, 9_000, 10_163),
+                   ("Chissuata", 7_996, 3_900, 4_096)]
+        rows = [("Cunene", {"TOTAL": 1_688_677}), ("Nehone", {"TOTAL": 170_000}),
+                ("Nehone", {"TOTAL": 120_000}), ("Evale", {"TOTAL": 50_000}),
+                ("Cafima", {"TOTAL": 25_194, "Kwanyama": 25_194}),
+                ("Cafima", {"TOTAL": 17_788, "Kwanyama": 17_000, "Portuguese": 788}),
+                ("Chissuata", {"TOTAL": 7_500}), ("Chissuata", {"TOTAL": 7_500})]
+        got = am.municipalities(rep, "language", rows)
+        self.assertEqual(set(got), {"nehone", "cafima", "chissuata"})
+        self.assertEqual(got["cafima"], {"TOTAL": 17_788, "Kwanyama": 17_000, "Portuguese": 788})
+        self.assertEqual(rep.patched["language"]["cafima"], ("communes", 25_194, 17_788))
+        note = am.patched_note(rep, ("language",), ["cafima"], {"cafima": "Cafima"},
+                               {"cafima": 19_163})
+        self.assertEqual(note, " Cafima's own row in that table counts 25,194 people, against "
+                               "its 19,163 residents; its communes' rows, which add up to 17,788, "
+                               "are taken in its place.")
+
+    def test_a_municipality_counted_with_its_neighbour(self):
+        # Cunene's ethnic groups count Naulila's people in Humbe's row too.
+        rep = am.Report("Cunene")
+        rep.new = [("Humbe", 198_400, 95_000, 103_400), ("Naulila", 83_504, 40_000, 43_504)]
+        rows = [("Cunene", {"TOTAL": 2_000_000}), ("Humbe", {"TOTAL": 262_420}),
+                ("Mucope", {"TOTAL": 90_000}), ("Humbe", {"TOTAL": 94_059}),
+                ("Naulila", {"TOTAL": 78_361}), ("Naulila", {"TOTAL": 78_361})]
+        got = am.municipalities(rep, "ethnicity", rows)
+        self.assertEqual(got["humbe"]["TOTAL"], 184_059)
+        self.assertEqual(got["naulila"]["TOTAL"], 78_361)
+
+    def test_a_row_no_communes_make_up_for_is_left_out(self):
+        rep = am.Report("Cunene")
+        rep.new = [("Cahama", 140_925, 68_000, 72_925), ("Cuvelai", 76_582, 37_000, 39_582)]
+        rows = [("Cunene", {"TOTAL": 1_000_000}), ("Cahama", {"TOTAL": 40_000}),
+                ("Otchinjau", {"TOTAL": 30_000}), ("Cuvelai", {"TOTAL": 70_729})]
+        got = am.municipalities(rep, "ethnicity", rows)
+        self.assertEqual(set(got), {"cuvelai"})
+        self.assertEqual(rep.refusals["ethnicity"]["cahama"], ("plausible", 40_000, 140_925))
 
     def test_rows_aligned_on_a_shortened_name_or_their_total(self):
         self.assertTrue(am.aligned("Jamba", "Jamba Mineira", None, None))
         self.assertTrue(am.aligned("Urbama", "Urbana", None, None))
         self.assertTrue(am.aligned("Xa-Muteba", "Cassanje", 40_000, 40_000))
         self.assertFalse(am.aligned("Luau", "Luanda", 10, 20))
+
+
+class Medians(unittest.TestCase):
+    def rep(self, names):
+        rep = am.Report("Malanje")
+        rep.new = [(n, 1_000, 500, 500) for n in names]
+        return rep
+
+    def test_two_column_groups_side_by_side(self):
+        # Malanje's Quadro 1.7: the left group runs on into the right one, whose
+        # rows share the left's baselines or fall between them.
+        left = [("Total", 22.9, 18.0), ("Área de residência", None, None),
+                ("Urbana", 21.8, 18.0), ("Rural", 24.3, 18.0), ("Municípios", None, None),
+                ("Calandula", 25.6, 19.0), ("Calandula", 24.0, 17.0), ("Cota", 27.7, 22.0),
+                ("Malanje", 22.6, 18.0), ("Malanje", 22.4, 17.0)]
+        right = [("Quinguengue", 22.2, 17.0), ("Milando", 24.8, 21.0), ("Milando", 24.8, 21.0),
+                 ("Xandel", 23.7, 18.0), ("Xandel", 23.5, 16.0), ("Moma", 24.2, 18.0)]
+        page = Page()
+        page.title("Quadro 1.7 - Idade média e mediana da população por área de residência e "
+                   "sexo, 2024")
+        page.head([("Média", 200), ("Mediana", 250), ("Média", 470), ("Mediana", 520)])
+        for k, (label, mean, median) in enumerate(left):
+            top = page.top + 12 * k
+            page.words += (header(top, [(label, LEFT)]) if mean is None else
+                           decimal_words(top, label, LEFT, (mean, median), (230.0, 285.0)))
+        for k, (label, mean, median) in enumerate(right):
+            top = page.top + 12 * k + (0 if k % 2 else 6)
+            page.words += decimal_words(top, label, 320.0, (mean, median), (500.0, 555.0))
+        rep = self.rep(["Calandula", "Malanje", "Milando", "Xandel"])
+        am.medians_of(rep, [am.rows_of(page.words)], [page.text()])
+        self.assertEqual(rep.median, 18.0)
+        self.assertEqual(rep.medians, {"calandula": 19.0, "malanje": 18.0, "milando": 21.0,
+                                       "xandel": 18.0})
+
+    def test_a_municipality_printed_without_figures(self):
+        # Benguela's table leaves the row of a municipality of several communes
+        # blank: it has no median of its own, and its commune's is not taken.
+        page = median_page([("Benguela", 22.6, 18.0), ("Municípios", None, None),
+                            ("Bocoio", None, None), ("Bocoio", 22.9, 17.0),
+                            ("Monte Belo", 23.2, 17.0), ("Cubal", 21.6, 16.0),
+                            ("Cubal", 21.6, 16.0)])
+        rep = self.rep(["Bocoio", "Cubal"])
+        am.medians_of(rep, [am.rows_of(page.words)], [page.text()])
+        self.assertEqual(rep.medians, {"bocoio": None, "cubal": 16.0})
+        self.assertEqual(rep.problems, [])
+
+
+class Columns(unittest.TestCase):
+    def test_figures_of_two_columns_printed_close(self):
+        page = Page()
+        page.title("Quadro 6.1 - População com 2 ou mais anos por município, segundo grupos "
+                   "étnicos ou tribos, 2024")
+        rights = [240.0, 256.0, 330.0]
+        page.head([("Quicongo", 200), ("Quimbundu", 226), ("Lunda-Quioco", 280)])
+        page.row("Lunda Sul", [5, 34, 3_451], rights)
+        page.row("Alto Chicapa", [1, 340, 3_451], rights)
+        block = am.blocks_of(am.rows_of(page.words))[0]
+        self.assertEqual([v for *_, v in block.data[1].figures()], [1_340, 3_451])
+        self.assertEqual(am.assign_columns(block), [])
+        self.assertEqual(am.values(block, block.data[1]), [1, 340, 3_451])
+
+    def test_a_row_of_one_figure_in_a_column_group(self):
+        # Lunda Sul's Alto Chicapa: all its people are under columns of the first
+        # group, and the second prints only their number.
+        pages = []
+        for labels, rows in ((["Quicongo", "Quimbundo"],
+                              [("Lunda Sul", [1_000, 2_000]), ("Dala", [400, 600]),
+                               ("Alto Chicapa", [1, 340])]),
+                             (["Não sabe", "Total"],
+                              [("Lunda Sul", [1_050, 4_050]), ("Dala", [1_010, 2_010]),
+                               ("Alto Chicapa", [341])])):
+            page = Page()
+            page.title("Quadro 6.1 - População com 2 ou mais anos por município, segundo "
+                       "grupos étnicos ou tribos, 2024")
+            page.head([(labels[0], 200), (labels[1], 270)])
+            for label, values in rows:
+                page.row(label, values, [240.0, 330.0][-len(values):])
+            pages.append(page)
+        rep = am.Report("Lunda_Sul")
+        got = dict(am.read_table(rep, "ethnicity", am.TABLES["ethnicity"],
+                                 [am.rows_of(p.words) for p in pages], [p.text() for p in pages]))
+        self.assertEqual(got["Alto Chicapa"], {"Bakongo": 1, "Ambundu": 340, "Not stated": 0,
+                                               "TOTAL": 341})
+        self.assertEqual(rep.problems, [])
 
 
 if __name__ == "__main__":
