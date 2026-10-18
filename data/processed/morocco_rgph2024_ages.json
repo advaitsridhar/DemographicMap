@@ -1,0 +1,3345 @@
+[
+  {
+    "id": "MAR-RGPH2024-AGE-5",
+    "level": "admin1",
+    "name": "Béni Mellal-Khénifra",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B63032885328780",
+    "codes": {
+      "hcp": "5"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6",
+    "level": "admin1",
+    "name": "Casablanca-Settat",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B33851053053385",
+    "codes": {
+      "hcp": "6"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-8",
+    "level": "admin1",
+    "name": "Drâa-Tafilalet",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B26242154300952",
+    "codes": {
+      "hcp": "8"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3",
+    "level": "admin1",
+    "name": "Fez-Meknes",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.4,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B83815134303720",
+    "codes": {
+      "hcp": "3"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Région de Fès-Meknès's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-10",
+    "level": "admin1",
+    "name": "Guelmim-Oued Noun",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's note on the southern provinces of the Kingdom (Les provinces du Sud du Royaume: données démographiques, September 2025) puts the region's median age at 31.3 years in 2024, against 27.0 in 2014; that median counts the commune of Al Mahbass, which lies south of the Western Sahara line and outside the region as drawn here, and no median for the region without it is published, so none is shown."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B64069740334949",
+    "codes": {
+      "hcp": "10"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7",
+    "level": "admin1",
+    "name": "Marrakech-Safi",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B60308563647099",
+    "codes": {
+      "hcp": "7"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2",
+    "level": "admin1",
+    "name": "Oriental",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B40056535803135",
+    "codes": {
+      "hcp": "2"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4",
+    "level": "admin1",
+    "name": "Rabat-Salé-Kenitra",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B15955360211262",
+    "codes": {
+      "hcp": "4"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Région de Rabat-Salé-Kénitra's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9",
+    "level": "admin1",
+    "name": "Souss-Massa",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B1820144472977",
+    "codes": {
+      "hcp": "9"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Région de Souss-Massa's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1",
+    "level": "admin1",
+    "name": "Tangier-Tetouan-Al Hoceima",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe",
+        "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "70788906B66040098455254",
+    "codes": {
+      "hcp": "1"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Région de Tanger-Tétouan-Al Hoceima's municipal population in each five-year age group at the 2024 census, in the annex of HCP's provincial notes, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1051",
+    "level": "admin2",
+    "name": "Al Hoceima Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B99920267922653",
+    "codes": {
+      "hcp": "1051"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1151",
+    "level": "admin2",
+    "name": "Chefchaouen Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B54306876372793",
+    "codes": {
+      "hcp": "1151"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1227",
+    "level": "admin2",
+    "name": "Fahs-Anjra Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B56432502406176",
+    "codes": {
+      "hcp": "1227"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1331",
+    "level": "admin2",
+    "name": "Larache Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe",
+        "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B18768670389586",
+    "codes": {
+      "hcp": "1331"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Larache's municipal population in each five-year age group at the 2024 census, in HCP's note on the province, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1511",
+    "level": "admin2",
+    "name": "Prefecture of Tangier - Assilah",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe",
+        "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B99361415702964",
+    "codes": {
+      "hcp": "1511"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de Tanger-Assilah's municipal population in each five-year age group at the 2024 census, in HCP's note on the province, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1405",
+    "level": "admin2",
+    "name": "Province d'Ouezzane إقليم وزان",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 33.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe",
+        "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B93440982531475",
+    "codes": {
+      "hcp": "1405"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province d'Ouezzane's municipal population in each five-year age group at the 2024 census, in HCP's note on the province, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1573",
+    "level": "admin2",
+    "name": "Préfecture de M'diq-Fnideq عمالة المضيق الفنيدق",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe",
+        "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B89687162507810",
+    "codes": {
+      "hcp": "1573"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de M'diq-Fnideq's municipal population in each five-year age group at the 2024 census, in HCP's note on the province, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-1571",
+    "level": "admin2",
+    "name": "Tetouan Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe",
+        "url": "https://www.hcp.ma/downloads/RGPH-2024_t22752.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B84561517472973",
+    "codes": {
+      "hcp": "1571"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Tétouan's municipal population in each five-year age group at the 2024 census, in HCP's note on the province, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2113",
+    "level": "admin2",
+    "name": "Province de Berkane إقليم بركان",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B69343874835814",
+    "codes": {
+      "hcp": "2113"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2167",
+    "level": "admin2",
+    "name": "Province de Driouch إقليم الدريوش",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B88930410593624",
+    "codes": {
+      "hcp": "2167"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2251",
+    "level": "admin2",
+    "name": "Province de Figuig إقليم الناظور",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B25874170222857",
+    "codes": {
+      "hcp": "2251"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2265",
+    "level": "admin2",
+    "name": "Province de Guercif إقليم جرسيف",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B63064605054668",
+    "codes": {
+      "hcp": "2265"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2275",
+    "level": "admin2",
+    "name": "Province de Jerada إقليم جرادة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B21390270390615",
+    "codes": {
+      "hcp": "2275"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2381",
+    "level": "admin2",
+    "name": "Province de Nador إقليم الناظور",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B25654465299878",
+    "codes": {
+      "hcp": "2381"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2533",
+    "level": "admin2",
+    "name": "Province de Taourirt إقليم تاوريرت",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B4563753155162",
+    "codes": {
+      "hcp": "2533"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-2411",
+    "level": "admin2",
+    "name": "Préfecture d'Oujda-Angad عمالة وجدة - أنجاد",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B53695376753874",
+    "codes": {
+      "hcp": "2411"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3061",
+    "level": "admin2",
+    "name": "Prefecture de Meknès عمالة مكناس",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B60043813814440",
+    "codes": {
+      "hcp": "3061"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de Meknès's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3171",
+    "level": "admin2",
+    "name": "Province d'El Hajeb إقليم الحاجب",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B90056368806308",
+    "codes": {
+      "hcp": "3171"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province d'El Hajeb's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3271",
+    "level": "admin2",
+    "name": "Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B64717664824106",
+    "codes": {
+      "hcp": "3271"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province d'Ifrane's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3131",
+    "level": "admin2",
+    "name": "Province de Boulemane إقليم بولمان",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B81090244987905",
+    "codes": {
+      "hcp": "3131"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Boulemane's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3591",
+    "level": "admin2",
+    "name": "Province de Moulay Yacoub إقليم مولاي يعقوب",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B42104761334354",
+    "codes": {
+      "hcp": "3591"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Moulay Yacoub's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3451",
+    "level": "admin2",
+    "name": "Province de Sefrou إقليم صفرو",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 33.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B1478822582790",
+    "codes": {
+      "hcp": "3451"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Sefrou's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3531",
+    "level": "admin2",
+    "name": "Province de Taounate إقليم تاونات",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B36967765471663",
+    "codes": {
+      "hcp": "3531"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Taounate's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3561",
+    "level": "admin2",
+    "name": "Province de Taza اقليم تازة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B85287588144355",
+    "codes": {
+      "hcp": "3561"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Taza's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-3231",
+    "level": "admin2",
+    "name": "Préfecture de Fès عمالة فاس",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.4,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), Les principaux résultats de la région Fès-Meknès selon le RGPH 2024",
+        "url": "https://www.hcp.ma/region-fes/Les-Principaux-Resultats-de-la-Region-Fes-Meknes-selon-le-RGPH-2024_a117.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B2759448404756",
+    "codes": {
+      "hcp": "3231"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de Fès's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4421",
+    "level": "admin2",
+    "name": "Prefecture of Rabat",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 39.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B91545835536411",
+    "codes": {
+      "hcp": "4421"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de Rabat's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4441",
+    "level": "admin2",
+    "name": "Prefecture of Salé",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B6720908192283",
+    "codes": {
+      "hcp": "4441"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de Salé's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4281",
+    "level": "admin2",
+    "name": "Province de Kenitra إقليم القنيطرة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B12662883146655",
+    "codes": {
+      "hcp": "4281"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Kénitra's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4291",
+    "level": "admin2",
+    "name": "Province de Khémisset إقليم الخميسات",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 32.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B24539393832458",
+    "codes": {
+      "hcp": "4291"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Khémisset's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4481",
+    "level": "admin2",
+    "name": "Province de Sidi Kacem إقليم سيدي قاسم",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B9718685225615",
+    "codes": {
+      "hcp": "4481"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Sidi Kacem's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4491",
+    "level": "admin2",
+    "name": "Province de Sidi Slimane إقليم سيدي سليمان",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B64432809888793",
+    "codes": {
+      "hcp": "4491"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Sidi Slimane's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-4501",
+    "level": "admin2",
+    "name": "Préfecture de Skhirate-Témara عمالة الصخيرات-تمارة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra",
+        "url": "https://www.hcp.ma/region-rabat/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B91342156363380",
+    "codes": {
+      "hcp": "4501"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture de Skhirate-Témara's municipal population in each five-year age group at the 2024 census, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-5081",
+    "level": "admin2",
+    "name": "Province d'Azilal إقليم أزيلال",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B10773066300421",
+    "codes": {
+      "hcp": "5081"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-5091",
+    "level": "admin2",
+    "name": "Province de Beni Mellal إقليم بني ملال",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B40957387644980",
+    "codes": {
+      "hcp": "5091"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-5255",
+    "level": "admin2",
+    "name": "Province de Fquih Ben Saleh إقليم الفقيه بن صالح",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B50122508033550",
+    "codes": {
+      "hcp": "5255"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-5311",
+    "level": "admin2",
+    "name": "Province de Khouribga إقليم خريبكة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B15248572972708",
+    "codes": {
+      "hcp": "5311"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-5301",
+    "level": "admin2",
+    "name": "Province de Khénifra إقليم خنيفرة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B52871738396395",
+    "codes": {
+      "hcp": "5301"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6117",
+    "level": "admin2",
+    "name": "Berrechid Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B26045285741175",
+    "codes": {
+      "hcp": "6117"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6181",
+    "level": "admin2",
+    "name": "El Jadida Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B5863178934624",
+    "codes": {
+      "hcp": "6181"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6355",
+    "level": "admin2",
+    "name": "Médiouna Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B92138134403299",
+    "codes": {
+      "hcp": "6355"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6385",
+    "level": "admin2",
+    "name": "Nouaceur Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B89345886069248",
+    "codes": {
+      "hcp": "6385"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6141",
+    "level": "admin2",
+    "name": "Prefecture of Casablanca",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B69656421663665",
+    "codes": {
+      "hcp": "6141"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6371",
+    "level": "admin2",
+    "name": "Prefecture of Mohammédia",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B27397508075839",
+    "codes": {
+      "hcp": "6371"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6111",
+    "level": "admin2",
+    "name": "Province de Benslimane إقليم بن سليمان",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B34372354169334",
+    "codes": {
+      "hcp": "6111"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6467",
+    "level": "admin2",
+    "name": "Province de Sidi Bennour إقليم سيدي بنور",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B30309850889145",
+    "codes": {
+      "hcp": "6467"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-6461",
+    "level": "admin2",
+    "name": "Settat Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B9799798831472",
+    "codes": {
+      "hcp": "6461"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7041",
+    "level": "admin2",
+    "name": "Al Haouz Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B698999344864",
+    "codes": {
+      "hcp": "7041"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7161",
+    "level": "admin2",
+    "name": "Chichaoua Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B46616002618727",
+    "codes": {
+      "hcp": "7161"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7211",
+    "level": "admin2",
+    "name": "Essaouira Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B53936679900609",
+    "codes": {
+      "hcp": "7211"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7191",
+    "level": "admin2",
+    "name": "Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B21870556317795",
+    "codes": {
+      "hcp": "7191"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7431",
+    "level": "admin2",
+    "name": "Province de Safi إقليم أسفي",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B23117375948520",
+    "codes": {
+      "hcp": "7431"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7585",
+    "level": "admin2",
+    "name": "Province de Youssoufia إقليم اليوسفية",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B54259280648674",
+    "codes": {
+      "hcp": "7585"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7351",
+    "level": "admin2",
+    "name": "Préfecture de Marrakech عمالة مراكش",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B80339347175881",
+    "codes": {
+      "hcp": "7351"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-7427",
+    "level": "admin2",
+    "name": "Rhamna Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B21316479060137",
+    "codes": {
+      "hcp": "7427"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-8401",
+    "level": "admin2",
+    "name": "Ouarzazate Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B41522516415054",
+    "codes": {
+      "hcp": "8401"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-8201",
+    "level": "admin2",
+    "name": "Province d'Errachidia إقليم الرشيدية",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B35891480133263",
+    "codes": {
+      "hcp": "8201"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-8363",
+    "level": "admin2",
+    "name": "Province de Midelt إقليم ميدلت",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B71822601453569",
+    "codes": {
+      "hcp": "8363"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-8577",
+    "level": "admin2",
+    "name": "Province de Tinghir إقليم تنغير",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B39685617616684",
+    "codes": {
+      "hcp": "8577"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-8587",
+    "level": "admin2",
+    "name": "Zagora Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B83322507681707",
+    "codes": {
+      "hcp": "8587"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9001",
+    "level": "admin2",
+    "name": "Agadir Ida-Outanane Prefecture",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B63187791317705",
+    "codes": {
+      "hcp": "9001"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture d'Agadir-Ida-Ou-Tanane's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9163",
+    "level": "admin2",
+    "name": "Chtouka-Ait Baha Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B99021473747258",
+    "codes": {
+      "hcp": "9163"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Chtouka-Aït Baha's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9273",
+    "level": "admin2",
+    "name": "Inezgane-Ait Melloul Prefecture",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B99662254658575",
+    "codes": {
+      "hcp": "9273"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Préfecture d'Inezgane-Aït Melloul's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9551",
+    "level": "admin2",
+    "name": "Tata Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B26550498921337",
+    "codes": {
+      "hcp": "9551"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Tata's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9581",
+    "level": "admin2",
+    "name": "Tiznit Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B52167870329218",
+    "codes": {
+      "hcp": "9581"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Tiznit's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-9541",
+    "level": "admin2",
+    "name": "Taroudant Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Haut-Commissariat au Plan (HCP), RGPH 2024, caractéristiques démographiques et socio-économiques de la population, notes de la région de Souss-Massa et de ses préfectures et provinces",
+        "url": "https://www.hcp.ma/region-agadir/br-Caracteristiques-demographiques-et-socio-economiques-de-la-population-RGPH-2024-donnees-regionales-et-provinciales_a210.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B53703826618026",
+    "codes": {
+      "hcp": "9541"
+    },
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the shares of Province de Taroudannt's municipal population in each five-year age group at the 2024 census, in HCP's note on it, given to 0.1%."
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-10071",
+    "level": "admin2",
+    "name": "Assa-Zag Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B62254917052717",
+    "codes": {
+      "hcp": "10071"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-10261",
+    "level": "admin2",
+    "name": "Guelmim Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B36466177595872",
+    "codes": {
+      "hcp": "10261"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-10521",
+    "level": "admin2",
+    "name": "Province de Tan-Tan إقليم طانطان",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B8060198419886",
+    "codes": {
+      "hcp": "10521"
+    }
+  },
+  {
+    "id": "MAR-RGPH2024-AGE-10473",
+    "level": "admin2",
+    "name": "Sidi Ifni Province",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "HCP's results dashboard and provincial atlas give this unit's 2024 ages only as the shares under 15, 15-59 and 60 and over, from which no median can be had."
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "MAR",
+    "match_by": "shape_id",
+    "shape_id": "96644757B51161748863193",
+    "codes": {
+      "hcp": "10473"
+    }
+  }
+]
