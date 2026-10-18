@@ -4,9 +4,7 @@
     "level": "admin1",
     "name": "Addis Ababa",
     "parent": "ETH",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Addis Ababa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -43,13 +41,20 @@
         "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
         "year": 2007,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "capital",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3624",
+        "license": "CC0"
       }
     ],
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "75662566B5378229891244",
     "population_note": "The 2007 census's count for the region.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group.",
+    "capital_note": "Addis Ababa is a chartered city, whose seat is the city itself."
   },
   {
     "id": "ETH-2007-75662566B25357223982520",
@@ -212,9 +217,7 @@
     "level": "admin1",
     "name": "Dire Dawa",
     "parent": "ETH",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Dire Dawa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -251,13 +254,20 @@
         "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
         "year": 2007,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "capital",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q193486",
+        "license": "CC0"
       }
     ],
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "75662566B22109266514860",
     "population_note": "The 2007 census's count for the region.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group.",
+    "capital_note": "Dire Dawa is a chartered city, whose seat is the city itself."
   },
   {
     "id": "ETH-2007-75662566B92391245038365",
@@ -420,9 +430,7 @@
     "level": "admin1",
     "name": "SNNPR",
     "parent": "ETH",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Hawassa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -459,13 +467,20 @@
         "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
         "year": 2007,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Southern Nations, Nationalities, and Peoples' Region",
+        "url": "https://en.wikipedia.org/wiki/Southern_Nations,_Nationalities,_and_Peoples%27_Region",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "75662566B72302855928957",
     "population_note": "The 2007 census's counts for the region and for Sidama added up: the region is drawn as it was before Sidama Region was made from it in 2020.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the region and Sidama together."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the region and Sidama together.",
+    "capital_note": "Hawassa was the region's seat until the region was divided in 2023; it is drawn here as it was before Sidama Region, which holds Hawassa, was made from it in 2020."
   },
   {
     "id": "ETH-2007-75662566B32417772325798",
@@ -791,18 +806,18 @@
       "status": "not_available"
     },
     "population": {
-      "value": 310822,
+      "value": 360883,
       "year": 2007,
       "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
     },
     "median_age": {
-      "value": 17.5,
+      "value": 17.1,
       "unit": "years",
       "year": 2007,
       "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
     },
     "sex_ratio": {
-      "value": 1046,
+      "value": 1040,
       "unit": "males_per_1000_females",
       "year": 2007,
       "source": "Central Statistical Agency of Ethiopia, 2007 Population and Housing Census, population by sex and five-year age group, as the U.S. Census Bureau tabulates it for HDX"
@@ -828,8 +843,8 @@
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B99696038054094",
-    "population_note": "The 2007 census's count for the zone.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+    "population_note": "The 2007 census's count for the zone with the Mao-Komo special wereda added: the census counted it apart, and it lies within the zone as drawn.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group, of the zone and the Mao-Komo special wereda together."
   },
   {
     "id": "ETH-2007-57463737B64256577014982",
@@ -1200,9 +1215,7 @@
     "level": "admin2",
     "name": "Dire Dawa",
     "parent": "ETH",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Dire Dawa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1239,13 +1252,20 @@
         "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
         "year": 2007,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "capital",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q193486",
+        "license": "CC0"
       }
     ],
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B22109266514860",
     "population_note": "The 2007 census's count for the zone.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group.",
+    "capital_note": "Dire Dawa, a chartered city, is drawn as this one zone; its seat is the city itself."
   },
   {
     "id": "ETH-2007-57463737B30637581928389",
@@ -1876,9 +1896,7 @@
     "level": "admin2",
     "name": "Hareri",
     "parent": "ETH",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Harar",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -1915,13 +1933,20 @@
         "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
         "year": 2007,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "capital",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q1033855",
+        "license": "CC0"
       }
     ],
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B51121866066295",
     "population_note": "The 2007 census's count for the zone.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group.",
+    "capital_note": "Harari Region is drawn as this one zone; its seat is Harar."
   },
   {
     "id": "ETH-2007-57463737B15837769236873",
@@ -2700,7 +2725,7 @@
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B33844308695129",
-    "population_note": "The 2007 census's count for the zone.",
+    "population_note": "The 2007 census's count for the zone. Bahir Dar, which the census counted apart (221,991 people), is in neither this figure nor West Gojam's: the city lies on the line between the two zones as drawn, most of its area in West Gojam.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
   },
   {
@@ -3020,9 +3045,7 @@
     "level": "admin2",
     "name": "Region 14",
     "parent": "ETH",
-    "capital": {
-      "status": "not_available"
-    },
+    "capital": "Addis Ababa",
     "largest_settlement": {
       "status": "not_available"
     },
@@ -3059,13 +3082,20 @@
         "url": "https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3",
         "year": 2007,
         "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "capital",
+        "name": "Wikidata",
+        "url": "https://www.wikidata.org/wiki/Q3624",
+        "license": "CC0"
       }
     ],
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B5378229891244",
     "population_note": "The 2007 census's count for Addis Ababa, the whole of which is this one polygon.",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group.",
+    "capital_note": "Addis Ababa, a chartered city, is drawn as this one zone; its seat is the city itself."
   },
   {
     "id": "ETH-2007-57463737B59192913037223",
@@ -3844,7 +3874,7 @@
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B52956719481852",
-    "population_note": "The 2007 census's count for the zone.",
+    "population_note": "The 2007 census's count for the zone. Bahir Dar, which the census counted apart (221,991 people), is in neither this figure nor North Gonder's: the city lies on the line between the two zones as drawn, most of its area in West Gojam.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2007 census's count of everyone by five-year age group."
   },
   {
